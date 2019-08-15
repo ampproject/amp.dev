@@ -36,7 +36,7 @@ Busca conteúdo dinamicamente a partir de um endpoint JSON CORS e o renderiza us
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ Busca conteúdo dinamicamente a partir de um endpoint JSON CORS e o renderiza us
 O componente `<amp-list>` busca conteúdo dinâmico de um endpoint JSON CORS. A resposta do endpoint contém dados, que são renderizados no modelo especificado.
 
 [tip type="important"]
-seu endpoint precisa implementar os requisitos definidos nas especificações de [Solicitações de CORS em AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests) (link em inglês).
+seu endpoint precisa implementar os requisitos definidos nas especificações de [Solicitações de CORS em AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) (link em inglês).
 [/tip]
 
 Você pode especificar um modelo de duas maneiras:
@@ -62,7 +62,7 @@ Para ver mais detalhes sobre modelos, consulte [Modelos HTML para AMP](https://g
 
 *Exemplo: exibição de uma lista dinâmica*
 
-No exemplo a seguir, recuperamos dados JSON que contêm URLs e títulos e renderizamos o conteúdo em um [modelo amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) aninhado.
+No exemplo a seguir, recuperamos dados JSON que contêm URLs e títulos e renderizamos o conteúdo em um [modelo amp-mustache](amp-mustache.md) aninhado.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -83,25 +83,25 @@ Veja o arquivo JSON que usamos:
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 Veja como estilizamos o conteúdo buscado:
 
@@ -174,7 +174,7 @@ Opcionalmente, o `<amp-list>` é compatível com o uso de um marcador e/ou subst
 * Um *marcador* é um elemento filho com o atributo `placeholder`. Esse elemento é mostrado até que o `<amp-list>` seja carregado. Se um substituto também for fornecido, o marcador ficará oculto quando `<amp-list>` não for carregado.
 * Um *substituto* é um elemento filho com o atributo `fallback`. Esse elemento é exibido se há falha no carregamento do `<amp-list>`.
 
-Saiba mais sobre [marcadores e substitutos](https://www.ampproject.org/docs/guides/responsive/placeholders). Um elemento filho não pode ser um marcador e um substituto ao mesmo tempo.
+Saiba mais sobre [marcadores e substitutos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). Um elemento filho não pode ser um marcador e um substituto ao mesmo tempo.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -224,10 +224,10 @@ Essa ação está disponível de modo experimental em `amp-list-resizable-childr
 O URL do endpoint remoto que retorna o JSON que será renderizado dentro do `<amp-list>`. Ele precisa ser um serviço HTTP CORS. O protocolo do URL precisa ser HTTPS.
 
 [tip type="important"]
-seu endpoint precisa implementar os requisitos definidos nas especificações de [Solicitações de CORS em AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests) (link em inglês).
+seu endpoint precisa implementar os requisitos definidos nas especificações de [Solicitações de CORS em AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) (link em inglês).
 [/tip]
 
-O atributo `src` pode ser omitido se o atributo `[src]` existir. Isso é útil ao renderizar conteúdo como resultado de um gesto do usuário, e não de um carregamento de página, ao trabalhar com [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind).
+O atributo `src` pode ser omitido se o atributo `[src]` existir. Isso é útil ao renderizar conteúdo como resultado de um gesto do usuário, e não de um carregamento de página, ao trabalhar com [`amp-bind`](amp-bind.md).
 
 ##### credentials (opcional)
 
@@ -236,7 +236,7 @@ Define uma opção de `credentials`, conforme especificado pela [API Fetch](http
 * Valores aceitos: `omit`, `include`
 * Padrão: `omit`
 
-Para enviar credenciais, transmita o valor de `include`. Se esse valor for definido, a resposta precisará seguir as [diretrizes de segurança do AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Para enviar credenciais, transmita o valor de `include`. Se esse valor for definido, a resposta precisará seguir as [diretrizes de segurança do AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 Veja um exemplo que especifica a inclusão de credenciais para exibir conteúdo personalizado em uma lista:
 
@@ -421,7 +421,7 @@ Este elemento não é fornecido por padrão, mas se um elemento `<amp-list-load-
 
 ##### common attributes
 
-Este elemento inclui [atributos comuns](https://www.ampproject.org/docs/reference/common_attributes) estendidos a componentes de AMP.
+Este elemento inclui [atributos comuns](../../../documentation/guides-and-tutorials/learn/common_attributes.md) estendidos a componentes de AMP.
 
 ## Substituições
 

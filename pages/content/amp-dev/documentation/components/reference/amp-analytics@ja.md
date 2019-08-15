@@ -45,19 +45,19 @@ AMP ドキュメントからアナリティクス データを収集します。
 
 サイトで AMP アナリティクスを使い始める前に、ユーザー エンゲージメント分析にサードパーティのアナリティクス ツールを使用するか、社内のソリューションを使用するかを決める必要があります。
 
-[tip type="read-on"] AMP アナリティクスについて詳しくは、[アナリティクスの設定](https://www.ampproject.org/docs/guides/analytics_amp)ガイドをご覧ください。
+[tip type="read-on"] AMP アナリティクスについて詳しくは、[アナリティクスの設定](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md)ガイドをご覧ください。
 [/tip]
 
 ### アナリティクス ベンダーへのデータの送信<a name="analytics-vendors"></a>
 
-AMP アナリティクスでは、1 回の測定で得たデータを複数の URL に送信できます。すでに 1 社以上のアナリティクス ベンダーを利用している場合は、[アナリティクス ベンダー](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
+AMP アナリティクスでは、1 回の測定で得たデータを複数の URL に送信できます。すでに 1 社以上のアナリティクス ベンダーを利用している場合は、[アナリティクス ベンダー](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md)の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
 
 統合型 AMP アナリティクス ベンダーの場合:
 
-1. `<amp-analytics>` タグに `type` 属性を追加して、その値を指定されている[ベンダー](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)に設定します。
+1. `<amp-analytics>` タグに `type` 属性を追加して、その値を指定されている[ベンダー](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md)に設定します。
 1. どのデータを収集してトラッキングするかを決め、設定データにその詳細を指定します。アナリティクス データの収集方法については、ベンダーのドキュメントをご覧ください。
 
-アナリティクス ベンダーが AMP を統合していない場合は、ベンダーに問い合わせてサポートを依頼してください。AMP プロジェクトに問題を報告し、ベンダーを追加するようリクエストすることをおすすめします。また、[AMP HTML にアナリティクス ツールを統合する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}})方法もご確認ください。さらに、指定された URL にデータを送信する際には、ベンダーと協力してください。詳しくは、以下の[社内へのデータの送信](#sending-data-in-house)をご覧ください。
+アナリティクス ベンダーが AMP を統合していない場合は、ベンダーに問い合わせてサポートを依頼してください。AMP プロジェクトに問題を報告し、ベンダーを追加するようリクエストすることをおすすめします。また、[AMP HTML にアナリティクス ツールを統合する](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md)方法もご確認ください。さらに、指定された URL にデータを送信する際には、ベンダーと協力してください。詳しくは、以下の[社内へのデータの送信](#sending-data-in-house)をご覧ください。
 
 *例: 第三者アナリティクス プロバイダへのデータの送信*
 
@@ -118,7 +118,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 </amp-analytics>
 ```
 
-[tip type="success"] トラッキングの一般的なユースケース（ページの視聴回数、ページのクリック数、スクロールなど）については、[アナリティクス: ユースケース](https://www.ampproject.org/docs/guides/analytics/use_cases)をご覧ください、
+[tip type="success"] トラッキングの一般的なユースケース（ページの視聴回数、ページのクリック数、スクロールなど）については、[アナリティクス: ユースケース](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md)をご覧ください、
 [/tip]
 
 ## 設定データの指定
@@ -164,7 +164,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 
 #### リモート設定の読み込み
 
-リモート設定を読み込むには、`<amp-analytics>` 要素で、`config` 属性と設定データの URL を指定します。URL の指定では HTTPS スキームを使用する必要があります。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。Cookie にアクセスする場合は、[`data-credentials`](#data-credentials) 属性を確認してください。レスポンスは [AMP CORS セキュリティ ガイドライン]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})に準拠する必要があります。
+リモート設定を読み込むには、`<amp-analytics>` 要素で、`config` 属性と設定データの URL を指定します。URL の指定では HTTPS スキームを使用する必要があります。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。Cookie にアクセスする場合は、[`data-credentials`](#data-credentials) 属性を確認してください。レスポンスは [AMP CORS セキュリティ ガイドライン](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)に準拠する必要があります。
 
 次の例では、指定した URL から設定データを読み込むように `config` 属性を指定しています。
 
@@ -820,7 +820,7 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 
 **type**
 
-ベンダーのタイプを指定します。詳しくは、[アナリティクス ベンダー](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html)のリストをご覧ください。
+ベンダーのタイプを指定します。詳しくは、[アナリティクス ベンダー](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md)のリストをご覧ください。
 
 例:
 
@@ -830,7 +830,7 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 
 **config**
 
-このオプションの属性を使用すると、指定したリモート URL から設定を読み込むことができます。URL の指定では HTTPS スキームを使用する必要があります。以下の `data-include-credentials` 属性もご確認ください。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。レスポンスは [AMP CORS セキュリティ ガイドライン]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})に準拠する必要があります。
+このオプションの属性を使用すると、指定したリモート URL から設定を読み込むことができます。URL の指定では HTTPS スキームを使用する必要があります。以下の `data-include-credentials` 属性もご確認ください。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。レスポンスは [AMP CORS セキュリティ ガイドライン](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)に準拠する必要があります。
 
 例:
 
@@ -844,7 +844,7 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 
 **data-consent-notification-id**
 
-この属性を指定すると、特定の HTML 要素 ID が設定された [amp-user-notification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}) をユーザーが確認（承認）するまで、ページでアナリティクス リクエストを処理できなくなります。この属性はオプションです。
+この属性を指定すると、特定の HTML 要素 ID が設定された [amp-user-notification](amp-user-notification.md) をユーザーが確認（承認）するまで、ページでアナリティクス リクエストを処理できなくなります。この属性はオプションです。
 
 ## AMP コンポーネントのアナリティクス
 

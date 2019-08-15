@@ -44,7 +44,7 @@ teaser:
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">تراكب النقر للتشغيل للمكون amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
       <td>fill وfixed وfixed-height وflex-item وnodisplay وresponsive</td>
     </tr>
   </table>
@@ -112,7 +112,7 @@ teaser:
   <tr>
     <td width="40%"><strong>dock</strong></td>
     <td><strong>تتطلب هذه السمة الإضافة <code>amp-video-docking</code>.</strong> في حال توفّر هذه السمة وتشغيل الفيديو يدويًا، سيتم "تصغير" الفيديو وتثبيته في زاوية أو عنصر عند تمرير المستخدم إلى خارج المنطقة المرئية لمكّوِن الفيديو.
-      لمزيد من التفاصيل، راجع <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">المستندات المتعلقة بإضافة الإرساء نفسها</a>.</td>
+      لمزيد من التفاصيل، راجع <a href="amp-video-docking.md">المستندات المتعلقة بإضافة الإرساء نفسها</a>.</td>
   </tr>
   <tr>
     <td width="40%"><strong>loop</strong></td>
@@ -140,7 +140,7 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>السمات المشتركة</strong></td>
-    <td>يتضمن هذا العنصر <a href="https://www.ampproject.org/docs/reference/common_attributes">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
+    <td>يتضمن هذا العنصر <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
   </tr>
 </table>
 

@@ -46,19 +46,19 @@ Registra datos de analíticas de un documento AMP.
 Antes de empezar a utilizar analíticas para AMP en tu sitio web, debes decidir si vas a usar una herramienta de analíticas de terceros para analizar la interacción de los usuarios o tu propia solución.
 
 [tip type="read-on"]
-Obtén más información sobre las analíticas para AMP en la guía para [configurar soluciones de analíticas](https://www.ampproject.org/docs/guides/analytics_amp).
+Obtén más información sobre las analíticas para AMP en la guía para [configurar soluciones de analíticas](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md).
   [/tip]
 
 ### Enviar datos a un proveedor de analíticas externo <a name="analytics-vendors"></a>
 
-Las analíticas para AMP están especialmente diseñadas para medir los datos una sola vez y enviarlos a muchas partes interesadas. Si ya trabajas con uno o varios proveedores de analíticas, echa un vistazo a la lista de [proveedores de soluciones de analíticas](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) para ver si han integrado su herramienta con AMP.
+Las analíticas para AMP están especialmente diseñadas para medir los datos una sola vez y enviarlos a muchas partes interesadas. Si ya trabajas con uno o varios proveedores de analíticas, echa un vistazo a la lista de [proveedores de soluciones de analíticas](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) para ver si han integrado su herramienta con AMP.
 
 Si el proveedor con el que trabajas ha integrado su solución de analíticas con AMP:
 
-1. En la etiqueta `<amp-analytics>`, añade el atributo `type` y asigna el valor al [proveedor](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html) especificado.
+1. En la etiqueta `<amp-analytics>`, añade el atributo `type` y asigna el valor al [proveedor](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) especificado.
 1. Define qué datos quieres registrar y supervisar, y especifica estos detalles en los datos de configuración. Consulta la documentación del proveedor para obtener instrucciones sobre cómo registrar datos de analíticas.
 
-Si, en cambio, el proveedor no ha integrado su solución de analíticas con AMP, ponte en contacto con él y pídele ayuda. También te recomendamos que crees una incidencia en el proyecto AMP solicitando que se añada al proveedor en cuestión. Además, puedes consultar el artículo sobre [cómo integrar herramientas de analíticas en AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}). Otra posibilidad es acordar con el proveedor que le mandarás los datos a la URL que él te indique. Encontrarás más información en la sección [Enviar datos a la solución de analíticas propia](#sending-data-in-house) que aparece a continuación.
+Si, en cambio, el proveedor no ha integrado su solución de analíticas con AMP, ponte en contacto con él y pídele ayuda. También te recomendamos que crees una incidencia en el proyecto AMP solicitando que se añada al proveedor en cuestión. Además, puedes consultar el artículo sobre [cómo integrar herramientas de analíticas en AMP HTML](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md). Otra posibilidad es acordar con el proveedor que le mandarás los datos a la URL que él te indique. Encontrarás más información en la sección [Enviar datos a la solución de analíticas propia](#sending-data-in-house) que aparece a continuación.
 
 *Ejemplo: Enviar datos a un proveedor de analíticas externo*
 
@@ -122,7 +122,7 @@ A continuación, se incluye un ejemplo sencillo donde se hace un seguimiento de 
 ```
 
   [tip type="success"]
-En el artículo sobre [casos prácticos de datos de analíticas](https://www.ampproject.org/docs/guides/analytics/use_cases) encontrarás acciones de seguimiento habituales (p. ej., páginas vistas, clics de página, desplazamiento, etc.).
+En el artículo sobre [casos prácticos de datos de analíticas](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md) encontrarás acciones de seguimiento habituales (p. ej., páginas vistas, clics de página, desplazamiento, etc.).
 [/tip]
 
 ## Especificar los datos de configuración
@@ -168,7 +168,7 @@ Si se utilizan datos de configuración de más de una de estas fuentes, los obje
 
 #### Cargar la configuración remota
 
-Para cargar una configuración remota, en el elemento `<amp-analytics>`, especifica el atributo `config` y la URL de los datos de configuración. La URL que especifiques debe tener el esquema HTTPS y puede incluir [variables de URL de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Para acceder a las cookies, consulta el atributo [`data-credentials`](#data-credentials). La respuesta debe seguir las [directrices de seguridad de AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
+Para cargar una configuración remota, en el elemento `<amp-analytics>`, especifica el atributo `config` y la URL de los datos de configuración. La URL que especifiques debe tener el esquema HTTPS y puede incluir [variables de URL de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Para acceder a las cookies, consulta el atributo [`data-credentials`](#data-credentials). La respuesta debe seguir las [directrices de seguridad de AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 En el siguiente ejemplo, se especifica que el atributo `config` debe cargar los datos de configuración de la URL indicada.
 
@@ -826,7 +826,7 @@ Estos son los atributos válidos para el componente `amp-analytics`:
 
 **type**
 
-Especifica el tipo de proveedor.  Para obtener más información, consulta la lista de [proveedores de analíticas](https://www.ampproject.org/docs/guides/analytics/analytics-vendors.html).
+Especifica el tipo de proveedor.  Para obtener más información, consulta la lista de [proveedores de analíticas](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md).
 
 Ejemplo:
 
@@ -836,7 +836,7 @@ Ejemplo:
 
 **config**
 
-Se trata de un atributo opcional que se puede utilizar para cargar una configuración desde una URL remota especificada. La URL especificada debe utilizar el esquema HTTPS. Consulta también el atributo `data-include-credentials` más abajo. La URL puede incluir [variables de URL de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). La respuesta debe seguir las [directrices de seguridad de AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}).
+Se trata de un atributo opcional que se puede utilizar para cargar una configuración desde una URL remota especificada. La URL especificada debe utilizar el esquema HTTPS. Consulta también el atributo `data-include-credentials` más abajo. La URL puede incluir [variables de URL de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). La respuesta debe seguir las [directrices de seguridad de AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 Ejemplo:
 
@@ -850,7 +850,7 @@ Si se define en `include`, se activa la capacidad de leer y escribir cookies en 
 
 **data-consent-notification-id**
 
-Si se proporciona, la página no procesará las solicitudes de analíticas hasta que el usuario confirme (acepte) [amp-user-notification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}) con el ID de elemento HTML especificado. Es un atributo opcional.
+Si se proporciona, la página no procesará las solicitudes de analíticas hasta que el usuario confirme (acepte) [amp-user-notification](amp-user-notification.md) con el ID de elemento HTML especificado. Es un atributo opcional.
 
 ## Analytics para componentes AMP
 

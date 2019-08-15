@@ -8,7 +8,7 @@ AMP'de duyarlı öğeleri son derece kolay bir şekilde oluşturabilirsiniz. Bun
 
 Resimler de dahil olmak üzere harici olarak yüklenen tüm kaynakların belirli bir boyutunun ve konumunun olması gerekir. Böylece, kaynaklar yüklendikçe sayfa atlamaz ve yeniden düzenlenmez.
 
-Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzeni duyarlı olarak ayarlayın ve [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) ile değişen ekran boyutlarına göre kullanılacak resim öğesini belirtin:
+Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzeni duyarlı olarak ayarlayın ve [`srcset`](style_pages.md) ile değişen ekran boyutlarına göre kullanılacak resim öğesini belirtin:
 
 [sourcecode:html]
 <amp-img
@@ -22,11 +22,11 @@ Duyarlı resimler oluşturmak için genişliği ve yüksekliği belirtin, düzen
 </amp-img>
 [/sourcecode]
 
-Bu [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) öğesi, kapsayıcı öğesinin genişliğine otomatik olarak sığar ve yüksekliği, belirtilen genişlik ve yüksekliğe göre belirlenen en boy oranına otomatik olarak ayarlanır:
+Bu [`amp-img`](../../../../documentation/components/reference/amp-img.md) öğesi, kapsayıcı öğesinin genişliğine otomatik olarak sığar ve yüksekliği, belirtilen genişlik ve yüksekliğe göre belirlenen en boy oranına otomatik olarak ayarlanır:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-Ayrıca [Örneklerle AMP `amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) konusuna bakabilirsiniz.
+Ayrıca [Örneklerle AMP `amp-img`](../../../../documentation/components/reference/amp-img.md) konusuna bakabilirsiniz.
 
 ## Sayfaya stil ekleme
 
@@ -76,7 +76,7 @@ Ortak CSS özelliklerini kullanarak sınıf veya öğe seçicilerle bileşen sti
 </body>
 [/sourcecode]
 
-**Önemli:** Stillerinizin AMP'de desteklendiğinden emin olun. Bazı stiller performans nedeniyle desteklenmemektedir (ayrıca bkz. [Desteklenen CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+**Önemli:** Stillerinizin AMP'de desteklendiğinden emin olun. Bazı stiller performans nedeniyle desteklenmemektedir (ayrıca bkz. [Desteklenen CSS](style_pages.md)).
 
 ## Boyut ve konum öğeleri
 
@@ -88,17 +88,17 @@ Bu öznitelikler, öğenin en boy oranına işaret eder ve daha sonra, kapsayıc
 Düzeni duyarlı değerine ayarlayın.
 Bu seçim, öğenin boyutunu kapsayıcı öğesinin genişliğine ayarlar ve yüksekliğini, otomatik olarak genişlik ve yükseklik öznitelikleri tarafından belirtilen en boy oranına göre yeniden boyutlandırır.
 
-[AMP'de desteklenen düzenler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) hakkında daha fazla bilgi edinin.
+[AMP'de desteklenen düzenler](control_layout.md) hakkında daha fazla bilgi edinin.
 
 ## Stillerinizi ve düzeninizi doğrulama
 
 Sayfanızın CSS ve düzen değerlerini test etmek için AMP doğrulayıcıyı kullanın.
 
 Doğrulayıcı, sayfanızın CSS'sinin 50.000 bayt sınırını aşmadığını doğrular, izin verilmeyen stilleri kontrol eder ve sayfa düzeninin desteklenip doğru bir şekilde biçimlendirildiğinden emin olur.
-Ayrıca buradaki [Stil ve düzen hatalarının]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#stil-ve-düzen-hataları) tam listesine de bakabilirsiniz.
+Ayrıca buradaki [Stil ve düzen hatalarının](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#stil-ve-düzen-hataları) tam listesine de bakabilirsiniz.
 
 50.000 bayt sınırını aşan CSS'ye sahip sayfa için konsolda gösterilen hata örneği:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}) konusunda daha fazla bilgi edinin.
+Stil hatalarının bulunup düzeltilmesi de dahil olmak üzere [AMP sayfalarınızı nasıl doğrulayacağınız](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) konusunda daha fazla bilgi edinin.

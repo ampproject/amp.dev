@@ -44,7 +44,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;/script></code><br>Observação: o amp-ad ainda pode funcionar sem esse script, mas ele é altamente recomendável para compatibilidade futura.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -57,7 +57,7 @@ limitations under the License.
 
 Os anúncios são carregados da mesma forma que todos os outros recursos em documentos AMP, com um elemento personalizado especial chamado `<amp-ad>`. Não é permitido exibir JavaScript fornecido pela rede de publicidade no documento AMP. Em vez disso, o ambiente de tempo de execução de AMP carrega como o documento AMP um iframe de uma origem diferente (por meio de um sandbox de iframe) e executa o JS da rede de publicidade dentro do sandbox desse iframe.
 
-O `<amp-ad>` exige que os valores de largura e altura sejam especificados de acordo com [a regra](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) do tipo de layout dele. Ele precisa de um argumento `type` que selecione qual rede de publicidade será exibida. Todos os atributos `data-*` da tag serão passados automaticamente como argumentos para o código que renderizará o anúncio. A rede de publicidade define quais atributos `data-` são necessários para determinado tipo de rede, e os atributos precisam ser documentados com essa rede.
+O `<amp-ad>` exige que os valores de largura e altura sejam especificados de acordo com [a regra](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) do tipo de layout dele. Ele precisa de um argumento `type` que selecione qual rede de publicidade será exibida. Todos os atributos `data-*` da tag serão passados automaticamente como argumentos para o código que renderizará o anúncio. A rede de publicidade define quais atributos `data-` são necessários para determinado tipo de rede, e os atributos precisam ser documentados com essa rede.
 
 #### Exemplo: exibição de alguns anúncios
 
@@ -118,7 +118,7 @@ O `<amp-ad>` exige que os valores de largura e altura sejam especificados de aco
   </tr>
   <tr>
     <td width="40%"><strong>data-consent-notification-id (opcional)</strong></td>
-    <td>Se fornecido, precisa da confirmação do <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}">amp-user-notification</a> com o código HTML fornecido até que o "ID do cliente AMP" do usuário (semelhante a um cookie) seja passado ao anúncio. Isso significa que a renderização do anúncio é adiada até o usuário confirmar a notificação.</td>
+    <td>Se fornecido, precisa da confirmação do <a href="amp-user-notification.md">amp-user-notification</a> com o código HTML fornecido até que o "ID do cliente AMP" do usuário (semelhante a um cookie) seja passado ao anúncio. Isso significa que a renderização do anúncio é adiada até o usuário confirmar a notificação.</td>
   </tr>
   <tr>
     <td width="40%"><strong>data-loading-strategy (opcional)</strong></td>
@@ -131,13 +131,13 @@ O `<amp-ad>` exige que os valores de largura e altura sejam especificados de aco
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Este elemento inclui <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comuns</a> estendidos a componentes de AMP.</td>
+    <td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
   </tr>
 </table>
 
 ## Marcador
 
-O `amp-ad` também pode ser compatível com um elemento filho com o atributo `placeholder`. Se for compatível com a rede de publicidade, esse elemento será exibido até que o anúncio esteja disponível para visualização. Saiba mais sobre [marcadores e substitutos](https://www.ampproject.org/docs/guides/responsive/placeholders).
+O `amp-ad` também pode ser compatível com um elemento filho com o atributo `placeholder`. Se for compatível com a rede de publicidade, esse elemento será exibido até que o anúncio esteja disponível para visualização. Saiba mais sobre [marcadores e substitutos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
 <amp-ad width=300 height=250
@@ -164,13 +164,13 @@ Exemplo com substituto:
 
 Há três formas de gerar receita para vídeos em AMP por meio de anúncios em vídeo:
 
-1. As AMP são compatíveis com vários players de vídeo, como BrightCove, DailyMotion etc., que podem gerar receita com anúncios. Para ver uma lista completa, consulte os componentes de [mídia](https://www.ampproject.org/docs/reference/components#media).
+1. As AMP são compatíveis com vários players de vídeo, como BrightCove, DailyMotion etc., que podem gerar receita com anúncios. Para ver uma lista completa, consulte os componentes de [mídia](../../../documentation/components.md#media).
 
-2. Use o componente [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}), que vem com um SDK do IMA e um player de vídeo HTML5 integrados.
+2. Use o componente [amp-ima-video](amp-ima-video.md), que vem com um SDK do IMA e um player de vídeo HTML5 integrados.
 3. Caso seu player de vídeo não seja compatível com AMP, você pode exibir seu player personalizado usando [amp-iframe](https://ampbyexample.com/components/amp-iframe/).
 Ao usar a abordagem do `amp-iframe`:
 
-    * verifique se há um pôster caso o player seja carregado na primeira janela de visualização ([mais detalhes](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder));
+    * verifique se há um pôster caso o player seja carregado na primeira janela de visualização ([mais detalhes](amp-iframe.md#iframe-with-placeholder));
     * o vídeo e o pôster precisam ser exibidos por HTTPS.</li>
 
 ## Exibição de anúncios a partir de um domínio personalizado
@@ -202,7 +202,7 @@ A aplicação das origens pode ser feita com o terceiro argumento de `draw3p` e 
 
 Isto é completamente opcional: às vezes, é recomendável aprimorar a solicitação de anúncios antes de fazê-la ao servidor de anúncios.
 
-Se sua rede de publicidade for compatível com o [Fast Fetch](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation), use o recurso de [configuração em tempo real](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC, na sigla em inglês). Por exemplo, as integrações do DoubleClick e do Google AdSense são compatíveis com o Fast Fetch e o RTC.
+Se sua rede de publicidade for compatível com o [Fast Fetch](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad-implementation), use o recurso de [configuração em tempo real](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC, na sigla em inglês). Por exemplo, as integrações do DoubleClick e do Google AdSense são compatíveis com o Fast Fetch e o RTC.
 
 Se a rede de publicidade usar o Delayed Fetch, você poderá passar um callback para a chamada de função `draw3p` no arquivo [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html). O callback recebe a configuração de entrada como primeiro argumento e depois recebe outro callback como segundo argumento (chamado `done` no exemplo abaixo). Esse callback precisa ser chamado com a configuração atualizada para que a renderização do anúncio aconteça.
 
@@ -270,7 +270,7 @@ Consulte as [regras de amp-ad](https://github.com/ampproject/amphtml/blob/master
 * [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
 * [Atomx](https://github.com/ampproject/amphtml/blob/master/ads/atomx.md)
 * [Baidu](https://github.com/ampproject/amphtml/blob/master/ads/baidu.md)
-* [BeOpinion]({{g.doc('/content/amp-dev/documentation/components/reference/amp-beopinion.md', locale=doc.locale).url.path}})
+* [BeOpinion](amp-beopinion.md)
 * [Bidtellect](https://github.com/ampproject/amphtml/blob/master/ads/bidtellect.md)
 * [brainy](https://github.com/ampproject/amphtml/blob/master/ads/brainy.md)
 * [Broadstreet Ads](https://github.com/ampproject/amphtml/blob/master/ads/broadstreetads.md)

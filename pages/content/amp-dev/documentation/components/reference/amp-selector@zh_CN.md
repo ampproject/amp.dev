@@ -35,7 +35,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>
     <td>所有</td>
   </tr>
   <tr>
@@ -97,7 +97,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 
 ## 清除所选内容
 
-要在用户点按或点击某个元素后清除所有所选内容，请在相应元素上设置 [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) 操作属性，然后使用 `clear` 操作方法指定 AMP 选择器 `id`。
+要在用户点按或点击某个元素后清除所有所选内容，请在相应元素上设置 [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) 操作属性，然后使用 `clear` 操作方法指定 AMP 选择器 `id`。
 
 示例：
 
@@ -150,7 +150,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 
 事件可以使用 `on` 属性触发其他 AMP 组件上的操作。例如，`on="select: my-tab.show"`
 
-详细了解 [AMP 操作和事件]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})。
+详细了解 [AMP 操作和事件](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)。
 
 <table>
   <tr>

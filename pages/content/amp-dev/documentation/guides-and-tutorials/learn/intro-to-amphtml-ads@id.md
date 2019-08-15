@@ -6,7 +6,7 @@ $title: Iklan AMPHTML
 
 Iklan AMPHTML adalah cara yang lebih cepat, ringan, dan aman untuk beriklan di internet. Meskipun halaman AMP mendukung iklan HTML tradisional, iklan ini dapat dimuat dengan lambat. Agar iklan dapat dimuat secepat elemen lain di halaman AMP, Anda dapat membuat iklan dalam AMPHTML. Iklan AMPHTML hanya ditayangkan setelah divalidasi, untuk memastikan iklan sudah aman dan memiliki performa baik. Yang terpenting, iklan ini dapat ditayangkan di mana pun di internet, _tidak hanya di halaman AMP_.
 
-Iklan AMPHTML ditulis dalam HTML AMP sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) (variasi HTML AMP + CSS). Ini berarti bahwa iklan tidak lagi dapat menjalankan JavaScript secara acak, yang secara tradisional menjadi penyebab utama performa iklan yang buruk. Oleh karena itu, seperti halnya AMP inti, kasus penggunaan JavaScript iklan inti dibuat langsung ke project Open Source AMP yang menjamin perilaku iklan yang baik.
+Iklan AMPHTML ditulis dalam HTML AMP sesuai dengan [spesifikasi iklan AMPHTML](a4a_spec.md) (variasi HTML AMP + CSS). Ini berarti bahwa iklan tidak lagi dapat menjalankan JavaScript secara acak, yang secara tradisional menjadi penyebab utama performa iklan yang buruk. Oleh karena itu, seperti halnya AMP inti, kasus penggunaan JavaScript iklan inti dibuat langsung ke project Open Source AMP yang menjamin perilaku iklan yang baik.
 
 ### Manfaat
 
@@ -14,14 +14,14 @@ Mengapa iklan AMPHTML lebih baik daripada iklan tradisional?
 
 1.  **Lebih cepat**: Iklan AMPHTML lebih cepat karena iklan diminta sebelumnya dalam proses rendering halaman, dan segera ditampilkan tepat sebelum pengguna akan melihat iklan. Ukuran file iklan AMPHTML yang lebih kecil juga meningkatkan kecepatan.
 2.  **Lebih ringan**: Iklan AMPHTML menggabungkan fungsi iklan yang biasa digunakan, yang dapat mengurangi ukuran file iklan. Setelah berada di halaman, iklan AMPHTML juga menggunakan lebih sedikit resource. Misalnya, 10 pelacak pada iklan biasa akan meminta informasi mereka sendiri, namun iklan AMPHTML mengumpulkan semua data sekali dan mendistribusikannya ke sejumlah pelacak yang tertarik.
-3.  **Terkoordinasikan**: Di halaman AMP, [AMP runtime]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime) dapat mengkoordinasikan resource yang terbatas di ponsel ke komponen yang tepat di waktu yang tepat, sehingga dapat memberikan pengalaman yang terbaik bagi pengguna. Misalnya, iklan AMPHTML dengan animasi dijeda saat iklan tidak berada di viewport saat ini.
+3.  **Terkoordinasikan**: Di halaman AMP, [AMP runtime](spec/amphtml.md#amp-runtime) dapat mengkoordinasikan resource yang terbatas di ponsel ke komponen yang tepat di waktu yang tepat, sehingga dapat memberikan pengalaman yang terbaik bagi pengguna. Misalnya, iklan AMPHTML dengan animasi dijeda saat iklan tidak berada di viewport saat ini.
 4.  **Lebih Menarik**: Pengguna tidak dapat berinteraksi dengan iklan yang tidak dapat dilihat. Iklan yang lebih cepat mendorong visibilitas yang lebih tinggi, yang kemudian membuat rasio klik-tayang jadi lebih tinggi, sehingga akan menghasilkan performa iklan yang lebih baik.
 5.  **Aman dari Malware**: Penyebaran malware dengan iklan AMPHTML tidak akan dapat dilakukan karena iklan telah diverifikasi sebelum ditayangkan. Karena itulah, pengiklan dapat memastikan pengalaman pengguna yang aman dan memberikan persepsi merek yang positif.
 6.  **Lebih Fleksibel**: Iklan AMPHTML dirancang agar berfungsi pada halaman AMP dan non-AMP, serta di semua jenis perangkat.
 
 ### Format
 
-Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak format kreatif, beberapa di antaranya seperti carousel, paralaks, dan lightbox. Mulai dengan memanfaatkan template iklan AMPHTML open source di [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}).
+Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak format kreatif, beberapa di antaranya seperti carousel, paralaks, dan lightbox. Mulai dengan memanfaatkan template iklan AMPHTML open source di [Examples](../../../documentation/examples/index.html).
 
 <table class="nocolor">
   <tr>
@@ -46,7 +46,7 @@ Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak forma
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='Menayangkan iklan AMPHTML ke halaman AMP', caption='Menayangkan iklan AMPHTML ke halaman AMP', align='' ) }}
 
-1.  Penayang memasukkan slot iklan di halaman AMP-nya melalui tag [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}), yang menetapkan jaringan iklan yang ingin digunakan.
+1.  Penayang memasukkan slot iklan di halaman AMP-nya melalui tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md), yang menetapkan jaringan iklan yang ingin digunakan.
 2.  AMP Runtime mengirim permintaan iklan ke jaringan iklan tertentu untuk mengambil iklan. Jaringan iklan yang dapat menayangkan iklan AMPHTML menyediakan [implementasi Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) yang memvalidasi dan menandatangani materi iklan.
 3.  Jaringan iklan merespons iklan AMPHTML dan AMP Runtime merender iklan di halaman AMP.
 
@@ -54,7 +54,7 @@ Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak forma
 
 ### Penayang
 
-Untuk menayangkan format iklan yang dijual langsung di AMPHTML, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) dan menayangkannya menggunakan server iklan yang mendukung penayangan iklan AMPHTML.  Untuk saat ini, berikut ini server iklan yang mendukung iklan AMPHTML:
+Untuk menayangkan format iklan yang dijual langsung di AMPHTML, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML](a4a_spec.md) dan menayangkannya menggunakan server iklan yang mendukung penayangan iklan AMPHTML.  Untuk saat ini, berikut ini server iklan yang mendukung iklan AMPHTML:
 
 *   DoubleClick for Publishers
 *   TripleLift
@@ -62,11 +62,11 @@ Untuk menayangkan format iklan yang dijual langsung di AMPHTML, Anda harus membu
 *   Adzerk
 *   Google AdSense
 
-Untuk menayangkan iklan AMPHTML melalui saluran tidak langsung (mis., exchange, SSP, dll.), gunakan server iklan/jaringan iklan pendukung pada [daftar berikut]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}}).
+Untuk menayangkan iklan AMPHTML melalui saluran tidak langsung (mis., exchange, SSP, dll.), gunakan server iklan/jaringan iklan pendukung pada [daftar berikut](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md).
 
 ### Agensi kreatif
 
-Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}). Untuk mengetahui contoh dan inspirasi, lihat template iklan AMPHTML open source di [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}). Selain itu, gunakan salah satu fitur berikut untuk membuat iklan AMPHTML:
+Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML](a4a_spec.md). Untuk mengetahui contoh dan inspirasi, lihat template iklan AMPHTML open source di [Examples](../../../documentation/examples/index.html). Selain itu, gunakan salah satu fitur berikut untuk membuat iklan AMPHTML:
 
 *  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -74,11 +74,11 @@ Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifi
 
 ### Jaringan/server iklan
 
-Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
+Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`](../../../documentation/components/reference/amp-ad.md) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
 
 ## Membuat iklan AMPHTML
 
-**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}).
+**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML](a4a_spec.md).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example](../../../documentation/examples/documentation/amp-ad.html).
 
 **Menggunakan fitur**: Anda dapat menggunakan salah satu fitur berikut untuk membuat materi iklan AMPHTML:
 
@@ -108,19 +108,19 @@ Untuk SSP dan Ad Exchange yang ingin mendukung iklan AMPHTML di lingkungan Biddi
 
 #### Apakah ada contoh iklan AMPHTML?
 
-Ya. Sejumlah template iklan AMPHTML yang memiliki tampilan menarik dapat dilihat di [Examples]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-ad.html', locale=doc.locale).url.path}}). Contoh ini menggunakan komponen lanjutan di AMP.
+Ya. Sejumlah template iklan AMPHTML yang memiliki tampilan menarik dapat dilihat di [Examples](../../../documentation/examples/documentation/amp-ad.html). Contoh ini menggunakan komponen lanjutan di AMP.
 
 #### Apakah iklan AMPHTML mendukung deteksi visibilitas dan verifikasi pihak ketiga?
 
-Ya. Terdapat dukungan bawaan untuk verifikasi dan deteksi visibilitas menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) (mis., Tampilan Aktif Google mengintegrasikan cara ini). Ada juga vendor lain seperti MOAT yang secara aktif menerapkan dukungan untuk hal tersebut.
+Ya. Terdapat dukungan bawaan untuk verifikasi dan deteksi visibilitas menggunakan [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) (mis., Tampilan Aktif Google mengintegrasikan cara ini). Ada juga vendor lain seperti MOAT yang secara aktif menerapkan dukungan untuk hal tersebut.
 
 #### Apakah iklan AMPHTML mendukung animasi berbasis timeline?
 
-Ya. Lihat [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}).
+Ya. Lihat [`amp-animation`](../../../documentation/components/reference/amp-animation.md).
 
 #### Sebagian besar iklan memiliki titik keluar iklan yang dapat dikonfigurasi dan target yang dapat di-tap. Apakah iklan AMPHTML juga memiliki mekanisme yang sama?
 
-Ya. Lihat [`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}}).
+Ya. Lihat [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit.md).
 
 #### Saya tidak dapat menemukan apa yang saya butuhkan. Ke mana saya harus bertanya?
 

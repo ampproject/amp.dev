@@ -11,35 +11,35 @@ Start here to learn the basics about AMP analytics.
 ## Use amp-pixel or amp-analytics?
 
 AMP provides two components to meet your analytics and measurement needs:
-[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) and
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 Both options send analytics data to a defined endpoint.
 
 If you are looking for behavior like a simple
 [tracking pixel](https://en.wikipedia.org/wiki/Web_beacon#Implementation),
-the [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) component provides basic page view tracking;
+the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) component provides basic page view tracking;
 page view data gets sent to a defined URL.
 Some integrations with a vendor may call for this component,
 in which case they will specify the exact URL endpoint.
 
-For most analytics solutions, use [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
-Page view tracking works in [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) too.
+For most analytics solutions, use [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
+Page view tracking works in [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) too.
 But you can also track user engagement with any type of page content,
 including clicks on links and buttons.
 And you can measure how far on the page the user scrolled,
 whether or not the user engaged with social media, and more.
 
-Learn more: See [Deep Dive into AMP Analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
+Learn more: See [Deep Dive into AMP Analytics](deep_dive_analytics.md).
 
 As part of integrating with the AMP platform,
-providers have offered pre-defined [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configurations
+providers have offered pre-defined [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) configurations
 so that it's easy to capture data and push to their tracking tools.
 Access vendor documentation from the
-[Analytics Vendors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) list.
+[Analytics Vendors](analytics-vendors.md) list.
 
-You can use both [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) and [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) in your pages:
-[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) for simple page view tracking,
-and [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) for everything else.
+You can use both [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) in your pages:
+[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) for simple page view tracking,
+and [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) for everything else.
 You can also add multiples of each tag.
 If you're working with multiple analytics providers,
 you will need one tag per solution.
@@ -48,11 +48,11 @@ so if you don’t need the extra tags, don’t use them.
 
 ## Create a simple analytics configuration
 
-Learn how to create a simple [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) and [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration.
+Learn how to create a simple [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) configuration.
 
 ### Simple `amp-pixel` configuration
 
-To create a simple [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) configuration,
+To create a simple [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) configuration,
 insert something like the following into the body of your AMP page:
 
 ```html
@@ -64,31 +64,31 @@ the page view data gets sent to the defined URL, along with a random number.
 The `RANDOM` variable is one of many
 [substitution variables in the AMP platform](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 Learn more about
-[Variable substitution]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#variable-substitution) here.
+[Variable substitution](analytics_basics.md#variable-substitution) here.
 
-The [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})
+The [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 component is built-in,
 so you won't need an inclusion declaration like you do
-for AMP's extended components, including [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
-But you should place the [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) tag as close as possible
+for AMP's extended components, including [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
+But you should place the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) tag as close as possible
 to the start of your `<body>`.
 The tracking pixel will only fire when the tag comes into view itself.
-If [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) is positioned near the bottom of the page,
+If [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) is positioned near the bottom of the page,
 it may not fire.
 
 ### Simple `amp-analytics` configuration
 
 To create a simple
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration,
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) configuration,
 you must first include this `custom-element` declaration
 in the `<head>` of the AMP document (see also
-[Component inclusion declaration]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})):
+[Component inclusion declaration](../../../../documentation/components/index.html)):
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-The following example is similar to the [`amp-pixel` example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}).
+The following example is similar to the [`amp-pixel` example](../../../../documentation/components/reference/amp-pixel.md).
 Everytime a page is visible,
 the trigger event fires, and
 sends the pageview data to a defined URL along with a random ID:
@@ -117,44 +117,44 @@ When the page becomes visible
 (as specified by the use of the trigger keyword `visible`),
 an event triggers and the `pageview` request is sent.
 The triggers attribute determines when the pageview request fires.
-Learn more about [requests and triggers]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
+Learn more about [requests and triggers](deep_dive_analytics.md).
 
 ## Variable substitution
 
-Both the [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) and
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) components
+Both the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) components
 allow all standard URL variable substitutions (see
 [AMP HTML Variable Substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)).
 In the following example,
 the page view request is sent to the URL,
 along with the current AMP document’s canonical URL, its title, and a
-[client ID]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#user-identification):
+[client ID](analytics_basics.md#user-identification):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
 ```
 
 Due to its simplicity,
-the [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) tag can only include variables defined by the platform
+the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) tag can only include variables defined by the platform
 or that the AMP runtime can parse from the AMP page.
 In the above example,
 the platform populates the values for both
 `canonicalURL` and `clientId(site-user-id)`.
-The [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) tag can include the same variables as [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}),
+The [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) tag can include the same variables as [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md),
 as well as uniquely defined variables inside the tag configuration.
 
 Use the format `${varName}` in a request string for a page
 or platform-defined variable.
-The [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) tag will replace the template with its actual value
+The [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) tag will replace the template with its actual value
 at the time of construction of the analytics request (see also
-[Variables supported in `amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+[Variables supported in `amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
-In the following [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) example,
+In the following [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) example,
 the page view request is sent to the URL,
 with additional data extracted from variable substitutions,
 some provided by the platform,
 some defined inline,
-within the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration:
+within the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) configuration:
 
 ```html
 <amp-analytics>
@@ -182,12 +182,12 @@ within the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/
 
 In the above example,
 the variables, `account` and `title` are defined
-in the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration.
+in the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) configuration.
 The `canonicalUrl` and `clientId` variables aren't defined in the configuration,
 so their values get substituted by the platform.
 
 [tip type="important"]
-**IMPORTANT –** Variable substitution is flexible; you can have the same variables defined in different locations, and the AMP runtime will parse the values in this order of precedence (see [Variable substitution ordering]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)).
+**IMPORTANT –** Variable substitution is flexible; you can have the same variables defined in different locations, and the AMP runtime will parse the values in this order of precedence (see [Variable substitution ordering](deep_dive_analytics.md#variable-substitution-ordering)).
 [/tip]
 
 ## User identification
@@ -241,4 +241,4 @@ Learn more about client ID substitution,
 including how to add an optional user notification ID, in
 [Variables supported in AMP analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md).
 
-Learn more: Continue to learn about analytics with [Deep Dive into AMP Analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}) and [Use Cases]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}).
+Learn more: Continue to learn about analytics with [Deep Dive into AMP Analytics](deep_dive_analytics.md) and [Use Cases](use_cases.md).

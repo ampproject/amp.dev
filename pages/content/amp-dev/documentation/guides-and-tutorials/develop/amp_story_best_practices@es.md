@@ -2,7 +2,7 @@
 $title: Prácticas recomendadas para crear historias de AMP
 ---
 
-En esta guía se indican algunas prácticas recomendadas que deberías seguir al crear [historias de AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
+En esta guía se indican algunas prácticas recomendadas que deberías seguir al crear [historias de AMP](../../../documentation/components/reference/amp-story.md).
 
 ## Color de fondo  
 
@@ -48,7 +48,7 @@ Se recomienda que la imagen de póster tenga las siguientes dimensiones: 720p (7
 
 ### Diferencias entre `<source>` y `src` 
 
-Al indicar la fuente de un componente [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}).
+Al indicar la fuente de un componente [`amp-video`](../../../documentation/components/reference/amp-video.md).
 
 *Ejemplo: Especificar varias fuentes*
 

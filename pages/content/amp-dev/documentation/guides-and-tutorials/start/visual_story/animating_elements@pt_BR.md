@@ -190,7 +190,7 @@ Pets can lower your stress levels!</p>
 
 Atualize a página da história no seu navegador e verifique se ela surge da direita.
 
-Em seguida, faremos todas as imagens aparecerem lentamente. Insira `animate-in="fade-in"` em todos os elementos [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Seu código será semelhante a este:
+Em seguida, faremos todas as imagens aparecerem lentamente. Insira `animate-in="fade-in"` em todos os elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md). Seu código será semelhante a este:
 
 ```html hl_lines="4 9 14 19"
 <amp-img src="assets/cat.jpg"
@@ -217,7 +217,7 @@ Em seguida, faremos todas as imagens aparecerem lentamente. Insira `animate-in="
 
 Se você atualizar a página, todas as imagens aparecerão lentamente.  Isso é ótimo, mas quase não é possível ver o efeito porque todas as imagens aparecem ao mesmo tempo. Para melhorar o efeito visual, podemos alterar o tempo das animações.
 
-Vamos atrasar a entrada da primeira imagem para que ela apareça próximo de quando a animação do banner de texto terminar: por exemplo, 0,4s. As três imagens restantes podem aparecer 0,2s após a entrada da anterior. Adicione `animate-in-delay=""` a cada elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) com o valor de atraso adequado. Seu código será semelhante a este exemplo:
+Vamos atrasar a entrada da primeira imagem para que ela apareça próximo de quando a animação do banner de texto terminar: por exemplo, 0,4s. As três imagens restantes podem aparecer 0,2s após a entrada da anterior. Adicione `animate-in-delay=""` a cada elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) com o valor de atraso adequado. Seu código será semelhante a este exemplo:
 
 ```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
@@ -251,4 +251,4 @@ Atualize sua história.  A última página terá a seguinte aparência:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-As histórias AMP oferecem muitas possibilidades de animações (por exemplo, com a combinação e encadeamento de efeitos). Este tutorial mostra somente o básico. Para saber mais sobre animações, consulte a [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
+As histórias AMP oferecem muitas possibilidades de animações (por exemplo, com a combinação e encadeamento de efeitos). Este tutorial mostra somente o básico. Para saber mais sobre animações, consulte a [`amp-story`](../../../../documentation/components/reference/amp-story.md).

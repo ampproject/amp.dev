@@ -49,7 +49,7 @@ limitations under the License.
 
 ## `amp-subscriptions` ilişkisi
 
-[`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) uzantısı, `amp-access` için benzer özellikler sunar. Bununla birlikte, daha özel bir Access ödeme duvarı protokolünü destekler. Bazı önemli farklılıklar şunlardır:
+[`amp-subscriptions`](amp-subscriptions.md) uzantısı, `amp-access` için benzer özellikler sunar. Bununla birlikte, daha özel bir Access ödeme duvarı protokolünü destekler. Bazı önemli farklılıklar şunlardır:
 
 1. `amp-subscriptions` yetki verme yanıtı, amp-access yetkilendirmesine benzer ancak sıkı bir şekilde tanımlanmış ve standart hale getirilmiştir.
 1. `amp-subscriptions` uzantısı, sayfanın Access ödeme duvarı kararlarına katılması için birden çok hizmetin yapılandırılmasına olanak tanır. Bu hizmetler eşzamanlı olarak yürütülür ve olumlu yanıt döndüren hizmete göre öncelikli olan hizmet belirlenir.
@@ -504,7 +504,7 @@ AMP, giriş yapma ve abone olma arasında bir ayrım yapmaz. Bu ayrım, birden �
 
 ## CORS Kaynak Güvenliği
 
-Yetkilendirme ve Pingback uç noktaları, CORS uç noktalarıdır ve [AMP CORS Güvenlik Spesifikasyonu](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)'nda açıklanan güvenlik protokolünü uygulamalıdır.
+Yetkilendirme ve Pingback uç noktaları, CORS uç noktalarıdır ve [AMP CORS Güvenlik Spesifikasyonu](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)'nda açıklanan güvenlik protokolünü uygulamalıdır.
 
 ## Ölçme
 

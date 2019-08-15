@@ -8,7 +8,7 @@ Il punto di forza di AMP non sta semplicemente nel fatto che velocizza le pagine
 
 Per convalidare un documento AMP esistono diversi modi che consentono di ottenere lo stesso risultato, quindi puoi utilizzare il metodo più adatto al tuo stile di sviluppo.
 
-Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo documento AMP sia [rilevabile]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) per le piattaforme di terze parti.
+Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo documento AMP sia [rilevabile](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) per le piattaforme di terze parti.
 
 ### Console per sviluppatori del browser
 
@@ -81,8 +81,8 @@ Come prevedibile, questa è una pagina HTML AMP valida. Ora proviamo con una pag
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 
@@ -150,10 +150,10 @@ Questo genera il seguente errore di convalida AMP, mostrato nei vari strumenti c
 Ogni strumento fornisce diverse informazioni:
 
   * La posizione (riga e colonna) nel documento HTML in cui si è verificato l'errore, selezionabile in alcune interfacce per evidenziare tale posizione. In questo esempio il problema si è verificato nella riga 11, colonna 2.
-  * Una riga di testo che descrive l'errore. In questo esempio il testo indica che abbiamo utilizzato un tag `<img>`, ma che invece avremmo dovuto utilizzare un tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
-  * Un link che rimanda a un documento pertinente relativo all'errore; in questo esempio la documentazione relativa al tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Non vengono generati link alla documentazione per tutti gli errori.
+  * Una riga di testo che descrive l'errore. In questo esempio il testo indica che abbiamo utilizzato un tag `<img>`, ma che invece avremmo dovuto utilizzare un tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
+  * Un link che rimanda a un documento pertinente relativo all'errore; in questo esempio la documentazione relativa al tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Non vengono generati link alla documentazione per tutti gli errori.
 
-Rileggendo con attenzione la specifica, ci siamo accorti di avere utilizzato un tag `<img>`, quando invece avremmo dovuto utilizzare un tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Rileggendo con attenzione la specifica, ci siamo accorti di avere utilizzato un tag `<img>`, quando invece avremmo dovuto utilizzare un tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 
-Per comprendere meglio l'elenco completo di potenziali errori, leggi la [guida agli errori di convalida AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+Per comprendere meglio l'elenco completo di potenziali errori, leggi la [guida agli errori di convalida AMP](validation_errors.md).
 Se dopo un'attenta valutazione hai ancora difficoltà, [pubblica una domanda](http://stackoverflow.com/questions/tagged/amp-html) e cercheremo di aiutarti.

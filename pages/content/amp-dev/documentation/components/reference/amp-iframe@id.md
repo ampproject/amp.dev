@@ -34,7 +34,7 @@ Menampilkan iframe.
     <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -76,7 +76,7 @@ Untuk melihat demo `amp-iframe` lainnya, buka [AMP By Example](https://ampbyexam
 
 `amp-iframe` **tidak boleh** digunakan dengan maksud utama untuk menampilkan iklan. Anda BOLEH menggunakan `amp-iframe` untuk menampilkan video, di mana bagian dari video tersebut merupakan iklan. Kebijakan AMP ini dapat diberlakukan dengan tidak merender iframe yang terkait.
 
-Untuk kasus penggunaan iklan, gunakan [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad).
+Untuk kasus penggunaan iklan, gunakan [`amp-ad`](amp-ad.md).
 
 Alasan penggunaan kebijakan ini adalah:
 
@@ -110,7 +110,7 @@ Alasan penggunaan kebijakan ini adalah:
               </tr>
               <tr>
                 <td width="40%"><strong>atribut umum</strong></td>
-                <td>Elemen ini mencakup <a href="https://www.ampproject.org/docs/reference/common_attributes">atribut umum</a> yang diperluas ke komponen AMP.</td>
+                <td>Elemen ini mencakup <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atribut umum</a> yang diperluas ke komponen AMP.</td>
               </tr>
             </table>
 
@@ -221,7 +221,7 @@ Pesan intersection akan dikirim oleh induk ke iframe saat iframe bergerak masuk 
 
 # iframe pelacakan/analisis
 
-Kami sangat merekomendasikan penggunaan [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) untuk keperluan analisis, karena solusi ini jauh lebih tangguh, lengkap, dan efisien yang dapat dikonfigurasi untuk berbagai vendor analisis.
+Kami sangat merekomendasikan penggunaan [`amp-analytics`](amp-analytics.md) untuk keperluan analisis, karena solusi ini jauh lebih tangguh, lengkap, dan efisien yang dapat dikonfigurasi untuk berbagai vendor analisis.
 
 AMP hanya mengizinkan satu iframe yang digunakan untuk keperluan pelacakan dan analisis, per halaman. Untuk menghemat resource, iframe ini akan dihapus dari DOM 5 detik setelah dimuat, yang mestinya cukup untuk menyelesaikan pekerjaan apa pun yang perlu dilakukan.
 
@@ -229,7 +229,7 @@ iframe diidentifikasi sebagai iframe pelacakan/analisis jika tampaknya tidak mem
 
 # Panduan: Prioritaskan komponen AMP yang ada daripada amp-iframe
 
-Komponen `amp-iframe` harus dianggap sebagai fallback jika pengalaman pengguna yang diperlukan tidak dimungkinkan melalui cara lain di AMP; artinya, belum ada [komponen AMP](https://www.ampproject.org/docs/reference/components) untuk kasus penggunaan itu. Hal ini karena ada banyak manfaat dari penggunaan komponen AMP yang disesuaikan dengan kasus penggunaan tertentu seperti:
+Komponen `amp-iframe` harus dianggap sebagai fallback jika pengalaman pengguna yang diperlukan tidak dimungkinkan melalui cara lain di AMP; artinya, belum ada [komponen AMP](../../../documentation/components.md) untuk kasus penggunaan itu. Hal ini karena ada banyak manfaat dari penggunaan komponen AMP yang disesuaikan dengan kasus penggunaan tertentu seperti:
 
 * Pengelolaan dan performa resource yang lebih baik
 * Pada kasus tertentu, komponen kustom dapat memberikan gambar placeholder built-in. Dengan begitu pengguna dapat, misalnya, mendapatkan thumbnail video yang tepat sebelum video dimuat, dan mengurangi upaya coding untuk menambahkan placeholder secara manual.

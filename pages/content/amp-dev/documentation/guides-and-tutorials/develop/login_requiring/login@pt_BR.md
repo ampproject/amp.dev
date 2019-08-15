@@ -15,7 +15,7 @@ Se procurar pelo botão de login no código, você verá o seguinte:
 </span>
 [/sourcecode]
 
-O comportamento de atributos relacionados a [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) dependem de uma configuração em toda a página de [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}). Neste caso, a seguinte:
+O comportamento de atributos relacionados a [`amp-access`](../../../../documentation/components/reference/amp-access.md) dependem de uma configuração em toda a página de [`amp-access`](../../../../documentation/components/reference/amp-access.md). Neste caso, a seguinte:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -65,4 +65,4 @@ Veja abaixo um breve resumo:
 - O tempo de execução de AMP fecha a página de login e faz o redirecionamento para a página especificada pelo parâmetro do URL de retorno.
 - O servidor deve coordenar a resposta assim que o usuário clicar no botão de login.
 
-Dica: Veja uma explicação detalhada sobre esse fluxo na [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
+Dica: Veja uma explicação detalhada sobre esse fluxo na [`amp-access`](../../../../documentation/components/reference/amp-access.md).

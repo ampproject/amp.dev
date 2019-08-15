@@ -24,6 +24,6 @@ AMP プロジェクトでコードに貢献していただく場合は、まず 
 
 [amp.dev](https://amp.dev) は、AMP について幅広く紹介しているウェブサイトです。ドキュメントへの貢献については、[GitHub の ampproject / docs プロジェクト](https://github.com/ampproject/docs)で扱っています（たとえば、[今ご覧になっているページ](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) をよりよくするご提案もしていただけます）。
 
-[ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) では、AMP の使い方の例を紹介しています。このサイトの改良については、[GitHub の amp-by-example プロジェクト](https://github.com/ampproject/amp-by-example/)で扱っています。
+[ampbyexample.com](../../../documentation/examples/index.html) では、AMP の使い方の例を紹介しています。このサイトの改良については、[GitHub の amp-by-example プロジェクト](https://github.com/ampproject/amp-by-example/)で扱っています。
 
 AMP プロジェクトに参加しているユーザーがもっと活動しやすくなるように、その他のドキュメントの改良にもご協力をお願いいたします。その際は、[GitHub の amphtml プロジェクト](https://github.com/ampproject/amphtml)をご覧ください。

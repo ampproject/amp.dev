@@ -41,7 +41,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">amp-video의 클릭하여 재생 오버레이</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">지원되는 레이아웃</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -112,7 +112,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
         <tr>
           <td width="40%"><strong>dock</strong></td>
           <td><strong><code>amp-video-docking</code> 확장 프로그램이 필요합니다.</strong> 이 속성이 있고 동영상을 수동으로 재생하는 경우 사용자가 동영상 구성요소의 시각적 영역 밖으로 스크롤하면 동영상이 '최소화'되고 모서리 또는 요소에 고정됩니다.
-              자세한 내용은 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">도킹 확장 프로그램 자체에 관한 문서</a>를 참조하세요.</td>
+              자세한 내용은 <a href="amp-video-docking.md">도킹 확장 프로그램 자체에 관한 문서</a>를 참조하세요.</td>
           </tr>
           <tr>
             <td width="40%"><strong>loop</strong></td>
@@ -141,7 +141,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
             </tr>
             <tr>
               <td width="40%"><strong>공통 속성</strong></td>
-              <td>이 요소에는 AMP 구성요소로 확장된 <a href="https://www.ampproject.org/docs/reference/common_attributes">공통 속성</a>이 포함됩니다.</td>
+              <td>이 요소에는 AMP 구성요소로 확장된 <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">공통 속성</a>이 포함됩니다.</td>
             </tr>
           </table>
 

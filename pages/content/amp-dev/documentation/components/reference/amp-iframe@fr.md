@@ -34,7 +34,7 @@ Affiche un iFrame.
     <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -76,7 +76,7 @@ Pour regarder d'autres démos du composant `amp-iframe`, rendez-vous sur [AMP By
 
 Le composant `amp-iframe` **ne doit pas** être utilisé principalement dans le but de diffuser de la publicité. Vous pouvez cependant utiliser `amp-iframe` pour afficher des vidéos qui comprennent de la publicité. Cette règle AMP peut être appliquée en n'affichant pas les cadres iFrame respectifs.
 
-Pour la publicité, il est conseillé d'utiliser plutôt le composant [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad).
+Pour la publicité, il est conseillé d'utiliser plutôt le composant [`amp-ad`](amp-ad.md).
 
 Il y a plusieurs raisons à cela :
 
@@ -110,7 +110,7 @@ Il y a plusieurs raisons à cela :
               </tr>
               <tr>
                 <td width="40%"><strong>common attributes</strong></td>
-                <td>Cet élément inclut des <a href="https://www.ampproject.org/docs/reference/common_attributes">attributs communs</a> étendus aux composants AMP.</td>
+                <td>Cet élément inclut des <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">attributs communs</a> étendus aux composants AMP.</td>
               </tr>
             </table>
 
@@ -221,7 +221,7 @@ Le parent envoie le message d'intersection à l'iFrame lorsque ce dernier est d�
 
 # Cadres iFrame de suivi et d'analyse
 
-Nous recommandons vivement d'utiliser [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) à des fins d'analyse, car il s'agit d'une solution beaucoup plus robuste, complète et efficace. Cet outil peut, en outre, être configuré pour un large éventail de fournisseurs de solutions d'analyse.
+Nous recommandons vivement d'utiliser [`amp-analytics`](amp-analytics.md) à des fins d'analyse, car il s'agit d'une solution beaucoup plus robuste, complète et efficace. Cet outil peut, en outre, être configuré pour un large éventail de fournisseurs de solutions d'analyse.
 
 AMP n'autorise qu'un seul iFrame par page, utilisé à des fins d'analyse et de suivi. Pour limiter l'utilisation des ressources, ces cadres iFrame sont supprimés du DOM cinq secondes après leur chargement, soit un temps suffisant pour terminer les tâches qui doivent être accomplies.
 
@@ -229,7 +229,7 @@ Les cadres iFrame sont identifiés en tant que cadres de suivi et d'analyse s'il
 
 # Conseil : Utiliser des composants AMP existants sur amp-iframe
 
-Le composant `amp-iframe` doit être considéré comme une solution de remplacement si l'expérience utilisateur requise n'est pas possible autrement dans AMP ; c'est-à-dire, s'il n'existe pas encore de [composant AMP](https://www.ampproject.org/docs/reference/components) pour le cas d'utilisation. Cela s'explique par le fait que l'utilisation d'un composant AMP adapté à un cas d'utilisation spécifique présente de nombreux avantages. En voici un aperçu :
+Le composant `amp-iframe` doit être considéré comme une solution de remplacement si l'expérience utilisateur requise n'est pas possible autrement dans AMP ; c'est-à-dire, s'il n'existe pas encore de [composant AMP](../../../documentation/components.md) pour le cas d'utilisation. Cela s'explique par le fait que l'utilisation d'un composant AMP adapté à un cas d'utilisation spécifique présente de nombreux avantages. En voici un aperçu :
 
 * Amélioration des performances et de la gestion des ressources.
 * Dans certains cas, les composants personnalisés peuvent fournir des images d'espace réservé intégrées. Cela signifie, par exemple, l'obtention de la miniature vidéo appropriée avant le chargement d'une vidéo, ce qui simplifie les tâches de codage nécessaires pour ajouter manuellement un espace réservé.

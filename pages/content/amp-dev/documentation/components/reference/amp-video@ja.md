@@ -41,7 +41,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">amp-video の Click-to-Play オーバーレイ</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
       <td>fill、fixed、fixed-height、flex-item、nodisplay、responsive</td>
     </tr>
   </table>
@@ -107,7 +107,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
       </tr>
       <tr>
         <td width="40%"><strong>dock</strong></td>
-        <td><strong><code>amp-video-docking</code> 拡張機能が必要です。</strong> この属性が存在していて、動画を手動で再生している場合、ユーザーが動画コンポーネントの表示領域からスクロール アウトすると、動画は「最小化」され、角または要素に固定されます。詳細については、<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">ドッキング拡張機能のドキュメント</a>をご覧ください。</td>
+        <td><strong><code>amp-video-docking</code> 拡張機能が必要です。</strong> この属性が存在していて、動画を手動で再生している場合、ユーザーが動画コンポーネントの表示領域からスクロール アウトすると、動画は「最小化」され、角または要素に固定されます。詳細については、<a href="amp-video-docking.md">ドッキング拡張機能のドキュメント</a>をご覧ください。</td>
       </tr>
       <tr>
         <td width="40%"><strong>loop</strong></td>
@@ -135,7 +135,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
       </tr>
       <tr>
         <td width="40%"><strong>共通の属性</strong></td>
-        <td>この要素には、AMP コンポーネントに拡張された<a href="https://www.ampproject.org/docs/reference/common_attributes">共通の属性</a>が含まれます。</td>
+        <td>この要素には、AMP コンポーネントに拡張された<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">共通の属性</a>が含まれます。</td>
       </tr>
     </table>
 

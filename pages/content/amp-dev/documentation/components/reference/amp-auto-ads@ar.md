@@ -46,7 +46,7 @@ limitations under the License.
   <tr>
     <td class="col-fourty">
     <strong>
-      <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+      <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">
       التنسيقات المعتمدة
       </a>
     </strong>
@@ -94,7 +94,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>السمات المشتركة</strong></td>
-    <td>يتضمن هذا العنصر <a href="https://www.ampproject.org/docs/reference/common_attributes">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
+    <td>يتضمن هذا العنصر <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
   </tr>
 </table>
 

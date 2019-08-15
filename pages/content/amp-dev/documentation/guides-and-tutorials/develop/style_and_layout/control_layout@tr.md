@@ -22,22 +22,22 @@ Düzen özniteliğine ilişkin desteklenen değerlerin tam listesini aşağıda 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>nodisplay</code></td>
       <td class="col-twenty" data-th="Description">Hayır</td>
-      <td data-th="Behavior">Öğe görüntülenmez. Bu düzen, her AMP öğesine uygulanabilir. Bileşenin görüntüleme stili yoksa ekranda hiç alan kaplamaz. Öğenin kendisini kullanıcı etkileşiminde görüntüleyebileceği varsayılır (ör. <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a>).</td>
+      <td data-th="Behavior">Öğe görüntülenmez. Bu düzen, her AMP öğesine uygulanabilir. Bileşenin görüntüleme stili yoksa ekranda hiç alan kaplamaz. Öğenin kendisini kullanıcı etkileşiminde görüntüleyebileceği varsayılır (ör. <a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a>).</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed</code></td>
       <td class="col-twenty" data-th="Description">Evet</td>
-      <td data-th="Behavior">Öğenin, duyarlılığı desteklemeyen sabit bir genişliği ve yüksekliği vardır. Bunun tek istisnası <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}"><code>amp-pixel</code></a> ve <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a> öğeleridir.</td>
+      <td data-th="Behavior">Öğenin, duyarlılığı desteklemeyen sabit bir genişliği ve yüksekliği vardır. Bunun tek istisnası <a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> ve <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a> öğeleridir.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>responsive</code></td>
       <td class="col-twenty" data-th="Description">Evet</td>
-      <td data-th="Behavior">Öğe, kapsayıcı öğesinin genişliğine boyutlandırılmıştır ve yüksekliğini otomatik olarak genişlik ve yükseklik özniteliklerine göre belirlenen en boy göre oranına yeniden boyutlandırır. Bu düzen <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> gibi çoğu AMP öğesi için iyi bir şekilde çalışır. Kullanılabilir alan üst öğeye bağlıdır ve <code>max-width</code> CSS'si kullanılarak da özelleştirilebilir.</td>
+      <td data-th="Behavior">Öğe, kapsayıcı öğesinin genişliğine boyutlandırılmıştır ve yüksekliğini otomatik olarak genişlik ve yükseklik özniteliklerine göre belirlenen en boy göre oranına yeniden boyutlandırır. Bu düzen <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>, <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> gibi çoğu AMP öğesi için iyi bir şekilde çalışır. Kullanılabilir alan üst öğeye bağlıdır ve <code>max-width</code> CSS'si kullanılarak da özelleştirilebilir.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Yalnızca yükseklik</td>
-      <td data-th="Behavior">Öğe, kendi kullanımına sunulan alanı kaplar ancak yüksekliğini değiştirmez. Bu düzen, yatay olarak konumlandırılmış içerik barındıran <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> gibi öğeler için iyi bir şekilde çalışır. <code>width</code> özniteliği mevcut olmamalı veya <code>auto</code> değerine ayarlanmış olmalıdır.</td>
+      <td data-th="Behavior">Öğe, kendi kullanımına sunulan alanı kaplar ancak yüksekliğini değiştirmez. Bu düzen, yatay olarak konumlandırılmış içerik barındıran <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a> gibi öğeler için iyi bir şekilde çalışır. <code>width</code> özniteliği mevcut olmamalı veya <code>auto</code> değerine ayarlanmış olmalıdır.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>
@@ -56,8 +56,8 @@ Düzen özniteliğine ilişkin desteklenen değerlerin tam listesini aşağıda 
 
 Birkaç örnekte, `width` veya `height` belirtilmemişse AMP çalışma zamanı bunları aşağıdaki gibi varsayılan değerlerine ayarlayabilir:
 
-* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}): Genişlik ve yükseklik varsayılan olarak 0 değerine ayarlanır.
-* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}): Varsayılan genişlik ve yükseklik tarayıcıdan belirlenir.
+* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Genişlik ve yükseklik varsayılan olarak 0 değerine ayarlanır.
+* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Varsayılan genişlik ve yükseklik tarayıcıdan belirlenir.
 
 ### Düzen özniteliği tanımlanmamışsa ne olur?
 
@@ -105,7 +105,7 @@ Ekran genişliğine bağlı olarak, resimlerden biri getirilip oluşturulur.
 ## srcset özniteliğini ve boyutları kullanma
 
 Bir öğenin varlıklarını değişen medya ifadelerine dayanarak kontrol etmek için `srcset` özniteliğini kullanın.
-Özellikle bunu, değişen ekran boyutlarına göre hangi resim öğelerinin kullanılacağını belirtmek üzere tüm [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) etiketleri için kullanın.
+Özellikle bunu, değişen ekran boyutlarına göre hangi resim öğelerinin kullanılacağını belirtmek üzere tüm [`amp-img`](../../../../documentation/components/reference/amp-img.md) etiketleri için kullanın.
 
 Bu basit örnekte, `srcset` özniteliği ekran genişliğine göre hangi resmin kullanılacağını belirtir.
 `w` açıklayıcısı, tarayıcıya listedeki her bir resmin genişliğini bildirir:

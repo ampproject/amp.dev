@@ -37,7 +37,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -62,7 +62,7 @@ teaser:
 ```
 
 [tip type="ll callout('继续阅读：</b><a class="type_read"]
-要在灯箱中显示图片，还可使用 [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox) 组件。
+要在灯箱中显示图片，还可使用 [`<amp-image-lightbox>`](amp-image-lightbox.md) 组件。
 [/tip]
 
 ## 属性
@@ -104,7 +104,7 @@ teaser:
 
 ## 操作
 
-`amp-lightbox` 提供以下操作，它们可以使用 [AMP on 语法触发](https://www.ampproject.org/docs/reference/amp-actions-and-events)：
+`amp-lightbox` 提供以下操作，它们可以使用 [AMP on 语法触发](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)：
 
 <table>
   <tr>
@@ -124,10 +124,10 @@ teaser:
 ## <a id="a4a"></a>在 AMPHTML 广告中使用 `amp-lightbox`
 
 [tip type="ll callout('注意：</b><a class="type_note"]
-用于 AMPHTML 广告的 `amp-lightbox` 组件是[实验性组件](https://www.ampproject.org/docs/reference/experimental)，仍处于积极开发阶段。要在 AMPHTML 广告中使用 `amp-lightbox`，请[启用 `amp-lightbox-a4a-proto` 实验](http://cdn.ampproject.org/experiments.html)。
+用于 AMPHTML 广告的 `amp-lightbox` 组件是[实验性组件](../../../documentation/guides-and-tutorials/learn/experimental.md)，仍处于积极开发阶段。要在 AMPHTML 广告中使用 `amp-lightbox`，请[启用 `amp-lightbox-a4a-proto` 实验](http://cdn.ampproject.org/experiments.html)。
 [/tip]
 
-在常规 AMP 文档与在[用 AMPHTML 编写的广告]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})中使用 `amp-lightbox` 存在一些差异：
+在常规 AMP 文档与在[用 AMPHTML 编写的广告](../../../documentation/guides-and-tutorials/learn/a4a_spec.md)中使用 `amp-lightbox` 存在一些差异：
 
 ### 需要使用 close-button
 

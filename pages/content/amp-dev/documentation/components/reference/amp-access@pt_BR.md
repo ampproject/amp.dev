@@ -50,7 +50,7 @@ limitations under the License.
 
 ## Relacionamento com `amp-subscriptions`
 
-A extensão [`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) oferece recursos semelhantes a `amp-access`. No entanto, ela é compatível com um protocolo de paywall de acesso mais especializado. Algumas diferenças notáveis são:
+A extensão [`amp-subscriptions`](amp-subscriptions.md) oferece recursos semelhantes a `amp-access`. No entanto, ela é compatível com um protocolo de paywall de acesso mais especializado. Algumas diferenças notáveis são:
 
 1. A resposta de direitos `amp-subscriptions` é semelhante à autorização de amp-access, mas é definida e padronizada de forma rígida.
 1. A extensão `amp-subscriptions` permite que vários serviços sejam configurados para que a página participe das decisões de acesso/paywall. Eles são executados simultaneamente e priorizados com base no serviço que retorna a resposta positiva.
@@ -509,7 +509,7 @@ A integração com *amp-analytics* está documentada em [amp-access-analytics.md
 
 ## Segurança de origem do CORS
 
-Os endpoints de autorização e pingback são endpoints CORS e precisam implementar o protocolo de segurança descrito nas [Especificações de segurança de AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Os endpoints de autorização e pingback são endpoints CORS e precisam implementar o protocolo de segurança descrito nas [Especificações de segurança de AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 ## Limite
 

@@ -2,13 +2,13 @@
 $title: Cerrar sesión
 ---
 
-El botón para cerrar sesión, igual que el botón para iniciar sesión, se muestra en función del estado del componente [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}):
+El botón para cerrar sesión, igual que el botón para iniciar sesión, se muestra en función del estado del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-Al hacer clic en el botón Cerrar sesión, se redirige a los usuarios a la URL que se haya indicado en la configuración JSON del componente [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}), en el objeto "login":
+Al hacer clic en el botón Cerrar sesión, se redirige a los usuarios a la URL que se haya indicado en la configuración JSON del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md), en el objeto "login":
 
 [sourcecode:json]
 {

@@ -44,7 +44,7 @@ Uzaktan sunulan bir yapılandırma dosyası kullanarak reklamları bir AMP sayfa
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">
             Desteklenen Düzenler
           </a>
         </strong>
@@ -92,7 +92,7 @@ Reklam ağı türü ve (reklam ağının gerektirdiği) ek bilgiler etikette bel
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="https://www.ampproject.org/docs/reference/common_attributes">ortak özellikleri</a> içerir.</td>
+    <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">ortak özellikleri</a> içerir.</td>
   </tr>
 </table>
 

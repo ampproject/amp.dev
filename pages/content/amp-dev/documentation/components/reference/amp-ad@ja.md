@@ -43,7 +43,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js">&lt;/script></code><br>注: amp-ad はこのスクリプトがなくても機能しますが、将来にわたって互換性を維持するためにこのスクリプトを使用することを強くおすすめします。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、intrinsic、nodisplay、responsive</td>
   </tr>
   <tr>
@@ -56,7 +56,7 @@ limitations under the License.
 
 広告は、AMP ドキュメントの他のすべてのリソースと同じように、`<amp-ad>` と呼ばれる特別なカスタム要素とともに読み込まれます。広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別のオリジンから iframe を AMP ドキュメントとして読み込み、広告ネットワークの JavaScript をその iframe サンドボックス内で実行します。
 
-`<amp-ad>` では、そのレイアウト タイプの[ルール](https://www.ampproject.org/docs/design/amp-html-layout#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)に沿って、幅と高さの値を指定する必要があります。また、表示する広告ネットワークを指定する `type` 引数が必要です。タグのすべての `data-*` 属性は、最終的に広告をレンダリングするコードに引数として自動的に渡されます。特定のタイプのネットワークで必要な `data-` 属性は広告ネットワークによって異なるため、広告ネットワークとともに記述する必要があります。
+`<amp-ad>` では、そのレイアウト タイプの[ルール](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)に沿って、幅と高さの値を指定する必要があります。また、表示する広告ネットワークを指定する `type` 引数が必要です。タグのすべての `data-*` 属性は、最終的に広告をレンダリングするコードに引数として自動的に渡されます。特定のタイプのネットワークで必要な `data-` 属性は広告ネットワークによって異なるため、広告ネットワークとともに記述する必要があります。
 
 #### 例: 複数の広告の表示
 
@@ -117,7 +117,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>data-consent-notification-id（オプション）</strong></td>
-    <td>この属性を指定する場合、（Cookie に似た）ユーザーの「AMP クライアント ID」が広告に渡されるまで、指定された HTML ID による <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}">amp-user-notification</a> の確認が必要になります。つまり、ユーザーが通知を確認するまで広告レンダリングが遅延します。</td>
+    <td>この属性を指定する場合、（Cookie に似た）ユーザーの「AMP クライアント ID」が広告に渡されるまで、指定された HTML ID による <a href="amp-user-notification.md">amp-user-notification</a> の確認が必要になります。つまり、ユーザーが通知を確認するまで広告レンダリングが遅延します。</td>
   </tr>
   <tr>
     <td width="40%"><strong>data-loading-strategy（オプション）</strong></td>
@@ -130,13 +130,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>共通の属性</strong></td>
-    <td>この要素には、AMP コンポーネントに拡張された<a href="https://www.ampproject.org/docs/reference/common_attributes">共通の属性</a>が含まれます。</td>
+    <td>この要素には、AMP コンポーネントに拡張された<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">共通の属性</a>が含まれます。</td>
   </tr>
 </table>
 
 ## プレースホルダ
 
-`amp-ad` は必要に応じて、`placeholder` 属性が設定された子要素をサポートします。広告ネットワークでこの子要素がサポートされている場合、広告を表示できるようになるまでこの子要素が表示されます。詳しくは、[プレースホルダとフォールバック](https://www.ampproject.org/docs/guides/responsive/placeholders)をご覧ください。
+`amp-ad` は必要に応じて、`placeholder` 属性が設定された子要素をサポートします。広告ネットワークでこの子要素がサポートされている場合、広告を表示できるようになるまでこの子要素が表示されます。詳しくは、[プレースホルダとフォールバック](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)をご覧ください。
 
 ```html
 <amp-ad width=300 height=250
@@ -163,12 +163,12 @@ limitations under the License.
 
 動画広告で AMP の動画を収益化する方法には次の 3 つがあります。
 
-1. AMP は、広告を収益化できるさまざまな動画プレーヤー（BrightCove、DailyMotion など）を標準でサポートしています。完全なリストについては、[メディア](https://www.ampproject.org/docs/reference/components#media) コンポーネントをご覧ください。
+1. AMP は、広告を収益化できるさまざまな動画プレーヤー（BrightCove、DailyMotion など）を標準でサポートしています。完全なリストについては、[メディア](../../../documentation/components.md#media) コンポーネントをご覧ください。
 
-1. IMA SDK と HTML5 動画プレーヤーが組み込まれている [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) コンポーネントを使用します。
+1. IMA SDK と HTML5 動画プレーヤーが組み込まれている [amp-ima-video](amp-ima-video.md) コンポーネントを使用します。
 1. AMP でサポートされていない動画プレーヤーを使用する場合は、[amp-iframe](https://ampbyexample.com/components/amp-iframe/) を使用してカスタム プレーヤーを提供できます。`amp-iframe` のアプローチを使用する場合は、次のようにします。
 
-    * 最初のビューポートでプレーヤーを読み込む場合は、ポスターがあることを確認します。詳しくは、[こちら](https://www.ampproject.org/docs/reference/components/amp-iframe#iframe-with-placeholder)をご覧ください。
+    * 最初のビューポートでプレーヤーを読み込む場合は、ポスターがあることを確認します。詳しくは、[こちら](amp-iframe.md#iframe-with-placeholder)をご覧ください。
     * 動画とポスターは HTTPS 経由で配信する必要があります。</li>
 
 ## カスタム ドメインからの広告の掲載
@@ -200,7 +200,7 @@ AMP キャッシュの場合は、「ソースオリジン」（cdn.ampproject.o
 
 この機能はあくまでも任意です。広告サーバーへの広告リクエストを作成する前に、広告リクエストを拡張したい場合があります。
 
-広告ネットワークが[高速フェッチ](https://www.ampproject.org/docs/ads/adnetwork_integration#creating-an-amp-ad-implementation)をサポートしている場合は、[リアルタイム設定](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)（RTC）を使用してください（たとえば、DoubleClick と AdSense の統合により、高速フェッチと RTC がサポートされます）。
+広告ネットワークが[高速フェッチ](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad-implementation)をサポートしている場合は、[リアルタイム設定](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)（RTC）を使用してください（たとえば、DoubleClick と AdSense の統合により、高速フェッチと RTC がサポートされます）。
 
 広告ネットワークで遅延フェッチを使用している場合は、[remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html) ファイルで `draw3p` 関数の呼び出しにコールバックを渡すことができます。コールバックは 1 つ目の引数として配信元の設定を受け取り、2 つ目の引数として別のコールバックを受け取ります（以下の例では `done` が呼び出されています）。広告レンダリングを続行するには、設定を更新してこのコールバックを呼び出す必要があります。
 
@@ -267,7 +267,7 @@ AMP 検証ツールの仕様で [amp-ad のルール](https://github.com/ampproj
 * [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
 * [Atomx](https://github.com/ampproject/amphtml/blob/master/ads/atomx.md)
 * [Baidu](https://github.com/ampproject/amphtml/blob/master/ads/baidu.md)
-* [BeOpinion]({{g.doc('/content/amp-dev/documentation/components/reference/amp-beopinion.md', locale=doc.locale).url.path}})
+* [BeOpinion](amp-beopinion.md)
 * [Bidtellect](https://github.com/ampproject/amphtml/blob/master/ads/bidtellect.md)
 * [brainy](https://github.com/ampproject/amphtml/blob/master/ads/brainy.md)
 * [Broadstreet Ads](https://github.com/ampproject/amphtml/blob/master/ads/broadstreetads.md)

@@ -42,7 +42,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -211,7 +211,7 @@ Consulta varios ejemplos en [AMP By Example](https://ampbyexample.com/componen
 
 ## Barra lateral para historias
 
-Se admite el uso de `amp-sidebar` en el [componente](https://www.ampproject.org/stories/) `amp-story`.
+Se admite el uso de `amp-sidebar` en el [componente](../../../about/stories.html) `amp-story`.
 
 ### Comportamiento
 
@@ -239,7 +239,7 @@ En el siguiente ejemplo se muestra un `amp-sidebar` simple dentro del componente
   <amp-story standalone>
   <amp-sidebar id="sidebar1" layout="nodisplay">
     <ul>
-      <li><a href="https://www.ampproject.org"> External Link </a></li>
+      <li><a href="https://amp.dev"> External Link </a></li>
       <li>Nav item 2</li>
       <li>Nav item 3</li>
     </ul>
@@ -282,7 +282,7 @@ Este atributo se encuentra en elementos `<nav toolbar="(media-query)" toolbar-ta
 
 ##### atributos comunes<a name="common"></a>
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que también se usan en componentes AMP.
+Este elemento incluye [atributos comunes](../../../documentation/guides-and-tutorials/learn/common_attributes.md) que también se usan en componentes AMP.
 
 ## Estilo
 

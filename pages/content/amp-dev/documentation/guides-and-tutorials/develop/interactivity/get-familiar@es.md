@@ -35,16 +35,16 @@ El tutorial con código de inicio ([`static/index.html`](https://github.com/goog
 
 Los componentes de AMP ofrecen funcionalidad adicional y componentes de interfaz de usuario que agregan interactividad a las páginas de AMP. El código de inicio utiliza los siguientes componentes de AMP:
 
-- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}): Un carrusel de imágenes que muestra múltiples vistas del producto.
-- [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}): Un sistema de plantillas para procesar las respuestas de los servidores desde amp-form.
-- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}): Añade funcionalidad especial para los elementos `<form>` que son necesarios para las páginas AMP.
-- [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}): Ofrece una forma semántica de seleccionar uno o varios elementos de un grupo de elementos. Puede ser utilizado como una fuente de entrada a amp-form.
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): Un carrusel de imágenes que muestra múltiples vistas del producto.
+- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): Un sistema de plantillas para procesar las respuestas de los servidores desde amp-form.
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md): Añade funcionalidad especial para los elementos `<form>` que son necesarios para las páginas AMP.
+- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): Ofrece una forma semántica de seleccionar uno o varios elementos de un grupo de elementos. Puede ser utilizado como una fuente de entrada a amp-form.
 
 ## Interactividad básica
 
 El código de inicio ofrece alguna interactividad básica:
 
-- El carrusel de imágenes ([`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})) muestra varias vistas del producto.
-- El producto se puede añadir al carrito del usuario (a través de [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})) pulsando el botón "Añadir al carrito" en la parte inferior de la página.
+- El carrusel de imágenes ([`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) muestra varias vistas del producto.
+- El producto se puede añadir al carrito del usuario (a través de [`amp-form`](../../../../documentation/components/reference/amp-form.md)) pulsando el botón "Añadir al carrito" en la parte inferior de la página.
 
 **Pruébalo**: Desliza el carrusel de imágenes y toca el botón "Añadir al carrito".

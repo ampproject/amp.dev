@@ -42,7 +42,7 @@ Sostituisce il tag `video` HTML5. Deve essere utilizzato esclusivamente per gli 
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Overlay click-to-play per amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -112,7 +112,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
         <tr>
           <td width="40%"><strong>dock</strong></td>
           <td><strong>Richiede l'estensione <code>amp-video-docking</code>.</strong> Se questo attributo è presente e il video viene riprodotto manualmente, il video è "ridotto a icona" e fissato a un angolo o a un elemento quando l'utente scorre all'esterno dell'area di visualizzazione del componente video.
-              Per ulteriori informazioni, consulta la <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentazione sull'estensione amp-video-docking</a>.</td>
+              Per ulteriori informazioni, consulta la <a href="amp-video-docking.md">documentazione sull'estensione amp-video-docking</a>.</td>
           </tr>
           <tr>
             <td width="40%"><strong>loop</strong></td>
@@ -141,7 +141,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
             </tr>
             <tr>
               <td width="40%"><strong>common attributes</strong></td>
-              <td>Questo elemento include <a href="https://www.ampproject.org/docs/reference/common_attributes">attributi comuni</a> estesi ai componenti AMP.</td>
+              <td>Questo elemento include <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">attributi comuni</a> estesi ai componenti AMP.</td>
             </tr>
           </table>
 

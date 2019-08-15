@@ -42,7 +42,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -213,7 +213,7 @@ $title: amp-sidebar
 
 ## 故事的边栏
 
-`amp-story` [组件](https://www.ampproject.org/stories/)支持使用 `amp-sidebar`。
+`amp-story` [组件](../../../about/stories.html)支持使用 `amp-sidebar`。
 
 ### 行为
 
@@ -241,7 +241,7 @@ $title: amp-sidebar
   <amp-story standalone>
   <amp-sidebar id="sidebar1" layout="nodisplay">
     <ul>
-      <li><a "href=https://www.ampproject.org">外部链接</a></li>
+      <li><a "href=https://www.amp.dev">外部链接</a></li>
       <li>Nav item 2</li>
       <li>Nav item 3</li>
     </ul>
@@ -284,7 +284,7 @@ $title: amp-sidebar
 
 ##### 常见属性<a name="common"></a>
 
-此元素包含扩展到 AMP 组件的[常见属性](https://www.ampproject.org/docs/reference/common_attributes)。
+此元素包含扩展到 AMP 组件的[常见属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)。
 
 ## 样式设置
 

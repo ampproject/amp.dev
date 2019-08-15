@@ -33,7 +33,7 @@ teaser:
     <td>페이지 조회수를 계산하는 일반 추적 픽셀로 사용할 수 있습니다.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -80,7 +80,7 @@ teaser:
 
 ##### 공통 속성
 
-이 요소에는 AMP 구성요소로 확장된 [공통 속성](https://www.ampproject.org/docs/reference/common_attributes)이 포함됩니다.
+이 요소에는 AMP 구성요소로 확장된 [공통 속성](../../../documentation/guides-and-tutorials/learn/common_attributes.md)이 포함됩니다.
 
 ## 대체
 

@@ -5,7 +5,7 @@ $title: AMP 페이지에서 프로그레시브 웹 앱 미리 로드하기
 **AMP 페이지를 사이트의 진입점으로 만든 다음**, 향후 사용자 여정을 위해 **보이지 않는 곳에서 PWA를 준비**한 후 전환하는 것이 좋습니다.
 
 * 모든 콘텐츠 '리프' 페이지(개요 페이지가 아닌 특정 콘텐츠가 포함된 페이지)는 AMP로 게시되어 거의 즉각적으로 로드됩니다.
-* 이러한 AMP에서는 사용자가 콘텐츠를 즐기는 동안 AMP의 특별 요소인 [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}})를 사용하여 캐시 및 PWA 셸을 준비합니다.
+* 이러한 AMP에서는 사용자가 콘텐츠를 즐기는 동안 AMP의 특별 요소인 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)를 사용하여 캐시 및 PWA 셸을 준비합니다.
 * 사용자가 웹사이트에서 다른 링크(예: 앱과 더욱 비슷한 환경을 제공하기 위한 하단의 클릭 유도문안)를 클릭하면 서비스 워커가 그 요청을 가로채어 페이지를 넘겨받고 PWA 셸을 대신 로드합니다.
 
 계속 읽어나가며 이 개발 패턴을 사용하는 이유와 방법을 알아보세요.
@@ -14,7 +14,7 @@ $title: AMP 페이지에서 프로그레시브 웹 앱 미리 로드하기
 
 ### 초기 사용자 획득을 위한 AMP
 
-AMP는 사용자가 검색 엔진, 친구에게 받은 공유 링크 또는 다른 사이트의 링크를 통해 자연스럽게 발견하는 콘텐츠 페이지인 **리프 페이지**에 이상적인 솔루션입니다. AMP 페이지는 AMP의 [전문 사전 렌더링]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}})을 사용하여 아주 빠르게 로드되며, 따라서 이탈률이 훨씬 낮습니다. 최신 [Doubleclick 연구](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)에 따르면 **전체 사용자 중 53% 이상이 3초 안에 페이지가 로드되지 않으면 이탈**한다고 합니다.
+AMP는 사용자가 검색 엔진, 친구에게 받은 공유 링크 또는 다른 사이트의 링크를 통해 자연스럽게 발견하는 콘텐츠 페이지인 **리프 페이지**에 이상적인 솔루션입니다. AMP 페이지는 AMP의 [전문 사전 렌더링](../../../about/how-amp-works.html)을 사용하여 아주 빠르게 로드되며, 따라서 이탈률이 훨씬 낮습니다. 최신 [Doubleclick 연구](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)에 따르면 **전체 사용자 중 53% 이상이 3초 안에 페이지가 로드되지 않으면 이탈**한다고 합니다.
 
 ### 활발한 상호작용 및 참여를 위한 PWA
 
@@ -28,7 +28,7 @@ AMP를 사용하면 AMP 캐시에서 AMP 페이지가 게시되는 경우에도 
 
 도움말: 아직 서비스 워커에 익숙하지 않다면 Jake Archibald의 [Udacity 교육 과정](https://www.udacity.com/course/offline-web-applications--ud899)을 추천해 드립니다.
 
-먼저 스크립트를 통해 페이지의 `<head>`에 구성요소를 포함하여 [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}})를 사용하는 방법으로 모든 AMP 페이지에 서비스 워커를 설치합니다.
+먼저 스크립트를 통해 페이지의 `<head>`에 구성요소를 포함하여 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)를 사용하는 방법으로 모든 AMP 페이지에 서비스 워커를 설치합니다.
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -70,7 +70,7 @@ self.addEventListener('install', function(event) {
 
 ## AMP 페이지의 모든 링크를 PWA로 연결하기
 
-AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페이지로 연결될 가능성이 높습니다. 첫 로드 이후의 링크 클릭이 프로그레시브 웹 앱으로의 '업그레이드'로 확실하게 이어지도록 하는 데에는 [AMP 사용 방식에 따라]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) 두 가지 전략이 있습니다.
+AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페이지로 연결될 가능성이 높습니다. 첫 로드 이후의 링크 클릭이 프로그레시브 웹 앱으로의 '업그레이드'로 확실하게 이어지도록 하는 데에는 [AMP 사용 방식에 따라](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) 두 가지 전략이 있습니다.
 
 ### 1. 표준 페이지를 AMP 페이지와 연결하는 경우
 
@@ -96,7 +96,7 @@ self.addEventListener('fetch', event => {
 
 이 기술에서 특히 재미있는 점은 이제 점진적 개선을 사용하여 AMP에서 PWA로 이동한다는 것입니다. 하지만 다른 말로 하면 아직 서비스 워커가 지원되지 않는 브라우저를 사용하는 경우 AMP에서 AMP로 이동하고 PWA로 이동하지 않는다는 의미이기도 합니다.
 
-AMP에서는 이 문제를 [셸 URL 재작성],[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}#shell-url-rewrite)이라는방법으로해결합니다.[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md',locale=doc.locale).url.path}}) 태그에 대체 URL 패턴을 추가하면 서비스 워커가 지원되지 않는 경우 AMP가 페이지에서 일치하는 링크를 모두 재작성하여 다른 이전 셸 URL로 연결하도록 할 수 있습니다.
+AMP에서는 이 문제를 [셸 URL 재작성],[`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite)이라는방법으로해결합니다.[`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) 태그에 대체 URL 패턴을 추가하면 서비스 워커가 지원되지 않는 경우 AMP가 페이지에서 일치하는 링크를 모두 재작성하여 다른 이전 셸 URL로 연결하도록 할 수 있습니다.
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -109,4 +109,4 @@ AMP에서는 이 문제를 [셸 URL 재작성],[`amp-install-serviceworker`]({{g
 
 이러한 속성이 있다면 AMP에서 첫 로드 이후 클릭되는 모든 링크는 서비스 워커에 관계없이 PWA로 연결됩니다.
 
-자세히 알아보기: 여기까지 읽어 보셨으니, 기존 AMP 페이지를 재사용하여 PWA를 구축해 보면 어떨까요? 방법은 [이 문서]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})를 참조하세요.
+자세히 알아보기: 여기까지 읽어 보셨으니, 기존 AMP 페이지를 재사용하여 PWA를 구축해 보면 어떨까요? 방법은 [이 문서](amp-in-pwa.md)를 참조하세요.

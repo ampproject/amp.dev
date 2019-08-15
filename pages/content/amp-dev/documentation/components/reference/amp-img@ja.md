@@ -34,7 +34,7 @@ teaser:
     <td>HTML の <code>img</code> タグに代わるランタイム管理コンポーネント。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、intrinsic、nodisplay、responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ teaser:
 
 `amp-img` コンポーネントは、外部で取得されるすべての AMP リソースと同様に、画像を取得しなくてもアスペクト比を把握できるよう、（`width` / `height` のような）明示的なサイズをあらかじめ指定しておく必要があります。実際のレイアウトの動作は `layout` 属性によって決まります。
 
-[tip type="read-on"] レイアウトについて詳しくは、[AMP HTML レイアウト システム]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})の仕様と[サポートされるレイアウト](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute)をご覧ください。
+[tip type="read-on"] レイアウトについて詳しくは、[AMP HTML レイアウト システム](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)の仕様と[サポートされるレイアウト](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)をご覧ください。
 [/tip]
 
 # 例: レスポンシブ画像の表示
@@ -68,10 +68,10 @@ teaser:
 ```
 [/example]
 
-[tip type="read-on"] レスポンシブな AMP ページについて詳しくは、[レスポンシブな AMP ページの作成](https://www.ampproject.org/docs/guides/responsive/responsive_design.html)ガイドをご覧ください。
+[tip type="read-on"] レスポンシブな AMP ページについて詳しくは、[レスポンシブな AMP ページの作成](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)ガイドをご覧ください。
 [/tip]
 
-`amp-img` コンポーネントからリクエストされたリソースを読み込むことができない場合、[`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#fallback) 子要素が指定されている場合を除き、スペースが空白になります。フォールバックは初期レイアウトでのみ実行され、サイズ変更と srcset の設定などが行われた後の src 変更では、パフォーマンスへの影響によりフォールバックは行われません。
+`amp-img` コンポーネントからリクエストされたリソースを読み込むことができない場合、[`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) 子要素が指定されている場合を除き、スペースが空白になります。フォールバックは初期レイアウトでのみ実行され、サイズ変更と srcset の設定などが行われた後の src 変更では、パフォーマンスへの影響によりフォールバックは行われません。
 
 # 例: フォールバック画像の指定
 
@@ -98,8 +98,8 @@ teaser:
 
 [tip type="read-on"] `amp-img` の使用方法について詳しくは、以下のリソースをご覧ください。
 
-* [プレースホルダとフォールバック](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [画像と動画を含める](https://www.ampproject.org/docs/media/amp_replacements)
+* [プレースホルダとフォールバック](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+* [画像と動画を含める](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 [/tip]
 
 # 属性
@@ -116,7 +116,7 @@ teaser:
 
 `img` タグの `sizes` 属性と同じです。
 
-[tip type="read-on"] `sizes` と `srcset` の使用方法については、[srcset、sizes、heights を使ったレスポンシブ画像](https://www.ampproject.org/docs/design/responsive/art_direction)をご覧ください。
+[tip type="read-on"] `sizes` と `srcset` の使用方法については、[srcset、sizes、heights を使ったレスポンシブ画像](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md)をご覧ください。
 [/tip]
 
 **alt**
@@ -133,7 +133,7 @@ teaser:
 
 **共通の属性**
 
-この要素には、AMP コンポーネントに拡張された[共通の属性](https://www.ampproject.org/docs/reference/common_attributes)が含まれます。
+この要素には、AMP コンポーネントに拡張された[共通の属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)が含まれます。
 
 # スタイル設定
 
@@ -165,7 +165,7 @@ amp-img {
 1. `<amp-img>` に `layout=fixed` を設定します。
 1. `width` と `height` を指定します。
 
-[tip type="read-on"] `layout` 属性を指定しない場合は、[推定レイアウト](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?)について確認してください。
+[tip type="read-on"] `layout` 属性を指定しない場合は、[推定レイアウト](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?)について確認してください。
 [/tip]
 
 # アスペクト比を設定する
@@ -189,13 +189,13 @@ amp-img {
 
 同じ画像に対してさまざまな解像度（アスペクト比はすべて同じ）を指定するには、[`srcset`](#attributes) 属性を使用します。ブラウザは、デバイスの画面の解像度と幅に基づいて、`srcset` から最も適切なファイルを自動的に選択します。
 
-一方、[`media`](https://www.ampproject.org/docs/reference/common_attributes#media) 属性は AMP コンポーネントの表示と非表示を切り替えます。レスポンシブ レイアウトをデザインする際には、この属性を使用する必要があります。アスペクト比が異なる複数の画像を表示するのに適した方法は、複数の `<amp-img>` コンポーネントを使用して、それぞれに `media` 属性を指定する方法です。この属性は、各インスタンスを表示する画面の幅と一致するように設定します。
+一方、[`media`](../../../documentation/guides-and-tutorials/learn/common_attributes.md#media) 属性は AMP コンポーネントの表示と非表示を切り替えます。レスポンシブ レイアウトをデザインする際には、この属性を使用する必要があります。アスペクト比が異なる複数の画像を表示するのに適した方法は、複数の `<amp-img>` コンポーネントを使用して、それぞれに `media` 属性を指定する方法です。この属性は、各インスタンスを表示する画面の幅と一致するように設定します。
 
-詳しくは、[レスポンシブ AMP ページの作成](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images)ガイドをご覧ください。
+詳しくは、[レスポンシブ AMP ページの作成](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images)ガイドをご覧ください。
 
 # ディメンションが不明な画像のアスペクト比を維持する
 
-AMP レイアウト システムでは、画像を取得する前にあらかじめ画像のアスペクト比を把握しておく必要がありますが、画像のディメンションがわからないこともあります。ディメンションが不明な画像を表示し、アスペクト比を維持するには、AMP の [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) レイアウトと [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) CSS プロパティを組み合わせて使用します。詳しくは、AMP By Example の[ディメンションが不明な画像に対応する方法](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions)をご覧ください。
+AMP レイアウト システムでは、画像を取得する前にあらかじめ画像のアスペクト比を把握しておく必要がありますが、画像のディメンションがわからないこともあります。ディメンションが不明な画像を表示し、アスペクト比を維持するには、AMP の [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) レイアウトと [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) CSS プロパティを組み合わせて使用します。詳しくは、AMP By Example の[ディメンションが不明な画像に対応する方法](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions)をご覧ください。
 
 # 検証
 

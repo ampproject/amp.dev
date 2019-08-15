@@ -43,7 +43,7 @@ limitations under the License.
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">
             Поддерживаемые макеты
           </a>
         </strong>
@@ -91,7 +91,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Этот элемент содержит <a href="https://www.ampproject.org/docs/reference/common_attributes">распространенные атрибуты</a>, которые поддерживаются компонентами AMP.</td>
+    <td>Этот элемент содержит <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">распространенные атрибуты</a>, которые поддерживаются компонентами AMP.</td>
   </tr>
 </table>
 

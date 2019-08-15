@@ -40,7 +40,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 Los archivos de AMP que incluyan funciones experimentales no superarán la
-[validación de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
+[validación de AMP](validation-workflow/validate_amp.md).
 Quita estos componentes experimentales de los documentos de AMP listos para publicarse.
 
 ## Habilitar experimentos en documentos concretos

@@ -75,7 +75,7 @@ author: sebastianbenz
 </head>
 <body>
   <!-- ## Setting up amp-geo -->
-  <!-- First we need to setup the [`amp-geo`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-geo.md', locale=doc.locale).url.path}}) extension. We'll use the present `eea` which includes all countries of the European Economic Area. -->
+  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo.md) extension. We'll use the present `eea` which includes all countries of the European Economic Area. -->
   <amp-geo layout="nodisplay">
     <script type="application/json">
       {
@@ -88,7 +88,7 @@ author: sebastianbenz
 
   <!-- ## Defining the consent flow -->
   <!--
-    We define a basic consent flow, similar to [this sample]({{g.doc('/content/amp-dev/documentation/examples/documentation/Basic_User_Consent_Flow.html', locale=doc.locale).url.path}}). he flow should only trigger for users in the EU, so we set the flag: `"promptIfUnknownForGeoGroup": "eu"`.
+    We define a basic consent flow, similar to [this sample](/content/amp-dev/documentation/examples/documentation/Basic_User_Consent_Flow.html). he flow should only trigger for users in the EU, so we set the flag: `"promptIfUnknownForGeoGroup": "eu"`.
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
@@ -118,8 +118,8 @@ author: sebastianbenz
   <!--
   You can test different behaviors by appending custom country codes to the URL and enabling the `dev-channel` [here](https://cdn.ampproject.org/experiments.html), for example:
 
-  - EU: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=de]({{g.doc('/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html', locale=doc.locale).url.path}}#amp-geo=de)
-  -  non-EU: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=us]({{g.doc('/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html', locale=doc.locale).url.path}}#amp-geo=us)
+  - EU: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
+  -  non-EU: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)
   -->
 
 </body>

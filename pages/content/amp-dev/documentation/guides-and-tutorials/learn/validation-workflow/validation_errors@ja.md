@@ -20,7 +20,7 @@ limitations under the License.
 
 有効な AMP ドキュメントを作成するには、検証エラーが 1 つもない状態にする必要があります。
 このドキュメントの目的は、
-[AMP ページを検証する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})ときに見つかった検証エラーを
+[AMP ページを検証する](validate_amp.md)ときに見つかった検証エラーを
 正しく理解して修正できるようにすることです。
 検証エラーの概要については、
 [AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 検証ツールの仕様</a>では、上記の必須タグには `mandatory: true` フィールドが含まれています。
-また、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})にも必須タグについての説明があります。
+また、[AMP 仕様](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)にも必須タグについての説明があります。
 
 ### あるタグで必要な別のタグがない
 
@@ -81,7 +81,7 @@ limitations under the License.
 AMP ドキュメント内に拡張コンポーネントが見つかったものの、
 それに相当する `<script>` が見つからない場合です。
 
-[拡張コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})は、
+[拡張コンポーネント](../../../../documentation/components/index.html)は、
 カスタム要素として明示的に AMP ドキュメントに含める必要があります。
 このエラーを修正するには、拡張コンポーネントのリファレンス ページに移動して、
 必要なスクリプトをコピーし、AMP ドキュメントの `<head>` に貼り付けます。
@@ -104,7 +104,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 </table>
 
 タグはホワイトリストに登録されているため、許可されていないタグを網羅したリストはありません。
-ただし、[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})では
+ただし、[AMP 仕様](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)では
 許可されていないタグを大まかに定義しています。
 
 ### カスタム JavaScript が使用されている
@@ -127,7 +127,7 @@ AMP ドキュメント内に拡張コンポーネントが見つかったもの�
 AMP 形式では、AMP プロジェクトが提供している JavaScript ファイルを除いて、ページにカスタムの JavaScript を
 追加することはできません。JavaScript の一般的な用法の多くは、
 AMP HTML ライブラリに対応する実装があります。AMP HTML ページの
-拡張に使用できるコンポーネントについては、[AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
+拡張に使用できるコンポーネントについては、[AMP コンポーネント](../../../../documentation/components/index.html)
 をご覧ください。
 
 ご自分の使用例が取り上げられていない場合は、AMP プロジェクトに
@@ -352,7 +352,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-注: 値のない属性を出力しようとしているのに（たとえば、[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) コンポーネントの `autoplay`、`controls`、`loop` など）、HTML のビルドプロセスで `true` などのデフォルト値（しかし無効な値）が生成される場合は（たとえば、React では、[デフォルトで](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ... と生成されます）、回避策として、属性の名前を値として出力してください。たとえば、`<amp-video autoplay="autoplay" ...>` のようになります。
+注: 値のない属性を出力しようとしているのに（たとえば、[`amp-video`](../../../../documentation/components/reference/amp-video.md) コンポーネントの `autoplay`、`controls`、`loop` など）、HTML のビルドプロセスで `true` などのデフォルト値（しかし無効な値）が生成される場合は（たとえば、React では、[デフォルトで](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ... と生成されます）、回避策として、属性の名前を値として出力してください。たとえば、`<amp-video autoplay="autoplay" ...>` のようになります。
 
 ### URL が指定されていない
 
@@ -463,8 +463,8 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 このエラーは、同時に指定できない 2 つの属性がどちらもタグに含まれている場合に発生します。
 たとえば、次のタグではどちらか 1 つの属性しか指定できません。
 
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` または `srcdoc`
-* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}}): `data-media-id` または `data-playlist-id`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` または `srcdoc`
+* [`amp-jwplayer`](../../../../documentation/components/reference/amp-jwplayer.md): `data-media-id` または `data-playlist-id`
 
 ### リスト内の必須属性がない
 
@@ -487,10 +487,10 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 指定されていない場合に発生します。
 たとえば、次のタグでは 2 つの属性のうちどちらか 1 つを指定する必要があります。
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` または `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` または `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` または `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` または `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` または `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` または `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` または `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` または `data-videoid`
 
 ### 親タグが間違っている
 
@@ -523,7 +523,7 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 * `style` には親タグ `boilerplate (noscript)` が必要
 * `noscript` には親タグ `head` が必要
 * `script` には親タグ `head` が必要
-* `source` にはメディアタグ（[`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})、[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) など）が必要
+* `source` にはメディアタグ（[`amp-audio`](../../../../documentation/components/reference/amp-audio.md)、[`amp-video`](../../../../documentation/components/reference/amp-video.md) など）が必要
 
 ### 祖先にできないタグ
 
@@ -639,8 +639,8 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 
 スタイルとレイアウトのエラーの説明に移る前に、
 AMP での
-[スタイル]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})と
-[レイアウト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})の仕組みを理解しておくことをおすすめします。
+[スタイル](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)と
+[レイアウト](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)の仕組みを理解しておくことをおすすめします。
 AMP ページは HTML ページであるため、スタイルも HTML ページと非常によく似ています。
 ただし、ページの読み込みを高速化するためのいくつかの制限があり、
 AMP 検証ツールではそれらの制限が守られているかどうかをチェックします。
@@ -724,7 +724,7 @@ CSS を実行してみてください。
 
 このエラーは、CSS 内のアットルールに関するものです。
 AMP で使用できるアットルールはごくわずかです
-（[AMP 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})もご覧ください）。
+（[AMP 仕様](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)もご覧ください）。
 たとえば、<code>@import</code> は許可されていません。
 検証エラーでは無効なルールが
 具体的に示されるため、
@@ -754,8 +754,8 @@ AMP で使用できるアットルールはごくわずかです
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
-[レイアウトを設定する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})についての説明や
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})のページをご覧ください。
+[レイアウトを設定する方法](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)についての説明や
+[AMP HTML レイアウト システムの仕様](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)のページをご覧ください。
 
 **注:** レイアウトを指定せず、
 `width` 値と `height` 値も指定しない場合、
@@ -785,7 +785,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、AMP タグのレイアウトが指定されておらず、
 許可されていない属性が暗黙的レイアウトに含まれている場合に発生します。
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})に、
+[AMP HTML レイアウト システムの仕様](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)に、
 許可されていない属性がレイアウト タイプ別に記載されています。
 
 ### 指定されたレイアウトが AMP タグでサポートされていない
@@ -812,8 +812,8 @@ AMP タグで CONTAINER がサポートされていないと、
 
 実際のレイアウトの動作は `layout` 属性によって決まります。
 レイアウトが機能する仕組みについては、
-[レイアウトを設定する方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})についての説明や
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})のページをご覧ください。
+[レイアウトを設定する方法](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)についての説明や
+[AMP HTML レイアウト システムの仕様](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)のページをご覧ください。
 
 ### 指定されたレイアウトで属性が許可されていない
 
@@ -835,7 +835,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、AMP タグのレイアウトが指定されていて、
 そのレイアウトに許可されていない属性が含まれている場合に発生します。
-[AMP HTML レイアウト システムの仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})に、
+[AMP HTML レイアウト システムの仕様](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)に、
 許可されていない属性がレイアウト タイプ別に記載されています。
 
 ### レイアウトで必要な属性の値が無効
@@ -857,7 +857,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、指定されたレイアウトの属性値が無効である場合に発生します。
 このエラーの原因を把握するには、
-[各レイアウトの動作]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements)を
+[各レイアウトの動作](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements)を
 よく理解する必要があります。
 
 たとえば、レイアウトを `fixed-height` に設定し、
@@ -890,19 +890,19 @@ AMP タグで CONTAINER がサポートされていないと、
 たとえば、`<amp-img src="" layout="responsive" width="42px" height="42rem">` と指定すると、
 次のエラー メッセージが表示されます。
 
-「タグ「[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) の幅と高さの単位が一致していません。幅は「px」で指定されていますが、高さは「rem」で指定されています。」
+「タグ「[`amp-img`](../../../../documentation/components/reference/amp-img.md) の幅と高さの単位が一致していません。幅は「px」で指定されていますが、高さは「rem」で指定されています。」
 
 ## テンプレートのエラー
 
 AMP ページにテンプレートの構文を含めることはできません。
 ただし、テンプレートを含めるために
 特別に設計された AMP タグ
-（たとえば [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})）内にあるテンプレートの構文は例外です。
+（たとえば [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md)）内にあるテンプレートの構文は例外です。
 
 ソースファイルから生成された出力にテンプレートが含まれなければ、
 ソースファイルにテンプレートを追加してもかまいません
 （
-[CSS プリプロセッサの使用]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors)についての説明もご覧ください）。
+[CSS プリプロセッサの使用](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors)についての説明もご覧ください）。
 
 ### テンプレートの構文が属性に含まれている
 

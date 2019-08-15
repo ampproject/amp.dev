@@ -23,7 +23,7 @@ $title: Настройка Analytics
 Аналитические инструменты AMP предназначены для того, чтобы измерять один раз и сообщать результаты многим адресатам.
 Если вы уже работаете с одним или несколькими поставщиками аналитических услуг,
 проверьте
-[спецификацию `amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}),
+[спецификацию `amp-analytics`](../../../../documentation/components/reference/amp-analytics.md),
 чтобы узнать, интегрировали ли они свое решение с AMP.
 Если они уже сделали это, просто перейдите к их документации по ссылкам из спецификации
 и начните выполнять соответствующие инструкции.
@@ -43,7 +43,7 @@ $title: Настройка Analytics
 Рассмотрите следующие основные вопросы:
 
 * Будете ли вы отслеживать только просмотры страниц или учитывать также дополнительные модели заинтересованности пользователей
-(см. также [amp-pixel или amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#что-использовать:-amp-pixel-или-amp-analytics?))?
+(см. также [amp-pixel или amp-analytics](analytics_basics.md#что-использовать:-amp-pixel-или-amp-analytics?))?
 * Какого рода данные вы собираетесь отслеживать о своих пользователях, своем контенте, устройстве или браузере
-(см. также [Подстановка переменных]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#подстановка-переменной))?
-* Как вы будете идентифицировать своих пользователей (см. также [Идентификация пользователей]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#идентификация-пользователей))?
+(см. также [Подстановка переменных](analytics_basics.md#подстановка-переменной))?
+* Как вы будете идентифицировать своих пользователей (см. также [Идентификация пользователей](analytics_basics.md#идентификация-пользователей))?

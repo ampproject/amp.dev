@@ -15,7 +15,7 @@ Jika mencari tombol login di kode, Anda akan menemukan:
 </span>
 [/sourcecode]
 
-Perilaku atribut yang terkait dengan [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) bergantung pada konfigurasi di seluruh halaman untuk [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}), dalam kasus ini, adalah contoh berikut:
+Perilaku atribut yang terkait dengan [`amp-access`](../../../../documentation/components/reference/amp-access.md) bergantung pada konfigurasi di seluruh halaman untuk [`amp-access`](../../../../documentation/components/reference/amp-access.md), dalam kasus ini, adalah contoh berikut:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -66,5 +66,5 @@ Sebagai rangkuman singkat:
 - Server harus mengatur respons setelah pengguna mengklik tombol login
 
 [tip type="tip"]
-**TIP –** Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
+**TIP –** Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [`amp-access`](../../../../documentation/components/reference/amp-access.md).
 [/tip]

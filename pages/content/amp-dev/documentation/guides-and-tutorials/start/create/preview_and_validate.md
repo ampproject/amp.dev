@@ -24,5 +24,5 @@ Next, make sure that your AMP page **is actually valid AMP**, or it won’t get 
   1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
 
 [tip type="read-on"]
-**READ ON –** [Learn more about validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}), and what to do when you get errors.
+**READ ON –** [Learn more about validation](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), and what to do when you get errors.
 [/tip]

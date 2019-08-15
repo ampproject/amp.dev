@@ -35,7 +35,7 @@ Carousel generik untuk menampilkan beberapa konten serupa secara bergantian sepa
     <td><code>&lt;script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
     <td>
       <ul>
         <li>carousel: fixed, fixed-height, dan nodisplay.</li>
@@ -212,7 +212,7 @@ Pada contoh berikut, terdapat carousel tiga gambar dengan tombol pratinjau di ba
           </tr>
           <tr>
             <td width="40%"><strong>atribut umum</strong></td>
-            <td>Elemen ini mencakup <a href="https://www.ampproject.org/docs/reference/common_attributes">atribut umum</a> yang diperluas ke komponen AMP.</td>
+            <td>Elemen ini mencakup <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atribut umum</a> yang diperluas ke komponen AMP.</td>
           </tr>
         </table>
 

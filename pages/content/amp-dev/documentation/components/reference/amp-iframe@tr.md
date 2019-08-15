@@ -34,7 +34,7 @@ Bir iframe görüntüler.
     <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -76,7 +76,7 @@ Daha fazla `amp-iframe` demosu için [Örneklerle AMP](https://ampbyexample.com/
 
 `amp-iframe`, reklam görüntülemenin birincil amacı için **kullanılmamalıdır**. `amp-iframe`, reklamların bir parçası olan videoların görüntülenmesi amacıyla kullanılabilir. Bu AMP politikası, ilgili iframe'lerin oluşturulmamasıyla uygulanabilir.
 
-Reklamcılık kullanım alanları, bunun yerine [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad) öğesini kullanmalıdır.
+Reklamcılık kullanım alanları, bunun yerine [`amp-ad`](amp-ad.md) öğesini kullanmalıdır.
 
 Bu politikanın gerekçileri şunlardır:
 
@@ -110,7 +110,7 @@ Bu politikanın gerekçileri şunlardır:
               </tr>
               <tr>
                 <td width="40%"><strong>common attributes</strong></td>
-                <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="https://www.ampproject.org/docs/reference/common_attributes">ortak özellikleri</a> içerir.</td>
+                <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">ortak özellikleri</a> içerir.</td>
               </tr>
             </table>
 
@@ -221,7 +221,7 @@ Kesişim mesajı, iframe kaydırıldığında veya yeniden boyutlandırıldığ�
 
 # İzleme/analiz iframe'leri
 
-Analiz yapmayı amaçladığınızda [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) öğesini kullanmanızı önemle tavsiye ederiz. Bu öğe, çok çeşitli analiz tedarikçi firması için yapılandırılabilen çok daha güçlü, eksiksiz ve etkili bir çözümdür.
+Analiz yapmayı amaçladığınızda [`amp-analytics`](amp-analytics.md) öğesini kullanmanızı önemle tavsiye ederiz. Bu öğe, çok çeşitli analiz tedarikçi firması için yapılandırılabilen çok daha güçlü, eksiksiz ve etkili bir çözümdür.
 
 AMP, her sayfada analiz ve izleme amacıyla yalnızca tek bir iframe'in kullanılmasına izin verir. Kaynaklardan tasarruf etmek için bu iframe'ler yüklendikten 5 saniye sonra DOM'dan kaldırılır. Bu süre, yapılması gereken işlerin tamamlanması için yeterli bir zamandır.
 
@@ -229,7 +229,7 @@ iframe'ler, görünmez veya küçük olmaları gibi kullanıcıya yönelik doğr
 
 # Yönerge: amp-iframe üzerinde mevcut AMP bileşenlerini kullanma
 
-Gerekli kullanıcı deneyimi AMP'deki diğer araçlarla mümkün değilse yani kullanım alanı için halihazırda mevcut bir [AMP bileşeni](https://www.ampproject.org/docs/reference/components) yoksa `amp-iframe` bileşeni, bir yedek olarak kabul edilmelidir. Bunun nedeni, belirli bir kullanım alanı için uyarlanmış bir AMP bileşenini kullanmanın birçok yararının olmasıdır. Örneğin:
+Gerekli kullanıcı deneyimi AMP'deki diğer araçlarla mümkün değilse yani kullanım alanı için halihazırda mevcut bir [AMP bileşeni](../../../documentation/components.md) yoksa `amp-iframe` bileşeni, bir yedek olarak kabul edilmelidir. Bunun nedeni, belirli bir kullanım alanı için uyarlanmış bir AMP bileşenini kullanmanın birçok yararının olmasıdır. Örneğin:
 
 * Daha iyi kaynak yönetimi ve performans
 * Özel bileşenler, bazı durumlarda yerleşik yer tutucu resimler sağlayabilir. Bu, örneğin video yüklenmeden önce doğru video küçük resminin alınması anlamına gelir ve manuel olarak yer tutucu eklemek için yapılan kodlama çalışmasını azaltır.

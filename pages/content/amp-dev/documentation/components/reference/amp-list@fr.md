@@ -36,7 +36,7 @@ Ce composant récupère du contenu de manière dynamique à partir d'un point de
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ Ce composant récupère du contenu de manière dynamique à partir d'un point de
 Le composant `<amp-list>` récupère du contenu de manière dynamique à partir d'un point de terminaison JSON CORS. La réponse du point de terminaison contient des données, lesquelles sont affichées dans le modèle spécifié.
 
 [tip type="important"]
-Votre point de terminaison doit mettre en œuvre les exigences énoncées dans la spécification sur les [requêtes CORS dans AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+Votre point de terminaison doit mettre en œuvre les exigences énoncées dans la spécification sur les [requêtes CORS dans AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 [/tip]
 
 Vous pouvez spécifier un modèle de deux façons différentes :
@@ -62,7 +62,7 @@ Pour en savoir plus sur les modèles, reportez-vous à la section [Modèles AMP�
 
 *Exemple : Affichage d'une liste dynamique*
 
-Dans l'exemple suivant, nous allons récupérer des données JSON contenant des URL et des titres, et afficher le contenu dans un modèle [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) imbriqué.
+Dans l'exemple suivant, nous allons récupérer des données JSON contenant des URL et des titres, et afficher le contenu dans un modèle [amp-mustache](amp-mustache.md) imbriqué.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -83,25 +83,25 @@ Voici le fichier JSON que nous avons utilisé :
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 Le contenu récupéré a été mis en forme comme suit :
 
@@ -174,7 +174,7 @@ L'utilisation d'espaces réservés et/ou de créations de remplacement est possi
 * Un *espace réservé* est un élément enfant contenant l'attribut `placeholder`. Cet élément est affiché jusqu'au chargement du composant `<amp-list>`. Si une création de remplacement est également fournie, l'espace réservé est masqué en cas d'échec de chargement du composant `<amp-list>`.
 * Une *création de remplacement* est un élément enfant contenant l'attribut `fallback`. Cet élément est affiché en cas d'échec de chargement du composant `<amp-list>`.
 
-Pour en savoir plus sur les espaces réservés et les créations de remplacement, [cliquez ici](https://www.ampproject.org/docs/guides/responsive/placeholders). Notez qu'un élément enfant ne peut pas être à la fois un espace réservé et une création de remplacement.
+Pour en savoir plus sur les espaces réservés et les créations de remplacement, [cliquez ici](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). Notez qu'un élément enfant ne peut pas être à la fois un espace réservé et une création de remplacement.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -224,10 +224,10 @@ Cette action est disponible à titre expérimental sous `amp-list-resizable-chil
 URL du point de terminaison distant qui renvoie le fichier JSON qui sera affiché dans cet élément `<amp-list>`. Il doit s'agir d'un service HTTP CORS. L'URL doit utiliser le protocole HTTPS.
 
 [tip type="important"]
-Votre point de terminaison doit mettre en œuvre les exigences énoncées dans la spécification sur les [requêtes CORS dans AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+Votre point de terminaison doit mettre en œuvre les exigences énoncées dans la spécification sur les [requêtes CORS dans AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 [/tip]
 
-L'attribut `src` peut être omis si l'attribut `[src]` est présent. Cela s'avère utile si le contenu est affiché à la suite d'un geste de l'utilisateur plutôt que lors du chargement de la page lorsque le composant [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind) est utilisé.
+L'attribut `src` peut être omis si l'attribut `[src]` est présent. Cela s'avère utile si le contenu est affiché à la suite d'un geste de l'utilisateur plutôt que lors du chargement de la page lorsque le composant [`amp-bind`](amp-bind.md) est utilisé.
 
 ##### credentials (facultatif)
 
@@ -236,7 +236,7 @@ Définit une option `credentials` telle qu'elle est spécifiée par l'[API Fetch
 * Valeurs acceptées : `omit`, `include`
 * Valeur par défaut : `omit`
 
-Pour envoyer des identifiants, transmettez la valeur `include`. Si cette valeur est définie, la réponse doit respecter les [consignes de sécurité CORS dans AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Pour envoyer des identifiants, transmettez la valeur `include`. Si cette valeur est définie, la réponse doit respecter les [consignes de sécurité CORS dans AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 Dans l'exemple ci-dessous, l'insertion d'identifiants est spécifiée pour afficher du contenu personnalisé dans une liste :
 
@@ -419,7 +419,7 @@ Cet élément n'est pas fourni par défaut. Cependant, si un élément `<amp-lis
 
 ##### common attributes
 
-Cet élément inclut des [attributs communs](https://www.ampproject.org/docs/reference/common_attributes) étendus aux composants AMP.
+Cet élément inclut des [attributs communs](../../../documentation/guides-and-tutorials/learn/common_attributes.md) étendus aux composants AMP.
 
 ## Substitutions
 

@@ -5,7 +5,7 @@ $title: 사이트 탐색
 대부분의 모바일 웹사이트에는 사이트 탐색 메뉴가 포함되어 있습니다. 탐색 메뉴는 형식이 매우 다양합니다. 이 가이드에서는 아래 예시를 통해 AMP 페이지에 탐색 메뉴를 추가해 보겠습니다.
 
 - 가장 단순한 옵션인 홈페이지로 돌아가기 링크
-- [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 구성요소를 사용한 측면 탐색 메뉴
+- [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 구성요소를 사용한 측면 탐색 메뉴
 
 ## 홈으로 돌아가기 링크
 
@@ -56,9 +56,9 @@ article {
 
 ## 사이드바로 탐색
 
-페이지 측면에 메뉴 아이콘을 추가하여 이 아이콘을 클릭하면 일련의 탐색 링크가 표시되도록 하는 탐색 기술이 많이 쓰이고 있습니다. AMP에서는 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 구성요소를 사용하여 이러한 탐색 메뉴를 만들 수 있습니다.
+페이지 측면에 메뉴 아이콘을 추가하여 이 아이콘을 클릭하면 일련의 탐색 링크가 표시되도록 하는 탐색 기술이 많이 쓰이고 있습니다. AMP에서는 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 구성요소를 사용하여 이러한 탐색 메뉴를 만들 수 있습니다.
 
-먼저 다음과 같이 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 구성요소의 자바스크립트를 `<head>` 태그에 **추가**해야 합니다.
+먼저 다음과 같이 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 구성요소의 자바스크립트를 `<head>` 태그에 **추가**해야 합니다.
 
 ```html
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -73,7 +73,7 @@ article {
 </header>
 ```
 
-위의 코드에서는 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 요소의 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 액션 속성으로 사이드바를 `전환`합니다. 이 요소는 `sidebar1` ID로 표시되어 있습니다.  사이드바를 추가해 보겠습니다.
+위의 코드에서는 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 요소의 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 액션 속성으로 사이드바를 `전환`합니다. 이 요소는 `sidebar1` ID로 표시되어 있습니다.  사이드바를 추가해 보겠습니다.
 
 `</header>` 바로 뒤에 다음 HTML을 **추가**하세요.
 

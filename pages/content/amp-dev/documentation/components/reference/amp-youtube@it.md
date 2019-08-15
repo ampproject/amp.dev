@@ -35,7 +35,7 @@ Mostra un video di [YouTube](https://www.youtube.com/).
     <td><code>&lt;script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -111,7 +111,7 @@ Grazie al layout adattabile, la larghezza e l'altezza dell'esempio dovrebbero pr
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Richiede l'estensione <code>amp-video-docking</code>.</strong> Se questo attributo è presente e il video viene riprodotto manualmente, il video viene "ridotto a icona" e fissato a un angolo o un elemento quando l'utente scorre all'esterno dell'area di visualizzazione del componente video.
-            Per ulteriori informazioni, consulta la <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentazione relativa all'estensione amp-video-docking</a>.</td>
+            Per ulteriori informazioni, consulta la <a href="amp-video-docking.md">documentazione relativa all'estensione amp-video-docking</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials (facoltativo)</strong></td>
@@ -125,7 +125,7 @@ Grazie al layout adattabile, la larghezza e l'altezza dell'esempio dovrebbero pr
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Questo elemento include <a href="https://www.ampproject.org/docs/reference/common_attributes">attributi comuni</a> estesi ai componenti AMP.</td>
+            <td>Questo elemento include <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">attributi comuni</a> estesi ai componenti AMP.</td>
           </tr>
         </table>
 

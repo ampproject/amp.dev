@@ -30,17 +30,17 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>説明</strong></td>
-    <td>任意の要素に AMP の高度な<a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">レイアウト</a>機能を適用できる汎用の多目的コンテナ要素。</td>
+    <td>任意の要素に AMP の高度な<a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">レイアウト</a>機能を適用できる汎用の多目的コンテナ要素。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>container、fill、fixed、fixed-height、flex-item、intrinsic、responsive</td>
   </tr>
 </table>
 
 ## 概要
 
-`amp-layout` コンポーネントを使用すると、任意の要素にアスペクト比ベースのレスポンシブ レイアウトを適用できます。`amp-layout` コンポーネントは、既存の AMP コンポーネントの [layout](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) 属性と同様の機能を果たしますが、任意の HTML マークアップを子としてサポートすることができます。他のサポート対象レイアウトはすべて、`amp-layout` と連携できます（fixed-height、fixed など）。
+`amp-layout` コンポーネントを使用すると、任意の要素にアスペクト比ベースのレスポンシブ レイアウトを適用できます。`amp-layout` コンポーネントは、既存の AMP コンポーネントの [layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) 属性と同様の機能を果たしますが、任意の HTML マークアップを子としてサポートすることができます。他のサポート対象レイアウトはすべて、`amp-layout` と連携できます（fixed-height、fixed など）。
 
 **例**
 
@@ -57,7 +57,7 @@ $title: amp-layout
 
 ## 属性
 
-この要素には、AMP コンポーネントに拡張された[共通の属性](https://www.ampproject.org/docs/reference/common_attributes)が含まれます。
+この要素には、AMP コンポーネントに拡張された[共通の属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)が含まれます。
 
 ## 検証
 

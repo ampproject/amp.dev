@@ -44,7 +44,7 @@ Memasukkan iklan secara dinamis ke halaman AMP dengan menggunakan file konfigura
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">
             Tata Letak yang Didukung
           </a>
         </strong>
@@ -91,7 +91,7 @@ Jenis jaringan iklan dan informasi tambahan apa pun (yang diperlukan oleh jaring
   </tr>
   <tr>
     <td width="40%"><strong>atribut umum</strong></td>
-    <td>Elemen ini mencakup <a href="https://www.ampproject.org/docs/reference/common_attributes">atribut umum</a> yang diperluas ke komponen AMP.</td>
+    <td>Elemen ini mencakup <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atribut umum</a> yang diperluas ke komponen AMP.</td>
   </tr>
 </table>
 

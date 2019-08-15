@@ -33,21 +33,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>مدى التوفّر</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">تجريبي</a></div></td>
+    <td><div><a href="../../../documentation/guides-and-tutorials/learn/experimental.md">تجريبي</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>النص البرمجي المطلوب</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>لا شيء</td>
   </tr>
   <tr>
     <td width="40%"><strong>أمثلة</strong></td>
     <td><ul>
       <li>يمكنك الاطلّاع على مثال <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> في الموقع "AMP بالمثال".</li>
-      <li>يمكنك التعلم من البرنامج التعليمي <a href="https://www.ampproject.org/docs/tutorials/visual_story">إنشاء سجل AMP مرئي</a>.</li>
+      <li>يمكنك التعلم من البرنامج التعليمي <a href="../../../documentation/guides-and-tutorials/start/visual_story/index.md">إنشاء سجل AMP مرئي</a>.</li>
     </ul></td>
   </tr>
 </table>
@@ -258,7 +258,7 @@ teaser:
 
 ### الترميز المطلوب للعنصر amp-story
 
-يتّبع تنسيق HTML لسجلات AMP [متطلبات الترميز نفسها لمستند صالح برمز HTML لصفحات AMP](https://www.ampproject.org/docs/reference/spec#required-markup)، إلى جانب المتطلبات الإضافية التالية:
+يتّبع تنسيق HTML لسجلات AMP [متطلبات الترميز نفسها لمستند صالح برمز HTML لصفحات AMP](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup)، إلى جانب المتطلبات الإضافية التالية:
 
 | القاعدة | الوصف |
 |----|---|
@@ -731,7 +731,7 @@ teaser:
     <div class="content" grid-area="lower-third">Paragraph 3</div>
   </amp-story-grid-layer>
   <amp-story-cta-layer>
-    <a href="https://www.ampproject.org" class="button">Outlink here!</a>
+    <a href="https://amp.dev" class="button">Outlink here!</a>
   </amp-story-cta-layer>
 </amp-story-page>
 ```
@@ -1288,9 +1288,9 @@ url: "example.com/subscribe"
 
 عند الحاجة إلى معلَمات إضافية، يجب استخدام كائن له أزواج المفتاح/القيمة. يجب أن يحتوي الكائن على `provider` رئيسي بقيمة (مثل `facebook`) يتوافق مع اسم الموفر. تعتمد أزواج المفتاح/القيمة التالية على موفر خدمة المشاركة.
 
-قائمة الموفرين المتاحين هي نفس القائمة للمكوِّن [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share).
+قائمة الموفرين المتاحين هي نفس القائمة للمكوِّن [amp-social-share](amp-social-share.md).
 
-يحتوي كل من هؤلاء الموفرين على مجموعة مختلفة من المعلَمات المتاحة ([اطّلع على `data-param-*`](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). يأخذ كائن التهيئة هذه المعلَمات بدون البادئة `data-param-` (مثال: ستظهر `data-param-app_id` في كائن التهيئة باسم `app_id`).
+يحتوي كل من هؤلاء الموفرين على مجموعة مختلفة من المعلَمات المتاحة ([اطّلع على `data-param-*`](amp-social-share.md#data-param-%2a)). يأخذ كائن التهيئة هذه المعلَمات بدون البادئة `data-param-` (مثال: ستظهر `data-param-app_id` في كائن التهيئة باسم `app_id`).
 
 #### التهيئة JSON
 
@@ -1335,10 +1335,10 @@ url: "example.com/subscribe"
 
 في ما يلي المكونات الأخرى التي يمكن استخدامها في سجلات AMP والتي تتطلب بعض التحذيرات الخاصة بالسجل.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar](amp-sidebar.md#sidebar-for-stories)
+* [amp-consent](amp-consent.md#prompt-ui-for-stories)
 
-لمعرفة المزيد عن المكونات المستخدَمة عمومًا، يمكنك الاطّلاع على [قائمة العناصر الثانوية المسموح بها](https://www.ampproject.org/docs/reference/components/amp-story#children).
+لمعرفة المزيد عن المكونات المستخدَمة عمومًا، يمكنك الاطّلاع على [قائمة العناصر الثانوية المسموح بها](amp-story.md#children).
 
 ## التحقق
 
@@ -1375,8 +1375,8 @@ url: "example.com/subscribe"
 
 ## موارد ذات الصلة
 
-* [البرنامج التعليمي: إنشاء سجلّ AMP مرئي](https://www.ampproject.org/docs/tutorials/visual_story)
+* [البرنامج التعليمي: إنشاء سجلّ AMP مرئي](../../../documentation/guides-and-tutorials/start/visual_story/index.md)
 * [أمثلة من موقع "AMP بالمثال"](https://ampbyexample.com/stories/#stories/introduction)
-* [أفضل الممارسات لإنشاء سجلّ AMP](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [أفضل الممارسات لإنشاء سجلّ AMP](../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 </amp-story></body>

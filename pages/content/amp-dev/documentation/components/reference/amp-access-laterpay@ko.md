@@ -24,7 +24,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-게시자가 [LaterPay](https://www.laterpay.net) 소액결제 플랫폼과 손쉽게 통합할 수 있습니다. `amp-access-laterpay`는 [AMP 액세스](https://www.ampproject.org/docs/reference/components/amp-access)를 기반으로 하며 AMP 액세스가 필요합니다.
+게시자가 [LaterPay](https://www.laterpay.net) 소액결제 플랫폼과 손쉽게 통합할 수 있습니다. `amp-access-laterpay`는 [AMP 액세스](amp-access.md)를 기반으로 하며 AMP 액세스가 필요합니다.
 
 <table>
   <tr>
@@ -69,7 +69,7 @@ AMP 액세스와 함께 사용하려는 자체 페이월 서비스가 있고 동
 
 생성된 목록은 게시자의 환경설정에 따라 스타일이 지정되고 표시될 수 있습니다.
 
-또한 이 구성요소는 [액세스 콘텐츠 마크업](https://www.ampproject.org/docs/reference/components/amp-access#access-content-markup)을 사용해 콘텐츠를 표시하고 숨깁니다.
+또한 이 구성요소는 [액세스 콘텐츠 마크업](amp-access.md#access-content-markup)을 사용해 콘텐츠를 표시하고 숨깁니다.
 
 ## 구성
 
@@ -138,7 +138,7 @@ AMP 액세스와 함께 사용하려는 자체 페이월 서비스가 있고 동
         <tr>
           <td><code>sandbox</code></td>
           <td>부울</td>
-          <td>샌드박스 모드를 사용해 서버 구성을 테스트하는 경우에만 필요합니다. AMP의 <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">개발 모드</a>도 사용해야 합니다.</td>
+          <td>샌드박스 모드를 사용해 서버 구성을 테스트하는 경우에만 필요합니다. AMP의 <a href="../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#amp-runtime">개발 모드</a>도 사용해야 합니다.</td>
         </tr>
       </table>
 
@@ -272,7 +272,7 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
 
 ## 애널리틱스
 
-`amp-access-laterpay`는 `amp-access` 기반이므로 `amp-access`에서 보낸 모든 [애널리틱스 이벤트](https://www.ampproject.org/docs/reference/components/amp-access#integration-with-amp-analytics)를 지원합니다.
+`amp-access-laterpay`는 `amp-access` 기반이므로 `amp-access`에서 보낸 모든 [애널리틱스 이벤트](amp-access.md#integration-with-amp-analytics)를 지원합니다.
 
 [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/)의 예는 모두 실제 작동 방식에 관한 더 완전한 예를 보려는 경우 이러한 애널리틱스 이벤트를 보내도록 구성되어 있습니다.
 
@@ -280,9 +280,9 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
 
 기존 구독 시스템이 있고 개별 기사 판매에만 LaterPay를 사용하려는 경우 AMP 액세스와 AMP 액세스 LaterPay를 함께 사용하여 동일한 페이지에 두 가지 판매 방법을 동시에 사용할 수 있습니다.
 
-먼저 기존 페이월과 함께 AMP 액세스를 구성하는 방법을 알아보려면 [AMP 액세스](https://www.ampproject.org/docs/reference/components/amp-access) 문서를 참조하세요.
+먼저 기존 페이월과 함께 AMP 액세스를 구성하는 방법을 알아보려면 [AMP 액세스](amp-access.md) 문서를 참조하세요.
 
-[여러 제공업체](https://www.ampproject.org/docs/reference/components/amp-access#multiple-access-providers) 섹션에서는 네임스페이스로 여러 제공업체를 설정하는 방법을 설명합니다.
+[여러 제공업체](amp-access.md#multiple-access-providers) 섹션에서는 네임스페이스로 여러 제공업체를 설정하는 방법을 설명합니다.
 
 LaterPay 및 기존 페이월 통합과 함께 사용하는 경우 필수 구성 형식은 다음과 같을 수 있습니다.
 
@@ -337,7 +337,7 @@ LaterPay 및 기존 페이월 통합과 함께 사용하는 경우 필수 구성
 
 ## 관련 문서
 
-* [AMP 액세스](https://www.ampproject.org/docs/reference/components/amp-access)
+* [AMP 액세스](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: 소액결제 작동 원리](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay 커넥터](https://connectormwi.laterpay.net/docs/index.html): AMP 액세스 LaterPay와 비슷하지만 AMP가 아닌 페이지를 위한 것입니다.

@@ -15,7 +15,7 @@ $title: ログイン
 </span>
 [/sourcecode]
 
-[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) に関連する属性の動作は、[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) に対してページ全体で適用される設定に依存します。ここでは次のようになります。
+[`amp-access`](../../../../documentation/components/reference/amp-access.md) に関連する属性の動作は、[`amp-access`](../../../../documentation/components/reference/amp-access.md) に対してページ全体で適用される設定に依存します。ここでは次のようになります。
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -65,4 +65,4 @@ AMPByExample サーバーがログインページから POST リクエストを�
 - AMP ランタイムはログインページを閉じて、return URL パラメータで指定されたページにリダイレクトします
 - ユーザーがログインボタンをクリックすると、サーバーはレスポンスを調整する必要があります
 
-ヒント: このフローの詳細については、[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})をご覧ください。
+ヒント: このフローの詳細については、[`amp-access`](../../../../documentation/components/reference/amp-access.md)をご覧ください。
