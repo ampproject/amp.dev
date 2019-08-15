@@ -13,3 +13,12 @@ teaser:
     alt: Text Only
 
   download_url: '/static/files/templates/text.zip'
+  template_demo_home: 'ads/text/text.html'
+  template_github_home: 'ads/text'
+ 
+document:
+  pages: /content/amp-dev/documentation/templates/text/pages
+  description: Simple story with text that fades in.
+
+url:
+  path: '/documentation/templates/text'
