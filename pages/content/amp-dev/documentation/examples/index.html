@@ -197,7 +197,17 @@ recent_examples:
           <p>
             Try it yourself with the AMP Playground. Test your ideas directly in the browser and get instant feedback.
           </p>
-          <a class="ap-m-lnk ap-m-lnk-square" href="https://playground.amp.dev/">
+          <a class="ap-m-lnk ap-m-lnk-square"
+             [% if format == 'websites' %]
+             href="https://playground.amp.dev/"
+             [% elif format == 'stories' %]
+             href="https://playground.amp.dev/?runtime=amp4stories"
+             [% elif format == 'ads' %]
+             href="https://playground.amp.dev/?runtime=amp4ads"
+             [% elif format == 'email' %]
+             href="https://playground.amp.dev/?runtime=amp4email"
+             [% endif %]
+             >
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
