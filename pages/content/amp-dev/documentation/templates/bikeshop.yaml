@@ -13,7 +13,7 @@ teaser:
     alt: Bike Shop
 
   download_url: '/static/files/templates/e-commerce.zip'
-  template_demo_home: 'e-commerce/templates/landing.amp.html'
+  template_demo_home: 'websites/e-commerce/templates/landing.amp.html'
   template_github_home: 'websites/e-commerce'
  
 document:

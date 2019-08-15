@@ -13,7 +13,7 @@
   <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-    {% if doc.stage and doc.state.layout %}
+    {% if doc.stage and doc.stage.layout %}
       {% set layout = doc.stage.layout %}
     {% else %}
       {% set layout = '' %}
@@ -69,7 +69,7 @@
     {% endif %}
   </section>
 
-  {% if doc.document %}
+  {% if doc.document and doc.document.pages %}
     {% set collection = g.collection(doc.document.pages).list_docs(locale=doc.locale) %}
   {% endif %}
 
@@ -93,7 +93,7 @@
           {% if doc.teaser.demo_url %}
             {% set demo_url = doc.teaser.demo_url %}
           {% else %}
-            {% set demo_url = '/documentation/templates/preview/websites/' + doc.teaser.template_demo_home %}
+            {% set demo_url = '/documentation/templates/preview/' + doc.teaser.template_demo_home %}
           {% endif %}
           <a href="{{ demo_url }}" rel="noopener" class="ap-m-lnk">
             <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
