@@ -12,12 +12,18 @@
 @import '_variables.scss';
 
 .#{molecule('search-trigger')} {
-  padding: 0 20px 9px 0;
+  margin: 0 20px 9px 0;
+  padding: 5px 0;
+
+  .#{organism('header')} & {
+      padding: 0;
+  }
 
   &-close {
     position: absolute;
     right: 2rem;
     top: 10rem;
+    z-index: 1;
   }
 
   &-icon {
