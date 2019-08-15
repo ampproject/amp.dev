@@ -12,7 +12,7 @@
 
 <div id="searchLayer" class="ap-o-search" tabindex="-1">
   <div class="ap-o-search-container">
-    <div class="ap-m-search-trigger ap-m-search-trigger-close" on="tap:searchLayer.toggleClass(class='active'),searchTriggerOpen.focus" role="button" tabindex="0">
+    <div class="ap-m-search-trigger ap-m-search-trigger-close" on="tap:searchLayer.toggleClass(class='active'),searchTriggerOpen.focus,AMP.setState({ query: '' })" role="button" tabindex="0">
       <div class="ap-a-ico ap-m-search-trigger-icon">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
       </div>
@@ -20,8 +20,17 @@
 
   {% raw %}
   <template id="search_results_template" type="amp-mustache">
+
+    {{^prevUrl}}
+    <p class="ap-o-search-info">{{result.totalResults}} {% endraw %}{{_('results found')}}{% raw %}</p>
+    {{/prevUrl}}
+
     <div class="ap-o-search-result-list">
-      <h3 class="ap-o-search-result-category">Components</h3>
+      {{^prevUrl}}
+      {{#result.components.length}}
+      <h3 class="ap-o-search-result-category">{% endraw %}{{_('Components')}}{% raw %}</h3>
+      {{/result.components.length}}
+      {{/prevUrl}}
       {{#result.components}}
       <div class="ap-o-search-result-item">
         <a class="ap-o-search-result-link" href="{{url}}">
@@ -34,7 +43,7 @@
             <div class="ap-a-ico ap-m-lnk-icon">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ap-m-lnk-text">Open example</span>
+            <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
           </a>
           {{-/exampleUrl-}}
           {{-#playgroundUrl-}}
@@ -42,14 +51,18 @@
             <div class="ap-a-ico ap-m-lnk-icon">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ap-m-lnk-text">Open in playground</span>
+            <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
           </a>
           {{-/playgroundUrl-}}
         </div>
       </div>
       {{/result.components}}
 
-      <h3 class="ap-o-search-result-category">Examples</h3>
+      {{^prevUrl}}
+      {{#result.pages.length}}
+      <h3 class="ap-o-search-result-category">{% endraw %}{{_('Examples')}}{% raw %}</h3>
+      {{/result.pages.length}}
+      {{/prevUrl}}
       {{#result.pages}}
       <div class="ap-o-search-result-item">
         <a class="ap-o-search-result-link" href="{{url}}">
@@ -59,6 +72,12 @@
       </div>
       {{/result.pages}}
     </div>
+
+    {{#result.isTruncated}}
+    <div class="ap-o-search-result-load-hint">
+      {% endraw %}{{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}{% raw %}
+    </div>
+    {{/result.isTruncated}}
   </template>
   {% endraw %}
 
@@ -77,7 +96,7 @@
           <input id="searchInput"
                  class="ap-o-search-input"
                  name="q"
-                 placeholder="What are you looking for?"
+                 placeholder="{{_('What are you looking for?')}}"
                  on="input-debounced:AMP.setState({ query: event.value })"
                  required
           >
@@ -85,16 +104,14 @@
 
         <input name="locale" type="hidden" value="{{ doc.locale }}">
 
-        <p [text]="search.result.totalResults + ' results found'" class="ap-o-search-info"></p>
-
         <div submit-error>
-          An internal server error occurred while trying to load the search results.<br>
-          We apologize for the inconvenience caused.<br>
-          Please try again later.
+          {{_('An internal server error occurred while trying to load the search results.')}}<br>
+          {{_('We apologize for the inconvenience caused.')}}<br>
+          {{_('Please try again later.')}}
         </div>
       </form>
 
-      <div class="ap-o-search-result">
+      <div class="ap-o-search-result" [hidden]="query.length == 0">
 
         <amp-state id="search" [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
         <amp-list [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
@@ -112,50 +129,67 @@
         >
           <amp-list-load-more load-more-button>
             <div class="ap-o-search-result-load-button" overflow>
-              <button class="ap-a-btn">Load more</button>
+              <button class="ap-a-btn">{{_('Load more')}}</button>
             </div>
           </amp-list-load-more>
 
           <amp-list-load-more class="ap-o-search-result-load-hint" load-more-failed>
-            An internal server error occurred while trying to load more search results.<br>
-            We apologize for the inconvenience caused.<br>
-            Please try again later.
+            {{_('An internal server error occurred while trying to load more search results.')}}<br>
+            {{_('We apologize for the inconvenience caused.')}}<br>
+            {{_('Please try again later.')}}
           </amp-list-load-more>
 
           <amp-list-load-more class="ap-o-search-result-load-hint" load-more-end>
-            You have reached the end of the results.
+            {{_('You have reached the end of the results.')}}
           </amp-list-load-more>
         </amp-list>
 
-        <div class="ap-o-search-result-load-hint" [hidden]="search.result.totalResults <= 100" hidden>
-          Although there are <span [text]="search.result.totalResults">&gt; 100</span> hits in total we can not show more than 100.
-        </div>
       </div>
     </div>
 
-    <div [hidden]="query.length" class="ap-o-search-result-list">
-      <h3 class="ap-o-search-result-category">Popular Articles</h3>
+    <div [hidden]="query.length > 0" class="ap-o-search-result-list">
 
-      <div class="ap-o-search-result-item">
-        <a class="ap-o-search-result-link" href="#">
-          <h4 class="ap-o-search-result-title">Getting Started</h4>
-          <p class="ap-o-search-result-description">AMP is a web component framework to create lightning fast, user first, immersive websites, full-screen stories, secure and engaging ads and dynamic email.</p>
-        </a>
-      </div>
+      <amp-list src="/static/files/search-promoted-pages/{{ doc.locale }}.json"
+                binding="no"
+                class="paged-amp-list"
+                items="."
+                height="500"
+                layout="fixed-height"
+                is-layout-container="true"
+                reset-on-refresh
+                single-item
+      >
+        {% raw %}
+        <template type="amp-mustache">
+          <div class="ap-o-search-result-list">
+            {{#components.length}}
+            <h3 class="ap-o-search-result-category">{% endraw %}{{_('Important Components')}}{% raw %}</h3>
+            {{/components.length}}
+            {{#components}}
+            <div class="ap-o-search-result-item">
+              <a class="ap-o-search-result-link" href="{{url}}">
+                <h4 class="ap-o-search-result-title">{{title}}</h4>
+                <p class="ap-o-search-result-description">{{description}}</p>
+              </a>
+            </div>
+            {{/components}}
 
-      <div class="ap-o-search-result-item">
-        <a class="ap-o-search-result-link" href="#">
-          <h4 class="ap-o-search-result-title">AMP websites</h4>
-          <p class="ap-o-search-result-description">AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms …</p>
-        </a>
-      </div>
+            {{#articles.length}}
+            <h3 class="ap-o-search-result-category">{% endraw %}{{_('Popular Articles')}}{% raw %}</h3>
+            {{/articles.length}}
+            {{#articles}}
+            <div class="ap-o-search-result-item">
+              <a class="ap-o-search-result-link" href="{{url}}">
+                <h4 class="ap-o-search-result-title">{{title}}</h4>
+                <p class="ap-o-search-result-description">{{description}}</p>
+              </a>
+            </div>
+            {{/articles}}
+          </div>
+        </template>
+        {% endraw %}
+      </amp-list>
 
-      <div class="ap-o-search-result-item">
-        <a class="ap-o-search-result-link" href="#">
-          <h4 class="ap-o-search-result-title">Basics of scrollbound effects</h4>
-          <p class="ap-o-search-result-description">amp-position-observer combined with amp-animation is a powerful building block that can handle various uses-cases such as scrollbound animations, parallax effects and transitions as elements …</p>
-        </a>
-      </div>
     </div>
   </div>
 </div>

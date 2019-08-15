@@ -115,6 +115,32 @@ function enrichComponentPageObject(item, page, locale) {
   }
 }
 
+function createResult(totalResults, page, lastPage, components, pages, query, locale) {
+  const result = ({
+    result: {
+      totalResults: totalResults,
+      currentPage: page,
+      pageCount: lastPage,
+      components: components,
+      pages: pages,
+    },
+  });
+
+  if (page == LAST_PAGE && lastPage > LAST_PAGE) {
+    result.result.isTruncated = true;
+  }
+
+  const searchBaseUrl = '/search/do?q=' + encodeURIComponent(query)
+      + '&locale=' + encodeURIComponent(locale) + '&page=';
+  if (page < lastPage && page < LAST_PAGE) {
+    result.nextUrl = searchBaseUrl + (page + 1);
+  }
+  if (page > 1) {
+    result.prevUrl = searchBaseUrl + (page - 1);
+  }
+  return result;
+}
+
 async function handleSearchRequest(request, response, next) {
   const query = request.query.q ? request.query.q.trim() : '';
   const page = request.query.page ? parseInt(request.query.page) : 1;
@@ -124,7 +150,9 @@ async function handleSearchRequest(request, response, next) {
     const error = 'Invalid search params (q='
         + request.query.q + ', page=' + request.query.page + ')';
     console.log(error);
-    response.json(400, {error: error});
+    // No error status since an empty query can always happen with our search template
+    // and we do not want error messages in the client console
+    response.json(200, {error: error});
     return;
   }
 
@@ -163,23 +191,8 @@ async function handleSearchRequest(request, response, next) {
     }
   }
 
-  const result = ({
-    result: {
-      totalResults: totalResults,
-      currentPage: page,
-      pageCount: pageCount,
-      components: components,
-      pages: pages,
-    },
-  });
-
-  if (page < pageCount && page < LAST_PAGE) {
-    result.nextUrl = '/search/do?q=' + encodeURIComponent(query)
-        + '&page=' + (page + 1) + '&locale=' + encodeURIComponent(locale);
-  }
-  response.json(result);
+  response.json(createResult(totalResults, page, pageCount, components, pages, query, locale));
 }
-
 
 async function handleTestSearchRequest(request, response, next) {
   const query = request.query && request.query.q ? request.query.q : '';
@@ -226,22 +239,7 @@ async function handleTestSearchRequest(request, response, next) {
     }
   }
 
-  const result = ({
-    result: {
-      totalResults: totalResults,
-      currentPage: page,
-      pageCount: lastPage,
-      components: components,
-      pages: pages,
-    },
-  });
-
-  if (page < lastPage && page < LAST_PAGE) {
-    result.nextUrl = '/search/do?q=' + encodeURIComponent(query)
-        + '&page=' + (page + 1) + '&locale=' + encodeURIComponent(locale);
-  }
-
-  response.json(result);
+  response.json(createResult(totalResults, page, lastPage, components, pages, query, locale));
 }
 
 module.exports = search;
