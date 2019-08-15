@@ -177,6 +177,7 @@ recent_examples:
 
       {% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
       <section class="ap--card-grid">
+        <h2 class="ap-o-card-grid-text">Featured examples</h2>
         {% for format in doc.examples %}
         [% if format == '{{ format }}' %]
           {% for item in doc.examples[format] %}
