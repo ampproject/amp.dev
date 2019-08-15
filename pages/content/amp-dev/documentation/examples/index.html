@@ -210,8 +210,8 @@ recent_examples:
                    src="/static/img/playground-teaser@3x.png"
                    class="ap--media"
                    layout="responsive"
-                   width="1668px"
-                   height="1236px"
+                   width="1668"
+                   height="1236"
                    srcset="/static/img/playground-teaser@3x.png 1600w,
                            /static/img/playground-teaser@2x.png 1100w,
                            /static/img/playground-teaser.png 500w">
@@ -224,7 +224,7 @@ recent_examples:
         {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
         {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
 
-        <h2>Categories</h2>
+        <h2>Filter by category</h2>
         {% include '/views/partials/category-filter.j2'%}
 
         {% for category, documents in categories %}

@@ -113,9 +113,8 @@ highlighted_components:
         {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
 
 
-        <h2>Categories</h2>
+        <h2>Filter by category</h2>
         {% include 'views/partials/category-filter.j2'%}
-
 
         {% for category, docs in categories %}
         {% set scope = namespace(categoryFormats = []) %}
