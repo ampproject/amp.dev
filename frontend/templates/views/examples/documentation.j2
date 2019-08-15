@@ -129,7 +129,9 @@
           <li class="ap-m-experiments-control">
             <label class="ap-m-experiments-label" for="experiments-toggle">Enable Experiment</label>
             <input class="ap-m-experiments-toggle" id="experiments-toggle" type="checkbox">
-            <aside class="ap-m-experiments-indicator"></aside>
+            <aside class="ap-m-experiments-indicator">
+              <div id="indicator"></div>
+            </aside>
           </li>
 
           <li class="ap-m-experiments-control">
@@ -277,11 +279,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     // enable active experiment button
     var experimentToggle = document.getElementById('experiments-toggle');
+    var indicator = document.getElementById('indicator');
     if (!areAllExperimentsEnabled()) {
       experimentToggle.addEventListener('click', enableExperiments);
+      indicator.classList.add('off');
     } else {
       experimentToggle.checked = true;
       experimentToggle.addEventListener('click', disableExperiments);
+      indicator.classList.add('on');
     }
 
     // Set appropriate state on channel indicator
