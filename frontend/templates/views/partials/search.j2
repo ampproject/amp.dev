@@ -17,6 +17,10 @@
 {% do doc.amp_dependencies.add('amp-list', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
+<amp-state id="query">
+  <script type="application/json">""</script>
+</amp-state>
+
 <div id="searchLayer" class="ap-o-search" tabindex="-1">
   <div class="ap-o-search-container">
     <div class="ap-m-search-trigger ap-m-search-trigger-close" on="tap:searchLayer.toggleClass(class='active'),searchTriggerOpen.focus,AMP.setState({ query: '' })" role="button" tabindex="0">
