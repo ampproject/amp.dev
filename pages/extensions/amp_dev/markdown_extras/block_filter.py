@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import re
 
 FILTER_TRIGGER = '[filter'
-FILTER_TAG_PATTERN = re.compile(r'\[filter.*?\]', re.MULTILINE)
+FILTER_TAG_PATTERN = re.compile(r'\[filter .*?\](?!\()', re.MULTILINE)
 ATTRIBUTE_PATTERN = re.compile(r'(\w+)=(?:\"|\')(.*?)(?:\"|\')')
 FILTER_END_TAG_PATTERN = '[/filter]'
 
@@ -15,7 +15,6 @@ def trigger(original_body, content):
   if FILTER_TRIGGER in original_body:
     return _transform(content)
   return content
-
 
 def _transform(content):
     for match in FILTER_TAG_PATTERN.findall(content):
