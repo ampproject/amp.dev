@@ -13,3 +13,12 @@ teaser:
     alt: Land & See
 
   download_url: '/static/files/templates/land-see.zip'
+  template_demo_home: 'websites/land-see/templates/land-see.amp.html'
+  template_github_home: 'websites/land-see'
+
+document:
+  pages: /content/amp-dev/documentation/templates/land-see/pages
+  description: A trendy fashion and design e-commerce site with interesting content to read.
+
+url:
+  path: '/documentation/templates/land-see'
