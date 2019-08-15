@@ -122,7 +122,7 @@
         </div>
       </form>
 
-      <div class="ap-o-search-result empty" [class]="query.length == 0 ? 'ap-o-search-result empty' : 'ap-o-search-result'">
+      <div class="empty" [class]="query.length == 0 ? 'empty' : ''">
 
         <amp-state id="search" [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
         <amp-list [src]="'/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
