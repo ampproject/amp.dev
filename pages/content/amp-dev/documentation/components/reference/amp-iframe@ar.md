@@ -35,7 +35,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>fill وfixed وfixed-height وflex-item وintrinsic وnodisplay وresponsive</td>
   </tr>
   <tr>
@@ -77,7 +77,7 @@ limitations under the License.
 
 **يجب عدم** استخدام `amp-iframe` لعرض الإعلانات كغرض أساسي. فلا بأس من استخدام `amp-iframe` لعرض فيديوهات تكون الإعلانات جزءًا منها. قد يتم تنفيذ سياسة AMP هذه بعدم عرض إطارات iframe المعنّية.
 
-يجب أن تستخدم الإعلانات [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) بدلاً من ذلك.
+يجب أن تستخدم الإعلانات [`amp-ad`](amp-ad.md) بدلاً من ذلك.
 
 في ما يلي أسباب هذه السياسة:
 
@@ -111,7 +111,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>السمات المشتركة</strong></td>
-    <td>يتضمن هذا العنصر <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
+    <td>يتضمن هذا العنصر <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
   </tr>
 </table>
 
@@ -223,7 +223,7 @@ window.addEventListener('message', function(event) {
 
 # تتبع/تحليلات iframe
 
-ننصح بشدة باستخدام المكوِّن [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) لأغراض التحليل لأنه حل أكثر قوة وفعالية وكمال ويمكنك تهيئته لمجموعة واسعة من موردي التحليلات.
+ننصح بشدة باستخدام المكوِّن [`amp-analytics`](amp-analytics.md) لأغراض التحليل لأنه حل أكثر قوة وفعالية وكمال ويمكنك تهيئته لمجموعة واسعة من موردي التحليلات.
 
 لا تسمح AMP إلا باستخدام إطار iframe واحد لكل صفحة لأغراض التحليل والتتبع. للحفاظ على الموارد، ستتم إزالة إطارات iframe هذه من DOM بعد 5 ثوان من تحميلها، ويعتبر هذا وقتًا كافيًا لإكمال أي عمل مطلوب إنجازه.
 
@@ -231,7 +231,7 @@ window.addEventListener('message', function(event) {
 
 # إرشادات: استخدِم مكونات AMP بدلاً من amp-iframe
 
-يجب اعتبار المكوِّن `amp-iframe` عنصرًا احتياطيًا إذا كانت تجربة المستخدِم المطلوبة غير ممكنة بوسائل أخرى في AMP، أي غياب [مكون AMP]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}) متوفر لحالة الاستخدام. ويرجع هذا إلى تعدد فوائد استخدام مكوِّن AMP مصمم لحالة استخدام معينة مثل:
+يجب اعتبار المكوِّن `amp-iframe` عنصرًا احتياطيًا إذا كانت تجربة المستخدِم المطلوبة غير ممكنة بوسائل أخرى في AMP، أي غياب [مكون AMP](../../../documentation/components.md) متوفر لحالة الاستخدام. ويرجع هذا إلى تعدد فوائد استخدام مكوِّن AMP مصمم لحالة استخدام معينة مثل:
 
 * تحسين إدارة أفضل الموارد والأداء
 * يمكن أن توفر المكونات المخصصة صور عناصر نائبة مضمّنة في بعض الحالات. يعني هذا الحصول مثلاً على الصورة المصغرة الصحيحة للفيديو قبل تحميله كما يقلل من الجهد المبذول في الترميز لإضافة عنصر نائب يدويًا.

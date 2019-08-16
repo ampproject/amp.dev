@@ -9,7 +9,7 @@ $title: لغة CSS المعتمدة
 فسمات الأنماط المضمّنة غير مسموح بها.
 
 يجب أن تبقى جميع الأنماط في رأس المستند
-(راجع [إضافة أنماط إلى إحدى الصفحات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})).
+(راجع [إضافة أنماط إلى إحدى الصفحات](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
 ولكن يمكنك استخدام المعالجات التمهيدية والنماذج في CSS لإنشاء صفحات ثابتة
 لإدارة المحتوى التابع لك على نحو أفضل.
 
@@ -36,7 +36,7 @@ $title: لغة CSS المعتمدة
 [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 جميع ترميزات AMP المطلوبة ولغة CSS المضمّنة من ملفات المصدر `*.scss`.
 كما يتضمّن أيضًا النص البرمجي للعنصر المخصص لـ
-<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}"><code>amp-youtube</code></a>، وغيره،
+<a href="../../../../documentation/components/reference/amp-youtube.md"><code>amp-youtube</code></a>، وغيره،
 وهكذا يمكن أن تتضمن العديد من الصفحات في الموقع مقاطع فيديو youtube مضمّنة.
 
 [sourcecode:html] {% raw %}

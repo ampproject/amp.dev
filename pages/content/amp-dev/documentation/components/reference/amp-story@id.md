@@ -33,21 +33,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Ketersediaan</strong></td>
-    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">Eksperimental</a></div></td>
+    <td><div><a href="../../../documentation/guides-and-tutorials/learn/experimental.md">Eksperimental</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Skrip yang Diperlukan</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
     <td>tidak ada</td>
   </tr>
   <tr>
     <td width="40%"><strong>Contoh</strong></td>
     <td><ul>
       <li>Lihat sampel <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> di AMP By Example.</li>
-      <li>Belajar dari tutorial <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">Membuat artikel AMP visual</a>.</li>
+      <li>Belajar dari tutorial <a href="../../../documentation/guides-and-tutorials/start/visual_story/index.md">Membuat artikel AMP visual</a>.</li>
     </ul></td>
   </tr>
 </table>
@@ -248,7 +248,7 @@ Isi kode di atas menghasilkan artikel dengan dua halaman.  Setiap halaman memili
 
 ### Markup yang diperlukan untuk amp-story
 
-Format HTML artikel AMP mematuhi [persyaratan markup yang sama dengan dokumen HTML AMP yang valid]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup), beserta persyaratan tambahan berikut:
+Format HTML artikel AMP mematuhi [persyaratan markup yang sama dengan dokumen HTML AMP yang valid](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup), beserta persyaratan tambahan berikut:
 
 | ATURAN | DESKRIPSI |
 |----|---|
@@ -1268,9 +1268,9 @@ Kolom ini harus berisi string, di mana setiap string mewakili nama penyedia laya
 
 Jika parameter tambahan diperlukan, objek yang memiliki key-value pair harus digunakan. Objek ini harus memuat kunci `provider` dengan nilai yang sesuai dengan nama penyedia (misalnya `facebook`). Key-value berikutnya akan bergantung pada penyedia layanan berbagi.
 
-Daftar penyedia layanan yang tersedia sama dengan yang ada di komponen [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}).
+Daftar penyedia layanan yang tersedia sama dengan yang ada di komponen [amp-social-share](amp-social-share.md).
 
-Masing-masing penyedia layanan ini memiliki kumpulan parameter yang tersedia yang berbeda ([lihat `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). Objek konfigurasi menggunakan parameter tersebut tanpa awalan `data-param-` (misalnya, `data-param-app_id` akan muncul dalam objek konfigurasi sebagai `app_id`).
+Masing-masing penyedia layanan ini memiliki kumpulan parameter yang tersedia yang berbeda ([lihat `data-param-*`](amp-social-share.md#data-param-%2a)). Objek konfigurasi menggunakan parameter tersebut tanpa awalan `data-param-` (misalnya, `data-param-app_id` akan muncul dalam objek konfigurasi sebagai `app_id`).
 
 #### Konfigurasi JSON
 
@@ -1318,10 +1318,10 @@ Komponen `<amp-story-bookend>` harus memiliki atribut `src` yang mengarah ke kon
 
 Berikut adalah komponen lain yang dapat digunakan dalam artikel AMP yang memerlukan beberapa penjelasan khusus artikel.
 
-* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
-* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
+* [amp-sidebar](amp-sidebar.md#sidebar-for-stories)
+* [amp-consent](amp-consent.md#prompt-ui-for-stories)
 
-Untuk mengetahui komponen lain yang umumnya dapat digunakan, lihat [daftar turunan yang diizinkan]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children).
+Untuk mengetahui komponen lain yang umumnya dapat digunakan, lihat [daftar turunan yang diizinkan](amp-story.md#children).
 
 ## Validasi
 
@@ -1358,8 +1358,8 @@ Selain itu, untuk bahasa yang penulisannya dari kanan ke kiri, Anda dapat menyer
 
 ## Referensi terkait
 
-* [Tutorial: Membuat artikel AMP visual]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
+* [Tutorial: Membuat artikel AMP visual](../../../documentation/guides-and-tutorials/start/visual_story/index.md)
 * [Sampel di AMP By Example](https://ampbyexample.com/stories/#stories/introduction)
-* [Praktik terbaik untuk membuat artikel AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
+* [Praktik terbaik untuk membuat artikel AMP](../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 </amp-story></body>

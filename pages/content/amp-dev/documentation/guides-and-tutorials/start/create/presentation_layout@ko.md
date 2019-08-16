@@ -19,7 +19,7 @@ AMP는 웹페이지이며, 페이지와 요소의 스타일링은 일반적인 C
 </style>
 [/sourcecode]
 
-모든 AMP 페이지에는 하나의 스타일시트만 삽입할 수 있으며, 특정 셀렉터는 사용이 불가합니다. [스타일링에 대해 자세히 알아보세요]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
+모든 AMP 페이지에는 하나의 스타일시트만 삽입할 수 있으며, 특정 셀렉터는 사용이 불가합니다. [스타일링에 대해 자세히 알아보세요](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
 ## 레이아웃 제어하기
 
@@ -27,5 +27,5 @@ AMP는 요소를 페이지에 배치할 때 엄격한 규칙을 따릅니다. �
 
 [tip type="read-on"]
 **READ ON –** 
-AMP가 페이지를 렌더링하고 배치하는 방법과 레이아웃을 어떻게 수정할 수 있는 지에 대해서는 [레이아웃과 미디어쿼리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}))에서 자세히 알아보세요.
+AMP가 페이지를 렌더링하고 배치하는 방법과 레이아웃을 어떻게 수정할 수 있는 지에 대해서는 [레이아웃과 미디어쿼리](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md))에서 자세히 알아보세요.
 [/tip]

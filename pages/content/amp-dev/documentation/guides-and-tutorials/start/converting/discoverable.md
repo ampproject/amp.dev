@@ -109,7 +109,7 @@ To verify that your structured data is correct, many platforms provide validatio
 If your structured data is valid, you should see **0 errors**, and **0 warnings**.
 
 [tip type="read-on"]
-**READ ON –** To learn more about page discoverability, see the [Make your page discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) guide.
+**READ ON –** To learn more about page discoverability, see the [Make your page discoverable](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) guide.
 [/tip]
 
 Awesome work!  You've completed your AMP news article.

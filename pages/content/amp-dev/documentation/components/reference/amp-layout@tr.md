@@ -30,17 +30,17 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>Açıklama</strong></td>
-    <td>AMP'nin güçlü <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">düzenlerini</a> herhangi bir öğeye getiren genel, çok amaçlı bir kapsayıcı öğesi.</td>
+    <td>AMP'nin güçlü <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">düzenlerini</a> herhangi bir öğeye getiren genel, çok amaçlı bir kapsayıcı öğesi.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
     <td>container, fill, fixed, fixed-height, flex-item, intrinsic, responsive</td>
   </tr>
 </table>
 
 ## Genel Bakış
 
-`amp-layout` bileşeni, herhangi bir öğeye en boy oranına dayanan duyarlı düzenler uygulamanıza olanak tanır. `amp-layout` bileşeni, mevcut AMP bileşenlerinde [düzen]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) özelliğine benzer şekilde çalışır ancak HTML işaretlemelerini alt öğe olarak destekler. Desteklenen diğer düzenlerin tümü `amp-layout` ile çalışır (ör. fixed-height, fixed vb.).
+`amp-layout` bileşeni, herhangi bir öğeye en boy oranına dayanan duyarlı düzenler uygulamanıza olanak tanır. `amp-layout` bileşeni, mevcut AMP bileşenlerinde [düzen](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) özelliğine benzer şekilde çalışır ancak HTML işaretlemelerini alt öğe olarak destekler. Desteklenen diğer düzenlerin tümü `amp-layout` ile çalışır (ör. fixed-height, fixed vb.).
 
 **Örnek**
 
@@ -57,7 +57,7 @@ Bu örnekte, satır içi SVG ile çizilmiş bir dairenin çevresinde duyarlı bi
 
 ## Özellikler
 
-Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) içerir.
+Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../documentation/guides-and-tutorials/learn/common_attributes.md) içerir.
 
 ## Doğrulama
 

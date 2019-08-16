@@ -7,7 +7,7 @@ Pelajari cara menyertakan komponen pihak ketiga di laman.
 ## Menyematkan Tweet
 
 Sematkan Tweet Twitter di laman
-menggunakan elemen [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
+menggunakan elemen [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md).
 
 Untuk menyertakan tweet di laman,
 sertakan dahulu skrip berikut di `<head>`:
@@ -33,13 +33,13 @@ untuk memilih rasio aspek berdasarkan lebar layar.
 [/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-twitter.html', locale=doc.locale).url.path}}).
+**TIP –** Lihat lebih banyak contoh [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-twitter.html).
 [/tip]
 
 ## Menyematkan Instagram
 
 Sematkan Instagram di laman
-menggunakan elemen [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}})
+menggunakan elemen [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md)
 
 Untuk menyertakan Instagram,
 sertakan dahulu skrip berikut di `<head>`:
@@ -65,13 +65,13 @@ sehingga nilai lebar dan tinggi harus universal
 [/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-instagram.html', locale=doc.locale).url.path}}).
+**TIP –** Lihat lebih banyak contoh [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-instagram.html).
 [/tip]
 
 ## Menampilkan pos atau video Facebook
 
 Tampilkan pos atau video Facebook di laman
-menggunakan elemen [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).
+menggunakan elemen [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md).
 
 Anda harus menyertakan skrip berikut di `<head>`:
 
@@ -112,13 +112,13 @@ Pratinjau:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-facebook.html', locale=doc.locale).url.path}}).
+**TIP –** Lihat lebih banyak contoh [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-facebook.html).
 [/tip]
 
 ## Menyertakan video youtube
 
 Sertakan video youtube di laman
-menggunakan elemen [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
+menggunakan elemen [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md).
 
 Anda harus menyertakan skrip berikut di `<head>`:
 
@@ -143,13 +143,13 @@ Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk vide
 [/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-youtube.html', locale=doc.locale).url.path}}).
+**TIP –** Lihat lebih banyak contoh [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-youtube.html).
 [/tip]
 
 ## Menampilkan iklan
 
 Tampilkan iklan di laman
-menggunakan elemen [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
+menggunakan elemen [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
 Hanya iklan yang ditayangkan melalui HTTPS yang didukung.
 
 Tidak ada JavaScript yang disediakan jaringan iklan yang diizinkan untuk berjalan di dalam dokumen AMP.
@@ -192,6 +192,6 @@ untuk ditampilkan jika tidak ada iklan yang tersedia:
 ```
 [/example]
 
-AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).
+AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) guide.
+Baca lebih lanjut: Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) guide.

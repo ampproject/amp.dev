@@ -37,7 +37,7 @@ AMP는 오픈 에코 시스템이며 AMP 프로젝트는 AMP 캐시의 개발을
 
 ## 캐시 된 AMP 페이지는 누가 요청합니까?
 
-캐시 된 AMP 페이지는 플랫폼(예 : GoogleSearch, GoogleNews 및 Cloudflare)및 모바일 앱들에 의해 액세스됩니다. 모바일 앱들은 URL이나 Progressive Web Apps의 cross-origin XHRs를 통해 캐시 된 AMP 콘텐츠에 링크할 수 있습니다. (Google의 [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)참고) (더욱 자세한 것은 "[Embed & use AMP as a data source]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})"를 참고하십시오).
+캐시 된 AMP 페이지는 플랫폼(예 : GoogleSearch, GoogleNews 및 Cloudflare)및 모바일 앱들에 의해 액세스됩니다. 모바일 앱들은 URL이나 Progressive Web Apps의 cross-origin XHRs를 통해 캐시 된 AMP 콘텐츠에 링크할 수 있습니다. (Google의 [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)참고) (더욱 자세한 것은 "[Embed & use AMP as a data source](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)"를 참고하십시오).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"

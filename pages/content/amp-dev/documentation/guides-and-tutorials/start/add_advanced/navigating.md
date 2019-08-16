@@ -7,7 +7,7 @@ description: Most mobile websites include a site navigation menu. These menus ca
 Most mobile websites include a site navigation menu. These menus can take many different forms. In this tutorial, we'll try out the following examples for presenting navigation in AMP pages:
 
 - A link back to your home page - the simplest option.
-- A side navigation bar by using the [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) component.
+- A side navigation bar by using the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) component.
 
 ## Link back home
 
@@ -58,9 +58,9 @@ This is the simplest approach that leverages your existing website navigation. N
 
 ## Navigate with a sidebar
 
-A common navigation technique is to add a menu icon that when clicked reveals a set of navigation links (from the side of the page). In AMP,  we can create such navigation with the [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) component.
+A common navigation technique is to add a menu icon that when clicked reveals a set of navigation links (from the side of the page). In AMP,  we can create such navigation with the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) component.
 
-First, we must **add** the [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) component’s JavaScript to the `<head>` tag:
+First, we must **add** the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) component’s JavaScript to the `<head>` tag:
 
 ```html
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -75,7 +75,7 @@ Next, we want to display a menu icon.  When the icon is tapped, it will open the
 </header>
 ```
 
-In the above code, we `toggle` the sidebar through the [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) action attribute on the [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) element, which is identified by the `sidebar1` ID.  Let's add the sidebar.
+In the above code, we `toggle` the sidebar through the [`on`](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) action attribute on the [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) element, which is identified by the `sidebar1` ID.  Let's add the sidebar.
 
 **Add** the following HTML just after the `</header>`:
 

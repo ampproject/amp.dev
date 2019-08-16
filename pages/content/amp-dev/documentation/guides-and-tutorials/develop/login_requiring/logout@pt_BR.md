@@ -2,13 +2,13 @@
 $title: Sair
 ---
 
-Assim como o botão de login, a presença do botão de saída depende do estado do componente [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}):
+Assim como o botão de login, a presença do botão de saída depende do estado do componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-Quando você clica no botão "Sair", é direcionado ao URL especificado na configuração JSON [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}), como parte do objeto de login:
+Quando você clica no botão "Sair", é direcionado ao URL especificado na configuração JSON [`amp-access`](../../../../documentation/components/reference/amp-access.md), como parte do objeto de login:
 
 [sourcecode:json]
 {

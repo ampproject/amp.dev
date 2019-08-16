@@ -4,15 +4,15 @@ $title: 使用事例
 
 このガイドでは、ユーザー エンゲージメントをトラッキングするための一般的な使用事例をご紹介します。
 
-注: 使用事例の追加を希望される場合は、[Google までお知らせください。](https://github.com/ampproject/docs/issues/new)ご自分の使用事例を公開することもできます。詳しくは、[公開方法についての記事]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}})をご覧ください。
+注: 使用事例の追加を希望される場合は、[Google までお知らせください。](https://github.com/ampproject/docs/issues/new)ご自分の使用事例を公開することもできます。詳しくは、[公開方法についての記事](../../../../documentation/guides-and-tutorials/contribute/index.md)をご覧ください。
 
 ## ページビューをトラッキングする
 
-[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) と [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を使用してページビューをトラッキングする方法について説明します。
+[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) と [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使用してページビューをトラッキングする方法について説明します。
 
 ### amp-pixel を使用する
 
-以下の例では、指定の URL にページビュー データを送信する際に [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) を使用しています。
+以下の例では、指定の URL にページビュー データを送信する際に [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) を使用しています。
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -20,7 +20,7 @@ $title: 使用事例
 
 ### amp-analytics を使用する（ベンダーなし）
 
-以下の例では、指定の URL にページビュー データを送信する際に [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を使用しています。
+以下の例では、指定の URL にページビュー データを送信する際に [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使用しています。
 
 ```html
 <amp-analytics>
@@ -67,7 +67,7 @@ $title: 使用事例
 
 ## ページクリックをトラッキングする
 
-ページクリックを [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+ページクリックを [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 を使用してトラッキングし、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信する方法について説明します。
 
 ### 指定の URL にデータを送信する
@@ -129,7 +129,7 @@ $title: 使用事例
 
 ## スクロールをトラッキングする
 
-ページ スクロールをトラッキングするには [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})  を使用します。以下の例では、`scrollspec` 属性を使用して、ユーザーがページを垂直方向に 25%、50%、90% スクロールしたときに、指定の URL に `scroll` イベントが送信されるようにしています。また、ページを水平方向に `scroll` 幅の 90% スクロールしたときにもイベントが発生します。
+ページ スクロールをトラッキングするには [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)  を使用します。以下の例では、`scrollspec` 属性を使用して、ユーザーがページを垂直方向に 25%、50%、90% スクロールしたときに、指定の URL に `scroll` イベントが送信されるようにしています。また、ページを水平方向に `scroll` 幅の 90% スクロールしたときにもイベントが発生します。
 
 ```html
 <amp-analytics>
@@ -157,7 +157,7 @@ $title: 使用事例
 
 ## ソーシャル インタラクションをトラッキングする
 
-ソーシャル インタラクションをトラッキングするには、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+ソーシャル インタラクションをトラッキングするには、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 を使用して、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信します。
 
 ### 指定の URL にデータを送信する

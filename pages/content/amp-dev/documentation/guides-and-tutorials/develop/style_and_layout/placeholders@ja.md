@@ -4,7 +4,7 @@ $title: プレースホルダとフォールバック
 
 知覚パフォーマンスとプログレッシブ エンハンスメントの観点から、AMP ではできる限りプレースホルダとフォールバックを設定することをおすすめします。
 
-要素によっては、制限を緩和できるようにするだけでも設定する価値があります。たとえば、[`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder) のプレースホルダを設定すれば、iframe をページの上部に表示させることができます。このプレースホルダがないと動作しません。
+要素によっては、制限を緩和できるようにするだけでも設定する価値があります。たとえば、[`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder) のプレースホルダを設定すれば、iframe をページの上部に表示させることができます。このプレースホルダがないと動作しません。
 
 ## プレースホルダ
 
@@ -89,7 +89,7 @@ $title: プレースホルダとフォールバック
 
 ## プレースホルダとフォールバックの相互作用
 
-動的コンテンツ（[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})、[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}) など）に依存する AMP コンポーネントでは、フォールバックとプレースホルダは次のように作用します。
+動的コンテンツ（[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)、[`amp-list`](../../../../documentation/components/reference/amp-list.md) など）に依存する AMP コンポーネントでは、フォールバックとプレースホルダは次のように作用します。
 
 <ol>
   <li>コンテンツの読み込み中はプレースホルダが表示されます。</li>

@@ -2,7 +2,7 @@
 $title: 创作 AMP 故事的最佳做法
 ---
 
-本指南介绍了在创作 [AMP 故事]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})时应采取的最佳做法。
+本指南介绍了在创作 [AMP 故事](../../../documentation/components/reference/amp-story.md)时应采取的最佳做法。
 
 ## 背景颜色
 
@@ -48,7 +48,7 @@ $title: 创作 AMP 故事的最佳做法
 
 ### 指定 `<source>` 和 `src`
 
-指定 [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 的来源时，请使用 `<source>` 子元素（而非 `src` 属性）。借助 `<source>` 元素，您可以指定视频类型并添加更多视频来源。在 `<source>` 元素中，请通过 `"type"` 属性指定 MIME 类型。对于 HLS 视频，您必须指定以下 MIME 类型之一：`application/x-mpegurl` 或 `application/vnd.apple.mpegurl`。对于所有其他视频，请指定 `video/` MIME 前缀及视频格式（例如“`video/mp4`”）。
+指定 [`amp-video`](../../../documentation/components/reference/amp-video.md) 的来源时，请使用 `<source>` 子元素（而非 `src` 属性）。借助 `<source>` 元素，您可以指定视频类型并添加更多视频来源。在 `<source>` 元素中，请通过 `"type"` 属性指定 MIME 类型。对于 HLS 视频，您必须指定以下 MIME 类型之一：`application/x-mpegurl` 或 `application/vnd.apple.mpegurl`。对于所有其他视频，请指定 `video/` MIME 前缀及视频格式（例如“`video/mp4`”）。
 
 示例：指定多个来源文件
 

@@ -91,7 +91,7 @@ veya
 
 AMP doğrulaması yararlı dev-x ipuçları sağladığından, mümkün olan her yerde `template` etiketini kullanın. Uç durumlar ve tablo bağlamında şablon oluşturma sorunları için `script` şablonunu kullanın. Aşağıdaki "Tablolar" bölümüne bakın.
 
-Şablonların nasıl keşfedileceğine, ne zaman oluşturulacağına ve verilerin nasıl sağlanacağına, içeriğini oluşturmak için bu şablonu kullanan hedef AMP öğesi (ör. bir [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}), [amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) vb.) karar verir.
+Şablonların nasıl keşfedileceğine, ne zaman oluşturulacağına ve verilerin nasıl sağlanacağına, içeriğini oluşturmak için bu şablonu kullanan hedef AMP öğesi (ör. bir [amp-list](amp-list.md), [amp-form](amp-form.md) vb.) karar verir.
 
 ## Kısıtlamalar
 

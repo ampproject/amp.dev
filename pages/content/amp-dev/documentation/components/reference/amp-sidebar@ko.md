@@ -42,7 +42,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -206,7 +206,7 @@ $title: amp-sidebar
 
 ## 스토리용 사이드바
 
-`amp-sidebar` 사용은 `amp-story` [구성요소]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}})에서 지원됩니다.
+`amp-sidebar` 사용은 `amp-story` [구성요소](../../../about/stories.html)에서 지원됩니다.
 
 ### 동작
 
@@ -277,7 +277,7 @@ $title: amp-sidebar
 
 ##### 공통 속성<a name="common"></a>
 
-이 요소에는 AMP 구성요소로 확장된 [공통 속성]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})이 포함됩니다.
+이 요소에는 AMP 구성요소로 확장된 [공통 속성](../../../documentation/guides-and-tutorials/learn/common_attributes.md)이 포함됩니다.
 
 ## 스타일 지정
 

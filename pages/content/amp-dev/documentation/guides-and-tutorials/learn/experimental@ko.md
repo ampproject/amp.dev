@@ -40,7 +40,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 실험 기능이 있는 모든 AMP 파일은
-[AMP 유효성 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})를 통과하지 못합니다.
+[AMP 유효성 검사](validation-workflow/validate_amp.md)를 통과하지 못합니다.
 프로덕션 채널을 통해 출시할 준비가 된 AMP 문서에서는 실험 구성요소를 삭제하세요.
 
 ## 특정 문서에 실험 사용

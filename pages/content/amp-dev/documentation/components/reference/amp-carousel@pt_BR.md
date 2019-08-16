@@ -35,7 +35,7 @@ Um carrossel genérico para exibir vários conteúdos semelhantes em um eixo hor
     <td><code>&lt;script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>
       <ul>
         <li>carrossel: fixed, fixed-height e nodisplay.</li>
@@ -212,7 +212,7 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Este elemento inclui <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comuns</a> estendidos a componentes de AMP.</td>
+            <td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
           </tr>
         </table>
 

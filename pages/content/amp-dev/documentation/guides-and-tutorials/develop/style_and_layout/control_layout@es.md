@@ -7,7 +7,7 @@ AMP admite **media queries** y **media queries de elementos** y tiene un potente
 ## Crea imágenes adaptables fácilmente
 
 Para crear imágenes adaptables, solo tienes que proporcionar valores de `width` (anchura) y `width` (altura), asignar el valor `responsive` al atributo "layout",
-e indicar con [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
+e indicar con [`srcset`](art_direction.md)
 qué recurso de imagen se debe usar en función de cada tamaño de pantalla:
 
 [sourcecode:html]
@@ -22,7 +22,7 @@ qué recurso de imagen se debe usar en función de cada tamaño de pantalla:
 </amp-img>
 [/sourcecode]
 
-El elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) se adapta automáticamente a la anchura
+El elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) se adapta automáticamente a la anchura
 de su elemento contenedor,
 y su altura se ajusta automáticamente a la proporción
 determinada por la anchura y la altura especificadas. Puedes probarlo cambiando el tamaño de esta ventana del navegador:
@@ -31,7 +31,7 @@ determinada por la anchura y la altura especificadas. Puedes probarlo cambiando 
 
 [tip type="success"]
 
-Puedes ver demostraciones comparativas en directo de [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) en [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}}).
+Puedes ver demostraciones comparativas en directo de [`amp-img`](../../../../documentation/components/reference/amp-img.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-img.html).
 
 [/tip]
 
@@ -57,22 +57,22 @@ Se pueden asignar los siguientes valores al atributo `layout`:
     <tr>
       <td data-th="Layout type"><code>nodisplay</code></td>
       <td data-th="Description">No</td>
-      <td data-th="Behavior">No se muestra el elemento. Este diseño se puede aplicar a todos los elementos de AMP. El componente no ocupa espacio en la pantalla, como si su estilo de visualización tuviera como valor "none". Se supone que el elemento puede mostrarse con una acción del usuario; por ejemplo, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Behavior">No se muestra el elemento. Este diseño se puede aplicar a todos los elementos de AMP. El componente no ocupa espacio en la pantalla, como si su estilo de visualización tuviera como valor "none". Se supone que el elemento puede mostrarse con una acción del usuario; por ejemplo, <a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed</code></td>
       <td data-th="Description">Sí</td>
-      <td data-th="Behavior">El elemento tiene una anchura y una altura fijas y no es adaptable. Las únicas excepciones son los elementos <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}"><code>amp-pixel</code></a> y <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a>.</td>
+      <td data-th="Behavior">El elemento tiene una anchura y una altura fijas y no es adaptable. Las únicas excepciones son los elementos <a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> y <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>responsive</code></td>
       <td data-th="Description">Sí</td>
-      <td data-th="Behavior">El tamaño del elemento depende de la anchura de su elemento contenedor y la altura se modifica automáticamente en función de la proporción determinada por los atributos de anchura y altura. Este diseño funciona muy bien con la mayoría de los elementos de AMP, como <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> y <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>. El espacio disponible depende del elemento principal y también se puede personalizar usando el elemento CSS <code>max-width</code>.<p><strong>Nota:</strong> Los elementos con <code>"layout=responsive"</code> no tienen ningún tamaño intrínseco. El tamaño del elemento se determina a partir de su elemento contenedor. Para asegurarte de que se muestre el elemento de AMP, debes indicar la anchura y la altura del elemento contenedor. No especifiques <code>"display:table"</code> en el elemento contenedor, ya que, si lo haces, se impide que el elemento AMP se muestre, lo que lo convierte en invisible.</p></td>
+      <td data-th="Behavior">El tamaño del elemento depende de la anchura de su elemento contenedor y la altura se modifica automáticamente en función de la proporción determinada por los atributos de anchura y altura. Este diseño funciona muy bien con la mayoría de los elementos de AMP, como <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> y <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>. El espacio disponible depende del elemento principal y también se puede personalizar usando el elemento CSS <code>max-width</code>.<p><strong>Nota:</strong> Los elementos con <code>"layout=responsive"</code> no tienen ningún tamaño intrínseco. El tamaño del elemento se determina a partir de su elemento contenedor. Para asegurarte de que se muestre el elemento de AMP, debes indicar la anchura y la altura del elemento contenedor. No especifiques <code>"display:table"</code> en el elemento contenedor, ya que, si lo haces, se impide que el elemento AMP se muestre, lo que lo convierte en invisible.</p></td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">Solo altura</td>
-      <td data-th="Behavior">El elemento ocupa el espacio disponible, pero la altura no cambia. Este diseño funciona bien en elementos como <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> que implican que el contenido se muestren en posición horizontal. El atributo <code>width</code> no debe estar presente o debe ser <code>auto</code>.</td>
+      <td data-th="Behavior">El elemento ocupa el espacio disponible, pero la altura no cambia. Este diseño funciona bien en elementos como <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a> que implican que el contenido se muestren en posición horizontal. El atributo <code>width</code> no debe estar presente o debe ser <code>auto</code>.</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -92,14 +92,14 @@ Se pueden asignar los siguientes valores al atributo `layout`:
     <tr>
       <td data-th="Layout type"><code>intrinsic</code></td>
       <td data-th="Description">Sí</td>
-      <td data-th="Behavior">El elemento ocupa el espacio del que dispone y modifica su altura automáticamente según la proporción indicada por los atributos <code>width</code> y <code>height</code> <em></em>hasta alcanzar su tamaño natural o una restricción de CSS (p. ej., max-width). Los atributos de anchura y altura deben estar presentes. Este diseño funciona muy bien para la mayoría de los elementos de AMP, como <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>, <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>, etc. El espacio disponible depende del elemento principal y puede personalizarse con <code>max-width</code> en CSS. Este diseño es diferente a <code>responsive</code> porque tiene una altura y una anchura intrínsecas. Esta diferencia se puede apreciar en los elementos flotantes, ya que los que incluyen <code>responsive</code> se representan como 0x0, pero los que usan <code>intrinsic</code> aumentan hasta su tamaño natural o hasta alcanzar alguna restricción de CSS, lo que sea menor.</td>
+      <td data-th="Behavior">El elemento ocupa el espacio del que dispone y modifica su altura automáticamente según la proporción indicada por los atributos <code>width</code> y <code>height</code> <em></em>hasta alcanzar su tamaño natural o una restricción de CSS (p. ej., max-width). Los atributos de anchura y altura deben estar presentes. Este diseño funciona muy bien para la mayoría de los elementos de AMP, como <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>, <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a>, etc. El espacio disponible depende del elemento principal y puede personalizarse con <code>max-width</code> en CSS. Este diseño es diferente a <code>responsive</code> porque tiene una altura y una anchura intrínsecas. Esta diferencia se puede apreciar en los elementos flotantes, ya que los que incluyen <code>responsive</code> se representan como 0x0, pero los que usan <code>intrinsic</code> aumentan hasta su tamaño natural o hasta alcanzar alguna restricción de CSS, lo que sea menor.</td>
     </tr>
   </tbody>
 </table>
 
 [tip type="success"]
 
-Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html', locale=doc.locale).url.path}}).
+Para ver cómo responden los diferentes diseños al redimensionamiento de la pantalla, visita la página con [demostraciones de diseños de AMP](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html).
 
 [/tip]
 
@@ -108,8 +108,8 @@ Para ver cómo responden los diferentes diseños al redimensionamiento de la pan
 En algunos casos, si no se han proporcionado los atributos `width` o `height`,
 el tiempo de ejecución de AMP puede asignarles un valor predeterminado del siguiente modo:
 
-* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}): el valor predeterminado de anchura y altura es 0.
-* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}): el navegador infiere la anchura y la altura predeterminadas.
+* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): el valor predeterminado de anchura y altura es 0.
+* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): el navegador infiere la anchura y la altura predeterminadas.
 
 ### ¿Qué sucede si no se ha proporcionado el atributo <code>layout</code>?
 

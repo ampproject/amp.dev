@@ -35,7 +35,7 @@ Bir yatay eksen boyunca birden çok benzer içerik parçasını görüntülemek 
     <td><code>&lt;script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
     <td>
       <ul>
         <li>bant: fixed, fixed-height, and nodisplay.</li>
@@ -212,7 +212,7 @@ Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimde
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">ortak özellikleri</a> içerir.</td>
+            <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">ortak özellikleri</a> içerir.</td>
           </tr>
         </table>
 

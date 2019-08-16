@@ -193,7 +193,7 @@ Pets can lower your stress levels!</p>
 
 Reload your story page in your browser, and verify that the banner whooshes in.
 
-Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) elements so the code looks like this:
+Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of the [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements so the code looks like this:
 
 ```html hl_lines="4 9 14 19"
 <amp-img src="assets/cat.jpg"
@@ -220,7 +220,7 @@ Next, let's make all the images fade in. Add `animate-in="fade-in"` to each of t
 
 If you refresh and reload the page, each of the images fade in.  That's great but you can barely notice the effect because all the images fade in at the same time! We can improve the visual effect by changing the timing of these animations.
 
-Let's delay the entrance of the first image so that it comes in close to when the text banner finishes entering, say .4s. The remaining three images can come .2s after the previous image's entrance. For each of the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) elements, add `animate-in-delay=""` with the appropriate time delay value. Your code should look like this:
+Let's delay the entrance of the first image so that it comes in close to when the text banner finishes entering, say .4s. The remaining three images can come .2s after the previous image's entrance. For each of the [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements, add `animate-in-delay=""` with the appropriate time delay value. Your code should look like this:
 
 ```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
@@ -254,4 +254,4 @@ Refresh and reload your story.  Your last page should look like this:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-There are a lot of possibilities with animations in AMP stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) reference documentation.
+There are a lot of possibilities with animations in AMP stories  (e.g., combining animations, chaining animations), and this tutorial scratches only the surface. To learn more about animations, see the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.

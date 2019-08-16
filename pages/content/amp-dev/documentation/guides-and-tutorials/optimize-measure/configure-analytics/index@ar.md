@@ -23,7 +23,7 @@ $title: تهيئة Analytics
 تم تصميم تحليلات AMP خصوصًا للقياس مرة واحدة والإبلاغ إلى كثيرين.
 إذا كنت تعمل بالفعل مع مورّد تحليلات واحد أو أكثر،
 فتحقق من
-[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md)
 للتأكّد مما إذا كانوا قد دمجوا حلهم مع AMP أم لا.
 إذا كانوا قد فعلوا ذلك، فقم ببساطة بالربط بمستنداتهم من المواصفة
 وابدأ اتباع التعليمات.
@@ -43,7 +43,7 @@ $title: تهيئة Analytics
 نقاط مهمة بخصوص البيانات يجب وضعها في الحسبان:
 
 * هل ستتبّع فقط مشاهدات الصفحة، أم أنماط تفاعل المستخدم الإضافية
-(انظر أيضًا [<span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#هل-تستخدم-amp-pixel-أو-amp-analytics؟))؟
+(انظر أيضًا [<span dir="ltr" class="nowrap">amp-pixel</span> أو <span dir="ltr" class="nowrap">amp-analytics</span>](analytics_basics.md#هل-تستخدم-amp-pixel-أو-amp-analytics؟))؟
 * ما أنواع البيانات التي ستقوم بجمعها بشأن مستخدميك، أو محتواك،
-أو الجهاز، أو المتصفح (انظر أيضًا [استبدال المتغير]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#استبدال-المتغير))؟
-* كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#هوية-المستخدم))؟
+أو الجهاز، أو المتصفح (انظر أيضًا [استبدال المتغير](analytics_basics.md#استبدال-المتغير))؟
+* كيف ستتعرّف على هوية مستخدميك (انظر أيضًا [هوية المستخدم](analytics_basics.md#هوية-المستخدم))؟

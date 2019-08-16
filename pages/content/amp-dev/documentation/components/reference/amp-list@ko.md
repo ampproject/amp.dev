@@ -37,7 +37,7 @@ CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
 `<amp-list>` 구성요소는 CORS JSON 엔드포인트에서 동적 콘텐츠를 가져옵니다. 엔드포인트의 응답에는 지정된 템플릿에서 렌더링되는 데이터가 포함되어 있습니다.
 
 [tip type="important"]
-엔드포인트에서 [AMP의 CORS 요청]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) 사양에 지정된 요구 사항을 구현해야 합니다.
+엔드포인트에서 [AMP의 CORS 요청](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) 사양에 지정된 요구 사항을 구현해야 합니다.
 [/tip]
 
 다음 두 방법 중 하나로 템플릿을 지정할 수 있습니다.
@@ -63,7 +63,7 @@ CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
 
 *예: 동적 목록 표시*
 
-다음 예에서는 URL과 제목을 포함하는 JSON 데이터를 검색하고 중첩된 [amp-mustache template]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})의 콘텐츠를 렌더링합니다.
+다음 예에서는 URL과 제목을 포함하는 JSON 데이터를 검색하고 중첩된 [amp-mustache template](amp-mustache.md)의 콘텐츠를 렌더링합니다.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -181,7 +181,7 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 * *자리표시자*는 `placeholder` 속성을 사용하는 하위 요소입니다. 이 요소는 `<amp-list>`가 성공적으로 로드될 때까지 표시됩니다. 대체도 제공되는 경우 `<amp-list>`를 로드하지 못하면 자리표시자를 숨깁니다.
 * *대체*는 `fallback` 속성을 사용하는 하위 요소입니다. `<amp-list>`를 로드하지 못하면 이 요소가 표시됩니다.
 
-[자리표시자 및 대체]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})에 관해 자세히 알아보세요. 하위 요소는 자리표시자와 대체 중 하나여야 합니다.
+[자리표시자 및 대체](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)에 관해 자세히 알아보세요. 하위 요소는 자리표시자와 대체 중 하나여야 합니다.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -231,10 +231,10 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 이 `<amp-list>`에서 렌더링할 JSON을 반환하는 원격 엔드포인트의 URL입니다. CORS HTTP 서비스여야 하며 URL의 프로토콜은 HTTPS여야 합니다.
 
 [tip type="important"]
-엔드포인트에서 [AMP의 CORS 요청]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) 사양에 지정된 요구 사항을 구현해야 합니다.
+엔드포인트에서 [AMP의 CORS 요청](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) 사양에 지정된 요구 사항을 구현해야 합니다.
 [/tip]
 
-`[src]` 속성이 있으면 `src`를 생략할 수 있습니다. [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 작업 중에 페이지 로드가 아니라 사용자 제스처의 결과로 콘텐츠를 렌더링할 때 유용합니다.
+`[src]` 속성이 있으면 `src`를 생략할 수 있습니다. [`amp-bind`](amp-bind.md) 작업 중에 페이지 로드가 아니라 사용자 제스처의 결과로 콘텐츠를 렌더링할 때 유용합니다.
 
 ##### credentials(선택사항)
 
@@ -243,7 +243,7 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 * 지원되는 값: `omit`, `include`
 * 기본값: `omit`
 
-사용자 인증 정보를 보내려면 `include`의 값을 전달하세요. 이 값이 설정된 경우 응답이 [AMP CORS 보안 지침]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)을 따라야 합니다.
+사용자 인증 정보를 보내려면 `include`의 값을 전달하세요. 이 값이 설정된 경우 응답이 [AMP CORS 보안 지침](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)을 따라야 합니다.
 
 다음은 목록에 맞춤설정된 콘텐츠를 표시하기 위해 사용자 인증 정보를 비롯한 사양을 지정하는 예입니다.
 
@@ -427,7 +427,7 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 ##### 공통 속성
 
-이 요소에는 AMP 구성요소로 확장된 [공통 속성]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}})이 포함됩니다.
+이 요소에는 AMP 구성요소로 확장된 [공통 속성](../../../documentation/guides-and-tutorials/learn/common_attributes.md)이 포함됩니다.
 
 ## 대체
 

@@ -36,7 +36,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -61,7 +61,7 @@ La touche Échap permet de fermer le mode Lightbox. Vous pouvez également défi
 ```
 
 [tip type="read"]
-Pour afficher des images dans une annonce Lightbox, vous pouvez également utiliser le composant [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}).
+Pour afficher des images dans une annonce Lightbox, vous pouvez également utiliser le composant [`<amp-image-lightbox>`](amp-image-lightbox.md).
 [/tip]
 
 ## Attributs
@@ -103,7 +103,7 @@ Vous pouvez appliquer un style au composant `amp-lightbox` à l'aide d'une feuil
 
 ## Actions
 
-Le composant `amp-lightbox` présente les actions que vous pouvez [déclencher avec la syntaxe de l'attribut "on" d'AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) :
+Le composant `amp-lightbox` présente les actions que vous pouvez [déclencher avec la syntaxe de l'attribut "on" d'AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) :
 
 <table>
   <tr>
@@ -123,10 +123,10 @@ Le composant `amp-lightbox` présente les actions que vous pouvez [déclencher a
 ## <a id="a4a"></a> Utiliser `amp-lightbox` dans des annonces AMP HTML
 
 [tip type="note"]
-Le composant `amp-lightbox` à utiliser dans les annonces AMP HTML est proposé à titre [expérimental]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}) et est actuellement en cours de développement. Pour utiliser `amp-lightbox` dans des annonces AMP HTML, [activez le test `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+Le composant `amp-lightbox` à utiliser dans les annonces AMP HTML est proposé à titre [expérimental](../../../documentation/guides-and-tutorials/learn/experimental.md) et est actuellement en cours de développement. Pour utiliser `amp-lightbox` dans des annonces AMP HTML, [activez le test `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-Notons quelques différences selon que le composant `amp-lightbox` est utilisé dans des documents AMP standards ou dans des [annonces écrites dans le langage AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}}) :
+Notons quelques différences selon que le composant `amp-lightbox` est utilisé dans des documents AMP standards ou dans des [annonces écrites dans le langage AMP HTML](../../../documentation/guides-and-tutorials/learn/a4a_spec.md) :
 
 ### Attribut close-button obligatoire
 

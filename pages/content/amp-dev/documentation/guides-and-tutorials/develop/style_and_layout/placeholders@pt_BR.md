@@ -4,7 +4,7 @@ $title: Marcadores e substitutos
 
 Uma prática recomendada para melhorar o desempenho e fazer aprimoramento progressivo do seu material é usar marcadores e substitutos nas AMP sempre que possível.
 
-Se você fizer isso, alguns elementos até reduzirão as restrições. Por exemplo, se você usar um marcador para [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder), ele poderá ser usado na parte superior da página. Isso não seria possível sem o marcador.
+Se você fizer isso, alguns elementos até reduzirão as restrições. Por exemplo, se você usar um marcador para [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), ele poderá ser usado na parte superior da página. Isso não seria possível sem o marcador.
 
 ## Marcadores
 
@@ -89,7 +89,7 @@ No exemplo abaixo, o atributo `fallback` é usado para instruir o navegador a us
 
 ## Interação entre marcadores e substitutos
 
-No caso dos componentes AMP que dependem de conteúdo dinâmico (por exemplo, [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) e [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})), a interação entre marcadores e substitutos é a seguinte:
+No caso dos componentes AMP que dependem de conteúdo dinâmico (por exemplo, [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) e [`amp-list`](../../../../documentation/components/reference/amp-list.md)), a interação entre marcadores e substitutos é a seguinte:
 
 <ol>
   <li>O marcador é exibido durante o carregamento do conteúdo.</li>

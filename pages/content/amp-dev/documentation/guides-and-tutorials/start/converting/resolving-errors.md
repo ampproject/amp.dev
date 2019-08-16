@@ -32,7 +32,7 @@ Now, let's look at the following error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Every AMP document needs to have a link referencing the "canonical" version of that document.  We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}) step of this tutorial.
+Every AMP document needs to have a link referencing the "canonical" version of that document.  We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable](discoverable.md) step of this tutorial.
 
 For this tutorial we'll consider the original HTML article that we're converting to be the canonical page.
 
@@ -133,7 +133,7 @@ Once again, **reload** the page and verify that the stylesheets error has disapp
 [/tip]
 
 [tip type="important"]
-**IMPORTANT –** You can only have one style tag in your entire AMP document. If you have several external stylesheets referenced by your AMP pages, you will need to collate these stylesheets into a single set of rules. To learn what CSS rules are valid in AMP, read [Supported CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
+**IMPORTANT –** You can only have one style tag in your entire AMP document. If you have several external stylesheets referenced by your AMP pages, you will need to collate these stylesheets into a single set of rules. To learn what CSS rules are valid in AMP, read [Supported CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 [/tip]
 
 ## Exclude third-party JavaScript
@@ -155,7 +155,7 @@ This effectively rules out the use of all user-generated/third-party JavaScript 
 The only exceptions to the restriction on user-generated/third-party scripts are:
 
 1.  Script that adds metadata to the page or that configures AMP components. These will have the type attribute  `application/ld+json` or `application/json`.
-2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}). We will explore our first AMP component in the next section.
+2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components](../../../../documentation/components/index.html). We will explore our first AMP component in the next section.
 [/tip]
 
 Try opening the external [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) file. What do you see? The file should be empty of any JavaScript code and only include a comment of information such as this:
@@ -209,24 +209,24 @@ AMP doesn't support the default HTML counterparts to displaying media, which exp
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP has a web component specifically designed to replace the `<img>` tag, it's the [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag:
+AMP has a web component specifically designed to replace the `<img>` tag, it's the [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) tag:
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-**Replace** the `<img>` tag with the above [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag and run the validator again. You should receive several new errors:
+**Replace** the `<img>` tag with the above [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) tag and run the validator again. You should receive several new errors:
 
 <pre class="error-text">
 Layout not supported: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-Why did [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) trigger another error? Because [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) is not a direct substitute of the traditional HTML img tag. There are additional requirements when using [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Why did [`amp-img`](../../../../documentation/components/reference/amp-img.md) trigger another error? Because [`amp-img`](../../../../documentation/components/reference/amp-img.md) is not a direct substitute of the traditional HTML img tag. There are additional requirements when using [`amp-img`](../../../../documentation/components/reference/amp-img.md).
 
 ### AMP layout system
 
-The layout error is telling us that [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) does not support the `container` layout type. One of the most important concepts in AMP’s design is its focus on reducing the amount of DOM reflow required to render its web pages.
+The layout error is telling us that [`amp-img`](../../../../documentation/components/reference/amp-img.md) does not support the `container` layout type. One of the most important concepts in AMP’s design is its focus on reducing the amount of DOM reflow required to render its web pages.
 
 To reduce DOM reflow, AMP includes a layout system to ensure the layout of the page is known as early as possible in the lifecycle of downloading and rendering the page.
 
@@ -236,11 +236,11 @@ The image below compares how an HTML page is often laid out compared to the appr
 
 The AMP layout system allows for elements on a page to be positioned and scaled in a variety of ways -- fixed dimensions, responsive design, fixed height and more.
 
-In the case of our article, the layout system inferred the layout type for the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) as the `container` type. However, the `container` type is only applicable to elements that contain children elements. The `container` type is incompatible with the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag, which is the reason for this error.
+In the case of our article, the layout system inferred the layout type for the [`amp-img`](../../../../documentation/components/reference/amp-img.md) as the `container` type. However, the `container` type is only applicable to elements that contain children elements. The `container` type is incompatible with the [`amp-img`](../../../../documentation/components/reference/amp-img.md) tag, which is the reason for this error.
 
-Why was the `container` type inferred? Because we did not specify a `height` attribute for the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag. In HTML, reflow can be reduced by always specifying a fixed width and height for elements on a page. In AMP, you need to define the width and height for [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) elements so that AMP can pre-determine the aspect ratio of the element.
+Why was the `container` type inferred? Because we did not specify a `height` attribute for the [`amp-img`](../../../../documentation/components/reference/amp-img.md) tag. In HTML, reflow can be reduced by always specifying a fixed width and height for elements on a page. In AMP, you need to define the width and height for [`amp-img`](../../../../documentation/components/reference/amp-img.md) elements so that AMP can pre-determine the aspect ratio of the element.
 
-**Add** the `width` and `height` to your [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag as follows:
+**Add** the `width` and `height` to your [`amp-img`](../../../../documentation/components/reference/amp-img.md) tag as follows:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -248,7 +248,7 @@ Why was the `container` type inferred? Because we did not specify a `height` att
 
 Refresh the page and check the validator; you should no longer see any errors!
 
-You now have a valid AMP document, but the image doesn’t look so great because it is awkwardly positioned on the page.  By default when you specify the height and width for an [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) AMP will fix the dimensions to what you specify--but wouldn't it be great if AMP would scale the image to *responsively* stretch and fit the page no matter the screen size?
+You now have a valid AMP document, but the image doesn’t look so great because it is awkwardly positioned on the page.  By default when you specify the height and width for an [`amp-img`](../../../../documentation/components/reference/amp-img.md) AMP will fix the dimensions to what you specify--but wouldn't it be great if AMP would scale the image to *responsively* stretch and fit the page no matter the screen size?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
@@ -265,7 +265,7 @@ Voila! Our image is in the correct aspect ratio and responsively fills the width
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Our image is now responsive!") }}
 
 [tip type="read-on"]
-**READ ON –** Learn more about the AMP Layout System in the [AMP Layout Specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+**READ ON –** Learn more about the AMP Layout System in the [AMP Layout Specification](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md).
 [/tip]
 
 ## Success!
@@ -337,5 +337,5 @@ AMP validation successful.
 ### Frequently asked questions
 
 - [What is DOM reflow?](http://stackoverflow.com/a/27637245)
-- [What if the layout attribute isn’t defined?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?)
-- [What if width and height are undefined?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-width-and-height-are-undefined?)
+- [What if the layout attribute isn’t defined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn’t-specified?)
+- [What if width and height are undefined?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined?)

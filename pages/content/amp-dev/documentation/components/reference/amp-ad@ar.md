@@ -43,7 +43,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"&gt;&lt;/script&gt;</code><br>ملاحظة: ربما لا يزال العنصر amp-ad يعمل بدون هذا النص البرمجي، لكننا ننصح باستخدام النص بشدة بغرض التوافق في المستقبل.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>fill وfixed وfixed-height وflex-item وintrinsic وnodisplay وresponsive</td>
   </tr>
   <tr>
@@ -56,7 +56,7 @@ limitations under the License.
 
 يتم تحميل الإعلانات مثل جميع الموارد الأخرى في مستندات AMP، مع عنصر مخصص خاص يُسمى `<amp-ad>`. لا يُسمح بتشغيل جافا سكريبت مقدم من شبكة إعلانات في مستند AMP. وبدلاً من ذلك، يحمّل وقت تشغيل AMP إطار iframe من أصل مختلف (من خلال وضع حماية إطارات iframe) مثل مستند AMP، ويعمل على تنفيذ جافا سكريبت المقدمة من شبكة الإعلانات داخل وضع حماية إطارات iframe هذا.
 
-يتطلب العنصر `<amp-ad>` تحديد قيم العرض والارتفاع وفق [قاعدة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) نوع التنسيق التابع له. ويتطلب أيضًا الوسيطة `type` التي تحدد شبكة الإعلانات التي يتم عرضها. يتم تلقائيًا تمرير جميع سمات `data-*` الموجودة على العلامة كوسيطات إلى الترميز الذي يعرض الإعلان في النهاية. وتختلف سمات `data-` المطلوبة حسب نوع الشبكة المعين كما يجب توثيقها باستخدام الشبكة.
+يتطلب العنصر `<amp-ad>` تحديد قيم العرض والارتفاع وفق [قاعدة](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) نوع التنسيق التابع له. ويتطلب أيضًا الوسيطة `type` التي تحدد شبكة الإعلانات التي يتم عرضها. يتم تلقائيًا تمرير جميع سمات `data-*` الموجودة على العلامة كوسيطات إلى الترميز الذي يعرض الإعلان في النهاية. وتختلف سمات `data-` المطلوبة حسب نوع الشبكة المعين كما يجب توثيقها باستخدام الشبكة.
 
 #### مثال: عرض بعض الإعلانات
 
@@ -117,7 +117,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>data-consent-notification-id (اختياريّة)</strong></td>
-    <td>في حال توفير هذه السمة، فإنها تتطلب تأكيد <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-user-notification.md', locale=doc.locale).url.path}}">amp-user-notification</a> بمعرّف HTML-id المعين إلى أن يتم تمرير "معرِّف عميل AMP" (يشبه ملف تعريف ارتباط) للمستخدِم إلى الإعلان. يعني هذا تأخر عرض الإعلان إلى أن يؤكد المستخدِم الإشعار.</td>
+    <td>في حال توفير هذه السمة، فإنها تتطلب تأكيد <a href="amp-user-notification.md">amp-user-notification</a> بمعرّف HTML-id المعين إلى أن يتم تمرير "معرِّف عميل AMP" (يشبه ملف تعريف ارتباط) للمستخدِم إلى الإعلان. يعني هذا تأخر عرض الإعلان إلى أن يؤكد المستخدِم الإشعار.</td>
   </tr>
   <tr>
     <td width="40%"><strong>data-loading-strategy (اختياريّة)</strong></td>
@@ -130,13 +130,13 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>السمات المشتركة</strong></td>
-    <td>يتضمن هذا العنصر <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
+    <td>يتضمن هذا العنصر <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
   </tr>
 </table>
 
 ## العنصر النائب
 
-يتيح `amp-ad` اختياريًا عنصرًا ثانويًا من خلال السمة `placeholder`. إذا كانت شبكة الإعلانات متوافقة، سيتم عرض هذا العنصر إلى أن يتوفر الإعلان للعرض. يمكنك معرفة المزيد من المعلومات في [العناصر النائبة والعناصر الاحتياطية]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+يتيح `amp-ad` اختياريًا عنصرًا ثانويًا من خلال السمة `placeholder`. إذا كانت شبكة الإعلانات متوافقة، سيتم عرض هذا العنصر إلى أن يتوفر الإعلان للعرض. يمكنك معرفة المزيد من المعلومات في [العناصر النائبة والعناصر الاحتياطية](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ```html
 <amp-ad width=300 height=250
@@ -163,13 +163,13 @@ limitations under the License.
 
 هناك 3 طرق لتحقيق الربح من الفيديوهات في AMP من خلال إعلانات الفيديو:
 
-1. تتيح AMP أصلاً عمل عدد من مشغلات الفيديو، مثل BrightCove وDailyMotion وغيرهما والتي يمكنها تحقيق الربح من الإعلانات. للحصول على القائمة الكاملة، راجع مكونات [الوسائط]({{g.doc('/content/amp-dev/documentation/components.md', locale=doc.locale).url.path}}#media).
+1. تتيح AMP أصلاً عمل عدد من مشغلات الفيديو، مثل BrightCove وDailyMotion وغيرهما والتي يمكنها تحقيق الربح من الإعلانات. للحصول على القائمة الكاملة، راجع مكونات [الوسائط](../../../documentation/components.md#media).
 
-2. استخدِم المكوِّن [amp-ima-video]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ima-video.md', locale=doc.locale).url.path}}) الذي يأتي مع أداة تطوير البرامج لإعلانات الوسائط التفاعلية المضمّنة ومشغل فيديو HTML5.
+2. استخدِم المكوِّن [amp-ima-video](amp-ima-video.md) الذي يأتي مع أداة تطوير البرامج لإعلانات الوسائط التفاعلية المضمّنة ومشغل فيديو HTML5.
 3. إذا كنت تستخدم مشغل فيديو غير متوافق في AMP، يمكنك عرض مشغلك المخصص باستخدام [amp-iframe](https://ampbyexample.com/components/amp-iframe/).
 عند استخدام الأسلوب `amp-iframe`:
 
-    * تأكد من وجود ملصق إذا تم تحميل المشغل في إطار العرض الأول. [يمكنك معرفة التفاصيل]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
+    * تأكد من وجود ملصق إذا تم تحميل المشغل في إطار العرض الأول. [يمكنك معرفة التفاصيل](amp-iframe.md#iframe-with-placeholder).
     * يجب عرض الفيديو والملصق عبر HTTPS.</li>
 
 ## تشغيل الإعلانات من نطاق خاص
@@ -201,7 +201,7 @@ limitations under the License.
 
 هذا العمل اختياري تمامًا: نسعى أحيانًا إلى تحسين طلب الإعلان قبل إرساله إلى خادم الإعلانات.
 
-إذا كانت شبكة الإعلانات تتيح [الجلب السريع]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/adnetwork_integration.md', locale=doc.locale).url.path}}#creating-an-amp-ad-implementation)، يُرجى استخدام [تهيئة الوقت الفعلي](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC). (تتيح عمليات تكامل DoubleClick وAdSense الجلب السريع وتهيئة الوقت الفعلي).
+إذا كانت شبكة الإعلانات تتيح [الجلب السريع](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad-implementation)، يُرجى استخدام [تهيئة الوقت الفعلي](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC). (تتيح عمليات تكامل DoubleClick وAdSense الجلب السريع وتهيئة الوقت الفعلي).
 
 إذا كانت شبكة إعلاناتك تستخدم الجلب المؤجل، يمكنك إرسال رد اتصال على اتصال الوظيفة `draw3p` في الملف [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html). يتلقى رد الاتصال التهيئة الواردة كوسيطة أولى ثم يتلقى رد اتصال آخر كوسيطة ثانية (تحمل اسم `done` في المثال أدناه). يجب إجراء رد الاتصال هذا بالتهيئة المحدّثة حتى يتسنى استكمال عرض الإعلانات.
 
@@ -269,7 +269,7 @@ draw3p(function(config, done) {
 * [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
 * [Atomx](https://github.com/ampproject/amphtml/blob/master/ads/atomx.md)
 * [Baidu](https://github.com/ampproject/amphtml/blob/master/ads/baidu.md)
-* [BeOpinion]({{g.doc('/content/amp-dev/documentation/components/reference/amp-beopinion.md', locale=doc.locale).url.path}})
+* [BeOpinion](amp-beopinion.md)
 * [Bidtellect](https://github.com/ampproject/amphtml/blob/master/ads/bidtellect.md)
 * [brainy](https://github.com/ampproject/amphtml/blob/master/ads/brainy.md)
 * [Broadstreet Ads](https://github.com/ampproject/amphtml/blob/master/ads/broadstreetads.md)

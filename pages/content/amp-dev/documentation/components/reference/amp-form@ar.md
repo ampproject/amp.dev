@@ -37,7 +37,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">التنسيقات المعتمدة</a></strong></td>
+    <td><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">التنسيقات المعتمدة</a></strong></td>
     <td>لا ينطبق</td>
   </tr>
   <tr>
@@ -54,7 +54,7 @@ limitations under the License.
 تتيح لك الإضافة `amp-form` إنشاء نماذج (`<form>`) لإرسال حقول الإدخال في مستند AMP. وتوفر الإضافة `amp-form` أيضًا [تعويضات](#polyfills) لبعض السلوكيات المفقودة في المتصفحات.
 
 [tip type="important"]
-إذا كنت ترسل بيانات في النموذج، يجب أن تنفذ نقطة نهاية الخادم لديك متطلبات [أمان CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
+إذا كنت ترسل بيانات في النموذج، يجب أن تنفذ نقطة نهاية الخادم لديك متطلبات [أمان CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 [/tip]
 
 قبل إنشاء `<form>`، يجب تضمين النص البرمجي المطلوب للإضافة `<amp-form>`، وإلا فلن يكون المستند صالحًا. إذا كنت تستخدم علامات `input` لأغراض أخرى غير إرسال قيمها (مثل الإدخالات غير الموجودة في `<form>`)، لن تحتاج إلى تحميل الإضافة `amp-form`.
@@ -123,7 +123,7 @@ limitations under the License.
 
 [tip type="important"]
 
-يجب أن تنفذ نقطة نهاية متطلبات [أمان CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
+يجب أن تنفذ نقطة نهاية متطلبات [أمان CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 [/tip]
 
@@ -149,7 +149,7 @@ limitations under the License.
 
 * العناصر الأخرى ذات الصلة بالنموذج، بما في ذلك: `<textarea>` و`<select>` و`<option>` و`<fieldset>` و`<label>` و`<input type=text>` و`<input type=submit>` وما إلى ذلك
 * `<input type=password>` و`<input type=file>` في `<form method=POST action-xhr>`
-* [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})
+* [`amp-selector`](amp-selector.md)
 
 **غير المسموح بها**:
 
@@ -170,7 +170,7 @@ limitations under the License.
 | `clear` | يعمل على تفريغ القيم من كل الإدخالات في النموذج. ويسمح هذا للمستخدِمين بسرعة ملء النماذج مرة ثانية. |
 
 [tip type="read-on"]
-تعرّف عن [الإجراءات والأحداث في AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
+تعرّف عن [الإجراءات والأحداث في AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
 [/tip]
 
 # الأحداث
@@ -187,7 +187,7 @@ limitations under the License.
 | `valid` | عند تغير حالة التحقق للنموذج إلى "صالح" (وفقًا [لاستراتيجية إعداد التقارير](#reporting-strategies)) |
 | `invalid` | عند تغير حالة التحقق للنموذج إلى "غير صالح" (وفقًا [لاستراتيجية إعداد التقارير](#reporting-strategies)) |
 
-يمكن استخدام هذه الأحداث عبر [السمة `on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on).
+يمكن استخدام هذه الأحداث عبر [السمة `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on).
 
 يستجيب النموذج في المثال التالي إلى أحداث `submit-success` و`submit-error` ويظهر عروضًا مبسطة اعتمادًا على الحدث:
 
@@ -202,7 +202,7 @@ limitations under the License.
 
 # أحداث الإدخال
 
-تعرض AMP أحداث `change` و`input-debounced` في عناصر `<input>` الثانوية. يتيح لك ذلك استخدام [السمة `on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on) لتنفيذ إجراء على أي عنصر عند تغيّر قيمة الإدخال.
+تعرض AMP أحداث `change` و`input-debounced` في عناصر `<input>` الثانوية. يتيح لك ذلك استخدام [السمة `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on) لتنفيذ إجراء على أي عنصر عند تغيّر قيمة الإدخال.
 
 من بين حالات الاستخدام الشائعة مثلاً إرسال نموذج عند تغير الإدخال (تحديد زر الاختيار للإجابة على استطلاع أو اختيار اللغة من الإدخال `select` لترجمة الصفحة، وغير ذلك).
 
@@ -234,7 +234,7 @@ limitations under the License.
 
 # مشغلات التحليلات
 
-تؤدي الإضافة `amp-form` إلى تشغيل الأحداث التالية التي يمكنك تتبعها في تهيئة [amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
+تؤدي الإضافة `amp-form` إلى تشغيل الأحداث التالية التي يمكنك تتبعها في تهيئة [amp-analytics](amp-analytics.md):
 
 | الحدث                     | موعد تنشيطه                        |
 |---------------------------|-----------------------------------|
@@ -297,7 +297,7 @@ limitations under the License.
 
 # عرض استجابة النجاح/الخطأ
 
-يمكنك عرض استجابات النجاح أو الخطأ في النموذج باستخدام [النماذج الموسَّعة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#extended-templates)، مثل [amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})، أو عرض استجابات النجاح من خلال ربط البيانات باستخدام [amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) وسمات الاستجابة التالية:
+يمكنك عرض استجابات النجاح أو الخطأ في النموذج باستخدام [النماذج الموسَّعة](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates)، مثل [amp-mustache](amp-mustache.md)، أو عرض استجابات النجاح من خلال ربط البيانات باستخدام [amp-bind](amp-bind.md) وسمات الاستجابة التالية:
 
 | سمة الاستجابة | الوصف |
 |-----------|---------------------|
@@ -394,11 +394,11 @@ limitations under the License.
 
 # لعرض استجابة ناجحة باستخدام ربط البيانات
 
-* استخدِم [السمة on]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) لربط سمة النموذج *submit-success* بالإجراء [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#updating-state-with-amp.setstate%28%29).
+* استخدِم [السمة on](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) لربط سمة النموذج *submit-success* بالإجراء [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29).
 * استخدِم الخاصية `event` لاستخراج بيانات الاستجابة.
 * أضِف سمة الحالة إلى العنصر المطلوب لربط استجابة النموذج.
 
-يوضح المثال التالي استجابة `submit-success` للنموذج باستخدام [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}):
+يوضح المثال التالي استجابة `submit-success` للنموذج باستخدام [`amp-bind`](amp-bind.md):
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -439,7 +439,7 @@ limitations under the License.
 
 يمكنك إعادة توجيه المستخدِمين إلى صفحة جديدة بعد إرسال النموذج بنجاح عن طريق تعيين رأس الاستجابة `AMP-Redirect-To` وتحديد عنوان URL لإعادة التوجيه. يجب أن يكون عنوان URL هذا هو عنوان HTTPS URL، وإلا ستعرض AMP رسالة خطأ ولن تتم إعادة التوجيه.  تتم تهيئة رؤوس استجابة HTTP عبر الخادم لديك.
 
-احرِص على تعديل رأس الاستجابة `Access-Control-Expose-Headers` لتضمين `AMP-Redirect-To` إلى قائمة الرؤوس المسموح بها.  يمكنك التعرّف على مزيد من المعلومات عن هذه الرؤوس في [أمان CORS في AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
+احرِص على تعديل رأس الاستجابة `Access-Control-Expose-Headers` لتضمين `AMP-Redirect-To` إلى قائمة الرؤوس المسموح بها.  يمكنك التعرّف على مزيد من المعلومات عن هذه الرؤوس في [أمان CORS في AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 *مثال لرؤوس الاستجابة:*
 
@@ -702,7 +702,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 # الحماية من XSRF
 
-بالإضافة إلى اتباع التفاصيل الواردة في [مواصفات AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})، يُرجى توجيه العناية الفائقة للقسم ["معالجة طلبات تغيير الحالة" ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests) للحماية من [هجمات XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) التي ينفذ فيها المهاجم أوامر غير مصرح بها باستخدام الجلسة الحالية للمستخدِم بدون علمه.
+بالإضافة إلى اتباع التفاصيل الواردة في [مواصفات AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)، يُرجى توجيه العناية الفائقة للقسم ["معالجة طلبات تغيير الحالة" ](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests) للحماية من [هجمات XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) التي ينفذ فيها المهاجم أوامر غير مصرح بها باستخدام الجلسة الحالية للمستخدِم بدون علمه.
 
 ضع في اعتبارك النقاط التالية بشكل عام عند قبول إدخال من المستخدِم:
 

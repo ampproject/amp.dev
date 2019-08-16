@@ -6,7 +6,7 @@ $title: 북엔드 만들기
 
 북엔드 화면의 정보는 `<amp-story-bookend>` 태그에 지정된 JSON 파일에서 가져옵니다. 이 가이드에서는 북엔드 데이터가 포함된 JSON 파일([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json))이 이미 만들어져 있습니다.
 
-`<amp-story-bookend>` 태그는 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})의 마지막 태그여야 합니다. 따라서 종료 `</amp-story>` 태그 바로 앞에 `<amp-story-bookend></amp-story-bookend>`를 **추가**합니다.  `amp-story-bookend` 태그에서 `src` 속성을 `bookend.json` 파일로 지정하고 `layout="nodisplay"`를 설정합니다.
+`<amp-story-bookend>` 태그는 [`amp-story`](../../../../documentation/components/reference/amp-story.md)의 마지막 태그여야 합니다. 따라서 종료 `</amp-story>` 태그 바로 앞에 `<amp-story-bookend></amp-story-bookend>`를 **추가**합니다.  `amp-story-bookend` 태그에서 `src` 속성을 `bookend.json` 파일로 지정하고 `layout="nodisplay"`를 설정합니다.
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -26,7 +26,7 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
 "bookendVersion": "v1.0",
 ```
 
-독자들이 여러분의 콘텐츠를 소셜 공유 버튼을 사용하여 트위터와 페이스북 그리고 핀터레스트 등의 소셜 네트워크 플랫폼에 공유할 수 있습니다. shareProviders 객체에서 소셜 공유 제공업체를 지정하고, 각 소셜 플랫폼에 대한 [타입명]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers)을 포함하는 배열을 만듭니다.
+독자들이 여러분의 콘텐츠를 소셜 공유 버튼을 사용하여 트위터와 페이스북 그리고 핀터레스트 등의 소셜 네트워크 플랫폼에 공유할 수 있습니다. shareProviders 객체에서 소셜 공유 제공업체를 지정하고, 각 소셜 플랫폼에 대한 [타입명](../../../../documentation/components/reference/amp-social-share.md#pre-configured-providers)을 포함하는 배열을 만듭니다.
 
 이 가이드에서는 Facebook, Twitter 및 공유 제공업체의 이메일을 선택했습니다.
 
@@ -143,6 +143,6 @@ JSON 파일에 대해 살펴보겠습니다.  텍스트 에디터에서 [bookend
 </tbody>
 </table>
 
-북엔드 구성 요소에 대한 더 자세한 내용이 있습니다. [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 참조 문서를 확인하세요.
+북엔드 구성 요소에 대한 더 자세한 내용이 있습니다. [`amp-story`](../../../../documentation/components/reference/amp-story.md) 참조 문서를 확인하세요.
 
 스토리가 거의 완성되었습니다.  콘텐츠를 게시하기 전에 AMP HTML이 유효한지 확인하세요.

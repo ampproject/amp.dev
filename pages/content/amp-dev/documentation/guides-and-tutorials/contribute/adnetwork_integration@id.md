@@ -6,23 +6,23 @@ Panduan ini diperuntukkan bagi jaringan iklan yang ingin berintegrasi dengan AMP
 
 ## Ringkasan
 
-Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan HTML biasa ke halaman AMP, serta menayangkan iklan [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}).
+Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan HTML biasa ke halaman AMP, serta menayangkan iklan [AMPHTML](../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md).
 
 ##### Ingin menayangkan iklan HTML biasa?
 
-1.  [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+1.  [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
 
 ##### Ingin menayangkan iklan AMPHTML?
 
-1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) (misalnya jika Anda belum membuat implementasi untuk menayangkan iklan HTML biasa)
+1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) (misalnya jika Anda belum membuat implementasi untuk menayangkan iklan HTML biasa)
 2. [Buat integrasi Fast Fetch untuk menayangkan iklan AMPHTML](#membuat-integrasi-fast-fetch).
 
 ## Membuat implementasi `amp-ad`
 
-Sebagai server iklan, penayang yang Anda dukung menyertakan library JavaScript yang Anda sediakan dan menempatkan berbagai "cuplikan iklan" yang mengandalkan library JavaScript untuk mengambil iklan dan merendernya di situs penayang. Karena AMP tidak mengizinkan penayang untuk menjalankan JavaScript arbitrer, Anda harus berkontribusi pada kode open-source AMP untuk mengizinkan tag [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) meminta iklan dari server iklan.
+Sebagai server iklan, penayang yang Anda dukung menyertakan library JavaScript yang Anda sediakan dan menempatkan berbagai "cuplikan iklan" yang mengandalkan library JavaScript untuk mengambil iklan dan merendernya di situs penayang. Karena AMP tidak mengizinkan penayang untuk menjalankan JavaScript arbitrer, Anda harus berkontribusi pada kode open-source AMP untuk mengizinkan tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) meminta iklan dari server iklan.
 
 [tip type="note"]
-Anda dapat menggunakan implementasi [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  ini untuk menampilkan iklan HTML biasa **dan** iklan AMPHTML.
+Anda dapat menggunakan implementasi [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  ini untuk menampilkan iklan HTML biasa **dan** iklan AMPHTML.
 [/tip]
 
 Misalnya, server Amazon A9 dapat dijalankan dengan menggunakan sintaks berikut:
@@ -36,9 +36,9 @@ Misalnya, server Amazon A9 dapat dijalankan dengan menggunakan sintaks berikut:
 </amp-ad>
 ```
 
-Dalam kode di atas, atribut `type` menentukan jaringan iklan, dalam hal ini A9. Atribut `data-*` bergantung pada parameter yang diharapkan oleh server Amazon A9 untuk menayangkan iklan. File [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) menunjukkan bagaimana parameter dipetakan untuk membuat panggilan JavaScript ke URL server A9. Parameter terkait yang diteruskan oleh tag [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  ditambahkan ke akhir URL untuk menampilkan iklan.
+Dalam kode di atas, atribut `type` menentukan jaringan iklan, dalam hal ini A9. Atribut `data-*` bergantung pada parameter yang diharapkan oleh server Amazon A9 untuk menayangkan iklan. File [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) menunjukkan bagaimana parameter dipetakan untuk membuat panggilan JavaScript ke URL server A9. Parameter terkait yang diteruskan oleh tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  ditambahkan ke akhir URL untuk menampilkan iklan.
 
-Untuk mempelajari cara membuat integrasi [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}), lihat [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+Untuk mempelajari cara membuat integrasi [`amp-ad`](../../../documentation/components/reference/amp-ad.md), lihat [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
 ## Membuat integrasi Fast Fetch
 
@@ -57,5 +57,5 @@ Untuk mempelajari cara membuat integrasi Fast Fetch, lihat [Panduan Implementasi
 ## Referensi terkait
 
 *   [Direktori GitHub untuk semua ekstensi amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [Daftar vendor iklan yang didukung]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
+*   [Daftar vendor iklan yang didukung](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
 *   [Postingan blog yang menjelaskan peluncuran Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

@@ -21,11 +21,11 @@ $order: 4
       <ul>
         <li>레이어 1개 포함:
       <ul>
-        <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 템플릿을 구현합니다.</li>
+        <li><a href="create_cover_page.md#vertical"><code>vertical</code></a> 템플릿을 구현합니다.</li>
         <li>요소 3개 포함:
           <ul>
             <li>제목이 <em>고양이</em></li>인 <code>&lt;h1></code> 요소
-            <li>반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>(<code class="filename">cat.jpg</code>, 720 x 1280px)</li>
+            <li>반응형 <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>(<code class="filename">cat.jpg</code>, 720 x 1280px)</li>
             <li>다음 인용문의 <code>&lt;q></code> 요소: <em>개는 사람이 부르면 옵니다. 고양이는 뭔가 할 말이 있으면 사람에게 옵니다. --Mary Bly</em></li>
           </ul>
         </li>
@@ -45,11 +45,11 @@ $order: 4
       <ul>
         <li>레이어 2개 포함:
       <ul>
-        <li><b>레이어 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>(<code class="filename">dog.jpg</code>, 720 x 1280px)</li>를 포함합니다.
-        <li><b>레이어 2</b>:  <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>thirds</code></a> 템플릿을 구현하고 요소 2개를 포함합니다.
+        <li><b>레이어 1</b>: <a href="create_cover_page.md#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>(<code class="filename">dog.jpg</code>, 720 x 1280px)</li>를 포함합니다.
+        <li><b>레이어 2</b>:  <a href="create_cover_page.md#thirds"><code>thirds</code></a> 템플릿을 구현하고 요소 2개를 포함합니다.
           <ul>
             <li>제목이 <em>개</em></li>인 <code>&lt;h1></code> 요소
-            <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>lower-third</code></a>를 차지하는 <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#thirds"><code>grid-area</code></a>를 지정하고 다음 텍스트를 포함하는 <code><p></code> 요소: <em>개는 처음으로 길들여진 동물이라고 합니다. 약 10,000년 동안 사람들과 함께 지내왔습니다. 몇몇 과학자들은 애완동물이든 야생동물이든 모든 개가 작은 남아시아 늑대라는 공통 조상을 공유한다고 주장합니다.</em></li>
+            <li><a href="create_cover_page.md#thirds"><code>lower-third</code></a>를 차지하는 <a href="create_cover_page.md#thirds"><code>grid-area</code></a>를 지정하고 다음 텍스트를 포함하는 <code><p></code> 요소: <em>개는 처음으로 길들여진 동물이라고 합니다. 약 10,000년 동안 사람들과 함께 지내왔습니다. 몇몇 과학자들은 애완동물이든 야생동물이든 모든 개가 작은 남아시아 늑대라는 공통 조상을 공유한다고 주장합니다.</em></li>
           </ul>
         </li>
       </ul></li></ul>
@@ -68,13 +68,13 @@ $order: 4
       <ul>
       <li>레이어 3개 포함:
       <ul>
-        <li><b>레이어 1</b>: <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>(<code class="filename">bird.jpg</code>, 720 x 1280px)</li>를 포함합니다.
-        <li><b>레이어 2</b>:  <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.
+        <li><b>레이어 1</b>: <a href="create_cover_page.md#fill"><code>fill</code></a> 템플릿을 구현하고 반응형 <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>(<code class="filename">bird.jpg</code>, 720 x 1280px)</li>를 포함합니다.
+        <li><b>레이어 2</b>:  <a href="create_cover_page.md#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.
           <ul>
             <li>제목이 <em>새</em></li>인 <code>&lt;h1></code> 요소
           </ul>
         </li>
-        <li><b>레이어 3</b>:  <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md', locale=doc.locale).url.path}}#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.
+        <li><b>레이어 3</b>:  <a href="create_cover_page.md#vertical"><code>vertical</code></a> 템플릿을 구현하고 요소 한 개를 포함합니다.
           <ul>
             <li>다음 인용문의 <code>&lt;q></code> 요소: <em>새는 깃털이 있고 날 수 있고 노래할 수 있습니다. 그중에 가장 중요하지 않은 것은 깃털입니다. --Marjorie Allen Seiffert</em></li>
             <li>세 번째 레이어가 <code>class="bottom"</code>을 지정하여 하위 요소를 화면 하단에 정렬합니다.</li>
@@ -98,9 +98,9 @@ $order: 4
       <ul>
       <li>레이어 3개 포함:
       <ul>
-        <li><b>레이어 1</b>: <code>fill</code> 템플릿을 구현하고 반응형 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>(<code class="filename">rabbit.mp4</code>)를 포함합니다.
+        <li><b>레이어 1</b>: <code>fill</code> 템플릿을 구현하고 반응형 <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>(<code class="filename">rabbit.mp4</code>)를 포함합니다.
           <ul>
-            <li>동영상이 표시되도록 <code><head></code> 섹션에 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> 구성요소의 <strong>필수 스크립트</strong>를 추가합니다.</li>
+            <li>동영상이 표시되도록 <code><head></code> 섹션에 <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> 구성요소의 <strong>필수 스크립트</strong>를 추가합니다.</li>
             <li><code>poster</code> 이미지(<code class="filename">rabbit.jpg</code>)를 지정합니다. 이 속성은 유효한 AMP 스토리를 위해 <strong>필요</strong>합니다.</li>
             <li><code>autoplay</code> 속성으로 동영상이 자동 재생되도록 설정합니다. 이 속성은 유효한 AMP 스토리를 위해 <strong>필요</strong>합니다.</li>
             <li><code>loop</code> 속성으로 동영상이 자동 루프백되도록 설정합니다.</li>

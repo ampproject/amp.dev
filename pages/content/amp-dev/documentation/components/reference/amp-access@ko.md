@@ -50,7 +50,7 @@ limitations under the License.
 
 ## `amp-subscriptions`에 대한 관계
 
-[`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) 확장 프로그램은 `amp-access`와 유사한 기능을 제공합니다. 그러나 좀 더 특수화된 액세스 페이월 프로토콜을 지원합니다. 주목할 만한 차이점은 다음과 같습니다.
+[`amp-subscriptions`](amp-subscriptions.md) 확장 프로그램은 `amp-access`와 유사한 기능을 제공합니다. 그러나 좀 더 특수화된 액세스 페이월 프로토콜을 지원합니다. 주목할 만한 차이점은 다음과 같습니다.
 
 1. `amp-subscriptions` 승인 응답은 amp-access 승인과 유사하지만, 엄격하게 정의되고 표준화되어 있습니다.
 1. `amp-subscriptions` 확장 프로그램을 사용하면 페이지가 액세스/페이월 결정에 참여할 수 있도록 여러 서비스를 구성할 수 있습니다. 이러한 서비스는 동시에 실행되며 긍정적인 응답을 반환하는 서비스를 기반으로 우선순위가 지정됩니다.
@@ -501,7 +501,7 @@ AMP는 로그인과 구독을 구분하지 않습니다. 이러한 구분은 다
 
 ## CORS 오리진 보안
 
-승인 및 핑백 엔드포인트는 CORS 엔드포인트이며 [AMP CORS 보안 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)에 설명된 보안 프로토콜을 구현해야 합니다.
+승인 및 핑백 엔드포인트는 CORS 엔드포인트이며 [AMP CORS 보안 사양](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)에 설명된 보안 프로토콜을 구현해야 합니다.
 
 ## 한도 측정
 

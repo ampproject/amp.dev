@@ -42,7 +42,7 @@ Ce composant remplace la balise `video` HTML5 ; il ne doit être utilisé que p
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Superposition click-to-play pour amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Mises en page compatibles</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -110,7 +110,7 @@ Le composant `amp-video` est directement compatible avec la technologie d'analys
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Nécessite l'extension <code>amp-video-docking</code>.</strong> Si cet attribut est utilisé et que la vidéo est lue manuellement, cette dernière est" "réduite" et ancrée à un coin ou à un élément de la page lorsque l'utilisateur fait défiler la page au-delà la zone visuelle du composant vidéo.
-            Pour en savoir plus, consultez la <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentation relative à l'extension d'ancrage</a>.</td>
+            Pour en savoir plus, consultez la <a href="amp-video-docking.md">documentation relative à l'extension d'ancrage</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>
@@ -138,7 +138,7 @@ Le composant `amp-video` est directement compatible avec la technologie d'analys
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
-          <td>Cet élément inclut des <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">attributs communs</a> étendus aux composants AMP.</td>
+          <td>Cet élément inclut des <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">attributs communs</a> étendus aux composants AMP.</td>
         </tr>
       </table>
 

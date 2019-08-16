@@ -31,21 +31,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>提供状況</strong></td>
-    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">試験運用版</a></div></td>
+    <td><div><a href="../../../documentation/guides-and-tutorials/learn/experimental.md">試験運用版</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>必要なスクリプト</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>なし</td>
   </tr>
   <tr>
     <td width="40%"><strong>例</strong></td>
     <td><ul>
       <li>AMP By Example の <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> のサンプルをご覧ください。</li>
-      <li><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">ビジュアルに訴える AMP ストーリーを作成する</a>方法についてのチュートリアルをご覧ください。</li>
+      <li><a href="../../../documentation/guides-and-tutorials/start/visual_story/index.md">ビジュアルに訴える AMP ストーリーを作成する</a>方法についてのチュートリアルをご覧ください。</li>
     </ul></td>
   </tr>
 </table>
@@ -242,7 +242,7 @@ AMP ストーリーのブックエンドに新機能が追加されました。�
 
 ### amp-story に必要なマークアップ
 
-AMP ストーリーの HTML 形式は、[有効な AMP HTML ドキュメントと同じマークアップ要件]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)と以下の追加要件に準拠します。
+AMP ストーリーの HTML 形式は、[有効な AMP HTML ドキュメントと同じマークアップ要件](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup)と以下の追加要件に準拠します。
 
 | ルール | 説明 |
 |----|---|
@@ -1266,9 +1266,9 @@ AMP ドキュメントがストーリーであることを示します。
 
 追加のパラメータが必要な場合は、Key-Value ペアを持つオブジェクトを使用します。このオブジェクトには、プロバイダの名前に対応する値（`facebook` など）が指定されたキー `provider` を含める必要があります。次の Key-Value は共有プロバイダによって決まります。
 
-使用できるプロバイダのリストは [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}) コンポーネントと同じです。
+使用できるプロバイダのリストは [amp-social-share](amp-social-share.md) コンポーネントと同じです。
 
-使用できるパラメータのセットはプロバイダごとに異なります（[`data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a) を参照）。設定オブジェクトでは、`data-param-` プレフィックスのないパラメータが使用されます（たとえば `data-param-app_id` は、設定オブジェクトでは `app_id` と表示されます）。
+使用できるパラメータのセットはプロバイダごとに異なります（[`data-param-*`](amp-social-share.md#data-param-%2a) を参照）。設定オブジェクトでは、`data-param-` プレフィックスのないパラメータが使用されます（たとえば `data-param-app_id` は、設定オブジェクトでは `app_id` と表示されます）。
 
 #### JSON 設定
 
@@ -1316,10 +1316,10 @@ AMP ドキュメントがストーリーであることを示します。
 
 以下に、AMP ストーリーで使用できるその他のコンポーネントを示します。ただし、ストーリーに固有の注意すべき点がいくつかあります。
 
-* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
-* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
+* [amp-sidebar](amp-sidebar.md#sidebar-for-stories)
+* [amp-consent](amp-consent.md#prompt-ui-for-stories)
 
-一般に使用可能なその他のコンポーネントについては、[使用可能な子のリスト]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children)をご覧ください。
+一般に使用可能なその他のコンポーネントについては、[使用可能な子のリスト](amp-story.md#children)をご覧ください。
 
 ## 検証
 
@@ -1356,8 +1356,8 @@ AMP 検証ツールの仕様で [amp-story のルール](https://github.com/ampp
 
 ## 関連リソース
 
-* [チュートリアル: ビジュアルに訴える AMP ストーリーを作成する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
+* [チュートリアル: ビジュアルに訴える AMP ストーリーを作成する](../../../documentation/guides-and-tutorials/start/visual_story/index.md)
 * [AMP By Example のサンプル](https://ampbyexample.com/stories/#stories/introduction)
-* [AMP ストーリーのおすすめの作成方法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
+* [AMP ストーリーのおすすめの作成方法](../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 </amp-story></body>
