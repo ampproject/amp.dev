@@ -42,7 +42,7 @@ Um substituto para a tag `video` de HTML5; para ser usado apenas em incorporaç�
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Sobreposição de reprodução com um clique para amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layouts compatíveis</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -110,7 +110,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Requer a extensão <code>amp-video-docking</code>.</strong> Se o atributo estiver presente e o vídeo for reproduzido manualmente, o vídeo será "minimizado" e fixado a um canto ou elemento quando o usuário rolar para fora da área visual do componente de vídeo.
-            Para mais detalhes, consulte a <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">documentação sobre a extensão de âncora</a> (link em inglês).</td>
+            Para mais detalhes, consulte a <a href="amp-video-docking.md">documentação sobre a extensão de âncora</a> (link em inglês).</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>
@@ -138,7 +138,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
-          <td>Este elemento inclui <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">atributos comuns</a> estendidos a componentes de AMP.</td>
+          <td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
         </tr>
       </table>
 

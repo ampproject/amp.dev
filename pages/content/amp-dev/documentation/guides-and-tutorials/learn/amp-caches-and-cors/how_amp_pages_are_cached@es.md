@@ -37,7 +37,7 @@ Si no desea almacenar su documento en caché, una opción es eliminar el atribut
 
 ## ¿Quién solicita páginas de AMP en caché?
 
-Las plataformas (como Google Search, Google News y Cloudflare) y las aplicaciones móviles acceden a las páginas de AMP almacenadas en caché. Las aplicaciones móviles pueden vincular el contenido de AMP almacenado en caché a través de la URL (consulte [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)) o mediante XHR de origen cruzado en Progressive Web Apps (obtenga más información en "[Incruste y use AMP como fuente de datos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})").
+Las plataformas (como Google Search, Google News y Cloudflare) y las aplicaciones móviles acceden a las páginas de AMP almacenadas en caché. Las aplicaciones móviles pueden vincular el contenido de AMP almacenado en caché a través de la URL (consulte [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)) o mediante XHR de origen cruzado en Progressive Web Apps (obtenga más información en "[Incruste y use AMP como fuente de datos](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)").
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"

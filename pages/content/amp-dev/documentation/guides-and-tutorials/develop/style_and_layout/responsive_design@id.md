@@ -16,7 +16,7 @@ Dalam panduan ini, kami akan menunjukkan cara menerapkan dasar-dasar komponen re
 
 Guna mengoptimalkan halaman sehingga konten diubah skalanya dan menyesuaikan jendela browser untuk semua perangkat, Anda harus menentukan elemen viewport `meta`. Elemen viewport memberikan petunjuk ke browser tentang cara mengubah skala dan menyesuaikan ukuran area yang terlihat (viewport) dari halaman.
 
-Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
+Namun, nilai apa yang harus digunakan?  Di AMP, nilai tersebut sudah tersedia untuk Anda.  Sebagai bagian dari [markup yang diperlukan](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md#required-markup) untuk halaman AMP, Anda harus menentukan viewport berikut:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -58,11 +58,11 @@ Namun, kami ingin gambar tersebut tidak berukuran melebihi batas yang ditentukan
 </style>
 ```
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#atribut-tata-letak).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang berbagai tata letak di AMP, lihat panduan [Kueri Tata Letak & Media](control_layout.md#atribut-tata-letak).
 
 <a id="fn1"></a>
 [tip type="note"]
-***Mengapa mengubah ukuran elemen agar sesuai dengan ukuran layar dikatakan rumit, padahal saya dapat melakukannya dengan mudah menggunakan gaya "width=100%"?**  Bagian rumitnya adalah merender elemen responsif di halaman tanpa memengaruhi metrik performa atau pengalaman pengguna.  Ya, Anda dapat menyesuaikan ukuran gambar dan ukuran layar dengan mudah menggunakan "width=100%", namun akan ada penurunan performa.  Browser harus mendownload gambar terlebih dahulu untuk mendapatkan dimensi gambar, lalu mengubah ukuran gambar agar sesuai dengan ukuran layar, dan pada akhirnya menyesuaikan tata letak (reflow) dan tampilan (repaint) halaman.  Di AMP,  jalur perenderan akan dioptimalkan sehingga halaman ditampilkan, dengan menetapkan gambar di samping placeholder berdasarkan dimensi yang diberikan oleh [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) (angka tersebut digunakan untuk menetapkan rasio tinggi lebar), kemudian resource didownload, dan halaman disesuaikan tampilannya (repaint).  Tidak perlu menyesuaikan tata letak (reflow).
+***Mengapa mengubah ukuran elemen agar sesuai dengan ukuran layar dikatakan rumit, padahal saya dapat melakukannya dengan mudah menggunakan gaya "width=100%"?**  Bagian rumitnya adalah merender elemen responsif di halaman tanpa memengaruhi metrik performa atau pengalaman pengguna.  Ya, Anda dapat menyesuaikan ukuran gambar dan ukuran layar dengan mudah menggunakan "width=100%", namun akan ada penurunan performa.  Browser harus mendownload gambar terlebih dahulu untuk mendapatkan dimensi gambar, lalu mengubah ukuran gambar agar sesuai dengan ukuran layar, dan pada akhirnya menyesuaikan tata letak (reflow) dan tampilan (repaint) halaman.  Di AMP,  jalur perenderan akan dioptimalkan sehingga halaman ditampilkan, dengan menetapkan gambar di samping placeholder berdasarkan dimensi yang diberikan oleh [`amp-img`](../../../../documentation/components/reference/amp-img.md) (angka tersebut digunakan untuk menetapkan rasio tinggi lebar), kemudian resource didownload, dan halaman disesuaikan tampilannya (repaint).  Tidak perlu menyesuaikan tata letak (reflow).
 [/tip]
 
 ## Mengubah skala media untuk halaman
@@ -75,7 +75,7 @@ Saat menyertakan video di halaman, Anda ingin memastikan bahwa pengguna dapat me
 
 ##### Contoh: Menyematkan video YouTube
 
-Pada contoh berikut, kami ingin menampilkan video YouTube tersemat yang dapat disesuaikan dengan ukuran dan orientasi layar perangkat. Dengan menambahkan `"layout=responsive"` ke elemen [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), ukuran video akan berubah agar sesuai dengan ukuran layar perangkat, dan rasio tinggi lebar video akan disesuaikan dengan `width` dan `height` yang ditentukan.
+Pada contoh berikut, kami ingin menampilkan video YouTube tersemat yang dapat disesuaikan dengan ukuran dan orientasi layar perangkat. Dengan menambahkan `"layout=responsive"` ke elemen [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), ukuran video akan berubah agar sesuai dengan ukuran layar perangkat, dan rasio tinggi lebar video akan disesuaikan dengan `width` dan `height` yang ditentukan.
 
 [example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
@@ -87,11 +87,11 @@ Pada contoh berikut, kami ingin menampilkan video YouTube tersemat yang dapat di
 ```
 [/example]
 
-Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailnya,  lihat daftar [komponen media]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) yang tersedia.
+Ada banyak jenis video yang dapat Anda tambahkan ke halaman AMP.  Untuk detailnya,  lihat daftar [komponen media](../../../../documentation/components/index.html#media) yang tersedia.
 
 ### Menampilkan gambar responsif
 
-Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dari byte halaman](http://httparchive.org/interesting.php#bytesperpage)).  Setidaknya, gambar harus terlihat di berbagai orientasi dan ukuran layar (misalnya, pengguna tidak perlu melakukan scrolling, mencubit/melakukan zoom untuk melihat keseluruhan gambar).  Hal ini dapat dilakukan di AMP dengan mudah menggunakan atribut  `"layout=responsive"` (lihat [Menyertakan Gambar di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})).  Selain gambar responsif dasar, Anda mungkin ingin menampilkan beberapa resource gambar untuk:
+Gambar menghasilkan byte paling besar dari keseluruhan halaman (sekitar [65% dari byte halaman](http://httparchive.org/interesting.php#bytesperpage)).  Setidaknya, gambar harus terlihat di berbagai orientasi dan ukuran layar (misalnya, pengguna tidak perlu melakukan scrolling, mencubit/melakukan zoom untuk melihat keseluruhan gambar).  Hal ini dapat dilakukan di AMP dengan mudah menggunakan atribut  `"layout=responsive"` (lihat [Menyertakan Gambar di AMP](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)).  Selain gambar responsif dasar, Anda mungkin ingin menampilkan beberapa resource gambar untuk:
 
 - [Menayangkan gambar tajam untuk resolusi yang sesuai](#menayangkan-gambar-tajam-untuk-resolusi-yang-sesuai)
 - [Mengubah gambar responsif dari suatu gambar](#mengubah-gambar-responsif-dari-suatu-gambar)
@@ -131,7 +131,7 @@ Pada contoh berikut, ada beberapa file gambar yang memiliki rasio tinggi lebar y
 
 Misalnya, ada perangkat yang memiliki lebar viewport 412 piksel dan DPR 2,6. Berdasarkan kode di atas, gambar harus ditampilkan 75% dari lebar viewport, jadi browser akan memilih gambar yang ukurannya mendekati 803 piksel  (412 * 0,75 * 2,6), yang akan disimpan sebagai `apple-800.jpg`.
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang cara menggunakan srcset dan sizes di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](art_direction.md).
 
 #### Mengubah gambar responsif dari suatu gambar
 
@@ -145,7 +145,7 @@ Pada contoh berikut, kami memiliki 3 gambar kucing yang di-crop berbeda, yang in
 - 470-669 piksel,  tampilkan `cat-medium.jpg`  (450x340 piksel)
 - 469 piksel atau lebih kecil, tampilkan `cat-small.jpg` (226x340 piksel)
 
-Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#bagaimana-jika-atributlayout-tidak-ditetapkan?).
+Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami tidak menentukan nilai tata letak, yang secara default akan ditetapkan ke `layout=fixed` karena kami telah menetapkan lebar dan tinggi. Untuk informasi selengkapnya, lihat ["Bagaimana jika atribut tata letak tidak ditentukan?"](control_layout.md#bagaimana-jika-atributlayout-tidak-ditetapkan?).
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -167,7 +167,7 @@ Catatan: Karena kami menginginkan ukuran gambar tetap (misalnya, simetris), kami
 ```
 [/example]
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang gambar responsif di AMP, lihat panduan [Gambar responsif dengan atribut srcset, sizes & heights](art_direction.md).
 
 #### Memberikan format gambar yang dioptimalkan
 
@@ -175,7 +175,7 @@ Menampilkan halaman yang dimuat dengan cepat memerlukan gambar yang dioptimalkan
 
 Di HTML, Anda dapat menampilkan format gambar yang berbeda menggunakan tag `picture`.  Di AMP, meskipun tag `picture` tidak didukung, Anda dapat menampilkan gambar yang berbeda menggunakan atribut `fallback`.
 
-Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Untuk mempelajari lebih lanjut tentang fallback, lihat panduan [Placeholder & Fallback](placeholders.md).
 
 ##### Contoh: Menampilkan format gambar yang berbeda
 
@@ -214,6 +214,6 @@ Berikut beberapa contoh yang dapat Anda gunakan sebagai inspirasi untuk membuat 
 
 #### Dibuat oleh AMP
 
-- [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
+- [Examples](../../../../documentation/examples/index.html)
+- [Templates](../../../../documentation/templates/index.html)
 - [Workshop Konferensi AMP Codelab: Membuat AMP yang menarik](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

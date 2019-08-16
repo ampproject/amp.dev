@@ -1,0 +1,197 @@
+/*
+
+#########################################
+### ORGANISM: resources-overview ########
+#########################################
+
+*/
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+
+.#{organism('resources-overview')} {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  margin: 11em 0 0;
+  padding: 3em 0;
+
+  .#{utility('format-background')} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.8s cubic-bezier(.25,.1,.25,1);
+
+    &.active {
+      opacity: 1;
+    }
+
+    &-websites {
+      opacity: 1;
+      @include gradient-websites;
+
+      .#{organism('resources-grid')} h2 {
+        color: color('white');
+      }
+    }
+
+    &-stories {
+      @include gradient-stories;
+
+      .#{organism('resources-grid')} h2 {
+        color: color('ultramarine');
+      }
+    }
+
+    &-ads {
+      @include gradient-ads;
+
+      .#{organism('resources-grid')} h2 {
+        color: color('white');
+      }
+    }
+
+    &-email {
+      @include gradient-e-mails;
+
+      .#{organism('resources-grid')} h2 {
+        color: color('ultramarine');
+      }
+    }
+  }
+
+  &-websites .#{organism('resources-grid')} h2,
+  &-ads .#{organism('resources-grid')} h2 {
+    transition: color 0.3s cubic-bezier(.25, .1, .25, 1);
+    color: color('white');
+  }
+
+  &-email .#{organism('resources-grid')} h2,
+  &-stories .#{organism('resources-grid')} h2 {
+    transition: color 0.3s cubic-bezier(.25, .1, .25, 1);
+    color: color('ultramarine');
+  }
+
+  .ap-format-content {
+    position: relative;
+    grid-column: 2 / 23;
+
+    @media (min-width: 600px) {
+      grid-column: 3 / 23;
+    }
+
+    .ap-info-box {
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
+      margin-top: -7.5em;
+      margin-bottom: 4em;
+      padding: 20px 32px;
+      border-radius: 5px;
+      background-color: color('white');
+      box-shadow: 6px 9px 40px 0 transparentize(color('black'), 0.85);
+
+      @media (min-width: 600px) {
+        flex-direction: row;
+        width: 100%;
+        max-width: 720px;
+      }
+
+      &-text {
+        margin-right: 30px;
+      }
+
+      .ap-format-toggle {
+        display: flex;
+        flex-direction: column;
+        margin: 0.75em 0 0;
+        @media (min-width: 600px) {
+          margin: auto 0;
+        }
+
+        &-button {
+          display: flex;
+          align-items: center;
+          height: 35px;
+          width: 258px;
+          margin: 4px 0;
+          padding: 5px 8px;
+          @include txt;
+          @include txt-font-accent;
+          text-align: left;
+          font-size: 12px;
+          outline: none;
+          border: none;
+          border-radius: 4px;
+          color: color('black');
+          background: color('athens-gray');
+          transition: transform 0.3s cubic-bezier(.25,.1,.25,1), box-shadow 0.3s cubic-bezier(.25,.1,.25,1);
+
+          .#{atom('ico')} {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            fill: color('black');
+          }
+
+          &-ads.active,
+          &-email.active,
+          &-stories.active,
+          &-websites.active,
+          &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 9px 7px -8px rgba(0, 0, 0, 0.30);
+          }
+
+          &-websites.active,
+          &-websites:hover {
+            @include gradient-websites;
+            color: color('white');
+
+            .#{atom('ico')} {
+              fill: color('white');
+            }
+          }
+
+          &-stories.active,
+          &-stories:hover {
+            @include gradient-stories;
+            color: color('ultramarine');
+
+            .#{atom('ico')} {
+              fill: color('ultramarine');
+            }
+          }
+
+          &-ads.active,
+          &-ads:hover {
+            @include gradient-ads;
+            color: color('white');
+
+            .#{atom('ico')} {
+              fill: color('white');
+            }
+          }
+
+          &-email.active,
+          &-email:hover {
+            @include gradient-e-mails;
+            color: color('ultramarine');
+
+            .#{atom('ico')} {
+              fill: color('ultramarine');
+            }
+          }
+        }
+      }
+    }
+  }
+}

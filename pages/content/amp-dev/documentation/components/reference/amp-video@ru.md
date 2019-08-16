@@ -42,7 +42,7 @@ teaser:
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Оверлей для запуска воспроизведения по клику</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Поддерживаемые макеты</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Поддерживаемые макеты</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -110,7 +110,7 @@ teaser:
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Для работы требуется расширение <code>amp-video-docking</code>.</strong> Если этот атрибут указан, то запущенное вручную видео, оказавшееся вне зоны видимости в результате прокрутки страницы, уменьшается и закрепляется в углу экрана или в заданном месте.
-            Дополнительные сведения вы найдете в <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video-docking.md', locale=doc.locale).url.path}}">документации по расширению amp-video-docking</a>.</td>
+            Дополнительные сведения вы найдете в <a href="amp-video-docking.md">документации по расширению amp-video-docking</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>
@@ -138,7 +138,7 @@ teaser:
         </tr>
         <tr>
           <td width="40%"><strong>универсальные атрибуты</strong></td>
-          <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}">Атрибуты</a>, которые поддерживаются большинством компонентов AMP.</td>
+          <td><a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">Атрибуты</a>, которые поддерживаются большинством компонентов AMP.</td>
         </tr>
       </table>
 

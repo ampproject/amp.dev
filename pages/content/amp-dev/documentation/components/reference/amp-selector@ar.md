@@ -37,7 +37,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>الكل</td>
   </tr>
   <tr>
@@ -99,7 +99,7 @@ teaser:
 
 ## محو الاختيارات
 
-لمحو جميع الاختيارات عند النقر على العنصر، عيِّن سمة الإجراء [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) على العنصر وحدِد المعرّف `id` للعنصر AMP Selector بطريقة الإجراء `clear`.
+لمحو جميع الاختيارات عند النقر على العنصر، عيِّن سمة الإجراء [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) على العنصر وحدِد المعرّف `id` للعنصر AMP Selector بطريقة الإجراء `clear`.
 
 مثال:
 
@@ -155,7 +155,7 @@ teaser:
 قد تؤدي الأحداث إلى تشغيل الإجراءات على مكونات AMP الأخرى باستخدام السمة `on`.
 مثال: `on="select: my-tab.show"`
 
-يمكنك قراءة المزيد عن [الإجراءات والأحداث في AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
+يمكنك قراءة المزيد عن [الإجراءات والأحداث في AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
 
 <table>
   <tr>

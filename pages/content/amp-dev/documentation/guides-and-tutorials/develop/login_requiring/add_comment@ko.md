@@ -4,7 +4,7 @@ $title: 댓글 추가
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
 
-이 시점에서 사용자는 [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) 라이브러리를 사용하여 댓글을 추가할 수 있습니다. [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 컴포넌트의 상태에 따라 form의 존재여부가 조건부인 지 확인하십시오.
+이 시점에서 사용자는 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 라이브러리를 사용하여 댓글을 추가할 수 있습니다. [`amp-access`](../../../../documentation/components/reference/amp-access.md) 컴포넌트의 상태에 따라 form의 존재여부가 조건부인 지 확인하십시오.
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
@@ -22,7 +22,7 @@ JSON 응답 예제입니다:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-폼 컴포넌트는 단순히 [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) 템플릿을 이용한 페이지 내에 그 값을 표현합니다.
+폼 컴포넌트는 단순히 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) 템플릿을 이용한 페이지 내에 그 값을 표현합니다.
 
 [sourcecode:html]
 <div submit-success>

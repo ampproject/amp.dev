@@ -106,7 +106,7 @@ $title: 使您的网页可被轻松发现
 如果您的结构化数据是有效的，您应该会看到 **0 个错误**和 **0 条警告**。
 
 [tip type="read-on"]
-要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})指南。
+要详细了解如何使网页能被用户发现，请参阅[使您的网页可被轻松发现](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)指南。
 [/tip]
 
 真棒！至此，您的 AMP 新闻报道便已完成了。

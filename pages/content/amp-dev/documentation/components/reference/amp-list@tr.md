@@ -36,7 +36,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js">&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ teaser:
 `<amp-list>` bileşeni, CORS JSON uç noktasından dinamik içerik getirir. Uç noktadan gelen yanıt, belirtilen şablonda oluşturulan verileri içerir.
 
 [tip type="important"]
-Uç noktanız, [AMP'de CORS İstekleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
+Uç noktanız, [AMP'de CORS İstekleri](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
 [/tip]
 
 Bir şablonu şu iki yöntemden biriyle belirtebilirsiniz:
@@ -62,7 +62,7 @@ Bir şablonu şu iki yöntemden biriyle belirtebilirsiniz:
 
 *Örnek: Dinamik liste görüntüleme*
 
-Aşağıdaki örnekte, URL'ler ve başlıklar içeren JSON verilerini alıp içeriği, iç içe yerleştirilmiş bir [amp-mustache şablonunda]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) oluşturuyoruz.
+Aşağıdaki örnekte, URL'ler ve başlıklar içeren JSON verilerini alıp içeriği, iç içe yerleştirilmiş bir [amp-mustache şablonunda](amp-mustache.md) oluşturuyoruz.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
 ```html
@@ -174,7 +174,7 @@ Burada, `overflow` için CSS'yi görebilirsiniz:
 * *Yer tutucu*, `placeholder` özelliğine sahip bir alt öğedir. Bu öğe, `<amp-list>` başarıyla yükleninceye kadar gösterilir. Ayrıca bir yedek sağlanmışsa `<amp-list>` yüklenemediğinde yer tutucu gizlenir.
 * *Yedek*, `fallback` özelliğine sahip bir alt öğedir. Bu öğe, `<amp-list>` yüklenemezse gösterilir.
 
-[Yer Tutucu ve Yedekler]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) hakkında daha fazla bilgi edinin. Bir alt öğenin hem yer tutucu hem de yedek olamayacağını unutmayın.
+[Yer Tutucu ve Yedekler](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md) hakkında daha fazla bilgi edinin. Bir alt öğenin hem yer tutucu hem de yedek olamayacağını unutmayın.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -224,10 +224,10 @@ Bu işlem, `amp-list-resizable-children` altında deneme amaçlı kullanılabili
 Bu `<amp-list>` içinde oluşturulacak JSON öğesini döndüren uzak uç noktanın URL'si. Bu bir CORS HTTP hizmeti olmalıdır. URL protokolü HTTPS olmalıdır.
 
 [tip type="important"]
-Uç noktanız, [AMP'de CORS İstekleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}) spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
+Uç noktanız, [AMP'de CORS İstekleri](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
 [/tip]
 
-`[src]` özelliği mevcutsa `src` özelliği atlanabilir. Bu, [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) ile çalışırken sayfanın yüklenmesi yerine bir kullanıcı hareketinin sonucu olarak içerik oluşturulmasında yararlı olur.
+`[src]` özelliği mevcutsa `src` özelliği atlanabilir. Bu, [`amp-bind`](amp-bind.md) ile çalışırken sayfanın yüklenmesi yerine bir kullanıcı hareketinin sonucu olarak içerik oluşturulmasında yararlı olur.
 
 ##### credentials (isteğe bağlı)
 
@@ -236,7 +236,7 @@ Uç noktanız, [AMP'de CORS İstekleri]({{g.doc('/content/amp-dev/documentation/
 * Desteklenen değerler: `omit`, `include`
 * Varsayılan değer: `omit`
 
-Kimlik bilgilerini göndermek için `include` değerini geçirin. Bu değer ayarlanırsa yanıt, [AMP CORS güvenlik yönergelerine]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp) uygun olmalıdır.
+Kimlik bilgilerini göndermek için `include` değerini geçirin. Bu değer ayarlanırsa yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp) uygun olmalıdır.
 
 Bir listede kişiselleştirilmiş içeriği görüntülemek için kimlik bilgilerinin içerilmesini belirten bir örneği burada bulabilirsiniz:
 
@@ -420,7 +420,7 @@ Bu öğe varsayılan olarak sağlanmaz ancak `<amp-list>` öğesine, `load-more-
 
 ##### common attributes
 
-Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) içerir.
+Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../documentation/guides-and-tutorials/learn/common_attributes.md) içerir.
 
 ## Değişiklikler
 

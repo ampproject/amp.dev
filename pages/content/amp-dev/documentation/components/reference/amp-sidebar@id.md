@@ -43,7 +43,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -213,7 +213,7 @@ Pada contoh berikut, kami menampilkan `toolbar` jika lebar jendela kurang dari a
 
 ## Sidebar untuk Artikel
 
-Penggunaan `amp-sidebar` didukung dalam [komponen]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
+Penggunaan `amp-sidebar` didukung dalam [komponen](../../../about/stories.html) `amp-story`.
 
 ### Perilaku
 
@@ -284,7 +284,7 @@ Atribut ini ada di elemen `<nav toolbar="(media-query)" toolbar-target="elementI
 
 ##### atribut umum<a name="common"></a>
 
-Elemen ini mencakup [atribut umum]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) yang diperluas ke komponen AMP.
+Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/learn/common_attributes.md) yang diperluas ke komponen AMP.
 
 ## Penataan gaya
 

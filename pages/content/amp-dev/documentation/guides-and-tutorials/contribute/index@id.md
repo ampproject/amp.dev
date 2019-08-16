@@ -24,7 +24,7 @@ Dokumentasi merupakan proses yang penting untuk seluruh komunitas AMP, dan kami 
 
 [amp.dev](https://amp.dev)  merupakan tempat untuk sebagian besar orang yang telah mengetahui AMP. Anda bisa memberikan kontribusi dokumentasi dalam [dokumen project GitHub ampproject](https://github.com/ampproject/docs). (Anda bahkan bisa membuat [halaman yang sedang Anda baca ini](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) jadi lebih baik.)
 
-[ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) memberikan contoh tentang cara menggunakan AMP. Anda dapat menyempurnakannya di [project GitHub amp-by-example](https://github.com/ampproject/amp-by-example/).
+[ampbyexample.com](../../../documentation/examples/index.html) memberikan contoh tentang cara menggunakan AMP. Anda dapat menyempurnakannya di [project GitHub amp-by-example](https://github.com/ampproject/amp-by-example/).
 
  Anda juga dapat membantu kontributor lain pada Project AMP dengan menyempurnakan dokumentasi kami dalam [project GitHub amphtml](https://github.com/ampproject/amphtml).
 

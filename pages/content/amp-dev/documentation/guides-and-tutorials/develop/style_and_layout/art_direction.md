@@ -18,7 +18,7 @@ contributors:
 
 Use the `srcset` attribute to control an element’s assets
 based on varying media expressions.
-In particular, use it for all [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tags to specify which image assets to use based on varying screen sizes. AMP will autogenerate a `sizes` attribute, [that meets the HTML5 definition of `sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), for all underlying `<img>` tags of `<amp-img>` if the `<amp-img>` has a `srcset` attribute but no `sizes`.
+In particular, use it for all [`amp-img`](../../../../documentation/components/reference/amp-img.md) tags to specify which image assets to use based on varying screen sizes. AMP will autogenerate a `sizes` attribute, [that meets the HTML5 definition of `sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), for all underlying `<img>` tags of `<amp-img>` if the `<amp-img>` has a `srcset` attribute but no `sizes`.
 
 In this simple example,
 `srcset` specifies which image to use based on the screen width.
@@ -81,7 +81,7 @@ which in this instance is `hummingbird-narrow.jpg` (320px).
 **IMPORTANT –** When sizes attribute is specified along with width and height, layout defaults to `responsive`.
 [/tip]
 
-Read more about the [AMP `sizes` attribute here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}).
+Read more about the [AMP `sizes` attribute here](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
 
 ## heights
 

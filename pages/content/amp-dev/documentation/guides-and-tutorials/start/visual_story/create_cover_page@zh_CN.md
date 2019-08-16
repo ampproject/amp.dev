@@ -2,9 +2,9 @@
 $title: 创建封面页
 ---
 
-AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 中可包含一个或多个 `<amp-story-page>` 组件，以用于呈现故事的各个画面。您按文档顺序指定的第一页即是故事中显示的第一页。
+AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 中可包含一个或多个 `<amp-story-page>` 组件，以用于呈现故事的各个画面。您按文档顺序指定的第一页即是故事中显示的第一页。
 
-若想创建故事网页，请将 `<amp-story-page>` 元素**添加**为 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 的子级。为该网页**分配**一个唯一 ID。对于我们的第一页（即封面页），我们不妨分配唯一 ID `cover`：
+若想创建故事网页，请将 `<amp-story-page>` 元素**添加**为 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 的子级。为该网页**分配**一个唯一 ID。对于我们的第一页（即封面页），我们不妨分配唯一 ID `cover`：
 
 ```html hl_lines="6 7"
 <amp-story standalone
@@ -33,7 +33,7 @@ AMP 故事内的网页由 `<amp-story-page>` 组件表示。一个 [`amp-story`]
 
 让我们向封面页添加第 1 个图层。该图层包含一张会填满整个屏幕的图片。
 
-将 `<amp-story-grid-layer>` 元素添加为 `<amp-story-page>` 的子级，即可创建该图层。由于我们想让该图片填满整个屏幕，因此需要为 `amp-story-grid-layer` 指定 `template="fill"` 属性。在该图层中，为 `cover.jpg` 文件添加 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素，并确保它是自适应元素（即 `layout="responsive"`）且图片尺寸为 720 x 1280 像素。我们的这个图层会如下所示：
+将 `<amp-story-grid-layer>` 元素添加为 `<amp-story-page>` 的子级，即可创建该图层。由于我们想让该图片填满整个屏幕，因此需要为 `amp-story-grid-layer` 指定 `template="fill"` 属性。在该图层中，为 `cover.jpg` 文件添加 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 元素，并确保它是自适应元素（即 `layout="responsive"`）且图片尺寸为 720 x 1280 像素。我们的这个图层会如下所示：
 
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">

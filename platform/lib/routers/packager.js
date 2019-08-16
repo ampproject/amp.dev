@@ -52,17 +52,26 @@ const packager = (request, response, next) => {
     next();
     return;
   }
-  // Tell browsers that we support SXG
+  // We'll only set Vary: AMP-Cache-Transform for html or SXG requests
+  const acceptHeader = request.header('accept');
+  if (acceptHeader &&
+        (!acceptHeader.includes('text/html') &&
+         !acceptHeader.includes('application/signed-exchange'))) {
+    next();
+    return;
+  }
+  // We only serve SXG if the amp-cache-transform header is set. This
+  // is to avoid sending SXGs to normal users. We have to tell our CDN
+  // that the response varies depending on the amp-cache-transform header.
   response.set('vary', 'Accept, AMP-Cache-Transform');
+  // Don't send SXG to normal users
   if (!request.header('amp-cache-transform')) {
     next();
     return;
   }
-  // sign https://amp.dev instead of https://amp.dev/
-  const urlToSign = request.url === '/' ? '' : request.url;
   // Hard-code amp.dev as it has to match the cert
   const searchParams = new URLSearchParams({
-    sign: 'https://amp.dev' + urlToSign,
+    sign: 'https://amp.dev' + request.url,
   }).toString();
   const url = `/priv/doc?${searchParams}`;
   // Serve webpackage via packager

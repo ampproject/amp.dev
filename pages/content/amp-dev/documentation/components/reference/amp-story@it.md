@@ -33,21 +33,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Disponibilità</strong></td>
-    <td><div><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}">Sperimentale</a></div></td>
+    <td><div><a href="../../../documentation/guides-and-tutorials/learn/experimental.md">Sperimentale</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Script obbligatorio</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>
     <td>nessuno</td>
   </tr>
   <tr>
     <td width="40%"><strong>Esempi</strong></td>
     <td><ul>
       <li>Vedi l'esempio <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Hello World</a> del sito AMP By Example.</li>
-      <li>Impara dal tutorial su come <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}}">creare una storia visiva AMP</a>.</li>
+      <li>Impara dal tutorial su come <a href="../../../documentation/guides-and-tutorials/start/visual_story/index.md">creare una storia visiva AMP</a>.</li>
     </ul></td>
   </tr>
 </table>
@@ -247,7 +247,7 @@ Il contenuto nel corpo crea una storia di due pagine.  Ciascuna pagina è compos
 
 ### Markup obbligatorio per amp-story
 
-Il formato HTML della storia AMP segue gli [stessi requisiti di markup di un documento HTML AMP valido]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup), oltre ai seguenti requisiti aggiuntivi:
+Il formato HTML della storia AMP segue gli [stessi requisiti di markup di un documento HTML AMP valido](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup), oltre ai seguenti requisiti aggiuntivi:
 
 | REGOLA | DESCRIZIONE |
 |----|---|
@@ -1271,9 +1271,9 @@ Questo campo deve contenere una stringa. Ciascuna stringa rappresenta il nome di
 
 Nel caso in cui siano necessari parametri aggiuntivi, deve essere utilizzato un oggetto con coppie chiave-valore. L'oggetto deve contenere una chiave `provider` con un valore (ad esempio, `facebook`) corrispondente al nome del fornitore. Le successive coppie chiave-valore dipenderanno dal fornitore di condivisione.
 
-L'elenco di fornitori disponibili è lo stesso del componente [amp-social-share]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}).
+L'elenco di fornitori disponibili è lo stesso del componente [amp-social-share](amp-social-share.md).
 
-Ciascuno di questi provider dispone di una serie differente di parametri disponibili ([vedi `data-param-*`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#data-param-%2a)). L'oggetto di configurazione accetta questi parametri senza il prefisso `data-param-` (ad esempio, `data-param-app_id` comparirà nell'oggetto della configurazione come `app_id`).
+Ciascuno di questi provider dispone di una serie differente di parametri disponibili ([vedi `data-param-*`](amp-social-share.md#data-param-%2a)). L'oggetto di configurazione accetta questi parametri senza il prefisso `data-param-` (ad esempio, `data-param-app_id` comparirà nell'oggetto della configurazione come `app_id`).
 
 #### Configurazione JSON
 
@@ -1321,10 +1321,10 @@ Ciascuno di questi provider dispone di una serie differente di parametri disponi
 
 Di seguito sono riportati altri componenti utilizzabili nelle storie AMP che richiedono determinate condizioni a seconda della storia.
 
-* [amp-sidebar]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}#sidebar-for-stories)
-* [amp-consent]({{g.doc('/content/amp-dev/documentation/components/reference/amp-consent.md', locale=doc.locale).url.path}}#prompt-ui-for-stories)
+* [amp-sidebar](amp-sidebar.md#sidebar-for-stories)
+* [amp-consent](amp-consent.md#prompt-ui-for-stories)
 
-Per componenti più generalmente utilizzabili, consulta l'[elenco degli elementi secondari consentiti]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}#children).
+Per componenti più generalmente utilizzabili, consulta l'[elenco degli elementi secondari consentiti](amp-story.md#children).
 
 ## Convalida
 
@@ -1361,8 +1361,8 @@ Inoltre, per le lingue con scrittura da destra a sinistra, puoi includere l'attr
 
 ## Risorse correlate
 
-* [Tutorial: creare una storia visiva AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md', locale=doc.locale).url.path}})
+* [Tutorial: creare una storia visiva AMP](../../../documentation/guides-and-tutorials/start/visual_story/index.md)
 * [Esempi sul sito AMP By Example](https://ampbyexample.com/stories/#stories/introduction)
-* [Best practice per la creazione di una storia AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
+* [Best practice per la creazione di una storia AMP](../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 </amp-story></body>

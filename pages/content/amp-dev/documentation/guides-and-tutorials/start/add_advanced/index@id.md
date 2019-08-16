@@ -8,15 +8,15 @@ Dalam tutorial ini, Anda akan meningkatkan pemahaman tentang dasar-dasar AMP dan
 
 ## Anda akan mempelajari tentang:
 
-- Iklan Display menggunakan [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+- Iklan Display menggunakan [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
 - Video YouTube tersemat, kartu Twitter, dan elemen teks responsif
-- Pembuatan carousel dengan gambar dan kombinasi konten menggunakan [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
-- Pemantauan pola sederhana menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
-- Penambahan navigasi situs ke halaman menggunakan [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})
+- Pembuatan carousel dengan gambar dan kombinasi konten menggunakan [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
+- Pemantauan pola sederhana menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+- Penambahan navigasi situs ke halaman menggunakan [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
 - Penggunaan font khusus di AMP
 
 ## Anda akan membuat:
 
 Halaman artikel berita yang sesuai dengan spesifikasi AMP dan menyertakan iklan, analisis, video tersemat, media sosial tersemat, carousel, dan menu navigasi situs.
 
-Catatan: Tutorial ini merupakan lanjutan dari konsep yang diperkenalkan dalam tutorial ["Mengonversi HTML menjadi AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}). Jika Anda belum memiliki pemahaman dasar tentang konsep inti AMP, cobalah tutorial ["Mengonversi HTML menjadi AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}).
+Catatan: Tutorial ini merupakan lanjutan dari konsep yang diperkenalkan dalam tutorial ["Mengonversi HTML menjadi AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md). Jika Anda belum memiliki pemahaman dasar tentang konsep inti AMP, cobalah tutorial ["Mengonversi HTML menjadi AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md).

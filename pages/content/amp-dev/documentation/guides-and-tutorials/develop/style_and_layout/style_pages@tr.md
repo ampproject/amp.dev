@@ -5,7 +5,7 @@ $title: Desteklenen CSS
 Tüm web sayfaları gibi AMP sayfalarının stili de CSS ile belirlenir, ancak ([özel yazı tipleri](#özel-yazı-tipleri-istisnası) haricinde) harici stil sayfalarını referans alamazsınız.
 Ayrıca, performans üzerindeki etkilerinden dolayı belirli stillere izin verilmez; satır içi stil özniteliklerine izin verilmemektedir.
 
-Tüm stiller, dokümanın head bölümünde yer almalıdır (bkz. [Sayfaya stil ekleme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})).
+Tüm stiller, dokümanın head bölümünde yer almalıdır (bkz. [Sayfaya stil ekleme](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
 Ancak, içeriğinizi daha iyi yönetmek amacıyla statik sayfalar oluşturmak için CSS ön işlemcilerini ve şablonlarını kullanabilirsiniz.
 
 **Not:** Duyarlı sayfaları yazmayı makul bir düzeyde kolaylaştırmak için AMP bileşenleri varsayılan stillerle birlikte gelir.
@@ -19,7 +19,7 @@ Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/am
 
 Ön işlemcileri kullanırken neleri eklediğinize ayrıca dikkat etmeniz gerekir; yalnızca sayfalarınızın kullandığı öğeleri ekleyin.
 Örneğin, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) kodu gerekli tüm AMP biçimlendirmesini ve `*.scss` kaynak dosyalarındaki satır içi CSS'yi içerir.
-Diğerlerinin yanı sıra [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
+Diğerlerinin yanı sıra [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
 
 [sourcecode:html] {% raw %}
 <head>

@@ -63,7 +63,7 @@ Importante: Nunca solicite las URL de AMP a través de la API de AMP de Google c
 #### API de URL de AMP de Google
 
 Google proporciona la API AMP URL para recuperar las URL HTML AMP correspondientes
-para una lista dada de URL ([documentación oficial](https://developers.google.com/amp/cache/use-amp-url) / [demostración]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). Las URL no necesitan ser las versiones canónicas. Si existe una versión de AMP, la respuesta incluye la URL AMP original y la URL de la página AMP en caché en Google AMP Cache.
+para una lista dada de URL ([documentación oficial](https://developers.google.com/amp/cache/use-amp-url) / [demostración](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html). Las URL no necesitan ser las versiones canónicas. Si existe una versión de AMP, la respuesta incluye la URL AMP original y la URL de la página AMP en caché en Google AMP Cache.
 
 Por ejemplo, para una lista dada de URLs:
 
@@ -99,7 +99,7 @@ Nota: Las URL de las páginas de AMP almacenadas en caché en los cachés de AMP
 
 ## Usando cachés AMP
 
-Un [caché AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
+Un [caché AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
 
 *   Entregar solo páginas válidas de AMP.
 *   Permitir que las páginas de AMP se carguen de manera eficiente y segura.

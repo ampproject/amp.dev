@@ -1,0 +1,70 @@
+/*
+
+###################################
+### MOLECULE: teaser-info ###
+###################################
+
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color';
+
+.#{molecule('teaser-info')} {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 -60px;
+  padding: 0 60px;
+  background-color: color('whisper');
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-bottom: 40px;
+
+    @media (min-width: 1024px) {
+      width: 45%;
+      max-width: 330px;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-bottom: 11px;
+    }
+    p {
+      margin: 0 0 15px;
+    }
+
+    .#{molecule('lnk')} {
+      &-square {
+        border-bottom: none;
+
+        @media (min-width: 1024px){
+          border-bottom: 1px solid color('athens-gray');
+        }
+      }
+    }
+  }
+
+  &-image {
+    width: 80%;
+    margin-top: 20px;
+
+    @media (min-width: 1024px) {
+      width: 55%;
+      margin-top: 0;
+    }
+  }
+}

@@ -25,7 +25,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-Ce composant permet aux éditeurs de s'intégrer facilement à la plate-forme de micropaiement [LaterPay](https://www.laterpay.net). `amp-access-laterpay` est basé sur [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) et requiert cette extension.
+Ce composant permet aux éditeurs de s'intégrer facilement à la plate-forme de micropaiement [LaterPay](https://www.laterpay.net). `amp-access-laterpay` est basé sur [AMP Access](amp-access.md) et requiert cette extension.
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ Pour savoir comment configurer les options d'achat, reportez-vous à la document
 
 La liste générée peut être mise en forme et présentée selon les préférences de l'éditeur.
 
-Ce composant utilise également le [balisage de contenu accessible]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#access-content-markup) pour afficher et masquer le contenu.
+Ce composant utilise également le [balisage de contenu accessible](amp-access.md#access-content-markup) pour afficher et masquer le contenu.
 
 ## Configuration
 
@@ -140,7 +140,7 @@ Les valeurs suivantes peuvent être définies dans l'objet de configuration `lat
         <tr>
           <td><code>sandbox</code></td>
           <td>valeur booléenne</td>
-          <td>Cette propriété n'est nécessaire que si vous utilisez le mode bac à sable pour tester la configuration de votre serveur. Vous devez également utiliser le <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">mode de développement</a> d'AMP.</td>
+          <td>Cette propriété n'est nécessaire que si vous utilisez le mode bac à sable pour tester la configuration de votre serveur. Vous devez également utiliser le <a href="../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#amp-runtime">mode de développement</a> d'AMP.</td>
         </tr>
       </table>
 
@@ -274,7 +274,7 @@ Les clés de message suivantes peuvent être traduites ou personnalisées. Sache
 
 ## Analyse
 
-Le composant `amp-access-laterpay` est basé sur `amp-access`. Il accepte donc tous les [événements d'analyse]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#integration-with-amp-analytics) envoyés par `amp-access`.
+Le composant `amp-access-laterpay` est basé sur `amp-access`. Il accepte donc tous les [événements d'analyse](amp-access.md#integration-with-amp-analytics) envoyés par `amp-access`.
 
 Tous les exemples disponibles à l'adresse [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) sont configurés de manière à envoyer ces événements d'analyse, afin que vous disposiez d'un exemple d'utilisation pratique plus complet.
 
@@ -282,9 +282,9 @@ Tous les exemples disponibles à l'adresse [https://ampexample.laterpay.net/](ht
 
 Si un système d'abonnement est déjà actif et que vous souhaitez utiliser LaterPay uniquement pour certaines ventes d'articles, vous pouvez faire en sorte que les deux méthodes de vente coexistent sur la même page en utilisant conjointement AMP Access et AMP Access LaterPay.
 
-Veuillez d'abord consulter la documentation d'[AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) pour savoir comment configurer AMP Access avec votre paywall existant.
+Veuillez d'abord consulter la documentation d'[AMP Access](amp-access.md) pour savoir comment configurer AMP Access avec votre paywall existant.
 
-La section relative à des [fournisseurs multiples]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#multiple-access-providers) explique comment configurer plusieurs fournisseurs avec des espaces de noms.
+La section relative à des [fournisseurs multiples](amp-access.md#multiple-access-providers) explique comment configurer plusieurs fournisseurs avec des espaces de noms.
 
 En cas d'utilisation avec LaterPay et une intégration de paywall existante, la configuration nécessaire peut se présenter comme suit :
 
@@ -339,7 +339,7 @@ Pour un exemple plus complet, rendez-vous à l'adresse suivante : [https://ampe
 
 ## Documentation associée
 
-* [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
+* [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: How we do MicroPayments](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) (semblable à AMP Access LaterPay, mais pour les pages non AMP).

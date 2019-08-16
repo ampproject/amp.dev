@@ -17,41 +17,41 @@
 @import 'teaser';
 
 .#{molecule('teaser-use-case')} {
-	&.#{molecule('teaser')} {
-		@include teaser;
+  &.#{molecule('teaser')} {
+    @include teaser;
 
-		& > a {
-			@include teaser-linking;
+    & > a {
+      @include teaser-linking;
 
-			&:hover {
-				@include teaser-linking-hover;
+      &:hover {
+        @include teaser-linking-hover;
 
-				.#{molecule('teaser')}-card {
-					@include teaser-card-hover;
-				}
-			}
-		}
-	}
+        .#{molecule('teaser')}-card {
+          @include teaser-card-hover;
+        }
+      }
+    }
+  }
 
-	.#{molecule('teaser')} {
-		&-tag {
-			@include teaser-tag;
-		}
+  .#{molecule('teaser')} {
+    &-tag {
+      @include teaser-tag;
+    }
 
-		&-card {
-			@include teaser-card;
-		}
+    &-card {
+      @include teaser-card;
+    }
 
-		&-content {
-			@include teaser-content;
-		}
+    &-content {
+      @include teaser-content;
+    }
 
-		&-image {
-			@include teaser-image;
-		}
+    &-image {
+      @include teaser-image;
+    }
 
-		&-headline {
-			@include teaser-headline;
-		}
-	}
+    &-headline {
+      @include teaser-headline;
+    }
+  }
 }

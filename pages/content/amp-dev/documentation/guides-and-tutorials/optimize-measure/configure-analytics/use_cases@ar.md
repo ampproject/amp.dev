@@ -8,16 +8,16 @@ $title: حالات الاستخدام
 [أحطنا علمًا.](https://github.com/ampproject/docs/issues/new)
 
 يمكنك أيضًا المساهمة بحالات الاستخدام الخاصة بك،
-انظر [كيفية المساهمة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
+انظر [كيفية المساهمة](../../../../documentation/guides-and-tutorials/contribute/index.md).
 
 ## تتبع مشاهدات الصفحة
 
-تعرّف على كيفية تتبع مشاهدات الصفحة باستخدام <span dir="ltr" class="nowrap">[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})</span> و<span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span>.
+تعرّف على كيفية تتبع مشاهدات الصفحة باستخدام <span dir="ltr" class="nowrap">[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)</span> و<span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span>.
 
 ### باستخدام <span dir="ltr" class="nowrap">amp-pixel</span>
 
 أرسل بيانات مشاهدة الصفحة إلى عنوان URL محدّد باستخدام
-[<span dir="ltr" class="nowrap">amp-pixel</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}):
+[<span dir="ltr" class="nowrap">amp-pixel</span>](../../../../documentation/components/reference/amp-pixel.md):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -26,7 +26,7 @@ $title: حالات الاستخدام
 ### باستخدام <span dir="ltr" class="nowrap">amp-analytics</span> - لا مورّد
 
 أرسل بيانات مشاهدة الصفحة إلى عنوان URL محدّد باستخدام
-[<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
+[<span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
 <amp-analytics>
@@ -75,7 +75,7 @@ $title: حالات الاستخدام
 ## تتبع النقرات على الصفحة
 
 تعرّف على كيفية تتبع النقرات على الصفحة باستخدام
-[<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})،
+[<span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md)،
 وإرسال بيانات الحدث إلى عنوان URL محدّد، وإلى
 [<span dir="ltr" class="nowrap">Google Analytics</span>](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
@@ -142,7 +142,7 @@ $title: حالات الاستخدام
 
 ## تتبع التمرير
 
-تتبع التمرير عبر الصفحة باستخدام [<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+تتبع التمرير عبر الصفحة باستخدام [<span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md).
 يستخدم النموذج التالي السمة `scrollspec` لإرسال حدث `scroll`
 إلى عنوان URL المحدّد عند التمرير عبر الصفحة رأسيًا بنسبة 25%، و50%، و90%.
 يتم تنشيط الحدث كذلك عند التمرير عبر الصفحة أفقيًا
@@ -175,7 +175,7 @@ $title: حالات الاستخدام
 ## تتبع التفاعلات الاجتماعية
 
 تعرّف على كيفية تتبع التفاعلات الاجتماعية باستخدام
-[<span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})،
+[<span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md)،
 وإرسال بيانات الحدث إلى عنوان URL محدّد، وإلى
 [<span dir="ltr" class="nowrap">Google Analytics</span>](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 

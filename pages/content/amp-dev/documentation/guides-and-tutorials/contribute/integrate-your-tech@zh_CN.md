@@ -9,31 +9,31 @@ $title: 将您的技术与 AMP 集成
 您可通过下述 4 种主要方法与 AMP 集成：
 
 ## 1. 添加对 amp-analytics 扩展组件的支持
-AMP 分析可让您根据自己配置的触发条件将事件发送回服务器。我们编写了一份[分析集成指南]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md', locale=doc.locale).url.path}})来帮助您着手使用这款组件。
+AMP 分析可让您根据自己配置的触发条件将事件发送回服务器。我们编写了一份[分析集成指南](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md)来帮助您着手使用这款组件。
 
-如果您只是需要向跟踪网址中添加包含动态参数的跟踪像素，请查看 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})。请务必在您的支持页面上阐明相关用法，以供可能需要将您的技术和 AMP 结合使用的开发者参考。
+如果您只是需要向跟踪网址中添加包含动态参数的跟踪像素，请查看 [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md)。请务必在您的支持页面上阐明相关用法，以供可能需要将您的技术和 AMP 结合使用的开发者参考。
 
-目前已有超过 20 家分析服务提供商添加了对 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 的支持。敬请查看分析提供商 [Parse.ly](https://www.parsely.com/help/integration/google-amp/) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/1595)。
+目前已有超过 20 家分析服务提供商添加了对 [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) 的支持。敬请查看分析提供商 [Parse.ly](https://www.parsely.com/help/integration/google-amp/) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/1595)。
 
 ## 2. 使用 amp-ad 扩展组件
 
-[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 扩展组件专用于在 AMP 网页上投放展示广告。目前已有超过 90 家广告技术提供商添加了对 AMP 的支持。要开始使用这款组件，请先通过阅读[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})比较有用，具体取决于贵公司提供的广告技术。
+[`amp-ad`](../../../documentation/components/reference/amp-ad.md) 扩展组件专用于在 AMP 网页上投放展示广告。目前已有超过 90 家广告技术提供商添加了对 AMP 的支持。要开始使用这款组件，请先通过阅读[`amp-ad`](../../../documentation/components/reference/amp-ad.md)比较有用，具体取决于贵公司提供的广告技术。
 
-目前已有超过 90 家广告技术提供商添加了对广告相关功能（如 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 的支持。敬请查看广告网络 [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/2299)。
+目前已有超过 90 家广告技术提供商添加了对广告相关功能（如 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 的支持。敬请查看广告网络 [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md) 的一个[提取请求示例](https://github.com/ampproject/amphtml/pull/2299)。
 
 ## 3. 使用 amp-call-tracking 扩展组件
 
-如果您提供来电跟踪衡量服务，则可通过 [`amp-call-tracking`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}}) 这款新扩展组件来支持您的用例。此组件会执行 CORS 请求来动态替换超链接中的电话号码，从而启用来电跟踪。
+如果您提供来电跟踪衡量服务，则可通过 [`amp-call-tracking`](../../../documentation/components/reference/amp-call-tracking.md) 这款新扩展组件来支持您的用例。此组件会执行 CORS 请求来动态替换超链接中的电话号码，从而启用来电跟踪。
 
-要详细了解此组件是否适合您，请查看 [`amp-call-tracking`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-call-tracking.md', locale=doc.locale).url.path}})。
+要详细了解此组件是否适合您，请查看 [`amp-call-tracking`](../../../documentation/components/reference/amp-call-tracking.md)。
 
 ## 4. 添加新的扩展组件/内嵌组件
 
-如果您的用例无法通过使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 或 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 来实现，请开设一个 [GitHub 问题](https://github.com/ampproject/amphtml/issues/new)以探讨替代方案。欢迎大家踊跃贡献可被众多不同公司广泛采用的新扩展组件。有关详情，请参阅[贡献扩展组件](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components)部分。
+如果您的用例无法通过使用 [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md) 或 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 来实现，请开设一个 [GitHub 问题](https://github.com/ampproject/amphtml/issues/new)以探讨替代方案。欢迎大家踊跃贡献可被众多不同公司广泛采用的新扩展组件。有关详情，请参阅[贡献扩展组件](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components)部分。
 
 ## 5. 使用 amp-iframe
 
-等一下 - 还有第 5 种方法？嗯，确实有，但我们建议您仅在万不得已时才使用该方法。如果以上方法都不符合您的需求，您可以使用通用的 [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})  标记来允许发布商嵌入您的内容，但由于该方法有几项与性能和用户体验相关的缺陷（详情请见[此处]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}))），这样做会带来不少弊端。
+等一下 - 还有第 5 种方法？嗯，确实有，但我们建议您仅在万不得已时才使用该方法。如果以上方法都不符合您的需求，您可以使用通用的 [`amp-iframe`](../../../documentation/components/reference/amp-iframe.md)  标记来允许发布商嵌入您的内容，但由于该方法有几项与性能和用户体验相关的缺陷（详情请见[此处](../../../documentation/components/reference/amp-iframe.md).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`](../../../documentation/components/reference/amp-iframe.md))），这样做会带来不少弊端。
 
 ## 总结
 
@@ -48,4 +48,4 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 - [AMP 项目网站](https://amp.dev/)
 - [AMP GitHub 项目](https://github.com/ampproject/amphtml)
 - [AMP 博客](https://blog.amp.dev/)
-- [AMP 项目蓝图]({{g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path}})
+- [AMP 项目蓝图](../../../community/roadmap.html)

@@ -44,7 +44,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -215,7 +215,7 @@ $title: amp-sidebar
 
 ## الشريط الجانبي للقصص
 
-من المقبول استخدام `amp-sidebar` داخل [المكوِّن]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
+من المقبول استخدام `amp-sidebar` داخل [المكوِّن](../../../about/stories.html) `amp-story`.
 
 ### السلوك
 
@@ -286,7 +286,7 @@ $title: amp-sidebar
 
 ##### السمات المشتركة<a name="common"></a>
 
-يتضمن هذا العنصر [السمات المشتركة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) التي تشمل مكونات AMP.
+يتضمن هذا العنصر [السمات المشتركة](../../../documentation/guides-and-tutorials/learn/common_attributes.md) التي تشمل مكونات AMP.
 
 ## التصميم
 

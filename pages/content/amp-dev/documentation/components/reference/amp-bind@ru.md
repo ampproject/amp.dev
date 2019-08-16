@@ -51,7 +51,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>Руководства</strong></td>
-    <td><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md', locale=doc.locale).url.path}}">Как создавать интерактивные AMP-страницы</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">Как создавать интерактивные AMP-страницы</a></td>
   </tr>
 </table>
 
@@ -178,7 +178,7 @@ limitations under the License.
 
 # Обновление состояния с помощью `AMP.setState()`
 
-Действие [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) объединяет объектный литерал с состоянием. Например, при нажатии кнопки ниже `AMP.setState()` выполняется [глубокое слияние](#deep-merge-with-ampsetstate) объектного литерала и состояния.
+Действие [`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) объединяет объектный литерал с состоянием. Например, при нажатии кнопки ниже `AMP.setState()` выполняется [глубокое слияние](#deep-merge-with-ampsetstate) объектного литерала и состояния.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ limitations under the License.
 
 # Изменение истории с помощью `AMP.pushState()`
 
-Действие [`AMP.pushState()`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#amp) аналогично `AMP.setState()`, но оно также передает новую запись в стек истории браузера. При извлечении этой записи (например, при переходе назад) восстанавливаются предыдущие значения переменных, установленные `AMP.pushState()`.
+Действие [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) аналогично `AMP.setState()`, но оно также передает новую запись в стек истории браузера. При извлечении этой записи (например, при переходе назад) восстанавливаются предыдущие значения переменных, установленные `AMP.pushState()`.
 
 Пример:
 ```html
@@ -392,7 +392,7 @@ null || 'default' // 'default'
     <td>Это должно быть логическое выражение.</td>
   </tr>
   <tr>
-    <td>Размер <a href="{{g.doc('/content/amp-dev/documentation/components/index.md', locale=doc.locale).url.path}}">элементов AMP</a></td>
+    <td>Размер <a href="../../../documentation/components/index.md">элементов AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Меняет ширину и/или высоту AMP-элемента.</td>
   </tr>
@@ -454,7 +454,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td>При связывании с <code>[src]</code> убедитесь, что выполняется также привязка к <code>[srcset]</code>. Это необходимо для поддержки кеша.<br>См. соответствующие <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}#attributes">атрибуты amp-img</a>.</td>
+    <td>При связывании с <code>[src]</code> убедитесь, что выполняется также привязка к <code>[srcset]</code>. Это необходимо для поддержки кеша.<br>См. соответствующие <a href="amp-img.md#attributes">атрибуты amp-img</a>.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -483,7 +483,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>См. соответствующие <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#attributes">атрибуты amp-video</a>.</td>
+    <td>См. соответствующие <a href="amp-video.md#attributes">атрибуты amp-video</a>.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -656,7 +656,7 @@ AMP объединяет запросы XHR для конечных точек J
     <td>URL удаленной конечной точки, которая будет возвращать JSON для обновления состояния <code>amp-state</code>. Это должна быть служба CORS HTTP.
         Атрибут <code>src</code> поддерживает все стандартные замены переменных URL. Подробная информация приведена в <a href="../../spec/amp-var-substitutions.md">этом руководстве</a>.
         [tip type="important"]
-      Конечная точка должна соответствовать требованиям, указанным в <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}">Спецификации CORS для запросов на AMP-страницах</a>.
+      Конечная точка должна соответствовать требованиям, указанным в <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Спецификации CORS для запросов на AMP-страницах</a>.
       [/tip]</td>
   </tr>
   <tr>
@@ -666,7 +666,7 @@ AMP объединяет запросы XHR для конечных точек J
         <li>Поддерживаемые значения: `omit`, `include`.</li>
         <li>Значение по умолчанию: `omit`.</li>
       </ul>
-      Чтобы отправить учетные данные, передайте значение <code>include</code>. Если это значение установлено, ответ будет соответствовать <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp">требованиям по безопасности CORS для AMP</a>.</td>
+      Чтобы отправить учетные данные, передайте значение <code>include</code>. Если это значение установлено, ответ будет соответствовать <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">требованиям по безопасности CORS для AMP</a>.</td>
     </tr>
   </table>
 

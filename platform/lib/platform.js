@@ -83,6 +83,7 @@ class Platform {
 
     // pass app engine HTTPS status to express app
     this.server.set('trust proxy', true);
+    this.server.disable('x-powered-by');
 
     this._configureMiddlewares();
     await this._configureSubdomains();

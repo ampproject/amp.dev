@@ -30,17 +30,17 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>Описание</strong></td>
-    <td>Элемент универсального общего контейнера, который позволяет использовать эффективные <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">макеты</a> AMP в любом элементе.</td>
+    <td>Элемент универсального общего контейнера, который позволяет использовать эффективные <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">макеты</a> AMP в любом элементе.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Поддерживаемые макеты</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Поддерживаемые макеты</a></strong></td>
     <td>container, fill, fixed, fixed-height, flex-item, intrinsic, responsive</td>
   </tr>
 </table>
 
 ## Обзор
 
-Компонент `amp-layout` позволяет применять адаптивные макеты на основе соотношения сторон к любому элементу. Этот компонент похож по принципу действия на атрибут [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) в имеющихся компонентах AMP, но в качестве дочерних элементов поддерживает любую разметку HTML. С компонентом `amp-layout` совместимы все поддерживаемые макеты, например fixed-height, fixed и т. д.
+Компонент `amp-layout` позволяет применять адаптивные макеты на основе соотношения сторон к любому элементу. Этот компонент похож по принципу действия на атрибут [layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) в имеющихся компонентах AMP, но в качестве дочерних элементов поддерживает любую разметку HTML. С компонентом `amp-layout` совместимы все поддерживаемые макеты, например fixed-height, fixed и т. д.
 
 **Пример**
 
@@ -57,7 +57,7 @@ $title: amp-layout
 
 ## Атрибуты
 
-Этот элемент содержит [распространенные атрибуты]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}), расширенные до компонентов AMP.
+Этот элемент содержит [распространенные атрибуты](../../../documentation/guides-and-tutorials/learn/common_attributes.md), расширенные до компонентов AMP.
 
 ## Проверка
 

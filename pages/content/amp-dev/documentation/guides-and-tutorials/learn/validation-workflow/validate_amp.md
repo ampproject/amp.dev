@@ -18,14 +18,14 @@ There are several ways available to validate an AMP document. They will all
 produce the exact same result, so use whichever one suits your development
 style the most.
 
-In addition to AMP validity, you may also want to confirm that your AMP document is [discoverable]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) to third-party platforms.
+In addition to AMP validity, you may also want to confirm that your AMP document is [discoverable](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) to third-party platforms.
 
 ### Browser Developer Console
 
 The AMP Validator comes bundled with the AMP JS library, so it is available on every AMP page out of the box. To validate:
 
   1. Open your AMP page in your browser.
-  1. Append "`#development=1`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1`.
+  1. Append "`#development=[1,actions,amp,amp4ads,amp4email]`" to the URL, for example, `http://localhost:8000/released.amp.html#development=1` is the legacy means of validating the `AMP` format. The following URL, `http://localhost:8000/released.amp.html#development=amp4email` will validate the document against the AMP for email spec.
   1. Open the [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/debug/console/) and check for validation errors.
 
 Developer Console errors will look similar to this:
@@ -258,15 +258,15 @@ Each tool gives several pieces of information:
      occurred, clickable in some interfaces to highlight that location. In this
      case the issue occurs on line 11, column 2.
   1. A line of text describing the error. In this case the text indicates that
-     we are using an `<img>` tag, when we should have used an [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag.
+     we are using an `<img>` tag, when we should have used an [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) tag.
   1. A link to a relevant document about the error. In this case the
-     documentation for the [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag. Not all errors generate
+     documentation for the [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) tag. Not all errors generate
      documentation links.
 
-Carefully re-reading the [spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}), we realize that we are using an `<img>` tag, when we should have used an [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tag.
+Carefully re-reading the [spec](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md), we realize that we are using an `<img>` tag, when we should have used an [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) tag.
 
 To better understand the complete list of potential errors,
-see the [AMP Validation Errors guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+see the [AMP Validation Errors guide](validation_errors.md).
 If you’re still stuck after careful evaluation, [ask a
 question](http://stackoverflow.com/questions/tagged/amp-html) and we'll try to
 help.

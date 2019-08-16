@@ -2,7 +2,7 @@
 $title: Práticas recomendadas para criar uma história AMP
 ---
 
-Este guia mostra práticas recomendadas que precisam ser implementadas ao criar uma [história AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
+Este guia mostra práticas recomendadas que precisam ser implementadas ao criar uma [história AMP](../../../documentation/components/reference/amp-story.md).
 
 ## Cor do plano de fundo  
 
@@ -48,7 +48,7 @@ As dimensões recomendadas para uma imagem do pôster são 720p (720 px de largu
 
 ### Especificar `<source>` ou `src` 
 
-Ao especificar a origem de um componente [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), use os elementos filhos de `<source>` em vez do atributo `src`. Ao usar o elemento `<source>`, é possível especificar o tipo do vídeo, assim como adicionar outras origens de vídeo. No elemento `<source>`, especifique o tipo MIME por meio do atributo `"type"`. Para vídeos HLS, é preciso especificar um dos seguintes tipos MIME: `application/x-mpegurl` ou `application/vnd.apple.mpegurl`. Para todos os outros vídeos, especifique o prefixo MIME `video/` e o formato do vídeo, por exemplo, "`video/mp4`".
+Ao especificar a origem de um componente [`amp-video`](../../../documentation/components/reference/amp-video.md), use os elementos filhos de `<source>` em vez do atributo `src`. Ao usar o elemento `<source>`, é possível especificar o tipo do vídeo, assim como adicionar outras origens de vídeo. No elemento `<source>`, especifique o tipo MIME por meio do atributo `"type"`. Para vídeos HLS, é preciso especificar um dos seguintes tipos MIME: `application/x-mpegurl` ou `application/vnd.apple.mpegurl`. Para todos os outros vídeos, especifique o prefixo MIME `video/` e o formato do vídeo, por exemplo, "`video/mp4`".
 
 *Exemplo: especificar arquivos com várias origens*
 

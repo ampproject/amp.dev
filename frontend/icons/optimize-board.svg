@@ -1,0 +1,6 @@
+<symbol id="optimize-board"  viewBox="0 0 34 35">
+  <g stroke-width="1.8" stroke="#005AF0" fill="none" fill-rule="evenodd" stroke-linejoin="round"><path d="M1 5h32.314v20.057H1z"/><path d="M3.279 28.557h28.553M17.2 1.8v2.4" fill="#FFF" stroke-linecap="round"/>
+    <g fill="none" stroke-linecap="round"><path d="M6.061 25.439v2.122M29.461 25.439v2.122"/></g>
+    <g fill="none" stroke-linecap="round"><path d="M5.535 32.194l1.213-3.487M29.748 32.194l-1.213-3.487"/></g>
+  </g>
+</symbol>

@@ -9,7 +9,7 @@ You have successfully completed your first AMP story!
 
 In this tutorial, you learned to:
 
-- Create a multi-page story by using the [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) component
+- Create a multi-page story by using the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component
 - Create visual effects with multiple layers in a page
 - Lay out elements in a page by using layer templates
 - Add audio that plays while a page is viewed
@@ -20,9 +20,9 @@ In this tutorial, you learned to:
 
 Learn more about AMP story from these resources:
 
-- [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})
-- [AMP story best practices]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
+- [`amp-story`](../../../../documentation/components/reference/amp-story.md)
+- [AMP story best practices](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 [tip type="note"]
-**NOTE –**  The [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) component is **experimental**.
+**NOTE –**  The [`amp-story`](../../../../documentation/components/reference/amp-story.md) component is **experimental**.
 [/tip]

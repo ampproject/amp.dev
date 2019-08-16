@@ -5,7 +5,7 @@ $title: CSS compatibles
 Comme toutes les pages Web, les pages AMP utilisent le langage CSS pour les styles, mais vous ne pouvez pas référencer des feuilles de style externes (à l'exception des [polices personnalisées](#exception-:-les-polices-personnalisées)).
 Certains styles sont également interdits en raison de conséquences sur les performances ; les attributs de style intégrés ne sont pas autorisés.
 
-Tous les styles doivent se trouver dans l'en-tête du document (voir [Ajouter des styles à une page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})).
+Tous les styles doivent se trouver dans l'en-tête du document (voir [Ajouter des styles à une page](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
 Cependant, vous pouvez utiliser des préprocesseurs CSS et des modèles pour créer des pages statiques afin de mieux gérer votre contenu.
 
 **Remarque** : Les composants AMP ont des styles par défaut pour faciliter la création de pages responsives.
@@ -19,7 +19,7 @@ Nous utilisons [Grow](http://grow.io/) pour créer les pages AMP statiques qui c
 
 Lorsque vous utilisez des préprocesseurs, accordez une attention particulière à ce que vous incluez ; chargez seulement ce que vos pages utilisent.
 Par exemple, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclut tout le balisage AMP requis et le CSS intégré à partir des fichiers sources `*.scss`.
-Il comprend également, entre autres, le script d'élément personnalisé pour [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), afin que de nombreuses pages sur le site puissent inclure des vidéos YouTube intégrées.
+Il comprend également, entre autres, le script d'élément personnalisé pour [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), afin que de nombreuses pages sur le site puissent inclure des vidéos YouTube intégrées.
 
 [sourcecode:html] {% raw %}
 <head>
