@@ -88,7 +88,6 @@ class GitHubImporter {
 
     if (local) {
       this._log.await(`Copying ${filePath} from local file path...`);
-      console.log(path.join(local, filePath));
       return fs.readFile(path.join(local, filePath));
     }
 

@@ -29,6 +29,7 @@ pages/content/amp-dev/documentation/examples/*/**
 !pages/content/amp-dev/documentation/examples/*/**/_blueprint.yaml
 pages/content/amp-dev/documentation/components/reference/**/*.md
 !pages/content/amp-dev/documentation/components/reference/**/*@*.md
+pages/content/amp-dev/documentation/components/reference/*/*/_blueprint.yaml
 pages/routescache.json
 examples/static/samples/samples.json
 

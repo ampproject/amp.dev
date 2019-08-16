@@ -70,28 +70,53 @@ class ComponentReferenceImporter {
       extensions.push({'name': builtInExtension, 'path': BUILT_IN_PATH});
     }
 
-    // Keep track of all saved documents (as promises) to complete function
-    const savedDocuments = [];
-let index = 2;
+    // Keep track of all promises to complete function
+    const promises = [];
+let index = 1;
     for (const extension of extensions) {
 if (--index < 0) {
-  break;
+//  break;
 }
       const documents = await this._findExtensionDocs(extension);
 
       if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
-        documents.forEach((document) => {
+        const versions = [];
+        documents.forEach((doc) => {
           // TODO: importUrl
-          this._setMetadata(extension.name, document);
-          this._rewriteRelativePaths(extension.path, document);
-          savedDocuments.push(this._saveDocument(extension.name, document));
+          this._setMetadata(extension.name, doc.document);
+          this._rewriteRelativePaths(extension.path, doc.document);
+          promises.push(this._saveDocument(extension.name, doc.document, doc.version));
+          versions.push(parseFloat(doc.version));
         });
+
+        // save blueprints to have the correct paths
+        promises.push(this._saveVersionBlueprints(extension, versions));
       }
     }
 
-    return Promise.all(savedDocuments);
+    return Promise.all(promises);
+  }
+
+  async _saveVersionBlueprints(extension, versions) {
+    const blueprintTemplate = `
+$title@: Components
+$path: /documentation/components/{base}.html
+$localization:
+  path: /{locale}/documentation/components/{base}.html
+$view: /views/detail/component-detail.j2
+    `;
+
+    versions.sort();
+    for (let index = 0; index < versions.length; index++) {
+      const version = versions[index];
+      const extensionDir = `${DESTINATION_BASE_PATH}/${extension.name}`;
+      const versionDir = path.join(extensionDir, String(version));
+      const blueprintContent = index === versions.length - 1 ?
+        blueprintTemplate : blueprintTemplate.replace(/\{base\}\.html/g, version + '/{base.html}');
+      await fs.promises.writeFile(path.join(versionDir, '_blueprint.yaml'), blueprintContent);
+    }
   }
 
   /**
@@ -161,14 +186,19 @@ if (--index < 0) {
    * @param  {Document} document The component's reference
    * @return {undefined}
    */
-  _saveDocument(extensionName, document) {
+  _saveDocument(extensionName, document, version) {
     // Set the documents title
     document.title = extensionName;
-    const documentDir = `${DESTINATION_BASE_PATH}/${extensionName}`;
-    const documentPath = path.join(documentDir, `${extensionName}.md`);
+    const extensionDir = `${DESTINATION_BASE_PATH}/${extensionName}`;
+    const versionDir = path.join(extensionDir, version);
+    const documentPath = path.join(versionDir, `${extensionName}.md`);
 
-    if (!fs.existsSync(documentDir)) {
-      fs.mkdirSync(documentDir);
+    if (!fs.existsSync(extensionDir)) {
+      fs.mkdirSync(extensionDir);
+    }
+
+    if (!fs.existsSync(versionDir)) {
+      fs.mkdirSync(versionDir);
     }
 
     return document.save(documentPath);
@@ -188,7 +218,11 @@ if (--index < 0) {
       if (files[i].type === 'file') {
         if (files[i].name === extension.name + '.md') {
           const documentPath = files[i].path;
-          documents.push(await this.githubImporter_.fetchDocument(documentPath));
+          const version = files[i].path.match(/\/([\d\.]+)/);
+          documents.push({
+            document: await this.githubImporter_.fetchDocument(documentPath),
+            version: version ? version[1] : '0.1',
+          });
         }
       } else {
         if (parseFloat(files[i].name).constructor !== NaN) {
