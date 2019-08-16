@@ -181,7 +181,8 @@ test('title and description are correct', (done) => {
 
 test('Component title is reduced to component name', (done) => {
   const searchResult = createSearchResult(2, 0, 2);
-  searchResult.items[0].pagemap.metatags[0]['twitter:title'] = 'Documentation: amp-test';
+  searchResult.items[0].pagemap.metatags[0]['twitter:title'] = 'Documentation: Component: <amp-test>';
+  searchResult.items[1].pagemap.metatags[0]['twitter:title'] = 'Documentation amp-test:';
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
@@ -189,10 +190,10 @@ test('Component title is reduced to component name', (done) => {
       .expect('Content-Type', /json/)
       .expect(200)
       .then((res) => {
-        // when the title contains amp- everything before is removed
-        expect(res.body.result.components[0].title).toBe('amp-test');
-        // when the title does not contain amp dev the title is not changed
-        expect(res.body.result.components[1].title).toBe('short-title-1');
+        // when the title contains a double point only text after it is used
+        expect(res.body.result.components[0].title).toBe('<amp-test>');
+        // when the double point is last, the title is not changed
+        expect(res.body.result.components[1].title).toBe('Documentation amp-test:');
         done();
       });
 });

@@ -105,9 +105,10 @@ function enrichComponentPageObject(item, page, locale) {
   }
 
   if (page.title) {
-    const componentNameIndex = page.title.indexOf('amp-');
-    if (componentNameIndex > 0) {
-      page.title = page.title.substring(componentNameIndex);
+    // cut off "Documentation: " prefix...
+    const prefixIndex = page.title.lastIndexOf(':');
+    if (prefixIndex > 0 && prefixIndex + 1 < page.title.length) {
+      page.title = page.title.substring(prefixIndex + 1).trim();
     }
   }
 
