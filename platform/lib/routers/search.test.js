@@ -69,6 +69,39 @@ test('returns a first page with component highlights and no next link', (done) =
       });
 });
 
+test('returns a first page with maximum 3 component highlights', (done) => {
+  const searchResult = createSearchResult(5, 5, 10);
+  googleSearch.search.mockResolvedValue(searchResult);
+
+  request(app)
+      .get('/search/do?q=query&locale=en&page=1')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((res) => {
+        expect(res.body.result.components.length).toBe(3); // components limit!
+        expect(res.body.result.pages.length).toBe(7);
+        done();
+      });
+});
+
+test('returns a first page with no component after max index', (done) => {
+  const searchResult = createSearchResult(3, 7, 10);
+  // for this test we want the components at the end:
+  searchResult.items = searchResult.items.reverse();
+  googleSearch.search.mockResolvedValue(searchResult);
+
+  request(app)
+      .get('/search/do?q=query&locale=en&page=1')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((res) => {
+        expect(res.body.result.components.length).toBe(1); // 2 components where after the max index
+        expect(res.body.result.pages.length).toBe(9);
+        done();
+      });
+});
+
+
 test('returns a first page with no component highlights and next link', (done) => {
   const searchResult = createSearchResult(0, 10, 11);
   googleSearch.search.mockResolvedValue(searchResult);
@@ -145,6 +178,25 @@ test('title and description are correct', (done) => {
         done();
       });
 });
+
+test('Component title is reduced to component name', (done) => {
+  const searchResult = createSearchResult(2, 0, 2);
+  searchResult.items[0].pagemap.metatags[0]['twitter:title'] = 'Documentation: amp-test';
+  googleSearch.search.mockResolvedValue(searchResult);
+
+  request(app)
+      .get('/search/do?q=query&locale=en&page=1')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((res) => {
+        // when the title contains amp- everything before is removed
+        expect(res.body.result.components[0].title).toBe('amp-test');
+        // when the title does not contain amp dev the title is not changed
+        expect(res.body.result.components[1].title).toBe('short-title-1');
+        done();
+      });
+});
+
 
 test('amp.dev urls are converted to server relative', (done) => {
   const searchResult = createSearchResult(2, 3, 5);

@@ -26,7 +26,10 @@ const {BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS} = require('@lib/common/
 
 const PAGE_SIZE = googleSearch.PAGE_SIZE;
 const LAST_PAGE = googleSearch.MAX_PAGE;
-const MAX_COMPONENTS = 5;
+/** How many components are shown as highlights */
+const MAX_HIGHLIGHT_COMPONENTS = 3;
+/** After which index do we stop to look for highlight components (zero based 0 - 9) */
+const MAX_HIGHLIGHT_COMPONENT_INDEX = 7;
 
 const COMPONENT_REFERENCE_DOC_PATTERN =
     /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
@@ -99,6 +102,13 @@ function enrichComponentPageObject(item, page, locale) {
   const description = getCseItemMetaTagValue(item, DESCRIPTION_META_TAG);
   if (description) {
     page.description = description;
+  }
+
+  if (page.title) {
+    const componentNameIndex = page.title.indexOf('amp-');
+    if (componentNameIndex > 0) {
+      page.title = page.title.substring(componentNameIndex);
+    }
   }
 
   if (page.url) {
@@ -181,14 +191,17 @@ async function handleSearchRequest(request, response, next) {
 
   if (totalResults > 0) {
     let componentCount = 0;
-    for (const item of cseResult.items) {
+    for (let i=0; i<cseResult.items.length; i++) {
+      const item = cseResult.items[i];
       const page = createPageObject(item);
 
-      if (highlightComponents && COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
+      if (highlightComponents
+          && i <= MAX_HIGHLIGHT_COMPONENT_INDEX
+          && COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
         enrichComponentPageObject(item, page, locale);
         components.push(page);
         componentCount++;
-        if (componentCount >= MAX_COMPONENTS) {
+        if (componentCount >= MAX_HIGHLIGHT_COMPONENTS) {
           highlightComponents = false;
         }
       } else {

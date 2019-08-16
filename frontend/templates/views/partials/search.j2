@@ -17,10 +17,6 @@
 {% do doc.amp_dependencies.add('amp-list', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
-<amp-state id="query">
-  <script type="application/json">""</script>
-</amp-state>
-
 <div id="searchLayer" class="ap-o-search" tabindex="-1">
   <div class="ap-o-search-container">
     <div class="ap-m-search-trigger ap-m-search-trigger-close" on="tap:searchLayer.toggleClass(class='active'),searchTriggerOpen.focus,AMP.setState({ query: '' })" role="button" tabindex="0">
@@ -33,7 +29,7 @@
       <form action-xhr="/documentation/examples/api/echo" class="ap-o-search-form" id="searchForm" method="POST" target="_top">
         <amp-autocomplete class="ap-o-search-autocomplete"
                           filter="substring"
-                          min-characters="0"
+                          min-characters="1"
                           on="select:AMP.setState({ query: event.value }),searchLayer.focus"
                           submit-on-enter="false"
                           src="/search/autosuggest"
@@ -59,7 +55,7 @@
         </div>
       </form>
 
-      <div class="empty" [class]="query.length == 0 ? 'empty' : ''">
+      <div class="empty" [class]="query ? '' : 'empty'">
         <div class="ap-o-search-result">
 
           <amp-state id="search"
