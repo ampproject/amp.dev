@@ -71,7 +71,8 @@
     "rcs-core": "2.6.2",
     "shrink-ray-current": "4.0.0",
     "signale": "1.4.0",
-    "uuid": "3.3.2"
+    "uuid": "3.3.2",
+    "web-push": "3.3.5"
   },
   "devDependencies": {
     "@babel/cli": "7.5.5",

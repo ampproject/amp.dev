@@ -37,7 +37,13 @@ preview: default
     <!--
     The `amp-web-push` component requires two additional HTML files as well as an amp-web-push compatible Service Worker. These three files form the configuration described below.
     -->
-    <amp-web-push id="amp-web-push" layout="nodisplay" helper-iframe-url="<% base_path %>/amp-web-push-helper-frame.html" permission-dialog-url="<% base_path %>/amp-web-push-permission-dialog.html" service-worker-url="<% base_path %>/sw.js">
+    <amp-web-push 
+        id="amp-web-push"
+        layout="nodisplay"
+        helper-iframe-url="<% hosts.preview %>/documentation/examples/components/amp-web-push/amp-web-push-helper-frame.html"
+        permission-dialog-url="<% hosts.preview %>/documentation/examples/components/amp-web-push/amp-web-push-permission-dialog.html"
+        service-worker-url="<% hosts.preview %>/documentation/examples/components/amp-web-push/sw.js"
+        service-worker-scope="<% hosts.preview %>/documentation/examples/components/amp-web-push/">
     </amp-web-push>
 
     <!-- Clicking the subscription widget pops up a page prompting the user for notification permissions and signals the service worker (configured below) to subscribe the user to push in the background. On this example, we are intercepting the call to `onMessageReceivedSubscribe`, and storing the subscription object on IndexedDB.
@@ -50,7 +56,7 @@ preview: default
     -->
     <amp-web-push-widget visibility="subscribed" layout="fixed" width="500" height="180">
         <button on="tap:amp-web-push.unsubscribe">Unsubscribe from Notifications</button>
-        <form method="post" action-xhr="<% base_path %>/send-push" target="_top">
+        <form method="post" action-xhr="<% hosts.preview %>/documentation/examples/components/amp-web-push/send-push" target="_top">
             <input type="submit" value="Send Web Push">
             <div submitting>
                 Sending Push message...
