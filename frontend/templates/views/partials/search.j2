@@ -19,18 +19,30 @@
 
 <div id="searchLayer" class="ap-o-search" tabindex="-1">
   <div class="ap-o-search-container">
-    <div class="ap-m-search-trigger ap-m-search-trigger-close" on="tap:searchLayer.toggleClass(class='active'),searchTriggerOpen.focus,AMP.setState({ query: '' })" role="button" tabindex="0">
+    <div class="ap-m-search-trigger ap-m-search-trigger-close"
+         on="tap:
+              searchLayer.toggleClass(class='active'),
+              searchTriggerOpen.focus,
+              AMP.setState({ query: '' })"
+         role="button"
+         tabindex="0">
       <div class="ap-a-ico ap-m-search-trigger-icon">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
       </div>
     </div>
 
     <div class="ap-o-search-field">
-      <form action-xhr="/documentation/examples/api/echo" class="ap-o-search-form" id="searchForm" method="POST" target="_top">
+      <form action-xhr="/documentation/examples/api/echo"
+            class="ap-o-search-form"
+            id="searchForm"
+            method="POST"
+            target="_top">
         <amp-autocomplete class="ap-o-search-autocomplete"
                           filter="substring"
                           min-characters="1"
-                          on="select:AMP.setState({ query: event.value }),searchLayer.focus"
+                          on="select:
+                                AMP.setState({ query: event.value }),
+                                searchLayer.focus"
                           submit-on-enter="false"
                           src="/search/autosuggest"
         >
