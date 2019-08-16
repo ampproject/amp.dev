@@ -118,7 +118,7 @@
     "html-webpack-plugin": "4.0.0-beta.7",
     "http-proxy-response-rewrite": "0.0.1",
     "jasmine": "3.4.0",
-    "jest": "24.8.0",
+    "jest": "24.9.0",
     "jimp": "0.6.4",
     "js-beautify": "1.10.2",
     "keymaster": "1.6.2",
