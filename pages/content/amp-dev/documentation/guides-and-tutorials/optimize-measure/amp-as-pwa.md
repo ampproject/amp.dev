@@ -22,9 +22,9 @@ A Service Worker is a client-side proxy that sits between your page and your ser
 **NOTE –** If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 [/tip]
 
-Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) component to achieve the same.
+Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component to achieve the same.
 
-For that, first include the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) component via its script in the `<head>` of your page:
+For that, first include the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component via its script in the `<head>` of your page:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -165,7 +165,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Using this technique, you can amend your AMP Page will all sorts of additional
-functionality that would otherwise fail [AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}), for example:
+functionality that would otherwise fail [AMP validation](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), for example:
 
 * Dynamic features that require custom JS.
 * Components that are customized/only relevant for your site.

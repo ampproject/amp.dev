@@ -94,7 +94,7 @@ With just two lines of code, this imports the AMP Service Worker into your Servi
 
 ## Auto-install your service worker on your AMP pages
 
-AMP websites use the [`<amp-install-serviceworker>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}})
+AMP websites use the [`<amp-install-serviceworker>`](../../../documentation/components/reference/amp-install-serviceworker.md)
 component to install the service worker in the browser's background, while the user is enjoying your content.
 
 Place the required script tag in the head of `index.html` and the `<amp-install-serviceworker>` element inside the `<body>`:
@@ -216,7 +216,7 @@ You have successfully created an PWA with AMP! In this tutorial you learned to:
 
 
 *   Create a [Web App Manifest](https://developers.google.com/web/fundamentals/web-app-manifest/)
-*   Install a Service Worker in AMP using [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}})
+*   Install a Service Worker in AMP using [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)
 *   Customize the [AMP Service Worker ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-as-pwa.html)
 *   [Prefetch links ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Link_prefetching_FAQ)
 *   Create an offline page

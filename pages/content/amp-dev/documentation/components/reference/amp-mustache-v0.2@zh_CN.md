@@ -91,7 +91,7 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 
 请尽可能使用 `template` 标记，因为 AMP 验证可提供实用的 dev-x 提示。可以使用 `script` 模板在表格上下文中处理极端情况以及模板问题。请参阅下面的“表格”部分，了解更多详情。
 
-如何发现模板、何时呈现模板、如何提供数据，这些都取决于使用此模板呈现其内容的目标 AMP 元素（例如 [amp-list]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})、[amp-form]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) 等）。
+如何发现模板、何时呈现模板、如何提供数据，这些都取决于使用此模板呈现其内容的目标 AMP 元素（例如 [amp-list](amp-list.md)、[amp-form](amp-form.md) 等）。
 
 ## 限制
 

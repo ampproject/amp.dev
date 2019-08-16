@@ -8,7 +8,7 @@ $title: Creare pagine AMP reattive
 
 Tutte le risorse caricate esternamente, incluse le immagini, devono avere posizione e dimensioni specifiche in modo che, quando vengono caricate, la pagina non salti e non si adatti dinamicamente.
 
-Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il layout reattivo e utilizza [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) per indicare quale asset di immagine utilizzare in base alle dimensioni dello schermo:
+Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il layout reattivo e utilizza [`srcset`](style_pages.md) per indicare quale asset di immagine utilizzare in base alle dimensioni dello schermo:
 
 [sourcecode:html]
 <amp-img
@@ -22,11 +22,11 @@ Per creare immagini reattive, specifica la larghezza e l'altezza, imposta il lay
 </amp-img>
 [/sourcecode]
 
-Questo elemento [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) si adatta automaticamente alla larghezza del relativo elemento contenitore, mentre la sua altezza viene impostata automaticamente in base alle proporzioni stabilite secondo la larghezza e l'altezza indicate:
+Questo elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) si adatta automaticamente alla larghezza del relativo elemento contenitore, mentre la sua altezza viene impostata automaticamente in base alle proporzioni stabilite secondo la larghezza e l'altezza indicate:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-Visita anche la pagina [`amp-img` del sito AMP by Example]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Visita anche la pagina [`amp-img` del sito AMP by Example](../../../../documentation/components/reference/amp-img.md).
 
 ## Aggiungere stili a una pagina
 
@@ -76,7 +76,7 @@ Definisci gli stili dei componenti con i selettori di classe o di elemento utili
 </body>
 [/sourcecode]
 
-**Importante.** Verifica che gli stili siano supportati nel formato AMP perché alcuni non sono supportati per motivi di rendimento (leggi anche la pagina [Stili CSS supportati]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+**Importante.** Verifica che gli stili siano supportati nel formato AMP perché alcuni non sono supportati per motivi di rendimento (leggi anche la pagina [Stili CSS supportati](style_pages.md)).
 
 ## Specificare le dimensioni e la posizione degli elementi
 
@@ -88,17 +88,17 @@ Questi attributi connotano le proporzioni dell'elemento, che potrà ridimensiona
 Imposta il layout reattivo.
 In questo modo l'elemento si adatta alla larghezza del relativo elemento contenitore, mentre la sua altezza viene ridimensionata automaticamente in base alle proporzioni stabilite dagli attributi di larghezza e altezza.
 
-Leggi ulteriori informazioni sui [layout supportati in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+Leggi ulteriori informazioni sui [layout supportati in AMP](control_layout.md).
 
 ## Convalidare stili e layout
 
 Utilizza lo strumento di convalida AMP per testare i valori CSS e di layout della tua pagina.
 
 Lo strumento di convalida verifica che gli elementi CSS della pagina non superino il limite di 50.000 byte, controlla se ci sono stili non consentiti e si assicura che il layout della pagina sia supportato e formattato correttamente.
-Consulta anche questo elenco completo di [errori di stile e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}#errori-di-stile-e-layout).
+Consulta anche questo elenco completo di [errori di stile e layout](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#errori-di-stile-e-layout).
 
 Esempio di errore nella console relativo a una pagina i cui elementi CSS superano il limite di 50.000 byte:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-Leggi ulteriori informazioni su come [convalidare le tue pagine AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}), incluse informazioni su come trovare gli errori di stile e risolverli.
+Leggi ulteriori informazioni su come [convalidare le tue pagine AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), incluse informazioni su come trovare gli errori di stile e risolverli.

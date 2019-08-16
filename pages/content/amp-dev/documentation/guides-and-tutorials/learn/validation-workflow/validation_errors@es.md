@@ -3,7 +3,7 @@ $title: Errores de validación de AMP
 ---
 
 Los documentos de AMP no pueden tener errores de validación.
-La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
+La finalidad de este documento es ayudarte a entender mejor y a corregir cualquier error de validación que encuentres al [validar páginas de AMP](validate_amp.md).
 Para obtener una visión general completa de los errores de validación, consulta la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 ## Errores en atributos y etiquetas AMP HTML
@@ -37,7 +37,7 @@ Todos los documentos de AMP deben contener las siguientes etiquetas:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}).
+Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Falta una etiqueta requerida por otra etiqueta
 
@@ -58,7 +58,7 @@ Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especifi
 
 El validador emite el error `TAG_REQUIRED_BY_MISSING` cuando encuentra un componente ampliado en el documento de AMP, pero no encuentra su `<script>` equivalente.
 
-Los [componentes ampliados]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) se deben incluir explícitamente en el documento de AMP como elementos personalizados.
+Los [componentes ampliados](../../../../documentation/components/index.html) se deben incluir explícitamente en el documento de AMP como elementos personalizados.
 Para corregir estos errores, ve a la página de referencia del componente ampliado, copia su secuencia de comandos requerida y pégala en el documento `<head>` de AMP.
 
 ### Etiqueta no permitida
@@ -78,7 +78,7 @@ Para corregir estos errores, ve a la página de referencia del componente amplia
   </tr>
 </table>
 
-Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista que incluya todas las etiquetas no permitidas. Sin embargo, en la [especificación de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) se define en términos generales el conjunto de etiquetas no permitidas.
+Las etiquetas se incluyen en una lista blanca, por lo que no hay ninguna lista que incluya todas las etiquetas no permitidas. Sin embargo, en la [especificación de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) se define en términos generales el conjunto de etiquetas no permitidas.
 
 ### Falta un atributo obligatorio
 
@@ -275,7 +275,7 @@ La cadena siguiente devuelve un error INVALID_PROPERTY_VALUE_IN_ATTR_VALUE:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-Tenga en cuenta que si está intentando generar un atributo sin valor (por ejemplo, un atributo como `autoplay`, `controls` o `loop` para el componente [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})), pero su proceso de compilación HTML está generando un valor predeterminado (pero no válido) como `true` (React, por ejemplo, producirá `<amp-video autoplay = "true" ...>` [de forma predeterminada](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), la solución alternativa es mostrar el nombre del atributo como el valor. Por ejemplo, `<amp-video autoplay="autoplay"...>`.
+Tenga en cuenta que si está intentando generar un atributo sin valor (por ejemplo, un atributo como `autoplay`, `controls` o `loop` para el componente [`amp-video`](../../../../documentation/components/reference/amp-video.md)), pero su proceso de compilación HTML está generando un valor predeterminado (pero no válido) como `true` (React, por ejemplo, producirá `<amp-video autoplay = "true" ...>` [de forma predeterminada](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), la solución alternativa es mostrar el nombre del atributo como el valor. Por ejemplo, `<amp-video autoplay="autoplay"...>`.
 
 ### Falta la URL
 
@@ -383,10 +383,10 @@ Hacen referencia a etiquetas previstas:
 Este error se produce cuando una etiqueta contiene dos atributos que se excluyen mutuamente.
 Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` o `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` o `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` o `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` o `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` o `data-videoid`
 
 ### Falta un atributo obligatorio en la lista
 
@@ -408,10 +408,10 @@ Por ejemplo, en los siguientes casos, solo se permite uno de los dos atributos:
 Este error se produce cuando a una etiqueta le falta un atributo requerido de varias opciones.
 Por ejemplo, las siguientes etiquetas requieren uno de los dos atributos posibles:
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` o `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` o `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` o `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` o `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` o `data-videoid`
 
 ### Etiqueta principal incorrecta
 
@@ -443,7 +443,7 @@ A continuación se enumeran las etiquetas principales necesarias para etiquetas 
 * `style` requiere la etiqueta principal `boilerplate (noscript)`.
 * `noscript` requiere la etiqueta principal `head`.
 * `script` requiere la etiqueta principal `head`.
-* `source` requiere una etiqueta multimedia ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.).
+* `source` requiere una etiqueta multimedia ([`amp-audio`](../../../../documentation/components/reference/amp-audio.md), [`amp-video`](../../../../documentation/components/reference/amp-video.md), etc.).
 
 ### Etiqueta antecesora no permitida
 
@@ -550,7 +550,7 @@ La lista completa de etiquetas únicas es la siguiente:
 
 ## Errores de estilo y de diseño
 
-Antes de entrar en los errores de [estilo]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) y de [diseño]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
+Antes de entrar en los errores de [estilo](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) y de [diseño](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
 Sin embargo, para garantizar que las páginas se carguen rápidamente, presentan algunas restricciones que el validador de AMP se encarga de hacer cumplir.
 
 El diseño está más controlado en las páginas de AMP.
@@ -618,7 +618,7 @@ Si no estás seguro de lo que está provocando el error, intenta ejecutar el CSS
 </table>
 
 Este error se refiere a las reglas de CSS que contienen @, para las que AMP solo permite una serie de reglas
-(consulta también la [especificación de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})).
+(consulta también la [especificación de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).
 Por ejemplo, la regla `@import` no está permitida.
 En el error de validación se indica cuál es concretamente la regla no válida para que puedas corregirla más fácilmente.
 
@@ -643,7 +643,7 @@ Este error se produce cuando no se especifica ningún diseño para la etiqueta d
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) y la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) y la [especificación del sistema de diseño AMP HTML](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md).
 
 **Nota:** Si no se especifica el diseño y no se incluyen los valores de `width` y `height`, el valor predeterminado del diseño es CONTAINER. El validador devuelve un error porque ninguna de las etiquetas de AMP admite CONTAINER.
 Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añade un valor `width` y/o `height`.
@@ -666,7 +666,7 @@ Para que el error desaparezca, especifica un diseño distinto de CONTAINER o añ
 </table>
 
 Este error se produce cuando no se especifica ningún diseño para la etiqueta de AMP y el diseño implícito contiene un atributo no permitido.
-Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### La etiqueta de AMP no admite el diseño especificado
 
@@ -689,7 +689,7 @@ Este error se produce cuando no se admite el diseño especificado para la etique
 Consulta los valores de `supported_layout` para la etiqueta en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 El atributo `layout` es el que determina el comportamiento real del diseño.
-Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) y la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Para obtener más información sobre cómo funciona el diseño, consulta [Cómo controlar el diseño](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) y la [especificación del sistema de diseño AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### Atributo no permitido por el diseño especificado
 
@@ -709,7 +709,7 @@ Para obtener más información sobre cómo funciona el diseño, consulta [Cómo 
 </table>
 
 Este error se produce cuando se especifica un diseño para la etiqueta de AMP y ese diseño contiene un atributo no permitido.
-Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Los atributos no permitidos por los tipos de diseño se describen en la [especificación del sistema de diseño AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### El atributo requerido por el diseño tiene un valor no válido
 
@@ -729,7 +729,7 @@ Los atributos no permitidos por los tipos de diseño se describen en la [especif
 </table>
 
 Este error se produce cuando el valor del atributo no es válido para el diseño especificado.
-Para entender lo que desencadena este error, es necesario familiarizarse con los [diferentes comportamientos de los diseños]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+Para entender lo que desencadena este error, es necesario familiarizarse con los [diferentes comportamientos de los diseños](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
 
 Imaginemos que se establece que el diseño sea `fixed-height` y se incluyen valores numéricos para `height` y para `width`.
 El diseño `fixed-height` adquiere un valor `height`.
@@ -758,13 +758,13 @@ De no ser así, se produce este error.
 
 Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` tiene como resultado el mensaje de error siguiente:
 
-"La anchura y la altura de la etiqueta '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  se expresan con unidades distintas. La anchura se indica en 'px', mientras que la altura se indica en 'rem'."
+"La anchura y la altura de la etiqueta '[`amp-img`](../../../../documentation/components/reference/amp-img.md)  se expresan con unidades distintas. La anchura se indica en 'px', mientras que la altura se indica en 'rem'."
 
 ## Errores en las plantillas
 
-Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
+Las páginas de AMP no pueden incluir sintaxis de plantillas a menos que dicha sintaxis esté en una etiqueta de AMP específicamente diseñada para incluir plantillas, por ejemplo, [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md).
 
-Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+Se pueden incluir plantillas en los archivos fuente, siempre que el resultado generado por estos archivos no contenga las plantillas (consulta también [Utilizar preprocesadores de CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)).
 
 ### El atributo contiene sintaxis de la plantilla
 

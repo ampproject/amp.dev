@@ -7,7 +7,7 @@ $title: Menyiapkan
 **Sebelum memulai** tutorial ini, Anda memerlukan hal-hal berikut:
 
 - Pengetahuan dasar tentang HTML, CSS, dan JavaScript
-- Pemahaman dasar tentang konsep inti AMP (lihat tutorial ["Mengonversi HTML menjadi AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}))
+- Pemahaman dasar tentang konsep inti AMP (lihat tutorial ["Mengonversi HTML menjadi AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md))
 - Browser pilihan Anda yang dapat memeriksa konsol JavaScript
 - Editor teks pilihan Anda
 

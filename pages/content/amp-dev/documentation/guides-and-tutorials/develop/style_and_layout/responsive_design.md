@@ -32,7 +32,7 @@ In this guide, we'll show you how you can easily implement these responsive fund
 [filter formats="websites, ads, stories"]
 To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.
 
-But, what values should you use?  Well, in AMP, that's already spelled out for you. As part of the [required markup]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}#required-markup) for AMP pages, you need to specify the following viewport:
+But, what values should you use?  Well, in AMP, that's already spelled out for you. As part of the [required markup](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md#required-markup) for AMP pages, you need to specify the following viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -80,14 +80,14 @@ However, we want the image to not stretch beyond its intended size, so we set th
 ```
 
 [tip type="read-on"]
-**READ ON –** To learn more about the different layouts in AMP, see the [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) guide.
+**READ ON –** To learn more about the different layouts in AMP, see the [Layout & Media queries](control_layout.md#the-layout-attribute) guide.
 [/tip]
 
  <a id="fn1"></a>
 [tip type="note"]
 **Why is it tricky to make elements resize to fit the screen when I can easily do this with the `width=100%` style?**
 
-The tricky part is having responsive elements render on the page without adversely affecting performance metrics or user experience.  Yes, you can easily get images to fit the screen with "width=100%" but there are performance hits.  The browser must download the image first to get the dimensions of the image, then resize the image appropriately for the screen size, and finally reflow and repaint the page.  In AMP,  the rendering path is optimized so that first the page is laid out, setting aside placeholders for the images based on the dimensions provided in [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) (using those numbers to establish aspect ratio), then the resources are downloaded, and the page is painted.  No reflow is required.
+The tricky part is having responsive elements render on the page without adversely affecting performance metrics or user experience.  Yes, you can easily get images to fit the screen with "width=100%" but there are performance hits.  The browser must download the image first to get the dimensions of the image, then resize the image appropriately for the screen size, and finally reflow and repaint the page.  In AMP,  the rendering path is optimized so that first the page is laid out, setting aside placeholders for the images based on the dimensions provided in [`amp-img`](../../../../documentation/components/reference/amp-img.md) (using those numbers to establish aspect ratio), then the resources are downloaded, and the page is painted.  No reflow is required.
 [/tip]
 
 ## Scaling media for the page
@@ -100,7 +100,7 @@ When you include a video in your web page, you want to ensure that the user can 
 
 ##### Example: Embedding a YouTube video
 
-In the following example, we want to display an embedded YouTube video that responds to the size and orientation of the device's screen. By adding `"layout=responsive"` to the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) element, the video resizes to fit the widow, and its aspect ratio is maintained according to the specified `width` and `height`.
+In the following example, we want to display an embedded YouTube video that responds to the size and orientation of the device's screen. By adding `"layout=responsive"` to the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) element, the video resizes to fit the widow, and its aspect ratio is maintained according to the specified `width` and `height`.
 
 [example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
@@ -112,11 +112,11 @@ In the following example, we want to display an embedded YouTube video that resp
 ```
 [/example]
 
-There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media).
+There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components](../../../../documentation/components/index.html#media).
 
 ### Displaying responsive images
 
-Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})).  In addition to the basic responsive image, you might want to serve multiple image resources to:
+Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)).  In addition to the basic responsive image, you might want to serve multiple image resources to:
 
 - [Serve crisp images for the right resolution](#serving-crisp-images-for-the-right-resolution)
 - [Change the art direction of an image](#changing-the-art-direction-of-an-image)
@@ -159,7 +159,7 @@ In the following example we have several image files that are of the same aspect
 For example, say we have a device that has a viewport width of 412 px and a DPR of 2.6. Based on the code above, the image must be displayed at 75% of the viewport width, so the browser chooses an image close to 803 px  (412 * .75 * 2.6), which happens to be `apple-800.jpg`.
 
 [tip type="read-on"]
-**READ ON –** To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) guide.
+**READ ON –** To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](art_direction.md) guide.
 [/tip]
 
 #### Changing the art direction of an image
@@ -175,7 +175,7 @@ In the following example, we have 3 different cropped images of a cat that we wa
 - 469 px or less, display `cat-small.jpg` (226 x 340 px)
 
 [tip type="note"]
-**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?).
+**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](control_layout.md#what-if-the-layout-attribute-isn’t-specified?).
 [/tip]
 
 [example preview="top-frame" playground="true"]
@@ -199,7 +199,7 @@ In the following example, we have 3 different cropped images of a cat that we wa
 [/example]
 
 [tip type="read-on"]
-**READ ON –** To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) guide.
+**READ ON –** To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](art_direction.md) guide.
 [/tip]
 
 #### Providing optimized images
@@ -209,7 +209,7 @@ Delivering fast loading pages requires optimized images--in size, quality, and f
 In HTML, you can serve different image formats by using the `picture` tag.  In AMP, although the `picture` tag isn't supported, you can serve different images by using the `fallback`  attribute.
 
 [tip type="read-on"]
-**READ ON –** To learn more about fallbacks, see the [Placeholders & Fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) guide.
+**READ ON –** To learn more about fallbacks, see the [Placeholders & Fallbacks](placeholders.md) guide.
 [/tip]
 
 In AMP, there are two way to achieve serving optimized images:
@@ -258,6 +258,6 @@ Here are some examples that we hope inspire you to create responsive AMP pages:
 
 #### Made by AMP
 
-- [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [Templates]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
+- [Examples](../../../../documentation/examples/index.html)
+- [Templates](../../../../documentation/templates/index.html)
 - [AMP Conf Workshop Codelab: Making beautiful AMPs](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

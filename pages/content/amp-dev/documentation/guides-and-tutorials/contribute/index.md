@@ -41,7 +41,7 @@ Content on [amp.dev](https://amp.dev) is how developers learn to build successfu
 
 [amp.dev](https://amp.dev) is where most people get familiar with AMP.  You can contribute to documentation in the [ampproject docs GitHub project](https://github.com/ampproject/docs).  (You can even make [the page you are reading](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) better!
 
-Get started by reading our [content contribution guide]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/contribute-documentation/index.md', locale=doc.locale).url.path}}?format=websites).
+Get started by reading our [content contribution guide](contribute-documentation/index.md?format=websites).
 
 #### Helping with translations
 AMP strives to make the world wide web a better experience for everyone. To enable everyone in the world to use AMP, we need translation contributors for guides, tutorials, blogs and all things written for AMP. To get involved with localizing AMP documentation for your community, check out the [AMP Translation Initiative](https://github.com/ampproject/docs/blob/master/TRANSLATIONS.md).

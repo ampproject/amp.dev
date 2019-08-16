@@ -4,12 +4,12 @@ $title: AMP ページでプログレッシブ ウェブアプリ機能を有効�
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample で表示される「ホーム画面に追加」のプロンプト') }}
 
-多くのウェブサイトでは、AMP を使えば必要なことがすべてできるようになります。たとえば [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) は、AMP でもありプログレッシブ ウェブアプリでもあります。
+多くのウェブサイトでは、AMP を使えば必要なことがすべてできるようになります。たとえば [Examples](../../../documentation/examples/index.html) は、AMP でもありプログレッシブ ウェブアプリでもあります。
 
 1. [ウェブアプリ マニフェスト](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) が設定されていて、これにより「ホーム画面に追加」のバナーが表示される
 1. [Service Worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) を使用しているので、特にオフライン アクセスなどが可能になる
 
-ユーザーが AMP 対応プラットフォームから [Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) にアクセスした後、クリックで引き続き同じサイトへ進む場合、AMP キャッシュから離れて配信元に移動することになります。このような場合も当然、ウェブサイトは AMP ライブラリを使用しますが、この時点で配信元に存在しているので、Service Worker を利用したり、インストールを求めるメッセージを表示したりすることなどが可能です。
+ユーザーが AMP 対応プラットフォームから [Examples](../../../documentation/examples/index.html) にアクセスした後、クリックで引き続き同じサイトへ進む場合、AMP キャッシュから離れて配信元に移動することになります。このような場合も当然、ウェブサイトは AMP ライブラリを使用しますが、この時点で配信元に存在しているので、Service Worker を利用したり、インストールを求めるメッセージを表示したりすることなどが可能です。
 
 Service Worker は、ページの AMP キャッシュ バージョンには対応できません。配信元へ進む際に使用してください。
 
@@ -58,9 +58,9 @@ Service Worker は、ページとサーバーの間に存在するクライア�
 
 メモ: Service Worker をご存知ない場合は、[Web Fundamentals の概要説明](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) をご覧ください。
 
-Service Worker は、ブラウザで見つけて実行できるように、特定のページに登録する必要があります。デフォルトでは、こうした登録は [少しの JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) を利用して行います。AMP ページの場合、[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) コンポーネントを使って同じことができます。
+Service Worker は、ブラウザで見つけて実行できるように、特定のページに登録する必要があります。デフォルトでは、こうした登録は [少しの JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration) を利用して行います。AMP ページの場合、[`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) コンポーネントを使って同じことができます。
 
-登録するには、まず [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) コンポーネントを、そのスクリプトを使ってページの `<head>` に含めます。
+登録するには、まず [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) コンポーネントを、そのスクリプトを使ってページの `<head>` に含めます。
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -103,7 +103,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 この方法を使うと、AMP ページを修正して、あらゆる追加機能について
-[AMP の検証]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}) に失敗するのを防ぐことができます。たとえば次のような機能です。
+[AMP の検証](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) に失敗するのを防ぐことができます。たとえば次のような機能です。
 
 * カスタム JS を必要とする動的な機能
 * サイト向けにカスタマイズされたコンポーネントやサイトにのみ関連するコンポーネント

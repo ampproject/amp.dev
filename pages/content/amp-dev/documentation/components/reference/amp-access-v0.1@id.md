@@ -50,7 +50,7 @@ limitations under the License.
 
 ## Hubungan dengan `amp-subscriptions`
 
-Ekstensi [`amp-subscriptions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-subscriptions.md', locale=doc.locale).url.path}}) menawarkan fitur yang mirip dengan `amp-access`. Namun, ekstensi ini mendukung protokol paywall akses yang lebih khusus. Beberapa perbedaan penting yang perlu dicatat:
+Ekstensi [`amp-subscriptions`](amp-subscriptions.md) menawarkan fitur yang mirip dengan `amp-access`. Namun, ekstensi ini mendukung protokol paywall akses yang lebih khusus. Beberapa perbedaan penting yang perlu dicatat:
 
 1. Respons hak kepemilikan `amp-subscriptions` mirip dengan otorisasi amp-access, tetapi ditetapkan dengan ketat dan distandarisasi.
 1. Ekstensi `amp-subscriptions` memungkinkan beberapa layanan dikonfigurasi untuk halaman agar dapat berpartisipasi dalam keputusan akses/paywall. Layanan tersebut dijalankan secara bersamaan dan diprioritaskan berdasarkan layanan mana yang menampilkan respons positif.
@@ -501,7 +501,7 @@ Integrasi dengan *amp-analytics* didokumentasikan dalam [amp-access-analytics.md
 
 ## Keamanan Asal CORS
 
-Endpoint Otorisasi dan Pingback adalah endpoint CORS dan harus mengimplementasikan protokol keamanan yang dijelaskan dalam [Spesifikasi Keamanan AMP CORS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp).
+Endpoint Otorisasi dan Pingback adalah endpoint CORS dan harus mengimplementasikan protokol keamanan yang dijelaskan dalam [Spesifikasi Keamanan AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 ## Pengukuran
 

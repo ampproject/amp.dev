@@ -190,7 +190,7 @@ Pets can lower your stress levels!</p>
 
 브라우저에서 페이지를 새로고침하고 배너가 빠르게 표시되는지 확인합니다.
 
-이제 모든 이미지를 페이드 인해 보겠습니다. 코드가 다음과 같이 표시되도록 'animate-in="fade-in"`를 각 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소에 추가합니다.
+이제 모든 이미지를 페이드 인해 보겠습니다. 코드가 다음과 같이 표시되도록 'animate-in="fade-in"`를 각 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 요소에 추가합니다.
 
 ```html hl_lines="4 9 14 19"
 <amp-img src="assets/cat.jpg"
@@ -217,7 +217,7 @@ Pets can lower your stress levels!</p>
 
 페이지를 새로고침하면 각 이미지가 페이드 인됩니다.  하지만, 모든 이미지가 동시에 페이드 인되므로 애니메이션 효과를 제대로 알아차릴 수 없습니다. 각 이미지의 애니메이션 시간을 변경하여 시각 효과를 개선할 수 있습니다.
 
-첫 번째 이미지의 등장을 지연시켜 텍스트 배너가 완전히 등장한 후 0.4초 뒤에 나타나도록 해보겠습니다. 그 뒤에 나머지 이미지 세 개를 0.2초 간격으로 표시되게 할 수 있습니다. 각 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소에 `animate-in-delay=""`를 추가하고 적절한 지연 시간 값을 지정합니다. 코드는 다음과 같습니다.
+첫 번째 이미지의 등장을 지연시켜 텍스트 배너가 완전히 등장한 후 0.4초 뒤에 나타나도록 해보겠습니다. 그 뒤에 나머지 이미지 세 개를 0.2초 간격으로 표시되게 할 수 있습니다. 각 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 요소에 `animate-in-delay=""`를 추가하고 적절한 지연 시간 값을 지정합니다. 코드는 다음과 같습니다.
 
 ```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
@@ -251,4 +251,4 @@ Pets can lower your stress levels!</p>
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-AMP 스토리에 애니메이션 효과를 추가하는 방법은 다양합니다(예: 애니메이션 결합, 애니메이션 연결). 이 가이드에서는 기본적인 내용만 설명합니다. 자세한 애니메이션 관련 내용을 알아보려면 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 참조 문서를 확인하세요.
+AMP 스토리에 애니메이션 효과를 추가하는 방법은 다양합니다(예: 애니메이션 결합, 애니메이션 연결). 이 가이드에서는 기본적인 내용만 설명합니다. 자세한 애니메이션 관련 내용을 알아보려면 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 참조 문서를 확인하세요.

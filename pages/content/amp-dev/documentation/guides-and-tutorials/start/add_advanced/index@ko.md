@@ -8,15 +8,15 @@ $title: 고급 AMP 기능 추가
 
 ## 이런 것들을 배웁니다:
 
-- [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})를 사용하여 광고 표시
+- [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)를 사용하여 광고 표시
 - 유튜브 동영상, 트위터 카드, 반응적인 텍스트 요소 포함
-- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})을 사용하여 이미지와 콘텐츠들의 조합으로 캐러셀을 구축
-- [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})로 단순한 패턴들 추적
-- [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})를 사용하여 사이트 탐색 기능 추가
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)을 사용하여 이미지와 콘텐츠들의 조합으로 캐러셀을 구축
+- [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)로 단순한 패턴들 추적
+- [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)를 사용하여 사이트 탐색 기능 추가
 - AMP에서 사용자 정의 글꼴을 사용
 
 ## 다음을 구축합니다:
 
 AMP 사양에 부합하고 광고, 분석, 임베디드 비디오, 임베디드 소셜 미디어, 캐러셀 및 사이트 탐색 메뉴를 포함하는 뉴스 기사 페이지
 
-Nota: 이 튜토리얼은 ["HTML을 AMP로 변환"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})에서 소개된 개념들의 연장입니다. AMP의 핵심 개념에 대한 기본적인 이해가 없는 경우, ["HTML을 AMP로 변환"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})을 시도해보십시오.
+Nota: 이 튜토리얼은 ["HTML을 AMP로 변환"](../../../../documentation/guides-and-tutorials/start/converting/index.md)에서 소개된 개념들의 연장입니다. AMP의 핵심 개념에 대한 기본적인 이해가 없는 경우, ["HTML을 AMP로 변환"](../../../../documentation/guides-and-tutorials/start/converting/index.md)을 시도해보십시오.

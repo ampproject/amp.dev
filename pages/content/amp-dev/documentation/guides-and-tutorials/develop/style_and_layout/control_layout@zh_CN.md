@@ -7,7 +7,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 ## 轻松创建自适应图片
 
 您可通过以下方法创建自适应图片：指定 `width` 和 `height`，将布局设为 `responsive`，
-然后利用 [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})
+然后利用 [`srcset`](art_direction.md)
 指明在不同尺寸的屏幕上应使用的图片资源：
 
 [sourcecode:html]
@@ -22,7 +22,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 </amp-img>
 [/sourcecode]
 
-[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 元素
+[`amp-img`](../../../../documentation/components/reference/amp-img.md) 元素
 会自动适应其容器元素的宽度，
 并会根据由指定宽度和高度确定的宽高比
 自动调整自身的高度。您可通过调整此浏览器窗口的大小来试用一下该功能：
@@ -31,7 +31,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 
 [tip type="success"]
 
-查看并排显示的 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 在线演示：[AMP By Example 上的在线演示]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-img.html', locale=doc.locale).url.path}})。
+查看并排显示的 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 在线演示：[AMP By Example 上的在线演示](../../../../documentation/examples/documentation/amp-img.html)。
 
 [/tip]
 
@@ -57,22 +57,22 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
     <tr>
       <td data-th="Layout type"><code>nodisplay</code></td>
       <td data-th="Description">否</td>
-      <td data-th="Behavior">元素不会显示。该布局可应用于每个 AMP 元素。相应组件不会占用任何屏幕空间，就如同未设置任何显示样式一般。该布局假设元素能够在用户操作时自行显示。例如 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a>。</td>
+      <td data-th="Behavior">元素不会显示。该布局可应用于每个 AMP 元素。相应组件不会占用任何屏幕空间，就如同未设置任何显示样式一般。该布局假设元素能够在用户操作时自行显示。例如 <a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a>。</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed</code></td>
       <td data-th="Description">是</td>
-      <td data-th="Behavior">元素有固定的宽度和高度，不支持任何自适应功能。其中，<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}"><code>amp-pixel</code></a> 和 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a> 元素是例外。</td>
+      <td data-th="Behavior">元素有固定的宽度和高度，不支持任何自适应功能。其中，<a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> 和 <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a> 元素是例外。</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>responsive</code></td>
       <td data-th="Description">是</td>
-      <td data-th="Behavior">元素会自动适应其容器元素的宽度，并会根据由宽度和高度属性确定的宽高比自动调整自身的高度。该布局对大多数 AMP 元素都很适合，包括 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> 和 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>。可用空间取决于父级元素，且可使用 <code>max-width</code> CSS 进行自定义。<p><strong>注意</strong>：采用 <code>"layout=responsive"</code> 的元素没有固有尺寸。元素的尺寸由其容器元素确定。要想确保 AMP 元素能正常显示，您必须为容器元素指定宽度和高度。请勿为容器元素指定 <code>"display:table"</code>，因为这会覆盖 AMP 元素的显示，导致 AMP 元素不可见。</p></td>
+      <td data-th="Behavior">元素会自动适应其容器元素的宽度，并会根据由宽度和高度属性确定的宽高比自动调整自身的高度。该布局对大多数 AMP 元素都很适合，包括 <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> 和 <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>。可用空间取决于父级元素，且可使用 <code>max-width</code> CSS 进行自定义。<p><strong>注意</strong>：采用 <code>"layout=responsive"</code> 的元素没有固有尺寸。元素的尺寸由其容器元素确定。要想确保 AMP 元素能正常显示，您必须为容器元素指定宽度和高度。请勿为容器元素指定 <code>"display:table"</code>，因为这会覆盖 AMP 元素的显示，导致 AMP 元素不可见。</p></td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">仅高度</td>
-      <td data-th="Behavior">元素会占用为其提供的空间，但高度保持不变。这种布局非常适合 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> 等涉及水平放置内容的元素。<code>width</code> 属性要么不指定，要么必须设为 <code>auto</code>。</td>
+      <td data-th="Behavior">元素会占用为其提供的空间，但高度保持不变。这种布局非常适合 <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a> 等涉及水平放置内容的元素。<code>width</code> 属性要么不指定，要么必须设为 <code>auto</code>。</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -92,7 +92,7 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
     <tr>
       <td data-th="Layout type"><code>intrinsic</code></td>
       <td data-th="Description">是</td>
-      <td data-th="Behavior">元素会占用为其提供的空间，并会根据由 <code>width</code> 和 <code>height</code> 属性确定的宽高比自动调整自身的高度，<em></em>直到达到该元素的自然尺寸或 CSS 上限（例如 max-width）。必须指定宽度和高度属性。这种布局非常适合大多数 AMP 元素，包括 <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a>、<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> 等等。可用空间取决于父级元素，也可使用 <code>max-width</code> CSS 进行自定义。这种布局与 <code>responsive</code> 布局的不同之处在于：具有固有高度和宽度。这一差异在浮动元素中表现得最为明显：<code>responsive</code> 布局会呈现 0x0，而 <code>intrinsic</code> 布局会不断扩大直至达到其自然尺寸或任何 CSS 上限（取较小者）。</td>
+      <td data-th="Behavior">元素会占用为其提供的空间，并会根据由 <code>width</code> 和 <code>height</code> 属性确定的宽高比自动调整自身的高度，<em></em>直到达到该元素的自然尺寸或 CSS 上限（例如 max-width）。必须指定宽度和高度属性。这种布局非常适合大多数 AMP 元素，包括 <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a>、<a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a> 等等。可用空间取决于父级元素，也可使用 <code>max-width</code> CSS 进行自定义。这种布局与 <code>responsive</code> 布局的不同之处在于：具有固有高度和宽度。这一差异在浮动元素中表现得最为明显：<code>responsive</code> 布局会呈现 0x0，而 <code>intrinsic</code> 布局会不断扩大直至达到其自然尺寸或任何 CSS 上限（取较小者）。</td>
     </tr>
   </tbody>
 </table>
@@ -102,8 +102,8 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 在少数情况下，如果未指定 `width` 或 `height`，
 AMP runtime 会将这些值默认如下：
 
-* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})：宽度和高度均默认为 0。
-* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})：根据浏览器推断出默认宽度和高度。
+* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)：宽度和高度均默认为 0。
+* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md)：根据浏览器推断出默认宽度和高度。
 
 ### 如果未指定 <code>layout</code> 属性，会怎样？
 

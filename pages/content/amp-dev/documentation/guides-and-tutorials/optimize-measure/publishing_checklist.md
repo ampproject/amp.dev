@@ -20,22 +20,22 @@ Learn more about the tools you can use to validate your AMP pages:
 
 
 
-*   [Validate AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}?format=websites)
+*   [Validate AMP pages](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md?format=websites)
 *   [The AMP Validator ](https://validator.ampproject.org/)
 *   [Google AMP Tester](https://search.google.com/test/amp)
-*   [AMP Tools]({{g.doc('/content/amp-dev/documentation/tools.html', locale=doc.locale).url.path}}?format=websites) 
+*   [AMP Tools](../../../documentation/tools.html?format=websites) 
 
 
 # Grant cached AMP documents server access
 
-Valid AMP pages are automatically opted into all existing AMP caches. This is great news! Your pages are automatically preloaded efficiently and safely, enabling user-beneficial performance optimizations to content. However, documents served from AMP caches are served from domains that do not match your own. This can cause  Cross-Origin Resource Sharing (CORS) issues when using dynamic AMP components, such as [`<amp-form>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}?format=websites) or [`<amp-list>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}?format=websites), causing your site to lose access to your data. This means certain content may not load correctly or at all.  It's important to enable CORS Requests from all available [AMP Caches](https://cdn.ampproject.org/caches.json) for your pages to work as intended for all possible users. 
+Valid AMP pages are automatically opted into all existing AMP caches. This is great news! Your pages are automatically preloaded efficiently and safely, enabling user-beneficial performance optimizations to content. However, documents served from AMP caches are served from domains that do not match your own. This can cause  Cross-Origin Resource Sharing (CORS) issues when using dynamic AMP components, such as [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) or [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites), causing your site to lose access to your data. This means certain content may not load correctly or at all.  It's important to enable CORS Requests from all available [AMP Caches](https://cdn.ampproject.org/caches.json) for your pages to work as intended for all possible users. 
 
 Learn more about accessing server data:
 
 
 
-*   [How AMP Pages are cached ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}?format=websites)
-*   [CORS in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}?format=websites)
+*   [How AMP Pages are cached ](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md?format=websites)
+*   [CORS in AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md?format=websites)
 *   [AMP CORS Library](https://www.npmjs.com/package/amp-toolbox-cors)
 
 
@@ -54,10 +54,10 @@ When loading your AMP pages in an AMP Cache, check via your [browser’s develop
 
 Learn more about AMP caches:
 
-*   [Using the Google AMP Cache]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_Google_AMP_Cache.html', locale=doc.locale).url.path}}?format=websites)
+*   [Using the Google AMP Cache](../../../documentation/examples/documentation/Using_the_Google_AMP_Cache.html?format=websites)
 *   [AMP on Google, Google AMP Cache](https://developers.google.com/amp/cache/overview)]
-*   [Debug AMP Cache issues]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md', locale=doc.locale).url.path}}?format=websites)
-*   [AMP Cache URL Format and Request Handling]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-urls.md', locale=doc.locale).url.path}}?format=websites)
+*   [Debug AMP Cache issues](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md?format=websites)
+*   [AMP Cache URL Format and Request Handling](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-urls.md?format=websites)
 
 # Set up discoverable canonicals 
 
@@ -90,7 +90,7 @@ Learn how to make your pages discoverable:
 
 
 
-*   [Make your page discoverable ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}?format=websites)
+*   [Make your page discoverable ](discovery.md?format=websites)
 *   [Robots.txt](http://www.robotstxt.org/)
 *   [Robots meta tag and X-Robots-Tag HTTP header specifications](https://developers.google.com/search/reference/robots_meta_tag)
 *   [AMP Indexing FAQs](https://productforums.google.com/forum/?hl=en#!category-topic/webmasters/Vrgj-a-gtm0)

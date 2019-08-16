@@ -38,7 +38,7 @@ $title: amp-form
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute">サポートされるレイアウト</a></strong></td>
+    <td><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">サポートされるレイアウト</a></strong></td>
     <td>なし</td>
   </tr>
   <tr>
@@ -52,7 +52,7 @@ $title: amp-form
 
 `amp-form` 拡張機能を使用すると、AMP ドキュメントの入力フィールドを送信するためのフォーム（`<form>`）を作成できます。また、`amp-form` 拡張機能には、ブラウザに実装されていない動作を補うための[ポリフィル](#polyfills)が用意されています。
 
-[tip type="important"] データをフォームで送信する場合、サーバー エンドポイントが [CORS セキュリティ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)の要件を満たしている必要があります。
+[tip type="important"] データをフォームで送信する場合、サーバー エンドポイントが [CORS セキュリティ](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)の要件を満たしている必要があります。
 [/tip]
 
 `<form>` を作成する前に、`<amp-form>` 拡張機能に必要なスクリプトを追加する必要があります。そうしないと、ドキュメントが無効になります。値を送信する以外の目的で `input` タグを使用する場合（`<form>` の外部での入力など）、`amp-form` 拡張機能を読み込む必要はありません。
@@ -116,7 +116,7 @@ $title: amp-form
 
 フォームの入力を処理し、XMLHttpRequest（XHR）でフォームを送信するサーバー エンドポイントを指定します。XHR リクエスト（AJAX リクエストと呼ばれることもあります）では、ブラウザでページを完全に読み込んだり新しいページを開いたりしなくてもリクエストを作成できます。ブラウザは、[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) を使用（可能な場合）してバックグラウンドでリクエストを送信します。また、古いブラウザの場合は、代わりに [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) を使用します。
 
-[tip type="important"] XHR エンドポイントは、[CORS セキュリティ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)の要件を満たしている必要があります。
+[tip type="important"] XHR エンドポイントは、[CORS セキュリティ](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)の要件を満たしている必要があります。
 [/tip]
 
 この属性は、`method=POST` の場合は必須、`method=GET` の場合はオプションです。
@@ -141,7 +141,7 @@ $title: amp-form
 
 * フォーム関連のその他の要素: `<textarea>`、`<select>`、`<option>`、`<fieldset>`、`<label>`、`<input type=text>`、`<input type=submit>` など
 * `<input type=password>`、`<input type=file>`（`<form method=POST action-xhr>` 内）
-* [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})
+* [`amp-selector`](amp-selector.md)
 
 **使用不可**:
 
@@ -161,7 +161,7 @@ $title: amp-form
 | `submit` | 特定のアクション（リンクのタップ、[入力の変更に基づくフォームの送信](#input-events)など）が行われたときにフォームの送信をトリガーできます。 |
 | `clear` | フォームの各入力の値を空にします。これにより、フォームの入力を簡単にやり直すことができます。 |
 
-[tip type="read-on"] [AMP のアクションとイベント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})の詳細をご確認ください。
+[tip type="read-on"] [AMP のアクションとイベント](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)の詳細をご確認ください。
 [/tip]
 
 # イベント
@@ -178,7 +178,7 @@ $title: amp-form
 | `valid` | フォームの検証ステータスが（[レポート戦略](#reporting-strategies)に従って）「有効」に変わったとき。 |
 | `invalid` | フォームの検証ステータスが（[レポート戦略](#reporting-strategies)に従って）「無効」に変わったとき。 |
 
-これらのイベントは [`on` 属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on)を介して使用できます。
+これらのイベントは [`on` 属性](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on)を介して使用できます。
 
 以下の例では、`submit-success` と `submit-error` の両方のイベントをリッスンし、イベントに応じて各種のライトボックスを表示します。
 
@@ -194,7 +194,7 @@ $title: amp-form
 
 # 入力イベント
 
-AMP では、子の `<input>` 要素で `change` イベントと `input-debounced` イベントを使用できます。このため、[`on` 属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#on)を使用して、入力値が変更されたときに任意の要素のアクションを実行できます。
+AMP では、子の `<input>` 要素で `change` イベントと `input-debounced` イベントを使用できます。このため、[`on` 属性](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on)を使用して、入力値が変更されたときに任意の要素のアクションを実行できます。
 
 一般的な使用例として、入力の変更時にフォームを送信することができます（ラジオボタンを選択してアンケートに回答する、`select` 入力から言語を選択してページを翻訳するなど）。
 
@@ -226,7 +226,7 @@ AMP では、子の `<input>` 要素で `change` イベントと `input-debounce
 
 # アナリティクス トリガー
 
-`amp-form` 拡張機能は、[amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の設定でトラッキング可能な以下のイベントをトリガーします。
+`amp-form` 拡張機能は、[amp-analytics](amp-analytics.md) の設定でトラッキング可能な以下のイベントをトリガーします。
 
 | イベント | 発行のタイミング |
 |---------------------------|-----------------------------------|
@@ -288,7 +288,7 @@ AMP では、子の `<input>` 要素で `change` イベントと `input-debounce
 
 # 成功 / エラー レスポンスのレンダリング
 
-[amp-mustache]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) などの[拡張テンプレート]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#extended-templates)を使用することで、成功またはエラー レスポンスをフォームにレンダリングできます。また、[amp-bind]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) によるデータ バインディングと以下のレスポンス属性を使用して成功レスポンスをレンダリングすることもできます。
+[amp-mustache](amp-mustache.md) などの[拡張テンプレート](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates)を使用することで、成功またはエラー レスポンスをフォームにレンダリングできます。また、[amp-bind](amp-bind.md) によるデータ バインディングと以下のレスポンス属性を使用して成功レスポンスをレンダリングすることもできます。
 
 | レスポンス属性 | 説明 |
 |-----------|---------------------|
@@ -385,11 +385,11 @@ to confirm! After that we'll start sending you weekly articles on {{#interests}}
 
 # データ バインディングを使用して成功レスポンスをレンダリングするには
 
-* [on 属性]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})を使用して、フォームの submit-success** 属性を [`AMP.setState()`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#updating-state-with-amp.setstate%28%29) にバインドします。
+* [on 属性](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)を使用して、フォームの submit-success** 属性を [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29) にバインドします。
 * `event` プロパティを使用して、レスポンス データを収集します。
 * 状態の属性を目的の要素に追加して、フォーム レスポンスをバインドします。
 
-以下に、[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) を使用してフォームの `submit-success` レスポンスをレンダリングする例を示します。
+以下に、[`amp-bind`](amp-bind.md) を使用してフォームの `submit-success` レスポンスをレンダリングする例を示します。
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -430,7 +430,7 @@ to confirm! After that we'll start sending you weekly articles on {{#interests}}
 
 `AMP-Redirect-To` レスポンス ヘッダーを設定し、リダイレクト URL を指定することにより、フォームの送信が成功した後にユーザーを新しいページにリダイレクトできます。リダイレクト URL には HTTPS URL を指定する必要があります。そうしないと、AMP によってエラーがスローされ、リダイレクトが行われなくなります。HTTP レスポンス ヘッダーはサーバーで設定されます。
 
-`Access-Control-Expose-Headers` レスポンス ヘッダーを更新し、許可されるヘッダーのリストに `AMP-Redirect-To` を追加してください。これらのヘッダーについて詳しくは、[AMP の CORS セキュリティ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}}#cors-security-in-amp)をご覧ください。
+`Access-Control-Expose-Headers` レスポンス ヘッダーを更新し、許可されるヘッダーのリストに `AMP-Redirect-To` を追加してください。これらのヘッダーについて詳しくは、[AMP の CORS セキュリティ](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)をご覧ください。
 
 *レスポンス ヘッダーの例:*
 
@@ -680,7 +680,7 @@ amp-form では、`<textarea>` 要素に `autoexpand` 属性を指定できま�
 
 # XSRF に対する保護
 
-[AMP CORS 仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})を遵守するだけでなく、[状態の変化に関するリクエストの処理]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md', locale=doc.locale).url.path}})#processing-state-changing-requests)のセクションに特に注意して、[XSRF 攻撃](https://en.wikipedia.org/wiki/Cross-site_request_forgery)から保護してください。この攻撃では、攻撃者が現在のユーザー セッションを利用して、ユーザーが気付かないうちに不正なコマンドを実行できます。
+[AMP CORS 仕様](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)を遵守するだけでなく、[状態の変化に関するリクエストの処理](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests)のセクションに特に注意して、[XSRF 攻撃](https://en.wikipedia.org/wiki/Cross-site_request_forgery)から保護してください。この攻撃では、攻撃者が現在のユーザー セッションを利用して、ユーザーが気付かないうちに不正なコマンドを実行できます。
 
 一般に、ユーザーからの入力を受け付ける場合は以下の点に注意してください。
 

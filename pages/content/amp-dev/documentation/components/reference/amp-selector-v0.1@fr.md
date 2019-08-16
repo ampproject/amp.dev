@@ -35,7 +35,7 @@ Ce composant représente une commande qui affiche un menu d'options et permet à
     <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
     <td>Toutes</td>
   </tr>
   <tr>
@@ -97,7 +97,7 @@ Exemple :
 
 ## Effacer les sélections
 
-Pour effacer toutes les sélections lorsque l'utilisateur clique ou appuie sur un élément, définissez l'attribut d'action [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) sur l'élément en question et spécifiez ensuite l'`id` du sélecteur AMP avec la méthode d'action `clear`.
+Pour effacer toutes les sélections lorsque l'utilisateur clique ou appuie sur un élément, définissez l'attribut d'action [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) sur l'élément en question et spécifiez ensuite l'`id` du sélecteur AMP avec la méthode d'action `clear`.
 
 Exemple :
 
@@ -152,7 +152,7 @@ Regardez les démos sur [AMP By Example](https://ampbyexample.com/components/amp
 Les événements peuvent déclencher des actions sur d'autres composants AMP à l'aide de l'attribut `on`.
 Par exemple : `on="select: my-tab.show"`
 
-En savoir plus sur les [actions et événements AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})
+En savoir plus sur les [actions et événements AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
 <table>
   <tr>

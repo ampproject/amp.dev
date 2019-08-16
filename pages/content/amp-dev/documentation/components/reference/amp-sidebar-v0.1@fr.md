@@ -42,7 +42,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -214,7 +214,7 @@ Regardez les démos sur [AMP By Example](https://ampbyexample.com/components/amp
 
 ## Barre latérale pour les stories
 
-`amp-sidebar` peut être utilisé dans le [composant]({{g.doc('/content/amp-dev/about/stories.html', locale=doc.locale).url.path}}) `amp-story`.
+`amp-sidebar` peut être utilisé dans le [composant](../../../about/stories.html) `amp-story`.
 
 ### Comportement
 
@@ -285,7 +285,7 @@ Cet attribut est présent sur l'élément `<nav toolbar="(media-query)" toolbar-
 
 ##### common attributes<a name="common"></a>
 
-Cet élément inclut des [attributs communs]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md', locale=doc.locale).url.path}}) étendus aux composants AMP.
+Cet élément inclut des [attributs communs](../../../documentation/guides-and-tutorials/learn/common_attributes.md) étendus aux composants AMP.
 
 ## Application d'un style
 

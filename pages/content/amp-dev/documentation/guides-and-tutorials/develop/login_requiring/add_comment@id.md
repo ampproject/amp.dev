@@ -4,7 +4,7 @@ $title: Menambahkan komentar
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
 
-Di titik ini, pengguna dapat menambahkan komentar menggunakan koleksi [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}). Perhatikan bagaimana kemunculan formulir bersifat kondisional, bergantung pada status komponen [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}):
+Di titik ini, pengguna dapat menambahkan komentar menggunakan koleksi [`amp-form`](../../../../documentation/components/reference/amp-form.md). Perhatikan bagaimana kemunculan formulir bersifat kondisional, bergantung pada status komponen [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
@@ -22,7 +22,7 @@ Berikut adalah contoh respons JSON:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-Komponen formulir hanya akan menampilkan nilai di dalam halaman menggunakan [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) template:
+Komponen formulir hanya akan menampilkan nilai di dalam halaman menggunakan [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) template:
 
 [sourcecode:html]
 <div submit-success>

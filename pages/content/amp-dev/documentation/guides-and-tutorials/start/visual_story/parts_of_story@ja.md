@@ -8,8 +8,8 @@ AMP ストーリーに含まれる基本的な構成要素は個々の**ペー�
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-これらの各構成要素は AMP コンポーネントに翻訳され、ストーリーは [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) で、ページは `amp-story-page` で、レイヤは `amp-story-grid-layer` で表されます。
+これらの各構成要素は AMP コンポーネントに翻訳され、ストーリーは [`amp-story`](../../../../documentation/components/reference/amp-story.md) で、ページは `amp-story-page` で、レイヤは `amp-story-grid-layer` で表されます。
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-それでは、[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) コンテナを使用してストーリーを作成してみましょう。
+それでは、[`amp-story`](../../../../documentation/components/reference/amp-story.md) コンテナを使用してストーリーを作成してみましょう。

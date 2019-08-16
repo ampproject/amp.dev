@@ -3,8 +3,8 @@ $title: نظرة عميقة على AMP Analytics
 ---
 
 يقدم هذا الدليل رؤية متعمقة على
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})،
-حيث يقسّم نموذج تهيئة <span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span> إلى ثلاثة مكونات أساسية مهمة:
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)،
+حيث يقسّم نموذج تهيئة <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span> إلى ثلاثة مكونات أساسية مهمة:
 
 ويستخدم باقي هذا الدليل نموذج التهيئة هذا،
 الذي يتتبع مرات مشاهدة الصفحة ونقرات المستخدم على الروابط
@@ -58,28 +58,28 @@ $title: نظرة عميقة على AMP Analytics
 
 * التحويل بواسطة نقطة نهائية مملوكة للناشر لأجل أنظمة التحليلات الداخلية.
 * التحويل بواسطة نقطة نهائية مملوكة لمورّد لإتاحة التوافقية مع حل المورّد
-(مثل [<span dir="ltr" class="nowrap">Adobe Analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+(مثل [<span dir="ltr" class="nowrap">Adobe Analytics</span>](../../../../documentation/components/reference/amp-analytics.md).
 
 لإرسال بيانات التحليلات إلى مزوّد تحليلات،
 ضمّن السمة `type` في العلامة <span dir="ltr" class="nowrap">`amp-analytics`</span> وعيّن قيمتها
 على المورّد المناسب، وذلك على النحو المحدّد في
-[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md).
 
 على سبيل المثال: يرسل <span dir="ltr" class="nowrap">`<amp-analytics type="googleanalytics">`</span> بيانات التحليلات
 إلى مزوّد التحليلات الذي يمثل جهة خارجية، وهو <span dir="ltr" class="nowrap">Google Analytics</span>.
 لإرسال البيانات إلى نقطة نهائية مملوكة لناشر،
 ببساطة لا تضمّن السمة `type`.
 سيتم إرسال بيانات التحليلات إلى النقاط النهائية المحددة لكل
-[طلب]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
+[طلب](deep_dive_analytics.md).
 
 تهيئات مورّد Analytics هي وسيلة سريعة
-لبدء العمل باستخدام <span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span>.
+لبدء العمل باستخدام <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span>.
 ينبغي لك الرجوع إلى مستندات المورّد
 وموارد المساعدة لمزيد من الإرشادات.
 كما ذكرنا سابقًا،
 يمكن العثور على قائمة المورّدين الذين نفذوا بالفعل إجراء الدمج مع AMP، وكذلك الروابط
 إلى مستنداتهم الخاصة، في
-[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+[مواصفة <span dir="ltr" class="nowrap">amp-analytics</span>](../../../../documentation/components/reference/amp-analytics.md).
 
 إذا كنت مورّد تحليلات،
 فتعرّف على المزيد بشأن
@@ -88,7 +88,7 @@ $title: نظرة عميقة على AMP Analytics
 ## تحميل تهيئة بعيدة: السمة config
 
 لست مضطرًا إلى تضمين كل التهيئة
-لأجل <span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span> كاملةً في صفحتك على AMP.
+لأجل <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span> كاملةً في صفحتك على AMP.
 بدلاً من ذلك، يمكنك الاستدعاء إلى عنوان URL بعيد
 لكل التهيئات أو جزء منها.
 
@@ -99,7 +99,7 @@ $title: نظرة عميقة على AMP Analytics
 لإنشاء بيانات التهيئة.
 
 الخطوة الأولى لتحميل التهيئات البعيدة هي
-تضمين السمة config في العلامة <span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span>:
+تضمين السمة config في العلامة <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span>:
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -120,7 +120,7 @@ $title: نظرة عميقة على AMP Analytics
 ```
 
 الخطوة النهائية هي التأكّد من سحب ما يحتويه الملف البعيد
-إلى الموضع السليم في تهيئة <span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span>.
+إلى الموضع السليم في تهيئة <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span>.
 في كلّ من طلبي `pageview` و`event` هنا،
 يتم تعيين قيمة المتغير `account` تلقائيًا
 على قيمة الحساب في عنوان URL البعيد (<span dir="ltr" class="nowrap">`"account": "UA-XXXXX-Y"`</span>):
@@ -135,7 +135,7 @@ $title: نظرة عميقة على AMP Analytics
 **مهم:** لا يتم التحقق من AMP مقابل الاستخدامات العديدة للمتغير نفسه.
 يتم ملء القيم عبر اتباع ترتيب استبدال متغير حسب التفضيل،
 وتكون القيم في عناوين URL البعيدة في قمة ذلك الترتيب
-(انظر [ترتيب استبدال المتغير]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
+(انظر [ترتيب استبدال المتغير](deep_dive_analytics.md).
 
 ## السمات Requests وtriggers وtransports
 
@@ -151,7 +151,7 @@ $title: نظرة عميقة على AMP Analytics
 
 تابع القراءة للتعرّف على المزيد بشأن هذه التهيئات.
 (يمكنك أيضًا القراءة بشأن هذه التهيئات في
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
 ### ماهية البيانات التي يتم إرسالها: السمة requests
 
@@ -178,10 +178,10 @@ $title: نظرة عميقة على AMP Analytics
 
 #### إلحاق عنوان URL للطلب: معلمات عنوان URL الإضافية
 
-تحدد السمة [extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
+تحدد السمة [extraUrlParams](../../../../documentation/components/reference/amp-analytics.md#extra-url-params)
 المعلمات الإضافية التي سيتم إلحاقها بسلسلة طلبات البحث لعنوان URL للطلب عبر اصطلاح "&foo=baz" العادي.
 
-يضيف النموذج <span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span> معلمة <code>cd1</code> إضافية
+يضيف النموذج <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span> معلمة <code>cd1</code> إضافية
 إلى الطلب ويعيّن قيمة المعلمة على "AMP":
 
 ```js
@@ -198,7 +198,7 @@ $title: نظرة عميقة على AMP Analytics
 من حروف هجائية رقمية (<span dir="ltr" class="nowrap">a-zA-Z0-9</span>).
 
 على سبيل المثال،
-تتم تهيئة العنصر <span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span> التالي لإرسال طلب إلى
+تتم تهيئة العنصر <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span> التالي لإرسال طلب إلى
 `https://example.com/analytics` عند تحميل المستند لأول مرة،
 وكلما تم النقر فوق علامة `a`:
 
@@ -236,19 +236,19 @@ $title: نظرة عميقة على AMP Analytics
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (مطلوب)</td>
-      <td data-th="Description">اسم الطلب الذي سيتم إرساله (على النحو المحدد في <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ماهية-البيانات-التي-يتم-إرسالها:-السمة-requests">الطلبات</a>).</td>
+      <td data-th="Description">اسم الطلب الذي سيتم إرساله (على النحو المحدد في <a href="deep_dive_analytics.md#ماهية-البيانات-التي-يتم-إرسالها:-السمة-requests">الطلبات</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">كائن يحتوي على أزواج قيمة مفتاح للاستخدام في تجاوز <code>vars</code> المحدد في تهيئة المستوى الأعلى، أو لتحديد <code>vars</code> فريد لهذا المشغل (انظر أيضًا <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#ترتيب-استبدال-المتغير">ترتيب استبدال المتغير</a>).</td>
+      <td data-th="Description">كائن يحتوي على أزواج قيمة مفتاح للاستخدام في تجاوز <code>vars</code> المحدد في تهيئة المستوى الأعلى، أو لتحديد <code>vars</code> فريد لهذا المشغل (انظر أيضًا <a href="deep_dive_analytics.md#ترتيب-استبدال-المتغير">ترتيب استبدال المتغير</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (مطلوب عند تعيين <code>on</code> على <code>click</code>)</td>
-      <td data-th="Description">محدّد CSS الذي يُستخدم لتحسين العناصر التي ينبغي تتبعها. استخدم القيمة <code>*</code> لتتبع كل العناصر. يتم استخدام هذه التهيئة بالتزامن مع المشغل <code>click</code>. تعرّف على كيفية استخدام المحدّد <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#تتبع-النقرات-على-الصفحة">لتتبع النقرات على الصفحة</a> وكذلك <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#تتبع-التفاعلات-الاجتماعية">التفاعلات الاجتماعية</a>.</td>
+      <td data-th="Description">محدّد CSS الذي يُستخدم لتحسين العناصر التي ينبغي تتبعها. استخدم القيمة <code>*</code> لتتبع كل العناصر. يتم استخدام هذه التهيئة بالتزامن مع المشغل <code>click</code>. تعرّف على كيفية استخدام المحدّد <a href="use_cases.md#تتبع-النقرات-على-الصفحة">لتتبع النقرات على الصفحة</a> وكذلك <a href="use_cases.md#تتبع-التفاعلات-الاجتماعية">التفاعلات الاجتماعية</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code> (مطلوب عند تعيين <code>on</code> على <code>scroll</code>)</td>
-      <td data-th="Description">عناصر التحكم التي يتم تنشيط الحدث <code>scroll</code> بموجب شروطها عند التمرير عبر الصفحة. يمكن أن يحتوي هذا الكائن على <code>verticalBoundaries</code> و<code>horizontalBoundaries</code>. واحدة من الخصيصتين على الأقل مطلوبة لتنشيط حدث <code>scroll</code>. يجب أن تكون قيم كلّ من الخصيصتين صفائف من الأرقام التي تحتوي على حدود يتم إنشاء حدث تمرير فيها. انظر هذا النموذج في <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#تتبع-التمرير">تتبع التمرير</a>.</td>
+      <td data-th="Description">عناصر التحكم التي يتم تنشيط الحدث <code>scroll</code> بموجب شروطها عند التمرير عبر الصفحة. يمكن أن يحتوي هذا الكائن على <code>verticalBoundaries</code> و<code>horizontalBoundaries</code>. واحدة من الخصيصتين على الأقل مطلوبة لتنشيط حدث <code>scroll</code>. يجب أن تكون قيم كلّ من الخصيصتين صفائف من الأرقام التي تحتوي على حدود يتم إنشاء حدث تمرير فيها. انظر هذا النموذج في <a href="use_cases.md#تتبع-التمرير">تتبع التمرير</a>.</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code> (مطلوب عند تعيين <code>on</code> على <code>timer</code>)</td>
@@ -259,7 +259,7 @@ $title: نظرة عميقة على AMP Analytics
 
 **مهم:** يتم تجاوز المشغلات المأخوذة من تهيئة ذات أسبقية أقل
 عبر المشغلات التي تحمل الأسماء نفسها والمأخوذة من تهيئة ذات أسبقية أعلى
-(انظر [ترتيب استبدال المتغير]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}).
+(انظر [ترتيب استبدال المتغير](deep_dive_analytics.md).
 
 ### كيفية إرسال البيانات: السمة transport
 
@@ -320,7 +320,7 @@ $title: نظرة عميقة على AMP Analytics
 
 1. التهيئات البعيدة (عبر `config`).
 2. تكون `vars` مضمّنة داخل مشغل ضمن `triggers`.
-3. تكون `vars` - عند المستوى الأعلى - مضمّنة ضمن <span dir="ltr" class="nowrap">[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})</span>.
+3. تكون `vars` - عند المستوى الأعلى - مضمّنة ضمن <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span>.
 4. القيم المقدّمة بواسط النظام الأساسي.
 
 في هذا النموذج، توجد تهيئة بعيدة،

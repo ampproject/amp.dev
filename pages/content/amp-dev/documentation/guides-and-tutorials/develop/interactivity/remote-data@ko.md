@@ -6,9 +6,9 @@ $title: 원격 데이터 사용하기
 
 [tip type="success"]
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state)는 [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})속성을 통한 원격 데이터 가져오기를 지원하며, CORS 엔드포인트에서 JSON을 가져옵니다. 페이지 로드 시 한 번만 가져오며 데이터를 최신 상태로 유지하는 데 유용합니다(특히 캐시에서 제공되는 경우).
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state)는 [`src`](../../../../documentation/components/reference/amp-bind.md)속성을 통한 원격 데이터 가져오기를 지원하며, CORS 엔드포인트에서 JSON을 가져옵니다. 페이지 로드 시 한 번만 가져오며 데이터를 최신 상태로 유지하는 데 유용합니다(특히 캐시에서 제공되는 경우).
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 요소의 `src` 속성을 바인딩할 수도 있습니다. 즉 사용자의 동작이 원격 JSON 데이터 가져오기를 트리거할 수 있으며 이렇게 가져온 데이터는 페이지에 바인딩할 수 있는 상태가 됩니다.
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 요소의 `src` 속성을 바인딩할 수도 있습니다. 즉 사용자의 동작이 원격 JSON 데이터 가져오기를 트리거할 수 있으며 이렇게 가져온 데이터는 페이지에 바인딩할 수 있는 상태가 됩니다.
 
 [/tip]
 
@@ -20,7 +20,7 @@ $title: 원격 데이터 사용하기
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 요소 내의 JSON 데이터와 유사하게, 이 가져오기에서 반환되는 원격 데이터는 요소의 `id` 속성 아래에 병합되어 사용할 수 있습니다. 예를 들어 위의 예제 응답에서 반환되는 데이터는 다음과 같은 표현식에서 액세스할 수 있습니다.
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 요소 내의 JSON 데이터와 유사하게, 이 가져오기에서 반환되는 원격 데이터는 요소의 `id` 속성 아래에 병합되어 사용할 수 있습니다. 예를 들어 위의 예제 응답에서 반환되는 데이터는 다음과 같은 표현식에서 액세스할 수 있습니다.
 
 |  표현식                  |  결과 |
 |------------------------------|---------|
@@ -38,7 +38,7 @@ $title: 원격 데이터 사용하기
 
 ### 주문할 수 없는 사이즈 표시
 
-다음으로, 주어진 SKU에서 주문할 수 없는 사이즈를 명확하게 표시해 보겠습니다. `"unavailable"` CSS 클래스는 요소를 관통하는 대각선을 추가합니다. 이 클래스를 주문할 수 없는 사이즈인 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 내의 요소에 추가할 수 있습니다.
+다음으로, 주어진 SKU에서 주문할 수 없는 사이즈를 명확하게 표시해 보겠습니다. `"unavailable"` CSS 클래스는 요소를 관통하는 대각선을 추가합니다. 이 클래스를 주문할 수 없는 사이즈인 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 내의 요소에 추가할 수 있습니다.
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ $title: 원격 데이터 사용하기
 
 ### 초기 상태 지정
 
-여기서 사소한 문제가 생깁니다. 기본으로 선택되는 색상인 검은색 셔츠는 어떻게 해야 할까요?  [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})는 명시적인 사용자 작업의 응답으로만 실행되므로 검은색 셔츠의 사이즈 및 가격 데이터를 `amp-state#shirts`에 추가해야 합니다.
+여기서 사소한 문제가 생깁니다. 기본으로 선택되는 색상인 검은색 셔츠는 어떻게 해야 할까요?  [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)는 명시적인 사용자 작업의 응답으로만 실행되므로 검은색 셔츠의 사이즈 및 가격 데이터를 `amp-state#shirts`에 추가해야 합니다.
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ $title: 원격 데이터 사용하기
 </amp-selector>
 ```
 
-참고: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})는 페이지 로드 시 실행되지 않으며 명시적인 사용자 작업의 응답으로만 실행됩니다. 따라서 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})가 쓰이는지에 관계없이 모든 페이지에서 일관되게 초기 페이지 로드가 빨라집니다.
+참고: [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)는 페이지 로드 시 실행되지 않으며 명시적인 사용자 작업의 응답으로만 실행됩니다. 따라서 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)가 쓰이는지에 관계없이 모든 페이지에서 일관되게 초기 페이지 로드가 빨라집니다.
 
 ## 가변적인 셔츠 가격
 
 주문할 수 있는 사이즈는 올바르게 표시했으니 이제 올바른 가격도 표시해 보겠습니다.
 
-AMPPAREL 매장은 특이하게도 색상과 사이즈에 따라 셔츠 가격이 달라집니다. 따라서 사용자가 선택한 사이즈를 추적하기 위해서는 새 변수가 필요합니다. 다음과 같이 사이즈 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 요소에 새로운 작업을 추가합니다.
+AMPPAREL 매장은 특이하게도 색상과 사이즈에 따라 셔츠 가격이 달라집니다. 따라서 사용자가 선택한 사이즈를 추적하기 위해서는 새 변수가 필요합니다. 다음과 같이 사이즈 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 요소에 새로운 작업을 추가합니다.
 
 ```html
 <!-- 요소가 선택되면 `selectedSize` 변수를 선택한 요소의

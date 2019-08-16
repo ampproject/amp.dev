@@ -94,11 +94,11 @@ $title: 查看入门代码
 </html>
 ```
 
-这是一个非常简单且已顺利通过 [AMP 验证]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})和 [schema.org](http://schema.org/) 结构化数据验证的 AMP 网页。如果此网页被部署在新闻网站上，用户便可通过搜索引擎结果页中提供的丰富体验（例如，Google 搜索中的“焦点新闻”轮换展示）发现此网页。
+这是一个非常简单且已顺利通过 [AMP 验证](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)和 [schema.org](http://schema.org/) 结构化数据验证的 AMP 网页。如果此网页被部署在新闻网站上，用户便可通过搜索引擎结果页中提供的丰富体验（例如，Google 搜索中的“焦点新闻”轮换展示）发现此网页。
 
 ## 启用 AMP 验证工具
 
-在更改此网页之前，我们需要先启用 [AMP 验证工具]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})，以确保要更改的网页是有效的 AMP HTML 网页。请将以下分段标识符**添加**到您的网址中：
+在更改此网页之前，我们需要先启用 [AMP 验证工具](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)，以确保要更改的网页是有效的 AMP HTML 网页。请将以下分段标识符**添加**到您的网址中：
 
 ```text
 #development=1
@@ -120,7 +120,7 @@ http://localhost:8000/article.amp.html#development=1
 - [AMP 验证工具网络界面](https://validator.ampproject.org/)
 - ... 等等
 
-要想了解详情，请参阅[验证 AMP 网页]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})指南。
+要想了解详情，请参阅[验证 AMP 网页](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)指南。
 [/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='在 Nexus 5X 设备上模拟') }}

@@ -6,9 +6,9 @@ $title: Mengombinasikan AMP dengan Progressive Web App
 
 Progressive Web App dan halaman AMP bekerja sama dengan baik. Bahkan, dalam banyak kasus, keduanya saling melengkapi. Pelajari cara:
 
-1. [Mengaktifkan fitur PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md', locale=doc.locale).url.path}}) untuk halaman AMP Anda
-2. Membuat [perjalanan pengguna yang super cepat dan menarik]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) dari AMP ke PWA
-3. [Menyederhanakan PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}) dengan menggunakan kecanggihan AMP
+1. [Mengaktifkan fitur PWA](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) untuk halaman AMP Anda
+2. Membuat [perjalanan pengguna yang super cepat dan menarik](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) dari AMP ke PWA
+3. [Menyederhanakan PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md) dengan menggunakan kecanggihan AMP
 
 [tip type="note"]
 
@@ -20,7 +20,7 @@ Pelajari lebih lanjut tentang [Progressive Web App](https://developers.google.co
 
 Halaman AMP dapat menggunakan banyak fitur PWA dengan sendirinya, selama halaman ditayangkan dari halaman asli (domain situs), bukan Cache AMP. Artinya, fitur PWA tidak akan berfungsi saat menggunakan Halaman AMP dalam platform seperti Google atau Bing, namun fitur tersebut akan berfungsi pada proses selanjutnya, atau jika pengguna membuka halaman AMP secara langsung.
 
-Baca lebih lanjut: Pelajari cara [mengaktifkan fitur PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md', locale=doc.locale).url.path}}) untuk Halaman AMP.
+Baca lebih lanjut: Pelajari cara [mengaktifkan fitur PWA](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) untuk Halaman AMP.
 
 ## AMP sebagai pintu masuk ke PWA
 
@@ -28,7 +28,7 @@ Nilai jual AMP yang unik adalah **penayangan hampir instan**, keunggulan yang me
 
 Strategi yang bagus adalah membuat pintu masuk ke situs sebagai halaman AMP, lalu menyiapkan PWA di belakang layar dan beralih untuk perjalanan selanjutnya.
 
-Baca lebih lanjut: Pelajari cara [menghubungkan AMP ke PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) melalui [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Pelajari cara [menghubungkan AMP ke PWA](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) melalui [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md).
 
 ## AMP sebagai sumber data untuk PWA
 
@@ -36,4 +36,4 @@ Salah satu fitur utama Halaman AMP adalah kemudahan dan keamanan penyematannya, 
 
 Jika membuat Progressive Web App, Anda dapat menerima keuntungan yang sama dan mengurangi kerumitan klien serta backend secara drastis dengan **menggunakan kembali Halaman AMP sebagai sumber data untuk PWA**.
 
-Baca lebih lanjut: Pelajari cara [melihat halaman AMP dalam PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Pelajari cara [melihat halaman AMP dalam PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md).

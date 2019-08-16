@@ -15,7 +15,7 @@ $title: 로그인
 </span>
 [/sourcecode]
 
-[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 관련 속성의 동작은 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})를 위한 페이지 전체 구성에 따라 다릅니다. 이 경우 다음과 같습니다:
+[`amp-access`](../../../../documentation/components/reference/amp-access.md) 관련 속성의 동작은 [`amp-access`](../../../../documentation/components/reference/amp-access.md)를 위한 페이지 전체 구성에 따라 다릅니다. 이 경우 다음과 같습니다:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -72,4 +72,4 @@ AMPByExample 서버가 로그인 페이지에서 POST 요청을 받고 로그인
 - AMP 런타임은 로그인 페이지를 닫고 return URL 매개 변수로 지정된 페이지로 리디렉션합니다
 - 사용자가 로그인 버튼을 클릭하면 서버가 응답을 조정해야합니다.
 
-도움말: 이 flow에 대한 더 상세한 설명은 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})에서 볼 수 있습니다.
+도움말: 이 flow에 대한 더 상세한 설명은 [`amp-access`](../../../../documentation/components/reference/amp-access.md)에서 볼 수 있습니다.

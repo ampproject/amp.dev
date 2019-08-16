@@ -6,7 +6,7 @@ $title: Imágenes adaptativas con srcset, sizes & heights
 
 Utilice el atributo `srcset` para controlar los elementos
 basado en expresiones de medios variables
-En particular, utilícelo para todas las etiquetas [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+En particular, utilícelo para todas las etiquetas [`amp-img`](../../../../documentation/components/reference/amp-img.md)
 para especificar cuál imagen se usará basedo en la variedad de tamaños de pantalla.
 
 En este ejemplo simple, `srcset` especifica cuál imagen se usará para el ancho de la pantalla.

@@ -69,7 +69,7 @@ dijelaskan di atas.
 
 Google menyediakan AMP URL API untuk mengambil URL HTML AMP yang cocok untuk
 daftar URL tertentu ([dokumentasi resmi](https://developers.google.com/amp/cache/use-amp-url) /
-[demo]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). URL ini
+[demo](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html). URL ini
 tidak harus merupakan versi kanonis. Jika ada versi AMP, maka responsnya
 akan mencakup URL AMP asli dan URL untuk halaman AMP yang tersimpan di
 Cache AMP Google.
@@ -112,7 +112,7 @@ AMP URL API. Namun, Anda dapat mengambil URL tersimpan dari URL AMP
 
 ## Menggunakan Cache AMP
 
-[Cache AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}) adalah
+[Cache AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) adalah
 jaringan penayangan konten (CDN) berbasis proxy untuk menayangkan dokumen AMP yang valid.
 Cache AMP didesain untuk:
 
@@ -167,7 +167,7 @@ Berikut ini beberapa praktik terbaik umum untuk mengimplementasikan AMP Viewer:
 
 *   Tayangkan halaman AMP dari Cache AMP (waktu muat >1 detik lebih cepat).
 *   Tampilkan asal penayang artikel (misalnya dalam header yang dapat diciutkan).
-*   Sediakan tindakan berbagi (lihat juga bagian "[Membagikan Konten AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}#sharing-amp-content)"
+*   Sediakan tindakan berbagi (lihat juga bagian "[Membagikan Konten AMP](integrate-with-apps.md#sharing-amp-content)"
     di bawah).
 *   Pada penampil berbasis WebView, aktifkan cookie pihak ketiga.
 *   Setel perujuk untuk platform/aplikasi Anda.

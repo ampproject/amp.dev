@@ -4,15 +4,15 @@ $title: Kasus Penggunaan
 
 Panduan ini memberikan rangkaian kasus penggunaan umum untuk melacak keterlibatan pengguna:
 
-Catatan: Ingin menambahkan kasus penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Anda juga dapat memberikan kasus penggunaan Anda sendiri; lihat [Cara Berkontribusi]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
+Catatan: Ingin menambahkan kasus penggunaan? [Beri tahu kami.](https://github.com/ampproject/docs/issues/new) Anda juga dapat memberikan kasus penggunaan Anda sendiri; lihat [Cara Berkontribusi](../../../../documentation/guides-and-tutorials/contribute/index.md).
 
 ## Melacak jumlah kunjungan halaman
 
-Pelajari cara melacak jumlah kunjungan halaman menggunakan [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) dan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+Pelajari cara melacak jumlah kunjungan halaman menggunakan [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) dan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
 ### Menggunakan amp-pixel
 
-Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}):
+Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -20,7 +20,7 @@ Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [`amp-
 
 ### Menggunakan amp-analytics - tanpa vendor
 
-Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
+Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
 <amp-analytics>
@@ -67,7 +67,7 @@ Kirimkan data jumlah kunjungan halaman ke Google Analytics (lihat juga [Pelacaka
 
 ## Melacak klik halaman
 
-Pelajari cara melacak klik halaman menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), mengirim data peristiwa ke URL yang ditentukan, dan ke [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Pelajari cara melacak klik halaman menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), mengirim data peristiwa ke URL yang ditentukan, dan ke [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Mengirim data ke URL yang ditentukan
 
@@ -128,7 +128,7 @@ Contoh berikut menggunakan atribut `selector` `trigger` untuk mengirim peristiwa
 
 ## Melacak scroll
 
-Lacak scroll halaman menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). Contoh berikut menggunakan atribut `scrollspec` untuk mengirim peristiwa `scroll` ke URL yang ditentukan jika halaman di-scroll secara vertikal sebanyak 25%, 50%, dan 90%. Peristiwa ini juga dipicu ketika halaman di-scroll secara horizontal hingga 90% lebar `scroll`:
+Lacak scroll halaman menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Contoh berikut menggunakan atribut `scrollspec` untuk mengirim peristiwa `scroll` ke URL yang ditentukan jika halaman di-scroll secara vertikal sebanyak 25%, 50%, dan 90%. Peristiwa ini juga dipicu ketika halaman di-scroll secara horizontal hingga 90% lebar `scroll`:
 
 ```html
 <amp-analytics>
@@ -156,7 +156,7 @@ Lacak scroll halaman menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/doc
 
 ## Melacak interaksi sosial
 
-Pelajari cara melacak interaksi sosial menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), mengirim data peristiwa ke URL yang ditentukan, dan ke [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Pelajari cara melacak interaksi sosial menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), mengirim data peristiwa ke URL yang ditentukan, dan ke [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Mengirim data ke URL yang ditentukan
 

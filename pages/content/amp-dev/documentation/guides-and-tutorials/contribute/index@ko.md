@@ -29,7 +29,7 @@ AMP 프로젝트는 기술적 기여를 강하게 장려합니다.
 [amp.dev](https://amp.dev)은 대부분의 사람들이 AMP에 익숙해지는 곳입니다.
 [ampproject 문서 GitHub 프로젝트](https://github.com/ampproject/docs)에서 문서에 기여할 수 있습니다. (심지어 [여러분이 지금 읽고있는 페이지](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md)를 더 좋게 할 수도 있습니다)
 
-[Examples]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})은 어떻게 AMP를 사용하는 지 예제를 제공합니다.
+[Examples](../../../documentation/examples/index.html)은 어떻게 AMP를 사용하는 지 예제를 제공합니다.
 [amp-by-example GitHub 프로젝트](https://github.com/ampproject/amp-by-example/)에서 개선할 수 있습니다.
 
 [amphtml GitHub 프로젝트](https://github.com/ampproject/amphtml)의

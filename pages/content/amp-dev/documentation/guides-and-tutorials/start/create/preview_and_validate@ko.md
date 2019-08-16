@@ -15,5 +15,5 @@ $title: 프리뷰 및 유효성 검사
   1. [Chrome DevTools 콘솔](https://developers.google.com/web/tools/chrome-devtools/debug/console/)을 열고 유효성 검사 오류를 확인합니다.
 
 [tip type="read-on"]
-**읽어보기 –** [유효성 검사에 대해 알아보고]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}), 오류가 발생했을 때 무엇을 해야하는 지 알아보세요.
+**읽어보기 –** [유효성 검사에 대해 알아보고](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), 오류가 발생했을 때 무엇을 해야하는 지 알아보세요.
 [/tip]

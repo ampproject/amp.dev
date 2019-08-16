@@ -35,7 +35,7 @@ Rappresenta un controllo che apre un menu di opzioni e permette all'utente di sc
     <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>
     <td>Tutti</td>
   </tr>
   <tr>
@@ -97,7 +97,7 @@ Esempio:
 
 ## Annullare le selezioni
 
-Per fare in modo che tutte le selezioni vengano annullate quando l'utente fa clic o tocca un elemento, imposta l'attributo di azione [`on`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}) sull'attributo e specifica l'`id` del selettore AMP con il metodo di azione `clear`.
+Per fare in modo che tutte le selezioni vengano annullate quando l'utente fa clic o tocca un elemento, imposta l'attributo di azione [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) sull'attributo e specifica l'`id` del selettore AMP con il metodo di azione `clear`.
 
 Esempio:
 
@@ -151,7 +151,7 @@ guarda le demo dal vivo sul sito [AMP By Example](https://ampbyexample.com/compo
 Gli eventi possono attivare delle azioni in altri componenti AMP utilizzando l'attributo `on`,
 ad esempio `on="select: my-tab.show"`
 
-Ulteriori informazioni su [azioni ed eventi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
+Ulteriori informazioni su [azioni ed eventi AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
 
 <table>
   <tr>

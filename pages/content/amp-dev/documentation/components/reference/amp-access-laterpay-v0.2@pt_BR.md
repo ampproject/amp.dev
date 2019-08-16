@@ -25,7 +25,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-Permite que os editores se integrem facilmente com a plataforma de micropagamentos [LaterPay](https://www.laterpay.net). O `amp-access-laterpay` é baseado no [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) e o exige.
+Permite que os editores se integrem facilmente com a plataforma de micropagamentos [LaterPay](https://www.laterpay.net). O `amp-access-laterpay` é baseado no [AMP Access](amp-access.md) e o exige.
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ Consulte a documentação sobre a configuração do [LaterPay Connector](https:/
 
 A lista gerada pode ser estilizada e apresentada de acordo com a preferência do editor.
 
-Esse componente também depende da [marcação de conteúdo de acesso]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#access-content-markup) para mostrar e ocultar conteúdo.
+Esse componente também depende da [marcação de conteúdo de acesso](amp-access.md#access-content-markup) para mostrar e ocultar conteúdo.
 
 ## Configuração
 
@@ -140,7 +140,7 @@ Os seguintes valores podem ser definidos no objeto de configuração `laterpay`:
         <tr>
           <td><code>sandbox</code></td>
           <td>booleano</td>
-          <td>Necessário apenas se você estiver usando o modo de sandbox para testar a configuração do seu servidor. Você também precisa usar o <a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#amp-runtime">modo de desenvolvimento</a> de AMP.</td>
+          <td>Necessário apenas se você estiver usando o modo de sandbox para testar a configuração do seu servidor. Você também precisa usar o <a href="../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#amp-runtime">modo de desenvolvimento</a> de AMP.</td>
         </tr>
       </table>
 
@@ -274,7 +274,7 @@ As seguintes chaves de mensagem podem ser traduzidas ou personalizadas, mas prec
 
 ## Análise
 
-Como `amp-access-laterpay` é baseado em `amp-access`, ele é compatível com todos os [eventos de análise]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#integration-with-amp-analytics) enviados pelo `amp-access`.
+Como `amp-access-laterpay` é baseado em `amp-access`, ele é compatível com todos os [eventos de análise](amp-access.md#integration-with-amp-analytics) enviados pelo `amp-access`.
 
 Todos os exemplos disponíveis em [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) estão configurados para enviar esses eventos de análise, caso você queira ver um exemplo mais completo de como isso é na prática.
 
@@ -282,9 +282,9 @@ Todos os exemplos disponíveis em [https://ampexample.laterpay.net/](https://amp
 
 Se você tem um sistema de assinatura e pretende usar o LaterPay somente para vendas de artigos individuais, é possível fazer com que os dois métodos de venda coexistam na mesma página, usando AMP Access e AMP Access LaterPay juntos.
 
-Primeiro, consulte a documentação do [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) para saber como configurar o AMP Access com seu paywall existente.
+Primeiro, consulte a documentação do [AMP Access](amp-access.md) para saber como configurar o AMP Access com seu paywall existente.
 
-A seção sobre [vários provedores]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}#multiple-access-providers) explica como configurar diversos provedores com namespaces.
+A seção sobre [vários provedores](amp-access.md#multiple-access-providers) explica como configurar diversos provedores com namespaces.
 
 Ao usar o AMP Access com o LaterPay e uma integração de paywall existente, a configuração necessária pode ser semelhante a esta:
 
@@ -339,7 +339,7 @@ Veja um exemplo mais completo em [https://ampexample.laterpay.net/dual-amp-acces
 
 ## Documentação relacionada
 
-* [AMP Access]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
+* [AMP Access](amp-access.md)
 * [LaterPay (link em inglês)](https://www.laterpay.net)
 * [LaterPay: como fazemos micropagamentos (link em inglês)](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) (link em inglês). Semelhante ao AMP Access LaterPay, mas voltado para páginas que não são AMP.

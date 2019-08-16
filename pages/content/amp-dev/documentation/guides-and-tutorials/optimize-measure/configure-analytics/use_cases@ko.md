@@ -4,15 +4,15 @@ $title: 사용 사례
 
 이 가이드에서는 사용자 참여를 추적하기 위한 일반적인 사용 사례를 확인할 수 있습니다.
 
-참고: 사용 사례를 추가하고 싶으신가요? [Google에 알려 주세요.](https://github.com/ampproject/docs/issues/new) 또는 [기여 방법]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}) 에서 별도의 사용 사례를 제공하는 방법을 확인할 수 있습니다.
+참고: 사용 사례를 추가하고 싶으신가요? [Google에 알려 주세요.](https://github.com/ampproject/docs/issues/new) 또는 [기여 방법](../../../../documentation/guides-and-tutorials/contribute/index.md) 에서 별도의 사용 사례를 제공하는 방법을 확인할 수 있습니다.
 
 ## 페이지 조회수 추적하기
 
-[`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 및 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 페이지 조회수를 추적하는 방법을 알아보세요.
+[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 및 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 조회수를 추적하는 방법을 알아보세요.
 
 ### amp-pixel 사용
 
-다음과 같이 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 을 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
+다음과 같이 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 을 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -20,7 +20,7 @@ $title: 사용 사례
 
 ### amp-analytics 사용 - 공급업체 없음
 
-다음과 같이 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
+다음과 같이 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지뷰 데이터를 지정된 URL 로 전송합니다.
 
 ```html
 <amp-analytics>
@@ -67,7 +67,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 
 ## 페이지 클릭수 추적하기
 
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 페이지 클릭수를 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 클릭수를 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
 ### 지정된 URL 로 데이터 전송하기
 
@@ -129,7 +129,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 
 ## 스크롤 추적하기
 
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 페이지 스크롤을 추적합니다. 다음 예에서는 `scrollspec` 속성을 사용하여 페이지가 수직으로 25%, 50%, 90% 스크롤되었을 때 지정된 URL 로 `scroll` 이벤트를 전송합니다. 또한 페이지가 `scroll` 너비의 90% 만큼 수평으로 스크롤되었을 때도 이벤트가 전송됩니다.
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 스크롤을 추적합니다. 다음 예에서는 `scrollspec` 속성을 사용하여 페이지가 수직으로 25%, 50%, 90% 스크롤되었을 때 지정된 URL 로 `scroll` 이벤트를 전송합니다. 또한 페이지가 `scroll` 너비의 90% 만큼 수평으로 스크롤되었을 때도 이벤트가 전송됩니다.
 
 ```html
 <amp-analytics>
@@ -157,7 +157,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 
 ## 소셜 상호작용 추적하기
 
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 를 사용하여 소셜 상호작용을 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 소셜 상호작용을 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
 ### 지정된 URL 로 데이터 전송하기
 

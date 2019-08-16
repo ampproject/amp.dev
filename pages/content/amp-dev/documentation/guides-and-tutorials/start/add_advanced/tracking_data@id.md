@@ -4,7 +4,7 @@ $title: Melacak interaksi dengan analisis
 
 Platform analisis biasanya diintegrasikan dengan situs melalui panggilan fungsi dan cuplikan JavaScript sebaris, yang akan memicu peristiwa yang dikirimkan kembali ke sistem analisis. AMP memberikan sintaks konfigurasi JSON yang fleksibel untuk membuat replika proses ini untuk beberapa partner analisis.
 
-Berikut adalah contoh pelacakan Google Analytics berdasarkan JavaScript tradisional. Kami akan menulis ulang ini dalam format JSON [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), namun sebelum itu, mari kita lihat pendekatan tradisional:
+Berikut adalah contoh pelacakan Google Analytics berdasarkan JavaScript tradisional. Kami akan menulis ulang ini dalam format JSON [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), namun sebelum itu, mari kita lihat pendekatan tradisional:
 
 ```html
 <script>
@@ -20,13 +20,13 @@ ga('send', 'pageview');
 
 JavaScript ini cukup sederhana; JavaScript mengirimkan notifikasi untuk melacak peristiwa pageview.
 
-Untuk meniru fungsi ini di AMP, pertama-tama kami harus **menyertakan** library komponen [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) di `<head>` dokumen kami:
+Untuk meniru fungsi ini di AMP, pertama-tama kami harus **menyertakan** library komponen [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) di `<head>` dokumen kami:
 
 ```html
 <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 ```
 
-Kemudian, mari **tambahkan** komponen [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) di bagian akhir `isi` dokumen:
+Kemudian, mari **tambahkan** komponen [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) di bagian akhir `isi` dokumen:
 
 ```html
 <amp-analytics type="googleanalytics">
@@ -49,11 +49,11 @@ Kemudian, mari **tambahkan** komponen [`amp-analytics`]({{g.doc('/content/amp-de
 </amp-analytics>
 ```
 
-Sama seperti contoh JavaScript di bagian atas halaman ini, cuplikan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) akan mengirimkan notifikasi ke Google Analytics yang menunjukkan bahwa halaman telah dilihat.
+Sama seperti contoh JavaScript di bagian atas halaman ini, cuplikan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) akan mengirimkan notifikasi ke Google Analytics yang menunjukkan bahwa halaman telah dilihat.
 
 Untuk menentukan ini, kami telah menyetel `type` ke `googleanalytics` dan membuat pemicu bernama "default pageview" di JSON.  Pemicu ini akan diaktifkan ketika halaman terlihat (karena `"on": "visible"`) dan ketika diaktifkan, kami akan mengirimkan permintaan analisis `pageview` ke Google Analytics dengan `vars` yang telah ditentukan.
 
-JSON yang digunakan untuk mengonfigurasi [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) adalah format yang sangat fleksibel untuk menjelaskan data analisis yang akan dikirim dan waktu pengirimannya.  [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) berisi detail lengkap tentang format.
+JSON yang digunakan untuk mengonfigurasi [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) adalah format yang sangat fleksibel untuk menjelaskan data analisis yang akan dikirim dan waktu pengirimannya.  [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) berisi detail lengkap tentang format.
 
 Berdasarkan contoh di atas, kami dapat **menambahkan** pemicu lain yang diberi nama `"click on #header trigger"`:
 
@@ -89,8 +89,8 @@ Berdasarkan contoh di atas, kami dapat **menambahkan** pemicu lain yang diberi n
 
 Sesuai dengan perkiraan Anda tentang namanya, pemicu ini akan diaktifkan ketika elemen dengan ID `"header"` diklik (ditentukan dengan `"on": "click"` dan `"selector": "#header"`).  Ketika pemicu ini diaktifkan, kami akan mengirimkan permintaan `event` ke penyedia analisis kami, yang menentukan pasangan variabel yang akan disertakan dalam permintaan.
 
-Jika memiliki platform pelacakan kustom yang ingin diintegrasikan, Anda tetap dapat menggunakan [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) dan menentukan endpoint URL Anda yang dipersonalisasi sebagai tujuan data pelacakan dikirimkan. Pelajari lebih lanjut di dokumetasi referensi komponen [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+Jika memiliki platform pelacakan kustom yang ingin diintegrasikan, Anda tetap dapat menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) dan menentukan endpoint URL Anda yang dipersonalisasi sebagai tujuan data pelacakan dikirimkan. Pelajari lebih lanjut di dokumetasi referensi komponen [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
 Catatan: `“UA-YYYY-Y”` adalah contoh akun Google Analytics; contoh ini akan diganti dengan kode pelacakan Google Analytics situs Anda, jika Anda menerapkan contoh ini di situs.
 
-Tips: Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}).
+Tips: Jika tertarik pada sistem pelacakan yang lebih sederhana, Anda mungkin ingin melihat [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).
