@@ -181,8 +181,10 @@ test('title and description are correct', (done) => {
 
 test('Component title is reduced to component name', (done) => {
   const searchResult = createSearchResult(2, 0, 2);
-  searchResult.items[0].pagemap.metatags[0]['twitter:title'] = 'Documentation: Component: <amp-test>';
-  searchResult.items[1].pagemap.metatags[0]['twitter:title'] = 'Documentation amp-test:';
+  searchResult.items[0].pagemap.metatags[0]['twitter:title'] =
+      'Documentation: Component: <amp-test>';
+  searchResult.items[1].pagemap.metatags[0]['twitter:title'] =
+      'Documentation amp-test:';
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
