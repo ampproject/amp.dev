@@ -49,6 +49,19 @@ body {
   .#{utility('toc')} + .#{utility('content')} {
     @include content-with-sidebar;
   }
+
+  .#{utility('versions')} {
+    display: inline-block;
+    background: #fff;
+    padding: 0.1em 0.2em;
+    border-radius: 3px;
+    border: 2px solid #d5d9de;    
+    a:not([href]) {
+      color: #20202A;
+      border-bottom: 2px solid #20212a;
+    }
+  }
+
 }
 
 @media (min-width: 768px){

@@ -114,6 +114,12 @@ class MarkdownDocument {
     this._frontmatter['version'] = version;
   }
 
+  set versions(versions) {
+    this._frontmatter['versions'] = versions;
+    this._contents = MarkdownDocument
+        .insertVersionToggler(this._contents, this._frontmatter.version, versions);
+  }
+
   get teaser() {
     return this._frontmatter['teaser'] || {};
   }
@@ -125,6 +131,10 @@ class MarkdownDocument {
   set servingPath(path) {
     this._frontmatter['$path'] = path;
     this._frontmatter['$localization'] = {path: '/{locale}' + path};
+  }
+
+  set isCurrent(bool) {
+    this._frontmatter['is_current'] = bool;
   }
 
   get contents() {
@@ -236,6 +246,30 @@ class MarkdownDocument {
             return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
           });
 
+    return contents;
+  }
+
+  /**
+   * Adds version toggler to the h1 heading in case of multiple versions
+   * @param  {String} contents
+   * @return {String}          The rewritten content
+   */
+  static insertVersionToggler(contents, version, versions) {
+    const TITLE_PATTERN = /^#{1}\s(.+)/m;
+    const versionLinks = versions.map((v) => {
+      // TODO: Figure out how to turn this into a more robust link..
+      return `<a${ v !== version ?
+        ' href="../$1' + (v === versions[0] ? '' : '-v' + v) + '.html"' : '' }>${v}</a>`;
+    }).join('\n');
+    const VERSION_TOGGLER = `
+<h1>
+$1
+<div class="ap--versions">
+  ${versionLinks}
+</div>
+</h1>
+    `;
+    contents = contents.replace(TITLE_PATTERN, VERSION_TOGGLER);
     return contents;
   }
 

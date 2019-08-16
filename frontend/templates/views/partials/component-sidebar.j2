@@ -19,7 +19,8 @@
               <li class="nav-item level-1 ">
                 <ul class="nav-list level-2">
                   <li class="nav-link">{{ scope.initial|upper }}</li>
-                  {% for component in components %}
+                  {% for component in components if component.is_current %}
+
                   {% set initial = component.title[4] %}
                   {% if scope.initial != initial %}
                   {% set scope.initial = initial %}

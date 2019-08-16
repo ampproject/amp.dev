@@ -74,18 +74,19 @@ class ComponentReferenceImporter {
     const savedDocuments = [];
 
     for (const extension of extensions) {
-      // if (extension.name !== 'amp-carousel') {
-      //   continue;
-      // }
+      if (extension.name !== 'amp-carousel') {
+        continue;
+      }
       const documents = await this._findExtensionDocs(extension);
-      const highestVersion = documents.map((doc) => doc.version).sort().reverse()[0] || 0.1;
+      const versions = documents.map((doc) => doc.version).sort().reverse();
 
       if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
         documents.forEach((doc) => {
           // TODO: importUrl
-          this._setMetadata(extension.name, doc.document, doc.version, doc.version === highestVersion);
+          this._setMetadata(
+              extension.name, doc.document, doc.version, versions);
           this._rewriteRelativePaths(extension.path, doc.document);
           savedDocuments.push(this._saveDocument(extension.name, doc.document, doc.version));
         });
@@ -110,7 +111,7 @@ class ComponentReferenceImporter {
    * Set metadata that is required for the teaser
    * @param {MarkdownDocument} document
    */
-  _setMetadata(extensionName, document, version, isHighestVersion) {
+  _setMetadata(extensionName, document, version, versions) {
     // Ensure that the document has a TOC
     document.toc = true;
 
@@ -130,7 +131,15 @@ class ComponentReferenceImporter {
 
     if (version) {
       document.version = version;
-      if (isHighestVersion) {
+
+      // only show multiple versions in the UI when there are multiple.
+      if (versions.length > 1) {
+        document.versions = versions;
+      }
+
+      // when this doc is the highest current version, use it as default entry point
+      if ((versions[0] || 0.1) === version) {
+        document.isCurrent = true;
         document.servingPath = '/documentation/components/{slug}.html';
       }
     }
@@ -192,6 +201,12 @@ class ComponentReferenceImporter {
         .sort()
         .reverse())[0];
 
+    // some components are broken on current releases and need to be imported from master
+    const master = DOCS_TO_FETCH_FROM_MASTER.includes(extension.name);
+    if (master) {
+      log.warn(`Importing ${extension.name} from master`);
+    }
+
     // Find the Markdown document that is named like the extension
     for (let i = 0; i < files.length; i++) {
       if (files[i].type === 'file') {
@@ -199,8 +214,9 @@ class ComponentReferenceImporter {
           const documentPath = files[i].path;
           const version = files[i].path.match(/\/([\d\.]+)/);
           documents.push({
-            document: await this.githubImporter_.fetchDocument(documentPath),
-            version: version ? version[1] : highestVersion,
+            document: await this.githubImporter_
+                .fetchDocument(documentPath, DEFAULT_REPOSITORY, master),
+            version: version ? parseFloat(version[1]) : highestVersion,
           });
         }
       } else {
