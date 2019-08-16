@@ -26,6 +26,7 @@ const {BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS} = require('@lib/common/
 
 const PAGE_SIZE = googleSearch.PAGE_SIZE;
 const LAST_PAGE = googleSearch.MAX_PAGE;
+const MAX_COMPONENTS = 5;
 
 const COMPONENT_REFERENCE_DOC_PATTERN =
     /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
@@ -162,7 +163,7 @@ async function handleSearchRequest(request, response, next) {
     return;
   }
 
-  const highlightComponents = page == 1;
+  let highlightComponents = page == 1;
 
   let cseResult = undefined;
   try {
@@ -179,12 +180,17 @@ async function handleSearchRequest(request, response, next) {
   const components = [];
 
   if (totalResults > 0) {
+    let componentCount = 0;
     for (const item of cseResult.items) {
       const page = createPageObject(item);
 
       if (highlightComponents && COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
         enrichComponentPageObject(item, page, locale);
         components.push(page);
+        componentCount++;
+        if (componentCount >= MAX_COMPONENTS) {
+          highlightComponents = false;
+        }
       } else {
         pages.push(page);
       }
