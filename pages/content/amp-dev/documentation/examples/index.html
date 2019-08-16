@@ -1,5 +1,5 @@
 ---
-$title: Examples
+$title: AMP [= format|capitalize =] Examples
 $titles:
   teaser: Examples.
 $view: /views/custom.j2
@@ -173,7 +173,7 @@ recent_examples:
       {% include '/views/partials/sidebar-toggle-button.j2' %}
       {% include '/views/partials/breadcrumbs.j2' %}
 
-      <h1>Learn AMP By Example</h1>
+      <h1>{{ doc.title }}</h1>
 
       {% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
       <section class="ap--card-grid">
