@@ -263,9 +263,18 @@ recent_examples:
                 {% if document.formats %}
                 {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
                 <div class="ap-m-table-component-tags">
-                  {% for format in document.formats %}
-                  <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-table-component-tag"></div>
-                  {% endfor %}
+                  {% if 'websites' in document.formats %}
+                  <div class="ap-m-tag ap-m-tag-websites ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'stories' in document.formats %}
+                  <div class="ap-m-tag ap-m-tag-stories ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'ads' in document.formats %}
+                  <div class="ap-m-tag ap-m-tag-ads ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'email' in document.formats or 'emails' in document.formats %}
+                  <div class="ap-m-tag ap-m-tag-email ap-m-table-component-tag"></div>
+                  {% endif %}
                 </div>
                 {% endif %}
                 <div class="ap-m-table-component-name ap-m-table-component-name-example">

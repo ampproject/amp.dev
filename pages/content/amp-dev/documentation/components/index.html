@@ -136,9 +136,18 @@ highlighted_components:
                 {% if component.formats %}
                 {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
                 <div class="ap-m-table-component-tags">
-                  {% for format in component.formats %}
-                  <div class="ap-m-tag ap-m-tag-{{ format }} ap-m-table-component-tag"></div>
-                  {% endfor %}
+                  {% if 'websites' in component.formats %}
+                  <div class="ap-m-tag ap-m-tag-websites ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'stories' in component.formats %}
+                  <div class="ap-m-tag ap-m-tag-stories ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'ads' in component.formats %}
+                  <div class="ap-m-tag ap-m-tag-ads ap-m-table-component-tag"></div>
+                  {% endif %}
+                  {% if 'email' in component.formats or 'emails' in component.formats %}
+                  <div class="ap-m-tag ap-m-tag-email ap-m-table-component-tag"></div>
+                  {% endif %}
                 </div>
                 {% else %}
                 <p></p>
