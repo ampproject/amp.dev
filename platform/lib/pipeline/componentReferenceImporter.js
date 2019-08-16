@@ -72,7 +72,7 @@ class ComponentReferenceImporter {
 
     // Keep track of all saved documents (as promises) to complete function
     const savedDocuments = [];
-let index = 5;
+let index = 2;
     for (const extension of extensions) {
 if (--index < 0) {
   break;
@@ -82,7 +82,6 @@ if (--index < 0) {
       if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
-
         documents.forEach((document) => {
           // TODO: importUrl
           this._setMetadata(extension.name, document);
