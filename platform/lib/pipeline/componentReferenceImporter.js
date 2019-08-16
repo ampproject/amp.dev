@@ -71,52 +71,28 @@ class ComponentReferenceImporter {
     }
 
     // Keep track of all promises to complete function
-    const promises = [];
-let index = 1;
+    const savedDocuments = [];
+
     for (const extension of extensions) {
-if (--index < 0) {
-//  break;
-}
+      // if (extension.name !== 'amp-carousel') {
+      //   continue;
+      // }
       const documents = await this._findExtensionDocs(extension);
+      const highestVersion = documents.map((doc) => doc.version).sort().reverse()[0] || 0.1;
 
       if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
-        const versions = [];
         documents.forEach((doc) => {
           // TODO: importUrl
-          this._setMetadata(extension.name, doc.document);
+          this._setMetadata(extension.name, doc.document, doc.version, doc.version === highestVersion);
           this._rewriteRelativePaths(extension.path, doc.document);
-          promises.push(this._saveDocument(extension.name, doc.document, doc.version));
-          versions.push(parseFloat(doc.version));
+          savedDocuments.push(this._saveDocument(extension.name, doc.document, doc.version));
         });
-
-        // save blueprints to have the correct paths
-        promises.push(this._saveVersionBlueprints(extension, versions));
       }
     }
 
-    return Promise.all(promises);
-  }
-
-  async _saveVersionBlueprints(extension, versions) {
-    const blueprintTemplate = `
-$title@: Components
-$path: /documentation/components/{base}.html
-$localization:
-  path: /{locale}/documentation/components/{base}.html
-$view: /views/detail/component-detail.j2
-    `;
-
-    versions.sort();
-    for (let index = 0; index < versions.length; index++) {
-      const version = versions[index];
-      const extensionDir = `${DESTINATION_BASE_PATH}/${extension.name}`;
-      const versionDir = path.join(extensionDir, String(version));
-      const blueprintContent = index === versions.length - 1 ?
-        blueprintTemplate : blueprintTemplate.replace(/\{base\}\.html/g, version + '/{base.html}');
-      await fs.promises.writeFile(path.join(versionDir, '_blueprint.yaml'), blueprintContent);
-    }
+    return Promise.all(savedDocuments);
   }
 
   /**
@@ -134,7 +110,7 @@ $view: /views/detail/component-detail.j2
    * Set metadata that is required for the teaser
    * @param {MarkdownDocument} document
    */
-  _setMetadata(extensionName, document) {
+  _setMetadata(extensionName, document, version, isHighestVersion) {
     // Ensure that the document has a TOC
     document.toc = true;
 
@@ -150,6 +126,13 @@ $view: /views/detail/component-detail.j2
 
     if (!document.formats) {
       document.formats = formats[extensionName];
+    }
+
+    if (version) {
+      document.version = version;
+      if (isHighestVersion) {
+        document.servingPath = '/documentation/components/{slug}.html';
+      }
     }
   }
 
@@ -189,17 +172,7 @@ $view: /views/detail/component-detail.j2
   _saveDocument(extensionName, document, version) {
     // Set the documents title
     document.title = extensionName;
-    const extensionDir = `${DESTINATION_BASE_PATH}/${extensionName}`;
-    const versionDir = path.join(extensionDir, version);
-    const documentPath = path.join(versionDir, `${extensionName}.md`);
-
-    if (!fs.existsSync(extensionDir)) {
-      fs.mkdirSync(extensionDir);
-    }
-
-    if (!fs.existsSync(versionDir)) {
-      fs.mkdirSync(versionDir);
-    }
+    const documentPath = `${DESTINATION_BASE_PATH}/${extensionName}-v${version}.md`;
 
     return document.save(documentPath);
   }
@@ -213,6 +186,12 @@ $view: /views/detail/component-detail.j2
     let files = await this.githubImporter_.fetchJson(extension.path);
     files = files[0];
 
+    const highestVersion = (files
+        .filter((file) => !isNaN(parseFloat(file.name)))
+        .map((file) => parseFloat(file.name))
+        .sort()
+        .reverse())[0];
+
     // Find the Markdown document that is named like the extension
     for (let i = 0; i < files.length; i++) {
       if (files[i].type === 'file') {
@@ -221,11 +200,11 @@ $view: /views/detail/component-detail.j2
           const version = files[i].path.match(/\/([\d\.]+)/);
           documents.push({
             document: await this.githubImporter_.fetchDocument(documentPath),
-            version: version ? version[1] : '0.1',
+            version: version ? version[1] : highestVersion,
           });
         }
       } else {
-        if (parseFloat(files[i].name).constructor !== NaN) {
+        if (!isNaN(parseFloat(files[i].name))) {
           // Look into the version folder for documents
           files[i].name = extension.name;
           documents = documents.concat(await this._findExtensionDocs(files[i]));

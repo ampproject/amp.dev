@@ -106,12 +106,25 @@ class MarkdownDocument {
     this._frontmatter['formats'] = formats;
   }
 
+  get version() {
+    return this._frontmatter['version'];
+  }
+
+  set version(version) {
+    this._frontmatter['version'] = version;
+  }
+
   get teaser() {
     return this._frontmatter['teaser'] || {};
   }
 
   set teaser(teaser) {
     this._frontmatter['teaser'] = Object.assign(this._frontmatter['teaser'] || {}, teaser);
+  }
+
+  set servingPath(path) {
+    this._frontmatter['$path'] = path;
+    this._frontmatter['$localization'] = {path: '/{locale}' + path};
   }
 
   get contents() {

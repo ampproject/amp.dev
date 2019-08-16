@@ -96,7 +96,8 @@ class GitHubImporter {
       return this._github.repo(repo).contentsAsync(filePath);
     }
 
-    const branch = await this._fetchLatestReleaseTag();
+    //const branch = await this._fetchLatestReleaseTag();
+    const branch = 'e7703cc834ef12694115fc6ace6add01e1ff6226';
     this._log.await(`Downloading ${filePath} from remote [${branch}]...`);
     return this._github.repo(repo).contentsAsync(filePath, branch);
   }
