@@ -23,7 +23,8 @@
          on="tap:
               searchLayer.toggleClass(class='active'),
               searchTriggerOpen.focus,
-              AMP.setState({ query: '' })"
+              AMP.setState({ query: '' }),
+              searchForm.clear"
          role="button"
          tabindex="0">
       <div class="ap-a-ico ap-m-search-trigger-icon">
