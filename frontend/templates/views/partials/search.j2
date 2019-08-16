@@ -53,7 +53,10 @@
                  class="ap-o-search-input"
                  name="q"
                  placeholder="{{_('What are you looking for?')}}"
-                 on="input-debounced:AMP.setState({ query: event.value })"
+                 on="input-debounced:
+                       AMP.setState({ query: event.value });
+                     change:
+                       AMP.setState({ query: event.value })"
                  required
           >
         </amp-autocomplete>
