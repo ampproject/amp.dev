@@ -19,7 +19,7 @@ require('module-alias/register');
 // If a doc is broken in a release, add it to this this list to fetch from master instead.
 //
 // DON'T FORGET TO REMOVE ONCE IT'S FIXED
-const DOCS_TO_FETCH_FROM_MASTER = ['amp-next-page'];
+const DOCS_TO_FETCH_FROM_MASTER = ['amp-next-page', 'amp-accordion'];
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const categories = require(__dirname + '/../../config/imports/componentCategories.json');
@@ -194,7 +194,7 @@ class ComponentReferenceImporter {
         .filter((file) => !isNaN(parseFloat(file.name)))
         .map((file) => parseFloat(file.name))
         .sort()
-        .reverse())[0];
+        .reverse())[0] || 0.1;
 
     // some components are broken on current releases and need to be imported from master
     const master = DOCS_TO_FETCH_FROM_MASTER.includes(extension.name);
