@@ -139,6 +139,7 @@
   &-input {
     @include hl;
     @include hl-h1;
+    line-height: 1.4em;
     width: 100%;
     padding: 25px 60px;
     margin: 0;
@@ -165,7 +166,7 @@
     &-icon {
       position: absolute;
       left: 30px;
-      top: 40px;
+      top: 44px;
 
       @media (max-width: 1023px) {
         width: 21px;
