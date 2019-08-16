@@ -72,9 +72,6 @@ class ComponentReferenceImporter {
     const savedDocuments = [];
 
     for (const extension of extensions) {
-      if (extension.name !== 'amp-carousel') {
-        continue;
-      }
       const documents = await this._findExtensionDocs(extension);
       const versions = documents.map((doc) => doc.version).sort().reverse();
 
