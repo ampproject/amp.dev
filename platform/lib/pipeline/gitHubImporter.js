@@ -70,7 +70,6 @@ class GitHubImporter {
    * @return {Document} A document object containing all information
    */
   async fetchDocument(filePath, repo=DEFAULT_REPOSITORY, master=false) {
-
     const data = await this.fetchContents_(filePath, repo, master, LOCAL_AMPHTML);
     if (data && data.content !== undefined && !data.content.length) {
       this._log.info(`${filePath} is empty. Skipping ...`);

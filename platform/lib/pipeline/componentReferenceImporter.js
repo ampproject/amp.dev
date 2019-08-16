@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 require('module-alias/register');
-const fs = require('fs');
-const path = require('path');
 
 // By default, reference docs are imported from the latest release tag.
 // If a doc is broken in a release, add it to this this list to fetch from master instead.
