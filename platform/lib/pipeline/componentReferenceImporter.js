@@ -26,7 +26,6 @@ const categories = require(__dirname + '/../../config/imports/componentCategorie
 const formats = require(__dirname + '/../../config/imports/componentFormats.json');
 
 const {Signale} = require('signale');
-const safeEval = require('safe-eval');
 
 const log = new Signale({
   'interactive': false,
@@ -190,7 +189,6 @@ class ComponentReferenceImporter {
    * @return {Promise} Array of tags
    */
   async _getTagsViaProtoAscii(extension, files, master) {
-
     // there are cases where an extension doesn't have a protoascii
     // (I'm looking at you, a4a!), so we'll need to double check
     const fileName = 'validator-' + extension.name + '.protoascii';
