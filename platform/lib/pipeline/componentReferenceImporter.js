@@ -26,6 +26,7 @@ const categories = require(__dirname + '/../../config/imports/componentCategorie
 const formats = require(__dirname + '/../../config/imports/componentFormats.json');
 
 const {Signale} = require('signale');
+const safeEval = require('safe-eval');
 
 const log = new Signale({
   'interactive': false,
@@ -59,7 +60,7 @@ class ComponentReferenceImporter {
     // Gives the contents of ampproject/amphtml/extensions
     let extensions = await this.githubImporter_.fetchJson('extensions');
 
-    // As inside /extensions each component has its own folder filter
+    // As inside /extensions each component has its own folder, filter
     // down by directory
     extensions = extensions[0].filter((doc) => doc.type === 'dir');
 
@@ -73,17 +74,17 @@ class ComponentReferenceImporter {
 
     for (const extension of extensions) {
       const documents = await this._findExtensionDocs(extension);
-      const versions = documents.map((doc) => doc.version).sort().reverse();
+      const versions = [...new Set(documents.map((doc) => doc.version).sort().reverse())];
 
       if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
         documents.forEach((doc) => {
-          // TODO: importUrl
           this._setMetadata(
-              extension.name, doc.document, doc.version, versions);
+              doc.tagName || extension.name, doc.document, doc.version, versions);
           this._rewriteRelativePaths(extension.path, doc.document);
-          savedDocuments.push(this._saveDocument(extension.name, doc.document, doc.version));
+          savedDocuments.push(
+              this._saveDocument(doc.tagName || extension.name, doc.document, doc.version));
         });
       }
     }
@@ -109,6 +110,7 @@ class ComponentReferenceImporter {
   _setMetadata(extensionName, document, version, versions) {
     // Ensure that the document has a TOC
     document.toc = true;
+    document.importURL = document.path;
 
     // Only try to add meta information (category, format teaser text)
     // if the document hasn't defined them in their frontmatter already
@@ -182,10 +184,40 @@ class ComponentReferenceImporter {
   }
 
   /**
+   * Parses tag names from ProtoAscii file.
+   * @param {*} extension
+   * @param {*} master
+   * @return {Promise} Array of tags
+   */
+  async _getTagsViaProtoAscii(extension, files, master) {
+
+    // there are cases where an extension doesn't have a protoascii
+    // (I'm looking at you, a4a!), so we'll need to double check
+    const fileName = 'validator-' + extension.name + '.protoascii';
+    const hasProtoAscii = files.map((file) => file.name).includes(fileName);
+    if (!hasProtoAscii) {
+      return new Set([extension.name]);
+    }
+
+    const protoAscii = await this.githubImporter_.fetchFile(
+        extension.path + '/' + fileName,
+        DEFAULT_REPOSITORY, master);
+
+    const tags = new Set(
+        protoAscii.match(/tag_name\: \"([^\"]+)\"/g).map(
+            (str) => str.match(/\"([^\"]+)\"/)[1].toLowerCase()));
+
+    tags.delete('script');
+    tags.delete('$reference-point');
+
+    return tags;
+  }
+
+  /**
    * Checks a specific extension/component for documents
    * @return {Promise} [description]
    */
-  async _findExtensionDocs(extension) {
+  async _findExtensionDocs(extension, proto) {
     let documents = [];
     let files = await this.githubImporter_.fetchJson(extension.path);
     files = files[0];
@@ -202,23 +234,29 @@ class ComponentReferenceImporter {
       log.warn(`Importing ${extension.name} from master`);
     }
 
+    // some extensions create multiple tags/custom elements, and each could have a
+    // standalone doc in the folder, so find out which they are
+    const protoAscii = proto || await this._getTagsViaProtoAscii(extension, files, master);
+
     // Find the Markdown document that is named like the extension
     for (let i = 0; i < files.length; i++) {
       if (files[i].type === 'file') {
-        if (files[i].name === extension.name + '.md') {
+        const tagName = files[i].name.replace('.md', '');
+        if (protoAscii.has(tagName)) { // imported docs must correspond to a tag defined in the protoascii
           const documentPath = files[i].path;
           const version = files[i].path.match(/\/([\d\.]+)/);
           documents.push({
             document: await this.githubImporter_
                 .fetchDocument(documentPath, DEFAULT_REPOSITORY, master),
             version: version ? parseFloat(version[1]) : highestVersion,
+            tagName: tagName,
           });
         }
       } else {
         if (!isNaN(parseFloat(files[i].name))) {
           // Look into the version folder for documents
           files[i].name = extension.name;
-          documents = documents.concat(await this._findExtensionDocs(files[i]));
+          documents = documents.concat(await this._findExtensionDocs(files[i], protoAscii));
         }
       }
     }
