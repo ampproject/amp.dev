@@ -19,12 +19,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   position: fixed;
   left: 0;
   top: 0;
-  padding: 7.5rem 0 0;
-  z-index: 16;
+  padding: 32px 0 0;
+  z-index: 18;
   background-color: color('whisper');
   box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
   outline: 0;
@@ -34,8 +34,18 @@
   @media (max-width: 1023px) {
     overflow-x: hidden;
     overflow-y: auto;
-    padding-top: calc(#{$mobileHeaderHeight} + #{$bannerHeight});
-    z-index: 1003;
+    padding-top: 60px;
+    z-index: 1005;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 15vh;
+    position: fixed;
+    top: 85vh;
+    left: 0;
+    background-color: transparentize(color('black'), .6);
   }
 
   &.active {
@@ -76,8 +86,9 @@
   }
 
   &-info {
-    font-size: .75rem;
+    font-size: .875rem;
     padding: 0 25px;
+    margin-top: 0;
 
     @media (min-width: 1024px) {
       padding: 0 60px;
@@ -109,7 +120,7 @@
         top: 0;
         width: calc(100% - 20px);
         height: 1px;
-        background-color: transparentize(color('black'), .8);
+        background-color: transparentize(color('charade'), .8);
         z-index: 1;
 
         @media (min-width: 1024px) {
@@ -166,7 +177,9 @@
     &-icon {
       position: absolute;
       left: 30px;
-      top: 44px;
+      top: 42px;
+      width: 17px;
+      height: 17px;
 
       @media (max-width: 1023px) {
         width: 21px;
@@ -183,7 +196,7 @@
     @media (min-width: 1024px) {
       overflow-x: hidden;
       overflow-y: auto;
-      max-height: calc(100vh - 7.5em - 92px);
+      max-height: calc(85vh - 131px);
       padding: 0 0 60px;
       margin-right: 30px;
 
@@ -222,26 +235,56 @@
     }
 
     &-category {
-      padding: 0 25px;
-      margin-bottom: 0;
-      color: transparentize(color('charade'), .5);
+      margin-left: 25px;
+      margin-right: 25px;
+      margin-bottom: 10px;
+      color: transparentize(color('charade'), .8);
 
       @media (min-width: 1024px) {
-        padding: 0 60px;
+        margin-left: 60px;
+        margin-right: 60px;
+      }
+
+      &:nth-of-type(1n+2) {
+        padding-top: 60px;
+        border-top: 1px solid transparentize(color('charade'), .8);
       }
     }
 
+    &-category + &-item {
+      margin-top: 0;
+    }
+
     &-item {
-      margin: 5px 10px;
+      margin: 10px;
+      border-radius: 4px;
 
       @media (min-width: 1024px) {
-        margin: 5px 30px;
+        margin: 10px 30px;
       }
 
       &:hover {
         background: #fff;
         box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.1);
       }
+
+      &-highlight {
+        margin-top: 3px;
+        margin-bottom: 3px;
+      }
+    }
+
+    &-item:hover &-linklist,
+    &-item &-link:focus &-linklist {
+      opacity: 1;
+    }
+
+    &-item:focus-within &-linklist {
+      opacity: 1;
+    }
+
+    &-item-highlight &-link {
+      padding-bottom: 0;
     }
 
     &-link {
@@ -256,13 +299,13 @@
 
     &-linklist {
       display: flex;
-      padding: 10px 0;
+      padding: 0 0 5px;
       margin: 0 15px;
-      border-top: .5px solid transparentize(color('charade'), .8);
 
       @media (min-width: 1024px) {
         justify-content: flex-end;
         margin: 0 30px;
+        opacity: 0;
       }
 
       &:empty {
@@ -278,6 +321,10 @@
           @media (min-width: 1024px) {
             margin-left: 2.5rem;
           }
+        }
+
+        .#{molecule('lnk-text')} {
+          font-size: .75rem;
         }
 
         svg {
@@ -311,6 +358,12 @@
           border: 2px solid color('blue-ribbon');
           background-color: transparent;
           box-shadow: none;
+          opacity: .6;
+
+          &:hover {
+            transform: none;
+            opacity: 1;
+          }
         }
       }
 

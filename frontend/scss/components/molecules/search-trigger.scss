@@ -24,25 +24,27 @@
 
   &-close {
     position: absolute;
-    right: 2rem;
-    top: 10rem;
+    right: calc(50vw - 50% + 65px);
+    top: 68px;
     z-index: 3;
 
+    @media (min-width: 1460px) {
+      right: calc(100vw - 1460px / 2 - 50% + 65px);
+    }
+
     @media (max-width: 1023px) {
-      top: 7.5rem;
+      top: 15px;
       right: 0;
     }
   }
 
-  &-close &-icon {
-    @media (max-width: 1023px) {
-      width: 15px;
-      height: 15px;
-    }
-  }
-
   &-icon {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
+
+    @media (max-width: 1023px) {
+      width: 20px;
+      height: 20px;
+    }
   }
 }

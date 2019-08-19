@@ -93,7 +93,7 @@
               <div class="ap-o-search-result-list">
 
                 {{^prevUrl}}
-                <p class="ap-o-search-info">{{result.totalResults}} {% endraw %}{{_('results found')}}{% raw %}</p>
+                <p class="ap-o-search-info">{% endraw %}{{_('We found <strong>{totalResults} results</strong> for you.', totalResults='{'+'{result.totalResults}'+'}')|safe}}{% raw %}</p>
                 {{/prevUrl}}
 
                 {{^prevUrl}}
@@ -102,7 +102,7 @@
                 {{/result.components.length}}
                 {{/prevUrl}}
                 {{#result.components}}
-                <div class="ap-o-search-result-item">
+                <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
                   <a class="ap-o-search-result-link" href="{{url}}">
                     <h4 class="ap-o-search-result-title">{{title}}</h4>
                     <p class="ap-o-search-result-description">{{description}}</p>
