@@ -138,11 +138,31 @@ $borderSize: 5px;
     }
   }
 
-  .info-button:focus {
+  .info-button {
+    input[type=checkbox]{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+      z-index: 10;
+      &:focus ~ .#{molecule('tip')} {
+          display: block;
+      }
+    }
+    &:focus {
       outline: none;
+    }
+    &:hover {
+      .#{molecule('tip')} {
+        display: block;
+      }
+    }
   }
 
   .#{molecule('tip')} {
+    display: none;
     position: absolute;
     left: 5px;
     top: 95%;
