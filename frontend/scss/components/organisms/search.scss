@@ -381,6 +381,12 @@
         }
       }
     }
+
+    // Hack to prevent showing load-more button and loading-indicator at the same time
+    // Related issue: https://github.com/ampproject/amphtml/issues/24034
+    div[class*="-amphtml-loading-container"]:not(.amp-hidden) ~ [load-more-button].amp-visible {
+      display: none;
+    }
   }
 
   &-teaser {
