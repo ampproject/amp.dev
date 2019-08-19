@@ -138,6 +138,10 @@ $borderSize: 5px;
     }
   }
 
+  .info-button:focus {
+      outline: none;
+  }
+
   .#{molecule('tip')} {
     position: absolute;
     left: 5px;
