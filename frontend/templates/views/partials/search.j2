@@ -18,6 +18,8 @@
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
 <div id="searchLayer" class="ap-o-search" tabindex="-1">
+  <div class="ap-o-search-escaper" role="button" tabindex="-1" on="tap:searchLayer.toggleClass(class='active', force=false)"></div>
+
   <div class="ap-o-search-container">
     <div class="ap-m-search-trigger ap-m-search-trigger-close"
          on="tap:

@@ -38,13 +38,14 @@
     z-index: 1005;
   }
 
-  &::before {
-    content: '';
+  &-escaper {
     width: 100%;
     height: 15vh;
     position: fixed;
     top: 85vh;
     left: 0;
+    outline: none;
+    z-index: 1;
     background-color: transparentize(color('black'), .6);
   }
 
