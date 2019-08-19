@@ -229,7 +229,7 @@ iframe diidentifikasi sebagai iframe pelacakan/analisis jika tampaknya tidak mem
 
 # Panduan: Prioritaskan komponen AMP yang ada daripada amp-iframe
 
-Komponen `amp-iframe` harus dianggap sebagai fallback jika pengalaman pengguna yang diperlukan tidak dimungkinkan melalui cara lain di AMP; artinya, belum ada [komponen AMP](../../../documentation/components.md) untuk kasus penggunaan itu. Hal ini karena ada banyak manfaat dari penggunaan komponen AMP yang disesuaikan dengan kasus penggunaan tertentu seperti:
+Komponen `amp-iframe` harus dianggap sebagai fallback jika pengalaman pengguna yang diperlukan tidak dimungkinkan melalui cara lain di AMP; artinya, belum ada [komponen AMP](../../../documentation/components/index.html) untuk kasus penggunaan itu. Hal ini karena ada banyak manfaat dari penggunaan komponen AMP yang disesuaikan dengan kasus penggunaan tertentu seperti:
 
 * Pengelolaan dan performa resource yang lebih baik
 * Pada kasus tertentu, komponen kustom dapat memberikan gambar placeholder built-in. Dengan begitu pengguna dapat, misalnya, mendapatkan thumbnail video yang tepat sebelum video dimuat, dan mengurangi upaya coding untuk menambahkan placeholder secara manual.

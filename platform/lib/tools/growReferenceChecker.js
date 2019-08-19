@@ -27,9 +27,9 @@ const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 // Which documents to check for broken references
 const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.{md,html}';
 // The location to search for documents in
-const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation';
+const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev';
 // The pattern used by Grow to make up references
-const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
+const REFERENCE_PATTERN = /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)|g.doc\('(.*?)'/g;
 // Contains manual hints for double filenames etc.
 /* eslint-disable max-len */
 const LOOKUP_TABLE = {
@@ -44,7 +44,8 @@ const LOOKUP_TABLE = {
 };
 /* eslint-enable max-len */
 // The following paths are skipped when checked for existance
-const IGNORED_PATH_PATTERNS = /\/content\/amp-dev\/documentation\/components\/reference\/.*?/g;
+const IGNORED_PATH_PATTERNS =
+  /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate/g;
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -118,7 +119,7 @@ class GrowReferenceChecker {
           }
         }
 
-        if (this._unfindableDocuments.length > 0) {
+        if (this._unfindableDocuments.length > 0 || multipleMatchesCount > 0) {
           reject(new Error(`${this._unfindableDocuments.length} documents with broken links`));
         } else {
           resolve();
@@ -135,9 +136,14 @@ class GrowReferenceChecker {
    */
   _check(doc) {
     let content = doc.contents.toString();
-    content = content.replace(REFERENCE_PATTERN, (match, path) => {
-      const newPath = this._verifyReference(path);
-      return match.replace(path, newPath);
+    content = content.replace(REFERENCE_PATTERN, (match, markdownLink, gDocLink) => {
+      const link = markdownLink || gDocLink;
+      const fullLink = this._resolveRelativeLink(link, doc);
+      const newLink = this._verifyReference(fullLink, doc);
+      if (newLink != fullLink) {
+        return match.replace(link, newLink);
+      }
+      return match;
     });
 
     doc.contents = Buffer.from(content);
@@ -147,9 +153,10 @@ class GrowReferenceChecker {
   /**
    * Tries to find a given path inside the pod
    * @param  {String} path
+   * @param |{Vinyl} doc
    * @return {String}      The either untouched or adjusted path
    */
-  _verifyReference(documentPath) {
+  _verifyReference(documentPath, doc) {
     if (documentPath.match(IGNORED_PATH_PATTERNS)) {
       return documentPath;
     }
@@ -178,7 +185,8 @@ class GrowReferenceChecker {
     // If there is more than one match store all matches for the user to
     // do the manual fixing
     if (results.length > 1) {
-      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.`);
+      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.`
+          + `(In ${doc.path})`);
       this._multipleMatches[documentPath] = results;
       return documentPath;
     } else if (results.length == 0) {
@@ -189,7 +197,8 @@ class GrowReferenceChecker {
         return this._verifyReference(documentPath);
       }
 
-      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.`);
+      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.`
+        + `(In ${doc.path})`);
       if (this._unfindableDocuments.indexOf(documentPath) == -1) {
         this._unfindableDocuments.push(documentPath);
       }
@@ -199,6 +208,20 @@ class GrowReferenceChecker {
     const newPath = results[0].replace(POD_BASE_PATH, '/');
 
     return newPath;
+  }
+
+  /**
+   * @param link {string}
+   * @param doc {Vinyl}
+   * @returns {string}
+   */
+  _resolveRelativeLink(link, doc) {
+    if (link.startsWith('/')) {
+      return link;
+    }
+    const sourcePath = doc.path.substring(doc.path.indexOf('/content/amp-dev/'));
+    const result = path.normalize(path.join(path.dirname(sourcePath), link));
+    return result;
   }
 }
 

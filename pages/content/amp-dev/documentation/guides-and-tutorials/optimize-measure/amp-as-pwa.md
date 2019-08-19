@@ -47,7 +47,7 @@ If the user navigates to your AMP pages on your origin (as opposed to the first 
 If you're here, you're building pages with AMP. The AMP team cares immensely about putting the user first and giving them a world class web experience. To keep these experiences consistent the AMP team has created a service worker specifically for AMP!
 
 [tip type="default"]
-**TIP –**  Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/documentation/guides-and-tutorials/optimize-and-measure/amp_to_pwa.html).
+**TIP –**  Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md).
 [/tip]
 
 ### Installing the AMP Service Worker
