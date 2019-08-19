@@ -72,7 +72,11 @@
   }
 
   &.mainmenuopen ~ .ap--main {
-    max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
+    max-height: calc(100vh - #{$mobileHeaderHeight});
+
+    .has-banner + & {
+      max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
+    }
   }
 
   &.mainmenuopen ~ .ap--footer {
