@@ -4,7 +4,7 @@ $localization:
   path: /{locale}/documentation/courses/intermediate-course/{base}.html
 $title@: Intermediate Course
 $order: 3
-
+toc: false
 chaptered: true
 tutorial: true
 formats:

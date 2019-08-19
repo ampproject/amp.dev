@@ -42,7 +42,7 @@ Um substituto para a tag `video` de HTML5; para ser usado apenas em incorporaç�
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Sobreposição de reprodução com um clique para amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -60,15 +60,23 @@ O componente `amp-video` aceita até quatro tipos exclusivos de nós HTML como f
 
 #### Exemplo
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="293" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Mostrar mais" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  layout="responsive"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.webm"
+    type="video/webm" />
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+    type="video/mp4" />
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## Análise
 
@@ -102,7 +110,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Requer a extensão <code>amp-video-docking</code>.</strong> Se o atributo estiver presente e o vídeo for reproduzido manualmente, o vídeo será "minimizado" e fixado a um canto ou elemento quando o usuário rolar para fora da área visual do componente de vídeo.
-            Para mais detalhes, consulte a <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">documentação sobre a extensão de âncora</a> (link em inglês).</td>
+            Para mais detalhes, consulte a <a href="amp-video-docking.md">documentação sobre a extensão de âncora</a> (link em inglês).</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>
@@ -130,7 +138,7 @@ O `amp-video` é compatível com análises prontas. Consulte a seção [análise
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
-          <td>Este elemento inclui <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comuns</a> estendidos a componentes de AMP.</td>
+          <td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
         </tr>
       </table>
 

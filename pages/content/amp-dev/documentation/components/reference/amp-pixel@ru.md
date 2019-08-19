@@ -35,7 +35,7 @@ teaser:
     <td>Этот компонент может использоваться как стандартный пиксель отслеживания, позволяющий собирать информацию о просмотрах веб-страниц</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Поддерживаемые макеты</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Поддерживаемые макеты</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -82,12 +82,12 @@ teaser:
 
 ##### common attributes
 
-Этот элемент содержит [распространенные атрибуты](https://www.ampproject.org/docs/reference/common_attributes), которые поддерживаются компонентами AMP.
+Этот элемент содержит [распространенные атрибуты](../../../documentation/guides-and-tutorials/learn/common_attributes.md), которые поддерживаются компонентами AMP.
 
 ## Замены
 
 Компонент `amp-pixel` поддерживает все стандартные замены переменных AMP.
-Более подробные сведения вы найдете в [руководстве по работе с заменами](../spec/amp-var-substitutions.md).
+Более подробные сведения вы найдете в [руководстве по работе с заменами](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md).
 
 В примере ниже запрашивается URL вида `https://foo.com/pixel?0.8390278471201`. Значение элемента RANDOM генерируется случайным образом при каждом новом показе.
 

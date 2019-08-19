@@ -25,7 +25,7 @@ limitations under the License.
 
 # amp-access-laterpay
 
-Yayıncıların [LaterPay](https://www.laterpay.net) mikro ödeme platformuna kolayca entegre olmasına olanak tanır. `amp-access-laterpay` bileşeni [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access)'i temel alır ve gerektirir.
+Yayıncıların [LaterPay](https://www.laterpay.net) mikro ödeme platformuna kolayca entegre olmasına olanak tanır. `amp-access-laterpay` bileşeni [AMP Access](amp-access.md)'i temel alır ve gerektirir.
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ Satın alma seçeneklerini nasıl yapılandıracağınızı öğrenmek için Lat
 
 Oluşturulan liste, yayıncının tercihine göre şekillendirilip sunulabilir.
 
-Bu bileşen, içeriği göstermek ve gizlemek için [Access İçerik İşaretlemesi](https://www.ampproject.org/docs/reference/components/amp-access#access-content-markup) de kullanır.
+Bu bileşen, içeriği göstermek ve gizlemek için [Access İçerik İşaretlemesi](amp-access.md#access-content-markup) de kullanır.
 
 ## Yapılandırma
 
@@ -140,7 +140,7 @@ Yapılandırma, AMP Access'e benzer ancak yetkilendirme, geriye pingleme ve giri
         <tr>
           <td><code>sandbox</code></td>
           <td>boole</td>
-          <td>Yalnızca sunucu yapılandırmanızı test etmek için korumalı alan modunu kullanıyorsanız gereklidir. AMP'nin <a href="https://www.ampproject.org/docs/reference/spec#amp-runtime">geliştirme modunu</a> kullanmanız da gerekir.</td>
+          <td>Yalnızca sunucu yapılandırmanızı test etmek için korumalı alan modunu kullanıyorsanız gereklidir. AMP'nin <a href="../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#amp-runtime">geliştirme modunu</a> kullanmanız da gerekir.</td>
         </tr>
       </table>
 
@@ -274,7 +274,7 @@ Aşağıdaki mesaj anahtarları çevrilebilir veya özelleştirilebilir ancak or
 
 ## Analiz
 
-`amp-access` bileşenine dayandığı göz önünde bulundurulduğunda, `amp-access-laterpay`, `amp-access` tarafından gönderilen tüm [analiz etkinliklerini](https://www.ampproject.org/docs/reference/components/amp-access#integration-with-amp-analytics) destekler.
+`amp-access` bileşenine dayandığı göz önünde bulundurulduğunda, `amp-access-laterpay`, `amp-access` tarafından gönderilen tüm [analiz etkinliklerini](amp-access.md#integration-with-amp-analytics) destekler.
 
 Uygulamada bunun nasıl görüneceğine dair daha eksiksiz bir örnek görmek isterseniz [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) adresindeki örneklerin tamamı, bu analiz etkinliklerini göndermek üzere yapılandırılmıştır.
 
@@ -282,9 +282,9 @@ Uygulamada bunun nasıl görüneceğine dair daha eksiksiz bir örnek görmek is
 
 Mevcut bir abonelik sisteminiz varsa ve LaterPay'i yalnızca tek tek ürün satışı için kullanmayı amaçlıyorsanız AMP Access ve AMP Access LaterPay'i birlikte kullanılmasıyla her iki satış yönteminin de aynı sayfada bir arada bulunması mümkündür.
 
-Öncelikle AMP Access'i mevcut ödeme duvarınızla nasıl yapılandıracağınızı öğrenmek için lütfen [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access) dokümanlarına bakın.
+Öncelikle AMP Access'i mevcut ödeme duvarınızla nasıl yapılandıracağınızı öğrenmek için lütfen [AMP Access](amp-access.md) dokümanlarına bakın.
 
-[Birden fazla sağlayıcı](https://www.ampproject.org/docs/reference/components/amp-access#multiple-access-providers) bölümünde, birden fazla sağlayıcının ad alanlarıyla nasıl ayarlanacağı açıklanmaktadır.
+[Birden fazla sağlayıcı](amp-access.md#multiple-access-providers) bölümünde, birden fazla sağlayıcının ad alanlarıyla nasıl ayarlanacağı açıklanmaktadır.
 
 Bunu LaterPay ve mevcut bir ödeme duvarı entegrasyonu ile kullanırken gerekli yapılandırma aşağıdaki gibi görünebilir:
 
@@ -339,7 +339,7 @@ Daha eksiksiz bir örneği [https://ampexample.laterpay.net/dual-amp-access.html
 
 ## İlgili Dokümanlar
 
-* [AMP Access](https://www.ampproject.org/docs/reference/components/amp-access)
+* [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: Mikro Ödemeleri nasıl yapıyoruz?](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - AMP Access LaterPay'e benzer ancak AMP olmayan sayfalar için.

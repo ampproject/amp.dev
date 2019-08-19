@@ -1,8 +1,8 @@
 ---
 $title: Conclusion and What’s Next
 $order: 6
+leveled: true
 ---
-
 Congratulations! You’ve finished the introduction to AMP beginners’ course and have successfully created your first AMP page.
 
 Reflect on what you’ve built so far. You’ve created an engaging AMP webpage, with images, a carousel, and video. Think of all the work we didn’t have to do, like writing JavaScript that allowed us to keep track of what slide of our carousel we were on, or figuring out how to wrap our carousel around from the last slide to the first slide. Instead of getting bogged down in details and busy work, we were able to focus on building the type of site that was most effective for our burgeoning cheese bike business.
@@ -15,14 +15,9 @@ In our next course, we’ll learn how to handle user input and events, how to in
 
 The following are some additional topics and links to explore:
 
-- [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-
-- [All about Page Discovery]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})
-
-- [Disallowed HTML Tags]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#html-tags)
-
-- [Restricted CSS Rules & Animations]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})
-
-- [The AMP Boilerplate]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md', locale=doc.locale).url.path}})
-
-- [List of available AMP Components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
+- [AMP By Example](../../../documentation/examples/index.html)
+- [All about Page Discovery](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)
+- [Disallowed HTML Tags](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#html-tags)
+- [Restricted CSS Rules & Animations](../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)
+- [The AMP Boilerplate](../../../documentation/guides-and-tutorials/start/create/basic_markup.md)
+- [List of available AMP Components](../../../documentation/components/index.html)

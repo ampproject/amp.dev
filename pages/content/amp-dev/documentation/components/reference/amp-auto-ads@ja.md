@@ -44,7 +44,7 @@ limitations under the License.
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a>
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a>
         </strong>
       </td>
       <td>なし</td>
@@ -74,8 +74,8 @@ limitations under the License.
 
 ## サポートされている広告ネットワーク
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick（試験運用版）](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick（試験運用版）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 属性
 
@@ -90,7 +90,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>共通の属性</strong></td>
-    <td>この要素には、AMP コンポーネントに拡張された<a href="https://www.ampproject.org/docs/reference/common_attributes">共通の属性</a>が含まれます。</td>
+    <td>この要素には、AMP コンポーネントに拡張された<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">共通の属性</a>が含まれます。</td>
   </tr>
 </table>
 

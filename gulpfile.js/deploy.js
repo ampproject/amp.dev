@@ -17,10 +17,13 @@
 'use strict';
 
 const {series} = require('gulp');
+const {join} = require('path');
 const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
+const {ROOT} = require('@lib/utils/project').paths;
 
 const PREFIX = 'amp-dev';
+const PACKAGER_PREFIX = PREFIX + '-packager';
 
 // Parse commandline arguments
 const argv = mri(process.argv.slice(2));
@@ -67,6 +70,28 @@ const config = {
     name: `gcr.io/${PROJECT_ID}/${PREFIX}`,
     current: `gcr.io/${PROJECT_ID}/${PREFIX}:${TAG}`,
   },
+  packager: {
+    opts: {
+      workingDir: join(ROOT, 'packager'),
+    },
+    prefix: PACKAGER_PREFIX,
+    tag: TAG,
+    instance: {
+      groups: [
+        {
+          name: `ig-${PACKAGER_PREFIX}`,
+          zone: 'us-east1-b',
+        },
+      ],
+      template: `it-${PACKAGER_PREFIX}-${TAG}`,
+      count: 1,
+      machine: 'n1-standard-1',
+    },
+    image: {
+      name: `gcr.io/${PROJECT_ID}/${PACKAGER_PREFIX}`,
+      current: `gcr.io/${PROJECT_ID}/${PACKAGER_PREFIX}:${TAG}`,
+    },
+  },
 };
 
 /**
@@ -77,7 +102,7 @@ async function verifyTag() {
   console.log('Verifying build tag', config.tag);
   if (tags.includes(config.tag)) {
     throw new Error(`The commit ${config.tag} you are trying to build has ` +
-              'already been deployed!');
+      'already been deployed!');
   }
 }
 
@@ -126,7 +151,8 @@ function instanceTemplateCreate() {
   return sh(`gcloud compute instance-templates create-with-container ${config.instance.template} \
                  --container-image ${config.image.current} \
                  --machine-type ${config.instance.machine} \
-                 --tags http-server,https-server`);
+                 --tags http-server,https-server \
+                 --scopes default,datastore`);
 }
 
 /**
@@ -175,6 +201,42 @@ function updateStop() {
     stop-proactive-update ${config.instance.group}`);
 }
 
+/**
+ * Create a new VM instance template based on the latest docker image.
+ */
+function packagerInstanceTemplateCreate() {
+  return sh(`gcloud compute instance-templates create-with-container \
+                                   ${config.packager.instance.template} \
+                 --container-image ${config.packager.image.current} \
+                 --machine-type ${config.packager.instance.machine}`, config.packager.opts);
+}
+
+/**
+ * Builds and uploads the packager docker image to Google Cloud Container Registry.
+ */
+function packagerImageUpload() {
+  return sh(`gcloud builds submit --tag ${config.packager.image.current} .`, config.packager.opts);
+}
+
+/**
+ * Start a rolling update to a new packager VM instance template. This will ensure
+ * that there's always at least 1 active instance running during the update.
+ */
+async function packagerUpdateStart() {
+  const updates = config.packager.instance.groups.map((group) => {
+    return sh(`gcloud beta compute instance-groups managed rolling-action \
+                 start-update ${group.name} \
+                 --version template=${config.packager.instance.template} \
+                 --zone=${group.zone} \
+                 --min-ready 1m \
+                 --max-surge 1 \
+                 --max-unavailable 1`, config.packager.opts);
+  });
+  await Promise.all(updates);
+
+  console.log('Rolling update started, this can take a few minutes...');
+}
+
 exports.verifyTag = verifyTag;
 exports.gcloudSetup = gcloudSetup;
 exports.deploy = series(verifyTag, imageUpload, instanceTemplateCreate, updateStart);
@@ -183,6 +245,14 @@ exports.imageList = imageList;
 exports.imageRunLocal = imageRunLocal;
 exports.imageUpload = imageUpload;
 exports.instanceTemplateCreate = instanceTemplateCreate;
+exports.packagerDeploy = series(
+    packagerImageUpload,
+    packagerInstanceTemplateCreate,
+    packagerUpdateStart
+);
+exports.packagerImageUpload = packagerImageUpload;
+exports.packagerInstanceTemplateCreate = packagerInstanceTemplateCreate;
+exports.packagerUpdateStart = packagerUpdateStart;
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;
 exports.updateStart = updateStart;

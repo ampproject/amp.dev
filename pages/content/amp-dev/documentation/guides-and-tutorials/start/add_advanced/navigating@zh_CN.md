@@ -5,7 +5,7 @@ $title: 为您的网站添加导航元素
 大多数移动网站都有网站导航菜单。这些菜单形式各异。在本教程中，我们将尝试通过以下示例为您演示如何在 AMP 网页中添加导航元素：
 
 - 一个用于返回到首页的链接 -- 最简单的导航选项。
-- 一个使用 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 组件构建而成的侧边导航栏。
+- 一个使用 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 组件构建而成的侧边导航栏。
 
 ## 返回到首页的链接
 
@@ -56,9 +56,9 @@ article {
 
 ## 使用边栏导航
 
-一种比较常见的导航方法是添加菜单图标 - 当用户点击该图标时，它即会在网页一侧显示一系列导航链接。在 AMP 网页中，我们可以使用 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 组件创建此类导航元素。
+一种比较常见的导航方法是添加菜单图标 - 当用户点击该图标时，它即会在网页一侧显示一系列导航链接。在 AMP 网页中，我们可以使用 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 组件创建此类导航元素。
 
-首先，我们必须将 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 组件的 JavaScript **添加**到 `<head>` 标记中：
+首先，我们必须将 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 组件的 JavaScript **添加**到 `<head>` 标记中：
 
 ```html
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -73,7 +73,7 @@ article {
 </header>
 ```
 
-在上面的代码中，我们通过 [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) 元素（由 `sidebar1` ID 标识）的 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 操作属性来 `toggle` 边栏。下面我们来添加边栏。
+在上面的代码中，我们通过 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 元素（由 `sidebar1` ID 标识）的 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 操作属性来 `toggle` 边栏。下面我们来添加边栏。
 
 **添加**以下 HTML（使其紧跟在 `</header>` 后面）：
 

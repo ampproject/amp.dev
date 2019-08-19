@@ -28,16 +28,6 @@ const opts = {
   workingDir: PACKAGER_ROOT,
 };
 
-/**
- * Deploys packager to app engine.
- */
-async function packagerDeploy() {
-  await sh('pwd', opts);
-  return sh('gcloud beta app deploy --project=amp-dev-sxg', {
-    workingDir: PACKAGER_ROOT,
-  });
-};
-
 async function packagerRunLocal() {
   const password = argv.password || process.env.AMP_DEV_CERT_PWD;
   await sh('pwd', opts);
@@ -53,8 +43,6 @@ function packagerLog() {
   return sh('gcloud app logs tail -s default --project amp-dev-sxg');
 }
 
-
-exports.packagerDeploy = packagerDeploy;
 exports.packagerRunLocal = packagerRunLocal;
 exports.packagerTest = packagerTest;
 exports.packagerLog = packagerLog;

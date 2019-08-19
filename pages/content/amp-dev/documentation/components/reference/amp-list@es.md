@@ -36,7 +36,7 @@ Obtiene contenido de forma dinámica desde un punto de conexión CORS JSON y lo 
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay y responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ Obtiene contenido de forma dinámica desde un punto de conexión CORS JSON y lo 
 El componente `<amp-list>` obtiene contenido dinámico de un punto final CORS JSON. La respuesta del punto de conexión contiene datos que se renderizan en la plantilla especificada.
 
 [tip type="important"]
-El punto de conexión debe implementar los requisitos que se detallan en la [especificación de las solicitudes CORS de AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+El punto de conexión debe implementar los requisitos que se detallan en la [especificación de las solicitudes CORS de AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 [/tip]
 
 Puedes especificar una plantilla de dos formas:
@@ -58,44 +58,50 @@ Puedes especificar una plantilla de dos formas:
 * Mediante un atributo `template` que haga referencia al ID de un elemento `template` o `script` existente.
 * Mediante un elemento `template` o `script` anidado directamente en `amp-list`.
 
-Para obtener más información sobre las plantillas, consulta el documento sobre [plantillas AMP HTML](../../spec/amp-html-templates.md).
+Para obtener más información sobre las plantillas, consulta el documento sobre [plantillas AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 *Ejemplo: Mostrar una lista dinámica*
 
-En el siguiente ejemplo, hemos recuperado datos JSON que contienen URL y títulos, y renderizamos el contenido para mostrar una [plantilla de amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) anidada.
+En el siguiente ejemplo, hemos recuperado datos JSON que contienen URL y títulos, y renderizamos el contenido para mostrar una [plantilla de amp-mustache](amp-mustache.md) anidada.
 
-<!--ejemplo insertado - se muestra en ampproject.org -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 Este es el archivo JSON que hemos utilizado:
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 Así es como hemos aplicado un estilo al contenido obtenido:
 
@@ -128,14 +134,27 @@ De forma opcional, `<amp-list>` puede contener un elemento con un atributo `over
 
 En el siguiente ejemplo, hacemos que se muestre una lista de imágenes y títulos. Debido a que el contenido de `<amp-list>` requiere más espacio del que hay disponible, el tiempo de ejecución de AMP muestra el elemento de desbordamiento.
 
-<!--ejemplo insertado - se muestra en ampproject.org -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 Este es el CSS de `overflow`:
 
@@ -155,7 +174,7 @@ Este es el CSS de `overflow`:
 * Un *marcador de posición* es un elemento secundario con el atributo `placeholder`. Este elemento se muestra hasta que `<amp-list>` se carga correctamente. Si también se proporciona un respaldo, el marcador de posición se oculta si no se carga `<amp-list>`.
 * Un *respaldo* es un elemento secundario con el atributo `fallback`. Este elemento se muestra si no se carga `<amp-list>`.
 
-Obtén más información sobre los [marcadores de posición y los respaldos](https://www.ampproject.org/docs/guides/responsive/placeholders). Ten en cuenta que un elemento secundario no puede funcionar a la vez como marcador de posición y como respaldo.
+Obtén más información sobre los [marcadores de posición y los respaldos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). Ten en cuenta que un elemento secundario no puede funcionar a la vez como marcador de posición y como respaldo.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -205,10 +224,10 @@ Esta acción está disponible para su uso experimental en `amp-list-resizable-ch
 La URL del punto de conexión remoto que devuelve el JSON que se renderizará en esta `<amp-list>`. Debe ser un servicio CORS HTTP y con protocolo de URL HTTPS.
 
 [tip type="important"]
-El punto de conexión debe implementar los requisitos que se detallan en la [especificación de las solicitudes CORS de AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+El punto de conexión debe implementar los requisitos que se detallan en la [especificación de las solicitudes CORS de AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 [/tip]
 
-El atributo `src` se puede omitir si está presente el atributo `[src]`. Esta omisión resulta útil cuando se trabaja con [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind), para renderizar contenido en respuesta a un gesto del usuario en lugar de al cargar la página.
+El atributo `src` se puede omitir si está presente el atributo `[src]`. Esta omisión resulta útil cuando se trabaja con [`amp-bind`](amp-bind.md), para renderizar contenido en respuesta a un gesto del usuario en lugar de al cargar la página.
 
 ##### credentials (opcional)
 
@@ -217,7 +236,7 @@ Define una opción `credentials` tal y como especifica la [API de Fetch](https:/
 * Valores admitidos: `omit` , `include`
 * Valores predeterminados: `omit`
 
-Para enviar credenciales, transfiere el valor de `include`. Si se define este valor, la respuesta debe seguir las [directrices de seguridad de AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Para enviar credenciales, transfiere el valor de `include`. Si se define este valor, la respuesta debe seguir las [directrices de seguridad de AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 A continuación, se muestra un ejemplo que define que se deben incluir credenciales para poder mostrar contenido personalizado en una lista:
 
@@ -293,7 +312,7 @@ Hemos introducido los atributos `load-more` con las opciones [manual](https://cd
 
 ```
 
-Para ver ejemplos prácticos, consulta las páginas [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) y [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+Para ver ejemplos prácticos, consulta las páginas [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) y [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Atributos
 
@@ -400,12 +419,12 @@ Este elemento no se proporciona de forma predeterminada, pero si un elemento `<a
 
 ##### atributos comunes
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que se aplican a los componentes de AMP.
+Este elemento incluye [atributos comunes](../../../documentation/guides-and-tutorials/learn/common_attributes.md) que se aplican a los componentes de AMP.
 
 ## Sustituciones
 
 `<amp-list>` admite todas las sustituciones estándar de variables de URL.
-Para obtener más información, consulta la [guía de sustituciones](../../spec/amp-var-substitutions.md).
+Para obtener más información, consulta la [guía de sustituciones](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 Por ejemplo:
 ```html

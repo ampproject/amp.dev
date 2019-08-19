@@ -3,7 +3,7 @@
   "short_name": "amp.dev",
   "theme_color": "#005af0",
   "background_color": "#ffffff",
-  "display": "minimal-ui",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "icons": [

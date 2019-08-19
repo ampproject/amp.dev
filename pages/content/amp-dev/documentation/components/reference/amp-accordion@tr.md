@@ -35,7 +35,7 @@ Görüntüleyenlerin içeriğin ana hatlarına göz atması ve herhangi bir böl
     <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
     <td>container</td>
   </tr>
   <tr>
@@ -60,14 +60,26 @@ Görüntüleyenlerin içeriğin ana hatlarına göz atması ve herhangi bir böl
 
 Bu örnekte, sayfa yüklendiğinde üçüncü bölümün genişletildiği üç bölüm görüntülüyoruz.  Ayrıca, `disable-session-states` özelliğini ayarlayarak daraltılmış/genişletilmiş durumu korumayı devre dışı bıraktık.
 
-<!--yerleşik örnek - ampproject.org'da görüntülenir -->
-
-<div>
-  <amp-iframe height="395" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaccordion.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-accordion"]
+```html
+<amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
+  <section>
+    <h2>Section 1</h2>
+    <p>Content in section 1.</p>
+  </section>
+  <section>
+    <h2>Section 2</h2>
+    <div>Content in section 2.</div>
+  </section>
+  <section expanded>
+    <h2>Section 3</h2>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/squirrel.jpg"
+      width="320"
+      height="256"></amp-img>
+  </section>
+</amp-accordion>
+```
+[/example]
 
 [tip type="success"]
 Daha fazla `amp-accordion` demosu için [Örneklerle AMP](https://ampbyexample.com/components/amp-accordion/) sitesini ziyaret edin.

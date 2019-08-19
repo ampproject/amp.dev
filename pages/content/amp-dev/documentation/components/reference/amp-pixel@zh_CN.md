@@ -34,7 +34,7 @@ teaser:
     <td>可用作典型的跟踪像素来统计网页浏览量。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>
     <td>fixed、nodisplay</td>
   </tr>
   <tr>
@@ -80,11 +80,11 @@ AMP4ADS 广告素材中使用的此属性表示：作为验证后转换的一部
 
 ##### 常见属性
 
-此元素包含扩展到 AMP 组件的[常见属性](https://www.ampproject.org/docs/reference/common_attributes)。
+此元素包含扩展到 AMP 组件的[常见属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)。
 
 ## 替换
 
-`amp-pixel` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](../spec/amp-var-substitutions.md)。
+`amp-pixel` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md)。
 
 在下面的示例中，系统可能会向 `https://foo.com/pixel?0.8390278471201` 等对象发出请求，其中 RANDOM 值是在每次展示时随机生成的。
 

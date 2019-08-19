@@ -37,7 +37,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -61,7 +61,7 @@ Al pulsar la tecla Esc del teclado se cierra el lightbox. Otra posibilidad es de
 ```
 
 [tip type="read"]
-Para mostrar imágenes en un lightbox, también tienes el componente [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox).
+Para mostrar imágenes en un lightbox, también tienes el componente [`<amp-image-lightbox>`](amp-image-lightbox.md).
 [/tip]
 
 ## Atributos
@@ -103,7 +103,7 @@ Puedes aplicar estilo a `amp-lightbox` con CSS estándar.
 
 ## Acciones
 
-El componente `amp-lightbox` muestra las acciones que se pueden [activar con AMP on-syntax](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+El componente `amp-lightbox` muestra las acciones que se pueden [activar con AMP on-syntax](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md):
 
 <table>
   <tr>
@@ -123,10 +123,10 @@ El componente `amp-lightbox` muestra las acciones que se pueden [activar con AMP
 ## <a id="a4a"></a> Usar `amp-lightbox` en anuncios AMP HTML
 
 [tip type="note"]
-El componente `amp-lightbox` para anuncios AMP HTML está en fase [experimental](https://www.ampproject.org/docs/reference/experimental) porque se está desarrollando. Para utilizar `amp-lightbox` en anuncios AMP HTML, [habilita el experimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+El componente `amp-lightbox` para anuncios AMP HTML está en fase [experimental](../../../documentation/guides-and-tutorials/learn/experimental.md) porque se está desarrollando. Para utilizar `amp-lightbox` en anuncios AMP HTML, [habilita el experimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-Existen algunas diferencias entre usar `amp-lightbox` en documentos AMP normales y en [anuncios escritos en AMP HTML](../amp-a4a/amp-a4a-format.md):
+Existen algunas diferencias entre usar `amp-lightbox` en documentos AMP normales y en [anuncios escritos en AMP HTML](../../../documentation/guides-and-tutorials/learn/a4a_spec.md):
 
 ### El atributo close-button es obligatorio
 

@@ -35,7 +35,7 @@ Representa um controle que exibe um menu de opções para escolha do usuário.
     <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>Todos</td>
   </tr>
   <tr>
@@ -97,7 +97,7 @@ Exemplo:
 
 ## Apagar seleções
 
-Para limpar todas as seleções quando se toca ou clica em um elemento, defina o atributo de ação [`on`](../../spec/amp-actions-and-events.md) no elemento e especifique o `id` seletor de AMP com o método de ação `clear`.
+Para limpar todas as seleções quando se toca ou clica em um elemento, defina o atributo de ação [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) no elemento e especifique o `id` seletor de AMP com o método de ação `clear`.
 
 Exemplo:
 
@@ -151,7 +151,7 @@ veja demonstrações ativas no [AMP By Example](https://ampbyexample.com/compone
 Os eventos podem acionar ações em outros componentes AMP usando o atributo `on`.
 Por exemplo, `on="select: my-tab.show"`
 
-Leia mais sobre [ações e eventos de AMP](../../spec/amp-actions-and-events.md).
+Leia mais sobre [ações e eventos de AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
 
 <table>
   <tr>

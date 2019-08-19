@@ -30,17 +30,17 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>Descripción</strong></td>
-    <td>Elemento contenedor genérico y multipropósito que aporta <a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">diseños</a> de AMP de gran utilidad</td>
+    <td>Elemento contenedor genérico y multipropósito que aporta <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">diseños</a> de AMP de gran utilidad</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
     <td>container, fill, fixed, fixed-height, flex-item, intrinsic y responsive</td>
   </tr>
 </table>
 
 ## Descripción general
 
-El componente `amp-layout` permite aplicar a cualquier elemento diseños adaptables basados en la relación de aspecto. Funciona de forma similar al atributo [layout](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) en los componentes AMP disponibles, pero admite cualquier etiqueta HTML como elemento secundario. Todos los demás diseños admitidos funcionan con `amp-layout` (por ejemplo, fixed-height, fixed, etc.).
+El componente `amp-layout` permite aplicar a cualquier elemento diseños adaptables basados en la relación de aspecto. Funciona de forma similar al atributo [layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) en los componentes AMP disponibles, pero admite cualquier etiqueta HTML como elemento secundario. Todos los demás diseños admitidos funcionan con `amp-layout` (por ejemplo, fixed-height, fixed, etc.).
 
 **Ejemplo**
 
@@ -57,7 +57,7 @@ En este ejemplo se utiliza `amp-layout` para crear un contenedor adaptable alred
 
 ## Atributos
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que se aplican a los componentes de AMP.
+Este elemento incluye [atributos comunes](../../../documentation/guides-and-tutorials/learn/common_attributes.md) que se aplican a los componentes de AMP.
 
 ## Validación
 

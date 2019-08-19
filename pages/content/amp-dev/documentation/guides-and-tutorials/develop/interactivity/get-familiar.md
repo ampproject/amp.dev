@@ -36,16 +36,16 @@ The tutorial's starter code ([`static/index.html`](https://github.com/googlecode
 
 AMP components offer additional functionality and UI components that add rich interactivity to AMP pages. The starter code uses the following AMP components:
 
-- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}): An image carousel that displays multiple views of the product.
-- [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}): A templating system for rendering server responses from amp-form.
-- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}): Adds special functionality for `<form>` elements that are necessary for AMP pages.
-- [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}): Offers a semantic way to select one or many elements of a group of elements. Can be used as an input source to amp-form.
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): An image carousel that displays multiple views of the product.
+- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): A templating system for rendering server responses from amp-form.
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md): Adds special functionality for `<form>` elements that are necessary for AMP pages.
+- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): Offers a semantic way to select one or many elements of a group of elements. Can be used as an input source to amp-form.
 
 ## Basic interactivity
 
 The starter code offers some basic interactivity:
 
-- The image carousel (an [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})) displays multiple views of the product.
-- The product can be added to the user's cart (via [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})) by tapping the "Add to cart" button on the bottom of the page.
+- The image carousel (an [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)) displays multiple views of the product.
+- The product can be added to the user's cart (via [`amp-form`](../../../../documentation/components/reference/amp-form.md)) by tapping the "Add to cart" button on the bottom of the page.
 
 **Try it out**: Swipe the image carousel and tap the "Add to cart" button.

@@ -40,7 +40,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 包含实验性功能的所有 AMP 文件均无法成功通过
-[AMP 验证]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})。
+[AMP 验证](validation-workflow/validate_amp.md)。
 对于可直接在生产环境中使用的 AMP 文档，请移除此类实验性组件。
 
 ## 为特定文档启用实验性功能

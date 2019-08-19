@@ -35,7 +35,7 @@ Ce composant permet aux internautes d'avoir un aperçu du contenu et d'accéder 
     <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Mises en page compatibles</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
     <td>container</td>
   </tr>
   <tr>
@@ -60,14 +60,26 @@ Le composant `amp-accordion` vous permet d'afficher des sections de contenu qui 
 
 Trois sections sont affichées dans cet exemple. La troisième section est développée lors du chargement de la page.  Nous avons, en outre, désactivé la conservation de l'état réduit/développé en définissant l'attribut `disable-session-states`.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="395" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaccordion.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-accordion"]
+```html
+<amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
+  <section>
+    <h2>Section 1</h2>
+    <p>Content in section 1.</p>
+  </section>
+  <section>
+    <h2>Section 2</h2>
+    <div>Content in section 2.</div>
+  </section>
+  <section expanded>
+    <h2>Section 3</h2>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/squirrel.jpg"
+      width="320"
+      height="256"></amp-img>
+  </section>
+</amp-accordion>
+```
+[/example]
 
 [tip type="success"]
 Pour regarder d'autres démos du composant `amp-accordion`, rendez-vous sur [AMP By Example](https://ampbyexample.com/components/amp-accordion/).

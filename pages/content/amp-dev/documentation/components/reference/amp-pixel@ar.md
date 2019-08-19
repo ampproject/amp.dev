@@ -36,7 +36,7 @@ teaser:
     <td>مكوِّن يمكن استخدامه كبكسل تتبع نموذجي لحساب مرات مشاهدة الصفحة.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>fixed وnodisplay</td>
   </tr>
   <tr>
@@ -83,12 +83,12 @@ teaser:
 
 ##### السمات المشتركة
 
-يتضمن هذا العنصر [السمات المشتركة](https://www.ampproject.org/docs/reference/common_attributes) التي تشمل مكونات AMP.
+يتضمن هذا العنصر [السمات المشتركة](../../../documentation/guides-and-tutorials/learn/common_attributes.md) التي تشمل مكونات AMP.
 
 ## الاستبدالات
 
 يسمح `amp-pixel` بجميع استبدالات متغيرات عناوين URL القياسية.
-اطّلِع على [دليل الاستبدالات](../spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
+اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
 
 في المثال التالي، قد يتم إرسال طلب لصفحة مثل `https://foo.com/pixel?0.8390278471201` حيث يتم إنشاء قيمة RANDOM بشكل عشوائي عند كل ظهور.
 

@@ -34,7 +34,7 @@ teaser:
     <td>Può essere utilizzato come un tipico pixel di monitoraggio per conteggiare le visualizzazioni di pagina</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -84,12 +84,12 @@ quindi utilizzale solo se non sono presenti macro nell'src.
 
 ##### common attributes
 
-Questo elemento include [attributi comuni](https://www.ampproject.org/docs/reference/common_attributes) estesi ai componenti AMP.
+Questo elemento include [attributi comuni](../../../documentation/guides-and-tutorials/learn/common_attributes.md) estesi ai componenti AMP.
 
 ## Sostituzioni
 
 `amp-pixel` consente tutte le sostituzioni di variabili URL standard.
-Per ulteriori informazioni, consulta la [Guida alle sostituzioni](../spec/amp-var-substitutions.md).
+Per ulteriori informazioni, consulta la [Guida alle sostituzioni](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md).
 
 Nel seguente esempio, potrebbe essere effettuata una richiesta a `https://foo.com/pixel?0.8390278471201`, dove il valore RANDOM viene generato in modo casuale per ciascuna impressione.
 

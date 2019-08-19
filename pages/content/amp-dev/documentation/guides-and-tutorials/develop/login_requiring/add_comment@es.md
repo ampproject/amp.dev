@@ -4,7 +4,7 @@ $title: Añadir un comentario
 
 <amp-img src="/static/img/comment.png" alt="Añadir un comentario" height="325" width="300"></amp-img>
 
-En este momento, un usuario puede añadir un comentario utilizando la biblioteca [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}). La presencia del formulario depende del estado del componente [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}):
+En este momento, un usuario puede añadir un comentario utilizando la biblioteca [`amp-form`](../../../../documentation/components/reference/amp-form.md). La presencia del formulario depende del estado del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
@@ -22,7 +22,7 @@ Este es un ejemplo de respuesta JSON:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-Esos valores sencillamente se mostrarán en la página utilizando la plantilla [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}):
+Esos valores sencillamente se mostrarán en la página utilizando la plantilla [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
 <div submit-success>

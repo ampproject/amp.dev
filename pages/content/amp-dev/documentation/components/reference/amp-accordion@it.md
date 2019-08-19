@@ -35,7 +35,7 @@ Permette ai visualizzatori di dare un'occhiata alla struttura dei contenuti e pa
     <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>
     <td>container</td>
   </tr>
   <tr>
@@ -60,14 +60,26 @@ Il componente `amp-accordion` ti permette di mostrare sezioni di contenuti compr
 
 In questo esempio vengono visualizzate tre sezioni, in cui la terza viene espansa al caricamento della pagina.  Inoltre, abbiamo disattivato la conservazione dello stato compresso/espanso impostando `disable-session-states`.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="395" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaccordion.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-accordion"]
+```html
+<amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
+  <section>
+    <h2>Section 1</h2>
+    <p>Content in section 1.</p>
+  </section>
+  <section>
+    <h2>Section 2</h2>
+    <div>Content in section 2.</div>
+  </section>
+  <section expanded>
+    <h2>Section 3</h2>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/squirrel.jpg"
+      width="320"
+      height="256"></amp-img>
+  </section>
+</amp-accordion>
+```
+[/example]
 
 [tip type="success"]
 Per vedere altre demo relative ad `amp-accordion`, visita il sito [AMP By Example](https://ampbyexample.com/components/amp-accordion/).

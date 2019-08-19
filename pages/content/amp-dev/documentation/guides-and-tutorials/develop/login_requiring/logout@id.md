@@ -2,13 +2,13 @@
 $title: Cerrar sesión
 ---
 
-Mirip dengan tombol login, munculnya tombol logout bersifat situasional dan bergantung pada status komponen [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}):
+Mirip dengan tombol login, munculnya tombol logout bersifat situasional dan bergantung pada status komponen [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-Saat mengklik tombol Logout, Anda akan diarahkan ke URL yang telah ditentukan dalam konfigurasi JSON [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}), sebagai bagian dari objek login:
+Saat mengklik tombol Logout, Anda akan diarahkan ke URL yang telah ditentukan dalam konfigurasi JSON [`amp-access`](../../../../documentation/components/reference/amp-access.md), sebagai bagian dari objek login:
 
 [sourcecode:json]
 {

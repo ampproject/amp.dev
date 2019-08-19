@@ -1,0 +1,12 @@
+$view: /views/detail/docs-detail.j2
+$path: /documentation/guides-and-tutorials/contribute/contribute-documentation/{base}.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/contribute/contribute-documentation/{base}.html
+$title@: Contribute documentation
+$order: 1
+
+formats:
+  - websites
+  - stories
+  - email
+  - ads

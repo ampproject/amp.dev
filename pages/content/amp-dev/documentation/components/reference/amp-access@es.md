@@ -50,7 +50,7 @@ limitations under the License.
 
 ## Relación con `amp-subscriptions`
 
-La extensión [`amp-subscriptions`](../amp-subscriptions/amp-subscriptions.md) ofrece funciones similares a `amp-access`, pero admite un protocolo de muro de pago de acceso más especializado. Estas son algunas de las diferencias más importantes:
+La extensión [`amp-subscriptions`](amp-subscriptions.md) ofrece funciones similares a `amp-access`, pero admite un protocolo de muro de pago de acceso más especializado. Estas son algunas de las diferencias más importantes:
 
 1. La respuesta de autorizaciones de `amp-subscriptions` es similar a la autorización de amp-access, pero está estrictamente definida y estandarizada.
 1. La extensión `amp-subscriptions` permite que se configuren varios servicios para que la página participe en las decisiones de acceso o de muro de pago. Se ejecutan de forma simultánea y se da prioridad a una u otra según el servicio que devuelva una respuesta positiva.
@@ -499,11 +499,11 @@ AMP no distingue entre inicio de sesión y suscripción. El editor puede configu
 
 ## Integración con *amp-analytics*
 
-La integración con *amp-analytics* está explicada en [amp-access-analytics.md](./amp-access-analytics.md).
+La integración con *amp-analytics* está explicada en [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
 ## Seguridad de origen de CORS
 
-Los puntos de conexión de autorización y de pingback son de tipo CORS y deben implementar el protocolo de seguridad descrito en la [especificación de seguridad de AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Los puntos de conexión de autorización y de pingback son de tipo CORS y deben implementar el protocolo de seguridad descrito en la [especificación de seguridad de AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 ## Cupo por usuario
 
@@ -566,7 +566,7 @@ Como es habitual, el ID de lector se debe incluir en la llamada a la página de 
 
 ## Anexo A: gramática de la expresión "amp-access"
 
-La gramática de BNF más reciente está disponible en el archivo [access-expr-impl.jison](./0.1/access-expr-impl.jison).
+La gramática de BNF más reciente está disponible en el archivo [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison).
 
 El fragmento más importante de esta gramática es el siguiente:
 

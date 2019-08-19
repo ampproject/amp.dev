@@ -36,7 +36,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js">&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ teaser:
 `<amp-list>` bileşeni, CORS JSON uç noktasından dinamik içerik getirir. Uç noktadan gelen yanıt, belirtilen şablonda oluşturulan verileri içerir.
 
 [tip type="important"]
-Uç noktanız, [AMP'de CORS İstekleri](https://www.ampproject.org/docs/fundamentals/amp-cors-requests) spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
+Uç noktanız, [AMP'de CORS İstekleri](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
 [/tip]
 
 Bir şablonu şu iki yöntemden biriyle belirtebilirsiniz:
@@ -58,44 +58,50 @@ Bir şablonu şu iki yöntemden biriyle belirtebilirsiniz:
 * mevcut bir `template` veya `script` öğesinin bir kimliğine başvuran `template` özelliği.
 * doğrudan `amp-list` öğesinin içine yerleştirilmiş bir `template` veya `script` öğesi.
 
-Şablonlar hakkında daha fazla bilgi için [AMP HTML Şablonları](../../spec/amp-html-templates.md) bölümüne bakın.
+Şablonlar hakkında daha fazla bilgi için [AMP HTML Şablonları](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md) bölümüne bakın.
 
 *Örnek: Dinamik liste görüntüleme*
 
-Aşağıdaki örnekte, URL'ler ve başlıklar içeren JSON verilerini alıp içeriği, iç içe yerleştirilmiş bir [amp-mustache şablonunda](https://www.ampproject.org/docs/reference/components/amp-mustache) oluşturuyoruz.
+Aşağıdaki örnekte, URL'ler ve başlıklar içeren JSON verilerini alıp içeriği, iç içe yerleştirilmiş bir [amp-mustache şablonunda](amp-mustache.md) oluşturuyoruz.
 
-<!--yerleşik örnek - ampproject.org'da görüntülenir -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 Burada, kullandığımız JSON dosyasını görebilirsiniz:
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 Getirilen içeriği şu şekilde biçimlendirdik:
 
@@ -128,14 +134,27 @@ AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak i�
 
 Aşağıdaki örnekte, resimlerin ve başlıkların bir listesi gösterilmektedir. `<amp-list>` içeriği, kullanılabilir olandan daha fazla alan gerektirdiğinden AMP Çalışma Zamanı, taşma öğesini görüntüler.
 
-<!--yerleşik örnek - ampproject.org'da görüntülenir -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 Burada, `overflow` için CSS'yi görebilirsiniz:
 
@@ -155,7 +174,7 @@ Burada, `overflow` için CSS'yi görebilirsiniz:
 * *Yer tutucu*, `placeholder` özelliğine sahip bir alt öğedir. Bu öğe, `<amp-list>` başarıyla yükleninceye kadar gösterilir. Ayrıca bir yedek sağlanmışsa `<amp-list>` yüklenemediğinde yer tutucu gizlenir.
 * *Yedek*, `fallback` özelliğine sahip bir alt öğedir. Bu öğe, `<amp-list>` yüklenemezse gösterilir.
 
-[Yer Tutucu ve Yedekler](https://www.ampproject.org/docs/guides/responsive/placeholders) hakkında daha fazla bilgi edinin. Bir alt öğenin hem yer tutucu hem de yedek olamayacağını unutmayın.
+[Yer Tutucu ve Yedekler](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md) hakkında daha fazla bilgi edinin. Bir alt öğenin hem yer tutucu hem de yedek olamayacağını unutmayın.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -205,10 +224,10 @@ Bu işlem, `amp-list-resizable-children` altında deneme amaçlı kullanılabili
 Bu `<amp-list>` içinde oluşturulacak JSON öğesini döndüren uzak uç noktanın URL'si. Bu bir CORS HTTP hizmeti olmalıdır. URL protokolü HTTPS olmalıdır.
 
 [tip type="important"]
-Uç noktanız, [AMP'de CORS İstekleri](https://www.ampproject.org/docs/fundamentals/amp-cors-requests) spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
+Uç noktanız, [AMP'de CORS İstekleri](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
 [/tip]
 
-`[src]` özelliği mevcutsa `src` özelliği atlanabilir. Bu, [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind) ile çalışırken sayfanın yüklenmesi yerine bir kullanıcı hareketinin sonucu olarak içerik oluşturulmasında yararlı olur.
+`[src]` özelliği mevcutsa `src` özelliği atlanabilir. Bu, [`amp-bind`](amp-bind.md) ile çalışırken sayfanın yüklenmesi yerine bir kullanıcı hareketinin sonucu olarak içerik oluşturulmasında yararlı olur.
 
 ##### credentials (isteğe bağlı)
 
@@ -217,7 +236,7 @@ Uç noktanız, [AMP'de CORS İstekleri](https://www.ampproject.org/docs/fundamen
 * Desteklenen değerler: `omit`, `include`
 * Varsayılan değer: `omit`
 
-Kimlik bilgilerini göndermek için `include` değerini geçirin. Bu değer ayarlanırsa yanıt, [AMP CORS güvenlik yönergelerine](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp) uygun olmalıdır.
+Kimlik bilgilerini göndermek için `include` değerini geçirin. Bu değer ayarlanırsa yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp) uygun olmalıdır.
 
 Bir listede kişiselleştirilmiş içeriği görüntülemek için kimlik bilgilerinin içerilmesini belirten bir örneği burada bulabilirsiniz:
 
@@ -294,7 +313,7 @@ Daha hızlı performans için `binding="no"` veya `binding="refresh"` kullanılm
 
 ```
 
-Çalışan örnekler için lütfen [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) ve [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) sayfalarına bakın.
+Çalışan örnekler için lütfen [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) ve [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) sayfalarına bakın.
 
 ### Özellikler
 
@@ -401,12 +420,12 @@ Bu öğe varsayılan olarak sağlanmaz ancak `<amp-list>` öğesine, `load-more-
 
 ##### common attributes
 
-Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/reference/common_attributes) içerir.
+Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../documentation/guides-and-tutorials/learn/common_attributes.md) içerir.
 
 ## Değişiklikler
 
 `<amp-list>` tüm standart URL değişkeni değişikliklerine izin verir.
-Daha fazla bilgi için [Değişiklik Kılavuzu](../../spec/amp-var-substitutions.md) dokümanına bakın.
+Daha fazla bilgi için [Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) dokümanına bakın.
 
 Örneğin:
 ```html

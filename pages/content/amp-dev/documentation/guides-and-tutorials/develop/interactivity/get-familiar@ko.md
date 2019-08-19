@@ -34,16 +34,16 @@ AMP 페이지는 안정적인 성능을 제공하기 위한 몇 가지 제한사
 
 AMP 구성요소는 AMP 페이지에 풍부한 상호작용을 더해주는 추가적인 기능과 UI 구성요소를 제공합니다. 시작 코드는 다음과 같은 AMP 구성요소를 사용합니다.
 
-- [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}): 해당 제품의 다양한 모습을 보여주는 이미지 캐러셀입니다.
-- [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}): [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})  서버 응답을 렌더링하는 템플릿 시스템입니다.
-- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}): AMP 페이지에 필요한 `<form>` 요소에 사용되는 특수한 기능을 추가합니다.
-- [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}): 요소 그룹에서 하나 또는 여러 요소를 선택하는 의미론적 방법을 제공합니다. [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})  입력 소스로 사용할 수 있습니다.
+- [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md): 해당 제품의 다양한 모습을 보여주는 이미지 캐러셀입니다.
+- [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md): [`amp-form`](../../../../documentation/components/reference/amp-form.md)  서버 응답을 렌더링하는 템플릿 시스템입니다.
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md): AMP 페이지에 필요한 `<form>` 요소에 사용되는 특수한 기능을 추가합니다.
+- [`amp-selector`](../../../../documentation/components/reference/amp-selector.md): 요소 그룹에서 하나 또는 여러 요소를 선택하는 의미론적 방법을 제공합니다. [`amp-form`](../../../../documentation/components/reference/amp-form.md)  입력 소스로 사용할 수 있습니다.
 
 ## 기본적인 상호작용
 
 시작 코드는 몇 가지 기본적인 상호작용을 제공합니다.
 
-- 이미지 캐러셀([`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}))은 해당 제품의 다양한 모습을 보여줍니다.
-- 페이지 하단에 있는 '장바구니에 추가' 버튼을 탭하면 제품이 사용자의 장바구니에 추가([`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) 사용)됩니다.
+- 이미지 캐러셀([`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md))은 해당 제품의 다양한 모습을 보여줍니다.
+- 페이지 하단에 있는 '장바구니에 추가' 버튼을 탭하면 제품이 사용자의 장바구니에 추가([`amp-form`](../../../../documentation/components/reference/amp-form.md) 사용)됩니다.
 
 **사용해보기**: 이미지 캐러셀을 스와이프하고 '장바구니에 추가' 버튼을 탭하세요.

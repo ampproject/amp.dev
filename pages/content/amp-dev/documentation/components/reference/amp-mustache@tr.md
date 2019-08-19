@@ -64,7 +64,7 @@ Mustache, mantık içermeyen bir şablon söz dizimidir. Daha ayrıntılı bilgi
 
 ## Kullanım
 
-`amp-mustache` şablonu, [AMP Şablon Spesifikasyonu](../../spec/amp-html-templates.md)'na göre tanımlanmalı ve kullanılmalıdır.
+`amp-mustache` şablonu, [AMP Şablon Spesifikasyonu](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)'na göre tanımlanmalı ve kullanılmalıdır.
 
 Öncelikle `amp-mustache` şu şekilde beyan edilmeli/yüklenmelidir:
 
@@ -91,7 +91,7 @@ veya
 
 AMP doğrulaması yararlı dev-x ipuçları sağladığından, mümkün olan her yerde `template` etiketini kullanın. Uç durumlar ve tablo bağlamında şablon oluşturma sorunları için `script` şablonunu kullanın. Aşağıdaki "Tablolar" bölümüne bakın.
 
-Şablonların nasıl keşfedileceğine, ne zaman oluşturulacağına ve verilerin nasıl sağlanacağına, içeriğini oluşturmak için bu şablonu kullanan hedef AMP öğesi (ör. bir [amp-list](../amp-list/amp-list.md), [amp-form](../amp-form/amp-form.md) vb.) karar verir.
+Şablonların nasıl keşfedileceğine, ne zaman oluşturulacağına ve verilerin nasıl sağlanacağına, içeriğini oluşturmak için bu şablonu kullanan hedef AMP öğesi (ör. bir [amp-list](amp-list.md), [amp-form](amp-form.md) vb.) karar verir.
 
 ## Kısıtlamalar
 

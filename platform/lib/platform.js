@@ -52,16 +52,17 @@ const PORT = config.hosts.platform.port || process.env.APP_PORT || 80;
 
 class Platform {
   start() {
+    signale.info('Starting platform');
     return new Promise(async (resolve, reject) => {
       try {
-        this._createServer();
-        const httpServer = this.server.listen(PORT, () => {
+        await this._createServer();
+        this.httpServer = this.server.listen(PORT, () => {
           signale.success(`server listening on ${PORT}!`);
           resolve();
         });
         // Increase keep alive timeout
         // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
-        httpServer.keepAliveTimeout = 700 * 1000;
+        this.httpServer.keepAliveTimeout = 700 * 1000;
       } catch (err) {
         reject(err);
       }
@@ -69,19 +70,22 @@ class Platform {
   }
 
   stop() {
-    return Promise.resolve();
-    // TODO
+    signale.info('Stopping platform');
+    return new Promise(async (resolve, reject) => {
+      this.httpServer.close(() => resolve());
+    });
   }
 
-  _createServer() {
+  async _createServer() {
     signale.await(`Starting platform with environment ${config.environment} on ${HOST} ...`);
     this.server = express();
 
     // pass app engine HTTPS status to express app
     this.server.set('trust proxy', true);
+    this.server.disable('x-powered-by');
 
     this._configureMiddlewares();
-    this._configureSubdomains();
+    await this._configureSubdomains();
     this._configureRouters();
     this._configureErrorHandlers();
   }
@@ -93,7 +97,7 @@ class Platform {
     this.server.use(require('./middleware/caching.js'));
     this.server.use(cors());
     this.server.use(ampCors({
-      'verifyOrigin': false,
+      email: true,
     }));
     // debug computing times
     this.server.use((req, res, next) => {
@@ -115,12 +119,12 @@ class Platform {
     });
   }
 
-  _configureSubdomains() {
-    this.server.use(subdomain.map(config.hosts.playground, routers.playground));
-    this.server.use(subdomain.map(config.hosts.go, routers.go));
-    this.server.use(subdomain.map(config.hosts.log, routers.log));
+  async _configureSubdomains() {
+    this.server.use(await subdomain.map(config.hosts.playground, routers.playground));
+    this.server.use(await subdomain.map(config.hosts.go, routers.go));
+    this.server.use(await subdomain.map(config.hosts.log, routers.log));
     // eslint-disable-next-line new-cap
-    this.server.use(subdomain.map(config.hosts.preview, express.Router().use([
+    this.server.use(await subdomain.map(config.hosts.preview, express.Router().use([
       routers.example.api,
       routers.example.static,
       routers.example.embeds,

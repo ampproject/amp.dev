@@ -4,17 +4,17 @@ $title: Agregando componentes AMP ampliados
 
 El sistema de componentes de AMP le permite crear rápidamente características eficientes y de respuesta en sus artículos con un mínimo esfuerzo. La biblioteca HTML de AMP tiene tres clasificaciones para los componentes de AMP:
 
-- **built-in**: Estos son los componentes que se incluyen en la biblioteca base de AMP JavaScript (especificada en la etiqueta `<head>`), como [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) y [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}). Estos componentes se pueden utilizar inmediatamente en un documento de AMP.
+- **built-in**: Estos son los componentes que se incluyen en la biblioteca base de AMP JavaScript (especificada en la etiqueta `<head>`), como [`amp-img`](../../../../documentation/components/reference/amp-img.md) y [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Estos componentes se pueden utilizar inmediatamente en un documento de AMP.
 
 - **extended**: Son extensiones de la biblioteca base que deben incluirse explícitamente en el documento como elementos personalizados. Los elementos personalizados requieren secuencias de comandos específicas que se agregan a la sección `<head>` (por ejemplo, `<script async custom-element="amp-video" ...`).
 
-- **experimental**: Estos son los componentes que se liberan, pero aún no están listos para un uso amplio. Los desarrolladores pueden elegir optar por utilizar estas características antes de que se liberen completamente. Más información en [Experimental features]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path}}).
+- **experimental**: Estos son los componentes que se liberan, pero aún no están listos para un uso amplio. Los desarrolladores pueden elegir optar por utilizar estas características antes de que se liberen completamente. Más información en [Experimental features](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
-Nuestra muestra ya utiliza un componente incorporado, [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Ahora, vamos a **agregar** algunos componentes de AMP extendidos comúnmente usados a nuestro artículo de noticias.
+Nuestra muestra ya utiliza un componente incorporado, [`amp-img`](../../../../documentation/components/reference/amp-img.md). Ahora, vamos a **agregar** algunos componentes de AMP extendidos comúnmente usados a nuestro artículo de noticias.
 
 ## Monetizar con anuncios
 
-Los anuncios en AMP se construyen utilizando el componente [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}). El componente [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) le permite configurar anuncios de varias maneras, como el ancho, la altura y el modo de diseño. Sin embargo, muchas plataformas de anuncios requieren configuración adicional, como el ID de cuenta de la red publicitaria, el anuncio que debe publicarse o las opciones para segmentar la publicidad. Estas opciones se especifican fácilmente en el componente [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) mediante el uso de atributos HTML.
+Los anuncios en AMP se construyen utilizando el componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md). El componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) le permite configurar anuncios de varias maneras, como el ancho, la altura y el modo de diseño. Sin embargo, muchas plataformas de anuncios requieren configuración adicional, como el ID de cuenta de la red publicitaria, el anuncio que debe publicarse o las opciones para segmentar la publicidad. Estas opciones se especifican fácilmente en el componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) mediante el uso de atributos HTML.
 
 Eche un vistazo a este ejemplo de un anuncio de **DoubleClick**:
 
@@ -27,9 +27,9 @@ Eche un vistazo a este ejemplo de un anuncio de **DoubleClick**:
 </amp-ad>
 ```
 
-Como puede ver, esta es una configuración muy simple. Tome nota del atributo `type`, que informa al componente [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) de la plataforma de anuncios que queremos utilizar. En este caso, queremos utilizar la plataforma de [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), por lo que especificamos `doubleclick` como el valor.
+Como puede ver, esta es una configuración muy simple. Tome nota del atributo `type`, que informa al componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) de la plataforma de anuncios que queremos utilizar. En este caso, queremos utilizar la plataforma de [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), por lo que especificamos `doubleclick` como el valor.
 
-El atributo `data-slot` es más único. En [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}), cualquier atributo que comience con `data-` son atributos específicos del proveedor. Esto significa que no todos los vendedores necesitarán necesariamente este atributo particular, ni reaccionarán necesariamente si se suministra. Por ejemplo, compare el ejemplo de **DoubleClick** de arriba con el siguiente anuncio de prueba de la plataforma [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+El atributo `data-slot` es más único. En [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), cualquier atributo que comience con `data-` son atributos específicos del proveedor. Esto significa que no todos los vendedores necesitarán necesariamente este atributo particular, ni reaccionarán necesariamente si se suministra. Por ejemplo, compare el ejemplo de **DoubleClick** de arriba con el siguiente anuncio de prueba de la plataforma [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
 
 ```html
 <amp-ad
@@ -74,11 +74,11 @@ Desafortunadamente, la segmentación geográfica no puede controlarse desde el c
 
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Prueba de Anuncios') }}
 
-El ejemplo de orientación geográfica anterior muestra cómo [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) es lo suficientemente flexible para todo tipo de características de la plataforma de anuncios.
+El ejemplo de orientación geográfica anterior muestra cómo [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) es lo suficientemente flexible para todo tipo de características de la plataforma de anuncios.
 
-Nota: Es posible que observe que dentro de estas etiquetas de [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Nota: Es posible que observe que dentro de estas etiquetas de [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) se encuentran etiquetas `div` adicionales con un atributo denominado `fallback` en ellas. ¿Puedes adivinar qué representa el atributo `fallback`? Se informa al sistema de carga de AMP para mostrar sólo el contenido de ese elemento cuando el elemento padre no se carga correctamente. Lo que significa que el elemento padre recae en el elemento hijo, de ahí el término ‘fallback’. Obtenga más información sobre [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
-Leer más: Para ver las últimas redes publicitarias compatibles, lea la documentación de referencia del componente [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
+Leer más: Para ver las últimas redes publicitarias compatibles, lea la documentación de referencia del componente [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
 
 Nota: No se permite que JavaScript en la red de anuncios se ejecute dentro del documento de AMP. En cambio, el tiempo de ejecución de AMP carga un iframe de origen diferente (a través de un sandbox iframe) como el documento AMP y ejecuta el JS de la red de anuncios dentro de ese sandbox iframe.
 
@@ -123,14 +123,14 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 
 Una vez más, especificamos el `width` y la `height` del video para que el sistema de distribución AMP pueda calcular la relación de aspecto. Además, establecemos el `layout` en `responsive`, por lo que el video llena el ancho de su elemento padre.
 
-Para obtener más información sobre la incorporación de vídeos de YouTube, lea la documentación del componente [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
+Para obtener más información sobre la incorporación de vídeos de YouTube, lea la documentación del componente [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md).
 
 [tip type="tip"]
-**TIP –** Use el atributo [`fallback`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#fallbacks) para informar a los usuarios si el componente falla en cargar o si el componente no es soportado por su navegador web.
+**TIP –** Use el atributo [`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) para informar a los usuarios si el componente falla en cargar o si el componente no es soportado por su navegador web.
 [/tip]
 
 ## Mostrar un Tweet
-La incorporación de tweets preformateados de Twitter es una característica común en los artículos de noticias. El componente [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) puede proporcionar esta funcionalidad con facilidad.
+La incorporación de tweets preformateados de Twitter es una característica común en los artículos de noticias. El componente [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) puede proporcionar esta funcionalidad con facilidad.
 
 Comience agregando la siguiente solicitud de JavaScript a la etiqueta `<head>` de su documento:
 
@@ -155,10 +155,10 @@ El atributo `data-tweetid` es otro ejemplo de un atributo personalizado requerid
 
 {{ image('/static/img/docs/tutorials/tut-advanced-twitter.png', 412, 613, align='center half', caption='Tweet Insertado') }}
 
-Para obtener más información sobre la incorporación de Tweets de Twitter, lea la documentación del componente [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
+Para obtener más información sobre la incorporación de Tweets de Twitter, lea la documentación del componente [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md).
 
 [tip type="tip"]
-**TIP –** AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}).
+**TIP –** AMP proporciona aún más componentes para incrustar contenido de redes sociales. Vea los últimos [social AMP components](../../../../documentation/components/index.html).
 [/tip]
 
 ## Resaltar una cita de artículo
@@ -167,7 +167,7 @@ Una característica común en los artículos de noticias es resaltar fragmentos 
 
 Sin embargo, no todos los fragmentos de texto tienen necesariamente la misma longitud de caracteres, lo que puede dificultar el equilibrio entre un tamaño de fuente mayor y la cantidad de espacio que el texto consume en la página.
 
-AMP proporciona otro componente específicamente diseñado para este tipo de situación, se llama el componente [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}). El componente [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}) le permite definir un elemento de ancho y altura fijos y un tamaño de fuente máximo. El componente escala inteligentemente el tamaño de la fuente para **ajustar** el texto dentro del ancho y la altura disponibles.
+AMP proporciona otro componente específicamente diseñado para este tipo de situación, se llama el componente [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md). El componente [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) le permite definir un elemento de ancho y altura fijos y un tamaño de fuente máximo. El componente escala inteligentemente el tamaño de la fuente para **ajustar** el texto dentro del ancho y la altura disponibles.
 
 Hagamos un intento. Primero, **agregue** la biblioteca del componente a la etiqueta `<head>`:
 
@@ -201,6 +201,6 @@ O, ¿qué pasa si la cita es más larga?
 </amp-fit-text>
 ```
 
-Como último experimento con [`amp-fit-text`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-fit-text.md', locale=doc.locale).url.path}}), intente crear un fragmento corto de texto, como "Hello" con una altura mucho mayor (por ejemplo, un valor de 400), y manteniendo el valor de atributo max-font-size de 42. ¿Cómo sería la página resultante? ¿Está el texto centrado verticalmente? ¿O la altura de la etiqueta de ajuste de amplificación de texto se encoge para ajustarse al tamaño de fuente máximo? Con lo que ya sabes sobre el sistema de distribución de AMP, intenta responder a la pregunta antes de jugar con el código!
+Como último experimento con [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md), intente crear un fragmento corto de texto, como "Hello" con una altura mucho mayor (por ejemplo, un valor de 400), y manteniendo el valor de atributo max-font-size de 42. ¿Cómo sería la página resultante? ¿Está el texto centrado verticalmente? ¿O la altura de la etiqueta de ajuste de amplificación de texto se encoge para ajustarse al tamaño de fuente máximo? Con lo que ya sabes sobre el sistema de distribución de AMP, intenta responder a la pregunta antes de jugar con el código!
 
-Puede obtener más información sobre el amplificador de ajuste de texto de la demostración en vivo de [AMP BY Example]({{g.doc('/content/amp-dev/documentation/examples/documentation/amp-fit-text.html', locale=doc.locale).url.path}}).
+Puede obtener más información sobre el amplificador de ajuste de texto de la demostración en vivo de [AMP BY Example](../../../../documentation/examples/documentation/amp-fit-text.html).

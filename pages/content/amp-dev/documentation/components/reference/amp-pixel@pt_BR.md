@@ -35,7 +35,7 @@ teaser:
     <td>Pode ser usado como um pixel de rastreamento típico para contar visualizações de páginas.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -82,12 +82,12 @@ Isso significa que as macros no URL NÃO serão expandidas, então use-as soment
 
 ##### common attributes
 
-Este elemento inclui [atributos comuns](https://www.ampproject.org/docs/reference/common_attributes) estendidos a componentes de AMP.
+Este elemento inclui [atributos comuns](../../../documentation/guides-and-tutorials/learn/common_attributes.md) estendidos a componentes de AMP.
 
 ## Substituições
 
 O `amp-pixel` permite todas as substituições de variáveis de URL padrão.
-Consulte o [Guia de substituições](../spec/amp-var-substitutions.md) (em inglês) para ver mais informações.
+Consulte o [Guia de substituições](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) (em inglês) para ver mais informações.
 
 No exemplo a seguir, uma solicitação pode ser feita para algo como `https://foo.com/pixel?0.8390278471201`, em que o valor ALEATÓRIO é gerado de forma aleatória em cada impressão.
 

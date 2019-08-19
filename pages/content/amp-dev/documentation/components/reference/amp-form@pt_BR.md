@@ -38,7 +38,7 @@ limitations under the License.
       <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Layouts compatíveis</a></strong></td>
+    <td><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">Layouts compatíveis</a></strong></td>
     <td>N/A</td>
   </tr>
   <tr>
@@ -53,21 +53,49 @@ limitations under the License.
 A extensão `amp-form` permite que você crie formulários (`<form>`) para enviar campos de entrada em um documento AMP. A extensão `amp-form` também fornece [polyfills](#polyfills) para alguns comportamentos ausentes em navegadores.
 
 [tip type="important"]
-se você enviar dados no seu formulário, o endpoint do servidor precisará implementar os requisitos para a [segurança do CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+se você enviar dados no seu formulário, o endpoint do servidor precisará implementar os requisitos para a [segurança do CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 [/tip]
 
 Antes de criar um `<form>`, é preciso incluir o script exigido para a extensão `<amp-form>`. Se você não fizer isso, seu documento será inválido. Se você está usando tags `input` para finalidades que não sejam o envio dos valores delas (por exemplo, entradas que não estejam dentro de um `<form>`), não é necessário carregar a extensão `amp-form`.
 
 Veja um exemplo de formulário básico:
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-  <amp-iframe height="671" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Mostrar mais" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    target="_top"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+```
+[/example]
 
 # Atributos
 
@@ -91,7 +119,7 @@ os atributos `target` e `action` são usados apenas para solicitações GET que 
 Especifica um endpoint do servidor para processar a entrada do formulário e enviar o formulário via XMLHttpRequest (XHR). Uma solicitação XHR (às vezes chamada de solicitação AJAX) é o local em que o navegador faz a solicitação sem carregar totalmente a página ou ao abrir uma nova página. Os navegadores enviam a solicitação em segundo plano usando a [API Fetch](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API), quando disponível, que é substituída pela [API XMLHttpRequest](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest) no caso dos navegadores mais antigos.
 
 [tip type="important"]
-seu endpoint XHR precisa implementar os requisitos de [segurança do CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+seu endpoint XHR precisa implementar os requisitos de [segurança do CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 [/tip]
 
 Esse atributo é obrigatório para `method=POST` e opcional para `method=GET`.
@@ -116,7 +144,7 @@ Consulte a seção [Validações personalizadas](#custom-validations) para ver m
 
 * Outros elementos relacionados a formulário, incluindo: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` e assim por diante.
 * `<input type=password>` e `<input type=file>` dentro de `<form method=POST action-xhr>`.
-* [`amp-selector.`](https://www.ampproject.org/docs/reference/components/amp-selector)
+* [`amp-selector.`](amp-selector.md)
 
 **Não permitidos**:
 
@@ -137,7 +165,7 @@ O elemento `amp-form` expõe as seguintes ações:
 | `clear` | Esvazia os valores de cada entrada do formulário. Isso permite que os usuários preencham formulários rapidamente pela segunda vez. |
 
 [tip type="read-on"]
-saiba mais sobre [ações e eventos em AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html).
+saiba mais sobre [ações e eventos em AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
 [/tip]
 
 # Eventos
@@ -154,7 +182,7 @@ O `amp-form` expõe os seguintes eventos:
 | `valid` | O estado de validação do formulário muda para “válido” (de acordo com a [estratégia de relatório](#reporting-strategies) dele). |
 | `invalid` | O estado de validação do formulário é "inválido" "(de acordo com a [estratégia de relatório](#reporting-strategies) dele). |
 
-Esses eventos podem ser usados por meio do [atributo `on`](https://www.ampproject.org/docs/fundamentals/spec#on).
+Esses eventos podem ser usados por meio do [atributo `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on).
 
 Por exemplo, o código a seguir escuta os eventos `submit-success` e `submit-error` e mostra lightboxes diferentes dependendo do evento:
 
@@ -165,28 +193,43 @@ Por exemplo, o código a seguir escuta os eventos `submit-success` e `submit-err
 
 ```
 
-Veja o [exemplo completo aqui](../../examples/forms.amp.html).
+Veja o [exemplo completo aqui](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Eventos de entrada
 
-O AMP expõe eventos `change` e `input-debounced` em elementos `<input>` filhos. Isso permite que você use o [atributo `on`](https://www.ampproject.org/docs/fundamentals/spec#on) para executar uma ação em qualquer elemento quando um valor de entrada for alterado.
+O AMP expõe eventos `change` e `input-debounced` em elementos `<input>` filhos. Isso permite que você use o [atributo `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on) para executar uma ação em qualquer elemento quando um valor de entrada for alterado.
 
 Por exemplo, um caso de uso comum é enviar um formulário quando houver alteração da entrada (ao selecionar um botão de opção para responder a uma pesquisa, escolher um idioma em uma entrada `select` para traduzir uma página etc.).
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form id="myform"
+    method="post"
+    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <input name="answer1"
+          value="Value 1"
+          type="radio"
+          on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1"
+          value="Value 2"
+          type="radio"
+          on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="450" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.inputevent.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Mostrar mais" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Veja o [exemplo completo aqui](../../examples/forms.amp.html).
+Veja o [exemplo completo aqui](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Acionadores de análise
 
-A extensão `amp-form` aciona os seguintes eventos, que você pode acompanhar na configuração de [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics):
+A extensão `amp-form` aciona os seguintes eventos, que você pode acompanhar na configuração de [amp-analytics](amp-analytics.md):
 
 | Evento                     | Disparado quando                        |
 |---------------------------|-----------------------------------|
@@ -247,7 +290,7 @@ Quando o evento `amp-form-submit`, `amp-form-submit-success` ou `amp-form-submit
 
 # Renderização de resposta de sucesso/erro
 
-Você pode renderizar respostas de sucesso ou erro no seu formulário usando [modelos estendidos](https://www.ampproject.org/docs/fundamentals/spec#extended-templates), como [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache). Também é possível renderizar respostas de sucesso por meio da vinculação de dados com [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) e os seguintes atributos de resposta:
+Você pode renderizar respostas de sucesso ou erro no seu formulário usando [modelos estendidos](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates), como [amp-mustache](amp-mustache.md). Também é possível renderizar respostas de sucesso por meio da vinculação de dados com [amp-bind](amp-bind.md) e os seguintes atributos de resposta:
 
 | Atributo de resposta | Descrição |
 |-----------|---------------------|
@@ -340,15 +383,15 @@ to confirm! After that we'll start sending you weekly articles on {{#interests}}
 {% endraw %}
 ```
 
-Veja o [exemplo completo aqui](../../examples/forms.amp.html).
+Veja o [exemplo completo aqui](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Para renderizar uma resposta de sucesso com a vinculação de dados
 
-* Use o [atributo on](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events) para vincular o atributo *submit-success* do formulário a [`AMP.setState()`](https://www.ampproject.org/docs/reference/components/amp-bind#updating-state-with-amp.setstate%28%29).
+* Use o [atributo on](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) para vincular o atributo *submit-success* do formulário a [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29).
 * Use a propriedade `event` para capturar os dados da resposta.
 * Adicione o atributo de estado ao elemento desejado para vincular a resposta do formulário.
 
-O exemplo a seguir demonstra uma resposta <code>submit-success</code> do formulário com o <a href="https://www.ampproject.org/docs/reference/components/amp-bind"><code>amp-bind</code></a>:
+O exemplo a seguir demonstra uma resposta <code>submit-success</code> do formulário com o <a href="amp-bind.md"><code>amp-bind</code></a>:
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -389,7 +432,7 @@ Em seguida, `amp-bind` atualizará o texto do elemento `<p>` para que correspond
 
 Você pode redirecionar os usuários para uma nova página após o envio de um formulário com sucesso. Para isso, basta configurar o cabeçalho de resposta `AMP-Redirect-To` e especificar um URL de redirecionamento, que precisa ser um URL HTTPS. Caso contrário, a AMP gerará um erro, e o redirecionamento não ocorrerá.  Os cabeçalhos de resposta HTTP são configurados por meio do seu servidor.
 
-Atualize o cabeçalho de resposta `Access-Control-Expose-Headers`, incluindo `AMP-Redirect-To` na lista de cabeçalhos permitidos.  Saiba mais sobre esses cabeçalhos em [Segurança do CORS em AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp) (link em inglês).
+Atualize o cabeçalho de resposta `Access-Control-Expose-Headers`, incluindo `AMP-Redirect-To` na lista de cabeçalhos permitidos.  Saiba mais sobre esses cabeçalhos em [Segurança do CORS em AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp) (link em inglês).
 
 *Exemplos de cabeçalhos de resposta:*
 
@@ -413,16 +456,48 @@ Para especificar a validação personalizada no seu formulário:
 
 Veja um exemplo:
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="748" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.customval.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Mostrar mais" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Para ver mais exemplos, consulte [examples/forms.amp.html](../../examples/forms.amp.html).
+Para ver mais exemplos, consulte [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 Para mensagens de validação, se seu elemento não tiver conteúdo textual, o AMP o preencherá com a mensagem de validação padrão do navegador. No exemplo acima, quando a entrada `name5` estiver vazia e a validação for iniciada (ou seja, quando o usuário tiver tentado enviar o formulário), o AMP preencherá `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` com a mensagem de validação do navegador e mostrará esse `span` para o usuário.
 
@@ -457,7 +532,7 @@ A validação de HTML5 fornece feedback com base apenas nas informações dispon
 Veja um exemplo:
 ```html
 {% raw %}<h4>Verification example</h4>
-<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post" target="_blank">
+<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
   <fieldset>
     <label>
       <span>Email</span>
@@ -512,11 +587,11 @@ Veja um exemplo de resposta de erro para verificação:
 
 Para remover um campo da solicitação `verify-xhr`, adicione o atributo `no-verify` ao elemento de entrada.
 
-Para ver mais exemplos, consulte [examples/forms.amp.html](../../examples/forms.amp.html).
+Para ver mais exemplos, consulte [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Substituições de variáveis
 
-A extensão `amp-form` permite [substituições de variáveis de plataforma](../../spec/amp-var-substitutions.md) (link em inglês) para entradas ocultas e que tenham o atributo `data-amp-replace`. Em cada envio de formulário, o `amp-form` encontra todas as `input[type=hidden][data-amp-replace]` dentro do formulário, aplica substituições de variáveis ao atributo `value` e o troca pelo resultado da substituição.
+A extensão `amp-form` permite [substituições de variáveis de plataforma](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) (link em inglês) para entradas ocultas e que tenham o atributo `data-amp-replace`. Em cada envio de formulário, o `amp-form` encontra todas as `input[type=hidden][data-amp-replace]` dentro do formulário, aplica substituições de variáveis ao atributo `value` e o troca pelo resultado da substituição.
 
 Você precisa fornecer as variáveis que está usando para cada substituição em cada entrada, especificando uma string separada por espaços das variáveis usadas em `data-amp-replace` (veja o exemplo abaixo). O AMP não substitui as variáveis que não são explicitamente especificadas.
 
@@ -551,7 +626,7 @@ Quando o usuário tentar enviar o formulário, o AMP tentará resolver as variá
 
 Observe como o `CANONICAL_HOSTNAME` acima não foi substituído porque não estava na lista de permissões do atributo `data-amp-replace` no primeiro campo.
 
-As substituições ocorrerão em todos os envios subsequentes. Leia mais sobre [substituições de variáveis em AMP](../../spec/amp-var-substitutions.md).
+As substituições ocorrerão em todos os envios subsequentes. Leia mais sobre [substituições de variáveis em AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 # Polyfills
 
@@ -601,7 +676,7 @@ As seguintes classes são um [polyfill para as pseudoclasses de interação do u
 
 Os editores podem usar essas classes para definir o estilo de entradas e conjuntos de campos para que respondam às ações do usuário (por exemplo, destacar uma entrada inválida com uma borda vermelha após o usuário desfocá-la).
 
-Veja [aqui um exemplo completo ](../../examples/forms.amp.html) de como usar essas classes.
+Veja [aqui um exemplo completo ](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) de como usar essas classes.
 
 [tip type="success"]
 visite o site [AMP Start](https://ampstart.com/components#form-elements) para os elementos de formulário AMP responsivos e pré-estilizados que você pode usar nas suas páginas AMP.
@@ -611,7 +686,7 @@ visite o site [AMP Start](https://ampstart.com/components#form-elements) para os
 
 # Proteção contra XSRF
 
-Além de seguir os detalhes das [especificações CORP AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html), preste atenção especial à seção [Processar solicitações de alteração de estado](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) (link em inglês) para se proteger contra [ataques XSRF](https://pt.wikipedia.org/wiki/Cross-site_request_forgery), em que um invasor pode executar comandos não autorizados usando a sessão atual do usuário sem o conhecimento dele.
+Além de seguir os detalhes das [especificações CORP AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md), preste atenção especial à seção [Processar solicitações de alteração de estado](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests) (link em inglês) para se proteger contra [ataques XSRF](https://pt.wikipedia.org/wiki/Cross-site_request_forgery), em que um invasor pode executar comandos não autorizados usando a sessão atual do usuário sem o conhecimento dele.
 
 Em geral, lembre-se dos seguintes pontos ao aceitar informações do usuário:
 

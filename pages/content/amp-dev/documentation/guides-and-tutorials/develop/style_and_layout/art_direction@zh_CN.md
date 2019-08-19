@@ -4,11 +4,11 @@ $title: 借助 srcset、sizes 和 heights 属性制作自适应图片
 
 ## srcset
 
-您可以使用 `srcset` 属性通过不同的媒体表达式来控制元素的资源。尤其是，您可以将其用于所有 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 标记，以指定不同屏幕尺寸下所用的图片资源。
+您可以使用 `srcset` 属性通过不同的媒体表达式来控制元素的资源。尤其是，您可以将其用于所有 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 标记，以指定不同屏幕尺寸下所用的图片资源。
 
 在这个简单的示例中，`srcset` 指定了不同屏幕宽度下所用的图片。`w` 描述符可将列表中每张图片的宽度告知浏览器：
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -31,7 +31,7 @@ $title: 借助 srcset、sizes 和 heights 属性制作自适应图片
 
 请查看以下示例：
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -61,7 +61,7 @@ $title: 借助 srcset、sizes 和 heights 属性制作自适应图片
 
 示例：
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

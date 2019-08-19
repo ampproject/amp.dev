@@ -35,7 +35,7 @@ teaser:
     <td>Dapat digunakan sebagai piksel pelacakan standar untuk menghitung kunjungan halaman.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -81,12 +81,12 @@ Perhatikan bahwa ini berarti semua makro dalam URL TIDAK akan diperluas, sehingg
 
 ##### atribut umum
 
-Elemen ini mencakup [atribut umum](https://www.ampproject.org/docs/reference/common_attributes) yang diperluas ke komponen AMP.
+Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/learn/common_attributes.md) yang diperluas ke komponen AMP.
 
 ## Substitusi
 
 Komponen `amp-pixel` memungkinkan semua substitusi variabel URL standar.
-Lihat [Panduan Substitusi](../spec/amp-var-substitutions.md) untuk informasi selengkapnya.
+Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
 
 Pada contoh berikut, permintaan dapat dibuat untuk sesuatu seperti `https://foo.com/pixel?0.8390278471201` di mana nilai RANDOM dibuat secara acak pada setiap tayangan.
 

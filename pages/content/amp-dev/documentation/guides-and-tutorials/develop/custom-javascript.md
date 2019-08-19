@@ -11,7 +11,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 
 AMP strives to provide a consistently good experience to all users across the web by encouraging the use of high-functioning and seamless components that are ready to go out of the box.
 
-Some web experiences require a high amount of customization that go beyond the state binding capabilities of [`amp-bind`]({{ g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path }}?format=websites) and the dynamic data retrieval and templating functionality of [`amp-list`]({{ g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path }}?format=websites) and [`amp-mustache`]({{ g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path }}?format=websites). For those one-off cases, AMP has created [`<amp-script>`]({{ g.doc('/content/amp-dev/documentation/components/reference/amp-script.md', locale=doc.locale).url.path }}?format=websites), a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
+Some web experiences require a high amount of customization that go beyond the state binding capabilities of [`amp-bind`](../../../documentation/components/reference/amp-bind.md?format=websites) and the dynamic data retrieval and templating functionality of [`amp-list`](../../../documentation/components/reference/amp-list.md?format=websites) and [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md?format=websites). For those one-off cases, AMP has created [`<amp-script>`](../../../documentation/components/reference/amp-script.md?format=websites), a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
 
 # Inserting custom JavaScript
 
@@ -43,7 +43,7 @@ The `amp-script` component sends messages between the Web Worker thread and the 
 
 ## Custom scripts caching
 
-The [AMP cache](https://www.ampproject.org/docs/fundamentals/how_cached) serves custom JavaScript files inserted with `<amp-script>` same as AMP component scripts. This ensures that any custom JavaScript will not slow the speed of an AMP document.
+The [AMP cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) serves custom JavaScript files inserted with `<amp-script>` same as AMP component scripts. This ensures that any custom JavaScript will not slow the speed of an AMP document.
 
 The AMP cache proxies the JavaScript files and then delivers them. Users can expect the same performance experience from a page using `<amp-script>` as a page that doesn't include it.
 

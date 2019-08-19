@@ -35,7 +35,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Поддерживаемые макеты</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Поддерживаемые макеты</a></strong></td>
     <td>Все</td>
   </tr>
   <tr>
@@ -97,7 +97,7 @@ teaser:
 
 ## Отмена выделения
 
-Чтобы отменить все выделения при нажатии на элемент, используйте атрибут действия [`on`](../../spec/amp-actions-and-events.md) в элементе и укажите идентификатор `id` селектора AMP с методом `clear`.
+Чтобы отменить все выделения при нажатии на элемент, используйте атрибут действия [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) в элементе и укажите идентификатор `id` селектора AMP с методом `clear`.
 
 Пример:
 
@@ -150,7 +150,7 @@ teaser:
 События могут активировать действия для компонентов AMP с помощью атрибута `on`,
 например `on="select: my-tab.show"`.
 
-Подробнее [о действиях и событиях AMP](../../spec/amp-actions-and-events.md)…
+Подробнее [о действиях и событиях AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)…
 
 <table>
   <tr>

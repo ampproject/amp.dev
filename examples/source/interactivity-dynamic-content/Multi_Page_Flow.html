@@ -394,7 +394,7 @@ h2.preview-only + p {
   <p>Use the browser back button to go to the previous view.</p>
 
 <!-- ## A simple Dialog -->
-<!-- We use an implicit state variable `currentPage` to keep track of the current view. Views are identified by numbers starting with `0` in their order of appearance. The view state is bound to each view using AMP's [`hidden` attribute]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}#*-(all-elements)):
+<!-- We use an implicit state variable `currentPage` to keep track of the current view. Views are identified by numbers starting with `0` in their order of appearance. The view state is bound to each view using AMP's [`hidden` attribute](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#*-(all-elements)):
 
 ```html
 <section [hidden]="currentPage > 0"> ... </section>
@@ -406,7 +406,7 @@ h2.preview-only + p {
 <section hidden [hidden]="currentPage != 1"> ... </section>
 ```
 
-We update the `currentPage` variable to progress forward in the dialog. In this sample we're using [`AMP.pushState(...)`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#modifying-history-with-amp.pushstate()) instead of `AMP.setState(...)`. `AMP.pushState(...)` pushes a new entry onto the browser history stack, which allows the user to navigate back in the to use the browser's back button to move backwards in the dialog:
+We update the `currentPage` variable to progress forward in the dialog. In this sample we're using [`AMP.pushState(...)`](/content/amp-dev/documentation/components/reference/amp-bind.md#modifying-history-with-amp.pushstate()) instead of `AMP.setState(...)`. `AMP.pushState(...)` pushes a new entry onto the browser history stack, which allows the user to navigate back in the to use the browser's back button to move backwards in the dialog:
 
 ```html
 <button on="tap:AMP.pushState({ currentPage: currentPage + 1 })">

@@ -35,7 +35,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">지원되는 레이아웃</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">지원되는 레이아웃</a></strong></td>
     <td>container</td>
   </tr>
   <tr>
@@ -60,14 +60,26 @@ limitations under the License.
 
 이 예에서는 3개의 섹션을 표시하며, 세 번째 섹션이 페이지 로드 시 펼쳐집니다.  `disable-session-states`를 설정하여 접힌 상태와 펼친 상태를 유지하지 않도록 설정할 수 있습니다.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="395" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampaccordion.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="더보기" overflow="" tabindex="0" role="button">전체 코드 표시</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-accordion"]
+```html
+<amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
+  <section>
+    <h2>Section 1</h2>
+    <p>Content in section 1.</p>
+  </section>
+  <section>
+    <h2>Section 2</h2>
+    <div>Content in section 2.</div>
+  </section>
+  <section expanded>
+    <h2>Section 3</h2>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/squirrel.jpg"
+      width="320"
+      height="256"></amp-img>
+  </section>
+</amp-accordion>
+```
+[/example]
 
 [tip type="success"]
 `amp-accordion` 데모를 더 보려면 [AMP By Example](https://ampbyexample.com/components/amp-accordion/)을 방문하세요.

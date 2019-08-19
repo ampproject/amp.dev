@@ -43,7 +43,7 @@ limitations under the License.
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">
             Поддерживаемые макеты
           </a>
         </strong>
@@ -75,8 +75,8 @@ limitations under the License.
 
 ## Поддерживаемые рекламные сети
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick (эксперимент)](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (эксперимент)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Атрибуты
 
@@ -91,7 +91,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Этот элемент содержит <a href="https://www.ampproject.org/docs/reference/common_attributes">распространенные атрибуты</a>, которые поддерживаются компонентами AMP.</td>
+    <td>Этот элемент содержит <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">распространенные атрибуты</a>, которые поддерживаются компонентами AMP.</td>
   </tr>
 </table>
 

@@ -35,7 +35,7 @@ Muestra un vídeo de [YouTube](https://www.youtube.com/).
     <td><code>&lt;script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay y responsive</td>
   </tr>
   <tr>
@@ -111,7 +111,7 @@ Con el diseño responsive (es decir, adaptable), la anchura y la altura del ejem
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Requiere la extensión <code>amp-video-docking</code>.</strong> Si este atributo está presente y el vídeo se reproduce manualmente, se minimizará y permanecerá fijado en una esquina o elemento cuando el usuario se desplace fuera del área visual del componente de vídeo.
-            Para obtener más información, consulta la <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">documentación de la propia extensión</a>.</td>
+            Para obtener más información, consulta la <a href="amp-video-docking.md">documentación de la propia extensión</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>credentials (opcional)</strong></td>
@@ -125,7 +125,7 @@ Con el diseño responsive (es decir, adaptable), la anchura y la altura del ejem
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Este elemento incluye <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comunes</a> que se aplican a los componentes de AMP.</td>
+            <td>Este elemento incluye <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comunes</a> que se aplican a los componentes de AMP.</td>
           </tr>
         </table>
 

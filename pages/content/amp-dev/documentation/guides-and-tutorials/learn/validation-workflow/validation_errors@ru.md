@@ -3,7 +3,7 @@ $title: Ошибки на AMP-страницах
 ---
 
 В AMP-документах не должно быть ошибок кода.
-В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
+В этом документе рассказывается, как устранить ошибки, возникающие при [проверке AMP-страниц](validate_amp.md).
 Полный список неполадок приведен в [спецификации](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 ## Ошибки в HTML-тегах и атрибутах на AMP-страницах
@@ -37,7 +37,7 @@ $title: Ошибки на AMP-страницах
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Обязательные теги включают в себя поле `mandatory: true` в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Также они приведены в [документации по AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}).
+Обязательные теги включают в себя поле `mandatory: true` в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Также они приведены в [документации по AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Отсутствует тег, который требуется для работы другого тега
 
@@ -58,7 +58,7 @@ $title: Ошибки на AMP-страницах
 
 Валидатор выводит ошибку `TAG_REQUIRED_BY_MISSING`, когда обнаруживает в AMP-документе расширенный компонент без соответствующего тега `<script>`.
 
-[Расширенные компоненты]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) должны быть включены в AMP-документ как специальные элементы.
+[Расширенные компоненты](../../../../documentation/components/index.html) должны быть включены в AMP-документ как специальные элементы.
 Чтобы исправить эту ошибку, перейдите на справочную страницу расширенного компонента, скопируйте нужный скрипт и вставьте его в тег `<head>` AMP-документа.
 
 ### Недопустимый тег
@@ -78,7 +78,7 @@ $title: Ошибки на AMP-страницах
   </tr>
 </table>
 
-Теги вносятся в белый список, так что единого списка всех недопустимых тегов не существует. Однако в [документации по AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) в целом описано, какие теги могут быть недопустимыми.
+Теги вносятся в белый список, так что единого списка всех недопустимых тегов не существует. Однако в [документации по AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) в целом описано, какие теги могут быть недопустимыми.
 
 ### Отсутствует обязательный атрибут
 
@@ -387,10 +387,10 @@ CDATA – это контент между открывающим и закры
 Эта ошибка возникает, если в теге обнаружены взаимоисключающие атрибуты.
 Например, для следующих тегов допускается только один из указанных атрибутов:
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` или `src`;
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` или `src`;
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` или `srcdoc`;
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` или `data-videoid`.
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` или `src`;
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` или `src`;
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` или `srcdoc`;
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` или `data-videoid`.
 
 ### Отсутствует обязательный атрибут из списка
 
@@ -412,10 +412,10 @@ CDATA – это контент между открывающим и закры
 Эта ошибка возникает, если в теге отсутствует какой-либо из обязательных атрибутов, перечисленных в списке:
 Например, для следующих тегов необходимо указать любой из двух атрибутов:
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` или `src`;
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` или `src`;
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` или `srcdoc`;
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` или `data-videoid`.
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` или `src`;
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` или `src`;
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` или `srcdoc`;
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` или `data-videoid`.
 
 ### Неверный родительский тег
 
@@ -447,7 +447,7 @@ CDATA – это контент между открывающим и закры
 * Для тега `style` требуется родительский тег `boilerplate (noscript)`.
 * Для тега `noscript` требуется родительский тег `head`.
 * Для тега `script` требуется родительский тег `head`.
-* Для тега `source` требуется медиатег ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) и т. п.).
+* Для тега `source` требуется медиатег ([`amp-audio`](../../../../documentation/components/reference/amp-audio.md), [`amp-video`](../../../../documentation/components/reference/amp-video.md) и т. п.).
 
 ### Недопустимый родительский тег
 
@@ -554,7 +554,7 @@ CDATA – это контент между открывающим и закры
 
 ## Ошибки стиля и дизайна
 
-Прежде чем переходить к разбору ошибок, следует понять, как на AMP-страницах работают [стили]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) и [шаблоны]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}). Поскольку AMP-страницы имеют формат HTML, они во многом похожи на обычные HTML-страницы.
+Прежде чем переходить к разбору ошибок, следует понять, как на AMP-страницах работают [стили](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) и [шаблоны](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md). Поскольку AMP-страницы имеют формат HTML, они во многом похожи на обычные HTML-страницы.
 Но существует ряд ограничений, которые обеспечивают быструю загрузку контента.
 
 Шаблоны для AMP-страниц более строгие.
@@ -622,7 +622,7 @@ CDATA – это контент между открывающим и закры
 </table>
 
 Эта ошибка относится к директивам CSS. Для них существует совсем немного правил, относящихся к AMP-страницам
-(см. также [требования к AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})).
+(см. также [требования к AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).
 Например, директива `@import` не поддерживается.
 Ошибка валидации указывает на недействительное правило.
 
@@ -647,7 +647,7 @@ CDATA – это контент между открывающим и закры
 Допустимые значения атрибута `supported_layout` для тегов приведены в [спецификации для валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Поведение макета определяется атрибутом `layout`.
-Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Подробнее о том, как работает макет, читайте в [этом разделе](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) нашей [спецификации](../../../../documentation/components/reference/amp-layout.md).
 
 **Примечание.** Если макет не указан или в нем отсутствуют значения `width` и `height`, по умолчанию используется вариант CONTAINER. Валидатор выдает ошибку, поскольку этот вариант не поддерживается тегами AMP.
 Чтобы устранить ошибку, укажите другой макет либо значение атрибутов `width` и/или `height`.
@@ -670,7 +670,7 @@ CDATA – это контент между открывающим и закры
 </table>
 
 Эта ошибка возникает, если для тега AMP не указан макет либо же указанный макет содержит недопустимый атрибут.
-Списки недопустимых атрибутов для разных макетов приведены в нашей [спецификации]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Списки недопустимых атрибутов для разных макетов приведены в нашей [спецификации](../../../../documentation/components/reference/amp-layout.md).
 
 ### Указанный макет не подходит для тега AMP
 
@@ -693,7 +693,7 @@ CDATA – это контент между открывающим и закры
 Допустимые значения атрибута `supported_layout` для тегов приведены в [спецификации для валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Поведение макета определяется атрибутом `layout`.
-Подробнее о том, как работает макет, читайте в [этом разделе]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) нашей [спецификации]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Подробнее о том, как работает макет, читайте в [этом разделе](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) нашей [спецификации](../../../../documentation/components/reference/amp-layout.md).
 
 ### Указанный макет не поддерживает атрибут
 
@@ -713,7 +713,7 @@ CDATA – это контент между открывающим и закры
 </table>
 
 Эта ошибка возникает, если для тега AMP указан макет, но он содержит недопустимый атрибут.
-Списки недопустимых атрибутов для разных макетов приведены в нашей [спецификации]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Списки недопустимых атрибутов для разных макетов приведены в нашей [спецификации](../../../../documentation/components/reference/amp-layout.md).
 
 ### Недопустимое значение обязательного атрибута
 
@@ -733,7 +733,7 @@ CDATA – это контент между открывающим и закры
 </table>
 
 Эта ошибка возникает, когда значение атрибута не поддерживается указанным макетом.
-Чтобы понять, в чем проблема, ознакомьтесь с [вариантами поведения макетов]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+Чтобы понять, в чем проблема, ознакомьтесь с [вариантами поведения макетов](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
 
 Допустим, вы используете макет `fixed-height` и указали числовые значения для атрибутов `height` и `width`.
 Макет `fixed-height` принимает значение `height`.
@@ -762,13 +762,13 @@ CDATA – это контент между открывающим и закры
 
 Пример неверного кода: `<amp-img src="" layout="responsive" width="42px" height="42rem">`.
 
-В теге "[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  разные единицы измерения ширины и высоты – "px" и "rem" соответственно.
+В теге "[`amp-img`](../../../../documentation/components/reference/amp-img.md)  разные единицы измерения ширины и высоты – "px" и "rem" соответственно.
 
 ## Ошибки, связанные с шаблонами
 
-AMP-страницы не могут содержать синтаксис шаблонов, если он не включен в тег, специально созданный для таких случаев, например [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
+AMP-страницы не могут содержать синтаксис шаблонов, если он не включен в тег, специально созданный для таких случаев, например [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md).
 
-Вы можете включать шаблоны в исходные файлы, если при выходе контент отображается без них (см. раздел об использовании [препроцессоров CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+Вы можете включать шаблоны в исходные файлы, если при выходе контент отображается без них (см. раздел об использовании [препроцессоров CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)).
 
 ### Атрибут содержит синтаксис шаблона
 

@@ -34,7 +34,7 @@ teaser:
     <td>Penggantian yang dikelola runtime untuk tag <code>img</code> HTML.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -51,36 +51,48 @@ Runtime dapat memilih untuk menunda atau memprioritaskan pemuatan resource berda
 Komponen `amp-img`, seperti semua resource AMP yang diambil secara eksternal, harus diberi ukuran eksplisit (seperti dalam `width` / `height`) terlebih dahulu, sehingga rasio tinggi lebar dapat diketahui tanpa mengambil gambar. Perilaku tata letak yang sebenarnya ditentukan oleh atribut `layout`.
 
 [tip type="read-on"]
-Pelajari lebih lanjut tata letak dalam spesifikasi [Sistem Tata Letak HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) dan [Tata Letak yang Didukung](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Pelajari lebih lanjut tata letak dalam spesifikasi [Sistem Tata Letak HTML AMP](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) dan [Tata Letak yang Didukung](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 [/tip]
 
 # Contoh: Menampilkan gambar yang responsif
 
 Pada contoh berikut, kami menampilkan gambar yang merespons ukuran viewport dengan menetapkan `layout=responsive`.  Gambar membentang dan menyusut sesuai dengan rasio tinggi lebar yang ditentukan oleh `width` dan `height`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
-Pelajari tentang halaman AMP responsif dalam panduan [Membuat Halaman AMP yang Responsif](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+Pelajari tentang halaman AMP responsif dalam panduan [Membuat Halaman AMP yang Responsif](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
 [/tip]
 
-Jika resource yang diminta oleh komponen `amp-img` gagal dimuat, ruang akan kosong kecuali jika turunan [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) disediakan. Fallback hanya dijalankan pada tata letak awal dan perubahan src berikutnya setelah fakta (misalnya, melalui pengubahan ukuran + srcset) tidak akan memiliki fallback untuk implikasi performa.
+Jika resource yang diminta oleh komponen `amp-img` gagal dimuat, ruang akan kosong kecuali jika turunan [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) disediakan. Fallback hanya dijalankan pada tata letak awal dan perubahan src berikutnya setelah fakta (misalnya, melalui pengubahan ukuran + srcset) tidak akan memiliki fallback untuk implikasi performa.
 
 # Contoh: Menentukan gambar fallback
 
 Pada contoh berikut, jika browser tidak mendukung WebP, gambar JPG fallback akan ditampilkan:
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Warna latar belakang placeholder atau visual lainnya dapat ditetapkan menggunakan pemilih CSS dan gaya pada elemen itu sendiri.
 
@@ -89,8 +101,8 @@ Fitur gambar tambahan seperti teks dapat diimplementasikan dengan HTML standar (
 [tip type="read-on"]
 Pelajari lebih lanjut penggunaan `amp-img` dari resource berikut:
 
-* [Placeholder &amp; fallback](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Menyertakan Gambar &amp; Video](https://www.ampproject.org/docs/media/amp_replacements)
+* [Placeholder & fallback](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+* [Menyertakan Gambar & Video](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 [/tip]
 
 # Atribut
@@ -108,7 +120,7 @@ Sama seperti atribut `srcset` pada tag `img`. Untuk browser yang tidak mendukung
 Sama seperti atribut `sizes` pada tag `img`.
 
 [tip type="read-on"]
-Lihat [Gambar responsif dengan srcset, size &amp; height](https://www.ampproject.org/docs/design/responsive/art_direction) untuk penggunaan `sizes` dan `srcset`.
+Lihat [Gambar responsif dengan srcset, size & height](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md) untuk penggunaan `sizes` dan `srcset`.
 [/tip]
 
 **alt**
@@ -125,7 +137,7 @@ Ukuran eksplisit gambar, yang digunakan oleh AMP runtime untuk menentukan rasio 
 
 **atribut umum**
 
-Elemen ini mencakup [atribut umum](https://www.ampproject.org/docs/reference/common_attributes) yang diperluas ke komponen AMP.
+Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/learn/common_attributes.md) yang diperluas ke komponen AMP.
 
 # Penataan gaya
 
@@ -137,7 +149,7 @@ amp-img {
   }
 ```
 
-# Tips &amp; Trik
+# Tips & Trik
 
 # Menskalakan gambar hingga lebar maksimum
 
@@ -158,7 +170,7 @@ Jika Anda ingin gambar ditampilkan dalam ukuran tetap:
 1. Tentukan `width` dan `height`.
 
 [tip type="read-on"]
-Pelajari tentang [inferred layout](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) jika Anda tidak menentukan atribut `layout`.
+Pelajari tentang [inferred layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?) jika Anda tidak menentukan atribut `layout`.
 [/tip]
 
 # Menetapkan rasio tinggi lebar
@@ -167,24 +179,28 @@ Untuk gambar responsif, `width` dan `height` tidak harus sama persis dengan leba
 
 Misalnya, bukannya menetapkan `width="900"` dan `height="675"`, Anda cukup menetapkan `width="1.33"` dan `height="1"`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # Menetapkan beberapa file sumber untuk resolusi layar yang berbeda
 
 Atribut [`srcset`](#attributes) digunakan untuk memberikan resolusi berbeda dari gambar yang sama, yang semuanya memiliki rasio tinggi lebar yang sama. Browser akan otomatis memilih file yang paling sesuai dari `srcset` berdasarkan resolusi layar dan lebar perangkat pengguna.
 
-Sebaliknya, atribut [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) menampilkan atau menyembunyikan komponen AMP, dan digunakan saat mendesain tata letak responsif. Cara yang tepat untuk menampilkan gambar dengan rasio tinggi lebar yang berbeda-beda adalah dengan menggunakan beberapa komponen `<amp-img>`, yang masing-masing memiliki atribut `media` yang cocok dengan lebar layar tempat setiap instance akan ditampilkan.
+Sebaliknya, atribut [`media`](../../../documentation/guides-and-tutorials/learn/common_attributes.md#media) menampilkan atau menyembunyikan komponen AMP, dan digunakan saat mendesain tata letak responsif. Cara yang tepat untuk menampilkan gambar dengan rasio tinggi lebar yang berbeda-beda adalah dengan menggunakan beberapa komponen `<amp-img>`, yang masing-masing memiliki atribut `media` yang cocok dengan lebar layar tempat setiap instance akan ditampilkan.
 
-Lihat panduan cara [membuat halaman AMP yang responsif](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images) untuk penjelasan selengkapnya.
+Lihat panduan cara [membuat halaman AMP yang responsif](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images) untuk penjelasan selengkapnya.
 
 # Mempertahankan rasio tinggi lebar untuk gambar dengan dimensi yang tidak diketahui
 
-Sistem tata letak AMP memerlukan rasio tinggi lebar gambar sebelum mengambil gambar; namun, dalam beberapa kasus, dimensi gambar mungkin tidak diketahui. Untuk menampilkan gambar dengan dimensi yang tidak diketahui dan mempertahankan rasio tinggi lebar, kombinasikan tata letak [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) AMP dengan properti CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Untuk informasi selengkapnya, lihat [Cara mendukung gambar dengan dimensi yang tidak diketahui](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) di AMP By Example.
+Sistem tata letak AMP memerlukan rasio tinggi lebar gambar sebelum mengambil gambar; namun, dalam beberapa kasus, dimensi gambar mungkin tidak diketahui. Untuk menampilkan gambar dengan dimensi yang tidak diketahui dan mempertahankan rasio tinggi lebar, kombinasikan tata letak [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) AMP dengan properti CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Untuk informasi selengkapnya, lihat [Cara mendukung gambar dengan dimensi yang tidak diketahui](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) di AMP By Example.
 
 # Validasi
 

@@ -38,7 +38,7 @@ $title: amp-form
     <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Tata Letak yang Didukung</a></strong></td>
+    <td><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">Tata Letak yang Didukung</a></strong></td>
     <td>T/A</td>
   </tr>
   <tr>
@@ -53,21 +53,49 @@ $title: amp-form
 Ekstensi `amp-form` memungkinkan Anda membuat formulir (`<form>`) untuk mengirimkan kolom input dalam dokumen AMP. Ekstensi `amp-form` juga menyediakan [polyfill](#polyfills) untuk beberapa perilaku yang tidak ada di browser.
 
 [tip type="important"]
-Jika Anda mengirimkan data menggunakan formulir, endpoint server Anda harus mengimplementasikan persyaratan [keamanan CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Jika Anda mengirimkan data menggunakan formulir, endpoint server Anda harus mengimplementasikan persyaratan [keamanan CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 [/tip]
 
 Sebelum membuat `<form>`, Anda harus menyertakan skrip yang diperlukan untuk ekstensi `<amp-form>`; jika tidak, dokumen akan menjadi tidak valid. Jika menggunakan tag `input` untuk keperluan selain mengirimkan nilainya (misalnya, input yang tidak berada dalam `<form>`), Anda tidak perlu memuat ekstensi `amp-form`.
 
 Berikut adalah contoh formulir dasar:
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-  <amp-iframe height="671" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    target="_top"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+```
+[/example]
 
 # Atribut
 
@@ -91,7 +119,7 @@ Atribut `target` dan `action` hanya digunakan untuk permintaan GET non-xhr. AMP 
 Menentukan endpoint server untuk menangani input formulir dan mengirimkan formulir melalui XMLHttpRequest (XHR). Permintaan XHR (terkadang disebut permintaan AJAX) adalah tempat browser akan membuat permintaan tanpa memuat halaman secara penuh atau membuka halaman baru. Browser akan mengirimkan permintaan di latar belakang menggunakan [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) jika tersedia, dan kembali ke [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) untuk browser lama.
 
 [tip type="important"]
-Endpoint XHR Anda harus mengimplementasikan persyaratan [keamanan CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Endpoint XHR Anda harus mengimplementasikan persyaratan [keamanan CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 [/tip]
 
 Atribut ini wajib untuk `method=POST`, dan opsional untuk `method=GET`.
@@ -116,7 +144,7 @@ Lihat bagian [Validasi Kustom](#custom-validations) untuk penjelasan selengkapny
 
 * Elemen terkait formulir lainnya, meliputi: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>`, dan seterusnya.
 * `<input type=password>` dan `<input type=file>` di dalam `<form method=POST action-xhr>`.
-* [`amp-selector`](https://www.ampproject.org/docs/reference/components/amp-selector)
+* [`amp-selector`](amp-selector.md)
 
 **Tidak diizinkan**:
 
@@ -137,7 +165,7 @@ Elemen `amp-form` memperlihatkan tindakan berikut:
 | `clear` | Mengosongkan nilai dari setiap input dalam formulir. Dengan tindakan ini, pengguna dapat melengkapi formulir dengan cepat untuk kedua kalinya. |
 
 [tip type="read-on"]
-Pelajari [Tindakan dan Peristiwa di AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html) lebih lanjut.
+Pelajari [Tindakan dan Peristiwa di AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) lebih lanjut.
 [/tip]
 
 # Peristiwa
@@ -154,7 +182,7 @@ Pelajari [Tindakan dan Peristiwa di AMP](https://www.ampproject.org/docs/interac
 | `valid` | Status validasi formulir berubah menjadi "valid" (sesuai dengan [strategi pelaporannya](#reporting-strategies)). |
 | `invalid` | Status validasi formulir berubah menjadi "tidak valid" (sesuai dengan [strategi pelaporannya](#reporting-strategies)). |
 
-Peristiwa ini dapat digunakan melalui [atribut `on`](https://www.ampproject.org/docs/fundamentals/spec#on).
+Peristiwa ini dapat digunakan melalui [atribut `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on).
 
 Misalnya, berikut berikut mendeteksi peristiwa `submit-success` dan juga `submit-error` serta menampilkan lightbox berbeda tergantung peristiwanya:
 
@@ -165,28 +193,43 @@ Misalnya, berikut berikut mendeteksi peristiwa `submit-success` dan juga `submit
 
 ```
 
-Lihat [contoh lengkapnya di sini](../../examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Peristiwa input
 
-AMP memperlihatkan peristiwa `change` dan `input-debounced` pada elemen `<input>` turunan. Dengan tindakan ini, Anda dapat menggunakan [atribut `on`](https://www.ampproject.org/docs/fundamentals/spec#on) untuk menjalankan tindakan pada elemen apa pun saat nilai input berubah.
+AMP memperlihatkan peristiwa `change` dan `input-debounced` pada elemen `<input>` turunan. Dengan tindakan ini, Anda dapat menggunakan [atribut `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on) untuk menjalankan tindakan pada elemen apa pun saat nilai input berubah.
 
 Misalnya, salah satu kasus penggunaan umum adalah mengirimkan formulir saat terjadi perubahan input (memilih tombol pilihan untuk menjawab polling, memilih bahasa dari input `select` untuk menerjemahkan halaman, dll.).
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form id="myform"
+    method="post"
+    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <input name="answer1"
+          value="Value 1"
+          type="radio"
+          on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1"
+          value="Value 2"
+          type="radio"
+          on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="450" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.inputevent.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Lihat [contoh lengkapnya di sini](../../examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Pemicu analisis
 
-Ekstensi `amp-form` memicu peristiwa berikut yang dapat Anda pantau dalam konfigurasi [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics):
+Ekstensi `amp-form` memicu peristiwa berikut yang dapat Anda pantau dalam konfigurasi [amp-analytics](amp-analytics.md):
 
 | Peristiwa                     | Diaktifkan ketika                        |
 |---------------------------|-----------------------------------|
@@ -248,7 +291,7 @@ Saat peristiwa `amp-form-submit`, `amp-form-submit-success`, atau `amp-form-subm
   * `formFields[comment]`
 # Rendering respons berhasil/error
 
-Anda dapat merender respons berhasil atau error dalam formulir menggunakan [template yang diperluas](https://www.ampproject.org/docs/fundamentals/spec#extended-templates), seperti [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache), atau respons berhasil melalui data binding dengan [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) dan atribut respons berikut:
+Anda dapat merender respons berhasil atau error dalam formulir menggunakan [template yang diperluas](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates), seperti [amp-mustache](amp-mustache.md), atau respons berhasil melalui data binding dengan [amp-bind](amp-bind.md) dan atribut respons berikut:
 
 | Atribut respons | Deskripsi |
 |-----------|---------------------|
@@ -339,15 +382,15 @@ untuk mengonfirmasi! Setelah itu, kami akan mulai mengirim artikel mingguan tent
 </form>
 {% endraw %}
 ```
-Lihat [contoh lengkapnya di sini](../../examples/forms.amp.html).
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Untuk merender respons berhasil dengan data binding
 
-* Gunakan [atribut on](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events) untuk mengikat atribut *submit-success* formulir ke [`AMP.setState()`](https://www.ampproject.org/docs/reference/components/amp-bind#updating-state-with-amp.setstate%28%29).
+* Gunakan [atribut on](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) untuk mengikat atribut *submit-success* formulir ke [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29).
 * Gunakan properti `event` untuk mengambil data respons.
 * Tambahkan atribut status ke elemen yang diinginkan untuk mengikat respons formulir.
 
-Contoh berikut menunjukkan respons `submit-success` formulir dengan [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind):
+Contoh berikut menunjukkan respons `submit-success` formulir dengan [`amp-bind`](amp-bind.md):
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -386,7 +429,7 @@ Kemudian `amp-bind` mengupdate teks elemen `<p>` agar cocok dengan status `subsc
 
 Anda dapat mengalihkan pengguna ke halaman baru setelah pengiriman formulir yang berhasil dengan menetapkan header respons `AMP-Redirect-To` dan menentukan URL pengalihan. URL pengalihan harus berupa URL HTTPS; jika tidak, AMP akan memunculkan error dan pengalihan tidak akan terjadi.  Header respons HTTP dikonfigurasi melalui server Anda.
 
-Pastikan memperbarui header respons `Access-Control-Expose-Headers` Anda untuk menyertakan `AMP-Redirect-To` ke daftar header yang diizinkan.  Pelajari lebih lanjut header ini di [Keamanan CORS di AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Pastikan memperbarui header respons `Access-Control-Expose-Headers` Anda untuk menyertakan `AMP-Redirect-To` ke daftar header yang diizinkan.  Pelajari lebih lanjut header ini di [Keamanan CORS di AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 *Contoh respons header:*
 
@@ -410,16 +453,48 @@ Untuk menentukan validasi kustom pada formulir:
 
 Berikut contohnya:
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="748" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.customval.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Tampilkan selengkapnya" overflow="" tabindex="0" role="button">Tampilkan kode lengkap</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Untuk contoh lainnya, lihat [examples/forms.amp.html](../../examples/forms.amp.html).
+Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 Untuk pesan validasi, jika elemen Anda tidak berisi konten teks, AMP akan mengisinya dengan pesan validasi default browser. Pada contoh di atas, jika input `name5` kosong dan validasi dimulai (artinya, pengguna mencoba mengirimkan formulir), AMP akan mengisi `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` dengan pesan validasi browser dan menampilkan `span` tersebut kepada pengguna.
 
@@ -456,7 +531,7 @@ Berikut ini contohnya:
 
 {% raw %}<h4>Contoh verifikasi</h4>
 
-<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post" target="_blank">
+<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
 <fieldset>
 <label>
   <span>Email</span>
@@ -510,7 +585,7 @@ Berikut adalah tampilan respons error untuk verifikasi:
 
 Untuk menghapus kolom dari permintaan `verify-xhr`, tambahkan atribut `no-verify` ke elemen input.
 
-Untuk contoh lainnya, lihat [examples/forms.amp.html](../../examples/forms.amp.html).
+Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Substitusi variabel
 
@@ -598,7 +673,7 @@ Class berikut adalah [polyfill untuk pseudo-class interaksi pengguna](#user-inte
 
 Penayang dapat menggunakan class ini untuk menata gaya input dan kolom mereka agar responsif terhadap tindakan pengguna (misalnya, menyoroti input yang tidak valid dengan batas merah setelah pengguna memburamkannya).
 
-Lihat [contoh lengkapnya di sini](../../examples/forms.amp.html) tentang cara menggunakannya.
+Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) tentang cara menggunakannya.
 
 [tip type="success"]
 Kunjungi [AMP Start](https://ampstart.com/components#form-elements) untuk melihat elemen formulir AMP responsif dan telah ditata gayanya yang dapat Anda gunakan di halaman AMP.
@@ -608,7 +683,7 @@ Kunjungi [AMP Start](https://ampstart.com/components#form-elements) untuk meliha
 
 # Melindungi dari serangan XSRF
 
-Selain mengikuti detail dalam [spesifikasi CORP AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html), harap perhatikan lebih lanjut bagian [“Memproses permintaan yang mengubah status”](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests) untuk melindungi dari [serangan XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) di mana penyerang dapat menjalankan perintah yang tidak sah menggunakan sesi pengguna aktif tanpa sepengetahuan mereka.
+Selain mengikuti detail dalam [spesifikasi CORP AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md), harap perhatikan lebih lanjut bagian [“Memproses permintaan yang mengubah status”](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests) untuk melindungi dari [serangan XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) di mana penyerang dapat menjalankan perintah yang tidak sah menggunakan sesi pengguna aktif tanpa sepengetahuan mereka.
 
 Secara umum, perhatikan hal-hal berikut ketika menerima input dari pengguna:
 

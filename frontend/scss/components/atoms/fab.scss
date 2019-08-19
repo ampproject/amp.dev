@@ -1,0 +1,65 @@
+/*
+
+#################
+### ATOM: fab ###
+#################
+
+### INFO:
+
+This is the play and close button for the example previews.
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+
+.#{atom('fab')} {
+  display: flex;
+  justify-content: center;
+  width: 56px;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 56px;
+  user-select: none;
+  cursor: pointer;
+  z-index: 14;
+  color: #fff;
+  background-color: #005AF0;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,.2),
+              0px 6px 10px 0px rgba(0,0,0,.14),
+              0px 1px 18px 0px rgba(0,0,0,.12);
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  pointer-events: auto;
+
+  &:active {
+    box-shadow: 0px 7px 8px -4px rgba(0,0,0,.2),
+                0px 12px 17px 2px rgba(0,0,0,.14),
+                0px 5px 22px 4px rgba(0,0,0,.12);
+  }
+
+  &-show { transform: scale(0); animation: expand .25s ease-in-out .25s both; }
+  &-hide { transform: scale(1); animation: collapse .25s ease-in-out both; }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  @keyframes collapse {
+    0% { transform: scale(1); }
+    100% { transform: scale(0); }
+  }
+
+  @keyframes expand {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+  }
+}

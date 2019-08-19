@@ -51,7 +51,7 @@ Menambahkan interaktivitas kustom dengan data binding dan ekspresi.
   </tr>
   <tr>
     <td class="col-fourty"><strong>Tutorial</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">Membuat halaman AMP yang interaktif</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">Membuat halaman AMP yang interaktif</a></td>
   </tr>
 </table>
 
@@ -178,7 +178,7 @@ Tindakan `refresh` didukung oleh komponen ini dan dapat digunakan untuk me-refre
 
 # Mengubah status dengan `AMP.setState()`
 
-Tindakan [`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) menggabungkan literal objek ke dalam status. Misalnya, saat tombol di bawah ditekan, `AMP.setState()` akan [menggabungkan secara mendalam](#deep-merge-with-ampsetstate) literal objek dengan status.
+Tindakan [`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) menggabungkan literal objek ke dalam status. Misalnya, saat tombol di bawah ditekan, `AMP.setState()` akan [menggabungkan secara mendalam](#deep-merge-with-ampsetstate) literal objek dengan status.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -198,7 +198,7 @@ Jika dipicu oleh peristiwa tertentu, `AMP.setState()` juga dapat mengakses data 
 
 # Mengubah histori dengan `AMP.pushState()`
 
-Tindakan [`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) mirip dengan `AMP.setState()` kecuali tindakan ini juga mendorong entri baru ke tumpukan histori browser. Memunculkan entri histori ini (misalnya dengan menavigasi mundur) akan memulihkan nilai variabel sebelumnya yang ditetapkan oleh `AMP.pushState()`.
+Tindakan [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) mirip dengan `AMP.setState()` kecuali tindakan ini juga mendorong entri baru ke tumpukan histori browser. Memunculkan entri histori ini (misalnya dengan menavigasi mundur) akan memulihkan nilai variabel sebelumnya yang ditetapkan oleh `AMP.pushState()`.
 
 Misalnya:
 ```html
@@ -221,7 +221,7 @@ Ekspresi mirip dengan JavaScript dengan beberapa perbedaan penting.
 * Indeks array melebihi batas dan variabel yang tidak ditentukan akan menampilkan `null`, bukan `undefined` atau memunculkan error.
 * Ekspresi tunggal saat ini dibatasi 50 operand untuk menjaga performa. Harap [hubungi kami](https://github.com/ampproject/amphtml/issues/new) jika alokasi ini tidak memadai untuk kasus penggunaan Anda.
 
-Implementasi dan tata bahasa lengkap ekspresi dapat dilihat di [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) dan [bind-expression.js](./0.1/bind-expression.js).
+Implementasi dan tata bahasa lengkap ekspresi dapat dilihat di [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) dan [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
 # Contoh
 
@@ -391,7 +391,7 @@ Ketika **status** berubah, ekspresi dievaluasi ulang dan properti elemen terikat
     <td>Harus berupa ekspresi boolean.</td>
   </tr>
   <tr>
-    <td>Ukuran <a href="https://www.ampproject.org/docs/reference/components">elemen AMP</a></td>
+    <td>Ukuran <a href="../../../documentation/components/index.md">elemen AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Mengubah lebar dan/atau tinggi elemen AMP.</td>
   </tr>
@@ -453,7 +453,7 @@ Hanya binding ke komponen dan atribut berikut yang diizinkan:
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td>Saat melakukan binding ke <code>[src]</code>, pastikan Anda juga melakukannya ke <code>[srcset]</code> agar binding berfungsi pada cache.<br>Lihat <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">atribut amp-img</a> yang terkait.</td>
+    <td>Saat melakukan binding ke <code>[src]</code>, pastikan Anda juga melakukannya ke <code>[srcset]</code> agar binding berfungsi pada cache.<br>Lihat <a href="amp-img.md#attributes">atribut amp-img</a> yang terkait.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -482,7 +482,7 @@ Hanya binding ke komponen dan atribut berikut yang diizinkan:
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>Melihat <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">atribut amp-video</a> yang terkait.</td>
+    <td>Melihat <a href="amp-video.md#attributes">atribut amp-video</a> yang terkait.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -656,7 +656,7 @@ AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat me
     <td width="40%"><strong>src</strong></td>
     <td>URL endpoint jarak jauh yang akan menampilkan JSON yang akan mengubah <code>amp-state</code>. Harus berupa layanan HTTP CORS.
         Atribut <code>src</code> memungkinkan semua substitusi variabel URL standar. Lihat <a href="../../spec/amp-var-substitutions.md">Panduan Substitusi</a> untuk informasi selengkapnya.
-        [tip type="caution"] Endpoint harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">permintaan CORS di AMP</a>.
+        [tip type="caution"] Endpoint harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">permintaan CORS di AMP</a>.
         [/tip]</td>
     </tr>
     <tr>
@@ -666,7 +666,7 @@ AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat me
           <li>Nilai yang didukung: `omit`, `include`</li>
           <li>Default: `omit`</li>
         </ul>
-        Untuk mengirim kredensial, teruskan nilai <code>include</code>. Jika nilai ini ditetapkan, respons harus mengikuti <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">panduan keamanan CORS AMP</a>.</td>
+        Untuk mengirim kredensial, teruskan nilai <code>include</code>. Jika nilai ini ditetapkan, respons harus mengikuti <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">panduan keamanan CORS AMP</a>.</td>
       </tr>
     </table>
 

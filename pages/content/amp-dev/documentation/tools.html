@@ -57,10 +57,10 @@ tools: !g.yaml /shared/data/tools.yaml
 
 <section class="ap--tools">
 
-<amp-state id="filter">
+<amp-state id="activeFilter">
   <script type="application/json">
     {
-      "format": "none"
+      "chosenFilter": "none"
     }
   </script>
 </amp-state>
@@ -75,11 +75,7 @@ tools: !g.yaml /shared/data/tools.yaml
   <section class="ap-o-tool-section ap--container">
     <div class="ap-o-tool-section-title">
       {% for tool in doc.tools[category] %}
-      [% if format not in {{ tool.formats|tojson }} and not forceFiltered %]
-      <span hidden class="hide" [class]="filter.format == 'none' || filter.format != 'none' && {{ tool.formats }}.includes(filter.format) ? 'show' : 'hide'"></span>
-      [% else %]
-      <span hidden class="show" [class]="filter.format == 'none' || filter.format != 'none' && {{ tool.formats }}.includes(filter.format) ? 'show' : 'hide'"></span>
-      [% endif %]
+      <span hidden class="show" [class]="activeFilter.chosenFilter == 'none' || activeFilter.chosenFilter != 'none' && {{ tool.formats }}.includes(activeFilter.chosenFilter) ? 'show' : 'hide'"></span>
       {% endfor %}
 
       <h2 id="{{ category }}">

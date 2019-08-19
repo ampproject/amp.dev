@@ -23,7 +23,7 @@ sosyal katılım verilerini başka bir URL›ye gönderebilirsiniz.
 AMP analitikleri bir kez ölçüm yapacak ve birden fazla yere bildirecek verecek şekilde özel olarak tasarlanmıştır.
 Halihazırda bir ya da daha fazla analitik satıcı ile çalışıyorsanız,
 çözümlerinin AMP ile entegreli olup olmadığını görmek için
-[amp-analitik spesifikasyonu]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+[amp-analitik spesifikasyonu](../../../../documentation/components/reference/amp-analytics.md)
 bölümüne göz atın.
 Entegreli ise, spesifikasyon bölümünden belgelerine gidip
 aşağıdaki talimatları takip etmeye başlayabilirsiniz.
@@ -43,7 +43,7 @@ Yapılandırmadan önce bu verileri tanımlamanız gerekmektedir.
 Dikkate alınması gereken ana veri noktaları:
 
 * Yalnızca sayfa görünümlerini mi, yoksa ek kullanıcı katılım desenlerini mi izleyeceksiniz
-(ayrıca bkz. [amp-piksel ya da amp-analitik]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#amp-piksel-veya-amp-analitik-kullanıyor-musunuz?))?
+(ayrıca bkz. [amp-piksel ya da amp-analitik](analytics_basics.md#amp-piksel-veya-amp-analitik-kullanıyor-musunuz?))?
 * Kullanıcılarınız, içeriğiniz,
-cihazınız veya tarayıcınız hakkında ne tür veriler toplayacaksınız (ayrıca bkz. [Değişken değiştirme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#değişken-değiştirme))?
-* Kullanıcılarınızı nasıl tanımlayacaksınız (ayrıca bkz. [Kullanıcı tanımlama]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#kullanıcı-tanımlama))?
+cihazınız veya tarayıcınız hakkında ne tür veriler toplayacaksınız (ayrıca bkz. [Değişken değiştirme](analytics_basics.md#değişken-değiştirme))?
+* Kullanıcılarınızı nasıl tanımlayacaksınız (ayrıca bkz. [Kullanıcı tanımlama](analytics_basics.md#kullanıcı-tanımlama))?

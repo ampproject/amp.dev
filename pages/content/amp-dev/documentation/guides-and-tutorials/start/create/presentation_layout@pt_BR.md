@@ -19,10 +19,10 @@ AMPs são páginas da Web; qualquer estilo adicionado à página e a seus elemen
 </style>
 [/sourcecode]
 
-Cada página AMP pode ter apenas uma folha de estilo incorporada e há certos seletores que você não tem permissão para usar. [Saiba tudo sobre estilos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
+Cada página AMP pode ter apenas uma folha de estilo incorporada e há certos seletores que você não tem permissão para usar. [Saiba tudo sobre estilos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
 ## Controlar o layout
 
 O AMP segue regras mais restritas para o layout dos elementos na página. Em uma página HTML normal, você usa CSS quase que exclusivamente para criar o layout. No entanto, por razões de desempenho, o AMP exige que todos os elementos tenham um conjunto de tamanhos explícito desde o início.
 
-Saiba mais sobre como o AMP renderiza e faz o layout de uma página e como você pode modificá-lo em [Como controlar o layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+Saiba mais sobre como o AMP renderiza e faz o layout de uma página e como você pode modificá-lo em [Como controlar o layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).

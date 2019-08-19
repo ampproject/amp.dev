@@ -15,7 +15,7 @@ Si buscas el botón en el código de la página, puedes ver que tiene el siguien
 </span>
 [/sourcecode]
 
-El comportamiento de los atributos relacionados con el componente [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) depende de cómo se haya configurado dicho componente a nivel de página. En este caso, se trata de la siguiente configuración:
+El comportamiento de los atributos relacionados con el componente [`amp-access`](../../../../documentation/components/reference/amp-access.md) depende de cómo se haya configurado dicho componente a nivel de página. En este caso, se trata de la siguiente configuración:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -65,4 +65,4 @@ A grandes rasgos, las funciones de ambos elementos son las siguientes:
 - El tiempo de ejecución de AMP cierra la página de inicio de sesión y redirige a los usuarios a la página que se haya especificado en el parámetro "returnURL".
 - El servidor debe organizar la respuesta cuando el usuario haga clic en el botón para iniciar sesión.
 
-Consejo: Para obtener una explicación más detallada sobre este tema, consulta la [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
+Consejo: Para obtener una explicación más detallada sobre este tema, consulta la [`amp-access`](../../../../documentation/components/reference/amp-access.md).

@@ -8,8 +8,8 @@ AMP 스토리의 기본 구성요소는 개별 **페이지**입니다. 이러한
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-이러한 각 구성요소는 AMP 구성요소로 변환되며, 여기서 스토리는 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})로, 페이지는 `amp-story-page`로, 그리고 레이어는 `amp-story-grid-layer`로 표시됩니다.
+이러한 각 구성요소는 AMP 구성요소로 변환되며, 여기서 스토리는 [`amp-story`](../../../../documentation/components/reference/amp-story.md)로, 페이지는 `amp-story-page`로, 그리고 레이어는 `amp-story-grid-layer`로 표시됩니다.
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 컨테이너를 사용하여 스토리를 만들어 보겠습니다.
+[`amp-story`](../../../../documentation/components/reference/amp-story.md) 컨테이너를 사용하여 스토리를 만들어 보겠습니다.

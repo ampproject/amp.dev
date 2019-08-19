@@ -35,7 +35,7 @@ teaser:
     <td>Sayfa görüntülemelerini saymak için tipik bir izleme pikseli olarak kullanılabilir.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
     <td>fixed, nodisplay</td>
   </tr>
   <tr>
@@ -82,12 +82,12 @@ Bunun, URL içindeki makroların GENİŞLETİLMEYECEĞİ anlamına gelir. Bu ned
 
 ##### common attributes
 
-Bu öğe, genişletilmiş [ortak özellikleri](https://www.ampproject.org/docs/reference/common_attributes) AMP bileşenlerine ekler.
+Bu öğe, genişletilmiş [ortak özellikleri](../../../documentation/guides-and-tutorials/learn/common_attributes.md) AMP bileşenlerine ekler.
 
 ## Değişiklikler
 
 `amp-pixel`, tüm standart URL değişkeni değişikliklerine izin verir.
-Daha fazla bilgi için [Değişiklik Kılavuzu](../spec/amp-var-substitutions.md) dokümanına bakın.
+Daha fazla bilgi için [Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) dokümanına bakın.
 
 Aşağıdaki örnekte, `https://foo.com/pixel?0.8390278471201` gibi bir istekte bulunabilir. Burada, RANDOM değeri, her gösterimden sonra rastgele oluşturulur.
 

@@ -44,7 +44,7 @@ Ce composant injecte des annonces de manière dynamique dans une page AMP en uti
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">
             Mises en page compatibles
           </a>
         </strong>
@@ -76,8 +76,8 @@ Le type de réseau publicitaire et toutes les informations supplémentaires (req
 
 ## Réseaux publicitaires compatibles
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick (expérimental)](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (expérimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Attributs
 
@@ -92,7 +92,7 @@ Le type de réseau publicitaire et toutes les informations supplémentaires (req
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Cet élément comprend des <a href="https://www.ampproject.org/docs/reference/common_attributes">attributs communs</a> étendus aux composants AMP.</td>
+    <td>Cet élément comprend des <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">attributs communs</a> étendus aux composants AMP.</td>
   </tr>
 </table>
 

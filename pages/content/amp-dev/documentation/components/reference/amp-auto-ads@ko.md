@@ -43,7 +43,7 @@ limitations under the License.
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">
             지원되는 레이아웃
           </a>
         </strong>
@@ -74,8 +74,8 @@ limitations under the License.
 
 ## 지원되는 광고 네트워크
 
-* [애드센스](../../ads/google/adsense.md)
-* [DoubleClick (experimental)](../../ads/google/doubleclick.md)
+* [애드센스](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 속성
 
@@ -90,7 +90,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>공통 속성</strong></td>
-    <td>이 요소에는 AMP 구성요소로 확장된 <a href="https://www.ampproject.org/docs/reference/common_attributes">공통 속성</a>이 포함되어 있습니다.</td>
+    <td>이 요소에는 AMP 구성요소로 확장된 <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">공통 속성</a>이 포함되어 있습니다.</td>
   </tr>
 </table>
 

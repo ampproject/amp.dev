@@ -4,11 +4,11 @@ $title: Imagens responsivas com os atributos "srcset", "sizes" e "heights"
 
 ## srcset
 
- Use o atributo `srcset` para controlar os recursos de um elemento com base em várias expressões de mídia. Use esse atributo principalmente para todas as tags [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) a fim de especificar quais recursos de imagem usar com base nos vários tamanhos de tela.
+ Use o atributo `srcset` para controlar os recursos de um elemento com base em várias expressões de mídia. Use esse atributo principalmente para todas as tags [`amp-img`](../../../../documentation/components/reference/amp-img.md) a fim de especificar quais recursos de imagem usar com base nos vários tamanhos de tela.
 
 Neste exemplo simples, o `srcset` especifica qual imagem usar com base na largura da tela. O descritor `w` informa ao navegador a largura de cada imagem na lista:
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -31,7 +31,7 @@ Também é possível usar o atributo `sizes` junto com o `srcset`. O atributo `s
 
 Veja o seguinte exemplo:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -61,7 +61,7 @@ Quando o atributo `heights` for especificado juntamente com `width` e `height`, 
 
 Exemplo:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

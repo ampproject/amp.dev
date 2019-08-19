@@ -35,7 +35,7 @@ Un carosello generico per mostrare più contenuti simili lungo un asse orizzonta
     <td><code>&lt;script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>
     <td>
       <ul>
         <li>carosello: fixed, fixed-height e nodisplay.</li>
@@ -59,14 +59,22 @@ Il carosello è composto da un numero arbitrario di elementi e da frecce di navi
 
 Il carosello passa da un elemento all'altro se l'utente scorre, utilizza le frecce di navigazione o fa clic su una freccia di navigazione facoltativa.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="313" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel width="450"
+  height="300">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]
 
 # Passare a una diapositiva specifica
 
@@ -74,14 +82,51 @@ Se imposti un metodo per l'attributo `on` di un elemento su `tap:carousel-id.goT
 
 Nel seguente esempio, viene mostrato un carosello di tre immagini con in basso dei pulsanti di anteprima. Quando un utente fa clic su uno dei pulsanti, viene visualizzato l'elemento del carosello corrispondente.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="878" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.advance-slide.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel id="carousel-with-preview"
+    width="450"
+    height="300"
+    layout="responsive"
+    type="slides">
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="apples"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="lemons"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="blueberries"></amp-img>
+  </amp-carousel>
+  <div class="carousel-preview">
+    <button on="tap:carousel-with-preview.goToSlide(index=0)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+        width="60"
+        height="40"
+        alt="apples"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=1)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+        width="60"
+        height="40"
+        alt="lemons"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=2)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+        width="60"
+        height="40"
+        alt="blueberries"></amp-img>
+    </button>
+  </div>
+```
+[/example]
 
 # Attributi
 
@@ -140,17 +185,34 @@ Nel seguente esempio, viene mostrato un carosello di tre immagini con in basso d
           <td width="40%"><strong>loop (facoltativo)</strong></td>
           <td>Consente all'utente di avanzare oltre il primo o l'ultimo elemento. Affinché avvenga la ripetizione, devono essere presenti almeno 3 diapositive. L'attributo <code>loop</code> si applica solo ai caroselli con <code>type=slides</code>.
             <em>Esempio: mostra un carosello di diapositive con controlli, ripetizione e riproduzione automatica ritardata.</em>
-            <!--embedded example - displays in ampproject.org -->
-            <div>
-              <amp-iframe height="446" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.controls.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-                <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-                <div placeholder=""></div>
-              </amp-iframe>
-            </div></td>
+
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel type="slides"
+  width="450"
+  height="300"
+  controls
+  loop
+  {% if not format=='email'%}  autoplay
+  delay="3000"{% endif %}
+  data-next-button-aria-label="Go to next slide"
+  data-previous-button-aria-label="Go to previous slide">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]</td>
           </tr>
           <tr>
             <td width="40%"><strong>common attributes</strong></td>
-            <td>Questo elemento include <a href="https://www.ampproject.org/docs/reference/common_attributes">attributi comuni</a> estesi ai componenti AMP.</td>
+            <td>Questo elemento include <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">attributi comuni</a> estesi ai componenti AMP.</td>
           </tr>
         </table>
 

@@ -6,7 +6,7 @@ $title: 恭喜！
 
 在本教程中，您学会了：
 
-- 使用 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 组件创建一个多页故事
+- 使用 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 组件创建一个多页故事
 - 在同一网页中创建包含多个图层的视觉效果
 - 使用图层模板在网页中布置元素
 - 添加会在用户浏览网页时播放的音频
@@ -17,12 +17,12 @@ $title: 恭喜！
 
 通过以下资源了解有关 AMP 故事的更多信息：
 
-- [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})
-- [AMP 故事最佳做法]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}})
+- [`amp-story`](../../../../documentation/components/reference/amp-story.md)
+- [AMP 故事最佳做法](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 [tip type="note"]
 
-[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 组件是**实验性**组件。若想报名参加试用活动，以便使用此组件的原始试用版发布网页，请访问 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>。
+[`amp-story`](../../../../documentation/components/reference/amp-story.md) 组件是**实验性**组件。若想报名参加试用活动，以便使用此组件的原始试用版发布网页，请访问 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>。
 
 [/tip]
 

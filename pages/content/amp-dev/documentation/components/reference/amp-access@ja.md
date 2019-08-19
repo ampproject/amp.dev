@@ -50,7 +50,7 @@ limitations under the License.
 
 ## `amp-subscriptions` との関係
 
-[`amp-subscriptions`](../amp-subscriptions/amp-subscriptions.md) 拡張機能は `amp-access` と同様の機能を備えています。ただしこの拡張機能は、特殊用途向けのアクセス ペイウォール プロトコルをサポートしています。この 2 つのコンポーネントの主な違いを以下に示します。
+[`amp-subscriptions`](amp-subscriptions.md) 拡張機能は `amp-access` と同様の機能を備えています。ただしこの拡張機能は、特殊用途向けのアクセス ペイウォール プロトコルをサポートしています。この 2 つのコンポーネントの主な違いを以下に示します。
 
 1. `amp-subscriptions` の利用資格の応答は amp-access の承認に似ていますが、厳密に定義および標準化されています。
 1. `amp-subscriptions` 拡張機能を使用すると、ページに複数のサービスを設定して、アクセスやペイウォールに関する意思決定に参加することができます。これらのサービスは同時に実行され、どのサービスが肯定的な応答を返すかに応じて優先順位付けされます。
@@ -496,11 +496,11 @@ AMP では、ログインとサブスクリプションを区別しません。�
 
 ## amp-analytics** との統合
 
-amp-analytics** との統合は、[amp-access-analytics.md](./amp-access-analytics.md) に記載されています。
+amp-analytics** との統合は、[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) に記載されています。
 
 ## CORS のオリジンのセキュリティ
 
-承認エンドポイントと Pingback エンドポイントは CORS エンドポイントであり、[AMP CORS のセキュリティ仕様](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp)で説明されているセキュリティ プロトコルを実装する必要があります。
+承認エンドポイントと Pingback エンドポイントは CORS エンドポイントであり、[AMP CORS のセキュリティ仕様](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)で説明されているセキュリティ プロトコルを実装する必要があります。
 
 ## メータリング
 
@@ -563,7 +563,7 @@ AMP では、ファーストパーティのウィンドウ、ポップアップ�
 
 ## 付録 A: 「amp-access」の式の文法
 
-最新の BNF の文法は [access-expr-impl.jison](./0.1/access-expr-impl.jison) ファイルで確認できます。
+最新の BNF の文法は [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) ファイルで確認できます。
 
 この文法の一部を以下に示します。
 

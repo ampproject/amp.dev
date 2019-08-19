@@ -42,7 +42,7 @@ Ce composant remplace la balise `video` HTML5 ; il ne doit être utilisé que p
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">Superposition click-to-play pour amp-video</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Mises en page compatibles</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Mises en page compatibles</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -60,15 +60,23 @@ Le composant `amp-video` accepte jusqu'à quatre types de nœuds HTML uniques en
 
 #### Exemple
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="293" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Plus" overflow="" tabindex="0" role="button">Afficher l'intégralité du code</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  layout="responsive"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.webm"
+    type="video/webm" />
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+    type="video/mp4" />
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## Analyse
 
@@ -102,7 +110,7 @@ Le composant `amp-video` est directement compatible avec la technologie d'analys
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong>Nécessite l'extension <code>amp-video-docking</code>.</strong> Si cet attribut est utilisé et que la vidéo est lue manuellement, cette dernière est" "réduite" et ancrée à un coin ou à un élément de la page lorsque l'utilisateur fait défiler la page au-delà la zone visuelle du composant vidéo.
-            Pour en savoir plus, consultez la <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">documentation relative à l'extension d'ancrage</a>.</td>
+            Pour en savoir plus, consultez la <a href="amp-video-docking.md">documentation relative à l'extension d'ancrage</a>.</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>
@@ -130,7 +138,7 @@ Le composant `amp-video` est directement compatible avec la technologie d'analys
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
-          <td>Cet élément inclut des <a href="https://www.ampproject.org/docs/reference/common_attributes">attributs communs</a> étendus aux composants AMP.</td>
+          <td>Cet élément inclut des <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">attributs communs</a> étendus aux composants AMP.</td>
         </tr>
       </table>
 

@@ -4,13 +4,13 @@ $order: 3
 description: 'Similar to the login button, the presence of the logout button is conditionally dependent on the state of the amp-access component ...'
 ---
 
-Similar to the login button, the presence of the logout button is conditionally dependent on the state of the [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) component:
+Similar to the login button, the presence of the logout button is conditionally dependent on the state of the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component:
 
 [sourcecode:html]
 <button amp-access="loggedIn" amp-access-hide tabindex="0" on="tap:amp-access.login-sign-out" class="button-primary comment-button">Logout</button>
 [/sourcecode]
 
-When you click the Logout button, you are directed to the URL that you specified in the [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) JSON configuration, as part of the login object:
+When you click the Logout button, you are directed to the URL that you specified in the [`amp-access`](../../../../documentation/components/reference/amp-access.md) JSON configuration, as part of the login object:
 
 [sourcecode:json]
 {

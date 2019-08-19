@@ -14,7 +14,7 @@ $title: إنشاء صفحات AMP تفاعلية
 يمكنك إنشاء صور تفاعلية
 عن طريق تحديد العرض والارتفاع،
 وتعيين التنسيق ليكون تفاعليًا،
-واستخدام [`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) لتوضيح
+واستخدام [`srcset`](style_pages.md) لتوضيح
 مادة عرض الصور المُراد استخدامها بناءً على أحجام الشاشة المتنوعة:
 
 [sourcecode:html]
@@ -29,14 +29,14 @@ $title: إنشاء صفحات AMP تفاعلية
 </amp-img>
 [/sourcecode]
 
-يتلاءم هذا العنصر [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) بشكل تلقائي مع عرض
+يتلاءم هذا العنصر [`amp-img`](../../../../documentation/components/reference/amp-img.md) بشكل تلقائي مع عرض
 عنصر الحاوية المتعلق به،
 ويتم ضبط ارتفاعه تلقائيًا على نسبة العرض إلى الارتفاع
 المُحددة من خلال العرض والارتفاع المحددين:
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857"></amp-img>
 
-راجع أيضًا [AMP بحسب علامة `amp-img` للنموذج]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+راجع أيضًا [AMP بحسب علامة `amp-img` للنموذج](../../../../documentation/components/reference/amp-img.md).
 
 ## إضافة أنماط إلى إحدى الصفحات
 
@@ -93,7 +93,7 @@ $title: إنشاء صفحات AMP تفاعلية
 **مهم:**
 تحقق من توافق أنماطك في AMP؛
 فبعض الأنماط غير متوافقة لأسباب تتعلق بالأداء
-(راجع أيضًا [CSS المتوافقة]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+(راجع أيضًا [CSS المتوافقة](style_pages.md)).
 
 ## عناصر الحجم والموضع
 
@@ -109,7 +109,7 @@ $title: إنشاء صفحات AMP تفاعلية
 ويؤدي هذا إلى تغيير حجم العنصر ليلائم عرض عنصر الحاوية الخاص به
 كما يغيّر حجم ارتفاعه تلقائيًا ليلائم نسبة العرض إلى الارتفاع المحددة من خلال سمتي العرض والارتفاع.
 
-تعرّف على المزيد حول [التنسيقات المتوافقة في AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+تعرّف على المزيد حول [التنسيقات المتوافقة في AMP](control_layout.md).
 
 ## التحقق من صحة الأنماط والتنسيق
 
@@ -119,11 +119,11 @@ $title: إنشاء صفحات AMP تفاعلية
 تعمل أداة التحقق من الصحة على التأكد من عدم تجاوز لغة CSS للصفحة حد 50000 بايت،
 وتتحقق من الأنماط الغير مسموح بها، كما تتأكد من توافق
 تنسيق الصفحة وصحته.
-راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+راجع أيضًا هذه القائمة الكاملة من [أخطاء الأنماط والتنسيقات](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md).
 
 نموذج لخطأ في وحدة التحكم لصفحة بها لغة CSS تتجاوز حد 50000 بايت:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 
-تعرّف على المزيد من المعلومات حول كيفية [التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}})،
+تعرّف على المزيد من المعلومات حول كيفية [التحقق من صحة صفحات AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)،
 بما في ذلك كيفية تتبع أخطاء الأنماط وإصلاحها.

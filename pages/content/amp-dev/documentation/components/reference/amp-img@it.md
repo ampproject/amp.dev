@@ -33,7 +33,7 @@ limitations under the License.
     <td>Una sostituzione gestita dal runtime per il tag HTML <code>img</code>.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layout supportati</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layout supportati</a></strong></td>
     <td>riempimento, fisso, altezza fissa, flex-item, intrinseco, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,36 +50,48 @@ Il runtime può decidere di ritardare o dare priorità al caricamento delle riso
 I componenti `amp-img`, come tutte le risorse AMP recuperate dall'esterno, devono già avere una dimensione esplicita (come `width`/`height`), in modo che le proporzioni possano essere riconosciute senza dover recuperare l'immagine. L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
 
 [tip type="read-on"]
-Ulteriori informazioni sui layout nelle specifiche [Sistema layout AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) e in [Layout supportati](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Ulteriori informazioni sui layout nelle specifiche [Sistema layout AMP HTML](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) e in [Layout supportati](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 [/tip]
 
 # Esempio: visualizzazione di un'immagine responsive
 
 Nel seguente esempio viene mostrata un'immagine che si adatta alle dimensioni dell'area visibile con le impostazioni `layout=responsive`.  L'immagine si allarga e si restringe in base alle proporzioni specificate da `width` e `height`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
-Ulteriori informazioni sulle pagine AMP nella guida [Creazione di pagine AMP responsive](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+Ulteriori informazioni sulle pagine AMP nella guida [Creazione di pagine AMP responsive](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
 [/tip]
 
-Se la risorsa richiesta dal componente `amp-img` non viene caricata, lo spazio sarà vuoto a meno che non venga fornito un [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback) secondario. La procedura di riserva viene eseguita solo sul layout iniziale; le successive modifiche src (ad esempio, tramite un ridimensionamento + srcset) non avranno una procedura di riserva a causa delle conseguenze che avrebbero sulle prestazioni.
+Se la risorsa richiesta dal componente `amp-img` non viene caricata, lo spazio sarà vuoto a meno che non venga fornito un [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) secondario. La procedura di riserva viene eseguita solo sul layout iniziale; le successive modifiche src (ad esempio, tramite un ridimensionamento + srcset) non avranno una procedura di riserva a causa delle conseguenze che avrebbero sulle prestazioni.
 
 # Esempio: specificare un'immagine di riserva
 
 Nel seguente esempio, se il browser non supporta WebP verrà visualizzata l'immagine JPG di riserva:
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Utilizzando il selettore CSS e lo stile sull'elemento stesso, possono essere impostati un colore di sfondo segnaposto o un altro elemento visivo.
 
@@ -88,8 +100,8 @@ Utilizzando il selettore CSS e lo stile sull'elemento stesso, possono essere imp
 [tip type="read-on"]
 Ulteriori informazioni sull'utilizzo di `amp-img` nelle seguenti risorse:
 
-* [Segnaposto e procedura di riserva](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Includi immagini e video](https://www.ampproject.org/docs/media/amp_replacements)
+* [Segnaposto e procedura di riserva](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+* [Includi immagini e video](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 [/tip]
 
 # Attributi
@@ -107,7 +119,7 @@ Questo attributo è simile all'attributo `src` nel tag `img`. Il valore deve ess
 È uguale all'attributo `sizes` nel tag `img`.
 
 [tip type="read-on"]
-Consulta [Immagini responsive con srcset, dimensioni e altezze](https://www.ampproject.org/docs/design/responsive/art_direction) per ulteriori informazioni sull'utilizzo di `sizes` e `srcset`.
+Consulta [Immagini responsive con srcset, dimensioni e altezze](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md) per ulteriori informazioni sull'utilizzo di `sizes` e `srcset`.
 [/tip]
 
 **alt**
@@ -124,7 +136,7 @@ Una dimensione esplicita dell'immagine, che viene utilizzata dal runtime AMP per
 
 **attributi comuni**
 
-Questo elemento include gli [attributi comuni](https://www.ampproject.org/docs/reference/common_attributes) estesi ai componenti AMP.
+Questo elemento include gli [attributi comuni](../../../documentation/guides-and-tutorials/learn/common_attributes.md) estesi ai componenti AMP.
 
 # Stili
 
@@ -157,7 +169,7 @@ Se vuoi che l'immagine venga visualizzata con una dimensione fissa procedi nel s
 1. Specifica `width` e `height`.
 
 [tip type="read-on"]
-Ulteriori informazioni sul [layout dedotto](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) quando non viene specificato l'attributo `layout`.
+Ulteriori informazioni sul [layout dedotto](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?) quando non viene specificato l'attributo `layout`.
 [/tip]
 
 # Impostazione delle proporzioni
@@ -166,24 +178,28 @@ Per le immagini responsive, `width` e `height` non devono necessariamente corris
 
 Ad esempio, invece di specificare `width="900"` e `height="675"`, puoi specificare `width="1.33"` e `height="1"`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Espandi" overflow="" tabindex="0" role="button">Mostra il codice completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # Impostazione di più file di origine per diverse risoluzioni dello schermo
 
 L'attributo [`srcset`](#attributes) deve essere utilizzato per fornire risoluzioni diverse della stessa immagine, in modo che tutte abbiano le stesse proporzioni. Il browser sceglierà automaticamente il file più appropriato da `srcset` in base alla risoluzione dello schermo e alla larghezza del dispositivo dell'utente.
 
-Al contrario, l'attributo [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) mostra o nasconde i componenti AMP e deve essere utilizzato durante la progettazione di layout responsive. Il modo corretto per visualizzare immagini con proporzioni diverse è utilizzare più componenti `<amp-img>`, ciascuno con un attributo `media` corrispondente alle larghezze degli schermi su cui mostrare ogni istanza.
+Al contrario, l'attributo [`media`](../../../documentation/guides-and-tutorials/learn/common_attributes.md#media) mostra o nasconde i componenti AMP e deve essere utilizzato durante la progettazione di layout responsive. Il modo corretto per visualizzare immagini con proporzioni diverse è utilizzare più componenti `<amp-img>`, ciascuno con un attributo `media` corrispondente alle larghezze degli schermi su cui mostrare ogni istanza.
 
-Per ulteriori dettagli, consulta la guida sulla [creazione di pagine AMP responsive](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images).
+Per ulteriori dettagli, consulta la guida sulla [creazione di pagine AMP responsive](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images).
 
 # Mantenimento delle proporzioni per le immagini con dimensioni sconosciute
 
-Il sistema di layout AMP richiede le proporzioni di un'immagine prima di recuperare l'immagine; tuttavia, in alcuni casi potresti non conoscere le dimensioni dell'immagine. Per visualizzare immagini con dimensioni sconosciute e mantenere le proporzioni, combina il layout [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) di AMP con la proprietà CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Per ulteriori informazioni, consulta [Come supportare immagini con dimensioni sconosciute](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) di AMP By Example.
+Il sistema di layout AMP richiede le proporzioni di un'immagine prima di recuperare l'immagine; tuttavia, in alcuni casi potresti non conoscere le dimensioni dell'immagine. Per visualizzare immagini con dimensioni sconosciute e mantenere le proporzioni, combina il layout [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) di AMP con la proprietà CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Per ulteriori informazioni, consulta [Come supportare immagini con dimensioni sconosciute](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) di AMP By Example.
 
 # Convalida
 
