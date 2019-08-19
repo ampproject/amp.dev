@@ -33,7 +33,6 @@ highlighted_components:
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
-{% include 'views/partials/component-sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-component-overview">
   <div class="ap--container">
@@ -160,4 +159,5 @@ highlighted_components:
     </section>
   </div>
 </main>
+{% include 'views/partials/component-sidebar.j2' %}
 {% endblock %}

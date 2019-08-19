@@ -163,7 +163,6 @@ recent_examples:
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
 {% block main %}
-{% include 'views/partials/example-sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-component-overview">
   <div class="ap--container">
@@ -283,4 +282,5 @@ recent_examples:
     </section>
   </div>
 </main>
+{% include 'views/partials/example-sidebar.j2' %}
 {% endblock %}
