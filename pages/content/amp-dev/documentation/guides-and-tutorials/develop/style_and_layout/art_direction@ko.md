@@ -6,13 +6,13 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 
 여러 미디어 표현식을 기준으로 요소의 에셋을 제어하기 위해 `srcset` 속성을 사용할 수 있습니다.
 특히 다양한 스크린 사이즈별 이미지 에셋을 정의하기 위해,
-모든 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 태그에서 사용합니다.
+모든 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 태그에서 사용합니다.
 
 다음 간단한 예제에서,
 `srcset`은 화면 너비(screen width)를 기준으로 image를 정의합니다.
 `w` 설명자는 브라우저에서 리스트 내 각 이미지의 width를 말해줍니다.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -38,7 +38,7 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 
 아래 예제를 참고하길 바랍니다:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -77,7 +77,7 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 
 예:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

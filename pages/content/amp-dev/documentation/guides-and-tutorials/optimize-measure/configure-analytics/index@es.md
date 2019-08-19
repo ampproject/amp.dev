@@ -22,7 +22,7 @@ y datos de interacciones de usuarios a otra.
 
 La analítica de AMP está especialmente diseñada para medir los datos una sola vez, pero puede enviarlos a muchas partes interesadas.
 Si ya trabajas con uno o varios proveedores de servicios de analítica,
-echa un vistazo a la lista de [proveedores]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) para ver si han integrado sus herramientas con AMP.
+echa un vistazo a la lista de [proveedores](analytics-vendors.md) para ver si han integrado sus herramientas con AMP.
 Si es así, consulta la información de configuración y sigue las instrucciones pertinentes.
 
 En el caso de que no lo hayan hecho,
@@ -40,11 +40,11 @@ Para hacer la configuración necesaria, primero tienes que identificar estos dat
 Puntos clave que hay que tener en cuenta:
 
 * ¿Registrarás solo las páginas vistas o tienes pensado supervisar más patrones de interacción?
-Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#use-amp-pixel-or-amp-analytics?).
+Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics?).
 * ¿Qué tipos de datos quieres capturar de tus usuarios? ¿El contenido,
-el dispositivo o el navegador? Consulta información sobre la [sustitución de variables]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
-* ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+el dispositivo o el navegador? Consulta información sobre la [sustitución de variables](analytics_basics.md).
+* ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios](analytics_basics.md).
 
 [tip type="read-on"]
-Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos](analytics_basics.md).
 [/tip]

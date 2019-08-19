@@ -1,14 +1,7 @@
 import re
 
 from amp_component_versions import get_component, get_components
-
-PREVIEW_INLINE = 'inline'
-PREVIEW_NONE = 'none'
-
-PREVIEW_MODES = [
-  PREVIEW_INLINE,
-  PREVIEW_NONE,
-]
+from constants import PREVIEW_MODES, PREVIEW_MODES_IN_IFRAME, PREVIEW_NONE, PREVIEW_INLINE
 
 
 class ExampleDocument(object):
@@ -42,7 +35,13 @@ class ExampleDocument(object):
       # no inline preview supported if head elements are present
       self.preview = PREVIEW_NONE
 
+    self.orientation = export_attributes.get('orientation', '')
+
     self.playground = 'playground' not in export_attributes or export_attributes['playground'].lower() != 'false'
+
+  @property
+  def has_iframe_preview(self):
+    return self.preview in PREVIEW_MODES_IN_IFRAME
 
   def has_amp_script(self):
     return self.has_tag_in_head('script', 'src', 'https://cdn\\.ampproject\\.org/v\\d+(?:\\.\\d+)*\\.js')

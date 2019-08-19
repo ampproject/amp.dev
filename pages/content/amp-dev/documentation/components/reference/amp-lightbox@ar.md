@@ -38,7 +38,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -65,7 +65,7 @@ teaser:
 ```
 
 [tip type="read-on"]
-يوجد أيضًا المكوِّن [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox) لعرض الصور في العرض المبسط.
+يوجد أيضًا المكوِّن [`<amp-image-lightbox>`](amp-image-lightbox.md) لعرض الصور في العرض المبسط.
 [/tip]
 
 ## السمات
@@ -108,7 +108,7 @@ teaser:
 
 ## الإجراءات
 
-يعرض `amp-lightbox` الإجراءات التالية التي يمكنك استخدام [بنية on في AMP لتشغيلها](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+يعرض `amp-lightbox` الإجراءات التالية التي يمكنك استخدام [بنية on في AMP لتشغيلها](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md):
 
 <table>
   <tr>
@@ -130,11 +130,11 @@ teaser:
 
 [tip type="note"]
 
-إن استخدام المكوِّن `amp-lightbox` في إعلانات AMPHTML [تجريبي](https://www.ampproject.org/docs/reference/experimental) وخاضع للتطوير المستمر. لاستخدام `amp-lightbox` في إعلانات AMPHTML، [فعِّل التجربة `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+إن استخدام المكوِّن `amp-lightbox` في إعلانات AMPHTML [تجريبي](../../../documentation/guides-and-tutorials/learn/experimental.md) وخاضع للتطوير المستمر. لاستخدام `amp-lightbox` في إعلانات AMPHTML، [فعِّل التجربة `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 
 [/tip]
 
-هناك بعض الاختلافات بين استخدام `amp-lightbox` في مستندات AMP العادية و[الإعلانات المكتوبة باللغة AMPHTML](../amp-a4a/amp-a4a-format.md):
+هناك بعض الاختلافات بين استخدام `amp-lightbox` في مستندات AMP العادية و[الإعلانات المكتوبة باللغة AMPHTML](../../../documentation/guides-and-tutorials/learn/a4a_spec.md):
 
 ### السمة close-button مطلوبة
 

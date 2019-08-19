@@ -16,7 +16,7 @@ $title: 制作自适应 AMP 网页
 
 要想优化网页以便内容能够自动缩放并适应任何设备的浏览器窗口，您需要指定 `meta` 视口元素。视口元素会指示浏览器如何缩放网页的可见区域（视口）以及如何调整其大小。
 
-不过，应该使用哪些值呢？对于这个问题，AMP 中已给出明确答案。您需要指定以下视口作为 AMP 网页[必需标记]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)的一部分：
+不过，应该使用哪些值呢？对于这个问题，AMP 中已给出明确答案。您需要指定以下视口作为 AMP 网页[必需标记](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup)的一部分：
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -36,7 +36,7 @@ $title: 制作自适应 AMP 网页
 
 在下面的示例中，我们希望在屏幕尺寸各异的设备上显示一张花卉图片（640 x 427 像素），因此我们指定了 `width` 和 `height`，并将布局设为 `responsive`。
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <div class="resp-img">
   <amp-img alt="flowers"
@@ -58,11 +58,11 @@ $title: 制作自适应 AMP 网页
 </style>
 ```
 
-继续阅读: 要详细了解 AMP 中的各种不同布局，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#layout-属性)指南。
+继续阅读: 要详细了解 AMP 中的各种不同布局，请参阅[布局和媒体查询](control_layout.md#layout-属性)指南。
 
 <a id="fn1"></a>
 [tip type="note"]
-***既然借助“width=100%”样式就能轻松地使元素根据屏幕尺寸进行调整，为什么还说这有些棘手呢？*** 我们所说的棘手之处是指：怎样才能让自适应元素在网页上按预期呈现，而不会对性能指标或用户体验产生不良影响。借助“width=100%”确实能轻松地使图片适应屏幕尺寸，但会导致出现性能问题。浏览器必须先下载图片以获取图片的尺寸信息，然后才能根据屏幕尺寸相应地调整图片大小，最后还需重排并重绘网页。在 AMP 中，呈现路径已经过优化，因此系统会先展开网页，根据 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 中提供的尺寸（使用这些数值确定宽高比）为图片预留占位符，然后下载资源并绘制（无需重排）网页。
+***既然借助“width=100%”样式就能轻松地使元素根据屏幕尺寸进行调整，为什么还说这有些棘手呢？*** 我们所说的棘手之处是指：怎样才能让自适应元素在网页上按预期呈现，而不会对性能指标或用户体验产生不良影响。借助“width=100%”确实能轻松地使图片适应屏幕尺寸，但会导致出现性能问题。浏览器必须先下载图片以获取图片的尺寸信息，然后才能根据屏幕尺寸相应地调整图片大小，最后还需重排并重绘网页。在 AMP 中，呈现路径已经过优化，因此系统会先展开网页，根据 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 中提供的尺寸（使用这些数值确定宽高比）为图片预留占位符，然后下载资源并绘制（无需重排）网页。
 [/tip]
 
 ## 为网页缩放媒体
@@ -75,9 +75,9 @@ $title: 制作自适应 AMP 网页
 
 ##### 示例：嵌入 YouTube 视频
 
-在下面的示例中，我们希望展示一个能够根据设备屏幕的尺寸和方向自行调整大小的 YouTube 视频。在为 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 元素添加 `"layout=responsive"` 之后，该视频就会自动调整大小以适应窗口尺寸，且其宽高比会保持不变（由所指定的 `width` 和 `height` 确定）。
+在下面的示例中，我们希望展示一个能够根据设备屏幕的尺寸和方向自行调整大小的 YouTube 视频。在为 [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 元素添加 `"layout=responsive"` 之后，该视频就会自动调整大小以适应窗口尺寸，且其宽高比会保持不变（由所指定的 `width` 和 `height` 确定）。
 
-[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+[example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -87,11 +87,11 @@ $title: 制作自适应 AMP 网页
 ```
 [/example]
 
-您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})列表。
+您可向 AMP 网页中添加很多类型的视频。有关详情，请参阅可用的[媒体组件](../../../../documentation/components/index.html)列表。
 
 ### 显示自适应图片
 
-图片会占据网页的很大一部分幅面（约占[网页字节数的 65%](http://httparchive.org/interesting.php#bytesperpage)）。最起码，您的图片在各种屏幕尺寸和方向上都应处于可见状态（即用户无需滚动屏幕或张合手指便可看到完整图片）。在 AMP 中，这可通过 `"layout=responsive"` 属性轻松实现（请参阅[在 AMP 中添加图片]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}})）。除了基本的自适应图片之外，您可能会想添加多种图片资源以便：
+图片会占据网页的很大一部分幅面（约占[网页字节数的 65%](http://httparchive.org/interesting.php#bytesperpage)）。最起码，您的图片在各种屏幕尺寸和方向上都应处于可见状态（即用户无需滚动屏幕或张合手指便可看到完整图片）。在 AMP 中，这可通过 `"layout=responsive"` 属性轻松实现（请参阅[在 AMP 中添加图片](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)）。除了基本的自适应图片之外，您可能会想添加多种图片资源以便：
 
 - [提供分辨率合适的清晰图片](#提供分辨率合适的清晰图片)
 - [更改图片的艺术设计](#更改图片的艺术设计)
@@ -111,7 +111,7 @@ $title: 制作自适应 AMP 网页
 - 在视口宽度不超过 900 像素的情况，以 75% 的视口宽度呈现图片。
 - 在视口宽度超过 900 像素的所有情况下，以 600 像素的宽度呈现图片。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
@@ -131,7 +131,7 @@ $title: 制作自适应 AMP 网页
 
 例如，假设我们的某部设备的视口宽度为 412 像素，DPR 为 2.6。根据上面的代码，图片必须以 75% 的视口宽度显示，因此浏览器会选择一张接近 803 像素 (412 * .75 * 2.6) 的图片，而 `apple-800.jpg` 正好符合条件。
 
-继续阅读: 要详细了解如何在 AMP 中使用 srcset 和 sizes，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})指南。
+继续阅读: 要详细了解如何在 AMP 中使用 srcset 和 sizes，请参阅[借助 srcset、sizes 和 heights 进行艺术设计](art_direction.md)指南。
 
 #### 更改图片的艺术设计
 
@@ -145,9 +145,9 @@ $title: 制作自适应 AMP 网页
 - 如果视口宽度为 470-669 像素，则显示 `cat-medium.jpg`（450 x 340 像素）
 - 如果视口宽度为 469 像素或以下，则显示 `cat-small.jpg`（226 x 340 像素）
 
-注意: 由于我们希望图片采用固定尺寸（即不倾斜），因此没有指定布局值；但由于我们设置了宽度和高度，因此布局值将默认设为 `layout=fixed`。有关详情，请参阅[“如果没有指定 layout 属性，会怎样？”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#如果未定义宽度和高度，会怎样？)。
+注意: 由于我们希望图片采用固定尺寸（即不倾斜），因此没有指定布局值；但由于我们设置了宽度和高度，因此布局值将默认设为 `layout=fixed`。有关详情，请参阅[“如果没有指定 layout 属性，会怎样？”](control_layout.md#如果未定义宽度和高度，会怎样？)。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="grey cat"
     media="(min-width: 670px)"
@@ -167,7 +167,7 @@ $title: 制作自适应 AMP 网页
 ```
 [/example]
 
-继续阅读: 要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})指南。
+继续阅读: 要详细了解 AMP 中的艺术设计，请参阅[借助 srcset、sizes 和 heights 进行艺术设计](art_direction.md)指南。
 
 #### 提供经过优化的图片
 
@@ -175,13 +175,13 @@ $title: 制作自适应 AMP 网页
 
 在 HTML 中，您可以使用 `picture` 标记来提供不同格式的图片。在 AMP 中，虽然 `picture` 标记不受支持，但您可以使用 `fallback` 属性来提供不同的图片。
 
-继续阅读: 要详细了解备用行为，请参阅[占位符和备用行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})指南。
+继续阅读: 要详细了解备用行为，请参阅[占位符和备用行为](placeholders.md)指南。
 
 ##### 示例：提供不同格式的图片
 
 在下面的示例中，如果浏览器支持 WebP，便提供 mountains.webp；否则，就提供 mountains.jpg。
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Mountains"
   width="550"
@@ -214,6 +214,6 @@ $title: 制作自适应 AMP 网页
 
 #### AMP 项目提供的制作资源
 
-- [Examples：示例和模板]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [模板]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
+- [Examples：示例和模板](../../../../documentation/examples/index.html)
+- [模板](../../../../documentation/templates/index.html)
 - [AMP Conf Workshop Codelab：如何制作精美的 AMP 网页](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

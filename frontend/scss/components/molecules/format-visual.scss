@@ -127,16 +127,11 @@ There are specific files for each format, to keep css rendering low.
       font-size: 1.25vw;
       transform: translate(50%, -75px);
     }
-    
+
     .#{molecule('code-snippet')} {
       margin: 0;
       box-shadow: 15px 30px 45px -5px rgba(0, 0, 0, 0.25);
       animation: 10s ease-in-out infinite bounce;
-    }
-
-    &-highlight:before {
-      content: 'right';
-      color: #e6db74;
     }
   }
 }

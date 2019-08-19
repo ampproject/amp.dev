@@ -16,7 +16,8 @@ class PreviewTestCase(unittest.TestCase):
     example_code = '<h1>test {% test = "test" %} {{ test + \'123\' }}</h1>'
 
     preview_created = ExamplePreview(index=2,
-                             mode='inline',
+                             mode='top-frame',
+                             orientation='landscape',
                              url='http://localhost/test',
                              playground=True,
                              source=example_code)
@@ -39,6 +40,7 @@ class PreviewTestCase(unittest.TestCase):
     preview_extracted = extracted_previews[0].preview
 
     self.assertEqual(preview_created.mode, preview_extracted.mode)
+    self.assertEqual(preview_created.orientation, preview_extracted.orientation)
     self.assertEqual(preview_created.url, preview_extracted.url)
     self.assertEqual(preview_created.playground, preview_extracted.playground)
     self.assertEqual(preview_created.source, preview_extracted.source)

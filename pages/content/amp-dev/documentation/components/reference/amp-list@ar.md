@@ -36,7 +36,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>fill وfixed وfixed-height وflex-item وnodisplay وresponsive</td>
   </tr>
   <tr>
@@ -52,7 +52,7 @@ teaser:
 
 [tip type="important"]
 
-يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات [طلبات CORS في AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات [طلبات CORS في AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 [/tip]
 
@@ -61,24 +61,26 @@ teaser:
 * السمة `template` التي تشير إلى معرّف `template` حالي أو إلى عنصر `script` حالي
 * `template` أو عنصر `script` مدمج مباشرة داخل العنصر `amp-list`
 
-راجِع [نماذج رمز HTML لصفحات AMP](../../spec/amp-html-templates.md) للحصول على مزيد من التفاصيل عن النماذج.
+راجِع [نماذج رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md) للحصول على مزيد من التفاصيل عن النماذج.
 
 *مثال: عرض قائمة ديناميكية*
 
-في المثال التالي، نسترد بيانات JSON التي تحتوي على عناوين URL وعناوين رئيسية ونعرض المحتوى في [نموذج amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache) مدمج.
+في المثال التالي، نسترد بيانات JSON التي تحتوي على عناوين URL وعناوين رئيسية ونعرض المحتوى في [نموذج amp-mustache](amp-mustache.md) مدمج.
 
-<!--مثال مدمج - للعرض في ampproject.org -->
-
-<div>
-<amp-iframe height="259"
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable>
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 في ما يلي ملف JSON الذي استخدمناه:
 
@@ -90,16 +92,16 @@ teaser:
      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
    },
    {
-     "title": "AMPproject.org",
-     "url": "https://www.ampproject.org/"
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
    },
    {
-     "title": "AMP By Example",
-     "url": "https://ampbyexample.com/"
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
    },
    {
-     "title": "AMP Start",
-     "url": "https://ampstart.com/"
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
    }
  ]
 }
@@ -135,17 +137,27 @@ amp-list div[role="list"] {
 
 في المثال التالي، نعرض قائمة بصور وعناوين. يعرض "وقت تشغيل AMP" عنصر overflow لأن محتوى `<amp-list>` يتطلب مساحة أكبر من المساحة المتاحة.
 
-<!--مثال مدمج - للعرض في ampproject.org -->
-
-<div>
-<amp-iframe height="213"
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable>
-<div aria-label="عرض المزيد" overflow="" tabindex="0" role="button">عرض الترميز الكامل</div>
-<div placeholder=""></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 في ما يلي ترميز CSS للعنصر `overflow`:
 
@@ -165,7 +177,7 @@ amp-list div[role="list"] {
 * *العنصر النائب* هو عنصر ثانوي له السمة `placeholder`. ويظهر هذا العنصر حتى يتم تحميل `<amp-list>` بنجاح. في حال توفير عنصر احتياطي، فسيتم إخفاء العنصر النائب عند تعذّر تحميل `<amp-list>`.
 * *العنصر الاحتياطي* هو عنصر ثانوي له السمة `fallback`. ويظهر هذا العنصر إذا تعذّر تحميل `<amp-list>`.
 
-يمكنك معرفة المزيد من المعلومات في [العناصر النائبة والعناصر الاحتياطية](https://www.ampproject.org/docs/guides/responsive/placeholders). وتجدر ملاحظة أن العنصر الثانوي الواحد لا يمكن أن يكون عنصرًا نائبًا واحتياطيًا معًا.
+يمكنك معرفة المزيد من المعلومات في [العناصر النائبة والعناصر الاحتياطية](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). وتجدر ملاحظة أن العنصر الثانوي الواحد لا يمكن أن يكون عنصرًا نائبًا واحتياطيًا معًا.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -216,11 +228,11 @@ amp-list div[role="list"] {
 
 [tip type="important"]
 
-يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات [طلبات CORS في AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+يجب أن تنفذ نقطة النهاية المتطلبات المحددة في مواصفات [طلبات CORS في AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
 [/tip]
 
-قد يتم حذف السمة `src` في حال توفر السمة `[src]`. ويفيد هذا عند عرض المحتوى نتيجة إيماءة من المستخدِم بدلاً من تحميل الصفحة عند العمل باستخدام [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind).
+قد يتم حذف السمة `src` في حال توفر السمة `[src]`. ويفيد هذا عند عرض المحتوى نتيجة إيماءة من المستخدِم بدلاً من تحميل الصفحة عند العمل باستخدام [`amp-bind`](amp-bind.md).
 
 ##### credentials (اختياريّة)
 
@@ -229,7 +241,7 @@ amp-list div[role="list"] {
 * القيم المسموح بها: `omit` و`include`
 * القيمة التلقائية: `omit`
 
-لإرسال بيانات الاعتماد، مرِر القيمة `include`. إذا تم تعيين هذه القيمة، يجب أن تتبع الاستجابة [إرشادات الأمان AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+لإرسال بيانات الاعتماد، مرِر القيمة `include`. إذا تم تعيين هذه القيمة، يجب أن تتبع الاستجابة [إرشادات الأمان AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 في ما يلي مثال يحدد تضمين بيانات الاعتماد لعرض محتوى مخصص في قائمة:
 
@@ -305,7 +317,7 @@ amp-list div[role="list"] {
 
 ```
 
-للحصول على أمثلة عملية، يرجى الاطّلاع على [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) و[test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+للحصول على أمثلة عملية، يرجى الاطّلاع على [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) و[test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### السمات
 
@@ -413,12 +425,12 @@ amp-list div[role="list"] {
 
 ##### السمات المشتركة
 
-يتضمن هذا العنصر [السمات المشتركة](https://www.ampproject.org/docs/reference/common_attributes) التي تشمل مكونات AMP.
+يتضمن هذا العنصر [السمات المشتركة](../../../documentation/guides-and-tutorials/learn/common_attributes.md) التي تشمل مكونات AMP.
 
 ## الاستبدالات
 
 يتيح `<amp-list>` جميع استبدالات متغيرات عناوين URL القياسية.
-اطّلِع على [دليل الاستبدالات](../../spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
+اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
 
 مثال:
 ```html

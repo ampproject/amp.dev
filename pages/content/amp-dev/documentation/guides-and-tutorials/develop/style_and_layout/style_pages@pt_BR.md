@@ -4,7 +4,7 @@ $title: CSS compatível
 
 Assim como todas as páginas da Web, as páginas AMP são estilizadas com CSS. Contudo, não é possível fazer referência a folhas de estilos externas (exceto [fontes personalizadas](#the-custom-fonts-exception)). Além disso, alguns estilos não são permitidos devido ao impacto que têm no desempenho. Por exemplo, os atributos de estilo in-line.
 
-Todos os estilos precisam estar no cabeçalho do documento (veja [Adicionar estilos a uma página]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page)). É possível usar pré-processadores e modelos CSS para criar páginas estáticas e gerenciar melhor seu conteúdo.
+Todos os estilos precisam estar no cabeçalho do documento (veja [Adicionar estilos a uma página](index.md#add-styles-to-a-page)). É possível usar pré-processadores e modelos CSS para criar páginas estáticas e gerenciar melhor seu conteúdo.
 
 Observação: Os componentes das AMP possuem estilos padrão para facilitar a criação de páginas responsivas. Esses estilos estão definidos em [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
@@ -66,13 +66,13 @@ Os estilos a seguir são permitidos. Contudo, há restrições em relação à c
 
 As páginas AMP não podem incluir folhas de estilos externas, exceto fontes personalizadas.
 
-Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}}).
+Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP](custom_fonts.md).
 
 ## Como usar pré-processadores de CSS
 
 O resultado gerado pelos pré-processadores é tão bom nas AMP como em qualquer outra página da Web. Por exemplo, o site [amp.dev](https://amp.dev/) usa [Sass](http://sass-lang.com/). Usamos [Grow](http://grow.io/) para criar as páginas AMP estáticas que compõem o site [amp.dev](https://amp.dev/).
 
-Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue somente aquilo que as páginas usam. Por exemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclui toda a marcação das AMP necessária e a CSS in-line dos arquivos de origem `*.scss`. Isso também inclui o script do elemento personalizado para [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), entre outros, fazendo com que diversas páginas do site possam incluir vídeos incorporados do YouTube.
+Tome cuidado com o que você inclui ao usar os pré-processadores. Carregue somente aquilo que as páginas usam. Por exemplo, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclui toda a marcação das AMP necessária e a CSS in-line dos arquivos de origem `*.scss`. Isso também inclui o script do elemento personalizado para [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), entre outros, fazendo com que diversas páginas do site possam incluir vídeos incorporados do YouTube.
 
 [sourcecode:html]{% raw %}
 <head>

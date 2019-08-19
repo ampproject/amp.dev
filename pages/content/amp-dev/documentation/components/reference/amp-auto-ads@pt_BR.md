@@ -44,7 +44,7 @@ Insere anúncios em páginas AMP de maneira dinâmica usando um arquivo de confi
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">
             Layouts compatíveis
           </a>
         </strong>
@@ -75,8 +75,8 @@ O tipo de rede de publicidade e qualquer outra informação (exigida pela rede) 
 
 ## Redes de publicidade compatíveis
 
-* [Google AdSense](../../ads/google/adsense.md)
-* [DoubleClick (experimental)](../../ads/google/doubleclick.md)
+* [Google AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Atributos
 
@@ -91,7 +91,7 @@ O tipo de rede de publicidade e qualquer outra informação (exigida pela rede) 
   </tr>
   <tr>
     <td width="40%"><strong>common attributes</strong></td>
-    <td>Este elemento inclui <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comuns</a> estendidos a componentes de AMP.</td>
+    <td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
   </tr>
 </table>
 

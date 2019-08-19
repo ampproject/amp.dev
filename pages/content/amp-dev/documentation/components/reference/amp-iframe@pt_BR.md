@@ -34,7 +34,7 @@ Exibe um iframe.
     <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Layouts compatíveis</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Layouts compatíveis</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ O `amp-iframe` tem várias diferenças importantes em relação aos iframes vani
 * Um `amp-iframe` pode não aparecer perto da parte superior do documento (exceto para iframes que usam `placeholder` como [descrito abaixo](#iframe-with-placeholder)). O iframe precisa estar a 600 px da parte superior ou não estar dentro dos primeiros 75% da janela de visualização quando rolado para a parte superior, o que for menor.
 * Por padrão, um amp-iframe é colocado em sandbox (veja [mais detalhes](#sandbox)).
 * Um `amp-iframe` só deve solicitar recursos por meio de HTTPS, de um URI de dados ou do atributo `srcdoc`.
-* Um `amp-iframe` não pode ter a mesma origem que o contêiner, a menos que não permita `allow-same-origin` no atributo `sandbox`. Consulte o documento [Política de origem do iframe](../../spec/amp-iframe-origin-policy.md) (link em inglês) para ver mais detalhes sobre as origens permitidas para iframes.
+* Um `amp-iframe` não pode ter a mesma origem que o contêiner, a menos que não permita `allow-same-origin` no atributo `sandbox`. Consulte o documento [Política de origem do iframe](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) (link em inglês) para ver mais detalhes sobre as origens permitidas para iframes.
 
 *Exemplo: um mapa do Google Maps incorporado a um amp-iframe*
 
@@ -76,7 +76,7 @@ para ver mais demonstrações do `amp-iframe`, visite o site [AMP By Example](ht
 
 O `amp-iframe` **não pode** ser usado com a finalidade principal de exibir publicidade. Não há problema em usar o `amp-iframe` para exibir vídeos que contenham publicidade em parte deles. Essa política de AMP pode ser aplicada ao não renderizar os respectivos iframes.
 
-Os casos de uso de publicidade precisam usar o [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad).
+Os casos de uso de publicidade precisam usar o [`amp-ad`](amp-ad.md).
 
 Os motivos dessa política são os seguintes:
 
@@ -110,7 +110,7 @@ Os motivos dessa política são os seguintes:
               </tr>
               <tr>
                 <td width="40%"><strong>common attributes</strong></td>
-                <td>Este elemento inclui <a href="https://www.ampproject.org/docs/reference/common_attributes">atributos comuns</a> estendidos a componentes de AMP.</td>
+                <td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
               </tr>
             </table>
 
@@ -221,7 +221,7 @@ A mensagem de interseção seria enviada ao iframe pelo pai quando o iframe entr
 
 # Iframes de rastreamento/análise
 
-Recomendamos o uso do [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) para fins de análise, porque ele é significativamente mais robusto, completo e uma solução eficiente que pode ser configurada para uma ampla gama de fornecedores de análise.
+Recomendamos o uso do [`amp-analytics`](amp-analytics.md) para fins de análise, porque ele é significativamente mais robusto, completo e uma solução eficiente que pode ser configurada para uma ampla gama de fornecedores de análise.
 
 As AMP permitem apenas um iframe por página, que é usado para fins de análise e rastreamento. Para economizar recursos, esses iframes serão removidos do DOM cinco segundos depois de serem carregados, o que é tempo suficiente para concluir qualquer trabalho que precise ser feito.
 
@@ -229,7 +229,7 @@ Os iframes são identificados como de rastreamento/análise se não parecem aten
 
 # Diretriz: usar componentes AMP existentes sobre amp-iframe
 
-O componente `amp-iframe` precisa ser considerado um substituto se a experiência do usuário necessária não for possível por outros meios em AMP, ou seja, se ainda não existir um [componente AMP](https://www.ampproject.org/docs/reference/components) para o caso de uso. Isso ocorre porque há muitos benefícios em usar um componente AMP personalizado para um caso de uso específico, como:
+O componente `amp-iframe` precisa ser considerado um substituto se a experiência do usuário necessária não for possível por outros meios em AMP, ou seja, se ainda não existir um [componente AMP](../../../documentation/components.md) para o caso de uso. Isso ocorre porque há muitos benefícios em usar um componente AMP personalizado para um caso de uso específico, como:
 
 * Melhor gerenciamento de recursos e desempenho.
 * Componentes personalizados podem fornecer imagens de marcadores incorporadas em alguns casos. Isso significa conseguir, digamos, a miniatura de vídeo correta antes do carregamento de um vídeo, reduzindo o esforço de codificação para adicionar um marcador manualmente.

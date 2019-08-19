@@ -35,7 +35,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>
       <ul>
         <li>カルーセル: fixed、fixed-height、nodisplay。</li>
@@ -59,14 +59,22 @@ limitations under the License.
 
 ユーザーがスワイプを行ったり、矢印キーを使用したり、オプションのナビゲーション矢印をクリックしたりすると、カルーセルがアイテム間を移動します。
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="313" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel width="450"
+  height="300">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]
 
 # 特定のスライドに進む
 
@@ -74,14 +82,51 @@ limitations under the License.
 
 以下の例の場合、カルーセルは 3 つの画像で構成されており、カルーセルの下にプレビュー ボタンが配置されます。ユーザーがいずれかのボタンをクリックすると、対応するカルーセル アイテムが表示されます。
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="878" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.advance-slide.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel id="carousel-with-preview"
+    width="450"
+    height="300"
+    layout="responsive"
+    type="slides">
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="apples"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="lemons"></amp-img>
+    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="450"
+      height="300"
+      layout="responsive"
+      alt="blueberries"></amp-img>
+  </amp-carousel>
+  <div class="carousel-preview">
+    <button on="tap:carousel-with-preview.goToSlide(index=0)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+        width="60"
+        height="40"
+        alt="apples"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=1)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+        width="60"
+        height="40"
+        alt="lemons"></amp-img>
+    </button>
+    <button on="tap:carousel-with-preview.goToSlide(index=2)">
+      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+        width="60"
+        height="40"
+        alt="blueberries"></amp-img>
+    </button>
+  </div>
+```
+[/example]
 
 # 属性
 
@@ -140,17 +185,34 @@ limitations under the License.
           <td width="40%"><strong>loop（省略可）</strong></td>
           <td>ユーザーが最初のアイテムの前や最終アイテムの次に進むことを許可します。ループを行うには少なくとも 3 つのスライドが必要です。<code>loop</code> 属性を適用できるのは、<code>type=slides</code> を指定したカルーセルに限られます。
             <em>例: controls、loop、delay 付き autoplay を有効にしたスライド カルーセルを表示する</em>
-            <!--embedded example - displays in ampproject.org -->
-            <div>
-              <amp-iframe height="446" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampcarousel.controls.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-                <div aria-label="すべて表示" overflow="" tabindex="0" role="button">コード全体を表示</div>
-                <div placeholder=""></div>
-              </amp-iframe>
-            </div></td>
+
+[example preview="inline" playground="true" imports="amp-carousel"]
+```html
+<amp-carousel type="slides"
+  width="450"
+  height="300"
+  controls
+  loop
+  {% if not format=='email'%}  autoplay
+  delay="3000"{% endif %}
+  data-next-button-aria-label="Go to next slide"
+  data-previous-button-aria-label="Go to previous slide">
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"></amp-img>
+  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"></amp-img>
+</amp-carousel>
+```
+[/example]</td>
           </tr>
           <tr>
             <td width="40%"><strong>共通の属性</strong></td>
-            <td>この要素には、AMP コンポーネントに拡張された<a href="https://www.ampproject.org/docs/reference/common_attributes">共通の属性</a>が含まれます。</td>
+            <td>この要素には、AMP コンポーネントに拡張された<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">共通の属性</a>が含まれます。</td>
           </tr>
         </table>
 

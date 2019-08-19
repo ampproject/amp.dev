@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 Pour être valides, les documents AMP ne doivent comprendre aucune erreur de validation.
-Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
+Le but de ce document est de vous aider à mieux comprendre et à corriger les erreurs de validation que vous rencontrez lorsque vous [validez vos pages AMP](validate_amp.md).
 Pour un aperçu complet des erreurs de validation, consultez les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 ## Erreurs de balise HTML et d'attributs AMP
@@ -53,7 +53,7 @@ Les balises suivantes doivent être présentes dans tous les documents AMP :
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Elles sont également référencées dans la [spécifications AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}).
+Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii). Elles sont également référencées dans la [spécifications AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Absence d'une balise requise par une autre balise
 
@@ -74,7 +74,7 @@ Ces balises obligatoires comprennent un champ `mandatory: true` dans les [spéci
 
 Le validateur génère l'erreur `TAG_REQUIRED_BY_MISSING` lorsqu'il trouve un composant étendu dans le document AMP, mais ne trouve pas le `<script>` équivalent.
 
-Les [composants étendus]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) doivent être inclus explicitement dans le document AMP en tant qu'éléments personnalisés.
+Les [composants étendus](../../../../documentation/components/index.html) doivent être inclus explicitement dans le document AMP en tant qu'éléments personnalisés.
 Pour corriger ces erreurs, accédez à la page de référence du composant étendu, copiez le script nécessaire et collez-le dans la section `<head>` du document AMP.
 
 ### Balise non autorisée
@@ -94,7 +94,7 @@ Pour corriger ces erreurs, accédez à la page de référence du composant éten
   </tr>
 </table>
 
-Les balises sont ajoutées à la liste blanche. Il n'existe donc pas de liste définitive de toutes les balises interdites, toutefois les [spécifications AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) définissent dans les grandes lignes l'ensemble de balises non autorisées.
+Les balises sont ajoutées à la liste blanche. Il n'existe donc pas de liste définitive de toutes les balises interdites, toutefois les [spécifications AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) définissent dans les grandes lignes l'ensemble de balises non autorisées.
 
 ### Attribut obligatoire manquant
 
@@ -403,10 +403,10 @@ Elles renvoient à des balises attendues :
 Cette erreur se produit lorsqu'une balise possède deux attributs s'excluant mutuellement.
 Ainsi, un seul de ces attributs est autorisé pour les balises suivantes :
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) : `data-tweetid` ou `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) : `data-shortcode` ou `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) : `src` ou `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) : `src` ou `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) : `data-tweetid` ou `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) : `data-shortcode` ou `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) : `src` ou `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) : `src` ou `data-videoid`
 
 ### Absence d'attribut obligatoire figurant sur la liste
 
@@ -428,10 +428,10 @@ Ainsi, un seul de ces attributs est autorisé pour les balises suivantes :
 Cette erreur se produit lorsqu'une balise ne comprend aucun des attributs possibles.
 Par exemple, pour les balises suivantes, il faut choisir l'un des deux attributs proposés :
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) : `data-tweetid` ou `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) : `data-shortcode` ou `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) : `src` ou `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) : `src` ou `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) : `data-tweetid` ou `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) : `data-shortcode` ou `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) : `src` ou `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) : `src` ou `data-videoid`
 
 ### Balise parent incorrecte
 
@@ -463,7 +463,7 @@ La liste ci-dessous répertorie le parent requis pour des balises spécifiques (
 * `style` nécessite une balise parent `boilerplate (noscript)`.
 * `noscript` nécessite une balise parent `head`.
 * `script` nécessite une balise parent `head`.
-* `source` nécessite une balise média ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.).
+* `source` nécessite une balise média ([`amp-audio`](../../../../documentation/components/reference/amp-audio.md), [`amp-video`](../../../../documentation/components/reference/amp-video.md), etc.).
 
 ### Balise ancêtre non autorisée
 
@@ -570,7 +570,7 @@ Voici la liste complète des balises uniques :
 
 ## Erreurs de style et de mise en page
 
-Avant de différencier les erreurs de style et de mise en page, il est important de comprendre comment le [style]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) et la [mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) fonctionnent dans AMP. Étant donné que les pages AMP sont des pages HTML, les styles ressemblent beaucoup à ceux de n'importe quelle page HTML.
+Avant de différencier les erreurs de style et de mise en page, il est important de comprendre comment le [style](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) et la [mise en page](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) fonctionnent dans AMP. Étant donné que les pages AMP sont des pages HTML, les styles ressemblent beaucoup à ceux de n'importe quelle page HTML.
 Il existe toutefois certaines restrictions visant à assurer un chargement rapide des pages, et le validateur AMP vise à les faire respecter.
 
 La mise en page est plus contrôlée dans les pages AMP.
@@ -637,7 +637,7 @@ Si vous ne parvenez pas à identifier la source de l'erreur, essayez d'exécuter
   </tr>
 </table>
 
-Cette erreur renvoie aux règles CSS de type @. AMP n'accepte que certaines de ces règles (voir aussi les [spécifications AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})).
+Cette erreur renvoie aux règles CSS de type @. AMP n'accepte que certaines de ces règles (voir aussi les [spécifications AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).
 Par exemple, `@import` est interdit.
 L'erreur de validation vous indique précisément la règle incorrecte, ce qui permet de corriger plus facilement la règle concernée.
 
@@ -662,7 +662,7 @@ Cette erreur se produit lorsque vous ne spécifiez pas de mise en page pour la b
 Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Le comportement de la mise en page est déterminé par l'attribut `layout`.
-Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md), ainsi que les [spécifications du système de mise en page AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 **Remarque** : Si vous ne spécifiez pas de mise en page et si vous n'incluez pas les valeurs `width` et `height`, la mise en page par défaut est de type CONTAINER. Le validateur génère une erreur, car le format CONTAINER n'est compatible avec aucune balise AMP.
 Spécifiez une mise en page autre que CONTAINER, ou ajoutez une valeur `width` ou `height` pour corriger l'erreur.
@@ -685,7 +685,7 @@ Spécifiez une mise en page autre que CONTAINER, ou ajoutez une valeur `width` o
 </table>
 
 Cette erreur se produit lorsque vous ne spécifiez pas de mise en page pour la balise AMP et que la mise en page implicite contient un attribut non autorisé.
-Les attributs interdits selon les types de mises en page sont décrits dans la [spécification du système de mise en page AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Les attributs interdits selon les types de mises en page sont décrits dans la [spécification du système de mise en page AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### La mise en page spécifiée n'est pas compatible avec la balise AMP
 
@@ -708,7 +708,7 @@ Cette erreur se produit lorsque la mise en page spécifiée pour la balise n'est
 Vérifiez les valeurs `supported_layout` pour la balise dans les [spécifications du validateur AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 Le comportement de la mise en page est déterminé par l'attribut `layout`.
-Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}), ainsi que les [spécifications du système de mise en page AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [contrôle de la mise en page](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md), ainsi que les [spécifications du système de mise en page AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### Attribut non autorisé par la mise en page spécifiée
 
@@ -728,7 +728,7 @@ Pour en savoir plus sur la mise en page, consultez la page d'aide relative au [c
 </table>
 
 Cette erreur se produit lorsque vous spécifiez une mise en page pour la balise AMP et que la mise en page contient un attribut non autorisé.
-Les attributs interdits selon les types de mises en page sont décrits dans la [spécification du système de mise en page AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Les attributs interdits selon les types de mises en page sont décrits dans la [spécification du système de mise en page AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### Valeur incorrecte pour l'attribut requis par la mise en page
 
@@ -748,7 +748,7 @@ Les attributs interdits selon les types de mises en page sont décrits dans la [
 </table>
 
 Cette erreur se produit lorsque la valeur de l'attribut est incorrecte pour la mise en page spécifiée.
-Pour comprendre ce qui déclenche cette erreur, vous devez vous familiariser avec les [différents comportements des mises en page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+Pour comprendre ce qui déclenche cette erreur, vous devez vous familiariser avec les [différents comportements des mises en page](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
 
 Par exemple, vous définissez la mise en page sur `fixed-height` et vous intégrez des valeurs numériques pour `height` et `width`.
 La mise en page `fixed-height` utilise une valeur `height`.
@@ -777,13 +777,13 @@ Dans le cas contraire, cette erreur est générée.
 
 Par exemple, `<amp-img src="" layout="responsive" width="42px" height="42rem">` entraîne le message d'erreur suivant :
 
-"La balise '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  contient des unités incohérentes pour la largeur et la hauteur. La largeur est indiquée en 'px', alors que la hauteur est indiquée en 'rem'."
+"La balise '[`amp-img`](../../../../documentation/components/reference/amp-img.md)  contient des unités incohérentes pour la largeur et la hauteur. La largeur est indiquée en 'px', alors que la hauteur est indiquée en 'rem'."
 
 ## Erreurs de création de modèles
 
-Les pages AMP ne peuvent pas inclure de syntaxe de création de modèles, sauf si cette syntaxe est comprise dans une balise AMP spécialement conçue pour intégrer des modèles, par exemple [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
+Les pages AMP ne peuvent pas inclure de syntaxe de création de modèles, sauf si cette syntaxe est comprise dans une balise AMP spécialement conçue pour intégrer des modèles, par exemple [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md).
 
-Vous pouvez inclure des modèles dans vos fichiers source, tant que le fichier de sortie ne contient pas les modèles (voir aussi [Utiliser des préprocesseurs CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+Vous pouvez inclure des modèles dans vos fichiers source, tant que le fichier de sortie ne contient pas les modèles (voir aussi [Utiliser des préprocesseurs CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)).
 
 ### L'attribut contient une syntaxe de modèle
 

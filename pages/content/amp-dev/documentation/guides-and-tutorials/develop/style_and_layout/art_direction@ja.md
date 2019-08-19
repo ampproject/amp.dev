@@ -4,11 +4,11 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 
 ## srcset
 
-`srcset` 属性を使用すると、さまざまなメディア式に基づいて要素のアセットを制御できます。特に、すべての [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグで使用して、さまざまな画面サイズに基づいて画像アセットを指定できます。
+`srcset` 属性を使用すると、さまざまなメディア式に基づいて要素のアセットを制御できます。特に、すべての [`amp-img`](../../../../documentation/components/reference/amp-img.md) タグで使用して、さまざまな画面サイズに基づいて画像アセットを指定できます。
 
 次の例では、`srcset` が画面の幅に基づいて使用される画像を指定しています。`w` 記述子は、リスト内の各画像の幅をブラウザに伝えます。
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -31,7 +31,7 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 
 次の例をご覧ください。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -61,7 +61,7 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 
 次の例をご覧ください。
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

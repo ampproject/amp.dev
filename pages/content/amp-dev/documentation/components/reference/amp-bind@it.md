@@ -51,7 +51,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>Tutorial</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">Creare pagine AMP interattive</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">Creare pagine AMP interattive</a></td>
   </tr>
 </table>
 
@@ -180,7 +180,7 @@ i contenuti dello stato.
 
 # Aggiornare lo stato con `AMP.setState()`
 
-L'azione [`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) unisce un valore letterale oggetto allo stato. Ad esempio, quando viene premuto il pulsante in basso, `AMP.setState()` [unirà forzatamente](#deep-merge-with-ampsetstate) il valore letterale oggetto allo stato.
+L'azione [`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) unisce un valore letterale oggetto allo stato. Ad esempio, quando viene premuto il pulsante in basso, `AMP.setState()` [unirà forzatamente](#deep-merge-with-ampsetstate) il valore letterale oggetto allo stato.
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -200,7 +200,7 @@ Quando attivato da certi eventi, `AMP.setState()` può anche accedere ai dati co
 
 # Modificare la cronologia con `AMP.pushState()`
 
-L'azione [`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) è simile ad `AMP.setState()`, ma in aggiunta inserisce una nuova voce
+L'azione [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) è simile ad `AMP.setState()`, ma in aggiunta inserisce una nuova voce
 nell'elenco della cronologia di navigazione. Accedendo a questa voce della cronologia, ad esempio, tornando indietro, viene ripristinato
 il valore precedente delle variabili impostate da `AMP.pushState()`.
 
@@ -225,7 +225,7 @@ Le espressioni sono simili a JavaScript, con alcune differenze importanti.
 * Le variabili non definite e l'indice della matrice fuori intervallo restituiscono `null` anziché `undefined` o degli errori.
 * Per garantire buone prestazioni, in una singola espressione possono attualmente essere presenti un massimo di 50 operandi. Nel caso in cui siano insufficienti per il tuo caso d'uso, [non esitare a contattarci](https://github.com/ampproject/amphtml/issues/new).
 
-La grammatica completa e l'implementazione delle espressioni sono riportate in [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) e [bind-expression.js](./0.1/bind-expression.js).
+La grammatica completa e l'implementazione delle espressioni sono riportate in [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) e [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
 # Esempi
 
@@ -396,7 +396,7 @@ Quando lo **stato** cambia, le espressioni vengono rivalutate e le proprietà de
     <td>Deve essere un'espressione booleana.</td>
   </tr>
   <tr>
-    <td>Dimensione degli <a href="https://www.ampproject.org/docs/reference/components">elementi AMP</a></td>
+    <td>Dimensione degli <a href="../../../documentation/components/index.md">elementi AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Modifica la larghezza e/o l'altezza dell'elemento AMP.</td>
   </tr>
@@ -458,7 +458,7 @@ Note sulle associazioni:
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td>Quando effettui un'associazione a <code>[src]</code>, assicurati di associare anche a <code>[srcset]</code> in modo che l'associazione funzioni su cache.<br>Vedi gli <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">attributi amp-img</a> corrispondenti.</td>
+    <td>Quando effettui un'associazione a <code>[src]</code>, assicurati di associare anche a <code>[srcset]</code> in modo che l'associazione funzioni su cache.<br>Vedi gli <a href="amp-img.md#attributes">attributi amp-img</a> corrispondenti.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -488,7 +488,7 @@ Note sulle associazioni:
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>Vedi gli <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">attributi amp-video</a> corrispondenti.</td>
+    <td>Vedi gli <a href="amp-video.md#attributes">attributi amp-video</a> corrispondenti.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -662,7 +662,7 @@ AMP raggruppa le XMLHttpRequests (XHR) negli endpoint JSON, ovvero puoi utilizza
     <td>L'URL dell'endpoint remoto che restituirà il JSON per aggiornare questo <code>amp-state</code>. Deve essere un servizio HTTP CORS.
         L'attributo <code>src</code> consente tutte le sostituzioni di variabili URL standard. Per ulteriori informazioni, consulta la <a href="../../spec/amp-var-substitutions.md">Guida alle sostituzioni</a>.
         [tip type="important"]
-      L'endpoint deve implementare i requisiti specificati nella specifica <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">Richieste CORS in AMP</a>.
+      L'endpoint deve implementare i requisiti specificati nella specifica <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Richieste CORS in AMP</a>.
       [/tip]</td>
   </tr>
   <tr>
@@ -672,7 +672,7 @@ AMP raggruppa le XMLHttpRequests (XHR) negli endpoint JSON, ovvero puoi utilizza
         <li>Valori supportati: `omit`, `include`</li>
         <li>Impostazione predefinita: `omit`</li>
       </ul>
-      Per inviare le credenziali, trasmetti il valore di <code>include</code>. Se questo valore è impostato, la risposta deve rispettare le <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">norme sulla sicurezza AMP CORS</a>.</td>
+      Per inviare le credenziali, trasmetti il valore di <code>include</code>. Se questo valore è impostato, la risposta deve rispettare le <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">norme sulla sicurezza AMP CORS</a>.</td>
     </tr>
   </table>
 

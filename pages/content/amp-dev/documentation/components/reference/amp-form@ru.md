@@ -37,7 +37,7 @@ limitations under the License.
       <td><code>&lt;script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td><strong><a href="https://www.ampproject.org/docs/design/responsive/control_layout.html#the-layout-attribute">Поддерживаемые макеты</a></strong></td>
+    <td><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">Поддерживаемые макеты</a></strong></td>
     <td>–</td>
   </tr>
   <tr>
@@ -52,21 +52,49 @@ limitations under the License.
 Расширение `amp-form` позволяет создавать формы (`<form>`) с полями для ввода данных и передачи их в AMP-документ. Расширение `amp-form` также поддерживает [полизаполнение](#polyfills) для некоторых действий, которые недоступны в браузерах.
 
 [tip type="important"]
-Если вы отправляете данные через форму, конечная точка сервера должна соответствовать [требованиям безопасности CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Если вы отправляете данные через форму, конечная точка сервера должна соответствовать [требованиям безопасности CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 [/tip]
 
 Перед созданием объекта `<form>` необходимо добавить скрипт для расширения `<amp-form>`. В противном случае документ будет недействительным. Если вы используете теги `input` не только для передачи значений (например, за пределами тега `<form>`), загружать расширение `amp-form` не требуется.
 
 Вот пример базовой формы:
 
-<!-- embedded sample that is rendered on ampproject.org -->
-
-<div>
-  <amp-iframe height="671" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    target="_top"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          required>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          required>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+    <div submit-success>
+      <template type="amp-mustache">
+        Subscription successful!
+      </template>
+    </div>
+    <div submit-error>
+      <template type="amp-mustache">
+        Subscription failed!
+      </template>
+    </div>
+  </form>
+```
+[/example]
 
 # Атрибуты
 
@@ -90,7 +118,7 @@ limitations under the License.
 Определяет конечную точку сервера для обработки данных, введенных в форму, и передает форму через XMLHttpRequest (XHR-запрос). В случае с XHR-запросом, он же AJAX-запрос, браузер не выполняет полную загрузку страницы и не открывает новую страницу. Запрос отправляется в фоновом режиме, с помощью [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) или же [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) (для более старых браузеров).
 
 [tip type="important"]
-Конечная точка должна соответствовать требованиям, перечисленным в спецификации для [запросов CORS в AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Конечная точка должна соответствовать требованиям, перечисленным в спецификации для [запросов CORS в AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 [/tip]
 
 Для `method=POST` этот атрибут обязателен, а для `method=GET` –нет.
@@ -115,7 +143,7 @@ limitations under the License.
 
 * Прочие атрибуты, связанные с формами: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` и т. п.
 * Атрибуты `<input type=password>` и `<input type=file>` в рамках `<form method=POST action-xhr>`.
-* [`amp-selector`](https://www.ampproject.org/docs/reference/components/amp-selector)
+* [`amp-selector`](amp-selector.md)
 
 **Запрещено**:
 
@@ -136,7 +164,7 @@ limitations under the License.
 | `clear` | Очищает все значения в форме. Благодаря этому пользователи могут быстро заполнять формы во второй раз. |
 
 [tip type="read-on"]
-[Действия и события в AMP](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events.html)
+[Действия и события в AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 [/tip]
 
 # События
@@ -153,7 +181,7 @@ limitations under the License.
 | `valid` | Статус валидации формы меняется на valid (в соответствии со [стратегией создания отчетов](#reporting-strategies)). |
 | `invalid` | Статус валидации формы меняется на invalid (в соответствии со [стратегией создания отчетов](#reporting-strategies)). |
 
-Эти события могут использоваться в [атрибуте `on`](https://www.ampproject.org/docs/fundamentals/spec#on).
+Эти события могут использоваться в [атрибуте `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on).
 
 Пример кода ниже прослушивает события `submit-success` и `submit-error` и в зависимости от полученных данных показывает разные окна просмотра.
 
@@ -164,28 +192,43 @@ limitations under the License.
 
 ```
 
-Полный пример можно найти [здесь](../../examples/forms.amp.html).
+Полный пример можно найти [здесь](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # События ввода
 
-AMP поддерживает события `change` и `input-debounced` в дочерних элементах `<input>`. Благодаря этому вы можете использовать [атрибут `on`](https://www.ampproject.org/docs/fundamentals/spec#on), чтобы выполнять действия с любым элементом при изменении входного значения.
+AMP поддерживает события `change` и `input-debounced` в дочерних элементах `<input>`. Благодаря этому вы можете использовать [атрибут `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on), чтобы выполнять действия с любым элементом при изменении входного значения.
 
 Распространенный вариант – отправка формы об изменении входного значения (выбор переключателя для ответа на вопрос, выбор языка в поле `select` для перевода страницы и т. п.).
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form id="myform"
+    method="post"
+    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <input name="answer1"
+          value="Value 1"
+          type="radio"
+          on="change:myform.submit">Value 1
+      </label>
+      <label>
+        <input name="answer1"
+          value="Value 2"
+          type="radio"
+          on="change:myform.submit">Value 2
+      </label>
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="450" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.inputevent.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Полный пример можно найти [здесь](../../examples/forms.amp.html).
+Полный пример можно найти [здесь](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Триггеры Аналитики
 
-Расширение `amp-form` запускает ряд событий, которые можно отслеживать с помощью конфигурации [amp-analytics](https://www.ampproject.org/docs/reference/components/amp-analytics).
+Расширение `amp-form` запускает ряд событий, которые можно отслеживать с помощью конфигурации [amp-analytics](amp-analytics.md).
 
 | Событие                     | Условия активации                        |
 |---------------------------|-----------------------------------|
@@ -248,7 +291,7 @@ AMP поддерживает события `change` и `input-debounced` в д�
 
 # Обработка успешных и ошибочных ответов
 
-Обрабатывать успешные ответы и ошибки в форме вы можете с помощью [расширенных шаблонов](https://www.ampproject.org/docs/fundamentals/spec#extended-templates), таких как [amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache). Успешные ответы также поддерживают привязку данных [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) и ряд атрибутов, описанных ниже.
+Обрабатывать успешные ответы и ошибки в форме вы можете с помощью [расширенных шаблонов](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates), таких как [amp-mustache](amp-mustache.md). Успешные ответы также поддерживают привязку данных [amp-bind](amp-bind.md) и ряд атрибутов, описанных ниже.
 
 | Атрибут ответа | Описание |
 |-----------|---------------------|
@@ -339,15 +382,15 @@ AMP поддерживает события `change` и `input-debounced` в д�
 {% endraw %}
 ```
 
-Полный пример можно найти [здесь](../../examples/forms.amp.html).
+Полный пример можно найти [здесь](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Как обработать успешный ответ с помощью привязки данных
 
-* Используйте [атрибут on](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events), чтобы связать атрибут *submit-success* в форме с [`AMP.setState()`](https://www.ampproject.org/docs/reference/components/amp-bind#updating-state-with-amp.setstate%28%29).
+* Используйте [атрибут on](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md), чтобы связать атрибут *submit-success* в форме с [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29).
 * Используйте свойство `event`, чтобы получить данные ответа.
 * Добавьте в нужный элемент атрибут состояния, чтобы привязать ответ формы.
 
-В примере ниже показан ответ `submit-success` с [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind):
+В примере ниже показан ответ `submit-success` с [`amp-bind`](amp-bind.md):
 ```html
 <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
 <form method="post"
@@ -388,7 +431,7 @@ AMP поддерживает события `change` и `input-debounced` в д�
 
 После успешной отправки формы вы можете перенаправить пользователей на новую страницу. Для этого задайте в ответе заголовок `AMP-Redirect-To` с URL для переадресации. Необходимо использовать протокол HTTPS, иначе система AMP выдаст ошибку и перенаправление не сработает.  Заголовки HTTP-ответа настраиваются через ваш сервер.
 
-Обязательно обновите заголовок ответа `Access-Control-Expose-Headers`, добавив `AMP-Redirect-To` в список допустимых вариантов.  Подробные сведения о заголовках можно найти в статье [Безопасность CORS для AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Обязательно обновите заголовок ответа `Access-Control-Expose-Headers`, добавив `AMP-Redirect-To` в список допустимых вариантов.  Подробные сведения о заголовках можно найти в статье [Безопасность CORS для AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 *Пример ответа с заголовком:*
 
@@ -412,16 +455,48 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 Пример:
 
-<!-- embedded sample that is rendered on ampproject.org -->
+[example preview="inline" playground="true" imports="amp-form"]
+```html
+<form method="post"
+    action-xhr="https://example.com/subscribe"
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    target="_blank"{% endif %}>
+    <fieldset>
+      <label>
+        <span>Name:</span>
+        <input type="text"
+          name="name"
+          id="name5"
+          required
+          pattern="\w+\s\w+">
+        <span visible-when-invalid="valueMissing"
+          validation-for="name5"></span>
+        <span visible-when-invalid="patternMismatch"
+          validation-for="name5">
+          Please enter your first and last name separated by a space (e.g. Jane Miller)
+        </span>
+      </label>
+      <br>
+      <label>
+        <span>Email:</span>
+        <input type="email"
+          name="email"
+          id="email5"
+          required>
+        <span visible-when-invalid="valueMissing"
+          validation-for="email5"></span>
+        <span visible-when-invalid="typeMismatch"
+          validation-for="email5"></span>
+      </label>
+      <br>
+      <input type="submit"
+        value="Subscribe">
+    </fieldset>
+  </form>
+```
+[/example]
 
-<div>
-  <amp-iframe height="748" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampform.customval.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
-
-Другие примеры можно найти на странице [examples/forms.amp.html](../../examples/forms.amp.html).
+Другие примеры можно найти на странице [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 Правило для сообщений о валидации: если в элементе нет текстового контента, AMP будет использовать сообщение по умолчанию из браузера. В примере выше, где данные `name5` отсутствуют, но попытка валидации выполняется (то есть пользователь пытается отправить форму), AMP заполняет элемент `<span visible-when-invalid="valueMissing" validation-for="name5"></span>` сообщением из браузера и показывает этот `span` пользователю.
 
@@ -456,7 +531,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 Пример:
 ```html
 {% raw %}<h4>Пример верификации</h4>
-<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post" target="_blank">
+<form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
   <fieldset>
     <label>
       <span>Электронная почта</span>
@@ -511,11 +586,11 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 Чтобы удалить поле из запроса `verify-xhr`, добавьте атрибут `no-verify` в элемент ввода.
 
-Другие примеры можно найти на странице [examples/forms.amp.html](../../examples/forms.amp.html).
+Другие примеры можно найти на странице [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 # Замены переменных
 
-Расширение `amp-form` поддерживает [замены переменных платформы](../../spec/amp-var-substitutions.md) для скрытых полей ввода с атрибутом `data-amp-replace`. При каждой отправке формы `amp-form` находит все вхождения `input[type=hidden][data-amp-replace]` в ней и заменяет переменные в атрибуте `value` на нужный результат.
+Расширение `amp-form` поддерживает [замены переменных платформы](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) для скрытых полей ввода с атрибутом `data-amp-replace`. При каждой отправке формы `amp-form` находит все вхождения `input[type=hidden][data-amp-replace]` в ней и заменяет переменные в атрибуте `value` на нужный результат.
 
 Необходимо предоставить переменные для каждой замены и каждого поля в виде строки, разделенной пробелами и добавленной в `data-amp-replace` (см. пример ниже). AMP не заменяет переменные, которые не указаны явным образом.
 
@@ -550,7 +625,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 Обратите внимание, что значение `CANONICAL_HOSTNAME` в примере выше не было заменено, поскольку оно отсутствовало в белом списке атрибута `data-amp-replace` в первом поле.
 
-Замены будут происходить при каждой последующей отправке. Ознакомьтесь со статьей о [замене переменных AMP](../../spec/amp-var-substitutions.md).
+Замены будут происходить при каждой последующей отправке. Ознакомьтесь со статьей о [замене переменных AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 # Полизаполнения
 
@@ -600,7 +675,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 С помощью этих классов издатели могут задавать стиль полей и целых наборов. Например, можно сделать так, чтобы поле с ошибкой выделялось красной рамкой, когда пользователь переходит к следующему пункту.
 
-Подробный пример можно найти [здесь](../../examples/forms.amp.html).
+Подробный пример можно найти [здесь](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
 [tip type="ll callout('Совет</b><a class="type_success"]
 На сайте [AMP Start](https://ampstart.com/components#form-elements) вы можете найти уже стилизованные элементы для форм, чтобы добавить их на свои AMP-страницы.
@@ -610,7 +685,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 # Защита от XSRF-атак
 
-Помимо [спецификации AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html) настоятельно рекомендуем ознакомиться со статьей [об обработке запросов на изменение состояния](https://www.ampproject.org/docs/fundamentals/amp-cors-requests.html#processing-state-changing-requests). Это необходимо для защиты от [XSRF-атак](https://en.wikipedia.org/wiki/Cross-site_request_forgery), когда злоумышленники выполняют неавторизованные команды в текущем сеансе пользователя без его ведома.
+Помимо [спецификации AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) настоятельно рекомендуем ознакомиться со статьей [об обработке запросов на изменение состояния](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests). Это необходимо для защиты от [XSRF-атак](https://en.wikipedia.org/wiki/Cross-site_request_forgery), когда злоумышленники выполняют неавторизованные команды в текущем сеансе пользователя без его ведома.
 
 Вот основные правила:
 

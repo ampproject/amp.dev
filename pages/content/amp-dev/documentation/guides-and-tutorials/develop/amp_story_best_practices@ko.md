@@ -2,7 +2,7 @@
 $title: AMP 스토리 만들기 관련 권장사항
 ---
 
-이 가이드는 [AMP 스토리]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})를 만들 때 구현해야 하는 권장사항을 제공합니다.
+이 가이드는 [AMP 스토리](../../../documentation/components/reference/amp-story.md)를 만들 때 구현해야 하는 권장사항을 제공합니다.
 
 ## 배경 색상  
 
@@ -48,7 +48,7 @@ AMP 스토리는 보다 시각적인 경험을 제공하는 것이 목적이므�
 
 ### `<source>` 지정하기 vs `src`
 
-[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})을 지정하세요.
+[`amp-video`](../../../documentation/components/reference/amp-video.md)을 지정하세요.
 
 *예: 여러 소스 파일 지정하기*
 

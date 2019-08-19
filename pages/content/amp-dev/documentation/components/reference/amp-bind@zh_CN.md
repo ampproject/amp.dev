@@ -51,7 +51,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>教程</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">制作交互式 AMP 网页</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">制作交互式 AMP 网页</a></td>
   </tr>
 </table>
 
@@ -177,7 +177,7 @@ limitations under the License.
 
 # 通过 `AMP.setState()` 更新状态
 
-[`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) 操作可将对象字面量合并到状态中。例如，当用户按下方的按钮后，`AMP.setState()` 会将对象字面量与状态进行[深度合并](#deep-merge-with-ampsetstate)。
+[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) 操作可将对象字面量合并到状态中。例如，当用户按下方的按钮后，`AMP.setState()` 会将对象字面量与状态进行[深度合并](#deep-merge-with-ampsetstate)。
 
 ```html
 <!-- 与 JavaScript 类似，您可以在
@@ -197,7 +197,7 @@ limitations under the License.
 
 # 通过 `AMP.pushState()` 修改历史记录
 
-[`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
+[`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
 
 例如：
 ```html
@@ -220,7 +220,7 @@ limitations under the License.
 * 未定义的变量和 array-index-out-of-bound 会返回 `null`，而不是 `undefined`，也不会引发错误。
 * 为了确保性能，单个表达式中目前最多可以使用 50 个操作数。如果这无法满足您的使用需求，请[与我们联系](https://github.com/ampproject/amphtml/issues/new)。
 
-如需查看完整的表达式语法和实现，请参阅 [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) 和 [bind-expression.js](./0.1/bind-expression.js)。
+如需查看完整的表达式语法和实现，请参阅 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 和 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)。
 
 # 示例
 
@@ -391,7 +391,7 @@ null || 'default' // 'default'
     <td>应为布尔表达式。</td>
   </tr>
   <tr>
-    <td><a href="https://www.ampproject.org/zh_cn/docs/reference/components">AMP 元素</a>大小</td>
+    <td><a href="../../../documentation/components/index.md">AMP 元素</a>大小</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>用于更改 AMP 元素的宽度和/或高度。</td>
   </tr>
@@ -452,7 +452,7 @@ null || 'default' // 'default'
     <tr>
       <td><code>&lt;amp-img&gt;</code></td>
       <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-      <td>绑定到 <code>[src]</code> 时，请务必同时绑定到 <code>[srcset]</code>，以便绑定在缓存中正常发挥作用。<br>请参阅相应的 <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">amp-img 属性</a>。</td>
+      <td>绑定到 <code>[src]</code> 时，请务必同时绑定到 <code>[srcset]</code>，以便绑定在缓存中正常发挥作用。<br>请参阅相应的 <a href="amp-img.md#attributes">amp-img 属性</a>。</td>
     </tr>
     <tr>
       <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -482,7 +482,7 @@ null || 'default' // 'default'
     <tr>
       <td><code>&lt;amp-video&gt;</code></td>
       <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-      <td>请参阅相应的 <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">amp-video 属性</a>。</td>
+      <td>请参阅相应的 <a href="amp-video.md#attributes">amp-video 属性</a>。</td>
     </tr>
     <tr>
       <td><code>&lt;amp-youtube&gt;</code></td>
@@ -653,7 +653,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
     <td>远程端点的网址，该端点将返回 JSON，以便更新此 <code>amp-state</code>。这必须是 CORS HTTP 服务。
       <code>src</code> 属性支持所有标准网址变量替换。如需了解详情，请参阅<a href="../../spec/amp-var-substitutions.md">替换指南</a>。
           [tip type="important"]
-        该端点必须符合 <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">AMP 中的 CORS 请求</a>规范中规定的要求。
+        该端点必须符合 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP 中的 CORS 请求</a>规范中规定的要求。
         [/tip]</td>
     </tr>
     <tr>
@@ -663,7 +663,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
           <li>支持的值：`omit`、`include`</li>
           <li>默认值：`omit`</li>
         </ul>
-        要发送凭据，请传递 <code>include</code> 的值。如果此值已设置，响应必须遵循 <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">AMP CORS 安全指南</a>。</td>
+        要发送凭据，请传递 <code>include</code> 的值。如果此值已设置，响应必须遵循 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">AMP CORS 安全指南</a>。</td>
       </tr>
     </table>
 

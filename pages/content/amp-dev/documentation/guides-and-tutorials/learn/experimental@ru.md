@@ -24,5 +24,5 @@ $title: Экспериментальные компоненты
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-Файлы AMP, которые содержат экспериментальные функции, не проходят [проверку]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
+Файлы AMP, которые содержат экспериментальные функции, не проходят [проверку](validation-workflow/validate_amp.md).
 Чтобы подготовить AMP-документ к публикации, отключите такие компоненты.

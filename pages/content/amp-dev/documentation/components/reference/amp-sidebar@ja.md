@@ -40,7 +40,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -210,7 +210,7 @@ $title: amp-sidebar
 
 ## ストーリー向けサイドバー
 
-`amp-sidebar` は、[`amp-story` コンポーネント](https://www.ampproject.org/stories/)内でも使用できます。
+`amp-sidebar` は、[`amp-story` コンポーネント](../../../about/stories.html)内でも使用できます。
 
 ### 動作
 
@@ -238,7 +238,7 @@ $title: amp-sidebar
   <amp-story standalone>
   <amp-sidebar id="sidebar1" layout="nodisplay">
     <ul>
-      <li><a "href=https://www.ampproject.org"> External Link </a></li>
+      <li><a href="https://amp.dev"> External Link </a></li>
       <li>Nav item 2</li>
       <li>Nav item 3</li>
     </ul>
@@ -281,7 +281,7 @@ $title: amp-sidebar
 
 ##### 共通の属性<a name="common"></a>
 
-この要素には、AMP コンポーネントに拡張された[共通の属性](https://www.ampproject.org/docs/reference/common_attributes)が含まれます。
+この要素には、AMP コンポーネントに拡張された[共通の属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)が含まれます。
 
 ## スタイル設定
 

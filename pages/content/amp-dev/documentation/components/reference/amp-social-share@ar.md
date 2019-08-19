@@ -40,7 +40,7 @@ teaser:
     </td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>container وfill وfixed وfixed-height وflex-item وnodisplay وresponsive</td>
   </tr>
   <tr>

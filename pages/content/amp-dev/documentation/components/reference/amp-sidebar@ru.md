@@ -42,7 +42,7 @@ $title: amp-sidebar
     <td><code>&lt;script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Поддерживаемые макеты</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Поддерживаемые макеты</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -214,7 +214,7 @@ $title: amp-sidebar
 
 ## Боковая панель для AMP-историй
 
-Боковую панель `amp-sidebar` можно использовать в [компоненте](https://www.ampproject.org/stories/) `amp-story`.
+Боковую панель `amp-sidebar` можно использовать в [компоненте](../../../about/stories.html) `amp-story`.
 
 ### Принципы работы
 
@@ -242,7 +242,7 @@ $title: amp-sidebar
   <amp-story standalone>
   <amp-sidebar id="sidebar1" layout="nodisplay">
     <ul>
-      <li><a "href=https://www.ampproject.org"> External Link </a></li>
+      <li><a href="https://amp.dev"> External Link </a></li>
       <li>Nav item 2</li>
       <li>Nav item 3</li>
     </ul>
@@ -285,7 +285,7 @@ $title: amp-sidebar
 
 ##### универсальные атрибуты<a name="common"></a>
 
-[Атрибуты](https://www.ampproject.org/docs/reference/common_attributes), которые поддерживаются большинством компонентов AMP.
+[Атрибуты](../../../documentation/guides-and-tutorials/learn/common_attributes.md), которые поддерживаются большинством компонентов AMP.
 
 ## Поддержка стилей
 

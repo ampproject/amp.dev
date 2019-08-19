@@ -35,7 +35,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>
     <td>fill、fixed、fixed-height、flex-item、nodisplay、responsive</td>
   </tr>
   <tr>
@@ -106,7 +106,7 @@ teaser:
       </tr>
       <tr>
         <td width="40%"><strong>dock</strong></td>
-        <td><strong>需要 <code>amp-video-docking</code> 扩展。</strong> 如果此属性存在并且视频通过手动方式播放，则当用户滚动到视频组件的可视区域以外时，视频将“最小化”并固定到角落或某个元素。如需了解更多详情，请参阅<a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">关于 docking 扩展的文档</a>。</td>
+        <td><strong>需要 <code>amp-video-docking</code> 扩展。</strong> 如果此属性存在并且视频通过手动方式播放，则当用户滚动到视频组件的可视区域以外时，视频将“最小化”并固定到角落或某个元素。如需了解更多详情，请参阅<a href="amp-video-docking.md">关于 docking 扩展的文档</a>。</td>
       </tr>
       <tr>
         <td width="40%"><strong>credentials（可选）</strong></td>
@@ -120,7 +120,7 @@ teaser:
         </tr>
         <tr>
           <td width="40%"><strong>常见属性</strong></td>
-          <td>此元素包含扩展到 AMP 组件的<a href="https://www.ampproject.org/docs/reference/common_attributes">常见属性</a>。</td>
+          <td>此元素包含扩展到 AMP 组件的<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">常见属性</a>。</td>
         </tr>
       </table>
 

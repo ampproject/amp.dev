@@ -39,7 +39,6 @@ const BlogImporter = require('@lib/pipeline/blogImporter');
 const gulpSass = require('gulp-sass');
 const lint = require('./lint.js');
 const CleanCSS = require('clean-css');
-const rcs = require('rcs-core');
 
 
 // The Google Cloud Storage bucket used to store build job artifacts
@@ -47,38 +46,6 @@ const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
 
 // Path of the grow test pages for filtering in the grow podspec.yaml
 const TEST_CONTENT_PATH_REGEX = '^/tests/';
-
-// Holds a little configuration for shortening the CSS selectors
-const SELECTOR_REWRITE_SETTINGS = {
-  excludedPaths: /\/documentation\/examples.*|\/documentation\/components\.html/,
-  safeSelectors: [
-    'ap--container',
-    'ap--quote',
-    'ap-m-banner',
-    'ap-m-breadcrumbs',
-    'ap-m-language-selector',
-    'ap-m-rolling-formats',
-    'ap-m-lnk',
-    'ap-m-nav-link',
-    'ap-m-shift-card',
-    'ap-m-teaser',
-    'ap-m-quote',
-    'ap-m-benefit',
-    'ap-m-code-snippet',
-    'ap-m-code-snippet',
-    'ap-o-component-visual',
-    'ap-o-news-item',
-    'ap-o-benefits',
-    'ap-o-case-band',
-    'ap-o-case-grid',
-    'ap-o-consent',
-    'ap-o-footer',
-    'ap-o-header',
-    'ap-o-stage',
-    'ap-o-teaser-grid',
-    'ap-t-what-is-amp',
-  ],
-};
 
 /**
  * Cleans all directories/files that get created by any of the following
@@ -368,35 +335,16 @@ function minifyPages() {
     },
   });
 
-  // Only shorten selectors that are actually safe to be rewritten (i.e. are
-  // not used inside `amp-bind` statements for example)
-  rcs.selectorLibrary.setExclude(
-      new RegExp('^(?!' + SELECTOR_REWRITE_SETTINGS.safeSelectors.join('|') + ').*$')
-  );
-
   return gulp.src(`${project.paths.GROW_BUILD_DEST}/**/*.html`)
       .pipe(through.obj(function(page, encoding, callback) {
         let html = page.contents.toString();
-
-        // Compress multiple spaces down to only one
-        html = html.replace(/\s{2,}/gm, ' ');
 
         // Minify the CSS
         const css = html.match(/(?<=<style amp-custom>).*?(?=<\/style>)/ms);
         if (css) {
           const minifiedCss = cleanCss.minify(css[0]).styles;
           html = html.slice(0, css.index) + minifiedCss + html.slice(css.index + css[0].length);
-
-          try {
-            // Shorten selectors
-            rcs.fillLibraries(minifiedCss, {prefix: '-'});
-            html = rcs.replace.html(html);
-            console.log(`[MINIFY_PAGES]: Minified ${page.relative}`);
-          } catch (e) {
-            console.error('[MINIFY_PAGES]:', page.relative, e);
-          }
         }
-
 
         page.contents = Buffer.from(html);
         // eslint-disable-next-line no-invalid-this

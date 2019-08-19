@@ -36,7 +36,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Поддерживаемые шаблоны</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Поддерживаемые шаблоны</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ teaser:
 Компонент `<amp-list>` динамически извлекает контент из конечной точки CORS JSON. Ответ, полученный от конечной точки, содержит данные, которые отображаются в указанном шаблоне.
 
 [tip type="important"]
-Конечная точка должна соответствовать требованиям, перечисленным в спецификации для [запросов CORS в AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+Конечная точка должна соответствовать требованиям, перечисленным в спецификации для [запросов CORS в AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 [/tip]
 
 Указать шаблон можно одним из двух способов:
@@ -58,44 +58,50 @@ teaser:
 * Добавить атрибут `template`, который ссылается на идентификатор существующего элемента `template` или `script`.
 * Добавить вложенный элемент `template` или `script` непосредственно в элемент `amp-list`.
 
-Более подробные сведения о шаблонах приведены в разделе [Шаблоны AMPHTML](../../spec/amp-html-templates.md).
+Более подробные сведения о шаблонах приведены в разделе [Шаблоны AMPHTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 *Пример динамического списка*
 
-В примере ниже мы извлекаем данные JSON с URL и заголовками, а затем отображаем этот контент во вложенном [шаблоне amp-mustache](https://www.ampproject.org/docs/reference/components/amp-mustache).
+В примере ниже мы извлекаем данные JSON с URL и заголовками, а затем отображаем этот контент во вложенном [шаблоне amp-mustache](amp-mustache.md).
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="259" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="100"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+  {% endraw %}</template>
+</amp-list>
+```
+[/example]
 
 Вот файл JSON, который мы использовали:
 
 ```json
 {
-  "items": [
-    {
-      "title": "AMP YouTube Channel",
-      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-      },
-    {
-      "title": "AMPproject.org",
-      "url": "https://www.ampproject.org/"
-      },
-    {
-      "title": "AMP By Example",
-      "url": "https://ampbyexample.com/"
-      },
-    {
-      "title": "AMP Start",
-      "url": "https://ampstart.com/"
-      }
-    ]
-  }
+ "items": [
+   {
+     "title": "AMP YouTube Channel",
+     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+   },
+   {
+     "title": "AMP.dev",
+     "url": "https://amp.dev/"
+   },
+   {
+     "title": "AMP Validator",
+     "url": "https://validator.amp.dev/"
+   },
+   {
+     "title": "AMP Playground",
+     "url": "https://playground.amp.dev/"
+   }
+ ]
+}
 ```
 Вот как стилизован извлеченный контент:
 
@@ -128,14 +134,27 @@ amp-list div[role="list"] {
 
 В примере ниже показывается список изображений с подписями. Поскольку контент элемента `<amp-list>` требует больше пространства, чем доступно, библиотека AMP отображает атрибут overflow.
 
-<!--embedded example - displays in ampproject.org -->
-
-<div>
-  <amp-iframe height="213" src="https://ampproject-b5f4c.firebaseapp.com/examples/amplist.overflow.embed.html?active-tab=preview&amp;preview-height=213" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Ещё" overflow="" tabindex="0" role="button">Показать код полностью</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+```html
+<amp-list width="auto"
+  height="140"
+  layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="image-entry">
+      <amp-img src="{{imageUrl}}"
+        width="100"
+        height="75"></amp-img>
+      <span class="image-title">{{title}}</span>
+    </div>
+  {% endraw %}</template>
+  <div overflow
+    class="list-overflow">
+    See more
+  </div>
+</amp-list>
+```
+[/example]
 
 Вот код CSS для `overflow`:
 
@@ -155,7 +174,7 @@ amp-list div[role="list"] {
 * *Заполнитель* – это дочерний элемент с атрибутом `placeholder`. Он показывается до тех пор, пока `<amp-list>` не будет успешно загружен. Если предоставлен также резервный атрибут, заполнитель скрывается, когда при загрузке `<amp-list>` возникает ошибка.
 * *Резервный атрибут* – это дочерний элемент с атрибутом `fallback`. Он показывается, если при загрузке `<amp-list>` возникает ошибка.
 
-Подробные сведения о заполнителях и резервных атрибутах можно найти в [этой статье](https://www.ampproject.org/docs/guides/responsive/placeholders). Учтите, что дочерний элемент не может одновременно быть и заполнителем, и резервным атрибутом.
+Подробные сведения о заполнителях и резервных атрибутах можно найти в [этой статье](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). Учтите, что дочерний элемент не может одновременно быть и заполнителем, и резервным атрибутом.
 
 ```html
 <amp-list src="https://foo.com/list.json">
@@ -205,10 +224,10 @@ amp-list div[role="list"] {
 URL удаленной конечной точки, которая возвращает код JSON для показа в данном элементе `<amp-list>`. Это должна быть служба CORS HTTP. Для URL следует использовать протокол HTTPS.
 
 [tip type="important"]
-Конечная точка должна соответствовать требованиям, перечисленным в спецификации для [запросов CORS в AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests).
+Конечная точка должна соответствовать требованиям, перечисленным в спецификации для [запросов CORS в AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 [/tip]
 
-Атрибут `src` можно не указывать, если уже есть `[src]`. Это полезно, когда контент отображается по пользовательскому жесту и через [`amp-bind`](https://www.ampproject.org/docs/reference/components/amp-bind), а не сразу при загрузке страницы.
+Атрибут `src` можно не указывать, если уже есть `[src]`. Это полезно, когда контент отображается по пользовательскому жесту и через [`amp-bind`](amp-bind.md), а не сразу при загрузке страницы.
 
 ##### credentials (необязательно)
 
@@ -217,7 +236,7 @@ URL удаленной конечной точки, которая возвра�
 * Допустимые значения: `omit`, `include`.
 * Значение по умолчанию: `omit`.
 
-Чтобы отправить учетные данные, передайте значение `include`. Если это значение установлено, ответ будет соответствовать [требованиям по безопасности CORS для AMP](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Чтобы отправить учетные данные, передайте значение `include`. Если это значение установлено, ответ будет соответствовать [требованиям по безопасности CORS для AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 Вот пример включения учетных данных для показа персонализированного контента в списке:
 
@@ -293,7 +312,7 @@ URL удаленной конечной точки, которая возвра�
 
 ```
 
-Рабочие примеры можно найти по ссылкам: [test/manual/amp-list/infinite-scroll-1.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html) и [test/manual/amp-list/infinite-scroll-2.amp.html](../../test/manual/amp-list/infinite-scroll-1.amp.html).
+Рабочие примеры можно найти по ссылкам: [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) и [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
 
 ### Атрибуты
 
@@ -400,12 +419,12 @@ URL удаленной конечной точки, которая возвра�
 
 ##### common attributes
 
-Этот элемент содержит [распространенные атрибуты](https://www.ampproject.org/docs/reference/common_attributes), расширенные до компонентов AMP.
+Этот элемент содержит [распространенные атрибуты](../../../documentation/guides-and-tutorials/learn/common_attributes.md), расширенные до компонентов AMP.
 
 ## Замены
 
 Элемент `<amp-list>` поддерживает все стандартные варианты замены переменных URL.
-Подробная информация приведена в [этом руководстве](../../spec/amp-var-substitutions.md).
+Подробная информация приведена в [этом руководстве](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 Пример:
 ```html

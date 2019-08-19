@@ -15,7 +15,7 @@ $title: 登录
 </span>
 [/sourcecode]
 
-[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 相关属性的行为取决于 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 的网页级配置，在此示例中即如下所示：
+[`amp-access`](../../../../documentation/components/reference/amp-access.md) 相关属性的行为取决于 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 的网页级配置，在此示例中即如下所示：
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -65,4 +65,4 @@ $title: 登录
 - AMP 运行时会关闭登录页面，并会重定向到由返回网址参数指定的页面
 - 一旦用户点击了“登录”按钮，服务器即应编排响应
 
-提示: 您可在 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 中找到有关此流程的更详细的说明。
+提示: 您可在 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 中找到有关此流程的更详细的说明。

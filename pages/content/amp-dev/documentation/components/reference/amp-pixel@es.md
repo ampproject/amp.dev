@@ -34,7 +34,7 @@ teaser:
     <td>Se puede utilizar como un píxel de seguimiento típico para contar las páginas vistas.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
     <td>fixed y nodisplay</td>
   </tr>
   <tr>
@@ -81,12 +81,12 @@ Ten en cuenta que, como consecuencia, no se expandirán las macros que contenga 
 
 ##### atributos comunes
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que se aplican a los componentes de AMP.
+Este elemento incluye [atributos comunes](../../../documentation/guides-and-tutorials/learn/common_attributes.md) que se aplican a los componentes de AMP.
 
 ## Sustituciones
 
 El componente `amp-pixel` admite todas las sustituciones estándar de variables de URL.
-Para obtener más información, consulta la [guía de sustituciones](../spec/amp-var-substitutions.md).
+Para obtener más información, consulta la [guía de sustituciones](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md).
 
 En el siguiente ejemplo, se puede hacer una solicitud a algo similar a `https://foo.com/pixel?0.8390278471201`. Es decir, se genera un valor RANDOM de forma aleatoria al producirse cada impresión.
 

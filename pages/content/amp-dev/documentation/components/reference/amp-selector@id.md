@@ -35,7 +35,7 @@ Mewakili kontrol yang menampilkan menu opsi dan memungkinkan pengguna memilih da
   <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
     <td>Semua</td>
   </tr>
   <tr>
@@ -97,7 +97,7 @@ Contoh:
 
 ## Menghapus pilihan
 
-Untuk menghapus semua pilihan saat sebuah elemen di-tap atau diklik, tetapkan atribut tindakan [`on`](../../spec/amp-actions-and-events.md) pada elemen tersebut, dan tentukan `id` AMP Selector dengan metode tindakan `clear`.
+Untuk menghapus semua pilihan saat sebuah elemen di-tap atau diklik, tetapkan atribut tindakan [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) pada elemen tersebut, dan tentukan `id` AMP Selector dengan metode tindakan `clear`.
 
 Contoh:
 
@@ -151,7 +151,7 @@ Lihat demo langsung di [AMP By Example](https://ampbyexample.com/components/amp-
 Peristiwa dapat memicu tindakan pada komponen AMP lain yang menggunakan atribut `on`.
 Misalnya `on="select: my-tab.show"`
 
-Baca lebih lanjut tentang [Tindakan dan Peristiwa AMP](../../spec/amp-actions-and-events.md).
+Baca lebih lanjut tentang [Tindakan dan Peristiwa AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
 
 <table>
   <tr>

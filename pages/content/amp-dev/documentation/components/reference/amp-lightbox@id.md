@@ -36,7 +36,7 @@ teaser:
     <td><code>&lt;script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Tata Letak yang Didukung</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Tata Letak yang Didukung</a></strong></td>
     <td>nodisplay</td>
   </tr>
   <tr>
@@ -61,7 +61,7 @@ Menekan tombol escape pada keyboard akan menutup lightbox. Cara lainnya, menetap
 ```
 
 [tip type="read"]
-Untuk menampilkan gambar di lightbox, ada juga komponen [`<amp-image-lightbox>`](https://www.ampproject.org/docs/reference/components/amp-image-lightbox).
+Untuk menampilkan gambar di lightbox, ada juga komponen [`<amp-image-lightbox>`](amp-image-lightbox.md).
 [/tip]
 
 ## Atribut
@@ -103,7 +103,7 @@ Anda dapat mengatur gaya `amp-lightbox` dengan CSS standar.
 
 ## Tindakan
 
-`amp-lightbox` menampilkan tindakan berikut yang dapat Anda gunakan pada [AMP on-syntax untuk memicu](https://www.ampproject.org/docs/reference/amp-actions-and-events):
+`amp-lightbox` menampilkan tindakan berikut yang dapat Anda gunakan pada [AMP on-syntax untuk memicu](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md):
 
 <table>
   <tr>
@@ -123,10 +123,10 @@ Anda dapat mengatur gaya `amp-lightbox` dengan CSS standar.
 ## <a id="a4a"></a>Menggunakan `amp-lightbox` dalam iklan AMPHTML
 
 [tip type="note"]
-Komponen `amp-lightbox` untuk digunakan dalam ikan AMPHTML masih bersifat [eksperimental](https://www.ampproject.org/docs/reference/experimental) dan terus mengalami pengembangan. Untuk menggunakan `amp-lightbox` dalam iklan AMPHTML, [aktifkan eksperimen `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
+Komponen `amp-lightbox` untuk digunakan dalam ikan AMPHTML masih bersifat [eksperimental](../../../documentation/guides-and-tutorials/learn/experimental.md) dan terus mengalami pengembangan. Untuk menggunakan `amp-lightbox` dalam iklan AMPHTML, [aktifkan eksperimen `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
 [/tip]
 
-Ada beberapa perbedaan antara menggunakan `amp-lightbox` dalam dokumen AMP normal dengan [iklan yang ditulis dalam AMPHTML](../amp-a4a/amp-a4a-format.md):
+Ada beberapa perbedaan antara menggunakan `amp-lightbox` dalam dokumen AMP normal dengan [iklan yang ditulis dalam AMPHTML](../../../documentation/guides-and-tutorials/learn/a4a_spec.md):
 
 ### Memerlukan close-button
 

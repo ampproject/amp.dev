@@ -8,7 +8,7 @@ $title: О проверке AMP-страниц
 
 AMP-документ можно проверить несколькими способами, однако все они приводят к одному и тому же результату. Вы можете выбрать самый подходящий вариант.
 
-Также вы можете проверить, [находят]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) ли AMP-документ сторонние платформы.
+Также вы можете проверить, [находят](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) ли AMP-документ сторонние платформы.
 
 ### Консоль разработчика браузера
 
@@ -81,8 +81,8 @@ https://amp.dev/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 
@@ -150,10 +150,10 @@ AMP Validator не просто инструмент, который упрощ�
 Все эти инструменты предоставляют следующие данные:
 
 1. Номера строки и столбца в документе HTML, где наблюдается ошибка. В некоторых интерфейсах можно нажать кнопку мыши и выделить место с ошибкой. В данном случае координаты ошибки таковы: строка 11, столбец 2.
-1. Текстовую строку с описанием ошибки. В данном случае в строке указано, что вместо тега [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) используется тег `<img>`.
-1. Ссылку на документ с описанием ошибки. В данном случае по ней доступен документ, посвященный тегу [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Такие ссылки доступны не для всех ошибок.
+1. Текстовую строку с описанием ошибки. В данном случае в строке указано, что вместо тега [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) используется тег `<img>`.
+1. Ссылку на документ с описанием ошибки. В данном случае по ней доступен документ, посвященный тегу [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Такие ссылки доступны не для всех ошибок.
 
-Из спецификации можно узнать, что проблема заключается в использовании тега `<img>` вместо [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Из спецификации можно узнать, что проблема заключается в использовании тега `<img>` вместо [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 
-Полный список потенциальных ошибок представлен в [этом руководстве]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+Полный список потенциальных ошибок представлен в [этом руководстве](validation_errors.md).
 Если вы не смогли обнаружить и устранить ошибку, [задайте нам вопрос](http://stackoverflow.com/questions/tagged/amp-html).

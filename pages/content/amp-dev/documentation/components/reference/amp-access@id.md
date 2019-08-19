@@ -50,7 +50,7 @@ limitations under the License.
 
 ## Hubungan dengan `amp-subscriptions`
 
-Ekstensi [`amp-subscriptions`](../amp-subscriptions/amp-subscriptions.md) menawarkan fitur yang mirip dengan `amp-access`. Namun, ekstensi ini mendukung protokol paywall akses yang lebih khusus. Beberapa perbedaan penting yang perlu dicatat:
+Ekstensi [`amp-subscriptions`](amp-subscriptions.md) menawarkan fitur yang mirip dengan `amp-access`. Namun, ekstensi ini mendukung protokol paywall akses yang lebih khusus. Beberapa perbedaan penting yang perlu dicatat:
 
 1. Respons hak kepemilikan `amp-subscriptions` mirip dengan otorisasi amp-access, tetapi ditetapkan dengan ketat dan distandarisasi.
 1. Ekstensi `amp-subscriptions` memungkinkan beberapa layanan dikonfigurasi untuk halaman agar dapat berpartisipasi dalam keputusan akses/paywall. Layanan tersebut dijalankan secara bersamaan dan diprioritaskan berdasarkan layanan mana yang menampilkan respons positif.
@@ -497,11 +497,11 @@ AMP tidak membedakan antara login dan subscribe. Perbedaan ini dapat dikonfigura
 
 ## Integrasi dengan *amp-analytics*
 
-Integrasi dengan *amp-analytics* didokumentasikan dalam [amp-access-analytics.md](./amp-access-analytics.md).
+Integrasi dengan *amp-analytics* didokumentasikan dalam [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
 ## Keamanan Asal CORS
 
-Endpoint Otorisasi dan Pingback adalah endpoint CORS dan harus mengimplementasikan protokol keamanan yang dijelaskan dalam [Spesifikasi Keamanan AMP CORS](https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp).
+Endpoint Otorisasi dan Pingback adalah endpoint CORS dan harus mengimplementasikan protokol keamanan yang dijelaskan dalam [Spesifikasi Keamanan AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
 ## Pengukuran
 
@@ -564,7 +564,7 @@ Seperti biasa, ID Pembaca harus disertakan dalam panggilan ke Halaman Login dan 
 
 ## Lampiran A: Tata bahasa ekspresi “amp-access”
 
-Tata bahasa BNF terbaru tersedia di file [access-expr-impl.jison](./0.1/access-expr-impl.jison).
+Tata bahasa BNF terbaru tersedia di file [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison).
 
 Nukilan utama dari tata bahasa ini adalah sebagai berikut:
 

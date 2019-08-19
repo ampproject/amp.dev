@@ -16,7 +16,7 @@ Neste guia, você verá como implementar facilmente estes princípios básicos e
 
 Para otimizar sua página da Web e fazer com que o conteúdo seja dimensionado e se ajuste ao tamanho da janela do navegador em qualquer dispositivo, é preciso especificar o elemento `meta` da janela de visualização. Esse elemento indica ao navegador como dimensionar e ajustar a área visível (a janela de visualização) da página da Web.
 
-Quais valores devem ser usados?  Isso já está especificado nas páginas AMP.  Como parte da [marcação obrigatória]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}#required-markup) das páginas AMP, especifique a janela de visualização a seguir:
+Quais valores devem ser usados?  Isso já está especificado nas páginas AMP.  Como parte da [marcação obrigatória](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md#required-markup) das páginas AMP, especifique a janela de visualização a seguir:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -36,7 +36,7 @@ Redimensionar cada elemento para que ele se ajuste à tela pode ser uma tarefa c
 
 No exemplo a seguir, temos uma imagem de flores (640 x 427 pixels) que será exibida em todos os tamanhos de tela. Por isso, especificaremos os atributos `width` e `height` e definiremos o layout como `responsive`.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <div class="resp-img">
   <amp-img alt="flowers"
@@ -58,11 +58,11 @@ No entanto, queremos que a imagem não se expanda além do tamanho pretendido. P
 </style>
 ```
 
-Leia mais: Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#atributo-de-layout).
+Leia mais: Para saber mais sobre os diferentes layouts em AMP, consulte o guia [Consultas de mídia e layout](control_layout.md#atributo-de-layout).
 
 <a id="fn1"></a>
 [tip type="note"]
-***Por que é difícil redimensionar elementos para que eles se ajustem ao tamanho da tela quando posso fazer isso facilmente com o estilo "width=100%"?** A parte complicada é renderizar os elementos responsivos na página sem prejudicar as métricas de desempenho nem a experiência do usuário.  Sim, é fácil ajustar imagens à tela com "width=100%", mas isso afetará o desempenho.  Primeiro, o navegador precisa fazer download da imagem para identificar as dimensões dela. Depois, ele redimensionará a imagem para que ela se ajuste ao tamanho da tela. Por fim, fará o reflow e preencherá a página novamente.  Ao usar AMP, o caminho de renderização é otimizado para que a página seja gerada primeiro com marcadores de imagens. Essa marcação é feita com base nas dimensões fornecidas no "[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), a partir dos números usados para definir a proporção. Depois, os recursos são transferidos por download, e a página é preenchida.  O reflow não é obrigatório.
+***Por que é difícil redimensionar elementos para que eles se ajustem ao tamanho da tela quando posso fazer isso facilmente com o estilo "width=100%"?** A parte complicada é renderizar os elementos responsivos na página sem prejudicar as métricas de desempenho nem a experiência do usuário.  Sim, é fácil ajustar imagens à tela com "width=100%", mas isso afetará o desempenho.  Primeiro, o navegador precisa fazer download da imagem para identificar as dimensões dela. Depois, ele redimensionará a imagem para que ela se ajuste ao tamanho da tela. Por fim, fará o reflow e preencherá a página novamente.  Ao usar AMP, o caminho de renderização é otimizado para que a página seja gerada primeiro com marcadores de imagens. Essa marcação é feita com base nas dimensões fornecidas no "[`amp-img`](../../../../documentation/components/reference/amp-img.md), a partir dos números usados para definir a proporção. Depois, os recursos são transferidos por download, e a página é preenchida.  O reflow não é obrigatório.
 [/tip]
 
 ## Como dimensionar mídias na página
@@ -75,9 +75,9 @@ Ao incluir um vídeo na sua página da Web, verifique se o usuário consegue ver
 
 ##### Exemplo: como incorporar um vídeo do YouTube
 
-No exemplo a seguir, mostraremos um vídeo incorporado do YouTube que responde ao tamanho e à orientação da tela do dispositivo. Ao adicionar `"layout=responsive"` ao elemento [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), o vídeo é redimensionado para se ajustar à janela. A proporção dele é mantida de acordo com as especificações de `width` e `height`.
+No exemplo a seguir, mostraremos um vídeo incorporado do YouTube que responde ao tamanho e à orientação da tela do dispositivo. Ao adicionar `"layout=responsive"` ao elemento [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), o vídeo é redimensionado para se ajustar à janela. A proporção dele é mantida de acordo com as especificações de `width` e `height`.
 
-[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+[example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -87,11 +87,11 @@ No exemplo a seguir, mostraremos um vídeo incorporado do YouTube que responde a
 ```
 [/example]
 
-Existem vários tipos de vídeos que podem ser adicionados às suas páginas AMP.  Para mais detalhes, consulte a lista de [componentes de mídia]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) disponíveis.
+Existem vários tipos de vídeos que podem ser adicionados às suas páginas AMP.  Para mais detalhes, consulte a lista de [componentes de mídia](../../../../documentation/components/index.html#media) disponíveis.
 
 ### Como exibir imagens responsivas
 
-As imagens compõem grande parte de uma página da Web, (aproximadamente [65% dos bytes da página](http://httparchive.org/interesting.php#bytesperpage)).  No mínimo, suas imagens devem ser visíveis em vários tamanhos e orientações de tela. Por exemplo, um usuário não precisará rolar a tela, fazer gesto de pinça ou usar o zoom para ver a imagem completa.  Isso é fácil de fazer em páginas AMP com o atributo `"layout=responsive"`. Consulte o artigo [Incluir imagens em páginas AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}}).  Além da imagem responsiva básica, você poderá veicular vários recursos de imagens para:
+As imagens compõem grande parte de uma página da Web, (aproximadamente [65% dos bytes da página](http://httparchive.org/interesting.php#bytesperpage)).  No mínimo, suas imagens devem ser visíveis em vários tamanhos e orientações de tela. Por exemplo, um usuário não precisará rolar a tela, fazer gesto de pinça ou usar o zoom para ver a imagem completa.  Isso é fácil de fazer em páginas AMP com o atributo `"layout=responsive"`. Consulte o artigo [Incluir imagens em páginas AMP](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md).  Além da imagem responsiva básica, você poderá veicular vários recursos de imagens para:
 
 - [Como veicular imagens nítidas na resolução correta](#como-veicular-imagens-nítidas-na-resolução-correta);
 - [Como alterar a direção de arte de uma imagem](#como-alterar-a-direção-de-arte-de-uma-imagem);
@@ -111,7 +111,7 @@ No exemplo a seguir, há diversos arquivos de imagem que têm a mesma proporçã
 - Para uma largura da janela de visualização de até 900 pixels, renderizar a imagem a 75% da dimensão correspondente.
 - Para resoluções acima de 900 pixels, renderizar a imagem a 600 pixels de largura.
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
@@ -131,7 +131,7 @@ No exemplo a seguir, há diversos arquivos de imagem que têm a mesma proporçã
 
 Por exemplo, digamos que você tenha um dispositivo com a largura da janela de visualização de 412 pixels e um DPR de 2,6. Com base no código acima, a imagem precisa ser exibida em 75% da largura da janela de visualização. Assim, o navegador escolherá uma imagem de tamanho próximo a 803 pixels (412 * ,75 * 2,6), que é `apple-800.jpg`.
 
-Leia mais: Para saber mais sobre o uso de srcset e tamanhos em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Leia mais: Para saber mais sobre o uso de srcset e tamanhos em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas](art_direction.md).
 
 #### Como alterar a direção de arte de uma imagem
 
@@ -145,9 +145,9 @@ No exemplo a seguir, você verá três diferentes imagens de um gato cortadas qu
 - 470 a 669 pixels, será exibida `cat-medium.jpg` (450 x 340 pixels);
 - 469 pixels ou menos, será exibida `cat-small.jpg` (226 x 340 pixels).
 
-Observação: Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#o-que-acontece-se-o-atributo-layout-não-estiver-especificado?).
+Observação: Como queríamos que as imagens tivessem tamanhos fixos (ou seja, sem distorções), não foi especificado um valor de layout. Por padrão, ele é definido como `layout=fixed` porque foram configuradas a altura e a largura. Para mais informações, consulte ["E se o atributo de layout não for especificado?"](control_layout.md#o-que-acontece-se-o-atributo-layout-não-estiver-especificado?).
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="grey cat"
     media="(min-width: 670px)"
@@ -167,7 +167,7 @@ Observação: Como queríamos que as imagens tivessem tamanhos fixos (ou seja, s
 ```
 [/example]
 
-Leia mais: Para saber mais sobre a direção de arte em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Leia mais: Para saber mais sobre a direção de arte em páginas AMP, consulte o guia [Direção de arte com srcset, tamanhos e alturas](art_direction.md).
 
 #### Como fornecer imagens otimizadas
 
@@ -175,13 +175,13 @@ Para exibir páginas de carregamento rápido, é preciso ter imagens otimizadas 
 
 Em HTML, você pode veicular diferentes formatos de imagem usando a tag `picture`.  Em AMP, embora a tag `picture` não seja compatível, é possível veicular diferentes imagens com o atributo `fallback`.
 
-Leia mais: Para saber mais sobre substitutos, consulte o guia [Substitutos e marcadores]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Leia mais: Para saber mais sobre substitutos, consulte o guia [Substitutos e marcadores](placeholders.md).
 
 ##### Exemplo: como veicular diferentes formatos de imagem
 
 No exemplo a seguir, se o navegador for compatível com WebP, veicule mountains.webp. Caso contrário, veicule mountains.jpg.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Mountains"
   width="550"
@@ -214,6 +214,6 @@ Veja alguns exemplos para inspirar você a criar páginas AMP responsivas (pági
 
 #### Criado pela AMP
 
-- [Examples: modelos e amostras]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [Modelos]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
+- [Examples: modelos e amostras](../../../../documentation/examples/index.html)
+- [Modelos](../../../../documentation/templates/index.html)
 - [Codelab do workshop da conferência sobre AMP: como criar lindas páginas AMP](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

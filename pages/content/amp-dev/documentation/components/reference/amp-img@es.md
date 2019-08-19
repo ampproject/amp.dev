@@ -34,7 +34,7 @@ limitations under the License.
     <td>Sustitución de la etiqueta <code>img</code> de HTML gestionada por el tiempo de ejecución.</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Diseños admitidos</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Diseños admitidos</a></strong></td>
     <td>fill, fixed, fixed-height, flex-item, intrinsic, nodisplay y responsive</td>
   </tr>
   <tr>
@@ -51,36 +51,48 @@ El tiempo de ejecución puede retrasar o priorizar la carga de recursos basándo
 Se debe proporcionar a los componentes `amp-img`, como al resto de los recursos AMP obtenidos de forma externa, un tamaño explícito (`width` y `height`) de antemano, para que se conozca la relación de aspecto sin haber recuperado la imagen. El atributo `layout` es el que determina el comportamiento real del diseño.
 
 [tip type="read-on"]
-Para obtener más información sobre los diseños, consulta la especificación del [sistema de formatos de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md) y la lista de [formatos compatibles](https://www.ampproject.org/docs/guides/responsive/control_layout.html#the-layout-attribute).
+Para obtener más información sobre los diseños, consulta la especificación del [sistema de formatos de AMP HTML](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) y la lista de [formatos compatibles](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 [/tip]
 
 # Ejemplo: Mostrar una imagen adaptable
 
 En el siguiente ejemplo, hacemos que se muestre una imagen que se adapta al tamaño del viewport; para ello, definimos `layout=responsive`.  La imagen se expande y se oculta según la relación de aspecto definida en `width` y `height`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="900"
+  height="675"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 [tip type="read-on"]
-Para obtener más información sobre las páginas AMP adaptables, consulta la guía sobre [cómo crear páginas AMP adaptables](https://www.ampproject.org/docs/guides/responsive/responsive_design.html).
+Para obtener más información sobre las páginas AMP adaptables, consulta la guía sobre [cómo crear páginas AMP adaptables](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).
 [/tip]
 
-Si el recurso solicitado por el componente `amp-img` no se carga, el espacio quedará en blanco a menos que se proporcione un elemento secundario de respaldo [`fallback`](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-layout.md#fallback). El respaldo solo se ejecuta en el diseño inicial y, si se produce cualquier cambio posterior en el src (a través de resize + srcset, por ejemplo), el recurso no tendrá un respaldo por cuestiones de rendimiento.
+Si el recurso solicitado por el componente `amp-img` no se carga, el espacio quedará en blanco a menos que se proporcione un elemento secundario de respaldo [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback). El respaldo solo se ejecuta en el diseño inicial y, si se produce cualquier cambio posterior en el src (a través de resize + srcset, por ejemplo), el recurso no tendrá un respaldo por cuestiones de rendimiento.
 
 # Ejemplo: Especificar una imagen de respaldo
 
 En el siguiente ejemplo, si el navegador no es compatible con WebP, se mostrará la imagen JPG de respaldo:
 
-<div>
-  <amp-iframe height="271" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.fallback.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 Se puede establecer un color de fondo de marcador de posición u otro elemento visual mediante un selector de CSS y aplicar un estilo en el propio elemento.
 
@@ -89,8 +101,8 @@ Las funciones de imagen adicionales, como los subtítulos, se pueden implementar
 [tip type="read-on"]
 Para obtener más información sobre cómo utilizar `amp-img`, consulta estos recursos:
 
-* [Marcadores de posición y respaldos](https://www.ampproject.org/docs/design/responsive/placeholders)
-* [Incluir imágenes y vídeos](https://www.ampproject.org/docs/media/amp_replacements)
+* [Marcadores de posición y respaldos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+* [Incluir imágenes y vídeos](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 [/tip]
 
 # Atributos
@@ -108,7 +120,7 @@ Funciona igual que el atributo `srcset` de la etiqueta `img`. En los navegadores
 Funciona igual que el atributo `sizes` de la etiqueta `img`.
 
 [tip type="read-on"]
-Para obtener más información sobre el uso de `sizes` y `srcset`, consulta el documento sobre [imágenes adaptables con srcset, sizes y heights](https://www.ampproject.org/docs/design/responsive/art_direction).
+Para obtener más información sobre el uso de `sizes` y `srcset`, consulta el documento sobre [imágenes adaptables con srcset, sizes y heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 [/tip]
 
 **alt**
@@ -125,7 +137,7 @@ Tamaño de imagen explícito que utiliza el tiempo de ejecución de AMP para det
 
 **atributos comunes**
 
-Este elemento incluye [atributos comunes](https://www.ampproject.org/docs/reference/common_attributes) que se aplican a los componentes de AMP.
+Este elemento incluye [atributos comunes](../../../documentation/guides-and-tutorials/learn/common_attributes.md) que se aplican a los componentes de AMP.
 
 # Estilo
 
@@ -158,7 +170,7 @@ Si quieres que la imagen siempre se muestre con un tamaño fijo:
 1. Define `width` y `height`.
 
 [tip type="read-on"]
-Obtén más información sobre los [diseños que se aplican](https://www.ampproject.org/docs/design/responsive/control_layout#what-if-the-layout-attribute-isn%E2%80%99t-specified?) si no especificas el atributo `layout`.
+Obtén más información sobre los [diseños que se aplican](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?) si no especificas el atributo `layout`.
 [/tip]
 
 # Definir la relación de aspecto
@@ -167,24 +179,28 @@ Para las imágenes adaptables, `width` y `height` no tienen que coincidir exacta
 
 Por ejemplo, en lugar de definir `width="900"` y `height="675"`, puedes especificar `width="1.33"` y `height="1"`.
 
-<div>
-  <amp-iframe height="193" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.aspectratio.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Show more" overflow="" tabindex="0" role="button">Mostrar código completo</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-</div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="A view of the sea"
+  src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
+  width="1.33"
+  height="1"
+  layout="responsive">
+</amp-img>
+```
+[/example]
 
 # Configurar varios archivos de origen para diferentes resoluciones de pantalla
 
 El atributo [`srcset`](#attributes) debe utilizarse para proporcionar distintas resoluciones para una misma imagen, todas con la misma relación de aspecto. El navegador elegirá automáticamente el archivo más apropiado de `srcset` en función de la resolución de la pantalla y de la anchura del dispositivo del usuario.
 
-Por otro lado, el atributo [`media`](https://www.ampproject.org/docs/reference/common_attributes#media) muestra u oculta los componentes de AMP y debe utilizarse al crear diseños adaptables. La forma adecuada de hacer que se muestren imágenes con diferentes relaciones de aspecto es utilizar varios componentes `<amp-img>`, cada uno con un atributo `media` que coincida con la anchura de la pantalla en la que se mostrará cada instancia.
+Por otro lado, el atributo [`media`](../../../documentation/guides-and-tutorials/learn/common_attributes.md#media) muestra u oculta los componentes de AMP y debe utilizarse al crear diseños adaptables. La forma adecuada de hacer que se muestren imágenes con diferentes relaciones de aspecto es utilizar varios componentes `<amp-img>`, cada uno con un atributo `media` que coincida con la anchura de la pantalla en la que se mostrará cada instancia.
 
-Para obtener más información, consulta la guía sobre [cómo crear páginas AMP adaptables](https://www.ampproject.org/docs/design/responsive/responsive_design#displaying-responsive-images).
+Para obtener más información, consulta la guía sobre [cómo crear páginas AMP adaptables](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images).
 
 # Mantener la relación de aspecto de las imágenes con dimensiones desconocidas
 
-El sistema de diseño de AMP requiere conocer la relación de aspecto de una imagen antes de poder recuperarla; sin embargo, en algunos casos puede que no conozcas las dimensiones de la imagen. Para mostrar imágenes con dimensiones desconocidas y que se mantengan las relaciones de aspecto, combina el diseño [`fill`](https://www.ampproject.org/docs/design/responsive/control_layout#the-layout-attribute) de AMP con la propiedad [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) de CSS. Para obtener más información, consulta el documento sobre [cómo admitir imágenes con dimensiones desconocidas](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) de AMP By Example.
+El sistema de diseño de AMP requiere conocer la relación de aspecto de una imagen antes de poder recuperarla; sin embargo, en algunos casos puede que no conozcas las dimensiones de la imagen. Para mostrar imágenes con dimensiones desconocidas y que se mantengan las relaciones de aspecto, combina el diseño [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) de AMP con la propiedad [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) de CSS. Para obtener más información, consulta el documento sobre [cómo admitir imágenes con dimensiones desconocidas](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) de AMP By Example.
 
 # Validación
 

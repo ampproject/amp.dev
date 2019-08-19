@@ -22,7 +22,7 @@ dan data interaksi sosial ke URL lain.
 
 Analisis AMP dirancang khusus untuk mengukur sekali dan melaporkan hasilnya ke banyak pihak.
 Jika Anda sudah bekerja dengan satu vendor analisis atau lebih,
-periksa daftar [Vendor Analisis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) untuk melihat apakah mereka telah mengintegrasikan solusinya dengan AMP.
+periksa daftar [Vendor Analisis](analytics-vendors.md) untuk melihat apakah mereka telah mengintegrasikan solusinya dengan AMP.
 Jika mereka sudah melakukannya, tinjau detail konfigurasinya lalu ikuti petunjuknya.
 
 Jika vendor analisis belum terintegrasi dengan AMP,
@@ -40,13 +40,13 @@ Anda harus mengidentifikasi data ini sebelum dapat mengkonfigurasinya.
 Titik data utama yang perlu dipertimbangkan:
 
 * Apakah Anda hanya akan melacak tampilan halaman, atau pola interaksi pengguna tambahan
-(lihat juga [amp-pixel atau amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#menggunakan-amp-pixel-atau-amp-analytics?))?
+(lihat juga [amp-pixel atau amp-analytics](analytics_basics.md#menggunakan-amp-pixel-atau-amp-analytics?))?
 * Jenis data apa yang akan Anda ambil tentang pengguna, konten,
-perangkat, atau browser (lihat juga [Penggantian variabel]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#penggantian-variabel))?
-* Bagaimana cara Anda mengidentifikasi pengguna (lihat juga [Identifikasi pengguna]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#user-identification))?
+perangkat, atau browser (lihat juga [Penggantian variabel](analytics_basics.md#penggantian-variabel))?
+* Bagaimana cara Anda mengidentifikasi pengguna (lihat juga [Identifikasi pengguna](analytics_basics.md#user-identification))?
 
 [tip type="read-on"]
 
-Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+Lanjutkan untuk mempelajari analisis dengan [Analisis: Dasar-Dasar](analytics_basics.md).
 
 [/tip]

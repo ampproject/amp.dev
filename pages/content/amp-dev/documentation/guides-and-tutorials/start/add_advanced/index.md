@@ -13,11 +13,11 @@ In this tutorial, you'll build on your understanding of AMP foundations and lear
 
 ## You’ll learn to:
 
-- Display ads by using [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+- Display ads by using [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)
 - Embed YouTube videos, Twitter cards and responsive text elements
-- Build carousels with images and combinations of content by using [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})
-- Track simple patterns with [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
-- Add site navigation to your page with [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}})
+- Build carousels with images and combinations of content by using [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)
+- Track simple patterns with [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+- Add site navigation to your page with [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md)
 - Use custom fonts in AMP
 
 ## You'll build:
@@ -25,5 +25,5 @@ In this tutorial, you'll build on your understanding of AMP foundations and lear
 A news article page that conforms to AMP specifications and incorporates advertising, analytics, embedded video, embedded social media, carousels, and a site navigation menu.
 
 [tip type="note"]
-**NOTE –**  This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}}) tutorial.
+**NOTE –**  This tutorial is a continuation of the concepts introduced in the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. If you don't already have a basic understanding of AMP’s core concepts, please try out the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial.
 [/tip]

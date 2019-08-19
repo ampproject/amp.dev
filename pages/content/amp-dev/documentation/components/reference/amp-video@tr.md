@@ -42,7 +42,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
       <li><a href="https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/">amp-video için oynatmak için tıklama yer paylaşımı</a></li></ul></td>
     </tr>
     <tr>
-      <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+      <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
       <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
     </tr>
   </table>
@@ -60,15 +60,23 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
 
 #### Örnek
 
-<!--yerleşik örnek - ampproject.org'da görüntülenir -->
-
-<div>
-  <amp-iframe height="293" src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.basic.embed.html" layout="fixed-height" sandbox="allow-scripts allow-forms allow-same-origin" resizable="">
-    <div aria-label="Daha fazla göster" overflow="" tabindex="0" role="button">Tam kodu göster</div>
-    <div placeholder=""></div>
-  </amp-iframe>
-
-</div>
+[example preview="inline" playground="true" imports="amp-video"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  layout="responsive"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.webm"
+    type="video/webm" />
+  <source src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+    type="video/mp4" />
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ## Analiz
 
@@ -102,7 +110,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
       <tr>
         <td width="40%"><strong>dock</strong></td>
         <td><strong><code>amp-video-docking</code> uzantısını gerektirir.</strong> Bu özellik mevcutsa ve video manuel olarak oynatılıyorsa kullanıcı, video bileşeninin görsel alanını görünüm alanının dışına kaydırdığında video “küçültülür” ve bir köşeye veya bir öğeye sabitlenir.
-            Daha ayrıntılı bilgi için <a href="https://github.com/ampproject/amphtml/blob/master/extensions/amp-video-docking/amp-video-docking.md">yuvaya yerleştirme uzantısının kendisiyle ilgili dokümanlara</a> bakın.</td>
+            Daha ayrıntılı bilgi için <a href="amp-video-docking.md">yuvaya yerleştirme uzantısının kendisiyle ilgili dokümanlara</a> bakın.</td>
         </tr>
         <tr>
           <td width="40%"><strong>loop</strong></td>
@@ -130,7 +138,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
         </tr>
         <tr>
           <td width="40%"><strong>common attributes</strong></td>
-          <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="https://www.ampproject.org/docs/reference/common_attributes">ortak özellikleri</a> içerir.</td>
+          <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">ortak özellikleri</a> içerir.</td>
         </tr>
       </table>
 

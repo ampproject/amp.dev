@@ -4,11 +4,11 @@ $title: Gambar responsif dengan atribut srcset, sizes & heights
 
 ## srcset
 
- Gunakan atribut `srcset` untuk mengontrol aset elemen berdasarkan berbagai ekspresi media. Secara khusus, gunakan atribut ini untuk semua tag [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) guna menentukan aset gambar yang akan dipakai berdasarkan berbagai ukuran layar.
+ Gunakan atribut `srcset` untuk mengontrol aset elemen berdasarkan berbagai ekspresi media. Secara khusus, gunakan atribut ini untuk semua tag [`amp-img`](../../../../documentation/components/reference/amp-img.md) guna menentukan aset gambar yang akan dipakai berdasarkan berbagai ukuran layar.
 
 Dalam contoh sederhana ini, `srcset` menentukan gambar yang akan digunakan berdasarkan lebar layar. Deskriptor `w` memberi tahu browser tentang lebar setiap gambar dalam daftar:
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -31,7 +31,7 @@ Anda juga dapat menggunakan atribut `sizes` bersamaan dengan `srcset`. Atribut `
 
 Pertimbangkan contoh berikut:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -61,7 +61,7 @@ Jika atribut `heights` ditentukan beserta `width` dan `height`, setelan default 
 
 Contoh:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

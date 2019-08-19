@@ -48,7 +48,7 @@ limitations under the License.
   </tr>
   <tr>
     <td class="col-fourty"><strong>가이드</strong></td>
-    <td><a href="https://www.ampproject.org/docs/tutorials/interactivity">대화형 AMP 페이지 만들기</a></td>
+    <td><a href="../../../documentation/guides-and-tutorials/develop/interactivity/index.md">대화형 AMP 페이지 만들기</a></td>
   </tr>
 </table>
 
@@ -176,7 +176,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 # `AMP.setState()`로 상태 업데이트
 
-[`AMP.setState()`](../../spec/amp-actions-and-events.md#amp) 작업은 개체 리터럴을 상태로 병합합니다. 예를 들어, 아래의 버튼을 누르면 `AMP.setState()`는 개체 리터럴을 상태와 [심층 병합](#deep-merge-with-ampsetstate)합니다.
+[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) 작업은 개체 리터럴을 상태로 병합합니다. 예를 들어, 아래의 버튼을 누르면 `AMP.setState()`는 개체 리터럴을 상태와 [심층 병합](#deep-merge-with-ampsetstate)합니다.
 
 ```html
 <!-- 자바스크립트와 마찬가지로 개체 리터럴
@@ -195,7 +195,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 # `AMP.pushState()`로 기록 수정
 
-브라우저 기록 스택에 새 항목을 푸시한다는 점을 제외하면 [`AMP.pushState()`](../../spec/amp-actions-and-events.md#amp) 작업은 `AMP.setState()`와 유사합니다. 이 기록 항목을 표시하면(예: 뒤로 이동) `AMP.pushState()`에 의해 설정된 변수의 이전 값이 복원됩니다.
+브라우저 기록 스택에 새 항목을 푸시한다는 점을 제외하면 [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) 작업은 `AMP.setState()`와 유사합니다. 이 기록 항목을 표시하면(예: 뒤로 이동) `AMP.pushState()`에 의해 설정된 변수의 이전 값이 복원됩니다.
 
 예:
 ```html
@@ -218,7 +218,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 * 정의되지 않은 변수 및 범위를 벗어난 배열-색인은 `undefined` 대신 `null`을 반환하거나 오류를 일으킵니다.
 * 성능을 위해 현재 단일 식의 피연산자는 50개로 제한됩니다. 이 개수가 사용 사례로 불충분한 경우 [Google에 문의](https://github.com/ampproject/amphtml/issues/new)하세요.
 
-식 문법과 구현의 전체 내용은 [bind-expr-impl.jison](./0.1/bind-expr-impl.jison) 및 [bind-expression.js](./0.1/bind-expression.js)에서 찾아볼 수 있습니다.
+식 문법과 구현의 전체 내용은 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 및 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)에서 찾아볼 수 있습니다.
 
 # 예
 
@@ -389,7 +389,7 @@ null || 'default' // 'default'
     <td>부울 식이어야 합니다.</td>
   </tr>
   <tr>
-    <td><a href="https://www.ampproject.org/docs/reference/components">AMP 요소</a>의 크기</td>
+    <td><a href="../../../documentation/components/index.md">AMP 요소</a>의 크기</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP 요소의 너비 및/또는 높이를 변경합니다.</td>
   </tr>
@@ -451,7 +451,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-img&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[src]</code><br><code>[srcset]</code></td>
-    <td><code>[src]</code>에 결합할 때 캐시에서 결합이 작동하도록 하려면 <code>[srcset]</code>에도 결합해야 합니다.<br>해당하는 <a href="https://www.ampproject.org/docs/reference/components/media/amp-img#attributes">amp-img 속성</a>을 참조하세요.</td>
+    <td><code>[src]</code>에 결합할 때 캐시에서 결합이 작동하도록 하려면 <code>[srcset]</code>에도 결합해야 합니다.<br>해당하는 <a href="amp-img.md#attributes">amp-img 속성</a>을 참조하세요.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-lightbox&gt;</code></td>
@@ -480,7 +480,7 @@ null || 'default' // 'default'
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
     <td><code>[alt]</code><br><code>[attribution]</code><br><code>[controls]</code><br><code>[loop]</code><br><code>[poster]</code><br><code>[preload]</code><br><code>[src]</code></td>
-    <td>해당하는 <a href="https://www.ampproject.org/docs/reference/components/media/amp-video#attributes">amp-video 속성</a>을 참조하세요.</td>
+    <td>해당하는 <a href="amp-video.md#attributes">amp-video 속성</a>을 참조하세요.</td>
   </tr>
   <tr>
     <td><code>&lt;amp-youtube&gt;</code></td>
@@ -649,7 +649,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
     <td>이 <code>amp-state</code>를 업데이트할 JSON을 반환하는 원격 엔드포인트의 URL. CORS HTTP 서비스여야 합니다.
       <code>src</code> 속성은 모든 표준 URL 변수 대체를 허용합니다. 자세한 정보는 <a href="../../spec/amp-var-substitutions.md">대체 가이드</a>를 참조하세요.
           [tip type="important"]
-        엔드포인트는 <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests">AMP의 CORS 요청</a> 사양에 지정된 요구사항을 구현해야 합니다.
+        엔드포인트는 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP의 CORS 요청</a> 사양에 지정된 요구사항을 구현해야 합니다.
         [/tip]</td>
     </tr>
     <tr>
@@ -659,7 +659,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
           <li>지원 값: `omit`, `include`</li>
           <li>기본값: `omit`</li>
         </ul>
-        사용자 인증 정보를 보내려면 <code>include</code>의 값을 전달하세요. 이 값이 설정된 경우 응답에서는 <a href="https://www.ampproject.org/docs/fundamentals/amp-cors-requests#cors-security-in-amp">AMP CORS 보안 지침</a>을 따라야 합니다.</td>
+        사용자 인증 정보를 보내려면 <code>include</code>의 값을 전달하세요. 이 값이 설정된 경우 응답에서는 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp">AMP CORS 보안 지침</a>을 따라야 합니다.</td>
       </tr>
     </table>
 

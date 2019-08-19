@@ -20,7 +20,7 @@ AMP Story ads conform to the following principles:
 * Same interaction model: User can continue to the next screen just like they would with an organic story page.
 * Fast: The ad never appears to a user in a half-loaded state.
 
-To be consistent with these principles, the AMP Story runtime determines the right placement of an ad page amidst the AMP Story. Read more about ad placement mechanics in [Advertise in AMP Stories]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/advertise_amp_stories.md', locale=doc.locale).url.path}}).
+To be consistent with these principles, the AMP Story runtime determines the right placement of an ad page amidst the AMP Story. Read more about ad placement mechanics in [Advertise in AMP Stories](advertise_amp_stories.md).
 
 ##Sample Story ad
 AMP Story ads are AMPHTML ads, but have required meta tag data, meet defined layout specifications and required UI elements. An AMP Story ad will always include a call to action(CTA) button and an ad label displayed as a text disclaimer at the top of the page.
@@ -64,7 +64,7 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 </html>
 [/sourcecode]
 
-The `amp-cta-type` tag must include one of the [available options]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md', locale=doc.locale).url.path}}#call-to-action-button-text-enum) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers.
+The `amp-cta-type` tag must include one of the [available options](story_ads_best_practices.md#call-to-action-button-text-enum) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers.
 
 ##Call to action button text enum
 The call to action button must be configured from a predefined set of choices:
@@ -101,7 +101,7 @@ If support is needed for a new CTA button text enum, please open a [GitHub issue
 ##Ad Landing Page
 You can specify one of three options for an AMP Story ad landing page.
 
-* `STORY`: Landing page is a [sponsored story]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/story_ads_best_practices.md', locale=doc.locale).url.path}}#sponsored-story).
+* `STORY`: Landing page is a [sponsored story](story_ads_best_practices.md#sponsored-story).
 * `AMP`: Landing page is a valid AMP Page.
 * `NONAMP`: Any other type of webpage.
 
@@ -118,7 +118,7 @@ The CTA sits 32px from the bottom and is centered horizontally. It is 120px by 3
 {{ image('/static/img/docs/stampads/cta_button.png', 515, 520, layout='intrinsic', alt='Demonstration of the CTA Button', caption='The CTA Button sits near the bottom', align='' ) }}
 
 ##Images and video
-Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}#poster) The recommended dimensions for a poster image are 720p (720w x 1280h) .
+Images and video included in an AMP Story ad should be 4:3 standard full-screen. Ads that include video should use a [poster](../../../documentation/components/reference/amp-video.md#poster) The recommended dimensions for a poster image are 720p (720w x 1280h) .
 
 [sourcecode:html]
 <amp-video controls
@@ -156,7 +156,7 @@ Background images can be scaled to full screen. The following CSS is a successfu
 ###Video
 
 ####Specify `<source>` vs `src`
-When specifying the source for an [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})
+When specifying the source for an [`amp-video`](../../../documentation/components/reference/amp-video.md)
 
 Example: Specifying multiple source files
 
@@ -264,4 +264,4 @@ A Sponsored Story exists as a URL on the web, enabling the drive of user traffic
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='CTA button directs to a Sponsored Story', caption='CTA button directs to a Sponsored Story', align='' ) }}
 
-Read more about creating an [AMP Story here]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md', locale=doc.locale).url.path}}).
+Read more about creating an [AMP Story here](amp_story_best_practices.md).

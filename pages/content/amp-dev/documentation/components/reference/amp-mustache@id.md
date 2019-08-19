@@ -65,7 +65,7 @@ Mustache adalah sintaks template tanpa logika. Lihat [dokumen Mustache.js](https
 
 ## Penggunaan
 
-Template `amp-mustache` harus ditentukan dan digunakan sesuai dengan [Spesifikasi Template AMP](../../spec/amp-html-templates.md).
+Template `amp-mustache` harus ditentukan dan digunakan sesuai dengan [Spesifikasi Template AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
 Pertama, `amp-mustache` harus dinyatakan/dimuat seperti ini:
 
@@ -95,7 +95,7 @@ atau
 
 Gunakan tag `template` jika memungkinkan, karena validasi AMP memberikan petunjuk dev-x yang berguna. Gunakan template `script` untuk kasus dan masalah ekstrem terkait penerapan template dalam konteks tabel. Lihat bagian "Tabel" di bawah.
 
-Bagaimana template ditemukan, kapan template dirender, dan bagaimana data disediakan, semuanya ditentukan oleh elemen AMP target yang menggunakan template ini untuk merender kontennya (misalnya, dalam [amp-list](../amp-list/amp-list.md), [amp-form](../amp-form/amp-form.md), dll.).
+Bagaimana template ditemukan, kapan template dirender, dan bagaimana data disediakan, semuanya ditentukan oleh elemen AMP target yang menggunakan template ini untuk merender kontennya (misalnya, dalam [amp-list](amp-list.md), [amp-form](amp-form.md), dll.).
 
 ## Batasan
 

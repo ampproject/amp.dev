@@ -34,7 +34,7 @@ teaser:
       <td><code>&lt;script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>すべて</td>
   </tr>
   <tr>
@@ -96,7 +96,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 
 ## 選択を解除する
 
-要素に対してタップやクリックが行われたときにすべての選択を解除するには、要素内に [`on`](../../spec/amp-actions-and-events.md) action 属性を設定し、`clear` action メソッドで AMP セレクタ `id` を指定します。
+要素に対してタップやクリックが行われたときにすべての選択を解除するには、要素内に [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) action 属性を設定し、`clear` action メソッドで AMP セレクタ `id` を指定します。
 
 例:
 
@@ -149,7 +149,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 
 `on` 属性を使用したイベントにより、他の AMP コンポーネントに対してアクションをトリガーできます。たとえば、`on="select: my-tab.show"` のように指定します。
 
-詳細については、[AMP のアクションとイベント](../../spec/amp-actions-and-events.md)をご覧ください。
+詳細については、[AMP のアクションとイベント](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)をご覧ください。
 
 <table>
   <tr>

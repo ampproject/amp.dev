@@ -44,7 +44,7 @@ limitations under the License.
     <tr>
       <td class="col-fourty">
         <strong>
-          <a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a>
+          <a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a>
         </strong>
       </td>
       <td>无</td>
@@ -73,8 +73,8 @@ limitations under the License.
 
 ## 支持的广告联盟
 
-* [AdSense](../../ads/google/adsense.md)
-* [DoubleClick（实验性）](../../ads/google/doubleclick.md)
+* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+* [DoubleClick（实验性）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 属性
 
@@ -89,7 +89,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>常见属性</strong></td>
-    <td>此元素包含扩展到 AMP 组件的<a href="https://www.ampproject.org/docs/reference/common_attributes">常见属性</a>。</td>
+    <td>此元素包含扩展到 AMP 组件的<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">常见属性</a>。</td>
   </tr>
 </table>
 

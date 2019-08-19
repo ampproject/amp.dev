@@ -33,21 +33,21 @@ teaser:
   </tr>
   <tr>
     <td width="40%"><strong>Durum</strong></td>
-    <td><div><a href="https://www.ampproject.org/docs/reference/experimental.html">Deneysel</a></div></td>
+    <td><div><a href="../../../documentation/guides-and-tutorials/learn/experimental.md">Deneysel</a></div></td>
   </tr>
   <tr>
     <td width="40%"><strong>Zorunlu Komut Dosyası</strong></td>
     <td><code>&lt;script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js">&lt;/script></code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">Desteklenen Düzenler</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">Desteklenen Düzenler</a></strong></td>
     <td>yok</td>
   </tr>
   <tr>
     <td width="40%"><strong>Örnekler</strong></td>
     <td><ul>
       <li>Örneklerle AMP'de <a href="https://ampbyexample.com/stories/introduction/amp_story_hello_world/">Merhaba Dünya</a> örneğine bakın.</li>
-      <li><a href="https://www.ampproject.org/docs/tutorials/visual_story">Görsel AMP hikayesi oluşturma</a> eğiticisinden bilgi edinin.</li>
+      <li><a href="../../../documentation/guides-and-tutorials/start/visual_story/index.md">Görsel AMP hikayesi oluşturma</a> eğiticisinden bilgi edinin.</li>
     </ul></td>
   </tr>
 </table>
@@ -247,7 +247,7 @@ Gövdedeki içerik, iki sayfalı bir hikaye oluşturur.  Her sayfada, tam çerç
 
 ### amp-story için zorunlu işaretleme
 
-AMP hikayesi HTML biçimi, [geçerli bir AMP HTML dokümanıyla aynı işaretleme gereksinimlerinin](https://www.ampproject.org/docs/reference/spec#required-markup) yanı sıra aşağıdaki ek gereksinimlere uygundur:
+AMP hikayesi HTML biçimi, [geçerli bir AMP HTML dokümanıyla aynı işaretleme gereksinimlerinin](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup) yanı sıra aşağıdaki ek gereksinimlere uygundur:
 
 | KURAL | AÇIKLAMA |
 |----|---|
@@ -720,7 +720,7 @@ Adlandırılmış Alanlar:
     <div class="content" grid-area="lower-third">Paragraph 3</div>
   </amp-story-grid-layer>
   <amp-story-cta-layer>
-    <a href="https://www.ampproject.org" class="button">Outlink here!</a>
+    <a href="https://amp.dev" class="button">Outlink here!</a>
   </amp-story-cta-layer>
 </amp-story-page>
 ```
@@ -1277,9 +1277,9 @@ Bu alan, bir dize içermelidir. Her bir dize bir paylaşım sağlayıcısının 
 
 Fazladan parametreler gerekli olduğunda, anahtar/değer çiftlerine sahip bir nesne kullanılmalıdır. Nesne, sağlayıcının adına karşılık gelen bir değere (ör. `facebook`) sahip bir anahtar `provider` öğesi içermelidir. Sonraki anahtar/değer çiftleri, paylaşım sağlayıcıya bağlıdır.
 
-Kullanılabilir sağlayıcıların listesi, [amp-social-share](https://www.ampproject.org/docs/reference/components/amp-social-share) bileşenindekilerle aynıdır.
+Kullanılabilir sağlayıcıların listesi, [amp-social-share](amp-social-share.md) bileşenindekilerle aynıdır.
 
-Bu sağlayıcıların her biri, farklı kullanılabilir parametre gruplarına sahiptir ([`data-param-*` bölümüne bakın](https://www.ampproject.org/docs/reference/components/amp-social-share#data-param-%2a)). Yapılandırma nesnesi, bu parametreleri `data-param-` öneki olmadan alır (örneğin, `data-param-app_id` parametresi, yapılandırma nesnesinde `app_id` olarak görünür).
+Bu sağlayıcıların her biri, farklı kullanılabilir parametre gruplarına sahiptir ([`data-param-*` bölümüne bakın](amp-social-share.md#data-param-%2a)). Yapılandırma nesnesi, bu parametreleri `data-param-` öneki olmadan alır (örneğin, `data-param-app_id` parametresi, yapılandırma nesnesinde `app_id` olarak görünür).
 
 #### JSON yapılandırması
 
@@ -1327,10 +1327,10 @@ Bu sağlayıcıların her biri, farklı kullanılabilir parametre gruplarına sa
 
 Aşağıda, AMP hikayelerinde kullanılabilecek ve hikayeye özel bazı uyarıların yapılmasını gerektiren diğer bileşenler bulunmaktadır.
 
-* [amp-sidebar](https://www.ampproject.org/docs/reference/components/amp-sidebar#sidebar-for-stories)
-* [amp-consent](https://www.ampproject.org/docs/reference/components/amp-consent#prompt-ui-for-stories)
+* [amp-sidebar](amp-sidebar.md#sidebar-for-stories)
+* [amp-consent](amp-consent.md#prompt-ui-for-stories)
 
-Genel olarak kullanılabilir daha fazla bileşen için [izin verilen alt öğeler listesine](https://www.ampproject.org/docs/reference/components/amp-story#children) bakın.
+Genel olarak kullanılabilir daha fazla bileşen için [izin verilen alt öğeler listesine](amp-story.md#children) bakın.
 
 ## Doğrulama
 
@@ -1367,8 +1367,8 @@ Buna ek olarak, sağdan sola diller için hikayenizin `<html>` etiketine `dir="r
 
 ## İlgili kaynaklar
 
-* [Eğitici: Bir görsel AMP hikayesi oluşturma](https://www.ampproject.org/docs/tutorials/visual_story)
+* [Eğitici: Bir görsel AMP hikayesi oluşturma](../../../documentation/guides-and-tutorials/start/visual_story/index.md)
 * [Örneklerle AMP'deki örnekler](https://ampbyexample.com/stories/#stories/introduction)
-* [AMP hikayesi oluşturmak için en iyi uygulamalar](https://www.ampproject.org/docs/guides/amp_story_best_practices)
+* [AMP hikayesi oluşturmak için en iyi uygulamalar](../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
 
 </amp-story></body>

@@ -5,7 +5,7 @@ $title: AMP ページからプログレッシブ ウェブアプリを事前に�
 **サイトの入り口を AMP ページに**して、**その裏側でプログレッシブ ウェブアプリ（PWA）を準備**し、以降のページでは PWA に切り替えるという効果的な使い方をご紹介します。
 
 * 全コンテンツの「末端」ページ（概要ページではなく、特定のコンテンツが含まれているページ）は AMP として公開され、ほぼ一瞬で読み込まれます。
-* こうした AMP では AMP の特別な要素 [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) を使用して、ユーザーがコンテンツを楽しんでいる間に、キャッシュと PWA シェルを使用できるようにします。
+* こうした AMP では AMP の特別な要素 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) を使用して、ユーザーがコンテンツを楽しんでいる間に、キャッシュと PWA シェルを使用できるようにします。
 * ユーザーがウェブサイト上の別のリンク（たとえば、下部に設置した、アプリのように使うためのカスタム外部リンク）をクリックすると、Service Worker がそのリクエストを検出し、ページを引き継いで、代わりに PWA シェルを読み込みます。
 
 この開発パターンを使用する理由とその方法について、以下に説明します。
@@ -14,7 +14,7 @@ $title: AMP ページからプログレッシブ ウェブアプリを事前に�
 
 ### 最初のユーザー獲得に適した AMP
 
-AMP は、検索エンジンによるオーガニック検索、友だちから送られた共有リンク、別のサイトに設置されているリンクなどを通じてユーザーが見つけるコンテンツ ページ（いわゆる「末端ページ」）に適したソリューションです。AMP では [特殊な事前レンダリング]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}})が実行されるため、AMP ページは極めて高速に読み込まれ、結果として離脱率を大幅に下げることにもつながります（最近行われた [DoubleClick の調査](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)では、**ページの読み込みに 3 秒かかると全ユーザーの 53% 以上が離脱する**ことがわかっています）。
+AMP は、検索エンジンによるオーガニック検索、友だちから送られた共有リンク、別のサイトに設置されているリンクなどを通じてユーザーが見つけるコンテンツ ページ（いわゆる「末端ページ」）に適したソリューションです。AMP では [特殊な事前レンダリング](../../../about/how-amp-works.html)が実行されるため、AMP ページは極めて高速に読み込まれ、結果として離脱率を大幅に下げることにもつながります（最近行われた [DoubleClick の調査](https://www.doubleclickbygoogle.com/articles/mobile-speed-matters/)では、**ページの読み込みに 3 秒かかると全ユーザーの 53% 以上が離脱する**ことがわかっています）。
 
 ### インタラクティブ性が高くエンゲージメントに効果的な PWA
 
@@ -28,7 +28,7 @@ AMP では、プログレッシブ ウェブアプリの Service Worker を AMP 
 
 ヒント: Service Worker についてよく知らないという方は、Jake Archibald の [Udacity のコース](https://www.udacity.com/course/offline-web-applications--ud899)を受講することをおすすめします。
 
-まず、[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) を使用してすべての AMP ページに Service Worker をインストールします。つまり、次のようにスクリプトを使って、このコンポーネントをページの `<head>` に追加します。
+まず、[`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) を使用してすべての AMP ページに Service Worker をインストールします。つまり、次のようにスクリプトを使って、このコンポーネントをページの `<head>` に追加します。
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -70,7 +70,7 @@ self.addEventListener('install', function(event) {
 
 ## AMP ページ上のすべてのリンクで PWA に誘導する
 
-おそらく、AMP ページ上の大部分のリンクは多くのコンテンツ ページにつながっていることでしょう。初回以降のリンクのクリックがプログレッシブ ウェブアプリに「アップグレード」されるようにする場合、[AMP の使用方法に応じて]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})次の 2 つの方法があります。
+おそらく、AMP ページ上の大部分のリンクは多くのコンテンツ ページにつながっていることでしょう。初回以降のリンクのクリックがプログレッシブ ウェブアプリに「アップグレード」されるようにする場合、[AMP の使用方法に応じて](../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)次の 2 つの方法があります。
 
 ### 1. 正規ページと AMP ページを組み合わせている場合
 
@@ -96,7 +96,7 @@ self.addEventListener('fetch', event => {
 
 この方法で特に注目したいのは、AMP から PWA に移動するためにプログレッシブ エンハンスメントを使用している点です。ただし、Service Worker に未対応のブラウザの場合は、AMP から PWA には移動できず、AMP から AMP に移動することになります。
 
-AMP では、[シェル URL の書き換え],[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}#shell-url-rewrite)と呼ばれる方法でこの問題に対処します。フォールバックURLパターンを[`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md',locale=doc.locale).url.path}}) タグに追加することにより、Service Worker に非対応であることが検出された場合に、特定のページ上の一致するすべてのリンクを書き換えて、代わりに従来からある別のシェル URL に移動するよう AMP に指示することができます。
+AMP では、[シェル URL の書き換え],[`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite)と呼ばれる方法でこの問題に対処します。フォールバックURLパターンを[`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) タグに追加することにより、Service Worker に非対応であることが検出された場合に、特定のページ上の一致するすべてのリンクを書き換えて、代わりに従来からある別のシェル URL に移動するよう AMP に指示することができます。
 
 [sourcecode:html]
 <amp-install-serviceworker
@@ -109,4 +109,4 @@ AMP では、[シェル URL の書き換え],[`amp-install-serviceworker`]({{g.d
 
 これらの属性を指定することで、Service Worker 対応かどうかにかかわらず、AMP ページで発生する初回以降のすべてのクリックで PWA に移動できるようになります。
 
-詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})。
+詳細情報: ここまでお読みいただいたら、次は既存の AMP ページを再利用して PWA を作成してみましょう。[こちらの説明をご覧ください](amp-in-pwa.md)。

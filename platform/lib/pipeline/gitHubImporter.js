@@ -119,10 +119,11 @@ class GitHubImporter {
 }
 
 module.exports = {
-  'CLIENT_TOKEN': CLIENT_TOKEN,
-  'CLIENT_SECRET': CLIENT_SECRET,
-  'CLIENT_ID': CLIENT_ID,
-  'log': log,
-  'checkCredentials': checkCredentials,
-  'GitHubImporter': GitHubImporter,
+  CLIENT_TOKEN,
+  CLIENT_SECRET: CLIENT_SECRET,
+  CLIENT_ID,
+  log,
+  checkCredentials,
+  GitHubImporter,
+  DEFAULT_REPOSITORY,
 };

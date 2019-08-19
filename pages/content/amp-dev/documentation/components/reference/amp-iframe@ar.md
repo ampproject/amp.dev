@@ -35,7 +35,7 @@ limitations under the License.
     <td><code>&lt;script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"&gt;&lt;/script&gt;</code></td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">التنسيقات المعتمدة</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">التنسيقات المعتمدة</a></strong></td>
     <td>fill وfixed وfixed-height وflex-item وintrinsic وnodisplay وresponsive</td>
   </tr>
   <tr>
@@ -51,7 +51,7 @@ limitations under the License.
 * قد لا يظهر `amp-iframe` بالقرب من أعلى المستند (باستثناء إطارات iframe التي تستخدم `placeholder` كما هو موضح [أدناه](#iframe-with-placeholder)). يجب أن يقع iframe على بعد 600 بكسل من الأعلى أو ألا يقع ضمن 75٪ الأولى من إطار العرض عند التمرير إلى الأعلى، أيهما أقل.
 * تتم إضافة إطار amp-iframe تلقائيًا إلى وضع الحماية (راجِع [التفاصيل](#sandbox)).
 * يجب على `amp-iframe` طلب الموارد فقط عبر HTTPS أو من data-URI أو عبر السمة `srcdoc`.
-* يجب ألا يكون `amp-iframe` في نفس الأصل الذي تقع فيه الحاوية إلا في حال عدم السماح بسياسة `allow-same-origin` في السمة `sandbox`. راجِع مستند ["سياسة أصل إطارات Iframe"](../../spec/amp-iframe-origin-policy.md) للحصول على مزيد من التفاصيل عن الأصول المسموح بها في iframe.
+* يجب ألا يكون `amp-iframe` في نفس الأصل الذي تقع فيه الحاوية إلا في حال عدم السماح بسياسة `allow-same-origin` في السمة `sandbox`. راجِع مستند ["سياسة أصل إطارات Iframe"](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) للحصول على مزيد من التفاصيل عن الأصول المسموح بها في iframe.
 
 *مثال: تضمين إحدى "خرائط Google" في amp-iframe*
 
@@ -77,7 +77,7 @@ limitations under the License.
 
 **يجب عدم** استخدام `amp-iframe` لعرض الإعلانات كغرض أساسي. فلا بأس من استخدام `amp-iframe` لعرض فيديوهات تكون الإعلانات جزءًا منها. قد يتم تنفيذ سياسة AMP هذه بعدم عرض إطارات iframe المعنّية.
 
-يجب أن تستخدم الإعلانات [`amp-ad`](https://www.ampproject.org/docs/reference/components/amp-ad) بدلاً من ذلك.
+يجب أن تستخدم الإعلانات [`amp-ad`](amp-ad.md) بدلاً من ذلك.
 
 في ما يلي أسباب هذه السياسة:
 
@@ -111,7 +111,7 @@ limitations under the License.
   </tr>
   <tr>
     <td width="40%"><strong>السمات المشتركة</strong></td>
-    <td>يتضمن هذا العنصر <a href="https://www.ampproject.org/docs/reference/common_attributes">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
+    <td>يتضمن هذا العنصر <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
   </tr>
 </table>
 
@@ -223,7 +223,7 @@ window.addEventListener('message', function(event) {
 
 # تتبع/تحليلات iframe
 
-ننصح بشدة باستخدام المكوِّن [`amp-analytics`](https://www.ampproject.org/docs/reference/components/amp-analytics) لأغراض التحليل لأنه حل أكثر قوة وفعالية وكمال ويمكنك تهيئته لمجموعة واسعة من موردي التحليلات.
+ننصح بشدة باستخدام المكوِّن [`amp-analytics`](amp-analytics.md) لأغراض التحليل لأنه حل أكثر قوة وفعالية وكمال ويمكنك تهيئته لمجموعة واسعة من موردي التحليلات.
 
 لا تسمح AMP إلا باستخدام إطار iframe واحد لكل صفحة لأغراض التحليل والتتبع. للحفاظ على الموارد، ستتم إزالة إطارات iframe هذه من DOM بعد 5 ثوان من تحميلها، ويعتبر هذا وقتًا كافيًا لإكمال أي عمل مطلوب إنجازه.
 
@@ -231,7 +231,7 @@ window.addEventListener('message', function(event) {
 
 # إرشادات: استخدِم مكونات AMP بدلاً من amp-iframe
 
-يجب اعتبار المكوِّن `amp-iframe` عنصرًا احتياطيًا إذا كانت تجربة المستخدِم المطلوبة غير ممكنة بوسائل أخرى في AMP، أي غياب [مكون AMP](https://www.ampproject.org/docs/reference/components) متوفر لحالة الاستخدام. ويرجع هذا إلى تعدد فوائد استخدام مكوِّن AMP مصمم لحالة استخدام معينة مثل:
+يجب اعتبار المكوِّن `amp-iframe` عنصرًا احتياطيًا إذا كانت تجربة المستخدِم المطلوبة غير ممكنة بوسائل أخرى في AMP، أي غياب [مكون AMP](../../../documentation/components.md) متوفر لحالة الاستخدام. ويرجع هذا إلى تعدد فوائد استخدام مكوِّن AMP مصمم لحالة استخدام معينة مثل:
 
 * تحسين إدارة أفضل الموارد والأداء
 * يمكن أن توفر المكونات المخصصة صور عناصر نائبة مضمّنة في بعض الحالات. يعني هذا الحصول مثلاً على الصورة المصغرة الصحيحة للفيديو قبل تحميله كما يقلل من الجهد المبذول في الترميز لإضافة عنصر نائب يدويًا.

@@ -35,7 +35,7 @@ teaser:
     <td>ページビューをカウントする一般的なトラッキング ピクセルとして使用できます。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">サポートされるレイアウト</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">サポートされるレイアウト</a></strong></td>
     <td>fixed、nodisplay</td>
   </tr>
   <tr>
@@ -81,11 +81,11 @@ AMP4ADS クリエイティブ内で使用されるこの属性は、検証後の
 
 ##### 共通の属性
 
-この要素には、AMP コンポーネントに拡張された[共通の属性](https://www.ampproject.org/docs/reference/common_attributes)が含まれます。
+この要素には、AMP コンポーネントに拡張された[共通の属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)が含まれます。
 
 ## 置換
 
-`amp-pixel` では、標準的な URL 変数置換がすべて許可されています。詳細については、[置換ガイド](../spec/amp-var-substitutions.md)をご覧ください。
+`amp-pixel` では、標準的な URL 変数置換がすべて許可されています。詳細については、[置換ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md)をご覧ください。
 
 以下の例の場合、インプレッションごとに RANDOM 値がランダムに生成され、`https://foo.com/pixel?0.8390278471201` といった URL に対してリクエストが作成されます。
 

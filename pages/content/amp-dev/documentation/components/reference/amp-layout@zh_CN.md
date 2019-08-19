@@ -30,17 +30,17 @@ $title: amp-layout
 <table>
   <tr>
     <td width="40%"><strong>说明</strong></td>
-    <td>一个常规的多用途容器元素，可将 AMP 强大的<a href="https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute">布局</a>功能运用到任何元素上。</td>
+    <td>一个常规的多用途容器元素，可将 AMP 强大的<a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute">布局</a>功能运用到任何元素上。</td>
   </tr>
   <tr>
-    <td class="col-fourty"><strong><a href="https://www.ampproject.org/docs/guides/responsive/control_layout.html">支持的布局</a></strong></td>
+    <td class="col-fourty"><strong><a href="../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md">支持的布局</a></strong></td>
     <td>container、fill、fixed、fixed-height、flex-item、intrinsic、responsive</td>
   </tr>
 </table>
 
 ## 概述
 
-借助 `amp-layout` 组件，您可以将基于宽高比的自适应布局应用于任何元素。`amp-layout` 组件与现有 AMP 组件的 [layout](https://www.ampproject.org/docs/guides/responsive/control_layout#the-layout-attribute) 属性的工作原理相似，但前者支持用作子级的所有 HTML 标记。其他支持的布局均使用 `amp-layout`（例如 fixed-height、fixed 等）。
+借助 `amp-layout` 组件，您可以将基于宽高比的自适应布局应用于任何元素。`amp-layout` 组件与现有 AMP 组件的 [layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) 属性的工作原理相似，但前者支持用作子级的所有 HTML 标记。其他支持的布局均使用 `amp-layout`（例如 fixed-height、fixed 等）。
 
 **示例**
 
@@ -57,7 +57,7 @@ $title: amp-layout
 
 ## 属性
 
-此元素包含扩展到 AMP 组件的[常见属性](https://www.ampproject.org/docs/reference/common_attributes)。
+此元素包含扩展到 AMP 组件的[常见属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)。
 
 ## 验证
 
