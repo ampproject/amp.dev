@@ -4,6 +4,7 @@ $localization:
   path: /{locale}/documentation/courses/advanced-course/{base}.html
 $title@: Advanced Course
 $order: 4
+toc: false
 
 chaptered: true
 tutorial: true
