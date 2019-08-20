@@ -20,6 +20,7 @@ require('module-alias/register');
 //
 // DON'T FORGET TO REMOVE ONCE IT'S FIXED
 const DOCS_TO_FETCH_FROM_MASTER = ['amp-next-page'];
+const DEFAULT_VERSION = 0.1;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const categories = require(__dirname + '/../../config/imports/componentCategories.json');
@@ -134,7 +135,7 @@ class ComponentReferenceImporter {
       }
 
       // when this doc is the highest current version, use it as default entry point
-      if ((versions[0] || 0.1) === version) {
+      if ((versions[0] || DEFAULT_VERSION) === version) {
         document.isCurrent = true;
         document.servingPath = '/documentation/components/{slug}.html';
       }
@@ -224,7 +225,7 @@ class ComponentReferenceImporter {
         .filter((file) => !isNaN(parseFloat(file.name)))
         .map((file) => parseFloat(file.name))
         .sort()
-        .reverse())[0] || 0.1;
+        .reverse())[0] || DEFAULT_VERSION;
 
     // some components are broken on current releases and need to be imported from master
     const master = DOCS_TO_FETCH_FROM_MASTER.includes(extension.name);
@@ -238,23 +239,24 @@ class ComponentReferenceImporter {
 
     // Find the Markdown document that is named like the extension
     for (let i = 0; i < files.length; i++) {
-      if (files[i].type === 'file') {
-        const tagName = files[i].name.replace('.md', '');
+      const file = files[i];
+      if (file.type === 'file') {
+        const tagName = file.name.replace('.md', '');
         if (protoAscii.has(tagName)) { // imported docs must correspond to a tag defined in the protoascii
-          const documentPath = files[i].path;
-          const version = files[i].path.match(/\/([\d\.]+)/);
+          const documentPath = file.path;
+          const versionMatch = file.path.match(/\/([\d\.]+)/);
           documents.push({
             document: await this.githubImporter_
                 .fetchDocument(documentPath, DEFAULT_REPOSITORY, master),
-            version: version ? parseFloat(version[1]) : highestVersion,
+            version: versionMatch ? parseFloat(versionMatch[1]) : highestVersion,
             tagName: tagName,
           });
         }
       } else {
-        if (!isNaN(parseFloat(files[i].name))) {
+        if (!isNaN(parseFloat(file.name))) {
           // Look into the version folder for documents
-          files[i].name = extension.name;
-          documents = documents.concat(await this._findExtensionDocs(files[i], protoAscii));
+          file.name = extension.name;
+          documents = documents.concat(await this._findExtensionDocs(file, protoAscii));
         }
       }
     }

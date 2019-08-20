@@ -15,9 +15,15 @@
  */
 
 const writeFile = require('write');
+const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
+
+// Prep version template
+const nunjucks = require('nunjucks');
+const VERSION_TOGGLE_TEMPLATE = nunjucks
+    .compile(fs.readFileSync('frontend/templates/views/partials/version-toggle.j2', 'utf8'));
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
@@ -255,22 +261,13 @@ class MarkdownDocument {
    * @return {String}          The rewritten content
    */
   static insertVersionToggler(contents, version, versions) {
-    const TITLE_PATTERN = /^#{1}\s(.+)/m;
-    const versionLinks = versions.map((v) => {
-      // TODO: Figure out how to turn this into a more robust link..
-      return `<a${ v !== version ?
-        ' href="../$1' + (v === versions[0] ? '' : '-v' + v) + '.html"' : '' }>${v}</a>`;
-    }).join('\n');
-    const VERSION_TOGGLER = `
-<h1>
-$1
-<div class="ap--versions">
-  ${versionLinks}
-</div>
-</h1>
-    `;
-    contents = contents.replace(TITLE_PATTERN, VERSION_TOGGLER);
-    return contents;
+    const titleRegex = /^#{1}\s(.+)/m;
+    const title = contents.match(titleRegex)[1];
+    return contents.replace(titleRegex, VERSION_TOGGLE_TEMPLATE.render({
+      title: title,
+      versions: versions,
+      version: version,
+    }));
   }
 
   /**
