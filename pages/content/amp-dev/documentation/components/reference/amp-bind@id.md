@@ -391,7 +391,7 @@ Ketika **status** berubah, ekspresi dievaluasi ulang dan properti elemen terikat
     <td>Harus berupa ekspresi boolean.</td>
   </tr>
   <tr>
-    <td>Ukuran <a href="../../../documentation/components/index.md">elemen AMP</a></td>
+    <td>Ukuran <a href="../../../documentation/components/index.html">elemen AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Mengubah lebar dan/atau tinggi elemen AMP.</td>
   </tr>

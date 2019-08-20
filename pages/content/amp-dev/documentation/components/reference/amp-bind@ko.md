@@ -389,7 +389,7 @@ null || 'default' // 'default'
     <td>부울 식이어야 합니다.</td>
   </tr>
   <tr>
-    <td><a href="../../../documentation/components/index.md">AMP 요소</a>의 크기</td>
+    <td><a href="../../../documentation/components/index.html">AMP 요소</a>의 크기</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP 요소의 너비 및/또는 높이를 변경합니다.</td>
   </tr>

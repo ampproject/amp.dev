@@ -392,7 +392,7 @@ Bir makro, <i>kendisinden önce tanımlanan</i> diğer makroları da çağırabi
     <td>Bir boole ifadesi olmalıdır.</td>
   </tr>
   <tr>
-    <td><a href="../../../documentation/components/index.md">AMP öğelerinin</a> boyutu</td>
+    <td><a href="../../../documentation/components/index.html">AMP öğelerinin</a> boyutu</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP öğesinin genişliğini ve/veya yüksekliğini değiştirir.</td>
   </tr>

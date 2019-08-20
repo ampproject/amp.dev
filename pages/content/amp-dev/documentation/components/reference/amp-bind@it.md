@@ -396,7 +396,7 @@ Quando lo **stato** cambia, le espressioni vengono rivalutate e le proprietà de
     <td>Deve essere un'espressione booleana.</td>
   </tr>
   <tr>
-    <td>Dimensione degli <a href="../../../documentation/components/index.md">elementi AMP</a></td>
+    <td>Dimensione degli <a href="../../../documentation/components/index.html">elementi AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Modifica la larghezza e/o l'altezza dell'elemento AMP.</td>
   </tr>

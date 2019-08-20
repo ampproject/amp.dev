@@ -392,7 +392,7 @@ null || 'default' // 'default'
     <td>Это должно быть логическое выражение.</td>
   </tr>
   <tr>
-    <td>Размер <a href="../../../documentation/components/index.md">элементов AMP</a></td>
+    <td>Размер <a href="../../../documentation/components/index.html">элементов AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Меняет ширину и/или высоту AMP-элемента.</td>
   </tr>

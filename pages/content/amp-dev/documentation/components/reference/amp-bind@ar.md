@@ -394,7 +394,7 @@ null || 'default' // 'default'
     <td>يجب أن تكون تعبيرًا منطقيًا.</td>
   </tr>
   <tr>
-    <td>حجم <a href="../../../documentation/components/index.md">عناصر AMP</a></td>
+    <td>حجم <a href="../../../documentation/components/index.html">عناصر AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>تغيّر عرض و/أو ارتفاع عنصر AMP.</td>
   </tr>

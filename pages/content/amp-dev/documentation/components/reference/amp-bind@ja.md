@@ -388,7 +388,7 @@ null || 'default' // 'default'
     <td>ブール式である必要があります。</td>
   </tr>
   <tr>
-    <td><a href="../../../documentation/components/index.md">AMP 要素</a>のサイズ</td>
+    <td><a href="../../../documentation/components/index.html">AMP 要素</a>のサイズ</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP 要素の幅または高さ（あるいはその両方）を変更します。</td>
   </tr>

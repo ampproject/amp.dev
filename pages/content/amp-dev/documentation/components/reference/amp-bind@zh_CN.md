@@ -391,7 +391,7 @@ null || 'default' // 'default'
     <td>应为布尔表达式。</td>
   </tr>
   <tr>
-    <td><a href="../../../documentation/components/index.md">AMP 元素</a>大小</td>
+    <td><a href="../../../documentation/components/index.html">AMP 元素</a>大小</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>用于更改 AMP 元素的宽度和/或高度。</td>
   </tr>
