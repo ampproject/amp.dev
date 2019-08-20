@@ -1,3 +1,4 @@
+{% do doc.styles.addCssFile('css/components/molecules/info-button.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/level-toggle.css') %}
 {% set level = doc.level %}
 {% set url = doc.url.path %}
@@ -33,7 +34,7 @@
     <h5 class="disabled-headline">Expert mode off</h5>
     [% endif %]
   </div>
-  <div class="info-button">
+  <div class="ap-m-info-button">
     <input type="checkbox" />
   {% do doc.icons.useIcon('/icons/questionmark.svg') %}
     <svg>
