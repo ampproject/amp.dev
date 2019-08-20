@@ -28,10 +28,26 @@ const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.{md,html}';
 // The location to search for documents in
 const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev';
-// The pattern used by Grow to make up references
-const REFERENCE_PATTERN = /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)|g.doc\('(.*?)'/g;
-// Contains manual hints for double filenames etc.
+// The pattern to find links in markdown and html
+// It also matches source code blocks to skip these
+const REFERENCE_PATTERN = new RegExp(
+    // skip sourcecode block in markdown:
+    /^```[\s\S]*?```/.source
+    + '|'
+    // skip sourcecode tag in markdown
+    + /\[sourcecode[^\]]*\][\s\S]*?\[\/sourcecode\]/.source
+    + '|'
+    // find <a href=""> link tag:
+    + /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source
+    + '|'
+    // find markdown link block [text](../link):
+    + /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
+    + '|'
+    // find {{g.doc('link')}} links:
+    + /g.doc\('(.*?)'/.source
+    , 'gm');
 /* eslint-disable max-len */
+// Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
   '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md':
@@ -136,8 +152,12 @@ class GrowReferenceChecker {
    */
   _check(doc) {
     let content = doc.contents.toString();
-    content = content.replace(REFERENCE_PATTERN, (match, markdownLink, gDocLink) => {
-      const link = markdownLink || gDocLink;
+    content = content.replace(REFERENCE_PATTERN, (match, hrefLink, markdownLink, gDocLink) => {
+      const link = hrefLink || markdownLink || gDocLink;
+      if (!link) {
+        // we are in a sourcecode block where we do not want to change links
+        return match;
+      }
       const fullLink = this._resolveRelativeLink(link, doc);
       const newLink = this._verifyReference(fullLink, doc);
       if (newLink != fullLink) {
@@ -194,7 +214,7 @@ class GrowReferenceChecker {
       // a matching markdown document
       if (basename.indexOf('.html') !== -1) {
         documentPath = documentPath.replace(path.extname(documentPath), '.md');
-        return this._verifyReference(documentPath);
+        return this._verifyReference(documentPath, doc);
       }
 
       this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.`
