@@ -26,19 +26,19 @@ url:
 stage:
   layout: all
   devices:
-    - image_src: '/static/img/templates/article/pages/article-desktop-above.png'
+    - image_src: '/static/img/templates/article/pages/article-desktop-above.jpg'
       width: 4
       height: 3
       type: desktop
       alt: image
 
-    - image_src: '/static/img/templates/article/pages/article-tablet-above.png'
+    - image_src: '/static/img/templates/article/pages/article-tablet-above.jpg'
       width: 3
       height: 4
       type: tablet
       alt: image
 
-    - image_src: '/static/img/templates/article/pages/article-mobile-above.png'
+    - image_src: '/static/img/templates/article/pages/article-mobile-above.jpg'
       width: 1
       height: 2
       type: mobile
