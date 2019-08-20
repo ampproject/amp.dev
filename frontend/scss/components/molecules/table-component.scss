@@ -108,7 +108,7 @@
   @media (min-width: 768px) {
     &-row {
       display: grid;
-      grid-template-columns: 5% 40% 55%;
+      grid-template-columns: 2% 43% 55%;
       justify-content: start;
 
       &-components {
@@ -198,7 +198,7 @@
     &-name {
       padding-top: 0;
       width: 100%;
-      padding-left: 35px;
+      padding-left: 15px;
     }
   }
 
