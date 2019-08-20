@@ -59,7 +59,7 @@ class GitHubImporter {
    * @param  {Boolean} master true if document should be fetched from master
    * @return {Object} A object containing all information
    */
-  async fetchJson(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+  async fetchJson(filePath, repo=DEFAULT_REPOSITORY, master=true) {
     return this.fetchContents_(filePath, repo, master);
   }
 
