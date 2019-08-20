@@ -188,7 +188,7 @@ class Editor {
 
   loadHints(validator) {
     this.amphtmlHints.then((hints) => {
-      for (const key of Object.keys(CodeMirror.htmlSchema)) {
+      for (key of Object.keys(CodeMirror.htmlSchema)) {
         delete CodeMirror.htmlSchema[key];
       }
       Object.assign(CodeMirror.htmlSchema, hints[validator.toLowerCase()]);
