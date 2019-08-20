@@ -17,12 +17,14 @@
 'use strict';
 
 const express = require('express');
-const {join, dirname, resolve} = require('path');
+const {join, dirname, resolve, sep} = require('path');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
 const {listFiles} = require('@boilerplate/lib/io.js');
+
+const STATIC_DIR = sep + 'static' + sep;
 
 /* auto import all sample specific routers */
 loadRouters('api', '/api');
@@ -33,8 +35,9 @@ function loadRouters(root, prefix='') {
   const routers = [];
   const rootDir = resolve(join(__dirname, root));
   listFiles(rootDir, routers, true);
-  routers.filter((path) => path.endsWith('.js') && !path.includes('/static/'))
+  routers.filter((path) => path.endsWith('.js') && !path.includes(STATIC_DIR))
       .forEach((path) => {
+        console.log('loading path', path);
         const route = join(prefix, getRoute(rootDir, path));
         examples.use('/documentation/examples' + route, require(path));
       });
