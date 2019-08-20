@@ -1,8 +1,8 @@
 ---
 $title: Conclusion and What’s Next
 $order: 5
+leveled: true
 ---
-
 Congratulations! You’ve finished the AMP Intermediate Course! You’ve greatly expanded the functionality of your site and made it much more interactive. You added a navigation menu and a newsletter subscription form, and you iteratively enhanced the functionality of your image carousel. You learned how to handle user interactions with events and actions, and you learned how to collect user input and send it to the server for processing with AMP forms. You took requirements and converted them into AMP components. You also combined collections of components and used the documentation to find events and actions that allowed those components to work together to build a comprehensive feature.
 
 You can create a quite functional website using only what you've learned in the Beginner and Intermediate courses. Building sites is all about coming up with ideas; breaking up those ideas into smaller requirements; finding the AMP components, events, and/or actions that implement those smaller requirements; and finally, combining those components to realize your vision.
