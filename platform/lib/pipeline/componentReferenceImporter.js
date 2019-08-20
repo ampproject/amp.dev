@@ -19,7 +19,7 @@ require('module-alias/register');
 // If a doc is broken in a release, add it to this this list to fetch from master instead.
 //
 // DON'T FORGET TO REMOVE ONCE IT'S FIXED
-const DOCS_TO_FETCH_FROM_MASTER = ['amp-next-page', 'amp-carousel'];
+const DOCS_TO_FETCH_FROM_MASTER = ['amp-next-page'];
 const DEFAULT_VERSION = 0.1;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
@@ -73,9 +73,6 @@ class ComponentReferenceImporter {
     const savedDocuments = [];
 
     for (const extension of extensions) {
-      if(extension.name !== "amp-carousel"){
-        continue;
-      }
       const documents = await this._findExtensionDocs(extension);
       const versions = documents.map((doc) => doc.version).sort().reverse();
 
