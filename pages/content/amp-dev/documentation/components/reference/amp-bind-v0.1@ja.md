@@ -388,7 +388,7 @@ null || 'default' // 'default'
     <td>ブール式である必要があります。</td>
   </tr>
   <tr>
-    <td><a href="../../../documentation/components/index.md">AMP 要素</a>のサイズ</td>
+    <td><a href="../../../documentation/components/index.html">AMP 要素</a>のサイズ</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP 要素の幅または高さ（あるいはその両方）を変更します。</td>
   </tr>
@@ -645,7 +645,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td><code>amp-state</code> を更新する JSON を返すリモート エンドポイントの URL。この属性には CORS HTTP サービスを指定する必要があります。
-      <code>src</code> 属性では、標準的な URL 変数の置換をすべて使用できます。詳しくは、<a href="../../spec/amp-var-substitutions.md">置換ガイド</a>をご覧ください。
+      <code>src</code> 属性では、標準的な URL 変数の置換をすべて使用できます。詳しくは、<a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">置換ガイド</a>をご覧ください。
           [tip type="important"] エンドポイントは、<a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP の CORS リクエスト</a>の仕様で指定されている要件を満たしている必要があります。
           [/tip]</td>
       </tr>

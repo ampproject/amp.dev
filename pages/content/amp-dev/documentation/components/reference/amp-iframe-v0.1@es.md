@@ -229,7 +229,7 @@ Los iframes se identifican como de seguimiento o de analíticas si no parecen of
 
 # Directriz: Es mejor usar otros componentes de AMP antes que amp-iframe
 
-El componente `amp-iframe` debe considerarse como un respaldo si no se puede ofrecer la experiencia de usuario deseada utilizando otros medios de AMP; es decir, si no existe un [componente de AMP](../../../documentation/components.md) que se ocupe de dicho caso práctico. Si se utiliza un componente de AMP diseñado para un caso práctico específico, se logran ventajas como las siguientes:
+El componente `amp-iframe` debe considerarse como un respaldo si no se puede ofrecer la experiencia de usuario deseada utilizando otros medios de AMP; es decir, si no existe un [componente de AMP](../../../documentation/components/index.html) que se ocupe de dicho caso práctico. Si se utiliza un componente de AMP diseñado para un caso práctico específico, se logran ventajas como las siguientes:
 
 * Mejor rendimiento y gestión de los recursos.
 * En algunos casos, los componentes personalizados pueden proporcionar imágenes de marcador de posición integradas. Esto puede suponer, por ejemplo, que se pueda obtener la miniatura correspondiente de un vídeo antes de que este se cargue, y reducir de este modo el esfuerzo que supone añadir un marcador de posición de forma manual a la hora de escribir el código.

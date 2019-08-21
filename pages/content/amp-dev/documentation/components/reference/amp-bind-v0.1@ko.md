@@ -389,7 +389,7 @@ null || 'default' // 'default'
     <td>부울 식이어야 합니다.</td>
   </tr>
   <tr>
-    <td><a href="../../../documentation/components/index.md">AMP 요소</a>의 크기</td>
+    <td><a href="../../../documentation/components/index.html">AMP 요소</a>의 크기</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP 요소의 너비 및/또는 높이를 변경합니다.</td>
   </tr>
@@ -647,7 +647,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>이 <code>amp-state</code>를 업데이트할 JSON을 반환하는 원격 엔드포인트의 URL. CORS HTTP 서비스여야 합니다.
-      <code>src</code> 속성은 모든 표준 URL 변수 대체를 허용합니다. 자세한 정보는 <a href="../../spec/amp-var-substitutions.md">대체 가이드</a>를 참조하세요.
+      <code>src</code> 속성은 모든 표준 URL 변수 대체를 허용합니다. 자세한 정보는 <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">대체 가이드</a>를 참조하세요.
           [tip type="important"]
         엔드포인트는 <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP의 CORS 요청</a> 사양에 지정된 요구사항을 구현해야 합니다.
         [/tip]</td>

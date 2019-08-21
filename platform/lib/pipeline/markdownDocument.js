@@ -34,13 +34,16 @@ const LOG = new Signale({'scope': 'Markdown Documents'});
 // This expression matches a {% raw %}...{% endraw %} block
 const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
 
+// This expression matches source code blocks. fenced blocks are converted to this syntax
+const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
+
 // we search for ALL code blocks, and at the same time for raw blocks
 // to ensure we do not match something that belongs to different code blocks
 // or we add raw tags to existing raw blocks
 const MARKDOWN_BLOCK_PATTERN = new RegExp(
     JINJA2_RAW_BLOCK.source
     + '|'
-    + /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/.source
+    + SOURCECODE_BLOCK.source
     + '|'
     + /`[^`]*`/.source, 'g');
 
@@ -53,6 +56,22 @@ const MUSTACHE_PATTERN = new RegExp(
     + '|'
     + /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source
     + ')', 'g');
+
+// This pattern will find relative urls.
+// It will als match source code blocks to skip them and not replace any links inside.
+const RELATIVE_LINK_PATTERN = new RegExp(
+    // skip sourcecode tag in markdown
+    SOURCECODE_BLOCK.source
+    + '|'
+    // skip inline source marker
+    + /`[^`]*`/.source
+    + '|'
+    // find <a href=""> link tag:
+    + /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source
+    + '|'
+    // find markdown link block [text](../link):
+    + /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
+    , 'g');
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -272,12 +291,20 @@ class MarkdownDocument {
 
   /**
    * Rewrite relative links and append the given base path to them
-   * @param  {String} contents
-   * @return {String}          The rewritten content
+   * @param  {String} base
    */
   rewriteRelativePaths(base) {
-    this._contents = this._contents.replace(/\[([^\]]+)\]\((?!http|#)([^\)]+)\)/g,
-        `[$1](${base}/$2)`);
+    if (!base.endsWith('/')) {
+      base += '/';
+    }
+    this._contents = this._contents.replace(RELATIVE_LINK_PATTERN,
+        (match, hrefLink, markdownLink) => {
+          const link = hrefLink || markdownLink;
+          if (!link) {
+            return match;
+          }
+          return match.replace(link, base + link);
+        });
   }
 
   /**

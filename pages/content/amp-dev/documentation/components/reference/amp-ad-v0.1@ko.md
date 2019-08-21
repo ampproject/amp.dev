@@ -165,7 +165,7 @@ limitations under the License.
 
 다음 3가지 방법으로 동영상 광고로 AMP에서 수익을 창출할 수 있습니다.
 
-1. AMP에서는 기본적으로 BrightCove, DailyMotion 등 광고로 수익을 창출할 수 있는 여러 동영상 플레이어를 지원합니다. 전체 목록은 [media](../../../documentation/components.md#media) 구성요소를 참조하세요.
+1. AMP에서는 기본적으로 BrightCove, DailyMotion 등 광고로 수익을 창출할 수 있는 여러 동영상 플레이어를 지원합니다. 전체 목록은 [media](../../../documentation/components/index.html#media) 구성요소를 참조하세요.
 
 1. 내장 IMA SDK 및 HTML5 동영상 플레이어와 함께 제공되는 [amp-ima-video](amp-ima-video.md) 구성요소를 사용합니다.
 1. AMP에서 지원되지 않는 동영상 플레이어를 사용하는 경우 [amp-iframe](https://ampbyexample.com/components/amp-iframe/)을 사용해 맞춤 플레이어를 제공할 수 있습니다.

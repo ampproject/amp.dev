@@ -229,7 +229,7 @@ Les cadres iFrame sont identifiés en tant que cadres de suivi et d'analyse s'il
 
 # Conseil : Utiliser des composants AMP existants sur amp-iframe
 
-Le composant `amp-iframe` doit être considéré comme une solution de remplacement si l'expérience utilisateur requise n'est pas possible autrement dans AMP ; c'est-à-dire, s'il n'existe pas encore de [composant AMP](../../../documentation/components.md) pour le cas d'utilisation. Cela s'explique par le fait que l'utilisation d'un composant AMP adapté à un cas d'utilisation spécifique présente de nombreux avantages. En voici un aperçu :
+Le composant `amp-iframe` doit être considéré comme une solution de remplacement si l'expérience utilisateur requise n'est pas possible autrement dans AMP ; c'est-à-dire, s'il n'existe pas encore de [composant AMP](../../../documentation/components/index.html) pour le cas d'utilisation. Cela s'explique par le fait que l'utilisation d'un composant AMP adapté à un cas d'utilisation spécifique présente de nombreux avantages. En voici un aperçu :
 
 * Amélioration des performances et de la gestion des ressources.
 * Dans certains cas, les composants personnalisés peuvent fournir des images d'espace réservé intégrées. Cela signifie, par exemple, l'obtention de la miniature vidéo appropriée avant le chargement d'une vidéo, ce qui simplifie les tâches de codage nécessaires pour ajouter manuellement un espace réservé.
