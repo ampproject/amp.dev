@@ -25,7 +25,7 @@ const fs = require('fs');
 // Where to look for existing documents
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 // Which documents to check for broken references
-const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.{md,html}';
+const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/**/*.{md,html}';
 // The location to search for documents in
 const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev';
 // The pattern to find links in markdown and html
@@ -206,7 +206,7 @@ class GrowReferenceChecker {
     // do the manual fixing
     if (results.length > 1) {
       this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.`
-          + `(In ${doc.path})`);
+          + ` (In ${doc.path})`);
       this._multipleMatches[documentPath] = results;
       return documentPath;
     } else if (results.length == 0) {
@@ -218,7 +218,7 @@ class GrowReferenceChecker {
       }
 
       this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.`
-        + `(In ${doc.path})`);
+        + ` (First found in ${doc.path})`);
       if (this._unfindableDocuments.indexOf(documentPath) == -1) {
         this._unfindableDocuments.push(documentPath);
       }
