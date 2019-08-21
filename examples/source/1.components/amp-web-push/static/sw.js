@@ -212,7 +212,7 @@ self.addEventListener('push', (event) => {
   Any other request goes to the network directly.
  */
 self.addEventListener('fetch', (event) => {
-  if (event.request.url.includes('send-push')) {
+  if (event.request.url.includes('/documentation/examples/components/amp-web-push/send-push')) {
     event.respondWith(
         idb.open('web-push-db', 1).then((db) => {
           const tx = db.transaction(['web-push-subcription'], 'readonly');
