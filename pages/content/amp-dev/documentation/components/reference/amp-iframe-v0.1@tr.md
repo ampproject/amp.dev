@@ -229,7 +229,7 @@ iframe'ler, görünmez veya küçük olmaları gibi kullanıcıya yönelik doğr
 
 # Yönerge: amp-iframe üzerinde mevcut AMP bileşenlerini kullanma
 
-Gerekli kullanıcı deneyimi AMP'deki diğer araçlarla mümkün değilse yani kullanım alanı için halihazırda mevcut bir [AMP bileşeni](../../../documentation/components.md) yoksa `amp-iframe` bileşeni, bir yedek olarak kabul edilmelidir. Bunun nedeni, belirli bir kullanım alanı için uyarlanmış bir AMP bileşenini kullanmanın birçok yararının olmasıdır. Örneğin:
+Gerekli kullanıcı deneyimi AMP'deki diğer araçlarla mümkün değilse yani kullanım alanı için halihazırda mevcut bir [AMP bileşeni](../../../documentation/components/index.html) yoksa `amp-iframe` bileşeni, bir yedek olarak kabul edilmelidir. Bunun nedeni, belirli bir kullanım alanı için uyarlanmış bir AMP bileşenini kullanmanın birçok yararının olmasıdır. Örneğin:
 
 * Daha iyi kaynak yönetimi ve performans
 * Özel bileşenler, bazı durumlarda yerleşik yer tutucu resimler sağlayabilir. Bu, örneğin video yüklenmeden önce doğru video küçük resminin alınması anlamına gelir ve manuel olarak yer tutucu eklemek için yapılan kodlama çalışmasını azaltır.

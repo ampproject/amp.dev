@@ -366,8 +366,9 @@ guides:
     </div>
   </div>
 </section>
+{% if doc.recent_guides %}
 <section class="ap--section">
-  <div class="ap-m-teaser-highlight-guides">
+  <div class="ap-m-teaser-highlight-guides ap-m-teaser-highlight-guides-recent">
     <h2>Recent Guides & Tutorials</h2>
     <div class="ap-m-teaser-container">
       {% for format in doc.recent_guides %}
@@ -390,6 +391,7 @@ guides:
     </div>
   </div>
 </section>
+{% endif %}
 
 {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
 <section class="ap--video-slider">

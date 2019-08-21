@@ -163,7 +163,7 @@ limitations under the License.
 
 هناك 3 طرق لتحقيق الربح من الفيديوهات في AMP من خلال إعلانات الفيديو:
 
-1. تتيح AMP أصلاً عمل عدد من مشغلات الفيديو، مثل BrightCove وDailyMotion وغيرهما والتي يمكنها تحقيق الربح من الإعلانات. للحصول على القائمة الكاملة، راجع مكونات [الوسائط](../../../documentation/components.md#media).
+1. تتيح AMP أصلاً عمل عدد من مشغلات الفيديو، مثل BrightCove وDailyMotion وغيرهما والتي يمكنها تحقيق الربح من الإعلانات. للحصول على القائمة الكاملة، راجع مكونات [الوسائط](../../../documentation/components/index.html#media).
 
 2. استخدِم المكوِّن [amp-ima-video](amp-ima-video.md) الذي يأتي مع أداة تطوير البرامج لإعلانات الوسائط التفاعلية المضمّنة ومشغل فيديو HTML5.
 3. إذا كنت تستخدم مشغل فيديو غير متوافق في AMP، يمكنك عرض مشغلك المخصص باستخدام [amp-iframe](https://ampbyexample.com/components/amp-iframe/).

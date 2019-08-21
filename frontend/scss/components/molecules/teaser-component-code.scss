@@ -101,6 +101,7 @@
 
     &-content {
       @include teaser-content;
+      padding: 15px 25px;
 
       &-text {
         margin-top: 10px;
@@ -118,6 +119,19 @@
 
     &-copy {
       @include teaser-copy;
+    }
+  }
+}
+.#{molecule('teaser-component')}-recent {
+  .#{molecule('teaser')} {
+    &-code {
+      box-shadow: none;
+      border: 1px solid color('mercury');
+      transition: none;
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
     }
   }
 }

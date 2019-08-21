@@ -229,7 +229,7 @@ Os iframes são identificados como de rastreamento/análise se não parecem aten
 
 # Diretriz: usar componentes AMP existentes sobre amp-iframe
 
-O componente `amp-iframe` precisa ser considerado um substituto se a experiência do usuário necessária não for possível por outros meios em AMP, ou seja, se ainda não existir um [componente AMP](../../../documentation/components.md) para o caso de uso. Isso ocorre porque há muitos benefícios em usar um componente AMP personalizado para um caso de uso específico, como:
+O componente `amp-iframe` precisa ser considerado um substituto se a experiência do usuário necessária não for possível por outros meios em AMP, ou seja, se ainda não existir um [componente AMP](../../../documentation/components/index.html) para o caso de uso. Isso ocorre porque há muitos benefícios em usar um componente AMP personalizado para um caso de uso específico, como:
 
 * Melhor gerenciamento de recursos e desempenho.
 * Componentes personalizados podem fornecer imagens de marcadores incorporadas em alguns casos. Isso significa conseguir, digamos, a miniatura de vídeo correta antes do carregamento de um vídeo, reduzindo o esforço de codificação para adicionar um marcador manualmente.

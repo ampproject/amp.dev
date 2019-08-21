@@ -39,8 +39,7 @@ After selecting the password input element, the [AMP `on="tap:rules.show"` actio
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image2.jpg', 500, 604, layout='intrinsic', alt='Image of basic amp script tutorial starter app with password requirements', align='' ) }}
 
-Play around with different passwords! If you press the submit button before all requirements are met `<amp-form>`’s [`pattern`](../../../documentation/components/reference
-/amp-form.md?format=websites#verification) attribute will throw an error.
+Play around with different passwords! If you press the submit button before all requirements are met `<amp-form>`’s [`pattern`](/content/amp-dev/documentation/components/reference/amp-form.md?format=websites#verification) attribute will throw an error.
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image3.jpg', 500, 605, layout='intrinsic', alt='Image of basic amp script tutorial starter app with unhelpful error', align='' ) }}
 
@@ -158,8 +157,7 @@ function initCheckPassword(element) {
 };
 ```
 
-User actions can trigger [mutations within the `amp-script` component ](../../../documentation/reference/
-components/amp-script.md?format=websites#mutations-and-user-actions), allowing `amp-script` to register [event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener). 
+User actions can trigger [mutations within the `amp-script` component ](../../../documentation/components/reference/amp-script.md?format=websites#mutations-and-user-actions), allowing `amp-script` to register [event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener). 
 
 Our function will listen for two events, [`keyup`](https://developer.mozilla.org/en-US/docs/Web/API/Document/keyup_event) for when a user types into the input box, and [`change`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) in case our user pastes their password.
 

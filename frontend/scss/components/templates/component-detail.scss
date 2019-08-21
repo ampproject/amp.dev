@@ -53,9 +53,15 @@ body {
   .#{utility('versions')} {
     display: inline-block;
     background: #fff;
-    padding: 0.1em 0.2em;
+    padding: 0.1em 0.25em;
     border-radius: 3px;
-    border: 2px solid #d5d9de;    
+    border: 2px solid #d5d9de;
+    a {
+      margin-left: 0.1em;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
     a:not([href]) {
       color: #20202A;
       border-bottom: 2px solid #20212a;
