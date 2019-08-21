@@ -182,13 +182,14 @@ self.addEventListener('install', () => self.skipWaiting());
   service worker to set itself as the controller for all clients within its scope.
  */
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-      idb.open(WEB_PUSH_DB, 1, (upgradeDB) => {
-        upgradeDB.createObjectStore(WEB_PUSH_SUBSCRIPTION, {
-          keyPath: 'id',
-        });
-      }).then(() => self.clients.claim())
-  );
+  event.waitUntil((async () => {
+    await idb.open(WEB_PUSH_DB, 1, (upgradeDB) => {
+      upgradeDB.createObjectStore(WEB_PUSH_SUBSCRIPTION, {
+        keyPath: 'id',
+      });
+    });
+    self.clients.claim();
+  })());
 });
 
 /**
@@ -215,28 +216,28 @@ self.addEventListener('push', (event) => {
  */
 self.addEventListener('fetch', (event) => {
   if (event.request.url.includes('/documentation/examples/components/amp-web-push/send-push')) {
-    event.respondWith(
-        idb.open(WEB_PUSH_DB, 1).then((db) => {
-          const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readonly');
-          const store = tx.objectStore(WEB_PUSH_SUBSCRIPTION);
+    event.respondWith((async () => {
+      const db = await idb.open(WEB_PUSH_DB, 1);
+      const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readonly');
+      const store = tx.objectStore(WEB_PUSH_SUBSCRIPTION);
 
-          return store.get(WEB_PUSH_SUBSCRIPTION_ID).then((subscriptionJSON) => {
-            const options = {
-              method: 'POST',
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-              },
-              body: subscriptionJSON.data,
-            };
+      const subscriptionJSON = await store.get(WEB_PUSH_SUBSCRIPTION_ID);
+      const options = {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: subscriptionJSON.data,
+      };
 
-            return fetch(self.location.origin +
-                '/documentation/examples/components/amp-web-push/send-push', options);
-          });
-        })
-    );
+      return await fetch(self.location.origin +
+            '/documentation/examples/components/amp-web-push/send-push', options);
+    })());
   } else {
-    event.respondWith(fetch(event.request));
+    event.respondWith((async () => {
+      return await fetch(event.request);
+    })());
   }
 });
 
@@ -246,27 +247,25 @@ self.addEventListener('fetch', (event) => {
 /**
   Persists the subscription object in IndexedDB.
  */
-function persistSubscriptionLocally(subscription) {
+async function persistSubscriptionLocally(subscription) {
   const subscriptionJSON = JSON.stringify(subscription);
-  idb.open(WEB_PUSH_DB, 1).then((db) => {
-    const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
-    tx.objectStore(WEB_PUSH_SUBSCRIPTION).put({
-      id: WEB_PUSH_SUBSCRIPTION_ID,
-      data: subscriptionJSON,
-    });
-    return tx.complete;
+  const db = await idb.open(WEB_PUSH_DB, 1);
+  const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
+  tx.objectStore(WEB_PUSH_SUBSCRIPTION).put({
+    id: WEB_PUSH_SUBSCRIPTION_ID,
+    data: subscriptionJSON,
   });
+  return tx.complete;
 }
 
 /**
   Clears the local database (called after a user unsubscribes).
  */
-function clearLocalDatabase() {
-  idb.open(WEB_PUSH_DB, 1).then((db) => {
-    const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
-    tx.objectStore(WEB_PUSH_SUBSCRIPTION).clear();
-    return tx.complete;
-  });
+async function clearLocalDatabase() {
+  const db = await idb.open(WEB_PUSH_DB, 1);
+  const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
+  tx.objectStore(WEB_PUSH_SUBSCRIPTION).clear();
+  return tx.complete;
 }
 
 /**
