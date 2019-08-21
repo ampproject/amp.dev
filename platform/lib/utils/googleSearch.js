@@ -36,21 +36,31 @@ credentials.get('GOOGLE_CSE_API_KEY').then((key) => {
       err.message ? err.message : err);
 });
 
-async function search(query, locale, page) {
+async function search(query, locale, page, options = {}) {
   if (!API_KEY) {
     throw Error('Custom search api key not initialized! Check log for errors on startup.');
   }
 
   const startIndex = (page - 1) * PAGE_SIZE + 1;
   query = encodeURIComponent(query);
+  const hiddenQuery = options && options.hiddenQuery ? encodeURIComponent(options.hiddenQuery) : '';
+  const noLanguageFilter = options && options.noLanguageFilter;
   let language = locale;
   if (language.length > 2) {
     language = language.substr(0, 2);
   }
   language = encodeURIComponent(language.toLowerCase());
 
-  const url = `${CSE_BASE_URL}?cx=${CSE_ID}&key=${API_KEY}&hl=${language}` +
-      `&lr=lang_${language}&q=${query}&start=${startIndex}`;
+  let url = `${CSE_BASE_URL}?cx=${CSE_ID}&key=${API_KEY}&hl=${language}`
+      + `&q=${query}&start=${startIndex}`;
+  if (!noLanguageFilter) {
+    url += `&lr=lang_${language}`;
+  }
+  if (hiddenQuery) {
+    url += `&hq=${hiddenQuery}`;
+  }
+
+  console.log(`CSE url ${url}: `);
 
   const fetchResponse = await fetch(url);
   if (!fetchResponse.ok) {

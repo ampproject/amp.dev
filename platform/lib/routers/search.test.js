@@ -201,6 +201,27 @@ test('Component title is reduced to component name', (done) => {
 });
 
 
+test('Title and description are cleaned', (done) => {
+  const searchResult = createSearchResult(1, 0, 1);
+  searchResult.items[0].pagemap.metatags[0]['twitter:title'] =
+      'test `img` [text](link';
+  searchResult.items[0].pagemap.metatags[0]['twitter:description'] =
+      'test `img` [text]({{g.doc(\'/doc/\').url.path}}) 123';
+  googleSearch.search.mockResolvedValue(searchResult);
+
+  request(app)
+      .get('/search/do?q=query&locale=en&page=1')
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .then((res) => {
+        // when the title contains a double point only text after it is used
+        expect(res.body.result.components[0].title).toBe('test \'img\' text');
+        // when the double point is last, the title is not changed
+        expect(res.body.result.components[0].description).toBe('test \'img\' text 123');
+        done();
+      });
+});
+
 test('amp.dev urls are converted to server relative', (done) => {
   const searchResult = createSearchResult(2, 3, 5);
   searchResult.items[2].link = 'https://blog.amp.dev/some/path';

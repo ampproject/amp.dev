@@ -153,10 +153,35 @@ function createResult(totalResults, page, lastPage, components, pages, query, lo
   return result;
 }
 
+/** Will remove/rewrite characters that cause problems when displaying */
+function cleanupText(text) {
+  // ` is problematic. For example `i will be rendered as ì.
+  // It is not clear why, but we can simply convert it.
+  text = text.replace(/`/g, '\'');
+  // sometimes markdown links (that may contain {{g.doc}} calls) are found, so remove them
+  text = text.replace(/\[([^\]]+)\]\([^\)]*?(?:\{\{[^}]+\}[^\)]*)?(?:\)|$)/g, '$1');
+  return text;
+}
+
 async function handleSearchRequest(request, response, next) {
-  const query = request.query.q ? request.query.q.trim() : '';
-  const page = request.query.page ? parseInt(request.query.page) : 1;
   const locale = request.query.locale ? request.query.locale : config.getDefaultLocale();
+  const page = request.query.page ? parseInt(request.query.page) : 1;
+  const query = request.query.q ? request.query.q.trim() : '';
+
+  // The hidden query ensures we only get english results when the locale is en (default)
+  // The blog and playground should be included without the page-locale metatag
+  const searchOptions = {
+    hiddenQuery:
+      `more:pagemap:metatags-page-locale:${locale}`
+      + ' OR site:blog.amp.dev OR site:playground.amp.dev',
+  };
+
+  if (locale != config.getDefaultLocale()) {
+    // For other languages also include en, since the index only contains the translated pages.
+    searchOptions.hiddenQuery = `more:pagemap:metatags-page-locale:${config.getDefaultLocale()} OR `
+        + searchOptions.hiddenQuery;
+    searchOptions.noLanguageFilter = true;
+  }
 
   if (isNaN(page) || page < 1 || query.length == 0) {
     const error = 'Invalid search params (q='
@@ -164,7 +189,7 @@ async function handleSearchRequest(request, response, next) {
     console.log(error);
     // No error status since an empty query can always happen with our search template
     // and we do not want error messages in the client console
-    response.json(200, {error: error});
+    response.status(200).json({error: error});
     return;
   }
 
@@ -178,7 +203,7 @@ async function handleSearchRequest(request, response, next) {
 
   let cseResult = undefined;
   try {
-    cseResult = await googleSearch.search(query, locale, page);
+    cseResult = await googleSearch.search(query, locale, page, searchOptions);
   } catch (err) {
     // problem was logged before, so simply forward the error
     next(err);
@@ -208,6 +233,10 @@ async function handleSearchRequest(request, response, next) {
       } else {
         pages.push(page);
       }
+
+      // do some additional cleanup to ensure the text is printed nicely
+      page.title = cleanupText(page.title);
+      page.description = cleanupText(page.description);
     }
   }
 
