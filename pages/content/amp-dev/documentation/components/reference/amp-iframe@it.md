@@ -233,7 +233,7 @@ Gli iframe sono identificati come iframe di monitoraggio/analisi se non sembrano
 
 # Linee guida: utilizzare i componenti AMP esistenti anziché amp-iframe
 
-Puoi utilizzare il componente `amp-iframe` come metodo alternativo, nel caso in cui l'esperienza utente richiesta non sia possibile in altri modi in AMP, ossia se non è già presente un [componente AMP](../../../documentation/components.md) adatto al caso d'uso. Questo perché l'utilizzo di un componente AMP progettato per uno specifico caso d'uso offre numerosi vantaggi, ad esempio:
+Puoi utilizzare il componente `amp-iframe` come metodo alternativo, nel caso in cui l'esperienza utente richiesta non sia possibile in altri modi in AMP, ossia se non è già presente un [componente AMP](../../../documentation/components/index.html) adatto al caso d'uso. Questo perché l'utilizzo di un componente AMP progettato per uno specifico caso d'uso offre numerosi vantaggi, ad esempio:
 
 * Migliore gestione e prestazioni delle risorse.
 * In alcuni casi, i componenti personalizzati possono fornire immagini segnaposto integrate. Ciò significa, ad esempio, ottenere la miniatura video corretta prima del caricamento di un video e ridurre lo sviluppo di ulteriore codice per aggiungere manualmente un segnaposto.

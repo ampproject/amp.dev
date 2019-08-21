@@ -163,7 +163,7 @@ limitations under the License.
 
 動画広告で AMP の動画を収益化する方法には次の 3 つがあります。
 
-1. AMP は、広告を収益化できるさまざまな動画プレーヤー（BrightCove、DailyMotion など）を標準でサポートしています。完全なリストについては、[メディア](../../../documentation/components.md#media) コンポーネントをご覧ください。
+1. AMP は、広告を収益化できるさまざまな動画プレーヤー（BrightCove、DailyMotion など）を標準でサポートしています。完全なリストについては、[メディア](../../../documentation/components/index.html#media) コンポーネントをご覧ください。
 
 1. IMA SDK と HTML5 動画プレーヤーが組み込まれている [amp-ima-video](amp-ima-video.md) コンポーネントを使用します。
 1. AMP でサポートされていない動画プレーヤーを使用する場合は、[amp-iframe](https://ampbyexample.com/components/amp-iframe/) を使用してカスタム プレーヤーを提供できます。`amp-iframe` のアプローチを使用する場合は、次のようにします。

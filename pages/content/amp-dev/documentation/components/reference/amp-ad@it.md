@@ -167,7 +167,7 @@ Esempio con elemento di riserva:
 
 Sono tre i modi per monetizzare video in AMP con gli annunci video:
 
-1. AMP supporta in modo nativo diversi video player, come BrightCove, DailyMotion e altri in grado di monetizzare gli annunci. Per un elenco completo, consulta i componenti [multimediali](../../../documentation/components.md#media).
+1. AMP supporta in modo nativo diversi video player, come BrightCove, DailyMotion e altri in grado di monetizzare gli annunci. Per un elenco completo, consulta i componenti [multimediali](../../../documentation/components/index.html#media).
 
 2. Utilizza il componente [amp-ima-video](amp-ima-video.md) che include un SDK IMA incorporato e un video player HTML5
 3. Se il tuo video player non è supportato in AMP, puoi pubblicare il tuo video player personalizzato con [amp-iframe](https://ampbyexample.com/components/amp-iframe/).

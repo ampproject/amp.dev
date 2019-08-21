@@ -164,7 +164,7 @@ Yedek içeren örnek:
 
 Video reklamlarla AMP'deki videolardan para kazanmanın 3 yolu vardır:
 
-1. AMP, reklamlardan para kazanabilen BrightCove, DailyMotion gibi çeşitli video oynatıcıları destekler. Tam liste için [medya](../../../documentation/components.md#media) bileşenlerine bakın.
+1. AMP, reklamlardan para kazanabilen BrightCove, DailyMotion gibi çeşitli video oynatıcıları destekler. Tam liste için [medya](../../../documentation/components/index.html#media) bileşenlerine bakın.
 
 1. Yerleşik bir IMA SDK ve HTML5 video oynatıcısıyla gelen [amp-ima-video](amp-ima-video.md) bileşenini kullanın
 1. AMP'de desteklenmeyen bir video oynatıcı kullanıyorsanız özel oynatıcınızı, [amp-iframe](https://ampbyexample.com/components/amp-iframe/) kullanarak sunabilirsiniz.

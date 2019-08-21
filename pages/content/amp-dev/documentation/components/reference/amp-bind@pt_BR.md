@@ -392,7 +392,7 @@ Quando o **estado** é alterado, as expressões são reavaliadas e as propriedad
     <td>Precisa ser uma expressão booleana.</td>
   </tr>
   <tr>
-    <td>Tamanho dos <a href="../../../documentation/components/index.md">elementos AMP</a></td>
+    <td>Tamanho dos <a href="../../../documentation/components/index.html">elementos AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Altera a largura e/ou altura do elemento AMP.</td>
   </tr>
@@ -653,7 +653,7 @@ O AMP cria lotes XMLHttpRequests (XHRs) em endpoints JSON, ou seja, você pode u
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>O URL do endpoint remoto que retornará o JSON que atualizará esse <code>amp-state</code>. Ele precisa ser um serviço HTTP CORS.
-        O atributo <code>src</code> permite todas as substituições de variáveis de URL padrão. Consulte o <a href="../../spec/amp-var-substitutions.md">Guia de substituições</a> (em inglês) para ver mais informações.
+        O atributo <code>src</code> permite todas as substituições de variáveis de URL padrão. Consulte o <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">Guia de substituições</a> (em inglês) para ver mais informações.
         [tip type="important"]
       o endpoint precisa implementar os requisitos definidos nas especificações de <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Solicitações CORS nas AMP</a> (link em inglês).
       [/tip]</td>
