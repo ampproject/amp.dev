@@ -12,39 +12,61 @@
 @import '_variables.scss';
 
 .#{molecule('search-trigger')} {
-  margin: 0 20px 9px 0;
   padding: 5px 0;
+  margin: 0 20px 9px 0;
+  cursor: pointer;
 
   .#{organism('header')} & {
     @media (max-width: 1023px) {
+      order: 1;
       padding: 0;
-      display: none;
+      margin: 0 70px 9px auto;
+
+      .mainmenuopen & {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: $minDeviceWidth) {
+      margin-right: 60px;
     }
   }
 
   &-close {
-    position: absolute;
-    right: calc(50vw - 50% + 65px);
-    top: 68px;
+    position: fixed;
+    left: calc(90vw - 18px);
+    top: 35px;
+    padding: 12px;
+    margin: 0;
+    fill: #fff;
+    background-color: #005AF0;
+    border-radius: 50%;
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
     z-index: 3;
 
-    @media (min-width: 1460px) {
-      right: calc(100vw - 1460px / 2 - 50% + 65px);
+    @media (min-width: 1024px) {
+      position: absolute;
+      left: auto;
+      right: 10px;
+      top: 52px;
     }
 
-    @media (max-width: 1023px) {
-      top: 15px;
-      right: 0;
+    @media (min-width: 1280px) {
+      right: 52px;
+    }
+
+    @media (min-width: 1440px) {
+      right: 87px;
     }
   }
 
-  &-icon {
-    width: 17px;
-    height: 17px;
+  &-close &-icon {
+    width: 12px;
+    height: 12px;
+  }
 
-    @media (max-width: 1023px) {
-      width: 20px;
-      height: 20px;
-    }
+  &-icon {
+    width: 18px;
+    height: 18px;
   }
 }

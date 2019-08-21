@@ -93,14 +93,9 @@
             {% raw %}
             <template type="amp-mustache">
               <div class="ap-o-search-result-list">
-
-                {{^prevUrl}}
-                <p class="ap-o-search-info">{% endraw %}{{_('We found <strong>{totalResults} results</strong> for you.', totalResults='{'+'{result.totalResults}'+'}')|safe}}{% raw %}</p>
-                {{/prevUrl}}
-
                 {{^prevUrl}}
                 {{#result.components.length}}
-                <h3 class="ap-o-search-result-category">{% endraw %}{{_('Components')}}{% raw %}</h3>
+                <h4 class="ap-o-search-result-category">{% endraw %}{{_('Components')}}{% raw %}</h4>
                 {{/result.components.length}}
                 {{/prevUrl}}
                 {{#result.components}}
@@ -111,7 +106,7 @@
                   </a>
                   <div class="ap-o-search-result-linklist">
                     {{-#exampleUrl-}}
-                    <a class="ap-o-search-result-linklist-item ap-m-lnk" href="{{exampleUrl}}">
+                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
                       <div class="ap-a-ico ap-m-lnk-icon">
                         {% endraw %}{{ iconMarkupChanged }}{% raw %}
                       </div>
@@ -119,7 +114,7 @@
                     </a>
                     {{-/exampleUrl-}}
                     {{-#playgroundUrl-}}
-                    <a class="ap-o-search-result-linklist-item ap-m-lnk"href="{{playgroundUrl}}">
+                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk"href="{{playgroundUrl}}">
                       <div class="ap-a-ico ap-m-lnk-icon">
                         {% endraw %}{{ iconMarkupChanged }}{% raw %}
                       </div>
@@ -132,14 +127,14 @@
 
                 {{^prevUrl}}
                 {{#result.pages.length}}
-                <h3 class="ap-o-search-result-category">
+                <h4 class="ap-o-search-result-category">
                   {{^result.components.length}}
                   {% endraw %}{{_('Results')}}{% raw %}
                   {{/result.components.length}}
                   {{#result.components.length}}
                   {% endraw %}{{_('More results')}}{% raw %}
                   {{/result.components.length}}
-                </h3>
+                </h4>
                 {{/result.pages.length}}
                 {{/prevUrl}}
                 {{#result.pages}}
@@ -150,13 +145,13 @@
                   </a>
                 </div>
                 {{/result.pages}}
-              </div>
 
-              {{#result.isTruncated}}
-              <div class="ap-o-search-result-load-hint">
-                {% endraw %}{{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}{% raw %}
+                {{#result.isTruncated}}
+                <div class="ap-o-search-result-hint">
+                  {% endraw %}{{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}{% raw %}
+                </div>
+                {{/result.isTruncated}}
               </div>
-              {{/result.isTruncated}}
             </template>
             {% endraw %}
 
@@ -166,14 +161,10 @@
               </div>
             </amp-list-load-more>
 
-            <amp-list-load-more class="ap-o-search-result-load-hint" load-more-failed>
+            <amp-list-load-more class="ap-o-search-result-hint" load-more-failed>
               {{_('An internal server error occurred while trying to load more search results.')}}<br>
               {{_('We apologize for the inconvenience caused.')}}<br>
               {{_('Please try again later.')}}
-            </amp-list-load-more>
-
-            <amp-list-load-more class="ap-o-search-result-load-hint" load-more-end>
-              {{_('You have reached the end of the results.')}}
             </amp-list-load-more>
           </amp-list>
 
@@ -198,7 +189,7 @@
         <div class="ap-o-search-result">
           <div class="ap-o-search-result-list">
             {{#components.length}}
-            <h3 class="ap-o-search-result-category">{% endraw %}{{_('Important Components')}}{% raw %}</h3>
+            <h4 class="ap-o-search-result-category">{% endraw %}{{_('Important Components')}}{% raw %}</h4>
             {{/components.length}}
             {{#components}}
             <div class="ap-o-search-result-item">
@@ -210,7 +201,7 @@
             {{/components}}
 
             {{#articles.length}}
-            <h3 class="ap-o-search-result-category">{% endraw %}{{_('Popular Articles')}}{% raw %}</h3>
+            <h4 class="ap-o-search-result-category">{% endraw %}{{_('Popular Articles')}}{% raw %}</h4>
             {{/articles.length}}
             {{#articles}}
             <div class="ap-o-search-result-item">
