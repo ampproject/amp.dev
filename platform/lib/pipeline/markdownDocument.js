@@ -15,9 +15,15 @@
  */
 
 const writeFile = require('write');
+const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
+
+// Prep version template
+const nunjucks = require('nunjucks');
+const VERSION_TOGGLE_TEMPLATE = nunjucks
+    .compile(fs.readFileSync('frontend/templates/views/partials/version-toggle.j2', 'utf8'));
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
@@ -125,12 +131,35 @@ class MarkdownDocument {
     this._frontmatter['formats'] = formats;
   }
 
+  get version() {
+    return this._frontmatter['version'];
+  }
+
+  set version(version) {
+    this._frontmatter['version'] = version;
+  }
+
+  set versions(versions) {
+    this._frontmatter['versions'] = versions;
+    this._contents = MarkdownDocument
+        .insertVersionToggler(this._contents, this._frontmatter.version, versions);
+  }
+
   get teaser() {
     return this._frontmatter['teaser'] || {};
   }
 
   set teaser(teaser) {
     this._frontmatter['teaser'] = Object.assign(this._frontmatter['teaser'] || {}, teaser);
+  }
+
+  set servingPath(path) {
+    this._frontmatter['$path'] = path;
+    this._frontmatter['$localization'] = {path: '/{locale}' + path};
+  }
+
+  set isCurrent(bool) {
+    this._frontmatter['is_current'] = bool;
   }
 
   get contents() {
@@ -243,6 +272,21 @@ class MarkdownDocument {
           });
 
     return contents;
+  }
+
+  /**
+   * Adds version toggler to the h1 heading in case of multiple versions
+   * @param  {String} contents
+   * @return {String}          The rewritten content
+   */
+  static insertVersionToggler(contents, version, versions) {
+    const titleRegex = /^#{1}\s(.+)/m;
+    const title = contents.match(titleRegex)[1];
+    return contents.replace(titleRegex, VERSION_TOGGLE_TEMPLATE.render({
+      title: title,
+      versions: versions,
+      version: version,
+    }));
   }
 
   /**
