@@ -21,6 +21,7 @@ const applicationServerPublicKey =
 const convertedVapidKey = urlB64ToUint8Array(applicationServerPublicKey);
 const WEB_PUSH_DB = 'web-push-db';
 const WEB_PUSH_SUBSCRIPTION = 'web-push-subscription';
+const WEB_PUSH_SUBSCRIPTION_ID = 1;
 
 /**
   On this section, the service worker accepts window messages (listened
@@ -220,7 +221,7 @@ self.addEventListener('fetch', (event) => {
           const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readonly');
           const store = tx.objectStore(WEB_PUSH_SUBSCRIPTION);
 
-          return store.get(1).then((subscriptionJSON) => {
+          return store.get(WEB_PUSH_SUBSCRIPTION_ID).then((subscriptionJSON) => {
             const options = {
               method: 'POST',
               headers: {
@@ -248,10 +249,10 @@ self.addEventListener('fetch', (event) => {
  */
 function persistSubscriptionLocally(subscription) {
   const subscriptionJSON = JSON.stringify(subscription);
-      id: 1,
   idb.open(WEB_PUSH_DB, 1).then((db) => {
     const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
     tx.objectStore(WEB_PUSH_SUBSCRIPTION).put({
+      id: WEB_PUSH_SUBSCRIPTION_ID,
       data: subscriptionJSON,
     });
     return tx.complete;
