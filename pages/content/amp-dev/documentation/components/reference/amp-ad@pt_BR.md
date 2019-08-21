@@ -164,7 +164,7 @@ Exemplo com substituto:
 
 Há três formas de gerar receita para vídeos em AMP por meio de anúncios em vídeo:
 
-1. As AMP são compatíveis com vários players de vídeo, como BrightCove, DailyMotion etc., que podem gerar receita com anúncios. Para ver uma lista completa, consulte os componentes de [mídia](../../../documentation/components.md#media).
+1. As AMP são compatíveis com vários players de vídeo, como BrightCove, DailyMotion etc., que podem gerar receita com anúncios. Para ver uma lista completa, consulte os componentes de [mídia](../../../documentation/components/index.html#media).
 
 2. Use o componente [amp-ima-video](amp-ima-video.md), que vem com um SDK do IMA e um player de vídeo HTML5 integrados.
 3. Caso seu player de vídeo não seja compatível com AMP, você pode exibir seu player personalizado usando [amp-iframe](https://ampbyexample.com/components/amp-iframe/).

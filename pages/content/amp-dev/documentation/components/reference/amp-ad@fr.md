@@ -164,7 +164,7 @@ Exemple avec création de remplacement :
 
 Il existe trois méthodes permettant de monétiser des vidéos dans AMP avec des annonces vidéo :
 
-1. AMP est compatible, en mode natif, avec plusieurs lecteurs vidéo (BrightCove, DailyMotion, etc.) permettant de monétiser des annonces. Pour obtenir la liste complète, consultez les composants [multimédias](../../../documentation/components.md#media).
+1. AMP est compatible, en mode natif, avec plusieurs lecteurs vidéo (BrightCove, DailyMotion, etc.) permettant de monétiser des annonces. Pour obtenir la liste complète, consultez les composants [multimédias](../../../documentation/components/index.html#media).
 
 2. Utilisez le composant [amp-ima-video](amp-ima-video.md) fourni avec le SDK IMA et le lecteur vidéo HTML5 intégrés.
 3. Si vous utilisez un lecteur vidéo non compatible avec AMP, vous pouvez diffuser votre lecteur personnalisé à l'aide du composant [amp-iframe](https://ampbyexample.com/components/amp-iframe/).

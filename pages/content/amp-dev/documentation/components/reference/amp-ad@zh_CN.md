@@ -164,7 +164,7 @@ limitations under the License.
 
 有 3 种方式可通过视频广告在 AMP 中利用视频获利。
 
-1. AMP 自动支持一些可通过广告获利的视频播放器，例如 BrightCove、DailyMotion 等。如需完整列表，请参阅[媒体](../../../documentation/components.md#media)组件。
+1. AMP 自动支持一些可通过广告获利的视频播放器，例如 BrightCove、DailyMotion 等。如需完整列表，请参阅[媒体](../../../documentation/components/index.html#media)组件。
 
 1. 使用内置 IMA SDK 和 HTML5 视频播放器的 [amp-ima-video](amp-ima-video.md) 组件。
 1. 如果使用的视频播放器在 AMP 中不受支持，则可以使用 [amp-iframe](https://ampbyexample.com/components/amp-iframe/) 提供自定义播放器。使用 `amp-iframe` 方法时，请注意以下事项：

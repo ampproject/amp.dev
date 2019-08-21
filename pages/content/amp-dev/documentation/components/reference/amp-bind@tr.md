@@ -392,7 +392,7 @@ Bir makro, <i>kendisinden önce tanımlanan</i> diğer makroları da çağırabi
     <td>Bir boole ifadesi olmalıdır.</td>
   </tr>
   <tr>
-    <td><a href="../../../documentation/components/index.md">AMP öğelerinin</a> boyutu</td>
+    <td><a href="../../../documentation/components/index.html">AMP öğelerinin</a> boyutu</td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>AMP öğesinin genişliğini ve/veya yüksekliğini değiştirir.</td>
   </tr>
@@ -655,7 +655,7 @@ AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak i�
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>Bu <code>amp-state</code> öğesini güncelleyecek olan JSON değerini döndürecek uzak uç noktanın URL'si. Bu bir CORS HTTP hizmeti olmalıdır.
-      <code>src</code> özelliği, tüm standart URL değişkeni değişikliklerine izin verir. Daha fazla bilgi için <a href="../../spec/amp-var-substitutions.md">Değişiklik Kılavuzu</a> dokümanına bakın.
+      <code>src</code> özelliği, tüm standart URL değişkeni değişikliklerine izin verir. Daha fazla bilgi için <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">Değişiklik Kılavuzu</a> dokümanına bakın.
           [tip type="important"]
         Uç nokta, <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">AMP'de CORS İstekleri</a> spesifikasyonunda belirtilen gereksinimleri uygulamalıdır.
         [/tip]</td>

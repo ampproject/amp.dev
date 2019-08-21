@@ -163,7 +163,7 @@ Contoh dengan fallback:
 
 Ada 3 cara untuk memonetisasi video di AMP dengan iklan video:
 
-1. AMP secara native mendukung sejumlah pemutar video seperti BrightCove, DailyMotion, dll. yang dapat memonetisasi iklan. Untuk daftar lengkapnya, lihat komponen [media](../../../documentation/components.md#media).
+1. AMP secara native mendukung sejumlah pemutar video seperti BrightCove, DailyMotion, dll. yang dapat memonetisasi iklan. Untuk daftar lengkapnya, lihat komponen [media](../../../documentation/components/index.html#media).
 
 2. Gunakan komponen [amp-ima-video](amp-ima-video.md) yang dilengkapi dengan IMA SDK dan pemutar video HTML5 built-in
 3. Jika Anda menggunakan pemutar video yang tidak didukung di AMP, Anda dapat menayangkan pemutar kustom menggunakan [amp-iframe](https://ampbyexample.com/components/amp-iframe/).

@@ -391,7 +391,7 @@ Ketika **status** berubah, ekspresi dievaluasi ulang dan properti elemen terikat
     <td>Harus berupa ekspresi boolean.</td>
   </tr>
   <tr>
-    <td>Ukuran <a href="../../../documentation/components/index.md">elemen AMP</a></td>
+    <td>Ukuran <a href="../../../documentation/components/index.html">elemen AMP</a></td>
     <td><code>[width]</code><br><code>[height]</code></td>
     <td>Mengubah lebar dan/atau tinggi elemen AMP.</td>
   </tr>
@@ -655,7 +655,7 @@ AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat me
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>URL endpoint jarak jauh yang akan menampilkan JSON yang akan mengubah <code>amp-state</code>. Harus berupa layanan HTTP CORS.
-        Atribut <code>src</code> memungkinkan semua substitusi variabel URL standar. Lihat <a href="../../spec/amp-var-substitutions.md">Panduan Substitusi</a> untuk informasi selengkapnya.
+        Atribut <code>src</code> memungkinkan semua substitusi variabel URL standar. Lihat <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">Panduan Substitusi</a> untuk informasi selengkapnya.
         [tip type="caution"] Endpoint harus mengimplementasikan persyaratan yang ditentukan dalam spesifikasi <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">permintaan CORS di AMP</a>.
         [/tip]</td>
     </tr>
