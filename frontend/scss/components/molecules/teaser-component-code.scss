@@ -122,3 +122,16 @@
     }
   }
 }
+.#{molecule('teaser-component')}-recent {
+  .#{molecule('teaser')} {
+    &-code {
+      box-shadow: none;
+      border: 1px solid color('mercury');
+      transition: none;
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+}

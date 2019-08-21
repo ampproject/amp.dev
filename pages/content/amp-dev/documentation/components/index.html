@@ -29,6 +29,8 @@ highlighted_components:
   - /content/amp-dev/documentation/components/reference/amp-list.md
   - /content/amp-dev/documentation/components/reference/amp-story.md
 
+recent_components:
+
 ---
 {% do doc.styles.addCssFile('/css/components/templates/component-overview.css') %}
 
@@ -107,6 +109,23 @@ highlighted_components:
           </div>
         </div>
       </section>
+      {% if doc.recent_components %}
+      <section class="ap--section">
+        <h2>Recent Components</h2>
+        <div class="ap-m-teaser-component ap-m-teaser-component-recent">
+          <div class="ap-m-teaser-container">
+            {% for teaser_doc in doc.recent_components %}
+            {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
+              [% if format in '{{ teaser_doc.formats }}'%]
+                {% with highlightedTeaser = True %}
+                {% include 'views/partials/teaser.j2' %}
+                {% endwith %}
+              [% endif %]
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      {% endif %}
 
       <section class="ap-m-table-component-container">
         {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}

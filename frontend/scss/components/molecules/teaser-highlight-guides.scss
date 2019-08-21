@@ -149,3 +149,18 @@
     }
   }
 }
+.#{molecule('teaser-highlight-guides')}-recent {
+  .#{molecule('teaser')} {
+    transition: none;
+
+    &-highlighted {
+      box-shadow: none;
+      border: 1px solid color('mercury');
+
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
