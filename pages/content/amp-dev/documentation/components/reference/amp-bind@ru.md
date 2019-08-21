@@ -654,7 +654,7 @@ AMP объединяет запросы XHR для конечных точек J
   <tr>
     <td width="40%"><strong>src</strong></td>
     <td>URL удаленной конечной точки, которая будет возвращать JSON для обновления состояния <code>amp-state</code>. Это должна быть служба CORS HTTP.
-        Атрибут <code>src</code> поддерживает все стандартные замены переменных URL. Подробная информация приведена в <a href="../../spec/amp-var-substitutions.md">этом руководстве</a>.
+        Атрибут <code>src</code> поддерживает все стандартные замены переменных URL. Подробная информация приведена в <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">этом руководстве</a>.
         [tip type="important"]
       Конечная точка должна соответствовать требованиям, указанным в <a href="../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md">Спецификации CORS для запросов на AMP-страницах</a>.
       [/tip]</td>
