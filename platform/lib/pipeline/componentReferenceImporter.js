@@ -80,6 +80,7 @@ class ComponentReferenceImporter {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
         documents.forEach((doc) => {
+          // TODO: importUrl
           this._setMetadata(
               doc.tagName || extension.name, doc.document, doc.version, versions);
           this._rewriteRelativePaths(extension.path, doc.document);
