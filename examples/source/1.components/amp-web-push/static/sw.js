@@ -197,7 +197,6 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('push', (event) => {
   const options = {
     body: event.data.text(),
-    icon: 'images/notification-flat.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
