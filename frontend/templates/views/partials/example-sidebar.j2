@@ -11,7 +11,7 @@
     toolbar-target="ap--sidebar-content">
     <ul>
       {% include '/views/partials/format-toggle.j2' %}
-      <section>
+      <div>
         <div class="ap-o-sidebar">
           <div class="nav">
             {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
@@ -48,7 +48,7 @@
           </div>
 
         </div>
-      </section>
+      </div>
     </ul>
   </nav>
 </amp-sidebar>

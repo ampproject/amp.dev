@@ -41,7 +41,7 @@ To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in t
       75%  {transform: translatey(50px);}
       100% {transform: translatey(100px);}
     }
-  </syle>
+  </style>
 </body>
 ...
 ```

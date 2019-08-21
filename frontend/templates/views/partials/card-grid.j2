@@ -40,6 +40,7 @@
     {% endif %}
     {% for link in item.links %}
     {% set link = g.doc(link, locale=doc.locale) %}
+    {% if link.exists %}
     <a href="{{ link.url.path }}"
       class="ap-m-lnk">
       <div class="ap-a-ico ap-m-lnk-icon">
@@ -48,6 +49,7 @@
       </div>
       <span class="ap-m-lnk-text">{{ link.title }}</span>
     </a>
+    {% endif %}
     {% endfor %}
   </div>
   {% endfor %}
