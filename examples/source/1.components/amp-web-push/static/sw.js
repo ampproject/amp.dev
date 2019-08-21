@@ -19,6 +19,8 @@ importScripts('https://cdn.rawgit.com/jakearchibald/idb/97e4e878/lib/idb.js');
 const applicationServerPublicKey =
 'BA99vy78Qu4vuByBMUZ1W5J0H7ngllFJhF9GcjbS_GJM9iD7uXIm-dQj7nXvisXHI6372ga3mZR3kFdS9MYTdSA';
 const convertedVapidKey = urlB64ToUint8Array(applicationServerPublicKey);
+const WEB_PUSH_DB = 'web-push-db';
+const WEB_PUSH_SUBSCRIPTION = 'web-push-subscription';
 
 /**
   On this section, the service worker accepts window messages (listened
@@ -180,8 +182,8 @@ self.addEventListener('install', () => self.skipWaiting());
  */
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-      idb.open('web-push-db', 1, (upgradeDB) => {
-        upgradeDB.createObjectStore('web-push-subcription', {
+      idb.open(WEB_PUSH_DB, 1, (upgradeDB) => {
+        upgradeDB.createObjectStore(WEB_PUSH_SUBSCRIPTION, {
           keyPath: 'id',
         });
       }).then(() => self.clients.claim())
@@ -214,9 +216,9 @@ self.addEventListener('push', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.url.includes('/documentation/examples/components/amp-web-push/send-push')) {
     event.respondWith(
-        idb.open('web-push-db', 1).then((db) => {
-          const tx = db.transaction(['web-push-subcription'], 'readonly');
-          const store = tx.objectStore('web-push-subcription');
+        idb.open(WEB_PUSH_DB, 1).then((db) => {
+          const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readonly');
+          const store = tx.objectStore(WEB_PUSH_SUBSCRIPTION);
 
           return store.get(1).then((subscriptionJSON) => {
             const options = {
@@ -246,10 +248,10 @@ self.addEventListener('fetch', (event) => {
  */
 function persistSubscriptionLocally(subscription) {
   const subscriptionJSON = JSON.stringify(subscription);
-  idb.open('web-push-db', 1).then((db) => {
-    const tx = db.transaction(['web-push-subcription'], 'readwrite');
-    tx.objectStore('web-push-subcription').put({
       id: 1,
+  idb.open(WEB_PUSH_DB, 1).then((db) => {
+    const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
+    tx.objectStore(WEB_PUSH_SUBSCRIPTION).put({
       data: subscriptionJSON,
     });
     return tx.complete;
@@ -260,9 +262,9 @@ function persistSubscriptionLocally(subscription) {
   Clears the local database (called after a user unsubscribes).
  */
 function clearLocalDatabase() {
-  idb.open('web-push-db', 1).then((db) => {
-    const tx = db.transaction(['web-push-subcription'], 'readwrite');
-    tx.objectStore('web-push-subcription').clear();
+  idb.open(WEB_PUSH_DB, 1).then((db) => {
+    const tx = db.transaction([WEB_PUSH_SUBSCRIPTION], 'readwrite');
+    tx.objectStore(WEB_PUSH_SUBSCRIPTION).clear();
     return tx.complete;
   });
 }
