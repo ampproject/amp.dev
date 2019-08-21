@@ -18,6 +18,7 @@
 
 const HttpProxy = require('http-proxy');
 const config = require('@lib/config');
+const mime = require('mime-types');
 
 const proxyOptions = {
   target: config.hosts.packager.base,
@@ -52,11 +53,14 @@ const packager = (request, response, next) => {
     next();
     return;
   }
-  // We'll only set Vary: AMP-Cache-Transform for html or SXG requests
-  const acceptHeader = request.header('accept');
-  if (acceptHeader &&
-        (!acceptHeader.includes('text/html') &&
-         !acceptHeader.includes('application/signed-exchange'))) {
+  // We'll only serve SXG for non-static files
+  if (request.path.startsWith('/static/')) {
+    next();
+    return;
+  }
+  // We'll only serve SXG for html documents
+  const mimeType = mime.lookup(request.path);
+  if (mimeType && mimeType !== 'text/html') {
     next();
     return;
   }
