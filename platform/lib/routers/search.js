@@ -173,8 +173,8 @@ async function handleSearchRequest(request, response, next) {
   const searchOptions = {
     hiddenQuery:
       `more:pagemap:metatags-page-locale:${locale}`
-      + ' OR site:blog.amp.dev OR site:playground.amp.dev'
-  }
+      + ' OR site:blog.amp.dev OR site:playground.amp.dev',
+  };
 
   if (locale != config.getDefaultLocale()) {
     // For other languages also include en, since the index only contains the translated pages.
