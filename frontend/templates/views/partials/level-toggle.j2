@@ -35,7 +35,8 @@
     [% endif %]
   </div>
   <div class="ap-m-info-button">
-    <input type="checkbox" />
+    <div class="ap-m-info-button-on" tabindex="0"></div>
+    <div class="ap-m-info-button-off" tabindex="-1"></div>
   {% do doc.icons.useIcon('/icons/questionmark.svg') %}
     <svg>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark"></use>

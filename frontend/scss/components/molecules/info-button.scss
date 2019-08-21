@@ -26,7 +26,11 @@ $borderSize: 5px;
 
 
 .#{molecule('info-button')} {
-  input[type=checkbox]{
+  &:focus {
+    outline: none;
+  }
+
+  &-on, &-off {
     position: absolute;
     top: 0;
     right: 0;
@@ -34,16 +38,23 @@ $borderSize: 5px;
     height: 50px;
     opacity: 0;
     z-index: 10;
-    &:focus:checked ~ .#{molecule('tip')} {
+  }
+
+  &-on {
+    &:focus {
+      z-index: 0;
+    }
+    &:focus + div {
+      z-index: 10;
+    }
+    &:focus ~ .#{molecule('tip')}, &:hover ~ .#{molecule('tip')} {
       display: block;
     }
   }
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    .#{molecule('tip')} {
-      display: block;
+  &-off {
+    z-index: 0;
+    &:focus  ~ .#{molecule('tip')} {
+      display: none;
     }
   }
 }
