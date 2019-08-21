@@ -15,9 +15,15 @@
  */
 
 const writeFile = require('write');
+const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
+
+// Prep version template
+const nunjucks = require('nunjucks');
+const VERSION_TOGGLE_TEMPLATE = nunjucks
+    .compile(fs.readFileSync('frontend/templates/views/partials/version-toggle.j2', 'utf8'));
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
@@ -28,13 +34,16 @@ const LOG = new Signale({'scope': 'Markdown Documents'});
 // This expression matches a {% raw %}...{% endraw %} block
 const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
 
+// This expression matches source code blocks. fenced blocks are converted to this syntax
+const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/;
+
 // we search for ALL code blocks, and at the same time for raw blocks
 // to ensure we do not match something that belongs to different code blocks
 // or we add raw tags to existing raw blocks
 const MARKDOWN_BLOCK_PATTERN = new RegExp(
     JINJA2_RAW_BLOCK.source
     + '|'
-    + /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*\]/.source
+    + SOURCECODE_BLOCK.source
     + '|'
     + /`[^`]*`/.source, 'g');
 
@@ -47,6 +56,22 @@ const MUSTACHE_PATTERN = new RegExp(
     + '|'
     + /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source
     + ')', 'g');
+
+// This pattern will find relative urls.
+// It will als match source code blocks to skip them and not replace any links inside.
+const RELATIVE_LINK_PATTERN = new RegExp(
+    // skip sourcecode tag in markdown
+    SOURCECODE_BLOCK.source
+    + '|'
+    // skip inline source marker
+    + /`[^`]*`/.source
+    + '|'
+    // find <a href=""> link tag:
+    + /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source
+    + '|'
+    // find markdown link block [text](../link):
+    + /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
+    , 'g');
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -106,12 +131,35 @@ class MarkdownDocument {
     this._frontmatter['formats'] = formats;
   }
 
+  get version() {
+    return this._frontmatter['version'];
+  }
+
+  set version(version) {
+    this._frontmatter['version'] = version;
+  }
+
+  set versions(versions) {
+    this._frontmatter['versions'] = versions;
+    this._contents = MarkdownDocument
+        .insertVersionToggler(this._contents, this._frontmatter.version, versions);
+  }
+
   get teaser() {
     return this._frontmatter['teaser'] || {};
   }
 
   set teaser(teaser) {
     this._frontmatter['teaser'] = Object.assign(this._frontmatter['teaser'] || {}, teaser);
+  }
+
+  set servingPath(path) {
+    this._frontmatter['$path'] = path;
+    this._frontmatter['$localization'] = {path: '/{locale}' + path};
+  }
+
+  set isCurrent(bool) {
+    this._frontmatter['is_current'] = bool;
   }
 
   get contents() {
@@ -227,13 +275,36 @@ class MarkdownDocument {
   }
 
   /**
-   * Rewrite relative links and append the given base path to them
+   * Adds version toggler to the h1 heading in case of multiple versions
    * @param  {String} contents
    * @return {String}          The rewritten content
    */
+  static insertVersionToggler(contents, version, versions) {
+    const titleRegex = /^#{1}\s(.+)/m;
+    const title = contents.match(titleRegex)[1];
+    return contents.replace(titleRegex, VERSION_TOGGLE_TEMPLATE.render({
+      title: title,
+      versions: versions,
+      version: version,
+    }));
+  }
+
+  /**
+   * Rewrite relative links and append the given base path to them
+   * @param  {String} base
+   */
   rewriteRelativePaths(base) {
-    this._contents = this._contents.replace(/\[([^\]]+)\]\((?!http|#)([^\)]+)\)/g,
-        `[$1](${base}/$2)`);
+    if (!base.endsWith('/')) {
+      base += '/';
+    }
+    this._contents = this._contents.replace(RELATIVE_LINK_PATTERN,
+        (match, hrefLink, markdownLink) => {
+          const link = hrefLink || markdownLink;
+          if (!link) {
+            return match;
+          }
+          return match.replace(link, base + link);
+        });
   }
 
   /**

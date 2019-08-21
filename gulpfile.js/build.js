@@ -206,6 +206,15 @@ function importAll() {
   ]);
 }
 
+/**
+ * Imports just the reference docs.
+ *
+ * @return {Promise}
+ */
+function importComponents() {
+  return (new ComponentReferenceImporter()).import();
+}
+
 
 /**
  * Builds playground and boilerplate generator, imports all remote documents,
@@ -449,6 +458,7 @@ exports.sass = sass;
 exports.icons = icons;
 exports.templates = templates;
 exports.importAll = importAll;
+exports.importComponents = importComponents;
 exports.buildPlayground = buildPlayground;
 exports.buildBoilerplate = buildBoilerplate;
 exports.buildFrontend = buildFrontend;

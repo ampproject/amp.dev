@@ -31,6 +31,8 @@ const SAFE_CLASS_NAMES = [
   'ap-m-benefit',
   'ap-m-code-snippet',
   'ap-m-code-snippet',
+  'ap-m-level-toggle',
+  'ap-m-info-button',
   'ap-o-component-visual',
   'ap-o-news-item',
   'ap-o-benefits',

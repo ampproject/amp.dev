@@ -9,6 +9,7 @@
 
 {% block main %}
 
+{% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-template">
   <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
@@ -132,4 +133,5 @@
   {% endif %}
 
 </main>
+{% include 'views/partials/sidebar.j2' %}
 {% endblock %}

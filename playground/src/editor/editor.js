@@ -188,6 +188,7 @@ class Editor {
 
   loadHints(validator) {
     this.amphtmlHints.then((hints) => {
+      // eslint-disable-next-line no-unused-vars
       for (const key of Object.keys(CodeMirror.htmlSchema)) {
         delete CodeMirror.htmlSchema[key];
       }
