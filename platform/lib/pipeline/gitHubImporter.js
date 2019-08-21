@@ -64,6 +64,18 @@ class GitHubImporter {
   }
 
   /**
+   * Downloads a file from Github and returns its contents.
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {String} A string containing the file
+   */
+  async fetchFile(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+    const data = await this.fetchContents_(filePath, repo, master, LOCAL_AMPHTML);
+    const str = Buffer.from(data[0].content || data, 'base64').toString();
+    return str;
+  }
+
+  /**
    * Downloads a path/document from GitHub and returns its contents
    * @param  {String} path Path to the file
    * @param  {Boolean} master true if document should be fetched from master
