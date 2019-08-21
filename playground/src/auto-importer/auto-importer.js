@@ -123,7 +123,8 @@ class AutoImporter {
       missingTags: {},
     };
 
-    for (error of validationResult.errors) {
+    // eslint-disable-next-line no-unused-vars
+    for (const error of validationResult.errors) {
       if (error.category === 'MANDATORY_AMP_TAG_MISSING_OR_INCORRECT') {
         switch (error.code) {
           case 'MANDATORY_TAG_MISSING':
