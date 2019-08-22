@@ -210,6 +210,10 @@ class ComponentReferenceImporter {
     tags.delete('script');
     tags.delete('$reference-point');
 
+    // always add the extension name.
+    // It might not be a tag, but the documentation might have this name
+    tags.add(extension.name);
+
     return tags;
   }
 

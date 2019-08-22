@@ -22,8 +22,8 @@ const utils = require('@lib/utils');
 
 // Prep version template
 const nunjucks = require('nunjucks');
-const VERSION_TOGGLE_TEMPLATE = nunjucks
-    .compile(fs.readFileSync('frontend/templates/views/partials/version-toggle.j2', 'utf8'));
+const VERSION_TOGGLE_TEMPLATE = nunjucks.compile(fs.readFileSync(
+  utils.project.absolute('frontend/templates/views/partials/version-toggle.j2'), 'utf8'));
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
