@@ -365,6 +365,17 @@ providers:
       fit: contain
     formats:
       - email
+  - name: Pepipost
+    url: https://pepipost.com/
+    type: Email Service
+    description: Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders.
+    image:
+      src: /static/img/tools/pepipost.jpg
+      width: 600
+      height: 315
+      fit: contain
+    formats:
+      - email      
   - name: Sparkpost
     url: https://www.sparkpost.com/
     type: Email Service
