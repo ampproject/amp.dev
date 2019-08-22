@@ -1,9 +1,9 @@
 {
 	"default": {
 		"components": [
-			"/content/amp-dev/documentation/components/reference/amp-img.md",
-			"/content/amp-dev/documentation/components/reference/amp-bind.md",
-			"/content/amp-dev/documentation/components/reference/amp-form.md"
+			"/content/amp-dev/documentation/components/reference/amp-img-v0.1.md",
+			"/content/amp-dev/documentation/components/reference/amp-bind-v0.1.md",
+			"/content/amp-dev/documentation/components/reference/amp-form-v0.1.md"
 		],
 		"articles": [
 			"/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md",
@@ -12,4 +12,3 @@
 		]
 	}
 }
-
