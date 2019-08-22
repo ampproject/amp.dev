@@ -121,14 +121,7 @@
 
                 {{^prevUrl}}
                 {{#result.pages.length}}
-                <h4 class="ap-o-search-result-category">
-                  {{^result.components.length}}
-                  {% endraw %}{{_('Results')}}{% raw %}
-                  {{/result.components.length}}
-                  {{#result.components.length}}
-                  {% endraw %}{{_('More results')}}{% raw %}
-                  {{/result.components.length}}
-                </h4>
+                <h4 class="ap-o-search-result-category">{% endraw %}{{_('Results')}}{% raw %}</h4>
                 {{/result.pages.length}}
                 {{/prevUrl}}
                 {{#result.pages}}
