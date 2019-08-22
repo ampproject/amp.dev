@@ -133,7 +133,7 @@ success_stories:
               </div>
               {% endif %}
             </div>
-            <h5 class="ap-o-news-headline">{{ news.headline }}</h5>
+            <h5 class="ap-o-news-headline">{{ news.headline|safe }}</h5>
             <div class="ap-o-news-date">{{ news.date }}</div>
           </div>
         </a>
