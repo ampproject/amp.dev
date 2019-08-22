@@ -86,8 +86,8 @@
 
     &-link-stories {
       &:hover, &.#{molecule('format-toggle')}-selected {
-        @include gradient-stories; color: color('pigment-indigo');
-        .#{atom('ico')} { fill: color('pigment-indigo'); }
+        @include gradient-stories; color: color('ultramarine');
+        .#{atom('ico')} { fill: color('ultramarine'); }
       }
     }
 

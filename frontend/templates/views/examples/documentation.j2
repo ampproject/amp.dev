@@ -69,7 +69,6 @@
 {% endblock %}
 
 {% block main %}
-{% include 'views/partials/example-sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-examples-manual">
   <div class="ap--container">
@@ -239,6 +238,7 @@
     {% include 'views/partials/author.j2' %}
   </div>
 </main>
+{% include 'views/partials/example-sidebar.j2' %}
 
 {% if doc.example.document.metadata.experiments %}
 {% set experiments = doc.example.document.metadata.experiments %}

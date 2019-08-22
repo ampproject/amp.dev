@@ -35,3 +35,29 @@ test('Test escape mustache tags', async (done) => {
 
   done();
 });
+
+
+test('Test escape mustache tags', async (done) => {
+  const doc = new MarkdownDocument('/tmp/test.md',
+      `[text](../link/file#anchor)
+      [text](#anchor)
+      [sourcecode type="html"]<a href="../source/link.html">text</a>[/sourcecode]
+      <a href="#anchor">text</a>
+      \`<a href="...">text</a>\`
+      <a href="mailto:test@test.test">text</a>
+      <a href="link">text</a>
+      <a class="link" href = "../rel/link">text</a>`);
+  doc.rewriteRelativePaths('http://test.de/test');
+
+  expect(doc.contents).toBe(`[text](http://test.de/test/../link/file#anchor)
+      [text](#anchor)
+      [sourcecode type="html"]<a href="../source/link.html">text</a>[/sourcecode]
+      <a href="#anchor">text</a>
+      \`<a href="...">text</a>\`
+      <a href="mailto:test@test.test">text</a>
+      <a href="http://test.de/test/link">text</a>
+      <a class="link" href = "http://test.de/test/../rel/link">text</a>`
+  );
+
+  done();
+});

@@ -37,6 +37,8 @@ const SAFE_CLASS_NAMES = [
   'ap-o-burger-menu-item',
   'ap-o-burger-menu-link',
   'ap-o-benefits',
+  'ap-m-level-toggle',
+  'ap-m-info-button',
   'ap-o-component-visual',
   'ap-o-news',
   'ap-o-benefits',
