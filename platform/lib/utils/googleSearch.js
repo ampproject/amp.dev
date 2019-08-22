@@ -42,27 +42,25 @@ async function search(query, locale, page, options = {}) {
   }
 
   const startIndex = (page - 1) * PAGE_SIZE + 1;
-  query = encodeURIComponent(query);
-  const hiddenQuery = options && options.hiddenQuery ? encodeURIComponent(options.hiddenQuery) : '';
-  const noLanguageFilter = options && options.noLanguageFilter;
   let language = locale;
   if (language.length > 2) {
     language = language.substr(0, 2);
   }
-  language = encodeURIComponent(language.toLowerCase());
 
-  let url = `${CSE_BASE_URL}?cx=${CSE_ID}&key=${API_KEY}&hl=${language}`
-      + `&q=${query}&start=${startIndex}`;
-  if (!noLanguageFilter) {
-    url += `&lr=lang_${language}`;
+  const url = new URL(CSE_BASE_URL);
+  url.searchParams.set('cx', CSE_ID);
+  url.searchParams.set('key', API_KEY);
+  url.searchParams.set('hl', language);
+  url.searchParams.set('q', query);
+  url.searchParams.set('start', startIndex);
+  if (!options.noLanguageFilter) {
+    url.searchParams.set('lr', `lang_${language}`);
   }
-  if (hiddenQuery) {
-    url += `&hq=${hiddenQuery}`;
+  if (options.hiddenQuery) {
+    url.searchParams.set('hq', options.hiddenQuery);
   }
 
-  console.log(`CSE url ${url}: `);
-
-  const fetchResponse = await fetch(url);
+  const fetchResponse = await fetch(url.toString());
   if (!fetchResponse.ok) {
     console.log(`CSE Error ${fetchResponse.status} for url ${url}: `, await fetchResponse.text());
     throw Error('Invalid response for search query');

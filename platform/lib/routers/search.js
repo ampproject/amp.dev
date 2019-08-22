@@ -21,6 +21,7 @@ const config = require('@lib/config.js');
 const project = require('@lib/utils/project.js');
 const googleSearch = require('@lib/utils/googleSearch.js');
 const samples = require('@lib/common/samples.js');
+const {setMaxAge} = require('@lib/utils/cacheHelpers');
 
 const {BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS} = require('@lib/common/AmpConstants.js');
 
@@ -30,6 +31,13 @@ const LAST_PAGE = googleSearch.MAX_PAGE;
 const MAX_HIGHLIGHT_COMPONENTS = 3;
 /** After which index do we stop to look for highlight components (zero based 0 - 9) */
 const MAX_HIGHLIGHT_COMPONENT_INDEX = 7;
+
+/** response max ages in seconds */
+const RESPONSE_MAX_AGE = {
+  search: 21600, // 6 hours
+  highlights: 86400, // 24 hours
+  autosuggest: 86400, // 24 hours
+};
 
 const COMPONENT_REFERENCE_DOC_PATTERN =
     /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
@@ -44,6 +52,9 @@ const COMPONENT_EXAMPLES = samples.getComponentExampleMap();
 
 const COMPONENT_VERSIONS_PATH = path.join(project.paths.GROW_POD,
     '/extensions/amp-component-versions.json');
+
+const HIGHLIGHTS_FOLDER_PATH = path.join(project.paths.DIST,
+    '/static/files/search-promoted-pages/');
 
 function buildAutosuggestComponentResult() {
   const componentVersions = require(COMPONENT_VERSIONS_PATH);
@@ -61,11 +72,24 @@ const AUTOSUGGEST_COMPONENT_RESULT = buildAutosuggestComponentResult();
 const search = express.Router();
 
 search.get('/search/autosuggest', handleAutosuggestRequest);
+search.get('/search/highlights', handleHighlightsRequest);
 search.get('/search/do', handleSearchRequest);
 
 
 function handleAutosuggestRequest(request, response) {
+  setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
   response.json(AUTOSUGGEST_COMPONENT_RESULT);
+}
+
+function handleHighlightsRequest(request, response) {
+  const locale = request.query.locale ? request.query.locale : config.getDefaultLocale();
+  const data = require(`${HIGHLIGHTS_FOLDER_PATH}${locale}.json`);
+  for (const page of data['components']) {
+    addExampleAndPlaygroundLink(page, locale);
+    cleanupTexts(page);
+  }
+  setMaxAge(response, RESPONSE_MAX_AGE.highlights);
+  response.json(data);
 }
 
 function getCseItemMetaTagValue(item, metaTag) {
@@ -98,6 +122,22 @@ function createPageObject(csePageItem) {
   return page;
 }
 
+function addExampleAndPlaygroundLink(page, locale) {
+  if (page.url) {
+    const componentName = page.url.match(COMPONENT_REFERENCE_DOC_PATTERN)[1];
+    const example = COMPONENT_EXAMPLES[componentName];
+    if (example) {
+      page.exampleUrl = example.exampleUrl;
+      page.playgroundUrl = example.playgroundUrl;
+
+      // the preview link must not have the locale, but the example doc page has to have it:
+      if (locale != config.getDefaultLocale()) {
+        page.exampleUrl = '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
+      }
+    }
+  }
+}
+
 function enrichComponentPageObject(item, page, locale) {
   const description = getCseItemMetaTagValue(item, DESCRIPTION_META_TAG);
   if (description) {
@@ -112,19 +152,7 @@ function enrichComponentPageObject(item, page, locale) {
     }
   }
 
-  if (page.url) {
-    const componentName = page.url.match(COMPONENT_REFERENCE_DOC_PATTERN)[1];
-    const example = COMPONENT_EXAMPLES[componentName];
-    if (example) {
-      page.exampleUrl = example.exampleUrl;
-      page.playgroundUrl = example.playgroundUrl;
-
-      // the preview link must not have the locale, but the example doc page has to have it:
-      if (locale != config.getDefaultLocale()) {
-        page.exampleUrl = '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
-      }
-    }
-  }
+  addExampleAndPlaygroundLink(page, locale);
 }
 
 function createResult(totalResults, page, lastPage, components, pages, query, locale) {
@@ -161,6 +189,12 @@ function cleanupText(text) {
   // sometimes markdown links (that may contain {{g.doc}} calls) are found, so remove them
   text = text.replace(/\[([^\]]+)\]\([^\)]*?(?:\{\{[^}]+\}[^\)]*)?(?:\)|$)/g, '$1');
   return text;
+}
+
+/** do some additional cleanup to ensure the text is printed nicely */
+function cleanupTexts(page) {
+  page.title = cleanupText(page.title);
+  page.description = cleanupText(page.description);
 }
 
 async function handleSearchRequest(request, response, next) {
@@ -234,12 +268,11 @@ async function handleSearchRequest(request, response, next) {
         pages.push(page);
       }
 
-      // do some additional cleanup to ensure the text is printed nicely
-      page.title = cleanupText(page.title);
-      page.description = cleanupText(page.description);
+      cleanupTexts(page);
     }
   }
 
+  setMaxAge(response, RESPONSE_MAX_AGE.search);
   response.json(createResult(totalResults, page, pageCount, components, pages, query, locale));
 }
 

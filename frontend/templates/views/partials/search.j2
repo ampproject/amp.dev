@@ -66,11 +66,6 @@
 
         <input name="locale" type="hidden" value="{{ doc.locale }}">
 
-        <div submit-error>
-          {{_('An internal server error occurred while trying to load the search results.')}}<br>
-          {{_('We apologize for the inconvenience caused.')}}<br>
-          {{_('Please try again later.')}}
-        </div>
       </form>
 
       <div class="empty" [class]="query ? '' : 'empty'">
@@ -105,22 +100,22 @@
                     <p class="ap-o-search-result-description">{{description}}</p>
                   </a>
                   <div class="ap-o-search-result-linklist">
-                    {{-#exampleUrl-}}
+                    {{#exampleUrl}}
                     <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
                       <div class="ap-a-ico ap-m-lnk-icon">
                         {% endraw %}{{ iconMarkupChanged }}{% raw %}
                       </div>
                       <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
                     </a>
-                    {{-/exampleUrl-}}
-                    {{-#playgroundUrl-}}
-                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk"href="{{playgroundUrl}}">
+                    {{/exampleUrl}}
+                    {{#playgroundUrl}}
+                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
                       <div class="ap-a-ico ap-m-lnk-icon">
                         {% endraw %}{{ iconMarkupChanged }}{% raw %}
                       </div>
                       <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
                     </a>
-                    {{-/playgroundUrl-}}
+                    {{/playgroundUrl}}
                   </div>
                 </div>
                 {{/result.components}}
@@ -174,7 +169,7 @@
 
     <div [hidden]="query.length > 0">
 
-      <amp-list src="/static/files/search-promoted-pages/{{ doc.locale }}.json"
+      <amp-list src="/search/highlights?locale={{ doc.locale }}"
                 binding="no"
                 class="paged-amp-list"
                 items="."
@@ -192,11 +187,29 @@
             <h4 class="ap-o-search-result-category">{% endraw %}{{_('Important Components')}}{% raw %}</h4>
             {{/components.length}}
             {{#components}}
-            <div class="ap-o-search-result-item">
+            <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
               <a class="ap-o-search-result-link" href="{{url}}">
                 <h4 class="ap-o-search-result-title">&lt;{{title}}&gt;</h4>
                 <p class="ap-o-search-result-description">{{description}}</p>
               </a>
+              <div class="ap-o-search-result-linklist">
+                {{#exampleUrl}}
+                <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
+                  <div class="ap-a-ico ap-m-lnk-icon">
+                    {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                  </div>
+                  <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
+                </a>
+                {{/exampleUrl}}
+                {{#playgroundUrl}}
+                <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
+                  <div class="ap-a-ico ap-m-lnk-icon">
+                    {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                  </div>
+                  <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
+                </a>
+                {{/playgroundUrl}}
+              </div>
             </div>
             {{/components}}
 
