@@ -98,15 +98,14 @@
                     <h4 class="ap-o-search-result-title">{{title}}</h4>
                     <p class="ap-o-search-result-description">{{description}}</p>
                   </a>
+                  {{#exampleUrl}}
                   <div class="ap-o-search-result-linklist">
-                    {{#exampleUrl}}
                     <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
                       <div class="ap-a-ico ap-m-lnk-icon">
                         {% endraw %}{{ iconMarkupChanged }}{% raw %}
                       </div>
                       <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
                     </a>
-                    {{/exampleUrl}}
                     {{#playgroundUrl}}
                     <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
                       <div class="ap-a-ico ap-m-lnk-icon">
@@ -116,6 +115,7 @@
                     </a>
                     {{/playgroundUrl}}
                   </div>
+                  {{/exampleUrl}}
                 </div>
                 {{/result.components}}
 
@@ -183,15 +183,14 @@
                 <h4 class="ap-o-search-result-title">&lt;{{title}}&gt;</h4>
                 <p class="ap-o-search-result-description">{{description}}</p>
               </a>
+              {{#exampleUrl}}
               <div class="ap-o-search-result-linklist">
-                {{#exampleUrl}}
                 <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
                   <div class="ap-a-ico ap-m-lnk-icon">
                     {% endraw %}{{ iconMarkupChanged }}{% raw %}
                   </div>
                   <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
                 </a>
-                {{/exampleUrl}}
                 {{#playgroundUrl}}
                 <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
                   <div class="ap-a-ico ap-m-lnk-icon">
@@ -201,6 +200,7 @@
                 </a>
                 {{/playgroundUrl}}
               </div>
+              {{/exampleUrl}}
             </div>
             {{/components}}
 

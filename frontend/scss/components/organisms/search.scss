@@ -25,7 +25,7 @@
   left: 0;
   top: 0;
   z-index: 1005;
-  background-color: color('whisper');
+  background: color('whisper');
   box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
   outline: 0;
   opacity: 0;
@@ -46,7 +46,8 @@
     top: 0;
     outline: none;
     z-index: 1;
-    background-color: transparentize(color('black'), .6);
+    opacity: .6;
+    background: #000;
 
     @media (min-width: 1024px) {
       width: 100vw;
@@ -90,7 +91,7 @@
     @media (min-width: 1024px) {
       max-width: 900px;
       padding: 32px 60px 0;
-      background-color: color('whisper');
+      background: color('whisper');
       box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
     }
 
@@ -108,17 +109,6 @@
   &-form {
     position: relative;
     z-index: 2;
-  }
-
-  &-field {
-    width: 100%;
-
-    .empty {
-      height: 0;
-      padding: 0;
-      opacity: 0;
-      visibility: hidden;
-    }
   }
 
   &-autocomplete {
@@ -146,7 +136,7 @@
         top: 0;
         width: calc(100% - 20px);
         height: 1px;
-        background-color: transparentize(color('charade'), .8);
+        background: #CECED2;
         z-index: 1;
 
         @media (min-width: 1024px) {
@@ -182,17 +172,15 @@
     margin: 0;
     border: none;
     border-radius: 4px;
-    background-color: transparent;
+    background: transparent;
 
     @media (max-width: 1023px) {
       font-size: 1.125rem;
       padding: 20px 20px 20px 40px;
     }
 
-    &::-webkit-input-placeholder { color: transparentize(color('black'), .8); }
-    &::-moz-placeholder { color: transparentize(color('black'), .8); }
-    &:-ms-input-placeholder { color: transparentize(color('black'), .8); }
-    &:-moz-placeholder { color: transparentize(color('black'), .8); }
+    &::-webkit-input-placeholder { color: #CECED2; }
+    &::-moz-placeholder { color: #CECED2; }
 
     &:focus {
       outline: none;
@@ -228,24 +216,20 @@
 
       &::-webkit-scrollbar {
         width: 4px;
-        height: 4px;
-        border-radius: 4px;
       }
 
       &::-webkit-scrollbar-thumb {
-        background-color: color('gallery');
+        background: color('gallery');
       }
     }
 
     &::before {
       content: '';
       display: block;
-      width: calc(100% + 2em);
       height: 2em;
       position: sticky;
       position: -webkit-sticky;
       top: 0;
-      margin-left: -1em;
       background: linear-gradient(0deg, rgba(color('whisper'), 0) 0%, color('whisper') 100%);
       z-index: 1;
     }
@@ -259,28 +243,20 @@
     }
 
     &-category {
-      margin-left: 25px;
-      margin-right: 25px;
-      margin-bottom: 10px;
-      color: transparentize(color('charade'), .8);
+      padding: 30px 0 0;
+      margin: 1.5rem 25px 10px;
+      color: #CECED2;
+      border-top: 1px solid #CECED2;
 
       @media (min-width: 1024px) {
-        margin-left: 60px;
-        margin-right: 60px;
+        margin: 1.5rem 60px 10px;
       }
 
       &:first-child {
         margin-top: 0;
+        padding: 0;
+        border: none;
       }
-
-      &:nth-of-type(1n+2) {
-        padding-top: 30px;
-        border-top: 1px solid transparentize(color('charade'), .8);
-      }
-    }
-
-    &-category + &-item {
-      margin-top: 0;
     }
 
     &-item {
@@ -297,13 +273,13 @@
           box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.1);
         }
       }
+    }
 
-      &-highlight {
-        @media (max-width: 1023px) {
-          margin: 10px 25px;
-          background: #fff;
-          box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.1);
-        }
+    &-item-highlight {
+      @media (max-width: 1023px) {
+        margin: 10px 25px;
+        background: #fff;
+        box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.1);
       }
     }
 
@@ -316,10 +292,6 @@
       opacity: 1;
     }
 
-    &-item-highlight &-link {
-      padding-bottom: 0;
-    }
-
     &-link {
       display: block;
       padding: 15px;
@@ -330,19 +302,14 @@
       display: flex;
       justify-content: flex-end;
       padding: 0 0 5px;
-      margin: 15px 15px 0;
-      min-height: 15px;
-      border-top: 1px solid transparentize(color('charade'), .9);
+      margin: 0 15px;
+      border-top: 1px solid #E8E8E9;
 
       @media (min-width: 1024px) {
         padding: 0;
-        margin: 0 0 0 15px;
+        margin-top: -15px;
         border: none;
         opacity: 0;
-      }
-
-      &:empty {
-        display: none;
       }
 
       &-item {
@@ -387,25 +354,23 @@
       margin: 0;
     }
 
-    &-load {
-      &-button {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
+    &-load-button {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
 
-        .#{atom('btn')} {
-          padding: .5rem 2rem;
-          font-size: .875rem;
-          color: color('blue-ribbon');
-          border: 2px solid color('blue-ribbon');
-          background-color: transparent;
-          box-shadow: none;
-          opacity: .6;
+      .#{atom('btn')} {
+        padding: .5rem 2rem;
+        font-size: .875rem;
+        color: color('blue-ribbon');
+        border: 2px solid color('blue-ribbon');
+        background: transparent;
+        box-shadow: none;
+        opacity: .6;
 
-          &:hover {
-            transform: none;
-            opacity: 1;
-          }
+        &:hover {
+          transform: none;
+          opacity: 1;
         }
       }
     }
@@ -421,8 +386,13 @@
 
     // Hack to prevent showing load-more button and loading-indicator at the same time
     // Related issue: https://github.com/ampproject/amphtml/issues/24034
-    div[class*="-amphtml-loading-container"]:not(.amp-hidden) ~ [load-more-button].amp-visible {
+    div[class*="loading-container"]:not(.amp-hidden) ~ [load-more-button] {
       display: none;
     }
+  }
+
+  .empty {
+    overflow: hidden;
+    height: 0;
   }
 }
