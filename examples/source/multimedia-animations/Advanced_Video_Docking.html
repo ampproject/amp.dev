@@ -12,7 +12,7 @@ author: alanorozco
 <!--
   ## Introduction
 
-  With [`amp-video`](/content/amp-dev/documentation/components/reference/amp-video.md) you can have rich user interface features, such as docking (minimize-to-corner).
+  With [`amp-video`](/content/amp-dev/documentation/components/reference/amp-video-v0.1.md) you can have rich user interface features, such as docking (minimize-to-corner).
 
   You can simply enable this feature on your `<amp-video>` by using the `dock` attribute. This example goes further by specifying a "docking slot" (a DOM element that represents the area where the video should be minimized) and layout synchronization using [events and actions](/documentation/guides-and-tutorials/learn/amp-actions-and-events), and the `amp-animation` extension.
 -->
@@ -23,11 +23,11 @@ author: alanorozco
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
-  <!-- Include the [`amp-video`](/content/amp-dev/documentation/components/reference/amp-video.md) extension. -->
+  <!-- Include the [`amp-video`](/content/amp-dev/documentation/components/reference/amp-video-v0.1.md) extension. -->
   <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-  <!-- Include the [`amp-video-docking`](/content/amp-dev/documentation/components/reference/amp-video-docking.md) extension. -->
+  <!-- Include the [`amp-video-docking`](/content/amp-dev/documentation/components/reference/amp-video-docking-v0.1.md) extension. -->
   <script async custom-element="amp-video-docking" src="https://cdn.ampproject.org/v0/amp-video-docking-0.1.js"></script>
-  <!-- Include the [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation.md)
+  <!-- Include the [`amp-animation`](/content/amp-dev/documentation/components/reference/amp-animation-v0.1.md)
   extension to animate the `<aside>` element on `dock` and `undock`.  -->
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <title>Advanced Video Docking</title>
@@ -203,7 +203,7 @@ author: alanorozco
   <main>
     <div class="content">
       <!-- ## Include your video -->
-      <!-- In your [`<amp-video>`](/content/amp-dev/documentation/components/reference/amp-video.md) tag, you should include the `dock` attribute to specify that the video should be minimized to corner on scroll. By setting a value on the attribute, we're specifying which docking slot we're using via a CSS selector.-->
+      <!-- In your [`<amp-video>`](/content/amp-dev/documentation/components/reference/amp-video-v0.1.md) tag, you should include the `dock` attribute to specify that the video should be minimized to corner on scroll. By setting a value on the attribute, we're specifying which docking slot we're using via a CSS selector.-->
       <amp-video
         src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         poster="https://peach.blender.org/wp-content/uploads/bbb-splash.png"

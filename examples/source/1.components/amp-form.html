@@ -8,7 +8,7 @@ author: kul3r4
 <!--
   ## Introduction
 
-  The [amp-form](/content/amp-dev/documentation/components/reference/amp-form.md) extension allows
+  The [amp-form](/content/amp-dev/documentation/components/reference/amp-form-v0.1.md) extension allows
   the usage of forms and input fields in an AMP document. `amp-form` allows HTTP and XHR (XMLHttpRequest) form submissions. An HTTP form submission loads a new page, while an XHR form submission doesn't require a page reload.
 
   The `amp-form` extension also allows you to render success and error responses with the `submit-success` and `submit-error` special attributes. For details on usage, see the [amp-form documentation on Success/Error response rendering](/content/amp-dev/documentation/components/reference/amp-form.md#success/error-response-rendering).
@@ -77,7 +77,7 @@ author: kul3r4
   <h2 class="sample-heading">Form Submission with Page Update</h2>
   <!-- ## Form submission with client-side rendering -->
   <!--
-    Use the `action-xhr` attribute to submit the form via XMLHttpRequest (XHR). You can use [amp-mustache](/content/amp-dev/documentation/components/reference/amp-mustache.md) templates to client side render the POST response. It's possible to show custom success or error messages, using data sent by the server endpoint as JSON. For example, if the server sends `{"foo": "bar"}`, you can use use `{{foo}}` in the template to render `bar`.
+    Use the `action-xhr` attribute to submit the form via XMLHttpRequest (XHR). You can use [amp-mustache](/content/amp-dev/documentation/components/reference/amp-mustache-v0.2.md) templates to client side render the POST response. It's possible to show custom success or error messages, using data sent by the server endpoint as JSON. For example, if the server sends `{"foo": "bar"}`, you can use use `{{foo}}` in the template to render `bar`.
 
     The `amp-form` component displays `submit-success` or `submit-error` elements based on the response and renders the template data inside these two elements. The `submit-success` and `submit-error` elements must be direct children of `form`.
   -->
@@ -274,7 +274,7 @@ author: kul3r4
 
   <!-- ## Input type=date -->
   <!--
-    `amp-form` supports all HTML5 form types with the exception of file and image. It's recommended to use the [`amp-date-picker`](/content/amp-dev/documentation/components/reference/amp-date-picker.md) component for input fields that should contain a date.
+    `amp-form` supports all HTML5 form types with the exception of file and image. It's recommended to use the [`amp-date-picker`](/content/amp-dev/documentation/components/reference/amp-date-picker-v0.1.md) component for input fields that should contain a date.
   -->
   <form class="sample-form" method="post" action-xhr="/documentation/examples/api/submit-form-xhr" target="_top">
     <input name="select-date" type="date" value="2020-12-30">
