@@ -23,7 +23,6 @@ const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
 const api = express.Router();
 
 const ONE_HOUR = 60 * 60;
-const ONE_DAY = ONE_HOUR * 24;
 const VALID_ORIGINS = new Set([
   'amp.dev',
   'api.amp.dev',
@@ -56,19 +55,6 @@ api.get('/fetch', async (request, response) => {
     response.send(`Could not fetch URL ${url}`).status(400).end();
   }
 });
-
-api.get('/amp-component-versions', async (request, response) => {
-  const url = 'https://ampbyexample.com/playground/amp-component-versions';
-  try {
-    const body = await doFetch(url);
-    setMaxAge(response, ONE_DAY);
-    response.send(body);
-  } catch (error) {
-    console.error('Could not fetch component versions', error);
-    response.send(`Could not fetch component versions ${url}`).status(400).end();
-  }
-});
-
 
 async function fetchDocument(urlString, host) {
   const url = new URL(urlString, host);

@@ -50,8 +50,8 @@ const DESCRIPTION_META_TAG = 'twitter:description';
 
 const COMPONENT_EXAMPLES = samples.getComponentExampleMap();
 
-const COMPONENT_VERSIONS_PATH = path.join(project.paths.GROW_POD,
-    '/extensions/amp-component-versions.json');
+const COMPONENT_VERSIONS_PATH = path.join(project.paths.DIST,
+    '/static/files/component-versions.json');
 
 const HIGHLIGHTS_FOLDER_PATH = path.join(project.paths.DIST,
     '/static/files/search-promoted-pages/');
