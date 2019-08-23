@@ -1,7 +1,6 @@
 ---
 $title: Actions and events
 $order: 7
-description: 'The on attribute is used to install event handlers on elements. The events that are supported depend on the element.'
 formats:
   - websites
   - email
