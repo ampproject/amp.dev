@@ -207,6 +207,7 @@
   &-result {
     overflow-x: hidden;
     overflow-y: auto;
+    min-height: 500px;
     max-height: calc(100vh - 88px);
     padding: 0 0 30px;
 
@@ -232,6 +233,10 @@
       top: 0;
       background: linear-gradient(0deg, rgba(color('whisper'), 0) 0%, color('whisper') 100%);
       z-index: 1;
+    }
+
+    .amp-active {
+      transform: translate(-50%, 206px);
     }
 
     &-list:last-child &-item:last-child {
