@@ -207,7 +207,7 @@
   &-result {
     overflow-x: hidden;
     overflow-y: auto;
-    min-height: 500px;
+    min-height: 60vh;
     max-height: calc(100vh - 88px);
     padding: 0 0 30px;
 
@@ -236,7 +236,7 @@
     }
 
     .amp-active {
-      transform: translate(-50%, 206px);
+      transform: translate(-50%, 25vh);
     }
 
     &-list:last-child &-item:last-child {
