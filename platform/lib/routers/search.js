@@ -53,8 +53,7 @@ const COMPONENT_EXAMPLES = samples.getComponentExampleMap();
 const COMPONENT_VERSIONS_PATH = path.join(project.paths.DIST,
     '/static/files/component-versions.json');
 
-const HIGHLIGHTS_FOLDER_PATH = path.join(project.paths.DIST,
-    '/static/files/search-promoted-pages/');
+const HIGHLIGHTS_FOLDER_PATH = '../../config/search-promoted-pages';
 
 function buildAutosuggestComponentResult() {
   const componentVersions = require(COMPONENT_VERSIONS_PATH);
@@ -83,7 +82,7 @@ function handleAutosuggestRequest(request, response) {
 
 function handleHighlightsRequest(request, response) {
   const locale = request.query.locale ? request.query.locale : config.getDefaultLocale();
-  const data = require(`${HIGHLIGHTS_FOLDER_PATH}${locale}.json`);
+  const data = require(path.join(HIGHLIGHTS_FOLDER_PATH, `${locale}.json`));
   for (const page of data.components) {
     addExampleAndPlaygroundLink(page, locale);
     cleanupTexts(page);
