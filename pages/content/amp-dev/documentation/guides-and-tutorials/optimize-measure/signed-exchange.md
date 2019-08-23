@@ -203,9 +203,9 @@ Within the DevTools console, under the `network` tab, you will be able to see `s
 
 {{ image('/static/img/docs/guides/sxg/sxg3.jpg', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
 
-# Signed Exchange service providors 
+# Signed Exchange service providers 
 
-Networks that provide an AMP cache for users may generate Signed Exchanges for you. If you are using one of these networks to serve your website you will not need your own Signed Exchanges. 
+Here is a list of CDNs and hosting providers offering out-of-the-box support for Signed Exchanges. Using one of these is the easiest way to get started with Signed Exchanges: 
 
-- [Cloudflare AMP real URL](https://blog.cloudflare.com/announcing-amp-real-url/)
-    - [Cloudflare](https://www.cloudflare.com/) is one of the world’s largest networks. Today, businesses, non-profits, bloggers, and anyone with an Internet presence boast faster, more secure websites and apps thanks to Cloudflare.
+- [Cloudflare AMP real URL](https://blog.cloudflare.com/announcing-amp-real-url/).
+  [Cloudflare](https://www.cloudflare.com/) is one of the world’s largest networks. Today, businesses, non-profits, bloggers, and anyone with an Internet presence boast faster, more secure websites and apps thanks to Cloudflare.
