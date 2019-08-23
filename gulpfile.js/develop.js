@@ -25,7 +25,12 @@ const build = require('./build.js');
 const {samplesBuilder} = require('@lib/build/samplesBuilder');
 
 function bootstrap(done) {
-  gulp.parallel(build.buildBoilerplate, build.buildPlayground, build.importAll)(done);
+  gulp.parallel(
+      build.buildComponentVersions,
+      build.buildBoilerplate,
+      build.buildPlayground,
+      build.importAll
+  )(done);
 }
 
 function develop() {

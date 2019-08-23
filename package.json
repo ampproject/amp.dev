@@ -75,6 +75,7 @@
     "uuid": "3.3.3"
   },
   "devDependencies": {
+    "@ampproject/toolbox-validator-rules": "^1.0.1",
     "@babel/cli": "7.5.5",
     "@babel/core": "7.5.5",
     "@babel/node": "7.5.5",
