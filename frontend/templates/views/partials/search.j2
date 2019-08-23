@@ -156,6 +156,10 @@
             </amp-list-load-more>
           </amp-list>
 
+          <div class="ap-o-search-result-hint" [hidden]="search.result.totalResults != 0" hidden>
+            {{_('We could not find any results for your search query.')}}
+          </div>
+
         </div>
       </div>
     </div>
