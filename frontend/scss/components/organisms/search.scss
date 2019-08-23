@@ -16,7 +16,7 @@
 @import 'components/atoms/_color.scss';
 
 .#{organism('search')} {
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   width: 90vw;
@@ -87,6 +87,7 @@
     padding: 20px 0 0;
     margin: 0 auto;
     z-index: 1;
+    overflow: visible;
 
     @media (min-width: 1024px) {
       max-width: 900px;
