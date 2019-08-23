@@ -202,3 +202,10 @@ If your AMP pages were successfully distributed with Signed Exchanges, their sea
 Within the DevTools console, under the `network` tab, you will be able to see `signed-exchange` under the `type` column.  
 
 {{ image('/static/img/docs/guides/sxg/sxg3.jpg', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
+
+# Signed Exchange service providers 
+
+Here is a list of CDNs and hosting providers offering out-of-the-box support for Signed Exchanges. Using one of these is the easiest way to get started with Signed Exchanges: 
+
+- [Cloudflare AMP real URL](https://blog.cloudflare.com/announcing-amp-real-url/).
+  [Cloudflare](https://www.cloudflare.com/) is one of the world’s largest networks. Today, businesses, non-profits, bloggers, and anyone with an Internet presence boast faster, more secure websites and apps thanks to Cloudflare.
