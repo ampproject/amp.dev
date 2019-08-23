@@ -7,7 +7,7 @@ formats:
   - ads
 ---
 
-Triggering CSS animations [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](docs/interaction_dynamic/amp-actions-and-events#*-(all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
+Triggering CSS animations [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#*-(all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
 
 ## Defining CSS and Keyframes
 
@@ -41,7 +41,7 @@ To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in t
       75%  {transform: translatey(50px);}
       100% {transform: translatey(100px);}
     }
-  </syle>
+  </style>
 </body>
 ...
 ```
@@ -75,7 +75,7 @@ If you need to remove a class and disallow reapplication, add the `force` attrib
 
 ## Animate with Numerous Classes
 
-The [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) extension works by defining different states as a JSON object inside [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state).
+The [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) extension works by defining different states as a JSON object inside [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state).
 
 You can define a list of CSS classes within the `<style amp-custom>` tag in the `head` of the document:
 
@@ -163,4 +163,4 @@ The states change from a linked AMP action or event. The following example chang
 ...
 ```
 
-Using [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) in this way set the class explicitly to the defined class. You will not have to tell it to remove other classes.
+Using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) in this way set the class explicitly to the defined class. You will not have to tell it to remove other classes.

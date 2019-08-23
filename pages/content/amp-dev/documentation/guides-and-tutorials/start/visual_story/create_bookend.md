@@ -9,7 +9,7 @@ Now that you've added all of your pages, let's look at the last screen of the st
 
 The information on the bookend screen comes from a JSON file that's specified in the `<amp-story-bookend>` tag. For our tutorial, we already have a JSON file ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) that contains the bookend data.
 
-The `<amp-story-bookend>` tag must be the last tag in [`<amp-story>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). So, let's **add** `<amp-story-bookend></amp-story-bookend>` just before the ending [`</amp-story>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) tag.  In the `amp-story-bookend` tag, point the `src` attribute to the `bookend.json` file and set `layout="nodisplay"`:
+The `<amp-story-bookend>` tag must be the last tag in [`<amp-story>`](../../../../documentation/components/reference/amp-story.md). So, let's **add** `<amp-story-bookend></amp-story-bookend>` just before the ending [`</amp-story>`](../../../../documentation/components/reference/amp-story.md) tag.  In the `amp-story-bookend` tag, point the `src` attribute to the `bookend.json` file and set `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -29,7 +29,7 @@ Every bookend screen requires a `bookendVersion`, which is `v1.0` for this tutor
 "bookendVersion": "v1.0",
 ```
 
-Social share buttons allow readers to share your content through social platforms, like Twitter, Facebook, Pinterest, and so on. You specify social share providers in a shareProviders object, and create an array containing [type names]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers) for each of the social platforms.
+Social share buttons allow readers to share your content through social platforms, like Twitter, Facebook, Pinterest, and so on. You specify social share providers in a shareProviders object, and create an array containing [type names](../../../../documentation/components/reference/amp-social-share.md#pre-configured-providers) for each of the social platforms.
 
 For this tutorial, we chose Facebook, Twitter, and email for our share providers:
 
@@ -147,6 +147,6 @@ There are various components that you can use to display related content and lin
 </tbody>
 </table>
 
-There's more to learn about the bookend component. For details, see the [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) reference documentation.
+There's more to learn about the bookend component. For details, see the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
 
 Our story is nearly complete.  Before we can publish our content, let's check that our AMP HTML is valid.

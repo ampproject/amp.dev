@@ -1,0 +1,51 @@
+{% do doc.styles.addCssFile('css/components/molecules/info-button.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/level-toggle.css') %}
+{% set level = doc.level %}
+{% set url = doc.url.path %}
+
+<amp-state id="filter">
+  <script type="application/json">
+  {
+    "level": "[= level =]"
+  }
+  </script>
+</amp-state>
+
+<div class="ap-m-level-toggle">
+  <div class="ap-m-level-toggle-elements">
+    <div class="toggle-button">
+      <input
+      on="change:AMP.navigateTo(url='{{url}}?level=[% if level == 'advanced' %]beginner'[% else %]advanced'[% endif %])"
+      type="checkbox"
+      [% if level == 'advanced' %] checked [% endif %]
+      id="switch" />
+      <div class="toggle-button-switch">
+        <div class="off[% if level == "advanced" %] active[% endif %]">
+          <div class="circle"></div>
+        </div>
+        <div class="on[% if level == "beginner" %] active[% endif %]">
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+    [% if level == 'advanced' %]
+    <h5>Expert mode on</h5>
+    [% else %]
+    <h5 class="disabled-headline">Expert mode off</h5>
+    [% endif %]
+  </div>
+  <div class="ap-m-info-button">
+    <div class="ap-m-info-button-on" tabindex="0"></div>
+    <div class="ap-m-info-button-off" tabindex="-1"></div>
+  {% do doc.icons.useIcon('/icons/questionmark.svg') %}
+    <svg>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark"></use>
+    </svg>
+    <div class="ap-m-tip ap-m-tip-default">
+      <div class="ap-m-tip-content">
+        <h4>Expert mode</h4>
+        <p>Use expert mode to hide web development guidance that's intended for beginners.</p>
+      </div>
+    </div>
+  </div>
+</div>

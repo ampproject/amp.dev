@@ -8,8 +8,8 @@ AMP 故事的基本构成要素是一个个的**页面**，而这些页面又是
 
 {{ image('/static/img/docs/tutorials/amp_story/story_parts.png', 1047, 452, align='center ninety') }}
 
-每个要素都会被转换成 AMP 组件，其中故事用 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 表示，页面用 `amp-story-page` 表示，图层用 `amp-story-grid-layer` 表示。
+每个要素都会被转换成 AMP 组件，其中故事用 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 表示，页面用 `amp-story-page` 表示，图层用 `amp-story-grid-layer` 表示。
 
 {{ image('/static/img/docs/amp-story-tag-hierarchy.png', 557, 355, align='center seventyfive' ) }}
 
-下面我们就开始使用 [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) 容器来创作故事吧！
+下面我们就开始使用 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 容器来创作故事吧！

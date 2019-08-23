@@ -25,6 +25,14 @@
   z-index: 16;
   background-color: color('white');
 
+  @media (max-width: $minDeviceWidth) {
+    padding: 37px 20px 0;
+
+    .has-banner ~ & {
+      padding: calc(37px + #{$bannerHeight}) 0 0 20px;
+    }
+  }
+
   /* The following elements are not inside the burger-menu itself */
   &-label {
     position: fixed;
@@ -64,7 +72,11 @@
   }
 
   &.mainmenuopen ~ .ap--main {
-    max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
+    max-height: calc(100vh - #{$mobileHeaderHeight});
+
+    .has-banner + & {
+      max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
+    }
   }
 
   &.mainmenuopen ~ .ap--footer {
@@ -81,6 +93,10 @@
     padding: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+
+    @media (max-width: $minDeviceWidth) {
+      padding: 1rem 0;
+    }
 
     /* This block defines the styles for the second level elements */
     & & {

@@ -20,6 +20,11 @@ $sizes: (
   xl: '5',
 );
 
+/* The smallest supported device width.
+It's used as `min-width` value for html and body
+and as @media query in burger-menu, language-selector and footer. */
+$minDeviceWidth: 240px;
+
 /* This variables are used in the following files:
 - frontend/scss/components/molecules/banner.scss
 - frontend/scss/components/organisms/header.scss
@@ -47,7 +52,9 @@ $colors: (
   'silver':          #CCCCCC,
   'alto':            #DFDFDF,
   'gallery':         #EAEAEA,
+  'mercury':         #E8E8E8,
   'athens-gray':     #EBEBF0,
+  'concrete':        #F3F3F3,
   'wild-sand':       #F4F4F4,
   'whisper':         #FAFAFC,
   'white':           #FFFFFF,

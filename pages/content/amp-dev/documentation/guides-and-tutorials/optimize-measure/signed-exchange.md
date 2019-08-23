@@ -117,39 +117,49 @@ See [`packager.js`](https://github.com/ampproject/docs/blob/future/platform/lib/
 
 ### Testing
 
-Verify that your staging site returns the content with the added MIME type `application/signed-exchange` when provided with the correct request headers. In the below example, replace `staging.example.com` with your staging server.
+Verify that your staging site responds with content of MIME type `application/signed-exchange` when specified by the HTTP request. For example (replace `staging.example.com` with your staging server):
 
 ```sh
-$ curl -si -H 'amp-cache-transform: google' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ | less
+$ curl -si -H 'amp-cache-transform: google;v="1..100"' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ | less
 ```
 
-This command should return this line (amongst others):
+The output must include this line:
 
 ```txt
 content-type: application/signed-exchange;v=b3
 ```
 
 [tip type="important"]
-The `v=b3` version string is the current version. This version will change. 
+The `v="1..100"` in the request is a placeholder. Do not match on this exact value; instead, as [described in the amppackager installation instructions](https://github.com/ampproject/amppackager/blob/master/README.md#productionizing), check for the existence of the `amp-cache-transform` header only, and ignore the value.
+[/tip]
+
+[tip type="important"]
+The `v=b3` version string in the response is the version as of August 2019. This version will change. 
 [/tip]
 
 The bulk of the response should be your AMP page (in plaintext). There's a small binary header, and, if the page is >16kb, a few binary bytes sprinkled throughout.
 
-You can also test with the more complete accept header sent by Chrome:
-
-```sh
-$ curl -si -H 'amp-cache-transform: google' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3' https://staging.example.com/ | less
-```
-
 The [`dump-signedexchange` tool](https://github.com/WICG/webpackage/blob/master/go/signedexchange/README.md#installation) can be used to inspect the response:
 
 ```sh
-$ curl -s --output - -H 'amp-cache-transform: google' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ > example.sxg
+$ curl -s --output - -H 'amp-cache-transform: google;v="1..100"' -H 'accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8' https://staging.example.com/ > example.sxg
 $ dump-signedexchange -i example.sxg
 format version: 1b3
 ```
 
 (Note that the `-verify` switch will not work at this point because the required certificates are not on the `https://example.com/` server.)
+
+Verify that the response *always* include the `Vary` header with the value `Accept,AMP-Cache-Transform` (irrespective of whether the MIME type is `text/html`, `application/signed-exchange`, or something else:
+
+```sh
+$ curl -si https://staging.example.com/ | less
+```
+
+This output must include this line:
+
+```txt
+vary: Accept,AMP-Cache-Transform
+```
 
 ## Deploy packager to production
 
@@ -192,3 +202,10 @@ If your AMP pages were successfully distributed with Signed Exchanges, their sea
 Within the DevTools console, under the `network` tab, you will be able to see `signed-exchange` under the `type` column.  
 
 {{ image('/static/img/docs/guides/sxg/sxg3.jpg', 1366, 841, layout='responsive', alt='Within the DevTools console, under the network tab, you will be able to see signed-exchange under the type column.', caption=' ', align='' ) }}
+
+# Signed Exchange service providers 
+
+Here is a list of CDNs and hosting providers offering out-of-the-box support for Signed Exchanges. Using one of these is the easiest way to get started with Signed Exchanges: 
+
+- [Cloudflare AMP real URL](https://blog.cloudflare.com/announcing-amp-real-url/).
+  [Cloudflare](https://www.cloudflare.com/) is one of the world’s largest networks. Today, businesses, non-profits, bloggers, and anyone with an Internet presence boast faster, more secure websites and apps thanks to Cloudflare.

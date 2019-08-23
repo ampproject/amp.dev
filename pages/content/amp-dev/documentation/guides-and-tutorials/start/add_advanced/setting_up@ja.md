@@ -7,7 +7,7 @@ $title: 設定
 このチュートリアルを**始める前に**、次のものが必要となります。
 
 - HTML、CSS、JavaScript の基本的な知識
-- AMP の中心的な概念についての基本的な理解（「[HTML を AMP に変換する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})」チュートリアルをご覧ください）
+- AMP の中心的な概念についての基本的な理解（「[HTML を AMP に変換する](../../../../documentation/guides-and-tutorials/start/converting/index.md)」チュートリアルをご覧ください）
 - JavaScript コンソールを確認できる任意のブラウザ
 - 任意のテキスト エディタ
 

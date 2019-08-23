@@ -19,7 +19,7 @@ limitations under the License.
 -->
 
 I documenti AMP validi non devono contenere errori di convalida.
-Questo documento ha lo scopo di aiutarti a comprendere meglio e a correggere gli eventuali errori riscontrati durante la [convalida delle tue pagine AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}).
+Questo documento ha lo scopo di aiutarti a comprendere meglio e a correggere gli eventuali errori riscontrati durante la [convalida delle tue pagine AMP](validate_amp.md).
 Per una panoramica completa degli errori di convalida, leggi la [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 ## Errori negli attributi e nei tag HTML AMP
@@ -53,7 +53,7 @@ I tag che seguono devono essere presenti in tutti i documenti AMP:
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
 
-Questi tag obbligatori includono un campo `mandatory: true` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii); vengono inoltre citati nella [specifica AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}).
+Questi tag obbligatori includono un campo `mandatory: true` nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii); vengono inoltre citati nella [specifica AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Tag richiesto da un altro tag mancante
 
@@ -74,7 +74,7 @@ Questi tag obbligatori includono un campo `mandatory: true` nella [specifica del
 
 Lo strumento di convalida genera l'errore `TAG_REQUIRED_BY_MISSING` quando trova un componente esteso nel documento AMP, ma non trova il relativo equivalente `<script>`.
 
-I [componenti estesi]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) devono essere inclusi esplicitamente nel documento AMP sotto forma di elementi personalizzati.
+I [componenti estesi](../../../../documentation/components/index.html) devono essere inclusi esplicitamente nel documento AMP sotto forma di elementi personalizzati.
 Per correggere questi errori visita la pagina di riferimento del componente esteso, copia lo script obbligatorio e incollalo nell'elemento `<head>` del documento AMP.
 
 ### Tag non consentito
@@ -94,7 +94,7 @@ Per correggere questi errori visita la pagina di riferimento del componente este
   </tr>
 </table>
 
-Esiste una whitelist dei tag, ma non esiste un elenco definitivo di tutti i tag non consentiti; tuttavia, la [specifica AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) definisce un insieme approssimativo dei tag non consentiti.
+Esiste una whitelist dei tag, ma non esiste un elenco definitivo di tutti i tag non consentiti; tuttavia, la [specifica AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) definisce un insieme approssimativo dei tag non consentiti.
 
 ### Attributo obbligatorio mancante
 
@@ -403,10 +403,10 @@ Si riferiscono ai tag previsti:
 Questo errore si verifica quando un tag ha entrambi gli attributi che si escludono a vicenda.
 Ad esempio, è consentito un solo tag tra i seguenti:
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` o `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` o `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` o `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` o `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` o `data-videoid`
 
 ### Attributo obbligatorio mancante tra quelli dell'elenco
 
@@ -428,10 +428,10 @@ Ad esempio, è consentito un solo tag tra i seguenti:
 Questo errore si verifica quando in un tag manca un attributo obbligatorio a scelta tra quelli forniti.
 Ad esempio, i seguenti tag richiedono uno dei due attributi possibili:
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` o `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` o `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` o `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` o `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` o `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` o `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` o `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` o `data-videoid`
 
 ### Tag principale errato
 
@@ -463,7 +463,7 @@ Di seguito è elencato il tag principale richiesto per tag specifici (tag, princ
 * `style` richiede il tag principale `boilerplate (noscript)`.
 * `noscript` richiede il tag principale `head`.
 * `script` richiede il tag principale `head`.
-* `source` richiede un tag multimediale ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) e così via).
+* `source` richiede un tag multimediale ([`amp-audio`](../../../../documentation/components/reference/amp-audio.md), [`amp-video`](../../../../documentation/components/reference/amp-video.md) e così via).
 
 ### Predecessore del tag non consentito
 
@@ -570,7 +570,7 @@ L'elenco completo di tag univoci è noto ed è riportato di seguito:
 
 ## Errori di stile e layout
 
-Prima di approfondire gli errori di stile e layout, è opportuno capire come funzionano [l'applicazione di stili]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) e il [layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) in AMP. Poiché le pagine AMP sono pagine HTML, l'applicazione di stili è molto simile a quella delle pagine HTML.
+Prima di approfondire gli errori di stile e layout, è opportuno capire come funzionano [l'applicazione di stili](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) e il [layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) in AMP. Poiché le pagine AMP sono pagine HTML, l'applicazione di stili è molto simile a quella delle pagine HTML.
 Esistono però alcune limitazioni per garantire il rapido caricamento delle pagine; tali limitazioni vengono applicate dallo strumento di convalida AMP.
 
 Il layout è più contenuto nelle pagine AMP.
@@ -637,7 +637,7 @@ Se hai dubbi in merito alla causa dell'errore, prova a eseguire CSS tramite uno 
   </tr>
 </table>
 
-Questo errore si riferisce alle regole at-rule in CSS, per cui AMP consente soltanto alcune regole (vedi anche la [specifica AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}})).
+Questo errore si riferisce alle regole at-rule in CSS, per cui AMP consente soltanto alcune regole (vedi anche la [specifica AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).
 Ad esempio, la regola `@import` non è consentita.
 L'errore di convalida ti indica la regola esatta non valida, facilitandoti così la correzione.
 
@@ -662,7 +662,7 @@ Questo errore si verifica quando non specifichi un layout per il tag AMP e il la
 Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
-Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e la [specifica relativa al sistema di layout HTML AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) e la [specifica relativa al sistema di layout HTML AMP](../../../../documentation/components/reference/amp-layout.md).
 
 **Nota.** Se non specifichi il layout e non includi i valori `width` e `height`, il valore predefinito per il layout sarà CONTAINER. Lo strumento di convalida genera un errore perché il layout CONTAINER non è supportato nei tag AMP.
 Specifica un layout diverso da CONTAINER oppure aggiungi un valore `width` e/o `height` per eliminare l'errore.
@@ -685,7 +685,7 @@ Specifica un layout diverso da CONTAINER oppure aggiungi un valore `width` e/o `
 </table>
 
 Questo errore si verifica quando non specifichi un layout per il tag AMP e il layout implicito contiene un attributo non consentito.
-Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP](../../../../documentation/components/reference/amp-layout.md).
 
 ### Layout specificato non supportato dal tag AMP
 
@@ -708,7 +708,7 @@ Questo errore si verifica quando il layout specificato per il tag non è support
 Controlla i valori `supported_layout` del tag nella [specifica dello strumento di convalida AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
 L'effettivo comportamento del layout viene stabilito dall'attributo `layout`.
-Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) e la [specifica relativa al sistema di layout HTML AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativa a [come controllare il layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) e la [specifica relativa al sistema di layout HTML AMP](../../../../documentation/components/reference/amp-layout.md).
 
 ### Attributo non consentito per il layout specificato
 
@@ -728,7 +728,7 @@ Per ulteriori informazioni sul funzionamento del layout, leggi la pagina relativ
 </table>
 
 Questo errore si verifica quando specifichi per il tag AMP un layout contenente un attributo non consentito.
-Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+Gli attributi non consentiti per i tipi di layout sono descritti nella [specifica relativa al sistema di layout HTML AMP](../../../../documentation/components/reference/amp-layout.md).
 
 ### Valore non valido per l'attributo richiesto dal layout
 
@@ -748,7 +748,7 @@ Gli attributi non consentiti per i tipi di layout sono descritti nella [specific
 </table>
 
 Questo errore si verifica quando il valore dell'attributo non è valido per il layout specificato.
-Per comprendere la causa di questo errore, è necessario comprendere bene i [diversi comportamenti dei layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+Per comprendere la causa di questo errore, è necessario comprendere bene i [diversi comportamenti dei layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
 
 Supponi di impostare il layout `fixed-height` e di includere valori numerici per entrambi gli attributi `height` e `width`.
 Il valore del layout `fixed-height` è `height`.
@@ -777,13 +777,13 @@ In caso contrario viene generato questo errore.
 
 Ad esempio, `<amp-img src="" layout="responsive" width="42px" height="42rem">` genera il seguente messaggio di errore:
 
-"Le unità di misura relative alla larghezza e all'altezza sono disomogenee nel tag '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) . La larghezza è indicata in 'px' mentre l'altezza è indicata in 'rem'."
+"Le unità di misura relative alla larghezza e all'altezza sono disomogenee nel tag '[`amp-img`](../../../../documentation/components/reference/amp-img.md) . La larghezza è indicata in 'px' mentre l'altezza è indicata in 'rem'."
 
 ## Errori relativi ai modelli
 
-Le pagine AMP non possono includere sintassi dei modelli, a meno che la sintassi sia all'interno di un tag AMP ideato appositamente per includere i modelli, ad esempio [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
+Le pagine AMP non possono includere sintassi dei modelli, a meno che la sintassi sia all'interno di un tag AMP ideato appositamente per includere i modelli, ad esempio [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md).
 
-È possibile includere modelli nei file di origine, purché l'output generato da tali file non contenga i modelli (leggi anche la pagina relativa all'[utilizzo dei preprocessori CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+È possibile includere modelli nei file di origine, purché l'output generato da tali file non contenga i modelli (leggi anche la pagina relativa all'[utilizzo dei preprocessori CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)).
 
 ### L'attributo contiene la sintassi di un modello
 

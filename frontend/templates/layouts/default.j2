@@ -1,9 +1,10 @@
-{% macro filter(formats='websites, ads, stories, email') -%}
-{% if not formats.strip() %}
+{% macro filter(formats='websites, ads, stories, email', level='advanced, beginner') -%}
+{% if not formats.strip() and not level.strip() %}
 {{ caller() }}
 {% else %}
 {% set formats = formats.split(',') %}
-[% if format in {{ formats|map('trim')|list|tojson }} %]
+{% set level = level.split(',') %}
+[% if format in {{ formats|map('trim')|list|tojson }} and level in {{ level|map('trim')|list|tojson }} %]
 {{ caller() }}
 [% endif %]
 {% endif %}
@@ -106,6 +107,8 @@
     {% include 'views/partials/header.j2' %}
     {% include 'views/partials/burger-menu.j2' %}
     {% endblock %}
+
+    {% include 'views/partials/search.j2' %}
 
     {% block main %}
     {# Only render the grid toggle during development #}

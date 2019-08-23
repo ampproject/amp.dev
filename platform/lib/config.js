@@ -28,6 +28,9 @@ const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 const ENV_DEV = 'development';
 const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
+const ENV_LOCAL = 'local';
+
+const DEFAULT_LOCALE = 'en';
 
 const AVAILABLE_LOCALES = [
   'en',
@@ -52,6 +55,7 @@ class Config {
     } else {
       this.test = false;
     }
+    signale.info(`Config: environment=${environment} test=${this.test}`);
     const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
     this.environment = env.name;
@@ -87,6 +91,13 @@ class Config {
   }
 
   /**
+   * Returns true if local mode is active.
+   */
+  isLocalMode() {
+    return this.environment === ENV_LOCAL;
+  }
+
+  /**
    * Returns true if staging mode is active.
    */
   isStageMode() {
@@ -101,12 +112,19 @@ class Config {
   }
 
   /**
-   * Returns an array with the locale ids.
+   * Returns an array with all the locale ids.
    * (e.g. 'en', 'pt_BR', ...)
-   * These locale ids are used
+   * The default locale is included.
    */
   getAvailableLocales() {
     return AVAILABLE_LOCALES.slice(0); // clone our internal array
+  }
+
+  /**
+   * Returns the default locale (e.g. 'en')
+   */
+  getDefaultLocale() {
+    return DEFAULT_LOCALE;
   }
 
   /**
@@ -168,6 +186,11 @@ class Config {
     let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
     podspec = yaml.safeLoad(podspec);
 
+    // disable sitemap (useful for test builds)
+    if (options.noSitemap) {
+      delete podspec.sitemap;
+    }
+
     // Add environment specific information to configuration needed for URLs
     podspec['env'] = {
       'name': this.environment,
@@ -219,6 +242,7 @@ class Config {
       signale.info('Add path filter for grow ', filter);
     }
 
+    podspec.localization.default_locale = DEFAULT_LOCALE;
     podspec.localization.locales = AVAILABLE_LOCALES;
     // Check if specific languages have been configured to be built
     if (options.locales) {

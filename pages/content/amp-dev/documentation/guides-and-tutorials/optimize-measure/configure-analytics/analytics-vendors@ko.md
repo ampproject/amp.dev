@@ -2,14 +2,14 @@
 $title: 애널리틱스 공급업체
 ---
 
-이 도움말에서는 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 구성요소에 사용할 내장형 구성을 갖춘 분석 공급업체를 소개합니다.
+이 도움말에서는 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 구성요소에 사용할 내장형 구성을 갖춘 분석 공급업체를 소개합니다.
 
 분석 데이터를 타사 공급업체로 전송하려면 다음 단계를 따르세요.
 
-1. [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 태그에서 `type` 속성을 추가하고 아래 [*공급업체*](#vendors) 섹션에서 설명한 대로 지정된 공급업체에 해당 값을 설정합니다.
+1. [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 태그에서 `type` 속성을 추가하고 아래 [*공급업체*](#vendors) 섹션에서 설명한 대로 지정된 공급업체에 해당 값을 설정합니다.
 2. 어떤 데이터를 확보 및 추적할지 결정하고 구성 데이터에서 세부정보를 지정합니다. 분석 데이터를 확보하는 방법에 관한 정보는 공급업체의 도움말을 참조하세요.
 
-다음 예에서는 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})  빌트인 환경설정을 지원하는 타사 애널리틱스 서비스 업체인 [Google 애널리틱스](#google-analytics)에 페이지뷰 데이터를 전송합니다.
+다음 예에서는 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)  빌트인 환경설정을 지원하는 타사 애널리틱스 서비스 업체인 [Google 애널리틱스](#google-analytics)에 페이지뷰 데이터를 전송합니다.
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -37,7 +37,7 @@ $title: 애널리틱스 공급업체
 
 [tip type="note"]
 
-서비스를 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}) 세부정보를 참조하세요.
+서비스를 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합](../../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md) 세부정보를 참조하세요.
 
 [/tip]
 
@@ -127,7 +127,7 @@ Eulerian Technologies Analytics 지원을 추가합니다. Eulerian에서 위임
 
 타입 속성값: `facebookpixel`
 
-[Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel) 지원을 추가합니다. [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 설정에서 Pixel ID를 `pixelId: YOUR-PIXEL-ID`로 정의해야 합니다. 지정 가능한 해당 이벤트 값과 함께 지원되는 이벤트는 [Facebook Pixel 개발자 도움말](https://developers.facebook.com/docs/ads-for-websites/pixel-events)에 상세하게 설명되어 있습니다.
+[Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel) 지원을 추가합니다. [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 설정에서 Pixel ID를 `pixelId: YOUR-PIXEL-ID`로 정의해야 합니다. 지정 가능한 해당 이벤트 값과 함께 지원되는 이벤트는 [Facebook Pixel 개발자 도움말](https://developers.facebook.com/docs/ads-for-websites/pixel-events)에 상세하게 설명되어 있습니다.
 
 ### Gemius
 

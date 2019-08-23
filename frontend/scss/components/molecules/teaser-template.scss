@@ -16,43 +16,43 @@
 @import 'teaser';
 
 .#{molecule('teaser-template')} {
-	&.#{molecule('teaser')} {
-		@include teaser;
+  &.#{molecule('teaser')} {
+    @include teaser;
 
-		& > a {
-			@include teaser-linking;
-			
-			&:hover {
-				@include teaser-linking-hover;
+    & > a {
+      @include teaser-linking;
 
-				.#{molecule('teaser')}-card {
-					@include teaser-card-hover;
-				}
-			}
-		}
-	}
+      &:hover {
+        @include teaser-linking-hover;
 
-	.#{molecule('teaser')} {
-		&-tag {
-			@include teaser-tag;
-		}
+        .#{molecule('teaser')}-card {
+          @include teaser-card-hover;
+        }
+      }
+    }
+  }
 
-		&-card {
-			@include teaser-card;
-		}
+  .#{molecule('teaser')} {
+    &-tag {
+      @include teaser-tag;
+    }
 
-		&-content {
-			@include teaser-content;
-			padding-left: 0;
-			padding-right: 0;
-		}
+    &-card {
+      @include teaser-card;
+    }
 
-		&-image {
-			@include teaser-image;
-		}
+    &-content {
+      @include teaser-content;
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-		&-headline {
-			@include teaser-headline;
-		}
-	}
+    &-image {
+      @include teaser-image;
+    }
+
+    &-headline {
+      @include teaser-headline;
+    }
+  }
 }

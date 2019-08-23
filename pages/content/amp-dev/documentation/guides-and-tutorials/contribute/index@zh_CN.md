@@ -24,6 +24,6 @@ AMP 项目极力鼓励大家踊跃做出技术方面的贡献！
 
 [amp.dev](https://amp.dev) 可帮助大多数用户熟悉 AMP。您可以在 [ampproject docs GitHub 项目](https://github.com/ampproject/docs) 中对该文档进行改进。（您甚至可以帮助改进[您正在阅读的页面](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md)！）
 
-[ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 提供示例来说明如何使用 AMP。您可以在 [amp-by-example GitHub 项目](https://github.com/ampproject/amp-by-example/) 中进行相关改进。
+[ampbyexample.com](../../../documentation/examples/index.html) 提供示例来说明如何使用 AMP。您可以在 [amp-by-example GitHub 项目](https://github.com/ampproject/amp-by-example/) 中进行相关改进。
 
 您还可以改进我们 [amphtml GitHub 项目](https://github.com/ampproject/amphtml) 中的文档，以帮助为 AMP 做出贡献的其他贡献者。

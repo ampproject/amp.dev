@@ -1,33 +1,34 @@
 <!---
 
-preview: default
-teaserImage: '/static/samples/img/teaser/combobox.jpg'
+  teaserImage: '/static/samples/img/teaser/combobox.jpg'
+  preview: default
 
---->
+  --->
 
-<!--
-  ## Introduction
+  <!--
+    ## Introduction
 
-  This sample demonstrastes a classic dropdown combo, with a text field which filters the dropdown elements according to the user's input. The options are rendered via `amp-autocomplete`.
--->
-<!doctype html>
-<html ⚡>
-<head>
-  <title>ComboBox</title>
-  <meta charset="utf-8">
-  <link rel="canonical" href="<% canonical %>">
+    This sample demonstrastes a classic dropdown combo, with a text field which filters the dropdown elements according to the user's input. The options are rendered via `amp-autocomplete`.
+  -->
+  <!doctype html>
+  <html ⚡>
+    <head>
+      <title>ComboBox</title>
+      <meta charset="utf-8">
+      <link rel="canonical" href="<% canonical %>">
 
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- ## Setup -->
-  <!--The `amp-autocomplete` component is used for suggesting according to the user's input.-->
-  <script async custom-element="amp-autocomplete" src="https://cdn.ampproject.org/v0/amp-autocomplete-0.1.js"></script>
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <!-- ## Setup -->
+      <!--The `amp-autocomplete` component is used for suggesting according to the user's input.-->
+      <script async custom-element="amp-autocomplete" src="https://cdn.ampproject.org/v0/amp-autocomplete-0.1.js"></script>
+      <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+      <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-      <style amp-custom>
+        <style amp-custom>
         /* --------------------------------
            Necessary styles for the example
-           -------------------------------- */
+             -------------------------------- */
         :root {
           --color-bg-light: #FAFAFC;
           --combo-box-width: 300px;
@@ -37,110 +38,121 @@ teaserImage: '/static/samples/img/teaser/combobox.jpg'
           --space-3: 1.5rem;
           --box-shadow-1: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -1px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
         }
-        .combo-trigger {
+        .combo-box {
+          width: calc( var(--combo-box-height) + var(--combo-box-width) );
+        }
+        .combo-box > input, .combo-box > button {
           display: inline-flex;
           align-items: center;
           justify-content: center;
+        }
+        .combo-box input {
+          width: var(--combo-box-width);
+          height: var(--combo-box-height);
+        }
+        .combo-box button {
+          position: absolute;
           width: var(--combo-box-height);
           height: var(--combo-box-height);
         }
-        .combo-trigger > i {
+        .combo-box .arrow {
           display: inline-block;
           width: var(--space-3);
           height: var(--space-3);
-        }
-        .arrow {
+          background-position-x: -2px;
           background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik03LjQxIDcuODRMMTIgMTIuNDJsNC41OS00LjU4TDE4IDkuMjVsLTYgNi02LTZ6Ii8+CiAgICA8cGF0aCBkPSJNMC0uNzVoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KPC9zdmc+");
+          transition: transform 0.25s ease-in-out;
+          transform: rotate(180deg);
         }
-        #input-city:focus + .arrow {
-          background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik03LjQxIDE1LjQxTDEyIDEwLjgzbDQuNTkgNC41OEwxOCAxNGwtNi02LTYgNnoiLz4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KPC9zdmc+");
+        .combo-box input:focus + button .arrow {
+          transform: rotate(0);
         }
 
         /* ---------------------------------
            Additional non-autosuggest styles
-           --------------------------------- */
+             --------------------------------- */
         .preview-container {
           min-width: 320px;
           padding: var(--space-2);
         }
-    </style>
-</head>
-<body>
-  <div class="preview-container">
-      <!--
-        ## Autocomplete input
-
-        First we need to add an `amp-autocomplete` element by giving it an input field and a data source. Here we're using an inline `script` declaration defining a list of cities in the US as `items`.
-        For long lists of suggestions, it's possible to fetch a remote JSON endpoint using the `src` attribute. 
-        
-        We will use `filter="token-prefix"` as our way to match on the user input and set `min-characters="0"` so that the combo box will display options even when the input is empty.
-      -->
-      <amp-autocomplete filter="token-prefix" min-characters="0">
-        <input id="input-city" type="text">
-        <script type="application/json">
-          { "items" : [
-          "Albany, New York",
-          "Annapolis, Maryland",
-          "Atlanta, Georgia",
-          "Augusta, Maine",
-          "Austin, Texas",
-          "Baton Rouge, Louisiana",
-          "Bismarck, North Dakota",
-          "Boise, Idaho",
-          "Boston, Massachusetts",
-          "Carson City, Nevada",
-          "Charleston, West Virginia",
-          "Cheyenne, Wyoming",
-          "Columbia, South Carolina",
-          "Columbus, Ohio",
-          "Concord, New Hampshire",
-          "Denver, Colorado",
-          "Des Moines, Iowa",
-          "Dover, Delaware",
-          "Frankfort, Kentucky",
-          "Harrisburg, Pennsylvania",
-          "Hartford, Connecticut",
-          "Helena, Montana",
-          "Honolulu, Hawaii",
-          "Indianapolis, Indiana",
-          "Jackson, Mississippi",
-          "Jefferson City, Missouri",
-          "Juneau, Alaska",
-          "Lansing, Michigan",
-          "Lincoln, Nebraska",
-          "Little Rock, Arkansas",
-          "Madison, Wisconsin",
-          "Montgomery, Alabama",
-          "Montpelier, Vermont",
-          "Nashville, Tennessee",
-          "Oklahoma City, Oklahoma",
-          "Olympia, Washington",
-          "Phoenix, Arizona",
-          "Pierre, South Dakota",
-          "Providence, Rhode Island",
-          "Raleigh, North Carolina",
-          "Richmond, Virginia",
-          "Sacramento, California",
-          "Saint Paul, Minnesota",
-          "Salem, Oregon",
-          "Salt Lake City, Utah",
-          "Santa Fe, New Mexico",
-          "Springfield, Illinois",
-          "Tallahassee, Florida",
-          "Topeka, Kansas",
-          "Trenton, New Jersey"
-    ]}</script></amp-autocomplete>
+        </style>
+    </head>
+    <body>
+      <div class="preview-container">
         <!--
-          ## Combo button
+          ## Autocomplete input
 
-          The button will focus the autocomplete input.
+          First we need to add an `amp-autocomplete` element by giving it an input field and a data source. Here we're using an inline `script` declaration defining a list of cities in the US as `items`.
+          For long lists of suggestions, it's possible to fetch a remote JSON endpoint using the `src` attribute. 
+
+          We will use `filter="token-prefix"` as our way to match on the user input and set `min-characters="0"` so that the combo box will display options even when the input is empty.
+
+          Finally, the combobox can be triggered via a button that focuses the input field: `<button on="tap:combo-input.focus">`.
         -->
-        <button class="combo-trigger"
-                 on="tap:input-city.focus">
-          <i class="arrow"></i>
-        </button>
+        <form method="post" action-xhr="/documentation/examples/api/echo">
+          <amp-autocomplete class="combo-box" filter="token-prefix" min-characters="0">
+            <input id="combo-input" type="text">
+            <button on="tap:combo-input.focus">
+              <i class="arrow"></i>
+            </button>
+            <script type="application/json">
+              { 
+                "items" : [
+                  "Albany, New York",
+                  "Annapolis, Maryland",
+                  "Atlanta, Georgia",
+                  "Augusta, Maine",
+                  "Austin, Texas",
+                  "Baton Rouge, Louisiana",
+                  "Bismarck, North Dakota",
+                  "Boise, Idaho",
+                  "Boston, Massachusetts",
+                  "Carson City, Nevada",
+                  "Charleston, West Virginia",
+                  "Cheyenne, Wyoming",
+                  "Columbia, South Carolina",
+                  "Columbus, Ohio",
+                  "Concord, New Hampshire",
+                  "Denver, Colorado",
+                  "Des Moines, Iowa",
+                  "Dover, Delaware",
+                  "Frankfort, Kentucky",
+                  "Harrisburg, Pennsylvania",
+                  "Hartford, Connecticut",
+                  "Helena, Montana",
+                  "Honolulu, Hawaii",
+                  "Indianapolis, Indiana",
+                  "Jackson, Mississippi",
+                  "Jefferson City, Missouri",
+                  "Juneau, Alaska",
+                  "Lansing, Michigan",
+                  "Lincoln, Nebraska",
+                  "Little Rock, Arkansas",
+                  "Madison, Wisconsin",
+                  "Montgomery, Alabama",
+                  "Montpelier, Vermont",
+                  "Nashville, Tennessee",
+                  "Oklahoma City, Oklahoma",
+                  "Olympia, Washington",
+                  "Phoenix, Arizona",
+                  "Pierre, South Dakota",
+                  "Providence, Rhode Island",
+                  "Raleigh, North Carolina",
+                  "Richmond, Virginia",
+                  "Sacramento, California",
+                  "Saint Paul, Minnesota",
+                  "Salem, Oregon",
+                  "Salt Lake City, Utah",
+                  "Santa Fe, New Mexico",
+                  "Springfield, Illinois",
+                  "Tallahassee, Florida",
+                  "Topeka, Kansas",
+                  "Trenton, New Jersey"
+            ]}
+            </script>
+          </amp-autocomplete>
+        </form>
 
-    </div>
-    </div>
-  </body>
-</html>
+      </div>
+    </body>
+  </html>

@@ -7,7 +7,7 @@ $title: تضمين المحتوى من جهات خارجية
 ## تضمين تغريدة
 
 يمكنك تضمين إحدى تغريدات Twitter في صفحتك
-باستخدام العنصر [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
+باستخدام العنصر [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md).
 
 لتضمين تغريدة في صفحتك،
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
@@ -35,7 +35,7 @@ $title: تضمين المحتوى من جهات خارجية
 ## تضمين Instagram
 
 يمكنك تضمين Instagram في صفحتك
-باستخدام العنصر <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}"><code>amp-instagram</code></a>.
+باستخدام العنصر <a href="../../../../documentation/components/reference/amp-instagram.md"><code>amp-instagram</code></a>.
 
 لتضمين Instagram،
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
@@ -63,7 +63,7 @@ $title: تضمين المحتوى من جهات خارجية
 ## عرض مشاركة أو فيديو Facebook
 
 يمكنك عرض مشاركة أو فيديو Facebook في صفحتك
-باستخدام العنصر [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).
+باستخدام العنصر [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md).
 
 يجب تضمين النص البرمجي التالي في `<head>`:
 
@@ -106,7 +106,7 @@ $title: تضمين المحتوى من جهات خارجية
 ## تضمين فيديو youtube
 
 يمكنك تضمين فيديو youtube في صفحتك
-باستخدام العنصر <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}"><code>amp-youtube</code></a>.
+باستخدام العنصر <a href="../../../../documentation/components/reference/amp-youtube.md"><code>amp-youtube</code></a>.
 
 يجب تضمين النص البرمجي التالي في `<head>`:
 
@@ -133,7 +133,7 @@ $title: تضمين المحتوى من جهات خارجية
 ## عرض أحد الإعلانات
 
 يمكنك عرض إعلان في صفحتك
-باستخدام العنصر <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}"><code>amp-ad</code></a>.
+باستخدام العنصر <a href="../../../../documentation/components/reference/amp-ad.md"><code>amp-ad</code></a>.
 والإعلانات المعروضة من خلال HTTPS هي وحدها المعتمدة.
 
 غير مسموح بتشغيل جافا سكريبت مقدمة من شبكة إعلانية داخل مستند AMP.
@@ -176,4 +176,4 @@ $title: تضمين المحتوى من جهات خارجية
 ```
 [/example]
 
-يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).
+يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).

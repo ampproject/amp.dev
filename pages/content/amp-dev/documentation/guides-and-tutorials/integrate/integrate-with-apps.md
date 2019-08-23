@@ -69,7 +69,7 @@ There are three ways to programmatically transform links:
 
 Google provides the AMP URL API to retrieve the matching AMP HTML URLs for a
 given list of URLs ([official documentation](https://developers.google.com/amp/cache/use-amp-url) /
-[demo]({{g.doc('/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). The URLs do
+[demo](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html). The URLs do
 not need to be the canonical versions. If an AMP version exists, the response
 includes the original AMP URL and the URL for the cached AMP page on the Google
 AMP Cache.
@@ -110,7 +110,7 @@ The response body contains the AMP URL mapping in JSON format:
 
 ## Using AMP Caches
 
-An [AMP Cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md', locale=doc.locale).url.path}}) is a
+An [AMP Cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) is a
 proxy-based content delivery network (CDN) for delivering valid AMP documents.
 AMP Caches are designed to:
 

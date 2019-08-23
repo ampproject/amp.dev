@@ -10,7 +10,7 @@ AMP の主な長所は、単にページの読み込み時間を短縮するだ�
 
 AMP ドキュメントを検証するにはいくつかの方法があります。どの方法でも結果は同じになるため、自分の開発スタイルに最適なものを使用してください。
 
-AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}})かどうかを確認することもおすすめします。
+AMP の有効性に加えて、AMP ドキュメントがサードパーティ プラットフォームにとって[検出可能](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)かどうかを確認することもおすすめします。
 
 ### ブラウザの Developer Console
 
@@ -148,8 +148,8 @@ https://amp.dev/: PASS
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 
@@ -229,9 +229,9 @@ AMP 検証サービスでページに問題があることが検出されると�
 各ツールから、次のような情報がわかります。
 
 1. エラーが発生した HTML ドキュメント内の場所（行と列）。インターフェースによっては、クリック可能になっていて、その場所がハイライト表示されます。このケースでは、行 11、列 2 で問題が発生しています。
-1. エラーに関する説明。このケースでは、`<img>` タグが使用されていますが、本来は [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグを使用すべきであることが示されています。
-1. エラーに関連するドキュメントへのリンク。このケースでは、[`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグに関するドキュメントです。すべてのエラーにドキュメントのリンクが表示されるわけではありません。
+1. エラーに関する説明。このケースでは、`<img>` タグが使用されていますが、本来は [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグを使用すべきであることが示されています。
+1. エラーに関連するドキュメントへのリンク。このケースでは、[`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグに関するドキュメントです。すべてのエラーにドキュメントのリンクが表示されるわけではありません。
 
-[仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}) をよく確認したところ、`<img>` タグが使用されているところで、本来は [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグを使用すべきであることがわかりました。
+[仕様](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) をよく確認したところ、`<img>` タグが使用されているところで、本来は [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグを使用すべきであることがわかりました。
 
-表示される可能性のあるエラーの一覧は、[AMP 検証エラーガイド]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}})で詳しくご覧いただけます。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。
+表示される可能性のあるエラーの一覧は、[AMP 検証エラーガイド](validation_errors.md)で詳しくご覧いただけます。慎重に評価しても引き続きエラーが発生する場合は、[質問を投稿](http://stackoverflow.com/questions/tagged/amp-html)してください。サポートいたします。

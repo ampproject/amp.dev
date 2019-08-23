@@ -35,17 +35,3 @@ $ docker run -p 8080:8080 --env PASSWORD=$PASSWORD amppkg
 # create (local) container from Docker image and provide shell (ignore CMD)
 $ docker run -it amppkg bash
 ```
-
-## Misc
-
-Encrypt file:
-
-```sh
-openssl aes-256-cbc -md md5 -e -k $PASSWORD -in plain.pem -out encrypted.pem.enc
-```
-
-Decrypt file:
-
-```sh
-openssl aes-256-cbc -md md5 -d -k $PASSWORD -in encrypted.pem.enc -out plain.pem
-```

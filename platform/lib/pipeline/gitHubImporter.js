@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
+const fs = require('fs').promises;
+const path = require('path');
 const octonode = require('octonode');
 const {Signale} = require('signale');
 
 const Document = require('./markdownDocument');
 
+const LOCAL_AMPHTML = process.env.AMP_LOCAL_AMPHTML;
 const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
 const CLIENT_SECRET = process.env.AMP_DOC_SECRET;
 const CLIENT_ID = process.env.AMP_DOC_ID;
@@ -61,13 +64,25 @@ class GitHubImporter {
   }
 
   /**
+   * Downloads a file from Github and returns its contents.
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {String} A string containing the file
+   */
+  async fetchFile(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+    const data = await this.fetchContents_(filePath, repo, master, LOCAL_AMPHTML);
+    const str = Buffer.from(data[0].content || data, 'base64').toString();
+    return str;
+  }
+
+  /**
    * Downloads a path/document from GitHub and returns its contents
    * @param  {String} path Path to the file
    * @param  {Boolean} master true if document should be fetched from master
    * @return {Document} A document object containing all information
    */
   async fetchDocument(filePath, repo=DEFAULT_REPOSITORY, master=false) {
-    const data = await this.fetchContents_(filePath, repo, master);
+    const data = await this.fetchContents_(filePath, repo, master, LOCAL_AMPHTML);
     if (data && data.content !== undefined && !data.content.length) {
       this._log.info(`${filePath} is empty. Skipping ...`);
       return '';
@@ -77,9 +92,14 @@ class GitHubImporter {
     return new Document(filePath, buf);
   }
 
-  async fetchContents_(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+  async fetchContents_(filePath, repo=DEFAULT_REPOSITORY, master=false, local=false) {
     if (!filePath) {
       return Promise.reject(new Error('Can not download from undefined path.'));
+    }
+
+    if (local) {
+      this._log.await(`Copying ${filePath} from local file path...`);
+      return fs.readFile(path.join(local, filePath));
     }
 
     if (master || repo !== DEFAULT_REPOSITORY) {
@@ -119,10 +139,11 @@ class GitHubImporter {
 }
 
 module.exports = {
-  'CLIENT_TOKEN': CLIENT_TOKEN,
-  'CLIENT_SECRET': CLIENT_SECRET,
-  'CLIENT_ID': CLIENT_ID,
-  'log': log,
-  'checkCredentials': checkCredentials,
-  'GitHubImporter': GitHubImporter,
+  CLIENT_TOKEN,
+  CLIENT_SECRET: CLIENT_SECRET,
+  CLIENT_ID,
+  log,
+  checkCredentials,
+  GitHubImporter,
+  DEFAULT_REPOSITORY,
 };

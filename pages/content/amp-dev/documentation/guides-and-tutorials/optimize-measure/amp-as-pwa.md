@@ -22,9 +22,9 @@ A Service Worker is a client-side proxy that sits between your page and your ser
 **NOTE –** If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 [/tip]
 
-Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) component to achieve the same.
+Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component to achieve the same.
 
-For that, first include the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) component via its script in the `<head>` of your page:
+For that, first include the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component via its script in the `<head>` of your page:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -47,7 +47,7 @@ If the user navigates to your AMP pages on your origin (as opposed to the first 
 If you're here, you're building pages with AMP. The AMP team cares immensely about putting the user first and giving them a world class web experience. To keep these experiences consistent the AMP team has created a service worker specifically for AMP!
 
 [tip type="default"]
-**TIP –**  Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/documentation/guides-and-tutorials/optimize-and-measure/amp_to_pwa.html).
+**TIP –**  Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md).
 [/tip]
 
 ### Installing the AMP Service Worker
@@ -165,7 +165,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Using this technique, you can amend your AMP Page will all sorts of additional
-functionality that would otherwise fail [AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}), for example:
+functionality that would otherwise fail [AMP validation](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), for example:
 
 * Dynamic features that require custom JS.
 * Components that are customized/only relevant for your site.

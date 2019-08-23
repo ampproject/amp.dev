@@ -995,3 +995,38 @@ msgstr "Presentation"
 msgid "social"
 msgstr "Social"
 
+msgid "advertising-analytics"
+msgstr "Advertising & Analytics"
+
+msgid "introduction"
+msgstr "Introduction"
+
+msgid "components"
+msgstr "Components"
+
+msgid "guides"
+msgstr "Guides"
+
+msgid "e-commerce"
+msgstr "E-Commerce"
+
+msgid "interactivity-dynamic-content"
+msgstr "Interactivity & Dynamic Content"
+
+msgid "multimedia-animations"
+msgstr "Multimedia & Animations"
+
+msgid "news-publishing"
+msgstr "News & Publishing"
+
+msgid "personalization"
+msgstr "Personalization"
+
+msgid "style-layout"
+msgstr "Style & Layout"
+
+msgid "user-consent"
+msgstr "User consent"
+
+msgid "visual-effects"
+msgstr "Visual effects"

@@ -5,7 +5,7 @@ $title: Navegar pelo seu site
 A maioria dos sites para dispositivos móveis tem um menu de navegação. Esses menus podem ter várias formas. Neste tutorial, testaremos os seguintes exemplos de como apresentar a navegação nas páginas AMP:
 
 - Incluir um link para sua página inicial é a opção mais simples.
-- Outra possibilidade é adicionar uma barra de navegação lateral com o componente [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}).
+- Outra possibilidade é adicionar uma barra de navegação lateral com o componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
 ## Link para a página inicial
 
@@ -56,9 +56,9 @@ Essa é a forma mais fácil de aproveitar os elementos existentes de navegação
 
 ## Navegação com uma barra lateral
 
-Uma técnica comum de navegação é adicionar um ícone de menu que, ao receber um clique, mostra vários links de navegação na lateral da página. Nas AMP, é possível criar esse tipo de navegação com o componente [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}).
+Uma técnica comum de navegação é adicionar um ícone de menu que, ao receber um clique, mostra vários links de navegação na lateral da página. Nas AMP, é possível criar esse tipo de navegação com o componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
-Primeiro, é preciso **adicionar** o JavaScript do componente [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}) à tag `<head>`:
+Primeiro, é preciso **adicionar** o JavaScript do componente [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) à tag `<head>`:
 
 ```html
 <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
@@ -73,7 +73,7 @@ Em seguida, queremos exibir um ícone de menu.  Quando tocado, ele abrirá a bar
 </header>
 ```
 
-No código acima, `alternamos` a barra lateral usando o atributo de ação [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) no elemento [`amp-sidebar`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-sidebar.md', locale=doc.locale).url.path}}), que é identificado pelo código `sidebar1`.  Vamos adicionar a barra lateral.
+No código acima, `alternamos` a barra lateral usando o atributo de ação [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) no elemento [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), que é identificado pelo código `sidebar1`.  Vamos adicionar a barra lateral.
 
 **Adicione** o HTML a seguir logo após o `</header>`:
 

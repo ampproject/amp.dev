@@ -9,7 +9,7 @@
 {%- endmacro %}
 
 {# Simply set to False to disable banner #}
-{% set show_banner = True %}
+{% set show_banner = False %}
 {% if show_banner %}
   {% set banner %}
   {% include '/views/partials/banner.j2' %}
@@ -85,6 +85,14 @@
       </div>
       {% endfor %}
     </nav>
+
+    {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
+    <div id="searchTriggerOpen" class="ap-m-search-trigger" on="tap:searchLayer.toggleClass(class='active', force=true),searchInput.focus" role="button"  tabindex="0">
+      {% do doc.icons.useIcon('/icons/search.svg') %}
+      <div class="ap-a-ico ap-m-search-trigger-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+      </div>
+    </div>
 
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">

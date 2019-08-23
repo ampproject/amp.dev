@@ -25,16 +25,16 @@ AMP doesn't support the default HTML counterparts to displaying media, like `<im
 We provide equivalent components for the following reasons:
 
 * We need to understand layout of the page before assets load, crucial
-  to [support first-viewport preloading]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#size-all-resources-statically)
+  to [support first-viewport preloading](../../../../about/how-amp-works.html#size-all-resources-statically)
 * We need to control network requests to [lazy load and prioritize resources
-effectively]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}#prioritize-resource-loading)
+effectively](../../../../about/how-amp-works.html#prioritize-resource-loading)
 
-Caution: While they're not supported, they *will* render, but AMP won't [validate your pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md', locale=doc.locale).url.path}}) and you won't get all the benefits AMP provides.
+Caution: While they're not supported, they *will* render, but AMP won't [validate your pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) and you won't get all the benefits AMP provides.
 
 ## Images
 
 Include an image in your page
-using the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element, like so:
+using the [`amp-img`](../../../../documentation/components/reference/amp-img.md) element, like so:
 
 [example preview="inline" playground="true"]
 ```html
@@ -51,7 +51,7 @@ height and width. At minimum, an explicit width and height needs to be set.
 
 #### Displaying images when JavaScript is disabled
 
-As [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
+As [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) relies on JavaScript, if the user chooses to disable scripts, images won't display.  In this case, you should provide a fallback to the image using `<img>` and `<noscript>`, like so:
 
 [example preview="inline" playground="true"]
 ```html
@@ -82,7 +82,7 @@ images. In its most basic form, all you have to do is to add `layout="responsive
 [/example]
 
 [tip type="read-on"]
-**READ ON –**  Learn more about [advanced layout techniques]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+**READ ON –**  Learn more about [advanced layout techniques](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
 [/tip]
 
 ### Behavior and placeholders
@@ -92,12 +92,12 @@ choosing to delay or prioritize resource loading
 based on the viewport position, system resources, connection bandwidth, or other factors.
 
 [tip type="read-on"]
-**READ ON –**  Learn how to [provide fallbacks and placeholders for images]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+**READ ON –**  Learn how to [provide fallbacks and placeholders for images](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 [/tip]
 
 ## Animated images
 
-The [`amp-anim`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-anim.md', locale=doc.locale).url.path}}) element is very similar to the [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) element,
+The [`amp-anim`](../../../../documentation/components/reference/amp-anim.md) element is very similar to the [`amp-img`](../../../../documentation/components/reference/amp-img.md) element,
 and provides additional functionality to manage loading and playing of animated images such as GIFs.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
@@ -121,7 +121,7 @@ and provides additional functionality to manage loading and playing of animated 
 ## Video
 
 Include a video in your page
-using the [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) element.
+using the [`amp-video`](../../../../documentation/components/reference/amp-video.md) element.
 
 Only use this element for direct HTML5 video file embeds.
 The element loads the video resource specified by the `src` attribute lazily,
@@ -147,7 +147,7 @@ if the browser doesn't support HTML5 video, for example:
 ## Audio
 
 Include an audio resource in your page,
-using the [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}) element.
+using the [`amp-audio`](../../../../documentation/components/reference/amp-audio.md) element.
 
 Only use this element for direct HTML5 audio file embeds.
 Like all embedded external resources in an AMP page,

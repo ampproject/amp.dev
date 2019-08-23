@@ -16,7 +16,7 @@ $title: 반응형 AMP 페이지 만들기
 
 콘텐츠가 모든 기기의 브라우저 창에 맞게 조정될 수 있도록 웹페이지를 최적화하려면 `meta` 표시 영역 요소를 지정해야 합니다. 표시 영역 요소는 웹페이지의 표시 영역 비율과 크기를 조정하는 방법을 브라우저에 알려줍니다.
 
-그렇다면 어떤 값을 사용해야 할까요?  AMP에 이미 준비되어 있습니다.  AMP 페이지에 있는 [필수 마크업]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}#required-markup)의 일부로서 다음 표시 영역을 지정해야 합니다.
+그렇다면 어떤 값을 사용해야 할까요?  AMP에 이미 준비되어 있습니다.  AMP 페이지에 있는 [필수 마크업](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#required-markup)의 일부로서 다음 표시 영역을 지정해야 합니다.
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -36,7 +36,7 @@ $title: 반응형 AMP 페이지 만들기
 
 아래 예에서는 모든 화면 크기에 표시하려는 꽃 이미지(640x427px)에 `width` 및 `height`를 지정하고 레이아웃을 `responsive`로 설정합니다.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <div class="resp-img">
   <amp-img alt="flowers"
@@ -58,11 +58,11 @@ $title: 반응형 AMP 페이지 만들기
 </style>
 ```
 
-읽어보기: AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미디어 쿼리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+읽어보기: AMP의 다양한 레이아웃을 자세히 알아보려면 [레이아웃 및 미디어 쿼리](control_layout.md) 가이드를 참조하세요.
 
 <a id="fn1"></a>
 [tip type="note"]
-***'width=100%' 스타일을 사용하여 간편하게 수행할 수 있는데 화면에 맞게 요소의 크기를 조정하는 것이 까다로운 이유가 무엇일까요?**  성능 통계와 사용자 환경에 부정적인 영향을 주지 않으면서 반응형 요소가 페이지에 렌더링되도록 하는 것이 까다롭습니다.  물론 'width=100%'를 사용하면 화면에 이미지를 간편하게 맞출 수 있지만, 대신 성능이 저하됩니다.  브라우저는 먼저 이미지를 다운로드하여 이미지의 크기를 파악하고 화면 크기에 맞게 이미지 크기를 조정한 후 마지막으로 페이지를 리플로우하고 다시 채워야 합니다.  AMP에서는 렌더링 경로를 최적화함으로써 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  제공된 크기(이 숫자를 사용하여 가로세로 비율을 설정)를 바탕으로 이미지의 자리 표시자가 준비된 페이지가 먼저 배치된 후 리소스를 다운로드하고 페이지를 채웁니다.  리플로우는 필요하지 않습니다.
+***'width=100%' 스타일을 사용하여 간편하게 수행할 수 있는데 화면에 맞게 요소의 크기를 조정하는 것이 까다로운 이유가 무엇일까요?**  성능 통계와 사용자 환경에 부정적인 영향을 주지 않으면서 반응형 요소가 페이지에 렌더링되도록 하는 것이 까다롭습니다.  물론 'width=100%'를 사용하면 화면에 이미지를 간편하게 맞출 수 있지만, 대신 성능이 저하됩니다.  브라우저는 먼저 이미지를 다운로드하여 이미지의 크기를 파악하고 화면 크기에 맞게 이미지 크기를 조정한 후 마지막으로 페이지를 리플로우하고 다시 채워야 합니다.  AMP에서는 렌더링 경로를 최적화함으로써 [`amp-img`](../../../../documentation/components/reference/amp-img.md)  제공된 크기(이 숫자를 사용하여 가로세로 비율을 설정)를 바탕으로 이미지의 자리 표시자가 준비된 페이지가 먼저 배치된 후 리소스를 다운로드하고 페이지를 채웁니다.  리플로우는 필요하지 않습니다.
 [/tip]
 
 ## 페이지에 맞게 미디어 조정
@@ -75,9 +75,9 @@ $title: 반응형 AMP 페이지 만들기
 
 ##### 예: YouTube 동영상 삽입
 
-아래 예에서는 삽입된 YouTube 동영상이 기기 화면의 크기와 방향에 따라 반응하는 것을 보여드리겠습니다. [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 요소에 `"layout=responsive"`를 추가하면 창에 맞춰 동영상 크기가 조정되며 가로세로 비율은 `width` 및 `height`에 지정된 값으로 유지됩니다.
+아래 예에서는 삽입된 YouTube 동영상이 기기 화면의 크기와 방향에 따라 반응하는 것을 보여드리겠습니다. [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 요소에 `"layout=responsive"`를 추가하면 창에 맞춰 동영상 크기가 조정되며 가로세로 비율은 `width` 및 `height`에 지정된 값으로 유지됩니다.
 
-[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+[example preview="top-frame" playground="true" imports="amp-youtube:0.1"]
 ```html
 <amp-youtube data-videoid="lBTCB7yLs8Y"
   layout="responsive"
@@ -87,11 +87,11 @@ $title: 반응형 AMP 페이지 만들기
 ```
 [/example]
 
-다양한 유형의 동영상을 AMP 페이지에 추가할 수 있습니다.  자세한 내용은 사용 가능한 [미디어 구성요소]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}#media) 목록을 참조하세요.
+다양한 유형의 동영상을 AMP 페이지에 추가할 수 있습니다.  자세한 내용은 사용 가능한 [미디어 구성요소](../../../../documentation/components/index.html#media) 목록을 참조하세요.
 
 ### 반응형 이미지 표시하기
 
-이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md', locale=doc.locale).url.path}}) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
+이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
 
 - [적절한 해상도로 선명한 이미지 게재](#적절한-해상도로-선명한-이미지-게재)
 - [이미지의 아트 디렉션 변경](#이미지의-아트-디렉션-변경)
@@ -111,7 +111,7 @@ $title: 반응형 AMP 페이지 만들기
 - 표시 영역 너비가 최대 900px인 경우, 표시 영역 너비의 75%로 이미지를 렌더링합니다.
 - 표시 영역 너비가 900px을 넘는 경우, 600px의 너비로 이미지를 렌더링합니다.
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="apple"
   src="{{server_for_email}}/static/inline-examples/images/apple.jpg"
@@ -131,7 +131,7 @@ $title: 반응형 AMP 페이지 만들기
 
 표시 영역의 너비가 412px이고 DPR이 2.6인 기기가 있다고 가정해 보겠습니다. 위의 코드에 따라 이미지가 표시 영역 너비의 75%로 표시되어야 하므로 브라우저에서는 803px(412 * .75 * 2.6)에 가까운 `apple-800.jpg` 이미지를 선택합니다.
 
-읽어보기: AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+읽어보기: AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](art_direction.md) 가이드를 참조하세요.
 
 #### 이미지의 아트 디렉션 변경
 
@@ -145,9 +145,9 @@ $title: 반응형 AMP 페이지 만들기
 - 470~669px인 경우 `cat-medium.jpg`(450x340px) 표시
 - 469px 이하인 경우 `cat-small.jpg`(226x340px) 표시
 
-참고: 변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?']({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-속성이-지정되지-않은-경우-어떻게-하나요?)를 참조하세요.
+참고: 변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](control_layout.md#what-if-the-layout-속성이-지정되지-않은-경우-어떻게-하나요?)를 참조하세요.
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="grey cat"
     media="(min-width: 670px)"
@@ -167,7 +167,7 @@ $title: 반응형 AMP 페이지 만들기
 ```
 [/example]
 
-읽어보기: AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+읽어보기: AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](art_direction.md) 가이드를 참조하세요.
 
 #### 최적화된 이미지 제공
 
@@ -175,13 +175,13 @@ $title: 반응형 AMP 페이지 만들기
 
 HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재할 수 있습니다.  AMP에서는 `picture` 태그가 지원되지 않지만 `fallback` 속성을 사용하여 다른 이미지를 게재할 수 있습니다.
 
-읽어보기: fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}) 가이드를 참조하세요.
+읽어보기: fallback에 관해 자세히 알아보려면 [자리표시자 및 Fallback](placeholders.md) 가이드를 참조하세요.
 
 ##### 예: 다른 이미지 형식 게재
 
 아래 예에서는 브라우저가 WebP를 지원하면 mountains.webp를 게재하고, 지원하지 않으면 mountains.jpg를 게재합니다.
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Mountains"
   width="550"
@@ -214,6 +214,6 @@ HTML에서는 `picture` 태그를 사용하여 다른 이미지 형식을 게재
 
 #### AMP 제작
 
-- [예제별 AMP: 샘플 및 템플릿]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-- [템플릿]({{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}})
+- [예제별 AMP: 샘플 및 템플릿](../../../../documentation/examples/index.html)
+- [템플릿](../../../../documentation/templates/index.html)
 - [AMP Conf Workshop Codelab: 멋진 AMP 만들기](https://codelabs.developers.google.com/codelabs/amp-beautiful-interactive-canonical)

@@ -12,7 +12,7 @@ Há várias formas de validar um documento AMP. Todas elas
 terão o mesmo resultado. Por isso, use a opção mais adequada ao
 seu estilo de desenvolvimento.
 
-Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md', locale=doc.locale).url.path}}) por plataformas de terceiros.
+Além de validar a página AMP, também é possível confirmar que o documento AMP [pode ser detectado](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md) por plataformas de terceiros.
 
 ### Console do navegador para desenvolvedores
 
@@ -164,8 +164,8 @@ Obviamente, essa página tem uma versão HTML para AMP válida. Agora, vejamos u
 $ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
-several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://www.ampproject.org/docs/reference/components/amp-img.html)
-several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see https://www.ampproject.org/docs/reference/amp-ad.html)
+several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the invalid value '100%'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
 ...
 [/sourcecode]
 
@@ -253,15 +253,15 @@ Cada ferramenta fornece várias informações:
      Em algumas interfaces, é possível clicar no texto para destacar esse local. Nesse
      caso, o problema ocorre na linha 11, coluna 2.
   2. Uma linha de texto descreve o erro. Nesse caso, o texto indica que
-     estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+     estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
   3. Há um link para um documento relevante sobre o erro. Nesse caso, o link
-     leva à documentação da tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Nem todos os erros geram
+     leva à documentação da tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Nem todos os erros geram
      links de documentação.
 
-Se relermos com atenção o [artigo de especificações]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md', locale=doc.locale).url.path}}), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Se relermos com atenção o [artigo de especificações](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md), veremos que estamos usando uma tag `<img>`, quando deveríamos ter usado uma tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 
 Para entender melhor a lista completa de possíveis erros,
-consulte o [guia sobre erros de validação de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md', locale=doc.locale).url.path}}).
+consulte o [guia sobre erros de validação de AMP](validation_errors.md).
 Se você ainda tiver dúvidas após uma análise detalhada, [faça uma
 pergunta](http://stackoverflow.com/questions/tagged/amp-html) (em inglês) para receber
 ajuda.

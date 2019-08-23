@@ -6,13 +6,13 @@ $title: Imágenes adaptativas con srcset, sizes & heights
 
 Utilice el atributo `srcset` para controlar los elementos
 basado en expresiones de medios variables
-En particular, utilícelo para todas las etiquetas [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
+En particular, utilícelo para todas las etiquetas [`amp-img`](../../../../documentation/components/reference/amp-img.md)
 para especificar cuál imagen se usará basedo en la variedad de tamaños de pantalla.
 
 En este ejemplo simple, `srcset` especifica cuál imagen se usará para el ancho de la pantalla.
 El descriptor `w` le dice al navegador el ancho de cada imagen en la lista:
 
-[example preview="inline" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -38,7 +38,7 @@ Basado en el tamaño calculado del medio, el agente de usuario selecciona la fue
 
 Considere el siguiente ejemplo:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
@@ -73,7 +73,7 @@ Cuando el atributo `heights` es especificado junto con `width` y `height`, el `l
 
 Un ejemplo:
 
-[example preview="none" playground="true"]
+[example preview="top-frame" playground="true"]
 ```html
 <amp-img alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"

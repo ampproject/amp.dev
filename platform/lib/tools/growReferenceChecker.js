@@ -25,13 +25,29 @@ const fs = require('fs');
 // Where to look for existing documents
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 // Which documents to check for broken references
-const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/**/*.{md,html}';
+const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/**/*.{md,html}';
 // The location to search for documents in
-const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev/documentation';
-// The pattern used by Grow to make up references
-const REFERENCE_PATTERN = /g.doc\('(.*?)'/g;
-// Contains manual hints for double filenames etc.
+const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev';
+// The pattern to find links in markdown and html
+// It also matches source code blocks to skip these
+const REFERENCE_PATTERN = new RegExp(
+    // skip sourcecode block in markdown:
+    /^```[\s\S]*?```/.source
+    + '|'
+    // skip sourcecode tag in markdown
+    + /\[sourcecode[^\]]*\][\s\S]*?\[\/sourcecode\]/.source
+    + '|'
+    // find <a href=""> link tag:
+    + /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source
+    + '|'
+    // find markdown link block [text](../link):
+    + /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
+    + '|'
+    // find {{g.doc('link')}} links:
+    + /g.doc\('(.*?)'/.source
+    , 'gm');
 /* eslint-disable max-len */
+// Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
   '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md':
@@ -44,7 +60,8 @@ const LOOKUP_TABLE = {
 };
 /* eslint-enable max-len */
 // The following paths are skipped when checked for existance
-const IGNORED_PATH_PATTERNS = /\/content\/amp-dev\/documentation\/components\/reference\/.*?/g;
+const IGNORED_PATH_PATTERNS =
+  /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate/g;
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -118,7 +135,7 @@ class GrowReferenceChecker {
           }
         }
 
-        if (this._unfindableDocuments.length > 0) {
+        if (this._unfindableDocuments.length > 0 || multipleMatchesCount > 0) {
           reject(new Error(`${this._unfindableDocuments.length} documents with broken links`));
         } else {
           resolve();
@@ -135,9 +152,18 @@ class GrowReferenceChecker {
    */
   _check(doc) {
     let content = doc.contents.toString();
-    content = content.replace(REFERENCE_PATTERN, (match, path) => {
-      const newPath = this._verifyReference(path);
-      return match.replace(path, newPath);
+    content = content.replace(REFERENCE_PATTERN, (match, hrefLink, markdownLink, gDocLink) => {
+      const link = hrefLink || markdownLink || gDocLink;
+      if (!link) {
+        // we are in a sourcecode block where we do not want to change links
+        return match;
+      }
+      const fullLink = this._resolveRelativeLink(link, doc);
+      const newLink = this._verifyReference(fullLink, doc);
+      if (newLink != fullLink) {
+        return match.replace(link, newLink);
+      }
+      return match;
     });
 
     doc.contents = Buffer.from(content);
@@ -147,9 +173,10 @@ class GrowReferenceChecker {
   /**
    * Tries to find a given path inside the pod
    * @param  {String} path
+   * @param |{Vinyl} doc
    * @return {String}      The either untouched or adjusted path
    */
-  _verifyReference(documentPath) {
+  _verifyReference(documentPath, doc) {
     if (documentPath.match(IGNORED_PATH_PATTERNS)) {
       return documentPath;
     }
@@ -178,7 +205,8 @@ class GrowReferenceChecker {
     // If there is more than one match store all matches for the user to
     // do the manual fixing
     if (results.length > 1) {
-      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.`);
+      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.`
+          + ` (In ${doc.path})`);
       this._multipleMatches[documentPath] = results;
       return documentPath;
     } else if (results.length == 0) {
@@ -186,10 +214,11 @@ class GrowReferenceChecker {
       // a matching markdown document
       if (basename.indexOf('.html') !== -1) {
         documentPath = documentPath.replace(path.extname(documentPath), '.md');
-        return this._verifyReference(documentPath);
+        return this._verifyReference(documentPath, doc);
       }
 
-      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.`);
+      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.`
+        + ` (First found in ${doc.path})`);
       if (this._unfindableDocuments.indexOf(documentPath) == -1) {
         this._unfindableDocuments.push(documentPath);
       }
@@ -199,6 +228,20 @@ class GrowReferenceChecker {
     const newPath = results[0].replace(POD_BASE_PATH, '/');
 
     return newPath;
+  }
+
+  /**
+   * @param link {string}
+   * @param doc {Vinyl}
+   * @returns {string}
+   */
+  _resolveRelativeLink(link, doc) {
+    if (link.startsWith('/')) {
+      return link;
+    }
+    const sourcePath = doc.path.substring(doc.path.indexOf('/content/amp-dev/'));
+    const result = path.normalize(path.join(path.dirname(sourcePath), link));
+    return result;
   }
 }
 

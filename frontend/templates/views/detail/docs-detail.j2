@@ -7,14 +7,16 @@
 {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
 
 {% if doc.has_inline_preview %}
+  {% do doc.styles.addCssFile('css/components/atoms/fab.css') %}
   {% do doc.styles.addCssFile('css/components/organisms/code-preview.css') %}
+  {% do doc.icons.useIcon('icons/reload.svg') %}
+  {% do doc.icons.useIcon('icons/orientation-toggle.svg') %}
 {% endif %}
 
 {% do doc.styles.addCssFile('css/components/templates/docs-detail.css') %}
 {% endblock %}
 
 {% block main %}
-{% include 'views/partials/sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-docs-detail">
   <div class="ap--container">
@@ -64,4 +66,5 @@
 
   </div>
 </main>
+{% include 'views/partials/sidebar.j2' %}
 {% endblock %}

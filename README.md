@@ -1,6 +1,6 @@
 # amp.dev
 
-[![Build Status](https://travis-ci.org/ampproject/docs.svg?branch=future)](https://travis-ci.org/ampproject/amp.dev)
+[![Build Status](https://travis-ci.org/ampproject/amp.dev.svg?branch=future)](https://travis-ci.org/ampproject/amp.dev)
 
 The official homepage of the AMP Project.
 
@@ -16,11 +16,13 @@ We welcome contributions to amp.dev.
 
 <img width="669" alt="Inline editing on Github" src="https://user-images.githubusercontent.com/380472/59018008-2d8f5580-8845-11e9-8160-e2890e2c7944.png">
 
+**Note:** Windows is not a currently supported OS for those intending to conduct development on this repository.
+
 ## Setup
 
 ### Requirements
 
-1.  Install the LTS version of [NodeJS](https://nodejs.org). An easy way to do so is with `nvm`. (Mac and Linux: [here](https://github.com/creationix/nvm), Windows: [here](https://github.com/coreybutler/nvm-windows))
+1.  Install the LTS version of [NodeJS](https://nodejs.org). An easy way to do so is with `nvm`. (Mac and Linux: [here](https://github.com/creationix/nvm)).
     ```sh
     $ nvm install --lts
     ```
