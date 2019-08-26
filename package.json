@@ -72,7 +72,8 @@
     "safe-eval": "0.4.1",
     "shrink-ray-current": "4.0.0",
     "signale": "1.4.0",
-    "uuid": "3.3.3"
+    "uuid": "3.3.3",
+    "web-push": "3.3.5"
   },
   "devDependencies": {
     "@ampproject/toolbox-validator-rules": "1.0.1",
