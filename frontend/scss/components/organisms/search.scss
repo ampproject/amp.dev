@@ -379,6 +379,10 @@
           opacity: 1;
         }
       }
+
+      .amp-notsupported & {
+        display: none;
+      }
     }
 
     &-hint {
@@ -387,6 +391,35 @@
 
       @media (min-width: 1024px) {
         padding: 0 60px;
+      }
+    }
+
+    &-error {
+      padding: 14vh 15px 0;
+      text-align: center;
+
+      &-smiley,
+      &-shruggie {
+        @include hl;
+        font-size: 16vw;
+        margin: 0;
+        color: color('athens-gray');
+
+        @media (min-width: 768px) {
+          font-size: 13vw;
+        }
+
+        @media (min-width: 1024px) {
+          font-size: 100px;
+        }
+      }
+
+      &-shruggie {
+        font-family: 'Noto Sans', sans-serif;
+      }
+
+      &-copy {
+        margin: 0 0 2em;
       }
     }
 
