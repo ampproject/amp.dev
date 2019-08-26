@@ -390,6 +390,31 @@
       }
     }
 
+    &-notfound {
+      padding: 0 15px;
+      text-align: center;
+
+      &-smiley {
+        @include hl;
+        font-family: 'Noto Sans';
+        font-size: 100px;
+        margin: 0 0 -4rem;
+        color: color('athens-gray');
+
+        @media (min-width: 1280px) {
+          font-size: 140px;
+        }
+      }
+
+      &-headline {
+        margin: 0 0 .5rem;
+      }
+
+      &-copy {
+        margin: 0 0 2em;
+      }
+    }
+
     // Hack to prevent showing load-more button and loading-indicator at the same time
     // Related issue: https://github.com/ampproject/amphtml/issues/24034
     div[class*="loading-container"]:not(.amp-hidden) ~ [load-more-button] {

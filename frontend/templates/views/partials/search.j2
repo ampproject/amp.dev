@@ -156,8 +156,10 @@
             </amp-list-load-more>
           </amp-list>
 
-          <div class="ap-o-search-result-hint" [hidden]="search.result.totalResults != 0" hidden>
-            {{_('We could not find any results for your search query.')}}
+          <div class="ap-o-search-result-notfound" [hidden]="search.result.totalResults != 0" hidden>
+            <h2 class="ap-o-search-result-notfound-smiley">{{';('}}</h2>
+            <h3 class="ap-o-search-result-notfound-headline">{{ _('No results found.') }}</h3>
+            <p class="ap-o-search-result-notfound-copy">{{ _('We could not find any results for your search query.') }}</p>
           </div>
 
         </div>
