@@ -158,7 +158,7 @@ Concept guides help developers build a deeper understanding of AMP. A concept gu
 amp.dev examples:
 
 - [Animate & transition](../../../../documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md?format=websites)
-- [Track engagement with analytics](../../../../documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/index.md?format=websites)
+- [Track engagement with analytics](../../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md?format=websites)
 - [Style & layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/index.md?format=websites)
 
 <table>

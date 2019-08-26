@@ -129,7 +129,7 @@ class BlogImporter {
     // join all of the content
     const blogEntriesYaml = blogEntries.map((item) =>
       `
-- title: "${ item.type}"
+- title: "${ item.type }"
   image: "${ item.thumbnail }"
   headline: "${ item.title }"
   date: "${ item.date.format('MMMM D, YYYY') }"

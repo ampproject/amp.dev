@@ -135,8 +135,8 @@ section.#{utility('tools')} {
       }
 
       &.stories {
-        @include gradient-stories; color: color('pigment-indigo');
-        .#{atom('ico')} { fill: color('pigment-indigo'); }
+        @include gradient-stories; color: color('ultramarine');
+        .#{atom('ico')} { fill: color('ultramarine'); }
       }
 
       &.ads {

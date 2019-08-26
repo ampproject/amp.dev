@@ -20,13 +20,17 @@ const gulp = require('gulp');
 const {project} = require('@lib/utils');
 const grow = require('@lib/utils/grow');
 const config = require('@lib/config');
-const Platform = require('@lib/platform');
 const signale = require('signale');
 const build = require('./build.js');
 const {samplesBuilder} = require('@lib/build/samplesBuilder');
 
 function bootstrap(done) {
-  gulp.parallel(build.buildBoilerplate, build.buildPlayground, build.importAll)(done);
+  gulp.parallel(
+      build.buildComponentVersions,
+      build.buildBoilerplate,
+      build.buildPlayground,
+      build.importAll
+  )(done);
 }
 
 function develop() {
@@ -46,7 +50,7 @@ function extract() {
   })();
 }
 
-function run() {
+async function run() {
   config.configureGrow();
   grow(`run --port ${config.hosts.pages.port}`).catch(() => {
     signale.fatal('Grow had an error starting up. There probably is a broken' +
@@ -55,11 +59,13 @@ function run() {
   });
 
   signale.info('Watching icons, templates, styles and samples ...');
-  samplesBuilder.build();
+  // await the build of samples since the search init needs the sample sitemap
+  await samplesBuilder.build();
   gulp.watch(`${project.paths.ICONS}/**/*.svg`, build.icons);
   gulp.watch(`${project.paths.FRONTEND_TEMPLATES}/**/*.j2`, build.templates);
   gulp.watch(`${project.paths.SCSS}/**/*.scss`, build.sass);
 
+  const Platform = require('@lib/platform');
   new Platform().start();
 }
 

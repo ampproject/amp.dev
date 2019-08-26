@@ -17,7 +17,6 @@
 {% endblock %}
 
 {% block main %}
-{% include 'views/partials/component-sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-component-detail">
   <div class="ap--container">
@@ -48,4 +47,5 @@
     </section>
   </div>
 </main>
+{% include 'views/partials/component-sidebar.j2' %}
 {% endblock %}

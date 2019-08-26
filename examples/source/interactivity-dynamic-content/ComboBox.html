@@ -1,6 +1,7 @@
 <!---
 
   teaserImage: '/static/samples/img/teaser/combobox.jpg'
+  preview: default
 
   --->
 
@@ -88,7 +89,7 @@
 
           Finally, the combobox can be triggered via a button that focuses the input field: `<button on="tap:combo-input.focus">`.
         -->
-        <form action-xhr="/documentation/examples/api/echo">
+        <form method="post" action-xhr="/documentation/examples/api/echo">
           <amp-autocomplete class="combo-box" filter="token-prefix" min-characters="0">
             <input id="combo-input" type="text">
             <button on="tap:combo-input.focus">

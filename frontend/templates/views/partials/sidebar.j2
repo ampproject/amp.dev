@@ -7,7 +7,7 @@
     toolbar-target="ap--sidebar-content">
     <ul>
       {% include '/views/partials/format-toggle.j2' %}
-      <section class="ap-o-sidebar-section">
+      <div class="ap-o-sidebar-section">
         {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
         <div class="ap-o-sidebar">
           <div class="nav">
@@ -115,7 +115,7 @@
             {{ nav_tree(root=g.collection(current_path)) }}
           </div>
         </div>
-      </section>
+      </div>
     </ul>
   </nav>
 </amp-sidebar>

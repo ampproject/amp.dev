@@ -30,6 +30,8 @@ const ENV_STAGE = 'staging';
 const ENV_PROD = 'production';
 const ENV_LOCAL = 'local';
 
+const DEFAULT_LOCALE = 'en';
+
 const AVAILABLE_LOCALES = [
   'en',
   'fr',
@@ -110,12 +112,19 @@ class Config {
   }
 
   /**
-   * Returns an array with the locale ids.
+   * Returns an array with all the locale ids.
    * (e.g. 'en', 'pt_BR', ...)
-   * These locale ids are used
+   * The default locale is included.
    */
   getAvailableLocales() {
     return AVAILABLE_LOCALES.slice(0); // clone our internal array
+  }
+
+  /**
+   * Returns the default locale (e.g. 'en')
+   */
+  getDefaultLocale() {
+    return DEFAULT_LOCALE;
   }
 
   /**
@@ -233,6 +242,7 @@ class Config {
       signale.info('Add path filter for grow ', filter);
     }
 
+    podspec.localization.default_locale = DEFAULT_LOCALE;
     podspec.localization.locales = AVAILABLE_LOCALES;
     // Check if specific languages have been configured to be built
     if (options.locales) {

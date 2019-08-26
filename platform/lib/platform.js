@@ -42,6 +42,7 @@ const routers = {
   notFound: require('@lib/routers/notFound.js'),
   packager: require('@lib/routers/packager.js'),
   playground: require('../../playground/backend/'),
+  search: require('@lib/routers/search.js'),
   static: require('@lib/routers/static.js'),
   templates: require('@lib/routers/templates.js'),
   whoAmI: require('@lib/routers/whoAmI.js'),
@@ -138,6 +139,7 @@ class Platform {
     this.server.use(routers.whoAmI);
     this.server.use(routers.healthCheck);
     this.server.use(routers.example.api);
+    this.server.use(routers.search);
     this.server.use(routers.boilerplate);
     this.server.use(routers.static);
     this.server.use(routers.templates);

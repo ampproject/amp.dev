@@ -39,7 +39,7 @@ const BlogImporter = require('@lib/pipeline/blogImporter');
 const gulpSass = require('gulp-sass');
 const lint = require('./lint.js');
 const CleanCSS = require('clean-css');
-
+const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 // The Google Cloud Storage bucket used to store build job artifacts
 const TRAVIS_GCS_PATH = 'gs://amp-dev-ci/travis/';
@@ -143,6 +143,22 @@ async function buildPlayground() {
 }
 
 /**
+ * Generate component versions
+ * @return {Promise}
+ */
+async function buildComponentVersions() {
+  const rules = await validatorRules.fetch();
+  const componentVersions = {};
+  rules.extensions.forEach((e) => {
+    componentVersions[e.name] = e.version[e.version.length - 2];
+  });
+  const content = JSON.stringify(componentVersions, null, 2);
+  const dir = path.join(project.paths.DIST, 'static/files');
+  mkdirp(dir);
+  fs.writeFileSync(path.join(dir, 'component-versions.json'), content, 'utf-8');
+}
+
+/**
  * Builds the boilerplate generator
  * @return {Promise}
  */
@@ -206,6 +222,15 @@ function importAll() {
   ]);
 }
 
+/**
+ * Imports just the reference docs.
+ *
+ * @return {Promise}
+ */
+function importComponents() {
+  return (new ComponentReferenceImporter()).import();
+}
+
 
 /**
  * Builds playground and boilerplate generator, imports all remote documents,
@@ -218,7 +243,14 @@ function buildPrepare(done) {
       lint.lintNode,
       // Build playground and boilerplate that early in the flow as they are
       // fairly quick to build and would be annoying to eventually fail downstream
-      gulp.parallel(buildPlayground, buildBoilerplate, buildSamples, importAll, zipTemplates),
+      gulp.parallel(
+          buildComponentVersions,
+          buildPlayground,
+          buildBoilerplate,
+          buildSamples,
+          importAll,
+          zipTemplates
+      ),
       // TODO: Fix working but malformatted references before reenabling
       // test.lintGrow,
       // eslint-disable-next-line prefer-arrow-callback
@@ -449,13 +481,14 @@ exports.sass = sass;
 exports.icons = icons;
 exports.templates = templates;
 exports.importAll = importAll;
+exports.importComponents = importComponents;
 exports.buildPlayground = buildPlayground;
 exports.buildBoilerplate = buildBoilerplate;
 exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;
 exports.zipTemplates = zipTemplates;
 exports.buildPages = buildPages;
-
+exports.buildComponentVersions = buildComponentVersions;
 exports.buildPrepare = buildPrepare;
 exports.minifyPages = minifyPages;
 exports.fetchArtifacts = fetchArtifacts;

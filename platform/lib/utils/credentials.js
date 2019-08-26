@@ -55,6 +55,10 @@ function get(key) {
         return;
       }
 
+      if (!entity) {
+        reject(new Error(`empty entity for key ${key}`));
+        return;
+      }
       resolve(entity.credential);
     });
   });
