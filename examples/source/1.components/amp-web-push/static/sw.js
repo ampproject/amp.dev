@@ -231,12 +231,12 @@ self.addEventListener('fetch', (event) => {
         body: subscriptionJSON.data,
       };
 
-      return await fetch(self.location.origin +
+      return fetch(self.location.origin +
             '/documentation/examples/components/amp-web-push/send-push', options);
     })());
   } else {
     event.respondWith((async () => {
-      return await fetch(event.request);
+      return fetch(event.request);
     })());
   }
 });
