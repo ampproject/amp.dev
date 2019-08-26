@@ -146,22 +146,26 @@
             </amp-list-load-more>
 
             <amp-list-load-more class="ap-o-search-result-hint" load-more-failed>
-              {{_('An internal server error occurred while trying to load more search results.')}}<br>
+              {{_('Something went wrong while trying to load more search results.')}}<br>
               {{_('We apologize for the inconvenience caused.')}}<br>
               {{_('Please try again later.')}}
             </amp-list-load-more>
 
-            <div class="ap-o-search-result-hint" fallback>
-              {{_('An internal server error occurred while trying to load the search results.')}}<br>
-              {{_('We apologize for the inconvenience caused.')}}<br>
-              {{_('Please try again later.')}}
+            <div class="ap-o-search-result-error" fallback>
+              <h2 class="ap-o-search-result-error-smiley">{{';('}}</h2>
+              <h3 class="ap-o-search-result-error-headline">{{ _('Something went wrong…') }}</h3>
+              <p class="ap-o-search-result-error-copy">
+                {{ _('…while trying to load the search results.') }}<br>
+                {{ _('We apologize for the inconvenience caused.') }}<br>
+                {{_('Please try again later.')}}
+              </p>
             </div>
           </amp-list>
 
-          <div class="ap-o-search-result-notfound" [hidden]="search.result.totalResults != 0" hidden>
-            <h2 class="ap-o-search-result-notfound-smiley">{{';('}}</h2>
-            <h3 class="ap-o-search-result-notfound-headline">{{ _('No results found.') }}</h3>
-            <p class="ap-o-search-result-notfound-copy">{{ _('We could not find any results for your search query.') }}</p>
+          <div class="ap-o-search-result-error" [hidden]="search.result.totalResults != 0" hidden>
+            <h2 class="ap-o-search-result-error-shruggie">{{'¯\_(ツ)_/¯'}}</h2>
+            <h3 class="ap-o-search-result-error-headline">{{ _('No results found.') }}</h3>
+            <p class="ap-o-search-result-error-copy">{{ _('We could not find any results matching your search query.') }}</p>
           </div>
 
         </div>
