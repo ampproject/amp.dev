@@ -379,6 +379,10 @@
           opacity: 1;
         }
       }
+
+      .amp-notsupported & {
+        display: none;
+      }
     }
 
     &-hint {

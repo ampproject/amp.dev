@@ -154,6 +154,12 @@
               {{_('We apologize for the inconvenience caused.')}}<br>
               {{_('Please try again later.')}}
             </amp-list-load-more>
+
+            <div class="ap-o-search-result-hint" fallback>
+              {{_('An internal server error occurred while trying to load the search results.')}}<br>
+              {{_('We apologize for the inconvenience caused.')}}<br>
+              {{_('Please try again later.')}}
+            </div>
           </amp-list>
 
           <div class="ap-o-search-result-notfound" [hidden]="search.result.totalResults != 0" hidden>
