@@ -63,9 +63,6 @@
                  required
           >
         </amp-autocomplete>
-
-        <input name="locale" type="hidden" value="{{ doc.locale }}">
-
       </form>
 
       <div class="empty" [class]="query ? '' : 'empty'">
@@ -75,7 +72,6 @@
                     [src]="query == undefined ? null : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
           <amp-list [src]="query == undefined ? null : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
                     binding="no"
-                    class="paged-amp-list"
                     items="."
                     height="10"
                     layout="fixed-height"
@@ -176,7 +172,6 @@
 
       <amp-list src="/search/highlights?locale={{ doc.locale }}"
                 binding="no"
-                class="paged-amp-list"
                 items="."
                 height="100vh"
                 layout="fixed-height"
