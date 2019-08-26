@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const COMPONENTS_URL = '/api/amp-component-versions';
+const COMPONENTS_URL = '/static/files/component-versions.json';
 
 export function createComponentsProvider() {
   return new ComponentsProvider(window);

@@ -1,0 +1,239 @@
+{% do doc.styles.addCssFile('/css/components/organisms/search.css') %}
+
+{% do doc.icons.useIcon('/icons/search.svg') %}
+{% do doc.icons.useIcon('icons/internal.svg') %}
+{% do doc.icons.useIcon('/icons/close.svg') %}
+
+{# TODO:
+   Change hard coded icon injection in <amp-mustache> to svg <use> again, asap!
+   See feature request: https://github.com/ampproject/amphtml/issues/18958
+#}
+{% import 'icons/internal.svg' as iconMarkupRaw %}
+{% set iconMarkupChanged = iconMarkupRaw|replace('symbol', 'svg')|safe %}
+
+{% do doc.amp_dependencies.add('amp-autocomplete', '0.1') %}
+{% do doc.amp_dependencies.add('amp-form', '0.1') %}
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
+{% do doc.amp_dependencies.add('amp-list', '0.1') %}
+{% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
+
+<div id="searchLayer" class="ap-o-search" tabindex="-1">
+  <div class="ap-o-search-escaper" role="button" tabindex="-1" on="tap:searchLayer.toggleClass(class='active', force=false)"></div>
+
+  <div class="ap-o-search-container">
+    <div class="ap-m-search-trigger ap-m-search-trigger-close"
+         on="tap:
+              searchLayer.toggleClass(class='active'),
+              searchTriggerOpen.focus,
+              AMP.setState({ query: '' }),
+              searchForm.clear"
+         role="button"
+         tabindex="0">
+      <div class="ap-a-ico ap-m-search-trigger-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </div>
+    </div>
+
+    <div class="ap-o-search-field">
+      <form action-xhr="/documentation/examples/api/echo"
+            class="ap-o-search-form"
+            id="searchForm"
+            method="POST"
+            target="_top">
+        <amp-autocomplete class="ap-o-search-autocomplete"
+                          filter="substring"
+                          min-characters="1"
+                          on="select:
+                                AMP.setState({ query: event.value }),
+                                searchLayer.focus"
+                          submit-on-enter="false"
+                          src="/search/autosuggest"
+        >
+          <div class="ap-a-ico ap-o-search-input-icon">
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+          </div>
+          <input id="searchInput"
+                 class="ap-o-search-input"
+                 name="q"
+                 placeholder="{{_('What are you looking for?')}}"
+                 on="input-debounced:
+                       AMP.setState({ query: event.value });
+                     change:
+                       AMP.setState({ query: event.value })"
+                 required
+          >
+        </amp-autocomplete>
+      </form>
+
+      <div class="empty" [class]="query ? '' : 'empty'">
+        <div class="ap-o-search-result">
+
+          <amp-state id="search"
+                    [src]="query == undefined ? null : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
+          <amp-list [src]="query == undefined ? null : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
+                    binding="no"
+                    items="."
+                    height="10"
+                    layout="fixed-height"
+                    [is-layout-container]="query.length"
+                    load-more="auto"
+                    load-more-bookmark="nextUrl"
+                    reset-on-refresh
+                    single-item
+          >
+            {% raw %}
+            <template type="amp-mustache">
+              <div class="ap-o-search-result-list">
+                {{^prevUrl}}
+                {{#result.components.length}}
+                <h4 class="ap-o-search-result-category">{% endraw %}{{_('Components')}}{% raw %}</h4>
+                {{/result.components.length}}
+                {{/prevUrl}}
+                {{#result.components}}
+                <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
+                  <a class="ap-o-search-result-link" href="{{url}}">
+                    <h4 class="ap-o-search-result-title">{{title}}</h4>
+                    <p class="ap-o-search-result-description">{{description}}</p>
+                  </a>
+                  {{#exampleUrl}}
+                  <div class="ap-o-search-result-linklist">
+                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
+                      <div class="ap-a-ico ap-m-lnk-icon">
+                        {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                      </div>
+                      <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
+                    </a>
+                    {{#playgroundUrl}}
+                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
+                      <div class="ap-a-ico ap-m-lnk-icon">
+                        {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                      </div>
+                      <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
+                    </a>
+                    {{/playgroundUrl}}
+                  </div>
+                  {{/exampleUrl}}
+                </div>
+                {{/result.components}}
+
+                {{^prevUrl}}
+                {{#result.pages.length}}
+                <h4 class="ap-o-search-result-category">{% endraw %}{{_('Results')}}{% raw %}</h4>
+                {{/result.pages.length}}
+                {{/prevUrl}}
+                {{#result.pages}}
+                <div class="ap-o-search-result-item">
+                  <a class="ap-o-search-result-link" href="{{url}}">
+                    <h4 class="ap-o-search-result-title">{{title}}</h4>
+                    <p class="ap-o-search-result-description">{{description}}</p>
+                  </a>
+                </div>
+                {{/result.pages}}
+
+                {{#result.isTruncated}}
+                <div class="ap-o-search-result-hint">
+                  {% endraw %}{{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}{% raw %}
+                </div>
+                {{/result.isTruncated}}
+              </div>
+            </template>
+            {% endraw %}
+
+            <amp-list-load-more load-more-button>
+              <div class="ap-o-search-result-load-button" overflow>
+                <button class="ap-a-btn">{{_('Load more')}}</button>
+              </div>
+            </amp-list-load-more>
+
+            <amp-list-load-more class="ap-o-search-result-hint" load-more-failed>
+              {{_('Something went wrong while trying to load more search results.')}}<br>
+              {{_('We apologize for the inconvenience caused.')}}<br>
+              {{_('Please try again later.')}}
+            </amp-list-load-more>
+
+            <div class="ap-o-search-result-error" fallback>
+              <h2 class="ap-o-search-result-error-smiley">{{';('}}</h2>
+              <h3 class="ap-o-search-result-error-headline">{{ _('Something went wrong…') }}</h3>
+              <p class="ap-o-search-result-error-copy">
+                {{ _('…while trying to load the search results.') }}<br>
+                {{ _('We apologize for the inconvenience caused.') }}<br>
+                {{_('Please try again later.')}}
+              </p>
+            </div>
+          </amp-list>
+
+          <div class="ap-o-search-result-error" [hidden]="search.result.totalResults != 0" hidden>
+            <h2 class="ap-o-search-result-error-shruggie">{{'¯\_(ツ)_/¯'}}</h2>
+            <h3 class="ap-o-search-result-error-headline">{{ _('No results found.') }}</h3>
+            <p class="ap-o-search-result-error-copy">{{ _('We could not find any results matching your search query.') }}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div [hidden]="query.length > 0">
+
+      <amp-list src="/search/highlights?locale={{ doc.locale }}"
+                binding="no"
+                items="."
+                height="100vh"
+                layout="fixed-height"
+                [is-layout-container]="query.length"
+                reset-on-refresh
+                single-item
+      >
+        {% raw %}
+        <template type="amp-mustache">
+        <div class="ap-o-search-result">
+          <div class="ap-o-search-result-list">
+            {{#components.length}}
+            <h4 class="ap-o-search-result-category">{% endraw %}{{_('Important Components')}}{% raw %}</h4>
+            {{/components.length}}
+            {{#components}}
+            <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
+              <a class="ap-o-search-result-link" href="{{url}}">
+                <h4 class="ap-o-search-result-title">&lt;{{title}}&gt;</h4>
+                <p class="ap-o-search-result-description">{{description}}</p>
+              </a>
+              {{#exampleUrl}}
+              <div class="ap-o-search-result-linklist">
+                <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
+                  <div class="ap-a-ico ap-m-lnk-icon">
+                    {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                  </div>
+                  <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
+                </a>
+                {{#playgroundUrl}}
+                <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
+                  <div class="ap-a-ico ap-m-lnk-icon">
+                    {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                  </div>
+                  <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
+                </a>
+                {{/playgroundUrl}}
+              </div>
+              {{/exampleUrl}}
+            </div>
+            {{/components}}
+
+            {{#articles.length}}
+            <h4 class="ap-o-search-result-category">{% endraw %}{{_('Popular Articles')}}{% raw %}</h4>
+            {{/articles.length}}
+            {{#articles}}
+            <div class="ap-o-search-result-item">
+              <a class="ap-o-search-result-link" href="{{url}}">
+                <h4 class="ap-o-search-result-title">{{title}}</h4>
+                <p class="ap-o-search-result-description">{{description}}</p>
+              </a>
+            </div>
+            {{/articles}}
+          </div>
+        </div>
+        </template>
+        {% endraw %}
+      </amp-list>
+
+    </div>
+  </div>
+</div>

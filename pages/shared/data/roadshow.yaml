@@ -38,7 +38,7 @@ nextstop:
     day: 23
     month: sep
     year: 2019
-    link: #
+    link: https://events.withgoogle.com/amp-roadshow-tel-aviv/
   - title: istanbul
     coords: 64x19
     location: tba
@@ -46,7 +46,7 @@ nextstop:
     day: 26
     month: sep
     year: 2019
-    link: #
+    link: https://events.withgoogle.com/amp-roadshow-istanbul/
   - title: dubai
     coords: 70x23
     location: tba
@@ -54,7 +54,7 @@ nextstop:
     day: 30
     month: sep
     year: 2019
-    link: #
+    link: https://events.withgoogle.com/amp-roadshow-dubai/
   - title: karachi
     coords: 74x23
     location: tba

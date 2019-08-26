@@ -1,6 +1,12 @@
 entries:
 
 - title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2019/08/amp-script.gif"
+  headline: "amp-script: AMP ❤️ JS"
+  date: "August 21, 2019"
+  url: "https://blog.amp.dev/2019/08/21/amp-script-amp-heart-js/"
+
+- title: "Blog"
   image: ""
   headline: "Announcing AMP Toolbox 1.0"
   date: "August 8, 2019"
@@ -23,9 +29,3 @@ entries:
   headline: "AMP Roadshow: It&#8217;s Everywhere!"
   date: "August 5, 2019"
   url: "https://blog.amp.dev/2019/08/05/amp-roadshow-everywhere/"
-
-- title: "Blog"
-  image: ""
-  headline: "AMP Contributor Summit 2019 Applications Now Open"
-  date: "July 10, 2019"
-  url: "https://blog.amp.dev/2019/07/10/amp-contributor-summit-2019-applications-now-open/"
