@@ -9,21 +9,30 @@
           "groups": "default"
         }
       }
-    }
-{% if doc.pod_path == '/content/amp-dev/documentation/courses/teachers.md' %}
-    ,
-      "triggers": {
-        "button": {
-          "selector": "#get-courses",
-          "on": "click",
-          "vars": {
-            "event_name": "courses",
-            "event_category": "courses",
-            "event_action": "download"
-            }
+    },
+    "triggers": {
+      "searchButton": {
+        "selector": "#searchTriggerOpen",
+        "on": "click",
+        "vars": {
+          "event_name": "search",
+          "event_category": "search",
+          "event_action": "open"
         }
       }
-{% endif %}
+      {% if doc.pod_path == '/content/amp-dev/documentation/courses/teachers.md' %}
+      ,
+      "getCoursesButton": {
+        "selector": "#get-courses",
+        "on": "click",
+        "vars": {
+          "event_name": "courses",
+          "event_category": "courses",
+          "event_action": "download"
+          }
+      }
+      {% endif %}
+    }
   }
   </script>
 </amp-analytics>
