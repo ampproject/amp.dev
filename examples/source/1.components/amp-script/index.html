@@ -1,0 +1,77 @@
+<!--
+  An [amp-script](content/amp.dev/documentation/components/reference/amp-script.md) hello world example.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>amp-script</title>
+    <link rel="canonical" href="self.html" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <!--
+
+        ## Setup
+
+        First, you need to import the `amp-script` extension.
+      -->
+      <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+      <style amp-custom>
+        .amp-script-sample button {
+          background-color: #005AF0;
+          font-size: 16px;
+          font-weight: 700;
+          color: white;
+          border: none;
+          padding: 8px;
+          margin: 16px;
+        }
+      </style>
+
+      <!-- 
+        For inline scripts you need to generate a CSP header. Read more about this in the [component documentation](content/amp.dev/documentation/components/reference/amp-script.md)).
+      -->
+      <meta name="amp-script-src" content="sha384-tHJJ6ba4Oo1ocFdMe9v9zz9YrhMyy5Lvi4L_Fp-7sU-AlEHqctUbulcGepcA61YP">
+  </head>
+  <body>
+      <!-- 
+        ## Basic usage
+
+        An amp-script element can load a JavaScript file from a URL:
+      -->
+      <amp-script layout="container" src="<% hosts.platform %>/hello-world.js" class="amp-script-sample" >
+        <button>Click!</button>
+      </amp-script>
+
+      <!-- 
+        This is the script in [hello-world.js](hello-world.js):
+
+        ```js
+const button = document.querySelector('button');
+button.addEventListener('click', () => {
+  const h1 = document.createElement('h1');
+  h1.textContent = 'Hello World!';
+  document.body.appendChild(h1);
+});```
+
+        ## Inline Scripts
+
+        You can also declare scripts inline and reference them by `id`.
+      -->
+      <amp-script layout="container" script="hello-world" class="amp-script-sample">
+        <button>Click!</button>
+      </amp-script>
+
+      <!-- This is the inlined script. Note that the type needs to be `type=text/plain` and the `target=amp-script`: -->
+      <script id="hello-world" type="text/plain" target="amp-script">
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      const h1 = document.createElement('h1');
+      h1.textContent = 'Hello World 2!';
+      document.body.appendChild(h1);
+    });
+  </script>
+  </body>
+</html>
