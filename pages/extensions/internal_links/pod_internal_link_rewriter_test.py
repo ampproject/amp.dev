@@ -142,26 +142,48 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
                       '<a href="/page4.html">page4</a><br>' \
                       '<a href = "/test/folder_1/page1.html">page</a></p>', result)
 
+  def test_cache_should_not_(self):
+    # Ensure the cache does not
+    cache = ObjectCache()
+    content = '<a href="./page.md">page</a><br>'
+    link_map = {
+      '/content/test/test.md': '/en/test/test.html',
+      '/content/test/page.md': '/en/test/page.html',
+    }
+    doc = MockPod(link_map).get_doc('/content/test/test.md', 'en')
+    link_rewriter = PodInternalLinkRewriter(doc, cache, None);
+    result = link_rewriter.rewrite_pod_internal_links(content)
+    self.assertEquals('<a href="/en/test/page.html">page</a><br>', result)
+
+    link_map = {
+      '/content/test/test.md': '/de/test/test.html',
+      '/content/test/page.md': '/de/test/page.html',
+    }
+    doc = MockPod(link_map).get_doc('/content/test/test.md', 'de')
+    link_rewriter = PodInternalLinkRewriter(doc, cache, None);
+    result = link_rewriter.rewrite_pod_internal_links(content)
+    self.assertEquals('<a href="/de/test/page.html">page</a><br>', result)
+
 
 class MockPod:
 
   def __init__(self, link_map):
     self.link_map = link_map
 
-  def get_doc(self, path, locale=None):
+  def get_doc(self, path, locale='en'):
     site_path = self.link_map.get(path)
-    return MockDoc(self, path, site_path)
+    return MockDoc(self, path, site_path, locale)
 
 
 class MockDoc:
 
-  def __init__(self, pod, pod_path, site_path):
+  def __init__(self, pod, pod_path, site_path, locale):
     self.pod = pod
     self.pod_path = pod_path
     self.url = None
     if site_path:
       self.url = Url(site_path)
-    self.locale = None
+    self.locale = locale
 
   @property
   def exists(self):
