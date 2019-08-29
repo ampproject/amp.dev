@@ -54,4 +54,3 @@ class MockDoc:
     :type pod_path: str
     """
     self.pod_path = pod_path
-    self.collection_sub_path = pod_path[pod_path.rindex('/') + 1:]

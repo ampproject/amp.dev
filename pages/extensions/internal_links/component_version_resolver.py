@@ -1,7 +1,7 @@
 import re
 from grow.pods.pods import Pod
 
-COMPONENT_VERSION_PATTERN = re.compile('(amp-.+)-v(\d+)\.(\d+)', re.IGNORECASE)
+COMPONENT_VERSION_PATTERN = re.compile('.*/(amp-.+)-v(\d+)\.(\d+)', re.IGNORECASE)
 
 
 class ComponentDocInfo(object):
@@ -52,7 +52,7 @@ class ComponentVersionResolver(object):
     result = {}
     component_docs = self.pod.get_collection(components_path)
     for item in component_docs.list_docs():
-      match = COMPONENT_VERSION_PATTERN.match(item.collection_sub_path)
+      match = COMPONENT_VERSION_PATTERN.match(item.pod_path)
       if match:
         component = match.group(1)
         major_version = match.group(2)
