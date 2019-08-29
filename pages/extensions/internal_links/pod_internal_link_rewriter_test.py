@@ -21,7 +21,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     doc = MockPod(link_map).get_doc('/content/test/folder1/page.md')
     content = '<a href="../folder2/page2.md">test</a>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals('<a href="/test/folder_2/page2.html">test</a>', result)
@@ -34,7 +34,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     doc = MockPod(link_map).get_doc('/content/test/folder1/page.md')
     content = '<a href="/content/test/folder2/page2.md">test</a>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals('<a href="/test/folder_2/page2.html">test</a>', result)
@@ -47,7 +47,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     doc = MockPod(link_map).get_doc('/content/test/folder1/page.md')
     content = '<a href="../folder2/page2.md">test</a>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals(content, result)
@@ -61,7 +61,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     content = '<a href="../folder2/page2.md#test">test</a><br>' \
               '<a href="../folder2/page2.md#other">test2</a>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals(content, result)
@@ -73,7 +73,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     doc = MockPod(link_map).get_doc('/content/test/folder1/page.md')
     content = '<a href="http://amp.dev/test/folder2/page2.md">test</a>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals(content, result)
@@ -88,7 +88,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     content = '<a href="../folder2/page2.md#test">test</a><br>' \
               '<a href="../folder2/page2.md#other">test2</a>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals('<a href="/test/folder_2/page2.html#test">test</a><br>' \
@@ -102,7 +102,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     doc = MockPod(link_map).get_doc('/content/test/folder1/page.md')
     content = '<a href="../folder2/page2.md?format=ads">test</a>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals('<a href="/test/folder_2/page2.html?format=ads">test</a>', result)
@@ -115,7 +115,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     doc = MockPod(link_map).get_doc('/content/test/folder1/page.md')
     content = '<a href="../folder2/page2.md?format=ads#test">test</a>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals('<a href="/test/folder_2/page2.html?format=ads#test">test</a>', result)
@@ -134,7 +134,7 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
               '<a href="../page4.md">page4</a><br>' \
               '<a href = "./folder1/page.md">page</a></p>'
 
-    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache())
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
     result = link_rewriter.rewrite_pod_internal_links(content)
 
     self.assertEquals('<p><a  class="link" href="/test/folder_2/page2.html">test</a><br>' \
