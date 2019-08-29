@@ -56,50 +56,14 @@ author: kul3r4
     align-items: center;
   }
 
-  .product amp-img {
-      margin-right: var(--space-2);
+  .product amp-img, .product .image-placeholder {
+    margin-right: var(--space-2);
   }
 
-  /* Skeleton placeholder loading animation */
-  [placeholder] .product {
-    background:
-      linear-gradient(90deg, rgba(211, 211, 211, 0) 0, rgba(211, 211, 211, 0.8) 50%, rgba(211, 211, 211, 0) 100%),
-      linear-gradient(#cccccc 100%, transparent 0),
-      linear-gradient(#cccccc 100%, transparent 0),
-      linear-gradient(#cccccc 100%, transparent 0),
-      linear-gradient(#cccccc 100%, transparent 0);
-    background-size:
-      200px 100px,
-      150px 100px,
-      100px 10px,
-      100px 10px,
-      100px 10px;
-    background-position:
-      -150% 0, 0 0,
-      166px 16px,
-      166px 36px,
-      166px 56px;
-    background-repeat: no-repeat;
-    animation: loading 1.5s infinite;
-    -webkit-animation: loading 1.5s infinite;
-  }
-
-  @-webkit-keyframes loading {
-    to {
-      background-position: 350% 0, 0 0,
-        166px 16px,
-        166px 36px,
-        166px 56px;
-    }
-  }
-
-  @keyframes loading {
-    to {
-      background-position: 350% 0, 0 0,
-        166px 16px,
-        166px 36px,
-        166px 56px;
-    }
+  .product .image-placeholder {
+    width: 150px;
+    height: 100px;
+    background-color: #999;
   }
   </style>
 </head>
@@ -227,9 +191,9 @@ The template can also be specified using an ID of an existing `template` element
   </button>
   </div>
 
-  <!-- ## Using a placeholder animation -->
+  <!-- ## Using a placeholder -->
   <!--
-    You can use a custom placeholder like an animation to improve the user experience while the list is loading.
+    You can use a custom placeholder that looks similar to the rendered items to improve the user experience while the list is loading.
     We are using an endpoint which intentionally delays the response by 10 seconds.
   -->
   <amp-list id="amp-list-placeholder"
@@ -240,12 +204,18 @@ The template can also be specified using an ID of an existing `template` element
             src="/documentation/examples/api/slow-json-with-items/?delay=10000"
             binding="no">
     <div placeholder>
-      <div class="product"></div>
-      <div class="product"></div>
-      <div class="product"></div>
-      <div class="product"></div>
-      <div class="product"></div>
-      <div class="product"></div>
+      <div class="product">
+        <div class="image-placeholder"></div>
+        <div>Loading...</div>
+      </div>
+      <div class="product">
+        <div class="image-placeholder"></div>
+        <div>Loading...</div>
+      </div>
+      <div class="product">
+        <div class="image-placeholder"></div>
+        <div>Loading...</div>
+      </div>
     </div>
     <template type="amp-mustache">
         <div class="product">
