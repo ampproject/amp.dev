@@ -23,6 +23,7 @@ class PodInternalLinkRewriter(object):
     """
     self.doc = doc
     self.pod = doc.pod
+    self.locale = doc.locale
     self.link_cache = link_cache
     self.component_version_resolver = component_version_resolver
 
@@ -76,16 +77,17 @@ class PodInternalLinkRewriter(object):
       internal_path = os.path.abspath(os.path.join(
         PodInternalLinkRewriter.get_folder(self.doc.pod_path), internal_path))
 
-    result = self.link_cache.get(internal_path)
+    cache_key = '{}:{}'.format(self.locale, internal_path)
+    result = self.link_cache.get(cache_key)
     if not result:
-      target_doc = self.pod.get_doc(internal_path, self.doc.locale)
+      target_doc = self.pod.get_doc(internal_path, self.locale)
       if not target_doc.exists:
         result = self.get_latest_component_doc_link(internal_path)
         if not result:
           result = internal_link
       else:
         result = target_doc.url.path
-      self.link_cache.add(internal_path, result)
+      self.link_cache.add(cache_key, result)
 
     return result
 
@@ -95,9 +97,10 @@ class PodInternalLinkRewriter(object):
     :return: The link for the latest version if the path is a component doc
     """
     if self.component_version_resolver:
-      version_doc = self.component_version_resolver.\
+      version_path = self.component_version_resolver.\
         find_latest_for_component_with_no_version(absolute_component_path)
-      if version_doc:
+      if version_path:
+        version_doc = self.pod.get_doc(version_path, self.locale)
         return version_doc.url.path
     return None
 
