@@ -88,6 +88,8 @@ class SamplesBuilder {
    * @return {Promise<void>} Resolves when build is done
    */
   async build(watch) {
+    this._formatTransform = await formatTransform.getInstance();
+
     // Configure cache
     this._cache[STORY_EMBED_SNIPPET] = await readFileAsync(STORY_EMBED_SNIPPET);
     this._cache[ADS_EMBED_TEMPLATE] = (await readFileAsync(ADS_EMBED_TEMPLATE)).toString();
@@ -141,13 +143,15 @@ class SamplesBuilder {
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         try {
           this._log.await(`Building sample ${sample.relative} ...`);
-          const samples = [sample];
-          const { document: { metadata } } = await this._parseSample(sample);
-          const formats = metadata.transforms || [];
-          for (const format of formats) {
-            const transformed = this._transformSample(sample, format);
-            if (transformed) {
-              samples.push(transformed);
+          const samples = [];
+          if (sample.relative.indexOf('1.components/') === -1) {
+            samples.push(sample);
+          } else {
+            for (const format of this._formatTransform.getSupportedFormats()) {
+              const transformed = this._transformSample(sample, format);
+              if (transformed) {
+                samples.push(transformed);
+              }
             }
           }
           await Promise.all(samples.map(async (sample) => {
@@ -239,6 +243,8 @@ class SamplesBuilder {
       },
     }, sample.contents.toString());
 
+    parsedSample.document.title = parsedSample.document.title.replace(/\.([^.]+)$/, ' ($1)');
+
     // parsedSample.filePath is absolute but needs to be relative in order
     // to use it to build a URL to GitHub
     parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
@@ -292,12 +298,17 @@ class SamplesBuilder {
    * @return {Vinyl}
    */
   _transformSample(sample, format) {
-    if (!formatTransform.supportsFormat(format)) {
+    if (!this._formatTransform.supportsFormat(format)) {
       return null;
     }
     const transformed = sample.clone({contents: false});
-    transformed.extname = `.${format}.html`;
-    const contents = formatTransform.transform(transformed.contents, format);
+    if (format !== 'websites') {
+      transformed.extname = `.${format}.html`;
+    }
+    const contents = this._formatTransform.transform(transformed.contents, format);
+    if (!contents) {
+      return null;
+    }
     transformed.contents = Buffer.from(contents);
     return transformed;
   }

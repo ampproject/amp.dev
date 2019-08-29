@@ -1,8 +1,6 @@
 <!---
 
 author: sebastianbenz
-transforms:
-  - email
 
 --->
 <!--
@@ -185,9 +183,12 @@ transforms:
     <div>All selected option(s): <code [text]="allSelectedOptions.join(', ')">a</code></div>
   </div>
 
-  <!-- ## Forms -->
   <!--
-Inside a form, `amp-selector` behaves like a radio-button/checkbox group and submits the selected value(s) against the name of the amp-selector. Here we've styled an `amp-selector` to function like a radio list. Using `amp-selector` for this has the advantage that bindings using [`amp-bind`](/documentation/components/reference/amp-bind.html) are easier to implement.
+    ## Forms
+
+    Inside a form, `amp-selector` behaves like a radio-button/checkbox group and submits the selected value(s) against the name of the amp-selector. Here we've styled an `amp-selector` to function like a radio list. Using `amp-selector` for this has the advantage that bindings using [`amp-bind`](/documentation/components/reference/amp-bind.html) are easier to implement.
+
+    @formats(websites)
   -->
 <form action="#" method="get" target="_top">
   <amp-selector class="radio-selector" layout="container" name="my-selector">

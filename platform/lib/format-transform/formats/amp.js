@@ -14,10 +14,7 @@
  * limitations under the License.
  */
 
-const ampFormat = require('./amp');
-const amp4emailFormat = require('./amp4email');
-
 module.exports = {
-  websites: ampFormat,
-  email: amp4emailFormat,
+  validatorRuntime: null,
+  transforms: {},
 };

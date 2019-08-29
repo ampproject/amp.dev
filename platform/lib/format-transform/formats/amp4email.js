@@ -37,6 +37,9 @@ module.exports = {
     'amp-img[src], amp-anim[src], amp-list[src]': (el) => {
       el.attr('src', config.absoluteUrl(host, el.attr('src')));
     },
+    'amp-accordion[disable-session-states]': (el) => {
+      el.removeAttr('disable-session-states');
+    },
     'head > style[amp-boilerplate]':
       '<style amp4email-boilerplate>body{visibility:hidden}</style>',
 
