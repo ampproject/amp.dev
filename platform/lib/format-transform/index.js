@@ -94,8 +94,7 @@ class FormatTransform {
   }
 
   applyCommentFormatFilters_($, target) {
-    const regex = new RegExp('');
-    const process = node => {
+    const process = (node) => {
       if (node.type === 'comment') {
         this.parseCommentNode_(node, target);
       } else if (node.children) {
@@ -136,13 +135,16 @@ class FormatTransform {
     if (!match) {
       return null;
     }
-    return new Set(match[1].split(',').map(e => e.trim()));
+    return new Set(match[1].split(',').map((e) => e.trim()));
   }
 }
 
+const instance = amphtmlValidator.getInstance().then(
+    (validator) => new FormatTransform(formats, validator)
+);
+
 async function getInstance() {
-  const validator = await amphtmlValidator.getInstance();
-  return new FormatTransform(formats, validator);
+  return instance;
 }
 
-module.exports = { getInstance };
+module.exports = {getInstance};

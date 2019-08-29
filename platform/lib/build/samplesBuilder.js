@@ -143,8 +143,16 @@ class SamplesBuilder {
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         try {
           this._log.await(`Building sample ${sample.relative} ...`);
+          const { document } = await this._parseSample(sample);
+
+          const isWebSample = String(document.formats()) === 'websites';
+          const shouldTransform = isWebSample
+              && !document.metadata.hideCode
+              && !document.metadata.disablePlayground
+              && !document.metadata.hidePreview;
+
           const samples = [];
-          if (sample.relative.indexOf('1.components/') === -1) {
+          if (!shouldTransform) {
             samples.push(sample);
           } else {
             for (const format of this._formatTransform.getSupportedFormats()) {
@@ -243,6 +251,8 @@ class SamplesBuilder {
       },
     }, sample.contents.toString());
 
+    // Transformed sample files end with ".<format>", e.g. "amp-list.email".
+    // Change this into " (format)" instead, e.g. "amp-list (email)".
     parsedSample.document.title = parsedSample.document.title.replace(/\.([^.]+)$/, ' ($1)');
 
     // parsedSample.filePath is absolute but needs to be relative in order
