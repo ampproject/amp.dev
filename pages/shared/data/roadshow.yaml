@@ -33,36 +33,36 @@ nextstop:
     link: https://events.withgoogle.com/amp-roadshow-auckland/
   - title: tel aviv
     coords: 66x22
-    location: tba
-    time: 09:00–18:00
+    location: Google Tel Aviv
+    time: 09:30–18:00
     day: 23
     month: sep
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-tel-aviv/
   - title: istanbul
     coords: 64x19
-    location: tba
-    time: 09:00–18:00
+    location: Feriye
+    time: 09:30–18:00
     day: 26
     month: sep
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-istanbul/
   - title: dubai
     coords: 70x23
-    location: tba
-    time: 09:00–18:00
+    location: Address Hotel
+    time: 09:30–17:00
     day: 30
     month: sep
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-dubai/
   - title: karachi
     coords: 74x23
-    location: tba
-    time: 09:00–18:00
+    location: Karachi Marriott
+    time: 10:00–17:30
     day: 3
     month: oct
     year: 2019
-    link: #
+    link: https://events.withgoogle.com/amp-roadshow-karachi/
 
 past:
   - title: BERLIN
