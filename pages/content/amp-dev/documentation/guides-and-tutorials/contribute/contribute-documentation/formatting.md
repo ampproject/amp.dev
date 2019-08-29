@@ -103,7 +103,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 For a list of shortcodes and their uses, please view [documentation.md on GitHub](https://github.com/ampproject/amp.dev/blob/future/contributing/documentation.md#shortcodes).
 
 ## Images
-amp.dev is built with AMP! Therefore our images must match the [`amp-img`](../../../../documentation/components/reference/amp-img.md?format=websites) criteria. The build process uses the following syntact to convert images to proper `amp-img` format. 
+amp.dev is built with AMP! Therefore our images must match the [`amp-img`](../../../../documentation/components/reference/amp-img.md) criteria. The build process uses the following syntact to convert images to proper `amp-img` format. 
 
 <div class="ap-m-code-snippet">
 <pre>
@@ -235,8 +235,10 @@ Use the `preview` attribute to define how the preview is generated:
 
 - **orientation**: `default: landscape|portrait`
 
-If custom elements are needed, specify them in the imports attribute as a comma separated list
+If custom elements are needed, specify them in the `imports` attribute as a comma separated list
 with the name of the component followed by a colon and the version.
+If your code uses [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites)
+specify the dependency in the `template` attribute instead.
 
 For email content with resource links use the placeholder <code>&#123;&#123;server_for_email}}</code> in the source.
 
@@ -261,46 +263,38 @@ For email content with resource links use the placeholder <code>&#123;&#123;serv
 </div>
 
 ## Links
-Guides and tutorials are filterable by AMP format, such as AMP websites or AMP stories. Readers who filter their content often want to keep it this way. When linking out to a different guide or tutorial, use the following structure:
 
-<div class="ap-m-code-snippet">
-<pre>
- &lsqb;link](&#123;&#123;g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path&#125;&#125;?format=websites)
-</pre>
-</div>
+You can link to other pages with standard markdown link syntax:
+```md
+ [link](../../../courses/beginning-course/index.md)
+```
 
-The structure can be broken down into:
-
-<div class="ap-m-code-snippet">
-<pre>
-//Explains it is a page that exists in the docs repository. 
-
-(&#123;&#123;g.doc
-
-// When linking to another guide and tutorial this will be the filepath, 
-// fill in the rest with the proper document route. 
-
-&#47;content&#47;amp-dev&#47;documentation&#47;guides-and-tutorials
-
-//If linking to an example.
-
-&#47;content&#47;amp-dev&#47;documentation&#47;examples&#47;
-
-//Keeps the document on the chosen language, if available. 
-
-locale=doc.locale
-
-//Explains the page exists in the docs repository.
-
-)url.path&#125;&#125;
+When linking to another page on amp.dev the reference will be a relative filepath to the target file.
 
 
-//Define the filtered format. 
-//Default to websites if your document is relevant to websites and another format. 
+### AMP format filter
+Component documentation, guides and tutorials and examples are filterable by AMP format,
+such as AMP websites or AMP stories.
+When linking out to such a page you should explicitly specify a format, which is supported by the target,
+by appending the format parameter to the link: 
 
-?format=websites
-</pre>
-</div>
+```md
+ [link](../../learn/amp-actions-and-events.md?format=websites)
+```
+
+Only when you are sure the target supports **all** the formats that your page does you can omit the parameter.
+
+
+### Component references
+A link to a component reference documentation will automatically point to the latest version
+if your link omits the version part.
+When you explicitly want to point to a version specify the full name:
+
+```md
+ [latest version](../../../components/reference/amp-carousel.md?format=websites)
+ [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
+``` 
+
 
 ## Document Structure 
 ### Titles, headings and subheadings
