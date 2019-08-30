@@ -1,6 +1,8 @@
 ---
 $title: Custom element dependency
 $order: 5
+$sitemap:
+  enabled: False
 ---
 
 Start
