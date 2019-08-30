@@ -1,6 +1,8 @@
 ---
 $title: Example with style
 $order: 7
+$sitemap:
+  enabled: False
 formats:
  - websites
  - email

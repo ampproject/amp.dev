@@ -1,6 +1,8 @@
 ---
 $title: Full document example
 $order: 8
+$sitemap:
+  enabled: False
 formats:
  - websites
  - email

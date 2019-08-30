@@ -1,6 +1,8 @@
 ---
 $title: Inline preview
 $order: 2
+$sitemap:
+  enabled: False
 ---
 
 Start

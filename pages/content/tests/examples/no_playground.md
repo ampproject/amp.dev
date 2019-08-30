@@ -1,6 +1,8 @@
 ---
 $title: No playground
 $order: 3
+$sitemap:
+  enabled: False
 ---
 
 Start

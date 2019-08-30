@@ -1,11 +1,13 @@
 ---
 $title: Template dependency
 $order: 6
+$sitemap:
+  enabled: False
 ---
 
 Start
 
-[example 
+[example
      preview="inline" playground="true"
      imports="amp-date-display:0.1"
      template="amp-mustache:0.2"]
@@ -21,11 +23,3 @@ Start
 [/example]
 
 End
-
-
-
-
-
-
-
-

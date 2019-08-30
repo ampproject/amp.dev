@@ -1,12 +1,14 @@
 ---
 $title: Multiple examples
 $order: 9
+$sitemap:
+  enabled: False
 ---
 
 First
 
-[example 
-     preview="inline" 
+[example
+     preview="inline"
      playground="true"
      imports="amp-accordion:0.1"]
 ```html
