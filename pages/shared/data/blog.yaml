@@ -1,6 +1,18 @@
 entries:
 
 - title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2019/08/cropped-story_analytics.png"
+  headline: "Analytics for your AMP Stories"
+  date: "August 28, 2019"
+  url: "https://blog.amp.dev/2019/08/28/analytics-for-your-amp-stories/"
+
+- title: "Blog"
+  image: ""
+  headline: "Making Your Wait a Little More Great: New Loading Indicators in AMP"
+  date: "August 26, 2019"
+  url: "https://blog.amp.dev/2019/08/26/making-your-wait-a-little-more-great-new-loading-indicators-in-amp/"
+
+- title: "Blog"
   image: "https://blog.amp.dev/wp-content/uploads/2019/08/amp-script.gif"
   headline: "amp-script: AMP ❤️ JS"
   date: "August 21, 2019"
@@ -17,15 +29,3 @@ entries:
   headline: "Faster AMP on the origin: AMP + SSR = ⚡"
   date: "August 7, 2019"
   url: "https://blog.amp.dev/2019/08/07/faster-amp-on-the-origin-amp-ssr/"
-
-- title: "Blog"
-  image: ""
-  headline: "AMP Advisory Committee midterm election"
-  date: "August 5, 2019"
-  url: "https://blog.amp.dev/2019/08/05/amp-advisory-committee-midterm-election/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/08/cropped-shanghai-roadshow.jpg"
-  headline: "AMP Roadshow: It&#8217;s Everywhere!"
-  date: "August 5, 2019"
-  url: "https://blog.amp.dev/2019/08/05/amp-roadshow-everywhere/"
