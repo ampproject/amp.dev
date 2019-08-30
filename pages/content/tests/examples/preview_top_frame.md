@@ -6,8 +6,8 @@ formats:
  - email
  - stories
  - ads
- $sitemap:
-   enabled: False
+$sitemap:
+ enabled: False
 ---
 
 Start
