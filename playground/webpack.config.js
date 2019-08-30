@@ -95,8 +95,10 @@ module.exports = (env, argv) => {
             {
               loader: 'sass-loader',
               options: {
+                sassOptions: {
+                  includePaths: [path.join(__dirname, '../frontend/scss')],
+                },
                 sourceMap: true,
-                includePaths: [path.join(__dirname, '../frontend/scss')],
               },
             },
           ],
