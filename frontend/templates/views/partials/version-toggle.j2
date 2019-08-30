@@ -4,7 +4,7 @@
 {{title}}
 <div class="ap--versions">
   {% for v in versions %}
-    <a{% if v !== version %} href="../{{title}}{% if v !== versions[0] %}-v{{v}}{% endif %}.html"{% endif %}>{{v}}</a>
+    <a{% if v !== version %} href="../{{title}}-v{{v}}.md"{% endif %}>{{v}}</a>
   {% endfor %}
 </div>
 </h1>
