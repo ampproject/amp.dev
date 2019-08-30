@@ -179,8 +179,8 @@ class ComponentReferenceImporter {
   _saveDocument(extensionName, document, version) {
     // Set the documents title
     document.title = extensionName;
-    const documentPath = `${DESTINATION_BASE_PATH}/${extensionName}-v${version}.md`;
-
+    const versionString = parseFloat(version).toFixed(1);
+    const documentPath = `${DESTINATION_BASE_PATH}/${extensionName}-v${versionString}.md`;
     return document.save(documentPath);
   }
 
