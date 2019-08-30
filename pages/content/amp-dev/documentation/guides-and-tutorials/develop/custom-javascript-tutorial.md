@@ -24,7 +24,7 @@ Use the following commands to download and install the starter code:
 
 ```
 $ git clone git@github.com:CrystalOnScript/vanilla-js-amp-script.git
-$ cd starter-code
+$ cd vanilla-js-amp-script/starter_code
 $ npm install
 ```
 Or download the [starter code here](https://github.com/CrystalOnScript/vanilla-js-amp-script/tree/master/starter_code). 
