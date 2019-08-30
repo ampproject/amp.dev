@@ -31,7 +31,7 @@ describe('formatTransform', () => {
   it('makes no changes when target is websites', () => {
     const input = '<html ⚡><head></head><body></body></html>';
     expect(formatTransform.transform(input, 'websites')).toEqual({
-      transformedContent: input
+      transformedContent: input,
     });
   });
 
@@ -59,7 +59,7 @@ describe('formatTransform', () => {
     expect(s(transformedContent)).toBe(want);
     expect(validationResult).toEqual({
       status: 'PASS',
-      errors: []
+      errors: [],
     });
   });
 
@@ -123,8 +123,8 @@ describe('formatTransform', () => {
   });
 
   it('checks if result is valid AMP', () => {
-    const input = `<!doctype html><html ⚡><head></head><body></body></html>`;
-    const want = s(`<!doctype html><html ⚡4email><head></head><body></body></html>`);
+    const input = '<!doctype html><html ⚡><head></head><body></body></html>';
+    const want = '<!doctype html><html ⚡4email><head></head><body></body></html>';
     const {transformedContent, validationResult} = formatTransform.transform(input, 'email');
     expect(s(transformedContent)).toBe(want);
     expect(validationResult.status).toBe('FAIL');
@@ -132,7 +132,7 @@ describe('formatTransform', () => {
 
   it('throws when format is not supported', () => {
     expect(() => {
-      formatTransform.transform('<html ⚡></html>', 'foobar')
+      formatTransform.transform('<html ⚡></html>', 'foobar');
     }).toThrow();
   });
 });
