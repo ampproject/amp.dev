@@ -59,14 +59,13 @@ class FormatTransform {
     }
     const content = htmlContent($);
 
+    const result = {transformedContent: content};
     if (validatorRuntime) {
       const fixedContent = this.prepareForValidator_(content);
       const validation = this.validator.validateString(fixedContent, validatorRuntime);
-      if (validation.status !== 'PASS') {
-        return null;
-      }
+      result.validationResult = validation;
     }
-    return content;
+    return result;
   }
 
   prepareForValidator_(content) {

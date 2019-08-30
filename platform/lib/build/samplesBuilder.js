@@ -147,6 +147,7 @@ class SamplesBuilder {
 
           const isWebSample = String(document.formats()) === 'websites';
           const shouldTransform = isWebSample
+              && !document.metadata.disableTransform
               && !document.metadata.hideCode
               && !document.metadata.disablePlayground
               && !document.metadata.hidePreview;
@@ -315,11 +316,11 @@ class SamplesBuilder {
     if (format !== 'websites') {
       transformed.extname = `.${format}.html`;
     }
-    const contents = this._formatTransform.transform(transformed.contents, format);
-    if (!contents) {
+    const {transformedContent, validationResult} = this._formatTransform.transform(transformed.contents, format);
+    if (validationResult && validationResult.status !== 'PASS') {
       return null;
     }
-    transformed.contents = Buffer.from(contents);
+    transformed.contents = Buffer.from(transformedContent);
     return transformed;
   }
 

@@ -30,7 +30,9 @@ describe('formatTransform', () => {
 
   it('makes no changes when target is websites', () => {
     const input = '<html ⚡><head></head><body></body></html>';
-    expect(formatTransform.transform(input, 'websites')).toBe(input);
+    expect(formatTransform.transform(input, 'websites')).toEqual({
+      transformedContent: input
+    });
   });
 
   it('changes html tag and cleans up head', () => {
@@ -53,27 +55,31 @@ describe('formatTransform', () => {
 </head>
 <body></body>
 </html>`);
-    const output = s(formatTransform.transform(input, 'email'));
-    expect(output).toBe(want);
+    const {transformedContent, validationResult} = formatTransform.transform(input, 'email');
+    expect(s(transformedContent)).toBe(want);
+    expect(validationResult).toEqual({
+      status: 'PASS',
+      errors: []
+    });
   });
 
   it('makes URLs absolute', () => {
-    const input = s(`<!doctype html><html ⚡><head><meta charset="utf-8"><script async src="https://cdn.ampproject.org/v0.js"></script><script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script><style amp-boilerplate></style></head>
+    const input = s(`<!doctype html><html ⚡4email><head></head>
 <body>
 <a href="/something">Link</a>
 <amp-img src="/something" width="1" height="1"></amp-img>
 <form action-xhr="/something"></form>
 </body>
 </html>`);
-    const want = s(`<!doctype html><html ⚡4email><head><meta charset="utf-8"><script async src="https://cdn.ampproject.org/v0.js"></script><script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script><style amp4email-boilerplate>body{visibility:hidden}</style></head>
+    const want = s(`<!doctype html><html ⚡4email><head></head>
 <body>
 <a href="${PLATFORM_HOST}/something">Link</a>
 <amp-img src="${PLATFORM_HOST}/something" width="1" height="1"></amp-img>
 <form action-xhr="${PLATFORM_HOST}/something"></form>
 </body>
 </html>`);
-    const output = s(formatTransform.transform(input, 'email'));
-    expect(output).toBe(want);
+    const {transformedContent} = formatTransform.transform(input, 'email');
+    expect(s(transformedContent)).toBe(want);
   });
 
   it('removes @formats', () => {
@@ -88,12 +94,12 @@ describe('formatTransform', () => {
 </body>
 </html>`);
 
-    const output = s(formatTransform.transform(input, 'websites'));
-    expect(output).toBe(want);
+    const {transformedContent} = formatTransform.transform(input, 'websites');
+    expect(s(transformedContent)).toBe(want);
   });
 
   it('applies @formats filter', () => {
-    const input = s(`<!doctype html><html ⚡><head><meta charset="utf-8"><script async src="https://cdn.ampproject.org/v0.js"></script><style amp-boilerplate></style></head>
+    const input = s(`<!doctype html><html ⚡><head></head>
 <body>
 <!-- comment @formats(websites) -->
 <div>foo</div>
@@ -103,7 +109,7 @@ describe('formatTransform', () => {
 <div>baz</div>
 </body>
 </html>`);
-    const want = s(`<!doctype html><html ⚡4email><head><meta charset="utf-8"><script async src="https://cdn.ampproject.org/v0.js"></script><style amp4email-boilerplate>body{visibility:hidden}</style></head>
+    const want = s(`<!doctype html><html ⚡4email><head></head>
 <body>
 <!-- comment -->
 <div>bar</div>
@@ -112,13 +118,16 @@ describe('formatTransform', () => {
 </body>
 </html>`);
 
-    const output = s(formatTransform.transform(input, 'email'));
-    expect(output).toBe(want);
+    const {transformedContent} = formatTransform.transform(input, 'email');
+    expect(s(transformedContent)).toBe(want);
   });
 
-  it('returns null when result is not valid AMP', () => {
+  it('checks if result is valid AMP', () => {
     const input = `<!doctype html><html ⚡><head></head><body></body></html>`;
-    expect(formatTransform.transform(input, 'email')).toBe(null);
+    const want = s(`<!doctype html><html ⚡4email><head></head><body></body></html>`);
+    const {transformedContent, validationResult} = formatTransform.transform(input, 'email');
+    expect(s(transformedContent)).toBe(want);
+    expect(validationResult.status).toBe('FAIL');
   });
 
   it('throws when format is not supported', () => {
