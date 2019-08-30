@@ -80,7 +80,7 @@ button.addEventListener('click', () => {
     });
   </script>
 
-  <!-- Note: Good to know: calling `document.body.appendChild(...)` will add an element to the `amp-script` element and not to the actual `body`. -->
+  <!-- Note: `document.body` refers to the `amp-script` tag and not the actual `body` tag. `document.body.appendChild(...)` actually adds an element inside the `amp-script` element. -->
 
   <!--
       ## Using the fetch API
