@@ -24,7 +24,7 @@ Use the following commands to download and install the starter code:
 
 ```
 $ git clone git@github.com:CrystalOnScript/vanilla-js-amp-script.git
-$ cd starter-code
+$ cd vanilla-js-amp-script/starter_code
 $ npm install
 ```
 Or download the [starter code here](https://github.com/CrystalOnScript/vanilla-js-amp-script/tree/master/starter_code). 
@@ -76,7 +76,7 @@ Our functionality relays and changes the DOM of our `form`. Place the `<form>` e
 **Note**: Currently, the `src` attribute must point to an absolute URL.
 [/tip]
 
-The `src` attribute points to the filepath `http://localhost:8080/js/script.js`. Create a directory titled `js` at the root of your repositior and add the `script.js` file. 
+The `src` attribute points to the filepath `http://localhost:8080/js/script.js`. Create a directory titled `js` in the `public` directory and add the `script.js` file. 
 
 
 # Inject custom script

@@ -80,10 +80,11 @@ class ComponentReferenceImporter {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
         documents.forEach((doc) => {
-          // TODO: importUrl
+          // IMPORTANT: first rewrite URLs
+          this._rewriteRelativePaths(extension.path, doc.document);
+          // then set versions to avoid re-writing the relative version toggle links
           this._setMetadata(
               doc.tagName || extension.name, doc.document, doc.version, versions);
-          this._rewriteRelativePaths(extension.path, doc.document);
           savedDocuments.push(
               this._saveDocument(doc.tagName || extension.name, doc.document, doc.version));
         });
@@ -180,7 +181,6 @@ class ComponentReferenceImporter {
     // Set the documents title
     document.title = extensionName;
     const documentPath = `${DESTINATION_BASE_PATH}/${extensionName}-v${version}.md`;
-
     return document.save(documentPath);
   }
 
@@ -228,7 +228,7 @@ class ComponentReferenceImporter {
 
     const highestVersion = (files
         .filter((file) => !isNaN(parseFloat(file.name)))
-        .map((file) => parseFloat(file.name))
+        .map((file) => this.parseVersionString_(file.name))
         .sort()
         .reverse())[0] || DEFAULT_VERSION;
 
@@ -253,7 +253,7 @@ class ComponentReferenceImporter {
           documents.push({
             document: await this.githubImporter_
                 .fetchDocument(documentPath, DEFAULT_REPOSITORY, master),
-            version: versionMatch ? parseFloat(versionMatch[1]) : highestVersion,
+            version: versionMatch ? this.parseVersionString_(versionMatch[1]) : highestVersion,
             tagName: tagName,
           });
         }
@@ -267,6 +267,10 @@ class ComponentReferenceImporter {
     }
 
     return documents;
+  }
+
+  parseVersionString_(string) {
+    return parseFloat(string).toFixed(1);
   }
 }
 

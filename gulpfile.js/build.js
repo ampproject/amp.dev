@@ -240,7 +240,6 @@ function importComponents() {
  */
 function buildPrepare(done) {
   return gulp.series(
-      lint.lintNode,
       // Build playground and boilerplate that early in the flow as they are
       // fairly quick to build and would be annoying to eventually fail downstream
       gulp.parallel(
@@ -251,6 +250,8 @@ function buildPrepare(done) {
           importAll,
           zipTemplates
       ),
+      // run reference checker after import
+      lint.lintAll,
       // TODO: Fix working but malformatted references before reenabling
       // test.lintGrow,
       // eslint-disable-next-line prefer-arrow-callback

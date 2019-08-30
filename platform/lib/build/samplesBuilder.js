@@ -638,6 +638,9 @@ class SamplesBuilder {
         '$localization': {
           'path': `/{locale}${this._getPreviewRoute(sample)}`,
         },
+        '$sitemap': {
+          'enabled': false
+        },
         'formats': parsedSample.document.formats(),
         'source': this._getSourceRoute(sample),
         'embed': this._getEmbedRoute(sample),
