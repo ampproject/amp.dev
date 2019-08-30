@@ -91,7 +91,9 @@
       <div class="ap-m-teaser-content">
         <div class="ap-m-teaser-content-text">
           <code><span>{{ teaser_doc.title }}</span></code>
+          {% if teaser_doc.teaser %}
           <p>{{ teaser_doc.teaser.text }}</p>
+          {% endif %}
         </div>
       </div>
     </div>
