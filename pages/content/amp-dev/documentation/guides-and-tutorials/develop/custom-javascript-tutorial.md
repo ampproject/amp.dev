@@ -76,7 +76,7 @@ Our functionality relays and changes the DOM of our `form`. Place the `<form>` e
 **Note**: Currently, the `src` attribute must point to an absolute URL.
 [/tip]
 
-The `src` attribute points to the filepath `http://localhost:8080/js/script.js`. Create a directory titled `js` at the root of your repositior and add the `script.js` file. 
+The `src` attribute points to the filepath `http://localhost:8080/js/script.js`. Create a directory titled `js` in the `public` directory and add the `script.js` file. 
 
 
 # Inject custom script
