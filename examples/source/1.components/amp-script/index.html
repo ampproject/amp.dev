@@ -19,6 +19,9 @@
       -->
       <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
       <style amp-custom>
+        .amp-script-sample {
+          padding: 8px;
+        }
         .amp-script-sample button {
           background-color: #005AF0;
           font-size: 16px;
@@ -26,14 +29,14 @@
           color: white;
           border: none;
           padding: 8px;
-          margin: 16px;
+          margin: 8px 0;
         }
       </style>
 
       <!-- 
         For inline scripts you need to generate a CSP header. Read more about this in the [component documentation](content/amp.dev/documentation/components/reference/amp-script.md)).
       -->
-      <meta name="amp-script-src" content="sha384-tHJJ6ba4Oo1ocFdMe9v9zz9YrhMyy5Lvi4L_Fp-7sU-AlEHqctUbulcGepcA61YP">
+      <meta name="amp-script-src" content="sha384-tHJJ6ba4Oo1ocFdMe9v9zz9YrhMyy5Lvi4L_Fp-7sU-AlEHqctUbulcGepcA61YP sha384-qdOC5phdehFCRNX9le_4uj1SwPZ1SAKqB0sHVjgUkuwlltiDmpIpJF48J04RtKDO">
   </head>
   <body>
       <!-- 
@@ -73,5 +76,39 @@ button.addEventListener('click', () => {
       document.body.appendChild(h1);
     });
   </script>
+
+  <!--
+      ## Detecting Android vs iOS in AMP
+
+      `amp-script` is great to implement functionality not offered by AMP out-of-the-box. Here is a sample that checks if the current device is using Android or iOS.
+  -->
+  <amp-script layout="container" script="user-agent-script" class="amp-script-sample">
+    <div>Your user-agent is: <span id="user-agent">other</span></div>
+  </amp-script>
+
+  <!-- The script implementation retrieves the mobile operating system from the user agent string. -->
+  <script id="user-agent-script" type="text/plain" target="amp-script">
+    function getMobileOperatingSystem() {
+        const userAgent = navigator.userAgent;
+        if (/android/i.test(userAgent)) {
+          return "Android";
+        }
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+        }
+
+        return "other";
+      }
+
+      const span = document.querySelector('#user-agent');
+      span.textContent = getMobileOperatingSystem();
+
+      const pre = document.createElement('pre');
+      pre.textContent = navigator.userAgent;
+      span.appendChild(pre);
+
+  </script>
+
   </body>
 </html>
