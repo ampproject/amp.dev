@@ -27,9 +27,9 @@ We welcome contributions to amp.dev.
     $ nvm install --lts
     ```
 
-1.  Install [Grow](http://grow.io) the static site generator used to build amp.dev:
+1.  Install [Grow](http://grow.io) the static site generator used to build amp.dev. Do so by using `pip` instead of the installer. This allows importing from the `grow` package in Python later on:
     ```sh
-    $ curl https://install.grow.io | bash
+    $ pip install grow
     ```
 
 1.  Install the dependencies for the project:

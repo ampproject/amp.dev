@@ -13,30 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 'use strict';
 
 const express = require('express');
-const utils = require('@lib/utils');
-const {setMaxAge} = require('@lib/utils/cacheHelpers');
-const nunjucks = require('nunjucks');
+const path = require('path');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
-
-const filePath = utils.project.absolute('/examples/static/samples/files/get-example.html');
-
-examples.get('/g/timestamp', (request, response) => {
-  setMaxAge(response, 0);
-
-  const value = request.query.value;
-  const timestamp = new Date();
-  const responseData = `${timestamp}: '${value}'`;
-
-  response.send(nunjucks.render(filePath, {responseData}));
-});
-
-examples.get('/error', (request, response) => {
-  response.status(500).send('Internal Server Error');
-});
+examples.use(express.static(path.join(__dirname, 'static')));
 
 module.exports = examples;

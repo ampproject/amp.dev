@@ -124,7 +124,7 @@ class CssTransformer {
 
     // Rewrite the selectors inside the CSS
     const css = style.children[0].data;
-    rcs.fillLibraries(css, {prefix: '-'});
+    rcs.fillLibraries(css, {prefix: '-', ignoreCssVariables: true});
     style.children[0].data = rcs.replace.css(css);
 
     // Rewrite the selectors on the actual elements
