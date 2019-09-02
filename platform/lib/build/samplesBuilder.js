@@ -253,8 +253,8 @@ class SamplesBuilder {
     }, sample.contents.toString());
 
     // Transformed sample files end with ".<format>", e.g. "amp-list.email".
-    // Change this into " (format)" instead, e.g. "amp-list (email)".
-    parsedSample.document.title = parsedSample.document.title.replace(/\.([^.]+)$/, ' ($1)');
+    // This removes that suffix to have the same title as the original.
+    parsedSample.document.title = parsedSample.document.title.replace(/\.[a-z]+$/, '');
 
     // parsedSample.filePath is absolute but needs to be relative in order
     // to use it to build a URL to GitHub

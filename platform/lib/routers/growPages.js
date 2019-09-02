@@ -185,8 +185,22 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     res.redirect(301, url.toString());
     return;
   }
+  if (url.pathname.match(/\.[a-z]+\/$/)) {
+    url.pathname = url.pathname.replace(/\.[a-z]+\/$/, '/');
+    res.redirect(301, url.toString());
+    return;
+  }
 
-  const template = await loadTemplate(url.pathname);
+  let template;
+  if (url.searchParams.has('format')) {
+    const format = url.searchParams.get('format');
+    if (format !== 'websites') {
+      const pathname = url.pathname.replace(/\/$/, `.${format}/`);
+      template = await loadTemplate(pathname);
+    }
+  }
+
+  template = template || await loadTemplate(url.pathname);
   if (!template) {
     next();
     return;
