@@ -48,7 +48,13 @@ The converted AMP Cache URL consists of the following parts:
 
 It is OK for URLs to include parameters in the query string, simply include these in the AMP Cache URL as well.
 
-Example: [https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/g/timestamp?value=Hello%20World](https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/g/timestamp?value=Hello%20World).
+Example: [https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/query?value=Hello%20World](https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/query?value=Hello%20World).
+
+## Cache updates
+
+The AMP Cache uses a [one-behind caching model](https://developers.google.com/amp/cache/overview#google-amp-cache-updates) which can be controlled by the [`max-age` cache directive](https://developer.mozilla.org/de/docs/Web/HTTP/Headers/Cache-Control). You can test the behavior with this sample page, which will prints the current date at serving time:
+
+Max-age 15s: [https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/query?maxage=15](https://amp-dev.cdn.ampproject.org/c/s/amp.dev/documentation/examples/api/query?maxage=15).
 
 ## Redirect & Error Handling
 

@@ -17,13 +17,43 @@
 
 const express = require('express');
 const URL = require('url').URL;
-const {setImmutable} = require('@lib/utils/cacheHelpers');
+const {setImmutable, setMaxAge} = require('@lib/utils/cacheHelpers');
+
+const STYLE = `
+    <style amp-custom>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, 
+                   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    main {
+      padding: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    main * + * {
+        margin-top: 1rem;
+    }
+    pre {
+      padding: 1rem;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      background: #f2f2f2;
+    }
+    </style>
+`;
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 
+examples.use((request, response, next) => {
+  let maxAge = parseInt(request.query.maxage, 10);
+  if (isNaN(maxAge)) {
+    maxAge = 0;
+  }
+  setMaxAge(response, maxAge);
+  return next();
+});
+
 examples.get('/query', (request, response) => {
-  setImmutable(response);
   const queryString = JSON.stringify(request.query, null, 2);
   /* eslint-disable max-len */
   response.send(`<!doctype html>
@@ -33,13 +63,17 @@ examples.get('/query', (request, response) => {
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
- 
+    ${STYLE}
     <link rel="canonical" href="${request.originalUrl}">
     <title>AMP Cache Query Demo</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <pre>${queryString}</pre>
+    <main>
+      <h1>Hello World!</h1>
+      <p>Query parameters:</p>
+      <pre>${queryString}</pre>
+      <small>This document has been generated at: <date>${new Date()}</date></small>
+    </main>
   </body>
 </html>
 `);
@@ -55,9 +89,12 @@ examples.get('/invalid-amp', (request, response) => {
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>Invalid AMP</title>
+    ${STYLE}
   </head>
   <body>
+    <main>
     <h1>This page is not valid AMP</h1>
+    </main>
   </body>
 </html>
 `);
