@@ -153,7 +153,7 @@ class Platform {
     // handle errors
     this.server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
       if (err) {
-        console.log(err);
+        console.error('[ERROR]', err);
         res.status(500).sendFile('500.html', {root: pagePath()});
       }
     });
