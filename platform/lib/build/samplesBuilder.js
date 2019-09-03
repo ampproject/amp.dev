@@ -253,8 +253,11 @@ class SamplesBuilder {
     }, sample.contents.toString());
 
     // Transformed sample files end with ".<format>", e.g. "amp-list.email".
-    // This removes that suffix to have the same title as the original.
-    parsedSample.document.title = parsedSample.document.title.replace(/\.[a-z]+$/, '');
+    if (parsedSample.document.title.match(/\.[a-z]+$/)) {
+      parsedSample.isTransformed = true;
+      // Strip the ".<format>" suffix to have the same title as the original.
+      parsedSample.document.title = parsedSample.document.title.replace(/\.[a-z]+$/, '');
+    }
 
     // parsedSample.filePath is absolute but needs to be relative in order
     // to use it to build a URL to GitHub
@@ -516,6 +519,11 @@ class SamplesBuilder {
     const data = manual.clone();
     data.contents = Buffer.from(JSON.stringify(parsedSample));
     data.extname = '.json';
+
+    // TODO: remove this when we add support for transformed samples in docs.
+    if (parsedSample.isTransformed) {
+      return [data];
+    }
 
     return [manual, data];
   }
