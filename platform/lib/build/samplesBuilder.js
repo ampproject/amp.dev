@@ -142,14 +142,14 @@ class SamplesBuilder {
           this._log.await(`Building sample ${sample.relative} ...`);
           const parsedSample = await this._parseSample(sample);
 
-          // Skip samples that are drafts for alle envs except development
+          // Skip samples that are drafts for all envs except development
           if (parsedSample.document.metadata.draft && config.environment !== 'development') {
             callback();
             return;
           }
 
           if (!parsedSample.document.metadata.disablePlayground &&
-              !parsedSample.document.metadata.drafts) {
+              !parsedSample.document.metadata.draft) {
             this._addToSitemap(sample, parsedSample);
           }
 
