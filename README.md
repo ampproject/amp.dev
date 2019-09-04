@@ -31,6 +31,11 @@ We welcome contributions to amp.dev.
     ```sh
     $ pip install grow
     ```
+     Note: If using MacOS, here are the simplist steps to install a reliable version of `pip`:
+      1. Install [Homebrew](https://brew.sh/).
+      1. Run `brew doctor` to ensure everything is up to date. Xcode version 10.3 or the the most recent stable version is required. 
+      1. Run `brew install python@2`. Python 2.7 is required. 
+      1. Pip should now be installed! 
 
 1.  Install the dependencies for the project:
     ```sh
