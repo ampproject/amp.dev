@@ -146,6 +146,7 @@ function initCheckPassword(element) {
       let passed = item.test(element.value);
        // passed/fail logic 
     });
+  };  
 };
 ```
 
