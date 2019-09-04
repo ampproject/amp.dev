@@ -142,7 +142,7 @@
     "webpack": "4.39.3",
     "webpack-cli": "3.3.7",
     "webpack-dev-server": "3.8.0",
-    "write": "1.0.3",
+    "write": "2.0.0",
     "write-yaml": "1.0.0"
   },
   "sideEffects": [
