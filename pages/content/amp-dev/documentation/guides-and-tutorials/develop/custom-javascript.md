@@ -15,7 +15,7 @@ Some web experiences require a high amount of customization that go beyond the s
 
 # Inserting custom JavaScript
 
-AMP pages support custom JavaScript through the `<amp-script>` component.
+AMP pages support custom JavaScript through the `<amp-script>` component. The example below demonstrates how to use `amp-script` with a JavaScript file loaded from a URL:
 
 ```html
 <!doctype html>
@@ -36,10 +36,6 @@ AMP pages support custom JavaScript through the `<amp-script>` component.
 The `<amp-script>` component registers a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) to run on a separate thread than the main page. The Web Worker is given its own copy of the DOM through `amp-script` use of [Worker DOM](https://github.com/ampproject/worker-dom). This allows the Web Worker to use JavaScript libraries, such as [React](https://reactjs.org/) and [jQuery](https://jquery.com/), without modification.
 
 The `amp-script` component sends messages between the Web Worker thread and the main thread, causing any changes the user makes on the main DOM to be echoed on the Web Worker's false DOM. In turn, the Web Worker can then update the false DOM, which is reflected on the main DOM.
-
-[tip type="important"]
- `<amp-script>` is in experimental mode and may break in unpredictable ways.
-[/tip]
 
 ## Custom scripts caching
 
@@ -121,7 +117,7 @@ It will result in this:
 
 ## Event triggers
 
-As of April 2019, all event triggers are allowed. This may change in the future as `<amp-script>` is still an experimental component.
+All event triggers are allowed.
 
 ## API restrictions
 
