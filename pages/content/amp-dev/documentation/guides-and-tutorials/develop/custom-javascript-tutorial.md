@@ -1,11 +1,11 @@
 ---
-$title: Add custom JavaScript to AMP pages with amp-script
+$title: Build custom UI with amp-script
 $order: 101
 formats:
   - websites
 tutorial: true
 author: CrystalOnScript
-description: For web experiences requiring a high amount of customization AMP has created amp-script, a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
+description: For web experiences requiring a high amount of customization AMP has created amp-script, a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's performance.
 ---
 
 AMP strives to provide solutions that get developers where they want to be quickly and hassle free. However, some types of functionality are too tailored to individual use cases or require custom JavaScript. The AMP framework is expanding to accommodate these needs with [`<amp-script>`](../../../documentation/components/reference/amp-script.md?format=websites). The `amp-script` component allows AMP developers to introduce custom JavaScript that expand page features and render as valid AMP.
@@ -23,7 +23,7 @@ Prerequisites:
 Use the following commands to download and install the starter code: 
 
 ```
-$ git clone git@github.com:CrystalOnScript/vanilla-js-amp-script.git
+$ git clone https://github.com/CrystalOnScript/vanilla-js-amp-script.git
 $ cd vanilla-js-amp-script/starter_code
 $ npm install
 ```
@@ -72,20 +72,12 @@ Our functionality relays and changes the DOM of our `form`. Place the `<form>` e
 </amp-script>
 ```
 
-[tip type="note"]
-**Note**: Currently, the `src` attribute must point to an absolute URL.
-[/tip]
-
 The `src` attribute points to the filepath `http://localhost:8080/js/script.js`. Create a directory titled `js` in the `public` directory and add the `script.js` file. 
 
 
 # Inject custom script
 
 Open the newly created `script.js` file and add `console.log("amp-script here")`. Reload the page and open the [DevTools console](https://developers.google.com/web/tools/chrome-devtools/) to verify it successfully logged "amp-script here". 
-
-[tip type="important"]
-**Important**: amp-script is still in experimental mode. You will need to enable it inside the console by running `AMP.toggleExperiment('amp-script')` and confirming that it returns `true`. Read more about experimental components [here](../../../documentation/guides-and-tutorials/learn/experimental.md?format=websites). 
-[/tip]
 
 Imported script logic from the `amp-script` `src` attribute is debugged in the console, same as JavaScript inside non-AMP pages.
 
@@ -154,6 +146,7 @@ function initCheckPassword(element) {
       let passed = item.test(element.value);
        // passed/fail logic 
     });
+  };  
 };
 ```
 
@@ -218,6 +211,13 @@ For this to work, we will need to add a `check` class to all the items and defin
 } 
 ```
 
+Ensure you call to `initCheckPassword` in `script.js` and pass it `passwordBox` as an argument to setup the event handlers.
+Our logic is now complete!
+
+```js
+initCheckPassword(passwordBox);
+```
+
 Refresh the page and type into the password input. The elements corresponding to whether the check passed or failed should turn red or green accordingly!
 
 <figure class="alignment-wrapper margin-">
@@ -225,13 +225,6 @@ Refresh the page and type into the password input. The elements corresponding to
     <source src="/static/img/docs/tutorials/custom-javascript-tutorial/checkpassfail.mp4" type="video/mp4" />
   </amp-video>
 </figure>
-
-Ensure you call to `initCheckPassword` in `script.js` and pass it `passwordBox` as an argument to setup the event handlers.
-Our logic is now complete!
-
-```js
-initCheckPassword(passwordBox);
-```
 
 # Congratulations! 
 
