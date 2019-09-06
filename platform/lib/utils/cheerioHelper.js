@@ -33,7 +33,9 @@ function htmlContent(dom) {
   );
 
   // Ensure doctype has a line break before and after
-  html = html.replace(/<!doctype([^>]+)>/i, '\n<!doctype$1>\n');
+  html = html.replace(/\s*<!doctype([^>]+)>\s*/i, '\n<!doctype$1>\n');
+  // Ensure <head> has a line break before and after
+  html = html.replace(/\s*<(\/?head)>\s*/i, '\n<$1>\n');
   // Remove empty lines
   html = html.replace(/\n\s+\n/g, '\n');
   return html;
