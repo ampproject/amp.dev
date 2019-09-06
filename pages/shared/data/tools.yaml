@@ -190,6 +190,16 @@ platforms:
       height: 691
     formats:
       - email
+  - name: Outlook.com AMP Docs
+    type: Testing
+    description: Documentation that shows how to enable and send AMP emails to your Outlook.com account.
+    url: https://aka.ms/ampforemail
+    image:
+      src: /static/img/tools/outlook_amp_docs.png
+      width: 1000
+      height: 691
+    formats:
+      - email
 developer:
   - name: AMP Validator
     official: true
