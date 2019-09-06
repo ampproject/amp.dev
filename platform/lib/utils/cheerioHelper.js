@@ -31,7 +31,10 @@ function htmlContent(dom) {
       /xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
       'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href='
   );
-  html = html.replace(/<!doctype/i, '\n<!doctype');
+
+  // Ensure doctype has a line break before and after
+  html = html.replace(/<!doctype([^>]+)>/i, '\n<!doctype$1>\n');
+  // Remove empty lines
   html = html.replace(/\n\s+\n/g, '\n');
   return html;
 }
