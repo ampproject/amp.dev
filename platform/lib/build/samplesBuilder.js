@@ -31,6 +31,7 @@ const writeFileAsync = promisify(fs.writeFile);
 const nunjucks = require('nunjucks');
 
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
+const formatTransform = require('@lib/format-transform/');
 const utils = require('@lib/utils');
 const config = require('@lib/config.js');
 
@@ -87,6 +88,8 @@ class SamplesBuilder {
    * @return {Promise<void>} Resolves when build is done
    */
   async build(watch) {
+    this._formatTransform = await formatTransform.getInstance();
+
     // Configure cache
     this._cache[STORY_EMBED_SNIPPET] = await readFileAsync(STORY_EMBED_SNIPPET);
     this._cache[ADS_EMBED_TEMPLATE] = (await readFileAsync(ADS_EMBED_TEMPLATE)).toString();
@@ -140,33 +143,54 @@ class SamplesBuilder {
       stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
         try {
           this._log.await(`Building sample ${sample.relative} ...`);
-          const parsedSample = await this._parseSample(sample);
+          const { document } = await this._parseSample(sample);
 
-          // Skip samples that are drafts for alle envs except development
-          if (parsedSample.document.metadata.draft && config.environment !== 'development') {
-            callback();
-            return;
+          const isWebSample = String(document.formats()) === 'websites';
+          const shouldTransform = isWebSample
+              && !document.metadata.disableTransform
+              && !document.metadata.hideCode
+              && !document.metadata.disablePlayground
+              && !document.metadata.hidePreview;
+
+          const samples = [];
+          if (!shouldTransform) {
+            samples.push(sample);
+          } else {
+            for (const format of this._formatTransform.getSupportedFormats()) {
+              const transformed = this._transformSample(sample, format);
+              if (transformed) {
+                samples.push(transformed);
+              }
+            }
           }
+          await Promise.all(samples.map(async (sample) => {
+            const parsedSample = await this._parseSample(sample);
 
-          if (!parsedSample.document.metadata.disablePlayground &&
-              !parsedSample.document.metadata.drafts) {
-            this._addToSitemap(sample, parsedSample);
-          }
+            // Skip samples that are drafts for all envs except development
+            if (parsedSample.document.metadata.draft && config.environment !== 'development') {
+              return;
+            }
 
-          // Build various documents and sources that are needed for Grow
-          // to successfully render the example and for the playground
-          const files = [
-            ...this._createDocumentation(sample, parsedSample),
-            ...this._buildRawSources(sample, parsedSample),
-            ...this._createPreview(sample, parsedSample),
-            ...this._renderEmbed(sample, parsedSample),
-          ];
+            if (!parsedSample.document.metadata.disablePlayground &&
+                !parsedSample.document.metadata.draft) {
+              this._addToSitemap(sample, parsedSample);
+            }
 
-          // Since stream.push doesn't allow to push multiple files at once
-          /* eslint-disable guard-for-in */
-          for (const file of files) {
-            stream.push(file);
-          }
+            // Build various documents and sources that are needed for Grow
+            // to successfully render the example and for the playground
+            const files = [
+              ...this._createDocumentation(sample, parsedSample),
+              ...this._buildRawSources(sample, parsedSample),
+              ...this._createPreview(sample, parsedSample),
+              ...this._renderEmbed(sample, parsedSample),
+            ];
+
+            // Since stream.push doesn't allow to push multiple files at once
+            /* eslint-disable guard-for-in */
+            for (const file of files) {
+              stream.push(file);
+            }
+          }));
         } catch (error) {
           this._log.error(error);
         }
@@ -228,6 +252,13 @@ class SamplesBuilder {
       },
     }, sample.contents.toString());
 
+    // Transformed sample files end with ".<format>", e.g. "amp-list.email".
+    if (parsedSample.document.title.match(/\.[a-z]+$/)) {
+      parsedSample.isTransformed = true;
+      // Strip the ".<format>" suffix to have the same title as the original.
+      parsedSample.document.title = parsedSample.document.title.replace(/\.[a-z]+$/, '');
+    }
+
     // parsedSample.filePath is absolute but needs to be relative in order
     // to use it to build a URL to GitHub
     parsedSample.filePath = parsedSample.filePath.replace(path.join(__dirname, '../../../'), '');
@@ -272,6 +303,28 @@ class SamplesBuilder {
     }
 
     return parsedSample;
+  }
+
+  /**
+   * Transforms a sample from the web AMP format to the given format.
+   * @param {Vinyl} sample  The sample to transform
+   * @param {string} format Target format
+   * @return {Vinyl}
+   */
+  _transformSample(sample, format) {
+    if (!this._formatTransform.supportsFormat(format)) {
+      return null;
+    }
+    const transformed = sample.clone({contents: false});
+    if (format !== 'websites') {
+      transformed.extname = `.${format}.html`;
+    }
+    const {transformedContent, validationResult} = this._formatTransform.transform(transformed.contents, format);
+    if (validationResult && validationResult.status !== 'PASS') {
+      return null;
+    }
+    transformed.contents = Buffer.from(transformedContent);
+    return transformed;
   }
 
   /**
@@ -466,6 +519,11 @@ class SamplesBuilder {
     const data = manual.clone();
     data.contents = Buffer.from(JSON.stringify(parsedSample));
     data.extname = '.json';
+
+    // TODO: remove this when we add support for transformed samples in docs.
+    if (parsedSample.isTransformed) {
+      return [data];
+    }
 
     return [manual, data];
   }
