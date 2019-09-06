@@ -1,13 +1,5 @@
 ---
 $title: Chào mừng bạn đến với Cộng đồng AMP!
-$order: 1
-$titles:
-  teaser: Khoá học Cơ bản
-teaser:
-  icon: airplane
-  label: Bắt đầu ngay
-description: 'Hiểu về AMP và cách mà AMP có thể giúp đỡ. Tạo trang AMP đầu tiên của bạn ngay!'
-leveled: true
 ---
 [filter level="beginner"]
 ## Tại sao là AMP?
