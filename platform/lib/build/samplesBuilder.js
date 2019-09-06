@@ -80,6 +80,7 @@ class SamplesBuilder {
     this._cache = {};
     // Holds all relevant sample informations after samplew have been parsed
     this._sitemap = {};
+		this._parsedSamplesCache = new Map();
   }
 
   /**
@@ -234,13 +235,17 @@ class SamplesBuilder {
    * @return {Promise<Object>} The sample parsed by abe.com
    */
   async _parseSample(sample) {
+    let parsedSample = this._parsedSamplesCache.get(sample.path);
+    if (parsedSample) {
+      return parsedSample;
+    }
     const samplePath = sample.path;
     // normalize sample path in case it's defined in a directory
     if (sample.path.endsWith('/index.html')) {
       sample.path = path.dirname(sample.path) + '.html';
     }
     const platformHost = config.getHost(config.hosts.platform);
-    const parsedSample = await abe.parseSample(samplePath, {
+    parsedSample = await abe.parseSample(samplePath, {
       'base_path': `${platformHost}${this._getBaseRoute(sample)}`,
       'canonical': `${platformHost}${this._getDocumentationRoute(sample)}`,
       'preview': `${platformHost}${this._getPreviewRoute(sample)}`,
@@ -302,6 +307,7 @@ class SamplesBuilder {
       section.doc_ = markdown;
     }
 
+    this._parsedSamplesCache.set(sample.path, parsedSample);
     return parsedSample;
   }
 
