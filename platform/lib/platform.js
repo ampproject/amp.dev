@@ -96,7 +96,10 @@ class Platform {
     this.server.use(require('./middleware/security.js'));
     this.server.use(require('./middleware/redirects.js'));
     this.server.use(require('./middleware/caching.js'));
-    this.server.use(cors());
+    this.server.use(cors({
+      origin: true,
+      credentials: true,
+    }));
     this.server.use(ampCors({
       email: true,
     }));
