@@ -24,9 +24,9 @@ stage:
   layout: mobile
   subline:
   devices:
-  - image_src: '/static/img/success-stories/kompas/teaser_kompas.png'
-    width: 3
-    height: 5
+  - image_src: '/static/img/success-stories/kompas/kompas_ss.jpg'
+    width: 750
+    height: 1334
     type: mobile
     alt: kompas
 
@@ -52,9 +52,9 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: '/static/img/success-stories/kompas/teaser_kompas.png'
-    width: 3
-    height: 5
+    image_src: '/static/img/success-stories/kompas/kompas_ss.jpg'
+    width: 750
+    height: 1334
     type: mobile
     alt: kompas
     headline: "Approach & Solution:"
