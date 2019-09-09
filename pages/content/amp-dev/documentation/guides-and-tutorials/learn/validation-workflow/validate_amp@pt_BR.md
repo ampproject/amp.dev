@@ -230,21 +230,21 @@ Ela gera este erro de validação de AMP, visto em diferentes ferramentas:
 <amp-img src="/static/img/docs/validator_console_imgerror.png"
          width="696" height="30" layout="responsive"
          alt="Erro de AMP: a tag 'img' só pode aparecer como descendente da tag
-         'noscript'. Você quis dizer "amp-img"? linha 11, coluna 2">
+         'noscript'. Você quis dizer 'amp-img'? linha 11, coluna 2">
 </amp-img>
 
 * Interface da Web
 <amp-img src="/static/img/docs/validator_webui_imgerror.png"
          width="676" height="58" layout="responsive"
          alt="Erro de AMP: a tag 'img' só pode aparecer como descendente da tag
-         'noscript'. Você quis dizer "amp-img"? linha 11, coluna 2">
+         'noscript'. Você quis dizer 'amp-img'? linha 11, coluna 2">
 </amp-img>
 
 * Extensão do navegador
 <amp-img src="/static/img/docs/validator_extension_imgerror.png"
          width="724" height="108" layout="responsive"
          alt="Erro de AMP: a tag 'img' só pode aparecer como descendente da tag
-         'noscript'. Você quis dizer "amp-img"? linha 11, coluna 2">
+         'noscript'. Você quis dizer 'amp-img'? linha 11, coluna 2">
 </amp-img>
 
 Cada ferramenta fornece várias informações:

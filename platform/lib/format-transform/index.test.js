@@ -29,7 +29,9 @@ describe('formatTransform', () => {
   });
 
   it('makes no changes when target is websites', () => {
-    const input = '<html ⚡><head></head><body></body></html>';
+    const input = `<html ⚡>
+<head>
+<link rel="canonical" href="<% canonical %>"></head><body></body></html>`;
     expect(formatTransform.transform(input, 'websites')).toEqual({
       transformedContent: input,
     });
@@ -83,12 +85,12 @@ describe('formatTransform', () => {
   });
 
   it('removes @formats', () => {
-    const input = s(`<html ⚡><head></head>
+    const input = s(`<html ⚡><head><style amp-custom>body{color:red}</style></head>
 <!-- comment @formats(websites) -->
 <body>
 </body>
 </html>`);
-    const want = s(`<html ⚡><head></head>
+    const want = s(`<html ⚡><head><style amp-custom>body{color:red}</style></head>
 <!-- comment  -->
 <body>
 </body>

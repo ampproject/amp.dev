@@ -90,7 +90,7 @@ Lightbox'ta resimleri göstermek için [`<amp-image-lightbox>`](amp-image-lightb
         <td width="40%"><strong>scrollable (isteğe bağlı)</strong></td>
         <td><code>scrollable</code> özelliği mevcutsa, lightbox içeriğinin lightbox yüksekliğinden taştığı durumlarda içerik kaydırılabilir.
           <br><br>
-            <strong>Not</strong>: AMPHTML reklamının içinde <code><amp-lightbox></code> kullanılırken <code>scrollable</code> özelliğine izin verilmez. Ayrıntılar için <a href="#a4a">AMPHTML reklamları amp-lightbox özelliğini kullanma</a> konusunu okuyun.</td>
+            <strong>Not</strong>: AMPHTML reklamının içinde <code>&lt;amp-lightbox&gt;</code> kullanılırken <code>scrollable</code> özelliğine izin verilmez. Ayrıntılar için <a href="#a4a">AMPHTML reklamları amp-lightbox özelliğini kullanma</a> konusunu okuyun.</td>
           </tr>
           <tr>
             <td width="40%"><strong>scrollable (isteğe bağlı)</strong></td>

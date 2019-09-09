@@ -49,7 +49,7 @@ class FormatTransform {
       throw new Error(`Unsupported transform format: ${target}`);
     }
     const {transforms, validatorRuntime} = this.formats[target];
-    const $ = cheerio.load(input);
+    const $ = cheerio.load(input, {decodeEntities: false});
     this.applyCommentFormatFilters_($, target);
     for (const selector of Object.keys(transforms)) {
       const elements = $(selector);

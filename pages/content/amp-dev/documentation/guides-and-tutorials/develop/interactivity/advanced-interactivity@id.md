@@ -153,7 +153,7 @@ Pertama, kita perlu melakukan inisialiasi data status dengan URL sumber gambar u
 </amp-state>
 ```
 
-Elemen `[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state)`ini berisi objek JSON yang memetakan string ID kemeja (yaitu SKU) ke URL gambar dan warna dari kemeja yang sesuai. Array JSON juga akan berfungsi di sini, namun penggunaan objek memungkinkan kita melakukan beberapa penyempurnaan yang menarik, yang akan segera Anda lihat.
+Elemen [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) ini berisi objek JSON yang memetakan string ID kemeja (yaitu SKU) ke URL gambar dan warna dari kemeja yang sesuai. Array JSON juga akan berfungsi di sini, namun penggunaan objek memungkinkan kita melakukan beberapa penyempurnaan yang menarik, yang akan segera Anda lihat.
 
 Sekarang kita dapat mengakses URL gambar melalui ID kemeja. Misalnya, `shirts['10014'].color` dievaluasi ke `"dark green"` dan `shirts['10030'].image `menampilkan URL gambar untuk warna kemeja `"wine"`.
 
