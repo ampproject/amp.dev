@@ -7,12 +7,12 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/success-stories/kompas/teaser_kompas.jpeg'
+    src: '/static/img/success-stories/kompas/teaser_kompas.jpg'
     width: 3
     height: 5
     alt: kompas
   logo:
-    src: '/static/img/success-stories/kompas/kompas_logo.png'
+    src: '/static/img/success-stories/kompas/kompas_logo.jpg'
     width: 1000
     height: 358
     alt: kompas

@@ -7,14 +7,14 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/success-stories/asahi/ss_WithoutAds.jpeg'
+    src: '/static/img/success-stories/asahi/ss_without_ads.jpg'
     width: 3
     height: 5
     alt: asahi
   logo:
-    src: '/static/img/success-stories/asahi/asahi_logo.png'
-    width: 1000
-    height: 326
+    src: '/static/img/success-stories/asahi/asahi_logo.jpg'
+    width: 156
+    height: 51
     alt: asahi
   text: Asahi.com uses a paired AMP approach for their free articles
 
@@ -24,7 +24,7 @@ stage:
   layout: mobile
   subline:
   devices:
-  - image_src: '/static/img/success-stories/asahi/ss_WithoutAds.png'
+  - image_src: '/static/img/success-stories/asahi/ss_without_ads.jpg'
     width: 3
     height: 5
     type: mobile
@@ -53,7 +53,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: '/static/img/success-stories/asahi/ss_WithAds.png'
+    image_src: '/static/img/success-stories/asahi/ss_with_ads.jpg'
     width: 3
     height: 5
     type: mobile
@@ -64,8 +64,8 @@ contents:
 
   - layout: quote
     quote: "AMP offers great extensibility and an improved user experience despite the same easy coding as HTML. In particular, even with minimal changes to the infrastructure, the speeding up of pages through caching works, which in turn makes the Web more attractive in the mobile world.<br>On our AMP page, we implemented components such as amp-list (infinite scroll) and Native infeed that were released the other day to further improve the user experience. In the future, we will aim to provide a site that more meets the needs of users while following the latest expression technologies such as AMP Email and AMP Stories, which must be widespread after this."
-    image_src: '/static/img/success-stories/asahi/asahi_logo.png'
-    width: 400
-    height: 133
+    image_src: '/static/img/success-stories/asahi/asahi_logo.jpg'
+    width: 156
+    height: 51
     alt: asahi
     author: Toshiyuki Watanabe, AMP project manager at The Asahi Shimbun

@@ -7,14 +7,14 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/success-stories/asahi/ss_WithoutAds.png'
+    src: '/static/img/success-stories/asahi/ss_without_ads.jpg'
     width: 3
     height: 5
     alt: asahi
   logo:
-    src: '/static/img/success-stories/asahi/asahi_logo.png'
-    width: 1000
-    height: 326
+    src: '/static/img/success-stories/asahi/asahi_logo.jpg'
+    width: 156
+    height: 51
     alt: asahi
   text: Asahi.com uses a paired AMP approach for their free articles
 
@@ -23,7 +23,7 @@ stage:
   layout: mobile
   subline:
   devices:
-  - image_src: '/static/img/success-stories/asahi/ss_WithoutAds.png'
+  - image_src: '/static/img/success-stories/asahi/ss_without_ads.jpg'
     width: 3
     height: 5
     type: mobile
@@ -51,7 +51,7 @@ contents:
     direction: left-flat
 
   - layout: text-media
-    image_src: '/static/img/success-stories/asahi/ss_WithAds.png'
+    image_src: '/static/img/success-stories/asahi/ss_with_ads.jpg'
     width: 3
     height: 5
     type: mobile
@@ -62,8 +62,8 @@ contents:
 
   - layout: quote
     quote: "AMPの登場は、HTMLと同様の簡易なコーディングにもかかわらず、高い拡張性とユーザー体験の向上を提供してくれています。特に、インフラの変更を最小限にとどめても、キャッシュを通じたページの高速化が効くため、改めてモバイルの世界においてウェブの魅力を高めてくれています。 我々のAMPページでは、先日リリースされたamp-listやNative infeedなどのコンポーネントを導入し、更にユーザー体験の改善を行っています。今後も、このあと普及していくに違いないAMP MailやAMP Storiesなど、最新の表現技術をフォローしながら、よりユーザーのニーズに応えるサイトの提供を目指していきます。"
-    image_src: '/static/img/success-stories/asahi/asahi_logo.png'
-    width: 400
-    height: 133
+    image_src: '/static/img/success-stories/asahi/asahi_logo.jpg'
+    width: 156
+    height: 51
     alt: asahi
     author: Toshiyuki Watanabe, AMP project manager at The Asahi Shimbun
