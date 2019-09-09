@@ -21,6 +21,9 @@ const upload = multer();
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
+examples.use(express.urlencoded({
+  extended: false,
+}));
 
 const ERROR_CASE_AMP_FORM = 'error';
 
