@@ -39,7 +39,7 @@ $title: 라이브 블로그 만들기
 
 라이브 블로그가 성장해 감에 따라 페이지 길이가 너무 길어질 수 있습니다. `data-max-items-per-page` 속성을 사용하여 라이브 블로그에 추가될 수 있는 항목의 수를 지정하세요. 업데이트 이후 항목 수가 `data-max-items-per-page`를 초과하면 항목 수를 초과하는 가장 오래된 업데이트 순으로 삭제됩니다. 예를 들어 페이지에 있는 항목이 9개이고 `data-max-items-per-page`가 10으로 설정되어 있는데 새 항목 3개가 최신 업데이트에 추가되면 최신 업데이트가 있는 페이지에서 가장 오래된 항목 2개가 삭제됩니다.
 
-`[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)  모든 블로그 게시물은 `<div items></div>`의 하위 항목이어야 합니다. 각 게시물을 항목으로 참조하면 모든 항목에는 고유 `id`와 `data-sort-time`이 있어야 합니다.
+[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)  모든 블로그 게시물은 `<div items></div>`의 하위 항목이어야 합니다. 각 게시물을 항목으로 참조하면 모든 항목에는 고유 `id`와 `data-sort-time`이 있어야 합니다.
 
 ## 구현 세부정보
 

@@ -195,7 +195,7 @@ limitations under the License.
   <tr>
     <td><code>attributes</code></td>
     <td>オブジェクト<文字列, 文字列></td>
-    <td>属性名から、このプレースメントを使用して挿入されたすべての <code><amp-ad></code> 要素に適用する属性の値へのマッピングを指定するオプション<em></em> フィールド。ここで指定した属性により、親の <code>ConfigObj</code> でも指定されている同じ名前の属性がすべてオーバーライドされます。以下の属性名のみを指定できます。<ul>
+    <td>属性名から、このプレースメントを使用して挿入されたすべての <code>&lt;amp-ad&gt;</code> 要素に適用する属性の値へのマッピングを指定するオプション<em></em> フィールド。ここで指定した属性により、親の <code>ConfigObj</code> でも指定されている同じ名前の属性がすべてオーバーライドされます。以下の属性名のみを指定できます。<ul>
       <li>type</li>
       <li>layout</li>
       <li>data-&ast;（任意のデータ属性）</li>
