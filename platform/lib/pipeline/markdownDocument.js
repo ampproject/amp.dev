@@ -346,7 +346,7 @@ have a look and request a pull request there.
     content += this._contents;
 
     path = path ? path : this._path;
-    return writeFile.promise(path, content).then(() => {
+    return writeFile(path, content).then(() => {
       LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
     }).catch((e) => {
       LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);
