@@ -62,13 +62,14 @@ author: sebastianbenz
   -->
 
   <!-- ## Combination with amp-bind -->
-  <!-- `amp-lightbox` can be opened as a result of `amp-bind` evaluations by binding a boolean value to the `open` attribute. -->
+  <!-- `amp-lightbox` can be opened as a result of `amp-bind` evaluations by binding a boolean value to the `open` attribute. Note that we're also listening to the `lightboxClose` event to reset the state of the variable. -->
   <div>
-    <amp-lightbox id="my-bindable-lightbox" [open]="showLightbox" layout="nodisplay">
+    <amp-lightbox id="my-bindable-lightbox" [open]="showLightbox" layout="nodisplay" 
+      on="lightboxClose:AMP.setState({showLightbox: false})">
       <div class="lightbox"
            role="button"
            tabindex="0"
-           on="tap:AMP.setState({showLightbox: false})">
+           on="tap:my-bindable-lightbox.close">
         <h1>Hello World!</h1>
       </div>
     </amp-lightbox>
