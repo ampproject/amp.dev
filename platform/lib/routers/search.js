@@ -94,8 +94,8 @@ function handleHighlightsRequest(request, response) {
 function getCseItemMetaTagValue(item, metaTag) {
   // since pagemap has always key:array the metatags dictionary is always the first element in the array
   const pagemap = item.pagemap;
-  if (pagemap && pagemap.metatags && pagemap.metatags.length > 0
-      && pagemap.metatags[0][metaTag]) {
+  if (pagemap && pagemap.metatags && pagemap.metatags.length > 0 &&
+      pagemap.metatags[0][metaTag]) {
     return pagemap.metatags[0][metaTag];
   }
   return null;
@@ -169,8 +169,8 @@ function createResult(totalResults, page, lastPage, components, pages, query, lo
     result.result.isTruncated = true;
   }
 
-  const searchBaseUrl = '/search/do?q=' + encodeURIComponent(query)
-      + '&locale=' + encodeURIComponent(locale) + '&page=';
+  const searchBaseUrl = '/search/do?q=' + encodeURIComponent(query) +
+      '&locale=' + encodeURIComponent(locale) + '&page=';
   if (page < lastPage && page < LAST_PAGE) {
     result.nextUrl = searchBaseUrl + (page + 1);
   }
@@ -205,20 +205,20 @@ async function handleSearchRequest(request, response, next) {
   // The blog and playground should be included without the page-locale metatag
   const searchOptions = {
     hiddenQuery:
-      `more:pagemap:metatags-page-locale:${locale}`
-      + ' OR site:blog.amp.dev OR site:playground.amp.dev',
+      `more:pagemap:metatags-page-locale:${locale}` +
+      ' OR site:blog.amp.dev OR site:playground.amp.dev',
   };
 
   if (locale != config.getDefaultLocale()) {
     // For other languages also include en, since the index only contains the translated pages.
-    searchOptions.hiddenQuery = `more:pagemap:metatags-page-locale:${config.getDefaultLocale()} OR `
-        + searchOptions.hiddenQuery;
+    searchOptions.hiddenQuery = `more:pagemap:metatags-page-locale:${config.getDefaultLocale()}` +
+        `OR ${searchOptions.hiddenQuery}`;
     searchOptions.noLanguageFilter = true;
   }
 
   if (isNaN(page) || page < 1 || query.length == 0) {
-    const error = 'Invalid search params (q='
-        + request.query.q + ', page=' + request.query.page + ')';
+    const error = 'Invalid search params (q=' +
+        request.query.q + ', page=' + request.query.page + ')';
     console.log(error);
     // No error status since an empty query can always happen with our search template
     // and we do not want error messages in the client console
@@ -254,9 +254,9 @@ async function handleSearchRequest(request, response, next) {
       const item = cseResult.items[i];
       const page = createPageObject(item);
 
-      if (highlightComponents
-          && i <= MAX_HIGHLIGHT_COMPONENT_INDEX
-          && COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
+      if (highlightComponents &&
+          i <= MAX_HIGHLIGHT_COMPONENT_INDEX &&
+          COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
         enrichComponentPageObject(item, page, locale);
         components.push(page);
         componentCount++;

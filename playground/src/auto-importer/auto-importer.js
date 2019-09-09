@@ -59,8 +59,8 @@ class AutoImporter {
     this.componentsProvider.get().then((components) => {
       const missing = this._parseMissingElements(validationResult, components);
 
-      if (Object.keys(missing.missingTags).length
-          || missing.missingBaseScriptTag) {
+      if (Object.keys(missing.missingTags).length ||
+          missing.missingBaseScriptTag) {
         const existing = this._parseHeadTag();
         // The action taken to insert any elements to fix the report of missing
         // tags is determined by both a combination of looking at the list of
@@ -208,8 +208,8 @@ class AutoImporter {
             } else if (tok.type === 'string' && ENGINE_SET.has(tok.string)) {
               inBaseScriptTag = true;
             }
-          } else if (htmlState.context.tagName === 'head' && tok.string === '>'
-              && tok.type === 'tag bracket') {
+          } else if (htmlState.context.tagName === 'head' && tok.string === '>' &&
+              tok.type === 'tag bracket') {
             if (tagStart) {
               // Closing a <script> tag in <head>
               const pos = {start: tagStart, end: CodeMirror.Pos(i, tok.end)};
@@ -229,8 +229,8 @@ class AutoImporter {
               lastTag = CodeMirror.Pos(i, tok.end);
               result.indent = result.indent || htmlState.indented;
             }
-          } else if (tok.string === '</' && htmlState.context.tagName === 'head'
-              && tok.type === 'tag bracket') {
+          } else if (tok.string === '</' && htmlState.context.tagName === 'head' &&
+              tok.type === 'tag bracket') {
             // Leaving <head>, record the final tag position within <head> for
             // inserting after.
             result.lastTag = lastTag;
