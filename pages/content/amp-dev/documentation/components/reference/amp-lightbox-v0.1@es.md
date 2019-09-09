@@ -89,7 +89,7 @@ Para mostrar imágenes en un lightbox, también tienes el componente [`<amp-imag
         <td width="40%"><strong>scrollable (obligatorio)</strong></td>
         <td>Si el atributo <code>scrollable</code> está presente, el contenido del lightbox se puede desplazar cuando hay altura adicional en el lightbox.
           <br><br>
-            <strong>Nota:</strong> Cuando se usa <code><amp-lightbox></code> en un anuncio AMP HTML, el atributo <code>scrollable</code> no está permitido. Para obtener más información, consulta la sección sobre el <a href="#a4a">uso de amp-lightbox en anuncios AMP HTML</a>.</td>
+            <strong>Nota:</strong> Cuando se usa <code>&lt;amp-lightbox&gt;</code> en un anuncio AMP HTML, el atributo <code>scrollable</code> no está permitido. Para obtener más información, consulta la sección sobre el <a href="#a4a">uso de amp-lightbox en anuncios AMP HTML</a>.</td>
           </tr>
           <tr>
             <td width="40%"><strong>scrollable (obligatorio)</strong></td>

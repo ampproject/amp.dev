@@ -90,7 +90,7 @@ teaser:
         <td width="40%"><strong>scrollable（可选）</strong></td>
         <td>当 <code>scrollable</code> 属性存在时，灯箱内容可在溢出灯箱高度时滚动。
           <br><br>
-            <strong>注意</strong>：在 AMPHTML 广告中使用 <code><amp-lightbox></code> 时，不允许使用 <code>scrollable</code> 属性。如需了解详情，请参阅<a href="#a4a">在 AMPHTML 广告中使用 amp-lightbox</a> 部分。</td>
+            <strong>注意</strong>：在 AMPHTML 广告中使用 <code>&lt;amp-lightbox&gt;</code> 时，不允许使用 <code>scrollable</code> 属性。如需了解详情，请参阅<a href="#a4a">在 AMPHTML 广告中使用 amp-lightbox</a> 部分。</td>
           </tr>
           <tr>
             <td width="40%"><strong>scrollable（可选）</strong></td>

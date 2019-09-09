@@ -131,7 +131,7 @@ De forma predeterminada, todos los valores predefinidos de las animaciones tiene
 
 Puedes personalizar los valores de tiempo de una animación modificando el retraso o la duración con los atributos `animate-in-delay` y `animate-in-duration`. En el siguiente ejemplo, `my-element` se desplaza hacia la derecha de la página en 3 segundos y entra completamente en 5 segundos.
 
-``'html
+```html
 <amp-story-page id="my-page">
   ...
   <p class="my-element"

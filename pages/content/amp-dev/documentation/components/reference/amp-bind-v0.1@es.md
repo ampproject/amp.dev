@@ -477,7 +477,7 @@ Solo se admiten los bindings a los siguientes componentes y atributos:
   <tr>
     <td><code>&lt;amp-state&gt;</code></td>
     <td><code>[src]</code></td>
-    <td>Recupera un JSON de la nueva URL y lo combina con el estado que ya existe. <em>Ten en cuenta que la siguiente actualización ignorará los elementos <code><amp-state></code> para evitar los ciclos.</em></td>
+    <td>Recupera un JSON de la nueva URL y lo combina con el estado que ya existe. <em>Ten en cuenta que la siguiente actualización ignorará los elementos <code>&lt;amp-state&gt;</code> para evitar los ciclos.</em></td>
   </tr>
   <tr>
     <td><code>&lt;amp-video&gt;</code></td>
