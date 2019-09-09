@@ -41,36 +41,36 @@ const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*
 // to ensure we do not match something that belongs to different code blocks
 // or we add raw tags to existing raw blocks
 const MARKDOWN_BLOCK_PATTERN = new RegExp(
-    JINJA2_RAW_BLOCK.source
-    + '|'
-    + SOURCECODE_BLOCK.source
-    + '|'
-    + /`[^`]*`/.source, 'g');
+    JINJA2_RAW_BLOCK.source +
+    '|' +
+    SOURCECODE_BLOCK.source +
+    '|' +
+    /`[^`]*`/.source, 'g');
 
 // Inside code blocks we search for mustache expressions
 // The constant 'server_for_email' and expressions with a dot or a bracket are not considered mustache
 // TODO: Avoid the need to distinguish between mustache and jinja2
 const MUSTACHE_PATTERN = new RegExp(
-    '('
-    + JINJA2_RAW_BLOCK.source
-    + '|'
-    + /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source
-    + ')', 'g');
+    '(' +
+    JINJA2_RAW_BLOCK.source +
+    '|' +
+    /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
+    ')', 'g');
 
 // This pattern will find relative urls.
 // It will als match source code blocks to skip them and not replace any links inside.
 const RELATIVE_LINK_PATTERN = new RegExp(
     // skip sourcecode tag in markdown
-    SOURCECODE_BLOCK.source
-    + '|'
+    SOURCECODE_BLOCK.source +
+    '|' +
     // skip inline source marker
-    + /`[^`]*`/.source
-    + '|'
+    /`[^`]*`/.source +
+    '|' +
     // find <a href=""> link tag:
-    + /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source
-    + '|'
+    /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source +
+    '|' +
     // find markdown link block [text](../link):
-    + /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
+    /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
     , 'g');
 
 class MarkdownDocument {

@@ -19,8 +19,8 @@ app.use(router);
 
 
 function createItem(index, isComponent) {
-  const link = isComponent ? 'https://amp.dev/documentation/components/amp-comp-' + index + '/'
-    : 'https://amp.dev/documentation/examples/amp-comp-' + index + '/';
+  const link = isComponent ? 'https://amp.dev/documentation/components/amp-comp-' + index + '/' :
+    'https://amp.dev/documentation/examples/amp-comp-' + index + '/';
   return {
     title: 'long-title-' + index,
     link: link,
