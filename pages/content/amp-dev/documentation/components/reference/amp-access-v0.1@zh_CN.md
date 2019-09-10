@@ -147,12 +147,12 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>授权端点的 HTTPS 网址。</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>Pingback 端点的 HTTPS 网址。</td>
   </tr>
   <tr>
@@ -162,17 +162,17 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> 或 <br><Map[string, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> 或 <br><code>&lt;Map[string, URL]&gt;</code></td>
     <td>登录页面的 HTTPS 网址或不同类型登录页面的一组网址。</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationFallbackResponse</code></td>
-    <td><object></td>
+    <td><code>&lt;object&gt;</code></td>
     <td>当授权响应失败时，用于替代授权响应的 JSON 对象。</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationTimeout</code></td>
-    <td><number></td>
+    <td><code>&lt;number&gt;</code></td>
     <td>在授权请求被视为失败后发生的超时（以毫秒为单位）。默认值为 3000。大于 3000 的值仅允许在开发环境中使用。</td>
   </tr>
   <tr>
@@ -187,7 +187,7 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
   </tr>
 </table>
 
-**<URL>** 值使用替换变量指定 HTTPS 网址。替换变量将在下面的[访问网址变量](#access-url-variables)部分中进行详细介绍。
+**`<URL>`** 值使用替换变量指定 HTTPS 网址。替换变量将在下面的[访问网址变量](#access-url-variables)部分中进行详细介绍。
 
 下面是一个 AMP Access 配置示例：
 

@@ -42,8 +42,8 @@ function getExamplePreviewUrl(exampleUrl) {
 }
 
 function getPlaygroundUrlForPreviewLink(previewUrl) {
-  return config.hosts.playground.base + '/?url='
-      + encodeURIComponent(previewUrl);
+  return config.hosts.playground.base + '/?url=' +
+      encodeURIComponent(previewUrl);
 }
 
 function getPlaygroundUrlForExampleLink(exampleUrl) {

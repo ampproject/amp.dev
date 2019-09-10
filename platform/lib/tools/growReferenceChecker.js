@@ -32,19 +32,19 @@ const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev';
 // It also matches source code blocks to skip these
 const REFERENCE_PATTERN = new RegExp(
     // skip sourcecode block in markdown:
-    /^```[\s\S]*?```/.source
-    + '|'
+    /^```[\s\S]*?```/.source +
+    '|' +
     // skip sourcecode tag in markdown
-    + /\[sourcecode[^\]]*\][\s\S]*?\[\/sourcecode\]/.source
-    + '|'
+    /\[sourcecode[^\]]*\][\s\S]*?\[\/sourcecode\]/.source +
+    '|' +
     // find <a href=""> link tag:
-    + /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source
-    + '|'
+    /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source +
+    '|' +
     // find markdown link block [text](../link):
-    + /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
-    + '|'
+    /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source +
+    '|' +
     // find {{g.doc('link')}} links:
-    + /g.doc\('(.*?)'/.source
+    /g.doc\('(.*?)'/.source
     , 'gm');
 /* eslint-disable max-len */
 // Contains manual hints for double filenames etc.
@@ -99,8 +99,8 @@ class GrowReferenceChecker {
       stream.pipe(gulp.dest('./'));
 
       stream.on('end', () => {
-        if (Object.keys(this._multipleMatches).length == 0
-            && this._unfindableDocuments.length == 0) {
+        if (Object.keys(this._multipleMatches).length == 0 &&
+            this._unfindableDocuments.length == 0) {
           this._log.success('All references intact!');
           resolve();
           return;
@@ -205,8 +205,8 @@ class GrowReferenceChecker {
     // If there is more than one match store all matches for the user to
     // do the manual fixing
     if (results.length > 1) {
-      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.`
-          + ` (In ${doc.path})`);
+      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.` +
+          ` (In ${doc.path})`);
       this._multipleMatches[documentPath] = results;
       return documentPath;
     } else if (results.length == 0) {
@@ -217,8 +217,8 @@ class GrowReferenceChecker {
         return this._verifyReference(documentPath, doc);
       }
 
-      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.`
-        + ` (First found in ${doc.path})`);
+      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.` +
+        ` (First found in ${doc.path})`);
       if (this._unfindableDocuments.indexOf(documentPath) == -1) {
         this._unfindableDocuments.push(documentPath);
       }

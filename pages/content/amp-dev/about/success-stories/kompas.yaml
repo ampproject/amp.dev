@@ -1,4 +1,4 @@
-$title: kompas
+$title: KG Media
 $category: publishers
 $date: 2019-09-09
 description: KG Media’s AMP optimizations resulted in a 34% uplift in overall mobile web revenue and a 6.3x increase in monthly AMP revenue
@@ -73,9 +73,9 @@ contents:
 
   - layout: quote
     quote: "To optimize its performance, in terms of CTR & Viewability, we use AMP HTML Ads for standard banner. With its ability to load ads faster and lighter on AMP Pages, it makes the opportunity to see the ads higher than regular one. We have tested this format with our clients, and the result is great. For a regular banner, we have managed to get double the CTR with more than 70% of ads being viewable. With this performance, I believe it will bring positive impact for our business"
-    image_src: '/static/img/success-stories/plista/plista_logo.png'
-    width: 400
-    height: 133
+    image_src: '/static/img/success-stories/kompas/kompas_logo.jpg'
+    width: 1000
+    height: 358
     alt: kompas
     author: "- Moch. Rifki - Vice GM Digital, Marketing & Print, KG Media"
 

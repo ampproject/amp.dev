@@ -10,6 +10,9 @@ from grow.cache.object_cache import ObjectCache
 LINK_PATTERN = re.compile(r'<a\s+(?:[^>]+\s)?href\s*=\s*"((?:[^"#?](?!:))*?[^"/])((?:\?[^"]*)?(?:#[^"]*)?)"',
                           re.IGNORECASE)
 
+# paths to static files should not be rewritten
+STATIC_PATH = '/static'
+
 class PodInternalLinkRewriter(object):
 
   pod = None  # type: Pod
@@ -72,6 +75,13 @@ class PodInternalLinkRewriter(object):
     return result
 
   def get_site_link(self, internal_link):
+    # Static files are located inside the pod which will make Grow
+    # create virtual docs when calling get_doc with such a path.
+    # This will make doc.exists equal True while doc.url.path only returns
+    # garbage. To work around this only further check for docs in '/content'
+    if internal_link.startswith(STATIC_PATH):
+      return internal_link
+
     internal_path = internal_link
     if not internal_path.startswith('/'):
       internal_path = os.path.abspath(os.path.join(
