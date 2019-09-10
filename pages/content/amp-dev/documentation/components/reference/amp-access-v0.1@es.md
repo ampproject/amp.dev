@@ -145,12 +145,12 @@ En esta configuración se definen las siguientes propiedades:
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>URL HTTPS del punto de conexión de autorización.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>URL HTTPS del punto de conexión de pingback.</td>
   </tr>
   <tr>
@@ -160,7 +160,7 @@ En esta configuración se definen las siguientes propiedades:
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> o<br><Map[cadena, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> o<br><Map[cadena, URL]></td>
     <td>URL HTTPS de la página de inicio de sesión o conjunto de URL de distintos tipos de páginas de inicio de sesión.</td>
   </tr>
   <tr>
@@ -185,7 +185,7 @@ En esta configuración se definen las siguientes propiedades:
   </tr>
 </table>
 
-Los valores *<URL>* especifican las URL HTTPS con variables de sustitución. Las variables de sustitución se tratan con más detalle en la sección [Variables de URL de acceso](#access-url-variables) que aparece más abajo.
+Los valores *`<URL>`* especifican las URL HTTPS con variables de sustitución. Las variables de sustitución se tratan con más detalle en la sección [Variables de URL de acceso](#access-url-variables) que aparece más abajo.
 
 Este es un ejemplo de configuración de AMP Access:
 

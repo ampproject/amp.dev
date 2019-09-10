@@ -146,12 +146,12 @@ As seguintes propriedades são definidas nessa configuração:
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>O URL de HTTPS para o endpoint de autorização.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>O URL de HTTPS para o endpoint de pingback.</td>
   </tr>
   <tr>
@@ -161,17 +161,17 @@ As seguintes propriedades são definidas nessa configuração:
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> ou<br><Map[string, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> ou<br><code>&lt;Map[string, URL]&gt;</code></td>
     <td>O URL de HTTPS para a página de login ou um conjunto de URLs para diferentes tipos de páginas de login.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationFallbackResponse</code></td>
-    <td><object></td>
+    <td><code>&lt;object&gt;</code></td>
     <td>O objeto JSON a ser usado no lugar da resposta de autorização, se ela falhar.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationTimeout</code></td>
-    <td><number></td>
+    <td><code>&lt;number&gt;</code></td>
     <td>Tempo limite (em milissegundos) depois do qual a solicitação de autorização é considerada com falha. O valor padrão é 3000. Valores superiores a 3000 são permitidos somente no ambiente de desenvolvimento. </td>
   </tr>
   <tr>
@@ -186,7 +186,7 @@ As seguintes propriedades são definidas nessa configuração:
   </tr>
 </table>
 
-Os valores de *<URL>* especificam URLs HTTPS com variáveis de substituição. As variáveis de substituição são abordadas com mais detalhes na seção abaixo [Variáveis de URL de acesso](#access-url-variables).
+Os valores de *`<URL>`* especificam URLs HTTPS com variáveis de substituição. As variáveis de substituição são abordadas com mais detalhes na seção abaixo [Variáveis de URL de acesso](#access-url-variables).
 
 Veja um exemplo da configuração do AMP Access:
 
