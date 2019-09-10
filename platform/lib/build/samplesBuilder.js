@@ -268,6 +268,9 @@ class SamplesBuilder {
 
     // Rewrite some markdown to be consumable by Grow
     for (const section of parsedSample.document.sections) {
+      // Unwrap code snippet from wrapping divs and remove trailing whitespace
+      section.code = section.codeSnippet();
+
       // Replace GitHub sourcecode syntax by python-markdown
       let markdown = section.doc_;
       markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
