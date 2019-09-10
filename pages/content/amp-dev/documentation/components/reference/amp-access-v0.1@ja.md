@@ -146,12 +146,12 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>承認エンドポイントの HTTPS URL。</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>Pingback エンドポイントの HTTPS URL。</td>
   </tr>
   <tr>
@@ -161,7 +161,7 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> または<br><Map[文字列, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> または<br><Map[文字列, URL]></td>
     <td>ログインページの HTTPS URL、またはさまざまなタイプのログインページの一連の URL。</td>
   </tr>
   <tr>

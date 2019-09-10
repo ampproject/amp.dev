@@ -146,12 +146,12 @@ Properti berikut ditetapkan dalam konfigurasi ini:
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>URL HTTPS untuk endpoint Otorisasi.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>URL HTTPS untuk endpoint Pingback.</td>
   </tr>
   <tr>
@@ -161,17 +161,17 @@ Properti berikut ditetapkan dalam konfigurasi ini:
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> atau<br><Map[string, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> atau<br><code>&lt;Map[string, URL]&gt;</code></td>
     <td>URL HTTPS untuk Halaman Login atau sekumpulan URL untuk berbagai jenis halaman login.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationFallbackResponse</code></td>
-    <td><object></td>
+    <td><code>&lt;object&gt;</code></td>
     <td>Objek JSON yang akan digunakan sebagai pengganti respons otorisasi jika otorisasi gagal.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationTimeout</code></td>
-    <td><number></td>
+    <td><code>&lt;number&gt;</code></td>
     <td>Waktu tunggu (dalam milidetik) yang setelah itu permintaan otorisasi akan dianggap gagal. Default-nya adalah 3000. Nilai di atas 3000 hanya diizinkan di lingkungan developer. </td>
   </tr>
   <tr>
@@ -186,7 +186,7 @@ Properti berikut ditetapkan dalam konfigurasi ini:
   </tr>
 </table>
 
-Nilai *<URL>* menentukan URL HTTPS dengan variabel substitusi. Variabel substitusi dibahas lebih detail di bagian [Variabel URL Akses](#access-url-variables) di bawah.
+Nilai *`<URL>`* menentukan URL HTTPS dengan variabel substitusi. Variabel substitusi dibahas lebih detail di bagian [Variabel URL Akses](#access-url-variables) di bawah.
 
 Berikut ini contoh konfigurasi AMP Access:
 

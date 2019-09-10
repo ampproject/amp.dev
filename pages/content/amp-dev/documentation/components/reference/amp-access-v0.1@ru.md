@@ -144,12 +144,12 @@ Google AMP Cache возвращает читателю документ, в ко
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>URL HTTPS для конечной точки авторизации.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>URL HTTPS для конечной точки автоматического уведомления.</td>
   </tr>
   <tr>
@@ -159,17 +159,17 @@ Google AMP Cache возвращает читателю документ, в ко
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> или<br><Map[string, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> или<br><code>&lt;Map[string, URL]&gt;</code></td>
     <td>URL HTTPS для страницы входа или набор таких URL для разных типов страниц.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationFallbackResponse</code></td>
-    <td><object></td>
+    <td><code>&lt;object&gt;</code></td>
     <td>Объект JSON, который используется вместо ответа, если авторизация не проходит успешно.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationTimeout</code></td>
-    <td><number></td>
+    <td><code>&lt;number&gt;</code></td>
     <td>Время ожидания (в миллисекундах), после которого для запроса на авторизацию засчитывается сбой. Значение по умолчанию: 3000. Значения больше 3000 допускаются только в среде разработчика. </td>
   </tr>
   <tr>
@@ -184,7 +184,7 @@ Google AMP Cache возвращает читателю документ, в ко
   </tr>
 </table>
 
-Значения *<URL>* соответствуют URL HTTPS с подстановкой переменных. Более подробная информация приведена в разделе [Переменные URL](#access-url-variables) ниже.
+Значения *`<URL>`* соответствуют URL HTTPS с подстановкой переменных. Более подробная информация приведена в разделе [Переменные URL](#access-url-variables) ниже.
 
 Пример конфигурации amp-access:
 

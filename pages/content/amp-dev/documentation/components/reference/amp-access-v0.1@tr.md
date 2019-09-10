@@ -146,12 +146,12 @@ Bu yapılandırmada aşağıdaki özellikler tanımlanır:
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>Yetkilendirme uç noktasının HTTPS URL'si.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>Pingback uç noktasının HTTPS URL'si.</td>
   </tr>
   <tr>
@@ -161,17 +161,17 @@ Bu yapılandırmada aşağıdaki özellikler tanımlanır:
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> veya<br><Map[string, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> veya<br><code>&lt;Map[string, URL]&gt;</code></td>
     <td>Giriş Sayfası için HTTPS URL'si veya farklı türlerdeki giriş sayfaları için bir URL kümesi.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationFallbackResponse</code></td>
-    <td><object></td>
+    <td><code>&lt;object&gt;</code></td>
     <td>Başarısız olursa yetkilendirme yanıtının yerine kullanılacak JSON nesnesi.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationTimeout</code></td>
-    <td><number></td>
+    <td><code>&lt;number&gt;</code></td>
     <td>Sonrasında yetkilendirme isteğinin başarısız olarak kabul edileceği (milisaniye cinsinden) zaman aşımı değeri. Varsayılan 3000'dir. 3000'den büyük değerlere yalnızca geliştirme ortamında izin verilir. </td>
   </tr>
   <tr>
@@ -186,7 +186,7 @@ Bu yapılandırmada aşağıdaki özellikler tanımlanır:
   </tr>
 </table>
 
-*<URL>* değerleri, HTTPS URL'lerini değişiklik değişkenleriyle belirtir. Değişiklik değişkenleri, aşağıdaki [Access URL'si Değişkenleri](#access-url-variables) bölümünde daha ayrıntılı olarak ele alınmaktadır.
+*`<URL>`* değerleri, HTTPS URL'lerini değişiklik değişkenleriyle belirtir. Değişiklik değişkenleri, aşağıdaki [Access URL'si Değişkenleri](#access-url-variables) bölümünde daha ayrıntılı olarak ele alınmaktadır.
 
 Bir örnek AMP Access yapılandırmasını burada görebilirsiniz:
 

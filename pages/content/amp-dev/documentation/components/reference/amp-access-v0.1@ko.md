@@ -146,12 +146,12 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>승인 엔드포인트에 대한 HTTPS URL.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>핑백 엔드포인트에 대한 HTTPS URL.</td>
   </tr>
   <tr>
@@ -161,17 +161,17 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> 또는<br><Map[string, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> 또는<br><code>&lt;Map[string, URL]&gt;</code></td>
     <td>로그인 페이지에 대한 HTTPS URL 또는 서로 다른 로그인 페이지 유형에 대한 URL 집합.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationFallbackResponse</code></td>
-    <td><object></td>
+    <td><code>&lt;object&gt;</code></td>
     <td>실패할 경우 승인 응답 대신 사용되는 JSON 개체.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationTimeout</code></td>
-    <td><number></td>
+    <td><code>&lt;number&gt;</code></td>
     <td>승인 요청이 실패한 것으로 간주되기까지의 시간 제한(밀리초). 기본값은 3000입니다. 3000보다 큰 값은 개발 환경에서만 허용됩니다. </td>
   </tr>
   <tr>
@@ -186,7 +186,7 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
   </tr>
 </table>
 
-*<URL>* 값은 대체 변수가 있는 HTTPS URL을 지정합니다. 대체 변수에 대해서는 아래의 [URL 변수에 액세스](#access-url-variables) 섹션에서 자세히 설명합니다.
+*`<URL>`* 값은 대체 변수가 있는 HTTPS URL을 지정합니다. 대체 변수에 대해서는 아래의 [URL 변수에 액세스](#access-url-variables) 섹션에서 자세히 설명합니다.
 
 다음은 AMP 액세스 구성의 예입니다.
 
