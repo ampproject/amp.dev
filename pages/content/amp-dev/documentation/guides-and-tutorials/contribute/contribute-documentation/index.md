@@ -1,6 +1,7 @@
 ---
-$title: Get started
+$title: Contribute Documentation
 $order: 0
+$hidden: true
 description: 'Get started contributing documentation to amp.dev'
 formats:
   - websites
