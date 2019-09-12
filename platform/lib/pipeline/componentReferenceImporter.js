@@ -25,6 +25,8 @@ const DEFAULT_VERSION = 0.1;
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const categories = require(__dirname + '/../../config/imports/componentCategories.json');
 const formats = require(__dirname + '/../../config/imports/componentFormats.json');
+const {writeFileSync} = require('fs');
+const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 
 const {Signale} = require('signale');
 
@@ -72,9 +74,13 @@ class ComponentReferenceImporter {
     // Keep track of all promises to complete function
     const savedDocuments = [];
 
+    const versionMapping = {};
     for (const extension of extensions) {
       const documents = await this._findExtensionDocs(extension);
       const versions = [...new Set(documents.map((doc) => doc.version).sort().reverse())];
+      const supportedVersions = {};
+      versionMapping[extension.name] = supportedVersions;
+
 
       if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
@@ -86,12 +92,24 @@ class ComponentReferenceImporter {
           this._setMetadata(
               doc.tagName || extension.name, doc.document, doc.version, versions);
           doc.document.addExplicitAnchors();
+          if (doc.document.isCurrent) {
+            supportedVersions.current = doc.version;
+          }
           savedDocuments.push(
               this._saveDocument(doc.tagName || extension.name, doc.document, doc.version));
+          doc.document.formats.forEach((format) => {
+            let versionsPerFormat = supportedVersions[format];
+            if (!versionsPerFormat) {
+              versionsPerFormat = [];
+              supportedVersions[format] = versionsPerFormat;
+            }
+            versionsPerFormat.push(doc.version);
+          });
         });
       }
     }
 
+    writeFileSync(FORMAT_COMPONENT_MAPPING, JSON.stringify(versionMapping, null, 2), 'utf-8');
     return Promise.all(savedDocuments);
   }
 
@@ -128,6 +146,7 @@ class ComponentReferenceImporter {
     if (!document.formats) {
       document.formats = formats[extensionName];
     }
+    document.supportedFormats = formats[extensionName];
 
     if (version) {
       document.version = version;

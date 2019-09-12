@@ -2,9 +2,13 @@
 {# Since it doesn't use grow, global page context is not available. #}
 <h1>
 {{title}}
+[% if versions and versions.length > 1 %]
 <div class="ap--versions">
   {% for v in versions %}
-    <a{% if v !== version %} href="../{{title}}-v{{v}}.html"{% endif %}>{{v}}</a>
+  [% if versions and versions.includes('{{v}}') %]
+  <a{% if v !== version %} href="../{{title}}-v{{v}}.html"{% endif %}>{{v}}</a>
+  [% endif %]
   {% endfor %}
 </div>
+[% endif %]
 </h1>

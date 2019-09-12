@@ -24,6 +24,13 @@ const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
 
+const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
+const formatComponentMapping = require(FORMAT_COMPONENT_MAPPING);
+
+/* Matches component name and version from an URL */
+const COMPONENT_NAME_PATTERN =
+  /^(\/[a-z]+)?\/documentation\/components\/(amp-[a-z0-9-]+)(-v(\d\.\d))?\//;
+
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
 
@@ -168,6 +175,40 @@ function rewriteLinks(canonical, html, format, level) {
   return html;
 }
 
+/**
+ * Updates template context and URL:
+ *
+ * - matches the URL to the right template, based on the active format and version
+ * - adds the supported version to the template contexrt
+ */
+function updateComponentInfo(request, context, url) {
+  // extract component and optional version from the path
+  const componentMatch = COMPONENT_NAME_PATTERN.exec(request.path);
+  if (!componentMatch) {
+    // nothing to do if it's not a component URL
+    return;
+  }
+  const component = componentMatch[2];
+  const version = componentMatch[4];
+  // get the supported version for this format
+  const versionsByFormat = formatComponentMapping[component];
+  if (!versionsByFormat) {
+    console.warn(`No version mapping defined for ${component}. Run 'gulp importAll' to fix.`);
+    return;
+  }
+  // add format supported versions to template context
+  context.versions = versionsByFormat[context.format];
+  // rewrite path based on the format and available versions
+  const latestVersionByFormat = context.versions[context.versions.length - 1];
+  if (version === versionsByFormat.current) {
+    // change amp-carousel-v$LATEST => amp-carousel
+    url.pathname = url.pathname.replace(`-v${version}`, '');
+  } else if (versionsByFormat.current !== latestVersionByFormat) {
+    // change amp-carousel => amp-carousel-v$LATEST_FOR_EMAIL
+    url.pathname = url.pathname.slice(0, -1) + `-v${latestVersionByFormat}/`;
+  }
+}
+
 // eslint-disable-next-line new-cap
 const growPages = express.Router();
 
@@ -186,13 +227,15 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     return;
   }
 
+  const templateContext = createRequestContext(req);
+  updateComponentInfo(req, templateContext, url);
+
   const template = await loadTemplate(url.pathname);
   if (!template) {
     next();
     return;
   }
 
-  const templateContext = createRequestContext(req);
   let renderedTemplate = null;
   try {
     renderedTemplate = template.render(templateContext);

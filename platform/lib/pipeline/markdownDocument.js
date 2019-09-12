@@ -131,12 +131,26 @@ class MarkdownDocument {
     this._frontmatter['$category@'] = category;
   }
 
+  /**
+   * Returns the formats supported by this version of the component.
+   */
   get formats() {
     return this._frontmatter['formats'] || [];
   }
 
   set formats(formats) {
     this._frontmatter['formats'] = formats;
+  }
+
+  /**
+   * Returns the formats supported by any version of this component.
+   */
+  get supportedFormats() {
+    return this._frontmatter['supported_formats'] || [];
+  }
+
+  set supportedFormats(formats) {
+    this._frontmatter['supported_formats'] = formats;
   }
 
   get version() {
@@ -168,6 +182,10 @@ class MarkdownDocument {
 
   set isCurrent(bool) {
     this._frontmatter['is_current'] = bool;
+  }
+
+  get isCurrent() {
+    return this._frontmatter['is_current'];
   }
 
   get contents() {
@@ -299,15 +317,15 @@ class MarkdownDocument {
   /**
    * Adds version toggler to the h1 heading in case of multiple versions
    * @param  {String} contents
-   * @return {String}          The rewritten content
+   * @return {String} The rewritten content
    */
   static insertVersionToggler(contents, version, versions) {
     const titleRegex = /^#{1}\s(.+)/m;
     const title = contents.match(titleRegex)[1];
     return contents.replace(titleRegex, VERSION_TOGGLE_TEMPLATE.render({
-      title: title,
-      versions: versions,
-      version: version,
+      title,
+      versions,
+      version,
     }));
   }
 
