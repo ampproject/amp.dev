@@ -127,7 +127,7 @@ agenda:
     - title: "Lunch"
       description:
       time: "12:30"
-    - title: "AMP caches and signed exchanges"
+    - title: "Signed exchanges and the Google AMP Cache"
       description:
       time: "1:30"
     - title: "Life of an AMP email"
