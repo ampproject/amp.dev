@@ -123,7 +123,7 @@ Os caches de AMP servem para:
 No momento, há dois provedores de cache de AMP:
 
 *   [cache de AMP do Google](https://developers.google.com/amp/cache/)
-*   [cache de AMP do Cloudflare](https://amp.cloudflare.com/) (em inglês)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Assim, você tem duas opções para exibir um arquivo AMP em um aplicativo:
 

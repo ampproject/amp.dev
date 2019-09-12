@@ -19,7 +19,7 @@ AMP 缓存是一种基于代理的内容传送网络 (CDN)，用于传送有效�
 目前，有 2 个 AMP 缓存提供商：
 
 - [Google AMP 缓存](https://developers.google.com/amp/cache/)
-- [Cloudflare AMP 缓存](https://amp.cloudflare.com/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 AMP 是一个开放式生态系统，AMP 项目会积极地推动开发更多 AMP 缓存。要想了解如何创建 AMP 缓存，请参阅 [AMP 缓存指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)。
 
@@ -37,7 +37,7 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
 
 ## 谁会请求访问缓存的 AMP 网页？
 
-缓存的 AMP 网页会被各类平台（如 Google 搜索、Google 新闻和 Cloudflare）和移动应用访问。移动应用可通过网址（请参阅 Google 的 [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)）或通过渐进式网页应用中的跨源 XHR（详情请见[嵌入 AMP 网页并将其用作数据源](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)）关联到缓存的 AMP 内容。
+缓存的 AMP 网页会被各类平台（如 Google 搜索、Google 新闻和 Bing）和移动应用访问。移动应用可通过网址（请参阅 Google 的 [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)）或通过渐进式网页应用中的跨源 XHR（详情请见[嵌入 AMP 网页并将其用作数据源](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)）关联到缓存的 AMP 内容。
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"
@@ -50,7 +50,6 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
 * **平台发现**：平台可通过 `<html ⚡>` 或 `<html amp>` 标记发现您的 AMP 内容，进而缓存该内容。例如，Google 搜索会抓取内容；对于任何已被识别出的有效 AMP 网页，系统都会自动将相应内容添加到 Google AMP 缓存中。
 
 * **缓存网址请求**：平台可通过使用 AMP 缓存网址格式有针对性地请求访问某个 AMP 网页。在这种情况下，AMP 缓存便是充当了反向代理；因此，当相应平台访问该网页时，系统就会自动缓存该网页。
-    - Cloudflare AMP 缓存网址示例：`https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Google AMP 缓存网址示例：`https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 注意: AMP 缓存网址不是面向用户的网址，也就是说，用户通常不会通过这些网址来请求获取内容。
@@ -61,4 +60,4 @@ AMP 缓存不是由身为发布商的您来选择的 - 所要使用的 AMP 缓�
 
 * [AMP 项目的 AMP 缓存指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
 * [Google AMP 缓存概览](https://developers.google.com/amp/cache/overview)
-* [Cloudflare AMP 缓存文档](https://amp.cloudflare.com/)
+* [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

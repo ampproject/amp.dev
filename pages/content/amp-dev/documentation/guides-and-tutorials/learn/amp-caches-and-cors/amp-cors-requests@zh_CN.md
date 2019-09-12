@@ -80,13 +80,13 @@ AMP组件（例如amp-from，amp-list等等）在获取动态数据(例如JSON)�
 
 举个例子，服务器应该允许以下来源的请求：
   *  Google AMP Cache 子域名: `https://<publisher's domain>.cdn.ampproject.org` <br>(例如, `https://nytimes-com.cdn.ampproject.org`)
-  *  Cloudflare AMP Cache 子域名: `https://<publisher's domain>.amp.cloudflare.com`  
+  *    *  Bing AMP Cache: `https://<publisher's domain>.bing-amp.com`
 
 [tip type="read-on"]
 
 想要了解AMP Cache服务器子域名的URL格式，通过以下资源进行了解:
 - [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 [/tip]
 
@@ -136,7 +136,7 @@ AMP-Same-Origin: true
 
 1.  如果Origin字段值不满足以下任意一个域名，停止处理请求并且返回错误相应:
     - `<你的域名>.cdn.ampproject.org`
-    - `<你的域名>.amp.cloudflare.com`
+    - `<你的域名>.amp.bing-amp.com`
     - 你的域名
 
     这里如果使用`*`作为响应头的话代表的是通配符，意思是允许所有域名进行请求，而不是一个*号。
@@ -170,7 +170,7 @@ AMP-Same-Origin: true
 
 * `example.com` ---  你的域名
 * `example-com.cdn.ampproject.org` --- Google AMP Cache服务器子域名
-* `example.com.amp.cloudflare.com`--- Cloudflare AMP Cache服务器子域名
+* `example.com.bing-amp.com`--- Bing's AMP Cache服务器子域名
 
 ### 验证请求后的正确响应
 
@@ -217,7 +217,7 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
   var allowedOrigins = [
      "https://example.com",
      "https://example-com.cdn.ampproject.org",
-     "https://example.com.amp.cloudflare.com",
+     "https://example.com.bing-amp.com",
      "https://cdn.ampproject.org" ];
   var allowedSourceOrigin = "https://example.com";  //publisher's origin
   var sourceOrigin = req.query.__amp_source_origin;
