@@ -1,5 +1,20 @@
 const MarkdownDocument = require('./markdownDocument.js');
 
+test('Test escape nunjucks tags', async (done) => {
+  const result = MarkdownDocument.escapeNunjucksTags(
+      '<pre>\n' +
+      'var href = location.href.replace(/\?[^#]+/, \'\');\n' +
+      'history.replaceState(null, null, href);\n' +
+      '</pre>\n');
+
+  expect(result).toBe(
+      '<pre>\n' +
+      'var href = location.href.replace(/\?[^{{\'[% raw %]\'}}#]{{\'{% endraw %}\'}}+/, \'\');\n' +
+      'history.replaceState(null, null, href);\n' +
+      '</pre>\n');
+  done();
+});
+
 test('Test escape mustache tags', async (done) => {
   const result = MarkdownDocument.escapeMustacheTags(
       'The [`link`]({{notincode}}) test `code`.\n' +

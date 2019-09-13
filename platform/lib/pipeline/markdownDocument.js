@@ -57,6 +57,9 @@ const MUSTACHE_PATTERN = new RegExp(
     /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
     ')', 'g');
 
+// Matches tags used for SSR
+const NUNJUCKS_PATTERN = /\[(?:%|=|#)|(?:%|=|#)\]/g;
+
 // This pattern will find relative urls.
 // It will als match source code blocks to skip them and not replace any links inside.
 const RELATIVE_LINK_PATTERN = new RegExp(
@@ -208,9 +211,23 @@ class MarkdownDocument {
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
     this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
+    this._contents = MarkdownDocument.escapeNunjucksTags(this._contents);
 
     // Replace dividers (---) as they will break front matter
     this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
+  }
+
+  /**
+   * Escapes nunjucks tags to not interfer with SSR
+   * @param  {String} contents
+   * @return {String}          The rewritten input
+   */
+  static escapeNunjucksTags(contents) {
+    return contents.replace(NUNJUCKS_PATTERN, (tag) => {
+      // TODO(matthiasrohmer): Raw tags for nunjucks do not match.
+      // See: github.com/ampproject/amp.dev#2865
+      return `{{'[% raw %]'}}${tag}{{'{% endraw %}'}}`;
+    });
   }
 
   /**

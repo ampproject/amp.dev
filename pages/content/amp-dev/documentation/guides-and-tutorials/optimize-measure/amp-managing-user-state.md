@@ -490,7 +490,7 @@ We recommend validating the authenticity of query parameter values by using the 
 </ul>
 <p>To do this on your non-AMP page, include the following JavaScript, which will remove all query parameters from the URL:</p>
 <pre>
-var href = location.href.replace(/\?[^#]+/, '');
+var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
 history.replaceState(null, null, href);
 </pre>
 <p>Adapt this as needed to remove fewer query parameters.</p>
