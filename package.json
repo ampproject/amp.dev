@@ -122,7 +122,7 @@
     "http-proxy-response-rewrite": "0.0.1",
     "jasmine": "3.4.0",
     "jest": "24.9.0",
-    "jimp": "0.8.0",
+    "jimp": "0.8.2",
     "js-beautify": "1.10.2",
     "keymaster": "1.6.2",
     "mini-css-extract-plugin": "0.8.0",
