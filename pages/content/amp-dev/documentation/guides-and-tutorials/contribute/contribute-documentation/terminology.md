@@ -65,7 +65,7 @@ author: CrystalOnScript
   <tr>
    <td>AMP cache
    </td>
-   <td>A cache that support AMP. 
+   <td>A cache that supports AMP. 
    </td>
    <td><ul>
       <li>When an AMP cache serves your page, it isn’t loaded from your site’s origin. 
