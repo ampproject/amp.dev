@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
 import os
+import re
 import json
 from grow.pods.pods import Pod
 from grow.documents.document import Document
 
+FIRST_SENTENCE_PATTERN = re.compile(
+    # We also match HTML comments and markup [tag]...[/tag] blocks to skip them
+    r'<!--.*?-->|^\[(\w+)(?:[:\s][^\]]+)\].*?\[/\1\]|(^\w[^.\n]*(?:\n\w[^.\n]*)*(?:\.|$))',
+    re.MULTILINE | re.DOTALL)
+
+MARKDOWN_LINK_PATTERN = re.compile(r'!?\[([^\]]+)\](?:\([^\)]+\)|\[[^\]]+\])')
+HTML_TAG_PATTERN = re.compile(r'<[^>]*>')
 
 class PageInfoCollector(object):
   def __init__(self, pod, input_file, output_folder):
@@ -77,4 +85,19 @@ class PageInfoCollector(object):
         result = teaser.get('text')
       if not result:
         result = ''
+        for first_sentence_match in FIRST_SENTENCE_PATTERN.findall(doc.body):
+          if first_sentence_match[1]:
+            result = PageInfoCollector.markdown_to_plaintext(first_sentence_match[1])
+            break
+    return result
+
+  @staticmethod
+  def markdown_to_plaintext(markdown):
+    """
+    :type markdown: str
+    """
+    result = markdown
+    result = MARKDOWN_LINK_PATTERN.sub(r'\1', result)
+    result = HTML_TAG_PATTERN.sub('', result)
+    result = result.replace('`', '\'')
     return result
