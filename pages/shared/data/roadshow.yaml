@@ -1,4 +1,36 @@
 nextstop:
+  - title: porto alegre
+    coords: 28x38
+    location: BarraShoppingSul
+    time: 13:00-18:00
+    day: 22
+    month: aug
+    year: 2019
+    link: https://braziljs.org/eventos/amp-roadshow/2019/
+  - title: sydney
+    coords: 103x42
+    location: Maritime Museum
+    time: 09:30–17:00
+    day: 27
+    month: aug
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-sydney/
+  - title: melbourne
+    coords: 100x44
+    location: Rendezvous Hotel
+    time: 09:30–17:00
+    day: 30
+    month: aug
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-melbourne/
+  - title: auckland
+    coords: 108x42
+    location: Generator@GridAKL
+    time: 09:00-14:30
+    day: 2
+    month: sep
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-auckland/
   - title: tel aviv
     coords: 66x22
     location: Google Tel Aviv
@@ -31,36 +63,8 @@ nextstop:
     month: oct
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-karachi/
-  - title: warsaw
-    coords: 60x12
-    location: Campus Warsaw
-    time: 09:30-17:00
-    day: 21
-    month: oct
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-warsaw/
-  - title: kiev
-    coords: 64x12
-    location: TBD
-    time: 09:30-17:00
-    day: 25
-    month: oct
-    year: 2019
-    link: #
 
 past:
-  - title: AUCKLAND
-    coords: 108x42
-    date: 2019-09-02
-  - title: MELBOURNE
-    coords: 100x44
-    date: 2019-08-30
-  - title: SYDNEY
-    coords: 103x42
-    date: 2019-08-27
-  - title: PORTO ALEGRE
-    coords: 28X38
-    date: 2019-08-22
   - title: BERLIN
     coords: 57x12
     date: 2019-06-07
