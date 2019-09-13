@@ -69,7 +69,7 @@ author: CrystalOnScript
    </td>
    <td><ul>
       <li>When an AMP cache serves your page, it isn’t loaded from your site’s origin. 
-      <li>Google and Cloudflare both have AMP caches. </li></ul>
+      <li>Google and Bing both have AMP caches. </li></ul>
    </td>
   </tr>
   <tr>

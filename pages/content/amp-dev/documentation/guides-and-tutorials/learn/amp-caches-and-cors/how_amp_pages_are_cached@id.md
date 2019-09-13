@@ -19,7 +19,7 @@ Pelajari lebih lanjut tentang Cache AMP di video YouTube di bawah, atau pada ent
 Saat ini, ada 2 penyedia Cache AMP:
 
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 AMP adalah ekosistem terbuka dan Project AMP secara aktif mendorong pengembangan lebih banyak Cache AMP.  Untuk mempelajari tentang cara membuat Cache AMP, lihat [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -37,7 +37,7 @@ Jika Anda ingin agar dokumen tidak disimpan dalam cache, salah satu opsinya adal
 
 ## Siapa yang meminta halaman AMP yang disimpan dalam cache?
 
-Halaman AMP yang disimpan dalam cache diakses oleh platform (seperti Google Penelusuran, Google Berita, dan Cloudflare) dan aplikasi seluler. Aplikasi seluler dapat ditautkan ke konten AMP yang disimpan dalam cache melalui URL (lihat [AMP URL API](https://developers.google.com/amp/cache/use-amp-url) Google) atau dengan XHR lintas-asal di  Progressive Web App (pelajari lebih lanjut di [Menyematkan.html))).
+Halaman AMP yang disimpan dalam cache diakses oleh platform (seperti Google Penelusuran, Google Berita, dan Bing) dan aplikasi seluler. Aplikasi seluler dapat ditautkan ke konten AMP yang disimpan dalam cache melalui URL (lihat [AMP URL API](https://developers.google.com/amp/cache/use-amp-url) Google) atau dengan XHR lintas-asal di  Progressive Web App (pelajari lebih lanjut di [Menyematkan.html))).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"
@@ -50,7 +50,6 @@ Dengan menggunakan format AMP, Anda membuat konten dapat disimpan dalam cache ol
 * **Penemuan oleh platform**:  Platform menemukan konten AMP Anda melalui tag `<html ⚡>` atau `<html amp>` dan menyimpan konten tersebut dalam cache. Misalnya, Google Penelusuran meng-crawl konten; untuk semua halaman AMP yang valid dan diidentifikasi, kontennya ditambahkan ke Cache AMP Google.
 
 * **Permintaan URL Cache**: Platform dapat secara khusus meminta halaman AMP menggunakan format URL Cache AMP.  Cache AMP bertindak sebagai proxy balik, jadi saat platform mengakses halaman, halaman akan disimpan dalam cache secara otomatis.
-    - Contoh URL Cache AMP Cloudflare: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Contoh URL Cache AMP Google: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 Catatan: URL Cache AMP bukanlah URL yang diakses langsung oleh pengguna, artinya pengguna biasanya tidak akan meminta konten melalui URL tersebut.
@@ -61,4 +60,4 @@ Catatan: URL Cache AMP bukanlah URL yang diakses langsung oleh pengguna, artinya
 
 * [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
 * [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
-* [Cloudflare AMP Cache documentation](https://amp.cloudflare.com/)
+* [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

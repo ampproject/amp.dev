@@ -121,7 +121,7 @@ AMP Caches are designed to:
 Currently, there are two AMP Cache providers:
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 This gives two choices to display an AMP file in an app by using either:
 

@@ -123,7 +123,7 @@ AMP キャッシュは次のような目的で設計されています。
 現在、2 つの AMP キャッシュ プロバイダがあります。
 
 *   [Google AMP キャッシュ](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP キャッシュ](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 そのため、アプリで AMP ファイルを表示するには、次の 2 つの方法のいずれかを選択する必要があります。
 

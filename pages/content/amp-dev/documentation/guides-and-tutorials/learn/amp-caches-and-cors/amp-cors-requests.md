@@ -161,13 +161,13 @@ Endpoints should only allow requests from: (1) the publisher's own origin; and
 
 For example, endpoints should allow requests from:
   *  Google AMP Cache subdomain: `https://<publisher's domain>.cdn.ampproject.org` <br>(for example, `https://nytimes-com.cdn.ampproject.org`)
-  *  Cloudflare AMP Cache: `https://<publisher's domain>.amp.cloudflare.com`
+  *  Bing AMP Cache: `https://<publisher's domain>.bing-amp.com`
 
 [tip type="read-on"]
 
 For information on AMP Cache URL formats, see these resources:
 - [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 [/tip]
 
@@ -228,7 +228,7 @@ following:
 1.  If the origin does not match one of the following values, stop and return an error
     response:
     - `<publisher's domain>.cdn.ampproject.org`
-    - `<publisher's domain>.amp.cloudflare.com`
+    - `<publisher's domain>.amp.bing-amp.com`
     - the publisher's origin (aka yours)
 
     where `*` represents a wildcard match, and not an actual asterisk ( * ).
@@ -264,7 +264,7 @@ Based on what we know about CORS and AMP (from [Verify CORS requests](#verify-co
 
 * `example.com` ---  Publisher's domain
 * `example-com.cdn.ampproject.org` --- Google AMP Cache subdomain
-* `example.com.amp.cloudflare.com`--- Cloudflare AMP Cache subdomain
+* `example.com.bing-amp.com`--- Bing's AMP Cache subdomain
 
 ### Response headers for allowed requests
 
