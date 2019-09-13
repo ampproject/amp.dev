@@ -3,6 +3,8 @@
 import unittest
 import sys
 import os
+from grow.pods.podspec import PodSpec
+from grow.rendering.markdown_utils import MarkdownUtil
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
@@ -21,10 +23,12 @@ class PageInfoCollectorTestCase(unittest.TestCase):
     self.assertEqual('Text1\nSecond Line.', PageInfoCollector.get_page_description(doc))
     doc = MockDoc({}, '# body\n\nText with [link](#link).')
     self.assertEqual('Text with link.', PageInfoCollector.get_page_description(doc))
+    doc = MockDoc({}, '# body\n\n**Text** with _markdown_! And two sentences.')
+    self.assertEqual('Text with markdown!', PageInfoCollector.get_page_description(doc))
     doc = MockDoc({}, '# body\n\nText with <b>html</b>.')
     self.assertEqual('Text with html.', PageInfoCollector.get_page_description(doc))
     doc = MockDoc({}, '# body\n\nText with `code`.')
-    self.assertEqual('Text with \'code\'.', PageInfoCollector.get_page_description(doc))
+    self.assertEqual('Text with code.', PageInfoCollector.get_page_description(doc))
     doc = MockDoc({}, '<!--\ncomment\n-->\n\n# body\n\nText2')
     self.assertEqual('Text2', PageInfoCollector.get_page_description(doc))
     doc = MockDoc({}, '# body\n\n[sourcecode:javascript]\nsome script[/sourcecode]\n\nText3')
@@ -50,3 +54,26 @@ class MockDoc:
     """
     self.fields = fields
     self.body = body
+    self.pod = MockPod()
+    self.html = MarkdownUtil(self.pod).markdown.convert(body)
+
+
+class MockPod:
+
+  def __init__(self):
+    self.podspec = PodSpec({
+      'markdown': {
+        'extensions': [
+          {'kind': 'sourcecode',
+           'classes': True,
+           'class_name': 'ap-m-code-snippet'
+           }, {
+            'kind': 'markdown.extensions.codehilite',
+            'classes': True,
+            'class_name': 'ap-m-code-snippet'
+          }, {
+            'kind': 'markdown.extensions.extra'
+          }
+        ]
+      }
+    }, self)
