@@ -124,7 +124,7 @@ AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 현재 두 가지 AMP 캐시 제공업체가 있습니다.
 
 * [Google AMP 캐시](https://developers.google.com/amp/cache/)
-* [Cloudflare AMP 캐시](https://amp.cloudflare.com/)
+* [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 다음 두 가지 옵션 중 하나를 사용하여 앱에 AMP 파일을 표시할 수 있습니다.
 

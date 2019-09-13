@@ -12,6 +12,20 @@ flyout:
   icon: amp-email
 
 benefits: !g.yaml /shared/data/benefits.yaml
+
+email_clients:
+  - name: Gmail
+    url: https://developers.google.com/gmail/ampemail/
+    image: 
+      src: /static/img/email-clients/gmail.png
+  - name: Mail.ru
+    url: https://postmaster.mail.ru/amp
+    image: 
+      src: /static/img/email-clients/mailru.png
+  - name: Outlook.com
+    url: https://docs.microsoft.com/en-us/outlook/amphtml/
+    image: 
+      src: /static/img/email-clients/outlook.png
 ---
 {% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
 {% do doc.amp_dependencies.add('amp-fx-collection', '0.1') %}
@@ -102,6 +116,21 @@ benefits: !g.yaml /shared/data/benefits.yaml
   </div>
 </section>
 
+<section class="ap--content">
+  <div class="ap--container-fluid">
+    <div class="ap-m-copy ap-m-copy-right-small" amp-fx="fade-in fly-in-right" data-margin-start="5%" data-duration="1s" data-fly-in-distance="5%">
+      <h1>Supported Email Clients</h1>
+      <h5>These email clients currently support receiving AMP Emails</h5>
+      <div class="ap-o-component-visual-link">
+      <div class="ap-o-teaser-grid-list">
+        {% for tool in doc.email_clients %}
+        {% include '/views/partials/tools-teaser.j2' %}
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="ap--benefits-overview">
   <div class="ap-o-benefits-overview ap--container">

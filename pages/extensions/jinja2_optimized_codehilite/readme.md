@@ -13,6 +13,8 @@ This extension does the following:
  * Jinja2 expressions are unescaped in the code highlight block 
    (Needed if the expression contains quotes or angle brackets)
 
+Additionally the custom html lexer defined with this extension also supports the amp-bind attributes in square brackets.
+
 
 ## Activation
 

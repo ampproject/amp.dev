@@ -26,10 +26,9 @@ Learn more about AMP Caches in the YouTube video below, or in the [Why AMP Cache
 [video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='Watch this video to learn why AMP Caches exist.']
 
 ## What AMP Caches are available?
-Currently, there are three AMP Cache providers:
+Currently, there are two AMP Cache providers:
 
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 AMP is an open ecosystem and the AMP Project actively encourages the development of more AMP Caches.  To learn about creating AMP Caches, see the [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
@@ -48,7 +47,7 @@ Should you desire not to have your document cached, one option is to remove the 
 
 ## Who requests cached AMP pages?
 
-Cached AMP pages are accessed by platforms (like Google Search, Google News, and Cloudflare) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)).
+Cached AMP pages are accessed by platforms (like Google Search, Google News, and Bing) and mobile apps. Mobile apps can link to cached AMP content via the URL (see Google's [AMP URL API](https://developers.google.com/amp/cache/use-amp-url)) or by cross-origin XHRs in  Progressive Web Apps (learn more in [Embed & use AMP as a data source](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)).
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"
@@ -61,7 +60,6 @@ By using the AMP format, you are making your content available to be cached by A
 * **Platform discovery**:  Platforms discover your AMP content via the `<html ⚡>` or `<html amp>` tag and cache the content. For example, Google Search crawls content; for any identified and valid AMP pages, the content is added to the Google AMP Cache.
 
 * **Cache URL request**: Platforms can specifically request an AMP page by using the AMP Cache URL format.  The AMP Cache acts as a reverse proxy, therefore, when the platform accesses the page, it results in the page being cached automatically.
-    - Cloudflare AMP Cache URL example: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Google AMP Cache URL example: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 [tip type="note"]
@@ -74,4 +72,4 @@ By using the AMP format, you are making your content available to be cached by A
 
 * [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
 * [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
-* [Cloudflare AMP Cache documentation](https://amp.cloudflare.com/)
+* [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
