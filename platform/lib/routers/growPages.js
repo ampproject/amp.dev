@@ -23,9 +23,15 @@ const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
+const signale = require('signale');
 
 const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
-const formatComponentMapping = require(FORMAT_COMPONENT_MAPPING);
+let formatComponentMapping = {};
+try {
+  formatComponentMapping = require(FORMAT_COMPONENT_MAPPING);
+} catch (_) {
+  signale.warn('No version mapping defined . Run `gulp importAll` to fix.');
+}
 
 /* Matches component name and version from an URL */
 const COMPONENT_NAME_PATTERN =
@@ -179,7 +185,7 @@ function rewriteLinks(canonical, html, format, level) {
  * Updates template context and URL:
  *
  * - matches the URL to the right template, based on the active format and version
- * - adds the supported version to the template contexrt
+ * - adds the supported version to the template context
  */
 function updateComponentInfo(request, context, url) {
   // extract component and optional version from the path
@@ -193,7 +199,7 @@ function updateComponentInfo(request, context, url) {
   // get the supported version for this format
   const versionsByFormat = formatComponentMapping[component];
   if (!versionsByFormat) {
-    console.warn(`No version mapping defined for ${component}. Run 'gulp importAll' to fix.`);
+    signale.warn(`No version mapping defined for ${component}. Run 'gulp importAll' to fix.`);
     return;
   }
   // add format supported versions to template context
@@ -250,7 +256,7 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
               .split('\n')
               .map((line, index) => `${index + 1} ${line}`)
               .join('\n'));
-      console.error(e);
+      signale.error(e);
       return;
     }
 
@@ -268,7 +274,7 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   try {
     renderedTemplate = await optimizer.transformHtml(renderedTemplate);
   } catch (e) {
-    console.error('[OPTIMIZER]', e);
+    signale.error('[OPTIMIZER]', e);
   }
 
   res.send(renderedTemplate);
