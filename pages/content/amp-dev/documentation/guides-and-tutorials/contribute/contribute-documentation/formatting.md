@@ -205,7 +205,8 @@ Python-Markdown has some limitations. Use the following syntax when including co
 </div>
 
 ## Preview code samples
-You can let a code sample have a preview or a link to open the code sample in the [AMP Playground](https://playground.amp.dev/):
+
+You can let a code sample have a preview and/or a link to open the code sample in the [AMP Playground](https://playground.amp.dev/):
 
 <div class="ap-m-code-snippet">
   <pre>
@@ -219,6 +220,8 @@ You can let a code sample have a preview or a link to open the code sample in th
   &lsqb;/example]
   </pre>
 </div>
+
+Note: The preview will automatically be transformed to the currently selected format when opening it in the playground 🤯! 
 
 Use the `preview` attribute to define how the preview is generated:
 
@@ -242,25 +245,232 @@ specify the dependency in the `template` attribute instead.
 
 For email content with resource links use the placeholder <code>&#123;&#123;server_for_email}}</code> in the source.
 
-<div class="ap-m-code-snippet">
-  <pre>
-  [example preview="top-frame" orientation="portrait"
-          playground="true"
-          imports="amp-list:0.1"
-          template="amp-mustache:0.2"]
-  ```html
-  &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;
-    src=&quot;{{server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;
-    &lt;template type=&quot;amp-mustache&quot;&gt;{% raw %}
-      &lt;div class=&quot;url-entry&quot;&gt;
-        &lt;a href=&quot;{{url}}&quot;&gt;{{title}}&lt;/a&gt;
-      &lt;/div&gt;
-    {% endraw %}&lt;/template&gt;
-  &lt;/amp-list&gt;
-  ```
-  [/example]
-  </pre>
+### Inline Sample
+
+Here is simple inline sample embed. You can define CSS via inline styles:
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="inline" playground="true"]
+    ```html
+    &lt;div style=&quot;background: red; width: 200px; height: 200px;&quot;&gt;Hello World&lt;/div&gt;
+    ```
+  &#91;/example]
+  [/example]</pre>
 </div>
+
+This is what it looks like:
+
+[example preview="inline" playground="true"]
+```html
+<div style="background: red; width: 200px; height: 200px;">Hello World</div>
+```
+[/example]
+
+Warning: inline samples are embedded directly into the page. This might lead to conflicts if components are already used on the page (e.g. `amp-consent`).
+
+### Top-Frame Preview
+
+Use top-frame preview whenever you need to specify header elements or define global styles inside `<style amp-custom>`.
+
+Important: Do not add any AMP boilerplate code to the header as this will get added automatically, based on the AMP format. Only add elements to the head that are needed by the sample!
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame" 
+         playground="true"]
+    ```html
+    &lt;head&gt;
+      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://cdn.ampproject.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
+      &lt;style amp-custom&gt;
+        body {
+          background: red;
+        }
+      &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Hello AMP&lt;/h1&gt;
+      &lt;amp-youtube width=&quot;480&quot;
+        height=&quot;270&quot;
+        layout=&quot;responsive&quot;
+        data-videoid=&quot;lBTCB7yLs8Y&quot;&gt;
+      &lt;/amp-youtube&gt;
+    &lt;/body&gt;
+    ```
+  [/example]</pre>
+</div>
+
+This is what it looks like:
+
+[example preview="top-frame" 
+         playground="true"]
+```html
+<head>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <style amp-custom>
+    body {
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello AMP</h1>
+  <amp-youtube width="480"
+    height="270"
+    layout="responsive"
+    data-videoid="lBTCB7yLs8Y">
+  </amp-youtube>
+</body>
+```
+[/example]
+
+### AMP Stories
+
+Use `preview="top-frame"` together with `orientation="portrait"` for previewing AMP Stories.
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame" 
+         orientation="portrait"
+         playground="true"]
+    ```html
+    &lt;head&gt;
+      &lt;script async custom-element=&quot;amp-story&quot;
+          src=&quot;https://cdn.ampproject.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
+      &lt;style amp-custom&gt;
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+        amp-story-page {
+          background: white;
+        }
+      &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;amp-story standalone&gt;
+        &lt;amp-story-page id=&quot;cover&quot;&gt;
+          &lt;amp-story-grid-layer template=&quot;vertical&quot;&gt;
+            &lt;h1&gt;Hello World&lt;/h1&gt;
+            &lt;p&gt;This is the cover page of this story.&lt;/p&gt;
+          &lt;/amp-story-grid-layer&gt;
+        &lt;/amp-story-page&gt;
+        &lt;amp-story-page id=&quot;page-1&quot;&gt;
+          &lt;amp-story-grid-layer template=&quot;vertical&quot;&gt;
+            &lt;h1&gt;First Page&lt;/h1&gt;
+            &lt;p&gt;This is the first page of this story.&lt;/p&gt;
+          &lt;/amp-story-grid-layer&gt;
+        &lt;/amp-story-page&gt;
+      &lt;/amp-story&gt;
+    &lt;/body&gt;
+    ```
+  [/example]</pre>
+</div>
+
+This is what it looks like:
+
+[example preview="top-frame" 
+         orientation="portrait"
+         playground="true"]
+```html
+  <head>
+    <script async custom-element="amp-story"
+        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <style amp-custom>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      amp-story-page {
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <amp-story standalone>
+      <amp-story-page id="cover">
+        <amp-story-grid-layer template="vertical">
+          <h1>Hello World</h1>
+          <p>This is the cover page of this story.</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+      <amp-story-page id="page-1">
+        <amp-story-grid-layer template="vertical">
+          <h1>First Page</h1>
+          <p>This is the first page of this story.</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+    </amp-story>
+  </body>
+```
+[/example]
+### Absolute URLs for AMP Email
+
+Note how we use <code>&#123;&#123;server_for_email}}</code> for making the endpoint URL absolute if embedded inside an AMP email. 
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame" playground="true"]
+    ```html
+    &lt;div class=&quot;resp-img&quot;&gt;
+      &lt;amp-img alt=&quot;flowers&quot;
+        src=&quot;{{server_for_email}}/static/inline-examples/images/flowers.jpg&quot;
+        layout=&quot;responsive&quot;
+        width=&quot;640&quot;
+        height=&quot;427&quot;&gt;&lt;/amp-img&gt;
+    &lt;/div&gt;
+    ```
+  [/example]</pre>
+</div>
+
+This is what it looks like: 
+
+[example preview="top-frame" playground="true"]
+```html
+<div class="resp-img">
+  <amp-img alt="flowers"
+    src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
+    layout="responsive"
+    width="640"
+    height="427"></amp-img>
+</div>
+```
+[/example]
+
+### Escaping mustache tempaltes
+
+Here is a `top-frame` sample using a remote endpoint. Mustache templates need to be escaped in samples using <code>&#123;% raw %&#125;</code> and <code>&#123;% endraw %}</code>:
+
+<div class="ap-m-code-snippet">
+  <pre>&#91;example preview=&quot;top-frame&quot; orientation=&quot;portrait&quot;
+        playground=&quot;true&quot;
+        imports=&quot;amp-list:0.1&quot;
+        template=&quot;amp-mustache:0.2&quot;]
+    ```html
+    &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;
+      src=&quot;{{server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;
+      &lt;template type=&quot;amp-mustache&quot;&gt;{% raw %}
+        &lt;div class=&quot;url-entry&quot;&gt;
+          &lt;a href=&quot;{{url}}&quot;&gt;{{title}}&lt;/a&gt;
+        &lt;/div&gt;
+      {% endraw %}
+      &lt;/template&gt;
+    &lt;/amp-list&gt;
+    ```
+[/example]</pre>
+</div>
+
+This is what it looks like: 
+
+[example preview="top-frame" 
+         playground="true"
+         imports="amp-list:0.1"
+         template="amp-mustache:0.2"]
+```html
+<amp-list width="auto" height="100" layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">
+      {% raw %}
+      <li><a href="{{url}}">{{title}}</a></li>
+      {% endraw %}
+</template>
+</amp-list>
+```
+[/example]
 
 ## Links
 
