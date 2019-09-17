@@ -206,7 +206,7 @@ Python-Markdown has some limitations. Use the following syntax when including co
 
 ## Preview code samples
 
-You can let a code sample have a preview and/or a link to open the code sample in the [AMP Playground](https://playground.amp.dev/):
+Code samples can have a preview and/or link to an [AMP Playground](https://playground.amp.dev/) version.
 
 <div class="ap-m-code-snippet">
   <pre>
