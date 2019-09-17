@@ -42,6 +42,9 @@ const LOGIN_FILE_PATH = path.join(__dirname, 'login.html');
 examples.get('/authorization', handleAuthorization);
 examples.get('/login', handleLogin);
 examples.get('/logout', handleLogout);
+examples.post('/pingback', (req, res) => {
+  res.status(200);
+});
 examples.post('/submit', handleSubmit);
 
 function handleAuthorization(request, response) {
