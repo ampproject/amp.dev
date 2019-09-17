@@ -65,5 +65,5 @@ The following is the list of [AMP components](https://amp.dev/documentation/comp
 
 | Element | Description |
 | ------- | ----------- |
-| [`<amp-img>`](https://amp.dev/documentation/components/amp-img) | An AMP component that replaces `<img>`.<br><br>**Note:** Binding to `[src]` is not allowed and URL must be `https` protocal. |
-| [`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | Embeds GIF files.<br><br>**Note:** Binding to `[src]` is not allowed and URL must be `https` protocal. |
+| [`<amp-img>`](https://amp.dev/documentation/components/amp-img) | An AMP component that replaces `<img>`.<br><br>**Note:** Binding to `[src]` is not allowed and URL must be `https` protocol. |
+| [`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | Embeds GIF files.<br><br>**Note:** Binding to `[src]` is not allowed and the GIF must be served via `https`. |
