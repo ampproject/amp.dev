@@ -10,8 +10,24 @@
   <h1>{{ doc.title }}</h1>
   {% endif %}
 
+  {% set formats = ['ads', 'email', 'stories', 'websites'] %}
+  {% if (doc.formats|sort or formats) != formats %}
+  {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+  [% set availableFormats = {{ doc.formats|tojson }} %]
+  [% if not availableFormats.includes(format) %]
+  <div class="ap-m-tip ap-m-tip-important">
+    <div class="ap-m-tip-content">
+      {% do doc.icons.useIcon('icons/warning.svg') %}
+      <div class="ap-a-ico ap-m-tip-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning"></use></svg>
+      </div>
+      <p>{{ _('Important: this document is not valid for your currently selected format') }} <b>[= format =]</b>!</p>
+    </div>
+  </div>
+  [% endif %]
+  {% endif %}
 
-  {# Add the level toggle button, if the document has a level: true in the frontmatter #}
+  {# Adds the level toggle button if leveled: true is set in the frontmatter #}
   {% if doc.leveled %}
   {% include '/views/partials/level-toggle.j2' %}
   {% endif %}
