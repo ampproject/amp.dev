@@ -120,7 +120,7 @@ For example, the following is possible in AMP:
 
 ## Event/Action trust compatibility
 
-Similar to native web events and actions, AMP follows a trust model that insures that critical actions are only triggered by highly trusted events, (usually meaning that the event resulted directly from a user interaction such as a tap or click). Currently AMP supports two levels of trust as defined by `ActionTrust` which are `ActionTrust.HIGH` and `ActionTrust.LOW`. An action can only be triggered by an event of equal or higher trust level than required by the action. Refer to the tables below to compare event and action trust levels.
+Similar to Javascript's native `event.isTrusted` distinction between user generated and script-generated events, AMP follows a trust model that insures that critical actions can only be triggered by highly trusted events. High trust events are usually triggered by a user interaction such as a tap or click. Currently AMP supports two levels of trust as defined by `ActionTrust` which are `ActionTrust.HIGH` and `ActionTrust.LOW`. An action can only be triggered by an event of equal or higher trust level than required by the action. Refer to the tables below to compare event and action trust levels.
 
 ## Element-specific events
 
