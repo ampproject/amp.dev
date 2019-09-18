@@ -56,7 +56,7 @@
     "express": "4.17.1",
     "express-formidable": "1.2.0",
     "feedparser": "2.2.9",
-    "http-proxy": "1.17.0",
+    "http-proxy": "1.18.0",
     "iltorb": "2.4.3",
     "js-yaml": "3.13.1",
     "linkifyjs": "2.1.8",
