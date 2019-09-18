@@ -43,12 +43,21 @@ We welcome contributions to amp.dev.
       1. Run `brew doctor` to ensure everything is up to date. Xcode version 10.3 or the most recent stable version is required.
       1. Run `brew install python@2`. Python 2.7 is required.
       1. Pip should now be installed!
+      
+### Fork & clone the repository
 
-1. Install the dependencies for the project:
+To get started with contributing to amp.dev, you first need to [fork the repository](https://help.github.com/en/articles/fork-a-repo). Once you've done that you can clone the repository:
 
-    ```sh
-    $ npm install
-    ```
+```sh
+$ git clone https://github.com/YOUR-USERNAME/amp.dev
+```
+
+... and then install the dependencies via NPM:
+
+```sh
+$ cd amp.dev
+$ npm install
+```
 
 ### Develop
 
@@ -71,6 +80,8 @@ $ gulp develop
 ```
 
 This command prints a lot to the shell and will most likely end on `Server ready. Press ctrl-c to quit.`. Seeing this line means everything went fine so far unless otherwise stated in the logs; the site should be available at [http://localhost:8080/](http://localhost:8080/). The service running on port `8081` is only Grow rendering the pages.
+
+You can contribute your changes back to the main repository by [creating a pull request](https://help.github.com/en/articles/about-pull-requests).
 
 ### Maintenance
 
