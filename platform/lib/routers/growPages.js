@@ -204,12 +204,17 @@ function updateComponentInfo(request, context, url) {
   }
   // add format supported versions to template context
   context.versions = versionsByFormat[context.format];
+  if (context.versions) {
+    signale.warn(`No version mapping defined for format ${context.format}. Try running 'gulp ` +
+      'importAll\' to fix.');
+    return;
+  }
   // rewrite path based on the format and available versions
   const latestVersionByFormat = context.versions[context.versions.length - 1];
   if (version === versionsByFormat.current) {
     // change amp-carousel-v$LATEST => amp-carousel
     url.pathname = url.pathname.replace(`-v${version}`, '');
-  } else if (versionsByFormat.current !== latestVersionByFormat) {
+  } else if (!version && versionsByFormat.current !== latestVersionByFormat) {
     // change amp-carousel => amp-carousel-v$LATEST_FOR_EMAIL
     url.pathname = url.pathname.slice(0, -1) + `-v${latestVersionByFormat}/`;
   }
