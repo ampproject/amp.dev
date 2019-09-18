@@ -78,13 +78,13 @@ class ComponentReferenceImporter {
     for (const extension of extensions) {
       const documents = await this._findExtensionDocs(extension);
       const versions = [...new Set(documents.map((doc) => doc.version).sort().reverse())];
-      const supportedVersions = {};
-      versionMapping[extension.name] = supportedVersions;
 
 
       if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
+        const supportedVersions = {};
+        versionMapping[extension.name] = supportedVersions;
         documents.forEach((doc) => {
           // IMPORTANT: first rewrite URLs
           this._rewriteRelativePaths(extension.path, doc.document);
