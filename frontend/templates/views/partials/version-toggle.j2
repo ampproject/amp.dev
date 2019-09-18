@@ -1,12 +1,10 @@
-{# Warning: This is a special template rendered through Nunjucks in platform/lib/pipeline/markdownDocument.js #}
-{# Since it doesn't use grow, global page context is not available. #}
 <h1>
-{{title}}
+{{doc.title}}
 [% if versions and versions.length > 1 %]
 <div class="ap--versions">
-  {% for v in versions %}
+  {% for v in doc.versions %}
   [% if versions and versions.includes('{{v}}') %]
-  <a{% if v !== version %} href="../{{title}}-v{{v}}.html"{% endif %}>{{v}}</a>
+  <a{% if v != doc.version %} href="../{{doc.title}}-v{{v}}.html"{% endif %}>{{v}}</a>
   [% endif %]
   {% endfor %}
 </div>

@@ -15,16 +15,12 @@
  */
 
 const writeFile = require('write');
-const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
 const SlugGenerator = require('@lib/utils/slugGenerator');
 
-// Prep version template
-const nunjucks = require('nunjucks');
-const VERSION_TOGGLE_TEMPLATE = nunjucks.compile(fs.readFileSync(
-    utils.project.absolute('frontend/templates/views/partials/version-toggle.j2'), 'utf8'));
+const TITLE_REGEX = /^#{1}\s(.+)/m;
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
@@ -164,7 +160,7 @@ class MarkdownDocument {
   set versions(versions) {
     this._frontmatter['versions'] = versions;
     this._contents = MarkdownDocument
-        .insertVersionToggler(this._contents, this._frontmatter.version, versions);
+        .removeTitle(this._contents);
   }
 
   get teaser() {
@@ -315,18 +311,12 @@ class MarkdownDocument {
   }
 
   /**
-   * Adds version toggler to the h1 heading in case of multiple versions
+   * Removes the title from the markdown file as it'll be rendered via the grow template.
    * @param  {String} contents
    * @return {String} The rewritten content
    */
-  static insertVersionToggler(contents, version, versions) {
-    const titleRegex = /^#{1}\s(.+)/m;
-    const title = contents.match(titleRegex)[1];
-    return contents.replace(titleRegex, VERSION_TOGGLE_TEMPLATE.render({
-      title,
-      versions,
-      version,
-    }));
+  static removeTitle(contents) {
+    return contents.replace(TITLE_REGEX, '');
   }
 
   /**

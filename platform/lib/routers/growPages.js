@@ -204,13 +204,14 @@ function updateComponentInfo(request, context, url) {
   }
   // add format supported versions to template context
   context.versions = versionsByFormat[context.format];
-  if (context.versions) {
+  if (!context.versions) {
     signale.warn(`No version mapping defined for format ${context.format}. Try running 'gulp ` +
       'importAll\' to fix.');
     return;
   }
   // rewrite path based on the format and available versions
   const latestVersionByFormat = context.versions[context.versions.length - 1];
+  console.log('version', version, versionsByFormat.current);
   if (version === versionsByFormat.current) {
     // change amp-carousel-v$LATEST => amp-carousel
     url.pathname = url.pathname.replace(`-v${version}`, '');
