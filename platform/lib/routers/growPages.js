@@ -211,7 +211,6 @@ function updateComponentInfo(request, context, url) {
   }
   // rewrite path based on the format and available versions
   const latestVersionByFormat = context.versions[context.versions.length - 1];
-  console.log('version', version, versionsByFormat.current);
   if (version === versionsByFormat.current) {
     // change amp-carousel-v$LATEST => amp-carousel
     url.pathname = url.pathname.replace(`-v${version}`, '');
