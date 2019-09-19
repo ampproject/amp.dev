@@ -1,4 +1,5 @@
 ---
+$title: amp-img
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-img
+
 
 <table>
   <tr>

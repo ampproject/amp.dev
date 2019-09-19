@@ -1,4 +1,5 @@
 ---
+$title: amp-ad / amp-embed
 $category@: ads-analytics
 formats:
 - websites
@@ -6,7 +7,7 @@ teaser:
   text: 広告を表示するコンテナです。
 ---
 
-# amp-ad / amp-embed
+
 
 広告を表示するコンテナです。`amp-embed` は `amp-ad` タグの別名です。タグ名は異なりますが、そのすべての機能を受け継いでいます。より正確な意味では、`amp-embed` を使用します。AMP ドキュメントでは、HTTPS 経由で配信される広告と埋め込みのみを表示できます。
 

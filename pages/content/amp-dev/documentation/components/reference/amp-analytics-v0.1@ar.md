@@ -1,4 +1,5 @@
 ---
+$title: amp-analytics
 $category@: ads-analytics
 formats:
   - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-analytics
+
 
 يعمل هذا المكّوِن على استخلاص بيانات التحليلات من مستند AMP.
 

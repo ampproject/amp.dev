@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+
 
 提供一种方式，让观看者可以大致了解网页内容并跳至任意部分。对于甚至连一个部分中的几个句子都需要滚动才能完整显示的移动设备来说，这非常有用。
 

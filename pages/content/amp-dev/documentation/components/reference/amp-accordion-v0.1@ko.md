@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+
 
 조회 사용자가 콘텐츠의 개요를 한눈에 파악하고 원하는 섹션으로 자유롭게 이동할 수 있습니다. 섹션에 몇 문장밖에 없을 때도 스크롤해야 하는 휴대기기에 유용합니다.
 

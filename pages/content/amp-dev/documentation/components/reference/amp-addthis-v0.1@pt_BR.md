@@ -1,4 +1,5 @@
 ---
+$title: amp-addthis
 $category@: social
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-addthis
+
 
 Exibe uma incorporação das ferramentas do site do [AddThis](https://www.addthis.com).
 

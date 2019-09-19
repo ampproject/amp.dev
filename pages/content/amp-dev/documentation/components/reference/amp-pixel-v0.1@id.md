@@ -1,4 +1,5 @@
 ---
+$title: amp-pixel
 $category@: ads-analytics
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-pixel
+
 
 
 <table>

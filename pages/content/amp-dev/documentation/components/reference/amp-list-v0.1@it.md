@@ -1,4 +1,5 @@
 ---
+$title: amp-list
 $category@: dynamic-content
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-list
+
 
 Recupera i contenuti in modo dinamico da un endpoint CORS JSON e li visualizza utilizzando un modello fornito.
 

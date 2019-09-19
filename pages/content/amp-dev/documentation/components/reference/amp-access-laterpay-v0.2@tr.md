@@ -1,4 +1,5 @@
 ---
+$title: amp-access-laterpay
 $category@: dynamic-content
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay
+
 
 Yayıncıların [LaterPay](https://www.laterpay.net) mikro ödeme platformuna kolayca entegre olmasına olanak tanır. `amp-access-laterpay` bileşeni [AMP Access](amp-access.md)'i temel alır ve gerektirir.
 
