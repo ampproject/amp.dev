@@ -58,7 +58,7 @@ AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별
 1. `<amp-analytics>` 태그에서 `type` 속성을 추가하고 값을 지정된 [공급업체](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md)로 설정합니다.
 1. 어떤 데이터를 확보 및 추적할지 결정하고 구성 데이터에서 세부정보를 지정합니다. 애널리틱스 데이터를 확보하는 방법에 관한 정보는 공급업체의 도움말을 참조하세요.
 
-애널리틱스 공급업체가 AMP와 통합되지 않은 경우 공급업체에 연락하여 지원을 요청하세요. 또한 AMP 프로젝트에서 공급업체의 추가를 요청하는 이슈를 생성할 것을 권장합니다. [AMP HTML에서 애널리틱스 도구 통합](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md)도 참조하세요. 아니면 공급업체와 작업하여 데이터를 지정된 URL로 전송하세요. 아래의 [사내 데이터 전송](#sending-data-in-house) 섹션에서 자세히 알아보세요.
+애널리틱스 공급업체가 AMP와 통합되지 않은 경우 공급업체에 연락하여 지원을 요청하세요. 또한 AMP 프로젝트에서 공급업체의 추가를 요청하는 이슈를 생성할 것을 권장합니다. [AMP HTML에서 애널리틱스 도구 통합](../../../documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md)도 참조하세요. 아니면 공급업체와 작업하여 데이터를 지정된 URL로 전송하세요. 아래의 [사내 데이터 전송](#sending-data-in-house) 섹션에서 자세히 알아보세요.
 
 *예: 타사 애널리틱스 제공업체로 데이터 전송*
 
