@@ -44,7 +44,7 @@
     "@lib": "platform/lib"
   },
   "dependencies": {
-    "@ampproject/toolbox-cors": "1.1.0-beta.0",
+    "@ampproject/toolbox-cors": "1.1.0-beta.1",
     "@ampproject/toolbox-optimizer": "1.1.0-beta.0",
     "@google-cloud/datastore": "4.3.0",
     "acorn": "7.0.0",
