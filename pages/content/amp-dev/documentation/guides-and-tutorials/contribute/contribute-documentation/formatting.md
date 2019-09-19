@@ -489,18 +489,18 @@ result in valid markup.
 
 <div class="ap-m-code-snippet"><pre>
   &#91;example preview="top-frame" playground="true"]
-    <br>
+    
     The example above is created with the following code blocks: 
-    <br>
+    
     ```html
     &lt;head&gt;
       &lt;script async custom-element=&quot;amp-bind&quot;
           src=&quot;https://cdn.ampproject.org/v0/amp-bind-0.1.js&quot;&gt;&lt;/script&gt;
     &lt;/head&gt;
     ```
-    <br>
+
     The first body part:
-    <br>
+
     ```html
     &lt;body&gt;
       &lt;amp-state id="counter">
@@ -509,16 +509,20 @@ result in valid markup.
         &lt;/script>
       &lt;/amp-state>
     ```
-    <br>
+
     The second body part:
-    <br>
+
     ```html
       &lt;div [text]="'counter: ' + counter">click 'update' to start count&lt;/div>
       &lt;button on="tap:AMP.setState({counter: counter + 1})">update&lt;/button>
     &lt;/body>
     ```
-  [/example]</pre>
+  &#91;/example]</pre>
 </div>
+
+This is what it looks like:
+
+{{ image('/static/img/docs/guides/contribute/multiple_code_block_example.png', 1532, 1844, layout='intrinsic', alt='Image of example with preview and multiple code blocks') }}
 
 
 ## Links
