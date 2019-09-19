@@ -37,7 +37,7 @@ Jika Anda sudah terbiasa mengutak-atik kode, Anda dapat mempelajari konfigurasi 
 
 [tip type="note"]
 
-Vendor yang ingin mengintegrasikan layanannya dengan [`<amp-analytics>`](../../../../documentation/components/reference/amp-analytics.md) sebaiknya mempelajari detail dalam [Mengintegrasikan fitur analisis dengan AMP](../../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md).
+Vendor yang ingin mengintegrasikan layanannya dengan [`<amp-analytics>`](../../../../documentation/components/reference/amp-analytics.md) sebaiknya mempelajari detail dalam [Mengintegrasikan fitur analisis dengan AMP](../../../../documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md).
 
 [/tip]
 

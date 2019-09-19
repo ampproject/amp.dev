@@ -1,6 +1,7 @@
 ---
 $title: Integrate your technology with AMP
 $order: 0
+$hidden: true
 description: 'If you are a technology provider for publishers or advertisers on the web, we invite you to add support to AMP so your customers can continue to leverage your technology and ...'
 formats:
   - websites
@@ -17,14 +18,11 @@ If you are a technology provider for publishers or advertisers on the web, we in
 
 This document outlines third party vendor expectations and defines contribution levels. 
 
-
 # Contributing guidelines
 
 All general contributions are subject to the [AMPHTML universal guidelines in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). We expect vendors to test, maintain, and update their contribution to various degrees.
 
 To qualify for inclusion, all contribution levels must:
-
-
 
 *   Meet the [notability requirements of the English Wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Notability).
 *   Maintain or improve the same type of service level as AMP promises to both publishers and users. 
@@ -37,7 +35,7 @@ Vendor contributions are divided into three different levels. Each level is depe
 
 Level one & level two contributions share components between vendors. If there is a component fulfills a purpose similar to your business, consider reusing that component. This requires much less effort and is more long-term maintainable.
 
-After deciding what level of contribution meets your use case, open a [GitHub issu](https://github.com/ampproject/amphtml/issues/new)e to start. 
+After deciding what level of contribution meets your use case, open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new) to start. 
 
 
 ## Level one contribution
@@ -50,24 +48,18 @@ The only vendor specific logic checked into AMP repo is a vendor configuration. 
 
 Vendor expectations:
 
-
-
 *   Maintain and serve vendor’s custom JavaScript independently.
 *   Provide tests for their configuration and respond to issues. 
 *   Provide a troubleshooting channel for developers. 
 *   Respond to any and all bug filings related to their service. 
 
+### Level one example
 
-### Level one examples
+[**amp-ad**](../../../components/amp-ad/?format=websites)
 
-**amp-ad**
-
-If you are an ad technology provider looking to integrate with AMP, read the [development overview ](https://github.com/ampproject/amphtml/tree/master/ads#overview)or jump to the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to `amp-ad`. Depending on the ad technology your company provides, you might find [these integration instructions ](https://amp.dev/documentation/guides-and-tutorials/contribute/ad-integration-guide/?format=websites)useful.
+If you are an ad technology provider looking to integrate with AMP, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/amp-ad/?format=websites). Depending on the ad technology your company provides, you might find [these integration instructions ](ad-integration-guide/?format=ads)useful.
 
 There are 90+ ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
-
-**amp-embed**
-
 
 ## Level two contribution 
 
@@ -75,53 +67,38 @@ Level two vendor contributions share components. All logic is checked into the A
 
 All business logic is checked into AMP repo, but the only vendor specific logic checked in is a vendor configuration. If component works with a vendor provided config file, no design review is needed. If the vendor configuration implements a new feature or new component it will need to pass AMP’s design review. 
 
-
 ### Vendor expectations
-
-
 
 *   Adding a new vendor to an existing level two contribution typically does not need a design review. Vendor can just follow the documentation of that component. 
 *   Proposing a new component for level two contribution will need to be generic and shareable by other vendors.
 
-
 ### Level two examples
 
-**amp-analytics**
+[**amp-analytics**](../../../components/amp-analytics/?format=websites)
 
-AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide ](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/?format=websites)to get you started.
+AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide ](../../optimize-and-measure/configure-analytics/?format=websites)to get you started.
 
-If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [amp-pixe](https://amp.dev/documentation/components/amp-pixel/?format=websites)l. Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
+If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../components/amp-pixel/?format=websites). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
 
-There are 20+ analytics providers who have added support to amp-analytics. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/1595) from the analytics provider [Parse.ly](https://www.parsely.com/help/integration/google-amp/). \
+There are 20+ analytics providers who have added support to amp-analytics. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/1595) from the analytics provider [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
 
-**amp-call-tracking**
+[**amp-call-tracking**](../../../components/amp-call-tracking/?format=websites)
 
-If you provide call tracking measurement services, your use case may be supported with [amp-call-tracking](https://amp.dev/documentation/components/amp-call-tracking/?format=websites). This component dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
+If you provide call tracking measurement services, your use case may be supported with [`amp-call-tracking`](../../../components/amp-call-tracking/?format=websites). This component dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
 
-To learn more about how this extension might work for you, please see [an example](https://amp.dev/documentation/examples/components/amp-call-tracking/?format=websites) or read about the [reference documentation](https://amp.dev/documentation/components/amp-call-tracking/?format=websites).
-
-**amp-auto-ads**
-
-**amp-link-rewriter**
-
+To learn more about how this extension might work for you, please see [an example](../../../examples/components/amp-call-tracking/?format=websites) or read about the [reference documentation](../../../components/amp-call-tracking/?format=websites).
 
 ## Level three contribution
 
 A level three contribution introduces a new vendor-specific component.
-
 This is only applicable if vendors are unable to:
-
-
 
 *   Find a component that exists for their use case. 
 *   Request feature improvements to meet their use case.
 *   Propose a component that applies to other vendors.
 
-
 ### Expectations
-
-
 
 *   Write and propose a design review. 
 *   Tests must be able to catch breakage. 
