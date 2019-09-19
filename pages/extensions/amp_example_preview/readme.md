@@ -40,12 +40,14 @@ It supports the following attributes:
 [/example]
 ````
 
+The `[example]` tag supports multiple code blocks inside so that each code block can have an explanation text.  
+The code in all blocks is simply concatenated. The editor has to ensure that all parts together result in valid markup. 
 
 ## Functioning
 
 This extension uses a grow preprocessor hook to search in the markdown files for `[example]` tags 
 before the source code block is rewritten with code highlight markup.
-The codee block is stored inside a comment so that it can later be retrieved.
+The code block is stored inside a comment so that it can later be retrieved.
 For each supported format of the page (websites, stories, email, ads) a complete preview html file is generated.
 With a grow postprocessor hook the comments are then searched and the preview and playground link injected.
 

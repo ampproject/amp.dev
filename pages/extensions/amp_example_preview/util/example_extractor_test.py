@@ -26,8 +26,6 @@ class SourceCodeExtractorTestCase(unittest.TestCase):
 
     self.assertEqual(0, match.startTagStart)
     self.assertEqual(9, match.startTagEnd)
-    self.assertEqual(18, match.sourceBlockStart)
-    self.assertEqual(35, match.sourceBlockEnd)
     self.assertEqual(40, match.endTagStart)
     self.assertEqual(50, match.endTagEnd)
 
@@ -61,8 +59,6 @@ class SourceCodeExtractorTestCase(unittest.TestCase):
     match = matches[0]
     self.assertEqual(0, match.startTagStart)
     self.assertEqual(9, match.startTagEnd)
-    self.assertEqual(18, match.sourceBlockStart)
-    self.assertEqual(28, match.sourceBlockEnd)
     self.assertEqual(33, match.endTagStart)
     self.assertEqual(43, match.endTagEnd)
     inline_example = match.inlineExample
@@ -71,8 +67,6 @@ class SourceCodeExtractorTestCase(unittest.TestCase):
     match = matches[1]
     self.assertEqual(53, match.startTagStart)
     self.assertEqual(62, match.startTagEnd)
-    self.assertEqual(71, match.sourceBlockStart)
-    self.assertEqual(81, match.sourceBlockEnd)
     self.assertEqual(86, match.endTagStart)
     self.assertEqual(96, match.endTagEnd)
     inline_example = match.inlineExample
@@ -167,3 +161,24 @@ class SourceCodeExtractorTestCase(unittest.TestCase):
 
     inline_example = matches[0].inlineExample
     self.assertEqual('<h1>headline</h1>', inline_example.body.strip())
+
+  def test_example_with_multiple_code_blocks(self):
+    extractor = SourceCodeExtractor()
+    matches = extractor.find_examples_in_markdown(
+      '[example\n'
+      '       imports="amp-accordion"\n'
+      '       preview="inline"\n'
+      '       playground="False"\n'
+      ']\n'
+      'block1\n'
+      '```html\n'
+      '<h1>headline</h1>\n'
+      '```\n'
+      'block2\n'
+      '```html\n'
+      '<h2>subheadline</h2>\n'
+      '```\n'
+      '[/example]')
+
+    inline_example = matches[0].inlineExample
+    self.assertEqual('<h1>headline</h1>\n<h2>subheadline</h2>', inline_example.body.strip())

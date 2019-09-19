@@ -400,6 +400,7 @@ This is what it looks like:
   </body>
 ```
 [/example]
+
 ### Absolute URLs for AMP Email
 
 Note how we use <code>&#123;&#123;server_for_email}}</code> for making the endpoint URL absolute if embedded inside an AMP email.
@@ -432,7 +433,7 @@ This is what it looks like:
 ```
 [/example]
 
-### Escaping mustache tempaltes
+### Escaping mustache templates
 
 Here is a `top-frame` sample using a remote endpoint. Mustache templates need to be escaped in samples using <code>&#123;% raw %&#125;</code> and <code>&#123;% endraw %}</code>:
 
@@ -473,6 +474,52 @@ This is what it looks like:
 </amp-list>
 ```
 [/example]
+
+### Examples with multiple code blocks 
+
+When you have an example that needs extra explanation between specific parts in the code you should consider to
+extract the example as documented [here](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).
+
+If that is really no option you can add multiple code blocks inside an <code>&lsqb;example]</code> block with text between them.
+To keep readers from thinking the preview represents only the first code block you have to add text between
+<code>&lsqb;example]</code> and the first code block so that the preview will be separated from the first code block.
+
+When you use multiple code blocks for one example you have to ensure that all code parts combined together 
+result in valid markup.
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame" playground="true"]
+    <br>
+    The example above is created with the following code blocks: 
+    <br>
+    ```html
+    &lt;head&gt;
+      &lt;script async custom-element=&quot;amp-bind&quot;
+          src=&quot;https://cdn.ampproject.org/v0/amp-bind-0.1.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    ```
+    <br>
+    The first body part:
+    <br>
+    ```html
+    &lt;body&gt;
+      &lt;amp-state id="counter">
+        &lt;script type="application/json">
+          1
+        &lt;/script>
+      &lt;/amp-state>
+    ```
+    <br>
+    The second body part:
+    <br>
+    ```html
+      &lt;div [text]="'counter: ' + counter">click 'update' to start count&lt;/div>
+      &lt;button on="tap:AMP.setState({counter: counter + 1})">update&lt;/button>
+    &lt;/body>
+    ```
+  [/example]</pre>
+</div>
+
 
 ## Links
 

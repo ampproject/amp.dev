@@ -18,7 +18,20 @@
 .#{organism('code-preview')} {
   position: relative;
   margin: 1rem 0;
-  background: color('ebony-clay');
+
+  &.side-frame {
+    background: color('ebony-clay');
+  }
+
+  &-block {
+    background: color('ebony-clay');
+    padding-bottom: 1em;
+
+    & + div.#{molecule('code-snippet')} {
+      margin-top: 0;
+    }
+
+  }
 
   &-controls {
     width: 100%;
@@ -261,7 +274,6 @@
   &.top-frame,
   &.side-frame {
     .#{molecule('code-snippet')} {
-      min-height: 150px;
       max-height: 450px;
     }
   }
@@ -269,6 +281,7 @@
   &.side-frame {
     .#{molecule('code-snippet')} {
       width: 100%;
+      min-height: 150px;
       margin: 0;
       background: none;
 

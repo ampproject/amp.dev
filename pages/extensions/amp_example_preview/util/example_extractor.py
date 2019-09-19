@@ -2,8 +2,11 @@ import re
 from example_document import ExampleDocument
 
 EXAMPLE_PATTERN = re.compile(
-  r'\[\s*example(\s[^\]]*)?\](.*?(?:\n```html *\n(.*?)\n```' +
-  r'|\[sourcecode:html\](.*?)\[/sourcecode\]).*?)\[\s*/\s*example\s*\]',
+  r'\[\s*example(\s[^\]]*)?\](.*?)\[\s*/\s*example\s*\]',
+  re.IGNORECASE | re.MULTILINE | re.DOTALL)
+
+SOURCE_CODE_PATTERN = re.compile(
+  r'(?:\n```html *\n(.*?)\n```|\[sourcecode:html\](.*?)\[/sourcecode\])',
   re.IGNORECASE | re.MULTILINE | re.DOTALL)
 
 ATTRIBUTE_PATTERN = re.compile(r'(?:^|\s+)([\w-]+)\s*=\s*"([^"]+)"')
@@ -37,18 +40,11 @@ class SourceCodeExtractor(object):
     while match:
       count = count + 1
 
-      # group 3 is for a ``` block, group 4 is for a [sourcecode] block
-      code_match_index = 3 if match.group(3) else 4
-
-      attributes = self._get_attributes(match.group(1))
-
-      inline_example = ExampleDocument(match.group(code_match_index), attributes, count)
+      inline_example = self.create_example_doc(match, count)
 
       inline_example_match = InlineExampleMatch(inline_example)
       inline_example_match.startTagStart = match.start(0)
       inline_example_match.startTagEnd = match.start(2)
-      inline_example_match.sourceBlockStart = match.start(code_match_index)
-      inline_example_match.sourceBlockEnd = match.end(code_match_index)
       inline_example_match.endTagStart = match.end(2)
       inline_example_match.endTagEnd = match.end(0)
 
@@ -57,6 +53,24 @@ class SourceCodeExtractor(object):
       match = EXAMPLE_PATTERN.search(content, match.end(0))
 
     return result
+
+  def create_example_doc(self, example_match, index):
+    example_content = example_match.group(2)
+    attributes = self._get_attributes(example_match.group(1))
+    source = ''
+
+    match = SOURCE_CODE_PATTERN.search(example_content)
+    while match:
+      # group 1 is for a ``` block, group 2 is for a [sourcecode] block
+      code_match_index = 1 if match.group(1) else 2
+      if source:
+        source = source + '\n'
+      source = source + match.group(code_match_index)
+      match = SOURCE_CODE_PATTERN.search(example_content, match.end(0))
+
+    inline_example = ExampleDocument(source, attributes, index)
+    return inline_example
+
 
   def _get_attributes(self, attributes_string):
     result = {}
