@@ -20,8 +20,6 @@ const {Signale} = require('signale');
 const utils = require('@lib/utils');
 const SlugGenerator = require('@lib/utils/slugGenerator');
 
-const TITLE_REGEX = /^#{1}\s(.+)/m;
-
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
 // It doesn't make sense to give every MarkdownDocument their own logger instance
