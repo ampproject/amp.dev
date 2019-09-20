@@ -160,7 +160,7 @@ class ComponentReferenceImporter {
       // when this doc is the highest current version, use it as default entry point
       if ((versions[0] || DEFAULT_VERSION) === version) {
         document.isCurrent = true;
-        document.servingPath = '/documentation/components/{slug}.html';
+        document.servingPath = `/documentation/components/${extensionName}.html`;
       }
     }
   }

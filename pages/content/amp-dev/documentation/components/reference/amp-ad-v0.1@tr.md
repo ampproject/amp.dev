@@ -1,5 +1,5 @@
 ---
-$amp-ad / amp-embed
+$title: amp-ad
 $category@: ads-analytics
 formats:
 - websites
@@ -7,11 +7,9 @@ teaser:
   text: Bir reklamın görüntüleneceği kapsayıcı.
 ---
 
-#amp-ad / amp-embed
-
 Bir reklamın görüntüleneceği kapsayıcı. `amp-embed`, `amp-ad` etiketinin bir diğer adıdır ve bu etiketin tüm işlevlerini farklı bir etiket adıyla alır. Anlam açısından daha doğru olduğunda `amp-embed` etiketini kullanın. AMP dokümanları yalnızca HTTPS aracılığıyla sunulan reklamları/yerleştirmeleri destekler.
 
-
+# <a name="amp-ad"></a> amp-ad / amp-embed
 
 
 [tip type="note"]

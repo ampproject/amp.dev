@@ -1,5 +1,5 @@
 ---
-$title: amp-ad/amp-embed
+$title: amp-ad
 $category@: ads-analytics
 formats:
 - websites
@@ -11,7 +11,7 @@ teaser:
 
 Un contenitore per la visualizzazione di un annuncio. `amp-embed` è un alias del tag `amp-ad`, da cui derivano tutte le sue funzionalità con un nome tag diverso. Utilizza `amp-embed` quando semanticamente è più preciso. I documenti AMP supportano solo annunci/incorporamenti pubblicati tramite HTTPS.
 
-# `amp-ad` / `amp-embed`
+# <a name="amp-ad"></a> amp-ad / amp-embed
 
 
 [tip type="note"]

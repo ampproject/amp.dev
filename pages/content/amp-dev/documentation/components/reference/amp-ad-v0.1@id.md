@@ -1,5 +1,5 @@
 ---
-$title: amp-ad/amp-embed
+$title: amp-ad
 $category@: ads-analytics
 formats:
 - websites
@@ -11,7 +11,8 @@ teaser:
 
 Container untuk menampilkan iklan. `amp-embed` adalah alias untuk tag `amp-ad`, yang memperoleh semua fungsionalitasnya dengan nama tag berbeda. Gunakan `amp-embed` jika secara semantis lebih akurat. Dokumen AMP hanya mendukung iklan/sematan yang ditayangkan melalui HTTPS.
 
-# `amp-ad` / `amp-embed`
+
+# <a name="amp-ad"></a> amp-ad / amp-embed
 
 [tip type="note"]
 Spesifikasi `amp-ad`/`amp-embed` besar kemungkinan akan terus berubah secara signifikan seiring waktu. Pendekatan saat ini dirancang untuk mem-bootstrap format agar dapat menampilkan iklan.
