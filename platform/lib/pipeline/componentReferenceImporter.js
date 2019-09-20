@@ -95,6 +95,7 @@ class ComponentReferenceImporter {
           if (doc.document.isCurrent) {
             supportedVersions.current = doc.version;
           }
+          doc.document.stripInlineTitle();
           savedDocuments.push(
               this._saveDocument(doc.tagName || extension.name, doc.document, doc.version));
           doc.document.formats.forEach((format) => {

@@ -24,6 +24,7 @@ const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
 const signale = require('signale');
+const {getFormatFromRequest} = require('./requestHelper.js');
 
 const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 let formatComponentMapping = {};
@@ -32,10 +33,6 @@ try {
 } catch (_) {
   signale.warn('No version mapping defined . Run `gulp importAll` to fix.');
 }
-
-/* Matches component name and version from an URL */
-const COMPONENT_NAME_PATTERN =
-  /^(\/[a-z]+)?\/documentation\/components\/(amp-[a-z0-9-]+)(-v(\d\.\d))?\//;
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -181,45 +178,6 @@ function rewriteLinks(canonical, html, format, level) {
   return html;
 }
 
-/**
- * Updates template context and URL:
- *
- * - matches the URL to the right template, based on the active format and version
- * - adds the supported version to the template context
- */
-function updateComponentInfo(request, context, url) {
-  // extract component and optional version from the path
-  const componentMatch = COMPONENT_NAME_PATTERN.exec(request.path);
-  if (!componentMatch) {
-    // nothing to do if it's not a component URL
-    return;
-  }
-  const component = componentMatch[2];
-  const version = componentMatch[4];
-  // get the supported version for this format
-  const versionsByFormat = formatComponentMapping[component];
-  if (!versionsByFormat) {
-    signale.warn(`No version mapping defined for ${component}. Run 'gulp importAll' to fix.`);
-    return;
-  }
-  // add format supported versions to template context
-  context.versions = versionsByFormat[context.format];
-  if (!context.versions) {
-    signale.warn(`No version mapping defined for format ${context.format}. Try running 'gulp ` +
-      'importAll\' to fix.');
-    return;
-  }
-  // rewrite path based on the format and available versions
-  const latestVersionByFormat = context.versions[context.versions.length - 1];
-  if (version === versionsByFormat.current) {
-    // change amp-carousel-v$LATEST => amp-carousel
-    url.pathname = url.pathname.replace(`-v${version}`, '');
-  } else if (!version && versionsByFormat.current !== latestVersionByFormat) {
-    // change amp-carousel => amp-carousel-v$LATEST_FOR_EMAIL
-    url.pathname = url.pathname.slice(0, -1) + `-v${latestVersionByFormat}/`;
-  }
-}
-
 // eslint-disable-next-line new-cap
 const growPages = express.Router();
 
@@ -230,6 +188,45 @@ const optimizer = AmpOptimizer.create({
   ],
 });
 
+// Matches component ref doc URLs. Redirects latest version to non-versioned URL
+growPages.get(
+    /^(\/[a-z]+)?\/documentation\/components\/(amp-[a-z0-9-]+)(-v(\d\.\d))?\//,
+    async (req, res, next) => {
+      const component = req.params[1];
+      let version = req.params[3];
+      const versionsByFormat = formatComponentMapping[component];
+      if (!versionsByFormat) {
+        signale.warn(`No version mapping defined for ${component}. Run 'gulp importAll' to fix.`);
+        return;
+      }
+      const format = getFormatFromRequest(req);
+
+      // add format supported versions to template context
+      let versions = versionsByFormat[format];
+      if (!versions) {
+        signale.warn(`No version mapping defined for format ${format}. Try running 'gulp ` +
+        'importAll\' to fix.');
+        // set to the latest available version and tell the user on the page
+        versions = [versionsByFormat.current];
+      }
+      const latestVersionByFormat = versions[versions.length - 1];
+
+      // redirect to unversioned URL for latest format specific version
+      if (version >= latestVersionByFormat) {
+        res.redirect(`/documentation/components/${component}/?format=${format}`);
+        return;
+      } else if (!version) {
+        version = latestVersionByFormat;
+      }
+      req.componentInfo = {
+        format,
+        latestVersion: versionsByFormat.current,
+        latestVersionByFormat,
+        versions,
+      };
+      next();
+    });
+
 // only match urls with slash at the end or html extension or no extension
 growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   const url = ensureUrlScheme(req.originalUrl);
@@ -239,7 +236,15 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   }
 
   const templateContext = createRequestContext(req);
-  updateComponentInfo(req, templateContext, url);
+  const componentInfo = req.componentInfo;
+  if (componentInfo) {
+    templateContext.versions = componentInfo.versions;
+    if (!componentInfo.version &&
+      componentInfo.latestVersionByFormat !== componentInfo.latestVersion) {
+      // change amp-carousel-v$LATEST => amp-carousel
+      url.pathname = url.pathname.slice(0, -1) + `-v${componentInfo.latestVersionByFormat}/`;
+    }
+  }
 
   const template = await loadTemplate(url.pathname);
   if (!template) {
@@ -257,10 +262,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
       res.set('content-type', 'text/plain');
       res.send(
           `SSR error: ${e}\n\n` +
-          template.tmplStr
-              .split('\n')
-              .map((line, index) => `${index + 1} ${line}`)
-              .join('\n'));
+        template.tmplStr
+            .split('\n')
+            .map((line, index) => `${index + 1} ${line}`)
+            .join('\n'));
       signale.error(e);
       return;
     }

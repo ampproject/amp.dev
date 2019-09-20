@@ -159,8 +159,6 @@ class MarkdownDocument {
 
   set versions(versions) {
     this._frontmatter['versions'] = versions;
-    this._contents = MarkdownDocument
-        .removeTitle(this._contents);
   }
 
   get teaser() {
@@ -308,15 +306,6 @@ class MarkdownDocument {
           });
 
     return contents;
-  }
-
-  /**
-   * Removes the title from the markdown file as it'll be rendered via the grow template.
-   * @param  {String} contents
-   * @return {String} The rewritten content
-   */
-  static removeTitle(contents) {
-    return contents.replace(TITLE_REGEX, '');
   }
 
   /**

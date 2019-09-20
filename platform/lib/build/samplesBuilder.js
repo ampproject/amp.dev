@@ -34,6 +34,7 @@ const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
 const formatTransform = require('@lib/format-transform/');
 const utils = require('@lib/utils');
 const config = require('@lib/config.js');
+const {FORMAT_WEBSITES} = require('../routers/requestHelper.js');
 
 // Where to import the samples from
 const SAMPLE_SRC = utils.project.absolute('examples/source');
@@ -145,7 +146,7 @@ class SamplesBuilder {
           this._log.await(`Building sample ${sample.relative} ...`);
           const { document } = await this._parseSample(sample);
 
-          const isWebSample = String(document.formats()) === 'websites';
+          const isWebSample = String(document.formats()) === FORMAT_WEBSITES;
           const shouldTransform = isWebSample
               && !document.metadata.disableTransform
               && !document.metadata.hideCode
@@ -319,7 +320,7 @@ class SamplesBuilder {
       return null;
     }
     const transformed = sample.clone({contents: false});
-    if (format !== 'websites') {
+    if (format !== FORMAT_WEBSITES) {
       transformed.extname = `.${format}.html`;
     }
     const {transformedContent, validationResult} = this._formatTransform.transform(transformed.contents, format);
