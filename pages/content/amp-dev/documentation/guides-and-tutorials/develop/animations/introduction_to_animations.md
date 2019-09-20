@@ -10,7 +10,7 @@ author: CrystalOnScript
 
 For animations that can't be driven by [adding and removing classes](triggering_css_animations.md), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work.
 
-## Creating a basic AMP Animation
+## Creating a basic AMP animation
 
 The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
 
@@ -41,7 +41,7 @@ A basic [`amp-animation`](../../../../documentation/components/reference/amp-ani
 
 Much like CSS, the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component links the animation properties to the element by declaring the element's tag name, class, or id in the `"selector"` field. The component animates each element with the tag type or class name declared. Use an id to ensure you animate a single element.
 
-### Timing Properties
+### Timing properties
 
 The [timing properties](../../../../documentation/components/reference/amp-animation.md#timing-properties) control how long an animation takes, the amount of times it plays, and which direction keyframes execute.
 
@@ -78,7 +78,7 @@ Animations connect to an action or event by assigning the [`amp-animation`](../.
 <button on="tap:exampleAnimation.start">
 ```
 
-## Building Complex Animations
+## Building complex animations
 
 Building an animation in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) allows for fine grained control that goes beyond starting and stopping an animation: it can also pause, reverse, and direct to a specific point. You can even chain multiple animations together and animate elements in a sequence.
 
@@ -86,25 +86,51 @@ Building an animation in [`amp-animation`](../../../../documentation/components/
 
 Elements of the same tag or class can have specified timing properties and override the values of variables defined in the top level animation.
 
-```
-{
-  "selector": ".target",
-  "delay": 100,
-  "--y": "100px",
-  "subtargets": [
-    {
-      "index": 0,
-      "delay": 200,
-    },
-    {
-      "selector": ":nth-child(2n+1)",
-      "--y": "200px"
+[example preview="top-frame" playground="true"]
+```html
+<head>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp-custom>
+    h1 {
+      margin: 1rem;
     }
-  ]
-}
+  </style>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <h1>Hello World!</h1>
+  <h1>Hello World!</h1>
+  <h1 id="helloMe">Hello World!</h1>
+  <h1>Hello World!</h1>
+  <amp-animation layout="nodisplay" id="animateThis">
+    <script type="application/json">
+      {
+        "selector": "h1",
+        "duration": "3s",
+        "fill": "both",
+        "keyframes": [{"tansform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "subtargets": [
+          {
+            "index": 1,
+            "duration": "1s"
+          },
+          {
+            "selector": "#helloMe",
+            "direction": "reverse",
+            "duration": "5s"
+          }
+        ]
+      }
+    </script>
+  </amp-animation>
+  <button on="tap:animateThis.start">
+   start
+  </button>
+</body> 
 ```
+[/example]
 
-### Chained Animations
+### Chained animations
 
 Multiple animations can connect together to form a large sequence. You can create timed effects, such as overlays on a video, by writing animations in the `animations` array within the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component.
 
@@ -191,12 +217,32 @@ For larger animations, animations inside the `animations` array are able to refe
 
 ### Animating an unknown amount of elements
 
-By using [`var()` and `calc()` expressions](../../../../documentation/components/reference/amp-animation.md) along with [CSS extensions](../../../../documentation/components/reference/amp-animation.md#css-extensions), you can write complex and timed animationsthat work with any number of elements. This allows for dynamic and user generated data to be animated with ease and fluidity.
+By using [`var()` and `calc()` expressions](../../../../documentation/components/reference/amp-animation.md) along with [CSS extensions](../../../../documentation/components/reference/amp-animation.md#css-extensions), you can write complex and timed animations that work with any number of elements. This allows for dynamic and user generated data to be animated with ease and fluidity.
 
-```
-<amp-animation layout="nodisplay" id="cardAdmin">
+[example preview="top-frame" playground="true"]
+```html
+<head>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+  <style amp-custom>
+    .parent {
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      position: relative;
+      margin: 10px;
+      width: 239px;
+      height: 335px;
+    }
+    .card {
+      transform-origin: left;
+      height: 50%;
+      width: 50%;
+    }
+  </style>  
+</head>
+<body>
+  <amp-animation layout="nodisplay" id="cardAdmin">
     <script type="application/json">
-    {
+      {
         "selector": ".card",
         "--duration": "2s",
         "duration": "var(--duration)",
@@ -211,11 +257,17 @@ By using [`var()` and `calc()` expressions](../../../../documentation/components
             {"transform": "translate3d(50%, 0px, -100px)"},
             {"transform": "translate3d(0px, 0px, -1px)"}
         ]
-    }
+      }
     </script>
-</amp-animation>
+  </amp-animation>
+  <div class="parent" on="tap:cardAdmin.start" tabindex=none role="animation">
+    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/7/70/3C.svg" layout="fill"></amp-img>
+    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/3H.svg" layout="fill"></amp-img>
+    <amp-img class="card" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/KC.svg" layout="fill"></amp-img>
+  </div>    
+</body>
 ```
-
+[/example]
 This example works by:
 
 *   Declaring a variable, `--duration`, and gives it the value of two seconds.
@@ -227,26 +279,84 @@ This example works by:
     1.  The final total is applied in seconds to that element's delay
 *   The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
 
-### Look Great, Everywhere
+Open is in the [AMP playground](http://amp.dev/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fguides-and-tutorials%2Fdevelop%2Fanimations%2Fintroduction_to_animations.example.1.html%3Fformat%3Dwebsites&format=websites) and add more [`amp-img`](../../../../documentation/components/reference/amp-img) elements to test this behavior.
+
+### Look great, everywhere
 
 Animations can include [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) that allow customized effects. Tailor animations to any screen size through the [`media` condition](../../../../documentation/components/reference/amp-animation.md#media-query) and supports backwards browser compatibility by enabling [`supports` conditions](../../../../documentation/components/reference/amp-animation.md#supports-condition) in a [`switch` statement](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
-```
-{
-  "selector": "#target1",
-  "duration": "1s",
-  "switch": [
-    {
-      "supports": "offset-distance: 0",
-      "keyframes": {
-        "offsetDistance": [0, '300px']
-      }
-    },
-    {
-      "keyframes": {
-        "transform": [0, '300px']
-      }
+[example preview="top-frame" playground="true"]
+```html
+<head>
+ <style amp-custom>
+    .drop {
+      width: 20px;
+      height: 20px;
+      background: blue;
+      margin-top: 1em;
+      border-radius: 50%;
     }
-  ]
-}
+    .right {
+      position: absolute;
+      right: 0;
+      background: red;
+    }
+  </style>
+  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+</head>
+<body>
+<amp-animation id="mediaAnimation" layout="nodisplay">
+  <script type="application/json">
+    {
+      "duration": "1s",
+      "iterations": "4",
+      "fill": "both",
+      "direction": "alternate",
+      "animations": [
+        {
+          "media": "(min-width: 300px)",
+          "selector": ".drop",
+          "keyframes": {
+            "transform": "translate(100vw)"
+          }
+        },
+        {
+          "media": "(max-width: 300px)",
+          "selector": ".drop",
+          "keyframes": {
+            "transform": "translate(50vw)"
+          }
+        },
+        {
+          "media": "(min-width: 300px)",
+          "selector": ".right",
+          "keyframes": {
+            "transform": "translate(-100vw)"
+          }
+        },
+        {
+          "media": "(max-width: 300px)",
+          "selector": ".right",
+          "keyframes": {
+            "transform": "translate(-50vw)"
+          }
+        }
+      ]
+    }
+  </script>
+</amp-animation>  
+    
+  <div class="rain">
+    <div class="drop"></div>
+    <div class="drop right"></div>
+    <div class="drop"></div>
+    <div class="drop right"></div>
+    <div class="drop"></div>
+    <div class="drop right"></div>
+    <div class="drop"></div>
+    <div class="drop right"></div>
+  </div>
+  <button on="tap:mediaAnimation.start">Start</button>
+</body>
 ```
+[/example]
