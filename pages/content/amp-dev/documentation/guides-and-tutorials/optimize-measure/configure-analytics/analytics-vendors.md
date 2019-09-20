@@ -38,7 +38,7 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 [/tip]
 
 [tip type="note"]
-**NOTE –**  Vendors that wish to integrate their service with [`<amp-analytics>`](../../../../documentation/components/reference/amp-analytics.md) should refer to the details in [Integrate your analytics tools with AMP](../../../../documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md).
+**NOTE –**  Vendors that wish to integrate their service with [`<amp-analytics>`](../../../../documentation/components/reference/amp-analytics.md) should refer to the details in [Integrate your analytics tools with AMP](../../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md).
 [/tip]
 
 <hr>

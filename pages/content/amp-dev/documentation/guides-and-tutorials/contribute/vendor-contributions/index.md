@@ -46,7 +46,7 @@ Vendors add configurations or features to existing extension to implement their 
 
 The only vendor specific logic checked into AMP repo is a vendor configuration. Adding a new vendor to an existing level one contribution typically does not need a design review. Vendors can follow the documentation of the component.
 
-Vendor expectations:
+### Vendor expectations
 
 *   Maintain and serve vendor’s custom JavaScript independently.
 *   Provide tests for their configuration and respond to issues. 
@@ -57,7 +57,7 @@ Vendor expectations:
 
 [**amp-ad**](../../../components/amp-ad/?format=websites)
 
-If you are an ad technology provider looking to integrate with AMP, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/amp-ad/?format=websites). Depending on the ad technology your company provides, you might find [these integration instructions ](ad-integration-guide/?format=ads)useful.
+If you are an ad technology provider looking to integrate with AMP, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/amp-ad/?format=websites). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
 
 There are 90+ ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
@@ -98,7 +98,7 @@ This is only applicable if vendors are unable to:
 *   Request feature improvements to meet their use case.
 *   Propose a component that applies to other vendors.
 
-### Expectations
+### Vendor expectations
 
 *   Write and propose a design review. 
 *   Tests must be able to catch breakage. 

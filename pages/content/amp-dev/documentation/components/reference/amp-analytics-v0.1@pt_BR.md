@@ -59,7 +59,7 @@ Para fornecedores integrados ao AMP Analytics:
 1. Na tag `<amp-analytics>`, adicione o atributo `type` e defina o valor dele para o [fornecedor](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) especificado.
 1. Determine quais dados você quer coletar e rastrear e especifique esses detalhes nos dados de configuração. Consulte a documentação do fornecedor para ver instruções sobre como coletar os dados de análise.
 
-Se o fornecedor de análise não tiver feito a integração com as AMP, entre em contato com ele para receber suporte. Também recomendamos que você abra um chamado no projeto AMP, pedindo que o fornecedor seja adicionado. Consulte também [Integrar suas ferramentas de análise em HTML para AMP](../../../documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md) (link em inglês). Ou você pode pedir para seu fornecedor enviar os dados ao URL especificado. Saiba mais na seção [Enviar dados internamente](#sending-data-in-house) abaixo.
+Se o fornecedor de análise não tiver feito a integração com as AMP, entre em contato com ele para receber suporte. Também recomendamos que você abra um chamado no projeto AMP, pedindo que o fornecedor seja adicionado. Consulte também [Integrar suas ferramentas de análise em HTML para AMP](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md) (link em inglês). Ou você pode pedir para seu fornecedor enviar os dados ao URL especificado. Saiba mais na seção [Enviar dados internamente](#sending-data-in-house) abaixo.
 
 *Exemplo: envio de dados para um fornecedor de análise terceirizado*
 

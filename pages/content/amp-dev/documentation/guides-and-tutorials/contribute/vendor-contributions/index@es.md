@@ -50,4 +50,4 @@ Si tiene alguna pregunta o sugerencia, no dude en [reportar un problema](https:/
 - [AMP Project Site](https://amp.dev/id/)
 - [AMP GitHub Project](https://github.com/ampproject/amphtml)
 - [AMP Blog](https://amphtml.wordpress.com/)
-- [AMP Project Roadmap](../../../community/roadmap.html)
+- [AMP Project Roadmap](/content/amp-dev/community/roadmap.html)

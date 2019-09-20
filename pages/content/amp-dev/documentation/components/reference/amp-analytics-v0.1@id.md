@@ -58,7 +58,7 @@ Untuk vendor Analytics AMP terintegrasi:
 1. Pada tag `<amp-analytics>`, tambahkan atribut `type` dan tetapkan nilainya ke [vendor](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) yang ditentukan.
 1. Tentukan data yang ingin Anda ambil dan pantau, dan tetapkan detail tersebut dalam data konfigurasi. Lihat dokumentasi vendor untuk mengetahui cara mengambil data analisis.
 
-Jika vendor analisis belum terintegrasi dengan AMP, hubungi vendor untuk meminta dukungan mereka. Sebaiknya Anda juga mengajukan masalah di project AMP dan meminta agar vendor tersebut ditambahkan. Lihat juga [Mengintegrasikan fitur analisis di HTML AMP](../../../documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md). Cara lainnya, lakukan kerja sama dengan vendor untuk mengirim data ke URL yang mereka tentukan. Pelajari lebih lanjut di bagian [Mengirim data secara internal](#sending-data-in-house) di bawah.
+Jika vendor analisis belum terintegrasi dengan AMP, hubungi vendor untuk meminta dukungan mereka. Sebaiknya Anda juga mengajukan masalah di project AMP dan meminta agar vendor tersebut ditambahkan. Lihat juga [Mengintegrasikan fitur analisis di HTML AMP](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md). Cara lainnya, lakukan kerja sama dengan vendor untuk mengirim data ke URL yang mereka tentukan. Pelajari lebih lanjut di bagian [Mengirim data secara internal](#sending-data-in-house) di bawah.
 
 *Contoh: Mengirim data ke penyedia analisis pihak ketiga*
 

@@ -89,7 +89,7 @@
     "order": 1,
 		"repo": "ampproject/amphtml",
 		"from": "extensions/amp-analytics/integrating-analytics.md",
-    "to": "documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md",
+    "to": "documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md",
     "toc": true,
     "formats": ["websites", "stories"]
   },

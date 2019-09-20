@@ -37,7 +37,7 @@ $title: 애널리틱스 공급업체
 
 [tip type="note"]
 
-서비스를 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합](../../../../documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md) 세부정보를 참조하세요.
+서비스를 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)와 통합하려는 공급업체는 [애널리틱스 도구를 AMP와 통합](../../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md) 세부정보를 참조하세요.
 
 [/tip]
 

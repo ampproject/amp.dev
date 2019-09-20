@@ -48,4 +48,4 @@ AMP 애널리틱스를 사용하면 구성된 트리거에 따라 이벤트를 �
 - [AMP 프로젝트 사이트](https://amp.dev/ko/)
 - [AMP GitHub 프로젝트](https://github.com/ampproject/amphtml)
 - [AMP 블로그](https://amphtml.wordpress.com/)
-- [AMP 프로젝트 로드맵](../../../community/roadmap.html)
+- [AMP 프로젝트 로드맵](/content/amp-dev/community/roadmap.html)

@@ -48,4 +48,4 @@ Jika Anda memiliki pertanyaan atau saran, jangan ragu untuk [mengajukannya](http
 - [Situs AMP Project](https://amp.dev/id/)
 - [GitHub AMP Project](https://github.com/ampproject/amphtml)
 - [Blog AMP](https://blog.amp.dev/)
-- [Panduan AMP Project](../../../community/roadmap.html)
+- [Panduan AMP Project](/content/amp-dev/community/roadmap.html)
