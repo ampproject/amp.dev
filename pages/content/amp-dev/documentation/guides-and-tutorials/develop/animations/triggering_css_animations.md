@@ -9,7 +9,7 @@ formats:
 
 Triggering CSS animations [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#*-(all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
 
-## Defining CSS and Keyframes
+## Defining CSS and keyframes
 
 You can define CSS in AMP in the follow ways:
 
@@ -19,7 +19,7 @@ You can define CSS in AMP in the follow ways:
 
 To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
 
-```
+```html
 ...
   <style amp-custom>
     div {
@@ -46,108 +46,38 @@ To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in t
 ...
 ```
 
-## Adding, Removing, and Toggling Classes
-
-
-[example preview="top-frame" playground="true" imports="amp-bind"]
-```html
-<head>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-    <style amp-custom>
-        #hamburger {
-            width: 60px;
-            height: 45px;
-            position: relative;
-            margin: 50px auto;
-            transform: rotate(0deg);
-            transition: .5s ease-in-out;
-            cursor: pointer;
-            outline: none;
-        }
- 
-        #hamburger span {
-            display: block;
-            position: absolute;
-            height: 9px;
-            width: 100%;
-            background: #0479C4;
-            border-radius: 9px;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0deg);
-            transition: .5s ease-in-out;
-        }
-        #hamburger span:nth-child(1) {
-            top: 0px;
-            transform-origin: left center;
-        }
- 
-        #hamburger span:nth-child(2) {
-            top: 21px;
-            transform-origin: left center;
-        }
- 
-        #hamburger span:nth-child(3) {
-            top: 42px;
-            transform-origin: left center;
-        }
- 
-        #hamburger.close span:nth-child(1) {
-            transform: rotate(45deg);
-        }
- 
-        #hamburger.close span:nth-child(2) {
-            width: 0%;
-            opacity: 0;
-            transition: .1s;
-        }
- 
-        #hamburger.close span:nth-child(3) {
-            transform: rotate(-45deg);
-        }
-    </style>
-</head>
-<body>
-  <div id="hamburger" tabindex=1 role=button on="tap:AMP.setState({open: !open})" 
-  [class]="open ? 'close' : ' '" class=" ">
-      <span></span>
-      <span></span>
-      <span></span>
-  </div>
-</body>
-```
-[/example]
+## Adding, removing, and toggling classes
 
 The AMP action, `toggleClass` enables the addition and removal of classes to defined elements.
 
-```
+```js
 elementName.toggleClass(class="className")
 ```
 
 You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu.
 
-```
+```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
 
 ```
 The `toggleClass` action can apply to other elements as well and toggle between two classes by adding the `force` attribute.
 
-```
+```html
 <button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
-    Disappear
+  Disappear
 </button>
 <button on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)">
-    Reappear
+  Reappear
 </button>
 ```
 
 If you need to remove a class and disallow reapplication, add the `force` attribute with a value of `false`. If you need to addd a class and disallow removal, add `force` with a value of `true`.
 
-## Animate with numerous classes
+## Animate with CSS and state
 
-You can add and remove any number of CSS classes with [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
+You can add and remove any number of CSS classes with states using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
-[example preview="top-frame" playground="true" imports="amp-bind"]
+[example preview="top-frame" playground="true"]
 ```html
 <head>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
@@ -157,6 +87,7 @@ You can add and remove any number of CSS classes with [`amp-bind`](../../../../d
       width: 100px;
       margin: 1em;
       background-color: green;
+      margin-left: 100px;
       transition: 2s;
     }
     .visible {
@@ -166,10 +97,10 @@ You can add and remove any number of CSS classes with [`amp-bind`](../../../../d
       opacity: 0;
     }
     .left {
-      transform: translatex(50px)
+      transform: translatex(-50px)
     }
     .right {
-      transform: translatex(-50px)
+      transform: translatex(50px)
     }
     button {
       margin-top:  1rem;
@@ -196,15 +127,15 @@ You can add and remove any number of CSS classes with [`amp-bind`](../../../../d
     }
   </script>
 </amp-state>
-  <div class=" " [class]="magicBox[animateBox].className"> </div>
+  <div [class]="magicBox[animateBox].className"> </div>
   <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-  Disappear
+    Disappear
   </button>
   <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-      Reappear
+    Reappear
   </button>
   <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-      Move Left
+    Move Left
   </button>
   <button on="tap:AMP.setState({animateBox: 'moveRight'})">
     Move Right
@@ -215,7 +146,7 @@ You can add and remove any number of CSS classes with [`amp-bind`](../../../../d
 
 Define multiple class animations by first adding a list of CSS classes within the `<style amp-custom>` tag in the `head` of the document:
 
-```
+```css
 ...
   <style amp-custom>
     div {
@@ -223,6 +154,7 @@ Define multiple class animations by first adding a list of CSS classes within th
       width: 100px;
       margin: 1em;
       background-color: green;
+      margin-left: 100px;
       transition: 2s;
     }
     .visible {
@@ -232,10 +164,10 @@ Define multiple class animations by first adding a list of CSS classes within th
       opacity: 0;
     }
     .left {
-      transform: translatex(50px)
+      transform: translatex(-50px)
     }
     .right {
-      transform: translatex(-50px)
+      transform: translatex(50px)
     }
     button {
       margin-top:  1rem;
@@ -247,7 +179,7 @@ Define multiple class animations by first adding a list of CSS classes within th
 
 Then pair each class with a state:
 
-```
+```html
 ...
 <amp-state id="magicBox">
   <script type="application/json">
@@ -271,15 +203,15 @@ Then pair each class with a state:
 ```
 And link the element with the classes:
 
-```
+```html
 ...
-  <div class=" " [class]="magicBox[animateBox].className"> </div>
+  <div [class]="magicBox[animateBox].className"> </div>
 ...
 ```
 
 The states change from a linked AMP action or event. The following example changes the state from user interaction:
 
-```
+```html
 ...
 <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
     Disappear
