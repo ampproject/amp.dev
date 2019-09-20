@@ -335,6 +335,32 @@ class MarkdownDocument {
   }
 
   /**
+   *Adds explicit anchors for titels in github notation
+   *
+   */
+  addExplicitAnchors() {
+    const TITLE_PATTERN = /^#+[ \t]+(?!.*<a[ \t]+name)(.+?)[ \t]*$/mg;
+    const existingSlugs = [];
+    this._contents = this._contents.replace(TITLE_PATTERN, (line, headline) => {
+      let slug = headline.toLowerCase();
+      slug = slug.replace(/ /g, '-');
+      slug = slug.replace(/[^\p{L}0-9_-]/gu, '');
+      if (existingSlugs.includes(slug)) {
+        let slugCounter = 1;
+        let tempSlug;
+        do {
+          tempSlug = slug + '-' + slugCounter;
+          slugCounter++;
+        } while (existingSlugs.includes(tempSlug));
+        slug = tempSlug;
+      }
+      existingSlugs.push(slug);
+      return `${line} <a name="${slug}"></a>`;
+    });
+    return true;
+  }
+
+  /**
    * Writes the file to the specified path or the relative one
    * if none is set
    * @return {Promise}

@@ -76,3 +76,38 @@ test('Test escape mustache tags', async (done) => {
 
   done();
 });
+
+test('Test anchor generation', async (done) => {
+  const doc = new MarkdownDocument('/tmp/test.md',
+      '# TestOne\n' +
+'# test two two two two two\n' +
+'# test[{}](three)\n' +
+'# test four\n' +
+'# test four\n' +
+'# test four\n' +
+'# test four-1\n' +
+'# test-five-1\n' +
+'# test-five\n' +
+'# test-five\n' +
+'## übung  6\n' +
+'### test_7 \n' +
+'# test 8 <a name="test8"></a>');
+  doc.addExplicitAnchors();
+
+  expect(doc.contents).toBe(
+      '# TestOne <a name="testone"></a>\n' +
+'# test two two two two two <a name="test-two-two-two-two-two"></a>\n' +
+'# test[{}](three) <a name="testthree"></a>\n' +
+'# test four <a name="test-four"></a>\n' +
+'# test four <a name="test-four-1"></a>\n' +
+'# test four <a name="test-four-2"></a>\n' +
+'# test four-1 <a name="test-four-1-1"></a>\n' +
+'# test-five-1 <a name="test-five-1"></a>\n' +
+'# test-five <a name="test-five"></a>\n' +
+'# test-five <a name="test-five-2"></a>\n' +
+'## übung  6 <a name="übung--6"></a>\n' +
+'### test_7  <a name="test_7"></a>\n' +
+'# test 8 <a name="test8"></a>');
+
+  done();
+});
