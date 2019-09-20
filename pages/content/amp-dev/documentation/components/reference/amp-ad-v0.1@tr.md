@@ -1,5 +1,5 @@
 ---
-$title: `amp-ad` / `amp-embed`
+$amp-ad / amp-embed
 $category@: ads-analytics
 formats:
 - websites
