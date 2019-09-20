@@ -43,7 +43,7 @@ rules.  Similar in spirit to the
 [AMP format rules](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml), AMPHTML ads have
 access to a limited set of allowed tags, capabilities, and extensions.
 
-## AMPHTML ad format rules
+## AMPHTML ad format rules <a name="amphtml-ad-format-rules"></a>
 
 Unless otherwise specified below, the creative must obey all rules given by the
 [AMP format rules](https://amp.dev/documentation/guides-and-tutorials/learn/spec/amphtml.html),
@@ -107,7 +107,7 @@ In addition, creatives must obey the following rules:
 </tbody>
 </table>
 
-### Boilerplate
+### Boilerplate <a name="boilerplate"></a>
 
 AMPHTML ad creatives require a different, and considerably simpler, boilerplate style line than [general AMP documents do](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md):
 
@@ -132,7 +132,7 @@ more accurate error messages to help developers.
 Note that the same rules about mutations to the boilerplate text apply as in
 the [general AMP boilerplate](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md).
 
-### CSS
+### CSS <a name="css"></a>
 
 <table>
 <thead>
@@ -172,9 +172,9 @@ the [general AMP boilerplate](https://github.com/ampproject/amphtml/blob/master/
 </table>
 
 
-#### CSS animations and transitions
+#### CSS animations and transitions <a name="css-animations-and-transitions"></a>
 
-##### Selectors
+##### Selectors <a name="selectors"></a>
 
 The `transition` and `animation` properties are only allowed on selectors that:
 - Contain only `transition`, `animation`, `transform`, `visibility`, or
@@ -202,7 +202,7 @@ Property not allowed in CSS class.
 }
 [/sourcecode]
 
-##### Transitionable and animatable properties
+##### Transitionable and animatable properties <a name="transitionable-and-animatable-properties"></a>
 
 The only properties that may be transitioned are opacity and transform.
 ([Rationale](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/))
@@ -246,7 +246,7 @@ transition: background-color 2s;
 [/sourcecode]
 
 
-### Allowed AMP extensions and builtins
+### Allowed AMP extensions and builtins <a name="allowed-amp-extensions-and-builtins"></a>
 
 The following are _allowed_ AMP extension modules and AMP built-in tags in an
 AMPHTML ad creative. Extensions or builtin tags not explicitly listed are prohibited.
@@ -300,7 +300,7 @@ expand beyond an iframe.  Support may be added for this in the future, if there
 is demonstrated desire for it.
 
 
-### HTML tags
+### HTML tags <a name="html-tags"></a>
 
 The following are _allowed_ tags in an AMPHTML ads creative.  Tags not explicitly
 allowed are prohibited.  This list is a subset of the general [AMP tag
@@ -314,11 +314,11 @@ therefore, will only bloat the creative and cost bandwidth and latency.
 Similarly, `<acronym>`, `<big>`, et al. are prohibited because they are not
 HTML5 compatible.
 
-#### 4.1 The root element
+#### 4.1 The root element <a name="41-the-root-element"></a>
 4.1.1 `<html>`
   - Must use types `<html ⚡4ads>` or `<html amp4ads>`
 
-#### 4.2 Document metadata
+#### 4.2 Document metadata <a name="42-document-metadata"></a>
 4.2.1 `<head>`
 
 4.2.2 `<title>`
@@ -331,7 +331,7 @@ HTML5 compatible.
 4.2.5 `<style>`
 4.2.6 `<meta>`
 
-#### 4.3 Sections
+#### 4.3 Sections <a name="43-sections"></a>
 4.3.1 `<body>`
 4.3.2 `<article>`
 4.3.3 `<section>`
@@ -342,7 +342,7 @@ HTML5 compatible.
 4.3.8 `<footer>`
 4.3.9 `<address>`
 
-#### 4.4 Grouping Content
+#### 4.4 Grouping Content <a name="44-grouping-content"></a>
 4.4.1 `<p>`
 4.4.2 `<hr>`
 4.4.3 `<pre>`
@@ -358,7 +358,7 @@ HTML5 compatible.
 4.4.13 `<div>`
 4.4.14 `<main>`
 
-#### 4.5 Text-level semantics
+#### 4.5 Text-level semantics <a name="45-text-level-semantics"></a>
 4.5.1 `<a>`
 4.5.2 `<em>`
 4.5.3 `<strong>`
@@ -389,16 +389,16 @@ HTML5 compatible.
 4.5.28 `<span>`
 4.5.29 `<br>`
 4.5.30 `<wbr>`
-#### 4.6 Edits
+#### 4.6 Edits <a name="46-edits"></a>
 4.6.1 `<ins>`
 4.6.2 `<del>`
-#### 4.7 Embedded Content
+#### 4.7 Embedded Content <a name="47-embedded-content"></a>
 - Embedded content is supported only via AMP tags, such as `<amp-img>` or
 `<amp-video>`.
 
-#### 4.7.4 `<source>`
+#### 4.7.4 `<source>` <a name="474-source"></a>
 
-#### 4.7.18 SVG
+#### 4.7.18 SVG <a name="4718-svg"></a>
 SVG tags are not in the HTML5 namespace. They are listed below without section ids.
 
 `<svg>`
@@ -430,7 +430,7 @@ SVG tags are not in the HTML5 namespace. They are listed below without section i
 `<symbol>`
 `<desc>`
 `<title>`
-#### 4.9 Tabular data
+#### 4.9 Tabular data <a name="49-tabular-data"></a>
 4.9.1 `<table>`
 4.9.2 `<caption>`
 4.9.3 `<colgroup>`
@@ -441,9 +441,9 @@ SVG tags are not in the HTML5 namespace. They are listed below without section i
 4.9.8 `<tr>`
 4.9.9 `<td>`
 4.9.10 `<th>`
-#### 4.10 Forms
+#### 4.10 Forms <a name="410-forms"></a>
 4.10.8 `<button>`
-#### 4.11 Scripting
+#### 4.11 Scripting <a name="411-scripting"></a>
 - Like a general AMP document, the creative's `<head>` tag must contain a
   `<script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>` tag.
 - Unlike general AMP, `<noscript>` is prohibited.

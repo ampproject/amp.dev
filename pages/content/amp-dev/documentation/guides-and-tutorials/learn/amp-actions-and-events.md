@@ -84,21 +84,21 @@ See the table below for descriptions of each part of the syntax.
   </tr>
 </table>
 
-## Handling multiple events
+## Handling multiple events <a name="handling-multiple-events"></a>
 
 You can listen to multiple events on an element by separating the events with a semicolon `;`.
 
 Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
 
-## Multiple actions for one event
+## Multiple actions for one event <a name="multiple-actions-for-one-event"></a>
 
 You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
 
 Example: `on="tap:target1.actionA,target2.actionB"`
 
 
-## Globally-defined events and actions
+## Globally-defined events and actions <a name="globally-defined-events-and-actions"></a>
 
 AMP defines a `tap` event globally that you can listen to on any HTML element (including AMP elements).
 
@@ -118,13 +118,9 @@ For example, the following is possible in AMP:
 
 [/tip]
 
-## Event/Action trust compatibility
+## Element-specific events <a name="element-specific-events"></a>
 
-Similar to Javascript's native `event.isTrusted` distinction between user generated and script-generated events, AMP follows a trust model that insures that critical actions can only be triggered by highly trusted events. High trust events are usually triggered by a user interaction such as a tap or click. Currently AMP supports two levels of trust as defined by `ActionTrust` which are `ActionTrust.HIGH` and `ActionTrust.LOW`. An action can only be triggered by an event of equal or higher trust level than required by the action. Refer to the tables below to compare event and action trust levels.
-
-## Element-specific events
-
-### * - all elements
+### * - all elements <a name="---all-elements"></a>
 <table>
   <tr>
     <th>Event</th>
@@ -136,7 +132,7 @@ Similar to Javascript's native `event.isTrusted` distinction between user genera
   </tr>
 </table>
 
-### Input elements
+### Input elements <a name="input-elements"></a>
 <table>
   <tr>
     <th width="20%">Event</th>
@@ -189,7 +185,7 @@ event.value</pre>
   </tr>
 </table>
 
-### amp-carousel[type="slides"]
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -204,7 +200,7 @@ event.index</pre></td>
   </tr>
 </table>
 
-### amp-lightbox
+### amp-lightbox <a name="amp-lightbox"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -223,7 +219,7 @@ event.index</pre></td>
   </tr>
 </table>
 
-### amp-list
+### amp-list <a name="amp-list"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -237,7 +233,7 @@ event.index</pre></td>
   </tr>
 </table>
 
-### amp-selector
+### amp-selector <a name="amp-selector"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -255,7 +251,7 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### amp-sidebar
+### amp-sidebar <a name="amp-sidebar"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -274,7 +270,7 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### amp-state
+### amp-state <a name="amp-state"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -288,7 +284,7 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### amp-video, amp-youtube
+### amp-video, amp-youtube <a name="amp-video-amp-youtube"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -307,7 +303,7 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### form
+### form <a name="form"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -344,40 +340,33 @@ event.response</pre></td>
 </table>
 
 
-## Element-specific actions
+## Element-specific actions <a name="element-specific-actions"></a>
 
-### * (all elements)
-Note: All standard actions require a high trust event
-
+### * (all elements) <a name="-all-elements"></a>
 <table>
   <tr>
     <th width="40%">Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>hide</code></td>
     <td>Hides the target element.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>show</code></td>
     <td>Shows the target element. If an
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a
     result, it gains focus.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>toggleVisibility</code></td>
     <td>Toggles the visibility of the target element. If an
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#autofocus"><code>autofocus</code> element</a> becomes visible as a
     result, it gains focus.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>toggleClass(class=STRING, force=BOOLEAN)</code></td>
     <td>Toggles class of the target element. <code>force</code> is optional, and if defined, it ensures that class would only be added but not removed if set to <code>true</code>, and only removed but not added if set to <code>false</code>.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>scrollTo(duration=INTEGER, position=STRING)</code></td>
@@ -388,7 +377,6 @@ Note: All standard actions require a high trust event
     or <code>bottom</code> (default <code>top</code>).
     Specifies the position of the element relative to the viewport after
     scrolling.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>focus</code></td>
@@ -396,30 +384,26 @@ Note: All standard actions require a high trust event
     on another element (usually parent element). We strongly advise against
     losing focus by focusing on <code>body</code>/<code>documentElement</code>
     for accessibility reasons.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-audio
+### amp-audio <a name="amp-audio"></a>
 <table>
   <tr>
     <th width="20%">Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>play</code></td>
     <td>Plays the audio. Is a no-op if the <code>&lt;amp-audio></code> element is a descendant of <code>&lt;amp-story></code>.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
     <td>Pauses the audio. Is a no-op if the <code>&lt;amp-audio></code> element is a descendant of <code>&lt;amp-story></code>.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-bodymovin-animation
+### amp-bodymovin-animation <a name="amp-bodymovin-animation"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -447,163 +431,139 @@ Note: All standard actions require a high trust event
   </tr>
 </table>
 
-### amp-carousel[type="slides"]
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>goToSlide(index=INTEGER)</code></td>
     <td>Advances the carousel to a specified slide index.</td>
-    <td>LOW</td>
   </tr>
   <tr>
     <td><code>toggleAutoplay(toggleOn=true|false)</code></td>
     <td>Toggle the carousel's autoplay status. <code>toggleOn</code> is optional.</td>
-    <td>LOW</td>
   </tr>
 </table>
 
-### amp-image-lightbox
+### amp-image-lightbox <a name="amp-image-lightbox"></a>
 <table>
   <tr>
     <th width="40%">Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
     <td>Opens the image lightbox with the source image being the one that triggered the action.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-lightbox
+### amp-lightbox <a name="amp-lightbox-1"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
     <td>Opens the lightbox.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>close</code></td>
     <td>Closes the lightbox.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-list
+### amp-list <a name="amp-list-1"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>refresh</code></td>
     <td>Refreshes data from the <code>src</code> and re-renders the list.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-live-list
+### amp-live-list <a name="amp-live-list"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>update (default)</code></td>
     <td>Updates the DOM items to show updated content.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-selector
+### amp-selector <a name="amp-selector-1"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>selectUp(delta=INTEGER)</code></td>
     <td>Moves the selection up by the value of `delta`. The default `delta` is set to 1.</td>
-    <td>LOW</td>
   </tr>
   <tr>
     <td><code>selectDown(delta=INTEGER)</code></td>
     <td>Moves the selection down by the value of `delta`. The default `delta` is set to -1.</td>
-    <td>LOW</td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
     <td>Sets the selected element's `selected` attribute if value is 'true', otherwise removes the attribute</td>
-    <td>LOW</td>
   </tr>
 </table>
 
-### amp-sidebar
+### amp-sidebar <a name="amp-sidebar-1"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>open (default)</code></td>
     <td>Opens the sidebar.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>close</code></td>
     <td>Closes the sidebar.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>toggle</code></td>
     <td>Toggles the state of the sidebar.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-state
+### amp-state <a name="amp-state-1"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>refresh</code></td>
     <td>Refetches data at the `src` attribute while ignoring browser cache.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-user-notification
+### amp-user-notification <a name="amp-user-notification"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>dismiss (default)</code></td>
     <td>Hides the referenced user notification element.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### Video elements
+### Video elements <a name="video-elements"></a>
 
 The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
 
@@ -611,100 +571,82 @@ The actions below are supported in the following AMP video elements: `amp-video`
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>play</code></td>
     <td>Plays the video.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>pause</code></td>
     <td>Pauses the video.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>mute</code></td>
     <td>Mutes the video.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>unmute</code></td>
     <td>Unmutes the video.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>fullscreen</code></td>
     <td>Takes the video to fullscreen.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-### amp-form
+### form <a name="form-1"></a>
 <table>
   <tr>
     <th>Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>clear</code></td>
     <td>Clears any values in the form's inputs.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>submit</code></td>
     <td>Submits the form.</td>
-    <td>HIGH</td>
   </tr>
 </table>
 
-## Special targets
+## Special targets <a name="special-targets"></a>
 
 The following are targets provided by the AMP system that have special requirements:
 
-### Target: AMP
+### Target: AMP <a name="target-amp"></a>
 
 The `AMP` target is provided by the AMP runtime and implements top-level
 actions that apply to the whole document.
-
-Note: All actions on the `AMP` target require a high trust event.
 
 <table>
   <tr>
     <th width="40%">Action</th>
     <th>Description</th>
-    <th width="10%">Required Trust Level</th>
   </tr>
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
     <td>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>goBack</code></td>
     <td>Navigates back in history.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>print</code></td>
     <td>Opens the Print Dialog to print the current page.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
     <td>Scrolls to the provided element ID on the current page.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td>optoutOfCid</td>
     <td>Opts out of Client ID generation for all scopes.</td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>setState({foo: 'bar'})</code><sup>1</sup></td>
@@ -713,20 +655,18 @@ Note: All actions on the `AMP` target require a high trust event.
       <p>Merges an object literal into the bindable state.</p>
       <p></p>
     </td>
-    <td>HIGH</td>
   </tr>
   <tr>
     <td><code>pushState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
       <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </td>
-    <td>HIGH</td>
   </tr>
 </table>
 
 <sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> or <code>pushState()</code> to complete before invocation. Only a single <code>setState()</code> or <code>pushState()</code> is allowed per event.
 
-### Target: amp-access
+### Target: amp-access <a name="target-amp-access"></a>
 
 The `amp-access` target is provided by the [amp-access](https://amp.dev/documentation/components/amp-access.html) component.
 
