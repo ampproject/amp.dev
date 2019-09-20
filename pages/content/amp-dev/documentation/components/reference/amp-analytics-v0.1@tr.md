@@ -59,7 +59,7 @@ Entegre AMP Analytics tedarikçi firmaları için:
 1. `<amp-analytics>` etiketine, `type` özelliğini ekleyin ve değerini, belirtilen [tedarikçi firma](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) bilgisine ayarlayın.
 1. Yakalamak ve izlemek istediğiniz verileri belirleyin ve bu ayrıntıları, yapılandırma verilerinde belirtin. Analiz verilerinin nasıl yakalanacağıyla ilgili talimatlar için tedarikçi firmanın dokümanlarına bakın.
 
-Analiz tedarikçi firması AMP ile entegre değilse tedarikçi firmaya ulaşıp destek sağlamalarını isteyin. Ayrıca, tedarikçi firmanın eklenmesini isteyen AMP projesinde bir sorun oluşturmanızı da öneririz. Ayrıca, [Analiz araçlarınızı AMP HTML ile entegre etme](../../../documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md) konusuna da bakın. Alternatif olarak, tedarikçi firmanızla birlikte çalışarak verileri belirttikleri URL'lere gönderin. Aşağıdaki [Verileri şirket içinde gönderme](#sending-data-in-house) bölümünde daha fazla bilgi edinebilirsiniz.
+Analiz tedarikçi firması AMP ile entegre değilse tedarikçi firmaya ulaşıp destek sağlamalarını isteyin. Ayrıca, tedarikçi firmanın eklenmesini isteyen AMP projesinde bir sorun oluşturmanızı da öneririz. Ayrıca, [Analiz araçlarınızı AMP HTML ile entegre etme](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md) konusuna da bakın. Alternatif olarak, tedarikçi firmanızla birlikte çalışarak verileri belirttikleri URL'lere gönderin. Aşağıdaki [Verileri şirket içinde gönderme](#sending-data-in-house) bölümünde daha fazla bilgi edinebilirsiniz.
 
 *Örnek: Verileri bir üçüncü taraf analiz tedarikçi firmasına gönderme*
 

@@ -48,4 +48,4 @@ AMP アナリティクスを使用すると、貴社で設定したトリガー�
 - [AMP プロジェクト サイト](https://amp.dev/)
 - [AMP GitHub プロジェクト](https://github.com/ampproject/amphtml)
 - [AMP ブログ](https://blog.amp.dev/)
-- [AMP プロジェクトのロードマップ](../../../community/roadmap.html)
+- [AMP プロジェクトのロードマップ](/content/amp-dev/community/roadmap.html)

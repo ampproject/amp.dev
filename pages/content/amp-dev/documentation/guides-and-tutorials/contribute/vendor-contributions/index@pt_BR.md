@@ -48,4 +48,4 @@ Caso tenha dúvidas ou sugestões, [envie seus comentários](https://github.com/
 - [Site do projeto AMP](https://amp.dev/pt_br/)
 - [Projeto AMP no GitHub](https://github.com/ampproject/amphtml)
 - [Blog das AMP](https://blog.amp.dev/)
-- [Roteiro do projeto AMP](../../../community/roadmap.html)
+- [Roteiro do projeto AMP](/content/amp-dev/community/roadmap.html)

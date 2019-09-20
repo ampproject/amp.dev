@@ -59,7 +59,7 @@ Per i fornitori di soluzioni di analisi integrate con Analytics per AMP:
 1. Nel tag `<amp-analytics>`, aggiungi l'attributo `type` e imposta il valore sul [fornitore](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) specificato.
 1. Determina i dati da acquisire e monitorare e specifica questi dettagli nei dati di configurazione. Consulta la documentazione del fornitore per istruzioni su come acquisire i dati di analisi.
 
-Se le soluzioni di analisi del fornitore non sono integrate con AMP, contatta il fornitore per chiedere assistenza. Ti invitiamo inoltre a segnalare un problema relativo al progetto AMP richiedendo l'aggiunta del fornitore. Vedi anche la sezione [Integrazione degli strumenti di analisi in HTML AMP](../../../documentation/guides-and-tutorials/contribute/vendor-contributions/integrate-your-analytics-tools.md). In alternativa, contatta il fornitore per inviare i dati all'URL specificato. Per ulteriori informazioni, consulta la sezione [Invio interno di dati](#sending-data-in-house) di seguito.
+Se le soluzioni di analisi del fornitore non sono integrate con AMP, contatta il fornitore per chiedere assistenza. Ti invitiamo inoltre a segnalare un problema relativo al progetto AMP richiedendo l'aggiunta del fornitore. Vedi anche la sezione [Integrazione degli strumenti di analisi in HTML AMP](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md). In alternativa, contatta il fornitore per inviare i dati all'URL specificato. Per ulteriori informazioni, consulta la sezione [Invio interno di dati](#sending-data-in-house) di seguito.
 
 *Esempio: invio di dati a un fornitore di soluzioni di analisi di terze parti*
 
