@@ -120,7 +120,7 @@
     "html-webpack-inline-source-plugin": "1.0.0-beta.2",
     "html-webpack-plugin": "4.0.0-beta.8",
     "http-proxy-response-rewrite": "0.0.1",
-    "jasmine": "3.4.0",
+    "jasmine": "3.5.0",
     "jest": "24.9.0",
     "jimp": "0.8.2",
     "js-beautify": "1.10.2",
