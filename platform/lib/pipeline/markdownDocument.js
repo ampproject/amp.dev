@@ -19,6 +19,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
+const SlugGenerator = require('@lib/utils/slugGenerator');
 
 // Prep version template
 const nunjucks = require('nunjucks');
@@ -75,6 +76,9 @@ const RELATIVE_LINK_PATTERN = new RegExp(
     // find markdown link block [text](../link):
     /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
     , 'g');
+
+// This pattern will find markdown titels without HTML anchors.
+const NO_ANCHOR_TITLE_PATTERN = /^#+[ \t]+(?!.*<a[ \t]+name)(.+?)[ \t]*$/mg;
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -336,25 +340,11 @@ class MarkdownDocument {
 
   /**
    *Adds explicit anchors for titels in github notation
-   *
    */
   addExplicitAnchors() {
-    const TITLE_PATTERN = /^#+[ \t]+(?!.*<a[ \t]+name)(.+?)[ \t]*$/mg;
-    const existingSlugs = [];
-    this._contents = this._contents.replace(TITLE_PATTERN, (line, headline) => {
-      let slug = headline.toLowerCase();
-      slug = slug.replace(/ /g, '-');
-      slug = slug.replace(/[^\p{L}0-9_-]/gu, '');
-      if (existingSlugs.includes(slug)) {
-        let slugCounter = 1;
-        let tempSlug;
-        do {
-          tempSlug = slug + '-' + slugCounter;
-          slugCounter++;
-        } while (existingSlugs.includes(tempSlug));
-        slug = tempSlug;
-      }
-      existingSlugs.push(slug);
+    const slugGenerator = new SlugGenerator();
+    this._contents = this._contents.replace(NO_ANCHOR_TITLE_PATTERN, (line, headline) => {
+      const slug = slugGenerator.getSlug(headline);
       return `${line} <a name="${slug}"></a>`;
     });
     return true;
