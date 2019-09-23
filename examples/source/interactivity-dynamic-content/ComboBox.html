@@ -92,7 +92,10 @@
         <form method="post" action-xhr="/documentation/examples/api/echo">
           <amp-autocomplete class="combo-box" filter="token-prefix" min-characters="0">
             <input id="combo-input" type="text">
-            <button on="tap:combo-input.focus">
+            <button hidden id="close" on="tap:open.show, close.hide">
+              <i class="arrow"></i>
+            </button>
+            <button id="open" on="tap:combo-input.focus, open.hide, close.show">
               <i class="arrow"></i>
             </button>
             <script type="application/json">

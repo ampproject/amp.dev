@@ -437,7 +437,7 @@ This is what it looks like:
 Here is a `top-frame` sample using a remote endpoint. Mustache templates need to be escaped in samples using <code>&#123;% raw %&#125;</code> and <code>&#123;% endraw %}</code>:
 
 <div class="ap-m-code-snippet">
-  <pre>&#91;example preview=&quot;top-frame&quot; orientation=&quot;portrait&quot;
+  <pre>&#91;example preview=&quot;top-frame&quot;
         playground=&quot;true&quot;
         imports=&quot;amp-list:0.1&quot;
         template=&quot;amp-mustache:0.2&quot;]

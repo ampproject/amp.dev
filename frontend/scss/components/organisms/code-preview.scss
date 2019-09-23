@@ -82,14 +82,6 @@
       }
     }
 
-    &.landscape {
-      display: block;
-      amp-iframe {
-        width: auto;
-        height: auto;
-      }
-    }
-
     &-portrait,
     &-landscape {
       width: 100%;
@@ -142,6 +134,10 @@
 
     &-landscape &-background {
       width: 100%;
+    }
+
+    &-background.initial-portrait {
+      transform: scale(.5625, 1.7778);
     }
   }
 
