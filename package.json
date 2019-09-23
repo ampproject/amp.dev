@@ -77,7 +77,7 @@
   },
   "devDependencies": {
     "@ampproject/toolbox-validator-rules": "1.0.1",
-    "@babel/cli": "7.6.0",
+    "@babel/cli": "7.6.2",
     "@babel/core": "7.6.0",
     "@babel/node": "7.6.1",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
