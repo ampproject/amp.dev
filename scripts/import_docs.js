@@ -38,6 +38,7 @@ function downloadPage(filePath, headingToStrip) {
     let process = function (err, data) {
 
       if (err || data && data.content !== undefined && !data.content.length) {
+        console.error(`Error importing ${filePath}`);
         throw err || 'Skipping ' + filePath + ', file is empty..';
       }
 
@@ -273,6 +274,3 @@ client.get('/repos/ampproject/amphtml/releases/latest', {}, function (err, statu
   downloadBuiltins();
   downloadExtensions();
 });
-
-
-
