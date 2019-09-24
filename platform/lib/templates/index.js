@@ -20,7 +20,7 @@ const nunjucks = require('nunjucks');
 const config = require('../config.js');
 const growPageLoader = require('../common/growPageLoader');
 const LRU = require('lru-cache');
-const {getFormatFromRequest} = require('../routers/requestHelper.js');
+const {getFormatFromRequest} = require('../amp/formatHelper.js');
 
 const ALLOWED_LEVEL = ['beginner', 'advanced'];
 let templates = null;

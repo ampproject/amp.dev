@@ -19,7 +19,7 @@
 const URL = require('url').URL;
 const config = require('@lib/config.js');
 
-const {SUPPORTED_FORMATS} = require('../routers/requestHelper.js');
+const {SUPPORTED_FORMATS} = require('../amp/formatHelper.js');
 
 const FILTER_CLASSES = Object.fromEntries(
     SUPPORTED_FORMATS.map((format) => [format, `ap--${format}`])

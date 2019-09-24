@@ -34,7 +34,7 @@ const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
 const formatTransform = require('@lib/format-transform/');
 const utils = require('@lib/utils');
 const config = require('@lib/config.js');
-const {FORMAT_WEBSITES} = require('../routers/requestHelper.js');
+const {FORMAT_WEBSITES} = require('../amp/formatHelper.js');
 
 // Where to import the samples from
 const SAMPLE_SRC = utils.project.absolute('examples/source');

@@ -18,7 +18,7 @@
 
 const express = require('express');
 const project = require('@lib/utils/project');
-const {getFormatFromRequest, FORMAT_WEBSITES} = require('./requestHelper.js');
+const {getFormatFromRequest, FORMAT_WEBSITES} = require('../amp/formatHelper.js');
 
 // eslint-disable-next-line new-cap
 const inlineExamples = express.Router();

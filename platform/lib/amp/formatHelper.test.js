@@ -1,4 +1,4 @@
-const {getFormatFromRequest, DEFAULT_FORMAT, SUPPORTED_FORMATS} = require('./requestHelper.js');
+const {getFormatFromRequest, DEFAULT_FORMAT, SUPPORTED_FORMATS} = require('./formatHelper.js');
 
 const request = {
   query: {},

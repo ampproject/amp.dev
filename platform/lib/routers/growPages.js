@@ -24,7 +24,7 @@ const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
 const signale = require('signale');
-const {getFormatFromRequest} = require('./requestHelper.js');
+const {getFormatFromRequest} = require('../amp/formatHelper.js');
 
 const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 let formatComponentMapping = {};
@@ -212,7 +212,7 @@ growPages.get(
       const latestVersionByFormat = versions[versions.length - 1];
 
       // redirect to unversioned URL for latest format specific version
-      if (version >= latestVersionByFormat) {
+      if (parseFloat(version) >= parseFloat(latestVersionByFormat)) {
         res.redirect(`/documentation/components/${component}/?format=${format}`);
         return;
       } else if (!version) {

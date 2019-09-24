@@ -25,7 +25,7 @@ const DEFAULT_VERSION = 0.1;
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const categories = require(__dirname + '/../../config/imports/componentCategories.json');
 const formats = require(__dirname + '/../../config/imports/componentFormats.json');
-const {writeFileSync} = require('fs');
+const {writeFile} = require('fs').promises;
 const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 
 const {Signale} = require('signale');
@@ -76,6 +76,7 @@ class ComponentReferenceImporter {
 
     const versionMapping = {};
     for (const extension of extensions) {
+      // if (extension.name !== 'amp-carousel') continue;
       const documents = await this._findExtensionDocs(extension);
       const versions = [...new Set(documents.map((doc) => doc.version).sort().reverse())];
 
@@ -85,6 +86,7 @@ class ComponentReferenceImporter {
       } else {
         const supportedVersions = {};
         versionMapping[extension.name] = supportedVersions;
+        const supportedFormats = new Set();
         documents.forEach((doc) => {
           // IMPORTANT: first rewrite URLs
           this._rewriteRelativePaths(extension.path, doc.document);
@@ -96,22 +98,23 @@ class ComponentReferenceImporter {
             supportedVersions.current = doc.version;
           }
           doc.document.stripInlineTitle();
+          doc.document.formats.forEach((format) => {
+            supportedFormats.add(format);
+            supportedVersions[format] = (supportedVersions[format] || new Set()).add(doc.version);
+          });
+        });
+        // We have to iterate again to be able to set the supported formats for each component
+        documents.forEach((doc) => {
+          doc.document.supportedFormats = Array.from(supportedFormats);
           savedDocuments.push(
               this._saveDocument(doc.tagName || extension.name, doc.document, doc.version));
-          doc.document.formats.forEach((format) => {
-            let versionsPerFormat = supportedVersions[format];
-            if (!versionsPerFormat) {
-              versionsPerFormat = [];
-              supportedVersions[format] = versionsPerFormat;
-            }
-            versionsPerFormat.push(doc.version);
-          });
         });
       }
     }
 
-    writeFileSync(FORMAT_COMPONENT_MAPPING, JSON.stringify(versionMapping, null, 2), 'utf-8');
-    return Promise.all(savedDocuments);
+    const writeComponentMapping =
+      writeFile(FORMAT_COMPONENT_MAPPING, JSON.stringify(versionMapping, null, 2), 'utf-8');
+    return Promise.all(savedDocuments.concat(writeComponentMapping));
   }
 
   /**
@@ -147,7 +150,6 @@ class ComponentReferenceImporter {
     if (!document.formats) {
       document.formats = formats[extensionName];
     }
-    document.supportedFormats = formats[extensionName];
 
     if (version) {
       document.version = version;
