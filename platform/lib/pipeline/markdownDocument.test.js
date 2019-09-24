@@ -85,7 +85,8 @@ test('Test anchor generation', () => {
       '## test h2\n' +
       '### test h3\n' +
       '#no headline\n' +
-      '# test existing <a name="existing"></a>');
+      '# test anchor <a name="existing"></a>\n' +
+      '## test anchor');
   doc.addExplicitAnchors();
 
   expect(doc.contents).toBe(
@@ -95,5 +96,6 @@ test('Test anchor generation', () => {
       '## test h2 <a name="test-h2"></a>\n' +
       '### test h3 <a name="test-h3"></a>\n' +
       '#no headline\n' +
-      '# test existing <a name="existing"></a>');
+      '# test anchor <a name="existing"></a>\n' +
+      '## test anchor <a name="test-anchor-1"></a>');
 });

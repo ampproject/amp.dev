@@ -77,8 +77,9 @@ const RELATIVE_LINK_PATTERN = new RegExp(
     /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
     , 'g');
 
-// This pattern will find markdown titels without HTML anchors.
-const NO_ANCHOR_TITLE_PATTERN = /^#+[ \t]+(?!.*<a[ \t]+name)(.+?)[ \t]*$/mg;
+// This pattern will find the text for markdown titles skipping explicit anchors.
+const TITLE_ANCHOR_PATTERN =
+    /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/mg;
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -343,9 +344,15 @@ class MarkdownDocument {
    */
   addExplicitAnchors() {
     const slugGenerator = new SlugGenerator();
-    this._contents = this._contents.replace(NO_ANCHOR_TITLE_PATTERN, (line, headline) => {
+    this._contents = this._contents.replace(TITLE_ANCHOR_PATTERN,
+        (line, hLevel, headlineStart, anchor, headlineEnd) => {
+      const headline = headlineStart + headlineEnd
       const slug = slugGenerator.getSlug(headline);
-      return `${line} <a name="${slug}"></a>`;
+      // Even if we have an anchor the slug generator has to know all the headlines.
+      if (anchor) {
+        return line;
+      }
+      return `${hLevel} ${headline} <a name="${slug}"></a>`;
     });
     return true;
   }
