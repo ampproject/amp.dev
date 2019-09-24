@@ -35,7 +35,7 @@ mkdir build
 # Install tools
 echo $(GREEN "Installing") $(CYAN "urllib3") $(GREEN "and") $(CYAN "gsutil") $(GREEN "...")
 echo -e 'travis_fold:start:install\n'
-pip install urllib3[secure]
+pip install urllib3[secure] --user
 pip install gsutil --user
 echo -e 'travis_fold:end:install\n'
 
