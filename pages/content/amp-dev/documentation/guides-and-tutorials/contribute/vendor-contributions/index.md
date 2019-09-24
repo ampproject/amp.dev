@@ -55,9 +55,9 @@ The only vendor specific logic checked into AMP repo is a vendor configuration. 
 
 ### Level one example
 
-[**amp-ad**](../../../components/amp-ad/?format=websites)
+[**amp-ad**](../../../components/reference/amp-ad.md)
 
-If you are an ad technology provider looking to integrate with AMP, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/amp-ad/?format=websites). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
+If you are an ad technology provider looking to integrate with AMP, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/reference/amp-ad.md). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
 
 There are 90+ ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
@@ -74,20 +74,20 @@ All business logic is checked into AMP repo, but the only vendor specific logic 
 
 ### Level two examples
 
-[**amp-analytics**](../../../components/amp-analytics/?format=websites)
+[**amp-analytics**](../../../components/reference/amp-analytics.md)
 
-AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide ](../../optimize-and-measure/configure-analytics/?format=websites)to get you started.
+AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide ](../../optimize-measure/configure-analytic.md)to get you started.
 
-If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../components/amp-pixel/?format=websites). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
+If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../components/reference/amp-pixel.md). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
 
 There are 20+ analytics providers who have added support to amp-analytics. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/1595) from the analytics provider [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
 
-[**amp-call-tracking**](../../../components/amp-call-tracking/?format=websites)
+[**amp-call-tracking**](../../../components/reference/amp-call-tracking.md)
 
-If you provide call tracking measurement services, your use case may be supported with [`amp-call-tracking`](../../../components/amp-call-tracking/?format=websites). This component dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
+If you provide call tracking measurement services, your use case may be supported with [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md). This component dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
 
-To learn more about how this extension might work for you, please see [an example](../../../examples/components/amp-call-tracking/?format=websites) or read about the [reference documentation](../../../components/amp-call-tracking/?format=websites).
+To learn more about how this extension might work for you, please see the [reference documentation](../../../components/reference/amp-call-tracking.md).
 
 ## Level three contribution
 
