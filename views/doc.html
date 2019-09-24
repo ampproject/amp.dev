@@ -17,7 +17,9 @@
         <h1 class="post-title">{{ doc.title }}</h1>
 
         <div class="post-content">
+          {% if not doc.title in ['amp-form', 'amp-list'] %}
           {{doc.html|render|safe}}
+          {% endif %}
         </div>
 
       </article>
