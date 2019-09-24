@@ -28,6 +28,11 @@
     "test:platform": "APP_ENV=test jest --testPathIgnorePatterns smoke-tests tests",
     "test:grow-extensions": "cd pages/extensions && if which grow; then python -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
   "keywords": [
     "amphtml",
     "framework",
@@ -45,7 +50,7 @@
   },
   "dependencies": {
     "@ampproject/toolbox-cors": "1.1.0-beta.1",
-    "@ampproject/toolbox-optimizer": "1.1.0-beta.0",
+    "@ampproject/toolbox-optimizer": "1.1.0-beta.1",
     "@google-cloud/datastore": "4.3.0",
     "acorn": "7.1.0",
     "casual": "1.6.2",
@@ -120,6 +125,7 @@
     "html-webpack-inline-source-plugin": "1.0.0-beta.2",
     "html-webpack-plugin": "4.0.0-beta.8",
     "http-proxy-response-rewrite": "0.0.1",
+    "husky": "^3.0.5",
     "jasmine": "3.5.0",
     "jest": "24.9.0",
     "jimp": "0.8.4",
