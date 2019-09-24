@@ -19,7 +19,7 @@ require('module-alias/register');
 // If a doc is broken in a release, add it to this this list to fetch from master instead.
 //
 // DON'T FORGET TO REMOVE ONCE IT'S FIXED
-const DOCS_TO_FETCH_FROM_MASTER = ['amp-script'];
+const DOCS_TO_FETCH_FROM_MASTER = ['amp-script', 'amp-carousel'];
 const DEFAULT_VERSION = 0.1;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
@@ -76,7 +76,6 @@ class ComponentReferenceImporter {
 
     const versionMapping = {};
     for (const extension of extensions) {
-      // if (extension.name !== 'amp-carousel') continue;
       const documents = await this._findExtensionDocs(extension);
       const versions = [...new Set(documents.map((doc) => doc.version).sort().reverse())];
 
@@ -100,7 +99,12 @@ class ComponentReferenceImporter {
           doc.document.stripInlineTitle();
           doc.document.formats.forEach((format) => {
             supportedFormats.add(format);
-            supportedVersions[format] = (supportedVersions[format] || new Set()).add(doc.version);
+            let versionsPerFormat = supportedVersions[format];
+            if (!versionsPerFormat) {
+              versionsPerFormat = [];
+              supportedVersions[format] = versionsPerFormat;
+            }
+            versionsPerFormat.push(doc.version);
           });
         });
         // We have to iterate again to be able to set the supported formats for each component
@@ -124,7 +128,7 @@ class ComponentReferenceImporter {
    */
   _rewriteRelativePaths(extensionPath, document) {
     const relativeBase = 'https://github.com/ampproject/amphtml' +
-        `/blob/master/${extensionPath}`;
+      `/blob/master/${extensionPath}`;
     document.rewriteRelativePaths(relativeBase);
   }
 
@@ -223,22 +227,22 @@ class ComponentReferenceImporter {
     }
 
     const protoAscii = await this.githubImporter_.fetchFile(
-        extension.path + '/' + fileName,
-        DEFAULT_REPOSITORY, master);
+      extension.path + '/' + fileName,
+      DEFAULT_REPOSITORY, master);
 
     const tags = new Set(
-        protoAscii.match(/tag_name\: \"([^\"]+)\"/g).map(
-            (str) => str.match(/\"([^\"]+)\"/)[1].toLowerCase()));
+      protoAscii.match(/tag_name\: \"([^\"]+)\"/g).map(
+        (str) => str.match(/\"([^\"]+)\"/)[1].toLowerCase()));
 
-    tags.delete('script');
-    tags.delete('$reference-point');
+          tags.delete('script');
+          tags.delete('$reference-point');
 
-    // always add the extension name.
-    // It might not be a tag, but the documentation might have this name
-    tags.add(extension.name);
+          // always add the extension name.
+          // It might not be a tag, but the documentation might have this name
+          tags.add(extension.name);
 
-    return tags;
-  }
+          return tags;
+        }
 
   /**
    * Checks a specific extension/component for documents
@@ -250,10 +254,10 @@ class ComponentReferenceImporter {
     files = files[0];
 
     const highestVersion = (files
-        .filter((file) => !isNaN(parseFloat(file.name)))
-        .map((file) => this.parseVersionString_(file.name))
-        .sort()
-        .reverse())[0] || DEFAULT_VERSION;
+      .filter((file) => !isNaN(parseFloat(file.name)))
+      .map((file) => this.parseVersionString_(file.name))
+      .sort()
+      .reverse())[0] || DEFAULT_VERSION;
 
     // some components are broken on current releases and need to be imported from master
     const master = DOCS_TO_FETCH_FROM_MASTER.includes(extension.name);
@@ -275,7 +279,7 @@ class ComponentReferenceImporter {
           const versionMatch = file.path.match(/\/([\d\.]+)/);
           documents.push({
             document: await this.githubImporter_
-                .fetchDocument(documentPath, DEFAULT_REPOSITORY, master),
+            .fetchDocument(documentPath, DEFAULT_REPOSITORY, master),
             version: versionMatch ? this.parseVersionString_(versionMatch[1]) : highestVersion,
             tagName: tagName,
           });
