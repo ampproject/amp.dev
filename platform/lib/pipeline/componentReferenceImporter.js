@@ -227,22 +227,22 @@ class ComponentReferenceImporter {
     }
 
     const protoAscii = await this.githubImporter_.fetchFile(
-      extension.path + '/' + fileName,
-      DEFAULT_REPOSITORY, master);
+        extension.path + '/' + fileName,
+        DEFAULT_REPOSITORY, master);
 
     const tags = new Set(
-      protoAscii.match(/tag_name\: \"([^\"]+)\"/g).map(
-        (str) => str.match(/\"([^\"]+)\"/)[1].toLowerCase()));
+        protoAscii.match(/tag_name\: \"([^\"]+)\"/g).map(
+            (str) => str.match(/\"([^\"]+)\"/)[1].toLowerCase()));
 
-          tags.delete('script');
-          tags.delete('$reference-point');
+    tags.delete('script');
+    tags.delete('$reference-point');
 
-          // always add the extension name.
-          // It might not be a tag, but the documentation might have this name
-          tags.add(extension.name);
+    // always add the extension name.
+    // It might not be a tag, but the documentation might have this name
+    tags.add(extension.name);
 
-          return tags;
-        }
+    return tags;
+  }
 
   /**
    * Checks a specific extension/component for documents
@@ -254,10 +254,10 @@ class ComponentReferenceImporter {
     files = files[0];
 
     const highestVersion = (files
-      .filter((file) => !isNaN(parseFloat(file.name)))
-      .map((file) => this.parseVersionString_(file.name))
-      .sort()
-      .reverse())[0] || DEFAULT_VERSION;
+        .filter((file) => !isNaN(parseFloat(file.name)))
+        .map((file) => this.parseVersionString_(file.name))
+        .sort()
+        .reverse())[0] || DEFAULT_VERSION;
 
     // some components are broken on current releases and need to be imported from master
     const master = DOCS_TO_FETCH_FROM_MASTER.includes(extension.name);
@@ -279,7 +279,7 @@ class ComponentReferenceImporter {
           const versionMatch = file.path.match(/\/([\d\.]+)/);
           documents.push({
             document: await this.githubImporter_
-            .fetchDocument(documentPath, DEFAULT_REPOSITORY, master),
+                .fetchDocument(documentPath, DEFAULT_REPOSITORY, master),
             version: versionMatch ? this.parseVersionString_(versionMatch[1]) : highestVersion,
             tagName: tagName,
           });
