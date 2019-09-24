@@ -9,31 +9,31 @@ Jika Anda adalah penyedia teknologi bagi penayang atau pengiklan di web, kami me
 Ada 4 cara utama Anda dapat berintegrasi dengan AMP:
 
 ## 1. Menambahkan dukungan ke ekstensi `amp-analytics`
-Analytics AMP memungkinkan Anda mengirimkan peristiwa kembali ke server berdasarkan pemicu yang dikonfigurasi. Kami telah membuat [panduan integrasi analytics](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md) untuk membantu Anda memulai.
+Analytics AMP memungkinkan Anda mengirimkan peristiwa kembali ke server berdasarkan pemicu yang dikonfigurasi. Kami telah membuat [panduan integrasi analytics](../../../guides-and-tutorials/optimize-measure/configure-analytics/index.md) untuk membantu Anda memulai.
 
-Jika Anda hanya perlu menambahkan piksel pelacakan dengan parameter dinamis ke URL pelacakan, buka [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md). Pastikan mendokumentasikan penggunaan di halaman dukungan Anda untuk developer yang mungkin ingin menggunakan teknologi Anda dengan AMP.
+Jika Anda hanya perlu menambahkan piksel pelacakan dengan parameter dinamis ke URL pelacakan, buka [`amp-pixel`](../../../components/reference/amp-pixel.md). Pastikan mendokumentasikan penggunaan di halaman dukungan Anda untuk developer yang mungkin ingin menggunakan teknologi Anda dengan AMP.
 
-Ada lebih dari 20 penyedia analytics yang telah menambahkan dukungan ke [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) . Berikut adalah [contoh pull request](https://github.com/ampproject/amphtml/pull/1595) dari penyedia analytics [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
+Ada lebih dari 20 penyedia analytics yang telah menambahkan dukungan ke [`amp-analytics`](../../../components/reference/amp-analytics.md) . Berikut adalah [contoh pull request](https://github.com/ampproject/amphtml/pull/1595) dari penyedia analytics [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
 ## 2. Menggunakan ekstensi `amp-ad`
 
 Ekstensi amp-ad digunakan untuk menayangkan iklan Display di halaman AMP. Lebih dari 90 penyedia teknologi iklan telah menambahkan dukungan ke AMP.  Untuk memulai, baca [ringkasan pengembangan](https://github.com/ampproject/amphtml/tree/master/ads#overview) atau lihat bagian [petunjuk developer](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) untuk menambahkan dukungan Anda ke ekstensi amp-ad. Bergantung pada teknologi iklan yang disediakan oleh perusahaan Anda, [petunjuk integrasi](ad-integration-guide.md) ini mungkin berguna.
 
-Ada lebih dari 90 penyedia iklan yang telah menambahkan dukungan untuk fitur yang berkaitan dengan iklan seperti [`amp-ad`](../../../documentation/components/reference/amp-ad.md) . Berikut adalah contoh [pull request](https://github.com/ampproject/amphtml/pull/2299) dari jaringan iklan [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+Ada lebih dari 90 penyedia iklan yang telah menambahkan dukungan untuk fitur yang berkaitan dengan iklan seperti [`amp-ad`](../../../components/reference/amp-ad.md) . Berikut adalah contoh [pull request](https://github.com/ampproject/amphtml/pull/2299) dari jaringan iklan [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
 ## 3. Menggunakan ekstensi `amp-call-tracking`
 
-Jika Anda menyediakan layanan tindakan pelacakan panggilan, kasus penggunaan Anda mungkin didukung oleh ekstensi [`amp-call-tracking`](../../../documentation/components/reference/amp-call-tracking.md) yang baru. Ekstensi ini secara dinamis mengganti nomor telepon pada hyperlink untuk mengaktifkan pelacakan panggilan, dengan menjalankan permintaan CORS untuk mengganti nomor tersebut.
+Jika Anda menyediakan layanan tindakan pelacakan panggilan, kasus penggunaan Anda mungkin didukung oleh ekstensi [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md) yang baru. Ekstensi ini secara dinamis mengganti nomor telepon pada hyperlink untuk mengaktifkan pelacakan panggilan, dengan menjalankan permintaan CORS untuk mengganti nomor tersebut.
 
-Untuk mempelajari lebih lanjut tentang apakah ekstensi ini sesuai untuk Anda, lihat [`amp-call-tracking`](../../../documentation/components/reference/amp-call-tracking.md).
+Untuk mempelajari lebih lanjut tentang apakah ekstensi ini sesuai untuk Anda, lihat [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md).
 
 ## 4. Menambahkan sematan/ekstensi baru
 
-Jika kasus penggunaan Anda tidak dapat diselesaikan menggunakan [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) , [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md)  atau [`amp-ad`](../../../documentation/components/reference/amp-ad.md) , buka [masalah GitHub](https://github.com/ampproject/amphtml/issues/new) untuk mendiskusikan opsi alternatif. Kami menerima ekstensi baru yang dapat digunakan secara luas oleh berbagai perusahaan. Lihat bagian [memberi kontribusi komponen yang diperluas](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components) untuk detail selengkapnya.
+Jika kasus penggunaan Anda tidak dapat diselesaikan menggunakan [`amp-analytics`](../../../components/reference/amp-analytics.md) , [`amp-pixel`](../../../components/reference/amp-pixel.md)  atau [`amp-ad`](../../../components/reference/amp-ad.md) , buka [masalah GitHub](https://github.com/ampproject/amphtml/issues/new) untuk mendiskusikan opsi alternatif. Kami menerima ekstensi baru yang dapat digunakan secara luas oleh berbagai perusahaan. Lihat bagian [memberi kontribusi komponen yang diperluas](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components) untuk detail selengkapnya.
 
 ## 5. Menggunakan `amp-iframe`
 
-Tunggu sebentar – cara ke-5?! Memang ada, namun cara ini hanya dapat dilakukan sebagai opsi terakhir. Jika cara di atas tidak ada yang sesuai dengan kebutuhan Anda, Anda dapat menggunakan tag umum [`amp-iframe`](../../../documentation/components/reference/amp-iframe.md)  agar penayang dapat menyematkan konten Anda. Namun, pendekatan ini memiliki sejumlah kelemahan, karena adanya beberapa kesalahan yang berkaitan dengan performa dan pengalaman pengguna, yang dapat Anda baca [di sini](../../../documentation/components/reference/amp-iframe.md#guideline:-prefer-specific-amp-components-to-amp-iframe).
+Tunggu sebentar – cara ke-5?! Memang ada, namun cara ini hanya dapat dilakukan sebagai opsi terakhir. Jika cara di atas tidak ada yang sesuai dengan kebutuhan Anda, Anda dapat menggunakan tag umum [`amp-iframe`](../../../components/reference/amp-iframe.md)  agar penayang dapat menyematkan konten Anda. Namun, pendekatan ini memiliki sejumlah kelemahan, karena adanya beberapa kesalahan yang berkaitan dengan performa dan pengalaman pengguna, yang dapat Anda baca [di sini](../../../components/reference/amp-iframe.md#guideline:-prefer-specific-amp-components-to-amp-iframe).
 
 ## Ringkasan
 
