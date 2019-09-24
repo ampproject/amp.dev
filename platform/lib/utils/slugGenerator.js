@@ -24,7 +24,7 @@ class SlugGenerator {
     this.existingSlugs = [];
   }
 
-  getSlug(headline) {
+  generateSlug(headline) {
     let slug = headline.trim().toLowerCase();
     slug = slug.replace(/ /g, '-');
     slug = slug.replace(/[^\p{L}0-9_-]/gu, '');
