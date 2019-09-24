@@ -19,6 +19,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
+const SlugGenerator = require('@lib/utils/slugGenerator');
 
 // Prep version template
 const nunjucks = require('nunjucks');
@@ -75,6 +76,10 @@ const RELATIVE_LINK_PATTERN = new RegExp(
     // find markdown link block [text](../link):
     /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
     , 'g');
+
+// This pattern will find the text for markdown titles skipping explicit anchors.
+const TITLE_ANCHOR_PATTERN =
+    /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/mg;
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -331,6 +336,24 @@ class MarkdownDocument {
   stripInlineTitle() {
     const TITLE_PATTERN = /^#{1}\s.+/m;
     this._contents = this._contents.replace(TITLE_PATTERN, '');
+    return true;
+  }
+
+  /**
+   *Adds explicit anchors for titels in github notation
+   */
+  addExplicitAnchors() {
+    const slugGenerator = new SlugGenerator();
+    this._contents = this._contents.replace(TITLE_ANCHOR_PATTERN,
+        (line, hLevel, headlineStart, anchor, headlineEnd) => {
+          const headline = headlineStart + headlineEnd;
+          const slug = slugGenerator.generateSlug(headline);
+          // Even if we have an anchor the slug generator has to know all the headlines.
+          if (anchor) {
+            return line;
+          }
+          return `${hLevel} ${headline} <a name="${slug}"></a>`;
+        });
     return true;
   }
 

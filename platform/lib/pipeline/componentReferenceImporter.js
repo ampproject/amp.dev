@@ -85,6 +85,7 @@ class ComponentReferenceImporter {
           // then set versions to avoid re-writing the relative version toggle links
           this._setMetadata(
               doc.tagName || extension.name, doc.document, doc.version, versions);
+          doc.document.addExplicitAnchors();
           savedDocuments.push(
               this._saveDocument(doc.tagName || extension.name, doc.document, doc.version));
         });

@@ -46,7 +46,7 @@ To embed AMP within an email, add a new MIME part with a content type of `text/x
 
 For more information about the `multipart/alternative` subtype, refer to [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
-## Additional information
+## Additional information <a name="additional-information"></a>
 
 The `text/x-amp-html` part must be nested under a `multipart/alternative` node.
 An email cannot have more than one `text/x-amp-html` part inside a `multipart/alternative` node.
@@ -58,16 +58,16 @@ their email provider's settings.
 Note: Some email clients[[1]](https://openradar.appspot.com/radar?id=6054696888303616) will only render the last MIME part,
 so we recommend placing the `text/x-amp-html` MIME part *before* the `text/html` MIME part.
 
-### Replying/forwarding semantics
+### Replying/forwarding semantics <a name="replyingforwarding-semantics"></a>
 
 The email client strips out the `text/x-amp-html` part of the MIME tree when a user replies to or forwards an AMP email message.
 
-### Expiry
+### Expiry <a name="expiry"></a>
 
 The email client may stop displaying the AMP part of an email after a set period of time, e.g. 30 days. In this
 case, emails will display the `text/html` or `text/plain` part.
 
-## Example
+## Example <a name="example"></a>
 
 ```
 From:  Person A <persona@gmail.com>

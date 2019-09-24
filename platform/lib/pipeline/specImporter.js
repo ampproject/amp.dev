@@ -58,6 +58,7 @@ class SpecImporter {
 
         const relativeBase = `${baseURL}${path.dirname(importDoc.from)}`;
         doc.rewriteRelativePaths(relativeBase);
+        doc.addExplicitAnchors();
 
         importedDocs.push(doc.save());
       } catch (err) {

@@ -38,7 +38,7 @@ The following is the list of [AMP components](https://amp.dev/documentation/comp
 * [Layout](#layout)
 * [Media](#media)
 
-## Dynamic Content
+## Dynamic Content <a name="dynamic-content"></a>
 
 | Element | Description |
 | ------- | ----------- |
@@ -49,7 +49,7 @@ The following is the list of [AMP components](https://amp.dev/documentation/comp
 | [`<amp-list>`](https://amp.dev/documentation/components/amp-list) | Remotely fetches JSON data that will be rendered by an [`<amp-mustache>`](https://amp.dev/documentation/components/amp-mustache).<br><br>**Note:** Binding to the `[src]` attribute is not allowed. Including user credentials with `credentials="include"` is also prohibited. |
 | [`<template type="amp-mustache">`](https://amp.dev/documentation/components/amp-mustache) | A Mustache template markup to render the results of an `amp-list` call. |
 
-## Layout
+## Layout <a name="layout"></a>
 
 | Element | Description |
 | ------- | ----------- |
@@ -61,9 +61,9 @@ The following is the list of [AMP components](https://amp.dev/documentation/comp
 | [`<amp-sidebar>`](https://amp.dev/documentation/components/amp-sidebar) | A sidebar for navigational purposes. |
 | [`<amp-timeago>`](https://amp.dev/documentation/components/amp-timeago) | Provides a convenient way of rendering timestamps. |
 
-## Media
+## Media <a name="media"></a>
 
 | Element | Description |
 | ------- | ----------- |
-| [`<amp-img>`](https://amp.dev/documentation/components/amp-img) | An AMP component that replaces `<img>`.<br><br>**Note:** Binding to `[src]` is not allowed and URL must be `https` protocol. |
-| [`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | Embeds GIF files.<br><br>**Note:** Binding to `[src]` is not allowed and the GIF must be served via `https`. |
+| [`<amp-img>`](https://amp.dev/documentation/components/amp-img) | An AMP component that replaces `<img>`.<br><br>**Note:** Binding to `[src]` is not allowed. |
+| [`<amp-anim>`](https://amp.dev/documentation/components/amp-anim) | Embeds GIF files.<br><br>**Note:** Binding to `[src]` is not allowed. |
