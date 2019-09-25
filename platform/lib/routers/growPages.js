@@ -192,6 +192,7 @@ const optimizer = AmpOptimizer.create({
 growPages.get(
     /^(\/[a-z]+)?\/documentation\/components\/(amp-[a-z0-9-]+)(-v(\d\.\d))?\//,
     async (req, res, next) => {
+      const language = req.params[0] || '';
       const component = req.params[1];
       let version = req.params[3];
       const versionsByFormat = formatComponentMapping[component];
@@ -213,7 +214,7 @@ growPages.get(
 
       // redirect to unversioned URL for latest format specific version
       if (parseFloat(version) >= parseFloat(latestVersionByFormat)) {
-        res.redirect(`/documentation/components/${component}/?format=${format}`);
+        res.redirect(`${language}/documentation/components/${component}/?format=${format}`);
         return;
       } else if (!version) {
         version = latestVersionByFormat;

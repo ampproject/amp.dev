@@ -18,7 +18,7 @@
 
 const express = require('express');
 const project = require('@lib/utils/project');
-const {getFormatFromRequest, FORMAT_WEBSITES} = require('../amp/formatHelper.js');
+const {getFormatFromRequest, DEFAULT_FORMAT} = require('../amp/formatHelper.js');
 
 // eslint-disable-next-line new-cap
 const inlineExamples = express.Router();
@@ -29,7 +29,7 @@ const staticMiddleware = express.static(project.paths.INLINE_EXAMPLES_DEST, {
 
 inlineExamples.get('/*', async (request, response, next) => {
   const format = getFormatFromRequest(request);
-  if (format && format !== FORMAT_WEBSITES) {
+  if (format && format !== DEFAULT_FORMAT) {
     request.url = request.path.replace('.html', `.${format}.html`);
   }
   return staticMiddleware(request, response, next);

@@ -146,7 +146,7 @@ class ComponentReferenceImporter {
     if (!document.teaser.text) {
       document.teaser = {'text': this._parseTeaserText(document)};
     }
-
+    document.component = extensionName;
     if (!document.category) {
       document.category = categories[extensionName];
     }

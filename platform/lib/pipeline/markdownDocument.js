@@ -147,6 +147,14 @@ class MarkdownDocument {
     this._frontmatter['supported_formats'] = formats;
   }
 
+  get component() {
+    return this._frontmatter['component'];
+  }
+
+  set component(component) {
+    this._frontmatter['component'] = component;
+  }
+
   get version() {
     return this._frontmatter['version'];
   }
