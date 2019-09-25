@@ -8,16 +8,20 @@
 {% do doc.amp_dependencies.add('amp-form', '0.1') %}
 {% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 {% do doc.amp_dependencies.add('amp-list', '0.1') %}
+{% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
-<div id="searchLayer" class="ap-o-search" tabindex="-1">
-  <div class="ap-o-search-escaper" role="button" tabindex="-1" on="tap:searchLayer.toggleClass(class='active', force=false)"></div>
-
+<amp-lightbox id="searchLightbox"
+              class="ap-o-search"
+              layout="nodisplay"
+              on="lightboxOpen:searchInput.focus;
+                  lightboxClose:searchTriggerOpen.focus">
+  <div class="ap-o-search-escaper" role="button" tabindex="0" on="tap:searchLightbox.close"></div>
   <div class="ap-o-search-container">
+
     <div class="ap-m-search-trigger ap-m-search-trigger-close"
          on="tap:
-              searchLayer.toggleClass(class='active'),
-              searchTriggerOpen.focus,
+              searchLightbox.close,
               AMP.setState({ query: '' }),
               searchForm.clear"
          role="button"
@@ -36,9 +40,7 @@
         <amp-autocomplete class="ap-o-search-autocomplete"
                           filter="substring"
                           min-characters="1"
-                          on="select:
-                                AMP.setState({ query: event.value }),
-                                searchLayer.focus"
+                          on="select:AMP.setState({ query: event.value })"
                           submit-on-enter="false"
                           src="/search/autosuggest"
         >
@@ -226,4 +228,4 @@
 
     </div>
   </div>
-</div>
+</amp-lightbox>

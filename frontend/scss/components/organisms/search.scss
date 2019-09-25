@@ -16,84 +16,31 @@
 @import 'components/atoms/_color.scss';
 
 .#{organism('search')} {
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  width: 90vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1005;
-  background: color('whisper');
-  box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
-  outline: 0;
-  opacity: 0;
-  pointer-events: none;
-
-  @media (min-width: 1024px) {
-    width: 100%;
-    background: none;
-    box-shadow: none;
-    z-index: 18;
-  }
 
   &-escaper {
-    width: 10vw;
-    height: 100vh;
-    position: fixed;
-    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
     top: 0;
-    outline: none;
-    z-index: 1;
-    opacity: .6;
+    opacity: 0.6;
     background: #000;
-
-    @media (min-width: 1024px) {
-      width: 100vw;
-    }
-  }
-
-  &.active {
-    opacity: 1;
-    pointer-events: auto;
-
-    & ~ .ap--main {
-      max-width: 100vw;
-      max-height: calc(100vh - 50px);
-      overflow: hidden;
-
-      @media (max-width: 1023px) {
-        max-height: calc(100vh - #{$mobileHeaderHeight});
-      }
-
-      .has-banner + & {
-        max-height: calc(100vh - 50px - #{$bannerHeight});
-
-        @media (max-width: 1023px) {
-          max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
-        }
-      }
-    }
-
-    & ~ .ap--footer {
-      display: none;
-    }
   }
 
   &-container {
     position: relative;
-    width: 100%;
+    width: 90vw;
+    height: 100%;
     padding: 20px 0 0;
-    margin: 0 auto;
-    z-index: 1;
-    overflow: visible;
+    margin: 0;
+    background: color('whisper');
+    box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
 
     @media (min-width: 1024px) {
+      width: 100%;
       max-width: 900px;
       padding: 32px 60px 0;
-      background: color('whisper');
-      box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
+      margin: 0 auto;
     }
 
     @media (min-width: 1280px) {
