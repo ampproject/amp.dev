@@ -37,7 +37,7 @@ on the supported HTML tags and attributes.
 In addition to the [supported AMP components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md), the following HTML tags are
 allowed in AMP for Email.
 
-## Supported tags
+## Supported tags <a name="supported-tags"></a>
 
 *   [`a`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
 *   [`abbr`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr)

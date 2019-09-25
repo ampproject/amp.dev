@@ -105,6 +105,7 @@ function embedListenHandler(request, response) {
   const onNewAnalyticsData = function(userData) {
     const content = analyticsTemplate.render({data: userData});
     response.write('data: ' + content + '\n\n');
+    response.flush();
   };
 
   const userData = forUser(account, user);
@@ -186,7 +187,7 @@ function inc(data, event) {
   if (!eventCount) {
     eventCount = 0;
   }
-  return data[event] = eventCount + 1;
+  data[event] = eventCount + 1;
 }
 
 function notifyListeners(user, data) {

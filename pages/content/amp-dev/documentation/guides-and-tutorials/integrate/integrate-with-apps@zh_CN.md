@@ -123,7 +123,7 @@ AMP 缓存旨在：
 目前，有 2 家提供商提供 AMP 缓存服务：
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 这意味着您可以通过两种方式使用以下任一版本在应用中显示 AMP 文件：
 

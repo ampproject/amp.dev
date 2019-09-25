@@ -108,7 +108,7 @@ Un [caché AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and
 Actualmente, hay dos proveedores de AMP Cache:
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Esto le da dos opciones para mostrar un archivo AMP en una aplicación mediante:
 

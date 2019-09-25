@@ -4,6 +4,10 @@
 {% block head %}
 {{ super() }}
 
+{% if not doc.example.document.metadata.hidePreview %}
+{{ doc.example.document.head|safe }}
+{% endif %}
+
 {# Always include amp-bind for the header and TOC if the sample doesn't include it #}
 {% if 'amp-bind' not in doc.used_components or not inline_preview %}
 {% do doc.amp_dependencies.add('amp-bind', '0.1') %}

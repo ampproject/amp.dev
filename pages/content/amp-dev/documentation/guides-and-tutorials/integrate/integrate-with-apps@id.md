@@ -123,7 +123,7 @@ Cache AMP didesain untuk:
 Saat ini, ada 2 penyedia Cache AMP:
 
 *   [AMP Cache Google](https://developers.google.com/amp/cache/)
-*   [AMP Cache Cloudflare](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Hal ini memberikan dua pilihan untuk menampilkan file AMP dalam aplikasi dengan menggunakan:
 

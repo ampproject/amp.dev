@@ -1,5 +1,20 @@
 const MarkdownDocument = require('./markdownDocument.js');
 
+test('Test escape nunjucks tags', async (done) => {
+  const result = MarkdownDocument.escapeNunjucksTags(
+      '<pre>\n' +
+      'var href = location.href.replace(/\?[^#]+/, \'\');\n' +
+      'history.replaceState(null, null, href);\n' +
+      '</pre>\n');
+
+  expect(result).toBe(
+      '<pre>\n' +
+      'var href = location.href.replace(/\?[^{{\'[% raw %]\'}}#]{{\'{% endraw %}\'}}+/, \'\');\n' +
+      'history.replaceState(null, null, href);\n' +
+      '</pre>\n');
+  done();
+});
+
 test('Test escape mustache tags', async (done) => {
   const result = MarkdownDocument.escapeMustacheTags(
       'The [`link`]({{notincode}}) test `code`.\n' +
@@ -60,4 +75,27 @@ test('Test escape mustache tags', async (done) => {
   );
 
   done();
+});
+
+test('Test anchor generation', () => {
+  const doc = new MarkdownDocument('/tmp/test.md',
+      '# TestOne\n' +
+      '# test two\n' +
+      'paragraph\n' +
+      '## test h2\n' +
+      '### test h3\n' +
+      '#no headline\n' +
+      '# test anchor <a name="existing"></a>\n' +
+      '## test anchor');
+  doc.addExplicitAnchors();
+
+  expect(doc.contents).toBe(
+      '# TestOne <a name="testone"></a>\n' +
+      '# test two <a name="test-two"></a>\n' +
+      'paragraph\n' +
+      '## test h2 <a name="test-h2"></a>\n' +
+      '### test h3 <a name="test-h3"></a>\n' +
+      '#no headline\n' +
+      '# test anchor <a name="existing"></a>\n' +
+      '## test anchor <a name="test-anchor-1"></a>');
 });

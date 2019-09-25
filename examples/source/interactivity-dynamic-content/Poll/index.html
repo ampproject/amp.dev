@@ -80,7 +80,7 @@ Read more about [variable substitution](/content/amp-dev/documentation/component
       -->
       <form id="sample-poll"
             method="post"
-            action-xhr="/documentation/examples/interactivity-dynamic-content/poll/submit-poll"
+            action-xhr="<% base_path %>/submit-poll"
             target="_blank">
             <input name="clientId" type="hidden" value="CLIENT_ID(POLL_USER_ID)" data-amp-replace="CLIENT_ID">
             <h3>What is your favorite flightless bird?</h3>
@@ -93,25 +93,25 @@ Read more about [variable substitution](/content/amp-dev/documentation/component
             <div submit-success>
               <script type="text/plain" template="amp-mustache">
                 <p>{{Message}}</p>
-          <p>Here are the results:</p>
-          <table>
-            {{#PollEntryResults}}
-            <tr>
-              <td>
-                {{Answer}}
-              </td>
-              <td>
-                {{Percentage.length}}%
-              </td>
-              <td>
-                {{Votes}}
-              </td>
-              <td>
-                {{#Percentage}}<span class="one-pc-fixed"></span>{{/Percentage}}
-              </td>
-            </tr>
-            {{/PollEntryResults}}
-          </table>
+                <p>Here are the results:</p>
+                <table>
+                  {{#PollEntryResults}}
+                  <tr>
+                    <td>
+                      {{Answer}}
+                    </td>
+                    <td>
+                      {{Percentage.length}}%
+                    </td>
+                    <td>
+                      {{Votes}}
+                    </td>
+                    <td>
+                      {{#Percentage}}<span class="one-pc-fixed"></span>{{/Percentage}}
+                    </td>
+                  </tr>
+                  {{/PollEntryResults}}
+                </table>
               </script>
             </div>
             <div submit-error>

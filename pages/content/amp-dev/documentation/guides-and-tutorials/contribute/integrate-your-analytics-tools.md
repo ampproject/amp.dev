@@ -16,11 +16,11 @@ have a look and request a pull request there.
 
 
 
-## Overview
+## Overview <a name="overview"></a>
 
 If you operate a software-as-a-service tool for publishers to better understand their traffic and visitors, you may want to integrate your service into `amp-analytics`. This will enable your customers to view traffic patterns for their AMP HTML pages.
 
-## Before you begin
+## Before you begin <a name="before-you-begin"></a>
 
 Before you can add your analytics service to AMP HTML runtime, you may need to:
 * Identify the kinds of [variables](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) and [requests](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md#requests) you'll need in an AMP HTML document for your analytics service.
@@ -34,7 +34,7 @@ Before you can add your analytics service to AMP HTML runtime, you may need to:
   * For the `iframe` transport type, an iframe is created and variables are sent to it via `window.postMessage`. In this case, the message need not be a URL. This option is available only to MRC-accredited vendors.
 * Consider how integration with `amp-analytics` may impact any policies (particularly your privacy policy) or agreements you may have.
 
-## Adding your configuration to the AMP HTML runtime
+## Adding your configuration to the AMP HTML runtime <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
 1. Create an [Intent-To-Implement issue](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) stating that you'll be adding your analytics service's configuration to AMP HTML's runtime.
 1. Develop a patch that implements the following:
@@ -57,7 +57,7 @@ reference.
 
 
 
-## Tag Managers
+## Tag Managers <a name="tag-managers"></a>
 
 Tag management services have two options for integrating with AMP Analytics:
 
@@ -72,7 +72,7 @@ The endpoint approach is the same as the standard approach detailed in the previ
 
 To take this approach, review the documentation for publishers' integration with AMP Analytics.
 
-## Further Resources
+## Further Resources <a name="further-resources"></a>
 * Deep Dive: [Why not just use an iframe?](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/why-not-iframe.md)
 * Deep Dive: [Managing non-authenticated user state with AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)
 * Review pull requests from other AMP Analytics providers:

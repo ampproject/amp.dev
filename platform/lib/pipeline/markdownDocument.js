@@ -19,6 +19,7 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
+const SlugGenerator = require('@lib/utils/slugGenerator');
 
 // Prep version template
 const nunjucks = require('nunjucks');
@@ -57,6 +58,9 @@ const MUSTACHE_PATTERN = new RegExp(
     /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
     ')', 'g');
 
+// Matches tags used for SSR
+const NUNJUCKS_PATTERN = /\[(?:%|=|#)|(?:%|=|#)\]/g;
+
 // This pattern will find relative urls.
 // It will als match source code blocks to skip them and not replace any links inside.
 const RELATIVE_LINK_PATTERN = new RegExp(
@@ -72,6 +76,10 @@ const RELATIVE_LINK_PATTERN = new RegExp(
     // find markdown link block [text](../link):
     /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
     , 'g');
+
+// This pattern will find the text for markdown titles skipping explicit anchors.
+const TITLE_ANCHOR_PATTERN =
+    /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/mg;
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -208,9 +216,23 @@ class MarkdownDocument {
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
     this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
+    this._contents = MarkdownDocument.escapeNunjucksTags(this._contents);
 
     // Replace dividers (---) as they will break front matter
     this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
+  }
+
+  /**
+   * Escapes nunjucks tags to not interfer with SSR
+   * @param  {String} contents
+   * @return {String}          The rewritten input
+   */
+  static escapeNunjucksTags(contents) {
+    return contents.replace(NUNJUCKS_PATTERN, (tag) => {
+      // TODO(matthiasrohmer): Raw tags for nunjucks do not match.
+      // See: github.com/ampproject/amp.dev#2865
+      return `{{'[% raw %]'}}${tag}{{'{% endraw %}'}}`;
+    });
   }
 
   /**
@@ -314,6 +336,24 @@ class MarkdownDocument {
   stripInlineTitle() {
     const TITLE_PATTERN = /^#{1}\s.+/m;
     this._contents = this._contents.replace(TITLE_PATTERN, '');
+    return true;
+  }
+
+  /**
+   *Adds explicit anchors for titels in github notation
+   */
+  addExplicitAnchors() {
+    const slugGenerator = new SlugGenerator();
+    this._contents = this._contents.replace(TITLE_ANCHOR_PATTERN,
+        (line, hLevel, headlineStart, anchor, headlineEnd) => {
+          const headline = headlineStart + headlineEnd;
+          const slug = slugGenerator.generateSlug(headline);
+          // Even if we have an anchor the slug generator has to know all the headlines.
+          if (anchor) {
+            return line;
+          }
+          return `${hLevel} ${headline} <a name="${slug}"></a>`;
+        });
     return true;
   }
 

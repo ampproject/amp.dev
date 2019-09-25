@@ -1,5 +1,5 @@
 ---
-$title: Formatting guides & tutorials 
+$title: Formatting guides & tutorials
 $order: 3
 description: 'File formatting requirements for amp.dev'
 formats:
@@ -10,23 +10,23 @@ formats:
 author: CrystalOnScript
 ---
 
-Guides and tutorials are submitted in [Markdown](https://www.markdownguide.org/), with an additional frontmatter and shortcode formatting. 
+Guides and tutorials are submitted in [Markdown](https://www.markdownguide.org/), with an additional frontmatter and shortcode formatting.
 
 ## Documentation locations
 
-Content on amp.dev is pulled from two repositories, [amp.dev](https://github.com/ampproject/amp.dev) and [AMPHTML](https://github.com/ampproject/amphtml). All reference documentation under components is pulled from AMPHTML, either from builtins or extensions. 
+Content on amp.dev is pulled from two repositories, [amp.dev](https://github.com/ampproject/amp.dev) and [AMPHTML](https://github.com/ampproject/amphtml). All reference documentation under components is pulled from AMPHTML, either from builtins or extensions.
 
 *   [Built-in components ](https://github.com/ampproject/amphtml/tree/master/builtins)
-*   [Components](https://github.com/ampproject/amphtml/tree/master/extensions) 
-*   [Courses](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses) 
+*   [Components](https://github.com/ampproject/amphtml/tree/master/extensions)
+*   [Courses](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/courses)
 *   [Examples](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
 *   [Guides & tutorials](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)
 
 There are several other documents that are imported to amp.dev from AMPHTML. They are [listed in this file](https://github.com/ampproject/amp.dev/blob/future/platform/config/imports/spec.json). Don't update these documents in the amp.dev repository – your changes will get overwritten on subsequent builds!  
 
-## Frontmatter 
+## Frontmatter
 
-Frontmatter exists at the top of each guide and tutorial. 
+Frontmatter exists at the top of each guide and tutorial.
 
 Example:
 
@@ -53,7 +53,7 @@ description: For web experiences requiring a high amount of customization AMP ha
    <td>
     <code>$order</code>
    </td>
-   <td>Define where in the table of contents your document appears. You may need to edit the `$order` in other documents for it to appear in the correct position. 
+   <td>Define where in the table of contents your document appears. You may need to edit the `$order` in other documents for it to appear in the correct position.
    </td>
   </tr>
   <tr>
@@ -63,7 +63,7 @@ description: For web experiences requiring a high amount of customization AMP ha
    <td>List the AMP experiences your document is relevant to. If your document was relevant to AMP websites and AMP stories, but not AMP ads or AMP email, your frontmatter would like the following:
     ```yaml
         formats:
-          - websites 
+          - websites
           - stories
     ```  
    </td>
@@ -72,7 +72,7 @@ description: For web experiences requiring a high amount of customization AMP ha
    <td>
 <code>author</code>
    </td>
-   <td>The author is you! Use your GitHub username. 
+   <td>The author is you! Use your GitHub username.
    </td>
   </tr>
   <tr>
@@ -86,7 +86,7 @@ description: For web experiences requiring a high amount of customization AMP ha
    <td>
 <code>description</code>
    </td>
-   <td>Write a brief description of your guide or tutorial. This helps with search engine optimization, getting your work into the hands of those who need it! 
+   <td>Write a brief description of your guide or tutorial. This helps with search engine optimization, getting your work into the hands of those who need it!
    </td>
   </tr>
   <tr>
@@ -103,7 +103,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 For a list of shortcodes and their uses, please view [documentation.md on GitHub](https://github.com/ampproject/amp.dev/blob/future/contributing/documentation.md#shortcodes).
 
 ## Images
-amp.dev is built with AMP! Therefore our images must match the [`amp-img`](../../../../documentation/components/reference/amp-img.md) criteria. The build process uses the following syntact to convert images to proper `amp-img` format. 
+amp.dev is built with AMP! Therefore our images must match the [`amp-img`](../../../../documentation/components/reference/amp-img.md) criteria. The build process uses the following syntact to convert images to proper `amp-img` format.
 
 <div class="ap-m-code-snippet">
 <pre>
@@ -164,7 +164,7 @@ Place code snippets inside sets of three backticks, specify the language at the 
 <pre>
 &#96;&#96;&#96;html
   // code sample
-&#96;&#96;&#96; 
+&#96;&#96;&#96;
 
 &#96;&#96;&#96;css
   // code sample
@@ -193,7 +193,7 @@ Python-Markdown has some limitations. Use the following syntax when including co
 
 <div class="ap-m-code-snippet">
 <pre>
-1. First: 
+1. First:
     &lsqb;sourcecode:html]
       &#60;html>
         &#60;p>Indented content.&#60;/p>
@@ -205,7 +205,8 @@ Python-Markdown has some limitations. Use the following syntax when including co
 </div>
 
 ## Preview code samples
-You can let a code sample have a preview or a link to open the code sample in the [AMP Playground](https://playground.amp.dev/):
+
+Code samples can have a preview and/or link to an [AMP Playground](https://playground.amp.dev/) version.
 
 <div class="ap-m-code-snippet">
   <pre>
@@ -220,6 +221,9 @@ You can let a code sample have a preview or a link to open the code sample in th
   </pre>
 </div>
 
+
+Note: The preview will automatically be transformed to the currently selected format when opening it in the playground 🤯!
+
 Use the `preview` attribute to define how the preview is generated:
 
 - **none**: No preview will be generated
@@ -228,7 +232,7 @@ Use the `preview` attribute to define how the preview is generated:
   An inline preview is only possible for normal website examples if the code does not contain any `head` elements.
   Use this option for small examples that do not need any styling or other `head` elements
   (imports do not count, since they are specified via the `imports` attribute).
-  
+
 - **top-frame**: The example preview is displayed above the source code inside an iframe.
   The orientation can be toggled between `portrait` and `landscape` mode.
   You can preselect the orientation by specifying the additional attribute:
@@ -242,25 +246,233 @@ specify the dependency in the `template` attribute instead.
 
 For email content with resource links use the placeholder <code>&#123;&#123;server_for_email}}</code> in the source.
 
-<div class="ap-m-code-snippet">
-  <pre>
-  [example preview="top-frame" orientation="portrait"
-          playground="true"
-          imports="amp-list:0.1"
-          template="amp-mustache:0.2"]
-  ```html
-  &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;
-    src=&quot;{{server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;
-    &lt;template type=&quot;amp-mustache&quot;&gt;{% raw %}
-      &lt;div class=&quot;url-entry&quot;&gt;
-        &lt;a href=&quot;{{url}}&quot;&gt;{{title}}&lt;/a&gt;
-      &lt;/div&gt;
-    {% endraw %}&lt;/template&gt;
-  &lt;/amp-list&gt;
-  ```
-  [/example]
-  </pre>
+### Inline Sample
+
+Here is simple inline sample embed. You can define CSS via inline styles:
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="inline" playground="true"]
+    ```html
+    &lt;div style=&quot;background: red; width: 200px; height: 200px;&quot;&gt;Hello World&lt;/div&gt;
+    ```
+  &#91;/example]
+  [/example]</pre>
 </div>
+
+This is what it looks like:
+
+[example preview="inline" playground="true"]
+```html
+<div style="background: red; width: 200px; height: 200px;">Hello World</div>
+```
+[/example]
+
+Warning: inline samples are embedded directly into the page. This might lead to conflicts if components are already used on the page (e.g. `amp-consent`).
+
+### Top-Frame Preview
+
+Use top-frame preview whenever you need to specify header elements or define global styles inside `<style amp-custom>`.
+
+Important: Do not add any AMP boilerplate code to the header as this will get added automatically, based on the AMP format. Only add elements to the head that are needed by the sample!
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame"
+         playground="true"]
+    ```html
+    &lt;head&gt;
+      &lt;script async custom-element=&quot;amp-youtube&quot; src=&quot;https://cdn.ampproject.org/v0/amp-youtube-0.1.js&quot;&gt;&lt;/script&gt;
+      &lt;style amp-custom&gt;
+        body {
+          background: red;
+        }
+      &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h1&gt;Hello AMP&lt;/h1&gt;
+      &lt;amp-youtube width=&quot;480&quot;
+        height=&quot;270&quot;
+        layout=&quot;responsive&quot;
+        data-videoid=&quot;lBTCB7yLs8Y&quot;&gt;
+      &lt;/amp-youtube&gt;
+    &lt;/body&gt;
+    ```
+  [/example]</pre>
+</div>
+
+This is what it looks like:
+
+[example preview="top-frame"
+         playground="true"]
+```html
+<head>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <style amp-custom>
+    body {
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello AMP</h1>
+  <amp-youtube width="480"
+    height="270"
+    layout="responsive"
+    data-videoid="lBTCB7yLs8Y">
+  </amp-youtube>
+</body>
+```
+[/example]
+
+### AMP Stories
+
+Use `preview="top-frame"` together with `orientation="portrait"` for previewing AMP Stories.
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame"
+         orientation="portrait"
+         playground="true"]
+    ```html
+    &lt;head&gt;
+      &lt;script async custom-element=&quot;amp-story&quot;
+          src=&quot;https://cdn.ampproject.org/v0/amp-story-1.0.js&quot;&gt;&lt;/script&gt;
+      &lt;style amp-custom&gt;
+        body {
+          font-family: 'Roboto', sans-serif;
+        }
+        amp-story-page {
+          background: white;
+        }
+      &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;amp-story standalone&gt;
+        &lt;amp-story-page id=&quot;cover&quot;&gt;
+          &lt;amp-story-grid-layer template=&quot;vertical&quot;&gt;
+            &lt;h1&gt;Hello World&lt;/h1&gt;
+            &lt;p&gt;This is the cover page of this story.&lt;/p&gt;
+          &lt;/amp-story-grid-layer&gt;
+        &lt;/amp-story-page&gt;
+        &lt;amp-story-page id=&quot;page-1&quot;&gt;
+          &lt;amp-story-grid-layer template=&quot;vertical&quot;&gt;
+            &lt;h1&gt;First Page&lt;/h1&gt;
+            &lt;p&gt;This is the first page of this story.&lt;/p&gt;
+          &lt;/amp-story-grid-layer&gt;
+        &lt;/amp-story-page&gt;
+      &lt;/amp-story&gt;
+    &lt;/body&gt;
+    ```
+  [/example]</pre>
+</div>
+
+This is what it looks like:
+
+[example preview="top-frame"
+         orientation="portrait"
+         playground="true"]
+```html
+  <head>
+    <script async custom-element="amp-story"
+        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <style amp-custom>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+      amp-story-page {
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <amp-story standalone>
+      <amp-story-page id="cover">
+        <amp-story-grid-layer template="vertical">
+          <h1>Hello World</h1>
+          <p>This is the cover page of this story.</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+      <amp-story-page id="page-1">
+        <amp-story-grid-layer template="vertical">
+          <h1>First Page</h1>
+          <p>This is the first page of this story.</p>
+        </amp-story-grid-layer>
+      </amp-story-page>
+    </amp-story>
+  </body>
+```
+[/example]
+### Absolute URLs for AMP Email
+
+Note how we use <code>&#123;&#123;server_for_email}}</code> for making the endpoint URL absolute if embedded inside an AMP email.
+
+<div class="ap-m-code-snippet"><pre>
+  &#91;example preview="top-frame" playground="true"]
+    ```html
+    &lt;div class=&quot;resp-img&quot;&gt;
+      &lt;amp-img alt=&quot;flowers&quot;
+        src=&quot;&#123;&#123;server_for_email}}/static/inline-examples/images/flowers.jpg&quot;
+        layout=&quot;responsive&quot;
+        width=&quot;640&quot;
+        height=&quot;427&quot;&gt;&lt;/amp-img&gt;
+    &lt;/div&gt;
+    ```
+  [/example]</pre>
+</div>
+
+This is what it looks like:
+
+[example preview="top-frame" playground="true"]
+```html
+<div class="resp-img">
+  <amp-img alt="flowers"
+    src="{{server_for_email}}/static/inline-examples/images/flowers.jpg"
+    layout="responsive"
+    width="640"
+    height="427"></amp-img>
+</div>
+```
+[/example]
+
+### Escaping mustache tempaltes
+
+Here is a `top-frame` sample using a remote endpoint. Mustache templates need to be escaped in samples using <code>&#123;% raw %&#125;</code> and <code>&#123;% endraw %}</code>:
+
+<div class="ap-m-code-snippet">
+  <pre>&#91;example preview=&quot;top-frame&quot;
+        playground=&quot;true&quot;
+        imports=&quot;amp-list:0.1&quot;
+        template=&quot;amp-mustache:0.2&quot;]
+    ```html
+    &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;
+      src=&quot;&#123;&#123;server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;
+      &lt;template type=&quot;amp-mustache&quot;&gt;&#123;% raw %}
+        &lt;div class=&quot;url-entry&quot;&gt;
+          &lt;a href=&quot;&#123;&#123;url}}&quot;&gt;&#123;&#123;title}}&lt;/a&gt;
+        &lt;/div&gt;
+      &#123;% endraw %}
+      &lt;/template&gt;
+    &lt;/amp-list&gt;
+    ```
+[/example]</pre>
+</div>
+
+This is what it looks like:
+
+[example preview="top-frame"
+         playground="true"
+         imports="amp-list:0.1"
+         template="amp-mustache:0.2"]
+```html
+<amp-list width="auto" height="100" layout="fixed-height"
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
+  <template type="amp-mustache">{% raw %}
+    <div class="url-entry">
+      <a href="{{url}}">{{title}}</a>
+    </div>
+    {% endraw %}
+  </template>
+</amp-list>
+```
+[/example]
 
 ## Links
 
@@ -276,7 +488,7 @@ When linking to another page on amp.dev the reference will be a relative filepat
 Component documentation, guides and tutorials and examples are filterable by AMP format,
 such as AMP websites or AMP stories.
 When linking out to such a page you should explicitly specify a format, which is supported by the target,
-by appending the format parameter to the link: 
+by appending the format parameter to the link:
 
 ```md
  [link](../../learn/amp-actions-and-events.md?format=websites)
@@ -293,15 +505,15 @@ When you explicitly want to point to a version specify the full name:
 ```md
  [latest version](../../../components/reference/amp-carousel.md?format=websites)
  [explicit version](../../../components/reference/amp-carousel-v0.2.md?format=websites)
-``` 
+```
 
 
-## Document Structure 
+## Document Structure
 ### Titles, headings and subheadings
 The first letter of the first word in titles, headings and subheadings is capitalized, what follows is lowercase. Expectations include AMP and other proper nouns. No heading is titled `Introduction`, introductions follow the document title.
 
 ### Document naming
-Name documents with the dash naming convention. 
+Name documents with the dash naming convention.
 
 <table>
   <tr>
@@ -319,7 +531,7 @@ Name documents with the dash naming convention.
   <tr>
    <td>website-fundamentals.md
    </td>
-   <td>websiteFundamentals.md 
+   <td>websiteFundamentals.md
    </td>
   </tr>
   <tr>
