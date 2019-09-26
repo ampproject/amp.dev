@@ -54,7 +54,7 @@ AMP HTML uses a set of contributed but centrally managed and hosted custom eleme
 
 By using the AMP format, content producers are making the content in AMP files available to be crawled (subject to robots.txt restrictions), cached, and displayed by third parties.
 
-## Performance
+## Performance <a name="performance"></a>
 
 Predictable performance is a key design goal for AMP HTML. Primarily we are aiming at reducing the time until the content of a page can be consumed / used by the user.
 In concrete terms this means that:
@@ -63,9 +63,9 @@ In concrete terms this means that:
 - Resources such as images or ads should only be downloaded if they are likely to be seen by the user.
 - Browsers should be able to calculate the space needed by every resource on the page without fetching that resource.
 
-## The AMP HTML format
+## The AMP HTML format <a name="the-amp-html-format"></a>
 
-### Sample document
+### Sample document <a name="sample-document"></a>
 
 [sourcecode:html]
 <!doctype html>
@@ -110,7 +110,7 @@ In concrete terms this means that:
 </html>
 [/sourcecode]
 
-### Required markup
+### Required markup <a name="required-markup"></a>
 
 AMP HTML documents MUST
 
@@ -123,13 +123,13 @@ AMP HTML documents MUST
 - <a name="scrpt"></a>contain a `<script async src="https://cdn.ampproject.org/v0.js"></script>` tag inside their head tag. [🔗](#scrpt)
 - <a name="boilerplate"></a>contain the [AMP boilerplate code](https://github.com/ampproject/amphtml/blob/master/spec/amp-boilerplate.md) (`head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]`) in their head tag. [🔗](#boilerplate)
 
-### Metadata
+### Metadata <a name="metadata"></a>
 
 It is encouraged that AMP HTML documents are annotated with standardized metadata: [Open Graph Protocol](http://ogp.me/), [Twitter Cards](https://dev.twitter.com/cards/overview), etc.
 
 We also recommend that AMP HTML documents are marked up with [schema.org/CreativeWork](https://schema.org/CreativeWork) or any of its more specific types such as [schema.org/NewsArticle](https://schema.org/NewsArticle) or [schema.org/BlogPosting](https://schema.org/BlogPosting).
 
-### HTML Tags
+### HTML Tags <a name="html-tags"></a>
 
 HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom tags (such as `<img>` and `<amp-img>`) and other tags are outright prohibited:
 
@@ -231,11 +231,11 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
 
 Validator implementations should use a white list based on the HTML5 specification with the above tags removed. See [AMP Tag Addendum](https://github.com/ampproject/amphtml/blob/master/spec/amp-tag-addendum.md).
 
-### Comments
+### Comments <a name="comments"></a>
 
 Conditional HTML comments are not allowed.
 
-### HTML attributes
+### HTML attributes <a name="html-attributes"></a>
 
 Attribute names starting with `on` (such as `onclick` or `onmouseover`) are disallowed in AMP HTML. The attribute with the literal name `on` (no suffix) is allowed.
 
@@ -243,7 +243,7 @@ XML-related attributes, such as xmlns, xml:lang, xml:base, and xml:space are dis
 
 Internal AMP attributes prefixed with `i-amp-` are disallowed in AMP HTML.
 
-### Classes
+### Classes <a name="classes"></a>
 
 Internal AMP class names prefixed with `-amp-` and `i-amp-` are disallowed in AMP HTML.
 
@@ -251,7 +251,7 @@ Consult [AMP documentation](https://github.com/ampproject/amphtml/blob/master/sp
 
 All other authored class names are allowed in AMP HTML markup.
 
-### IDs
+### IDs <a name="ids"></a>
 
 Internal AMP IDs prefixed with `-amp-` and `i-amp-` are disallowed in AMP HTML.
 
@@ -259,15 +259,15 @@ Consult AMP documentation for specific extensions before using `amp-` and `AMP` 
 
 All other authored IDs are allowed in AMP HTML markup.
 
-### Links
+### Links <a name="links"></a>
 
 The `javascript:` schema is disallowed.
 
-### Stylesheets
+### Stylesheets <a name="stylesheets"></a>
 
 Major semantic tags and the AMP custom elements come with default styles to make authoring a responsive document reasonably easy. An option to opt out of default styles may be added in the future.
 
-#### @-rules
+#### @-rules <a name="-rules"></a>
 
 The following @-rules are allowed in stylesheets:
 
@@ -275,25 +275,25 @@ The following @-rules are allowed in stylesheets:
 
 `@import` will not be allowed. Others may be added in the future.
 
-#### Author stylesheets
+#### Author stylesheets <a name="author-stylesheets"></a>
 
 Authors may add custom styles to a document using a single `<style amp-custom>` tag in the head of the document or inline styles.
 
 `@keyframes` rules are allowed in the `<style amp-custom>`. However, if they are too many of them, it's recommended to place them in the additional `<style amp-keyframes>` tag, which must be located at the end of the AMP document. For details, see the [Keyframes stylesheet](#keyframes-stylesheet) section of this document.
 
-#### Selectors
+#### Selectors <a name="selectors"></a>
 
 The following restrictions apply to selectors in author style sheets:
 
-##### Class and tag names
+##### Class and tag names <a name="class-and-tag-names"></a>
 Class names, IDs, tag names and attributes, in author stylesheets, may not start with the string `-amp-` and `i-amp-`. These are reserved for internal use by the AMP runtime. It follows, that the user's stylesheet may not reference CSS selectors for `-amp-` classes, `i-amp-` IDs and `i-amp-` tags and attributes. These classes, IDs and tag/attribute names are not meant to be customized by authors. Authors, however, can override styles of `amp-` classes and tags for any CSS properties not explicitly forbidden by these components' spec.
 
 To prevent usage of attribute selectors to circumvent class name limitations it is generally not allowed for CSS selectors to contain tokens and strings starting with `-amp-` and `i-amp-`.
 
-#### Important
+#### Important <a name="important"></a>
 Usage of the `!important` qualifier is not allowed. This is a necessary requirement to enable AMP to enforce its element sizing invariants.
 
-#### Properties
+#### Properties <a name="properties"></a>
 AMP only allows transitions and animations of properties that can be GPU accelerated in common browsers. We currently white list: `opacity`, `transform` (also `-vendorPrefix-transform`).
 
 In the following examples `<property>` needs to be in the white list above.
@@ -303,10 +303,10 @@ In the following examples `<property>` needs to be in the white list above.
 
 `overflow` (and `overflow-y`, `overflow-x`) may not be styled as “auto” or “scroll”. No user defined element in an AMP document may have a scrollbar.
 
-#### Maximum size
+#### Maximum size <a name="maximum-size"></a>
 It is a validation error if the author stylesheet or inline styles together are larger than 50,000 bytes.
 
-### Keyframes stylesheet
+### Keyframes stylesheet <a name="keyframes-stylesheet"></a>
 
 In addition to the `<style amp-custom>`, authors may also add the `<style amp-keyframes>` tag, which is allowed specifically for keyframes animations.
 
@@ -330,7 +330,7 @@ Example:
 </body>
 [/sourcecode]
 
-### Custom fonts
+### Custom fonts <a name="custom-fonts"></a>
 
 Authors may include stylesheets for custom fonts. The 2 supported methods are link tags pointing to white listed font providers and `@font-face` inclusion.
 
@@ -352,7 +352,7 @@ IMPLEMENTERS NOTE: Adding to this list requires a change to the AMP Cache CSP ru
 Authors are free to include all custom fonts via an `@font-face` CSS instruction via their custom CSS. Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
 
 
-## AMP runtime
+## AMP runtime <a name="amp-runtime"></a>
 
 The AMP runtime is a piece of JavaScript that runs inside every AMP document. It provides implementations for AMP custom elements, manages resource loading and prioritization and optionally includes a runtime validator for AMP HTML for use during development.
 
@@ -361,7 +361,7 @@ The AMP runtime is loaded via the mandatory `<script src="https://cdn.ampproject
 The AMP runtime can be placed into a development mode for any page. Development mode will trigger AMP validation on the embedded page, which will emit the validation status and any errors to the JavaScript developer console. Development mode may be triggered by appending `#development=1` to the URL of the page.
 
 
-## Resources
+## Resources <a name="resources"></a>
 
 Resources such as images, videos, audio files or ads must be included into an AMP HTML file through custom elements such as `<amp-img>`. We call them “managed resources” because whether and when they will be loaded and displayed to the user is decided by the AMP runtime.
 
@@ -370,7 +370,7 @@ There are no particular guarantees as to the loading behavior of the AMP runtime
 The AMP runtime may at any time decide to unload resources that are not currently in viewport or reuse the resource containers such as iframes to reduce overall RAM consumption.
 
 
-## AMP Components
+## AMP Components <a name="amp-components"></a>
 
 AMP HTML uses custom elements called “AMP components” to substitute built-in resource-loading tags such as `<img>` and `<video>` and to implement features with complex interactions such as image lightboxes or carousels.
 
@@ -383,9 +383,9 @@ There are 2 types of supported AMP components:
 
 Built-in components are always available in an AMP document and have a dedicated custom element such as `<amp-img>`. Extended components must be explicitly included into the document.
 
-### Common attributes
+### Common attributes <a name="common-attributes"></a>
 
-#### `layout`, `width`, `height`, `media`, `placeholder`, `fallback`
+#### `layout`, `width`, `height`, `media`, `placeholder`, `fallback` <a name="layout-width-height-media-placeholder-fallback"></a>
 
 These attributes define the layout of an element. The key goal here is to ensure that
 the element can be displayed and its space can be properly reserved before any of the
@@ -393,7 +393,7 @@ JavaScript or remote resources have been downloaded.
 
 See the [AMP Layout System](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-layout.md) for details about the layout system.
 
-#### `on`
+#### `on` <a name="on"></a>
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
@@ -420,7 +420,7 @@ Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
 Read more about [AMP Actions and Events](https://github.com/ampproject/amphtml/blob/master/spec/./amp-actions-and-events.md).
 
-### Extended components
+### Extended components <a name="extended-components"></a>
 
 Extended components are components that do not necessarily ship with the AMP runtime. Instead they must be explicitly included into the document.
 
@@ -436,7 +436,7 @@ Runtime implementations may use the name to render placeholders for these elemen
 
 The script URL must start with `https://cdn.ampproject.org` and must follow a very strict pattern of `/v\d+/[a-z-]+-(latest|\d+|\d+\.\d+)\.js`.
 
-##### URL
+##### URL <a name="url"></a>
 
 The URL for extended components is of the form:
 
@@ -444,12 +444,12 @@ The URL for extended components is of the form:
 https://cdn.ampproject.org/$RUNTIME_VERSION/$ELEMENT_NAME-$ELEMENT_VERSION.js
 [/sourcecode]
 
-##### Versioning
+##### Versioning <a name="versioning"></a>
 
 See the [AMP versioning policy](https://github.com/ampproject/amphtml/blob/master/spec/amp-versioning-policy.md).
 
 
-### Templates
+### Templates <a name="templates"></a>
 
 Templates render HTML content based on the language-specific template and provided JSON data.
 
@@ -482,7 +482,7 @@ The syntax within the template element depends on the specific template language
 
 To learn about the syntax and restrictions for an template, visit the [template's documentation](https://github.com/ampproject/amphtml/blob/master/spec/./amp-html-templates.md#templates).
 
-##### URL
+##### URL <a name="url-1"></a>
 
 The URL for extended components is of the form:
 
@@ -490,12 +490,12 @@ The URL for extended components is of the form:
 https://cdn.ampproject.org/$RUNTIME_VERSION/$TEMPLATE_TYPE-$TEMPLATE_VERSION.js
 [/sourcecode]
 
-##### Versioning
+##### Versioning <a name="versioning-1"></a>
 
 See versioning of custom elements for more details.
 
 
-## Security
+## Security <a name="security"></a>
 
 AMP HTML documents must not trigger errors when served with a Content Security Policy that does not include the keywords `unsafe-inline` and `unsafe-eval`.
 
@@ -503,7 +503,7 @@ The AMP HTML format is designed so that is always the case.
 
 All AMP template elements must go through AMP security review before they can be submitted into AMP repository.
 
-## SVG
+## SVG <a name="svg"></a>
 
 Currently, the following SVG elements are allowed:
 
@@ -520,7 +520,7 @@ As well as these attributes:
 * "xlink:href": only URIs starting with "#" are allowed
 * "style"
 
-## AMP document discovery
+## AMP document discovery <a name="amp-document-discovery"></a>
 
 The mechanism described below provides a standardized way for software to discover whether an AMP version exists for a canonical document.
 

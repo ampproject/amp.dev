@@ -35,12 +35,13 @@ class AmpDevExtension(extensions.BaseExtension):
     def __init__(self, pod, config):
         super(AmpDevExtension, self).__init__(pod, config)
 
+        self.default_locale = pod.podspec.default_locale
+
         # Initialize an object cache for template partials
         self.template_cache = pod.podcache.get_object_cache('amp_dev_template');
 
         # Expose extension direclty on pod for use in templates
         setattr(pod, 'amp_dev', self)
-
 
     def transform_markdown(self, doc, original_body, content):
         content = InlineTip.trigger(original_body, content)
@@ -48,6 +49,29 @@ class AmpDevExtension(extensions.BaseExtension):
         content = BlockVideo.trigger(original_body, content)
         content = BlockFilter.trigger(original_body, content)
         return content
+
+    def get_represented_locales(self, doc):
+        """
+        Will return all locales as comma separated list for which the document is used.
+        :type doc: document.Document
+        """
+
+        # Only the document in the default locale might be used for any other language
+        if self.default_locale != doc.locale:
+          return doc.locale.alias
+
+        # Looks like we are in the default locale
+        # Find all locales that do not have an explicit translation file
+        # (the default locale also has no explicit translation file)
+        locales = None
+        for locale in doc.locales:
+          localized_path = document.Document.localize_path(doc.pod_path, locale.alias)
+          if not doc.pod.file_exists(localized_path):
+            if locales:
+              locales = locales + ',' + locale.alias
+            else:
+              locales = locale.alias
+        return locales
 
     @property
     def available_hooks(self):

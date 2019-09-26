@@ -38,7 +38,7 @@ The AMP for Email format provides [a subset of AMP components](https://github.co
 
 
 
-## Required markup
+## Required markup <a name="required-markup"></a>
 
 The following code represents the minimum amount of markup that makes up a valid AMP email message:
 
@@ -68,28 +68,28 @@ An AMP email message MUST
 The entire AMPHTML markup must not exceed 102,400 bytes.
 
 
-## Structure and rendering
+## Structure and rendering <a name="structure-and-rendering"></a>
 
 AMP for Email relies on the standard `multipart/alternative` [MIME](https://en.wikipedia.org/wiki/MIME) subtype, as defined in
 [RFC 1521, section 7.2.3](https://tools.ietf.org/html/rfc1521#section-7.2.3).
 
 *For more information, see [Structure and rendering of AMP emails](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-structure.md).*
 
-## Supported AMP components
+## Supported AMP components <a name="supported-amp-components"></a>
 
 *See [AMP for Email Supported Components](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-components.md).*
 
-## HTML requirements
+## HTML requirements <a name="html-requirements"></a>
 
 *See [Supported HTML in AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-html.md).*
 
-## CSS requirements
+## CSS requirements <a name="css-requirements"></a>
 
-### Supported selectors and properties
+### Supported selectors and properties <a name="supported-selectors-and-properties"></a>
 
 *See [Supported CSS in AMP for Email](https://github.com/ampproject/amphtml/blob/master/spec/email/amp-email-css.md).*
 
-### Specifying CSS in an AMP document
+### Specifying CSS in an AMP document <a name="specifying-css-in-an-amp-document"></a>
 
 All CSS in any AMP document must be included in a `<style amp-custom>` tag within the header or as inline `style` attributes.
 
@@ -113,25 +113,25 @@ All CSS in any AMP document must be included in a `<style amp-custom>` tag withi
 
 Note: The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
 
-## Document dimensions
+## Document dimensions <a name="document-dimensions"></a>
 
 * **Optimal width**: 800px or less (any wider and content may be unexpectedly truncated on some clients).
 
 * **Height**: variable, the client allows the user to scroll through the content.
 
-## Validation
+## Validation <a name="validation"></a>
 
 To ensure your email messages meet the strict criteria for the AMP for Email format, you can use AMP's existing validation tools.
 
 See [Validate AMP Email](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_emails/) for more information.
 
-## Privacy and Security
+## Privacy and Security <a name="privacy-and-security"></a>
 
-### Tracking email opens and interaction
+### Tracking email opens and interaction <a name="tracking-email-opens-and-interaction"></a>
 AMPHTML allows tracking email opens with pixel tracking techniques, same as regular HTML emails. Any user-initiated requests for data from external services will also indicate the user is interacting with the message. Email clients may offer their users the ability to disable loading remote images, and other external requests.
 
 
-### AMP-specific analytics
+### AMP-specific analytics <a name="amp-specific-analytics"></a>
 The following AMP-specific analytic techniques are not supported:
 
 *   [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
@@ -139,12 +139,12 @@ The following AMP-specific analytic techniques are not supported:
 *   [`amp-pixel`](https://amp.dev/documentation/components/amp-pixel)
 *   [AMP Variable Substitution](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
 
-### Component-specific considerations
+### Component-specific considerations <a name="component-specific-considerations"></a>
 
 Requests for images inside [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) or [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion)
 can indicate to the sender that the user is interacting with the message.
 
 
-## Feedback & Support
+## Feedback & Support <a name="feedback--support"></a>
 
 For support and feedback on AMP for Email, please use the following channel: [ongoing-participation](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#ongoing-participation)

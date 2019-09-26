@@ -33,27 +33,27 @@ limitations under the License.
 
 This document outlines the CSS features currently supported inside AMP emails.
 
-## Applying CSS
+## Applying CSS <a name="applying-css"></a>
 
-### Internal stylesheet
+### Internal stylesheet <a name="internal-stylesheet"></a>
 
 When using an internal stylesheet, the CSS is specified inside a single
 `<style amp-custom>` tag located in the `<head>` tag of the email.
 
-### Inline styles
+### Inline styles <a name="inline-styles"></a>
 
 In addition to an internal stylesheet, inline styles can be specified on any
 element using the [`style` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-style).
 
-### External stylesheet
+### External stylesheet <a name="external-stylesheet"></a>
 
 External stylesheets are **not** supported in AMP for Email.
 
 Using `<link rel="stylesheet" href="...">` is not allowed anywhere in the email.
 
-## Supported CSS selectors
+## Supported CSS selectors <a name="supported-css-selectors"></a>
 
-### Simple selectors
+### Simple selectors <a name="simple-selectors"></a>
 
 *   [Type selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
 *   [Class selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
@@ -63,14 +63,14 @@ Using `<link rel="stylesheet" href="...">` is not allowed anywhere in the email.
 Warning: [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 `[attr=value]` are not currently supported by all email providers.
 
-### Combinators
+### Combinators <a name="combinators"></a>
 
 *   [Adjacent sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Adjacent_sibling_combinator) `A + B`
 *   [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) `A ~ B`
 *   [Child combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Child_combinator) `A > B`
 *   [Descendant combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator) `A B`
 
-### Pseudo-classes
+### Pseudo-classes <a name="pseudo-classes"></a>
 
 *   [`:active`](https://developer.mozilla.org/en-US/docs/Web/CSS/:active)
 *   [`:checked`](https://developer.mozilla.org/en-US/docs/Web/CSS/:checked)
@@ -103,7 +103,7 @@ Warning: [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/A
 *   [`:required`](https://developer.mozilla.org/en-US/docs/Web/CSS/:required)
 *   [`:valid`](https://developer.mozilla.org/en-US/docs/Web/CSS/:valid)
 
-## Supported CSS properties
+## Supported CSS properties <a name="supported-css-properties"></a>
 
 *   [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
 *   [`align-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)
@@ -320,7 +320,7 @@ Warning: [Attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/A
 *   [`writing-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode)
 *   [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
 
-### Additional restrictions
+### Additional restrictions <a name="additional-restrictions"></a>
 
 The following CSS properties have additional restrictions:
 
@@ -332,17 +332,17 @@ The following CSS properties have additional restrictions:
 | [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility) | The only allowed values are `hidden`, `visible` and `initial`. |
 | [`z-index`](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index) | Only values between -100 and 100 are allowed. |
 
-## At-rules
+## At-rules <a name="at-rules"></a>
 
 The only [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
 currently supported is `@media`. See [Media features](#media-features) for more
 information.
 
-### Custom fonts (`@font-face`)
+### Custom fonts (`@font-face`) <a name="custom-fonts-font-face"></a>
 
 Custom fonts are **not** supported in AMP for Email.
 
-## Media features
+## Media features <a name="media-features"></a>
 
 List of [media features](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_features)
 supported for conditionally applying rules via `@media` queries.
