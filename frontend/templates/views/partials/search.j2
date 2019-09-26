@@ -36,6 +36,7 @@
             class="ap-o-search-form"
             id="searchForm"
             method="POST"
+            on="submit:searchResult.focus"
             target="_top">
         <amp-autocomplete class="ap-o-search-autocomplete"
                           filter="substring"
@@ -58,7 +59,7 @@
       </form>
 
       <div class="empty" [class]="query ? '' : 'empty'">
-        <div class="ap-o-search-result">
+        <div class="ap-o-search-result" id="searchResult" tabindex="-1">
 
           <amp-state id="search"
                     [src]="query == undefined ? null : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
