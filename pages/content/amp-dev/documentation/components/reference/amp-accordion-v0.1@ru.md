@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -24,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+
 
 Позволяет зрителям знакомиться с контентом и переходить к нужному разделу. Это удобно на мобильных устройствах, где зачастую даже для просмотра нескольких предложений из раздела требуется прокрутка.
 

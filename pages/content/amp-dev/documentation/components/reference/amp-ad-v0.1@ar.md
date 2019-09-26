@@ -1,4 +1,5 @@
 ---
+$title: amp-ad
 $category@: ads-analytics
 formats:
   - websites
@@ -6,11 +7,11 @@ teaser:
   text: A container to display an ad.
 ---
 
-# amp-ad / amp-embed
+
 
 هذا العنصر عبارة عن حاوية لعرض الإعلان. `amp-embed` هو اسم مستعار للعنصر `amp-ad`، ويستمد كل وظائفه ولكن باسم علامة مختلف. استخدِم `amp-embed` عندما تريد أن تكون أكثر دقة من حيث الدلالة. لا تتيح مستندات AMP سوى الإعلانات/التضمينات التي يتم عرضها عبر HTTPS.
 
-# `amp-ad` / `amp-embed`
+# <a name="amp-ad"></a> amp-ad / amp-embed
 
 [tip type="note"]
 من المحتمل أن تتطور مواصفات `amp-ad`/`amp-embed` بشكل ملحوظ بمرور الوقت. وتم تصميم الأسلوب الحالي لتشغيل شكل الإعلان مبدئيًا لتتمكن من عرض الإعلان.

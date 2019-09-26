@@ -6,7 +6,7 @@
   {% include '/views/partials/sidebar-toggle-button.j2' %}
   {% include '/views/partials/breadcrumbs.j2' %}
 
-  {% if doc.title and doc.view in ['/views/detail/docs-detail.j2', ] %}
+  {% if doc.title and doc.view in ['/views/detail/docs-detail.j2'] %}
   <h1>{{ doc.title }}</h1>
   {% endif %}
 
@@ -21,10 +21,14 @@
       <div class="ap-a-ico ap-m-tip-icon">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning"></use></svg>
       </div>
-      <p>{{ _('Important: this document is not valid for your currently selected format') }} <b>[= format =]</b>!</p>
+      <p>{{ _('Important: this component does not support your currently selected format') }} <b>[= format =]</b>!</p>
     </div>
   </div>
   [% endif %]
+  {% endif %}
+
+  {% if doc.title and doc.view in ['/views/detail/component-detail.j2'] %}
+  {% include '/views/partials/version-toggle.j2' %}
   {% endif %}
 
   {# Adds the level toggle button if leveled: true is set in the frontmatter #}

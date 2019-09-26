@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video
+
 
 HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋め込む場合に限り使用できます。
 

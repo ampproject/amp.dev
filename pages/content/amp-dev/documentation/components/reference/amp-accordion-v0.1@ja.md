@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-accordion
+
 
 閲覧者がコンテンツの概要を一目で把握し、選択した任意のセクションにジャンプできるようにします。この機能は、セクション内の数行の文章でもスクロールが必要なモバイル デバイスの場合に役立ちます。
 

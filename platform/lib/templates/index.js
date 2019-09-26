@@ -20,7 +20,9 @@ const nunjucks = require('nunjucks');
 const config = require('../config.js');
 const growPageLoader = require('../common/growPageLoader');
 const LRU = require('lru-cache');
+const {getFormatFromRequest} = require('../amp/formatHelper.js');
 
+const ALLOWED_LEVEL = ['beginner', 'advanced'];
 let templates = null;
 
 /**
@@ -30,22 +32,13 @@ let templates = null;
  * @return {Object}
  */
 function createRequestContext(request={'query': {}}, context={}) {
-  const ALLOWED_FORMATS = ['websites', 'stories', 'ads', 'email'];
-  const ALLOWED_LEVEL = ['beginner', 'advanced'];
-
-  if (!ALLOWED_FORMATS.includes(request.query.format)) {
-    context.format = ALLOWED_FORMATS[0];
-    context.forceFiltered = true;
-  } else {
-    context.format = request.query.format;
-  }
+  context.format = getFormatFromRequest(request);
 
   if (ALLOWED_LEVEL.includes(request.query.level)) {
     context.level = request.query.level;
   } else {
     context.level = ALLOWED_LEVEL[0];
   }
-
   context.category = (request.query.category || '').toLowerCase();
 
   return context;

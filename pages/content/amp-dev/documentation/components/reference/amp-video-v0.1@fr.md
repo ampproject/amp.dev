@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video
+
 
 Ce composant remplace la balise `video` HTML5 ; il ne doit être utilisé que pour les intégrations directes de fichiers vidéo HTML5.
 

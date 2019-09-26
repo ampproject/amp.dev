@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,7 +7,7 @@ teaser:
   text: AMP 페이월 및 구독 지원을 제공합니다.
 ---
 
-# amp-access
+
 
 AMP 액세스 또는 'AMP 페이월 및 구독 지원'을 통해 게시자는 독자의 가입 상태, 조회수 및 기타 요인을 기반으로 독자가 액세스할 수 있는 콘텐츠와 제한 사항을 제어할 수 있습니다.
 

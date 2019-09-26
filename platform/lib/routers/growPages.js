@@ -23,6 +23,16 @@ const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
+const signale = require('signale');
+const {getFormatFromRequest} = require('../amp/formatHelper.js');
+
+const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
+let formatComponentMapping = {};
+try {
+  formatComponentMapping = require(FORMAT_COMPONENT_MAPPING);
+} catch (_) {
+  signale.warn('No version mapping defined . Run `gulp importAll` to fix.');
+}
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -178,6 +188,46 @@ const optimizer = AmpOptimizer.create({
   ],
 });
 
+// Matches component ref doc URLs. Redirects latest version to non-versioned URL
+growPages.get(
+    /^(\/[a-z]+)?\/documentation\/components\/(amp-[a-z0-9-]+)(-v(\d\.\d))?\//,
+    async (req, res, next) => {
+      const language = req.params[0] || '';
+      const component = req.params[1];
+      let version = req.params[3];
+      const versionsByFormat = formatComponentMapping[component];
+      if (!versionsByFormat) {
+        signale.warn(`No version mapping defined for ${component}. Run 'gulp importAll' to fix.`);
+        return;
+      }
+      const format = getFormatFromRequest(req);
+
+      // add format supported versions to template context
+      let versions = versionsByFormat[format];
+      if (!versions) {
+        signale.warn(`No version mapping defined for format ${format}. Try running 'gulp ` +
+        'importAll\' to fix.');
+        // set to the latest available version and tell the user on the page
+        versions = [versionsByFormat.current];
+      }
+      const latestVersionByFormat = versions[versions.length - 1];
+
+      // redirect to unversioned URL for latest format specific version
+      if (parseFloat(version) >= parseFloat(latestVersionByFormat)) {
+        res.redirect(`${language}/documentation/components/${component}/?format=${format}`);
+        return;
+      } else if (!version) {
+        version = latestVersionByFormat;
+      }
+      req.componentInfo = {
+        format,
+        latestVersion: versionsByFormat.current,
+        latestVersionByFormat,
+        versions,
+      };
+      next();
+    });
+
 // only match urls with slash at the end or html extension or no extension
 growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   const url = ensureUrlScheme(req.originalUrl);
@@ -186,13 +236,23 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     return;
   }
 
+  const templateContext = createRequestContext(req);
+  const componentInfo = req.componentInfo;
+  if (componentInfo) {
+    templateContext.versions = componentInfo.versions;
+    if (!componentInfo.version &&
+      componentInfo.latestVersionByFormat !== componentInfo.latestVersion) {
+      // change amp-carousel-v$LATEST => amp-carousel
+      url.pathname = url.pathname.slice(0, -1) + `-v${componentInfo.latestVersionByFormat}/`;
+    }
+  }
+
   const template = await loadTemplate(url.pathname);
   if (!template) {
     next();
     return;
   }
 
-  const templateContext = createRequestContext(req);
   let renderedTemplate = null;
   try {
     renderedTemplate = template.render(templateContext);
@@ -203,11 +263,11 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
       res.set('content-type', 'text/plain');
       res.send(
           `SSR error: ${e}\n\n` +
-          template.tmplStr
-              .split('\n')
-              .map((line, index) => `${index + 1} ${line}`)
-              .join('\n'));
-      console.error(e);
+        template.tmplStr
+            .split('\n')
+            .map((line, index) => `${index + 1} ${line}`)
+            .join('\n'));
+      signale.error(e);
       return;
     }
 
@@ -225,7 +285,7 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   try {
     renderedTemplate = await optimizer.transformHtml(renderedTemplate);
   } catch (e) {
-    console.error('[OPTIMIZER]', e);
+    signale.error('[OPTIMIZER]', e);
   }
 
   res.send(renderedTemplate);
