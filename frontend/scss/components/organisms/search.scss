@@ -159,6 +159,7 @@
     min-height: 60vh;
     max-height: calc(100vh - 88px);
     padding: 0 0 30px;
+    -webkit-overflow-scrolling: touch;
     outline: none;
 
     @media (min-width: 1024px) {
