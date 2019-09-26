@@ -146,7 +146,7 @@ class SamplesBuilder {
           this._log.await(`Building sample ${sample.relative} ...`);
           const { document } = await this._parseSample(sample);
 
-          const isWebSample = String(document.formats()) === FORMAT_WEBSITES;
+          const isWebSample = document.formats().includes(FORMAT_WEBSITES);
           const shouldTransform = isWebSample
               && !document.metadata.disableTransform
               && !document.metadata.hideCode

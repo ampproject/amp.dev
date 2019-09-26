@@ -1,4 +1,5 @@
-const SUPPORTED_FORMATS = ['websites', 'stories', 'ads', 'email'];
+const FORMAT_WEBSITES = 'websites';
+const SUPPORTED_FORMATS = [FORMAT_WEBSITES, 'stories', 'ads', 'email'];
 const DEFAULT_FORMAT = SUPPORTED_FORMATS[0];
 
 /**
@@ -24,4 +25,5 @@ module.exports = {
   getFormatFromRequest,
   SUPPORTED_FORMATS,
   DEFAULT_FORMAT,
+  FORMAT_WEBSITES,
 };
