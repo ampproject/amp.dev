@@ -16,6 +16,7 @@
 @import 'components/atoms/_color.scss';
 
 .#{organism('search')} {
+  z-index: 9999;
 
   &-escaper {
     position: fixed;
