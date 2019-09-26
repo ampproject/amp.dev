@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+
 
 Oferece aos usuários uma visualização rápida do conteúdo e permite pular para qualquer seção. Isso é útil para dispositivos móveis, em que é preciso rolar para ver até mesmo algumas frases.
 

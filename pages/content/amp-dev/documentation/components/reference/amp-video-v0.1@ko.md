@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video
+
 
 HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 삽입에만 사용합니다.
 

@@ -1,4 +1,5 @@
 ---
+$title: amp-carousel
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-carousel
+
 
 Carousel generik untuk menampilkan beberapa konten serupa secara bergantian sepanjang sumbu horizontal; yang dimaksudkan untuk memiliki fleksibilitas dan performa tinggi.
 

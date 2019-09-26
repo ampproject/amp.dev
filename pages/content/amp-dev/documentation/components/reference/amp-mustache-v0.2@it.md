@@ -1,4 +1,5 @@
 ---
+$title: amp-mustache
 $category@: dynamic-content
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-mustache
+
 
 Consente il rendering di [Mustache.js](https://github.com/janl/mustache.js/).
 

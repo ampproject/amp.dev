@@ -1,4 +1,5 @@
 ---
+$title: amp-social-share
 $category@: ads-analytics
 formats:
 - websites
@@ -24,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-social-share
+
 
 Ce composant affiche un bouton de partage sur les réseaux sociaux.
 

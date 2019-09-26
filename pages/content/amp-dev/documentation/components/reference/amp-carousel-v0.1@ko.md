@@ -1,4 +1,5 @@
 ---
+$title: amp-carousel
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-carousel
+
 
 유연성과 성능을 높이도록 가로축을 따라 여러 개의 유사한 콘텐츠를 표시하기 위한 일반 캐러셀입니다.
 

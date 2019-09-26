@@ -1,4 +1,5 @@
 ---
+$title: amp-list
 $category@: dynamic-content
 formats:
   - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-list
+
 
 CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
 템플릿을 사용하여 렌더링합니다.

@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,7 +7,7 @@ teaser:
   text: Fornisce un paywall AMP e supporto per l'abbonamento.
 ---
 
-# amp-access
+
 
 L'Accesso AMP o il "supporto per l'abbonamento e il paywall AMP" offrono ai publisher il controllo sui contenuti a cui un lettore può accedere e con quali restrizioni, in base allo stato dell'abbonamento del lettore, al numero di visualizzazioni e ad altri fattori.
 

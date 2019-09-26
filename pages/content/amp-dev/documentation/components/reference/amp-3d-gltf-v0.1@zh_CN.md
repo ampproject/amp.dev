@@ -1,4 +1,5 @@
 ---
+$title: amp-3d-gltf
 $category@: media
 formats:
 - websites
@@ -22,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-3d-gltf
+
 
 显示 GL 传输格式 (gITF) 的 3D 模型。
 

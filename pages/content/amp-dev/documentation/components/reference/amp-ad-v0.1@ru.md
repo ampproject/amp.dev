@@ -1,4 +1,5 @@
 ---
+$title: amp-ad
 $category@: ads-analytics
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: Контейнер для показа объявлений
 ---
 
-# amp-ad / amp-embed
+
 
 Контейнер для показа объявлений. `amp-embed` – это псевдоним тега `amp-ad`. У них идентичный функционал, но разные названия. Используйте название `amp-embed`, когда оно больше подходит с точки зрения семантики. В документах AMP теги amp-ad и amp-embed поддерживаются только в рамках протокола HTTPS.
 
-# `amp-ad` / `amp-embed`
+# <a name="amp-ad"></a> amp-ad / amp-embed
 
 
 [tip type="note"]

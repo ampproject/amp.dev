@@ -1,4 +1,5 @@
 ---
+$title: amp-addthis
 $category@: social
 formats:
 - websites
@@ -22,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-addthis
+
 
 Этот компонент осуществляет показ виджета сервиса [AddThis](https://www.addthis.com), предназначенного для распространения веб-контента.
 
