@@ -19,12 +19,14 @@ require('module-alias/register');
 // If a doc is broken in a release, add it to this this list to fetch from master instead.
 //
 // DON'T FORGET TO REMOVE ONCE IT'S FIXED
-const DOCS_TO_FETCH_FROM_MASTER = ['amp-script'];
+const DOCS_TO_FETCH_FROM_MASTER = ['amp-script', 'amp-carousel'];
 const DEFAULT_VERSION = 0.1;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const categories = require(__dirname + '/../../config/imports/componentCategories.json');
 const formats = require(__dirname + '/../../config/imports/componentFormats.json');
+const {writeFile} = require('fs').promises;
+const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 
 const {Signale} = require('signale');
 
@@ -72,13 +74,18 @@ class ComponentReferenceImporter {
     // Keep track of all promises to complete function
     const savedDocuments = [];
 
+    const versionMapping = {};
     for (const extension of extensions) {
       const documents = await this._findExtensionDocs(extension);
       const versions = [...new Set(documents.map((doc) => doc.version).sort().reverse())];
 
+
       if (!documents.length) {
         log.warn(`No matching document for component: ${extension.name}`);
       } else {
+        const supportedVersions = {};
+        versionMapping[extension.name] = supportedVersions;
+        const supportedFormats = new Set();
         documents.forEach((doc) => {
           // IMPORTANT: first rewrite URLs
           this._rewriteRelativePaths(extension.path, doc.document);
@@ -86,13 +93,32 @@ class ComponentReferenceImporter {
           this._setMetadata(
               doc.tagName || extension.name, doc.document, doc.version, versions);
           doc.document.addExplicitAnchors();
+          if (doc.document.isCurrent) {
+            supportedVersions.current = doc.version;
+          }
+          doc.document.stripInlineTitle();
+          doc.document.formats.forEach((format) => {
+            supportedFormats.add(format);
+            let versionsPerFormat = supportedVersions[format];
+            if (!versionsPerFormat) {
+              versionsPerFormat = [];
+              supportedVersions[format] = versionsPerFormat;
+            }
+            versionsPerFormat.push(doc.version);
+          });
+        });
+        // We have to iterate again to be able to set the supported formats for each component
+        documents.forEach((doc) => {
+          doc.document.supportedFormats = Array.from(supportedFormats);
           savedDocuments.push(
               this._saveDocument(doc.tagName || extension.name, doc.document, doc.version));
         });
       }
     }
 
-    return Promise.all(savedDocuments);
+    const writeComponentMapping =
+      writeFile(FORMAT_COMPONENT_MAPPING, JSON.stringify(versionMapping, null, 2), 'utf-8');
+    return Promise.all(savedDocuments.concat(writeComponentMapping));
   }
 
   /**
@@ -102,7 +128,7 @@ class ComponentReferenceImporter {
    */
   _rewriteRelativePaths(extensionPath, document) {
     const relativeBase = 'https://github.com/ampproject/amphtml' +
-        `/blob/master/${extensionPath}`;
+      `/blob/master/${extensionPath}`;
     document.rewriteRelativePaths(relativeBase);
   }
 
@@ -120,7 +146,7 @@ class ComponentReferenceImporter {
     if (!document.teaser.text) {
       document.teaser = {'text': this._parseTeaserText(document)};
     }
-
+    document.component = extensionName;
     if (!document.category) {
       document.category = categories[extensionName];
     }
@@ -140,7 +166,7 @@ class ComponentReferenceImporter {
       // when this doc is the highest current version, use it as default entry point
       if ((versions[0] || DEFAULT_VERSION) === version) {
         document.isCurrent = true;
-        document.servingPath = '/documentation/components/{slug}.html';
+        document.servingPath = `/documentation/components/${extensionName}.html`;
       }
     }
   }

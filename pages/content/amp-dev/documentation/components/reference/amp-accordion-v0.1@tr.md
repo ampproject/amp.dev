@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+
 
 Görüntüleyenlerin içeriğin ana hatlarına göz atması ve herhangi bir bölüme atlaması için bir yol sağlar. Bu, bir bölümün birkaç cümlesi kaydırma gerektirdiğinde bile mobil cihazlar için yararlıdır.
 

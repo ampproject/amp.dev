@@ -1,4 +1,5 @@
 ---
+$title: amp-ad
 $category@: ads-analytics
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: Conteneur permettant de diffuser une annonce.
 ---
 
-# amp-ad/amp-embed
+
 
 Il s'agit d'un conteneur permettant de diffuser une annonce. `amp-embed` est un alias de la balise `amp-ad`, dont toutes les fonctionnalités sont obtenues avec un nom de balise différent. Utilisez `amp-embed` lorsque cela s'avère plus précis d'un point de vue sémantique. Les documents AMP acceptent uniquement les annonces/éléments intégrés diffusés via HTTPS.
 
-# `amp-ad` / `amp-embed`
+# <a name="amp-ad"></a> amp-ad / amp-embed
 
 
 [tip type="note"]

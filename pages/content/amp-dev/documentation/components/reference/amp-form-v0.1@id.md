@@ -26,7 +26,7 @@ $title: amp-form
      limitations under the License.
 -->
 
-# amp-form
+
 
 <table>
   <tr>

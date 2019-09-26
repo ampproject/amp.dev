@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,7 +7,7 @@ teaser:
   text: 提供 AMP 付费墙和订阅支持。
 ---
 
-# amp-access
+
 
 借助 AMP Access（即“AMP 付费墙和订阅支持”），发布商可以根据读者的订阅状态、查看次数和其他因素来控制读者可以访问哪些内容以及施加哪些限制。
 

@@ -1,4 +1,5 @@
 ---
+$title: amp-access-laterpay
 $category@: dynamic-content
 formats:
   - websites
@@ -24,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay
+
 
 يتيح المكوِّن `amp-access-laterpay` للناشرين سهولة التكامل مع منصة [LaterPay](https://www.laterpay.net) للدفعات الصغيرة. ويستند المكّوِن إلى [AMP Access](amp-access.md) كما يتطلبه أيضًا.
 

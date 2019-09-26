@@ -1,4 +1,5 @@
 ---
+$title: amp-access-laterpay
 $category@: dynamic-content
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay
+
 
 Memungkinkan penayang untuk berintegrasi lebih mudah dengan platform pembayaran mikro [LaterPay](https://www.laterpay.net). `amp-access-laterpay` didasarkan pada, dan memerlukan [AMP Access](amp-access.md).
 

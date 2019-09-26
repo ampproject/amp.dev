@@ -1,4 +1,5 @@
 ---
+$title: amp-carousel
 $category@: layout
 formats:
 - websites
@@ -24,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-carousel
+
 
 Carrousel générique permettant d'afficher plusieurs éléments de contenu similaires le long d'un axe horizontal. Ce composant a été conçu pour offrir une flexibilité et des performances élevées.
 
