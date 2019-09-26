@@ -92,6 +92,11 @@ module.exports = (req, res, next) => {
     return;
   }
 
+  // the following checks are only relevant for https
+  if (config.hosts.platform.scheme !== 'https') {
+    return next();
+  }
+
   // redirect http to https
   setHsts(res);
   if (req.headers['x-forwarded-proto'] === 'https') {
