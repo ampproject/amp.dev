@@ -18,11 +18,11 @@
 .#{organism('search')} {
 
   &-escaper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
+    right: 0;
+    bottom: 0;
     opacity: 0.6;
     background: #000;
   }
@@ -30,8 +30,7 @@
   &-container {
     position: relative;
     width: 90vw;
-    height: 100%;
-    padding: 20px 0 0;
+    padding: 23px 0 0;
     margin: 0;
     background: color('whisper');
     box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
@@ -155,6 +154,7 @@
   &-result {
     overflow-x: hidden;
     overflow-y: auto;
+    height: 100vh;
     min-height: 60vh;
     max-height: calc(100vh - 88px);
     padding: 0 0 30px;

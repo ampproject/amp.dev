@@ -15,7 +15,8 @@
               class="ap-o-search"
               layout="nodisplay"
               on="lightboxOpen:searchInput.focus;
-                  lightboxClose:searchTriggerOpen.focus">
+                  lightboxClose:searchTriggerOpen.focus"
+              scrollable>
   <div class="ap-o-search-escaper" role="button" tabindex="0" on="tap:searchLightbox.close"></div>
   <div class="ap-o-search-container">
 
@@ -170,7 +171,7 @@
       <amp-list src="/search/highlights?locale={{ doc.locale }}"
                 binding="no"
                 items="."
-                height="100vh"
+                height="86.8vh"
                 layout="fixed-height"
                 [is-layout-container]="query.length"
                 reset-on-refresh
