@@ -81,15 +81,15 @@ module.exports = (req, res, next) => {
     }
   }
 
-  // don't perform the other redirects on localhost
-  if (req.hostname === 'localhost') {
-    return next();
-  }
-
   // redirect www.amp.dev to amp.dev
   if (req.get('host').startsWith(WWW_PREFIX)) {
     res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
     return;
+  }
+
+  // the following checks are only relevant for https
+  if (config.hosts.platform.scheme !== 'https') {
+    return next();
   }
 
   // redirect http to https
