@@ -333,7 +333,7 @@ developer:
     description: A tool to help for prototyping ads to be served in AMP Stories. Choose from pre-existing templates to get started.
     url: https://ampstoryads.web.app
     image:
-      src: /static/img/tools/amp-story-ad-preview.png
+      src: /static/img/tools/amp-story-ad-preview.jpg
       width: 1024
       height: 831
     formats:
