@@ -53,9 +53,13 @@
                  class="ap-o-search-input"
                  name="q"
                  placeholder="{{_('What are you looking for?')}}"
-                 on="change:AMP.setState({ query: event.value })"
+                 on="input-throttled:
+                       AMP.setState({ throttledValue: event.value });
+                     change:
+                       AMP.setState({ query: event.value })"
                  required
           >
+          <button class="ap-o-search-submit" type="submit" name="search-submit" disabled [disabled]="!throttledValue">{{_('Search')}}</button>
         </amp-autocomplete>
       </form>
 
