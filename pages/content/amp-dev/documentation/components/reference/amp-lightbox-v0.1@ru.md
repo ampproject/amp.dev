@@ -25,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-lightbox
+# amp-lightbox <a name="amp-lightbox"></a>
 
 <table>
   <tr>
@@ -47,7 +47,7 @@ teaser:
 </table>
 
 
-## Действия
+## Действия <a name="behavior"></a>
 
 Компонент `amp-lightbox` определяет дочерние элементы, которые отображаются в модальном окне, занимающем всю область просмотра. Когда пользователь нажимает на какой-либо элемент (например, на кнопку), идентификатор `amp-lightbox`, указанный в атрибуте `on` этого элемента, активирует модальное окно, занимающее всю область просмотра, и отображает дочерние элементы `amp-lightbox`.
 
@@ -65,7 +65,7 @@ teaser:
 Для показа изображений в окне просмотра используется компонент [`<amp-image-lightbox>`](amp-image-lightbox.md).
 [/tip]
 
-## Атрибуты
+## Атрибуты <a name="attributes"></a>
 
 <table>
   <tr>
@@ -98,11 +98,11 @@ teaser:
           </tr>
         </table>
 
-## Стилизация
+## Стилизация <a name="styling"></a>
 
 К компоненту `amp-lightbox` можно применять каскадные таблицы стилей.
 
-## Действия
+## Действия <a name="actions"></a>
 
 Компонент `amp-lightbox` поддерживает следующие действия ([подробнее…](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)):
 
@@ -121,7 +121,7 @@ teaser:
   </tr>
 </table>
 
-## <a id="a4a"></a> Как использовать `amp-lightbox` в объявлениях HTML с технологией AMP
+## <a id="a4a"></a> Как использовать `amp-lightbox` в объявлениях HTML с технологией AMP <a name="a4a"></a>
 
 [tip type="ll callout('Примечание.</b><a class="type_note"]
 Компонент `amp-lightbox`, используемый в объявлениях HTML с технологией AMP, является [экспериментальным](../../../documentation/guides-and-tutorials/learn/experimental.md) и находится в стадии активной разработки. Чтобы использовать ``его в таких объявлениях, [включите эксперимент `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
@@ -129,7 +129,7 @@ teaser:
 
 Ниже описывается, чем отличается использование `amp-lightbox` в обычных документах AMP от использования в [объявлениях, написанных для HTML с технологией AMP](../../../documentation/guides-and-tutorials/learn/a4a_spec.md).
 
-### Обязательный атрибут close-button
+### Обязательный атрибут close-button <a name="requires-close-button"></a>
 
 Для объявлений HTML с технологией AMP атрибут `close-button` обязателен. Этот атрибут создает в верхней части окна просмотра заголовок, с кнопкой "Закрыть" и ярлык с надписью "Реклама". Этот заголовок необходим:
 
@@ -138,21 +138,21 @@ teaser:
 
 Атрибут `close-button` используется и является обязательным только в объявлениях HTML с технологией AMP. В обычных документах AMP кнопку закрытия можно отображать в любом месте окна как часть содержимого `<amp-lightbox>`.
 
-### Окна просмотра с прокруткой запрещены
+### Окна просмотра с прокруткой запрещены <a name="scrollable-lightboxes-are-disallowed"></a>
 
 В объявлениях HTML с технологией AMP прокрутка в окнах просмотра не допускается.
 
-### Прозрачный фон
+### Прозрачный фон <a name="transparent-background"></a>
 
 При использовании компонента `<amp-lightbox>` в объявлениях HTML с технологией AMP фон элемента `<body>` становится прозрачным, потому что библиотека AMP изменяет размеры и компоновку креативов перед открытием окна просмотра. Это делается для того, чтобы исключить резкое перемещение креатива при открытии окна просмотра. Если для вашего креатива нужен фон, установите его в промежуточном контейнере (например, в полноэкранном теге `<div>`), а не в теге `<body>`.
 
 Когда объявление HTML с технологией AMP показывается в сторонней среде (например, в документе, где не используются технологии AMP), перед раскрытием креатив центрируется относительно области просмотра. Это связано с тем, что сторонние окна iframe используют postMessage API для изменения размеров фрейма, которое выполняется асинхронно. Поэтому предварительное центрирование креатива обеспечивает плавный переход без резких скачков.
 
-### Примеры переходов в окне просмотра для объявлений HTML с технологией AMP
+### Примеры переходов в окне просмотра для объявлений HTML с технологией AMP <a name="examples-of-transitions-in-lightbox-for-amphtml-ads"></a>
 
 В примерах ниже показано, как выглядит переход в объявлении HTML с технологией AMP, в котором есть атрибут `animate-in="fly-in-bottom"`, установленный для элемента lightbox в совместимом окне iframe и в стороннем окне iframe.
 
-##### Совместимые окна iframe (например, из кеша AMP)
+##### Совместимые окна iframe (например, из кеша AMP) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
 <amp-img alt="lightbox ad in friendly iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
@@ -160,7 +160,7 @@ teaser:
     </noscript>
   </amp-img>
 
-##### Сторонние окна iframe (например, не из кеша AMP)
+##### Сторонние окна iframe (например, не из кеша AMP) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
 <amp-img alt="lightbox ad in 3p iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
@@ -168,6 +168,6 @@ teaser:
     </noscript>
   </amp-img>
 
-## Проверка
+## Проверка <a name="validation"></a>
 
 См. раздел с [правилами amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) в спецификации валидатора AMP.

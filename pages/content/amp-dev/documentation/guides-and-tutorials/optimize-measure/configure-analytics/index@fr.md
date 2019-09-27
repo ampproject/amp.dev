@@ -43,7 +43,7 @@ Vous devez en effet identifier ces données avant de pouvoir les configurer.
 Points clés à prendre en compte concernant les données :
 
 * Allez-vous suivre uniquement les vues de page ou d'autres tendances sur l'engagement des utilisateurs
-(voir également [amp-pixel ou amp-analytics](../../../../documentation/components/reference/amp-pixel.md#utiliser-amp-pixel-ou-amp-analytics-?)) ?
+(voir également [amp-pixel ou amp-analytics](../../../../documentation/components/reference/amp-pixel.md#use-amp-pixel-or-amp-analytics)) ?
 * Quels types de données allez-vous capturer sur vos utilisateurs, votre contenu,
-le périphérique ou le navigateur (voir également [Substitution de variables](analytics_basics.md#substitution-de-variables)) ?
-* Comment allez-vous identifier vos utilisateurs (voir également [Identification des utilisateurs](analytics_basics.md#identification-des-utilisateurs)) ?
+le périphérique ou le navigateur (voir également [Substitution de variables](analytics_basics.md#variable-substitution)) ?
+* Comment allez-vous identifier vos utilisateurs (voir également [Identification des utilisateurs](analytics_basics.md#user-identification)) ?

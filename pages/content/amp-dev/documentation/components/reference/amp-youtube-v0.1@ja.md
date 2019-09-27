@@ -24,7 +24,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-youtube
+# amp-youtube <a name="amp-youtube"></a>
 
 [YouTube](https://www.youtube.com/) 動画を表示します。
 
@@ -44,7 +44,7 @@ teaser:
 </table>
 
 
-## 例
+## 例 <a name="example"></a>
 
 次の例はレスポンシブ レイアウトを備えており、アスペクト比が 16:9 の動画の場合に適切な幅と高さのレイアウトになります。
 
@@ -70,7 +70,7 @@ teaser:
   </amp-youtube>
   [/sourcecode]
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -122,6 +122,6 @@ teaser:
       </tr>
     </table>
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツール仕様の [amp-youtube ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii)をご覧ください。

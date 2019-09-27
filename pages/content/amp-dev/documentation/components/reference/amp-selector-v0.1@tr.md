@@ -25,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-selector
+# amp-selector <a name="amp-selector"></a>
 
 Bir seçenek menüsü sunan ve kullanıcının bu menüden seçim yapmasına olanak tanıyan bir kontrolü temsil eder.
 
@@ -45,7 +45,7 @@ Bir seçenek menüsü sunan ve kullanıcının bu menüden seçim yapmasına ola
 </table>
 
 
-## Davranış
+## Davranış <a name="behavior"></a>
 
 AMP seçici, seçeneklerin bir listesini sunan ve kullanıcının bir veya daha fazla seçenek belirlemesine olanak tanıyan bir kontroldür; seçeneklerin içeriği yalnızca metinle sınırlı değildir.
 
@@ -95,7 +95,7 @@ AMP seçici, seçeneklerin bir listesini sunan ve kullanıcının bir veya daha 
 </amp-selector>
 ```
 
-## Seçimleri temizleme
+## Seçimleri temizleme <a name="clearing-selections"></a>
 
 Bir öğeye dokunulduğunda veya bir öğe tıklandığında tüm seçimleri temizlemek için öğede [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) işlem özelliğini ayarlayın ve AMP Seçici `id` bilgisini `clear` işlem yöntemiyle belirtin.
 
@@ -114,9 +114,9 @@ Bir öğeye dokunulduğunda veya bir öğe tıklandığında tüm seçimleri tem
 [Örneklerle AMP](https://ampbyexample.com/components/amp-selector/) sayfasında canlı demoları görebilirsiniz.
 [/tip]
 
-## Özellikler
+## Özellikler <a name="attributes"></a>
 
-### `<amp-selector>` ile ilgili özellikler
+### `<amp-selector>` ile ilgili özellikler <a name="attributes-on-"></a>
 
 <table>
   <tr>
@@ -133,7 +133,7 @@ Bir öğeye dokunulduğunda veya bir öğe tıklandığında tüm seçimleri tem
       </tr>
     </table>
 
-### `<amp-selector>` seçenekleriyle ilgili özellikler
+### `<amp-selector>` seçenekleriyle ilgili özellikler <a name="attributes-on--options"></a>
 
 <table>
   <tr>
@@ -146,7 +146,7 @@ Bir öğeye dokunulduğunda veya bir öğe tıklandığında tüm seçimleri tem
   </tr>
 </table>
 
-## Etkinlikler
+## Etkinlikler <a name="events"></a>
 
 Etkinlikler, `on` özelliğini kullanan diğer AMP bileşenlerinde işlemleri tetikleyebilir.
 Ör. `on="select: my-tab.show"`
@@ -170,6 +170,6 @@ Etkinlikler, `on` özelliğini kullanan diğer AMP bileşenlerinde işlemleri te
 
     </table>
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-selector kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) bakın.

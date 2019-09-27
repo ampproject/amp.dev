@@ -22,7 +22,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay
+# amp-access-laterpay <a name="amp-access-laterpay"></a>
 
 게시자가 [LaterPay](https://www.laterpay.net) 소액결제 플랫폼과 손쉽게 통합할 수 있습니다. `amp-access-laterpay`는 [AMP 액세스](amp-access.md)를 기반으로 하며 AMP 액세스가 필요합니다.
 
@@ -49,7 +49,7 @@ limitations under the License.
 </table>
 
 
-## 동작
+## 동작 <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net)는 사용자가 클릭 두 번으로 모든 온라인 콘텐츠를 구매하고, 사전 등록, 개인 데이터 또는 결제 없이 즉시 액세스할 수 있는 소액결제 플랫폼입니다. 사용자는 구매 금액이 웹사이트 전체에서 총 5달러 또는 5유로에 도달한 경우에만 금액을 지불합니다. 콘텐츠 제공업체는 개별 상품 또는 고정 요금이나 제한된 시간만큼 콘텐츠에 액세스할 수 있는 시간 패스를 판매할 수 있습니다.
 
@@ -71,7 +71,7 @@ AMP 액세스와 함께 사용하려는 자체 페이월 서비스가 있고 동
 
 또한 이 구성요소는 [액세스 콘텐츠 마크업](amp-access.md#access-content-markup)을 사용해 콘텐츠를 표시하고 숨깁니다.
 
-## 구성
+## 구성 <a name="configuration"></a>
 
 구성은 AMP 액세스와 비슷하지만 승인, 핑백, 로그인 링크가 필요하지 않습니다.
 
@@ -142,7 +142,7 @@ AMP 액세스와 함께 사용하려는 자체 페이월 서비스가 있고 동
         </tr>
       </table>
 
-## 액세스 콘텐츠 마크업 사용 및 구매 목록 표시
+## 액세스 콘텐츠 마크업 사용 및 구매 목록 표시 <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 액세스 콘텐츠 마크업은 AMP 액세스와 동일한 방식으로 사용되어야 합니다.
 
@@ -165,7 +165,7 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
 
 ```
 
-## 스타일 지정
+## 스타일 지정 <a name="styling"></a>
 
 여러 클래스가 생성된 마크업의 일부 요소에 적용됩니다. 클래스가 없는 요소는 CSS 요소 선택기를 통해 명확히 참조될 수 있습니다.
 
@@ -209,7 +209,7 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
 
 ```
 
-## 현지화
+## 현지화 <a name="localization"></a>
 
 구매 옵션의 대화상자에 표시된 텍스트는 게시자가 LaterPay 커넥터 UI에 정의합니다.
 
@@ -270,13 +270,13 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
   </tr>
 </table>
 
-## 애널리틱스
+## 애널리틱스 <a name="analytics"></a>
 
 `amp-access-laterpay`는 `amp-access` 기반이므로 `amp-access`에서 보낸 모든 [애널리틱스 이벤트](amp-access.md#integration-with-amp-analytics)를 지원합니다.
 
 [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/)의 예는 모두 실제 작동 방식에 관한 더 완전한 예를 보려는 경우 이러한 애널리틱스 이벤트를 보내도록 구성되어 있습니다.
 
-## AMP 액세스와 함께 AMP 액세스 LaterPay 사용
+## AMP 액세스와 함께 AMP 액세스 LaterPay 사용 <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 기존 구독 시스템이 있고 개별 기사 판매에만 LaterPay를 사용하려는 경우 AMP 액세스와 AMP 액세스 LaterPay를 함께 사용하여 동일한 페이지에 두 가지 판매 방법을 동시에 사용할 수 있습니다.
 
@@ -335,13 +335,13 @@ LaterPay 및 기존 페이월 통합과 함께 사용하는 경우 필수 구성
 
 [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html)에서 더 완전한 예를 참조하세요.
 
-## 관련 문서
+## 관련 문서 <a name="related-documentation"></a>
 
 * [AMP 액세스](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: 소액결제 작동 원리](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay 커넥터](https://connectormwi.laterpay.net/docs/index.html): AMP 액세스 LaterPay와 비슷하지만 AMP가 아닌 페이지를 위한 것입니다.
 
-## 확인
+## 확인 <a name="validation"></a>
 
 AMP 유효성 검사기 사양의 [amp-access-laterpay 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)을 참조하세요.

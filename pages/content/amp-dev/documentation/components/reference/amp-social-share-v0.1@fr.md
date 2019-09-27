@@ -24,7 +24,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-social-share
+# amp-social-share <a name="amp-social-share"></a>
 
 Ce composant affiche un bouton de partage sur les réseaux sociaux.
 
@@ -47,11 +47,11 @@ Ce composant affiche un bouton de partage sur les réseaux sociaux.
   </tr>
 </table>
 
-## Aperçu
+## Aperçu <a name="overview"></a>
 
 Le composant `amp-social-share` affiche un bouton de partage sur les réseaux sociaux pour différents fournisseurs de plates-formes.
 
-## Exemples
+## Exemples <a name="examples"></a>
 
 **Exemple : Bouton de partage de base sur les réseaux sociaux**
 
@@ -73,7 +73,7 @@ Si vous souhaitez transmettre des paramètres au point de terminaison du partage
 
 LinkedIn fait partie des fournisseurs préconfigurés. Il n'est donc pas nécessaire de spécifier l'attribut `data-share-endpoint`.
 
-## Attributs
+## Attributs <a name="attributes"></a>
 
 <table>
   <tr>
@@ -97,7 +97,7 @@ LinkedIn fait partie des fournisseurs préconfigurés. Il n'est donc pas nécess
         </tr>
       </table>
 
-## Fournisseurs préconfigurés
+## Fournisseurs préconfigurés <a name="pre-configured-providers"></a>
 
 Le composant `amp-social-share` s'accompagne de [quelques fournisseurs préconfigurés](0.1/amp-social-share-config.js) qui connaissent leurs points de terminaison de partage, ainsi que de certains paramètres par défaut.
 
@@ -219,7 +219,7 @@ Le composant `amp-social-share` s'accompagne de [quelques fournisseurs préconfi
     </tr>
   </table>
 
-## Fournisseurs non configurés
+## Fournisseurs non configurés <a name="non-configured-providers"></a>
 
 En plus des fournisseurs préconfigurés, vous pouvez utiliser des fournisseurs non configurés en spécifiant des attributs supplémentaires dans le composant `amp-social-share`.
 
@@ -236,9 +236,9 @@ L'exemple suivant illustre la création d'un bouton de partage via Facebook Mes
 
 Étant donné que ces fournisseurs ne sont pas préconfigurés, vous devez créer les styles et l'image de bouton appropriés.
 
-## Styles
+## Styles <a name="styles"></a>
 
-### Styles par défaut
+### Styles par défaut <a name="default-styles"></a>
 
 Par défaut, le composant `amp-social-share` inclut quelques fournisseurs préconfigurés bien connus. La couleur et le logo officiels de ces fournisseurs sont utilisés pour les boutons. La largeur et la hauteur par défaut sont respectivement de 60 pixels et de 44 pixels.
 
@@ -246,7 +246,7 @@ Par défaut, le composant `amp-social-share` inclut quelques fournisseurs préco
 Rendez-vous sur [AMP Start](https://ampstart.com/components#links-and-sharing) pour obtenir des liens de partage prédéfinis à utiliser dans vos pages AMP.
 [/tip]
 
-### Styles personnalisés
+### Styles personnalisés <a name="custom-styles"></a>
 
 Sachez que vous avez la possibilité de fournir votre propre style. Dans ce cas, il vous suffit d'ignorer les styles fournis comme suit :
 ```css
@@ -256,7 +256,7 @@ amp-social-share[type="twitter"] {
 }
 ```
 
-## Substitution de variables
+## Substitution de variables <a name="variable-substitution"></a>
 
 Vous pouvez utiliser la [substitution de variables AMP globale](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) dans l'élément `<amp-social-share>`. Dans l'exemple ci-dessous, `TITLE` est remplacé par le titre de la page et `CANONICAL_URL` est remplacé par l'URL canonique du document.
 
@@ -266,6 +266,6 @@ Vous pouvez utiliser la [substitution de variables AMP globale](https://github.
 </amp-social-share>
 ```
 
-## Validation
+## Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-social-share](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii) dans les spécifications du validateur AMP.

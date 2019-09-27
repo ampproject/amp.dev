@@ -23,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay
+# amp-access-laterpay <a name="amp-access-laterpay"></a>
 
 Yayıncıların [LaterPay](https://www.laterpay.net) mikro ödeme platformuna kolayca entegre olmasına olanak tanır. `amp-access-laterpay` bileşeni [AMP Access](amp-access.md)'i temel alır ve gerektirir.
 
@@ -50,7 +50,7 @@ Yayıncıların [LaterPay](https://www.laterpay.net) mikro ödeme platformuna ko
 </table>
 
 
-## Davranış
+## Davranış <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net), kullanıcıların herhangi bir dijital içeriği önceden kayıt olmadan, kişisel veri sağlamadan veya ödeme yapmadan, sadece iki tıklama ile satın alıp anında erişim sağlamasına olanak tanıyan bir mikro ödeme platformudur. Kullanıcılar yalnızca web sitelerinden yaptıkları toplam alışveriş 5 $ veya 5 € tutarına ulaştığında ödeme yapar. İçerik sağlayıcılar, tek tek öğeler veya süreli pasolar satıp içeriklerine sabit ücretli ya da süre sınırlamalı erişime olanak tanıyabilirler.
 
@@ -72,7 +72,7 @@ Oluşturulan liste, yayıncının tercihine göre şekillendirilip sunulabilir.
 
 Bu bileşen, içeriği göstermek ve gizlemek için [Access İçerik İşaretlemesi](amp-access.md#access-content-markup) de kullanır.
 
-## Yapılandırma
+## Yapılandırma <a name="configuration"></a>
 
 Yapılandırma, AMP Access'e benzer ancak yetkilendirme, geriye pingleme ve giriş bağlantıları gerektirmez.
 
@@ -144,7 +144,7 @@ Yapılandırma, AMP Access'e benzer ancak yetkilendirme, geriye pingleme ve giri
         </tr>
       </table>
 
-## Access İçerik İşaretlemesi'ni kullanma ve satın alma listesini gösterme
+## Access İçerik İşaretlemesi'ni kullanma ve satın alma listesini gösterme <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 Access İçerik İşaretlemesi, AMP Access ile aynı şekilde kullanılmalıdır.
 
@@ -167,7 +167,7 @@ Varsayılan stili kullanmak istiyorsanız `amp-access-laterpay` sınıfını ekl
 
 ```
 
-## Stil
+## Stil <a name="styling"></a>
 
 Oluşturulan işaretlemedeki bazı öğelere birden çok sınıf uygulanır. Sınıf içermeyen öğelere, CSS öğe seçicileri aracılığıyla açık bir biçimde başvurulabilir.
 
@@ -211,7 +211,7 @@ Bazı temel CSS düzenleri zaten vardır ancak yayıncıların, sayfalarının g
 
 ```
 
-## Yerelleştirme
+## Yerelleştirme <a name="localization"></a>
 
 İletişim kutusunda satın alma seçenekleri için gösterilen metin, LaterPay Connector kullanıcı arayüzünde yayıncı tarafından tanımlanır.
 
@@ -272,13 +272,13 @@ Aşağıdaki mesaj anahtarları çevrilebilir veya özelleştirilebilir ancak or
   </tr>
 </table>
 
-## Analiz
+## Analiz <a name="analytics"></a>
 
 `amp-access` bileşenine dayandığı göz önünde bulundurulduğunda, `amp-access-laterpay`, `amp-access` tarafından gönderilen tüm [analiz etkinliklerini](amp-access.md#integration-with-amp-analytics) destekler.
 
 Uygulamada bunun nasıl görüneceğine dair daha eksiksiz bir örnek görmek isterseniz [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) adresindeki örneklerin tamamı, bu analiz etkinliklerini göndermek üzere yapılandırılmıştır.
 
-## AMP Access LaterPay'i AMP Access ile birlikte kullanma
+## AMP Access LaterPay'i AMP Access ile birlikte kullanma <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 Mevcut bir abonelik sisteminiz varsa ve LaterPay'i yalnızca tek tek ürün satışı için kullanmayı amaçlıyorsanız AMP Access ve AMP Access LaterPay'i birlikte kullanılmasıyla her iki satış yönteminin de aynı sayfada bir arada bulunması mümkündür.
 
@@ -337,13 +337,13 @@ Bunu LaterPay ve mevcut bir ödeme duvarı entegrasyonu ile kullanırken gerekli
 
 Daha eksiksiz bir örneği [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html) adresinde bulabilirsiniz.
 
-## İlgili Dokümanlar
+## İlgili Dokümanlar <a name="related-documentation"></a>
 
 * [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: Mikro Ödemeleri nasıl yapıyoruz?](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - AMP Access LaterPay'e benzer ancak AMP olmayan sayfalar için.
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-access-laterpay kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) bakın.

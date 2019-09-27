@@ -43,7 +43,7 @@ $title: アナリティクス ベンダー
 
 <hr>
 
-## ベンダー
+## ベンダー <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -142,7 +142,7 @@ type 属性の値: `googleadwords`
 
 この値を指定すると、Google AdWords のコンバージョン トラッキングやリマーケティングを利用できるようになります。詳しくは、AdWords ヘルプセンターで[コンバージョン トラッキング](https://support.google.com/adwords/answer/1722054?hl=ja)と[リマーケティング](https://support.google.com/adwords/answer/2453998?hl=ja)についての記事をそれぞれご覧ください。どちらのタグも相互に独立して使用できます。
 
-### Google アナリティクス
+### Google アナリティクス <a name="google-analytics"></a>
 
 type 属性の値: `googleanalytics`
 

@@ -25,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-lightbox
+# amp-lightbox <a name="amp-lightbox"></a>
 
 <table>
   <tr>
@@ -47,7 +47,7 @@ teaser:
 </table>
 
 
-## 동작
+## 동작 <a name="behavior"></a>
 
 `amp-lightbox` 구성요소는 전체 표시 영역 오버레이/모달에 표시되는 하위 요소를 정의합니다. 사용자가 요소(예: 버튼)를 탭하거나 클릭하면 클릭한 요소의 `on` 속성에서 참조하는 `amp-lightbox` ID가 전체 표시 영역을 사용하도록 라이트박스를 트리거하고 `amp-lightbox`의 하위 요소를 표시합니다.
 
@@ -65,7 +65,7 @@ teaser:
 라이트박스에 이미지를 표시하는 데 [`<amp-image-lightbox>`](amp-image-lightbox.md) 구성요소도 사용할 수 있습니다.
 [/tip]
 
-## 속성
+## 속성 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -103,11 +103,11 @@ teaser:
                   </tr>
                 </table>
 
-## 스타일 지정
+## 스타일 지정 <a name="styling"></a>
 
 표준 CSS로 `amp-lightbox`의 스타일을 지정할 수 있습니다.
 
-## 작업
+## 작업 <a name="actions"></a>
 
 `amp-lightbox`에서는 [AMP on-syntax를 사용하여 트리거](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)할 수 있는 다음 작업을 공개합니다.
 
@@ -126,7 +126,7 @@ teaser:
   </tr>
 </table>
 
-## <a id="a4a"></a> AMPHTML 광고에서 `amp-lightbox` 사용
+## <a id="a4a"></a> AMPHTML 광고에서 `amp-lightbox` 사용 <a name="a4a"></a>
 
 [tip type="note"]
 AMPHTML 광고에서 사용할 `amp-lightbox` 구성요소는 [실험적](../../../documentation/guides-and-tutorials/learn/experimental.md)이며 현재 개발 중입니다. AMPHTML 광고에서 `amp-lightbox`를 사용하려면 [`amp-lightbox-a4a-proto` 실험을 사용 설정](http://cdn.ampproject.org/experiments.html)하세요.
@@ -134,7 +134,7 @@ AMPHTML 광고에서 사용할 `amp-lightbox` 구성요소는 [실험적](../../
 
 일반 AMP 문서에서 `amp-lightbox` 사용과 [AMPHTML로 작성된 광고](../../../documentation/guides-and-tutorials/learn/a4a_spec.md)를 사용하는 데는 몇 가지 차이점이 있습니다.
 
-### close-button 필요
+### close-button 필요 <a name="requires-close-button"></a>
 
 AMPHTML 광고의 경우 `close-button` 속성이 필요합니다. 이 속성을 사용하면 라이트박스 상단의 헤더가 렌더링됩니다. 헤더에는 닫기 버튼과 '광고'라는 레이블이 포함되어 있습니다. 이 헤더의 요구사항은 다음과 같습니다.
 
@@ -143,21 +143,21 @@ AMPHTML 광고의 경우 `close-button` 속성이 필요합니다. 이 속성을
 
 `close-button` 속성은 필수이며 AMPHTML 광고에서만 허용됩니다. 일반 AMP 문서에서 `<amp-lightbox>` 콘텐츠의 일부로 필요할 때마다 닫기 버튼을 렌더링할 수 있습니다.
 
-### 스크롤 가능한 라이트박스는 허용되지 않음
+### 스크롤 가능한 라이트박스는 허용되지 않음 <a name="scrollable-lightboxes-are-disallowed"></a>
 
 AMPHTML 광고의 경우 스크롤이 가능한 라이트박스는 허용되지 않습니다.
 
-### 투명 배경
+### 투명 배경 <a name="transparent-background"></a>
 
 AMPHTML 광고에서 `<amp-lightbox>`를 사용하면 라이트박스가 확장되기 전에 AMP 런타임에서 광고 소재 콘텐츠의 크기를 조정하고 재정렬하기 때문에 `<body>` 요소의 배경이 투명하게 됩니다. 이 작업은 라이트박스가 열린 상태에서 광고 소재의 시각적 '점프'를 방지하기 위해 시행됩니다. 광고 소재에 배경이 필요하면 `<body>`가 아닌 중간 컨테이너(예: 전체 크기 `<div>`)에서 설정하세요.
 
 AMPHTML 광고가 제3자 환경에서 실행 중인 경우(예: 비AMP 문서) 광고 소재는 표시 영역에서 상대적으로 중앙에 배치된 다음 확장됩니다. 제3자 iframe에서는 비동기적인 프레임 크기 조정과 같은 기능을 사용 설정하는 데 postMessage API를 사용해야 하므로, 광고 소재를 먼저 중앙에 두면 시각적 점프 없이 원활하게 전환할 수 있습니다.
 
-### 라이트박스에서 AMPHTML 광고 전환 예
+### 라이트박스에서 AMPHTML 광고 전환 예 <a name="examples-of-transitions-in-lightbox-for-amphtml-ads"></a>
 
 아래 예는 전환을 통해 호환 iframe에서 AMPHTML 광고의 라이트박스 요소에 `animate-in="fly-in-bottom"` 속성이 설정된 AMPHTML 광고와 제3자 iframe의 AMPHTML 광고를 찾는 방법을 설명합니다.
 
-##### 호환 iframe(예: AMP 캐시에서 가져옴)
+##### 호환 iframe(예: AMP 캐시에서 가져옴) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
 <amp-img alt="호환 iframe의 라이트박스 광고" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
@@ -165,7 +165,7 @@ AMPHTML 광고가 제3자 환경에서 실행 중인 경우(예: 비AMP 문서) 
     </noscript>
   </amp-img>
 
-##### 제3자 iframe(예: AMP 캐시 외부에서 가져옴)
+##### 제3자 iframe(예: AMP 캐시 외부에서 가져옴) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
 <amp-img alt="제3자 iframe의 라이트박스 광고" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
@@ -173,6 +173,6 @@ AMPHTML 광고가 제3자 환경에서 실행 중인 경우(예: 비AMP 문서) 
     </noscript>
   </amp-img>
 
-## 유효성 검사
+## 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사기 사양에서 [amp-lightbox 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii)을 참조하세요.

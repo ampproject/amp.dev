@@ -23,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay
+# amp-access-laterpay <a name="amp-access-laterpay"></a>
 
 Ce composant permet aux éditeurs de s'intégrer facilement à la plate-forme de micropaiement [LaterPay](https://www.laterpay.net). `amp-access-laterpay` est basé sur [AMP Access](amp-access.md) et requiert cette extension.
 
@@ -50,7 +50,7 @@ Ce composant permet aux éditeurs de s'intégrer facilement à la plate-forme de
 </table>
 
 
-## Comportement
+## Comportement <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net) est une plate-forme de micropaiement qui permet aux utilisateurs d'acheter du contenu en ligne en seulement deux clics, puis d'y accéder immédiatement, sans inscription initiale, sans fournir de données à caractère personnel et sans effectuer de paiement. Les utilisateurs paient uniquement lorsque le montant de leurs achats atteint un total de 5 $ ou 5 € sur l'ensemble des sites Web. Les fournisseurs de contenu peuvent vendre des articles individuels ou des forfaits au temps, ce qui permet un accès forfaitaire au contenu ou un accès limité dans le temps.
 
@@ -72,7 +72,7 @@ La liste générée peut être mise en forme et présentée selon les préféren
 
 Ce composant utilise également le [balisage de contenu accessible](amp-access.md#access-content-markup) pour afficher et masquer le contenu.
 
-## Configuration
+## Configuration <a name="configuration"></a>
 
 La configuration est semblable à celle d'AMP Access, si ce n'est qu'aucune autorisation, aucun pingback et aucun lien de connexion ne sont nécessaires.
 
@@ -144,7 +144,7 @@ Les valeurs suivantes peuvent être définies dans l'objet de configuration `lat
         </tr>
       </table>
 
-## Utiliser le balisage du contenu accessible et afficher la liste d'achats
+## Utiliser le balisage du contenu accessible et afficher la liste d'achats <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 Vous devez utiliser le balisage du contenu accessible de la même manière qu'avec AMP Access.
 
@@ -167,7 +167,7 @@ Veillez à ajouter la classe `amp-access-laterpay` si vous souhaitez utiliser le
 
 ```
 
-## Application d'un style
+## Application d'un style <a name="styling"></a>
 
 Plusieurs classes sont appliquées à certains éléments du balisage généré. Les éléments ne comportant aucune classe peuvent être référencés sans équivoque au moyen de sélecteurs d'éléments CSS.
 
@@ -211,7 +211,7 @@ La structure créée pour la boîte de dialogue se présente comme suit :
 
 ```
 
-## Localisation
+## Localisation <a name="localization"></a>
 
 Le texte affiché pour les options d'achat dans la boîte de dialogue est défini par l'éditeur dans l'interface utilisateur de LaterPay Connector.
 
@@ -272,13 +272,13 @@ Les clés de message suivantes peuvent être traduites ou personnalisées. Sache
   </tr>
 </table>
 
-## Analyse
+## Analyse <a name="analytics"></a>
 
 Le composant `amp-access-laterpay` est basé sur `amp-access`. Il accepte donc tous les [événements d'analyse](amp-access.md#integration-with-amp-analytics) envoyés par `amp-access`.
 
 Tous les exemples disponibles à l'adresse [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) sont configurés de manière à envoyer ces événements d'analyse, afin que vous disposiez d'un exemple d'utilisation pratique plus complet.
 
-## Utiliser AMP Access LaterPay avec AMP Access
+## Utiliser AMP Access LaterPay avec AMP Access <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 Si un système d'abonnement est déjà actif et que vous souhaitez utiliser LaterPay uniquement pour certaines ventes d'articles, vous pouvez faire en sorte que les deux méthodes de vente coexistent sur la même page en utilisant conjointement AMP Access et AMP Access LaterPay.
 
@@ -337,13 +337,13 @@ Par contre, le balisage d'accès au contenu peut se présenter comme suit :
 
 Pour un exemple plus complet, rendez-vous à l'adresse suivante : [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html).
 
-## Documentation associée
+## Documentation associée <a name="related-documentation"></a>
 
 * [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: How we do MicroPayments](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) (semblable à AMP Access LaterPay, mais pour les pages non AMP).
 
-## Validation
+## Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) dans les spécifications du validateur AMP.

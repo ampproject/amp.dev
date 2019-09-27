@@ -24,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+# amp-accordion <a name="amp-accordion"></a>
 
 Позволяет зрителям знакомиться с контентом и переходить к нужному разделу. Это удобно на мобильных устройствах, где зачастую даже для просмотра нескольких предложений из раздела требуется прокрутка.
 
@@ -44,7 +44,7 @@ limitations under the License.
 </table>
 
 
-## Принципы работы
+## Принципы работы <a name="behavior"></a>
 
 Компонент `amp-accordion` позволяет показывать сворачиваемые и разворачиваемые разделы с контентом. Каждый непосредственный дочерний элемент компонента `amp-accordion` представляет собой раздел аккордеона. Каждый из этих узлов должен быть тегом `<section>`.
 
@@ -55,7 +55,7 @@ limitations under the License.
 * При нажатии на заголовок разворачивается или сворачивается раздел.
 * Если какой-либо раздел, относящийся к элементу `amp-accordion`, свернут или развернут, он останется таким же на уровне сеанса. Чтобы состояние раздела не сохранялось, к компоненту `amp-accordion` нужно добавить атрибут `disable-session-states`.
 
-#### Пример: показ компонента accordion
+#### Пример: показ компонента accordion <a name="example-displaying-an-accordion"></a>
 
 В приведенном ниже примере показаны три раздела, последний из которых разворачивается при загрузке страницы.  Чтобы отключить сохранение состояния разделов, установлен атрибут `disable-session-states`.
 
@@ -86,7 +86,7 @@ limitations under the License.
 
 [/tip]
 
-### События
+### События <a name="events"></a>
 
 Перечисленные ниже события будут активироваться в элементах `section`, относящихся к `аккордеону`.
 
@@ -101,7 +101,7 @@ limitations under the License.
   </tr>
 </table>
 
-### Действия
+### Действия <a name="actions"></a>
 
 <table>
   <tr>
@@ -122,7 +122,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### Атрибуты
+#### Атрибуты <a name="attributes"></a>
 
 <table>
   <tr>
@@ -143,7 +143,7 @@ limitations under the License.
   </tr>
 </table>
 
-## Поддержка стилей
+## Поддержка стилей <a name="styling"></a>
 
 * Настраивать стиль элемента `amp-accordion` можно с помощью селектора этого элемента.
 * Для элементов `amp-accordion` всегда устанавливается объект `display: block`.
@@ -153,6 +153,6 @@ limitations under the License.
 * Для полей элементов `<amp-accordion>`, `<section>`, заголовка и контента задано значение 0. В специальных стилях это значение можно переопределить.
 * Для элементов заголовка и контента установлен объект `position: relative`.
 
-## Валидация
+## Валидация <a name="validation"></a>
 
 О правилах для amp-accordion читайте в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii).

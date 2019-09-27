@@ -8,15 +8,15 @@ El diseño web responsivo consiste en crear páginas web fluidas que responden a
 
 En esta guía, le mostraremos cómo puede implementar fácilmente estos fundamentos de responsivos en AMP:
 
-- [Controlando el viewport](#controlando-el-viewport)
-- [Creando el layout responsivo](#creando-el-layout-responsivo)
-- [Medios de escala](#medios-de-escala-para-la-página)
+- [Controlando el viewport](#controlling-the-viewport)
+- [Creando el layout responsivo](#creating-a-responsive-layout)
+- [Medios de escala](#scaling-media-for-the-page)
 
-## Controlando el viewport
+## Controlando el viewport <a name="controlling-the-viewport"></a>
 
 Para optimizar su página web para que el contenido sea escalable y se ajuste a la ventana del navegador para cualquier dispositivo, debe especificar un `viewport` (elemento de vista gráfica) `meta`. El elemento viewport indica al navegador cómo escalar y dimensionar el área visible (viewport) de la página web.
 
-Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md#required-markup) para páginas AMP, se debe especificar el  siguiente viewport:
+Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) para páginas AMP, se debe especificar el  siguiente viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -24,9 +24,9 @@ Pero, ¿qué valores debe utilizar? Pues bien, aparte del [marcado requerido](..
 
 Éstas son las configuraciones típicas del viewport que utilizarías para un sitio responsivo. Aunque `initial-scale = 1` no es necesario para una página AMP válida, se recomienda porque establece el nivel de zoom en 1 cuando se cargue la página por primera vez.
 
-## Creando el layout responsivo
+## Creando el layout responsivo <a name="creating-a-responsive-layout"></a>
 
-En el diseño responsivo, puede utilizar CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) para adaptar el estilo de su página web para la variedad de la pantalla dimensiones sin tener que alterar el contenido de la página. En AMP, puede seguir utilizando las mismas consultas CSS `@media`. Además, para un control más preciso sobre un elemento AMP, se puede especificar el atributo `media` en el elemento. Esto es particularmente útil cuando se necesita para mostrar u ocultar un elemento en base a una consulta de medios. Ver la sección [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-artística-de-una-imagen) para un ejemplo que utiliza el atributo `media`.
+En el diseño responsivo, puede utilizar CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) para adaptar el estilo de su página web para la variedad de la pantalla dimensiones sin tener que alterar el contenido de la página. En AMP, puede seguir utilizando las mismas consultas CSS `@media`. Además, para un control más preciso sobre un elemento AMP, se puede especificar el atributo `media` en el elemento. Esto es particularmente útil cuando se necesita para mostrar u ocultar un elemento en base a una consulta de medios. Ver la sección [Cambiando la dirección de arte de una imagen](#changing-the-art-direction-of-an-image) para un ejemplo que utiliza el atributo `media`.
 
 Haciendo que cada elemento de cambio de tamaño para adaptarse a una pantalla puede ser complicado <sup><a href="#fn1" id="ref1">*</a></sup>. Sin embargo, en AMP, usted puede hacer fácilmente un elemento responsivo con sólo especificar el atributo `"layout=responsive"` junto a los atributos `width` y `height`. Cuando se aplica el layout `responsive` a un elemento, ese elemento cambiará de tamaño automáticamente a la anchura de su elemento contenedor, y la altura cambiará en función de la relación de aspecto especificada por `width` y `height` característica del elemento. Casi todos los elementos de AMP apoyan un layout `responsive`; consulte la documentación de referencia del elemento para ver qué diseños son compatibles.
 
@@ -58,14 +58,14 @@ Sin embargo, si no queremos que la imagen se vaya más allá de su tamaño, conf
 </style>
 ```
 
-Leer más: Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](control_layout.md#el-atributo-layout).
+Leer más: Para aprender más sobre los diferentes layouts en AMP, leer la guía [Layout & consultas de medios](control_layout.md#the-layout-attribute).
 
  <a id="fn1"></a>
 [tip type="note"]
 ***¿Por qué es complicado hacer que los elementos cambien de tamaño para que se ajusten a la pantalla cuando puedo hacer esto fácilmente con el estilo `"width=100%"`?** La parte difícil es tener elementos responsivos en la página sin afectar negativamente las métricas de rendimiento o la experiencia del usuario. Sí, puede obtener fácilmente imágenes para que se ajusten a la pantalla con `"width=100%"`, pero hay golpes al  rendimiento. El navegador debe descargar primero la imagen para obtener las dimensiones de la imagen, luego redimensionar la imagen apropiadamente para el tamaño de la pantalla y, finalmente, refluir y volver a cargar la página. En AMP, la ruta de renderizado se optimiza de modo que primero se presenta la página, dejando de lado los marcadores de posición de las imágenes basadas en las dimensiones proporcionadas en [`amp-img`](../../../../documentation/components/reference/amp-img.md) (usando esos números para establecer la relación de aspecto), los recursos se descargan y Página está pintada. No se requiere reflujo.
 [/tip]
 
-## Medios de escala para la página
+## Medios de escala para la página <a name="scaling-media-for-the-page"></a>
 
 Probablemente el aspecto más desafiante del diseño responsivo es mostrar correctamente los medios en la página para que responda a las características de la pantalla. En esta sección, veremos cómo puede integrar videos e imágenes responsivas en las páginas de AMP.
 
@@ -89,15 +89,15 @@ En el próximo ejemplo, queremos mostrar un video insertado desde YouTube que re
 
 Hay más tipos de videos que tú puedes agregar a tus páginas AMP. Para más detalles, mira la lista de [media components](../../../../documentation/components/index.html) -en inglés.
 
-### Mostrando imágenes responsivas
+### Mostrando imágenes responsivas <a name="displaying-responsive-images"></a>
 
 Las imágenes forman una gran parte de una página web (aproximadamente el [65% de los bytes de la página](http://httparchive.org/interesting.php#bytesperpage)). Como mínimo, las imágenes deben ser visibles en varios tamaños de pantalla y orientaciones (es decir, el usuario no tiene que desplazarse, pellizcar o ampliar para ver toda la imagen). Esto se hace fácilmente en AMP a través del atributo `"layout=responsive"` (ver [Incluir imágenes en AMP](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)). Además de la imagen básica responsiva, es posible que desee publicar varios recursos de imágenes para:
 
-- [Mostrando imágenes nítidas para la resolución correcta](#mostrando-imágenes-nítidas-para-la-resolución-correcta)
-- [Cambiando la dirección de arte de una imagen](#cambiando-la-dirección-artística-de-una-imagen)
-- [Proporcionar formatos de imagen optimizados](#proporcionar-imágenes-optimizadas)
+- [Mostrando imágenes nítidas para la resolución correcta](#serving-crisp-images-for-the-right-resolution)
+- [Cambiando la dirección de arte de una imagen](#changing-the-art-direction-of-an-image)
+- [Proporcionar formatos de imagen optimizados](#providing-optimized-images)
 
-#### Mostrando imágenes nítidas para la resolución correcta
+#### Mostrando imágenes nítidas para la resolución correcta <a name="serving-crisp-images-for-the-right-resolution"></a>
 
 Para pantallas de alta resolución (por ejemplo, pantalla Retina), debe proporcionar imágenes que parezcan claras y nítidas; sin embargo, no desea utilizar esa misma imagen en dispositivos de baja resolución porque esto causará un tiempo de carga extra innecesario. En páginas no AMP y AMP, puede servir la imagen correcta para la densidad de píxeles de la pantalla utilizando `srcset` con el descriptor de anchura (`w`).
 
@@ -123,7 +123,7 @@ En el siguiente ejemplo tenemos varias imágenes que tienen el mismo radio de as
             {{server_for_email}}/static/inline-examples/images/apple-600.jpg 600w,
             {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
             {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
-  sizes="(max-width: 400px) 100vw, 
+  sizes="(max-width: 400px) 100vw,
             (max-width: 900px) 75vw, 600px">
 </amp-img>
 ```
@@ -133,7 +133,7 @@ Por ejemplo, digamos que tenemos un dispositivo que tiene un ancho de ventana de
 
 Leer más: Para aprender más sobre el `srcset` y `sizes` en AMP, see the [Imágenes adaptativas con srcset, sizes & heights](art_direction.md) guide.
 
-#### Cambiando la dirección artística de una imagen
+#### Cambiando la dirección artística de una imagen <a name="changing-the-art-direction-of-an-image"></a>
 
 La dirección artística se refiere a la adaptación de las características visuales de una imagen para determinados puntos de interrupción. Por ejemplo, en lugar de simplemente escalar una imagen a medida que se reduce la pantalla, es posible que desee publicar una versión recortada de la imagen que restringe el enfoque de la imagen o puede que desee publicar imágenes completamente diferentes en los diferentes puntos de interrupción. En HTML, puede lograr esto usando el elemento `picture`. En AMP, la dirección artística se puede lograr utilizando el atributo `media`.
 
@@ -169,7 +169,7 @@ Nota: Como quisiéramos que las imágenes fueran tamaños fijos (es decir, no se
 
 Leer más: Para aprender más sobre la dirección artística en AMP, lee la guía [Imágenes adaptativas con srcset, sizes & heights](art_direction.md).
 
-#### Proporcionar imágenes optimizadas
+#### Proporcionar imágenes optimizadas <a name="providing-optimized-images"></a>
 
 La entrega de páginas de carga rápida requiere imágenes optimizadas: en tamaño, calidad y formato. Siempre reduzca el tamaño de archivo al nivel de calidad aceptable más bajo. Hay varias herramientas que puede utilizar para "crunch" imágenes (por ejemplo, [ImageAlph](http://pngmini.com/lossypng.html) o [TinyPNG](https://tinypng.com/)). En términos de formatos de imagen, algunos formatos de imagen proporcionan mejores capacidades de compresión que otros (por ejemplo, WebP y JPEG XR vs JPEG). Deberá proporcionar la imagen más optimizada para su usuario, así como garantizar que la imagen sea compatible con el navegador del usuario (es decir, [no todos los navegadores admiten todos los formatos de imagen](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)).
 

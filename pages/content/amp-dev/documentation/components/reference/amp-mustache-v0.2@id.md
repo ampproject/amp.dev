@@ -26,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-mustache
+# amp-mustache <a name="amp-mustache"></a>
 
 Memungkinkan rendering [Mustache.js](https://github.com/janl/mustache.js/).
 
@@ -47,14 +47,14 @@ Memungkinkan rendering [Mustache.js](https://github.com/janl/mustache.js/).
 
 
 
-## Catatan versi
+## Catatan versi <a name="version-notes"></a>
 
 | Versi | Deskripsi |
 |-------|-----|
 | 0.2 | Dukungan untuk elemen `svg` dan ukuran paket yang lebih kecil (12,2 KB vs 20,5 KB, kompresi gzip).<br><br>Bermigrasi ke library sanitizer HTML yang lebih modern (dari Caja ke DOMPurify). Ada potensi terjadinya perubahan yang dapat menyebabkan gangguan minor akibat perbedaan persetujuan atribut dan tag. Sebaiknya uji halaman Anda terlebih dahulu sebelum mengirim ke produksi untuk memastikan perubahan pada markup yang dihasilkan tidak memengaruhi fungsionalitas. |
 | 0.1 | Implementasi awal. |
 
-## Sintaks
+## Sintaks <a name="syntax"></a>
 
 Mustache adalah sintaks template tanpa logika. Lihat [dokumen Mustache.js](https://github.com/janl/mustache.js/) untuk penjelasan selengkapnya. Sebagian tag Mustache inti:
 
@@ -63,7 +63,7 @@ Mustache adalah sintaks template tanpa logika. Lihat [dokumen Mustache.js](https
 * {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: Tag terbalik. Dapat menguji ketidakberadaan suatu variabel.
 * {% raw %}`{{{unescaped}}}`{% endraw %}: HTML yang tidak di-escape. Dibatasi dalam markup yang dapat di-output (lihat "Pembatasan" di bawah).
 
-## Penggunaan
+## Penggunaan <a name="usage"></a>
 
 Template `amp-mustache` harus ditentukan dan digunakan sesuai dengan [Spesifikasi Template AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
@@ -97,9 +97,9 @@ Gunakan tag `template` jika memungkinkan, karena validasi AMP memberikan petunju
 
 Bagaimana template ditemukan, kapan template dirender, dan bagaimana data disediakan, semuanya ditentukan oleh elemen AMP target yang menggunakan template ini untuk merender kontennya (misalnya, dalam [amp-list](amp-list.md), [amp-form](amp-form.md), dll.).
 
-## Batasan
+## Batasan <a name="restrictions"></a>
 
-### Validasi
+### Validasi <a name="validation"></a>
 
 Seperti semua template AMP, template `amp-mustache` harus berupa fragmen DOM dengan format yang tepat. Hal ini berarti, antara lain, Anda tidak dapat menggunakan `amp-mustache` untuk:
 
@@ -108,13 +108,13 @@ Seperti semua template AMP, template `amp-mustache` harus berupa fragmen DOM den
 
 Output "triple-mustache" disanitasi untuk hanya mengizinkan tag berikut: `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u`, `ul`.
 
-### Sanitasi
+### Sanitasi <a name="sanitization"></a>
 
 Output Mustache disanitasi karena alasan keamanan dan guna menjaga validitas AMP. Akibat proses ini, elemen dan atribut tertentu dapat terhapus tanpa diketahui.
 
-## Tantangan
+## Tantangan <a name="pitfalls"></a>
 
-### Template bertingkat
+### Template bertingkat <a name="nested-templates"></a>
 
 Sesuai Validasi AMP, elemen `<template>` tidak boleh berupa turunan dari elemen `<template>` lain. Hal ini dapat terjadi saat dua komponen yang menggunakan template disusun bertingkat, misalnya `amp-list` dan `amp-form`.
 
@@ -141,7 +141,7 @@ Dapat juga ditampilkan sebagai:
 {% endraw %}[/sourcecode]
 
 
-### Tabel
+### Tabel <a name="tables"></a>
 
 Karena string template AMP harus ditetapkan dalam elemen `<template>`, perilaku yang tidak diharapkan mungkin terjadi akibat penguraian oleh browser. Misalnya, elemen `<table>` dapat menyebabkan [foster parenting](https://www.w3.org/TR/html5/syntax.html#unexpected-markup-in-tables) teks. Dalam contoh berikut:
 
@@ -181,7 +181,7 @@ Solusinya meliputi penggabungan bagian Mustache dalam komentar HTML (misalnya  {
 {% endraw %}[/sourcecode]
 
 
-### Penghilangan tanda kutip
+### Penghilangan tanda kutip <a name="quote-escaping"></a>
 
 Saat menggunakan `amp-mustache` untuk menghitung nilai atribut, penghilangan tanda kutip dapat menjadi masalah. Contoh:
 
@@ -199,7 +199,7 @@ Penggunaan kode karakter HTML dalam variabel {% raw %}`{{foo}}`{% endraw %} atau
 
 Ada [usulan terbuka](https://github.com/ampproject/amphtml/issues/8395) untuk melakukan penggantian ini pada `amp-mustache` saja. Berikan komentar Anda tentang masalah ini jika ingin memberikan dukungan.
 
-### Entity HTML
+### Entity HTML <a name="html-entities"></a>
 
 Entity HTML tidak dipertahankan dalam elemen `<template>`.
 
@@ -207,6 +207,6 @@ Hal ini dapat menjadi masalah jika Anda ingin merender sistem server `<template>
 
 Solusinya meliputi mengganti string seperti {% raw %}`{{`{% endraw %} dengan karakter lain atau menghapusnya langsung dari konten buatan pengguna.
 
-## Validasi
+## Validasi <a name="validation-1"></a>
 
 Lihat [aturan amp-mustache](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii) dalam spesifikasi validator AMP.

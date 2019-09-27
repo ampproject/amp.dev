@@ -26,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video
+# amp-video <a name="amp-video"></a>
 
 替代 HTML5 `video` 标记；仅用于直接嵌入 HTML5 视频文件。
 
@@ -47,7 +47,7 @@ teaser:
     </tr>
   </table>
 
-## 行为
+## 行为 <a name="behavior"></a>
 
 `amp-video` 组件将按照运行时确定的时间延迟加载通过其 `src` 属性指定的视频资源。您可以大体上按照控制标准 HTML5 `<video>` 标记的方式控制 `amp-video` 组件。
 
@@ -58,7 +58,7 @@ teaser:
 * 视频播放前使用的占位符
 * 回调（如果浏览器不支持 HTML5 视频）：一个或零个直接子节点可以具有 `fallback` 属性。如果存在此节点，则在用户的浏览器不支持 HTML5 视频时，则显示此节点及其子级的内容。
 
-#### 示例
+#### 示例 <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
 ```html
@@ -78,11 +78,11 @@ teaser:
 ```
 [/example]
 
-## 分析
+## 分析 <a name="analytics"></a>
 
 `amp-video` 自动支持分析功能。如需了解更多信息，请参阅[视频分析](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)。
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -141,7 +141,7 @@ teaser:
       </tr>
     </table>
 
-## Media Session API 属性
+## Media Session API 属性 <a name="media-session-api-attributes"></a>
 
 `amp-video` 组件可实现 [Media Session API](https://developers.google.com/web/updates/2017/02/media-session)，以便开发者指定关于视频文件的更多信息。关于视频的其他信息将显示在用户设备的通知中心内（该中心内还会显示播放/暂停控件）。
 
@@ -178,12 +178,12 @@ teaser:
 </amp-video>
 ```
 
-## 点击播放叠加层
+## 点击播放叠加层 <a name="click-to-play-overlay"></a>
 
 网站上的视频播放器提供点击播放叠加层是一种常见的用户体验功能。例如，您可以显示自定义播放图标供用户点击，也可以添加视频标题、不同尺寸的海报图片，等等。由于 `amp-video` 组件支持标准的 `play` AMP 操作，因此您可以轻松实现点击播放。
 
 如需查看详细示例，请访问 AMP By Example 的 [amp-video 的点击播放叠加层](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/)。
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-video 规则](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。

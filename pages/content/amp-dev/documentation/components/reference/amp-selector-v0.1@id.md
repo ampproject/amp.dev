@@ -25,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-selector
+# amp-selector <a name="amp-selector"></a>
 
 Mewakili kontrol yang menampilkan menu opsi dan memungkinkan pengguna memilih dari menu tersebut.
 
@@ -45,7 +45,7 @@ Mewakili kontrol yang menampilkan menu opsi dan memungkinkan pengguna memilih da
 </table>
 
 
-## Perilaku
+## Perilaku <a name="behavior"></a>
 
 AMP selector adalah kontrol yang menampilkan daftar opsi dan memungkinkan pengguna memilih satu atau beberapa opsi. Isi opsi tidak terbatas pada teks.
 
@@ -95,7 +95,7 @@ Contoh:
 </amp-selector>
 ```
 
-## Menghapus pilihan
+## Menghapus pilihan <a name="clearing-selections"></a>
 
 Untuk menghapus semua pilihan saat sebuah elemen di-tap atau diklik, tetapkan atribut tindakan [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) pada elemen tersebut, dan tentukan `id` AMP Selector dengan metode tindakan `clear`.
 
@@ -114,9 +114,9 @@ Contoh:
 Lihat demo langsung di [AMP By Example](https://ampbyexample.com/components/amp-selector/)
 [/tip]
 
-## Atribut
+## Atribut <a name="attributes"></a>
 
-### Atribut pada `<amp-selector>`
+### Atribut pada `<amp-selector>` <a name="attributes-on-"></a>
 
 <table>
   <tr>
@@ -133,7 +133,7 @@ Lihat demo langsung di [AMP By Example](https://ampbyexample.com/components/amp-
   </tr>
     </table>
 
-### Atribut pada opsi `<amp-selector>`
+### Atribut pada opsi `<amp-selector>` <a name="attributes-on--options"></a>
 
 <table>
   <tr>
@@ -146,7 +146,7 @@ Lihat demo langsung di [AMP By Example](https://ampbyexample.com/components/amp-
   </tr>
 </table>
 
-## Peristiwa
+## Peristiwa <a name="events"></a>
 
 Peristiwa dapat memicu tindakan pada komponen AMP lain yang menggunakan atribut `on`.
 Misalnya `on="select: my-tab.show"`
@@ -170,6 +170,6 @@ Baca lebih lanjut tentang [Tindakan dan Peristiwa AMP](../../../documentation/gu
 
   </table>
 
-## Validasi
+## Validasi <a name="validation"></a>
 
 Lihat [aturan amp-selector](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) dalam spesifikasi validator AMP.

@@ -25,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-selector
+# amp-selector <a name="amp-selector"></a>
 
 Элемент управления, который представляет пользователю меню с вариантами для выбора.
 
@@ -45,7 +45,7 @@ teaser:
 </table>
 
 
-## Поведение
+## Поведение <a name="behavior"></a>
 
 Селектор AMP – это элемент управления, который представляет список вариантов, предоставляемых на выбор пользователю; содержание этих вариантов не ограничивается текстом.
 
@@ -95,7 +95,7 @@ teaser:
 </amp-selector>
 ```
 
-## Отмена выделения
+## Отмена выделения <a name="clearing-selections"></a>
 
 Чтобы отменить все выделения при нажатии на элемент, используйте атрибут действия [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) в элементе и укажите идентификатор `id` селектора AMP с методом `clear`.
 
@@ -113,9 +113,9 @@ teaser:
 [tip type="success"] [AMP By Example](https://ampbyexample.com/components/amp-selector/).
 [/tip]
 
-## Атрибуты
+## Атрибуты <a name="attributes"></a>
 
-### Атрибуты элемента `<amp-selector>`
+### Атрибуты элемента `<amp-selector>` <a name="attributes-on-"></a>
 
 <table>
   <tr>
@@ -132,7 +132,7 @@ teaser:
       </tr>
     </table>
 
-### Атрибуты вариантов элемента `<amp-selector>`
+### Атрибуты вариантов элемента `<amp-selector>` <a name="attributes-on--options"></a>
 
 <table>
   <tr>
@@ -145,7 +145,7 @@ teaser:
   </tr>
 </table>
 
-## События
+## События <a name="events"></a>
 
 События могут активировать действия для компонентов AMP с помощью атрибута `on`,
 например `on="select: my-tab.show"`.
@@ -169,6 +169,6 @@ teaser:
 
     </table>
 
-## Валидация
+## Валидация <a name="validation"></a>
 
 С правилами для компонента amp-selector можно ознакомиться в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii).

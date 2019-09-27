@@ -25,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+# amp-accordion <a name="amp-accordion"></a>
 
 Oferece aos usuários uma visualização rápida do conteúdo e permite pular para qualquer seção. Isso é útil para dispositivos móveis, em que é preciso rolar para ver até mesmo algumas frases.
 
@@ -45,7 +45,7 @@ Oferece aos usuários uma visualização rápida do conteúdo e permite pular pa
 </table>
 
 
-## Comportamento
+## Comportamento <a name="behavior"></a>
 
 O componente `amp-accordion` permite exibir seções de conteúdo que podem ser recolhidas e expandidas. Cada um dos filhos imediatos do componente `amp-accordion` é considerado uma seção do accordion. Cada um desses nós precisa ser uma tag `<section>`.
 
@@ -56,7 +56,7 @@ O componente `amp-accordion` permite exibir seções de conteúdo que podem ser 
 * Ao clicar ou tocar no título de uma seção, ela se expande ou recolhe.
 * O estado recolhido/expandido de cada seção do elemento `amp-accordion` será preservado em cada nível. Para desativar a preservação desse estado, adicione o atributo `disable-session-states` ao elemento `amp-accordion`.
 
-#### Exemplo: exibição de um accordion
+#### Exemplo: exibição de um accordion <a name="example-displaying-an-accordion"></a>
 
 Neste exemplo, exibimos três seções, sendo que a terceira é expandida no carregamento da página.  Além disso, desativamos a preservação do estado recolhido/expandido definindo `disable-session-states`.
 
@@ -86,7 +86,7 @@ Para ver mais demonstrações do `amp-accordion`, visite o site [AMP By Exampl
 [/tip]
 
 
-### Eventos
+### Eventos <a name="events"></a>
 
 Os eventos abaixo serão acionados nas `section`s do `accordion`.
 
@@ -101,7 +101,7 @@ Os eventos abaixo serão acionados nas `section`s do `accordion`.
   </tr>
 </table>
 
-### Ações
+### Ações <a name="actions"></a>
 
 <table>
   <tr>
@@ -122,7 +122,7 @@ Os eventos abaixo serão acionados nas `section`s do `accordion`.
   </tr>
 </table>
 
-#### Atributos
+#### Atributos <a name="attributes"></a>
 
 <table>
   <tr>
@@ -143,7 +143,7 @@ Os eventos abaixo serão acionados nas `section`s do `accordion`.
   </tr>
 </table>
 
-## Estilo
+## Estilo <a name="styling"></a>
 
 * Você pode usar o seletor de elemento do `amp-accordion` para estilizá-lo à vontade.
 * Os elementos `amp-accordion` são sempre `display: block`.
@@ -153,6 +153,6 @@ Os eventos abaixo serão acionados nas `section`s do `accordion`.
 * As margens dos elementos `<amp-accordion>`, `<section>`, de cabeçalho e conteúdo são definidas como 0 e podem ser modificadas em estilos personalizados.
 * Os elementos de cabeçalho e conteúdo são `position:relative`.
 
-## Validação
+## Validação <a name="validation"></a>
 
 Consulte as [regras do amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) (em inglês) nas especificações do validador de AMP.

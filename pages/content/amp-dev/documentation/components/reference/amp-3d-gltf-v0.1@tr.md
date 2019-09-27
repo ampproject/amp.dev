@@ -22,7 +22,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-3d-gltf
+# amp-3d-gltf <a name="amp-3d-gltf"></a>
 
 GL İletim Biçimi (gITF) 3D modellerini görüntüler.
 
@@ -41,13 +41,13 @@ GL İletim Biçimi (gITF) 3D modellerini görüntüler.
   </tr>
 </table>
 
-## Kullanım
+## Kullanım <a name="usage"></a>
 
 `amp-3d-gltf` bileşeni, gITF biçimindeki 3D modelleri görüntüler.
 
 **Not**: Bu modelleri görüntülemek için WebGL özellikli bir tarayıcı gerekir.
 
-### Örnek
+### Örnek <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -59,7 +59,7 @@ GL İletim Biçimi (gITF) 3D modellerini görüntüler.
     src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### Sınırlamalar
+### Sınırlamalar <a name="limitations"></a>
 
 Şu anda yalnızca glTF 2.0 ile çalışmaktadır.
 
@@ -68,11 +68,11 @@ Desteklenmeyen özellikler:
 - yerleşik kameralar
 - animasyon
 
-### CORS
+### CORS <a name="cors"></a>
 
 `amp-3d-gltf`, kaynak `https://<random>.ampproject.net` adresinden bir `getirme` isteğinde bulunur. Bu nedenle, `src` olarak belirtilen uç noktanın yanıt üstbilgisinde `access-control-allow-origin: *.ampproject.net` değeri ayarlanmalıdır. Kaynakta joker karakter için rastgele bir alt alan bileşeni olduğundan bu karakter gereklidir.
 
-## Özellikler
+## Özellikler <a name="attributes"></a>
 
 <table>
   <tr>
@@ -106,7 +106,7 @@ Desteklenmeyen özellikler:
     </tr>
   </table>
 
-## İşlemler
+## İşlemler <a name="actions"></a>
 
 <table>
   <tr>
@@ -120,6 +120,6 @@ Desteklenmeyen özellikler:
     </tr>
   </table>
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-3d-gltf kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) bakın.

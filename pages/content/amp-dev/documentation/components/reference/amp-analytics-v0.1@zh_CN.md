@@ -25,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-analytics
+# amp-analytics <a name="amp-analytics"></a>
 
 从 AMP 文档获取分析数据。
 
@@ -41,7 +41,7 @@ limitations under the License.
 </table>
 
 
-## 将分析数据发送到供应商还是内部？
+## 将分析数据发送到供应商还是内部？ <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
 开始对您的网站使用 AMP 分析组件之前，您需要决定是要使用第三方分析工具来分析用户互动情况，还是使用您自己的内部解决方案。
 
@@ -49,7 +49,7 @@ limitations under the License.
 参阅[配置分析工具](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md)指南，全面了解 AMP 分析。
 [/tip]
 
-### 将数据发送到分析服务供应商<a name="analytics-vendors"></a>
+### 将数据发送到分析服务供应商 <a name="analytics-vendors"></a>
 
 AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在与一个或多个分析服务供应商合作，请查阅[分析服务供应商](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md)列表，看看他们是否已将自己的解决方案与 AMP 集成。
 
@@ -82,7 +82,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 </amp-analytics>
 ```
 
-### 将数据发送到内部
+### 将数据发送到内部 <a name="sending-data-in-house"></a>
 
 如果您有自己的内部解决方案可用于衡量用户互动情况，那么您只需要一个网址，即可将 AMP 分析与该解决方案集成。您的数据将发送到该网址。您也可以将数据发送到多个网址。例如，您可以将网页浏览数据发送到一个网址，将社交互动数据发送到另一个网址。
 
@@ -125,7 +125,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 对于一些常见的跟踪用例（例如网页浏览、网页点击、滚动等），请参阅[分析：用例](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md)。
 [/tip]
 
-## 指定配置数据
+## 指定配置数据 <a name="specifying-configuration-data"></a>
 
 在 `<amp-analytics>` 元素中，您可以指定一个 JSON 配置对象，并在其中详细指明要衡量哪些内容，以及要将分析数据发送到何处。
 
@@ -157,7 +157,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 }
 ```
 
-### 内嵌或远程配置
+### 内嵌或远程配置 <a name="inline-or-remote-configuration"></a>
 
 您可以通过内嵌方式指定配置数据，也可以在 `config` 属性中指定一个网址，以便远程提取配置数据。此外，您还可以使用 `type` 属性来选择热门分析服务供应商的内置配置。
 
@@ -166,7 +166,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 1. 远程配置优先于内嵌配置，并且
 1. 内嵌配置优先于供应商配置。
 
-#### 加载远程配置
+#### 加载远程配置 <a name="loading-remote-configuration"></a>
 
 要加载远程配置，请在 `<amp-analytics>` 元素中指定配置数据的 `config` 属性和网址。指定的网址应使用 HTTPS 架构。该网址可以包含 [AMP 网址变量](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。要访问 Cookie，请参阅 [`data-credentials`](#data-credentials) 属性。响应必须遵循 [AMP CORS 安全指南](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)。
 
@@ -176,7 +176,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-#### 配置重写器
+#### 配置重写器 <a name="configuration-rewriter"></a>
 
 “配置重写器”功能旨在方便分析服务提供商以动态方式重写由用户提供的配置。该功能与“远程配置”功能类似，但在向服务器发出的请求中，还会包括所有由用户提供的配置。该功能目前只能由分析服务供应商启用。
 
@@ -199,7 +199,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 1. 内嵌配置
 1. 供应商定义的配置
 
-##### 变量组
+##### 变量组 <a name="variable-groups"></a>
 
 通过“变量组”功能，分析服务提供商可以将一组预定义的变量组合在一起，以便用户轻松启用。然后，系统会解析这些变量，并将其发送到指定的 `configRewriter` 端点。
 
@@ -261,13 +261,13 @@ export const VENDOR_ANALYTICS_CONFIG = {
   }
   ```
 
-### 配置数据对象
+### 配置数据对象 <a name="configuration-data-objects"></a>
 
-#### 请求
+#### 请求 <a name="requests"></a>
 
 `requests` 配置对象用于指定向分析平台传输数据时使用的网址，以及相应请求的批处理或报告行为。`request-name` 用于指定在发生特定事件（例如 `pageview`、`event` 等）时应发送的请求。`request-value` 包含一个 https 网址，该值可以包含可引用其他请求或变量的占位符令牌。`request-value` 也可以是包含可选请求配置的对象。
 
-##### 请求配置
+##### 请求配置 <a name="request-configs"></a>
 
 使用对象定义请求时用到的属性如下：
 
@@ -292,7 +292,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 有些分析服务提供商已经提供了可供您通过 `type` 属性使用的配置。如果您在使用某个分析服务提供商，则可能无需添加请求信息。请参阅供应商的文档，了解是否需要对请求进行配置以及如何配置。
 
-##### 批处理配置
+##### 批处理配置 <a name="batching-configs"></a>
 
 为了减少请求 ping 的数量，您可以在请求配置中指定批处理行为。使用相同请求的 `triggers` 中的所有 [`extraUrlParams`](#extra-url-params) 都会附加到相应请求的 `baseUrl`。
 
@@ -343,7 +343,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-#### 变量
+#### 变量 <a name="vars"></a>
 
 `amp-analytics` 组件定义了很多可在请求中使用的基本变量。[`amp-analytics` 变量指南](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)中提供了所有此类变量的列表。此外，该组件还支持 [AMP HTML 替代指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)中列出的所有受支持的变量。
 
@@ -357,7 +357,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-#### 额外的网址参数
+#### 额外的网址参数 <a name="extra-url-params"></a>
 
 `extraUrlParams` 配置对象用于指定要包含在请求中的其他参数。默认情况下，额外的网址参数会通过常见的“&amp;foo=baz”惯例附加到请求网址的查询字符串中。
 
@@ -379,7 +379,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 如果启用了 `useBody` 且通过 `beacon` 或 `xhrpost` 传输方法发送请求，则仅对 `extraUrlParams` 中的顶层键执行 `extraUrlParamsReplaceMap` 字符串替换。
 
-#### 触发器
+#### 触发器 <a name="triggers"></a>
 
 `triggers` 配置对象用于描述何时应发送分析请求。`triggers` 属性包含一个由触发器名称和触发器配置组成的键值对。触发器名称可以是由字母数字字符 (a-zA-Z0-9) 组成的任何字符串。如果存在同名触发器，来源配置优先级较低的触发器会被来源配置优先级较高的触发器覆盖。
 
@@ -418,7 +418,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 },
 ```
 
-##### 元素选择器
+##### 元素选择器 <a name="element-selector"></a>
 
 有些触发器（例如 `click` 和 `visible`）允许使用选择器属性指定单个元素或元素集合。不同的触发器可以对所选元素应用不同的限制和解释，例如选择器是应用于所有匹配的元素还是第一个元素，或者可以匹配哪些元素：全部元素还是仅 AMP 元素。如需了解更多详情，请参阅每个相关触发器的文档。
 
@@ -429,7 +429,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
     - `:root` - 一个与文档根目录匹配的特殊选择器。
 - `selectionMethod`：如果指定了此值，此属性可以为以下两个值之一：`scope` 或 `closest`。如果为 `scope`，则允许在 `amp-analytics` 标记的父元素内选择元素。如果为 `closest`，则会搜索与指定选择器相符且最靠近的 `amp-analytics` 标记父级。默认值为 `scope`。
 
-##### 嵌入内容呈现开始触发器
+##### 嵌入内容呈现开始触发器 <a name="embed-render-start-trigger"></a>
 
 在 iframe 中嵌入其他文档（例如广告）的 AMP 元素可能会报告呈现开始事件 (`"on": "render-start"`)。一旦可以确认嵌入的文档已开始呈现，通常就会发出此事件。请参阅特定 AMP 元素的文档，了解它是否会发出此事件。
 
@@ -454,7 +454,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-##### 初始加载触发器
+##### 初始加载触发器 <a name="initial-load-trigger"></a>
 
 AMP 元素或 AMP 文档的初始内容加载完毕时，初始加载事件 (`"on": "ini-load"`) 便会触发。
 
@@ -485,7 +485,7 @@ AMP 元素或 AMP 文档的初始内容加载完毕时，初始加载事件 (`"o
 }
 ```
 
-##### 页面和元素可见触发器
+##### 页面和元素可见触发器 <a name="page-and-element-visibility-trigger"></a>
 
 使用页面可见触发器 (`"on": "visible"`)，可以在页面变为可见状态时触发请求。可以使用 `visibilitySpec` 配置该触发器的触发条件。
 
@@ -515,7 +515,7 @@ AMP 元素或 AMP 文档的初始内容加载完毕时，初始加载事件 (`"o
 
 在跟踪元素可见性之前，元素可见触发器会等待通过 `visibilitySpec` 中的 `waitFor` 属性指定的信号。如果未指定 `waitFor`，则会等待元素的 [`ini-load`](#initial-load-trigger) 信号。如需了解更多详情，请参阅 `waitFor` 文档。如果指定了 `reportWhen`，该触发器会在发送事件之前等待该信号。这非常有用，比如可以在页面关闭时发送分析事件。
 
-##### 错误触发器
+##### 错误触发器 <a name="error-trigger"></a>
 
 当发生与页面作者或发布页面时所用的软件有关的错误时，便会触发用户错误事件 (`"on": "user-error"`)。这包括但不限于 AMP 组件配置错误、广告配置错误或失败的断言。开发者控制台中也会报告用户错误。
 
@@ -612,7 +612,7 @@ visibilitySpec: {
 
 除了作为触发器的一部分提供的变量外，您还可以为变量指定附加值/替换值（作为[数据属性](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute)）。如果使用了这些数据属性，它们必须是作为 [`selector`](#element-selector) 指定的元素的一部分。
 
-##### 点击触发器
+##### 点击触发器 <a name="click-trigger"></a>
 
 使用点击触发器 (`"on": "click"`)，可以在用户点击指定元素时触发请求。可以使用 [`selector`](#element-selector) 控制哪些元素会导致触发该请求。该触发器将针对与指定的选择器匹配的所有元素进行触发。
 
@@ -635,7 +635,7 @@ visibilitySpec: {
 
 除了作为触发器的一部分提供的变量外，您还可以为变量指定附加值/替换值（作为[数据属性](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute)）。如果使用了这些数据属性，它们必须是作为 `selector` 指定的元素的一部分。
 
-##### 滚动触发器
+##### 滚动触发器 <a name="scroll-trigger"></a>
 
 使用滚动触发器 (`"on": "scroll"`)，可以在用户滚动页面时在特定条件下触发请求。该触发器提供了一些[特殊变量](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction)，用于指示发送请求的触发边界。可以使用 `scrollSpec` 控制请求何时触发：
 - `scrollSpec`：该对象可以包含 `verticalBoundaries` 和 `horizontalBoundaries`，而且必须至少包含这两个属性中的一个，才能触发滚动事件。这两个属性的值都应是包含边界（达到相应边界时，才会生成滚动事件）的数字数组。例如，在以下代码段中，当页面垂直滚动 25%、50% 和 90% 时，将会触发滚动事件。此外，当页面水平滚动至滚动宽度的 90% 时，也会触发该事件。为了使页面保持高效，滚动边界会四舍五入为最接近的 `5` 倍数。
@@ -653,7 +653,7 @@ visibilitySpec: {
 }
 ```
 
-##### 计时器触发器
+##### 计时器触发器 <a name="timer-trigger"></a>
 
 使用计时器触发器 (`"on": "timer"`)，可以按一定的时间间隔触发请求。可以使用 `timerSpec` 控制请求何时触发：
 
@@ -702,7 +702,7 @@ visibilitySpec: {
 
 如需详细了解如何创建嵌套计时器触发器，请参阅[触发器](#triggers)规范。请注意，不允许使用计时器触发器来启动或停止计时器。
 
-##### 隐藏触发器
+##### 隐藏触发器 <a name="hidden-trigger"></a>
 
 使用隐藏触发器 (`"on": "hidden"`)，可以在页面隐藏时触发请求。
 
@@ -735,15 +735,15 @@ visibilitySpec: {
 当页面隐藏时，如果元素 #anim-id 可见（占视口面积 20% 以上）总时长超过 3 秒，则触发请求。
 </blockquote>
 
-##### 访问触发器
+##### 访问触发器 <a name="access-triggers"></a>
 
 AMP 访问系统会针对访问流程中的不同状态发出大量事件。如需详细了解访问触发器 (`"on": "access-*"`)，请参阅 [AMP 访问和分析](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)。
 
-#### 视频分析触发器
+#### 视频分析触发器 <a name="video-analytics-triggers"></a>
 
 视频分析提供了多个触发器 (`"on": "video-*"`)，供发布商用于跟踪视频生命周期内发生的不同事件。如需了解更多详情，请参阅 [AMP 视频分析](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)。
 
-#### 传输
+#### 传输 <a name="transport"></a>
 
 `transport` 配置对象用于指定如何发送请求。该值是一个对象，其中包含用于指示哪些传输方法可接受的字段。
 
@@ -767,7 +767,7 @@ AMP 访问系统会针对访问流程中的不同状态发出大量事件。如�
 
 如需了解详情，请参阅[这个关于实现 iframe 传输客户端 API 的示例](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html)以及[这个包含该 iframe 的示例页面](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport.amp.html)。该示例会加载一个包含 `amp-analytics` 标记的[虚假广告](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html)。请注意，虚假广告内容包含一些必须遵循的额外配置说明。
 
-##### 使用正文发送额外的网址参数
+##### 使用正文发送额外的网址参数 <a name="use-body-for-extra-url-params"></a>
 
 `useBody` 配置选项用于指示是否在 POST 请求正文中包含 `extraUrlParams`（而不是作为经过网址编码的查询参数包含在网址中）。
 
@@ -784,7 +784,7 @@ AMP 访问系统会针对访问流程中的不同状态发出大量事件。如�
 }
 ```
 
-##### 引荐来源网址政策
+##### 引荐来源网址政策 <a name="referrer-policy"></a>
 
 您可以在 `transport` 配置中将引荐来源网址政策指定为 `referrerPolicy` 字段。目前仅支持 `no-referrer`。引荐来源网址政策仅适用于 `image` 传输。如果指定了 `referrerPolicy: no-referrer`，则 `beacon` 和 `xhrpost` 传输会被替换为 `false`。
 
@@ -797,7 +797,7 @@ transport: {
   }
 ```
 
-#### 链接器
+#### 链接器 <a name="linkers"></a>
 
 `linkers` 功能用于启用跨网域 ID 同步。`amp-analytics` 将使用[配置对象](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format)来创建“链接器字符串”，该字符串将作为网址参数附加到网页上的指定外发链接。当用户点击其中一个链接时，目标网页会读取网址参数中的链接器字符串，以执行 ID 同步。这通常用于跨 AMP 代理网域和发布商网域加入到用户会话中。
 
@@ -805,17 +805,17 @@ transport: {
 
 如果您需要提取此参数，可以参阅[链接器 ID 接收](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md)，了解如何创建此参数。
 
-#### Cookie
+#### Cookie <a name="cookies"></a>
 
 `cookies` 功能支持通过从文档网址提取 [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) 和 [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) 信息的方式将 Cookie 写入原始网域。它可以与 `linkers` 功能配合使用，以便将 ID 从 AMP 代理网域同步到发布商网域中的 AMP 网页。
 
 如需详细了解如何设置 `cookies` 配置，请参阅[接收 AMP 网页上的链接器参数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-analytics 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/validator-amp-analytics.protoascii)。
 
-### `<amp-analytics>` 的有效属性
+### `<amp-analytics>` 的有效属性 <a name="valid-attributes-for-"></a>
 
 以下是 `amp-analytics` 组件的有效属性：
 
@@ -847,6 +847,6 @@ transport: {
 
 如果提供了此属性，除非用户确认（接受）包含给定 HTML 元素 ID 的 [amp-user-notification](amp-user-notification.md)，否则页面不会处理分析请求。这是一个可选属性。
 
-## AMP 组件分析
+## AMP 组件分析 <a name="analytics-for-amp-components"></a>
 
 AMP 组件开发者可以使用 AMP 分析实现数据收集。有关详情，请参阅[实现 AMP 组件分析](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md)

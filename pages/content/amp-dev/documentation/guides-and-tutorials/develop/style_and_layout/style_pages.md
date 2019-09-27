@@ -84,7 +84,7 @@ These allowed styles should restrict values to the following for an optimal perf
   </tbody>
 </table>
 
-## The custom fonts exception
+## The custom fonts exception <a name="the-custom-fonts-exception"></a>
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 
@@ -92,7 +92,7 @@ AMP pages can’t include external stylesheets, with the exception of custom fon
 **READ ON –** Learn more about [custom fonts in AMP](custom_fonts.md).
 [/tip]
 
-## Using CSS preprocessors
+## Using CSS preprocessors <a name="using-css-preprocessors"></a>
 
 The generated output of preprocessors works just as well in AMP as any other web page.
 For example, the [amp.dev](https://amp.dev/) site uses

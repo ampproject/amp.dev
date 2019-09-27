@@ -22,7 +22,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-3d-gltf
+# amp-3d-gltf <a name="amp-3d-gltf"></a>
 
 显示 GL 传输格式 (gITF) 的 3D 模型。
 
@@ -41,13 +41,13 @@ limitations under the License.
   </tr>
 </table>
 
-## 用法
+## 用法 <a name="usage"></a>
 
 `amp-3d-gltf` 组件可显示 gITF 格式的 3D 模型。
 
 **注意**：要显示这些模型，必须使用支持 WebGL 的浏览器。
 
-### 示例
+### 示例 <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -59,7 +59,7 @@ limitations under the License.
     src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### 限制
+### 限制 <a name="limitations"></a>
 
 目前，此组件仅适用于 glTF 2.0。
 
@@ -68,11 +68,11 @@ limitations under the License.
 - 嵌入式摄像头
 - 动画
 
-### CORS
+### CORS <a name="cors"></a>
 
 `amp-3d-gltf` 从来源网域 `https://<random>.ampproject.net` 发出 `fetch` 请求，因此，必须在指定为 `src` 的端点的响应标头上设置 `access-control-allow-origin: *.ampproject.net`。需要使用通配符，因为来源网域包含随机子网域组件。
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -105,7 +105,7 @@ limitations under the License.
   </tr>
 </table>
 
-## 操作
+## 操作 <a name="actions"></a>
 
 <table>
   <tr>
@@ -118,6 +118,6 @@ limitations under the License.
   </tr>
 </table>
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-3d-gltf 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii)。

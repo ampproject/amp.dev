@@ -2,7 +2,7 @@
 $title: Stili CSS supportati
 ---
 
-Come per tutte le pagine web, per le pagine AMP vengono utilizzati gli stili CSS, ma non puoi fare riferimento a fogli di stile esterni (ad eccezione dei [tipi di carattere personalizzati](#l'eccezione-dei-tipi-di-carattere-personalizzati)).
+Come per tutte le pagine web, per le pagine AMP vengono utilizzati gli stili CSS, ma non puoi fare riferimento a fogli di stile esterni (ad eccezione dei [tipi di carattere personalizzati](#the-custom-fonts-exception)).
 Inoltre, alcuni stili non sono consentiti a causa delle implicazioni legate al rendimento; gli attributi di stili in linea non sono consentiti.
 
 Tutti gli stili devono essere inseriti nella sezione head del documento (leggi la sezione [Aggiungere stili a una pagina](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
@@ -11,7 +11,7 @@ Puoi però utilizzare i preprocessori e i modelli CSS per creare pagine statiche
 **Nota.** Nei componenti AMP ci sono stili predefiniti integrati che facilitano la creazione di pagine reattive.
 Questi stili sono definiti nell'elemento [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
-## Utilizzare i preprocessori CSS
+## Utilizzare i preprocessori CSS <a name="using-css-preprocessors"></a>
 
 L'output generato dai preprocessori funziona bene nelle pagine AMP così come in qualsiasi altra pagina web.
 Ad esempio, il sito [amp.dev](https://amp.dev/) utilizza il linguaggio [Sass](http://sass-lang.com/) (noi utilizziamo [Grow](http://grow.io/) per creare le pagine AMP statiche del sito [amp.dev](https://amp.dev/)).
@@ -72,7 +72,7 @@ Gli stili che seguono non sono consentiti nelle pagine AMP:
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel="stylesheet"&gt;</code></td>
-      <td data-th="Description">Non consentito, se non per i <a href="#l'eccezione-dei-tipi-di-carattere-personalizzati">tipi di carattere personalizzati</a>.</td>
+      <td data-th="Description">Non consentito, se non per i <a href="#leccezione-dei-tipi-di-carattere-personalizzati">tipi di carattere personalizzati</a>.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (selettore universale)</td>
@@ -95,7 +95,7 @@ Gli stili che seguono non sono consentiti nelle pagine AMP:
   </tbody>
 </table>
 
-## Proprietà di transizioni e animazioni consentite
+## Proprietà di transizioni e animazioni consentite <a name="the-custom-fonts-exception"></a>
 
 AMP consente soltanto le proprietà di transizioni e animazioni che è possibile sottoporre ad accelerazione GPU nei browser più comuni.
 Il progetto AMP autorizza attualmente le proprietà `opacity`, `transform` e `-vendorPrefix-transform`.
@@ -108,7 +108,7 @@ Negli esempi seguenti, `<property>` deve essere nella whitelist:
 Alla proprietà `overflow` (e `overflow-y`, `overflow-x`) non può essere applicato lo stile “auto” o “scroll”.
 Nessun elemento definito dall'utente in un documento AMP può avere una barra di scorrimento.
 
-## L'eccezione dei tipi di carattere personalizzati
+## L'eccezione dei tipi di carattere personalizzati <a name="leccezione-dei-tipi-di-carattere-personalizzati"></a>
 
 Le pagine AMP non possono includere fogli di stile esterni, ad eccezione dei tipi di carattere personalizzati.
 I due metodi supportati per i riferimenti ai tipi di carattere personalizzati sono l'utilizzo di tag link che rimandano ai fornitori di caratteri autorizzati e l'inclusione di `@font-face`.

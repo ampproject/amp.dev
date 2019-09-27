@@ -38,7 +38,7 @@ pueden ser cualquier elemento HTML.
 
 [/tip]
 
-## Respaldos
+## Respaldos <a name="fallbacks"></a>
 
 Puedes incluir el atributo `fallback` en elementos para indicar qué comportamiento de respaldo debe seguirse en estos casos:
 

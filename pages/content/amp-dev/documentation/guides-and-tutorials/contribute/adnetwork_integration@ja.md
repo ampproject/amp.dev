@@ -17,7 +17,7 @@ $title: AMP との統合でディスプレイ広告を掲載する
 1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md)（通常の HTML 広告を配信するための実装をまだ作成していない場合）。
 2. [AMP HTML 広告を配信するための高速フェッチ統合を作成します](#creating-a-fast-fetch-integration)。
 
-## `amp-ad` の実装を作成する
+## `amp-ad` の実装を作成する <a name="creating-an-amp-ad"></a>
 
 広告の配信先となるサイトの運営者が、広告ネットワークから提供される JavaScript ライブラリを広告サーバーとして設定し、各種の「広告スニペット」を設置します。広告スニペットは、JavaScript ライブラリを使用して広告をフェッチし、サイト運営者のウェブサイトに広告を表示します。AMP では、サイト運営者が任意の JavaScript を実行することは禁止されているため、広告ネットワークでは、AMP のオープンソース コードの開発に参加して、[`amp-ad`](../../../documentation/components/reference/amp-ad.md) タグで自社の広告サーバーの広告をリクエストできるようにする必要があります。
 
@@ -40,7 +40,7 @@ $title: AMP との統合でディスプレイ広告を掲載する
 
 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) の統合を作成する手順については、[AMP への広告ネットワークの統合](https://github.com/ampproject/amphtml/blob/master/ads/README.md)に関する説明をご確認ください。
 
-## 高速フェッチ統合を作成する
+## 高速フェッチ統合を作成する <a name="creating-a-fast-fetch-integration"></a>
 
 [高速フェッチ](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)は、広告リクエストと広告レスポンスを分離する AMP のメカニズムです。これにより、ページ ライフサイクルの通常よりも早い段階で広告リクエストを実施し、ユーザーが見る可能性が高い場合にのみ広告を表示できるようになります。高速フェッチでは、通常の HTML 広告よりも検証済みの AMP HTML 広告が優先されます。検証に失敗した広告は、クロスドメインの iFrame にラップされ、AMP ドキュメントの他の要素からは隔離されます。これに対し、検証を通過した AMP HTML 広告は、直接ページに書き込まれます。高速フェッチは、AMP 広告と通常の広告の両方を扱うことができます。検証に失敗した広告についても、追加で広告リクエストを行う必要は必要ありません。
 

@@ -25,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-analytics
+# amp-analytics <a name="amp-analytics"></a>
 
 AMP ドキュメントからアナリティクス データを収集します。
 
@@ -41,14 +41,14 @@ AMP ドキュメントからアナリティクス データを収集します。
 </table>
 
 
-## ベンダーや社内へのアナリティクス データの送信
+## ベンダーや社内へのアナリティクス データの送信 <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
 サイトで AMP アナリティクスを使い始める前に、ユーザー エンゲージメント分析にサードパーティのアナリティクス ツールを使用するか、社内のソリューションを使用するかを決める必要があります。
 
 [tip type="read-on"] AMP アナリティクスについて詳しくは、[アナリティクスの設定](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md)ガイドをご覧ください。
 [/tip]
 
-### アナリティクス ベンダーへのデータの送信<a name="analytics-vendors"></a>
+### アナリティクス ベンダーへのデータの送信 <a name="analytics-vendors"></a>
 
 AMP アナリティクスでは、1 回の測定で得たデータを複数の URL に送信できます。すでに 1 社以上のアナリティクス ベンダーを利用している場合は、[アナリティクス ベンダー](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md)の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
 
@@ -81,7 +81,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 </amp-analytics>
 ```
 
-### 社内へのデータの送信
+### 社内へのデータの送信 <a name="sending-data-in-house"></a>
 
 ユーザー エンゲージメントの測定に社内のソリューションを使用する場合は、URL さえあれば、AMP アナリティクスをそのソリューションと統合できます。この URL がデータの送信先となります。データは複数の URL に送信することもできます。たとえば、ページビュー データとソーシャル エンゲージメント データをそれぞれ別の URL に送信できます。
 
@@ -121,7 +121,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 [tip type="success"] トラッキングの一般的なユースケース（ページの視聴回数、ページのクリック数、スクロールなど）については、[アナリティクス: ユースケース](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md)をご覧ください、
 [/tip]
 
-## 設定データの指定
+## 設定データの指定 <a name="specifying-configuration-data"></a>
 
 `<amp-analytics>` 要素では、測定の対象やアナリティクス データの送信先に関する詳細情報を格納する JSON 設定オブジェクトを指定します。
 
@@ -153,7 +153,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 }
 ```
 
-### インラインまたはリモート設定
+### インラインまたはリモート設定 <a name="inline-or-remote-configuration"></a>
 
 設定データは、インラインで指定することも、`config` 属性で URL を指定してリモートで取得することも可能です。また、`type` 属性を使用して、一般的なアナリティクス ベンダーの組み込み設定を選択することもできます。
 
@@ -162,7 +162,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 1. リモート設定がインライン設定よりも優先される。
 1. インライン設定がベンダー設定よりも優先される。
 
-#### リモート設定の読み込み
+#### リモート設定の読み込み <a name="loading-remote-configuration"></a>
 
 リモート設定を読み込むには、`<amp-analytics>` 要素で、`config` 属性と設定データの URL を指定します。URL の指定では HTTPS スキームを使用する必要があります。URL には [AMP URL 変数](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を含めることができます。Cookie にアクセスする場合は、[`data-credentials`](#data-credentials) 属性を確認してください。レスポンスは [AMP CORS セキュリティ ガイドライン](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)に準拠する必要があります。
 
@@ -172,7 +172,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-#### 設定リライタ
+#### 設定リライタ <a name="configuration-rewriter"></a>
 
 設定リライタ機能では、指定された設定をアナリティクス プロバイダが動的に書き換えることができます。この機能はリモート設定機能に似ていますが、ユーザーが指定した設定をサーバーへのリクエストに追加することができます。現在のところ、この機能を有効にできるのはアナリティクス ベンダーだけです。
 
@@ -195,7 +195,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 1. インライン設定
 1. ベンダーが定義した設定
 
-##### 変数グループ
+##### 変数グループ <a name="variable-groups"></a>
 
 変数グループは、ユーザーが簡単に有効化できる定義済みの変数セットをアナリティクス プロバイダがグループ化するための機能です。これらの変数は解決され、指定の `configRewriter` エンドポイントに送信されます。
 
@@ -259,13 +259,13 @@ export const VENDOR_ANALYTICS_CONFIG = {
   }
 ```
 
-### 設定データ オブジェクト
+### 設定データ オブジェクト <a name="configuration-data-objects"></a>
 
-#### リクエスト
+#### リクエスト <a name="requests"></a>
 
 `requests` 設定オブジェクトでは、アナリティクス プラットフォームへのデータの送信に使用する URL を指定するだけでなく、リクエストの動作のバッチ処理やレポート作成も行います。`request-name` では、特定のイベント（`pageview`、`event` など）の発生時に送信する必要があるリクエストを指定します。`request-value` には HTTPS URL を含めます。この値には、他のリクエストや変数を参照可能なプレースホルダ トークンを含めることができます。`request-value` には、オプションのリクエスト設定を含むオブジェクトを指定することも可能です。
 
-##### リクエストの設定
+##### リクエストの設定 <a name="request-configs"></a>
 
 オブジェクトを指定してリクエストを定義する場合は、以下のプロパティを使用します。
 
@@ -290,7 +290,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 アナリティクス プロバイダは既定の設定を持っている場合があり、その設定を使用するには `type` 属性を指定します。アナリティクス プロバイダを利用している場合、リクエスト情報の設定が不要なことがあります。リクエストの設定が必要かどうかや、その方法については、ベンダーのドキュメントをご確認ください。
 
-##### バッチ処理の設定
+##### バッチ処理の設定 <a name="batching-configs"></a>
 
 リクエストの ping の回数を減らすために、リクエストの設定でバッチ処理の動作を指定できます。同じリクエストを使用する `triggers` からの [`extraUrlParams`](#extra-url-params) がリクエストの `baseUrl` に追加されます。
 
@@ -342,7 +342,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-#### 変数
+#### 変数 <a name="vars"></a>
 
 `amp-analytics` コンポーネントでは、リクエストで使用できる各種の基本的な変数が定義されています。そのすべての変数のリストを [`amp-analytics` 変数ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)で確認できます。また、[AMP HTML の置換ガイド](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)でサポートされている変数はすべて使用できます。
 
@@ -356,7 +356,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-#### その他の URL パラメータ
+#### その他の URL パラメータ <a name="extra-url-params"></a>
 
 `extraUrlParams` 設定オブジェクトでは、リクエストに含めるその他のパラメータを指定します。デフォルトでは、その他の URL パラメータは、通常の「&amp;foo=baz」の規則に沿ってリクエスト URL のクエリ文字列に追加されます。
 
@@ -378,7 +378,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 `useBody` が有効化されていて、リクエストが `beacon` または `xhrpost` 転送メソッドによって送信される場合、`extraUrlParamsReplaceMap` の文字列の置換は `extraUrlParams` の最上位レベルのキーでのみ行われます。
 
-#### トリガー
+#### トリガー <a name="triggers"></a>
 
 `triggers` 設定オブジェクトでは、アナリティクス リクエストを送信するタイミングを指定します。`triggers` 属性は、トリガー名とトリガー設定という Key-Value ペアで構成されます。トリガー名には、英数字（a-zA-Z0-9）からなる任意の文字列を使用できます。優先順位の低い設定に記述されたトリガーは、優先順位の高い設定に記述された同名のトリガーによってオーバーライドされます。
 
@@ -417,7 +417,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 },
 ```
 
-##### 要素セレクタ
+##### 要素セレクタ <a name="element-selector"></a>
 
 `click` や `visible` などのトリガーを使用すると、セレクタ プロパティを使って単一の要素または要素のコレクションを指定できます。トリガーごとに異なる制限事項や解釈（一致するすべての要素と最初の要素のみのどちらにセレクタを適用するか、どの要素をマッチングできるか（すべてまたは AMP 要素のみ）など）を、選択した要素に適用することができます。詳しくは、関連する各トリガーのドキュメントをご覧ください。
 
@@ -428,7 +428,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
     - `:root`: ドキュメント ルートに一致する特別なセレクタ。
 - `selectionMethod`: このプロパティを指定する場合、`scope` または `closest` のいずれかを設定できます。`scope` では、`amp-analytics` タグの親要素内の要素から選択できます。`closest` では、特定のセレクタに適合する `amp-analytics` タグの最も近い祖先が検索されます。デフォルト値は `scope` です。
 
-##### レンダリング開始トリガーを埋め込む
+##### レンダリング開始トリガーを埋め込む <a name="embed-render-start-trigger"></a>
 
 iframe 内に他のドキュメントを埋め込む AMP 要素（広告など）では、レンダリング開始イベント（`"on": "render-start"`）をレポートできます。このイベントは通常、埋め込まれたドキュメントのレンダリングが開始されたことを確認できるようになるとすぐに発行されます。特定の AMP 要素がこのイベントを発行するかどうかを確認するには、その要素のドキュメントを参照してください。
 
@@ -453,7 +453,7 @@ iframe 内に他のドキュメントを埋め込む AMP 要素（広告など�
 }
 ```
 
-##### 初期読み込みトリガー
+##### 初期読み込みトリガー <a name="initial-load-trigger"></a>
 
 AMP 要素または AMP ドキュメントの最初のコンテンツが読み込まれると、初期読み込みイベント（`"on": "ini-load"`）がトリガーされます。
 
@@ -484,7 +484,7 @@ AMP 要素または AMP ドキュメントの最初のコンテンツが読み�
 }
 ```
 
-##### ページと要素の表示トリガー
+##### ページと要素の表示トリガー <a name="page-and-element-visibility-trigger"></a>
 
 ページが表示可能になったときにリクエストを開始するには、ページの表示トリガー（`"on": "visible"`）を使用します。このトリガーの起動は、`visibilitySpec` を使用して設定できます。
 
@@ -514,7 +514,7 @@ AMP 要素または AMP ドキュメントの最初のコンテンツが読み�
 
 要素の表示トリガーは、`visibilitySpec` の `waitFor` プロパティで指定されたシグナルを受け取ってから要素の表示をトラッキングします。`waitFor` が指定されていない場合は、要素の [`ini-load`](#initial-load-trigger) シグナルを待機します。詳しくは、`waitFor` のドキュメントをご覧ください。`reportWhen` が指定されている場合、トリガーはそのシグナルを受け取ってからイベントを送信します。これは、ページが閉じているときにアナリティクス イベントを送信する場合などに役立ちます。
 
-##### エラートリガー
+##### エラートリガー <a name="error-trigger"></a>
 
 ユーザーエラー イベント（`"on": "user-error"`）は、ページの作成者またはページを公開する際に使用したソフトウェアに起因するエラーが発生したときにトリガーされます。こうしたエラーには、AMP コンポーネントや広告の設定ミス、アサーションの失敗などがあります。ユーザーエラーはデベロッパー コンソールでもレポートされます。
 
@@ -610,7 +610,7 @@ visibilitySpec: {
 
 トリガーの一部として提供された変数だけでなく、[データ属性としての変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute)のオーバーライドも指定できます。これらのデータ属性を使用する場合、[`selector`](#element-selector) として指定した要素の一部である必要があります。
 
-##### クリック トリガー
+##### クリック トリガー <a name="click-trigger"></a>
 
 指定した要素がクリックされたときにリクエストを開始するには、クリック トリガー（`"on": "click"`）を使用します。リクエストを開始させる要素の制御には [`selector`](#element-selector) を使用します。指定したセレクタと一致するすべての要素のトリガーが起動します。
 
@@ -633,7 +633,7 @@ visibilitySpec: {
 
 トリガーの一部として提供された変数だけでなく、[データ属性としての変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute)のオーバーライドも指定できます。これらのデータ属性を使用する場合、`selector` として指定した要素の一部である必要があります。
 
-##### スクロール トリガー
+##### スクロール トリガー <a name="scroll-trigger"></a>
 
 ページがスクロールされたときに特定の条件下でリクエストを開始するには、スクロール トリガー（`"on": "scroll"`）を使用します。このトリガーは、リクエストの送信をトリガーした境界を示す[特別な変数](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction)を提供します。このトリガーを起動するタイミングを制御するには、`scrollSpec` を使用します。
 
@@ -652,7 +652,7 @@ visibilitySpec: {
 }
 ```
 
-##### タイマー トリガー
+##### タイマー トリガー <a name="timer-trigger"></a>
 
 リクエストを一定間隔で開始するには、タイマー トリガー（`"on": "timer"`）を使用します。このトリガーを起動するタイミングを制御するには、`timerSpec` を使用します。
 
@@ -701,7 +701,7 @@ visibilitySpec: {
 
 ネストされたタイマー トリガーの作成方法について詳しくは、[トリガー](#triggers)の仕様をご覧ください。タイマーを開始または停止するためにタイマー トリガーを使用することはできません。
 
-##### 非表示トリガー
+##### 非表示トリガー <a name="hidden-trigger"></a>
 
 ページが非表示になったときにリクエストを開始するには、非表示トリガー（`"on": "hidden"`）を使用します。
 
@@ -734,15 +734,15 @@ visibilitySpec: {
 要素 #anim-id が合計で 3 秒以上にわたって（ビューポートの 20% を超える範囲に）表示された場合、ページが非表示になったときにリクエストを開始します。
 </blockquote>
 
-##### アクセス トリガー
+##### アクセス トリガー <a name="access-triggers"></a>
 
 amp-access システムは、アクセスフローのさまざまな状態で各種イベントを発行します。アクセス トリガー（`"on": "access-*"`）について詳しくは、[amp-access とアナリティクス](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)をご覧ください。
 
-#### 動画分析トリガー
+#### 動画分析トリガー <a name="video-analytics-triggers"></a>
 
 動画分析には、サイト運営者が動画のライフサイクル中に発生するさまざまなイベントをトラッキングするための各種トリガー（`"on": "video-*"`）が用意されています。詳しくは、[AMP 動画分析](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)をご覧ください。
 
-#### 転送
+#### 転送 <a name="transport"></a>
 
 `transport` 設定オブジェクトでは、リクエストの送信方法を指定します。値は、使用可能な転送方法を示すフィールドを含むオブジェクトです。
 
@@ -766,7 +766,7 @@ MRC 認定ベンダーは URL 文字列を iframe-transport-vendors.js に追加
 
 詳しくは、[iframe 転送用のクライアント API の実装例](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html)と[その iframe を組み込むページの例](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport.amp.html)をご覧ください。この例では、`amp-analytics` タグが含まれている[偽の広告](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html)を読み込みます。偽の広告コンテンツには追加の設定手順が含まれており、その手順に従う必要があります。
 
-##### 追加の URL パラメータの送信に本文を使用する
+##### 追加の URL パラメータの送信に本文を使用する <a name="use-body-for-extra-url-params"></a>
 
 `useBody` 設定オプションでは、追加の URL パラメータを URL エンコードされたクエリ パラメータとして URL に含める代わりに、POST リクエストの本文に `extraUrlParams` を含めるかどうかを指定します。
 
@@ -783,7 +783,7 @@ MRC 認定ベンダーは URL 文字列を iframe-transport-vendors.js に追加
 }
 ```
 
-##### 参照 URL のポリシー
+##### 参照 URL のポリシー <a name="referrer-policy"></a>
 
 参照 URL のポリシーは、`transport` 設定の `referrerPolicy` フィールドとして指定できます。現時点では、`no-referrer` のみがサポートされています。参照 URL のポリシーを利用できる転送方法は `image` だけです。`referrerPolicy: no-referrer` が指定されている場合は、`beacon` と `xhrpost` の転送方法が `false` に変更されます。
 
@@ -796,7 +796,7 @@ MRC 認定ベンダーは URL 文字列を iframe-transport-vendors.js に追加
 }
 ```
 
-#### リンカー
+#### リンカー <a name="linkers"></a>
 
 `linkers` 機能は、クロスドメイン ID の同期を有効にする場合に使用します。`amp-analytics` では、[設定オブジェクト](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format)を使用して「リンカー文字列」を作成します。この文字列は、URL パラメータとしてページ上の指定の発信リンクに付加されます。ユーザーがこれらのリンクのいずれかをクリックすると、リンク先ページで URL パラメータからリンカー文字列が読み取られ、ID の同期が実行されます。この方法は通常、AMP プロキシ ドメインとサイト運営者のドメイン間でユーザー セッションを結合する場合に使用します。
 
@@ -804,17 +804,17 @@ MRC 認定ベンダーは URL 文字列を iframe-transport-vendors.js に追加
 
 このパラメータを取り込む必要がある場合は、[リンカー ID の受信](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md)で、このパラメータの作成方法に関する情報をご確認ください。
 
-#### Cookie
+#### Cookie <a name="cookies"></a>
 
 `cookies` 機能を使用すると、ドキュメントの URL から [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) と [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) の情報を抽出して、元のドメインに Cookie を書き込むことができます。`linkers` 機能とともに使用すると、AMP プロキシ ドメインからサイト運営者のドメイン上の AMP ページへの ID の同期を実行できます。
 
 `cookies` の設定方法について詳しくは、[AMP ページでのリンカー パラメータの受信](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)をご覧ください。
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/validator-amp-analytics.protoascii)をご確認ください。
 
-### `<amp-analytics>` の有効な属性
+### `<amp-analytics>` の有効な属性 <a name="valid-attributes-for-"></a>
 
 `amp-analytics` コンポーネントで使用できる属性を以下に示します。
 
@@ -846,6 +846,6 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 
 この属性を指定すると、特定の HTML 要素 ID が設定された [amp-user-notification](amp-user-notification.md) をユーザーが確認（承認）するまで、ページでアナリティクス リクエストを処理できなくなります。この属性はオプションです。
 
-## AMP コンポーネントのアナリティクス
+## AMP コンポーネントのアナリティクス <a name="analytics-for-amp-components"></a>
 
 AMP コンポーネントのデベロッパーは、AMP アナリティクスを使用してデータのコレクションを実装できます。詳しくは、[AMP コンポーネントのアナリティクスの実装](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md)をご覧ください。

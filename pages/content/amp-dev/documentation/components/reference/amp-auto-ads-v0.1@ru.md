@@ -73,7 +73,7 @@ limitations under the License.
   </amp-auto-ads>
 ```
 
-## Поддерживаемые рекламные сети
+## Поддерживаемые рекламные сети <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick (эксперимент)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -128,7 +128,7 @@ limitations under the License.
 
 ### Определение объектов
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 Ниже перечислены поля, которые следует заполнить в объекте конфигурации.
 
@@ -208,7 +208,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 Ниже перечислены поля, которые следует заполнить в объекте конфигурации `anchor`.
 
@@ -248,7 +248,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 Ниже перечислены поля, которые следует заполнить в объекте конфигурации `style`.
 
@@ -272,7 +272,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 Значения ENUM для поля `pos` в объекте конфигурации `placements`:
 
@@ -304,7 +304,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 Значения ENUM для поля `type` в объекте конфигурации `placements`:
 

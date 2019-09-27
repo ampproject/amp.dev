@@ -25,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-analytics
+# amp-analytics <a name="amp-analytics"></a>
 
 يعمل هذا المكّوِن على استخلاص بيانات التحليلات من مستند AMP.
 
@@ -42,7 +42,7 @@ limitations under the License.
 
 [جدول المحتويات]
 
-## هل سترسل التحليلات إلى حل تابع لمورد أم إلى حل داخلي؟
+## هل سترسل التحليلات إلى حل تابع لمورد أم إلى حل داخلي؟ <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
 قيل البدء في استخدام AMP Analytics على موقعك، تحتاج أولاً إلى اتخاذ قرار بشأن هل ستستخدم أدوات تحليلات خارجية لتحليل تفاعل المستخدم أم ستستخدم حل مملوك لك.
 
@@ -83,7 +83,7 @@ limitations under the License.
 </amp-analytics>
 ```
 
-### إرسال البيانات إلى حلول داخلية
+### إرسال البيانات إلى حلول داخلية <a name="sending-data-in-house"></a>
 
 إذا كان لديك حل داخلي مملوك لك لقياس تفاعل المستخدمين، لن تحتاج إلا إلى عنوان URL لتكامل AMP Analytics مع هذا الحل. ويمكنك أيضًا إرسال البيانات إلى عدة عناوين URL. يمكنك مثلاً إرسال بيانات مشاهدة الصفحة إلى عنوان URL وبيانات المشاركة الاجتماعية إلى عنوان URL آخر.
 
@@ -126,7 +126,7 @@ limitations under the License.
 يمكنك الاطّلاع على [التحليلات: حالات الاستخدام](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md) لمعرفة بعض من حالات استخدام التتبع الشائعة (مثل مشاهدات الصفحة والنقرات على الصفحة والتمرير وغيرها).
 [/tip]
 
-## تحديد بيانات التهيئة
+## تحديد بيانات التهيئة <a name="specifying-configuration-data"></a>
 
 في العنصر `<amp-analytics>`، حدِد كائن التهيئة JSON الذي يحتوي على تفاصيل المعلومات المراد قياسها وجهة إرسال بيانات التحليلات.
 
@@ -158,7 +158,7 @@ limitations under the License.
 }
 ```
 
-### التهيئة المضمّنة أو التهيئة عن بُعد
+### التهيئة المضمّنة أو التهيئة عن بُعد <a name="inline-or-remote-configuration"></a>
 
 يمكن تحديد بيانات التهيئة بشكل مضمّن أو جلبها عن بُعد من خلال تحديد عنوان URL في السمة `config`. بالإضافة إلى هذا، يمكن اختيار التهيئة المدمجة لموردي التحليلات المشهورين من خلال استخدام السمة `type`.
 
@@ -167,7 +167,7 @@ limitations under the License.
 1. تكون للتهيئة عن بُعد الأولوية على التهيئة المضمنة.
 2. تكون للتهيئة المضمّنة الأولوية على تهيئة المورد.
 
-#### تحميل التهيئة عن بُعد
+#### تحميل التهيئة عن بُعد <a name="loading-remote-configuration"></a>
 
 لتحميل التهيئة عن بُعد، حدِد السمة `config` وعنوان URL لبيانات التهيئة في العنصر `<amp-analytics>`. يجب أن يتبع عنوان URL المحدد مخطط HTTPS. قد يتضمن العنوان [متغيرات عناوين URL لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md). ويمكنك الاطّلاع على السمة [`data-credentials`](#data-credentials) للوصول إلى ملف تعريف الارتباط. ويجب أن تتبع الاستجابة [إرشادات أمان CORS لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/specs-requests.md).
 
@@ -177,7 +177,7 @@ limitations under the License.
 <amp-analytics config="https://example.com/analytics.account.config.json">;
 ```
 
-#### أداة إعادة كتابة التهيئة
+#### أداة إعادة كتابة التهيئة <a name="configuration-rewriter"></a>
 
 تم تصميم ميزة "أداة إعادة كتابة التهيئة" للسماح لموفري خدمات التحليلات بإعادة كتابة التهيئة المتوفرة بشكل ديناميكي. وهي تشبه ميزة "التهيئة عن بُعد" لكنها تتضمن أيضًا أي تهيئة يوفرها المستخدِم في الطلب المُرسَل إلى الخادم. ويمكن لمورد التحليلات وحده تفعيل هذه الميزة في الوقت الحالي.
 
@@ -199,7 +199,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 1. التهيئة المضمّنة
 1. تهيئة المحدَدة من المورد
 
-##### مجموعة المتغيرات
+##### مجموعة المتغيرات <a name="variable-groups"></a>
 
 "مجموعات المتغيرات" هي ميزة تسمح لموفري خدمات التحليلات بتجميع مجموعة محددة مسبقًا من المتغيرات التي يمكن للمستخدِم تفعيلها بسهولة. وسيتم بعد ذلك حل هذه المتغيرات وإرسالها إلى نقطة نهاية `configRewriter` المحددة.
 
@@ -261,13 +261,13 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-### كائنات بيانات التهيئة
+### كائنات بيانات التهيئة <a name="configuration-data-objects"></a>
 
-#### الكائن Requests
+#### الكائن Requests <a name="requests"></a>
 
 يحدد كائن التهيئة `requests` عناوين URL المستخدمة لنقل البيانات إلى منصة التحليلات وكذلك سلوك تجميع الطلب والإبلاغ عنه. يحدد `request-name` الطلب الواجب إرساله استجابة لحدث معين (مثال: `pageview` أو `event` أو غيره). تحتوي `request-value` على عنوان URL مبدوءًا بـ https، وقد تتضمن القيمة رموزًا مميزة للعناصر النائبة التي تشير إلى طلبات أو متغيرات أخرى. يمكن أيضًا أن تكون `request-value` كائنًا يحتوي على تهيئات طلب اختيارية.
 
-##### تهيئات الطلبات
+##### تهيئات الطلبات <a name="request-configs"></a>
 
 خصائص تعريف الطلب باستخدام كائن هي:
 - `baseUrl`: خاصية تعرِّف عنوان URL للطلب (مطلوبة).
@@ -291,7 +291,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 لدى بعض موفري خدمات التحليلات تهيئة جاهزة مسبقًا، والتي تستخدمها من خلال السمة `type`. إذا كنت تستخدم موفر تحليلات، قد لا تحتاج إلى تضمين معلومات الطلبات. راجع وثائق المورد لمعرفة ما إذا كانت هناك حاجة لتهيئة الطلبات وكيفيتها.
 
-##### تهيئة التجميع
+##### تهيئة التجميع <a name="batching-configs"></a>
 
 يمكنك تحديد سلوك التجميع في تهيئة الطلب لتقليل عدد فحص الاتصالات للطلبات. يتم إلحاق أي [`extraUrlParams`](#extra-url-params) ناتجة من `triggers` التي تستخدم الطلب نفسه بالخاصية `baseUrl` في الطلب.
 
@@ -343,7 +343,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-#### الكائن Vars
+#### الكائن Vars <a name="vars"></a>
 
 يعرّف المكوِّن `amp-analytics` العديد من المتغيرات الأساسية التي يمكن استخدامها في الطلبات. تتوفر قائمة بجميع هذه المتغيرات في [دليل متغيرات `amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md). بالإضافة إلى ذلك، تُقبل جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md).
 
@@ -357,7 +357,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-#### الكائن Extra URL Params
+#### الكائن Extra URL Params <a name="extra-url-params"></a>
 
 يحدد كائن التهيئة `extraUrlParams` معلَمات إضافية يتم تضمينها في الطلب. يتم تلقائيًا إلحاق معلَمات عناوين URL الإضافية بسلسلة طلب البحث لعنوان URL للطلب عبر اصطلاح "&amp;foo=baz" المعتاد.
 
@@ -379,7 +379,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 في حال تفعيل `useBody` وإرسال الطلب عبر طريقة النقل `beacon` أو `xhrpost`، لن يتم استبدال سلسلة `extraUrlParamsReplaceMap` إلا على مفاتيح المستوى الأعلى في `extraUrlParams`.
 
-#### الكائن Triggers
+#### الكائن Triggers <a name="triggers"></a>
 
 يوضح كائن التهيئة `triggers` متى يجب إرسال طلب التحليلات. تحتوي السمة `triggers` على زوج المفتاح/القيمة trigger-name وtrigger-configuration. يمكن أن يكون trigger-name أي سلسلة تتكون من أحرف أبجدية رقمية (a-zA-Z0-9). تلغي المشغلات من التهيئة ذات الأولوية الأعلى المشغلات التي تحمل الأسماء نفسها من التهيئة ذات الأولوية الأقل.
 
@@ -418,7 +418,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 },
 ```
 
-##### محدِّد العناصر
+##### محدِّد العناصر <a name="element-selector"></a>
 
 تسمح بعض المشغلات، مثل `click` و`visible`، بتحديد عنصر واحد أو مجموعة من العناصر باستخدام خصائص المحدِّد. يمكن للمشغلات المختلفة تطبيق قيود وتفسيرات مختلفة على العناصر المختارة، مثل ما إذا كان المحدِّد ينطبق على كل العناصر المتطابقة أو على العنصر الأول، أو أي العناصر التي يمكن مطابقتها: هل هي جميع العناصر أو عناصر AMP فقط. يمكنك الاطّلاع على وثائق كل مشغِل ذي صلة للحصول على المزيد من التفاصيل.
 
@@ -429,7 +429,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 - `:root` - محدِّد خاص يطابق جذر المستند.
 - `selectionMethod` عند تحديدها، يمكن أن تحتوي هذه الخاصية على إحدى القيمتَين: `scope` أو `closest`. تسمح `scope` باختيار عنصر داخل العنصر الرئيسي للعلامة `amp-analytics`. تبحث `closest` عن أقرب كيان أصل للعلامة `amp-analytics` يُرضي المحدِّد المذكور. القيمة التلقائية هي `scope`.
 
-##### مشغِل بدء عرض المستند المضمّن
+##### مشغِل بدء عرض المستند المضمّن <a name="embed-render-start-trigger"></a>
 
 قد تبلّغ عناصر AMP التي تعمل على تضمين مستندات أخرى في إطارات iframe (مثل الإعلانات) عن حدث بدء العرض (`"on": "render-start"`). يتم إطلاق هذا الحدث عادةً بمجرد إمكانية تأكيد بدء عرض المستند المضمَّن. راجع وثائق عنصر AMP المعين لمعرفة ما إذا كان يطلق هذا الحدث.
 
@@ -454,7 +454,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-##### مشغِل التحميل الأولي
+##### مشغِل التحميل الأولي <a name="initial-load-trigger"></a>
 
 يتم تشغيل حدث التحميل الأولي (`"on": "ini-load"`) عند تحميل المحتوى الأولي لعنصر AMP أو مستند AMP.
 
@@ -486,7 +486,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-##### مشغِل مستوى رؤية الصفحة والعنصر
+##### مشغِل مستوى رؤية الصفحة والعنصر <a name="page-and-element-visibility-trigger"></a>
 
 استخدِم مشغِل مستوى رؤية الصفحة (`"on": "visible"`) لتنشيط طلب عندما تصبح الصفحة مرئية. يمكن تهيئة تنشيط هذا المشغِل باستخدام `visibilitySpec`.
 
@@ -517,7 +517,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 ينتظر مشغِل مستوى رؤية العنصر الإشارة التي تحددها الخاصية `waitFor` في `visibilitySpec` قبل تتبع مستوى رؤية العنصر. إذا لم يتم تحديد `waitFor`، ينتظر إشارة [`ini-load`](#initial-load-trigger) للعنصر. ويمكنك مراجعة مستندات `waitFor` للحصول على مزيد من التفاصيل.
 في حالة تحديد `reportWhen`، ينتظر المشغِل هذه الإشارة قبل إرسال الحدث. ويفيد هذا مثلاً في إرسال أحداث التحليلات عند إغلاق الصفحة.
 
-##### مشغِل الخطأ
+##### مشغِل الخطأ <a name="error-trigger"></a>
 
 يتم تشغيل حدث خطأ المستخدم (`"on": "user-error"`) عند حدوث خطأ عائد إلى مؤلف الصفحة أو إلى البرنامج المستخدَم في نشر الصفحة. ويتضمن هذا، على سبيل المثال لا الحصر، التهيئة الخاطئة لأحد مكونات AMP أو الإعلانات التي بها تهيئة خاطئة أو التأكيدات التي أخفقت. هذا ويتم الإبلاغ عن أخطاء المستخدِم أيضًا في وحدة تحكم مطوّر البرامج.
 
@@ -614,7 +614,7 @@ visibilitySpec: {
 
 بالإضافة إلى المتغيرات المقدَمة كجزء من المشغلات، يمكنك أيضًا تحديد [متغيرات إضافية كسمة بيانات](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-dattribute) أو تحديد ما يُلغيها. وإذا تم استخدام سمات البيانات هذه، يجب أن تكون جزءًا من العنصر التي تم تعيينه ليكون [`selector`](#element-selector).
 
-##### مشغِل النقر
+##### مشغِل النقر <a name="click-trigger"></a>
 
 استخدِم مشغِل النقر (`"on": "click"`) لتنشيط طلب عند النقر على عنصر محدد. استخدِم [`selector`](#element-selector) للتحكم في العناصر التي تؤدي إلى تنشيط هذا الطلب. وسيتم تنشيط المشغِل لجميع العناصر المطابِقة للمحدِّد الذي تم تعيينه.
 
@@ -637,7 +637,7 @@ visibilitySpec: {
 
 بالإضافة إلى المتغيرات المقدَمة كجزء من المشغلات، يمكنك أيضًا تحديد [متغيرات إضافية كسمة بيانات](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-dattribute) أو تحديد ما يُلغيها. وإذا تم استخدام سمات البيانات هذه، يجب أن تكون جزءًا من العنصر التي تم تعيينه ليكون `selector`.
 
-##### مشغِل التمرير
+##### مشغِل التمرير <a name="scroll-trigger"></a>
 
 استخدِم مشغِل التمرير (`"on": "scroll"`) لتنشيط طلب عند تمرير الصفحة بشروط معينة. يوفر هذا المشغِل [متغيرات خاصة](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction) تشير إلى الحدود التي أدت إلى إرسال الطلب. استخدِم `scrollSpec` للتحكم في وقت تنشيط هذا المشغِل:
 - `scrollSpec`: يمكن أن يحتوي هذا الكائن على `verticalBoundaries` و`horizontalBoundaries`. ويلزم توفير خاصية على الأقل من الخاصيتين حتى ينشط حدث التمرير. يجب أن تكون قيم الخاصيتين مصفوفات أرقام تحتوي على الحدود التي يتم عندها إنشاء حدث التمرير. في مقتطف الرمز التالي مثلاً، سيتم تنشيط حدث التمرير عند تمرير الصفحة رأسيًا بنسبة 25٪ و50٪ و90٪. بالإضافة إلى ذلك، سيتم أيضًا تنشيط الحدث عند تمرير الصفحة أفقيًا إلى 90٪ من عرض التمرير. ويتم تقريب حدود التمرير إلى أقرب مضاعفات `5` للحفاظ على أداء الصفحة.
@@ -655,7 +655,7 @@ visibilitySpec: {
 }
 ```
 
-##### مشغِل الموقّت
+##### مشغِل الموقّت <a name="timer-trigger"></a>
 
 استخدِم مشغِل المؤقّت (`"on": "timer"`) لتنشيط الطلب بعد فاصل زمني منتظم. استخدِم `timerSpec` للتحكم في وقت تنشيط هذا المشغِل:
 
@@ -704,7 +704,7 @@ visibilitySpec: {
 
 راجع مواصفات [المشغلات](#triggers) للحصول على تفاصيل حول إنشاء مشغلات مؤقّت مدمجة. ويُذكر أنه لا يُسمح باستخدام مشغِل مؤقّت لبدء مؤقّت أو إيقافه.
 
-##### مشغِل الصفحة المخفية
+##### مشغِل الصفحة المخفية <a name="hidden-trigger"></a>
 
 استخدِم مشغِل الصفحة المخفية (`"on": "hidden"`) لتنشيط الطلب عندما تصبح الصفحة مخفية.
 
@@ -734,18 +734,18 @@ visibilitySpec: {
 تعني التهيئة أعلاه ما يلي:
 
 <blockquote>
-عندما تصبح الصفحة مخفية، يتم تنشيط الطلب إذا كان العنصر # anim-id مرئيًا (أكثر من 20٪ من مساحة إطار العرض) لأكثر من 3 ثوانٍ إجمالاً.
+عندما تصبح الصفحة مخفية، يتم تنشيط الطلب إذا كان العنصر #anim-id مرئيًا (أكثر من 20٪ من مساحة إطار العرض) لأكثر من 3 ثوانٍ إجمالاً.
 </blockquote>
 
-##### مشغلات الوصول
+##### مشغلات الوصول <a name="access-triggers"></a>
 
 يصدِّر نظام AMP Access الكثير من الأحداث لحالات مختلفة في تدفق الوصول. ويمكنك الاطّلاع على [AMP Access وAnalytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) للحصول على تفاصيل حول مشغلات الوصول (`"on": "access-*"`).
 
-#### مشغلات تحليلات الفيديو
+#### مشغلات تحليلات الفيديو <a name="video-analytics-triggers"></a>
 
 توفر تحليلات الفيديو العديد من المشغلات (`"on": "video-*"`) التي يمكن للناشرين استخدامها لتتبع الأحداث المختلفة التي تحدث أثناء عمر الفيديو. تتوفر المزيد من التفاصيل في [تحليلات فيديو AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
-#### الكائن Transport
+#### الكائن Transport <a name="transport"></a>
 
 يحدد كائن التهيئة `transport` الكيفية التي بها إرسال الطلب. وتكون قيمته كائنًا ذا حقول يشير إلى طرق النقل المقبولة.
 
@@ -769,7 +769,7 @@ visibilitySpec: {
 
 يمكنك الاطّلاع على [هذا المثال الذي ينفذ واجهة برمجة تطبيقات العميل بالنقل بالطريقة iframe](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) و[مثال الصفحة التي تتضمن إطار iframe هذا](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport.amp.html) للتعرّف على المزيد من المعلومات. يعمل هذا المثال على تحميل [إعلان غير حقيقي](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html) يحتوي على العلامة `amp-analytics`. يُذكر أن محتوى هذا الإعلان يتضمن بعض تعليمات التهيئة الإضافية التي يجب اتباعها.
 
-##### الخيار Use Body للكائن Extra URL Params
+##### الخيار Use Body للكائن Extra URL Params <a name="use-body-for-extra-url-params"></a>
 
 يشير خيار التهيئة `useBody` إلى ما إذا كان سيتم تضمين الكائن `extraUrlParams` أو لا في نص طلب POST بدلاً من عنوان URL كمعامِلات طلب البحث ذات عناوين URL المشفرة.
 
@@ -786,7 +786,7 @@ visibilitySpec: {
 }
 ```
 
-##### سياسة المُحيل
+##### سياسة المُحيل <a name="referrer-policy"></a>
 
 يمكن تحديد سياسة المُحيل في الحقل `referrerPolicy` في تهيئة `transport`. لا يتم حاليًا سوى إتاحة `no-referrer`.
 هذا ويُذكر أن سياسة المُحيل متاحة فقط لنقل `image`. إذا تم تحديد `referrerPolicy: no-referrer`، سيتم إلغاء طرق النقل `beacon` و`xhrpost` لتكون `false`.
@@ -800,7 +800,7 @@ visibilitySpec: {
 }
 ```
 
-#### الميزة Linkers
+#### الميزة Linkers <a name="linkers"></a>
 
 تُستخدم الميزة `linkers` لتفعيل مزامنة المعرفات عبر النطاقات. ستستخدم `amp-analytics` [كائن تهيئة](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format) لإنشاء "سلسلة رابط" يتم إلحاقها بالروابط الصادرة المحددة على الصفحة باعتبارها معلَمة عنوان URL. عندما ينقر المستخدِم على أحد هذه الروابط، ستقرأ الصفحة الوجهة سلسلة الرابط من معلَمة عنوان URL لإجراء مزامنة المعرفات. يستخدم هذا عادةً للانضمام إلى جلسات المستخدِم عبر نطاق خادم AMP الوكيل ونطاق الناشر.
 
@@ -808,17 +808,17 @@ visibilitySpec: {
 
 إذا كنت بحاجة إلى استيعاب هذه المعلَمة، توفّر صفحة [تلقي معرفات الرابط](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md) المعلومات المتعلقة بكيفية إنشاء هذه المعلمة.
 
-#### الميزة Cookies
+#### الميزة Cookies <a name="cookies"></a>
 
 تتيح الميزة `cookies` كتابة ملف تعريف الارتباط إلى النطاق الأصل من خلال استخلاص المعلومات [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) و[`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) من عنوان URL للمستند. ويمكن استخدامها مع ميزات `linkers` لإجراء مزامنة المعرفات من نطاق خادم AMP الوكيل مع صفحات AMP على نطاق الناشر.
 
 يمكن العثور على تفاصيل حول إعداد تهيئة `cookies` في [تلقي معلمات الروابط على صفحات AMP.](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطّلِع على [قواعد amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/validator-amp-analytics.protoascii) في مواصفات مدقق AMP.
 
-### السمات الصالحة للمكّوِن `<amp-analytics>`
+### السمات الصالحة للمكّوِن `<amp-analytics>` <a name="valid-attributes-for-"></a>
 
 في ما يلي السمات الصالحة للمكّوِن `amp-analytics`:
 
@@ -850,6 +850,6 @@ visibilitySpec: {
 
 إذا تم توفير هذه السمة، لن تعالج الصفحة طلبات التحليلات إلى أن يؤكد (يقبل) المستخدِم [amp-user-notification](amp-user-notification.md) الذي به معرّف عنصر HTML المحدد. وهذه السمة اختيارية.
 
-## التحليلات لمكونات AMP
+## التحليلات لمكونات AMP <a name="analytics-for-amp-components"></a>
 
 يمكن لمطوري مكونات AMP تنفيذ مجموعة من البيانات باستخدام AMP Analytics. ويُرجى الرجوع إلى [تنفيذ التحليلات لمكونات AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md) للحصول على المزيد من المعلومات.

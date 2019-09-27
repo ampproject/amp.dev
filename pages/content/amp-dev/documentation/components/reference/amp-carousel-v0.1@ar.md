@@ -25,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-carousel
+# amp-carousel <a name="amp-carousel"></a>
 
 منصّة عرض بعناصر متغيّرة لعرض عدة عناصر محتوى متشابهة متغيّرة على محور أفقي؛ وتهدف إلى توفير مرونة عالية وأداء عالٍ.
 
@@ -51,7 +51,7 @@ limitations under the License.
     </tr>
   </table>
 
-# السلوك
+# السلوك <a name="behavior"></a>
 
 يُعتبر كل عنصر من العناصر الثانوية المباشرة للمكوِّن `amp-carousel` عنصرًا في منصّة عرض بعناصر متغيّرة. قد يكون لكل من هذه العقد أيضًا عناصر HTML ثانوية عشوائية.
 
@@ -76,7 +76,7 @@ limitations under the License.
 ```
 [/example]
 
-# التقدم إلى شريحة محددة
+# التقدم إلى شريحة محددة <a name="advancing-to-a-specific-slide"></a>
 
 سيؤدي تعيين طريقة للسمة `on` في عنصر لتنفيذ `tap:carousel-id.goToSlide(index=N)`، عند نقر المستخدِم، إلى انتقال منصّة عرض بعناصر متغيّرة ذات المعرف "carousel-id" إلى الشريحة بالفهرس index=N (ستكون الشريحة الأولى عند index=0 والشريحة الثانية عند  index=1 وهكذا).
 
@@ -128,7 +128,7 @@ limitations under the License.
 ```
 [/example]
 
-# السمات
+# السمات <a name="attributes"></a>
 
 <table>
   <tr>
@@ -217,7 +217,7 @@ limitations under the License.
 </table>
 
 
-# التصميم
+# التصميم <a name="styling"></a>
 
 * يمكنك استخدام محدد العنصر `amp-carousel` لتصميمه بحرية.
 * يمكنك استخدام محدد الفئة `.amp-carousel-slide` لاستهداف عناصر منصّة العرض.
@@ -242,6 +242,6 @@ limitations under the License.
 }
 ```
 
-# التحقق
+# التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) في مواصفات مدقق AMP.

@@ -635,7 +635,7 @@ A lista completa de tags únicas é conhecida:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Erros de estilo e layout
+## Erros de estilo e layout <a name="style-and-layout-errors"></a>
 
 Antes de nos aprofundarmos em erros de estilo e layout,
 é importante compreender como os
@@ -858,7 +858,7 @@ Os atributos não permitidos por tipos de layout são descritos nas
 Esse erro ocorre quando o valor do atributo é inválido para o layout especificado.
 Para entender o que causa esse erro,
 é necessário conhecer
-os [diferentes comportamentos de layouts](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements).
+os [diferentes comportamentos de layouts](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 
 Vamos supor que você definiu o layout como `fixed-height` e
 incluiu valores numéricos para `height` e `width`.
@@ -902,7 +902,7 @@ projetada especificamente para incluir modelos, como
 É possível incluir modelos nos seus arquivos de origem,
 desde que a saída gerada por esses arquivos não tenha os modelos
 (veja também
-[Como usar pré-processadores CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors)).
+[Como usar pré-processadores CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors)).
 
 ### O atributo contém sintaxe de modelo
 

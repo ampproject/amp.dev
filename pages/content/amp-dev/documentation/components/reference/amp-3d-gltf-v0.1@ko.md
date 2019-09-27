@@ -22,7 +22,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-3d-gltf
+# amp-3d-gltf <a name="amp-3d-gltf"></a>
 
 GL 전송 양식(gITF) 3D 모델을 표시합니다.
 
@@ -41,13 +41,13 @@ GL 전송 양식(gITF) 3D 모델을 표시합니다.
   </tr>
 </table>
 
-## 사용
+## 사용 <a name="usage"></a>
 
 `amp-3d-gltf` 구성요소는 gITF 형식의 3D 모델을 표시합니다.
 
 **참고**: 이 모델을 표시하려면 WebGL이 지원되는 브라우저가 필요합니다.
 
-### 예
+### 예 <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -59,7 +59,7 @@ GL 전송 양식(gITF) 3D 모델을 표시합니다.
   src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### 제한사항
+### 제한사항 <a name="limitations"></a>
 
 현재 glTF 2.0에서만 작동합니다.
 
@@ -68,11 +68,11 @@ GL 전송 양식(gITF) 3D 모델을 표시합니다.
 - 내장 카메라
 - 애니메이션
 
-### CORS
+### CORS <a name="cors"></a>
 
 `amp-3d-gltf`는 `access-control-allow-origin: *.ampproject.net`가 `src`로 지정된 엔드포인트의 응답 헤더에 설정되도록 원본 `https://<random>.ampproject.net`에서 `fetch` 요청을 합니다. 원본에 이 구성요소에 대한 임의의 하위 도메인 구성요소가 있으므로 와일드 카드가 필요합니다.
 
-## 속성
+## 속성 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -106,7 +106,7 @@ GL 전송 양식(gITF) 3D 모델을 표시합니다.
     </tr>
   </table>
 
-## 작업
+## 작업 <a name="actions"></a>
 
 <table>
   <tr>
@@ -120,6 +120,6 @@ GL 전송 양식(gITF) 3D 모델을 표시합니다.
     </tr>
   </table>
 
-## 유효성 검사
+## 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사기 사양의 [amp-3d-gltf 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii)을 참조하세요.

@@ -43,7 +43,7 @@ determined by the given width and height. Try it out by resizing this browser wi
 **TIP –** See our side-by-side live demos of [`amp-img`](../../../../documentation/components/reference/amp-img.md): [Live Demos on AMP By Example](../../../../documentation/examples/documentation/amp-img.html?format=websites).
 [/tip]
 
-## The layout attribute
+## The layout attribute <a name="the-layout-attribute"></a>
 
 The `layout` attribute gives you easy, per-element control over how your element
 should render on screen. Many of these things are possible with pure CSS – but
@@ -109,7 +109,7 @@ The following values can be used in the `layout` attribute:
 **TIP –** Visit the [Demonstrating AMP layouts](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) page to see how the various layouts respond to screen resizing.
 [/tip]
 
-### What if width and height are undefined?
+### What if width and height are undefined? <a name="what-if-width-and-height-are-undefined"></a>
 
 In a few cases if `width` or `height` are not specified,
 the AMP runtime can default these values as the following:
@@ -117,7 +117,7 @@ the AMP runtime can default these values as the following:
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Both width and height are defaulted to 0.
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): The default width and height are inferred from browser.
 
-### What if the <code>layout</code> attribute isn’t specified?
+### What if the <code>layout</code> attribute isn’t specified? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 If the <code>layout</code> attribute isn't specified, AMP tries to infer or guess
 the appropriate value:
@@ -163,7 +163,7 @@ based on the new results.
 **READ ON –** Learn more about controlling layout by applying media queries in [Use CSS media queries for responsiveness](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en).
 [/tip]
 
-### Element media queries
+### Element media queries <a name="element-media-queries"></a>
 
 One extra feature for responsive design available in AMP is the `media` attribute.
 This attribute can be used on every AMP element;

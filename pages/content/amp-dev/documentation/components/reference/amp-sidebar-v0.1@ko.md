@@ -28,7 +28,7 @@ $title: amp-sidebar
      limitations under the License.
 -->
 
-# amp-sidebar
+# amp-sidebar <a name="amp-sidebar"></a>
 
 <table>
   <tr>
@@ -51,12 +51,12 @@ $title: amp-sidebar
   </tr>
 </table>
 
-## 개요
+## 개요 <a name="overview"></a>
 
 `<amp-sidebar>`에서는 탐색 링크, 버튼, 메뉴 등의 임시 액세스용 메타 콘텐츠를 숨깁니다. `<amp-sidebar>`는 버튼 탭에서 amp-sidebar 외부를 탭하여 열고 닫을 수 있습니다.
 그러나 미디어 쿼리를 허용하는 선택적 속성을 사용하여 사이트의 다른 부분에 메타 콘텐츠를 표시할 수 있습니다. 하위 `<nav toolbar="(media query)" toolbar-target="elementID">` 요소를 사용하면 사이드바의 콘텐츠를 기본 콘텐츠의 다른 부분에 표시할 수 있습니다.
 
-## 동작
+## 동작 <a name="behavior"></a>
 
 * `<amp-sidebar>`는 `<body>`의 직속 하위 요소여야 합니다.
 * 사이드바는 페이지의 왼쪽 또는 오른쪽에만 표시될 수 있습니다.
@@ -89,7 +89,7 @@ $title: amp-sidebar
 </amp-sidebar>
 ```
 
-### 사이드바 열기 및 닫기
+### 사이드바 열기 및 닫기 <a name="opening-and-closing-the-sidebar"></a>
 
 전환하려면 요소를 탭하거나 클릭할 때 사이드바를 열거나 닫은 후 요소에서 [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 작업 속성을 설정하고 다음 작업 방법 중 하나를 지정합니다.
 
@@ -125,11 +125,11 @@ $title: amp-sidebar
 <button on='tap:sidebar1.close'>x</button>
 ```
 
-### 툴바
+### 툴바 <a name="toolbar"></a>
 
 미디어 쿼리가 있는 `toolbar` 속성 및 `<amp-sidebar>`의 하위 요소인 `<nav>` 요소의 요소 ID가 있는 `toolbar-target` 속성을 지정하여 `<body>`에 표시되는 `toolbar` 요소를 생성할 수 있습니다. `toolbar`는 `<nav>` 요소와 하위 요소를 복제하고 해당 요소를 `toolbar-target` 요소에 추가합니다.
 
-#### 동작
+#### 동작 <a name="behavior-1"></a>
 
 * 사이드바에서는 `toolbar` 속성과 `toolbar-target` 속성이 있는 nav 요소를 추가하여 툴바를 구현할 수 있습니다.
 * nav 요소는 `<amp-sidebar>`의 하위 요소이어야 하며 `<nav toolbar="(media-query)" toolbar-target="elementID">` 형식을 따라야 합니다.
@@ -167,7 +167,7 @@ $title: amp-sidebar
 
 ```
 
-## 툴바 스타일 지정
+## 툴바 스타일 지정 <a name="styling-toolbar"></a>
 
 `<amp-sidebar>` 요소의 `toolbar` 요소에는 `toolbar-target` 요소를 표시하는지 아니면 숨기는지에 따라 요소에 적용되는 클래스가 있습니다. `toolbar` 요소와 `toolbar-target` 요소에 순서대로 다른 스타일을 적용하는 데 유용합니다. 클래스는 `amp-sidebar-toolbar-target-shown` 및 `amp-sidebar-toolbar-target-hidden`입니다. `toolbar-target` 요소가 표시되면 `amp-sidebar-toolbar-target-shown` 클래스가 `toolbar` 요소에 적용됩니다. `toolbar-target` 요소를 숨기면 `amp-sidebar-toolbar-target-hidden` 클래스가 `toolbar` 요소에 적용됩니다.
 
@@ -204,11 +204,11 @@ $title: amp-sidebar
 [AMP By Example](https://ampbyexample.com/components/amp-sidebar/)에서 라이브 데모를 참조하세요.
 [/tip]
 
-## 스토리용 사이드바
+## 스토리용 사이드바 <a name="sidebar-for-stories"></a>
 
 `amp-sidebar` 사용은 `amp-story` [구성요소](../../../about/stories.html)에서 지원됩니다.
 
-### 동작
+### 동작 <a name="behavior-2"></a>
 
 * `<amp-sidebar>`는 `<amp-story>`의 직속 하위 요소여야 합니다.
 * 사이드바는 일반 AMP 문서의 '시작'하는 쪽으로 기본값이 지정됩니다. 즉, 왼쪽에서 오른쪽으로 쓰는 언어의 경우 오른쪽이고, 오른쪽에서 왼쪽으로 쓰는 언어의 경우 왼쪽입니다.
@@ -218,7 +218,7 @@ $title: amp-sidebar
 
 전체 스토리 플랫폼에서 일관된 UI 환경을 제공하기 위해 허용되는 속성과 기능의 제한사항이 있습니다. 다음은 `amp-story`에서 허용되는 `amp-sidebar`의 속성과 기능입니다.
 
-### 허용되는 속성
+### 허용되는 속성 <a name="allowed-attributes"></a>
 
 * [layout](#layout)
 * [data-close-button-aria-label](#data)
@@ -249,37 +249,37 @@ $title: amp-sidebar
 </body>
 ```
 
-## 속성
+## 속성 <a name="attributes"></a>
 
-##### side
+##### side <a name="side"></a>
 
 페이지에서 사이드바가 열리는 쪽을 나타냅니다(`left` 또는 `right`).  `side`가 지정되지 않은 경우 `side` 값은 `body` 태그의 `dir` 속성(`ltr` => `left` , `rtl` => `right`)에서 상속합니다. `dir`이 없으면 `side`가 기본적으로 `left`가 됩니다.
 
-##### layout<a name="layout"></a>
+##### layout <a name="layout"></a>
 
 사이드바의 표시 레이아웃을 지정하며, `nodisplay`여야 합니다.
 
-##### open
+##### open <a name="open"></a>
 
 이 속성은 사이드바가 열리면 표시됩니다.
 
-##### data-close-button-aria-label<a name="data"></a>
+##### data-close-button-aria-label <a name="data"></a>
 
 접근성을 위해 추가한 닫기 버튼의 ARIA 레이블을 설정하는 데 사용하는 선택적 속성입니다.
 
-##### toolbar
+##### toolbar <a name="toolbar-1"></a>
 
-이 속성은 하위 `<nav toolbar="(media-query)" toolbar-target="elementID">` 요소에 표시되며, 툴바를 표시할 때 미디어 쿼리를 허용합니다. 툴바 사용에 관한 자세한 정보는 [툴바](#toolbar) 섹션을 참조하세요.
+이 속성은 하위 `<nav toolbar="(media-query)" toolbar-target="elementID">` 요소에 표시되며, 툴바를 표시할 때 미디어 쿼리를 허용합니다. 툴바 사용에 관한 자세한 정보는 [툴바](#toolbar-1) 섹션을 참조하세요.
 
-##### toolbar-target
+##### toolbar-target <a name="toolbar-target"></a>
 
-이 속성은 하위 `<nav toolbar="(media-query)" toolbar-target="elementID">`에 표시되며 페이지에서 요소의 ID를 허용합니다.  `toolbar-target` 속성을 사용하면 기본 툴바 스타일링을 사용하지 않고 페이지에서 요소의 지정된 ID에 툴바를 배치합니다. 툴바 사용에 관한 자세한 정보는 [툴바](#toolbar) 섹션을 참조하세요.
+이 속성은 하위 `<nav toolbar="(media-query)" toolbar-target="elementID">`에 표시되며 페이지에서 요소의 ID를 허용합니다.  `toolbar-target` 속성을 사용하면 기본 툴바 스타일링을 사용하지 않고 페이지에서 요소의 지정된 ID에 툴바를 배치합니다. 툴바 사용에 관한 자세한 정보는 [툴바](#toolbar-1) 섹션을 참조하세요.
 
-##### 공통 속성<a name="common"></a>
+##### 공통 속성 <a name="common"></a>
 
 이 요소에는 AMP 구성요소로 확장된 [공통 속성](../../../documentation/guides-and-tutorials/learn/common_attributes.md)이 포함됩니다.
 
-## 스타일 지정
+## 스타일 지정 <a name="styling"></a>
 
 `amp-sidebar` 구성요소는 표준 CSS를 사용하여 스타일을 지정할 수 있습니다.
 
@@ -291,7 +291,7 @@ $title: amp-sidebar
 AMP 페이지에서 사용할 수 있으며 스타일이 미리 지정되고 즉각적으로 반응하는 탐색 메뉴를 보려면 [AMP 시작](https://ampstart.com/components#navigation)을 방문하세요.
 [/tip]
 
-## 오버플로 영역에서 자동 스크롤
+## 오버플로 영역에서 자동 스크롤 <a name="auto-scrolling-within-overflowing-areas"></a>
 
 `amp-sidebar`는 사이드바와 툴바 케이스의 속성으로 `autoscroll`을 사용하여 꾸민 첫 번째 요소로 오버플로 컨테이너를 자동으로 스크롤할 수 있습니다.
 
@@ -328,12 +328,12 @@ AMP 페이지에서 사용할 수 있으며 스타일이 미리 지정되고 즉
 
 작동하는 예제 코드는 [이 예제 파일](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html)을 참조하세요.
 
-## UX 고려사항
+## UX 고려사항 <a name="ux-considerations"></a>
 
 `<amp-sidebar>`를 사용할 때 사용자가 AMP 뷰어에서 모바일로 페이지를 보는 경우가 많으므로 고정 위치 헤더가 표시될 수 있다는 점에 유의하세요. 또한 브라우저에서 페이지 상단에 고유한 고정 헤더를 표시하는 경우가 잦습니다. 화면 상단에 또 다른 고정 위치 요소를 추가하면 사용자에게 새로운 정보를 제공하지 않는 콘텐츠가 모바일 화면 공간을 상당히 많이 차지하게 됩니다.
 
 따라서 사이드바를 여는 데 사용하는 여유 공간을 전체 너비의 고정 헤더에 두지 않는 것이 좋습니다.
 
-## 유효성 검사
+## 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검증기 사양에서 [amp-sidebar 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii)을 참조하세요.

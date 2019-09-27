@@ -8,7 +8,7 @@ teaser:
   text: 利用数据绑定和类似于 JS 的简单表达式，使元素因应用户操作或数据变更而变化。
 ---
 
-# amp-bind
+# amp-bind <a name="amp-bind"></a>
 
 通过数据绑定和表达式添加自定义互动方式。
 
@@ -55,7 +55,7 @@ limitations under the License.
   </tr>
 </table>
 
-# 概述
+# 概述 <a name="overview"></a>
 
 借助 `amp-bind` 组件，您可以通过数据绑定以及类似于 JS 的表达式，为 AMP 网页添加自定义的有状态互动方式。
 
@@ -63,7 +63,7 @@ limitations under the License.
   <amp-youtube width="480" height="270" data-videoid="xzCFU8b5fCU" layout="responsive"></amp-youtube>
   <figcaption>观看此视频，简要了解 amp-bind。</figcaption></figure>
 
-# 一个简单示例
+# 一个简单示例 <a name="a-simple-example"></a>
 
 在下面的示例中，点按相应按钮可将 `<p>` 元素的文本从“Hello World”更改为“Hello amp-bind”。
 
@@ -78,7 +78,7 @@ limitations under the License.
 为了确保性能并避免内容意外跳转，`amp-bind` 不会在网页加载时对表达式求值。这意味着，应该为视觉元素指定默认状态，而不是依赖 `amp-bind` 进行初始呈现。
 [/tip]
 
-### 运作方式
+### 运作方式 <a name="how-does-it-work"></a>
 
 `amp-bind` 包含三个主要组件：
 
@@ -88,7 +88,7 @@ limitations under the License.
 
 `amp-bind` 会特别注意确保在 AMP 网页上实现出色的速度、安全性和性能。
 
-### 一个稍微复杂的示例
+### 一个稍微复杂的示例 <a name="a-slightly-more-complex-example"></a>
 
 ```html
 <!-- 将复杂的嵌套 JSON 数据存储在 <amp-state> 元素中。-->
@@ -140,13 +140,13 @@ limitations under the License.
 如需查看此示例的带代码注释版本，请[观看**在线演示**](https://ampbyexample.com/components/amp-bind/)！
 [/tip]
 
-# 详细说明
+# 详细说明 <a name="details"></a>
 
-# 状态
+# 状态 <a name="state"></a>
 
 每个使用 `amp-bind` 的 AMP 文档都包含涵盖整个文档的可变 JSON 数据（即**状态**）。
 
-# 通过 `amp-state` 对状态进行初始化
+# 通过 `amp-state` 对状态进行初始化 <a name="initializing-state-with-amp-state"></a>
 
 可通过 `amp-state` 组件对 `amp-bind` 的状态进行初始化：
 
@@ -165,7 +165,7 @@ limitations under the License.
 * `<amp-state>` 元素的子级 JSON 不能超过 100KB。
 * `<amp-state>` 元素还可以指定 CORS 网址，而不是子级 JSON 脚本。有关详情，请参阅[附录](#amp-state-specification)。
 
-# 刷新状态
+# 刷新状态 <a name="refreshing-state"></a>
 
 此组件支持 `refresh` 操作，该操作可用于刷新状态内容。
 
@@ -175,9 +175,9 @@ limitations under the License.
 <button on="tap:amp-state.refresh"></button>
 ```
 
-# 通过 `AMP.setState()` 更新状态
+# 通过 `AMP.setState()` 更新状态 <a name="updating-state-with-ampsetstate"></a>
 
-[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) 操作可将对象字面量合并到状态中。例如，当用户按下方的按钮后，`AMP.setState()` 会将对象字面量与状态进行[深度合并](#deep-merge-with-ampsetstate)。
+[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) 操作可将对象字面量合并到状态中。例如，当用户按下方的按钮后，`AMP.setState()` 会将对象字面量与状态进行[深度合并](#deep-merge-with-ampsetstate)。
 
 ```html
 <!-- 与 JavaScript 类似，您可以在
@@ -195,9 +195,9 @@ limitations under the License.
 <input type="range" on="change:AMP.setState({myRangeValue: event.value})">
 ```
 
-# 通过 `AMP.pushState()` 修改历史记录
+# 通过 `AMP.pushState()` 修改历史记录 <a name="modifying-history-with-amppushstate"></a>
 
-[`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
+[`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
 
 例如：
 ```html
@@ -207,11 +207,11 @@ limitations under the License.
 * 点按相应按钮会将变量 `foo` 设为 123，并推送新的历史记录条目。
 * 执行返回操作会将 `foo` 恢复到之前的值“bar”（相当于调用 `AMP.setState({foo: 'bar'})`）。
 
-# 表达式
+# 表达式 <a name="expressions"></a>
 
 表达式与 JavaScript 类似，但两者存在一些重要区别。
 
-# 与 JavaScript 的区别
+# 与 JavaScript 的区别 <a name="differences-from-javascript"></a>
 
 * 表达式只能访问所在文档的[状态](#state)。
 * 表达式**无权**访问 `window` 或 `document` 等全局属性。
@@ -222,7 +222,7 @@ limitations under the License.
 
 如需查看完整的表达式语法和实现，请参阅 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 和 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)。
 
-# 示例
+# 示例 <a name="examples"></a>
 
 以下都是有效的表达式：
 
@@ -233,7 +233,7 @@ limitations under the License.
 null || 'default' // 'default'
 ```
 
-# 列入白名单的函数
+# 列入白名单的函数 <a name="white-listed-functions"></a>
 
 <table>
   <tr>
@@ -346,7 +346,7 @@ null || 'default' // 'default'
 
 <sup>2</sup>静态函数没有命名空间，例如，应使用 `abs(-1)`，而不是 `Math.abs(-1)`。
 
-# 通过 `amp-bind-macro` 定义宏
+# 通过 `amp-bind-macro` 定义宏 <a name="defining-macros-with-amp-bind-macro"></a>
 
 您可以通过定义 `amp-bind-macro` 重复使用 `amp-bind` 表达式片段。借助 `amp-bind-macro` 元素，您可以定义一个采用零个或多个参数并引用当前状态的表达式。您可以像调用函数一样调用宏，只需从文档中的任意位置引用宏的 `id` 属性值即可。
 
@@ -361,7 +361,7 @@ null || 'default' // 'default'
 
 宏还可以调用在其之前定义的其他宏，<i></i>但无法以递归方式调用自身。
 
-# 绑定
+# 绑定 <a name="bindings"></a>
 
 **绑定** 是一种采用 `[property]` 形式的特殊属性，用于将元素的属性关联到[表达式](#expressions)。您还可以通过 `data-amp-bind-property` 形式使用另一种与 XML 兼容的语法。
 
@@ -409,7 +409,7 @@ null || 'default' // 'default'
 * 系统会根据布尔表达式的结果切换布尔值属性。例如：`<amp-video [controls]="expr"...>`。当 `expr` 的求解结果为 `true` 时，`<amp-video>` 元素具有 `controls` 属性。当 `expr` 的求解结果为 `false` 时，系统会移除 `controls` 属性。
 * 编写 XML（如 XHTML、JSX）或通过 DOM API 编写属性时，属性名称中的括号字符 `[` 和 `]` 可能会带来问题。在这些情况下，请使用替代语法 `data-amp-bind-x="foo"`，而不是 `[x]="foo"`。
 
-# 特定于元素的属性
+# 特定于元素的属性 <a name="element-specific-attributes"></a>
 
 仅允许绑定到以下组件和属性：
 
@@ -553,11 +553,11 @@ null || 'default' // 'default'
 
     <sup>*</sup>表示可绑定的属性，而且没有不可绑定的对应项。
 
-# 调试
+# 调试 <a name="debugging"></a>
 
 在开发模式下进行测试（使用网址片段 `#development=1`），以便在开发过程中发现警告和错误，并可以使用特殊的调试函数。
 
-# 警告
+# 警告 <a name="warnings"></a>
 
 在开发模式下，如果绑定属性的默认值与相应表达式的初始结果不一致，`amp-bind` 会发出警告。这有助于防止出现因其他状态变量发生变化而导致的意外变化。例如：
 
@@ -581,7 +581,7 @@ null || 'default' // 'default'
 <p [text]="myAmpState.bar">Some placeholder text.</p>
 ```
 
-# 错误
+# 错误 <a name="errors"></a>
 
 使用 `amp-bind` 时，可能会遇到以下几种运行时错误。
 
@@ -618,13 +618,13 @@ null || 'default' // 'default'
   </tr>
 </table>
 
-# 调试状态
+# 调试状态 <a name="debugging-state"></a>
 
 利用 `AMP.printState()` 将当前状态输出到控制台。
 
-# 附录
+# 附录 <a name="appendix"></a>
 
-# `<amp-state>` 规范
+# `<amp-state>` 规范 <a name="-specification"></a>
 
 `amp-state` 元素可以包含子级 `<script>` 元素，**也可以** 包含 `src` 属性（其中包含指向远程 JSON 端点的 CORS 网址），但不能同时包含这两者。
 
@@ -641,11 +641,11 @@ null || 'default' // 'default'
 </amp-state>
 ```
 
-# XHR 批处理
+# XHR 批处理 <a name="xhr-batching"></a>
 
 AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就是说，您可以在 AMP 网页上将单个 JSON 数据请求用作多个使用方（如多个 `amp-state` 元素）的数据源。例如，如果您的 `amp-state` 元素向某个端点发出 XHR，那么在该 XHR 传输期间，向同一端点发送的所有后续 XHR 都不会触发，系统将只返回第一个 XHR 的结果。
 
-# 属性
+# 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -667,7 +667,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
       </tr>
     </table>
 
-# 通过 `AMP.setState()` 进行深度合并
+# 通过 `AMP.setState()` 进行深度合并 <a name="deep-merge-with-ampsetstate"></a>
 
 调用 `AMP.setState()` 时，`amp-bind` 会将所提供的对象字面量与当前状态进行深度合并。除了以递归方式合并的嵌套对象之外，对象字面量的所有变量都会直接写入到状态。状态中的基元和数组始终会被对象字面量中的同名变量覆盖。
 
@@ -712,7 +712,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
 
 请注意，如果通过包含循环引用的对象字面量调用 `AMP.setState()`，`amp-bind` 会抛出错误。
 
-# 移除变量
+# 移除变量 <a name="circular-references"></a>
 
 在 `AMP.setState()` 中将现有状态变量的值设为 `null` 可移除该变量。从上一个示例中的状态开始，按下：
 
@@ -745,7 +745,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
   }
 ```
 
-# 表达式语法
+# 表达式语法 <a name="expression-grammar"></a>
 
 `amp-bind` 表达式的语法，与 BNF 语法类似：
 

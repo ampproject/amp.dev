@@ -53,7 +53,7 @@ All blog posts in the [`amp-live-list`](../../../documentation/components/refere
 
 Now that you’re familiar with the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component, let’s figure out how to implement a more complex live blog. Read on to learn more about how to implement pagination, and how deep linking works.
 
-### Pagination
+### Pagination <a name="pagination"></a>
 
 Long blogs could use pagination to improve performance by limiting the number of blog items to display on a page. To implement pagination, in the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component, add the `<div pagination></div>`, then insert any markup you need for pagination (for example, a page number or a link to the next and previous page).
 
@@ -84,7 +84,7 @@ After the size of blog posts has exceeded the maximum number of items specified 
 
 You can add the disabled attribute to  the hosted page to prevent the polling mechanism. In the live blog sample, we perform this behavior in  a server-side template; when the requested page is not the first one, we add the disabled attribute to the [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component.
 
-### Deeplinking
+### Deeplinking <a name="deeplinking"></a>
 
 When you publish a blog post, it’s important to be able to deep link to the post to enable features like sharing. With [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), deep linking is possible by simply using the `id` of the blog item. For example, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) allows you to navigate directly to the blog post with the `post3` id.
 

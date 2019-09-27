@@ -24,7 +24,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-social-share
+# amp-social-share <a name="amp-social-share"></a>
 
 소셜 공유 버튼을 표시합니다.
 
@@ -48,11 +48,11 @@ teaser:
   </tr>
 </table>
 
-## 개요
+## 개요 <a name="overview"></a>
 
 `amp-social-share` 구성요소는 다양한 소셜 플랫폼 제공자의 소셜 공유 버튼을 표시합니다.
 
-## 예
+## 예 <a name="examples"></a>
 
 **예: 기본 소셜 공유 버튼**
 
@@ -74,7 +74,7 @@ teaser:
 
 Linkedin은 사전 구성된 제공자 중 하나이므로 `data-share-endpoint` 속성을 제공할 필요가 없습니다.
 
-## 속성
+## 속성 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -98,7 +98,7 @@ Linkedin은 사전 구성된 제공자 중 하나이므로 `data-share-endpoint`
         </tr>
       </table>
 
-## 사전 구성된 제공자
+## 사전 구성된 제공자 <a name="pre-configured-providers"></a>
 
 `amp-social-share` 구성요소는 공유 엔드포인트와 일부 기본 매개변수를 알고 있는 [사전 구성된 일부 제공자](0.1/amp-social-share-config.js)를 제공합니다.
 
@@ -220,7 +220,7 @@ Linkedin은 사전 구성된 제공자 중 하나이므로 `data-share-endpoint`
     </tr>
   </table>
 
-## 구성되지 않은 제공자
+## 구성되지 않은 제공자 <a name="non-configured-providers"></a>
 
 사전 구성된 제공자 외에도 `amp-social-share` 구성요소에서 추가 속성을 지정하여 구성되지 않은 제공자를 사용할 수 있습니다.
 
@@ -237,9 +237,9 @@ Linkedin은 사전 구성된 제공자 중 하나이므로 `data-share-endpoint`
 
 이러한 제공자는 사전 구성되어 있지 않으므로 제공자에 적절한 버튼 이미지와 스타일을 생성해야 합니다.
 
-## 스타일
+## 스타일 <a name="styles"></a>
 
-### 기본 스타일
+### 기본 스타일 <a name="default-styles"></a>
 
 기본적으로 `amp-social-share`는 자주 사용되는 사전 구성된 제공자를 일부 포함합니다. 이러한 제공자의 버튼에는 제공자의 공식 색상과 로고로 스타일이 지정됩니다. 기본 너비는 60픽셀, 기본 높이는 44픽셀입니다.
 
@@ -247,7 +247,7 @@ Linkedin은 사전 구성된 제공자 중 하나이므로 `data-share-endpoint`
 AMP 페이지에서 사용할 수 있으며 사전에 스타일이 지정된 반응형 공유 링크를 보려면 [AMP 시작](https://ampstart.com/components#links-and-sharing)을 방문하세요.
 [/tip]
 
-### 맞춤 스타일
+### 맞춤 스타일 <a name="custom-styles"></a>
 
 가끔 나만의 스타일을 제공하고 싶을 수도 있습니다. 다음처럼 제공된 스타일을 간단히 재정의할 수 있습니다.
 ```css
@@ -257,7 +257,7 @@ amp-social-share[type="twitter"] {
 }
 ```
 
-## 대체 변수
+## 대체 변수 <a name="variable-substitution"></a>
 
 `<amp-social-share>` 요소에서 [전역 AMP 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 아래 예에서 `TITLE`이 페이지 제목으로 대체되고 `CANONICAL_URL`이 문서의 표준 URL로 대체됩니다.
 
@@ -267,6 +267,6 @@ amp-social-share[type="twitter"] {
 </amp-social-share>
 ```
 
-## 유효성 검사
+## 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사 도구 사양에서 [amp-social-share rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii)를 참조하세요.

@@ -24,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-bind
+# amp-bind <a name="amp-bind"></a>
 데이터 결합 및 식과 함께 맞춤형 상호작용을 추가합니다.
 
 <table>
@@ -52,7 +52,7 @@ limitations under the License.
   </tr>
 </table>
 
-# 개요
+# 개요 <a name="overview"></a>
 
 `amp-bind` 구성요소를 사용하면 데이터 결합 및 JS와 유사한 식을 통해 AMP 페이지에 맞춤형 스테이트풀(stateful) 상호작용을 추가할 수 있습니다.
 
@@ -60,7 +60,7 @@ limitations under the License.
   <amp-youtube width="480" height="270" data-videoid="xzCFU8b5fCU" layout="responsive"></amp-youtube>
   <figcaption>amp-bind에 대한 소개 동영상입니다.</figcaption></figure>
 
-# 간단한 예
+# 간단한 예 <a name="a-simple-example"></a>
 
 이 예에서는 버튼을 누르면 `<p>` 요소의 텍스트가 'Hello World'에서 'Hello amp-bind'로 바뀝니다.
 
@@ -75,7 +75,7 @@ limitations under the License.
 성능을 위해 그리고 예기치 않은 콘텐츠 건너뛰기 위험을 피하기 위해 `amp-bind`는 페이지 로드 시 식을 평가하지 않습니다. 즉, 시각적 요소에 기본 상태를 제공해야 하며 초기 렌더링에 `amp-bind`를 사용하지 않아야 합니다.
 [/tip]
 
-### 기본 원리
+### 기본 원리 <a name="how-does-it-work"></a>
 
 `amp-bind`에는 세 가지 주요 구성요소가 있습니다.
 
@@ -86,7 +86,7 @@ limitations under the License.
 
 amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해 특별한 주의를 기울입니다.
 
-### 약간 더 복잡한 예
+### 약간 더 복잡한 예 <a name="a-slightly-more-complex-example"></a>
 
 ```html
 <!-- 복잡한 중첩 JSON 데이터를 <amp-state> 요소에 저장하세요. -->
@@ -139,13 +139,13 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 코드 주석을 사용하여 이 예의 [**라이브 데모**를 시험해보세요](https://ampbyexample.com/components/amp-bind/)!
 [/tip]
 
-# 세부정보
+# 세부정보 <a name="details"></a>
 
-# 상태
+# 상태 <a name="state"></a>
 
 `amp-bind`를 사용하는 각 AMP 문서에는 문서 범위의 변경 가능한 JSON 데이터 또는 **상태** 가 있습니다.
 
-# `amp-state`로 상태 초기화
+# `amp-state`로 상태 초기화 <a name="initializing-state-with-amp-state"></a>
 
 `amp-bind`의 상태는 `amp-state` 구성요소로 초기화할 수 있습니다.
 
@@ -164,7 +164,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 * `<amp-state>` 요소의 하위 JSON은 최대 크기가 100KB입니다.
 * `<amp-state>` 요소는 하위 JSON 스크립트 대신 CORS URL을 지정할 수도 있습니다. 자세한 내용은 [부록](#amp-state-specification)을 참조하세요.
 
-# 상태 새로 고침
+# 상태 새로 고침 <a name="refreshing-state"></a>
 
 `refresh` 작업은 이 구성요소에서 지원되며 상태의 내용을 새로 고치는 데 사용할 수 있습니다.
 
@@ -174,9 +174,9 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 <button on="tap:amp-state.refresh"></button>
 ```
 
-# `AMP.setState()`로 상태 업데이트
+# `AMP.setState()`로 상태 업데이트 <a name="updating-state-with-ampsetstate"></a>
 
-[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) 작업은 개체 리터럴을 상태로 병합합니다. 예를 들어, 아래의 버튼을 누르면 `AMP.setState()`는 개체 리터럴을 상태와 [심층 병합](#deep-merge-with-ampsetstate)합니다.
+[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) 작업은 개체 리터럴을 상태로 병합합니다. 예를 들어, 아래의 버튼을 누르면 `AMP.setState()`는 개체 리터럴을 상태와 [심층 병합](#deep-merge-with-ampsetstate)합니다.
 
 ```html
 <!-- 자바스크립트와 마찬가지로 개체 리터럴
@@ -193,9 +193,9 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 <input type="range" on="change:AMP.setState({myRangeValue: event.value})">
   ```
 
-# `AMP.pushState()`로 기록 수정
+# `AMP.pushState()`로 기록 수정 <a name="modifying-history-with-amppushstate"></a>
 
-브라우저 기록 스택에 새 항목을 푸시한다는 점을 제외하면 [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) 작업은 `AMP.setState()`와 유사합니다. 이 기록 항목을 표시하면(예: 뒤로 이동) `AMP.pushState()`에 의해 설정된 변수의 이전 값이 복원됩니다.
+브라우저 기록 스택에 새 항목을 푸시한다는 점을 제외하면 [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) 작업은 `AMP.setState()`와 유사합니다. 이 기록 항목을 표시하면(예: 뒤로 이동) `AMP.pushState()`에 의해 설정된 변수의 이전 값이 복원됩니다.
 
 예:
 ```html
@@ -205,11 +205,11 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 * 버튼을 누르면 변수 `foo`가 123으로 설정되고 새로운 기록 항목이 푸시됩니다.
 * 뒤로 이동하면 `foo`가 이전 값인 'bar'로 복원됩니다(`AMP.setState({foo: 'bar'} 호출과 동일)`.
 
-# 식
+# 식 <a name="expressions"></a>
 
 식은 자바스크립트와 비슷하지만 몇 가지 중요한 차이점이 있습니다.
 
-# 자바스크립트와의 차이점
+# 자바스크립트와의 차이점 <a name="differences-from-javascript"></a>
 
 * 식은 포함 문서의 [상태](#state)에만 액세스할 수 있습니다.
 * 식은 `window` 또는 `document`와 같은 전역에 액세스하지 **않습니다**.
@@ -220,7 +220,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 식 문법과 구현의 전체 내용은 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 및 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)에서 찾아볼 수 있습니다.
 
-# 예
+# 예 <a name="examples"></a>
 
 다음은 모두 유효한 식입니다.
 
@@ -231,7 +231,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 null || 'default' // 'default'
 ```
 
-# 화이트리스트에 있는 함수
+# 화이트리스트에 있는 함수 <a name="white-listed-functions"></a>
 
 <table>
   <tr>
@@ -344,7 +344,7 @@ null || 'default' // 'default'
 
 <sup>2</sup>상태 함수에는 네임스페이스가 없습니다. 예를 들어 `Math.abs(-1)` 대신 `abs(-1)`을 사용하세요.
 
-# `amp-bind-macro`로 매크로 정의
+# `amp-bind-macro`로 매크로 정의 <a name="defining-macros-with-amp-bind-macro"></a>
 
 `amp-bind-macro`를 정의하면 `amp-bind` 식의 부분들을 재사용할 수 있습니다. `amp-bind-macro` 요소를 사용하면 0개 이상의 인수를 사용하고 현재 상태를 참조하는 식을 정의할 수 있습니다. 문서의 어디서나 `id` 속성 값을 참조하여 매크로를 함수처럼 호출할 수 있습니다.
 
@@ -359,7 +359,7 @@ null || 'default' // 'default'
 
 매크로는 또한 <i>먼저 정의된</i> 다른 매크로를 호출할 수 있습니다. 그러나 자신을 재귀적으로 호출할 수는 없습니다.
 
-# 결합
+# 결합 <a name="bindings"></a>
 
 **결합** 은 요소의 속성을 [식](#expressions)에 연결하는 `[property]` 양식의 특수한 속성입니다. `data-amp-bind-property` 양식의 XML 호환 구문을 대안으로 사용할 수도 있습니다.
 
@@ -407,7 +407,7 @@ null || 'default' // 'default'
 * 부울 식 결과는 부울 속성을 전환합니다. 예: `<amp-video [controls]="expr"...>`. `expr`이 `true`로 평가되면 `<amp-video>` 요소는 `controls` 속성을 갖게 됩니다. `expr`이 `false`로 평가되면 `controls` 속성이 제거됩니다.
 * 속성 이름의 대괄호 `[` 및 `]`는 XML(예: XHTML, JSX)을 작성하거나 DOM API를 통해 속성을 작성할 때 문제가 될 수 있습니다. 이 경우 `[x]="foo"` 대신 대체 구문 `data-amp-bind-x="foo"`를 사용하세요.
 
-# 요소별 속성
+# 요소별 속성 <a name="element-specific-attributes"></a>
 
 다음 구성요소 및 속성에 대한 결합만 허용됩니다.
 
@@ -551,11 +551,11 @@ null || 'default' // 'default'
 
   <sup>*</sup>결합할 수 없는 대상이 없는 결합 가능한 속성을 나타냅니다.
 
-# 디버깅
+# 디버깅 <a name="debugging"></a>
 
 개발 중 경고 및 오류를 강조 표시하고 특수 디버깅 기능에 액세스하려면 개발 모드(URL에 `#development=1` 포함)에서 테스트합니다.
 
-# 경고
+# 경고 <a name="warnings"></a>
 
 개발 모드에서, 결합된 속성의 기본값이 해당하는 식의 초기 결과와 일치하지 않으면 `amp-bind`는 경고를 표시합니다. 이는 다른 상태 변수의 변경에 따른 의도하지 않은 변형의 발생을 방지하는 데 도움이 될 수 있습니다. 예:
 
@@ -577,7 +577,7 @@ null || 'default' // 'default'
 <p [text]="myAmpState.bar">일부 자리표시자 텍스트.</p>
 ```
 
-# 오류
+# 오류 <a name="errors"></a>
 
 `amp-bind`로 작업할 때 발생할 수 있는 몇 가지 유형의 런타임 오류가 있습니다.
 
@@ -614,13 +614,13 @@ null || 'default' // 'default'
   </tr>
 </table>
 
-# 디버깅 상태
+# 디버깅 상태 <a name="debugging-state"></a>
 
 현재 상태를 콘솔에 인쇄하려면 `AMP.printState()`를 사용합니다.
 
-# 부록
+# 부록 <a name="appendix"></a>
 
-# `<amp-state>` 사양
+# `<amp-state>` 사양 <a name="-specification"></a>
 
 `amp-state`에는 하위 `<script>` 요소 **또는** 원격 JSON 엔드포인트에 대한 CORS URL을 포함하는 `src` 속성을 포함할 수 있지만, 둘을 모두 포함할 수는 없습니다.
 
@@ -637,11 +637,11 @@ null || 'default' // 'default'
 </amp-state>
 ```
 
-# XHR 배치
+# XHR 배치 <a name="xhr-batching"></a>
 
 AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처리합니다. 즉, AMP 페이지에서 여러 소비자(예: 여러 `amp-state` 요소)에 대해 데이터 소스로 단일 JSON 데이터 요청을 사용할 수 있습니다.  예를 들어 `amp-state` 요소가 엔드포인트에 대해 XHR을 만드는 경우 XHR이 실행 중인 동안에는 동일한 엔드포인트에 대한 모든 후속 XHR이 트리거되지 않으며 대신 첫 번째 XHR에서 결과가 반환됩니다.
 
-# 속성
+# 속성 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -663,7 +663,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
       </tr>
     </table>
 
-# `AMP.setState()`를 이용한 심층 병합
+# `AMP.setState()`를 이용한 심층 병합 <a name="deep-merge-with-ampsetstate"></a>
 
 `AMP.setState()`가 호출되면 `amp-bind`는 제공된 개체 리터럴을 현재 상태와 심층 병합합니다. 개체 리터럴의 모든 변수는 재귀적으로 병합되는 중첩된 개체를 제외하고 상태에 직접 기록됩니다. 상태의 프리미티브와 배열을 개체 리터럴에 있는 동일한 이름의 변수가 항상 덮어씁니다.
 
@@ -708,7 +708,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
 
 순환 참조가 포함된 개체 리터럴과 함께 `AMP.setState()`를 호출하면 `amp-bind`에서 오류가 발생합니다.
 
-# 변수 제거
+# 변수 제거 <a name="circular-references"></a>
 
 `AMP.setState()`에서 값을 `null` 로 설정하여 기존 상태 변수를 제거합니다. 이전 예제의 상태에서 시작하여 다음을 누릅니다.
 
@@ -741,7 +741,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
   }
 ```
 
-# 식 문법
+# 식 문법 <a name="expression-grammar"></a>
 
 `amp-bind` 식에 대한 BNF와 유사한 문법:
 

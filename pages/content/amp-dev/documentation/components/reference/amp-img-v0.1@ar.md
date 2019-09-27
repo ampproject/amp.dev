@@ -26,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-img
+# amp-img <a name="amp-img"></a>
 
 
 <table>
@@ -46,7 +46,7 @@ limitations under the License.
 
 [جدول المحتويات]
 
-# السلوك
+# السلوك <a name="behavior"></a>
 
 قد يختار وقت التشغيل تأخير تحميل الموارد أو تحديد أولوية تحميلها بناءً على موضع إطار العرض أو موارد النظام أو النطاق الترددي للاتصال أو عوامل أخرى. وهكذا تتيح مكونات `amp-img` لوقت التشغيل إدارة موارد الصور بفعالية.
 
@@ -57,7 +57,7 @@ limitations under the License.
 
 [/tip]
 
-# مثال: عرض صورة متجاوبة
+# مثال: عرض صورة متجاوبة <a name="example-displaying-a-responsive-image"></a>
 
 في المثال التالي، نعرض صورة تستجيب لحجم إطار العرض عن طريق تعيين `layout=responsive`.  فالصورة تمتد وتتقلص وفقًا لنسبة العرض إلى الارتفاع التي تحددها سماتا `width` و `height`.
 
@@ -80,7 +80,7 @@ limitations under the License.
 
 في حال تعذُّر تحميل المورد الذي يطلبه المكوِّن `amp-img`، ستكون المساحة فارغة ما لم يتم توفير عنصر [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) الثانوي. يتم تنفيذ العنصر الاحتياطي على التنسيق الأولي أما تغييرات src اللاحقة بعد التنسيق الأولي (من خلال تغيير الحجم + srcset مثلاً) لن يكون لها عنصر احتياطي منعًا للآثار المترتبة على الأداء.
 
-# مثال: تحديد صورة احتياطية
+# مثال: تحديد صورة احتياطية <a name="example-specifying-a-fallback-image"></a>
 
 في المثال التالي، إذا كان المتصفح لا يتيح عمل WebP، سيتم عرض صورة JPG الاحتياطية:
 
@@ -112,7 +112,7 @@ limitations under the License.
 
 [/tip]
 
-# السمات
+# السمات <a name="attributes"></a>
 
 **src**
 
@@ -148,7 +148,7 @@ limitations under the License.
 
 يتضمن هذا العنصر [السمات المشتركة](../../../documentation/guides-and-tutorials/learn/common_attributes.md) التي تشمل مكونات AMP.
 
-# التصميم
+# التصميم <a name="styling"></a>
 
 يمكن تصميم `amp-img` مباشرة عبر خصائص CSS. يمكن مثلاً إعداد عنصر نائب للخلفية الرمادية من خلال:
 
@@ -158,20 +158,20 @@ amp-img {
 }
 ```
 
-# نصائح
+# نصائح <a name="tips--tricks"></a>
 
-# تحجيم صورة بما يصل إلى العرض الأقصى
+# تحجيم صورة بما يصل إلى العرض الأقصى <a name="scaling-an-image-up-to-a-maximum-width"></a>
 
 إذا أردت تغيير حجم الصورة مع تغير حجم النافذة ولكن بحد أقصى للعرض (بحيث لا تخرج الصورة عن عرضها):
 
 1. عيِّن `layout=responsive` للمكوِّن `<amp-img>`.
 2. في حاوية الصورة، حدّد السمة `max-width:<max width to display image>` للغة CSS.  لماذا في الحاوية؟  عنصر `amp-img` له `layout=responsive` هو عنصر *حظر المستوى* حيث إن `<img>` *مضمّنة*. أو يمكنك تعيين `display: inline-block` في CSS للعنصر amp-img.
 
-# الفرق بين التنسيق المتجاوب والأساسي
+# الفرق بين التنسيق المتجاوب والأساسي <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
 يعمل كل من التنسيق `intrinsic` و`responsive` على إنشاء صورة سيتم تحجيمها تلقائيًا.  والفرق الرئيسي بينهما هو أن التنسيق `intrinsic` يستخدم صورة SVG كعنصر تحجيم.  هذا سيجعلها تتصرف بنفس طريقة صورة HTML القياسية مع الحفاظ على ميزة إعلام المتصفح بحجم الصورة في التنسيق الأولي. وسيكون للتنسيق `intrinsic` حجم أساسي ثم يعمل على تضخيم عنصر `div` عائم حتى يصل إلى حجم الصورة الطبيعي أو إلى قيد CSS مثل `max-width`. أما التنسيق `responsive` فسيعرض 0x0 في عنصر `div` عائم لأنه يأخذ حجمه من العنصر الرئيسي الذي لا يكون له حجم طبيعي عندما يصبح عائمًا.
 
-# تعيين صورة بحجم ثابت
+# تعيين صورة بحجم ثابت <a name="setting-a-fixed-sized-image"></a>
 
 إذا أردت عرض الصورة بحجم ثابت:
 
@@ -180,11 +180,11 @@ amp-img {
 
 [tip type="read-on"]
 
-تعرّف على المزيد عن [التنسيق المُستنتَج](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?) في حال عدم تحديد السمة `layout`.
+تعرّف على المزيد عن [التنسيق المُستنتَج](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified) في حال عدم تحديد السمة `layout`.
 
 [/tip]
 
-# تعيين نسبة العرض إلى الارتفاع
+# تعيين نسبة العرض إلى الارتفاع <a name="setting-the-aspect-ratio"></a>
 
 بالنسبة إلى الصور المتجاوبة، ليس من الضروري مطابقة `width` و`height` للعرض والارتفاع الدقيقين للمكوِّن `amp-img` حيث يلزم فقط أن تؤدي هذه القيم إلى نسبة العرض إلى الارتفاع نفسها.
 
@@ -201,7 +201,7 @@ amp-img {
 ```
 [/example]
 
-# تعيين ملفات مصدر متعددة للحصول على درجات دقة للشاشات المختلفة
+# تعيين ملفات مصدر متعددة للحصول على درجات دقة للشاشات المختلفة <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>
 
 يجب استخدام السمة [`srcset`](#attributes) لتوفير درجات دقة مختلفة للصورة نفسها، والتي لها جميعها نسبة العرض إلى الارتفاع نفسها. سيختار المتصفح تلقائيًا الملف الأنسب من `srcset` استنادًا إلى درجة دقة الشاشة وعرض جهاز المستخدِم.
 
@@ -209,10 +209,10 @@ amp-img {
 
 راجِع دليل [إنشاء صفحات AMP المتجاوبة](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images) للحصول على مزيد من التفاصيل.
 
-# الحفاظ على نسبة العرض إلى الارتفاع للصور ذات الأبعاد غير المعروفة
+# الحفاظ على نسبة العرض إلى الارتفاع للصور ذات الأبعاد غير المعروفة <a name="maintaining-the-aspect-ratio-for-images-with-unknown-dimensions"></a>
 
 يتطلب نظام تنسيقات AMP نسبة العرض إلى الارتفاع للصورة مسبقًا قبل جلبها، ومع ذلك قد تكون أبعاد الصورة غير معروفة في بعض الحالات. ولعرض صور ذات أبعاد غير معروفة والحفاظ على نسب العرض إلى الارتفاع، ادمج التنسيق [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) لصفحات AMP مع الخاصية [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/) للغة CSS. ويمكن الاطّلاع على [خطوات إتاحة الصور غير معروفة الأبعاد](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) في الموقع "AMP بالمثال" للحصول على المزيد من المعلومات.
 
-# التحقق
+# التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-img](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) في مواصفات مدقق AMP.

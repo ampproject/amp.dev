@@ -88,7 +88,7 @@ Additionally, it supports an optional `placeholder` child to display while the `
 </amp-anim>
 ```
 
-## Emails, with style
+## Emails, with style <a name="emails-with-style"></a>
 
 Like all email clients, AMP allows for inline `style` attributes, but also supports CSS within the `<style amp-custom>` tag inside the head of the email.
 

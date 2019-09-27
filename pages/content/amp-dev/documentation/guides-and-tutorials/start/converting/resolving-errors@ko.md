@@ -335,5 +335,5 @@ AMP validation successful.
 ### 자주 묻는 질문(FAQ)
 
 - [DOM 리플로우란 무엇인가요?](http://stackoverflow.com/a/27637245)
-- [레이아웃 속성이 지정되지 않은 경우에는 어떻게 하나요?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn’t-specified?)
-- [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined?)
+- [레이아웃 속성이 지정되지 않은 경우에는 어떻게 하나요?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
+- [너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)

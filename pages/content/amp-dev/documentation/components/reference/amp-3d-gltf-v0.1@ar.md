@@ -22,7 +22,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-3d-gltf
+# amp-3d-gltf <a name="amp-3d-gltf"></a>
 
 يعرض نماذج GL Transmission Format (gITF) ثلاثية الأبعاد.
 
@@ -41,13 +41,13 @@ limitations under the License.
   </tr>
 </table>
 
-## الاستخدام
+## الاستخدام <a name="usage"></a>
 
 يعرض المكوِّن `amp-3d-gltf` نماذج ثلاثية الأبعاد بالتنسيق gITF.
 
 **ملاحظة**: يجب استخدام متصفح متوافق مع WebGL لعرض هذه النماذج.
 
-### مثال
+### مثال <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -59,7 +59,7 @@ limitations under the License.
     src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### القيود
+### القيود <a name="limitations"></a>
 
 يعمل المكّوِن حاليًا مع 2.0 glTF فقط.
 
@@ -68,11 +68,11 @@ limitations under the License.
 - الكاميرات المضمنة
 - الحركة
 
-### CORS
+### CORS <a name="cors"></a>
 
 يرسل `amp-3d-gltf` طلب `fetch` من الأصل `https://<random>.ampproject.net` لذا يجب تعيين `access-control-allow-origin: *.ampproject.net` على رأس الاستجابة لنقطة النهاية المحددة على هيئة `src`. وتظهر الحاجة إلى استخدام حرف بدل لأن الأصل يحتوي على مكّوِن نطاق فرعي عشوائي.
 
-## السمات
+## السمات <a name="attributes"></a>
 
 <table>
   <tr>
@@ -106,7 +106,7 @@ limitations under the License.
   </tr>
 </table>
 
-## الإجراءات
+## الإجراءات <a name="actions"></a>
 
 <table>
   <tr>
@@ -120,6 +120,6 @@ limitations under the License.
   </tr>
 </table>
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-3d-gltf ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) في مواصفات مدقق AMP.

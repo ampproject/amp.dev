@@ -25,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-carousel
+# amp-carousel <a name="amp-carousel"></a>
 
 유연성과 성능을 높이도록 가로축을 따라 여러 개의 유사한 콘텐츠를 표시하기 위한 일반 캐러셀입니다.
 
@@ -51,7 +51,7 @@ limitations under the License.
     </tr>
   </table>
 
-# 동작
+# 동작 <a name="behavior"></a>
 
 각 `amp-carousel` 구성요소의 직계 하위 구성요소는 캐러셀의 항목으로 간주됩니다. 각 노드에는 임의의 HTML 하위 노드가 있을 수 있습니다.
 
@@ -76,7 +76,7 @@ limitations under the License.
 ```
 [/example]
 
-# 특정 슬라이드로 이동
+# 특정 슬라이드로 이동 <a name="advancing-to-a-specific-slide"></a>
 
 요소에 `on` 속성의 메서드를 `tap:carousel-id.goToSlide(index=N)`으로 설정하는 경우 사용자가 탭하거나 클릭하면 'carousel-id' ID가 있는 캐러셀을 index=N(첫 번째 슬라이드는 index=0에, 두 번째 슬라이드는 index=1 등에 있음)인 슬라이드로 이동합니다.
 
@@ -128,7 +128,7 @@ limitations under the License.
 ```
 [/example]
 
-# 속성
+# 속성 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -216,7 +216,7 @@ limitations under the License.
           </tr>
         </table>
 
-# 스타일 지정
+# 스타일 지정 <a name="styling"></a>
 
 * `amp-carousel` 요소 선택기를 사용해 자유롭게 스타일을 지정할 수 있습니다.
 * `.amp-carousel-slide` 클래스 선택기를 사용해 캐러셀 항목을 타겟팅할 수 있습니다.
@@ -241,6 +241,6 @@ limitations under the License.
 }
 ```
 
-# 유효성 검사
+# 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사기 사양의 [amp-carousel 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii)을 참조하세요.

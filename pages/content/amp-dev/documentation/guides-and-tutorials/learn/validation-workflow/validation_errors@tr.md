@@ -552,7 +552,7 @@ Benzersiz etiketlerin tam listesi bilinmektedir:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Stil ve düzen hataları
+## Stil ve düzen hataları <a name="stil-ve-düzen-hataları"></a>
 
 Stil ve düzen hatalarına ayrıntılı bir şekilde girmeden önce, [stil](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) ve [düzenin](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) AMP'de nasıl çalıştığının anlaşılması iyi olur. AMP sayfaları birer HTML sayfası olduğundan stil, herhangi bir HTML sayfasıyla büyük ölçüde aynıdır.
 Ancak, sayfaların hızlı yüklenmesini sağlayan bazı kısıtlamalar söz konusudur ve AMP doğrulayıcı, bu kısıtlamaları uygular.

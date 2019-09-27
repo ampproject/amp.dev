@@ -24,7 +24,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-social-share
+# amp-social-share <a name="amp-social-share"></a>
 
 Mostra un pulsante di condivisione social.
 
@@ -48,11 +48,11 @@ Mostra un pulsante di condivisione social.
   </tr>
 </table>
 
-## Panoramica
+## Panoramica <a name="overview"></a>
 
 Il componente `amp-social-share` mostra un pulsante di condivisione per diversi fornitori di piattaforme social.
 
-## Esempi
+## Esempi <a name="examples"></a>
 
 **Esempio: pulsante di condivisione social di base**
 
@@ -74,7 +74,7 @@ Se vuoi trasmettere dei parametri all'endpoint di condivisione, puoi specificare
 
 Linkedin è uno dei fornitori preconfigurati, pertanto in questo caso non è necessario che tu fornisca l'attributo `data-share-endpoint`.
 
-## Attributi
+## Attributi <a name="attributes"></a>
 
 <table>
   <tr>
@@ -98,7 +98,7 @@ Linkedin è uno dei fornitori preconfigurati, pertanto in questo caso non è nec
         </tr>
       </table>
 
-## Fornitori preconfigurati
+## Fornitori preconfigurati <a name="pre-configured-providers"></a>
 
 Il componente `amp-social-share` fornisce [alcuni fornitori preconfigurati](0.1/amp-social-share-config.js) che conoscono i loro endpoint di condivisione e alcuni parametri predefiniti.
 
@@ -220,7 +220,7 @@ Il componente `amp-social-share` fornisce [alcuni fornitori preconfigurati](0.1/
     </tr>
   </table>
 
-## Fornitori non configurati
+## Fornitori non configurati <a name="non-configured-providers"></a>
 
 Oltre ai fornitori preconfigurati, puoi utilizzare dei fornitori non configurati specificando attributi aggiuntivi nel componente `amp-social-share`.
 
@@ -237,9 +237,9 @@ Nell'esempio seguente, viene creato un pulsante di condivisione tramite Facebook
 
 Poiché questi fornitori non sono preconfigurati, dovrai creare immagini e stili appropriati ai pulsanti per il fornitore.
 
-## Stili
+## Stili <a name="styles"></a>
 
-### Stili predefiniti
+### Stili predefiniti <a name="default-styles"></a>
 
 Per impostazione predefinita, `amp-social-share` include alcuni fornitori preconfigurati. I pulsanti di questi fornitori sono abbinati al colore e al logo ufficiali del fornitore. La larghezza e l'altezza predefinite sono rispettivamente 60 px e 44 px.
 
@@ -247,7 +247,7 @@ Per impostazione predefinita, `amp-social-share` include alcuni fornitori precon
 visita il sito [AMP Start](https://ampstart.com/components#links-and-sharing) per link di condivisione adattabili e preimpostati da utilizzare nelle tue pagine AMP.
 [/tip]
 
-### Stili personalizzati
+### Stili personalizzati <a name="custom-styles"></a>
 
 Se vuoi utilizzare un tuo stile personale, puoi semplicemente sostituire gli stili già forniti come segue:
 ```css
@@ -257,7 +257,7 @@ amp-social-share[type="twitter"] {
 }
 ```
 
-## Sostituzione delle variabili
+## Sostituzione delle variabili <a name="variable-substitution"></a>
 
 Puoi utilizzare la [sostituzione delle variabili AMP globali](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) nell'elemento `<amp-social-share>`. Nell'esempio seguente, `TITLE` viene sostituito con il titolo pagina e `CANONICAL_URL` con l'URL canonico del documento.
 
@@ -267,6 +267,6 @@ Puoi utilizzare la [sostituzione delle variabili AMP globali](https://github.com
 </amp-social-share>
 ```
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole amp-social-share](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii) nella specifica dello strumento di convalida AMP.

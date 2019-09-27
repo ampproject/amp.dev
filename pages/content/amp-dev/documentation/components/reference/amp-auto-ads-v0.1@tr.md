@@ -74,7 +74,7 @@ Reklam ağı türü ve (reklam ağının gerektirdiği) ek bilgiler etikette bel
   </amp-auto-ads>
 ```
 
-## Desteklenen reklam ağları
+## Desteklenen reklam ağları <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick (deneysel)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -129,7 +129,7 @@ Aşağıdaki örnekte, reklamın sayfada üçüncü `<DIV id='domId'>` öğesi i
 
 ### Nesne Tanımları
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 Yapılandırma nesnesinde belirtilecek alanlar:
 
@@ -209,7 +209,7 @@ Yapılandırma nesnesinde belirtilecek alanlar:
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 `anchor` yapılandırma nesnesinde belirtilecek alanlar:
 
@@ -249,7 +249,7 @@ Yapılandırma nesnesinde belirtilecek alanlar:
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 `style` yapılandırma nesnesinde belirtilecek alanlar:
 
@@ -273,7 +273,7 @@ Yapılandırma nesnesinde belirtilecek alanlar:
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 `placements` yapılandırma nesnesindeki `pos` alanı için ENUM değerleri:
 
@@ -305,7 +305,7 @@ Yapılandırma nesnesinde belirtilecek alanlar:
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 `placements` yapılandırma nesnesindeki `type` alanı için ENUM değerleri:
 

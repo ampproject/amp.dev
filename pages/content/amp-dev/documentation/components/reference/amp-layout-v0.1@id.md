@@ -25,7 +25,7 @@ $title: amp-layout
      limitations under the License.
 -->
 
-# <a name="amp-layout"></a> `amp-layout`
+#  `amp-layout` <a name="amp-layout"></a>
 
 <table>
   <tr>
@@ -38,7 +38,7 @@ $title: amp-layout
   </tr>
 </table>
 
-## Ringkasan
+## Ringkasan <a name="overview"></a>
 
 Komponen `amp-layout` memungkinkan Anda menerapkan tata letak responsive berbasis rasio tinggi lebar ke semua elemen. Komponen `amp-layout` berfungsi dengan cara yang mirip untuk atribut [layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) pada komponen AMP yang ada, tetapi mendukung semua markup HTML sebagai turunan. Tata letak lain yang didukung semuanya dapat digunakan dengan `amp-layout` (misalnya, fixed-height, fixed, dll.).
 
@@ -55,10 +55,10 @@ Contoh ini menggunakan `amp-layout` untuk membuat container responsif di sekitar
   </amp-layout>
 ```
 
-## Atribut
+## Atribut <a name="attributes"></a>
 
 Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/learn/common_attributes.md) yang diperluas ke komponen AMP.
 
-## Validasi
+## Validasi <a name="validation"></a>
 
 Lihat [aturan amp-layout](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dalam spesifikasi validator AMP.

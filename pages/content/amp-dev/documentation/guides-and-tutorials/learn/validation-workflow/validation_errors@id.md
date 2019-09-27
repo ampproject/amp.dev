@@ -635,7 +635,7 @@ Daftar lengkap tag unik yang diketahui:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Error gaya dan tata letak
+## Error gaya dan tata letak <a name="style-and-layout-errors"></a>
 
 Sebelum mendalami error gaya dan tata letak,
 penting untuk memahami cara kerja
@@ -858,7 +858,7 @@ Atribut yang tidak diizinkan untuk jenis tata letak dijelaskan di
 Error ini terjadi jika nilai atribut tata letak tertentu tidak valid.
 Untuk memahami hal yang memicu error ini,
 Anda perlu memahami
-[perilaku tata letak yang berbeda](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements).
+[perilaku tata letak yang berbeda](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 
 Anggap saja tata letak ditetapkan ke `fixed-height` dan
 Anda menyertakan nilai numerik untuk `height` dan `width`.
@@ -902,7 +902,7 @@ dirancang khusus untuk menyertakan template, misalnya,
 Diperbolehkan menyertakan template di file sumber,
 selama keluaran yang dihasilkan file tersebut tidak berisi template
 (lihat juga
-[Menggunakan prapemrosesan CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors)).
+[Menggunakan prapemrosesan CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors)).
 
 ### Atribut berisi sintaks template
 

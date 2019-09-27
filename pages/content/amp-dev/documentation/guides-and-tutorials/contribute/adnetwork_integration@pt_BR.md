@@ -17,7 +17,7 @@ Este guia é voltado a redes de publicidade que pretendem fazer a integração c
 1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) se você ainda não tiver feito isso para veicular anúncios HTML tradicionais.
 2. [Crie uma integração com o Fast Fetch para veicular anúncios HTML para AMP](#creating-a-fast-fetch-integration).
 
-## Criar uma implementação `amp-ad`
+## Criar uma implementação `amp-ad` <a name="creating-an-amp-ad"></a>
 
 Assim como um servidor de anúncios, os editores compatíveis incluem uma biblioteca JavaScript fornecida por você e adicionam vários "snippets de anúncios". Esses snippets usam a biblioteca para buscar anúncios e renderizá-los no site do editor. Como a AMP não permite que os editores executem JavaScript arbitrário, será preciso contribuir para o código aberto da AMP se você quiser que a tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) solicite anúncios do seu servidor de anúncios.
 
@@ -40,7 +40,7 @@ No código acima, o atributo `type` especifica a rede de publicidade, que neste 
 
 Se quiser instruções para criar uma integração [`amp-ad`](../../../documentation/components/reference/amp-ad.md), confira como [integrar redes de publicidade à AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
-## Criar uma integração com o Fast Fetch
+## Criar uma integração com o Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 
 O [Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/) é um mecanismo AMP que separa a solicitação da resposta de anúncio. Assim, as solicitações de anúncio podem ocorrer em etapas anteriores do ciclo de vida da página, e os anúncios só serão renderizados quando for provável que eles sejam vistos pelos usuários. O Fast Fetch dá tratamento preferencial a anúncios HTML para AMP verificados em relação aos anúncios HTML tradicionais. No Fast Fetch, quando um anúncio não é aprovado na validação, ele é inserido em um iframe de vários domínios para colocá-lo no sandbox e separá-lo do restante do documento AMP. Por outro lado, um anúncio HTML para AMP validado é inserido diretamente na página. O Fast Fetch lida com anúncios AMP e não AMP. Não é preciso gerar solicitações adicionais para anúncios reprovados na validação.
 

@@ -74,7 +74,7 @@ Le type de réseau publicitaire et toutes les informations supplémentaires (req
   </amp-auto-ads>
 ```
 
-## Réseaux publicitaires compatibles
+## Réseaux publicitaires compatibles <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick (expérimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -129,7 +129,7 @@ L'exemple suivant indique que l'annonce doit être positionnée immédiatement a
 
 ### Définitions d'objets
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 Champs à spécifier dans l'objet de configuration :
 
@@ -209,7 +209,7 @@ Champs à renseigner dans l'objet de configuration `placements` :
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 Champs à renseigner dans l'objet de configuration `anchor` :
 
@@ -249,7 +249,7 @@ Champs à renseigner dans l'objet de configuration `anchor` :
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 Champs à spécifier dans l'objet de configuration `style` :
 
@@ -273,7 +273,7 @@ Champs à spécifier dans l'objet de configuration `style` :
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 Valeurs ENUM du champ `pos` dans l'objet de configuration `placements` :
 
@@ -305,7 +305,7 @@ Valeurs ENUM du champ `pos` dans l'objet de configuration `placements` :
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 Valeurs ENUM du champ `type` dans l'objet de configuration `placements` :
 

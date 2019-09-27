@@ -25,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-youtube
+# amp-youtube <a name="amp-youtube"></a>
 
 Ce composant affiche une vidéo [YouTube](https://www.youtube.com/).
 
@@ -44,7 +44,7 @@ Ce composant affiche une vidéo [YouTube](https://www.youtube.com/).
   </tr>
 </table>
 
-## Exemple
+## Exemple <a name="example"></a>
 
 Avec la mise en page responsive, les valeurs de largeur et de hauteur utilisées dans l'exemple ci-dessous doivent normalement générer des mises en page correctes pour les vidéos au format 16:9 :
 
@@ -70,7 +70,7 @@ Avec la mise en page responsive, les valeurs de largeur et de hauteur utilisées
   </amp-youtube>
   [/sourcecode]
 
-## Attributs
+## Attributs <a name="attributes"></a>
 
 <table>
   <tr>
@@ -129,6 +129,6 @@ Avec la mise en page responsive, les valeurs de largeur et de hauteur utilisées
           </tr>
         </table>
 
-## Validation
+## Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) dans les spécifications du validateur AMP.
