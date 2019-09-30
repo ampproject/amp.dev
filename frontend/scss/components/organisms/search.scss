@@ -14,86 +14,34 @@
 @import 'components/atoms/_text.scss';
 @import 'components/atoms/_headline.scss';
 @import 'components/atoms/_color.scss';
+@import 'components/atoms/_button.scss';
 
 .#{organism('search')} {
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  width: 90vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1005;
-  background: color('whisper');
-  box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
-  outline: 0;
-  opacity: 0;
-  pointer-events: none;
-
-  @media (min-width: 1024px) {
-    width: 100%;
-    background: none;
-    box-shadow: none;
-    z-index: 18;
-  }
+  z-index: 9999;
 
   &-escaper {
-    width: 10vw;
-    height: 100vh;
     position: fixed;
-    right: 0;
+    left: 0;
     top: 0;
-    outline: none;
-    z-index: 1;
-    opacity: .6;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
     background: #000;
-
-    @media (min-width: 1024px) {
-      width: 100vw;
-    }
-  }
-
-  &.active {
-    opacity: 1;
-    pointer-events: auto;
-
-    & ~ .ap--main {
-      max-width: 100vw;
-      max-height: calc(100vh - 50px);
-      overflow: hidden;
-
-      @media (max-width: 1023px) {
-        max-height: calc(100vh - #{$mobileHeaderHeight});
-      }
-
-      .has-banner + & {
-        max-height: calc(100vh - 50px - #{$bannerHeight});
-
-        @media (max-width: 1023px) {
-          max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
-        }
-      }
-    }
-
-    & ~ .ap--footer {
-      display: none;
-    }
   }
 
   &-container {
     position: relative;
-    width: 100%;
-    padding: 20px 0 0;
-    margin: 0 auto;
-    z-index: 1;
-    overflow: visible;
+    width: 90vw;
+    padding: 23px 0 0;
+    margin: 0;
+    background: color('whisper');
+    box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
 
     @media (min-width: 1024px) {
+      width: 100%;
       max-width: 900px;
       padding: 32px 60px 0;
-      background: color('whisper');
-      box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.5);
+      margin: 0 auto;
     }
 
     @media (min-width: 1280px) {
@@ -142,7 +90,7 @@
 
         @media (min-width: 1024px) {
           left: 60px;
-          width: calc(100% - 120px);
+          width: calc(100% - 90px);
         }
       }
     }
@@ -169,7 +117,7 @@
     @include hl-h2;
     line-height: 1.4em;
     width: 100%;
-    padding: 18px 60px;
+    padding: 18px 160px 18px 60px;
     margin: 0;
     border: none;
     border-radius: 4px;
@@ -205,12 +153,49 @@
     }
   }
 
+  &-submit {
+    @include btn;
+    display: none;
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    box-shadow: none;
+
+    @media (min-width: 768px) {
+      padding: 0.75em 1.75em;
+    }
+
+    @media (min-width: 1024px) {
+      top: 13px;
+      right: 30px;
+      padding: 1em 2em;
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    &[disabled] {
+      background-color: color('silver');
+      transform: none;
+    }
+  }
+
+  &-input:focus + &-submit {
+    @media (min-width: 1024px) {
+      display: inline-block;
+    }
+  }
+
   &-result {
     overflow-x: hidden;
     overflow-y: auto;
+    height: 100vh;
     min-height: 60vh;
     max-height: calc(100vh - 88px);
     padding: 0 0 30px;
+    -webkit-overflow-scrolling: touch;
+    outline: none;
 
     @media (min-width: 1024px) {
       max-height: calc(100vh - 108px);
@@ -237,7 +222,8 @@
     }
 
     .amp-active {
-      transform: translate(-50%, 25vh);
+      position: relative;
+      height: 60vh;
     }
 
     &-list:last-child &-item:last-child {
@@ -415,18 +401,12 @@
       }
 
       &-shruggie {
-        font-family: 'Noto Sans', sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
       }
 
       &-copy {
         margin: 0 0 2em;
       }
-    }
-
-    // Hack to prevent showing load-more button and loading-indicator at the same time
-    // Related issue: https://github.com/ampproject/amphtml/issues/24034
-    div[class*="loading-container"]:not(.amp-hidden) ~ [load-more-button] {
-      display: none;
     }
   }
 
