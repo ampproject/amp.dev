@@ -10,11 +10,9 @@ $title: 使用情形
 
 了解如何使用 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 跟踪网页浏览量。
 
-### 使用 amp-pixel
+### 使用 amp-pixel <a name="使用-amp-pixel"></a>
 
 使用 [`amp-pixel` 将网页浏览量数据发送到指定网址](../../../../documentation/components/reference/amp-pixel.md)：
-
-[test](#使用-amp-pixel)
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>

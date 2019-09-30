@@ -626,7 +626,7 @@ Utiliza `AMP.printState()` para imprimir el estado actual en la consola.
 
 # Apéndice <a name="appendix"></a>
 
-# Especificación de `<amp-state>` <a name="-specification"></a>
+# Especificación de `<amp-state>` <a name="amp-state-specification"></a>
 
 Un elemento `amp-state` puede contener un elemento secundario `<script>` ****o bien un atributo `src` que contenga una URL CORS de un punto final remoto JSON, pero no ambos.
 

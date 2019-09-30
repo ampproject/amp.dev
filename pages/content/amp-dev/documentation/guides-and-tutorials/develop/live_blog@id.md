@@ -16,7 +16,7 @@ Gunakan markup metadata [LiveBlogPosting](http://schema.org/LiveBlogPosting) aga
 
 ## Ringkasan tentang `amp-live-list`
 
-Komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata] (live_blog.md#metadata) pada halaman.
+Komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata](../../../documentation/examples/documentation/Live_Blog.html#metadata) pada halaman.
 
 Kode awal untuk blog dapat terlihat seperti berikut:
 

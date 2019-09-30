@@ -628,7 +628,7 @@ Geçerli durumu konsola yazdırmak için `AMP.printState()` kullanın.
 
 # Ek <a name="appendix"></a>
 
-# `<amp-state>` spesifikasyonu <a name="-specification"></a>
+# `<amp-state>` spesifikasyonu <a name="amp-state-specification"></a>
 
 Bir `amp-state` öğesi, bir alt `<script>` öğesi **VEYA** uzak bir JSON uç noktasının CORS URL'sini içeren bir `src` özelliği içerebilir ancak bunların ikisini birden içeremez.
 

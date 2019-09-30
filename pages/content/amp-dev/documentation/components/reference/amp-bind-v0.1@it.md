@@ -633,7 +633,7 @@ Utilizza `AMP.printState()` per visualizzare lo stato corrente sulla console.
 
 # Appendice <a name="appendix"></a>
 
-# Specifica di `<amp-state>` <a name="-specification"></a>
+# Specifica di `<amp-state>` <a name="amp-state-specification"></a>
 
 Un elemento `amp-state` può contenere un elemento secondario `<script>` **O** un attributo `src` che contiene a sua volta un URL CORS per un endpoint JSON, ma non entrambi.
 

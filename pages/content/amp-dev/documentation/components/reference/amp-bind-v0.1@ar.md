@@ -630,7 +630,7 @@ null || 'default' // 'default'
 
 # الملحق <a name="appendix"></a>
 
-# مواصفات `<amp-state>` <a name="-specification"></a>
+# مواصفات `<amp-state>` <a name="amp-state-specification"></a>
 
 قد يحتوي عنصر `amp-state` على عنصر `<script>` الثانوي **أو** سمة `src` التي تحتوي على عنوان CORS URL إلى نقطة نهاية JSON بعيدة، ولكن ليس على كليهما.
 

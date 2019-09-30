@@ -620,7 +620,7 @@ null || 'default' // 'default'
 
 # 부록 <a name="appendix"></a>
 
-# `<amp-state>` 사양 <a name="-specification"></a>
+# `<amp-state>` 사양 <a name="amp-state-specification"></a>
 
 `amp-state`에는 하위 `<script>` 요소 **또는** 원격 JSON 엔드포인트에 대한 CORS URL을 포함하는 `src` 속성을 포함할 수 있지만, 둘을 모두 포함할 수는 없습니다.
 

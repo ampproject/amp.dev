@@ -624,7 +624,7 @@ null || 'default' // 'default'
 
 # 附录 <a name="appendix"></a>
 
-# `<amp-state>` 规范 <a name="-specification"></a>
+# `<amp-state>` 规范 <a name="amp-state-specification"></a>
 
 `amp-state` 元素可以包含子级 `<script>` 元素，**也可以** 包含 `src` 属性（其中包含指向远程 JSON 端点的 CORS 网址），但不能同时包含这两者。
 

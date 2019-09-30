@@ -396,7 +396,7 @@ HTML5 compatible.
 - Embedded content is supported only via AMP tags, such as `<amp-img>` or
 `<amp-video>`.
 
-#### 4.7.4 `<source>` <a name="474-"></a>
+#### 4.7.4 `<source>` <a name="474-source"></a>
 
 #### 4.7.18 SVG <a name="4718-svg"></a>
 SVG tags are not in the HTML5 namespace. They are listed below without section ids.

@@ -627,7 +627,7 @@ so a warning will be issued in development mode. -->
 
 # Приложение <a name="appendix"></a>
 
-# Спецификация `<amp-state>` <a name="-specification"></a>
+# Спецификация `<amp-state>` <a name="amp-state-specification"></a>
 
 Элемент `amp-state` может содержать дочерний элемент `<script>` **ИЛИ** атрибут `src` с URL CORS для удаленной конечной точки JSON. Сочетать эти функции нельзя.
 

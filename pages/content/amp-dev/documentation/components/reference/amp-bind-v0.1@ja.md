@@ -618,7 +618,7 @@ so a warning will be issued in development mode. -->
 
 # 付録 <a name="appendix"></a>
 
-# `<amp-state>` の仕様 <a name="-specification"></a>
+# `<amp-state>` の仕様 <a name="amp-state-specification"></a>
 
 `amp-state` 要素には、子 `<script>` 要素、またはリモートの JSON エンドポイントの CORS URL を含む `src` 属性の**いずれか**を含めることができます。両方を含めることはできません。
 

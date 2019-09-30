@@ -24,7 +24,7 @@ This tutorial provides a short overview of the [`amp-live-list`](../../../docume
 
 ## Overview of `amp-live-list`
 
-The [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component regularly polls the host document for new content and updates the user's browser as new items become available. This means that each time a new blog post needs to be added, the host document should be updated by the CMS to include the update in both the body and the [metadata](live_blog.md#metadata) section of the page.
+The [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) component regularly polls the host document for new content and updates the user's browser as new items become available. This means that each time a new blog post needs to be added, the host document should be updated by the CMS to include the update in both the body and the [metadata](../../../documentation/examples/documentation/Live_Blog.html#metadata) section of the page.
 
 This is what the initial code for the blog could look like:
 

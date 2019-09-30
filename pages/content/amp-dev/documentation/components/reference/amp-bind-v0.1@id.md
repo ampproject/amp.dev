@@ -628,7 +628,7 @@ Gunakan `AMP.printState()` untuk mencetak status saat ini ke konsol.
 
 # Lampiran <a name="appendix"></a>
 
-# Spesifikasi `<amp-state>` <a name="-specification"></a>
+# Spesifikasi `<amp-state>` <a name="amp-state-specification"></a>
 
 Elemen `amp-state` dapat berisi elemen `<script>` turunan **ATAU** atribut `src` yang berisi URL CORS ke endpoint JSON jarak jauh, tetapi tidak keduanya.
 
