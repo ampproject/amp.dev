@@ -78,8 +78,10 @@ class TranslationAnchorGenerator {
     const matches = content.matchAll(TITLE_PATTERN);
 
     for (const match of matches) {
-      if (doc.path.includes('pages/content/amp-dev/documentation/components/reference/amp-analytics-v0.1.md'))
+      if (doc.path.includes(
+          'pages/content/amp-dev/documentation/components/reference/amp-analytics-v0.1.md')) {
         console.log(array.length + ': ' + match[0] + doc.path);
+      }
       array.push(match[1] ? match[1] : '');
     }
     this._anchorsByPage[doc.path]=array;
@@ -112,7 +114,8 @@ class TranslationAnchorGenerator {
     if (headlineCounter == array.length) {
       doc.contents = Buffer.from(content);
     } else {
-      this._log.warn('different amount of headlines '+ headlineCounter + '/'+ array.length +' in ' + doc.path);
+      this._log.warn('different amount of headlines ' +
+          headlineCounter + '/'+ array.length +' in ' + doc.path);
     }
     return doc;
   }
