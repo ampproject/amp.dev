@@ -1,4 +1,5 @@
 ---
+$title: amp-3d-gltf
 $category@: media
 formats:
 - websites
@@ -22,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-3d-gltf <a name="amp-3d-gltf"></a>
+
 
 Exibe modelos 3D no formato GL Transmission Format (gITF).
 

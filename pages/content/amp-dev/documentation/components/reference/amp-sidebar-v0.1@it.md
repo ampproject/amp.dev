@@ -28,7 +28,7 @@ $title: amp-sidebar
      limitations under the License.
 -->
 
-# amp-sidebar <a name="amp-sidebar"></a>
+
 
 
 <table>

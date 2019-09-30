@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video <a name="amp-video"></a>
+
 
 Замена тега HTML5 `video`, предназначенная только для добавления видео непосредственно на страницу с помощью кода HTML5.
 

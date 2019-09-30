@@ -1,4 +1,5 @@
 ---
+$title: amp-analytics
 $category@: ads-analytics
 formats:
 - websites
@@ -24,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-analytics <a name="amp-analytics"></a>
+
 
 Получает статистические данные из AMP-документа.
 

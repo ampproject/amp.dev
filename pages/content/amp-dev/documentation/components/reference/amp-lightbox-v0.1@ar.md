@@ -1,4 +1,5 @@
 ---
+$title: amp-lightbox
 $category@: layout
 formats:
   - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-lightbox <a name="amp-lightbox"></a>
+
 
 <table>
   <tr>

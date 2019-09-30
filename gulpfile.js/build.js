@@ -154,6 +154,7 @@ async function buildComponentVersions() {
   });
   const content = JSON.stringify(componentVersions, null, 2);
   const dir = path.join(project.paths.DIST, 'static/files');
+
   mkdirp(dir);
   fs.writeFileSync(path.join(dir, 'component-versions.json'), content, 'utf-8');
 }

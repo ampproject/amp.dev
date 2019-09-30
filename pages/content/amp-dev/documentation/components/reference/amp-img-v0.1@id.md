@@ -1,4 +1,5 @@
 ---
+$title: amp-img
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-img <a name="amp-img"></a>
+
 
 <table>
   <tr>

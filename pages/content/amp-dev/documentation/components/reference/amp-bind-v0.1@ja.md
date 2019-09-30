@@ -1,4 +1,5 @@
 ---
+$title: amp-bind
 $category@: dynamic-content
 formats:
 - websites
@@ -8,7 +9,7 @@ teaser:
   text: データ バインディングや JS に似た単純な式を使用して、ユーザーの操作やデータの変更に応じた要素の変更を可能にします。
 ---
 
-# amp-bind <a name="amp-bind"></a>
+
 
 データ バインディングと式を使用して独自のインタラクティブ性を追加します。
 

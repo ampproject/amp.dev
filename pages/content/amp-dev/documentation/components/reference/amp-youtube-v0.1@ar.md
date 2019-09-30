@@ -1,4 +1,5 @@
 ---
+$title: amp-youtube
 $category@: media
 formats:
   - websites
@@ -24,7 +25,7 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-# amp-youtube <a name="amp-youtube"></a>
+
 
 يعرض المكّوِن فيديو [YouTube](https://www.youtube.com/).
 

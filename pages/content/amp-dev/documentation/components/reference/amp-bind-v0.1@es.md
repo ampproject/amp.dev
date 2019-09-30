@@ -1,4 +1,5 @@
 ---
+$title: amp-bind
 $category@: dynamic-content
 formats:
 - websites
@@ -8,7 +9,7 @@ teaser:
   text: Permite que los elementos muten como respuesta a las acciones del usuario o a cambios de datos mediante data binding y expresiones simples similares a JS.
 ---
 
-# amp-bind <a name="amp-bind"></a>
+
 
 Añade interactividad personalizada utilizando data bindings y expresiones.
 

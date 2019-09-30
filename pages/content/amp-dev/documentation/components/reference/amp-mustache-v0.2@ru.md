@@ -1,4 +1,5 @@
 ---
+$title: amp-mustache
 $category@: dynamic-content
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-mustache <a name="amp-mustache"></a>
+
 
 Этот компонент обеспечивает обработку шаблонов [Mustache.js](https://github.com/janl/mustache.js/).
 

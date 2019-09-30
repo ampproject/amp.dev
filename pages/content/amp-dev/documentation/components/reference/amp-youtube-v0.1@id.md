@@ -1,4 +1,5 @@
 ---
+$title: amp-youtube
 $category@: media
 formats:
 - websites
@@ -24,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-youtube <a name="amp-youtube"></a>
+
 
 Menampilkan video [YouTube](https://www.youtube.com/).
 

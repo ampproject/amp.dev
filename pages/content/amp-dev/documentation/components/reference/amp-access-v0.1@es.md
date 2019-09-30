@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: Proporciona un muro de pago de AMP y asistencia con la suscripción.
 ---
 
-# amp-access <a name="amp-access"></a>
+
 
 AMP Access, que proporciona un muro de pago de AMP y asistencia con la suscripción, permite a los editores controlar el contenido al que los usuarios pueden acceder y definir restricciones en función del estado de suscripción, el número de visualizaciones y otros factores.
 
-# amp-access <a name="amp-access-"></a>
+# amp-access <a name="amp-access"></a>
 
 
 

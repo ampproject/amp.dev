@@ -1,4 +1,5 @@
 ---
+$title: amp-selector
 $category@: dynamic-content
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-selector <a name="amp-selector"></a>
+
 
 Ce composant représente une commande qui affiche un menu d'options et permet à l'utilisateur d'y effectuer une sélection.
 

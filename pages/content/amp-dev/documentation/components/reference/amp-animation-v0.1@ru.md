@@ -1,4 +1,5 @@
 ---
+$title: amp-animation
 $category@: presentation
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-animation <a name="amp-animation"></a>
+
 
 Определяет и запускает анимацию.
 

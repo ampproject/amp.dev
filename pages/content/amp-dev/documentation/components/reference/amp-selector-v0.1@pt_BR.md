@@ -1,4 +1,5 @@
 ---
+$title: amp-selector
 $category@: dynamic-content
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-selector <a name="amp-selector"></a>
+
 
 Representa um controle que exibe um menu de opções para escolha do usuário.
 

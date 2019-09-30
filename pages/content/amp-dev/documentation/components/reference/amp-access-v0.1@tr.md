@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: AMP ödeme duvarı ve abonelik desteği sağlar.
 ---
 
-# amp-access <a name="amp-access"></a>
+
 
 AMP Access veya "AMP ödeme duvarı ve abonelik desteği", Yayıncılara, abonelik durumu, görüntüleme sayısı ve diğer faktörlere dayalı olarak bir Okuyucunun hangi içeriğe hangi kısıtlamalarla erişilebileceğini kontrol etme imkanı sağlar.
 
-# amp-access <a name="amp-access-"></a>
+# amp-access <a name="amp-access"></a>
 
 
 <!--

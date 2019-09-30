@@ -1,4 +1,5 @@
 ---
+$title: amp-bind
 $category@: dynamic-content
 formats:
 - websites
@@ -8,7 +9,7 @@ teaser:
   text: Autoriser la mutation des éléments en réponse aux actions de l'utilisateur ou à des modifications de données au moyen de la liaison de données et de simples expressions de type JS.
 ---
 
-# amp-bind <a name="amp-bind"></a>
+
 
 Ce composant ajoute une interactivité personnalisée en utilisant la liaison de données et des expressions.
 

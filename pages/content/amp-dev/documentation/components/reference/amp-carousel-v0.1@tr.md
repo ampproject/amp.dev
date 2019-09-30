@@ -1,4 +1,5 @@
 ---
+$title: amp-carousel
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-carousel <a name="amp-carousel"></a>
+
 
 Bir yatay eksen boyunca birden çok benzer içerik parçasını görüntülemek için genel bir bant; son derece eksek ve yüksek performanslı olması amaçlanmıştır.
 

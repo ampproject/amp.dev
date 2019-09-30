@@ -1,4 +1,5 @@
 ---
+$title: amp-form
 $category@: dynamic-content
 formats:
   - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-form <a name="`amp-form`"></a>
+
 
 <table>
   <tr>

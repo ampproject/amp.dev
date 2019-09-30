@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video <a name="amp-video"></a>
+
 
 HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 video dosyası yerleştirmeleri için kullanılır.
 

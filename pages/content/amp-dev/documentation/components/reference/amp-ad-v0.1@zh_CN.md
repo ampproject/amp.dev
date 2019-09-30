@@ -1,4 +1,5 @@
 ---
+$title: amp-ad
 $category@: ads-analytics
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: 一种用于展示广告的容器。
 ---
 
-# amp-ad/amp-embed <a name="amp-ad--amp-embed"></a>
+
 
 一种用于展示广告的容器。`amp-embed` 是 `amp-ad` 标记的别名，以不同的标记名称提供后者的所有功能。在语义上更准确的情况下，请使用 `amp-embed`。AMP 文档仅支持通过 HTTPS 投放的广告/嵌入内容。
 
-# `amp-ad` / `amp-embed` <a name="amp-ad"></a>
+# <a name="amp-ad"></a> amp-ad / amp-embed
 
 
 [tip type="note"]

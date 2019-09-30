@@ -1,4 +1,5 @@
 ---
+$title: amp-bind
 $category@: dynamic-content
 formats:
   - websites
@@ -10,7 +11,7 @@ teaser:
     data binding and simple JS-like expressions.
 ---
 
-# amp-bind <a name="amp-bind"></a>
+
 
 يضيف المكوِّن تفاعلاً مخصصًا باستخدام ربط البيانات والتعبيرات.
 

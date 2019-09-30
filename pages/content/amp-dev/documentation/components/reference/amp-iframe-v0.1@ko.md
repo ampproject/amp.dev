@@ -1,4 +1,5 @@
 ---
+$title: amp-iframe
 $category@: layout
 formats:
 - websites
@@ -22,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-iframe <a name="amp-iframe"></a>
+
 
 iframe을 표시합니다.
 

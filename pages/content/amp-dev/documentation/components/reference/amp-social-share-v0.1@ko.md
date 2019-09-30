@@ -1,4 +1,5 @@
 ---
+$title: amp-social-share
 $category@: ads-analytics
 formats:
   - websites
@@ -24,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-social-share <a name="amp-social-share"></a>
+
 
 소셜 공유 버튼을 표시합니다.
 

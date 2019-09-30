@@ -1,4 +1,5 @@
 ---
+$title: amp-access-laterpay
 $category@: dynamic-content
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay <a name="amp-access-laterpay"></a>
+
 
 Permite a los editores integrar fácilmente la plataforma de micropagos [LaterPay](https://www.laterpay.net). `amp-access-laterpay` está basado en [AMP Access](amp-access.md), y lo necesita para su funcionamiento.
 

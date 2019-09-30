@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion <a name="amp-accordion"></a>
+
 
 Ce composant permet aux internautes d'avoir un aperçu du contenu et d'accéder directement à la section de leur choix. Cette fonctionnalité s'avère particulièrement utile pour les appareils mobiles sur lesquels l'utilisateur doit faire défiler ne serait-ce que quelques phrases d'une section.
 

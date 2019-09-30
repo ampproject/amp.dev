@@ -1,4 +1,5 @@
 ---
+$title: amp-access-laterpay
 $category@: dynamic-content
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay <a name="amp-access-laterpay"></a>
+
 
 このコンポーネントにより、サイト運営者は [LaterPay](https://www.laterpay.net) マイクロペイメント プラットフォームと簡単に統合できます。`amp-access-laterpay` は [amp-access](amp-access.md) をベースとしているため、amp-access は必須です。
 

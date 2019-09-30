@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion <a name="amp-accordion"></a>
+
 
 Permette ai visualizzatori di dare un'occhiata alla struttura dei contenuti e passare a qualsiasi sezione. Questa funzione è utile per i dispositivi mobili dove anche solo un paio di frasi rendono indispensabile lo scorrimento per raggiungere una sezione.
 

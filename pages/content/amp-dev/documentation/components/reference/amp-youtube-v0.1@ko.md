@@ -1,4 +1,5 @@
 ---
+$title: amp-youtube
 $category@: media
 formats:
 - websites
@@ -24,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-youtube <a name="amp-youtube"></a>
+
 
 [YouTube](https://www.youtube.com/) 동영상을 표시합니다.
 

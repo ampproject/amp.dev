@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: Provides an AMP paywall and subscription support.
 ---
 
-# amp-access <a name="amp-access"></a>
+
 
 AMP Access atau “dukungan paywall dan langganan AMP” memberi Penayang kontrol atas konten mana yang dapat diakses oleh Pembaca beserta batasannya, berdasarkan status langganan Pembaca, jumlah tampilan, dan faktor lainnya.
 
-# amp-access <a name="amp-access-"></a>
+# amp-access <a name="amp-access"></a>
 
 
 

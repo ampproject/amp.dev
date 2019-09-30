@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video <a name="amp-video"></a>
+
 
 Sostituisce il tag `video` HTML5. Deve essere utilizzato esclusivamente per gli incorporamenti di file video HTML5 diretti.
 

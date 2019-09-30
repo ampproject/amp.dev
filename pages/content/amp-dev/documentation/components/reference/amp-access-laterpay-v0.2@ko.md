@@ -1,4 +1,5 @@
 ---
+$title: amp-access-laterpay
 $category@: dynamic-content
 formats:
   - websites
@@ -22,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay <a name="amp-access-laterpay"></a>
+
 
 게시자가 [LaterPay](https://www.laterpay.net) 소액결제 플랫폼과 손쉽게 통합할 수 있습니다. `amp-access-laterpay`는 [AMP 액세스](amp-access.md)를 기반으로 하며 AMP 액세스가 필요합니다.
 

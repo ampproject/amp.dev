@@ -1,4 +1,5 @@
 ---
+$title: amp-bind
 $category@: dynamic-content
 formats:
 - websites
@@ -24,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-bind <a name="amp-bind"></a>
+
 데이터 결합 및 식과 함께 맞춤형 상호작용을 추가합니다.
 
 <table>

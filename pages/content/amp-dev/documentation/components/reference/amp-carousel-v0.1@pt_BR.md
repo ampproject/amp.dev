@@ -1,4 +1,5 @@
 ---
+$title: amp-carousel
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-carousel <a name="amp-carousel"></a>
+
 
 Um carrossel genérico para exibir vários conteúdos semelhantes em um eixo horizontal, que visa ser flexível e com excelente desempenho.
 

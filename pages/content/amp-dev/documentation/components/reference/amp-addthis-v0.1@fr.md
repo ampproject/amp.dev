@@ -1,4 +1,5 @@
 ---
+$title: amp-addthis
 $category@: social
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-addthis <a name="amp-addthis"></a>
+
 
 Ce composant affiche un élément intégré Outils Web [AddThis](https://www.addthis.com).
 

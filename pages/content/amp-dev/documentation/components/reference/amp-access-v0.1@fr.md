@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: Fournir une gestion des abonnements et des paywalls AMP.
 ---
 
-# amp-access <a name="amp-access"></a>
+
 
 AMP Access ou "gestion des abonnements et des paywalls AMP" permet aux éditeurs de choisir le type de contenu accessible à un utilisateur (ou lecteur), ainsi que les restrictions applicables, sur la base de l'état d'abonnement de l'utilisateur, du nombre de vues et d'autres facteurs.
 
-# amp-access <a name="amp-access-"></a>
+# amp-access <a name="amp-access"></a>
 
 
 

@@ -1,4 +1,5 @@
 ---
+$title: amp-bind
 $category@: dynamic-content
 formats:
 - websites
@@ -8,7 +9,7 @@ teaser:
   text: 利用数据绑定和类似于 JS 的简单表达式，使元素因应用户操作或数据变更而变化。
 ---
 
-# amp-bind <a name="amp-bind"></a>
+
 
 通过数据绑定和表达式添加自定义互动方式。
 

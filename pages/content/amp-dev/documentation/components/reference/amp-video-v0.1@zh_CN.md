@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video <a name="amp-video"></a>
+
 
 替代 HTML5 `video` 标记；仅用于直接嵌入 HTML5 视频文件。
 

@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video <a name="amp-video"></a>
+
 
 Funciona como sustituto de la etiqueta `video` de HTML5. Solo se utiliza para insertar directamente archivos de vídeo en HTML5.
 

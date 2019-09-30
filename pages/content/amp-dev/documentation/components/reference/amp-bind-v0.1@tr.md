@@ -1,4 +1,5 @@
 ---
+$title: amp-bind
 $category@: dynamic-content
 formats:
 - websites
@@ -8,7 +9,7 @@ teaser:
   text: Veri bağlama ve basit JS benzeri ifadeler aracılığıyla kullanıcı işlemlerine veya veri değişikliklerine yanıt olarak öğelerin değişmesine olanak tanır.
 ---
 
-# amp-bind <a name="amp-bind"></a>
+
 
 Veri bağlama ve ifadelerle özel etkileşim özelliği ekler.
 

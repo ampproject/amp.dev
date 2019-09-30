@@ -1,4 +1,5 @@
 ---
+$title: amp-list
 $category@: dynamic-content
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-list <a name="amp-list"></a>
+
 
 İçeriği dinamik bir biçimde bir CORS JSON uç noktasından getirir ve sağlanan bir şablonu kullanarak oluşturur.
 

@@ -1,4 +1,5 @@
 ---
+$title: amp-youtube
 $category@: media
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-youtube <a name="amp-youtube"></a>
+
 
 Ce composant affiche une vidéo [YouTube](https://www.youtube.com/).
 

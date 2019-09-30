@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: AMP ペイウォールとサブスクリプションのサポートを提供します。
 ---
 
-# amp-access <a name="amp-access"></a>
+
 
 サイト運営者は amp-access（「AMP ペイウォールとサブスクリプションのサポート」）を利用することで、リーダーのサブスクリプション ステータス、視聴回数などの要素に基づき、リーダーがアクセスできるコンテンツや制限事項を管理できます。
 
-# amp-access <a name="amp-access-"></a>
+# amp-access <a name="amp-access"></a>
 
 
 

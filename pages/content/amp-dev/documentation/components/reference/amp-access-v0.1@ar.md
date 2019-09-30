@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
   - websites
@@ -6,11 +7,11 @@ teaser:
   text: Provides an AMP paywall and subscription support.
 ---
 
-# amp-access <a name="amp-access"></a>
+
 
 AMP Access أو "إتاحة الاشتراك ونظام حظر الاشتراك غير المدفوع في صفحات AMP" يمنح الناشرين تحكمًا في المحتوى الذي يمكن للقارئ الوصول إليه والقيود المفروضة على هذا الوصول، بناء على حالة اشتراك القارئ وعدد مرات المشاهدة وعوامل أخرى.
 
-# amp-access <a name="amp-access-"></a>
+# amp-access <a name="amp-access"></a>
 
 
 <!--

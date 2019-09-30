@@ -1,4 +1,5 @@
 ---
+$title: amp-addthis
 $category@: social
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-addthis <a name="amp-addthis"></a>
+
 
 显示嵌入的 [AddThis](https://www.addthis.com) 网站工具。
 

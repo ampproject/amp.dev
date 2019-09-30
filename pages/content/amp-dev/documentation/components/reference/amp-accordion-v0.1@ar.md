@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
   - websites
@@ -27,7 +28,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion <a name="amp-accordion"></a>
+
 
 يوفّر هذا المكّوِن طريقة للمشاهدين لإلقاء نظرة على مخطط المحتوى والانتقال إلى أي قسم. ويفيد هذا في أجهزة الجوال عند الحاجة إلى التمرير في قسم مكون من جملتين فقط.
 

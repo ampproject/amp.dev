@@ -25,7 +25,7 @@ $title: amp-layout
      limitations under the License.
 -->
 
-#  `amp-layout` <a name="amp-layout"></a>
+
 
 <table>
   <tr>

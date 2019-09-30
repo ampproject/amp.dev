@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: Oferece um paywall AMP e compatibilidade com assinaturas.
 ---
 
-# amp-access <a name="amp-access"></a>
+
 
 O AMP Access ou "paywall AMP e compatibilidade com assinaturas" oferece aos editores controle sobre qual conteúdo pode ser acessado por um leitor e com quais restrições, com base no status da assinatura do leitor, no número de visualizações e em outros fatores.
 
-# amp-access <a name="amp-access-"></a>
+# amp-access <a name="amp-access"></a>
 
 
 

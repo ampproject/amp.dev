@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion <a name="amp-accordion"></a>
+
 
 Permite a los usuarios echar un vistazo al esquema del contenido e ir directos a la sección que quieran. Resulta útil para los dispositivos móviles en los que hace falta desplazarse casi cada dos frases de una sección.
 
