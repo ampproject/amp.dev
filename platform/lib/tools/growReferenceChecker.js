@@ -65,6 +65,10 @@ const LOOKUP_TABLE = {
 const IGNORED_PATH_PATTERNS =
   /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate/g;
 
+// The list of imported docs. Here we do not check anchors.
+const IMPORTED_DOCS = require(__dirname + '/../../config/imports/spec.json')
+    .map((spec) => '/content/amp-dev/' + spec.to);
+
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
  * in a syntax like `g.doc('...')` or []() and checks if the linked document
@@ -90,7 +94,7 @@ class GrowReferenceChecker {
     this._wrongAnchorCount = 0;
   }
 
-  async start() {
+  start() {
     this._log.start(`Inspecting documents in ${PAGES_SRC} for broken references ...`);
 
     return new Promise(async (resolve, reject) => {
@@ -99,9 +103,10 @@ class GrowReferenceChecker {
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
 
       stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        stream.push(this._check(doc));
-        callback();
+        callback(null, this._check(doc));
       }));
+
+      stream = stream.pipe(gulp.dest('./'));
 
       stream.on('end', async () => {
         await this._addExplicitAnchors();
@@ -151,14 +156,14 @@ class GrowReferenceChecker {
           resolve();
         }
       });
-
-      stream.pipe(gulp.dest('./'));
     });
   }
 
-  async _readAnchors() {
+  _readAnchors() {
     return new Promise((resolve, reject) => {
-      let stream = gulp.src([PAGES_SRC, '!**/*.html'],
+      // we skip html files, since they sometimes use imports of other documents
+      // where we cannot resolve the anchors
+      let stream = gulp.src([PAGES_SRC, `!${POD_BASE_PATH}/**/*.html`],
           {'read': true, 'base': './'});
       stream.on('end', () => {
         resolve();
@@ -174,14 +179,14 @@ class GrowReferenceChecker {
     const anchors = {};
     const content = doc.contents.toString();
 
-    // eslint-disable-next-line max-len
-    const TITLE_PATTERN = /^#+[ \t]*(.*?)(?:<a[ \t]+name="([^">]+)"[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$|<a\s+name="(.+?)"|<\w[^>]*\sid="(.+?)"/gm;
+    const TITLE_PATTERN =
+        // eslint-disable-next-line max-len
+        /^#+[ \t]*(.*?)(?:<a[ \t]+name="([^">]+)"[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$|<a\s+name="(.+?)"|<\w[^>]*\sid="(.+?)"/gm;
 
     const slugGenerator = new SlugGenerator();
 
-    const matches = content.matchAll(TITLE_PATTERN);
-
-    for (const match of matches) {
+    let match;
+    while (match = TITLE_PATTERN.exec(content)) {
       const title = match[1] + match[3];
       const anchor = match[2] || match[4] || match[5];
       if (anchor) {
@@ -275,7 +280,12 @@ class GrowReferenceChecker {
       }
     }
     if (errorLocales.length > 0) {
-      if (!doc.path.match(IGNORED_PATH_PATTERNS) || doc.path.includes('@')) {
+      if (IMPORTED_DOCS.includes(sourcePath) ||
+          sourcePath.match(IGNORED_PATH_PATTERNS) && !sourcePath.includes('@')) {
+        this._log.warn('anchor not found in imported document', anchor, '\n',
+            'found in:', doc.path, '\n',
+            'target:', linkedPath ? errorLocales : '<internal>');
+      } else {
         this._log.error('anchor not found', anchor, '\n',
             'found in:', doc.path, '\n',
             'target:', linkedPath ? errorLocales : '<internal>');
@@ -318,7 +328,6 @@ class GrowReferenceChecker {
       if (existingAnchor.explicitValue) {
         return existingAnchor.explicitValue;
       }
-      this._log.debug('Found implicit anchor', anchorValue, targetPath);
       existingAnchor.isUsed = true;
       return anchorValue;
     }
@@ -401,10 +410,8 @@ class GrowReferenceChecker {
 
   /**
    * Will add explicit anchors where the implicit anchor was used somewhere.
-   * This will only be done for english documents, since we do not want
-   * to have translated explicit anchors.
    */
-  async _addExplicitAnchors() {
+  _addExplicitAnchors() {
     return new Promise((resolve, reject) => {
       const pages = [];
       // eslint-disable-next-line guard-for-in
@@ -418,23 +425,22 @@ class GrowReferenceChecker {
         }
       }
 
-      this._log.debug('Add explicit anchors to:', pages);
-
       if (pages.length == 0) {
         resolve();
         return;
       }
 
+      this._log.info('Add explicit anchors to:', pages);
+
       let stream = gulp.src(pages, {'read': true, 'base': './'});
+      stream = stream.pipe(through.obj((doc, encoding, callback) => {
+        this._addExplicitAnchorsForDoc(doc);
+        callback(null, doc);
+      }));
+      stream = stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
-        this._log.debug('Add explicit anchors done!', pages);
         resolve();
       });
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        stream.push(this._addExplicitAnchorsForDoc(doc));
-        callback();
-      }));
-      stream.pipe(gulp.dest('./'));
     });
   }
 
@@ -448,12 +454,11 @@ class GrowReferenceChecker {
           const headline = headlineStart + headlineEnd;
           const slug = slugGenerator.generateSlug(headline);
           const anchor = anchors[slug];
-          // Even if we have an anchor the slug generator has to know all the headlines.
+          // The slug generator has to know all the headlines, since we want to generate slugs like github does.
+          // So only now do we check if we have an explicit anchor or our implicit anchor is not used.
           if (anchorTag || !anchor || !anchor.isUsed) {
             return line;
           }
-          this._log.debug('add anchor: ', slug, anchor);
-
           return `${hLevel} ${headline} <a name="${slug}"></a>`;
         });
 
