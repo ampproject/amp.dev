@@ -350,7 +350,7 @@ class MarkdownDocument {
           headline = headline.replace(/`(.*?)`|\[(.*?)\]\(.*?\)|<.*?>|&[^\s]+?;/g,
               (line, code, linktext) => {
                 if (code || linktext) {
-                  return code || linktext;
+                  return code || linktext;
                 }
                 return '';
               });
