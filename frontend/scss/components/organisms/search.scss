@@ -221,6 +221,11 @@
       z-index: 1;
     }
 
+    .amp-active {
+      position: relative;
+      height: 60vh;
+    }
+
     &-list:last-child &-item:last-child {
       margin-bottom: 30px;
     }
