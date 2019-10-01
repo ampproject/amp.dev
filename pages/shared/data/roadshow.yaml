@@ -39,14 +39,14 @@ nextstop:
     month: oct
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-warsaw/
-  - title: kiev
+  - title: kyiv
     coords: 64x12
-    location: TBD
+    location: Radisson Blu
     time: 09:30-17:00
     day: 25
     month: oct
     year: 2019
-    link: #
+    link: https://events.withgoogle.com/amp-roadshow-kyiv/
 
 past:
   - title: AUCKLAND

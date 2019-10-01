@@ -1,0 +1,26 @@
+{% extends '/layouts/default.j2' %}
+
+{% block styles %}
+{{ super() }}
+
+{% do doc.styles.addCssFile('/css/components/templates/support-overview.css') %}
+{% endblock %}
+
+{% block main %}
+<main class="ap--main ap-t-overview">
+  <div class="ap--container">
+    <div class="ap--content">
+      {% do doc.styles.addCssFile('/css/components/molecules/overview-title.css') %}
+      <section class="ap--section">
+        <div class="ap--overview-title">
+          <div class="ap-m-overview-title">
+            {% include '/views/partials/breadcrumbs.j2' %}
+            <h1>{{ doc.title }}</h1>
+          </div>
+        </div>
+        {{ doc.html|render|safe }}
+      </section>
+    </div>
+  </div>
+</main>
+{% endblock %}
