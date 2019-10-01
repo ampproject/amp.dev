@@ -66,7 +66,7 @@
     "js-yaml": "3.13.1",
     "linkifyjs": "2.1.8",
     "lru-cache": "5.1.1",
-    "module-alias": "2.2.1",
+    "module-alias": "2.2.2",
     "mri": "1.1.4",
     "multer": "1.4.2",
     "node-fetch": "2.6.0",
