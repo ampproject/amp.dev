@@ -183,8 +183,8 @@ const growPages = express.Router();
 
 const optimizer = AmpOptimizer.create({
   transformations: [
-    CssTransformer,
     ...AmpOptimizer.TRANSFORMATIONS_AMP_FIRST,
+    CssTransformer,
   ],
 });
 
