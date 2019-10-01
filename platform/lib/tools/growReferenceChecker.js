@@ -269,14 +269,14 @@ class GrowReferenceChecker {
     } else {
       localePaths.add(sourcePath);
     }
-    let resultAncor;
+    let resultAnchor;
     const errorLocales = [];
     for (const localePath of localePaths) {
       const foundAnchor = this._resolveAnchor(anchorValue, localePath);
-      if (!foundAnchor || resultAncor && foundAnchor != resultAncor) {
+      if (!foundAnchor || resultAnchor && foundAnchor != resultAnchor) {
         errorLocales.push(localePath);
-      } else if (!resultAncor) {
-        resultAncor = foundAnchor;
+      } else if (!resultAnchor) {
+        resultAnchor = foundAnchor;
       }
     }
     if (errorLocales.length > 0) {
@@ -293,7 +293,7 @@ class GrowReferenceChecker {
       }
       return anchor;
     }
-    return '#' + resultAncor;
+    return '#' + resultAnchor;
   }
 
   _getPathForLocale(filePath, locale) {
@@ -314,11 +314,11 @@ class GrowReferenceChecker {
     }
     let existingAnchor = anchors[anchorValue];
     if (!existingAnchor) {
-      anchorValue = anchorValue.trim().toLowerCase();
+      // first remove URL encoded characters and HTML entities that can be found in documents
+      // as a replacement for special characters that would be removed in a slug anyway.
       anchorValue = anchorValue.replace(/%[0-9A-F]{2}/g, '');
       anchorValue = anchorValue.replace(/&[^/s]+;/g, '');
-      anchorValue = anchorValue.replace(/ /g, '-');
-      anchorValue = anchorValue.replace(/[^\p{L}0-9_-]/gu, '');
+      anchorValue = SlugGenerator.sluggify(anchorValue);
       existingAnchor = anchors[anchorValue];
     }
     if (existingAnchor) {
