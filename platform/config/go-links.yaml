@@ -5,7 +5,10 @@
 /ampcs: /events/amp-cs-2019/#Schedule
 /auto-sw: https://github.com/ampproject/amp-sw/
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
-/codesamples: https://amp.dev/documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
+/contribute/code-samples: /documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
+/contribute/docs: /documentation/guides-and-tutorials/contribute/contribute-documentation
+/contribute/samples: /documentation/examples/
+/contribute/translations: /documentation/guides-and-tutorials/contribute/translations
 /cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
 /docs: /documentation/guides-and-tutorials/
 /docsgfi: https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22
@@ -17,14 +20,12 @@
 /optimize-amp: https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/
 /publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist
 /reftemplate: https://docs.google.com/document/d/1lRFcErFBnqsuv6W9mZsfYk2qnXO9nPzMkeog4Xtunl8/edit?usp=sharing
-/samples: /documentation/examples/
 /shopify-apps: https://blog.amp.dev/2019/04/15/shopify-apps-make-amp-easy-and-effective-for-ecommerce
 /stories-best-practices: /documentation/guides-and-tutorials/develop/amp_story_best_practices
 /stories: /about/stories
 /sxg: /documentation/guides-and-tutorials/optimize-and-measure/signed-exchange
 /templates: /documentation/templates/
 /tools: /documentation/tools
-/translations: https://amp.dev/documentation/guides-and-tutorials/contribute/translations/?format=websites
 /vision-mission: /about/mission-and-vision
 /websites: /about/websites
 
