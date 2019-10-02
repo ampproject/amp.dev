@@ -40,15 +40,15 @@ limitations under the License.
 </table>
 
 
-## 왜 AddThis를 사용해야 하나요?
+## 왜 AddThis를 사용해야 하나요? <a name="why-addthis"></a>
 
 `amp-addthis` 구성요소는 보기 좋고 단순한 공유 버튼을 제공합니다. 웹사이트 방문자가 Messenger, WhatsApp, Facebook, Twitter, Pinterest 등 200개 이상의 소셜 채널에서 콘텐츠를 손쉽게 공유할 수 있습니다.
 
 AddThis는 전 세계에서 60개 이상의 언어로 콘텐츠를 공유하며 순 사용자 수가 20억 이상인 천 오백만 개 이상의 웹사이트로부터 신뢰를 받고 있습니다.
 
-## 공유 버튼
+## 공유 버튼 <a name="share-buttons"></a>
 
-### 플로팅
+### 플로팅 <a name="floating"></a>
 
 페이지 측면, 상단 또는 하단에 배치되며 독자가 스크롤할 때 따라갑니다. 눈에 너무 띄지 않으면서 공유를 촉진할 수 있는 좋은 방법입니다.
 
@@ -69,7 +69,7 @@ AddThis는 전 세계에서 60개 이상의 언어로 콘텐츠를 공유하며 
 </amp-addthis>
 ```
 
-### 인라인
+### 인라인 <a name="inline"></a>
 
 원활한 공유 환경을 위해 콘텐츠에 공유 버튼을 통합합니다.
 
@@ -89,7 +89,7 @@ AddThis는 전 세계에서 60개 이상의 언어로 콘텐츠를 공유하며 
 </amp-addthis>
 ```
 
-## 속성
+## 속성 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -126,7 +126,7 @@ AddThis는 전 세계에서 60개 이상의 언어로 콘텐츠를 공유하며 
     </tr>
   </table>
 
-## 구현 문서
+## 구현 문서 <a name="implementation-documentation"></a>
 
 1. 아직 만들지 않았다면  [https://www.addthis.com/register](https://www.addthis.com/register)에서 AddThis 계정을 만들어야 합니다. AddThis 계정은 비용을 전혀 들이지 않고 만들 수 있으며, 이 계정을 통해 Google의 전체 웹사이트 도구뿐 아니라 심도 있는 분석 보고서에 액세스하여 내 사이트의 소셜 트래픽을 더욱 효과적으로 파악할 수 있습니다.
 1. [대시보드](https://addthis.com/dashboard)로 이동하여 공유 버튼을 맞춤설정합니다. AMP에서는 현재 플로팅 및 인라인 공유 버튼만 지원합니다.
@@ -138,11 +138,11 @@ AddThis는 전 세계에서 60개 이상의 언어로 콘텐츠를 공유하며 
 단계별 안내는 [YouTube 동영상](https://www.youtube.com/watch?v=BSkuAB4er2o)을 확인하세요.
 <amp-youtube width="480" height="270" data-videoid="BSkuAB4er2o" layout="responsive"></amp-youtube>
 
-## 유효성 검사
+## 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사기 사양의 [amp-addthis 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii)을 참조하세요.
 
-## 개인정보 보호
+## 개인정보 보호 <a name="privacy"></a>
 
 [http://www.addthis.com/privacy/privacy-policy/](http://www.addthis.com/privacy/privacy-policy/)
 
@@ -160,6 +160,6 @@ AddThis 데이터는 다음 항목으로 구성될 수 있습니다.
 
 AddThis 데이터는 관련 법에 따라 필요한 범위 내에서 개인 정보로 취급됩니다. 게시자는 AddThis 서비스 약관에 따라 필요한 모든 최종 사용자 동의 및 승인을 받아야 하며 최종 사용자로부터 수집한 AddThis 데이터를 Oracle에 제공하는 데 필요한 모든 알림을 제공해야 합니다.
 
-## 지원
+## 지원 <a name="support"></a>
 
 AMP에서 AddThis 구현에 관한 문의사항이 있거나 도움이 필요하면 [여기](https://www.addthis.com/support/)에서 티켓을 제출하거나 [help@addthis.com](mailto%3ahelp@addthis.com)에 이메일을 보내어 지원팀에 문의하시기 바랍니다.

@@ -635,7 +635,7 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## スタイルとレイアウトのエラー
+## スタイルとレイアウトのエラー <a name="style-and-layout-errors"></a>
 
 スタイルとレイアウトのエラーの説明に移る前に、
 AMP での
@@ -857,7 +857,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、指定されたレイアウトの属性値が無効である場合に発生します。
 このエラーの原因を把握するには、
-[各レイアウトの動作](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements)を
+[各レイアウトの動作](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)を
 よく理解する必要があります。
 
 たとえば、レイアウトを `fixed-height` に設定し、
@@ -902,7 +902,7 @@ AMP ページにテンプレートの構文を含めることはできません�
 ソースファイルから生成された出力にテンプレートが含まれなければ、
 ソースファイルにテンプレートを追加してもかまいません
 （
-[CSS プリプロセッサの使用](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors)についての説明もご覧ください）。
+[CSS プリプロセッサの使用](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors)についての説明もご覧ください）。
 
 ### テンプレートの構文が属性に含まれている
 

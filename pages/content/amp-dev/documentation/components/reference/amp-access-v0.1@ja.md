@@ -11,7 +11,7 @@ teaser:
 
 サイト運営者は amp-access（「AMP ペイウォールとサブスクリプションのサポート」）を利用することで、リーダーのサブスクリプション ステータス、視聴回数などの要素に基づき、リーダーがアクセスできるコンテンツや制限事項を管理できます。
 
-# amp-access
+# amp-access <a name="amp-access"></a>
 
 
 
@@ -49,7 +49,7 @@ limitations under the License.
 </tr>
 </table>
 
-## `amp-subscriptions` との関係
+## `amp-subscriptions` との関係 <a name="relationship-to-amp-subscriptions"></a>
 
 [`amp-subscriptions`](amp-subscriptions.md) 拡張機能は `amp-access` と同様の機能を備えています。ただしこの拡張機能は、特殊用途向けのアクセス ペイウォール プロトコルをサポートしています。この 2 つのコンポーネントの主な違いを以下に示します。
 
@@ -60,7 +60,7 @@ limitations under the License.
 
 マークアップの標準化、複数プロバイダのサポート、ビューアのサポートの強化といった理由から、新規のサイト運営者やペイウォール プロバイダの実装では `amp-subscriptions` を使用することをおすすめします。
 
-## ソリューション
+## ソリューション <a name="solution"></a>
 
 ここで提案するソリューションにより、サイト運営者は以下の意思決定やフローを管理できます。
 - ユーザーの作成と管理
@@ -86,7 +86,7 @@ Google AMP キャッシュによってドキュメントがリーダーに返さ
 
 amp-access を利用するには、サイト運営者が上述のコンポーネントを実装する必要があります。アクセス コンテンツ マークアップと承認エンドポイントは必須です。Pingback エンドポイントとログインページはオプションです。
 
-### AMP リーダー ID
+### AMP リーダー ID <a name="amp-reader-id"></a>
 
 アクセス サービスとユースケースのサポートのために、amp-access にはリーダー ID** のコンセプトが導入されています。
 
@@ -96,33 +96,33 @@ amp-access を利用するには、サイト運営者が上述のコンポーネ
 
 リーダー ID は、ExternalCID（[こちら](https://docs.google.com/document/d/1f7z3X2GM_ASb3ZCI_7tngglxwS6WoWi1EB3aKzdf6vo/edit#heading=h.hb9q0wpwwhuf)を参照）の作成に使用されるメカニズムに似た方法で作成されます（リーダー ID の例: `amp-OFsqR4pPKynymPyMmplPNMvxSTsNQob3TnK-oE3nwVT0clORaZ1rkeEz8xej-vV6`）。
 
-### amp-access と Cookie
+### amp-access と Cookie <a name="amp-access-and-cookies"></a>
 
 サイト運営者は、独自の認証 Cookie を使用することも、リーダー ID を使用することもできます。また、これらの両方を組み合わせて使用することも可能です。
 
-### アクセス コンテンツ マークアップ
+### アクセス コンテンツ マークアップ <a name="access-content-markup"></a>
 
 アクセス コンテンツ マークアップは、承認エンドポイントから返される承認応答に基づいて、どのセクションを表示または非表示にするかを決定します。アクセス コンテンツ マークアップは特別なマークアップ属性で記述されます。
 
-### 承認エンドポイント
+### 承認エンドポイント <a name="authorization-endpoint"></a>
 
 承認エンドポイントはサイト運営者によって指定され、AMP ランタイムまたは Google AMP キャッシュから呼び出されます。これは、認証済み CORS GET エンドポイントです。承認エンドポイントから返されるアクセス パラメータをコンテンツ マークアップで使用することで、ドキュメントのさまざまな部分の表示と非表示を切り替えることができます。
 
-### Pingback エンドポイント
+### Pingback エンドポイント <a name="pingback-endpoint"></a>
 
 Pingback エンドポイントはサイト運営者によって指定され、AMP ランタイムまたは Google AMP キャッシュから呼び出されます。これは、認証済み CORS POST エンドポイントです。リーダーがドキュメントの表示を開始すると、AMP ランタイムが自動的にこのエンドポイントを呼び出します。Pingback エンドポイントは、リーダーがログインフローを正常に完了した後にも呼び出されます。Pingback の主な目的の 1 つは、サイト運営者がメータリング情報を更新できるようにすることです。
 
 Pingback はオプションです。無効にするには、`noPingback` 設定プロパティを `true` に設定します。
 
-### ログインページとログインリンク
+### ログインページとログインリンク <a name="login-page-and-login-link"></a>
 
 ログインページはサイト運営者によって実装、提供され、AMP ランタイムから呼び出されます。通常はブラウザ ダイアログとして表示されます。
 
 ログインページは、リーダーがログインリンクをタップするとトリガーされます。サイト運営者はドキュメント内の任意の場所にログインリンクを配置できます。
 
-## 仕様 v0.1
+## 仕様 v0.1 <a name="specification-v01"></a>
 
-### 設定
+### 設定 <a name="configuration"></a>
 
 すべてのエンドポイントは、AMP ドキュメントの先頭で、JSON オブジェクトとして設定されます。
 
@@ -207,7 +207,7 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
 
 ```
 
-#### 複数のアクセス プロバイダ
+#### 複数のアクセス プロバイダ <a name="multiple-access-providers"></a>
 
 複数のアクセス プロバイダを指定するには、単一のオブジェクトの代わりに配列を使用し、エントリごとに `namespace` を指定します。
 
@@ -225,7 +225,7 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
 </script>
 ```
 
-### アクセス URL 変数
+### アクセス URL 変数 <a name="access-url-variables"></a>
 
 各種エンドポイントの URL を設定する場合、サイト運営者は代入変数を使用できます。代入変数の完全なリストは [AMP 変数の仕様](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)で定義されています。さらにこの仕様では、アクセス固有の変数（`READER_ID`、`AUTHDATA` など）がいくつか追加されています。主な変数について以下の表で説明します。
 
@@ -283,7 +283,7 @@ https://pub.com/access?
 
 AUTHDATA 変数は Pingback URL とログイン URL で使用できます。この変数を使用すると、承認応答の任意のフィールドを URL パラメータとして渡すことができます（例: `AUTHDATA(isSubscriber)`）。`AUTHDATA(other.isSubscriber)` のように、ネストされた式も使用できます。名前空間を使用する場合、フィールドの前に名前空間を追加できます（例: `AUTHDATA(anamespace.afield)`）。
 
-### アクセス コンテンツ マークアップ
+### アクセス コンテンツ マークアップ <a name="access-content-markup-1"></a>
 
 アクセス コンテンツ マークアップでは、表示または非表示にするセクションを記述します。アクセス コンテンツ マークアップは、任意の HTML 要素上に配置可能な 2 つの AMP 属性（`amp-access` と `amp-access-hide`）で構成されます。
 
@@ -345,7 +345,7 @@ subscriber** は、承認エンドポイントから返される承認応答の�
 </section>
 ```
 
-### 承認エンドポイント
+### 承認エンドポイント <a name="authorization-endpoint-1"></a>
 
 承認エンドポイントは、[設定](#configuration)で説明した `authorization` プロパティを使用して設定します。これは、認証済み CORS GET エンドポイントです。このリクエストを保護する方法については、[CORS のオリジンのセキュリティ](#cors-origin-security)をご覧ください。
 
@@ -412,7 +412,7 @@ AMP ランタイムは承認フローで以下の CSS クラスを使用しま�
 
 server** オプションでは、単純な HTTPS エンドポイントと同様に、Google AMP キャッシュから承認エンドポイントが呼び出されます。つまり、その場合はサイト運営者の Cookie を配信できません。
 
-### Pingback エンドポイント
+### Pingback エンドポイント <a name="pingback-endpoint-1"></a>
 
 Pingback は、[設定](#configuration)で説明した `pingback` プロパティを使用して設定します。これは、認証済み CORS POST エンドポイントです。このリクエストを保護する方法については、[CORS のオリジンのセキュリティ](#cors-origin-security)をご覧ください。
 
@@ -435,7 +435,7 @@ rid=READER_ID
 &url=SOURCE_URL
 ```
 
-### ログインページ
+### ログインページ <a name="login-page"></a>
 
 ログインページの URL は、[設定](#configuration)で説明した `login` プロパティを使用して設定します。
 
@@ -475,7 +475,7 @@ URL ハッシュ パラメータ「success」が使用されていることに�
 
 `success=true` シグナルが返された場合、AMP ランタイムは承認エンドポイントと Pingback エンドポイントを繰り返し呼び出してドキュメントの状態を更新し、新しいアクセス プロファイルを使用して「視聴」を報告します。
 
-#### ログインリンク
+#### ログインリンク <a name="login-link"></a>
 
 サイト運営者は、ドキュメントのコンテンツ内の任意の場所にログインリンクを配置できます。
 
@@ -495,15 +495,15 @@ URL ハッシュ パラメータ「success」が使用されていることに�
 
 AMP では、ログインとサブスクリプションを区別しません。この区別は、サイト運営者が複数のログイン URL とログインリンクを使用することによって設定できます。また、サイト運営者側で設定することもできます。
 
-## amp-analytics** との統合
+## amp-analytics** との統合 <a name="integration-with-amp-analytics"></a>
 
 amp-analytics** との統合は、[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) に記載されています。
 
-## CORS のオリジンのセキュリティ
+## CORS のオリジンのセキュリティ <a name="cors-origin-security"></a>
 
 承認エンドポイントと Pingback エンドポイントは CORS エンドポイントであり、[AMP CORS のセキュリティ仕様](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)で説明されているセキュリティ プロトコルを実装する必要があります。
 
-## メータリング
+## メータリング <a name="metering"></a>
 
 メータリングとは、リーダーがプレミアム コンテンツを一定期間内に複数回無料で視聴できるシステムです。割り当て量に達すると、リーダーにペイウォールが開始されたことが示され、その後は、アップセル メッセージと登録 / ログインリンクを含む部分的なコンテンツが表示されます。たとえば、メータリングは「リーダーは 1 か月あたり 10 件の記事を無料で読むことができます」のように定義できます。
 
@@ -513,7 +513,7 @@ amp-access には、従量制のアクセスを実装するための以下の機
 2. 「既読件数」は Pingback エンドポイントでのみ更新できます。
 3. 重複しないドキュメントのみが割り当て量に対してカウントされます。つまり、同じドキュメントを 10 回更新しても、視聴回数は 1 回です。そのため、承認エンドポイントと Pingback エンドポイントでは `SOURCE_URL` または同様の URL 変数を挿入できます。詳しくは、[アクセス URL 変数](#access-url-variables)をご覧ください。
 
-## First-Click-Free
+## First-Click-Free <a name="first-click-free"></a>
 
 Google の First-Click-Free（FCF）ポリシーについては、[こちら](https://support.google.com/news/publisher/answer/40543)をご覧ください。最新情報の詳細については、[こちら](https://googlewebmastercentral.blogspot.com/2015/09/first-click-free-update.html)をご覧ください。
 
@@ -521,7 +521,7 @@ FCF を実装するには、サイト運営者が（1）各視聴の参照元サ
 
 どちらの手順も amp-access の仕様に記載されています。[アクセス URL 変数](#access-url-variables)で説明したように、`DOCUMENT_REFERRER` URL 置換を使用して、参照 URL を承認 URL と Pingback URL に挿入することができます。視聴回数をカウントするには、サーバー側の Pingback エンドポイントを使用します。これは、[メータリング](#metering)で説明したメータリングの実装によく似ています。
 
-## ログインフロー
+## ログインフロー <a name="login-flow"></a>
 
 AMP では、ファーストパーティのウィンドウ、ポップアップ、タブとしてログイン ダイアログを起動します。AMP ビューアは、ログイン ダイアログで最上位のブラウザ API を利用できるよう、可能な限りブラウザ コンテキストでログイン ダイアログの起動を試みる必要があります。
 
@@ -538,7 +538,7 @@ AMP では、ファーストパーティのウィンドウ、ポップアップ�
 
 通常どおり、ログインページの呼び出しにはリーダー ID を含める必要があります。また、サイト運営者は ID マッピングにリーダー ID を使用できます。さらに、サイト運営者はファーストパーティ ウィンドウとして Cookie を受け取って設定することもできます。リーダーがサイト運営者側ですでにログインしていることがわかった場合、サイト運営者は `success=true` 応答を使用して「リターン URL」にすぐにリダイレクトすることをおすすめします。
 
-## AMP 用語集
+## AMP 用語集 <a name="amp-glossary"></a>
 
 * **AMP ドキュメント** - AMP 形式で作成された HTML ドキュメント。AMP 検証ツールによって検証され、Google AMP キャッシュでキャッシュすることも可能です。
 * **AMP 検証ツール** - HTML ドキュメントの静的分析を実行し、ドキュメントが AMP 形式に準拠しているかどうかに応じて成功または失敗を返すコンピュータ プログラム。
@@ -550,7 +550,7 @@ AMP では、ファーストパーティのウィンドウ、ポップアップ�
 * **リーダー** - AMP ドキュメントを閲覧している実際のユーザー。
 * **AMP 事前レンダリング** - AMP ビューアでは、非表示のドキュメントを表示する前にレンダリングする事前レンダリングを利用できます。これにより、パフォーマンスを大幅に向上させることができます。ただし、ドキュメントの事前レンダリングではリーダーが実際にドキュメントを見ることはできないため、ビューが構成されないことを考慮することが重要です。
 
-## 改訂
+## 改訂 <a name="revisions"></a>
 
 * 2016 年 9 月 2 日: 「noPingback」設定プロパティとオプションの Pingback。
 * 2016 年 3 月 3 日: ログイン後に Pingback が再送信されるようになりました（v0.5）。
@@ -562,7 +562,7 @@ AMP では、ファーストパーティのウィンドウ、ポップアップ�
 * 2016 年 2 月 3 日: 「アクセス元のオリジン」のセキュリティの仕様を [CORS のオリジンのセキュリティ](#cors-origin-security)に追加。
 * 2016 年 2 月 1 日: ログインページの「return」クエリ パラメータを、RETURN_URL URL 置換を使用してカスタマイズできるようになりました。
 
-## 付録 A: 「amp-access」の式の文法
+## 付録 A: 「amp-access」の式の文法 <a name="appendix-a-amp-access-expression-grammar"></a>
 
 最新の BNF の文法は [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) ファイルで確認できます。
 
@@ -598,10 +598,10 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 `amp-access` の式は AMP ランタイムと Google AMP キャッシュによって評価されることに注意してください。この部分をサイト運営者が実装する必要があるというわけではありません。上の抜粋は情報の提供だけを目的としたものです。
 
-## 詳細な説明
+## 詳細な説明 <a name="detailed-discussion"></a>
 
 このセクションでは、amp-access の仕様の基礎となる設計について詳細に説明し、設計オプションを明らかにします。近日公開予定。
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツールの仕様で [amp-access のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii)をご確認ください。

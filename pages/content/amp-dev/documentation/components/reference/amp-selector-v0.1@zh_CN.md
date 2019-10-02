@@ -46,7 +46,7 @@ teaser:
 </table>
 
 
-## 行为
+## 行为 <a name="behavior"></a>
 
 AMP 选择器是一种控件，可显示一系列选项并让用户从中选择一个或多个选项；选项内容不只局限于文本。
 
@@ -96,7 +96,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 </amp-selector>
 ```
 
-## 清除所选内容
+## 清除所选内容 <a name="clearing-selections"></a>
 
 要在用户点按或点击某个元素后清除所有所选内容，请在相应元素上设置 [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) 操作属性，然后使用 `clear` 操作方法指定 AMP 选择器 `id`。
 
@@ -115,9 +115,9 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 [AMP By Example](https://ampbyexample.com/components/amp-selector/) 上的在线演示。
 [/tip]
 
-## 属性
+## 属性 <a name="attributes"></a>
 
-### `<amp-selector>` 上的属性
+### `<amp-selector>` 上的属性 <a name="attributes-on-"></a>
 
 <table>
   <tr>
@@ -134,7 +134,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
     </tr>
   </table>
 
-### `<amp-selector>` 选项的属性
+### `<amp-selector>` 选项的属性 <a name="attributes-on--options"></a>
 
 <table>
   <tr>
@@ -147,7 +147,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
   </tr>
 </table>
 
-## 事件
+## 事件 <a name="events"></a>
 
 事件可以使用 `on` 属性触发其他 AMP 组件上的操作。例如，`on="select: my-tab.show"`
 
@@ -168,6 +168,6 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 
     </table>
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-selector 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii)。

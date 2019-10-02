@@ -38,7 +38,7 @@ iframe 在 AMP 中特别有用，可显示主网页中不支持的内容，例�
 </amp-iframe>
 ```
 
-## 使用占位符
+## 使用占位符 <a name="using-placeholders"></a>
 
 您可以在文档顶部展示 [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) ，前提是 [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) 包含具有 `placeholder` 属性的元素（例如 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 元素）。在 iframe 准备就绪，可以进行展示之前，该元素会以占位符的形式呈现。
 

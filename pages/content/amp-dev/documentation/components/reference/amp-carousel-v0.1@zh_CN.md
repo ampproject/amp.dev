@@ -52,7 +52,7 @@ limitations under the License.
     </tr>
   </table>
 
-# 行为
+# 行为 <a name="behavior"></a>
 
 每个 `amp-carousel` 组件的直接子级在轮播界面中均视为一个项。每个节点还可能包含任意 HTML 子级。
 
@@ -77,7 +77,7 @@ limitations under the License.
 ```
 [/example]
 
-# 前往某张特定幻灯片
+# 前往某张特定幻灯片 <a name="advancing-to-a-specific-slide"></a>
 
 如果在某元素上将 `on` 属性的某个方法设为 `tap:carousel-id.goToSlide(index=N)`，则会在用户点按或点击时从具有 "carousel-id" ID 的轮播界面前往 index=N 位置的幻灯片（第一张幻灯片的位置为 index=0，第二张幻灯片的位置为 index=1，以此类推）。
 
@@ -129,7 +129,7 @@ limitations under the License.
 ```
 [/example]
 
-# 属性
+# 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -214,7 +214,7 @@ limitations under the License.
       </tr>
     </table>
 
-# 样式设置
+# 样式设置 <a name="styling"></a>
 
 * 您可以使用 `amp-carousel` 元素选择器随意设置样式。
 * 您可以使用 `.amp-carousel-slide` 类别选择器定位轮播项。
@@ -239,6 +239,6 @@ limitations under the License.
 }
 ```
 
-# 验证
+# 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-carousel 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii)。

@@ -72,7 +72,7 @@ limitations under the License.
   </amp-auto-ads>
 ```
 
-## 支持的广告联盟
+## 支持的广告联盟 <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick（实验性）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -127,7 +127,7 @@ limitations under the License.
 
 ### 对象定义
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 要在配置对象中指定的字段：
 
@@ -207,7 +207,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 要在 `anchor` 配置对象中指定的字段：
 
@@ -247,7 +247,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 要在 `style` 配置对象中指定的字段：
 
@@ -271,7 +271,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 `placements` 配置对象中 `pos` 字段的枚举值：
 
@@ -303,7 +303,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 `placements` 配置对象中 `type` 字段的枚举值：
 

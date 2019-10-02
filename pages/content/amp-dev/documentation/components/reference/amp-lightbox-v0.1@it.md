@@ -48,7 +48,7 @@ teaser:
 </table>
 
 
-## Comportamento
+## Comportamento <a name="behavior"></a>
 
 Il componente `amp-lightbox` definisce gli elementi secondari che vengono visualizzati in una finestra modale/overlay a piena area visibile. Quando l'utente tocca o fa clic su un elemento (ad esempio, un pulsante), l'ID `amp-lightbox` di riferimento nell'attributo `on` dell'elemento selezionato attiva la lightbox in modo che questa occupi l'intera area visibile e vengano visualizzati gli elementi secondari di `amp-lightbox`.
 
@@ -66,7 +66,7 @@ Premendo il tasto Esc sulla tastiera si chiude la lightbox. In alternativa, se i
 per mostrare immagini in una lightbox, puoi usare anche il componente [`<amp-image-lightbox>`](amp-image-lightbox.md).
 [/tip]
 
-## Attributi
+## Attributi <a name="attributes"></a>
 
 <table>
   <tr>
@@ -104,11 +104,11 @@ per mostrare immagini in una lightbox, puoi usare anche il componente [`<amp-ima
                     </tr>
                   </table>
 
-## Stili
+## Stili <a name="styling"></a>
 
 Puoi modificare lo stile ad `amp-lightbox` con CSS standard.
 
-## Azioni
+## Azioni <a name="actions"></a>
 
 `amp-lightbox` ti permette di attivare le seguenti azioni utilizzando [AMP on-syntax per attivare](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md):
 
@@ -127,7 +127,7 @@ Puoi modificare lo stile ad `amp-lightbox` con CSS standard.
   </tr>
 </table>
 
-## <a id="a4a"></a> Utilizzare `amp-lightbox` in annunci HTML AMP
+## <a id="a4a"></a> Utilizzare `amp-lightbox` in annunci HTML AMP <a name="a4a"></a>
 
 [tip type="note"]
 il componente `amp-lightbox` da utilizzare negli annunci HTML AMP è [sperimentale](../../../documentation/guides-and-tutorials/learn/experimental.md) e attualmente in fase di sviluppo. Per utilizzare `amp-lightbox` in annunci HTML AMP, [attiva l'esperimento `amp-lightbox-a4a-proto`](http://cdn.ampproject.org/experiments.html).
@@ -135,7 +135,7 @@ il componente `amp-lightbox` da utilizzare negli annunci HTML AMP è [sperimenta
 
 Vi sono alcune differenze tra l'uso di `amp-lightbox` in normali documenti AMP e in [annunci scritti in HTML AMP](../../../documentation/guides-and-tutorials/learn/a4a_spec.md):
 
-### Richiede close-button
+### Richiede close-button <a name="requires-close-button"></a>
 
 Per gli annunci HTML AMP è necessario l'attributo `close-button`. Questo attributo fa apparire un'intestazione nella parte superiore della lightbox che contiene un pulsante di chiusura e un'etichetta con il testo "Annuncio". Questa intestazione è necessaria per:
 
@@ -144,21 +144,21 @@ Per gli annunci HTML AMP è necessario l'attributo `close-button`. Questo attrib
 
 L'attributo `close-button` è obbligatorio e consentito solo negli annunci HTML AMP. Nei normali documenti AMP, puoi far visualizzare un pulsante di chiusura dove necessario come parte dei contenuti `<amp-lightbox>`.
 
-### Le lightbox scorrevoli non sono consentite
+### Le lightbox scorrevoli non sono consentite <a name="scrollable-lightboxes-are-disallowed"></a>
 
 Le lightbox scorrevoli non sono consentite negli annunci HTML AMP.
 
-### Sfondo trasparente
+### Sfondo trasparente <a name="transparent-background"></a>
 
 Quando utilizzi `<amp-lightbox>` in annunci HTML AMP, lo sfondo dell'elemento `<body>` diventa trasparente in quanto il runtime AMP ridimensiona e riallinea i contenuti della creatività prima che la lightbox venga espansa. Ciò avviene per evitare un "salto" visivo della creatività all'apertura della lightbox. Se ti serve uno sfondo per la creatività, impostalo in un contenitore intermedio (come un `<div>` a grandezza originale) anziché in `<body>`.
 
 Quando l'annuncio HTML AMP viene pubblicato in un ambiente di terze parti, come un documento non AMP, la creatività viene centrata rispetto all'area visibile ed espansa successivamente. Questo perché gli iframe di terze parti devono basarsi su API postMessage per attivare funzioni come il ridimensionamento dei frame, che è asincrono. Centrare prima la creatività permette quindi una transizione fluida senza salti visivi.
 
-### Esempi di transizioni in lightbox per annunci HTML AMP
+### Esempi di transizioni in lightbox per annunci HTML AMP <a name="examples-of-transitions-in-lightbox-for-amphtml-ads"></a>
 
 Negli esempi riportati di seguito, dimostriamo come si presenta la transizione per un annuncio HTML AMP con l'attributo `animate-in="fly-in-bottom"` impostato nell'elemento lightbox per un annuncio HTML AMP in un iframe semplice e un annuncio HTML AMP in un iframe di terze parti.
 
-##### In iframe semplici, ad esempio, provenienti da cache AMP
+##### In iframe semplici, ad esempio, provenienti da cache AMP <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
 <amp-img alt="lightbox ad in friendly iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
   <noscript>
@@ -166,7 +166,7 @@ Negli esempi riportati di seguito, dimostriamo come si presenta la transizione p
     </noscript>
   </amp-img>
 
-##### In iframe di terze parti, ad esempio, esterni a cache AMP
+##### In iframe di terze parti, ad esempio, esterni a cache AMP <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
 <amp-img alt="lightbox ad in 3p iframe" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
   <noscript>
@@ -174,6 +174,6 @@ Negli esempi riportati di seguito, dimostriamo come si presenta la transizione p
     </noscript>
   </amp-img>
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) nella specifica dello strumento di convalida AMP.

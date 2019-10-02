@@ -62,13 +62,13 @@ Os estilos a seguir são permitidos. Contudo, há restrições em relação à c
   </tbody>
 </table>
 
-## Exceção: fontes personalizadas
+## Exceção: fontes personalizadas <a name="the-custom-fonts-exception"></a>
 
 As páginas AMP não podem incluir folhas de estilos externas, exceto fontes personalizadas.
 
 Continue lendo: Saiba mais sobre [fontes personalizadas nas AMP](custom_fonts.md).
 
-## Como usar pré-processadores de CSS
+## Como usar pré-processadores de CSS <a name="using-css-preprocessors"></a>
 
 O resultado gerado pelos pré-processadores é tão bom nas AMP como em qualquer outra página da Web. Por exemplo, o site [amp.dev](https://amp.dev/) usa [Sass](http://sass-lang.com/). Usamos [Grow](http://grow.io/) para criar as páginas AMP estáticas que compõem o site [amp.dev](https://amp.dev/).
 

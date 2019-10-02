@@ -54,14 +54,14 @@ limitations under the License.
   </tr>
 </table>
 
-## 동작
+## 동작 <a name="behavior"></a>
 
 광고는 AMP 문서의 다른 모든 리소스와 마찬가지로
 `<amp-ad>`라는 특별한 맞춤 요소와 함께 로드됩니다. 광고 네트워크에서 제공하는 자바스크립트는 AMP 문서 내에서 실행할 수 없습니다. 대신 AMP 런타임에서는 AMP 문서로 iframe 샌드박스를 통해 다른 원본에서 iframe을 로드하고 그 iframe 샌드박스 내에서는 광고 네트워크의 JS를 실행합니다.
 
-`<amp-ad>`를 사용하려면 레이아웃 유형의 [규칙](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)에 따라 너비와 높이 값을 지정해야 합니다. 이를 위해 표시할 광고 네트워크를 선택하는 `type` 인수가 필요합니다. 태그의 모든 `data-*` 속성은 이후에 광고를 렌더링하는 코드에 인수로 자동 전달됩니다. 특정 네트워크 유형에 필요한 `data-` 속성은 상황에 따라 다르며 광고 네트워크에서 문서화되어야 합니다.
+`<amp-ad>`를 사용하려면 레이아웃 유형의 [규칙](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#tldr-summary-of-layout-requirements--behaviors)에 따라 너비와 높이 값을 지정해야 합니다. 이를 위해 표시할 광고 네트워크를 선택하는 `type` 인수가 필요합니다. 태그의 모든 `data-*` 속성은 이후에 광고를 렌더링하는 코드에 인수로 자동 전달됩니다. 특정 네트워크 유형에 필요한 `data-` 속성은 상황에 따라 다르며 광고 네트워크에서 문서화되어야 합니다.
 
-#### 예: 몇 가지 광고 표시
+#### 예: 몇 가지 광고 표시 <a name="example-displaying-a-few-ads"></a>
 
 [example preview="inline" playground="true" imports="amp-ad"]
 ```html
@@ -95,7 +95,7 @@ limitations under the License.
 ```
 [/example]
 
-## 속성
+## 속성 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -137,7 +137,7 @@ limitations under the License.
   </tr>
 </table>
 
-## 자리표시자
+## 자리표시자 <a name="placeholder"></a>
 
 필요한 경우 `amp-ad`는 `placeholder` 속성으로 하위 요소를 지원합니다. 광고 네트워크에서 지원하는 경우 게재할 수 있는 광고가 없으면 이 요소가 표시됩니다. [자리표시자 및 대체 동작](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)에서 자세히 알아보세요.
 
@@ -148,7 +148,7 @@ limitations under the License.
 </amp-ad>
 ```
 
-## 사용 가능한 광고 없음
+## 사용 가능한 광고 없음 <a name="no-ad-available"></a>
 
 슬롯에 사용할 수 있는 광고가 없으면 AMP에서 `amp-ad` 요소를 접으려고(즉, `display: none`으로 설정) 시도합니다. AMP에서는 사용자의 스크롤 위치에 영향을 주지 않고 이 작업을 실행할 수 있는지 확인합니다. 광고가 현재 표시 영역에 있으면 사용자의 스크롤 위치에 영향을 주기 때문에 광고가 접히지 않지만, 광고가 현재 표시 영역 외부에 있으면 접힙니다.
 
@@ -162,7 +162,7 @@ limitations under the License.
 </amp-ad>
 ```
 
-## 동영상 광고 게재
+## 동영상 광고 게재 <a name="serving-video-ads"></a>
 
 다음 3가지 방법으로 동영상 광고로 AMP에서 수익을 창출할 수 있습니다.
 
@@ -175,7 +175,7 @@ limitations under the License.
     * 첫 번째 표시 영역에 플레이어를 로드하는 경우 포스터가 있어야 합니다. [자세히 알아보기](amp-iframe.md#iframe-with-placeholder)
     * 동영상과 포스터는 HTTPS를 통해 제공되어야 합니다.</li>
 
-## 맞춤 도메인에서 광고 게재
+## 맞춤 도메인에서 광고 게재 <a name="running-ads-from-a-custom-domain"></a>
 
 AMP에서는 내 도메인과 같은 맞춤 도메인에서 광고를 로드하는 데 사용되는 부트스트랩 iframe 로드를 지원합니다.
 
@@ -187,7 +187,7 @@ AMP에서는 내 도메인과 같은 맞춤 도메인에서 광고를 로드하�
 
   메타 태그의 `content` 속성은 웹 서버의 remote.html 파일 사본의 절대 URL입니다. 이 URL은 'https' 스키마를 사용해야 하며, AMP 파일과 동일한 원본에 있으면 안 됩니다. 예를 들어 `www.example.com`에 AMP 파일을 호스팅하는 경우 이 URL은 `www.example.com`에 있으면 안 되지만 `something-else.example.com`에 있는 것은 괜찮습니다. iframe에서 허용되는 원본에 대한 자세한 내용은 ['Iframe 원본 정책'](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)을 참조하세요.
 
-### 보안
+### 보안 <a name="security"></a>
 
 수신 데이터를 `draw3p` 함수에 전달하기 전에 **수신 데이터의 유효성을 검사** 하여 iframe에서 정상적인 작업만 실행하는지 확인합니다. 특히 맞춤 자바스크립트 삽입을 허용하는 광고 네트워크의 경우가 여기에 해당합니다.
 
@@ -200,11 +200,11 @@ AMP 캐시의 경우 '소스 원본'(cdn.ampproject.org에서 제공한 문서�
 
 원본 시행은 `draw3p`의 세 번째 인수와 함께 실행될 수 있으며 전체 브라우저 지원을 받으려면 [allow-from](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options) 명령어를 사용해 추가로 실행되어야 합니다.
 
-### 수신 광고 구성 향상
+### 수신 광고 구성 향상 <a name="enhance-incoming-ad-configuration"></a>
 
 완전히 선택사항입니다. 광고 서버로 광고 요청을 하기 전에 광고 요청을 향상하는 것이 바람직한 경우가 있습니다.
 
-광고 네트워크에서 [빠른 가져오기](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad-implementation)를 지원하는 경우 [RTC(Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)를 사용하세요. 예를 들어 DoubleClick과 애드센스 통합에서는 빠른 가져오기와 RTC를 모두 지원합니다.
+광고 네트워크에서 [빠른 가져오기](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad)를 지원하는 경우 [RTC(Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)를 사용하세요. 예를 들어 DoubleClick과 애드센스 통합에서는 빠른 가져오기와 RTC를 모두 지원합니다.
 
 광고 네트워크에서 지연된 가져오기를 사용하는 경우 [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html) 파일의 `draw3p` 함수 호출에 콜백을 전달할 수 있습니다. 콜백은 수신 구성을 첫 번째 인수로 받은 다음 다른 콜백을 두 번째 인수(아래 예에서 `done`이라고 불림)로 받습니다. 광고 렌더링을 진행하려면 업데이트된 구성으로 이 콜백을 호출해야 합니다.
 
@@ -221,16 +221,16 @@ draw3p(function(config, done) {
 }, ['allowed-ad-type'], ['your-domain.com']);
 ```
 
-## 스타일 지정
+## 스타일 지정 <a name="styling"></a>
 
 `<amp-ad>` 요소는 CSS `position: fixed`가 설정된 컨테이너(`amp-lightbox` 제외)에 포함되거나 배치되지 않을 수 있습니다.
 이는 전체 페이지 오버레이 광고가 UX에 미치는 영향 때문이며, 향후 특정 UX 불변 속성을 유지 관리하는 AMP 제어 컨테이너 내에 유사한 광고 형식을 허용하는 것으로 간주될 수 있습니다.
 
-## 확인
+## 확인 <a name="validation"></a>
 
 AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/validator-amp-ad.protoascii)을 참조하세요.
 
-## 지원되는 광고 네트워크
+## 지원되는 광고 네트워크 <a name="supported-ad-networks"></a>
 
 * [A8](https://github.com/ampproject/amphtml/blob/master/ads/a8.md)
 * [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md)
@@ -412,7 +412,7 @@ AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/
 * [Zedo](https://github.com/ampproject/amphtml/blob/master/ads/zedo.md)
 * [Zucks](https://github.com/ampproject/amphtml/blob/master/ads/zucks.md)
 
-## 지원되는 삽입 유형
+## 지원되는 삽입 유형 <a name="supported-embed-types"></a>
 
 * [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
 * [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)

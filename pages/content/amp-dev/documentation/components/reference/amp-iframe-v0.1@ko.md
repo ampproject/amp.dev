@@ -43,7 +43,7 @@ iframe을 표시합니다.
   </tr>
 </table>
 
-# 동작
+# 동작 <a name="behavior"></a>
 
 `amp-iframe`에는 보안을 강화하고 단일 iframe에서 좌우하는 AMP 파일을 방지하도록 디자인된 vanilla iframe과 다른 중요한 여러 차이점이 있습니다.
 
@@ -72,7 +72,7 @@ iframe을 표시합니다.
 `amp-iframe`의 더 많은 데모를 보려면 [AMP By Example](https://ampbyexample.com/components/amp-iframe/)을 참조하세요.
 [/tip]
 
-# 광고에 amp-iframe 사용
+# 광고에 amp-iframe 사용 <a name="usage-of-amp-iframe-for-advertising"></a>
 
 `amp-iframe`을 광고 표시의 주용도로 사용해서는 **안 됩니다**. 일부가 광고인 동영상을 표시하는 용도로 `amp-iframe`을 사용하는 것은 괜찮습니다. 이 AMP 정책은 각 iframe을 렌더링하지 않아도 적용될 수 있습니다.
 
@@ -85,7 +85,7 @@ iframe을 표시합니다.
 * `amp-iframe`에는 iframe에서 완전히 제어하는 크기 조정 메커니즘이 없습니다.
 * 조회가능성 정보는 `amp-iframe`에 사용하지 못할 수 있습니다.
 
-# 속성
+# 속성 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -99,7 +99,7 @@ iframe을 표시합니다.
         <code>frameborder</code>가 지정되지 않은 경우 기본적으로 <code>0</code>으로 설정됩니다.</td>
       </tr>
       <tr>
-        <td width="40%"><strong>sandbox</strong></td>
+        <td width="40%"><strong>sandbox</strong><a name="sandbox"></a></td>
         <td><code>amp-iframe</code>을 통해 만든 iframe에는 항상 <code>sandbox</code> 속성이 정의되어 있어야 합니다. 기본적으로 값은 비어 있습니다. 즉, '최대 샌드박스 처리'됩니다. <code>sandbox</code> 값을 설정하여 iframe을 적게 샌드박스 처리하도록 선택할 수 있습니다. 브라우저에서 지원하는 모든 값이 허용됩니다. 예를 들어 <code>sandbox="allow-scripts"</code>를 설정하면 iframe에서 JavaScript를 실행할 수 있습니다. 또는 <code>sandbox="allow-scripts allow-same-origin"</code>을 설정하면 iframe에서 JavaScript를 실행할 수 있으므로 비CORS XHR을 작성하고 쿠키를 읽고 쓸 수 있습니다.
           <br><br>
             특별히 샌드박스를 염두에 두 않고 만든 문서를 iframe으로 작성하는 경우 <code>allow-scripts allow-same-origin</code>을 <code>sandbox</code> 속성에 추가해야 할 가능성이 크며 추가 기능을 허용해야 할 수도 있습니다.
@@ -114,7 +114,7 @@ iframe을 표시합니다.
               </tr>
             </table>
 
-# 자리표시자가 있는 iframe
+# 자리표시자가 있는 iframe <a name="iframe-with-placeholder"></a>
 
 아래 예에 표시된 대로 `amp-iframe`에 `placeholder` 요소가 있으면 `amp-iframe`이 문서의 상단에 표시될 수 있습니다.
 
@@ -141,7 +141,7 @@ window.parent.postMessage({
   }, '*');
 ```
 
-# iframe 크기 조정
+# iframe 크기 조정 <a name="iframe-resizing"></a>
 
 `amp-iframe`에는 다른 모든 AMP 요소와 마찬가지로 정적 레이아웃이 정의되어 있어야 합니다. 그러나
 런타임 시 `amp-iframe`의 크기를 조정할 수 있습니다. 방법은 다음과 같습니다.
@@ -185,7 +185,7 @@ window.parent.postMessage({
 * 현재 활성 상태인 iframe의 크기 조정이 요청되었는지 여부
 * 표시 영역 아래 또는 표시 영역 위의 iframe에 대한 크기 조정이 요청되었는지 여부
 
-# iframe 조회가능성
+# iframe 조회가능성 <a name="iframe-viewability"></a>
 
 iframe에서는 상위 표시 영역과 교차하는 iframe의 IntersectionObserver 스타일 [변경 레코드](https://developer.mozilla.org/ko-KR/docs/Web/API/IntersectionObserverEntry)를 수신하기 위해 상위 요소에 `send-intersections` 메시지를 보낼 수 있습니다.
 
@@ -221,7 +221,7 @@ window.addEventListener('message', function(event) {
 
 교차 메시지는 iframe이 표시 영역 내외부로 이동(또는 부분적으로 공개)하거나 iframe이 스크롤링되거나 크기 조정될 때 상위 요소에서 iframe으로 보냅니다.
 
-# 추적/분석 iframe
+# 추적/분석 iframe <a name="trackinganalytics-iframes"></a>
 
 분석 용도로는 [`amp-analytics`](amp-analytics.md)를 사용하는 것이 가장 좋습니다. 다양한 분석 공급업체에 맞게 구성할 수 있는 훨씬 더 강력하고 완전하며 효율적인 솔루션이기 때문입니다.
 
@@ -229,7 +229,7 @@ AMP에서는 페이지당 분석 및 추적 용도로 사용하는 단일 iframe
 
 iframe이 사용자 숨기기 또는 작게 표시와 같이 직접적으로 사용자에게 도움을 주지 않는 것으로 보이면 추적/분석 iframe으로 식별됩니다.
 
-# 지침: amp-iframe을 통해 기존 AMP 구성요소 사용
+# 지침: amp-iframe을 통해 기존 AMP 구성요소 사용 <a name="guideline-use-existing-amp-components-over-amp-iframe"></a>
 
 AMP의 다른 방법으로 필수 사용자 환경을 사용할 수 없는 경우, 즉 사용 사례에 맞는 기존 [AMP 구성요소](../../../documentation/components/index.html)가 아직 없다면 `amp-iframe` 구성요소를 대체로 고려해야 합니다. 다음과 같이 특정 사용 사례에 맞게 조정된 AMP 구성요소를 사용하면 많은 이점이기 때문입니다.
 
@@ -238,6 +238,6 @@ AMP의 다른 방법으로 필수 사용자 환경을 사용할 수 없는 경�
 * 크기 조정을 기본 제공합니다. 크기를 예측할 수 없는 iframe 콘텐츠가 스크롤 가능 프레임에 표시되지 않고 페이지에 고유한 것처럼 사용자에게 더 자주 표시될 수 있습니다.
 * 기타 추가 기능을 기본 제공할 수 있습니다(예: 동영상 플레이어를 위한 자동 재생).
 
-# 유효성 검사
+# 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사기 사양에서 [amp-iframe 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii)을 참조하세요.

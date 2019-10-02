@@ -4,7 +4,7 @@ $title: "Analytics: Temel Bilgiler"
 
 AMP analitik hakkında temel bilgileri öğrenmek için buraya tıklayın.
 
-## `amp-pixel` veya `amp-analytics` kullanıyor musunuz?
+## `amp-pixel` veya `amp-analytics` kullanıyor musunuz? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP analitik ve ölçüm ihtiyaçlarınızı karşılamak için iki bileşen kullanır:
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) ve
@@ -114,7 +114,7 @@ bir etkinlik tetiklenir ve `pageview` isteği gönderilir.
 Tetikleme sayfa görüntüleme isteği uyarısının ne zaman çıkacağını belirler.
 [İstekler ve tetikleme](deep_dive_analytics.md) hakkında daha fazla öğrenin.
 
-## Değişken değiştirme
+## Değişken değiştirme <a name="variable-substitution"></a>
 
 Hem [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) hem de
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) bileşenleri
@@ -182,7 +182,7 @@ aynı değişken farklı lokasyonlarda tanımlanmış olabilir
 ve AMP çalışma zamanı öncelik sırasına bu değerleri ayrıştıracaktır
 (bkz. [Değişken değiştirme sıralaması](deep_dive_analytics.md).
 
-## Kullanıcı tanımlama
+## Kullanıcı tanımlama <a name="user-identification"></a>
 
 Web siteleri tarayıcıda bir kullanıcıya özgü bilgileri saklamak için çerezler kullanır.
 Çerezler kullanıcının bir internet sitesini daha önce ziyaret edip etmediğini belirlemek için kullanılabilir.

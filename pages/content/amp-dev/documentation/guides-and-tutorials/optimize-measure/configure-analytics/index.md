@@ -49,7 +49,7 @@ You must identify this data before you can configure it.
 Key data points to consider:
 
 * Will you track only page views, or additional user engagement patterns
-(see also [amp-pixel or amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics?))?
+(see also [amp-pixel or amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
 * What kinds of data will you capture about your users, your content,
 the device or browser (see also [Variable substitution](analytics_basics.md#variable-substitution))?
 * How will you identify your users (see also [User identification](analytics_basics.md#user-identification))?

@@ -143,7 +143,7 @@ dan nilai dalam URL jarak jauh menempati urutan teratas (lihat [Pengurutan subst
 
 [/tip]
 
-## Atribut requests, triggers & transport
+## Atribut requests, triggers & transport <a name="requests-triggers--transports"></a>
 
 Atribut `requests` menetapkan ‘data apa yang dikirim’
 (misalnya, `pageviews`, `events`),
@@ -159,7 +159,7 @@ Baca terus untuk mempelajari lebih lanjut tentang konfigurasi ini.
 (Anda juga bisa membaca tentang konfigurasi ini di
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
-### Data apa yang dikirim: atribut requests
+### Data apa yang dikirim: atribut requests <a name="what-data-gets-sent-requests-attribute"></a>
 
 Atribut `request-name` digunakan dalam konfigurasi pemicu untuk menentukan
 permintaan apa yang harus dikirim sebagai respons atas peristiwa tertentu.
@@ -326,7 +326,7 @@ maka metode tersebut akan digunakan; jika tidak, tidak ada permintaan yang dikir
 }
 ```
 
-## Pengurutan substitusi variabel
+## Pengurutan substitusi variabel <a name="variable-substitution-ordering"></a>
 
 AMP mengisi variabel dengan nilai dalam urutan prioritas:
 

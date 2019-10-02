@@ -172,7 +172,7 @@ Berikut ini beberapa praktik terbaik umum untuk mengimplementasikan AMP Viewer:
 *   Pada penampil berbasis WebView, aktifkan cookie pihak ketiga.
 *   Setel perujuk untuk platform/aplikasi Anda.
 
-### Membagikan Konten AMP
+### Membagikan Konten AMP <a name="sharing-amp-content"></a>
 
 Jika dokumen AMP dibagikan dari dalam AMP Viewer platform, maka platform tersebut
 harus membagikan URL kanonis jika hal itu memungkinkan secara teknis. Misalnya, jika

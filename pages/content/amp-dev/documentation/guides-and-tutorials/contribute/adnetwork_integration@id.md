@@ -15,9 +15,9 @@ Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan
 ##### Ingin menayangkan iklan AMPHTML?
 
 1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md) (misalnya jika Anda belum membuat implementasi untuk menayangkan iklan HTML biasa)
-2. [Buat integrasi Fast Fetch untuk menayangkan iklan AMPHTML](#membuat-integrasi-fast-fetch).
+2. [Buat integrasi Fast Fetch untuk menayangkan iklan AMPHTML](#creating-a-fast-fetch-integration).
 
-## Membuat implementasi `amp-ad`
+## Membuat implementasi `amp-ad` <a name="creating-an-amp-ad"></a>
 
 Sebagai server iklan, penayang yang Anda dukung menyertakan library JavaScript yang Anda sediakan dan menempatkan berbagai "cuplikan iklan" yang mengandalkan library JavaScript untuk mengambil iklan dan merendernya di situs penayang. Karena AMP tidak mengizinkan penayang untuk menjalankan JavaScript arbitrer, Anda harus berkontribusi pada kode open-source AMP untuk mengizinkan tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) meminta iklan dari server iklan.
 
@@ -40,7 +40,7 @@ Dalam kode di atas, atribut `type` menentukan jaringan iklan, dalam hal ini A9. 
 
 Untuk mempelajari cara membuat integrasi [`amp-ad`](../../../documentation/components/reference/amp-ad.md), lihat [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
-## Membuat integrasi Fast Fetch
+## Membuat integrasi Fast Fetch <a name="creating-a-fast-fetch-integration"></a>
 
 [Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/) adalah mekanisme AMP yang memisahkan permintaan iklan dari respons iklan, sehingga permintaan iklan dapat muncul lebih awal dalam siklus proses halaman, dan hanya merender iklan yang kemungkinan akan dilihat oleh pengguna. Fast Fetch memberikan perlakuan khusus pada iklan AMPHTML terverifikasi, dibandingkan pada iklan HTML biasa. Dalam Fast Fetch, jika gagal dalam validasi, iklan akan digabungkan dalam iframe lintas-domain untuk membatasi aksesnya dari elemen lain dalam dokumen AMP. Sebaliknya, iklan AMPHTML yang lolos validasi langsung ditulis ke halaman. Fast Fetch menangani iklan AMP dan non-AMP; tidak ada permintaan iklan tambahan yang dibutuhkan untuk iklan yang gagal validasi.
 

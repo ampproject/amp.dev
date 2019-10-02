@@ -97,7 +97,7 @@ Emails are viewed across a variety of devices and screen sizes, and AMP comes wi
 <amp-img layout="responsive" src="https://placekitten.com/800/400" alt="Welcome" height="400" width="800"></amp-img>
 ```
 
-Grow and shrink the browser window to watch the image resize! View the [list of supported layout specific components here](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md#layout-elements).
+Grow and shrink the browser window to watch the image resize! View the [list of supported layout specific components here](../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md#layout).
 
 
 # Modify presentation and layout
@@ -151,7 +151,7 @@ You should now be able to change photos by clicking the navigation arrows on the
 
 ## Send with style
 
-AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md#emails,-with-style).
+AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md#emails-with-style).
 
 Let's update `Hello, AMP4EMAIL world` to a real title.
 
@@ -228,7 +228,7 @@ Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`
 ```
 
 
-[AMP actions and events](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carousel[type=%22slides%22]) event, on which we will update the `currentCat` variable using `AMP.setState`.
+[AMP actions and events](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides) event, on which we will update the `currentCat` variable using `AMP.setState`.
 
 
 ```html

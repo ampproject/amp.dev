@@ -41,7 +41,7 @@ $title: ライブブログを作成する
 
 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) コンポーネントについて理解できたところで、より複雑なライブブログを実装する方法を説明しましょう。以下では、ページ指定を実装する方法と、ディープリンクの仕組みについて解説します。
 
-### ページ指定
+### ページ指定 <a name="pagination"></a>
 
 ブログが長い場合は、ページ指定を使用して 1 ページに表示されるブログ項目数を制限することでパフォーマンスを向上できます。ページ指定を実装するには、[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) コンポーネントに `<div pagination></div>` を追加し、ページ指定に必要なマークアップ（ページ番号、次ページや前ページへのリンクなど）を挿入します。
 
@@ -72,7 +72,7 @@ $title: ライブブログを作成する
 
 ポーリングを停止するには、ホストするページに `disabled` 属性を追加します。ライブブログのサンプルでは、この動作をサーバー側のテンプレートで実行しています。リクエストされたページが 1 ページ目でない場合は、無効にした属性を [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) コンポーネントに追加しています。
 
-### ディープリンク
+### ディープリンク <a name="deeplinking"></a>
 
 ブログ投稿を公開する際は、共有などの機能を利用できるようにするため、投稿へのディープリンクをできるようにすることが重要です。[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) では、ブログ項目の `id` を使うだけでディープリンクできます。たとえば、[https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) とすると、ID が `post3` のブログ投稿に直接移動できます。
 

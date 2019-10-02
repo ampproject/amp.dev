@@ -2,7 +2,7 @@
 $title: CSS compatibles
 ---
 
-Comme toutes les pages Web, les pages AMP utilisent le langage CSS pour les styles, mais vous ne pouvez pas référencer des feuilles de style externes (à l'exception des [polices personnalisées](#exception-:-les-polices-personnalisées)).
+Comme toutes les pages Web, les pages AMP utilisent le langage CSS pour les styles, mais vous ne pouvez pas référencer des feuilles de style externes (à l'exception des [polices personnalisées](#the-custom-fonts-exception)).
 Certains styles sont également interdits en raison de conséquences sur les performances ; les attributs de style intégrés ne sont pas autorisés.
 
 Tous les styles doivent se trouver dans l'en-tête du document (voir [Ajouter des styles à une page](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
@@ -11,7 +11,7 @@ Cependant, vous pouvez utiliser des préprocesseurs CSS et des modèles pour cr�
 **Remarque** : Les composants AMP ont des styles par défaut pour faciliter la création de pages responsives.
 Ces styles sont définis dans l'[`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
-## Utiliser les préprocesseurs CSS
+## Utiliser les préprocesseurs CSS <a name="using-css-preprocessors"></a>
 
 La sortie générée par des préprocesseurs fonctionne aussi bien avec les pages AMP qu'avec les autres pages Web.
 Par exemple, le site [amp.dev](https://amp.dev/) utilise [Sass](http://sass-lang.com/).
@@ -73,7 +73,7 @@ Les styles suivants ne sont pas autorisés dans les pages AMP :
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel="stylesheet"&gt;</code></td>
-      <td data-th="Description">Interdit à l'exception des <a href="#exception-:-les-polices-personnalisées">polices personnalisées</a>.</td>
+      <td data-th="Description">Interdit à l'exception des <a href="#the-custom-fonts-exception">polices personnalisées</a>.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (sélecteur universel)</td>
@@ -96,7 +96,7 @@ Les styles suivants ne sont pas autorisés dans les pages AMP :
   </tbody>
 </table>
 
-## Propriétés d'animations et de transitions sur liste blanche
+## Propriétés d'animations et de transitions sur liste blanche <a name="the-custom-fonts-exception"></a>
 
 L'AMP accepte seulement les transitions et les animations de propriétés qui peuvent faire l'objet d'une accélération GPU dans les navigateurs courants.
 Le projet AMP accepte actuellement `opacity`, `transform` et `-vendorPrefix-transform`.

@@ -4,7 +4,7 @@ $title: Mises en page compatibles
 
 Dans le cas d'éléments, il suffit d'inclure le code `layout=responsive`.
 
-## Valeurs autorisées pour l'attribut de mise en page
+## Valeurs autorisées pour l'attribut de mise en page <a name="the-layout-attribute"></a>
 
 Par défaut, utilisez des mises en page responsives.
 
@@ -52,14 +52,14 @@ Voici la liste complète des valeurs autorisées pour l'attribut de mise en page
   </tbody>
 </table>
 
-### Que se passe-t-il si la largeur et la hauteur ne sont pas définies ?
+### Que se passe-t-il si la largeur et la hauteur ne sont pas définies ? <a name="what-if-width-and-height-are-undefined"></a>
 
 Parfois, si `width` ou `height` ne sont pas spécifiés, l'exécution AMP peut utiliser les valeurs par défaut suivantes :
 
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): la largeur et la hauteur par défaut sont de 0.
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): la largeur et la hauteur par défaut proviennent du navigateur.
 
-### Que se passe-t-il si l'attribut de mise en page n'est pas défini ?
+### Que se passe-t-il si l'attribut de mise en page n'est pas défini ? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Le comportement de la mise en page est déterminé comme suit :
 
@@ -74,6 +74,8 @@ Utilisez [`@media`](https://developer.mozilla.org/fr-FR/docs/Web/CSS/@media) pou
 Lorsque la fenêtre du navigateur change de taille ou d'orientation, les requêtes média sont réévaluées, et les éléments sont cachés et présentés sur la base des nouveaux résultats.
 
 Pour en savoir plus sur le contrôle de la mise en page grâce aux requêtes média, consultez [Utiliser des requêtes média CSS à des fins d'adaptabilité](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=fr).
+
+<a name="element-media-queries"></a>
 
 L'attribut `media` constitue une fonctionnalité supplémentaire de responsive design disponible dans l'AMP.
 Cet attribut peut être utilisé avec tous les éléments AMP ; il fonctionne comme les requêtes média de votre feuille de style globale, mais ne concerne qu'un élément spécifique sur une seule page.

@@ -70,7 +70,7 @@ au fournisseur de solutions d'analyse tiers Google Analytics.
 Pour envoyer les données à un point d'extrémité appartenant à l'éditeur,
 il vous suffit de ne pas inclure l'attribut `type` ;
 les données d'analyse sont envoyées aux points d'extrémité définis pour chaque
-[requête](deep_dive_analytics.md#quelles-données-sont-envoyées-:-l'attribut-requests).
+[requête](deep_dive_analytics.md#what-data-gets-sent-requests-attribute).
 
 Les configurations des fournisseurs de solutions d'analyse constituent
 un bon point de départ pour commencer avec le composant [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
@@ -135,9 +135,9 @@ définie sur la valeur du compte indiqué dans l'URL distante (`"account": "UA-X
 **Important :** AMP ne valide pas les usages multiples d'une même variable.
 Les valeurs sont renseignées en fonction d'un ordre de préférence de substitution des variables,
 et les valeurs indiquées dans les URL distantes sont en première position
-(voir [Ordonnancement de la substitution des variables](deep_dive_analytics.md#ordonnancement-de-la-substitution-des-variables)).
+(voir [Ordonnancement de la substitution des variables](deep_dive_analytics.md#variable-substitution-ordering)).
 
-## Les attributs requests, triggers et transport
+## Les attributs requests, triggers et transport <a name="requests-triggers--transports"></a>
 
 L'attribut `requests` détermine quelles données sont envoyées
 (par exemple `pageviews` ou `events`)
@@ -153,7 +153,7 @@ Lisez la suite pour en savoir plus sur ces configurations.
 (Vous pourrez également en apprendre davantage sur ces configurations dans la
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
-### Quelles données sont envoyées : l'attribut requests
+### Quelles données sont envoyées : l'attribut requests <a name="what-data-gets-sent-requests-attribute"></a>
 
 La valeur `request-name` est utilisée dans la configuration du déclencheur pour déterminer
 quelle requête envoyer en réponse à un événement en particulier.
@@ -236,11 +236,11 @@ AMP prend en charge les configurations suivantes pour le déclencheur :
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (obligatoire)</td>
-      <td data-th="Description">Nom de la requête à envoyer (tel que spécifié dans les requêtes <a href="deep_dive_analytics.md#quelles-données-sont-envoyées-:-l'attribut-requests"></a>).</td>
+      <td data-th="Description">Nom de la requête à envoyer (tel que spécifié dans les requêtes <a href="deep_dive_analytics.md#what-data-gets-sent-requests-attribute"></a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">Objet contenant des paires clé/valeur utilisé pour remplacer la valeur <code>vars</code> dans la configuration de premier niveau ou pour spécifier une valeur <code>vars</code> unique à ce déclencheur (voir également <a href="deep_dive_analytics.md#ordonnancement-de-la-substitution-des-variables">Ordonnancement de la substitution des variables</a>).</td>
+      <td data-th="Description">Objet contenant des paires clé/valeur utilisé pour remplacer la valeur <code>vars</code> dans la configuration de premier niveau ou pour spécifier une valeur <code>vars</code> unique à ce déclencheur (voir également <a href="deep_dive_analytics.md#variable-substitution-ordering">Ordonnancement de la substitution des variables</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (obligatoire lorsque <code>on</code> est défini sur <code>click</code>)</td>
@@ -259,7 +259,7 @@ AMP prend en charge les configurations suivantes pour le déclencheur :
 
 **Important :** Les déclencheurs d'une configuration dont la priorité est inférieure sont annulés
 par les déclencheurs du même nom dont la priorité est supérieure
-(voir [Ordonnancement de la substitution des variables](deep_dive_analytics.md#ordonnancement-de-la-substitution-des-variables)).
+(voir [Ordonnancement de la substitution des variables](deep_dive_analytics.md#variable-substitution-ordering)).
 
 ### Comment les données sont envoyées : l'attribut transport
 
@@ -314,7 +314,7 @@ il sera utilisé. Sinon, aucune requête n'est envoyée.
 }
 ```
 
-## Ordonnancement de la substitution des variables
+## Ordonnancement de la substitution des variables <a name="variable-substitution-ordering"></a>
 
 AMP renseigne les valeurs des variables dans l'ordre de priorité suivant :
 

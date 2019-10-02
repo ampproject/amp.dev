@@ -4,7 +4,7 @@ $title: "Analytics: conceitos básicos"
 
 Conheça os conceitos básicos da análise de AMP.
 
-## Usar amp-pixel ou amp-analytics?
+## Usar amp-pixel ou amp-analytics? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 A AMP oferece dois componentes para atender às suas necessidades de análise e medição: [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 e [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). As duas opções enviam dados de análise para um ponto de extremidade definido.
@@ -70,7 +70,7 @@ No exemplo acima, definimos uma solicitação chamada "pageview" como `https://f
 
 Quando a página se tornar visível (como especificado pelo uso da palavra-chave de acionamento `visible`), um evento será acionado, e a solicitação `pageview` será enviada. O atributo "triggers" determinará quando a solicitação "pageview" será acionada. Saiba mais sobre [solicitações e acionamentos](deep_dive_analytics.md#requests-triggers--transports).
 
-## Substituição de variáveis
+## Substituição de variáveis <a name="variable-substitution"></a>
 
 Tanto o componente [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 quanto [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
@@ -112,7 +112,7 @@ No exemplo acima, as variáveis `account` e `title` são definidas na configura�
 
 Importante: a substituição de variáveis é flexível. As mesmas variáveis ​​podem ser definidas em locais diferentes, e o tempo de execução da AMP analisará os valores nessa ordem de precedência (consulte [Ordem da substituição de variáveis](deep_dive_analytics.md#variable-substitution-ordering) ).
 
-## Identificação do usuário
+## Identificação do usuário <a name="user-identification"></a>
 
 Os websites usam cookies para armazenar informações específicas dos usuários no navegador. Os cookies podem ser usados ​​para informar que um usuário já visitou um site antes. Na AMP, as páginas podem ser veiculadas pelo site de um editor ou por um cache (como o Google AMP Cache). O website do editor e o cache provavelmente terão domínios diferentes. Por motivos de segurança, os navegadores podem limitar o acesso a cookies de outros domínios (consulte também [Rastrear usuários em diferentes origens](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
 

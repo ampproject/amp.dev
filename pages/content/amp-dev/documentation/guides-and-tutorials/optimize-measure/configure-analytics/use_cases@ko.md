@@ -65,7 +65,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 </amp-analytics>
 ```
 
-## 페이지 클릭수 추적하기
+## 페이지 클릭수 추적하기 <a name="tracking-page-clicks"></a>
 
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 클릭수를 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
 
@@ -127,7 +127,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 </amp-analytics>
 ```
 
-## 스크롤 추적하기
+## 스크롤 추적하기 <a name="tracking-scrolling"></a>
 
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 페이지 스크롤을 추적합니다. 다음 예에서는 `scrollspec` 속성을 사용하여 페이지가 수직으로 25%, 50%, 90% 스크롤되었을 때 지정된 URL 로 `scroll` 이벤트를 전송합니다. 또한 페이지가 `scroll` 너비의 90% 만큼 수평으로 스크롤되었을 때도 이벤트가 전송됩니다.
 
@@ -155,7 +155,7 @@ Google 애널리틱스로 페이지뷰 데이터를 전송하세요 ([Google 애
 </amp-analytics>
 ```
 
-## 소셜 상호작용 추적하기
+## 소셜 상호작용 추적하기 <a name="tracking-social-interactions"></a>
 
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 를 사용하여 소셜 상호작용을 추적하고 지정된 URL 또는 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/) 로 이벤트 데이터를 전송하는 방법을 알아보세요.
 

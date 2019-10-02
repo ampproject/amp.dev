@@ -56,7 +56,7 @@ teaser:
   </tr>
 </table>
 
-# 概要
+# 概要 <a name="overview"></a>
 
 `amp-bind` コンポーネントを使用すると、データ バインディングと JS に似た式を使って独自のステートフルなインタラクティブ性を AMP ページに追加できます。
 
@@ -64,7 +64,7 @@ teaser:
   <amp-youtube width="480" height="270" data-videoid="xzCFU8b5fCU" layout="responsive"></amp-youtube>
   <figcaption>この動画で amp-bind の概要をご覧ください。</figcaption></figure>
 
-# 簡単な例
+# 簡単な例 <a name="a-simple-example"></a>
 
 次の例では、ボタンをタップすると、`<p>` 要素のテキストが「Hello World」から「Hello amp-bind」に変わります。
 
@@ -78,7 +78,7 @@ teaser:
 [tip type="note"] `amp-bind` では、パフォーマンスの向上と、予期しないコンテンツの移動が発生するリスクの回避のために、ページの読み込み時に式の評価を行いません。そのため、表示要素のデフォルトの状態を指定して、最初のレンダリングで`amp-bind`を使用しないようにしてください。
 [/tip]
 
-### 仕組み
+### 仕組み <a name="how-does-it-work"></a>
 
 `amp-bind` には以下の 3 つの主要なコンポーネントがあります。
 
@@ -88,7 +88,7 @@ teaser:
 
 `amp-bind` `では、AMP ページの速度、セキュリティ、パフォーマンスを確保するために特別な措置が取られています。
 
-### 少し複雑な例
+### 少し複雑な例 <a name="a-slightly-more-complex-example"></a>
 
 ```html
 <!-- Store complex nested JSON data in <amp-state> elements. -->
@@ -139,13 +139,13 @@ teaser:
   [tip type="success"] この例の[**ライブデモ**をお試しください](https://ampbyexample.com/components/amp-bind/)。コードの注釈もご覧いただけます。
   [/tip]
 
-# 詳細
+# 詳細 <a name="details"></a>
 
-# 状態
+# 状態 <a name="state"></a>
 
 `amp-bind` を使用する各 AMP ドキュメントでは、ドキュメント スコープの変更可能な JSON データ（**状態**）が作成されます。
 
-# `amp-state` による状態の初期化
+# `amp-state` による状態の初期化 <a name="initializing-state-with-amp-state"></a>
 
 `amp-bind` の状態は、`amp-state` コンポーネントを通じて初期化できます。
 
@@ -164,7 +164,7 @@ teaser:
 * `<amp-state>` 要素の子 JSON の最大サイズは 100 KB です。
 * `<amp-state>` 要素では、子 JSON スクリプトの代わりに CORS URL を指定することもできます。詳しくは、[付録](#amp-state-specification)をご覧ください。
 
-# 状態の更新
+# 状態の更新 <a name="refreshing-state"></a>
 
 状態コンポーネントでは `refresh` アクションがサポートされており、このアクションを使用して状態の内容を更新することができます。
 
@@ -174,9 +174,9 @@ teaser:
 <button on="tap:amp-state.refresh"></button>
 ```
 
-# `AMP.setState()` による状態の更新
+# `AMP.setState()` による状態の更新 <a name="updating-state-with-ampsetstate"></a>
 
-[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) アクションは、オブジェクト リテラルを状態にマージします。たとえば、下のボタンを押すと、`AMP.setState()` によってオブジェクト リテラルが状態に[ディープマージ](#deep-merge-with-ampsetstate)されます。
+[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) アクションは、オブジェクト リテラルを状態にマージします。たとえば、下のボタンを押すと、`AMP.setState()` によってオブジェクト リテラルが状態に[ディープマージ](#deep-merge-with-ampsetstate)されます。
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -194,9 +194,9 @@ teaser:
   <input type="range" on="change:AMP.setState({myRangeValue: event.value})">
 ```
 
-# `AMP.pushState()` による履歴の変更
+# `AMP.pushState()` による履歴の変更 <a name="modifying-history-with-amppushstate"></a>
 
-[`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) アクションは、新しいエントリもブラウザの履歴スタックにプッシュすることを除き、`AMP.setState()` に似ています。この履歴エントリを（戻るなどの操作によって）ポップすると、`AMP.pushState()` で設定された以前の変数の値が復元されます。
+[`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) アクションは、新しいエントリもブラウザの履歴スタックにプッシュすることを除き、`AMP.setState()` に似ています。この履歴エントリを（戻るなどの操作によって）ポップすると、`AMP.pushState()` で設定された以前の変数の値が復元されます。
 
 例:
 ```html
@@ -206,11 +206,11 @@ teaser:
 * ボタンをタップすると、変数 `foo` が 123 に設定され、新しい履歴エントリがプッシュされます。
 * 戻る操作を行うと、`foo` が以前の値 "bar" に復元されます（`AMP.setState({foo: 'bar'})` を呼び出すのと同じ効果があります）。
 
-# 式
+# 式 <a name="expressions"></a>
 
 式は JavaScript に似ていますが、重要な違いがいくつかあります。
 
-# JavaScript との違い
+# JavaScript との違い <a name="differences-from-javascript"></a>
 
 * 式は、含んでいるドキュメントの[状態](#state)にのみアクセスできます。
 * 式は、`window` や `document` などのグローバル変数にはアクセス**できません**。
@@ -221,7 +221,7 @@ teaser:
 
 式の文法と実装について詳しくは、[bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) と [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js) をご覧ください。
 
-# 例
+# 例 <a name="examples"></a>
 
 以下はすべて有効な式です。
 
@@ -232,7 +232,7 @@ teaser:
 null || 'default' // 'default'
 ```
 
-# ホワイトリストに登録されている関数
+# ホワイトリストに登録されている関数 <a name="white-listed-functions"></a>
 
 <table>
   <tr>
@@ -344,7 +344,7 @@ null || 'default' // 'default'
 <sup>1</sup> パラメータが 1 つだけの arrow 関数では、かっこは使用できません（例: `(x) => x + 1` ではなく、`x => x + 1` を使用します）。また、`sort()` と `splice()` は、in-place を操作するのではなく、変更されたコピーを返します。
 <sup>2</sup> 静的関数は名前空間化されません（例: `Math.abs(-1)` ではなく、`abs(-1)` を使用します）。
 
-# `amp-bind-macro` によるマクロの定義
+# `amp-bind-macro` によるマクロの定義 <a name="defining-macros-with-amp-bind-macro"></a>
 
 `amp-bind-macro` を定義することにより、`amp-bind` の式フラグメントを再利用できます。`amp-bind-macro` 要素を使用すると、0 個以上の引数を取り、現在の状態を参照する式を定義できます。マクロは、ドキュメント内の任意の場所から `id` 属性の値を参照することで、関数のように呼び出すことができます。
 
@@ -359,7 +359,7 @@ null || 'default' // 'default'
 
 マクロは、自身より前に定義された他のマクロを呼び出すこともできます<i></i>。自身を再帰的に呼び出すことはできません。
 
-# バインディング
+# バインディング <a name="bindings"></a>
 
 **バインディング**は、要素のプロパティを[式](#expressions)にリンクする、`[property]` の形式の特別な属性です。代わりに、XML 互換の構文を `data-amp-bind-property` の形式で使用することもできます。
 
@@ -407,7 +407,7 @@ null || 'default' // 'default'
 * ブール式の結果によってブール値の属性が切り替えられます。たとえば、`<amp-video [controls]="expr"...>` では、`expr` の評価結果が `true` の場合、`<amp-video>` 要素に `controls` 属性が設定されます。`expr` の評価結果が `false` の場合、`controls` 属性が削除されます。
 * DOM API で XML（XHTML、JSX など）や属性を書き込む場合に、属性名の角かっこ（`[` と `]`）が問題になることがあります。このような場合は、構文に `[x]="foo"` ではなく `data-amp-bind-x="foo"` を使用します。
 
-# 要素固有の属性
+# 要素固有の属性 <a name="element-specific-attributes"></a>
 
 以下のコンポーネントと属性へのバインディングのみが許可されています。
 
@@ -546,11 +546,11 @@ null || 'default' // 'default'
 
   <sup>*</sup> バインド可能な属性を示します（同等のバインド不可能な属性はありません）。
 
-# デバッグ
+# デバッグ <a name="debugging"></a>
 
 開発中に警告とエラーに焦点を当てたり、特殊なデバッグ関数を使用したりするには、開発モードで（URL フラグメント `#development=1` を使用して）テストを実施します。
 
-# 警告
+# 警告 <a name="warnings"></a>
 
 開発モードでは、バインドされた属性のデフォルト値が対応する式の初期結果と一致しない場合、`amp-bind` によって警告が発行されます。これにより、他の状態変数の変化に伴って生じる意図しない変化を防止できます。以下に例を示します。
 
@@ -576,7 +576,7 @@ so a warning will be issued in development mode. -->
 <p [text]="myAmpState.bar">Some placeholder text.</p>
 ```
 
-# エラー
+# エラー <a name="errors"></a>
 
 `amp-bind` の使用時に発生する可能性があるランタイム エラーにはさまざまな種類があります。
 
@@ -613,13 +613,13 @@ so a warning will be issued in development mode. -->
   </tr>
 </table>
 
-# 状態のデバッグ
+# 状態のデバッグ <a name="debugging-state"></a>
 
 `AMP.printState()` を使用して、現在の状態をコンソールに出力します。
 
-# 付録
+# 付録 <a name="appendix"></a>
 
-# `<amp-state>` の仕様
+# `<amp-state>` の仕様 <a name="amp-state-specification"></a>
 
 `amp-state` 要素には、子 `<script>` 要素、またはリモートの JSON エンドポイントの CORS URL を含む `src` 属性の**いずれか**を含めることができます。両方を含めることはできません。
 
@@ -636,11 +636,11 @@ so a warning will be issued in development mode. -->
 </amp-state>
 ```
 
-# XHR のバッチ処理
+# XHR のバッチ処理 <a name="xhr-batching"></a>
 
 AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）をバッチ処理します。つまり、AMP ページでは、複数のコンシューマー（複数の `amp-state` 要素など）のデータソースとして単一の JSON データ リクエストを使用できます。たとえば、`amp-state` 要素によってエンドポイントへの XHR が作成された場合、XHR の送信中は、同じエンドポイントに対する後続の XHR はトリガーされず、代わりに 1 つ目の XHR の結果を返します。
 
-# 属性
+# 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -661,7 +661,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
         </tr>
       </table>
 
-# `AMP.setState()` によるディープマージ
+# `AMP.setState()` によるディープマージ <a name="deep-merge-with-ampsetstate"></a>
 
 `AMP.setState()` が呼び出されると、`amp-bind` により、指定されたオブジェクト リテラルと現在の状態がディープマージされます。繰り返しマージされるネストされたオブジェクトを除き、オブジェクト リテラルの変数はすべて、状態に直接書き込まれます。状態に含まれているプリミティブと配列は必ず、オブジェクト リテラル内の同じ名前の変数によって上書きされます。
 
@@ -706,7 +706,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 循環参照を含むオブジェクト リテラルを指定して `AMP.setState()` を呼び出すと、`amp-bind` によってエラーがスローされます。
 
-# 変数の削除
+# 変数の削除 <a name="circular-references"></a>
 
 既存のステータス変数を削除するには、`AMP.setState()` でその値を `null` に設定します。前の例の状態から開始して、次のボタンを押します。
 
@@ -739,7 +739,7 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
   }
 ```
 
-# 式の文法
+# 式の文法 <a name="expression-grammar"></a>
 
 `amp-bind` の式の文法は BNF に似ています。
 

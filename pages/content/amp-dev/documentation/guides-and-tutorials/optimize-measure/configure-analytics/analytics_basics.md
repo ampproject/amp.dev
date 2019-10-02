@@ -8,7 +8,7 @@ formats:
 
 Start here to learn the basics about AMP analytics.
 
-## Use amp-pixel or amp-analytics?
+## Use amp-pixel or amp-analytics? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP provides two components to meet your analytics and measurement needs:
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and
@@ -119,7 +119,7 @@ an event triggers and the `pageview` request is sent.
 The triggers attribute determines when the pageview request fires.
 Learn more about [requests and triggers](deep_dive_analytics.md).
 
-## Variable substitution
+## Variable substitution <a name="variable-substitution"></a>
 
 Both the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) and
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) components
@@ -190,7 +190,7 @@ so their values get substituted by the platform.
 **IMPORTANT –** Variable substitution is flexible; you can have the same variables defined in different locations, and the AMP runtime will parse the values in this order of precedence (see [Variable substitution ordering](deep_dive_analytics.md#variable-substitution-ordering)).
 [/tip]
 
-## User identification
+## User identification <a name="user-identification"></a>
 
 Websites use cookies to store information specific to a user in the browser.
 Cookies can be used to tell that a user has visited a site before.

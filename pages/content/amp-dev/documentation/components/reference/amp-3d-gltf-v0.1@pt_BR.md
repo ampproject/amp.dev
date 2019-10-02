@@ -42,13 +42,13 @@ Exibe modelos 3D no formato GL Transmission Format (gITF).
   </tr>
 </table>
 
-## Uso
+## Uso <a name="usage"></a>
 
 O componente `amp-3d-gltf` exibe modelos 3D que estão no formato gITF.
 
 **Observação**: um navegador compatível com WebGL é necessário para que esses modelos sejam exibidos.
 
-###Exemplo
+###Exemplo <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -60,7 +60,7 @@ O componente `amp-3d-gltf` exibe modelos 3D que estão no formato gITF.
     src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### Limitações
+### Limitações <a name="limitations"></a>
 
 Atualmente, só funciona com o glTF 2.0.
 
@@ -69,11 +69,11 @@ Recursos não compatíveis:
 - Câmeras incorporadas
 - Animação
 
-### CORS
+### CORS <a name="cors"></a>
 
 O `amp-3d-gltf` faz uma solicitação `fetch` a partir da origem `https://<random>.ampproject.net`, então `access-control-allow-origin: *.ampproject.net` precisa ser definido no cabeçalho de resposta do endpoint especificado como `src`. O caractere curinga é necessário, porque a origem tem um componente de subdomínio aleatório.
 
-## Atributos
+## Atributos <a name="attributes"></a>
 
 <table>
   <tr>
@@ -107,7 +107,7 @@ O `amp-3d-gltf` faz uma solicitação `fetch` a partir da origem `https://<rando
     </tr>
   </table>
 
-## Ações
+## Ações <a name="actions"></a>
 
 <table>
   <tr>
@@ -121,6 +121,6 @@ O `amp-3d-gltf` faz uma solicitação `fetch` a partir da origem `https://<rando
     </tr>
   </table>
 
-## Validação
+## Validação <a name="validation"></a>
 
 Consulte as [regras do amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) (link em inglês) na especificação do validador de AMP.
