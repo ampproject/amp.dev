@@ -21,9 +21,11 @@
 .#{organism('resources-grid')} {
   &-cards {
     display: grid;
-    grid-gap: 0;
-    grid-column-gap: 30px;
     grid-template-columns: repeat(12, 1fr);
+
+    @media (min-width: 600px) {
+      grid-column-gap: 30px;
+    }
   }
 
   h2 {
