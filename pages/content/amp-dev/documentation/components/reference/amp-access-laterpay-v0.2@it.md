@@ -51,7 +51,7 @@ Consente ai publisher una facile integrazione con la piattaforma di micropagamen
 </table>
 
 
-## Comportamento
+## Comportamento <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net) è una piattaforma di micropagamento che consente agli utenti di acquistare contenuti online in pochi clic e di accedervi immediatamente, senza doversi registrare, inserire dati personali o effettuare pagamenti. Gli utenti pagano solo quando i loro acquisti hanno raggiunto un totale di $ 5 o di € 5 su vari siti web. I fornitori di contenuti possono vendere singoli articoli o abbonamenti a tempo che consentono un accesso con tariffa flat o un accesso temporaneo ai contenuti.
 
@@ -73,7 +73,7 @@ Lo stile dell'elenco generato può essere modificato e presentato in base alle p
 
 Questo componente si basa anche sul [Markup dei contenuti di accesso](amp-access.md#access-content-markup) per mostrare e nascondere i contenuti.
 
-## Configurazione
+## Configurazione <a name="configuration"></a>
 
 La configurazione è simile ad Accesso AMP, ma non sono necessari autorizzazione né link di pingback e di accesso.
 
@@ -145,7 +145,7 @@ Nell'oggetto di configurazione `laterpay` possono essere impostati i seguenti va
         </tr>
       </table>
 
-## Utilizzo del Markup dei contenuti di accesso e visualizzazione elenco acquisti
+## Utilizzo del Markup dei contenuti di accesso e visualizzazione elenco acquisti <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 Il Markup dei contenuti di accesso deve essere utilizzato come Accesso AMP.
 
@@ -168,7 +168,7 @@ Assicurati di aggiungere la classe `amp-access-laterpay` se vuoi utilizzare lo s
 
 ```
 
-## Stili
+## Stili <a name="styling"></a>
 
 Più classi vengono applicate ad alcuni elementi del markup generato. Gli elementi senza classi possono essere indirizzati in modo univoco tramite selettori di elementi CSS.
 
@@ -212,7 +212,7 @@ La struttura creata per la finestra di dialogo ha il seguente aspetto:
 
 ```
 
-## Localizzazione
+## Localizzazione <a name="localization"></a>
 
 Il testo visualizzato nella finestra di dialogo per le opzioni di acquisto verrà definito dal publisher nell'interfaccia utente di LaterPay Connector.
 
@@ -273,13 +273,13 @@ I seguenti messaggi possono essere tradotti o personalizzati, ma devono conserva
   </tr>
 </table>
 
-## Analisi
+## Analisi <a name="analytics"></a>
 
 Dato che `amp-access-laterpay` è basato su `amp-access`, supporta tutti gli [eventi di analisi](amp-access.md#integration-with-amp-analytics) inviati da `amp-access`.
 
 Tutti gli esempi di [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) sono configurati per l'invio degli eventi di analisi se vuoi visualizzare un esempio più preciso di come potrebbe apparire in pratica.
 
-## Utilizzo dell'Accesso AMP LaterPay in combinazione con l'Accesso AMP
+## Utilizzo dell'Accesso AMP LaterPay in combinazione con l'Accesso AMP <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 Se hai un sistema di abbonamento esistente e vuoi utilizzare LaterPay solo per vendere singoli articoli, è possibile combinare entrambi i metodi di vendita nella stessa pagina, utilizzando sia Accesso AMP che Accesso AMP LaterPay.
 
@@ -338,13 +338,13 @@ Dove il markup dell'accesso ai contenuti potrebbe risultare simile al seguente:
 
 Puoi trovare un esempio più completo su [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html)
 
-## Documentazione correlata
+## Documentazione correlata <a name="related-documentation"></a>
 
 * [Accesso AMP](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: modalità di esecuzione dei MicroPayments](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - Simile ad Accesso AMP LaterPay ma non per pagine AMP.
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole relative ad amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) nella specifica dello strumento di convalida AMP.

@@ -483,6 +483,28 @@ You can link to other pages with standard markdown link syntax:
 
 When linking to another page on amp.dev the reference will be a relative filepath to the target file.
 
+### Anchors
+
+Link to specific sections in a document using anchors:
+```md
+[link to example section](#example-section)
+```
+
+Please create the anchor target using `<a name="#anchor-name></a>` before linking to a section with no anchor present.
+A good place is at the end of the section headline:
+
+```html
+## Example section <a name="example-section"></a>
+```
+
+You must only use letters, digits, the dash and the underscore in an anchor.
+Please use short anchor names in english that match the headline or describe the section.
+Ensure the anchor name is unique inside the document.
+
+When a Page is translated the anchor names must not be changed and remain in english.
+
+When you create an anchor that will be used in a link from another page 
+you should also create the same anchor in all translations.
 
 ### AMP format filter
 Component documentation, guides and tutorials and examples are filterable by AMP format,

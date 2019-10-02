@@ -45,7 +45,7 @@ teaser:
 </table>
 
 
-## 動作
+## 動作 <a name="behavior"></a>
 
 AMP セレクタは、オプションのリストを提示し、その中から 1 つまたは複数のオプションを選択するようユーザーに求めるコントロールを表示します。オプションの内容はテキストに限定されません。
 
@@ -95,7 +95,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 </amp-selector>
 ```
 
-## 選択を解除する
+## 選択を解除する <a name="clearing-selections"></a>
 
 要素に対してタップやクリックが行われたときにすべての選択を解除するには、要素内に [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) action 属性を設定し、`clear` action メソッドで AMP セレクタ `id` を指定します。
 
@@ -114,9 +114,9 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 [AMP By Example](https://ampbyexample.com/components/amp-selector/) のライブデモをご覧ください。
 [/tip]
 
-## 属性
+## 属性 <a name="attributes"></a>
 
-### `<amp-selector>` 内の属性
+### `<amp-selector>` 内の属性 <a name="attributes-on-"></a>
 
 <table>
   <tr>
@@ -133,7 +133,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
     </tr>
   </table>
 
-### `<amp-selector>` オプション内の属性
+### `<amp-selector>` オプション内の属性 <a name="attributes-on--options"></a>
 
 <table>
   <tr>
@@ -146,7 +146,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
   </tr>
 </table>
 
-## イベント
+## イベント <a name="events"></a>
 
 `on` 属性を使用したイベントにより、他の AMP コンポーネントに対してアクションをトリガーできます。たとえば、`on="select: my-tab.show"` のように指定します。
 
@@ -165,6 +165,6 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 
   </table>
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツール仕様の [amp-selector ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii)をご覧ください。

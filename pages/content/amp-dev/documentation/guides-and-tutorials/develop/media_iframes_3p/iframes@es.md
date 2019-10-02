@@ -41,7 +41,7 @@ Un ejemplo de [`amp-iframe`](../../../../documentation/components/reference/amp-
 </amp-iframe>
 ```
 
-## Usar elementos placeholder
+## Usar elementos placeholder <a name="using-placeholders"></a>
 
 Puedes mostrar un [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) en la parte superior de un documento siempre y cuando el atributo `placeholder` se incluya en algún elemento de [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) como, (por ejemplo, [`amp-img`](../../../../documentation/components/reference/amp-img.md)). Este elemento se renderizará como un marcador de posición hasta que el iframe esté listo para mostrarse.
 

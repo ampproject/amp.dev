@@ -46,7 +46,7 @@ Görüntüleyenlerin içeriğin ana hatlarına göz atması ve herhangi bir böl
 </table>
 
 
-## Davranış
+## Davranış <a name="behavior"></a>
 
 `amp-accordion` bileşeni, daraltılabilir ve genişletilebilir içerik bölümlerini görüntülemenize olanak tanır. `amp-accordion` bileşeninin en yakın alt öğelerinin her biri akordeondaki bir bölüm olarak kabul edilir. Bu düğümlerin her biri bir `<section>` etiketi olmalıdır.
 
@@ -57,7 +57,7 @@ Görüntüleyenlerin içeriğin ana hatlarına göz atması ve herhangi bir böl
 * Bir bölümün başlığı tıklandığında/dokunulduğunda bölüm genişler veya daralır.
 * `amp-accordion` öğesindeki her bir bölümün daraltılmış/genişletilmiş durumu, oturum düzeyi için korunur. Bu durumu koruma özelliğini devre dışı bırakmak için `amp-accordion` öğesine `disable-session-states` özelliğini ekleyin.
 
-#### Örnek: Akordeon görüntüleme
+#### Örnek: Akordeon görüntüleme <a name="example-displaying-an-accordion"></a>
 
 Bu örnekte, sayfa yüklendiğinde üçüncü bölümün genişletildiği üç bölüm görüntülüyoruz.  Ayrıca, `disable-session-states` özelliğini ayarlayarak daraltılmış/genişletilmiş durumu korumayı devre dışı bıraktık.
 
@@ -86,7 +86,7 @@ Bu örnekte, sayfa yüklendiğinde üçüncü bölümün genişletildiği üç b
 Daha fazla `amp-accordion` demosu için [Örneklerle AMP](https://ampbyexample.com/components/amp-accordion/) sitesini ziyaret edin.
 [/tip]
 
-### Etkinlikler
+### Etkinlikler <a name="events"></a>
 
 Aşağıdaki etkinlikler, `accordion` `section` öğesinde tetiklenir.
 
@@ -101,7 +101,7 @@ Aşağıdaki etkinlikler, `accordion` `section` öğesinde tetiklenir.
   </tr>
 </table>
 
-### İşlemler
+### İşlemler <a name="actions"></a>
 
 <table>
   <tr>
@@ -122,7 +122,7 @@ Aşağıdaki etkinlikler, `accordion` `section` öğesinde tetiklenir.
   </tr>
 </table>
 
-#### Özellikler
+#### Özellikler <a name="attributes"></a>
 
 <table>
   <tr>
@@ -143,7 +143,7 @@ Aşağıdaki etkinlikler, `accordion` `section` öğesinde tetiklenir.
   </tr>
 </table>
 
-## Stil
+## Stil <a name="styling"></a>
 
 * `amp-accordion` öğe seçicisini serbest bir şekilde biçimlendirmek için kullanabilirsiniz.
 * `amp-accordion` öğeleri her zaman `display: block` değerindedir.
@@ -153,6 +153,6 @@ Aşağıdaki etkinlikler, `accordion` `section` öğesinde tetiklenir.
 * `<amp-accordion>`, `<section>`, başlık ve içerik öğelerinin kenar boşlukları 0 değerine ayarlanır ve özel stillerde geçersiz kılınabilir.
 * Hem üstbilgi hem de içerik öğeleri `position: relative` değerine sahiptir.
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonunda [amp-accordion kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) bakın.

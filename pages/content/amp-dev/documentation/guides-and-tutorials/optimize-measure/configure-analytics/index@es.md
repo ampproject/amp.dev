@@ -40,7 +40,7 @@ Para hacer la configuración necesaria, primero tienes que identificar estos dat
 Puntos clave que hay que tener en cuenta:
 
 * ¿Registrarás solo las páginas vistas o tienes pensado supervisar más patrones de interacción?
-Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics?).
+Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics).
 * ¿Qué tipos de datos quieres capturar de tus usuarios? ¿El contenido,
 el dispositivo o el navegador? Consulta información sobre la [sustitución de variables](analytics_basics.md).
 * ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios](analytics_basics.md).

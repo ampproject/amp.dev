@@ -62,13 +62,13 @@ $title: サポートされる CSS
   </tbody>
 </table>
 
-## カスタム フォントの例外
+## カスタム フォントの例外 <a name="the-custom-fonts-exception"></a>
 
 AMP ページでは外部のスタイルシートを使用できませんが、カスタム フォントは例外です。
 
 詳細情報: 詳しくは、[AMP のカスタム フォント](custom_fonts.md) をご覧ください。
 
-## CSS プリプロセッサを使用する
+## CSS プリプロセッサを使用する <a name="using-css-preprocessors"></a>
 
  プリプロセッサで生成される出力は、他のウェブページと同様に AMP でも機能します。たとえば、[amp.dev](https://amp.dev/)
 のサイトでは [Sass](http://sass-lang.com/) を使用しています（[Grow](http://grow.io/) を使用して、 [amp.dev](https://amp.dev/) サイトを構成する静的な AMP ページを作成しています）。

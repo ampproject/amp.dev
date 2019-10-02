@@ -60,7 +60,7 @@ Contoh:
 
 Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) dan [Spesifikasi Tata Letak](amp-html-layout/index.md).
 
-## media
+## media <a name="media"></a>
 
 Semua elemen AMP mendukung atribut `media`. Nilai `media` adalah kueri media. Jika kueri tidak cocok, elemen tidak dirender dan resource serta kemungkinan resource turunannya tidak akan diambil. Jika jendela browser berubah ukuran atau orientasi, kueri media dievaluasi ulang dan elemen disembunyikan serta ditampilkan berdasarkan hasil yang baru.
 

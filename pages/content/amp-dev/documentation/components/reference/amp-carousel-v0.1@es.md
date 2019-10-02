@@ -52,7 +52,7 @@ Carrusel genérico que muestra varios fragmentos de contenido similares en un ej
     </tr>
   </table>
 
-# Comportamiento
+# Comportamiento <a name="behavior"></a>
 
 Cada uno de los elementos secundarios inmediatos de `amp-carousel` se considera un elemento del propio carrusel. Cada uno de estos nodos también puede tener elementos secundarios HTML arbitrarios.
 
@@ -77,7 +77,7 @@ El usuario puede desplazarse por los elementos deslizando el dedo, utilizando la
 ```
 [/example]
 
-# Avanzar a una diapositiva concreta
+# Avanzar a una diapositiva concreta <a name="advancing-to-a-specific-slide"></a>
 
 Si se configura un método `tap:carousel-id.goToSlide(index=N)` para el atributo `on` de un elemento, un carrusel con el ID "carousel-id" se desplazará a la diapositiva index=N si el usuario toca o hace clic en él (la primera diapositiva se encuentra en index=0; la segunda diapositiva, en index=1, etc.).
 
@@ -129,7 +129,7 @@ En el siguiente ejemplo, tenemos un carrusel de tres imágenes con botones de vi
 ```
 [/example]
 
-# Atributos
+# Atributos <a name="attributes"></a>
 
 <table>
   <tr>
@@ -217,7 +217,7 @@ En el siguiente ejemplo, tenemos un carrusel de tres imágenes con botones de vi
           </tr>
         </table>
 
-# Estilo
+# Estilo <a name="styling"></a>
 
 * Puedes utilizar el selector de elementos de `amp-carousel` para aplicar un estilo al carrusel.
 * Puedes usar el selector de clases de `.amp-carousel-slide` para hacer referencia a elementos del carrusel.
@@ -242,6 +242,6 @@ En el siguiente ejemplo, tenemos un carrusel de tres imágenes con botones de vi
 }
 ```
 
-# Validación
+# Validación <a name="validation"></a>
 
 Consulta las [reglas de amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) en la especificación de la herramienta de validación de AMP.

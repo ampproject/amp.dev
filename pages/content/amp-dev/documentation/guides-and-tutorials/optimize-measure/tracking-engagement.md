@@ -115,5 +115,5 @@ If you have a custom tracking platform that you want to integrate with, you can 
 [/tip]
 
 [tip type="tip"]
-**TIP –** If you are interested in a simpler tracking system, you might want to take a look at [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md). If you only need to track pageviews, [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md) it is a lighter-weight solution than [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](#).
+**TIP –** If you are interested in a simpler tracking system, you might want to take a look at [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md). If you only need to track pageviews, [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md) it is a lighter-weight solution than [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) because it only aims to solve the requirements of traditional pixel tracking. Learn more in the [Analytics: the basics guide](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md).
 [/tip]

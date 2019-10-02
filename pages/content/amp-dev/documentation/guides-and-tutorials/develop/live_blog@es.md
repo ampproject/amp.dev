@@ -16,7 +16,7 @@ Usa la etiqueta de metadatos [LiveBlogPosting](http://schema.org/LiveBlogPosting
 
 ## Descripción general de `amp-live-list`
 
-El componente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) busca contenido nuevo en el documento del host periódicamente y actualiza el navegador del usuario si hay elementos nuevos disponibles. Esto significa que cada vez que sea necesario añadir una entrada al blog, el CMS debe actualizar el documento del host para incluir la actualización en el cuerpo y en la sección [metadata](live_blog.md#metadata) de la página.
+El componente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) busca contenido nuevo en el documento del host periódicamente y actualiza el navegador del usuario si hay elementos nuevos disponibles. Esto significa que cada vez que sea necesario añadir una entrada al blog, el CMS debe actualizar el documento del host para incluir la actualización en el cuerpo y en la sección [metadata](../../../documentation/examples/documentation/Live_Blog.html#metadata) de la página.
 
 El código inicial del blog podría tener el siguiente aspecto:
 
@@ -45,7 +45,7 @@ Todas las entradas de blog en [`amp-live-list`](../../../documentation/component
 
 Ahora que te has familiarizado con el componente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), vamos a descubrir cómo podemos implementar un blog en directo más complejo. Sigue leyendo para obtener más información sobre cómo implementar la paginación y cómo funcionan los enlaces profundos.
 
-### Paginación
+### Paginación <a name="pagination"></a>
 
 Los blogs con páginas largas pueden usar la paginación para limitar el número de elementos que se muestran en una página y aumentar así el rendimiento. Para implementar la paginación, añade `<div pagination></div>` al componente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md). Después, inserta cualquier etiqueta que necesites para la paginación (por ejemplo, un número de página o un enlace a la página siguiente y a la anterior).
 
@@ -76,7 +76,7 @@ Cuando la cantidad de entradas del blog sea superior al número máximo de eleme
 
 Puedes añadir a la página el atributo inhabilitado para desactivar el mecanismo de búsqueda. En el blog en directo de ejemplo, hemos generado este comportamiento en una plantilla de servidor: cuando la página solicitada no es la primera, el atributo inhabilitado se añade al componente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md).
 
-### Enlaces profundos
+### Enlaces profundos <a name="deeplinking"></a>
 
 Cuando publicas una entrada en el blog, es importante poder enlazarla de forma profunda para habilitar funciones (por ejemplo, para poder compartirla). Con [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), solo hay que usar el atributo `id` del elemento del blog para realizar enlaces profundos. Por ejemplo, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) te permite navegar directamente a la entrada del blog con el ID `post3`.
 

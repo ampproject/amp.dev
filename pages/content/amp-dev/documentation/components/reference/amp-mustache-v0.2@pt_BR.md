@@ -48,14 +48,14 @@ Permite a renderização de [Mustache.js](https://github.com/janl/mustache.js/).
 
 
 
-## Notas de versão
+## Notas de versão <a name="version-notes"></a>
 
 | Versão | Descrição |
 |-------|-----|
 | 0.2 | Compatibilidade com elementos `<svg>` e tamanho de pacote reduzido (12,2 KB versus 20,5 KB, compactado com Gzip).<br><br>Migra para uma biblioteca de limpeza de HTML mais moderna (de Caja para DOMPurify). Isso pode causar pequenas alterações interruptivas devido a diferenças na lista de permissões de tags e atributos. Recomendamos que você teste suas páginas antes de enviá-las para a produção para garantir que as alterações na marcação gerada não afetem a funcionalidade. |
 | 0.1 | Implementação inicial. |
 
-## Sintaxe
+## Sintaxe <a name="syntax"></a>
 
 Mustache é uma sintaxe de modelo sem lógica. Consulte os [documentos sobre Mustache.js](https://github.com/janl/mustache.js/) (em inglês) para ver mais detalhes. Algumas das principais tags de Mustache são:
 
@@ -64,7 +64,7 @@ Mustache é uma sintaxe de modelo sem lógica. Consulte os [documentos sobre Mus
 * {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: uma tag invertida. Pode testar a inexistência de uma variável.
 * {% raw %}`{{{unescaped}}}`{% endraw %}: HTML sem escape. Fica restrito à marcação que pode gerar (consulte “Restrições” abaixo).
 
-## Uso
+## Uso <a name="usage"></a>
 
 O modelo `amp-mustache` precisa ser definido e usado de acordo com a [especificação de modelo de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md) (link em inglês).
 
@@ -95,9 +95,9 @@ Use a tag `template` sempre que possível, porque a validação de AMP fornece d
 
 A maneira como os modelos são descobertos, quando são renderizados e a forma como os dados são fornecidos é algo decidido pelo elemento AMP de destino que usa esse modelo para renderizar o conteúdo (por exemplo, em [amp-list](amp-list.md), [amp-form](amp-form.md) etc.).
 
-## Restrições
+## Restrições <a name="restrictions"></a>
 
-### Validação
+### Validação <a name="validation"></a>
 
 Como todos os modelos de AMP, os modelos `amp-mustache` precisam ser fragmentos DOM bem formados. Isso significa que, entre outras coisas, não é possível usar o `amp-mustache` para:
 
@@ -106,13 +106,13 @@ Como todos os modelos de AMP, os modelos `amp-mustache` precisam ser fragmentos 
 
 A saída de "triple-mustache" é limpa para permitir somente as seguintes tags: `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u`, `ul`.
 
-### Limpeza
+### Limpeza <a name="sanitization"></a>
 
 A saída de mustache é limpa por motivos de segurança e para manter a validade de AMP. Isso pode resultar na remoção silenciosa de alguns elementos e atributos.
 
-## Armadilhas
+## Armadilhas <a name="pitfalls"></a>
 
-### Modelos aninhados
+### Modelos aninhados <a name="nested-templates"></a>
 
 De acordo com a validação de AMP, os elementos `<template>` não podem ser filhos de outros elementos `<template>`. Isso pode acontecer ao aninhar dois componentes que usam modelos, como `amp-list` e `amp-form`.
 
@@ -138,7 +138,7 @@ Ele também pode ser representado como:
 </amp-list>
 {% endraw %}[/sourcecode]
 
-### Tabelas
+### Tabelas <a name="tables"></a>
 
 Como as strings de modelo de AMP precisam ser especificadas nos elementos `<template>`, isso pode causar um comportamento inesperado devido à análise do navegador. Por exemplo, os elementos `<table>` podem causar [foster parenting](https://www.w3.org/TR/html5/syntax.html#unexpected-markup-in-tables) do texto (link em inglês). No exemplo a seguir:
 
@@ -176,7 +176,7 @@ Entre as soluções estão o agrupamento de seções de Mustache em comentários
 </script>
 {% endraw %}[/sourcecode]
 
-### Escape de citação
+### Escape de citação <a name="quote-escaping"></a>
 
 Ao usar `amp-mustache` para calcular valores de atributos, fazer escape de citação pode ser um problema. Exemplo:
 
@@ -194,7 +194,7 @@ O uso de códigos de caracteres HTML nas variáveis {% raw %}`{{foo}}`{% endraw 
 
 Há uma [proposta aberta](https://github.com/ampproject/amphtml/issues/8395) para fazer essa substituição em `amp-mustache`. Se você quiser apoiá-la, comente sobre o problema.
 
-### Entidades HTML
+### Entidades HTML <a name="html-entities"></a>
 
 As entidades HTML não são preservadas em elementos `<template>`.
 
@@ -202,6 +202,6 @@ Isso pode ser um problema se você quiser renderizar no lado do servidor um `<te
 
 As soluções incluem substituir strings como {% raw %} `{{` {% endraw %} por caracteres diferentes ou a removê-las diretamente do conteúdo gerado pelo usuário.
 
-## Validação
+## Validação <a name="validation-1"></a>
 
 Consulte as [regras do amp-mustache](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii) (link em inglês) na especificação do validador de AMP.

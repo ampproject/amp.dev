@@ -41,7 +41,7 @@ Open [this](https://glitch.com/edit/#!/nosy-leech) project to begin. Click the �
 
 You don’t have to use Glitch to complete these trainings. However, some of the code required to complete the exercises is only contained in the Glitch samples. If you’d like to use another editor, you may still need to use the Glitch samples to find this code.
 
-## Setting Up The AMP Validator
+## Setting Up The AMP Validator <a name="setting-up-the-amp-validator"></a>
 
 To detect errors in our AMP pages, we have a valuable tool at our fingertips: the AMP Validator. Writing valid AMP pages is key to accessing the framework’s full benefits. The AMP Validator can be accessed in two ways: via a Chrome extension, or by adding a parameter to our URL so that our AMP page uses the built-in validator. For the purposes of this course, we suggest you use the Chrome extension, as it’s easier to use and access while you build your site.
 

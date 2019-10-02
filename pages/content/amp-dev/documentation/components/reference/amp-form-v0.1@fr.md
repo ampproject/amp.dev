@@ -48,7 +48,7 @@ limitations under the License.
 </table>
 
 
-# Comportement
+# Comportement <a name="behavior"></a>
 
 L'extension `amp-form` vous permet de créer des formulaires (`<form>`) afin d'envoyer des champs de saisie dans un document AMP. L'extension `amp-form` fournit également des [polyfills](#polyfills) pour certains comportements indisponibles dans les navigateurs.
 
@@ -97,13 +97,13 @@ Voici un exemple de formulaire de base :
 ```
 [/example]
 
-# Attributs
+# Attributs <a name="attributes"></a>
 
-# target
+# target <a name="target"></a>
 
 Indique où afficher la réponse du formulaire après avoir envoyé ce dernier. La valeur doit être `_blank` ou `_top`.
 
-# action
+# action <a name="action"></a>
 
 Indique un point de terminaison serveur affecté à la gestion de la saisie du formulaire. La valeur doit être une URL `https` (absolue ou relative), et non un lien vers un CDN.
 
@@ -114,7 +114,7 @@ Indique un point de terminaison serveur affecté à la gestion de la saisie du f
 Les attributs `target` et `action` ne sont utilisés que pour les requêtes GET autres que xhr. L'exécution AMP utilise l'attribut `action-xhr` pour effectuer la requête ; `action` et `target` sont ignorés. En l'absence d'attribut `action-xhr`, AMP effectue une requête GET vers le point de terminaison `action` et utilise `target` pour ouvrir une nouvelle fenêtre (si la valeur est définie sur `_blank`). L'exécution AMP peut également se tourner vers l'utilisation des attributs `action` et `target` en cas d'échec du chargement de l'extension `amp-form`.
 [/tip]
 
-# action-xhr
+# action-xhr <a name="action-xhr"></a>
 
 Indique un point de terminaison serveur affecté à la gestion de la saisie du formulaire et à l'envoi du formulaire via XMLHttpRequest (XHR). On parle de requête XHR (parfois appelée requête AJAX) lorsque le navigateur effectue une requête sans procéder à un chargement complet de la page, ni ouvrir une nouvelle page. Les navigateurs envoient la requête en arrière-plan à l'aide de l'[API Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) lorsqu'elle est disponible et de l'[API XMLHttpRequest](https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest) pour les navigateurs plus anciens.
 
@@ -128,17 +128,17 @@ La valeur de l'attribut `action-xhr` peut être le même point de terminaison qu
 
 Pour en savoir plus sur la redirection de l'utilisateur après l'envoi du formulaire, consultez la section [Redirection après un envoi](#redirecting-after-a-submission) ci-dessous.
 
-# Autres attributs de formulaire
+# Autres attributs de formulaire <a name="other-form-attributes"></a>
 
 Tous les autres [attributs de formulaire](https://developer.mozilla.org/fr/docs/Web/HTML/Element/form) sont facultatifs.
 
-# custom-validation-reporting
+# custom-validation-reporting <a name="custom-validation-reporting"></a>
 
 Cet attribut facultatif permet d'activer et de sélectionner une stratégie de signalement de validation personnalisée. Les valeurs valides sont `show-first-on-submit`, `show-all-on-submit` et `as-you-go`.
 
 Pour en savoir plus, consultez la section [Validation personnalisée](#custom-validations).
 
-# Entrées et champs
+# Entrées et champs <a name="inputs-and-fields"></a>
 
 **Éléments autorisés** :
 
@@ -155,7 +155,7 @@ Il se peut que nous nous penchions à nouveau sur l'assouplissement de certaines
 
 Pour plus d'informations sur les entrées et les champs valides, consultez les [règles relatives à amp-form](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dans les spécifications du validateur AMP.
 
-# Actions
+# Actions <a name="actions"></a>
 
 L'élément `amp-form` expose les actions suivantes :
 
@@ -168,7 +168,7 @@ L'élément `amp-form` expose les actions suivantes :
 [Actions et événements dans AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 [/tip]
 
-# Événements
+# Événements <a name="events"></a>
 
 L'élément `amp-form` expose les événements suivants :
 
@@ -195,7 +195,7 @@ Par exemple, le code suivant écoute les événements `submit-success` et `submi
 
 Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
-# Événements de saisie
+# Événements de saisie <a name="input-events"></a>
 
 AMP expose les événements `change` et `input-debounced` sur les éléments `<input>` enfants. Cela vous permet d'utiliser l'[attribut `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on) pour exécuter une action sur n'importe quel élément en cas de changement d'une valeur d'entrée.
 
@@ -227,7 +227,7 @@ Par exemple, il est courant d'envoyer un formulaire lors de la modification d'un
 
 Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
-# Déclencheurs d'analyse
+# Déclencheurs d'analyse <a name="analytics-triggers"></a>
 
 L'extension `amp-form` déclenche les événements suivants dont vous pouvez effectuer le suivi dans votre configuration [amp-analytics](amp-analytics.md) :
 
@@ -288,9 +288,9 @@ Lorsque l'événement `amp-form-submit`, `amp-form-submit-success` ou `amp-form-
   * `formId`
   * `formFields[comment]`
 
-# Affichage des réponses de réussite ou d'erreur
+# Affichage des réponses de réussite ou d'erreur <a name="successerror-response-rendering"></a>
 
-Vous pouvez afficher les réponses de réussite ou d'erreur dans votre formulaire en utilisant des [modèles étendus](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates), comme [amp-moustache](amp-mustache.md). Pour afficher des réponses de réussite, vous pouvez utiliser la liaison de données avec [amp-bind](amp-bind.md) et les attributs de réponse suivants :
+Vous pouvez afficher les réponses de réussite ou d'erreur dans votre formulaire en utilisant des [modèles étendus](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#templates), comme [amp-moustache](amp-mustache.md). Pour afficher des réponses de réussite, vous pouvez utiliser la liaison de données avec [amp-bind](amp-bind.md) et les attributs de réponse suivants :
 
 | Attribut de réponse | Description |
 |-----------|---------------------|
@@ -298,7 +298,7 @@ Vous pouvez afficher les réponses de réussite ou d'erreur dans votre formulair
 | `submit-error` | Peut être utilisé pour afficher une erreur d'envoi si la réponse indique un échec (c'est-à-dire si son état n'est pas défini sur `2XX`).  |
 | `submitting` | Peut être utilisé pour afficher un message lors de l'envoi du formulaire. Le modèle de cet attribut a accès aux champs de saisie du formulaire à des fins d'affichage. Consultez l'[exemple de formulaire complet ci-dessous](#example-submitting) pour savoir comment utiliser l'attribut `submitting`. |
 
-# Pour afficher des réponses avec la création de modèles, procédez comme suit :
+# Pour afficher des réponses avec la création de modèles, procédez comme suit : <a name="to-render-responses-with-templating"></a>
 
 * Appliquez un attribut de réponse à *tout élément enfant direct* de l'élément `<form>`.
 * Affichez la réponse dans l'élément enfant en y incluant un modèle à l'aide de la balise `<template></template>` ou `<script type="text/plain"></script>`, ou en référençant un modèle avec un attribut `template="id_of_other_template"`.
@@ -306,7 +306,7 @@ Vous pouvez afficher les réponses de réussite ou d'erreur dans votre formulair
 
 <a id="example-submitting"></a>
 
-# Exemple : Le formulaire affiche des messages de réussite, d'erreur et d'envoi en cours
+# Exemple : Le formulaire affiche des messages de réussite, d'erreur et d'envoi en cours <a name="example-form-displays-success-error-and-submitting-messages"></a>
 
 Dans l'exemple suivant, les réponses sont affichées dans un modèle intégré au sein du formulaire.
 
@@ -383,7 +383,7 @@ Vous pouvez afficher les réponses dans un modèle référencé défini précéd
 
 Pour afficher l'intégralité du code, [cliquez ici](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
-# Afficher une réponse positive avec la liaison de données
+# Afficher une réponse positive avec la liaison de données <a name="to-render-a-successful-response-with-data-binding"></a>
 
 * Utilisez l'[attribut on](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) pour lier l'attribut *submit-success* à [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29).
 * Utilisez la propriété `event` pour capturer les données de réponse.
@@ -426,7 +426,7 @@ Une fois le formulaire envoyé, il renvoie une réponse JSON semblable à celle-
 ...
 ```
 
-# Redirection après un envoi
+# Redirection après un envoi <a name="redirecting-after-a-submission"></a>
 
 Vous pouvez rediriger les utilisateurs vers une nouvelle page après l'envoi réussi d'un formulaire. Pour ce faire, définissez l'en-tête de réponse `AMP-Redirect-To` et indiquez une URL de redirection. L'URL de redirection doit être au format HTTPS, sans quoi une erreur sera renvoyée par AMP et la redirection n'aura pas lieu.  La configuration des en-têtes de réponse HTTP s'effectue via votre serveur.
 
@@ -443,7 +443,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 Reportez-vous aux sections [Form Submission with Update](https://ampbyexample.com/components/amp-form/#form-submission-with-page-update) et [Product Page](https://ampbyexample.com/samples_templates/product_page/#product-page) sur AMP By Example pour consulter des exemples de redirection consécutive à l'envoi d'un formulaire.
 [/tip]
 
-# Validations personnalisées
+# Validations personnalisées <a name="custom-validations"></a>
 
 L'extension `amp-form` vous permet de créer votre propre interface de validation personnalisée en utilisant l'attribut `custom-validation-reporting` avec l'une des stratégies de signalement suivantes : `show-first-on-submit`, `show-all-on-submit` ou `as-you-go`.
 
@@ -503,27 +503,27 @@ Dans le cas des messages de validation, si votre élément est dépourvu de cont
 Vous devez fournir votre propre interface de validation pour chaque type d'état non valide que l'entrée peut afficher. Si aucun état n'est présent, aucun attribut `custom-validation-reporting` n'est présenté aux utilisateurs pour l'état d'erreur manquant. Les états de validité sont disponibles dans la [documentation officielle sur le signalement de validation HTML du W3C](https://www.w3.org/TR/html50/forms.html#validitystate).
 [/tip]
 
-# Stratégies de signalement
+# Stratégies de signalement <a name="reporting-strategies"></a>
 
 Indiquez l'une des options de signalement suivantes pour l'attribut de `custom-validation-reporting` :
 
-# Show First on Submit (Afficher la première lors de l'envoi)
+# Show First on Submit (Afficher la première lors de l'envoi) <a name="show-first-on-submit"></a>
 
 L'option de signalement `show-first-on-submit` imite le comportement par défaut du navigateur lors du lancement de la validation par défaut. Elle indique la première erreur de validation détectée et s'arrête là.
 
-# Show All on Submit (Tout afficher lors de l'envoi)
+# Show All on Submit (Tout afficher lors de l'envoi) <a name="show-all-on-submit"></a>
 
 L'option de signalement `show-all-on-submit` affiche toutes les erreurs de validation sur l'ensemble des entrées non valides lors de l'envoi du formulaire. Cela s'avère utile si vous souhaitez afficher un récapitulatif des validations.
 
-# As You Go (Au fur et à mesure)
+# As You Go (Au fur et à mesure) <a name="as-you-go"></a>
 
 L'option de signalement `as-you-go` permet à l'utilisateur d'afficher les messages de validation à mesure qu'il interagit avec l'entrée. Par exemple, si l'utilisateur saisit une adresse e-mail incorrecte, l'erreur est affichée immédiatement.  Une fois la valeur corrigée, l'erreur disparaît.
 
-# Interact and Submit (Interagir et envoyer)
+# Interact and Submit (Interagir et envoyer) <a name="interact-and-submit"></a>
 
 L'option de signalement `interact-and-submit` est la combinaison des options `show-all-on-submit` et `as-you-go`. Les erreurs sont immédiatement affichées dans les différents champs après les interactions de l'utilisateur. Lors de l'envoi du formulaire, les erreurs sont également affichées dans tous les champs non valides.
 
-# Validation
+# Validation <a name="verification"></a>
 
 Les commentaires fournis par la validation HTML5 reposent uniquement sur les informations disponibles sur la page (le fait de savoir si une valeur correspond à un certain schéma, par exemple). La validation `amp-form` vous permet de transmettre à l'utilisateur des informations que la validation HTML5 seule n'est pas en mesure de lui fournir. Par exemple, la validation peut être utilisée dans un formulaire pour vérifier si une adresse e-mail a déjà été enregistrée. Elle peut également servir à valider la correspondance entre les champs de saisie de la ville et du code postal.
 
@@ -588,7 +588,7 @@ Pour supprimer un champ de la requête `verify-xhr`, ajoutez l'attribut `no-veri
 
 Pour consulter d'autres exemples, reportez-vous au fichier [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
-# Substitutions de variables
+# Substitutions de variables <a name="variable-substitutions"></a>
 
 L'extension `amp-form` autorise les [substitutions de variables de plate-forme](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) pour les entrées qui sont masquées et qui comportent l'attribut `data-amp-replace`. À chaque envoi de formulaire, `amp-form` recherche tous les attributs `input[type=hidden][data-amp-replace]` dans le formulaire, applique des substitutions de variables à son attribut `value`, puis le remplace par le résultat de la substitution.
 
@@ -627,15 +627,15 @@ Notez que l'élément `CANONICAL_HOSTNAME` ci-dessus n'a pas été remplacé, ca
 
 Les remplacements seront effectués lors de chaque envoi ultérieur. En savoir plus sur les [substitutions de variables dans AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)
 
-# Polyfills
+# Polyfills <a name="polyfills"></a>
 
 L'extension `amp-form` fournit des polyfills pour les comportements et les fonctionnalités qui sont indisponibles dans certains navigateurs ou qui seront mis en œuvre dans la prochaine version de CSS.
 
-# Info-bulle de message de validation et de blocage d'envois non valides
+# Info-bulle de message de validation et de blocage d'envois non valides <a name="invalid-submit-blocking-and-validation-message-bubble"></a>
 
 Depuis août 2016, les navigateurs qui utilisent des moteurs basés sur Webkit n'acceptent plus les envois de formulaire non valides. Il s'agit par exemple de Safari sur toutes les plates-formes et de tous les navigateurs iOS. L'extension `amp-form` émule ce comportement pour bloquer tout envoi non valide et affiche des info-bulles de messages de validation sur les entrées non valides.
 
-# Pseudo-classes d'interaction avec l'utilisateur
+# Pseudo-classes d'interaction avec l'utilisateur <a name="user-interaction-pseudo-classes"></a>
 
 Les pseudo-classes `:user-invalid` et `:user-valid` font partie de la [future spécification CSS Selectors 4](https://drafts.csswg.org/selectors-4/#user-pseudos). Elles autorisent de meilleurs hooks pour appliquer un style aux champs valides/non valides sur la base de quelques critères.
 
@@ -643,7 +643,7 @@ L'une des différences majeures entre `:invalid` et `:user-invalid` se situe au 
 
 L'extension `amp-form` fournit des [classes](#classes-and-css-hooks) pour émuler ces pseudo-classes. Elle ``propage également ces éléments aux ancêtres `fieldsetelements` et `form`.
 
-# Validation des éléments `<textarea>`
+# Validation des éléments `<textarea>` <a name="-validation"></a>
 
 La correspondance d'expression régulière est une fonctionnalité de validation courante, compatible en mode natif avec la plupart des éléments d'entrée, à l'exception de `<textarea>`. Cette fonctionnalité est émulée et l'attribut `pattern` est accepté sur les éléments `<textarea>`.
 
@@ -653,9 +653,9 @@ AMP Form fournit un attribut `autoexpand` pour les éléments `<textarea>`. La 
 <textarea autoexpand></textarea>
 ```
 
-# Application d'un style
+# Application d'un style <a name="styling"></a>
 
-# Classes et hooks CSS
+# Classes et hooks CSS <a name="classes-and-css-hooks"></a>
 
 L'extension `amp-form` fournit aux éditeurs des classes et des hooks CSS pour leur permettre d'appliquer un style à leurs formulaires et à leurs entrées.
 
@@ -681,9 +681,9 @@ Pour en savoir plus sur l'utilisation de ces classes, consultez l'[intégralité
 Rendez-vous sur [AMP Start](https://ampstart.com/components#form-elements) pour découvrir des éléments de formulaire mis en forme et réactifs que vous pouvez utiliser dans vos pages AMP.
 [/tip]
 
-# Points à noter concernant la sécurité
+# Points à noter concernant la sécurité <a name="security-considerations"></a>
 
-# Protection contre les attaques XSRF
+# Protection contre les attaques XSRF <a name="protecting-against-xsrf"></a>
 
 Outre les consignes de la [spécification AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md), prêtez une attention particulière aux informations de la section ["Processing state changing requests"](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests) pour vous protéger comme les [attaques XSRF](https://fr.wikipedia.org/wiki/Cross-site_request_forgery) au cours desquelles un pirate informatique peut exécuter des commandes non autorisées à l'aide de la session utilisateur en cours, à l'insu de l'utilisateur.
 

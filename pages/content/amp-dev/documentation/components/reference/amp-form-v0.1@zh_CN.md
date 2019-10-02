@@ -48,7 +48,7 @@ limitations under the License.
 </table>
 
 
-# 行为
+# 行为 <a name="behavior"></a>
 
 通过 `amp-form` 扩展组件，您可以创建表单 (`<form>`)，以在 AMP 文档中提交输入字段。`amp-form` 扩展组件还提供 [polyfill](#polyfills)，用于处理浏览器中的某些缺失行为。
 
@@ -97,13 +97,13 @@ limitations under the License.
 ```
 [/example]
 
-# 属性
+# 属性 <a name="attributes"></a>
 
-# target
+# target <a name="target"></a>
 
 用于指明提交表单后表单回应的显示位置。该值必须为 `_blank` 或 `_top`。
 
-# action
+# action <a name="action"></a>
 
 用于指定处理表单输入的服务器端点。该值必须是 `https` 网址（绝对网址或相对网址），且不得是指向 CDN 的链接。
 
@@ -114,7 +114,7 @@ limitations under the License.
 `target` 和 `action` 属性仅用于非 xhr GET 请求。AMP runtime 会使用 `action-xhr` 发出请求，并会忽略 `action` 和 `target`。如果未提供 `action-xhr`，则 AMP 会向 `action` 端点发出 GET 请求，并使用 `target` 打开新窗口（如果 target 值为 `_blank`）。如果 `amp-form` 扩展组件加载失败，AMP runtime 可能还会回退为使用 `action` 和 `target`。
 [/tip]
 
-# action-xhr
+# action-xhr <a name="action-xhr"></a>
 
 用于指定通过 XMLHttpRequest (XHR) 处理表单输入和提交表单的服务器端点。XHR 请求（有时称为 AJAX 请求）是指浏览器无需完全加载页面或打开新页面即可发出的请求。浏览器会使用 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)（如果有）在后台发送请求，而旧版浏览器则会回退为使用 [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)。
 
@@ -128,17 +128,17 @@ limitations under the License.
 
 如需了解如何在成功提交表单后重定向用户，请参阅下面的[提交后重定向](#redirecting-after-a-submission)部分。
 
-# 其他表单属性
+# 其他表单属性 <a name="other-form-attributes"></a>
 
 所有其他[表单属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)都是可选的。
 
-# custom-validation-reporting
+# custom-validation-reporting <a name="custom-validation-reporting"></a>
 
 这是一个可选属性，可用于启用和选择自定义验证报告策略。有效值包括：`show-first-on-submit`、`show-all-on-submit` 或 `as-you-go`。
 
 如需了解更多详情，请参阅[自定义验证](#custom-validations)部分。
 
-# 输入和字段
+# 输入和字段 <a name="inputs-and-fields"></a>
 
 **支持的内容**：
 
@@ -155,7 +155,7 @@ limitations under the License.
 
 如需详细了解有效输入和字段，请参阅 AMP 验证工具规范中的 [amp-form 规则](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
 
-# 操作
+# 操作 <a name="actions"></a>
 
 `amp-form` 提供了以下操作：
 
@@ -167,7 +167,7 @@ limitations under the License.
 [tip type="read-on"]：详细了解 [AMP 中的操作和事件](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)。
 [/tip]
 
-# 事件
+# 事件 <a name="events"></a>
 
 `amp-form` 提供了以下事件：
 
@@ -195,7 +195,7 @@ limitations under the License.
 
 如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
 
-# 输入事件
+# 输入事件 <a name="input-events"></a>
 
 AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这样一来，输入值发生更改时，您可以使用 [`on` 属性](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on)针对任何元素执行操作。
 
@@ -227,7 +227,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 
 如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
 
-# 分析触发器
+# 分析触发器 <a name="analytics-triggers"></a>
 
 `amp-form` 扩展组件会触发以下事件，您可以在 [amp-analytics](amp-analytics.md) 配置中跟踪这些事件：
 
@@ -288,9 +288,9 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
   * `formId`
   * `formFields[comment]`
 
-# 成功/错误响应呈现
+# 成功/错误响应呈现 <a name="successerror-response-rendering"></a>
 
-您可以使用[扩展模板](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates)（如 [amp-mustache](amp-mustache.md)）在表单中呈现成功或错误响应，也可以通过将数据与 [amp-bind](amp-bind.md) 及以下响应属性绑定来呈现成功响应：
+您可以使用[扩展模板](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#templates)（如 [amp-mustache](amp-mustache.md)）在表单中呈现成功或错误响应，也可以通过将数据与 [amp-bind](amp-bind.md) 及以下响应属性绑定来呈现成功响应：
 
 | 响应属性 | 说明 |
 |-----------|---------------------|
@@ -298,7 +298,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 | `submit-error` | 可用于在响应失败（即响应状态不为 `2XX`）时显示提交错误。 |
 | `submitting` | 可用于在表单提交时显示消息。该属性的模板有权访问表单的输入字段，可用于任何显示目的。如需了解如何使用 `submitting` 属性，请参阅[下面的完整表单示例](#example-submitting)。 |
 
-# 通过模板呈现响应的具体步骤：
+# 通过模板呈现响应的具体步骤： <a name="to-render-responses-with-templating"></a>
 
 * 将响应属性应用于 `<form>` 元素的任何直接子集。**
 * 通过以下两种方式在子元素中呈现响应：通过子元素内的 `<template></template>` 或 `<script type="text/plain"></script>` 标记添加模板；通过 `template="id_of_other_template"` 属性引用模板。
@@ -306,7 +306,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 
 <a id="example-submitting"></a>
 
-# 示例：表单显示成功、错误和正在提交消息
+# 示例：表单显示成功、错误和正在提交消息 <a name="example-form-displays-success-error-and-submitting-messages"></a>
 
 在下面的示例中，响应呈现在表单内嵌模板中。
 
@@ -383,7 +383,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 
 如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
 
-# 通过数据绑定呈现成功响应的具体步骤
+# 通过数据绑定呈现成功响应的具体步骤 <a name="to-render-a-successful-response-with-data-binding"></a>
 
 * 使用 [on 属性](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)将表单 submit-success 属性绑定到 [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29)。**
 * 使用 `event` 属性捕获响应数据。
@@ -426,7 +426,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 ...
 ```
 
-# 提交后重定向
+# 提交后重定向 <a name="redirecting-after-a-submission"></a>
 
 您可以设置 `AMP-Redirect-To` 响应标头并指定重定向网址，以在成功提交表单后将用户重定向到新页面。重定向网址必须为 HTTPS 网址，否则 AMP 会抛出错误且重定向操作不会执行。HTTP 响应标头是通过您的服务器配置的。
 
@@ -443,7 +443,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 如需了解如何在提交表单后进行重定向，请查看 AMP By Example 的[更新后提交表单](https://ampbyexample.com/components/amp-form/#form-submission-with-page-update)和[产品页面](https://ampbyexample.com/samples_templates/product_page/#product-page)。
 [/tip]
 
-# 自定义验证
+# 自定义验证 <a name="custom-validations"></a>
 
 通过 `amp-form` 扩展组件，您可以使用 `custom-validation-reporting` 属性及以下报告策略之一构建自己的自定义验证界面：`show-first-on-submit`、`show-all-on-submit` 或 `as-you-go`。
 
@@ -503,27 +503,27 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 您必须为每种可能的无效输入状态提供自己的验证界面。如果未提供这些界面，用户将看不到缺失错误状态的任何 `custom-validation-reporting`。如需查看有效性状态，请参阅[官方 W3C HTML 验证报告文档](https://www.w3.org/TR/html50/forms.html#validitystate)。
 [/tip]
 
-# 报告策略
+# 报告策略 <a name="reporting-strategies"></a>
 
 用于为 `custom-validation-reporting` 属性指定以下报告选项之一：
 
-# Show First on Submit
+# Show First on Submit <a name="show-first-on-submit"></a>
 
 指定 `show-first-on-submit` 这一报告选项后，系统会在默认验证启动时模拟浏览器的默认行为。该选项会显示其发现的第一个验证错误，然后停止验证。
 
-# Show All on Submit
+# Show All on Submit <a name="show-all-on-submit"></a>
 
 指定 `show-all-on-submit` 这一报告选项后，系统会在表单提交时显示所有无效输入的所有验证错误。如果您想要显示验证摘要，则该选项非常有用。
 
-# As You Go
+# As You Go <a name="as-you-go"></a>
 
 指定 `as-you-go` 这一报告选项后，您的用户可以在输入过程中看到验证消息。例如，如果用户输入的电子邮件地址无效，他们会立即看到相应的错误。用户更改该值后，相应错误就会消失。
 
-# Interact and Submit
+# Interact and Submit <a name="interact-and-submit"></a>
 
 `interact-and-submit` 这一报告选项结合了 `show-all-on-submit` 和 `as-you-go` 的行为。各个字段会在用户与字段互动后立即显示可能的错误，并且在提交时，表单会显示所有无效字段的错误。
 
-# 验证
+# 验证 <a name="verification"></a>
 
 HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与特定格式匹配。通过 `amp-form` 验证，您可以向用户提供 HTML5 验证自己无法提供的反馈。例如，表单可以通过验证来检查某个电子邮件地址是否已被注册。下面我们介绍另一个使用场景：验证城市字段和邮政编码字段是否互相匹配。
 
@@ -586,7 +586,7 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 
 如需查看更多示例，请参阅 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
 
-# 变量替换
+# 变量替换 <a name="variable-substitutions"></a>
 
 `amp-form` 扩展组件支持对已隐藏且具有 `data-amp-replace` 属性的输入进行[平台变量替换](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。每次提交表单时，`amp-form` 都会查找表单内的所有 `input[type=hidden][data-amp-replace]`，然后对其 `value` 属性应用变量替换，并将其替换为结果值。
 
@@ -625,15 +625,15 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 
 每次进行后续提交时都会进行替换。详细了解 [AMP 中的变量替换](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。
 
-# Polyfill
+# Polyfill <a name="polyfills"></a>
 
 `amp-form` 扩展组件会提供 polyfill，用于处理某些浏览器中缺失或要在下一版 CSS 中实现的行为和功能。
 
-# 无效提交屏蔽和验证消息气泡
+# 无效提交屏蔽和验证消息气泡 <a name="invalid-submit-blocking-and-validation-message-bubble"></a>
 
 目前（截至 2016 年 8 月）使用基于 webkit 的引擎的浏览器不支持提交无效表单。这些浏览器包括在所有平台上使用的 Safari 以及所有 iOS 浏览器。`amp-form` 扩展组件会对此行为执行 polyfill 操作，以屏蔽任何无效提交，并在用户输入无效内容时显示验证消息气泡。
 
-# 用户互动伪类
+# 用户互动伪类 <a name="user-interaction-pseudo-classes"></a>
 
 `:user-invalid` 和 `:user-valid` 伪类是[未来推出的 CSS 选择器 4 规范](https://drafts.csswg.org/selectors-4/#user-pseudos)的一部分，引入这些伪类是为了根据一些条件，在设置无效/有效字段样式时提供更好的钩子。
 
@@ -641,7 +641,7 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 
 `amp-form` 扩展组件会提供各种[类](#classes-and-css-hooks)，以对这些伪类执行 polyfill 操作。`amp-form` 扩展组件还会将这些类传播到祖级 `fieldset` 元素和 `form`。
 
-# `<textarea>` 验证
+# `<textarea>` 验证 <a name="-validation"></a>
 
 正则表达式匹配是大多数输入元素（`<textarea>` 除外）原生支持的一种常见验证功能。我们会对此功能执行 polyfill 操作，并支持在 `<textarea>` 元素上使用 `pattern` 属性。
 
@@ -651,9 +651,9 @@ AMP 表单会为 `<textarea>` 元素提供 `autoexpand` 属性。这样一来，
 <textarea autoexpand></textarea>
 ```
 
-# 样式设置
+# 样式设置 <a name="styling"></a>
 
-# 类和 CSS 钩子
+# 类和 CSS 钩子 <a name="classes-and-css-hooks"></a>
 
 `amp-form` 扩展组件为发布商提供类和 CSS 钩子，以便他们设置表单和输入的样式。
 
@@ -679,9 +679,9 @@ AMP 表单会为 `<textarea>` 元素提供 `autoexpand` 属性。这样一来，
 如需了解您可以在 AMP 网页中使用的自适应、已预设样式的 AMP 表单元素，请访问 [AMP Start](https://ampstart.com/components#form-elements)。
 [/tip]
 
-# 安全注意事项
+# 安全注意事项 <a name="security-considerations"></a>
 
-# 抵御 XSRF
+# 抵御 XSRF <a name="protecting-against-xsrf"></a>
 
 除了遵循 [AMP CORS 规范](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)中的详细规定之外，还请特别注意[处理状态更改请求](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests)部分，以抵御 [XSRF 攻击](https://en.wikipedia.org/wiki/Cross-site_request_forgery)（即攻击者会在用户不知情的情况下使用当前用户会话执行未经授权的命令）。
 

@@ -12,7 +12,7 @@ Namun, AMP membatasi beberapa penggunaan CSS untuk alasan performa dan kegunaan,
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Tonton UpperQuad yang menyampaikan perancangan ulang situs proyek AMP, termasuk tantangan dalam menggunakan AMP untuk pertama kalinya.']
 
-## Tambahkan gaya ke halaman
+## Tambahkan gaya ke halaman <a name="add-styles-to-a-page"></a>
 
 Tambahkan semua CSS di dalam `<style amp-custom>` tag pada bagian atas dokumen. Misalnya:
 

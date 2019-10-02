@@ -39,15 +39,15 @@ limitations under the License.
 </table>
 
 
-## لماذا AddThis؟
+## لماذا AddThis؟ <a name="why-addthis"></a>
 
 يوفّر المكوِّن `amp-addthis` أزرارًا جميلة وبسيطة للمشاركة. يمكنك أن تسهِّل على زوار موقعك الإلكتروني مشاركة المحتوى مع أكثر من 200 قناة اجتماعية، منها Messenger وWhatsApp وFacebook وTwitter وPinterest وغيرها الكثير.
 
 يحوذ AddThis على ثقة أكثر من 15 مليون موقع إلكتروني يستخدمها ما يزيد عن 2 مليار مستخدم فريد في مشاركة المحتوى حول العالم وبأكثر من ستين لغة.
 
-## أزرار المشاركة
+## أزرار المشاركة <a name="share-buttons"></a>
 
-### العائمة
+### العائمة <a name="floating"></a>
 
 أزرار يمكن وضعها على جوانب الصفحة أو أعلاها أو أسفلها، وتتبع القارئ أثناء تمرير الصفحة. وهي طريقة رائعة لحث المستخدِم على مشاركة المحتوى بدون مضايقته.
 
@@ -68,7 +68,7 @@ limitations under the License.
 </amp-addthis>
 ```
 
-### المضمّنة
+### المضمّنة <a name="inline"></a>
 
 يمكن دمج أزرار المشاركة في المحتوى للحصول على تجربة مشاركة سلسة.
 
@@ -88,7 +88,7 @@ limitations under the License.
 </amp-addthis>
 ```
 
-## السمات
+## السمات <a name="attributes"></a>
 
 <table>
   <tr>
@@ -125,7 +125,7 @@ limitations under the License.
   </tr>
 </table>
 
-## وثائق التنفيذ
+## وثائق التنفيذ <a name="implementation-documentation"></a>
 
 1. إذا لم يسبق لك إنشاء حساب على AddThis، ستحتاج إلى إنشاء حساب على الموقع [https://www.addthis.com/register](https://www.addthis.com/register). لن تتحمل أي تكلفة مقابل إنشاء الحساب وسيتيح لك الوصول إلى مجموعتنا الكاملة من أدوات المواقع الإلكترونية وأيضًا تقاريرنا التحليلية العميقة للحصول على فهم أفضل للزيارات الواردة إلى موقعك من الشبكات الاجتماعية.
 2. انتقِل إلى [لوحة البيانات](https://addthis.com/dashboard) وخصِص "أزرار المشاركة" (لا تتيح صفحات AMP حاليًا إلا عمل "أزرار المشاركة العائمة" و"المضّمنة").
@@ -137,11 +137,11 @@ limitations under the License.
 شاهِد [فيديو YouTube](https://www.youtube.com/watch?v=BSkuAB4er2o) لمعرفة التعليمات خطوة بخطوة:
 <amp-youtube width="480" height="270" data-videoid="BSkuAB4er2o" layout="responsive"></amp-youtube>
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطّلِع على [قواعد amp-addthis](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) في مواصفات مدقق AMP.
 
-## الخصوصية
+## الخصوصية <a name="privacy"></a>
 
 [http://www.addthis.com/privacy/privacy-policy/](http://www.addthis.com/privacy/privacy-policy/)
 
@@ -159,6 +159,6 @@ limitations under the License.
 
 سيتم التعامل مع "بيانات AddThis" على أنها معلومات شخصية بالقدر التي ينص عليه القانون المعمول به. وفقًا لبنود خدمة AddThis، مطلوب من الناشرين الحصول على جميع موافقات المستخدِم وتفويضاته، وتقديم أي إشعارات مطلوبة لتوفير "بيانات AddThis" التي تم جمعها من المستخدِمين إلى Oracle.
 
-## الدعم
+## الدعم <a name="support"></a>
 
 إذا كانت لديك أي أسئلة أو كنت بحاجة إلى أي مساعدة في تنفيذ AddThis على صفحات AMP، يُرجى الاتصال بفريق الدعم الرائع لدينا من خلال إرسال تذكرة [هنا](https://www.addthis.com/support/) أو عن طريق إرسال رسالة إلكترونية إلى [help@addthis.com](mailto%3ahelp@addthis.com).

@@ -46,7 +46,7 @@ Rappresenta un controllo che apre un menu di opzioni e permette all'utente di sc
 </table>
 
 
-## Comportamento
+## Comportamento <a name="behavior"></a>
 
 Il selettore AMP è un controllo che apre un elenco di opzioni e consente all'utente di sceglierne una o più; i contenuti delle opzioni non si limitano al solo testo.
 
@@ -96,7 +96,7 @@ Esempio:
 </amp-selector>
 ```
 
-## Annullare le selezioni
+## Annullare le selezioni <a name="clearing-selections"></a>
 
 Per fare in modo che tutte le selezioni vengano annullate quando l'utente fa clic o tocca un elemento, imposta l'attributo di azione [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) sull'attributo e specifica l'`id` del selettore AMP con il metodo di azione `clear`.
 
@@ -115,9 +115,9 @@ Esempio:
 guarda le demo dal vivo sul sito [AMP By Example](https://ampbyexample.com/components/amp-selector/).
 [/tip]
 
-## Attributi
+## Attributi <a name="attributes"></a>
 
-### Attributi di `<amp-selector>`
+### Attributi di `<amp-selector>` <a name="attributes-on-"></a>
 
 <table>
   <tr>
@@ -134,7 +134,7 @@ guarda le demo dal vivo sul sito [AMP By Example](https://ampbyexample.com/compo
       </tr>
     </table>
 
-### Attributi delle opzioni `<amp-selector>`
+### Attributi delle opzioni `<amp-selector>` <a name="attributes-on--options"></a>
 
 <table>
   <tr>
@@ -147,7 +147,7 @@ guarda le demo dal vivo sul sito [AMP By Example](https://ampbyexample.com/compo
   </tr>
 </table>
 
-## Eventi
+## Eventi <a name="events"></a>
 
 Gli eventi possono attivare delle azioni in altri componenti AMP utilizzando l'attributo `on`,
 ad esempio `on="select: my-tab.show"`
@@ -171,6 +171,6 @@ Ulteriori informazioni su [azioni ed eventi AMP](../../../documentation/guides-a
 
     </table>
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole di amp-selector](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) nelle specifiche dello strumento di convalida AMP.

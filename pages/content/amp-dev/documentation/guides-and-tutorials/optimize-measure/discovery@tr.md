@@ -28,7 +28,7 @@ Yalnızca bir sayfanız varsa ve bu sayfa bir AMP sayfasıysa yine de standart b
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-## Ek meta veriler aracılığıyla üçüncü taraf platformlarıyla entegrasyon
+## Ek meta veriler aracılığıyla üçüncü taraf platformlarıyla entegrasyon <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 Bazen bir üçüncü taraf sitesinin (AMP sayfanızı yerleştiren veya AMP sayfanızın bağlantılarını içeren), sayfanızın bir AMP sayfası olduğunu bilmek dışında sayfanızla ilgili daha fazla şeyi öğrenmesi gerekir. Platformlar, sayfanızla ilgili olarak "Haber makalesi mi?", "Video mu?" veya "Ekran görüntünüz ve kısa açıklamanız var mı?" gibi şeyleri sorabilir.
 

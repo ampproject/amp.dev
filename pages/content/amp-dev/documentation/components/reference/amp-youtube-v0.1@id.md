@@ -44,7 +44,7 @@ Menampilkan video [YouTube](https://www.youtube.com/).
   </tr>
 </table>
 
-## Contoh
+## Contoh <a name="example"></a>
 
 Dengan tata letak responsive, lebar dan tinggi dari contoh berikut akan menghasilkan tata letak yang benar untuk video dengan rasio tinggi lebar 16:9:
 
@@ -70,7 +70,7 @@ Dengan tata letak responsive, lebar dan tinggi dari contoh berikut akan menghasi
   </amp-youtube>
   [/sourcecode]
 
-## Atribut
+## Atribut <a name="attributes"></a>
 
 <table>
   <tr>
@@ -129,6 +129,6 @@ Dengan tata letak responsive, lebar dan tinggi dari contoh berikut akan menghasi
           </tr>
         </table>
 
-## Validasi
+## Validasi <a name="validation"></a>
 
 Lihat [aturan amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) dalam spesifikasi validator AMP.

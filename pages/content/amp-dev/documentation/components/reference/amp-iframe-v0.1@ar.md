@@ -45,7 +45,7 @@ limitations under the License.
   </tr>
 </table>
 
-# السلوك
+# السلوك <a name="behavior"></a>
 
 يتميز المكوِّن `amp-iframe` بعدة اختلافات مهمة عن إطارات vanilla iframe المصممة لزيادة الأمان وتجنب ملفات AMP التي يسيطر عليها إطار iframe واحد:
 
@@ -74,7 +74,7 @@ limitations under the License.
 يمكنك الاطّلاع على مزيد من العروض التوضيحية للمكوِّن `amp-iframe` عند الانتقال إلى الموقع [AMP بالمثال](https://ampbyexample.com/components/amp-iframe/).
 [/tip]
 
-# استخدام amp-iframe للإعلان
+# استخدام amp-iframe للإعلان <a name="usage-of-amp-iframe-for-advertising"></a>
 
 **يجب عدم** استخدام `amp-iframe` لعرض الإعلانات كغرض أساسي. فلا بأس من استخدام `amp-iframe` لعرض فيديوهات تكون الإعلانات جزءًا منها. قد يتم تنفيذ سياسة AMP هذه بعدم عرض إطارات iframe المعنّية.
 
@@ -87,7 +87,7 @@ limitations under the License.
 * لا يحتوي `amp-iframe` على آلية لتغيير حجم إطارات iframe يتم التحكم فيها بالكامل.
 * قد لا تكون معلومات إمكانية العرض متاحة للمكّوِن `amp-iframe`.
 
-# السمات
+# السمات <a name="attributes"></a>
 
 <table>
   <tr>
@@ -101,7 +101,7 @@ limitations under the License.
       إذا لم يتم تحديد <code>frameborder</code>، سيتم تعيينها افتراضيًا على <code>0</code>.</td>
   </tr>
   <tr>
-    <td width="40%"><strong>sandbox</strong></td>
+    <td width="40%"><strong>sandbox</strong><a name="sandbox"></a></td>
     <td>إطارات iframe التي تم إنشاؤها باستخدام <code>amp-iframe</code> يتم دائمًا تحديد السمة <code>sandbox</code> عليها. تكون القيمة فارغة تلقائيًا، ما يعني أنها "في وضع الحماية بحده الأقصى". يمكن تفعيل إطار iframe بحيث يكون وضع الحماية له أقل وذلك بتعيين قيم <code>sandbox</code>. يُسمح بجميع القيم التي تتيحها المتصفحات. تتيح مثلاً تعيين <code>sandbox="allow-scripts"</code> لإطار iframe بتشغيل جافا سكريبت أو يتيح <code>sandbox="allow-scripts allow-same-origin"</code> لإطار iframe بتشغيل جافا سكريبت وإرسال طلبات غير CORS XHR وقراءة/كتابة ملفات تعريف الارتباط.
     <br><br>
     إذا كنت تضيف إطار iframe إلى مستند لم يتم إنشاؤه تحديدًا مع وضع الحماية في الاعتبار، ستحتاج على الأرجح إلى إضافة <code>allow-scripts allow-same-origin</code> إلى السمة <code>sandbox</code> وقد تحتاج إلى السماح بإمكانات إضافية.
@@ -117,7 +117,7 @@ limitations under the License.
 </table>
 
 
-# إطار iframe له عنصر نائب
+# إطار iframe له عنصر نائب <a name="iframe-with-placeholder"></a>
 
 من الممكن ظهور `amp-iframe` في الجزء العلوي من المستند عندما يحتوي `amp-iframe` على عنصر `placeholder` كما هو موضح في المثال أدناه.
 
@@ -144,7 +144,7 @@ window.parent.postMessage({
 }, '*');
 ```
 
-# تغيير حجم الإطار iframe
+# تغيير حجم الإطار iframe <a name="iframe-resizing"></a>
 
 يجب أن يكون للمكوِّن `amp-iframe` تنسيق ثابت محدد كما هو الحال مع أي عنصر AMP آخر. ومع ذلك، من الممكن تغيير حجم `amp-iframe` عند وقت التشغيل. لإجراء ذلك:
 
@@ -186,7 +186,7 @@ height: document.body.scrollHeight
 * ما إذا يتم طلب تغيير الحجم لإطار iframe نشط حاليًا
 * ما إذا يتم طلب تغيير الحجم لإطار iframe أسفل إطار العرض أو أعلاه
 
-# إمكانية عرض إطار iframe
+# إمكانية عرض إطار iframe <a name="iframe-viewability"></a>
 
 يمكن لإطارات iframe إرسال رسالة `send-intersections` إلى العناصر الرئيسية لبدء تلقي [سجلات تغيّر](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) أنماط IntersectionObserver لتقاطع إطار iframe مع إطار العرض للعنصر الرئيسي.
 
@@ -222,7 +222,7 @@ window.addEventListener('message', function(event) {
 
 سيتم إرسال رسالة التقاطع بواسطة العنصر الرئيسي إلى iframe عندما يتحرك iframe داخل إطار العرض أو خارجه (أو يكون مرئيًا بشكل جزئي)، أي عندما يتم تمرير iframe أو تغيير حجمه.
 
-# تتبع/تحليلات iframe
+# تتبع/تحليلات iframe <a name="trackinganalytics-iframes"></a>
 
 ننصح بشدة باستخدام المكوِّن [`amp-analytics`](amp-analytics.md) لأغراض التحليل لأنه حل أكثر قوة وفعالية وكمال ويمكنك تهيئته لمجموعة واسعة من موردي التحليلات.
 
@@ -230,7 +230,7 @@ window.addEventListener('message', function(event) {
 
 يتم تحديد إطارات iframes على أنها إطارات للتتبع/التحليل إذا بدا أنها لا تخدم أي غرض مباشر للمستخدِم كأن تكون غير مرئية أو صغيرة.
 
-# إرشادات: استخدِم مكونات AMP بدلاً من amp-iframe
+# إرشادات: استخدِم مكونات AMP بدلاً من amp-iframe <a name="guideline-use-existing-amp-components-over-amp-iframe"></a>
 
 يجب اعتبار المكوِّن `amp-iframe` عنصرًا احتياطيًا إذا كانت تجربة المستخدِم المطلوبة غير ممكنة بوسائل أخرى في AMP، أي غياب [مكون AMP](../../../documentation/components/index.html) متوفر لحالة الاستخدام. ويرجع هذا إلى تعدد فوائد استخدام مكوِّن AMP مصمم لحالة استخدام معينة مثل:
 
@@ -239,6 +239,6 @@ window.addEventListener('message', function(event) {
 * تغيير الحجم المضمَّن وهو ما يعني أن محتوى iframe ذا الحجم غير المتوقع يمكن أن يظهر للمستخدِم في أغلب الأحيان كما لو كان أصليًا في الصفحة، وليس في إطار قابل للتمرير.
 * يمكن إنشاء ميزات إضافية أخرى (مثل التشغيل التلقائي لمشغّلات الفيديو).
 
-# التحقق
+# التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-iframe](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii) في مواصفات مدقق AMP.

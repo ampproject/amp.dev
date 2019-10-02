@@ -67,7 +67,7 @@ Envía los datos de páginas vistas a Google Analytics (consulta también [Segui
 </amp-analytics>
 ```
 
-## Seguimiento de los clics en la página
+## Seguimiento de los clics en la página <a name="tracking-page-clicks"></a>
 
 Obtén información sobre cómo hacer seguimiento de los clics en la página mediante [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), enviando los datos de eventos a una URL específica y a [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
@@ -128,7 +128,7 @@ En el siguiente ejemplo se utiliza el atributo `selector` del `trigger` para env
 </amp-analytics>
 ```
 
-## Seguimiento del desplazamiento
+## Seguimiento del desplazamiento <a name="tracking-scrolling"></a>
 
 Realiza el seguimiento del desplazamiento en la página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). En el ejemplo siguiente se utiliza el atributo `scrollspec` para enviar un evento de `scroll` a la URL determinada cuando el usuario se desplaza en vertical por el 25%, 50% y 90% de la página. El evento también se activa cuando el usuario se desplaza en horizontal por la página por el 90% del ancho de `scroll`:
 
@@ -156,7 +156,7 @@ Realiza el seguimiento del desplazamiento en la página usando [`amp-analytics`]
 </amp-analytics>
 ```
 
-## Seguimiento de interacciones sociales
+## Seguimiento de interacciones sociales <a name="tracking-social-interactions"></a>
 
 Obtén información sobre cómo hacer seguimiento de las interacciones sociales usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), enviando los datos de eventos a una URL específica y a [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 

@@ -44,7 +44,7 @@ teaser:
   </tr>
 </table>
 
-## Comportamento
+## Comportamento <a name="behavior"></a>
 
 Il componente `amp-pixel` si comporta come un semplice pixel di monitoraggio `img`. Richiede un singolo URL, ma fornisce variabili che possono essere sostituite dal componente nella stringa URL quando si effettua la richiesta. Per ulteriori dettagli, consulta la sezione [Sostituzioni](#substitutions).
 
@@ -59,13 +59,13 @@ In questo esempio di base, `amp-pixel` effettua una semplice richiesta GET all'U
 mentre elabori gli URL AMP nell'intestazione del referrer delle richieste di analisi dei dati, rimuovi o ignora il parametro `usqp`. Google utilizza questo parametro per attivare gli esperimenti per la cache AMP di Google.
 [/tip]
 
-## Attributi
+## Attributi <a name="attributes"></a>
 
-##### src (obbligatorio)
+##### src (obbligatorio) <a name="src-required"></a>
 
 Un URL semplice di un endpoint remoto che deve utilizzare il protocollo `https`.
 
-##### referrerpolicy (facoltativo)
+##### referrerpolicy (facoltativo) <a name="referrerpolicy-optional"></a>
 
 Simile all'attributo `referrerpolicy` di `<img>`, tuttavia l'unico valore ammesso è `no-referrer`. Se viene specificato `referrerpolicy=no-referrer`, l'intestazione `referrer` viene rimossa dalla richiesta HTTP.
 
@@ -75,7 +75,7 @@ Simile all'attributo `referrerpolicy` di `<img>`, tuttavia l'unico valore ammess
     referrerpolicy="no-referrer"></amp-pixel>
 ```
 
-##### allow-ssr-img (facoltativo)
+##### allow-ssr-img (facoltativo) <a name="allow-ssr-img-optional"></a>
 
 Questo attributo, utilizzato nelle creatività AMP4ADS, indica che, come parte della
 trasformazione successiva alla convalida, è possibile posizionare un elemento img direttamente
@@ -83,11 +83,11 @@ all'interno dell'elemento amp-pixel, permettendo al ping di essere inviato in co
 Tieni presente che eventuali macro all'interno dell'URL NON verranno espanse,
 quindi utilizzale solo se non sono presenti macro nell'src.
 
-##### common attributes
+##### common attributes <a name="common-attributes"></a>
 
 Questo elemento include [attributi comuni](../../../documentation/guides-and-tutorials/learn/common_attributes.md) estesi ai componenti AMP.
 
-## Sostituzioni
+## Sostituzioni <a name="substitutions"></a>
 
 `amp-pixel` consente tutte le sostituzioni di variabili URL standard.
 Per ulteriori informazioni, consulta la [Guida alle sostituzioni](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md).
@@ -99,10 +99,10 @@ Nel seguente esempio, potrebbe essere effettuata una richiesta a `https://foo.co
     layout="nodisplay"></amp-pixel>
 ```
 
-## Stili
+## Stili <a name="styling"></a>
 
 Non modificare lo stile di `amp-pixel`.
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole amp-pixel](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) nella specifica dello strumento di convalida AMP.

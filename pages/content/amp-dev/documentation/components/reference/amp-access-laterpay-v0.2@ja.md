@@ -51,7 +51,7 @@ limitations under the License.
 </table>
 
 
-## 動作
+## 動作 <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net) は、ユーザーが 2 回クリックするだけでオンライン コンテンツを購入できるマイクロペイメント プラットフォームです。購入したコンテンツにはすぐにアクセスできます。しかも、登録、個人データの入力、支払いを事前に行う必要はありません。ウェブサイトでの合計購入額が 5 ドルまたは 5 ユーロに達したときに初めて支払い義務が生じます。コンテンツ プロバイダは、個々の商品アイテムや、コンテンツへの定額アクセスや時間制限付きのアクセスを提供する時間パスを販売できます。
 
@@ -73,7 +73,7 @@ amp-access と組み合わせて使用したい独自のペイウォール サ�
 
 また、このコンポーネントで[アクセス コンテンツ マークアップ](amp-access.md#access-content-markup)を使用して、コンテンツの表示と非表示を切り替えることができます。
 
-## 設定
+## 設定 <a name="configuration"></a>
 
 設定は amp-access に似ていますが、承認、Pingback、ログインリンクは必要ありません。
 
@@ -143,7 +143,7 @@ amp-access と組み合わせて使用したい独自のペイウォール サ�
         </tr>
       </table>
 
-## アクセス コンテンツ マークアップを使用して購入リストを表示する
+## アクセス コンテンツ マークアップを使用して購入リストを表示する <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 アクセス コンテンツ マークアップは amp-access と同じように使用する必要があります。
 
@@ -166,7 +166,7 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
 
 ```
 
-## スタイル設定
+## スタイル設定 <a name="styling"></a>
 
 生成されたマークアップの要素の一部に複数のクラスが適用されます。クラスが適用されていない要素は、CSS 要素セレクタで一義的に参照できます。
 
@@ -210,7 +210,7 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
 
 ```
 
-## ローカライズ
+## ローカライズ <a name="localization"></a>
 
 購入オプションのダイアログに表示されるテキストは、LaterPay Connector の UI でサイト運営者が定義します。
 
@@ -271,13 +271,13 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
   </tr>
 </table>
 
-## アナリティクス
+## アナリティクス <a name="analytics"></a>
 
 `amp-access-laterpay` は `amp-access` をベースとしているため、`amp-access` から送信された[アナリティクス イベント](amp-access.md#integration-with-amp-analytics)をすべてサポートします。
 
 実際のページの詳細な例については、[https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) をご覧ください。この例は、アナリティクス イベントを送信するように設定されています。
 
-## amp-access-laterpay と amp-access を同時に使用する
+## amp-access-laterpay と amp-access を同時に使用する <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 既存のサブスクリプション システムがあり、LaterPay を個々の記事の販売用にのみ使用する予定の場合は、amp-access と amp-access-laterpay を同時に使用して、同一ページ内に両方の販売方法を共存させることができます。
 
@@ -336,13 +336,13 @@ LaterPay と既存のペイウォールを統合して使用する場合、次�
 
 詳細な例については、[https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html) をご覧ください。
 
-## 関連ドキュメント
+## 関連ドキュメント <a name="related-documentation"></a>
 
 * [amp-access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: マイクロペイメントの使用方法](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html): amp-access-laterpay に似ていますが、非 AMP ページが対象です。
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツールの仕様で [amp-access-laterpay のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)をご確認ください。

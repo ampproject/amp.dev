@@ -349,13 +349,20 @@ class MarkdownDocument {
     const slugGenerator = new SlugGenerator();
     this._contents = this._contents.replace(TITLE_ANCHOR_PATTERN,
         (line, hLevel, headlineStart, anchor, headlineEnd) => {
-          const headline = headlineStart + headlineEnd;
+          let headline = headlineStart + headlineEnd;
+          headline = headline.replace(/`(.*?)`|\[(.*?)\]\(.*?\)|<.*?>|&[^\s]+?;/g,
+              (line, code, linktext) => {
+                if (code || linktext) {
+                  return code || linktext;
+                }
+                return '';
+              });
           const slug = slugGenerator.generateSlug(headline);
           // Even if we have an anchor the slug generator has to know all the headlines.
           if (anchor) {
             return line;
           }
-          return `${hLevel} ${headline} <a name="${slug}"></a>`;
+          return `${hLevel} ${headlineStart}${headlineEnd} <a name="${slug}"></a>`;
         });
     return true;
   }

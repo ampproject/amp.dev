@@ -41,15 +41,15 @@ Ce composant affiche un élément intégré Outils Web [AddThis](https://www.add
 
 
 
-## Pourquoi utiliser AddThis ?
+## Pourquoi utiliser AddThis ? <a name="why-addthis"></a>
 
 Le composant `amp-addthis` propose des boutons de partage particulièrement élégants et faciles à utiliser. Faites en sorte que les visiteurs de votre site Web puissent partager facilement du contenu sur plus de 200 réseaux sociaux, dont Messenger, WhatsApp, Facebook, Twitter, Pinterest et bien d'autres.
 
 AddThis est utilisé par plus de 15 millions de sites Web qui enregistrent plus de deux milliards d'utilisateurs uniques et partagent du contenu dans le monde entier dans plus de soixante langues.
 
-## Boutons "Partager"
+## Boutons "Partager" <a name="share-buttons"></a>
 
-### Barre flottante
+### Barre flottante <a name="floating"></a>
 
 La barre flottante s'affiche sur les côtés, en bas ou en haut de la page. Elle suit le lecteur lorsque l'utilisateur fait défiler la page. Il s'agit là d'un excellent moyen de promouvoir le partage sans gêner la lecture.
 
@@ -70,7 +70,7 @@ data-widget-type="floating">
 </amp-addthis>
 ```
 
-### Inline
+### Inline <a name="inline"></a>
 
 Intégrez des boutons "Partager" dans votre propre contenu pour offrir une expérience de partage fluide.
 
@@ -90,7 +90,7 @@ data-widget-type="inline">
 </amp-addthis>
 ```
 
-## Attributs
+## Attributs <a name="attributes"></a>
 
 <table>
   <tr>
@@ -127,7 +127,7 @@ data-widget-type="inline">
     </tr>
   </table>
 
-## Documentation de mise en œuvre
+## Documentation de mise en œuvre <a name="implementation-documentation"></a>
 
 1. Si vous ne l'avez pas encore fait, vous devez créer un compte AddThis à l'adresse [https://www.addthis.com/register](https://www.addthis.com/register). Cette procédure est entièrement gratuite. Un compte AddThis vous permet d'accéder à notre suite complète d'outils Web, ainsi qu'à nos rapports d'analyse détaillés pour mieux comprendre le trafic issu des réseaux sociaux sur votre site Web.
 1. Accédez à votre [tableau de bord](https://addthis.com/dashboard) et personnalisez vos boutons "Partager" (pour le moment, AMP accepte uniquement les boutons de partage de type "Barre flottante" et "Inline").
@@ -139,11 +139,11 @@ Voilà, c'est fait ! Les boutons de partage doivent à présent être affichés
 Visionnez cette [vidéo YouTube](https://www.youtube.com/watch?v=BSkuAB4er2o) pour obtenir des instructions détaillées :
 <amp-youtube width="480" height="270" data-videoid="BSkuAB4er2o" layout="responsive"></amp-youtube>
 
-## Validation
+## Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-addthis](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) dans les spécifications du validateur AMP.
 
-## Vie privée
+## Vie privée <a name="privacy"></a>
 
 [http://www.addthis.com/privacy/privacy-policy/](http://www.addthis.com/privacy/privacy-policy/)
 
@@ -161,6 +161,6 @@ Les données AddThis peuvent se composer des éléments suivants :
 
 Les données AddThis seront traitées comme des informations à caractère personnel dans la mesure requise par la loi applicable. Conformément aux conditions d'utilisation d'AddThis, les éditeurs sont tenus d'obtenir toutes les autorisations et tous les consentements nécessaires de la part des utilisateurs finaux, et de fournir toutes les notifications requises pour transmettre à Oracle les données AddThis collectées auprès des utilisateurs finaux.
 
-## Assistance
+## Assistance <a name="support"></a>
 
 Si vous avez des questions ou avez besoin d'aide pour mettre en œuvre AddThis sur AMP, contactez notre extraordinaire équipe de support en envoyant une demande d'assistance [ici](https://www.addthis.com/support/) ou en envoyant un e-mail à l'adresse [help@addthis.com](mailto%3ahelp@addthis.com).

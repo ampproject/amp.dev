@@ -47,7 +47,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
     </tr>
   </table>
 
-## 動作
+## 動作 <a name="behavior"></a>
 
 `amp-video` コンポーネントは、`src` 属性によって指定された動画リソースを、ランタイムによって定義された時刻に遅延読み込みします。`amp-video` コンポーネントは、標準の HTML5 `<video>` タグと同じように制御することができます。
 
@@ -58,7 +58,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
 * 動画再生開始前のプレースホルダ。
 * ブラウザが HTML5 動画をサポートしていない場合のフォールバック: 必要に応じて、直接の子ノードの 1 つに `fallback` 属性を設定することができます。ユーザーのブラウザが HTML5 動画をサポートしていなかった場合、この属性を設定されたノードが存在していれば、このノードとその子が表示コンテンツを形成します。
 
-#### 例
+#### 例 <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
 ```html
@@ -78,11 +78,11 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
 ```
 [/example]
 
-## 分析機能
+## 分析機能 <a name="analytics"></a>
 
 `amp-video` は、簡単に使用できる分析機能を備えています。詳細については、[動画分析機能](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)をご覧ください。
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -140,7 +140,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
       </tr>
     </table>
 
-## Media Session API の属性
+## Media Session API の属性 <a name="media-session-api-attributes"></a>
 
 `amp-video` コンポーネントは、[Media Session API](https://developers.google.com/web/updates/2017/02/media-session) を実装しています。そのため、デベロッパーは、動画ファイルに関する詳細情報を指定することができます。動画の追加情報は、再生 / 一時停止コントロールと一緒にデバイスの通知センター内に表示されます。
 
@@ -177,12 +177,12 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
 </amp-video>
 ```
 
-## Click-to-Play オーバーレイ
+## Click-to-Play オーバーレイ <a name="click-to-play-overlay"></a>
 
 ウェブ上の動画プレーヤーで広く利用されている UX 機能として、Click-to-Play オーバーレイがあります。たとえば、ユーザーがクリックできるカスタム再生アイコンや、動画のタイトル、サイズの異なるポスター画像などを表示することができます。`amp-video` コンポーネントは、標準の `play` AMP アクションをサポートしているため、Click-to-Play を簡単に実装できます。
 
 詳細な例については、AMP By Example の [amp-video 用 Click-to-Play オーバーレイ](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/)をご覧ください。
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツール仕様の [amp-video ルール](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。

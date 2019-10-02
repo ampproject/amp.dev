@@ -30,7 +30,7 @@ expanding responsive design capabilities with features like [placeholders & fall
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Watch UpperQuad talk about the AMPproject site redesign, including the challenges of using AMP for the first time.']
 
-## Add styles to a page
+## Add styles to a page <a name="add-styles-to-a-page"></a>
 
 Add your CSS inside a `<style amp-custom>` tag in the head of the document.
 For example:

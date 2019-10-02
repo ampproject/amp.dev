@@ -48,7 +48,7 @@ Penggantian untuk tag `video` HTML5; digunakan hanya untuk sematan file video HT
     </tr>
   </table>
 
-## Perilaku
+## Perilaku <a name="behavior"></a>
 
 Komponen `amp-video` memuat resource video yang ditentukan oleh atribut `src` secara longgar, pada suatu waktu yang ditentukan oleh runtime. Anda dapat mengontrol komponen `amp-video` dengan cara yang hampir sama dengan tag `<video>` HTML5.
 
@@ -59,7 +59,7 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
 * sebuah placeholder untuk sebelum video dimulai
 * sebuah fallback jika browser tidak mendukung video HTML5: Satu atau nol node turunan langsung dapat memiliki atribut `fallback`. Jika ada, node ini dan turunannya akan membentuk konten yang ditampilkan jika video HTML5 tidak didukung pada browser pengguna.
 
-#### Contoh
+#### Contoh <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
 ```html
@@ -79,11 +79,11 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
 ```
 [/example]
 
-## Analisis
+## Analisis <a name="analytics"></a>
 
 `amp-video` mendukung analisis yang siap digunakan. Lihat [analisis video](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) untuk informasi selengkapnya.
 
-## Atribut
+## Atribut <a name="attributes"></a>
 
 <table>
   <tr>
@@ -143,7 +143,7 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
         </tr>
       </table>
 
-## Atribut Media Session API
+## Atribut Media Session API <a name="media-session-api-attributes"></a>
 
 Komponen `amp-video` menerapkan [Media Session API](https://developers.google.com/web/updates/2017/02/media-session), yang memungkinkan developer untuk menentukan informasi lebih lanjut tentang file video. Informasi tambahan untuk video ditampilkan di pusat notifikasi perangkat pengguna (bersama kontrol putar/jeda).
 
@@ -180,12 +180,12 @@ Contoh di bawah berisi atribut `poster` dan `artwork`. Atribut `poster` berfungs
 </amp-video>
 ```
 
-## Overlay klik-untuk-putar
+## Overlay klik-untuk-putar <a name="click-to-play-overlay"></a>
 
 Overlay klik-untuk-putar adalah fitur UX umum untuk pemutar video di web.  Misalnya, Anda dapat menampilkan ikon putar kustom yang dapat diklik pengguna, serta menyertakan judul video, gambar poster berukuran berbeda, dan sebagainya.  Karena komponen `amp-video` mendukung tindakan AMP `play` standar, Anda dapat menerapkan klik-untuk-putar dengan mudah.
 
 Untuk contoh lebih lengkap, kunjungi [Overlay klik-untuk-putar untuk amp-video](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/) di AMP By Example.
 
-## Validasi
+## Validasi <a name="validation"></a>
 
 Lihat [aturan amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dalam spesifikasi validator AMP.

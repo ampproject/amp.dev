@@ -32,7 +32,7 @@ Jika hanya memiliki satu halaman, dan halaman tersebut adalah versi AMP, Anda te
 Pelajari lebih lanjut cara Google menemukan halaman AMP di [panduan Google Penelusuran untuk halaman AMP](https://support.google.com/webmasters/answer/6340290).
 [/tip]
 
-## Mengintegrasikan platform pihak ketiga melalui metadata tambahan
+## Mengintegrasikan platform pihak ketiga melalui metadata tambahan <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 Terkadang situs pihak ketiga (yang menyematkan halaman AMP atau menyertakan link ke halaman AMP) perlu tahu lebih banyak tentang halaman Anda selain mengetahui bahwa halaman tersebut adalah versi AMP. Pertanyaan yang mungkin diajukan oleh platform tentang halaman Anda adalah seperti “Apakah halaman merupakan artikel berita?”, “Atau video?”, atau “Apakah Anda memiliki screenshot dan deskripsi singkat?”.
 

@@ -27,12 +27,12 @@ In this guide, we'll show you how you can easily implement these responsive fund
 
 [video src='https://www.youtube.com/watch?v=XDvbJ2apaiA' caption='Learn about responsive design in AMP from this video.']
 
-## Controlling the viewport
+## Controlling the viewport <a name="controlling-the-viewport"></a>
 
 [filter formats="websites, ads, stories"]
 To optimize your web page so the content scales and fits the browser window for any device, you need to specify a `meta` viewport element. The viewport element instructs the browser on how to scale and size the visible area (the viewport) of the web page.
 
-But, what values should you use?  Well, in AMP, that's already spelled out for you. As part of the [required markup](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md#required-markup) for AMP pages, you need to specify the following viewport:
+But, what values should you use?  Well, in AMP, that's already spelled out for you. As part of the [required markup](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) for AMP pages, you need to specify the following viewport:
 
 ```html
 <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -45,7 +45,7 @@ These are the typical viewport settings that you'd use for a responsive site. Al
 This section is only valid for AMP websites, ads and stories.
 [/filter]
 
-## Creating a responsive layout
+## Creating a responsive layout <a name="creating-a-responsive-layout"></a>
 
 In responsive design, you can use CSS [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) queries to tailor the styling of your web page for various screen dimensions without having to alter the content of the page.  In AMP, you can continue to use those same CSS `@media` queries. Additionally, for finer control over an AMP element, you can specify the `media` attribute on the element. This is particularly useful when you need to either show or hide an element based on a media query. See the [Changing the art direction of an image](#changing-the-art-direction-of-an-image) section for an example that uses the `media` attribute.
 
@@ -90,7 +90,7 @@ However, we want the image to not stretch beyond its intended size, so we set th
 The tricky part is having responsive elements render on the page without adversely affecting performance metrics or user experience.  Yes, you can easily get images to fit the screen with "width=100%" but there are performance hits.  The browser must download the image first to get the dimensions of the image, then resize the image appropriately for the screen size, and finally reflow and repaint the page.  In AMP,  the rendering path is optimized so that first the page is laid out, setting aside placeholders for the images based on the dimensions provided in [`amp-img`](../../../../documentation/components/reference/amp-img.md) (using those numbers to establish aspect ratio), then the resources are downloaded, and the page is painted.  No reflow is required.
 [/tip]
 
-## Scaling media for the page
+## Scaling media for the page <a name="scaling-media-for-the-page"></a>
 
 Probably the most challenging aspect of responsive design is displaying media correctly on the page so that it responds to the screen's characteristics.  In this section, we'll look at how you can embed responsive videos and images on AMP pages.
 
@@ -114,7 +114,7 @@ In the following example, we want to display an embedded YouTube video that resp
 
 There are many types of videos that you can add to your AMP pages.  For details,  see the list of available [media components](../../../../documentation/components/index.html#media).
 
-### Displaying responsive images
+### Displaying responsive images <a name="displaying-responsive-images"></a>
 
 Images make up a large part of a web page (approximately [65% of the page's bytes](http://httparchive.org/interesting.php#bytesperpage)).  At minimum, your images should be visible on various screen sizes and orientations (i.e., the user doesn't have to scroll, pinch/zoom to see the entire image).  That's easily done in AMP via the  `"layout=responsive"` attribute (see [Include Images in AMP](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)).  In addition to the basic responsive image, you might want to serve multiple image resources to:
 
@@ -122,7 +122,7 @@ Images make up a large part of a web page (approximately [65% of the page's byte
 - [Change the art direction of an image](#changing-the-art-direction-of-an-image)
 - [Provide optimized image formats](#providing-optimized-images)
 
-#### Serving crisp images for the right resolution
+#### Serving crisp images for the right resolution <a name="serving-crisp-images-for-the-right-resolution"></a>
 
 For high-resolution screens (e.g., Retina display), you should provide images that look crisp and sharp; however, you don't want to use that same image on low-res devices because that'll cause unnecessary extra load time.  In non-AMP and AMP pages,  you can serve the correct image for the screen's pixel density by using `srcset` with the width descriptor ( `w` ).
 
@@ -150,7 +150,7 @@ In the following example we have several image files that are of the same aspect
             {{server_for_email}}/static/inline-examples/images/apple-600.jpg 600w,
             {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
             {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
-  sizes="(max-width: 400px) 100vw, 
+  sizes="(max-width: 400px) 100vw,
             (max-width: 900px) 75vw, 600px">
 </amp-img>
 ```
@@ -162,7 +162,7 @@ For example, say we have a device that has a viewport width of 412 px and a DPR 
 **READ ON –** To learn more using srcset and sizes in AMP, see the [Art direction with srcset, sizes & heights](art_direction.md) guide.
 [/tip]
 
-#### Changing the art direction of an image
+#### Changing the art direction of an image <a name="changing-the-art-direction-of-an-image"></a>
 
 Art direction refers to adapting an image's visual characteristics for certain breakpoints.  For example, instead of just scaling an image as the screen narrows, you might want to serve a cropped version of the image that narrows the focus of the image or you might want to serve completely different images at the different breakpoints.  In HTML, you can accomplish this by using the `picture` element.  In AMP, art direction can be achieved by using the `media` attribute.
 
@@ -175,7 +175,7 @@ In the following example, we have 3 different cropped images of a cat that we wa
 - 469 px or less, display `cat-small.jpg` (226 x 340 px)
 
 [tip type="note"]
-**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](control_layout.md#what-if-the-layout-attribute-isn’t-specified?).
+**NOTE –**  As we wanted the images to be fixed sizes (i.e., not skew), we didn't specify a layout value, which by default will be set to `layout=fixed` because we set the width and height. For more information, see ["What if the layout attribute isn’t specified?"](control_layout.md#what-if-the-layout-attribute-isnt-specified).
 [/tip]
 
 [example preview="top-frame" playground="true"]
@@ -202,7 +202,7 @@ In the following example, we have 3 different cropped images of a cat that we wa
 **READ ON –** To learn more about art direction in AMP, see the [Art direction with srcset, sizes & heights](art_direction.md) guide.
 [/tip]
 
-#### Providing optimized images
+#### Providing optimized images <a name="providing-optimized-images"></a>
 
 Delivering fast loading pages requires optimized images--in size, quality, and format.  Always reduce file sizes to the lowest acceptable quality level.  There are various tools that you can use to "crunch" images (e.g., [ImageAlph](http://pngmini.com/lossypng.html) or [TinyPNG](https://tinypng.com/)).  In terms of image formats,  some image formats provide better compression abilities that others (e.g., WebP and JPEG XR vs JPEG).  You'll want to provide the most optimized image for your user, as well as ensuring the image is supported by the user's browser (i.e., [not all browsers support all image formats](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)).
 
