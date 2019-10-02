@@ -135,6 +135,10 @@
           background: color('athens-gray');
           transition: transform 0.3s cubic-bezier(.25,.1,.25,1), box-shadow 0.3s cubic-bezier(.25,.1,.25,1);
 
+          @media (max-width: 400px) {
+            width: 100%;
+          }
+
           .#{atom('ico')} {
             width: 20px;
             height: 20px;
