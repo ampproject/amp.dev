@@ -568,7 +568,7 @@ L'elenco completo di tag univoci è noto ed è riportato di seguito:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Errori di stile e layout
+## Errori di stile e layout <a name="errori-di-stile-e-layout"></a>
 
 Prima di approfondire gli errori di stile e layout, è opportuno capire come funzionano [l'applicazione di stili](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) e il [layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) in AMP. Poiché le pagine AMP sono pagine HTML, l'applicazione di stili è molto simile a quella delle pagine HTML.
 Esistono però alcune limitazioni per garantire il rapido caricamento delle pagine; tali limitazioni vengono applicate dallo strumento di convalida AMP.

@@ -48,11 +48,11 @@ teaser:
   </tr>
 </table>
 
-## 概要
+## 概要 <a name="overview"></a>
 
 `amp-social-share` コンポーネントは、さまざまなソーシャル プラットフォーム プロバイダに対応するソーシャル共有ボタンを表示します。
 
-## 例
+## 例 <a name="examples"></a>
 
 **例: 基本的なソーシャル共有ボタン**
 
@@ -74,7 +74,7 @@ teaser:
 
 LinkedIn は事前設定済みプロバイダの 1 つであるため、`data-share-endpoint` 属性を指定する必要はありません。
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -97,7 +97,7 @@ LinkedIn は事前設定済みプロバイダの 1 つであるため、`data-sh
         </tr>
       </table>
 
-## 事前設定済みプロバイダ
+## 事前設定済みプロバイダ <a name="pre-configured-providers"></a>
 
 `amp-social-share` コンポーネントには、[さまざまな事前設定済みプロバイダ](0.1/amp-social-share-config.js)が用意されており、共有エンドポイントや一部のデフォルト パラメータがあらかじめ設定されています。
 
@@ -219,7 +219,7 @@ LinkedIn は事前設定済みプロバイダの 1 つであるため、`data-sh
     </tr>
   </table>
 
-## 未設定プロバイダ
+## 未設定プロバイダ <a name="non-configured-providers"></a>
 
 事前設定済みプロバイダ以外でも、`amp-social-share` コンポーネント内に追加の属性を指定することで、未設定プロバイダを使用することができます。
 
@@ -236,9 +236,9 @@ LinkedIn は事前設定済みプロバイダの 1 つであるため、`data-sh
 
 未設定プロバイダは事前に設定されていないため、各プロバイダに適したボタンの画像とスタイルを作成する必要があります。
 
-## スタイル
+## スタイル <a name="styles"></a>
 
-### デフォルト スタイル
+### デフォルト スタイル <a name="default-styles"></a>
 
 `amp-social-share` には、広く利用されているプロバイダ用の設定が、デフォルト値としてあらかじめ用意されています。事前設定済みプロバイダ用のボタンは、そのプロバイダの正式な色とロゴでスタイルが設定されています。デフォルトの幅は 60 ピクセル、デフォルトの高さは 44 ピクセルです。
 
@@ -246,7 +246,7 @@ LinkedIn は事前設定済みプロバイダの 1 つであるため、`data-sh
 AMP ページ内で使用できるスタイル設定済みのレスポンシブ共有リンクについては、[AMP Start](https://ampstart.com/components#links-and-sharing) をご覧ください。
 [/tip]
 
-### カスタム スタイル
+### カスタム スタイル <a name="custom-styles"></a>
 
 独自のスタイルを指定したい場合、次のように指定するだけで、事前定義済みのスタイル設定をオーバーライドできます。
 ```css
@@ -256,7 +256,7 @@ amp-social-share[type="twitter"] {
 }
 ```
 
-## 変数の置換
+## 変数の置換 <a name="variable-substitution"></a>
 
 `<amp-social-share>` 要素内で [AMP 変数グローバル置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を使用することができます。以下の例の場合、`TITLE` がページタイトルに置換され、`CANONICAL_URL` がドキュメントの正規 URL に置換されます。
 
@@ -266,6 +266,6 @@ amp-social-share[type="twitter"] {
 </amp-social-share>
 ```
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツール仕様の [amp-social-share ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii)をご覧ください。

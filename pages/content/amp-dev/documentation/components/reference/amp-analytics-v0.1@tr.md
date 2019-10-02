@@ -42,7 +42,7 @@ Bir AMP dokümanındaki analiz verilerini yakalar.
 </table>
 
 
-## Analizleri bir tedarikçi firmaya mı gönderiyorsunuz, yoksa şirket içi çözüm mü kullanıyorsunuz?
+## Analizleri bir tedarikçi firmaya mı gönderiyorsunuz, yoksa şirket içi çözüm mü kullanıyorsunuz? <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
 Sitenizde AMP Analytics'i kullanmaya başlamadan önce, kullanıcı etkileşimini analiz etmek için üçüncü taraf analiz araçlarını mı yoksa kendi şirket içi çözümünüzü mü kullanacağınıza karar vermeniz gerekir.
 
@@ -83,7 +83,7 @@ Aşağıdaki örnekte, analiz verileri, AMP ile entegre olmuş bir üçüncü ta
 </amp-analytics>
 ```
 
-### Şirket içinde veri gönderme
+### Şirket içinde veri gönderme <a name="sending-data-in-house"></a>
 
 Kullanıcı etkileşimini ölçmek için kendi şirket içi çözümünüz varsa AMP Analytics'i bu çözümle entegre etmek için yalnızca bir URL'ye ihtiyacınız olur. Bu URL, verileri göndereceğiniz URL'dir. Verileri, çeşitli URL'lere de gönderebilirsiniz. Örneğin, sayfa görüntüleme verilerini bir URL'ye ve sosyal etkileşim verilerini başka bir URL'ye gönderebilirsiniz.
 
@@ -126,7 +126,7 @@ Burada, sayfa görüntülemelerini izleyen basit bir örnek verilmiştir.  Bir s
 Bazı yaygın izleme kullanım alanları (ör. sayfa görüntülemeleri, sayfa tıklamaları, kaydırma vb.) için [Analytics: Kullanım Alanları](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md) konusuna bakın.
 [/tip]
 
-## Yapılandırma verilerini belirtme
+## Yapılandırma verilerini belirtme <a name="specifying-configuration-data"></a>
 
 `<amp-analytics>` öğesinde, neyin ölçüleceğine ve analiz verilerinin nereye gönderileceği ile ilgili ayrıntıları içeren bir JSON yapılandırma nesnesi belirtirsiniz.
 
@@ -158,7 +158,7 @@ Bazı yaygın izleme kullanım alanları (ör. sayfa görüntülemeleri, sayfa t
 }
 ```
 
-### Satır içi veya uzak yapılandırma
+### Satır içi veya uzak yapılandırma <a name="inline-or-remote-configuration"></a>
 
 Yapılandırma verileri satır içinde belirtilebilir veya `config` özelliğinde bir URL belirtilerek uzaktan getirilebilir. Buna ek olarak, popüler analiz tedarikçi firmaları için yerleşik yapılandırma, `type` özelliği kullanılarak seçilebilir.
 
@@ -167,7 +167,7 @@ Bu kaynakların birden fazlasına ait yapılandırma verileri kullanılırsa yap
 1. Uzak yapılandırma, satır içi yapılandırmadan önceliklidir ve
 1. Satır içi yapılandırma, tedarikçi firma yapılandırmasından önceliklidir.
 
-#### Uzak yapılandırma yükleme
+#### Uzak yapılandırma yükleme <a name="loading-remote-configuration"></a>
 
 Bir uzak yapılandırmayı yüklemek için `<amp-analytics>` öğesinde `config` özelliğini ve yapılandırma verilerinin URL'sini belirtin. Belirtilen URL, HTTPS şemasını kullanmalıdır. URL, [AMP URL değişkenlerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) içerebilir. Çerezlere erişmek için [`data-credentials`](#data-credentials) özelliğine bakın. Yanıt, [AMP CORS güvenlik yönergelerine](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) uygun olmalıdır.
 
@@ -177,7 +177,7 @@ Bu örnekte, belirtilen URL'den yapılandırma verilerini yüklemek için `confi
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-#### Yapılandırma Yeniden Yazıcı
+#### Yapılandırma Yeniden Yazıcı <a name="configuration-rewriter"></a>
 
 Yapılandırma yeniden yazıcı özelliği, analiz sağlayıcılarının sağlanan bir yapılandırmayı dinamik olarak yeniden yazmasına olanak tanımak amacıyla tasarlanmıştır. Bu, uzak yapılandırma özelliğine benzer ancak buna ek olarak, sunucuya yapılan istekte kullanıcı tarafından sağlanan yapılandırmayı içerir. Bu özellik, şu anda yalnızca analiz tedarikçi firması tarafından etkinleştirilebilir.
 
@@ -200,7 +200,7 @@ Ardından, çalışma zamanı, nihai yapılandırmayı belirlemek için sağlana
 1. Satır İçine Yerleştirilmiş Yapılandırma
 1. Tedarikçi firma tarafından tanımlanmış yapılandırma
 
-##### Değişken Grupları
+##### Değişken Grupları <a name="variable-groups"></a>
 
 Değişken Grupları, analiz sağlayıcılarının, kullanıcının kolayca etkinleştirebileceği önceden tanımlanmış bir değişken grubunu gruplamalarına olanak tanıyan bir özelliktir. Daha sonra, bu değişkenler çözümlenir ve belirtilen `configRewriter` uç noktasına gönderilir.
 
@@ -263,13 +263,13 @@ Bu örnekte, istek gövdesi aşağıdaki gibir görünür:
   }
 ```
 
-### Yapılandırma veri nesneleri
+### Yapılandırma veri nesneleri <a name="configuration-data-objects"></a>
 
-#### Talepler
+#### Talepler <a name="requests"></a>
 
 `requests` yapılandırma nesnesi, verilerin bir analiz platformuna aktarılması için kullanılan URL'lerin yanı sıra isteğin toplu işlem veya raporlama davranışını da belirtir. `request-name`, belirli bir etkinliğe (ör. `pageview`, `event` vb.) yanıt olarak hangi isteğin gönderilmesi gerektiğini belirtir. `request-value` bir https URL'si içeriyorsa değer, diğer isteklere veya değişkenlere başvurabilen yer tutucu jetonlar içerebilir. `request-value`, isteğe bağlı istek yapılandırmaları içeren bir nesne de olabilir.
 
-##### İstek yapılandırmaları
+##### İstek yapılandırmaları <a name="request-configs"></a>
 
 Nesneye sahip bir isteği tanımlamaya yönelik özellikler şunlardır:
 
@@ -294,7 +294,7 @@ Bu örnekteki tüm istekler geçerlidir.
 
 Bazı analiz sağlayıcıları, `type` özelliği aracılığıyla kullandığınız önceden sağlanan bir yapılandırmaya sahiptir. Bir analiz sağlayıcısı kullanıyorsanız istek bilgilerini eklemeniz gerekmeyebilir. İsteklerin yapılandırılmasının gerekip gerekmediğini ve nasıl yapılandırılacaklarını öğrenmek için tedarikçi firmanızın dokümanlarına bakın.
 
-##### Toplu işleme yapılandırmaları
+##### Toplu işleme yapılandırmaları <a name="batching-configs"></a>
 
 İstek pinglerinin sayısını azaltmak için istek yapılandırmasında toplu işleme davranışları belirtebilirsiniz. Aynı isteği kullanan `triggers` nesnesinin [`extraUrlParams`](#extra-url-params) öğeleri, isteğin `baseUrl` öğesine eklenir.
 
@@ -346,7 +346,7 @@ Aşağıdaki yapılandırma, 1 saniye sonra ilk istek pingini göndermesinin ard
 }
 ```
 
-#### Değişkenler
+#### Değişkenler <a name="vars"></a>
 
 `amp-analytics` bileşeni, isteklerde kullanılabilecek birçok temel değişken tanımlar. Bu değişkenlerin tamamını içeren bir listeyi [`amp-analytics` Değişkenler Kılavuzu](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)'nda bulabilirsiniz. Buna ek olarak, [AMP HTML Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) tarafından desteklenen tüm değişkenler de desteklenir.
 
@@ -360,7 +360,7 @@ Aşağıdaki yapılandırma, 1 saniye sonra ilk istek pingini göndermesinin ard
 }
 ```
 
-#### Ek URL Parametreleri
+#### Ek URL Parametreleri <a name="extra-url-params"></a>
 
 `extraUrlParams` yapılandırma nesnesi, isteğe dahil edilecek ek parametreleri belirtir. Varsayılan olarak, ek URL parametreleri her zamanki "&amp;foo=baz" kuralı aracılığıyla bir istek URL'sinin sorgu dizesine eklenir.
 
@@ -382,7 +382,7 @@ Bir isteğe `&a=1&b=2&c=3` parametrelerini ekleyecek bir örneği burada bulabil
 
 `useBody` etkinse ve istek, `beacon` veya `xhrpost` aktarım yöntemi aracılığıyla gönderilirse `extraUrlParamsReplaceMap` dize değişikliği, yalnızca `extraUrlParams` yapılandırmasının üst düzey anahtarlarında gerçekleştirilir.
 
-#### Tetikleyiciler
+#### Tetikleyiciler <a name="triggers"></a>
 
 `triggers` yapılandırma nesnesi, bir analiz isteğinin gönderilmesi gerektiği zamanı açıklar. `triggers` özelliği, tetikleyici adı ve tetikleyici yapılandırmasının anahtar/değer çiftini içerir. Tetikleyici adı, alfasayısal karakterlerden (a-zA-Z0-9) oluşan herhangi bir dize olabilir. Daha düşük önceliğe sahip bir yapılandırmadaki tetikleyiciler, daha yüksek önceliğe sahip bir yapılandırmada bulunan, aynı adlara sahip tetikleyiciler tarafından geçersiz kılınır.
 
@@ -421,7 +421,7 @@ Bir isteğe `&a=1&b=2&c=3` parametrelerini ekleyecek bir örneği burada bulabil
 },
 ```
 
-##### Öğe seçici
+##### Öğe seçici <a name="element-selector"></a>
 
 `click` ve `visible` gibi bazı tetikleyiciler, seçici özelliklerini kullanarak tek bir öğenin veya bir öğe koleksiyonunun belirtilmesine olanak tanır. Farklı tetikleyiciler, bir seçicinin eşleşen tüm öğelere mi yoksa ilk öğeye mi uygulandığını veya tüm öğelerin mi yoksa yalnızca AMP öğelerinin eşleştirilebileceği gibi seçili öğeler üzerinde farklı sınırlamalar ve yorumlar uygulayabilir. Daha fazla ayrıntı için ilgili her bir tetikleyicinin dokümanlarına bakın.
 
@@ -432,7 +432,7 @@ Seçici özellikleri şunlardır:
     - `:root` - doküman köküyle eşleşen özel bir seçici.
 - `selectionMethod` Belirtildiğinde, bu özellik şu iki değerden birini alabilir: `scope` veya `closest`. `scope`, `amp-analytics` etiketinin üst öğesinin içinde öğe seçimine izin verir. `closest`, belirtilen seçiciyi karşılayan `amp-analytics` etiketinin en yakın üst öğesini arar. Varsayılan değer, `scope` değeridir.
 
-##### Yerleştirme oluşturma başlangıç tetikleyicisi
+##### Yerleştirme oluşturma başlangıç tetikleyicisi <a name="embed-render-start-trigger"></a>
 
 Diğer dokümanları iframe'lerin (ör. reklamlar) içine yerleştiren AMP öğeleri, bir oluşturma başlangıç etkinliği (`"on": "render-start"`) bildirebilir. Bu etkinlik genellikle yerleştirilmiş dokümanın oluşturulmasına başlandığını onaylamak mümkün olur olmaz yayınlanır. Belirli bir AMP öğesinin bu etkinliği yayınlayıp yayınlamadığını öğrenmek için öğenin dokümanlarına bakın.
 
@@ -457,7 +457,7 @@ Oluşturma başlangıç etkinliği, dokümanın kendisi tarafından da yayınlan
 }
 ```
 
-##### İlk yükleme tetikleyicisi
+##### İlk yükleme tetikleyicisi <a name="initial-load-trigger"></a>
 
 İlk yükleme etkinliği (`"on": "ini-load"`), bir AMP öğesinin veya AMP dokümanının ilk içeriği yüklendiğinde tetiklenir.
 
@@ -489,7 +489,7 @@ Bir yerleştirme veya AMP öğesinin tetikleyicisi, öğeye işaret eden bir [`s
 }
 ```
 
-##### Sayfa ve öğe görünürlüğü tetikleyicisi
+##### Sayfa ve öğe görünürlüğü tetikleyicisi <a name="page-and-element-visibility-trigger"></a>
 
 Sayfa görünür hale geldiğinde bir isteği etkinleştirmek için sayfa görünürlüğü tetikleyicisini (`"on": "visible"`) kullanın. Bu tetikleyicinin etkinleşmesi, `visibilitySpec` kullanılarak yapılandırılabilir.
 
@@ -520,7 +520,7 @@ Seçicinin bir koleksiyonu değil, yalnızca tek bir öğeyi belirtmek için kul
 Öğe görünürlüğü tetikleyicisi, öğenin görünürlüğünü izlemeden önce `visibilitySpec` öğesindeki `waitFor` özelliğiyle belirtilen sinyali bekler. `waitFor` değeri belirtilmezse öğenin [`ini-load`](#initial-load-trigger) sinyalini bekler. Daha fazla ayrıntı için `waitFor` dokümanlarına bakın.
 `reportWhen` değeri belirtilirse tetikleyici, etkinliği göndermeden önce bu sinyali bekler. Bu, örneğin, sayfa kapatıldığında analiz etkinliklerini gönderme açısından yararlıdır.
 
-##### Hata tetikleyicisi
+##### Hata tetikleyicisi <a name="error-trigger"></a>
 
 Sayfanın yazarı veya sayfanın yayınlanmasında kullanılan yazılımla ilişkilendirilebilen bir hata oluştuğunda kullanıcı hatası etkinliği (`"on": "user-error"`) tetiklenir. Bu durum, bir AMP bileşeninin yanlış yapılandırmasını, hatalı yapılandırılmış reklamları veya başarısız onaylamaları içerir ancak bunlarla sınırlı değildir. Kullanıcı hataları, geliştirici konsolunda da bildirilir.
 
@@ -615,7 +615,7 @@ Yukarıdaki koşullara ek olarak, `visibilitySpec`, [burada](https://github.com/
 ```
 Tetikleyicilerin bir parçası olarak sağlanan değişkenlere ek olarak, [veri özelliği olarak ek değişkenler/değişken geçersiz kılmaları](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute) da belirtebilirsiniz. Bu veri özellikleri kullanılırsa [`seçici`](#element-selector) olarak belirtilen öğenin bir parçası olmaları gerekir.
 
-##### Tıklama tetikleyicisi
+##### Tıklama tetikleyicisi <a name="click-trigger"></a>
 
 Belirtilen bir öğe tıklandığında bir isteği etkinleştirmek için tıklama tetikleyicisini (`"on": "click"`) kullanın. Hangi öğelerin bu isteğin etkinleşmesine neden olacağını denetlemek için [`seçiciyi`](#element-selector) kullanın. Tetikleyici, belirtilen seçicinin eşleştirdiği tüm öğeler için tetiklenir.
 
@@ -638,7 +638,7 @@ Belirtilen bir öğe tıklandığında bir isteği etkinleştirmek için tıklam
 
 Tetikleyicilerin bir parçası olarak sağlanan değişkenlere ek olarak, [veri özelliği olarak ek değişkenler/değişken geçersiz kılmaları](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute) da belirtebilirsiniz. Bu veri özellikleri kullanılırsa `selector` olarak belirtilen öğenin bir parçası olmaları gerekir
 
-##### Kaydırma tetikleyicisi
+##### Kaydırma tetikleyicisi <a name="scroll-trigger"></a>
 
 Sayfa kaydırıldığında belirli koşullar altında bir isteği etkinleştirmek için kaydırma tetikleyicisini (`"on": "scroll"`) kullanın. Bu tetikleyici, bir isteğin gönderilmesini tetikleyen sınırları belirten [özel değişkenler](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction) sağlar. Bunun etkinleşeceği zamanı kontrol etmek için `scrollSpec` nesnesini kullanın:
 
@@ -657,7 +657,7 @@ Sayfa kaydırıldığında belirli koşullar altında bir isteği etkinleştirme
 }
 ```
 
-##### Zamanlayıcı tetikleyicisi
+##### Zamanlayıcı tetikleyicisi <a name="timer-trigger"></a>
 
 Bir isteğinde düzenli aralıklarla etkinleşmesi için zamanlayıcı tetikleyicisini (`"on": "timer"`) kullanın. Bunun etkinleşeceği zamanı denetlemek için `timerSpec` öğesini kullanın:
 
@@ -706,7 +706,7 @@ Kullanıcı etkinliklerinin kullandığı zamanları belirleyen bir zamanlayıc�
 
 İç içe yerleştirilmiş zamanlayıcı tetikleyicileri oluşturma hakkında ayrıntılar için [tetikleyiciler](#triggers) ile ilgili spesifikasyona bakın. Zamanlayıcıyı başlatmak veya durdurmak için bir zamanlayıcı tetikleyicisinin kullanılmasına izin verilmediğini unutmayın.
 
-##### Gizli tetikleyici
+##### Gizli tetikleyici <a name="hidden-trigger"></a>
 
 Sayfa gizlendiğinde bir isteği etkinleştirmek için gizli tetikleyiciyi (`"on": "hidden"`) kullanın.
 
@@ -739,15 +739,15 @@ Yukarıdaki yapılandırma şöyle çevrilir:
 Sayfa gizlendiğinde, #anim-id öğesi toplamda 3 saniyeden uzun süreyle görünür (görüntü alanının %20'sinden fazla) kaldıysa bir istek tetiklenir.
 </blockquote>
 
-##### Erişim tetikleyicileri
+##### Erişim tetikleyicileri <a name="access-triggers"></a>
 
 AMP Access sistemi, erişim akışında farklı durumlar için çok sayıda etkinlik yayınlar. Erişim tetikleyicileri (`"on": "access-*"`) hakkında ayrıntılı bilgi için [AMP Access ve Analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) konusuna bakın.
 
-#### Video analizi tetikleyicileri
+#### Video analizi tetikleyicileri <a name="video-analytics-triggers"></a>
 
 Video analizi, yayıncıların bir videonun yaşam döngüsü sırasında gerçekleşen farklı etkinlikleri izlemek için kullanabilecekleri çeşitli tetikleyiciler (`"on": "video-*"`) sağlar. [AMP Video Analizi](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) konusunda daha fazla ayrıntı bulabilirsiniz.
 
-#### Taşıma
+#### Taşıma <a name="transport"></a>
 
 `transport` yapılandırma nesnesi, bir isteğin nasıl gönderileceğini belirtir. Değer, hangi taşıma yöntemlerinin kabul edilebilir olduğunu belirten alanlara sahip bir nesnedir.
 
@@ -771,7 +771,7 @@ Aşağıdaki örnekte bir `iframe` URL'si belirtilmemiştir ve `beacon` ile `xhr
 
 Daha fazla bilgi edinmek için [iframe taşıma istemci API'sinin uygulandığı bu örneğe](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) ve [söz konusu iframe'i kullanan bu örnek sayfaya](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport.amp.html) bakın. Örnek, `amp-analytics` etiketini içeren [sahte bir reklam](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html) yükler. Sahte reklam içeriğinin, uyulması gereken bazı ek yapılandırma talimatları içerdiğini unutmayın.
 
-##### Ek URL Parametreleri için Gövdeyi Kullanma
+##### Ek URL Parametreleri için Gövdeyi Kullanma <a name="use-body-for-extra-url-params"></a>
 
 `useBody` yapılandırma seçeneği, `extraUrlParams` öğesinin URL kodlamalı sorgu parametreleri olarak URL'ye eklenmesi yerine POST istek gövdesine eklenip eklenmeyeceğini belirtir.
 
@@ -788,7 +788,7 @@ Daha fazla bilgi edinmek için [iframe taşıma istemci API'sinin uygulandığı
 }
 ```
 
-##### Yönlendirme Politikası
+##### Yönlendirme Politikası <a name="referrer-policy"></a>
 
 Yönlendirme politikası, `transport` yapılandırmasında `referrerPolicy` alanı olarak belirtilebilir. Şu anda yalnızca `no-referrer` değeri desteklenmektedir.
 Yönlendirme politikası yalnızca `image` taşıması için kullanılabilir. `referrerPolicy: no-referrer` belirtilirse `beacon` ve `xhrpost` taşımaları geçersiz kılınarak `false` değerine ayarlanır.
@@ -802,7 +802,7 @@ Yönlendirme politikası yalnızca `image` taşıması için kullanılabilir. `r
 }
 ```
 
-#### Bağlayıcılar
+#### Bağlayıcılar <a name="linkers"></a>
 
 `linkers` özelliği, alanlar arası kimlik senkronizasyonunu etkinleştirmek için kullanılır. `amp-analytics`, sayfada belirtilen giden bağlantılara URL parametresi olarak eklenecek bir “bağlayıcı dizesi” oluşturmak için bir [yapılandırma nesnesi](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format) kullanır. Bir kullanıcı bu bağlantılardan birini tıkladığında, hedef sayfa, kimlik senkronizasyonu gerçekleştirmek için URL parametresindeki bağlayıcı dizesini okur. Bu genellikle bir AMP proxy alanı ve yayıncı alanındaki kullanıcı oturumlarını birleştirmek için kullanılır.
 
@@ -810,17 +810,17 @@ Bağlayıcı yapılandırmanızı ayarlamayla ilgili ayrıntılar [Bağlayıcı 
 
 Bu parametreyi kullanmanız gerekirse bu parametrenin nasıl oluşturulduğuna ilişkin bilgiler [Bağlayıcı Kimliği Alma](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md) bölümünde gösterilmektedir.
 
-#### Çerezler
+#### Çerezler <a name="cookies"></a>
 
 `cookies` özelliği, doküman URL'sinden [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) ve [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) bilgilerini ayıklayarak çerezleri orijinal alana yazmayı destekler. AMP proxy'si uygulanan alandan bir yayıncı alanındaki AMP sayfalarına kimlik senkronizasyonu gerçekleştirmek için `linkers` özellikleriyle birlikte kullanılabilir.
 
 `cookies` yapılandırmasını ayarlamayla ilgili ayrıntıları [AMP Sayfalarında Bağlayıcı Parametreleri Alma](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages) bölümünde bulabilirsiniz.
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-analytics kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/validator-amp-analytics.protoascii) bakın.
 
-### `<amp-analytics>` için geçerli özellikler
+### `<amp-analytics>` için geçerli özellikler <a name="valid-attributes-for-"></a>
 
 Bunlar, `amp-analytics` bileşeninin geçerli özellikleridir:
 
@@ -852,6 +852,6 @@ Bu, belirtilen uzak bir URL'den bir yapılandırmayı yüklemek için kullanıla
 
 Değer sağlanırsa sayfa, belirtilen HTML öğesi kimliğine sahip bir [amp-user-notification](amp-user-notification.md) kullanıcı tarafından onaylanıncaya (kabul edilinceye) kadar analiz isteklerini işlemez. Bu, isteğe bağlı bir özelliktir.
 
-## AMP bileşenleri için analiz
+## AMP bileşenleri için analiz <a name="analytics-for-amp-components"></a>
 
 AMP bileşeni geliştiricileri, AMP Analytics'i kullanarak veri koleksiyonunu uygulayabilir. Daha fazla bilgi için lütfen [AMP bileşenleri için analizleri uygulama](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md) konusuna bakın

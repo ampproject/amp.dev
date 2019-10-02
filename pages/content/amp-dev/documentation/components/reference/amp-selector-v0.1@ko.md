@@ -45,7 +45,7 @@ teaser:
 </table>
 
 
-## 동작
+## 동작 <a name="behavior"></a>
 
 AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록을 표시하는 컨트롤입니다. 옵션의 콘텐츠는 텍스트에 국한되지 않습니다.
 
@@ -95,7 +95,7 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
 </amp-selector>
 ```
 
-## 선택 항목 지우기
+## 선택 항목 지우기 <a name="clearing-selections"></a>
 
 요소를 탭하거나 클릭할 때 선택 항목을 모두 지우려면 요소에서 [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) 작업 속성을 설정하고 `clear` 작업 방법으로 AMP 선택기 `id`를 지정합니다.
 
@@ -114,9 +114,9 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
 [AMP By Example](https://ampbyexample.com/components/amp-selector/)에서 라이브 데모를 참조하세요.
 [/tip]
 
-## 속성
+## 속성 <a name="attributes"></a>
 
-### `<amp-selector>`의 속성
+### `<amp-selector>`의 속성 <a name="attributes-on-"></a>
 
 <table>
   <tr>
@@ -133,7 +133,7 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
       </tr>
     </table>
 
-### `<amp-selector>` 옵션의 속성
+### `<amp-selector>` 옵션의 속성 <a name="attributes-on--options"></a>
 
 <table>
   <tr>
@@ -146,7 +146,7 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
   </tr>
 </table>
 
-## 이벤트
+## 이벤트 <a name="events"></a>
 
 이벤트에서 `on` 속성을 사용하여 다른 AMP 구성요소에서 작업을 트리거할 수 있습니다.
 예: `on="select: my-tab.show"`
@@ -170,6 +170,6 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
 
     </table>
 
-## 유효성 검사
+## 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사기 사양에서 [amp-selector 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii)을 참조하세요.

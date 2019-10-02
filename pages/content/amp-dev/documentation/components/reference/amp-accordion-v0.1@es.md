@@ -46,7 +46,7 @@ Permite a los usuarios echar un vistazo al esquema del contenido e ir directos a
 </table>
 
 
-## Comportamiento
+## Comportamiento <a name="behavior"></a>
 
 El componente `amp-accordion` permite mostrar secciones de contenido que se pueden ocultar y expandir. Cada uno de los elementos secundarios de `amp-accordion` se considera una sección del "acordeón". Cada uno de estos nodos debe ser una etiqueta `<section>`.
 
@@ -57,7 +57,7 @@ El componente `amp-accordion` permite mostrar secciones de contenido que se pued
 * Al tocar o hacer clic en el título de una sección, el contenido se expande o se oculta.
 * El estado (oculto o expandido) de cada sección del elemento `amp-accordion` se guardará para el nivel de sesión. Si no quieres que se mantenga, añade el atributo `disable-session-states` al elemento `amp-accordion`.
 
-#### Ejemplo: Mostrar un acordeón
+#### Ejemplo: Mostrar un acordeón <a name="example-displaying-an-accordion"></a>
 
 En este ejemplo, se muestran tres secciones; la tercera se expande cuando se carga la página.   Además, hemos añadido `disable-session-states` para que no se mantenga el estado expandido u oculto de las secciones.
 
@@ -86,7 +86,7 @@ En este ejemplo, se muestran tres secciones; la tercera se expande cuando se car
 Para ver más ejemplos del componente `amp-accordion`, visita [AMP By Example](https://ampbyexample.com/components/amp-accordion/).
 [/tip]
 
-### Eventos
+### Eventos <a name="events"></a>
 
 Los eventos que aparecen a continuación se activarán en las `section` de `accordion`.
 
@@ -101,7 +101,7 @@ Los eventos que aparecen a continuación se activarán en las `section` de `acco
   </tr>
 </table>
 
-### Acciones
+### Acciones <a name="actions"></a>
 
 <table>
   <tr>
@@ -122,7 +122,7 @@ Los eventos que aparecen a continuación se activarán en las `section` de `acco
   </tr>
 </table>
 
-#### Atributos
+#### Atributos <a name="attributes"></a>
 
 <table>
   <tr>
@@ -143,7 +143,7 @@ Los eventos que aparecen a continuación se activarán en las `section` de `acco
   </tr>
 </table>
 
-## Estilo
+## Estilo <a name="styling"></a>
 
 * Puedes utilizar el selector de elementos de `amp-accordion` para aplicarle los estilos que quieras.
 * Los elementos `amp-accordion` siempre tienen `display: block`.
@@ -153,6 +153,6 @@ Los eventos que aparecen a continuación se activarán en las `section` de `acco
 * Los márgenes de los elementos de título, contenido, `<amp-accordion>` y `<section>` están en 0 de forma predeterminada y se pueden definir mediante estilos personalizados.
 * Tanto el elemento de título como el de contenido tienen `position: relative`.
 
-## Validación
+## Validación <a name="validation"></a>
 
 Consulta las [reglas de amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) en la especificación de la herramienta de validación de AMP.

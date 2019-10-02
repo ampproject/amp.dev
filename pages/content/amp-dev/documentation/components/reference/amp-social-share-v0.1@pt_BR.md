@@ -49,11 +49,11 @@ Exibe um botão de compartilhamento social.
   </tr>
 </table>
 
-## Visão geral
+## Visão geral <a name="overview"></a>
 
 O componente `amp-social-share` exibe um botão de compartilhamento social para vários provedores de plataformas sociais.
 
-## Exemplos
+## Exemplos <a name="examples"></a>
 
 **Exemplo: botão de compartilhamento social básico**
 
@@ -75,7 +75,7 @@ Quando você quiser transmitir parâmetros para o endpoint de compartilhamento, 
 
 O LinkedIn é um dos provedores pré-configurados, então não é necessário fornecer o atributo `data-share-endpoint`.
 
-## Atributos
+## Atributos <a name="attributes"></a>
 
 <table>
   <tr>
@@ -99,7 +99,7 @@ O LinkedIn é um dos provedores pré-configurados, então não é necessário fo
         </tr>
       </table>
 
-## Provedores pré-configurados
+## Provedores pré-configurados <a name="pre-configured-providers"></a>
 
 O componente `amp-social-share` fornece [alguns provedores pré-configurados](0.1/amp-social-share-config.js) que identificam os respectivos endpoints de compartilhamento, bem como alguns parâmetros padrão.
 
@@ -221,7 +221,7 @@ O componente `amp-social-share` fornece [alguns provedores pré-configurados](0.
     </tr>
   </table>
 
-## Provedores não configurados
+## Provedores não configurados <a name="non-configured-providers"></a>
 
 Além dos provedores pré-configurados, é possível usar provedores não configurados especificando outros atributos no componente `amp-social-share`.
 
@@ -238,9 +238,9 @@ O exemplo a seguir cria um botão de compartilhamento no Facebook Messenger, def
 
 Como esses provedores não são pré-configurados, será necessário criar a imagem e os estilos de botão adequados para o provedor.
 
-## Estilos
+## Estilos <a name="styles"></a>
 
-### Estilos padrão
+### Estilos padrão <a name="default-styles"></a>
 
 Por padrão, o `amp-social-share` inclui alguns provedores pré-configurados mais usados. Os botões desses provedores são estilizados com a cor e o logotipo oficiais do provedor. A largura padrão é de 60 px, e a altura padrão é de 44 px.
 
@@ -248,7 +248,7 @@ Por padrão, o `amp-social-share` inclui alguns provedores pré-configurados mai
 acesse o [AMP Start](https://ampstart.com/components#links-and-sharing) para ver links de compartilhamento responsivos e pré-estilizados que você pode usar nas suas páginas AMP.
 [/tip]
 
-### Estilos personalizados
+### Estilos personalizados <a name="custom-styles"></a>
 
 Às vezes, você quer aplicar seu próprio estilo. Você pode simplesmente modificar os estilos fornecidos, como os seguintes:
 ```css
@@ -258,7 +258,7 @@ amp-social-share[type="twitter"] {
 }
 ```
 
-## Substituição de variável
+## Substituição de variável <a name="variable-substitution"></a>
 
 Você pode usar a [substituição global de variáveis AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) (link em inglês) no elemento `<amp-social-share>`. No exemplo abaixo, `TITLE` é substituído pelo título da página e `CANONICAL_URL` pelo URL canônico do documento.
 
@@ -268,6 +268,6 @@ Você pode usar a [substituição global de variáveis AMP](https://github.com/a
 </amp-social-share>
 ```
 
-## Validação
+## Validação <a name="validation"></a>
 
 Consulte as [regras do amp-social-share](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii) (link em inglês) na especificação do validador de AMP.

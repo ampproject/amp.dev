@@ -16,7 +16,7 @@ Gunakan markup metadata [LiveBlogPosting](http://schema.org/LiveBlogPosting) aga
 
 ## Ringkasan tentang `amp-live-list`
 
-Komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata] (live_blog.md#metadata) pada halaman.
+Komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) secara teratur memeriksa apa ada konten baru di dokumen host dan memberikan info terbaru ke browser pengguna saat item baru tersedia. Ini berarti bahwa setiap kali postingan blog baru perlu ditambahkan, dokumen host harus diperbarui oleh CMS untuk menyertakan item baru di bagian isi dan [metadata](../../../documentation/examples/documentation/Live_Blog.html#metadata) pada halaman.
 
 Kode awal untuk blog dapat terlihat seperti berikut:
 
@@ -45,7 +45,7 @@ Semua postingan blog dalam [`amp-live-list`](../../../documentation/components/r
 
 Sekarang Anda telah memahami komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md). Selanjutnya, ayo kita cari tahu cara menerapkan blog langsung yang lebih kompleks. Baca terus untuk mempelajari lebih lanjut cara menerapkan paginasi dan cara kerja deep linking.
 
-### Paginasi
+### Paginasi <a name="pagination"></a>
 
 Blog yang panjang dapat menggunakan paginasi untuk meningkatkan performa dengan membatasi jumlah item blog yang akan ditampilkan pada halaman. Untuk menerapkan paginasi, di komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), tambahkan `<div pagination></div>`, lalu masukkan markup apa pun yang diperlukan untuk paginasi (misalnya, nomor halaman atau link ke halaman berikutnya dan sebelumnya).
 
@@ -76,7 +76,7 @@ Setelah ukuran postingan blog melampaui jumlah maksimum item yang ditetapkan ole
 
 Anda dapat menambahkan atribut yang dinonaktifkan ke halaman yang dihosting untuk mencegah mekanisme pemeriksaan. Dalam contoh blog langsung, kami melakukan perilaku ini dalam template sisi server; ketika yang diminta bukan halaman pertama, kami menambahkan atribut yang dinonaktifkan ke komponen amp-live-list.
 
-### Deeplinking
+### Deeplinking <a name="deeplinking"></a>
 
 Saat Anda mempublikasikan entri blog, penting untuk menempatkan deep link ke postingan untuk mengaktifkan fitur seperti berbagi. Dengan [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), deep linking dapat dilakukan dengan hanya menggunakan` id` dari item blog. Misalnya, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) mengizinkan Anda membuka postingan blog secara langsung dengan ID `post3`.
 

@@ -45,7 +45,7 @@ teaser:
   </tr>
 </table>
 
-## 示例
+## 示例 <a name="example"></a>
 
 采用 responsive 布局时，示例中的宽度和高度应针对 16:9 的宽高比视频生成正确的布局。
 
@@ -71,7 +71,7 @@ teaser:
   </amp-youtube>
   [/sourcecode]
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -125,6 +125,6 @@ teaser:
         </tr>
       </table>
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-youtube 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii)。

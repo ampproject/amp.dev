@@ -52,7 +52,7 @@ Permite a los editores integrar fácilmente la plataforma de micropagos [LaterPa
   </tr>
 </table>
 
-## Comportamiento
+## Comportamiento <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net) es una plataforma de micropagos que permite a los usuarios comprar cualquier contenido online con solo un par de clics y obtener acceso inmediato sin necesidad de pagar por adelantado, de proporcionar datos personales ni de registrarse. Los usuarios solo pagan una vez que sus compras en sitios web alcanzan un total de 5 $ o 5 €. Los proveedores de contenido pueden vender artículos individuales o pases por tiempo limitado, lo cual da acceso ilimitado o con limitación de tiempo al usuario.
 
@@ -74,7 +74,7 @@ Se puede aplicar un estilo a la lista generada y presentarla de acuerdo con las 
 
 Este componente también utiliza el [marcado de acceso al contenido](amp-access.md#access-content-markup) para mostrar y ocultar el contenido.
 
-## Configuración
+## Configuración <a name="configuration"></a>
 
 La configuración es similar a la de AMP Access, pero no se necesita autorización, pingback ni enlaces de inicio de sesión.
 
@@ -146,7 +146,7 @@ Se pueden asignar los siguientes valores al objeto de configuración `laterpay`:
         </tr>
       </table>
 
-## Usar el marcado de acceso al contenido y mostrar la lista de compra
+## Usar el marcado de acceso al contenido y mostrar la lista de compra <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 El marcado de acceso al contenido se debe utilizar de la misma forma que con AMP Access.
 
@@ -169,7 +169,7 @@ Asegúrate de añadir la clase `amp-access-laterpay` si quieres utilizar el esti
 
 ```
 
-## Estilo
+## Estilo <a name="styling"></a>
 
 Se aplican varias clases a algunos de los elementos del marcado generado. Se puede hacer referencia de forma inequívoca a los elementos sin clases mediante selectores de elementos de CSS.
 
@@ -213,7 +213,7 @@ La estructura que se ha creado para el cuadro de diálogo es la siguiente:
 
 ```
 
-## Localización
+## Localización <a name="localization"></a>
 
 El editor puede definir en la interfaz de LaterPay Connector el texto que se muestra en el cuadro de diálogo de las opciones de compra.
 
@@ -274,13 +274,13 @@ Las siguientes claves de mensaje se pueden traducir o personalizar, pero ten en 
   </tr>
 </table>
 
-## Analíticas
+## Analíticas <a name="analytics"></a>
 
 Dado que `amp-access-laterpay` está basado en `amp-access`, admite todos los [eventos de analíticas](amp-access.md#integration-with-amp-analytics) que envía `amp-access`.
 
 Si quieres ver un ejemplo más completo de cómo se haría en la práctica, puedes consultar los ejemplos de [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/), que están configurados para enviar dichos eventos de analíticas.
 
-##Utilizar AMP Access LaterPay junto con AMP Access
+## Utilizar AMP Access LaterPay junto con AMP Access <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 Si ya tienes un sistema de suscripción y quieres utilizar LaterPay solo para las ventas de artículos individuales, puedes incluir ambos métodos de venta en la misma página utilizando AMP Access y AMP Access LaterPay.
 
@@ -339,13 +339,13 @@ Por otro lado, el marcado de acceso al contenido puede quedar así:
 
 Encontrarás un ejemplo más completo en [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html).
 
-## Documentación relacionada
+## Documentación relacionada <a name="related-documentation"></a>
 
 * [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: How we do MicroPayments](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html): similar a AMP Access LaterPay, pero para páginas que no son AMP.
 
-## Validación
+## Validación <a name="validation"></a>
 
 Consulta las [reglas de amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) en la especificación de la herramienta de validación de AMP.

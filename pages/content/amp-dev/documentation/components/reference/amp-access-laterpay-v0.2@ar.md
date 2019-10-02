@@ -53,7 +53,7 @@ limitations under the License.
 
 
 
-## السلوك
+## السلوك <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net) عبارة عن منصة للدفعات الصغيرة تتيح للمستخدِمين شراء أي محتوى على الإنترنت بنقرتين فقط والحصول على إمكانية الوصول الفوري إلى المحتوى - بدون تسجيل مسبق أو تقديم بيانات شخصية أو إجراء دفع. ولا يدفع المستخدِمون إلا بعد أن يبلغ مجموع مشترياتهم قيمة 5 دولارات أو 5 يورو على جميع مواقع الويب. يمكن لموفري المحتوى بيع عناصر فردية أو بطاقات محددة الوقت، مما يسمح بالوصول إلى المحتوى بسعر موحد أو لوقت محدد.
 
@@ -75,7 +75,7 @@ limitations under the License.
 
 يعتمد هذا المكّوِن أيضًا على [ترميز المحتوى المتوفر بحق الوصول](amp-access.md#access-content-markup) لإظهار المحتوى وإخفائه.
 
-## التهيئة
+## التهيئة <a name="configuration"></a>
 
 تشبه التهيئة AMP Access، لكن لا يلزمها التفويض ولا الرد على فحص الاتصال ولا روابط تسجيل الدخول.
 
@@ -150,7 +150,7 @@ limitations under the License.
   </tr>
 </table>
 
-## استخدام ترميز المحتوى المتوفر بحق الوصول وعرض قائمة الشراء
+## استخدام ترميز المحتوى المتوفر بحق الوصول وعرض قائمة الشراء <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 يجب استخدام "ترميز المحتوى المتوفر بحق الوصول" بالطريقة نفسها المستخدَمة مع AMP Access.
 
@@ -173,7 +173,7 @@ limitations under the License.
 
 ```
 
-## التصميم
+## التصميم <a name="styling"></a>
 
 يتم تطبيق فئات متعددة على بعض العناصر في الترميز الذي تم إنشاؤه. يمكن إحالة العناصر التي لا تحتوي على فئات بشكل لا لبس فيه من خلال محددات عناصر CSS.
 
@@ -217,7 +217,7 @@ limitations under the License.
 
 ```
 
-## الأقلمة
+## الأقلمة <a name="localization"></a>
 
 يحدد الناشر في LaterPay Connector UI النص المعروض في مربع حوار خيارات الشراء.
 
@@ -278,13 +278,13 @@ limitations under the License.
   </tr>
 </table>
 
-## التحليلات
+## التحليلات <a name="analytics"></a>
 
 بالنظر إلى استناد `amp-access-laterpay` إلى `amp-access`، فإنه يتيح جميع [أحداث التحليلات](amp-access.md#integration-with-amp-analytics) التي أرسلها `amp-access`.
 
 تمت تهيئة جميع الأمثلة على [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) لإرسال أحداث التحليلات لذا يمكنك الاطّلاع عليها للحصول على أمثلة أكثر اكتمالًا عن شكل هذا عمليًا.
 
-## استخدام AMP Access LaterPay مع AMP Access
+## استخدام AMP Access LaterPay مع AMP Access <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 إذا كان لديك نظام اشتراك حالي وتعتزم استخدام LaterPay فقط لمبيعات المقالات الفردية، من الممكن أن تتعايش طريقتا البيع على نفس الصفحة، باستخدام كل من AMP Access وAMP Access LaterPay معًا.
 
@@ -343,13 +343,13 @@ limitations under the License.
 
 يمكنك الحصول على مثال أكثر اكتمالاً على [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html)
 
-## مستندات ذات صلة
+## مستندات ذات صلة <a name="related-documentation"></a>
 
 * [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: كيف تجري الدفعات الصغيرة؟](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - يشبه AMP Access LaterPay لكنه يُستخدم للصفحات غير AMP.
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) في مواصفات مدقق AMP.

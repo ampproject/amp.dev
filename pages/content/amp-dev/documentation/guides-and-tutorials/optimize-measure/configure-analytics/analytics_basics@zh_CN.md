@@ -4,7 +4,7 @@ $title: 分析：基础知识
 
 从这里开始了解 AMP 分析的相关基础知识。
 
-## 使用 amp-pixel 还是 amp-analytics？
+## 使用 amp-pixel 还是 amp-analytics？ <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)。两个组件都会将分析数据发送到定义的端点。
 
@@ -65,7 +65,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 当用户开始浏览网页（使用触发器关键字 `visible` 指定）时，事件将触发，并发送 `pageview` 请求。触发器属性决定了 pageview 请求何时触发。详细了解[请求和触发器](deep_dive_analytics.md#requests-triggers--transports)。
 
-## 变量替换
+## 变量替换 <a name="variable-substitution"></a>
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换] (https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其 title 以及[客户端 ID](analytics_basics.md#user-identification)一起发送到相应网址：
 
@@ -109,7 +109,7 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 重要提示: 变量替换非常灵活；您可以在不同位置定义相同的变量，并且 AMP 运行期间系统会按相应优先顺序解析值（请参阅[变量替换顺序](deep_dive_analytics.md#variable-substitution-ordering)）。
 
-## 用户识别
+## 用户识别 <a name="user-identification"></a>
 
 网站使用 Cookie 在浏览器中存储与用户相关的信息。Cookie 可用于判断用户之前是否访问过某个网站。在 AMP 中，网页可通过发布商的网站加载，也可通过缓存（例如 Google AMP 缓存）加载。发布商的网站和缓存很可能具有不同的网域。为了安全起见，浏览器可能（并且通常）会限制访问其他网域的 Cookie（另请参阅[跨来源跟踪用户](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)）。
 

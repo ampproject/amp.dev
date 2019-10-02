@@ -4,7 +4,7 @@ $title: "Analtik: Dasar-Dasar"
 
 Mulailah dari sini untuk mempelajari dasar-dasar terkait analitik AMP.
 
-## Menggunakan amp-pixel atau amp-analytics?
+## Menggunakan amp-pixel atau amp-analytics? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP menyediakan 2 komponen untuk memenuhi kebutuhan analitik dan pengukuran Anda: [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 dan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Kedua opsi akan mengirim data analitik ke titik akhir yang telah ditentukan.
@@ -71,7 +71,7 @@ Pada contoh di atas, kita telah menentukan permintaan yang dinamakan pageview se
 
 Saat halaman terlihat (seperti yang telah ditetapkan oleh penggunaan kata kunci pemicu `visible`), peristiwa akan dipicu dan `permintaan` pageview akan dikirim. Atribut pemicu menentukan waktu permintaan pageview akan diproses. Pelajari lebih lanjut tentang [permintaan dan pemicu](deep_dive_analytics.md#requests-triggers--transports).
 
-## Penggantian variabel
+## Penggantian variabel <a name="variable-substitution"></a>
 
 Kedua komponen [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 dan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
@@ -118,7 +118,7 @@ Pada contoh di atas, variabel, `account` dan `title` ditentukan dalam konfiguras
 
 Penting: Penggantian variabel bersifat fleksibel; Anda dapat memiliki variabel yang sama yang ditentukan di lokasi yang berbeda, dan waktu proses AMP akan menguraikan nilai sesuai dengan urutan yang lebih tinggi (lihat [Urutan penggantian variabel](deep_dive_analytics.md#variable-substitution-ordering)).
 
-## Identifikasi pengguna
+## Identifikasi pengguna <a name="user-identification"></a>
 
 Situs menggunakan cookie untuk menyimpan informasi tertentu kepada pengguna di browser. Cookie dapat digunakan untuk memberikan informasi bahwa pengguna sebelumnya sudah pernah mengunjungi situs. Di AMP, halaman dapat ditayangkan dari situs penayang atau cache (seperti Cache AMP Google). Situs penayang dan cache kemungkinan memiliki domain yang berbeda. Demi alasan keamanan, browser dapat (dan sering kali akan) membatasi akses cookie domain lain (lihat juga [Melacak pengguna di berbagai domain asal](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
 

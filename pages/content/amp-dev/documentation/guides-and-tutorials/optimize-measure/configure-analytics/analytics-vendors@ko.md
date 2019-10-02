@@ -43,7 +43,7 @@ $title: 애널리틱스 공급업체
 
 <hr>
 
-## 공급업체
+## 공급업체 <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -135,13 +135,13 @@ Eulerian Technologies Analytics 지원을 추가합니다. Eulerian에서 위임
 
 Gemius Audience/Prism 분석 지원을 추가합니다. Gemius 제공 `prefix` 및 `identifier` 변수도 지정해야 합니다. 선택사항인 `extraparams` (key1=value1|key2=value2) 변수를 지정할 수도 있습니다. 자세한 내용은 [gemius.com](https://www.gemius.com)을 참고하세요.
 
-Google 애드워즈
+### Google 애드워즈
 
 타입 속성값: `googleadwords`
 
 Google AdWords 전환추적 및 리마케팅 지원을 추가합니다. 자세한 내용은 AdWords 고객센터의 [전환추적](https://support.google.com/adwords/answer/1722054?hl=ko) 및 [리마케팅](https://support.google.com/adwords/answer/2453998?hl=ko)을 참고하세요. 두 태그는 서로 독립적으로 사용할 수 있습니다.
 
-Google 애널리틱스
+### Google 애널리틱스 <a name="google-analytics"></a>
 
 타입 속성값: `googleanalytics`
 

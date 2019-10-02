@@ -143,7 +143,7 @@ AMP는 동일한 변수의 여러 가지 용도에 대한 유효성을 검사하
 
 [/tip]
 
-## Requests, triggers 및 transports
+## Requests, triggers 및 transports <a name="requests-triggers--transports"></a>
 
 `requests` 속성은 ‘전송되는 데이터’
 (예: `pageviews`, `events`) 및
@@ -159,7 +159,7 @@ AMP는 동일한 변수의 여러 가지 용도에 대한 유효성을 검사하
 ([`amp-analytics` 참조](../../../../documentation/components/reference/amp-analytics.md)에서
 구성을 자세히 알아볼 수 있습니다.)
 
-### 전송되는 데이터: requests 속성
+### 전송되는 데이터: requests 속성 <a name="what-data-gets-sent-requests-attribute"></a>
 
 `request-name`은 트리거 구성에 사용되어
 특정 이벤트에 대한 응답으로 전송되어야 하는 요청을 지정합니다.
@@ -326,7 +326,7 @@ AMP는 다음 트리거 구성을 지원합니다.
 }
 ```
 
-## 변수 대체 순위
+## 변수 대체 순위 <a name="variable-substitution-ordering"></a>
 
 AMP는 우선순위에 따라 변수 값을 게재합니다.
 

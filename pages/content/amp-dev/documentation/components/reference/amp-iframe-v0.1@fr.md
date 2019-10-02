@@ -44,7 +44,7 @@ Affiche un iFrame.
   </tr>
 </table>
 
-# Comportement
+# Comportement <a name="behavior"></a>
 
 Il existe plusieurs différences notables entre le composant `amp-iframe` et les cadres iFrame "vanille" qui sont conçus dans une optique de sécurité accrue et pour éviter les fichiers AMP dominés par un seul iFrame :
 
@@ -73,7 +73,7 @@ Rendu effectué sous la forme suivante :
 Pour regarder d'autres démos du composant `amp-iframe`, rendez-vous sur [AMP By Example](https://ampbyexample.com/components/amp-iframe/).
 [/tip]
 
-# Utilisation du composant amp-iframe pour les annonces
+# Utilisation du composant amp-iframe pour les annonces <a name="usage-of-amp-iframe-for-advertising"></a>
 
 Le composant `amp-iframe` **ne doit pas** être utilisé principalement dans le but de diffuser de la publicité. Vous pouvez cependant utiliser `amp-iframe` pour afficher des vidéos qui comprennent de la publicité. Cette règle AMP peut être appliquée en n'affichant pas les cadres iFrame respectifs.
 
@@ -86,7 +86,7 @@ Il y a plusieurs raisons à cela :
 * `amp-iframe` ne dispose pas d'un mécanisme de redimensionnement entièrement contrôlé par l'iFrame.
 * Les informations de visibilité ne sont peut-être pas disponibles pour le composant `amp-iframe`.
 
-# Attributs
+# Attributs <a name="attributes"></a>
 
 <table>
   <tr>
@@ -100,7 +100,7 @@ Il y a plusieurs raisons à cela :
         Si <code>frameborder</code> n'est pas spécifié, il est défini par défaut sur <code>0</code>.</td>
       </tr>
       <tr>
-        <td width="40%"><strong>sandbox</strong></td>
+        <td width="40%"><strong>sandbox</strong><a name="sandbox"></a></td>
         <td>L'attribut <code>sandbox</code> est toujours défini sur les cadres iFrame créés par <code>amp-iframe</code>. Par défaut, la valeur est vide, ce qui signifie qu'ils ont atteint la valeur de bac à sable maximale. En définissant des valeurs <code>sandbox</code>, il est possible de réduire le nombre d'envois dans le bac à sable de l'iFrame. Toutes les valeurs acceptées par les navigateurs sont autorisées. Par exemple, <code>sandbox="allow-scripts"</code> permet à l'iFrame d'exécuter JavaScript, tandis que <code>sandbox="allow-scripts allow-same-origin"</code> lui permet d'exécuter JavaScript, d'effectuer des requêtes XHR non CORS, et de lire et d'écrire des cookies.
           <br><br>
             Si vous encadrez dans un iFrame un document qui n'a pas été spécialement conçu pour le bac à sable, vous devrez probablement ajouter <code>allow-scripts allow-same-origin</code> à l'attribut <code>sandbox</code>. Il se peut également que vous deviez autoriser des fonctionnalités supplémentaires.
@@ -115,7 +115,7 @@ Il y a plusieurs raisons à cela :
               </tr>
             </table>
 
-# Cadre iFrame avec espace réservé
+# Cadre iFrame avec espace réservé <a name="iframe-with-placeholder"></a>
 
 Il est possible de faire en sorte qu'un composant `amp-iframe` apparaisse en haut d'un document lorsqu'un élément ```placeholder` lui est associé, comme illustré dans l'exemple ci-dessous.
 
@@ -142,7 +142,7 @@ window.parent.postMessage({
   }, '*');
 ```
 
-# Redimensionnement des cadres iFrame
+# Redimensionnement des cadres iFrame <a name="iframe-resizing"></a>
 
 Une mise en page statique doit être définie pour un composant `amp-iframe`, comme c'est le cas pour tout autre élément AMP. Cependant, il est possible de redimensionner un composant `amp-iframe` au moment de l'exécution. Pour ce faire :
 
@@ -184,7 +184,7 @@ Voici quelques facteurs qui ont une incidence sur la vitesse d'exécution du red
 * La demande de redimensionnement porte-t-elle sur un iFrame actif ?
 * La demande de redimensionnement concerne-t-elle un iFrame situé en dessous ou au-dessus de la fenêtre d'affichage ?
 
-# Visibilité des cadres iFrame
+# Visibilité des cadres iFrame <a name="iframe-viewability"></a>
 
 Les cadres iFrame peuvent envoyer un message `send-intersections` à leurs éléments parents pour commencer à recevoir des [enregistrements de modification](https://developer.mozilla.org/fr/docs/Web/API/IntersectionObserverEntry) de type IntersectionObserver de l'intersection de l'iFrame avec la fenêtre d'affichage parent.
 
@@ -220,7 +220,7 @@ window.addEventListener('message', function(event) {
 
 Le parent envoie le message d'intersection à l'iFrame lorsque ce dernier est déplacé dans ou hors de la fenêtre d'affichage (ou s'il est partiellement visible), lorsque l'utilisateur fait défiler l'iFrame ou lorsqu'il le redimensionne.
 
-# Cadres iFrame de suivi et d'analyse
+# Cadres iFrame de suivi et d'analyse <a name="trackinganalytics-iframes"></a>
 
 Nous recommandons vivement d'utiliser [`amp-analytics`](amp-analytics.md) à des fins d'analyse, car il s'agit d'une solution beaucoup plus robuste, complète et efficace. Cet outil peut, en outre, être configuré pour un large éventail de fournisseurs de solutions d'analyse.
 
@@ -228,7 +228,7 @@ AMP n'autorise qu'un seul iFrame par page, utilisé à des fins d'analyse et de 
 
 Les cadres iFrame sont identifiés en tant que cadres de suivi et d'analyse s'ils ne semblent pas avoir d'utilité directe pour l'utilisateur ; être invisibles ou de petite taille, par exemple.
 
-# Conseil : Utiliser des composants AMP existants sur amp-iframe
+# Conseil : Utiliser des composants AMP existants sur amp-iframe <a name="guideline-use-existing-amp-components-over-amp-iframe"></a>
 
 Le composant `amp-iframe` doit être considéré comme une solution de remplacement si l'expérience utilisateur requise n'est pas possible autrement dans AMP ; c'est-à-dire, s'il n'existe pas encore de [composant AMP](../../../documentation/components/index.html) pour le cas d'utilisation. Cela s'explique par le fait que l'utilisation d'un composant AMP adapté à un cas d'utilisation spécifique présente de nombreux avantages. En voici un aperçu :
 
@@ -237,6 +237,6 @@ Le composant `amp-iframe` doit être considéré comme une solution de remplacem
 * Redimensionnement intégré. Dans ce cas, un contenu d'iFrame de taille imprévisible peut être présenté plus souvent à l'utilisateur comme un élément natif de la page, plutôt que dans un cadre que l'utilisateur peut faire défiler.
 * D'autres fonctionnalités peuvent être intégrées ; par exemple, la lecture automatique pour les lecteurs vidéo.
 
-# Validation
+# Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-iframe](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii) dans les spécifications du validateur AMP.

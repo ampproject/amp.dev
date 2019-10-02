@@ -32,7 +32,7 @@ AMP 페이지에 다음을 추가합니다.
 [AMP 페이지용 Google 검색 가이드라인](https://support.google.com/webmasters/answer/6340290)에서 Google이 AMP 페이지를 확인하는 방법을 자세히 알아보세요.
 [/tip]
 
-## 추가 메타데이터를 통해 타사 플랫폼으로 통합
+## 추가 메타데이터를 통해 타사 플랫폼으로 통합 <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 타사 사이트에서 AMP 페이지를 삽입하거나 AMP 페이지로 링크를 할 경우 단순한 AMP 페이지 여부 이상의 정보를 필요로 합니다. 플랫폼에서 페이지에 대해 던질 수 있는 질문은 '뉴스 기사인가요?', '동영상인가요?', '스크린샷과 짧은 설명이 있나요?' 등이 있습니다.
 

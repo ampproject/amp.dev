@@ -48,7 +48,7 @@ limitations under the License.
 </table>
 
 
-## السُلوك
+## السُلوك <a name="behavior"></a>
 
 يتيح لك المكوِّن `amp-accordion` عرض أقسام محتوى قابلة للتصغير والتوسيع. يُعتبر كل عنصر من العناصر الثانوية المباشرة للمكّوِن `amp-accordion` قسمًا من accordion. يجب أن تكون كل عقدة من هذه العقد علامة `<section>`.
 
@@ -59,7 +59,7 @@ limitations under the License.
 * يؤدي النقر على عنوان القسم إلى توسيع القسم أو تصغيره.
 * سيتم الاحتفاظ بحالة التصغير/التوسيع لكل قسم في العنصر `amp-accordion` على مستوى الجلسة. لإيقاف الحفاظ على هذه الحالة، أضِف السمة `disable-session-states` إلى العنصر `amp-accordion`.
 
-#### مثال: عرض accordion
+#### مثال: عرض accordion <a name="example-displaying-an-accordion"></a>
 
 في هذا المثال، نعرض ثلاثة أقسام حيث يتم توسيع القسم الثالث عند تحميل الصفحة.  وتم أيضًا إيقاف الحفاظ على حالة التصغير/التوسيع من خلال تعيين `disable-session-states`.
 
@@ -90,7 +90,7 @@ limitations under the License.
 
 [/tip]
 
-### الأحداث
+### الأحداث <a name="events"></a>
 
 سيتم تشغيل الأحداث التالية في `section` من `accordion`.
 
@@ -105,7 +105,7 @@ limitations under the License.
   </tr>
 </table>
 
-### الإجراءات
+### الإجراءات <a name="actions"></a>
 
 <table>
   <tr>
@@ -126,7 +126,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### السمات
+#### السمات <a name="attributes"></a>
 
 <table>
   <tr>
@@ -147,7 +147,7 @@ limitations under the License.
   </tr>
 </table>
 
-## التصميم
+## التصميم <a name="styling"></a>
 
 * يمكنك استخدام محدد العنصر `amp-accordion` لتصميمه بحرية.
 * عناصر `amp-accordion` هي دائمًا `display: block`.
@@ -157,6 +157,6 @@ limitations under the License.
 * يتم تعيين هوامش عناصر `<amp-accordion>` و`<section>` والعنوان والمحتوى على 0 ويمكن إلغاء هذا في التصميمات المخصصة.
 * كل من عناصر العنوان والمحتوى `position: relative`.
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) في مواصفات مدقق AMP.

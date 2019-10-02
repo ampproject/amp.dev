@@ -4,7 +4,7 @@ $title: "アナリティクス: 基本"
 
 このページで AMP アナリティクスの基本を学びましょう。
 
-## amp-pixel または amp-analytics を使う
+## amp-pixel または amp-analytics を使う <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP にはアナリティクスや測定に役立つ 2 つのコンポーネント、[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) と [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)があります。どちらを使用してもアナリティクスのデータは指定したエンドポイントに送信されます。
 
@@ -67,7 +67,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 (トリガー キーワード `visible` を使って指定したとおり）ページが表示されると、イベントが発生して `pageview` リクエストが送信されます。ページビュー リクエストが送信されるタイミングは、トリガー属性で定義します。詳しくは、[リクエストとトリガー](deep_dive_analytics.md#requests-triggers--transports)をご覧ください。
 
-## 置換変数
+## 置換変数 <a name="variable-substitution"></a>
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) と [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) コンポーネントは、どちらも標準的な URL の変数置換をすべて許可します（[AMP HTML の変数置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください）。次の例では、ページビュー リクエストを、現在の AMP ドキュメントの正規化された URL とそのタイトル（title）、[クライアント ID](analytics_basics.md#user-identification) とともに URL に送信します。
 
@@ -110,7 +110,7 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 重要: 変数置換は柔軟性が高いため、同じ変数を別の場所で使用できます。この場合、AMP ランタイムは先行順に値を解析します（[変数置換の順序](deep_dive_analytics.md#variable-substitution-ordering)をご覧ください）。
 
-## ユーザー認証
+## ユーザー認証 <a name="user-identification"></a>
 
 ウェブサイトは Cookie を使用してユーザー固有の情報をブラウザに保存します。Cookie によって、ユーザーが以前そのサイトにアクセスしたことがあるかどうかがわかります。AMP では、ページはサイト運営者のウェブサイト、またはキャッシュ（Google AMP Cache など）のどちらかによって提供されます。サイト運営者のウェブサイトとキャッシュのドメインは、たいてい異なります。ブラウザはセキュリティ上の理由により、別ドメインの Cookie へのアクセスを制限することが可能で、多くの場合、実際に制限されています（[ドメインをまたぐユーザー トラッキング](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)もご覧ください）。
 

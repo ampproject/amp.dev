@@ -64,9 +64,9 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 </html>
 [/sourcecode]
 
-The `amp-cta-type` tag must include one of the [available options](story_ads_best_practices.md#call-to-action-button-text-enum) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers.
+The `amp-cta-type` tag must include one of the [available options](#call-to-action-button-text-enum) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers.
 
-##Call to action button text enum
+## Call to action button text enum <a name="call-to-action-button-text-enum"></a>
 The call to action button must be configured from a predefined set of choices:
 
 * `APPLY_NOW`: "Apply Now"
@@ -259,7 +259,7 @@ There are various tools you can use to encode videos and adjust the quality of t
 
 Ensure the size of your HLS segments are typically no more than 10 seconds in duration.
 
-##Sponsored Story
+## Sponsored Story <a name="sponsored-story"></a>
 A Sponsored Story exists as a URL on the web, enabling the drive of user traffic to a Sponsored Story from the call to action button on an AMP Story ad. A Sponsored Story is an AMP Story, but with focus on an immersive and expansive ad experience.
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='CTA button directs to a Sponsored Story', caption='CTA button directs to a Sponsored Story', align='' ) }}

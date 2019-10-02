@@ -58,13 +58,13 @@ $title: 지원되는 CSS
   </tbody>
 </table>
 
-## 맞춤 글꼴은 허용됨
+## 맞춤 글꼴은 허용됨 <a name="the-custom-fonts-exception"></a>
 
 AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 글꼴은 예외입니다.
 
 읽어보기: [AMP의 맞춤 글꼴](custom_fonts.md) 에 관해 자세히 알아보세요.
 
-## CSS 전처리기 사용하기
+## CSS 전처리기 사용하기 <a name="using-css-preprocessors"></a>
 
 전처리기로 생성된 출력은 다른 웹페이지에서와 마찬가지로 AMP에서도 제대로 작동합니다. 예를 들어, [amp.dev](https://amp.dev/) 사이트는 [Sass](http://sass-lang.com/) 를 사용합니다. ([Grow](http://grow.io/) 를 통해 [amp.dev](https://amp.dev/) 를 구성하는 정적 AMP 페이지가 생성됩니다.)
 

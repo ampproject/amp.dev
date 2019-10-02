@@ -43,7 +43,7 @@ Yapılandırmadan önce bu verileri tanımlamanız gerekmektedir.
 Dikkate alınması gereken ana veri noktaları:
 
 * Yalnızca sayfa görünümlerini mi, yoksa ek kullanıcı katılım desenlerini mi izleyeceksiniz
-(ayrıca bkz. [amp-piksel ya da amp-analitik](analytics_basics.md#amp-piksel-veya-amp-analitik-kullanıyor-musunuz?))?
+(ayrıca bkz. [amp-piksel ya da amp-analitik](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
 * Kullanıcılarınız, içeriğiniz,
-cihazınız veya tarayıcınız hakkında ne tür veriler toplayacaksınız (ayrıca bkz. [Değişken değiştirme](analytics_basics.md#değişken-değiştirme))?
-* Kullanıcılarınızı nasıl tanımlayacaksınız (ayrıca bkz. [Kullanıcı tanımlama](analytics_basics.md#kullanıcı-tanımlama))?
+cihazınız veya tarayıcınız hakkında ne tür veriler toplayacaksınız (ayrıca bkz. [Değişken değiştirme](analytics_basics.md#variable-substitution))?
+* Kullanıcılarınızı nasıl tanımlayacaksınız (ayrıca bkz. [Kullanıcı tanımlama](analytics_basics.md#user-identification))?

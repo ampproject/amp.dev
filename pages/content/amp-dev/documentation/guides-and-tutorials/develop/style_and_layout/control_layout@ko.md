@@ -35,7 +35,7 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 
 [/tip]
 
-## 레이아웃 속성
+## 레이아웃 속성 <a name="the-layout-attribute"></a>
 
 `layout` 속성을 사용하면 요소가 화면에 렌더링되어야 하는 방식을
 요소별로 쉽게 제어할 수 있습니다. CSS만으로도 작업 대부분을 할 수 있지만
@@ -103,7 +103,7 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 
 [/tip]
 
-### 너비와 높이가 정의되지 않은 경우에는 어떻게 하나요?
+### 너비와 높이가 정의되지 않은 경우에는 어떻게 하나요? <a name="what-if-width-and-height-are-undefined"></a>
 
 `width` 또는 `height`가 지정되지 않은 일부 경우에
 AMP 런타임이 다음과 같이 기본값을 설정할 수 있습니다.
@@ -111,7 +111,7 @@ AMP 런타임이 다음과 같이 기본값을 설정할 수 있습니다.
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): 너비와 높이 모두 기본값을 0으로 설정합니다.
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): 기본 너비와 높이 모두 브라우저를 통해 추정합니다.
 
-### <code>layout</code> 속성이 지정되지 않은 경우에는 어떻게 하나요?
+### <code>layout</code> 속성이 지정되지 않은 경우에는 어떻게 하나요? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 <code>layout</code> 속성이 지정되지 않으면 AMP에서 적절한 값을
 추정하거나 짐작합니다.
@@ -159,7 +159,7 @@ AMP 런타임이 다음과 같이 기본값을 설정할 수 있습니다.
 
 [/tip]
 
-### 요소 미디어 쿼리
+### 요소 미디어 쿼리 <a name="element-media-queries"></a>
 
 AMP에서 사용할 수 있는 또 다른 반응형 디자인 기능은 `media` 속성입니다.
 이 속성은 모든 AMP 요소에 사용할 수 있습니다.

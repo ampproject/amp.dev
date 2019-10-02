@@ -44,7 +44,7 @@ Bir iframe görüntüler.
   </tr>
 </table>
 
-# Davranış
+# Davranış <a name="behavior"></a>
 
 `amp-iframe` öğesinin, vanilla iframe'e göre kendisini daha güvenli hale getirmek ve tek bir iframe tarafından yönetilen AMP dosyalarından kaçınmak için tasarlanmış bazı önemli farklılıkları vardır:
 
@@ -73,7 +73,7 @@ Bir iframe görüntüler.
 Daha fazla `amp-iframe` demosu için [Örneklerle AMP](https://ampbyexample.com/components/amp-iframe/) sitesini ziyaret edin.
 [/tip]
 
-# amp-iframe öğesinin reklamcılık için kullanımı
+# amp-iframe öğesinin reklamcılık için kullanımı <a name="usage-of-amp-iframe-for-advertising"></a>
 
 `amp-iframe`, reklam görüntülemenin birincil amacı için **kullanılmamalıdır**. `amp-iframe`, reklamların bir parçası olan videoların görüntülenmesi amacıyla kullanılabilir. Bu AMP politikası, ilgili iframe'lerin oluşturulmamasıyla uygulanabilir.
 
@@ -86,7 +86,7 @@ Bu politikanın gerekçileri şunlardır:
 * `amp-iframe`, iframe tarafından tam olarak kontrol edilen yeniden boyutlandırma mekanizmasına sahip değildir.
 * Görüntülenebilirlik bilgileri `amp-iframe` tarafından kullanılamaz.
 
-# Özellikler
+# Özellikler <a name="attributes"></a>
 
 <table>
   <tr>
@@ -100,7 +100,7 @@ Bu politikanın gerekçileri şunlardır:
         <code>frameborder</code> belirtilmezse varsayılan olarak <code>0</code> değerine ayarlanır.</td>
       </tr>
       <tr>
-        <td width="40%"><strong>sandbox</strong></td>
+        <td width="40%"><strong>sandbox</strong><a name="sandbox"></a></td>
         <td><code>amp-iframe</code> tarafından oluşturulan iframe'lerde <code>sandbox</code> özelliği her zaman tanımlı olur. Varsayılan olarak değer boştur; diğer bir deyişle, "maksimum korumalı alan uygulanmış"tır. " <code>sandbox</code> değerlerini ayarlayarak iframe'e daha az korumalı alan uygulanmasını sağlayabilirsiniz. Tarayıcılar tarafından desteklenen tüm değerlere izin verilir. Örneğin <code>sandbox="allow-scripts"</code> değerinin ayarlanması, iframe'in JavaScript'i çalıştırmasına veya <code>sandbox="allow-scripts allow-same-origin"</code> değeri, iframe'in JavaScript çalıştırmasına, CORS olmayan XHR'ler yapmasına ve çerezleri okumasına/yazmasına olanak tanır.
           <br><br>
             Özel olarak korumalı alan oluşturma düşünülerek oluşturulmamış bir dokümanı iframe içine yerleştiriyorsanız büyük olasılıkla <code>sandbox</code> özelliğine <code>allow-scripts allow-same-origin</code> değerini eklemeniz gerekir ve ek özelliklere izin vermeniz gerekebilir.
@@ -115,7 +115,7 @@ Bu politikanın gerekçileri şunlardır:
               </tr>
             </table>
 
-# Yer tutucu içeren iframe
+# Yer tutucu içeren iframe <a name="iframe-with-placeholder"></a>
 
 `amp-iframe`, aşağıdaki örnekte gösterildiği gibi bir `placeholder` öğesi içerdiğinde, `amp-iframe` öğesinin dokümanın üst kısmında görünmesi mümkündür.
 
@@ -142,7 +142,7 @@ window.parent.postMessage({
   }, '*');
 ```
 
-# iframe'i yeniden boyutlandırma
+# iframe'i yeniden boyutlandırma <a name="iframe-resizing"></a>
 
 `amp-iframe` öğesinin, diğer AMP öğelerinde olduğu gibi tanımlı statik bir düzeni olmalıdır. Bununla birlikte, çalışma zamanında bir `amp-iframe` öğesini yeniden boyutlandırmak mümkündür. Bunu yapmak için:
 
@@ -184,7 +184,7 @@ Yeniden boyutlandırmanın ne kadar hızlı yürütüleceğini etkileyen bazı f
 * Yeniden boyutlandırmanın şu anda etkin olan bir iframe için istenip istenmediği.
 * Yeniden boyutlandırmanın görüntü alanının altında veya üstünde bulunan bir iframe için istenip istenmediği.
 
-# iframe görüntülenebilirliği
+# iframe görüntülenebilirliği <a name="iframe-viewability"></a>
 
 iframe'ler, iframe'in üst görüntü alanıyla kesişiminin IntersectionObserver stil [değişiklik kayıtlarını](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) almaya başlaması için üst öğelerine bir `send-intersections` mesajı gönderebilir.
 
@@ -220,7 +220,7 @@ window.addEventListener('message', function(event) {
 
 Kesişim mesajı, iframe kaydırıldığında veya yeniden boyutlandırıldığında görüntü alanının içine veya dışına taşındığında (veya kısmen göründüğünde) iframe'e üst öğe tarafından gönderilir.
 
-# İzleme/analiz iframe'leri
+# İzleme/analiz iframe'leri <a name="trackinganalytics-iframes"></a>
 
 Analiz yapmayı amaçladığınızda [`amp-analytics`](amp-analytics.md) öğesini kullanmanızı önemle tavsiye ederiz. Bu öğe, çok çeşitli analiz tedarikçi firması için yapılandırılabilen çok daha güçlü, eksiksiz ve etkili bir çözümdür.
 
@@ -228,7 +228,7 @@ AMP, her sayfada analiz ve izleme amacıyla yalnızca tek bir iframe'in kullanı
 
 iframe'ler, görünmez veya küçük olmaları gibi kullanıcıya yönelik doğrudan bir amaca hizmet etmiyorlarsa izleme/analiz iframe'leri olarak tanımlanır.
 
-# Yönerge: amp-iframe üzerinde mevcut AMP bileşenlerini kullanma
+# Yönerge: amp-iframe üzerinde mevcut AMP bileşenlerini kullanma <a name="guideline-use-existing-amp-components-over-amp-iframe"></a>
 
 Gerekli kullanıcı deneyimi AMP'deki diğer araçlarla mümkün değilse yani kullanım alanı için halihazırda mevcut bir [AMP bileşeni](../../../documentation/components/index.html) yoksa `amp-iframe` bileşeni, bir yedek olarak kabul edilmelidir. Bunun nedeni, belirli bir kullanım alanı için uyarlanmış bir AMP bileşenini kullanmanın birçok yararının olmasıdır. Örneğin:
 
@@ -237,6 +237,6 @@ Gerekli kullanıcı deneyimi AMP'deki diğer araçlarla mümkün değilse yani k
 * Yerleşik yeniden boyutlandırma. Bu, öngörülemeyen boyuta sahip iframe içeriğinin kullanıcıya, kaydırılabilir bir çerçeve yerine sayfanın kendi içindeymiş gibi görünebileceği anlamına gelir
 * Başka ek özellikler de oluşturulabilir (örneğin, video oynatıcılar için otomatik oynatma)
 
-# Doğrulama
+# Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonunda [amp-iframe kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii) bakın.

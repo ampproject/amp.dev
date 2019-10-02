@@ -17,7 +17,7 @@ $title: 与 AMP 集成以投放展示广告
 1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md)（即，如果您尚未创建用于投放传统 HTML 广告的实现，则需要创建一个）。
 2. [进行快速获取集成以投放 AMPHTML 广告](#creating-a-fast-fetch-integration)。
 
-## 创建 `amp-ad`
+## 创建 `amp-ad` <a name="creating-an-amp-ad"></a>
 
 作为广告服务商，您支持的发布商会导入您提供的 JavaScript 库，并会在其网站上添加各种“广告代码段”，这些代码段要依赖该 JavaScript 库来获取并呈现这些广告。AMP 不允许发布商执行任意 JavaScript，因此您需要向 AMP 开放源代码贡献代码，以允许 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 标记从您的广告服务器请求广告。
 
@@ -40,7 +40,7 @@ $title: 与 AMP 集成以投放展示广告
 
 有关进行 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 集成的说明，请参阅[将广告网络集成到 AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md)。
 
-## 进行快速获取集成
+## 进行快速获取集成 <a name="creating-a-fast-fetch-integration"></a>
 
 [快速获取](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)是一种 AMP 机制，可将广告请求与广告响应分隔开来，从而在网页生命周期早期发出广告请求，且仅在用户有可能查看广告时呈现广告。与传统 HTML 广告相比，快速获取会优先处理经过验证的 AMPHTML 广告。在快速获取过程中，如果某个广告验证失败，则该广告会被封装在一个跨网域 iframe 中，以与 AMP 文档的剩余部分分隔开。反之，通过验证的 AMPHTML 广告会被直接写入网页中。快速获取会处理 AMP 广告和非 AMP 广告；无需针对验证失败的广告发出额外的广告请求。
 

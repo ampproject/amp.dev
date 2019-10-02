@@ -38,7 +38,7 @@ $title: amp-layout
   </tr>
 </table>
 
-## Visão geral
+## Visão geral <a name="overview"></a>
 
 O componente `amp-layout` permite aplicar a qualquer elemento layouts responsivos com base na proporção. O componente `amp-layout` funciona de maneira semelhante ao atributo [layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) em componentes AMP existentes, mas aceita qualquer marcação HTML como filha. Todos os outros layouts compatíveis funcionam com `amp-layout` (por exemplo, fixed-height, fixed etc.).
 
@@ -55,10 +55,10 @@ Este exemplo usa o `amp-layout` para criar um contêiner responsivo em torno de 
   </amp-layout>
 ```
 
-## Atributos
+## Atributos <a name="attributes"></a>
 
 Este elemento inclui [atributos comuns](../../../documentation/guides-and-tutorials/learn/common_attributes.md) estendidos a componentes de AMP.
 
-## Validação
+## Validação <a name="validation"></a>
 
 Consulte as [regras de amp-layout](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (link em inglês) nas especificações do validador de AMP.

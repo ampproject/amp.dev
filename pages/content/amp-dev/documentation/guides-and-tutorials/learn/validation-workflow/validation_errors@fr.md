@@ -568,7 +568,7 @@ Voici la liste complète des balises uniques :
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Erreurs de style et de mise en page
+## Erreurs de style et de mise en page <a name="erreurs-de-style-et-de-mise-en-page"></a>
 
 Avant de différencier les erreurs de style et de mise en page, il est important de comprendre comment le [style](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) et la [mise en page](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) fonctionnent dans AMP. Étant donné que les pages AMP sont des pages HTML, les styles ressemblent beaucoup à ceux de n'importe quelle page HTML.
 Il existe toutefois certaines restrictions visant à assurer un chargement rapide des pages, et le validateur AMP vise à les faire respecter.

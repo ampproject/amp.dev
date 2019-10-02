@@ -4,7 +4,7 @@ $title: "Analytics: основы"
 
 Ознакомьтесь с основами аналитики AMP.
 
-## Что использовать: amp-pixel или amp-analytics?
+## Что использовать: amp-pixel или amp-analytics? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP предоставляет два компонента для удовлетворения потребностей в анализе и измерениях:
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) и
@@ -117,7 +117,7 @@ AMP предоставляет два компонента для удовлет
 Атрибут триггера определяет условие отправки запроса pageview.
 Ознакомьтесь с дополнительной информацией о [запросах и триггерах](deep_dive_analytics.md).
 
-## Подстановка переменной
+## Подстановка переменной <a name="variable-substitution"></a>
 
 Оба компонента, [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) и
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md),
@@ -126,7 +126,7 @@ AMP предоставляет два компонента для удовлет
 В следующем примере
 запрос просмотра страницы отправляется на URL-адрес
 вместе с каноническим URL-адресом текущего документа AMP, его названием и
-[идентификатором клиента](analytics_basics.md#идентификация-пользователей):
+[идентификатором клиента](analytics_basics.md#user-identification):
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -189,7 +189,7 @@ AMP предоставляет два компонента для удовлет
 а AMP выполнит синтаксический анализ этих значений по их приоритетности
 (см. [Порядок подстановки переменных](deep_dive_analytics.md).
 
-## Идентификация пользователей
+## Идентификация пользователей <a name="user-identification"></a>
 
 Для хранения в браузере информации, связанной с пользователем, веб-сайты используют файлы cookie.
 С помощью этих файлов можно узнать о предыдущих посещениях сайта пользователем.

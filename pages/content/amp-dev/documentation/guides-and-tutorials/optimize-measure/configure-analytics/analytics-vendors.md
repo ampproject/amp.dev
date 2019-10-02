@@ -43,7 +43,7 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 
 <hr>
 
-## Vendors
+## Vendors <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -148,7 +148,7 @@ Type attribute value: `googleadwords`
 
 Adds support for Google Ads conversion tracking and remarketing. See more details in the Google Ads help center for [conversion tracking](https://support.google.com/adwords/answer/1722054?hl=en) and [remarketing](https://support.google.com/adwords/answer/2453998?hl=en). Both tags can be used independent of each other.
 
-### Google Analytics
+### Google Analytics <a name="google-analytics"></a>
 
 Type attribute value: `googleanalytics`
 

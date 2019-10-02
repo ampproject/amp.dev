@@ -50,11 +50,11 @@ Bir sosyal paylaşım düğmesi görüntüler.
   </tr>
 </table>
 
-## Genel Bakış
+## Genel Bakış <a name="overview"></a>
 
 `amp-social-share` bileşeni, çeşitli sosyal platform sağlayıcıları için bir sosyal paylaşım düğmesi görüntüler.
 
-## Örnekler
+## Örnekler <a name="examples"></a>
 
 **Örnek: Temel sosyal paylaşım düğmesi**
 
@@ -76,7 +76,7 @@ Parametreleri paylaşım uç noktasına geçirmek istediğinizde, paylaşım uç
 
 Linkedin önceden yapılandırılmış sağlayıcılardan biridir; dolayısıyla, `data-share-endpoint` özelliğini sağlamanız gerekmez.
 
-## Özellikler
+## Özellikler <a name="attributes"></a>
 
 <table>
   <tr>
@@ -100,7 +100,7 @@ Linkedin önceden yapılandırılmış sağlayıcılardan biridir; dolayısıyla
         </tr>
       </table>
 
-## Önceden yapılandırılmış sağlayıcılar
+## Önceden yapılandırılmış sağlayıcılar <a name="pre-configured-providers"></a>
 
 `amp-social-share` bileşeni, bazı varsayılan parametrelerin yanı sıra kendi paylaşım uç noktalarını bilen [bazı önceden yapılandırılmış sağlayıcılar](0.1/amp-social-share-config.js) sunar.
 
@@ -222,7 +222,7 @@ Linkedin önceden yapılandırılmış sağlayıcılardan biridir; dolayısıyla
     </tr>
   </table>
 
-## Yapılandırılmamış sağlayıcılar
+## Yapılandırılmamış sağlayıcılar <a name="non-configured-providers"></a>
 
 Önceden yapılandırılmış sağlayıcılara ek olarak, `amp-social-share` bileşeninde ek özellikler belirterek yapılandırılmamış sağlayıcıları da kullanabilirsiniz.
 
@@ -239,9 +239,9 @@ Aşağıdaki örnekte, `data-share-endpoint` özelliğinin Facebook Messenger ö
 
 Bu sağlayıcılar önceden yapılandırılmadığından, sağlayıcı için uygun düğme resmini ve stillerini oluşturmanız gerekir.
 
-## Stiller
+## Stiller <a name="styles"></a>
 
-### Varsayılan Stiller
+### Varsayılan Stiller <a name="default-styles"></a>
 
 Varsayılan olarak, `amp-social-share` bileşeni bazı popüler önceden yapılandırılmış sağlayıcıları içerir. Bu sağlayıcıların düğmeleri, sağlayıcının resmi rengi ve logosuyla şekillendirilmiştir. Varsayılan genişlik 60 piksel ve varsayılan yükseklik 44 pikseldir.
 
@@ -249,7 +249,7 @@ Varsayılan olarak, `amp-social-share` bileşeni bazı popüler önceden yapıla
 AMP sayfalarınızda kullanabileceğiniz duyarlı, önceden şekillendirilmiş paylaşım bağlantıları için [AMP Start](https://ampstart.com/components#links-and-sharing) sayfasını ziyaret edin.
 [/tip]
 
-### Özel Stiller
+### Özel Stiller <a name="custom-styles"></a>
 
 Bazen kendi stilinizi sağlamak istersiniz. Bunun için sağlanan stilleri aşağıda gösterilen şekilde geçersiz kılabilirsiniz:
 ```css
@@ -259,7 +259,7 @@ amp-social-share[type="twitter"] {
 }
 ```
 
-## Değişken Değişikliği
+## Değişken Değişikliği <a name="variable-substitution"></a>
 
 `<amp-social-share>` öğesinde [genel AMP değişkeni değişikliklerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) kullanabilirsiniz. Aşağıdaki örnekte, `TITLE` değişkeni, doküman başlığı ve `CANONICAL_URL` değişkeni, dokümanın standart URL'si ile değiştirilmiştir.
 
@@ -269,6 +269,6 @@ amp-social-share[type="twitter"] {
 </amp-social-share>
 ```
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-social-share kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii) bakın.

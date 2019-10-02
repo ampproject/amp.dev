@@ -40,15 +40,15 @@ limitations under the License.
 </table>
 
 
-## 为什么使用 AddThis？
+## 为什么使用 AddThis？ <a name="why-addthis"></a>
 
 `amp-addthis` 组件可提供美观、简洁的分享按钮，让网站访问者可以轻松地将内容分享到 200 多个社交渠道，包括 Messenger、WhatsApp、Facebook、Twitter 和 Pinterest 等。
 
 AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户）的信赖，能够以 60 多种语言在全球范围内分享内容。
 
-## 分享按钮
+## 分享按钮 <a name="share-buttons"></a>
 
-### 悬浮
+### 悬浮 <a name="floating"></a>
 
 此类按钮放置在网页的侧面、顶部或底部，随着读者滚动网页而移动。这是一种很好的方式，既能促进分享，又不会造成太多干扰。
 
@@ -68,7 +68,7 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
 </amp-addthis>
 ```
 
-### 内嵌
+### 内嵌 <a name="inline"></a>
 
 将分享按钮集成到您的内容中，以便实现无缝分享体验。
 
@@ -87,7 +87,7 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
 </amp-addthis>
 ```
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -124,7 +124,7 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
     </tr>
   </table>
 
-## 实现文档
+## 实现文档 <a name="implementation-documentation"></a>
 
 1. 如果您还没有 AddThis 帐号，则需要前往 [https://www.addthis.com/register](https://www.addthis.com/register) 创建一个。创建 AddThis 帐号完全免费。在创建帐号后，您可以访问我们的整套网站工具，还可以获取深度分析报告，从而更好地了解您网站的社交流量情况。
 1. 转到[信息中心](https://addthis.com/dashboard)，然后自定义您的分享按钮（AMP 目前仅支持悬浮和内嵌分享按钮）。
@@ -136,11 +136,11 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
 如需了解分步说明，请观看我们的 [YouTube 视频](https://www.youtube.com/watch?v=BSkuAB4er2o)：
 <amp-youtube width="480" height="270" data-videoid="BSkuAB4er2o" layout="responsive"></amp-youtube>
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-addthis 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii)。
 
-## 隐私权政策
+## 隐私权政策 <a name="privacy"></a>
 
 [http://www.addthis.com/privacy/privacy-policy/](http://www.addthis.com/privacy/privacy-policy/)
 
@@ -158,6 +158,6 @@ AddThis 数据可能包含以下内容：
 
 在适用法律要求的范围内，AddThis 数据将被视为个人信息。根据《AddThis 服务条款》，发布商必须从最终用户处征得所有必要的同意和授权；在向 Oracle 提供从最终用户处收集的 AddThis 数据时，必须提供所有必要的通知。
 
-## 支持
+## 支持 <a name="support"></a>
 
 如果您对于在 AMP 上实现 AddThis 有任何疑问或需要任何帮助，请在[此处](https://www.addthis.com/support/)提交工单或发送电子邮件至 [help@addthis.com](mailto%3ahelp@addthis.com)，与我们优秀的支持团队联系。

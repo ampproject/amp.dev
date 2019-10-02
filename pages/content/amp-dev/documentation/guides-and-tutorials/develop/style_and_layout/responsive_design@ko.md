@@ -8,11 +8,11 @@ $title: 반응형 AMP 페이지 만들기
 
 이 가이드에서는 AMP에서 필수 반응형 요소를 간편하게 구현하는 방법을 설명합니다.
 
-- [표시 영역 제어](#표시-영역-제어)
-- [반응형 레이아웃 만들기](#반응형-레이아웃-만들기)
-- [미디어 조정](#페이지에-맞게-미디어-조정)
+- [표시 영역 제어](#controlling-the-viewport)
+- [반응형 레이아웃 만들기](#creating-a-responsive-layout)
+- [미디어 조정](#scaling-media-for-the-page)
 
-## 표시 영역 제어
+## 표시 영역 제어 <a name="controlling-the-viewport"></a>
 
 콘텐츠가 모든 기기의 브라우저 창에 맞게 조정될 수 있도록 웹페이지를 최적화하려면 `meta` 표시 영역 요소를 지정해야 합니다. 표시 영역 요소는 웹페이지의 표시 영역 비율과 크기를 조정하는 방법을 브라우저에 알려줍니다.
 
@@ -24,9 +24,9 @@ $title: 반응형 AMP 페이지 만들기
 
 이 설정은 반응형 사이트에 사용하는 일반적인 표시 영역 설정입니다. 올바른 AMP 페이지를 위해 반드시 `initial-scale=1`로 지정해야 하는 것은 아니지만 페이지가 처음 로드될 때 확대/축소 수준이 1이 되도록 이 설정을 유지하는 것이 좋습니다.
 
-## 반응형 레이아웃 만들기
+## 반응형 레이아웃 만들기 <a name="creating-a-responsive-layout"></a>
 
-반응형 디자인에서는 CSS [`@media`](https://developer.mozilla.org/docs/Web/CSS/@media) 쿼리를 사용하여 페이지의 콘텐츠를 변경하지 않고도 다양한 화면 크기에 맞게 웹페이지의 스타일을 조정할 수 있습니다.  AMP에서 동일한 CSS `@media` 쿼리를 계속 사용할 수 있습니다. 또한 요소의 `media` 속성을 지정하여 AMP 요소를 더욱 세밀하게 제어할 수 있습니다. 이 기능은 미디어 쿼리에 따라 요소를 표시하거나 숨겨야 할 때 특히 유용합니다. `media` 속성을 사용하는 예를 보려면 [이미지의 아트 디렉션 변경](#이미지의-아트-디렉션-변경) 섹션을 참조하세요.
+반응형 디자인에서는 CSS [`@media`](https://developer.mozilla.org/docs/Web/CSS/@media) 쿼리를 사용하여 페이지의 콘텐츠를 변경하지 않고도 다양한 화면 크기에 맞게 웹페이지의 스타일을 조정할 수 있습니다.  AMP에서 동일한 CSS `@media` 쿼리를 계속 사용할 수 있습니다. 또한 요소의 `media` 속성을 지정하여 AMP 요소를 더욱 세밀하게 제어할 수 있습니다. 이 기능은 미디어 쿼리에 따라 요소를 표시하거나 숨겨야 할 때 특히 유용합니다. `media` 속성을 사용하는 예를 보려면 [이미지의 아트 디렉션 변경](#changing-the-art-direction-of-an-image) 섹션을 참조하세요.
 
 각 요소의 크기를 화면에 맞게 조정하기가 까다로울 수 있습니다<sup><a href="#fn1" id="ref1">*</a></sup>.  그러나 AMP에서는 요소의 `width` 및 `height` 속성과 함께 `"layout=responsive"` 속성을 지정하여 간편하게 반응형 요소를 만들 수 있습니다. 요소에 `responsive` 레이아웃을 적용하면 요소는 컨테이너 요소의 너비에 맞춰 자동으로 크기를 조절하며, 높이는 요소의 `width` 및 `height`에 지정된 가로세로 비율에 따라 변경됩니다. 거의 모든 AMP 요소가 `responsive` 레이아웃을 지원합니다. 지원되는 레이아웃을 보려면 요소의 참조 문서를 확인하세요.
 
@@ -65,7 +65,7 @@ $title: 반응형 AMP 페이지 만들기
 ***'width=100%' 스타일을 사용하여 간편하게 수행할 수 있는데 화면에 맞게 요소의 크기를 조정하는 것이 까다로운 이유가 무엇일까요?**  성능 통계와 사용자 환경에 부정적인 영향을 주지 않으면서 반응형 요소가 페이지에 렌더링되도록 하는 것이 까다롭습니다.  물론 'width=100%'를 사용하면 화면에 이미지를 간편하게 맞출 수 있지만, 대신 성능이 저하됩니다.  브라우저는 먼저 이미지를 다운로드하여 이미지의 크기를 파악하고 화면 크기에 맞게 이미지 크기를 조정한 후 마지막으로 페이지를 리플로우하고 다시 채워야 합니다.  AMP에서는 렌더링 경로를 최적화함으로써 [`amp-img`](../../../../documentation/components/reference/amp-img.md)  제공된 크기(이 숫자를 사용하여 가로세로 비율을 설정)를 바탕으로 이미지의 자리 표시자가 준비된 페이지가 먼저 배치된 후 리소스를 다운로드하고 페이지를 채웁니다.  리플로우는 필요하지 않습니다.
 [/tip]
 
-## 페이지에 맞게 미디어 조정
+## 페이지에 맞게 미디어 조정 <a name="scaling-media-for-the-page"></a>
 
 반응형 디자인에서 가장 어려운 부분은 화면의 특성에 반응할 수 있도록 미디어를 페이지에 올바르게 표시하는 것입니다.  이 섹션에서는 AMP 페이지에 반응형 동영상과 이미지를 삽입하는 방법을 살펴봅니다.
 
@@ -89,15 +89,15 @@ $title: 반응형 AMP 페이지 만들기
 
 다양한 유형의 동영상을 AMP 페이지에 추가할 수 있습니다.  자세한 내용은 사용 가능한 [미디어 구성요소](../../../../documentation/components/index.html#media) 목록을 참조하세요.
 
-### 반응형 이미지 표시하기
+### 반응형 이미지 표시하기 <a name="displaying-responsive-images"></a>
 
 이미지는 웹페이지의 상당 부분을 차지합니다(대략 [페이지 바이트의 65%](http://httparchive.org/interesting.php#bytesperpage)).  사용자가 스크롤하거나 손가락을 모으거나 확대/축소하지 않고도 전체 이미지를 볼 수 있도록 이미지는 기본적으로 여러 화면 크기와 방향으로 표시되어야 합니다.  AMP에서는 `"layout=responsive"` 속성을 사용해 간편하게 완료할 수 있습니다([AMP에서 이미지 포함](../../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md) 참조).  기본 반응형 이미지 외에도 여러 이미지 리소스를 게재하여 다음과 같은 작업을 수행할 수 있습니다.
 
-- [적절한 해상도로 선명한 이미지 게재](#적절한-해상도로-선명한-이미지-게재)
-- [이미지의 아트 디렉션 변경](#이미지의-아트-디렉션-변경)
-- [최적화된 이미지 형식 제공](#최적화된-이미지-제공)
+- [적절한 해상도로 선명한 이미지 게재](#serving-crisp-images-for-the-right-resolution)
+- [이미지의 아트 디렉션 변경](#changing-the-art-direction-of-an-image)
+- [최적화된 이미지 형식 제공](#providing-optimized-images)
 
-#### 적절한 해상도로 선명한 이미지 게재
+#### 적절한 해상도로 선명한 이미지 게재 <a name="serving-crisp-images-for-the-right-resolution"></a>
 
 레티나 디스플레이 등의 고해상도 화면에서는 선명하고 뚜렷한 이미지를 제공해야 하지만, 저해상도 기기에서는 로드 시간이 불필요하게 길어질 수 있으므로 이와 같은 이미지를 사용할 필요가 없습니다.  AMP가 아닌 페이지에서나 AMP 페이지에서나 모두 너비 설명자 ( `w` )와 `srcset`을 함께 사용하여 화면의 픽셀 밀도에 맞는 적절한 이미지를 게재할 수 있습니다.
 
@@ -123,7 +123,7 @@ $title: 반응형 AMP 페이지 만들기
             {{server_for_email}}/static/inline-examples/images/apple-600.jpg 600w,
             {{server_for_email}}/static/inline-examples/images/apple-500.jpg 500w,
             {{server_for_email}}/static/inline-examples/images/apple-400.jpg 400w"
-  sizes="(max-width: 400px) 100vw, 
+  sizes="(max-width: 400px) 100vw,
             (max-width: 900px) 75vw, 600px">
 </amp-img>
 ```
@@ -133,7 +133,7 @@ $title: 반응형 AMP 페이지 만들기
 
 읽어보기: AMP에서 srcset 및 크기를 사용하는 방법을 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](art_direction.md) 가이드를 참조하세요.
 
-#### 이미지의 아트 디렉션 변경
+#### 이미지의 아트 디렉션 변경 <a name="changing-the-art-direction-of-an-image"></a>
 
 아트 디렉션은 특정 중단점에 맞게 이미지의 시각적 특성을 조정하는 것을 의미합니다.  예를 들어, 화면이 좁아지면 단순히 이미지의 비율을 조정하는 것이 아니라 이미지의 포커스가 좁아지도록 자른 이미지를 게재하거나 다른 중단점에 완전히 다른 이미지를 게재해야 할 수 있습니다.  HTML에서는 `picture` 요소를 사용하여 이 작업을 수행할 수 있으며,  AMP에서는 `media` 속성을 사용하여 아트 디렉션을 적용할 수 있습니다.
 
@@ -145,7 +145,7 @@ $title: 반응형 AMP 페이지 만들기
 - 470~669px인 경우 `cat-medium.jpg`(450x340px) 표시
 - 469px 이하인 경우 `cat-small.jpg`(226x340px) 표시
 
-참고: 변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](control_layout.md#what-if-the-layout-속성이-지정되지-않은-경우-어떻게-하나요?)를 참조하세요.
+참고: 변형되지 않는 고정된 크기로 이미지를 표시하려고 했으므로 레이아웃 값을 지정하지 않았습니다. 너비와 높이를 설정했기 때문에 기본적으로 `layout=fixed`로 설정됩니다. 자세한 내용은 ['레이아웃 속성이 지정되지 않으면 어떻게 되나요?'](control_layout.md#what-if-the-layout-attribute-isnt-specified)를 참조하세요.
 
 [example preview="top-frame" playground="true"]
 ```html
@@ -169,7 +169,7 @@ $title: 반응형 AMP 페이지 만들기
 
 읽어보기: AMP의 아트 디렉션에 관해 자세히 알아보려면 [srcset, 크기, 높이를 사용하는 아트 디렉션](art_direction.md) 가이드를 참조하세요.
 
-#### 최적화된 이미지 제공
+#### 최적화된 이미지 제공 <a name="providing-optimized-images"></a>
 
 빠르게 로드되는 페이지를 게재하려면 크기, 품질, 형식이 최적화된 이미지가 필요합니다.  항상 파일 크기를 허용되는 최저 수준까지 줄이세요.  이미지를 '고속으로 처리'하기 위해 다양한 도구를 사용할 수 있습니다(예: [ImageAlph](http://pngmini.com/lossypng.html) 또는 [TinyPNG](https://tinypng.com/)).  이미지 형식별로 살펴보면 다른 형식에 비해 우수한 압축 기능을 제공하는 이미지 형식이 있습니다(예: WebP 및 JPEG XR의 압축 기능이 JPEG보다 우수함).  사용자에게 가장 최적화된 이미지를 제공하고 사용자의 브라우저에서 이미지가 지원되도록 해야 합니다([브라우저별로 지원되는 이미지 형식 보기](https://en.wikipedia.org/wiki/Comparison_of_web_browsers#Image_format_support)).
 

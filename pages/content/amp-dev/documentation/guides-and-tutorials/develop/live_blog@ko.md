@@ -45,7 +45,7 @@ $title: 라이브 블로그 만들기
 
 이제 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소에 익숙해졌으므로 더 복잡한 라이브 블로그를 구현하는 방법을 알아보겠습니다. 페이지 매기기 구현 방법 및 딥 링크 작동 방식을 읽어 보세요.
 
-### 페이지 매기기
+### 페이지 매기기 <a name="pagination"></a>
 
 긴 블로그는 페이지 매기기를 사용하여 페이지에 표시할 블로그 항목의 수를 제한함으로써 성능을 개선할 수 있습니다. 페이지 매기기를 구현하려면 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소에 `<div pagination></div>`를 추가한 다음 페이지 매기기에 필요한 마크업(예: 페이지 번호, 다음 및 이전 페이지 링크)을 삽입합니다.
 
@@ -76,7 +76,7 @@ $title: 라이브 블로그 만들기
 
 호스팅된 페이지에 사용 중지된 속성을 추가하여 폴링 메커니즘을 방지할 수 있습니다. 라이브 블로그 샘플에서는 서버 측 템플릿으로 속성 추가 동작을 실행했습니다. 요청된 페이지가 첫 번째 페이지가 아니면 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소에 사용 중지됨 속성을 추가합니다.
 
-### 딥 링크
+### 딥 링크 <a name="deeplinking"></a>
 
 블로그 게시물을 게시하면 게시물로 딥 링크를 실행하여 공유 같은 기능을 사용할 수 있어야 합니다. [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)를 사용하면 블로그 항목의 `id`를 사용하여 딥 링크를 실행할 수 있습니다. 예를 들어 [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3)를 통해 ID가 `post3`인 블로그 게시물로 바로 이동할 수 있습니다.
 

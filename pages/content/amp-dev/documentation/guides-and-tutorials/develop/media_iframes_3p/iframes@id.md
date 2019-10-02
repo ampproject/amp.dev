@@ -40,7 +40,7 @@ Contoh [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.
 </amp-iframe>
 ```
 
-## Menggunakan placeholder
+## Menggunakan placeholder <a name="using-placeholders"></a>
 
 Anda dapat menampilkan [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) di bagian atas dokumen, [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) yang diberikan berisi elemen dengan atribut `placeholder`, (misalnya, elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md)) yang akan dirender sebagai placeholder sampai iframe siap ditampilkan.
 

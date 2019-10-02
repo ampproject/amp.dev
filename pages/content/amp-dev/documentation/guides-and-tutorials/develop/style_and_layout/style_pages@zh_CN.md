@@ -62,13 +62,13 @@ AMP 网页中不允许出现以下样式：
   </tbody>
 </table>
 
-## 自定义字体属于例外情况
+## 自定义字体属于例外情况 <a name="the-custom-fonts-exception"></a>
 
 AMP 网页不能包含外部样式表，但是自定义字体除外。
 
 其他资料: 详细了解 [AMP 中的自定义字体](custom_fonts.md)。
 
-## 使用 CSS 预处理器
+## 使用 CSS 预处理器 <a name="using-css-preprocessors"></a>
 
 预处理器生成的输出内容在 AMP 网页中的效果和在其他网页中的效果一样。例如，[amp.dev](https://amp.dev/)
 网站使用 [Sass](http://sass-lang.com/)。（我们使用 [Grow](http://grow.io/) 来构建构成 [amp.dev](https://amp.dev/) 网站的静态 AMP 网页。）

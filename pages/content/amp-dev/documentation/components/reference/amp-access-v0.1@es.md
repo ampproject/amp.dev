@@ -11,7 +11,7 @@ teaser:
 
 AMP Access, que proporciona un muro de pago de AMP y asistencia con la suscripción, permite a los editores controlar el contenido al que los usuarios pueden acceder y definir restricciones en función del estado de suscripción, el número de visualizaciones y otros factores.
 
-# amp-access
+# amp-access <a name="amp-access"></a>
 
 
 
@@ -49,7 +49,7 @@ limitations under the License.
 </tr>
 </table>
 
-## Relación con `amp-subscriptions`
+## Relación con `amp-subscriptions` <a name="relationship-to-amp-subscriptions"></a>
 
 La extensión [`amp-subscriptions`](amp-subscriptions.md) ofrece funciones similares a `amp-access`, pero admite un protocolo de muro de pago de acceso más especializado. Estas son algunas de las diferencias más importantes:
 
@@ -60,7 +60,7 @@ La extensión [`amp-subscriptions`](amp-subscriptions.md) ofrece funciones simil
 
 Debido a la estandarización del marcado, la compatibilidad con varios proveedores y la compatibilidad mejorada con los visores, se recomienda que las nuevas implementaciones de editores y proveedores de muros de pago utilicen `amp-subscriptions`.
 
-## Solución
+## Solución <a name="solution"></a>
 
 La solución propuesta permite al editor controlar los siguientes flujos y decisiones:
 - Creación y gestión de usuarios
@@ -86,7 +86,7 @@ En su forma más básica, esta solución envía el documento completo (aunque co
 
 La compatibilidad con AMP Access requiere que el editor implemente los componentes descritos más arriba. El marcado de acceso al contenido y el punto de conexión de autorización son obligatorios, mientras que el punto de conexión de pingback y la página de inicio de sesión son opcionales.
 
-### ID de lector de AMP
+### ID de lector de AMP <a name="amp-reader-id"></a>
 
 Para servir de apoyo a los servicios de acceso y a los casos prácticos, AMP Access introduce el concepto de *ID de lector*.
 
@@ -96,33 +96,33 @@ El ID de lector se crea en el dispositivo del usuario, y se pretende que su vida
 
 El ID de lector se crea de forma similar al [mecanismo utilizado para crear los ExternalCID](https://docs.google.com/document/d/1f7z3X2GM_ASb3ZCI_7tngglxwS6WoWi1EB3aKzdf6vo/edit#heading=h.hb9q0wpwwhuf). Un ejemplo de ID de lector es: `amp-OFsqR4pPKynymPyMmplPNMvxSTsNQob3TnK-oE3nwVT0clORaZ1rkeEz8xej-vV6`.
 
-### AMP Access y las cookies
+### AMP Access y las cookies <a name="amp-access-and-cookies"></a>
 
 Los editores pueden utilizar sus propias cookies de autenticación, los ID de lector o una combinación de ambos.
 
-### Marcado de acceso al contenido
+### Marcado de acceso al contenido <a name="access-content-markup"></a>
 
 El marcado de acceso al contenido determina qué secciones están visibles u ocultas en función de la respuesta de autorización que devuelve el punto de conexión de autorización. Se define mediante atributos especiales de marcado.
 
-### Punto de conexión de autorización
+### Punto de conexión de autorización <a name="authorization-endpoint"></a>
 
 La autorización es un punto de conexión que proporciona el editor y al que llaman el tiempo de ejecución de AMP o Google AMP Cache. Se trata de un punto de conexión CORS GET con credenciales y que devuelve los parámetros de acceso que puede utilizar el marcado de acceso al contenido para ocultar o mostrar diferentes partes del documento.
 
-### Punto de conexión de pingback
+### Punto de conexión de pingback <a name="pingback-endpoint"></a>
 
 El pingback es un punto de conexión que proporciona el editor y al que hacen llamadas el tiempo de ejecución de AMP o Google AMP Cache. Se trata de un punto de conexión CORS POST con credenciales. El tiempo de ejecución de AMP llama a este punto de conexión de forma automática cuando el lector empieza a visualizar el documento y una vez que el lector ha completado correctamente el flujo de inicio de sesión. Uno de los objetivos principales del punto de conexión de pingback es que el editor actualice la información del cupo por usuario.
 
 Este componente es opcional, y se puede inhabilitar definiendo la propiedad de configuración `noPingback` como `true`.
 
-### Página de inicio de sesión y enlace de inicio de sesión
+### Página de inicio de sesión y enlace de inicio de sesión <a name="login-page-and-login-link"></a>
 
 El editor se encarga de implementar y servir la página de inicio de sesión, y el tiempo de ejecución de AMP se encarga de llamarla. Normalmente se muestra como un cuadro de diálogo de navegador.
 
 La página de inicio de sesión se activa cuando el lector toca en el enlace de inicio de sesión, que el editor puede colocar en cualquier lugar del documento.
 
-## Especificación v. 0.1
+## Especificación v. 0.1 <a name="specification-v01"></a>
 
-### Configuración
+### Configuración <a name="configuration"></a>
 
 Todos los puntos de conexión se configuran en la sección HEAD del documento AMP como un objeto JSON:
 
@@ -206,7 +206,7 @@ Este es un ejemplo de configuración de AMP Access:
 
 ```
 
-#### Varios proveedores de acceso
+#### Varios proveedores de acceso <a name="multiple-access-providers"></a>
 
 Es posible especificar varios proveedores de acceso utilizando una matriz en lugar de un único objeto y proporcionando un `namespace` para cada entrada.
 
@@ -225,7 +225,7 @@ Es posible especificar varios proveedores de acceso utilizando una matriz en lug
 
 ```
 
-### Variables de URL de acceso
+### Variables de URL de acceso <a name="access-url-variables"></a>
 
 Al configurar las URL de varios puntos de conexión, el editor puede utilizar las variables de sustitución. La lista completa de estas variables se encuentra en la [especificación de las variables de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Además, en esta especificación se incluyen algunas variables específicas de acceso, como `READER_ID` y `AUTHDATA`. En la tabla que aparece a continuación, se describen algunas de las variables más relevantes:
 
@@ -283,7 +283,7 @@ https://pub.com/access?
 
 La variable AUTHDATA está disponible para las URL del punto de conexión de pingback y de la página de inicio de sesión. Permite pasar cualquier campo de la respuesta de autorización como si fuera un parámetro de URL; por ejemplo, `AUTHDATA(isSubscriber)`. También se permiten las expresiones anidadas, como `AUTHDATA(other.isSubscriber)`. Si se utilizan espacios de nombre, pueden anteponerse al campo, por ejemplo, `AUTHDATA(anamespace.afield)`.
 
-### Marcado de acceso al contenido
+### Marcado de acceso al contenido <a name="access-content-markup-1"></a>
 
 El marcado de acceso al contenido determina qué secciones están visibles u ocultas. Se compone de dos atributos de AMP: `amp-access` y `amp-access-hide`, que se pueden colocar en cualquier elemento HTML.
 
@@ -348,7 +348,7 @@ Y este es un ejemplo que muestra contenido adicional a los suscriptores premium:
 </section>
 ```
 
-### Punto de conexión de autorización
+### Punto de conexión de autorización <a name="authorization-endpoint-1"></a>
 
 La autorización se configura a través de la propiedad `authorization` de la sección de [configuración de AMP Access](#configuration). Se trata de un punto de conexión CORS GET con credenciales. Consulta la sección [Seguridad de origen de CORS](#cors-origin-security) para saber cómo debe protegerse esta solicitud.
 
@@ -415,7 +415,7 @@ El tiempo de ejecución de AMP utiliza las siguientes clases de CSS a lo largo d
 
 En la opción *server*, la llamada al punto de conexión de autorización se hace mediante Google AMP Cache como un simple punto de conexión HTTPS. Esto significa que, en este caso, no se pueden enviar las cookies del editor.
 
-### Punto de conexión de pingback
+### Punto de conexión de pingback <a name="pingback-endpoint-1"></a>
 
 El pingback se configura mediante la propiedad `pingback` de la sección de [configuración de AMP Access](#configuration). Se trata de un punto de conexión CORS POST con credenciales. Consulta la sección [Seguridad de origen de CORS](#cors-origin-security) para saber cómo debe protegerse esta solicitud.
 
@@ -438,7 +438,7 @@ rid=READER_ID
 &url=SOURCE_URL
 ```
 
-### Página de inicio de sesión
+### Página de inicio de sesión <a name="login-page"></a>
 
 Las URL de las páginas de inicio de sesión se configuran a través de la propiedad `login` de la sección de [configuración de AMP Access](#configuration).
 
@@ -478,7 +478,7 @@ Fíjate en el uso del parámetro hash “success”. El valor es "true" o "false
 
 Si se devuelve la señal `success=true`, el tiempo de ejecución de AMP repetirá las llamadas al punto de conexión de autorización y al de pingback para actualizar el estado del documento e informar de las "view" (visualizaciones) con el nuevo perfil de acceso.
 
-#### Enlace de inicio de sesión
+#### Enlace de inicio de sesión <a name="login-link"></a>
 
 El editor puede optar por colocar el enlace de inicio de sesión en cualquier parte del contenido del documento.
 
@@ -498,15 +498,15 @@ Cuando se utilizan espacios de nombre, el formato es `tap:amp-access.login-{name
 
 AMP no distingue entre inicio de sesión y suscripción. El editor puede configurar una manera de distinguir entre ambos utilizando varias URL o enlaces de inicio de sesión, o usando sus propios medios.
 
-## Integración con *amp-analytics*
+## Integración con *amp-analytics* <a name="integration-with-amp-analytics"></a>
 
 La integración con *amp-analytics* está explicada en [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
-## Seguridad de origen de CORS
+## Seguridad de origen de CORS <a name="cors-origin-security"></a>
 
 Los puntos de conexión de autorización y de pingback son de tipo CORS y deben implementar el protocolo de seguridad descrito en la [especificación de seguridad de AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
-## Cupo por usuario
+## Cupo por usuario <a name="metering"></a>
 
 El cupo por usuario es el sistema por el que el lector puede acceder a contenido premium de forma gratuita, un número determinado de veces y durante un periodo concreto. Cuando se alcanza el límite del cupo, el muro de pago se activa y el lector solo puede acceder a una parte limitada del contenido. Además, se muestra un mensaje que invita al lector a adquirir un producto o suscripción, y un enlace de registro o inicio de sesión. Por ejemplo, el cupo por usuario se puede definir como: "El lector puede leer 10 artículos al mes de forma gratuita".
 
@@ -516,7 +516,7 @@ AMP Access proporciona las siguientes funciones para implementar el acceso basa
 2. El "recuento de lecturas" solo se puede actualizar en el punto de conexión de pingback.
 3. Solo se contabilizan documentos individuales en el cupo. Es decir, si se actualiza diez veces el mismo documento, solo se cuenta una única visualización. Con este fin, los puntos de conexión de authorization y pingback pueden inyectar variables de URL `SOURCE_URL` u otras similares. Para obtener más información, consulta la sección [Variables de URL de acceso](#access-url-variables).
 
-## Primer clic gratuito
+## Primer clic gratuito <a name="first-click-free"></a>
 
 Puedes consultar la [política de Primer clic gratuito de Google](https://support.google.com/news/publisher/answer/40543) o la [actualización más reciente](https://googlewebmastercentral.blogspot.com/2015/09/first-click-free-update.html) explicada en detalle.
 
@@ -524,7 +524,7 @@ Para implementarlo, el editor debe: 1) poder determinar el servicio de referenci
 
 Ambos requisitos aparecen detallados en la especificación de AMP Access. La URL referente puede inyectarse en las URL de autorización y de pingback mediante la sustitución de URL `DOCUMENT_REFERRER`, tal como se describe en [Variables de URL de acceso](#access-url-variables). El recuento de visualizaciones se puede hacer en el servidor mediante el punto de conexión de pingback. Esto es muy similar a la implementación del cupo por usuario que se describe en la sección [Cupo por usuario](#metering).
 
-## Flujo de inicio de sesión
+## Flujo de inicio de sesión <a name="login-flow"></a>
 
 AMP hará que se muestre un cuadro de diálogo de inicio de sesión como una ventana propia, una ventana emergente o una pestaña. Siempre que sea posible, los visores de AMP intentarán hacerlo en el contexto del navegador para aprovechar las API de nivel superior que utiliza este.
 
@@ -541,7 +541,7 @@ Solo los pasos 2 a 5 requieren gestión por parte del editor, ya que este solo
 
 Como es habitual, el ID de lector se debe incluir en la llamada a la página de inicio de sesión, y el editor puede utilizarlo para el mapeado de identidades. Como esta es una ventana propia, el editor también recibirá sus cookies y podrá añadirlas. Si el lector ya ha iniciado sesión en el sitio web del editor, se recomienda que el editor redirija inmediatamente a la URL de retorno con la respuesta `success=true`.
 
-## Glosario de AMP
+## Glosario de AMP <a name="amp-glossary"></a>
 
 * **Documento AMP:** documento HTML que sigue el formato AMP y que está validado por AMP Validator. Los documentos AMP se pueden almacenar en caché mediante Google AMP Cache.
 * **AMP Validator:** programa informático que realiza un análisis estático de un documento HTML e indica si el documento se ajusta al formato AMP.
@@ -553,7 +553,7 @@ Como es habitual, el ID de lector se debe incluir en la llamada a la página de 
 * **Lector:** persona que visualiza los documentos AMP.
 * **Prerenderizado de AMP:** los visores de AMP pueden aprovechar la función de prerenderizado, que renderiza un documento oculto antes de que se pueda mostrar, lo cual supone un aumento significativo del rendimiento. Sin embargo, es importante tener en cuenta que el renderizado previo del documento no constituye una visualización, ya que es posible que el lector no llegue a ver el documento.
 
-## Revisiones
+## Revisiones <a name="revisions"></a>
 
 * 02/09/2016: Propiedad de configuración "noPingback" y pingback opcional.
 * 03/03/2016: Reenvío del pingback tras el inicio de sesión (v. 0.5).
@@ -565,7 +565,7 @@ Como es habitual, el ID de lector se debe incluir en la llamada a la página de 
 * 03/02/2016: Se ha añadido la especificación de la seguridad de "origen de la fuente" a la sección [Seguridad de origen de CORS](#cors-origin-security).
 * 01/02/2016: El parámetro de consulta "return" de la página de inicio de sesión se puede personalizar mediante la sustitución de URL RETURN_URL.
 
-## Anexo A: gramática de la expresión "amp-access"
+## Anexo A: gramática de la expresión "amp-access" <a name="appendix-a-amp-access-expression-grammar"></a>
 
 La gramática de BNF más reciente está disponible en el archivo [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison).
 
@@ -602,10 +602,10 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 Ten en cuenta que las expresiones `amp-access` se evalúan mediante el tiempo de ejecución de AMP y Google AMP Cache. Esta gramática no forma parte de la especificación que el editor debe implementar, la hemos incluido simplemente con fines informativos.
 
-## Discusión detallada
+## Discusión detallada <a name="detailed-discussion"></a>
 
 En esta sección se explicará de forma pormenorizada el diseño en el que se basa la especificación amp-access y las decisiones que se tomaron para su creación. Información disponible próximamente.
 
-## Validación
+## Validación <a name="validation"></a>
 
 Consulta las [reglas de amp-access](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii) en la especificación de la herramienta de validación de AMP.

@@ -73,7 +73,7 @@ limitations under the License.
   </amp-auto-ads>
 ```
 
-## サポートされている広告ネットワーク
+## サポートされている広告ネットワーク <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick（試験運用版）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -128,7 +128,7 @@ limitations under the License.
 
 ### オブジェクトの定義
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 設定オブジェクトで指定するフィールドは次のとおりです。
 
@@ -205,7 +205,7 @@ limitations under the License.
 </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 `anchor` 設定オブジェクトで指定するフィールドは次のとおりです。
 
@@ -245,7 +245,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 `style` 設定オブジェクトで指定するフィールドは次のとおりです。
 
@@ -269,7 +269,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 `placements` 設定オブジェクトの `pos` フィールド用の ENUM 値は次のとおりです。
 
@@ -301,7 +301,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 `placements` 設定オブジェクトの `type` フィールド用の ENUM 値は次のとおりです。
 

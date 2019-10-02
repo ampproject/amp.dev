@@ -11,7 +11,7 @@ teaser:
 
 借助 AMP Access（即“AMP 付费墙和订阅支持”），发布商可以根据读者的订阅状态、查看次数和其他因素来控制读者可以访问哪些内容以及施加哪些限制。
 
-# amp-access
+# amp-access <a name="amp-access"></a>
 
 
 
@@ -49,7 +49,7 @@ limitations under the License.
 </tr>
 </table>
 
-## 与 `amp-subscriptions` 的关系
+## 与 `amp-subscriptions` 的关系 <a name="relationship-to-amp-subscriptions"></a>
 
 [`amp-subscriptions`](amp-subscriptions.md) 扩展提供与 `amp-access` 类似的功能。不过，它支持更专业的访问付费墙协议。以下是一些值得注意的显著差异：
 
@@ -60,7 +60,7 @@ limitations under the License.
 
 建议在新的发布商和付费墙提供商实现中使用 `amp-subscriptions`，因为它提供标记标准化、多提供商支持和改进的查看工具支持。
 
-## 解决方案
+## 解决方案 <a name="solution"></a>
 
 通过采用建议的解决方案，发布商可以控制以下决策和流程：
 
@@ -87,7 +87,7 @@ Google AMP 缓存可将文档返回给读者，同时使用 Access Content Marku
 
 要支持 AMP Access，发布商必须实现上述组件。Access Content Markup 和授权端点是必需组件，而 Pingback 端点和登录页面是可选组件。
 
-### AMP 读者 ID
+### AMP 读者 ID <a name="amp-reader-id"></a>
 
 为了提供访问服务和用例方面的帮助，AMP Access 引入了“读者 ID”的概念。**
 
@@ -97,33 +97,33 @@ Google AMP 缓存可将文档返回给读者，同时使用 Access Content Marku
 
 读者 ID 的构建方式与[此处](https://docs.google.com/document/d/1f7z3X2GM_ASb3ZCI_7tngglxwS6WoWi1EB3aKzdf6vo/edit#heading=h.hb9q0wpwwhuf)所述的用于构建 ExternalCID 的机制类似。例如，读者 ID 可以为 `amp-OFsqR4pPKynymPyMmplPNMvxSTsNQob3TnK-oE3nwVT0clORaZ1rkeEz8xej-vV6`。
 
-### AMP Access 和 Cookie
+### AMP Access 和 Cookie <a name="amp-access-and-cookies"></a>
 
 发布商可以使用自己的身份验证 Cookie 或依赖读者 ID，也可以使用两者的组合。
 
-### Access Content Markup
+### Access Content Markup <a name="access-content-markup"></a>
 
 Access Content Markup 根据授权端点返回的授权响应来确定显示或隐藏哪些部分。它通过特殊标记属性进行描述。
 
-### 授权端点
+### 授权端点 <a name="authorization-endpoint"></a>
 
 授权端点是一个由发布商提供并由 AMP runtime 或 Google AMP 缓存调用的端点。它是存储了凭据的 CORS GET 端点。此端点返回的访问参数可供内容标记用于隐藏或显示文档的不同部分。
 
-### Pingback 端点
+### Pingback 端点 <a name="pingback-endpoint"></a>
 
 Pingback 是一个由发布商提供并由 AMP Runtime 或 Google AMP 缓存调用的端点。它是存储了凭据的 CORS POST 端点。当读者开始查看文档时，AMP runtime 会自动调用此端点。在读者成功完成登录流程后，系统也会调用此端点。Pingback 的主要目标之一是让发布商更新计量供给信息。
 
 Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可停用该组件。
 
-### 登录页面和登录链接
+### 登录页面和登录链接 <a name="login-page-and-login-link"></a>
 
 登录页面由发布商实现和提供，并由 AMP runtime 调用。它通常显示为浏览器对话框。
 
 当读者点按登录链接时，登录页面就会被触发；登录链接可由发布商放置在文档中的任何位置。
 
-## 规范 v0.1
+## 规范 v0.1 <a name="specification-v01"></a>
 
-### 配置
+### 配置 <a name="configuration"></a>
 
 在 AMP 文档中，所有端点均配置为文档标头中的 JSON 对象：
 
@@ -208,7 +208,7 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
 
 ```
 
-#### 多个访问提供商
+#### 多个访问提供商 <a name="multiple-access-providers"></a>
 
 可以通过使用数组（而非单个对象）并为每个条目提供 `namespace` 来指定多个访问提供商。
 
@@ -226,7 +226,7 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
 </script>
 ```
 
-### 访问网址变量
+### 访问网址变量 <a name="access-url-variables"></a>
 
 在为各种端点配置网址时，发布商可以使用替换变量。[AMP 变量规范](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)中定义了所有此类变量。此外，该规范还添加了一些特定于访问权限的变量，如 `READER_ID` 和 `AUTHDATA`。部分相关程度最高的变量如下表所示：
 
@@ -284,7 +284,7 @@ https://pub.com/access?
 
 AUTHDATA 变量可用于 Pingback 和登录网址。它允许将授权响应中的任何字段作为网址参数进行传递，例如 `AUTHDATA(isSubscriber)`。该变量也允许使用嵌套表达式，例如 `AUTHDATA(other.isSubscriber)`。如果使用命名空间，则可以将命名空间附加到字段前面，例如 `AUTHDATA(anamespace.afield)`。
 
-### Access Content Markup
+### Access Content Markup <a name="access-content-markup-1"></a>
 
 Access Content Markup 用于描述显示或隐藏哪些部分。它由 `amp-access` 和 `amp-access-hide` 这两个 AMP 属性组成，可放置在任何 HTML 元素上。
 
@@ -349,7 +349,7 @@ Access Content Markup 用于描述显示或隐藏哪些部分。它由 `amp-acce
 </section>
 ```
 
-### 授权端点
+### 授权端点 <a name="authorization-endpoint-1"></a>
 
 授权是通过 [AMP Access 配置](#configuration)部分中的 `authorization` 属性进行配置的。它是存储了凭据的 CORS GET 端点。如需了解如何确保此请求的安全，请参阅 [CORS 网域安全性](#cors-origin-security)。
 
@@ -416,7 +416,7 @@ AMP runtime 在授权流程中使用以下 CSS 类：
 
 在“server”选项中，授权端点由 Google AMP 缓存作为简单的 HTTPS 端点进行调用。**这意味着，在这种情况下无法提供发布商 Cookie。**
 
-### Pingback 端点
+### Pingback 端点 <a name="pingback-endpoint-1"></a>
 
 Pingback 是通过 [AMP Access 配置](#configuration)部分中的 `pingback` 属性进行配置的。它是存储了凭据的 CORS POST 端点。如需了解如何确保此请求的安全，请参阅 [CORS 网域安全性](#cors-origin-security)。
 
@@ -439,7 +439,7 @@ rid=READER_ID
 &url=SOURCE_URL
 ```
 
-### 登录页面
+### 登录页面 <a name="login-page"></a>
 
 登录页面的网址通过 [AMP Access 配置](#configuration)部分中的 `login` 属性进行配置。
 
@@ -479,7 +479,7 @@ RETURN_URL#success=true|false
 
 如果页面返回 `success=true` 信号，AMP runtime 将重复调用授权端点和 Pingback 端点，以更新文档的状态，并使用新的访问配置文件报告“查看”事件。
 
-#### 登录链接
+#### 登录链接 <a name="login-link"></a>
 
 发布商可以选择将登录链接放置在文档内容中的任何位置。
 
@@ -499,15 +499,15 @@ RETURN_URL#success=true|false
 
 AMP 不区分登录和订阅。发布商可以使用多个登录网址/链接或在发布商端配置这种区别。
 
-## 与 amp-analytics 集成**
+## 与 amp-analytics 集成** <a name="integration-with-amp-analytics"></a>
 
 [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) 中介绍了与 amp-analytics 的集成。**
 
-## CORS 网域安全性
+## CORS 网域安全性 <a name="cors-origin-security"></a>
 
 授权端点和 Pingback 端点属于 CORS 端点，它们必须实现 [AMP CORS 安全规范](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)中所述的安全协议。
 
-## 计量供给
+## 计量供给 <a name="metering"></a>
 
 计量供给是一种机制，在这种机制下，读者可以在一段时间内免费查看一定数量的文档的付费内容。达到某个配额后，系统就会向读者显示付费墙，而读者会看到部分内容，还有追加销售宣传用语和注册/登录链接。例如，计量供给可以定义为“读者每月可以免费阅读 10 篇文章”。
 
@@ -517,7 +517,7 @@ AMP Access 提供了以下用于实现计量供给访问的工具：
 2. “阅读次数”只能在 Pingback 端点中更新。
 3. 只有非重复文档才计入配额。也就是说，刷新同一个文档十次只会计为一次查看。为此，授权和 Pingback 端点可以注入 `SOURCE_URL` 或类似的网址变量。请参阅[访问网址变量](#access-url-variables)。
 
-## 首次点击免费
+## 首次点击免费 <a name="first-click-free"></a>
 
 [此处](https://support.google.com/news/publisher/answer/40543)描述了 Google 的首次点击免费（即 FCF）政策，最近更新在[此处](https://googlewebmastercentral.blogspot.com/2015/09/first-click-free-update.html)有更详细的介绍。
 
@@ -525,7 +525,7 @@ AMP Access 提供了以下用于实现计量供给访问的工具：
 
 AMP Access 规范涵盖了这两个步骤。您可以使用[访问网址变量](#access-url-variables)中所述的 `DOCUMENT_REFERRER` 网址替换将引荐来源网址注入授权网址和 Pingback 网址中。查看计数可以在服务器端使用 Pingback 端点来完成。这与[计量供给](#metering)中介绍的计量供给实现非常类似。
 
-## 登录流程
+## 登录流程 <a name="login-flow"></a>
 
 AMP 将登录对话框作为第一方窗口、弹出式窗口或标签页启动。AMP 查看工具应尽可能尝试在浏览器环境中启动登录对话框，以便能够利用顶级浏览器 API。
 
@@ -542,7 +542,7 @@ AMP 将登录对话框作为第一方窗口、弹出式窗口或标签页启动�
 
 像往常一样，读者 ID 应该包含在对登录页面的调用中，并且可以由发布商用于身份映射。作为第一方窗口，发布商还将收到其 Cookie 并能够进行设置。如果发现读者已经在发布商端登录，则建议发布商立即使用 `success=true` 响应重定向回“返回网址”。
 
-## AMP 词汇表
+## AMP 词汇表 <a name="amp-glossary"></a>
 
 * **AMP 文档** - 采用 AMP 格式且由 AMP 验证工具验证的 HTML 文档。AMP 文档可由 Google AMP 缓存进行缓存。
 * **AMP 验证工具** - 对 HTML 文档执行静态分析并根据文档是否符合 AMP 格式返回成功或失败结果的计算机程序。
@@ -554,7 +554,7 @@ AMP 将登录对话框作为第一方窗口、弹出式窗口或标签页启动�
 * **读者** - 查看 AMP 文档的实际用户。
 * **AMP 预呈现** - AMP 查看工具可以利用预呈现功能，先呈现隐藏的文档，然后再将其显示出来。这可以大大提升性能。但务必要考虑到这个事实：文档预呈现并不构成查看，因为读者实际可能永远不会看到文档。
 
-## 修订
+## 修订 <a name="revisions"></a>
 
 * 2016 年 9 月 2 日：新增了“noPingback”配置属性和可选的 pingback。
 * 2016 年 3 月 3 日：允许在登录后重新发送 pingback (v0.5)。
@@ -566,7 +566,7 @@ AMP 将登录对话框作为第一方窗口、弹出式窗口或标签页启动�
 * 2016 年 2 月 3 日：在 [CORS 网域安全性](#cors-origin-security)部分增加了针对“来源网域”安全性的规范。
 * 2016 年 2 月 1 日：可以使用 RETURN_URL URL 替换对登录页面的“return”查询参数进行自定义。
 
-## 附录 A：“amp-access”表达式语法
+## 附录 A：“amp-access”表达式语法 <a name="appendix-a-amp-access-expression-grammar"></a>
 
 [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) 文件中提供了最新的 BNF 语法。
 
@@ -601,10 +601,10 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 请注意，`amp-access` 表达式由 AMP runtime 和 Google AMP 缓存进行求值。这并不属于发布商需要实现的规范。本文中提供的相关内容仅供参考。
 
-## 详细讨论
+## 详细讨论 <a name="detailed-discussion"></a>
 
 本部分将详细介绍 amp-access 规范的设计依据，并阐明设计选择。即将推出，敬请期待！
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-access 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii)。
