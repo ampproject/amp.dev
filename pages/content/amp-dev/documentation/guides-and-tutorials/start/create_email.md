@@ -34,7 +34,7 @@ The AMP for Email team has created a playground where you can develop, test, and
 </html>
 ```
 
-It contains all the required markup and the minimum code to be a valid AMP email.
+It contains all the required markup and the minimum code to be a valid AMP email. Also note the many other examples of valid email templates in the drop down list on the top right drop down menu.
 
 Let's take a moment to call out some notable differences from classic HTML emails:
 
@@ -280,7 +280,7 @@ Now, when you change the cat photo in the carousel, their name and description s
 
 # Send your AMP email
 
-The AMP4Email playground tool has a built-in validator. If your email markup is valid AMP, it will allow you to send yourself an email by clicking `send`.
+The [AMP4Email playground](https://amp.gmail.dev/playground/) tool has a built-in validator. If your email markup is valid AMP, it will allow you to send yourself an email by clicking `send`.
 
 <!-- TODO: Add Screen Shot. Emails sent from tool are not currently displaying. Only receiving information on how to enable AMP emails, but then getting blank messages. -->
 
