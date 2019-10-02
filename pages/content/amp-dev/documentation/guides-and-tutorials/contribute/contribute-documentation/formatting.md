@@ -485,21 +485,26 @@ When linking to another page on amp.dev the reference will be a relative filepat
 
 ### Anchors
 
-Links can contain anchors to a specific section in a document. 
-The target section has to have an explicit anchor defined with an HTML `<a name` tag when you link to an internal page.
-If you have to add an explicit anchor you should put it at the end of the section headline.
-
+Link to specific sections in a document using anchors:
 ```md
-## Example section <a name="example-section"></a>
-
 [link to example section](#example-section)
+```
+
+Please create the anchor target using `<a name="#anchor-name></a>` before linking to a section with no anchor present.
+A good place is at the end of the section headline:
+
+```html
+## Example section <a name="example-section"></a>
 ```
 
 You must only use letters, digits, the dash and the underscore in an anchor.
 Please use short anchor names in english that match the headline or describe the section.
 Ensure the anchor name is unique inside the document.
 
-Anchors that are used outside of a page should be defined in all translations. 
+When a Page is translated the anchor names must not be changed and remain in english.
+
+When you create an anchor that will be used in a link from another page 
+you should also create the same anchor in all translations.
 
 ### AMP format filter
 Component documentation, guides and tutorials and examples are filterable by AMP format,
