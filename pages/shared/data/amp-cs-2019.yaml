@@ -113,7 +113,7 @@ agenda:
       description:
       time: "10:00"
     - title: "Breakouts"
-      description: "Topics include the managing a super-sized GitHub repository, tooling for AMP Stories, Next.js and contributing to AMP Start 2.0 and increasing community engagement."
+      description: "Topics include managing a super-sized GitHub repository, tooling for AMP Stories, Next.js and contributing to AMP Start 2.0 and increasing community engagement."
       time: "10:15"
     - title: "Break"
       description:
