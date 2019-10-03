@@ -28,22 +28,53 @@ We welcome contributions to amp.dev.
     $ nvm install --lts
     ```
 
+1. If it has not already been done, install Python 2.7 and ensure pip is properly set up by adding the _pip user base binary directory_ to `$PATH`.
+
+    **macOS**
+
+    1. Install [Homebrew](https://brew.sh/).
+    1. Run the following command to ensure everything is up to date. Xcode version 10.3 or the most recent stable version is required.
+        ```sh
+        $ brew doctor
+        ```
+    1. Run the following command to install Python. Version 2.7 is required.
+        ```sh
+        $ brew install python@2
+        ````
+    1. Run the following command to add the _pip user base binary directory_ to `$PATH`.
+        ```sh
+        $ echo "export PATH=\"$(python -m site --user-base)/bin\":\$PATH" >> ~/.bash_profile
+        ```
+    1. Run the following command for the changes to take effect.
+        ```sh
+        $ source ~/.bash_profile
+        ```
+
+    **Linux** (Debian-based)
+
+    **Note**: If using Linux, refer to the section of pip's official documentation titled [Ensure you can run pip from the command line](https://packaging.python.org/tutorials/installing-packages/#ensure-you-can-run-pip-from-the-command-line) for pip installation troubleshooting.
+
+    1. Run the following command to add the _pip user base binary directory_ to `$PATH`.
+        ```sh
+        $ echo "export PATH=\"$(python -m site --user-base)/bin\":\$PATH" >> ~/.bashrc
+        ```
+    1. Run the following command for the changes to take effect.
+        ```sh
+        $ source ~/.bashrc
+        ```
+    1. Run the following command to use a faster YAML parser.
+        ```sh
+        $ sudo apt install -y python-yaml
+        ```
+
 1. Install [Grow](http://grow.io), the static site generator used to build amp.dev. Do so by using `pip` instead of its installer. Using `pip` will enable importing from the `grow` package in Python later on.
 
      **Note**: Be sure to use the `pip` command associated with Python 2.7 as Grow depends on Python 2.7.
 
     ```sh
-    $ pip install grow
+    $ pip install --user grow
     ```
 
-     **Note**: If using Linux, refer to the section of pip's official documentation titled [Ensure you can run pip from the command line](https://packaging.python.org/tutorials/installing-packages/#ensure-you-can-run-pip-from-the-command-line) for pip installation troubleshooting.
-
-     **Note**: If using macOS, the simplest steps to install a reliable version of pip are as follow:
-      1. Install [Homebrew](https://brew.sh/).
-      1. Run `brew doctor` to ensure everything is up to date. Xcode version 10.3 or the most recent stable version is required.
-      1. Run `brew install python@2`. Python 2.7 is required.
-      1. Pip should now be installed!
-      
 ### Fork & clone the repository
 
 To get started with contributing to amp.dev, you first need to [fork the repository](https://help.github.com/en/articles/fork-a-repo). Once you've done that you can clone the repository:
