@@ -198,7 +198,7 @@ growPages.get(
       const versionsByFormat = formatComponentMapping[component];
       if (!versionsByFormat) {
         signale.warn(`No version mapping defined for ${component}. Run 'gulp importAll' to fix.`);
-        return;
+        return next();
       }
       const format = getFormatFromRequest(req);
 
