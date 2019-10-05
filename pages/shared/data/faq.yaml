@@ -90,6 +90,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/adfox.md
       - label: Ad Generation
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/adgeneration.md
+      - label: AdGlare
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/adglare.md
       - label: Adhese
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/adhese.md
       - label: Adincube
