@@ -23,6 +23,7 @@ const config = require('@lib/config');
 const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
+const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const signale = require('signale');
 const {getFormatFromRequest} = require('../amp/formatHelper.js');
 
@@ -183,6 +184,7 @@ const growPages = express.Router();
 
 const optimizer = AmpOptimizer.create({
   transformations: [
+    HeadDedupTransformer,
     ...AmpOptimizer.TRANSFORMATIONS_AMP_FIRST,
     CssTransformer,
   ],
