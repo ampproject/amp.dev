@@ -59,7 +59,10 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       align-items: start;
-      grid-column-gap: 30px;
+
+      @media (min-width: 1024px) {
+        grid-column-gap: 30px;
+      }
     }
 
     &-tags {

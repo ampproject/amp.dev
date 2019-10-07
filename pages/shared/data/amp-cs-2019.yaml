@@ -60,7 +60,7 @@ agenda:
       description:
       time: "10:00"
     - title: "Breakouts"
-      description: "Possible topics include the future of amp-script, Chrome metrics for measuring AMP, and AMP First and the AMP Optimizer."
+      description: "Topics include the future of amp-script, Chrome metrics for measuring AMP, and AMP First and the AMP Optimizer."
       time: "10:15"
     - title: "Break"
       description:
@@ -84,20 +84,20 @@ agenda:
       description:
       time: "2:30"
     - title: "Breakouts"
-      description: "Possible topics include making AMP as a framework, getting started contributing content, AMP ads, and bringing an open source mindset to a product lifecycle."
+      description: "Topics include making AMP as a framework, getting started contributing content, AMP ads, and AMP (and AMP Stories) in WordPress, the WordPress Way."
       time: "2:45"
     - title: "Break"
       description:
       time: "3:45"
-    - title: "Governance update"
+    - title: "AMP devtools: The 2019 new hotness"
       description:
       time: "4:00"
-    - title: "Panel with the AMP Technical Steering Committee (TSC)"
+    - title: "The magic behind how AMP validates and transforms its source code"
       description:
       time: "4:30"
-    - title: "TBA evening event"
-      description: "Location TBA"
-      time: "TBA"
+    - title: "Party"
+      description: "Location TBA.  Light food and drinks will be provided."
+      time: "6:00"
 
   day_3:
     - title: "Breakfast"
@@ -113,15 +113,15 @@ agenda:
       description:
       time: "10:00"
     - title: "Breakouts"
-      description: "Possible topics include the managing a super-sized GitHub repository, tooling for AMP Stories, Next.js and contributing to AMP Start 2.0 and increasing community engagement."
+      description: "Topics include managing a super-sized GitHub repository, tooling for AMP Stories, Next.js and contributing to AMP Start 2.0 and increasing community engagement."
       time: "10:15"
     - title: "Break"
       description:
       time: "11:15"
-    - title: "AMP devtools: The 2019 new hotness"
+    - title: "Governance update"
       description:
       time: "11:30"
-    - title: "The magic behind how AMP validates and transforms its source code"
+    - title: "AMP Technical Steering Committee (TSC) panel"
       description:
       time: "12:00p"
     - title: "Lunch"
@@ -137,7 +137,7 @@ agenda:
       description:
       time: "2:30"
     - title: "Breakouts"
-      description: "Possible topics include AMP4Email, measuring everything using AMP analytics, AMP (and AMP Stories) in WordPress the WordPress Way and making AMP work with JavaScript frameworks."
+      description: "Topics include AMP4Email, measuring everything using AMP analytics, bringing an open source mindset to a product lifecycle and making AMP work with JavaScript frameworks."
       time: "2:45"
     - title: "Break"
       description:
