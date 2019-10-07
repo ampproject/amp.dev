@@ -29,6 +29,7 @@
 /tools: /documentation/tools
 /vision-mission: /about/mission-and-vision
 /websites: /about/websites
+/wg: https://github.com/ampproject/meta/tree/master/working-groups
 
 # Regex-based entries
 ^/c/amp-([a-z-]+)$:
