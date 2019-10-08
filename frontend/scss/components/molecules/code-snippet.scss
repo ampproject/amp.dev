@@ -18,6 +18,7 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 @import 'components/atoms/_text.scss';
 
 .#{molecule('code-snippet')} {
+  display: flex;
   overflow-x: auto;
   margin: 1.1rem 0 0 0;
   padding: 0 1em;
@@ -25,6 +26,14 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   line-height: 1.3em;
   background: color('ebony-clay');
   font-size: 0.9em;
+
+  &::after {
+    content: '\00a0\00a0\00a0\00a0\00a0';
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
   &::-webkit-scrollbar {
     width: 4px;
