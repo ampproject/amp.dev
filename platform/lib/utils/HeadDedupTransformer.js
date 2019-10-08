@@ -24,8 +24,8 @@ const TAGS_TO_DEDUP = {
 };
 
 /**
- * A custom transformer for the @ampproject/toolbox-optimizer rewriting
- * CSS selectors to save bytes in <style amp-custom>.
+ * A custom transformer for the @ampproject/toolbox-optimizer removing
+ * all duplicated viewport and link rel=canonical tags.
  */
 class HeadDedupTransformer {
   constructor(config) {
