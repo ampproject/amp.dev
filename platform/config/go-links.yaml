@@ -14,6 +14,7 @@
 /docsgfi: https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22
 /email: /about/email
 /email-tools: /documentation/tools
+/email-viewer: https://github.com/ampproject/amp-email-viewer
 /governance: /community/governance
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
 /learn: /documentation/courses/
