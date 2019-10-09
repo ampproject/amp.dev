@@ -18,38 +18,39 @@
 
 const fs = require('fs');
 const yaml = require('js-yaml');
-const gulp = require('gulp');
 const emojiStrip = require('emoji-strip');
 const {promisify} = require('util');
 const writeFileAsync = promisify(fs.writeFile);
 const {GitHubImporter} = require('@lib/pipeline/gitHubImporter');
 
-const WG_GH_REPOSITORY_PATH = 'ampproject';
+/* The GitHub organisation the repositories imported from are located */
+const WG_GH_ORGANISATION = 'ampproject';
+/* Path where the working group data gets imported to */
 const WG_DIRECTORY_PATH = 'pages/content/amp-dev/community/working-groups';
-/*
-Mid HEX Value to set github-label color to either black or white - corresponding to the given background color.
- */
+/* Threshold for label background color from when color should switch to white */
 const WG_LABEL_COLOR_THRESHOLD = 7500000;
 
 async function importWorkingGroups() {
   const client = new GitHubImporter();
-  const repos = (await client._github.org(WG_GH_REPOSITORY_PATH).reposAsync())[0];
+  const repos = (await client._github.org(WG_GH_ORGANISATION).reposAsync())[0];
 
   for (const wg of repos) {
     if (!wg.name.includes('wg-')) {
       continue;
     }
 
-    let meta = await client._github.repo(`${WG_GH_REPOSITORY_PATH}/${wg.name}`, 'meta').contentsAsync('METADATA.yaml');
+    let meta = await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`)
+        .contentsAsync('METADATA.yaml');
     meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
 
-    let issues = (await client._github.repo(`${WG_GH_REPOSITORY_PATH}/${wg.name}`).issuesAsync())[0];
+    let issues = (await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`).issuesAsync())[0];
     issues = issues.map((issue) => {
       const date = new Date(issue.created_at).toDateString();
       const title = emojiStrip(issue.title);
 
       issue.labels = issue.labels.map((label) => {
-        const txtColor = ((parseInt(`0x${label.color}`) < IMPORT_WGS_LABEL_COLOR_THRESHOLD) ? 'fff' : '000');
+        const txtColor = parseInt(`0x${label.color}`) < WG_LABEL_COLOR_THRESHOLD ?
+          'fff' : '000';
 
         return {
           'name': label.name,
