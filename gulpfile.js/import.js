@@ -35,12 +35,19 @@ async function importWorkingGroups() {
   const repos = (await client._github.org(WG_GH_ORGANISATION).reposAsync(1, 100))[0];
 
   for (const wg of repos) {
-    if (!wg.name.includes('wg-')) {
+    if (!wg.name.startsWith('wg-')) {
       continue;
     }
 
-    let meta = await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`)
+    let meta = null;
+    try {
+      meta = await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`)
         .contentsAsync('METADATA.yaml');
+    } catch (e) {
+      console.warn(`No METADATA.yaml for working group ${wg.name}.`);
+      continue;
+    }
+
     meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
 
     let issues = (await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`).issuesAsync())[0];
@@ -80,7 +87,8 @@ async function importWorkingGroups() {
       'members': meta.members,
       'communication': meta.communication,
     }));
-    console.log('Imported Working Group: ', wg.name);
+
+    console.log('Imported working group data', wg.name);
   }
 }
 
