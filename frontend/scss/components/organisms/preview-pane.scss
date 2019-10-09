@@ -22,6 +22,51 @@
   align-items: center;
   justify-content: flex-start;
   min-height: calc(100vh - 60px);
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1460px;
+    padding: 10px 15px;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    &-spacer {
+      flex: 1 0 33.3333%;
+    }
+  }
+
+  .#{molecule('experiments')} {
+    flex: 1 0 33.3333%;
+    padding: 0;
+    margin: 0;
+    background: none;
+
+    &-controls {
+      justify-content: flex-end;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-control {
+      flex-grow: 0;
+      padding: 0;
+      margin: 4px 15px;
+      background: none;
+    }
+
+    &-label {
+      margin-right: 15px;
+    }
+
+    &-channel-name {
+      color: color('oslo-gray');
+    }
+  }
 }
 
 .#{organism('preview-pane')} {
@@ -137,5 +182,4 @@
     height: calc(100vh - 60px);
     transform: none;
   }
-
 }

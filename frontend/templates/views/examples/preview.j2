@@ -36,21 +36,36 @@
 {% block main %}
 {% do doc.styles.addCssFile('/css/components/organisms/preview-pane.css') %}
 <main class="ap--preview-pane">
-  {% if not doc.example.document.isAmpAds %}
-  {% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
-  <div class="ap-m-device-toggle">
-    {% set devices = ['mobile', 'tablet', 'desktop'] %}
+  <div class="ap--preview-pane-header">
+    <div class="ap--preview-pane-header-spacer"></div>
 
-    {% for device in devices %}
-    {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
-    <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
-      <svg class="ap-a-ico ap-m-device-toggle-icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
-      </svg>
-    </button>
-    {% endfor %}
+    {% if not doc.example.document.isAmpAds %}
+    {% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
+    <div class="ap-m-device-toggle">
+      {% set devices = ['mobile', 'tablet', 'desktop'] %}
+
+      {% for device in devices %}
+      {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
+      <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
+        <svg class="ap-a-ico ap-m-device-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
+        </svg>
+      </button>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {# Render widget to toggle experiments if there are any #}
+    {% if doc.example.document.metadata.experiments %}
+    {% do doc.styles.addCssFile('/css/components/molecules/experiments.css', 100) %}
+    {% with experiments = doc.example.document.metadata.experiments %}
+    <div class="ap-m-experiments">
+      {% include '/views/partials/experiments/experiments-controls.j2' %}
+    </div>
+    {% include '/views/partials/experiments/experiments-script.j2' %}
+    {% endwith %}
+    {% endif %}
   </div>
-  {% endif %}
 
   {% set base_class = 'ap-o-preview-pane ap-o-preview-pane-' + doc.formats[0] %}
   <div class="{{ base_class }} ap-o-preview-pane-mobile" [class]="'{{ base_class }} ap-o-preview-pane-' + device.selected" {% if doc.example.document.metadata.width and doc.example.document.isAmpAds %} style="min-width: {{ doc.example.document.metadata.width }}px;"{% endif %}>
