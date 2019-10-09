@@ -42,7 +42,7 @@ async function importWorkingGroups() {
     let meta = null;
     try {
       meta = await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`)
-        .contentsAsync('METADATA.yaml');
+          .contentsAsync('METADATA.yaml');
     } catch (e) {
       console.warn(`No METADATA.yaml for working group ${wg.name}.`);
       continue;
