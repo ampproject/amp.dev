@@ -32,7 +32,7 @@ const WG_LABEL_COLOR_THRESHOLD = 7500000;
 
 async function importWorkingGroups() {
   const client = new GitHubImporter();
-  const repos = (await client._github.org(WG_GH_ORGANISATION).reposAsync())[0];
+  const repos = (await client._github.org(WG_GH_ORGANISATION).reposAsync(1, 100))[0];
 
   for (const wg of repos) {
     if (!wg.name.includes('wg-')) {
