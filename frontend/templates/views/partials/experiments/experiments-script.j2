@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
       }
 
-      location.reload();
+      reloadPage();
     }
 
     function disableExperiments() {
@@ -30,7 +30,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
       }
 
-      location.reload();
+      reloadPage();
+    }
+
+    function reloadPage() {
+      if (self==top) {
+        location.reload();
+      } else {
+        setTimeout(function () {
+          document.querySelector('.ap-m-experiments-controls').hidden = true;
+          document.querySelector('.reload-hint').hidden = false;
+        }, 250);
+      }
     }
 
     // enable active experiment button
