@@ -15,9 +15,18 @@
 @import 'components/atoms/_headline.scss';
 
 .#{molecule('experiments')} {
+  $self: &;
   background: color('white');
   margin: 0 0 32px -30px;
   padding: 20px 30px 20px 30px;
+
+  &-iframe {
+    flex: 1 0 33.3333%;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    background: none;
+  }
 
   &-controls {
     display: flex;
@@ -25,6 +34,13 @@
     padding: 25px 0 0 0;
     margin: 0 -15px;
     list-style: none;
+
+    #{$self}-iframe & {
+      display: inline-flex;
+      justify-content: flex-end;
+      padding: 0;
+      margin: 0;
+    }
   }
 
   &-control {
@@ -35,12 +51,23 @@
     padding: 15px 10px;
     margin: 0 15px;
     background-color: color('wild-sand');
+
+    #{$self}-iframe & {
+      flex-grow: 0;
+      padding: 0;
+      margin: 4px 15px;
+      background: none;
+    }
   }
 
   &-label {
     flex: 1 0 auto;
     @include txt-font-accent;
     color: color('black');
+
+    #{$self}-iframe & {
+      margin-right: 15px;
+    }
   }
 
   &-channel {
@@ -53,6 +80,14 @@
 
       &.active {
         color: color('blue-ribbon');
+      }
+
+      #{$self}-iframe & {
+        color: color('oslo-gray');
+
+        &.active {
+          color: color('blue-ribbon');
+        }
       }
     }
   }

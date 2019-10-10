@@ -45,27 +45,6 @@
     padding: 0;
     margin: 0;
     background: none;
-
-    &-controls {
-      justify-content: flex-end;
-      padding: 0;
-      margin: 0;
-    }
-
-    &-control {
-      flex-grow: 0;
-      padding: 0;
-      margin: 4px 15px;
-      background: none;
-    }
-
-    &-label {
-      margin-right: 15px;
-    }
-
-    &-channel-name {
-      color: color('oslo-gray');
-    }
   }
 }
 
