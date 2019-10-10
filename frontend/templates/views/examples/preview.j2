@@ -57,13 +57,17 @@
 
     {# Render widget to toggle experiments if there are any #}
     {% if doc.example.document.metadata.experiments %}
-    {% do doc.styles.addCssFile('/css/components/molecules/experiments.css', 100) %}
-    {% with experiments = doc.example.document.metadata.experiments %}
     <div class="ap-m-experiments">
-      {% include '/views/partials/experiments/experiments-controls.j2' %}
+      <amp-iframe layout="fixed-height"
+                  height="66"
+                  sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+                  allowfullscreen
+                  allowpaymentrequest
+                  frameborder="0"
+                  src="{{ podspec.base_urls.preview }}/shared/experiments/?experiments={{doc.example.document.metadata.experiments|join(',')}}">
+        <div placeholder=""></div>
+      </amp-iframe>
     </div>
-    {% include '/views/partials/experiments/experiments-script.j2' %}
-    {% endwith %}
     {% endif %}
   </div>
 
