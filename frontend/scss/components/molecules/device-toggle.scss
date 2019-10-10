@@ -16,6 +16,7 @@
 .#{molecule('device-toggle')} {
   flex: 0 0 180px;
   text-align: center;
+  line-height: 0;
 
   &-button {
     @include unset-button;
