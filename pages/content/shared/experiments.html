@@ -12,5 +12,16 @@ $sitemap:
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 </head>
 <body>
+  <div class="ap-m-experiments ap-m-experiments-iframe">
+    {% include '/views/partials/experiments/experiments-controls.j2' %}
+  </div>
+  <script>
+  const experiments = [
+    [%- for experiment in experiments -%]
+      "[= experiment =]"[= ', ' if not loop.last =]
+    [%- endfor -%]
+  ]
+  </script>
+  {% include '/views/partials/experiments/experiments-script.j2' %}
 </body>
 </html>

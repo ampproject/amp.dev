@@ -3,32 +3,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
   (window.AMP = window.AMP || []).push(function(AMP) {
 
     function areAllExperimentsEnabled() {
-      {% for experiment in experiments %}
-      console.log('isExperimentOn {{ experiment }}:' + AMP.isExperimentOn('{{ experiment }}'));
-      if (!AMP.isExperimentOn('{{ experiment }}')) {
-        return false;
+      for (var i = 0; i < experiments.length; i++) {
+        console.log('isExperimentOn ' + experiments[i] + ':' + AMP.isExperimentOn(experiments[i]));
+        if (!AMP.isExperimentOn(experiments[i])) {
+          return false;
+        }
       }
-      {% endfor %}
 
       return true;
     }
 
     function enableExperiments() {
-      {% for experiment in experiments %}
-      if (!AMP.isExperimentOn('{{ experiment }}')) {
-        AMP.toggleExperiment('{{ experiment }}');
+      for (var i = 0; i < experiments.length; i++) {
+        if (!AMP.isExperimentOn(experiments[i])) {
+          AMP.toggleExperiment(experiments[i]);
+        }
       }
-      {% endfor %}
 
       location.reload();
     }
 
     function disableExperiments() {
-      {% for experiment in experiments %}
-      if (AMP.isExperimentOn('{{ experiment }}')) {
-        AMP.toggleExperiment('{{ experiment }}');
+      for (var i = 0; i < experiments.length; i++) {
+        if (AMP.isExperimentOn(experiments[i])) {
+          AMP.toggleExperiment(experiments[i]);
+        }
       }
-      {% endfor %}
 
       location.reload();
     }
