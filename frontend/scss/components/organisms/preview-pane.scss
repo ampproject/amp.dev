@@ -23,6 +23,10 @@
   justify-content: flex-start;
   min-height: calc(100vh - 60px);
 
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
+
   &-header {
     display: flex;
     align-items: center;
@@ -32,19 +36,26 @@
     padding: 5px 15px;
 
     @media (max-width: 767px) {
-      display: none;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     &-spacer {
       flex: 1 0 33.3333%;
+      @media (max-width: 767px) { display: none; }
     }
-  }
 
-  .#{molecule('experiments')} {
-    flex: 1 0 33.3333%;
-    padding: 0;
-    margin: 0;
-    background: none;
+    .#{molecule('device-toggle')} {
+      flex: 0 0 180px;
+      @media (max-width: 767px) { display: none; }
+    }
+
+    .#{molecule('experiments')} {
+      flex: 1 0 33.3333%;
+      padding: 0;
+      margin: 0;
+      background: none;
+    }
   }
 }
 
@@ -158,7 +169,7 @@
 
   @media (max-width: 767px) {
     width: calc(100vw);
-    height: calc(100vh - 60px);
+    height: calc(100vh - 131px);
     transform: none;
   }
 }

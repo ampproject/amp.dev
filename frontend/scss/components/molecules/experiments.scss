@@ -24,8 +24,10 @@
     flex: 1 0 33.3333%;
     padding: 0;
     margin: 0;
-    text-align: right;
     background: none;
+
+    @media (max-device-width: 767px) { text-align: center; }
+    @media (min-device-width: 768px) { text-align: right; }
   }
 
   &-controls {
@@ -37,9 +39,11 @@
 
     #{$self}-iframe & {
       display: inline-flex;
-      justify-content: flex-end;
       padding: 0;
       margin: 0;
+
+      @media (max-device-width: 767px) { justify-content: center; }
+      @media (min-device-width: 768px) { justify-content: flex-end; }
     }
   }
 
