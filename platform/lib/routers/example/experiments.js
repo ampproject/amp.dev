@@ -29,8 +29,7 @@ sharedPages.get('/shared/experiments/', async (req, res, next) => {
     const rendered = template.render({'experiments': (req.query.experiments || '').split(',')});
     res.send(rendered);
   } catch (e) {
-    // page not found
-    next();
+    next(e);
   }
 });
 
