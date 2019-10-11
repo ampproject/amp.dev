@@ -246,6 +246,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/kixer.md
       - label: Kuadio
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/kuadio.md
+      - label: Lentainform
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/lentainform.md
       - label: Ligatus
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/ligatus.md
       - label: LockerDome
