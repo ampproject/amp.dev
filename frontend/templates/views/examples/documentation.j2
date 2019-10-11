@@ -122,8 +122,10 @@
 
       {# Render widget to toggle experiments if there are any #}
       {% if doc.example.document.metadata.experiments %}
+      {% with experiments = doc.example.document.metadata.experiments %}
       <script>const experiments = {{ experiments|tojson }}</script>
       {% include '/views/partials/experiments/experiments.j2' %}
+      {% endwith %}
       {% endif %}
 
       {# Check if the sample has a demo button as then this is the primary CTA #}
