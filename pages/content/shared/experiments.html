@@ -24,13 +24,7 @@ $sitemap:
     {% include '/views/partials/experiments/experiments-controls.j2' %}
     <b class="reload-hint" hidden>{{ _('Please reload the page.' ) }} ↻</b>
   </div>
-  <script>
-  const experiments = [
-    [%- for experiment in experiments -%]
-      "[= experiment =]"[= ', ' if not loop.last =]
-    [%- endfor -%]
-  ]
-  </script>
+  <script>const experiments = [= experiments|dump|safe =]</script>
   {% include '/views/partials/experiments/experiments-script.j2' %}
 </body>
 </html>
