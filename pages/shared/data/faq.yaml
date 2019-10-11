@@ -266,6 +266,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/medyanet.md
       - label: Meg
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/meg.md
+      - label: MGID
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/mgid.md
       - label: MicroAd
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/microad.md
       - label: MixiMedia
