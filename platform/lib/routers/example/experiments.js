@@ -17,7 +17,7 @@
 'use strict';
 
 
-const {Templates, createRequestContext} = require('@lib/templates/index.js');
+const {Templates} = require('@lib/templates/index.js');
 const express = require('express');
 
 // eslint-disable-next-line new-cap
