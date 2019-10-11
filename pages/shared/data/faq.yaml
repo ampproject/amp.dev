@@ -222,6 +222,8 @@ platform_and_vendor_partners:
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/holder.md
       - label: I-Mobile
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/imobile.md
+      - label: Idealmedia
+        url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/idealmedia.md
       - label: Imonomy
         url: https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/../../ads/imonomy.md
       - label: iBillboard
