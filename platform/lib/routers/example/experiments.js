@@ -26,7 +26,7 @@ const sharedPages = express.Router();
 sharedPages.get('/shared/experiments/', async (req, res, next) => {
   try {
     const template = await Templates.get('/shared/experiments.html');
-    const rendered = template.render({'experiments': req.query.experiments.split(',')});
+    const rendered = template.render({'experiments': (req.query.experiments || '').split(',')});
     res.send(rendered);
   } catch (e) {
     // page not found
