@@ -31,6 +31,7 @@ pages/content/amp-dev/documentation/components/reference/*.md
 !pages/content/amp-dev/documentation/components/reference/*@*.md
 pages/routescache.json
 examples/static/samples/samples.json
+pages/shared/data/componentSamples.json
 
 # Ignore files created during build process
 platform/pages*

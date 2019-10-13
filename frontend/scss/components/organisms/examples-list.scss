@@ -1,0 +1,29 @@
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_headline.scss';
+@import '../atoms/_text.scss';
+@import '../atoms/_icon.scss';
+@import '../atoms/_color.scss';
+
+.#{organism('examples-list')} {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  overflow-x: auto;
+  background: color('ebony-clay');
+
+  &-item {
+    cursor: pointer;
+    padding: 1.125em 1.75em;
+    @include txt-3;
+    @include txt-font-accent;
+    color: #fff;
+    border-right: 1px solid color('bright-gray');
+    background: color('ebony-clay');
+  }
+}
