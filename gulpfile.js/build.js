@@ -267,6 +267,7 @@ function buildPrepare(done) {
         // All paths that contain altered files at build setup time
         const SETUP_STORED_PATHS = [
           './pages/content/',
+          './pages/shared/',
           './dist/',
           './boilerplate/dist/',
           './playground/dist/',
