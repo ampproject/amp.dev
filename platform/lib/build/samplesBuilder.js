@@ -441,6 +441,9 @@ class SamplesBuilder {
    */
   _getDocumentationRoute(sample) {
     let base = this._getBaseRoute(sample);
+    if (base.match(/\.[a-z]+$/)) {
+      base = base.replace(/\.[a-z]+$/, '');
+    }
     if (!base.endsWith('/index.html')) {
       base += '/index.html';
     }
