@@ -37,7 +37,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       if (self==top) {
         location.reload();
       } else {
-        window.parent.postMessage('reload parent', '*');
+        setTimeout(function () {
+          document.querySelector('.ap-m-experiments-controls').hidden = true;
+          document.querySelector('.ap-m-experiments-reload-hint').hidden = false;
+        }, 250);
       }
     }
 

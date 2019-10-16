@@ -58,15 +58,6 @@
     {# Render widget to toggle experiments if there are any #}
     {% if doc.example.document.metadata.experiments %}
     <div class="ap-m-experiments">
-      <script>
-      window.addEventListener('message', receiveMessage, false);
-
-      function receiveMessage(e) {
-        if (e.data === 'reload parent') {
-          location.reload();
-        }
-      }
-      </script>
       <amp-iframe layout="fixed-height"
                   height="66"
                   sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
