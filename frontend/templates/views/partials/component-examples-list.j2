@@ -1,11 +1,33 @@
+{% do doc.amp_dependencies.add('amp-carousel', '0.1') %}
 {% set examples = g.json('/shared/data/componentSamples.json') %}
 
 {# Check if there are examples for the current component #}
 {% if examples[doc.title] %}
-{% do doc.styles.addCssFile('css/components/organisms/examples-list.css') %}
-<div class="ap-o-examples-list" role="list">
-  {% for title, href in examples[doc.title].items() %}
-  <a class="ap-o-examples-list-item" href="{{ href }}" role="listitem">{{ title }}</a>
+
+  {# Count how much examples with the current format exist #}
+  [% set count = 0 %]
+  {% for component in examples[doc.title] %}
+  [% if format in {{ component.formats|list|tojson }} %]
+  [% set count = count + 1 %]
+  [% endif %]
   {% endfor %}
-</div>
+
+  {# Show carousel if examples for the current format exist #}
+  [% if count > 0 %]
+  {% do doc.styles.addCssFile('css/components/organisms/examples-list.css') %}
+  <amp-carousel class="ap-o-examples-list"
+                role="list"
+                height="64"
+                layout="fixed-height"
+                type="carousel">
+    {% for component in examples[doc.title] %}
+    {# Only print examples for the current format #}
+    [% if format in {{ component.formats|list|tojson }} %]
+    <a class="ap-o-examples-list-item"
+       href="{{ component.url }}"
+       role="listitem">{{ component.title }}</a>
+    [% endif %]
+    {% endfor %}
+  </amp-carousel>
+  [% endif %]
 {% endif %}
