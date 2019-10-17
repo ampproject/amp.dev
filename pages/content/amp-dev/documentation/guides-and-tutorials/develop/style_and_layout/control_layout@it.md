@@ -4,7 +4,7 @@ $title: Layout supportati
 
 Rendi reattivi i tuoi elementi utilizzando `layout=responsive`.
 
-## Valori supportati per l'attributo layout
+## Valori supportati per l'attributo layout <a name="the-layout-attribute"></a>
 
 Utilizza i layout reattivi per impostazione predefinita.
 
@@ -22,22 +22,22 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>nodisplay</code></td>
       <td class="col-twenty" data-th="Description">No</td>
-      <td data-th="Behavior">Elemento non visualizzato. Questo layout può essere applicato a ogni elemento AMP. Il componente non occupa spazio sullo schermo, come non ci fosse alcuno stile di visualizzazione applicato. Si presume che l'elemento possa visualizzarsi automaticamente in seguito all'azione dell'utente, ad esempio <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a>.</td>
+      <td data-th="Behavior">Elemento non visualizzato. Questo layout può essere applicato a ogni elemento AMP. Il componente non occupa spazio sullo schermo, come non ci fosse alcuno stile di visualizzazione applicato. Si presume che l'elemento possa visualizzarsi automaticamente in seguito all'azione dell'utente, ad esempio <a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed</code></td>
       <td class="col-twenty" data-th="Description">Sì</td>
-      <td data-th="Behavior">L'elemento ha larghezza e altezza fisse; la reattività non è supportata. Le uniche eccezioni sono gli elementi <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}"><code>amp-pixel</code></a> e <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a>.</td>
+      <td data-th="Behavior">L'elemento ha larghezza e altezza fisse; la reattività non è supportata. Le uniche eccezioni sono gli elementi <a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> e <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>responsive</code></td>
       <td class="col-twenty" data-th="Description">Sì</td>
-      <td data-th="Behavior">L'elemento viene adattato alla larghezza del relativo elemento contenitore, mentre la sua altezza viene ridimensionata automaticamente in base alle proporzioni stabilite dagli attributi di larghezza e altezza. Questo layout è adatto per la maggior parte degli elementi AMP, inclusi <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> e <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>. Lo spazio disponibile dipende dall'elemento principale e può anche essere personalizzato utilizzando l'elemento CSS <code>max-width</code>.</td>
+      <td data-th="Behavior">L'elemento viene adattato alla larghezza del relativo elemento contenitore, mentre la sua altezza viene ridimensionata automaticamente in base alle proporzioni stabilite dagli attributi di larghezza e altezza. Questo layout è adatto per la maggior parte degli elementi AMP, inclusi <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> e <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>. Lo spazio disponibile dipende dall'elemento principale e può anche essere personalizzato utilizzando l'elemento CSS <code>max-width</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Solo l'altezza</td>
-      <td data-th="Behavior">L'elemento occupa lo spazio a sua disposizione, ma la sua altezza rimane invariata. Questo layout è adatto per elementi quali <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>, che prevede contenuti in posizione orizzontale. L'attributo <code>width</code> non deve essere presente o deve essere impostato su <code>auto</code>.</td>
+      <td data-th="Behavior">L'elemento occupa lo spazio a sua disposizione, ma la sua altezza rimane invariata. Questo layout è adatto per elementi quali <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a>, che prevede contenuti in posizione orizzontale. L'attributo <code>width</code> non deve essere presente o deve essere impostato su <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>
@@ -52,14 +52,14 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
   </tbody>
 </table>
 
-### Che cosa succede se non vengono definite la larghezza e l'altezza?
+### Che cosa succede se non vengono definite la larghezza e l'altezza? <a name="what-if-width-and-height-are-undefined"></a>
 
 Se i valori `width` o `height` non vengono specificati, in alcuni casi il runtime AMP può stabilire i seguente valori predefiniti:
 
-* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}): per larghezza e altezza viene impostato il valore predefinito 0.
-* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}): la larghezza e l'altezza predefinite vengono dedotte dal browser.
+* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): per larghezza e altezza viene impostato il valore predefinito 0.
+* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): la larghezza e l'altezza predefinite vengono dedotte dal browser.
 
-### Che cosa succede se non viene definito l'attributo layout?
+### Che cosa succede se non viene definito l'attributo layout? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Il comportamento del layout viene stabilito come segue:
 
@@ -74,6 +74,8 @@ Utilizza la regola [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@
 Quando cambiano le dimensioni o l'orientamento della finestra del browser, le query supporti vengono rivalutate, dopodiché gli elementi vengono nascosti e mostrati in base ai nuovi risultati.
 
 Visita la pagina [Utilizzare query supporti CSS per la reattività](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=it) per avere ulteriori informazioni sul controllo del layout applicando query supporti.
+
+<a name="element-media-queries"></a>
 
 Una funzione aggiuntiva per il responsive design disponibile in AMP è l'attributo `media`, che può essere utilizzato in ogni elemento AMP. Funziona in modo simile alle query supporti nel foglio di stile globale, ma incide soltanto sull'elemento specifico in una singola pagina.
 
@@ -104,7 +106,7 @@ L'immagine da recuperare e visualizzare viene scelta in base alla larghezza dell
 ## Utilizzare gli attributi srcset e sizes
 
 Utilizza l'attributo `srcset` per stabilire gli asset di un elemento in base alle varie espressioni di supporto.
-Utilizzalo in particolare nei tag [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) per specificare gli asset immagine da utilizzare a seconda delle dimensioni dello schermo.
+Utilizzalo in particolare nei tag [`amp-img`](../../../../documentation/components/reference/amp-img.md) per specificare gli asset immagine da utilizzare a seconda delle dimensioni dello schermo.
 
 In questo semplice esempio, `srcset` specifica l'immagine da utilizzare in base alla larghezza dello schermo.
 Il descrittore `w` indica al browser la larghezza di ogni immagine nell'elenco:

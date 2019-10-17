@@ -7,35 +7,21 @@
 @import 'components/atoms/_text.scss';
 
 @mixin sidebar {
-  
-
 
   @media (min-width: 768px) {
-    position: -webkit-sticky;
-    position: sticky;
-    z-index: 1;
-    top: 118px;
-    left: auto;
-    padding-bottom: 0;
     width: auto;
+    min-height: 400px;
+    padding-bottom: 0;
     margin-right: 0;
     margin-left: -10px;
     background: none;
     box-shadow: none;
-  }
-
-  @media (min-width: 1024px) {
-    top: 120px;
   }
 }
 
 @mixin sidebar-nav {
   margin: 15px 0 0;
   padding-bottom: 15px;
-
-  
-
-  
 }
 
 @mixin sidebar-nav-list {
@@ -99,6 +85,7 @@
   padding: 7px 25px 8px 20px;
   text-transform: unset;
   @include txt;
+  font-family: 'Noto Sans', sans-serif;
   @include txt-2;
   line-height: 1.4em;
 }
@@ -120,10 +107,11 @@
 @mixin sidebar-nav-trigger {
   position: absolute;
   top: 0;
-  width: 40px;
+  width: 20px;
   padding: 0;
   margin: 0;
   background: none transparent;
+  border: none;
   cursor: pointer;
 }
 
@@ -136,7 +124,7 @@
 }
 
 @mixin sidebar-nav-trigger-state {
-  opacity: 0;
+  -webkit-appearance: none;
   z-index: 1;
 
   &:checked {

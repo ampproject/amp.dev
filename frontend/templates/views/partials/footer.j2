@@ -1,20 +1,38 @@
 {% do doc.styles.addCssFile('css/components/organisms/footer.css') %}
 {% do doc.icons.useIcon('icons/internal.svg') %}
+{% do doc.icons.useIcon('icons/download.svg') %}
 
 {% macro footer() -%}
 <footer class="ap--footer">
   <div class="ap-o-footer">
     <div class="ap-o-footer-line-top">
-      <div class="ap-o-footer-hint">{{_('Of course, this site is made with AMP!')}}</div>
+      <div class="ap-o-footer-hint">{{ _('Of course, this site is made with AMP!') }}</div>
 
       <div class="ap-o-footer-follow">
         <h5 class="ap-o-footer-follow-title">{{_('Follow us')}}</h5>
         <ul class="ap-o-footer-follow-menu">
-          <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://twitter.com/AMPhtml" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg></a></li>
-          <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg></a></li>
-          <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://amphtml.wordpress.com/" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wordpress"></use></svg></a></li>
-          <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://github.com/ampproject"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use></svg></a></li>
-          <li class="ap-o-footer-follow-item"><a class="ap-a-ico ap-o-footer-follow-icon" href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackoverflow"></use></svg></a></li>
+          <li class="ap-o-footer-follow-item">
+            <a class="ap-a-ico ap-o-footer-follow-icon" href="https://twitter.com/AMPhtml" rel="noopener" title="Twitter">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use></svg>
+            </a>
+          </li>
+          <li class="ap-o-footer-follow-item">
+            <a class="ap-a-ico ap-o-footer-follow-icon" href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw" rel="noopener" title="YouTube">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#youtube"></use></svg>
+            </a>
+          </li>
+          <li class="ap-o-footer-follow-item">
+            <a class="ap-a-ico ap-o-footer-follow-icon" href="https://amphtml.wordpress.com/" rel="noopener">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#wordpress" title="Wordpress"></use></svg>
+            </a>
+          </li>
+          <li class="ap-o-footer-follow-item">
+            <a class="ap-a-ico ap-o-footer-follow-icon" href="https://github.com/ampproject" title="GitHub">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github"></use></svg>
+            </a></li>
+          <li class="ap-o-footer-follow-item">
+            <a class="ap-a-ico ap-o-footer-follow-icon" href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" title="Stackoverflow"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stackoverflow"></use></svg></a>
+          </li>
         </ul>
       </div>
     </div>
@@ -42,7 +60,7 @@
       <div class="ap-o-footer-nav-column">
         <h5 class="ap-o-footer-nav-title">{{_('Community')}}</h5>
         <ul class="ap-o-footer-nav-menu">
-          <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/community/platform-and-vendor-partners.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('Platform and Vendor Partners')}}</a></li>
+          <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/support/faq/platform-and-vendor-partners.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('Platform and Vendor Partners')}}</a></li>
           <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('Contribute')}}</a></li>
           <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('Roadmap')}}</a></li>
         </ul>
@@ -51,6 +69,12 @@
         <h5 class="ap-o-footer-nav-title">{{_('Events')}}</h5>
         <ul class="ap-o-footer-nav-menu">
           <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('AMP Conf 2019')}}</a></li>
+          <li class="ap-o-footer-nav-item"><a href="{{ g.doc('/content/amp-dev/events/amp-cs-2019.html', locale=doc.locale).url.path }}" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg></div>{{_('AMP Contributor Summit 2019')}}</a></li>
+        </ul>
+        <h5 class="ap-o-footer-nav-title">{{_('AMP Brand Materials')}}</h5>
+        <ul class="ap-o-footer-nav-menu">
+          <li class="ap-o-footer-nav-item"><a href="/static/files/brand-material/AMP_Mini_Styleguide.pdf" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download"></use></svg></div>{{_('Styleguide')}}</a></li>
+          <li class="ap-o-footer-nav-item"><a href="/static/files/brand-material/AMP_Logo_Rebrush.zip" class="ap-o-footer-nav-link"><div class="ap-a-ico ap-o-footer-nav-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#download"></use></svg></div>{{_('Logos')}}</a></li>
         </ul>
       </div>
     </div>
@@ -58,9 +82,11 @@
       <ul class="ap-o-footer-legal-nav-menu">
         <li class="ap-o-footer-legal-nav-item"><a class="ap-o-footer-legal-nav-link" href="https://www.google.com/intl/en/policies/privacy/" rel="noopener">{{_('Privacy Policy')}}</a></li>
       </ul>
-      <div class="ap-o-footer-copyright">&copy; 2018 AMP Open Source Project</div>
+      <div class="ap-o-footer-copyright">&copy; 2019 AMP Open Source Project</div>
     </div>
+
   </div>
+
 </footer>
 {%- endmacro %}
 

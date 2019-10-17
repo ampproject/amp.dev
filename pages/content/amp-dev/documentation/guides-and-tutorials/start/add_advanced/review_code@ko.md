@@ -94,11 +94,11 @@ $title: 시작 코드 검토
 </html>
 ```
 
-이 페이지는 [AMP 유효성 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) 및 [schema.org](http://schema.org/) 구조화된 데이터 유효성 검사를 모두 통과하는 단순한 AMP 페이지입니다. 이 페이지를 뉴스 웹사이트에 배포하면 사용자는 검색엔진의 결과 페이지에서 보다 풍부한 정보를 제공하는 리치 결과(예: Google 검색의 주요뉴스 캐러셀)를 통해 이 페이지를 발견할 수 있습니다.
+이 페이지는 [AMP 유효성 검사](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) 및 [schema.org](http://schema.org/) 구조화된 데이터 유효성 검사를 모두 통과하는 단순한 AMP 페이지입니다. 이 페이지를 뉴스 웹사이트에 배포하면 사용자는 검색엔진의 결과 페이지에서 보다 풍부한 정보를 제공하는 리치 결과(예: Google 검색의 주요뉴스 캐러셀)를 통해 이 페이지를 발견할 수 있습니다.
 
 ## AMP 유효성 검사 도구 사용 설정
 
-페이지를 변경해 보기 전에 유효한 AMP HTML을 사용하고 있는지 확인하기 위해 [AMP 유효성 검사 도구]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})를 사용하도록 설정해 보겠습니다.  URL에 다음 프래그먼트 식별자를 **추가**하세요.
+페이지를 변경해 보기 전에 유효한 AMP HTML을 사용하고 있는지 확인하기 위해 [AMP 유효성 검사 도구](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)를 사용하도록 설정해 보겠습니다.  URL에 다음 프래그먼트 식별자를 **추가**하세요.
 
 ```text
 #development=1
@@ -120,7 +120,7 @@ Chrome이나 선호하는 브라우저에서 [개발자 콘솔](https://develope
 - [AMP 유효성 검사 도구 웹 인터페이스](https://validator.ampproject.org/)
 - 그 외 다수
 
-[AMP 페이지 유효성 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) 가이드에서 자세한 내용을 알아보세요.
+[AMP 페이지 유효성 검사](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) 가이드에서 자세한 내용을 알아보세요.
 [/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Nexus 5X 기기 시뮬레이션') }}

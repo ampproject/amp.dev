@@ -1,0 +1,41 @@
+@import '_extends.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+/*
+
+#############################
+### ORGANISM: browsers ######
+#############################
+
+*/
+
+.#{organism('browsers')} {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 0 20px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    max-width: 800px;
+    margin: 30px auto;
+  }
+
+  .browser {
+    flex: 0 0 auto;
+    width: 75px;
+    margin: 10px;
+    padding: 0;
+
+    @media (min-width: 768px) {
+      width: calc(16.6666666667% - 20px);
+    }
+
+    .browser-title {
+      @include txt;
+      color: color('oslo-gray');
+      text-transform: uppercase;
+    }
+  }
+}

@@ -5,8 +5,6 @@ $localization:
 $title@: AMP's Layout System
 $order: 7
 
-index: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-
 formats:
   - websites
   - email

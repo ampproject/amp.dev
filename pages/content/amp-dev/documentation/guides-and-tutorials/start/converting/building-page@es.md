@@ -54,7 +54,7 @@ Cuando inspecciona la salida de JavaScript en la Consola del programador (asegú
 Powered by AMP ⚡ HTML
 ```
 
-**Habilite** el [AMP validator]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) agregando este identificador de fragmento a su URL:
+**Habilite** el [AMP validator](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) agregando este identificador de fragmento a su URL:
 
 ```text
 #development=1

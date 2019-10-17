@@ -56,7 +56,7 @@ Quando você verificar a saída do JavaScript no Developers Console, tendo selec
 Powered by AMP ⚡ HTML
 ```
 
-Um [validador de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) está incluído na biblioteca AMP. Ele mostrará se há algo impedindo sua página de ser um documento AMP válido.  **Ative** o validador ao adicionar este identificador de fragmento ao URL do seu documento:
+Um [validador de AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) está incluído na biblioteca AMP. Ele mostrará se há algo impedindo sua página de ser um documento AMP válido.  **Ative** o validador ao adicionar este identificador de fragmento ao URL do seu documento:
 
 ```text
 #development=1

@@ -28,12 +28,6 @@ body {
 
 페이지를 **새로고침**하여 바뀐 스타일을 확인해 보세요. 또한 AMP 유효성 검사 도구에서 나온 결과를 살펴보세요.  이 외부 스타일시트 요청에는 오류가 없어야 합니다.
 
-[tip type="note"]
-문서에 글꼴을 추가하는 데는 추가 구성요소가 필요하지 않습니다. 단, [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}})라는 구성요소가 있습니다. [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) 구성요소는 웹 글꼴을 로드하는 데 사용되지는 않지만, 필요한 경우 웹 글꼴이 제대로 로드되었으며 적절히 응답하는지 확인하는 데 사용할 수 있습니다.
-
-[`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}})  사용하여 글꼴이 완전히 로드될 때까지 텍스트를 숨겨서 텍스트가 임시 글꼴에서 사용하려는 글꼴로 변경되는 모습을 사용자가 보지 못하게 할 수 있습니다. 글꼴 로드에 실패하면 임시 글꼴을 대신 표시하는 것이 좋습니다. 사용자가 텍스트를 아예 읽지 못하는 최악의 상황은 방지해야 하기 때문입니다. 자세한 내용은 [`amp-font`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}) 문서를 참조하세요.
-[/tip]
-
 이제 AMP 뉴스 기사가 완성되었습니다. 뉴스 기사는 다음과 같이 표시됩니다.
 
 {{ image('/static/img/docs/tutorials/tut-advanced-done.png', 412, 732, align='center half', caption='완성된 뉴스 기사') }}

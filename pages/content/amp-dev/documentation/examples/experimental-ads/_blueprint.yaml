@@ -1,6 +1,0 @@
-$title: Experimental Ads
-$view: /views/detail/example-detail.j2
-$path: /documentation/examples/experimental-ads/{base}.html
-$localization:
-  path: /{locale}/documentation/examples/experimental-ads/{base}.html
-$order: 6

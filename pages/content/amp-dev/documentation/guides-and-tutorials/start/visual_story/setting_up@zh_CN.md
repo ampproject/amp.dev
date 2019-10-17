@@ -7,7 +7,7 @@ $title: 设置
 在开始学习本教程之前，您需要做好以下准备：
 
 - 掌握基本的 HTML、CSS 和 JavaScript 知识
-- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md', locale=doc.locale).url.path}})教程）
+- 对 AMP 核心概念有一个基本了解（请参见[“将 HTML 转换成 AMP”](../../../../documentation/guides-and-tutorials/start/converting/index.md)教程）
 - 选择一种浏览器
 - 选择一种文本编辑器
 

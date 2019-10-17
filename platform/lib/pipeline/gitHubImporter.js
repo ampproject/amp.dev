@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-const octonode = require('octonode');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
+const octonode = require('octonode');
 const {Signale} = require('signale');
-const config = require('../config.js');
 
 const Document = require('./markdownDocument');
 
+const LOCAL_AMPHTML = process.env.AMP_LOCAL_AMPHTML;
 const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
 const CLIENT_SECRET = process.env.AMP_DOC_SECRET;
 const CLIENT_ID = process.env.AMP_DOC_ID;
-const LOCAL_AMPHTML_REPOSITORY = config.options['local-amphtml-repository'] || false;
+
+const DEFAULT_REPOSITORY = 'ampproject/amphtml';
 
 const log = new Signale({
   'interactive': false,
@@ -33,7 +34,7 @@ const log = new Signale({
 });
 
 function checkCredentials() {
-  if (!(CLIENT_TOKEN || (CLIENT_SECRET && CLIENT_ID)) && !LOCAL_AMPHTML_REPOSITORY) {
+  if (!CLIENT_TOKEN && !(CLIENT_SECRET && CLIENT_ID)) {
     log.fatal('Please provide either a GitHub personal access token (AMP_DOC_TOKEN) or ' +
       'GitHub application id/secret (AMP_DOC_ID and AMP_DOC_SECRET). See README.md for more ' +
       'information.');
@@ -46,25 +47,78 @@ class GitHubImporter {
   constructor() {
     this._log = log;
     checkCredentials();
-  }
-
-  async initialize() {
-    this._log.start('Instantiating GitHub client ...');
-
     this._github = octonode.client(CLIENT_TOKEN || {
       'id': CLIENT_ID,
       'secret': CLIENT_SECRET,
     });
+  }
 
-    this._repository =
-      this._github.repo(config.options['remote-amphtml-repository'] || 'ampproject/amphtml');
-    this._latestReleaseTag = await this._fetchLatestReleaseTag();
+  /**
+   * Downloads a path/document from GitHub and returns its contents
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {Object} A object containing all information
+   */
+  async fetchJson(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+    return this.fetchContents_(filePath, repo, master);
+  }
+
+  /**
+   * Downloads a file from Github and returns its contents.
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {String} A string containing the file
+   */
+  async fetchFile(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+    const data = await this.fetchContents_(filePath, repo, master, LOCAL_AMPHTML);
+    const str = Buffer.from(data[0].content || data, 'base64').toString();
+    return str;
+  }
+
+  /**
+   * Downloads a path/document from GitHub and returns its contents
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {Document} A document object containing all information
+   */
+  async fetchDocument(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+    const data = await this.fetchContents_(filePath, repo, master, LOCAL_AMPHTML);
+    if (data && data.content !== undefined && !data.content.length) {
+      this._log.info(`${filePath} is empty. Skipping ...`);
+      return '';
+    }
+
+    const buf = Buffer.from(data[0].content || data, 'base64').toString();
+    return new Document(filePath, buf);
+  }
+
+  async fetchContents_(filePath, repo=DEFAULT_REPOSITORY, master=false, local=false) {
+    if (!filePath) {
+      return Promise.reject(new Error('Can not download from undefined path.'));
+    }
+
+    if (local) {
+      this._log.await(`Copying ${filePath} from local file path...`);
+      return fs.readFile(path.join(local, filePath));
+    }
+
+    if (master || repo !== DEFAULT_REPOSITORY) {
+      this._log.await(`Downloading ${filePath} from remote master...`);
+      return this._github.repo(repo).contentsAsync(filePath);
+    }
+
+    const branch = await this._fetchLatestReleaseTag();
+    this._log.await(`Downloading ${filePath} from remote [${branch}]...`);
+    return this._github.repo(repo).contentsAsync(filePath, branch);
   }
 
   _fetchLatestReleaseTag() {
+    if (this.latestReleaseTag_) {
+      return this.latestReleaseTag_;
+    }
     this._log.await('Fetching latest release tag ...');
 
-    return new Promise((resolve, reject) => {
+    this.latestReleaseTag_ = new Promise((resolve, reject) => {
       this._github.get('/repos/ampproject/amphtml/releases/latest', {}, (err, status, body) => {
         if (body.tag_name) {
           resolve(body.tag_name);
@@ -80,55 +134,16 @@ class GitHubImporter {
       this._log.fatal(err);
       return null;
     });
-  }
-
-  /**
-   * Downloads a path/document from GitHub and returns its contents
-   * @param  {String} path Path to the file
-   * @param  {Boolean} stripTitle Whether to remove the first markdown heading to avoid double titles
-   * @return {Document}    A document object containing all information
-   */
-  _fetchDocument(filePath) {
-    if (!filePath) {
-      this._log.warn('Can not download from undefined path.');
-      return new Promise((resolve) => {
-        resolve(null);
-      });
-    }
-
-    return new Promise((resolve) => {
-      const process = (function(err, data) {
-        if (err) {
-          this._log.fatal(`Error while downloading ${filePath}`, err);
-          throw err;
-        }
-
-        if (data && data.content !== undefined && !data.content.length) {
-          this._log.info(`${filePath} is empty. Skipping ...`);
-          return;
-        }
-
-        let contents = new Buffer(data.content || data, 'base64');
-        contents = contents.toString();
-
-        resolve(new Document(filePath, contents));
-      }).bind(this);
-
-      if (LOCAL_AMPHTML_REPOSITORY) {
-        this._log.await(`Reading ${filePath} from local disk ...`);
-        fs.readFile(path.resolve(LOCAL_AMPHTML_REPOSITORY, filePath), process);
-      } else {
-        this._log.await(`Downloading ${filePath} from remote ...`);
-        this._repository.contents(filePath, this._latestReleaseTag, process);
-      }
-    });
+    return this.latestReleaseTag_;
   }
 }
 
 module.exports = {
-  'CLIENT_TOKEN': CLIENT_TOKEN,
-  'CLIENT_SECRET': CLIENT_SECRET,
-  'CLIENT_ID': CLIENT_ID,
-  'checkCredentials': checkCredentials,
-  'GitHubImporter': GitHubImporter,
+  CLIENT_TOKEN,
+  CLIENT_SECRET: CLIENT_SECRET,
+  CLIENT_ID,
+  log,
+  checkCredentials,
+  GitHubImporter,
+  DEFAULT_REPOSITORY,
 };

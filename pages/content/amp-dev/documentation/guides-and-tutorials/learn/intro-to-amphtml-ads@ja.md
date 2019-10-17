@@ -6,7 +6,7 @@ $title: AMP HTML 広告
 
 AMP HTML 広告では、より高速、軽量かつ安全にウェブ広告を配信できます。AMP ページは通常の HTML 広告にも対応していますが、その場合、読み込みに時間がかかることがあります。その点 AMP HTML で広告を作成すると、広告自体を AMP ページの他の部分と同じくらい高速に表示できます。AMP HTML 広告は、配信前に必ず検証されるため、安全で効果的な広告を配信できます。また、AMP ページだけでなくウェブ上のさまざまな場所で配信できます。
 
-AMP HTML 広告は、AMP HTML と CSS で定義された [AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って、AMP HTML 形式で記述します。このため、広告の表示速度が低下する最大の原因とされる、広告での任意の JavaScript の実行が制限されます。その代わり、基盤となる AMP と同様に、広告用 JavaScript の主なユースケースが AMP オープンソース プロジェクトに直接組み込まれています。これらのユースケースにより、広告が適切に動作することが保証されます。
+AMP HTML 広告は、AMP HTML と CSS で定義された [AMP HTML 広告仕様](a4a_spec.md)に沿って、AMP HTML 形式で記述します。このため、広告の表示速度が低下する最大の原因とされる、広告での任意の JavaScript の実行が制限されます。その代わり、基盤となる AMP と同様に、広告用 JavaScript の主なユースケースが AMP オープンソース プロジェクトに直接組み込まれています。これらのユースケースにより、広告が適切に動作することが保証されます。
 
 ### メリット
 
@@ -14,14 +14,14 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 1. **高速**: AMP HTML 広告では、広告表示を高速化するため、ページ表示プロセスの通常よりも早い段階で広告をリクエストし、ユーザーが見る直前に表示します。また、ファイルサイズが小さいという点も広告の高速化に貢献します。
 1. **軽量**: AMP HTML 広告には一般的な広告機能が組み込まれており、広告のファイルサイズが小さく抑えられています。また、ページに読み込まれた後のリソース消費量も軽減されています。たとえば、通常の広告のように、10 個のトラッカーがそれぞれ個別の情報をリクエストするのではなく、一度すべてのデータを収集してから、関係する任意の数のトラッカーにそのデータを配信するといった仕組みが採用されています。
-1. **協調**: AMP ページでは、[AMP ランタイム]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#amp-runtime)がスマートフォンの限られたリソースを適切なタイミングで適切なコンポーネントと協調させることで、最適なユーザー エクスペリエンスを実現します。たとえば、アニメーションを含む AMP HTML 広告が現在のビューポートに表示されていない場合、再生は一時的に停止されます。
+1. **協調**: AMP ページでは、[AMP ランタイム](spec/amphtml.md#amp-runtime)がスマートフォンの限られたリソースを適切なタイミングで適切なコンポーネントと協調させることで、最適なユーザー エクスペリエンスを実現します。たとえば、アニメーションを含む AMP HTML 広告が現在のビューポートに表示されていない場合、再生は一時的に停止されます。
 1. **高い訴求力**: ユーザーは、表示されていない広告に反応することはできません。高速に表示される広告は、視認性が高いためにクリックされやすく、最終的に広告の掲載結果の向上につながります。
 1. **マルウェアを排除**: AMP HTML 広告は配信前に検証されるため、マルウェアを拡散させることがありません。このため広告主は、ユーザー エクスペリエンスの安全性を保証し、ブランド イメージを守ることができます。
 1. **高い柔軟性**: AMP HTML 広告は、AMP ページと通常のウェブページの両方に掲載でき、端末の種類も問いません。
 
 ### フォーマット
 
-柔軟性に優れ、動的に運用できる AMP HTML 広告は、カルーセルやパララックス、ライトボックスをはじめ、数多くの広告フォーマットに対応しています。まずは、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートを使用して広告を作成することをおすすめします。
+柔軟性に優れ、動的に運用できる AMP HTML 広告は、カルーセルやパララックス、ライトボックスをはじめ、数多くの広告フォーマットに対応しています。まずは、[Examples](../../../documentation/examples/index.html) で公開されているオープンソースの AMP HTML 広告テンプレートを使用して広告を作成することをおすすめします。
 
 <table class="nocolor">
   <tr>
@@ -46,7 +46,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 {{ image('/static/img/docs/ads/amphtml-ads-how.svg', 1019, 434, alt='AMP HTML 広告を AMP ページに配信', caption='AMP HTML 広告を AMP ページに配信', align='' ) }}
 
-1. サイト運営者が、[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) タグを使用して AMP ページに広告スロットを挿入し、使用する広告ネットワークを指定します。
+1. サイト運営者が、[`amp-ad`](../../../documentation/components/reference/amp-ad.md) タグを使用して AMP ページに広告スロットを挿入し、使用する広告ネットワークを指定します。
 1. AMP ランタイムが、広告を取得するための広告リクエストを指定の広告ネットワークに送信します。AMP HTML 広告の配信に対応している広告ネットワークは、広告を検証して署名する[高速フェッチ実装](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md)を提供しています。
 1. 広告ネットワークが AMP HTML 広告を返し、AMP ランタイムがその広告を AMP ページに表示します。
 
@@ -54,7 +54,7 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### サイト運営者
 
-直接販売の広告を AMP HTML で配信するには、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成し、AMP HTML 広告の配信に対応した広告サーバーから配信する必要があります。現時点で、AMP HTML 広告に対応している広告サーバーは次のとおりです。
+直接販売の広告を AMP HTML で配信するには、[AMP HTML 広告仕様](a4a_spec.md)に沿って広告を作成し、AMP HTML 広告の配信に対応した広告サーバーから配信する必要があります。現時点で、AMP HTML 広告に対応している広告サーバーは次のとおりです。
 
 *   DoubleClick for Publishers
 *   TripleLift
@@ -62,11 +62,11 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 *   Adzerk
 *   Google AdSense
 
-エクスチェンジや SSP など、間接チャネル経由で AMP HTML 広告を配信する場合は、[こちらの一覧]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})にある、AMP HTML 広告に対応した広告ネットワークや広告サーバーをご利用ください。
+エクスチェンジや SSP など、間接チャネル経由で AMP HTML 広告を配信する場合は、[こちらの一覧](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)にある、AMP HTML 広告に対応した広告ネットワークや広告サーバーをご利用ください。
 
 ### 広告会社
 
-広告会社では、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って広告を作成する必要があります。ヒントとサンプルについては、[AMP by Example]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
+広告会社では、[AMP HTML 広告仕様](a4a_spec.md)に沿って広告を作成する必要があります。ヒントとサンプルについては、[Examples](../../../documentation/examples/index.html) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。または、次のツールを使用して AMP HTML 広告を作成することもできます。
 
 *  [Celtra の AdCreator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
 *  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
@@ -74,11 +74,11 @@ AMP HTML 広告が通常の広告よりも優れている点は次のとおり�
 
 ### 広告ネットワーク / 広告サーバー
 
-AMP HTML 広告を AMP ページに配信するには、[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})する方法についての説明をご確認ください。なお、AMP HTML 広告を非 AMP ページに配信する場合、特別な統合は必要ありません。
+AMP HTML 広告を AMP ページに配信するには、[`amp-ad`](../../../documentation/components/reference/amp-ad.md)する方法についての説明をご確認ください。なお、AMP HTML 広告を非 AMP ページに配信する場合、特別な統合は必要ありません。
 
 ## AMP HTML 広告を作成する
 
-**ゼロから作成する**: AMP HTML 広告は、[AMP HTML 広告仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/a4a_spec.md', locale=doc.locale).url.path}})に沿って作成されている必要があります。デモとサンプルについては、[AMP by Example](https://ampbyexample.com/amp-ads/#amp-ads) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。
+**ゼロから作成する**: AMP HTML 広告は、[AMP HTML 広告仕様](a4a_spec.md)に沿って作成されている必要があります。デモとサンプルについては、[AMP by Example](../../../documentation/examples/documentation/amp-ad.html) で公開されているオープンソースの AMP HTML 広告テンプレートをご覧ください。
 
 **ツールを使用する**: 次のツールを使用して AMP HTML 広告を作成できます。
 
@@ -108,19 +108,19 @@ SSP やアド エクスチェンジのリアルタイム ビッダー（RTB）�
 
 #### AMP HTML 広告のサンプルは公開されていますか？
 
-はい、公開されています。デザイン性に優れた AMP HTML 広告テンプレートが [AMP By Example](https://ampbyexample.com/amp-ads/#amp-ads/experimental_ads) で数多く公開されています。公開されているサンプルは、AMP の高度なコンポーネントを使用しています。
+はい、公開されています。デザイン性に優れた AMP HTML 広告テンプレートが [Examples](../../../documentation/examples/documentation/amp-ad.html) で数多く公開されています。公開されているサンプルは、AMP の高度なコンポーネントを使用しています。
 
 #### AMP HTML 広告は、サードパーティによる検証や視認性検出に対応していますか？
 
-はい、対応しています。[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を使用した検証と視認性検出をネイティブ サポートしています（Google の ActiveView はこの方法で統合されています）。MOAT など、その他のベンダーも、両機能への対応を積極的に進めています。
+はい、対応しています。[`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) を使用した検証と視認性検出をネイティブ サポートしています（Google の ActiveView はこの方法で統合されています）。MOAT など、その他のベンダーも、両機能への対応を積極的に進めています。
 
 #### AMP HTML 広告は、タイムラインベースのアニメーションに対応していますか？
 
-はい、対応しています。[`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
+はい、対応しています。[`amp-animation`](../../../documentation/components/reference/amp-animation.md) についての説明をご覧ください。
 
 #### ほとんどの広告は、タップ可能なターゲットや設定可能な広告終了に対応しています。AMP HTML 広告にも同様の仕組みがありますか？
 
-はい、あります。[`amp-ad-exit`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad-exit.md', locale=doc.locale).url.path}}) についての説明をご覧ください。
+はい、あります。[`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit.md) についての説明をご覧ください。
 
 #### 必要な情報を見つけられません。どこで質問をすればよいですか？
 

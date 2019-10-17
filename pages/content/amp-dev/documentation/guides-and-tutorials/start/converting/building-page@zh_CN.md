@@ -58,7 +58,7 @@ $title: 构建一个常规的 HTML 网页
 Powered by AMP ⚡ HTML
 ```
 
-AMP 库中含有 [AMP 验证工具]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})，它会显示是否存在任何会导致您的网页无法成为有效 AMP 文档的问题。要**启用** AMP 验证工具，请将以下分段标识符添加到您的文档网址中：
+AMP 库中含有 [AMP 验证工具](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)，它会显示是否存在任何会导致您的网页无法成为有效 AMP 文档的问题。要**启用** AMP 验证工具，请将以下分段标识符添加到您的文档网址中：
 
 ```text
 #development=1

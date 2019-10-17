@@ -3,5 +3,3 @@ $view: /views/default.j2
 $title: Templates
 $localization:
   path: /{locale}/documentation/templates/{base}.html
-
-index: /content/amp-dev/documentation/templates/overview.md

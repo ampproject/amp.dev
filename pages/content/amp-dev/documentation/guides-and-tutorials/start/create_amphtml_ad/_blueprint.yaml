@@ -1,6 +1,6 @@
-$path: /documentation/guides-and-tutorials/start/create_amphtml_ad/{base}.html
 $view: /views/detail/docs-detail.j2
 $order: 3
+$path: /documentation/guides-and-tutorials/start/create_amphtml_ad/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/create_amphtml_ad/{base}.html
 $title@: Create your first AMPHTML ad

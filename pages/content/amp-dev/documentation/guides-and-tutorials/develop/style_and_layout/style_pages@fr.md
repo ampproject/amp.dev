@@ -2,35 +2,35 @@
 $title: CSS compatibles
 ---
 
-Comme toutes les pages Web, les pages AMP utilisent le langage CSS pour les styles, mais vous ne pouvez pas référencer des feuilles de style externes (à l'exception des [polices personnalisées](#exception-:-les-polices-personnalisées)).
+Comme toutes les pages Web, les pages AMP utilisent le langage CSS pour les styles, mais vous ne pouvez pas référencer des feuilles de style externes (à l'exception des [polices personnalisées](#the-custom-fonts-exception)).
 Certains styles sont également interdits en raison de conséquences sur les performances ; les attributs de style intégrés ne sont pas autorisés.
 
-Tous les styles doivent se trouver dans l'en-tête du document (voir [Ajouter des styles à une page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})).
+Tous les styles doivent se trouver dans l'en-tête du document (voir [Ajouter des styles à une page](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
 Cependant, vous pouvez utiliser des préprocesseurs CSS et des modèles pour créer des pages statiques afin de mieux gérer votre contenu.
 
 **Remarque** : Les composants AMP ont des styles par défaut pour faciliter la création de pages responsives.
 Ces styles sont définis dans l'[`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
-## Utiliser les préprocesseurs CSS
+## Utiliser les préprocesseurs CSS <a name="using-css-preprocessors"></a>
 
 La sortie générée par des préprocesseurs fonctionne aussi bien avec les pages AMP qu'avec les autres pages Web.
-Par exemple, le site [ampproject.org](https://www.ampproject.org/) utilise [Sass](http://sass-lang.com/).
-Nous utilisons [Grow](http://grow.io/) pour créer les pages AMP statiques qui composent le site [ampproject.org](https://www.ampproject.org/).
+Par exemple, le site [amp.dev](https://amp.dev/) utilise [Sass](http://sass-lang.com/).
+Nous utilisons [Grow](http://grow.io/) pour créer les pages AMP statiques qui composent le site [amp.dev](https://amp.dev/).
 
 Lorsque vous utilisez des préprocesseurs, accordez une attention particulière à ce que vous incluez ; chargez seulement ce que vos pages utilisent.
 Par exemple, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) inclut tout le balisage AMP requis et le CSS intégré à partir des fichiers sources `*.scss`.
-Il comprend également, entre autres, le script d'élément personnalisé pour [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), afin que de nombreuses pages sur le site puissent inclure des vidéos YouTube intégrées.
+Il comprend également, entre autres, le script d'élément personnalisé pour [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), afin que de nombreuses pages sur le site puissent inclure des vidéos YouTube intégrées.
 
 [sourcecode:html] {% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Accelerated Mobile Pages Project</title>
+  <title>AMP Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -47,7 +47,7 @@ Il comprend également, entre autres, le script d'élément personnalisé pour [
 </head>
 {% endraw %} [/sourcecode]
 
-Pour voir comment ce qui précède se traduit en langage AMP HTML formaté, affichez la source de toute page dans [ampproject.org](https://www.ampproject.org/).
+Pour voir comment ce qui précède se traduit en langage AMP HTML formaté, affichez la source de toute page dans [amp.dev](https://amp.dev/).
 (Dans Chrome, faites un clic droit, puis sélectionnez `Afficher la source de la page`.)
 
 ## Styles interdits
@@ -73,7 +73,7 @@ Les styles suivants ne sont pas autorisés dans les pages AMP :
     </tr>
     <tr>
       <td data-th="Banned style"><code>&lt;link rel="stylesheet"&gt;</code></td>
-      <td data-th="Description">Interdit à l'exception des <a href="#exception-:-les-polices-personnalisées">polices personnalisées</a>.</td>
+      <td data-th="Description">Interdit à l'exception des <a href="#the-custom-fonts-exception">polices personnalisées</a>.</td>
     </tr>
     <tr>
       <td data-th="Banned style"><code>*</code> (sélecteur universel)</td>
@@ -96,7 +96,7 @@ Les styles suivants ne sont pas autorisés dans les pages AMP :
   </tbody>
 </table>
 
-## Propriétés d'animations et de transitions sur liste blanche
+## Propriétés d'animations et de transitions sur liste blanche <a name="the-custom-fonts-exception"></a>
 
 L'AMP accepte seulement les transitions et les animations de propriétés qui peuvent faire l'objet d'une accélération GPU dans les navigateurs courants.
 Le projet AMP accepte actuellement `opacity`, `transform` et `-vendorPrefix-transform`.

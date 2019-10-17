@@ -4,16 +4,24 @@
 {% endif %}
 
 {# Tests if one of the top level navigation items needs to be active #}
-{% macro active_class(tested_doc, depth=3) -%}
-{% if (tested_doc.pod_path == doc.pod_path) or (doc.pod_path.split('/')[depth] == tested_doc.pod_path.split('/')[depth]) %}ap-m-nav-link-active{% endif %}
+{% macro active_class(search_path) -%}
+{% if doc.pod_path.startswith(search_path) %}ap-m-nav-link-active{% endif %}
 {%- endmacro %}
 
-{% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
-<header class="ap--header" [class]="mainmenuopen ? 'ap--header mainmenuopen' : 'ap--header'">
+{# Simply set to False to disable banner #}
+{% set show_banner = False %}
+{% if show_banner %}
+  {% set banner %}
   {% include '/views/partials/banner.j2' %}
+  {% endset %}
+{% endif %}
+
+{% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
+<header class="ap--header{{' has-banner' if show_banner}}" [class]="mainmenuopen ? 'ap--header{{' has-banner' if show_banner}} mainmenuopen' : 'ap--header{{' has-banner' if show_banner}}'">
+  {{ banner if show_banner }}
 
   <div class="ap-o-header">
-    <a class="ap-o-header-home" href="{{ doc.pod.podspec.base_urls.platform }}">
+    <a class="ap-o-header-home" href="{{g.doc('/content/amp-dev/index.html', locale=doc.locale).url.path}}">
       {% do doc.icons.useIcon('/icons/logo.svg') %}
       <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
       <span class="ap-o-header-home-title">AMP</span>
@@ -23,38 +31,29 @@
     <nav class="ap-o-header-main">
       {# Top level sections, defined by their top collection and landing page #}
       {% set sections = [
-        (g.collection('/content/amp-dev/about/'), g.doc('/content/amp-dev/about/websites.html', locale=doc.locale)),
-        (g.collection('/content/amp-dev/documentation/'), g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale)),
-        (g.collection('/content/amp-dev/community/'), g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale)),
-        (g.collection('/content/amp-dev/events/'), g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale)),
-        ('external', ('Blog', 'https://blog.amp.dev')),
-        (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
+        (g.collection('/content/amp-dev/about/'), None),
+        (g.collection('/content/amp-dev/documentation/'), None),
+        (g.collection('/content/amp-dev/community/'), None),
+        (g.collection('/content/amp-dev/events/'), None),
+        ('external', (_('Blog'), 'https://blog.amp.dev')),
+        (g.collection('/content/amp-dev/support/'), None)
       ] %}
 
-      {% for section, section_index in sections %}
-      {% if section.flyout %}
-      {# Only render flyout-touch-inputs for sections with flyout #}
-      <input id="main-item-radio-{{ loop.index }}" type="radio" name="main-radio-btn" role="button" tabindex="0">
-      {% endif %}
-
-      {# Special case for the blog #}
-      {% if section == 'external' %}
+      {% for section, homepage in sections %}
       <div class="ap-o-header-main-item">
-        <a class="ap-o-header-main-link ap-m-nav-link" href="{{ section_index[1] }}">{{ section_index[0] }}</a>
-      </div>
-      {% else %}
-      <div class="ap-o-header-main-item">
-        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(section_index) }}" href="{{ section_index.url.path }}">{{ section.title or section_index.titles('navigation') }}</a>
-
-        {% if section.flyout %}
-        {# Only render flyout-touch-inputs for sections with flyout #}
-        {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
-        <label class="ap-o-header-flyout-label" for="main-item-radio-{{ loop.index }}">
+        {% if section == 'external' %}
+        <a class="ap-o-header-main-link ap-m-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
+        {% elif not section %}
+        <a class="ap-o-header-main-link ap-m-nav-link {{ active_class(homepage.pod_path) }}" href="{{ homepage.url.path }}">{{_(homepage.titles('navigation'))}}</a>
+        {% else %}
+        <button class="ap-o-header-main-link ap-m-nav-link {{ active_class(section.pod_path) }}">
+          {{_(section.title)}}
           <div class="ap-a-ico ap-o-header-main-link-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
-        </label>
+        </button>
 
+        {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
         <ul class="ap-o-header-flyout">
           {% for path in section.flyout %}
           {% set flyout_doc = g.doc(path, locale=doc.locale) %}
@@ -70,41 +69,47 @@
               </div>
 
               <div class="ap-o-header-flyout-primary-item-link-info{% if flyout.format %} ap-o-header-flyout-primary-item-link-info-{{ flyout.format }}{% endif %}">
-                <div class="ap-o-header-flyout-item-title">{{ flyout_doc.titles('navigation') }}</div>
-                <div class="ap-o-header-flyout-item-description">{{ flyout.description }}</div>
+                <div class="ap-o-header-flyout-item-title">{{_(flyout_doc.titles('navigation'))}}</div>
+                <div class="ap-o-header-flyout-item-description">{{_(flyout.description)}}</div>
               </div>
             </a>
           </li>
           {% else %}
           <li class="ap-o-header-flyout-item-secondary">
-            <a class="ap-o-header-flyout-item-title secondary" href="{{ flyout_doc.url.path }}">{{ flyout_doc.titles('navigation') }}</a>
+            <a class="ap-o-header-flyout-item-title secondary" href="{{ flyout_doc.url.path }}">{{_(flyout_doc.titles('navigation'))}}</a>
           </li>
           {% endif %}
           {% endfor %}
         </ul>
         {% endif %}
       </div>
-      {% endif %}
       {% endfor %}
     </nav>
 
+    {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
+    <div id="searchTriggerOpen" class="ap-m-search-trigger" on="tap:searchLightbox" role="button"  tabindex="0">
+      {% do doc.icons.useIcon('/icons/search.svg') %}
+      <div class="ap-a-ico ap-m-search-trigger-icon">
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+      </div>
+    </div>
+
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
-      <a class="ap-m-language-selector-toggle" href="#">
+      <span class="ap-m-language-selector-label" aria-label="{{ _('Select a language') }}" tabindex="-1">
         <span class="ap-m-nav-link">{{ doc.locale.language|upper }}</span>
         {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
         <div class="ap-a-ico ap-m-language-selector-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
         </div>
-      </a>
-      <ul class="ap-m-language-selector-list">
+      </span>
+      <input class="ap-m-language-selector-toggle" type="checkbox" name="language-selector">
+      <div class="ap-m-language-selector-list" role="list">
         {% for locale in doc.locales if not locale == doc.locale  %}
         {% set localized_doc = doc.localize(locale) %}
-        <li class="ap-m-language-selector-list-item">
-          <a class="ap-m-nav-link" href="{{ localized_doc.url.path }}">{{ locale.get_language_name()|capitalize }}</a>
-        </li>
+        <a class="ap-m-nav-link" href="{{ localized_doc.url.path }}" role="listitem">{{ locale.get_language_name()|capitalize }}</a>
         {% endfor %}
-      </ul>
+      </div>
     </div>
   </div>
 </header>

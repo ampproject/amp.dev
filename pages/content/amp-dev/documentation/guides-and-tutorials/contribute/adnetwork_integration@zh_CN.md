@@ -6,23 +6,23 @@ $title: 与 AMP 集成以投放展示广告
 
 ## 概览
 
-作为广告服务商，您可以集成 AMP 以便向 AMP 网页投放传统 HTML 广告，还可以投放 [AMPHTML]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md', locale=doc.locale).url.path}}) 广告。
+作为广告服务商，您可以集成 AMP 以便向 AMP 网页投放传统 HTML 广告，还可以投放 [AMPHTML](../../../documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md) 广告。
 
 ##### 想要投放传统 HTML 广告？
 
-1.  [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+1.  [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
 
 ##### 想要投放 AMPHTML 广告？
 
-1. [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})（即，如果您尚未创建用于投放传统 HTML 广告的实现，则需要创建一个）。
+1. [`amp-ad`](../../../documentation/components/reference/amp-ad.md)（即，如果您尚未创建用于投放传统 HTML 广告的实现，则需要创建一个）。
 2. [进行快速获取集成以投放 AMPHTML 广告](#creating-a-fast-fetch-integration)。
 
-## 创建 `amp-ad`
+## 创建 `amp-ad` <a name="creating-an-amp-ad"></a>
 
-作为广告服务商，您支持的发布商会导入您提供的 JavaScript 库，并会在其网站上添加各种“广告代码段”，这些代码段要依赖该 JavaScript 库来获取并呈现这些广告。AMP 不允许发布商执行任意 JavaScript，因此您需要向 AMP 开放源代码贡献代码，以允许 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 标记从您的广告服务器请求广告。
+作为广告服务商，您支持的发布商会导入您提供的 JavaScript 库，并会在其网站上添加各种“广告代码段”，这些代码段要依赖该 JavaScript 库来获取并呈现这些广告。AMP 不允许发布商执行任意 JavaScript，因此您需要向 AMP 开放源代码贡献代码，以允许 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 标记从您的广告服务器请求广告。
 
 [tip type="note"]
-您可以使用此 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 实现来展示传统 HTML 广告**和** AMPHTML 广告。
+您可以使用此 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 实现来展示传统 HTML 广告**和** AMPHTML 广告。
 [/tip]
 
 例如，可使用以下语法调用 Amazon A9 服务器：
@@ -36,11 +36,11 @@ $title: 与 AMP 集成以投放展示广告
 </amp-ad>
 ```
 
-在上面的代码中，`type` 属性会指定广告网络，在本例中为 A9。`data-*` 属性取决于 Amazon A9 服务器投放广告要使用的参数。[`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) 文件向您展示了如何映射参数以向 A9 服务器的网址发出 JavaScript 调用。[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 标记传递的相应参数会附加到该网址上，以返回广告。
+在上面的代码中，`type` 属性会指定广告网络，在本例中为 A9。`data-*` 属性取决于 Amazon A9 服务器投放广告要使用的参数。[`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) 文件向您展示了如何映射参数以向 A9 服务器的网址发出 JavaScript 调用。[`amp-ad`](../../../documentation/components/reference/amp-ad.md) 标记传递的相应参数会附加到该网址上，以返回广告。
 
-有关进行 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 集成的说明，请参阅[将广告网络集成到 AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md)。
+有关进行 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 集成的说明，请参阅[将广告网络集成到 AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md)。
 
-## 进行快速获取集成
+## 进行快速获取集成 <a name="creating-a-fast-fetch-integration"></a>
 
 [快速获取](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)是一种 AMP 机制，可将广告请求与广告响应分隔开来，从而在网页生命周期早期发出广告请求，且仅在用户有可能查看广告时呈现广告。与传统 HTML 广告相比，快速获取会优先处理经过验证的 AMPHTML 广告。在快速获取过程中，如果某个广告验证失败，则该广告会被封装在一个跨网域 iframe 中，以与 AMP 文档的剩余部分分隔开。反之，通过验证的 AMPHTML 广告会被直接写入网页中。快速获取会处理 AMP 广告和非 AMP 广告；无需针对验证失败的广告发出额外的广告请求。
 
@@ -56,6 +56,6 @@ $title: 与 AMP 集成以投放展示广告
 
 ## 相关资源
 
-*   [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
-*   [受支持的广告供应商列表]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})
+*   [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
+*   [受支持的广告供应商列表](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
 *   [关于推出快速获取功能的博客文章](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

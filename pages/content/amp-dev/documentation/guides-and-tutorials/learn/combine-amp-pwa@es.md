@@ -6,9 +6,9 @@ $title: Combinar AMP con aplicaciones web progresivas
 
 Las aplicaciones web progresivas (PWA) y las páginas AMP se complementan muy bien. De hecho, casi siempre se mejoran mutuamente de alguna manera. Descubre cómo:
 
-1. [Habilitar las funciones de las PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md', locale=doc.locale).url.path}}) en tus páginas AMP.
-2. Crear una [transición superrápida y atractiva para el usuario]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) de las páginas AMP a las PWA.
-3. [Simplificar tus PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}) aprovechando la potencia de la tecnología AMP.
+1. [Habilitar las funciones de las PWA](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) en tus páginas AMP.
+2. Crear una [transición superrápida y atractiva para el usuario](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) de las páginas AMP a las PWA.
+3. [Simplificar tus PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md) aprovechando la potencia de la tecnología AMP.
 
 [tip type="note"]
 
@@ -20,7 +20,7 @@ Consulta más información sobre las [aplicaciones web progresivas](https://deve
 
 Las páginas AMP pueden aprovechar muchas de las funciones de las PWA, siempre que se publiquen desde tu origen (el dominio de tu sitio web) y no desde una caché de AMP. Esto significa que estas funciones no se activarán si se llega a una página AMP desde plataformas como Google o Bing, pero sí si los usuarios se empiezan a desplazar por el sitio web o si navegan directamente hasta tus páginas AMP.
 
-Más información: Descubre cómo [habilitar funciones de las PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md', locale=doc.locale).url.path}}) en tus páginas AMP.
+Más información: Descubre cómo [habilitar funciones de las PWA](../../../documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md) en tus páginas AMP.
 
 ## Usar páginas AMP como punto de entrada de una PWA
 
@@ -28,7 +28,7 @@ El punto fuerte de las páginas AMP es la **publicación casi instantánea**, qu
 
 Una buena estrategia sería, por ejemplo, definir que una página AMP fuese el punto de entrada de los usuarios a tu sitio web y después preparar la PWA de tapadillo y dirigirlos a ella durante el resto de la visita.
 
-Más información: Descubre cómo [conectar una página AMP a una PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md', locale=doc.locale).url.path}}) con [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}).
+Más información: Descubre cómo [conectar una página AMP a una PWA](../../../documentation/guides-and-tutorials/integrate/amp-to-pwa.md) con [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md).
 
 ## Usar las páginas AMP como fuente de datos de una PWA
 
@@ -36,4 +36,4 @@ Una de las características principales de las páginas AMP es que insertarlas e
 
 Si estás creando una aplicación web progresiva, puedes obtener los mismos beneficios y reducir de forma radical la complejidad del backend y del cliente si **reutilizas tus páginas AMP como fuente de datos de tus PWA**.
 
-Más información: Descubre cómo [utilizar páginas AMP en una PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}}).
+Más información: Descubre cómo [utilizar páginas AMP en una PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md).

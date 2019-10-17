@@ -9,42 +9,44 @@
 @import 'components/organisms/_sidebar.scss';
 
 amp-sidebar {
+  width: 100%;
+  max-width: 90vw;
   background: color('whisper');
 }
 
 nav[toolbar] {
-  top: 120px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  top: 86px;
+  height: 100vh;
+  max-height: calc(100vh - 86px);
 
   @media (min-width: 768px){
-    height: 100vh;
+    position: -webkit-sticky;
     position: sticky;
     overflow: auto;
-    max-height: calc(100vh - 168px);
-  }
-  
-  &::-webkit-scrollbar {
-    width: 2px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: rgba(color('black'), 0.10);
   }
 
   & > ul {
+    -webkit-overflow-scrolling: touch;
     margin: 0;
     padding: 0;
+
+    @media (min-width: 768px){
+      overflow: auto;
+      max-height: 100%;
+    }
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(color('black'), 0.10);
+    }
   }
 }
 
-.#{utility('ampsidebar')} {
-  max-width: 90vw;
-  @media (max-width: 767px) {
-    nav {
-      width: 100vw;
-    }
-  }
+.#{utility('sidebar')} {
+  margin-top: 10px;
 }
 
 .#{organism('sidebar')} {
@@ -122,6 +124,14 @@ nav[toolbar] {
 
     &-item-tutorial-divider {
       @include sidebar-nav-item-tutorial-divider;
+
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: none;
+      }
     }
 
     &-link {
@@ -139,6 +149,11 @@ nav[toolbar] {
 
     &-trigger {
       @include sidebar-nav-trigger-state;
+
+      &:focus {
+        outline: 1px dotted #212121;
+        outline: 5px auto -webkit-focus-ring-color;
+      }
     }
 
     &-icon .#{atom('ico')} {
@@ -152,5 +167,9 @@ nav[toolbar] {
     span.nav-link + .nav-trigger {
       width: calc(100% + 15px);
     }
+  }
+
+  &-section {
+    max-width: 100%;
   }
 }

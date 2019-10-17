@@ -7,15 +7,13 @@
 
 .#{molecule('kpi')} {
   @include kpi;
-
   display: block;
   flex: 1 0 20em;
   margin: 0 1.875rem 2.125em 0;
-  padding: 0 0 60%;
+  padding-top: 25%;
   transition: transform .3s cubic-bezier(.25,.1,.25,1);
 
   @media (min-width: 768px) {
-    padding: 0 0 70%;
     margin-right: 0;
   }
 
@@ -41,6 +39,10 @@
     @media (min-width: 1024px) {
       grid-column: 16 / 22;
     }
+  }
+
+  &-teaser {
+    margin: 0;
   }
 
   &-content {

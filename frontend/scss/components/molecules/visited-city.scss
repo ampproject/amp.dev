@@ -14,9 +14,6 @@
 @import 'components/atoms/_text.scss';
 
 .#{molecule('visited-city')} {
-  margin-bottom: 35px;
-  padding: 0 15px;
-
   &-group {
     display: inline-block;
     white-space: nowrap;
@@ -39,6 +36,7 @@
 
     margin: 0;
     line-height: 1.2rem;
+    text-transform: uppercase;
     color: fade_out(color('black'), 0.5);
   }
 }

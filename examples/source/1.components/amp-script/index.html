@@ -1,0 +1,138 @@
+<!--
+  An [amp-script](content/amp.dev/documentation/components/reference/amp-script.md) hello world example.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+  <head>
+    <meta charset="utf-8">
+    <title>amp-script</title>
+    <link rel="canonical" href="self.html" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+      <script async src="https://cdn.ampproject.org/v0.js"></script>
+      <!--
+
+        ## Setup
+
+        First, you need to import the `amp-script` extension.
+      -->
+      <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+      <style amp-custom>
+        .amp-script-sample {
+          padding: 8px;
+        }
+        .amp-script-sample button {
+          background-color: #005AF0;
+          font-size: 16px;
+          font-weight: 700;
+          color: white;
+          border: none;
+          padding: 8px;
+          margin: 8px 0;
+        }
+      </style>
+
+      <!-- 
+        For inline scripts you need to generate a CSP header. Read more about this in the [component documentation](/content/amp-dev/documentation/components/reference/amp-script-v0.1.md).
+      -->
+      <meta name="amp-script-src" content="sha384-X8xW7VFd-a-kgeKjsR4wgFSUlffP7x8zpVmqC6lm2DPadWUnwfdCBJ2KbwQn6ADE sha384-nNFaDRiLzgQEgiC5kP28pgiJVfNLVuw-nP3VBV-e2s3fOh0grENnhllLfygAuU_M sha384-u7NPnrcs7p4vsbGLhlYHsId_iDJbcOWxmBd9bhVuPoA_gM_he4vyK6GsuvFvr2ym">
+  </head>
+  <body>
+      <!-- 
+        ## Basic usage
+
+        An amp-script element can load a JavaScript file from a URL. This is usually the best way to integrate a script as the browser needs to download the script only once.
+      -->
+      <amp-script layout="container" src="<% hosts.platform %>/documentation/examples/components/amp-script/hello-world.js" class="amp-script-sample" >
+        <button id="hello">Click!</button>
+      </amp-script>
+
+      <!-- 
+        This is the script in [hello-world.js](hello-world.js):
+
+        ```js
+const button = document.querySelector('#hello');
+button.addEventListener('click', () => {
+  const h1 = document.createElement('h1');
+  h1.textContent = 'Hello World!';
+  document.body.appendChild(h1);
+});```
+
+        ## Inline Scripts
+
+        You can also declare scripts inline and reference them by `id`.
+      -->
+      <amp-script layout="container" script="hello-world" class="amp-script-sample">
+        <button id="hello2">Click!</button>
+      </amp-script>
+
+      <!-- 
+        This is the inlined script. Note that the type needs to be `type=text/plain` and the `target=amp-script`. 
+
+      -->
+      <script id="hello-world" type="text/plain" target="amp-script">
+    const button = document.querySelector('#hello2');
+    button.addEventListener('click', () => {
+      const h1 = document.createElement('h1');
+      h1.textContent = 'Hello World 2!';
+      document.body.appendChild(h1);
+    });
+  </script>
+
+  <!-- Note: `document.body` refers to the `amp-script` tag and not the actual `body` tag. `document.body.appendChild(...)` actually adds an element inside the `amp-script` element. -->
+
+  <!--
+      ## Using the fetch API
+
+      `amp-script` supports using the fetch API. To be able to update the page on load, we need to use the `fixed-height` layout instead of the `container` layout (and the height needs to be less than `300px`).
+  -->
+  <amp-script layout="fixed-height" height="32" script="time-script" class="amp-script-sample">
+    <div>The time is: <span id="time"></span></div>
+  </amp-script>
+
+  <!-- As `amp-script` code is executed inside a web worker, fetch only works with absolute URLs. -->
+  <script id="time-script" type="text/plain" target="amp-script">
+    const fetchCurrentTime = async () => {
+      const response = await fetch('<% hosts.platform %>/documentation/examples/api/time');
+      const data = await response.json();
+      const div = document.querySelector('#time');
+      div.textContent = data.time;
+    }
+    fetchCurrentTime();
+  </script>
+  <!--
+      ## Detecting Android vs iOS in AMP
+
+      `amp-script` is great to implement functionality not offered by AMP out-of-the-box. Here is a sample that checks if the current device is using Android or iOS.
+  -->
+  <amp-script layout="container" script="user-agent-script" class="amp-script-sample">
+    <div>Your user-agent is: <span id="user-agent">other</span></div>
+  </amp-script>
+
+  <!-- The script implementation retrieves the mobile operating system from the user agent string. -->
+  <script id="user-agent-script" type="text/plain" target="amp-script">
+    function getMobileOperatingSystem() {
+        const userAgent = navigator.userAgent;
+        if (/android/i.test(userAgent)) {
+          return "Android";
+        }
+        // iOS detection from: http://stackoverflow.com/a/9039885/177710
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+        }
+
+        return "other";
+      }
+
+      const span = document.querySelector('#user-agent');
+      span.textContent = getMobileOperatingSystem();
+
+      const pre = document.createElement('pre');
+      pre.textContent = navigator.userAgent;
+      span.appendChild(pre);
+
+  </script>
+
+  </body>
+</html>

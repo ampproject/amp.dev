@@ -4,12 +4,12 @@ $title: Mengaktifkan fitur Progressive Web App untuk halaman AMP
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample memicu permintaan "Tambahkan ke Layar Utama".') }}
 
-Banyak situs yang tidak akan memerlukan apa pun di luar batas AMP. [AMPbyExample](http://ampbyexample.com/), misalnya, yang merupakan AMP sekaligus Progressive Web App:
+Banyak situs yang tidak akan memerlukan apa pun di luar batas AMP. [Examples](../../../documentation/examples/index.html), misalnya, yang merupakan AMP sekaligus Progressive Web App:
 
 1. AMPbyExample memiliki [Manifes Aplikasi Web](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), yang meminta banner “Tambahkan ke Layar Utama”.
 1. AMPbyExample memiliki [Service Worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers), sehingga memungkinkan akses offline dan lain sebagainya.
 
-Ketika pengguna membuka [AMPbyExample](http://ampbyexample.com/) dari platform yang mendukung AMP lalu lanjut mengklik ke situs yang sama, mereka keluar dari Cache AMP ke halaman asli. Tentunya situs masih menggunakan koleksi AMP, namun karena saat ini ditayangkan di halaman asli, situs dapat menggunakan service worker, meminta penginstalan, dan lain-lain.
+Ketika pengguna membuka [Examples](../../../documentation/examples/index.html) dari platform yang mendukung AMP lalu lanjut mengklik ke situs yang sama, mereka keluar dari Cache AMP ke halaman asli. Tentunya situs masih menggunakan koleksi AMP, namun karena saat ini ditayangkan di halaman asli, situs dapat menggunakan service worker, meminta penginstalan, dan lain-lain.
 
 Ingat: Service Worker tidak akan dapat berinteraksi dengan versi halaman yang tersimpan dalam cache AMP. Gunakan untuk melanjutkan perjalanan berikutnya ke halaman asli.
 
@@ -60,9 +60,9 @@ Service Worker adalah proxy sisi-klien yang berada di antara halaman dan server,
 
 Catatan: Jika konsep Service Worker merupakan hal baru bagi Anda, baca [pendahuluan di WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 
-Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, browser tidak akan menemukan atau menjalankannya. Secara default, tindakan ini dilakukan dengan bantuan [sedikit JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Pada Halaman AMP, Anda menggunakan komponen [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) untuk melakukan hal yang sama.
+Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, browser tidak akan menemukan atau menjalankannya. Secara default, tindakan ini dilakukan dengan bantuan [sedikit JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Pada Halaman AMP, Anda menggunakan komponen [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) untuk melakukan hal yang sama.
 
-Untuk melakukannya, sertakan komponen [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) terlebih dahulu melalui skripnya pada `<head>` halaman Anda:
+Untuk melakukannya, sertakan komponen [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) terlebih dahulu melalui skripnya pada `<head>` halaman Anda:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -105,7 +105,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Dengan menggunakan teknik ini, Anda dapat mengubah Halaman AMP dengan segala fungsi
-tambahan yang sebaliknya akan menggagalkan [validasi AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}), misalnya:
+tambahan yang sebaliknya akan menggagalkan [validasi AMP](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), misalnya:
 
 * Fitur dinamis yang memerlukan JS kustom.
 * Komponen yang disesuaikan/hanya relevan untuk situs Anda.

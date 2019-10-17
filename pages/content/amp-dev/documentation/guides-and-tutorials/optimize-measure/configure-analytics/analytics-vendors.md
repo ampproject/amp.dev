@@ -6,14 +6,14 @@ formats:
   - websites
 ---
 
-This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) component.
+This document lists analytics vendors that have built-in configurations for use with the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) component.
 
 To send analytics data to a third-party vendor:
 
-1. In the [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) tag, add the `type` attribute and set its value to the specified vendor as described in the [*Vendors*](#vendors) section below.
+1. In the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) tag, add the `type` attribute and set its value to the specified vendor as described in the [*Vendors*](#vendors) section below.
 2. Determine what data you want to capture and track, and specify those details in the configuration data. See the vendor's documentation for instructions on how to capture analytics data.
 
-In the following example, we send pageview data to [Google Analytics](#google-analytics), a third-party analytics provider with a built-in configuration for [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+In the following example, we send pageview data to [Google Analytics](#google-analytics), a third-party analytics provider with a built-in configuration for [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -38,12 +38,12 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 [/tip]
 
 [tip type="note"]
-**NOTE –**  Vendors that wish to integrate their service with [`<amp-analytics>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) should refer to the details in [Integrate your analytics tools with AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
+**NOTE –**  Vendors that wish to integrate their service with [`<amp-analytics>`](../../../../documentation/components/reference/amp-analytics.md) should refer to the details in [Integrate your analytics tools with AMP](../../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md).
 [/tip]
 
 <hr>
 
-## Vendors
+## Vendors <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -134,7 +134,7 @@ Adds support for Eulerian Technologies Analytics. Requires defining *var* `analy
 
 Type attribute value: `facebookpixel`
 
-Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
+Adds support for the [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel). In your [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) configuration, you must define your Pixel ID as `pixelId: YOUR-PIXEL-ID`. The events supported along with the corresponding event values that can be specified are detailed in the [Facebook Pixel developer documentation](https://developers.facebook.com/docs/ads-for-websites/pixel-events).
 
 ### Gemius
 
@@ -148,7 +148,7 @@ Type attribute value: `googleadwords`
 
 Adds support for Google Ads conversion tracking and remarketing. See more details in the Google Ads help center for [conversion tracking](https://support.google.com/adwords/answer/1722054?hl=en) and [remarketing](https://support.google.com/adwords/answer/2453998?hl=en). Both tags can be used independent of each other.
 
-### Google Analytics
+### Google Analytics <a name="google-analytics"></a>
 
 Type attribute value: `googleanalytics`
 
@@ -185,6 +185,12 @@ Adds support for Keen. Additionally, the following `vars` must be defined:
 * `writeKey`: your write key
 
 Use `extraUrlParams` to add more data. Configuration details can be found at [keen.io/docs/api](https://keen.io/docs/api/).
+
+### Kenshoo
+
+Type attribute value: `kenshoo`
+
+Adds support for Kenshoo. More information and configuration details can be found at [helpcenter.kenshoo.com](https://helpcenter.kenshoo.com/hc/en-us/articles/360025260592).
 
 ### Krux
 
@@ -283,7 +289,13 @@ Adds support for Parsely. Configuration details can be found at [parsely.com/doc
 
 Type attribute value: `piano`
 
-Adds support for Piano.  Configuration details can be found at [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+Adds support for Piano. Configuration details can be found at [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+
+### Pinpoll
+
+Type attribute value: `pinpoll`
+
+Adds support for Pinpoll. Configuration details can be found at [pinpoll.com](https://pinpoll.com/).
 
 ### Pressboard
 
@@ -334,6 +346,12 @@ Type attribute value: `teaanalytics`
 
 Adds support for TEA Analytics. More details for adding TEA Analytics support can contact with Kimberly (wuqian56@gmail.com).
 
+### Tealium Collect
+
+Type attribute value: `tealiumcollect`
+
+Adds support for Tealium Collect. More details for adding Tealium Collect support can be found at [docs.tealium.com](https://docs.tealium.com/platforms/amp/install/).
+
 ### Top.Mail.Ru
 
 Type attribute value: `topmailru`
@@ -363,3 +381,9 @@ Adds support for Webtrekk. Configuration details can be found at [supportcenter.
 Type attribute value: `metrika`
 
 Adds support for Yandex Metrica.  Configuration details can be found at [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+
+### Vpon Analytics
+
+Type attribute value: `vponanalytics`
+
+Adds support for Vpon Vpon Analytics. Configuration details can be found at [Vpon Analytics](https://cmp.vpadn.com/dmp/doc/amp_analytics.html).

@@ -9,8 +9,9 @@ $view: /views/overview/custom-content.j2
 
 {% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
+{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
 
-<div class="ap--container">
+<section class="ap--container mission">
 
   <div class="ap-m-copy ap-m-copy-center-small ap-m-biggy-background">
     <h1>Vision & Mission</h1>
@@ -18,7 +19,7 @@ $view: /views/overview/custom-content.j2
   </div>
 
   {% do doc.styles.addCssFile('/css/components/molecules/copy.css') %}
-  <div class="ap-m-copy ap-m-copy-left-small ap-m-biggy-background">
+  <div class="ap-m-copy ap-m-copy-left-xsmall ap-m-biggy-background">
     <h2 class="ap-m-biggy-headline ap-m-biggy-background-headline">
       Vision
     </h2>
@@ -29,7 +30,7 @@ $view: /views/overview/custom-content.j2
 
   </div>
 
-  <div class="ap-m-copy ap-m-copy-right-small ap-m-biggy-background">
+  <div class="ap-m-copy no-margin ap-m-copy-right-xsmall ap-m-biggy-background">
     <h2 class="ap-m-biggy-headline ap-m-biggy-background-headline">
       &amp;&nbsp;Mission
     </h2>
@@ -37,7 +38,116 @@ $view: /views/overview/custom-content.j2
     <p>Provide a user-first format for web content, supporting the long-term success of every web publisher, merchant, and advertiser.</p>
   </div>
 
-  <div class="ap-m-copy ap-m-copy-center-medium">
+  <div class="ap--divider"></div>
+
+</section>
+
+<section class="ap--container">
+
+  {% do doc.styles.addCssFile('/css/components/molecules/benefit.css') %}
+  {% do doc.styles.addCssFile('/css/components/organisms/benefits-overview.css') %}
+
+  <div class="ap-m-copy no-margin ap-m-copy-center-small ap-m-biggy-background">
+    <h1>Design Principles</h1>
+    <p>These design principles are meant to guide the ongoing design and development of AMP. They should help us make internally consistent decisions.</p>
+  </div>
+
+  <div class="ap--video ap-m-copy-center-small">
+    <amp-youtube
+      layout="responsive"
+      width="480"
+      height="270"
+      data-videoid="uPOElMgRy2Y"></amp-youtube>
+  </div>
+
+    <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-left">
+      <div class="ap-m-benefit principles">
+        <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/ux.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ux"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">User Experience > Developer Experience > Ease of Implementation.</span>
+          <span class="ap-m-benefit-text-copy">When in doubt, do what’s best for the end user experience, even if it means that it’s harder for the page creator to build or for the library developer to implement.</span>
+        </div>
+      </div>
+
+      <div class="ap-m-benefit principles">
+        <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/time-principle.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#time-principle"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">Don’t design for a hypothetical faster future browser.</span>
+          <span class="ap-m-benefit-text-copy">We’ve chosen to build AMP as a library in the spirit of the <a href="https://github.com/extensibleweb/manifesto/blob/master/README.md">EXTENSIBLE WEB MANIFESTO</a> to be able to fix the web of today, not the web of tomorrow. AMP should be fast in today's browsers. When certain optimizations aren't possible with today's platform, AMP developers should participate in standards development to get these added to the web platform.</span>
+        </div>
+      </div>
+
+      <div class="ap-m-benefit principles">
+         <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/components.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#components"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">Don’t break the web.</span>
+          <span class="ap-m-benefit-text-copy">Ensure that if AMP has outages or problems it doesn’t hurt the rest of the web. That means if the Google AMP Cache, the URL API or the library fails it should be possible for websites and consumption apps to gracefully degrade. If something works with an AMP cache it should also work without a cache.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-business">
+
+      <div class="ap-m-benefit principles">
+         <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/layers.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#layers"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">Solve problems on the right layer.</span>
+          <span class="ap-m-benefit-text-copy">E.g. don’t integrate things on the client side, just because that is easier, when the user experience would be better with a server side integration.</span>
+        </div>
+      </div>
+      <div class="ap-m-benefit principles">
+         <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/fast-loading.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fast-loading"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">Only do things if they can be made fast.</span>
+          <span class="ap-m-benefit-text-copy">Don’t introduce components or features to AMP that can’t reliably run at 60fps or hinder the instant load experience on today’s most common mobile devices.</span>
+        </div>
+      </div>
+      <div class="ap-m-benefit principles">
+         <div class="ap-m-benefit-icon">
+          {% do doc.icons.useIcon('icons/priority.svg') %}
+          <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#priority"></use></svg>
+        </div>
+        <div class="ap-m-benefit-text">
+          <span class="ap-m-benefit-text-headline">Prioritise things that improve the user experience – but compromise when needed.</span>
+          <span class="ap-m-benefit-text-copy">Some things can be made fast and are still a terrible user experience. AMPs should deliver a fantastic user experience and speed is just one part of that. Only compromise when lack of support for something would stop AMP from being widely used and deployed.</span>
+        </div>
+      </div>
+
+      <div class="ap-m-benefit principles">
+        <div class="ap-m-benefit-icon">
+            {% do doc.icons.useIcon('icons/list.svg') %}
+            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#list"></use></svg>
+          </div>
+          <div class="ap-m-benefit-text">
+            <span class="ap-m-benefit-text-headline">No whitelists.</span>
+            <span class="ap-m-benefit-text-copy">We won’t give any special treatment to specific sites, domains or origins except where needed for security or performance reasons.</span>
+          </div>
+        </div>
+
+    </div>
+
+  <div class="ap--divider"></div>
+
+
+</section>
+
+<section class="ap--container">
+  <div class="ap-m-copy ap-m-copy-center-large">
     <h2>Get Started with Tutorials</h2>
     <div class="ap-o-teaser-grid">
       <div class="ap-o-teaser-grid-list">
@@ -47,16 +157,15 @@ $view: /views/overview/custom-content.j2
         {% endwith %}
 
         {% with %}
-        {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md') %}
+        {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/index.md') %}
         {% include '/views/partials/teaser.j2' %}
         {% endwith %}
 
         {% with %}
-        {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md') %}
+        {% set teaser_doc = g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md') %}
         {% include '/views/partials/teaser.j2' %}
         {% endwith %}
       </div>
     </div>
   </div>
-
-</div>
+</section>

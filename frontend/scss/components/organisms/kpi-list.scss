@@ -26,6 +26,7 @@
     &.#{utility('container')} {
       flex-wrap: nowrap;
       padding: 0;
+      overflow-x: scroll;
 
       @media (min-width: 768px) {
         padding: 0 30px;

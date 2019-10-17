@@ -131,7 +131,7 @@ De forma predeterminada, todos los valores predefinidos de las animaciones tiene
 
 Puedes personalizar los valores de tiempo de una animación modificando el retraso o la duración con los atributos `animate-in-delay` y `animate-in-duration`. En el siguiente ejemplo, `my-element` se desplaza hacia la derecha de la página en 3 segundos y entra completamente en 5 segundos.
 
-``'html
+```html
 <amp-story-page id="my-page">
   ...
   <p class="my-element"
@@ -190,7 +190,7 @@ Pets can lower your stress levels!</p>
 
 Vuelve a cargar la página de la historia en el navegador y comprueba que el banner entre rápidamente.
 
-Ahora vamos a hacer que todas las imágenes se desvanezcan. Para hacerlo, añade `animate-in="fade-in"` a todos los elementos [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}):
+Ahora vamos a hacer que todas las imágenes se desvanezcan. Para hacerlo, añade `animate-in="fade-in"` a todos los elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md):
 
 ```html hl_lines="4 9 14 19"
 <amp-img src="assets/cat.jpg"
@@ -217,7 +217,7 @@ Ahora vamos a hacer que todas las imágenes se desvanezcan. Para hacerlo, añade
 
 Si actualizas y vuelves a cargar la página, todas las imágenes se desvanecerán.  Está bien, pero apenas se nota el efecto porque todas las imágenes se desvanecen a la vez. Podemos mejorar el efecto visual si modificamos los valores temporales de las animaciones.
 
-Vamos a retrasar la entrada de la primera imagen para que entre justo después del banner de texto, unos 4 s más o menos. Las otras tres imágenes pueden entrar 2 s después de la entrada de la imagen anterior. Para cada uno de los elementos [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  añade `animate-in-delay=""` con el valor de retraso temporal correspondiente. El código debería quedar así:
+Vamos a retrasar la entrada de la primera imagen para que entre justo después del banner de texto, unos 4 s más o menos. Las otras tres imágenes pueden entrar 2 s después de la entrada de la imagen anterior. Para cada uno de los elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md)  añade `animate-in-delay=""` con el valor de retraso temporal correspondiente. El código debería quedar así:
 
 ```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
@@ -251,4 +251,4 @@ Actualiza y vuelve a cargar la historia.  La última página tendría que quedar
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Mosaico de la página 5', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-Las animaciones de las historias de AMP ofrecen muchísimas posibilidades (por ejemplo, combinar o encadenar animaciones) y en este tutorial solo mostramos lo más básico. Para obtener más información sobre las animaciones, consulta la documentación de referencia [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
+Las animaciones de las historias de AMP ofrecen muchísimas posibilidades (por ejemplo, combinar o encadenar animaciones) y en este tutorial solo mostramos lo más básico. Para obtener más información sobre las animaciones, consulta la documentación de referencia [`amp-story`](../../../../documentation/components/reference/amp-story.md).

@@ -4,7 +4,7 @@ $title: 지원되는 CSS
 
 모든 웹페이지와 마찬가지로 AMP 페이지는 CSS로 스타일이 지정되지만 [맞춤 글꼴](#the-custom-fonts-exception) 외 외부 스타일시트는 참조할 수 없습니다. 또한 특정 스타일은 성능상의 이유로 허용되지 않습니다. 인라인 스타일 속성도 허용되지 않습니다.
 
-모든 스타일은 문서 헤드에 배치되어야 합니다 ([페이지에 스타일 추가]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page) 참조). 하지만 CSS 전처리기 및 템플릿을 사용하여 정적 페이지를 만들 수 있으며, 이를 통해 콘텐츠를 더 효과적으로 관리할 수 있습니다.
+모든 스타일은 문서 헤드에 배치되어야 합니다 ([페이지에 스타일 추가](index.md#add-styles-to-a-page) 참조). 하지만 CSS 전처리기 및 템플릿을 사용하여 정적 페이지를 만들 수 있으며, 이를 통해 콘텐츠를 더 효과적으로 관리할 수 있습니다.
 
 참고: AMP 구성요소에는 기본 스타일이 제공되므로 반응형 페이지를 비교적 간편하게 제작할 수 있습니다. 이러한 스타일은 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 에 정의되어 있습니다.
 
@@ -58,28 +58,28 @@ $title: 지원되는 CSS
   </tbody>
 </table>
 
-## 맞춤 글꼴은 허용됨
+## 맞춤 글꼴은 허용됨 <a name="the-custom-fonts-exception"></a>
 
 AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 글꼴은 예외입니다.
 
-읽어보기: [AMP의 맞춤 글꼴]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}}) 에 관해 자세히 알아보세요.
+읽어보기: [AMP의 맞춤 글꼴](custom_fonts.md) 에 관해 자세히 알아보세요.
 
-## CSS 전처리기 사용하기
+## CSS 전처리기 사용하기 <a name="using-css-preprocessors"></a>
 
-전처리기로 생성된 출력은 다른 웹페이지에서와 마찬가지로 AMP에서도 제대로 작동합니다. 예를 들어, [ampproject.org](https://www.ampproject.org/) 사이트는 [Sass](http://sass-lang.com/) 를 사용합니다. ([Grow](http://grow.io/) 를 통해 [ampproject.org](https://www.ampproject.org/) 를 구성하는 정적 AMP 페이지가 생성됩니다.)
+전처리기로 생성된 출력은 다른 웹페이지에서와 마찬가지로 AMP에서도 제대로 작동합니다. 예를 들어, [amp.dev](https://amp.dev/) 사이트는 [Sass](http://sass-lang.com/) 를 사용합니다. ([Grow](http://grow.io/) 를 통해 [amp.dev](https://amp.dev/) 를 구성하는 정적 AMP 페이지가 생성됩니다.)
 
-전처리기를 사용할 때는 포함하는 항목에 특히 주의해야 합니다. 페이지에서 사용하는 항목만 로드하세요. 예를 들어, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) 에는 모든 필수 AMP 마크업과 `*.scss` 소스 파일의 인라인 CSS가 포함됩니다. 또한 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 등의 커스텀 엘리먼트용 스크립트를 포함하여 YouTube 동영상 등을 사이트의 여러 페이지에 넣을 수 있도록 했습니다.
+전처리기를 사용할 때는 포함하는 항목에 특히 주의해야 합니다. 페이지에서 사용하는 항목만 로드하세요. 예를 들어, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) 에는 모든 필수 AMP 마크업과 `*.scss` 소스 파일의 인라인 CSS가 포함됩니다. 또한 [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 등의 커스텀 엘리먼트용 스크립트를 포함하여 YouTube 동영상 등을 사이트의 여러 페이지에 넣을 수 있도록 했습니다.
 
 [sourcecode:html]{% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Accelerated Mobile Pages Project</title>
+  <title>AMP Project</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -96,4 +96,4 @@ AMP 페이지에는 외부 스타일시트를 포함할 수 없지만, 맞춤 �
 </head>
 {% endraw %}[/sourcecode]
 
-위의 예시가 AMP HTML 형식에서 어떻게 표시되는지 확인하려면 [ampproject.org](https://www.ampproject.org/) 에서 아무 페이지나 소스를 확인해보세요. (Chrome에서는 마우스 오른쪽 버튼 클릭 후 `페이지 소스 보기`).
+위의 예시가 AMP HTML 형식에서 어떻게 표시되는지 확인하려면 [amp.dev](https://amp.dev/) 에서 아무 페이지나 소스를 확인해보세요. (Chrome에서는 마우스 오른쪽 버튼 클릭 후 `페이지 소스 보기`).

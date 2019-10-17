@@ -69,7 +69,7 @@ Google の AMP API を介した AMP URL のリクエストを
 
 Google では、AMP URL API を提供して、リストに指定された URL
 （[公式ドキュメント](https://developers.google.com/amp/cache/use-amp-url) /
-[デモ]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）と一致する AMP HTML URL を取得します。URL は
+[デモ](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html)）と一致する AMP HTML URL を取得します。URL は
 正規バージョンである必要はありません。AMP バージョンが存在する場合、レスポンスには
 元の AMP URL と Google AMP キャッシュ上にキャッシュされている AMP ページの
 URL が含まれます。
@@ -112,7 +112,7 @@ AMP URL API で取得できません。ただし、返された AMP URL（ampURL
 
 ## AMP キャッシュの使用
 
-[AMP キャッシュ]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}})は、
+[AMP キャッシュ](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md)は、
 有効な AMP ドキュメントを配信するための、プロキシベースのコンテンツ配信ネットワーク（CDN）です。
 AMP キャッシュは次のような目的で設計されています。
 
@@ -123,7 +123,7 @@ AMP キャッシュは次のような目的で設計されています。
 現在、2 つの AMP キャッシュ プロバイダがあります。
 
 *   [Google AMP キャッシュ](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP キャッシュ](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 そのため、アプリで AMP ファイルを表示するには、次の 2 つの方法のいずれかを選択する必要があります。
 
@@ -167,12 +167,12 @@ AMP ドキュメントのプリレンダリング、スワイプによる記事�
 
 *   AMP ページを AMP キャッシュから提供します（読み込み時間が 1 秒超速くなります）。
 *   記事の公開元を表示します（折りたためるヘッダーなどを使用します）。
-*   共有アクションを提供します（下記の「[AMP コンテンツの共有]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}#sharing-amp-content)」
+*   共有アクションを提供します（下記の「[AMP コンテンツの共有](integrate-with-apps.md#sharing-amp-content)」
     もご覧ください）。
 *   WebView ベースのビューアでは、サードパーティの Cookie を有効にします。
 *   使用するプラットフォーム / アプリの参照 URL を設定します。
 
-### AMP コンテンツの共有
+### AMP コンテンツの共有 <a name="sharing-amp-content"></a>
 
 プラットフォームの AMP ビューア内から AMP ドキュメントを共有する場合、
 技術的に可能な限り、プラットフォームは正規 URL を共有する必要があります。たとえば、

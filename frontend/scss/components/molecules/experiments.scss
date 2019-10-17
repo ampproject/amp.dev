@@ -1,0 +1,165 @@
+/*
+
+#############################
+### MOLECULE: experiments ###
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+
+.#{molecule('experiments')} {
+  $self: &;
+  background: color('white');
+  margin: 0 0 32px -30px;
+  padding: 20px 30px 20px 30px;
+
+  &-iframe {
+    flex: 1 0 33.3333%;
+    padding: 0;
+    margin: 0;
+    background: none;
+
+    @media (max-device-width: 767px) { text-align: center; }
+    @media (min-device-width: 768px) { text-align: right; }
+  }
+
+  &-controls {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 0 0 0;
+    margin: 0 -15px;
+    list-style: none;
+
+    #{$self}-iframe & {
+      display: inline-flex;
+      padding: 0;
+      margin: 0;
+
+      @media (max-device-width: 767px) { justify-content: center; }
+      @media (min-device-width: 768px) { justify-content: flex-end; }
+    }
+  }
+
+  &-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+    padding: 15px 10px;
+    margin: 0 15px;
+    background-color: color('wild-sand');
+
+    #{$self}-iframe & {
+      flex-grow: 0;
+      padding: 0;
+      margin: 4px 15px;
+      background: none;
+    }
+  }
+
+  &-label {
+    flex: 1 0 auto;
+    @include txt-font-accent;
+    color: color('black');
+
+    #{$self}-iframe & {
+      margin-right: 15px;
+    }
+  }
+
+  &-channel {
+    margin-left: auto;
+    margin-right: 6px;
+    @include txt-font-accent;
+
+    &-name {
+      color: color('alto');
+
+      &.active {
+        color: color('blue-ribbon');
+      }
+
+      #{$self}-iframe & {
+        color: color('oslo-gray');
+
+        &.active {
+          color: color('blue-ribbon');
+        }
+      }
+    }
+  }
+
+  &-toggle {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    opacity: 0;
+    margin: 0;
+    cursor: pointer;
+
+    &:checked {
+
+      & + .#{molecule('experiments')}-indicator {
+        background: color('blue-ribbon');
+
+        &:before {
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+
+  &-indicator {
+    position: relative;
+    height: 25px;
+    width: 50px;
+    border-radius: 2px;
+    padding: 2px;
+    background: #c4c4c4;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:before {
+      content: " ";
+      display: block;
+      width: 50%;
+      height: 100%;
+      box-shadow: 0 1px 3px 0 fade_out(color('black') ,0.6);
+      background: color('white');
+      transition: transform 0.2s ease;
+    }
+  }
+
+  .on {
+    position: absolute;
+    top: 7px;
+    left: 12px;
+    height: 12px;
+    width: 1px;
+    background-color: color('white');
+  }
+
+  .off {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    height: 12px;
+    width: 12px;
+    border: 1px solid color('white');
+    border-radius: 50%;
+  }
+
+  &-reload-hint {
+    margin-right: 15px;
+  }
+}

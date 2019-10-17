@@ -21,7 +21,7 @@ limitations under the License.
 يجب ألا تتضمن مستندات AMP الصالحة أي أخطاء تتعلق بالتحقق من الصحة.
 والغرض من هذا المستند هو مساعدتك في فهم أفضل
 لأي أخطاء تتعلق بالتحقق من الصحة قد تصادفها عند
-[التحقق من صحة صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) وإصلاح هذه الأخطاء.
+[التحقق من صحة صفحات AMP](validate_amp.md) وإصلاح هذه الأخطاء.
 للحصول على نظرة عامة حول أخطاء التحقق من الصحة،
 راجع [مواصفات أداة التحقق من صحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -57,7 +57,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 تشتمل هذه العلامات الإلزامية على حقل `mandatory: true` في [مواصفات أداة التحقق من صفحة صفحات AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)؛
-كما تتم الإشارة إليها أيضًا في [مواصفات صفحات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}).
+كما تتم الإشارة إليها أيضًا في [مواصفات صفحات AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### العلامة المطلوبة من قبل علامة أخرى غير موجودة
 
@@ -80,7 +80,7 @@ limitations under the License.
 عند عثورها على مكوّن موسّع في مستند AMP،
 وعدم عثورها على المكوّن `<script>` المكافئ له.
 
-يجب تضمين [المكوّنات الموسّعة]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
+يجب تضمين [المكوّنات الموسّعة](../../../../documentation/components/index.html)
 بشكل صريح في مستند AMP باعتبارها عناصر مخصصة.
 ولإصلاح هذه الأخطاء، انتقل إلى الصفحة المرجعية للمكوّن الموسّع،
 وانسخ النص البرمجي المطلوب بها، ثم الصقه في مستند AMP `<head>`.
@@ -103,7 +103,7 @@ limitations under the License.
 </table>
 
 العلامات مدرجة في القائمة البيضاء، وبالتالي ليست هناك قائمة محددة تضم جميع العلامات الغير مسموح بها؛
-ومع ذلك فإن [مواصفات صفحة AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
+ومع ذلك فإن [مواصفات صفحة AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)
 تحدد مجموعة من العلامات الغير مسموح بها على نطاق واسع.
 
 ### السمة الإلزامية غير موجودة
@@ -436,10 +436,10 @@ limitations under the License.
 يحدث هذا الخطأ عندما يكون لإحدى العلامات كلتا السمتين الحصريتين اللتين يمكن استخدامهما بشكل تبادلي.
 على سبيل المثال، يُسمح بسمة واحدة فقط للعلامات التالية:
 
-* ‏[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}):‏ `data-tweetid` أو `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}):‏ `data-shortcode` أو `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}):‏ `src` أو `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}):‏ `src` أو `data-videoid`
+* ‏[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md):‏ `data-tweetid` أو `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md):‏ `data-shortcode` أو `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md):‏ `src` أو `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md):‏ `src` أو `data-videoid`
 
 ### السمة الإلزامية غير موجودة في القائمة
 
@@ -462,10 +462,10 @@ limitations under the License.
 من الخيارات المتعددة.
 على سبيل المثال، تتطلب هذه العلامات سمة واحدة من خيارين محتملين:
 
-* ‏[`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}):‏ `data-tweetid` أو `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}):‏ `data-shortcode` أو `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}):‏ `src` أو `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}):‏ `src` أو `data-videoid`
+* ‏[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md):‏ `data-tweetid` أو `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md):‏ `data-shortcode` أو `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md):‏ `src` أو `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md):‏ `src` أو `data-videoid`
 
 ### علامة أصل خاطئة
 
@@ -498,7 +498,7 @@ limitations under the License.
 * تتطلب `style` علامة الأًصل `boilerplate (noscript)`.
 * تتطلب `noscript` علامة الأصل `head`.
 * تتطلب `script` علامة الأصل `head`.
-* تتطلب `source` علامة وسائط ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})، [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})، وغيرها).
+* تتطلب `source` علامة وسائط ([`amp-audio`](../../../../documentation/components/reference/amp-audio.md)، [`amp-video`](../../../../documentation/components/reference/amp-video.md)، وغيرها).
 
 ### علامة الأصل غير مسموح بها
 
@@ -614,8 +614,8 @@ limitations under the License.
 
 قبل مراجعة أخطاء الأنماط والتنسيقات،
 يجدر بنا التعرف على كيفية عمل
-[الأنماط]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) و
-[التنسيقات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) في AMP.
+[الأنماط](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) و
+[التنسيقات](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) في AMP.
 ونظرًا لأن صفحات AMP هي صفحات HTML، فإن الأنماط تشبه كثيرًا أي صفحات HTML.
 ولكن هناك بعض القيود لضمان سرعة تحميل الصفحات،
 وتعمل أداة التحقق من صحة صفحات AMP على تفعيل هذه القيود.
@@ -698,7 +698,7 @@ limitations under the License.
 
 يشير هذا الخطأ إلى قواعد @ داخل CSS،
 والتي تسمح لها AMP بمجموعة من القواعد فقط.
-(راجع أيضًا [مواصفات AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})).
+(راجع أيضًا [مواصفات AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).
 على سبيل المثال، لا يُسمح بالقاعدة `@import`.
 ويوضح خطأ التحقق من الصحة القاعدة غير الصالحة
 على وجه التحديد،
@@ -728,8 +728,8 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) و
-[مواصفات نظام تنسيق AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+راجع [كيفية التحكم في التنسيق](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) و
+[مواصفات نظام تنسيق AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 **ملاحظة:** إذا لم تحدد التنسيق،
 ولم تضمّن القيمتين `width` و`height`،
@@ -760,7 +760,7 @@ limitations under the License.
 يحدث هذا الخطأ عند عدم تحديد تنسيق لعلامة AMP،
 واحتواء التنسيق الضمني على سمة غير مسموح بها.
 يتم وصف السمات الغير مسموح بها لأنواع التنسيق في
-[مواصفات نظام تنسيق AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+[مواصفات نظام تنسيق AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### التنسيق المحدد غير متوافق مع علامة AMP
 
@@ -786,8 +786,8 @@ limitations under the License.
 
 يتم تحديد سلوك التنسيق الفعلي عن طريق السمة `layout`.
 لمزيد من المعلومات حول طريقة عمل التنسيق،
-راجع [كيفية التحكم في التنسيق]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) و
-[مواصفات نظام تنسيق AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+راجع [كيفية التحكم في التنسيق](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) و
+[مواصفات نظام تنسيق AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### السمة غير مسموح بها من تنسيق محدد
 
@@ -810,7 +810,7 @@ limitations under the License.
 يحدث هذا الخطأ عند تحديد تنسيق لعلامة AMP،
 واحتواء التنسيق على سمة غير مسموح بها.
 يتم وصف السمات الغير مسموح بها لأنواع التنسيق في
-[مواصفات نظام تنسيق AMP HTML]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+[مواصفات نظام تنسيق AMP HTML](../../../../documentation/components/reference/amp-layout.md).
 
 ### قيمة غير صالحة للسمة التي يتطلبها التنسيق
 
@@ -832,7 +832,7 @@ limitations under the License.
 يحدث هذا الخطأ عندما تكون قيمة السمة غير صالحة للتنسيق المحدد.
 لاستيعاب سبب ظهور هذا الخطأ،
 ينبغي التعرّف على
-[السلوكيات المختلفة للتنسيقات]{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}).
+[السلوكيات المختلفة للتنسيقات](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md).
 
 لنفرض أنك عيّنت التنسيق ليكون `fixed-height` و
 وضمّنت القيم الرقمية لكل من `height` و`width`.
@@ -864,19 +864,19 @@ limitations under the License.
 على سبيل المثال، ينتج عن `<amp-img src="" layout="responsive" width="42px" height="42rem">`
 رسالة الخطأ هذه:
 
-"وحدات غير متناسقة للعرض والارتفاع في العلامة '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  - العرض محدد في 'px' بينما الارتفاع محدد في 'rem'."
+"وحدات غير متناسقة للعرض والارتفاع في العلامة '[`amp-img`](../../../../documentation/components/reference/amp-img.md)  - العرض محدد في 'px' بينما الارتفاع محدد في 'rem'."
 
 ## أخطاء النماذج
 
 لا يمكن أن تشمل صفحات AMP بنية نماذج،
 ما لم تكن البنية في نطاق علامة AMP المصممة
 خصيصًا لتضمين النماذج، مثل،
-[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
+[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md).
 
 يمكن تضمين النماذج في ملفات المصدر،
 طالما أن الناتج الناشئ عن هذه الملفات لا يحتوي على النماذج
 (راجع أيضًا
-[استخدام معالجات CSS التمهيدية]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})).
+[استخدام معالجات CSS التمهيدية](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)).
 
 ### تحتوي السمة على بنية نموذج
 

@@ -69,7 +69,7 @@ There are three ways to programmatically transform links:
 
 Google provides the AMP URL API to retrieve the matching AMP HTML URLs for a
 given list of URLs ([official documentation](https://developers.google.com/amp/cache/use-amp-url) /
-[demo]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). The URLs do
+[demo](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html). The URLs do
 not need to be the canonical versions. If an AMP version exists, the response
 includes the original AMP URL and the URL for the cached AMP page on the Google
 AMP Cache.
@@ -110,7 +110,7 @@ The response body contains the AMP URL mapping in JSON format:
 
 ## Using AMP Caches
 
-An [AMP Cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}) is a
+An [AMP Cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) is a
 proxy-based content delivery network (CDN) for delivering valid AMP documents.
 AMP Caches are designed to:
 
@@ -121,7 +121,7 @@ AMP Caches are designed to:
 Currently, there are two AMP Cache providers:
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 This gives two choices to display an AMP file in an app by using either:
 
@@ -168,7 +168,7 @@ Here are some general best practices for implementing an AMP Viewer:
 *   In webView-based viewers, enable third-party cookies.
 *   Set a referrer for your platform/app.
 
-### Sharing AMP Content
+### Sharing AMP Content <a name="sharing-amp-content"></a>
 
 When sharing an AMP document from within a platform's AMP Viewer, the platform
 should share the canonical URL when technically possible. For example, if the

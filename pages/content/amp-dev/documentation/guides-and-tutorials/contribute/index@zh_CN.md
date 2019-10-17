@@ -6,7 +6,7 @@ $title: 如何贡献自己的力量
 
 ### 报告与 AMP 相关的问题
 
-如果您有任何反馈或遇到与 AMP 相关的技术问题，请使用[问题跟踪器](https://github.com/ampproject/amphtml/issues) 提交。如果您遇到与 [ampproject.org](https://ampproject.org)相关的问题，请改用[文档问题跟踪器](https://github.com/ampproject/docs/issues)提交。
+如果您有任何反馈或遇到与 AMP 相关的技术问题，请使用[问题跟踪器](https://github.com/ampproject/amphtml/issues) 提交。如果您遇到与 [amp.dev](https://amp.dev)相关的问题，请改用[文档问题跟踪器](https://github.com/ampproject/docs/issues)提交。
 
 ### 为 AMP 做出技术贡献
 
@@ -22,8 +22,8 @@ AMP 项目极力鼓励大家踊跃做出技术方面的贡献！
 
 文档对整个 AMP 社区至关重要；如果您愿意帮助我们提高文档的质量，我们将不胜感激！我们提供各种各样的文档，例如面向 AMP 用户的文档、用于帮助 AMP 项目贡献者的文档等。
 
-[ampproject.org](https://ampproject.org) 可帮助大多数用户熟悉 AMP。您可以在 [ampproject docs GitHub 项目](https://github.com/ampproject/docs) 中对该文档进行改进。（您甚至可以帮助改进[您正在阅读的页面](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md)！）
+[amp.dev](https://amp.dev) 可帮助大多数用户熟悉 AMP。您可以在 [ampproject docs GitHub 项目](https://github.com/ampproject/docs) 中对该文档进行改进。（您甚至可以帮助改进[您正在阅读的页面](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md)！）
 
-[ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) 提供示例来说明如何使用 AMP。您可以在 [amp-by-example GitHub 项目](https://github.com/ampproject/amp-by-example/) 中进行相关改进。
+[ampbyexample.com](../../../documentation/examples/index.html) 提供示例来说明如何使用 AMP。您可以在 [amp-by-example GitHub 项目](https://github.com/ampproject/amp-by-example/) 中进行相关改进。
 
 您还可以改进我们 [amphtml GitHub 项目](https://github.com/ampproject/amphtml) 中的文档，以帮助为 AMP 做出贡献的其他贡献者。

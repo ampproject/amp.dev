@@ -1,6 +1,6 @@
-$path: /events/{base}.html
 $view: /views/default.j2
 $title@: Events
+$path: /events/{base}.html
 $localization:
   path: /{locale}/events/{base}.html
 $order: 4
@@ -8,4 +8,5 @@ $order: 4
 index: /content/amp-dev/events/amp-conf-2019.html
 flyout:
     - /content/amp-dev/events/amp-conf-2019.html
+    - /content/amp-dev/events/amp-cs-2019.html
     - /content/amp-dev/events/amp-roadshow.html

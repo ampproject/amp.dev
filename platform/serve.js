@@ -22,4 +22,5 @@ require('module-alias/register');
 
 const Platform = require('./lib/platform');
 
-new Platform().start();
+const platform = new Platform();
+platform.start();

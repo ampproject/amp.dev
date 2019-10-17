@@ -19,128 +19,155 @@
 const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
-const ampCors = require('amp-toolbox-cors');
-// const AmpOptimizerMiddleware = require('amp-toolbox-optimizer-express');
-const defaultCachingStrategy = require('./utils/CachingStrategy.js').defaultStrategy;
-const {setNoSniff, setHsts, setXssProtection} = require('./utils/cacheHelpers.js');
+const cors = require('cors');
+const ampCors = require('@ampproject/toolbox-cors');
 const config = require('./config.js');
+const {pagePath} = require('@lib/utils/project');
 const subdomain = require('./middleware/subdomain.js');
 
-const WWW_PREFIX = 'www.';
-const HEALTH_CHECK = '/__health-check';
 const routers = {
-  'whoAmI': require('./routers/whoAmI.js'),
-  'pages': require('./routers/pages.js'),
-  'examples': require('./routers/examples.js'),
-  'static': require('./routers/static.js'),
-  'playground': require('../../playground/backend/'),
-  'boilerplate': require('../../boilerplate/backend/'),
+  boilerplate: require('../../boilerplate/backend/'),
+  example: {
+    api: require('@examples'),
+    embeds: require('@lib/routers/example/embeds.js'),
+    sources: require('@lib/routers/example/sources.js'),
+    static: require('@lib/routers/example/static.js'),
+    experiments: require('@lib/routers/example/experiments.js'),
+    inline: require('@lib/routers/inlineExamples.js'),
+  },
+  log: require('@lib/routers/runtimeLog.js'),
+  go: require('@lib/routers/go.js'),
+  growSharedPages: require('@lib/routers/growSharedPages.js'),
+  growXmls: require('@lib/routers/growXmls.js'),
+  growPages: require('@lib/routers/growPages.js'),
+  healthCheck: require('@lib/routers/healthCheck.js').router,
+  notFound: require('@lib/routers/notFound.js'),
+  packager: require('@lib/routers/packager.js'),
+  playground: require('../../playground/backend/'),
+  search: require('@lib/routers/search.js'),
+  static: require('@lib/routers/static.js'),
+  templates: require('@lib/routers/templates.js'),
+  whoAmI: require('@lib/routers/whoAmI.js'),
 };
+
+const HOST = config.hosts.platform.base;
+const PORT = config.hosts.platform.port || process.env.APP_PORT || 80;
 
 class Platform {
   start() {
-    const host = `${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}`;
+    signale.info('Starting platform');
+    return new Promise(async (resolve, reject) => {
+      try {
+        await this._createServer();
+        this.httpServer = this.server.listen(PORT, () => {
+          signale.success(`server listening on ${PORT}!`);
+          resolve();
+        });
+        // Increase keep alive timeout
+        // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
+        this.httpServer.keepAliveTimeout = 700 * 1000;
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
 
-    signale.await(`Starting platform with environment ${config.environment} on ${host} ...`);
+  stop() {
+    signale.info('Stopping platform');
+    return new Promise(async (resolve, reject) => {
+      this.httpServer.close(() => resolve());
+    });
+  }
+
+  async _createServer() {
+    signale.await(`Starting platform with environment ${config.environment} on ${HOST} ...`);
     this.server = express();
 
-    if (config.environment == 'development') {
-      const HttpProxy = require('http-proxy');
+    // pass app engine HTTPS status to express app
+    this.server.set('trust proxy', true);
+    this.server.disable('x-powered-by');
 
-      // When in development fire up a second server as a simple proxy
-      // to simulate CORS requests for stuff like playground
-      this.proxy = express();
-      this.proxy.listen(config.hosts.api.port, () => {
-        signale.success(`Proxy available on ${config.hosts.api.scheme}://${config.hosts.api.host}:${config.hosts.api.port}!`);
-      });
-
-      subdomain.router(this.proxy);
-      const proxy = new HttpProxy();
-      this.proxy.get('/*', (request, response, next) => {
-        proxy.web(request, response, {
-          'target': host,
-        }, next);
-      });
-    }
-    this.server.use(shrinkRay());
-    /*
-    const ampOptimizer = AmpOptimizerMiddleware.create({versionedRuntime: true});
-    this.server.use((request, response, next) => {
-      // don't optimize sample source or preview
-      if (/\/(?:source|preview)(\/\d*$)?/mi.test(request.url) ||
-             request.headers['x-requested-by'] === 'playground') {
-        next();
-        return;
-      }
-      ampOptimizer(request, response, next);
-    });
-    */
-    this.server.use((req, res, next) => {
-      if (req.hostname.startsWith(WWW_PREFIX)) {
-        res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
-      } else {
-        next();
-      }
-    });
-    this.server.use((req, res, next) => {
-      if (req.hostname === 'localhost') {
-        return next();
-      }
-      setNoSniff(res);
-      setXssProtection(res);
-      if (req.path === HEALTH_CHECK) {
-        // it's critical that health checks don't redirect for GCE healthchecks to work correctly
-        return next();
-      }
-      setHsts(res);
-      if (req.headers['x-forwarded-proto'] === 'https') {
-        return next();
-      }
-      res.redirect('https://' + req.hostname + req.path);
-    });
-    this._enableCors();
-    this.server.use(defaultCachingStrategy);
-
-    this._check();
-    this._registerRouters();
-
-    const port = config.hosts.platform.port || process.env.APP_PORT || 80;
-    this.server.listen(port, () => {
-      signale.success(`server listening on ${port}!`);
-    });
+    this._configureMiddlewares();
+    await this._configureSubdomains();
+    this._configureRouters();
+    this._configureErrorHandlers();
   }
 
-  _enableCors() {
-    this.server.use((request, response, next) => {
-      response.header('Access-Control-Allow-Origin', '*');
-      response.header('Access-Control-Allow-Credentials', 'true');
-      response.header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT');
-      response.header(
-          'Access-Control-Allow-Headers',
-          'Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, X-Requested-By, ' +
-        'Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
+  _configureMiddlewares() {
+    this.server.use(shrinkRay());
+    this.server.use(require('./middleware/security.js'));
+    this.server.use(require('./middleware/redirects.js'));
+    this.server.use(require('./middleware/caching.js'));
+    this.server.use(cors({
+      origin: true,
+      credentials: true,
+    }));
+    this.server.use(ampCors({
+      email: true,
+    }));
+    // debug computing times
+    this.server.use((req, res, next) => {
+      const timeStart = process.hrtime();
+
+      res.on('finish', () => {
+        const timeElapsed = process.hrtime(timeStart);
+        let seconds = (timeElapsed[0] * 1000 + timeElapsed[1] / 1e6) / 1000;
+        seconds = seconds.toFixed(3);
+        const prefix = seconds > 1 ? 'CRITICAL_TIMING' : 'TIMING';
+        let postfix = `[${res.statusCode}]`;
+        if (req.header('amp-cache-transform')) {
+          postfix += ' [SXG]';
+        }
+        console.log(`[${prefix}] ${req.get('host')}${req.originalUrl} ${seconds}s ${postfix}`);
+      });
+
       next();
     });
-
-    this.server.use(ampCors({
-      'verifyOrigin': false,
-    }));
-  };
-
-  _check() {
-    // TODO: Check (dependening on environment) if all needed files are
-    // there and otherwise only send a static error page
   }
 
-  _registerRouters() {
-    this.server.get(HEALTH_CHECK, (req, res) => res.status(200).send('OK'));
-    this.server.use(subdomain.map(config.hosts.playground.subdomain, routers.playground));
-    this.server.use('/who-am-i', routers.whoAmI);
-    this.server.use(routers.examples);
+  async _configureSubdomains() {
+    this.server.use(await subdomain.map(config.hosts.playground, routers.playground));
+    this.server.use(await subdomain.map(config.hosts.go, routers.go));
+    this.server.use(await subdomain.map(config.hosts.log, routers.log));
+    // eslint-disable-next-line new-cap
+    this.server.use(await subdomain.map(config.hosts.preview, express.Router().use([
+      routers.example.api,
+      routers.example.static,
+      routers.example.embeds,
+      routers.example.sources,
+      routers.example.experiments,
+      routers.example.inline,
+    ])));
+  }
+
+  _configureRouters() {
+    this.server.use(routers.packager);
+    this.server.use(routers.whoAmI);
+    this.server.use(routers.healthCheck);
+    this.server.use(routers.example.api);
+    this.server.use(routers.search);
+    this.server.use(routers.boilerplate);
     this.server.use(routers.static);
-    this.server.use('/boilerplate', routers.boilerplate);
+    this.server.use(routers.templates);
+    // XMLs rendered by Grow as well as all pages located under /shared
+    // are need to be served by specialized routers instead of the generic one.
+    // Therefore register them first
+    this.server.use(routers.growSharedPages);
+    this.server.use(routers.growXmls);
     // Register the following router at last as it works as a catch-all
-    this.server.use(routers.pages);
+    this.server.use(routers.growPages);
+  }
+
+  _configureErrorHandlers() {
+    // handle errors
+    this.server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+      if (err) {
+        console.error('[ERROR]', err);
+        res.status(500).sendFile('500.html', {root: pagePath()});
+      }
+    });
+    // handle 404s
+    this.server.use(routers.notFound);
   }
 };
 

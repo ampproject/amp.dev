@@ -38,12 +38,13 @@ body {
       grid-column: 8 / 25;
       padding-left: 30px;
       padding-right: 30px;
+      padding-bottom: 60px;
     }
-  
+
     @media (min-width: 1024px) {
       grid-column: 6 / 24;
       padding-left: 30px;
-      padding-right: 30px;
+      padding-bottom: 60px;
     }
   }
 
@@ -60,19 +61,28 @@ body {
     @include content-with-sidebar;
   }
 
+  .#{utility('sidebar')} ~ .#{utility('content')},
+  .#{utility('toc')} ~ .#{utility('content')} {
+    @media (max-width: 767px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
   .#{utility('content')} {
-    h1 {@include hl-h2;}
-    h2 {@include hl-h3;}
-    h3 {@include hl-h4;}
-    h4 {@include hl-h5;}
 
     amp-anim {
       @include box-shadow;
     }
 
     figure {
+
+      @media screen and (max-width: 575px) {
+        min-width: 50vw;
+      }
+
       &.alignment-wrapper {
-        margin-bottom: 40px;
+        margin-top: 1.6rem;
       }
 
       &.half {
@@ -101,6 +111,7 @@ body {
         @include txt;
         @include txt-3;
         padding-top: 20px;
+        max-width: 300px;
       }
     }
   }
@@ -132,5 +143,9 @@ body {
         }
       }
     }
+  }
+
+  .noshowtoc {
+    display: none;
   }
 }

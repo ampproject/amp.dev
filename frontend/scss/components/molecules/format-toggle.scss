@@ -7,136 +7,127 @@
 @import 'components/atoms/_text';
 
 .#{molecule('format-toggle')} {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   margin: 0 10px;
-  padding: 15px 0 15px 0;
-  border-bottom: 2px dotted rgba(0, 0, 0, 0.25);
+  padding: 10px 0 0 0;
+  width: 100%;
   max-width: 85%;
+  z-index: 12;
 
   @media (min-width: 768px) {
-    padding: 0 0 20px 0;
-    margin: 0 15px;
+    padding: 0;
+    margin: 0 15px 0 0;
     max-width: 100%;
   }
 
-  &-hl {
-    margin-bottom: 15px;
-    @include txt-font-accent;
-    font-weight: bold;
-    font-size: 1rem;
-    width: 100%;
+  &-selected {
+    .amp-mode-touch & {
+      position: relative;
+    }
+    border: 0;
+
+    &:focus, &:hover {
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        height: 300%;
+        width: 100%;
+      }
+    }
   }
 
-  &-format {
-    flex: 1 50%;
-    max-width: 50%;
-    padding: 2px;
+  &-link, &-selected {
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 2px;
+    padding: 5px 8px;
+    overflow: hidden;
+    @include txt;
+    @include txt-font-accent;
+    font-size: 12px;
+    text-align: left;
+    border-radius: 4px;
+    color: color('black');
+    background: color('athens-gray');
+    transition: opacity 0.2s ease;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.25);
+
+    .#{atom('ico')} {
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      fill: color('black');
+    }
   }
 
   &-link {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 16px 8px;
-    @include txt;
-    @include txt-font-accent;
-    line-height: 1.2em;
-    font-size: 1em;
-    text-overflow: ellipsis;
-    border-radius: 6px;
     color: color('black');
-    background: fade_out(color('river-bed'), 0.95);
-    transition: opacity 0.2s ease;
-    cursor: pointer;
-
-    @media (min-width: 768px) {
-      font-size: 0.70em;
-    }
-
-    @media (min-width: 1440px) {
-      font-size: 1rem;
-    }
-
-    &.active {
-      box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.25);
-    }
+    background: color('athens-gray');
 
     .#{atom('ico')} {
-      width: 28px;
-      height: 28px;
-      margin-right: 10px;
       fill: color('black');
-
-      @media (min-width: 768px) {
-        width: 0;
-        height: 0;
-        margin-right: 0;
-      }
-
-      @media (min-width: 1200px) {
-        width: 22px;
-        height: 22px;
-        margin-right: 8px;
-      }
-    }
-
-    &-websites:not(.inactive),
-    &-websites.active {
-      @include gradient-websites; color: color('white');
-      .#{atom('ico')} { fill: color('white'); }
-    }
-
-    &-stories:not(.inactive),
-    &-stories.active {
-      @include gradient-stories; color: color('pigment-indigo');
-      .#{atom('ico')} { fill: color('pigment-indigo'); }
-    }
-
-    &-ads:not(.inactive),
-    &-ads.active {
-      @include gradient-ads; color: color('white');
-      .#{atom('ico')} { fill: color('white'); }
-    }
-
-    &-email:not(.inactive),
-    &-email.active {
-      @include gradient-e-mails; color: color('ultramarine');
-      .#{atom('ico')} { fill: color('ultramarine'); }
     }
   }
 
-  &:hover &-link {
-    &:not(.active),
-    &.inactive {
-      color: color('black');
-      background: fade_out(color('river-bed'), 0.95);
+    &-link-websites {
 
-      .#{atom('ico')} {
-        fill: color('black');
+      &:hover, &.#{molecule('format-toggle')}-selected  {
+        @include gradient-websites; color: color('white');
+        .#{atom('ico')} { fill: color('white'); }
       }
     }
 
-    &-websites:hover {
-      @include gradient-websites; color: color('white');
-      .#{atom('ico')} { fill: color('white'); }
+    &-link-stories {
+      &:hover, &.#{molecule('format-toggle')}-selected {
+        @include gradient-stories; color: color('ultramarine');
+        .#{atom('ico')} { fill: color('ultramarine'); }
+      }
     }
 
-    &-stories:hover {
-      @include gradient-stories; color: color('pigment-indigo');
-      .#{atom('ico')} { fill: color('pigment-indigo'); }
+    &-link-ads {
+      &:hover, &.#{molecule('format-toggle')}-selected {
+        @include gradient-ads; color: color('white');
+        .#{atom('ico')} { fill: color('white'); }
+      }
     }
 
-    &-ads:hover {
-      @include gradient-ads; color: color('white');
-      .#{atom('ico')} { fill: color('white'); }
+    &-link-email {
+
+      &:hover, &.#{molecule('format-toggle')}-selected {
+        @include gradient-e-mails; color: color('ultramarine');
+        .#{atom('ico')} { fill: color('ultramarine'); }
+      }
     }
 
-    &-email:hover {
-      @include gradient-e-mails; color: color('ultramarine');
-      .#{atom('ico')} { fill: color('ultramarine'); }
+  &-angle {
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  &-formats {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+    transition-delay: 0.05s;
+
+    .#{molecule('format-toggle')}-selected:focus + &,
+    .#{molecule('format-toggle')}-selected:hover + &,
+    &:focus-within,
+    &:hover {
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

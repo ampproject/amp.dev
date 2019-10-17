@@ -1,6 +1,0 @@
-$title: Monetization
-$view: /views/detail/example-detail.j2
-$path: '/documentation/examples/monetization/{base}.html'
-$localization:
-  path: '/{locale}/documentation/monetization/features/{base}.html'
-$order: 0

@@ -40,7 +40,7 @@ AMP.toggleExperiment('experiment')
 ```
 
 試験運用機能が含まれている AMP ファイルは、
-[AMP の検証]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})でエラーになります。
+[AMP の検証](validation-workflow/validate_amp.md)でエラーになります。
 実用段階の AMP ドキュメントでは、試験運用コンポーネントを削除してください。
 
 ## 特定のドキュメントで試験運用機能を有効にする

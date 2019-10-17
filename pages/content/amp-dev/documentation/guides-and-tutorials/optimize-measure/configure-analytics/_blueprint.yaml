@@ -1,7 +1,7 @@
-$path: /documentation/guides-and-tutorials/optimize-measure/configure-analytics/{base}.html
 $view: /views/detail/docs-detail.j2
+$path: /documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/{base}.html
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/optimize-measure/configure-analytics/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/{base}.html
 $title@: Track engagement with analytics
 $title@zh: 配置分析工具
 $title@tr: Analytics›i Yapılandırın

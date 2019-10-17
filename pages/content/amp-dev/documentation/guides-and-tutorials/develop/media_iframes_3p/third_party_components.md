@@ -18,7 +18,7 @@ Learn how to include third-party components in your pages.
 ## Embed a Tweet
 
 Embed a  Tweet from Twitter in your page by
-using the [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) element.
+using the [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) element.
 
 To embed a tweet in your page,
 first include the following script in the `<head>`:
@@ -34,26 +34,24 @@ but this may yield less than the ideal appearance.
 Manually tweak the provided width and height or use the media attribute
 to select the aspect ratio based on screen width.
 
-<!-- embedded twitter example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
+```html
+<amp-twitter width="500"
+  height="583"
+  layout="responsive"
+  data-tweetid="638793490521001985">
+</amp-twitter>
+```
+[/example]
 
 [tip type="tip"]
-**TIP –** See more [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) examples at [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}}).
+**TIP –** See more [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html).
 [/tip]
 
 ## Embed an Instagram
 
 Embed an Instagram in your page by
-using the [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) element.
+using the [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) element.
 
 To embed an Instagram,
 first include the following script in the `<head>`:
@@ -69,26 +67,24 @@ For example, in `https://instagram.com/p/fBwFP`,
 Also, Instagram uses a fixed aspect ratio for responsive layouts,
 so the value for width and height should be universal.
 
-<!-- embedded Instagram example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
+```html
+<amp-instagram data-shortcode="fBwFP"
+  width="320"
+  height="392"
+  layout="responsive">
+</amp-instagram>
+```
+[/example]
 
 [tip type="tip"]
-**TIP –** See more [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) examples at [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}}).
+**TIP –** See more [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html).
 [/tip]
 
 ## Display a Facebook post or video
 
 Display a Facebook post or video in your page by
-using the [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) element.
+using the [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) element.
 
 You must include the following script in the `<head>`:
 
@@ -130,13 +126,13 @@ Preview:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** See more [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) examples at [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}}).
+**TIP –** See more [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html).
 [/tip]
 
 ## Embed a YouTube video
 
 Embed a YouTube video in your page by
-using the [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) element.
+using the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) element.
 
 You must include the following script in the `<head>`:
 
@@ -151,26 +147,24 @@ For example, in `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
 
 Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 
-<!-- embedded youtube example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 [tip type="tip"]
-**TIP –** See more [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) examples at [AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}}).
+**TIP –** See more [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html).
 [/tip]
 
 ## Display an ad
 
 Display an ad in your page by
-using the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) element.
+using the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) element.
 Only ads served via HTTPS are supported.
 
 No ad network-provided JavaScript is allowed to run inside the AMP document.
@@ -182,36 +176,39 @@ You must specify the ad width and height, and the ad network type.
 The `type` identifies the ad network's template.
 Different ad types require different `data-*` attributes.
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="212"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+</amp-ad>
+```
+[/example]
 
 If supported by the ad network,
 include a `placeholder`
 to be shown if no ad is available:
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="232"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  <div placeholder>Have a great day!</div>
+</amp-ad>
+```
+[/example]
 
-AMP supports a wide range of ad networks. See the [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})  for a full list.
+AMP supports a wide range of ad networks. See the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  for a full list.
 
 [tip type="read-on"]
-**READ ON –** Learn more about ads in the [Serving Ads on AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) guide.
+**READ ON –** Learn more about ads in the [Serving Ads on AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) guide.
 [/tip]

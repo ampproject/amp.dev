@@ -1,0 +1,24 @@
+---
+$title: "[= title =]"
+$view: /views/custom.j2
+$sitemap:
+  enabled: false
+---
+
+{% do doc.styles.addCssFile('css/components/templates/error.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/jumbo.css') %}
+
+<main class="ap--main ap-t-error">
+  <section class="ap--container">
+    <div class="ap-m-jumbo">
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/bolt-broken-solid.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-broken-solid"></use></svg>
+      </div>
+      <h1 class="ap-m-jumbo-headline">[= title =]</h1>
+      <h2 class="ap-m-jumbo-subline">[= subTitle =]</h2>
+      <p class="ap-m-jumbo-copy">[= text|safe =]</p>
+    </div>
+  </div>
+  </section>
+</main>

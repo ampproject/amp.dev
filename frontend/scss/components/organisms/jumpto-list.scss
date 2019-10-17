@@ -25,10 +25,9 @@
 
 .#{organism('jumpto')} {
   width: 100%;
-  position: relative;
 
   @media (min-width: 768px) {
-    grid-column: 1 / -1;
+    grid-column: 2 / -1;
     margin-bottom: 64px;
   }
 
@@ -43,21 +42,23 @@
 
   &-text {
     @include txt;
+    margin-bottom: 0.5em;
   }
 
   &-list {
     @include jumpto-list-shadow;
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
     background: color('white');
     border-radius: 4px;
     margin: 0;
-    margin-right: 50px;
     padding: 15px 0;
     list-style: none;
+    overflow: auto;
 
     @media (min-width: 768px) {
-      flex-wrap: nowrap;
+      justify-content: center;
+      margin-right: 50px;
     }
 
   }

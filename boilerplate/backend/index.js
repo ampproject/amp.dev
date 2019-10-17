@@ -19,7 +19,7 @@ const express = require('express');
 // eslint-disable-next-line new-cap
 const playground = express.Router();
 
-playground.use(express.static(
+playground.use('/boilerplate', express.static(
     path.join(__dirname, '../dist'),
     {extensions: ['html']},
 ));

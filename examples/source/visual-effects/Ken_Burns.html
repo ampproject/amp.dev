@@ -1,7 +1,7 @@
 <!---
 
 skipValidation: 'true'
-category: 'visual-effects'
+author: Enriqe
 
 --->
 
@@ -17,7 +17,7 @@ category: 'visual-effects'
 
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="/stories/visual_effects/ken_burns/">
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
@@ -46,28 +46,23 @@ category: 'visual-effects'
   <amp-story standalone
   title="Stories in AMP - Ken Burns"
   publisher="AMP Project"
-  publisher-logo-src="<%host%>/favicons/coast-228x228.png"
+  publisher-logo-src="<% hosts.platform %>/favicons/coast-228x228.png"
   poster-portrait-src="https://picsum.photos/300/400"
   poster-square-src="https://picsum.photos/300/300"
   poster-landscape-src="https://picsum.photos/400/300">
     <!-- ## Ken Burns Effect-->
     <!--The general idea is to nest elements to combine the animations: the container element will animate the zoom, and the image inside the container will be animated with a panning.
-    <ul>
-      <li>Start by creating an `<amp-story-page>` with a `<amp-story-grid-layer` using the fill template.</li>
-      <li>Add a `<div>` element which will act as the image container. Set its style class to `position:absolute`. This will ensure image coordinates correspond to those of the viewport, which is important for the animation.</li>
-      <li>Set its animation to be `animate-in="zoom-in"` or `animate-in="zoom-out"` and its duration with `"animate-in-duration=30s"`.</li>
-    </ul>
 
+    * Start by creating an `<amp-story-page>` with a `<amp-story-grid-layer` using the fill template.
+    * Add a `<div>` element which will act as the image container. Set its style class to `position:absolute`. This will ensure image coordinates correspond to those of the viewport, which is important for the animation.
+    * Set its animation to be `animate-in="zoom-in"` or `animate-in="zoom-out"` and its duration with `"animate-in-duration=30s"`.
 
-<p><strong>Tip:</strong> In this demo we use 30 seconds but your mileage may vary. Try experimenting with different values to see what works best for your desired results.</p>
-<ul>
-  <li>Inside this container, add an `<amp-img>` element with the `src` attribute pointing at your image, describe the size of the image with the `width` and `height` attributes of the [`<amp-img>` element](/components/amp-img/). Set `layout="fixed"` so that the image outsizes the screen real estate (We want to use a large image that can be panned over. We recommend 1600 x 1200 px or larger).</li>
-  <li>Animate the `<amg-img>` element using the `animate-in="pan-right"`. (You can also use `pan-left`, `pan-up`, and `pan-down`). [See amp-story animations list.](/stories/features/animations/#zoom-in)</li>
-</ul>
+    Tip: In this demo we use 30 seconds but your mileage may vary. Try experimenting with different values to see what works best for your desired results.
 
+    - Inside this container, add an `<amp-img>` element with the `src` attribute pointing at your image, describe the size of the image with the `width` and `height` attributes of the [`<amp-img>` element](/documentation/components/amp-img). Set `layout="fixed"` so that the image outsizes the screen real estate (We want to use a large image that can be panned over. We recommend 1600 x 1200 px or larger).
+    - Animate the `<amg-img>` element using the `animate-in="pan-right"`. (You can also use `pan-left`, `pan-up`, and `pan-down`). [See amp-story animations list.](/documentation/examples/visual-effects/amp_story_animations/?format=stories#zoom-in)
 
-<p><strong>Tip:</strong> It's important that the **image** sets the **panning animation**, whereas the image **container** sets the **zoom animation**. Otherwise the dimensions of the image will change, causing undesired results in the animation.</p>
-
+    Tip: It's important that the **image** sets the **panning animation**, whereas the image **container** sets the **zoom animation**. Otherwise the dimensions of the image will change, causing undesired results in the animation.
     -->
     <amp-story-page id="ken-burns-effect1">
       <amp-story-grid-layer template="fill">
@@ -83,7 +78,7 @@ category: 'visual-effects'
     <!--
       <p>You can even implement a slideshow transitioning between multiple pages using this effect.</p>
 
-      Just combine the animations as described in the [combining animations section](/stories/features/animations/#combining-animations). Remember all the elements being animated after certain animation must include the `animate-in-after` attribute. Including the children being animated. See below for the code sample.
+      Just combine the animations as described in the [combining animations section](/documentation/examples/visual-effects/amp_story_animations/?format=stories#combining-animations). Remember all the elements being animated after certain animation must include the `animate-in-after` attribute. Including the children being animated. See below for the code sample.
 
       We also reset the sizes of the nested `<div>` elements so that they don't change the dimensions used for the animations. See the `img-container` style class in the code sample.
 
@@ -156,7 +151,7 @@ category: 'visual-effects'
       </amp-story-grid-layer>
     </amp-story-page>
 
-    <amp-story-bookend src="<%host%>/json/bookend.json" layout="nodisplay">
+    <amp-story-bookend src="<% hosts.platform %>/static/samples/json/bookend.json" layout="nodisplay">
     </amp-story-bookend>
 
   </amp-story>

@@ -4,7 +4,7 @@ $title: Iniciar sesión
 
 Supongamos que la primera vez que accedes a una página ves dos comentarios y un botón para iniciar sesión, tal como se muestra a continuación:
 
-<amp-img src="/static/img/login-button.png" alt="Botón para iniciar sesión" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="Botón para iniciar sesión" height="290" width="300"></amp-img>
 
 Si buscas el botón en el código de la página, puedes ver que tiene el siguiente formato:
 
@@ -15,7 +15,7 @@ Si buscas el botón en el código de la página, puedes ver que tiene el siguien
 </span>
 [/sourcecode]
 
-El comportamiento de los atributos relacionados con el componente [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) depende de cómo se haya configurado dicho componente a nivel de página. En este caso, se trata de la siguiente configuración:
+El comportamiento de los atributos relacionados con el componente [`amp-access`](../../../../documentation/components/reference/amp-access.md) depende de cómo se haya configurado dicho componente a nivel de página. En este caso, se trata de la siguiente configuración:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -53,7 +53,7 @@ La página de inicio de sesión es una página que no es AMP y en la que introdu
 
 En el ejemplo que se muestra a continuación, se añade el valor del parámetro `return` a la solicitud cuando se hace clic en el botón para iniciar sesión. Para explorar este valor, accede a la pestaña Network (Red) de la consola DevTools de Chrome.
 
-<amp-img src="/static/img/return-parameter.png" alt="Parámetro return" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="Parámetro return" height="150" width="600"></amp-img>
 
 Cuando el servidor AMPByExample recibe la solicitud POST de la página de inicio de sesión, si las credenciales son correctas, se redirige la solicitud a la URL de `returnURL` que hemos comentado anteriormente y se le añade el parámetro `#success=true`. Una vez hecho, el tiempo de ejecución de AMP puede finalmente autorizar la página, por lo que ya se puede añadir un comentario.
 
@@ -65,4 +65,4 @@ A grandes rasgos, las funciones de ambos elementos son las siguientes:
 - El tiempo de ejecución de AMP cierra la página de inicio de sesión y redirige a los usuarios a la página que se haya especificado en el parámetro "returnURL".
 - El servidor debe organizar la respuesta cuando el usuario haga clic en el botón para iniciar sesión.
 
-Consejo: Para obtener una explicación más detallada sobre este tema, consulta la [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
+Consejo: Para obtener una explicación más detallada sobre este tema, consulta la [`amp-access`](../../../../documentation/components/reference/amp-access.md).

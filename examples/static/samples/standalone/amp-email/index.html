@@ -1,0 +1,119 @@
+<!doctype html>
+<html ⚡4email>
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+ 
+  <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <!-- Declare all the CSS you need in the header. -->
+  <style amp-custom>
+    body {
+      font-family: Helvetica;
+      background: #f7f7f7;
+    }
+    * {
+     box-sizing: border-box;
+    }
+    body > * {
+      margin: 1rem;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    amp-carousel {
+      margin: 0;
+    }
+    .button {
+      display: inline-block;
+      height: 48px;
+      width: 90px;
+      padding: 4px;
+      margin: 1rem 1rem 1rem 0;
+      background: #005af0;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .red {
+      background-color: #EF0000;
+    }
+    .green {
+      background-color: #2DB932;
+    }
+    textarea {
+      width: 100%;
+      max-width: 500px;
+      height: 100px;
+    }
+    .amp-form-submit-success #user-input {
+      display: none;
+    }
+    .reply {
+      padding: 1rem;
+      background: #fff;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Hey all!</h1>
+  <p>Checkout this place for our next trip:</p>
+
+  <!-- Use components like amp-carousel to create interactive 
+    experiences such as carousels. -->
+  <amp-carousel width="1024"
+      height="683"
+      layout="intrinsic"
+      type="slides">
+    <amp-img layout="fill" 
+      src="https://amp.dev/static/samples/standalone/amp-email/img/house1.jpg" 
+      alt="Outside"></amp-img>
+    <amp-img layout="fill" 
+      src="https://amp.dev/static/samples/standalone/amp-email/img/house2.jpg" 
+      alt="Kitchen"></amp-img>
+    <amp-img layout="fill" 
+      src="https://amp.dev/static/samples/standalone/amp-email/img/house3.jpg" 
+      alt="Bath"></amp-img>
+    <amp-img layout="fill" 
+      src="https://amp.dev/static/samples/standalone/amp-email/img/house4.jpg" 
+      alt="Master bedroom"></amp-img>
+  </amp-carousel>
+
+  <!-- Let users reply to questions or comment directly from 
+    within their email client 🤯.  -->
+  <h2>What do you think?</h2>
+  <form id="rating" method="post"
+    action-xhr="https://amp.dev/documentation/examples/api/echo">
+    <div id="user-input">
+      <p>Leave a comment</p>
+      <textarea  name="comment" autocomplete="off"></textarea>
+      <div id="form-inputs">
+        <button on="tap:AMP.setState({ rating: '👍' }), rating.submit" 
+                type="button" class="button green">Let's go!</button>
+        <button on="tap:AMP.setState({ rating: '👎' }), rating.submit" 
+                type="button" class="button red">No Way!</button>
+        <input type="hidden" name="rating" [value]="rating" value="">
+      </div>
+    </div>
+    <div submit-success>
+      <template type="amp-mustache">
+        <p>You replied:</p>
+        <p class="reply">
+          {{rating}}
+          {{comment}}
+        </p>
+      </template>
+    </div>
+  </form>
+</body>
+</html>

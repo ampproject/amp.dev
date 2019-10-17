@@ -19,7 +19,7 @@ import ListFilter from '../filter/filter.js';
 import absolutify from 'absolutify';
 import dialogHeader from './header.html';
 
-const SITEMAP_URL = 'https://ampbyexample.com/sitemap.json';
+const SITEMAP_URL = '/static/samples/samples.json';
 
 export default function createTemplateDialog(button, callback) {
   return new TemplateDialog(document, createDialog(), button, callback);
@@ -102,7 +102,7 @@ class TemplateDialog {
 
   createTemplateListItem(example) {
     const listItem = this.doc.createElement('li');
-    listItem.setAttribute('data-url', 'https://ampbyexample.com' + example.url + 'source/');
+    listItem.setAttribute('data-url', example.url);
     listItem.textContent = example.title;
     listItem.setAttribute('tabindex', 0);
     listItem.setAttribute('role', 'button');
@@ -141,12 +141,19 @@ class TemplateDialog {
   }
 
   selectTemplatesForRuntime(sitemap) {
+    let templates = null;
     if (this.runtime.id === 'amphtml') {
-      return sitemap[0];
+      templates = sitemap['websites'];
     } else if (this.runtime.id === 'amp4ads') {
-      return sitemap[1];
-    } else if (this.runtime.id === 'amp4stories' && sitemap.length > 2) {
-      return sitemap[2];
+      templates = sitemap['ads'];
+    } else if (this.runtime.id === 'amp4stories') {
+      templates = sitemap['stories'];
+    } else if (this.runtime.id === 'amp4email') {
+      templates = sitemap['email'];
+    }
+
+    if (templates && templates.categories && templates.categories.length) {
+      return templates;
     } else {
       return {
         categories: [{

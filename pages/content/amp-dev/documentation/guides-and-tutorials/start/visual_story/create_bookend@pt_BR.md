@@ -6,7 +6,7 @@ Depois de adicionar todas as páginas, veremos a última tela da história, o "b
 
 As informações na tela de bookend vêm de um arquivo JSON especificado na tag `<amp-story-bookend>`. Para nosso tutorial, já temos um arquivo JSON ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) com os dados correspondentes.
 
-A tag `<amp-story-bookend>` precisa ser a última tag em [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}). Então, **adicionaremos** `<amp-story-bookend></amp-story-bookend>` antes da tag `</amp-story>`.  Na tag `amp-story-bookend`, vincule o atributo `src` ao arquivo `bookend.json` e defina `layout="nodisplay"`:
+A tag `<amp-story-bookend>` precisa ser a última tag em [`amp-story`](../../../../documentation/components/reference/amp-story.md). Então, **adicionaremos** `<amp-story-bookend></amp-story-bookend>` antes da tag `</amp-story>`.  Na tag `amp-story-bookend`, vincule o atributo `src` ao arquivo `bookend.json` e defina `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -26,7 +26,7 @@ Toda tela de bookend exige um `bookendVersion`, que é `v1.0` neste tutorial:
 "bookendVersion": "v1.0",
 ```
 
-Os botões de compartilhamento social permitem que os leitores compartilhem seu conteúdo por meio de plataformas sociais, como Twitter, Facebook, Pinterest e outros. Você especifica os provedores de compartilhamento social em um objeto shareProviders e cria uma matriz com os [nomes dos tipos]({{g.doc('/content/amp-dev/documentation/components/reference/amp-social-share.md', locale=doc.locale).url.path}}#pre-configured-providers) de cada plataforma social.
+Os botões de compartilhamento social permitem que os leitores compartilhem seu conteúdo por meio de plataformas sociais, como Twitter, Facebook, Pinterest e outros. Você especifica os provedores de compartilhamento social em um objeto shareProviders e cria uma matriz com os [nomes dos tipos](../../../../documentation/components/reference/amp-social-share.md#pre-configured-providers) de cada plataforma social.
 
 Para este tutorial, escolhemos Facebook, Twitter e e-mail como nossos provedores de compartilhamento:
 
@@ -127,7 +127,7 @@ Há vários componentes que você pode usar para exibir links e conteúdo relaci
   "links": [
     {
       "text": "Learn more",
-      "url": "https://www.ampproject.org/stories/"
+      "url": "https://amp.dev/about/stories.html"
     }
   ]
 }
@@ -143,6 +143,6 @@ Há vários componentes que você pode usar para exibir links e conteúdo relaci
 </tbody>
 </table>
 
-Veja mais informações sobre o componente de bookend. Acesse a documentação de referência do [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
+Veja mais informações sobre o componente de bookend. Acesse a documentação de referência do [`amp-story`](../../../../documentation/components/reference/amp-story.md).
 
 Nossa história está quase pronta.  Antes de publicar o conteúdo, vamos verificar se o HTML para AMP é válido.

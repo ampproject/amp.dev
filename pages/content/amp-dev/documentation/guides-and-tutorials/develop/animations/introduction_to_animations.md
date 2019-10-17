@@ -8,18 +8,18 @@ formats:
 author: CrystalOnScript
 ---
 
-For animations that can't be driven by [adding and removing classes]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/animations/triggering_css_animations.md', locale=doc.locale).url.path}}), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work.
+For animations that can't be driven by [adding and removing classes](triggering_css_animations.md), AMP offers several animation specific components. These components apply AMP's principles to animations: they're fast, efficient, and user first. AMP restricts what CSS properties inside keyframes are allowed, but grants benefits such as fine-grain control, seamless animations, and cross browser compatibility with no extra work.
 
 ## Creating a basic AMP Animation
 
-The [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
+The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component enables use of the [Web Animation API](https://www.w3.org/TR/web-animations/) in AMP.
 
-A basic [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) is a JSON object made of the following key parts:
+A basic [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) is a JSON object made of the following key parts:
 
 *   The element the component is animating, or `selector`.
-*   [Timing Properties]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#timing-properties)
-*   [Keyframes]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#keyframes)
-*   [Trigger]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#triggering-animation)
+*   [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+*   [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
+*   [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -39,25 +39,25 @@ A basic [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/ref
 
 ### Selector
 
-Much like CSS, the [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) component links the animation properties to the element by declaring the element's tag name, class, or id in the `"selector"` field. The component animates each element with the tag type or class name declared. Use an id to ensure you animate a single element.
+Much like CSS, the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component links the animation properties to the element by declaring the element's tag name, class, or id in the `"selector"` field. The component animates each element with the tag type or class name declared. Use an id to ensure you animate a single element.
 
 ### Timing Properties
 
-The [timing properties]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#timing-properties) control how long an animation takes, the amount of times it plays, and which direction keyframes execute.
+The [timing properties](../../../../documentation/components/reference/amp-animation.md#timing-properties) control how long an animation takes, the amount of times it plays, and which direction keyframes execute.
 
-While none of the timing properties are required, an animation might not run correctly if properties related to time and display are missing, such as `duration` and `fill`.
+No timing properties are required, but an animation might not run if properties related to time and display are missing, such as `duration` and `fill`.
 
 ### Keyframes
 
-While CSS allows you to morph from one state to another via transitions, you must declare animation properties as keyframes to implement [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) (similar to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). To ensure smooth playback and cross browser compatibility, [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}})[restricts what keyframe properties]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#white-listed-properties-for-keyframes) are usable to GPU accelerated properties that do not cause a re-layout and can animate on the [compositor thread](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). This prevents animations from interfering with AMP and the browser's [render process](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing).
+While CSS allows you to morph from one state to another via transitions, you must declare animation properties as keyframes to implement [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (similar to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). To ensure smooth playback and cross browser compatibility, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [restricts what keyframe properties](../../../../documentation/components/reference/amp-animation.md#white-listed-properties-for-keyframes) are usable to GPU accelerated properties that do not cause a re-layout and can animate on the [compositor thread](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). This prevents animations from interfering with AMP and the browser's [render process](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing).
 
 [tip type="note"]
- Keyframes are either defined directly in an [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) or referenced from [`<amp style-keyframe>`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#keyframes-stylesheet) as long as they follow the property restrictions. Read more [here about keyframes in `amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#keyframes).
+ Keyframes are either defined directly in an [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) or referenced from [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) as long as they follow the property restrictions. Read more [here about keyframes in `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes).
 [/tip]
 
 ### Trigger
 
-The trigger starts the animation sequence. The [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) extension starts either when the `<body>` becomes visible on the page or by connecting it to an [AMP action or event](https://www.ampproject.org/docs/interaction_dynamic/amp-actions-and-events).
+The trigger starts the animation sequence. The [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) extension starts either when the `<body>` becomes visible on the page or by connecting it to an [AMP action or event](../../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)
 
 Triggering on visibility of `<body>` is useful when the animation should run as soon as the page loads because it appears "above the fold", or within the first viewport of the page. Animations trigger through visibility by adding `trigger="visibility"` as an attribute to the component.
 
@@ -68,7 +68,7 @@ Triggering on visibility of `<body>` is useful when the animation should run as 
 </amp-animation>
 ```
 
-Animations connect to an action or event by assigning the [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) component an `id` and linking that `id` to the desired event trigger, such as tapping a button.
+Animations connect to an action or event by assigning the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component an `id` and linking that `id` to the desired event trigger, such as tapping a button.
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -80,7 +80,7 @@ Animations connect to an action or event by assigning the [`amp-animation`]({{g.
 
 ## Building Complex Animations
 
-Building an animation in [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) allows for fine grained control that goes beyond starting and stopping an animation: it can also pause, reverse, and directed to a specific point. You can even chain multiple animations together and animate elements in a sequence.
+Building an animation in [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) allows for fine grained control that goes beyond starting and stopping an animation: it can also pause, reverse, and direct to a specific point. You can even chain multiple animations together and animate elements in a sequence.
 
 ### Subtargets
 
@@ -106,7 +106,7 @@ Elements of the same tag or class can have specified timing properties and overr
 
 ### Chained Animations
 
-Multiple animations can connect together to form a large sequence. You can create timed effects, such as overlays on a video, by writing animations in the `animations` array within the [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) component.
+Multiple animations can connect together to form a large sequence. You can create timed effects, such as overlays on a video, by writing animations in the `animations` array within the [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) component.
 
 ```
 <amp-animation id="overlaysAnim" layout="nodisplay">
@@ -143,7 +143,7 @@ Multiple animations can connect together to form a large sequence. You can creat
 
 This setup plays each animation for 3 seconds in a sequence.
 
-For larger animations, animations inside the `animations` array are able to reference other [`amp-animation`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) components.
+For larger animations, animations inside the `animations` array are able to reference other [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) components.
 
 ```
 <amp-animation id="addEnergy" layout="nodisplay">
@@ -191,7 +191,7 @@ For larger animations, animations inside the `animations` array are able to refe
 
 ### Animating an unknown amount of elements
 
-By using [`var()` and `calc()` expressions]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}) along with [CSS extensions]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#css-extensions), you can write complex and timed animationsthat work with any number of elements. This allows for dynamic and user generated data to be animated with ease and fluidity.
+By using [`var()` and `calc()` expressions](../../../../documentation/components/reference/amp-animation.md) along with [CSS extensions](../../../../documentation/components/reference/amp-animation.md#css-extensions), you can write complex and timed animationsthat work with any number of elements. This allows for dynamic and user generated data to be animated with ease and fluidity.
 
 ```
 <amp-animation layout="nodisplay" id="cardAdmin">
@@ -221,15 +221,15 @@ This example works by:
 *   Declaring a variable, `--duration`, and gives it the value of two seconds.
 *   Sets the `duration` to the var `--duration`'s value.
 *   Calculates the delay applied to each element with that meets the selector `.card`.
-    1.  The [length()` extension]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#css-length()-extension) calculates how many `.card` elements were selected
-    1.  The length then subtracts each `.card`'s [index()]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#css-index()-extension)
+    1.  The [length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calculates how many `.card` elements were selected
+    1.  The length then subtracts each `.card`'s [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
     1.  The resulting value is multiplied by the var `--duration`
     1.  The final total is applied in seconds to that element's delay
 *   The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
 
 ### Look Great, Everywhere
 
-Animations can include [`conditions`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#conditions) that allow customized effects. Tailor animations to any screen size through the [`media` condition]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#media-query) and supports backwards browser compatibility by enabling [`supports` conditions]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#supports-condition) in a [`switch` statement]({{g.doc('/content/amp-dev/documentation/components/reference/amp-animation.md', locale=doc.locale).url.path}}#animation-switch-statement).
+Animations can include [`conditions`](../../../../documentation/components/reference/amp-animation.md#conditions) that allow customized effects. Tailor animations to any screen size through the [`media` condition](../../../../documentation/components/reference/amp-animation.md#media-query) and supports backwards browser compatibility by enabling [`supports` conditions](../../../../documentation/components/reference/amp-animation.md#supports-condition) in a [`switch` statement](../../../../documentation/components/reference/amp-animation.md#animation-switch-statement).
 
 ```
 {

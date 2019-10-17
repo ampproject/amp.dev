@@ -2,6 +2,7 @@
 
 preview: default
 skipValidation: true
+author: aghassemi
 
 --->
 
@@ -166,7 +167,7 @@ skipValidation: true
         AMP doesn't support custom Javascript, but you can use CSS3 animations to enrich your page. The expanding text field when the search box is focused is implemented with CSS only. -->
       <div class="header">
         <a id="sample-menu" on="tap:drawermenu.toggle">
-          <amp-img srcset="/img/ic_menu_white_1x_web_24dp.png 1x, /img/ic_menu_white_2x_web_24dp.png 2x" width="24" height="24" alt="navigation"></amp-img>
+          <amp-img srcset="/static/samples/img/ic_menu_white_1x_web_24dp.png 1x, /static/samples/img/ic_menu_white_2x_web_24dp.png 2x" width="24" height="24" alt="navigation"></amp-img>
         </a>
         <input name="search" type="text" placeholder="Search" on="change:AMP.setState({
           products: {
@@ -249,7 +250,7 @@ skipValidation: true
         use the [amp-fit-text](/components/amp-fit-text/) component for the slide headers to automatically size the text to fit into the carousel. -->
       <amp-carousel id="hero-images" width="1024" height="480" layout="responsive" type="slides" autoplay>
         <a href="#">
-          <amp-img src="/img/product_hero1_1024x683.jpg" layout="fill" alt="product hero 1" attribution="visualhunt"></amp-img>
+          <amp-img src="/static/samples/img/product_hero1_1024x683.jpg" layout="fill" alt="product hero 1" attribution="visualhunt"></amp-img>
 
           <amp-fit-text class="caption" width="300" height="200" layout="responsive"
                                                                  max-font-size="36">
@@ -257,14 +258,14 @@ skipValidation: true
           </amp-fit-text>
         </a>
         <a href="#">
-          <amp-img src="/img/product_hero2_1024x683.jpg" layout="fill" alt="product hero 2" attribution="visualhunt"></amp-img>
+          <amp-img src="/static/samples/img/product_hero2_1024x683.jpg" layout="fill" alt="product hero 2" attribution="visualhunt"></amp-img>
           <amp-fit-text class="caption" width="300" height="200" layout="responsive"
                                                                  max-font-size="36">
             So much orange!
           </amp-fit-text>
         </a>
         <a href="#">
-          <amp-img src="/img/product_hero3_1024x683.jpg" layout="fill" alt="product hero 3" attribution="visualhunt"></amp-img>
+          <amp-img src="/static/samples/img/product_hero3_1024x683.jpg" layout="fill" alt="product hero 3" attribution="visualhunt"></amp-img>
           <amp-fit-text class="caption" width="300" height="200" layout="responsive"
                                                                  max-font-size="36">
             So healthy!
@@ -284,8 +285,8 @@ skipValidation: true
       <amp-lightbox id="filter-lightbox" layout="nodisplay">
         <div class="filter-section">
           <h3>Filter results</h3>
-          <h4>Color</h4>      
-          <div>     
+          <h4>Color</h4>
+          <div>
             <label> yellow <input type="radio" name="colorFilter" value="Yellow" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'yellow' : '',
@@ -297,13 +298,13 @@ skipValidation: true
               searchColor: event.checked == true ? 'orange' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'orange' : '') +'&_=RANDOM'
               }
-              }), filter-lightbox.close"></label>            
+              }), filter-lightbox.close"></label>
             <label> green <input type="radio" name="colorFilter" value="Green" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'green' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'green' : '') +'&_=RANDOM'
               }
-              }), filter-lightbox.close"> </label>            
+              }), filter-lightbox.close"> </label>
             <label> all <input type="radio" name="colorFilter" value="all" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'all' : '',
@@ -331,26 +332,26 @@ skipValidation: true
               searchColor: event.checked == true ? 'yellow' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'yellow' : '') +'&_=RANDOM'
               }
-              })"> yellow </label></div>           
+              })"> yellow </label></div>
               <div><label><input type="radio" id="orange" name="colorFilter" value="Orange" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'orange' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'orange' : '') +'&_=RANDOM'
               }
-              })"> orange </label></div> 
-            
+              })"> orange </label></div>
+
               <div><label><input type="radio" id="green" name="colorFilter"  value="Green" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'green' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'green' : '') +'&_=RANDOM'
               }
-              })"> green </label></div>          
+              })"> green </label></div>
               <div><label><input type="radio" id="all" name="colorFilter"  value="all" on="change:AMP.setState({
               products: {
               searchColor: event.checked == true ? 'all' : '',
               listSrc: '/samples_templates/products?searchProduct='+ products.searchProduct +'&sort='+ products.sortChoiceValue +'&searchColor='+ (event.checked == true ? 'all' : '') +'&_=RANDOM'
               }
-              })"> all </label></div> 
+              })"> all </label></div>
         </div>
         <div class="content">
           <div id="info-wrap">
@@ -366,7 +367,7 @@ skipValidation: true
                 </option>
                 <option value="price-ascendent">Price low to high
                 </option>
-              </select>              
+              </select>
             </div>
             <button class="filter-mobile" on="tap:filter-lightbox">
               Filter
@@ -377,6 +378,7 @@ skipValidation: true
                     layout="fixed-height"
                     src="/samples_templates/products?sortChoiceValue=price-descendent&searchColor=all&_=RANDOM'"
                     [src]="products.listSrc"
+                    binding="refresh"
                     class="grid">
             <template type="amp-mustache">
               <a class="products" href="/samples_templates/product/[[$.Mode]]">
@@ -395,52 +397,52 @@ skipValidation: true
       <!-- ## Offers & highlights -->
       <!-- The `amp-carousel` supports also a more traditional carousel mode.   -->
       <div class="recommendations">
-        <h3>Recommendations</h3>      
+        <h3>Recommendations</h3>
         <amp-carousel width="auto" height="160" layout="fixed-height" type="carousel">
           <a href="#" role="listitem">
-            <amp-img width="640" height="426" layout="responsive" alt="Apple" src="/img/product1_640x426.jpg"></amp-img>
+            <amp-img width="640" height="426" layout="responsive" alt="Apple" src="/static/samples/img/product1_640x426.jpg"></amp-img>
             <p class="name">Apple</p>
             <p class="star">★★★★★</p>
             <p class="price">$1.99</p>
           </a>
           <a href="#" role="listitem">
-            <amp-img width="640" height="426" layout="responsive" alt="Orange" src="/img/product2_640x426.jpg"></amp-img>
+            <amp-img width="640" height="426" layout="responsive" alt="Orange" src="/static/samples/img/product2_640x426.jpg"></amp-img>
             <p class="name">Orange</p>
             <p class="star">★★★★☆</p>
             <p class="price">$0.99</p>
           </a>
           <a href="#" role="listitem">
-            <amp-img width="640" height="426" layout="responsive" alt="Pear" src="/img/product3_640x426.jpg"></amp-img>
+            <amp-img width="640" height="426" layout="responsive" alt="Pear" src="/static/samples/img/product3_640x426.jpg"></amp-img>
             <p class="name">Pear</p>
             <p class="star">★★★☆☆</p>
             <p class="price">$1.50</p>
           </a>
           <a href="#" role="listitem">
-            <amp-img width="640" height="426" layout="responsive" alt="Banana" src="/img/product4_640x426.jpg"></amp-img>
+            <amp-img width="640" height="426" layout="responsive" alt="Banana" src="/static/samples/img/product4_640x426.jpg"></amp-img>
             <p class="name">Banana</p>
             <p class="star">★★★★★</p>
             <p class="price">$1.50</p>
           </a>
           <a href="#" role="listitem">
-            <amp-img width="640" height="426" layout="responsive" alt="Apple" src="/img/product1_640x426.jpg"></amp-img>
+            <amp-img width="640" height="426" layout="responsive" alt="Apple" src="/static/samples/img/product1_640x426.jpg"></amp-img>
             <p class="name">Apple 2</p>
             <p class="star">★★★★★</p>
             <p class="price">$1.99</p>
           </a>
           <a href="#" role="listitem">
-            <amp-img width="640" height="426" layout="responsive" alt="Orange" src="/img/product2_640x426.jpg"></amp-img>
+            <amp-img width="640" height="426" layout="responsive" alt="Orange" src="/static/samples/img/product2_640x426.jpg"></amp-img>
             <p class="name">Orange 2</p>
             <p class="star">★★★★☆</p>
             <p class="price">$0.99</p>
           </a>
           <a href="#" role="listitem">
-            <amp-img width="640" height="426" layout="responsive" alt="Pear" src="/img/product3_640x426.jpg"></amp-img>
+            <amp-img width="640" height="426" layout="responsive" alt="Pear" src="/static/samples/img/product3_640x426.jpg"></amp-img>
             <p class="name">Pear 2</p>
             <p class="star">★★★☆☆</p>
             <p class="price">$1.50</p>
           </a>
           <a href="#" role="listitem">
-            <amp-img width="640" height="426" layout="responsive" alt="Banana" src="/img/product4_640x426.jpg"></amp-img>
+            <amp-img width="640" height="426" layout="responsive" alt="Banana" src="/static/samples/img/product4_640x426.jpg"></amp-img>
             <p class="name">Banana 2</p>
             <p class="star">★★★★★</p>
             <p class="price">$1.50</p>
@@ -458,7 +460,8 @@ skipValidation: true
                   width="auto"
                   height="160"
                   layout="fixed-height"
-                  src="/json/related_products.json">
+                  src="/json/related_products.json"
+                  binding="no">
           <template type="amp-mustache">
             <a href="/samples_templates/product/preview/">
               <amp-img width="640"

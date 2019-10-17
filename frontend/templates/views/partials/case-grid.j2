@@ -40,7 +40,7 @@
 <div class="ap-o-case-grid">
   {% for case in cases %}
   <div class="ap-o-case-grid-image ap-o-case-grid-image-{{ case.index }}">
-    <a target="_blank" rel="noopener" href="{{ case.url }}">
+    <a target="_blank" rel="noopener" href="{{ case.url }}" title="{{ case.headline }}">
       <div class="ap-o-case-grid-image-info">
         <h4>{{ case.headline }}</h4>
         <span class="ap-m-lnk">
@@ -50,7 +50,7 @@
           <span class="ap-m-lnk-text">{{ _('Open Use Case') }}</span>
         </span>
       </div>
-      <amp-img class="ap--media" src="{{ case.img.src }}.webp" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}">
+      <amp-img class="ap--media" src="{{ case.img.src }}.webp" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}" alt="{{ _('Screenshot of use case:') }} {{ case.headline }}">
         <amp-img fallback class="ap--media" src="{{ case.img.src }}" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}">
       </amp-img>
     </a>

@@ -1,6 +1,0 @@
-$title: Visual Effects
-$view: /views/detail/example-detail.j2
-$path: /documentation/examples/advanced/{base}.html
-$localization:
-  path: /{locale}/documentation/examples/advanced/{base}.html
-$order: -6

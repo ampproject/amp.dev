@@ -1,12 +1,11 @@
-$path: /community/{base}.html
 $view: /views/default.j2
 $title@: Community
+$path: /community/{base}.html
 $localization:
   path: /{locale}/community/{base}.html
 $order: 3
 
-index: /content/amp-dev/community/roadmap.html
 flyout:
     - /content/amp-dev/documentation/guides-and-tutorials/contribute/index.md
-    - /content/amp-dev/community/platform-and-vendor-partners.html
     - /content/amp-dev/community/roadmap.html
+    - /content/amp-dev/community/governance.md

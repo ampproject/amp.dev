@@ -20,7 +20,7 @@ class Params {
   }
 
   get(key, alt) {
-    const params = new URLSearchParams(this.win.location.hash.slice(1));
+    const params = new URLSearchParams(this.win.location.search);
     let result = params.get(key);
     if (!result) {
       result = alt;
@@ -37,7 +37,7 @@ class Params {
   }
 
   _newLocation(key, value) {
-    const params = new URLSearchParams(this.win.location.hash.slice(1));
+    const params = new URLSearchParams(this.win.location.search);
     if (value) {
       params.set(key, value);
     } else {
@@ -45,7 +45,7 @@ class Params {
     }
     let paramsString = params.toString();
     if (paramsString) {
-      paramsString = '#' + params.toString();
+      paramsString = '?' + params.toString();
     }
     return this.win.location.pathname + paramsString;
   }

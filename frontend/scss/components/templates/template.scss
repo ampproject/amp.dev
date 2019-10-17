@@ -71,6 +71,7 @@
 
       &-headline {
         @include hl-h2;
+        margin-top: 0;
 
         &-big {
           @include hl-xlrg;

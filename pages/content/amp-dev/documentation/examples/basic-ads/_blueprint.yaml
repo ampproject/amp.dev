@@ -1,6 +1,0 @@
-$title: Basic Ads
-$view: /views/detail/example-detail.j2
-$path: /documentation/examples/basic-ads/{base}.html
-$localization:
-  path: /{locale}/documentation/examples/basic-ads/{base}.html
-$order: 6

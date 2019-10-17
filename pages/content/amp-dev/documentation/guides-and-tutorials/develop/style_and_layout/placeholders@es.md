@@ -4,7 +4,7 @@ $title: Marcadores de posición y respaldos
 
 En cuanto al rendimiento percibido y la mejora progresiva, en AMP se recomienda incluir marcadores de posición y respaldos donde sea posible.
 
-Algunos elementos incluso te recompensarán por hacerlo suavizando algunas restricciones; por ejemplo, si incluyes un marcador de posición en ['<amp-iframe>']({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder), podrás utilizarlo cerca de la parte superior de la página, cosa que no podrías hacer de otro modo.
+Algunos elementos incluso te recompensarán por hacerlo suavizando algunas restricciones; por ejemplo, si incluyes un marcador de posición en [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), podrás utilizarlo cerca de la parte superior de la página, cosa que no podrías hacer de otro modo.
 
 ## Marcadores de posición
 
@@ -13,17 +13,19 @@ de marcador de posición del elemento AMP principal.
 Si se indica un elemento `placeholder`, este debe ser un elemento secundario directo del elemento AMP.
 Los elementos marcados como `placeholder` siempre llenarán el elemento AMP principal.
 
-<!--Elemento amp-anim adaptable insertado de ejemplo-->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Mostrar más">Mostrar todo el código</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
+```html
+<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  layout="responsive"
+  width="400"
+  height="300">
+  <amp-img placeholder
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    layout="fill">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 De forma predeterminada, el marcador de posición de los elementos AMP se muestra inmediatamente,
 aunque no se hayan descargado ni inicializado los recursos de estos elementos.
@@ -36,7 +38,7 @@ pueden ser cualquier elemento HTML.
 
 [/tip]
 
-## Respaldos
+## Respaldos <a name="fallbacks"></a>
 
 Puedes incluir el atributo `fallback` en elementos para indicar qué comportamiento de respaldo debe seguirse en estos casos:
 
@@ -50,28 +52,44 @@ Puedes añadir el atributo `fallback` en cualquier elemento HTML, no solo en los
 
 En el ejemplo siguiente, utilizamos el atributo `fallback` para comunicar a los usuarios que su navegador no es compatible con una función concreta:
 
-<!--ejemplo de vídeo insertado-->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Mostrar más">Mostrar todo el código</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video:0.1"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ##### Ejemplo: servir formatos de imagen diferentes
 
-En el ejemplo siguiente, con el atributo `fallback` indicamos al navegador que utilice el archivo JPEG si no admite el formato WebP. 
+En el ejemplo siguiente, con el atributo `fallback` indicamos al navegador que utilice el archivo JPEG si no admite el formato WebP.
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Mostrar todo">Mostrar todo el código</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 ## Cómo interactúan los marcadores de posición y los respaldos
 
-En el caso de los componentes AMP que dependen de contenido dinámico (por ejemplo, [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})), los respaldos y los marcadores de posición interactúan de la siguiente manera:
+En el caso de los componentes AMP que dependen de contenido dinámico (por ejemplo, [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), los respaldos y los marcadores de posición interactúan de la siguiente manera:
 
 <ol>
   <li>Se muestra el marcador de posición mientras se carga el contenido.</li>
@@ -89,4 +107,3 @@ En el caso de los componentes AMP que dependen de contenido dinámico (por ejemp
 Muchos elementos AMP están incluidos en la lista blanca para mostrar un "indicador de carga",
 que es una animación básica que muestra que el elemento aún no se ha cargado completamente.
 Los elementos pueden excluirse de este comportamiento añadiéndoles el atributo `noloading`.
- 

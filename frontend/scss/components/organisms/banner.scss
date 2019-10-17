@@ -1,0 +1,38 @@
+/*
+
+#############################
+### ORGANISM: banner ########
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+
+.#{utility('banner')} {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  padding: 3em 0 4em;
+  background-color: color('blue-ribbon');
+
+  @media (min-width: 768px) {
+    padding: 5em 0 7em;
+  }
+}
+
+.#{organism('banner')} {
+  grid-column: 2 / 24;
+
+  @media (min-width: 768px) {
+    grid-column: 3 / 20;
+  }
+
+  &-headline,  p {
+    color: color('white');
+  }
+}

@@ -1,8 +1,8 @@
 <!---
 
 preview: default
-category: 'visual-effects'
 teaserImage: '/static/samples/img/teaser/animated_snackbar.jpg'
+author: sebastianbenz
 
 --->
 
@@ -16,7 +16,8 @@ teaserImage: '/static/samples/img/teaser/animated_snackbar.jpg'
 <html ⚡>
 <head>
   <meta charset="utf-8">
-  <link rel="canonical" href="<%host%>/visual_effects/animated_snackbar/">
+  <title>Animated Snackbar</title>
+  <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <!-- ## Setup -->
@@ -64,7 +65,7 @@ teaserImage: '/static/samples/img/teaser/animated_snackbar.jpg'
   <!--
     We want to show a snackbar that disappears after a few seconds. This could be easily accomplished by adding a CSS class using `amp-bind` to show the snackbar and then using CSS animations to hide the snackbar after a few seconds. However, with this approach it's not possible to trigger the snackbar multiple times (the newly added CSS class won't dissappear).
 
-    <p>We can solve this problem by using the [`amp-animation`](https://www.ampproject.org/docs/reference/components/amp-animation)  extension, which makes it possible to execute animations repeatedly. We define an animation that will slide-in the snackbar and then hide it after a few seconds using the `offset` attribute to time the different keyframes.</p>
+    We can solve this problem by using the [`amp-animation`](content/amp-dev/documentation/components/reference/amp-animation)  extension, which makes it possible to execute animations repeatedly. We define an animation that will slide-in the snackbar and then hide it after a few seconds using the `offset` attribute to time the different keyframes.
   -->
   <amp-animation id="snackbarSlideIn" layout="nodisplay">
     <script type="application/json">

@@ -23,7 +23,7 @@ e i dati di coinvolgimento sui social a un altro URL.
 L’analisi AMP è concepita appositamente per eseguire una sola misurazione e generare più tipi di rapporti.
 Se collabori già con uno o più fornitori di soluzioni di analisi,
 verifica la
-[specifica amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+[specifica amp-analytics](../../../../documentation/components/reference/amp-analytics.md)
 per vedere se hanno integrato AMP nella propria soluzione.
 In tal caso, basta semplicemente creare il link ai relativi documenti dalla specifica
 e iniziare a seguire le istruzioni.
@@ -43,7 +43,7 @@ Devi identificare questi dati prima di poterli configurare.
 Fattori importanti relativi ai dati da prendere in considerazione:
 
 * Eseguirai solamente il monitoraggio delle visualizzazioni di pagina o anche di altri modelli di coinvolgimento dell’utente
-(vedi anche [amp-pixel o amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#è-meglio-utilizzare-amp-pixel-o-amp-analytics?))?
+(vedi anche [amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
 * Quali tipi di dati acquisirai relativamente ai tuoi utenti, ai tuoi contenuti,
-a dispositivi o browser (vedi anche [Sostituzione delle variabili]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#sostituzione-delle-variabili))?
-* Come identificherai i tuoi utenti (vedi anche [Identificazione dell’utente]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#identificazione-dell’utente))?
+a dispositivi o browser (vedi anche [Sostituzione delle variabili](analytics_basics.md#variable-substitution))?
+* Come identificherai i tuoi utenti (vedi anche [Identificazione dell’utente](analytics_basics.md#user-identification))?

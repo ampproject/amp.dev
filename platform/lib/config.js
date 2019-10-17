@@ -18,80 +18,177 @@
 
 const signale = require('signale');
 const fs = require('fs');
-const mri = require('mri');
+const options = require('mri')(process.argv.slice(2));
 const yaml = require('js-yaml');
-const utils = require('@lib/utils');
+const utils = require('./utils');
 
 const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
-const GROW_OUT_DIR = utils.project.absolute('platform/pages');
+
+const ENV_DEV = 'development';
+const ENV_STAGE = 'staging';
+const ENV_PROD = 'production';
+const ENV_LOCAL = 'local';
+
+const DEFAULT_LOCALE = 'en';
+
+const AVAILABLE_LOCALES = [
+  'en',
+  'fr',
+  'ar',
+  'es',
+  'it',
+  'id',
+  'ja',
+  'ko',
+  'pt_BR',
+  'ru',
+  'tr',
+  'zh_CN',
+];
 
 class Config {
-  constructor(environment = 'development') {
+  constructor(environment = ENV_DEV) {
+    if (environment === 'test') {
+      environment = ENV_DEV;
+      this.test = true;
+    } else {
+      this.test = false;
+    }
+    signale.info(`Config: environment=${environment} test=${this.test}`);
     const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
 
     this.environment = env.name;
     this.hosts = env.hosts;
+    this.hostNames = new Set();
+    Object.values(this.hosts).forEach((host) => {
+      host.base = this.getHost(host);
+      let hostName = host.host;
+      if (host.subdomain) {
+        hostName = host.subdomain + '.' + hostName;
+      }
+      this.hostNames.add(hostName);
+    });
 
     this.shared = require(utils.project.absolute('platform/config/shared.json'));
 
     // Globally initialize command line arguments for use across all modules
-    this.options = mri(process.argv.slice(2));
+    this.options = options;
+  }
 
-    // Synchronously write podspec for Grow to run flawlessly later in pipeline.
-    try {
-      this._configureGrow();
-    } catch (err) {
-      // writes are not permitted on GAE or in a container
-    }
+  /**
+   * Returns true if test mode is active.
+   */
+  isTestMode() {
+    return this.test;
+  }
+
+  /**
+   * Returns true if development mode is active.
+   */
+  isDevMode() {
+    return this.environment === ENV_DEV;
+  }
+
+  /**
+   * Returns true if local mode is active.
+   */
+  isLocalMode() {
+    return this.environment === ENV_LOCAL;
+  }
+
+  /**
+   * Returns true if staging mode is active.
+   */
+  isStageMode() {
+    return this.environment === ENV_STAGE;
+  }
+
+  /**
+   * Returns true if production mode is active.
+   */
+  isProdMode() {
+    return this.environment === ENV_PROD;
+  }
+
+  /**
+   * Returns an array with all the locale ids.
+   * (e.g. 'en', 'pt_BR', ...)
+   * The default locale is included.
+   */
+  getAvailableLocales() {
+    return AVAILABLE_LOCALES.slice(0); // clone our internal array
+  }
+
+  /**
+   * Returns the default locale (e.g. 'en')
+   */
+  getDefaultLocale() {
+    return DEFAULT_LOCALE;
   }
 
   /**
    * Builds a subdomain URL from a host object containing scheme, host, subdomain and port
+   * @param {Object} hostConfig One of configs in from the hosts property
    * @return {String} The full URL
    */
-  _buildUrl(host) {
-    let url = `${host.scheme}://`;
-    const isLocalhost = (host.host === 'localhost');
-    if (isLocalhost || !host.subdomain) {
-      url += host.host;
+  getHost(hostConfig) {
+    let url = `${hostConfig.scheme}://`;
+    const isLocalhost = (hostConfig.host === 'localhost');
+    if (isLocalhost || !hostConfig.subdomain) {
+      url += hostConfig.host;
     } else {
-      url += `${host.subdomain}.${host.host}`;
+      url += `${hostConfig.subdomain}.${hostConfig.host}`;
     }
-    if (host.port) {
-      url += `:${host.port}`;
+    if (hostConfig.port) {
+      url += `:${hostConfig.port}`;
     }
-    if (isLocalhost && host.subdomain) {
-      url += '/' + host.subdomain;
-    }
-
     return url;
   }
 
   /**
+   * Turns a given relative URL to an absolute URL for the given hostConfig.
+   * @param {Object} hostConfig One of configs in from the hosts property
+   * @return {String} The absolute URL
+   */
+  absoluteUrl(hostConfig, url) {
+    return new URL(url, this.getHost(hostConfig)).toString();
+  }
+
+  /**
    * Builds a podspec for the current environment and writes it to the Grow pod
+   * @param {Object} growOptions Options to filter grow pages (optional). Can be overwritten by command line options.
    * @return {undefined}
    */
-  _configureGrow() {
+  configureGrow(growOptions) {
+    const podSpec = this.buildGrowPodSpec(growOptions);
+    try {
+      fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podSpec, {'noRefs': true}));
+      signale.success('Configured Grow!');
+    } catch (err) {
+      signale.fatal('Could not configure Grow', err);
+      process.exit(1);
+    }
+  }
+
+  /**
+   * Builds a podspec for the current environment.
+   * @param {Object} growOptions Options to filter grow pages (optional). Can be overwritten by command line options.
+   * @return {Object} the podspec object
+   */
+  buildGrowPodSpec(growOptions) {
+    const options = {};
+    if (growOptions) {
+      Object.assign(options, growOptions);
+    }
+    Object.assign(options, this.options);
+
     let podspec = fs.readFileSync(GROW_CONFIG_TEMPLATE_PATH, 'utf-8');
     podspec = yaml.safeLoad(podspec);
 
-    // Force-enable all languages during development
-    if (this.environment == 'development') {
-      podspec.localization.locales = [
-        'en',
-        'fr',
-        'ar',
-        'es',
-        'it',
-        'id',
-        'ja',
-        'ko',
-        'pt_BR',
-        'ru',
-        'tr',
-        'zh_CN',
-      ];
+    // disable sitemap (useful for test builds)
+    if (options.noSitemap) {
+      delete podspec.sitemap;
     }
 
     // Add environment specific information to configuration needed for URLs
@@ -111,9 +208,10 @@ class Config {
 
     podspec['base_urls'] = {
       'repository': this.shared.baseUrls.repository,
-      'playground': this._buildUrl(this.hosts.playground),
-      'platform': this._buildUrl(this.hosts.platform),
-      'api': this._buildUrl(this.hosts.api),
+      'playground': this.hosts.playground.base,
+      'platform': this.hosts.platform.base,
+      'api': this.hosts.api.base,
+      'preview': this.hosts.preview.base,
     };
 
     // Deployment specific
@@ -121,16 +219,55 @@ class Config {
       'default': {
         'name': 'default',
         'destination': 'local',
-        'out_dir': GROW_OUT_DIR,
+        'out_dir': utils.project.paths.GROW_BUILD_DEST,
+        'extracted_examples_dir': utils.project.paths.INLINE_EXAMPLES_DEST,
         'env': podspec['env'],
       },
     };
 
-    fs.writeFileSync(GROW_CONFIG_DEST, yaml.dump(podspec, {'noRefs': true}));
-    signale.success('Configured Grow!');
+    if (options.include_paths || options.ignore_paths) {
+      const filter = {};
+      if (options.ignore_paths) {
+        filter.ignore_paths = options.ignore_paths.split(',');
+      } else {
+        // in grow include only works against ignore. So we ignore all if we only have include
+        filter.ignore_paths = ['.*'];
+      }
+      if (options.include_paths) {
+        filter.include_paths = options.include_paths.split(',');
+      }
+      podspec.deployments[this.environment] = {
+        'filter': filter,
+      };
+      signale.info('Add path filter for grow ', filter);
+    }
+
+    podspec.localization.default_locale = DEFAULT_LOCALE;
+    podspec.localization.locales = AVAILABLE_LOCALES;
+    // Check if specific languages have been configured to be built
+    if (options.locales) {
+      const locales = options.locales.split(',');
+      if (!locales.every((locale) => AVAILABLE_LOCALES.includes(locale))) {
+        signale.fatal('Invalid set of locales given:', options.locales);
+        signale.info('Available locales are', AVAILABLE_LOCALES.join(', '));
+        process.exit(1);
+      }
+
+      // we need the blacklist filter, because otherwise the sitemap will not be created
+      const skippedLocales = AVAILABLE_LOCALES.filter((locale) => {
+        return !locales.includes(locale);
+      });
+      podspec.deployments.default['filters'] = {
+        'type': 'blacklist',
+        'locales': skippedLocales,
+      };
+
+      signale.info('Only building locales', options.locales);
+    }
+    return podspec;
   }
 }
 
-const config = new Config(process.env.APP_ENV || process.env.NODE_ENV);
+const config = new Config(options.env || process.env.APP_ENV || process.env.NODE_ENV);
 
 module.exports = config;

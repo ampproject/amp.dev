@@ -7,7 +7,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 ## レスポンシブな画像を簡単に作成
 
 レスポンシブな画像を作成するには、`width` と `height` を指定し、layout を `responsive` に設定します。
-また、[`srcset`]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}) を使って、
+また、[`srcset`](art_direction.md) を使って、
 さまざまな画面サイズに基づいて使用される画像アセットを指定します。
 
 [sourcecode:html]
@@ -22,7 +22,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 </amp-img>
 [/sourcecode]
 
-この [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素は、コンテナ要素の幅に
+この [`amp-img`](../../../../documentation/components/reference/amp-img.md) 要素は、コンテナ要素の幅に
 自動的に適合します。
 高さは、指定された幅と高さによって決まるアスペクト比に
 自動的に設定されます。このブラウザのウィンドウをサイズ変更して、動作を確認してみてください。
@@ -31,11 +31,11 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 
 [tip type="success"]
 
-[AMP By Example のライブデモ],[`amp-img`]({{g.doc('/content/amp-dev/documentation/examples/components/amp-img.html', locale=doc.locale).url.path}}).url.path}}) の動作を比較したライブデモをご覧ください。
+[AMP By Example のライブデモ],[`amp-img`](../../../../documentation/examples/documentation/amp-img.html).url.path}}) の動作を比較したライブデモをご覧ください。
 
 [/tip]
 
-## layout 属性
+## layout 属性 <a name="the-layout-attribute"></a>
 
 `layout` 属性を使うと、画面上で要素をどのように表示するかを
 要素ごとに簡単に制御できます。こうした制御の多くは CSS だけでも実現できますが、
@@ -57,22 +57,22 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
     <tr>
       <td data-th="Layout type"><code>nodisplay</code></td>
       <td data-th="Description">不要</td>
-      <td data-th="Behavior">要素は表示されません。このレイアウトはすべての AMP 要素に適用できます。このコンポーネントは、表示スタイルが「なし」の場合のように、画面上で占有するスペースがありません。この要素はユーザーの操作（<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a> など）で表示されることを想定しています。</td>
+      <td data-th="Behavior">要素は表示されません。このレイアウトはすべての AMP 要素に適用できます。このコンポーネントは、表示スタイルが「なし」の場合のように、画面上で占有するスペースがありません。この要素はユーザーの操作（<a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a> など）で表示されることを想定しています。</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed</code></td>
       <td data-th="Description">必要</td>
-      <td data-th="Behavior">要素は固定の幅と高さを持ち、レスポンシブではありません。ただし、<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}"><code>amp-pixel</code></a> 要素と <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a> 要素は例外です。</td>
+      <td data-th="Behavior">要素は固定の幅と高さを持ち、レスポンシブではありません。ただし、<a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> 要素と <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a> 要素は例外です。</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>responsive</code></td>
       <td data-th="Description">必要</td>
-      <td data-th="Behavior">要素の幅はコンテナ要素の幅と同じになるように調整され、高さも要素の width 属性と height 属性によって指定されるアスペクト比になるよう自動的にサイズ変更されます。このレイアウトは <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> や <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a> など、ほとんどの AMP 要素に適しています。使用できるスペースは親要素によって決まりますが、<code>max-width</code> CSS を使ってカスタマイズすることもできます。<p><strong>注</strong>: <code>"layout=responsive"</code> の要素には、本来の所定のサイズはありません。要素のサイズはコンテナ要素によって決まります。AMP 要素を確実に表示するには、コンテナ要素に width と height を指定する必要があります。コンテナ要素に <code>"display:table"</code> を指定しないでください。指定すると AMP 要素の display 属性がオーバーライドされ、AMP 要素が不可視になります。</p></td>
+      <td data-th="Behavior">要素の幅はコンテナ要素の幅と同じになるように調整され、高さも要素の width 属性と height 属性によって指定されるアスペクト比になるよう自動的にサイズ変更されます。このレイアウトは <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> や <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a> など、ほとんどの AMP 要素に適しています。使用できるスペースは親要素によって決まりますが、<code>max-width</code> CSS を使ってカスタマイズすることもできます。<p><strong>注</strong>: <code>"layout=responsive"</code> の要素には、本来の所定のサイズはありません。要素のサイズはコンテナ要素によって決まります。AMP 要素を確実に表示するには、コンテナ要素に width と height を指定する必要があります。コンテナ要素に <code>"display:table"</code> を指定しないでください。指定すると AMP 要素の display 属性がオーバーライドされ、AMP 要素が不可視になります。</p></td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fixed-height</code></td>
       <td data-th="Description">高さのみ必要</td>
-      <td data-th="Behavior">要素は使用できるスペースを占有しますが、高さはそのまま変更されません。このレイアウトは、水平に配置されるコンテンツを含む要素（<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> など）に適しています。<code>width</code> 属性については、指定しないか、または <code>auto</code> に設定する必要があります。</td>
+      <td data-th="Behavior">要素は使用できるスペースを占有しますが、高さはそのまま変更されません。このレイアウトは、水平に配置されるコンテンツを含む要素（<a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a> など）に適しています。<code>width</code> 属性については、指定しないか、または <code>auto</code> に設定する必要があります。</td>
     </tr>
     <tr>
       <td data-th="Layout type"><code>fill</code></td>
@@ -92,26 +92,20 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
     <tr>
       <td data-th="Layout type"><code>intrinsic</code></td>
       <td data-th="Description">必要</td>
-      <td data-th="Behavior">要素は使用できるスペースを占有し、高さは要素の本来のサイズか CSS による制限（max-width など）に達するまで、<code>width</code> 属性と <code>height</code> 属性で指定されたアスペクト比で自動的にサイズ変更されます。<em></em>width 属性と height 属性を指定する必要があります。このレイアウトは、<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> や <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a> など、ほとんどの AMP 要素に適しています。使用できるスペースは親要素によって決まりますが、<code>max-width</code> CSS を使ってカスタマイズすることもできます。<code>responsive</code> とは異なり、このレイアウトには本来の所定の高さと幅が存在します。このことが最もよくわかるのは float が指定された要素内です。<code>responsive</code> のレイアウトでは 0x0 がレンダリングされますが、<code>intrinsic</code> のレイアウトでは、本来の所定のサイズか CSS による制限のどちらか小さいほうを上限にサイズ変更されて表示されます。</td>
+      <td data-th="Behavior">要素は使用できるスペースを占有し、高さは要素の本来のサイズか CSS による制限（max-width など）に達するまで、<code>width</code> 属性と <code>height</code> 属性で指定されたアスペクト比で自動的にサイズ変更されます。<em></em>width 属性と height 属性を指定する必要があります。このレイアウトは、<a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> や <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a> など、ほとんどの AMP 要素に適しています。使用できるスペースは親要素によって決まりますが、<code>max-width</code> CSS を使ってカスタマイズすることもできます。<code>responsive</code> とは異なり、このレイアウトには本来の所定の高さと幅が存在します。このことが最もよくわかるのは float が指定された要素内です。<code>responsive</code> のレイアウトでは 0x0 がレンダリングされますが、<code>intrinsic</code> のレイアウトでは、本来の所定のサイズか CSS による制限のどちらか小さいほうを上限にサイズ変更されて表示されます。</td>
     </tr>
   </tbody>
 </table>
 
-[tip type="success"]
-
-[AMP レイアウトのデモ],[AMP By Example]({{g.doc('/content/amp-dev/documentation/examples/advanced/Layout_System.html', locale=doc.locale).url.path}}) でも詳細をご確認いただけます。
-
-[/tip]
-
-### width や height が定義されていない場合
+### width や height が定義されていない場合 <a name="what-if-width-and-height-are-undefined"></a>
 
 `width` や `height` が指定されていない場合、
 AMP ランタイムはデフォルトで次の値を使用します。
 
-* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}): width と height の両方がデフォルトで 0 に設定されます。
-* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}): デフォルトの width と height はブラウザから推測されます。
+* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): width と height の両方がデフォルトで 0 に設定されます。
+* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): デフォルトの width と height はブラウザから推測されます。
 
-### <code>layout</code> 属性が指定されていない場合
+### <code>layout</code> 属性が指定されていない場合 <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 <code>layout</code> 属性が指定されていない場合、AMP では
 次のように適切な値の推測を試みます。
@@ -159,7 +153,7 @@ AMP ランタイムはデフォルトで次の値を使用します。
 
 [/tip]
 
-### 要素のメディアクエリ
+### 要素のメディアクエリ <a name="element-media-queries"></a>
 
 AMP で使用できるレスポンシブ デザイン向けのもう 1 つの機能として `media` 属性があります。
 この属性はすべての AMP 要素で使用できます。
@@ -172,8 +166,8 @@ AMP で使用できるレスポンシブ デザイン向けのもう 1 つの機
 <amp-img
     media="(min-width: 650px)"
     src="wide.jpg"
-    width=466
-    height=355
+    width="527"
+    height="355"
     layout="responsive">
 </amp-img>
 [/sourcecode]
@@ -184,8 +178,8 @@ AMP で使用できるレスポンシブ デザイン向けのもう 1 つの機
 <amp-img
     media="(max-width: 649px)"
     src="narrow.jpg"
-    width=527
-    height=193
+    width="466"
+    height="193"
     layout="responsive">
 </amp-img>
 [/sourcecode]

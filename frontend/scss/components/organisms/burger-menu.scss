@@ -15,6 +15,7 @@
 
 .#{organism('burger-menu')} {
 /* This is where the actual burger-menu starts */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,22 +24,27 @@
   padding: 110px 20px 80px;
   z-index: 16;
   background-color: color('white');
-  pointer-events: none;
-  opacity: 0;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  @media (max-width: $minDeviceWidth) {
+    padding: 37px 20px 0;
+
+    .has-banner ~ & {
+      padding: calc(37px + #{$bannerHeight}) 0 0 20px;
+    }
+  }
 
   /* The following elements are not inside the burger-menu itself */
   &-label {
     position: fixed;
     z-index: 17;
-    top: 45px;
+    top: 12px;
     right: 20px;
     cursor: pointer;
-    &:focus {
-      outline: none;
-    }
     &.mainmenuopen {
       z-index: 1004;
+    }
+    .has-banner + & {
+      top: calc(12px + #{$bannerHeight});
     }
 
     @media (min-width: 768px) {
@@ -55,24 +61,26 @@
     height: 30px;
   }
 
-  &-input {
-    display: none;
-  }
-
   @media (min-width: 1024px) {
     display: none;
   }
 
-  /* Styles for the opened burger menu */
-  &-input:checked {
-    & + .#{organism('burger-menu')} {
-      pointer-events: auto;
-      opacity: 1;
 
-      &.mainmenuopen {
-        z-index: 1003;
-      }
+  &.mainmenuopen {
+    display: block;
+    z-index: 1003;
+  }
+
+  &.mainmenuopen ~ .ap--main {
+    max-height: calc(100vh - #{$mobileHeaderHeight});
+
+    .has-banner + & {
+      max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
     }
+  }
+
+  &.mainmenuopen ~ .ap--footer {
+    display: none;
   }
 
   &-items {
@@ -85,6 +93,10 @@
     padding: 0;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+
+    @media (max-width: $minDeviceWidth) {
+      padding: 1rem 0;
+    }
 
     /* This block defines the styles for the second level elements */
     & & {
@@ -115,9 +127,15 @@
         height: 36px;
         padding: 0;
         margin: 0;
-        opacity: 0;
         background: none transparent;
+        border: none;
         cursor: pointer;
+        -webkit-appearance: none;
+
+        &:focus {
+          outline: -webkit-focus-ring-color auto 5px;
+        }
+
         &:checked {
           & ~ ul {
             display: block;

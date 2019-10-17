@@ -5,16 +5,16 @@ $title: Casos prácticos
 Esta guía presenta un conjunto de casos prácticos que se utilizan con frecuencia al realizar el seguimiento de las interacciones de los usuarios:
 
 [tip type="note"]
-**NOTE –**  ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
+**NOTE –**  ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](../../../../documentation/guides-and-tutorials/contribute/index.md).
 [/tip]
 
 ## Seguimiento de páginas vistas
 
-Obtén información sobre cómo controlar las páginas vistas mediante [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) y [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+Obtén información sobre cómo controlar las páginas vistas mediante [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) y [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
 ### Con amp-pixel
 
-Envía los datos de páginas vistas a una URL específica mediante [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}):
+Envía los datos de páginas vistas a una URL específica mediante [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -22,7 +22,7 @@ Envía los datos de páginas vistas a una URL específica mediante [`amp-pixel`]
 
 ### Con amp-analytics (sin proveedor)
 
-Envía los datos de páginas vistas a una URL específica mediante [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
+Envía los datos de páginas vistas a una URL específica mediante [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
 <amp-analytics>
@@ -67,9 +67,9 @@ Envía los datos de páginas vistas a Google Analytics (consulta también [Segui
 </amp-analytics>
 ```
 
-## Seguimiento de los clics en la página
+## Seguimiento de los clics en la página <a name="tracking-page-clicks"></a>
 
-Obtén información sobre cómo hacer seguimiento de los clics en la página mediante [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), enviando los datos de eventos a una URL específica y a [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Obtén información sobre cómo hacer seguimiento de los clics en la página mediante [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), enviando los datos de eventos a una URL específica y a [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Enviar datos a una URL específica
 
@@ -128,9 +128,9 @@ En el siguiente ejemplo se utiliza el atributo `selector` del `trigger` para env
 </amp-analytics>
 ```
 
-## Seguimiento del desplazamiento
+## Seguimiento del desplazamiento <a name="tracking-scrolling"></a>
 
-Realiza el seguimiento del desplazamiento en la página usando [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). En el ejemplo siguiente se utiliza el atributo `scrollspec` para enviar un evento de `scroll` a la URL determinada cuando el usuario se desplaza en vertical por el 25%, 50% y 90% de la página. El evento también se activa cuando el usuario se desplaza en horizontal por la página por el 90% del ancho de `scroll`:
+Realiza el seguimiento del desplazamiento en la página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). En el ejemplo siguiente se utiliza el atributo `scrollspec` para enviar un evento de `scroll` a la URL determinada cuando el usuario se desplaza en vertical por el 25%, 50% y 90% de la página. El evento también se activa cuando el usuario se desplaza en horizontal por la página por el 90% del ancho de `scroll`:
 
 ```html
 <amp-analytics>
@@ -156,9 +156,9 @@ Realiza el seguimiento del desplazamiento en la página usando [`amp-analytics`]
 </amp-analytics>
 ```
 
-## Seguimiento de interacciones sociales
+## Seguimiento de interacciones sociales <a name="tracking-social-interactions"></a>
 
-Obtén información sobre cómo hacer seguimiento de las interacciones sociales usando [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), enviando los datos de eventos a una URL específica y a [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
+Obtén información sobre cómo hacer seguimiento de las interacciones sociales usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), enviando los datos de eventos a una URL específica y a [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Enviar datos a una URL específica
 

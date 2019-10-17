@@ -18,23 +18,34 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 @import 'components/atoms/_text.scss';
 
 .#{molecule('code-snippet')} {
-
+  display: flex;
   overflow-x: auto;
-  margin: 0 -15px 1em 0;
+  margin: 1.1rem 0 0 0;
   padding: 0 1em;
   color: color('white');
   line-height: 1.3em;
-  background: rgb(41,50,60);
-  background: linear-gradient(225deg, rgba(41,50,60,1) 0%, rgba(72,85,99,1) 75%);
-  scrollbar-width: thin;
+  background: color('ebony-clay');
+  font-size: 0.9em;
+
+  &::after {
+    content: '\00a0\00a0\00a0\00a0\00a0';
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
   &::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
+    width: 4px;
+    height: 4px;
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: color('oslo-gray');
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
   }
 
   @media (min-width: 768px) {
@@ -42,13 +53,10 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
     margin-right: -30px;
   }
 
-  @media (min-width: 1024px) {
-    margin-right: 0;
-  }
-
   pre {
     @include txt-mono;
     white-space: pre;
+    font-size: 0.9rem;
   }
 
   .hll { background-color: #49483e }
@@ -57,7 +65,7 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   .k { color: #66d9ef } /* Keyword */
   .l { color: #ae81ff } /* Literal */
   .n { color: #f8f8f2 } /* Name */
-  .o { color: #f92672 } /* Operator */
+  .o { color: #f15a5a } /* Operator */
   .p { color: #f8f8f2 } /* Punctuation */
   .ch { color: #75715e } /* Comment.Hashbang */
   .cm { color: #75715e } /* Comment.Multiline */
@@ -65,14 +73,14 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   .cpf { color: #75715e } /* Comment.PreprocFile */
   .c1 { color: #75715e } /* Comment.Single */
   .cs { color: #75715e } /* Comment.Special */
-  .gd { color: #f92672 } /* Generic.Deleted */
+  .gd { color: #f15a5a } /* Generic.Deleted */
   .ge { font-style: italic } /* Generic.Emph */
   .gi { color: #a6e22e } /* Generic.Inserted */
   .gs { font-weight: bold } /* Generic.Strong */
   .gu { color: #75715e } /* Generic.Subheading */
   .kc { color: #66d9ef } /* Keyword.Constant */
   .kd { color: #66d9ef } /* Keyword.Declaration */
-  .kn { color: #f92672 } /* Keyword.Namespace */
+  .kn { color: #f15a5a } /* Keyword.Namespace */
   .kp { color: #66d9ef } /* Keyword.Pseudo */
   .kr { color: #66d9ef } /* Keyword.Reserved */
   .kt { color: #66d9ef } /* Keyword.Type */
@@ -91,9 +99,9 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
   .nn { color: #f8f8f2 } /* Name.Namespace */
   .nx { color: #ffffff } /* Name.Other */
   .py { color: #f8f8f2 } /* Name.Property */
-  .nt { color: #f92672 } /* Name.Tag */
+  .nt { color: #f15a5a } /* Name.Tag */
   .nv { color: #f8f8f2 } /* Name.Variable */
-  .ow { color: #f92672 } /* Operator.Word */
+  .ow { color: #f15a5a } /* Operator.Word */
   .w { color: #f8f8f2 } /* Text.Whitespace */
   .mb { color: #ae81ff } /* Literal.Number.Bin */
   .mf { color: #ae81ff } /* Literal.Number.Float */

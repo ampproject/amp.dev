@@ -7,7 +7,8 @@
 @import './_color';
 
 
-.#{utility('content')} {
+.#{utility('content')},
+.#{utility('section')} {
   .intro {
     @include txt-1;
     padding: 0;
@@ -32,8 +33,12 @@
   }
 
   a {
+    position: relative;
+    z-index: 10;
+
     code {
       @include color-blue-ribbon;
+      z-index: -1;
     }
   }
 
@@ -43,17 +48,21 @@
     white-space: pre-wrap;
   }
 
-  ul,
-  ol {
+  & > ul,
+  & > ol {
     @include txt;
     @include txt-p;
-    @include txt-2;
     padding-left: 2em;
-    margin: 1.5em 0 2.5em;
+    margin: 1.5em 0 1.5em;
+
+    ul,
+    ol {
+      padding-left: 2em;
+      margin: 0;
+    }
 
     li {
       padding-left: 0.5em;
-      margin-bottom: 0.5em;
 
       p {
         font-size: 1em;

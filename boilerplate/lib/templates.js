@@ -38,16 +38,11 @@ Handlebars.registerHelper('scss', (scssPath) => {
         file: templatePath,
         includePaths: INCLUDE_PATHS,
       });
-      return new Handlebars.SafeString(result.css.toString());
+      return new Handlebars.SafeString(result.css.toString().replace('@charset "UTF-8";', ''));
     }
   }
   throw new Error('File not found ' + scssPath);
 });
-
-const beautifyJs = require('js-beautify').js;
-const BEAUTIFY_OPTIONS_JS = {
-  'indent_size': 2,
-};
 
 const PARTIALS_DIR = '../partials/';
 const ICONS_DIR = '../../../frontend/icons/';
@@ -76,10 +71,7 @@ function readTemplate(name) {
   let string = io.readFile(name);
   string = renderTemplate(string);
   let ext = path.extname(name).substring(1);
-  if (ext === 'html') {
-    // string = beautifyHtml(string, BEAUTIFY_OPTIONS);
-  } else if (ext === 'js') {
-    string = beautifyJs(string, BEAUTIFY_OPTIONS_JS);
+  if (ext === 'js') {
     ext = 'javascript';
   }
   string = hljs.highlight(ext, string).value;

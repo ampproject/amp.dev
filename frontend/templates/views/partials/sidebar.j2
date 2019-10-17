@@ -1,16 +1,15 @@
+{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
 <amp-sidebar id="sidebar-left"
   class="ap--ampsidebar"
   layout="nodisplay"
   side="left">
   <nav toolbar="(min-width: 768px)"
     toolbar-target="ap--sidebar-content">
-    
     <ul>
-      <section>
+      {% include '/views/partials/format-toggle.j2' %}
+      <div class="ap-o-sidebar-section">
         {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
         <div class="ap-o-sidebar">
-          {% include '/views/partials/format-toggle.j2' %}
-
           <div class="nav">
             {% macro nav_tree(root, iteration=1, depth=None) -%}
             {% if not depth or iteration <= depth %}
@@ -35,7 +34,8 @@
                 {% set activeCollection = true if currentCollectionPaths[-1] == allCollectionPaths[-1] or currentCollectionPaths[-2] == allCollectionPaths[-1] else None %}
 
                 {% set formats = collection.formats or [] %}
-                <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+                [% if format in {{ formats|tojson }} %]
+                <li class="nav-item level-{{ iteration }} {% if activeCollection %}active {% endif %}">
                   {% set collection_index = '/content/' + collection.collection_path + '/index.md' %}
                   {% if doc.pod.file_exists(collection_index) %}
                   {% set collection_index = g.doc(collection_index, locale=doc.locale) %}
@@ -77,13 +77,15 @@
                   </div>
                   {{ nav_tree(collection, iteration=iteration+1, depth=depth) }}
                 </li>
+                [% endif %]
                 {# Check if the item is b) document #}
                 {% elif '<Document' in item|pprint %}
                 {% set document = item %}
                 {% if not document.hidden %}
                 {% set formats = document.formats or document.collection.formats or [] %}
                 {% set activeDocument = true if document.url == doc.url %}
-                <li {% if activeDocument %}autoscroll {% endif %} class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %} {% for format in formats %}ap--{{ format }} {% endfor %}">
+                [% if format in {{ formats|tojson }} %]
+                <li {% if activeDocument %}autoscroll {% endif %} class="nav-item level-{{ iteration }} {% if activeDocument %}active {% endif %}">
                   {# If the document is part of a tutorial render progress #}
                   {% if document.collection.tutorial %}
                   {% do doc.styles.addCssFile('/css/components/molecules/tutorial-progress.css') %}
@@ -91,13 +93,14 @@
                   {% endif %}
 
                   <a class="nav-link" href="{{ document.url.path }}">
-                    {{ document.title }}
+                    {{ document.titles('sidebar') }}
                     {% if document.tutorial %}
                     {% do doc.icons.useIcon('icons/tutorial.svg') %}
                     <svg class="ap-a-ico nav-type-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use></svg>
                     {% endif %}
                   </a>
                 </li>
+                [% endif %]
                 {% endif %}
                 {% endif %}
                 {% endif %}
@@ -112,7 +115,7 @@
             {{ nav_tree(root=g.collection(current_path)) }}
           </div>
         </div>
-      </section>
+      </div>
     </ul>
   </nav>
 </amp-sidebar>

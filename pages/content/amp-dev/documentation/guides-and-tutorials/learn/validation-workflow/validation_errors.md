@@ -4,8 +4,8 @@ $order: 1
 description: 'Valid AMP documents must not include any validation errors. The purpose of this document is to help you better understand and fix any validation errors ...'
 formats:
   - websites
-  - email
   - stories
+  - email
   - ads
 ---
 
@@ -28,7 +28,7 @@ limitations under the License.
 Valid AMP documents must not include any validation errors.
 The purpose of this document is to help you better understand
 and fix any validation errors you encounter
-when you [validate your AMP pages]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
+when you [validate your AMP pages](validate_amp.md).
 For a complete overview of the validation errors,
 see the [AMP validator specification](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
@@ -51,8 +51,15 @@ see the [AMP validator specification](https://github.com/ampproject/amphtml/blob
   </tr>
 </table>
 
+[filter formats="websites, stories, ads"]
 The following tags must be present in all AMP docs:
+[/filter]
 
+[filter formats="email"]
+The following tags must be present in all AMP emails:
+[/filter]
+
+[filter formats="websites, stories, ads"]
 * <a name="doctype"></a>`<!doctype html>`
 * <a name="html"></a>`<html amp> or <html ⚡>`
 * <a name="head"></a>`<head>`
@@ -62,9 +69,20 @@ The following tags must be present in all AMP docs:
 * <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
 * <a name="body"></a>`<body>`
+[/filter]
+
+[filter formats="email"]
+* <a name="doctype"></a>`<!doctype html>`
+* <a name="html"></a>`<html amp4email> or <html ⚡4email>`
+* <a name="head"></a>`<head>`
+* <a name="utf"></a>`<meta charset="utf-8">`
+* <a name="boilerplate"></a>`<style amp4email-boilerplate>body{visibility:hidden}</style>`
+* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+* <a name="body"></a>`<body>`
+[/filter]
 
 These mandatory tags include a `mandatory: true` field in the <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP validator spec</a>;
-they are also referenced in the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}).
+they are also referenced in the [AMP specification](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
 ### Tag required by another tag is missing
 
@@ -88,7 +106,7 @@ The validator throws the `TAG_REQUIRED_BY_MISSING` error
 when it finds an extended component in the AMP document,
 but doesn't find its equivalent `<script>`.
 
-[Extended components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
+[Extended components](../../../../documentation/components/index.html)
 must be explicitly included in the AMP document as custom elements.
 To fix these errors, navigate to the extended component's reference page,
 copy its required script, and paste it into the AMP document `<head>`.
@@ -111,7 +129,7 @@ copy its required script, and paste it into the AMP document `<head>`.
 </table>
 
 Tags are whitelisted, so there is no definitive list of all disallowed tags;
-however, the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
+however, the [AMP specification](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)
 broadly defines the set of disallowed tags.
 
 ### Custom JavaScript is not allowed
@@ -134,7 +152,7 @@ broadly defines the set of disallowed tags.
 The AMP format does not allow custom JavaScript to be added to pages, except for JavaScript files
 provided by the AMP Project itself. Many common uses of JavaScript have AMP
 HTML library equivalent implementations. See [AMP
-components]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}) for the set of components that can be
+components](../../../../documentation/components/index.html) for the set of components that can be
 used to enhance AMP HTML pages.
 
 If your use case is not covered, you may also consider contributing new
@@ -264,7 +282,9 @@ Detailed messages for this can be one of the following:
 * "Disallowed @supports in CSS"
 * "Disallowed @document in CSS"
 * "Disallowed @page in CSS"
+[filter formats="websites, stories, ads"]
 * "Disallowed @viewport in CSS"
+[/filter]
 
 ### Disallowed text inside tag
 
@@ -296,8 +316,10 @@ The following is the list of blacklisted CSS data
 * `"@namespace"`
 * `"@document"`
 * `"@page"`
+[filter formats="websites, stories, ads"]
 * `"@viewport"`
-
+[/filter]
+[filter formats="websites, stories, ads"]
 ### Disallowed property inside attribute in tag
 
 <table>
@@ -315,22 +337,27 @@ The following is the list of blacklisted CSS data
   </tr>
 </table>
 
-This error occurs when the property name inside an attribute isn't allowed.
+This error occurs when the property name inside an attribute is not allowed.
 The term property in this context means the structured key/value data inside an attribute.
-For example, in
+
+For example,
+the following would result in an error:
+
+`<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
+
+It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
+As another example, in
+
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
 `width` and `minimum-scale` are property names.
 
 The following results in a DISALLOWED_PROPERTY_IN_ATTR_VALUE error:
 
 `<meta name="viewport content="width=device-width;invalidfoo=1">`
+[/filter]
 
-As another example,
-the following would result in an error:
 
-`<meta http-equiv="X-UA-Compatible" content="invalidfoo=edge">`
 
-It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
 
 ### Invalid property value
 
@@ -351,6 +378,8 @@ It should be: `<meta http-equiv="X-UA-Compatible" content="ie=edge">`.
 
 This error occurs when the property value inside an attribute is invalid.
 The term property in this context means the structured key/value data inside an attribute.
+
+[filter formats="websites, stories, ads"]
 For example, in
 `<meta name="viewport content="width=device-width;minimum-scale=1">`,
 `device-width` and `1` are property values.
@@ -359,7 +388,8 @@ The following results in a INVALID_PROPERTY_VALUE_IN_ATTR_VALUE error:
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-Note, if you're attempting to output a valueless attribute (for example, an attribute such as `autoplay`, `controls` or `loop` for the [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.) component), but your HTML build process is generating a default (but invalid) value such as `true` (React, for example, will produce `<amp-video autoplay="true" ...>` [by default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), the workaround is to output the attribute's name as the value. For example, `<amp-video autoplay="autoplay" ...>`.
+Note, if you're attempting to output a valueless attribute (for example, an attribute such as `autoplay`, `controls` or `loop` for the [`amp-video`](../../../../documentation/components/reference/amp-video.md), etc.) component), but your HTML build process is generating a default (but invalid) value such as `true` (React, for example, will produce `<amp-video autoplay="true" ...>` [by default](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)), the workaround is to output the attribute's name as the value. For example, `<amp-video autoplay="autoplay" ...>`.
+[/filter]
 
 ### Missing URL
 
@@ -422,6 +452,7 @@ This error occurs for tags that have an `href` or `src`
 that must be set to certain protocols.
 For example, many tags require `https`.
 
+[filter formats="websites, stories, ads"]
 ### Mandatory property missing from attribute
 
 <table>
@@ -449,6 +480,7 @@ They refer to expected tags:
 
 * `<meta http-equiv="X-UA-Compatible" content="ie=edge">`
 * `<meta name=viewport content="width=device-width;minimum-scale=1">`
+[/filter]
 
 ### Mutually exclusive attributes
 
@@ -470,8 +502,8 @@ They refer to expected tags:
 This error occurs when a tag has both of the mutually exclusive attributes.
 For example, only one is allowed for the following tags:
 
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` or `srcdoc`
-* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}}): `data-media-id` or `data-playlist-id`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` or `srcdoc`
+* [`amp-jwplayer`](../../../../documentation/components/reference/amp-jwplayer.md): `data-media-id` or `data-playlist-id`
 
 ### Missing mandatory attribute from list
 
@@ -494,10 +526,10 @@ This error occurs when a tag is missing one required attribute
 from multiple choices.
 For example, these tags require one attribute from two possible choices:
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}): `data-tweetid` or `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}): `data-shortcode` or `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}): `src` or `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}): `src` or `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md): `data-tweetid` or `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md): `data-shortcode` or `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md): `src` or `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md): `src` or `data-videoid`
 
 ### Wrong parent tag
 
@@ -530,7 +562,7 @@ The following lists the required parent for specific tags
 * `style` requires parent tag `boilerplate (noscript)`.
 * `noscript` requires parent tag `head`.
 * `script` requires parent tag `head`.
-* `source` requires a media tag ([`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}), [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}), etc.).
+* `source` requires a media tag ([`amp-audio`](../../../../documentation/components/reference/amp-audio.md), [`amp-video`](../../../../documentation/components/reference/amp-video.md), etc.).
 
 ### Disallowed tag ancestor
 
@@ -583,6 +615,7 @@ are missing their `mandatory_ancestor` (tag, ancestor):
 * `audio` must be a descendant of `noscript`.
 * `noscript` must be a descendant of `body`.
 
+[filter formats="websites, stories, ads"]
 ### Mandatory tag ancestor with hint
 
 <table>
@@ -607,6 +640,7 @@ and isn't properly nested in its mandatory parent:
 * `video` isn't within `noscript` parent.
 * `audio` isn't within `noscript` parent.
 * `noscript` isn't within `body` parent.
+[/filter]
 
 ### Duplicate unique tag
 
@@ -636,18 +670,20 @@ The full list of unique tags is known:
 * `<link rel=canonical href=...>`
 * `<link rel=amphtml href=...>`
 * `<meta charset="utf-8">`
+[filter formats="websites, stories, ads"]
 * `<meta viewport>`
+[/filter]
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Style and layout errors
+## Style and layout errors <a name="style-and-layout-errors"></a>
 
 Before diving into style and layout errors,
 it's worth understanding how
-[styling]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) and
-[layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) work in AMP.
+[styling](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) and
+[layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) work in AMP.
 Since AMP pages are HTML pages, styling is very much the same as any HTML page.
 But there are some restrictions to ensure pages load fast,
 and the AMP validator enforces these restrictions.
@@ -731,7 +767,7 @@ through an online CSS validator, for example,
 
 This error refers to the @-rules within CSS,
 for which AMP only allows a handful of rules.
-(see also the [AMP specification]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})).
+(see also the [AMP specification](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)).
 For example, <code>@import</code> isn't allowed.
 The validation error specifically
 tells you the rule that's invalid,
@@ -761,8 +797,8 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
-see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
-the [AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+see [How to Control Layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) and
+the [AMP HTML layout system specification](../../../../documentation/components/reference/amp-layout.md).
 
 [tip type="note"]
 **NOTE –**  If you don't specify the layout,
@@ -795,7 +831,7 @@ or add a `width` and/or `height` value and the error goes away.
 This error occurs when you don't specify a layout for the AMP tag,
 and the implied layout contains a disallowed attribute.
 Disallowed attributes for layout types are described in the
-[AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+[AMP HTML layout system specification](../../../../documentation/components/reference/amp-layout.md).
 
 ### Specified layout isn't supported by AMP tag
 
@@ -821,8 +857,8 @@ in the [AMP validator specification](https://github.com/ampproject/amphtml/blob/
 
 Actual layout behavior is determined by the `layout` attribute.
 For more on how layout works,
-see [How to Control Layout]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and
-the [AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+see [How to Control Layout](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) and
+the [AMP HTML layout system specification](../../../../documentation/components/reference/amp-layout.md).
 
 ### Attribute not allowed by specified layout
 
@@ -845,7 +881,7 @@ the [AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentati
 This error occurs when you specify a layout for the AMP tag,
 and the layout contains a disallowed attribute.
 Disallowed attributes for layout types are described in the
-[AMP HTML layout system specification]({{g.doc('/content/amp-dev/documentation/components/reference/amp-layout.md', locale=doc.locale).url.path}}).
+[AMP HTML layout system specification](../../../../documentation/components/reference/amp-layout.md).
 
 ### Invalid value for attribute required by layout
 
@@ -867,7 +903,7 @@ Disallowed attributes for layout types are described in the
 This error occurs when the attribute value is invalid for the specified layout.
 To understand what triggers this error,
 you need to familiarize yourself with
-the [different behaviors of layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements).
+the [different behaviors of layouts](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 
 Let's say you set the layout to be `fixed-height` and
 you include numeric values for both `height` and `width`.
@@ -899,19 +935,19 @@ When they are not, this error is triggered.
 For example, `<amp-img src="" layout="responsive" width="42px" height="42rem">`,
 results in this error message:
 
-"Inconsistent units for width and height in tag '[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})  - width is specified in 'px' whereas height is specified in 'rem'."
+"Inconsistent units for width and height in tag '[`amp-img`](../../../../documentation/components/reference/amp-img.md)  - width is specified in 'px' whereas height is specified in 'rem'."
 
 ## Templating errors
 
 AMP pages can't include templating syntax,
 unless that syntax is within an AMP tag specifically
 designed to include templates, for example,
-[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}).
+[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md).
 
 It's OK to include templates in your source files,
 so long as the generated output of those files doesn't contain the templates
 (see also
-[Use CSS preprocessors]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors)).
+[Use CSS preprocessors](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors)).
 
 ### Attribute contains template syntax
 

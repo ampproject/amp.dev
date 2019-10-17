@@ -1,0 +1,110 @@
+{% extends '/layouts/default.j2' %}
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
+{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
+{% do doc.styles.addCssFile('/css/components/atoms/format-backgrounds.css') %}
+
+{% block header %}
+{% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/homepage-link.css') %}
+<header class="ap--header">
+  <div class="ap-o-header">
+    <a class="ap-o-header-home" href="/">
+      {% do doc.icons.useIcon('/icons/logo.svg') %}
+      <svg class="ap-o-header-home-logo"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo"></use></svg>
+      <span class="ap-o-header-home-title">AMP</span>
+    </a>
+
+    {% do doc.styles.addCssFile('/css/components/atoms/sample-preview-title.css') %}
+    <h1 class="ap-a-sample-preview-title">
+      <span class="ap-a-sample-preview-title-prefix">{{ _('Preview') }}:&nbsp;</span>
+      <span class="ap-a-sample-preview-title-title">{{ doc.title }}</span>
+      <a class="ap-a-sample-preview-title-close" href="{{ doc.url.path.replace('/preview', '') }}">
+        {% do doc.icons.useIcon('/icons/close.svg') %}
+        <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </a>
+    </h1>
+
+    <a class="ap-m-homepage-link" href="{{ doc.url.path.replace('/preview/', '/') }}#asd">
+      <span>{{ _('Back to sample') }}</span>
+      {% do doc.icons.useIcon('/icons/angle-down-solid.svg') %}
+      <svg class="ap-a-ico icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+    </a>
+  </div>
+</header>
+{% endblock %}
+
+{% block main %}
+{% do doc.styles.addCssFile('/css/components/organisms/preview-pane.css') %}
+<main class="ap--preview-pane">
+  <div class="ap--preview-pane-header">
+    <div class="ap--preview-pane-header-spacer"></div>
+
+    {% if not doc.example.document.isAmpAds %}
+    {% do doc.styles.addCssFile('/css/components/molecules/device-toggle.css') %}
+    <div class="ap-m-device-toggle">
+      {% set devices = ['mobile', 'tablet', 'desktop'] %}
+
+      {% for device in devices %}
+      {% do doc.icons.useIcon('/icons/device-' + device + '.svg') %}
+      <button class="ap-m-device-toggle-button {% if device == 'mobile' %}active{% endif %}" [class]="device.selected == '{{ device }}' ? 'ap-m-device-toggle-button active' : 'ap-m-device-toggle-button'" on="tap:AMP.setState({device: {selected: '{{ device }}'}})">
+        <svg class="ap-a-ico ap-m-device-toggle-icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#device-{{ device }}"></use>
+        </svg>
+      </button>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {# Render widget to toggle experiments if there are any #}
+    {% if doc.example.document.metadata.experiments %}
+    <div class="ap-m-experiments">
+      <amp-iframe layout="fixed-height"
+                  height="66"
+                  sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+                  allowfullscreen
+                  allowpaymentrequest
+                  frameborder="0"
+                  src="{{ podspec.base_urls.preview }}/shared/experiments/?experiments={{doc.example.document.metadata.experiments|join(',')}}">
+        <div placeholder=""></div>
+      </amp-iframe>
+    </div>
+    {% endif %}
+  </div>
+
+  {% set base_class = 'ap-o-preview-pane ap-o-preview-pane-' + doc.formats[0] %}
+  <div class="{{ base_class }} ap-o-preview-pane-mobile" [class]="'{{ base_class }} ap-o-preview-pane-' + device.selected" {% if doc.example.document.metadata.width and doc.example.document.isAmpAds %} style="min-width: {{ doc.example.document.metadata.width }}px;"{% endif %}>
+    {% if doc.example.document.isAmpEmail %}
+    <div class="ap-o-preview-pane-email-header">
+      <svg class="avatar" viewBox="0 0 83 25" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#D6D8DA" cx="12.5" cy="12.5" r="12.5"/><path d="M19 8.23C19 7.539 18.48 7 17.811 7H7.19C6.52 7 6 7.538 6 8.23v7.54c0 .692.52 1.23 1.189 1.23H17.81C18.48 17 19 16.462 19 15.77V8.23zM7.188 7.616h10.735l-4.977 5.346a.605.605 0 0 1-.446.193.674.674 0 0 1-.446-.193l-4.94-5.346h.075zm-.594.616c0-.077 0-.154.037-.231l3.12 3.385-3.157 4.038V8.231zm11.217 8.154H7.19a.674.674 0 0 1-.446-.192l3.417-4.347 1.449 1.577c.222.23.52.385.854.385.334 0 .631-.154.854-.385l1.337-1.461 3.529 4.23a.452.452 0 0 1-.372.193zm.595-.962l-3.269-3.961 3.232-3.5c.037.076.037.153.037.23v7.231z" fill="#FAFAFC" fill-rule="nonzero"/><path fill="#D6D8DA" d="M30 6h53v6H30zM30 15h29v4H30z"/></g></svg>
+      <svg class="reply" viewBox="0 0 19 14" xmlns="http://www.w3.org/2000/svg"><path d="M18.161 13.584C16.585 9.311 9.99 8.818 7.571 8.782v2.293a.57.57 0 0 1-.935.434L.596 6.453a.566.566 0 0 1-.001-.867L6.635.53a.569.569 0 0 1 .934.433v2.27c2.718.063 10.592 1.041 10.592 10.352z" fill="#D6D8DA" fill-rule="nonzero"/></svg>
+    </div>
+    {% endif %}
+
+    {# Set a min-width on the device if there is one set in the sample #}
+    <div class="ap-o-preview-pane-device">
+      {% if doc.example.document.isAmpAds %}
+      <amp-iframe layout="fill" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation" allowfullscreen allowpaymentrequest frameborder="0" src="{{ podspec.base_urls.preview }}{{ doc.embed }}">
+        <div placeholder=""></div>
+      </amp-iframe>
+      {% else %}
+      <amp-iframe layout="fill" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation" allowfullscreen allowpaymentrequest frameborder="0" src="{{ podspec.base_urls.preview }}{{ doc.source }}">
+        <div placeholder=""></div>
+      </amp-iframe>
+      {% endif %}
+    </div>
+  </div>
+</main>
+
+{% if not doc.example.document.isAmpAds %}
+<amp-state id="device">
+  <script type="application/json">
+    {
+      "selected": "mobile"
+    }
+  </script>
+</amp-state>
+{% endif %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

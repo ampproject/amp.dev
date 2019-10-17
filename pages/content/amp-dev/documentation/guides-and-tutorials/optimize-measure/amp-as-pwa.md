@@ -4,7 +4,7 @@ $order: 1
 description: 'A Service Worker is a client-side proxy that sits between your page and your server, and is used to build fantastic offline experiences, fast-loading ...'
 formats:
   - websites
-author: crystalonscript
+author: CrystalOnScript
 contributors:
   - pbakaus
 ---
@@ -22,9 +22,9 @@ A Service Worker is a client-side proxy that sits between your page and your ser
 **NOTE –** If the concept of Service Workers is new to you, read the [introduction at WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 [/tip]
 
-Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) component to achieve the same.
+Your Service Worker needs to be registered on a given page, or the browser won't find or run it. By default, this is done with the help of a [little bit of JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). On AMP Pages, you use the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component to achieve the same.
 
-For that, first include the [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) component via its script in the `<head>` of your page:
+For that, first include the [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) component via its script in the `<head>` of your page:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -47,7 +47,7 @@ If the user navigates to your AMP pages on your origin (as opposed to the first 
 If you're here, you're building pages with AMP. The AMP team cares immensely about putting the user first and giving them a world class web experience. To keep these experiences consistent the AMP team has created a service worker specifically for AMP!
 
 [tip type="default"]
-**TIP –**  Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/documentation/guides-and-tutorials/optimize-and-measure/amp_to_pwa.html).
+**TIP –**  Follow our tutorial to learn to use the [AMP Service Worker in your PWA](/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp_to_pwa.md).
 [/tip]
 
 ### Installing the AMP Service Worker
@@ -70,7 +70,7 @@ Install the AMP Service Worker with minimal steps:
 
 The AMP Service Worker automatically caches AMP script files and AMP documents. By caching AMP script files, they are instantly available to the users browser allowing for offline functionality and speedier pages on flaky networks. 
 
-If your app requires specific types of document caching, the AMP Service Worker allows for customization. Such as adding a deny list for documents that should always be requested from the network. 
+If your app requires specific types of document caching, the AMP Service Worker allows for customization. Such as adding a deny list for documents that should always be requested from the network. In the following example, replace `Array<RegExp>` with an array of regular expressions representing documents you want to avoid caching. 
 
 [sourcecode:js]
 AMP_SW.init(
@@ -80,7 +80,7 @@ AMP_SW.init(
 );
 [/sourcecode]
 
-Read more about customizing document caching here.
+Read more about [customizing document caching here](https://github.com/ampproject/amp-sw/tree/master/src/modules/document-caching).
 
 ### Optimizing the AMP Service Worker 
 
@@ -102,7 +102,7 @@ You are able to customize the caching strategy and define a deny list.
 Links to pages your users may need to visit can be prefetched, allowing them to be accessed while offline. This is done by adding a `data-prefetch` attribute to the link tag.
 
 [sourcecode:html]
-<a href=`....` data-rel=`prefetch` />
+<a href='....' data-rel='prefetch' />
 [/sourcecode]
 
 ### Offline Experience 
@@ -121,6 +121,24 @@ AMP_SW.init({
 
 A successful offline page looks like it's a part of your site by having a consistent UI with the rest of the application.
 
+### Force Update
+
+The team is working to implement a force update/remove feature if your AMP Service Worker needs to be disabled or changed if a deployment to users has gone wrong.
+
+To effectively manage a server worker, you should understand how [standard HTTP caching affects the way your service worker's JavaScript is kept up to date](https://developers.google.com/web/updates/2018/06/fresher-sw). Service workers served with appropriate HTTP caching directives can resolve small bug fixes by making the appropriate changes and redeploying your service worker to your hosting environment. If you need to remove a service worker, it's a good idea to keep a simple, [no-op](https://en.wikipedia.org/wiki/NOP) service worker file handy, like the following:
+
+```js
+self.addEventListener('install', () => {
+  // Skip over the "waiting" lifecycle state, to ensure that our
+  // new service worker is activated immediately, even if there's
+  // another tab open controlled by our older service worker code.
+  self.skipWaiting();
+});
+```
+
+[tip type="read-on"]
+  [Read more](https://stackoverflow.com/questions/33986976/how-can-i-remove-a-buggy-service-worker-or-implement-a-kill-switch/38980776#38980776) about managing deployed service workers. 
+[/tip]
 
 ## Write a Custom Service Worker
 
@@ -147,7 +165,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Using this technique, you can amend your AMP Page will all sorts of additional
-functionality that would otherwise fail [AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}), for example:
+functionality that would otherwise fail [AMP validation](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), for example:
 
 * Dynamic features that require custom JS.
 * Components that are customized/only relevant for your site.

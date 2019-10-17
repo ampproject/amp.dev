@@ -16,53 +16,121 @@
 
 'use strict';
 
+const express = require('express');
+const signale = require('signale');
+const fetch = require('node-fetch');
+const ampCors = require('@ampproject/toolbox-cors');
+const cors = require('cors');
+
+const config = require('@lib/config.js');
+
 class Subdomain {
-  /**
-   * Sets a base router for local dev.
-   *
-   * @param Router - an express application
-   */
-  router(baseRouter) {
-    if (!this.devMode) {
-      this.subdomains_ = new Map();
-      this.devMode = true;
-    }
-    baseRouter.use(this.middleware_.bind(this));
+  constructor() {
+    // Stores subdomain apps started during development to be able
+    // to register multiple routers to them
+    this.subdomainApps_ = {};
   }
 
   /**
    * Creates a subdomain middleware matching subdomain
-   * requests to the router
+   * requests to the router.
    */
-  map(subdomain, router) {
-    if (!subdomain) {
-      throw new Error(`Invalid subdomain: '${subdomain}'`);
+  async map(hostConfig, router) {
+    if (!hostConfig.subdomain) {
+      throw new Error('host does not specify a subdomain');
     }
-    if (this.devMode) {
-      this.subdomains_.set(subdomain, router);
-      // return a dummy middleware
-      return (request, response, next) => next();
+    let middleware;
+    if (config.isDevMode() || config.isLocalMode()) {
+      middleware = await this.startDevServer_(hostConfig, router);
     } else {
-      // return subdomain specific middleware
-      return (request, response, next) => {
-        if (request.subdomains.includes(subdomain)) {
-          return router(request, response, next);
-        }
-        return next();
-      };
+      middleware = this.createSubdomainMiddleware_(hostConfig.subdomain, router);
     }
+    router.get('*', this.redirectOn404_.bind(this));
+    return middleware;
   }
 
-  middleware_(req, res, next) {
-    for (const [subdomain, router] of this.subdomains_) {
-      const subdomainPath = '/' + subdomain;
-      if (req.url.startsWith(subdomainPath)) {
-        req.url = req.url.substring(subdomainPath.length);
-        router(req, res, next);
-        return;
+  startDevServer_(hostConfig, router) {
+    return new Promise((resolve, reject) => {
+      let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
+      if (!subdomainApp) {
+        subdomainApp = express();
+        subdomainApp.use(cors({
+          origin: true,
+          credentials: true,
+        }));
+        subdomainApp.use(ampCors({
+          email: true,
+        }));
+        subdomainApp.listen(hostConfig.port, () => {
+          signale.info(`${hostConfig.subdomain} dev server listening on ${hostConfig.port}`);
+          // return a dummy middleware
+          resolve((request, response, next) => next());
+        });
+
+        this.subdomainApps_[hostConfig.subdomain] = subdomainApp;
       }
+      subdomainApp.use(router);
+    });
+  }
+
+  createSubdomainMiddleware_(subdomain, router) {
+    return (request, response, next) => {
+      if (request.subdomains.includes(subdomain)) {
+        return router(request, response, next);
+      }
+      return next();
+    };
+  }
+
+  /**
+   * Redirects unhandled requests to the referrer. This allows us to resolve
+   * playground document or preview assets.
+   *
+   * The referrer is calculated using the following strategy:
+   * - use the playground URL parameter if present
+   * - use the 'Referrer' header if present
+   * - use amp.dev as default Referrer.
+   */
+  async redirectOn404_(request, response) {
+    const referrer = request.get('Referrer') || config.hosts.platform.base;
+    // assume request was initiated by a document-relative path
+    let destination = this.resolveUrl_(request.originalUrl, referrer);
+    // perform a head request to check if destination exists
+    if (destination.pathname.startsWith('/static/') || !await this.exists_(destination)) {
+      // assume a root-relative path
+      destination = this.resolveUrl_(request.originalUrl, referrer);
     }
-    next();
+    // remove AMP CORS query param which is not needed
+    response.redirect(301, destination.toString());
+  }
+
+  resolveUrl_(requestPath, referrerString) {
+    const referrer = new URL(referrerString);
+    const playgroundDoc = referrer.searchParams.get('url');
+    if (!playgroundDoc) {
+      // redirect to amp.dev by default
+      return new URL(requestPath, config.hosts.platform.base);
+    }
+    const documentUrl = new URL(playgroundDoc, config.hosts.platform.base);
+    const url = new URL(requestPath, documentUrl.toString());
+    // All subdomains redirect unknown requests. We have to make sure to
+    // always redirect to the platform to avoid redirect loops
+    if (config.hostNames.has(url.hostname)) {
+      url.hostname = config.hosts.platform.host;
+      url.port = config.hosts.platform.port;
+    }
+    return url;
+  }
+
+  async exists_(url) {
+    try {
+      const response = await fetch(url, {
+        method: 'HEAD',
+      });
+      return response.ok;
+    } catch (error) {
+      return false;
+    }
   }
 }
 

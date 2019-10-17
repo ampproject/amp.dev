@@ -11,7 +11,7 @@ Copiez et enregistrez ce qui suit dans un fichier .html.
   <head>
     <meta charset="utf-8">
     <title>Hello, AMPs</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+    <link rel="canonical" href="https://amp.dev/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
       {

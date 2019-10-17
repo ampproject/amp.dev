@@ -22,5 +22,5 @@ Per i contenuti pubblicati da qualsiasi altro dominio, è possibile attivare/dis
 AMP.toggleExperiment('experiment')
 [/sourcecode]
 
-Tutti i file AMP che includono funzioni sperimentali non supereranno la [convalida AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
+Tutti i file AMP che includono funzioni sperimentali non supereranno la [convalida AMP](validation-workflow/validate_amp.md).
 Rimuovi questi componenti sperimentali per i documenti AMP pronti per la produzione.

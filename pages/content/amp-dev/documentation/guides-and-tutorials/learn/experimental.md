@@ -2,6 +2,10 @@
 $title: Enable experimental features
 $order: 5
 description: 'AMP experimental components are released features not yet ready for wide use, so they are protected by an experimental status.'
+formats:
+  - websites
+  - stories
+  - ads
 ---
 
 [AMP experimental components](https://github.com/ampproject/amphtml/tree/master/tools/experiments)
@@ -9,6 +13,21 @@ are released features not yet ready for wide use, so they are protected by an **
 
 Developers and users can opt-in to using these features before they are fully released.
 But they should be used with caution, as they may contain bugs or have unexpected side effects.
+
+[tip type="important"]
+There is a risk that some experiments will never ship as features on the AMP Project.
+[/tip]
+
+{% set experimental_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('experimental')|list %}
+{% if experimental_components|length %}
+The following is a list of components that are currently in experimental status and are ready to be tested by developers for first user feedback:
+
+<ul>
+{% for component in experimental_components %}
+  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
 
 ## Opt into the AMP Dev Channel
 
@@ -29,25 +48,28 @@ To opt your browser into the AMP Dev Channel, go to [the AMP experiments page](h
 
 #### Served from cdn.ampproject.org
 
-For content served from [https://cdn.ampproject.org](https://cdn.ampproject.org),
-go to the [AMP experiments page](https://cdn.ampproject.org/experiments.html)
-and enable (or disable) any experimental component by toggling them on (or off). Opting in will set a cookie on your browser that will enable the experiment on all AMP pages served through the Google AMP Cache.
+For content served from `https://*.cdn.ampproject.org`,
+go to `/experiments.html` on a Google AMP Cache subdomain and enable (or disable) any experimental component by toggling them on (or off).
+
+For example, to enable experiments on cached AMP pages whose source origin is `www.example.com`, go to `www-example-com.cdn.ampproject.org/experiments.html`.
+
+Experiment opt-ins are saved to `localStorage` and only enables the experiment on AMP pages served from the current domain.
 
 #### Served from other domains
 
-For content served from any other domain, experiments can be toggled in the devtools console when development mode is enabled using:
+For content served from non-CDN domains, experiments can be toggled in the devtools console using:
 
 ```js
 AMP.toggleExperiment('experiment')
 ```
 
 Any AMP file that includes experimental features will fail
-[AMP validation]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}).
+[AMP validation](validation-workflow/validate_amp.md).
 Remove these experimental components for production-ready AMP documents.
 
 ## Enable an experiment for a particular document
 
-Document can choose to opt in a certain experiments. To do that, simply put a meta tag of the `amp-experiments-opt-in` name in the head of the HTML document before your AMP script (`https://cdn.ampproject.org/v0.js`). Its content value is a comma-separated string of experiment IDs to opt in.
+Document can choose to opt in a certain experiments. To do that, place a meta tag of the `amp-experiments-opt-in` name in the head of the HTML document before your AMP script (`https://cdn.ampproject.org/v0.js`). Its content value is a comma-separated string of experiment IDs to opt in.
 
 ```html
 <head>
@@ -59,4 +81,36 @@ Document can choose to opt in a certain experiments. To do that, simply put a me
 </head>
 ```
 
-By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of whitelisted experiments, see the `allow-doc-opt-in` attribute in the project's `prod-config.json` file. Note that document opt-in can be overridden by user opt-out.
+By doing so, the specified experiments will be enabled for all visitors of the document. However, not all experiments allow document-level opt-in. For a full list of whitelisted experiments, see the `allow-doc-opt-in` attribute in the project's [`prod-config.json`](https://github.com/ampproject/amphtml/blob/master/build-system/global-configs/prod-config.json) file. Note that document opt-in can be overridden by user opt-out.
+
+## Origin trials
+
+[Origin trials](https://github.com/GoogleChrome/OriginTrials/blob/gh-pages/explainer.md) enable developers to use an experimental feature in production and provide essential feedback.
+
+Traditionally, a feature in experimental mode can be used in development, but cannot be pushed to production. With Origin trials, interested developers can opt-in to a test an experimental feature in production, with the following expectations:
+
+- The test is for a limited time.
+- The feature will likely undergo some changes after origin trials.
+
+Origin trials present an opportunity to implement and benefit from a new feature before it’s fully live. The feature will live on the developer's site, rather than guarded by an experiment, and feedback can directly influence the direction of the feature.
+
+{% set trial_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('origin_trial')|list %}
+{% if trial_components|length %}
+Components in the following list can currently be tested via an origin trial:
+
+<ul>
+{% for component in trial_components %}
+  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+
+### Enable an origin trial
+
+Include the following `<meta>` tag within the `<head>` tag on each page that uses the origin trial experiment:
+
+```html
+<meta name="amp-experiment-token" content="{copy your token here}">
+```
+
+Note: `"amp-experiment-token"` is the literal string, `"amp-experiment-token"`. Not the token itself (which goes into the content attribute), or the name of the experiment.

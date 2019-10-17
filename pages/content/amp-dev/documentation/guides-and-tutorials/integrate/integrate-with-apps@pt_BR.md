@@ -69,7 +69,7 @@ descritas acima.
 
 O Google fornece a AMP URL API para recuperar os URLs de HTML para AMP correspondentes para uma
 determinada lista de URLs ([documentação oficial](https://developers.google.com/amp/cache/use-amp-url) /
-[demonstração]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). Os URLs não
+[demonstração](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html). Os URLs não
 precisam ser versões canônicas. Se houver uma versão AMP, a resposta
 incluirá o URL de AMP original e o URL da página AMP armazenada no cache
 de AMP do Google.
@@ -112,7 +112,7 @@ retornado (ampURL).
 
 ## Usar caches de AMP
 
-Um [cache de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}) é uma
+Um [cache de AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) é uma
 rede de fornecimento de conteúdo (CDN, na sigla em inglês) baseada em proxy que tem a função de exibir documentos AMP válidos.
 Os caches de AMP servem para:
 
@@ -123,7 +123,7 @@ Os caches de AMP servem para:
 No momento, há dois provedores de cache de AMP:
 
 *   [cache de AMP do Google](https://developers.google.com/amp/cache/)
-*   [cache de AMP do Cloudflare](https://amp.cloudflare.com/) (em inglês)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Assim, você tem duas opções para exibir um arquivo AMP em um aplicativo:
 
@@ -167,12 +167,12 @@ Veja algumas práticas recomendadas gerais para implementar um visualizador de A
 
 *   Disponibilize a página AMP a partir de um cache de AMP. Isso diminui o tempo de carregamento em mais de 1s.
 *   Exiba a origem do editor do artigo (por exemplo, em um cabeçalho que pode ser recolhido).
-*   Forneça uma ação de compartilhamento (veja também a seção "[Compartilhar conteúdo AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}#sharing-amp-content)"
+*   Forneça uma ação de compartilhamento (veja também a seção "[Compartilhar conteúdo AMP](integrate-with-apps.md#sharing-amp-content)"
     abaixo).
 *   Nos visualizadores baseados em WebView, permita cookies de terceiros.
 *   Defina um referenciador para sua plataforma ou seu aplicativo.
 
-### Compartilhar conteúdo AMP
+### Compartilhar conteúdo AMP <a name="sharing-amp-content"></a>
 
 Ao compartilhar um documento AMP a partir do visualizador de AMP de uma plataforma, ela
 precisa compartilhar o URL canônico caso isso seja possível do ponto de vista técnico. Por exemplo, se a

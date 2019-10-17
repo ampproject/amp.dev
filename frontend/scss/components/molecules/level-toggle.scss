@@ -1,0 +1,140 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text';
+
+$borderSize: 5px;
+
+%pseudo-base {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.#{molecule('level-toggle')} {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 330px;
+  height: 61px;
+  padding: 14px 10px;
+  background-color: color('blue-ribbon');
+  color: color('white');
+  border-radius: 4px;
+
+  h5 {
+    margin: 0 0 0 10px;
+    color: color('white');
+    font-size: 1em;
+  }
+
+  @media (min-width: 768px){
+    width: 500px;
+    height: auto;
+
+    h5 {
+      font-size: 0.875em;
+    }
+  }
+
+  .disabled-headline {
+    opacity: 0.5;
+  }
+
+  svg {
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+  }
+
+  &-elements {
+    display: flex;
+    align-items: center;
+
+    .toggle-button {
+      position: relative;
+      display: flex;
+
+      input[type=checkbox]{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 10;
+      }
+
+      &-switch {
+        display: flex;
+        width: 70px;
+        height: 35px;
+        border-radius: 2px;
+        background-color: lighten(color('blue-ribbon'), 8%);
+
+        @media (min-width: 768px) {
+          width: 50px;
+          height: 24px;
+        }
+
+        div {
+          flex: 0 0 45%;
+          transition: transform .2s cubic-bezier(0, 0, 0.27, 1);
+        }
+
+        .active {
+          margin: 2px;
+          border-radius: 1px;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+          background: color('white');
+        }
+      }
+
+      input[type="checkbox"] {
+        & + .toggle-button-switch {
+          .off.active { transform: translateX(100%); }
+        }
+        &:checked + .toggle-button-switch {
+          background-color: #0048c0;
+          .on.active { transform: translateX(-100%); }
+          .off.active { transform: translateX(0); }
+        }
+      }
+
+      .on {
+        .line {
+          height: 12px;
+          width: 1px;
+          margin-left: 50%;
+          margin-top: 11px;
+          background-color: color('white');
+
+          @media (min-width: 768px) {
+            height: 7px;
+            width: 1px;
+            margin-top: 9px;
+          }
+        }
+      }
+
+      .off {
+        .circle {
+          height: 12px;
+          width: 12px;
+          margin: 11px 0 0 11px;
+          border: 1px solid;
+          border-radius: 50%;
+
+          @media (min-width: 768px) {
+            height: 7px;
+            width: 7px;
+            margin: 9px 0 0 9px;
+          }
+        }
+      }
+    }
+  }
+}

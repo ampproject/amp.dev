@@ -7,7 +7,7 @@ Descubre cómo incluir contenido multimedia en tus páginas y cómo usar iframes
 ## Aspectos básicos
 
 Incluye un iframe en tu página usando el elemento
-[`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).
+[`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md).
 
 Los iframes son especialmente útiles en AMP para mostrar contenido que no se admita en
 la página principal, como el contenido que requiere JavaScript creado por usuarios.
@@ -17,11 +17,11 @@ la página principal, como el contenido que requiere JavaScript creado por usuar
 * Debe tener al menos **600 píxeles** o un **75%** de la primera ventana gráfica si empezamos por el principio de la página.
 * Solo puede solicitar recursos por HTTPS, y estos no deben tener el mismo origen que el contenedor salvo que no se especifique allow-same-origin.
 
-Leer más: Obtén más información [en la especificación completa de `amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}).
+Leer más: Obtén más información [en la especificación completa de `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md).
 
 ### Incluir la secuencia de comandos
 
-Para incluir un [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) en tu página,
+Para incluir un [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) en tu página,
 primero debe constar la siguiente secuencia de comandos en el `<head>`, que carga el código adicional del componente ampliado:
 
 [sourcecode:html]
@@ -31,7 +31,7 @@ primero debe constar la siguiente secuencia de comandos en el `<head>`, que carg
 
 ### Escribir las etiquetas
 
-Un ejemplo de [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}):
+Un ejemplo de [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md):
 
 ```html
 <amp-iframe width="200" height="100"
@@ -41,11 +41,11 @@ Un ejemplo de [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/
 </amp-iframe>
 ```
 
-## Usar elementos placeholder
+## Usar elementos placeholder <a name="using-placeholders"></a>
 
-Puedes mostrar un [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) en la parte superior de un documento siempre y cuando el atributo `placeholder` se incluya en algún elemento de [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}) como, (por ejemplo, [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})). Este elemento se renderizará como un marcador de posición hasta que el iframe esté listo para mostrarse.
+Puedes mostrar un [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) en la parte superior de un documento siempre y cuando el atributo `placeholder` se incluya en algún elemento de [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) como, (por ejemplo, [`amp-img`](../../../../documentation/components/reference/amp-img.md)). Este elemento se renderizará como un marcador de posición hasta que el iframe esté listo para mostrarse.
 
-Leer más: Obtén más información sobre los elementos placeholder en la sección [Iframes con elementos placeholder]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder).
+Leer más: Obtén más información sobre los elementos placeholder en la sección [Iframes con elementos placeholder](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder).
 
 Este ejemplo de un elemento placeholder:
 
@@ -70,4 +70,4 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg
 
 ## Ejemplos
 
-Puedes encontrar más ejemplos avanzados en la página de nuestra [demostración avanzada]({{g.doc('/content/amp-dev/documentation/examples/components/amp-iframe.html', locale=doc.locale).url.path}}).
+Puedes encontrar más ejemplos avanzados en la página de nuestra [demostración avanzada](../../../../documentation/examples/documentation/amp-iframe.html).

@@ -5,6 +5,7 @@ description: 'The AMP runtime is optimized for speed and if your AMP pages are s
 
 formats:
   - websites
+  - stories
 author: sebastianbenz
 ---
 
@@ -12,7 +13,7 @@ This guide provides tips and guidance for webmasters on how to optimize their ho
 
 ### Isn't AMP fast by default?
 
-The AMP runtime is [optimized for speed]({{g.doc('/content/amp-dev/about/how-amp-works.html', locale=doc.locale).url.path}}) and if your AMP pages are served by an [AMP cache]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
+The AMP runtime is [optimized for speed](../../../about/how-amp-works.html) and if your AMP pages are served by an [AMP cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md), they are fully optimized and offer the highest loading performance. For example, if your users are coming to your AMP pages from Google Search on mobile, by default the pages are served by an AMP cache.
 
 However, AMP pages are not always served from an AMP cache. A website may decide to show AMP pages from their own servers for other traffic sources. The most frequent use case are sites built completely in AMP, such as [tasty.co](https://tasty.co), where users go straight to the site. Another traffic source is Twitter, which [started linking to AMP pages](https://searchengineland.com/twitter-ramps-amp-278300) instead of delivering the standard mobile version. This means that if a user clicks a link in one of Twitter's mobile apps, the link goes to the AMP version of your page on your own origin (if one is available).
 
@@ -26,11 +27,11 @@ For example, by applying the following optimization techniques:
 *   [Preloaded hero image](#preload-hero-images) (the image size/encoding itself has not been changed)
 *   [Optimizes custom fonts](#optimize-custom-fonts) (in this case, Google fonts)
 
-the ["The Scenic" AMPStart template](https://www.ampstart.com/templates) loads [two seconds faster on a 3G connection](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
+the ["The Scenic" template](../../../documentation/templates/index.html) loads [two seconds faster on a 3G connection](https://www.webpagetest.org/video/compare.php?tests=180529_RY_9198dcdba1824c169887c6e40c221dae-r:1-c:0).
 
-If you want to skip the details, check out the [AMP Boilerplate generator](https://ampbyexample.com/boilerplate), which you can use to generate custom optimized AMP pages.
+If you want to skip the details, check out the [AMP Boilerplate generator](/boilerplate), which you can use to generate custom optimized AMP pages.
 
-### Optimize the AMP Runtime loading
+### Optimize the AMP Runtime loading <a name="optimize-the-amp-runtime-loading"></a>
 
 While AMP is already quite restrictive about which markup is allowed in the `<head>` section, there is still room for optimization. The key is to structure the `<head>` section in a way so that all render-blocking scripts and custom fonts load as fast as possible.
 
@@ -66,7 +67,7 @@ Here is the recommended order for the `<head>` section in an AMP page:
 Let's go through it step-by-step:
 
 1.  The first tag should be the `meta charset` tag, followed by any remaining `meta` tags.
-1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg"
+1.  Next, preload the AMP runtime `v0.js` `<script>` tag with `<link as=script href=https://cdn.ampproject.org/v0.js rel=preload>`. The AMP runtime should start downloading as soon as possible because the [AMP boilerplate](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) hides the document via `body { visibility:hidden }` until the AMP runtime has loaded. Preloading the AMP runtime tells the browser to download the script with a higher priority. Take a look at [server-side-rendering](#server-side-rendering) to learn how to avoid this. <amp-img src="/static/img/docs/preload_resource_priorities.jpg"
          width="1230" height="1068" layout="responsive"
          alt="Priority level changes when preload is applied">
 </amp-img>
@@ -77,19 +78,19 @@ Let's go through it step-by-step:
 <link as="script" rel="preload" href="https://cdn.ampproject.org/v0/story-1.0.js">[/sourcecode]
 1.  Use [preconnect](https://www.igvita.com/2015/08/17/eliminating-roundtrips-with-preconnect/) to speedup the connection to other origin where the full resource URL is not known ahead of time, for example, when using Google Fonts: [sourcecode:html]<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/" crossorigin>[/sourcecode]
 1.  Load the AMP runtime: [sourcecode:html]<script async src="https://cdn.ampproject.org/v0.js"></script>[/sourcecode]
-1.  Specify the `<script>` tags for [render-delaying extensions](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (e.g., [`amp-experiment`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-experiment.md', locale=doc.locale).url.path}})  [`amp-dynamic-css-classes`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-dynamic-css-classes.md', locale=doc.locale).url.path}})  and [`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}})
-1.  Specify the `<script>` tags for remaining extensions (e.g., [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})  ...). These extensions are not render-delaying and therefore should not be preloaded as they might take away important bandwidth for the initial render.
+1.  Specify the `<script>` tags for [render-delaying extensions](https://github.com/ampproject/amphtml/blob/master/src/render-delaying-services.js) (e.g., [`amp-experiment`](../../../documentation/components/reference/amp-experiment.md)  [`amp-dynamic-css-classes`](../../../documentation/components/reference/amp-dynamic-css-classes.md)  and [`amp-story`](../../../documentation/components/reference/amp-story.md)
+1.  Specify the `<script>` tags for remaining extensions (e.g., [`amp-bind`](../../../documentation/components/reference/amp-bind.md)  ...). These extensions are not render-delaying and therefore should not be preloaded as they might take away important bandwidth for the initial render.
 1.  Specify any custom styles by using the `<style amp-custom>` tag.
 1.  Add any other tags allowed in the  `<head>` section. In particular, any external fonts should go last since they block rendering.
-1.  Finally, specify the [AMP boilerplate code]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md', locale=doc.locale).url.path}}). By putting the boilerplate code last, it prevents custom styles from accidentally overriding the boilerplate css rules.
+1.  Finally, specify the [AMP boilerplate code](../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md). By putting the boilerplate code last, it prevents custom styles from accidentally overriding the boilerplate css rules.
 
 [tip]
 The AMP Cache performs all these optimizations automatically (and a few more). You can use the AMP Optimizer tool to automatically perform these optimizations on your own origin.
 [/tip]
 
-### Preload hero images
+### Preload hero images <a name="preload-hero-images"></a>
 
-[AMP HTML uses its own image element: `amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) (/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
+[AMP HTML uses its own image element: `amp-img`](../../../documentation/components/reference/amp-img.md) (/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [`amp-img`](../../../documentation/components/reference/amp-img.md) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
 
 [sourcecode:html]
 <head>
@@ -129,7 +130,7 @@ The good thing is that `link rel=preload` also supports media queries. So we can
     media="(min-width: 416px)">
 [/sourcecode]
 
-By the way, the same approach works for `[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}})` poster images:
+By the way, the same approach works for `[`amp-video`](../../../documentation/components/reference/amp-video.md)` poster images:
 
 [sourcecode:html]
 <link rel="preload" href="/images/poster.jpg" as="image">
@@ -159,7 +160,7 @@ Now that all [major browsers support service workers](https://caniuse.com/#feat=
 
 There are two different architectural patterns that we know will work for reliably fast navigations:
 
-*   For single-page applications: the App Shell model (in the AMP context referred to as [AMP-in-PWA]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md', locale=doc.locale).url.path}})). This pattern requires a service worker to upgrade an AMP document to the app-shell-based PWA experience.
+*   For single-page applications: the App Shell model (in the AMP context referred to as [AMP-in-PWA](../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)). This pattern requires a service worker to upgrade an AMP document to the app-shell-based PWA experience.
 *   For multi-page-applications: [streaming composite resources](https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading#streaming_composite_responses). A service worker caches the static header and footer and uses streaming to instantly return a cached, partial response while loading the content.
 
 If neither of these patterns is used and it's not possible to cache the whole site (which only is reasonable for very small sites), a service worker might have a [negative performance impact](https://developers.google.com/web/updates/2017/02/navigation-preload). The best thing in this case is to **not** use a service worker.
@@ -168,7 +169,7 @@ However, if you want your website to be [installable from the home screen](https
 
 If your AMP website uses a service worker, here are some best practices:
 
-*   Pre-cache the [AMP runtime]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}}#amp-runtime) and extensions (e.g. [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})).
+*   Pre-cache the [AMP runtime](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#amp-runtime) and extensions (e.g. [`amp-carousel`](../../../documentation/components/reference/amp-carousel.md)).
 *   Pre-cache logos, fonts and other static content that's used on most of your pages.
 *   Serve logos, fonts and images by using a [cache-first strategy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#cache-falling-back-to-network).
 *   Serve the AMP runtime and extensions by using a [stale-while-revalidate](https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook/#stale-while-revalidate) strategy.
@@ -190,11 +191,11 @@ The consequence is that an AMP page served from your own origin does not benefit
 In Safari, there is a key difference to how service workers are implemented -- it's not possible in Safari to install a service worker for your origin, if the page is served from an AMP cache.
 [/tip]
 
-### Optimize custom fonts
+### Optimize custom fonts <a name="optimize-custom-fonts"></a>
 
 With AMP there are a few things that you can do to optimize your font loading ([most of them are actually not specific to AMP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)):
 
-*   If possible, use [`amp-font` with timeout set to 0]({{g.doc('/content/amp-dev/documentation/components/reference/amp-font.md', locale=doc.locale).url.path}}#timeout) (this will only use the font if it's already in the cache). Fall back to the system font if your custom font has not been loaded yet. This is a similar behavior to [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display).
+*   If possible, use [font-display: optional](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display): This will only use the font if it's already in the cache, and falls back to the system font if your custom font has not been loaded yet.
 *   Optimize your web fonts (for example, serve custom fonts using WOFF2).
 *   Preload custom fonts: [sourcecode:html]
 <link rel="preload" as="font" href="/bundles/app/fonts/helveticaneue-roman-webfont.woff2" >[/sourcecode]
@@ -204,17 +205,13 @@ With AMP there are a few things that you can do to optimize your font loading ([
 
 Last but not least, try to minimize the number of custom fonts that you use on your page. If you can, use the system fonts instead of custom fonts because system fonts make your website match the user's operating system, and it helps to avoid loading more resources.
 
-### Server-Side Rendering
+### Server-Side Rendering <a name="server-side-rendering"></a>
 
-[Server-side-rendering](https://docs.google.com/document/d/1gViU1hxtGXwMSTNnum2zY_p9ZWvFwMKoachNdIRUgh0/edit) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
-
-[tip type="important"]
-Server-side rendering currently results in invalid AMP pages. Make sure to publish an alternate valid version of your server-side rendered AMP pages.
-[/tip]
+[Server-side-rendering](server-side-rendering.md) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
 
 If you're interested in using server-side-rendering, check out the [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) tool.  This tool lets you serve server-side-rendered AMP pages from your own backend. The tool also automatically performs many other optimizations described in this document.
 
-### Basic optimizations
+### Basic optimizations <a name="basic-optimizations"></a>
 
 Of course, all the basics of web performance optimizations also apply to AMP pages:
 

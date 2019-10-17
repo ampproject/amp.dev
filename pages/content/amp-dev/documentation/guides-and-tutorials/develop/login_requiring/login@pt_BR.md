@@ -4,7 +4,7 @@ $title: Login
 
 Na primeira vez em que chegar na página, você verá dois comentários e um botão de login.
 
-<amp-img src="/static/img/login-button.png" alt="Botão de login" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="Botão de login" height="290" width="300"></amp-img>
 
 Se procurar pelo botão de login no código, você verá o seguinte:
 
@@ -15,7 +15,7 @@ Se procurar pelo botão de login no código, você verá o seguinte:
 </span>
 [/sourcecode]
 
-O comportamento de atributos relacionados a [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) dependem de uma configuração em toda a página de [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}). Neste caso, a seguinte:
+O comportamento de atributos relacionados a [`amp-access`](../../../../documentation/components/reference/amp-access.md) dependem de uma configuração em toda a página de [`amp-access`](../../../../documentation/components/reference/amp-access.md). Neste caso, a seguinte:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -53,7 +53,7 @@ A página de login não é AMP e, para simplificar o processo, é onde preenchem
 
 No exemplo abaixo, o valor do parâmetro `return` é adicionado à solicitação assim que você clica no botão de login. Explore esse valor usando o console do Chrome DevTools e acessando a guia "Rede".
 
-<amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
 Quando o servidor AMPByExample receber a solicitação POST da página de login, e o login e a senha estiverem corretos, ele redirecionará a solicitação para o `returnURL` mencionado acima e anexará o parâmetro `#success=true`. Depois disso, o tempo de execução de AMP pode autorizar a página e, por fim, permitir que você adicione um comentário.
 
@@ -65,4 +65,4 @@ Veja abaixo um breve resumo:
 - O tempo de execução de AMP fecha a página de login e faz o redirecionamento para a página especificada pelo parâmetro do URL de retorno.
 - O servidor deve coordenar a resposta assim que o usuário clicar no botão de login.
 
-Dica: Veja uma explicação detalhada sobre esse fluxo na [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
+Dica: Veja uma explicação detalhada sobre esse fluxo na [`amp-access`](../../../../documentation/components/reference/amp-access.md).

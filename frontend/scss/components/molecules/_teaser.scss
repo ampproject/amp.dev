@@ -25,7 +25,6 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	position: relative;
 	margin: 0 20px 2em 0;
 	flex: 1 0 15em;
-	scroll-snap-align: start;
 
 	@media (min-width: 575px) {
 		margin: 0 0 2em;
@@ -49,6 +48,14 @@ teaser types. (Success Stories, Templates, Guides and Tutorials, Examples, ...)
 	z-index: 1;
   border-radius: 15px;
 	font-family: 'Poppins';
+}
+
+@mixin teaser-tag-zero {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 0;
+	z-index: 1;
 }
 
 @mixin teaser-card {

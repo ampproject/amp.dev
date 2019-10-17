@@ -1,0 +1,120 @@
+{# Set needed data for all meta tags #}
+{% set description = doc.description or (doc.teaser.text if doc.teaser else None) %}
+{# Mark the description as safe if it is SSR #}
+{% if description and '[=' in description %}
+{% set description = description|safe %}
+{% endif %}
+
+{% set title = doc.title|string %}
+{# Mark the title as safe if it is SSR #}
+{% if title and '[=' in title %}
+{% set title = title|safe %}
+{% endif %}
+{% if title.startswith('amp-') and not '_' in title and not ' ' in title %}
+{% set title = '<' + title + '>' %}
+{% endif %}
+
+
+{% set base_url = podspec.base_urls.platform %}
+{% set canonical = doc.url %}
+
+{# Alter sharing image and title prefix based on template and/or maintained data #}
+{% if doc.sharing_images %}
+{% set sharing_images = doc.sharing_images %}
+{% elif '/components/' in doc.pod_path %}
+{% set sharing_images = {
+  'square': '/static/img/sharing/docs-component-1x1.png',
+  'wide': '/static/img/sharing/docs-component-600x314.png',
+} %}
+{% elif '/examples/' in doc.pod_path %}
+{% set sharing_images = {
+  'square': '/static/img/sharing/docs-example-1x1.png',
+  'wide': '/static/img/sharing/docs-example-600x314.png',
+} %}
+{% elif '/guides-and-tutorials/' in doc.pod_path %}
+{% set sharing_images = {
+  'square': '/static/img/sharing/docs-guide-1x1.png',
+  'wide': '/static/img/sharing/docs-guide-600x314.png',
+} %}
+{% elif '/courses/' in doc.pod_path %}
+{% set sharing_images = {
+  'square': '/static/img/sharing/docs-courses-1x1.png',
+  'wide': '/static/img/sharing/docs-courses-600x314.png',
+} %}
+{% else %}
+{% set sharing_images = {
+  'square': '/static/img/sharing/default-1x1.png',
+  'wide': '/static/img/sharing/default-600x314.png',
+} %}
+{% endif %}
+
+{# Prefix title with section #}
+{% set title_prefix = '' %}
+{% if doc.pod_path.startswith('/content/amp-dev/documentation/examples/documentation/') %}
+{% set title_prefix = _('Example: ') %}
+{% elif doc.pod_path.startswith('/content/amp-dev/documentation/examples/previews/') %}
+{% set title_prefix = _('Demo: ') %}
+{% elif doc.pod_path.startswith('/content/amp-dev/documentation/components/reference/') %}
+{% set title_prefix = _('Documentation: ') %}
+{% elif doc.pod_path.startswith('/content/amp-dev/about/success-stories/') and not 'index.html' in doc.pod_path %}
+{% set title_prefix = _('Success Story: ') %}
+{% endif %}
+
+<title>{{ title_prefix }}{{ title }} - amp.dev</title>
+
+{% if description %}
+<meta name="description" content="{{ description }}">
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Webpage",
+  "url": "{{ canonical}} ",
+  "name": "amp.dev",
+  "headline":"{{ title_prefix }}{{ title }}",
+  {% if description %}
+  "description":"{{ description }}",
+  {% endif %}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ base_url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AMP Project",
+    "logo": {
+        "url": "{{ base_url }}/static/img/icons/icon-512x512.png",
+        "width": 512,
+        "height": 512,
+        "@type": "ImageObject"
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{{ base_url }}{{ sharing_images.wide }}",
+    "width": 600,
+    "height": 314
+  }
+}
+</script>
+
+<meta name="twitter:card" content="summary_large_image">
+{% if description %}
+<meta name="twitter:description" content="{{ description }}">
+{% endif %}
+<meta name="twitter:title" content="{{ title_prefix }}{{ title }}">
+<meta name="twitter:creator" content="@ampproject">
+<meta name="twitter:site" content="@ampproject">
+<meta name="twitter:image" content="{{ base_url }}{{ sharing_images.wide }}">
+
+<meta property="og:title" content="{{ title_prefix }}{{ title }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ base_url }}{{ sharing_images.wide }}">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="314">
+
+{# meta tags for amp.dev search filtering #}
+{% set supported_formats = ','.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
+<meta name="supported-amp-formats" content="{{supported_formats}}">
+<meta name="page-locale" content="{{doc.pod.amp_dev.get_represented_locales(doc)}}">

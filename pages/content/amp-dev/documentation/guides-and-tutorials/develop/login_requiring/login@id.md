@@ -4,7 +4,7 @@ $title: Login
 
 Saat pertama kali membuka halaman, Anda dapat melihat 2 komentar dan sebuah tombol login.
 
-<amp-img src="/static/img/login-button.png" alt="Login button" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
 Jika mencari tombol login di kode, Anda akan menemukan:
 
@@ -15,7 +15,7 @@ Jika mencari tombol login di kode, Anda akan menemukan:
 </span>
 [/sourcecode]
 
-Perilaku atribut yang terkait dengan [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) bergantung pada konfigurasi di seluruh halaman untuk [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}), dalam kasus ini, adalah contoh berikut:
+Perilaku atribut yang terkait dengan [`amp-access`](../../../../documentation/components/reference/amp-access.md) bergantung pada konfigurasi di seluruh halaman untuk [`amp-access`](../../../../documentation/components/reference/amp-access.md), dalam kasus ini, adalah contoh berikut:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -53,7 +53,7 @@ Halaman login merupakan halaman non-AMP tempat kita mengisi nilai login dan sand
 
 Dalam contoh di bawah ini, nilai untuk parameter `return` ditambahkan ke permintaan setelah Anda mengklik tombol login. Anda dapat mempelajari nilai ini menggunakan konsol Chrome DevTools dan mengunjungi tab Jaringan.
 
-<amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
 Setelah server AMPByExample menerima permintaan POST dari halaman login dan login serta sandi benar, server mengalihkan permintaan ke `returnURL` yang telah disebutkan di atas, dan menambahkan parameter `#success=true`. Waktu proses AMP kini dapat mengotorisasi halaman dan akhirnya mengizinkan Anda menambahkan komentar.
 
@@ -66,5 +66,5 @@ Sebagai rangkuman singkat:
 - Server harus mengatur respons setelah pengguna mengklik tombol login
 
 [tip type="tip"]
-**TIP –** Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}).
+**TIP –** Penjelasan lebih detail tentang alur ini juga dapat ditemukan di [`amp-access`](../../../../documentation/components/reference/amp-access.md).
 [/tip]

@@ -1,0 +1,425 @@
+creation:
+  - name: Adobe Animate
+    official: true
+    description: Allows the creation of rich, eye-catching marketing content with Adobe Animate.
+    url: https://www.adobeexchange.com/creativecloud.details.101647.amphtml-ad.html
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/adobe_animate.jpg
+      width: 700
+      height: 506
+    formats:
+      - ads
+  - name: Stripo Email Editor
+    url: https://stripo.email/amp-support/
+    type: Email Templates Editor
+    description: Create interactive email templates fast with Drag-n-Drop & HTML editor. Try free library of ready-to-use modules and templates.
+    image:
+      src: /static/img/tools/stripo.png
+      width: 442
+      height: 184
+      fit: contain
+    formats:
+      - email
+  - name: Bannersnack
+    description: Create AMPHTML-valid and ready to be published individual designs or full sets of static or animated marketing visuals, within minutes.
+    url: https://www.bannersnack.com/amp-ads.html
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/bannersnack.png
+      width: 700
+      height: 549
+    formats:
+      - ads
+  - name: Onlymega
+    description: Online AMPHTML banner maker which allows you to easily create AMP ads without prior coding knowledge.
+    url: https://onlymega.com/amphtml-banner-maker/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/onlymega.png
+      width: 700
+      height: 549
+    formats:
+      - ads
+  - name: AMP Stories for WordPress (Beta)
+    official: true
+    description: The AMP for WordPress plugin now comes with a fully integrated story editor.
+    url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/amp_stories_for_wordpress.jpg
+      width: 700
+      height: 402
+    formats:
+      - stories
+  - name: Google Web Designer
+    description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
+    url: https://support.google.com/webdesigner/answer/7529856?hl=en
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/google_web_designer.jpg
+      width: 700
+      height: 549
+    formats:
+      - ads
+  - name: Instapage
+    description: Instapage automates the creation, optimization, and personalization of post-click experiences at scale.
+    url: https://instapage.com
+    type: Landing pages
+    image:
+      src: /static/img/tools/instapage.svg
+      width: 598
+      height: 124
+      fit: contain
+    formats:
+      - websites
+  - name: MakeStories
+    description: WYSIWYG drag and drop editor with templates, illustrations, icons, and the ability to upload your own images and videos.
+    url: https://makestories.io/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/makestories.jpg
+      width: 701
+      height: 393
+    formats:
+      - stories
+  - name: Newsroom AI
+    description: Newsroom Studio helps you create engaging, instant loading mobile experiences.
+    url: https://www.nws.ai/
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/newsroom.png
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Unbounce
+    description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
+    url: https://unbounce.com
+    type: Landing pages
+    image:
+      src: /static/img/tools/unbounce.svg
+      width: 1162
+      height: 442
+      fit: contain
+      bgcolor: "#004e73"
+    formats:
+      - websites
+platforms:
+  - name: AMP for WordPress
+    official: true
+    type: CMS
+    description: AMP-first content creation with the power and flexibility of WordPress.
+    url: https://amp-wp.org/
+    image:
+      src: /static/img/tools/amp_for_wordpress.jpg
+      width: 700
+      height: 499
+    formats:
+      - websites
+      - stories
+  - name: Bold by Quintype
+    type: CMS
+    description: Bold by Quintype is a headless CMS built for enterprise publishers with built-in support for AMP.
+    url: https://www.quintype.com
+    image:
+      src: /static/img/tools/quintype.png
+      width: 800
+      height: 400
+    formats:
+      - websites
+  - name: Google Search Console
+    type: Debugging
+    description: Helps you measure your site's Search traffic and performance, fix issues, and make your site shine in Google Search results.
+    url: https://search.google.com/search-console/about
+    image:
+      src: /static/img/tools/search_console.jpg
+      width: 700
+      height: 407
+    formats:
+      - websites
+      - stories
+  - name: Google AMP Test
+    description: Test if and how your AMP page appears in Google Search.
+    url: https://search.google.com/test/amp
+    type: Testing
+    image:
+      src: /static/img/tools/google_amp_test.jpg
+      width: 925
+      height: 582
+    formats:
+      - websites
+      - stories
+  - name: Jumprope
+    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
+    url: https://www.jumprope.com/
+    type: Content Platform
+    image:
+      src: /static/img/tools/jumprope.jpg
+      width: 1500
+      height: 1000
+    formats:
+      - stories
+  - name: Tick. Done.
+    description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
+    url: http://tick.co/
+    type: Content Platform
+    image:
+      src: /static/img/tools/amp-story-tick.jpg
+      width: 700
+      height: 407
+    formats:
+      - stories
+developer:
+  - name: AMP Validator
+    official: true
+    type: Essential
+    description: Essential component for AMP development and available in a variety of versions.
+    url: /documentation/guides-and-tutorials/learn/validation-workflow/validate_amp
+    image:
+      src: /static/img/docs/tools/ampvalidator.jpg
+      width: 782
+      height: 578
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
+  - name: Experiment Configurator
+    official: true
+    type: Essential
+    description: Beta-test new features of AMP before they're available for everyone.
+    url: https://cdn.ampproject.org/experiments.html
+    image:
+      src: /static/img/docs/tools/ampexperiments.jpg
+      width: 10
+      height: 7
+    formats:
+      - websites
+      - ads
+      - stories
+  - name: AMP Tag Test
+    official: true
+    type: Analytics
+    description: Helps you find out whether your Google Analytics and AdWords tracking is correctly set up.
+    url: https://amptagtest.appspot.com/
+    image:
+      src: /static/img/tools/placeholder.jpg
+      width: 5
+      height: 3
+    formats:
+      - websites
+  - name: AMP Toolbox
+    official: true
+    type: Optimization
+    description: A collection of AMP tools making it easier to publish and host AMP pages.
+    url: https://github.com/ampproject/amp-toolbox
+    image:
+      src: /static/img/tools/amp_toolbox.jpg
+      width: 700
+      height: 527
+    formats:
+      - websites
+  - name: AMP Bench
+    official: true
+    type: Debugging
+    description: Validation tool that offers additional debug information on top of the AMP validator.
+    url: https://ampbench.appspot.com
+    image:
+      src: /static/img/tools/ampbench.jpg
+      width: 5
+      height: 3
+    formats:
+      - websites
+  - name: AMP Insights
+    official: true
+    type: Debugging
+    description: Pre-built Google Analytics dashboard template that helps you get to your analytics insights faster.
+    url: http://bit.ly/amp-insights
+    image:
+      src: /static/img/tools/amp-insights.jpg
+      width: 700
+      height: 386
+    formats:
+      - websites
+  - name: AMP Readiness
+    official: true
+    type: Debugging
+    description: Chrome extension that helps you understand the feasibility of converting your site to AMP.
+    url: https://chrome.google.com/webstore/detail/amp-readiness-tool/fadclbipdhchagpdkjfcpippejnekimg?hl=en
+    image:
+      src: /static/img/tools/readiness.jpg
+      width: 5
+      height: 3
+    formats:
+      - websites
+  - name: AMP Boilerplate Generator
+    official: true
+    type: Development
+    description: Generate custom templates for your AMP websites, stories, emails or ads.
+    url: https://amp.dev/boilerplate/
+    image:
+      src: /static/img/docs/tools/ampboilerplate.png
+      width: 1280
+      height: 706
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
+  - name: AMP Playground
+    official: true
+    type: Development
+    description: Start prototyping in an interactive online editor with the ability to use templates and our examples.
+    url: https://playground.amp.dev/
+    image:
+      src: /static/img/docs/tools/ampplayground.jpg
+      width: 1280
+      height: 711
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
+  - name: AMP Prototyper
+    official: true
+    type: Development
+    description: A prototyping tool that automatically converts a HTML page to AMP for demonstrating performance gains with AMP.
+    url: https://github.com/jonchenn/amp-prototyper
+    image:
+      src: /static/img/tools/amp-prototyper.jpg
+      width: 700
+      height: 471
+    formats:
+      - websites
+  - name: Litmus
+    url: https://litmus.com/
+    type: Development
+    description: Litmus makes it easy to build, test, and monitor every email for the best results.
+    image:
+      src: /static/img/tools/litmus.png
+      width: 1223
+      height: 450
+      fit: contain
+    formats:
+      - email
+  - name: VS Code Extension
+    official: true
+    type: Development
+    description: Makes authoring AMP easy by validating for errors/warnings as you type within VS Code.
+    url: https://marketplace.visualstudio.com/items?itemName=amphtml.amphtml-validator
+    image:
+      src: /static/img/docs/tools/visualstudiocode.jpg
+      width: 2670
+      height: 1849
+    formats:
+      - websites
+      - email
+      - ads
+      - stories
+  - name: React Storefront
+    type: Development
+    description: React framework that generates AMP and PWA pages from a single codebase.
+    url: https://pwa.moovweb.com
+    image:
+      src: /static/img/tools/react-storefront.png
+      width: 1125
+      height: 1303
+    formats:
+      - websites
+  - name: AMP Story Ad Preview Tool
+    official: true
+    type: Development
+    description: A tool to help for prototyping ads to be served in AMP Stories. Choose from pre-existing templates to get started.
+    url: https://ampstoryads.web.app
+    image:
+      src: /static/img/tools/amp-story-ad-preview.jpg
+      width: 1024
+      height: 831
+    formats:
+      - ads
+      - stories
+providers:
+  - name: Amazon Simple Email Service (SES)
+    url: https://aws.amazon.com/ses/
+    type: Email Service
+    description: Cloud-based email sending service designed to help digital marketers and application developers send emails.
+    formats:
+      - email
+  - name: AWeber
+    url: https://www.aweber.com/
+    type: Email Service
+    description: Aweber's platform and API allows you to create and send emails your customers will love.
+    image:
+      src: /static/img/tools/aweber.png
+      width: 335
+      height: 70
+      fit: contain
+    formats:
+      - email
+  - name: Pepipost
+    url: https://pepipost.com/
+    type: Email Service
+    description: Pepipost is an innovative transactional email solution that offers you with a streamlined user experience that you only get from high-end premium software. The software is designed to ensure that your emails are sent to your recipients' inbox and not get mixed and lost in spam and other folders.
+    image:
+      src: /static/img/tools/pepipost.jpg
+      width: 600
+      height: 315
+      fit: contain
+    formats:
+      - email
+  - name: Sparkpost
+    url: https://www.sparkpost.com/
+    type: Email Service
+    description: Delivery and Analytics for Better Email Performance.
+    image:
+      src: /static/img/tools/sparkpost.png
+      width: 1034
+      height: 269
+      fit: contain
+    formats:
+      - email
+  - name: Twilio Sendgrid
+    url: https://www.twilio.com/sendgrid
+    type: Email Service
+    description: Reach customers using a flexible email API and marketing tools to increase customer engagement.
+    image:
+      src: /static/img/tools/sendgrid.png
+      width: 348
+      height: 148
+      fit: contain
+    formats:
+      - email
+  - name: Mailgun
+    url: https://www.mailgun.com/
+    type: Email Service
+    description: Mailgun's leading API-based email delivery service allows you to send dynamic email effortlessly.
+    image:
+      src: /static/img/tools/mailgun.png
+      width: 2430
+      height: 672
+      fit: contain
+    formats:
+      - email
+  - name: Clang
+    url: https://www.e-village.com/clang/
+    type: Email Service
+    description: Clang is a complete omnichannel marketing platform for email marketing and marketing automation.
+    image:
+      src: /static/img/tools/clang.png
+      width: 254
+      height: 255
+      fit: contain
+    formats:
+      - email
+  - name: Maileon
+    url: https://www.maileon.com
+    type: Email Service
+    description: Effective Newsletter Software for more conversions and revenue
+    image:
+      src: /static/img/tools/maileon.png
+      width: 1600
+      height: 465
+      fit: contain
+    formats:
+      - email

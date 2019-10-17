@@ -35,7 +35,10 @@ function relative(base, relativePath) {
  * @return {String}
  */
 function pagePath(relativePath) {
-  return path.join(paths.GROW_BUILD_DEST, relativePath);
+  if (!relativePath) {
+    return paths.PAGES_DEST;
+  }
+  return path.join(paths.PAGES_DEST, relativePath);
 }
 
 /**
@@ -43,14 +46,29 @@ function pagePath(relativePath) {
  * @type {Object}
  */
 const paths = {
-  'ROOT': absolute('.'),
-  'CSS': absolute('pages/css'),
-  'GROW_BUILD_DEST': absolute('platform/pages'),
+  ROOT: absolute('.'),
+  BUILD: absolute('build'),
+  DIST: absolute('dist'),
+  ICONS: absolute('frontend/icons'),
+  TEMPLATES: absolute('templates'),
+  FRONTEND_TEMPLATES: absolute('frontend/templates'),
+  SCSS: absolute('frontend/scss'),
+  CSS: absolute('pages/css'),
+  GROW_POD: absolute('pages'),
+  GROW_BUILD_DEST: absolute('build/pages'),
+  PAGES_DEST: absolute('dist/pages'),
+  INLINE_EXAMPLES_DEST: absolute('dist/inline-examples'),
+  PAGES_SRC: absolute('pages/content/amp-dev'),
+  STATICS_DEST: absolute('dist/static'),
+  BUILD_INFO: absolute('platform/config/build-info.yaml'),
 };
 
+paths.FORMAT_COMPONENT_MAPPING =
+    path.join(paths.STATICS_DEST, 'files', 'format-component-mapping.json');
+
 module.exports = {
-  'absolute': absolute,
-  'relative': relative,
-  'pagePath': pagePath,
-  'paths': paths,
+  absolute,
+  relative,
+  pagePath,
+  paths,
 };

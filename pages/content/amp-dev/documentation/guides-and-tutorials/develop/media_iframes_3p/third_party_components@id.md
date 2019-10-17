@@ -7,7 +7,7 @@ Pelajari cara menyertakan komponen pihak ketiga di laman.
 ## Menyematkan Tweet
 
 Sematkan Tweet Twitter di laman
-menggunakan elemen [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
+menggunakan elemen [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md).
 
 Untuk menyertakan tweet di laman,
 sertakan dahulu skrip berikut di `<head>`:
@@ -22,26 +22,24 @@ namun tindakan ini dapat menghasilkan tampilan yang kurang ideal.
 Sesuaikan lebar dan tinggi yang diberikan secara manual atau gunakan atribut media
 untuk memilih rasio aspek berdasarkan lebar layar.
 
-<!-- embedded twitter example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
+```html
+<amp-twitter width="500"
+  height="583"
+  layout="responsive"
+  data-tweetid="638793490521001985">
+</amp-twitter>
+```
+[/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/components/amp-twitter.html', locale=doc.locale).url.path}}).
+**TIP –** Lihat lebih banyak contoh [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-twitter.html).
 [/tip]
 
 ## Menyematkan Instagram
 
 Sematkan Instagram di laman
-menggunakan elemen [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}})
+menggunakan elemen [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md)
 
 Untuk menyertakan Instagram,
 sertakan dahulu skrip berikut di `<head>`:
@@ -56,26 +54,24 @@ Misalnya, pada `https://instagram.com/p/fBwFP`,
 Instagram juga menggunakan rasio aspek tetap untuk tata letak responsif,
 sehingga nilai lebar dan tinggi harus universal
 
-<!-- embedded Instagram example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
+```html
+<amp-instagram data-shortcode="fBwFP"
+  width="320"
+  height="392"
+  layout="responsive">
+</amp-instagram>
+```
+[/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/components/amp-instagram.html', locale=doc.locale).url.path}}).
+**TIP –** Lihat lebih banyak contoh [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-instagram.html).
 [/tip]
 
 ## Menampilkan pos atau video Facebook
 
 Tampilkan pos atau video Facebook di laman
-menggunakan elemen [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).
+menggunakan elemen [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md).
 
 Anda harus menyertakan skrip berikut di `<head>`:
 
@@ -116,13 +112,13 @@ Pratinjau:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/components/amp-facebook.html', locale=doc.locale).url.path}}).
+**TIP –** Lihat lebih banyak contoh [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-facebook.html).
 [/tip]
 
 ## Menyertakan video youtube
 
 Sertakan video youtube di laman
-menggunakan elemen [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
+menggunakan elemen [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md).
 
 Anda harus menyertakan skrip berikut di `<head>`:
 
@@ -136,26 +132,24 @@ Misalnya, pada `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
 
 Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk video dengan rasio aspek 16:9:
 
-<!-- embedded youtube example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) di [AMP Menurut Contoh]({{g.doc('/content/amp-dev/documentation/examples/components/amp-youtube.html', locale=doc.locale).url.path}}).
+**TIP –** Lihat lebih banyak contoh [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-youtube.html).
 [/tip]
 
 ## Menampilkan iklan
 
 Tampilkan iklan di laman
-menggunakan elemen [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
+menggunakan elemen [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
 Hanya iklan yang ditayangkan melalui HTTPS yang didukung.
 
 Tidak ada JavaScript yang disediakan jaringan iklan yang diizinkan untuk berjalan di dalam dokumen AMP.
@@ -167,34 +161,37 @@ Anda harus menentukan lebar, tinggi, dan jenis jaringan iklan.
 `type` mengidentifikasi template jaringan iklan.
 Jenis iklan yang berbeda membutuhkan atribut `data-*` yang berbeda.
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="212"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+</amp-ad>
+```
+[/example]
 
 Jika didukung oleh jaringan iklan,
 sertakan `placeholder`
 untuk ditampilkan jika tidak ada iklan yang tersedia:
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="232"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  <div placeholder>Have a great day!</div>
+</amp-ad>
+```
+[/example]
 
-AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).
+AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md', locale=doc.locale).url.path}}) guide.
+Baca lebih lanjut: Pelajari lebih lanjut tentang iklan di panduan [Menayangkan Iklan di AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) guide.

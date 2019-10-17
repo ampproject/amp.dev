@@ -1,0 +1,11 @@
+{
+	"items": [
+		{
+			"name": "Sprocket Set",
+			"description": "Steel, designed for long lasting stability.",
+			"price": 581,
+			"image": "/img/e-commerce/product/product-1.jpg",
+			"category": "bikes"
+		}
+	]
+}

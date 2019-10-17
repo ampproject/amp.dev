@@ -94,11 +94,11 @@ $title: スターター コードを確認する
 </html>
 ```
 
-これは、[AMP 検証]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})と [schema.org](http://schema.org/) の構造化データ検証の両方を渡す、単純な AMP ページです。ニュースのウェブサイトにこのページを掲載した場合、ユーザーは検索エンジンの結果ページのリッチ エクスペリエンス（Google 検索のトップニュース カルーセルなど）からこのページを見つけることができます。
+これは、[AMP 検証](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)と [schema.org](http://schema.org/) の構造化データ検証の両方を渡す、単純な AMP ページです。ニュースのウェブサイトにこのページを掲載した場合、ユーザーは検索エンジンの結果ページのリッチ エクスペリエンス（Google 検索のトップニュース カルーセルなど）からこのページを見つけることができます。
 
 ## AMP 検証ツールを有効にする
 
-ページを変更する前に、有効な AMP HTML を扱っていることがわかるように、[AMP 検証ツール]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})を有効にしましょう。URL に次のフラグメント識別子を**追加**します。
+ページを変更する前に、有効な AMP HTML を扱っていることがわかるように、[AMP 検証ツール](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)を有効にしましょう。URL に次のフラグメント識別子を**追加**します。
 
 ```text
 #development=1
@@ -120,7 +120,7 @@ AMP ページを検証するには、他のツールも使用できます。次�
 - [AMP 検証ツール ウェブ インターフェース](https://validator.ampproject.org/)
 その他
 
-詳しくは、[AMP ページを検証する]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})のガイドをご覧ください。
+詳しくは、[AMP ページを検証する](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)のガイドをご覧ください。
 [/tip]
 
 {{ image('/static/img/docs/tutorials/tut-advanced-start-nexus5.png', 428, 801, align='right third', caption='Nexus 5X 端末でのシミュレーション') }}

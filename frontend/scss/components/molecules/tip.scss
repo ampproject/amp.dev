@@ -50,26 +50,28 @@ $borderSize: 5px;
   padding: $cornerSize/2 ($cornerSize - 10px);
   margin-bottom: 50px;
   background-color: color('white');
-  filter: drop-shadow(0 2px 25px rgba(0, 0, 0, 0.1));
-  
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
+
   code {
     white-space: normal;
   }
 
-  .#{molecule('tip')}-content {
+  &-content {
     h4 {
       @include txt-1;
       margin: 0 0 0.75em;
     }
 
-    p {
-      margin-bottom: 0;
-      @include txt-3;
+    p,
+    ul,
+    ol {
+      @include txt-2;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
-    ul {
-      margin-bottom: 1.5em;
-    }
   }
 
   &-icon {
@@ -128,6 +130,10 @@ $borderSize: 5px;
 
     h4 {
       color: color('red')
+    }
+
+    p {
+      margin-top: 0;
     }
 
     .#{molecule('tip')} {

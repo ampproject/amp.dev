@@ -6,21 +6,21 @@ $title: リモートデータの使用
 
 [tip type="success"]
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) では、その [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#attributes)属性によってリモートデータを取得できます。この属性は CORS エンドポイントから JSON を取得します。こうした取得は、ページの読み込み時に一度行われるもので、（特にキャッシュから配信されるときに）データの鮮度を確保するのに役立ちます。
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) では、その [`src`](../../../../documentation/components/reference/amp-bind.md#attributes)属性によってリモートデータを取得できます。この属性は CORS エンドポイントから JSON を取得します。こうした取得は、ページの読み込み時に一度行われるもので、（特にキャッシュから配信されるときに）データの鮮度を確保するのに役立ちます。
 
-また、[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 要素については、`src` 属性をバインドすることも可能です。つまり、ユーザーの操作により、リモート JSON データが取得されるようにして、該当のページをバインド可能な状態に変えることができます。
+また、[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 要素については、`src` 属性をバインドすることも可能です。つまり、ユーザーの操作により、リモート JSON データが取得されるようにして、該当のページをバインド可能な状態に変えることができます。
 
 [/tip]
 
 ## シャツについて購入可能なサイズの取得
 
-ここに用意した例で、リモートデータ取得機能を利用して SKU の価格を調べてみましょう。使用する Express.js 開発用サーバーでは、`app.js` にすでにエンドポイント `/shirts/sizes?shirt=<sku>` が含まれており、特定のシャツ（shirt）の SKU に関して、購入可能なサイズと各サイズの価格が返されるようになっています。このサーバーは、ネットワーク遅延をシミュレートするために人為的に 1 秒遅らせて応答を送信します。
+ここに用意した例で、リモートデータ取得機能を利用して SKU の価格を調べてみましょう。使用する Express.js 開発用サーバーでは、`app.js` にすでにエンドポイント `/shirts/sizesAndPrices?shirt=<sku>` が含まれており、特定のシャツ（shirt）の SKU に関して、購入可能なサイズと各サイズの価格が返されるようになっています。このサーバーは、ネットワーク遅延をシミュレートするために人為的に 1 秒遅らせて応答を送信します。
 
 |  リクエスト                              |  応答 |
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 要素内の JSON データと同様に、こうした取得から返されるリモートデータは、その要素の `id` 属性の下に統合されて利用可能となります。たとえば、上記の例の応答から返されたデータは、次のような式でアクセスできます。
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 要素内の JSON データと同様に、こうした取得から返されるリモートデータは、その要素の `id` 属性の下に統合されて利用可能となります。たとえば、上記の例の応答から返されたデータは、次のような式でアクセスできます。
 
 |  式                  |  結果 |
 |------------------------------|---------|
@@ -38,7 +38,7 @@ $title: リモートデータの使用
 
 ### 購入できないサイズを示す
 
-次に、特定の SKU について購入できないサイズを明示しましょう。`"unavailable"` CSS クラスは、要素に斜線を追加します。これは、購入できないサイズに対応する `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` 内の要素に追加することが可能です。
+次に、特定の SKU について購入できないサイズを明示しましょう。`"unavailable"` CSS クラスは、要素に斜線を追加します。これは、購入できないサイズに対応する [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 内の要素に追加することが可能です。
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ $title: リモートデータの使用
 
 ### 初期状態を指定する
 
-しかし、小さな問題が 1 つあります。たとえば、黒のシャツを、デフォルトで選択された色とする場合はどうでしょうか。黒のシャツのサイズと価格のデータを `amp-state#shirts` に追加することが必要となります。これは、明示的なユーザー操作に対してのみ [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) が実行されるためです。
+しかし、小さな問題が 1 つあります。たとえば、黒のシャツを、デフォルトで選択された色とする場合はどうでしょうか。黒のシャツのサイズと価格のデータを `amp-state#shirts` に追加することが必要となります。これは、明示的なユーザー操作に対してのみ [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) が実行されるためです。
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ $title: リモートデータの使用
 </amp-selector>
 ```
 
-メモ: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) は、明示的なユーザー操作に対してのみ実行され、ページの読み込み時には実行されません。そのため、[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) の使用に関係なく、最初のページの読み込みを常に速くすることができます。
+メモ: [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) は、明示的なユーザー操作に対してのみ実行され、ページの読み込み時には実行されません。そのため、[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) の使用に関係なく、最初のページの読み込みを常に速くすることができます。
 
 ## 変化するシャツの価格
 
 購入可能なサイズが正しく表示されるようになったので、価格も正確に表示できるようにしましょう。
 
-この AMPPAREL ストアでは、シャツの価格は、色およびサイズの両方によって異なっています。つまり、ユーザーの選んだサイズを追跡するための新しい変数が必要です。新しいアクションをサイズの [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 要素に追加します。
+この AMPPAREL ストアでは、シャツの価格は、色およびサイズの両方によって異なっています。つまり、ユーザーの選んだサイズを追跡するための新しい変数が必要です。新しいアクションをサイズの [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 要素に追加します。
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the

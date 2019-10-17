@@ -12,8 +12,9 @@
   padding: 0 20px;
   margin-left: auto;
   margin-right: auto;
+
   @media (max-width: 767px) {
-    padding: 0 0 0 15px;
+    padding: 0 15px;
   }
 
   @media (min-width: 768px) {
@@ -134,7 +135,7 @@
 
   @media (min-width: 1024px) {
     grid-column: 20 / 25;
-    grid-row: span 2;
+    grid-row: span 3;
     padding-top: 46px;
 
     & ~ .#{utility('content')} {
@@ -151,8 +152,9 @@
   box-shadow: 20px 25px 40px 0 rgba(0,0,0,0.05);
 
   & ~ .#{utility('content')} {
-    box-shadow: -20px 25px 40px 0 rgba(0,0,0,0.05);
+    box-shadow: -30px -5px 30px -20px rgba(0,0,0,0.05);
   }
+
   @media (min-width: 768px) {
     grid-column: 8 / 25;
 
@@ -174,8 +176,9 @@
   @media (min-width: 1024px) {
     background: color('whisper');
     grid-column: 20 / 25;
-    grid-row: span 2;
-    padding-top: 46px;
+    grid-row: span 3;
+    padding-top: 93px;
+    padding-bottom: 25px;
 
     & ~ .#{utility('content')} {
       padding-top: 62px;

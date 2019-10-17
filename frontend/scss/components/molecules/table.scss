@@ -28,19 +28,19 @@ example markup:
 @import '../atoms/_text.scss';
 
 table {
+  table-layout: fixed;
+  width: 100%;
   position: relative;
   border-collapse: collapse;
   padding: 0 0 0 20px;
   margin: 1.5em -20px 2em -20px;
-  max-width: calc(100% + 40px);
   display: block;
-  overflow-x: scroll;
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   @include txt;
   @include txt-2;
 
   @media (min-width: 768px){
-    max-width: 100%;
     padding: 0;
     margin: 1.5em 0 2em;
   }
@@ -74,15 +74,17 @@ tbody {
   }
 
   td {
-    padding: 20px;
+    padding: 10px 20px;
     text-align: left;
+    vertical-align: top;
+    width: 50%;
 
-    @media (orientation: portrait) and (max-width: 575px) {
-      min-width: 40vw;
+    @media (min-width: 768px){
+      padding: 20px;
+    }
 
-      &:last-child {
-        min-width: 80vw;
-      }
+    @media (min-width: 1024px){
+      width: 25%;
     }
 
     code {

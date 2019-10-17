@@ -1,0 +1,88 @@
+{
+  "bookendVersion": "v1.0",
+  "shareProviders": [
+    "email",
+    "twitter",
+    "tumblr",
+    {
+      "provider": "facebook",
+      "app_id": "254325784911610"
+    }
+  ],
+  "components": [
+    {
+      "type": "heading",
+      "text": "Introduction"
+    },
+    {
+      "type": "small",
+      "title": "AMP Story Hello World",
+      "url": "/documentation/examples/introduction/stories_in_amp",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "heading",
+      "text": "Features"
+    },
+    {
+      "type": "small",
+      "title": "Animations",
+      "url": "/documentation/examples/visual-effects/amp_story_animations",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "small",
+      "title": "Layouts",
+      "url": "/documentation/examples/style-layout/amp_story_layouts",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "small",
+      "title": "Media",
+      "url": "/stories/features/media/",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "small",
+      "title": "Supporting desktop and landscape mode",
+      "url": "/documentation/examples/style-layout/desktop_and_landscape_mode_support",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "heading",
+      "text": "Monetization"
+    },
+    {
+      "type": "small",
+      "title": "DoubleClick",
+      "url": "/documentation/examples/advertising-analytics/doubleclick_amp_story_ads",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "small",
+      "title": "Publisher Served",
+      "url": "/documentation/examples/advertising-analytics/publisher_served_amp_story_ads",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "heading",
+      "text": "Visual Effects"
+    },
+    {
+      "type": "small",
+      "title": "Ken Burns",
+      "url": "/documentation/examples/visual-effects/ken_burns",
+      "image": "/favicons/android-chrome-256x256.png"
+    },
+    {
+      "type": "heading",
+      "text": "User Consent"
+    },
+    {
+      "type": "small",
+      "title": "Story User Consent",
+      "url": "/documentation/examples/user-consent/story_user_consent",
+      "image": "/favicons/android-chrome-256x256.png"
+    }
+  ]
+}

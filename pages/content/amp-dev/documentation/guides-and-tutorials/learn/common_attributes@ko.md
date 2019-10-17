@@ -20,7 +20,7 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
+자세한 내용은 [자리표시자 및 대체 동작](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)을 참조하세요.
 
 
 ## heights
@@ -42,11 +42,11 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
+자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md)를 참조하세요.
 
 ## layout
 
-AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지정하는 [레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) 집합을 제공합니다. 요소에 지원되는 레이아웃 값 중 하나와 함께 `layout` 속성을 추가하여 구성요소의 레이아웃을 지정할 수 있습니다. 해당하는 요소에 관한 도움말에서 어떤 값이 지원되는지 확인하세요.
+AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지정하는 [레이아웃](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) 집합을 제공합니다. 요소에 지원되는 레이아웃 값 중 하나와 함께 `layout` 속성을 추가하여 구성요소의 레이아웃을 지정할 수 있습니다. 해당하는 요소에 관한 도움말에서 어떤 값이 지원되는지 확인하세요.
 
 예:
 
@@ -59,9 +59,9 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및 [레이아웃 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) 및 [레이아웃 사양](amp-html-layout/index.md)을 참조하세요.
 
-## media
+## media <a name="media"></a>
 
 모든 AMP 요소는 `media` 속성을 지원합니다. `media` 값은 미디어 쿼리입니다. 쿼리가 일치하지 않으면 요소가 렌더링되지 않고 요소의 리소스를 가져올 수 없으며, 하위 요소의 리소스까지 가져오지 못할 수도 있습니다. 브라우저 창의 크기와 방향이 변경되는 경우 새로운 결과에 따라 미디어 쿼리가 재평가되며 요소가 숨겨지고 표시됩니다.
 
@@ -80,7 +80,7 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries)를 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries)를 참조하세요.
 
 ## noloading
 
@@ -120,7 +120,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-lightbox>
 [/sourcecode]
 
-자세한 내용은 [AMP 작업 및 이벤트]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}})를 참조하세요.
+자세한 내용은 [AMP 작업 및 이벤트](amp-actions-and-events.md)를 참조하세요.
 
 ## placeholder
 
@@ -136,7 +136,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [자리표시자 및 대체 동작]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})을 참조하세요.
+자세한 내용은 [자리표시자 및 대체 동작](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)을 참조하세요.
 
 
 ## sizes
@@ -153,11 +153,11 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})를 참조하세요.
+자세한 내용은 [srcset, sizes, heights를 이용한 미적 이미지 처리](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md)를 참조하세요.
 
 ## width 및 height
 
-일부 [레이아웃]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)의 경우 AMP 구성요소에 정수 픽셀 값이 포함된 `width` 및 `height` 속성이 있어야 합니다.
+일부 [레이아웃](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)의 경우 AMP 구성요소에 정수 픽셀 값이 포함된 `width` 및 `height` 속성이 있어야 합니다.
 
 예:
 
@@ -169,4 +169,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-자세한 내용은 [레이아웃 및 미디어 쿼리]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) 및 [레이아웃 사양]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})을 참조하세요.
+자세한 내용은 [레이아웃 및 미디어 쿼리](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) 및 [레이아웃 사양](amp-html-layout/index.md)을 참조하세요.

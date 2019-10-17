@@ -1,16 +1,24 @@
 ---
 $title: Integrate your ad technologies into AMP
+toc: true
 $order: 3
 formats:
   - ads
 ---
 
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/ads/_integration-guide.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
+
 
 
 If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below.
-To ensure minimum latency and quality, please follow the instructions listed [here](../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to the AMP project, please see [here](../CONTRIBUTING.md).
+To ensure minimum latency and quality, please follow the instructions listed [here](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to AMP, please see [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
 
-## Ad Server
+## Ad Server <a name="ad-server"></a>
 
 *Examples : DFP, A9*
 
@@ -29,11 +37,11 @@ For example : Amazon A9 server can be invoked by using following syntax:
 </amp-ad>
 [/sourcecode]
 
-Note that each of the attributes that follow `type` are dependent on the parameters that the Amazon’s A9 server expects in order to deliver an ad. The [a9.js](./a9.js) file shows you how the parameters are mapped to making a JavaScript call which invokes the A9 server via the `https://c.amazon-adsystem.com/aax2/assoc.js` URL. The corresponding parameters passed by the AMP ad tag are appended to the URL to return an ad.
+Note that each of the attributes that follow `type` are dependent on the parameters that the Amazon’s A9 server expects in order to deliver an ad. The [a9.js](https://github.com/ampproject/amphtml/blob/master/ads/./a9.js) file shows you how the parameters are mapped to making a JavaScript call which invokes the A9 server via the `https://c.amazon-adsystem.com/aax2/assoc.js` URL. The corresponding parameters passed by the AMP ad tag are appended to the URL to return an ad.
 
 For details on how to integrate your ad network with AMP, see [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
-## Supply Side Platform (SSP) or an Ad Exchange
+## Supply Side Platform (SSP) or an Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
 *Examples : Rubicon, Criteo OR Appnexus, Ad-Exchange*
 
@@ -41,7 +49,7 @@ If you are a sell-side platform that wants to get called directly from a publish
 
 More commonly, SSPs work with the publisher to traffick the SSP’s ad tags in their ad server. In this case, ensure that all assets being loaded by your script in the ad server’s creative are being made over HTTPS. There are some restrictions around some ad formats like expandables, so we recommend that you test out the most commonly delivered creative formats with your publishers.
 
-## Ad Agency
+## Ad Agency <a name="ad-agency"></a>
 *Examples : Essence, Omnicom*
 
 Work with your publisher to ensure that the creatives you develop are AMP-compliant. Since all creatives are served into iframes whose size is determined when the ad is called, ensure that your creative doesn't try to modify the size of the iframe.
@@ -49,7 +57,7 @@ Work with your publisher to ensure that the creatives you develop are AMP-compli
 Ensure that all assets that are part of the creative are requested using HTTPS.
 Some ad formats are not fully supported at the moment and we recommend testing the creatives in an AMP environment. Some examples are : Rich Media Expandables, Interstitials, Page Level Ads.
 
-## Video Player
+## Video Player <a name="video-player"></a>
 
 *Examples : Brightcove, Ooyala*
 
@@ -68,7 +76,7 @@ A Brightcove player can be invoked by the following:
 [/sourcecode]
 For instructions on how to develop an amp tag like Brightcove, see  [this pull request](https://github.com/ampproject/amphtml/pull/1052).
 
-## Video Ad Network
+## Video Ad Network <a name="video-ad-network"></a>
 
 *Examples : Tremor, Brightroll*
 
@@ -77,14 +85,14 @@ If you are a video ad network, please work with your publisher to ensure that:
 - All video assets are served over HTTPS
 - The publisher’s video player has AMP support
 
-## Data Management Platform (DMP)
+## Data Management Platform (DMP) <a name="data-management-platform-dmp"></a>
 *Examples : KRUX, Bluekai*
 
-See [how to enhance custom ad configuration](https://www.ampproject.org/docs/reference/components/amp-ad#enhance-incoming-ad-configuration).
+See [how to enhance custom ad configuration](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
 
 You can use a similar approach to enrich the ad call by passing in audience segments that you get from the user cookie into the ad call.
 
-## Viewability Provider
+## Viewability Provider <a name="viewability-provider"></a>
 
 *Examples : MOAT, Integral Ad Science*
 
@@ -94,8 +102,8 @@ For e.g. for MOAT, make sure `http://js.moatads.com` is switched to  `https://z.
 
 Also, see the approach to using the [intersection observer pattern](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
 
-## Content-Recommendation Platform
+## Content-Recommendation Platform <a name="content-recommendation-platform"></a>
 
 *Examples : Taboola, Outbrain*
 
-Useful if you have some piece of JavaScript embeded on the publisher website today but the approach will not work in AMP pages. If you would like to recommend content on an AMP page, we suggest that you use the [`amp-embed` extension](https://www.ampproject.org/docs/reference/components/amp-ad) to request the content details. Please see the [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) example.
+Useful if you have some piece of JavaScript embeded on the publisher website today but the approach will not work in AMP pages. If you would like to recommend content on an AMP page, we suggest that you use the [`amp-embed` extension](https://amp.dev/documentation/components/amp-ad) to request the content details. Please see the [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) example.

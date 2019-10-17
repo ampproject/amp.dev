@@ -4,7 +4,7 @@ $title: 자리표시자 및 대체 콘텐츠
 
 성능 인지와 점진적 개선이라는 관점에서 AMP에 가능한 한 자리표시자와 대체 콘텐츠를 제공하는 것이 좋습니다.
 
-일부 요소는 제한을 완화하여 효과를 얻을 수 있습니다. 예를 들어 [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder)을 제공하는 경우 페이지 상단 근처에서 사용할 수 있습니다(없으면 작동하지 않음)
+일부 요소는 제한을 완화하여 효과를 얻을 수 있습니다. 예를 들어 [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder)을 제공하는 경우 페이지 상단 근처에서 사용할 수 있습니다(없으면 작동하지 않음)
 
 ## 자리표시자
 
@@ -13,17 +13,19 @@ $title: 자리표시자 및 대체 콘텐츠
 지정된 경우 `placeholder` 요소는 AMP 요소의 직접 하위 요소여야 합니다.
 `placeholder`로 표시된 요소는 항상 상위 AMP 요소를 `fill`합니다.
 
-<!--embedded amp-anim responsive example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">전체 코드 표시</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
+```html
+<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  layout="responsive"
+  width="400"
+  height="300">
+  <amp-img placeholder
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    layout="fill">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 기본적으로 AMP 요소의 리소스가 다운로드되거나 초기화되지 않아도
 자리표시자는 AMP 요소에 즉시 표시됩니다.
@@ -36,7 +38,7 @@ $title: 자리표시자 및 대체 콘텐츠
 
 [/tip]
 
-## 대체 콘텐츠
+## 대체 콘텐츠 <a name="fallbacks"></a>
 
 다음과 같은 경우 요소에 `fallback` 속성을 지정하여 대체 동작을 나타낼 수 있습니다.
 
@@ -50,28 +52,44 @@ $title: 자리표시자 및 대체 콘텐츠
 
 다음 예에서 `fallback` 속성을 사용하여 사용자에게 브라우저가 특정 기능을 지원하지 않음을 알립니다.
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">전체 코드 표시</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video:0.1"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ##### 예: 다른 이미지 형식 게재
 
 다음 예에서 `fallback` 속성을 사용하여 WebP 형식이 지원되지 않으면 JPEG 파일을 사용하라고 브라우저에 알립니다. 
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">전체 코드 표시</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 ## 자리표시자 및 대체 콘텐츠 상호작용
 
-동적 콘텐츠에 의존하는 AMP 요소(예: [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}}))에서 대체 콘텐츠 및 자리표시자는 다음과 같이 상호작용합니다.
+동적 콘텐츠에 의존하는 AMP 요소(예: [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md))에서 대체 콘텐츠 및 자리표시자는 다음과 같이 상호작용합니다.
 
 <ol>
   <li>콘텐츠가 로드되는 동안 자리표시자를 표시합니다.</li>

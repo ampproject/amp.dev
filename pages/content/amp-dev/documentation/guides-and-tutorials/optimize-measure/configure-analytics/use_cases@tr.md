@@ -70,7 +70,7 @@ Sayfa görüntüleme verilerini Google Analytics›e gönderin
 </amp-analytics>
 ```
 
-## Sayfa tıklamalarını izleme
+## Sayfa tıklamalarını izleme <a name="sayfa-tıklamalarını-izleme"></a>
 
 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanarak,
 etkinlik verilerini
@@ -137,7 +137,7 @@ Aşağıdaki örnekte, özel bir ögeye tıklandığında Google Analytics›e b
 </amp-analytics>
 ```
 
-## Kaydırmayı izleme
+## Kaydırmayı izleme <a name="kaydırmayı-izleme"></a>
 
 [Amp-analitik]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanarak sayfa kaydırmayı izleyin.
 Aşağıdaki örnekte, sayfa %25, %50 ve %90 oranında dikey olarak kaydırıldığında, belirlenen URL›ye bir `scroll` etkinliği
@@ -169,7 +169,7 @@ kaydırıldığında da uyarı verir:
 </amp-analytics>
 ```
 
-## Sosyal medya etkileşimlerini izleme
+## Sosyal medya etkileşimlerini izleme <a name="sosyal-medya-etkileşimlerini-izleme"></a>
 
 [Amp-analitik]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) kullanarak,
 etkinlik verilerini

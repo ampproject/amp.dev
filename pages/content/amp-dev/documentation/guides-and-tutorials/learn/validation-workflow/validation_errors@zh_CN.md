@@ -20,8 +20,7 @@ limitations under the License.
 
 有效的 AMP 文档不得包含任何验证错误。
 本文档旨在帮助您更好地了解
-并更正在[验证 AMP 网页]
-({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})时遇到的任何验证错误。
+并更正在[验证 AMP 网页](validate_amp.md)时遇到的任何验证错误。
 有关验证错误的完整概述，
 请参阅 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。
 
@@ -57,7 +56,7 @@ limitations under the License.
 * <a name="body"></a>`<body>`
 
 在 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 验证工具规范</a>中，这些必需的标记包含 `mandatory: true` 字段；
-[AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})中也提到了这些标记。
+[AMP 规范](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)中也提到了这些标记。
 
 ### 缺少其他标记所需的标记
 
@@ -81,7 +80,7 @@ limitations under the License.
 但未发现其对应的 `<script>`，则会显示
 `TAG_REQUIRED_BY_MISSING` 错误。
 
-[扩展组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})
+[扩展组件](../../../../documentation/components/index.html)
 必须作为自定义元素明确包含在 AMP 文档中。
 要更正这类错误，请转到扩展组件的参考页面，
 然后将其所需的脚本复制并粘贴到 AMP 文档 `<head>` 中。
@@ -104,7 +103,7 @@ limitations under the License.
 </table>
 
 可用的标记都已列入白名单，因此目前还没有列表将所有不允许使用的标记明确列出；
-不过，[AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})
+不过，[AMP 规范](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)
 粗略地定义了一组不允许使用的标记。
 
 ### 不允许使用自定义 JavaScript
@@ -128,7 +127,7 @@ AMP 格式不允许向网页添加自定义 JavaScript，但由 AMP 项目本身
 提供的 JavaScript 文件除外。JavaScript 的许多常见用法都能在 AMP
 HTML 库中找到等效实现。要查看
 可用于增强 AMP HTML 网页的一套组件，
-请参阅 [AMP 组件]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})。
+请参阅 [AMP 组件](../../../../documentation/components/index.html)。
 
 如果其中未涵盖您的用例，您也可以考虑向 AMP 项目
 中贡献新的组件。有关详情，
@@ -352,7 +351,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-请注意，如果您尝试输出无值的属性（例如，[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 组件的 `autoplay`、`controls` 或 `loop` 等属性），但 HTML 构建流程却生成一个默认（但无效的）值，如 `true`（例如，React 将[默认](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)生成 `<amp-video autoplay="true" ...>`），解决方法是将属性名称作为值来输出。例如，`<amp-video autoplay="autoplay" ...>`。
+请注意，如果您尝试输出无值的属性（例如，[`amp-video`](../../../../documentation/components/reference/amp-video.md) 组件的 `autoplay`、`controls` 或 `loop` 等属性），但 HTML 构建流程却生成一个默认（但无效的）值，如 `true`（例如，React 将[默认](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true)生成 `<amp-video autoplay="true" ...>`），解决方法是将属性名称作为值来输出。例如，`<amp-video autoplay="autoplay" ...>`。
 
 ### 缺少网址
 
@@ -463,8 +462,8 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 当标记中包含两个互斥属性时，就会出现这种错误。
 例如，下列标记只能包含两个属性中的一个：
 
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})：`src` 或 `srcdoc`
-* [`amp-jwplayer`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-jwplayer.md', locale=doc.locale).url.path}})：`data-media-id` 或 `data-playlist-id`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md)：`src` 或 `srcdoc`
+* [`amp-jwplayer`](../../../../documentation/components/reference/amp-jwplayer.md)：`data-media-id` 或 `data-playlist-id`
 
 ### 列表中缺少必需的属性
 
@@ -487,10 +486,10 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 就会出现这种错误。
 例如，下列标记必须包含两个可选属性中的一个：
 
-* [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})：`data-tweetid` 或 `src`
-* [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}})：`data-shortcode` 或 `src`
-* [`amp-iframe`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}})：`src` 或 `srcdoc`
-* [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}})：`src` 或 `data-videoid`
+* [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)：`data-tweetid` 或 `src`
+* [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md)：`data-shortcode` 或 `src`
+* [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md)：`src` 或 `srcdoc`
+* [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md)：`src` 或 `data-videoid`
 
 ### 父级标记不正确
 
@@ -523,7 +522,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 * `style` 需要父级标记 `boilerplate (noscript)`。
 * `noscript` 需要父级标记 `head`。
 * `script` 需要父级标记 `head`。
-* `source` 需要媒体标记（[`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}})、[`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}) 等）。
+* `source` 需要媒体标记（[`amp-audio`](../../../../documentation/components/reference/amp-audio.md)、[`amp-video`](../../../../documentation/components/reference/amp-video.md) 等）。
 
 ### 不允许使用的祖级标记
 
@@ -635,12 +634,12 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## 样式和布局错误
+## 样式和布局错误 <a name="style-and-layout-errors"></a>
 
 在深入了解样式和布局错误之前，
 有必要先了解一下 AMP 中
-[样式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}})和
-[布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})的运作方式。
+[样式](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)和
+[布局](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)的运作方式。
 由于 AMP 网页是 HTML 网页，因此样式与任何 HTML 网页都非常相似。
 不过，有些限制有助于确保网页能够快速加载，
 而 AMP 验证工具则会强制实施这些限制。
@@ -724,7 +723,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 此错误指的是 CSS 中的 @-rules。
 对于 CSS 中的 @-rules，AMP 仅允许少量规则
-（另请参阅 [AMP 规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md', locale=doc.locale).url.path}})）。
+（另请参阅 [AMP 规范](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)）。
 例如，不允许使用 <code>@import</code>。
 验证错误消息会明确
 告诉您哪个规则无效，
@@ -754,8 +753,8 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
-请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和
-[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
+请参阅[如何控制布局](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)和
+[AMP HTML 布局系统规范](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)。
 
 **注意**：如果您没有指定布局，
 并且没有添加 `width` 和 `height` 值，
@@ -785,7 +784,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 如果您没有为 AMP 标记指定布局，
 并且隐式布局包含不允许使用的属性，就会出现这种错误。
-[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})中
+[AMP HTML 布局系统规范](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)中
 说明了各种布局类型不允许使用的属性。
 
 ### AMP 标记不支持指定的布局
@@ -812,8 +811,8 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 实际布局行为由 `layout` 属性决定。
 要详细了解布局的运作方式，
-请参阅[如何控制布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})和
-[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
+请参阅[如何控制布局](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)和
+[AMP HTML 布局系统规范](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)。
 
 ### 指定的布局不允许的属性
 
@@ -835,7 +834,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 
 当您为 AMP 标记指定的布局中包含不允许使用的属性时，
 就会出现这种错误。
-[AMP HTML 布局系统规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})中
+[AMP HTML 布局系统规范](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)中
 说明了各种布局类型不允许使用的属性。
 
 ### 布局所需属性的值无效
@@ -858,7 +857,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 当指定布局的属性值无效时，就会出现这种错误。
 要了解触发此错误的原因，
 您需要熟悉
-[不同的布局行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#size-and-position-elements)。
+[不同的布局行为](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)。
 
 假设您将布局设为 `fixed-height`，
 并同时为 `height` 和 `width` 添加了数字值。
@@ -890,19 +889,19 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 例如，`<amp-img src="" layout="responsive" width="42px" height="42rem">`
 会触发以下错误消息：
 
-“标记‘[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 中的宽度和高度单位不一致 - 宽度单位指定‘px’，而高度单位却指定为‘rem’。”
+“标记‘[`amp-img`](../../../../documentation/components/reference/amp-img.md) 中的宽度和高度单位不一致 - 宽度单位指定‘px’，而高度单位却指定为‘rem’。”
 
 ## 模板错误
 
 AMP 网页不能包含模板语法，
 除非该语法位于专为包含模板
 而设计的 AMP 标记中，例如
-[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}})。
+[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md)。
 
 您的源文件中可以包含模板，
 但前提是此类文件生成的输出内容中不包含模板
 （另请参阅
-[使用 CSS 预处理器]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}#use-css-preprocessors))）。
+[使用 CSS 预处理器](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors))）。
 
 ### 属性包含模板语法
 

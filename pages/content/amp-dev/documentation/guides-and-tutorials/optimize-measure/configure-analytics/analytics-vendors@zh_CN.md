@@ -2,14 +2,14 @@
 $title: 分析工具供应商
 ---
 
-本文档列出了具有可与 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 组件配合使用的内置配置的分析工具供应商。
+本文档列出了具有可与 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件配合使用的内置配置的分析工具供应商。
 
 要向第三方供应商发送分析数据，请执行以下操作：
 
-1. 在 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 标记中，添加 `type` 属性并将其值设为指定的供应商，如下方[供应商](#vendors)部分所述。
+1. 在 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 标记中，添加 `type` 属性并将其值设为指定的供应商，如下方[供应商](#vendors)部分所述。
 2. 确定要捕获和跟踪哪些数据，并在配置数据中指定这些详细信息。有关如何捕获分析数据的说明，请参阅供应商的文档。
 
-在下面的示例中，我们将网页浏览数据发送到 [Google Analytics（分析）](#google-analytics)（一个内置了 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 相关配置的第三方分析提供商）：
+在下面的示例中，我们将网页浏览数据发送到 [Google Analytics（分析）](#google-analytics)（一个内置了 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 相关配置的第三方分析提供商）：
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
@@ -37,13 +37,13 @@ $title: 分析工具供应商
 
 [tip type="note"]
 
-对于希望将其服务与 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})一文中的详细信息。
+对于希望将其服务与 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)一文中的详细信息。
 
 [/tip]
 
 <hr>
 
-## 供应商
+## 供应商 <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -127,7 +127,7 @@ type 属性值：`euleriananalytics`
 
 type 属性值：`facebookpixel`
 
-添加对 [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel) 的支持。在您的 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 配置中，您必须将 Pixel ID 设定为 `pixelId: YOUR-PIXEL-ID`。要详细了解受支持的事件以及可以指定的相应事件值，请参阅 [Facebook Pixel 开发者文档](https://developers.facebook.com/docs/ads-for-websites/pixel-events)。
+添加对 [Facebook Pixel](https://www.facebook.com/business/a/facebook-pixel) 的支持。在您的 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 配置中，您必须将 Pixel ID 设定为 `pixelId: YOUR-PIXEL-ID`。要详细了解受支持的事件以及可以指定的相应事件值，请参阅 [Facebook Pixel 开发者文档](https://developers.facebook.com/docs/ads-for-websites/pixel-events)。
 
 ### Gemius
 
@@ -141,7 +141,7 @@ type 属性值：`googleadwords`
 
 添加对 Google AdWords 转化跟踪和再营销功能的支持。要详细了解[转化跟踪](https://support.google.com/adwords/answer/1722054?hl=zh-CN)和[再营销](https://support.google.com/adwords/answer/2453998?hl=zh-CN)，请访问 AdWords 帮助中心。这两种代码均可独立使用。
 
-### Google Analytics
+### Google Analytics <a name="google-analytics"></a>
 
 type 属性值：`googleanalytics`
 
@@ -323,3 +323,9 @@ type 属性值：`treasuredata`
 type 属性值：`metrika`
 
 添加对 Yandex Metrica 的支持。有关配置详情，请参阅 [Yandex 支持](https://yandex.com/support/metrica/code/install-counter-amp.xml)。
+
+### Vpon Analytics
+
+Type attribute value: `vponanalytics`
+
+添加对 Vpon Analytics 的支持。有关配置详情，请参阅 [Vpon Analytics](https://cmp.vpadn.com/dmp/doc/amp_analytics.html).

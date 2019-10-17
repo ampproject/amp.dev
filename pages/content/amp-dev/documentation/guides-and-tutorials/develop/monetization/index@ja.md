@@ -6,11 +6,11 @@ $title: 広告で AMP ページを収益化する
 
 ## ページに広告を追加する
 
-非 AMP ページ（通常の HTML）で広告を表示する場合、通常は広告ネットワークから広告を配信するための JavaScript のスニペットをページに追加します。AMP ページではパフォーマンスとセキュリティ上の理由から、第三者の提供する JavaScript を含めることはできません。そのため、AMP で広告を表示するには、AMP ページにカスタムの [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) コンポーネントを追加する必要があります。
+非 AMP ページ（通常の HTML）で広告を表示する場合、通常は広告ネットワークから広告を配信するための JavaScript のスニペットをページに追加します。AMP ページではパフォーマンスとセキュリティ上の理由から、第三者の提供する JavaScript を含めることはできません。そのため、AMP で広告を表示するには、AMP ページにカスタムの [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) コンポーネントを追加する必要があります。
 
 [tip type="success"]
 
-[AMP By Example のライブデモ]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}})で、AMP ページへ amp-ad タグを追加する方法をご覧いただけます。
+[AMP By Example のライブデモ](../../../../documentation/components/reference/amp-ad.md)で、AMP ページへ amp-ad タグを追加する方法をご覧いただけます。
 
 [/tip]
 
@@ -26,7 +26,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ### 手順 2: AMP ページに amp-ad タグを追加する
 
-100 以上の[広告サーバーとネットワーク]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})で、AMP との統合機能が組み込み込まれています。特定の広告ネットワークの広告を追加するには、`<amp-ad>` タグを追加して、`type` 属性でネットワークを指定します。
+100 以上の[広告サーバーとネットワーク](ads_vendors.md)で、AMP との統合機能が組み込み込まれています。特定の広告ネットワークの広告を追加するには、`<amp-ad>` タグを追加して、`type` 属性でネットワークを指定します。
 
 この例では、a9 ネットワークの広告を配信するための広告スロットを追加します。
 
@@ -60,7 +60,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ### 手順 5: （省略可）プレースホルダを指定する
 
-広告ネットワークによっては、広告が表示されるようになるまでの間プレースホルダを表示できます。プレースホルダを指定することで、空白のスペースが表示されるのを防ぎ、ユーザーの利便性を向上させることができます。プレースホルダを指定するには、`placeholder` 属性が設定された子要素を追加します。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
+広告ネットワークによっては、広告が表示されるようになるまでの間プレースホルダを表示できます。プレースホルダを指定することで、空白のスペースが表示されるのを防ぎ、ユーザーの利便性を向上させることができます。プレースホルダを指定するには、`placeholder` 属性が設定された子要素を追加します。詳しくは、[プレースホルダとフォールバック](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)をご覧ください。
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ### 手順 6: （省略可）フォールバックを指定する
 
-広告ネットワークによっては、利用できる広告がない場合にフォールバック要素を表示することができます。フォールバックを指定するには、`fallback` 属性が設定された子要素を追加します。詳しくは、[プレースホルダとフォールバック]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})をご覧ください。
+広告ネットワークによっては、利用できる広告がない場合にフォールバック要素を表示することができます。フォールバックを指定するには、`fallback` 属性が設定された子要素を追加します。詳しくは、[プレースホルダとフォールバック](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)をご覧ください。
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -90,7 +90,7 @@ AMP ページで広告を表示するためのコンポーネントを追加す�
 
 ## 直接販売の AMP HTML 広告を配信する
 
-[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})を使用します。
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md)を使用します。
 
 ## 広告リクエストにターゲティング データを追加する
 
@@ -127,20 +127,20 @@ AMP ページで広告効果を最大化するためのヒントをいくつか�
 *   [IAB のガイドライン](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf)に沿って、**負荷の大きいクリエイティブは避けます**。
 *   広告の読み込み時にコンテンツのリフローが発生する、**インタースティシャルなどの広告フォーマットの使用は避けます**。
 *   data-loading-strategy を prefer-viewability-over-views に設定して、**視認性を最適化します**。
-*   [サポートされているプレーヤー]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#media).url.path}}) を利用して**動画コンテンツ内に広告を配置**して、さまざまな種類のコンテンツを収益化します。
+*   [サポートされているプレーヤー](../../../../documentation/components/reference/amp-iframe.md#media).url.path}}) を利用して**動画コンテンツ内に広告を配置**して、さまざまな種類のコンテンツを収益化します。
 *   **ネイティブ広告を取り入れて**、マルチサイズ広告リクエストを使用してディスプレイ広告と競合させることにより、読者に高い利便性を提供するとともに、需要圧力を高めます。
 
 ### イノベーション: 高い魅力を持った広告プロダクトを提供する
 
 *   **付随的な AMP ページで広告を実装**することで増収を図ります。
-    *   [カルーセル内の広告]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [ライトボックス内の広告]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
-    *   [その他]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
+    *   [カルーセル内の広告](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    *   [ライトボックス内の広告](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    *   [その他](../../../../documentation/examples/index.html)
 *   **直接販売の広告に新しいフォーマットを導入**し、セールスチームが影響力の強い革新的な広告プロダクトを販売できるようにします。
-    *   [追尾広告]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [フライングカーペット]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [追尾広告](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    *   [フライングカーペット](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## その他のリソース
 
-*   [AMP HTML 広告テンプレート]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-*   [デモ: AMP ページでの `amp-ad` の追加方法]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+*   [AMP HTML 広告テンプレート](../../../../documentation/examples/index.html)
+*   [デモ: AMP ページでの `amp-ad` の追加方法](../../../../documentation/components/reference/amp-ad.md)

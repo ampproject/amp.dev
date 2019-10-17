@@ -4,7 +4,7 @@ $title: 占位符和后备行为
 
 为了提高用户感知的性能并实现渐进增强效果，AMP 中的最佳做法是尽可能提供占位符和后备行为。
 
-一些元素甚至通过放宽限制来鼓励您这样做。例如，如果您为 [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder) 提供占位符，则可以将该组件用在网页顶部附近（如果不使用占位符，网页将无法正常运行）。
+一些元素甚至通过放宽限制来鼓励您这样做。例如，如果您为 [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder) 提供占位符，则可以将该组件用在网页顶部附近（如果不使用占位符，网页将无法正常运行）。
 
 ## 占位符
 
@@ -13,17 +13,19 @@ $title: 占位符和后备行为
 如果指定，则 `placeholder` 元素必须是 AMP 元素的直接子级。
 标记为 `placeholder` 的元素将始终 `fill`（填充）父级 AMP 元素。
 
-<!--嵌入式 amp-anim 自适应示例 -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
+```html
+<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  layout="responsive"
+  width="400"
+  height="300">
+  <amp-img placeholder
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    layout="fill">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 默认情况下，即使 AMP 元素的资源尚未下载或初始化，
 与该 AMP 元素对应的占位符也会立即显示。
@@ -36,7 +38,7 @@ $title: 占位符和后备行为
 
 [/tip]
 
-## 后备行为
+## 后备行为 <a name="fallbacks"></a>
 
 您可以在某元素上指定 `fallback` 属性，以便指明出现以下情况时采取的后备行为：
 
@@ -50,28 +52,44 @@ $title: 占位符和后备行为
 
 在以下示例中，我们使用 `fallback` 属性告知用户，浏览器不支持特定功能：
 
-<!--嵌入式视频示例 -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">显示完整代码</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video:0.1"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ##### 示例：提供不同格式的图片
 
 在以下示例中，我们使用 `fallback` 属性告知浏览器，在 WebP 格式不受支持时使用 JPEG 文件。
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">显示完整代码</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 ## 占位符和后备行为的互动
 
-对于依赖于动态内容的 AMP 组件（例如 [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}})、[`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})），后备行为和占位符的互动方式如下：
+对于依赖于动态内容的 AMP 组件（例如 [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md)、[`amp-list`](../../../../documentation/components/reference/amp-list.md)），后备行为和占位符的互动方式如下：
 
 <ol>
   <li>在加载内容时显示占位符。</li>

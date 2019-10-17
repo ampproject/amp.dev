@@ -16,9 +16,13 @@
 .#{molecule('language-selector')} {
   position: relative;
   margin-left: auto;
-  margin-right: 80px;
+  margin-right: 20px;
   padding-bottom: 10px;
   display: none;
+
+  @media (max-width: $minDeviceWidth) {
+    margin-right: 0;
+  }
 
   @media (min-width: 1024px) {
     margin-right: 0;
@@ -26,17 +30,39 @@
     display: block;
   }
 
-  &-toggle {
+  &-label {
     display: flex;
     align-items: center;
-    cursor: pointer;
+    font-size: 11px;
+    border: none;
+    background: none;
+
+    &:hover {
+      color: color('blue-ribbon');
+    }
   }
 
-    &-icon {
-      width: 10px;
-      height: 10px;
-      margin-left: 5px;
+  &-toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-appearance: none;
+
+    @media (min-width: 1024px) {
+      width: calc(100% - 30px);
     }
+  }
+
+  &-icon {
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+  }
 
   &-list {
     list-style: none;
@@ -47,10 +73,25 @@
     padding: 2px 8px;
     background: color('white');
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+
+    @media (max-width: $minDeviceWidth) {
+      overflow: auto;
+      max-height: calc(100vh - #{$mobileHeaderHeight} - #{$bannerHeight});
+    }
   }
 
+    .ap-m-nav-link {
+      display: block;
+    }
+
   /* For when the selector is active */
-  &-toggle:focus ~ &-list, &-toggle:hover ~ &-list, &-list:hover {
+  &-toggle:hover ~ &-list,
+  &-toggle:checked ~ &-list,
+  &-list:hover {
+      display: block;
+  }
+
+  &-list:focus-within {
       display: block;
   }
 

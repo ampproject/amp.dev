@@ -7,11 +7,11 @@ $title: 상호작용 개선
 - 현재 슬라이드 및 슬라이드의 총 개수를 표시하는 표시기를 추가합니다.
 - 사용자가 다른 셔츠 색상을 선택하면 이미지 캐러셀을 변경하여 선택된 색상의 셔츠 이미지를 표시합니다.
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 구성요소가 도입되기 전에는 이러한 기능을 추가할 수 없었습니다. [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})로 직접 경험을 해보고 이러한 새 기능을 샘플 코드에 추가해 보세요.
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 구성요소가 도입되기 전에는 이러한 기능을 추가할 수 없었습니다. [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)로 직접 경험을 해보고 이러한 새 기능을 샘플 코드에 추가해 보세요.
 
 ## `amp-bind` 확장 프로그램 설치
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})는 데이터 바인딩 및 JS와 같은 표현식을 통해 맞춤 상호작용을 지원하는 새로운 AMP 구성요소입니다. [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})를 사용하려면 페이지에 이 구성요소를 설치해야 합니다.
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md)는 데이터 바인딩 및 JS와 같은 표현식을 통해 맞춤 상호작용을 지원하는 새로운 AMP 구성요소입니다. [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)를 사용하려면 페이지에 이 구성요소를 설치해야 합니다.
 
 [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) 파일을 열고 다음 스크립트를 페이지 `<head>` 섹션의 AMP 구성요소 목록에 추가합니다.
 
@@ -22,7 +22,7 @@ $title: 상호작용 개선
 
 ## 슬라이드 표시기 추가
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})는 요소 속성을 맞춤 표현식에 바인딩함으로써 작동합니다. 이 표현식은 '상태'(변경 가능한 JSON 데이터)를 참조할 수 있습니다. 이 상태는 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})에 포함된 [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 구성요소를 통해 초기화할 수 있습니다.
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md)는 요소 속성을 맞춤 표현식에 바인딩함으로써 작동합니다. 이 표현식은 '상태'(변경 가능한 JSON 데이터)를 참조할 수 있습니다. 이 상태는 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)에 포함된 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 구성요소를 통해 초기화할 수 있습니다.
 
 ### 슬라이드 상태 초기화
 
@@ -46,14 +46,14 @@ selected.slide // 0으로 평가합니다.
 
 ### 슬라이드 상태 업데이트
 
-다음으로 사용자가 캐러셀의 슬라이드를 변경하는 경우에 기존 [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 요소에 다음의 `"on"` 작업을 추가하여 이 변수를 업데이트해 보겠습니다.
+다음으로 사용자가 캐러셀의 슬라이드를 변경하는 경우에 기존 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 요소에 다음의 `"on"` 작업을 추가하여 이 변수를 업데이트해 보겠습니다.
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
     on="slideChange:AMP.setState({selected: {slide: event.index}})">
 ```
 
-이제 표시된 [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 슬라이드가 변경될 때마다 `AMP.setState` 작업은 다음 인수를 사용하여 호출됩니다.
+이제 표시된 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 슬라이드가 변경될 때마다 `AMP.setState` 작업은 다음 인수를 사용하여 호출됩니다.
 
 ```javascript
 {
@@ -65,7 +65,7 @@ selected.slide // 0으로 평가합니다.
 
 `event.index` 표현식이 새 슬라이드 색인으로 평가되고 `AMP.setState()` 작업으로 이 객체 리터럴이 현재 상태로 병합됩니다. 이렇게 하면 `selected.slide`의 현재 값이 `event.index` 값으로 대체됩니다.
 
-도움말: `AMP.setState()`는 중첩된 객체 리터럴을 완전히 병합합니다. 자세한 내용은 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 도움말을 참조하세요.
+도움말: `AMP.setState()`는 중첩된 객체 리터럴을 완전히 병합합니다. 자세한 내용은 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 도움말을 참조하세요.
 
 ### 표시기 요소 바인딩
 
@@ -97,17 +97,17 @@ selected.slide // 0으로 평가합니다.
 
 [tip type="success"]
 
-기능을 추가하여 사용자가 슬라이드의 표시기 점을 탭하면 선택된 항목으로 이미지 캐러셀을 업데이트할 수 있는지 확인합니다. 참고로 [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})에서 `tap` 이벤트와 `[slide]` 바인딩을 사용합니다.
+기능을 추가하여 사용자가 슬라이드의 표시기 점을 탭하면 선택된 항목으로 이미지 캐러셀을 업데이트할 수 있는지 확인합니다. 참고로 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)에서 `tap` 이벤트와 `[slide]` 바인딩을 사용합니다.
 
 [/tip]
 
 ## 캐러셀의 이미지 변경
 
-선택된 색상을 변경할 때 다른 셔츠 색상의 이미지가 표시되면 좋습니다. [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})  사용하여 [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) 내에서 `[src]`를 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소에 바인딩하면 가능합니다.
+선택된 색상을 변경할 때 다른 셔츠 색상의 이미지가 표시되면 좋습니다. [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)  사용하여 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 내에서 `[src]`를 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 요소에 바인딩하면 가능합니다.
 
 ### SKU 상태 초기화
 
-먼저 각 색상 셔츠의 이미지 소스 URL로 상태 데이터를 초기화해야 합니다. 새 [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 요소로 이 작업을 실행해 보겠습니다.
+먼저 각 색상 셔츠의 이미지 소스 URL로 상태 데이터를 초기화해야 합니다. 새 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 요소로 이 작업을 실행해 보겠습니다.
 
 ```html
 <!-- 사용 가능한 셔츠. 색상 및 이미지 URL 문자열에 고유 문자열 식별자를 매핑합니다. -->
@@ -151,13 +151,13 @@ selected.slide // 0으로 평가합니다.
 </amp-state>
 ```
 
-이 `[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state)`요소에는 셔츠 식별자 문자열(예: SKU)을 해당 셔츠의 색상 및 이미지 URL에 매핑하는 JSON 객체가 포함되어 있습니다. JSON 배열은 여기에서도 작동하지만 객체를 사용하면 다른 멋진 작업을 할 수 있습니다. 이러한 작업은 곧 제공될 예정입니다.
+이 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state)요소에는 셔츠 식별자 문자열(예: SKU)을 해당 셔츠의 색상 및 이미지 URL에 매핑하는 JSON 객체가 포함되어 있습니다. JSON 배열은 여기에서도 작동하지만 객체를 사용하면 다른 멋진 작업을 할 수 있습니다. 이러한 작업은 곧 제공될 예정입니다.
 
 이제 셔츠의 식별자를 통해 이미지 URL에 액세스할 수 있습니다. 예를 들어 `shirts['10014'].color`는 `"dark green"`으로 평가되고 `shirts['10030'].image `는 `"wine"` 셔츠 색상의 이미지 URL을 반환합니다.
 
 ### 선택된 SKU 추적
 
-선택된 SKU를 추적하는 다른 상태 변수를 추가하면 표현식을 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소에 바인딩하여 선택된 SKU가 변경되면 `src` 속성을 업데이트할 수 있습니다. 새 `sku` 키를 기존 `amp-state#selected` 요소의 JSON에 추가합니다.
+선택된 SKU를 추적하는 다른 상태 변수를 추가하면 표현식을 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 요소에 바인딩하여 선택된 SKU가 변경되면 `src` 속성을 업데이트할 수 있습니다. 새 `sku` 키를 기존 `amp-state#selected` 요소의 JSON에 추가합니다.
 
 ```html
 <amp-state id="selected">
@@ -172,18 +172,18 @@ selected.slide // 0으로 평가합니다.
 
 ### SKU 상태 업데이트
 
-새 색상이 선택될 때마다 `selected.sku` 변수를 업데이트하는 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})에 "on" 작업을 추가합니다.
+새 색상이 선택될 때마다 `selected.sku` 변수를 업데이트하는 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)에 "on" 작업을 추가합니다.
 
 ```html
 <amp-selector name="color"
     on="select:AMP.setState({selected: {sku: event.targetOption}})">
 ```
 
-도움말: 이는 `on="tap:AMP.setState(...)` 작업을 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 내의 각 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 하위 요소에 추가함으로써 실행할 수도 있습니다. [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}})의 장점 중 하나는 이러한 방식으로 마크업을 단순화한다는 것입니다.
+도움말: 이는 `on="tap:AMP.setState(...)` 작업을 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 내의 각 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 하위 요소에 추가함으로써 실행할 수도 있습니다. [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)의 장점 중 하나는 이러한 방식으로 마크업을 단순화한다는 것입니다.
 
 ### 이미지 요소 바인딩
 
-그런 다음 [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})(`<!-- TODO: "amp-carousel의 이미지 변경-->"` 찾기) 내의 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 요소에 바인딩을 추가합니다.
+그런 다음 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)(`<!-- TODO: "amp-carousel의 이미지 변경-->"` 찾기) 내의 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 요소에 바인딩을 추가합니다.
 
 ```html
 <!-- `selected.sku` 변수가 변경되면 각 <amp-img>의 `src`를 업데이트합니다. -->

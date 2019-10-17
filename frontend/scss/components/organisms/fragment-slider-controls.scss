@@ -13,9 +13,6 @@
 
 
 .#{organism('fragment-slider')} {
-  input:focus {
-    outline: none;
-  }
   button {
     position: absolute;
     height: 50px;
@@ -33,7 +30,7 @@
     @include slider-button-shadow;
     transition: 400ms;
     overflow: hidden;
-    background: #F3F3F3;
+    background-color: color('concrete');
     &:hover {
       cursor: pointer;
       box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.2);
@@ -50,9 +47,6 @@
       margin: 0;
       transform: rotate(180deg);
     }
-    &:focus {
-      outline: none;
-    }
     &.slide1 {
       display: none;
     }
@@ -63,10 +57,7 @@
     div {
       margin: 0;
     }
-    &:focus {
-      outline: none;
-    }
-    &.slide2 {
+    &.slide3 {
       display: none;
     }
   }

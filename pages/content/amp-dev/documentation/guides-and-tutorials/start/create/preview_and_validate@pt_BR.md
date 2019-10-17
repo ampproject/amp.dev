@@ -14,4 +14,4 @@ Depois, certifique-se de que sua página AMP** seja realmente válida para AMP**
   1. Adicione "`#development=1`“ ao URL, por exemplo,`http://localhost:8000/released.amp.html#development=1`.
   1. Abra o [console Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/debug/console/) e verifique se há erros de validação.
 
-[Saiba mais sobre validação]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) e o que fazer quando ocorrerem erros.
+[Saiba mais sobre validação](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) e o que fazer quando ocorrerem erros.

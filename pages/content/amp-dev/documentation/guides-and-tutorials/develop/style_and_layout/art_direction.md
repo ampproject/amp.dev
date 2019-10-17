@@ -18,24 +18,25 @@ contributors:
 
 Use the `srcset` attribute to control an element’s assets
 based on varying media expressions.
-In particular, use it for all [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tags to specify which image assets to use based on varying screen sizes.
+In particular, use it for all [`amp-img`](../../../../documentation/components/reference/amp-img.md) tags to specify which image assets to use based on varying screen sizes. AMP will autogenerate a `sizes` attribute, [that meets the HTML5 definition of `sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), for all underlying `<img>` tags of `<amp-img>` if the `<amp-img>` has a `srcset` attribute but no `sizes`.
 
 In this simple example,
 `srcset` specifies which image to use based on the screen width.
 The `w` descriptor tells the browser the width
 of each image in the list:
 
-<!--embedded amp-img example using srcset -->
-<div>
-<amp-iframe height="231"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.srcset.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="top-frame" playground="true"]
+```html
+<amp-img alt="Hummingbird"
+  src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  layout="responsive"
+  srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+</amp-img>
+```
+[/example]
 
 [tip type="note"]
 **NOTE –**  AMP supports srcset with the `w` descriptor across all browsers.
@@ -46,25 +47,27 @@ in [Using Responsive Images (Now)](http://alistapart.com/article/using-responsiv
 
 ## sizes
 
-You can also use the `sizes` attribute along with `srcset`.
-The `sizes` attribute describes how to calculate the element size
+You can also use the optional AMP `sizes` attribute along with `srcset`.
+The AMP `sizes` attribute describes how to calculate the element size
 based on any media expression.
+<strong>Defining `sizes` on any AMP Element will cause AMP to set an inline style for width on that element according to the matched media query.</strong>
 Based on the element’s calculated size,
 the user agent selects the most relative source supplied by the `srcset` attribute.
 
 Consider the following example:
 
-<!--embedded amp-img example using sizes -->
-<div>
-<amp-iframe height="231"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.sizes.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="top-frame" playground="true"]
+```html
+<amp-img alt="Hummingbird"
+  src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
+  width="640"
+  height="457"
+  srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+  sizes="(min-width: 650px) 50vw, 100vw">
+</amp-img>
+```
+[/example]
 
 The `sizes` attribute defines the element’s width to be 50% the size of the viewport
 when the viewport is 650px or more.
@@ -78,9 +81,7 @@ which in this instance is `hummingbird-narrow.jpg` (320px).
 **IMPORTANT –** When sizes attribute is specified along with width and height, layout defaults to `responsive`.
 [/tip]
 
-Learn more about how `sizes` and `srcset` attributes compare
-to media queries in this
-[Srcset and sizes](https://ericportis.com/posts/2014/srcset-sizes/) blog post.
+Read more about the [AMP `sizes` attribute here](../../../../documentation/guides-and-tutorials/learn/common_attributes.md).
 
 ## heights
 
@@ -97,17 +98,16 @@ When the `heights` attribute is specified along with `width` and `height`, the `
 
 An example:
 
-<!--embedded amp-img example using heights -->
-<div>
-<amp-iframe height="193"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampimg.heights.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="top-frame" playground="true"]
+```html
+<amp-img alt="AMP"
+  src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%">
+</amp-img>
+```
+[/example]
 
 In this example, the height of the element by default will be 80% of the width, but for the viewport
 wider than `500px` it will be capped at `200px`.

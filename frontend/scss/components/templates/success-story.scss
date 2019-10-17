@@ -48,6 +48,13 @@ body {
   .#{utility('content')} {
     @include content;
 
+    grid-column: 1;
+    @media (min-width: 768px) {
+      grid-column: 3 / -3;
+    }
+    @media (min-width: 1024px) {
+      grid-column: 7 / 19;
+    }
   }
 
   .#{utility('stage')} {
@@ -76,7 +83,8 @@ body {
 
       h1 {
         @include hl;
-        @include hl-h2;
+        @include hl-h1;
+        margin-top: 0;
         color: color('white');
       }
     }
@@ -175,6 +183,7 @@ body {
 
     &-center {
       grid-column: 1;
+      flex-direction: column;
       position: relative;
 
       @media (min-width: 768px){

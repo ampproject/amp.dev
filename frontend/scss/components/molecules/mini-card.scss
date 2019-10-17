@@ -15,17 +15,16 @@
 @import 'components/atoms/_text.scss';
 
 .#{molecule('mini-card')} {
-  align-items: center;
-  background: color('white');
-  display: flex;
-  flex-direction: row;
-  font-weight: normal;
-  padding: 8px;
-  position: relative;
-  box-shadow: 0 5px 15px -3px rgba(0,0,0,0.2);
-  transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-
   @include txt;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 8px 16px 8px 8px;
+  margin: 0 0 10px;
+  box-shadow: 0 5px 15px -3px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  background: color('white');
 
   amp-img {
     width: 35px;
@@ -39,7 +38,7 @@
   }
 
   span {
-    padding-left: 8%;
+    padding-left: 10px;
     // just for the case if the small mini-card item gets two lines
     line-height: 1.3em;
   }

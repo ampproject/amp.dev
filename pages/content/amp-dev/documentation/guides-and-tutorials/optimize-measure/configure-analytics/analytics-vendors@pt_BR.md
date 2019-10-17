@@ -2,11 +2,11 @@
 $title: Fornecedores de análise
 ---
 
-Este documento lista os fornecedores de análise que têm configurações integradas para usar com o componente [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+Este documento lista os fornecedores de análise que têm configurações integradas para usar com o componente [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
 Para enviar dados de análise a um fornecedor terceirizado:
 
-1. Na tag [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}), adicione o atributo `type` e defina o valor do fornecedor especificado conforme descrito na seção [*Fornecedores*](#vendors) abaixo.
+1. Na tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), adicione o atributo `type` e defina o valor do fornecedor especificado conforme descrito na seção [*Fornecedores*](#vendors) abaixo.
 2. Determine quais dados você quer coletar e rastrear e especifique esses detalhes nos dados de configuração. Consulte a documentação do fornecedor para ver instruções sobre como coletar os dados de análise.
 
 No exemplo a seguir, enviamos dados de page view para o [Google Analytics](#google-analytics), um fornecedor de análise terceirizado com uma configuração integrada para análise de AMP:
@@ -37,13 +37,13 @@ Se você tiver experiência em editar código, veja as configurações brutas no
 
 [tip type="note"]
 
-Os fornecedores que quiserem integrar os serviços ao [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) precisam consultar os detalhes no artigo sobre [integrar ferramentas de análise às AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md', locale=doc.locale).url.path}}).
+Os fornecedores que quiserem integrar os serviços ao [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) precisam consultar os detalhes no artigo sobre [integrar ferramentas de análise às AMP](../../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md).
 
 [/tip]
 
 <hr>
 
-## Fornecedores
+## Fornecedores <a name="vendors"></a>
 
 ### Acquia Lift
 
@@ -141,7 +141,7 @@ Valor do atributo de tipo: `googleadwords`
 
 Adiciona compatibilidade com o remarketing e o acompanhamento de conversões do Google AdWords. Veja mais detalhes na seção da Central de Ajuda do Google AdWords sobre [acompanhamento de conversões](https://support.google.com/adwords/answer/1722054?hl=pt-BR) e [remarketing](https://support.google.com/adwords/answer/2453998?hl=pt-BR). As duas tags podem ser usadas independentemente uma da outra.
 
-### Google Analytics
+### Google Analytics <a name="google-analytics"></a>
 
 Valor do atributo de tipo: `googleanalytics`
 

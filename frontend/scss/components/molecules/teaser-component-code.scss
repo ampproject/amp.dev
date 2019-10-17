@@ -1,0 +1,140 @@
+/*
+
+#######################################
+### MOLECULE: teaser-component-code ###
+#######################################
+
+### INFO:
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/molecules/_teaser.scss';
+
+.#{molecule('teaser-component')} {
+  &.#{molecule('teaser')} {
+    @include teaser;
+
+    & > a {
+      @include teaser-linking;
+      height: 100%;
+
+      &:hover {
+        @include teaser-linking-hover;
+
+        .#{molecule('teaser')}-card {
+          @include teaser-card-hover;
+        }
+      }
+    }
+  }
+
+  .#{molecule('teaser')} {
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      align-items: stretch;
+      margin-top: 20px;
+
+      @media (min-width: 600px) {
+        grid-column-gap: 30px;
+      }
+    }
+
+    &-tags {
+      @include teaser-tag-zero;
+    }
+
+    &-card {
+      @include teaser-card;
+      height: 100%;
+      border-radius: 0;
+    }
+
+    &-header {
+      @include teaser-header;
+      height: 90px;
+
+      &-title {
+        @include teaser-header-title;
+        font-weight: bold;
+      }
+    }
+
+    &-code {
+      box-shadow: 0 15px 30px 0 transparentize(color('black'), 0.85);
+      margin-bottom: 20px;
+      grid-column: span 12;
+      transition: transform .3s cubic-bezier(.25,.1,.25,1), box-shadow .3s cubic-bezier(.25,.1,.25,1);
+
+      &:hover {
+        transform: translate3d(0,-2px,0);
+        box-shadow: 0 25px 60px 0 rgba(0,0,0,.1);
+      }
+
+      @media (min-width: 600px) {
+        grid-column: span 6;
+      }
+
+      @media (min-width: 1024px) {
+        grid-column: span 4;
+      }
+
+      .#{molecule('teaser')}-card {
+        overflow: hidden;
+        position: relative;
+        background-color: white;
+        box-shadow: none;
+      }
+
+      code {
+        font-size: 1em;
+        font-weight: bold;
+        color: color('charade');
+      }
+
+      p {
+        font-size: 0.75em;
+      }
+    }
+
+    &-content {
+      @include teaser-content;
+      padding: 15px 25px;
+
+      &-text {
+        margin-top: 10px;
+      }
+    }
+
+    &-image {
+      @include teaser-image;
+    }
+
+    &-headline {
+      @include teaser-headline;
+      margin-bottom: 0.65em;
+    }
+
+    &-copy {
+      @include teaser-copy;
+    }
+  }
+}
+.#{molecule('teaser-component')}-recent {
+  .#{molecule('teaser')} {
+    &-code {
+      box-shadow: none;
+      border: 1px solid color('mercury');
+      transition: none;
+      &:hover {
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+}

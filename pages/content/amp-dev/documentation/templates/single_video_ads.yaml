@@ -7,9 +7,13 @@ formats:
 
 teaser:
   image:
-    src: '/static/img/templates/single_video.gif'
+    src: '/static/img/templates/single_video.jpg'
     width: 9
     height: 16
-    alt: Video
+    alt: Single Video
+  video:
+    src: '/static/img/templates/single_video.mp4'
+    width: 9
+    height: 16
 
   download_url: '/static/files/templates/single-video.zip'

@@ -4,12 +4,12 @@ $title: AMP 페이지에 프로그레시브 웹 앱 기능 사용 설정
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='"홈 화면에 추가" 메시지를 트리거하는 AMPbyExample.') }}
 
-대부분의 웹사이트에는 AMP 이외의 기능이 필요하지 않습니다. 예를 들어 [AMPbyExample](http://ampbyexample.com/)은 AMP이면서 프로그레시브 웹 앱이기도 합니다.
+대부분의 웹사이트에는 AMP 이외의 기능이 필요하지 않습니다. 예를 들어 [Examples](../../../documentation/examples/index.html)은 AMP이면서 프로그레시브 웹 앱이기도 합니다.
 
 1. [웹 앱 매니페스트](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/)가 있어서 '홈 화면에 추가' 배너가 표시됩니다.
 1. [서비스 워커](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)가 있기 때문에 다른 기능은 물론 오프라인 액세스도 지원합니다.
 
-AMP를 지원하는 플랫폼 사용자가 [AMPbyExample](http://ampbyexample.com/)에 방문한 다음 클릭을 통해 해당 사이트에서 계속 탐색하면, AMP 캐시에서 원본으로 이동하게 됩니다. 웹사이트에서는 계속해서 AMP 라이브러리를 사용합니다. 하지만 이제 원본에서 게시되기 때문에 서비스 워커 사용, 설치 메시지 표시 등의 기능을 사용할 수 있습니다.
+AMP를 지원하는 플랫폼 사용자가 [Examples](../../../documentation/examples/index.html)에 방문한 다음 클릭을 통해 해당 사이트에서 계속 탐색하면, AMP 캐시에서 원본으로 이동하게 됩니다. 웹사이트에서는 계속해서 AMP 라이브러리를 사용합니다. 하지만 이제 원본에서 게시되기 때문에 서비스 워커 사용, 설치 메시지 표시 등의 기능을 사용할 수 있습니다.
 
 주의사항: 서비스 워커는 AMP 캐시 버전의 페이지와 상호작용할 수 없습니다. 원본으로 이동할 때 서비스 워커를 사용하세요.
 
@@ -58,9 +58,9 @@ AMP 페이지에 [웹 앱 매니페스트](https://developers.google.com/web/fun
 
 참고: 서비스 워커라는 개념을 처음 접하시는 분은 [WebFundamentals 소개](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers)를 읽어보세요.
 
-서비스 워커는 특정 페이지에 등록되어야 합니다. 그렇지 않으면 브라우저에서 서비스 워커를 찾거나 실행할 수 없습니다. 기본적으로 이 작업에는 [자바스크립트](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration)가 필요합니다. AMP 페이지에서는 [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) 구성요소를 사용하여 동일한 작업을 처리할 수 있습니다.
+서비스 워커는 특정 페이지에 등록되어야 합니다. 그렇지 않으면 브라우저에서 서비스 워커를 찾거나 실행할 수 없습니다. 기본적으로 이 작업에는 [자바스크립트](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration)가 필요합니다. AMP 페이지에서는 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) 구성요소를 사용하여 동일한 작업을 처리할 수 있습니다.
 
-우선 페이지의 `<head>`에 있는 스크립트를 통해 [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) 구성요소를 포함시킵니다.
+우선 페이지의 `<head>`에 있는 스크립트를 통해 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) 구성요소를 포함시킵니다.
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -103,7 +103,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 이 방법을 사용하면 AMP 페이지에서
-[AMP 유효성 검사]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})를 통과하지 못하는 모든 추가 기능을 수정할 수 있습니다.
+[AMP 유효성 검사](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)를 통과하지 못하는 모든 추가 기능을 수정할 수 있습니다.
 
 * 맞춤 JS를 필요로 하는 동적 기능
 * 내 사이트에 맞춤설정되었거나 내 사이트에만 관련이 있는 구성요소

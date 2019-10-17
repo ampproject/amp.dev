@@ -1,10 +1,7 @@
-{# Simply set to False to disable banner #}
-{% if True %}
 {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
 <div class="ap-m-banner">
-  <a href="{{ g.doc('/content/amp-dev/events/amp-conf-2019.html', locale=doc.locale).url.path }}" class="ap-m-banner-link">
+  <a href="https://blog.amp.dev/2019/07/10/amp-contributor-summit-2019-applications-now-open/" class="ap-m-banner-link">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-    {{ _('AMP Conf 2019. April 17/18. Tokyo.') }}
+    {{ _('AMP Contributor Summit 2019 Applications Now Open') }}
   </a>
 </div>
-{% endif %}

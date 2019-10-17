@@ -2,7 +2,7 @@
 $title: Praktik terbaik untuk membuat artikel AMP
 ---
 
-Panduan ini menyediakan beberapa praktik yang direkomendasikan yang sebaiknya Anda terapkan saat membuat [artikel AMP]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}).
+Panduan ini menyediakan beberapa praktik yang direkomendasikan yang sebaiknya Anda terapkan saat membuat [artikel AMP](../../../documentation/components/reference/amp-story.md).
 
 ## Warna background  
 
@@ -48,7 +48,7 @@ Dimensi yang direkomendasikan untuk gambar poster adalah: 720 px (lebar 720 px x
 
 ### Menentukan `<source>` vs `src` 
 
-Saat menentukan sumber untuk [`amp-video`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}).
+Saat menentukan sumber untuk [`amp-video`](../../../documentation/components/reference/amp-video.md).
 
 *Contoh: Menentukan beberapa file sumber*
 

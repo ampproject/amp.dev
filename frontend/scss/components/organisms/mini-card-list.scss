@@ -21,39 +21,18 @@ ul.#{organism('mini-card-list')} {
   padding: 0;
   position: relative;
   width: 100%;
-
-  &-condensable {
-    @media (min-width: 1024px) {
-      display: grid;
-      grid-gap: 30px;
-      grid-template-columns: 1fr;
-      grid-template-columns: repeat(24, 1fr);
-    }
-  }
-
 }
 
 .#{organism('mini-card-list-item')} {
-  flex: 1 48%;
   margin-bottom: 1.25rem;
-  max-width: 48%;
-  padding-left: 0 !important;
+  padding-left: 0;
   transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-
-  &-condensable {
-    @media (min-width: 1024px) {
-      flex: none;
-      grid-column: span 8;
-      margin-bottom: 0;
-      max-width: 100%;
-    }
-  }
 
   &:hover {
     transform: translateY(-0.125em);
 
     & > .#{molecule('mini-card')} {
-      box-shadow: 0 10px 60px 0px rgba(0, 0, 0, 0.10);
+      box-shadow: 0 15px 25px 0px rgba(0, 0, 0, 0.05);
     }
   }
 }

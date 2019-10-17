@@ -1,4 +1,21 @@
 #!/usr/bin/env node
+/**
+ * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+require('module-alias/register');
 
 const fs = require('fs');
 const {Signale} = require('signale');
@@ -15,23 +32,24 @@ const log = new Signale({
 
 async function importRoadmap() {
   log.start('Starting import of roadmap ...');
-  const octokit = new Octokit({
+  const options = {
     'previews': [
       'symmetra-preview',
       'inertia-preview',
     ],
-  });
+  };
 
   gitHubImporter.checkCredentials();
-  octokit.authenticate(gitHubImporter.CLIENT_TOKEN ? {
-    type: 'token',
-    token: gitHubImporter.CLIENT_TOKEN,
-  } : {
-    type: 'oauth',
-    key: gitHubImporter.CLIENT_ID,
-    secret: gitHubImporter.CLIENT_SECRET,
-  });
+  if (gitHubImporter.CLIENT_TOKEN) {
+    options['auth'] = gitHubImporter.CLIENT_TOKEN;
+  } else {
+    options['auth'] = {
+      'clientId': gitHubImporter.CLIENT_ID,
+      'clientSecret': gitHubImporter.CLIENT_SECRET,
+    };
+  }
 
+  const octokit = new Octokit(options);
   const result = await octokit.projects.listColumns({project_id: '1344133'});
 
   log.await('Fetching cards per column ...');
@@ -62,7 +80,7 @@ async function importRoadmap() {
   // fetch all related issues
   const issues = await Promise.all(cards.map((card) => {
     const issue = card.issueUrl.match(/repos\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
-    return octokit.issues.get({owner: issue[1], repo: issue[2], number: issue[3]})
+    return octokit.issues.get({owner: issue[1], repo: issue[2], issue_number: issue[3]})
         .then((result) => {
           result.url = card.issueUrl;
           return result;
@@ -77,7 +95,7 @@ async function importRoadmap() {
     const issue = issueMap[card.issueUrl];
     card.issue = {
       url: issue.data.html_url,
-      title: issue.data.title.replace(/\[Master [fF]eature\] /, ''),
+      title: issue.data.title.replace(/\[master feature\] /i, ''),
       description: issue.data.body
           .replace('Feature description:\r\n\r\n', '')
           .replace(/\[ \]/g, '')

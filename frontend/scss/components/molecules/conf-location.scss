@@ -1,0 +1,62 @@
+/*
+
+######################
+### MOLECULE: ampconf-location ###
+######################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_color.scss';
+
+.#{molecule('conf-location')} {
+  grid-column: 1 / -1;
+  background: color('carnation');
+  display: flex;
+  align-items: center;
+
+  &-visual {
+    grid-column: 6 / 14;
+    width: 100%;
+    padding: 40px;
+
+    @media (min-width: 768px) {
+      padding: 40px 0px 100px;
+    }
+  }
+
+  &-map {
+    @include ampconf-speaker-shadow;
+  }
+
+  &-content {
+    grid-column: 14 / 20;
+    padding: 0 40px 20px;
+
+    @media (min-width: 768px) {
+      margin-top: 7em;
+      padding: 40px 0;
+    }
+
+    &-text {
+      @include txt;
+      color: color('white');
+    }
+
+    &-link {
+      @include hl;
+      @include hl-h4;
+      color: color('white');
+    }
+  }
+
+  &-headline {
+    color: color('white');
+  }
+}

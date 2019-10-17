@@ -24,8 +24,8 @@ const BEAUTIFY_OPTIONS = {
 
 class Formatter {
   format(code) {
-    // eslint-disable-next-line google-camelcase/google-camelcase
-    jsBeautify.html_beautify(code, BEAUTIFY_OPTIONS);
+    // eslint-disable-next-line
+    return Promise.resolve(jsBeautify.html_beautify(code, BEAUTIFY_OPTIONS));
   }
 }
 

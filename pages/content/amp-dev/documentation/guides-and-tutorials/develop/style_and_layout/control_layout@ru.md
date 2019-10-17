@@ -4,7 +4,7 @@ $title: Поддерживаемые макеты
 
 Чтобы сделать свои элементы адаптивными, добавьте атрибут `layout=responsive`.
 
-## Допустимые значения атрибута layout
+## Допустимые значения атрибута layout <a name="the-layout-attribute"></a>
 
 По умолчанию следует использовать адаптивные макеты.
 
@@ -22,22 +22,22 @@ $title: Поддерживаемые макеты
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>nodisplay</code></td>
       <td class="col-twenty" data-th="Description">Нет</td>
-      <td data-th="Behavior">Элемент не показывается, то есть не занимает места на экране, как будто для него не задан стиль. Этот макет можно применять ко всем элементам AMP. Предполагается, что элемент, например <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-lightbox.md', locale=doc.locale).url.path}}"><code>amp-lightbox</code></a>, может показываться в случае определенных действий пользователя.</td>
+      <td data-th="Behavior">Элемент не показывается, то есть не занимает места на экране, как будто для него не задан стиль. Этот макет можно применять ко всем элементам AMP. Предполагается, что элемент, например <a href="../../../../documentation/components/reference/amp-lightbox.md"><code>amp-lightbox</code></a>, может показываться в случае определенных действий пользователя.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed</code></td>
       <td class="col-twenty" data-th="Description">Да</td>
-      <td data-th="Behavior">Для элемента задана фиксированная ширина и высота, поэтому он не поддерживает адаптивный дизайн. Исключение составляют только элементы <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}"><code>amp-pixel</code></a> и <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}"><code>amp-audio</code></a>.</td>
+      <td data-th="Behavior">Для элемента задана фиксированная ширина и высота, поэтому он не поддерживает адаптивный дизайн. Исключение составляют только элементы <a href="../../../../documentation/components/reference/amp-pixel.md"><code>amp-pixel</code></a> и <a href="../../../../documentation/components/reference/amp-audio.md"><code>amp-audio</code></a>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>responsive</code></td>
       <td class="col-twenty" data-th="Description">Да</td>
-      <td data-th="Behavior">Ширина элемента устанавливается равной ширине контейнера, а его высота автоматически меняется в соответствии с соотношением сторон, заданным атрибутами width и height. Этот макет поддерживается для большинства элементов AMP, в том числе <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}"><code>amp-img</code></a> и <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-video.md', locale=doc.locale).url.path}}"><code>amp-video</code></a>. Доступное место зависит от родительского элемента и может быть настроено с помощью свойства <code>max-width</code> в CSS.</td>
+      <td data-th="Behavior">Ширина элемента устанавливается равной ширине контейнера, а его высота автоматически меняется в соответствии с соотношением сторон, заданным атрибутами width и height. Этот макет поддерживается для большинства элементов AMP, в том числе <a href="../../../../documentation/components/reference/amp-img.md"><code>amp-img</code></a> и <a href="../../../../documentation/components/reference/amp-video.md"><code>amp-video</code></a>. Доступное место зависит от родительского элемента и может быть настроено с помощью свойства <code>max-width</code> в CSS.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fixed-height</code></td>
       <td class="col-twenty" data-th="Description">Только высота</td>
-      <td data-th="Behavior">Элемент занимает доступное ему пространство, однако его высота не меняется. Этот макет подходит для элементов с горизонтальным содержанием, например <a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}"><code>amp-carousel</code></a>. Атрибут <code>width</code> должен отсутствовать или иметь значение <code>auto</code>.</td>
+      <td data-th="Behavior">Элемент занимает доступное ему пространство, однако его высота не меняется. Этот макет подходит для элементов с горизонтальным содержанием, например <a href="../../../../documentation/components/reference/amp-carousel.md"><code>amp-carousel</code></a>. Атрибут <code>width</code> должен отсутствовать или иметь значение <code>auto</code>.</td>
     </tr>
     <tr>
       <td class="col-twenty" data-th="Layout type"><code>fill</code></td>
@@ -52,14 +52,14 @@ $title: Поддерживаемые макеты
   </tbody>
 </table>
 
-### Что происходит, если ширина и высота не указаны?
+### Что происходит, если ширина и высота не указаны? <a name="what-if-width-and-height-are-undefined"></a>
 
 Если атрибуты `width` и `height` не указаны, то в некоторых случаях среда выполнения AMP может задать им значения по умолчанию согласно следующим правилам:
 
-* [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}): ширина и высота принимают значение, равное 0.
-* [`amp-audio`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-audio.md', locale=doc.locale).url.path}}): значения ширины и высоты меняются соответствии с типом браузера.
+* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): ширина и высота принимают значение, равное 0.
+* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): значения ширины и высоты меняются соответствии с типом браузера.
 
-### Что происходит, если атрибут layout не указан?
+### Что происходит, если атрибут layout не указан? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Поведение макета определяется следующими правилами:
 
@@ -74,6 +74,8 @@ $title: Поддерживаемые макеты
 При изменении размера или ориентации окна браузера показ элементов зависит от результатов повторной проверки медиазапросов.
 
 Подробнее [об управлении макетом с помощью медиазапросов CSS](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en)...
+
+<a name="element-media-queries"></a>
 
 В AMP доступен еще один атрибут для адаптивного дизайна – `media`.
 Он может использоваться для всех элементов AMP и работает аналогично медиазапросам в глобальной таблице стилей, однако влияет только на один элемент на странице.
@@ -105,7 +107,7 @@ $title: Поддерживаемые макеты
 ## Использование атрибутов srcset и sizes
 
 Атрибут `srcset` используется для управления ресурсами элемента с помощью выражений медиа.
-В частности, он применяется ко всем тегам [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) и указывает, какие изображения нужно применять в зависимости от размеров экрана.
+В частности, он применяется ко всем тегам [`amp-img`](../../../../documentation/components/reference/amp-img.md) и указывает, какие изображения нужно применять в зависимости от размеров экрана.
 
 В приведенном ниже примере атрибут `srcset` определяет, какое изображение следует использовать с учетом ширины экрана.
 Дескриптор `w` сообщает браузеру ширину всех изображений в списке:

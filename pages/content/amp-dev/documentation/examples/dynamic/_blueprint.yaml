@@ -1,6 +1,0 @@
-$title: Dynamic
-$view: /views/detail/example-detail.j2
-$path: /documentation/examples/dynamic/{base}.html
-$localization:
-  path: /{locale}/documentation/examples/dynamic/{base}.html
-$order: -7

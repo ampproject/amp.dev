@@ -21,7 +21,7 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#the-layout-attribute).
+For more information, see [Placeholders & fallbacks](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## heights
 
@@ -42,11 +42,11 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+For more information, see [Art direction with srcset, sizes & heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 
 ## layout
 
-AMP provides a set of [layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
+AMP provides a set of [layouts](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) that specify how an AMP component behaves in the document layout. You can specify a layout for a component by adding the `layout` attribute with one of the supported layout values for the element (see the element's documentation for what values are supported).
 
 Example:
 
@@ -59,9 +59,9 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+For more information, see [Layout & Media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) and the [Layout Spec](amp-html-layout/index.md).
 
-## media
+## media <a name="media"></a>
 
 Most AMP elements support the `media` attribute. The value of `media` is a media query. If the query does not match, the element is not rendered and its resources and potentially its child resources will not be fetched. If the browser window changes size or orientation, the media queries are re-evaluated and elements are hidden and shown based on the new results.
 
@@ -80,7 +80,7 @@ Example:
     height="193" layout="responsive"></amp-img>
 ```
 
-For more information, see [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries).
+For more information, see [Layout & Media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries).
 
 ## noloading
 
@@ -120,7 +120,7 @@ Example:
 </amp-lightbox>
 ```
 
-For more information, see  [Actions and Events in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
+For more information, see  [Actions and Events in AMP](amp-actions-and-events.md).
 
 ## placeholder
 
@@ -136,11 +136,11 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Placeholders & fallbacks]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}#the-layout-attribute).
+For more information, see [Placeholders & fallbacks](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## sizes
 
-All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of the `sizes` attribute is a sizes expression as described in the [sizes attribute on `img` tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images.
+All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of the AMP `sizes` attribute is a sizes expression that selects the defined size corresponding to the media query based on the current window size. <strong>Additionally, AMP sets an inline style for `width` on the element</strong>.
 
 Example:
 
@@ -152,11 +152,20 @@ Example:
 </amp-img>
 ```
 
-For more information, see [Art direction with srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Will produce the following nested `img ` tag:
+
+```html
+<img decoding="async"
+    src="amp.png"
+    sizes="(min-width: 320px) 320px, 100vw"
+    class="i-amphtml-fill-content i-amphtml-replaced-content">
+```
+
+For more information, see [Art direction with srcset, sizes & heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 
 ## width and height
 
-For some [layouts]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
+For some [layouts](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute), AMP components must have a `width` and `height` attribute that contains an integer pixel value.
 
 Example:
 
@@ -168,4 +177,4 @@ Example:
 </amp-anim>
 ```
 
-For more information, see [Layout & Media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) and the [Layout Spec]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+For more information, see [Layout & Media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) and the [Layout Spec](amp-html-layout/index.md).

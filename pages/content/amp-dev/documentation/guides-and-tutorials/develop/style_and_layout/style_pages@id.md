@@ -4,7 +4,7 @@ $title: CSS yang didukung
 
 Seperti semua halaman, halaman AMP digayakan dengan CSS, tapi tidak dapat mereferensikan stylesheet eksternal (dengan pengecualian [font kustom](#the-custom-fonts-exception)). Selain itu, gaya tertentu tidak diizinkan karena implikasi performa. Atribut gaya sisipan pun tidak diizinkan.
 
-Semua gaya harus ada di kepala dokumen (lihat [Tambahkan gaya ke halaman]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page)). Namun Anda dapat menggunakan pembuatan template dan praprosesor CSS untuk membuat halaman statis agar dapat mengelola konten Anda dengan lebih baik.
+Semua gaya harus ada di kepala dokumen (lihat [Tambahkan gaya ke halaman](index.md#add-styles-to-a-page)). Namun Anda dapat menggunakan pembuatan template dan praprosesor CSS untuk membuat halaman statis agar dapat mengelola konten Anda dengan lebih baik.
 
 Catatan: Komponen AMP hadir dengan gaya default untuk mempermudah pembuatan halaman responsif. Gaya ini ditentukan di [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
@@ -63,30 +63,30 @@ Gaya berikut diizinkan, namun dibatasi dalam hal nilai yang didukung:
   </tbody>
 </table>
 
-## Pengecualian font kustom
+## Pengecualian font kustom <a name="the-custom-fonts-exception"></a>
 
 Halaman AMP tidak dapat menyertakan stylesheet eksternal, dengan pengecualian font kustom.
 
-Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}}).
+Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP](custom_fonts.md).
 
-## Menggunakan praprosesor CSS
+## Menggunakan praprosesor CSS <a name="using-css-preprocessors"></a>
 
-Keluaran praprosesor berfungsi sama baiknya di AMP dengan di halaman web lainnya. Misalnya, situs [ampproject.org](https://www.ampproject.org/)
-menggunakan [Sass](http://sass-lang.com/) . (Kami menggunakan [Grow](http://grow.io/)  untuk membangun halaman AMP statis yang menyusun situs [ampproject.org](https://www.ampproject.org/) .)
+Keluaran praprosesor berfungsi sama baiknya di AMP dengan di halaman web lainnya. Misalnya, situs [amp.dev](https://amp.dev/)
+menggunakan [Sass](http://sass-lang.com/) . (Kami menggunakan [Grow](http://grow.io/)  untuk membangun halaman AMP statis yang menyusun situs [amp.dev](https://amp.dev/) .)
 
 Jika menggunakan praprosesor, selalu perhatikan hal yang Anda sertakan. Muatlah hanya yang digunakan halaman Anda. Misalnya, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-menyertakan semua markup AMP yang diperlukan dan CSS yang disisipkan dari file sumber `*.scss`. Juga disertakan skrip elemen kustom untuk [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), di antara lainnya, agar banyak halaman di seluruh situs dapat menyertakan video YouTube yang disematkan.
+menyertakan semua markup AMP yang diperlukan dan CSS yang disisipkan dari file sumber `*.scss`. Juga disertakan skrip elemen kustom untuk [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), di antara lainnya, agar banyak halaman di seluruh situs dapat menyertakan video YouTube yang disematkan.
 
 [sourcecode:html]{% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Proyek Accelerated Mobile Pages</title>
+  <title>Proyek AMP</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -103,4 +103,4 @@ menyertakan semua markup AMP yang diperlukan dan CSS yang disisipkan dari file s
 </head>
 {% endraw %}[/sourcecode]
 
- Untuk melihat cara di atas diterapkan dalam HTML AMP terformat, lihat sumber setiap halaman di [ampproject.org](https://www.ampproject.org/). (Di Chrome, klik kanan dan `View Page Source`.)
+ Untuk melihat cara di atas diterapkan dalam HTML AMP terformat, lihat sumber setiap halaman di [amp.dev](https://amp.dev/). (Di Chrome, klik kanan dan `View Page Source`.)

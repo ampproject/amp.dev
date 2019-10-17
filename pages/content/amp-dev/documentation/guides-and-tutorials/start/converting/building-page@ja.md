@@ -58,7 +58,7 @@ AMP ライブラリを追加するには、`<head>` タグの末尾に次の行�
 Powered by AMP ⚡ HTML
 ```
 
-AMP ライブラリに含まれる [AMP 検証ツール]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})を使用すると、有効な AMP ドキュメントへの変換が行われない原因となっている箇所を確認できます。AMP 検証ツールを**有効**にするため、次のフラグメント識別子をドキュメント URL に追加します。
+AMP ライブラリに含まれる [AMP 検証ツール](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)を使用すると、有効な AMP ドキュメントへの変換が行われない原因となっている箇所を確認できます。AMP 検証ツールを**有効**にするため、次のフラグメント識別子をドキュメント URL に追加します。
 
 ```text
 #development=1

@@ -58,7 +58,7 @@ Developer Console에서 자바스크립트 출력을 검사할 때(Console 탭�
 Powered by AMP ⚡ HTML
 ```
 
-AMP 라이브러리에 포함된 [AMP 유효성 검사기]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})는 페이지를 유효한 AMP 문서로 변환하는 데 방해가 되는 요소가 있는지 알려줍니다.  다음 프래그먼트 식별자를 문서 URL에 추가하여 AMP 유효성 검사기를 **사용 설정**합니다.
+AMP 라이브러리에 포함된 [AMP 유효성 검사기](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)는 페이지를 유효한 AMP 문서로 변환하는 데 방해가 되는 요소가 있는지 알려줍니다.  다음 프래그먼트 식별자를 문서 URL에 추가하여 AMP 유효성 검사기를 **사용 설정**합니다.
 
 ```text
 #development=1

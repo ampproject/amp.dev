@@ -1,0 +1,93 @@
+/*
+
+#############################
+### ORGANISM: card-grid ########
+#############################
+
+*/
+
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+
+.#{utility('card-grid')} {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -30px;
+  padding: 40px 30px;
+  background-color: color('white');
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
+  @media (min-width: 930px) {
+    padding: 40px 90px 90px 90px;
+  }
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+.#{organism('card-grid')} {
+  &-text {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  &-card {
+    margin: 18px 0;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid color('alto');
+
+    @media (min-width: 600px) {
+      max-width: 48%;
+    }
+    @media (min-width: 768px) {
+      max-width: 100%;
+    }
+    @media (min-width: 1024px) {
+      max-width: 47%;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 1.5rem;
+      height: 35px;
+      width: 35px;
+      fill: color('blue-ribbon');
+    }
+
+    &-headline {
+      @include txt-font-accent;
+      padding: 10px 0 0 50px;
+    }
+
+    .ap-m-lnk {
+      padding: 0 0 10px 0;
+      width: 100%;
+    }
+
+    &-tip {
+      margin: 0 0 0 5%;
+      border: none;
+
+      .ap-m-tip {
+        margin-top: 0;
+        margin: 25px 0 0 0;
+      }
+    }
+  }
+
+
+
+}

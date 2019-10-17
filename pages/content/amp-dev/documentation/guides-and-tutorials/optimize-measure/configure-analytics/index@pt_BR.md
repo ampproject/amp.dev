@@ -22,7 +22,7 @@ e dados de envolvimento com redes sociais a outro.
 
 O AMP Analytics foi criado especialmente para fazer a avaliação uma vez e gerar relatórios para vários destinos.
 Se você já estiver trabalhando com um ou mais fornecedores de análise,
-verifique a lista de [fornecedores de análise]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}}) para ver se eles integraram a solução com as AMP.
+verifique a lista de [fornecedores de análise](analytics-vendors.md) para ver se eles integraram a solução com as AMP.
 Em caso afirmativo, veja os dados de configuração e siga as instruções.
 
 Se o fornecedor de análise não tiver feito a integração com as AMP,
@@ -40,13 +40,13 @@ Você pretende coletar que dados sobre seus usuários para avaliar o engajamento
 Principais pontos a serem considerados:
 
 Você pretende rastrear somente as exibições de página ou outros padrões de engajamento do usuário
-(consulte também [amp-pixel ou amp-analytics]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#usar-amp-pixel-ou-amp-analytics))?
+(consulte também [amp-pixel ou amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
 Que tipos de dados você pretende coletar sobre seus usuários, seu conteúdo,
-o dispositivo ou o navegador (consulte também [Substituição de variáveis]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#substituição-de-variáveis))?
-* Como você pretende identificar seus usuários (consulte também [Identificação de usuários]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#identificação-do-usuário))?
+o dispositivo ou o navegador (consulte também [Substituição de variáveis](analytics_basics.md#variable-substitution))?
+* Como você pretende identificar seus usuários (consulte também [Identificação de usuários](analytics_basics.md#user-identification))?
 
 [tip type="read-on"]
 
-Conheça os recursos de análise no artigo [Analytics: conceitos básicos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}).
+Conheça os recursos de análise no artigo [Analytics: conceitos básicos](analytics_basics.md).
 
 [/tip]

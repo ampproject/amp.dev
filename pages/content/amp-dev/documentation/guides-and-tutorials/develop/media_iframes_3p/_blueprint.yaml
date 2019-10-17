@@ -1,7 +1,7 @@
-$path: /documentation/guides-and-tutorials/develop/{base}.html
+$path: /documentation/guides-and-tutorials/develop/media_iframes_3p/{base}.html
 $view: /views/detail/docs-detail.j2
 $localization:
-  path: /{locale}/documentation/guides-and-tutorials/develop/{base}.html
+  path: /{locale}/documentation/guides-and-tutorials/develop/media_iframes_3p/{base}.html
 $title@: Include media, iframes & third-party content
 $order: 2
 
@@ -9,4 +9,3 @@ formats:
   - websites
   - ads
   - stories
-  - email

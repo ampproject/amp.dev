@@ -4,7 +4,7 @@ $title: 로그인
 
 페이지에 처음 방문하면, 댓글 2개와 로그인 버튼을 볼 수 있습니다.
 
-<amp-img src="/static/img/login-button.png" alt="Login button" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="Login button" height="290" width="300"></amp-img>
 
 코드에서 로그인 버튼을 보면 아래와 같습니다:
 
@@ -15,7 +15,7 @@ $title: 로그인
 </span>
 [/sourcecode]
 
-[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 관련 속성의 동작은 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})를 위한 페이지 전체 구성에 따라 다릅니다. 이 경우 다음과 같습니다:
+[`amp-access`](../../../../documentation/components/reference/amp-access.md) 관련 속성의 동작은 [`amp-access`](../../../../documentation/components/reference/amp-access.md)를 위한 페이지 전체 구성에 따라 다릅니다. 이 경우 다음과 같습니다:
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -59,7 +59,7 @@ $title: 로그인
 아래 예제에서, 로그인 버튼을 클릭하면 `return` 파라미터 값이 요청에 추가됩니다.
 Chrome DevTools 콘솔의 네트워크 탭을 사용하여 이 값을 탐색할 수 있습니다.
 
-<amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
 AMPByExample 서버가 로그인 페이지에서 POST 요청을 받고 로그인 및 비밀번호가 맞으면 위에서 언급 한 returnURL로 요청을 리디렉션하고 `#success = true` 파라미터를 추가합니다.
 이제 AMP 런타임에서 페이지를 인증하고 드디어 댓글을 추가 할 수 있습니다.
@@ -72,4 +72,4 @@ AMPByExample 서버가 로그인 페이지에서 POST 요청을 받고 로그인
 - AMP 런타임은 로그인 페이지를 닫고 return URL 매개 변수로 지정된 페이지로 리디렉션합니다
 - 사용자가 로그인 버튼을 클릭하면 서버가 응답을 조정해야합니다.
 
-도움말: 이 flow에 대한 더 상세한 설명은 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})에서 볼 수 있습니다.
+도움말: 이 flow에 대한 더 상세한 설명은 [`amp-access`](../../../../documentation/components/reference/amp-access.md)에서 볼 수 있습니다.

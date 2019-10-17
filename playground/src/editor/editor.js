@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/monokai.css';
 import 'codemirror/addon/hint/show-hint.css';
 
 import 'codemirror/addon/selection/selection-pointer.js';
@@ -189,6 +188,7 @@ class Editor {
 
   loadHints(validator) {
     this.amphtmlHints.then((hints) => {
+      // eslint-disable-next-line no-unused-vars
       for (const key of Object.keys(CodeMirror.htmlSchema)) {
         delete CodeMirror.htmlSchema[key];
       }

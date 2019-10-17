@@ -4,12 +4,12 @@ $title: لغة CSS المعتمدة
 
 مثل كل صفحات الويب، يتم تحديد أنماط صحفات AMP باستخدام لغة CSS،
 ولكن لا يمكنك الإشارة إلى أوراق الأنماط الخارجية
-(باستثناء [الخطوط المخصصة](#استثناء-الخطوط-المخصصة)).
+(باستثناء [الخطوط المخصصة](#the-custom-fonts-exception)).
 وهناك أيضًا أنماط معيّنة غير مسموح بها نظرًا لأغراض متعلقة بالأداء؛
 فسمات الأنماط المضمّنة غير مسموح بها.
 
 يجب أن تبقى جميع الأنماط في رأس المستند
-(راجع [إضافة أنماط إلى إحدى الصفحات]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})).
+(راجع [إضافة أنماط إلى إحدى الصفحات](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
 ولكن يمكنك استخدام المعالجات التمهيدية والنماذج في CSS لإنشاء صفحات ثابتة
 لإدارة المحتوى التابع لك على نحو أفضل.
 
@@ -22,13 +22,13 @@ $title: لغة CSS المعتمدة
 
 [/tip]
 
-## استخدام معالجات CSS التمهيدية
+## استخدام معالجات CSS التمهيدية <a name="using-css-preprocessors"></a>
 
 يعمل الناتج الناشئ عن المعالجات التمهيدية في AMP تمامًا مثل أي صفحة ويب أخرى.
-على سبيل المثال، يستخدم الموقع [ampproject.org](https://www.ampproject.org/) لغة
+على سبيل المثال، يستخدم الموقع [amp.dev](https://amp.dev/) لغة
 [Sass](http://sass-lang.com/).
 (ونحن نستخدم [Grow](http://grow.io/) لإنشاء صفحات AMP الثابتة
-التي يتكوّن منها موقع [ampproject.org](https://www.ampproject.org/).)
+التي يتكوّن منها موقع [amp.dev](https://amp.dev/).)
 
 عند استخدام المعالجات التمهيدية،
 عليك بالانتباه بشكل خاص إلى العناصر التي يتم تضمينها؛ فلا تحمّل سوى العناصر التي تستخدمها صفحاتك.
@@ -36,19 +36,19 @@ $title: لغة CSS المعتمدة
 [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 جميع ترميزات AMP المطلوبة ولغة CSS المضمّنة من ملفات المصدر `*.scss`.
 كما يتضمّن أيضًا النص البرمجي للعنصر المخصص لـ
-<a href="{{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}"><code>amp-youtube</code></a>، وغيره،
+<a href="../../../../documentation/components/reference/amp-youtube.md"><code>amp-youtube</code></a>، وغيره،
 وهكذا يمكن أن تتضمن العديد من الصفحات في الموقع مقاطع فيديو youtube مضمّنة.
 
 [sourcecode:html] {% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Accelerated Mobile Pages Project</title>
+  <title>AMP Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -66,7 +66,7 @@ $title: لغة CSS المعتمدة
 {% endraw %} [/sourcecode]
 
 للاطلاع على كيفية تحويل ما سبق إلى AMP HTML منسّق،
-اعرض مصدر أي صفحة في [ampproject.org](https://www.ampproject.org/).
+اعرض مصدر أي صفحة في [amp.dev](https://amp.dev/).
 (في Chrome، انقر بزر الماوس الأيمن و`اعرض مصدر الصفحة`.)
 
 ## أنماط غير مسموح بها
@@ -118,7 +118,7 @@ $title: لغة CSS المعتمدة
   </tbody>
 </table>
 
-## خصائص النقل والصور المتحركة المدرجة بالقائمة البيضاء
+## خصائص النقل والصور المتحركة المدرجة بالقائمة البيضاء <a name="the-custom-fonts-exception"></a>
 
 لا يسمح AMP سوى بعمليات النقل والرسوم المتحركة للخصائص
 التي يمكن تسريعها من خلال وحدة معالجة الرسومات في برامج التصفّح الشائعة.
@@ -134,7 +134,7 @@ $title: لغة CSS المعتمدة
 كـ “auto” أو “scroll”.
 ولا يمكن أن يكون لدى أي عنصر محدد بواسط المستخدم في مستند AMP شريط تمرير.
 
-## استثناء الخطوط المخصصة
+## استثناء الخطوط المخصصة <a name="استثناء-الخطوط-المخصصة"></a>
 
 لا يمكن أن تحتوي صفحات AMP على أوراق أنماط خارجية، باستثناء الخطوط المخصصة.
 تتمثل الطريقتان المتوافقتان مع الإشارة إلى الخطوط المخصصة

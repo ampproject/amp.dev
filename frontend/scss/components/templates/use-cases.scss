@@ -29,6 +29,10 @@
     @include container-fluid;
   }
 
+  .#{utility('stage')} {
+      overflow: visible;
+  }
+
   .#{organism('stage')} {
     .#{utility('container')} {
       @include container-fluid;

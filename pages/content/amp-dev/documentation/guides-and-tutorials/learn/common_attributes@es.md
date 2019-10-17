@@ -20,7 +20,7 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Marcadores de posición y respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Marcadores de posición y respaldos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## heights
 
@@ -41,11 +41,11 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 
 ## layout
 
-AMP proporciona un conjunto de [diseños]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) que especifican cómo se comporta un componente AMP dentro del diseño del documento. Se puede especificar el diseño del componente añadiendo el atributo `layout` con un valor de diseño válido para el elemento (para saber qué valores se admiten, consulta la documentación del elemento).
+AMP proporciona un conjunto de [diseños](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) que especifican cómo se comporta un componente AMP dentro del diseño del documento. Se puede especificar el diseño del componente añadiendo el atributo `layout` con un valor de diseño válido para el elemento (para saber qué valores se admiten, consulta la documentación del elemento).
 
 Ejemplo:
 
@@ -58,9 +58,9 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) y las [especificaciones de diseño]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Diseño y media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) y las [especificaciones de diseño](amp-html-layout/index.md).
 
-## media
+## media <a name="media"></a>
 
 Todos los elementos AMP admiten el atributo `media`. El valor de `media` es una media query. Si la consulta no coincide, el elemento no se renderiza y no se obtienen sus recursos ni los potenciales recursos secundarios. Si la ventana del navegador cambia de tamaño o de orientación, las media queries se vuelven a evaluar y los elementos se ocultan y se muestran en función de los nuevos resultados.
 
@@ -79,7 +79,7 @@ Ejemplo:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries).
+Para obtener más información, consulta [Diseño y media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries).
 
 ## noloading
 
@@ -119,7 +119,7 @@ Ejemplo:
 </amp-lightbox>
 [/sourcecode]
 
-Para obtener más información, consulta [Acciones y eventos en AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Acciones y eventos en AMP](amp-actions-and-events.md).
 
 ## placeholder
 
@@ -135,7 +135,7 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Marcadores de posición y respaldos]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Marcadores de posición y respaldos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## sizes
 
@@ -151,11 +151,11 @@ Ejemplo:
 </amp-img>
 [/sourcecode]
 
-Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Controlar los diseños con los atributos srcset, sizes y heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 
 ## width y height
 
-En el caso de algunos [diseños]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute), los componentes AMP deben tener un atributo `width` y otro atributo `height` con valores de píxeles en números enteros.
+En el caso de algunos [diseños](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute), los componentes AMP deben tener un atributo `width` y otro atributo `height` con valores de píxeles en números enteros.
 
 Ejemplo:
 
@@ -167,4 +167,4 @@ Ejemplo:
 </amp-anim>
 [/sourcecode]
 
-Para obtener más información, consulta [Diseño y media queries]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) y las [especificaciones de diseño]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+Para obtener más información, consulta [Diseño y media queries](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) y las [especificaciones de diseño](amp-html-layout/index.md).

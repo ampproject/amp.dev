@@ -23,19 +23,30 @@ LICENSE
 MAINTENANCE.md
 README.md
 CONTRIBUTING.md
+packager/
 
-# The complete frontend, pages and examples packages aren't needed on App Engine
-frontend/
-pages/
-!platform/pages
-/examples
+# The complete frontend and pages folders aren't needed on App Engine
+/frontend/
+/pages
+# The transformed pages from dist/pages are used instead
+platform/pages*
 
 # playground: ignore everything except the dist folder
-playground/*
-!playground/backend
-!playground/dist
+/playground/*
+!/playground/backend
+!/playground/dist
 
 # boilerplate: ignore everything except the dist folder
-boilerplate/*
-!boilerplate/backend
-!boilerplate/dist
+/boilerplate/*
+!/boilerplate/backend
+!/boilerplate/dist
+!/boilerplate/lib
+
+# Infrastructure
+contributing
+jest.config.js
+smoke-tests
+renovate.json
+gulpfile.js
+scripts
+tests

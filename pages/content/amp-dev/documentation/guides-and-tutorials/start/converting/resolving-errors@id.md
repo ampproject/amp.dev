@@ -30,7 +30,7 @@ Sekarang, mari kita lihat error berikut:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Setiap dokumen AMP harus memiliki link yang merujuk pada versi "kanonis" dokumen tersebut.  Kita akan mempelajari lebih lanjut apa itu halaman kanonis dan berbagai pendekatan terhadap penautan kanonis dalam langkah [Membuat halaman Anda dapat ditemukan]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}}) di tutorial ini.
+Setiap dokumen AMP harus memiliki link yang merujuk pada versi "kanonis" dokumen tersebut.  Kita akan mempelajari lebih lanjut apa itu halaman kanonis dan berbagai pendekatan terhadap penautan kanonis dalam langkah [Membuat halaman Anda dapat ditemukan](discoverable.md) di tutorial ini.
 
 Untuk tutorial ini, kita akan menggunakan artikel HTML asli yang dikonversi menjadi halaman kanonis.
 
@@ -128,7 +128,7 @@ Sekali lagi, **muat ulang** halaman dan verifikasi bahwa error stylesheet sudah 
 
 Catatan: Tidak hanya gaya inline yang diperlukan tetapi ada batas ukuran file sebesar 50 kilobyte untuk semua informasi gaya. Anda harus menggunakan prapemrosesan CSS seperti [SASS](http://sass-lang.com/) untuk memperkecil CSS sebelum membuat CSS di halaman AMP menjadi inline.
 
-Penting: Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki beberapa stylesheet eksternal yang dirujuk oleh halaman AMP, Anda harus menyusun stylesheet ini menjadi 1 kumpulan aturan. Untuk mempelajari tentang aturan CSS apa yang berlaku di AMP, baca [CSS yang Didukung]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}).
+Penting: Anda hanya dapat memiliki 1 tag gaya di seluruh dokumen AMP. Jika Anda memiliki beberapa stylesheet eksternal yang dirujuk oleh halaman AMP, Anda harus menyusun stylesheet ini menjadi 1 kumpulan aturan. Untuk mempelajari tentang aturan CSS apa yang berlaku di AMP, baca [CSS yang Didukung](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).
 
 ## Jangan sertakan JavaScript pihak ketiga
 
@@ -149,7 +149,7 @@ Ini secara efektif mengesampingkan penggunaan semua JavaScript buatan pengguna/p
 Pembatasan pada skrip buatan pengguna/pihak ketiga tidak berlaku untuk skrip berikut:
 
 1.  Skrip yang menambahkan metadata ke halaman atau yang mengonfigurasi komponen AMP. Skrip ini akan memiliki atribut jenis `application/ld+json` atau `application/json`.
-2.  Skrip yang disertakan dalam iframe.  Menyertakan JavaScript dalam iframe harus dianggap sebagai upaya terakhir. Jika memungkinkan, fungsi JavaScript harus diganti menggunakan [Komponen AMP]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}). Kita akan mempelajari komponen AMP pertama di bagian selanjutnya.
+2.  Skrip yang disertakan dalam iframe.  Menyertakan JavaScript dalam iframe harus dianggap sebagai upaya terakhir. Jika memungkinkan, fungsi JavaScript harus diganti menggunakan [Komponen AMP](../../../../documentation/components/index.html). Kita akan mempelajari komponen AMP pertama di bagian selanjutnya.
 [/tip]
 
 Coba buka file [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) eksternal. Apa yang Anda lihat? File tidak boleh berisi kode JavaScript sama sekali dan hanya boleh menyertakan komentar informasi sebagaimana berikut:
@@ -203,24 +203,24 @@ AMP tidak mendukung partner HTML default untuk menampilkan media, yang menjelask
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP memiliki komponen web yang secara spesifik dirancang untuk menggantikan tag `<img>`, yaitu tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}):
+AMP memiliki komponen web yang secara spesifik dirancang untuk menggantikan tag `<img>`, yaitu tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md):
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-**Ganti** tag `<img>` dengan tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) di atas, dan jalankan validator lagi. Anda akan menerima beberapa error baru:
+**Ganti** tag `<img>` dengan tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) di atas, dan jalankan validator lagi. Anda akan menerima beberapa error baru:
 
 <pre class="error-text">
 Layout not supported: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-Mengapa [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) memicu error lain? Karena [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) bukanlah pengganti langsung untuk tag img HTML tradisional. Terdapat persyaratan tambahan saat menggunakan [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}).
+Mengapa [`amp-img`](../../../../documentation/components/reference/amp-img.md) memicu error lain? Karena [`amp-img`](../../../../documentation/components/reference/amp-img.md) bukanlah pengganti langsung untuk tag img HTML tradisional. Terdapat persyaratan tambahan saat menggunakan [`amp-img`](../../../../documentation/components/reference/amp-img.md).
 
 ### Sistem tata letak AMP
 
-Error tata letak menyatakan bahwa [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) tidak mendukung jenis tata letak `container`. Salah satu konsep paling penting dalam desain AMP adalah fokusnya untuk mengurangi jumlah perubahan posisi DOM yang diperlukan untuk merender halaman webnya.
+Error tata letak menyatakan bahwa [`amp-img`](../../../../documentation/components/reference/amp-img.md) tidak mendukung jenis tata letak `container`. Salah satu konsep paling penting dalam desain AMP adalah fokusnya untuk mengurangi jumlah perubahan posisi DOM yang diperlukan untuk merender halaman webnya.
 
 Untuk mengurangi perubahan posisi DOM, AMP menyertakan sistem tata letak untuk memastikan tata letak halaman dikenal sedini mungkin dalam siklus proses download dan perenderan halaman.
 
@@ -230,11 +230,11 @@ Gambar di bawah ini menunjukkan bagaimana halaman HTML jika sering ditata diband
 
 Sistem tata letak AMP memungkinkan elemen pada halaman diposisikan dan diskalakan dengan berbagai cara - dimensi tetap, desain yang responsif, tinggi tetap, dan lainnya.
 
-Pada contoh dalam artikel ini, sistem tata letak menganggap jenis tata letak untuk [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) sebagai jenis `container`. Namun, jenis `container` hanya berlaku untuk elemen yang berisi elemen turunan. Jenis `container` tidak kompatibel dengan tag [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), yang menjadi alasan untuk error ini.
+Pada contoh dalam artikel ini, sistem tata letak menganggap jenis tata letak untuk [`amp-img`](../../../../documentation/components/reference/amp-img.md) sebagai jenis `container`. Namun, jenis `container` hanya berlaku untuk elemen yang berisi elemen turunan. Jenis `container` tidak kompatibel dengan tag [`amp-img`](../../../../documentation/components/reference/amp-img.md), yang menjadi alasan untuk error ini.
 
-Mengapa dianggap jenis `container`? Karena kita tidak menentukan atribut `height` untuk tag [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}). Dalam HTML, perubahan posisi dapat dikurangi dengan selalu menetapkan lebar dan tinggi tetap untuk elemen pada halaman. Di AMP, Anda perlu menentukan lebar dan tinggi untuk elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) agar AMP dapat lebih dahulu menentukan rasio tinggi lebar elemen.
+Mengapa dianggap jenis `container`? Karena kita tidak menentukan atribut `height` untuk tag [`amp-img`](../../../../documentation/components/reference/amp-img.md). Dalam HTML, perubahan posisi dapat dikurangi dengan selalu menetapkan lebar dan tinggi tetap untuk elemen pada halaman. Di AMP, Anda perlu menentukan lebar dan tinggi untuk elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) agar AMP dapat lebih dahulu menentukan rasio tinggi lebar elemen.
 
-**Tambahkan** `width` dan `height` ke tag [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) sebagai berikut:
+**Tambahkan** `width` dan `height` ke tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) sebagai berikut:
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -242,7 +242,7 @@ Mengapa dianggap jenis `container`? Karena kita tidak menentukan atribut `height
 
 Muat ulang halaman dan periksa validatornya. Seharusnya sudah tidak muncul error apa pun!
 
-Anda kini memiliki dokumen AMP yang valid, tetapi gambarnya tidak terlihat bagus karena diposisikan dengan tidak tepat pada halaman.  Secara default, jika Anda menentukan tinggi dan lebar untuk [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}), AMP akan memperbaiki dimensi sesuai dengan yang Anda tentukan. Namun, bukankah akan lebih baik jika AMP akan menskalakan gambar agar *secara responsif* meregang dan sesuai dengan halaman, terlepas dari ukuran layarnya?
+Anda kini memiliki dokumen AMP yang valid, tetapi gambarnya tidak terlihat bagus karena diposisikan dengan tidak tepat pada halaman.  Secara default, jika Anda menentukan tinggi dan lebar untuk [`amp-img`](../../../../documentation/components/reference/amp-img.md), AMP akan memperbaiki dimensi sesuai dengan yang Anda tentukan. Namun, bukankah akan lebih baik jika AMP akan menskalakan gambar agar *secara responsif* meregang dan sesuai dengan halaman, terlepas dari ukuran layarnya?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Gambar tidak responsif.") }}
 
@@ -258,7 +258,7 @@ Bagus! Gambar kita memiliki aspek tinggi lebar yang benar dan secara responsif m
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="Gambar kini menjadi responsif!") }}
 
-Baca selengkapnya: Pelajari lebih lanjut Sistem Tata Letak AMP di [Spesifikasi Tata Letak AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+Baca selengkapnya: Pelajari lebih lanjut Sistem Tata Letak AMP di [Spesifikasi Tata Letak AMP](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md).
 
 ## Berhasil!
 
@@ -329,5 +329,5 @@ AMP validation successful.
 ### Pertanyaan Umum (FAQ)
 
 - [Apa yang dimaksud dengan perubahan posisi DOM?](http://stackoverflow.com/a/27637245)
-- [Bagaimana jika atribut tata letak tidak ditentukan?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-the-layout-attribute-isn’t-specified?)
-- [Bagaimana jika lebar dan tinggi tidak ditentukan?]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#what-if-width-and-height-are-undefined?)
+- [Bagaimana jika atribut tata letak tidak ditentukan?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
+- [Bagaimana jika lebar dan tinggi tidak ditentukan?](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)

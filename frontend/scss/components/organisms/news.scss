@@ -55,8 +55,6 @@
   width: 100%;
 
   &-list {
-    scroll-snap-type: x mandatory;
-    overflow-y: hidden;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     display: flex;
@@ -67,7 +65,6 @@
   &-item {
     flex: 1 0 20em;
     display: block;
-    scroll-snap-align: start;
     padding: 0 2em 0 0;
     margin: 2.125em 0 4.125em;
   	transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -104,13 +101,16 @@
     @include txt-strong;
     @include txt-uppercase;
     padding: 0.625em 24px;
-    color: color('gray-chateau');
+    color: color('river-bed');
   }
 
   &-image {
     width: 100%;
-    height: 56.25%;
     background-color: color('blue-ribbon');
+
+    img {
+      object-fit: cover;
+    }
   }
 
   &-headline {
@@ -134,6 +134,7 @@
     justify-content: center;
     align-items: center;
     fill: color('white');
+    padding: calc(28.125% - 2em) 0;
 
     .#{atom('ico')} {
       @include ico;

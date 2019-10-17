@@ -11,21 +11,21 @@ What if your bindable data is too large or complex to retrieve at page load? Or 
 
 [tip type="success"]
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) supports fetching remote data via its [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#attributes)attribute, which fetches JSON from a CORS endpoint. This fetch is performed once and at page load and is useful for ensuring freshness of data (especially when served from a cache).
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) supports fetching remote data via its [`src`](../../../../documentation/components/reference/amp-bind.md#attributes)attribute, which fetches JSON from a CORS endpoint. This fetch is performed once and at page load and is useful for ensuring freshness of data (especially when served from a cache).
 
-You can also bind the `src` attribute for the [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) element. This means that a user action can trigger a fetch of remote JSON data into the page's bindable state.
+You can also bind the `src` attribute for the [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) element. This means that a user action can trigger a fetch of remote JSON data into the page's bindable state.
 
 [/tip]
 
 ## Fetching available sizes for a shirt
 
-Let's make use of the ability to fetch remote data to look up prices of SKUs in our sample. Our Express.js development server in `app.js` already has an endpoint `/shirts/sizes?shirt=<sku>` which, given a shirt SKU, returns the available sizes and price for each size. It sends the response with an artificial delay of one second to simulate network latency.
+Let's make use of the ability to fetch remote data to look up prices of SKUs in our sample. Our Express.js development server in `app.js` already has an endpoint `/shirts/sizesAndPrices?shirt=<sku>` which, given a shirt SKU, returns the available sizes and price for each size. It sends the response with an artificial delay of one second to simulate network latency.
 
 |  Request                              |  Response |
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-Similar to the JSON data within [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) elements, the remote data returned from these fetches are merged into and available under the element's `id` attribute. For example, the data returned from the example response above can be accessed in an expression:
+Similar to the JSON data within [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) elements, the remote data returned from these fetches are merged into and available under the element's `id` attribute. For example, the data returned from the example response above can be accessed in an expression:
 
 
 |  Expression                  |  Result |
@@ -44,7 +44,7 @@ Now, let's apply this to our e-commerce example. First let's fetch this shirt da
 
 ### Indicate unavailable sizes
 
-Next, let's clearly mark unavailable sizes as such for a given SKU. The `"unavailable"` CSS class adds a diagonal line through an element -- we can add it to the elements within `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` corresponding to unavailable sizes:
+Next, let's clearly mark unavailable sizes as such for a given SKU. The `"unavailable"` CSS class adds a diagonal line through an element -- we can add it to the elements within [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) corresponding to unavailable sizes:
 
 ```html
 <amp-selector name="size">
@@ -76,7 +76,7 @@ Now, reload the page and try it out. Selecting a new SKU (shirt color) will caus
 
 ### Specify initial states
 
-There's a small problem though -- what about the black shirt, the default selected color?  We'll need to add the size and price data of the black shirt to `amp-state#shirts` because [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) only runs in response to explicit user action:
+There's a small problem though -- what about the black shirt, the default selected color?  We'll need to add the size and price data of the black shirt to `amp-state#shirts` because [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) only runs in response to explicit user action:
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -127,14 +127,14 @@ And, we'll need to update the default state of relevant elements:
 ```
 
 [tip type="note"]
-**NOTE –**  [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) usage.
+**NOTE –**  [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) usage.
 [/tip]
 
 ## Variable shirt prices
 
 Now that we correctly display the available sizes, let's make sure the correct price also displays.
 
-Our AMPPAREL store is peculiar in that shirt price is specific to both color AND size. That means we need a new variable to track the user-selected size. Add a new action to our size [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) element:
+Our AMPPAREL store is peculiar in that shirt price is specific to both color AND size. That means we need a new variable to track the user-selected size. Add a new action to our size [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) element:
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the

@@ -20,7 +20,7 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Placeholder & fallback](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## heights
 
@@ -41,11 +41,11 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 
 ## layout
 
-AMP menyediakan kumpulan [tata letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute) yang menentukan perilaku komponen AMP dalam tata letak dokumen. Anda dapat menentukan tata letak komponen dengan menambahkan atribut `layout` menggunakan salah satu nilai tata letak yang didukung untuk elemen tersebut (lihat dokumentasi elemen untuk mengetahui nilai apa saja yang didukung).
+AMP menyediakan kumpulan [tata letak](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) yang menentukan perilaku komponen AMP dalam tata letak dokumen. Anda dapat menentukan tata letak komponen dengan menambahkan atribut `layout` menggunakan salah satu nilai tata letak yang didukung untuk elemen tersebut (lihat dokumentasi elemen untuk mengetahui nilai apa saja yang didukung).
 
 Contoh:
 
@@ -58,9 +58,9 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) dan [Spesifikasi Tata Letak](amp-html-layout/index.md).
 
-## media
+## media <a name="media"></a>
 
 Semua elemen AMP mendukung atribut `media`. Nilai `media` adalah kueri media. Jika kueri tidak cocok, elemen tidak dirender dan resource serta kemungkinan resource turunannya tidak akan diambil. Jika jendela browser berubah ukuran atau orientasi, kueri media dievaluasi ulang dan elemen disembunyikan serta ditampilkan berdasarkan hasil yang baru.
 
@@ -79,7 +79,7 @@ Contoh:
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries).
 
 ## noloading
 
@@ -119,7 +119,7 @@ Contoh:
 </amp-lightbox>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat  [Tindakan dan Kejadian di AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat  [Tindakan dan Kejadian di AMP](amp-actions-and-events.md).
 
 ## placeholder
 
@@ -135,7 +135,7 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Placeholder & fallback]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Placeholder & fallback](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
 ## sizes
 
@@ -151,11 +151,11 @@ Contoh:
 </amp-img>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Gambar responsif dengan atribut srcset, sizes & heights](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md).
 
 ## width dan height
 
-Untuk sebagian [tata letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute), komponen AMP harus memiliki atribut `width` dan `height` yang berisi nilai piksel bilangan bulat.
+Untuk sebagian [tata letak](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute), komponen AMP harus memiliki atribut `width` dan `height` yang berisi nilai piksel bilangan bulat.
 
 Contoh:
 
@@ -167,4 +167,4 @@ Contoh:
 </amp-anim>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}) dan [Spesifikasi Tata Letak]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}}).
+Untuk informasi selengkapnya, lihat [Kueri Tata Letak & Media](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) dan [Spesifikasi Tata Letak](amp-html-layout/index.md).

@@ -4,7 +4,7 @@ $title: Placeholder & fallback
 
 Dalam upaya meningkatkan performa dan progressive enhancement yang dirasakan, salah satu praktik terbaik dalam AMP adalah menyediakan placeholder dan fallback di mana pun dimungkinkan.
 
-Beberapa elemen bahkan akan memberikan reward berupa kelonggaran pembatasan jika Anda menyediakan placeholder dan fallback - misalnya, jika Anda menyediakan placeholder untuk [`<amp-iframe>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#iframe-with-placeholder), elemen tersebut dapat digunakan di dekat bagian atas halaman (yang tidak akan berfungsi tanpa placeholder)
+Beberapa elemen bahkan akan memberikan reward berupa kelonggaran pembatasan jika Anda menyediakan placeholder dan fallback - misalnya, jika Anda menyediakan placeholder untuk [`<amp-iframe>`](../../../../documentation/components/reference/amp-iframe.md#iframe-with-placeholder), elemen tersebut dapat digunakan di dekat bagian atas halaman (yang tidak akan berfungsi tanpa placeholder)
 
 ## Placeholder
 
@@ -13,17 +13,19 @@ sebagai placeholder untuk elemen AMP induk.
 Jika ditentukan, elemen `placeholder` harus merupakan turunan langsung dari elemen AMP itu.
 Elemen yang ditandai sebagai `placeholder` akan selalu `fill` (mengisi) elemen AMP induk.
 
-<!--embedded amp-anim responsive example -->
-<div>
-<amp-iframe height="253"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampanim.responsive.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Tampilkan kode lengkap</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-anim:0.1"]
+```html
+<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+  layout="responsive"
+  width="400"
+  height="300">
+  <amp-img placeholder
+    src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
+    layout="fill">
+  </amp-img>
+</amp-anim>
+```
+[/example]
 
 Secara default, placeholder langsung ditampilkan untuk elemen AMP,
 meskipun resource elemen AMP tersebut belum didownload atau diinisialisasi.
@@ -36,7 +38,7 @@ elemen HTML apa pun dapat berfungsi sebagai placeholder.
 
 [/tip]
 
-## Fallback
+## Fallback <a name="fallbacks"></a>
 
 Anda dapat menentukan atribut `fallback` pada sebuah elemen untuk menunjukkan perilaku fallback:
 
@@ -50,28 +52,44 @@ Anda dapat menetapkan atribut `fallback` pada elemen HTML *apa pun*, bukan hanya
 
 Pada contoh berikut, kami menggunakan atribut `fallback` untuk memberi tahu pengguna bahwa browser tidak mendukung fitur tertentu:
 
-<!--embedded video example  -->
-<div>
-<amp-iframe height="234"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/ampvideo.fallback.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Tampilkan kode lengkap</div>
-  <div placeholder></div> 
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-video:0.1"]
+```html
+<amp-video {% if format=='stories'%}autoplay {% endif %}controls
+  width="640"
+  height="360"
+  src="{{server_for_email}}/static/inline-examples/videos/kitten-playing.mp4"
+  poster="{{server_for_email}}/static/inline-examples/images/kitten-playing.png">
+  <div fallback>
+    <p>This browser does not support the video element.</p>
+  </div>
+</amp-video>
+```
+[/example]
 
 ##### Contoh: Menampilkan format gambar yang berbeda
 
 Pada contoh berikut, kami menggunakan atribut `fallback` untuk memberi tahu browser agar menggunakan file JPEG jika format WebP tidak didukung. 
 
-<div>
-<amp-iframe height=309 layout=fixed-height sandbox="allow-scripts allow-forms allow-same-origin" resizable src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.webp.embed.html"><div overflow tabindex=0 role=button aria-label="Show more">Tampilkan kode lengkap</div><div placeholder></div></amp-iframe></div>
+[example preview="inline" playground="true"]
+```html
+<amp-img alt="Mountains"
+  width="550"
+  height="368"
+  layout="responsive"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
+  <amp-img alt="Mountains"
+    fallback
+    width="550"
+    height="368"
+    layout="responsive"
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+</amp-img>
+```
+[/example]
 
 ## Interaksi placeholder dan fallback
 
-Untuk komponen AMP yang mengandalkan konten dinamis (misalnya [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}), [`amp-list`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-list.md', locale=doc.locale).url.path}})), interaksi fallback dan placeholder beroperasi sebagai berikut:
+Untuk komponen AMP yang mengandalkan konten dinamis (misalnya [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md), [`amp-list`](../../../../documentation/components/reference/amp-list.md)), interaksi fallback dan placeholder beroperasi sebagai berikut:
 
 <ol>
   <li>Tampilkan placeholder saat konten sedang dimuat.</li>

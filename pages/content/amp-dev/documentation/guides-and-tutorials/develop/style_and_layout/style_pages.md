@@ -14,13 +14,18 @@ contributors:
   - choumx
 ---
 
+[filter formats="email"]
+Note: AMP for Email specifies additional CSS constraints which are described in
+[AMP for Email Supported CSS](../../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md).
+[/filter]
+
 Like all web pages, AMP pages are styled with CSS,
 but you can’t reference external stylesheets
 (with the exception of [custom fonts](#the-custom-fonts-exception)).
 Also certain styles are disallowed due to performance implications.
 
 Styles may live in the head of the document or as inline `style` attributes
-(see [Add styles to a page]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page)).
+(see [Add styles to a page](index.md#add-styles-to-a-page)).
 But you can use CSS preprocessors and templating to build static pages
 to better manage your content.
 
@@ -56,10 +61,9 @@ The following styles aren’t allowed in AMP pages:
   </tbody>
 </table>
 
-## Restricted styles
+## Performance recommendations
 
-The following styles are allowed, but are restricted in terms of which values
-they support:
+These allowed styles should restrict values to the following for an optimal performance:
 
 <table>
   <thead>
@@ -80,21 +84,21 @@ they support:
   </tbody>
 </table>
 
-## The custom fonts exception
+## The custom fonts exception <a name="the-custom-fonts-exception"></a>
 
 AMP pages can’t include external stylesheets, with the exception of custom fonts.
 
 [tip type="read-on"]
-**READ ON –** Learn more about [custom fonts in AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}}).
+**READ ON –** Learn more about [custom fonts in AMP](custom_fonts.md).
 [/tip]
 
-## Using CSS preprocessors
+## Using CSS preprocessors <a name="using-css-preprocessors"></a>
 
 The generated output of preprocessors works just as well in AMP as any other web page.
-For example, the [ampproject.org](https://www.ampproject.org/) site uses
+For example, the [amp.dev](https://amp.dev/) site uses
 [Sass](http://sass-lang.com/).
 (We use [Grow](http://grow.io/) to build the static AMP pages
-that make up the [ampproject.org](https://www.ampproject.org/) site.)
+that make up the [amp.dev](https://amp.dev/) site.)
 
 When using preprocessors,
 pay special attention to what you include; load only what your pages use.
@@ -102,19 +106,19 @@ For example, the
 [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
 includes all required AMP mark-up and the inlined CSS from the `*.scss` source files.
 It also includes the custom element script for
-[`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}), among others,
+[`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md), among others,
 so that many pages across the site can include embedded youtube videos.
 
 [sourcecode:html]{% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Accelerated Mobile Pages Project</title>
+  <title>AMP Project</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -132,5 +136,5 @@ so that many pages across the site can include embedded youtube videos.
 {% endraw %}[/sourcecode]
 
 To see how the above translates into formatted AMP HTML,
-view the source for any page in [ampproject.org](https://www.ampproject.org/).
+view the source for any page in [amp.dev](https://amp.dev/).
 (In Chrome, right-click and `View Page Source`.)

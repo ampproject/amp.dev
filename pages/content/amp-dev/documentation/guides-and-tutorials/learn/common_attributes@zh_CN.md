@@ -20,7 +20,7 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[占位符和备用行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[占位符和备用行为](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)。
 
 ## heights
 
@@ -41,11 +41,11 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md)。
 
 ## layout
 
-AMP 提供了一系列[布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)，以用于指定某个 AMP 组件在文档布局中的行为方式。您可通过下述方法为某个组件指定一种布局：为该元素添加 `layout` 属性，并指定一个受支持的布局值（请参阅该元素的文档以了解哪些值受支持）。
+AMP 提供了一系列[布局](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)，以用于指定某个 AMP 组件在文档布局中的行为方式。您可通过下述方法为某个组件指定一种布局：为该元素添加 `layout` 属性，并指定一个受支持的布局值（请参阅该元素的文档以了解哪些值受支持）。
 
 示例：
 
@@ -58,9 +58,9 @@ AMP 提供了一系列[布局]({{g.doc('/content/amp-dev/documentation/guides-an
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[布局和媒体查询](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)以及[布局规范](amp-html-layout/index.md)。
 
-## media
+## media <a name="media"></a>
 
 所有 AMP 元素均支持 `media` 属性。`media` 的值是一条媒体查询。如果查询不匹配，系统便既不会呈现相应元素，也不会获取其资源和可能存在的子资源。如果浏览器窗口改变了尺寸或屏幕方向，系统则会重新评估媒体查询，并会根据所得出的新结果来隐藏和显示各元素。
 
@@ -79,7 +79,7 @@ AMP 提供了一系列[布局]({{g.doc('/content/amp-dev/documentation/guides-an
     height="193" layout="responsive"></amp-img>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#element-media-queries)。
+有关详情，请参阅[布局和媒体查询](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#element-media-queries)。
 
 ## noloading
 
@@ -135,7 +135,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[占位符和备用行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[占位符和备用行为](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)。
 
 ## sizes
 
@@ -151,11 +151,11 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-img>
 [/sourcecode]
 
-有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[关于 srcset、sizes 和 heights 的艺术指导](../../../documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md)。
 
 ## width 和 height
 
-对于某些[布局]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#the-layout-attribute)，AMP 组件必须具有包含整数像素值的 `width` 和 `height` 属性。
+对于某些[布局](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)，AMP 组件必须具有包含整数像素值的 `width` 和 `height` 属性。
 
 示例：
 
@@ -167,4 +167,4 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 </amp-anim>
 [/sourcecode]
 
-有关详情，请参阅[布局和媒体查询]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})以及[布局规范]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})。
+有关详情，请参阅[布局和媒体查询](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)以及[布局规范](amp-html-layout/index.md)。

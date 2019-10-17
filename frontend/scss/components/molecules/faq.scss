@@ -16,8 +16,12 @@
 @import 'components/atoms/_headline.scss';
 
 .#{molecule('faq')} {
-  grid-column: 7 / 19;
-  margin: 50px 0 100px;
+  grid-column: 6 / 19;
+  margin: 50px 20px 0 5px;
+
+  @media (min-width: 768px) {
+    margin: 50px 0 0;
+  }
 
   &-headline {
     @include hl;
@@ -27,17 +31,18 @@
   }
 
   &-content {
-    @include txt;
+    padding-top: 24px;
 
     &-question {
       @include txt-font-accent;
       @include txt-lrg;
-      padding-bottom: 10px;
+      margin: 0 0 5px 0;
     }
 
     &-answer {
-      @include txt-2;
-      padding-bottom: 40px;
+      @include txt;
+      margin: 0;
+      padding-bottom: 25px;
     }
   }
 }

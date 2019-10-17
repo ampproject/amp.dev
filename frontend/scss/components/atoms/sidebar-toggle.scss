@@ -6,37 +6,60 @@
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
 
+$originalSpeed: 0.233s;
+$originalEasing: cubic-bezier(0,0,.21,1);
+
+#sidebar-left[aria-hidden="true"]:not([hidden]) ~ .ap--main  {
+  .ap-a-sidebar-mobile-toggle-label {
+    animation: moveSidebarToggleBackwards $originalSpeed $originalEasing forwards;
+
+    .label-icon svg { transform: rotate(180deg); }
+    .label-title { transform: translateX(0) scaleX(1); transform-origin: left center; }
+  }
+}
+
+#sidebar-left[open] ~ .ap--main {
+  .ap-a-sidebar-mobile-toggle-label {
+    left: 0;
+    margin-left: 0;
+    animation: moveSidebarToggleForwards $originalSpeed $originalEasing forwards;
+
+    .label-icon svg { transform: rotate(0); }
+    .label-title { transform: translateX(-150vw) scaleX(0); transform-origin: left center; }
+  }
+}
+
+#sidebar-left[open] ~ .ap--main,
+#sidebar-left[aria-hidden="true"]:not([hidden]) ~ .ap--main {
+  .ap-a-sidebar-mobile-toggle-label {
+    z-index: 9999999999;
+  }
+}
+
+@keyframes moveSidebarToggleBackwards {
+  from { transform: translateX(calc(90vw - 50%)); }
+  to { transform: translateX(0); }
+}
+
+@keyframes moveSidebarToggleForwards {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(90vw - 50%)); }
+}
+
 .#{utility('sidebar-toggle-observer')} {
   position: absolute;
   top: 50px;
 }
 
 .#{atom('sidebar-toggle')} {
-
   &-input {
     position: fixed;
     top: -99px;
-  }
-}
-
-.#{atom('sidebar-mobile-toggle')} {
-
-  &-input {
-    position: fixed;
-    top: -99px;
-    &~.ap--content {
-      .#{atom('sidebar-mobile-toggle-label')} {
-        transition: 0.2s;
-      }
-    }
-
   }
 
   &-label {
     position: fixed;
-    z-index: 21;
-    margin-top: -52px;
-    margin-left: -25px;
+    z-index: 15;
     font-size: 12px;
     @include txt-font-accent;
     color: color('white');
@@ -45,13 +68,6 @@
     display: flex;
     align-items: center;
 
-    @media (min-width: 768px) {
-      display: none;
-    }
-
-    &:focus {
-      outline: none;
-    }
     .label-icon {
       border-radius: 4px;
       background: color('blue-ribbon');
@@ -62,14 +78,21 @@
       justify-content: center;
       align-items: center;
       box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
+      z-index: 1;
+
       svg {
         height: 14px;
         width: 14px;
-        transform: rotate(180deg);
+        transition: transform $originalSpeed $originalEasing;
       }
     }
+
     .label-title {
+      position: absolute;
+      left: 32px;
+      white-space: nowrap;
       padding: 5px 10px 5px 5px;
+      opacity: 0;
       margin-left: -5px;
       border-radius: 0 4px 4px 0;
       background: color('blue-ribbon');
@@ -77,16 +100,34 @@
       display: flex;
       align-items: center;
       box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
+      transition: transform $originalSpeed $originalEasing;
     }
   }
+}
 
-  @media (min-width: 768px) {
-    display: none;
+.#{atom('sidebar-mobile-toggle')} {
+  &-input {
+    position: fixed;
+    top: -99px;
+  }
+
+  &-label {
+    margin-top: -52px;
+    margin-left: -25px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    .label-icon {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
   }
 }
 
 .#{atom('sidebar-desktop-toggle')} {
-
   display: none;
 
   &-input {
@@ -98,18 +139,23 @@
     display: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (max-width: 1440px) {
+    display: inline-block;
 
-  display: inline-block;
+    &-label {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 138px;
+      display: inline-flex;
+      transform: translate(-40px, -52px);
+    }
 
     &-input {
       &:checked {
         &~ .ap--sidebar {
           grid-column: 1 / 2;
           nav {
-            ul {
-              display: none;
-            }
+            display: none;
           }
           svg {
             transform: rotate(180deg);
@@ -120,7 +166,7 @@
             grid-column: 2 / 25;
           }
         }
-        &~ .ap--toc + .ap--content  {
+        &~ .ap--toc ~ .ap--content  {
           padding-left: 80px;
           padding-right: 80px;
           grid-column: 2 / 20;
@@ -129,7 +175,7 @@
           }
         }
 
-        &~ .ap--content  {
+        &~ .ap--content, &~ .ap--help  {
           grid-column-start: 2;
           padding-left: 80px;
           padding-right: 80px;
@@ -142,50 +188,6 @@
             }
           }
         }
-      }
-    }
-
-    &-label {
-      position: fixed;
-      z-index: 16;
-      margin-top: -52px;
-      margin-left: -40px;
-      font-size: 12px;
-      @include txt-font-accent;
-      color: color('white');
-      fill: color('white');
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-
-
-      &:focus {
-        outline: none;
-      }
-      .label-icon {
-        border-radius: 4px;
-        background: color('blue-ribbon');
-        height: 35px;
-        width: 32px;
-        padding-left: 2px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
-        svg {
-          height: 14px;
-          width: 14px;
-        }
-      }
-      .label-title {
-        padding: 5px 10px 5px 5px;
-        margin-left: -5px;
-        border-radius: 0 4px 4px 0;
-        background: color('blue-ribbon');
-        height: 35px;
-        display: flex;
-        align-items: center;
-        box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
       }
     }
   }

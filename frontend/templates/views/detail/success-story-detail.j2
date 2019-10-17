@@ -44,6 +44,7 @@
               <div class="ap-m-ghost-frame-{{device.type}} {{device.direction}}">
                 {% if device.video_src %}
                 {% if device.video_id %}
+                {% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
                 <amp-vimeo
                   data-videoid="{{device.video_id}}"
                   layout="responsive"
@@ -51,6 +52,7 @@
                   height="9">
                 </amp-vimeo>
                 {% else %}
+                {% do doc.amp_dependencies.add('amp-video', '0.1') %}
                 <amp-video
                     width="{{device.width}}"
                     height="{{device.height}}"
@@ -96,7 +98,7 @@
         <div class="ap-o-kpi-list ap--container">
           {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
           {% for kpi in doc.kpis %}
-            <div class="ap-m-kpi ap-m-kpi-websites ap-m-teaser-kpi ap-m-teaser-kpi-websites">
+            <div class="ap-m-kpi ap-m-kpi-websites">
               <div class="ap-m-kpi-content">
                 {% if kpi.value %}
                   <span class="ap-m-kpi-number">{{kpi.value|safe}}</span>
@@ -137,6 +139,7 @@
                 <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
                 {% if content.video_src %}
                 {% if content.video_id %}
+                {% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
                 <amp-vimeo
                   data-videoid="{{content.video_id}}"
                   layout="responsive"
@@ -144,6 +147,7 @@
                   height="{{content.height}}">
                 </amp-vimeo>
                 {% else %}
+                {% do doc.amp_dependencies.add('amp-video', '0.1') %}
                 <amp-video
                     class="ap--media"
                     width="{{content.width}}"
@@ -192,6 +196,7 @@
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
               {% if content.type.video_src %}
+              {% do doc.amp_dependencies.add('amp-video', '0.1') %}
               <amp-video
                   class="ap--media"
                   width="{{content.width}}"
@@ -238,6 +243,7 @@
                 <p class="ap-a-txt">{{content.quote|safe}}</p>
               </blockquote>
               <p>{{content.author|safe}}</p>
+                {% if story_url %}
                 <a href="{{story_url}}" class="ap-m-lnk">
                   <div class="ap-a-ico ap-m-lnk-icon">
                     {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -245,6 +251,7 @@
                   </div>
                   <span class="ap-m-lnk-text">Read success story</span>
                 </a>
+                {% endif %}
               </div>
             </div>
           </section>
@@ -264,34 +271,22 @@
                 <span class="ap-m-lnk-text">Download PDF</span>
               </a>
             </div>
-            {% if content.background %}
-              <div class="ap-m-text-media media bg-{{content.background}}">
-            {% else %}
-              <div class="ap-m-text-media media">
-            {% endif %}
+
+            <div class="ap-m-text-media media{% if content.background %} bg-{{content.background}}{% endif %}">
               {% if content.type %}
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
               {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
               <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
                 <amp-img
-                  alt="{{content.alt}}"
-                  height="{{content.height}}"
+                  class="ap--media"
                   layout="responsive"
-                  src="{{content.image_src}}"
+                  height="{{content.height}}"
                   width="{{content.width}}"
-                  class="ap--media">
+                  src="{{content.image_src}}"
+                  alt="{{content.alt}}">
                 </amp-img>
               </div>
-              {% else %}
-              <amp-img
-                alt="{{content.alt}}"
-                height="{{content.height}}"
-                layout="responsive"
-                src="{{content.image_src}}"
-                width="{{content.width}}"
-                class="ap--media">
-              </amp-img>
               {% endif %}
             </div>
           </div>

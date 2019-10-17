@@ -6,11 +6,17 @@
 {% do doc.styles.addCssFile('css/components/molecules/table.css') %}
 {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
 
+{% if doc.has_inline_preview %}
+  {% do doc.styles.addCssFile('css/components/atoms/fab.css') %}
+  {% do doc.styles.addCssFile('css/components/organisms/code-preview.css') %}
+  {% do doc.icons.useIcon('icons/reload.svg') %}
+  {% do doc.icons.useIcon('icons/orientation-toggle.svg') %}
+{% endif %}
+
 {% do doc.styles.addCssFile('css/components/templates/component-detail.css') %}
 {% endblock %}
 
 {% block main %}
-{% include 'views/partials/component-sidebar.j2' %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
 <main class="ap--main ap-t-component-detail">
   <div class="ap--container">
@@ -24,7 +30,7 @@
     <section class="ap--help">
       <div class="ap-o-help">
         <span class="ap-o-help-hl">{{ _('Need more help?') }}</span>
-        <p class="ap-o-help-copy">{{ _('You\'ve red this document a dozen times but it doesn\'t really cover all of your questions? Maybe other people felt the same: reach out to them on Stack Overflow.')}}</p>
+        <p class="ap-o-help-copy">{{ _('You\'ve read this document a dozen times but it doesn\'t really cover all of your questions? Maybe other people felt the same: reach out to them on Stack Overflow.')}}</p>
         <a href="https://stackoverflow.com/questions/tagged/amp-html" rel="noopener" class="ap-m-lnk">
           <svg class="ap-a-ico ap-m-lnk-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
           <span class="ap-m-lnk-text">{{ _('Go to Stack Overflow') }}</span>
@@ -41,4 +47,5 @@
     </section>
   </div>
 </main>
+{% include 'views/partials/component-sidebar.j2' %}
 {% endblock %}

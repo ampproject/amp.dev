@@ -6,21 +6,21 @@ $title: 使用远程数据
 
 [tip type="success"]
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 支持通过其 [`src`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#attributes) 属性提取远程数据，该属性会从 CORS 端点提取 JSON。此项提取操作会在网页加载时执行 1 次，因此有助于确保数据的新鲜度（尤其是当数据由缓存提供时）。
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 支持通过其 [`src`](../../../../documentation/components/reference/amp-bind.md#attributes) 属性提取远程数据，该属性会从 CORS 端点提取 JSON。此项提取操作会在网页加载时执行 1 次，因此有助于确保数据的新鲜度（尤其是当数据由缓存提供时）。
 
-您也可为 [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 元素绑定 `src` 属性。这意味着，用户操作会触发系统提取远程 JSON 数据，以将这些数据纳入相应网页的可绑定状态。
+您也可为 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 元素绑定 `src` 属性。这意味着，用户操作会触发系统提取远程 JSON 数据，以将这些数据纳入相应网页的可绑定状态。
 
 [/tip]
 
 ## 提取可用的衬衫尺寸
 
-我们不妨利用这项远程数据提取功能来查询我们所用示例中的 SKU 价格。我们在 `app.js` 中的 Express.js 开发服务器已具有 `/shirts/sizes?shirt=<sku>` 端点；一旦用户选定了衬衫 SKU，该端点即会返回所有可用的尺寸以及每种尺寸的价格。它会在人为的 1 秒延迟后发送响应，以模拟网络延迟。
+我们不妨利用这项远程数据提取功能来查询我们所用示例中的 SKU 价格。我们在 `app.js` 中的 Express.js 开发服务器已具有 `/shirts/sizesAndPrices?shirt=<sku>` 端点；一旦用户选定了衬衫 SKU，该端点即会返回所有可用的尺寸以及每种尺寸的价格。它会在人为的 1 秒延迟后发送响应，以模拟网络延迟。
 
 |  Request                              |  Response |
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-与 [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) 元素中的 JSON 数据类似，这些提取操作所返回的远程数据会被合并到相应元素的 `id` 属性中，且会显示在该属性下。例如，若要访问上文中的示例响应所返回的数据，您可以使用如下表达式：
+与 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 元素中的 JSON 数据类似，这些提取操作所返回的远程数据会被合并到相应元素的 `id` 属性中，且会显示在该属性下。例如，若要访问上文中的示例响应所返回的数据，您可以使用如下表达式：
 
 |  Expression                  |  Result |
 |------------------------------|---------|
@@ -38,7 +38,7 @@ $title: 使用远程数据
 
 ### 指明不可用的尺寸
 
-接下来，我们将为所选 SKU 清晰地标明不可用的尺寸。`"unavailable"` CSS 类会在相应元素上划一条对角线 - 我们可将它添加到 `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]` 内与不可用尺寸对应的元素中：
+接下来，我们将为所选 SKU 清晰地标明不可用的尺寸。`"unavailable"` CSS 类会在相应元素上划一条对角线 - 我们可将它添加到 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 内与不可用尺寸对应的元素中：
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ $title: 使用远程数据
 
 ### 指定初始状态
 
-但有个小问题 - 该如何对待黑色（默认选择的颜色）衬衫呢？我们需要将黑色衬衫的尺寸和价格数据添加到 `amp-state#shirts` 中，因为 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 只会为响应明确的用户操作而运行：
+但有个小问题 - 该如何对待黑色（默认选择的颜色）衬衫呢？我们需要将黑色衬衫的尺寸和价格数据添加到 `amp-state#shirts` 中，因为 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 只会为响应明确的用户操作而运行：
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ $title: 使用远程数据
 </amp-selector>
 ```
 
-注意: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) 不会在网页加载时运行 - 它只会为响应明确的用户操作而运行。这可确保所有网页都能以非常快的速度完成初始网页加载，无论相应网页是否使用了 [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})。
+注意: [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 不会在网页加载时运行 - 它只会为响应明确的用户操作而运行。这可确保所有网页都能以非常快的速度完成初始网页加载，无论相应网页是否使用了 [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)。
 
 ## 多变的衬衫价格
 
 鉴于我们已能正确显示可用的尺寸，下面我们将确保也能显示正确的价格。
 
-我们的 AMPPAREL 商店的独特之处在于，衬衫价格同时取决于颜色和尺寸。这意味着，我们需要使用一个新的变量来跟踪用户所选的尺寸。为此，我们将在我们的尺寸 [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) 元素中添加一项新操作：
+我们的 AMPPAREL 商店的独特之处在于，衬衫价格同时取决于颜色和尺寸。这意味着，我们需要使用一个新的变量来跟踪用户所选的尺寸。为此，我们将在我们的尺寸 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 元素中添加一项新操作：
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the

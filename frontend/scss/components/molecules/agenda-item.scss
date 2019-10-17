@@ -15,56 +15,107 @@
 @import 'components/atoms/_color.scss';
 
 .#{molecule('agenda-item')} {
-
   @include txt;
   @include txt-lrg;
-  @include txt-font-accent;
   display: flex;
-  align-items: center;
   text-align: left;
+  padding-left: 10px;
+
+  &-speakers {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: -75px;
+    min-width: 65px;
+  }
+
+  &-image {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      border-radius: 50%;
+
+      &:nth-child(even) {
+        margin-left: 15px;
+      }
+
+      &:nth-child(odd) {
+        margin-left: -15px;
+      }
+    }
+
+  }
 
   &-time {
+    @include txt-font-accent;
     width: 50px;
     margin-right: 25px;
     padding-right: 15px;
     color: color('charade');
   }
 
-  &-title {
-    width: 80%;
-    margin-right: auto;
-    padding: 7px 0 7px 25px;
-    border-left: 2px solid color('blue-ribbon');
-    position: relative;
-    display: flex;
-    align-items: center;
-    color: color('charade');
+  &-dory {
+    background: color('carnation');
+    padding: 0.4em;
+    border-radius: 0.2em;
+    color: color('white');
+    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25);
+    margin-top: 1rem;
+    display: inline-block;
+  }
 
+  &-description {
+    position: relative;
+    width: 80%;
+    border-left: 2px solid color('blue-ribbon');
+    padding: 0 0 25px 25px;
 
     &:before {
       content: '';
       position: absolute;
       border-radius: 50%;
-      left: -10px;
-      background: color('white');
-      height: 14px;
-      width: 14px;
-      border: 2px solid color('blue-ribbon');
+      margin-top: 8px;
+      height: 8px;
+      width: 8px;
+      left: -5px;
+      background: color('blue-ribbon');
     }
 
-    &.break {
-      color: fade_out(color('charade'), 0.5);
+    &.session, &.keynote, &.panel {
 
       &:before {
-        height: 8px;
-        width: 8px;
-        left: -7px;
-        background: color('blue-ribbon');
+        left: -10px;
+        background: color('white');
+        height: 14px;
+        width: 14px;
+        margin-top: 4px;
+        border: 2px solid color('blue-ribbon');
       }
     }
 
     &.keynote {
       color: color('blue-ribbon');
+    }
+
+    &-title {
+      @include txt;
+      @include txt-lrg;
+      @include txt-font-accent;
+      color: color('charade');
+
+      &.break {
+        color: fade_out(color('charade'), 0.5);
+      }
+    }
+
+    &-text {
+      @include txt;
+    }
+
+    &-speaker {
+      @include txt;
+      color: color('carnation');
     }
   }
 }

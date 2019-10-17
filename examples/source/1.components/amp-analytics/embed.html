@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen" type="text/css">
+      body {
+        background: white;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+      th { 
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function getQueryParams(qs) {
+          qs = qs.split('+').join(' ');
+          var params = {},
+              tokens,
+              re = /[?&]?([^=]+)=([^&]*)/g;
+          while (tokens = re.exec(qs)) {
+              params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+          }
+          return params;
+      }
+
+      function updateTimestamp() {
+        var now = new Date();
+        document.getElementById("timestamp").textContent = now.toLocaleTimeString();
+      }
+
+      function updateAnalyticsData(newData) {
+        var el = document.createElement('div');
+        var att = document.createAttribute("id");
+        att.value = "data";          
+        el.setAttributeNode(att);
+        el.innerHTML = newData;
+        var data = document.getElementById("data");
+        var parentDiv = data.parentNode;
+        parentDiv.replaceChild(el, data);
+      }
+
+      if (!!window.EventSource) {
+        var query = getQueryParams(document.location.search);
+        var account = query.account;
+        var user = query.user;
+        var source = new EventSource('https://amp.dev/documentation/examples/components/amp-analytics/embed/listen?account=' + account + '&user=' + user);
+        source.onmessage = function(e) {
+          updateAnalyticsData(e.data);
+          updateTimestamp();
+        };
+      }
+    </script>
+    <div id="data">No data</div>
+    <p>Last updated: <span id="timestamp">n/a</span></p>
+  </body>
+</html>

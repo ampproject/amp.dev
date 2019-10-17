@@ -1,0 +1,42 @@
+/*
+
+################################
+### TEMPLATE: code-of-conduct  ###
+################################
+
+### INFO:
+
+*/
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+@import '../atoms/_text.scss';
+@import '../atoms/_color.scss';
+@import '../atoms/_headline.scss';
+
+@import '../templates/_default.scss';
+
+
+.#{template('meta')} {
+
+  .#{utility('container')} {
+    @include container;
+  }
+
+  .#{utility('content')} {
+    @include default-section-padding;
+
+    &-wide {
+      grid-column: 5 / 21;
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  p, li {
+    @include txt;
+  }
+
+}

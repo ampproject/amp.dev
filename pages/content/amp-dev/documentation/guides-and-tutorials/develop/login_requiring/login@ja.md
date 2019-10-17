@@ -4,7 +4,7 @@ $title: ログイン
 
 このページを初めて開いたときには、2 つのコメントとログインボタンが表示されます。
 
-<amp-img src="/static/img/login-button.png" alt="ログインボタン" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="ログインボタン" height="290" width="300"></amp-img>
 
 ログインボタンは、コードでは次のように記述されています。
 
@@ -15,7 +15,7 @@ $title: ログイン
 </span>
 [/sourcecode]
 
-[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) に関連する属性の動作は、[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) に対してページ全体で適用される設定に依存します。ここでは次のようになります。
+[`amp-access`](../../../../documentation/components/reference/amp-access.md) に関連する属性の動作は、[`amp-access`](../../../../documentation/components/reference/amp-access.md) に対してページ全体で適用される設定に依存します。ここでは次のようになります。
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -53,7 +53,7 @@ $title: ログイン
 
 下の例では、ログインボタンをクリックすると、`return` パラメータの値がリクエストに追加されます。この値を調べるには、Chrome DevTools コンソールを使用して、[Network] タブに移動します。
 
-<amp-img src="/static/img/return-parameter.png" alt="return パラメータ" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="return パラメータ" height="150" width="600"></amp-img>
 
 AMPByExample サーバーがログインページから POST リクエストを受け取り、ログイン ID とパスワードが正しい場合、サーバーはリクエストを前述の `returnURL` にリダイレクトし、`#success=true` パラメータを末尾に追加します。これで AMP ランタイムがページを承認でき、コメントの追加が可能になりました。
 
@@ -65,4 +65,4 @@ AMPByExample サーバーがログインページから POST リクエストを�
 - AMP ランタイムはログインページを閉じて、return URL パラメータで指定されたページにリダイレクトします
 - ユーザーがログインボタンをクリックすると、サーバーはレスポンスを調整する必要があります
 
-ヒント: このフローの詳細については、[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})をご覧ください。
+ヒント: このフローの詳細については、[`amp-access`](../../../../documentation/components/reference/amp-access.md)をご覧ください。

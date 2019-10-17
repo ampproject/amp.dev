@@ -20,13 +20,11 @@
 @import '../molecules/copy';
 @import '../molecules/headline-icon.scss';
 @import '../molecules/quote';
-@import '../molecules/table.scss';
 
 @import '../organisms/benefits-overview.scss';
 @import '../organisms/case-band.scss';
 @import '../organisms/case-grid.scss';
 @import '../organisms/component-visual.scss';
-@import '../organisms/kpi-list.scss';
 
 @import '../templates/_default.scss';
 
@@ -62,7 +60,20 @@
   }
 
   .#{utility('component-visual')} {
+    overflow: visible;
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      grid-column: 6 / 15;
+    }
+
     .#{organism('component-visual')} {
+
+      &-link {
+        margin-right: 15px;
+      }
+
       &-copy {
         @include default-section-padding;
       }
@@ -213,6 +224,11 @@
 
   .#{utility('stage')} {
     .#{organism('stage')} {
+
+      &-content-button {
+        margin-right: 0.5em;
+      }
+
       @media (max-width: 767px) {
         margin-bottom: 50px;
 
@@ -234,6 +250,10 @@
     }
   }
 
+  /* raise specificity to override some tools widget styles */
+  .ap--tools-widget div.#{organism('teaser-grid')} {
+    grid-column: 4 / 25;
+  }
 
   .#{organism('teaser-grid')} {
     grid-column: 4 / 22;
@@ -249,22 +269,25 @@
     }
 
     &-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 60px 30px;
-      margin: 0 40px;
+      display: flex;
+      padding-top: 40px;
+      overflow: scroll;
 
       @media (min-width: 768px) {
+        display: grid;
         grid-template-columns: repeat(12, 1fr);
-        margin: 0;
+        grid-gap: 60px 30px;
+        overflow: visible;
+        padding-top: 0;
+        align-items: flex-start;
       }
 
       .#{molecule('teaser')}{
-        grid-column: 1;
-        margin: 0;
+        margin: 0 20px;
 
         @media (min-width: 768px) {
           grid-column: span 4;
+          margin: 0;
         }
       }
     }

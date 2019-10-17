@@ -2,10 +2,10 @@
 $title: Resumo
 ---
 
-Neste tutorial, vamos ver como combinar [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) e [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) para criar uma seção de comentários que exige login.
+Neste tutorial, vamos ver como combinar [`amp-access`](../../../../documentation/components/reference/amp-access.md) e [`amp-form`](../../../../documentation/components/reference/amp-form.md) para criar uma seção de comentários que exige login.
 
 Para saber mais, visite:
 
-- [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}})
-- [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}})
-- [Exemplo de uma "Seção de comentários"]({{g.doc('/content/amp-dev/documentation/examples/samples-and-templates/comment_section.html', locale=doc.locale).url.path}})
+- [`amp-access`](../../../../documentation/components/reference/amp-access.md)
+- [`amp-form`](../../../../documentation/components/reference/amp-form.md)
+- [Exemplo de uma "Seção de comentários"](../../../../documentation/examples/documentation/Comment_Section.html)

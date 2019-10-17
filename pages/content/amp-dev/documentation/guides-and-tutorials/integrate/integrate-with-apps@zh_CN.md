@@ -69,7 +69,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 借助 Google 的 AMP URL API，
 您可以检索与给定网址列表匹配的 AMP HTML 网址（[官方文档](https://developers.google.com/amp/cache/use-amp-url)/
-[演示]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}})）。这些网址
+[演示](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html)）。这些网址
 无需是规范版本。如果存在 AMP 版本，响应中将包含
 原始 AMP 网址和 Google AMP Cache 中缓存的 AMP 网页对应的
 网址。
@@ -112,7 +112,7 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 
 ## 使用 AMP 缓存
 
-[AMP 缓存]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}})是一种
+[AMP 缓存](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md)是一种
 基于代理的内容分发网络 (CDN)，用于分发有效的 AMP 文档。
 AMP 缓存旨在：
 
@@ -123,7 +123,7 @@ AMP 缓存旨在：
 目前，有 2 家提供商提供 AMP 缓存服务：
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 这意味着您可以通过两种方式使用以下任一版本在应用中显示 AMP 文件：
 
@@ -167,12 +167,12 @@ AMP runtime 提供了一个 Viewer API，后者提供了
 
 *   从 AMP 缓存提供 AMP 网页（加载时间缩短 1 秒以上）。
 *   显示文章的发布商来源（例如，在可收起标头中）。
-*   提供分享操作（另请参阅下方的“[分享 AMP 内容]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md', locale=doc.locale).url.path}}#sharing-amp-content)”
+*   提供分享操作（另请参阅下方的“[分享 AMP 内容](integrate-with-apps.md#sharing-amp-content)”
     一节）。
 *   在基于 WebView 的查看工具中，启用第三方 Cookie。
 *   为您的平台/应用设置引荐来源网址。
 
-### 分享 AMP 内容
+### 分享 AMP 内容 <a name="sharing-amp-content"></a>
 
 在平台的 AMP 查看工具内分享 AMP 文档时，该平台
 应该分享规范网址（如果在技术上可行）。例如，如果

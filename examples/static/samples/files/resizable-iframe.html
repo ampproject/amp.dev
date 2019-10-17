@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      font-family: 'Noto Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    #box {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #005af0;
+      padding: 1rem;
+      background: #ccc;
+      box-sizing: border-box;
+    }
+    p {
+      margin-top: 1rem;
+    }
+    button {
+      font-weight: 700;
+      line-height: 1.2em;
+      color: #20202a;
+      font-size: 1em;
+      color: #fff;
+      padding: .75em 1.75em;
+      text-align: center;
+      border-radius: 3px;
+      background-color: #005af0;
+      border: none;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <button id="action">Resize</button>
+      <p id="message">Size: <span id="size">200x200</span></p>
+    </div>
+  <script>
+  var sizes = [200, 300];
+  var currentSize = 0;
+
+  // post initial size
+  postSize(sizes[currentSize]);
+
+  // change size on button click
+  document.getElementById('action').onclick = function(event) {
+    postSize(sizes[currentSize]);
+  }
+
+  function postSize(size) {
+    document.getElementById('size').innerHTML = size + 'x' + size;
+    var box = document.getElementById('box');
+    box.style.width = size + 'px';
+    box.style.height = size + 'px';
+    currentSize = (currentSize + 1) % sizes.length;
+
+    // post new height after re-layout
+    window.requestAnimationFrame(() => {
+      var message = {
+        sentinel: 'amp',
+        type: 'embed-size',
+        height: size,
+        width: size,
+      };
+      console.log('post new embed-height', message);
+      window.parent.postMessage(message, '*');
+    }) 
+
+
+  }
+  </script>
+  </body>
+</html>

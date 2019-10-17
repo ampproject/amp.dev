@@ -190,7 +190,7 @@ Pets can lower your stress levels!</p>
 
 ブラウザでストーリー ページを再度読み込み、バナーがスライドインすることを確認してください。
 
-次に、すべての画像をフェードインします。以下のように、コードの各 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素に `animate-in="fade-in"` を追加します。
+次に、すべての画像をフェードインします。以下のように、コードの各 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 要素に `animate-in="fade-in"` を追加します。
 
 ```html hl_lines="4 9 14 19"
 <amp-img src="assets/cat.jpg"
@@ -217,7 +217,7 @@ Pets can lower your stress levels!</p>
 
 ページを更新して再度読み込むと、各画像がフェードインします。さらに見栄えがよくなりましたが、すべての画像が同時にフェードインするため、効果があまり目立たない可能性もあります。その場合は、アニメーションのタイミングを変更すると視覚効果を改善できます。
 
-たとえば、最初の画像の表示処理を開始するタイミングを 0.4 秒（0.4s）遅延させて、テキストバナーの表示処理が完了する寸前に開始されるようにしましょう。残りの 3 枚の画像の表示処理は、直前の画像の表示処理が開始されてから 0.2 秒（0.2s）後に開始されるようにします。各 [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) 要素に、`animate-in-delay=""` 属性を使って適切な遅延の値を指定します。コードは以下のようになります。
+たとえば、最初の画像の表示処理を開始するタイミングを 0.4 秒（0.4s）遅延させて、テキストバナーの表示処理が完了する寸前に開始されるようにしましょう。残りの 3 枚の画像の表示処理は、直前の画像の表示処理が開始されてから 0.2 秒（0.2s）後に開始されるようにします。各 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 要素に、`animate-in-delay=""` 属性を使って適切な遅延の値を指定します。コードは以下のようになります。
 
 ```html hl_lines="5 11 17 23"
 <amp-img src="assets/cat.jpg"
@@ -251,4 +251,4 @@ Pets can lower your stress levels!</p>
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='ページ 5 のコラージュ', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 
-AMP ストーリーのアニメーションでは、アニメーションの組み合わせやアニメーションの変更などによって、このチュートリアルで紹介した以外にもさまざまな視覚効果を追加できます。アニメーションについて詳しくは、[`amp-story`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-story.md', locale=doc.locale).url.path}}) の関連ドキュメントをご覧ください。
+AMP ストーリーのアニメーションでは、アニメーションの組み合わせやアニメーションの変更などによって、このチュートリアルで紹介した以外にもさまざまな視覚効果を追加できます。アニメーションについて詳しくは、[`amp-story`](../../../../documentation/components/reference/amp-story.md) の関連ドキュメントをご覧ください。

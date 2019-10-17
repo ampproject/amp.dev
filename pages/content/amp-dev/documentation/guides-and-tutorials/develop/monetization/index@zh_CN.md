@@ -6,11 +6,11 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ## 向网页中添加广告
 
-在非 AMP 网页（传统 HTML）中，若要展示广告，需要添加一段 JavaScript 代码，才能投放来自广告网络的广告。出于性能和安全原因，您不能在 AMP 网页中添加第三方 JavaScript。因此，要在 AMP 中展示广告，您需要将自定义 [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}) 组件添加到 AMP 网页中。
+在非 AMP 网页（传统 HTML）中，若要展示广告，需要添加一段 JavaScript 代码，才能投放来自广告网络的广告。出于性能和安全原因，您不能在 AMP 网页中添加第三方 JavaScript。因此，要在 AMP 中展示广告，您需要将自定义 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 组件添加到 AMP 网页中。
 
 [tip type="success"]
 
-请参阅 [AMP By Example 在线演示]({{g.doc('/content/amp-dev/documentation/examples/components/amp-ad.html', locale=doc.locale).url.path}})，了解如何将 amp-ad 标记添加到 AMP 网页中。
+请参阅 [AMP By Example 在线演示](../../../../documentation/components/reference/amp-ad.md)，了解如何将 amp-ad 标记添加到 AMP 网页中。
 
 [/tip]
 
@@ -26,7 +26,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 2 步：将 amp-ad 标记添加到 AMP 网页中
 
-超过 100 个[广告服务商和广告网络]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md', locale=doc.locale).url.path}})提供与 AMP 的内置集成。要为指定广告网络添加广告，请添加 `<amp-ad>` 标记，然后在 `type` 属性中指定广告网络。
+超过 100 个[广告服务商和广告网络](ads_vendors.md)提供与 AMP 的内置集成。要为指定广告网络添加广告，请添加 `<amp-ad>` 标记，然后在 `type` 属性中指定广告网络。
 
 在本例中，我们添加一个广告位来投放 a9 网络中的广告：
 
@@ -60,7 +60,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 5 步：（可选）指定占位符
 
-根据具体的广告网络，您可以选择在广告可供查看前显示占位符。这样做可防止出现空白，从而提供更好的用户体验。要指定占位符，请通过 `placeholder` 属性添加一个子元素。有关详情请参阅[占位符和后备行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})。
+根据具体的广告网络，您可以选择在广告可供查看前显示占位符。这样做可防止出现空白，从而提供更好的用户体验。要指定占位符，请通过 `placeholder` 属性添加一个子元素。有关详情请参阅[占位符和后备行为](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)。
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -74,7 +74,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ### 第 6 步：（可选）指定后备行为
 
-根据具体的广告网络，您可以选择在没有广告可投放时显示后备元素。要指定后备行为，请通过 `fallback` 属性添加一个子元素。有关详情请参阅[占位符和后备行为]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md', locale=doc.locale).url.path}})。
+根据具体的广告网络，您可以选择在没有广告可投放时显示后备元素。要指定后备行为，请通过 `fallback` 属性添加一个子元素。有关详情请参阅[占位符和后备行为](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)。
 
 ```html hl_lines="6"
 <amp-ad type="a9"
@@ -90,7 +90,7 @@ $title: 在您的 AMP 网页中利用广告获利
 
 ## 投放直销型 AMPHTML 广告
 
-[`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})。
+[`amp-ad`](../../../../documentation/components/reference/amp-ad.md)。
 
 ## 利用定位数据增强广告请求
 
@@ -127,20 +127,20 @@ $title: 在您的 AMP 网页中利用广告获利
 *   **遵循 [IAB 指南](http://www.iab.com/wp-content/uploads/2015/11/IAB_Display_Mobile_Creative_Guidelines_HTML5_2015.pdf)，避免使用尺寸很大的广告文件**。
 *   **避免使用插页式广告**或其他会导致内容在广告加载时重排的广告格式。
 *   **进行优化以提高可见度**：将 data-loading-strategy 设置为 prefer-viewability-over-views。
-*   **通过[支持的播放器]({{g.doc('/content/amp-dev/documentation/components/reference/amp-iframe.md', locale=doc.locale).url.path}}#media).url.path}}) 在视频内容中展示广告**，以通过各种类型的内容创收。
+*   **通过[支持的播放器](../../../../documentation/components/reference/amp-iframe.md#media).url.path}}) 在视频内容中展示广告**，以通过各种类型的内容创收。
 *   **使用多尺寸广告请求实现原生广告**，以与展示广告展开竞争，从而在提供优质用户体验的同时增加需求压力。
 
 ### 创新：提供最具吸引力的广告产品
 
 *   **在辅助 AMP 网页上投放广告**，以获得增量收入：
-    *   [轮播广告]({{g.doc('/content/amp-dev/documentation/examples/advanced-ads/Carousel_Ad.html', locale=doc.locale).url.path}})
-    *   [灯箱广告]({{g.doc('/content/amp-dev/documentation/examples/experimental-ads/Lightbox_Ad.html', locale=doc.locale).url.path}})
-    *   以及[更多类型]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
+    *   [轮播广告](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    *   [灯箱广告](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    *   以及[更多类型](../../../../documentation/examples/index.html)
 *   **使直销型广告采用新格式**，以便为您的销售团队提供效果显著的创新广告产品：
-    *   [粘性广告]({{g.doc('/content/amp-dev/documentation/examples/components/amp-sticky-ad.html', locale=doc.locale).url.path}})
-    *   [飞毯]({{g.doc('/content/amp-dev/documentation/examples/components/amp-fx-flying-carpet.html', locale=doc.locale).url.path}})
+    *   [粘性广告](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    *   [飞毯](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## 其他资源
 
-*   [AMPHTML 广告模板]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})
-*   [演示：如何将 `amp-ad` 添加到 AMP 网页中]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}})
+*   [AMPHTML 广告模板](../../../../documentation/examples/index.html)
+*   [演示：如何将 `amp-ad` 添加到 AMP 网页中](../../../../documentation/components/reference/amp-ad.md)

@@ -25,10 +25,12 @@
 @import '../templates/_default.scss';
 
 .#{template('home')} {
+}
 
   .#{utility('container')} {
     @include container;
   }
+
 
   .#{utility('container-fluid')} {
     @include container-fluid;
@@ -52,7 +54,7 @@
         @media (min-width: 1280px) {
           grid-column: 5 / 21;
         }
-        
+
         @media (min-width: 1920px) {
           margin-bottom: 28em;
         }
@@ -134,9 +136,25 @@
     }
   }
 
+  .#{utility('newsletter')}-double {
+    display: none;
+
+    .amp-geo-group-doubleOptIn &, .amp-geo-pending & {
+      display: flex;
+    }
+  }
+
+  .#{utility('newsletter')} {
+    display: flex;
+
+    .amp-geo-group-doubleOptIn &, .amp-geo-pending & {
+      display: none;
+    }
+  }
+
   .#{utility('shift-cards')} {
     background: color('whisper');
-    
+
     &-grid {
       grid-template-rows: 100px auto 100px;
     }
@@ -168,4 +186,3 @@
       margin-bottom: 0;
     }
   }
-}

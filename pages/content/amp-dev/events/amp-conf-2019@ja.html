@@ -1,0 +1,337 @@
+---
+$title: AMP Conf 2019
+
+ampconf: !g.yaml /shared/data/amp-conf.yaml
+
+section_links:
+  - スケジュール
+  - スピーカー
+  - 場所
+  - よくある質問
+---
+{% do doc.styles.addCssFile('css/components/templates/events.css') %}
+{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
+{% do doc.amp_dependencies.add('amp-selector', '0.1') %}
+{% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
+{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
+
+<section class="ap--stage ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage-amp-conf.css') %}
+
+    <div class="ap-o-stage ap-o-stage-amp-conf all">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content ap-o-stage-content-roadshow">
+
+            <h2 class="ap-o-stage-content-subline">4月17日、18日</h2>
+            <h1 class="ap-o-stage-content-headline">AMP Conf 2019</h1>
+            <h2 class="ap-o-stage-content-subline">東京から、ようこそ。</h2>
+        </div>
+      </div>
+    </div>
+
+    {% do doc.styles.addCssFile('css/components/molecules/roadshow-video.css') %}
+    <div class="ap-m-roadshow-video">
+      <div class="ap-m-roadshow-video-block">
+        <amp-youtube data-videoid="OpXrSc3Yie0" layout="responsive" height="9" width="16"></amp-youtube>
+      </div>
+    </div>
+</section>
+
+{% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
+{% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
+<div class="ap-o-jumpto">
+  <div class="ap--container">
+    <div class="ap-o-jumpto-content">
+      <p class="ap-o-jumpto-text">Learn more about</p>
+      <ul class="ap-o-jumpto-list">
+        {% for link in doc.section_links %}
+          <li class="ap-m-jumpto-item">
+            <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section class="ap--container">
+  <p class="ap--content-default">
+    皆さま、今年も AMP Conf の季節になってまいりました。年に一回開催される、開発者の開発者による開発者のための AMP の技術祭典を、今年は東京で行います。リッチ アニメーション、動的なコンテンツ、DevOps やマネタイゼーションなど、Web における良質なユーザー体験を実現するためのすべてを、一緒に見ていきましょう。皆さまにお会いできるのを心より楽しみにしています。
+  </p>
+</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">1日目からすべてのエキサイティングなニュースを発見</h2>
+    <p class="ap-o-video-slider-text">東京に行くことはできませんでしたが、それでもAMPの周りで起こっているすべての刺激的なことについて知りたいですか？ 1日目のハイライトをチェックして、AMPチームがクレーケンを解き放つのを見てください。</p>
+    {% with %}
+    {% set youtube_video_ids = [
+      '1vwOFt9FBm4',
+      'sYXkVOiz77I',
+      'BrDBsS1Sko0',
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+
+    <a href="https://www.youtube.com/watch?v=W7T5tMgrrFs&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">See all of Day 1</span>
+    </a>
+  </div>
+´</section>
+
+{% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
+<section class="ap--container">
+  <div class="ap--content-x-wide">
+    <h2 class="ap-o-video-slider-text">2日目のハイライトをまとめる</h2>
+    <p class="ap-o-video-slider-text">会議の2日目にも素晴らしい講演者と講演がたくさんありました。 Signed交換の詳細など、Advertising＆AMPに関する最新のニュースをお見逃しなく。</p>
+    {% with %}
+    {% set youtube_video_ids = [
+      'Q6BmFx7ivNg',
+      'tlWT_D0XJtE',
+      'Ez_wOEmH1P0',
+      ]
+    %}
+    {% include '/views/partials/video-carousel.j2' %}
+    {% endwith %}
+
+    <a href="https://www.youtube.com/watch?v=3j540p3GxvE&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
+      <div class="ap-a-ico ap-m-lnk-icon">
+        {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+      </div>
+      <span class="ap-m-lnk-text">See all of Day 2</span>
+    </a>
+  </div>
+´</section>
+
+<section class="ap--container" id="スケジュール">
+  {% do doc.styles.addCssFile('css/components/organisms/agenda.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
+
+
+  <div class="ap--content-default">
+    <h1>スケジュール</h1>
+  </div>
+
+  <div class="ap--content-x-wide">
+    <amp-selector role="tablist" layout="container" class="ap--flex-container">
+
+        <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="a">1日目</div>
+
+        <div class="ap-o-agenda">
+          <div class="ap--container ampconf-agenda">
+            <ul class="ap-o-agenda-content-list conf">
+              {% for agenda_item in doc.ampconf.agenda.day_1 %}
+
+                {% if agenda_item.speaker %}
+                  {% set speaker = doc.ampconf.speakers[agenda_item.speaker] %}
+                {% endif %}
+
+                <li class="ap-m-agenda-item">
+                  <div class="ap-m-agenda-item-speakers">
+
+                    {% if speaker %}
+                      <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+
+                    {%  elif agenda_item.speakers %}
+
+                      {% if agenda_item.moderator %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[agenda_item.moderator].name }}" src="{{ doc.ampconf.speakers[agenda_item.moderator].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endif %}
+
+                      {% for speaker in agenda_item.speakers %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endfor %}
+
+                    {% endif %}
+                  </div>
+                  <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
+                  <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
+                  <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+
+                  {% if speaker %}
+
+                    <a href="#{{ agenda_item.speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
+
+                  {% elif agenda_item.speakers %}
+                    {% if agenda_item.moderator %}
+                    <a href="#{{ agenda_item.moderator }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[agenda_item.moderator].name }}, {{ doc.ampconf.speakers[agenda_item.moderator].company }}</a> (モデレータ)
+                    <br>
+                    {% endif %}
+                    {% for speaker in agenda_item.speakers %}
+                      <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
+                      <br>
+                    {% endfor %}
+                  {% else %}
+                  {% endif %}
+
+                  {% if agenda_item.description %}
+                    <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
+                  {% endif %}
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="ap-o-agenda-selector-button" role="tab" tabindex="0" option="b">2日目</div>
+
+        <div class="ap-o-agenda">
+          <div class="ap--container ampconf-agenda">
+            <ul class="ap-o-agenda-content-list conf">
+              {% for agenda_item in doc.ampconf.agenda.day_2 %}
+
+                {% if agenda_item.speaker %}
+                  {% set speaker = doc.ampconf.speakers[agenda_item.speaker] %}
+                {% endif %}
+
+                <li class="ap-m-agenda-item">
+                  <div class="ap-m-agenda-item-speakers">
+
+                    {% if speaker %}
+                      <amp-img class="ap-m-agenda-item-image" alt="Profile picture for {{ speaker.name }}" src="{{ speaker.pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+
+                    {%  elif agenda_item.speakers %}
+
+                      {% for speaker in agenda_item.speakers %}
+                        <amp-img class="ap-m-agenda-item-image multiple" alt="Profile picture for {{ doc.ampconf.speakers[speaker].name }}" src="{{ doc.ampconf.speakers[speaker].pic }}" layout="fixed" height="50px" width="50px"></amp-img>
+                      {% endfor %}
+
+                    {% endif %}
+                  </div>
+                  <div class="ap-m-agenda-item-time">{{ agenda_item.time }}</div>
+                  <div class="ap-m-agenda-item-description  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">
+                  <div class="ap-m-agenda-item-description-title  {% if agenda_item.type %}{{ agenda_item.type }}{% endif %}">{{ agenda_item.title }}</div>
+
+                  {% if speaker %}
+
+                    <a href="#{{ agenda_item.speaker }}" class="ap-m-agenda-item-description-speaker">{{ speaker.name }}, {{ speaker.company }}</a>
+
+                  {% elif agenda_item.speakers %}
+                    {% for speaker in agenda_item.speakers %}
+                      <a href="#{{ speaker }}" class="ap-m-agenda-item-description-speaker">{{ doc.ampconf.speakers[speaker].name }}, {{ doc.ampconf.speakers[speaker].company }}</a>
+                      <br>
+                    {% endfor %}
+                  {% else %}
+                  {% endif %}
+
+                  {% if agenda_item.description %}
+                    <div class="ap-m-agenda-item-description-text">{{ agenda_item.description }}</div>
+                  {% endif %}
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+    </amp-selector>
+  </div>
+</section>
+
+<section id="スピーカー" class="ap--container">
+  <div class="ap--content-default">
+    <h1>スピーカー</h1>
+  </div>
+  <div class="ap--content-x-wide ap--flex-container">
+      {% do doc.styles.addCssFile('css/components/molecules/conf-speaker.css') %}
+      {% do doc.styles.addCssFile('css/components/molecules/lightbox.css') %}
+
+      {% for speaker in doc.ampconf.speakers %}
+        {% if doc.ampconf.speakers[speaker] %}
+          {% set speaker_info = doc.ampconf.speakers[speaker] %}
+          <div class="ap-m-conf-speaker" on="tap:lightbox-{{ speaker }}" role="button" tabindex="0">
+            <amp-lightbox id="lightbox-{{ speaker }}" layout="nodisplay">
+              <div class="ap-m-lightbox" role="button" on="tap:lightbox-{{ speaker }}.close" tabindex="0">
+                <div class="ap-m-lightbox-content">
+                  <h4 class="ap-m-lightbox-headline">{{ speaker_info.name }}</h4>
+                  <h4 class="ap-m-lightbox-headline">{{ speaker_info.company }}</h4>
+                  {% if speaker_info.bio %}
+                    <p class="ap-m-lightbox-bio">{{ speaker_info.bio }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </amp-lightbox>
+            <amp-img class="ap-m-conf-speaker-image" alt="Profile pciture for {{ speaker_info.name }}" src="{{ speaker_info.pic }}" layout="fixed" height="150" width="150"></amp-img>
+            <div class="ap-m-conf-speaker-info">
+              <h4 id="{{ speaker }}" class="ap-m-conf-speaker-name">{{ speaker_info.name }}</h4>
+              <p class="ap-m-conf-speaker-company">{{ speaker_info.company }}</p>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+  </div>
+</section>
+
+<section class="ap--container-fluid" id="場所">
+  {% do doc.styles.addCssFile('css/components/molecules/conf-location.css') %}
+  <div class="ap-m-conf-location">
+    <div class="ap--container">
+      <div class="ap-m-conf-location-visual">
+        <h3 class="ap-m-conf-location-headline">Location</h3>
+        <div class="ap-m-conf-location-map">
+          <amp-iframe width="330" height="330" sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" layout="responsive" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12966.682416981088!2d139.7288467!3d35.6604864!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x374cd67b22a9c8a5!2sAcademy+Hills+Roppongi+forum!5e0!3m2!1sen!2sus!4v1545397494682"></amp-iframe>
+        </div>
+      </div>
+      <div class="ap-m-conf-location-content">
+        <a class="ap-m-conf-location-content-link" href="http://forum.academyhills.com/roppongi/en/"> Roppongi Academy Hills, Tokyo</a>
+        <p class="ap-m-conf-location-content-text">
+          〒106-6149 Tōkyō-to, Minato-ku, Roppongi
+          6 Chome−6−10-1 六本木ヒルズ森タワー49階 Japan
+        </p>
+        <p class="ap-m-conf-location-content-text">..and live-streamed around the world.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ap--container" id="よくある質問">
+  {% do doc.styles.addCssFile('css/components/molecules/faq.css') %}
+    <div class="ap-m-faq ampconf">
+      <h2>よくある質問</h2>
+      <div class="ap-m-faq-content">
+        <p class="ap-m-faq-content-question">費用はかかりますか？</p>
+        <p class="ap-m-faq-content-answer"> いいえ。チケットは無料です。</p>
+        <p class="ap-m-faq-content-question">講演はどの言語で行われますか？</p>
+        <p class="ap-m-faq-content-answer"> 講演は英語のものもありますが、日本語の同時通訳が行われます。</p>
+        <p class="ap-m-faq-content-question">ライブストリームに参加するのに申し込みする必要がありますか？</p>
+        <p class="ap-m-faq-content-answer"> いいえ。申し込みはカンファレンスに実際に参加する場合にのみ必要です。開催当日までに当サイトにライブストリームのリンクをはりますのでそちらをご確認ください。</p>
+        <p class="ap-m-faq-content-question">だれが参加すべきですか？</p>
+        <p class="ap-m-faq-content-answer"> AMP を使ったことがあってより深く AMP を知りたい Web 開発者やデザイナーの皆さま、まだ AMP は触ったことがないものの興味をお持ちの皆さま、AMP をさらに良くするためにコントリビューションを検討されている皆さま、そして広義の Web に関わるすべての皆さまを対象としています。</p>
+        <p class="ap-m-faq-content-question">申し込みすれば参加は確定しますか？</p>
+        <p class="ap-m-faq-content-answer"> いいえ、まだです。確認コードを受け取るまでは席は確定しませんのでご注意ください。</p>
+        <p class="ap-m-faq-content-question">申し込み後、いつ参加が確定しますか？</p>
+        <p class="ap-m-faq-content-answer">お申込みから 1 週間後を目安に、なるべく早く確認させて頂きます（時期は前後する可能性はございます）。</p>
+        <p class="ap-m-faq-content-question">参加確定の条件は何ですか？</p>
+        <p class="ap-m-faq-content-answer">AMP Conf は Web 開発者とデザイナー向けのイベントとなります（ = AMP の体験を実際に「作る」方々）。テクニカルではない方もお申込みは頂けますが、より参加のチャンスは低くなります（また、コンテンツ自体も楽しめないかもしれません）。</p>
+      </div>
+    </div>
+</section>
+
+<section class="ap--container">
+  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
+  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
+
+  <div class="ap-o-jumpto ap--container">
+    <div class="ap-o-jumpto-content ap--inline-footer">
+      <ul class="ap-o-jumpto-list">
+        <li class="ap-m-jumpto-item">
+          <a class="ap-m-jumpto-item-link" href="code-of-conduct.html">行動規範</a>
+        </li>
+        <li class="ap-m-jumpto-item">
+          <a class="ap-m-jumpto-item-link" href="accessibility.html">アクセシビリティ</a>
+        </li>
+        <li class="ap-m-jumpto-item">
+          <a class="ap-m-jumpto-item-link" href="mailto:amp-conf@google.com">お問い合わせ</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

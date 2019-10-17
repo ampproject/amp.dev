@@ -1,3 +1,15 @@
+{% macro filter(formats='websites, ads, stories, email', level='advanced, beginner') -%}
+{% if not formats.strip() and not level.strip() %}
+{{ caller() }}
+{% else %}
+{% set formats = formats.split(',') %}
+{% set level = level.split(',') %}
+[% if format in {{ formats|map('trim')|list|tojson }} and level in {{ level|map('trim')|list|tojson }} %]
+{{ caller() }}
+[% endif %]
+{% endif %}
+{%- endmacro %}
+
 {% macro tip(title, type='note') -%}
 {% with %}
 {% set text = caller() %}
@@ -13,6 +25,7 @@
 {%- endmacro %}
 
 {% macro anim(src, width, height, poster, layout='responsive', alt='', align='', margin='') -%}
+{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
 <figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
   <amp-anim src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"><amp-img placeholder width="{{ width }}" height="{{ height }}" src="{{ poster }}"></amp-img></amp-anim>
 </figure>
@@ -24,19 +37,17 @@
     {% block head %}
     <meta charset="utf-8"/>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>{{ doc.title }}</title>
     {% if podspec.env.name == 'development' %}
     <link rel="shortcut icon" href="/static/img/favicon-local.png"/>
     {% else %}
     <link rel="shortcut icon" href="/static/img/favicon.png"/>
     {% endif %}
 
-    <link rel="manifest" href="/static/manifest.json"/>
     <meta name="theme-color" content="#005af0"/>
 
     <link rel="canonical" href="{{ doc.url }}"/>
     <link rel="alternate" hreflang="x-default" href="{{ doc.localize(podspec.default_locale).url }}"/>
-    {% for locale in doc.locales if not locale == doc.locale  %}
+    {% for locale in doc.locales if not locale == doc.locale %}
     {% set localized_doc = doc.localize(locale) %}
     {# If the document really is localized cross-reference it #}
     {% if '@' in localized_doc.pod_path %}
@@ -49,46 +60,18 @@
     <meta name="robots" content="noindex,follow"/>
     {% endif %}
 
-    {# Add SEO tags if needed information is available #}
-    {% if doc.description or (doc.teaser and doc.teaser.text) %}
-    <meta name="description" content="{{ doc.description or doc.teaser.text }}">
-    <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Webpage",
-      "url": "{{ doc.pod.podspec.base_urls.platform }}{{ doc.url.path }}",
-      "name": "amp.dev",
-      "headline":"{{ doc.title }}",
-      "description":"{{ doc.description or doc.teaser.text }}",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ doc.pod.podspec.base_urls.platform }}"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "AMP Project",
-        "logo": {
-            "url": "{{ doc.pod.podspec.base_urls.platform }}/static/img/icons/icon-512x512.png",
-            "width": 512,
-            "height": 512,
-            "@type": "ImageObject"
-        }
-      },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://www.ampproject.org/static/img/logo-og-image.jpg",
-        "width": 1200,
-        "height": 630
-      }
-    }
-    </script>
-    {% endif %}
+    {# Add SEO and sharing tags #}
+    {% include 'views/partials/structured-data.j2' %}
+
+    {# Origin Trial for Dynamic Autoplay Delegation #}
+    <meta http-equiv="origin-trial" content="AviuuiVhVdQ3GpVtxSpyMT+XsL/qGGYmyiyLvYSKPL3rRDLipe/ard5x+DXVlrATtolwX75VtpSKc9IEzLDd4AkAAABmeyJvcmlnaW4iOiJodHRwczovL2FtcC5kZXY6NDQzIiwiZmVhdHVyZSI6IkV4cGVyaW1lbnRhbEF1dG9wbGF5RHluYW1pY0RlbGVnYXRpb24iLCJleHBpcnkiOjE1NzA1Nzg0NDF9">
 
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
 
     <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
     <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
     <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="/static/fonts/fira-mono-v7-latin-500.woff2" as="font" crossorigin>
 
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
     <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -106,14 +89,14 @@
       {% endblock %}
 
       {{ doc.styles.emit() }}
-      <link rel="manifest" href="/manifest.json">
     </style>
+    <link rel="manifest" href="/manifest.json">
+
+    {{ doc.amp_dependencies.emit() }}
   </head>
-  {# The body tag needs an empty class attribute in order to add the filter class.
-  It is a block solely for the purpose to be overridable by the samples. #}
+  {# The body tag is a block solely for the purpose to be overridable by the samples. #}
   {% block body %}
-  {% set formats = doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email'] %}
-  <body data-available-formats="{{ ' '.join(formats) }}">
+  <body class="[= 'ap--' + format if format =]">
   {% endblock %}
     {% block icons %}
 	  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -128,14 +111,7 @@
     {% include 'views/partials/burger-menu.j2' %}
     {% endblock %}
 
-    {% if doc.pod.env.dev %}
-    {% do doc.styles.addCssFile('/css/components/atoms/grid-toggle.css') %}
-    <aside class="ap-a-grid-toggle">
-        <input type="checkbox"/>
-        <div class="toggle"><div class="dot"></div></div>
-        <div class="grid"></div>
-    </aside>
-    {% endif %}
+    {% include 'views/partials/search.j2' %}
 
     {% block main %}
     {# Only render the grid toggle during development #}
@@ -146,32 +122,21 @@
     {% include 'views/partials/footer.j2' %}
     {% endblock %}
 
-    {% block fonts %}
-    <amp-font layout="nodisplay" font-family="Noto Sans" timeout="3000"></amp-font>
-    <amp-font layout="nodisplay" font-family="Poppins" timeout="3000"></amp-font>
-    <amp-font layout="nodisplay" font-family="Fira Mono" timeout="3000"></amp-font>
-    {% endblock %}
-
-    {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
-    <div class="ap-m-banner ap-m-banner-beta"{% if podspec.env.name != 'production' %} style="background-color: #C8114D;"{% endif %}>
-      Hi, this is the public beta of amp.dev. Got feedback?
-      <a href="https://github.com/ampproject/docs/issues" class="ap-m-banner-link">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-        {{ _('Let us know!') }}
-      </a>
-    </div>
-
     {# For untranslated content add hint that we might use help to translate it #}
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
     <aside class="ap-o-translation-hint">
-      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but we could use some help doing so. If you want to lend a hand ...?')}}</p>
+      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but we could use some help doing so. See the <a href="/documentation/guides-and-tutorials/contribute/translations">translation guide</a> on how you can contribute.') }}</p>
     </aside>
     {% endif %}
 
+    {% block analytics %}
     {% include 'views/partials/analytics.j2' %}
     {% include 'views/partials/consent.j2' %}
+    {% endblock %}
 
-    <amp-install-serviceworker src="/serviceworker.js" data-iframe-src="{{ podspec.base_urls.platform }}" layout="nodisplay"></amp-install-serviceworker>
+    {% block serviceWorker %}
+    {% include 'views/partials/service-worker.j2' %}
+    {% endblock %}
   </body>
 </html>

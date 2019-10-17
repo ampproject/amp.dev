@@ -1,0 +1,37 @@
+/*
+
+###############################
+### MOLECULE: device-toggle ###
+###############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_button.scss';
+
+.#{molecule('device-toggle')} {
+  text-align: center;
+  line-height: 0;
+
+  &-button {
+    @include unset-button;
+    cursor: pointer;
+  }
+
+    &-icon {
+      width: 28px;
+      height: 28px;
+      margin: 0 6px;
+      stroke: color('oslo-gray');
+      fill: color('oslo-gray');
+
+      .active & {
+        stroke: color('blue-ribbon');
+        fill: color('blue-ribbon');
+      }
+    }
+}

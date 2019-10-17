@@ -4,7 +4,7 @@ $title: 登录
 
 当您首次到达该页面时，您会看到 2 条评论和一个“登录”按钮。
 
-<amp-img src="/static/img/login-button.png" alt="登录按钮" height="290" width="300"></amp-img>
+<amp-img src="/static/img/login-button.jpg" alt="登录按钮" height="290" width="300"></amp-img>
 
 如果在代码中查找“登录”按钮，您会找到以下内容：
 
@@ -15,7 +15,7 @@ $title: 登录
 </span>
 [/sourcecode]
 
-[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 相关属性的行为取决于 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 的网页级配置，在此示例中即如下所示：
+[`amp-access`](../../../../documentation/components/reference/amp-access.md) 相关属性的行为取决于 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 的网页级配置，在此示例中即如下所示：
 
 [sourcecode:html]
 <script id="amp-access" type="application/json">
@@ -53,7 +53,7 @@ $title: 登录
 
 在下方示例中，一旦您点击了“登录”按钮，系统就会将 `return` 参数的值添加到请求中。您可通过使用 Chrome DevTools 控制台并转到“Network”标签来查看此值。
 
-<amp-img src="/static/img/return-parameter.png" alt="Return parameter" height="150" width="600"></amp-img>
+<amp-img src="/static/img/return-parameter.jpg" alt="Return parameter" height="150" width="600"></amp-img>
 
 当 AMPByExample 服务器收到来自登录页面的 POST 请求并确认相应的登录值和密码值正确无误后，它会将该请求重定向到我们在上文中提及的 `returnURL`，并会附加 `#success=true` 参数。现在，AMP 运行时便可授权该页面，并最终允许您添加评论。
 
@@ -65,4 +65,4 @@ $title: 登录
 - AMP 运行时会关闭登录页面，并会重定向到由返回网址参数指定的页面
 - 一旦用户点击了“登录”按钮，服务器即应编排响应
 
-提示: 您可在 [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) 中找到有关此流程的更详细的说明。
+提示: 您可在 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 中找到有关此流程的更详细的说明。

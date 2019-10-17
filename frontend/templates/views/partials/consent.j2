@@ -1,8 +1,11 @@
+{% do doc.amp_dependencies.add('amp-geo', '0.1') %}
+{% do doc.amp_dependencies.add('amp-consent', '0.1') %}
 <amp-geo layout="nodisplay">
   <script type="application/json">
     {
       "ISOCountryGroups": {
-        "eu": ["at", "be", "bg", "ch", "cy", "cz", "dk", "de", "ee", "el", "es", "fi", "fr", "hr", "ie", "is", "it", "li", "lv", "lt", "lu", "hu", "mt", "nl", "no", "pl", "pt", "ro", "si", "sk", "se", "uk"]
+        "eu": ["preset-eea"],
+        "doubleOptIn": ["de", "at", "no", "gr", "lu"]
       }
     }
   </script>

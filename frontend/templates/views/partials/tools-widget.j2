@@ -1,0 +1,42 @@
+{% set tools = g.yaml('/shared/data/tools.yaml') %}
+{% do doc.styles.addCssFile('css/components/organisms/tools-widget.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/tools-teaser.css') %}
+
+<section class="ap--tools">
+
+<section class="ap--content">
+  <div class="ap--container-fluid">
+    <div class="ap-m-copy ap-m-copy-left-small">
+      <h1 id="tools">{% if format == 'email' %}Start sending AMP Emails{% else %}Start creating {{ format }}{% endif %}</h1>
+      <h5>Pick one of several editors to start creating {{ format }} without any coding involved.</h5>
+    </div>
+  </div>
+</section>
+
+<section class="ap--tools-widget ap--teaser-grid">
+    <div class="ap-o-teaser-grid">
+        <div class="ap-o-teaser-grid-list">
+        {% for tool in tools[group] %}
+        {% if format in tool.formats %}
+        {% include '/views/partials/tools-teaser.j2' %}
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="ap--content">
+  <div class="ap--container-fluid">
+    <div class="ap-o-component-visual-link">
+      <a href="{{ g.doc('/content/amp-dev/documentation/tools.html').url.path }}" class="ap-m-lnk ap-m-lnk-square">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/internal.svg') %}
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+        </div>
+        <span class="ap-m-lnk-text">Discover all tools</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</section>

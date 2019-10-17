@@ -1,0 +1,7 @@
+number: null
+at: 2019-07-15T08:03:12.456Z
+by: Sebastian Benz
+environment: production
+commit:
+  sha: 7b1b22b844ec7c04da2e51b8fc6d847959ae9a0a
+  message: "✨ Migrate oauth backend (#2392)\n\n* ✨ Migrate oauth backend\r\n\r\n* ♻️ Merge handlers into one\r\n\r\n* ♻️ Use async/await pattern\r\n\r\n* ♻️ Remove try/catch block"

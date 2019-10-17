@@ -22,7 +22,7 @@ URL さえあれば、AMP アナリティクスをそのソリューションと
 
 AMP アナリティクスでは、1 回の測定で得たデータを複数の URL に送信できます。
 すでに 1 社以上のアナリティクス ベンダーを利用している場合は、
-[アナリティクス ベンダー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
+[アナリティクス ベンダー](analytics-vendors.md)の一覧で、該当のソリューションが AMP と統合されているかどうかをご確認ください。
 統合済みの場合は、設定の詳細情報を確認し、その手順に沿って対応してください。
 
 アナリティクス ベンダーが AMP を統合していない場合は、
@@ -40,13 +40,13 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 その際には、次の点を考慮してください。
 
 * ページビューのみをトラッキングするか、その他のユーザー エンゲージメント パターンもトラッキングするか
-（[amp-pixel と amp-analytics]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}#amp-pixel-または-amp-analytics-を使う) についての説明もご確認ください）。
+（[amp-pixel と amp-analytics](../../../../documentation/components/reference/amp-pixel.md#use-amp-pixel-or-amp-analytics) についての説明もご確認ください）。
 * ユーザー、コンテンツ、端末、ブラウザについて、
-どのようなデータを収集するか（[変数置換]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#置換変数)についての説明もご確認ください）。
-* ユーザーをどのように識別するか（[ユーザーの識別]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}}#ユーザー認証)についての説明もご確認ください）。
+どのようなデータを収集するか（[変数置換](analytics_basics.md#variable-substitution)についての説明もご確認ください）。
+* ユーザーをどのように識別するか（[ユーザーの識別](analytics_basics.md#user-identification)についての説明もご確認ください）。
 
 [tip type="read-on"]
 
-アナリティクスのさらに詳しい内容については、[アナリティクス: 基本]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics.md', locale=doc.locale).url.path}})をご覧ください。
+アナリティクスのさらに詳しい内容については、[アナリティクス: 基本](analytics_basics.md)をご覧ください。
 
 [/tip]

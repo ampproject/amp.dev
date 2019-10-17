@@ -21,6 +21,29 @@
       "subdomain": "playground-dot-amp-dev-staging",
       "host": "appspot.com",
       "port": ""
+    },
+    "preview": {
+      "scheme": "https",
+      "subdomain": "preview-dot-amp-dev-staging",
+      "host": "appspot.com",
+      "port": ""
+    },
+    "go": {
+      "scheme": "https",
+      "subdomain": "go-dot-amp-dev-staging",
+      "host": "appspot.com",
+      "port": ""
+    },
+    "log": {
+      "scheme": "https",
+      "subdomain": "log-dot-amp-dev-staging",
+      "host": "appspot.com",
+      "port": ""
+    },
+    "packager": {
+      "scheme": "https",
+      "host": "amp-dev-sxg.appspot.com",
+      "port": ""
     }
 	}
 }

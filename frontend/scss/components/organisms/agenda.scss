@@ -15,13 +15,14 @@
 @import 'components/atoms/_headline.scss';
 @import 'components/atoms/_text.scss';
 
+
 .#{organism('agenda')} {
   @include agenda-list-shadow;
 
   grid-column: 5 / 21;
   background: color('white');
   border-radius: 4px;
-  margin: 50px 0;
+  flex: 1 1 auto;
 
   &-block {
     width: 100%;
@@ -30,6 +31,50 @@
       grid-template-columns: repeat(16, 1fr);
       display: grid;
       grid-gap: 30px;
+    }
+  }
+
+  &-selector {
+
+    &-button {
+      @include hl;
+      @include hl-h3;
+      padding: 10px 30px 15px;
+      margin-bottom: 0;
+      flex-grow: 1;
+      color: fade_out(color('limed-spruce'), 0.57);
+      background: color('athens-gray');
+
+      small {
+        display: block;
+        font-size: 12pt;
+      }
+
+      &+.#{organism('agenda')} {
+        display: none;
+      }
+
+      &[option][selected] {
+        @include agenda-button-shadow;
+        border: none;
+        color: color('white');
+        background: color('carnation');
+        border-radius: 4px 4px 0 0;
+
+        &+.#{organism('agenda')} {
+          display: block;
+          order: 1;
+        }
+
+      }
+
+      &.ampcs[option][selected] {
+        background: color('charade');
+      }
+
+      &.ampcs {
+        flex: 1 1 33%;
+      }
     }
   }
 
@@ -59,6 +104,11 @@
     &-list {
       list-style: none;
       padding-left: 0;
+
+      &.conf {
+        grid-column: 5 / 22;
+        padding: 50px 0 100px;
+      }
     }
   }
 

@@ -4,7 +4,7 @@ $title: 支持的 CSS
 
 和所有网页一样，AMP 网页也通过 CSS 来设定样式，但是您无法引用外部样式表（[自定义字体](#the-custom-fonts-exception)除外）。 此外，由于性能会受到影响，某些样式不允许使用；内嵌样式属性也不允许使用。
 
-所有样式都必须放置在文档的标头部分（请参阅[向网页中添加样式]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md', locale=doc.locale).url.path}}#add-styles-to-a-page)）。 但是您可以使用 CSS 预处理器和模板来构建静态网页，以便更好地管理您的内容。
+所有样式都必须放置在文档的标头部分（请参阅[向网页中添加样式](index.md#add-styles-to-a-page)）。 但是您可以使用 CSS 预处理器和模板来构建静态网页，以便更好地管理您的内容。
 
 注意: AMP 组件本身具有默认的样式，使自适应网页的创建过程变得容易。 这些样式在 [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) 中进行了定义。
 
@@ -62,30 +62,30 @@ AMP 网页中不允许出现以下样式：
   </tbody>
 </table>
 
-## 自定义字体属于例外情况
+## 自定义字体属于例外情况 <a name="the-custom-fonts-exception"></a>
 
 AMP 网页不能包含外部样式表，但是自定义字体除外。
 
-其他资料: 详细了解 [AMP 中的自定义字体]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md', locale=doc.locale).url.path}})。
+其他资料: 详细了解 [AMP 中的自定义字体](custom_fonts.md)。
 
-## 使用 CSS 预处理器
+## 使用 CSS 预处理器 <a name="using-css-preprocessors"></a>
 
-预处理器生成的输出内容在 AMP 网页中的效果和在其他网页中的效果一样。例如，[ampproject.org](https://www.ampproject.org/)
-网站使用 [Sass](http://sass-lang.com/)。（我们使用 [Grow](http://grow.io/) 来构建构成 [ampproject.org](https://www.ampproject.org/) 网站的静态 AMP 网页。）
+预处理器生成的输出内容在 AMP 网页中的效果和在其他网页中的效果一样。例如，[amp.dev](https://amp.dev/)
+网站使用 [Sass](http://sass-lang.com/)。（我们使用 [Grow](http://grow.io/) 来构建构成 [amp.dev](https://amp.dev/) 网站的静态 AMP 网页。）
 
 在使用预处理器时，请特别注意您所包含的内容；请仅加载您的网页会使用的内容。 例如，[head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html)
-包含所有必要的 AMP 标记和内嵌的 CSS（来自 `*.scss` 源文件）。 它还包含 [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) 的自定义元素脚本，以及其他内容，以便网站上的很多网页都可以包含嵌入式 YouTube 视频。
+包含所有必要的 AMP 标记和内嵌的 CSS（来自 `*.scss` 源文件）。 它还包含 [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 的自定义元素脚本，以及其他内容，以便网站上的很多网页都可以包含嵌入式 YouTube 视频。
 
 [sourcecode:html]{% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Accelerated Mobile Pages Project</title>
+  <title>AMP Project</title>
   <link rel="icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -102,4 +102,4 @@ AMP 网页不能包含外部样式表，但是自定义字体除外。
 </head>
 {% endraw %}[/sourcecode]
 
-要查看上述代码如何转变成带有格式的 AMP HTML，请在 [ampproject.org](https://www.ampproject.org/) 中查看任何网页的源代码。 （在 Chrome 中，点击右键并选择 `View Page Source`。）
+要查看上述代码如何转变成带有格式的 AMP HTML，请在 [amp.dev](https://amp.dev/) 中查看任何网页的源代码。 （在 Chrome 中，点击右键并选择 `View Page Source`。）

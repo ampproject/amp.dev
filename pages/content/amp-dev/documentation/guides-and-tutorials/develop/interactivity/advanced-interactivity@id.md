@@ -7,11 +7,11 @@ Kode pembuka memberikan pengalaman pengguna yang cukup sederhana. Ada beberapa c
 - Tambahkan indikator yang menampilkan slide saat ini dan jumlah total slide.
 - Jika pengguna memilih warna kemeja yang berbeda, ubah carousel gambar untuk menampilkan gambar kemeja dengan warna yang dipilih.
 
-Sebelum adanya komponen [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), penambahan fitur seperti ini tidak mungkin dilakukan. Cobalah pengalaman langsung menggunakan komponen [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), dan tambahkan fitur baru ini ke kode contoh kami.
+Sebelum adanya komponen [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), penambahan fitur seperti ini tidak mungkin dilakukan. Cobalah pengalaman langsung menggunakan komponen [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), dan tambahkan fitur baru ini ke kode contoh kami.
 
 ## Menginstal ekstensi `amp-bind`
 
-[`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) adalah komponen AMP baru yang menyediakan interaktivitas kustom melalui pengikatan data dan ekspresi yang berbentuk seperti JS. Untuk menggunakan komponen [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}), Anda harus menginstalnya di halaman.
+[`amp-bind`](../../../../documentation/components/reference/amp-bind.md) adalah komponen AMP baru yang menyediakan interaktivitas kustom melalui pengikatan data dan ekspresi yang berbentuk seperti JS. Untuk menggunakan komponen [`amp-bind`](../../../../documentation/components/reference/amp-bind.md), Anda harus menginstalnya di halaman.
 
 Buka file [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html), dan tambahkan skrip berikut ke daftar komponen AMP di bagian `<head>` halaman:
 
@@ -22,7 +22,7 @@ Buka file [`static/index.html`](https://github.com/googlecodelabs/advanced-inter
 
 ## Menambahkan indikator slide
 
-Komponen [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) berfungsi dengan mengikat atribut elemen ke ekspresi kustom. Ekspresi tersebut dapat merujuk "status" (data JSON yang dapat berubah). Kita dapat melakukan inisialiasi status ini melalui komponen [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) yang disertakan dengan [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
+Komponen [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) berfungsi dengan mengikat atribut elemen ke ekspresi kustom. Ekspresi tersebut dapat merujuk "status" (data JSON yang dapat berubah). Kita dapat melakukan inisialiasi status ini melalui komponen [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) yang disertakan dengan [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 ### Melakukan inisialiasi status slide
 
@@ -46,14 +46,14 @@ selected.slide // Dievaluasi ke 0.
 
 ### Mengupdate status slide
 
-Berikutnya, update variabel ini jika pengguna mengubah slide di carousel, dengan menambahkan tindakan `"on"` berikut pada elemen [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}) yang sudah ada:
+Berikutnya, update variabel ini jika pengguna mengubah slide di carousel, dengan menambahkan tindakan `"on"` berikut pada elemen [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) yang sudah ada:
 
 ```html
 <amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
     on="slideChange:AMP.setState({selected: {slide: event.index}})">
 ```
 
-Sekarang, kapan pun slide yang ditampilkan untuk [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}})  berubah, tindakan `AMP.setState` akan dipanggil dengan argumen berikut:
+Sekarang, kapan pun slide yang ditampilkan untuk [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)  berubah, tindakan `AMP.setState` akan dipanggil dengan argumen berikut:
 
 ```javascript
 {
@@ -66,7 +66,7 @@ Sekarang, kapan pun slide yang ditampilkan untuk [`amp-carousel`]({{g.doc('/cont
 Ekspresi `event.index` dievaluasi ke indeks slide yang baru, dan tindakan `AMP.setState()` akan menggabungkan literal objek ini ke dalam status saat ini. Tindakan ini mengganti nilai `selected.slide` saat ini dengan nilai `event.index`.
 
 [tip type="tip"]
-**TIP –** `AMP.setState()` menjalankan penggabungan mendalam dari literal objek bertingkat. Untuk detail selengkapnya, lihat dokumentasi [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
+**TIP –** `AMP.setState()` menjalankan penggabungan mendalam dari literal objek bertingkat. Untuk detail selengkapnya, lihat dokumentasi [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 [/tip]
 
 ### Mengikat elemen indikator
@@ -99,13 +99,13 @@ Bagus. Sekarang kita memiliki indikator slide yang dapat dijalankan.
 
 [tip type="success"]
 
-Lihat apakah Anda dapat menambahkan fungsi sehingga jika pengguna menge-tap titik indikator slide, titik tersebut akan mengudate carousel gambar dengan item yang dipilih. Sebagai petunjuk, gunakan peristiwa `tap` dan pengikatan `[slide]` di [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
+Lihat apakah Anda dapat menambahkan fungsi sehingga jika pengguna menge-tap titik indikator slide, titik tersebut akan mengudate carousel gambar dengan item yang dipilih. Sebagai petunjuk, gunakan peristiwa `tap` dan pengikatan `[slide]` di [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 [/tip]
 
 ## Mengubah gambar di carousel
 
-Sangatlah bagus jika kita dapat melihat berbagai warna kemeja saat mengubah warna yang dipilih. Dengan [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}})  kita dapat melakukannya dengan mengikat `[src]` di elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) dalam [`amp-carousel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-carousel.md', locale=doc.locale).url.path}}).
+Sangatlah bagus jika kita dapat melihat berbagai warna kemeja saat mengubah warna yang dipilih. Dengan [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)  kita dapat melakukannya dengan mengikat `[src]` di elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) dalam [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 ### Melakukan inisialiasi status SKU
 
@@ -153,13 +153,13 @@ Pertama, kita perlu melakukan inisialiasi data status dengan URL sumber gambar u
 </amp-state>
 ```
 
-Elemen `[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state)`ini berisi objek JSON yang memetakan string ID kemeja (yaitu SKU) ke URL gambar dan warna dari kemeja yang sesuai. Array JSON juga akan berfungsi di sini, namun penggunaan objek memungkinkan kita melakukan beberapa penyempurnaan yang menarik, yang akan segera Anda lihat.
+Elemen [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) ini berisi objek JSON yang memetakan string ID kemeja (yaitu SKU) ke URL gambar dan warna dari kemeja yang sesuai. Array JSON juga akan berfungsi di sini, namun penggunaan objek memungkinkan kita melakukan beberapa penyempurnaan yang menarik, yang akan segera Anda lihat.
 
 Sekarang kita dapat mengakses URL gambar melalui ID kemeja. Misalnya, `shirts['10014'].color` dievaluasi ke `"dark green"` dan `shirts['10030'].image `menampilkan URL gambar untuk warna kemeja `"wine"`.
 
 ### Melacak SKU yang dipilih
 
-Jika menambahkan variabel status lain yang melacak SKU yang dipilih, kita dapat mengikat ekspresi ke elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) untuk mengupdate atribut `src`-nya saat SKU yang dipilih berubah. Tambahkan kunci `sku` baru ke JSON elemen `amp-state#selected` yang sudah ada:
+Jika menambahkan variabel status lain yang melacak SKU yang dipilih, kita dapat mengikat ekspresi ke elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) untuk mengupdate atribut `src`-nya saat SKU yang dipilih berubah. Tambahkan kunci `sku` baru ke JSON elemen `amp-state#selected` yang sudah ada:
 
 ```html
 <amp-state id="selected">
@@ -174,7 +174,7 @@ Jika menambahkan variabel status lain yang melacak SKU yang dipilih, kita dapat 
 
 ### Mengupdate status SKU
 
-Tambahkan tindakan "on" ke [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) yang akan mengupdate variabel `selected.sku` kapan pun warna baru dipilih:
+Tambahkan tindakan "on" ke [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) yang akan mengupdate variabel `selected.sku` kapan pun warna baru dipilih:
 
 ```html
 <amp-selector name="color"
@@ -182,12 +182,12 @@ Tambahkan tindakan "on" ke [`amp-selector`]({{g.doc('/content/amp-dev/documentat
 ```
 
 [tip type="tip"]
-**TIP –** Hal ini juga dapat dilakukan dengan menambahkan tindakan `on="tap:AMP.setState(...)` ke setiap elemen turunan [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) dalam [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}). Salah satu kelebihan komponen [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) adalah menyederhanakan markup dengan cara seperti ini.
+**TIP –** Hal ini juga dapat dilakukan dengan menambahkan tindakan `on="tap:AMP.setState(...)` ke setiap elemen turunan [`amp-img`](../../../../documentation/components/reference/amp-img.md) dalam [`amp-selector`](../../../../documentation/components/reference/amp-selector.md). Salah satu kelebihan komponen [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) adalah menyederhanakan markup dengan cara seperti ini.
 [/tip]
 
 ### Mengikat elemen gambar
 
-Kemudian, tambahkan pengikatan ke elemen [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}):
+Kemudian, tambahkan pengikatan ke elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md):
 
 ```html
 <!-- Update `src` untuk setiap <amp-img> jika variabel `selected.sku` berubah. -->

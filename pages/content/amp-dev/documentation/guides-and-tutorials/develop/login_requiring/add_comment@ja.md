@@ -4,7 +4,7 @@ $title: コメントを追加する
 
 <amp-img src="/static/img/comment.png" alt="コメントの追加" height="325" width="300"></amp-img>
 
-ここで、ユーザーは [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) ライブラリを使用してコメントを追加できます。フォームが存在するかどうかは、[`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) コンポーネントの状態によって決まることに注意してください。
+ここで、ユーザーは [`amp-form`](../../../../documentation/components/reference/amp-form.md) ライブラリを使用してコメントを追加できます。フォームが存在するかどうかは、[`amp-access`](../../../../documentation/components/reference/amp-access.md) コンポーネントの状態によって決まることに注意してください。
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
@@ -22,7 +22,7 @@ JSON レスポンスの例を次に示します。
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-フォーム コンポーネントは、[`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) テンプレートを使用して、ページ内に値を表示します。
+フォーム コンポーネントは、[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) テンプレートを使用して、ページ内に値を表示します。
 
 [sourcecode:html]
 <div submit-success>

@@ -1,7 +1,7 @@
 ---
 $title: 设置
 $order: 0
-$parent: /content/amp-dev/documentation/guides-and-tutorials/start/converting/converting.md
+$parent: /documentation/guides-and-tutorials/start/converting/setting-up.md
 ---
 
 ## 前提条件

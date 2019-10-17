@@ -2,35 +2,35 @@
 $title: Поддерживаемые элементы CSS
 ---
 
-Оформление AMP-страниц, как и любых других, определяется с помощью CSS, однако такие страницы не требуют указывать сторонние таблицы стилей (за исключением [пользовательских шрифтов](#пользовательские-шрифты)).
+Оформление AMP-страниц, как и любых других, определяется с помощью CSS, однако такие страницы не требуют указывать сторонние таблицы стилей (за исключением [пользовательских шрифтов](#the-custom-fonts-exception)).
 Кроме того, запрещены некоторые стили, а также атрибуты встроенного стиля, потому что они снижают производительность.
 
-Все стили [должны содержаться в заголовке документа]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}),
+Все стили [должны содержаться в заголовке документа](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md),
 однако с помощью препроцессоров и шаблонов CSS можно создавать статические страницы, что позволяет более эффективно управлять контентом.
 
 **Примечание.** Компоненты AMP по умолчанию содержат стили, позволяющие упростить разработку адаптивных страниц.
 Эти стили определяются в файле [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css).
 
-## Использование препроцессоров CSS
+## Использование препроцессоров CSS <a name="using-css-preprocessors"></a>
 
 Контент, созданный с помощью препроцессоров, отображается как на страницах AMP, так и на любых других веб-страницах.
-Например, на сайте [ampproject.org](https://www.ampproject.org/) используется язык [Sass](http://sass-lang.com/).
-Для создания статических страниц AMP, составляющих сайт [ampproject.org](https://www.ampproject.org/), применяется генератор <a href="http://grow.io/"><span class="notranslate">Grow</span></a>.
+Например, на сайте [amp.dev](https://amp.dev/) используется язык [Sass](http://sass-lang.com/).
+Для создания статических страниц AMP, составляющих сайт [amp.dev](https://amp.dev/), применяется генератор <a href="http://grow.io/"><span class="notranslate">Grow</span></a>.
 
 Если вы используете препроцессоры, загружайте только те элементы, которые применяются на ваших страницах.
 Например, файл [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) будет содержать всю необходимую разметку AMP и встроенные стили CSS из исходных файлов `*.scss`,
-а также скрипт специальных элементов для атрибута [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}). Благодаря этому на многих страницах сайта можно встраивать видео YouTube.
+а также скрипт специальных элементов для атрибута [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md). Благодаря этому на многих страницах сайта можно встраивать видео YouTube.
 
 [sourcecode:html] {% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Accelerated Mobile Pages Project</title>
+  <title>AMP Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -47,7 +47,7 @@ $title: Поддерживаемые элементы CSS
 </head>
 {% endraw %} [/sourcecode]
 
-Чтобы узнать, как указанный выше код преобразуется в формат HTML для AMP-страниц, просмотрите исходный код любой страницы на сайте [ampproject.org](https://www.ampproject.org/).
+Чтобы узнать, как указанный выше код преобразуется в формат HTML для AMP-страниц, просмотрите исходный код любой страницы на сайте [amp.dev](https://amp.dev/).
 Для этого в браузере Chrome нажмите правую кнопку мыши и выберите `Просмотр кода страницы`.
 
 ## Запрещенные стили
@@ -95,7 +95,7 @@ $title: Поддерживаемые элементы CSS
   </tbody>
 </table>
 
-## Внесенные в белый список переходы и анимация элементов
+## Внесенные в белый список переходы и анимация элементов <a name="the-custom-fonts-exception"></a>
 
 На AMP-страницах разрешены только переходы и анимация элементов, которые могут быть обработаны графическим процессором в обычных браузерах.
 В белый список проекта AMP в настоящее время внесены элементы `opacity`, `transform` и `-vendorPrefix-transform`.
@@ -108,7 +108,7 @@ $title: Поддерживаемые элементы CSS
 Элементы `overflow`, `overflow-y` и `overflow-x` не могут иметь значение <span class="notranslate">“auto”</span> или <span class="notranslate">“scroll”</span>.
 Ни у одного пользовательского элемента в документе AMP не должно быть полосы прокрутки.
 
-## Пользовательские шрифты
+## Пользовательские шрифты <a name="пользовательские-шрифты"></a>
 
 На страницах AMP не должно быть сторонних таблиц стилей (за исключением пользовательских шрифтов).
 Их можно включить с помощью тегов со ссылкой на поставщиков шрифтов, внесенных в белый список, или атрибута `@font-face`.

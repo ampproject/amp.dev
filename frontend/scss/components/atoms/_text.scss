@@ -28,7 +28,6 @@ TODO: mono (inline, block)
 */
 
 @mixin txt {
-	font-family: 'Noto Sans';
 	line-height: 1.6rem;
 	font-weight: normal;
 	color: color('river-bed');
@@ -56,19 +55,19 @@ TODO: mono (inline, block)
 
 @mixin txt-font-accent {
 	font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
 @mixin txt-hl {
 	display: block;
-	margin-top: 0;
-	margin-bottom: 0.75em;
+	margin-top: 1em;
 	line-height: 1.25em;
 }
 
 @mixin txt-p {
 	display: block;
-	margin-top: 0;
-	margin-bottom: 0.75em;
+	margin-top: 1.1em;
+	margin-bottom: 0;
 }
 
 @mixin txt-mono {
@@ -82,7 +81,8 @@ TODO: mono (inline, block)
   @include txt-mono;
 	word-break: normal;
 	color: color('black');
-	background-color: #eee;
+	background-color: color('gallery');
+	font-size: 0.9em;
 }
 
 @mixin txt-mono-block {

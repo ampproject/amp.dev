@@ -4,8 +4,10 @@ FROM node:10-alpine
 WORKDIR /usr/src/app
 
 # Install dependencies
-RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python
+RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python tini
 RUN npm install --quiet node-gyp -g
+# Add Tini
+ENTRYPOINT ["/sbin/tini", "--"]
 
 # Install app dependencies
 COPY package.json .
@@ -16,4 +18,6 @@ RUN npm ci --only=production
 COPY . .
 
 EXPOSE 80 8080
-CMD [ "npm", "start" ]
+WORKDIR "platform"
+ENV NODE_ENV=production
+CMD ["node", "serve.js"]

@@ -1,0 +1,13 @@
+$view: /layouts/blank.j2
+$sitemap:
+  enabled: false
+---
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    {{ doc.icons.emit() }}
+  </defs>
+</svg>
+
+{% include 'views/partials/header.j2' %}
+{% include 'views/partials/burger-menu.j2' %}
+{% include 'views/partials/search.j2' %}

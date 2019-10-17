@@ -59,8 +59,8 @@ class AutoImporter {
     this.componentsProvider.get().then((components) => {
       const missing = this._parseMissingElements(validationResult, components);
 
-      if (Object.keys(missing.missingTags).length
-          || missing.missingBaseScriptTag) {
+      if (Object.keys(missing.missingTags).length ||
+          missing.missingBaseScriptTag) {
         const existing = this._parseHeadTag();
         // The action taken to insert any elements to fix the report of missing
         // tags is determined by both a combination of looking at the list of
@@ -123,18 +123,19 @@ class AutoImporter {
       missingTags: {},
     };
 
-    for (const err of validationResult.errors) {
-      if (err.category === 'MANDATORY_AMP_TAG_MISSING_OR_INCORRECT') {
-        switch (err.code) {
+    // eslint-disable-next-line no-unused-vars
+    for (const error of validationResult.errors) {
+      if (error.category === 'MANDATORY_AMP_TAG_MISSING_OR_INCORRECT') {
+        switch (error.code) {
           case 'MANDATORY_TAG_MISSING':
-            if (err.params && ENGINE_MAP[err.params[0]]) {
-              missingElements.missingBaseScriptTag = ENGINE_MAP[err.params[0]];
+            if (error.params && ENGINE_MAP[error.params[0]]) {
+              missingElements.missingBaseScriptTag = ENGINE_MAP[error.params[0]];
             }
             break;
           case 'MISSING_REQUIRED_EXTENSION':
           case 'ATTR_MISSING_REQUIRED_EXTENSION':
-            if (err.params && err.params.length > 1) {
-              const tagName = err.params[1];
+            if (error.params && error.params.length > 1) {
+              const tagName = error.params[1];
               if (components[tagName]) {
                 missingElements.missingTags[tagName] = 1;
               } else {
@@ -207,8 +208,8 @@ class AutoImporter {
             } else if (tok.type === 'string' && ENGINE_SET.has(tok.string)) {
               inBaseScriptTag = true;
             }
-          } else if (htmlState.context.tagName === 'head' && tok.string === '>'
-              && tok.type === 'tag bracket') {
+          } else if (htmlState.context.tagName === 'head' && tok.string === '>' &&
+              tok.type === 'tag bracket') {
             if (tagStart) {
               // Closing a <script> tag in <head>
               const pos = {start: tagStart, end: CodeMirror.Pos(i, tok.end)};
@@ -228,8 +229,8 @@ class AutoImporter {
               lastTag = CodeMirror.Pos(i, tok.end);
               result.indent = result.indent || htmlState.indented;
             }
-          } else if (tok.string === '</' && htmlState.context.tagName === 'head'
-              && tok.type === 'tag bracket') {
+          } else if (tok.string === '</' && htmlState.context.tagName === 'head' &&
+              tok.type === 'tag bracket') {
             // Leaving <head>, record the final tag position within <head> for
             // inserting after.
             result.lastTag = lastTag;

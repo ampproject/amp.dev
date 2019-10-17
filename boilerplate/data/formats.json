@@ -9,11 +9,11 @@
     "name": "Stories"
   },
   {
-    "id": "email",
-    "name": "Email"
-  },
-  {
     "id": "ads",
     "name": "Ads"
+  },
+  {
+    "id": "email",
+    "name": "Email"
   }
 ]

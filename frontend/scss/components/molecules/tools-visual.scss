@@ -1,0 +1,88 @@
+/*
+
+###############################
+### MOLECULE: tools-visual ###
+###############################
+
+*/
+
+@import '../../extends';
+@import '../../functions';
+@import '../../mixins';
+@import '../../variables';
+
+.#{molecule('tools-visual')} {
+  display: grid;
+  grid-template-columns: 8fr 7fr 2fr 12fr 4fr;
+  grid-template-rows: 6fr 7fr 1fr 8fr 1fr;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  max-width: 17em;
+  padding: 1.5em 0;
+  margin: 0;
+  transform: skewX(-4.5deg) scale(.98, .92);
+
+  @media (min-width: 768px) {
+    grid-column: 12 / -1;
+    position: static;
+    margin-top: -60%;
+    max-width: 85%;
+    padding: 0;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: -50%;
+    max-width: 75%;
+  }
+
+  &-image {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    animation: 10s ease-in-out infinite bounce -4s;
+    box-shadow: 30px 90px 60px -40px rgba(0, 0, 0, 0.5);
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      -webkit-animation: none;
+    }
+
+    &-1 {
+      grid-column: 2 / 8;
+      grid-row: 1 / 4;
+      animation-delay: -3s;
+      box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.3);
+    }
+
+    &-2 {
+      grid-column: 1 / 3;
+      grid-row: 2 / 5;
+      animation-delay: -2s;
+      box-shadow: 20px 20px 20px -20px rgba(0,0,0,0.4);
+
+      &-extra {
+        position: absolute;
+        width: 50%;
+        top: 42%;
+        left: 23%;
+        animation-delay: -5s;
+        animation-direction: reverse;
+      }
+    }
+
+    &-3 {
+      grid-column: 4 / 5;
+      grid-row: 3 / 6;
+      animation-delay: -1s;
+      box-shadow: 30px 30px 30px -30px rgba(0,0,0,0.5);
+    }
+  }
+}
+
+@keyframes bounce {
+  0% { transform: translate(0%, 4%); }
+  50% { transform: translate(0%, -4%); }
+  100% { transform: translate(0%, 4%); }
+}

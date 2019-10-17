@@ -1,0 +1,27 @@
+---
+$title: 500
+$view: /views/custom.j2
+$sitemap:
+  enabled: false
+---
+{% do doc.styles.addCssFile('css/components/templates/error.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
+{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
+
+<main class="ap--main ap-t-error">
+  <section class="ap--container">
+
+    <div class="ap-m-jumbo">
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/bolt-broken-solid.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-broken-solid"></use></svg>
+      </div>
+      <h1 class="ap-m-biggy-headline">500</h1>
+      <h2 class="ap-m-jumbo-subline">{{ _('Uh oh! That\'s an error.') }}</h2>
+      <p class="ap-m-jumbo-copy">{{ _('Something went terribly wrong. Why don\'t you browse around?') }}</p>
+
+      {% do doc.styles.addCssFile('/css/components/atoms/button.css', -1) %}
+      <a href="index.html" class="ap-a-btn">{{ _('Back to home') }}</a>
+    </div>
+  </section>
+</main>

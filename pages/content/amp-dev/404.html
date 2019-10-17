@@ -1,6 +1,8 @@
 ---
 $title: 404
 $view: /views/custom.j2
+$sitemap:
+  enabled: false
 ---
 {% do doc.styles.addCssFile('css/components/templates/error.css') %}
 {% do doc.styles.addCssFile('/css/components/molecules/jumbo.css') %}
@@ -19,7 +21,7 @@ $view: /views/custom.j2
       <p class="ap-m-jumbo-copy">{{ _('The page you\'ve requested can\'t be found. Why don\'t you browse around?') }}</p>
 
       {% do doc.styles.addCssFile('/css/components/atoms/button.css', -1) %}
-      <a href="https://events.withgoogle.com/amp-conf-2019/registrations/new/" class="ap-a-btn">{{ _('Back to home') }}</a>
+      <a href="index.html" class="ap-a-btn">{{ _('Back to home') }}</a>
     </div>
   </section>
 </main>

@@ -3,8 +3,8 @@ $title: AMP アナリティクスについて詳しく知る
 ---
 
 このガイドでは、
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
-について詳しく説明するため、[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の設定サンプルをパートごとに分けて解説します。
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+について詳しく説明するため、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) の設定サンプルをパートごとに分けて解説します。
 
 このガイドで使用するのは、以下の設定サンプルです。
 このサンプルは、ページビューとユーザーによるリンククリックをトラッキングして、
@@ -52,7 +52,7 @@ $title: AMP アナリティクスについて詳しく知る
 
 [tip type="note"]
 
-上記のコードは学習用のサンプルであり、そのまま実際の環境で使用することはできません。特に、アナリティクス プロバイダの設定を簡略化している点は、プロバイダを利用しているユーザーにとって問題になるかもしれません。特定のアナリティクス プロバイダの設定サンプルについては、[各プロバイダのドキュメント]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})をご確認ください。
+上記のコードは学習用のサンプルであり、そのまま実際の環境で使用することはできません。特に、アナリティクス プロバイダの設定を簡略化している点は、プロバイダを利用しているユーザーにとって問題になるかもしれません。特定のアナリティクス プロバイダの設定サンプルについては、[各プロバイダのドキュメント](analytics-vendors.md)をご確認ください。
 [/tip]
 
 ## アナリティクス データの送信先: type 属性
@@ -64,25 +64,25 @@ AMP は、一般的なデータ収集方法として次の 2 つをサポート�
 [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、[Chartbeat](http://support.chartbeat.com/docs/)、[Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)などのベンダー ソリューションと相互運用する場合）
 
 アナリティクス データをアナリティクス プロバイダに送信するには、
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) タグに `type` 属性を指定します。
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) タグに `type` 属性を指定します。
 値は、
-[アナリティクス ベンダー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})の一覧に記載されている各ベンダーの値を指定します。
+[アナリティクス ベンダー](analytics-vendors.md)の一覧に記載されている各ベンダーの値を指定します。
 
 たとえば、`<amp-analytics type="googleanalytics">` とすると、
 サードパーティのアナリティクス プロバイダである Google アナリティクスにアナリティクス データが送信されます。
 サイト運営者所有のエンドポイントにデータを送信する場合は、
 `type` 属性の指定を省略します。
 このようにすると、アナリティクス データは
-[リクエスト]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute)ごとに指定のエンドポイントに送信されます。
+[リクエスト](deep_dive_analytics.md#what-data-gets-sent-requests-attribute)ごとに指定のエンドポイントに送信されます。
 
 アナリティクス ベンダーの設定を行うと、手早く
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) を使い始めることができます。
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を使い始めることができます。
 詳細については、ご利用のベンダーのドキュメントや
 ヘルプリソースをご確認ください。
 AMP を統合済みのベンダーの一覧と、
 各ベンダーのドキュメントへのリンクは、
 前述の
-[アナリティクス ベンダー]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md', locale=doc.locale).url.path}})の一覧をご覧ください。
+[アナリティクス ベンダー](analytics-vendors.md)の一覧をご覧ください。
 
 アナリティクス ベンダーの
 方は、
@@ -90,7 +90,7 @@ AMP を統合済みのベンダーの一覧と、
 
 ## リモート設定を読み込む: config 属性
 
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) のすべての設定を
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) のすべての設定を
 AMP ページに記述する必要はありません。
 代わりに、設定の一部またはすべてを記述した
 リモート URL を呼び出すこともできます。
@@ -102,7 +102,7 @@ AMP ページに記述する必要はありません。
 サーバー側処理を実施できます。
 
 リモート設定を読み込むには、まず、
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) タグに config 属性を指定します。
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) タグに config 属性を指定します。
 
 ```html
 <amp-analytics config="https://example.com/analytics.account.config.json">
@@ -123,7 +123,7 @@ JSON オブジェクトには、アナリティクス アカウントの変数�
 ```
 
 最後に、リモート ファイルの内容が
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 設定の適切な場所に読み込まれるようにします。
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 設定の適切な場所に読み込まれるようにします。
 以下では、`pageview` リクエストと `event` リクエストの
 `account` 変数の値が、自動的にリモート URL の
 アカウント値（`"account": "UA-XXXXX-Y"`）に設定されます。
@@ -139,11 +139,11 @@ JSON オブジェクトには、アナリティクス アカウントの変数�
 
 AMP では、同じ変数が複数使用されていないかどうかの検証は行われません。
 値は、変数置換の優先順位に基づいて設定され、
-リモート URL の値が最優先されます（[変数置換の順序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)についての説明をご確認ください）。
+リモート URL の値が最優先されます（[変数置換の順序](deep_dive_analytics.md#variable-substitution-ordering)についての説明をご確認ください）。
 
 [/tip]
 
-## requests、triggers、transport
+## requests、triggers、transport <a name="requests-triggers--transports"></a>
 
 `requests` 属性では、送信するデータの種類
 （`pageviews` や `events` など）
@@ -157,9 +157,9 @@ AMP では、同じ変数が複数使用されていないかどうかの検証�
 
 これらの設定の詳細については後述します
 （あわせて、
-[`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})の該当する項目をご確認ください）。
+[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)の該当する項目をご確認ください）。
 
-### 送信するデータ: requests 属性
+### 送信するデータ: requests 属性 <a name="what-data-gets-sent-requests-attribute"></a>
 
 トリガー設定では、`request-name` を使用して、
 特定のイベントの発生時に送信するリクエストを指定します。
@@ -184,10 +184,10 @@ Google アナリティクスなど一部のアナリティクス プロバイダ
 
 #### リクエスト URL への追記: extraUrlParams
 
-[extraUrlParams]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}#extra-url-params)
+[extraUrlParams](../../../../documentation/components/reference/amp-analytics.md#extra-url-params)
 属性では、リクエスト URL のクエリ文字列に追記する追加のパラメータを指定できます。指定したパラメータは、一般的な「&foo=baz」の表記規則に基づいて追記されます。
 
-この [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) のサンプルでは、追加パラメータ `cd1` を
+この [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) のサンプルでは、追加パラメータ `cd1` を
 リクエストに追記し、値を「AMP」に設定しています。
 
 ```js
@@ -204,7 +204,7 @@ Google アナリティクスなど一部のアナリティクス プロバイダ
 任意の文字列を使用できます。
 
 たとえば、
-次の [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の抜粋では、ドキュメントが最初に読み込まれたときと、
+次の [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) の抜粋では、ドキュメントが最初に読み込まれたときと、
 `a` タグがクリックされるたびに、リクエストを `https://example.com/analytics` に
 送信するよう設定しています。
 
@@ -246,19 +246,19 @@ AMP では次のトリガー設定をサポートしています。
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code>（必須）</td>
-      <td data-th="Description">送信するリクエストの名前（<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#what-data-gets-sent-requests-attribute">requests</a> で指定した名前）です。</td>
+      <td data-th="Description">送信するリクエストの名前（<a href="deep_dive_analytics.md#what-data-gets-sent-requests-attribute">requests</a> で指定した名前）です。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">キーと値のペアを含むオブジェクトで、最上位の設定で指定された <code>vars</code> をオーバーライドするため、またはこのトリガーに固有の <code>vars</code> を指定するために使用します（<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering">変数置換の順序</a>についての説明もご覧ください）。</td>
+      <td data-th="Description">キーと値のペアを含むオブジェクトで、最上位の設定で指定された <code>vars</code> をオーバーライドするため、またはこのトリガーに固有の <code>vars</code> を指定するために使用します（<a href="deep_dive_analytics.md#variable-substitution-ordering">変数置換の順序</a>についての説明もご覧ください）。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code>（<code>on</code> が <code>click</code> に設定されている場合は必須）</td>
-      <td data-th="Description">トラッキングする要素を絞り込む CSS セレクタです。すべての要素をトラッキングする場合は、値を <code>*</code> に設定します。この設定は、<code>click</code> トリガーと組み合わせて使用します。セレクタを使用して<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-page-clicks">ページクリックをトラッキングする方法</a>と<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-social-interactions">ソーシャル インタラクションをトラッキングする方法</a>についてご確認ください。</td>
+      <td data-th="Description">トラッキングする要素を絞り込む CSS セレクタです。すべての要素をトラッキングする場合は、値を <code>*</code> に設定します。この設定は、<code>click</code> トリガーと組み合わせて使用します。セレクタを使用して<a href="use_cases.md#tracking-page-clicks">ページクリックをトラッキングする方法</a>と<a href="use_cases.md#tracking-social-interactions">ソーシャル インタラクションをトラッキングする方法</a>についてご確認ください。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>scrollSpec</code>（<code>on</code> が <code>scroll</code> に設定されている場合は必須）</td>
-      <td data-th="Description">どのような状況でページがスクロールされた場合に <code>scroll</code> イベントを発生させるかを管理します。このオブジェクトには、<code>verticalBoundaries</code> と <code>horizontalBoundaries</code> を含めることができます。<code>scroll</code> イベントを発生させるには、この 2 つのプロパティのうち少なくとも 1 つが必要です。両プロパティの値は、スクロール イベントが発生する境界を囲む数値の配列にする必要があります。<a href="{{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md', locale=doc.locale).url.path}}#tracking-scrolling">スクロールをトラッキングする方法</a>の例をご確認ください。</td>
+      <td data-th="Description">どのような状況でページがスクロールされた場合に <code>scroll</code> イベントを発生させるかを管理します。このオブジェクトには、<code>verticalBoundaries</code> と <code>horizontalBoundaries</code> を含めることができます。<code>scroll</code> イベントを発生させるには、この 2 つのプロパティのうち少なくとも 1 つが必要です。両プロパティの値は、スクロール イベントが発生する境界を囲む数値の配列にする必要があります。<a href="use_cases.md#tracking-scrolling">スクロールをトラッキングする方法</a>の例をご確認ください。</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>timerSpec</code>（<code>on</code> が <code>timer</code> に設定されている場合は必須）</td>
@@ -269,7 +269,7 @@ AMP では次のトリガー設定をサポートしています。
 
 [tip type="important"]
 
-優先順位の低い設定に記述されたトリガーは、優先順位の高い設定に記述された同名のトリガーによってオーバーライドされます（[変数置換の順序]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/deep_dive_analytics.md', locale=doc.locale).url.path}}#variable-substitution-ordering)をご確認ください）。
+優先順位の低い設定に記述されたトリガーは、優先順位の高い設定に記述された同名のトリガーによってオーバーライドされます（[変数置換の順序](deep_dive_analytics.md#variable-substitution-ordering)をご確認ください）。
 
 [/tip]
 
@@ -326,13 +326,13 @@ AMP では次のトリガー設定をサポートしています。
 }
 ```
 
-## 変数置換の順序
+## 変数置換の順序 <a name="variable-substitution-ordering"></a>
 
 AMP では、次の優先順位に沿って変数に値が設定されます。
 
 1. リモート設定（`config` で指定）
 2. `triggers` のトリガー内にネストされた `vars`
-3. [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) の最上位にネストされた `vars`
+3. [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) の最上位にネストされた `vars`
 4. プラットフォームが提供する値
 
 次の例には、リモート設定、

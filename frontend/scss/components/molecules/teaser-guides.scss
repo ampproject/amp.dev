@@ -1,0 +1,145 @@
+/*
+
+###############################
+### MOLECULE: teaser-guides ###
+###############################
+
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_color';
+@import 'components/molecules/_teaser.scss';
+
+
+.#{utility('teaser-guides')} {
+  padding: 35px 0;
+  grid-column: 3 / 23;
+}
+
+.#{molecule('teaser-guides')} {
+
+  .ap-m-teaser-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: start;
+
+    @media (min-width: 600px) {
+      grid-column-gap: 30px;
+    }
+  }
+
+  .ap-m-teaser {
+    position: relative;
+    grid-column: span 12;
+    margin: 16px 0;
+    background-color: color('white');
+    transform: translate3d(0,0,0);
+    transition: transform .3s cubic-bezier(.25,.1,.25,1), box-shadow .3s cubic-bezier(.25,.1,.25,1);
+
+    &-highlighted {
+      box-shadow: 0 15px 30px 0 transparentize(color('black'), 0.85);
+      border: solid 1px color('mercury');
+      margin-bottom: 20px;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 25px 60px 0 transparentize(color('black'), 0.9);
+      }
+    }
+
+    &-highlighted:nth-of-type(2){
+      position: relative;
+    }
+
+    @media (min-width: 600px) {
+      grid-column: span 6;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: span 4 ;
+    }
+
+    &-double-teaser {
+      margin-bottom: 20px;
+    }
+
+    &-tags {
+      @include teaser-tag-zero;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      width: 100%;
+
+      .ap-m-tag {
+        min-width: 26px;
+        padding: 4px 0;
+
+        &-websites {
+          @include gradient-websites;
+        }
+        &-stories {
+          @include gradient-stories;
+        }
+        &-ads {
+          @include gradient-ads;
+        }
+        &-emails {
+          @include gradient-e-mails;
+        }
+      }
+    }
+    &-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 157px;
+      background-color: color('river-bed');
+    }
+    &-icon {
+      max-width: 108px;
+      fill: color('white');
+    }
+    &-content {
+      padding: 0 20px;
+    }
+    .guide-tag {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 33px;
+      margin-bottom: 20px;
+      padding: 4px 10px;
+      border-radius: 12px;
+      background-color: color('concrete');
+      &-icon {
+        fill: color('blue-ribbon');
+        margin-right:10px;
+
+        &-tutorial-nav {
+          display: flex;
+          font-size: initial;
+          box-sizing: initial;
+          justify-content: center;
+          height: 14px;
+          width: 26px;
+        }
+        &-guide {
+          display: flex;
+          font-size: initial;
+          box-sizing: initial;
+          justify-content: center;
+          height: 17px;
+          width: 15px;
+        }
+      }
+      &-text {
+        font-weight: bold;
+        font-size: 10px;
+      }
+    }
+  }
+}

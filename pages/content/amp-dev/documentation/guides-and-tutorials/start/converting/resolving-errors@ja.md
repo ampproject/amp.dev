@@ -30,7 +30,7 @@ AMP でテキストを正しく表示するには、ページの文字セット�
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md', locale=doc.locale).url.path}})の手順で詳しく取り上げます。
+すべての AMP ドキュメントで、そのドキュメントの「正規（canonical）」バージョンを参照するリンクを指定する必要があります。正規ページの概要と正規リンクのさまざまな手法については、このチュートリアルの[ページが検出されるようにする](discoverable.md)の手順で詳しく取り上げます。
 
 このチュートリアルでは、正規ページに変換する元の HTML 記事を検討しましょう。
 
@@ -131,7 +131,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 [/tip]
 
 [tip type="important"]
-AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md', locale=doc.locale).url.path}}) をご覧ください。
+AMP ドキュメント全体で style タグは 1 つだけ指定できます。AMP ページで複数の外部スタイルシートを参照している場合は、これらのスタイルシートを 1 セットのルールにまとめる必要があります。AMP で有効な CSS ルールについて詳しくは、[サポートされる CSS](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) をご覧ください。
 [/tip]
 
 ## サードパーティの JavaScript を除外する
@@ -153,7 +153,7 @@ The tag 'script' is disallowed except in specific forms.
 ユーザーが作成したスクリプトやサードパーティのスクリプトに対する制限には、次のような例外があります。
 
 1. ページにメタデータを追加するスクリプトや、AMP コンポーネントを設定するスクリプト。これらには、type 属性 `application/ld+json` または `application/json` を指定します。
-2. iframe に含まれるスクリプト。iframe に JavaScript を含める方法は、最後の手段と考えてください。可能な限り、[AMP コンポーネント]({{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}})を使用して JavaScript の機能を置き換えてください。次のセクションでは、最初の AMP コンポーネントについて検討します。
+2. iframe に含まれるスクリプト。iframe に JavaScript を含める方法は、最後の手段と考えてください。可能な限り、[AMP コンポーネント](../../../../documentation/components/index.html)を使用して JavaScript の機能を置き換えてください。次のセクションでは、最初の AMP コンポーネントについて検討します。
 [/tip]
 
 外部の [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) ファイルを開いてみましょう。どのようになっていますか。このファイルでは JavaScript コードは空になっていて、次のような情報のコメントのみが含まれているはずです。
@@ -207,24 +207,24 @@ AMP では、メディアの表示に対応するデフォルトの HTML をサ�
 The tag 'img' may only appear as a descendant of tag 'noscript'. Did you mean 'amp-img'?
 </pre>
 
-AMP には、`<img>` タグを置き換えるための専用のウェブ コンポーネントとして、[`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグが用意されています。
+AMP には、`<img>` タグを置き換えるための専用のウェブ コンポーネントとして、[`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグが用意されています。
 
 ```html
 <amp-img src="mountains.jpg"></amp-img>
 ```
 
-`<img>` タグを上記の [`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグで**置き換えて**から、検証ツールを再度実行してください。新しいエラーがいくつか発生します。
+`<img>` タグを上記の [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグで**置き換えて**から、検証ツールを再度実行してください。新しいエラーがいくつか発生します。
 
 <pre class="error-text">
 Layout not supported: container
 The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 </pre>
 
-なぜ [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) によって別のエラーが発生したのでしょうか。[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) は従来の HTML img タグを直接置き換えたものではないからです。[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) を使用する場合は、追加の要件があります。
+なぜ [`amp-img`](../../../../documentation/components/reference/amp-img.md) によって別のエラーが発生したのでしょうか。[`amp-img`](../../../../documentation/components/reference/amp-img.md) は従来の HTML img タグを直接置き換えたものではないからです。[`amp-img`](../../../../documentation/components/reference/amp-img.md) を使用する場合は、追加の要件があります。
 
 ### AMP のレイアウト システム
 
-このレイアウト エラーは、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) が `container` レイアウト タイプをサポートしていないことを伝えています。AMP の設計における最も重要な概念の 1 つは、ウェブページのレンダリングに必要な DOM リフローの量を削減することに重点を置いている点です。
+このレイアウト エラーは、[`amp-img`](../../../../documentation/components/reference/amp-img.md) が `container` レイアウト タイプをサポートしていないことを伝えています。AMP の設計における最も重要な概念の 1 つは、ウェブページのレンダリングに必要な DOM リフローの量を削減することに重点を置いている点です。
 
 DOM リフローを削減するため、AMP には、ページのダウンロードとレンダリングのライフサイクルのできるだけ早い段階で、ページのレイアウトを認識できるようにするレイアウト システムがあります。
 
@@ -234,11 +234,11 @@ DOM リフローを削減するため、AMP には、ページのダウンロー
 
 AMP のレイアウト システムでは、ページ上の要素をさまざまな方法（サイズの固定、レスポンシブ デザイン、高さの固定など）で配置し、拡大縮小できます。
 
-この記事のケースでは、レイアウト システムは [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) のレイアウト タイプを `container` タイプと推測しました。しかし、`container` タイプは、子要素を含む要素にのみ適用可能です。`container` タイプは [`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグに対応していないため、このエラーの原因となりました。
+この記事のケースでは、レイアウト システムは [`amp-img`](../../../../documentation/components/reference/amp-img.md) のレイアウト タイプを `container` タイプと推測しました。しかし、`container` タイプは、子要素を含む要素にのみ適用可能です。`container` タイプは [`amp-img`](../../../../documentation/components/reference/amp-img.md) タグに対応していないため、このエラーの原因となりました。
 
-なぜ `container` タイプが推測されたのでしょうか。その理由は、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグに `height` 属性を指定していなかったためです。HTML では、ページ上の要素に固定の幅と高さを常に指定することで、リフローを削減できます。AMP では、AMP が要素のアスペクト比を事前に判断できるように、amp-img 要素の幅と高さを定義する必要があります。
+なぜ `container` タイプが推測されたのでしょうか。その理由は、[`amp-img`](../../../../documentation/components/reference/amp-img.md) タグに `height` 属性を指定していなかったためです。HTML では、ページ上の要素に固定の幅と高さを常に指定することで、リフローを削減できます。AMP では、AMP が要素のアスペクト比を事前に判断できるように、amp-img 要素の幅と高さを定義する必要があります。
 
-次のように、[`<amp-img>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) タグに `width` と `height` を**追加**してください。
+次のように、[`<amp-img>`](../../../../documentation/components/reference/amp-img.md) タグに `width` と `height` を**追加**してください。
 
 ```html
 <amp-img src="mountains.jpg" width="266" height="150"></amp-img>
@@ -246,7 +246,7 @@ AMP のレイアウト システムでは、ページ上の要素をさまざま
 
 ページを更新して、検証ツールで確認してみましょう。エラーが表示されなくなるはずです。
 
-これで有効な AMP ドキュメントになりましたが、ページ上の配置が不自然なため、画像の見栄えがよくありません。デフォルトでは、[`amp-img`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}}) の高さと幅を指定した場合、AMP は指定に合わせてサイズを修正します。しかし、どのような画面サイズでも、AMP が画像を*レスポンシブ*に拡大縮小してページに合わせられたら、最適でしょう。
+これで有効な AMP ドキュメントになりましたが、ページ上の配置が不自然なため、画像の見栄えがよくありません。デフォルトでは、[`amp-img`](../../../../documentation/components/reference/amp-img.md) の高さと幅を指定した場合、AMP は指定に合わせてサイズを修正します。しかし、どのような画面サイズでも、AMP が画像を*レスポンシブ*に拡大縮小してページに合わせられたら、最適でしょう。
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="この画像はレスポンシブではない")}}
 
@@ -263,7 +263,7 @@ AMP では、指定された幅と高さから要素のアスペクト比を算�
 {{ image('/static/img/docs/tutorials/tut-convert-html-responsive.png', 412, 660, align='center third', caption="画像がレスポンシブになった") }}
 
 [tip type="read-on"]
-AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md', locale=doc.locale).url.path}})をご覧ください。
+AMP レイアウト システムについて詳しくは、[AMP レイアウト仕様](../../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md)をご覧ください。
 [/tip]
 
 ## 完了
@@ -335,5 +335,5 @@ AMP validation successful.
 ### よくある質問
 
 - [DOM リフローとは](http://stackoverflow.com/a/27637245)
-- [layout 属性が定義されていない場合]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}}#layout-属性が指定されていない場合)
-- [width と height が定義されていない場合]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
+- [layout 属性が定義されていない場合](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified)
+- [width と height が定義されていない場合](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-width-and-height-are-undefined)

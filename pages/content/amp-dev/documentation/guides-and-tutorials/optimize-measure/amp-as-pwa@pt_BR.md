@@ -4,12 +4,12 @@ $title: Ativar os recursos de Progressive Web App nas suas páginas AMP
 
 {{ image('/static/img/docs/pwamp_add_to_homescreen.png', 848, 1500, align='right third', caption='AMPbyExample acionando a solicitação "Adicione à tela inicial".') }}
 
-Muitos sites não precisam de recursos além dos oferecidos pelas AMP. [AMPbyExample](http://ampbyexample.com/), por exemplo, é uma página AMP e um Progressive Web App:
+Muitos sites não precisam de recursos além dos oferecidos pelas AMP. [Examples](../../../documentation/examples/index.html), por exemplo, é uma página AMP e um Progressive Web App:
 
 1. Ela tem um [manifesto de app da Web](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/) e solicita o banner "Adicione à tela inicial".
 2. Ela tem um [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) que possibilita acesso off-line, entre outras coisas.
 
-Quando o usuário visita [AMPbyExample](http://ampbyexample.com/) de uma plataforma compatível com AMP e clica para navegar no site, ele sai do cache de AMP e acessa a origem. O site ainda usa a biblioteca AMP, mas, como ele fica na origem, é possível usar um service worker, solicitar instalações e assim por diante.
+Quando o usuário visita [Examples](../../../documentation/examples/index.html) de uma plataforma compatível com AMP e clica para navegar no site, ele sai do cache de AMP e acessa a origem. O site ainda usa a biblioteca AMP, mas, como ele fica na origem, é possível usar um service worker, solicitar instalações e assim por diante.
 
 Lembre-se: O service worker não poderá interagir com a versão AMP em cache da sua página. Use o recurso para caminhos direcionados à sua origem.
 
@@ -58,9 +58,9 @@ O service worker é um proxy do lado do cliente que fica entre a página e o ser
 
 Observação: Se o conceito de service workers for novidade para você, leia [esta introdução no WebFundamentals](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers).
 
-O service worker precisa ser registrado em uma página determinada, caso contrário, o navegador não será capaz de encontrá-lo ou executá-lo. Por padrão, isso é feito com [uma pequena ajuda do JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Em páginas AMP, use o componente [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) para alcançar o mesmo resultado.
+O service worker precisa ser registrado em uma página determinada, caso contrário, o navegador não será capaz de encontrá-lo ou executá-lo. Por padrão, isso é feito com [uma pequena ajuda do JavaScript](https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration). Em páginas AMP, use o componente [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para alcançar o mesmo resultado.
 
-Para isso, primeiro inclua o componente [`amp-install-serviceworker`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-install-serviceworker.md', locale=doc.locale).url.path}}) por meio do script correspondente na seção `<head>` da sua página:
+Para isso, primeiro inclua o componente [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) por meio do script correspondente na seção `<head>` da sua página:
 
 [sourcecode:html]
 <script async custom-element="amp-install-serviceworker"
@@ -103,7 +103,7 @@ self.addEventListener('fetch', function(event) {
 [/sourcecode]
 
 Com essa técnica, você poderá alterar sua página AMP com várias
-funcionalidades adicionais que não passariam na [validação de AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}}) se fossem usadas de outra forma. Por exemplo:
+funcionalidades adicionais que não passariam na [validação de AMP](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) se fossem usadas de outra forma. Por exemplo:
 
 * recursos dinâmicos que exigem JS personalizado
 * componentes personalizados/relevantes apenas para seu site

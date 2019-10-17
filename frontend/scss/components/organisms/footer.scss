@@ -17,6 +17,8 @@
 @import '../atoms/_icon.scss';
 
 .#{utility('footer')} {
+  position: relative;
+  z-index: 15;
   padding: 3em 0 2em;
   @include txt;
   @include txt-1;
@@ -43,7 +45,7 @@
     display: flex;
     flex-direction: column;
     margin-left: auto;
-    
+
     @media (min-width: 1024px) {
       flex-direction: row;
     }
@@ -51,7 +53,7 @@
     &-title {
       margin: 3em 2em 1em 0;
       @include color-white;
-      
+
       @media (min-width: 768px) {
         margin: auto 2em auto 1em;
       }
@@ -75,6 +77,10 @@
     &-icon {
       @include ico-3;
       @include ico-white;
+
+      @media (max-width: $minDeviceWidth) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -114,6 +120,12 @@
       padding: 0;
     }
 
+    &-menu + &-title {
+      @media (min-width: 768px) {
+        margin-top: 2.5em;
+      }
+    }
+
     &-item {
       position: relative;
     }
@@ -137,7 +149,7 @@
   &-line-bottom {
     display: flex;
     padding-top: 4em;
-    
+
     @media (max-width: 767px) {
       flex-direction: column;
     }
@@ -166,7 +178,7 @@
     display: block;
     @include txt-2;
     @include txt-strong;
-    
+
     @media (min-width: 768px) {
       padding: 0 2em;
     }

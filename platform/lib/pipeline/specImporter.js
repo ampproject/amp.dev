@@ -14,17 +14,24 @@
  * limitations under the License.
  */
 
-const path = require('path');
+require('module-alias/register');
 
-const {GitHubImporter} = require('./gitHubImporter');
+const path = require('path');
+const project = require('@lib/utils/project');
+
+const {GitHubImporter, log} = require('./gitHubImporter');
 
 // Where to save the documents to
-const DESTINATION_BASE_PATH = __dirname + '/../../../pages/content/amp-dev/';
+const DESTINATION_BASE_PATH = project.absolute('pages/content/amp-dev');
 
-class SpecImporter extends GitHubImporter {
-  async import() {
-    this._log.start('Beginning to import spec docs ...');
-    await this._importSpecDocs();
+class SpecImporter {
+  constructor(githubImporter = new GitHubImporter()) {
+    this.githubImporter_ = githubImporter;
+  }
+
+  import() {
+    log.start('Beginning to import spec docs ...');
+    return this._importSpecDocs();
   }
 
   /**
@@ -36,23 +43,28 @@ class SpecImporter extends GitHubImporter {
     const importDocs = require(__dirname + '/../../config/imports/spec.json');
     const importedDocs = [];
     for (const importDoc of importDocs) {
-      const doc = await this._fetchDocument(importDoc.from);
+      try {
+        const doc = await this.githubImporter_.fetchDocument(importDoc.from, importDoc.repo, true);
+        doc.path = path.join(DESTINATION_BASE_PATH, importDoc.to);
+        doc.title = importDoc.title;
+        doc.order = importDoc.order;
+        doc.toc = importDoc.toc;
+        doc.formats = importDoc.formats;
+        const baseURL = `https://github.com/${importDoc.repo}/blob/master/`;
+        doc.importURL = baseURL + importDoc.from;
 
-      if (!doc) {
-        this._log.warn(`Fetching for '${importDoc.title}' failed.`);
+        // Remove the double heading and rewrite relative links
+        doc.stripInlineTitle();
+
+        const relativeBase = `${baseURL}${path.dirname(importDoc.from)}`;
+        doc.rewriteRelativePaths(relativeBase);
+        doc.addExplicitAnchors();
+
+        importedDocs.push(doc.save());
+      } catch (err) {
+        log.warn(`Fetching for '${importDoc.title}' failed.`, err);
         continue;
       }
-
-      doc.path = path.join(DESTINATION_BASE_PATH, importDoc.to);
-      doc.title = importDoc.title;
-      doc.order = importDoc.order;
-      doc.toc = importDoc.toc;
-      doc.formats = importDoc.formats;
-
-      // Remove the double heading
-      doc.stripInlineTitle();
-
-      importedDocs.push(doc.save());
     }
 
     return Promise.all(importedDocs);
@@ -64,7 +76,6 @@ if (!module.parent) {
   const importer = new SpecImporter();
 
   (async () => {
-    await importer.initialize();
     await importer.import();
   })();
 }

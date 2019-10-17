@@ -1,6 +1,0 @@
-$path: /community/{base}.html
-$view: /views/default.j2
-$title@: Blog
-$order: 5
-
-external_index: https://blog.amp.dev

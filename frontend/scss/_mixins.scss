@@ -15,6 +15,10 @@
   filter: drop-shadow(0 30px 30px -15px rgba(0, 0, 0, 0.25));
 }
 
+@mixin content-shadow {
+  box-shadow: 0 25px 40px 0 rgba(0,0,0,0.05);
+}
+
 @mixin benefit-card-left-shadow {
   box-shadow: 0 50px 100px 0 rgba(0,0,0,0.25);
 }
@@ -56,8 +60,20 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
   box-shadow: 0 15px 50px 0 rgba(0,0,0,0.50);
 }
 
-@mixin  roadshow-event-shadow {
+@mixin roadshow-event-shadow {
   box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+@mixin ampconf-events-shadow {
+  box-shadow: 0 15px 25px -10px rgba(0,0,0,0.15);
+}
+
+@mixin ampconf-speaker-shadow {
+  box-shadow: 0 15px 25px 0 rgba(0,0,0,0.15);
+}
+
+@mixin agenda-button-shadow {
+  box-shadow: 0 10px 25px 0 rgba(0,0,0,0.20);
 }
 
 @mixin flyout {
@@ -83,47 +99,6 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 		}
 		to {
 			padding-top: 45%;
-		}
-	}
-}
-
-@mixin viewboxGradientAnimation {
-	@keyframes gradientChange {
-
-		0% {
-			background-position: 0% 0%
-		}
-
-		24% {
-			background-position: 0% 0%
-		}
-
-		28% {
-			background-position: 24% 0%;
-		}
-
-		50% {
-			background-position: 24% 0%;
-		}
-
-		54% {
-			background-position: 48% 0%;
-		}
-
-		76% {
-			background-position: 48% 0%;
-		}
-
-		80% {
-			background-position: 72% 0%;
-		}
-
-		98% {
-			background-position: 72% 0%;
-		}
-
-		100% {
-			background-position: 100% 0%;
 		}
 	}
 }

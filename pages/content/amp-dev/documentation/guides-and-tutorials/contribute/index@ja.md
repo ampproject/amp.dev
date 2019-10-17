@@ -6,7 +6,7 @@ AMP プロジェクトは、デベロッパー、コンテンツ クリエイタ
 
 ### AMP に関する問題を報告する
 
-AMP に関するご意見がある場合、または技術的な問題が発生した場合は、[Issue Tracker](https://github.com/ampproject/amphtml/issues) からご報告ください。なお、[ampproject.org](https://ampproject.org) に関する問題については、[Docs Issue Tracker](https://github.com/ampproject/docs/issues) をご利用ください。
+AMP に関するご意見がある場合、または技術的な問題が発生した場合は、[Issue Tracker](https://github.com/ampproject/amphtml/issues) からご報告ください。なお、[amp.dev](https://amp.dev) に関する問題については、[Docs Issue Tracker](https://github.com/ampproject/docs/issues) をご利用ください。
 
 ### 技術面で AMP に貢献する
 
@@ -22,8 +22,8 @@ AMP プロジェクトでコードに貢献していただく場合は、まず 
 
 ドキュメントの作成は AMP コミュニティ全体にとって重要です。質の高いドキュメントを完成させるためにぜひご協力ください。AMP プロジェクトには、AMP ユーザー向けのサンプル、AMP プロジェクトへの貢献についてのドキュメントなど、あらゆる種類のドキュメントがあります。
 
-[ampproject.org](https://ampproject.org) は、AMP について幅広く紹介しているウェブサイトです。ドキュメントへの貢献については、[GitHub の ampproject / docs プロジェクト](https://github.com/ampproject/docs)で扱っています（たとえば、[今ご覧になっているページ](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) をよりよくするご提案もしていただけます）。
+[amp.dev](https://amp.dev) は、AMP について幅広く紹介しているウェブサイトです。ドキュメントへの貢献については、[GitHub の ampproject / docs プロジェクト](https://github.com/ampproject/docs)で扱っています（たとえば、[今ご覧になっているページ](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) をよりよくするご提案もしていただけます）。
 
-[ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}) では、AMP の使い方の例を紹介しています。このサイトの改良については、[GitHub の amp-by-example プロジェクト](https://github.com/ampproject/amp-by-example/)で扱っています。
+[ampbyexample.com](../../../documentation/examples/index.html) では、AMP の使い方の例を紹介しています。このサイトの改良については、[GitHub の amp-by-example プロジェクト](https://github.com/ampproject/amp-by-example/)で扱っています。
 
 AMP プロジェクトに参加しているユーザーがもっと活動しやすくなるように、その他のドキュメントの改良にもご協力をお願いいたします。その際は、[GitHub の amphtml プロジェクト](https://github.com/ampproject/amphtml)をご覧ください。

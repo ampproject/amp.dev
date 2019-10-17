@@ -10,6 +10,8 @@ from grow.extensions import hooks
 class AssetBundle(object):
     def __init__(self, doc):
         self._doc = doc
+        self._pod = doc.pod
+        self._cache = self._pod.podcache.get_object_cache('inlineTextAssets')
         # Used to determine where to print the finished styles
         self._placeholder = '/* {} */'.format(uuid.uuid4())
         # Stores registered paths
@@ -30,6 +32,20 @@ class AssetBundle(object):
     def emit(self):
         return self._placeholder
 
+    def read_file(self, path):
+        file_contents = self._cache.get(path)
+        if not self._pod.env.dev and file_contents:
+            return file_contents
+        # If file has not yet been read, add it to the cache
+        try:
+            with open(path, 'r') as file:
+                file_contents = file.read()
+                file_contents = file_contents.strip(' \t\n\r')
+                self._cache.add(path, file_contents)
+                return file_contents
+        except IOError:
+            self._pod.logger.error('Could not find {}'.format(path))
+
     def inject(self, content):
         # Check wether the content has the placeholder
         if self._placeholder not in content:
@@ -40,19 +56,14 @@ class AssetBundle(object):
         # Sort CSS files by priority
         self._files.sort(key=itemgetter(1))
 
-        base_path = self._doc.pod.root
+        base_path = self._pod.root
         bundle = []
         # Try to get contents from files and concat them
         for path, priority in self._files:
             path = '{}/{}'.format(base_path, path)
-            try:
-                with open(path, 'r') as file:
-                    file_contents = file.read()
-                    file_contents = file_contents.strip(' \t\n\r')
-
-                    bundle.append(file_contents)
-            except IOError:
-                self._doc.pod.logger.error('Could not find {}'.format(path))
+            file_contents = self.read_file(path)
+            if file_contents:
+                bundle.append(file_contents)
 
         bundle = ''.join(bundle)
         return content.replace(self._placeholder, bundle)

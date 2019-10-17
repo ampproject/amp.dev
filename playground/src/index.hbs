@@ -29,12 +29,18 @@
     <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
     <meta name="msapplication-TileColor" content="#ffffff">
 
+    <!-- Origin Trial for Dynamic Autoplay Delegation -->
+    <meta http-equiv="origin-trial" content="AviuuiVhVdQ3GpVtxSpyMT+XsL/qGGYmyiyLvYSKPL3rRDLipe/ard5x+DXVlrATtolwX75VtpSKc9IEzLDd4AkAAABmeyJvcmlnaW4iOiJodHRwczovL2FtcC5kZXY6NDQzIiwiZmVhdHVyZSI6IkV4cGVyaW1lbnRhbEF1dG9wbGF5RHluYW1pY0RlbGVnYXRpb24iLCJleHBpcnkiOjE1NzA1Nzg0NDF9">
+
     <!-- Color the status bar on mobile devices -->
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
-    <link rel="preload" href="/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    {{^htmlWebpackPlugin.options.embed}}
+    <link rel="preload" href="https://amp.dev/static/fonts/noto-sans-v7-latin-regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="https://amp.dev/static/fonts/noto-sans-v7-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="https://amp.dev/static/fonts/poppins-v5-latin-700.woff2" as="font" crossorigin>
+    <link rel="preload" href="https://amp.dev/static/fonts/fira-mono-v7-latin-500.woff2" as="font" crossorigin>
+    {{/htmlWebpackPlugin.options.embed}}
 
     <script async src="https://www.googletagmanager.com/gtag/js?id={{htmlWebpackPlugin.options.gaTrackingId}}"></script>
   </head>

@@ -6,21 +6,21 @@ $title: Trabajar con datos remotos
 
 [tip type="success"]
 
-[`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state) admite la obtención de datos remotos a través de su atributo `src`, que obtiene JSON desde un extremo de CORS. Esta búsqueda se realiza una vez y en la carga de la página y es útil para garantizar la frescura de los datos (especialmente cuando se sirve desde una caché).
+[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) admite la obtención de datos remotos a través de su atributo `src`, que obtiene JSON desde un extremo de CORS. Esta búsqueda se realiza una vez y en la carga de la página y es útil para garantizar la frescura de los datos (especialmente cuando se sirve desde una caché).
 
-También puede vincular el atributo `src` para el elemento [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state). Esto significa que una acción del usuario puede activar una recuperación de datos JSON remotos en el estado vinculable de la página.
+También puede vincular el atributo `src` para el elemento [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state). Esto significa que una acción del usuario puede activar una recuperación de datos JSON remotos en el estado vinculable de la página.
 
 [/tip]
 
 ## Recogiendo los tamaños disponibles para una camiseta
 
-Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs en nuestra muestra. Nuestro servidor de desarrollo Express.js en `app.js` ya tiene un endpoint `/shirts/sizes?shirt=<sku>` que, dado un SKU de camisa, devuelve los tamaños y el precio disponibles para cada tamaño. Envía la respuesta con un retardo artificial de un segundo para simular la latencia de la red.
+Hagamos uso de la capacidad de obtener datos remotos para buscar precios de SKUs en nuestra muestra. Nuestro servidor de desarrollo Express.js en `app.js` ya tiene un endpoint `/shirts/sizesAndPrices?shirt=<sku>` que, dado un SKU de camisa, devuelve los tamaños y el precio disponibles para cada tamaño. Envía la respuesta con un retardo artificial de un segundo para simular la latencia de la red.
 
 |  Solicitud                            | Respuesta |
 |---------------------------------------|-----------|
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
-De forma similar a los datos JSON dentro de los elementos [`<amp-state>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#state), los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo id del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
+De forma similar a los datos JSON dentro de los elementos [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), los datos remotos devueltos por estas recuperaciones se combinan y se encuentran disponibles bajo el atributo id del elemento. Por ejemplo, los datos devueltos de la respuesta de ejemplo anterior se pueden acceder en una expresión:
 
 |  Expresión                   | Resultado |
 |------------------------------|-----------|
@@ -38,7 +38,7 @@ Ahora, apliquemos esto a nuestro ejemplo de comercio electrónico. Primero vamos
 
 ### Indicar tamaños no disponibles
 
-A continuación, marque claramente los tamaños no disponibles como tales para un SKU determinado. La clase CSS `"unavailable"` añade una línea diagonal a través de un elemento -- podemos añadirlo a los elementos dentro del selector `[`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}) name="size"]`  correspondientes a tamaños no disponibles:
+A continuación, marque claramente los tamaños no disponibles como tales para un SKU determinado. La clase CSS `"unavailable"` añade una línea diagonal a través de un elemento -- podemos añadirlo a los elementos dentro del selector [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)  correspondientes a tamaños no disponibles:
 
 ```html
 <amp-selector name="size">
@@ -70,7 +70,7 @@ Ahora, vuelva a cargar la página y pruébela. Si selecciona un nuevo SKU (color
 
 ### Especificar estados iniciales
 
-Hay, sin embargo, un pequeño problema -- ¿qué pasa con la camisa negra, el color seleccionado por defecto? Necesitaremos agregar los datos de tamaño y precio de la camisa negra a `amp-state#shirts` porque [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) sólo se ejecuta en respuesta a una acción explícita del usuario:
+Hay, sin embargo, un pequeño problema -- ¿qué pasa con la camisa negra, el color seleccionado por defecto? Necesitaremos agregar los datos de tamaño y precio de la camisa negra a `amp-state#shirts` porque [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) sólo se ejecuta en respuesta a una acción explícita del usuario:
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -120,13 +120,13 @@ Y, debemos actualizar el estado predeterminado de los elementos relevantes:
 </amp-selector>
 ```
 
-Nota: [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}) no se ejecuta en carga de página, -- solo en respuesta a una acción explícita del usuario. Esto asegura que la carga inicial de la página sea consistentemente rápida entre las páginas independientemente del uso de [`amp-bind`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}).
+Nota: [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) no se ejecuta en carga de página, -- solo en respuesta a una acción explícita del usuario. Esto asegura que la carga inicial de la página sea consistentemente rápida entre las páginas independientemente del uso de [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 ## Precios variables
 
 Ahora que mostramos correctamente los tamaños disponibles, nos aseguramos de que el precio correcto también se muestre.
 
-Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específico para el color Y el tamaño. Esto significa que necesitamos una nueva variable para rastrear el tamaño seleccionado por el usuario. Agregue una nueva acción a nuestro elemento [`amp-selector`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-selector.md', locale=doc.locale).url.path}}):
+Nuestra tienda de AMPPAREL es peculiar en que el precio de la camisa es específico para el color Y el tamaño. Esto significa que necesitamos una nueva variable para rastrear el tamaño seleccionado por el usuario. Agregue una nueva acción a nuestro elemento [`amp-selector`](../../../../documentation/components/reference/amp-selector.md):
 
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the

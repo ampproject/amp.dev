@@ -1,14 +1,13 @@
 $title@: Contribute
 $title@fr: Participer
-
-$path: /documentation/guides-and-tutorials/contribute/{base}.html
 $view: /views/detail/docs-detail.j2
-
+$path: /documentation/guides-and-tutorials/contribute/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/contribute/{base}.html
 
 $order: 6
 
+bucket: true
 formats:
   - websites
   - stories

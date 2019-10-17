@@ -23,24 +23,26 @@ const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
 const api = express.Router();
 
 const ONE_HOUR = 60 * 60;
-const ONE_DAY = ONE_HOUR * 24;
 const VALID_ORIGINS = new Set([
   'amp.dev',
   'api.amp.dev',
+  'preview.amp.dev',
   'amp-dev-staging.appspot.com',
   'playground-dot-amp-dev-staging.appspot.com',
+  'preview-dot-amp-dev-staging.appspot.com',
   'ampbyexample.com',
   'ampstart.com',
   'ampstart-staging.firebaseapp.com',
   'localhost',
   'localhost:8080',
   'localhost:8082',
+  'localhost:8084',
   'amp-by-example-staging.appspot.com',
   'amp-by-example-sebastian.appspot.com',
   '0.1.0.1',
 ]);
 
-const host = `${config.hosts.platform.scheme}://${config.hosts.platform.host}:${config.hosts.platform.port}`;
+const host = config.hosts.platform.base;
 
 api.get('/fetch', async (request, response) => {
   const url = request.query.url;
@@ -53,19 +55,6 @@ api.get('/fetch', async (request, response) => {
     response.send(`Could not fetch URL ${url}`).status(400).end();
   }
 });
-
-api.get('/amp-component-versions', async (request, response) => {
-  const url = 'https://ampbyexample.com/playground/amp-component-versions';
-  try {
-    const body = await doFetch(url);
-    setMaxAge(response, ONE_DAY);
-    response.send(body);
-  } catch (error) {
-    console.error('Could not fetch component versions', error);
-    response.send(`Could not fetch component versions ${url}`).status(400).end();
-  }
-});
-
 
 async function fetchDocument(urlString, host) {
   const url = new URL(urlString, host);

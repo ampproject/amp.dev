@@ -16,21 +16,20 @@
 
 'use strict';
 
-const ampOptimizer = require('amp-toolbox-optimizer');
-const runtimeVersion = require('amp-toolbox-runtime-version');
+const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const path = require('path');
 
 const io = require('./lib/io');
 const templates = require('./lib/templates');
 
 const DIST_DIR = 'dist';
-const AMP_PATH = 'amp';
 const INPUT_FILE = 'templates/index.html';
 
 const generatorTemplate = io.readFile(INPUT_FILE);
 const config = initConfig();
 const generatorPage = templates.render(generatorTemplate, config);
 generateOptimizedAmpFiles(generatorPage);
+console.log('Built boilerplate generator.');
 
 function initConfig() {
   const config = {
@@ -39,7 +38,7 @@ function initConfig() {
     formats: require('./data/formats.json'),
     templates: templates.find('./templates/files'),
     highlightTheme:
-      io.readFile(path.join(__dirname, '../node_modules/highlight.js/styles/monokai.css')),
+      io.readFile(path.join(__dirname, './templates/styles/code-snippet.scss')),
   };
   // assign default template
   let defaultTemplate;
@@ -57,13 +56,9 @@ function initConfig() {
 async function generateOptimizedAmpFiles(output) {
   const optimized = await optimizeAmp(output);
   io.writeFile(DIST_DIR, 'index.html', optimized);
-  io.writeFile(DIST_DIR, AMP_PATH, 'index.html', output);
 }
 
 async function optimizeAmp(html) {
-  const ampRuntimeVersion = await runtimeVersion.currentVersion();
-  return await ampOptimizer.transformHtml(html, {
-    ampUrl: './' + AMP_PATH,
-    ampRuntimeVersion,
-  });
+  const optimizer = AmpOptimizer.create();
+  return await optimizer.transformHtml(html);
 }

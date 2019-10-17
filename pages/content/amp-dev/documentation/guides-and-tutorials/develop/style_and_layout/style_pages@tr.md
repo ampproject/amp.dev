@@ -2,35 +2,35 @@
 $title: Desteklenen CSS
 ---
 
-Tüm web sayfaları gibi AMP sayfalarının stili de CSS ile belirlenir, ancak ([özel yazı tipleri](#özel-yazı-tipleri-istisnası) haricinde) harici stil sayfalarını referans alamazsınız.
+Tüm web sayfaları gibi AMP sayfalarının stili de CSS ile belirlenir, ancak ([özel yazı tipleri](#the-custom-fonts-exception) haricinde) harici stil sayfalarını referans alamazsınız.
 Ayrıca, performans üzerindeki etkilerinden dolayı belirli stillere izin verilmez; satır içi stil özniteliklerine izin verilmemektedir.
 
-Tüm stiller, dokümanın head bölümünde yer almalıdır (bkz. [Sayfaya stil ekleme]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md', locale=doc.locale).url.path}})).
+Tüm stiller, dokümanın head bölümünde yer almalıdır (bkz. [Sayfaya stil ekleme](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)).
 Ancak, içeriğinizi daha iyi yönetmek amacıyla statik sayfalar oluşturmak için CSS ön işlemcilerini ve şablonlarını kullanabilirsiniz.
 
 **Not:** Duyarlı sayfaları yazmayı makul bir düzeyde kolaylaştırmak için AMP bileşenleri varsayılan stillerle birlikte gelir.
 Bu stiller, [`amp.css`](https://github.com/ampproject/amphtml/blob/master/css/amp.css) içinde tanımlanır.
 
-## CSS ön işlemcilerini kullanma
+## CSS ön işlemcilerini kullanma <a name="using-css-preprocessors"></a>
 
 Ön işlemcilerin oluşturduğu çıktı, diğer web sayfalarında olduğu gibi AMP'de sorunsuz bir şekilde çalışır.
-Örneğin, [ampproject.org](https://www.ampproject.org/) sitesi [Sass](http://sass-lang.com/)'ı kullanır.
-([ampproject.org](https://www.ampproject.org/) sitesini meydana getiren statik AMP sayfalarını oluşturmak için biz <a href="http://grow.io/"><span class="notranslate">Grow</span></a> kullanıyoruz.)
+Örneğin, [amp.dev](https://amp.dev/) sitesi [Sass](http://sass-lang.com/)'ı kullanır.
+([amp.dev](https://amp.dev/) sitesini meydana getiren statik AMP sayfalarını oluşturmak için biz <a href="http://grow.io/"><span class="notranslate">Grow</span></a> kullanıyoruz.)
 
 Ön işlemcileri kullanırken neleri eklediğinize ayrıca dikkat etmeniz gerekir; yalnızca sayfalarınızın kullandığı öğeleri ekleyin.
 Örneğin, [head.html](https://github.com/ampproject/docs/blob/master/views/partials/head.html) kodu gerekli tüm AMP biçimlendirmesini ve `*.scss` kaynak dosyalarındaki satır içi CSS'yi içerir.
-Diğerlerinin yanı sıra [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
+Diğerlerinin yanı sıra [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) için özel öğe komut dosyasını da içerir. Böylece, sitedeki birçok sayfaya yerleşik YouTube videoları eklenebilir.
 
 [sourcecode:html] {% raw %}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
-  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}Accelerated Mobile Pages Project">
+  <meta property="og:description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
+  <meta name="description" content="{% if doc.description %}{{doc.description}} – {% endif %}AMP Project">
 
-  <title>Accelerated Mobile Pages Project</title>
+  <title>AMP Project</title>
   <link rel="shortcut icon" href="/static/img/amp_favicon.png">
-  <link rel="canonical" href="https://www.ampproject.org{{doc.url.path}}">
+  <link rel="canonical" href="{{doc.url}}">
   <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet" type="text/css">
   <style amp-custom>
   {% include "/assets/css/main.min.css" %}
@@ -47,7 +47,7 @@ Diğerlerinin yanı sıra [`amp-youtube`]({{g.doc('/content/amp-dev/documentatio
 </head>
 {% endraw %} [/sourcecode]
 
-Yukarıdaki kodun biçimlendirilmiş AMP HTML'sine nasıl çevrildiğini görmek için [ampproject.org](https://www.ampproject.org/)'daki herhangi bir sayfanın kaynağını görüntüleyin.
+Yukarıdaki kodun biçimlendirilmiş AMP HTML'sine nasıl çevrildiğini görmek için [amp.dev](https://amp.dev/)'daki herhangi bir sayfanın kaynağını görüntüleyin.
 (Chrome'da sağ tıklayın ve `Sayfa Kaynağını Görüntüle`'yi seçin.)
 
 ## İzin verilmeyen stiller
@@ -95,7 +95,7 @@ Aşağıdaki stillere AMP sayfalarında izin verilmez:
   </tbody>
 </table>
 
-## Beyaz listedeki geçiş ve animasyon özellikleri
+## Beyaz listedeki geçiş ve animasyon özellikleri <a name="the-custom-fonts-exception"></a>
 
 AMP yalnızca yaygın kullanılan tarayıcılarda GPU hızlandırmalı olabilecek geçiş ve animasyon özelliklerine izin verir.
 AMP projesi şu anda `opacity`, `transform` ve `-vendorPrefix-transform` özelliklerini beyaz listeye almıştır.
@@ -108,7 +108,7 @@ Aşağıdaki örneklerde, `<property>` etiketinin beyaz listede olması gerekir:
 `overflow` özelliğinin (ve `overflow-y`, `overflow-x`) stili <span class="notranslate">“auto”</span> veya <span class="notranslate">“scroll”</span> olarak belirlenemez.
 AMP dokümanlarında hiçbir kullanıcı tanımlı öğenin kaydırma çubuğu olamaz.
 
-## Özel yazı tipleri istisnası
+## Özel yazı tipleri istisnası <a name="özel-yazı-tipleri-istisnası"></a>
 
 AMP sayfaları harici stil sayfaları içeremez. Bunun tek istisnası özel yazı tipleridir.
 Özel yazı tiplerine referansta bulunmak için desteklenen iki yöntem, beyaz listedeki yazı tipi sağlayıcılarını işaret eden bağlantı etiketlerini ve `@font-face` öğesini dahil etmektir.

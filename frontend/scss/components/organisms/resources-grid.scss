@@ -1,0 +1,112 @@
+/*
+
+#############################
+### ORGANISM: resources-grid ########
+#############################
+
+*/
+
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_headline.scss';
+@import 'components/atoms/_text.scss';
+
+.#{utility('resources-grid')} {
+  grid-column: 3 / 23;
+}
+.#{organism('resources-grid')} {
+  &-cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    @media (min-width: 600px) {
+      grid-column-gap: 30px;
+    }
+  }
+
+  h2 {
+    span {
+      text-transform: capitalize;
+    }
+  }
+
+  &-card {
+    margin: 15px 0;
+    padding: 20px 20px;
+    border-radius: 10px;
+    background-color: color('white');
+    box-shadow: 6px 9px 40px 0 transparentize(color('black'), 0.85);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    grid-column: span 12;
+
+
+    @media (min-width: 600px) {
+      grid-column: span 6;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: span 4;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &-icon {
+      height: 35px;
+      width: 35px;
+
+      @media (min-width: 768px ) {
+        height: 65px;
+        width: 65px;
+        margin: 10px 0;
+      }
+    }
+
+    &-headline {
+      color: color('blue-ribbon');
+    }
+
+    &-tip {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+      margin: 10px 0 10px 0;
+      grid-column: span 11;
+      @media (min-width: 768px){
+        grid-column: span 12;
+      }
+
+      h4, p, a {
+        color: color('white');
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      @media (min-width: 600px) {
+        grid-column: span 6;
+        margin: auto auto;
+      }
+
+      @media (min-width: 1024px) {
+        grid-column: span 4;
+        padding: 0 22.5px;
+      }
+
+      .#{molecule('tip')}-default {
+        margin: auto auto;
+        border-radius: 4px;
+
+        @media (min-width: 1024px) and (max-width: 1280px) {
+          margin: 20px 0;
+        }
+      }
+    }
+  }
+}

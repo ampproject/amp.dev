@@ -8,70 +8,77 @@
 
 */
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
 @import 'teaser';
 
 .#{molecule('teaser-component')} {
-	&.#{molecule('teaser')} {
-		@include teaser;
+  &.#{molecule('teaser')} {
+    @include teaser;
 
-		& > a {
-			@include teaser-linking;
-			height: 100%;
-			
-			&:hover {
-				@include teaser-linking-hover;
+    & > a {
+      @include teaser-linking;
+      height: 100%;
 
-				.#{molecule('teaser')}-card {
-					@include teaser-card-hover;
-				}
-			}
-		}
-	}
+      &:hover {
+        @include teaser-linking-hover;
 
-	.#{molecule('teaser')} {
-		&-tags {
-			font-size: 0;
-			position: absolute;
-			right: 0;
-			top: 0;
-			z-index: 1;
-		}
+        .#{molecule('teaser')}-card {
+          @include teaser-card-hover;
+        }
+      }
+    }
+  }
 
-		&-card {
-			@include teaser-card;
-			height: 100%;
-			border-radius: 0;
-		}
+  .#{molecule('teaser')} {
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      align-items: stretch;
+      margin-top: 20px;
 
-		&-header {
-			@include teaser-header;
-			height: 90px;
+      @media (min-width: 600px) {
+        grid-column-gap: 30px;
+      }
+    }
+    &-tags {
+      @include teaser-tag-zero;
+    }
 
-			&-title {
-				@include teaser-header-title;
-			}
-		}
+    &-card {
+      @include teaser-card;
+      height: 100%;
+      border-radius: 0;
+    }
 
-		&-content {
-			@include teaser-content;
-		}
+    &-header {
+      @include teaser-header;
+      height: 90px;
 
-		&-image {
-			@include teaser-image;
-		}
+      &-title {
+        @include teaser-header-title;
+        font-weight: bold;
+      }
+    }
 
-		&-headline {
-			@include teaser-headline;
-			margin-bottom: 0.65em;
-		}
+    &-content {
+      @include teaser-content;
+    }
 
-		&-copy {
-			@include teaser-copy;
-		}
-	}
+    &-image {
+      @include teaser-image;
+    }
+
+    &-headline {
+      @include teaser-headline;
+      margin-bottom: 0.65em;
+    }
+
+    &-copy {
+      @include teaser-copy;
+    }
+  }
 }

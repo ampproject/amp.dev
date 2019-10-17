@@ -5,15 +5,15 @@ $order: 2
 
 Este guia mostra um conjunto de casos de uso comuns do rastreamento de engajamento do usuário:
 
-Observação: Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}}).
+Observação: Quer adicionar um caso de uso? [Fale conosco.](https://github.com/ampproject/docs/issues/new) Você também pode enviar seus próprios casos. Veja [como contribuir](../../../../documentation/guides-and-tutorials/contribute/index.md).
 
 ## Rastrear visualizações de página
 
-Saiba como rastrear visualizações de página usando [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) e [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}).
+Saiba como rastrear visualizações de página usando [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) e [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 
 ### Como usar amp-pixel
 
-Envie dados de visualização de página a um URL especificado usando [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}):
+Envie dados de visualização de página a um URL especificado usando [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md):
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -21,7 +21,7 @@ Envie dados de visualização de página a um URL especificado usando [`amp-pixe
 
 ### Como usar amp-analytics – sem fornecedor
 
-Envie dados de visualização de página a um URL especificado usando [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}):
+Envie dados de visualização de página a um URL especificado usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
 <amp-analytics>
@@ -67,9 +67,9 @@ Envie dados de visualização de página ao Google Analytics. Veja também como 
 </amp-analytics>
 ```
 
-## Rastrear cliques na página
+## Rastrear cliques na página <a name="tracking-page-clicks"></a>
 
-Saiba como rastrear cliques na página usando [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+Saiba como rastrear cliques na página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 e enviando dados de eventos a um URL especificado e ao [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Como enviar dados a um URL especificado
@@ -129,9 +129,9 @@ O exemplo a seguir usa o atributo `selector` do `trigger` para enviar um evento 
 </amp-analytics>
 ```
 
-## Como rastrear a rolagem de página
+## Como rastrear a rolagem de página <a name="tracking-scrolling"></a>
 
-Rastreie a rolagem de página usando [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}). O exemplo a seguir usa o atributo `scrollspec` para enviar um evento `scroll` ao URL especificado quando um usuário rola 25%, 50% e 90% da página verticalmente. O evento também é acionado pela rolagem horizontal de 90% da largura de `scroll`:
+Rastreie a rolagem de página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). O exemplo a seguir usa o atributo `scrollspec` para enviar um evento `scroll` ao URL especificado quando um usuário rola 25%, 50% e 90% da página verticalmente. O evento também é acionado pela rolagem horizontal de 90% da largura de `scroll`:
 
 ```html
 <amp-analytics>
@@ -157,9 +157,9 @@ Rastreie a rolagem de página usando [`amp-analytics`]({{g.doc('/content/amp-dev
 </amp-analytics>
 ```
 
-## Como rastrear interações em redes sociais
+## Como rastrear interações em redes sociais <a name="tracking-social-interactions"></a>
 
-Saiba como rastrear interações em redes sociais usando [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})
+Saiba como rastrear interações em redes sociais usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 e enviando dados de eventos a um URL especificado e ao [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
 ### Como enviar dados a um URL especificado

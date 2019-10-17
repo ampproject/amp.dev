@@ -16,18 +16,29 @@
 
 const path = require('path');
 const express = require('express');
-const {setImmutable} = require('../../platform/lib/utils/cacheHelpers.js');
+const {setImmutable} = require('@lib/utils/cacheHelpers.js');
+const resourceFallbackHandler = require('@lib/routers/resourceFallbackHandler.js');
+const robots = require('@lib/routers/robots.js');
 // eslint-disable-next-line new-cap
 const playground = express.Router();
 
+const BASE_DIR = path.join(__dirname, '../dist');
+
 playground.use(express.static(
-    path.join(__dirname, '../dist'),
+    BASE_DIR,
     {
       extensions: ['html'],
       setHeaders: setCustomCacheControl,
     },
 ));
+
 playground.use('/api', require('./api.js'));
+
+playground.use(robots('allow_all.txt'));
+
+// The fallback handler has to be last (kick in only if the request was not handled)
+playground.use( resourceFallbackHandler(BASE_DIR));
+
 
 function setCustomCacheControl(response, path) {
   // playground assets are versioned

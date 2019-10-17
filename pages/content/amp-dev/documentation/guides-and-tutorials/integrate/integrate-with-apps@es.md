@@ -63,7 +63,7 @@ Importante: Nunca solicite las URL de AMP a través de la API de AMP de Google c
 #### API de URL de AMP de Google
 
 Google proporciona la API AMP URL para recuperar las URL HTML AMP correspondientes
-para una lista dada de URL ([documentación oficial](https://developers.google.com/amp/cache/use-amp-url) / [demostración]({{g.doc('/content/amp-dev/documentation/examples/advanced/Using_the_AMP_URL_API.html', locale=doc.locale).url.path}}). Las URL no necesitan ser las versiones canónicas. Si existe una versión de AMP, la respuesta incluye la URL AMP original y la URL de la página AMP en caché en Google AMP Cache.
+para una lista dada de URL ([documentación oficial](https://developers.google.com/amp/cache/use-amp-url) / [demostración](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html). Las URL no necesitan ser las versiones canónicas. Si existe una versión de AMP, la respuesta incluye la URL AMP original y la URL de la página AMP en caché en Google AMP Cache.
 
 Por ejemplo, para una lista dada de URLs:
 
@@ -99,7 +99,7 @@ Nota: Las URL de las páginas de AMP almacenadas en caché en los cachés de AMP
 
 ## Usando cachés AMP
 
-Un [caché AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md', locale=doc.locale).url.path}}) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
+Un [caché AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
 
 *   Entregar solo páginas válidas de AMP.
 *   Permitir que las páginas de AMP se carguen de manera eficiente y segura.
@@ -108,7 +108,7 @@ Un [caché AMP]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/lea
 Actualmente, hay dos proveedores de AMP Cache:
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Esto le da dos opciones para mostrar un archivo AMP en una aplicación mediante:
 
@@ -132,11 +132,11 @@ Estas son algunas de las mejores prácticas generales para implementar un AMP Vi
 
 *   Sirva la página AMP desde un caché AMP (>1s tiempo de carga más rápido).
 *   Muestra el origen del editor del artículo (por ejemplo, en un encabezado plegable).
-*   Proporcione una acción de intercambio (consulte también la sección "[Compartir contenido AMP](#compartir-contenido-amp)" a continuación).
+*   Proporcione una acción de intercambio (consulte también la sección "[Compartir contenido AMP](#sharing-amp-content)" a continuación).
 *   En los visores basados en webView, habilite las cookies de terceros.
 *   Establezca un referente para su plataforma / aplicación.
 
-### Compartir contenido AMP
+### Compartir contenido AMP <a name="sharing-amp-content"></a>
 
 Al compartir un documento AMP desde el AMP Viewer de una plataforma, la plataforma debe compartir la URL canónica cuando sea técnicamente posible. Por ejemplo, si la plataforma proporciona un botón para compartir, este botón debe compartir la URL canónica.
 

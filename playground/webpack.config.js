@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const config = require('../platform/config/shared.json');
 
 module.exports = (env, argv) => {
@@ -95,8 +95,10 @@ module.exports = (env, argv) => {
             {
               loader: 'sass-loader',
               options: {
+                sassOptions: {
+                  includePaths: [path.join(__dirname, '../frontend/scss')],
+                },
                 sourceMap: true,
-                includePaths: [path.join(__dirname, '../frontend/scss')],
               },
             },
           ],

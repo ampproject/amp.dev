@@ -23,6 +23,10 @@
   padding-top: 20px;
   background: color('whisper');
 
+  h1 {
+    font-size: 2.625rem;
+  }
+
   .#{utility('container')} {
     @include container;
     max-width: 100vw;
@@ -141,12 +145,6 @@
           opacity: 1;
         }
       }
-      &:focus {
-        outline: none;
-      }
-    }
-    &:focus {
-      outline: none;
     }
   }
 
@@ -252,15 +250,17 @@
         }
       }
       &-link {
+        display: block;
         font-weight: 400;
       }
       &-title {
-        padding: 1.5rem 1rem 1rem 1rem;
+        padding: 1.5rem 1rem 0 1rem;
         margin-bottom: 0;
         display: block;
         color: color('charade');
         @include txt-font-accent;
         @include txt-hl;
+        margin-top: 0;
       }
       &-description {
         padding: 0 1rem;

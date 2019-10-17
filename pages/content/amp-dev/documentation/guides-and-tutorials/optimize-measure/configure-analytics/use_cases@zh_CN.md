@@ -4,15 +4,15 @@ $title: 使用情形
 
 本指南提供了一系列跟踪用户互动的常见使用情形：
 
-备注: 想要添加使用情形？[请告诉我们。](https://github.com/ampproject/docs/issues/new) 或者您也可以提供自己的使用情形，请参见[如何贡献自己的力量]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path}})
+备注: 想要添加使用情形？[请告诉我们。](https://github.com/ampproject/docs/issues/new) 或者您也可以提供自己的使用情形，请参见[如何贡献自己的力量](../../../../documentation/guides-and-tutorials/contribute/index.md)
 
 ## 跟踪网页浏览量
 
-了解如何使用 [`amp-pixel`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}}) 和 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}}) 跟踪网页浏览量。
+了解如何使用 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 跟踪网页浏览量。
 
-### 使用 amp-pixel
+### 使用 amp-pixel <a name="使用-amp-pixel"></a>
 
-使用 [`amp-pixel` 将网页浏览量数据发送到指定网址]({{g.doc('/content/amp-dev/documentation/components/reference/amp-pixel.md', locale=doc.locale).url.path}})：
+使用 [`amp-pixel` 将网页浏览量数据发送到指定网址](../../../../documentation/components/reference/amp-pixel.md)：
 
 ```html
 <amp-pixel src="https://foo.com/pixel?"></amp-pixel>
@@ -20,7 +20,7 @@ $title: 使用情形
 
 ### 使用 amp-analytics - 无供应商
 
-使用 [`amp-analytics` 将网页浏览量数据发送到指定网址]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})：
+使用 [`amp-analytics` 将网页浏览量数据发送到指定网址](../../../../documentation/components/reference/amp-analytics.md)：
 
 ```html
 <amp-analytics>
@@ -65,9 +65,9 @@ $title: 使用情形
 </amp-analytics>
 ```
 
-## 跟踪网页点击次数
+## 跟踪网页点击次数 <a name="tracking-page-clicks"></a>
 
-了解如何使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})，通过将事件数据发送到指定网址和 [Google Analytics（分析）来跟踪网页点击次数](https://developers.google.com/analytics/devguides/collection/amp-analytics/)。
+了解如何使用 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)，通过将事件数据发送到指定网址和 [Google Analytics（分析）来跟踪网页点击次数](https://developers.google.com/analytics/devguides/collection/amp-analytics/)。
 
 ### 将数据发送到指定网址
 
@@ -126,9 +126,9 @@ $title: 使用情形
 </amp-analytics>
 ```
 
-## 跟踪滚动操作
+## 跟踪滚动操作 <a name="tracking-scrolling"></a>
 
-使用 [`amp-analytics` 跟踪网页滚动操作]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})。下面的示例使用 `scrollspec` 属性，在网页垂直滚动 25%、50% 和 90% 时将 `scroll` 事件发送到指定网址。 在网页水平滚动达到 `scroll` 宽度的 90% 时，该事件也会被触发：
+使用 [`amp-analytics` 跟踪网页滚动操作](../../../../documentation/components/reference/amp-analytics.md)。下面的示例使用 `scrollspec` 属性，在网页垂直滚动 25%、50% 和 90% 时将 `scroll` 事件发送到指定网址。 在网页水平滚动达到 `scroll` 宽度的 90% 时，该事件也会被触发：
 
 ```html
 <amp-analytics>
@@ -155,9 +155,9 @@ $title: 使用情形
 </amp-analytics>
 ```
 
-## 跟踪社交互动
+## 跟踪社交互动 <a name="tracking-social-interactions"></a>
 
-了解如何使用 [`amp-analytics`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-analytics.md', locale=doc.locale).url.path}})、通过将事件数据发送到指定网址和 [Google Analytics（分析）来跟踪社交互动](https://developers.google.com/analytics/devguides/collection/amp-analytics/)。
+了解如何使用 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)、通过将事件数据发送到指定网址和 [Google Analytics（分析）来跟踪社交互动](https://developers.google.com/analytics/devguides/collection/amp-analytics/)。
 
 ### 将数据发送到指定网址
 

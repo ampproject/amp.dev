@@ -1,6 +1,5 @@
 ---
 $title: Actions and events
-toc: false
 $order: 7
 formats:
   - websites
@@ -8,6 +7,13 @@ formats:
   - stories
   - ads
 ---
+
+<!--
+This file is imported from https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md.
+Please do not change this file.
+If you have found a bug or an issue please
+have a look and request a pull request there.
+-->
 
 <!---
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -78,21 +84,21 @@ See the table below for descriptions of each part of the syntax.
   </tr>
 </table>
 
-## Handling multiple events
+## Handling multiple events <a name="handling-multiple-events"></a>
 
 You can listen to multiple events on an element by separating the events with a semicolon `;`.
 
 Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
 
-## Multiple actions for one event
+## Multiple actions for one event <a name="multiple-actions-for-one-event"></a>
 
 You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
 
 Example: `on="tap:target1.actionA,target2.actionB"`
 
 
-## Globally-defined events and actions
+## Globally-defined events and actions <a name="globally-defined-events-and-actions"></a>
 
 AMP defines a `tap` event globally that you can listen to on any HTML element (including AMP elements).
 
@@ -112,9 +118,9 @@ For example, the following is possible in AMP:
 
 [/tip]
 
-## Element-specific events
+## Element-specific events <a name="element-specific-events"></a>
 
-### * - all elements
+### * - all elements <a name="---all-elements"></a>
 <table>
   <tr>
     <th>Event</th>
@@ -126,7 +132,7 @@ For example, the following is possible in AMP:
   </tr>
 </table>
 
-### Input elements
+### Input elements <a name="input-elements"></a>
 <table>
   <tr>
     <th width="20%">Event</th>
@@ -179,7 +185,7 @@ event.value</pre>
   </tr>
 </table>
 
-### amp-carousel[type="slides"]
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -192,14 +198,9 @@ event.value</pre>
     <td><pre>// Slide number.
 event.index</pre></td>
   </tr>
-  <tr>
-    <td><code>toggleAutoplay</code></td>
-    <td>Will, on user tap or click, toggle the autoplay status for the carousel. You can either specify the status you want by specifying it: <code>carousel-id.toggleAutoplay(toggleOn=false)</code> or flip the status by not specifying a value.</td>
-    <td><pre>optional toggle status</pre></td>
-  </tr>
 </table>
 
-### amp-lightbox
+### amp-lightbox <a name="amp-lightbox"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -218,7 +219,21 @@ event.index</pre></td>
   </tr>
 </table>
 
-### amp-selector
+### amp-list <a name="amp-list"></a>
+<table>
+  <tr>
+    <th width="25%">Event</th>
+    <th width="35%">Description</th>
+    <th width="40%">Data</th>
+  </tr>
+  <tr>
+    <td><code>fetch-error</code>(low-trust)</td>
+    <td>Fired when fetching data fails.</td>
+    <td>None</td>
+  </tr>
+</table>
+
+### amp-selector <a name="amp-selector"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -236,7 +251,7 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### amp-sidebar
+### amp-sidebar <a name="amp-sidebar"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -255,7 +270,21 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### amp-video, amp-youtube
+### amp-state <a name="amp-state"></a>
+<table>
+  <tr>
+    <th width="25%">Event</th>
+    <th width="35%">Description</th>
+    <th width="40%">Data</th>
+  </tr>
+  <tr>
+    <td><code>fetch-error</code>(low-trust)</td>
+    <td>Fired when fetching data fails.</td>
+    <td>None</td>
+  </tr>
+</table>
+
+### amp-video, amp-youtube <a name="amp-video-amp-youtube"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -274,7 +303,7 @@ event.selectedOptions</pre></td>
   </tr>
 </table>
 
-### form
+### form <a name="form"></a>
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -311,9 +340,9 @@ event.response</pre></td>
 </table>
 
 
-## Element-specific actions
+## Element-specific actions <a name="element-specific-actions"></a>
 
-### * (all elements)
+### * (all elements) <a name="-all-elements"></a>
 <table>
   <tr>
     <th width="40%">Action</th>
@@ -341,12 +370,13 @@ event.response</pre></td>
   </tr>
   <tr>
     <td><code>scrollTo(duration=INTEGER, position=STRING)</code></td>
-    <td>Scrolls an element into view with a smooth animation. If defined,
-    <code>duration</code> specifies the length of the animation in milliseconds
-    (default is 500ms). <code>position</code> is optional and takes one of
-    <code>top</code>, <code>center</code> or <code>bottom</code> defining where
-    in the viewport the element will be at the end of the scroll (default is
-    <code>top</code>).</td>
+    <td>Scrolls an element into view with a smooth animation.<br>
+    <code>duration</code> is optional. Specifies the length of the animation in milliseconds. If unspecified, an amount relative to scroll difference
+    under or equal to 500 milliseconds is used.<br>
+    <code>position</code> is optional. One of <code>top</code>, <code>center</code>
+    or <code>bottom</code> (default <code>top</code>).
+    Specifies the position of the element relative to the viewport after
+    scrolling.</td>
   </tr>
   <tr>
     <td><code>focus</code></td>
@@ -357,7 +387,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-audio
+### amp-audio <a name="amp-audio"></a>
 <table>
   <tr>
     <th width="20%">Action</th>
@@ -373,7 +403,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-bodymovin-animation
+### amp-bodymovin-animation <a name="amp-bodymovin-animation"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -401,7 +431,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-carousel[type="slides"]
+### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -411,9 +441,13 @@ event.response</pre></td>
     <td><code>goToSlide(index=INTEGER)</code></td>
     <td>Advances the carousel to a specified slide index.</td>
   </tr>
+  <tr>
+    <td><code>toggleAutoplay(toggleOn=true|false)</code></td>
+    <td>Toggle the carousel's autoplay status. <code>toggleOn</code> is optional.</td>
+  </tr>
 </table>
 
-### amp-image-lightbox
+### amp-image-lightbox <a name="amp-image-lightbox"></a>
 <table>
   <tr>
     <th width="40%">Action</th>
@@ -425,7 +459,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-lightbox
+### amp-lightbox <a name="amp-lightbox-1"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -441,7 +475,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-list
+### amp-list <a name="amp-list-1"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -453,7 +487,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-live-list
+### amp-live-list <a name="amp-live-list"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -465,7 +499,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-selector
+### amp-selector <a name="amp-selector-1"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -485,7 +519,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-sidebar
+### amp-sidebar <a name="amp-sidebar-1"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -505,7 +539,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-state
+### amp-state <a name="amp-state-1"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -517,7 +551,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-user-notification
+### amp-user-notification <a name="amp-user-notification"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -529,7 +563,7 @@ event.response</pre></td>
   </tr>
 </table>
 
-### Video elements
+### Video elements <a name="video-elements"></a>
 
 The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
 
@@ -560,7 +594,7 @@ The actions below are supported in the following AMP video elements: `amp-video`
   </tr>
 </table>
 
-### form
+### form <a name="form-1"></a>
 <table>
   <tr>
     <th>Action</th>
@@ -576,11 +610,11 @@ The actions below are supported in the following AMP video elements: `amp-video`
   </tr>
 </table>
 
-## Special targets
+## Special targets <a name="special-targets"></a>
 
 The following are targets provided by the AMP system that have special requirements:
 
-### Target: AMP
+### Target: AMP <a name="target-amp"></a>
 
 The `AMP` target is provided by the AMP runtime and implements top-level
 actions that apply to the whole document.
@@ -617,7 +651,7 @@ actions that apply to the whole document.
   <tr>
     <td><code>setState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
-      <p>Requires <a href="https://www.ampproject.org/docs/reference/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
+      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state.</p>
       <p></p>
     </td>
@@ -625,20 +659,20 @@ actions that apply to the whole document.
   <tr>
     <td><code>pushState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
-      <p>Requires <a href="https://www.ampproject.org/docs/reference/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
+      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
       <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </td>
   </tr>
 </table>
 
 <sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> or <code>pushState()</code> to complete before invocation. Only a single <code>setState()</code> or <code>pushState()</code> is allowed per event.
 
-### Target: amp-access
+### Target: amp-access <a name="target-amp-access"></a>
 
-The `amp-access` target is provided by the [amp-access](https://www.ampproject.org/docs/reference/components/amp-access.html) component.
+The `amp-access` target is provided by the [amp-access](https://amp.dev/documentation/components/amp-access.html) component.
 
 The `amp-access` target is special for these reasons:
 
 1.  You can't give an arbitrary ID to this target. The target is always `amp-access`.
-2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://www.ampproject.org/docs/reference/components/amp-access#configuration).
+2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://amp.dev/documentation/components/amp-access#configuration).
 
-See [details](https://www.ampproject.org/docs/reference/components/amp-access#login-link) about using the `amp-access` target.
+See [details](https://amp.dev/documentation/components/amp-access#login-link) about using the `amp-access` target.

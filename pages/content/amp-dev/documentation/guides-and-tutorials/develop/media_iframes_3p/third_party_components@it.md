@@ -6,7 +6,7 @@ Scopri come includere componenti di terze parti nelle tue pagine.
 
 ## Incorporare un tweet
 
-Incorpora un tweet di Twitter nella pagina utilizzando l'elemento [`amp-twitter`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-twitter.md', locale=doc.locale).url.path}}).
+Incorpora un tweet di Twitter nella pagina utilizzando l'elemento [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md).
 
 Per includere un tweet nella pagina, inserisci innanzitutto lo script seguente nella sezione `<head>`:
 
@@ -17,21 +17,19 @@ Per includere un tweet nella pagina, inserisci innanzitutto lo script seguente n
 Attualmente i tweet vengono ridimensionati automaticamente e proporzionalmente in base alle dimensioni specificate, ma questo comportamento potrebbe portare a un aspetto non ottimale.
 Regola manualmente la larghezza e l'altezza fornite oppure utilizza l'attributo media per selezionare le proporzioni in base alla larghezza dello schermo.
 
-<!-- embedded twitter example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.twitter.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-twitter:0.1"]
+```html
+<amp-twitter width="500"
+  height="583"
+  layout="responsive"
+  data-tweetid="638793490521001985">
+</amp-twitter>
+```
+[/example]
 
 ## Incorporare una foto di Instagram
 
-Incorpora una foto di Instagram nella pagina utilizzando l'elemento [`amp-instagram`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-instagram.md', locale=doc.locale).url.path}}).
+Incorpora una foto di Instagram nella pagina utilizzando l'elemento [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md).
 
 Per includere una foto di Instagram, inserisci innanzitutto lo script seguente nella sezione `<head>`:
 
@@ -42,21 +40,19 @@ Per includere una foto di Instagram, inserisci innanzitutto lo script seguente n
 Includi l'elemento data-shortcode di Instagram indicato nell'URL della foto del servizio. Ad esempio, nell'URL `https://instagram.com/p/fBwFP` l'elemento data-shortcode è `fBwFP`.
 Inoltre, Instagram utilizza proporzioni fisse per i layout reattivi, quindi il valore di larghezza e altezza dovrebbe essere universale.
 
-<!-- embedded Instagram example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.instagram.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-instagram:0.1"]
+```html
+<amp-instagram data-shortcode="fBwFP"
+  width="320"
+  height="392"
+  layout="responsive">
+</amp-instagram>
+```
+[/example]
 
 ## Mostrare post o video di Facebook
 
-Mostra un post o un video di Facebook nella pagina utilizzando l'elemento [`amp-facebook`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-facebook.md', locale=doc.locale).url.path}}).
+Mostra un post o un video di Facebook nella pagina utilizzando l'elemento [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md).
 
 Devi includere lo script seguente nella sezione `<head>`:
 
@@ -98,7 +94,7 @@ Preview:
 
 ## Includere un video di YouTube
 
-Includi un video di YouTube nella pagina utilizzando l'elemento [`amp-youtube`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-youtube.md', locale=doc.locale).url.path}}).
+Includi un video di YouTube nella pagina utilizzando l'elemento [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md).
 
 Devi includere lo script seguente nella sezione `<head>`:
 
@@ -111,21 +107,19 @@ Ad esempio, nell'URL `https://www.youtube.com/watch?v=Z1q71gFeRqM`, l'ID video �
 
 Utilizza `layout="responsive"` per ottenere i layout corretti per video con proporzioni 16:9:
 
-<!-- embedded youtube example -->
-<div>
-<amp-iframe height="174"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/responsive.youtube.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-youtube:0.1"]
+```html
+<amp-youtube data-videoid="lBTCB7yLs8Y"
+  layout="responsive"
+  width="560"
+  height="315">
+</amp-youtube>
+```
+[/example]
 
 ## Mostrare un annuncio
 
-Mostra un annuncio nella pagina utilizzando l'elemento [`amp-ad`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}).
+Mostra un annuncio nella pagina utilizzando l'elemento [`amp-ad`](../../../../documentation/components/reference/amp-ad.md).
 Sono supportati soltanto gli annunci pubblicati tramite HTTPS.
 
 All'interno del documento AMP non è possibile eseguire codice JavaScript fornito da reti pubblicitarie.
@@ -135,30 +129,33 @@ Devi specificare la larghezza e l'altezza dell'annuncio, oltre al tipo di rete p
 L'attributo `type` identifica il modello della rete pubblicitaria.
 Tipi di annunci diversi richiedono attributi `data-*` differenti.
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="212"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-basic.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+</amp-ad>
+```
+[/example]
 
 Includi un attributo `placeholder` (se supportato dalla rete pubblicitaria) da mostrare se non ci sono annunci disponibili:
 
-<!-- embedded ad example -->
-<div>
-<amp-iframe height="232"
-            layout="fixed-height"
-            sandbox="allow-scripts allow-forms allow-same-origin"
-            resizable
-            src="https://ampproject-b5f4c.firebaseapp.com/examples/thirdparty.ad-placeholder.embed.html">
-  <div overflow tabindex="0" role="button" aria-label="Show more">Show full code</div>
-  <div placeholder></div>
-</amp-iframe>
-</div>
+[example preview="inline" playground="true" imports="amp-ad:0.1"]
+```html
+<amp-ad width="300"
+  height="250"
+  type="a9"
+  data-amzn_assoc_ad_mode="auto"
+  data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
+  data-recomtype="async"
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  <div placeholder>Have a great day!</div>
+</amp-ad>
+```
+[/example]
 
-AMP supporta una vasta gamma di reti pubblicitarie. Consulta [un elenco completo]({{g.doc('/content/amp-dev/documentation/components/reference/amp-ad.md', locale=doc.locale).url.path}}#supported-ad-networks).
+AMP supporta una vasta gamma di reti pubblicitarie. Consulta [un elenco completo](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).

@@ -6,7 +6,7 @@ description: 'At this point, the user can add a comment using the amp-form, libr
 
 <amp-img src="/static/img/comment.png" alt="Add comment" height="325" width="300"></amp-img>
 
-At this point, the user can add a comment using the [`amp-form`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}) library. Notice how the presence of the form is conditional, depending on the state of the [`amp-access`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-access.md', locale=doc.locale).url.path}}) component:
+At this point, the user can add a comment using the [`amp-form`](../../../../documentation/components/reference/amp-form.md) library. Notice how the presence of the form is conditional, depending on the state of the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component:
 
 [sourcecode:html]
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
@@ -24,7 +24,7 @@ Here's an example of JSON response:
 "UserImg":"/img/ic_account_box_black_48dp_1x.png"}
 [/sourcecode]
 
-The form component will simply display those values inside the page using the [`amp-mustache`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) template:
+The form component will simply display those values inside the page using the [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) template:
 
 [sourcecode:html]
 <div submit-success>

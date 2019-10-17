@@ -1,0 +1,84 @@
+$title: KG Media
+$category: publishers
+$date: 2019-09-09
+description: KG Media’s AMP optimizations resulted in a 34% uplift in overall mobile web revenue and a 6.3x increase in monthly AMP revenue
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/kompas/teaser_kompas.jpg'
+    width: 3
+    height: 5
+    alt: kompas
+  logo:
+    src: '/static/img/success-stories/kompas/kompas_logo.jpg'
+    width: 1000
+    height: 358
+    alt: kompas
+  text: KG Media’s AMP optimizations results
+
+
+stage:
+  headline: KG Media’s AMP optimizations resulted in a 34% uplift in overall mobile web revenue and a 6.3x increase in monthly AMP revenue
+  layout: mobile
+  subline:
+  devices:
+  - image_src: '/static/img/success-stories/kompas/kompas_ss.jpg'
+    width: 750
+    height: 1334
+    type: mobile
+    alt: kompas
+
+kpis:
+  - value: 6.3x
+    text: Monthly AMP revenue increased
+
+  - value: 34%
+    text: Overall mWeb revenue in Sep’18 compared to Mar’18
+
+  - value: 600%
+    text: Uplift in monthly AMP pageviews
+
+contents:
+
+  - layout: text
+    text: KG Media (Media Group of Kompas Gramedia) is one of the largest media groups in Indonesia. Their fastest growing digital media assets, Tribunnews reaches 87 million MAU. Tribunnews is a hyperlocal focus media, where their key offering is to focus with relevant information within the user’s city. Majority of internet users in Indonesia’s secondary city use mobile devices as the primary access to the internet and often the connection speed is limited to 2.5/3G. This why speed is crucial in winning the users, and AMP is the solution to answer this problem.
+    direction: left-flat
+
+  - layout: text
+    headline: "Challenge:"
+    text: "KG Media was an early adopter of AMP for its flagship site, Tribunnews.com. Despite a high adoption rate (87% pages AMP-ed), the revenue contribution from AMP did not match its potential."
+    direction: left-flat
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/kompas/kompas_ss.jpg'
+    width: 750
+    height: 1334
+    type: mobile
+    alt: kompas
+    headline: "Approach & Solution:"
+    text: "A technical deep-dive by the KG Media and Google team reflected that although 90% of article pages had AMP equivalents, only 13% of organic traffic was landing on article pages and 1.25% of ad requests were attributed to AMP.<br><br>Thus, a two-pronged strategy was created that worked on improving two levers:"
+    direction: right-flat
+
+  - layout: text
+    headline: "1. Increasing AMP traffic:"
+    text: "Insights from Google Analytics data were leveraged to identify user journeys within the KG Media ecosystem to identify how users reached KG Media’s domains and how they transitioned between pages. The team worked on creating AMP versions of the missing pages which were leading to a high amount of traffic but did not have an AMP equivalent or at times had an incorrect implementation."
+    direction: left-flat
+
+  - layout: text
+    headline: "2. Ad Optimization"
+    text: While AMP prioritizes content and enhances the viewing experience, ads on AMP pages have a higher monetization potential because of faster page loads and increased opportunity for the user to engage with the ads. KG Media team worked on creating ad parity between AMP and non-AMP pages. They also adopted newer ad formats on AMP including sticky ads and flying carpet that provided better viewability and higher CPMs without compromising on the user experience.<br><br>While AMP prioritizes content and enhances the viewing experience, ads on AMP pages have a higher monetization potential because of faster page loads and increased opportunity for the user to engage with the ads. The KG Media team<ul><li>worked on creating ad parity between AMP and non-AMP pages</li><li>increased the adoption of native ads on AMP,  thus not only improving the user experience by allowing ads to seamlessly integrate with their content, but also improving the demand potential and revenue through improved CTRs and cpm in turn earning them 2x revenue from native.</li><li>included sticky ads on their AMP pages using the <a href="../../documentation/components/amp-sticky-ad/">amp-sticky-ad</a> component and the flying carpet ad format and significantly increased their revenue and viewability metrics.</li></ul>
+    direction: left-flat
+
+  - layout: quote
+    quote: "To optimize its performance, in terms of CTR & Viewability, we use AMP HTML Ads for standard banner. With its ability to load ads faster and lighter on AMP Pages, it makes the opportunity to see the ads higher than regular one. We have tested this format with our clients, and the result is great. For a regular banner, we have managed to get double the CTR with more than 70% of ads being viewable. With this performance, I believe it will bring positive impact for our business"
+    image_src: '/static/img/success-stories/kompas/kompas_logo.jpg'
+    width: 1000
+    height: 358
+    alt: kompas
+    author: "- Moch. Rifki - Vice GM Digital, Marketing & Print, KG Media"
+
+  - layout: text
+    text: "A better user viewing experience and a higher monetization potential created a compelling business case for Kompas to increase their AMP adoption. Their experiments with AMP reflected that a deeper understanding of how their users interacted on the articles and strategically keeping them within the AMP ecosystem helped them achieve tremendous results. As a result of these focused efforts, Kompas’s overall mWeb revenue was 34% higher in Sep’18 compared to Mar’18. Their monthly AMP revenue increased by 6.3x and AMP contribution to overall mWeb revenue increased by 4.3x, making AMP the majority revenue contributor for mWeb. A 600% uplift in monthly AMP pageviews attests for an increased engagement from the readers of Tribunnews. "
+    direction: left-flat

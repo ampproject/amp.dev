@@ -1,0 +1,46 @@
+{% do doc.styles.addCssFile('/css/components/organisms/resources-grid.css') %}
+<div class="ap--resources-grid">
+  <h2>Useful resources</h2>
+  <div class="ap-o-resources-grid-cards">
+    <a href="{{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}" class="ap-o-resources-grid-card">
+      <div class="ap-a-ico ap-o-resources-grid-card-icon">
+        {% do doc.icons.useIcon('/icons/guides-documents.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#guides-documents"></use></svg>
+      </div>
+      <h4 class="ap-o-resources-grid-card-headline">Guides and Tutorials</h4>
+      <p class="ap-o-resources-grid-card-copy">Here you can find everything you need to build AMP experiences. </p>
+    </a>
+    <a href="{{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}" class="ap-o-resources-grid-card">
+      <div class="ap-a-ico ap-o-resources-grid-card-icon">
+        {% do doc.icons.useIcon('/icons/code.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
+      </div>
+      <h4 class="ap-o-resources-grid-card-headline">Components</h4>
+      <p class="ap-o-resources-grid-card-copy">The complete documented AMP library and its referencees.</p>
+    </a>
+    <a href="{{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}}" class="ap-o-resources-grid-card">
+      <div class="ap-a-ico ap-o-resources-grid-card-icon">
+        {% do doc.icons.useIcon('/icons/examples-flyout.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#examples-flyout"></use></svg>
+      </div>
+      <h4 class="ap-o-resources-grid-card-headline">Examples</h4>
+      <p class="ap-o-resources-grid-card-copy">The fastest way to learn is to peak over the tangible examples.</p>
+    </a>
+    <a href="{{g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale).url.path}}" class="ap-o-resources-grid-card">
+      <div class="ap-a-ico ap-o-resources-grid-card-icon">
+        {% do doc.icons.useIcon('/icons/code.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#code"></use></svg>
+      </div>
+      <h4 class="ap-o-resources-grid-card-headline">Components</h4>
+      <p class="ap-o-resources-grid-card-copy">The complete documented AMP library and its referencees.</p>
+    </a>
+    <a href="{{g.doc('/content/amp-dev/documentation/templates/index.html', locale=doc.locale).url.path}}" class="ap-o-resources-grid-card">
+      <div class="ap-a-ico ap-o-resources-grid-card-icon">
+        {% do doc.icons.useIcon('/icons/template.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#template"></use></svg>
+      </div>
+      <h4 class="ap-o-resources-grid-card-headline">Templates</h4>
+      <p class="ap-o-resources-grid-card-copy">Don't want to start from scratch? Start with a ready-made design.</p>
+    </a>
+  </div>
+</div>

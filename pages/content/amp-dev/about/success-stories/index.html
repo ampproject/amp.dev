@@ -1,8 +1,8 @@
 ---
 $title@: Success Stories
-$path: /success-stories.html
+$path: /success-stories/index.html
 $localization:
-  path: /{locale}/success-stories.html
+  path: /{locale}/success-stories/index.html
 $view: /views/custom.j2
 $hidden: true
 stage:
@@ -27,6 +27,10 @@ stage:
       url: carved
 ---
 {% do doc.styles.addCssFile('css/components/templates/success-story.css') %}
+
+{% do doc.amp_dependencies.add('amp-video', '0.1') %}
+{% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
+{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 {% block main %}
 <main class="ap--main ap-t-success-story">
@@ -91,29 +95,39 @@ stage:
       <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
     </div>
 
-    <amp-state id="activeFilter">
+    <amp-state id="filter">
       <script type="application/json">
         {
-          "chosenFilter": "none"
+          "category": "none"
         }
       </script>
     </amp-state>
 
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     <div class="ap-o-filter-bubbles-list">
-      <button class="ap-m-filter-bubble filtered"
-        [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-        on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
+      <button
+        [% if not category or category not in '{{ categories }}' %]
+        class="ap-m-filter-bubble filtered"
+        [% else %]
+        class="ap-m-filter-bubble"
+        [% endif %]
+        [class]="filter.category == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+        on="tap:AMP.setState({ filter: {category: 'none' } })"
         name="all">
         All
       </button>
       {% for category, stories in categories %}
-      <button class="ap-m-filter-bubble"
-          [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-          on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })"
+      <button
+          [% if category == '{{ category|slug }}' %]
+          class="ap-m-filter-bubble filtered"
+          [% else %]
+          class="ap-m-filter-bubble"
+          [% endif %]
+          [class]="filter.category == '{{ category|slug }}' && category != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
+          on="tap:AMP.setState({ filter: {category: '{{ category|slug }}' } })"
           name="{{ category|slug }}">
           {{ category }}
-        </button>
+      </button>
       {% endfor %}
     </div>
   </section>

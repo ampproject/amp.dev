@@ -6,7 +6,7 @@ El proyecto AMP no sería posible sin la ayuda de todos los miembros de la comun
 
 ### Informar de problemas con AMP
 
- Si quieres enviar algún comentario o te has encontrado con problemas técnicos con AMP, infórmanos de ello a través del [sistema de seguimiento de problemas](https://github.com/ampproject/amphtml/issues). En el caso de que te hayas encontrado algún problema en [ampproject.org](https://ampproject.org), utiliza el [sistema de seguimiento de problemas con documentos](https://github.com/ampproject/docs/issues).
+ Si quieres enviar algún comentario o te has encontrado con problemas técnicos con AMP, infórmanos de ello a través del [sistema de seguimiento de problemas](https://github.com/ampproject/amphtml/issues). En el caso de que te hayas encontrado algún problema en [amp.dev](https://amp.dev), utiliza el [sistema de seguimiento de problemas con documentos](https://github.com/ampproject/docs/issues).
 
 ### Contribuciones técnicas a AMP
 
@@ -22,8 +22,8 @@ Esperamos que participes de manera continuada en nuestra comunidad de software l
 
 La documentación es algo muy importante para toda la comunidad AMP, así que agradecemos cualquier aportación que permita mejorar las referencias de las que disponemos. Tenemos documentación de todo tipo, desde ejemplos para los usuarios de AMP hasta documentos de ayuda para los colaboradores del proyecto AMP, entre otros muchos tipos.
 
-[ampproject.org](https://ampproject.org) es una página con información para familiarizarse con AMP. Para aportar documentación, accede a la [sección de documentos de ampproject del proyecto GitHub](https://github.com/ampproject/docs). Incluso puedes [aportar mejoras a la página](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) que estás leyendo.
+[amp.dev](https://amp.dev) es una página con información para familiarizarse con AMP. Para aportar documentación, accede a la [sección de documentos de ampproject del proyecto GitHub](https://github.com/ampproject/docs). Incluso puedes [aportar mejoras a la página](https://github.com/ampproject/docs/blob/master/content/docs/contribute/contribute.md) que estás leyendo.
 
-[ampbyexample.com]({{g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale).url.path}})  incluye ejemplos sobre cómo utilizar AMP. Puedes aportar mejoras en la [sección amp-by-example del proyecto GitHub](https://github.com/ampproject/amp-by-example/).
+[ampbyexample.com](../../../documentation/examples/index.html)  incluye ejemplos sobre cómo utilizar AMP. Puedes aportar mejoras en la [sección amp-by-example del proyecto GitHub](https://github.com/ampproject/amp-by-example/).
 
  Para ayudar a otros colaboradores del proyecto AMP, puedes mejorar nuestra documentación en la [sección amphtml del proyecto GitHub](https://github.com/ampproject/amphtml).
