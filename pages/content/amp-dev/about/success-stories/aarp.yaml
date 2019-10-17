@@ -7,7 +7,7 @@ formats:
 
 teaser:
   image:
-    src: "/static/img/success-stories/aarp/aarp_1.png"
+    src: "/static/img/success-stories/aarp/aarp_teaser.png"
     width: 1
     height: 1
     alt: AARP
