@@ -150,7 +150,8 @@ async function buildComponentVersions() {
   const rules = await validatorRules.fetch();
   const componentVersions = {};
   rules.extensions.forEach((e) => {
-    componentVersions[e.name] = e.version[e.version.length - 1];
+    const versions = e.version.filter((v) => v !== 'latest');
+    componentVersions[e.name] = versions[versions.length - 1];
   });
   const content = JSON.stringify(componentVersions, null, 2);
   const dir = path.join(project.paths.DIST, 'static/files');
