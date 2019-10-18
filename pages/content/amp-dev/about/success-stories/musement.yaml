@@ -68,12 +68,14 @@ contents:
     type: tablet
     alt: Musement
     headline: Rundown
-    text:
-      "Musement helps travellers discover experiences all over the world.Their main objective is driving bookings for the countless activities, shows, tours, and events available through the site and app.The team wanted to find ways to make it easier and faster for people to find events and attractions, believing that this would deliver on Musement’s main KPIs: return on investment and margin per sale.
-      To drive performance, Musement was already using data-driven attribution to give the appropriate value to each touchpoint in the conversion path. They were also using Smart Bidding to bid on hundreds of thousands of keywords across several accounts with one clear return on ad spend objective.
-      To take their performance a step further, the team set out to explore the impact that faster page load times would have on their click-through rate and ultimately their conversion rate. They decided to test AMP, an open-source project that helps to create web pages that load quickly.
-      The very first AMP page they created mirrored the most transactional page type on the website: an attraction page. Of all of Musement’s marketing campaigns, 93% are directed to pages of this type."
+    text: "Musement helps travellers discover experiences all over the world.Their main objective is driving bookings for the countless activities, shows, tours, and events available through the site and app.The team wanted to find ways to make it easier and faster for people to find events and attractions, believing that this would deliver on Musement’s main KPIs: return on investment and margin per sale."
     direction: right-flat
+
+  - layout: text
+    text: "To drive performance, Musement was already using data-driven attribution to give the appropriate value to each touchpoint in the conversion path. They were also using Smart Bidding to bid on hundreds of thousands of keywords across several accounts with one clear return on ad spend objective.
+          To take their performance a step further, the team set out to explore the impact that faster page load times would have on their click-through rate and ultimately their conversion rate. They decided to test AMP, an open-source project that helps to create web pages that load quickly.
+          The very first AMP page they created mirrored the most transactional page type on the website: an attraction page. Of all of Musement’s marketing campaigns, 93% are directed to pages of this type."
+  
 
   - layout: text-media
     image_src: "/static/img/success-stories/musement/musement_2.png"
