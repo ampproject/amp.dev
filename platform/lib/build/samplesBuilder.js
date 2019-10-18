@@ -585,13 +585,16 @@ class SamplesBuilder {
     // component on its documentation page
     for (const [name, info] of Object.entries(usedComponents)) {
       if (!this._componentSamples[name]) {
-        this._componentSamples[name] = [];
+        this._componentSamples[name] = {};
       }
 
-      this._componentSamples[name].push({
+      if (!this._componentSamples[name][parsedSample.document.formats()]) {
+        this._componentSamples[name][parsedSample.document.formats()] = []
+      }
+
+      this._componentSamples[name][parsedSample.document.formats()].push({
         title: parsedSample.document.title,
         url: this._getDocumentationRoute(sample),
-        formats: parsedSample.document.formats()
       })
     }
 
