@@ -3,31 +3,37 @@
 
 {# Check if there are examples for the current component #}
 {% if examples[doc.title] %}
+  {% for format, components in examples[doc.title].items() %}
 
-  {# Count how much examples with the current format exist #}
-  [% set count = 0 %]
-  {% for component in examples[doc.title] %}
-  [% if format in {{ component.formats|list|tojson }} %]
-  [% set count = count + 1 %]
-  [% endif %]
-  {% endfor %}
+  {# Only show examples for the current format #}
+  [% if format == {{ format|tojson }} %]
+  <h2>{{ _('Examples') }}</h2>
 
-  {# Show carousel if examples for the current format exist #}
-  [% if count > 0 %]
   {% do doc.styles.addCssFile('css/components/organisms/examples-list.css') %}
-  <amp-carousel class="ap-o-examples-list"
-                role="list"
-                height="64"
-                layout="fixed-height"
-                type="carousel">
-    {% for component in examples[doc.title] %}
-    {# Only print examples for the current format #}
-    [% if format in {{ component.formats|list|tojson }} %]
-    <a class="ap-o-examples-list-item"
-       href="{{ component.url }}"
-       role="listitem">{{ component.title }}</a>
-    [% endif %]
-    {% endfor %}
-  </amp-carousel>
+  <div class="ap-o-examples-list ap-o-examples-list-count-{{ components|length }}">
+    <amp-carousel role="list"
+                  layout="fixed-height"
+                  height="112"
+                  type="carousel">
+      {# Group example links by 6 for each slide #}
+      {% for component_group in components|batch(6) %}
+      <div class="ap-o-examples-list-slide">
+        <div class="ap-o-examples-list-group">
+          {% for component in component_group %}
+          <a class="ap-o-examples-list-item" href="{{ component.url }}" role="listitem">
+            <span class="ap-o-examples-list-label">{{ component.title }}</span>
+            <div class="ap-a-ico ap-o-examples-list-icon">
+              {% do doc.icons.useIcon('icons/internal.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </amp-carousel>
+  </div>
   [% endif %]
+
+  {% endfor %}
 {% endif %}
