@@ -38,6 +38,7 @@ async function importWorkingGroups() {
     if (!wg.name.startsWith('wg-')) {
       continue;
     }
+    const name = wg.name.substr(3);
 
     let meta = null;
     try {
@@ -47,7 +48,6 @@ async function importWorkingGroups() {
       console.warn(`No METADATA.yaml for working group ${wg.name}.`);
       continue;
     }
-
     meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
 
     let issues = (await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`).issuesAsync())[0];
@@ -76,10 +76,10 @@ async function importWorkingGroups() {
       };
     });
 
-    await writeFileAsync(`${WG_DIRECTORY_PATH}/${wg.name}.yaml`, yaml.dump({
+    await writeFileAsync(`${WG_DIRECTORY_PATH}/${name}.yaml`, yaml.dump({
       '$title': `Working Group: ${meta.title}`,
       'html_url': wg.html_url,
-      'name': wg.name,
+      'name': name,
       'full_name': meta.title,
       'facilitator': meta.facilitator,
       'description': meta.description,
