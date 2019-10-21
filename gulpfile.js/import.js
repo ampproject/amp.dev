@@ -84,8 +84,8 @@ async function importWorkingGroups() {
       'facilitator': meta.facilitator,
       'description': meta.description,
       'issues': issues,
-      'members': meta.members,
-      'communication': meta.communication,
+      'members': meta.members || [],
+      'communication': meta.communication || [],
     }));
 
     console.log('Imported working group data', wg.name);
