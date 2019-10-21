@@ -69,25 +69,6 @@
             <h2>{{ doc.full_name }}</h2>
             <p>{{ doc.description|markdown|safe }}</p>
             <p>The facilitator of {{ doc.full_name }} is: <a href="#">@{{ doc.facilitator.login }}</a></p>
-            <div class="ap-o-wg-group-description-connect">
-              <h4>Get in touch:</h4>
-              <div class="ap-o-wg-btn ap-o-wg-btn-slack">
-                <a class="ap-m-lnk" href="https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877" target="_blank" rel="noopener">
-                  <div class="ap-a-ico ap-a-ico-full-width">
-                    {% do doc.icons.useIcon('icons/slack-logo.svg') %}
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#slack-logo"></use></svg>
-                  </div>
-                </a>
-              </div>
-              <div class="ap-o-wg-btn ap-o-wg-btn-github">
-                <a class="ap-m-lnk" href={{ doc.html_url }} target="_blank" rel="noopener">
-                  <div class="ap-a-ico ap-a-ico-full-width">
-                    {% do doc.icons.useIcon('icons/github-logo.svg') %}
-                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#github-logo"></use></svg>
-                  </div>
-                </a>
-              </div>
-            </div>
           </section>
 
           {% if doc.issues %}

@@ -68,6 +68,8 @@
       display: grid;
       grid-template-columns: repeat(24,1fr);
       grid-gap: 30px;
+      max-width: 1920px;
+      margin: auto;
       padding: 0 2.5em;
     }
 
@@ -90,10 +92,6 @@
         padding: 0;
         margin-right: 5px;
         fill: color('white');
-
-        &-full-width {
-          width: 105px;
-        }
       }
 
       &-github {
@@ -168,6 +166,10 @@
       @media (min-width: 1024px) {
         grid-column: 8/20;
         margin-bottom: 7em;
+
+        h4 {
+          display: none;
+        }
       }
     }
 
@@ -177,7 +179,7 @@
         grid-column: 1/7;
       }
       @media (min-width: 1280px) {
-        grid-column: 3/8;
+        grid-column: 4/8;
       }
 
       & ul {
@@ -214,7 +216,8 @@
 
         &.active,
         &:hover {
-          margin: 6.5px 5px;
+          margin: 6.5px 0;
+          padding: 0 23px;
           box-shadow: 0 5px 15px -10px rgba(0,0,0,0.25);
           background-color: color('blue-ribbon');
 
@@ -226,12 +229,9 @@
           }
         }
 
-        &:first-child {
-          margin-left: 15px;
-        }
-        @media (min-width: 1024px) {
+        @media (max-width: 720px) {
           &:first-child {
-            margin-left: 8px;
+            margin-left: 0;
           }
         }
       }
@@ -311,23 +311,6 @@
         h2 {
           @include hl-h1;
           margin: 0;
-        }
-
-        &-connect {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          @media (min-width: 600px) {
-            margin-top: 2em;
-          }
-
-          h4 {
-            width: 100%;
-            @media (min-width: 600px) {
-              margin: 0 1em 0 0;
-              width: auto;
-            }
-          }
         }
       }
     }
