@@ -320,26 +320,23 @@ test('autosuggest should return an ordered list with components,' +
       .expect('Content-Type', /json/)
       .expect(200)
       .then((res) => {
+        // We do not explicitly test for components from 'component-versions.json'
+        // since we do not have it in our control here which component is listed there.
+        // (and mocking is not easily done)
+
+        // there must be more than the build in components and elements from AmpConstants.js
+        expect(res.body.items.length).not.toBeLessThan(9);
         // build in components
-        expect(res.body.items.indexOf('amp-img')).not.toBeLessThan(0);
+        expect(res.body.items.indexOf('amp-layout')).not.toBeLessThan(0);
+        expect(res.body.items.indexOf('amp-pixel')).not.toBeLessThan(0);
         // important included elements
         expect(res.body.items.indexOf('amp-state')).not.toBeLessThan(0);
-        expect(res.body.items.indexOf('amp-story-page')).not.toBeLessThan(0);
-        // other components
-        expect(res.body.items.indexOf('amp-bind')).not.toBeLessThan(0);
-        expect(res.body.items.indexOf('amp-story')).not.toBeLessThan(0);
-        expect(res.body.items.indexOf('amp-youtube')).not.toBeLessThan(0);
-        // sort order
-        expect(res.body.items.indexOf('amp-bind'))
-            .toBeLessThan(res.body.items.indexOf('amp-img'));
-        expect(res.body.items.indexOf('amp-img'))
-            .toBeLessThan(res.body.items.indexOf('amp-state'));
-        expect(res.body.items.indexOf('amp-state'))
-            .toBeLessThan(res.body.items.indexOf('amp-story'));
-        expect(res.body.items.indexOf('amp-story'))
-            .toBeLessThan(res.body.items.indexOf('amp-story-page'));
-        expect(res.body.items.indexOf('amp-story-page'))
-            .toBeLessThan(res.body.items.indexOf('amp-youtube'));
+        expect(res.body.items.indexOf('amp-list-load-more')).not.toBeLessThan(0);
+        // sort order (components and elements mixed and ordered by name)
+        expect(res.body.items.indexOf('amp-layout'))
+            .toBeLessThan(res.body.items.indexOf('amp-list-load-more'));
+        expect(res.body.items.indexOf('amp-list-load-more'))
+            .toBeLessThan(res.body.items.indexOf('amp-pixel'));
         done();
       });
 });
