@@ -122,3 +122,10 @@ The dynamic, visual, and interactivity features of AMP components is what takes 
 
 The full [list of supported components in AMP for Email](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md)
 is available as part of the AMP for Email spec.
+
+## Testing in different email clients
+
+Email clients that support AMP for Email provide their own documentation and testing tools to help you with your integration.
+
+See [Testing AMP Emails](/content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md)
+for more information and links to email client-specific documentation.
