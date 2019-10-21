@@ -12,8 +12,7 @@
   {% do doc.styles.addCssFile('css/components/organisms/examples-list.css') %}
   <div class="ap-o-examples-list ap-o-examples-list-count-{{ components|length }}">
     <amp-carousel role="list"
-                  layout="fixed-height"
-                  height="112"
+                  layout="intrinsic"
                   type="carousel">
       {# Group example links by 6 for each slide #}
       {% for component_group in components|batch(6) %}
