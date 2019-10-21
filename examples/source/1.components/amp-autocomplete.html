@@ -35,36 +35,21 @@
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
   <style amp-custom>
-  /**
-   * Please use these default styles if needed. For example:
-   *
-   * button {
-   *   margin: var(--space-1)
-   *   background: var(--color-bg-primary)
-   * };
-   *
-   * remove otherwise.
-  */
   :root {
-    --color-primary: #005AF0;
-    --color-secondary: #00DCC0;
-    --color-text-light: #fff;
-    --color-text-dark: #000;
-    --color-error: #B00020;
-    --color-bg-light: #FAFAFC;
-
     --space-1: .5rem;  /* 8px */
     --space-2: 1rem;   /* 16px */
     --space-3: 1.5rem; /* 24px */
     --space-4: 2rem;   /* 32px */
 
+    --color-text-light: #fff;
+    --color-primary: #005AF0;
     --box-shadow-1: 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px -1px rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   }
   .input-field {
     position: relative;
   }
   .suggest-data {
-    padding: 5px 0px;
+    padding: var(--space-1) 0px;
   }
   .custom-population {
     padding-top: 4px;
@@ -76,10 +61,28 @@
   }
   .product {
     align-items: center;
-    line-height: 36px;
+    line-height: var(--space-4);
   }
-  form {
-    padding: 10px;
+  .suggest-data button,
+  .sample-form input[type=submit] {
+    -webkit-appearance: none;
+    border: none;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    margin: var(--space-2);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2em;
+    font-size: 1em;
+    padding: 0.75em 1.75em;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3px;
+    border: none;
+    box-shadow: var(--box-shadow-1);
+  }
+  .sample-form {
+    padding: var(--space-2);
   }
   </style>
 

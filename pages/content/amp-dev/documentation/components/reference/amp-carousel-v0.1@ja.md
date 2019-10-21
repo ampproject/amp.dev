@@ -1,4 +1,5 @@
 ---
+$title: amp-carousel
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-carousel
+
 
 汎用カルーセルは、横軸に沿って複数の類似コンテンツを表示します。優れた柔軟性とパフォーマンスを備えています。
 
@@ -51,7 +52,7 @@ limitations under the License.
     </tr>
   </table>
 
-# 動作
+# 動作 <a name="behavior"></a>
 
 `amp-carousel` コンポーネントの直接の子は、それぞれカルーセル内の 1 つのアイテムと見なされます。各ノードに対して、任意の HTML 子を指定することもできます。
 
@@ -76,7 +77,7 @@ limitations under the License.
 ```
 [/example]
 
-# 特定のスライドに進む
+# 特定のスライドに進む <a name="advancing-to-a-specific-slide"></a>
 
 要素の `on` 属性のメソッドを `tap:carousel-id.goToSlide(index=N)` に設定した場合、ユーザーのタップまたはクリックによって、「carousel-id」ID のカルーセルが index=N のスライドに進みます（1 番目のスライドは index=0、2 番目のスライドは index=1 で、以降も順に続いていきます）。
 
@@ -128,7 +129,7 @@ limitations under the License.
 ```
 [/example]
 
-# 属性
+# 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -216,7 +217,7 @@ limitations under the License.
           </tr>
         </table>
 
-# スタイル設定
+# スタイル設定 <a name="styling"></a>
 
 * `amp-carousel` 要素セレクタを使用して、自由にスタイルを設定できます。
 * カルーセル アイテムをターゲティングするには、`.amp-carousel-slide` クラスセレクタを使用します。
@@ -241,6 +242,6 @@ limitations under the License.
 }
 ```
 
-# 検証
+# 検証 <a name="validation"></a>
 
 AMP 検証ツール仕様の [amp-carousel ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii)をご覧ください。

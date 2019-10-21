@@ -352,7 +352,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 
 `<meta name=viewport content="width=device-width;minimum-scale=invalidfoo">`
 
-注: 値のない属性を出力しようとしているのに（たとえば、[`amp-video`](../../../../documentation/components/reference/amp-video.md) コンポーネントの `autoplay`、`controls`、`loop` など）、HTML のビルドプロセスで `true` などのデフォルト値（しかし無効な値）が生成される場合は（たとえば、React では、[デフォルトで](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ... と生成されます）、回避策として、属性の名前を値として出力してください。たとえば、`<amp-video autoplay="autoplay" ...>` のようになります。
+注: 値のない属性を出力しようとしているのに（たとえば、[`amp-video`](../../../../documentation/components/reference/amp-video.md) コンポーネントの `autoplay`、`controls`、`loop` など）、HTML のビルドプロセスで `true` などのデフォルト値（しかし無効な値）が生成される場合は（たとえば、React では、[デフォルトで](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) `<amp-video autoplay="true" ...>` と生成されます）、回避策として、属性の名前を値として出力してください。たとえば、`<amp-video autoplay="autoplay" ...>` のようになります。
 
 ### URL が指定されていない
 
@@ -635,7 +635,7 @@ URL の指定が必要な属性で URL が指定されていない場合に発�
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## スタイルとレイアウトのエラー
+## スタイルとレイアウトのエラー <a name="style-and-layout-errors"></a>
 
 スタイルとレイアウトのエラーの説明に移る前に、
 AMP での
@@ -857,7 +857,7 @@ AMP タグで CONTAINER がサポートされていないと、
 
 このエラーは、指定されたレイアウトの属性値が無効である場合に発生します。
 このエラーの原因を把握するには、
-[各レイアウトの動作](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements)を
+[各レイアウトの動作](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)を
 よく理解する必要があります。
 
 たとえば、レイアウトを `fixed-height` に設定し、
@@ -902,7 +902,7 @@ AMP ページにテンプレートの構文を含めることはできません�
 ソースファイルから生成された出力にテンプレートが含まれなければ、
 ソースファイルにテンプレートを追加してもかまいません
 （
-[CSS プリプロセッサの使用](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors)についての説明もご覧ください）。
+[CSS プリプロセッサの使用](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors)についての説明もご覧ください）。
 
 ### テンプレートの構文が属性に含まれている
 

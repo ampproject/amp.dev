@@ -54,7 +54,10 @@ class Subdomain {
       let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
       if (!subdomainApp) {
         subdomainApp = express();
-        subdomainApp.use(cors());
+        subdomainApp.use(cors({
+          origin: true,
+          credentials: true,
+        }));
         subdomainApp.use(ampCors({
           email: true,
         }));
@@ -91,7 +94,7 @@ class Subdomain {
   async redirectOn404_(request, response) {
     const referrer = request.get('Referrer') || config.hosts.platform.base;
     // assume request was initiated by a document-relative path
-    let destination = this.resolveUrl_(request.originalUrl.substring(1), referrer);
+    let destination = this.resolveUrl_(request.originalUrl, referrer);
     // perform a head request to check if destination exists
     if (destination.pathname.startsWith('/static/') || !await this.exists_(destination)) {
       // assume a root-relative path

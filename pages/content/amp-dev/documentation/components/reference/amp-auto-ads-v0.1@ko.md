@@ -1,4 +1,5 @@
 ---
+$title: amp-auto-ads
 $category@: ads-analytics
 formats:
 - websites
@@ -22,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-auto-ads
+
 
 원격으로 제공되는 구성 파일을 사용하여 AMP 페이지에 동적으로 광고를 삽입합니다.
 
@@ -72,7 +73,7 @@ limitations under the License.
   </amp-auto-ads>
 ```
 
-## 지원되는 광고 네트워크
+## 지원되는 광고 네트워크 <a name="supported-ad-networks"></a>
 
 * [애드센스](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -127,7 +128,7 @@ limitations under the License.
 
 ### 개체 정의
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 구성 개체에서 지정할 입력란:
 
@@ -207,7 +208,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 `anchor` 구성 개체에서 지정할 입력란:
 
@@ -247,7 +248,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 `style` 구성 개체에서 지정할 입력란:
 
@@ -271,7 +272,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 `placements` 구성 개체의 `pos` 입력란에 대한 ENUM 값:
 
@@ -303,7 +304,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 `placements` 구성 개체의 `type` 입력란에 대한 ENUM 값:
 

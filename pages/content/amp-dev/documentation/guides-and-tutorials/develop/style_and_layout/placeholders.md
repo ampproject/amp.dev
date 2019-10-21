@@ -47,7 +47,7 @@ Once ready, the AMP element typically hides its placeholder and shows the conten
 **NOTE –**  The placeholder doesn’t have to be an AMP element; any HTML element can act as the placeholder.
 [/tip]
 
-## Fallbacks
+## Fallbacks <a name="fallbacks"></a>
 
 You can specify the `fallback` attribute on an element to indicate the fallback behavior:
 

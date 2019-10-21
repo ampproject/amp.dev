@@ -634,7 +634,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## 样式和布局错误
+## 样式和布局错误 <a name="style-and-layout-errors"></a>
 
 在深入了解样式和布局错误之前，
 有必要先了解一下 AMP 中
@@ -857,7 +857,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 当指定布局的属性值无效时，就会出现这种错误。
 要了解触发此错误的原因，
 您需要熟悉
-[不同的布局行为](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements)。
+[不同的布局行为](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)。
 
 假设您将布局设为 `fixed-height`，
 并同时为 `height` 和 `width` 添加了数字值。
@@ -901,7 +901,7 @@ AMP 网页不能包含模板语法，
 您的源文件中可以包含模板，
 但前提是此类文件生成的输出内容中不包含模板
 （另请参阅
-[使用 CSS 预处理器](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors))）。
+[使用 CSS 预处理器](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors))）。
 
 ### 属性包含模板语法
 

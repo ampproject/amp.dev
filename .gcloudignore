@@ -41,3 +41,12 @@ platform/pages*
 !/boilerplate/backend
 !/boilerplate/dist
 !/boilerplate/lib
+
+# Infrastructure
+contributing
+jest.config.js
+smoke-tests
+renovate.json
+gulpfile.js
+scripts
+tests

@@ -1,4 +1,5 @@
 ---
+$title: amp-analytics
 $category@: ads-analytics
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-analytics
+
 
 Inserta de forma dinámica anuncios en una página AMP mediante un archivo de configuración servido de forma remota.
 
@@ -73,7 +74,7 @@ Debe especificarse en la etiqueta el tipo de red publicitaria y cualquier otra i
   </amp-auto-ads>
 ```
 
-## Redes publicitarias admitidas
+## Redes publicitarias admitidas <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -129,7 +130,7 @@ En el siguiente ejemplo se especifica que el anuncio debe posicionarse inmediata
 
 ### Definiciones de objetos
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 Estos son los campos que se especifican en el objeto de configuración:
 
@@ -209,7 +210,7 @@ Campos que se deben especificar en el objeto de configuración `placements`:
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 Los campos que se especifican en el objeto de configuración `anchor` son:
 
@@ -249,7 +250,7 @@ Los campos que se especifican en el objeto de configuración `anchor` son:
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 Los campos que se especificarán en el objeto de configuración `style` son:
 
@@ -273,7 +274,7 @@ Los campos que se especificarán en el objeto de configuración `style` son:
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 Los valores ENUM del campo `pos` del objeto de configuración `placements` son:
 
@@ -305,7 +306,7 @@ Los valores ENUM del campo `pos` del objeto de configuración `placements` son:
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 Los valores ENUM del campo `type` del objeto de configuración `placements` son:
 

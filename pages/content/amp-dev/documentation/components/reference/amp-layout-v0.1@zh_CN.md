@@ -25,7 +25,7 @@ $title: amp-layout
      limitations under the License.
 -->
 
-# <a name="amp-layout"></a>`amp-layout`
+
 
 <table>
   <tr>
@@ -38,7 +38,7 @@ $title: amp-layout
   </tr>
 </table>
 
-## 概述
+## 概述 <a name="overview"></a>
 
 借助 `amp-layout` 组件，您可以将基于宽高比的自适应布局应用于任何元素。`amp-layout` 组件与现有 AMP 组件的 [layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) 属性的工作原理相似，但前者支持用作子级的所有 HTML 标记。其他支持的布局均使用 `amp-layout`（例如 fixed-height、fixed 等）。
 
@@ -55,10 +55,10 @@ $title: amp-layout
   </amp-layout>
 ```
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 此元素包含扩展到 AMP 组件的[常见属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)。
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-layout 规则](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)。

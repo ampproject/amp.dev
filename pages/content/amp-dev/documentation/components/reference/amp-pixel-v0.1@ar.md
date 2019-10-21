@@ -1,4 +1,5 @@
 ---
+$title: <a name="amp-pixel"></a> `amp-pixel`
 $category@: ads-analytics
 formats:
   - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# <a name="amp-pixel"></a> `amp-pixel`
+
 
 [جدول المحتويات]
 
@@ -45,7 +46,7 @@ teaser:
   </tr>
 </table>
 
-## السلوك
+## السلوك <a name="behavior"></a>
 
 يتصرف مكوِّن `amp-pixel` كبكسل تتبع بسيط `img`. يأخذ عنوان URL واحدًا لكنه يوفر متغيرات يمكن استبدالها بالمكوِّن في سلسلة عنوان URL عند إرسال الطلب. راجع قسم [الاستبدالات](#substitutions) لمعرفة مزيد من التفاصيل.
 
@@ -60,13 +61,13 @@ teaser:
 عند معالجة عناوين AMP URL في الرأس المُحيل لطلبات التحليلات، أزِل المعلَمة `usqp` أو تجاهلها. يستخدم Google هذه المعلَمة لتشغيل تجارب "لذاكرة التخزين المؤقت لصفحات AMP من Google".
 [/tip]
 
-## السمات
+## السمات <a name="attributes"></a>
 
-##### src (مطلوبة)
+##### src (مطلوبة) <a name="src-required"></a>
 
 هي عنوان URL بسيط لنقطة نهاية بعيدة والتي يجب أن تتبع البروتوكول `https`.
 
-##### referrerpolicy (اختياريّة)
+##### referrerpolicy (اختياريّة) <a name="referrerpolicy-optional"></a>
 
 تشبه هذه السمة سمة `referrerpolicy` على `<img>` إلا أن `no-referrer` هي القيمة الوحيدة المقبولة. في حال تحديد `referrerpolicy=no-referrer`، تتم إزالة الرأس `referrer` من الطلب HTTP.
 
@@ -76,16 +77,16 @@ teaser:
     referrerpolicy="no-referrer"></amp-pixel>
 ```
 
-##### allow-ssr-img (اختياريّة)
+##### allow-ssr-img (اختياريّة) <a name="allow-ssr-img-optional"></a>
 
 تشير هذه السمة المستخدَمة في تصميمات إعلانات AMP4ADS إلى أنه في إطار التحويل ما بعد مرحلة التحقق، يمكن وضع عنصر img مباشرة داخل العنصر amp-pixel، ما يسمح بإرسال فحص الاتصال بالتوازي مع جلب/تنفيذ وقت تشغيل AMP.
 وهو ما يعني عدم توسيع أي وحدات ماكرو داخل عنوان URL لذا استخدَم السمة فقط إذا لم تكن متوفرة في src.
 
-##### السمات المشتركة
+##### السمات المشتركة <a name="common-attributes"></a>
 
 يتضمن هذا العنصر [السمات المشتركة](../../../documentation/guides-and-tutorials/learn/common_attributes.md) التي تشمل مكونات AMP.
 
-## الاستبدالات
+## الاستبدالات <a name="substitutions"></a>
 
 يسمح `amp-pixel` بجميع استبدالات متغيرات عناوين URL القياسية.
 اطّلِع على [دليل الاستبدالات](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) للحصول على المزيد من المعلومات.
@@ -97,10 +98,10 @@ teaser:
     layout="nodisplay"></amp-pixel>
 ```
 
-## التصميم
+## التصميم <a name="styling"></a>
 
 يجب ألا يكون للمكوِّن `amp-pixel` تصميم.
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-pixel](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) في مواصفات مدقق AMP.

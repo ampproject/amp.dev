@@ -124,7 +124,7 @@ AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 현재 두 가지 AMP 캐시 제공업체가 있습니다.
 
 * [Google AMP 캐시](https://developers.google.com/amp/cache/)
-* [Cloudflare AMP 캐시](https://amp.cloudflare.com/)
+* [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 다음 두 가지 옵션 중 하나를 사용하여 앱에 AMP 파일을 표시할 수 있습니다.
 
@@ -173,7 +173,7 @@ AMP 페이지를 표시하기 위한 WebView를 설정하는 가장 좋은 방�
 *   WebView 기반 뷰어에서 타사 쿠키 활성화
 *   플랫폼/앱에 대한 리퍼러 설정
 
-### AMP 콘텐츠 공유
+### AMP 콘텐츠 공유 <a name="sharing-amp-content"></a>
 
 플랫폼의 AMP 뷰어 내에서 AMP 문서를 공유할 경우 플랫폼에서
 표준 URL을 공유해야 합니다(기술적으로 가능한 경우). 예를 들어,

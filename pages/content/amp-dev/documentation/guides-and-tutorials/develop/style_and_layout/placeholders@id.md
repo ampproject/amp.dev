@@ -38,7 +38,7 @@ elemen HTML apa pun dapat berfungsi sebagai placeholder.
 
 [/tip]
 
-## Fallback
+## Fallback <a name="fallbacks"></a>
 
 Anda dapat menentukan atribut `fallback` pada sebuah elemen untuk menunjukkan perilaku fallback:
 

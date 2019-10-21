@@ -123,7 +123,7 @@ AMP キャッシュは次のような目的で設計されています。
 現在、2 つの AMP キャッシュ プロバイダがあります。
 
 *   [Google AMP キャッシュ](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP キャッシュ](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 そのため、アプリで AMP ファイルを表示するには、次の 2 つの方法のいずれかを選択する必要があります。
 
@@ -172,7 +172,7 @@ AMP ドキュメントのプリレンダリング、スワイプによる記事�
 *   WebView ベースのビューアでは、サードパーティの Cookie を有効にします。
 *   使用するプラットフォーム / アプリの参照 URL を設定します。
 
-### AMP コンテンツの共有
+### AMP コンテンツの共有 <a name="sharing-amp-content"></a>
 
 プラットフォームの AMP ビューア内から AMP ドキュメントを共有する場合、
 技術的に可能な限り、プラットフォームは正規 URL を共有する必要があります。たとえば、

@@ -143,7 +143,7 @@ AMP 不会验证同一变量的多种用法。
 
 [/tip]
 
-## requests、triggers 和 transports
+## requests、triggers 和 transports <a name="requests-triggers--transports"></a>
 
 `requests` 属性定义了“发送哪些数据”
 （例如 `pageviews`、`events`）
@@ -159,7 +159,7 @@ AMP 不会验证同一变量的多种用法。
 （您也可
 在 [`amp-analytics` 参考信息](../../../../documentation/components/reference/amp-analytics.md)中了解这些配置。）
 
-### 发送哪些数据：requests 属性
+### 发送哪些数据：requests 属性 <a name="what-data-gets-sent-requests-attribute"></a>
 
 `request-name` 用于在触发器配置中指定
 应发送什么请求来响应特定的事件。
@@ -326,7 +326,7 @@ AMP 支持以下触发器配置：
 }
 ```
 
-## 变量替换顺序
+## 变量替换顺序 <a name="variable-substitution-ordering"></a>
 
 AMP 会按照优先顺序使用相应值来填充变量：
 

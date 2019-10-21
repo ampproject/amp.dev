@@ -35,7 +35,7 @@ Lihat demo langsung berdampingan tentang [`amp-img`](../../../../documentation/c
 
 [/tip]
 
-## Atribut layout
+## Atribut layout <a name="the-layout-attribute"></a>
 
 Atribut `layout` memberi Anda kontrol per-elemen yang mudah terkait
 rendering elemen di layar. Banyak dari hal ini dapat dilakukan dengan CSS murni – tapi
@@ -103,7 +103,7 @@ Kunjungi halaman [Mendemonstrasikan tata letak AMP](../../../../documentation/gu
 
 [/tip]
 
-### Bagaimana jika atribut width dan height tidak ditentukan?
+### Bagaimana jika atribut width dan height tidak ditentukan? <a name="what-if-width-and-height-are-undefined"></a>
 
 Dalam beberapa kasus, jika `width` atau `height` tidak ditentukan,
 AMP runtime dapat menetapkan nilai berikut sebagai default:
@@ -111,7 +111,7 @@ AMP runtime dapat menetapkan nilai berikut sebagai default:
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Lebar dan tinggi ditetapkan secara default ke 0.
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Lebar dan tinggi default disimpulkan dari browser.
 
-### Bagaimana jika atribut <code>layout</code> tidak ditentukan?
+### Bagaimana jika atribut <code>layout</code> tidak ditentukan? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Jika atribut <code>layout</code> tidak ditentukan, AMP akan mencoba menyimpulkan atau menebak
 nilai yang sesuai:
@@ -159,7 +159,7 @@ Pelajari lebih lanjut cara mengontrol tata letak dengan menerapkan kueri media d
 
 [/tip]
 
-### Kueri media elemen
+### Kueri media elemen <a name="element-media-queries"></a>
 
 Salah satu fitur tambahan untuk desain responsif yang tersedia di AMP adalah atribut `media`.
 Atribut ini dapat digunakan di setiap elemen AMP;

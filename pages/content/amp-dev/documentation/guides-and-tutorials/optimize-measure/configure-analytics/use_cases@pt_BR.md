@@ -67,7 +67,7 @@ Envie dados de visualização de página ao Google Analytics. Veja também como 
 </amp-analytics>
 ```
 
-## Rastrear cliques na página
+## Rastrear cliques na página <a name="tracking-page-clicks"></a>
 
 Saiba como rastrear cliques na página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 e enviando dados de eventos a um URL especificado e ao [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
@@ -129,7 +129,7 @@ O exemplo a seguir usa o atributo `selector` do `trigger` para enviar um evento 
 </amp-analytics>
 ```
 
-## Como rastrear a rolagem de página
+## Como rastrear a rolagem de página <a name="tracking-scrolling"></a>
 
 Rastreie a rolagem de página usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). O exemplo a seguir usa o atributo `scrollspec` para enviar um evento `scroll` ao URL especificado quando um usuário rola 25%, 50% e 90% da página verticalmente. O evento também é acionado pela rolagem horizontal de 90% da largura de `scroll`:
 
@@ -157,7 +157,7 @@ Rastreie a rolagem de página usando [`amp-analytics`](../../../../documentation
 </amp-analytics>
 ```
 
-## Como rastrear interações em redes sociais
+## Como rastrear interações em redes sociais <a name="tracking-social-interactions"></a>
 
 Saiba como rastrear interações em redes sociais usando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 e enviando dados de eventos a um URL especificado e ao [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).

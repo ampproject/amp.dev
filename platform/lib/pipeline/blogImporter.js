@@ -140,7 +140,7 @@ class BlogImporter {
     const filePath = path.join(DESTINATION_BASE_PATH, './blog.yaml');
 
     // write it to disk
-    return writeFile.promise(
+    return writeFile(
         filePath,
         'entries:\n' + blogEntriesYaml.join('')).then(() => {
       LOG.success(`Saved ${filePath.replace(project.paths.ROOT, '~')}`);

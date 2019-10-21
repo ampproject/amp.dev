@@ -15,15 +15,10 @@
  */
 
 const writeFile = require('write');
-const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
-
-// Prep version template
-const nunjucks = require('nunjucks');
-const VERSION_TOGGLE_TEMPLATE = nunjucks.compile(fs.readFileSync(
-    utils.project.absolute('frontend/templates/views/partials/version-toggle.j2'), 'utf8'));
+const SlugGenerator = require('@lib/utils/slugGenerator');
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
@@ -41,37 +36,44 @@ const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*
 // to ensure we do not match something that belongs to different code blocks
 // or we add raw tags to existing raw blocks
 const MARKDOWN_BLOCK_PATTERN = new RegExp(
-    JINJA2_RAW_BLOCK.source
-    + '|'
-    + SOURCECODE_BLOCK.source
-    + '|'
-    + /`[^`]*`/.source, 'g');
+    JINJA2_RAW_BLOCK.source +
+    '|' +
+    SOURCECODE_BLOCK.source +
+    '|' +
+    /`[^`]*`/.source, 'g');
 
 // Inside code blocks we search for mustache expressions
 // The constant 'server_for_email' and expressions with a dot or a bracket are not considered mustache
 // TODO: Avoid the need to distinguish between mustache and jinja2
 const MUSTACHE_PATTERN = new RegExp(
-    '('
-    + JINJA2_RAW_BLOCK.source
-    + '|'
-    + /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source
-    + ')', 'g');
+    '(' +
+    JINJA2_RAW_BLOCK.source +
+    '|' +
+    /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
+    ')', 'g');
+
+// Matches tags used for SSR
+const NUNJUCKS_PATTERN = /\[(?:%|=|#)|(?:%|=|#)\]/g;
 
 // This pattern will find relative urls.
 // It will als match source code blocks to skip them and not replace any links inside.
 const RELATIVE_LINK_PATTERN = new RegExp(
     // skip sourcecode tag in markdown
-    SOURCECODE_BLOCK.source
-    + '|'
+    SOURCECODE_BLOCK.source +
+    '|' +
     // skip inline source marker
-    + /`[^`]*`/.source
-    + '|'
+    /`[^`]*`/.source +
+    '|' +
     // find <a href=""> link tag:
-    + /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source
-    + '|'
+    /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source +
+    '|' +
     // find markdown link block [text](../link):
-    + /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
+    /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
     , 'g');
+
+// This pattern will find the text for markdown titles skipping explicit anchors.
+const TITLE_ANCHOR_PATTERN =
+    /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/mg;
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -123,12 +125,34 @@ class MarkdownDocument {
     this._frontmatter['$category@'] = category;
   }
 
+  /**
+   * Returns the formats supported by this version of the component.
+   */
   get formats() {
     return this._frontmatter['formats'] || [];
   }
 
   set formats(formats) {
     this._frontmatter['formats'] = formats;
+  }
+
+  /**
+   * Returns the formats supported by any version of this component.
+   */
+  get supportedFormats() {
+    return this._frontmatter['supported_formats'] || [];
+  }
+
+  set supportedFormats(formats) {
+    this._frontmatter['supported_formats'] = formats;
+  }
+
+  get component() {
+    return this._frontmatter['component'];
+  }
+
+  set component(component) {
+    this._frontmatter['component'] = component;
   }
 
   get version() {
@@ -141,8 +165,6 @@ class MarkdownDocument {
 
   set versions(versions) {
     this._frontmatter['versions'] = versions;
-    this._contents = MarkdownDocument
-        .insertVersionToggler(this._contents, this._frontmatter.version, versions);
   }
 
   get teaser() {
@@ -160,6 +182,10 @@ class MarkdownDocument {
 
   set isCurrent(bool) {
     this._frontmatter['is_current'] = bool;
+  }
+
+  get isCurrent() {
+    return this._frontmatter['is_current'];
   }
 
   get contents() {
@@ -208,9 +234,23 @@ class MarkdownDocument {
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
     this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
+    this._contents = MarkdownDocument.escapeNunjucksTags(this._contents);
 
     // Replace dividers (---) as they will break front matter
     this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
+  }
+
+  /**
+   * Escapes nunjucks tags to not interfer with SSR
+   * @param  {String} contents
+   * @return {String}          The rewritten input
+   */
+  static escapeNunjucksTags(contents) {
+    return contents.replace(NUNJUCKS_PATTERN, (tag) => {
+      // TODO(matthiasrohmer): Raw tags for nunjucks do not match.
+      // See: github.com/ampproject/amp.dev#2865
+      return `{{'[% raw %]'}}${tag}{{'{% endraw %}'}}`;
+    });
   }
 
   /**
@@ -275,21 +315,6 @@ class MarkdownDocument {
   }
 
   /**
-   * Adds version toggler to the h1 heading in case of multiple versions
-   * @param  {String} contents
-   * @return {String}          The rewritten content
-   */
-  static insertVersionToggler(contents, version, versions) {
-    const titleRegex = /^#{1}\s(.+)/m;
-    const title = contents.match(titleRegex)[1];
-    return contents.replace(titleRegex, VERSION_TOGGLE_TEMPLATE.render({
-      title: title,
-      versions: versions,
-      version: version,
-    }));
-  }
-
-  /**
    * Rewrite relative links and append the given base path to them
    * @param  {String} base
    */
@@ -314,6 +339,31 @@ class MarkdownDocument {
   stripInlineTitle() {
     const TITLE_PATTERN = /^#{1}\s.+/m;
     this._contents = this._contents.replace(TITLE_PATTERN, '');
+    return true;
+  }
+
+  /**
+   *Adds explicit anchors for titels in github notation
+   */
+  addExplicitAnchors() {
+    const slugGenerator = new SlugGenerator();
+    this._contents = this._contents.replace(TITLE_ANCHOR_PATTERN,
+        (line, hLevel, headlineStart, anchor, headlineEnd) => {
+          let headline = headlineStart + headlineEnd;
+          headline = headline.replace(/`(.*?)`|\[(.*?)\]\(.*?\)|<.*?>|&[^\s]+?;/g,
+              (line, code, linktext) => {
+                if (code || linktext) {
+                  return code || linktext;
+                }
+                return '';
+              });
+          const slug = slugGenerator.generateSlug(headline);
+          // Even if we have an anchor the slug generator has to know all the headlines.
+          if (anchor) {
+            return line;
+          }
+          return `${hLevel} ${headlineStart}${headlineEnd} <a name="${slug}"></a>`;
+        });
     return true;
   }
 
@@ -346,7 +396,7 @@ have a look and request a pull request there.
     content += this._contents;
 
     path = path ? path : this._path;
-    return writeFile.promise(path, content).then(() => {
+    return writeFile(path, content).then(() => {
       LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
     }).catch((e) => {
       LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);

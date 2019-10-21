@@ -35,7 +35,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 
 [/tip]
 
-## layout 属性
+## layout 属性 <a name="the-layout-attribute"></a>
 
 `layout` 属性を使うと、画面上で要素をどのように表示するかを
 要素ごとに簡単に制御できます。こうした制御の多くは CSS だけでも実現できますが、
@@ -97,7 +97,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
   </tbody>
 </table>
 
-### width や height が定義されていない場合
+### width や height が定義されていない場合 <a name="what-if-width-and-height-are-undefined"></a>
 
 `width` や `height` が指定されていない場合、
 AMP ランタイムはデフォルトで次の値を使用します。
@@ -105,7 +105,7 @@ AMP ランタイムはデフォルトで次の値を使用します。
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): width と height の両方がデフォルトで 0 に設定されます。
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): デフォルトの width と height はブラウザから推測されます。
 
-### <code>layout</code> 属性が指定されていない場合
+### <code>layout</code> 属性が指定されていない場合 <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 <code>layout</code> 属性が指定されていない場合、AMP では
 次のように適切な値の推測を試みます。
@@ -153,7 +153,7 @@ AMP ランタイムはデフォルトで次の値を使用します。
 
 [/tip]
 
-### 要素のメディアクエリ
+### 要素のメディアクエリ <a name="element-media-queries"></a>
 
 AMP で使用できるレスポンシブ デザイン向けのもう 1 つの機能として `media` 属性があります。
 この属性はすべての AMP 要素で使用できます。

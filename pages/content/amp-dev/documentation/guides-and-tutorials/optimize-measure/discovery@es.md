@@ -30,7 +30,7 @@ Si solo tienes una página, y es una página de AMP, sigues teniendo que añadir
 
 Leer más: Aprende más sobre cómo Google encuentra las páginas en [Directrices de la Búsqueda de Google para las páginas de AMP](https://support.google.com/webmasters/answer/6340290).
 
-## Integrar con plataformas de terceros mediante metadatos adicionales
+## Integrar con plataformas de terceros mediante metadatos adicionales <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 En ocasiones, un sitio web de terceros (que incorpora tu página AMP o incluye enlaces a ella) necesita más información acerca de tu página aparte del hecho de que se trata de una página de AMP. Las preguntas que una plataforma puede hacerte acerca de tu página pueden ser: "¿Eres un artículo de prensa?", "¿O un vídeo?" o "¿Tienes una captura de pantalla y una breve descripción?".
 

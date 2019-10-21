@@ -1,0 +1,67 @@
+$title: AARP
+$category: nonprofit
+$date: 2019-10-17
+description: AARP reported that it was able to improve both its performance metrics and user experience with AMP...
+formats:
+  - websites
+
+teaser:
+  image:
+    src: "/static/img/success-stories/aarp/aarp_teaser.png"
+    width: 1
+    height: 1
+    alt: AARP
+  logo:
+    src: "/static/img/success-stories/aarp/aarp_logo.png"
+    width: 200
+    height: 20
+    alt: AARP
+  text: AARP increases mobile conversion rate by 15% with AMP
+
+stage:
+  headline: AARP increases mobile conversion rate by 15% with AMP
+  subline: OCT 17, 2019
+  layout: mobile
+  devices:
+    - image_src: "/static/img/success-stories/aarp/aarp_2.png"
+      width: 3
+      height: 5
+      type: mobile
+      alt: Screenshot of AARP on mobile
+
+kpis:
+  - value: -72%
+    text: Mobile load time
+
+  - value: +15%
+    text: Higher conversion rate
+
+  - value: -13%
+    text: Cost per Conversion
+
+contents:
+  - layout: text
+    text: Today’s consumers expect quick and seamless mobile experiences, so it’s critical for businesses to have fast-loading site pages. As the largest nonprofit organization in the U.S., AARP is dedicated to empowering Americans 50 and older. With more than 60% of searches for “AARP” happening on mobile, the organization knew that improving its mobile experience was key to gaining new members and keeping existing ones.
+  - layout: text
+    headline: Challenge
+    text: Considering the high number of mobile searches for “AARP,” the organization wanted to reduce mobile load times to make it easier for members to start and renew their memberships via mobile.
+  - layout: text-media
+    image_src: "/static/img/success-stories/aarp/aarp_1.png"
+    width: 3
+    height: 5
+    type: mobile
+    alt: AARP
+    headline: Solution
+    text: The organization partnered with Google to test AMP pages on its membership landing page for the search term “AARP.” In May 2019, AARP used drafts and experiments in its Google Ads account to test performance between AMP and non-AMP membership pages. The organization split its traffic evenly between the two pages to compare mobile conversions, and it paused its responsive search ads during testing to ensure that results could be attributed solely to AMP.
+    direction: left-flat
+  - layout: text-media
+    image_src: "/static/img/success-stories/aarp/aarp_2.png"
+    width: 3
+    height: 5
+    type: mobile
+    alt: AARP
+    headline: Results
+    text:
+      AMP helped AARP reduce its mobile load time by 72% and improve its mobile speed score in Google Ads from 4/10 to 10/10. AARP also saw a 15% higher conversion rate on its AMP membership page, which contributed to a 13% decrease in its cost per conversion with Google Ads.
+      AARP reported that it was able to improve both its performance metrics and user experience with AMP, and the organization is considering expanding AMP to other high-traffic landing pages.
+    direction: left-flat

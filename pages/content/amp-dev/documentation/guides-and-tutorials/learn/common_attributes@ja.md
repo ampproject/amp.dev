@@ -60,7 +60,7 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
 
 詳しくは、[レイアウトとメディアクエリ](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) および [レイアウトの仕様](amp-html-layout/index.md) をご覧ください。
 
-## media
+## media <a name="media"></a>
 
 すべての AMP 要素は `media` 属性に対応しています。`media` の値はメディアクエリです。クエリが一致しない場合、該当の要素はレンダリングされず、そのリソースは（場合によってはその子リソースも）取得されません。ブラウザ ウィンドウのサイズや向きが変わると、メディアクエリが再評価されて、その新しい結果を基に、要素が表示されるか非表示になるかが決まります。
 

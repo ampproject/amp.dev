@@ -5,6 +5,7 @@ import sys
 import os
 from grow.common.urls import Url
 from grow.cache.object_cache import ObjectCache
+from collections import namedtuple
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), '.')])
 
@@ -12,6 +13,20 @@ from pod_internal_link_rewriter import PodInternalLinkRewriter
 
 
 class PodInternalLinkRewriterTestCase(unittest.TestCase):
+
+  def test_a_static_path(self):
+    link_map = {
+      '/content/test/folder1/page.md': '/test/folder_1/page1.html',
+      '/static/files/case-studies/BMW.pdf': 'BMW',
+    }
+    doc = MockPod(link_map).get_doc('/content/test/folder1/page.md')
+    content = '<a href="/static/files/case-studies/BMW.pdf">Download PDF</a>'
+
+    link_rewriter = PodInternalLinkRewriter(doc, ObjectCache(), None)
+    result = link_rewriter.rewrite_pod_internal_links(content)
+
+    # Nothing should have been rewritten
+    self.assertEquals(content, result)
 
   def test_a_href_relative(self):
     link_map = {
@@ -164,16 +179,20 @@ class PodInternalLinkRewriterTestCase(unittest.TestCase):
     result = link_rewriter.rewrite_pod_internal_links(content)
     self.assertEquals('<a href="/de/test/page.html">page</a><br>', result)
 
+Logger = namedtuple('Logger', ['error', 'warning'])
+
+def log(message):
+  print(message)
 
 class MockPod:
 
   def __init__(self, link_map):
     self.link_map = link_map
+    self.logger = Logger(log, log)
 
   def get_doc(self, path, locale='en'):
     site_path = self.link_map.get(path)
     return MockDoc(self, path, site_path, locale)
-
 
 class MockDoc:
 
@@ -190,4 +209,3 @@ class MockDoc:
     if self.url:
       return True
     return False
-

@@ -1,0 +1,69 @@
+$title: asahi
+$category: publishers
+$date: 2019-09-09
+description: Asahi.com uses a paired AMP approach for their free articles across 30% of their domain.
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/asahi/ss_without_ads.jpg'
+    width: 3
+    height: 5
+    alt: asahi
+  logo:
+    src: '/static/img/success-stories/asahi/asahi_logo.jpg'
+    width: 156
+    height: 51
+    alt: asahi
+  text: Asahi.com uses a paired AMP approach for their free articles
+
+stage:
+  headline: Asahi.com uses a paired AMP approach for their free articles
+  layout: mobile
+  subline:
+  devices:
+  - image_src: '/static/img/success-stories/asahi/ss_without_ads.jpg'
+    width: 3
+    height: 5
+    type: mobile
+    alt: asahi
+
+kpis:
+  - value: 240%
+    text: "PVs (YoY)<br>*YoY: May in 2018 and 2019."
+
+  - value: 201%
+    text: "Average growth in CTRs (YoY)<br>*YoY: May in 2018 and 2019."
+
+  - value: 344%
+    text: "Ad revenue (YoY)<br>*YoY: May in 2018 and 2019."
+
+
+contents:
+  - layout: text
+    text: "朝日新聞社は「ともに考え、ともにつくる」という企業理念のもとで、140年の歴史を持つ日本で二番目に大きい新聞社です。デジタル領域におけるジャーナリズムのありかたを模索しながら、朝日新聞デジタルというメディアの運営をしています。モバイルデバイスからのアクセスが増大している状況の中で、昨年はモバイル版のサイト高速化プロジェクトを行いました。<br><br>このときは、モバイルユーザーでのページの表示速度をKPIとしていました。<br><br>このときの知見に加え、モバイル検索におけるUXの最適化と表示におけるAMPの優位性を用いて、AMPページの高速化と最適なコンポーネントの改善を行うことにしました。<br><br>リソースが大きくなるインフラについては大きく変更をすることなく、キャッシュで表示されるページにおいても、ユーザーにおける視認性を担保したまま、より高速なページ表示を求め、AMPサイトの改善を行いました。"
+    direction: left-flat
+
+  - layout: text
+    headline: Solution：施策
+    text: "<ul><li>画像サイズや形式など、lighthouseの数字をKPIとしてページの最適化を実施しました。目的としては、SEOやUXの向上を通じた流入の増加です。</li><li>amp-adの積極導入、ヘッダービディングの追加をしました。KPIとしてはeCPM、つまり1PVの価値を上げることです。</li><li>GoogleOptimizeを活用したデザイン・コンポーネントの最適化を行いました。KPIとしてはユーザーの回遊率（CTR）を高めることで、結果としてPVおよび有料会員のCVR向上を目指しました</li></ul>"
+    direction: left-flat
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/asahi/ss_with_ads.jpg'
+    width: 3
+    height: 5
+    type: mobile
+    alt: asahi
+    headline: Result：結果
+    text: AMPページの改善を続けた結果として、AMPページにおける2019年度1Qは前年比率でPVが213%、広告収入が***%、CVが195%という結果となりました。
+    direction: left-flat
+
+  - layout: quote
+    quote: "AMPの登場は、HTMLと同様の簡易なコーディングにもかかわらず、高い拡張性とユーザー体験の向上を提供してくれています。特に、インフラの変更を最小限にとどめても、キャッシュを通じたページの高速化が効くため、改めてモバイルの世界においてウェブの魅力を高めてくれています。 我々のAMPページでは、先日リリースされたamp-listやNative infeedなどのコンポーネントを導入し、更にユーザー体験の改善を行っています。今後も、このあと普及していくに違いないAMP MailやAMP Storiesなど、最新の表現技術をフォローしながら、よりユーザーのニーズに応えるサイトの提供を目指していきます。"
+    image_src: '/static/img/success-stories/asahi/asahi_logo.jpg'
+    width: 156
+    height: 51
+    alt: asahi
+    author: Toshiyuki Watanabe, AMP project manager at The Asahi Shimbun

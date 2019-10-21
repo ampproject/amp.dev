@@ -32,6 +32,23 @@ author: sebastianbenz
     background: #f2f2f2;
     border: solid 1px #ccc;
   }
+  .inner{
+    flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+  .outer {
+    width: 320px;
+    height: 320px;
+    background: red;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 </style>
 </head>
 <body>
@@ -49,10 +66,13 @@ author: sebastianbenz
 
   -->
 
-  <!-- ## srcset -->
   <!--
+    ## srcset
+
     Use `srcset` to specify different images for varying viewport widths and pixel densities (change the width of your browser windows to test it).
-  -->
+
+    @formats(websites)
+   -->
   <amp-img src="/static/samples/img/amp.jpg" srcset="/static/samples/img/amp.jpg 1080w, /static/samples/img/amp-900.jpg 900w, /static/samples/img/amp-800.jpg 800w,
   /static/samples/img/amp-700.jpg 700w, /static/samples/img/amp-600.jpg 600w, /static/samples/img/amp-500.jpg 500w, /static/samples/img/amp-400.jpg 400w,
   /static/samples/img/amp-300.jpg 300w, /static/samples/img/amp-200.jpg 200w, /static/samples/img/amp-100.jpg 100w" width="1080" height="610" layout="responsive" alt="AMP"></amp-img>
@@ -79,9 +99,12 @@ author: sebastianbenz
   <!-- Use the [`noloading`](/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md#noloading) attribute to hide the loading indicators on page load. This is recommended for logos and small images/icons. -->
   <amp-img src="/static/samples/img/amp_by_example_logo.svg" width="208" height="40" alt="AMP by Example" noloading></amp-img>
 
-  <!-- ## Dynamically changing the src-->
   <!--
+    ## Dynamically changing the src
+
     You can use `amp-bind` to dynamically change the `src` URL of an `amp-img`.
+
+    @formats(websites)
   -->
   <div>
     <amp-img src="https://unsplash.it/300/200/?image=100"
@@ -91,5 +114,33 @@ author: sebastianbenz
     </amp-img>
     <button on="tap:AMP.setState({ myImageUrl: 'https://unsplash.it/300/200/?image=200' })">Change image</button>
   </div>
+
+  <!-- ## Vertically centering an amp-img 
+
+  Here is a simple approach to vertically center an `amp-img` using the flex layout ([src](https://stackoverflow.com/a/57949451/967)):
+  -->
+ <div class="outer">
+    <amp-img class="inner" layout="responsive" src="https://unsplash.it/300/200" width="3" height="2" alt="a vertically centered amp-img">
+    </amp-img>
+  </div>
+  <!-- ...and here is the CSS: 
+```css
+.inner{
+  flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.outer {
+  height: 320px; /* adjust to your needs */
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}```
+   -->
+
 </body>
 </html>

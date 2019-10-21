@@ -1,4 +1,5 @@
 ---
+$title: amp-selector
 $category@: dynamic-content
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-selector
+
 
 Ce composant représente une commande qui affiche un menu d'options et permet à l'utilisateur d'y effectuer une sélection.
 
@@ -45,7 +46,7 @@ Ce composant représente une commande qui affiche un menu d'options et permet à
 </table>
 
 
-## Comportement
+## Comportement <a name="behavior"></a>
 
 Le sélecteur AMP est une commande qui présente une liste dans laquelle l'utilisateur peut choisir une ou plusieurs options. Le contenu des options ne se limite pas simplement à du texte.
 
@@ -95,7 +96,7 @@ Exemple :
 </amp-selector>
 ```
 
-## Effacer les sélections
+## Effacer les sélections <a name="clearing-selections"></a>
 
 Pour effacer toutes les sélections lorsque l'utilisateur clique ou appuie sur un élément, définissez l'attribut d'action [`on`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) sur l'élément en question et spécifiez ensuite l'`id` du sélecteur AMP avec la méthode d'action `clear`.
 
@@ -114,9 +115,9 @@ Exemple :
 Regardez les démos sur [AMP By Example](https://ampbyexample.com/components/amp-selector/).
 [/tip]
 
-## Attributs
+## Attributs <a name="attributes"></a>
 
-### Attributs sur `<amp-selector>`
+### Attributs sur `<amp-selector>` <a name="attributes-on-"></a>
 
 <table>
   <tr>
@@ -133,7 +134,7 @@ Regardez les démos sur [AMP By Example](https://ampbyexample.com/components/amp
     </tr>
     </table>
 
-### Attributs sur les options `<amp-selector>`
+### Attributs sur les options `<amp-selector>` <a name="attributes-on--options"></a>
 
 <table>
   <tr>
@@ -147,7 +148,7 @@ Regardez les démos sur [AMP By Example](https://ampbyexample.com/components/amp
   </tr>
 </table>
 
-## Événements
+## Événements <a name="events"></a>
 
 Les événements peuvent déclencher des actions sur d'autres composants AMP à l'aide de l'attribut `on`.
 Par exemple : `on="select: my-tab.show"`
@@ -171,6 +172,6 @@ En savoir plus sur les [actions et événements AMP](../../../documentation/guid
 
     </table>
 
-## Validation
+## Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-selector](https://github.com/ampproject/amphtml/blob/master/extensions/amp-selector/validator-amp-selector.protoascii) dans les spécifications du validateur AMP.

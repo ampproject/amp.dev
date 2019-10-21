@@ -1,9 +1,21 @@
 # -*- coding: utf-8 -*-
 import os
+import re
 import json
 from grow.pods.pods import Pod
 from grow.documents.document import Document
 
+FIRST_SENTENCE_PATTERN = re.compile(
+    # We also match markup [tag]...[/tag] blocks to skip them
+    r'^\[(\w+)(?:[:\s][^\]]+)\].*?\[/\1\]|(^\w[^!?.\n]*(?:\n\w[^!?.\n]*)*(?:\.|!|\?|$))',
+    re.MULTILINE | re.DOTALL | re.UNICODE)
+
+# To remove HTML blocks that are not content like headlines or sourcecode blocks
+# <pre> is used for source blocks, while <code> is used for inline blocks (which we do not remove)
+UNWANTED_HTML_BLOCKS_PATTERN = re.compile(r'<(h\d|pre)(?:\s[^>]+)*>.*?</\1>', re.DOTALL)
+
+# To remove all comments (with anything inside) and all tags
+HTML_TAG_PATTERN = re.compile(r'<!--.*?-->|<[^>]*>', re.DOTALL)
 
 class PageInfoCollector(object):
   def __init__(self, pod, input_file, output_folder):
@@ -77,4 +89,16 @@ class PageInfoCollector(object):
         result = teaser.get('text')
       if not result:
         result = ''
+        for first_sentence_match in FIRST_SENTENCE_PATTERN.findall(
+            PageInfoCollector.extract_plain_body(doc)):
+          if first_sentence_match[1]:
+            result = first_sentence_match[1]
+            break
+    return result
+
+  @staticmethod
+  def extract_plain_body(doc):
+    result = doc.html
+    result = UNWANTED_HTML_BLOCKS_PATTERN.sub('', result)
+    result = HTML_TAG_PATTERN.sub('', result)
     return result

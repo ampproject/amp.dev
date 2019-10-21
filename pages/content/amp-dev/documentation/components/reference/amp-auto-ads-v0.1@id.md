@@ -1,4 +1,5 @@
 ---
+$title: amp-auto-ads
 $category@: ads-analytics
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-auto-ads
+
 
 Memasukkan iklan secara dinamis ke halaman AMP dengan menggunakan file konfigurasi yang ditayangkan secara jarak jauh.
 
@@ -73,7 +74,7 @@ Jenis jaringan iklan dan informasi tambahan apa pun (yang diperlukan oleh jaring
   </amp-auto-ads>
 ```
 
-## Jaringan iklan yang didukung
+## Jaringan iklan yang didukung <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick (eksperimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -128,7 +129,7 @@ Contoh berikut menentukan bahwa iklan harus diposisikan tepat setelah semua elem
 
 ### Definisi Objek
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 Kolom yang perlu ditentukan dalam objek konfigurasi:
 
@@ -208,7 +209,7 @@ Kolom yang perlu ditentukan dalam objek konfigurasi `placements`:
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 Kolom yang perlu ditentukan dalam objek konfigurasi `anchor`:
 
@@ -248,7 +249,7 @@ Kolom yang perlu ditentukan dalam objek konfigurasi `anchor`:
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 Kolom yang perlu ditentukan dalam objek konfigurasi `style`:
 
@@ -272,7 +273,7 @@ Kolom yang perlu ditentukan dalam objek konfigurasi `style`:
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 Nilai ENUM untuk kolom `pos` dalam objek konfigurasi `placements`:
 
@@ -304,7 +305,7 @@ Nilai ENUM untuk kolom `pos` dalam objek konfigurasi `placements`:
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 Nilai ENUM untuk kolom `type` dalam objek konfigurasi `placements`:
 

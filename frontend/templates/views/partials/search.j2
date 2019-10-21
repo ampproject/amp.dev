@@ -4,27 +4,25 @@
 {% do doc.icons.useIcon('icons/internal.svg') %}
 {% do doc.icons.useIcon('/icons/close.svg') %}
 
-{# TODO:
-   Change hard coded icon injection in <amp-mustache> to svg <use> again, asap!
-   See feature request: https://github.com/ampproject/amphtml/issues/18958
-#}
-{% import 'icons/internal.svg' as iconMarkupRaw %}
-{% set iconMarkupChanged = iconMarkupRaw|replace('symbol', 'svg')|safe %}
-
 {% do doc.amp_dependencies.add('amp-autocomplete', '0.1') %}
 {% do doc.amp_dependencies.add('amp-form', '0.1') %}
 {% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 {% do doc.amp_dependencies.add('amp-list', '0.1') %}
+{% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
-<div id="searchLayer" class="ap-o-search" tabindex="-1">
-  <div class="ap-o-search-escaper" role="button" tabindex="-1" on="tap:searchLayer.toggleClass(class='active', force=false)"></div>
-
+<amp-lightbox id="searchLightbox"
+              class="ap-o-search"
+              layout="nodisplay"
+              on="lightboxOpen:searchInput.focus;
+                  lightboxClose:searchTriggerOpen.focus"
+              scrollable>
+  <div class="ap-o-search-escaper" role="button" tabindex="0" on="tap:searchLightbox.close"></div>
   <div class="ap-o-search-container">
+
     <div class="ap-m-search-trigger ap-m-search-trigger-close"
          on="tap:
-              searchLayer.toggleClass(class='active'),
-              searchTriggerOpen.focus,
+              searchLightbox.close,
               AMP.setState({ query: '' }),
               searchForm.clear"
          role="button"
@@ -39,13 +37,12 @@
             class="ap-o-search-form"
             id="searchForm"
             method="POST"
+            on="submit:searchResult.focus"
             target="_top">
         <amp-autocomplete class="ap-o-search-autocomplete"
                           filter="substring"
                           min-characters="1"
-                          on="select:
-                                AMP.setState({ query: event.value }),
-                                searchLayer.focus"
+                          on="select:AMP.setState({ query: event.value })"
                           submit-on-enter="false"
                           src="/search/autosuggest"
         >
@@ -56,24 +53,25 @@
                  class="ap-o-search-input"
                  name="q"
                  placeholder="{{_('What are you looking for?')}}"
-                 on="input-debounced:
-                       AMP.setState({ query: event.value });
+                 on="input-throttled:
+                       AMP.setState({ throttledValue: event.value });
                      change:
                        AMP.setState({ query: event.value })"
                  required
           >
+          <button class="ap-o-search-submit" type="submit" name="search-submit" disabled [disabled]="!throttledValue">{{_('Search')}}</button>
         </amp-autocomplete>
       </form>
 
       <div class="empty" [class]="query ? '' : 'empty'">
-        <div class="ap-o-search-result">
+        <div class="ap-o-search-result" id="searchResult" tabindex="-1">
 
           <amp-state id="search"
                     [src]="query == undefined ? null : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
           <amp-list [src]="query == undefined ? null : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
                     binding="no"
                     items="."
-                    height="10"
+                    height="50"
                     layout="fixed-height"
                     [is-layout-container]="query.length"
                     load-more="auto"
@@ -99,14 +97,14 @@
                   <div class="ap-o-search-result-linklist">
                     <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
                       <div class="ap-a-ico ap-m-lnk-icon">
-                        {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                       </div>
                       <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
                     </a>
                     {{#playgroundUrl}}
                     <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
                       <div class="ap-a-ico ap-m-lnk-icon">
-                        {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                       </div>
                       <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
                     </a>
@@ -177,7 +175,7 @@
       <amp-list src="/search/highlights?locale={{ doc.locale }}"
                 binding="no"
                 items="."
-                height="100vh"
+                height="86.8vh"
                 layout="fixed-height"
                 [is-layout-container]="query.length"
                 reset-on-refresh
@@ -200,14 +198,14 @@
               <div class="ap-o-search-result-linklist">
                 <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
                   <div class="ap-a-ico ap-m-lnk-icon">
-                    {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                   </div>
                   <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
                 </a>
                 {{#playgroundUrl}}
                 <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
                   <div class="ap-a-ico ap-m-lnk-icon">
-                    {% endraw %}{{ iconMarkupChanged }}{% raw %}
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                   </div>
                   <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
                 </a>
@@ -236,4 +234,4 @@
 
     </div>
   </div>
-</div>
+</amp-lightbox>

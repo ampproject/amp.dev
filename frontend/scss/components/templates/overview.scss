@@ -28,7 +28,7 @@
   .#{utility('content')} {
     display: grid;
     grid-column: 1 / 25;
-    grid-template-columns: repeat(24, 1fr);
+    grid-template-columns: repeat(24, minmax(0, 1fr));
     width: 100%;
     background-color: color('white');
     @include content-shadow;

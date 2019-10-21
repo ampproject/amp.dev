@@ -1,4 +1,5 @@
 ---
+$title: amp-img
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-img
+
 
 <table>
   <tr>
@@ -44,7 +45,7 @@ limitations under the License.
 </table>
 
 
-# Comportamento
+# Comportamento <a name="behavior"></a>
 
 O ambiente de execução pode optar por atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na largura de banda da conexão ou em outros fatores. Assim, os componentes de `amp-img` permitem que o ambiente de execução gerencie recursos de imagem com eficácia.
 
@@ -54,7 +55,7 @@ Os componentes de `amp-img`, assim como todos os recursos de AMP buscados extern
 saiba mais sobre os layouts na especificação [Sistema de layout do HTML para AMP](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) (link em inglês) e em [Layouts compatíveis](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 [/tip]
 
-# Exemplo: como exibir uma imagem responsiva
+# Exemplo: como exibir uma imagem responsiva <a name="example-displaying-a-responsive-image"></a>
 
 No exemplo a seguir, mostramos uma imagem que responde ao tamanho da janela de visualização configurando `layout=responsive`.  A imagem se estica e encolhe de acordo com a proporção especificada por `width` e `height`.
 
@@ -75,7 +76,7 @@ saiba mais sobre páginas AMP responsivas no guia [Criar páginas AMP responsiva
 
 Se o recurso solicitado pelo componente `amp-img` não for carregado, o espaço ficará em branco, a menos que um [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) filho seja fornecido. Um substituto (fallback) é executado somente no layout inicial. As alterações src subsequentes após o fato (por meio de resize + srcset, por exemplo) não terão um substituto para implicações de desempenho.
 
-# Exemplo: especificar uma imagem substituta
+# Exemplo: especificar uma imagem substituta <a name="example-specifying-a-fallback-image"></a>
 
 No exemplo a seguir, se o navegador não for compatível com WebP, a imagem JPG substituta será exibida:
 
@@ -105,7 +106,7 @@ saiba mais sobre como utilizar o `amp-img`:
 * [Incluir imagens e vídeo](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 [/tip]
 
-# Atributos
+# Atributos <a name="attributes"></a>
 
 **src**
 
@@ -139,7 +140,7 @@ Um tamanho explícito da imagem, que é usado pelo ambiente de tempo de execuç�
 
 Esse elemento inclui [atributos comuns](../../../documentation/guides-and-tutorials/learn/common_attributes.md) estendidos a componentes de AMP.
 
-# Estilo
+# Estilo <a name="styling"></a>
 
 `amp-img` pode ser estilizado diretamente por meio das propriedades de CSS. A definição de um marcador de segundo plano cinza, por exemplo, pode ser conseguida com o seguinte código:
 
@@ -149,20 +150,20 @@ amp-img {
   }
 ```
 
-# Dicas e truques
+# Dicas e truques <a name="tips--tricks"></a>
 
-# Dimensionar uma imagem até uma largura máxima
+# Dimensionar uma imagem até uma largura máxima <a name="scaling-an-image-up-to-a-maximum-width"></a>
 
 Se você quiser que sua imagem seja dimensionada à medida que a janela for redimensionada, mas até uma largura máxima (para que a imagem não se estenda além da própria largura):
 
 1. Defina `layout=responsive` para `<amp-img>`.
 1. No contêiner da imagem, especifique o atributo CSS `max-width:<max width to display image>`.  Por que no contêiner?  Um elemento `amp-img` com `layout=responsive` é um elemento de *nível de bloco*, enquanto `<img>` é *in-line*. Outra alternativa é definir `display: inline-block` no seu CSS para o elemento amp-img.
 
-# Diferença entre o layout responsive e o intrinsic
+# Diferença entre o layout responsive e o intrinsic <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
 Os layouts `responsive` e `intrinsic` criam uma imagem que será dimensionada automaticamente.  A principal diferença é que o layout `intrinsic` usa uma imagem SVG no elemento de dimensionamento.  Isso faz com que ele se comporte da mesma forma que uma imagem HTML padrão, mantendo o benefício de o navegador saber o tamanho da imagem no layout inicial. O layout `intrinsic` terá um tamanho intrínseco e aumentará um `div` flutuante até que ele chegue ao tamanho natural da imagem ou a uma restrição de CSS, como `max-width`. O layout `responsive` renderizará 0x0 em um `div` flutuante, porque tem o tamanho do pai, que não tem tamanho natural quando flutuante.
 
-# Definir uma imagem de tamanho fixo
+# Definir uma imagem de tamanho fixo <a name="setting-a-fixed-sized-image"></a>
 
 Se você quiser que sua imagem seja exibida em um tamanho fixo:
 
@@ -170,10 +171,10 @@ Se você quiser que sua imagem seja exibida em um tamanho fixo:
 1. Especifique `width` e `height`.
 
 [tip type="read-on"]
-saiba mais sobre o [layout inferido](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?) caso você não especifique o atributo `layout`.
+saiba mais sobre o [layout inferido](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified) caso você não especifique o atributo `layout`.
 [/tip]
 
-# Definir a proporção
+# Definir a proporção <a name="setting-the-aspect-ratio"></a>
 
 Para imagens responsivas, `width` e `height` não precisam corresponder à largura e altura exatas do `amp-img`. Esses valores só precisam resultar na mesma proporção.
 
@@ -190,7 +191,7 @@ Por exemplo, em vez de especificar `width="900"` e `height="675"`, você pode si
 ```
 [/example]
 
-# Configurar vários arquivos de origem para diferentes resoluções de tela
+# Configurar vários arquivos de origem para diferentes resoluções de tela <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>
 
 O atributo [`srcset`](#attributes) precisa ser usado para fornecer resoluções diferentes da mesma imagem, todas com a mesma proporção. O navegador escolherá automaticamente o arquivo mais apropriado de `srcset` com base na resolução da tela e na largura do dispositivo do usuário.
 
@@ -198,10 +199,10 @@ Por outro lado, o atributo [`media`](../../../documentation/guides-and-tutorials
 
 Consulte o guia sobre como [criar páginas AMP responsivas](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images) para ver mais detalhes.
 
-# Manter a proporção para imagens com dimensões desconhecidas
+# Manter a proporção para imagens com dimensões desconhecidas <a name="maintaining-the-aspect-ratio-for-images-with-unknown-dimensions"></a>
 
 O sistema de layout AMP requer a proporção de uma imagem antes de buscar essa imagem. No entanto, em alguns casos, você pode não saber as dimensões dela. Para exibir imagens com dimensões desconhecidas e manter as proporções, combine o layout [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) de AMP com a propriedade CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/). Para ver mais informações, consulte [Como oferecer compatibilidade com imagens de dimensões desconhecidas](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) (link em inglês) no site AMP By Example.
 
-# Validação
+# Validação <a name="validation"></a>
 
 Consulte as [regras do amp-img](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) na especificação do validador de AMP.

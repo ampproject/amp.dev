@@ -1,4 +1,5 @@
 ---
+$title: amp-mustache
 $category@: dynamic-content
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-mustache
+
 
 [Mustache.js](https://github.com/janl/mustache.js/) oluşturulmasına izin verir.
 
@@ -46,14 +47,14 @@ teaser:
 </table>
 
 
-## Sürüm notları
+## Sürüm notları <a name="version-notes"></a>
 
 | Sürüm | Açıklama |
 |-------|-----|
 | 0.2 | `<svg>` öğeleri için destek ve daha küçük paket boyutu (12,2 KB - 20,5 KB, gzip ile sıkıştırılmış).<br><br> Daha modern bir temiz HTML kitaplığına (Caja'dan DOMPurify'a) geçiş. Bu, etiket ve özellik beyaz listesi oluşturmadaki farklılıklar nedeniyle zarar veren küçük değişikliklere neden olabilir. Oluşturulan işaretlemedeki değişikliklerin işlevselliği etkilemediğinden emin olmak için üretim kanalına aktarmadan önce sayfalarınızı test etmenizi öneririz. |
 | 0.1 | İlk uygulama. |
 
-## Söz dizimi
+## Söz dizimi <a name="syntax"></a>
 
 Mustache, mantık içermeyen bir şablon söz dizimidir. Daha ayrıntılı bilgi için [Mustache.js dokümanlarına](https://github.com/janl/mustache.js/) bakın. Temel Mustache etiketlerinden bazıları şunlardır:
 
@@ -62,7 +63,7 @@ Mustache, mantık içermeyen bir şablon söz dizimidir. Daha ayrıntılı bilgi
 * {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: Ters çevrilmiş bir etiket. Bir değişkenin var olmayışını test edebilir.
 * {% raw %}`{{{unescaped}}}`{% endraw %}: Çıkış karaktersiz HTML. Sağlayabileceği işaretlemede kısıtlanmıştır (aşağıdaki "Kısıtlamalar" konusuna bakın).
 
-## Kullanım
+## Kullanım <a name="usage"></a>
 
 `amp-mustache` şablonu, [AMP Şablon Spesifikasyonu](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)'na göre tanımlanmalı ve kullanılmalıdır.
 
@@ -93,9 +94,9 @@ AMP doğrulaması yararlı dev-x ipuçları sağladığından, mümkün olan her
 
 Şablonların nasıl keşfedileceğine, ne zaman oluşturulacağına ve verilerin nasıl sağlanacağına, içeriğini oluşturmak için bu şablonu kullanan hedef AMP öğesi (ör. bir [amp-list](amp-list.md), [amp-form](amp-form.md) vb.) karar verir.
 
-## Kısıtlamalar
+## Kısıtlamalar <a name="restrictions"></a>
 
-### Doğrulama
+### Doğrulama <a name="validation"></a>
 
 Tüm AMP şablonları gibi `amp-mustache` şablonlarının da iyi biçimlendirilmiş DOM parçaları olmalıdır. Bu, diğer noktaların yanı sıra, `amp-mustache` etiketini şunlar için kullanamayacağınız anlamına gelir:
 
@@ -104,13 +105,13 @@ Tüm AMP şablonları gibi `amp-mustache` şablonlarının da iyi biçimlendiril
 
 "Üçlü mustache"ın sonucu yalnızca şu etiketlere izin verecek şekilde temizlenir: `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u`, `ul`.
 
-### Temizleme
+### Temizleme <a name="sanitization"></a>
 
 Mustache çıktısı, güvenlik nedenleriyle ve AMP'nin geçerliliğini korumak için temizlenir. Bu, belirli öğelerin ve özelliklerin haber verilmeden kaldırılmasına neden olabilir.
 
-## Güçlükler
+## Güçlükler <a name="pitfalls"></a>
 
-### İç içe yerleştirilmiş şablonlar
+### İç içe yerleştirilmiş şablonlar <a name="nested-templates"></a>
 
 AMP Doğrulaması'na göre `<template>` öğeleri, diğer `<template>` öğelerinin alt öğeleri olmamalıdır. Bu durum, `amp-list` ve `amp-form` gibi, şablonları kullanan iki bileşen iç içe yerleştirilirken ortaya çıkabilir.
 
@@ -136,7 +137,7 @@ Bu sorunu geçici olarak çözmek için `<template>` öğeleri, bileşendeki `te
 </amp-list>
 {% endraw %}[/sourcecode]
 
-### Tablolar
+### Tablolar <a name="tables"></a>
 
 AMP şablon dizelerinin `<template>` öğelerinde belirtilmesi gerektiğinden bu durum, tarayıcı ayrıştırması nedeniyle beklenmeyen davranışlara neden olabilir. Örneğin, `<table>` öğelerinin, metnin [koruyucu üst öğesi](https://www.w3.org/TR/html5/syntax.html#unexpected-markup-in-tables) olmasına neden olabilir. Aşağıdaki örnekte:
 
@@ -174,7 +175,7 @@ Geçici çözümler arasında Mustache bölümlerinin HTML yorumlarında sarmala
 </script>
 {% endraw %}[/sourcecode]
 
-### Çıkış karakterlerini alıntılama
+### Çıkış karakterlerini alıntılama <a name="quote-escaping"></a>
 
 Özellik değerlerini hesaplamak için `amp-mustache` kullanılırken çıkış karakterlerini alıntılama bir sorun olabilir. Örneğin:
 
@@ -192,7 +193,7 @@ Mustache HTML `&amp;` çıkış karakterlerini kullanacağından (ör. `&quot;` 
 
 Bunun yerine, bu değişikliğin `amp-mustache` içinde gerçekleştirilmesi için [açık bir teklif](https://github.com/ampproject/amphtml/issues/8395) vardır. Bu teklifi desteklemek isterseniz lütfen konu hakkında yorum yapın.
 
-### HTML varlıkları
+### HTML varlıkları <a name="html-entities"></a>
 
 HTML varlıkları, `<template>` öğelerinde korunmaz.
 
@@ -200,6 +201,6 @@ Kullanıcı tarafından oluşturulmuş metin içeren bir `<template>` öğesinin
 
 Geçici çözümler, {% raw %}`{{`{% endraw %} gibi dizeleri farklı karakterlerle değiştirmeyi veya bunları kullanıcı tarafından oluşturulmuş içerikten bütünüyle ayırmayı içerir.
 
-## Doğrulama
+## Doğrulama <a name="validation-1"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-mustache kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii) bakın.

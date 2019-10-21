@@ -1,4 +1,5 @@
 ---
+$title: amp-addthis
 $category@: social
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-addthis
+
 
 [AddThis](https://www.addthis.com) の埋め込みウェブサイト ツールを表示します。
 
@@ -39,15 +40,15 @@ limitations under the License.
 </table>
 
 
-## AddThis を使用する理由
+## AddThis を使用する理由 <a name="why-addthis"></a>
 
 `amp-addthis` コンポーネントは、シンプルで美しい共有ボタンを実現します。これにより、ウェブサイト ユーザーは、メッセンジャーや、WhatsApp、Facebook、Twitter、Pinterest など、200 を超えるソーシャル チャネルに簡単にコンテンツを共有することができます。
 
 AddThis は、1,500 万以上のウェブサイトで利用されている信頼できるツールであり、全世界で 20 億人以上のユニーク ユーザーが 60 以上の言語でコンテンツを共有しています。
 
-## 共有ボタン
+## 共有ボタン <a name="share-buttons"></a>
 
-### フローティング
+### フローティング <a name="floating"></a>
 
 ページの左右や上下に配置可能で、閲覧者が画面をスクロールすると、一緒に移動します。それほど強引にならずに、共有を促進する優れた方法です。
 
@@ -67,7 +68,7 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
 </amp-addthis>
 ```
 
-### インライン
+### インライン <a name="inline"></a>
 
 共有ボタンをコンテンツに統合することで、シームレスな共有機能を実現できます。
 
@@ -87,7 +88,7 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
 </amp-addthis>
 ```
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -124,7 +125,7 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
     </tr>
   </table>
 
-## 実装に関するドキュメント
+## 実装に関するドキュメント <a name="implementation-documentation"></a>
 
 1. まだ AddThis アカウントを持っていない場合は、[https://www.addthis.com/register](https://www.addthis.com/register) でアカウントを作成する必要があります。AddThis アカウントの作成は完全に無料で、包括的なウェブサイト ツールや詳細な分析レポートを利用して、サイトのソーシャル トラフィックを把握することができます。
 1. [ダッシュボード](https://addthis.com/dashboard)に移動して、共有ボタンをカスタマイズします（現在のところ、AMP がサポートしているのは、フローティング共有ボタンとインライン共有ボタンだけに限られます）。
@@ -136,11 +137,11 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
 詳細な手順については、[YouTube の動画](https://www.youtube.com/watch?v=BSkuAB4er2o)をご覧ください。
 <amp-youtube width="480" height="270" data-videoid="BSkuAB4er2o" layout="responsive"></amp-youtube>
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツール仕様の [amp-addthis ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii)をご覧ください。
 
-## プライバシー
+## プライバシー <a name="privacy"></a>
 
 [http://www.addthis.com/privacy/privacy-policy/](http://www.addthis.com/privacy/privacy-policy/)
 
@@ -158,6 +159,6 @@ AddThis ツールおよび AddThis ツールバーは、エンドユーザーが
 
 AddThis データは、該当する法律の求める範囲において、個人情報として扱われます。サイト運営者は、AddThis の利用規約に従い、エンドユーザーの同意と承認を取得し、エンドユーザーから Oracle に収集される AddThis データの規定に関して必要な通知を提供する必要があります。
 
-## サポート
+## サポート <a name="support"></a>
 
 AMP に AddThis を実装するうえで、ご質問がある場合やサポートが必要な場合は、[こちら](https://www.addthis.com/support/)からサポートチームへチケットをお送りいただくか、[help@addthis.com](mailto%3ahelp@addthis.com) までメールでお問い合わせください。

@@ -10,7 +10,7 @@ AMP HTML のスタイルとレイアウトには、通常の HTML と同じよ�
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='初めて AMP を利用するにあたっての課題など、UpperQuad における AMP プロジェクトでのサイト再設計に関する話をご覧になれます。']
 
-## ページにスタイルを追加する
+## ページにスタイルを追加する <a name="add-styles-to-a-page"></a>
 
 すべての CSS は、ドキュメントの `<head>` の `<style amp-custom>` タグ内に追加します。次の例をご覧ください。
 

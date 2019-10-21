@@ -1,6 +1,7 @@
 ---
 $title: AMP for Email Fundamentals
 $order: 1
+description: 'Everything you need to know to get started writing valid AMP Emails.'
 author: CrystalOnScript
 formats:
   - email
@@ -87,7 +88,7 @@ Additionally, it supports an optional `placeholder` child to display while the `
 </amp-anim>
 ```
 
-## Emails, with style
+## Emails, with style <a name="emails-with-style"></a>
 
 Like all email clients, AMP allows for inline `style` attributes, but also supports CSS within the `<style amp-custom>` tag inside the head of the email.
 
@@ -105,112 +106,26 @@ Like all email clients, AMP allows for inline `style` attributes, but also suppo
 ...
 </head>
 ```
+
+Like HTML emails, AMP for Email supports a limited subset of CSS selectors and properties.
+
+See [AMP for Email Supported CSS](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md)
+for a full list of CSS allowed across email clients that support AMP.
+
 [tip type="important"]
     AMP enforces a size limit of 50,000 bytes for styling.
-[/tip]    
+[/tip]
 
 ## Allowed AMP Components
 
-The dynamic, visual, and interactivity features of AMP components is what takes AMP Emails into the future of email. The AMP Email components sub-sect is divided into dynamic content and layout elements.
+The dynamic, visual, and interactivity features of AMP components is what takes AMP Emails into the future of email.
 
-### Dynamic Content
+The full [list of supported components in AMP for Email](/content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md)
+is available as part of the AMP for Email spec.
 
-<table>
-  <tr>
-   <td>ELEMENT
-   </td>
-   <td>DESCRIPTION
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>[amp-form](../../../documentation/components/reference/amp-form.md?format=email)</code>
-   </td>
-   <td>Form element. The action-xhr attribute must be used in place of the regular action attribute. Can be used in conjunction with <code>[&lt;template type="amp-mustache"&gt;](../../../documentation/components/reference/amp-mustache.md?format=email)</code> to render a response.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-selector](../../../documentation/components/reference/amp-selector.md?format=email)</code>
-   </td>
-   <td>Represents a control that presents a menu of options and lets the user choose from it.
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>[amp-bind](../../../documentation/components/reference/amp-bind.md?format=email)</code> and <code>amp-state</code>
-   </td>
-   <td>
-    Simple scripting language in AMP that allows the manipulation of a state machine for interactions between elements. Can also be used to add behavior on certain events.
-    <code>amp-state</code> is used to remotely fetch the initial state machine values.
-    <strong>Note:</strong> It is prohibited to bind to <code>[href]</code> or <code>[src]</code>. It is also prohibited to use the <code>AMP.print</code>, <code>AMP.navigateTo</code> and <code>AMP.goBack</code> actions.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-list](../../../documentation/components/reference/amp-list.md?format=email)</code>
-   </td>
-   <td>
-    Remotely fetches JSON data that will be rendered by an <code>[&lt;amp-mustache&gt;](../../../documentation/components/reference/amp-mustache.md?format=email)</code>.
-    <strong>Note:</strong> Binding to the <code>[src]</code> attribute is not allowed. Including user credentials with <code>credentials="include"</code> is also prohibited.
-   </td>
-  </tr>
-  <tr>
-   <td>
-    <code>[&lt;template type="amp-mustache"&gt;](../../../documentation/components/reference/amp-mustache.md?format=email)</code>
-   </td>
-   <td>A Mustache template markup to render the results of an <code>amp-list</code> call and the <code>&lt;div submit-success&gt;</code> and <code>&lt;div submit-error&gt;</code> of <code>amp-form</code>.
-   </td>
-  </tr>
-</table>
+## Testing in different email clients
 
-### Layout Elements
+Email clients that support AMP for Email provide their own documentation and testing tools to help you with your integration.
 
-<table>
-  <tr>
-   <td>ELEMENT
-   </td>
-   <td>DESCRIPTION
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-accordion](../../../documentation/components/reference/amp-accordion.md?format=email)</code>
-   </td>
-   <td>A UI element that facilitates showing/hiding different sections.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-carousel](../../../documentation/components/reference/amp-carousel.md?format=email)</code>
-   </td>
-   <td>A carousel UI component.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-sidebar](../../../documentation/components/reference/amp-sidebar.md?format=email)</code>
-   </td>
-   <td>A sidebar for navigational purposes.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-image-lightbox](../../../documentation/components/reference/amp-image-lightbox.md?format=email)</code>
-   </td>
-   <td>A lightbox for containing images.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-lightbox](../../../documentation/components/reference/amp-lightbox.md?format=email)</code>
-   </td>
-   <td>A lightbox for containing content.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-fit-text](../../../documentation/components/reference/amp-fit-text.md?format=email)</code>
-   </td>
-   <td>A helper component for fitting text within a certain area.
-   </td>
-  </tr>
-  <tr>
-   <td><code>[amp-timeago](../../../documentation/components/reference/amp-timeago.md?format=email)</code>
-   </td>
-   <td>Provides a convenient way of rendering timestamps.
-   </td>
-  </tr>
-</table>
+See [Testing AMP Emails](/content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md)
+for more information and links to email client-specific documentation.

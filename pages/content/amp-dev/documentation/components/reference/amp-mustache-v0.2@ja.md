@@ -1,4 +1,5 @@
 ---
+$title: amp-mustache
 $category@: dynamic-content
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-mustache
+
 
 [Mustache.js](https://github.com/janl/mustache.js/) のレンダリングを可能にします。
 
@@ -46,14 +47,14 @@ teaser:
 </table>
 
 
-## バージョン履歴
+## バージョン履歴 <a name="version-notes"></a>
 
 | バージョン | 説明 |
 |-------|-----|
 | 0.2 | `<svg>` 要素がサポートされ、バンドルサイズが縮小されました（20.5 KB から 12.2 KB へ。gzip 形式で圧縮）。最新の HTML サニタイズ ライブラリに移行しました（Caja から DOMPurify へ）。タグと属性のホワイトリストが変更されるため、マイナー変更が発生する可能性があります。生成されるマークアップの変更が機能に影響を与えないか確認するため、本番環境に進む前に、まずページをテストしておくことをおすすめします。 |
 | 0.1 | 初期実装。 |
 
-## 構文
+## 構文 <a name="syntax"></a>
 
 Mustache は、ロジックレスのテンプレート構文です。細については、[Mustache.js ドキュメント](https://github.com/janl/mustache.js/)をご覧ください。主な Mustache タグは次のとおりです。
 
@@ -62,7 +63,7 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 * {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: 逆タグ。変数の非存在をテストできます。
 * {% raw %}`{{{unescaped}}}`{% endraw %}: エスケープなしの HTML。出力できるマークアップには制限があります（下記の「制限事項」を参照）。
 
-## 使用方法
+## 使用方法 <a name="usage"></a>
 
 `amp-mustache` テンプレートは、[AMP テンプレート仕様](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)に沿って定義、使用する必要があります。
 
@@ -95,9 +96,9 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 
 テンプレートの検出方法や、レンダリングのタイミング、データの提供方法は、このテンプレートを使用してコンテンツをレンダリングするターゲット AMP 要素によってすべて決定されます（[amp-list](amp-list.md)、[amp-form](amp-form.md) など）。
 
-## 制限事項
+## 制限事項 <a name="restrictions"></a>
 
-### 検証
+### 検証 <a name="validation"></a>
 
 すべての AMP テンプレートと同様、`amp-mustache` テンプレートは、適切な形式の DOM フラグメントである必要があります。そのため、`amp-mustache` を使用して次のことを行うことはできません。
 
@@ -106,13 +107,13 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 
 「triple-mustache」の出力はサニタイズされ、使用できるタグは、`a`、`b`、`br`、`caption`、`colgroup`、`code`、`del`、`div`、`em`、`i`、`ins`、`li`、`mark`、`ol`、`p`、`q`、`s`、`small`、`span`、`strong`、`sub`、`sup`、`table`、`tbody`、`time`、`td`、`th`、`thead`、`tfoot`、`tr`、`u`、`ul` だけに限られます。
 
-### サニタイズ
+### サニタイズ <a name="sanitization"></a>
 
 セキュリティを強化し AMP 有効性を維持するため、Mustache 出力はサニタイズされます。これにより、一部の要素や属性が暗黙的に削除されることがあります。
 
-## 注意事項
+## 注意事項 <a name="pitfalls"></a>
 
-### ネスト テンプレート
+### ネスト テンプレート <a name="nested-templates"></a>
 
 AMP 検証の仕様により、`<template>` 要素を他の `<template>` 要素の子にすることはできません。この状況は、テンプレートを使用する 2 つのコンポーネントをネストするときに発生することがあります（`amp-list` と `amp-form` など）。
 
@@ -139,7 +140,7 @@ AMP 検証の仕様により、`<template>` 要素を他の `<template>` 要素�
 {% endraw %}[/sourcecode]
 
 
-### テーブル
+### テーブル <a name="tables"></a>
 
 AMP テンプレート文字列は `<template>` 要素内で指定する必要があるため、ブラウザの解析によって予期しない動作が発生する可能性があります。たとえば、`<table>` 要素が、テキストの[フォスター ペアレンティング](https://www.w3.org/TR/html5/syntax.html#unexpected-markup-in-tables)を引き起こすことがあります。次の例をご覧ください。
 
@@ -177,7 +178,7 @@ AMP テンプレート文字列は `<template>` 要素内で指定する必要�
 </script>
 {% endraw %}[/sourcecode]
 
-### 引用符のエスケープ
+### 引用符のエスケープ <a name="quote-escaping"></a>
 
 `amp-mustache` を使用して属性値を計算する場合、引用符のエスケープが問題になることがあります。たとえば、次のようになります。
 
@@ -195,7 +196,7 @@ AMP テンプレート文字列は `<template>` 要素内で指定する必要�
 
 `amp-mustache` 内でこの置換を実行できるようにするための[オープン プロポーザル](https://github.com/ampproject/amphtml/issues/8395)もあります。賛成の方は、コメントしてください。
 
-### HTML エンティティ
+### HTML エンティティ <a name="html-entities"></a>
 
 HTML エンティティは、`<template>` 要素内で保持されません。
 
@@ -203,6 +204,6 @@ HTML エンティティは、`<template>` 要素内で保持されません。
 
 対応策としては、{% raw %}`{{`{% endraw %} のような文字列を別の文字に置換する方法や、ユーザー作成コンテンツからすべて削除する方法などがあります。
 
-## 検証
+## 検証 <a name="validation-1"></a>
 
 AMP 検証ツール仕様の [amp-mustache ルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-mustache/validator-amp-mustache.protoascii)をご覧ください。

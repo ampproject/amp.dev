@@ -151,7 +151,7 @@ Primeiro, precisamos inicializar os dados de estado com os URLs de origem das im
 </amp-state>
 ```
 
-Esse elemento `[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state)`contém um objeto JSON que mapeia uma string de identificação de camisa (ou seja, um SKU) para a cor e o URL da imagem da camisa correspondente. Nesse caso, também seria possível usar uma matriz JSON, mas com um objeto, podemos fazer outras coisas legais que você verá em breve.
+Esse elemento [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) contém um objeto JSON que mapeia uma string de identificação de camisa (ou seja, um SKU) para a cor e o URL da imagem da camisa correspondente. Nesse caso, também seria possível usar uma matriz JSON, mas com um objeto, podemos fazer outras coisas legais que você verá em breve.
 
 Agora, podemos acessar o URL da imagem por meio do identificador de uma camisa. Por exemplo, `shirts['10014'].color` é avaliado como `"dark green"` (verde escuro) e `shirts['10030'].image` retorna o URL da imagem da camisa de cor `"wine"` (vinho).
 

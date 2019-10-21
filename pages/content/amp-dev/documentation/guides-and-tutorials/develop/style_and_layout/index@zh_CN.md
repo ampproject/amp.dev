@@ -11,7 +11,7 @@ AMP HTML 网页的样式和布局与普通的 HTML 网页非常类似，均采�
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='观看 UpperQuad 工作人员介绍 AMP 项目网站重新设计相关内容（包括初次使用 AMP 会遇到的难题）的视频。']
 
-## 向网页添加样式
+## 向网页添加样式 <a name="add-styles-to-a-page"></a>
 
  将所有 CSS 添加到文档标头中的 `<style amp-custom>` 标记中。例如：
 

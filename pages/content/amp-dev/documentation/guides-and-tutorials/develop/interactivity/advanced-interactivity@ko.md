@@ -151,7 +151,7 @@ selected.slide // 0으로 평가합니다.
 </amp-state>
 ```
 
-이 `[`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state)`요소에는 셔츠 식별자 문자열(예: SKU)을 해당 셔츠의 색상 및 이미지 URL에 매핑하는 JSON 객체가 포함되어 있습니다. JSON 배열은 여기에서도 작동하지만 객체를 사용하면 다른 멋진 작업을 할 수 있습니다. 이러한 작업은 곧 제공될 예정입니다.
+이 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state)요소에는 셔츠 식별자 문자열(예: SKU)을 해당 셔츠의 색상 및 이미지 URL에 매핑하는 JSON 객체가 포함되어 있습니다. JSON 배열은 여기에서도 작동하지만 객체를 사용하면 다른 멋진 작업을 할 수 있습니다. 이러한 작업은 곧 제공될 예정입니다.
 
 이제 셔츠의 식별자를 통해 이미지 URL에 액세스할 수 있습니다. 예를 들어 `shirts['10014'].color`는 `"dark green"`으로 평가되고 `shirts['10030'].image `는 `"wine"` 셔츠 색상의 이미지 URL을 반환합니다.
 

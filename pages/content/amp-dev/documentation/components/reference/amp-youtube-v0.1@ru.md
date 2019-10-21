@@ -1,4 +1,5 @@
 ---
+$title: amp-youtube
 $category@: media
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-youtube
+
 
 Показывает видео, размещенное на [YouTube](https://www.youtube.com/).
 
@@ -44,7 +45,7 @@ teaser:
   </tr>
 </table>
 
-## Пример
+## Пример <a name="example"></a>
 
 Если использовать адаптивный макет (layout="responsive") и значения ширины и высоты, указанные в примере ниже, вы получите макет для видео с соотношением сторон 16:9.
 
@@ -70,7 +71,7 @@ teaser:
   </amp-youtube>
   [/sourcecode]
 
-## Атрибуты
+## Атрибуты <a name="attributes"></a>
 
 <table>
   <tr>
@@ -129,6 +130,6 @@ teaser:
           </tr>
         </table>
 
-## Проверка
+## Проверка <a name="validation"></a>
 
 О правилах для amp-youtube читайте в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii).

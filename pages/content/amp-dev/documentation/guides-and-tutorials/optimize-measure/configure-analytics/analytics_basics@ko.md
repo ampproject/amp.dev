@@ -4,7 +4,7 @@ $title: '애널리틱스: 기초'
 
 AMP 애널리틱스의 기초에 관해 알아보세요.
 
-## amp-pixel과 amp-analytics 중 무엇을 사용해야 할까요?
+## amp-pixel과 amp-analytics 중 무엇을 사용해야 할까요? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP는 분석 및 측정용으로 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 및 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 라는 두 가지 구성요소를 제공합니다. 두 가지 옵션 모두 애널리틱스 데이터를 정의된 엔드포인트로 전송합니다.
@@ -71,7 +71,7 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 [`am
 
 페이지가 표시되면 (트리거 키워드 `visible` 을 사용하여 지정됨) 이벤트가 시작되며 `pageview` 요청이 전송됩니다. 트리거 속성은 페이지 조회수 요청이 언제 시작될지 결정합니다. [요청 및 트리거](deep_dive_analytics.md#requests-triggers--transports) 에 관해 자세히 알아보세요.
 
-## 변수 치환
+## 변수 치환 <a name="variable-substitution"></a>
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 및 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
@@ -115,7 +115,7 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 [`am
 
 중요: 변수 치환은 유연하게 조정될 수 있습니다. 서로 다른 위치에서 동일한 변수가 정의될 수 있으며, AMP 런타임에서는 [변수 치환 순서](deep_dive_analytics.md#variable-substitution-ordering) 에 나와 있는 우선순위에 따라 값이 파싱됩니다.
 
-## 사용자 식별
+## 사용자 식별 <a name="user-identification"></a>
 
 웹사이트에서는 쿠키를 사용하여  특정 사용자에 대한 정보를 브라우저에 저장합니다. 쿠키를 사용하여 사용자가 이전에 사이트에 방문했는지 알 수 있습니다. AMP 에서는 게시자의 웹사이트 또는 캐시 (Google AMP 캐시 등) 를 통해 페이지를 게재할 수 있습니다. 게시자의 웹사이트 및 캐시는 서로 다른 도메인을 사용할 가능성이 큽니다. 보안상의 이유로 브라우저에서는 다른 도메인의 쿠키를 대상으로 한 액세스를 제한할 수 있으며 실제로 제한하기도 합니다 ([여러 출처의 사용자 추적] (https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) 참조).
 

@@ -20,7 +20,7 @@
   @media (min-width: 768px) {
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: repeat(24, 1fr);
+    grid-template-columns: repeat(24, minmax(0, 1fr));
     padding: 0 30px;
   }
 }
@@ -47,7 +47,7 @@
   @media (min-width: 768px) {
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: repeat(24, 1fr);
+    grid-template-columns: repeat(24, minmax(0, 1fr));
     padding: 0;
   }
 }

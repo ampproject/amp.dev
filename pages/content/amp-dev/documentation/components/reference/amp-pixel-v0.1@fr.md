@@ -1,4 +1,5 @@
 ---
+$title: amp-pixel
 $category@: ads-analytics
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-pixel
+
 
 
 <table>
@@ -44,7 +45,7 @@ teaser:
   </tr>
 </table>
 
-## Comportement
+## Comportement <a name="behavior"></a>
 
 Le composant `amp-pixel` se comporte comme un pixel de suivi simple `img`. Il utilise une seule URL, mais fournit des variables qui peuvent être remplacées par le composant dans la chaîne d'URL lors de l'exécution de la requête. Pour plus d'informations à ce sujet, consultez la section traitant des [substitutions](#substitutions).
 
@@ -59,13 +60,13 @@ Dans cet exemple de base, le composant `amp-pixel` envoie une requête GET simpl
 Lors du traitement des URL AMP dans l'en-tête de page de provenance des requêtes d'analyse, supprimez ou ignorez le paramètre `usqp`. Ce paramètre est utilisé par Google pour déclencher des tests pour Google AMP Cache.
 [/tip]
 
-## Attributs
+## Attributs <a name="attributes"></a>
 
-##### src (obligatoire)
+##### src (obligatoire) <a name="src-required"></a>
 
 URL simple vers un point de terminaison distant qui doit utiliser le protocole `https`.
 
-##### referrerpolicy (facultatif)
+##### referrerpolicy (facultatif) <a name="referrerpolicy-optional"></a>
 
 Cet attribut est semblable à l'attribut `referrerpolicy` sur la balise `<img>`. Cependant, `no-referrer` est la seule valeur acceptée. Si `referrerpolicy=no-referrer` est spécifié, l'en-tête `referrer` est supprimé de la requête HTTP.
 
@@ -75,16 +76,16 @@ Cet attribut est semblable à l'attribut `referrerpolicy` sur la balise `<img>`.
     referrerpolicy="no-referrer"></amp-pixel>
 ```
 
-##### allow-ssr-img (facultatif)
+##### allow-ssr-img (facultatif) <a name="allow-ssr-img-optional"></a>
 
 Cet attribut est utilisé dans les créations AMP4ADS. Il indique que, dans le cadre de la transformation post-validation, un élément img peut être placé directement dans l'élément amp-pixel, ce qui permet d'envoyer la demande ping parallèlement à la récupération ou l'application de l'exécution AMP.
 Cela signifie que les macros contenues dans l'URL ne seront PAS développées. Par conséquent, n'utilisez cet attribut que si la source (src) ne contient pas de macros.
 
-##### common attributes
+##### common attributes <a name="common-attributes"></a>
 
 Cet élément inclut des [attributs communs](../../../documentation/guides-and-tutorials/learn/common_attributes.md) étendus aux composants AMP.
 
-## Substitutions
+## Substitutions <a name="substitutions"></a>
 
 Le composant `amp-pixel` autorise toutes les substitutions de variables d'URL standards.
 Pour plus d'informations, consultez le [Guide des substitutions](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md).
@@ -96,10 +97,10 @@ Dans l'exemple suivant, une requête peut être envoyée à une adresse semblabl
     layout="nodisplay"></amp-pixel>
 ```
 
-## Application d'un style
+## Application d'un style <a name="styling"></a>
 
 Aucun style ne doit être appliqué au composant `amp-pixel`.
 
-## Validation
+## Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-pixel](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dans les spécifications du validateur AMP.

@@ -4,7 +4,7 @@ $title: "Analytics: les bases"
 
 Commencez ici pour tout savoir sur les bases des analyses AMP.
 
-## Utiliser amp-pixel ou amp-analytics ?
+## Utiliser amp-pixel ou amp-analytics ? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP fournit deux composants pour répondre à vos besoins d'analyse et de mesure :
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) et
@@ -62,7 +62,7 @@ les données sur les vues de page sont envoyées à l'URL définie, accompagnée
 La variable `RANDOM` est l'une des nombreuses
 [variables de substitution de la plateforme AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 En savoir plus sur la
-[substitution des variables](analytics_basics.md#substitution-de-variables).
+[substitution des variables](analytics_basics.md#variable-substitution).
 
 Le composant [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 étant intégré,
@@ -115,9 +115,9 @@ Lorsque la page devient visible
 (tel que spécifié par l'utilisation du mot clé de déclenchement `visible`),
 un événement est déclenché et la requête `pageview` est envoyée.
 L'attribut triggers détermine à quel moment la requête pageview est déclenchée.
-En savoir plus sur les [requêtes et déclencheurs](deep_dive_analytics.md#les-attributs-requests,-triggers-et-transport).
+En savoir plus sur les [requêtes et déclencheurs](deep_dive_analytics.md#requests-triggers--transports).
 
-## Substitution de variables
+## Substitution de variables <a name="variable-substitution"></a>
 
 Tant le composant [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) que le composant
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
@@ -126,7 +126,7 @@ permettent toutes les substitutions de variable URL standard (voir
 Dans l'exemple suivant,
 la requête pageview est envoyée à l'URL,
 accompagnée de l'URL canonique du document AMP, de son titre et d'un
-[ID client](analytics_basics.md#identification-des-utilisateurs) :
+[ID client](analytics_basics.md#user-identification) :
 
 ```html
 <amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
@@ -187,9 +187,9 @@ leurs valeurs sont substituées par la plateforme.
 **Important :** La substitution des variables est flexible ;
 vous pouvez avoir les mêmes variables définies à différentes endroits,
 et l'exécution AMP analysera les valeurs dans leur ordre de priorité
-(voir [Ordonnancement de la substitution des variables](deep_dive_analytics.md#ordonnancement-de-la-substitution-des-variables)).
+(voir [Ordonnancement de la substitution des variables](deep_dive_analytics.md#variable-substitution-ordering)).
 
-## Identification des utilisateurs
+## Identification des utilisateurs <a name="user-identification"></a>
 
 Les sites Web utilisent des cookies pour stocker des informations spécifiques à un utilisateur dans le navigateur.
 Les cookies peuvent servir à indiquer qu'un utilisateur a déjà visité un site Web.

@@ -38,7 +38,7 @@ iframe 은 사용자가 제작한 자바스크립트가 필요한 콘텐츠 등 
 </amp-iframe>
 ```
 
-## 플레이스홀더 사용하기
+## 플레이스홀더 사용하기 <a name="using-placeholders"></a>
 
 '[`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) 에 속성이 'placeholder'인 요소(예: '[`amp-img`](../../../../documentation/components/reference/amp-img.md)  요소)가 포함되어 있는 경우, 문서 상단에 '[`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) 을 표시할 수 있습니다. 이러한 요소는 iframe을 표시할 준비가 될 때까지 플레이스홀더로 렌더링됩니다.
 

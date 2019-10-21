@@ -1,4 +1,5 @@
 ---
+$title: amp-auto-ads
 $category@: ads-analytics
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-auto-ads
+
 
 Inserisce in modo dinamico gli annunci in una pagina AMP utilizzando un file di configurazione gestito in remoto.
 
@@ -78,7 +79,7 @@ devono essere specificati nel tag.
   </amp-auto-ads>
 ```
 
-## Reti pubblicitarie supportate
+## Reti pubblicitarie supportate <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick (sperimentale)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -134,7 +135,7 @@ subito dopo tutti gli elementi `<P class='paragraph'>` all'interno del terzo `<D
 
 ### Definizioni dell'oggetto
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 I campi da specificare nell'oggetto di configurazione sono i seguenti:
 
@@ -215,7 +216,7 @@ I campi da specificare nell'oggetto di configurazione `placements` sono i seguen
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 I campi da specificare nell'oggetto di configurazione `anchor` sono i seguenti:
 
@@ -255,7 +256,7 @@ I campi da specificare nell'oggetto di configurazione `anchor` sono i seguenti:
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 I campi da specificare nell'oggetto di configurazione `style` sono i seguenti:
 
@@ -279,7 +280,7 @@ I campi da specificare nell'oggetto di configurazione `style` sono i seguenti:
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 I valori ENUM per il campo `pos` nell'oggetto di configurazione `placements` sono i seguenti:
 
@@ -311,7 +312,7 @@ I valori ENUM per il campo `pos` nell'oggetto di configurazione `placements` son
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 I valori ENUM per il campo `type` nell'oggetto di configurazione `placements` sono i seguenti:
 

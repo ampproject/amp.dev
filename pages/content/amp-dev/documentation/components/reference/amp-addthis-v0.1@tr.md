@@ -1,4 +1,5 @@
 ---
+$title: amp-addthis
 $category@: social
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-addthis
+
 
 Bir [AddThis](https://www.addthis.com) web sitesi araçları yerleştirmesi görüntüler.
 
@@ -39,15 +40,15 @@ Bir [AddThis](https://www.addthis.com) web sitesi araçları yerleştirmesi gör
 </table>
 
 
-## Neden AddThis?
+## Neden AddThis? <a name="why-addthis"></a>
 
 `amp-addthis` bileşeni güzel, basit paylaşım düğmeleri sağlar. Web sitesi ziyaretçilerinizin; Messenger, WhatsApp, Facebook, Twitter, Pinterest ve daha pek çok uygulama dahil 200'ü aşkın sosyal medya kanalında içerik paylaşmasını kolaylaştırın.
 
 AddThis'e, altmıştan fazla dilde, dünyanın her yerinden içerik paylaşan, 2 milyarın üzerinde benzersiz kullanıcısı olan 15.000.000'dan fazla web sitesi güvenmektedir.
 
-## Paylaşım Düğmeleri
+## Paylaşım Düğmeleri <a name="share-buttons"></a>
 
-### Kayan
+### Kayan <a name="floating"></a>
 
 Sayfanızın yanlarına, üst kısmına veya alt kısmına yerleştirilir, görünümü kaydırdıkça okuyucunuzu takip eder. Çok fazla rahatsız etmeden paylaşımı teşvik etmenin harika bir yolu.
 
@@ -68,7 +69,7 @@ Sayfanızın yanlarına, üst kısmına veya alt kısmına yerleştirilir, gör�
 </amp-addthis>
 ```
 
-### Satır içi
+### Satır içi <a name="inline"></a>
 
 Paylaşım düğmelerini, kesintisiz bir paylaşım deneyimi için içeriğinize entegre edin.
 
@@ -88,7 +89,7 @@ Paylaşım düğmelerini, kesintisiz bir paylaşım deneyimi için içeriğinize
 </amp-addthis>
 ```
 
-## Özellikler
+## Özellikler <a name="attributes"></a>
 
 <table>
   <tr>
@@ -125,7 +126,7 @@ Paylaşım düğmelerini, kesintisiz bir paylaşım deneyimi için içeriğinize
     </tr>
   </table>
 
-## Uygulama Dokümanları
+## Uygulama Dokümanları <a name="implementation-documentation"></a>
 
 1. Henüz yapmadıysanız [https://www.addthis.com/register](https://www.addthis.com/register) adresinden bir AddThis hesabı oluşturmanız gerekir. Bir AddThis hesabı oluşturmak tamamen ücretsizdir ve sitenizin sosyal trafiğini daha iyi anlamak için ayrıntılı analiz raporlarımızın yanı sıra web sitesi araçlarımızın tamamına erişmenize olanak tanır.
 1. [Kontrol panelinize](https://addthis.com/dashboard) gidin ve Paylaşım Düğmelerinizi özelleştirin (AMP şu anda yalnızca Kayan ve Satır İçi Paylaşım Düğmelerini desteklemektedir).
@@ -137,11 +138,11 @@ Hepsi bu kadar! Paylaş düğmelerini sayfanızda görmeniz gerekir!
 Adım adım talimatlar için [YouTube videomuza](https://www.youtube.com/watch?v=BSkuAB4er2o) göz atın:
 <amp-youtube width="480" height="270" data-videoid="BSkuAB4er2o" layout="responsive"></amp-youtube>
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-addthis kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) bakın.
 
-## Gizlilik
+## Gizlilik <a name="privacy"></a>
 
 [http://www.addthis.com/privacy/privacy-policy/](http://www.addthis.com/privacy/privacy-policy/)
 
@@ -159,6 +160,6 @@ AddThis Verileri aşağıdakilerden oluşabilir:
 
 AddThis Verileri, geçerli yasa kapsamında gereken ölçüde kişisel bilgi olarak değerlendirilir. Yayıncılar, AddThis Hizmet Şartları uyarınca gerekli tüm Son Kullanıcı izinlerini ve yetkilendirmelerini almalı ve Son Kullanıcılardan toplanan AddThis Verilerinin Oracle'a sağlanması için gereken bildirimleri sağlamalıdır.
 
-## Destek
+## Destek <a name="support"></a>
 
 Herhangi bir sorunuz varsa veya AMP'de AddThis uygulaması konusunda yardıma ihtiyacınız olursa lütfen [burada](https://www.addthis.com/support/) bir destek kaydı oluşturarak veya [help@addthis.com](mailto%3ahelp@addthis.com) adresine e-posta göndererek muhteşem destek ekibimizle iletişime geçin.

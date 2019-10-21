@@ -1,4 +1,5 @@
 ---
+$title: amp-youtube
 $category@: media
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-youtube
+
 
 Mostra un video di [YouTube](https://www.youtube.com/).
 
@@ -44,7 +45,7 @@ Mostra un video di [YouTube](https://www.youtube.com/).
   </tr>
 </table>
 
-## Esempio
+## Esempio <a name="example"></a>
 
 Grazie al layout adattabile, la larghezza e l'altezza dell'esempio dovrebbero produrre layout corretti per i video con proporzioni 16:9:
 
@@ -70,7 +71,7 @@ Grazie al layout adattabile, la larghezza e l'altezza dell'esempio dovrebbero pr
   </amp-youtube>
   [/sourcecode]
 
-## Attributi
+## Attributi <a name="attributes"></a>
 
 <table>
   <tr>
@@ -129,6 +130,6 @@ Grazie al layout adattabile, la larghezza e l'altezza dell'esempio dovrebbero pr
           </tr>
         </table>
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) nella specifica dello strumento di convalida AMP.

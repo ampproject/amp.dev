@@ -1,4 +1,5 @@
 ---
+$title: amp-youtube
 $category@: media
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-youtube
+
 
 Bir [YouTube](https://www.youtube.com/) videosu görüntüler.
 
@@ -46,7 +47,7 @@ Bir [YouTube](https://www.youtube.com/) videosu görüntüler.
 
 [İçindekiler]
 
-## Örnek
+## Örnek <a name="example"></a>
 
 Duyarlı düzenle, örnekteki genişlik ve yükseklik, 16:9 en boy oranlı videolar için doğru düzenler sağlamalıdır:
 
@@ -72,7 +73,7 @@ Duyarlı düzenle, örnekteki genişlik ve yükseklik, 16:9 en boy oranlı video
   </amp-youtube>
   [/sourcecode]
 
-## Özellikler
+## Özellikler <a name="attributes"></a>
 
 <table>
   <tr>
@@ -131,6 +132,6 @@ Duyarlı düzenle, örnekteki genişlik ve yükseklik, 16:9 en boy oranlı video
             </tr>
           </table>
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-youtube kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) bakın.

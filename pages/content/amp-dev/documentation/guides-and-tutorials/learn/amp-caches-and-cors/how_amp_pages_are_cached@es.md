@@ -19,7 +19,7 @@ Obtenga más información acerca de los cachés de AMP en el video de YouTube a 
 Actualmente, hay dos proveedores de AMP Cache:
 
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 AMP es un ecosistema abierto y el Proyecto AMP fomenta activamente el desarrollo de más cachés de AMP. Para obtener más información sobre la creación de cachés de AMP, consulte las [Pautas de caché de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md).
 
@@ -37,7 +37,7 @@ Si no desea almacenar su documento en caché, una opción es eliminar el atribut
 
 ## ¿Quién solicita páginas de AMP en caché?
 
-Las plataformas (como Google Search, Google News y Cloudflare) y las aplicaciones móviles acceden a las páginas de AMP almacenadas en caché. Las aplicaciones móviles pueden vincular el contenido de AMP almacenado en caché a través de la URL (consulte [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)) o mediante XHR de origen cruzado en Progressive Web Apps (obtenga más información en "[Incruste y use AMP como fuente de datos](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)").
+Las plataformas (como Google Search, Google News y Bing) y las aplicaciones móviles acceden a las páginas de AMP almacenadas en caché. Las aplicaciones móviles pueden vincular el contenido de AMP almacenado en caché a través de la URL (consulte [AMP URL API de Google](https://developers.google.com/amp/cache/use-amp-url)) o mediante XHR de origen cruzado en Progressive Web Apps (obtenga más información en "[Incruste y use AMP como fuente de datos](../../../../documentation/guides-and-tutorials/integrate/amp-in-pwa.md)").
 
 <amp-img src="/static/img/docs/platforms_accessing_cache.png"
          width="1054" height="356" layout="responsive"
@@ -50,7 +50,6 @@ Al usar el formato AMP, usted está haciendo que su contenido esté disponible p
 * **Descubrimiento de plataforma**:  las plataformas descubren su contenido de AMP a través de la etiqueta `<html ⚡>` o `<html amp>` y almacenan en caché el contenido. Por ejemplo, Google Search rastrea contenido; para cualquier página AMP identificada y válida, el contenido se agrega a Google AMP Cache.
 
 * **Solicitud de URL de caché**: las plataformas pueden solicitar específicamente una página de AMP utilizando el formato de URL de caché de AMP. La memoria caché de AMP actúa como un proxy inverso, por lo tanto, cuando la plataforma accede a la página, la página se almacena en caché automáticamente.
-    - Ejemplo Cloudflare AMP Cache URL: `https://amp.cloudflare.com/c/foo.com/amp_document.html`
     - Ejemplo Google AMP Cache URL: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 Nota: La URL de caché de AMP no es una URL de usuario, es decir, los usuarios normalmente no solicitan contenido a través de esas URL.
@@ -61,4 +60,4 @@ Nota: La URL de caché de AMP no es una URL de usuario, es decir, los usuarios n
 
 * [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
 * [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
-* [Cloudflare AMP Cache documentation](https://amp.cloudflare.com/)
+* [Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

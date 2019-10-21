@@ -123,7 +123,7 @@ Cache AMP didesain untuk:
 Saat ini, ada 2 penyedia Cache AMP:
 
 *   [AMP Cache Google](https://developers.google.com/amp/cache/)
-*   [AMP Cache Cloudflare](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Hal ini memberikan dua pilihan untuk menampilkan file AMP dalam aplikasi dengan menggunakan:
 
@@ -172,7 +172,7 @@ Berikut ini beberapa praktik terbaik umum untuk mengimplementasikan AMP Viewer:
 *   Pada penampil berbasis WebView, aktifkan cookie pihak ketiga.
 *   Setel perujuk untuk platform/aplikasi Anda.
 
-### Membagikan Konten AMP
+### Membagikan Konten AMP <a name="sharing-amp-content"></a>
 
 Jika dokumen AMP dibagikan dari dalam AMP Viewer platform, maka platform tersebut
 harus membagikan URL kanonis jika hal itu memungkinkan secara teknis. Misalnya, jika

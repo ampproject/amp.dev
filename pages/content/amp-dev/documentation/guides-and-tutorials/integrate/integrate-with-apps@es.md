@@ -108,7 +108,7 @@ Un [caché AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and
 Actualmente, hay dos proveedores de AMP Cache:
 
 *   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Cloudflare AMP Cache](https://amp.cloudflare.com/)
+*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Esto le da dos opciones para mostrar un archivo AMP en una aplicación mediante:
 
@@ -132,11 +132,11 @@ Estas son algunas de las mejores prácticas generales para implementar un AMP Vi
 
 *   Sirva la página AMP desde un caché AMP (>1s tiempo de carga más rápido).
 *   Muestra el origen del editor del artículo (por ejemplo, en un encabezado plegable).
-*   Proporcione una acción de intercambio (consulte también la sección "[Compartir contenido AMP](#compartir-contenido-amp)" a continuación).
+*   Proporcione una acción de intercambio (consulte también la sección "[Compartir contenido AMP](#sharing-amp-content)" a continuación).
 *   En los visores basados en webView, habilite las cookies de terceros.
 *   Establezca un referente para su plataforma / aplicación.
 
-### Compartir contenido AMP
+### Compartir contenido AMP <a name="sharing-amp-content"></a>
 
 Al compartir un documento AMP desde el AMP Viewer de una plataforma, la plataforma debe compartir la URL canónica cuando sea técnicamente posible. Por ejemplo, si la plataforma proporciona un botón para compartir, este botón debe compartir la URL canónica.
 

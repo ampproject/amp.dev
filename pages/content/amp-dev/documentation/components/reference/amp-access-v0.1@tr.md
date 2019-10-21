@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: AMP ödeme duvarı ve abonelik desteği sağlar.
 ---
 
-# amp-access
+
 
 AMP Access veya "AMP ödeme duvarı ve abonelik desteği", Yayıncılara, abonelik durumu, görüntüleme sayısı ve diğer faktörlere dayalı olarak bir Okuyucunun hangi içeriğe hangi kısıtlamalarla erişilebileceğini kontrol etme imkanı sağlar.
 
-# amp-access
+# amp-access <a name="amp-access"></a>
 
 
 <!--
@@ -47,7 +48,7 @@ limitations under the License.
 </tr>
 </table>
 
-## `amp-subscriptions` ilişkisi
+## `amp-subscriptions` ilişkisi <a name="relationship-to-amp-subscriptions"></a>
 
 [`amp-subscriptions`](amp-subscriptions.md) uzantısı, `amp-access` için benzer özellikler sunar. Bununla birlikte, daha özel bir Access ödeme duvarı protokolünü destekler. Bazı önemli farklılıklar şunlardır:
 
@@ -58,7 +59,7 @@ limitations under the License.
 
 İşaretlemenin standartlaştırılmasından dolayı birden çok sağlayıcı, görüntüleyiciyi desteklemekte ve görüntüleyici desteğini iyileştirmektedir. Yeni yayıncı ve ödeme duvarı sağlayıcısı uygulamalarının `amp-subscriptions` kullanması önerilir.
 
-## Çözüm
+## Çözüm <a name="solution"></a>
 
 Önerilen çözüm Yayıncının aşağıdaki kararlar ve akışlar üzerinde kontrol sahibi olmasını sağlar:
 
@@ -85,7 +86,7 @@ Temel biçiminde bu çözüm, dokümanı eksiksiz (ancak bazı bölümleri kapat
 
 AMP Access'in desteklenmesi, Yayıncının yukarıda açıklanan bileşenleri uygulamasını gerektirir. Access İçerik İşaretlemesi ve Yetkilendirme uç noktası zorunludur. Pingback uç noktası ve Giriş Sayfası isteğe bağlıdır.
 
-### AMP Okuyucu Kimliği
+### AMP Okuyucu Kimliği <a name="amp-reader-id"></a>
 
 Erişim hizmetlerine ve kullanım alanlarına yardımcı olmak için AMP Access, *Okuyucu Kimliği* kavramını kullanıma sunmuştur.
 
@@ -95,33 +96,33 @@ Okuyucu Kimliği, kullanıcı cihazında oluşturulur ve uzun ömürlü olacak �
 
 Okuyucu Kimliği, [burada](https://docs.google.com/document/d/1f7z3X2GM_ASb3ZCI_7tngglxwS6WoWi1EB3aKzdf6vo/edit#heading=h.hb9q0wpwwhuf) açıklanan ExternalCID öğesini oluşturmak için kullanılan mekanizmaya benzer şekilde oluşturulur. Örnek bir Okuyucu Kimliği şöyledir: `amp-OFsqR4pPKynymPyMmplPNMvxSTsNQob3TnK-oE3nwVT0clORaZ1rkeEz8xej-vV6`.
 
-### AMP Access ve Çerezler
+### AMP Access ve Çerezler <a name="amp-access-and-cookies"></a>
 
 Yayıncılar kendi kimlik doğrulama çerezlerini veya Kullanıcı Kimliğini ya da bu ikisinin bir kombinasyonunu kullanabilir.
 
-### Access İçerik İşaretlemesi
+### Access İçerik İşaretlemesi <a name="access-content-markup"></a>
 
 Access İçerik İşaretlemesi, Yetkilendirme uç noktasından döndürülen Yetkilendirme yanıtına göre hangi bölümlerin görünür veya gizli olacağını belirler. Özel işaretleme özellikleriyle açıklanır.
 
-### Yetkilendirme Uç Noktası
+### Yetkilendirme Uç Noktası <a name="authorization-endpoint"></a>
 
 Yetkilendirme, yayıncı tarafından sağlanan ve AMP Çalışma Zamanı veya Google AMP Önbelleği tarafından çağrılan bir uç noktadır. Kimlik bilgisi içeren bir CORS GET uç noktasıdır. Bu uç nokta, dokümanın farklı bölümlerini gizlemek veya göstermek için İçerik İşaretlemesi tarafından kullanılabilecek erişim parametrelerini döndürür.
 
-### Pingback Uç Noktası
+### Pingback Uç Noktası <a name="pingback-endpoint"></a>
 
 Pingback, yayıncı tarafından sağlanan ve AMP Çalışma Zamanı veya Google AMP Önbelleği tarafından çağrılan bir uç noktadır. Kimlik bilgisi içeren bir CORS POST uç noktasıdır. Okuyucu dokümanı görüntülemeye başladığında AMP Çalışma Zamanı, bu uç noktayı otomatik olarak çağırır. Bu uç nokta, Okuyucu Giriş Akışını başarıyla tamamladıktan sonra da çağrılır. Pingback'in ana hedeflerinden biri, Yayıncının ölçüm bilgilerini güncellemesidir.
 
 Pingback isteğe bağlıdır. `noPingback` yapılandırma özelliği `true` değerine ayarlanarak devre dışı bırakılabilir.
 
-### Giriş Sayfası ve Giriş Bağlantısı
+### Giriş Sayfası ve Giriş Bağlantısı <a name="login-page-and-login-link"></a>
 
 Giriş Sayfası, Yayıncı tarafından uygulanıp sunulur ve AMP Çalışma Zamanı tarafından çağrılır. Normalde bir tarayıcı iletişim kutusu olarak gösterilir.
 
 Giriş Sayfası, Yayıncı tarafından dokümanın herhangi bir yerine yerleştirilebilen Giriş Bağlantısına Okuyucu dokunduğunda tetiklenir.
 
-## Spesifikasyon v0.1
+## Spesifikasyon v0.1 <a name="specification-v01"></a>
 
-### Yapılandırma
+### Yapılandırma <a name="configuration"></a>
 
 Tüm uç noktalar, AMP dokümanının HEAD bölümünde bir JSP nesnesi olarak yapılandırılır:
 
@@ -146,12 +147,12 @@ Bu yapılandırmada aşağıdaki özellikler tanımlanır:
   </tr>
   <tr>
     <td class="col-fourty"><code>authorization</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>Yetkilendirme uç noktasının HTTPS URL'si.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>pingback</code></td>
-    <td><URL></td>
+    <td><code>&lt;URL&gt;</code></td>
     <td>Pingback uç noktasının HTTPS URL'si.</td>
   </tr>
   <tr>
@@ -161,17 +162,17 @@ Bu yapılandırmada aşağıdaki özellikler tanımlanır:
   </tr>
   <tr>
     <td class="col-fourty"><code>login</code></td>
-    <td class="col-twenty"><URL> veya<br><Map[string, URL]></td>
+    <td class="col-twenty"><code>&lt;URL&gt;</code> veya<br><code>&lt;Map[string, URL]&gt;</code></td>
     <td>Giriş Sayfası için HTTPS URL'si veya farklı türlerdeki giriş sayfaları için bir URL kümesi.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationFallbackResponse</code></td>
-    <td><object></td>
+    <td><code>&lt;object&gt;</code></td>
     <td>Başarısız olursa yetkilendirme yanıtının yerine kullanılacak JSON nesnesi.</td>
   </tr>
   <tr>
     <td class="col-fourty"><code>authorizationTimeout</code></td>
-    <td><number></td>
+    <td><code>&lt;number&gt;</code></td>
     <td>Sonrasında yetkilendirme isteğinin başarısız olarak kabul edileceği (milisaniye cinsinden) zaman aşımı değeri. Varsayılan 3000'dir. 3000'den büyük değerlere yalnızca geliştirme ortamında izin verilir. </td>
   </tr>
   <tr>
@@ -186,7 +187,7 @@ Bu yapılandırmada aşağıdaki özellikler tanımlanır:
   </tr>
 </table>
 
-*<URL>* değerleri, HTTPS URL'lerini değişiklik değişkenleriyle belirtir. Değişiklik değişkenleri, aşağıdaki [Access URL'si Değişkenleri](#access-url-variables) bölümünde daha ayrıntılı olarak ele alınmaktadır.
+*`<URL>`* değerleri, HTTPS URL'lerini değişiklik değişkenleriyle belirtir. Değişiklik değişkenleri, aşağıdaki [Access URL'si Değişkenleri](#access-url-variables) bölümünde daha ayrıntılı olarak ele alınmaktadır.
 
 Bir örnek AMP Access yapılandırmasını burada görebilirsiniz:
 
@@ -206,7 +207,7 @@ Bir örnek AMP Access yapılandırmasını burada görebilirsiniz:
 
 ```
 
-#### Birden fazla erişim sağlayıcı
+#### Birden fazla erişim sağlayıcı <a name="multiple-access-providers"></a>
 
 Tek bir nesne yerine bir dizi kullanan ve her giriş için bir `namespace` sağlayan birden fazla erişim sağlayıcı belirtmek mümkündür.
 
@@ -224,7 +225,7 @@ Tek bir nesne yerine bir dizi kullanan ve her giriş için bir `namespace` sağl
 </script>
 ```
 
-### Access URL'si Değişkenleri
+### Access URL'si Değişkenleri <a name="access-url-variables"></a>
 
 Çeşitli uç noktalar için URL'leri yapılandırırken, Yayıncı değişiklik değişkenlerini kullanabilir. Bu değişkenlerin tam listesi, [AMP Var Spesifikasyonu](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)'nda tanımlanmaktadır. Buna ek olarak, bu spesifikasyon `READER_ID` ve `AUTHDATA` gibi erişime özel birkaç değişken de ekler. En alakalı değişkenlerden bazıları aşağıdaki tabloda açıklanmıştır:
 
@@ -282,7 +283,7 @@ https://pub.com/access?
 
 AUTHDATA değişkeni, Pingback ve Giriş URL'leri için kullanılabilir. Değişken, herhangi bir alanın yetkilendirme yanıtında bir URL parametresi olarak geçirilmesine olanak tanır. Ör. `AUTHDATA(isSubscriber)`. `AUTHDATA(other.isSubscriber)` gibi iç içe yerleştirilmiş ifadelere de izin verilir. Ad alanları kullanılıyorsa bunlar alanın önüne eklenebilir; örneğin, `AUTHDATA(anamespace.afield)`.
 
-### Access İçerik İşaretlemesi
+### Access İçerik İşaretlemesi <a name="access-content-markup-1"></a>
 
 Access İçerik İşaretlemesi, hangi bölümlerin görünür veya gizli olduğunu açıklar. İki AMP özelliğinden oluşur: herhangi bir HTML öğesine yerleştirilebilen `amp-access` ve `amp-access-hide`.
 
@@ -346,7 +347,7 @@ Son olarak burada, premium abonelere ek içerik gösteren bir örnek bulunmaktad
 </section>
 ```
 
-### Yetkilendirme Uç Noktası
+### Yetkilendirme Uç Noktası <a name="authorization-endpoint-1"></a>
 
 Yetkilendirme, [AMP Access Yapılandırması](#configuration) bölümündeki `authorization` özelliği aracılığıyla yapılandırılır. Kimlik bilgisi içeren bir CORS GET uç noktasıdır. Bu isteğin nasıl güvenli hale getirileceğini öğrenmek için [CORS Kaynak Güvenliği](#cors-origin-security) konusuna bakın.
 
@@ -415,7 +416,7 @@ AMP Çalışma Zamanı yetkilendirme akışı sırasında şu CSS sınıfların�
 
 *server* seçeneğinde, Yetkilendirme uç noktasına yapılan çağrı, basit bir HTTPS uç noktası olarak Google AMP Önbelleği tarafından yapılır. Bu, Yayıncı çerezlerinin bu durumda teslim edilemeyeceği anlamına gelir.
 
-### Pingback Uç Noktası
+### Pingback Uç Noktası <a name="pingback-endpoint-1"></a>
 
 Pingback, [AMP Access Yapılandırması](#configuration) bölümündeki `pingback` özelliği aracılığıyla yapılandırılır. Kimlik bilgisi içeren bir CORS POST uç noktasıdır. Bu isteğin nasıl güvenli hale getirileceğini öğrenmek için [CORS Kaynak Güvenliği](#cors-origin-security) konusuna bakın.
 
@@ -438,7 +439,7 @@ rid=READER_ID
 &url=SOURCE_URL
 ```
 
-### Giriş Sayfası
+### Giriş Sayfası <a name="login-page"></a>
 
 Giriş Sayfalarının URL'si, `AMP Access Yapılandırması` bölümündeki [login](#configuration) özelliği aracılığıyla yapılandırılır.
 
@@ -478,7 +479,7 @@ RETURN_URL#success=true|false
 
 `success=true` sinyali döndürülürse AMP Çalışma Zamanı, dokümanın durumunu güncellemek ve yeni erişim profiliyle “görüntüleme”yi bildirmek için Yetkilendirme ve Pingback uç noktalarına yapılan çağrıları tekrar eder.
 
-#### Giriş Bağlantısı
+#### Giriş Bağlantısı <a name="login-link"></a>
 
 Yayıncı, Giriş Bağlantısını dokümanın içeriğinde herhangi bir yere yerleştirebilir.
 
@@ -498,15 +499,15 @@ Ad alanları kullanıldığında biçim `tap:amp-access.login-{namespace}` veya 
 
 AMP, giriş yapma ve abone olma arasında bir ayrım yapmaz. Bu ayrım, birden çok Giriş URL'si/bağlantısı kullanan Yayıncı tarafından veya Yayıncı tarafında yapılandırılabilir.
 
-## *amp-analytics* ile entegrasyon
+## *amp-analytics* ile entegrasyon <a name="integration-with-amp-analytics"></a>
 
 *amp-analytics* ile entegrasyon, [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) dosyasında belgelenmiştir.
 
-## CORS Kaynak Güvenliği
+## CORS Kaynak Güvenliği <a name="cors-origin-security"></a>
 
 Yetkilendirme ve Pingback uç noktaları, CORS uç noktalarıdır ve [AMP CORS Güvenlik Spesifikasyonu](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)'nda açıklanan güvenlik protokolünü uygulamalıdır.
 
-## Ölçme
+## Ölçme <a name="metering"></a>
 
 Ölçme, Okuyucuya belirli bir dönemde bazı doküman görünümlerinin ücretsiz premium içeriğinin gösterildiği sistemdir. Belirlenen kotaya ulaşıldığında, Okuyucuya ödeme duvarının etkin hale geldiği ve premium içerik yerine, üst düzeye geçiş mesajı ve kayıt/giriş bağlantısıyla kısmi içerik gösterilir. Örneğin, ölçme, “Okuyucu her ay ücretsiz olarak 10 makale okuyabilir” şeklinde tanımlanabilir.
 
@@ -516,7 +517,7 @@ AMP Access, ölçülen erişimi uygulamak için aşağıdaki olanakları sağlar
 2. “Okuma sayısı” yalnızca Pingback uç noktasında güncellenebilir.
 3. Yalnızca benzersiz dokümanlar kotaya dahil edilebilir. Diğer bir deyişle, aynı dokümanın on kez yenilenmesi tek bir görüntüleme sayılır. Bu amaçla, Yetkilendirme ve Pingback uç noktaları `SOURCE_URL` veya benzer URL değişkenlerini ekleyebilir. [Access URL'si Değişkenleri](#access-url-variables) konusuna bakın.
 
-## İlk Tıklama Ücretsiz
+## İlk Tıklama Ücretsiz <a name="first-click-free"></a>
 
 Google'ın İlk Tıklama Ücretsiz (veya FCF) politikasını [burada](https://support.google.com/news/publisher/answer/40543) bulabilirsiniz. Daha ayrıntılı açıklanmış en yeni güncellemesi de [burada](https://googlewebmastercentral.blogspot.com/2015/09/first-click-free-update.html) bulunmaktadır.
 
@@ -524,7 +525,7 @@ FCF'yi uygulamak için Yayıncının (1) her görüntüleme için yönlendirme h
 
 Her iki adım da AMP Access spesifikasyonunda ele alınmaktadır. Yönlendirme, [Access URL'si Değişkenleri](#access-url-variables) konusunda açıklandığı şekilde `DOCUMENT_REFERRER` URL'si değişikliği kullanılarak Yetkilendirme ve Pingback URL'lerine eklenebilir. Görüntüleme sayımı, sunucu tarafında Pingback uç noktası kullanılarak yapılabilir. Bu, [Ölçme](#metering) konusunda açıklanan ölçme uygulamasına çok benzer.
 
-## Giriş Akışı
+## Giriş Akışı <a name="login-flow"></a>
 
 AMP, Giriş İletişim Kutusunu bir 1. taraf penceresi, pop-up veya sekme olarak başlatır. Mümkün olduğunda, AMP Görüntüleyicileri, üst düzey tarayıcı API'lerinden yararlanabilmek için Giriş İletişim Kutusunu tarayıcı bağlamında başlatmayı denemelidir.
 
@@ -541,7 +542,7 @@ Yalnızca 2-5. adımların Yayıncı tarafından işlenmesi gerekir: Yayıncı y
 
 Her zamanki gibi Okuyucu Kimliği, Giriş Sayfasına yapılan çağrıya dahil edilmelidir ve kimlik eşleme için Yayıncı tarafından kullanılabilir. 1. taraf penceresi olarak, Yayıncı kendi çerezlerini de alır ve bunları ayarlayabilir. Okuyucunun Yayıncı tarafında önceden oturum açmış olduğu ortaya çıkarsa yayıncı hemen `success=true` yanıtıyla "Dönüş URL'si"ne yönlendirme yapar.
 
-## AMP Sözlüğü
+## AMP Sözlüğü <a name="amp-glossary"></a>
 
 * **AMP Dokümanı**: AMP biçimine uygun ve AMP Doğrulayıcı tarafından doğrulanan HTML dokümanı. AMP Dokümanları, Google AMP Önbelleği tarafından önbelleğe alınabilir.
 * **AMP Doğrulayıcı**: Bir HTML dokümanının statik analizini gerçekleştiren ve dokümanın AMP biçimine uyup uymamasına bağlı olarak başarı veya hata sonucu döndüren bilgisayar programı.
@@ -553,7 +554,7 @@ Her zamanki gibi Okuyucu Kimliği, Giriş Sayfasına yapılan çağrıya dahil e
 * **Okuyucu** - AMP dokümanlarını görüntüleyen gerçek kişi.
 * **AMP Ön Oluşturması**: AMP Görüntüleyicileri, gizli bir dokümanı gösterilmeden önce oluşturan ön oluşturma işleminden yararlanabilir. Bu, önemli bir performans artışı sağlar. Ancak, Okuyucu gerçekte dokümanı hiçbir zaman görmeyebileceğinden dokümanın önceden oluşturulmasının bir görüntüleme sayılmadığının dikkate alınması önemlidir.
 
-## Düzeltmeler
+## Düzeltmeler <a name="revisions"></a>
 
 * 2 Eylül 2016: “noPingback” yapılandırma özelliği ve isteğe bağlı Pingback.
 * 3 Mart 2016: Giriş yaptıktan sonra Pingback'i yeniden gönderme (v0.5).
@@ -565,7 +566,7 @@ Her zamanki gibi Okuyucu Kimliği, Giriş Sayfasına yapılan çağrıya dahil e
 * 3 Şubat 2016: "Kaynak kökeni" güvenliğiyle ilgili spesifikasyon [CORS Kaynak güvenliği](#cors-origin-security) bölümüne eklendi.
 * 1 Şubat 2016: Giriş Sayfası için "return" sorgu parametresi, RETURN_URL URL değişikliği kullanılarak özelleştirilebilir.
 
-## Ek A: “amp-access” ifadesi dil bilgisi
+## Ek A: “amp-access” ifadesi dil bilgisi <a name="appendix-a-amp-access-expression-grammar"></a>
 
 En yeni BNF dilbilgisi, [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) dosyasında mevcuttur.
 
@@ -601,10 +602,10 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 `amp-access` ifadelerinin AMP Çalışma Zamanı ve Google AMP Önbelleği tarafından değerlendirildiğine dikkat edin. Bu, Yayıncının uygulaması gereken spesifikasyonun bir parçası DEĞİLDİR. Burada yalnızca bilgilendirme amaçlı olarak sağlanmıştır.
 
-## Ayrıntılı Tartışma
+## Ayrıntılı Tartışma <a name="detailed-discussion"></a>
 
 Bu bölümde, amp-access spesifikasyonunun altında yatan tasarımın ayrıntılı bir açıklaması sağlanacak ve tasarım seçenekleri açıklanacaktır. Çok yakında.
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-access kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii) bakın.

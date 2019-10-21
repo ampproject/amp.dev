@@ -1,4 +1,5 @@
 ---
+$title: amp-auto-ads
 $category@: ads-analytics
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-auto-ads
+
 
 リモートで提供される設定ファイルを使用して、AMP ページに広告を動的に挿入します。
 
@@ -72,7 +73,7 @@ limitations under the License.
   </amp-auto-ads>
 ```
 
-## サポートされている広告ネットワーク
+## サポートされている広告ネットワーク <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick（試験運用版）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -127,7 +128,7 @@ limitations under the License.
 
 ### オブジェクトの定義
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 設定オブジェクトで指定するフィールドは次のとおりです。
 
@@ -195,7 +196,7 @@ limitations under the License.
   <tr>
     <td><code>attributes</code></td>
     <td>オブジェクト<文字列, 文字列></td>
-    <td>属性名から、このプレースメントを使用して挿入されたすべての <code><amp-ad></code> 要素に適用する属性の値へのマッピングを指定するオプション<em></em> フィールド。ここで指定した属性により、親の <code>ConfigObj</code> でも指定されている同じ名前の属性がすべてオーバーライドされます。以下の属性名のみを指定できます。<ul>
+    <td>属性名から、このプレースメントを使用して挿入されたすべての <code>&lt;amp-ad&gt;</code> 要素に適用する属性の値へのマッピングを指定するオプション<em></em> フィールド。ここで指定した属性により、親の <code>ConfigObj</code> でも指定されている同じ名前の属性がすべてオーバーライドされます。以下の属性名のみを指定できます。<ul>
       <li>type</li>
       <li>layout</li>
       <li>data-&ast;（任意のデータ属性）</li>
@@ -204,7 +205,7 @@ limitations under the License.
 </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 `anchor` 設定オブジェクトで指定するフィールドは次のとおりです。
 
@@ -244,7 +245,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 `style` 設定オブジェクトで指定するフィールドは次のとおりです。
 
@@ -268,7 +269,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 `placements` 設定オブジェクトの `pos` フィールド用の ENUM 値は次のとおりです。
 
@@ -300,7 +301,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 `placements` 設定オブジェクトの `type` フィールド用の ENUM 値は次のとおりです。
 

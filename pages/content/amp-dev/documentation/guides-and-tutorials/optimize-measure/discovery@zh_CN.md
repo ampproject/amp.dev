@@ -32,7 +32,7 @@ $title: 使您的网页可被轻松发现
 要详细了解 Google 如何发现 AMP 网页，请参阅[针对 AMP 网页的 Google 搜索指南](https://support.google.com/webmasters/answer/6340290)。
 [/tip]
 
-## 通过额外的元数据与第三方平台集成
+## 通过额外的元数据与第三方平台集成 <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 有时候，第三方网站（嵌入您的 AMP 网页或内含转到该网页的链接）除了需要知道您的网页是 AMP 网页之外，还需要了解更多信息。平台可能会针对您的网页询问以下问题：“网页是新闻报道吗？”、“是视频吗？”，或者“有屏幕截图和简短说明吗？”。
 

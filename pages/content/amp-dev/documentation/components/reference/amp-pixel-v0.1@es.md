@@ -1,4 +1,5 @@
 ---
+$title: amp-pixel
 $category@: ads-analytics
 formats:
 - websites
@@ -25,7 +26,7 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-# amp-pixel
+
 
 
 <table>
@@ -43,7 +44,7 @@ teaser:
   </tr>
 </table>
 
-## Comportamiento
+## Comportamiento <a name="behavior"></a>
 
 El componente `amp-pixel` se comporta como un simple píxel de seguimiento `img`. Solo se necesita una URL, pero proporciona variables que puede sustituir el componente de la cadena de URL al hacer la solicitud. Para obtener más información, consulta la sección [Sustituciones](#substitutions).
 
@@ -58,13 +59,13 @@ En este ejemplo básico, `amp-pixel` envía una solicitud GET simple a la URL es
 Al procesar URL de AMP en el encabezado de URL referente de las solicitudes de analíticas, elimina o ignora el parámetro `usqp`. Google utiliza este parámetro para activar experimentos de Google AMP Cache.
 [/tip]
 
-## Atributos
+## Atributos <a name="attributes"></a>
 
-##### src (obligatorio)
+##### src (obligatorio) <a name="src-required"></a>
 
 URL que dirige a un punto de conexión remoto; debe comenzar por el protocolo `https`.
 
-##### referrerpolicy (opcional)
+##### referrerpolicy (opcional) <a name="referrerpolicy-optional"></a>
 
 Es similar al atributo `referrerpolicy` de `<img>`, pero el único valor aceptado en este caso es `no-referrer`. Si se define `referrerpolicy=no-referrer`, el encabezado `referrer` se elimina de la solicitud HTTP.
 
@@ -74,16 +75,16 @@ Es similar al atributo `referrerpolicy` de `<img>`, pero el único valor aceptad
     referrerpolicy="no-referrer"></amp-pixel>
 ```
 
-##### allow-ssr-img (opcional)
+##### allow-ssr-img (opcional) <a name="allow-ssr-img-optional"></a>
 
 Este atributo se utiliza en las creatividades AMP4ADS, e indica que, como parte de la transformación posterior a la validación, puede insertarse un elemento img dentro del elemento amp-pixel. Esto permite que se envíe el ping en paralelo a la ejecución o recuperación del tiempo de ejecución de AMP.
 Ten en cuenta que, como consecuencia, no se expandirán las macros que contenga la URL, así que usa este atributo solo si no están presentes en el archivo src.
 
-##### atributos comunes
+##### atributos comunes <a name="common-attributes"></a>
 
 Este elemento incluye [atributos comunes](../../../documentation/guides-and-tutorials/learn/common_attributes.md) que se aplican a los componentes de AMP.
 
-## Sustituciones
+## Sustituciones <a name="substitutions"></a>
 
 El componente `amp-pixel` admite todas las sustituciones estándar de variables de URL.
 Para obtener más información, consulta la [guía de sustituciones](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md).
@@ -95,10 +96,10 @@ En el siguiente ejemplo, se puede hacer una solicitud a algo similar a `https://
     layout="nodisplay"></amp-pixel>
 ```
 
-## Estilo
+## Estilo <a name="styling"></a>
 
 No se debe aplicar ningún estilo a `amp-pixel`.
 
-## Validación
+## Validación <a name="validation"></a>
 
 Consulta las [reglas de amp-pixel](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) en la especificación de la herramienta de validación de AMP.

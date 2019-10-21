@@ -1,4 +1,5 @@
 ---
+$title: amp-carousel
 $category@: layout
 formats:
 - websites
@@ -24,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-carousel
+
 
 Общая карусель, которая предназначена для показа похожих материалов вдоль горизонтальной оси и отличается гибкостью и эффективностью.
 
@@ -50,7 +51,7 @@ limitations under the License.
     </tr>
   </table>
 
-# Принципы работы
+# Принципы работы <a name="behavior"></a>
 
 Каждый непосредственный дочерний элемент компонента `amp-carousel` представляет собой элемент карусели. У каждого из этих узлов также могут иметь дочерние элементы HTML.
 
@@ -75,7 +76,7 @@ limitations under the License.
 ```
 [/example]
 
-# Переход к нужному слайду
+# Переход к нужному слайду <a name="advancing-to-a-specific-slide"></a>
 
 Если в качестве метод для атрибута `on` в элементе задать `tap:carousel-id.goToSlide(index=N)`, при нажатии пользователя в карусели с идентификатором carousel-id будет выполнен переход к слайду с порядковым значением index=N (значение первого слайда – index=0, второго – index=1 и т. д.).
 
@@ -127,7 +128,7 @@ limitations under the License.
 ```
 [/example]
 
-# Атрибуты
+# Атрибуты <a name="attributes"></a>
 
 <table>
   <tr>
@@ -215,7 +216,7 @@ limitations under the License.
           </tr>
         </table>
 
-# Поддержка стилей
+# Поддержка стилей <a name="styling"></a>
 
 * Настраивать стиль элемента `amp-carousel` можно с помощью селектора этого элемента.
 * Для таргетинга элементов карусели можно использовать селектор класса `.amp-carousel-slide`.
@@ -240,6 +241,6 @@ limitations under the License.
 }
 ```
 
-# Валидация
+# Валидация <a name="validation"></a>
 
 С правилами для компонента amp-carousel можно ознакомиться в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii).

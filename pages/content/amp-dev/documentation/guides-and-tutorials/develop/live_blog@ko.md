@@ -39,13 +39,13 @@ $title: 라이브 블로그 만들기
 
 라이브 블로그가 성장해 감에 따라 페이지 길이가 너무 길어질 수 있습니다. `data-max-items-per-page` 속성을 사용하여 라이브 블로그에 추가될 수 있는 항목의 수를 지정하세요. 업데이트 이후 항목 수가 `data-max-items-per-page`를 초과하면 항목 수를 초과하는 가장 오래된 업데이트 순으로 삭제됩니다. 예를 들어 페이지에 있는 항목이 9개이고 `data-max-items-per-page`가 10으로 설정되어 있는데 새 항목 3개가 최신 업데이트에 추가되면 최신 업데이트가 있는 페이지에서 가장 오래된 항목 2개가 삭제됩니다.
 
-`[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)  모든 블로그 게시물은 `<div items></div>`의 하위 항목이어야 합니다. 각 게시물을 항목으로 참조하면 모든 항목에는 고유 `id`와 `data-sort-time`이 있어야 합니다.
+[`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)  모든 블로그 게시물은 `<div items></div>`의 하위 항목이어야 합니다. 각 게시물을 항목으로 참조하면 모든 항목에는 고유 `id`와 `data-sort-time`이 있어야 합니다.
 
 ## 구현 세부정보
 
 이제 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소에 익숙해졌으므로 더 복잡한 라이브 블로그를 구현하는 방법을 알아보겠습니다. 페이지 매기기 구현 방법 및 딥 링크 작동 방식을 읽어 보세요.
 
-### 페이지 매기기
+### 페이지 매기기 <a name="pagination"></a>
 
 긴 블로그는 페이지 매기기를 사용하여 페이지에 표시할 블로그 항목의 수를 제한함으로써 성능을 개선할 수 있습니다. 페이지 매기기를 구현하려면 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소에 `<div pagination></div>`를 추가한 다음 페이지 매기기에 필요한 마크업(예: 페이지 번호, 다음 및 이전 페이지 링크)을 삽입합니다.
 
@@ -76,7 +76,7 @@ $title: 라이브 블로그 만들기
 
 호스팅된 페이지에 사용 중지된 속성을 추가하여 폴링 메커니즘을 방지할 수 있습니다. 라이브 블로그 샘플에서는 서버 측 템플릿으로 속성 추가 동작을 실행했습니다. 요청된 페이지가 첫 번째 페이지가 아니면 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 구성요소에 사용 중지됨 속성을 추가합니다.
 
-### 딥 링크
+### 딥 링크 <a name="deeplinking"></a>
 
 블로그 게시물을 게시하면 게시물로 딥 링크를 실행하여 공유 같은 기능을 사용할 수 있어야 합니다. [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)를 사용하면 블로그 항목의 `id`를 사용하여 딥 링크를 실행할 수 있습니다. 예를 들어 [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3)를 통해 ID가 `post3`인 블로그 게시물로 바로 이동할 수 있습니다.
 

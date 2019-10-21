@@ -1,4 +1,5 @@
 ---
+$title: amp-access-laterpay
 $category@: dynamic-content
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay
+
 
 可让发布商轻松集成 [LaterPay](https://www.laterpay.net) 微支付平台。`amp-access-laterpay` 基于 [AMP Access](amp-access.md)，而且必须使用该组件。
 
@@ -50,7 +51,7 @@ limitations under the License.
 </table>
 
 
-## 行为
+## 行为 <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net) 是一个微支付平台，用户只需点击两次即可购买任何在线内容，并立即获得访问权限，无需预先注册，也无需提供个人数据或付款。仅当用户在各网站的购物总额达到 5 美元或 5 欧元时，他们才需要付款。内容提供商可以销售单项商品或限时访问权限，以便用户按固定费率或按规定的时间访问内容。
 
@@ -72,7 +73,7 @@ limitations under the License.
 
 该组件还依赖于 [Access Content Markup](amp-access.md#access-content-markup) 来显示和隐藏内容。
 
-## 配置
+## 配置 <a name="configuration"></a>
 
 配置与 AMP Access 类似，但不需要授权、pingback 和登录链接。
 
@@ -144,7 +145,7 @@ limitations under the License.
         </tr>
       </table>
 
-## 使用 Access Content Markup 以及显示购买列表
+## 使用 Access Content Markup 以及显示购买列表 <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 
@@ -167,7 +168,7 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 
 ```
 
-## 样式设置
+## 样式设置 <a name="styling"></a>
 
 系统会对生成的标记中的一些元素应用多个类。可以通过 CSS 元素选择器明确引用未应用类的元素。
 
@@ -211,7 +212,7 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 
 ```
 
-## 本地化
+## 本地化 <a name="localization"></a>
 
 对话框中针对购买选项显示的文字将由发布商在 LaterPay Connector 界面中指定。
 
@@ -272,13 +273,13 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
   </tr>
 </table>
 
-## 分析
+## 分析 <a name="analytics"></a>
 
 由于 `amp-access-laterpay` 基于 `amp-access`，因此它支持 `amp-access` 发送的所有[分析事件](amp-access.md#integration-with-amp-analytics)。
 
 如果您想通过更完整的示例来了解这在实践中会是什么样子，请参阅 [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) 中的示例，它们均配置为发送这些分析事件。
 
-## 结合使用 AMP Access LaterPay 和 AMP Access
+## 结合使用 AMP Access LaterPay 和 AMP Access <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 如果您已有订阅系统，且打算仅将 LaterPay 用于单个文章销售，则可以在同一网页中同时使用两种销售方法，即同时使用 AMP Access 和 AMP Access LaterPay。
 
@@ -337,13 +338,13 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 
 如需查看更完整的示例，请访问 [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html)
 
-## 相关文档
+## 相关文档 <a name="related-documentation"></a>
 
 * [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay：我们如何进行微支付](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - 与 AMP Access LaterPay 类似，但适用于非 AMP 网页。
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-access-laterpay 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii)。
