@@ -78,6 +78,7 @@ async function importWorkingGroups() {
 
     await writeFileAsync(`${WG_DIRECTORY_PATH}/${name}.yaml`, yaml.dump({
       '$title': `Working Group: ${meta.title}`,
+      '$titles': {'navigation': 'Working Groups'},
       'html_url': wg.html_url,
       'name': name,
       'full_name': meta.title,
