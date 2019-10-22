@@ -32,7 +32,12 @@
     {% for format in formats %}
     [% if format != '{{ format }}' %]
     {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
-    <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }}" href="{{ landing_page.url.path }}?format={{ format }}">
+    {% if format in doc.formats %}
+      {% set format_target_url = doc.url.path %}
+    {% else %}
+      {% set format_target_url = landing_page.url.path %}
+    {% endif %}
+    <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }}" href="{{ format_target_url }}?format={{ format }}">
       <span class="ap-a-ico">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
       </span>
