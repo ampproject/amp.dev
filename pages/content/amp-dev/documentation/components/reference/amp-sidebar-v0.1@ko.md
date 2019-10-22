@@ -10,8 +10,6 @@ toc: true
 $title: amp-sidebar
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -27,8 +25,6 @@ $title: amp-sidebar
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -58,21 +54,21 @@ $title: amp-sidebar
 
 ## 동작 <a name="behavior"></a>
 
-* `<amp-sidebar>`는 `<body>`의 직속 하위 요소여야 합니다.
-* 사이드바는 페이지의 왼쪽 또는 오른쪽에만 표시될 수 있습니다.
-* `<amp-sidebar>`에는 올바른 HTML 요소(AMP에서 지원)가 포함될 수 있습니다.
-* `<amp-sidebar>`에는 다음 AMP 요소가 포함될 수 있습니다.
-    * `<amp-accordion>`
-    * `<amp-img>`
-    * `<amp-fit-text>`
-    * `<amp-list>`
-    * `<amp-live-list>`
-    * `<amp-social-share>`</li>
-* 사이드바의 최대 높이는 100vh입니다. 높이가 100vh를 초과하면 세로 스크롤 막대가 표시됩니다. CSS에서 기본 높이는 100vh로 설정되고 CSS에서 재정의할 수 있습니다.
-* 사이드바의 너비는 CSS를 사용하여 설정하고 조정할 수 있습니다(최소 너비는 45픽셀).
-* 터치 확대/축소는 `amp-sidebar`에서 사용되지 않으며 사이드바가 열려 있으면 마스킹됩니다.
+- `<amp-sidebar>`는 `<body>`의 직속 하위 요소여야 합니다.
+- 사이드바는 페이지의 왼쪽 또는 오른쪽에만 표시될 수 있습니다.
+- `<amp-sidebar>`에는 올바른 HTML 요소(AMP에서 지원)가 포함될 수 있습니다.
+- `<amp-sidebar>`에는 다음 AMP 요소가 포함될 수 있습니다.
+  - `<amp-accordion>`
+  - `<amp-img>`
+  - `<amp-fit-text>`
+  - `<amp-list>`
+  - `<amp-live-list>`
+  - `<amp-social-share>`</li>
+- 사이드바의 최대 높이는 100vh입니다. 높이가 100vh를 초과하면 세로 스크롤 막대가 표시됩니다. CSS에서 기본 높이는 100vh로 설정되고 CSS에서 재정의할 수 있습니다.
+- 사이드바의 너비는 CSS를 사용하여 설정하고 조정할 수 있습니다(최소 너비는 45픽셀).
+- 터치 확대/축소는 `amp-sidebar`에서 사용되지 않으며 사이드바가 열려 있으면 마스킹됩니다.
 
-*예:*
+_예:_
 
 다음 예에서는 이동 항목을 포함하는 데 `amp-sidebar`를 사용합니다. 그러나 두 번째와 네 번째 항목인, Nav Item 2와 Nav Item 4는 페이지에 있는 요소 ID에 할당됩니다. [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 속성을 사용하면 요소 ID와 `scrollTo`를 사용하여 요소까지 원활하게 스크롤할 수 있습니다.
 
@@ -116,13 +112,13 @@ $title: amp-sidebar
 
 또는 키보드의 Esc 키를 눌러도 사이드바가 닫힙니다.
 
-*예:*
+_예:_
 
 ```html
-<button class="hamburger" on='tap:sidebar1.toggle'></button>
-<button on='tap:sidebar1'>Open</button>
-<button on='tap:sidebar1.open'>Open</button>
-<button on='tap:sidebar1.close'>x</button>
+<button class="hamburger" on="tap:sidebar1.toggle"></button>
+<button on="tap:sidebar1">Open</button>
+<button on="tap:sidebar1.open">Open</button>
+<button on="tap:sidebar1.close">x</button>
 ```
 
 ### 툴바 <a name="toolbar"></a>
@@ -131,14 +127,14 @@ $title: amp-sidebar
 
 #### 동작 <a name="behavior-1"></a>
 
-* 사이드바에서는 `toolbar` 속성과 `toolbar-target` 속성이 있는 nav 요소를 추가하여 툴바를 구현할 수 있습니다.
-* nav 요소는 `<amp-sidebar>`의 하위 요소이어야 하며 `<nav toolbar="(media-query)" toolbar-target="elementID">` 형식을 따라야 합니다.
-    * 예를 들어 툴바의 올바른 사용법은 다음과 같습니다. `<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">`.</li>
-* 툴바 속성을 포함하는 nav에는 `<li>` 요소를 포함하는 단일 `<ul>` 요소만 포함해야 합니다.
-    * `<li>` 요소에는 올바른 HTML 요소(AMP에서 지원됨) 또는 `<amp-sidebar>`에서 지원하는 AMP 요소가 포함될 수 있습니다.</li>
-* 툴바 동작은 `toolbar` 속성 미디어 쿼리가 유효한 동안에만 적용됩니다. 또한 `toolbar-target` 속성 ID가 있는 요소가 페이지에 있어야 툴바가 적용됩니다.
+- 사이드바에서는 `toolbar` 속성과 `toolbar-target` 속성이 있는 nav 요소를 추가하여 툴바를 구현할 수 있습니다.
+- nav 요소는 `<amp-sidebar>`의 하위 요소이어야 하며 `<nav toolbar="(media-query)" toolbar-target="elementID">` 형식을 따라야 합니다.
+  - 예를 들어 툴바의 올바른 사용법은 다음과 같습니다. `<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">`.</li>
+- 툴바 속성을 포함하는 nav에는 `<li>` 요소를 포함하는 단일 `<ul>` 요소만 포함해야 합니다.
+  - `<li>` 요소에는 올바른 HTML 요소(AMP에서 지원됨) 또는 `<amp-sidebar>`에서 지원하는 AMP 요소가 포함될 수 있습니다.</li>
+- 툴바 동작은 `toolbar` 속성 미디어 쿼리가 유효한 동안에만 적용됩니다. 또한 `toolbar-target` 속성 ID가 있는 요소가 페이지에 있어야 툴바가 적용됩니다.
 
-*예: 기본 툴바*
+_예: 기본 툴바_
 
 다음 예에서는 창 너비가 767픽셀 이하인 경우 `toolbar`를 표시합니다. `toolbar`에는 검색 입력 요소가 포함되어 있습니다. `toolbar` 요소는 `<div id="target-element">` 요소에 추가됩니다.
 
@@ -156,22 +152,20 @@ $title: amp-sidebar
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="검색..."/>
+        <input placeholder="검색..." />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 ## 툴바 스타일 지정 <a name="styling-toolbar"></a>
 
 `<amp-sidebar>` 요소의 `toolbar` 요소에는 `toolbar-target` 요소를 표시하는지 아니면 숨기는지에 따라 요소에 적용되는 클래스가 있습니다. `toolbar` 요소와 `toolbar-target` 요소에 순서대로 다른 스타일을 적용하는 데 유용합니다. 클래스는 `amp-sidebar-toolbar-target-shown` 및 `amp-sidebar-toolbar-target-hidden`입니다. `toolbar-target` 요소가 표시되면 `amp-sidebar-toolbar-target-shown` 클래스가 `toolbar` 요소에 적용됩니다. `toolbar-target` 요소를 숨기면 `amp-sidebar-toolbar-target-hidden` 클래스가 `toolbar` 요소에 적용됩니다.
 
-*예: 툴바 상태 클래스*
+_예: 툴바 상태 클래스_
 
 다음 예에서는 창 너비가 767픽셀 이하인 경우 `toolbar`를 표시합니다. `toolbar`에는 검색 입력 요소가 포함되어 있습니다. `toolbar` 요소는 `<div id="target-element">` 요소에 추가됩니다. 그러나 `<div id="toolbar-target">` 요소가 표시되면 `toolbar` 요소를 숨기도록 몇 가지 맞춤 스타일을 추가했습니다.
 
@@ -189,19 +183,16 @@ $title: amp-sidebar
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="검색..."/>
+        <input placeholder="검색..." />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
-[tip type="success"]
-[AMP By Example](https://ampbyexample.com/components/amp-sidebar/)에서 라이브 데모를 참조하세요.
+[tip type="success"][amp by example](https://ampbyexample.com/components/amp-sidebar/)에서 라이브 데모를 참조하세요.
 [/tip]
 
 ## 스토리용 사이드바 <a name="sidebar-for-stories"></a>
@@ -210,21 +201,21 @@ $title: amp-sidebar
 
 ### 동작 <a name="behavior-2"></a>
 
-* `<amp-sidebar>`는 `<amp-story>`의 직속 하위 요소여야 합니다.
-* 사이드바는 일반 AMP 문서의 '시작'하는 쪽으로 기본값이 지정됩니다. 즉, 왼쪽에서 오른쪽으로 쓰는 언어의 경우 오른쪽이고, 오른쪽에서 왼쪽으로 쓰는 언어의 경우 왼쪽입니다.
-* `<amp-sidebar>`의 기본 배경색은 흰색이며 CSS에서 재정의할 수 있습니다.
-* 데스크톱 환경에서 `<amp-sidebar>`의 최대 너비는 `280px` 및 `320px`이 적용됩니다.
-* 사이드바를 여는/닫는 '햄버거' 스타일 버튼이 스토리 UI에 표시됩니다.
+- `<amp-sidebar>`는 `<amp-story>`의 직속 하위 요소여야 합니다.
+- 사이드바는 일반 AMP 문서의 '시작'하는 쪽으로 기본값이 지정됩니다. 즉, 왼쪽에서 오른쪽으로 쓰는 언어의 경우 오른쪽이고, 오른쪽에서 왼쪽으로 쓰는 언어의 경우 왼쪽입니다.
+- `<amp-sidebar>`의 기본 배경색은 흰색이며 CSS에서 재정의할 수 있습니다.
+- 데스크톱 환경에서 `<amp-sidebar>`의 최대 너비는 `280px` 및 `320px`이 적용됩니다.
+- 사이드바를 여는/닫는 '햄버거' 스타일 버튼이 스토리 UI에 표시됩니다.
 
 전체 스토리 플랫폼에서 일관된 UI 환경을 제공하기 위해 허용되는 속성과 기능의 제한사항이 있습니다. 다음은 `amp-story`에서 허용되는 `amp-sidebar`의 속성과 기능입니다.
 
 ### 허용되는 속성 <a name="allowed-attributes"></a>
 
-* [layout](#layout)
-* [data-close-button-aria-label](#data)
-* [공통 속성](#common)
+- [layout](#layout)
+- [data-close-button-aria-label](#data)
+- [공통 속성](#common)
 
-*예: 스토리의 기본 사이드바*
+_예: 스토리의 기본 사이드바_
 
 다음 예에서는 `amp-story`의 단순 `amp-sidebar`를 보여줍니다.
 
@@ -253,7 +244,7 @@ $title: amp-sidebar
 
 ##### side <a name="side"></a>
 
-페이지에서 사이드바가 열리는 쪽을 나타냅니다(`left` 또는 `right`).  `side`가 지정되지 않은 경우 `side` 값은 `body` 태그의 `dir` 속성(`ltr` => `left` , `rtl` => `right`)에서 상속합니다. `dir`이 없으면 `side`가 기본적으로 `left`가 됩니다.
+페이지에서 사이드바가 열리는 쪽을 나타냅니다(`left` 또는 `right`). `side`가 지정되지 않은 경우 `side` 값은 `body` 태그의 `dir` 속성(`ltr` => `left` , `rtl` => `right`)에서 상속합니다. `dir`이 없으면 `side`가 기본적으로 `left`가 됩니다.
 
 ##### layout <a name="layout"></a>
 
@@ -273,7 +264,7 @@ $title: amp-sidebar
 
 ##### toolbar-target <a name="toolbar-target"></a>
 
-이 속성은 하위 `<nav toolbar="(media-query)" toolbar-target="elementID">`에 표시되며 페이지에서 요소의 ID를 허용합니다.  `toolbar-target` 속성을 사용하면 기본 툴바 스타일링을 사용하지 않고 페이지에서 요소의 지정된 ID에 툴바를 배치합니다. 툴바 사용에 관한 자세한 정보는 [툴바](#toolbar-1) 섹션을 참조하세요.
+이 속성은 하위 `<nav toolbar="(media-query)" toolbar-target="elementID">`에 표시되며 페이지에서 요소의 ID를 허용합니다. `toolbar-target` 속성을 사용하면 기본 툴바 스타일링을 사용하지 않고 페이지에서 요소의 지정된 ID에 툴바를 배치합니다. 툴바 사용에 관한 자세한 정보는 [툴바](#toolbar-1) 섹션을 참조하세요.
 
 ##### 공통 속성 <a name="common"></a>
 
@@ -283,9 +274,9 @@ $title: amp-sidebar
 
 `amp-sidebar` 구성요소는 표준 CSS를 사용하여 스타일을 지정할 수 있습니다.
 
-* `amp-sidebar`의 `width`는 미리 설정된 최소값(45픽셀)과 최대값(80vw) 사이의 너비로 조정하도록 설정할 수 있습니다.
-* `amp-sidebar`의 높이는 필요한 경우 사이드바의 높이를 조정하도록 설정할 수 있습니다. 높이가 100vw를 초과하면 사이드바에 세로 스크롤 막대가 생깁니다. 사이드바의 미리 설정된 높이는 100vw이며 높이를 줄이려면 CSS에서 재정의할 수 있습니다.
-* 사이드바의 현재 상태는 사이드바가 페이지에서 열려 있을 때 `amp-sidebar` 태그에 설정되는 `open` 속성을 통해 공개됩니다.
+- `amp-sidebar`의 `width`는 미리 설정된 최소값(45픽셀)과 최대값(80vw) 사이의 너비로 조정하도록 설정할 수 있습니다.
+- `amp-sidebar`의 높이는 필요한 경우 사이드바의 높이를 조정하도록 설정할 수 있습니다. 높이가 100vw를 초과하면 사이드바에 세로 스크롤 막대가 생깁니다. 사이드바의 미리 설정된 높이는 100vw이며 높이를 줄이려면 CSS에서 재정의할 수 있습니다.
+- 사이드바의 현재 상태는 사이드바가 페이지에서 열려 있을 때 `amp-sidebar` 태그에 설정되는 `open` 속성을 통해 공개됩니다.
 
 [tip type="success"]
 AMP 페이지에서 사용할 수 있으며 스타일이 미리 지정되고 즉각적으로 반응하는 탐색 메뉴를 보려면 [AMP 시작](https://ampstart.com/components#navigation)을 방문하세요.
@@ -301,11 +292,9 @@ AMP 페이지에서 사용할 수 있으며 스타일이 미리 지정되고 즉
 
 ```html
 <style amp-custom="">
-
   nav [toolbar] {
     overflow: auto;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -321,9 +310,7 @@ AMP 페이지에서 사용할 수 있으며 스타일이 미리 지정되고 즉
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 작동하는 예제 코드는 [이 예제 파일](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html)을 참조하세요.

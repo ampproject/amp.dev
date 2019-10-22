@@ -59,17 +59,17 @@ $title: التنسيقات المعتمدة
 في بعض الحالات، إذا لم تحديد`width` أو `height`،
 يمكن لوقت تشغيل AMP ضبط هذه القيم افتراضيًا كما يلي:
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): يتم ضبط كل من العرض والارتفاع بشكل افتراضي على 0.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): يتم استنتاج القيمة الافتراضية للعرض والارتفاع من المتصفّح.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): يتم ضبط كل من العرض والارتفاع بشكل افتراضي على 0.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): يتم استنتاج القيمة الافتراضية للعرض والارتفاع من المتصفّح.
 
 ### ماذا يحدث في حالة عدم تحديد سمة التنسيق؟ <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 يتم تحديد سلوك التنسيق على النحو التالي:
 
-* في حالة وجود `height` وغياب `width` أو كان يساوي `auto`، يتم افتراض `fixed-height`.
-* في حالة وجود سِمتي `width` أو `height` بالإضافة إلى السمة `sizes`، يتم افتراض التنسيق `responsive`.
-* في حالة وجود سِمتي `width` أو `height`، يتم افتراض التنسيق `fixed`.
-* في حالة عدم وجود `width` و`height`، يتم افتراض التنسيق `container`.
+- في حالة وجود `height` وغياب `width` أو كان يساوي `auto`، يتم افتراض `fixed-height`.
+- في حالة وجود سِمتي `width` أو `height` بالإضافة إلى السمة `sizes`، يتم افتراض التنسيق `responsive`.
+- في حالة وجود سِمتي `width` أو `height`، يتم افتراض التنسيق `fixed`.
+- في حالة عدم وجود `width` و`height`، يتم افتراض التنسيق `container`.
 
 ## استخدام @media وmedia
 
@@ -126,9 +126,9 @@ $title: التنسيقات المعتمدة
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w >
+src="wide.jpg"
+srcset="wide.jpg" 640w,
+"narrow.jpg" 320w >
 </amp-img>
 [/sourcecode]
 
@@ -147,10 +147,10 @@ $title: التنسيقات المعتمدة
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w
-    sizes="(min-width: 650px) 50vw, 100vw" >
+src="wide.jpg"
+srcset="wide.jpg" 640w,
+"narrow.jpg" 320w
+sizes="(min-width: 650px) 50vw, 100vw" >
 </amp-img>
 [/sourcecode]
 
@@ -179,7 +179,7 @@ $title: التنسيقات المعتمدة
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
-    <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -200,6 +200,7 @@ $title: التنسيقات المعتمدة
 [sourcecode:html]
 <amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
     poster="myvideo-poster.jpg" >
+
   <div fallback>
         <p>Your browser doesn’t support HTML5 video.</p>
   </div>

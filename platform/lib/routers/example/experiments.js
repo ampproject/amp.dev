@@ -16,9 +16,8 @@
 
 'use strict';
 
-
-const {Templates} = require('@lib/templates/index.js');
 const express = require('express');
+const {Templates} = require('@lib/templates/index.js');
 
 // eslint-disable-next-line new-cap
 const sharedPages = express.Router();

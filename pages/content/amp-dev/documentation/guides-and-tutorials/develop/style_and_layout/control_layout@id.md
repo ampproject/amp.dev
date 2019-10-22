@@ -108,8 +108,8 @@ Kunjungi halaman [Mendemonstrasikan tata letak AMP](../../../../documentation/gu
 Dalam beberapa kasus, jika `width` atau `height` tidak ditentukan,
 AMP runtime dapat menetapkan nilai berikut sebagai default:
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Lebar dan tinggi ditetapkan secara default ke 0.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Lebar dan tinggi default disimpulkan dari browser.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Lebar dan tinggi ditetapkan secara default ke 0.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Lebar dan tinggi default disimpulkan dari browser.
 
 ### Bagaimana jika atribut <code>layout</code> tidak ditentukan? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 

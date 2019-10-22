@@ -77,10 +77,12 @@ AMP Cache.
 For example, for a given list of URLs:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 The response body contains the AMP URL mapping in JSON format:
@@ -105,7 +107,7 @@ The response body contains the AMP URL mapping in JSON format:
 ```
 
 [tip type="note"]
-**NOTE –**  URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via the AMP URL API. However, you can easily derive the cached URL from the returned AMP URL (ampURL).
+**NOTE –** URLs for cached AMP pages on non-Google AMP Caches cannot be retrieved via the AMP URL API. However, you can easily derive the cached URL from the returned AMP URL (ampURL).
 [/tip]
 
 ## Using AMP Caches
@@ -114,14 +116,14 @@ An [AMP Cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-
 proxy-based content delivery network (CDN) for delivering valid AMP documents.
 AMP Caches are designed to:
 
-*   Serve only valid AMP pages.
-*   Allow AMP pages to be preloaded efficiently and safely.
-*   Perform additional user-beneficial performance optimizations to content.
+- Serve only valid AMP pages.
+- Allow AMP pages to be preloaded efficiently and safely.
+- Perform additional user-beneficial performance optimizations to content.
 
 Currently, there are two AMP Cache providers:
 
-*   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
+- [Google AMP Cache](https://developers.google.com/amp/cache/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 This gives two choices to display an AMP file in an app by using either:
 
@@ -130,17 +132,17 @@ This gives two choices to display an AMP file in an app by using either:
 
 We recommend using the AMP Cache for the following reasons:
 
-*   Better user experience due to faster load time and low latency (>1s faster
-    loading time).
-*   Performance and bandwidth benefits due to additional caching of client
-    dependent artifacts, e.g. caching different versions of the same image
-    depending on the client's viewport size.
-*   The original AMP file might no longer be valid AMP, which could lead to a
-    bad user experience. In this case, the AMP Cache serves the last valid
-    version of the AMP file.
-*   A not-so-upstanding publisher could serve two different documents to an AMP
-    Cache crawler and to your users. Using an AMP Cache guarantees that users
-    always see the same AMP file as the Cache.
+- Better user experience due to faster load time and low latency (>1s faster
+  loading time).
+- Performance and bandwidth benefits due to additional caching of client
+  dependent artifacts, e.g. caching different versions of the same image
+  depending on the client's viewport size.
+- The original AMP file might no longer be valid AMP, which could lead to a
+  bad user experience. In this case, the AMP Cache serves the last valid
+  version of the AMP file.
+- A not-so-upstanding publisher could serve two different documents to an AMP
+  Cache crawler and to your users. Using an AMP Cache guarantees that users
+  always see the same AMP file as the Cache.
 
 [tip type="important"]
 **IMPORTANT –** When serving AMP pages through the AMP Cache, provide a viewer experience that clearly shows the AMP's origin and offers the possibility for users to share the canonical URL (see also the following two sections for more about this).
@@ -149,7 +151,7 @@ We recommend using the AMP Cache for the following reasons:
 ## Implementing an AMP Viewer
 
 The AMP Runtime provides a Viewer API, which provides a protocol to send and
-receive  messages between the AMP Runtime and the Viewer. This makes it possible
+receive messages between the AMP Runtime and the Viewer. This makes it possible
 to control the pre-rendering of AMP documents, swiping between articles, and AMP
 Runtime instrumentation. You can learn more about the AMP Viewer API in the
 [Connecting AMP Viewers with AMP pages](https://github.com/ampproject/amphtml/blob/master/extensions/amp-viewer-integration/integrating-viewer-with-amp-doc-guide.md)
@@ -161,12 +163,12 @@ on Stack Overflow for how to best configure a WebView for displaying AMP pages.
 
 Here are some general best practices for implementing an AMP Viewer:
 
-*   Serve the AMP page from an AMP Cache (>1s faster loading time).
-*   Display the article's publisher origin (e.g., in a collapsible header).
-*   Provide a sharing action (see also the "[Sharing AMP Content](#sharing-amp-content)"
-    section below).
-*   In webView-based viewers, enable third-party cookies.
-*   Set a referrer for your platform/app.
+- Serve the AMP page from an AMP Cache (>1s faster loading time).
+- Display the article's publisher origin (e.g., in a collapsible header).
+- Provide a sharing action (see also the "[Sharing AMP Content](#sharing-amp-content)"
+  section below).
+- In webView-based viewers, enable third-party cookies.
+- Set a referrer for your platform/app.
 
 ### Sharing AMP Content <a name="sharing-amp-content"></a>
 

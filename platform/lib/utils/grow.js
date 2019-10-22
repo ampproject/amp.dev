@@ -16,8 +16,8 @@
 
 'use strict';
 
-const {sh} = require('@lib/utils/sh');
 const {project} = require('@lib/utils');
+const {sh} = require('@lib/utils/sh');
 
 /**
  * Will execute grow in the configured pod path "project.paths.GROW_POD"
@@ -25,11 +25,12 @@ const {project} = require('@lib/utils');
  */
 function exec(args) {
   return sh(
-      // to support local execution where grow is often not in the path, we add the default install path ~/bin
-      ['sh', '-c', `PATH=$PATH:~/bin && grow ${args}`],
-      {
-        workingDir: project.paths.GROW_POD,
-      });
+    // to support local execution where grow is often not in the path, we add the default install path ~/bin
+    ['sh', '-c', `PATH=$PATH:~/bin && grow ${args}`],
+    {
+      workingDir: project.paths.GROW_POD,
+    }
+  );
 }
 
 module.exports = exec;

@@ -16,8 +16,8 @@
 'use strict';
 
 const express = require('express');
-const {Datastore} = require('@google-cloud/datastore');
 const multer = require('multer');
+const {Datastore} = require('@google-cloud/datastore');
 const upload = multer();
 const cookieParser = require('cookie-parser');
 const {setNoCache} = require('@lib/utils/cacheHelpers');
@@ -27,10 +27,11 @@ const examples = express.Router();
 examples.use(cookieParser());
 
 // eslint-disable-next-line max-len
-const ALREADY_VOTED_MESSAGE = 'You have already answered this poll. If you want to run this sample again, use an incognito window.';
+const ALREADY_VOTED_MESSAGE =
+  'You have already answered this poll. If you want to run this sample again, use an incognito window.';
 const THANKS_MESSAGE = 'Thanks for answering the poll!';
 const POLL_COOKIE_NAME = 'POLL_TAKEN';
-const EXPIRATION_DATE = 365*24*60*60*1000; // 365 days in ms
+const EXPIRATION_DATE = 365 * 24 * 60 * 60 * 1000; // 365 days in ms
 const POLL_QUESTIONS = ['Penguins', 'Ostriches', 'Kiwis', 'Wekas'];
 const POLL_ENTITY_TYPE = 'Poll example';
 const POLL_ENTITY_NAME = 'poll';
@@ -50,20 +51,23 @@ examples.post('/submit-poll', upload.none(), async (request, response) => {
   }
 
   // calculate poll results and check if user has already voted.
-  const pollResults = await calculatePollResults(answer, clientId, request, response);
-
-  response.json(
-      pollResults
+  const pollResults = await calculatePollResults(
+    answer,
+    clientId,
+    request,
+    response
   );
+
+  response.json(pollResults);
 });
 
 async function calculatePollResults(answer, clientId, request, response) {
   // get poll
   const pollKey = datastore.key([POLL_ENTITY_TYPE, POLL_ENTITY_NAME]);
   const pollEntity = await getFromDatastore(pollKey);
-  const pollExistingAnswers = !!pollEntity ?
-    pollEntity.results :
-    new Array(POLL_QUESTIONS.length).fill(0);
+  const pollExistingAnswers = !!pollEntity
+    ? pollEntity.results
+    : new Array(POLL_QUESTIONS.length).fill(0);
   // check if user has already voted by cookie
   const cookie = request.cookies[POLL_COOKIE_NAME];
   if (cookie && cookie.clientId === clientId) {
@@ -77,7 +81,11 @@ async function calculatePollResults(answer, clientId, request, response) {
     return createPollResult(pollExistingAnswers, ALREADY_VOTED_MESSAGE);
   }
   // set cookie and store clientId
-  response.cookie(POLL_COOKIE_NAME, {clientId}, {expires: new Date(Date.now() + EXPIRATION_DATE)});
+  response.cookie(
+    POLL_COOKIE_NAME,
+    {clientId},
+    {expires: new Date(Date.now() + EXPIRATION_DATE)}
+  );
   existingClientIDs.push(clientId);
   try {
     await saveToDatastore(clientIdKey, {voters: existingClientIDs});
@@ -103,7 +111,8 @@ function createPollResult(pollResults, message) {
 
   // calculate poll results
   const calculatedAnswers = pollResults.map((votes, i) => {
-    const percentage = totalVotes > 0 ? Math.round(votes/totalVotes*100) : 0;
+    const percentage =
+      totalVotes > 0 ? Math.round((votes / totalVotes) * 100) : 0;
     return {
       'Votes': votes,
       'Percentage': new Array(percentage).fill(0), // fill array with corresponding amount of 0's to the percentage of answer
@@ -134,7 +143,7 @@ function saveToDatastore(key, data) {
     data,
   };
   return new Promise((resolve, reject) => {
-    datastore.save(entity, (e) => {
+    datastore.save(entity, e => {
       if (e) {
         reject(e);
         return;

@@ -2,12 +2,11 @@
 $title: amp-animation
 $category@: presentation
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: アニメーションを定義して表示します。
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 アニメーションを定義して表示します。
 
@@ -44,7 +41,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 ## 概要 <a name="overview"></a>
 
 AMP アニメーションは、[Web Animations API](https://www.w3.org/TR/web-animations/) を使用して、AMP ドキュメントのアニメーションを定義、表示します。
@@ -56,23 +52,24 @@ AMP アニメーションは、[Web Animations API](https://www.w3.org/TR/web-an
 ### トップレベル アニメーション仕様 <a name="top-level-animation-specification"></a>
 
 トップレベル オブジェクトは、`animations` 配列として定義される任意の数のアニメーション コンポーネントで構成される全体的なアニメーション プロセスを定義します。
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  // Timing properties
-  ...
-  "animations": [
+  <script type="application/json">
     {
-      // Animation 1
-    },
-    ...
-    {
-      // Animation N
+      // Timing properties
+      ...
+      "animations": [
+        {
+          // Animation 1
+        },
+        ...
+        {
+          // Animation N
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script>
 </amp-animation>
 ```
 
@@ -84,10 +81,10 @@ AMP アニメーションは、[Web Animations API](https://www.w3.org/TR/web-an
 
 各アニメーション コンポーネントは、[キーフレーム効果](https://www.w3.org/TR/web-animations/#dom-keyframeeffect-keyframeeffect)であり、以下の要素で構成されます。
 
- - セレクタによって参照されるターゲット要素
- - 条件: メディアクエリとサポート条件
- - タイミング プロパティ
- - キーフレーム
+- セレクタによって参照されるターゲット要素
+- 条件: メディアクエリとサポート条件
+- タイミング プロパティ
+- キーフレーム
 
 ```text
 {
@@ -144,6 +141,7 @@ AMP アニメーションは、[Web Animations API](https://www.w3.org/TR/web-an
 `switch` アニメーションでは、定義した順序で各候補が評価され、[条件ステートメント](#conditions)に合致する最初のアニメーションが実行され、残りは無視されます。
 
 たとえば、次のアニメーションは、サポートされている場合はモーションパス アニメーションを表示し、そうでない場合はフォールバックして変換を行います。
+
 ```
 {
   "selector": "#target1",
@@ -169,23 +167,24 @@ AMP アニメーションは、[Web Animations API](https://www.w3.org/TR/web-an
 アニメーション コンポーネントは、`var()` 式を通じて、タイミングとキーフレームの値に使用する CSS 変数を宣言できます。`var()` 式は、現在のターゲット コンテキストを使用して評価されます。アニメーション コンポーネント内で指定されている CSS 変数は、ネスト アニメーションに反映され、アニメーション ターゲットに適用されます。これにより、最終アニメーション内で使用されている CSS 変数をオーバーライドします。
 
 たとえば、次のようになります。
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "--delay": "0.5s",
-  "--x": "100px",
-  "animations": [
+  <script type="application/json">
     {
-      "selector": "#target1",
-      "delay": "var(--delay)",
-      "--x": "150px",
-      "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
-    },
-    ...
-  ]
-}
-</script>
+      "--delay": "0.5s",
+      "--x": "100px",
+      "animations": [
+        {
+          "selector": "#target1",
+          "delay": "var(--delay)",
+          "--x": "150px",
+          "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
+        },
+        ...
+      ]
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -261,6 +260,7 @@ AMP アニメーションは、[Web Animations API](https://www.w3.org/TR/web-an
 すべてのタイミング プロパティで、数値や文字列値を直接使用するか、CSS 値を使用することができます。たとえば、「duration」の場合、`1000`、`1s`、`1000ms` のいずれかで指定できます。また、`calc()` や `var()` などの CSS 式も使用できます。
 
 JSON 構造のタイミング プロパティの例:
+
 ```text
 {
   ...
@@ -280,6 +280,7 @@ JSON 構造のタイミング プロパティの例:
 `selector` を指定できる場所であれば、`subtargets: []` も指定できます。サブターゲットを使用すると、インデックスまたは CSS セレクタ経由で指定したサブターゲットを対象に、タイミング プロパティやアニメーション内で定義されている変数をオーバーライドすることができます。
 
 例:
+
 ```text
 {
   "selector": ".target",
@@ -309,6 +310,7 @@ JSON 構造のタイミング プロパティの例:
 キーフレーム定義の一般的な例を以下に示します。
 
 簡略型オブジェクト形式の「to」フォーマットは、100% 時の最終状態を指定します。
+
 ```text
 {
   "keyframes": {"opacity": 0, "transform": "scale(2)"}
@@ -316,6 +318,7 @@ JSON 構造のタイミング プロパティの例:
 ```
 
 簡略型オブジェクト形式の「from-to」フォーマットは、0% 時の開始状態と 100% 時の最終状態を指定します。
+
 ```text
 {
   "keyframes": {
@@ -326,6 +329,7 @@ JSON 構造のタイミング プロパティの例:
 ```
 
 簡略型オブジェクト形式の「value-array」フォーマットは、複数の値によって開始状態、最終状態、複数の等間隔オフセットを指定します。
+
 ```text
 {
   "keyframes": {
@@ -336,6 +340,7 @@ JSON 構造のタイミング プロパティの例:
 ```
 
 array 形式はキーフレームを指定します。オフセットは、0% から 100% までの間を等間隔にして自動的に割り当てられます。
+
 ```text
 {
   "keyframes": [
@@ -346,6 +351,7 @@ array 形式はキーフレームを指定します。オフセットは、0% �
 ```
 
 array 形式の場合、明示的に「offset」を含めることもできます。
+
 ```text
 {
   "keyframes": [
@@ -357,6 +363,7 @@ array 形式の場合、明示的に「offset」を含めることもできま�
 ```
 
 array 形式の場合、「easing」を含めることもできます。
+
 ```text
 {
   "keyframes": [
@@ -373,6 +380,7 @@ array 形式の場合、「easing」を含めることもできます。
 #### CSS に基づくキーフレーム <a name="keyframes-from-css"></a>
 
 キーフレームを指定するもう 1 つの方法は、ドキュメントのスタイルシート（`<style>` タグ）内で、`@keyframes` CSS ルールを使用する方法です。たとえば、次のようになります。
+
 ```html
 <style amp-custom>
   @keyframes keyframes1 {
@@ -386,12 +394,12 @@ array 形式の場合、「easing」を含めることもできます。
 </style>
 
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "duration": "1s",
-  "keyframes": "keyframes1"
-}
-</script>
+  <script type="application/json">
+    {
+      "duration": "1s",
+      "keyframes": "keyframes1"
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -404,6 +412,7 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 #### キーフレーム向けホワイトリストに登録されたプロパティ <a name="white-listed-properties-for-keyframes"></a>
 
 必ずしもすべての CSS プロパティをキーフレームで使用できるわけではありません。最新のブラウザですぐに最適化とアニメーション化を行うことができる CSS プロパティだけが、ホワイトリストに登録されています。優れたパフォーマンスを発揮することが確認されたプロパティが増えると、このリストも拡張されます。現在リストに登録されているプロパティは以下のとおりです。
+
 - [`opacity`](https://developer.mozilla.org/ja/docs/Web/CSS/opacity)
 - [`transform`](https://developer.mozilla.org/ja/docs/Web/CSS/transform)
 - [`visibility`](https://developer.mozilla.org/ja/docs/Web/CSS/visibility)
@@ -414,36 +423,38 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 ### アニメーション設定の簡略形式 <a name="abbreviated-forms-of-animation-configuration"></a>
 
 アニメーションに含まれる要素が 1 つだけであり、1 つのキーフレーム効果だけで十分である場合、アニメーション設定をこのアニメーション コンポーネントだけに縮小することができます。たとえば、次のようになります。
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "selector": "#target-id",
-  "duration": "1s",
-  "keyframes": {"opacity": 1}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": "#target-id",
+      "duration": "1s",
+      "keyframes": {"opacity": 1}
+    }
+  </script>
 </amp-animation>
 ```
 
 アニメーションがコンポーネントのリストで構成されていて、トップレベル アニメーションがない場合、アニメーション設定をコンポーネントの配列だけに縮小することができます。たとえば、次のようになります。
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": 1000,
-    "keyframes": {"opacity": 1}
-  },
-  {
-    "selector": ".target-class",
-    "duration": 600,
-    "delay": 400,
-    "keyframes": {"transform": "scale(2)"}
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": 1000,
+        "keyframes": {"opacity": 1}
+      },
+      {
+        "selector": ".target-class",
+        "duration": 600,
+        "delay": 400,
+        "keyframes": {"transform": "scale(2)"}
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
@@ -452,48 +463,50 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 アニメーションは他のアニメーションを参照することで、複数の `amp-animation` 宣言を単一の最終アニメーションに結合することができます。他のアニメーションからアニメーションを参照する方法は、ネストとほとんど同じです。アニメーションを異なる要素に分割するメリットとしては、同じアニメーションを複数の場所から再利用できる点や、各アニメーション宣言を小型化して管理しやすくできる点などがあります。
 
 たとえば、次のようになります。
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
 このサンプル アニメーションでは、「anim2」アニメーションを「anim1」の一部として結合しています。「anim2」は、ターゲット（`selector`）の設定なしに組み込まれています。このような場合、組み込まれる方のパーツ側アニメーションが独自のターゲットを参照するものと想定されます。
 
 あるいは、別の形式を使用して、組み込む方のパッケージ側アニメーション内で 1 つまたは複数のターゲットを指定することもできます。この場合、合致したターゲットごとに、パーツ側アニメーションが実行されます。たとえば、次のようになります。
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -506,34 +519,36 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 `amp-animation` では、タイミングやキーフレームの値に `var()` 式や `calc()` 式を使用できます。
 
 たとえば、次のようになります。
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": "4s",
-    "delay": "var(--delay)",
-    "--y": "var(--other-y, 100px)",
-    "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay)",
+        "--y": "var(--other-y, 100px)",
+        "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
 `var()` や `calc()` は、直接サポートしていないプラットフォーム上ではポリフィルされます。`var()` プロパティは、対応するターゲット要素から抽出されます。ただし、`var()` を完全にポリフィルすることはできません。そのため、互換性が重要な場合は、`var()` 式内にデフォルト値を組み込んでおくことを強くおすすめします。たとえば、次のようになります。
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": "4s",
-    "delay": "var(--delay, 100ms)",
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay, 100ms)",
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
@@ -548,6 +563,7 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 `index()` 関数は、アニメーション効果内の現在のターゲット要素のインデックスを返します。`selector` プロパティを使用して複数のターゲットを同じ効果でアニメーション化する場合に最適です。セレクタによって合致した 1 番目のターゲットはインデックス `0` に、2 番目のターゲットはインデックス `1` になり、以降も順に続いていきます。
 
 特に、このプロパティと `calc()` 式を組み合わせて使用すると、千鳥効果を生み出すことができます。たとえば、次のようになります。
+
 ```
 {
   "selector": ".class-x",
@@ -571,6 +587,7 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 `rand()` 関数はランダムな CSS 値を返します。2 つの形式があります。
 
 引数を指定しない形式の場合、0 から 1 までの間の乱数を返します。
+
 ```
 {
   "delay": "calc(10s * rand())"
@@ -578,6 +595,7 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 ```
 
 2. つ目の形式として、2 つの引数を指定した場合、2 つの引数の間のランダムな値を返します。
+
 ```
 {
   "delay": "rand(5s, 10s)"
@@ -597,6 +615,7 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 `width()` と `height()` は、特に変換を行う際に役立ちます。`%` 値を使用できる CSS プロパティ（`left`、`top` など）では、コンテナサイズとの比率に基づいてアニメーションが表示されます。ただし、`transform` プロパティは `%` 値の解釈が異なり、選択した要素のパーセントになります。そのため、`width()` や `height()` を使用した際、コンテナ要素などを比率の基準として変換アニメーションを表示することができます。
 
 各関数は、`calc()` や `var()` などの CSS 式と組み合わせることができます。たとえば、次のようになります。
+
 ```
 {
   "transform": "translateX(calc(width('#container') + 10px))"
@@ -612,6 +631,7 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 - その他も同様です。
 
 たとえば、次の式の場合、要素の幅に比例した遅延を秒単位で計算します。
+
 ```
 {
   "delay": "calc(1s * num(width()) / 100)"
@@ -624,9 +644,9 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 
 SVG アニメーションは、[キーフレーム向けホワイトリストに登録されているプロパティ](#white-listed-properties-for-keyframes)とほぼ同じ CSS プロパティを通じてサポートされています。以下の点が異なります。
 
-* IE / Edge SVG 要素は、[CSS `transform` プロパティをサポートしていません](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/)。`transform` アニメーション自体はポリフィルされます。ただし、スタイルシート内で定義されている初期状態は適用されません。初期変換状態が IE / Edge で重要な場合は、[SVG `transform` 属性](https://developer.mozilla.org/ja/docs/Web/SVG/Attribute/transform)を使用して複製することをおすすめします。
-* `transform` CSS は IE / Edge 向けにポリフィルされますが、`transform-origin` をポリフィルすることはできません。そのため、IE / Edge との互換性が必要な場合は、デフォルトの `transform-origin` だけを使用することをおすすめします。
-* ほとんどのブラウザは、`transform-origin` CSS を正しく解釈することができません。[Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300)、[Safari](https://bugs.webkit.org/show_bug.cgi?id=174285)、[Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340) に関する問題をご覧ください。ほとんどの場合、[CSS `transform-box`](https://developer.mozilla.org/ja/docs/Web/CSS/transform-box) を実装することで、この問題を解決できます。`transform-origin` が重要な場合は、今後の互換性のために `transform-box` CSS も組み込んでおくことをおすすめします。
+- IE / Edge SVG 要素は、[CSS `transform` プロパティをサポートしていません](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/)。`transform` アニメーション自体はポリフィルされます。ただし、スタイルシート内で定義されている初期状態は適用されません。初期変換状態が IE / Edge で重要な場合は、[SVG `transform` 属性](https://developer.mozilla.org/ja/docs/Web/SVG/Attribute/transform)を使用して複製することをおすすめします。
+- `transform` CSS は IE / Edge 向けにポリフィルされますが、`transform-origin` をポリフィルすることはできません。そのため、IE / Edge との互換性が必要な場合は、デフォルトの `transform-origin` だけを使用することをおすすめします。
+- ほとんどのブラウザは、`transform-origin` CSS を正しく解釈することができません。[Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300)、[Safari](https://bugs.webkit.org/show_bug.cgi?id=174285)、[Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340) に関する問題をご覧ください。ほとんどの場合、[CSS `transform-box`](https://developer.mozilla.org/ja/docs/Web/CSS/transform-box) を実装することで、この問題を解決できます。`transform-origin` が重要な場合は、今後の互換性のために `transform-box` CSS も組み込んでおくことをおすすめします。
 
 ## アニメーションをトリガーする <a name="triggering-animation"></a>
 
@@ -637,11 +657,11 @@ SVG アニメーションは、[キーフレーム向けホワイトリストに
 現在のところ、`trigger` 属性で使用できる値は、`visibility` に限られています。`visibility` は、基盤のドキュメントや埋め込みがビューポート内で表示されているときにトリガーされます。
 
 たとえば、次のようになります。
+
 ```html
-<amp-animation id="anim1" layout="nodisplay"
-    trigger="visibility">
-    ...
-  </amp-animation>
+<amp-animation id="anim1" layout="nodisplay" trigger="visibility">
+  ...
+</amp-animation>
 ```
 
 ### `on` アクションを通じてトリガーする <a name="triggering-via-on-action"></a>
@@ -659,12 +679,12 @@ SVG アニメーションは、[キーフレーム向けホワイトリストに
 
 `amp-animation` 要素は、以下のアクションをエクスポートします。
 
-* `start` - アニメーションがまだ表示されていない場合、アニメーションを開始します。タイミング プロパティと変数をアクション引数として指定できます。たとえば、`anim1.start(delay=-100, --scale=2)` のようになります。
-* `restart` - アニメーションを開始するか、現在表示中のアニメーションを再起動します。タイミング プロパティと変数をアクション引数として指定できます。たとえば、`anim1.start(delay=-100, --scale=2)` のようになります。
-* `pause` - 現在表示中のアニメーションを一時停止します。
-* `resume` - 現在表示中のアニメーションを再開します。
-* `togglePause` - 一時停止と再開のアクションを切り替えます。
-* `seekTo` - アニメーションを一時停止し、`time` 引数で指定したミリ秒単位の時間位置か、`percent` 引数で指定したタイムライン内のパーセント ポイントにシークします。
-* `reverse` - アニメーションを逆再生します。
-* `finish` - アニメーションを終了します。
-* `cancel` - アニメーションをキャンセルします。
+- `start` - アニメーションがまだ表示されていない場合、アニメーションを開始します。タイミング プロパティと変数をアクション引数として指定できます。たとえば、`anim1.start(delay=-100, --scale=2)` のようになります。
+- `restart` - アニメーションを開始するか、現在表示中のアニメーションを再起動します。タイミング プロパティと変数をアクション引数として指定できます。たとえば、`anim1.start(delay=-100, --scale=2)` のようになります。
+- `pause` - 現在表示中のアニメーションを一時停止します。
+- `resume` - 現在表示中のアニメーションを再開します。
+- `togglePause` - 一時停止と再開のアクションを切り替えます。
+- `seekTo` - アニメーションを一時停止し、`time` 引数で指定したミリ秒単位の時間位置か、`percent` 引数で指定したタイムライン内のパーセント ポイントにシークします。
+- `reverse` - アニメーションを逆再生します。
+- `finish` - アニメーションを終了します。
+- `cancel` - アニメーションをキャンセルします。

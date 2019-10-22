@@ -9,6 +9,7 @@ Convidamos todos os fornecedores de tecnologia para editores ou anunciantes na W
 Há quatro maneiras principais de fazer a integração com AMP:
 
 ## 1. Adicionar compatibilidade com a extensão amp-analytics
+
 Com AMP Analytics, é possível enviar eventos de volta ao servidor com base em acionadores configurados por você. Criamos um [guia de integração de análise](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md) para ajudá-lo a começar.
 
 Se você só precisar adicionar um pixel de rastreamento com parâmetros dinâmicos ao URL de rastreamento, confira [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md). Documente o uso nas suas páginas de suporte para os desenvolvedores que queiram usar sua tecnologia com AMP.
@@ -17,7 +18,7 @@ Mais de 20 fornecedores de análise já oferecem compatibilidade com a extensão
 
 ## 2. Usar uma extensão amp-ad
 
-A extensão [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  é reservada para a veiculação de anúncios gráficos em páginas AMP. Mais de 90 fornecedores de tecnologia de anúncios já oferecem compatibilidade com AMP.  Para começar, leia a [`amp-ad`](../../../documentation/components/reference/amp-ad.md) podem ser úteis.
+A extensão [`amp-ad`](../../../documentation/components/reference/amp-ad.md) é reservada para a veiculação de anúncios gráficos em páginas AMP. Mais de 90 fornecedores de tecnologia de anúncios já oferecem compatibilidade com AMP. Para começar, leia a [`amp-ad`](../../../documentation/components/reference/amp-ad.md) podem ser úteis.
 
 Mais de 90 fornecedores de anúncios já oferecem compatibilidade com recursos relacionados à publicidade, como a extensão [`amp-ad`](../../../documentation/components/reference/amp-ad.md) . Veja um exemplo de [solicitação pull](https://github.com/ampproject/amphtml/pull/2299) da rede de publicidade [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
@@ -33,7 +34,7 @@ Se o caso de uso não puder ser atendido pelas extensões [`amp-analytics`](../.
 
 ## 5. Usar amp-iframe
 
-Como assim? Existe uma 5ª maneira? Sim, existe, mas ela deve ser usada somente em último caso. Caso nenhuma das opções acima seja adequada às suas necessidades, você poderá usar uma tag [`amp-iframe`](../../../documentation/components/reference/amp-iframe.md)  genérica para permitir que os editores incorporem conteúdo. No entanto, essa abordagem traz uma série de desvantagens devido a dificuldades relacionadas ao desempenho e à experiência do usuário. [Saiba mais aqui](../../../documentation/components/reference/amp-iframe.md).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`](../../../documentation/components/reference/amp-iframe.md) ).
+Como assim? Existe uma 5ª maneira? Sim, existe, mas ela deve ser usada somente em último caso. Caso nenhuma das opções acima seja adequada às suas necessidades, você poderá usar uma tag [`amp-iframe`](../../../documentation/components/reference/amp-iframe.md) genérica para permitir que os editores incorporem conteúdo. No entanto, essa abordagem traz uma série de desvantagens devido a dificuldades relacionadas ao desempenho e à experiência do usuário. [Saiba mais aqui](../../../documentation/components/reference/amp-iframe.md).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`](../../../documentation/components/reference/amp-iframe.md) ).
 
 ## Resumo
 

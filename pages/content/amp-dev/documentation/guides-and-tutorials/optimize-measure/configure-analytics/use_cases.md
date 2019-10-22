@@ -9,7 +9,7 @@ formats:
 This guide provides a set of common use cases for tracking user engagement:
 
 [tip type="note"]
-**NOTE –**  Want to add a use case? [Let us know.](https://github.com/ampproject/docs/issues/new) Or you can also contribute your own use cases, see [How to Contribute](../../../../documentation/guides-and-tutorials/contribute/index.md).
+**NOTE –** Want to add a use case? [Let us know.](https://github.com/ampproject/docs/issues/new) Or you can also contribute your own use cases, see [How to Contribute](../../../../documentation/guides-and-tutorials/contribute/index.md).
 [/tip]
 
 ## Tracking page views
@@ -32,22 +32,22 @@ Send pageview data to a specified URL using
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
+      },
+      "vars": {
+        "account": "ABC123"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -58,19 +58,19 @@ Send pageview data to Google Analytics
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"  // Replace with your property ID.
-  },
-  "triggers": {
-    "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y"  // Replace with your property ID.
+      },
+      "triggers": {
+        "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -88,27 +88,27 @@ to the specified URL everytime a user clicks on a link (`<a href>`):
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+  <script type="application/json">
+    {
+      "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "triggers": {
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -121,24 +121,24 @@ to send a `click` event to Google Analytics when a particular element is clicked
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics3">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"  // Replace with your property ID.
-  },
-  "triggers": {
-    "trackClickOnHeader" : {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
+  <script type="application/json">
+    {
       "vars": {
-        "eventCategory": "ui-components",
-        "eventAction": "header-click"
+        "account": "UA-XXXXX-Y"  // Replace with your property ID.
+      },
+      "triggers": {
+        "trackClickOnHeader" : {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "ui-components",
+            "eventAction": "header-click"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -152,25 +152,25 @@ to 90% of `scroll` width:
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "scrollPings": {
-      "on": "scroll",
-      "scrollSpec": {
-        "verticalBoundaries": [25, 50, 90],
-        "horizontalBoundaries": [90]
+  <script type="application/json">
+    {
+      "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
+      "vars": {
+        "account": "ABC123"
+      },
+      "triggers": {
+        "scrollPings": {
+          "on": "scroll",
+          "scrollSpec": {
+            "verticalBoundaries": [25, 50, 90],
+            "horizontalBoundaries": [90]
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -188,27 +188,27 @@ to the specified URL everytime a user clicks on a tweet (`#tweet-link`):
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "triggers": {
-    "trackClickOnTwitterLink": {
-      "on": "click",
-      "selector": "#tweet-link",
-      "request": "event",
+  <script type="application/json">
+    {
+      "requests": {
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "43",
-        "eventLabel": "clicked on a tweet link"
+        "account": "ABC123"
+      },
+      "triggers": {
+        "trackClickOnTwitterLink": {
+          "on": "click",
+          "selector": "#tweet-link",
+          "request": "event",
+          "vars": {
+            "eventId": "43",
+            "eventLabel": "clicked on a tweet link"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -221,24 +221,24 @@ to send an event when a particular social button is clicked
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics4">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y" // Replace with your property ID.
-  },
-  "triggers": {
-    "trackClickOnTwitterLink" : {
-      "on": "click",
-      "selector": "#tweet-link",
-      "request": "social",
+  <script type="application/json">
+    {
       "vars": {
-          "socialNetwork": "twitter",
-          "socialAction": "tweet",
-          "socialTarget": "https://www.examplepetstore.com"
+        "account": "UA-XXXXX-Y" // Replace with your property ID.
+      },
+      "triggers": {
+        "trackClickOnTwitterLink" : {
+          "on": "click",
+          "selector": "#tweet-link",
+          "request": "social",
+          "vars": {
+              "socialNetwork": "twitter",
+              "socialAction": "tweet",
+              "socialTarget": "https://www.examplepetstore.com"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```

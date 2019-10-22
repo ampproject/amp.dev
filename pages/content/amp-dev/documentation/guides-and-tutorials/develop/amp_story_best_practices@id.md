@@ -4,73 +4,83 @@ $title: Praktik terbaik untuk membuat artikel AMP
 
 Panduan ini menyediakan beberapa praktik yang direkomendasikan yang sebaiknya Anda terapkan saat membuat [artikel AMP](../../../documentation/components/reference/amp-story.md).
 
-## Warna background  
+## Warna background
 
 Anda harus menentukan warna background untuk halaman artikel AMP. Dengan memiliki warna background, Anda memberikan pengalaman pengguna fallback yang baik meskipun kondisi jaringan yang buruk mencegah pengguna mendownload aset gambar atau video.
 
-*   Warna background harus mewakili warna dominan pada aset background halaman.
-*   Pilih warna yang memungkinkan transisi yang lancar dengan gambar atau halaman itu sendiri. Anda dapat memilih untuk:
-    *   Menggunakan warna dominan yang mewakili gambar/video.
-    *   Menggunakan warna tema yang konsisten untuk semua halaman dalam artikel. 
-*   Warna background harus berbeda dengan warna font agar teks dapat dibaca bahkan sebelum gambar dimuat.
+- Warna background harus mewakili warna dominan pada aset background halaman.
+- Pilih warna yang memungkinkan transisi yang lancar dengan gambar atau halaman itu sendiri. Anda dapat memilih untuk:
+  - Menggunakan warna dominan yang mewakili gambar/video.
+  - Menggunakan warna tema yang konsisten untuk semua halaman dalam artikel.
+- Warna background harus berbeda dengan warna font agar teks dapat dibaca bahkan sebelum gambar dimuat.
 
-## Teks 
+## Teks
 
 ### Memastikan keterbacaan
 
 Pastikan overlay teks pada halaman mudah dibaca:
 
-* Pilih warna font yang kontras dengan gambar dan warna background.
-* Tambahkan overlay gradien di antara gambar dan teks untuk mengontraskan teks dan gambar.
+- Pilih warna font yang kontras dengan gambar dan warna background.
+- Tambahkan overlay gradien di antara gambar dan teks untuk mengontraskan teks dan gambar.
 
-### Teks yang ringkas   
+### Teks yang ringkas
 
 Perlu diingat bahwa artikel AMP didesain untuk menawarkan pengalaman yang lebih visual, sehingga teks pada halaman perlu dibuat seringkas mungkin (tidak lebih dari 1-2 kalimat). Pertimbangkan dengan cermat tujuan dan alur baca jika Anda yakin teks yang lebih panjang diperlukan.
 
-## Video  
+## Video
 
-### Menentukan atribut poster 
+### Menentukan atribut poster
 
-`poster` adalah gambar yang ditampilkan di UI sampai video didownload. Secara umum, poster dapat berupa frame pertama video, walaupun gambar apa saja bisa digunakan.  Namun, Anda harus memilih gambar yang mewakili video dan memungkinkan transisi yang lancar. Jika Anda memilih frame pertama, pastikan itu bukan frame kosong sementara. 
+`poster` adalah gambar yang ditampilkan di UI sampai video didownload. Secara umum, poster dapat berupa frame pertama video, walaupun gambar apa saja bisa digunakan. Namun, Anda harus memilih gambar yang mewakili video dan memungkinkan transisi yang lancar. Jika Anda memilih frame pertama, pastikan itu bukan frame kosong sementara.
 
 Dimensi yang direkomendasikan untuk gambar poster adalah: 720 px (lebar 720 px x tinggi 1280 px).
 
-*Contoh: Menentukan poster*
+_Contoh: Menentukan poster_
 
 ```html
-<amp-video autoplay loop
-  width="720" height="1280" layout="responsive"
-  poster="images/kitten-playing.png">
-  <source src="videos/kitten-playing.mp4"
-    type="video/mp4" />
+<amp-video
+  autoplay
+  loop
+  width="720"
+  height="1280"
+  layout="responsive"
+  poster="images/kitten-playing.png"
+>
+  <source src="videos/kitten-playing.mp4" type="video/mp4" />
 </amp-video>
 ```
 
-### Menentukan `<source>` vs `src` 
+### Menentukan `<source>` vs `src`
 
 Saat menentukan sumber untuk [`amp-video`](../../../documentation/components/reference/amp-video.md).
 
-*Contoh: Menentukan beberapa file sumber*
+_Contoh: Menentukan beberapa file sumber_
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
 ### Ukuran/Panjang video
 
-* Untuk mendapatkan performa optimal, Anda harus menyediakan video dengan ukuran maksimal 4 MB.
-* Untuk video yang panjang, pertimbangkan membagi video di beberapa halaman.
-* Untuk halaman sampul, hindari video berukuran sangat besar.
+- Untuk mendapatkan performa optimal, Anda harus menyediakan video dengan ukuran maksimal 4 MB.
+- Untuk video yang panjang, pertimbangkan membagi video di beberapa halaman.
+- Untuk halaman sampul, hindari video berukuran sangat besar.
 
 ### Format video
 
-Jika Anda hanya dapat menyediakan satu format video, sediakan **MP4**.  Namun, jika mungkin, gunakan video **HLS** dan tentukan MP4 sebagai fallback untuk browser yang belum mendukung video HLS. HLS menjalankan streaming kecepatan bit adaptif, yang dapat menyesuaikan kualitas video dengan kecepatan sambungan internet pengguna.
+Jika Anda hanya dapat menyediakan satu format video, sediakan **MP4**. Namun, jika mungkin, gunakan video **HLS** dan tentukan MP4 sebagai fallback untuk browser yang belum mendukung video HLS. HLS menjalankan streaming kecepatan bit adaptif, yang dapat menyesuaikan kualitas video dengan kecepatan sambungan internet pengguna.
 
 [tip type="note"]
 
@@ -80,7 +90,7 @@ Format video HLS tidak didukung pada browser Chrome untuk Desktop (bahkan melalu
 
 ### Resolusi video
 
-Video artikel AMP selalu ditampilkan vertikal (tampilan potret) dengan rasio tinggi lebar yang diharapkan sebesar 16:9. Gunakan resolusi yang direkomendasikan untuk tiap jenis streaming video: 
+Video artikel AMP selalu ditampilkan vertikal (tampilan potret) dengan rasio tinggi lebar yang diharapkan sebesar 16:9. Gunakan resolusi yang direkomendasikan untuk tiap jenis streaming video:
 
 <table>
   <thead>
@@ -117,7 +127,7 @@ Untuk perangkat seluler yang rasio tinggi lebarnya tidak 16:9, video mungkin aka
 
 #### Pengoptimalan transcoding
 
-Ada berbagai fitur yang dapat Anda gunakan untuk mengenkode video dan menyesuaikan kualitas video selama encoding.  Berikut ini beberapa di antaranya:
+Ada berbagai fitur yang dapat Anda gunakan untuk mengenkode video dan menyesuaikan kualitas video selama encoding. Berikut ini beberapa di antaranya:
 
 <table>
   <thead>
@@ -164,14 +174,13 @@ Pastikan durasi segmen HLS tidak lebih dari 10 detik.
 Jika ingin maju otomatis dari satu halaman ke halaman berikutnya setelah video selesai diputar, Anda harus menetapkan nilai atribut `auto-advance-after` untuk `<amp-story-page>` ke id video, bukan ke panjang yang diharapkan dari video itu. Artinya, Anda harus menggunakan
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 bukan
 
 ```html
-<amp-story-page auto-advance-after="9s">
+<amp-story-page auto-advance-after="9s"></amp-story-page>
 ```
 
 Hal ini karena pemutaran video dan penayangan halaman mungkin tidak dimulai pada waktu yang persis sama, atau panjang yang diberikan mungkin tidak benar, sehingga terdapat perbedaan antara durasi yang diharapkan dengan durasi yang sebenarnya. Kondisi ini dapat menyebabkan video diulang, yang bisa mengganggu perhatian pengguna.
- 

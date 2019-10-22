@@ -18,7 +18,7 @@ AMP는 분석 및 측정용으로 [`amp-pixel`](../../../../documentation/compon
 AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 구성을 제공하여 데이터를 손쉽게 캡처하고 이를 추적 도구로 간편하게 전송할 수 있도록 했습니다. 업체 문서에 액세스하려면 [애널리틱스 공급업체](analytics-vendors.md) 목록을 참조하세요.
 
-페이지에서 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)  및 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
+페이지에서 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 및 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 둘 다 사용 가능합니다. [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 은 간단한 페이지 조회수를 추적하는 데 사용할 수 있으며 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 는 기타 모든 용도로 사용 가능합니다. 또한 각 태그를 여러 개 추가할 수도 있습니다. 여러 애널리틱스 제공업체와 함께 일하는 경우 솔루션마다 별도의 태그가 필요합니다. AMP 페이지가 단순할수록 사용자가 사용하기에 편리하므로 여분의 태그가 필요 없는 경우 사용하지 않는 것이 좋습니다.
 
 ## 단순한 애널리틱스 구성 만들기
@@ -28,7 +28,7 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 [`am
 
 ### 단순한 amp-pixel 구성
 
- 단순한 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 구성을 만들려면 다음과 같은 예를 AMP 페이지 본문에 삽입하세요.
+단순한 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 구성을 만들려면 다음과 같은 예를 AMP 페이지 본문에 삽입하세요.
 
 ```html
 <amp-pixel src="https://foo.com/pixel?RANDOM"></amp-pixel>
@@ -45,25 +45,28 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 [`am
 에 포함시켜야 합니다 ([구성요소 포함 선언](../../../../documentation/components/index.html) 참고).
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 다음의 예는 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 와 유사합니다. 페이지가 표시될 때마다 트리거 이벤트가 시작되며, 임의의 ID와 함께 페이지 조회수 데이터가 정의된 URL에 전송됩니다.
 
 ```html
 <amp-analytics>
+  <script type="application/json">
 
-<script type="application/json">
+      {"requests":
+        {"pageview": "https://foo.com/pixel?RANDOM
+      ", },"triggers":
+        {"trackPageview":
+          {"on": "visible",
+          "request": "pageview"
 
-  {"requests":
-    {"pageview": "https://foo.com/pixel?RANDOM
-  ", },"triggers":
-    {"trackPageview":
-      {"on": "visible",
-      "request": "pageview"
-
-} } }</script>
-
+    } } }
+  </script>
 </amp-analytics>
 ```
 
@@ -79,7 +82,9 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 [`am
 참조). 다음의 예에서는 페이지 조회수 요청이 URL로 전송되며, 현재 AMP 문서의 기본 URL, title, [클라이언트 ID](analytics_basics.md#user-identification) 도 함께 전송됩니다.
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
@@ -92,32 +97,31 @@ AMP 플랫폼 통합의 일환으로 제공업체에서는 사전 정의된 [`am
 
 ```html
 <amp-analytics>
+  <script type="application/json">
 
-<script type="application/json">
-
-  {"requests":
-    {"pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars":
-    {"account":
-  "ABC123", },"triggers":
-    {"someEvent":
-      {"on": "visible",
-      "request": "pageview",
+      {"requests":
+        {"pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
+      },
       "vars":
-        {"title":
-"My homepage", } } } }</script>
-
+        {"account":
+      "ABC123", },"triggers":
+        {"someEvent":
+          {"on": "visible",
+          "request": "pageview",
+          "vars":
+            {"title":
+    "My homepage", } } } }
+  </script>
 </amp-analytics>
 ```
 
-위의 예에서 `account`  및 `title`  변수는 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 구성에서 정의됩니다. `canonicalUrl` 및 `clientId` 변수는 구성에서 정의되지 않기 때문에 이러한 변수의 값은 플랫폼에 의해 치환됩니다.
+위의 예에서 `account` 및 `title` 변수는 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 구성에서 정의됩니다. `canonicalUrl` 및 `clientId` 변수는 구성에서 정의되지 않기 때문에 이러한 변수의 값은 플랫폼에 의해 치환됩니다.
 
 중요: 변수 치환은 유연하게 조정될 수 있습니다. 서로 다른 위치에서 동일한 변수가 정의될 수 있으며, AMP 런타임에서는 [변수 치환 순서](deep_dive_analytics.md#variable-substitution-ordering) 에 나와 있는 우선순위에 따라 값이 파싱됩니다.
 
 ## 사용자 식별 <a name="user-identification"></a>
 
-웹사이트에서는 쿠키를 사용하여  특정 사용자에 대한 정보를 브라우저에 저장합니다. 쿠키를 사용하여 사용자가 이전에 사이트에 방문했는지 알 수 있습니다. AMP 에서는 게시자의 웹사이트 또는 캐시 (Google AMP 캐시 등) 를 통해 페이지를 게재할 수 있습니다. 게시자의 웹사이트 및 캐시는 서로 다른 도메인을 사용할 가능성이 큽니다. 보안상의 이유로 브라우저에서는 다른 도메인의 쿠키를 대상으로 한 액세스를 제한할 수 있으며 실제로 제한하기도 합니다 ([여러 출처의 사용자 추적] (https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) 참조).
+웹사이트에서는 쿠키를 사용하여 특정 사용자에 대한 정보를 브라우저에 저장합니다. 쿠키를 사용하여 사용자가 이전에 사이트에 방문했는지 알 수 있습니다. AMP 에서는 게시자의 웹사이트 또는 캐시 (Google AMP 캐시 등) 를 통해 페이지를 게재할 수 있습니다. 게시자의 웹사이트 및 캐시는 서로 다른 도메인을 사용할 가능성이 큽니다. 보안상의 이유로 브라우저에서는 다른 도메인의 쿠키를 대상으로 한 액세스를 제한할 수 있으며 실제로 제한하기도 합니다 ([여러 출처의 사용자 추적](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md) 참조).
 
 기본적으로 AMP 는 페이지가 게시자의 원래 웹사이트와 캐시 중 어느 쪽을 통해 액세스되었든 간에 클라이언트 ID 제공을 관리합니다. AMP 에서 생성된 클라이언트 ID 에는 `amp-` 값 및 `base64` 로 인코딩된 문자열이 포함되며 동일한 사용자가 다시 방문하면 동일하게 유지됩니다.
 
@@ -130,11 +134,13 @@ AMP 페이지가 게시자 사이트에서 게재되는 경우 AMP 에서 사용
 예:
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 AMP 에서 이 쿠키가 설정되었다는 사실이 확인된 경우 클라이언트 ID 치환으로 인해 쿠키값이 반환됩니다. AMP 에서 이 쿠키가 설정되지 않았다는 사실이 확인된 경우 AMP 는 `amp-` 형식으로 된 값과 base64 로 인코딩된 임의의 문자열을 생성합니다.
 
 사용자 알림 ID 추가 (선택사항) 등 클라이언트 ID 치환에 관해 자세히 알아보려면 [AMP 애널리틱스에서 지원되는 변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md) 를 확인하세요.
 
-자세히 알아보기: 애널리틱스에 관해 자세히 알아보려면 계속해서 [AMP 애널리틱스 심도 있게 알아보기](deep_dive_analytics.md)  및 [사용 사례](use_cases.md) 를 확인하세요.
+자세히 알아보기: 애널리틱스에 관해 자세히 알아보려면 계속해서 [AMP 애널리틱스 심도 있게 알아보기](deep_dive_analytics.md) 및 [사용 사례](use_cases.md) 를 확인하세요.

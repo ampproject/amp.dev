@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const rcs = require('rcs-core');
 const csso = require('csso');
+const rcs = require('rcs-core');
 
 /* Class names which are safe to rewrite in the context of amp.dev */
 const SAFE_CLASS_NAMES = [
@@ -91,7 +91,7 @@ const SAFE_CLASS_NAMES = [
 ];
 
 rcs.selectorLibrary.setExclude(
-    new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$')
+  new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$')
 );
 
 /**
@@ -105,10 +105,14 @@ class CssTransformer {
 
   transform(tree) {
     const html = tree.root.firstChildByTag('html');
-    if (!html) return;
+    if (!html) {
+      return;
+    }
 
     const head = html.firstChildByTag('head');
-    if (!head) return;
+    if (!head) {
+      return;
+    }
 
     // Find style[amp-custom] to rewrite selectors
     let style = null;
@@ -118,10 +122,14 @@ class CssTransformer {
         break;
       }
     }
-    if (!style) return;
+    if (!style) {
+      return;
+    }
 
     const body = html.firstChildByTag('body');
-    if (!body) return;
+    if (!body) {
+      return;
+    }
 
     // Rewrite the selectors inside the CSS
     const css = style.children[0].data;
@@ -136,9 +144,12 @@ class CssTransformer {
         continue;
       }
 
-      node.attribs.class = node.attribs.class.split(' ').map((className) => {
-        return rcs.selectorLibrary.get(className) || className;
-      }).join(' ');
+      node.attribs.class = node.attribs.class
+        .split(' ')
+        .map(className => {
+          return rcs.selectorLibrary.get(className) || className;
+        })
+        .join(' ');
     }
   }
 }

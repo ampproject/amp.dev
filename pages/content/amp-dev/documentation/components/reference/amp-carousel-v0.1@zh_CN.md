@@ -2,13 +2,12 @@
 $title: amp-carousel
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 沿着一条横轴显示多个相似的内容片段。
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 用于沿着一条横轴显示多个相似的内容片段的通用轮播界面；具有高度灵活性和高性能。
 
@@ -61,20 +58,27 @@ limitations under the License.
 如果用户滑动、使用箭头键或点击可选导航箭头，则轮播界面会在两个项之间前进。
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel width="450"
-  height="300">
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+<amp-carousel width="450" height="300">
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
     width="450"
-    height="300"></amp-img>
+    height="300"
+  ></amp-img>
 </amp-carousel>
 ```
+
 [/example]
 
 # 前往某张特定幻灯片 <a name="advancing-to-a-specific-slide"></a>
@@ -84,49 +88,65 @@ limitations under the License.
 在以下示例中，我们提供了一个包含三张图片的轮播界面，轮播界面下方是预览按钮。当用户点击其中一个按钮时，系统会显示相应的轮播项。
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel id="carousel-with-preview"
+<amp-carousel
+  id="carousel-with-preview"
+  width="450"
+  height="300"
+  layout="responsive"
+  type="slides"
+>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
     height="300"
     layout="responsive"
-    type="slides">
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="apples"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="lemons"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="blueberries"></amp-img>
-  </amp-carousel>
-  <div class="carousel-preview">
-    <button on="tap:carousel-with-preview.goToSlide(index=0)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-        width="60"
-        height="40"
-        alt="apples"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=1)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-        width="60"
-        height="40"
-        alt="lemons"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=2)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-        width="60"
-        height="40"
-        alt="blueberries"></amp-img>
-    </button>
-  </div>
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
 ```
+
 [/example]
 
 # 属性 <a name="attributes"></a>
@@ -185,6 +205,7 @@ limitations under the License.
         <em>示例：显示带有控制、循环播放和延迟自动播放功能的幻灯片轮播界面。</em>
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
 <amp-carousel type="slides"
   width="450"
@@ -206,22 +227,23 @@ limitations under the License.
     height="300"></amp-img>
 </amp-carousel>
 ```
+
 [/example]</td>
-      </tr>
-      <tr>
-        <td width="40%"><strong>常见属性</strong></td>
-        <td>此元素包含扩展到 AMP 组件的<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">常见属性</a>。</td>
-      </tr>
-    </table>
+</tr>
+<tr>
+<td width="40%"><strong>常见属性</strong></td>
+<td>此元素包含扩展到 AMP 组件的<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">常见属性</a>。</td>
+</tr>
+</table>
 
 # 样式设置 <a name="styling"></a>
 
-* 您可以使用 `amp-carousel` 元素选择器随意设置样式。
-* 您可以使用 `.amp-carousel-slide` 类别选择器定位轮播项。
-* 停用样式设置时，`amp-carousel` 按钮的可视状态将隐藏。
-* 默认情况下，`.amp-carousel-button` 将内嵌 SVG 用作按钮的背景图片。您可以使用自己的 SVG 或图片替换按钮，如下面的示例所示。
+- 您可以使用 `amp-carousel` 元素选择器随意设置样式。
+- 您可以使用 `.amp-carousel-slide` 类别选择器定位轮播项。
+- 停用样式设置时，`amp-carousel` 按钮的可视状态将隐藏。
+- 默认情况下，`.amp-carousel-button` 将内嵌 SVG 用作按钮的背景图片。您可以使用自己的 SVG 或图片替换按钮，如下面的示例所示。
 
-*示例：默认 `.amp-carousel-button` 内嵌 SVG*
+_示例：默认 `.amp-carousel-button` 内嵌 SVG_
 
 ```css
 .amp-carousel-button-prev {
@@ -230,7 +252,7 @@ limitations under the License.
 }
 ```
 
-*示例：替换默认 `.amp-carousel-button` 内嵌 SVG*
+_示例：替换默认 `.amp-carousel-button` 内嵌 SVG_
 
 ```css
 .amp-carousel-button-prev {

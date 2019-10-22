@@ -2,12 +2,10 @@
 $title: amp-social-share
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: Se está desarrollando la función para hacer un seguimiento del uso compartido de contenido en redes sociales.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,10 +23,7 @@ teaser:
      limitations under the License.
 -->
 
-
-
 Muestra un botón para compartir contenido en redes sociales.
-
 
 <table>
   <tr>
@@ -66,10 +61,15 @@ El botón para compartir contenido extrae algunos valores predeterminados de alg
 **Ejemplo: Transferencia de parámetros**
 
 Si quieres transferir parámetros al punto de conexión para compartir, puedes especificar `data-param-<attribute>` para que se añada al punto de conexión.
+
 ```html
-<amp-social-share type="linkedin" width="60" height="44"
-    data-param-text="Hello world"
-    data-param-url="https://example.com/">
+<amp-social-share
+  type="linkedin"
+  width="60"
+  height="44"
+  data-param-text="Hello world"
+  data-param-url="https://example.com/"
+>
 </amp-social-share>
 ```
 
@@ -230,9 +230,11 @@ Además de los proveedores preconfigurados, puedes utilizar proveedores no confi
 En el siguiente ejemplo se crea un botón para compartir contenido a través de Facebook Messenger. Para ello, se asigna al atributo `data-share-endpoint` el punto de conexión del protocolo personalizado de Facebook Messenger.
 
 ```html
-<amp-social-share type="facebookmessenger"
-    data-share-endpoint="fb-messenger://share"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="facebookmessenger"
+  data-share-endpoint="fb-messenger://share"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 
@@ -251,8 +253,9 @@ En [AMP Start](https://ampstart.com/components#links-and-sharing) encontrarás m
 ### Estilos personalizados <a name="custom-styles"></a>
 
 Si quieres aplicar un estilo propio, simplemente anula los estilos proporcionados, como el siguiente:
+
 ```css
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
   background: red;
   background-image: url(datauri:svg/myownsvgicon);
 }
@@ -263,8 +266,10 @@ amp-social-share[type="twitter"] {
 Puedes usar la [sustitución global de variables AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) en el elemento `<amp-social-share>`. En el siguiente ejemplo, `TITLE` se sustituye por el título de la página, y `CANONICAL_URL` se sustituye por la URL canónica del documento.
 
 ```html
-<amp-social-share type="whatsapp"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="whatsapp"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 

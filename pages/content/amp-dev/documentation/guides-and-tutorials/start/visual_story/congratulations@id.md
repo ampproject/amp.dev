@@ -25,4 +25,3 @@ Pelajari artikel AMP lebih lanjut dari referensi berikut:
 Komponen [`amp-story`](../../../../documentation/components/reference/amp-story.md) masih bersifat **eksperimental**. Untuk mendaftar ke uji coba asli agar dapat memublikasikan halaman dengan komponen ini, silakan kunjungi <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
 
 [/tip]
-

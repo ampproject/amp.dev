@@ -7,9 +7,9 @@ $title: Configurar analíticas
 Para integrar una solución de analíticas, primero tienes que saber qué datos necesitas
 y cómo quieres analizarlos. Antes de empezar, responde a estas preguntas:
 
-* ¿Analizarás las interacciones de los usuarios con herramientas de terceros
-o con una propia?
-* ¿Qué comportamientos de los usuarios medirás para comprender cómo interaccionan con tu página?
+- ¿Analizarás las interacciones de los usuarios con herramientas de terceros
+  o con una propia?
+- ¿Qué comportamientos de los usuarios medirás para comprender cómo interaccionan con tu página?
 
 ### Enviar datos a un proveedor o usarlos directamente
 
@@ -39,11 +39,11 @@ Para hacer la configuración necesaria, primero tienes que identificar estos dat
 
 Puntos clave que hay que tener en cuenta:
 
-* ¿Registrarás solo las páginas vistas o tienes pensado supervisar más patrones de interacción?
-Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics).
-* ¿Qué tipos de datos quieres capturar de tus usuarios? ¿El contenido,
-el dispositivo o el navegador? Consulta información sobre la [sustitución de variables](analytics_basics.md).
-* ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios](analytics_basics.md).
+- ¿Registrarás solo las páginas vistas o tienes pensado supervisar más patrones de interacción?
+  Consulta [qué te conviene más utilizar: amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics).
+- ¿Qué tipos de datos quieres capturar de tus usuarios? ¿El contenido,
+  el dispositivo o el navegador? Consulta información sobre la [sustitución de variables](analytics_basics.md).
+- ¿Cómo identificarás a tus usuarios? Consulta información sobre cómo [identificar usuarios](analytics_basics.md).
 
 [tip type="read-on"]
 Obtén más información sobre analíticas en el artículo [Analytics: aspectos básicos](analytics_basics.md).

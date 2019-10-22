@@ -8,9 +8,10 @@ formats:
   - ads
 author: sebastianbenz
 ---
+
 {% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
-In this document, you'll learn about the AMP Cache URL format and how it handles requests. 
+In this document, you'll learn about the AMP Cache URL format and how it handles requests.
 
 ## URL Format
 
@@ -26,11 +27,11 @@ You can use this URL calculator to convert an URL into an AMP cache version:
 
 The converted AMP Cache URL consists of the following parts:
 
-* `amp-dev`: the publisher domain converted into a subdomain using the algorithm described above.</li>
-* `cdn.ampproject.org`: the AMP Cache domain.
-* `c`: to indicate that it's an AMP document (there is also `i` for image and `r` for resources such as fonts).
-* `s`: indicating that the AMP Cache fetches the content from the origin using TLS (secure HTTPS).
-* `amp-dev.com/index.amp.html`: the original URL excluding the scheme.
+- `amp-dev`: the publisher domain converted into a subdomain using the algorithm described above.</li>
+- `cdn.ampproject.org`: the AMP Cache domain.
+- `c`: to indicate that it's an AMP document (there is also `i` for image and `r` for resources such as fonts).
+- `s`: indicating that the AMP Cache fetches the content from the origin using TLS (secure HTTPS).
+- `amp-dev.com/index.amp.html`: the original URL excluding the scheme.
 
 It is OK for URLs to include parameters in the query string, simply include these in the AMP Cache URL as well.
 

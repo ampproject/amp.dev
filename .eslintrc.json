@@ -1,38 +1,129 @@
 {
-  "extends": "google",
+  "root": true,
+  "parser": "babel-eslint",
+  "plugins": [
+    "google-camelcase",
+    "notice",
+    "prettier",
+    "sort-imports-es6-autofix",
+    "sort-requires"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jasmine": true,
+    "jest": true,
+    "node": true
+  },
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "rules": {
-    "max-len": [2, 100, {
-      "ignoreComments": true,
-      "ignoreUrls": true,
-      "tabWidth": 2
-    }],
-    "no-implicit-coercion": [2, {
-      "boolean": false,
-      "number": true,
-      "string": true
-    }],
-    "no-unused-expressions": [2, {
-      "allowShortCircuit": true,
-      "allowTernary": false
-    }],
-    "no-unused-vars": [2, {
-      "vars": "all",
-      "args": "after-used",
-      "argsIgnorePattern": "(^reject$|^_$)",
-      "varsIgnorePattern": "(^_$)"
-    }],
-    "quotes": [2, "single"],
-    "require-jsdoc": 0,
-    "valid-jsdoc": 0,
-    "prefer-arrow-callback": 1,
-    "no-var": 1
+  "globals": {
+    "AMP": false,
+    "context": false,
+    "global": false
   },
-  "env": {
-    "node": true,
-    "jasmine": true
-  }
+  "settings": {
+  },
+  "rules": {
+    "curly": 2,
+    "google-camelcase/google-camelcase": 2,
+    "no-alert": 2,
+    "no-cond-assign": 2,
+    "no-debugger": 2,
+    "no-div-regex": 2,
+    "no-dupe-keys": 2,
+    "no-eval": 2,
+    "no-extend-native": 2,
+    "no-extra-bind": 2,
+    "no-implicit-coercion": [2, {"boolean": false}],
+    "no-implied-eval": 2,
+    "no-iterator": 2,
+    "no-lone-blocks": 2,
+    "no-native-reassign": 2,
+    "no-redeclare": 2,
+    "no-restricted-globals": [2, "error", "event"],
+    "no-script-url": 2,
+    "no-self-compare": 2,
+    "no-sequences": 2,
+    "no-throw-literal": 2,
+    "no-unused-expressions": 0,
+    "no-unused-vars": [
+      2,
+      {
+        "argsIgnorePattern": "^(var_args$|opt_|unused)",
+        "varsIgnorePattern": "(AmpElement|Def|Interface)$"
+      }
+    ],
+    "no-useless-call": 2,
+    "no-useless-concat": 2,
+    "no-undef": 2,
+    "no-var": 2,
+    "no-warning-comments": [
+      2,
+      {"terms": ["do not submit"], "location": "anywhere"}
+    ],
+    "notice/notice": [
+      2,
+      {
+        "mustMatch": "Copyright 20\\d{2} The AMP HTML Authors\\.",
+        "templateFile": "LICENSE-TEMPLATE.txt",
+        "messages": {
+          "whenFailedToMatch": "Missing or incorrect license header"
+        }
+      }
+    ],
+    "object-shorthand": [2, "properties", {"avoidQuotes": true}],
+    "prefer-const": 2,
+    "prettier/prettier": 2,
+    "radix": 2,
+    "sort-imports-es6-autofix/sort-imports-es6": [
+      2,
+      {
+        "ignoreCase": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ],
+    "sort-requires/sort-requires": 2
+  },
+  "overrides": [
+    {
+      "files": [
+        "test/**/*.js",
+        "extensions/**/test/**/*.js",
+        "extensions/**/test-e2e/*.js",
+        "ads/**/test/**/*.js",
+        "testing/**/*.js"
+      ],
+      "globals": {
+        "it": false,
+        "chai": false,
+        "expect": false,
+        "describe": false,
+        "beforeEach": false,
+        "afterEach": false,
+        "before": false,
+        "after": false,
+        "assert": false,
+        "sinon": true,
+        "sandbox": true,
+        "describes": true,
+        "allowConsoleError": false,
+        "expectAsyncConsoleError": false,
+        "restoreAsyncErrorThrows": false,
+        "stubAsyncErrorThrows": false,
+        "Key": false
+      }
+    },
+    {
+      "files": ["babel.config.js"],
+      "globals": {
+        "module": false,
+        "process": false,
+        "require": false
+      }
+    }
+  ]
 }

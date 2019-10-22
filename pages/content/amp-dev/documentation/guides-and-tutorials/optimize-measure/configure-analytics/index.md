@@ -16,9 +16,9 @@ formats:
 All analytics solutions are built upon knowing what data you need,
 and how you intend to analyze that data. Decide before you start:
 
-* Will you use third-party analytics tools to analyze user engagement,
-or your own in-house solution?
-* What user behaviors will you measure to understand user engagement?
+- Will you use third-party analytics tools to analyze user engagement,
+  or your own in-house solution?
+- What user behaviors will you measure to understand user engagement?
 
 ### Send data to vendor or self?
 
@@ -48,10 +48,10 @@ You must identify this data before you can configure it.
 
 Key data points to consider:
 
-* Will you track only page views, or additional user engagement patterns
-(see also [amp-pixel or amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
-* What kinds of data will you capture about your users, your content,
-the device or browser (see also [Variable substitution](analytics_basics.md#variable-substitution))?
-* How will you identify your users (see also [User identification](analytics_basics.md#user-identification))?
+- Will you track only page views, or additional user engagement patterns
+  (see also [amp-pixel or amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
+- What kinds of data will you capture about your users, your content,
+  the device or browser (see also [Variable substitution](analytics_basics.md#variable-substitution))?
+- How will you identify your users (see also [User identification](analytics_basics.md#user-identification))?
 
 Learn more: Continue to learn about analytics with [Analytics: the Basics](analytics_basics.md).

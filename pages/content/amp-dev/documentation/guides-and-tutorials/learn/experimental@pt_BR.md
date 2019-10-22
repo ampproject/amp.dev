@@ -27,7 +27,7 @@ Para ativar o Canal Dev AMP no navegador, acesse [a página de experimentos de A
 
 #### Disponibilizado por cdn.ampproject.org
 
-Para conteúdo disponibilizado por [https://cdn.ampproject.org](https://cdn.ampproject.org), 
+Para conteúdo disponibilizado por [https://cdn.ampproject.org](https://cdn.ampproject.org),
 acesse a [página de experimentos de AMP](https://cdn.ampproject.org/experiments.html)
 e ative (ou desative) qualquer componente experimental clicando nos controles correspondentes. A ativação de um experimento definirá um cookie no seu navegador para ativar o experimento em todas as páginas AMP disponibilizadas por meio do cache de AMP do Google.
 
@@ -36,7 +36,7 @@ e ative (ou desative) qualquer componente experimental clicando nos controles co
 Para conteúdo disponibilizado por qualquer outro domínio, é possível ativar ou desativar os experimentos no console de ferramentas do desenvolvedor quando o modo de desenvolvimento estiver ativado. Para isso, use:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Se o arquivo AMP incluir recursos experimentais, será reprovado na
@@ -50,12 +50,11 @@ O documento pode ativar alguns experimentos. Para fazer isso, basta colocar uma 
 ```html
 <head>
   …
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   …
 </head>
 ```
 
-Ao fazer isso, os experimentos especificados serão ativados para todos os visitantes do documento. No entanto, nem todos os experimentos podem ser ativados no nível do documento. Para ver todos os experimentos na lista de permissões, verifique o atributo `allow-doc-opt-in` no arquivo` prod-config.json` do projeto. O recurso ativado no documento pode ser desativado pelo usuário.
- 
+Ao fazer isso, os experimentos especificados serão ativados para todos os visitantes do documento. No entanto, nem todos os experimentos podem ser ativados no nível do documento. Para ver todos os experimentos na lista de permissões, verifique o atributo `allow-doc-opt-in` no arquivo`prod-config.json` do projeto. O recurso ativado no documento pode ser desativado pelo usuário.

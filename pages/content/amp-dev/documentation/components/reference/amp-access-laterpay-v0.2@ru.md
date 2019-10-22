@@ -2,7 +2,7 @@
 $title: amp-access-laterpay
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: Позволяет издателям легко обеспечивать интеграцию с платформой для микроплатежей LaterPay
 ---
@@ -22,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Позволяет издателям легко обеспечивать интеграцию с платформой для микроплатежей [LaterPay](https://www.laterpay.net). Для работы с `amp-access-laterpay` необходимо использовать [amp-access](amp-access.md).
 
@@ -48,7 +46,6 @@ limitations under the License.
     <td>См. пример <a href="https://ampbyexample.com/components/amp-access-laterpay/">amp-access-laterpay</a> на сайте AMP By Example.</td>
   </tr>
 </table>
-
 
 ## Действия <a name="behavior"></a>
 
@@ -77,7 +74,6 @@ limitations under the License.
 Конфигурация похожа на ту, что используется для AMP Access, но не требует авторизации, автоматического уведомления и ссылок для входа.
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -86,7 +82,6 @@ limitations under the License.
       }
     }
 </script>
-
 ```
 
 Значения, которые можно настроить в объекте конфигурации `laterpay`, перечислены ниже.
@@ -164,7 +159,6 @@ limitations under the License.
 <div amp-access="access" amp-access-hide="">
   <p>...Контент статьи...</p>
 </div>
-
 ```
 
 ## Стилизация <a name="styling"></a>
@@ -176,39 +170,41 @@ limitations under the License.
 Структура диалога выглядит так:
 
 ```html
-
 <div id="amp-access-laterpay-dialog" class="amp-access-laterpay">
   <div class="amp-access-laterpay-container">
     <p class="amp-access-laterpay-header">
-      Необязательно. Отображается, если в верхнем колонтитуле задано сообщение для локализации.
+      Необязательно. Отображается, если в верхнем колонтитуле задано сообщение
+      для локализации.
     </p>
     <ul>
       <li>
         <label>
-          <input name="purchaseOption" type="radio">
-            <div class="amp-access-laterpay-metadata">
-              <span class="amp-access-laterpay-title">Название покупки</span>
-              <p class="amp-access-laterpay-description">Описание покупки</p>
-            </div>
-          </label>
-          <p class="amp-access-laterpay-price-container">
-            <span class="amp-access-laterpay-price">100</span>
-            <sup class="amp-access-laterpay-currency">РУБ</sup>
-          </p>
-        </li>
-        <!-- ...Список других вариантов... -->
-      </ul>
-      <button class="amp-access-laterpay-purchase-button">Купить</button>
-      <p class="amp-access-laterpay-already-purchased-container">
-        <a href="…">Уже есть</a>
-      </p>
-      <p class="amp-access-laterpay-footer">
-        Необязательно. Отображается, если в нижнем колонтитуле задано сообщение для локализации.
-      </p>
-    </div>
-    <p class="amp-access-laterpay-badge">Технологии <a href="https://laterpay.net" target="_blank">LaterPay</a></p>
+          <input name="purchaseOption" type="radio" />
+          <div class="amp-access-laterpay-metadata">
+            <span class="amp-access-laterpay-title">Название покупки</span>
+            <p class="amp-access-laterpay-description">Описание покупки</p>
+          </div>
+        </label>
+        <p class="amp-access-laterpay-price-container">
+          <span class="amp-access-laterpay-price">100</span>
+          <sup class="amp-access-laterpay-currency">РУБ</sup>
+        </p>
+      </li>
+      <!-- ...Список других вариантов... -->
+    </ul>
+    <button class="amp-access-laterpay-purchase-button">Купить</button>
+    <p class="amp-access-laterpay-already-purchased-container">
+      <a href="…">Уже есть</a>
+    </p>
+    <p class="amp-access-laterpay-footer">
+      Необязательно. Отображается, если в нижнем колонтитуле задано сообщение
+      для локализации.
+    </p>
   </div>
-
+  <p class="amp-access-laterpay-badge">
+    Технологии <a href="https://laterpay.net" target="_blank">LaterPay</a>
+  </p>
+</div>
 ```
 
 ## Локализация <a name="localization"></a>
@@ -218,7 +214,6 @@ limitations under the License.
 Оставшийся текст является частью расширенного компонента. Его можно изменить и локализовать с помощью параметров конфигурации следующим образом:
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -229,7 +224,6 @@ limitations under the License.
       }
     }
 </script>
-
 ```
 
 Ниже перечислены ключи, которые можно перевести или настроить. Учитывайте, что текст в любом случае должен сохранять исходный смысл.
@@ -289,7 +283,6 @@ limitations under the License.
 В сочетании с LaterPay и существующей системой платного доступа конфигурация будет выглядеть примерно так:
 
 ```html
-
 <script id="amp-access" type="application/json">
   [
     {
@@ -311,15 +304,19 @@ limitations under the License.
     }
   ]
 </script>
-
 ```
 
 Разметка контента может выглядеть так:
 
 ```html
-<section amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access" amp-access-hide>
+<section
+  amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access"
+  amp-access-hide
+>
   <p>
-    <a on="tap:amp-access.login-publishername">Войдите, чтобы воспользоваться подпиской на PublisherName.</a>
+    <a on="tap:amp-access.login-publishername"
+      >Войдите, чтобы воспользоваться подпиской на PublisherName.</a
+    >
   </p>
 
   <div id="amp-access-laterpay-dialog" class="amp-access-laterpay"></div>
@@ -332,17 +329,16 @@ limitations under the License.
 <div amp-access="laterpay.access OR publishername.access" amp-access-hide>
   <p>...Контент статьи...</p>
 </div>
-
 ```
 
 Более подробный пример можно найти по ссылке: [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html).
 
 ## Статьи по теме <a name="related-documentation"></a>
 
-* [AMP Access](amp-access.md)
-* [LaterPay](https://www.laterpay.net)
-* [LaterPay: как мы работаем с микроплатежами](https://docs.laterpay.net/how_we_do_micropayments/)
-* [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) – решение, похожее на AMP Access LaterPay, но созданное для обычных страниц без AMP.
+- [AMP Access](amp-access.md)
+- [LaterPay](https://www.laterpay.net)
+- [LaterPay: как мы работаем с микроплатежами](https://docs.laterpay.net/how_we_do_micropayments/)
+- [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) – решение, похожее на AMP Access LaterPay, но созданное для обычных страниц без AMP.
 
 ## Проверка <a name="validation"></a>
 

@@ -2,13 +2,11 @@
 $title: amp-selector
 $category@: dynamic-content
 formats:
-- websites
-- email
+  - websites
+  - email
 teaser:
   text: Representa un control que muestra un menú de varias opciones entre las que el usuario puede elegir.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Representa un control que muestra un menú de varias opciones entre las que el usuario puede elegir.
 
@@ -45,29 +41,31 @@ Representa un control que muestra un menú de varias opciones entre las que el u
   </tr>
 </table>
 
-
 ## Comportamiento <a name="behavior"></a>
 
 El selector de AMP es un control que muestra una lista y permite al usuario elegir una o varias opciones, cuyo contenido no se limita solo al texto.
 
-* Un `amp-selector` puede contener cualquier elemento HTML arbitrario o componente de AMP (p. ej., `amp-carousel`, `amp-img`, etc.).
-* Un `amp-selector` no puede contener controles anidados de `amp-selector`.
-* Las opciones que se pueden seleccionar se definen añadiendo el atributo `option` al elemento y asignando un valor al atributo `(p. ej., <li option='value'></li>)`.
-* Las opciones inhabilitadas se definen añadiendo el atributo `disabled` al elemento (p. ej., `<li option='d' disabled></li>`).
-* Las opciones preseleccionadas se definen añadiendo el atributo `selected` al elemento (p. ej., `<li option='b' selected></li>`).
-* Para permitir seleccionar varias opciones, añade el atributo `multiple` al elemento `amp-selector`.  De forma predeterminada, `amp-selector` admite una única opción seleccionada a la vez.
-* Para inhabilitar `amp-selector`, añade el atributo `disabled` al elemento `amp-selector`.
-* Cuando `amp-selector` se encuentra dentro de una etiqueta `form`, contiene un atributo `name``` y se produce un evento de envío, se`` comporta como un grupo de botones de selección o de casillas, y envía los valores seleccionados (asociados a la opción) utilizando el nombre que se le ha asignado``.
+- Un `amp-selector` puede contener cualquier elemento HTML arbitrario o componente de AMP (p. ej., `amp-carousel`, `amp-img`, etc.).
+- Un `amp-selector` no puede contener controles anidados de `amp-selector`.
+- Las opciones que se pueden seleccionar se definen añadiendo el atributo `option` al elemento y asignando un valor al atributo `(p. ej., <li option='value'></li>)`.
+- Las opciones inhabilitadas se definen añadiendo el atributo `disabled` al elemento (p. ej., `<li option='d' disabled></li>`).
+- Las opciones preseleccionadas se definen añadiendo el atributo `selected` al elemento (p. ej., `<li option='b' selected></li>`).
+- Para permitir seleccionar varias opciones, añade el atributo `multiple` al elemento `amp-selector`. De forma predeterminada, `amp-selector` admite una única opción seleccionada a la vez.
+- Para inhabilitar `amp-selector`, añade el atributo `disabled` al elemento `amp-selector`.
+- Cuando `amp-selector` se encuentra dentro de una etiqueta `form`, contiene un atributo `name``y se produce un evento de envío, se` comporta como un grupo de botones de selección o de casillas, y envía los valores seleccionados (asociados a la opción) utilizando el nombre que se le ha asignado``.
 
 Ejemplo:
 
 ```html
-
 <form id="form1" action="/" method="get" target="_blank">
   <amp-selector name="single_image_select" layout="container">
     <ul>
-      <li><amp-img src="/img1.png" width="50" height="50" option="1"></amp-img></li>
-      <li><amp-img src="/img2.png" width="50" height="50" option="2"></amp-img></li>
+      <li>
+        <amp-img src="/img1.png" width="50" height="50" option="1"></amp-img>
+      </li>
+      <li>
+        <amp-img src="/img2.png" width="50" height="50" option="2"></amp-img>
+      </li>
       <li option="na" selected="">Ninguna de las opciones anteriores</li>
     </ul>
   </amp-selector>
@@ -79,21 +77,52 @@ Ejemplo:
   <amp-selector name="multi_image_select_1" layout="container" multiple="">
     <amp-carousel id="carousel-1" width="200" height="60" controls="">
       <amp-img src="/img1.png" width="80" height="60" option="a"></amp-img>
-      <amp-img src="/img2.png" width="80" height="60" option="b" selected=""></amp-img>
+      <amp-img
+        src="/img2.png"
+        width="80"
+        height="60"
+        option="b"
+        selected=""
+      ></amp-img>
       <amp-img src="/img3.png" width="80" height="60" option="c"></amp-img>
-      <amp-img src="/img4.png" width="80" height="60" option="d" disabled=""></amp-img>
+      <amp-img
+        src="/img4.png"
+        width="80"
+        height="60"
+        option="d"
+        disabled=""
+      ></amp-img>
     </amp-carousel>
   </amp-selector>
 </form>
 
-<p><amp-selector name="multi_image_select_2" layout="container" multiple="" form="form1">
-  <amp-carousel height="300" id="carousel-1" type="slides" width="400" controls="">
-    <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
-    <amp-img height="60" src="/img2.png" width="80" option="b" selected=""></amp-img>
-    <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
-    <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
-  </amp-carousel>
-</amp-selector>
+<p>
+  <amp-selector
+    name="multi_image_select_2"
+    layout="container"
+    multiple=""
+    form="form1"
+  >
+    <amp-carousel
+      height="300"
+      id="carousel-1"
+      type="slides"
+      width="400"
+      controls=""
+    >
+      <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
+      <amp-img
+        height="60"
+        src="/img2.png"
+        width="80"
+        option="b"
+        selected=""
+      ></amp-img>
+      <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
+      <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
+    </amp-carousel>
+  </amp-selector>
+</p>
 ```
 
 ## Borrar selecciones <a name="clearing-selections"></a>

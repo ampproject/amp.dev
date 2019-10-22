@@ -1,3 +1,18 @@
+/**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
@@ -80,10 +95,10 @@ module.exports = {
     // TODO: improve: jest will not work with 'module-alias', so we have define the alias here again!
     // see https://github.com/ilearnio/module-alias/issues/46
     '^@lib/utils$': '<rootDir>/platform/lib/utils/index.js',
-    '^@lib/(.*?)(\.js)?$': '<rootDir>/platform/lib/$1.js',
-    '^@examples/(.*?)(\.js)?$': '<rootDir>/examples/$1.js',
+    '^@lib/(.*?)(.js)?$': '<rootDir>/platform/lib/$1.js',
+    '^@examples/(.*?)(.js)?$': '<rootDir>/examples/$1.js',
     '^@examples$': '<rootDir>/examples/index.js',
-    '^@boilerplate/(.*?)(\.js)?$': '<rootDir>/boilerplate/$1.js',
+    '^@boilerplate/(.*?)(.js)?$': '<rootDir>/boilerplate/$1.js',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

@@ -1,3 +1,18 @@
+/**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 // Copyright 2018 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +29,9 @@
 
 require('./template-dialog.scss');
 
-import createDialog from '../dialog/base.js';
 import ListFilter from '../filter/filter.js';
 import absolutify from 'absolutify';
+import createDialog from '../dialog/base.js';
 import dialogHeader from './header.html';
 
 const SITEMAP_URL = '/static/samples/samples.json';
@@ -37,11 +52,11 @@ class TemplateDialog {
   open(runtime) {
     this.runtime = runtime;
     this.fetchTemplates()
-        .then((sitemap) => this.renderTemplates(sitemap))
-        .catch((err) => {
-          console.log(err);
-          this.callback.onError('Could not fetch templates');
-        });
+      .then(sitemap => this.renderTemplates(sitemap))
+      .catch(err => {
+        console.log(err);
+        this.callback.onError('Could not fetch templates');
+      });
   }
 
   close() {
@@ -57,26 +72,30 @@ class TemplateDialog {
     }
     this.templates = fetch(SITEMAP_URL, {
       mode: 'cors',
-    }).then((response) => {
-      this.button.enable();
-      return response.json();
-    }).catch((err) => {
-      console.error(err);
-      this.templates = null;
-    });
+    })
+      .then(response => {
+        this.button.enable();
+        return response.json();
+      })
+      .catch(err => {
+        console.error(err);
+        this.templates = null;
+      });
     return this.templates;
   }
 
   renderTemplates(sitemap) {
     const root = this.doc.createElement('div');
     root.addEventListener('click', this._onListItemClick.bind(this));
-    const heading = this.doc.createRange().createContextualFragment(dialogHeader);
+    const heading = this.doc
+      .createRange()
+      .createContextualFragment(dialogHeader);
     root.appendChild(heading);
     root.setAttribute('id', 'templates');
     const searchStrings = [];
     const items = [];
     const templates = this.selectTemplatesForRuntime(sitemap);
-    templates.categories.forEach((c) => {
+    templates.categories.forEach(c => {
       this.addTemplateCategory(c, root, items, searchStrings);
     });
     const searchInputField = root.querySelector('#template-search-input');
@@ -91,7 +110,7 @@ class TemplateDialog {
     root.appendChild(heading);
     const templateList = this.doc.createElement('ul');
     root.appendChild(templateList);
-    category.examples.forEach((e) => {
+    category.examples.forEach(e => {
       const listItem = this.createTemplateListItem(e);
       templateList.appendChild(listItem);
       items.push(listItem);
@@ -114,16 +133,18 @@ class TemplateDialog {
     this.close();
     fetch(url, {
       mode: 'cors',
-    }).then((response) => response.text())
-        .then((body) => {
-          this.callback.onSuccess({
-            url,
-            content: this.makeLinksAbsolute(url, body),
-          });
-        }).catch((err) => {
-          console.error(err);
-          this.callback.onError('Could not fetch template');
+    })
+      .then(response => response.text())
+      .then(body => {
+        this.callback.onSuccess({
+          url,
+          content: this.makeLinksAbsolute(url, body),
         });
+      })
+      .catch(err => {
+        console.error(err);
+        this.callback.onError('Could not fetch template');
+      });
   }
 
   makeLinksAbsolute(url, body) {
@@ -156,10 +177,12 @@ class TemplateDialog {
       return templates;
     } else {
       return {
-        categories: [{
-          name: 'No templates available',
-          examples: [],
-        }],
+        categories: [
+          {
+            name: 'No templates available',
+            examples: [],
+          },
+        ],
       };
     }
   }

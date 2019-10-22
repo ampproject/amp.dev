@@ -2,12 +2,10 @@
 $title: amp-social-share
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: Paylaşım izleme özelliği geliştirme aşamasındadır.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,11 +23,7 @@ teaser:
      limitations under the License.
 -->
 
-
-
 Bir sosyal paylaşım düğmesi görüntüler.
-
-
 
 <table>
   <tr>
@@ -67,10 +61,15 @@ Paylaşım düğmesi, sizin adınıza önceden yapılandırılmış sağlayıcı
 **Örnek: Parametreleri geçirme**
 
 Parametreleri paylaşım uç noktasına geçirmek istediğinizde, paylaşım uç noktasına eklenecek `data-param-<attribute>` değerini belirtebilirsiniz.
+
 ```html
-<amp-social-share type="linkedin" width="60" height="44"
-    data-param-text="Hello world"
-    data-param-url="https://example.com/">
+<amp-social-share
+  type="linkedin"
+  width="60"
+  height="44"
+  data-param-text="Hello world"
+  data-param-url="https://example.com/"
+>
 </amp-social-share>
 ```
 
@@ -231,9 +230,11 @@ Linkedin önceden yapılandırılmış sağlayıcılardan biridir; dolayısıyla
 Aşağıdaki örnekte, `data-share-endpoint` özelliğinin Facebook Messenger özel protokolü için doğru uç noktaya ayarlanmasıyla Facebook Messenger üzerinden bir paylaşım düğmesi oluşturulmaktadır.
 
 ```html
-<amp-social-share type="facebookmessenger"
-    data-share-endpoint="fb-messenger://share"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="facebookmessenger"
+  data-share-endpoint="fb-messenger://share"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 
@@ -252,8 +253,9 @@ AMP sayfalarınızda kullanabileceğiniz duyarlı, önceden şekillendirilmiş p
 ### Özel Stiller <a name="custom-styles"></a>
 
 Bazen kendi stilinizi sağlamak istersiniz. Bunun için sağlanan stilleri aşağıda gösterilen şekilde geçersiz kılabilirsiniz:
+
 ```css
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
   background: red;
   background-image: url(datauri:svg/myownsvgicon);
 }
@@ -264,8 +266,10 @@ amp-social-share[type="twitter"] {
 `<amp-social-share>` öğesinde [genel AMP değişkeni değişikliklerini](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) kullanabilirsiniz. Aşağıdaki örnekte, `TITLE` değişkeni, doküman başlığı ve `CANONICAL_URL` değişkeni, dokümanın standart URL'si ile değiştirilmiştir.
 
 ```html
-<amp-social-share type="whatsapp"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="whatsapp"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 

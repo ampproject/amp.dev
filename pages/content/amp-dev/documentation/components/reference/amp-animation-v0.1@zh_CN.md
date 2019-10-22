@@ -2,12 +2,11 @@
 $title: amp-animation
 $category@: presentation
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: 定义和显示动画。
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 定义和运行动画。
 
@@ -44,8 +41,6 @@ limitations under the License.
   </tr>
 </table>
 
-
-
 ## 概述 <a name="overview"></a>
 
 AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在 AMP 文档中定义和运行动画。
@@ -57,23 +52,24 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 ### 顶层动画规范 <a name="top-level-animation-specification"></a>
 
 顶层对象用于定义整个动画过程，其中包含任意数量的动画组件（定义为 `animations` 数组）：
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  // Timing properties
-  ...
-  "animations": [
+  <script type="application/json">
     {
-      // Animation 1
-    },
-    ...
-    {
-      // Animation N
+      // Timing properties
+      ...
+      "animations": [
+        {
+          // Animation 1
+        },
+        ...
+        {
+          // Animation N
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script>
 </amp-animation>
 ```
 
@@ -145,6 +141,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 在 `switch` 动画中，系统会按照指定的顺序评估候选项，然后执行第一个与[条件语句](#conditions)匹配的动画，并忽略其余动画。
 
 例如，以下动画会运行运动路径动画（如果受支持），然后回退到转换操作：
+
 ```
 {
   "selector": "#target1",
@@ -170,23 +167,24 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 动画组件可以通过 `var()` 表达式声明将用于时间值和关键帧值的 CSS 变量。系统会根据当前目标上下文对 `var()` 表达式进行求值。在动画组件中指定的 CSS 变量会传播到嵌套动画，应用于动画目标，然后替换最终动画中使用的 CSS 变量。
 
 例如：
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "--delay": "0.5s",
-  "--x": "100px",
-  "animations": [
+  <script type="application/json">
     {
-      "selector": "#target1",
-      "delay": "var(--delay)",
-      "--x": "150px",
-      "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
-    },
-    ...
-  ]
-}
-</script>
+      "--delay": "0.5s",
+      "--x": "100px",
+      "animations": [
+        {
+          "selector": "#target1",
+          "delay": "var(--delay)",
+          "--x": "150px",
+          "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
+        },
+        ...
+      ]
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -262,6 +260,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 所有时间属性都允许直接使用数值/字符串值或 CSS 值。例如，可以将“duration”指定为 `1000`、`1s` 或 `1000ms`。此外，这些属性还允许使用 `calc()`、`var()` 以及其他 CSS 表达式。
 
 采用 JSON 格式的时间属性示例：
+
 ```text
 {
   ...
@@ -281,6 +280,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 在任何可以指定 `selector` 的位置，都可以指定 `subtargets: []`。子目标可以替换动画中为特定子目标（通过索引或 CSS 选择器指明）指定的时间属性或变量。
 
 例如：
+
 ```text
 {
   "selector": ".target",
@@ -310,6 +310,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 下面列举了一些典型的关键帧定义。
 
 采用简写对象形式“到”格式指定 100% 处的最终状态：
+
 ```text
 {
   "keyframes": {"opacity": 0, "transform": "scale(2)"}
@@ -317,6 +318,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 ```
 
 采用简写对象形式“从-到”格式指定 0% 处的起始状态以及 100% 处的最终状态：
+
 ```text
 {
   "keyframes": {
@@ -327,6 +329,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 ```
 
 采用简写对象形式“值-数组”格式指定起始状态、最终状态以及多个（等间距）偏移处的多个值：
+
 ```text
 {
   "keyframes": {
@@ -337,6 +340,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 ```
 
 采用数组形式指定关键帧。系统会自动在 0 和 100% 处以及这两者之间等间距分配偏移：
+
 ```text
 {
   "keyframes": [
@@ -347,6 +351,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 ```
 
 数组形式还可以显式包含“offset”：
+
 ```text
 {
   "keyframes": [
@@ -358,6 +363,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 ```
 
 数组形式还可以包含“easing”：
+
 ```text
 {
   "keyframes": [
@@ -374,6 +380,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 #### 通过 CSS 指定关键帧 <a name="keyframes-from-css"></a>
 
 另一种指定关键帧的方式是在文档的样式表（`<style>` 标记）中以 `@keyframes` CSS 规则的形式进行指定。例如：
+
 ```html
 <style amp-custom>
   @keyframes keyframes1 {
@@ -387,12 +394,12 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 </style>
 
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "duration": "1s",
-  "keyframes": "keyframes1"
-}
-</script>
+  <script type="application/json">
+    {
+      "duration": "1s",
+      "keyframes": "keyframes1"
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -405,6 +412,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 #### 列入白名单的关键帧属性 <a name="white-listed-properties-for-keyframes"></a>
 
 并非所有 CSS 属性都可用于关键帧。只有新型浏览器可以优化和快速以动画形式呈现的 CSS 属性才可列入白名单。随着越来越多的属性被确认为可提供良好性能，此名单将不断扩充。目前，该名单包含以下属性：
+
 - [`opacity`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity)
 - [`transform`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform)
 - [`visibility`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/visibility)
@@ -415,36 +423,38 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 ### 动画配置的缩略形式 <a name="abbreviated-forms-of-animation-configuration"></a>
 
 如果动画仅涉及一个元素且一个关键帧效果就已足够，则配置可以缩减为只有这一个动画组件。例如：
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "selector": "#target-id",
-  "duration": "1s",
-  "keyframes": {"opacity": 1}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": "#target-id",
+      "duration": "1s",
+      "keyframes": {"opacity": 1}
+    }
+  </script>
 </amp-animation>
 ```
 
 如果动画由一系列组件组成，但没有顶层动画，则配置可以缩减为一组组件。例如：
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": 1000,
-    "keyframes": {"opacity": 1}
-  },
-  {
-    "selector": ".target-class",
-    "duration": 600,
-    "delay": 400,
-    "keyframes": {"transform": "scale(2)"}
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": 1000,
+        "keyframes": {"opacity": 1}
+      },
+      {
+        "selector": ".target-class",
+        "duration": 600,
+        "delay": 400,
+        "keyframes": {"transform": "scale(2)"}
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
@@ -453,48 +463,50 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 动画可以引用其他动画，因此可以将多个 `amp-animation` 声明合并成一个最终动画。引用其他动画中的动画与嵌套基本相同。人们希望将动画拆分成不同元素的原因是，他们想要在多个位置重复使用同一个动画，或者只是想让每个动画声明更简短、更易于管理。
 
 例如：
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
 此动画示例将“anim2”动画合并到“anim1”中。“anim2”在添加时没有提供目标 (`selector`)。在这种情况下，被添加的动画应该引用自己的目标。
 
 此外，还有一种形式允许添加到的动画提供一个或多个目标。在这种情况下，系统会为每个匹配的目标执行所添加的动画。例如：
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -507,34 +519,36 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 `amp-animation` 允许将 `var()` 和 `calc()` 表达式用于时间值和关键帧值。
 
 例如：
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": "4s",
-    "delay": "var(--delay)",
-    "--y": "var(--other-y, 100px)",
-    "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay)",
+        "--y": "var(--other-y, 100px)",
+        "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
 系统会在不直接支持 `var()` 和 `calc()` 的平台上对其执行 polyfill 操作，还会从相应目标元素提取 `var()` 属性。但遗憾的是，系统无法完全对 `var()` 执行 polyfill 操作。因此，如果兼容性很重要，强烈建议在 `var()` 表达式中添加默认值。例如：
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": "4s",
-    "delay": "var(--delay, 100ms)",
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay, 100ms)",
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
@@ -549,6 +563,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 `index()` 函数可返回动画效果中当前目标元素的索引。当多个目标使用 `selector` 属性呈现相同的动画效果时，此函数的用处最大。第一个与选择器匹配的目标的索引为 `0`，第二个目标的索引为 `1`，依此类推。
 
 此外，该属性还可与 `calc()` 表达式组合使用，并可用于打造交错效果。例如：
+
 ```
 {
   "selector": ".class-x",
@@ -572,6 +587,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 `rand()` 函数可返回一个随机 CSS 值。有以下两种形式。
 
 第一种形式不含参数，只是返回一个介于 0 到 1 之间的随机数。
+
 ```
 {
   "delay": "calc(10s * rand())"
@@ -579,6 +595,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 ```
 
 第二种形式包含两个参数，返回介于这两个参数之间的随机值。
+
 ```
 {
   "delay": "rand(5s, 10s)"
@@ -598,6 +615,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 `width()` 和 `height()` 在实现转换方面尤为有用。`left`、`top` 及类似 CSS 属性可以使用 `%` 值来表示与容器大小成比例的动画。不过，`transform` 属性会以不同的方式解读 `%` 值 - 作为所选元素的百分比。因此，`width()` 和 `height()` 可用于表示转换动画（根据容器元素及类似元素）。
 
 这些函数可与 `calc()`、`var()` 及其他 CSS 表达式组合使用。例如：
+
 ```
 {
   "transform": "translateX(calc(width('#container') + 10px))"
@@ -613,6 +631,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 - 等等
 
 例如，以下表达式会计算与元素宽度成比例的延迟时间（以秒为单位）：
+
 ```
 {
   "delay": "calc(1s * num(width()) / 100)"
@@ -625,9 +644,9 @@ SVG 非常棒，我们建议将其用于动画！
 
 SVG 动画受到[列入白名单的关键帧属性](#white-listed-properties-for-keyframes)中所述的那些 CSS 属性的支持，但存在一些细微差别：
 
-* IE/Edge SVG 元素[不支持 CSS `transform` 属性](https://developer.microsoft.com/zh-CN/microsoft-edge/platform/issues/1173754/)。`transform` 动画本身已执行过 polyfill 操作。不过，不会应用在样式表中指定的初始状态。如果初始转换状态在 IE/Edge 上很重要，建议您通过 [SVG `transform` 属性](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/transform)进行复制。
-* 虽然已针对 IE/Edge 对 `transform` CSS 执行 polyfill 操作，但遗憾的是，无法对 `transform-origin` 执行 polyfill 操作。因此，如果需要与 IE/Edge 兼容，建议仅使用默认 `transform-origin`。
-* 大多数浏览器目前都无法正确解读 `transform-origin` CSS。请参阅 [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300)、[Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) 和 [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340) 的相关问题。实现 [CSS `transform-box`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-box) 后，大部分引起混淆的问题应该会得到解决。如果 `transform-origin` 至关重要，建议您同时添加必需的 `transform-box` CSS，以确保未来的兼容性。
+- IE/Edge SVG 元素[不支持 CSS `transform` 属性](https://developer.microsoft.com/zh-CN/microsoft-edge/platform/issues/1173754/)。`transform` 动画本身已执行过 polyfill 操作。不过，不会应用在样式表中指定的初始状态。如果初始转换状态在 IE/Edge 上很重要，建议您通过 [SVG `transform` 属性](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/transform)进行复制。
+- 虽然已针对 IE/Edge 对 `transform` CSS 执行 polyfill 操作，但遗憾的是，无法对 `transform-origin` 执行 polyfill 操作。因此，如果需要与 IE/Edge 兼容，建议仅使用默认 `transform-origin`。
+- 大多数浏览器目前都无法正确解读 `transform-origin` CSS。请参阅 [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300)、[Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) 和 [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340) 的相关问题。实现 [CSS `transform-box`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform-box) 后，大部分引起混淆的问题应该会得到解决。如果 `transform-origin` 至关重要，建议您同时添加必需的 `transform-box` CSS，以确保未来的兼容性。
 
 ## 触发动画 <a name="triggering-animation"></a>
 
@@ -638,11 +657,11 @@ SVG 动画受到[列入白名单的关键帧属性](#white-listed-properties-for
 对于 `trigger` 属性，目前 `visibility` 是唯一可用的值。`visibility` 会在基础文档或嵌入内容可见时（位于视口中时）触发。
 
 例如：
+
 ```html
-<amp-animation id="anim1" layout="nodisplay"
-    trigger="visibility">
-    ...
-  </amp-animation>
+<amp-animation id="anim1" layout="nodisplay" trigger="visibility">
+  ...
+</amp-animation>
 ```
 
 ### 通过 `on` 操作触发 <a name="triggering-via-on-action"></a>
@@ -660,12 +679,12 @@ SVG 动画受到[列入白名单的关键帧属性](#white-listed-properties-for
 
 `amp-animation` 元素会导出以下操作：
 
-* `start` - 启动尚未运行的动画。时间属性和变量可指定为操作参数，如 `anim1.start(delay=-100, --scale=2)`。
-* `restart` - 启动动画或重新启动当前正在运行的动画。时间属性和变量可指定为操作参数，如 `anim1.start(delay=-100, --scale=2)`。
-* `pause` - 暂停当前正在运行的动画。
-* `resume` - 继续当前正在运行的动画。
-* `togglePause` - 在暂停/继续操作之间切换。
-* `seekTo` - 暂停动画，并跳转到通过 `time` 参数（以毫秒为单位）或 `percent` 参数（作为时间轴中的百分比点）指定的时间点。
-* `reverse` - 反向运行动画。
-* `finish` - 结束动画。
-* `cancel` - 取消动画。
+- `start` - 启动尚未运行的动画。时间属性和变量可指定为操作参数，如 `anim1.start(delay=-100, --scale=2)`。
+- `restart` - 启动动画或重新启动当前正在运行的动画。时间属性和变量可指定为操作参数，如 `anim1.start(delay=-100, --scale=2)`。
+- `pause` - 暂停当前正在运行的动画。
+- `resume` - 继续当前正在运行的动画。
+- `togglePause` - 在暂停/继续操作之间切换。
+- `seekTo` - 暂停动画，并跳转到通过 `time` 参数（以毫秒为单位）或 `percent` 参数（作为时间轴中的百分比点）指定的时间点。
+- `reverse` - 反向运行动画。
+- `finish` - 结束动画。
+- `cancel` - 取消动画。

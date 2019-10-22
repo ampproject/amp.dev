@@ -16,15 +16,15 @@
 
 'use strict';
 
-const {format} = require('util');
 const linkifyHtml = require('linkifyjs/html');
 const LogProvider = require('./LogProvider.js');
+const {format} = require('util');
 
 /**
  * Formats a AMP runtime log requests.
  */
 class LogFormatter {
-  constructor(logProvider=new LogProvider()) {
+  constructor(logProvider = new LogProvider()) {
     this.logProvider_ = logProvider;
   }
 

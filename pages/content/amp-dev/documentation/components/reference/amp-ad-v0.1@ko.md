@@ -2,22 +2,18 @@
 $title: amp-ad
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: 광고를 표시하는 컨테이너입니다.
 ---
-
-
 
 광고를 표시하는 컨테이너입니다. `amp-embed`는 `amp-ad` 태그의 별칭이며 다양한 태그 이름으로 모든 기능이 파생됩니다. 의미상 더 정확한 경우 `amp-embed`를 사용하세요. AMP 문서는 HTTPS를 통해 게재되는 광고/삽입만 지원합니다.
 
 # <a name="amp-ad"></a> amp-ad / amp-embed
 
-
 [tip type="note"]
 `amp-ad`/`amp-embed` 사양은 시간이 지남에 따라 크게 개선될 가능성이 높습니다. 현재 접근 방식은 형식을 부트스트랩하여 광고를 게재할 수 있도록 설계되었습니다.
 [/tip]
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -64,35 +60,43 @@ limitations under the License.
 #### 예: 몇 가지 광고 표시 <a name="example-displaying-a-few-ads"></a>
 
 [example preview="inline" playground="true" imports="amp-ad"]
+
 ```html
-<amp-ad type="a9"
+<amp-ad
+  type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
   data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
-    width="300"
-    height="250"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
-  </amp-ad>
-  <amp-ad width="300"
-    height="250"
-    type="industrybrains"
-    data-width="300"
-    data-height="250"
-    data-cid="19626-3798936394">
-  </amp-ad>
-  <amp-embed type="taboola"
-    width="400"
-    height="300"
-    layout="responsive"
-    data-publisher="amp-demo"
-    data-mode="thumbnails-a"
-    data-placement="Ads Example"
-    data-article="auto">
-  </amp-embed>
+  width="300"
+  height="250"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
+</amp-ad>
+<amp-ad
+  width="300"
+  height="250"
+  type="industrybrains"
+  data-width="300"
+  data-height="250"
+  data-cid="19626-3798936394"
+>
+</amp-ad>
+<amp-embed
+  type="taboola"
+  width="400"
+  height="300"
+  layout="responsive"
+  data-publisher="amp-demo"
+  data-mode="thumbnails-a"
+  data-placement="Ads Example"
+  data-article="auto"
+>
+</amp-embed>
 ```
+
 [/example]
 
 ## 속성 <a name="attributes"></a>
@@ -142,9 +146,8 @@ limitations under the License.
 필요한 경우 `amp-ad`는 `placeholder` 속성으로 하위 요소를 지원합니다. 광고 네트워크에서 지원하는 경우 게재할 수 있는 광고가 없으면 이 요소가 표시됩니다. [자리표시자 및 대체 동작](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)에서 자세히 알아보세요.
 
 ```html
-<amp-ad width=300 height=250
-    type="foo">
-    <div placeholder>로드 중 ...</div>
+<amp-ad width="300" height="250" type="foo">
+  <div placeholder>로드 중 ...</div>
 </amp-ad>
 ```
 
@@ -157,7 +160,7 @@ limitations under the License.
 대체 동작의 예:
 
 ```html
-<amp-ad width=300 height=250 type="foo">
+<amp-ad width="300" height="250" type="foo">
   <div fallback>광고 없음</div>
 </amp-ad>
 ```
@@ -166,14 +169,14 @@ limitations under the License.
 
 다음 3가지 방법으로 동영상 광고로 AMP에서 수익을 창출할 수 있습니다.
 
-1. AMP에서는 기본적으로 BrightCove, DailyMotion 등 광고로 수익을 창출할 수 있는 여러 동영상 플레이어를 지원합니다. 전체 목록은 [media](../../../documentation/components/index.html#media) 구성요소를 참조하세요.
+1.  AMP에서는 기본적으로 BrightCove, DailyMotion 등 광고로 수익을 창출할 수 있는 여러 동영상 플레이어를 지원합니다. 전체 목록은 [media](../../../documentation/components/index.html#media) 구성요소를 참조하세요.
 
-1. 내장 IMA SDK 및 HTML5 동영상 플레이어와 함께 제공되는 [amp-ima-video](amp-ima-video.md) 구성요소를 사용합니다.
-1. AMP에서 지원되지 않는 동영상 플레이어를 사용하는 경우 [amp-iframe](https://ampbyexample.com/components/amp-iframe/)을 사용해 맞춤 플레이어를 제공할 수 있습니다.
-`amp-iframe` 접근 방식을 사용하는 경우 다음 안내를 따르세요.
+1.  내장 IMA SDK 및 HTML5 동영상 플레이어와 함께 제공되는 [amp-ima-video](amp-ima-video.md) 구성요소를 사용합니다.
+1.  AMP에서 지원되지 않는 동영상 플레이어를 사용하는 경우 [amp-iframe](https://ampbyexample.com/components/amp-iframe/)을 사용해 맞춤 플레이어를 제공할 수 있습니다.
+    `amp-iframe` 접근 방식을 사용하는 경우 다음 안내를 따르세요.
 
-    * 첫 번째 표시 영역에 플레이어를 로드하는 경우 포스터가 있어야 합니다. [자세히 알아보기](amp-iframe.md#iframe-with-placeholder)
-    * 동영상과 포스터는 HTTPS를 통해 제공되어야 합니다.</li>
+        * 첫 번째 표시 영역에 플레이어를 로드하는 경우 포스터가 있어야 합니다. [자세히 알아보기](amp-iframe.md#iframe-with-placeholder)
+        * 동영상과 포스터는 HTTPS를 통해 제공되어야 합니다.</li>
 
 ## 맞춤 도메인에서 광고 게재 <a name="running-ads-from-a-custom-domain"></a>
 
@@ -182,10 +185,13 @@ AMP에서는 내 도메인과 같은 맞춤 도메인에서 광고를 로드하�
 이 기능을 사용 설정하려면 [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html) 파일을 웹 서버에 복사하세요. 그런 다음 AMP 파일에 다음 메타 태그를 추가합니다.
 
 ```html
-<meta name="amp-3p-iframe-src" content="https://assets.your-domain.com/path/to/remote.html">
+<meta
+  name="amp-3p-iframe-src"
+  content="https://assets.your-domain.com/path/to/remote.html"
+/>
 ```
 
-  메타 태그의 `content` 속성은 웹 서버의 remote.html 파일 사본의 절대 URL입니다. 이 URL은 'https' 스키마를 사용해야 하며, AMP 파일과 동일한 원본에 있으면 안 됩니다. 예를 들어 `www.example.com`에 AMP 파일을 호스팅하는 경우 이 URL은 `www.example.com`에 있으면 안 되지만 `something-else.example.com`에 있는 것은 괜찮습니다. iframe에서 허용되는 원본에 대한 자세한 내용은 ['Iframe 원본 정책'](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)을 참조하세요.
+메타 태그의 `content` 속성은 웹 서버의 remote.html 파일 사본의 절대 URL입니다. 이 URL은 'https' 스키마를 사용해야 하며, AMP 파일과 동일한 원본에 있으면 안 됩니다. 예를 들어 `www.example.com`에 AMP 파일을 호스팅하는 경우 이 URL은 `www.example.com`에 있으면 안 되지만 `something-else.example.com`에 있는 것은 괜찮습니다. iframe에서 허용되는 원본에 대한 자세한 내용은 ['Iframe 원본 정책'](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)을 참조하세요.
 
 ### 보안 <a name="security"></a>
 
@@ -193,8 +199,8 @@ AMP에서는 내 도메인과 같은 맞춤 도메인에서 광고를 로드하�
 
 또한 iframe은 iframe이 적용될 것으로 예상되는 원본에만 삽입되도록 시행해야 합니다. 원본은 다음과 같아야 합니다.
 
-* 내 원본
-* AMP 캐시의 `https://cdn.ampproject.org`
+- 내 원본
+- AMP 캐시의 `https://cdn.ampproject.org`
 
 AMP 캐시의 경우 '소스 원본'(cdn.ampproject.org에서 제공한 문서의 원본)이 내 원본 중 하나인지도 확인해야 합니다.
 
@@ -232,199 +238,199 @@ AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/
 
 ## 지원되는 광고 네트워크 <a name="supported-ad-networks"></a>
 
-* [A8](https://github.com/ampproject/amphtml/blob/master/ads/a8.md)
-* [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md)
-* [AccessTrade](https://github.com/ampproject/amphtml/blob/master/ads/accesstrade.md)
-* [Adblade](https://github.com/ampproject/amphtml/blob/master/ads/adblade.md)
-* [AdButler](https://github.com/ampproject/amphtml/blob/master/ads/adbutler.md)
-* [Adform](https://github.com/ampproject/amphtml/blob/master/ads/adform.md)
-* [Adfox](https://github.com/ampproject/amphtml/blob/master/ads/adfox.md)
-* [Ad Generation](https://github.com/ampproject/amphtml/blob/master/ads/adgeneration.md)
-* [Adhese](https://github.com/ampproject/amphtml/blob/master/ads/adhese.md)
-* [Adincube](https://github.com/ampproject/amphtml/blob/master/ads/adincube.md)
-* [ADITION](https://github.com/ampproject/amphtml/blob/master/ads/adition.md)
-* [Adman](https://github.com/ampproject/amphtml/blob/master/ads/adman.md)
-* [AdmanMedia](https://github.com/ampproject/amphtml/blob/master/ads/admanmedia.md)
-* [Admixer](https://github.com/ampproject/amphtml/blob/master/ads/admixer.md)
-* [AdOcean](https://github.com/ampproject/amphtml/blob/master/ads/adocean.md)
-* [AdPicker](https://github.com/ampproject/amphtml/blob/master/ads/adpicker.md)
-* [AdPlugg](https://github.com/ampproject/amphtml/blob/master/ads/adplugg.md)
-* [Adpon](https://github.com/ampproject/amphtml/blob/master/ads/adpon.md)
-* [AdReactor](https://github.com/ampproject/amphtml/blob/master/ads/adreactor.md)
-* [애드센스](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [AdSensor](https://github.com/ampproject/amphtml/blob/master/ads/adsensor.md)
-* [AdsNative](https://github.com/ampproject/amphtml/blob/master/ads/adsnative.md)
-* [AdSpeed](https://github.com/ampproject/amphtml/blob/master/ads/adspeed.md)
-* [AdSpirit](https://github.com/ampproject/amphtml/blob/master/ads/adspirit.md)
-* [AdStir](https://github.com/ampproject/amphtml/blob/master/ads/adstir.md)
-* [AdTech](https://github.com/ampproject/amphtml/blob/master/ads/adtech.md)
-* [AdThrive](https://github.com/ampproject/amphtml/blob/master/ads/adthrive.md)
-* [AdUnity](https://github.com/ampproject/amphtml/blob/master/ads/adunity.md)
-* [Ad Up Technology](https://github.com/ampproject/amphtml/blob/master/ads/aduptech.md)
-* [Adventive](https://github.com/ampproject/amphtml/blob/master/ads/adventive.md)
-* [Adverline](https://github.com/ampproject/amphtml/blob/master/ads/adverline.md)
-* [Adverticum](https://github.com/ampproject/amphtml/blob/master/ads/adverticum.md)
-* [AdvertServe](https://github.com/ampproject/amphtml/blob/master/ads/advertserve.md)
-* [Adyoulike](https://github.com/ampproject/amphtml/blob/master/ads/adyoulike.md)
-* [Affiliate-B](https://github.com/ampproject/amphtml/blob/master/ads/affiliateb.md)
-* [AMoAd](https://github.com/ampproject/amphtml/blob/master/ads/amoad.md)
-* [AppNexus](https://github.com/ampproject/amphtml/blob/master/ads/appnexus.md)
-* [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
-* [Atomx](https://github.com/ampproject/amphtml/blob/master/ads/atomx.md)
-* [Baidu](https://github.com/ampproject/amphtml/blob/master/ads/baidu.md)
-* [BeOpinion](amp-beopinion.md)
-* [Bidtellect](https://github.com/ampproject/amphtml/blob/master/ads/bidtellect.md)
-* [brainy](https://github.com/ampproject/amphtml/blob/master/ads/brainy.md)
-* [Broadstreet Ads](https://github.com/ampproject/amphtml/blob/master/ads/broadstreetads.md)
-* [CA A.J.A. Infeed](https://github.com/ampproject/amphtml/blob/master/ads/caajainfeed.md)
-* [CA-ProFit-X](https://github.com/ampproject/amphtml/blob/master/ads/caprofitx.md)
-* [Cedato](https://github.com/ampproject/amphtml/blob/master/ads/cedato.md)
-* [Chargeads](https://github.com/ampproject/amphtml/blob/master/ads/chargeads.md)
-* [Colombia](https://github.com/ampproject/amphtml/blob/master/ads/colombia.md)
-* [Connatix](https://github.com/ampproject/amphtml/blob/master/ads/connatix.md)
-* [Content.ad](https://github.com/ampproject/amphtml/blob/master/ads/contentad.md)
-* [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md)
-* [CSA](https://github.com/ampproject/amphtml/blob/master/ads/google/csa.md)
-* [CxenseDisplay](https://github.com/ampproject/amphtml/blob/master/ads/eas.md)
-* [Dianomi](https://github.com/ampproject/amphtml/blob/master/ads/dianomi.md)
-* [Directadvert](https://github.com/ampproject/amphtml/blob/master/ads/directadvert.md)
-* [DistroScale](https://github.com/ampproject/amphtml/blob/master/ads/distroscale.md)
-* [Dot and Media](https://github.com/ampproject/amphtml/blob/master/ads/dotandads.md)
-* [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
-* [eADV](https://github.com/ampproject/amphtml/blob/master/ads/eadv.md)
-* [E-Planning](https://github.com/ampproject/amphtml/blob/master/ads/eplanning.md)
-* [Ezoic](https://github.com/ampproject/amphtml/blob/master/ads/ezoic.md)
-* [Felmat](https://github.com/ampproject/amphtml/blob/master/ads/felmat.md)
-* [FlexOneELEPHANT](https://github.com/ampproject/amphtml/blob/master/ads/f1e.md)
-* [FlexOneHARRIER](https://github.com/ampproject/amphtml/blob/master/ads/f1h.md)
-* [Flite](https://github.com/ampproject/amphtml/blob/master/ads/flite.md)
-* [fluct](https://github.com/ampproject/amphtml/blob/master/ads/fluct.md)
-* [FreeWheel](https://github.com/ampproject/amphtml/blob/master/ads/freewheel.md)
-* [Fusion](https://github.com/ampproject/amphtml/blob/master/ads/fusion.md)
-* [GenieeSSP](https://github.com/ampproject/amphtml/blob/master/ads/genieessp.md)
-* [Giraff](https://github.com/ampproject/amphtml/blob/master/ads/giraff.md)
-* [GMOSSP](https://github.com/ampproject/amphtml/blob/master/ads/gmossp.md)
-* [GumGum](https://github.com/ampproject/amphtml/blob/master/ads/gumgum.md)
-* [Holder](https://github.com/ampproject/amphtml/blob/master/ads/holder.md)
-* [I-Mobile](https://github.com/ampproject/amphtml/blob/master/ads/imobile.md)
-* [Imonomy](https://github.com/ampproject/amphtml/blob/master/ads/imonomy.md)
-* [iBillboard](https://github.com/ampproject/amphtml/blob/master/ads/ibillboard.md)
-* [Imedia](https://github.com/ampproject/amphtml/blob/master/ads/imedia.md)
-* [Improve Digital](https://github.com/ampproject/amphtml/blob/master/ads/improvedigital.md)
-* [Index Exchange](https://github.com/ampproject/amphtml/blob/master/ads/ix.md)
-* [Industrybrains](https://github.com/ampproject/amphtml/blob/master/ads/industrybrains.md)
-* [InMobi](https://github.com/ampproject/amphtml/blob/master/ads/inmobi.md)
-* [Innity](https://github.com/ampproject/amphtml/blob/master/ads/innity.md)
-* [Kargo](https://github.com/ampproject/amphtml/blob/master/ads/kargo.md)
-* [Kiosked](https://github.com/ampproject/amphtml/blob/master/ads/kiosked.md)
-* [Kixer](https://github.com/ampproject/amphtml/blob/master/ads/kixer.md)
-* [Kuadio](https://github.com/ampproject/amphtml/blob/master/ads/kuadio.md)
-* [Ligatus](https://github.com/ampproject/amphtml/blob/master/ads/ligatus.md)
-* [LockerDome](https://github.com/ampproject/amphtml/blob/master/ads/lockerdome.md)
-* [LOKA](https://github.com/ampproject/amphtml/blob/master/ads/loka.md)
-* [MADS](https://github.com/ampproject/amphtml/blob/master/ads/mads.md)
-* [MANTIS](https://github.com/ampproject/amphtml/blob/master/ads/mantis.md)
-* [Media.net](https://github.com/ampproject/amphtml/blob/master/ads/medianet.md)
-* [MediaImpact](https://github.com/ampproject/amphtml/blob/master/ads/mediaimpact.md)
-* [Mediavine](https://github.com/ampproject/amphtml/blob/master/ads/mediavine.md)
-* [Medyanet](https://github.com/ampproject/amphtml/blob/master/ads/medyanet.md)
-* [Meg](https://github.com/ampproject/amphtml/blob/master/ads/meg.md)
-* [MicroAd](https://github.com/ampproject/amphtml/blob/master/ads/microad.md)
-* [MixiMedia](https://github.com/ampproject/amphtml/blob/master/ads/miximedia.md)
-* [Mixpo](https://github.com/ampproject/amphtml/blob/master/ads/mixpo.md)
-* [Monetizer101](https://github.com/ampproject/amphtml/blob/master/ads/monetizer101.md)
-* [mox](https://github.com/ampproject/amphtml/blob/master/ads/mox.md)
-* [myTarget](https://github.com/ampproject/amphtml/blob/master/ads/mytarget.md)
-* [myWidget](https://github.com/ampproject/amphtml/blob/master/ads/mywidget.md)
-* [Nativo](https://github.com/ampproject/amphtml/blob/master/ads/nativo.md)
-* [Navegg](https://github.com/ampproject/amphtml/blob/master/ads/navegg.md)
-* [Nend](https://github.com/ampproject/amphtml/blob/master/ads/nend.md)
-* [NETLETIX](https://github.com/ampproject/amphtml/blob/master/ads/netletix.md)
-* [Noddus](https://github.com/ampproject/amphtml/blob/master/ads/noddus.md)
-* [Nokta](https://github.com/ampproject/amphtml/blob/master/ads/nokta.md)
-* [OneAD](https://github.com/ampproject/amphtml/blob/master/ads/onead.md)
-* [OnNetwork](https://github.com/ampproject/amphtml/blob/master/ads/onnetwork.md)
-* [Open AdStream(OAS)](https://github.com/ampproject/amphtml/blob/master/ads/openadstream.md)
-* [OpenX](https://github.com/ampproject/amphtml/blob/master/ads/openx.md)
-* [Pixels](https://github.com/ampproject/amphtml/blob/master/ads/pixels.md)
-* [plista](https://github.com/ampproject/amphtml/blob/master/ads/plista.md)
-* [polymorphicAds](https://github.com/ampproject/amphtml/blob/master/ads/polymorphicads.md)
-* [popin](https://github.com/ampproject/amphtml/blob/master/ads/popin.md)
-* [Pressboard](https://github.com/ampproject/amphtml/blob/master/ads/pressboard.md)
-* [PromoteIQ](https://github.com/ampproject/amphtml/blob/master/ads/promoteiq.md)
-* [PubGuru](https://github.com/ampproject/amphtml/blob/master/ads/pubguru.md)
-* [PubMatic](https://github.com/ampproject/amphtml/blob/master/ads/pubmatic.md)
-* [Pubmine](https://github.com/ampproject/amphtml/blob/master/ads/pubmine.md)
-* [PulsePoint](https://github.com/ampproject/amphtml/blob/master/ads/pulsepoint.md)
-* [Purch](https://github.com/ampproject/amphtml/blob/master/ads/purch.md)
-* [Rambler&amp;Co](https://github.com/ampproject/amphtml/blob/master/ads/capirs.md)
-* [RbInfoxSg](https://github.com/ampproject/amphtml/blob/master/ads/rbinfox.md)
-* [Realclick](https://github.com/ampproject/amphtml/blob/master/ads/realclick.md)
-* [recomAD](https://github.com/ampproject/amphtml/blob/master/ads/recomad.md)
-* [Red for Publishers](https://github.com/ampproject/amphtml/blob/master/ads/rfp.md)
-* [Relap](https://github.com/ampproject/amphtml/blob/master/ads/relap.md)
-* [Revcontent](https://github.com/ampproject/amphtml/blob/master/ads/revcontent.md)
-* [RevJet](https://github.com/ampproject/amphtml/blob/master/ads/revjet.md)
-* [Rubicon Project](https://github.com/ampproject/amphtml/blob/master/ads/rubicon.md)
-* [RUNative](https://github.com/ampproject/amphtml/blob/master/ads/runative.md)
-* [SAS CI 360 Match](https://github.com/ampproject/amphtml/blob/master/ads/sas.md)
-* [Sekindo](https://github.com/ampproject/amphtml/blob/master/ads/sekindo.md)
-* [Sharethrough](https://github.com/ampproject/amphtml/blob/master/ads/sharethrough.md)
-* [Sklik](https://github.com/ampproject/amphtml/blob/master/ads/sklik.md)
-* [SlimCut Media](https://github.com/ampproject/amphtml/blob/master/ads/slimcutmedia.md)
-* [Smart AdServer](https://github.com/ampproject/amphtml/blob/master/ads/smartadserver.md)
-* [smartclip](https://github.com/ampproject/amphtml/blob/master/ads/smartclip.md)
-* [sogou Ad](https://github.com/ampproject/amphtml/blob/master/ads/sogouad.md)
-* [Sortable](https://github.com/ampproject/amphtml/blob/master/ads/sortable.md)
-* [SOVRN](https://github.com/ampproject/amphtml/blob/master/ads/sovrn.md)
-* [Speakol](https://github.com/ampproject/amphtml/blob/master/ads/speakol.md)
-* [SpotX](https://github.com/ampproject/amphtml/blob/master/ads/spotx.md)
-* [SunMedia](https://github.com/ampproject/amphtml/blob/master/ads/sunmedia.md)
-* [Swoop](https://github.com/ampproject/amphtml/blob/master/ads/swoop.md)
-* [TcsEmotion](https://github.com/ampproject/amphtml/blob/master/ads/tcsemotion.md)
-* [Teads](https://github.com/ampproject/amphtml/blob/master/ads/teads.md)
-* [torimochi](https://github.com/ampproject/amphtml/blob/master/ads/torimochi.md)
-* [TripleLift](https://github.com/ampproject/amphtml/blob/master/ads/triplelift.md)
-* [Trugaze](https://github.com/ampproject/amphtml/blob/master/ads/trugaze.md)
-* [UZOU](https://github.com/ampproject/amphtml/blob/master/ads/uzou.md)
-* [ValueCommerce](https://github.com/ampproject/amphtml/blob/master/ads/valuecommerce.md)
-* [video intelligence](https://github.com/ampproject/amphtml/blob/master/ads/videointelligence.md)
-* [Videonow](https://github.com/ampproject/amphtml/blob/master/ads/videonow.md)
-* [Viralize](https://github.com/ampproject/amphtml/blob/master/ads/viralize.md)
-* [UAS](https://github.com/ampproject/amphtml/blob/master/ads/uas.md)
-* [ucfunnel](https://github.com/ampproject/amphtml/blob/master/ads/ucfunnel.md)
-* [Unruly](https://github.com/ampproject/amphtml/blob/master/ads/unruly.md)
-* [VMFive](https://github.com/ampproject/amphtml/blob/master/ads/vmfive.md)
-* [Webediads](https://github.com/ampproject/amphtml/blob/master/ads/webediads.md)
-* [Weborama](https://github.com/ampproject/amphtml/blob/master/ads/weborama.md)
-* [Widespace](https://github.com/ampproject/amphtml/blob/master/ads/widespace.md)
-* [Wisteria](https://github.com/ampproject/amphtml/blob/master/ads/wisteria.md)
-* [WPMedia](https://github.com/ampproject/amphtml/blob/master/ads/wpmedia.md)
-* [Xlift](https://github.com/ampproject/amphtml/blob/master/ads/xlift.md)
-* [Yahoo](https://github.com/ampproject/amphtml/blob/master/ads/yahoo.md)
-* [YahooJP](https://github.com/ampproject/amphtml/blob/master/ads/yahoojp.md)
-* [Yandex](https://github.com/ampproject/amphtml/blob/master/ads/yandex.md)
-* [Yengo](https://github.com/ampproject/amphtml/blob/master/ads/yengo.md)
-* [Yieldbot](https://github.com/ampproject/amphtml/blob/master/ads/yieldbot.md)
-* [Yieldmo](https://github.com/ampproject/amphtml/blob/master/ads/yieldmo.md)
-* [Yieldone](https://github.com/ampproject/amphtml/blob/master/ads/yieldone.md)
-* [Yieldpro](https://github.com/ampproject/amphtml/blob/master/ads/yieldpro.md)
-* [Zedo](https://github.com/ampproject/amphtml/blob/master/ads/zedo.md)
-* [Zucks](https://github.com/ampproject/amphtml/blob/master/ads/zucks.md)
+- [A8](https://github.com/ampproject/amphtml/blob/master/ads/a8.md)
+- [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md)
+- [AccessTrade](https://github.com/ampproject/amphtml/blob/master/ads/accesstrade.md)
+- [Adblade](https://github.com/ampproject/amphtml/blob/master/ads/adblade.md)
+- [AdButler](https://github.com/ampproject/amphtml/blob/master/ads/adbutler.md)
+- [Adform](https://github.com/ampproject/amphtml/blob/master/ads/adform.md)
+- [Adfox](https://github.com/ampproject/amphtml/blob/master/ads/adfox.md)
+- [Ad Generation](https://github.com/ampproject/amphtml/blob/master/ads/adgeneration.md)
+- [Adhese](https://github.com/ampproject/amphtml/blob/master/ads/adhese.md)
+- [Adincube](https://github.com/ampproject/amphtml/blob/master/ads/adincube.md)
+- [ADITION](https://github.com/ampproject/amphtml/blob/master/ads/adition.md)
+- [Adman](https://github.com/ampproject/amphtml/blob/master/ads/adman.md)
+- [AdmanMedia](https://github.com/ampproject/amphtml/blob/master/ads/admanmedia.md)
+- [Admixer](https://github.com/ampproject/amphtml/blob/master/ads/admixer.md)
+- [AdOcean](https://github.com/ampproject/amphtml/blob/master/ads/adocean.md)
+- [AdPicker](https://github.com/ampproject/amphtml/blob/master/ads/adpicker.md)
+- [AdPlugg](https://github.com/ampproject/amphtml/blob/master/ads/adplugg.md)
+- [Adpon](https://github.com/ampproject/amphtml/blob/master/ads/adpon.md)
+- [AdReactor](https://github.com/ampproject/amphtml/blob/master/ads/adreactor.md)
+- [애드센스](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+- [AdSensor](https://github.com/ampproject/amphtml/blob/master/ads/adsensor.md)
+- [AdsNative](https://github.com/ampproject/amphtml/blob/master/ads/adsnative.md)
+- [AdSpeed](https://github.com/ampproject/amphtml/blob/master/ads/adspeed.md)
+- [AdSpirit](https://github.com/ampproject/amphtml/blob/master/ads/adspirit.md)
+- [AdStir](https://github.com/ampproject/amphtml/blob/master/ads/adstir.md)
+- [AdTech](https://github.com/ampproject/amphtml/blob/master/ads/adtech.md)
+- [AdThrive](https://github.com/ampproject/amphtml/blob/master/ads/adthrive.md)
+- [AdUnity](https://github.com/ampproject/amphtml/blob/master/ads/adunity.md)
+- [Ad Up Technology](https://github.com/ampproject/amphtml/blob/master/ads/aduptech.md)
+- [Adventive](https://github.com/ampproject/amphtml/blob/master/ads/adventive.md)
+- [Adverline](https://github.com/ampproject/amphtml/blob/master/ads/adverline.md)
+- [Adverticum](https://github.com/ampproject/amphtml/blob/master/ads/adverticum.md)
+- [AdvertServe](https://github.com/ampproject/amphtml/blob/master/ads/advertserve.md)
+- [Adyoulike](https://github.com/ampproject/amphtml/blob/master/ads/adyoulike.md)
+- [Affiliate-B](https://github.com/ampproject/amphtml/blob/master/ads/affiliateb.md)
+- [AMoAd](https://github.com/ampproject/amphtml/blob/master/ads/amoad.md)
+- [AppNexus](https://github.com/ampproject/amphtml/blob/master/ads/appnexus.md)
+- [AppVador](https://github.com/ampproject/amphtml/blob/master/ads/appvador.md)
+- [Atomx](https://github.com/ampproject/amphtml/blob/master/ads/atomx.md)
+- [Baidu](https://github.com/ampproject/amphtml/blob/master/ads/baidu.md)
+- [BeOpinion](amp-beopinion.md)
+- [Bidtellect](https://github.com/ampproject/amphtml/blob/master/ads/bidtellect.md)
+- [brainy](https://github.com/ampproject/amphtml/blob/master/ads/brainy.md)
+- [Broadstreet Ads](https://github.com/ampproject/amphtml/blob/master/ads/broadstreetads.md)
+- [CA A.J.A. Infeed](https://github.com/ampproject/amphtml/blob/master/ads/caajainfeed.md)
+- [CA-ProFit-X](https://github.com/ampproject/amphtml/blob/master/ads/caprofitx.md)
+- [Cedato](https://github.com/ampproject/amphtml/blob/master/ads/cedato.md)
+- [Chargeads](https://github.com/ampproject/amphtml/blob/master/ads/chargeads.md)
+- [Colombia](https://github.com/ampproject/amphtml/blob/master/ads/colombia.md)
+- [Connatix](https://github.com/ampproject/amphtml/blob/master/ads/connatix.md)
+- [Content.ad](https://github.com/ampproject/amphtml/blob/master/ads/contentad.md)
+- [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md)
+- [CSA](https://github.com/ampproject/amphtml/blob/master/ads/google/csa.md)
+- [CxenseDisplay](https://github.com/ampproject/amphtml/blob/master/ads/eas.md)
+- [Dianomi](https://github.com/ampproject/amphtml/blob/master/ads/dianomi.md)
+- [Directadvert](https://github.com/ampproject/amphtml/blob/master/ads/directadvert.md)
+- [DistroScale](https://github.com/ampproject/amphtml/blob/master/ads/distroscale.md)
+- [Dot and Media](https://github.com/ampproject/amphtml/blob/master/ads/dotandads.md)
+- [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+- [eADV](https://github.com/ampproject/amphtml/blob/master/ads/eadv.md)
+- [E-Planning](https://github.com/ampproject/amphtml/blob/master/ads/eplanning.md)
+- [Ezoic](https://github.com/ampproject/amphtml/blob/master/ads/ezoic.md)
+- [Felmat](https://github.com/ampproject/amphtml/blob/master/ads/felmat.md)
+- [FlexOneELEPHANT](https://github.com/ampproject/amphtml/blob/master/ads/f1e.md)
+- [FlexOneHARRIER](https://github.com/ampproject/amphtml/blob/master/ads/f1h.md)
+- [Flite](https://github.com/ampproject/amphtml/blob/master/ads/flite.md)
+- [fluct](https://github.com/ampproject/amphtml/blob/master/ads/fluct.md)
+- [FreeWheel](https://github.com/ampproject/amphtml/blob/master/ads/freewheel.md)
+- [Fusion](https://github.com/ampproject/amphtml/blob/master/ads/fusion.md)
+- [GenieeSSP](https://github.com/ampproject/amphtml/blob/master/ads/genieessp.md)
+- [Giraff](https://github.com/ampproject/amphtml/blob/master/ads/giraff.md)
+- [GMOSSP](https://github.com/ampproject/amphtml/blob/master/ads/gmossp.md)
+- [GumGum](https://github.com/ampproject/amphtml/blob/master/ads/gumgum.md)
+- [Holder](https://github.com/ampproject/amphtml/blob/master/ads/holder.md)
+- [I-Mobile](https://github.com/ampproject/amphtml/blob/master/ads/imobile.md)
+- [Imonomy](https://github.com/ampproject/amphtml/blob/master/ads/imonomy.md)
+- [iBillboard](https://github.com/ampproject/amphtml/blob/master/ads/ibillboard.md)
+- [Imedia](https://github.com/ampproject/amphtml/blob/master/ads/imedia.md)
+- [Improve Digital](https://github.com/ampproject/amphtml/blob/master/ads/improvedigital.md)
+- [Index Exchange](https://github.com/ampproject/amphtml/blob/master/ads/ix.md)
+- [Industrybrains](https://github.com/ampproject/amphtml/blob/master/ads/industrybrains.md)
+- [InMobi](https://github.com/ampproject/amphtml/blob/master/ads/inmobi.md)
+- [Innity](https://github.com/ampproject/amphtml/blob/master/ads/innity.md)
+- [Kargo](https://github.com/ampproject/amphtml/blob/master/ads/kargo.md)
+- [Kiosked](https://github.com/ampproject/amphtml/blob/master/ads/kiosked.md)
+- [Kixer](https://github.com/ampproject/amphtml/blob/master/ads/kixer.md)
+- [Kuadio](https://github.com/ampproject/amphtml/blob/master/ads/kuadio.md)
+- [Ligatus](https://github.com/ampproject/amphtml/blob/master/ads/ligatus.md)
+- [LockerDome](https://github.com/ampproject/amphtml/blob/master/ads/lockerdome.md)
+- [LOKA](https://github.com/ampproject/amphtml/blob/master/ads/loka.md)
+- [MADS](https://github.com/ampproject/amphtml/blob/master/ads/mads.md)
+- [MANTIS](https://github.com/ampproject/amphtml/blob/master/ads/mantis.md)
+- [Media.net](https://github.com/ampproject/amphtml/blob/master/ads/medianet.md)
+- [MediaImpact](https://github.com/ampproject/amphtml/blob/master/ads/mediaimpact.md)
+- [Mediavine](https://github.com/ampproject/amphtml/blob/master/ads/mediavine.md)
+- [Medyanet](https://github.com/ampproject/amphtml/blob/master/ads/medyanet.md)
+- [Meg](https://github.com/ampproject/amphtml/blob/master/ads/meg.md)
+- [MicroAd](https://github.com/ampproject/amphtml/blob/master/ads/microad.md)
+- [MixiMedia](https://github.com/ampproject/amphtml/blob/master/ads/miximedia.md)
+- [Mixpo](https://github.com/ampproject/amphtml/blob/master/ads/mixpo.md)
+- [Monetizer101](https://github.com/ampproject/amphtml/blob/master/ads/monetizer101.md)
+- [mox](https://github.com/ampproject/amphtml/blob/master/ads/mox.md)
+- [myTarget](https://github.com/ampproject/amphtml/blob/master/ads/mytarget.md)
+- [myWidget](https://github.com/ampproject/amphtml/blob/master/ads/mywidget.md)
+- [Nativo](https://github.com/ampproject/amphtml/blob/master/ads/nativo.md)
+- [Navegg](https://github.com/ampproject/amphtml/blob/master/ads/navegg.md)
+- [Nend](https://github.com/ampproject/amphtml/blob/master/ads/nend.md)
+- [NETLETIX](https://github.com/ampproject/amphtml/blob/master/ads/netletix.md)
+- [Noddus](https://github.com/ampproject/amphtml/blob/master/ads/noddus.md)
+- [Nokta](https://github.com/ampproject/amphtml/blob/master/ads/nokta.md)
+- [OneAD](https://github.com/ampproject/amphtml/blob/master/ads/onead.md)
+- [OnNetwork](https://github.com/ampproject/amphtml/blob/master/ads/onnetwork.md)
+- [Open AdStream(OAS)](https://github.com/ampproject/amphtml/blob/master/ads/openadstream.md)
+- [OpenX](https://github.com/ampproject/amphtml/blob/master/ads/openx.md)
+- [Pixels](https://github.com/ampproject/amphtml/blob/master/ads/pixels.md)
+- [plista](https://github.com/ampproject/amphtml/blob/master/ads/plista.md)
+- [polymorphicAds](https://github.com/ampproject/amphtml/blob/master/ads/polymorphicads.md)
+- [popin](https://github.com/ampproject/amphtml/blob/master/ads/popin.md)
+- [Pressboard](https://github.com/ampproject/amphtml/blob/master/ads/pressboard.md)
+- [PromoteIQ](https://github.com/ampproject/amphtml/blob/master/ads/promoteiq.md)
+- [PubGuru](https://github.com/ampproject/amphtml/blob/master/ads/pubguru.md)
+- [PubMatic](https://github.com/ampproject/amphtml/blob/master/ads/pubmatic.md)
+- [Pubmine](https://github.com/ampproject/amphtml/blob/master/ads/pubmine.md)
+- [PulsePoint](https://github.com/ampproject/amphtml/blob/master/ads/pulsepoint.md)
+- [Purch](https://github.com/ampproject/amphtml/blob/master/ads/purch.md)
+- [Rambler&amp;Co](https://github.com/ampproject/amphtml/blob/master/ads/capirs.md)
+- [RbInfoxSg](https://github.com/ampproject/amphtml/blob/master/ads/rbinfox.md)
+- [Realclick](https://github.com/ampproject/amphtml/blob/master/ads/realclick.md)
+- [recomAD](https://github.com/ampproject/amphtml/blob/master/ads/recomad.md)
+- [Red for Publishers](https://github.com/ampproject/amphtml/blob/master/ads/rfp.md)
+- [Relap](https://github.com/ampproject/amphtml/blob/master/ads/relap.md)
+- [Revcontent](https://github.com/ampproject/amphtml/blob/master/ads/revcontent.md)
+- [RevJet](https://github.com/ampproject/amphtml/blob/master/ads/revjet.md)
+- [Rubicon Project](https://github.com/ampproject/amphtml/blob/master/ads/rubicon.md)
+- [RUNative](https://github.com/ampproject/amphtml/blob/master/ads/runative.md)
+- [SAS CI 360 Match](https://github.com/ampproject/amphtml/blob/master/ads/sas.md)
+- [Sekindo](https://github.com/ampproject/amphtml/blob/master/ads/sekindo.md)
+- [Sharethrough](https://github.com/ampproject/amphtml/blob/master/ads/sharethrough.md)
+- [Sklik](https://github.com/ampproject/amphtml/blob/master/ads/sklik.md)
+- [SlimCut Media](https://github.com/ampproject/amphtml/blob/master/ads/slimcutmedia.md)
+- [Smart AdServer](https://github.com/ampproject/amphtml/blob/master/ads/smartadserver.md)
+- [smartclip](https://github.com/ampproject/amphtml/blob/master/ads/smartclip.md)
+- [sogou Ad](https://github.com/ampproject/amphtml/blob/master/ads/sogouad.md)
+- [Sortable](https://github.com/ampproject/amphtml/blob/master/ads/sortable.md)
+- [SOVRN](https://github.com/ampproject/amphtml/blob/master/ads/sovrn.md)
+- [Speakol](https://github.com/ampproject/amphtml/blob/master/ads/speakol.md)
+- [SpotX](https://github.com/ampproject/amphtml/blob/master/ads/spotx.md)
+- [SunMedia](https://github.com/ampproject/amphtml/blob/master/ads/sunmedia.md)
+- [Swoop](https://github.com/ampproject/amphtml/blob/master/ads/swoop.md)
+- [TcsEmotion](https://github.com/ampproject/amphtml/blob/master/ads/tcsemotion.md)
+- [Teads](https://github.com/ampproject/amphtml/blob/master/ads/teads.md)
+- [torimochi](https://github.com/ampproject/amphtml/blob/master/ads/torimochi.md)
+- [TripleLift](https://github.com/ampproject/amphtml/blob/master/ads/triplelift.md)
+- [Trugaze](https://github.com/ampproject/amphtml/blob/master/ads/trugaze.md)
+- [UZOU](https://github.com/ampproject/amphtml/blob/master/ads/uzou.md)
+- [ValueCommerce](https://github.com/ampproject/amphtml/blob/master/ads/valuecommerce.md)
+- [video intelligence](https://github.com/ampproject/amphtml/blob/master/ads/videointelligence.md)
+- [Videonow](https://github.com/ampproject/amphtml/blob/master/ads/videonow.md)
+- [Viralize](https://github.com/ampproject/amphtml/blob/master/ads/viralize.md)
+- [UAS](https://github.com/ampproject/amphtml/blob/master/ads/uas.md)
+- [ucfunnel](https://github.com/ampproject/amphtml/blob/master/ads/ucfunnel.md)
+- [Unruly](https://github.com/ampproject/amphtml/blob/master/ads/unruly.md)
+- [VMFive](https://github.com/ampproject/amphtml/blob/master/ads/vmfive.md)
+- [Webediads](https://github.com/ampproject/amphtml/blob/master/ads/webediads.md)
+- [Weborama](https://github.com/ampproject/amphtml/blob/master/ads/weborama.md)
+- [Widespace](https://github.com/ampproject/amphtml/blob/master/ads/widespace.md)
+- [Wisteria](https://github.com/ampproject/amphtml/blob/master/ads/wisteria.md)
+- [WPMedia](https://github.com/ampproject/amphtml/blob/master/ads/wpmedia.md)
+- [Xlift](https://github.com/ampproject/amphtml/blob/master/ads/xlift.md)
+- [Yahoo](https://github.com/ampproject/amphtml/blob/master/ads/yahoo.md)
+- [YahooJP](https://github.com/ampproject/amphtml/blob/master/ads/yahoojp.md)
+- [Yandex](https://github.com/ampproject/amphtml/blob/master/ads/yandex.md)
+- [Yengo](https://github.com/ampproject/amphtml/blob/master/ads/yengo.md)
+- [Yieldbot](https://github.com/ampproject/amphtml/blob/master/ads/yieldbot.md)
+- [Yieldmo](https://github.com/ampproject/amphtml/blob/master/ads/yieldmo.md)
+- [Yieldone](https://github.com/ampproject/amphtml/blob/master/ads/yieldone.md)
+- [Yieldpro](https://github.com/ampproject/amphtml/blob/master/ads/yieldpro.md)
+- [Zedo](https://github.com/ampproject/amphtml/blob/master/ads/zedo.md)
+- [Zucks](https://github.com/ampproject/amphtml/blob/master/ads/zucks.md)
 
 ## 지원되는 삽입 유형 <a name="supported-embed-types"></a>
 
-* [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
-* [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
-* [Bringhub](https://github.com/ampproject/amphtml/blob/master/ads/bringhub.md)
-* [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
-* [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)
-* [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
-* [Jubna](https://github.com/ampproject/amphtml/blob/master/ads/jubna.md)
-* [Outbrain](https://github.com/ampproject/amphtml/blob/master/ads/outbrain.md)
-* [Postquare](https://github.com/ampproject/amphtml/blob/master/ads/postquare.md)
-* [PubExchange](https://github.com/ampproject/amphtml/blob/master/ads/pubexchange.md)
-* [Smi2](https://github.com/ampproject/amphtml/blob/master/ads/smi2.md)
-* [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md)
-* [Zen](https://github.com/ampproject/amphtml/blob/master/ads/zen.md)
-* [ZergNet](https://github.com/ampproject/amphtml/blob/master/ads/zergnet.md)
+- [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
+- [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
+- [Bringhub](https://github.com/ampproject/amphtml/blob/master/ads/bringhub.md)
+- [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
+- [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)
+- [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
+- [Jubna](https://github.com/ampproject/amphtml/blob/master/ads/jubna.md)
+- [Outbrain](https://github.com/ampproject/amphtml/blob/master/ads/outbrain.md)
+- [Postquare](https://github.com/ampproject/amphtml/blob/master/ads/postquare.md)
+- [PubExchange](https://github.com/ampproject/amphtml/blob/master/ads/pubexchange.md)
+- [Smi2](https://github.com/ampproject/amphtml/blob/master/ads/smi2.md)
+- [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md)
+- [Zen](https://github.com/ampproject/amphtml/blob/master/ads/zen.md)
+- [ZergNet](https://github.com/ampproject/amphtml/blob/master/ads/zergnet.md)

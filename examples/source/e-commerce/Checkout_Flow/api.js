@@ -18,8 +18,8 @@
 const express = require('express');
 const multer = require('multer');
 const upload = multer();
-const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const LRU = require('lru-cache');
+const {setMaxAge} = require('@lib/utils/cacheHelpers');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -47,7 +47,9 @@ function handleShoppingCart(request, response) {
 
 function writeShoppingCart(request, response, clientId) {
   const discount = discounts.get(clientId) || 0;
-  const total = (SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount).toFixed(2);
+  const total = (SHOPPING_CART_TOTAL - SHOPPING_CART_TOTAL * discount).toFixed(
+    2
+  );
   const cart = {
     items: [
       {

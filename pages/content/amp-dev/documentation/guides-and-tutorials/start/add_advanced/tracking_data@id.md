@@ -8,13 +8,28 @@ Berikut adalah contoh pelacakan Google Analytics berdasarkan JavaScript tradisio
 
 ```html
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    (i[r] =
+      i[r] ||
+      function() {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    'script',
+    '//www.google-analytics.com/analytics.js',
+    'ga'
+  );
 
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview');
 </script>
 ```
 
@@ -23,71 +38,75 @@ JavaScript ini cukup sederhana; JavaScript mengirimkan notifikasi untuk melacak 
 Untuk meniru fungsi ini di AMP, pertama-tama kami harus **menyertakan** library komponen [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) di `<head>` dokumen kami:
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 Kemudian, mari **tambahkan** komponen [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) di bagian akhir `isi` dokumen:
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
 Sama seperti contoh JavaScript di bagian atas halaman ini, cuplikan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) akan mengirimkan notifikasi ke Google Analytics yang menunjukkan bahwa halaman telah dilihat.
 
-Untuk menentukan ini, kami telah menyetel `type` ke `googleanalytics` dan membuat pemicu bernama "default pageview" di JSON.  Pemicu ini akan diaktifkan ketika halaman terlihat (karena `"on": "visible"`) dan ketika diaktifkan, kami akan mengirimkan permintaan analisis `pageview` ke Google Analytics dengan `vars` yang telah ditentukan.
+Untuk menentukan ini, kami telah menyetel `type` ke `googleanalytics` dan membuat pemicu bernama "default pageview" di JSON. Pemicu ini akan diaktifkan ketika halaman terlihat (karena `"on": "visible"`) dan ketika diaktifkan, kami akan mengirimkan permintaan analisis `pageview` ke Google Analytics dengan `vars` yang telah ditentukan.
 
-JSON yang digunakan untuk mengonfigurasi [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) adalah format yang sangat fleksibel untuk menjelaskan data analisis yang akan dikirim dan waktu pengirimannya.  [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) berisi detail lengkap tentang format.
+JSON yang digunakan untuk mengonfigurasi [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) adalah format yang sangat fleksibel untuk menjelaskan data analisis yang akan dikirim dan waktu pengirimannya. [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) berisi detail lengkap tentang format.
 
 Berdasarkan contoh di atas, kami dapat **menambahkan** pemicu lain yang diberi nama `"click on #header trigger"`:
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
-      }
-    },
-    "click on #header trigger": {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "examples",
-        "eventAction": "clicked-header"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        },
+        "click on #header trigger": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "examples",
+            "eventAction": "clicked-header"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
-Sesuai dengan perkiraan Anda tentang namanya, pemicu ini akan diaktifkan ketika elemen dengan ID `"header"` diklik (ditentukan dengan `"on": "click"` dan `"selector": "#header"`).  Ketika pemicu ini diaktifkan, kami akan mengirimkan permintaan `event` ke penyedia analisis kami, yang menentukan pasangan variabel yang akan disertakan dalam permintaan.
+Sesuai dengan perkiraan Anda tentang namanya, pemicu ini akan diaktifkan ketika elemen dengan ID `"header"` diklik (ditentukan dengan `"on": "click"` dan `"selector": "#header"`). Ketika pemicu ini diaktifkan, kami akan mengirimkan permintaan `event` ke penyedia analisis kami, yang menentukan pasangan variabel yang akan disertakan dalam permintaan.
 
 Jika memiliki platform pelacakan kustom yang ingin diintegrasikan, Anda tetap dapat menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) dan menentukan endpoint URL Anda yang dipersonalisasi sebagai tujuan data pelacakan dikirimkan. Pelajari lebih lanjut di dokumetasi referensi komponen [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 

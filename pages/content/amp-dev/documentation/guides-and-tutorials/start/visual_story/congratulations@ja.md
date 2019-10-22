@@ -25,4 +25,3 @@ AMP ストーリーの詳細については、下記の関連資料をご覧く�
 [`amp-story`](../../../../documentation/components/reference/amp-story.md) は**試験運用コンポーネント**です。元のトライアルに登録して、このコンポーネントでページを公開するには、<a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a> をご覧ください。
 
 [/tip]
-

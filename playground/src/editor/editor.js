@@ -1,3 +1,18 @@
+/**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 // Copyright 2018 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,24 +27,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'codemirror/lib/codemirror.css';
 import 'codemirror/addon/hint/show-hint.css';
+import 'codemirror/lib/codemirror.css';
 
-import 'codemirror/addon/selection/selection-pointer.js';
 import 'codemirror/addon/selection/active-line.js';
+import 'codemirror/addon/selection/selection-pointer.js';
 
 import 'codemirror/addon/edit/closebrackets.js';
 import 'codemirror/addon/edit/closetag.js';
 
-import 'codemirror/addon/hint/show-hint.js';
-import 'codemirror/addon/hint/html-hint.js';
 import 'codemirror/addon/hint/css-hint.js';
+import 'codemirror/addon/hint/html-hint.js';
+import 'codemirror/addon/hint/show-hint.js';
 
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlmixed/htmlmixed.js';
 
+import {EVENT_SET_RUNTIME, runtimes} from '../runtime/runtimes.js';
 import events from '../events/events.js';
-import {runtimes, EVENT_SET_RUNTIME} from '../runtime/runtimes.js';
 
 import CodeMirror from 'codemirror';
 import Loader from '../loader/base.js';
@@ -38,12 +53,17 @@ require('./editor.scss');
 
 const DEFAULT_DEBOUNCE_RATE = 500;
 const HINT_IGNORE_ENDS = new Set([
-  ';', ',',
+  ';',
+  ',',
   ')',
-  '`', '"', '\'',
+  '`',
+  '"',
+  "'",
   '>',
-  '{', '}',
-  '[', ']',
+  '{',
+  '}',
+  '[',
+  ']',
 ]);
 const HINTS_URL = 'amphtml-hint.json';
 
@@ -155,12 +175,16 @@ class Editor {
   setValidationResult(validationResult) {
     this.codeMirror.clearGutter('CodeMirror-error-markers');
     this.codeMirror.operation(() => {
-      validationResult.errors.forEach((error) => {
+      validationResult.errors.forEach(error => {
         const marker = document.createElement('div');
         const message = marker.appendChild(document.createElement('span'));
         message.appendChild(document.createTextNode(error.message));
         marker.className = 'gutter-' + error.icon;
-        this.codeMirror.setGutterMarker(error.line - 1, 'CodeMirror-error-markers', marker);
+        this.codeMirror.setGutterMarker(
+          error.line - 1,
+          'CodeMirror-error-markers',
+          marker
+        );
       });
     });
   }
@@ -187,7 +211,7 @@ class Editor {
   }
 
   loadHints(validator) {
-    this.amphtmlHints.then((hints) => {
+    this.amphtmlHints.then(hints => {
       // eslint-disable-next-line no-unused-vars
       for (const key of Object.keys(CodeMirror.htmlSchema)) {
         delete CodeMirror.htmlSchema[key];
@@ -204,14 +228,16 @@ class Editor {
   fetchHintsData() {
     return new Promise((resolve, reject) => {
       window.requestIdleCallback(() => {
-        fetch(HINTS_URL).then((response) => {
-          if (response.status !== 200) {
-            return reject(new Error(`Error code ${response.status}`));
-          }
-          resolve(response.json());
-        }).catch((err) => {
-          reject(err);
-        });
+        fetch(HINTS_URL)
+          .then(response => {
+            if (response.status !== 200) {
+              return reject(new Error(`Error code ${response.status}`));
+            }
+            resolve(response.json());
+          })
+          .catch(err => {
+            reject(err);
+          });
       });
     });
   }

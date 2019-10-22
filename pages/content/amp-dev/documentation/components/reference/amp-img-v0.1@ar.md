@@ -10,7 +10,6 @@ teaser:
   text: Replaces the HTML5 img tag.
 ---
 
-
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
@@ -26,9 +25,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
-
 
 <table>
   <tr>
@@ -60,17 +56,21 @@ limitations under the License.
 
 # مثال: عرض صورة متجاوبة <a name="example-displaying-a-responsive-image"></a>
 
-في المثال التالي، نعرض صورة تستجيب لحجم إطار العرض عن طريق تعيين `layout=responsive`.  فالصورة تمتد وتتقلص وفقًا لنسبة العرض إلى الارتفاع التي تحددها سماتا `width` و `height`.
+في المثال التالي، نعرض صورة تستجيب لحجم إطار العرض عن طريق تعيين `layout=responsive`. فالصورة تمتد وتتقلص وفقًا لنسبة العرض إلى الارتفاع التي تحددها سماتا `width` و `height`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"]
@@ -86,18 +86,24 @@ limitations under the License.
 في المثال التالي، إذا كان المتصفح لا يتيح عمل WebP، سيتم عرض صورة JPG الاحتياطية:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 يمكن تعيين لون خلفية أو تأثير مرئي آخر لعنصر نائب باستخدام المحدِّد CSS والنمط على العنصر نفسه.
@@ -108,8 +114,8 @@ limitations under the License.
 
 تعرّف على مزيد من المعلومات عن استخدام `amp-img` من الموارد التالية:
 
-* [العناصر النائبة والعناصر الاحتياطية](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
-* [تضمين الصور والفيديوهات](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
+- [العناصر النائبة والعناصر الاحتياطية](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+- [تضمين الصور والفيديوهات](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 
 [/tip]
 
@@ -166,11 +172,11 @@ amp-img {
 إذا أردت تغيير حجم الصورة مع تغير حجم النافذة ولكن بحد أقصى للعرض (بحيث لا تخرج الصورة عن عرضها):
 
 1. عيِّن `layout=responsive` للمكوِّن `<amp-img>`.
-2. في حاوية الصورة، حدّد السمة `max-width:<max width to display image>` للغة CSS.  لماذا في الحاوية؟  عنصر `amp-img` له `layout=responsive` هو عنصر *حظر المستوى* حيث إن `<img>` *مضمّنة*. أو يمكنك تعيين `display: inline-block` في CSS للعنصر amp-img.
+2. في حاوية الصورة، حدّد السمة `max-width:<max width to display image>` للغة CSS. لماذا في الحاوية؟ عنصر `amp-img` له `layout=responsive` هو عنصر _حظر المستوى_ حيث إن `<img>` _مضمّنة_. أو يمكنك تعيين `display: inline-block` في CSS للعنصر amp-img.
 
 # الفرق بين التنسيق المتجاوب والأساسي <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
-يعمل كل من التنسيق `intrinsic` و`responsive` على إنشاء صورة سيتم تحجيمها تلقائيًا.  والفرق الرئيسي بينهما هو أن التنسيق `intrinsic` يستخدم صورة SVG كعنصر تحجيم.  هذا سيجعلها تتصرف بنفس طريقة صورة HTML القياسية مع الحفاظ على ميزة إعلام المتصفح بحجم الصورة في التنسيق الأولي. وسيكون للتنسيق `intrinsic` حجم أساسي ثم يعمل على تضخيم عنصر `div` عائم حتى يصل إلى حجم الصورة الطبيعي أو إلى قيد CSS مثل `max-width`. أما التنسيق `responsive` فسيعرض 0x0 في عنصر `div` عائم لأنه يأخذ حجمه من العنصر الرئيسي الذي لا يكون له حجم طبيعي عندما يصبح عائمًا.
+يعمل كل من التنسيق `intrinsic` و`responsive` على إنشاء صورة سيتم تحجيمها تلقائيًا. والفرق الرئيسي بينهما هو أن التنسيق `intrinsic` يستخدم صورة SVG كعنصر تحجيم. هذا سيجعلها تتصرف بنفس طريقة صورة HTML القياسية مع الحفاظ على ميزة إعلام المتصفح بحجم الصورة في التنسيق الأولي. وسيكون للتنسيق `intrinsic` حجم أساسي ثم يعمل على تضخيم عنصر `div` عائم حتى يصل إلى حجم الصورة الطبيعي أو إلى قيد CSS مثل `max-width`. أما التنسيق `responsive` فسيعرض 0x0 في عنصر `div` عائم لأنه يأخذ حجمه من العنصر الرئيسي الذي لا يكون له حجم طبيعي عندما يصبح عائمًا.
 
 # تعيين صورة بحجم ثابت <a name="setting-a-fixed-sized-image"></a>
 
@@ -192,14 +198,18 @@ amp-img {
 على سبيل المثال، بدلاً من تحديد `width="900"` و`height="675"`، يمكنك فقط تحديد `width="1.33"` و`height="1"`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="1.33"
   height="1"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 # تعيين ملفات مصدر متعددة للحصول على درجات دقة للشاشات المختلفة <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>

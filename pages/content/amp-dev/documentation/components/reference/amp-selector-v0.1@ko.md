@@ -5,9 +5,8 @@ formats:
   - websites
   - email
 teaser:
-  text: "사용자가 선택할 수 있는 옵션 메뉴를 표시하는 컨트롤을 나타냅니다."
+  text: '사용자가 선택할 수 있는 옵션 메뉴를 표시하는 컨트롤을 나타냅니다.'
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 사용자가 선택할 수 있는 옵션 메뉴를 표시하는 컨트롤을 나타냅니다.
 
@@ -44,29 +41,31 @@ teaser:
   </tr>
 </table>
 
-
 ## 동작 <a name="behavior"></a>
 
 AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록을 표시하는 컨트롤입니다. 옵션의 콘텐츠는 텍스트에 국한되지 않습니다.
 
-* `amp-selector`에 임의의 HTML 요소 또는 AMP 구성요소(예: `amp-carousel`, `amp-img` 등)가 포함될 수 있습니다.
-* `amp-selector`에는 중첩된 `amp-selector` 컨트롤을 포함할 수 없습니다.
-* 선택 가능한 옵션은 요소에 `option` 속성을 추가하고 속성에 값을 할당하여 설정할 수 있습니다(예: `<li option='value'></li>`).
-* 사용하지 않는 옵션은 요소에 `disabled` 속성을 추가하여 설정할 수 있습니다(예: `<li option='d' disabled></li>`).
-* 사전 선택된 옵션은 요소에 `selected` 속성을 추가하여 설정할 수 있습니다(예: `<li option='b' selected></li>`).
-* 여러 항목을 선택할 수 있도록 `multiple` 속성을 `amp-selector` 요소에 추가합니다.  기본적으로 `amp-selector`를 사용하면 한 번에 하나만 선택할 수 있습니다.
-* 전체 `amp-selector`를 사용하지 않으려면 `disabled` 속성을 `amp-selector` 요소에 추가합니다.
-* `amp-selector`에 `name` 속성이 포함되어 있고 `amp-selector`가 `form` 태그 안에 있는 경우 양식에서 제출 이벤트가 발생하면 `amp-selector`가 라디오 버튼/체크박스 그룹과 같이 동작하고 `amp-selector` 이름과 비교하여 선택한 값(옵션에 할당된 값)을 제출합니다.
+- `amp-selector`에 임의의 HTML 요소 또는 AMP 구성요소(예: `amp-carousel`, `amp-img` 등)가 포함될 수 있습니다.
+- `amp-selector`에는 중첩된 `amp-selector` 컨트롤을 포함할 수 없습니다.
+- 선택 가능한 옵션은 요소에 `option` 속성을 추가하고 속성에 값을 할당하여 설정할 수 있습니다(예: `<li option='value'></li>`).
+- 사용하지 않는 옵션은 요소에 `disabled` 속성을 추가하여 설정할 수 있습니다(예: `<li option='d' disabled></li>`).
+- 사전 선택된 옵션은 요소에 `selected` 속성을 추가하여 설정할 수 있습니다(예: `<li option='b' selected></li>`).
+- 여러 항목을 선택할 수 있도록 `multiple` 속성을 `amp-selector` 요소에 추가합니다. 기본적으로 `amp-selector`를 사용하면 한 번에 하나만 선택할 수 있습니다.
+- 전체 `amp-selector`를 사용하지 않으려면 `disabled` 속성을 `amp-selector` 요소에 추가합니다.
+- `amp-selector`에 `name` 속성이 포함되어 있고 `amp-selector`가 `form` 태그 안에 있는 경우 양식에서 제출 이벤트가 발생하면 `amp-selector`가 라디오 버튼/체크박스 그룹과 같이 동작하고 `amp-selector` 이름과 비교하여 선택한 값(옵션에 할당된 값)을 제출합니다.
 
 예:
 
 ```html
-
 <form id="form1" action="/" method="get" target="_blank">
   <amp-selector name="single_image_select" layout="container">
     <ul>
-      <li><amp-img src="/img1.png" width="50" height="50" option="1"></amp-img></li>
-      <li><amp-img src="/img2.png" width="50" height="50" option="2"></amp-img></li>
+      <li>
+        <amp-img src="/img1.png" width="50" height="50" option="1"></amp-img>
+      </li>
+      <li>
+        <amp-img src="/img2.png" width="50" height="50" option="2"></amp-img>
+      </li>
       <li option="na" selected="">해당 사항 없음</li>
     </ul>
   </amp-selector>
@@ -78,21 +77,52 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
   <amp-selector name="multi_image_select_1" layout="container" multiple="">
     <amp-carousel id="carousel-1" width="200" height="60" controls="">
       <amp-img src="/img1.png" width="80" height="60" option="a"></amp-img>
-      <amp-img src="/img2.png" width="80" height="60" option="b" selected=""></amp-img>
+      <amp-img
+        src="/img2.png"
+        width="80"
+        height="60"
+        option="b"
+        selected=""
+      ></amp-img>
       <amp-img src="/img3.png" width="80" height="60" option="c"></amp-img>
-      <amp-img src="/img4.png" width="80" height="60" option="d" disabled=""></amp-img>
+      <amp-img
+        src="/img4.png"
+        width="80"
+        height="60"
+        option="d"
+        disabled=""
+      ></amp-img>
     </amp-carousel>
   </amp-selector>
 </form>
 
-<p><amp-selector name="multi_image_select_2" layout="container" multiple="" form="form1">
-  <amp-carousel height="300" id="carousel-1" type="slides" width="400" controls="">
-    <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
-    <amp-img height="60" src="/img2.png" width="80" option="b" selected=""></amp-img>
-    <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
-    <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
-  </amp-carousel>
-</amp-selector>
+<p>
+  <amp-selector
+    name="multi_image_select_2"
+    layout="container"
+    multiple=""
+    form="form1"
+  >
+    <amp-carousel
+      height="300"
+      id="carousel-1"
+      type="slides"
+      width="400"
+      controls=""
+    >
+      <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
+      <amp-img
+        height="60"
+        src="/img2.png"
+        width="80"
+        option="b"
+        selected=""
+      ></amp-img>
+      <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
+      <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
+    </amp-carousel>
+  </amp-selector>
+</p>
 ```
 
 ## 선택 항목 지우기 <a name="clearing-selections"></a>
@@ -110,8 +140,7 @@ AMP 선택기는 사용자가 하나 이상 선택할 수 있는 옵션 목록�
 </amp-selector>
 ```
 
-[tip type="success"]
-[AMP By Example](https://ampbyexample.com/components/amp-selector/)에서 라이브 데모를 참조하세요.
+[tip type="success"][amp by example](https://ampbyexample.com/components/amp-selector/)에서 라이브 데모를 참조하세요.
 [/tip]
 
 ## 속성 <a name="attributes"></a>

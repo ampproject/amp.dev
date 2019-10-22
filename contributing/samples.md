@@ -2,7 +2,7 @@
 
 Samples live in `examples/source`. Pick one of the existing category folders.
 
-If your sample can live in a single html file, create a new `*.html` in  one of the sample category folders:
+If your sample can live in a single html file, create a new `*.html` in one of the sample category folders:
 
 ```shell
 $ vim examples/source/1.components/amp-awesome.html
@@ -58,6 +58,7 @@ validAmp # [default: true]
 ```
 
 **draft:** marks the sample as draft and it won't be linked from the homepage, but is still accessible via URL.
+
 ```yaml
 draft # [default: true]
   - true
@@ -65,6 +66,7 @@ draft # [default: true]
 ```
 
 **landscape (only for AMP Stories):** use landscape mode previews.
+
 ```yaml
 draft # [default: false]
   - true
@@ -72,6 +74,7 @@ draft # [default: false]
 ```
 
 **tags:** for assign the sample to multiple categories.
+
 ```yaml
 tags # [default: '']
   - ads-analytics
@@ -89,7 +92,12 @@ Add documentation to your sample's code by wrapping text in HTML comments:
 
 ```html
 <!-- Look! Images in AMP. -->
-<amp-img src="img/image1.jpg" width="200" height="100" layout="responsive"></amp-img>
+<amp-img
+  src="img/image1.jpg"
+  width="200"
+  height="100"
+  layout="responsive"
+></amp-img>
 ```
 
 This works for elements in the header as well:
@@ -97,7 +105,11 @@ This works for elements in the header as well:
 ```html
 <head>
   <!-- Import the amp-youtube component -->
-  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-youtube"
+    src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+  ></script>
   ...
 </head>
 ```
@@ -107,8 +119,18 @@ Every HTML comment creates a separate example section spanning the following HTM
 ```html
 <!-- This comment spans the whole following section including the two images -->
 <section>
-  <amp-img src="img/image1.jpg" width="200" height="100" layout="responsive"></amp-img>
-  <amp-img src="img/image2.jpg" width="200" height="100" layout="responsive"></amp-img>
+  <amp-img
+    src="img/image1.jpg"
+    width="200"
+    height="100"
+    layout="responsive"
+  ></amp-img>
+  <amp-img
+    src="img/image2.jpg"
+    width="200"
+    height="100"
+    layout="responsive"
+  ></amp-img>
 </section>
 ```
 
@@ -118,11 +140,21 @@ Nesting comments are not supported:
 <!-- A comment -->
 <div>
   <!-- This does not work because the parent div has already a comment -->
-  <amp-img src="img/image1.jpg" width="200" height="100" layout="responsive"></amp-img>
+  <amp-img
+    src="img/image1.jpg"
+    width="200"
+    height="100"
+    layout="responsive"
+  ></amp-img>
 </div>
 <div>
   <!-- Commenting inside nested tags works though -->
-  <amp-img src="img/image1.jpg" width="200" height="100" layout="responsive"></amp-img>
+  <amp-img
+    src="img/image1.jpg"
+    width="200"
+    height="100"
+    layout="responsive"
+  ></amp-img>
 </div>
 ```
 
@@ -190,7 +222,12 @@ You can use [markdown](https://help.github.com/articles/github-flavored-markdown
   A simple [responsive]({{g.doc('/content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md', locale=doc.locale).url.path}})
   image - *width* and *height* are used to determine the aspect ratio.
 -->
-<amp-img src="img/image1.jpg" width="200" height="100" layout="responsive"></amp-img>
+<amp-img
+  src="img/image1.jpg"
+  width="200"
+  height="100"
+  layout="responsive"
+></amp-img>
 ```
 
 #### Notes, Warnings & Tips
@@ -217,14 +254,12 @@ If you'd like to add additional information about a single element inside a sect
 
 ```html
 <!-- A comment about the form. -->
-<form method="post"
-  action-xhr="https://example.com/subscribe"
-  target="_top">
+<form method="post" action-xhr="https://example.com/subscribe" target="_top">
   <fieldset>
-    <input type="text" name="username">
+    <input type="text" name="username" />
 
     <!--~ Addition explanation about the hidden field. ~-->
-    <input type="hidden" name="id" value="abc">
+    <input type="hidden" name="id" value="abc" />
   </fieldset>
 </form>
 ```

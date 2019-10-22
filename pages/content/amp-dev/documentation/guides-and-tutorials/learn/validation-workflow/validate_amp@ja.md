@@ -73,7 +73,7 @@ alt="Screen grab of validator.ampproject.org with error examples.">
   </tr>
 </table>
 
-AMP 検証ツール拡張機能は、[Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc)  と [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/) でご利用いただけます。
+AMP 検証ツール拡張機能は、[Chrome](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) と [Opera](https://addons.opera.com/en-gb/extensions/details/amp-validator/) でご利用いただけます。
 
 ### CI 向けの NPM パッケージ
 
@@ -89,17 +89,18 @@ AMP 検証ツールの NPM パッケージを使用すると、AMP の検証を�
 var amphtmlValidator = require('amphtml-validator');
 var fs = require('fs');
 
-amphtmlValidator.getInstance().then(function (validator) {
+amphtmlValidator.getInstance().then(function(validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
@@ -113,17 +114,17 @@ const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function() {});
 ```
 
 ### コマンドライン ツール
@@ -138,14 +139,14 @@ AMP HTML ファイルの検証は、[AMP HTML 検証ツールのコマンドラ�
 実際の AMP HTML ページを検証してみましょう。
 
 [sourcecode:console]
-$ amphtml-validator https://amp.dev/
+\$ amphtml-validator https://amp.dev/
 https://amp.dev/: PASS
 [/sourcecode]
 
 当然ですが、このページは有効な AMP HTML です。有効でないページ [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) を試してみましょう。`amphtml-validator` コマンドを実行するには、ページの URL またはローカル ファイル名を指定します。 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) をダウンロードしてファイルとして保存してから、実行します。
 
 [sourcecode:console]
-$ amphtml-validator several_errors.html
+\$ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
 several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
@@ -158,21 +159,21 @@ several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the inv
 AMP ページを作成する際の参考として、[minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html) を検討してみましょう。
 
 [sourcecode:console]
-$ amphtml-validator minimum_valid_amp.html
+\$ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
 
 コマンドライン ツールには、色の切り替え、JSON 出力の表示、特定のバージョンの検証ツール JavaScript の実行（デフォルトでは、最新の公開版を実行します）などの追加の機能があります。
 
 [sourcecode:console]
-$ amphtml-validator --help
+\$ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -187,6 +188,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## ページが有効でない場合
@@ -205,26 +207,26 @@ AMP 検証サービスでページに問題があることが検出されると�
 
 このタグでは次の AMP 検証エラーが生成され、各ツールでは次のように表示されます。
 
-* ブラウザの Developer Console
-<amp-img src="/static/img/docs/validator_console_imgerror.png"
-         width="696" height="30" layout="responsive"
-         alt="AMP error: The tag 'img' may only appear as a descendant of tag
-         'noscript'. Did you mean 'amp-img'? line 11, column 2">
-</amp-img>
+- ブラウザの Developer Console
+  <amp-img src="/static/img/docs/validator_console_imgerror.png"
+           width="696" height="30" layout="responsive"
+           alt="AMP error: The tag 'img' may only appear as a descendant of tag
+           'noscript'. Did you mean 'amp-img'? line 11, column 2">
+  </amp-img>
 
-* ウェブ インターフェース
-<amp-img src="/static/img/docs/validator_webui_imgerror.png"
-         width="676" height="58" layout="responsive"
-         alt="AMP error: The tag 'img' may only appear as a descendant of tag
-         'noscript'. Did you mean 'amp-img'? line 11, column 2">
-</amp-img>
+- ウェブ インターフェース
+  <amp-img src="/static/img/docs/validator_webui_imgerror.png"
+           width="676" height="58" layout="responsive"
+           alt="AMP error: The tag 'img' may only appear as a descendant of tag
+           'noscript'. Did you mean 'amp-img'? line 11, column 2">
+  </amp-img>
 
-* ブラウザの拡張機能
-<amp-img src="/static/img/docs/validator_extension_imgerror.png"
-         width="724" height="108" layout="responsive"
-        alt="AMP error: The tag 'img' may only appear as a descendant of tag
-        'noscript'. Did you mean 'amp-img'? line 11, column 2">
-</amp-img>
+- ブラウザの拡張機能
+  <amp-img src="/static/img/docs/validator_extension_imgerror.png"
+           width="724" height="108" layout="responsive"
+          alt="AMP error: The tag 'img' may only appear as a descendant of tag
+          'noscript'. Did you mean 'amp-img'? line 11, column 2">
+  </amp-img>
 
 各ツールから、次のような情報がわかります。
 

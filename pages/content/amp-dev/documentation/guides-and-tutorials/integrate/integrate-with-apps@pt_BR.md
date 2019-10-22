@@ -77,10 +77,12 @@ de AMP do Google.
 Por exemplo, para uma determinada lista de URLs:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 O corpo da resposta contém o mapeamento do URL de AMP no formato JSON:
@@ -116,14 +118,14 @@ Um [cache de AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-a
 rede de fornecimento de conteúdo (CDN, na sigla em inglês) baseada em proxy que tem a função de exibir documentos AMP válidos.
 Os caches de AMP servem para:
 
-*   exibir somente páginas AMP válidas;
-*   permitir que as páginas AMP sejam pré-carregadas com eficiência e segurança;
-*   fazer otimizações adicionais no desempenho do conteúdo para melhorar a experiência do usuário.
+- exibir somente páginas AMP válidas;
+- permitir que as páginas AMP sejam pré-carregadas com eficiência e segurança;
+- fazer otimizações adicionais no desempenho do conteúdo para melhorar a experiência do usuário.
 
 No momento, há dois provedores de cache de AMP:
 
-*   [cache de AMP do Google](https://developers.google.com/amp/cache/)
-*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
+- [cache de AMP do Google](https://developers.google.com/amp/cache/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Assim, você tem duas opções para exibir um arquivo AMP em um aplicativo:
 
@@ -132,17 +134,17 @@ Assim, você tem duas opções para exibir um arquivo AMP em um aplicativo:
 
 Recomendamos usar o cache de AMP pelos seguintes motivos:
 
-*   A experiência do usuário é melhor devido ao tempo de carregamento mais rápido e à baixa latência (redução de mais de 1s
-    no tempo de carregamento).
-*   O desempenho e o uso da largura de banda são otimizados com o armazenamento em cache adicional dos artefatos
-    com base no cliente (por exemplo, armazenamento em cache de diferentes versões da mesma imagem
-    dependendo do tamanho da janela de visualização do cliente).
-*   O arquivo AMP original pode não ser mais válido, o que poderia gerar uma
-    experiência insatisfatória para o usuário. Nesse caso, o cache de AMP disponibiliza a versão válida
-    mais recente do arquivo AMP.
-*   Um editor desonesto poderia disponibilizar dois documentos diferentes para um rastreador de cache de
-    AMP e para seus usuários. Usar um cache de AMP garante que os usuários
-    sempre vejam o mesmo arquivo AMP que está no cache.
+- A experiência do usuário é melhor devido ao tempo de carregamento mais rápido e à baixa latência (redução de mais de 1s
+  no tempo de carregamento).
+- O desempenho e o uso da largura de banda são otimizados com o armazenamento em cache adicional dos artefatos
+  com base no cliente (por exemplo, armazenamento em cache de diferentes versões da mesma imagem
+  dependendo do tamanho da janela de visualização do cliente).
+- O arquivo AMP original pode não ser mais válido, o que poderia gerar uma
+  experiência insatisfatória para o usuário. Nesse caso, o cache de AMP disponibiliza a versão válida
+  mais recente do arquivo AMP.
+- Um editor desonesto poderia disponibilizar dois documentos diferentes para um rastreador de cache de
+  AMP e para seus usuários. Usar um cache de AMP garante que os usuários
+  sempre vejam o mesmo arquivo AMP que está no cache.
 
 [tip type="important"]
 Ao disponibilizar páginas AMP por meio do cache de AMP, ofereça uma experiência de visualização que
@@ -165,12 +167,12 @@ no Stack Overflow para saber qual a melhor configuração de um WebView para exi
 
 Veja algumas práticas recomendadas gerais para implementar um visualizador de AMP:
 
-*   Disponibilize a página AMP a partir de um cache de AMP. Isso diminui o tempo de carregamento em mais de 1s.
-*   Exiba a origem do editor do artigo (por exemplo, em um cabeçalho que pode ser recolhido).
-*   Forneça uma ação de compartilhamento (veja também a seção "[Compartilhar conteúdo AMP](integrate-with-apps.md#sharing-amp-content)"
-    abaixo).
-*   Nos visualizadores baseados em WebView, permita cookies de terceiros.
-*   Defina um referenciador para sua plataforma ou seu aplicativo.
+- Disponibilize a página AMP a partir de um cache de AMP. Isso diminui o tempo de carregamento em mais de 1s.
+- Exiba a origem do editor do artigo (por exemplo, em um cabeçalho que pode ser recolhido).
+- Forneça uma ação de compartilhamento (veja também a seção "[Compartilhar conteúdo AMP](integrate-with-apps.md#sharing-amp-content)"
+  abaixo).
+- Nos visualizadores baseados em WebView, permita cookies de terceiros.
+- Defina um referenciador para sua plataforma ou seu aplicativo.
 
 ### Compartilhar conteúdo AMP <a name="sharing-amp-content"></a>
 

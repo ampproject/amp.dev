@@ -36,7 +36,7 @@ Dev チャンネル バージョンの AMP でのみ発生すると思われる�
 その他のドメインから配信されるコンテンツについては、devtools コンソールで試験運用機能を切り替えることができます。その際は、次のコードを使用して開発モードを有効にします。
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 試験運用機能が含まれている AMP ファイルは、
@@ -50,7 +50,7 @@ AMP.toggleExperiment('experiment')
 ```html
 <<head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -58,4 +58,3 @@ AMP.toggleExperiment('experiment')
 ```
 
 こうすることで、ドキュメントを閲覧するすべてのユーザーに対して、指定した試験運用機能が有効になります。ただし、すべての試験運用機能をドキュメント レベルで選択できるわけではありません。ホワイトリストに登録されている試験運用機能の詳細なリストについては、プロジェクトの `prod-config.json` ファイルの `allow-doc-opt-in` 属性を参照してください。ドキュメントで有効にした機能は、ユーザーのオプトアウトによって無効にすることができます。
- 

@@ -2,11 +2,10 @@
 $title: amp-addthis
 $category@: social
 formats:
-- websites
+  - websites
 teaser:
   text: 显示嵌入的 AddThis 网站工具。
 ---
-
 
 <!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 显示嵌入的 [AddThis](https://www.addthis.com) 网站工具。
 
 <table>
@@ -38,7 +35,6 @@ limitations under the License.
     <td>fill、fixed、fixed-height、flex-item、nodisplay、responsive</td>
   </tr>
 </table>
-
 
 ## 为什么使用 AddThis？ <a name="why-addthis"></a>
 
@@ -53,6 +49,7 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
 此类按钮放置在网页的侧面、顶部或底部，随着读者滚动网页而移动。这是一种很好的方式，既能促进分享，又不会造成太多干扰。
 
 示例：
+
 ```html
 <!--
   此示例使用占位符 pubId。
@@ -64,7 +61,8 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
   layout="responsive"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="957l"
-  data-widget-type="floating">
+  data-widget-type="floating"
+>
 </amp-addthis>
 ```
 
@@ -73,6 +71,7 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
 将分享按钮集成到您的内容中，以便实现无缝分享体验。
 
 示例：
+
 ```html
 <!--
   此示例使用占位符 pubId。
@@ -83,7 +82,8 @@ AddThis 受到超过 1500 万个网站（拥有超过 20 亿唯一身份用户�
   height="92"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="mv93"
-  ata-widget-type="inline">
+  ata-widget-type="inline"
+>
 </amp-addthis>
 ```
 
@@ -148,13 +148,13 @@ AddThis 工具和 AddThis 工具栏会从最终用户与发布商网站互动或
 
 AddThis 数据可能包含以下内容：
 
-* 互联网协议 (IP) 地址、移动广告 ID (MAID)（可让移动应用开发者识别谁在使用他们的移动应用）、移动应用 ID、浏览器类型、浏览器语言、操作系统类型，以及最终用户访问发布商网站或工具栏的日期和时间
-* 使用工具栏的用户；
-* 在发布商网站上的行为，例如最终用户在发布商网站上逗留了多长时间、最终用户在发布商网站上分享内容的行为，以及最终用户在发布商网站上滚动网页的行为；
-* 最终用户用于查找和导航到发布商网站的引荐网址和网页搜索；
-* 使用 AddThis 工具栏搜索功能时输入的关键字，以及工具栏用户是否以及何时下载、安装或卸载 AddThis 工具栏；
-* 最终用户使用 AddThis 工具的频率信息，以及工具栏用户使用 AddThis 工具栏的频率信息；
-* 根据最终用户和工具栏用户的 IP 地址推断出的地理位置数据。
+- 互联网协议 (IP) 地址、移动广告 ID (MAID)（可让移动应用开发者识别谁在使用他们的移动应用）、移动应用 ID、浏览器类型、浏览器语言、操作系统类型，以及最终用户访问发布商网站或工具栏的日期和时间
+- 使用工具栏的用户；
+- 在发布商网站上的行为，例如最终用户在发布商网站上逗留了多长时间、最终用户在发布商网站上分享内容的行为，以及最终用户在发布商网站上滚动网页的行为；
+- 最终用户用于查找和导航到发布商网站的引荐网址和网页搜索；
+- 使用 AddThis 工具栏搜索功能时输入的关键字，以及工具栏用户是否以及何时下载、安装或卸载 AddThis 工具栏；
+- 最终用户使用 AddThis 工具的频率信息，以及工具栏用户使用 AddThis 工具栏的频率信息；
+- 根据最终用户和工具栏用户的 IP 地址推断出的地理位置数据。
 
 在适用法律要求的范围内，AddThis 数据将被视为个人信息。根据《AddThis 服务条款》，发布商必须从最终用户处征得所有必要的同意和授权；在向 Oracle 提供从最终用户处收集的 AddThis 数据时，必须提供所有必要的通知。
 

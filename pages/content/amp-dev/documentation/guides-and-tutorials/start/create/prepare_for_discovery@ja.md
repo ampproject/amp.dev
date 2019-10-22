@@ -11,12 +11,14 @@ $title: ページの検出、配信の準備をする
 以下を非 AMP ページに追加します。
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 また、以下を AMP ページに追加します。
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,5 +27,6 @@ $title: ページの検出、配信の準備をする
 1 ページしか存在せず、それが AMP ページである場合も、canonical リンクを追加して単純に自身を指定する必要があります。
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]

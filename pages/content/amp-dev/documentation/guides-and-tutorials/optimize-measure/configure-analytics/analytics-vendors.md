@@ -10,26 +10,26 @@ This document lists analytics vendors that have built-in configurations for use 
 
 To send analytics data to a third-party vendor:
 
-1. In the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) tag, add the `type` attribute and set its value to the specified vendor as described in the [*Vendors*](#vendors) section below.
+1. In the [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) tag, add the `type` attribute and set its value to the specified vendor as described in the [_Vendors_](#vendors) section below.
 2. Determine what data you want to capture and track, and specify those details in the configuration data. See the vendor's documentation for instructions on how to capture analytics data.
 
 In the following example, we send pageview data to [Google Analytics](#google-analytics), a third-party analytics provider with a built-in configuration for [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -38,7 +38,7 @@ In the following example, we send pageview data to [Google Analytics](#google-an
 [/tip]
 
 [tip type="note"]
-**NOTE –**  Vendors that wish to integrate their service with [`<amp-analytics>`](../../../../documentation/components/reference/amp-analytics.md) should refer to the details in [Integrate your analytics tools with AMP](../../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md).
+**NOTE –** Vendors that wish to integrate their service with [`<amp-analytics>`](../../../../documentation/components/reference/amp-analytics.md) should refer to the details in [Integrate your analytics tools with AMP](../../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md).
 [/tip]
 
 <hr>
@@ -103,19 +103,19 @@ Adds support for Clicky Web Analytics. More details for adding Clicky support ca
 
 Type attribute value: `comscore`
 
-Adds support for comScore Unified Digital Measurement™ pageview analytics. Requires defining *var* `c2` with comScore-provided *c2 id*. More information can be found at [comscore.com](http://www.comscore.com).
+Adds support for comScore Unified Digital Measurement™ pageview analytics. Requires defining _var_ `c2` with comScore-provided _c2 id_. More information can be found at [comscore.com](http://www.comscore.com).
 
 ### Cxense
 
 Type attribute value: `cxense`
 
-Adds support for Cxense Insight analytics. Requires defining *var* `siteId` with Cxense-provided *siteId*. More details can be found at [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Adds support for Cxense Insight analytics. Requires defining _var_ `siteId` with Cxense-provided _siteId_. More details can be found at [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Dynatrace
 
 Type attribute value: `dynatrace`
 
-Adds support for Dynatrace real user monitoring. Requires defining *var* `app` with a Dynatrace provided *application id* and *var* `tenant` with a Dynatrace provided *environment identifier*. More details for adding Dynatrace real user monitoring can be found at [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Adds support for Dynatrace real user monitoring. Requires defining _var_ `app` with a Dynatrace provided _application id_ and _var_ `tenant` with a Dynatrace provided _environment identifier_. More details for adding Dynatrace real user monitoring can be found at [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### EPICA
 
@@ -128,7 +128,7 @@ More details can be found at [EPICA docs](https://www.epica.ai/docs/spec/).
 
 Type attribute value: `euleriananalytics`
 
-Adds support for Eulerian Technologies Analytics. Requires defining *var* `analyticsHost` with Eulerian delegated domain. More details can be found at [eulerian.wiki](https://eulerian.wiki).
+Adds support for Eulerian Technologies Analytics. Requires defining _var_ `analyticsHost` with Eulerian delegated domain. More details can be found at [eulerian.wiki](https://eulerian.wiki).
 
 ### Facebook Pixel
 
@@ -158,7 +158,7 @@ Adds support for Google Analytics. More details for adding Google Analytics supp
 
 Type attribute value: N/A
 
-Unlike other analytics vendors, Google Tag Manager is a tag management service, and does not require the `type` attribute. Google Tag Manager is [supported](https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager) in AMP.  Consult the Google Tag Manager documentation for [supported tags](https://support.google.com/tagmanager/answer/6106924) and for instructions on [adding Google Tag Manager to your AMP page](https://support.google.com/tagmanager/answer/6103696).
+Unlike other analytics vendors, Google Tag Manager is a tag management service, and does not require the `type` attribute. Google Tag Manager is [supported](https://developers.google.com/google-ads/amp/landing-pages#google_tag_manager) in AMP. Consult the Google Tag Manager documentation for [supported tags](https://support.google.com/tagmanager/answer/6106924) and for instructions on [adding Google Tag Manager to your AMP page](https://support.google.com/tagmanager/answer/6103696).
 
 ### INFOnline / IVW
 
@@ -168,10 +168,10 @@ Adds support for [INFOnline](https://www.infonline.de) / [IVW](http://www.ivw.de
 
 Additionally, the following variables must be defined:
 
-* `st`: offer ID
-* `co`: comment
-* `cp`: code
-* `url`: HTTPS location of `amp-analytics-infonline.html`
+- `st`: offer ID
+- `co`: comment
+- `cp`: code
+- `url`: HTTPS location of `amp-analytics-infonline.html`
 
 More details for adding INFOnline / IVW support can be found at [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/).
 
@@ -181,8 +181,8 @@ Type attribute value: `keen`
 
 Adds support for Keen. Additionally, the following `vars` must be defined:
 
-* `projectId`: your project id
-* `writeKey`: your write key
+- `projectId`: your project id
+- `writeKey`: your write key
 
 Use `extraUrlParams` to add more data. Configuration details can be found at [keen.io/docs/api](https://keen.io/docs/api/).
 
@@ -196,7 +196,7 @@ Adds support for Kenshoo. More information and configuration details can be foun
 
 Type attribute value: `krux`
 
-Adds support for Krux.  Configuration details can be found at [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
+Adds support for Krux. Configuration details can be found at [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
 
 ### Linkpulse
 
@@ -208,13 +208,13 @@ Adds support for Linkpulse. Configuration details can be found at [docs.linkpuls
 
 Type attribute value: `lotame`
 
-Adds support for Lotame.  More information and configuration details can be found at [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
+Adds support for Lotame. More information and configuration details can be found at [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
 
 ### Médiamétrie
 
 Type attribute value: `mediametrie`
 
-Adds support for Médiamétrie tracking pages. Requires defining *var* `serial`. Vars `level1` to `level4` are optional.  More information can be found at [mediametrie.com](http://www.mediametrie.com/).
+Adds support for Médiamétrie tracking pages. Requires defining _var_ `serial`. Vars `level1` to `level4` are optional. More information can be found at [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics
 
@@ -276,7 +276,7 @@ In the `requests` section:
 - `url`: HTTPS location of `amp-analytics-oewa.html`
 
 [tip type="note"]
-**NOTE –**  There is a variation named `oewadirect` that does not use the iframe-ping solution and has a better client detection by using `AMP CLIENT_ID`.  This is currently EXPERIMENTAL, and prohibited by the OEWA because it does not use `oewa2.js`.
+**NOTE –** There is a variation named `oewadirect` that does not use the iframe-ping solution and has a better client detection by using `AMP CLIENT_ID`. This is currently EXPERIMENTAL, and prohibited by the OEWA because it does not use `oewa2.js`.
 [/tip]
 
 ### Parsely
@@ -326,7 +326,7 @@ Adds support for [SOASTA mPulse](https://www.soasta.com/mPulse). Configuration d
 
 Type attribute value: `simplereach`
 
-Adds support for SimpleReach.  Configuration details can be found at [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation).
+Adds support for SimpleReach. Configuration details can be found at [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation).
 
 ### Snowplow Analytics
 
@@ -380,7 +380,7 @@ Adds support for Webtrekk. Configuration details can be found at [supportcenter.
 
 Type attribute value: `metrika`
 
-Adds support for Yandex Metrica.  Configuration details can be found at [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+Adds support for Yandex Metrica. Configuration details can be found at [Yandex Support](https://yandex.com/support/metrica/code/install-counter-amp.xml).
 
 ### Vpon Analytics
 

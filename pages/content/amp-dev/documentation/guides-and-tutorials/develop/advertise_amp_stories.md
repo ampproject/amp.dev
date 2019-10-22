@@ -10,7 +10,7 @@ author: CrystalOnScript
 AMP Stories are a full-screen tappable experience that immerses readers in the content. Advertising with AMP Story ads allows for seamless and disruption-free integration into the user’s journey, keeping them engaged and delighted by the platform.
 
 ##Ad Placement
-Unlike AMP web pages, where the amount and location of ads is designated by the placement of multiple [`amp-ad`](../../../documentation/components/reference/amp-ad.md) components, AMP Stories rely on a single  [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component to dictate ad quantity and placement.
+Unlike AMP web pages, where the amount and location of ads is designated by the placement of multiple [`amp-ad`](../../../documentation/components/reference/amp-ad.md) components, AMP Stories rely on a single [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component to dictate ad quantity and placement.
 
 The [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) extension is a wrapper around the [`amp-ad`](../../../documentation/components/reference/amp-ad.md) component that dynamically inserts one or multiple ads while the user consumes the story content. To ensure the best user experience:
 
@@ -38,10 +38,10 @@ Users can progress past ads the same way as normal story pages; by tapping the r
 
 Users can interact directly with the ad by tapping the system rendered [call to action](story_ads_best_practices.md#call-to-action-button-text-enum) button that appears in the bottom third of all AMP Story ads. Tapping on the button could send the user to one of the following locations, configured by the ad creator:
 
-* An AMP web page
-* A non-AMP web page
-* The App Store or Google Play Store
-* [A Sponsored Story](story_ads_best_practices.md#sponsored-story)
+- An AMP web page
+- A non-AMP web page
+- The App Store or Google Play Store
+- [A Sponsored Story](story_ads_best_practices.md#sponsored-story)
 
 {{ image('/static/img/docs/stampads/sponsored_story.png', 1600, 597, layout='intrinsic', alt='Image showing that usersare redirected to an ad landing destination, but can return to the story.', caption='Users are redirected to an ad landing destination, but can return to the story.', align='' ) }}
 
@@ -50,17 +50,17 @@ AMP Stories cannot support an [`amp-ad`](../../../documentation/components/refer
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          // ad server configuration
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+// ad server configuration
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -71,7 +71,7 @@ The easiest way to include ads in your AMP Story is by serving ads from a suppor
 
 Ad servers that currently support AMP Story ads:
 
-* [Google Ad Manager (previously  DoubleClick)](advertise_amp_stories.md#google-ad-manager)
+- [Google Ad Manager (previously DoubleClick)](advertise_amp_stories.md#google-ad-manager)
 
 If you are an ad server interested in serving story ads please contact us by filing a [GitHub Issue](https://github.com/ampproject/amphtml/issues/new). The AMP team will happily get in touch!
 
@@ -83,23 +83,23 @@ Ad server information is designated within the [`amp-story-auto-ads`](../../../d
 
 You must specify a JSON configuration object within the [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) component that specifies how ads should be fetched and displayed.The following fields are required to serve and ad with Google Ad Manager:
 
-* `"type"`  must be specified as `"doubleclick"`
-* `"data-slot"` must be paired with your ad unit
+- `"type"` must be specified as `"doubleclick"`
+- `"data-slot"` must be paired with your ad unit
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-      {
-        "ad-attributes": {
-          "type": "doubleclick",
-          "data-slot": "/30497360/a4a/amp_story_dfp_example"
-        }
-      }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+"type": "doubleclick",
+"data-slot": "/30497360/a4a/amp_story_dfp_example"
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
 
@@ -107,22 +107,22 @@ These key value pairs are copied over to the [`amp-ad`](../../../documentation/c
 
 [sourcecode:html]
 <amp-story>
-  <amp-story-auto-ads>
-    <script type="application/json">
-     {
-       "ad-attributes": {
-         "type": "doubleclick",
-         "data-slot": "/30497360/a4a/amp_story_dfp_example",
-         "additional_data": "additional_data_information"
-       }
-     }
-    </script>
-  </amp-story-auto-ads>
-  <amp-story-page>
-  ...
+<amp-story-auto-ads>
+<script type="application/json">
+{
+"ad-attributes": {
+"type": "doubleclick",
+"data-slot": "/30497360/a4a/amp_story_dfp_example",
+"additional_data": "additional_data_information"
+}
+}
+</script>
+</amp-story-auto-ads>
+<amp-story-page>
+...
 </amp-story>
 [/sourcecode]
-  
+
 [tip type="note"]
 Read [Traffic custom creatives in AMP Stories](https://support.google.com/admanager/answer/9038178) for information about uploading ads to Google Ad Manager and checkout our guide on [Best practices for creating an AMP Story ad](story_ads_best_practices.md).
 [/tip]

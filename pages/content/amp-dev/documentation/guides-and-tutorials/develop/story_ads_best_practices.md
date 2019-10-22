@@ -4,7 +4,7 @@ $order: 16
 description: 'AMP Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in AMP Stories should have a consistent and cohesive design with the AMP Stories UX.'
 
 formats:
-    - ads
+  - ads
 ---
 
 AMP Stories are a full-screen tappable experience that immerses readers in the content. Ads that appears in AMP Stories should have a consistent and cohesive design with the AMP Stories UX. This prevents a jarring or interruptive user experience. This guide demonstrates how to build an ad for AMP Stories.
@@ -14,11 +14,11 @@ Current ad formats, such as banners and boxes, do not integrate well with the AM
 
 AMP Story ads conform to the following principles:
 
-* Valid AMPHTML Ad: follow the same technical specification as a classic [AMPHTML ad](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
-* Visual first: Inviting, bold, context-driven invitation state.
-* Native: The ad page has the same dimensions as an organic story page.
-* Same interaction model: User can continue to the next screen just like they would with an organic story page.
-* Fast: The ad never appears to a user in a half-loaded state.
+- Valid AMPHTML Ad: follow the same technical specification as a classic [AMPHTML ad](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/amp-a4a-format.md).
+- Visual first: Inviting, bold, context-driven invitation state.
+- Native: The ad page has the same dimensions as an organic story page.
+- Same interaction model: User can continue to the next screen just like they would with an organic story page.
+- Fast: The ad never appears to a user in a half-loaded state.
 
 To be consistent with these principles, the AMP Story runtime determines the right placement of an ad page amidst the AMP Story. Read more about ad placement mechanics in [Advertise in AMP Stories](advertise_amp_stories.md).
 
@@ -38,6 +38,7 @@ To keep the user experience consistent, the AMP Story runtime is responsible for
 Meta tag data specifies that the ad meets the AMP Story format, sets the CTA button text enum, directs where the button will send the user and what type of page it is.
 
 [sourcecode:html]
+
 <html amp4ads>
   <head>
     <meta charset="utf-8">
@@ -57,6 +58,7 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
      amp-img {height: 100vh}
     </style>
     <script async src="https://cdn.ampproject.org/amp4ads-v0.js"></script>
+
   </head>
   <body>
     <amp-img src=%%FILE:JPG1%% layout="responsive" height="1280" width="720"></amp-img>
@@ -67,32 +69,33 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 The `amp-cta-type` tag must include one of the [available options](#call-to-action-button-text-enum) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers.
 
 ## Call to action button text enum <a name="call-to-action-button-text-enum"></a>
+
 The call to action button must be configured from a predefined set of choices:
 
-* `APPLY_NOW`: "Apply Now"
-* `BOOK_NOW`: "Book"
-* `BUY_TICKETS`: "Buy Tickets"
-* `DOWNLOAD`: "Download"
-* `EXPLORE`: "Explore Now"
-* `GET_NOW`: "Get Now"
-* `INSTALL`: "Install Now"
-* `LISTEN`: "Listen Now"
-* `MORE`: "More"
-* `OPEN_APP`: "Open App"
-* `ORDER_NOW`: "Order Now"
-* `PLAY`: "Play"
-* `READ`: "Read Now"
-* `SHOP`: "Shop Now"
-* `SHOWTIMES`: "Showtimes"
-* `SIGN_UP`: "Sign Up"
-* `SUBSCRIBE`: "Subscribe Now"
-* `USE_APP`: "Use App"
-* `VIEW`: "View"
-* `WATCH`: "Watch"
-* `WATCH_EPISODE`: "Watch Episode"
+- `APPLY_NOW`: "Apply Now"
+- `BOOK_NOW`: "Book"
+- `BUY_TICKETS`: "Buy Tickets"
+- `DOWNLOAD`: "Download"
+- `EXPLORE`: "Explore Now"
+- `GET_NOW`: "Get Now"
+- `INSTALL`: "Install Now"
+- `LISTEN`: "Listen Now"
+- `MORE`: "More"
+- `OPEN_APP`: "Open App"
+- `ORDER_NOW`: "Order Now"
+- `PLAY`: "Play"
+- `READ`: "Read Now"
+- `SHOP`: "Shop Now"
+- `SHOWTIMES`: "Showtimes"
+- `SIGN_UP`: "Sign Up"
+- `SUBSCRIBE`: "Subscribe Now"
+- `USE_APP`: "Use App"
+- `VIEW`: "View"
+- `WATCH`: "Watch"
+- `WATCH_EPISODE`: "Watch Episode"
 
 [tip type="note"]
-**NOTE –**  Deep links to apps are not supported, but links to the App Store page or the Google Play Store page are supported using http/https.
+**NOTE –** Deep links to apps are not supported, but links to the App Store page or the Google Play Store page are supported using http/https.
 The CTA button text enum is specified in the ad response payload.
 [/tip]
 
@@ -101,9 +104,9 @@ If support is needed for a new CTA button text enum, please open a [GitHub issue
 ##Ad Landing Page
 You can specify one of three options for an AMP Story ad landing page.
 
-* `STORY`: Landing page is a [sponsored story](story_ads_best_practices.md#sponsored-story).
-* `AMP`: Landing page is a valid AMP Page.
-* `NONAMP`: Any other type of webpage.
+- `STORY`: Landing page is a [sponsored story](story_ads_best_practices.md#sponsored-story).
+- `AMP`: Landing page is a valid AMP Page.
+- `NONAMP`: Any other type of webpage.
 
 ##Layout
 AMP Stories are horizontal and full-screen. Story ads are required to match this format to provide a consistent user experience.
@@ -126,6 +129,7 @@ Images and video included in an AMP Story ad should be 4:3 standard full-screen.
   height="1280"
   layout="responsive"
   poster="images/kitten-playing.png">
+
   <source src="videos/kitten-playing.webm"
     type="video/webm" />
   <source src="videos/kitten-playing.mp4"
@@ -140,6 +144,7 @@ Images and video included in an AMP Story ad should be 4:3 standard full-screen.
 Background images can be scaled to full screen. The following CSS is a successful way to crop and center videos and images.
 
 [sourcecode:html]
+
 <style amp-custom>
     amp-img, amp-video {
         height: 100vh;
@@ -151,6 +156,7 @@ Background images can be scaled to full screen. The following CSS is a successfu
         object-fit: cover;
     }
 </style>
+
 [/sourcecode]
 
 ###Video
@@ -163,6 +169,7 @@ Example: Specifying multiple source files
 [sourcecode:html]
 <amp-video id="video-page1" autoplay loop
   layout="fill" poster="https://example.com/media/poster.jpg">
+
   <source src="https://amp-example.com/media/movie.m3u8"
     type="application/vnd.apple.mpegurl" />
   <source src="https://amp-example.com/media/movie.mp4"
@@ -174,10 +181,10 @@ Example: Specifying multiple source files
 For optimal performance, you should aim to provide videos that are no larger than 4 MB. Smaller file sizes allow for faster downloading, so keep things as small as possible.
 
 ####Video formats
-If you can only provide a single video format, provide **MP4**.  However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
+If you can only provide a single video format, provide **MP4**. However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
 [tip type="note"]
-**NOTE –**  The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
+**NOTE –** The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
 [/tip]
 
 ####Video resolution
@@ -204,7 +211,7 @@ AMP story videos are always vertical (i.e., portrait view), with an expected asp
 </table>
 
 [tip type="note"]
-**NOTE –**  For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
+**NOTE –** For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
 [/tip]
 
 #### Video codec
@@ -217,7 +224,7 @@ AMP story videos are always vertical (i.e., portrait view), with an expected asp
 
 ##### Transcoding optimizations
 
-There are various tools you can use to encode videos and adjust the quality of the video during encoding.  Here are just a few:
+There are various tools you can use to encode videos and adjust the quality of the video during encoding. Here are just a few:
 
 <table>
   <thead>
@@ -260,6 +267,7 @@ There are various tools you can use to encode videos and adjust the quality of t
 Ensure the size of your HLS segments are typically no more than 10 seconds in duration.
 
 ## Sponsored Story <a name="sponsored-story"></a>
+
 A Sponsored Story exists as a URL on the web, enabling the drive of user traffic to a Sponsored Story from the call to action button on an AMP Story ad. A Sponsored Story is an AMP Story, but with focus on an immersive and expansive ad experience.
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='CTA button directs to a Sponsored Story', caption='CTA button directs to a Sponsored Story', align='' ) }}

@@ -13,14 +13,12 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-
-
 If you are an ad technology provider looking to integrate with AMP HTML, please see the guidelines below.
 To ensure minimum latency and quality, please follow the instructions listed [here](https://github.com/ampproject/amphtml/blob/master/ads/../3p/README.md#ads) before submitting a pull request to the AMP open-source project. For general guidance on how to get started with contributing to AMP, please see [CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/ads/../CONTRIBUTING.md).
 
 ## Ad Server <a name="ad-server"></a>
 
-*Examples : DFP, A9*
+_Examples : DFP, A9_
 
 As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher’s website.
 
@@ -43,14 +41,15 @@ For details on how to integrate your ad network with AMP, see [Integrating ad ne
 
 ## Supply Side Platform (SSP) or an Ad Exchange <a name="supply-side-platform-ssp-or-an-ad-exchange"></a>
 
-*Examples : Rubicon, Criteo OR Appnexus, Ad-Exchange*
+_Examples : Rubicon, Criteo OR Appnexus, Ad-Exchange_
 
 If you are a sell-side platform that wants to get called directly from a publisher’s webpage, you will need to follow the same directions as listed above for integrating with an Ad Server. Adding your own `type` value to the amp-ad tag allows you to distribute your tag directly to the publisher, so they can insert your tags directly into their AMP pages.
 
 More commonly, SSPs work with the publisher to traffick the SSP’s ad tags in their ad server. In this case, ensure that all assets being loaded by your script in the ad server’s creative are being made over HTTPS. There are some restrictions around some ad formats like expandables, so we recommend that you test out the most commonly delivered creative formats with your publishers.
 
 ## Ad Agency <a name="ad-agency"></a>
-*Examples : Essence, Omnicom*
+
+_Examples : Essence, Omnicom_
 
 Work with your publisher to ensure that the creatives you develop are AMP-compliant. Since all creatives are served into iframes whose size is determined when the ad is called, ensure that your creative doesn't try to modify the size of the iframe.
 
@@ -59,7 +58,7 @@ Some ad formats are not fully supported at the moment and we recommend testing t
 
 ## Video Player <a name="video-player"></a>
 
-*Examples : Brightcove, Ooyala*
+_Examples : Brightcove, Ooyala_
 
 A video player that works in regular HTML pages will not work in AMP and therefore a specific tag must be created that allows the AMP Runtime to load your player.
 Brightcove has created a custom [amp-brightcove](https://github.com/ampproject/amphtml/blob/master/extensions/amp-brightcove/amp-brightcove.md) tag that allows media and ads to be played in AMP pages.
@@ -72,13 +71,13 @@ A Brightcove player can be invoked by the following:
       data-video-id="ref:amp-docs-sample"
       data-player="S1Tt8cgaM"
       layout="responsive" width="480" height="270">
-  </amp-brightcove>
+</amp-brightcove>
 [/sourcecode]
-For instructions on how to develop an amp tag like Brightcove, see  [this pull request](https://github.com/ampproject/amphtml/pull/1052).
+For instructions on how to develop an amp tag like Brightcove, see [this pull request](https://github.com/ampproject/amphtml/pull/1052).
 
 ## Video Ad Network <a name="video-ad-network"></a>
 
-*Examples : Tremor, Brightroll*
+_Examples : Tremor, Brightroll_
 
 If you are a video ad network, please work with your publisher to ensure that:
 
@@ -86,7 +85,8 @@ If you are a video ad network, please work with your publisher to ensure that:
 - The publisher’s video player has AMP support
 
 ## Data Management Platform (DMP) <a name="data-management-platform-dmp"></a>
-*Examples : KRUX, Bluekai*
+
+_Examples : KRUX, Bluekai_
 
 See [how to enhance custom ad configuration](https://amp.dev/documentation/components/amp-ad#enhance-incoming-ad-configuration).
 
@@ -94,16 +94,16 @@ You can use a similar approach to enrich the ad call by passing in audience segm
 
 ## Viewability Provider <a name="viewability-provider"></a>
 
-*Examples : MOAT, Integral Ad Science*
+_Examples : MOAT, Integral Ad Science_
 
 Viewability providers typically integrate with publishers via the ad server’s creative wrappers. If that is the case, ensure that the creative wrapper loads all assets over HTTPS.
 
-For e.g. for MOAT, make sure `http://js.moatads.com` is switched to  `https://z.moatads.com`
+For e.g. for MOAT, make sure `http://js.moatads.com` is switched to `https://z.moatads.com`
 
 Also, see the approach to using the [intersection observer pattern](https://github.com/ampproject/amphtml/blob/master/ads/README.md#ad-viewability).
 
 ## Content-Recommendation Platform <a name="content-recommendation-platform"></a>
 
-*Examples : Taboola, Outbrain*
+_Examples : Taboola, Outbrain_
 
 Useful if you have some piece of JavaScript embeded on the publisher website today but the approach will not work in AMP pages. If you would like to recommend content on an AMP page, we suggest that you use the [`amp-embed` extension](https://amp.dev/documentation/components/amp-ad) to request the content details. Please see the [Taboola](https://github.com/ampproject/amphtml/blob/master/ads/taboola.md) example.

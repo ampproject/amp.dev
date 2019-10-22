@@ -2,13 +2,11 @@
 $title: amp-lightbox
 $category@: layout
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: 以完整视口“灯箱”模式显示元素。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -47,7 +43,6 @@ teaser:
   </tr>
 </table>
 
-
 ## 行为 <a name="behavior"></a>
 
 `amp-lightbox` 组件可定义以完整视口叠加层/模式显示的子元素。当用户点按或点击某个元素（例如按钮）时，所点击元素的 `on` 属性中引用的 `amp-lightbox` ID 会触发灯箱占据整个视口并显示 `amp-lightbox` 的子元素。
@@ -57,7 +52,9 @@ teaser:
 ```html
 <button on="tap:quote-lb">See Quote</button>
 <amp-lightbox id="quote-lb" layout="nodisplay">
-  <blockquote>"Don't talk to me about JavaScript fatigue" - Horse JS</blockquote>
+  <blockquote>
+    "Don't talk to me about JavaScript fatigue" - Horse JS
+  </blockquote>
   <button on="tap:quote-lb.close">Nice!</button>
 </amp-lightbox>
 ```
@@ -134,8 +131,8 @@ teaser:
 
 对于 AMPHTML 广告，`close-button` 为必需的属性。此属性会导致标头呈现在灯箱顶部。标头包含关闭按钮和显示“Ad”的标签。需要使用此标头才能执行以下操作：
 
-* 为 AMPHTML 广告打造一致且可预测的用户体验。
-* 确保灯箱的退出点始终存在，否则广告素材可能会通过灯箱高效拦截主文档内容。
+- 为 AMPHTML 广告打造一致且可预测的用户体验。
+- 确保灯箱的退出点始终存在，否则广告素材可能会通过灯箱高效拦截主文档内容。
 
 对于 AMPHTML 广告，`close-button` 为必需的属性，且此属性只能在 AMPHTML 广告中使用。在常规 AMP 文档中，您可以在任意需要的位置呈现关闭按钮（作为 `<amp-lightbox>` 内容的一部分）。
 

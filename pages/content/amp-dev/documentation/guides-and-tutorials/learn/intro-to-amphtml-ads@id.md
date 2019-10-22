@@ -54,13 +54,13 @@ Iklan AMPHTML bersifat fleksibel dan dinamis, sehingga memungkinkan banyak forma
 
 ### Penayang
 
-Untuk menayangkan format iklan yang dijual langsung di AMPHTML, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML](a4a_spec.md) dan menayangkannya menggunakan server iklan yang mendukung penayangan iklan AMPHTML.  Untuk saat ini, berikut ini server iklan yang mendukung iklan AMPHTML:
+Untuk menayangkan format iklan yang dijual langsung di AMPHTML, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML](a4a_spec.md) dan menayangkannya menggunakan server iklan yang mendukung penayangan iklan AMPHTML. Untuk saat ini, berikut ini server iklan yang mendukung iklan AMPHTML:
 
-*   DoubleClick for Publishers
-*   TripleLift
-*   Dianomi
-*   Adzerk
-*   Google AdSense
+- DoubleClick for Publishers
+- TripleLift
+- Dianomi
+- Adzerk
+- Google AdSense
 
 Untuk menayangkan iklan AMPHTML melalui saluran tidak langsung (mis., exchange, SSP, dll.), gunakan server iklan/jaringan iklan pendukung pada [daftar berikut](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md).
 
@@ -68,35 +68,35 @@ Untuk menayangkan iklan AMPHTML melalui saluran tidak langsung (mis., exchange, 
 
 Jika Anda adalah agensi kreatif, Anda harus membuat iklan sesuai dengan [spesifikasi iklan AMPHTML](a4a_spec.md). Untuk mengetahui contoh dan inspirasi, lihat template iklan AMPHTML open source di [Examples](../../../documentation/examples/index.html). Selain itu, gunakan salah satu fitur berikut untuk membuat iklan AMPHTML:
 
-*  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate (*segera hadir*)
+- [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate (_segera hadir_)
 
 ### Jaringan/server iklan
 
-Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`](../../../documentation/components/reference/amp-ad.md) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md).  Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
+Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`amp-ad`](../../../documentation/components/reference/amp-ad.md) untuk jaringan Anda (kecuali Anda telah memilikinya) yang menggunakan [implementasi permintaan iklan Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Untuk mengetahui detailnya, lihat [Berintegrasi dengan AMP untuk menayangkan iklan display](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Perlu diingat bahwa tidak diperlukan integrasi khusus untuk menayangkan AMPHTML ke halaman non-AMP.
 
 ## Membuat iklan AMPHTML
 
-**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML](a4a_spec.md).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example](../../../documentation/examples/documentation/amp-ad.html).
+**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML](a4a_spec.md). Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example](../../../documentation/examples/documentation/amp-ad.html).
 
 **Menggunakan fitur**: Anda dapat menggunakan salah satu fitur berikut untuk membuat materi iklan AMPHTML:
 
-*  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate (*segera hadir*)
+- [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate (_segera hadir_)
 
 ### Memvalidasi sintaks iklan AMPHTML
 
 Setelah membuat iklan AMPHTML, Anda harus memastikan bahwa iklan telah menggunakan sintaks AMPHTML yang benar. Bergantung pada lingkungan pengembangan Anda, ada beberapa opsi untuk memvalidasi iklan AMPHTML:
 
-*   Gunakan modul [NPM validator AMP](https://www.npmjs.com/package/amphtml-validator) untuk validasi integrasi ke CI build.
-*   Gunakan [validator AMP](https://validator.ampproject.org/) untuk pengujian satu kali.
-*   Berpartnerlah dengan [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) dan gunakan titik akhir validator publiknya.
+- Gunakan modul [NPM validator AMP](https://www.npmjs.com/package/amphtml-validator) untuk validasi integrasi ke CI build.
+- Gunakan [validator AMP](https://validator.ampproject.org/) untuk pengujian satu kali.
+- Berpartnerlah dengan [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) dan gunakan titik akhir validator publiknya.
 
 [tip type="note"]
 
-Untuk merender iklan AMPHTML dengan cepat di halaman AMP (yaitu, menggunakan rendering istimewa di Fast Fetch), sintaksnya harus tepat.  Jika sintaksnya tidak valid, iklan akan tetap ditampilkan, hanya saja tidak secepat itu.
+Untuk merender iklan AMPHTML dengan cepat di halaman AMP (yaitu, menggunakan rendering istimewa di Fast Fetch), sintaksnya harus tepat. Jika sintaksnya tidak valid, iklan akan tetap ditampilkan, hanya saja tidak secepat itu.
 
 [/tip]
 
@@ -124,6 +124,6 @@ Ya. Lihat [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exi
 
 #### Saya tidak dapat menemukan apa yang saya butuhkan. Ke mana saya harus bertanya?
 
-*   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) adalah cara yang kami rekomendasikan untuk menemukan jawaban atas pertanyaan tentang AMP. Karena anggota komunitas Project AMP secara rutin memantau Stack Overflow, Anda mungkin akan menerima respons tercepat terhadap pertanyaan Anda di dalamnya.
-*   Bergabunglah ke saluran [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) untuk melihat solusi dan jawaban.
-*   Jika Anda mendapati bug di AMP atau memiliki permintaan fitur untuk AMP, lihat [Melaporkan masalah dengan AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) untuk mengetahui informasi tentang cara mengajukan masalah.
+- [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) adalah cara yang kami rekomendasikan untuk menemukan jawaban atas pertanyaan tentang AMP. Karena anggota komunitas Project AMP secara rutin memantau Stack Overflow, Anda mungkin akan menerima respons tercepat terhadap pertanyaan Anda di dalamnya.
+- Bergabunglah ke saluran [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) untuk melihat solusi dan jawaban.
+- Jika Anda mendapati bug di AMP atau memiliki permintaan fitur untuk AMP, lihat [Melaporkan masalah dengan AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) untuk mengetahui informasi tentang cara mengajukan masalah.

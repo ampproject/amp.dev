@@ -7,13 +7,14 @@ AMP ストーリーのページは、`<amp-story-page>` コンポーネントで
 ページを作成するには、[`amp-story`](../../../../documentation/components/reference/amp-story.md) の子要素として `<amp-story-page>` を**追加**します。ページには固有の ID を**割り当て**ます。ここでは、最初のページ（カバーページ）に、固有の ID `cover` を割り当てます。
 
 ```html hl_lines="6 7"
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
-   <amp-story-page id="cover">
-   </amp-story-page>
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+>
+  <amp-story-page id="cover"> </amp-story-page>
 </amp-story>
 ```
 
@@ -26,8 +27,8 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 
 ここで作成するカバーページは、次の 2 つのレイヤで構成します。
 
-* **レイヤ 1**: 背景として表示する画像
-* **レイヤ 2**: ストーリーのタイトルとバイライン
+- **レイヤ 1**: 背景として表示する画像
+- **レイヤ 2**: ストーリーのタイトルとバイライン
 
 ### レイヤ 1 を作成する
 
@@ -38,9 +39,12 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 ```html hl_lines="2 3 4 5 6 7"
 <amp-story-page id="cover">
   <amp-story-grid-layer template="fill">
-    <amp-img src="assets/cover.jpg"
-        width="720" height="1280"
-        layout="responsive">
+    <amp-img
+      src="assets/cover.jpg"
+      width="720"
+      height="1280"
+      layout="responsive"
+    >
     </amp-img>
   </amp-story-grid-layer>
 </amp-story-page>
@@ -68,16 +72,18 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
     <td width="65%"><strong>fill</strong> テンプレートは、レイヤ内の 1 番目の子要素を画面全体に表示します。レイヤ内のそれ以外の子要素は表示されません。
 
     <p>fill テンプレートは、画像や動画を背景として表示したい場合に適しています。</p>
-   <code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
-  &lt;amp-img src="dog.png"
-      width="720" height="1280"
-      layout="responsive">
-  &lt;/amp-img>
+
+<code class="nopad"><pre>&lt;amp-story-grid-layer template="fill">
+&lt;amp-img src="dog.png"
+width="720" height="1280"
+layout="responsive">
+&lt;/amp-img>
 &lt;/amp-story-grid-layer></pre></code>
-    </td>
-    <td>
-    {{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}
-    </td>
+</td>
+<td>
+{{ image('/static/img/docs/tutorials/amp_story/layer-fill.png', 216, 341) }}
+</td>
+
 </tr>
 <tr>
     <td colspan="2"><h5 id="vertical">テンプレート: Vertical</h5></td>
@@ -87,14 +93,15 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 
     <p>vertical テンプレートは、要素を垂直に積み重ねるように、順番に並べて表示したい場合に適しています。</p>
 
-   <code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">
-  &lt;p>element 1&lt;/p>
-  &lt;p>element 2&lt;/p>
-  &lt;p>element 3&lt;/p>
+<code class="nopad"><pre>&lt;amp-story-grid-layer template="vertical">
+&lt;p>element 1&lt;/p>
+&lt;p>element 2&lt;/p>
+&lt;p>element 3&lt;/p>
 &lt;/amp-story-grid-layer></pre></code>
-    </td>
-    <td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}
-    </td>
+</td>
+<td>{{ image('/static/img/docs/tutorials/amp_story/layer-vertical.png', 216, 341) }}
+</td>
+
 </tr>
 <tr>
     <td colspan="2"><h5 id="horizontal">テンプレート: Horizontal</h5></td>
@@ -105,14 +112,16 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
     <p>horizontal テンプレートは、要素を水平に隣接するように、順番に並べて表示したい場合に適しています。</p>
 
     <code class="nopad"><pre>&lt;amp-story-grid-layer template="horizontal">
-  &lt;p>element 1&lt;/p>
-  &lt;p>element 2&lt;/p>
-  &lt;p>element 3&lt;/p>
+
+&lt;p>element 1&lt;/p>
+&lt;p>element 2&lt;/p>
+&lt;p>element 3&lt;/p>
 &lt;/amp-story-grid-layer></pre></code>
-    </td>
-    <td>
-    {{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}
-    </td>
+</td>
+<td>
+{{ image('/static/img/docs/tutorials/amp_story/layer-horizontal.png', 216, 341) }}
+</td>
+
 </tr>
 <tr>
     <td colspan="2"><h5 id="thirds">テンプレート: Thirds</h5></td>
@@ -124,9 +133,10 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 <p>名前付きの <code>grid-area</code> を指定して、三分割したどの領域（<code>upper-third</code>、<code>middle-third</code>、または <code>lower-third</code>）にコンテンツを割り当てるかを指定することもできます。グリッド領域を名前付きにしておくと、要素が表示されるときのデフォルトの動作を変更する場合にも便利です。レイヤ内に要素が 2 つある場合には、たとえば 1 つ目の要素を <code>grid-area="upper-third"</code> に割り当て、2 つ目の要素を <code>grid-area="lower-third"</code> に割り当てることができます。</p>
 
 <code class="nopad"><pre>&lt;amp-story-grid-layer template="thirds">
-  &lt;h1 grid-area="upper-third">element 1&lt;/h1>
-  &lt;p grid-area="lower-third">element 2&lt;/p>
+&lt;h1 grid-area="upper-third">element 1&lt;/h1>
+&lt;p grid-area="lower-third">element 2&lt;/p>
 &lt;/amp-story-grid-layer>
+
 </pre></code>
 </td>
 <td>{{ image('/static/img/docs/tutorials/amp_story/layer-thirds.png', 216, 341) }}</td>
@@ -141,7 +151,7 @@ AMP のレイヤも、グラフィックスのレイヤのように視覚効果�
 
 ```html hl_lines="4 5 6 7"
 <amp-story-grid-layer>
- <!--our first layer -->
+  <!--our first layer -->
 </amp-story-grid-layer>
 <amp-story-grid-layer template="vertical">
   <h1>The Joy of Pets</h1>

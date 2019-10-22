@@ -25,4 +25,3 @@ $title: 恭喜！
 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 组件是**实验性**组件。若想报名参加试用活动，以便使用此组件的原始试用版发布网页，请访问 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>。
 
 [/tip]
-

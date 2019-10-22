@@ -25,7 +25,8 @@
 
   if (!supportsPassive) {
     const super_add_event_listener = EventTarget.prototype.addEventListener;
-    const super_remove_event_listener = EventTarget.prototype.removeEventListener;
+    const super_remove_event_listener =
+      EventTarget.prototype.removeEventListener;
     const super_prevent_default = Event.prototype.preventDefault;
 
     function parseOptions(type, listener, options, action) {
@@ -34,7 +35,7 @@
       let passive = false;
       let fieldId;
       if (options) {
-        if (typeof (options) === 'object') {
+        if (typeof options === 'object') {
           passive = options.passive ? true : false;
           useCapture = options.useCapture ? true : false;
         } else {
@@ -53,7 +54,9 @@
 
     Event.prototype.preventDefault = function() {
       if (this.__passive) {
-        console.warn('Ignored attempt to preventDefault an event from a passive listener');
+        console.warn(
+          'Ignored attempt to preventDefault an event from a passive listener'
+        );
         return;
       }
       super_prevent_default.apply(this);
@@ -61,61 +64,85 @@
 
     EventTarget.prototype.addEventListener = function(type, listener, options) {
       const super_this = this;
-      parseOptions(type, listener, options,
-          function(needsWrapping, fieldId, useCapture, passive) {
-            if (needsWrapping) {
-              var fieldId = useCapture.toString();
-              fieldId += passive.toString();
+      parseOptions(type, listener, options, function(
+        needsWrapping,
+        fieldId,
+        useCapture,
+        passive
+      ) {
+        if (needsWrapping) {
+          var fieldId = useCapture.toString();
+          fieldId += passive.toString();
 
-              if (!this.__event_listeners_options) {
-                this.__event_listeners_options = {};
+          if (!this.__event_listeners_options) {
+            this.__event_listeners_options = {};
+          }
+          if (!this.__event_listeners_options[type]) {
+            this.__event_listeners_options[type] = {};
+          }
+          if (!this.__event_listeners_options[type][listener]) {
+            this.__event_listeners_options[type][listener] = [];
+          }
+          if (this.__event_listeners_options[type][listener][fieldId]) {
+            return;
+          }
+          const wrapped = {
+            handleEvent: function(e) {
+              e.__passive = passive;
+              if (typeof listener === 'function') {
+                listener(e);
+              } else {
+                listener.handleEvent(e);
               }
-              if (!this.__event_listeners_options[type]) {
-                this.__event_listeners_options[type] = {};
-              }
-              if (!this.__event_listeners_options[type][listener]) {
-                this.__event_listeners_options[type][listener] = [];
-              }
-              if (this.__event_listeners_options[type][listener][fieldId]) {
-                return;
-              }
-              const wrapped = {
-                handleEvent: function(e) {
-                  e.__passive = passive;
-                  if (typeof (listener) === 'function') {
-                    listener(e);
-                  } else {
-                    listener.handleEvent(e);
-                  }
-                  e.__passive = false;
-                },
-              };
-              this.__event_listeners_options[type][listener][fieldId] = wrapped;
-              super_add_event_listener.call(super_this, type, wrapped, useCapture);
-            } else {
-              super_add_event_listener.call(super_this, type, listener, useCapture);
-            }
-          });
+              e.__passive = false;
+            },
+          };
+          this.__event_listeners_options[type][listener][fieldId] = wrapped;
+          super_add_event_listener.call(super_this, type, wrapped, useCapture);
+        } else {
+          super_add_event_listener.call(super_this, type, listener, useCapture);
+        }
+      });
     };
 
-    EventTarget.prototype.removeEventListener = function(type, listener, options) {
+    EventTarget.prototype.removeEventListener = function(
+      type,
+      listener,
+      options
+    ) {
       const super_this = this;
-      parseOptions(type, listener, options,
-          function(needsWrapping, fieldId, useCapture, passive) {
-            if (needsWrapping &&
-              this.__event_listeners_options &&
-              this.__event_listeners_options[type] &&
-              this.__event_listeners_options[type][listener] &&
-              this.__event_listeners_options[type][listener][fieldId]) {
-              super_remove_event_listener.call(super_this, type, this.__event_listeners_options[type][listener][fieldId], false);
-              delete this.__event_listeners_options[type][listener][fieldId];
-              if (this.__event_listeners_options[type][listener].length == 0) {
-                delete this.__event_listeners_options[type][listener];
-              }
-            } else {
-              super_remove_event_listener.call(super_this, type, listener, useCapture);
-            }
-          });
+      parseOptions(type, listener, options, function(
+        needsWrapping,
+        fieldId,
+        useCapture,
+        passive
+      ) {
+        if (
+          needsWrapping &&
+          this.__event_listeners_options &&
+          this.__event_listeners_options[type] &&
+          this.__event_listeners_options[type][listener] &&
+          this.__event_listeners_options[type][listener][fieldId]
+        ) {
+          super_remove_event_listener.call(
+            super_this,
+            type,
+            this.__event_listeners_options[type][listener][fieldId],
+            false
+          );
+          delete this.__event_listeners_options[type][listener][fieldId];
+          if (this.__event_listeners_options[type][listener].length == 0) {
+            delete this.__event_listeners_options[type][listener];
+          }
+        } else {
+          super_remove_event_listener.call(
+            super_this,
+            type,
+            listener,
+            useCapture
+          );
+        }
+      });
     };
   }
 })();

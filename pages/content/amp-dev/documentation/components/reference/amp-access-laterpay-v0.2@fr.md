@@ -2,11 +2,10 @@
 $title: amp-access-laterpay
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: Permettre aux éditeurs de s'intégrer facilement à la plate-forme de micropaiement LaterPay.
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Ce composant permet aux éditeurs de s'intégrer facilement à la plate-forme de micropaiement [LaterPay](https://www.laterpay.net). `amp-access-laterpay` est basé sur [AMP Access](amp-access.md) et requiert cette extension.
 
@@ -50,10 +47,9 @@ Ce composant permet aux éditeurs de s'intégrer facilement à la plate-forme de
   </tr>
 </table>
 
-
 ## Comportement <a name="behavior"></a>
 
-[LaterPay](https://laterpay.net) est une plate-forme de micropaiement qui permet aux utilisateurs d'acheter du contenu en ligne en seulement deux clics, puis d'y accéder immédiatement, sans inscription initiale, sans fournir de données à caractère personnel et sans effectuer de paiement. Les utilisateurs paient uniquement lorsque le montant de leurs achats atteint un total de 5 $ ou 5 € sur l'ensemble des sites Web. Les fournisseurs de contenu peuvent vendre des articles individuels ou des forfaits au temps, ce qui permet un accès forfaitaire au contenu ou un accès limité dans le temps.
+[LaterPay](https://laterpay.net) est une plate-forme de micropaiement qui permet aux utilisateurs d'acheter du contenu en ligne en seulement deux clics, puis d'y accéder immédiatement, sans inscription initiale, sans fournir de données à caractère personnel et sans effectuer de paiement. Les utilisateurs paient uniquement lorsque le montant de leurs achats atteint un total de 5 \$ ou 5 € sur l'ensemble des sites Web. Les fournisseurs de contenu peuvent vendre des articles individuels ou des forfaits au temps, ce qui permet un accès forfaitaire au contenu ou un accès limité dans le temps.
 
 Si vous intégrez LaterPay à l'aide du [script Connector](https://docs.laterpay.net/connector/), vous ne pourrez pas utiliser cette intégration sur les pages AMP. Le composant `amp-access-laterpay` est comparable au script Connector, en ce sens qu'il offre un ensemble de fonctionnalités équivalent, mais conçu pour les pages AMP.
 
@@ -78,7 +74,6 @@ Ce composant utilise également le [balisage de contenu accessible](amp-access.m
 La configuration est semblable à celle d'AMP Access, si ce n'est qu'aucune autorisation, aucun pingback et aucun lien de connexion ne sont nécessaires.
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -87,7 +82,6 @@ La configuration est semblable à celle d'AMP Access, si ce n'est qu'aucune aut
       }
     }
 </script>
-
 ```
 
 Les valeurs suivantes peuvent être définies dans l'objet de configuration `laterpay` :
@@ -165,7 +159,6 @@ Veillez à ajouter la classe `amp-access-laterpay` si vous souhaitez utiliser le
 <div amp-access="access" amp-access-hide="">
   <p>…contenu de l'article…</p>
 </div>
-
 ```
 
 ## Application d'un style <a name="styling"></a>
@@ -177,39 +170,45 @@ Il existe déjà une feuille de style avec une disposition de base, mais il est 
 La structure créée pour la boîte de dialogue se présente comme suit :
 
 ```html
-
 <div id="amp-access-laterpay-dialog" class="amp-access-laterpay">
   <div class="amp-access-laterpay-container">
     <p class="amp-access-laterpay-header">
-      Facultatif. S'affiche si le message des paramètres locaux de l'en-tête est défini.
+      Facultatif. S'affiche si le message des paramètres locaux de l'en-tête est
+      défini.
     </p>
     <ul>
       <li>
         <label>
-          <input name="purchaseOption" type="radio">
-            <div class="amp-access-laterpay-metadata">
-              <span class="amp-access-laterpay-title">Titre de l'option d'achat</span>
-              <p class="amp-access-laterpay-description">Description de l'option d'achat</p>
-            </div>
-          </label>
-          <p class="amp-access-laterpay-price-container">
-            <span class="amp-access-laterpay-price">0,15</span>
-            <sup class="amp-access-laterpay-currency">USD</sup>
-          </p>
-        </li>
-        <!-- … plus d'éléments de liste pour d'autres options d'achat … -->
-      </ul>
-      <button class="amp-access-laterpay-purchase-button">Acheter</button>
-      <p class="amp-access-laterpay-already-purchased-container">
-        <a href="...">J'ai déjà acheté cet article.</a>
-      </p>
-      <p class="amp-access-laterpay-footer">
-        Facultatif. S'affiche si le message des paramètres locaux du pied de page est défini.
-      </p>
-    </div>
-    <p class="amp-access-laterpay-badge">Fourni par <a href="https://laterpay.net" target="_blank">LaterPay</a></p>
+          <input name="purchaseOption" type="radio" />
+          <div class="amp-access-laterpay-metadata">
+            <span class="amp-access-laterpay-title"
+              >Titre de l'option d'achat</span
+            >
+            <p class="amp-access-laterpay-description">
+              Description de l'option d'achat
+            </p>
+          </div>
+        </label>
+        <p class="amp-access-laterpay-price-container">
+          <span class="amp-access-laterpay-price">0,15</span>
+          <sup class="amp-access-laterpay-currency">USD</sup>
+        </p>
+      </li>
+      <!-- … plus d'éléments de liste pour d'autres options d'achat … -->
+    </ul>
+    <button class="amp-access-laterpay-purchase-button">Acheter</button>
+    <p class="amp-access-laterpay-already-purchased-container">
+      <a href="...">J'ai déjà acheté cet article.</a>
+    </p>
+    <p class="amp-access-laterpay-footer">
+      Facultatif. S'affiche si le message des paramètres locaux du pied de page
+      est défini.
+    </p>
   </div>
-
+  <p class="amp-access-laterpay-badge">
+    Fourni par <a href="https://laterpay.net" target="_blank">LaterPay</a>
+  </p>
+</div>
 ```
 
 ## Localisation <a name="localization"></a>
@@ -219,7 +218,6 @@ Le texte affiché pour les options d'achat dans la boîte de dialogue est défin
 Le texte restant fait partie du composant étendu. Vous pouvez le modifier et le localiser au moyen des options de configuration comme suit :
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -230,7 +228,6 @@ Le texte restant fait partie du composant étendu. Vous pouvez le modifier et le
       }
     }
 </script>
-
 ```
 
 Les clés de message suivantes peuvent être traduites ou personnalisées. Sachez cependant qu'elles doivent conserver leur signification et leur intention d'origine.
@@ -290,7 +287,6 @@ La section relative à des [fournisseurs multiples](amp-access.md#multiple-acces
 En cas d'utilisation avec LaterPay et une intégration de paywall existante, la configuration nécessaire peut se présenter comme suit :
 
 ```html
-
 <script id="amp-access" type="application/json">
   [
     {
@@ -312,15 +308,19 @@ En cas d'utilisation avec LaterPay et une intégration de paywall existante, la 
     }
   ]
 </script>
-
 ```
 
 Par contre, le balisage d'accès au contenu peut se présenter comme suit :
 
 ```html
-<section amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access" amp-access-hide>
+<section
+  amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access"
+  amp-access-hide
+>
   <p>
-    <a on="tap:amp-access.login-publishername">Connectez-vous ici pour accéder à votre abonnement PublisherName.</a>
+    <a on="tap:amp-access.login-publishername"
+      >Connectez-vous ici pour accéder à votre abonnement PublisherName.</a
+    >
   </p>
 
   <div id="amp-access-laterpay-dialog" class="amp-access-laterpay"></div>
@@ -333,17 +333,16 @@ Par contre, le balisage d'accès au contenu peut se présenter comme suit :
 <div amp-access="laterpay.access OR publishername.access" amp-access-hide>
   <p>…contenu de l'article…</p>
 </div>
-
 ```
 
 Pour un exemple plus complet, rendez-vous à l'adresse suivante : [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html).
 
 ## Documentation associée <a name="related-documentation"></a>
 
-* [AMP Access](amp-access.md)
-* [LaterPay](https://www.laterpay.net)
-* [LaterPay: How we do MicroPayments](https://docs.laterpay.net/how_we_do_micropayments/)
-* [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) (semblable à AMP Access LaterPay, mais pour les pages non AMP).
+- [AMP Access](amp-access.md)
+- [LaterPay](https://www.laterpay.net)
+- [LaterPay: How we do MicroPayments](https://docs.laterpay.net/how_we_do_micropayments/)
+- [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) (semblable à AMP Access LaterPay, mais pour les pages non AMP).
 
 ## Validation <a name="validation"></a>
 

@@ -31,10 +31,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
-
-
 ## Overview <a name="overview"></a>
 
 The main goal of the layout system is to ensure that AMP elements can express their layout
@@ -79,6 +75,7 @@ values of `layout`, `width` and `height` attributes.
 Depending on the value of the `layout` attribute, AMP component elements must have a `width` and `height` attribute that contains an integer pixel value. Actual layout behavior is determined by the `layout` attribute as described below.
 
 In a few cases, if `width` or `height` are not specified, the AMP runtime can default these values as follows:
+
 - `amp-pixel`: Both `width` and `height` are defaulted to 0.
 - `amp-audio`: The default `width` and `height` are inferred from browser.
 
@@ -154,7 +151,7 @@ Supported values for the `layout` attribute:
 
 ### `sizes` <a name="sizes"></a>
 
-All AMP elements that support the `responsive` layout, also support the  `sizes` attribute. The value of this attribute is a sizes expression
+All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of this attribute is a sizes expression
 as described in the [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images. In short, the `sizes` attribute describes how the width of the element is calculated depending on the media conditions.
 
 When the `sizes` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
@@ -177,15 +174,14 @@ All AMP elements that support the `responsive` layout, also support the `heights
 The value of this attribute is a sizes expression based on media expressions
 as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
 
- 1. It applies to the height, not the width of the element.
- 2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
+1.  It applies to the height, not the width of the element.
+2.  Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
 
 When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
 
 **Example**: Using the `heights` attribute
 
 In the following example, the height of the image will default to 80% of the width, but if the viewport is wider than `500px`, the height is capped at `200px`. Because the `heights` attribute is specified along with `width` and `height`, the layout defaults to `responsive`.
-
 
 [sourcecode:html]
 <amp-img src="https://acme.org/image1.png"
@@ -221,16 +217,17 @@ The `placeholder` attribute can be set on any HTML element, not just AMP element
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
 ### `fallback` <a name="fallback"></a>
 
-The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the  fallback is up to the element's implementation.
+The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the fallback is up to the element's implementation.
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

@@ -29,8 +29,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 AMP HTML documents must contain the following boilerplate in their `head` tag.
 Validation is currently done with regular expressions, so it's important to keep
 mutations as minimal as possible. Currently, allowed mutations are: (1)

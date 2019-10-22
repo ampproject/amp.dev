@@ -2,14 +2,13 @@
 $title: amp-img
 $category@: media
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 teaser:
   text: Replaces the HTML5 img tag.
 ---
-
 
 <!--
        Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -27,8 +26,6 @@ teaser:
      limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td class="col-fourty"><strong>Deskripsi</strong></td>
@@ -44,7 +41,6 @@ teaser:
   </tr>
 </table>
 
-
 # Perilaku <a name="behavior"></a>
 
 Runtime dapat memilih untuk menunda atau memprioritaskan pemuatan resource berdasarkan posisi viewport, resource sistem, bandwidth koneksi, atau faktor lainnya. Komponen `amp-img` memungkinkan runtime untuk mengelola resource gambar secara efektif melalui cara ini.
@@ -57,17 +53,21 @@ Pelajari lebih lanjut tata letak dalam spesifikasi [Sistem Tata Letak HTML AMP](
 
 # Contoh: Menampilkan gambar yang responsif <a name="example-displaying-a-responsive-image"></a>
 
-Pada contoh berikut, kami menampilkan gambar yang merespons ukuran viewport dengan menetapkan `layout=responsive`.  Gambar membentang dan menyusut sesuai dengan rasio tinggi lebar yang ditentukan oleh `width` dan `height`.
+Pada contoh berikut, kami menampilkan gambar yang merespons ukuran viewport dengan menetapkan `layout=responsive`. Gambar membentang dan menyusut sesuai dengan rasio tinggi lebar yang ditentukan oleh `width` dan `height`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"]
@@ -81,18 +81,24 @@ Jika resource yang diminta oleh komponen `amp-img` gagal dimuat, ruang akan koso
 Pada contoh berikut, jika browser tidak mendukung WebP, gambar JPG fallback akan ditampilkan:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 Warna latar belakang placeholder atau visual lainnya dapat ditetapkan menggunakan pemilih CSS dan gaya pada elemen itu sendiri.
@@ -102,9 +108,9 @@ Fitur gambar tambahan seperti teks dapat diimplementasikan dengan HTML standar (
 [tip type="read-on"]
 Pelajari lebih lanjut penggunaan `amp-img` dari resource berikut:
 
-* [Placeholder & fallback](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
-* [Menyertakan Gambar & Video](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
-[/tip]
+- [Placeholder & fallback](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+- [Menyertakan Gambar & Video](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
+  [/tip]
 
 # Atribut <a name="attributes"></a>
 
@@ -147,7 +153,7 @@ Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/l
 ```css
 amp-img {
   background-color: grey;
-  }
+}
 ```
 
 # Tips & Trik <a name="tips--tricks"></a>
@@ -157,11 +163,11 @@ amp-img {
 Jika Anda ingin gambar diskalakan saat ukuran jendela berubah, tetapi hingga lebar maksimum (sehingga gambar tidak terentang melampaui lebarnya):
 
 1. Tetapkan `layout=responsive` untuk `<amp-img>`.
-1. Pada container gambar, tentukan atribut CSS `max-width:<max width to display image>`.  Mengapa di container?  Elemen `amp-img` dengan `layout=responsive` merupakan elemen *level blok*, sedangkan `<img>` merupakan *inline*. Cara lainnya, Anda dapat menetapkan `display: inline-block` dalam CSS untuk elemen amp-img.
+1. Pada container gambar, tentukan atribut CSS `max-width:<max width to display image>`. Mengapa di container? Elemen `amp-img` dengan `layout=responsive` merupakan elemen _level blok_, sedangkan `<img>` merupakan _inline_. Cara lainnya, Anda dapat menetapkan `display: inline-block` dalam CSS untuk elemen amp-img.
 
 # Perbedaan antara tata letak responsive dan intrinsic <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
-Baik tata letak `responsive` maupun `intrinsic` menghasilkan gambar yang akan diskalakan secara otomatis.  Perbedaan utamanya adalah tata letak `intrinsic` menggunakan gambar SVG sebagai elemen penskalaannya.  Hal ini menjadikannya berperilaku sama seperti gambar HTML standar sembari mempertahankan manfaat browser yang mengetahui ukuran gambar pada tata letak awal. Tata letak `intrinsic` akan memiliki ukuran intrinsik dan akan memperbesar `div` mengambang sampai mencapai ukuran gambar yang natural atau mencapai batasan CSS seperti `max-width`. Tata letak `responsive` akan merender 0x0 dalam `div` mengambang karena ukurannya berasal dari induk, yang tidak memiliki ukuran natural saat mengambang.
+Baik tata letak `responsive` maupun `intrinsic` menghasilkan gambar yang akan diskalakan secara otomatis. Perbedaan utamanya adalah tata letak `intrinsic` menggunakan gambar SVG sebagai elemen penskalaannya. Hal ini menjadikannya berperilaku sama seperti gambar HTML standar sembari mempertahankan manfaat browser yang mengetahui ukuran gambar pada tata letak awal. Tata letak `intrinsic` akan memiliki ukuran intrinsik dan akan memperbesar `div` mengambang sampai mencapai ukuran gambar yang natural atau mencapai batasan CSS seperti `max-width`. Tata letak `responsive` akan merender 0x0 dalam `div` mengambang karena ukurannya berasal dari induk, yang tidak memiliki ukuran natural saat mengambang.
 
 # Menetapkan gambar berukuran tetap <a name="setting-a-fixed-sized-image"></a>
 
@@ -181,14 +187,18 @@ Untuk gambar responsif, `width` dan `height` tidak harus sama persis dengan leba
 Misalnya, bukannya menetapkan `width="900"` dan `height="675"`, Anda cukup menetapkan `width="1.33"` dan `height="1"`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="1.33"
   height="1"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 # Menetapkan beberapa file sumber untuk resolusi layar yang berbeda <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>

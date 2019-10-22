@@ -7,9 +7,9 @@ $title: Analytics›i Yapılandırın
 Tüm analitik çözümler hangi verilere ihtiyacınız olduğunu
 ve bu verileri nasıl analiz etmeyi planladığınızı bilme üzerine oluşturulmuştur. Başlamadan karar verin:
 
-* Kullanıcı katılımını analiz etmek için üçüncü şahıs analitik araçlarını mı,
-yoksa kendi kurum içi çözümünüzü mü kullanacaksınız?
-* Kullanıcı katılımını anlamak için hangi kullanıcı davranışlarını ölçeceksiniz?
+- Kullanıcı katılımını analiz etmek için üçüncü şahıs analitik araçlarını mı,
+  yoksa kendi kurum içi çözümünüzü mü kullanacaksınız?
+- Kullanıcı katılımını anlamak için hangi kullanıcı davranışlarını ölçeceksiniz?
 
 ### Veriler satıcıya mı size mi gönderilsin?
 
@@ -42,8 +42,8 @@ Yapılandırmadan önce bu verileri tanımlamanız gerekmektedir.
 
 Dikkate alınması gereken ana veri noktaları:
 
-* Yalnızca sayfa görünümlerini mi, yoksa ek kullanıcı katılım desenlerini mi izleyeceksiniz
-(ayrıca bkz. [amp-piksel ya da amp-analitik](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
-* Kullanıcılarınız, içeriğiniz,
-cihazınız veya tarayıcınız hakkında ne tür veriler toplayacaksınız (ayrıca bkz. [Değişken değiştirme](analytics_basics.md#variable-substitution))?
-* Kullanıcılarınızı nasıl tanımlayacaksınız (ayrıca bkz. [Kullanıcı tanımlama](analytics_basics.md#user-identification))?
+- Yalnızca sayfa görünümlerini mi, yoksa ek kullanıcı katılım desenlerini mi izleyeceksiniz
+  (ayrıca bkz. [amp-piksel ya da amp-analitik](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
+- Kullanıcılarınız, içeriğiniz,
+  cihazınız veya tarayıcınız hakkında ne tür veriler toplayacaksınız (ayrıca bkz. [Değişken değiştirme](analytics_basics.md#variable-substitution))?
+- Kullanıcılarınızı nasıl tanımlayacaksınız (ayrıca bkz. [Kullanıcı tanımlama](analytics_basics.md#user-identification))?

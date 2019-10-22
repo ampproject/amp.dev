@@ -18,12 +18,13 @@
 require('module-alias/register');
 
 const fs = require('fs');
-const {Signale} = require('signale');
 const Octokit = require('@octokit/rest');
+const {Signale} = require('signale');
 
 const gitHubImporter = require('./gitHubImporter');
 
-const DESTINATION_JSON = __dirname + '/../../../pages/content/amp-dev/community/roadmap.json';
+const DESTINATION_JSON =
+  __dirname + '/../../../pages/content/amp-dev/community/roadmap.json';
 
 const log = new Signale({
   'interactive': false,
@@ -33,10 +34,7 @@ const log = new Signale({
 async function importRoadmap() {
   log.start('Starting import of roadmap ...');
   const options = {
-    'previews': [
-      'symmetra-preview',
-      'inertia-preview',
-    ],
+    'previews': ['symmetra-preview', 'inertia-preview'],
   };
 
   gitHubImporter.checkCredentials();
@@ -55,56 +53,72 @@ async function importRoadmap() {
   log.await('Fetching cards per column ...');
   // grab all card data for each column
   const columns = await Promise.all(
-      result.data.map((column) => octokit.projects.listCards({column_id: column.id})
-          .then((result) => {
-            // strip out stuff we don't need
-            let cards = result.data.map((card) => ({
-              url: card.url,
-              createdAt: card.created_at,
-              updatedAt: card.updated_at,
-              issueUrl: card.content_url,
-            }));
+    result.data.map(column =>
+      octokit.projects.listCards({column_id: column.id}).then(result => {
+        // strip out stuff we don't need
+        let cards = result.data.map(card => ({
+          url: card.url,
+          createdAt: card.created_at,
+          updatedAt: card.updated_at,
+          issueUrl: card.content_url,
+        }));
 
-            // filter cards that don't have attached issues
-            cards = cards.filter((card) => card.issueUrl);
+        // filter cards that don't have attached issues
+        cards = cards.filter(card => card.issueUrl);
 
-            return {cards: cards, id: column.id, name: column.name};
-          })
-      )
+        return {cards, id: column.id, name: column.name};
+      })
+    )
   );
 
   // create a flattened cards array
-  const cards =
-    columns.reduce((accumulator, currentValue) => [...accumulator, ...currentValue.cards], []);
+  const cards = columns.reduce(
+    (accumulator, currentValue) => [...accumulator, ...currentValue.cards],
+    []
+  );
 
   // fetch all related issues
-  const issues = await Promise.all(cards.map((card) => {
-    const issue = card.issueUrl.match(/repos\/([^/]+)\/([^/]+)\/issues\/(\d+)/);
-    return octokit.issues.get({owner: issue[1], repo: issue[2], issue_number: issue[3]})
-        .then((result) => {
+  const issues = await Promise.all(
+    cards.map(card => {
+      const issue = card.issueUrl.match(
+        /repos\/([^/]+)\/([^/]+)\/issues\/(\d+)/
+      );
+      return octokit.issues
+        .get({owner: issue[1], repo: issue[2], issue_number: issue[3]})
+        .then(result => {
           result.url = card.issueUrl;
           return result;
         });
-  }));
+    })
+  );
 
   // create a map for better lookup
-  const issueMap = Object.assign({}, ...issues.map((item) => ({[item['url']]: item})));
+  const issueMap = Object.assign(
+    {},
+    ...issues.map(item => ({[item['url']]: item}))
+  );
 
   // attach issues to cards
-  cards.forEach((card) => {
+  cards.forEach(card => {
     const issue = issueMap[card.issueUrl];
     card.issue = {
       url: issue.data.html_url,
       title: issue.data.title.replace(/\[master feature\] /i, ''),
       description: issue.data.body
-          .replace('Feature description:\r\n\r\n', '')
-          .replace(/\[ \]/g, '')
-          .split('\r\n\r\n')[0],
-      labels: (issue.data.labels || []).map((label) => {
-        return label.name.startsWith('Category:') ?
-          {url: label.url, name: label.name.replace('Category:', '').trim(), color: label.color} :
-          false;
-      }).filter((label) => !!label),
+        .replace('Feature description:\r\n\r\n', '')
+        .replace(/\[ \]/g, '')
+        .split('\r\n\r\n')[0],
+      labels: (issue.data.labels || [])
+        .map(label => {
+          return label.name.startsWith('Category:')
+            ? {
+                url: label.url,
+                name: label.name.replace('Category:', '').trim(),
+                color: label.color,
+              }
+            : false;
+        })
+        .filter(label => !!label),
     };
 
     delete card.url;
@@ -113,14 +127,14 @@ async function importRoadmap() {
 
   // create a list of unique labels
   const labels = cards
-      .map((card) => card.issue.labels.map((label) => label.name))
-      .reduce((acc, val) => acc.concat(val), [])
-      .filter((value, index, self) => self.indexOf(value) === index);
+    .map(card => card.issue.labels.map(label => label.name))
+    .reduce((acc, val) => acc.concat(val), [])
+    .filter((value, index, self) => self.indexOf(value) === index);
 
   // Write finalized JSON to config file that gets imported by the roadmap template
   fs.writeFileSync(
-      DESTINATION_JSON,
-      JSON.stringify({labels: labels, columns: columns}, null, '  ')
+    DESTINATION_JSON,
+    JSON.stringify({labels, columns}, null, '  ')
   );
 
   log.success('Successfully imported roadmap!');

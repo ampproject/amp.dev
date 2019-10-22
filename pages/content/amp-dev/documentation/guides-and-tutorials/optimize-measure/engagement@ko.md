@@ -1,6 +1,7 @@
 ---
 $title: 사용자 참여 향상하기
 ---
+
 다음은 AMP로 사용자의 참여를 향상시키는 몇가지 빠른 팁입니다.
 
 ### 사용자가 AMP 및 AMP가 아닌 페이지에서 일관된 브랜딩 및 리치 컨텐츠로 식별할 수 있도록 돕습니다.
@@ -30,7 +31,7 @@ $title: 사용자 참여 향상하기
 - **좋은 리더 경험을 제공하는 광고 유형을 찾으십시오.** [`amp-sticky-ad`](../../../documentation/components/reference/amp-sticky-ad.md) 및 [`amp-fx-flying-carpet`](../../../documentation/components/reference/amp-fx-flying-carpet.md) 같은 AMP 광고 포맷을 찾으십시오. 광고 수익창출 [모범 사례](../../../documentation/guides-and-tutorials/develop/monetization/index.md)를 따르십시오.
 
 - **앱 다운로드를 유도합니다.**
-[`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md)가 있는 배너에 앱 설치 링크를 포함하십시오..
+  [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md)가 있는 배너에 앱 설치 링크를 포함하십시오..
 
 - 독자를 위해 AMP가 아닌 프로그레시브 웹 앱 (PWA) 사이트로 **빠르게 전환**하십시오.[`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)를 사용해 캐시를 채웁니다.
 

@@ -2,13 +2,12 @@
 $title: amp-analytics
 $category@: ads-analytics
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Captures analytics data from an AMP document.
 ---
-
 
 <!--
 Copyright 2019 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +25,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Mengambil data analisis dari dokumen AMP.
 
 <table>
@@ -40,7 +37,6 @@ Mengambil data analisis dari dokumen AMP.
     <td>Lihat <a href="https://ampbyexample.com/components/amp-analytics/">contoh amp-analytics</a> di AMP By Example.</td>
   </tr>
 </table>
-
 
 ## Mengirimkan analisis ke vendor atau internal? <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
@@ -61,7 +57,7 @@ Untuk vendor Analytics AMP terintegrasi:
 
 Jika vendor analisis belum terintegrasi dengan AMP, hubungi vendor untuk meminta dukungan mereka. Sebaiknya Anda juga mengajukan masalah di project AMP dan meminta agar vendor tersebut ditambahkan. Lihat juga [Mengintegrasikan fitur analisis di HTML AMP](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md). Cara lainnya, lakukan kerja sama dengan vendor untuk mengirim data ke URL yang mereka tentukan. Pelajari lebih lanjut di bagian [Mengirim data secara internal](#sending-data-in-house) di bawah.
 
-*Contoh: Mengirim data ke penyedia analisis pihak ketiga*
+_Contoh: Mengirim data ke penyedia analisis pihak ketiga_
 
 Pada contoh berikut, data analisis dikirim ke Nielsen, penyedia analisis pihak ketiga yang sudah terintegrasi dengan AMP. Detail terkait mengonfigurasi data analisis untuk Nielsen dapat ditemukan dalam dokumentasi [Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
@@ -100,25 +96,25 @@ Untuk mengirim data ke URL tertentu:
 Saat memproses URL AMP di header perujuk permintaan analisis, hapus atau abaikan parameter `usqp`. Parameter ini digunakan oleh Google untuk memicu eksperimen untuk Cache AMP Google.
 [/tip]
 
-*Contoh: Mengirim data ke URL*
+_Contoh: Mengirim data ke URL_
 
-Berikut adalah contoh sederhana yang memantau kunjungan halaman.  Setiap kali halaman terlihat, peristiwa pemicu diaktifkan, dan data kunjungan halaman dikirim ke URL yang ditentukan beserta sebuah ID acak.
+Berikut adalah contoh sederhana yang memantau kunjungan halaman. Setiap kali halaman terlihat, peristiwa pemicu diaktifkan, dan data kunjungan halaman dikirim ke URL yang ditentukan beserta sebuah ID acak.
 
 ```html
 <amp-analytics>
-<script type="application/json">
-  {
-    "requests": {
-      "pageview": "https://foo.com/pixel?RANDOM"
-    },
-    "triggers": {
-      "trackPageview": {
-        "on": "visible",
-        "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+        }
       }
-      }
-    }
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -174,7 +170,9 @@ Untuk memuat konfigurasi jarak jauh, dalam elemen `<amp-analytics>`, tentukan at
 Dalam contoh ini, kami menentukan atribut `config` untuk memuat data konfigurasi dari URL yang ditentukan.
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 #### Rewriter Konfigurasi <a name="configuration-rewriter"></a>
@@ -182,6 +180,7 @@ Dalam contoh ini, kami menentukan atribut `config` untuk memuat data konfigurasi
 Fitur rewriter konfigurasi dirancang agar penyedia analisis dapat menulis ulang secara dinamis konfigurasi yang disediakan. Fitur ini mirip dengan konfigurasi jarak jauh, tetapi dengan tambahan konfigurasi buatan pengguna dalam permintaan yang dikirim ke sever. Untuk sekarang, tindakan ini hanya dapat diaktifkan oleh vendor analisis.
 
 Vendor analisis menentukan properti configRewriter dengan URL server.
+
 ```js
 export const VENDOR_ANALYTICS_CONFIG = {
   ...
@@ -204,9 +203,10 @@ Selanjutnya, runtime menggabungkan semua konfigurasi yang disediakan untuk menen
 
 Grup Variabel adalah fitur yang memungkinkan penyedia analisis untuk mengelompokkan sekumpulan variabel yang ditentukan sebelumnya agar dapat diaktifkan dengan mudah oleh pengguna. Variabel ini kemudian ditetapkan dan dikirim ke endpoint `configRewriter` yang ditentukan.
 
-Penyedia analisis harus membuat objek `varGroups` baru di dalam konfigurasi `configRewriter` untuk mengaktifkan fitur ini. Selanjutnya penayang dapat menyertakan penyedia analisis bernama yang membuat `varGroups` yang ingin mereka aktifkan dalam konfigurasi analisisnya. Semua variabel yang didukung oleh [Panduan Substitusi HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) dapat digunakan. *Catatan penting*: varian ${varName} tidak akan berfungsi.
+Penyedia analisis harus membuat objek `varGroups` baru di dalam konfigurasi `configRewriter` untuk mengaktifkan fitur ini. Selanjutnya penayang dapat menyertakan penyedia analisis bernama yang membuat `varGroups` yang ingin mereka aktifkan dalam konfigurasi analisisnya. Semua variabel yang didukung oleh [Panduan Substitusi HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) dapat digunakan. _Catatan penting_: varian \${varName} tidak akan berfungsi.
 
 Misalnya, kami mungkin memiliki vendor yang konfigurasinya terlihat seperti ini:
+
 ```js
 // This is predefined by vendor.
 export const VENDOR_ANALYTICS_CONFIG = {
@@ -232,9 +232,9 @@ Anda dapat menentukan grup variabel mana yang diaktifkan dengan menyertakan `{en
 Pada contoh di bawah, baik `group1` maupun `group2` telah diaktifkan. Semua grup yang belum diaktifkan secara khusus akan diabaikan. Selanjutnya, runtime akan menetapkan semua variabel yang telah diaktifkan ini, dan menggabungkannya menjadi satu objek `configRewriter.vars` yang akan dikirim ke URL rewriter konfigurasi.
 
 ```html
-  /* Included on publisher page */
-  <amp-analytics type="myVendor" id="myVendor" data-credentials="include">
-    <script type="application/json">
+/* Included on publisher page */
+<amp-analytics type="myVendor" id="myVendor" data-credentials="include">
+  <script type="application/json">
     {
       "configRewriter": {
         "varGroups": {
@@ -247,11 +247,11 @@ Pada contoh di bawah, baik `group1` maupun `group2` telah diaktifkan. Semua grup
         }
       }
     }
-    </script>
-  </amp-analytics>
+  </script>
+</amp-analytics>
 ```
 
-  Dalam contoh berikut, bagian isi permintaan akan terlihat seperti ini:
+Dalam contoh berikut, bagian isi permintaan akan terlihat seperti ini:
 
 ```json
   /* Sent to configuration rewriter server. */
@@ -304,6 +304,7 @@ Properti pengelompokan adalah:
 - `batchInterval`: Properti ini menentukan interval waktu (dalam detik) untuk membersihkan ping permintaan dalam antrean pengelompokan. `batchInterval` dapat berupa angka atau deret angka (interval waktu minimum adalah 200 milidetik). Permintaan ini akan mempertimbangkan setiap nilai dalam deret, lalu mengulangi nilai interval terakhir (atau nilai tunggal) setelah mencapai akhir deret.
 
 Misalnya, konfigurasi berikut akan mengirim ping permintaan tunggal setiap 2 detik, dengan satu contoh ping permintaan terlihat seperti `https://example.com/analytics?rc=1&rc=2`.
+
 ```javascript
 "requests": {
   "timer": {
@@ -326,6 +327,7 @@ Misalnya, konfigurasi berikut akan mengirim ping permintaan tunggal setiap 2 det
 ```
 
 Konfigurasi berikut mengirimkan ping permintaan pertama setelah 1 detik dan kemudian mengirimkan permintaan setiap 3 detik. Ping permintaan pertama terlihat seperti `https://example.com/analytics?rc=1`, sedangkan ping permintaan kedua terlihat seperti `https://example.com/analytics?rc=2&rc=3&rc=4`.
+
 ```javascript
 "requests": {
   "timer": {
@@ -351,7 +353,7 @@ Konfigurasi berikut mengirimkan ping permintaan pertama setelah 1 detik dan kemu
 
 Komponen `amp-analytics` menentukan banyak variabel dasar yang dapat digunakan dalam permintaan. Daftar semua variabel tersebut tersedia di [Panduan Variabel `amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md). Selain itu, semua variabel yang didukung oleh [Panduan Substitusi HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) juga didukung.
 
-Objek konfigurasi `vars` dapat digunakan untuk menentukan key-value pair baru atau mengganti variabel yang sudah ada yang dapat dirujuk dalam nilai `request`. Variabel baru biasanya digunakan untuk menentukan informasi khusus penayang.  Array dapat digunakan untuk menentukan daftar nilai yang harus dienkode URL secara terpisah dengan tetap mempertahankan koma pemisah.
+Objek konfigurasi `vars` dapat digunakan untuk menentukan key-value pair baru atau mengganti variabel yang sudah ada yang dapat dirujuk dalam nilai `request`. Variabel baru biasanya digunakan untuk menentukan informasi khusus penayang. Array dapat digunakan untuk menentukan daftar nilai yang harus dienkode URL secara terpisah dengan tetap mempertahankan koma pemisah.
 
 ```javascript
 "vars": {
@@ -387,17 +389,17 @@ Jika `useBody` diaktifkan dan permintaan dikirim melalui metode transport `beaco
 
 Objek konfigurasi `triggers` menjelaskan kapan permintaan analisis harus dikirim. Atribut `triggers` berisi key-value pair yang terdiri dari nama pemicu dan konfigurasi pemicu. Nama pemicu dapat berupa sembarang string yang terdiri dari karakter alfanumerik (a-z, A-Z, 0-9). Pemicu dari konfigurasi yang prioritasnya lebih rendah akan digantikan oleh pemicu dengan nama yang sama dari konfigurasi yang prioritasnya lebih tinggi.
 
-* `on` (wajib) Peristiwa yang dideteksi. Nilai yang valid adalah `render-start`, `ini-load`, `click`, `scroll`, `timer`, `visible`, `hidden`, `user-error`, [`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md), dan [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)
-* `request` (wajib) Nama permintaan yang akan dikirim (seperti ditentukan dalam bagian `requests`).
-* `vars` Objek yang berisi key-value pair yang digunakan untuk menggantikan `vars` yang ditetapkan dalam konfigurasi level paling atas, atau untuk menentukan variabel yang unik bagi pemicu ini.
-* `important` dapat ditentukan agar berfungsi dengan permintaan yang mendukung perilaku pengelompokan atau rentang waktu laporan. Menetapkan `important` ke `true` dapat membantu membersihkan antrean permintaan yang dikelompokkan dengan beberapa pemicu tertentu. Dalam hal ini, Anda dapat mengurangi jumlah ping permintaan tanpa kehilangan peristiwa pemicu yang penting. Menetapkan `important` ke `true` juga dapat mengganti nilai `reportWindow` permintaan untuk mengirimkan ping permintaan penting dalam situasi apa pun.
-* `selector` dan `selectionMethod` dapat ditentukan untuk beberapa pemicu, seperti `click` dan `visible`. Lihat [Selektor elemen](#element-selector) untuk selengkapnya.
-* `scrollSpec` (wajib jika `on` ditetapkan ke `scroll`) Konfigurasi ini digunakan bersama dengan pemicu `scroll`. Harap lihat detail di bawah ini.
-* `timerSpec` (wajib jika `on` ditetapkan ke `timer`) Konfigurasi ini digunakan bersama dengan pemicu `timer`. Harap lihat detail di bawah ini.
-* `sampleSpec` Objek ini digunakan untuk menetapkan bagaimana permintaan dapat diambil sampelnya sebelum dikirim. Setelan ini memungkinkan pengambilan sampel berdasarkan input acak atau variabel lain yang didukung platform. Objek tersebut berisi konfigurasi untuk menentukan input yang digunakan untuk menghasilkan hash dan ambang batas yang harus dipenuhi hash.
-    * `sampleOn` Template string ini diperluas dengan mengisi variabel platform dan kemudian di-hash untuk menghasilkan angka untuk keperluan logika pengambilan sampel yang dideskripsikan di bawah ambang batas di bawah.
-    * `threshold` Konfigurasi ini digunakan untuk memfilter permintaan yang tidak memenuhi kriteria tertentu: Agar permintaan dapat melalui vendor analisis, logika berikut harus bernilai true `HASH(sampleOn) < threshold`.</li>
-* `videoSpec` (digunakan jika `on` ditetapkan ke `video-*`) Konfigurasi ini digunakan bersama dengan pemicu [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+- `on` (wajib) Peristiwa yang dideteksi. Nilai yang valid adalah `render-start`, `ini-load`, `click`, `scroll`, `timer`, `visible`, `hidden`, `user-error`, [`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md), dan [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)
+- `request` (wajib) Nama permintaan yang akan dikirim (seperti ditentukan dalam bagian `requests`).
+- `vars` Objek yang berisi key-value pair yang digunakan untuk menggantikan `vars` yang ditetapkan dalam konfigurasi level paling atas, atau untuk menentukan variabel yang unik bagi pemicu ini.
+- `important` dapat ditentukan agar berfungsi dengan permintaan yang mendukung perilaku pengelompokan atau rentang waktu laporan. Menetapkan `important` ke `true` dapat membantu membersihkan antrean permintaan yang dikelompokkan dengan beberapa pemicu tertentu. Dalam hal ini, Anda dapat mengurangi jumlah ping permintaan tanpa kehilangan peristiwa pemicu yang penting. Menetapkan `important` ke `true` juga dapat mengganti nilai `reportWindow` permintaan untuk mengirimkan ping permintaan penting dalam situasi apa pun.
+- `selector` dan `selectionMethod` dapat ditentukan untuk beberapa pemicu, seperti `click` dan `visible`. Lihat [Selektor elemen](#element-selector) untuk selengkapnya.
+- `scrollSpec` (wajib jika `on` ditetapkan ke `scroll`) Konfigurasi ini digunakan bersama dengan pemicu `scroll`. Harap lihat detail di bawah ini.
+- `timerSpec` (wajib jika `on` ditetapkan ke `timer`) Konfigurasi ini digunakan bersama dengan pemicu `timer`. Harap lihat detail di bawah ini.
+- `sampleSpec` Objek ini digunakan untuk menetapkan bagaimana permintaan dapat diambil sampelnya sebelum dikirim. Setelan ini memungkinkan pengambilan sampel berdasarkan input acak atau variabel lain yang didukung platform. Objek tersebut berisi konfigurasi untuk menentukan input yang digunakan untuk menghasilkan hash dan ambang batas yang harus dipenuhi hash.
+  - `sampleOn` Template string ini diperluas dengan mengisi variabel platform dan kemudian di-hash untuk menghasilkan angka untuk keperluan logika pengambilan sampel yang dideskripsikan di bawah ambang batas di bawah.
+  - `threshold` Konfigurasi ini digunakan untuk memfilter permintaan yang tidak memenuhi kriteria tertentu: Agar permintaan dapat melalui vendor analisis, logika berikut harus bernilai true `HASH(sampleOn) < threshold`.</li>
+- `videoSpec` (digunakan jika `on` ditetapkan ke `video-*`) Konfigurasi ini digunakan bersama dengan pemicu [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
 Sebagai contoh, konfigurasi berikut dapat digunakan untuk mengambil sampel 50% permintaan berdasarkan input acak atau sebesar 1% berdasarkan ID klien.
 
@@ -429,8 +431,8 @@ Beberapa pemicu seperti `click` dan `visible` memungkinkan penentuan satu atau s
 Properti selektor adalah:
 
 - `selector` Properti ini digunakan untuk menemukan satu atau sekumpulan elemen menggunakan kueri CSS/DOM. Semantik pencocokan elemen dapat diubah menggunakan metode `selectionMethod`. Nilai properti ini dapat berupa salah satu dari:
-    - selektor CSS yang valid, misalnya `#ad1` atau `amp-ad`.
-    - `:root` - selektor khusus yang cocok dengan root dokumen.
+  - selektor CSS yang valid, misalnya `#ad1` atau `amp-ad`.
+  - `:root` - selektor khusus yang cocok dengan root dokumen.
 - `selectionMethod` Jika ditentukan, properti ini dapat memiliki salah satu dari dua nilai: `scope` atau `closest`. Nilai `scope` memungkinkan pemilihan elemen dalam elemen induk dari tag `amp-analytics`. Nilai `closest` menelusuri ancestor terdekat dari tag `amp-analytics` yang sesuai dengan selektor tertentu. Nilai defaultnya adalah `scope`.
 
 ##### Pemicu awal render sematan <a name="embed-render-start-trigger"></a>
@@ -438,6 +440,7 @@ Properti selektor adalah:
 Elemen AMP yang menyematkan dokumen lain dalam iframe (misalnya iklan) dapat melaporkan peristiwa awal render (`"on": "render-start"`). Peristiwa ini biasanya dilaporkan segera setelah sistem dapat mengonfirmasi bahwa rendering dokumen sematan telah dimulai. Pelajari dokumentasi elemen AMP tertentu untuk mengetahui apakah elemen tersebut melaporkan peristiwa ini atau tidak.
 
 Pemicu untuk elemen sematan harus menyertakan [`selector`](#element-selector) yang mengarah ke elemen penyematan:
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -449,6 +452,7 @@ Pemicu untuk elemen sematan harus menyertakan [`selector`](#element-selector) ya
 ```
 
 Peristiwa awal render juga dilaporkan oleh dokumen itu sendiri dan dapat dikonfigurasi sebagai:
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -470,6 +474,7 @@ Lebih spesifiknya:
 - Untuk elemen AMP sederhana (misalnya `amp-img`): resource itu sendiri, seperti gambar atau video.
 
 Pemicu untuk elemen sematan atau AMP harus menyertakan [`selector`](#element-selector) yang mengarah ke elemen itu:
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -481,6 +486,7 @@ Pemicu untuk elemen sematan atau AMP harus menyertakan [`selector`](#element-sel
 ```
 
 Peristiwa pemuatan awal juga dilaporkan oleh dokumen itu sendiri dan dapat dikonfigurasi sebagai:
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -594,6 +600,7 @@ Properti `visiblePercentageThresholds` dapat digunakan sebagai singkatan untuk m
   }
 }
 ```
+
 Selain kondisi di atas, `visibilitySpec` juga mengaktifkan variabel tertentu yang didokumentasikan [di sini](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#visibility-variables).
 
 ```javascript
@@ -662,9 +669,9 @@ Gunakan pemicu scroll (`"on": "scroll"`) untuk mengaktifkan permintaan dalam kon
 Gunakan pemicu timer (`"on": "timer"`) untuk mengaktifkan permintaan pada interval waktu yang teratur. Gunakan `timerSpec` untuk mengontrol kapan peristiwa akan diaktifkan:
 
 - `timerSpec` Spesifikasi untuk pemicu jenis `timer`. Kecuali jika `startSpec` ditentukan, timer akan segera dipicu (secara default, dapat tidak ditetapkan), dan dipicu lagi pada interval tertentu setelahnya.
-    - `interval` Durasi interval timer, dalam detik.
-    - `maxTimerLength`, Durasi maksimum timer akan diaktifkan, dalam detik. Permintaan tambahan akan dipicu setelah `maxTimerLength` tercapai. Nilai defaultnya adalah 2 jam. Jika `stopSpec` ada, tetapi maxTimerLength tidak ditentukan, nilai default adalah tak terbatas.
-    - `immediate` memicu timer dengan segera atau tidak. Boolean, defaultnya adalah true
+  - `interval` Durasi interval timer, dalam detik.
+  - `maxTimerLength`, Durasi maksimum timer akan diaktifkan, dalam detik. Permintaan tambahan akan dipicu setelah `maxTimerLength` tercapai. Nilai defaultnya adalah 2 jam. Jika `stopSpec` ada, tetapi maxTimerLength tidak ditentukan, nilai default adalah tak terbatas.
+  - `immediate` memicu timer dengan segera atau tidak. Boolean, defaultnya adalah true
 
 ```javascript
 "triggers": {
@@ -720,6 +727,7 @@ Gunakan pemicu tersembunyi (`"on": "hidden"`) untuk mengaktifkan permintaan saat
 ```
 
 [`visibilitySpec`](#visibility-spec) dapat disertakan sehingga permintaan hanya diaktifkan jika kondisi durasi visibilitas terpenuhi.
+
 ```json
 "triggers": {
   "defaultPageview": {
@@ -733,6 +741,7 @@ Gunakan pemicu tersembunyi (`"on": "hidden"`) untuk mengaktifkan permintaan saat
   }
 }
 ```
+
 Konfigurasi di atas diterjemahkan menjadi:
 
 <blockquote>
@@ -751,11 +760,11 @@ Analisis video menyediakan beberapa pemicu (`"on": "video-*"`) yang dapat diguna
 
 Objek konfigurasi `transport` menentukan cara mengirim permintaan. Nilai ini adalah objek dengan kolom yang menunjukkan metode transport mana yang dapat diterima.
 
-* `beacon` Menunjukkan [`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) dapat digunakan untuk mengirim permintaan. Objek ini akan mengirim permintaan POST dengan kredensial. Permintaan akan dikirim dengan bagian utama halaman yang kosong, kecuali jika `useBody` ditetapkan ke true. Lihat [Menggunakan Isi untuk Parameter URL Tambahan](#use-body-for-extra-url-params) untuk informasi selengkapnya tentang `useBody`.
-* `xhrpost` Menunjukkan `XMLHttpRequest` dapat digunakan untuk mengirim permintaan. Objek ini akan mengirim permintaan POST dengan kredensial. Permintaan akan dikirim dengan bagian utama halaman yang kosong, kecuali jika `useBody` ditetapkan ke true. Lihat [Menggunakan Isi untuk Parameter URL Tambahan](#use-body-for-extra-url-params) untuk informasi selengkapnya tentang `useBody`.
-* `image` Menunjukkan bahwa permintaan dapat dikirim dengan membuat tag `Image`. Objek ini akan mengirimkan permintaan GET. Untuk menyembunyikan peringatan konsol akibat respons kosong atau kegagalan permintaan, tetapkan `"image": {"suppressWarnings": true}`.
+- `beacon` Menunjukkan [`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) dapat digunakan untuk mengirim permintaan. Objek ini akan mengirim permintaan POST dengan kredensial. Permintaan akan dikirim dengan bagian utama halaman yang kosong, kecuali jika `useBody` ditetapkan ke true. Lihat [Menggunakan Isi untuk Parameter URL Tambahan](#use-body-for-extra-url-params) untuk informasi selengkapnya tentang `useBody`.
+- `xhrpost` Menunjukkan `XMLHttpRequest` dapat digunakan untuk mengirim permintaan. Objek ini akan mengirim permintaan POST dengan kredensial. Permintaan akan dikirim dengan bagian utama halaman yang kosong, kecuali jika `useBody` ditetapkan ke true. Lihat [Menggunakan Isi untuk Parameter URL Tambahan](#use-body-for-extra-url-params) untuk informasi selengkapnya tentang `useBody`.
+- `image` Menunjukkan bahwa permintaan dapat dikirim dengan membuat tag `Image`. Objek ini akan mengirimkan permintaan GET. Untuk menyembunyikan peringatan konsol akibat respons kosong atau kegagalan permintaan, tetapkan `"image": {"suppressWarnings": true}`.
 
-Vendor terakreditasi MRC dapat menggunakan mekanisme transport keempat, "iframe transport", dengan menambahkan string URL ke iframe-transport-vendors.js. Hal ini menunjukkan bahwa iframe harus dibuat, dengan atribut `src`-nya ditetapkan ke URL ini, dan permintaan akan dikirim ke iframe tersebut melalui `window.postMessage()`. Dalam hal ini, permintaan tidak harus berupa URL lengkap. `iframe` hanya dapat ditentukan dalam `iframe-transport-vendors.js`, bukan secara inline dalam tag `amp-analytics`, atau melalui konfigurasi jarak jauh. Selain itu, frame vendor dapat mengirim respons, yang akan digunakan oleh amp-ad-exit. Lihat [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) dan [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html): file pertama mengirim objek JSON respons dari {'collected-data': 'abc'}; file kedua menggunakan objek tersebut untuk mengganti 'bar_' dengan 'abc' di finalUrl.
+Vendor terakreditasi MRC dapat menggunakan mekanisme transport keempat, "iframe transport", dengan menambahkan string URL ke iframe-transport-vendors.js. Hal ini menunjukkan bahwa iframe harus dibuat, dengan atribut `src`-nya ditetapkan ke URL ini, dan permintaan akan dikirim ke iframe tersebut melalui `window.postMessage()`. Dalam hal ini, permintaan tidak harus berupa URL lengkap. `iframe` hanya dapat ditentukan dalam `iframe-transport-vendors.js`, bukan secara inline dalam tag `amp-analytics`, atau melalui konfigurasi jarak jauh. Selain itu, frame vendor dapat mengirim respons, yang akan digunakan oleh amp-ad-exit. Lihat [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) dan [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html): file pertama mengirim objek JSON respons dari {'collected-data': 'abc'}; file kedua menggunakan objek tersebut untuk mengganti 'bar\_' dengan 'abc' di finalUrl.
 
 Jika lebih dari satu metode transport di atas diaktifkan, prioritasnya adalah `iframe` &gt; `beacon` &gt; `xhrpost` &gt; `image`. Hanya satu metode transport yang akan digunakan, dan itu adalah metode dengan prioritas tertinggi yang diizinkan dan tersedia. Jika agen-pengguna klien tidak mendukung suatu metode, maka metode aktif dengan prioritas tertinggi berikutnya akan digunakan. Secara default, keempat metode di atas diaktifkan.
 
@@ -826,12 +835,15 @@ Berikut adalah atribut yang valid untuk komponen `amp-analytics`:
 
 **type**
 
-Menentukan jenis vendor.  Untuk detailnya, lihat daftar [Vendor analisis](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md).
+Menentukan jenis vendor. Untuk detailnya, lihat daftar [Vendor analisis](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md).
 
 Contoh:
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json"></amp-analytics>
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 **config**
@@ -841,7 +853,9 @@ Ini adalah atribut opsional yang dapat digunakan untuk memuat konfigurasi dari U
 Contoh:
 
 ```html
-<amp-analytics config="https://example.com/analytics.config.json"></amp-analytics>
+<amp-analytics
+  config="https://example.com/analytics.config.json"
+></amp-analytics>
 ```
 
 **data-credentials**<a name="data-credentials"></a>

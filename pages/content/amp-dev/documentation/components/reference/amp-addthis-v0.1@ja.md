@@ -2,11 +2,10 @@
 $title: amp-addthis
 $category@: social
 formats:
-- websites
+  - websites
 teaser:
   text: AddThis の埋め込みウェブサイト ツールを表示します。
 ---
-
 
 <!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 [AddThis](https://www.addthis.com) の埋め込みウェブサイト ツールを表示します。
 
 <table>
@@ -38,7 +35,6 @@ limitations under the License.
     <td>fill、fixed、fixed-height、flex-item、nodisplay、responsive</td>
   </tr>
 </table>
-
 
 ## AddThis を使用する理由 <a name="why-addthis"></a>
 
@@ -53,6 +49,7 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
 ページの左右や上下に配置可能で、閲覧者が画面をスクロールすると、一緒に移動します。それほど強引にならずに、共有を促進する優れた方法です。
 
 例:
+
 ```html
 <!--
   This example uses a placeholder pubId.
@@ -64,7 +61,8 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
   layout="responsive"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="957l"
-  data-widget-type="floating">
+  data-widget-type="floating"
+>
 </amp-addthis>
 ```
 
@@ -73,6 +71,7 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
 共有ボタンをコンテンツに統合することで、シームレスな共有機能を実現できます。
 
 例:
+
 ```html
 <!--
   This example uses a placeholder pubId.
@@ -84,7 +83,8 @@ AddThis は、1,500 万以上のウェブサイトで利用されている信頼
   height="92"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="mv93"
-  data-widget-type="inline">
+  data-widget-type="inline"
+>
 </amp-addthis>
 ```
 
@@ -149,13 +149,13 @@ AddThis ツールおよび AddThis ツールバーは、エンドユーザーが
 
 主な AddThis データは次のとおりです。
 
-* IP アドレス、モバイル広告 ID（MAID）（これにより、モバイルアプリ デベロッパーはモバイルアプリを使用しているユーザーを識別できます）、モバイルアプリ ID、ブラウザのタイプ、ブラウザの言語、オペレーティング システムのタイプ、エンドユーザーがサイト運営者サイトやツールバーにアクセスした日時。
-* ツールバーを使用したユーザー。
-* サイト運営者サイト上で行った操作（エンドユーザーがサイト運営者サイトに滞在した期間、エンドユーザーがサイト運営者サイト上で行ったコンテンツ共有操作、エンドユーザーがサイト運営者サイト上で行ったスクロール操作など」）。
-* エンドユーザーがサイト運営者サイトの検索や移動に使用した参照元 URL やウェブ検索。
-* ツールバー ユーザーが AddThis ツールバーの検索機能に入力したキーワード。ツールバー ユーザーが AddThis ツールバーをダウンロード、インストール、アンインストールした日時。
-* エンドユーザーが AddThis ツールを使用する頻度や、ツールバー ユーザーが AddThis ツールバーを使用する頻度に関する情報。
-* エンドユーザーやツールバー ユーザーの IP アドレスから取得した位置情報データ。
+- IP アドレス、モバイル広告 ID（MAID）（これにより、モバイルアプリ デベロッパーはモバイルアプリを使用しているユーザーを識別できます）、モバイルアプリ ID、ブラウザのタイプ、ブラウザの言語、オペレーティング システムのタイプ、エンドユーザーがサイト運営者サイトやツールバーにアクセスした日時。
+- ツールバーを使用したユーザー。
+- サイト運営者サイト上で行った操作（エンドユーザーがサイト運営者サイトに滞在した期間、エンドユーザーがサイト運営者サイト上で行ったコンテンツ共有操作、エンドユーザーがサイト運営者サイト上で行ったスクロール操作など」）。
+- エンドユーザーがサイト運営者サイトの検索や移動に使用した参照元 URL やウェブ検索。
+- ツールバー ユーザーが AddThis ツールバーの検索機能に入力したキーワード。ツールバー ユーザーが AddThis ツールバーをダウンロード、インストール、アンインストールした日時。
+- エンドユーザーが AddThis ツールを使用する頻度や、ツールバー ユーザーが AddThis ツールバーを使用する頻度に関する情報。
+- エンドユーザーやツールバー ユーザーの IP アドレスから取得した位置情報データ。
 
 AddThis データは、該当する法律の求める範囲において、個人情報として扱われます。サイト運営者は、AddThis の利用規約に従い、エンドユーザーの同意と承認を取得し、エンドユーザーから Oracle に収集される AddThis データの規定に関して必要な通知を提供する必要があります。
 

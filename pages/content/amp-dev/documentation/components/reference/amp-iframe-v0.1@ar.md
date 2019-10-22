@@ -7,7 +7,6 @@ teaser:
   text: Displays an iframe.
 ---
 
-
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 يعرض هذا المكوِّن إطار iframe.
 
@@ -49,19 +46,22 @@ limitations under the License.
 
 يتميز المكوِّن `amp-iframe` بعدة اختلافات مهمة عن إطارات vanilla iframe المصممة لزيادة الأمان وتجنب ملفات AMP التي يسيطر عليها إطار iframe واحد:
 
-* قد لا يظهر `amp-iframe` بالقرب من أعلى المستند (باستثناء إطارات iframe التي تستخدم `placeholder` كما هو موضح [أدناه](#iframe-with-placeholder)). يجب أن يقع iframe على بعد 600 بكسل من الأعلى أو ألا يقع ضمن 75٪ الأولى من إطار العرض عند التمرير إلى الأعلى، أيهما أقل.
-* تتم إضافة إطار amp-iframe تلقائيًا إلى وضع الحماية (راجِع [التفاصيل](#sandbox)).
-* يجب على `amp-iframe` طلب الموارد فقط عبر HTTPS أو من data-URI أو عبر السمة `srcdoc`.
-* يجب ألا يكون `amp-iframe` في نفس الأصل الذي تقع فيه الحاوية إلا في حال عدم السماح بسياسة `allow-same-origin` في السمة `sandbox`. راجِع مستند ["سياسة أصل إطارات Iframe"](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) للحصول على مزيد من التفاصيل عن الأصول المسموح بها في iframe.
+- قد لا يظهر `amp-iframe` بالقرب من أعلى المستند (باستثناء إطارات iframe التي تستخدم `placeholder` كما هو موضح [أدناه](#iframe-with-placeholder)). يجب أن يقع iframe على بعد 600 بكسل من الأعلى أو ألا يقع ضمن 75٪ الأولى من إطار العرض عند التمرير إلى الأعلى، أيهما أقل.
+- تتم إضافة إطار amp-iframe تلقائيًا إلى وضع الحماية (راجِع [التفاصيل](#sandbox)).
+- يجب على `amp-iframe` طلب الموارد فقط عبر HTTPS أو من data-URI أو عبر السمة `srcdoc`.
+- يجب ألا يكون `amp-iframe` في نفس الأصل الذي تقع فيه الحاوية إلا في حال عدم السماح بسياسة `allow-same-origin` في السمة `sandbox`. راجِع مستند ["سياسة أصل إطارات Iframe"](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) للحصول على مزيد من التفاصيل عن الأصول المسموح بها في iframe.
 
-*مثال: تضمين إحدى "خرائط Google" في amp-iframe*
+_مثال: تضمين إحدى "خرائط Google" في amp-iframe_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAyAS599A2GGPKTmtNr9CptD61LE4gN6oQ&q=iceland">
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAyAS599A2GGPKTmtNr9CptD61LE4gN6oQ&q=iceland"
+>
 </amp-iframe>
 ```
 
@@ -82,10 +82,10 @@ limitations under the License.
 
 في ما يلي أسباب هذه السياسة:
 
-* ينفذ `amp-iframe` وضع الحماية كما يتم تطبيق الوضع أيضًا على إطارات iframe الثانوية. وهو ما يعني احتمال تعطّل الصفحات المقصودة، حتى لو بدا أن الإعلان نفسه يعمل.
-* لا يوفر `amp-iframe` أي آلية لتمرير التهيئة إلى iframe.
-* لا يحتوي `amp-iframe` على آلية لتغيير حجم إطارات iframe يتم التحكم فيها بالكامل.
-* قد لا تكون معلومات إمكانية العرض متاحة للمكّوِن `amp-iframe`.
+- ينفذ `amp-iframe` وضع الحماية كما يتم تطبيق الوضع أيضًا على إطارات iframe الثانوية. وهو ما يعني احتمال تعطّل الصفحات المقصودة، حتى لو بدا أن الإعلان نفسه يعمل.
+- لا يوفر `amp-iframe` أي آلية لتمرير التهيئة إلى iframe.
+- لا يحتوي `amp-iframe` على آلية لتغيير حجم إطارات iframe يتم التحكم فيها بالكامل.
+- قد لا تكون معلومات إمكانية العرض متاحة للمكّوِن `amp-iframe`.
 
 # السمات <a name="attributes"></a>
 
@@ -116,32 +116,37 @@ limitations under the License.
   </tr>
 </table>
 
-
 # إطار iframe له عنصر نائب <a name="iframe-with-placeholder"></a>
 
 من الممكن ظهور `amp-iframe` في الجزء العلوي من المستند عندما يحتوي `amp-iframe` على عنصر `placeholder` كما هو موضح في المثال أدناه.
 
-* يجب أن يحتوي `amp-iframe` على عنصر به السمة `placeholder`، (مثل عنصر `amp-img`) والذي سيتم عرضه كعنصر نائب إلى أن يصبح إطار iframe جاهزًا للعرض.
-* يمكن التعرّف على جاهزية إطار iframe من خلال `onload` للإطار أو من خلال الرسالة `embed-ready` `postMessage` التي سيتم إرسالها من مستند الإطار، أيهما يحدث أولاً.
+- يجب أن يحتوي `amp-iframe` على عنصر به السمة `placeholder`، (مثل عنصر `amp-img`) والذي سيتم عرضه كعنصر نائب إلى أن يصبح إطار iframe جاهزًا للعرض.
+- يمكن التعرّف على جاهزية إطار iframe من خلال `onload` للإطار أو من خلال الرسالة `embed-ready` `postMessage` التي سيتم إرسالها من مستند الإطار، أيهما يحدث أولاً.
 
-*مثال: إطار iframe له عنصر نائب*
+_مثال: إطار iframe له عنصر نائب_
 
 ```html
-<amp-iframe width=300 height=300
-   layout="responsive"
-   sandbox="allow-scripts allow-same-origin"
-   src="https://foo.com/iframe">
- <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  src="https://foo.com/iframe"
+>
+  <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>
 ```
 
-*مثال: طلب تضمين إطار iframe جاهز*
+_مثال: طلب تضمين إطار iframe جاهز_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-}, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # تغيير حجم الإطار iframe <a name="iframe-resizing"></a>
@@ -156,65 +161,78 @@ window.parent.postMessage({
 
 لاحظ أن `resizable` يلغي قيمة `scrolling` المُعيّنة على `no`.
 
-*مثال: `amp-iframe` به عنصر `overflow`*
+_مثال: `amp-iframe` به عنصر `overflow`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-  <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*مثال: طلب تغيير حجم iframe*
+_مثال: طلب تغيير حجم iframe_
 
 ```javascript
-window.parent.postMessage({
-sentinel: 'amp',
-type: 'embed-size',
-height: document.body.scrollHeight
-}, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 بعد تلقي هذه الرسالة، يحاول وقت تشغيل AMP تلبية الطلب في أقرب وقت ممكن، ولكنه يأخذ في الاعتبار الموضع الذي يقرأ فيه القارئ حاليًا، سواء كان التمرير مستمرًا وأي عوامل أخرى تتعلق بتجربة المستخدِم أو الأداء. إذا تعذر على وقت التشغيل تلبية طلب تغيير الحجم، سيعرض `amp-iframe` عنصر `overflow`. يؤدي النقر على عنصر `overflow` إلى تغيير حجم `amp-iframe` فورًا لأنه يتم تشغيله بواسطة إجراء مستخدِم.
 
 في ما يلي بعض العوامل التي تؤثر على سرعة تنفيذ تغيير الحجم:
 
-* ما إذا يتم تشغيل تغيير الحجم بواسطة إجراء المستخدِم
-* ما إذا يتم طلب تغيير الحجم لإطار iframe نشط حاليًا
-* ما إذا يتم طلب تغيير الحجم لإطار iframe أسفل إطار العرض أو أعلاه
+- ما إذا يتم تشغيل تغيير الحجم بواسطة إجراء المستخدِم
+- ما إذا يتم طلب تغيير الحجم لإطار iframe نشط حاليًا
+- ما إذا يتم طلب تغيير الحجم لإطار iframe أسفل إطار العرض أو أعلاه
 
 # إمكانية عرض إطار iframe <a name="iframe-viewability"></a>
 
 يمكن لإطارات iframe إرسال رسالة `send-intersections` إلى العناصر الرئيسية لبدء تلقي [سجلات تغيّر](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) أنماط IntersectionObserver لتقاطع إطار iframe مع إطار العرض للعنصر الرئيسي.
 
-*ملاحظة: في الأمثلة التالية، نفترض أن النص البرمجي يقع في إطار iframe الذي تم إنشاؤه، حيث `window.parent` هى النافذة العلوية. إذا كان النص البرمجي يقع في إطار iframe مدمج، غيّر `window.parent` إلى نافذة AMP العلوية.*
+_ملاحظة: في الأمثلة التالية، نفترض أن النص البرمجي يقع في إطار iframe الذي تم إنشاؤه، حيث `window.parent` هى النافذة العلوية. إذا كان النص البرمجي يقع في إطار iframe مدمج، غيّر `window.parent` إلى نافذة AMP العلوية._
 
-*مثال: طلب `send-intersections` لإطار iframe*
+_مثال: طلب `send-intersections` لإطار iframe_
 
 ```javascript
-window.parent.postMessage({
-sentinel: 'amp',
-type: 'send-intersections'
-}, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 يمكن لإطار iframe معالجة رسالة `intersection` من النافذة الرئيسية لتلقي بيانات التقاطع.
 
-*مثال: طلب `send-intersections` لإطار iframe*
+_مثال: طلب `send-intersections` لإطار iframe_
 
 ```javascript
 window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-      event.origin == window.location.origin ||
-      !event.data ||
-      event.data.sentinel != 'amp' ||
-      event.data.type != 'intersection') {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
   }
-  event.data.changes.forEach(function (change) {
+  event.data.changes.forEach(function(change) {
     console.log(change);
   });
 });
@@ -234,10 +252,10 @@ window.addEventListener('message', function(event) {
 
 يجب اعتبار المكوِّن `amp-iframe` عنصرًا احتياطيًا إذا كانت تجربة المستخدِم المطلوبة غير ممكنة بوسائل أخرى في AMP، أي غياب [مكون AMP](../../../documentation/components/index.html) متوفر لحالة الاستخدام. ويرجع هذا إلى تعدد فوائد استخدام مكوِّن AMP مصمم لحالة استخدام معينة مثل:
 
-* تحسين إدارة أفضل الموارد والأداء
-* يمكن أن توفر المكونات المخصصة صور عناصر نائبة مضمّنة في بعض الحالات. يعني هذا الحصول مثلاً على الصورة المصغرة الصحيحة للفيديو قبل تحميله كما يقلل من الجهد المبذول في الترميز لإضافة عنصر نائب يدويًا.
-* تغيير الحجم المضمَّن وهو ما يعني أن محتوى iframe ذا الحجم غير المتوقع يمكن أن يظهر للمستخدِم في أغلب الأحيان كما لو كان أصليًا في الصفحة، وليس في إطار قابل للتمرير.
-* يمكن إنشاء ميزات إضافية أخرى (مثل التشغيل التلقائي لمشغّلات الفيديو).
+- تحسين إدارة أفضل الموارد والأداء
+- يمكن أن توفر المكونات المخصصة صور عناصر نائبة مضمّنة في بعض الحالات. يعني هذا الحصول مثلاً على الصورة المصغرة الصحيحة للفيديو قبل تحميله كما يقلل من الجهد المبذول في الترميز لإضافة عنصر نائب يدويًا.
+- تغيير الحجم المضمَّن وهو ما يعني أن محتوى iframe ذا الحجم غير المتوقع يمكن أن يظهر للمستخدِم في أغلب الأحيان كما لو كان أصليًا في الصفحة، وليس في إطار قابل للتمرير.
+- يمكن إنشاء ميزات إضافية أخرى (مثل التشغيل التلقائي لمشغّلات الفيديو).
 
 # التحقق <a name="validation"></a>
 

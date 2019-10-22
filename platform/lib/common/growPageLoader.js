@@ -17,8 +17,8 @@
 'use strict';
 
 const config = require('../config.js');
-const {promisify} = require('util');
 const {join} = require('path');
+const {promisify} = require('util');
 const {readFile} = require('fs');
 const readFileAsync = promisify(readFile);
 const fetch = require('node-fetch');
@@ -55,8 +55,7 @@ async function fetchPageFromGrowServer(path) {
 
   // As this will only ever be called in development throw an error
   // if Grow did not return a page
-  throw Error('Requested page doesn\'t exist in Grow pod');
+  throw Error("Requested page doesn't exist in Grow pod");
 }
 
 module.exports.fetchPage = fetchPage;
-

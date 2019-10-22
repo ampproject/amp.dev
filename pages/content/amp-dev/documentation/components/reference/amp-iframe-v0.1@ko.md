@@ -2,7 +2,7 @@
 $title: amp-iframe
 $category@: layout
 formats:
-- websites
+  - websites
 teaser:
   text: iframe을 표시합니다.
 ---
@@ -23,10 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 iframe을 표시합니다.
-
 
 <table>
   <tr>
@@ -47,20 +44,23 @@ iframe을 표시합니다.
 
 `amp-iframe`에는 보안을 강화하고 단일 iframe에서 좌우하는 AMP 파일을 방지하도록 디자인된 vanilla iframe과 다른 중요한 여러 차이점이 있습니다.
 
-* `amp-iframe`은 문서의 상단 근처에 표시되지 않을 수 있습니다([아래](#iframe-with-placeholder) 설명된 대로 `placeholder`를 사용하는 iframe 제외). iframe은 상단에서 600픽셀 떨어져 있거나 상단으로 스크롤할 때 표시 영역의 처음 75% 안에 포함되지 않아야 하며, 둘 중 더 작은 값으로 지정됩니다.
-* 기본적으로 amp-iframe은 샌드박스 처리됩니다([세부정보](#sandbox) 참조).
-* `amp-iframe`은 HTTPS, data-URI 또는 `srcdoc` 속성을 통해서만 리소스를 요청해야 합니다.
-* `sandbox` 속성에서 `allow-same-origin`을 허용하지 않는 경우를 제외하고 `amp-iframe`은 컨테이너와 같은 원본에 없어야 합니다. iframe에 허용되는 원본에 관한 자세한 정보는 ['Iframe 원본 정책'](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) 문서를 참조하세요.
+- `amp-iframe`은 문서의 상단 근처에 표시되지 않을 수 있습니다([아래](#iframe-with-placeholder) 설명된 대로 `placeholder`를 사용하는 iframe 제외). iframe은 상단에서 600픽셀 떨어져 있거나 상단으로 스크롤할 때 표시 영역의 처음 75% 안에 포함되지 않아야 하며, 둘 중 더 작은 값으로 지정됩니다.
+- 기본적으로 amp-iframe은 샌드박스 처리됩니다([세부정보](#sandbox) 참조).
+- `amp-iframe`은 HTTPS, data-URI 또는 `srcdoc` 속성을 통해서만 리소스를 요청해야 합니다.
+- `sandbox` 속성에서 `allow-same-origin`을 허용하지 않는 경우를 제외하고 `amp-iframe`은 컨테이너와 같은 원본에 없어야 합니다. iframe에 허용되는 원본에 관한 자세한 정보는 ['Iframe 원본 정책'](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) 문서를 참조하세요.
 
-*예: amp-iframe에서 Google 지도 삽입*
+_예: amp-iframe에서 Google 지도 삽입_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland">
-  </amp-iframe>
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland"
+>
+</amp-iframe>
 ```
 
 렌더링 방식:
@@ -80,10 +80,10 @@ iframe을 표시합니다.
 
 이 정책의 이유는 다음과 같습니다.
 
-* `amp-iframe`에서는 샌드박스를 시행하고, 샌드박스는 하위 iframe에도 적용됩니다. 즉, 광고 자체는 작동하는 것으로 보여도 방문 페이지가 손상되었을 수 있습니다.
-* `amp-iframe`에서는 iframe에 구성을 전달하는 메커니즘을 제공하지 않습니다.
-* `amp-iframe`에는 iframe에서 완전히 제어하는 크기 조정 메커니즘이 없습니다.
-* 조회가능성 정보는 `amp-iframe`에 사용하지 못할 수 있습니다.
+- `amp-iframe`에서는 샌드박스를 시행하고, 샌드박스는 하위 iframe에도 적용됩니다. 즉, 광고 자체는 작동하는 것으로 보여도 방문 페이지가 손상되었을 수 있습니다.
+- `amp-iframe`에서는 iframe에 구성을 전달하는 메커니즘을 제공하지 않습니다.
+- `amp-iframe`에는 iframe에서 완전히 제어하는 크기 조정 메커니즘이 없습니다.
+- 조회가능성 정보는 `amp-iframe`에 사용하지 못할 수 있습니다.
 
 # 속성 <a name="attributes"></a>
 
@@ -118,27 +118,33 @@ iframe을 표시합니다.
 
 아래 예에 표시된 대로 `amp-iframe`에 `placeholder` 요소가 있으면 `amp-iframe`이 문서의 상단에 표시될 수 있습니다.
 
-* `amp-iframe`에는 iframe을 표시할 준비가 될 때까지 자리표시자로 렌더링되는 `placeholder` 속성이 있는 요소(예: `amp-img` 요소)를 포함해야 합니다.
-* Iframe 준비 여부는 iframe 문서에서 보내는 iframe의 `onload` 또는 `embed-ready` `postMessage` 중 먼저 수신되는 속성을 통해 알 수 있습니다.
+- `amp-iframe`에는 iframe을 표시할 준비가 될 때까지 자리표시자로 렌더링되는 `placeholder` 속성이 있는 요소(예: `amp-img` 요소)를 포함해야 합니다.
+- Iframe 준비 여부는 iframe 문서에서 보내는 iframe의 `onload` 또는 `embed-ready` `postMessage` 중 먼저 수신되는 속성을 통해 알 수 있습니다.
 
-*예: 자리표시자가 있는 Iframe*
+_예: 자리표시자가 있는 Iframe_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    src="https://foo.com/iframe">
-    <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  src="https://foo.com/iframe"
+>
+  <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>
 ```
 
-*예: Iframe 삽입 준비 요청*
+_예: Iframe 삽입 준비 요청_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # iframe 크기 조정 <a name="iframe-resizing"></a>
@@ -154,26 +160,34 @@ window.parent.postMessage({
 
 `resizable`이 `scrolling`의 값을 `no`로 재정의한다는 점에 유의하세요.
 
-*예: `overflow` 요소가 있는 `amp-iframe`*
+_예: `overflow` 요소가 있는 `amp-iframe`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-    <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*예: iframe 크기 조정 요청*
+_예: iframe 크기 조정 요청_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-size',
-  height: document.body.scrollHeight
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 이 메시지가 수신되면 AMP 런타임에서 가능한 한 빨리 요청을 수용하려고 하지만, 판독기가 현재 읽고 있는 위치, 스크롤링이 현재 진행 중인지 여부 및 기타 UX 또는 성능 요인을 고려합니다. 런타임에서 크기 조정 요청을 처리할 수 없으면,
@@ -181,39 +195,44 @@ window.parent.postMessage({
 
 다음은 크기 조정이 실행되는 속도에 영향을 미치는 몇 가지 요인입니다.
 
-* 사용자 작업에서 크기 조정을 트리거하는지 여부
-* 현재 활성 상태인 iframe의 크기 조정이 요청되었는지 여부
-* 표시 영역 아래 또는 표시 영역 위의 iframe에 대한 크기 조정이 요청되었는지 여부
+- 사용자 작업에서 크기 조정을 트리거하는지 여부
+- 현재 활성 상태인 iframe의 크기 조정이 요청되었는지 여부
+- 표시 영역 아래 또는 표시 영역 위의 iframe에 대한 크기 조정이 요청되었는지 여부
 
 # iframe 조회가능성 <a name="iframe-viewability"></a>
 
 iframe에서는 상위 표시 영역과 교차하는 iframe의 IntersectionObserver 스타일 [변경 레코드](https://developer.mozilla.org/ko-KR/docs/Web/API/IntersectionObserverEntry)를 수신하기 위해 상위 요소에 `send-intersections` 메시지를 보낼 수 있습니다.
 
-*참고: 다음 예에서 스크립트는 생성된 iframe에 있다고 가정합니다. 여기서 `window.parent`가 상단 창입니다. 스크립트가 중첩된 iframe에 있으면 `window.parent`를 상단 AMP 창으로 변경합니다.*
+_참고: 다음 예에서 스크립트는 생성된 iframe에 있다고 가정합니다. 여기서 `window.parent`가 상단 창입니다. 스크립트가 중첩된 iframe에 있으면 `window.parent`를 상단 AMP 창으로 변경합니다._
 
-*예: iframe `send-intersections` 요청*
+_예: iframe `send-intersections` 요청_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'send-intersections'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 iframe에서는 교차 데이터를 수신하기 위해 상위 창에서 `intersection` 메시지에 대기합니다.
 
-*예: iframe `send-intersections` 요청*
+_예: iframe `send-intersections` 요청_
 
 ```javascript
 window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-  event.origin == window.location.origin ||
-  !event.data ||
-  event.data.sentinel != 'amp' ||
-  event.data.type != 'intersection') {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
-    }
-  event.data.changes.forEach(function (change) {
+  }
+  event.data.changes.forEach(function(change) {
     console.log(change);
   });
 });
@@ -233,10 +252,10 @@ iframe이 사용자 숨기기 또는 작게 표시와 같이 직접적으로 사
 
 AMP의 다른 방법으로 필수 사용자 환경을 사용할 수 없는 경우, 즉 사용 사례에 맞는 기존 [AMP 구성요소](../../../documentation/components/index.html)가 아직 없다면 `amp-iframe` 구성요소를 대체로 고려해야 합니다. 다음과 같이 특정 사용 사례에 맞게 조정된 AMP 구성요소를 사용하면 많은 이점이기 때문입니다.
 
-* 리소스 관리 및 성능 향상
-* 경우에 따라 맞춤 구성요소에서 기본 제공 자리표시자 이미지를 제공할 수 있습니다. 즉, 동영상을 로드하기 전에 올바른 동영상 미리보기 이미지를 가져오고 수동으로 자리표시자를 추가하는 코딩 작업을 줄여줍니다.
-* 크기 조정을 기본 제공합니다. 크기를 예측할 수 없는 iframe 콘텐츠가 스크롤 가능 프레임에 표시되지 않고 페이지에 고유한 것처럼 사용자에게 더 자주 표시될 수 있습니다.
-* 기타 추가 기능을 기본 제공할 수 있습니다(예: 동영상 플레이어를 위한 자동 재생).
+- 리소스 관리 및 성능 향상
+- 경우에 따라 맞춤 구성요소에서 기본 제공 자리표시자 이미지를 제공할 수 있습니다. 즉, 동영상을 로드하기 전에 올바른 동영상 미리보기 이미지를 가져오고 수동으로 자리표시자를 추가하는 코딩 작업을 줄여줍니다.
+- 크기 조정을 기본 제공합니다. 크기를 예측할 수 없는 iframe 콘텐츠가 스크롤 가능 프레임에 표시되지 않고 페이지에 고유한 것처럼 사용자에게 더 자주 표시될 수 있습니다.
+- 기타 추가 기능을 기본 제공할 수 있습니다(예: 동영상 플레이어를 위한 자동 재생).
 
 # 유효성 검사 <a name="validation"></a>
 

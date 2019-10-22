@@ -14,7 +14,11 @@ You can embed custom fonts into your AMP page in two ways:
 In this tutorial, we'll use a `<link>` tag to add fonts to our page. **Add** a stylesheet link in the `<head>` to request the Raleway font:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Now, **update** your CSS `body` selector to include a reference to Raleway:
@@ -28,7 +32,7 @@ body {
 }
 ```
 
-**Refresh** your page and check out your page’s new look. Also, inspect the AMP validator’s output.  There should be no errors for this external stylesheet request.
+**Refresh** your page and check out your page’s new look. Also, inspect the AMP validator’s output. There should be no errors for this external stylesheet request.
 
 [tip type="note"]
 Web fonts can be detrimental to a web site's performance, even on an otherwise fast AMP site. Use the [`font-display`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) CSS property to optimize the loading behaviour of your fonts.

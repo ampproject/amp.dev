@@ -10,6 +10,7 @@ $title: 로그인
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -18,6 +19,7 @@ $title: 로그인
 [`amp-access`](../../../../documentation/components/reference/amp-access.md) 관련 속성의 동작은 [`amp-access`](../../../../documentation/components/reference/amp-access.md)를 위한 페이지 전체 구성에 따라 다릅니다. 이 경우 다음과 같습니다:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -32,6 +34,7 @@ $title: 로그인
     }
   }
 </script>
+
 [/sourcecode]
 
 인증 엔드포인트는 AMPByExample의 일부에 배치됩니다. 이 엔드포인트를 제공하는 건 페이지 발행자의 책임입니다.
@@ -43,9 +46,9 @@ $title: 로그인
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

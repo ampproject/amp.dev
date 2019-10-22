@@ -1,7 +1,7 @@
 [
   {
     "label": "PWA",
-    "formats": [ "websites"],
+    "formats": ["websites"],
     "checkbox": true,
     "options": [
       {
@@ -55,7 +55,7 @@
   },
   {
     "label": "Media",
-    "formats": [ "websites", "stories"],
+    "formats": ["websites", "stories"],
     "checkbox": true,
     "options": [
       {
@@ -89,12 +89,12 @@
   },
   {
     "label": "Fonts",
-    "formats": [ "websites", "stories", "ads"],
+    "formats": ["websites", "stories", "ads"],
     "checkbox": true,
     "options": [
       {
-        "id": "googleFonts", 
-        "formats": [ "websites", "stories", "ads"],
+        "id": "googleFonts",
+        "formats": ["websites", "stories", "ads"],
         "label": "Google Fonts",
         "values": [
           {
@@ -109,7 +109,7 @@
   },
   {
     "label": "Analytics",
-    "formats": [ "websites", "stories", "ads"],
+    "formats": ["websites", "stories", "ads"],
     "checkbox": true,
     "options": [
       {
@@ -148,7 +148,7 @@
   {
     "label": "Structured Data",
     "categoryId": "structured-data",
-    "formats": [ "websites"],
+    "formats": ["websites"],
     "radio": "true",
     "help": "Provide information about your page and classify the page content using <a href=\"https://developers.google.com/search/docs/guides/intro-structured-data\">structured data</a>.",
     "options": [
@@ -176,7 +176,7 @@
   },
   {
     "id": "render-delaying-extensions",
-    "formats": [ "websites", "stories", "ads"],
+    "formats": ["websites", "stories", "ads"],
     "label": "Render-delaying Extensions",
     "checkbox": true,
     "help": "<a href=\"https://github.com/ampproject/amphtml/blob/7d307ab8a12e4d58360d430b2d61327e39b4846b/src/render-delaying-services.js\">Render-delaying extensions</a> affect the static layout of the page. Hence, the AMP runtime must wait until these are downloaded, before it can start rendering the page to avoid annoying page jumps. To improve page load time, it's best to download these extensions with a higher priority using a <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content\">preload directive</a>.",

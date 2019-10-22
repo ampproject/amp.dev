@@ -5,23 +5,24 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Adding Interactions To The Image Carousel
 
 In the previous course, we added a carousel of images to our site. Now, we want to improve this feature. It's common in web development to release a feature on our sites and then iteratively improve it over time as we collect user feedback.
 
 We received the following feedback about our carousel from testers:
 
-* "I want to jump right to a particular slide."
+- "I want to jump right to a particular slide."
 
-* "I can't tell which slide I'm on."
+- "I can't tell which slide I'm on."
 
-* "The images are too small. I can't see image details."
+- "The images are too small. I can't see image details."
 
 Based on this feedback, our product manager at Chico's Cheese Bikes has come up with a plan to address these concerns with the image carousel. We're going to make the following improvements to our image carousel:
 
-* Clicking an image in the horizontal list of thumbnails should move the carousel to the corresponding slide.
+- Clicking an image in the horizontal list of thumbnails should move the carousel to the corresponding slide.
 
-* Clicking on the carousel image slide should make an enlarged version of the image appear in a pop-up.
+- Clicking on the carousel image slide should make an enlarged version of the image appear in a pop-up.
 
 Ultimately, we're adding a few thumbnail images below the carousel. Those thumbnails will match up with the carousel, just like our testers wanted.
 
@@ -41,7 +42,7 @@ For example, if we had the following carousel:
 
 [sourcecode:html]
 {% raw %}<amp-carousel id="myCustomCarousel" type="slides" ...>
-    ...
+...
 </amp-carousel>
 {% endraw %}[/sourcecode]
 
@@ -49,29 +50,29 @@ Then clicking the following button would set the above carousel to its second sl
 
 [sourcecode:html]
 {% raw %}<button on="tap:myCustomCarousel.goToSlide(index=1)">
-   Set Carousel To Second Slide (Index 1)
+Set Carousel To Second Slide (Index 1)
 </button>
 {% endraw %}[/sourcecode]
 
 With this information, add a thumbnail carousel below the existing carousel using the smaller images in the `assets` folder, with the following settings:
 
-* Add an `<amp-carousel>` with a type of `carousel` and `fixed-height` layout type.
+- Add an `<amp-carousel>` with a type of `carousel` and `fixed-height` layout type.
 
-* Give each thumbnail image a `fixed` layout type.
+- Give each thumbnail image a `fixed` layout type.
 
-* Add the images named `cheddar-chaser-thumb`, `cheese-thumb`, and `mouse-thumb` to the carousel, in that order.
+- Add the images named `cheddar-chaser-thumb`, `cheese-thumb`, and `mouse-thumb` to the carousel, in that order.
 
-* Make it so that when a thumbnail image is clicked, the corresponding image in the original carousel is shown. **Hint**: The original carousel should have an ID of `carousel`. The thumbnail images have index 0, 1, and 2 in the carousel, respectively.
+- Make it so that when a thumbnail image is clicked, the corresponding image in the original carousel is shown. **Hint**: The original carousel should have an ID of `carousel`. The thumbnail images have index 0, 1, and 2 in the carousel, respectively.
 
-* Make sure that the images have an appropriate `tabindex` and a role of `button`.
+- Make sure that the images have an appropriate `tabindex` and a role of `button`.
 
 Recommended style guidelines:
 
-* Give the thumbnail carousel a `height` of 78.
+- Give the thumbnail carousel a `height` of 78.
 
-* Give the thumbnail carousel a `thumbnail-carousel` class.
+- Give the thumbnail carousel a `thumbnail-carousel` class.
 
-* Give each thumbnail image the following size attributes: `width="96"` `height="72"`.
+- Give each thumbnail image the following size attributes: `width="96"` `height="72"`.
 
 Once you are done, your page should look like this:
 
@@ -81,19 +82,19 @@ Once you are done, your page should look like this:
 
 [sourcecode:html]
 {% raw %}<amp-carousel layout="responsive" width="412" height="309" type="slides" loop id="carousel">
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
         on="tap:carousel.goToSlide(index=0)" width="96" height="72" layout="fixed" role="button" tabindex="0"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
         on="tap:carousel.goToSlide(index=1)" width="96" height="72" layout="fixed" role="button" tabindex="1"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
         on="tap:carousel.goToSlide(index=2)" width="96" height="72" layout="fixed" role="button" tabindex="2"></amp-img>
 </amp-carousel>
 {% endraw %}[/sourcecode]
@@ -110,15 +111,15 @@ We also see in the [documentation](../../../documentation/guides-and-tutorials/l
 
 Implement the ability to visually distinguish the selected thumbnail with the following specifications:
 
-* Add an `<amp-selector>` component with ID `ampSelector`, name `single_image_select`, and layout `container` that surrounds the `<amp-carousel>` of thumbnail images.
+- Add an `<amp-selector>` component with ID `ampSelector`, name `single_image_select`, and layout `container` that surrounds the `<amp-carousel>` of thumbnail images.
 
-* Add an `option` attribute to each thumbnail image component with a `value` that matches the index of the image in the carousel.
+- Add an `option` attribute to each thumbnail image component with a `value` that matches the index of the image in the carousel.
 
-* Add an event handler to the larger image carousel that toggles the appropriate image option when the slide changes for the carousel.
+- Add an event handler to the larger image carousel that toggles the appropriate image option when the slide changes for the carousel.
 
 Recommended style guidelines:
 
-* As long as you've followed the guidelines, the styles are already included in the CSS at the top of the file and do not require editing. If you want to look at the rules, you can see them with the identifiers `amp-selector amp-img[option]` and `amp-selector amp-img[option][selected]`.
+- As long as you've followed the guidelines, the styles are already included in the CSS at the top of the file and do not require editing. If you want to look at the rules, you can see them with the identifiers `amp-selector amp-img[option]` and `amp-selector amp-img[option][selected]`.
 
 Once you have finished, the result should look like this:
 
@@ -129,25 +130,25 @@ Once you have finished, the result should look like this:
 [sourcecode:html]
 {% raw %}<amp-carousel on="slideChange:ampSelector.toggle(index=event.index)"
     layout="responsive" width="412" height="309" type="slides" loop id="carousel">
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-selector layout="container" name="single_image_select" id="ampSelector">
-    <amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+<amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
             option="0" selected on="tap:carousel.goToSlide(index=0)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
             option="1" on="tap:carousel.goToSlide(index=1)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
             option="2" on="tap:carousel.goToSlide(index=2)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-    </amp-carousel>
+</amp-carousel>
 </amp-selector>
 {% endraw %}[/sourcecode]
 
@@ -178,20 +179,20 @@ We could apply this approach to each image in our larger carousel to implement o
 
 To implement the lightbox effect on our larger carousel:
 
-* Add the `<amp-lightbox-gallery>` script to your `<head>`.
+- Add the `<amp-lightbox-gallery>` script to your `<head>`.
 
-* Add the `lightbox` attribute to your larger `<amp-carousel>`.
+- Add the `lightbox` attribute to your larger `<amp-carousel>`.
 
 ### Solution
 
 [sourcecode:html]
 {% raw %}<amp-carousel on="slideChange:ampSelector.toggle(index=event.index)"
     layout="responsive" width="412" height="309" type="slides" loop id="carousel" lightbox>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 {% endraw %}[/sourcecode]
@@ -200,9 +201,9 @@ Remember to include the `<amp-lightbox-gallery>` library in the `<head>`:
 
 [sourcecode:html]
 {% raw %}<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
-{% endraw %}[/sourcecode]
-[/filter]
+{% endraw %}[/sourcecode][/filter]
 [filter level="advanced"]
+
 ## Adding Interactions To The Image Carousel
 
 In the previous course, we added a carousel of images to our site. Now, we want to improve this feature. It's common in web development to release a feature on our sites and then iteratively improve it over time as we collect user feedback.
@@ -240,7 +241,7 @@ For example, if we had the following carousel:
 
 [sourcecode:html]
 {% raw %}<amp-carousel id="myCustomCarousel" type="slides" ...>
-    ...
+...
 </amp-carousel>
 {% endraw %}[/sourcecode]
 
@@ -248,7 +249,7 @@ Then clicking the following button would set the above carousel to its second sl
 
 [sourcecode:html]
 {% raw %}<button on="tap:myCustomCarousel.goToSlide(index=1)">
-   Set Carousel To Second Slide (Index 1)
+Set Carousel To Second Slide (Index 1)
 </button>
 {% endraw %}[/sourcecode]
 
@@ -280,19 +281,19 @@ Once you are done, your page should look like this:
 
 [sourcecode:html]
 {% raw %}<amp-carousel layout="responsive" width="412" height="309" type="slides" loop id="carousel">
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
         on="tap:carousel.goToSlide(index=0)" width="96" height="72" layout="fixed" role="button" tabindex="0"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
         on="tap:carousel.goToSlide(index=1)" width="96" height="72" layout="fixed" role="button" tabindex="1"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
         on="tap:carousel.goToSlide(index=2)" width="96" height="72" layout="fixed" role="button" tabindex="2"></amp-img>
 </amp-carousel>
 {% endraw %}[/sourcecode]
@@ -328,25 +329,25 @@ Once you have finished, the result should look like this:
 [sourcecode:html]
 {% raw %}<amp-carousel on="slideChange:ampSelector.toggle(index=event.index)"
     layout="responsive" width="412" height="309" type="slides" loop id="carousel">
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-selector layout="container" name="single_image_select" id="ampSelector">
-    <amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+<amp-carousel class="thumbnail-carousel" layout="fixed-height" width="auto" height="78">
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
             option="0" selected on="tap:carousel.goToSlide(index=0)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
             option="1" on="tap:carousel.goToSlide(index=1)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
             option="2" on="tap:carousel.goToSlide(index=2)" tabindex="1" role="button"
             width="96" height="72" layout="fixed"></amp-img>
-    </amp-carousel>
+</amp-carousel>
 </amp-selector>
 {% endraw %}[/sourcecode]
 
@@ -358,7 +359,7 @@ Remember to include the `<amp-selector>` library in the `<head>`:
 
 ## Exercise 7: Zooming In On a Carousel Image
 
-Lastly, we want to zoom in on a carousel image when a user clicks on it so that it shows up in more detail. A popular way to achieve this is with a lightbox.  [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}) is a full-screen popup component that implements this pattern. Open a lightbox by including the ID of an `<amp-image-lightbox>` in an event-handler of an `<amp-img>` component. For example, add the following code to the large image at the top of our page to see how the lightbox approach works:
+Lastly, we want to zoom in on a carousel image when a user clicks on it so that it shows up in more detail. A popular way to achieve this is with a lightbox. [`<amp-image-lightbox>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-image-lightbox.md', locale=doc.locale).url.path}}) is a full-screen popup component that implements this pattern. Open a lightbox by including the ID of an `<amp-image-lightbox>` in an event-handler of an `<amp-img>` component. For example, add the following code to the large image at the top of our page to see how the lightbox approach works:
 
 [sourcecode:html]
 {% raw %}<amp-image-lightbox id="ricotta-racer-lightbox" layout="nodisplay"></amp-image-lightbox>
@@ -384,11 +385,11 @@ To implement the lightbox effect on our larger carousel:
 [sourcecode:html]
 {% raw %}<amp-carousel on="slideChange:ampSelector.toggle(index=event.index)"
     layout="responsive" width="412" height="309" type="slides" loop id="carousel" lightbox>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 {% endraw %}[/sourcecode]
@@ -397,5 +398,4 @@ Remember to include the `<amp-lightbox-gallery>` library in the `<head>`:
 
 [sourcecode:html]
 {% raw %}<script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
-{% endraw %}[/sourcecode]
-[/filter]
+{% endraw %}[/sourcecode][/filter]

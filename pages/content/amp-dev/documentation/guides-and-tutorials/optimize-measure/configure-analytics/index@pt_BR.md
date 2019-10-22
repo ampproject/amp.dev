@@ -7,9 +7,9 @@ $title: Configurar Analytics
 Todas as soluções de análise dependem dos dados de que você precisa
 e de como pretende analisar esses dados. Decida antes de começar:
 
-* Você usará ferramentas de análise de terceiros para analisar o engajamento do usuário
-ou sua própria solução interna?
-* Que comportamentos você avaliará para entender o engajamento do usuário?
+- Você usará ferramentas de análise de terceiros para analisar o engajamento do usuário
+  ou sua própria solução interna?
+- Que comportamentos você avaliará para entender o engajamento do usuário?
 
 ### Você pretende enviar os dados para um fornecedor ou para você mesmo?
 
@@ -43,7 +43,8 @@ Você pretende rastrear somente as exibições de página ou outros padrões de 
 (consulte também [amp-pixel ou amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
 Que tipos de dados você pretende coletar sobre seus usuários, seu conteúdo,
 o dispositivo ou o navegador (consulte também [Substituição de variáveis](analytics_basics.md#variable-substitution))?
-* Como você pretende identificar seus usuários (consulte também [Identificação de usuários](analytics_basics.md#user-identification))?
+
+- Como você pretende identificar seus usuários (consulte também [Identificação de usuários](analytics_basics.md#user-identification))?
 
 [tip type="read-on"]
 

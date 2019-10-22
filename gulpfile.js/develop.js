@@ -16,20 +16,20 @@
 
 'use strict';
 
-const gulp = require('gulp');
-const {project} = require('@lib/utils');
-const grow = require('@lib/utils/grow');
-const config = require('@lib/config');
-const signale = require('signale');
 const build = require('./build.js');
+const config = require('@lib/config');
+const grow = require('@lib/utils/grow');
+const gulp = require('gulp');
+const signale = require('signale');
+const {project} = require('@lib/utils');
 const {samplesBuilder} = require('@lib/build/samplesBuilder');
 
 function bootstrap(done) {
   gulp.parallel(
-      build.buildComponentVersions,
-      build.buildBoilerplate,
-      build.buildPlayground,
-      build.importAll
+    build.buildComponentVersions,
+    build.buildBoilerplate,
+    build.buildPlayground,
+    build.importAll
   )(done);
 }
 
@@ -41,20 +41,23 @@ function extract() {
   gulp.series(gulp.parallel(build.buildFrontend, build.collectStatics), () => {
     config.configureGrow();
 
-    grow('translations extract')
-        .catch(() => {
-          signale.fatal('Grow had an error starting up. There probably is a broken' +
-            'document in the project. See the log above for details.');
-          process.exit(1);
-        });
+    grow('translations extract').catch(() => {
+      signale.fatal(
+        'Grow had an error starting up. There probably is a broken' +
+          'document in the project. See the log above for details.'
+      );
+      process.exit(1);
+    });
   })();
 }
 
 async function run() {
   config.configureGrow();
   grow(`run --port ${config.hosts.pages.port}`).catch(() => {
-    signale.fatal('Grow had an error starting up. There probably is a broken' +
-      'document in the project. See the log above for details.');
+    signale.fatal(
+      'Grow had an error starting up. There probably is a broken' +
+        'document in the project. See the log above for details.'
+    );
     process.exit(1);
   });
 

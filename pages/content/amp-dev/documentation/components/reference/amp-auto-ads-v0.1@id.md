@@ -2,11 +2,10 @@
 $title: amp-auto-ads
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: Dynamically injects ads into an AMP page by using a remotely-served configuration file.
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Memasukkan iklan secara dinamis ke halaman AMP dengan menggunakan file konfigurasi yang ditayangkan secara jarak jauh.
 
@@ -54,30 +51,28 @@ Memasukkan iklan secara dinamis ke halaman AMP dengan menggunakan file konfigura
     </tr>
   </table>
 
-
 ## Perilaku
 
 Dengan jumlah penempatan valid yang memadai (yang disediakan dalam konfigurasi), `amp-auto-ads` mencoba memasukkan iklan tambahan dengan tetap mematuhi sejumlah batasan yang ditetapkan oleh jaringan iklan. Batasan tersebut akan membatasi:
 
-* Jumlah total iklan yang dapat dimasukkan
-* Jarak minimum yang harus ada di antara iklan yang berdekatan
+- Jumlah total iklan yang dapat dimasukkan
+- Jarak minimum yang harus ada di antara iklan yang berdekatan
 
 Selain itu, iklan hanya boleh dimasukkan di lokasi pada halaman yang tidak menyebabkan alur ulang yang tidak dapat diterima (sebagaimana ditentukan oleh attemptChangeSize).
 
 Tag `<amp-auto-ads>` harus ditempatkan sebagai turunan pertama dari `<body>`.
 
 Jenis jaringan iklan dan informasi tambahan apa pun (yang diperlukan oleh jaringan iklan) harus ditentukan di tag.
+
 ```html
-<amp-auto-ads
-    type="adsense"
-    data-ad-client="ca-pub-5439573510495356">
-  </amp-auto-ads>
+<amp-auto-ads type="adsense" data-ad-client="ca-pub-5439573510495356">
+</amp-auto-ads>
 ```
 
 ## Jaringan iklan yang didukung <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (eksperimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+- [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+- [DoubleClick (eksperimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Atribut
 
@@ -113,16 +108,16 @@ Contoh berikut menentukan bahwa iklan harus diposisikan tepat setelah semua elem
         "index": 2,
         "sub": {
           "selector": "P.paragraph",
-          "all": true,
-        },
+          "all": true
+        }
       },
       "pos": 4,
       "type": 1,
       "style": {
         "top_m": 5,
-        "bot_m": 10,
-      },
-    },
+        "bot_m": 10
+      }
+    }
   ]
 }
 ```
@@ -366,14 +361,14 @@ Kolom yang perlu ditentukan dalam objek konfigurasi `adConstraints`:
 
 Kolom yang perlu ditentukan dalam objek konfigurasi `subsequentMinSpacing`. Entri `subsequentMinSpacing` dapat digunakan untuk mengubah jarak yang diperlukan antara iklan tambahan berdasarkan jumlah iklan yang sudah ada di halaman itu. Sebagai contoh, perhatikan skenario berikut:
 
-* 2 iklan sudah ada di halaman
-* Kolom subsequentMinSpacing adalah:
-<code>
+- 2 iklan sudah ada di halaman
+- Kolom subsequentMinSpacing adalah:
+  <code>
   [
-    {adCount: 3, spacing: "500px"},
-    {adCount: 5, spacing: "1000px"},
+  {adCount: 3, spacing: "500px"},
+  {adCount: 5, spacing: "1000px"},
   ]
-</code>
+  </code>
 
 Pada awalnya, sudah ada 2 iklan di halaman itu, jadi tidak ada pemetaan yang cocok.
 Oleh karena itu, jarak minimum dalam objek `AdConstraints` didefaultkan ke initialMinSpacing.

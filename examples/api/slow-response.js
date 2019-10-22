@@ -39,7 +39,9 @@ async function slowJson(request, response) {
     items: [
       {
         // eslint-disable-next-line max-len
-        title: `This JSON response was delayed ${getDelay(request)} milliseconds. Hard-refresh the page (Ctrl/Cmd+Shift+R) if you didn't see the spinner.`,
+        title: `This JSON response was delayed ${getDelay(
+          request
+        )} milliseconds. Hard-refresh the page (Ctrl/Cmd+Shift+R) if you didn't see the spinner.`,
       },
     ],
   });
@@ -47,17 +49,23 @@ async function slowJson(request, response) {
 
 async function slowJsonWithItems(request, response) {
   await sleep(getDelay(request));
-  response.sendFile(path.join(__dirname, '../static/samples/json/related_products.json'));
+  response.sendFile(
+    path.join(__dirname, '../static/samples/json/related_products.json')
+  );
 }
 
 async function slowIframe(request, response) {
   await sleep(getDelay(request));
   // eslint-disable-next-line max-len
-  response.send(`This iframe was delayed ${getDelay(request)} milliseconds. Hard-refresh the page (Ctrl/Cmd+Shift+R) if you didn't see the spinner.`);
+  response.send(
+    `This iframe was delayed ${getDelay(
+      request
+    )} milliseconds. Hard-refresh the page (Ctrl/Cmd+Shift+R) if you didn't see the spinner.`
+  );
 }
 
 function sleep(duration) {
-  return new Promise((resolve) => setTimeout(resolve, duration));
+  return new Promise(resolve => setTimeout(resolve, duration));
 }
 
 module.exports = examples;

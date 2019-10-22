@@ -14,9 +14,9 @@ This tutorial will help you build an element with `amp-script` that communicates
 
 Prerequisites:
 
-*   Familiarity with JavaScript and AMP.
-*   Node.js and npm installed. You can install [Node.js here](https://nodejs.org/en/) and [npm here](https://www.npmjs.com/get-npm).
-*   A local code editor.
+- Familiarity with JavaScript and AMP.
+- Node.js and npm installed. You can install [Node.js here](https://nodejs.org/en/) and [npm here](https://www.npmjs.com/get-npm).
+- A local code editor.
 
 # Get started
 
@@ -27,6 +27,7 @@ $ git clone https://github.com/CrystalOnScript/vanilla-js-amp-script.git
 $ cd vanilla-js-amp-script/starter_code
 $ npm install
 ```
+
 Or download the [starter code here](https://github.com/CrystalOnScript/vanilla-js-amp-script/tree/master/starter_code).
 
 ## Test the app
@@ -51,8 +52,12 @@ Like nearly all AMP components, `<amp-script>` requires a script tag. Open `inde
 
 ```html
 <head>
- ...
-<script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+  ...
+  <script
+    async
+    custom-element="amp-script"
+    src="https://cdn.ampproject.org/v0/amp-script-0.1.js"
+  ></script>
   ...
 </head>
 ```
@@ -63,17 +68,13 @@ Our functionality relays and changes the DOM of our `form`. Place the `<form>` e
 
 ```html
 <amp-script src="http://localhost:8080/js/script.js">
-    <form method="post"
-    action-xhr="/form"
-    target="_top"
-    class="card">
-        . . .
-    </form>
+  <form method="post" action-xhr="/form" target="_top" class="card">
+    . . .
+  </form>
 </amp-script>
 ```
 
 The `src` attribute points to the filepath `http://localhost:8080/js/script.js`. Create a directory titled `js` in the `public` directory and add the `script.js` file.
-
 
 # Inject custom script
 
@@ -92,7 +93,7 @@ HTML elements within the `<amp-script>` tag are now accessible via standard DOM 
 Our password checker needs to capture the password input box, declare it on `script.js`.
 
 ```js
-const passwordBox = document.getElementById("passwordBox");
+const passwordBox = document.getElementById('passwordBox');
 ```
 
 Like non-AMP pages, we can test if it was captured correctly by logging elements into the console.
@@ -104,27 +105,26 @@ The script file will hold all of our password requirement logic by using [regula
 ```js
 const passwordChecks = [
   {
-    test: (password) => (password.search(/[a-z]/) >= 0),
-    elementId: "lowercase"
+    test: password => password.search(/[a-z]/) >= 0,
+    elementId: 'lowercase',
   },
   {
-    test: (password) => (password.search(/[A-Z]/) >= 0),
-    elementId: "capital"
+    test: password => password.search(/[A-Z]/) >= 0,
+    elementId: 'capital',
   },
   {
-    test: (password) => (password.search(/[0-9]/) >= 0),
-    elementId: "number"
+    test: password => password.search(/[0-9]/) >= 0,
+    elementId: 'number',
   },
   {
-    test: (password) => (password.search(/[^a-z0-9]/i) >= 0),
-    elementId: "special"
+    test: password => password.search(/[^a-z0-9]/i) >= 0,
+    elementId: 'special',
   },
   {
-    test: (password) => (password.length >= 8),
-    elementId: "eight"
-  }
-]
-
+    test: password => password.length >= 8,
+    elementId: 'eight',
+  },
+];
 ```
 
 ## Create functionality
@@ -132,22 +132,20 @@ const passwordChecks = [
 Here is where we add our functionality, by creating a function! We'll declare one called `initCheckPassword` that takes a single argument. The argument will be the value our user enters into the password input. We’ll run it through our checks above and change our defined password rules text green or red, depending on if it has been met or not.
 
 ```js
-function initCheckPassword(element) {
-
-};
+function initCheckPassword(element) {}
 ```
 
 We’ll then see if the element we pass as our argument can pass the defined checks.
 
 ```js
 function initCheckPassword(element) {
- const checkPassword = () => {
-    passwordChecks.forEach((item) => {
+  const checkPassword = () => {
+    passwordChecks.forEach(item => {
       let passed = item.test(element.value);
-       // passed/fail logic
+      // passed/fail logic
     });
   };
-};
+}
 ```
 
 User actions can trigger [mutations within the `amp-script` component ](../../../documentation/components/reference/amp-script.md?format=websites#mutations-and-user-actions), allowing `amp-script` to register [event listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventListener).
@@ -156,17 +154,17 @@ Our function will listen for two events, [`keyup`](https://developer.mozilla.org
 
 ```js
 function initCheckPassword(element) {
- const checkPassword = () => {
-    passwordChecks.forEach((item) => {
+  const checkPassword = () => {
+    passwordChecks.forEach(item => {
       let passed = item.test(element.value);
-       // passed/fail logic
+      // passed/fail logic
     });
     // is called when user types in input
-  element.addEventListener("keyup", checkPassword);
-  // is called if user pastes into input
-  element.addEventListener("change", checkPassword);
+    element.addEventListener('keyup', checkPassword);
+    // is called if user pastes into input
+    element.addEventListener('change', checkPassword);
   };
-};
+}
 ```
 
 Inside the `checkPassword` function, we’ll toggle a class that changes our text to green if the check is passed.
@@ -174,23 +172,22 @@ Inside the `checkPassword` function, we’ll toggle a class that changes our tex
 ```js
 function initCheckPassword(element) {
   const checkPassword = () => {
-    passwordChecks.forEach((item) => {
+    passwordChecks.forEach(item => {
       let passed = item.test(element.value);
       // captures element
-      let checkText = document.getElementById(item.elementId)
-       // passed/fail logic
-       checkText.classList.toggle('pass', passed)
+      let checkText = document.getElementById(item.elementId);
+      // passed/fail logic
+      checkText.classList.toggle('pass', passed);
     });
-  }
-    // is called when user types in input
-    element.addEventListener("keyup", checkPassword);
-    // is called if user pastes into input
-    element.addEventListener("change", checkPassword);
-};
+  };
+  // is called when user types in input
+  element.addEventListener('keyup', checkPassword);
+  // is called if user pastes into input
+  element.addEventListener('change', checkPassword);
+}
 ```
 
 For this to work, we will need to add a `check` class to all the items and define both `check` and `pass` within the `<style amp-custom>` tag in the page head.
-
 
 ```html
 <ul>
@@ -204,7 +201,7 @@ For this to work, we will need to add a `check` class to all the items and defin
 
 ```css
 .check {
-  color:#c11136;
+  color: #c11136;
 }
 .check.pass {
   color: #2d7b1f;

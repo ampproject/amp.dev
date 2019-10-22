@@ -31,17 +31,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
-
-
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
 The value for the syntax is a simple domain-specific language of the form:
 
 [sourcecode:javascript]
-eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 See the table below for descriptions of each part of the syntax.
 
@@ -90,13 +85,11 @@ You can listen to multiple events on an element by separating the events with a 
 
 Example: `on="submit-success:lightbox1;submit-error:lightbox2"`
 
-
 ## Multiple actions for one event <a name="multiple-actions-for-one-event"></a>
 
 You can execute multiple actions in sequence for the same event by separating the actions with a comma ','.
 
 Example: `on="tap:target1.actionA,target2.actionB"`
-
 
 ## Globally-defined events and actions <a name="globally-defined-events-and-actions"></a>
 
@@ -111,6 +104,7 @@ An element can only be shown if it was previously hidden by a `hide` or `toggleV
 For example, the following is possible in AMP:
 
 [sourcecode:html]
+
 <div id="warning-message">Warning...</div>
 
 <button on="tap:warning-message.hide">Cool, thanks!</button>
@@ -120,7 +114,8 @@ For example, the following is possible in AMP:
 
 ## Element-specific events <a name="element-specific-events"></a>
 
-### * - all elements <a name="---all-elements"></a>
+### \* - all elements <a name="---all-elements"></a>
+
 <table>
   <tr>
     <th>Event</th>
@@ -133,6 +128,7 @@ For example, the following is possible in AMP:
 </table>
 
 ### Input elements <a name="input-elements"></a>
+
 <table>
   <tr>
     <th width="20%">Event</th>
@@ -186,6 +182,7 @@ event.value</pre>
 </table>
 
 ### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
+
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -201,6 +198,7 @@ event.index</pre></td>
 </table>
 
 ### amp-lightbox <a name="amp-lightbox"></a>
+
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -220,6 +218,7 @@ event.index</pre></td>
 </table>
 
 ### amp-list <a name="amp-list"></a>
+
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -234,6 +233,7 @@ event.index</pre></td>
 </table>
 
 ### amp-selector <a name="amp-selector"></a>
+
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -248,10 +248,12 @@ event.targetOption
 
 // Array of "option" attribute values of all selected elements.
 event.selectedOptions</pre></td>
+
   </tr>
 </table>
 
 ### amp-sidebar <a name="amp-sidebar"></a>
+
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -271,6 +273,7 @@ event.selectedOptions</pre></td>
 </table>
 
 ### amp-state <a name="amp-state"></a>
+
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -285,6 +288,7 @@ event.selectedOptions</pre></td>
 </table>
 
 ### amp-video, amp-youtube <a name="amp-video-amp-youtube"></a>
+
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -304,6 +308,7 @@ event.selectedOptions</pre></td>
 </table>
 
 ### form <a name="form"></a>
+
 <table>
   <tr>
     <th width="25%">Event</th>
@@ -339,10 +344,10 @@ event.response</pre></td>
   </tr>
 </table>
 
-
 ## Element-specific actions <a name="element-specific-actions"></a>
 
-### * (all elements) <a name="-all-elements"></a>
+### \* (all elements) <a name="-all-elements"></a>
+
 <table>
   <tr>
     <th width="40%">Action</th>
@@ -388,6 +393,7 @@ event.response</pre></td>
 </table>
 
 ### amp-audio <a name="amp-audio"></a>
+
 <table>
   <tr>
     <th width="20%">Action</th>
@@ -404,6 +410,7 @@ event.response</pre></td>
 </table>
 
 ### amp-bodymovin-animation <a name="amp-bodymovin-animation"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -432,6 +439,7 @@ event.response</pre></td>
 </table>
 
 ### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -448,6 +456,7 @@ event.response</pre></td>
 </table>
 
 ### amp-image-lightbox <a name="amp-image-lightbox"></a>
+
 <table>
   <tr>
     <th width="40%">Action</th>
@@ -460,6 +469,7 @@ event.response</pre></td>
 </table>
 
 ### amp-lightbox <a name="amp-lightbox-1"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -476,6 +486,7 @@ event.response</pre></td>
 </table>
 
 ### amp-list <a name="amp-list-1"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -488,6 +499,7 @@ event.response</pre></td>
 </table>
 
 ### amp-live-list <a name="amp-live-list"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -500,6 +512,7 @@ event.response</pre></td>
 </table>
 
 ### amp-selector <a name="amp-selector-1"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -520,6 +533,7 @@ event.response</pre></td>
 </table>
 
 ### amp-sidebar <a name="amp-sidebar-1"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -540,6 +554,7 @@ event.response</pre></td>
 </table>
 
 ### amp-state <a name="amp-state-1"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -552,6 +567,7 @@ event.response</pre></td>
 </table>
 
 ### amp-user-notification <a name="amp-user-notification"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -595,6 +611,7 @@ The actions below are supported in the following AMP video elements: `amp-video`
 </table>
 
 ### form <a name="form-1"></a>
+
 <table>
   <tr>
     <th>Action</th>
@@ -673,6 +690,6 @@ The `amp-access` target is provided by the [amp-access](https://amp.dev/document
 The `amp-access` target is special for these reasons:
 
 1.  You can't give an arbitrary ID to this target. The target is always `amp-access`.
-2. The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://amp.dev/documentation/components/amp-access#configuration).
+2.  The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://amp.dev/documentation/components/amp-access#configuration).
 
 See [details](https://amp.dev/documentation/components/amp-access#login-link) about using the `amp-access` target.

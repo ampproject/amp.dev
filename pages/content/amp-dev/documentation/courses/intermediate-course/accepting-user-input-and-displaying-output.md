@@ -5,6 +5,7 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Building a Newsletter Subscription Form
 
 Studies show that every dollar spent on email marketing corresponds to several dollars more in sales. In order to keep our brand in our customers’ minds, we want to send out a regular newsletter with information about our company and deals for discounted cheese bikes and accessories. To build up our mailing list, we have to add a newsletter subscription form. Our product manager wants the form to be as follows:
@@ -80,6 +81,7 @@ Once you have finished, your page should look like this:
 
 [sourcecode:html]
 {% raw %}<h2 class="main-heading">Subscribe to our Newsletter</h2>
+
 <div class="subscribe-card-container">
     <div class="subscribe-card">
         <form method="post" action-xhr="/submit-form" target="_top" class="main-form">
@@ -119,8 +121,8 @@ For example, when given the following data:
 
 [sourcecode:json]
 {
-    "name": "Bob",
-    "job": "builder"
+"name": "Bob",
+"job": "builder"
 }
 [/sourcecode]
 
@@ -128,7 +130,7 @@ And the following template:
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
-    <p>{{name}} is an excellent {{job}}!</p>
+<p>{{name}} is an excellent {{job}}!</p>
 </template>
 {% endraw %}[/sourcecode]
 
@@ -142,10 +144,10 @@ Mustache variables can replace more than just text. You can use mustache variabl
 
 [sourcecode:json]
 {
-    "description": "Picture of a tiger",
-    "url": "tiger.jpg",
-    "width": 200,
-    "height": 200
+"description": "Picture of a tiger",
+"url": "tiger.jpg",
+"width": 200,
+"height": 200
 }
 [/sourcecode]
 
@@ -153,12 +155,12 @@ And the following template:
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
-    <amp-img alt="{{description}}"
+<amp-img alt="{{description}}"
         src="images/{{url}}"
         width="{{width}}"
         height="{{height}}"
         layout="responsive">
-    </amp-img>
+</amp-img>
 </template>
 {% endraw %}[/sourcecode]
 
@@ -180,13 +182,13 @@ The results will look like this:
 
 Now it’s time to add success and error handling to our subscription form as well. Use the [`<amp-mustache>`](../../../documentation/components/reference/amp-mustache.md) and [Success/Error Response Rendering](../../../documentation/components/reference/amp-form.md#success/error-response-rendering) documentation to add success and error messages to your subscription form that meet the following requirements:
 
-* The success message should thank the user by name for subscribing. **HINT**: The property from the server response to use in the template is `{% raw %}{{{% endraw %}name}}`.
+- The success message should thank the user by name for subscribing. **HINT**: The property from the server response to use in the template is `{% raw %}{{{% endraw %}name}}`.
 
-* The error message should simply tell the user there was an error submitting their response
+- The error message should simply tell the user there was an error submitting their response
 
 Recommended style guidelines:
 
-* Wrap both messages in a paragraph element with the class `form-submit-response`
+- Wrap both messages in a paragraph element with the class `form-submit-response`
 
 Once you have finished, the result should look like this:
 
@@ -196,33 +198,34 @@ Once you have finished, the result should look like this:
 
 [sourcecode:html]
 {% raw %}<div class="subscribe-card-container">
-    <div class="subscribe-card">
-        <form method="post" class="main-form" action-xhr="/submit-form" target="_top">
-            <div class="input">
-                <input type="text" name="name" id="form-name" required>
-                <label for="form-name">Name:</label>
-            </div>
-            <div class="input">
-                <input type="email" name="email" id="form-email" required>
-                <label for="form-email">Email:</label>
-            </div>
-            <input type="submit" value="Subscribe" class="btn">
-            <div submit-success>
-                <template type="amp-mustache">
-                    <p class="form-submit-response">
-                        Success! Thanks {{name}} for subscribing!
-                    </p>
-                </template>
-            </div>
-            <div submit-error>
-                <template type="amp-mustache">
-                    <p class="form-submit-response">
-                        Oops! Sorry, there was an error.
-                    </p>
-                </template>
-            </div>
-        </form>
-    </div>
+<div class="subscribe-card">
+<form method="post" class="main-form" action-xhr="/submit-form" target="_top">
+<div class="input">
+<input type="text" name="name" id="form-name" required>
+<label for="form-name">Name:</label>
+</div>
+<div class="input">
+<input type="email" name="email" id="form-email" required>
+<label for="form-email">Email:</label>
+</div>
+<input type="submit" value="Subscribe" class="btn">
+<div submit-success>
+<template type="amp-mustache">
+<p class="form-submit-response">
+Success! Thanks {{name}} for subscribing!
+</p>
+</template>
+</div>
+<div submit-error>
+<template type="amp-mustache">
+<p class="form-submit-response">
+Oops! Sorry, there was an error.
+</p>
+</template>
+</div>
+</form>
+</div>
+
 </div>
 {% endraw %}[/sourcecode]
 
@@ -230,9 +233,9 @@ Remember to include the `<amp-mustache>` library in the `<head>`:
 
 [sourcecode:html]
 {% raw %}<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-{% endraw %}[/sourcecode]
-[/filter]
+{% endraw %}[/sourcecode][/filter]
 [filter level="advanced"]
+
 ## Building a Newsletter Subscription Form
 
 In order to keep our brand in our customers' minds, we want to send out a regular newsletter. To build up our mailing list, we have to add a newsletter subscription form. Our product manager wants the form to be as follows:
@@ -304,6 +307,7 @@ Once you have finished, your page should look like this:
 
 [sourcecode:html]
 {% raw %}<h2 class="main-heading">Subscribe to our Newsletter</h2>
+
 <div class="subscribe-card-container">
     <div class="subscribe-card">
         <form method="post" action-xhr="/submit-form" target="_top" class="main-form">
@@ -339,8 +343,8 @@ For example, when given the following data:
 
 [sourcecode:json]
 {
-    "name": "Bob",
-    "job": "builder"
+"name": "Bob",
+"job": "builder"
 }
 [/sourcecode]
 
@@ -348,7 +352,7 @@ And the following template:
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
-    <p>{{name}} is an excellent {{job}}!</p>
+<p>{{name}} is an excellent {{job}}!</p>
 </template>
 {% endraw %}[/sourcecode]
 
@@ -362,10 +366,10 @@ Mustache variables can replace more than just text. You can use mustache variabl
 
 [sourcecode:json]
 {
-    "description": "Picture of a tiger",
-    "url": "tiger.jpg",
-    "width": 200,
-    "height": 200
+"description": "Picture of a tiger",
+"url": "tiger.jpg",
+"width": 200,
+"height": 200
 }
 [/sourcecode]
 
@@ -373,12 +377,12 @@ And the following template:
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
-    <amp-img alt="{{description}}"
+<amp-img alt="{{description}}"
         src="images/{{url}}"
         width="{{width}}"
         height="{{height}}"
         layout="responsive">
-    </amp-img>
+</amp-img>
 </template>
 {% endraw %}[/sourcecode]
 
@@ -400,13 +404,13 @@ The results will look like this:
 
 Now it's time to add success and error handling to our subscription form as well. Use the [`<amp-mustache>`]({{g.doc('/content/amp-dev/documentation/components/reference/amp-mustache.md', locale=doc.locale).url.path}}) and [Success/Error Response Rendering]({{g.doc('/content/amp-dev/documentation/components/reference/amp-form.md', locale=doc.locale).url.path}}#success/error-response-rendering) documentation to add success and error messages to your subscription form that meet the following requirements:
 
-* The success message should thank the user by name for subscribing. **HINT**: The property from the server response to use in the template is `{% raw %}{{{% endraw %}name}}`.
+- The success message should thank the user by name for subscribing. **HINT**: The property from the server response to use in the template is `{% raw %}{{{% endraw %}name}}`.
 
-* The error message should simply tell the user there was an error submitting their response
+- The error message should simply tell the user there was an error submitting their response
 
 Recommended style guidelines:
 
-* Wrap both messages in a paragraph element with the class `form-submit-response`
+- Wrap both messages in a paragraph element with the class `form-submit-response`
 
 Once you have finished, the result should look like this:
 
@@ -416,33 +420,34 @@ Once you have finished, the result should look like this:
 
 [sourcecode:html]
 {% raw %}<div class="subscribe-card-container">
-    <div class="subscribe-card">
-        <form method="post" class="main-form" action-xhr="/submit-form" target="_top">
-            <div class="input">
-                <input type="text" name="name" id="form-name" required>
-                <label for="form-name">Name:</label>
-            </div>
-            <div class="input">
-                <input type="email" name="email" id="form-email" required>
-                <label for="form-email">Email:</label>
-            </div>
-            <input type="submit" value="Subscribe" class="btn">
-            <div submit-success>
-                <template type="amp-mustache">
-                    <p class="form-submit-response">
-                        Success! Thanks {{name}} for subscribing!
-                    </p>
-                </template>
-            </div>
-            <div submit-error>
-                <template type="amp-mustache">
-                    <p class="form-submit-response">
-                        Oops! Sorry, there was an error.
-                    </p>
-                </template>
-            </div>
-        </form>
-    </div>
+<div class="subscribe-card">
+<form method="post" class="main-form" action-xhr="/submit-form" target="_top">
+<div class="input">
+<input type="text" name="name" id="form-name" required>
+<label for="form-name">Name:</label>
+</div>
+<div class="input">
+<input type="email" name="email" id="form-email" required>
+<label for="form-email">Email:</label>
+</div>
+<input type="submit" value="Subscribe" class="btn">
+<div submit-success>
+<template type="amp-mustache">
+<p class="form-submit-response">
+Success! Thanks {{name}} for subscribing!
+</p>
+</template>
+</div>
+<div submit-error>
+<template type="amp-mustache">
+<p class="form-submit-response">
+Oops! Sorry, there was an error.
+</p>
+</template>
+</div>
+</form>
+</div>
+
 </div>
 {% endraw %}[/sourcecode]
 
@@ -450,5 +455,4 @@ Remember to include the `<amp-mustache>` library in the `<head>`:
 
 [sourcecode:html]
 {% raw %}<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-{% endraw %}[/sourcecode]
-[/filter]
+{% endraw %}[/sourcecode][/filter]

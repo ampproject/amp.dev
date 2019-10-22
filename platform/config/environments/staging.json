@@ -1,20 +1,20 @@
 {
-	"name": "staging",
-	"hosts": {
-		"pages": {
-			"scheme": "https",
-			"host": "amp-dev-staging.appspot.com",
-			"port": ""
-		},
-		"api": {
-			"scheme": "https",
-			"host": "api-dot-amp-dev-staging.appspot.com",
-			"port": ""
-		},
-		"platform": {
-			"scheme": "https",
-			"host": "amp-dev-staging.appspot.com",
-			"port": ""
+  "name": "staging",
+  "hosts": {
+    "pages": {
+      "scheme": "https",
+      "host": "amp-dev-staging.appspot.com",
+      "port": ""
+    },
+    "api": {
+      "scheme": "https",
+      "host": "api-dot-amp-dev-staging.appspot.com",
+      "port": ""
+    },
+    "platform": {
+      "scheme": "https",
+      "host": "amp-dev-staging.appspot.com",
+      "port": ""
     },
     "playground": {
       "scheme": "https",
@@ -45,5 +45,5 @@
       "host": "amp-dev-sxg.appspot.com",
       "port": ""
     }
-	}
+  }
 }

@@ -13,9 +13,9 @@ Triggering CSS animations [relies on adding and removing classes](https://develo
 
 You can define CSS in AMP in the follow ways:
 
-*   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit.
-*   Inline styles. Detract from the 50,000 byte `<style amp-custom>` limit.
-*   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+- Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit.
+- Inline styles. Detract from the 50,000 byte `<style amp-custom>` limit.
+- Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
 
 To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
 
@@ -60,6 +60,7 @@ You can toggle a class on the same element you'd like users to interact with, su
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
 
 ```
+
 The `toggleClass` action can apply to other elements as well and toggle between two classes by adding the `force` attribute.
 
 ```
@@ -136,6 +137,7 @@ Then pair each class with a state:
 </amp-state>
 ...
 ```
+
 And link the element with the classes:
 
 ```

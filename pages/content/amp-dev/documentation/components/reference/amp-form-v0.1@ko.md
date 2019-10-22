@@ -26,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td width="40%"><strong>설명</strong></td>
@@ -47,7 +45,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 # 동작 <a name="behavior"></a>
 
 `amp-form` 확장 프로그램을 사용하면 AMP 문서에서 입력 필드를 제출하기 위한 양식(`<form>`)을 만들 수 있습니다. `amp-form` 확장 프로그램에서는 브라우저에서 누락된 일부 동작에 [polyfill](#polyfills)도 제공합니다.
@@ -61,9 +58,10 @@ limitations under the License.
 다음은 기본 양식의 예입니다.
 
 [example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+
 ```html
 <form method="post"
-    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}
     target="_top"{% endif %}>
     <fieldset>
       <label>
@@ -95,6 +93,7 @@ limitations under the License.
     </div>
   </form>
 ```
+
 [/example]
 
 # 속성 <a name="attributes"></a>
@@ -107,8 +106,8 @@ limitations under the License.
 
 양식 입력을 처리할 서버 엔드포인트를 지정합니다. 값은 `https` URL(절대 또는 상대)이어야 하며 CDN의 링크가 아니어야 합니다.
 
-* `method=GET`의 경우: 이 속성 또는 [`action-xhr`](#action-xhr)을 사용하세요.
-* `method=POST`의 경우: [`action-xhr`](#action-xhr) 속성을 사용하세요.
+- `method=GET`의 경우: 이 속성 또는 [`action-xhr`](#action-xhr)을 사용하세요.
+- `method=POST`의 경우: [`action-xhr`](#action-xhr) 속성을 사용하세요.
 
 [tip type="note"]
 `target` 및 `action` 속성은 비xhr GET 요청에만 사용하세요. AMP 런타임에서는 `action-xhr`을 사용하여 요청하고 `action`과 `target`을 무시합니다. `action-xhr`이 제공되지 않은 경우 AMP에서 `action` 엔드포인트에 GET 요청을 시행하고 `target`을 사용하여 새 창을 엽니다(`_blank`인 경우). `amp-form` 확장 프로그램을 로드하지 못하는 경우 AMP 런타임에서 `action` 및 `target`을 사용하도록 대체할 수 있습니다.
@@ -142,14 +141,14 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 
 **허용됨**:
 
-* 기타 양식 관련 요소. 예: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` 등
-* `<form method=POST action-xhr>` 내부의 `<input type=password>` 및 `<input type=file>`
-* [`amp-selector`](amp-selector.md)
+- 기타 양식 관련 요소. 예: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` 등
+- `<form method=POST action-xhr>` 내부의 `<input type=password>` 및 `<input type=file>`
+- [`amp-selector`](amp-selector.md)
 
 **허용되지 않음**:
 
-* `<input type=button>`, `<input type=image>`
-* 입력에 있는 대부분의 양식 관련 속성. 예: `form`, `formaction`, `formtarget`, `formmethod` 등
+- `<input type=button>`, `<input type=image>`
+- 입력에 있는 대부분의 양식 관련 속성. 예: `form`, `formaction`, `formtarget`, `formmethod` 등
 
 해당 규칙 중 일부를 완화하는 일은 나중에 다시 고려해 볼 수 있습니다. 필요한 경우 [Google에 알리고](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests) 사용 사례를 제공해 주세요.
 
@@ -159,38 +158,37 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 
 `amp-form` 요소에서는 다음 작업을 노출합니다.
 
-| 작업 | 설명 |
-|--------|-------------|
+| 작업     | 설명                                                                                                            |
+| -------- | --------------------------------------------------------------------------------------------------------------- |
 | `submit` | 링크 탭하기 또는 [입력 변경 시 양식 제출](#input-events)과 같은 특정 작업에서 양식 제출을 트리거할 수 있습니다. |
-| `clear` | 양식의 각 입력에 있는 값을 비웁니다. 그러면 사용자가 다시 양식을 빠르게 채울 수 있습니다. |
+| `clear`  | 양식의 각 입력에 있는 값을 비웁니다. 그러면 사용자가 다시 양식을 빠르게 채울 수 있습니다.                       |
 
-[tip type="read-on"]
-[AMP의 작업 및 이벤트](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)에 관해 자세히 알아보세요.
+[tip type="read-on"][amp의 작업 및 이벤트](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)에 관해 자세히 알아보세요.
 [/tip]
 
 # 이벤트 <a name="events"></a>
 
 `amp-form`에서는 다음 이벤트를 노출합니다.
 
-| 이벤트 | 실행 조건 |
-|-------|-------------|
-| `submit` | 양식이 제출되었으나 아직 완료되기 전입니다. |
-| `submit-success` | 양식 제출이 완료되었으며 성공 응답이 수신됩니다. |
-| `submit-error` | 양식 제출이 완료되었으며 오류 응답이 수신됩니다. |
-| `verify` | 비동기 확인이 시작됩니다. |
-| `verify-error` | 비동기 확인이 완료되었으며 오류 응답이 수신됩니다. |
-| `valid` | 양식의 유효성 검사 상태가 "유효함"으로 변경됩니다(관련 [보고 전략](#reporting-strategies)에 따름). |
-| `invalid` | 양식의 유효성 검사 상태가 "잘못됨"으로 변경됩니다(관련 [보고 전략](#reporting-strategies)에 따름). |
+| 이벤트           | 실행 조건                                                                                          |
+| ---------------- | -------------------------------------------------------------------------------------------------- |
+| `submit`         | 양식이 제출되었으나 아직 완료되기 전입니다.                                                        |
+| `submit-success` | 양식 제출이 완료되었으며 성공 응답이 수신됩니다.                                                   |
+| `submit-error`   | 양식 제출이 완료되었으며 오류 응답이 수신됩니다.                                                   |
+| `verify`         | 비동기 확인이 시작됩니다.                                                                          |
+| `verify-error`   | 비동기 확인이 완료되었으며 오류 응답이 수신됩니다.                                                 |
+| `valid`          | 양식의 유효성 검사 상태가 "유효함"으로 변경됩니다(관련 [보고 전략](#reporting-strategies)에 따름). |
+| `invalid`        | 양식의 유효성 검사 상태가 "잘못됨"으로 변경됩니다(관련 [보고 전략](#reporting-strategies)에 따름). |
 
 해당 이벤트는 [`on` 속성](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on)을 통해 사용할 수 있습니다.
 
 예를 들어 다음은 `submit-success` 및 `submit-error` 이벤트를 모두 수신하고 이벤트에 따라 서로 다른 라이트박스를 표시합니다.
 
 ```html
-
-<form ...="" on="submit-success:success-lightbox;submit-error:error-lightbox">
-</form>
-
+<form
+  ...=""
+  on="submit-success:success-lightbox;submit-error:error-lightbox"
+></form>
 ```
 
 [여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
@@ -202,10 +200,11 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 예를 들어, 일반적인 사용 사례는 입력 변경 시 양식을 제출하는 것입니다(설문조사에 응답하기 위해 라디오 버튼 선택, 페이지를 번역하기 위해 `select` 입력에서 언어 선택 등).
 
 [example preview="inline" playground="true" imports="amp-form"]
+
 ```html
 <form id="myform"
     method="post"
-    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    action-xhr="https://example.com/myform"{% if not format=='email'%}
     target="_blank"{% endif %}>
     <fieldset>
       <label>
@@ -223,6 +222,7 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
     </fieldset>
   </form>
 ```
+
 [/example]
 
 [여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
@@ -231,10 +231,10 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 
 `amp-form` 확장 프로그램에서 사용자가 [amp-analytics](amp-analytics.md) 구성에서 추적할 수 있는 다음과 같은 이벤트를 트리거합니다.
 
-| 이벤트                     | 실행 조건                        |
-|---------------------------|-----------------------------------|
-| `amp-form-submit`         | 양식 요청이 시작됩니다.      |
-| `amp-form-submit-success` | 성공 응답이 수신됩니다(즉, 응답의 상태가 `2XX`인 경우). |
+| 이벤트                    | 실행 조건                                                        |
+| ------------------------- | ---------------------------------------------------------------- |
+| `amp-form-submit`         | 양식 요청이 시작됩니다.                                          |
+| `amp-form-submit-success` | 성공 응답이 수신됩니다(즉, 응답의 상태가 `2XX`인 경우).          |
 | `amp-form-submit-error`   | 실패 응답이 수신되었습니다(즉, 응답의 상태가 `2XX`가 아닌 경우). |
 
 다음 예에서와 같이 해당 이벤트를 보내도록 애널리틱스를 구성할 수 있습니다.
@@ -277,32 +277,32 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 예를 들어 다음 양식에는 하나의 필드가 있습니다.
 
 ```html
-
 <form id="submit_form" action-xhr="/comment" method="POST">
-  <input type="text" name="comment">
-    <input type="submit" value="댓글">
-    </form>
+  <input type="text" name="comment" />
+  <input type="submit" value="댓글" />
+</form>
 ```
+
 `amp-form-submit`, `amp-form-submit-success` 또는 `amp-form-submit-error` 이벤트가 실행되면 양식에 지정된 값을 포함하는 다음 변수를 생성합니다.
 
-  * `formId`
-  * `formFields[comment]`
+- `formId`
+- `formFields[comment]`
 
 # 성공/오류 응답 렌더링 <a name="successerror-response-rendering"></a>
 
 [확장 템플릿](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#templates)(예: [amp-mustache](amp-mustache.md))을 사용하여 양식에서 성공 또는 오류 응답을 렌더링하거나 [amp-bind](amp-bind.md) 및 다음 응답 속성을 사용하여 데이터 결합을 통해 성공 응답을 렌더링할 수 있습니다.
 
-| 응답 속성 | 설명 |
-|-----------|---------------------|
-| `submit-success` | 성공 응답이 수신되어(즉, 상태가 `2XX`) 성공 메시지를 표시하는 데 사용할 수 있습니다. |
-| `submit-error` | 실패 응답이 수신되어(즉, 상태가 `2XX`가 아님) 제출 오류를 표시하는 데 사용할 수 있습니다.  |
-| `submitting` | 양식을 제출할 때 메시지를 표시하는 데 사용할 수 있습니다. 이 속성의 템플릿은 표시를 위해 양식의 입력 필드에 액세스할 수 있습니다. `submitting` 속성 사용 방법은 [아래의 전체 양식 예](#example-submitting)를 참조하세요. |
+| 응답 속성        | 설명                                                                                                                                                                                                                     |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `submit-success` | 성공 응답이 수신되어(즉, 상태가 `2XX`) 성공 메시지를 표시하는 데 사용할 수 있습니다.                                                                                                                                     |
+| `submit-error`   | 실패 응답이 수신되어(즉, 상태가 `2XX`가 아님) 제출 오류를 표시하는 데 사용할 수 있습니다.                                                                                                                                |
+| `submitting`     | 양식을 제출할 때 메시지를 표시하는 데 사용할 수 있습니다. 이 속성의 템플릿은 표시를 위해 양식의 입력 필드에 액세스할 수 있습니다. `submitting` 속성 사용 방법은 [아래의 전체 양식 예](#example-submitting)를 참조하세요. |
 
 # 템플릿을 사용하여 응답 렌더링하기 <a name="to-render-responses-with-templating"></a>
 
-* `<form>` 요소의 *모든 직접 하위 요소*에 응답 속성을 적용합니다*.
-* `<template></template>` 또는 `<script type="text/plain"></script>` 태그를 통해 템플릿을 내부에 포함하거나 `template="id_of_other_template"` 속성으로 템플릿을 참조하여 하위 요소에 응답을 렌더링합니다.
-* 응답의 유효한 JSON 객체를 `submit-success` 및 `submit-error`에 제공합니다. 성공과 오류 응답에는 모두 `Content-Type: application/json` 헤더가 있어야 합니다.
+- `<form>` 요소의 *모든 직접 하위 요소*에 응답 속성을 적용합니다\*.
+- `<template></template>` 또는 `<script type="text/plain"></script>` 태그를 통해 템플릿을 내부에 포함하거나 `template="id_of_other_template"` 속성으로 템플릿을 참조하여 하위 요소에 응답을 렌더링합니다.
+- 응답의 유효한 JSON 객체를 `submit-success` 및 `submit-error`에 제공합니다. 성공과 오류 응답에는 모두 `Content-Type: application/json` 헤더가 있어야 합니다.
 
 <a id="example-submitting"></a>
 
@@ -311,15 +311,15 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 다음 예에서 응답은 양식 내부의 인라인 템플릿에 렌더링됩니다.
 
 ```html
-{% raw %}<form ...>
+{% raw %}
+<form ...>
   <fieldset>
-    <input type="text" name="firstName">
-      ...
-    </fieldset>
-    <div verify-error="">
-      <template type="amp-mustache">
-        양식에 실수가 있습니다.
-        {{#verifyErrors}}{{message}}{{/verifyErrors}}
+    <input type="text" name="firstName" />
+    ...
+  </fieldset>
+  <div verify-error="">
+    <template type="amp-mustache">
+      양식에 실수가 있습니다. {{#verifyErrors}}{{message}}{{/verifyErrors}}
     </template>
   </div>
   <div submitting="">
@@ -329,7 +329,9 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
   </div>
   <div submit-success="">
     <template type="amp-mustache">
-      성공 {{name}}님, 구독해 주셔서 감사합니다. {{email}} 이메일에서 구독을 확인해 주세요. 그러면 {{#interests}}<b>{{name}}</b>{{/interests}}에 관한 주간 기사를 받아 보실 수 있습니다.
+      성공 {{name}}님, 구독해 주셔서 감사합니다. {{email}} 이메일에서 구독을
+      확인해 주세요. 그러면 {{#interests}}<b>{{name}}</b>{{/interests}}에 관한
+      주간 기사를 받아 보실 수 있습니다.
     </template>
   </div>
   <div submit-error="">
@@ -348,12 +350,17 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 ```json
 {
   "name": "Jane Miller",
-  "interests": [{"name": "Basketball"}, {"name": "Swimming"}, {"name": "Reading"}],
+  "interests": [
+    {"name": "Basketball"},
+    {"name": "Swimming"},
+    {"name": "Reading"}
+  ],
   "email": "email@example.com"
 }
 ```
 
 오류 시:
+
 ```json
 {
   "name": "Jane Miller",
@@ -385,28 +392,27 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 
 # 데이터 결합을 사용하여 성공 응답 렌더링하기 <a name="to-render-a-successful-response-with-data-binding"></a>
 
-* [on 속성](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)을 사용하여 양식 *submit-success* 속성을 [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29)로 결합합니다.
-* `event` 속성을 사용하여 응답 데이터를 캡처합니다.
-* 원하는 요소에 상태 속성을 추가하여 양식 응답을 결합합니다.
+- [on 속성](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)을 사용하여 양식 _submit-success_ 속성을 [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29)로 결합합니다.
+- `event` 속성을 사용하여 응답 데이터를 캡처합니다.
+- 원하는 요소에 상태 속성을 추가하여 양식 응답을 결합합니다.
 
 다음 예에서는 [`amp-bind`](amp-bind.md)를 사용하는 양식 `submit-success` 응답을 보여줍니다.
+
 ```html
-<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
-<form method="post"
-      action-xhr="/components/amp-form/submit-form-input-text-xhr"
-      target="_ top"
-      on="submit-success: AMP.setState({'subscribe': event.response.name})">
+<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">
+  Subscribe to our newsletter
+</p>
+<form
+  method="post"
+  action-xhr="/components/amp-form/submit-form-input-text-xhr"
+  target="_ top"
+  on="submit-success: AMP.setState({'subscribe': event.response.name})"
+>
   <div>
-    <input type="text"
-        name="name"
-        placeholder="Name..."
-        required>
-    <input type="email"
-      name="email"
-      placeholder="Email..."
-      required>
+    <input type="text" name="name" placeholder="Name..." required />
+    <input type="email" name="email" placeholder="Email..." required />
   </div>
-  <input type="submit" value="Subscribe">
+  <input type="submit" value="Subscribe" />
 </form>
 ```
 
@@ -418,21 +424,24 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
   "email": "email@example.com"
 }
 ```
+
 Then `amp-bind` updates the `<p>` element's text to match the `subscibe` state:
 
 ```html
 ...
-  <p [text]="'Thanks, ' + subscribe +'!  You have successfully subscribed.'">Thanks Jane Miller!  You have successfully subscribed.</p>
+<p [text]="'Thanks, ' + subscribe +'!  You have successfully subscribed.'">
+  Thanks Jane Miller! You have successfully subscribed.
+</p>
 ...
 ```
 
 # 제출 후 리디렉션 <a name="redirecting-after-a-submission"></a>
 
-`AMP-Redirect-To` 응답 헤더를 설정하고 리디렉션 URL을 지정하여 성공적으로 양식을 제출한 후 사용자를 새 페이지로 리디렉션할 수 있습니다. 리디렉션 URL은 HTTPS URL이어야 합니다. 그렇지 않으면 AMP에서 오류가 발생하고 리디렉션이 발생하지 않습니다.  HTTP 응답 헤더는 서버를 통해 구성됩니다.
+`AMP-Redirect-To` 응답 헤더를 설정하고 리디렉션 URL을 지정하여 성공적으로 양식을 제출한 후 사용자를 새 페이지로 리디렉션할 수 있습니다. 리디렉션 URL은 HTTPS URL이어야 합니다. 그렇지 않으면 AMP에서 오류가 발생하고 리디렉션이 발생하지 않습니다. HTTP 응답 헤더는 서버를 통해 구성됩니다.
 
-허용된 헤더 목록에 `AMP-Redirect-To`가 포함되도록 `Access-Control-Expose-Headers` 응답 헤더를 업데이트하세요.  [AMP의 CORS 보안](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)에서 이 헤더에 관해 자세히 알아보세요.
+허용된 헤더 목록에 `AMP-Redirect-To`가 포함되도록 `Access-Control-Expose-Headers` 응답 헤더를 업데이트하세요. [AMP의 CORS 보안](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)에서 이 헤더에 관해 자세히 알아보세요.
 
-*응답 헤더 예:*
+_응답 헤더 예:_
 
 ```text
 AMP-Redirect-To: https://example.com/forms/thank-you
@@ -455,10 +464,11 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 예를 들면 다음과 같습니다.
 
 [example preview="inline" playground="true" imports="amp-form"]
+
 ```html
 <form method="post"
     action-xhr="https://example.com/subscribe"
-    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}
     target="_blank"{% endif %}>
     <fieldset>
       <label>
@@ -493,6 +503,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
     </fieldset>
   </form>
 ```
+
 [/example]
 
 더 많은 예는 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)을 참조하세요.
@@ -517,7 +528,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 
 # 진행하면서 오류 표시 <a name="as-you-go"></a>
 
-`as-you-go` 보고 옵션을 사용하면 사용자가 입력과 상호 작용하면서 유효성 검사 메시지를 볼 수 있습니다. 예를 들어 잘못된 이메일 주소를 입력하면 바로 오류가 표시됩니다.  값을 정정하고 나면 오류가 사라집니다.
+`as-you-go` 보고 옵션을 사용하면 사용자가 입력과 상호 작용하면서 유효성 검사 메시지를 볼 수 있습니다. 예를 들어 잘못된 이메일 주소를 입력하면 바로 오류가 표시됩니다. 값을 정정하고 나면 오류가 사라집니다.
 
 # 상호 작용 및 제출 <a name="interact-and-submit"></a>
 
@@ -528,6 +539,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값이 특정 패턴과 일치)만을 기반으로 하여 의견을 제공합니다. `amp-form` 확인을 사용하면 HTML5 유효성 검사 자체만으로는 제공하지 못하는 의견을 사용자에게 제공할 수 있습니다. 예를 들어 양식에서 확인을 사용하여 이메일 주소가 이미 등록되었는지 확인할 수 있습니다. 또 다른 사용 사례로 구/군/시 필드와 우편번호 필드가 서로 일치하는지 확인할 수 있습니다.
 
 예를 들어 다음과 같습니다.
+
 ```html
 {% raw %}<h4>확인 예제</h4>
 <form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
@@ -574,6 +586,7 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 이로 인해 동일한 엔드포인트가 제출과 확인 모두에 사용되는 경우 서버에서 확인 요청을 저장하지 않는다는 사실을 알게 되므로 유용합니다.
 
 다음은 확인에서 오류 응답이 표시되는 방식입니다.
+
 ```json
 {
   "verifyErrors": [
@@ -594,15 +607,22 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 `data-amp-replace`에서 사용한 변수의 공백으로 구분된 문자열을 지정하여 각 입력에서 각 대체에 사용할 변수를 제공해야 합니다(아래 예 참조). AMP에서는 명시적으로 지정되지 않은 변수는 대체하지 않습니다.
 
 다음은 제출 전후의 입력 상태 예입니다(대체 애널리틱스가 아니라 대체 변수의 플랫폼 구문을 사용해야 한다는 점에 유의).
+
 ```html
 <!-- Initial Load -->
 <form ...>
-  <input name="canonicalUrl" type="hidden"
-        value="The canonical URL is: CANONICAL_URL - RANDOM - CANONICAL_HOSTNAME"
-        data-amp-replace="CANONICAL_URL RANDOM">
-  <input name="clientId" type="hidden"
-        value="CLIENT_ID(myid)"
-        data-amp-replace="CLIENT_ID">
+  <input
+    name="canonicalUrl"
+    type="hidden"
+    value="The canonical URL is: CANONICAL_URL - RANDOM - CANONICAL_HOSTNAME"
+    data-amp-replace="CANONICAL_URL RANDOM"
+  />
+  <input
+    name="clientId"
+    type="hidden"
+    value="CLIENT_ID(myid)"
+    data-amp-replace="CLIENT_ID"
+  />
   ...
 </form>
 ```
@@ -612,13 +632,19 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 ```html
 <!-- User submits the form, variables values are resolved into fields' value -->
 <form ...>
-  <input name="canonicalUrl" type="hidden"
-        value="The canonical URL is: https://example.com/hello - 0.242513759125 - CANONICAL_HOSTNAME"
-        data-amp-replace="CANONICAL_URL RANDOM">
-  <input name="clientId" type="hidden"
-        value="amp:asqar893yfaiufhbas9g879ab9cha0cja0sga87scgas9ocnas0ch"
-        data-amp-replace="CLIENT_ID">
-    ...
+  <input
+    name="canonicalUrl"
+    type="hidden"
+    value="The canonical URL is: https://example.com/hello - 0.242513759125 - CANONICAL_HOSTNAME"
+    data-amp-replace="CANONICAL_URL RANDOM"
+  />
+  <input
+    name="clientId"
+    type="hidden"
+    value="amp:asqar893yfaiufhbas9g879ab9cha0cja0sga87scgas9ocnas0ch"
+    data-amp-replace="CLIENT_ID"
+  />
+  ...
 </form>
 ```
 
@@ -660,17 +686,17 @@ AMP 양식은 `<textarea>` 요소에 `autoexpand` 속성을 제공합니다. 그
 
 다음 클래스는 양식 제출 상태를 나타내는 데 사용할 수 있습니다.
 
-* `.amp-form-initial`
-* `.amp-form-verify`
-* `.amp-form-verify-error`
-* `.amp-form-submitting`
-* `.amp-form-submit-success`
-* `.amp-form-submit-error`
+- `.amp-form-initial`
+- `.amp-form-verify`
+- `.amp-form-verify-error`
+- `.amp-form-submitting`
+- `.amp-form-submit-success`
+- `.amp-form-submit-error`
 
 다음 클래스는 [사용자 상호작용 가상 클래스의 polyfill](#user-interaction-pseudo-classes)입니다.
 
-* `.user-valid`
-* `.user-invalid`
+- `.user-valid`
+- `.user-invalid`
 
 게시자가 이 클래스를 사용하여 사용자의 작업에 응답하도록 입력과 필드 세트의 스타일을 지정할 수 있습니다(예: 사용자가 흐리게 표시한 후 잘못된 입력을 빨간색 테두리로 강조표시).
 
@@ -688,8 +714,8 @@ AMP 페이지에서 사용할 수 있는 사전에 스타일이 지정된 응답
 
 사용자의 입력을 받을 때 일반적으로 다음과 같은 점에 유의하세요.
 
-* 상태 변경 요청에는 POST만 사용합니다.
-* 탐색 용도로만 비XHR GET을 사용합니다(예: 검색).
-    * 비XHR GET 요청에서 정확한 원본/헤더를 수신하지 못하며 백엔드에서 위의 메커니즘을 사용하여 XSRF를 막을 수 없습니다.
-    * 일반적으로 탐색 또는 정보 검색 용도로만 XHR/비XHR GET 요청을 사용합니다.</li>
-* 비XHR POST 요청은 AMP 문서에서 허용되지 않습니다. 브라우저 전반의 요청에서 `Origin` 헤더 설정이 일치하지 않기 때문입니다. 또한 XSRF를 막기 위해 비XHR POST 요청 지원이 복잡해지는 문제가 발생합니다. AMP팀에서 이 요구사항을 나중에 재검토할 수 있습니다. 비XHR POST 요청 지원이 필요하다고 판단되면 문제를 신고해 주세요.
+- 상태 변경 요청에는 POST만 사용합니다.
+- 탐색 용도로만 비XHR GET을 사용합니다(예: 검색).
+  - 비XHR GET 요청에서 정확한 원본/헤더를 수신하지 못하며 백엔드에서 위의 메커니즘을 사용하여 XSRF를 막을 수 없습니다.
+  - 일반적으로 탐색 또는 정보 검색 용도로만 XHR/비XHR GET 요청을 사용합니다.</li>
+- 비XHR POST 요청은 AMP 문서에서 허용되지 않습니다. 브라우저 전반의 요청에서 `Origin` 헤더 설정이 일치하지 않기 때문입니다. 또한 XSRF를 막기 위해 비XHR POST 요청 지원이 복잡해지는 문제가 발생합니다. AMP팀에서 이 요구사항을 나중에 재검토할 수 있습니다. 비XHR POST 요청 지원이 필요하다고 판단되면 문제를 신고해 주세요.

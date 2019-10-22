@@ -7,7 +7,7 @@ $sitemap:
 
 Start
 
-[example  preview="inline" playground="true" imports="amp-accordion:0.1"]
+[example preview="inline" playground="true" imports="amp-accordion:0.1"]
 
 ```html
 <amp-accordion class="sample">

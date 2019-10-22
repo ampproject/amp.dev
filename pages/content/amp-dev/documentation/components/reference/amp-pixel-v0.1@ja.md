@@ -2,14 +2,12 @@
 $title: amp-pixel
 $category@: ads-analytics
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: ページビューをカウントするトラッキング ピクセルです。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,9 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
-
 
 <table>
   <tr>
@@ -52,11 +47,10 @@ teaser:
 以下の基本的な例の場合、`amp-pixel` は、指定 URL に対してシンプルな GET リクエストを発行し、結果を無視します。
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/tracker/foo" layout="nodisplay"></amp-pixel>
 ```
 
-  [tip type="note"]
+[tip type="note"]
 アナリティクス リクエストのリファラー ヘッダー内の AMP URL を処理する際は、`usqp` パラメータを削除するか無視します。このパラメータは、Google が Google AMP キャッシュのテストをトリガーする際に使用されます。
 [/tip]
 
@@ -71,9 +65,11 @@ teaser:
 この属性は、`<img>` の `referrerpolicy` 属性と似ていますが、使用できる値は `no-referrer` だけに限られています。`referrerpolicy=no-referrer` が指定されている場合、HTTP リクエストから `referrer` ヘッダーが削除されます。
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"
-    referrerpolicy="no-referrer"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/tracker/foo"
+  layout="nodisplay"
+  referrerpolicy="no-referrer"
+></amp-pixel>
 ```
 
 ##### allow-ssr-img（省略可） <a name="allow-ssr-img-optional"></a>
@@ -91,8 +87,7 @@ AMP4ADS クリエイティブ内で使用されるこの属性は、検証後の
 以下の例の場合、インプレッションごとに RANDOM 値がランダムに生成され、`https://foo.com/pixel?0.8390278471201` といった URL に対してリクエストが作成されます。
 
 ```html
-<amp-pixel src="https://foo.com/pixel?RANDOM"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/pixel?RANDOM" layout="nodisplay"></amp-pixel>
 ```
 
 ## スタイル設定 <a name="styling"></a>

@@ -4,7 +4,7 @@ $title: 일반 HTML 페이지 만들기
 
 프로젝트 디렉토리에서는 [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html)이라는 이름의 파일을 찾을 수 있습니다. 이 가이드에서는 해당 파일에 포함된 뉴스 기사로 AMP 페이지를 만들 것입니다.
 
-1.  `article.html `파일에서 전체 코드를 **복사**하고 새 파일에 붙여넣습니다.
+1.  `article.html`파일에서 전체 코드를 **복사**하고 새 파일에 붙여넣습니다.
 2.  새 파일을 `article.amp.html`로 **저장**합니다.
 
 [tip type="note"]
@@ -14,10 +14,9 @@ $title: 일반 HTML 페이지 만들기
 `article.amp.html` 파일은 다음과 같아야 합니다.
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -31,9 +30,12 @@ $title: 일반 HTML 페이지 만들기
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```
@@ -42,7 +44,7 @@ $title: 일반 HTML 페이지 만들기
 
 지금 단계의 AMP 버전의 기사는 원래 기사를 그대로 옮겨 온 것에 불과합니다. 이를 AMP로 변환해보겠습니다.
 
-시작하려면 AMP 라이브러리 파일을 추가합니다.  이 작업만으로는 새 파일이 유효한 AMP 페이지가 되지 않지만, 이 문제를 해결하기 위해 필요한 것을 파악하는 데 AMP 라이브러리가 어떻게 도움이 되는지 살펴보겠습니다.
+시작하려면 AMP 라이브러리 파일을 추가합니다. 이 작업만으로는 새 파일이 유효한 AMP 페이지가 되지 않지만, 이 문제를 해결하기 위해 필요한 것을 파악하는 데 AMP 라이브러리가 어떻게 도움이 되는지 살펴보겠습니다.
 
 AMP 라이브러리를 포함하려면 다음 줄을 `<head>` 태그 하단에 **추가**합니다.
 
@@ -58,7 +60,7 @@ Developer Console에서 자바스크립트 출력을 검사할 때(Console 탭�
 Powered by AMP ⚡ HTML
 ```
 
-AMP 라이브러리에 포함된 [AMP 유효성 검사기](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)는 페이지를 유효한 AMP 문서로 변환하는 데 방해가 되는 요소가 있는지 알려줍니다.  다음 프래그먼트 식별자를 문서 URL에 추가하여 AMP 유효성 검사기를 **사용 설정**합니다.
+AMP 라이브러리에 포함된 [AMP 유효성 검사기](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)는 페이지를 유효한 AMP 문서로 변환하는 데 방해가 되는 요소가 있는지 알려줍니다. 다음 프래그먼트 식별자를 문서 URL에 추가하여 AMP 유효성 검사기를 **사용 설정**합니다.
 
 ```text
 #development=1
@@ -76,7 +78,7 @@ Developer Console에 여러 유효성 오류가 표시되었을 것입니다(확
 
 이를 유효한 AMP 문서로 만들기 위해서는 모든 오류를 해결해야 합니다. 이번 codelab에서 처리할 작업입니다.
 
-모바일 뉴스 기사로 작업하고 있었으므로 오류 해결을 시작하기 전에 브라우저의 개발자 도구에서 모바일 기기 환경을 **시뮬레이션**합니다.  예를 들어 Chrome DevTools에서는 휴대전화 아이콘을 클릭하고 메뉴에서 휴대기기를 선택하면 됩니다.
+모바일 뉴스 기사로 작업하고 있었으므로 오류 해결을 시작하기 전에 브라우저의 개발자 도구에서 모바일 기기 환경을 **시뮬레이션**합니다. 예를 들어 Chrome DevTools에서는 휴대전화 아이콘을 클릭하고 메뉴에서 휴대기기를 선택하면 됩니다.
 
 브라우저에 다음과 같이 모바일로 시뮬레이션된 해상도가 표시됩니다.
 

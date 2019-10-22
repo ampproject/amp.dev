@@ -2,13 +2,12 @@
 $title: amp-accordion
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 閲覧者がコンテンツの概要を一目で把握し、選択した任意のセクションにジャンプできるようにします。
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 閲覧者がコンテンツの概要を一目で把握し、選択した任意のセクションにジャンプできるようにします。この機能は、セクション内の数行の文章でもスクロールが必要なモバイル デバイスの場合に役立ちます。
 
@@ -45,23 +42,23 @@ teaser:
   </tr>
 </table>
 
-
 ## 動作 <a name="behavior"></a>
 
 `amp-accordion` コンポーネントを使用すると、折りたたみと展開が可能なコンテンツ セクションを表示できます。`amp-accordion` コンポーネントの直接の子は、それぞれアコーディオン内の 1 つのセクションと見なされます。各ノードは、`<section>` タグにする必要があります。
 
-* `amp-accordion` は、直接の子として 1 つまたは複数の `<section>` 要素を格納することができます。
-* 各 `<section>` は、直接の子を 2 つ格納している必要があります。
-* セクションの 1 番目の子は、セクションの見出しを示し、見出し要素である必要があります（`h1`、`h2`、 ... 、`h6`、`header` のいずれか）。
-* セクションの 2 番目の子は、AMP HTML 内で許可されている任意のタグを指定することが可能で、セクションの内容を示します。
-* セクションの見出しをクリック / タップすると、セクションの展開や折りたたみが行われます。
-* `amp-accordion` 要素内の各セクションの折りたたみ状態 / 展開状態は、セッション レベルで保持されます。状態を保持しないようにするには、`amp-accordion` 要素に `disable-session-states` 属性を追加します。
+- `amp-accordion` は、直接の子として 1 つまたは複数の `<section>` 要素を格納することができます。
+- 各 `<section>` は、直接の子を 2 つ格納している必要があります。
+- セクションの 1 番目の子は、セクションの見出しを示し、見出し要素である必要があります（`h1`、`h2`、 ... 、`h6`、`header` のいずれか）。
+- セクションの 2 番目の子は、AMP HTML 内で許可されている任意のタグを指定することが可能で、セクションの内容を示します。
+- セクションの見出しをクリック / タップすると、セクションの展開や折りたたみが行われます。
+- `amp-accordion` 要素内の各セクションの折りたたみ状態 / 展開状態は、セッション レベルで保持されます。状態を保持しないようにするには、`amp-accordion` 要素に `disable-session-states` 属性を追加します。
 
 #### 例: アコーディオンを表示する <a name="example-displaying-an-accordion"></a>
 
 この例では、3 つのセクションを表示します。3 番目のセクションはページの読み込み時に展開されます。また、`disable-session-states` を設定して、折りたたみ状態や展開状態を保持しないようにします。
 
 [example preview="inline" playground="true" imports="amp-accordion"]
+
 ```html
 <amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
@@ -80,6 +77,7 @@ teaser:
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 [tip type="success"]
@@ -145,13 +143,13 @@ teaser:
 
 ## スタイル設定 <a name="styling"></a>
 
-* `amp-accordion` 要素セレクタを使用して、自由にスタイルを設定できます。
-* `amp-accordion` 要素は常に `display: block` です。
-* `<section>` 要素、heading 要素、content 要素は、フローティングできません。
-* セクションが展開されている場合、`<section>` 要素は `expanded` 属性を持ちます。
-* content 要素は、`overflow: hidden` によって clearfix されているため、スクロールバーを持つことはできません。
-* `<amp-accordion>` 要素、`<section>` 要素、heading 要素、content 要素のマージンは 0 に設定され、カスタム スタイルでオーバーライドできます。
-* header 要素と content 要素はどちらも `position: relative` です。
+- `amp-accordion` 要素セレクタを使用して、自由にスタイルを設定できます。
+- `amp-accordion` 要素は常に `display: block` です。
+- `<section>` 要素、heading 要素、content 要素は、フローティングできません。
+- セクションが展開されている場合、`<section>` 要素は `expanded` 属性を持ちます。
+- content 要素は、`overflow: hidden` によって clearfix されているため、スクロールバーを持つことはできません。
+- `<amp-accordion>` 要素、`<section>` 要素、heading 要素、content 要素のマージンは 0 に設定され、カスタム スタイルでオーバーライドできます。
+- header 要素と content 要素はどちらも `position: relative` です。
 
 ## 検証 <a name="validation"></a>
 

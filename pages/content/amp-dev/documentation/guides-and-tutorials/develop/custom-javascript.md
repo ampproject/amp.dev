@@ -23,7 +23,7 @@ AMP pages support custom JavaScript through the `<amp-script>` component. The ex
 <head>
   ...
   <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-<body>  
+<body>
   ...
   <amp-script layout="container" src="https://example.com/myfile.js">
     <p>Initial content that can be modified from JavaScript</p>
@@ -51,19 +51,21 @@ To keep experiences on AMP pages consistent, limitations exist on `<amp-script>`
 
 JavaScript inside the Web Worker allows minimal change to the DOM on load. Changes allowed during this phase are:
 
-*   Registering event handlers.
-*   Splitting a TextNode into multiple TextNodes, to allow for frameworks that require it.
+- Registering event handlers.
+- Splitting a TextNode into multiple TextNodes, to allow for frameworks that require it.
 
 The DOM inside `<amp-script>` tags should be almost identical before and after initialization.
 
 For example, if starting with the code below:
+
 ```html
 <text> Hello world </text>
 ```
+
 Worker DOM permits minor changes in structure but not content:
 
 ```html
- <text>Hello </text><text>world</text>
+<text>Hello </text><text>world</text>
 ```
 
 ## DOM manipulation
@@ -72,7 +74,7 @@ For user experience and security reasons, `amp-script` enforced DOM manipulation
 
 ### User interaction
 
-When a user interacts with elements wrapped inside an `<amp-script>` components, DOM manipulations must respond quickly. If running a `fetch` function, DOM manipulations must be completed within a **five second** window. If your `amp-script` logic is not preforming a fetch, the DOM has **less than one second** to update the DOM.  If a script mutates the DOM outside of the permitted window, it will result in a fatal error and the `amp-script` component will terminate the Web Worker. A terminated `<amp-script>` component will not run again.
+When a user interacts with elements wrapped inside an `<amp-script>` components, DOM manipulations must respond quickly. If running a `fetch` function, DOM manipulations must be completed within a **five second** window. If your `amp-script` logic is not preforming a fetch, the DOM has **less than one second** to update the DOM. If a script mutates the DOM outside of the permitted window, it will result in a fatal error and the `amp-script` component will terminate the Web Worker. A terminated `<amp-script>` component will not run again.
 
 ### Unprompted changes
 
@@ -84,7 +86,7 @@ As of April 2019, your `<amp-script>` component must be at a fixed hight of `300
 
 ## Script size
 
-AMP enforces a limit of 150 kilobytes of custom JavaScript on each page. This limit is shared  among all `<amp-script>` component on that page. If using a library, it must be imported to each individual `<amp-script>` component.
+AMP enforces a limit of 150 kilobytes of custom JavaScript on each page. This limit is shared among all `<amp-script>` component on that page. If using a library, it must be imported to each individual `<amp-script>` component.
 
 ## Scope
 
@@ -93,11 +95,10 @@ Any DOM elements the custom JavaScript files wishes to interact with must be wra
 If you were to call `document.body.appendChild(document.createElement('span'))` within the `<amp-script>`file in the following document:
 
 ```html
-<body>  
+<body>
   <p>Hello!</p>
   <div>
-    <amp-script layout="container" src="customjs.js">
-    </amp-script>
+    <amp-script layout="container" src="customjs.js"> </amp-script>
   </div>
 </body>
 ```
@@ -105,7 +106,7 @@ If you were to call `document.body.appendChild(document.createElement('span'))` 
 It will result in this:
 
 ```html
-<body>  
+<body>
   <p>Hello!</p>
   <div>
     <amp-script layout="container" src="customjs.js">
@@ -121,6 +122,6 @@ All event triggers are allowed.
 
 ## API restrictions <a name="api-restrictions"></a>
 
- Some synchronous methods are disallowed in `<amp-script>` and replaced with alternatives, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)). Because `Element.getBoundingClientRect()` could not be implemented in a Web Worker, an async alternative to it, `getBoundingClientRectAsync()`, is provided. `getBoundingClientRectAsync()` returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) instead of returning the result directly.
+Some synchronous methods are disallowed in `<amp-script>` and replaced with alternatives, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)). Because `Element.getBoundingClientRect()` could not be implemented in a Web Worker, an async alternative to it, `getBoundingClientRectAsync()`, is provided. `getBoundingClientRectAsync()` returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) instead of returning the result directly.
 
 View [this chart](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md) to see WorkerDOM supported APIs.

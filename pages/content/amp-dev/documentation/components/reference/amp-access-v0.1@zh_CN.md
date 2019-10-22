@@ -2,18 +2,14 @@
 $title: amp-access
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: 提供 AMP 付费墙和订阅支持。
 ---
 
-
-
 借助 AMP Access（即“AMP 付费墙和订阅支持”），发布商可以根据读者的订阅状态、查看次数和其他因素来控制读者可以访问哪些内容以及施加哪些限制。
 
 # amp-access <a name="amp-access"></a>
-
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -89,7 +85,7 @@ Google AMP 缓存可将文档返回给读者，同时使用 Access Content Marku
 
 ### AMP 读者 ID <a name="amp-reader-id"></a>
 
-为了提供访问服务和用例方面的帮助，AMP Access 引入了“读者 ID”的概念。**
+为了提供访问服务和用例方面的帮助，AMP Access 引入了“读者 ID”的概念。\*\*
 
 读者 ID 是由 AMP 生态系统创建的匿名专属 ID。对于每个读者/发布商对，该 ID 都是独一无二的；对于两个不同的发布商而言，同一个读者的标识方式不同。这是一种不可逆的 ID。读者 ID 包含在所有 AMP/发布商通信中，具有非常高的熵。发布商可以使用读者 ID 来识别读者，以及将其映射到自己的身份系统中。
 
@@ -128,14 +124,12 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
 在 AMP 文档中，所有端点均配置为文档标头中的 JSON 对象：
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "property": value,
     ...
     }
 </script>
-
 ```
 
 此配置中定义了以下属性：
@@ -193,19 +187,17 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
 下面是一个 AMP Access 配置示例：
 
 ```html
-
 <script id="amp-access" type="application/json">
-{
-  "authorization":
-      "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
-  "pingback":
-      "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
-  "login":
-      "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
-  "authorizationFallbackResponse": {"error": true}
-}
+  {
+    "authorization":
+        "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
+    "pingback":
+        "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
+    "login":
+        "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
+    "authorizationFallbackResponse": {"error": true}
+  }
 </script>
-
 ```
 
 #### 多个访问提供商 <a name="multiple-access-providers"></a>
@@ -213,16 +205,15 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
 可以通过使用数组（而非单个对象）并为每个条目提供 `namespace` 来指定多个访问提供商。
 
 ```html
-
 <script id="amp-access" type="application/json">
-[
-  {
-    "property": value,
+  [
+    {
+      "property": value,
+      ...
+      "namespace": value
+    },
     ...
-    "namespace": value
-  },
-  ...
-[
+  [
 </script>
 ```
 
@@ -274,6 +265,7 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
 </table>
 
 下面是一个使用读者 ID、规范网址、引荐来源信息和随机 cachebuster 扩展的网址示例：
+
 ```text
 https://pub.com/access?
   rid=READER_ID
@@ -291,13 +283,15 @@ Access Content Markup 用于描述显示或隐藏哪些部分。它由 `amp-acce
 `amp-access` 属性提供的表达式可根据授权端点返回的授权响应生成 true 或 false 值。结果值将指示相应元素及其内容是否可见。
 
 `amp-access` 值是以类似 SQL 的语言定义的布尔值表达式。[附录 A](#appendix-a-amp-access-expression-grammar) 中定义了相应语法，其定义如下：
-```html
 
+```html
 <div amp-access="expression">…</div>
 ```
+
 属性和值是指授权端点返回的授权响应的属性和值。这提供了一个支持不同访问情形的灵活系统。如果使用命名空间，则只需将命名空间添加到属性名称前面即可，例如 `anamespace.aproperty`。
 
 `amp-access-hide` 属性可用于在收到授权响应之前以乐观的方式隐藏元素（授权响应可以显示该元素）。它包含“默认不可见”这一语义。之后由授权返回的授权响应可以撤消此默认设置，使相应部分显示出来。如果省略 `amp-access-hide` 属性，则默认显示/包含该部分。`amp-access-hide` 属性只能与 `amp-access` 属性一起使用。
+
 ```html
 <div amp-access="expression" amp-access-hide>...</div>
 ```
@@ -309,6 +303,7 @@ Access Content Markup 用于描述显示或隐藏哪些部分。它由 `amp-acce
 如果授权请求失败且文档中未指定“authorizationFallbackResponse”响应，则不对 `amp-access` 表达式进行求值，并且某个部分是显示还是隐藏取决于文档最初提供的 `amp-access-hide` 属性是否存在。
 
 下面的示例展示了如何根据订阅状态确定是显示登录链接还是完整内容：
+
 ```html
 <header>
   Title of the document
@@ -324,9 +319,10 @@ Access Content Markup 用于描述显示或隐藏哪些部分。它由 `amp-acce
 <div amp-access="subscriber">
   Full content.
 </div>
-
 ```
+
 在本示例中：
+
 - subscriber 是授权端点返回的授权响应中的布尔值字段。**此部分默认隐藏，这是可选的。**
 - 此示例选择以乐观的方式显示完整内容。
 
@@ -343,6 +339,7 @@ Access Content Markup 用于描述显示或隐藏哪些部分。它由 `amp-acce
 ```
 
 下面的示例向付费订阅者显示了额外内容：
+
 ```html
 <section amp-access="subscriptonType = 'premium'">
   Shhh… No one but you can read this content.
@@ -358,12 +355,15 @@ Access Content Markup 用于描述显示或隐藏哪些部分。它由 `amp-acce
 此端点生成授权响应，该响应可以在内容标记表达式中用于显示/隐藏不同部分的内容。
 
 请求格式如下所示：
+
 ```text
 https://publisher.com/amp-access.json?
 rid=READER_ID
 &url=SOURCE_URL
 ```
+
 该响应是一个自由格式的 JSON 对象：它可以包含任何属性和值，只存在很少的限制。限制如下：
+
 - 属性名必须符合 `amp-access` 表达式语法（请参阅[附录 A](#appendix-a-amp-access-expression-grammar)）指定的限制。这通常意味着属性名称不能包含空格、短划线和其他不符合“amp-access”规范的字符。
 - 属性值只能是以下类型之一：字符串、数值、布尔值。
 - 值也可以嵌套为具有相同类型值的对象：字符串、数值、布尔值。
@@ -371,12 +371,14 @@ rid=READER_ID
 - 请确保响应中不包含任何个人身份信息 (PII) 或个人数据。
 
 下面列出了一小部分针对可从授权端点返回的属性的可能参考提示：
+
 - 计量供给信息：允许的最大查看次数和当前查看次数。
 - 读者是处于已登录还是已订阅状态。
 - 更详细的订阅类型：基本、付费
 - 地理位置：国家/地区、区域、自定义发布区域
 
 在下面的响应示例中，读者不是订阅者，按照计量供给每月最多可查看 10 篇文章，目前已经看了 6 篇：
+
 ```json
 {
   "maxViews": 10,
@@ -384,13 +386,16 @@ rid=READER_ID
   "subscriber": false
 }
 ```
+
 在下面的响应示例中，读者已登录，订阅类型为“付费”：
+
 ```json
 {
   "loggedIn": true,
   "subscriptionType": "premium"
 }
 ```
+
 此 RPC 可以在预呈现阶段调用，因此不应该用于计量供给倒数，因为读者可能永远不会真正看到文档。
 
 另一项重要考虑因素是，在某些情况下，AMP runtime 可能需要在每次展示文档时多次调用授权端点。如果 AMP runtime 认为读者的访问参数发生了显著变化（例如在登录流程成功之后），就会发生这种情况。
@@ -429,10 +434,12 @@ Pingback 不生成响应 - 任何响应都将被 AMP runtime 忽略。
 在读者开始查看文档以及读者成功完成登录流程后，系统会调用 Pingback 端点。
 
 发布商可以选择使用 Pingback 执行以下操作：
+
 - 对网页的免费查看次数进行倒数
 - 将 AMP 读者 ID 与发布商的身份进行匹配，因为作为存储了凭据的 CORS 端点，Pingback 可能包含发布商 Cookie
 
 请求格式如下所示：
+
 ```text
 https://publisher.com/amp-pingback?
 rid=READER_ID
@@ -444,20 +451,22 @@ rid=READER_ID
 登录页面的网址通过 [AMP Access 配置](#configuration)部分中的 `login` 属性进行配置。
 
 配置可以指定单个登录网址，也可以指定由登录类型键控的多个登录网址的映射。单个登录网址的示例如下：
+
 ```json
 {
   "login": "https://publisher.com/amp-login.html?rid={READER_ID}"
-  }
+}
 ```
 
 多个登录网址的示例如下：
+
 ```json
 {
   "login": {
     "signin": "https://publisher.com/signin.html?rid={READER_ID}",
     "signup": "https://publisher.com/signup.html?rid={READER_ID}"
-    }
   }
+}
 ```
 
 该网址可以采用[访问网址变量](#access-url-variables)部分中定义的任何参数。例如，它可以传递 AMP 读者 ID 和文档网址。`RETURN_URL` 查询替换可用于指定返回网址的查询参数，例如 `?ret=RETURN_URL`。必须提供返回网址，如果未指定 `RETURN_URL` 替换，则系统会自动注入默认查询参数名称“return”。
@@ -465,16 +474,20 @@ rid=READER_ID
 除了可以正常用作[浏览器对话框](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/open)之外，登录页面就只是一个普通网页，不存在任何特殊限制。如需了解更多详情，请参阅[登录流程](#login-flow)部分。
 
 请求格式如下所示：
+
 ```text
 https://publisher.com/amp-login.html?
 rid=READER_ID
 &url=SOURCE_URL
 &return=RETURN_URL
 ```
+
 请注意，如果未指定 `RETURN_URL` 替换，AMP runtime 会自动添加“return”网址参数。登录页面完成其操作后，必须采用以下格式重定向回指定的“返回网址”：
+
 ```text
 RETURN_URL#success=true|false
 ```
+
 请注意网址哈希参数“success”的用法。该参数的值为“true”或“false”，具体取决于登录成功与否。理想情况下，登录页面会尽可能在成功或失败时发送信号。
 
 如果页面返回 `success=true` 信号，AMP runtime 将重复调用授权端点和 Pingback 端点，以更新文档的状态，并使用新的访问配置文件报告“查看”事件。
@@ -486,11 +499,13 @@ RETURN_URL#success=true|false
 您可以通过 [AMP Access 配置](#configuration)部分中的“login”属性配置一个或多个登录网址。
 
 登录链接可以在任何允许使用“on”属性的 HTML 元素上进行声明。通常，这将是锚或按钮元素。配置单个登录网址时，格式为：
+
 ```html
 <a on="tap:amp-access.login">Login or subscribe</a>
 ```
 
 配置多个登录网址时，格式为 `tap:amp-access.login-{type}`。示例：
+
 ```html
 <a on="tap:amp-access.login-signup">Subscribe</a>
 ```
@@ -499,9 +514,9 @@ RETURN_URL#success=true|false
 
 AMP 不区分登录和订阅。发布商可以使用多个登录网址/链接或在发布商端配置这种区别。
 
-## 与 amp-analytics 集成** <a name="integration-with-amp-analytics"></a>
+## 与 amp-analytics 集成\*\* <a name="integration-with-amp-analytics"></a>
 
-[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) 中介绍了与 amp-analytics 的集成。**
+[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) 中介绍了与 amp-analytics 的集成。\*\*
 
 ## CORS 网域安全性 <a name="cors-origin-security"></a>
 
@@ -544,33 +559,34 @@ AMP 将登录对话框作为第一方窗口、弹出式窗口或标签页启动�
 
 ## AMP 词汇表 <a name="amp-glossary"></a>
 
-* **AMP 文档** - 采用 AMP 格式且由 AMP 验证工具验证的 HTML 文档。AMP 文档可由 Google AMP 缓存进行缓存。
-* **AMP 验证工具** - 对 HTML 文档执行静态分析并根据文档是否符合 AMP 格式返回成功或失败结果的计算机程序。
-* **AMP runtime** - 执行 AMP 文档的 JavaScript 运行时。
-* **Google AMP 缓存** - AMP 文档的代理缓存。
-* **AMP 查看工具** - 显示/嵌入 AMP 文档的网络应用或原生应用。
-* **Publisher.com** - AMP 发布商的网站。
-* **CORS 端点** - 跨网域 HTTPS 端点。如需了解详情，请参阅 [https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)。如需了解如何确保此类请求的安全，请参阅 [CORS 网域安全性](#cors-origin-security)。
-* **读者** - 查看 AMP 文档的实际用户。
-* **AMP 预呈现** - AMP 查看工具可以利用预呈现功能，先呈现隐藏的文档，然后再将其显示出来。这可以大大提升性能。但务必要考虑到这个事实：文档预呈现并不构成查看，因为读者实际可能永远不会看到文档。
+- **AMP 文档** - 采用 AMP 格式且由 AMP 验证工具验证的 HTML 文档。AMP 文档可由 Google AMP 缓存进行缓存。
+- **AMP 验证工具** - 对 HTML 文档执行静态分析并根据文档是否符合 AMP 格式返回成功或失败结果的计算机程序。
+- **AMP runtime** - 执行 AMP 文档的 JavaScript 运行时。
+- **Google AMP 缓存** - AMP 文档的代理缓存。
+- **AMP 查看工具** - 显示/嵌入 AMP 文档的网络应用或原生应用。
+- **Publisher.com** - AMP 发布商的网站。
+- **CORS 端点** - 跨网域 HTTPS 端点。如需了解详情，请参阅 [https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)。如需了解如何确保此类请求的安全，请参阅 [CORS 网域安全性](#cors-origin-security)。
+- **读者** - 查看 AMP 文档的实际用户。
+- **AMP 预呈现** - AMP 查看工具可以利用预呈现功能，先呈现隐藏的文档，然后再将其显示出来。这可以大大提升性能。但务必要考虑到这个事实：文档预呈现并不构成查看，因为读者实际可能永远不会看到文档。
 
 ## 修订 <a name="revisions"></a>
 
-* 2016 年 9 月 2 日：新增了“noPingback”配置属性和可选的 pingback。
-* 2016 年 3 月 3 日：允许在登录后重新发送 pingback (v0.5)。
-* 2016 年 2 月 19 日：更正了相关示例，以从网址变量替换中移除 `{}`。
-* 2016 年 2 月 15 日：[配置](#configuration)和[授权端点](#authorization-endpoint)现在允许在授权失败时使用“authorizationFallbackResponse”属性。
-* 2016 年 2 月 11 日：在[授权端点](#authorization-endpoint)中新增了授权请求超时。
-* 2016 年 2 月 11 日：现在允许使用嵌套字段引用，例如 `object.field`。
-* 2016 年 2 月 9 日：新增了[首次点击免费](#first-click-free)和[计量供给](#metering)部分。
-* 2016 年 2 月 3 日：在 [CORS 网域安全性](#cors-origin-security)部分增加了针对“来源网域”安全性的规范。
-* 2016 年 2 月 1 日：可以使用 RETURN_URL URL 替换对登录页面的“return”查询参数进行自定义。
+- 2016 年 9 月 2 日：新增了“noPingback”配置属性和可选的 pingback。
+- 2016 年 3 月 3 日：允许在登录后重新发送 pingback (v0.5)。
+- 2016 年 2 月 19 日：更正了相关示例，以从网址变量替换中移除 `{}`。
+- 2016 年 2 月 15 日：[配置](#configuration)和[授权端点](#authorization-endpoint)现在允许在授权失败时使用“authorizationFallbackResponse”属性。
+- 2016 年 2 月 11 日：在[授权端点](#authorization-endpoint)中新增了授权请求超时。
+- 2016 年 2 月 11 日：现在允许使用嵌套字段引用，例如 `object.field`。
+- 2016 年 2 月 9 日：新增了[首次点击免费](#first-click-free)和[计量供给](#metering)部分。
+- 2016 年 2 月 3 日：在 [CORS 网域安全性](#cors-origin-security)部分增加了针对“来源网域”安全性的规范。
+- 2016 年 2 月 1 日：可以使用 RETURN_URL URL 替换对登录页面的“return”查询参数进行自定义。
 
 ## 附录 A：“amp-access”表达式语法 <a name="appendix-a-amp-access-expression-grammar"></a>
 
 [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) 文件中提供了最新的 BNF 语法。
 
 下面摘录了此语法的主要内容：
+
 ```javascript
 search_condition:
   search_condition OR search_condition

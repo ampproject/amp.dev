@@ -4,7 +4,6 @@ about: I want to add my third-party tool, service, platform or ad vendor to amp.
 title: ''
 labels: 'Status: Pending Triage, Type: New'
 assignees: ''
-
 ---
 
 ## Request to add third-party tool/service/platform/vendor
@@ -19,6 +18,7 @@ assignees: ''
 (Insert editor, service provider, developer tool, content platform, CMS, or ads, audio/video or analytics vendor)
 
 **4. What page should it appear on?**
+
 1. [amp.dev/support/faq/platform-and-vendor-partners](https://amp.dev/support/faq/platform-and-vendor-partners)
 2. [amp.dev/documentation/tools](https://amp.dev/documentation/tools)
 

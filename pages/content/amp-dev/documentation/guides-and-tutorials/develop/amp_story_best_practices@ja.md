@@ -8,11 +8,11 @@ $title: AMP ストーリーのおすすめの作成方法
 
 AMP ストーリーのページに背景色を指定することをおすすめします。背景色を指定しておけば、ネットワークの状態が不安定で画像や動画アセットをダウンロードできない場合でも、適切なフォールバックのユーザー エクスペリエンスが提供されます。
 
-*   背景色には、ページの背景のアセットにおける支配色と同じ色か、それに近い色を選ぶ必要があります。
-*   画像やページ自体にスムーズに遷移できるよう、以下のいずれかの色にします。
-    *   画像や動画における支配色か、それに近い色。
-    *   ストーリー内の全ページに一貫するテーマ色。
-*   画像の読み込み前でもテキストを読むことができるよう、背景色とフォントの色は別の色にします。
+- 背景色には、ページの背景のアセットにおける支配色と同じ色か、それに近い色を選ぶ必要があります。
+- 画像やページ自体にスムーズに遷移できるよう、以下のいずれかの色にします。
+  - 画像や動画における支配色か、それに近い色。
+  - ストーリー内の全ページに一貫するテーマ色。
+- 画像の読み込み前でもテキストを読むことができるよう、背景色とフォントの色は別の色にします。
 
 ## テキスト
 
@@ -20,12 +20,12 @@ AMP ストーリーのページに背景色を指定することをおすすめ�
 
 ページのテキスト オーバーレイを判読できるようにします。
 
-* フォント色には、背景画像や背景色とは対照的な色を選びます。
-* 画像とテキストの間にグラデーション オーバーレイを追加し、テキストを画像と対比して引き立たせます。
+- フォント色には、背景画像や背景色とは対照的な色を選びます。
+- 画像とテキストの間にグラデーション オーバーレイを追加し、テキストを画像と対比して引き立たせます。
 
 ### テキストの分量を抑える
 
-AMP ストーリーは、より視覚的なエクスペリエンスの提供を目的としています。そのため、ページ上のテキストの分量は 1～2 文程度に抑えます。ページ上のテキストの量を増やしたほうがよいと思われる場合は、その目的と、テキストを読み取る際の流れを十分に考慮してください。
+AMP ストーリーは、より視覚的なエクスペリエンスの提供を目的としています。そのため、ページ上のテキストの分量は 1 ～ 2 文程度に抑えます。ページ上のテキストの量を増やしたほうがよいと思われる場合は、その目的と、テキストを読み取る際の流れを十分に考慮してください。
 
 ## 動画
 
@@ -38,11 +38,15 @@ AMP ストーリーは、より視覚的なエクスペリエンスの提供を�
 例: ポスターの指定
 
 ```html
-<amp-video autoplay loop
-  width="720" height="1280" layout="responsive"
-  poster="images/kitten-playing.png">
-  <source src="videos/kitten-playing.mp4"
-    type="video/mp4" />
+<amp-video
+  autoplay
+  loop
+  width="720"
+  height="1280"
+  layout="responsive"
+  poster="images/kitten-playing.png"
+>
+  <source src="videos/kitten-playing.mp4" type="video/mp4" />
 </amp-video>
 ```
 
@@ -53,20 +57,26 @@ AMP ストーリーは、より視覚的なエクスペリエンスの提供を�
 例: 複数のソースファイルの指定
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
 ### 動画のサイズ、長さ
 
-*  最適なパフォーマンスのために、動画のサイズが 4 MB 以下になるようにする必要があります。
-*   長い動画の場合は、動画を複数のページに分割することを検討します。
-*   カバーページの場合は、大きすぎる動画は避けます。
+- 最適なパフォーマンスのために、動画のサイズが 4 MB 以下になるようにする必要があります。
+- 長い動画の場合は、動画を複数のページに分割することを検討します。
+- カバーページの場合は、大きすぎる動画は避けます。
 
 ### 動画のフォーマット
 
@@ -164,13 +174,13 @@ AMP ストーリーの動画は常に縦向きのビューで、予期される�
 動画の再生が終わった後で自動的に別のページへ移動させる場合は、`<amp-story-page>` の `auto-advance-after` 属性の値に、想定される動画の長さではなく動画 ID を設定する必要があります。つまり、以下のような値を使用します。
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 以下のような値は使用しません。
 
 ```html
-<amp-story-page auto-advance-after="9s">
+<amp-story-page auto-advance-after="9s"></amp-story-page>
 ```
 
 これは、ページの表示と動画の再生開始のタイミングがずれた場合や、指定された動画の長さの値が不正確な場合に、想定される長さと実際の長さとの間に差が生じるためです。これは動画がループする原因となり、ユーザーに不快感を与えてしまうおそれがあります。

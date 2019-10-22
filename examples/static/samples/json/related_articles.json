@@ -1,19 +1,19 @@
 {
- "items": [
-   {
-     "title": "Shopping websites with AMP",
-     "thumbnail": "/static/samples/img/shopping_thumb.jpg",
-     "url": "/documentation/examples/e-commerce/product_page/preview/"
-   },
-   {
-     "title": "The tastiest recipes with AMP",
-     "thumbnail": "/static/samples/img/recipe_thumb.jpg",
-     "url": "/documentation/examples/news-publishing/recipe/preview/"
-   },
-   {
-     "title": "News Articles with AMP",
-     "thumbnail": "/static/samples/img/video_thumb.jpg",
-     "url": "/documentation/examples/news-publishing/news_article/preview/"
-   }
- ]
+  "items": [
+    {
+      "title": "Shopping websites with AMP",
+      "thumbnail": "/static/samples/img/shopping_thumb.jpg",
+      "url": "/documentation/examples/e-commerce/product_page/preview/"
+    },
+    {
+      "title": "The tastiest recipes with AMP",
+      "thumbnail": "/static/samples/img/recipe_thumb.jpg",
+      "url": "/documentation/examples/news-publishing/recipe/preview/"
+    },
+    {
+      "title": "News Articles with AMP",
+      "thumbnail": "/static/samples/img/video_thumb.jpg",
+      "url": "/documentation/examples/news-publishing/news_article/preview/"
+    }
+  ]
 }

@@ -2,14 +2,12 @@
 $title: amp-mustache
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Permite a renderização de modelos Mustache.js.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Permite a renderização de [Mustache.js](https://github.com/janl/mustache.js/).
 
@@ -46,23 +42,21 @@ Permite a renderização de [Mustache.js](https://github.com/janl/mustache.js/).
   </tr>
 </table>
 
-
-
 ## Notas de versão <a name="version-notes"></a>
 
-| Versão | Descrição |
-|-------|-----|
-| 0.2 | Compatibilidade com elementos `<svg>` e tamanho de pacote reduzido (12,2 KB versus 20,5 KB, compactado com Gzip).<br><br>Migra para uma biblioteca de limpeza de HTML mais moderna (de Caja para DOMPurify). Isso pode causar pequenas alterações interruptivas devido a diferenças na lista de permissões de tags e atributos. Recomendamos que você teste suas páginas antes de enviá-las para a produção para garantir que as alterações na marcação gerada não afetem a funcionalidade. |
-| 0.1 | Implementação inicial. |
+| Versão | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.2    | Compatibilidade com elementos `<svg>` e tamanho de pacote reduzido (12,2 KB versus 20,5 KB, compactado com Gzip).<br><br>Migra para uma biblioteca de limpeza de HTML mais moderna (de Caja para DOMPurify). Isso pode causar pequenas alterações interruptivas devido a diferenças na lista de permissões de tags e atributos. Recomendamos que você teste suas páginas antes de enviá-las para a produção para garantir que as alterações na marcação gerada não afetem a funcionalidade. |
+| 0.1    | Implementação inicial.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 ## Sintaxe <a name="syntax"></a>
 
 Mustache é uma sintaxe de modelo sem lógica. Consulte os [documentos sobre Mustache.js](https://github.com/janl/mustache.js/) (em inglês) para ver mais detalhes. Algumas das principais tags de Mustache são:
 
-*  {% raw %}`{{variable}}`{% endraw %}: uma tag de variável. Gera o valor HTML com escape de uma variável.
-* {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: uma tag de seção. Pode testar a existência de uma variável e iterá-la se for uma matriz.
-* {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: uma tag invertida. Pode testar a inexistência de uma variável.
-* {% raw %}`{{{unescaped}}}`{% endraw %}: HTML sem escape. Fica restrito à marcação que pode gerar (consulte “Restrições” abaixo).
+- {% raw %}`{{variable}}`{% endraw %}: uma tag de variável. Gera o valor HTML com escape de uma variável.
+- {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: uma tag de seção. Pode testar a existência de uma variável e iterá-la se for uma matriz.
+- {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: uma tag invertida. Pode testar a inexistência de uma variável.
+- {% raw %}`{{{unescaped}}}`{% endraw %}: HTML sem escape. Fica restrito à marcação que pode gerar (consulte “Restrições” abaixo).
 
 ## Uso <a name="usage"></a>
 
@@ -71,7 +65,11 @@ O modelo `amp-mustache` precisa ser definido e usado de acordo com a [especifica
 Primeiro, o `amp-mustache` precisa ser declarado/carregado desta forma:
 
 ```html
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  async=""
+  custom-template="amp-mustache"
+></script>
 ```
 
 Em seguida, os modelos Mustache podem ser definidos em uma tag `script` ou `template` como esta:
@@ -79,15 +77,16 @@ Em seguida, os modelos Mustache podem ser definidos em uma tag `script` ou `temp
 [sourcecode:html]
 {% raw %}<!-- Using template tag. -->
 <template type="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </template>
 {% endraw %}[/sourcecode]
 ou
 
 <!-- Using script tag. -->
+
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </script>
 {% endraw %}[/sourcecode]
 
@@ -101,8 +100,8 @@ A maneira como os modelos são descobertos, quando são renderizados e a forma c
 
 Como todos os modelos de AMP, os modelos `amp-mustache` precisam ser fragmentos DOM bem formados. Isso significa que, entre outras coisas, não é possível usar o `amp-mustache` para:
 
-* calcular o nome da tag. Por exemplo, {% raw %}`<{{tagName}}>`{% endraw %} não é permitido;
-* calcular o nome do atributo. Por exemplo, {% raw %}`<div {{attrName}}=something>`{% endraw %} não é permitido.
+- calcular o nome da tag. Por exemplo, {% raw %}`<{{tagName}}>`{% endraw %} não é permitido;
+- calcular o nome do atributo. Por exemplo, {% raw %}`<div {{attrName}}=something>`{% endraw %} não é permitido.
 
 A saída de "triple-mustache" é limpa para permitir somente as seguintes tags: `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u`, `ul`.
 
@@ -120,9 +119,9 @@ Para resolver isso, os elementos `<template>` também podem ser referenciados po
 
 [sourcecode:html]
 {% raw %}<amp-list id="myList" src="https://foo.com/list.json">
-  <template type="amp-mustache">
-    <div>{{title}}</div>
-  </template>
+<template type="amp-mustache">
+<div>{{title}}</div>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -131,6 +130,7 @@ Ele também pode ser representado como:
 [sourcecode:html]
 {% raw %}<!-- Externalize templates to avoid nesting. -->
 <template type="amp-mustache" id="myTemplate">
+
   <div>{{title}}</div>
 </template>
 
@@ -144,6 +144,7 @@ Como as strings de modelo de AMP precisam ser especificadas nos elementos `<temp
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -157,6 +158,7 @@ O navegador promoverá os nós de texto {% raw %}`{{#foo}}`{% endraw %} e {% raw
 [sourcecode:html]
 {% raw %}{{#foo}}
 {{/foo}}
+
 <table>
   <tr>
     <td></td>
@@ -168,6 +170,7 @@ Entre as soluções estão o agrupamento de seções de Mustache em comentários
 
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -182,11 +185,14 @@ Ao usar `amp-mustache` para calcular valores de atributos, fazer escape de cita�
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <!-- A double-quote (") in foo will cause malformed HTML. -->
-  <amp-img alt="{{foo}}" src="example.jpg" width=100 height=100></amp-img>
+
+<amp-img alt="{{foo}}" src="example.jpg" width=100 height=100></amp-img>
 
   <!-- A single-quote (') or double-quote (") in bar will cause an AMP runtime parse error. -->
-  <button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>
+
+<button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>
 </template>
 {% endraw %}[/sourcecode]
 

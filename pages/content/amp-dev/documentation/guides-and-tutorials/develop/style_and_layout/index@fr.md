@@ -34,6 +34,7 @@ Ajoutez tous les styles à l'intérieur de la balise `<style amp-custom>` dans l
 Par exemple :
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     <meta charset="utf-8">
@@ -54,6 +55,7 @@ Par exemple :
       }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+
   </head>
 [/sourcecode]
 
@@ -62,6 +64,7 @@ Par exemple :
 Définissez des styles de composants avec des sélecteurs de classe ou d'élément en utilisant des propriétés CSS courantes. Par exemple :
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img

@@ -36,7 +36,7 @@ AMP 开发者版**可能不太稳定**，并且可能包含仅限部分用户使
 对于从任何其他网域提供的内容，当利用以下方式启用开发模式后，可以在开发工具控制台中开启或关闭实验性功能：
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 包含实验性功能的所有 AMP 文件均无法成功通过
@@ -50,7 +50,7 @@ AMP.toggleExperiment('experiment')
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -58,4 +58,3 @@ AMP.toggleExperiment('experiment')
 ```
 
 这样，就可以为文档的所有访问者启用指定的实验性功能了。但是，并非所有实验性功能都支持文档级选择启用。如需已列入白名单的实验性功能的完整列表，请查看相关项目的 `prod-config.json` 文件中的 `allow-doc-opt-in` 属性。请注意，为文档启用实验性功能后，用户可以选择停用此功能来改变此设置。
- 

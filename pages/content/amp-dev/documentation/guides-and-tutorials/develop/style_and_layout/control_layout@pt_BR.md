@@ -108,8 +108,8 @@ Acesse a página [Demonstração de layouts AMP](../../../../documentation/guide
 Em alguns casos, se o atributo `width` ou `height` não estiver especificado,
 o ambiente de tempo de execução de AMP poderá usar o seguinte padrão para esses valores:
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): o valor padrão da largura e da altura será 0.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): o valor padrão da largura e da altura é inferido a partir do navegador.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): o valor padrão da largura e da altura será 0.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): o valor padrão da largura e da altura é inferido a partir do navegador.
 
 ### E se o atributo <code>layout</code> não estiver definido? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 

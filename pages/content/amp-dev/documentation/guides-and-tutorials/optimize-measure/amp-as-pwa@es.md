@@ -21,32 +21,33 @@ En primer lugar, crea el archivo de manifiesto:
 
 [sourcecode:json]
 {
-  "short_name": "ABE",
-  "name": "AMPByExample",
-  "icons": [
-    {
-      "src": "launcher-icon-1x.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "launcher-icon-2x.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "launcher-icon-4x.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
-  "start_url": "index.html?launcher=true"
+"short_name": "ABE",
+"name": "AMPByExample",
+"icons": [
+{
+"src": "launcher-icon-1x.png",
+"type": "image/png",
+"sizes": "48x48"
+},
+{
+"src": "launcher-icon-2x.png",
+"type": "image/png",
+"sizes": "96x96"
+},
+{
+"src": "launcher-icon-4x.png",
+"type": "image/png",
+"sizes": "192x192"
+}
+],
+"start_url": "index.html?launcher=true"
 }
 [/sourcecode]
 
 A continuación, enlázalo desde la sección `<head>` de tu página AMP:
 
 [sourcecode:html]
+
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
@@ -63,8 +64,10 @@ Los componentes service worker tienen que estar registrados en una página concr
 En este caso, introduce primero la secuencia de comandos del componente [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) en la sección `<head>` de tu página:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 A continuación, añade el fragmento siguiente en algún lugar de la sección `<body>` (modifícalo para que apunte a tu service worker actual):
@@ -84,13 +87,13 @@ Con la técnica anterior, puedes habilitar el acceso sin conexión a tu sitio we
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.open('mysite').then(function(cache) {
-      return cache.match(event.request).then(function(response) {
-        var fetchPromise = fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        })
+event.respondWith(
+caches.open('mysite').then(function(cache) {
+return cache.match(event.request).then(function(response) {
+var fetchPromise = fetch(event.request).then(function(networkResponse) {
+cache.put(event.request, networkResponse.clone());
+return networkResponse;
+})
 
         // Modifica aquí la respuesta antes de enviarla.
         ...
@@ -98,12 +101,13 @@ self.addEventListener('fetch', function(event) {
         return response || fetchPromise;
       })
     })
-  );
+
+);
 });
 [/sourcecode]
 
 Esta técnica te permite modificar tu página AMP con todo tipo de funcionalidades adicionales
 que, de otra manera, no superarían la [validación de AMP](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) como, por ejemplo:
 
-* Las funciones dinámicas que necesitan código JavaScript personalizado.
-* Los componentes que están personalizados o que solo son relevantes para tu sitio web.
+- Las funciones dinámicas que necesitan código JavaScript personalizado.
+- Los componentes que están personalizados o que solo son relevantes para tu sitio web.

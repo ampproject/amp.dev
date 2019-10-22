@@ -2,11 +2,10 @@
 $title: amp-iframe
 $category@: layout
 formats:
-- websites
+  - websites
 teaser:
   text: 显示 iframe。
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -24,10 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 显示 iframe。
-
 
 <table>
   <tr>
@@ -48,20 +44,23 @@ limitations under the License.
 
 `amp-iframe` 与 vanilla iframe 之间存在一些重大差异，后者旨在提高安全性并避免生成由单个 iframe 主导的 AMP 文件：
 
-* `amp-iframe` 不能靠近文档顶部（使用 `placeholder` 的 iframe 除外，如[下](#iframe-with-placeholder)所述）。iframe 必须与文档顶部相距 600 像素，或者滚动到顶部时不在视口的前 75% 范围内，以较小距离为准。
-* 默认情况下，amp-iframe 已经过沙盒化（查看[详细信息](#sandbox)）。
-* `amp-iframe` 只能通过 HTTPS、数据-URI 或 `srcdoc` 属性请求资源。
-* `amp-iframe` 与容器不得同源，除非两者在 `sandbox` 属性中均不支持 `allow-same-origin`。如需详细了解 iframe 支持的来源，请参阅[“iframe 来源政策”](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)文档。
+- `amp-iframe` 不能靠近文档顶部（使用 `placeholder` 的 iframe 除外，如[下](#iframe-with-placeholder)所述）。iframe 必须与文档顶部相距 600 像素，或者滚动到顶部时不在视口的前 75% 范围内，以较小距离为准。
+- 默认情况下，amp-iframe 已经过沙盒化（查看[详细信息](#sandbox)）。
+- `amp-iframe` 只能通过 HTTPS、数据-URI 或 `srcdoc` 属性请求资源。
+- `amp-iframe` 与容器不得同源，除非两者在 `sandbox` 属性中均不支持 `allow-same-origin`。如需详细了解 iframe 支持的来源，请参阅[“iframe 来源政策”](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)文档。
 
-*示例：在 amp-iframe 中嵌入 Google 地图*
+_示例：在 amp-iframe 中嵌入 Google 地图_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland">
-  </amp-iframe>
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland"
+>
+</amp-iframe>
 ```
 
 呈现形式：
@@ -81,10 +80,10 @@ limitations under the License.
 
 实施此政策的原因如下：
 
-* `amp-iframe` 可强制执行沙盒化，且沙盒也会应用于子 iframe。这意味着，着陆页可能会损坏，即使广告本身看起来正常。
-* `amp-iframe` 不提供将配置传递到 iframe 的任何机制。
-* `amp-iframe` 没有完全由 iframe 控制的大小调整机制。
-* `amp-iframe` 可能无法使用可见度信息。
+- `amp-iframe` 可强制执行沙盒化，且沙盒也会应用于子 iframe。这意味着，着陆页可能会损坏，即使广告本身看起来正常。
+- `amp-iframe` 不提供将配置传递到 iframe 的任何机制。
+- `amp-iframe` 没有完全由 iframe 控制的大小调整机制。
+- `amp-iframe` 可能无法使用可见度信息。
 
 # 属性 <a name="attributes"></a>
 
@@ -115,27 +114,33 @@ limitations under the License.
 
 如果 `amp-iframe` 包含 `placeholder` 元素，则 `amp-iframe` 可以显示在文档顶部，如下例所示。
 
-* `amp-iframe` 必须包含具有 `placeholder` 属性的元素（如 `amp-img` 元素），后者在 iframe 准备好显示之前会以占位符形式呈现。
-* iframe 就绪状况可通过监听 iframe 的 `onload` 或可通过 iframe 文档发送的 `embed-ready` `postMessage`（以先到者为准）确定。
+- `amp-iframe` 必须包含具有 `placeholder` 属性的元素（如 `amp-img` 元素），后者在 iframe 准备好显示之前会以占位符形式呈现。
+- iframe 就绪状况可通过监听 iframe 的 `onload` 或可通过 iframe 文档发送的 `embed-ready` `postMessage`（以先到者为准）确定。
 
-*示例：具有 placeholder 的 iframe*
+_示例：具有 placeholder 的 iframe_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    src="https://foo.com/iframe">
-    <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  src="https://foo.com/iframe"
+>
+  <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>
 ```
 
-*示例：iframe embed-ready 请求*
+_示例：iframe embed-ready 请求_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # iframe 大小调整 <a name="iframe-resizing"></a>
@@ -150,65 +155,78 @@ window.parent.postMessage({
 
 请注意，`resizable` 会将 `scrolling` 的值替换为 `no`。
 
-*示例：具有 `overflow` 元素的 `amp-iframe`*
+_示例：具有 `overflow` 元素的 `amp-iframe`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-    <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*示例：iframe 大小调整请求*
+_示例：iframe 大小调整请求_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-size',
-  height: document.body.scrollHeight
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 收到此消息后，AMP 运行时会尝试尽快处理该请求，但会考虑以下因素：读取设备目前读取的位置、滚动操作是否仍在进行，以及任何其他用户体验或性能因素。如果运行时无法满足大小调整请求，`amp-iframe` 会显示 `overflow` 元素。点击 `overflow` 元素即可立即调整 `amp-iframe` 大小，因为该操作是由用户操作触发的。
 
 以下是影响大小调整执行速度的部分因素：
 
-* 调整大小操作是否由用户操作触发。
-* 调整大小是否为当前处于活动状态的 iframe 请求的。
-* 调整大小是否为位于视口下方或上方的 iframe 请求的。
+- 调整大小操作是否由用户操作触发。
+- 调整大小是否为当前处于活动状态的 iframe 请求的。
+- 调整大小是否为位于视口下方或上方的 iframe 请求的。
 
 # iframe 可见度 <a name="iframe-viewability"></a>
 
 iframe 可以将 `send-intersections` 消息发送至其父级，以开始接收 iframe 与父视口相交部分的 IntersectionObserver 样式[更改记录](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)。
 
-*注意：在以下示例中，我们假设脚本在创建的 iframe 内，其中 `window.parent` 表示顶部窗口。如果脚本位于嵌套 iframe 内，请将 `window.parent` 更改为顶部 AMP 窗口。*
+_注意：在以下示例中，我们假设脚本在创建的 iframe 内，其中 `window.parent` 表示顶部窗口。如果脚本位于嵌套 iframe 内，请将 `window.parent` 更改为顶部 AMP 窗口。_
 
-*示例：iframe `send-intersections` 请求*
+_示例：iframe `send-intersections` 请求_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'send-intersections'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 iframe 可以通过监听来自父窗口的 `intersection` 消息来接收相交数据。
 
-*示例：iframe `send-intersections` 请求*
+_示例：iframe `send-intersections` 请求_
 
 ```javascript
 window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-  event.origin == window.location.origin ||
-  !event.data ||
-  event.data.sentinel != 'amp' ||
-  event.data.type != 'intersection') {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
-    }
-  event.data.changes.forEach(function (change) {
+  }
+  event.data.changes.forEach(function(change) {
     console.log(change);
   });
 });
@@ -228,10 +246,10 @@ AMP 仅允许每个页面使用一个 iframe 进行分析和跟踪。为了节�
 
 如果在 AMP 中无法通过其他方法获取所需的用户体验，则应将 `amp-iframe` 组件视为备用方法，也就是说，对于这种用例，现在还没有相应的 [AMP 组件](../../../documentation/components/index.html)。这是因为针对特定用例使用 AMP 组件有诸多益处，例如：
 
-* 更好地进行资源管理和提升性能
-* 在某些情况下，自定义组件可提供内置占位符图片。这意味着，比如说，在视频加载之前获取正确的视频缩略图，还可减少手动添加占位符所需的编码工作。
-* 内置大小调整功能。这意味着，大小无法预测的 iframe 内容能够更频繁向用户展示，这些内容就好像与页面内容浑然一体，而不是在可滚动的框架中。
-* 还可以内置其他功能（例如，视频播放器自动播放功能）
+- 更好地进行资源管理和提升性能
+- 在某些情况下，自定义组件可提供内置占位符图片。这意味着，比如说，在视频加载之前获取正确的视频缩略图，还可减少手动添加占位符所需的编码工作。
+- 内置大小调整功能。这意味着，大小无法预测的 iframe 内容能够更频繁向用户展示，这些内容就好像与页面内容浑然一体，而不是在可滚动的框架中。
+- 还可以内置其他功能（例如，视频播放器自动播放功能）
 
 # 验证 <a name="validation"></a>
 

@@ -4,10 +4,10 @@ $order: 12
 description: 'This guide provides recommended practices that you should implement when creating an AMP story. Watch our video on creating delightful AMP story experiences.'
 $category: Develop
 formats:
-    - stories
+  - stories
 components:
-    - youtube
-    - video
+  - youtube
+  - video
 ---
 
 This guide provides recommended practices that you should implement when creating an [AMP story](../../../documentation/components/reference/amp-story.md).
@@ -16,7 +16,7 @@ This guide provides recommended practices that you should implement when creatin
 
 ## Tell engaging stories
 
-AMP stories are a great way to reach your audience with visual, immersive storytelling. This document outlines some guidelines for telling engaging stories and for getting the most out of the AMP story format.  Before we dive into the details, here are some key things to remember:
+AMP stories are a great way to reach your audience with visual, immersive storytelling. This document outlines some guidelines for telling engaging stories and for getting the most out of the AMP story format. Before we dive into the details, here are some key things to remember:
 
 ### Make your AMP story complete and self-contained
 
@@ -26,11 +26,12 @@ This [AMP story](https://www-washingtonpost-com.cdn.ampproject.org/c/s/www.washi
 
 ### Use video and animation
 
-Bring your stories to life with motion. Video and animation can help keep readers’ attention and increase understanding.  Don’t be afraid to use video frequently, and then balance it out with static content.
+Bring your stories to life with motion. Video and animation can help keep readers’ attention and increase understanding. Don’t be afraid to use video frequently, and then balance it out with static content.
 
 USA Today’s [AMP story](https://www.usatoday.com/amp-stories/beyonce-rule-the-world/) about Beyonce uses a good combination of animation and video.
 
 ### Include branding and a date in your stories
+
 Help users understand who created the story and when it was published. Including brand attribution and a publication date on the cover page can help foster trust.
 
 This [AMP story](https://edition-cnn-com.cdn.ampproject.org/c/s/edition.cnn.com/ampstories/travel/12-beautiful-reasons-to-visit-italy) from CNN about traveling in Italy makes it easy to see at-a-glance who published the story and how recent it is.
@@ -55,7 +56,6 @@ Landscape images and lack of motion make this story less immersive and less inte
 ### Keep it concise
 
 Keep your audience engaged by avoiding large blocks of text. AMP stories is a visually-driven format. Use images to tell your story, and add text to enhance it.
-
 
 <table>
   <tr>
@@ -122,7 +122,6 @@ Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio)
 
 Keep the focus on what’s important. Crop out unnecessary or distracting elements, and make sure the key subject of the photo is in focus and complete.
 
-
 <table>
   <tr>
     <th>DO</th>
@@ -139,6 +138,7 @@ Keep the focus on what’s important. Crop out unnecessary or distracting elemen
 </table>
 
 ### Bring still images to life
+
 Make stories more dynamic by adding motion to static images. For example, you can animate photos with fly-in, rotation, or fade-in effects, as long as the animation supports the style of your story and does not distract from your content.
 
 <table>
@@ -166,6 +166,7 @@ Make stories more dynamic by adding motion to static images. For example, you ca
 ## Video
 
 ### Use Portrait, Full Bleed Assets
+
 Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio) images, which take full advantage of the mobile experience.
 
 <table>
@@ -199,7 +200,8 @@ Create a compelling, immersive experience with full-bleed, portrait (9:16 ratio)
 </table>
 
 ### Use captions
-Enable users to experience your stories anywhere.  In some settings, listening to audio is not an option. So while sound can enhance your story, listening should not be required. Use captions to keep readers engaged even when the volume is turned off.
+
+Enable users to experience your stories anywhere. In some settings, listening to audio is not an option. So while sound can enhance your story, listening should not be required. Use captions to keep readers engaged even when the volume is turned off.
 
 <table>
   <tr>
@@ -270,7 +272,7 @@ Animation can enhance stories when it’s visually appealing, easy to understand
 
 ### Choose the right style
 
-Pick an animation style that matches your story’s aesthetic.  AMP story offers a presets library to help you find a style and intensity that works for you and won’t distract from your content. It's easy to overdo animation, so keep the approach subtle, simple,and clear.  You want your story to stand out, not your animation.
+Pick an animation style that matches your story’s aesthetic. AMP story offers a presets library to help you find a style and intensity that works for you and won’t distract from your content. It's easy to overdo animation, so keep the approach subtle, simple,and clear. You want your story to stand out, not your animation.
 
 <table>
   <tr>
@@ -302,6 +304,7 @@ Pick an animation style that matches your story’s aesthetic.  AMP story offers
 </table>
 
 ### Build animation sequences with multiple objects
+
 One way to be creative with motion is to animate multiple objects into a sequence, rather than having them all move together with one effect. Elements can have different effects and durations, but should all work together to deliver one message.
 
 <table>
@@ -333,11 +336,11 @@ One way to be creative with motion is to animate multiple objects into a sequenc
   </tr>
 </table>
 
-## Other story  components
+## Other story components
 
 ### Use embeds strategically
 
-Embeds can provide an added dimension to your story when used sparingly and presented in the right way. Include relevant content alongside the embed so that it’s an integrated piece of the story.  You may need to enable interactivity for your embed.
+Embeds can provide an added dimension to your story when used sparingly and presented in the right way. Include relevant content alongside the embed so that it’s an integrated piece of the story. You may need to enable interactivity for your embed.
 
 <table>
   <tr>
@@ -427,7 +430,7 @@ With AMP stories, you can add links anywhere on a page. When a link is tapped, a
 
 ## Desktop experience
 
-Improve the desktop experience of your AMP stories by [including landscape images](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). While AMP stories are primarily designed for mobile devices, some people do view them on desktop.  By including both portrait and landscape styles, you can ensure that people see images in the format that’s right for the device they’re using.
+Improve the desktop experience of your AMP stories by [including landscape images](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). While AMP stories are primarily designed for mobile devices, some people do view them on desktop. By including both portrait and landscape styles, you can ensure that people see images in the format that’s right for the device they’re using.
 
 ## Ads and sponsored content
 
@@ -441,28 +444,32 @@ Sponsored content should be clearly labeled, and any paid or affiliate links sho
 
 You should specify a background color for your AMP story pages. By having a background color, you provide a good fallback user experience even if poor network conditions prevent them from downloading any image or video assets.
 
-*   The background color should be representative of the dominant color on the page's background asset.
-*   Choose a color that allows for a smooth transition with the image or page itself. You can choose to:
-    *   Pick a dominant color representative of the image/video.
-    *   Pick a consistent theme color for all pages in the story.
-*   The background color should be different from the font color so that the text is readable even before the image loads.
+- The background color should be representative of the dominant color on the page's background asset.
+- Choose a color that allows for a smooth transition with the image or page itself. You can choose to:
+  - Pick a dominant color representative of the image/video.
+  - Pick a consistent theme color for all pages in the story.
+- The background color should be different from the font color so that the text is readable even before the image loads.
 
 ### Video
 
 #### Specify a poster attribute
 
-The `poster` is an image that displays in the UI until your video is downloaded. The poster can generally be the first frame of the video, although any image can work.  However, you should choose an image that is representative of the video and allows for a smooth transition. If you are choosing the first frame, make sure it's not just a blank temporary frame.
+The `poster` is an image that displays in the UI until your video is downloaded. The poster can generally be the first frame of the video, although any image can work. However, you should choose an image that is representative of the video and allows for a smooth transition. If you are choosing the first frame, make sure it's not just a blank temporary frame.
 
 The recommended dimensions for a poster image are: 720p (720w x 1280h) .
 
-*Example: Specifying a poster*
+_Example: Specifying a poster_
 
 ```html
-<amp-video autoplay loop
-  width="720" height="1280" layout="responsive"
-  poster="images/kitten-playing.png">
-  <source src="videos/kitten-playing.mp4"
-    type="video/mp4" />
+<amp-video
+  autoplay
+  loop
+  width="720"
+  height="1280"
+  layout="responsive"
+  poster="images/kitten-playing.png"
+>
+  <source src="videos/kitten-playing.mp4" type="video/mp4" />
 </amp-video>
 ```
 
@@ -470,30 +477,36 @@ The recommended dimensions for a poster image are: 720p (720w x 1280h) .
 
 When specifying the source for an [`amp-video`](../../../documentation/components/reference/amp-video.md), use `<source>` child elements instead of the `src` attribute. By using the `<source>` element, you can specify the video type, as well as add more video sources. In the `<source>` element, specify the MIME type via the `"type"` attribute. For HLS videos, you must specify one of the following MIME types: `application/x-mpegurl` or `application/vnd.apple.mpegurl`. For all other videos, specify the `video/` MIME prefix and the video format (e.g., "`video/mp4`").
 
-*Example: Specifying multiple source files*
+_Example: Specifying multiple source files_
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
 #### Size/Length of video
 
-*  For optimal performance, you should aim to provide videos that are no larger than 4 MB.
-*   For long videos, consider splitting the video over multiple pages.
-*   For the cover page, avoid particularly large videos.
+- For optimal performance, you should aim to provide videos that are no larger than 4 MB.
+- For long videos, consider splitting the video over multiple pages.
+- For the cover page, avoid particularly large videos.
 
 #### Video formats
 
-If you can only provide a single video format, provide **MP4**.  However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
+If you can only provide a single video format, provide **MP4**. However, where possible, use **HLS** video and specify MP4 as a fallback for browsers that do not yet support HLS video. HLS performs adaptive bitrate streaming, where the quality of the video can be altered to best suit the user's network connection.
 
 [tip type="note"]
-**NOTE –**  The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
+**NOTE –** The HLS video format is not supported in the Chrome for Desktop browser (not even via emulation), so specifying an MP4 fallback is required for any desktop traffic to your page. To debug HLS videos, you'll need to use an actual mobile device via USB-debugging.
 [/tip]
 
 #### Video resolution
@@ -520,7 +533,7 @@ AMP story videos are always vertical (i.e., portrait view), with an expected asp
 </table>
 
 [tip type="note"]
-**NOTE –**  For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
+**NOTE –** For mobile devices that differ from the 16:9 aspect ratio, the video might be cropped horizontally or vertically to fit the viewport.
 [/tip]
 
 #### Video codec
@@ -533,7 +546,7 @@ AMP story videos are always vertical (i.e., portrait view), with an expected asp
 
 ##### Transcoding optimizations
 
-There are various tools you can use to encode videos and adjust the quality of the video during encoding.  Here are just a few:
+There are various tools you can use to encode videos and adjust the quality of the video during encoding. Here are just a few:
 
 <table>
   <thead>
@@ -580,13 +593,13 @@ Ensure the size of your HLS segments are typically no more than 10 seconds in du
 If attempting to automatically advance from one page to another after a video finishes playing, you should set the value of the `auto-advance-after` attribute of `<amp-story-page>` to the id of the video, rather than the expected length of the video. That is, use
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 not
 
 ```html
-<amp-story-page auto-advance-after="9s">
+<amp-story-page auto-advance-after="9s"></amp-story-page>
 ```
 
 This is because the video may not start playing at exactly the same time as the page is displayed, or the given length may not be correct, leading to a different between the exp
@@ -599,4 +612,4 @@ The system header contains controls such as the mute and share icons, appears at
 
 #### Aspect ratio
 
-The page height varies across different browsers and devices. When designing assets on the page, use full-bleed assets based on a 9:16 aspect ratio. Don't leave any essential content close to the edge of the page as it may be  cropped on  some devices.
+The page height varies across different browsers and devices. When designing assets on the page, use full-bleed assets based on a 9:16 aspect ratio. Don't leave any essential content close to the edge of the page as it may be cropped on some devices.

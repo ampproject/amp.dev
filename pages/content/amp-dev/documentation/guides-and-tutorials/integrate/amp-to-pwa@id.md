@@ -4,9 +4,9 @@ $title: Memuat Progressive Web App di awal dari halaman AMP
 
 Strategi yang baik adalah membuat **pintu masuk ke situs sebagai halaman AMP**, kemudian **menyiapkan PWA di belakang layar** dan beralih ke PWA untuk perjalanan selanjutnya:
 
-* Semua konten halaman “rincian” (yang memiliki konten spesifik, bukan halaman ringkasan) dipublikasikan sebagai AMP untuk mendapatkan pengalaman pemuatan yang hampir instan.
-* AMP ini menggunakan elemen khusus AMP [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) untuk menyiapkan cache dan shell PWA saat pengguna sedang membuka konten.
-* Saat pengguna mengklik link lain di situs Anda (misalnya, pesan ajakan (CTA) di bagian bawah untuk pengalaman yang lebih mirip aplikasi), Service Worker akan mencegat permintaan, mengambil alih halaman, dan memuat shell PWA.
+- Semua konten halaman “rincian” (yang memiliki konten spesifik, bukan halaman ringkasan) dipublikasikan sebagai AMP untuk mendapatkan pengalaman pemuatan yang hampir instan.
+- AMP ini menggunakan elemen khusus AMP [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) untuk menyiapkan cache dan shell PWA saat pengguna sedang membuka konten.
+- Saat pengguna mengklik link lain di situs Anda (misalnya, pesan ajakan (CTA) di bagian bawah untuk pengalaman yang lebih mirip aplikasi), Service Worker akan mencegat permintaan, mengambil alih halaman, dan memuat shell PWA.
 
 Baca terus untuk mengetahui alasan dan cara menggunakan pola pengembangan ini.
 
@@ -18,7 +18,7 @@ AMP adalah solusi yang ideal untuk sesuatu yang disebut **halaman rincian**, hal
 
 ### PWA untuk engagement dan interaktivitas yang kaya
 
-Di sisi lain, Progressive Web App memungkinkan interaktivitas dan engagement yang lebih besar, tetapi tidak memiliki *karakteristik pemuatan pertama yang instan* untuk halaman AMP. Esensinya adalah teknologi yang disebut Service Worker, proxy sisi klien yang memungkinkan Anda menyimpan segala jenis aset halaman Anda dalam cache, tetapi Service Worker hanya aktif *setelah* pemuatan pertama.
+Di sisi lain, Progressive Web App memungkinkan interaktivitas dan engagement yang lebih besar, tetapi tidak memiliki _karakteristik pemuatan pertama yang instan_ untuk halaman AMP. Esensinya adalah teknologi yang disebut Service Worker, proxy sisi klien yang memungkinkan Anda menyimpan segala jenis aset halaman Anda dalam cache, tetapi Service Worker hanya aktif _setelah_ pemuatan pertama.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='Pro dan kontra AMP vs. PWA.') }}
 
@@ -33,8 +33,10 @@ AMP memiliki kemampuan untuk menginstal Service Worker Progressive Web App Anda 
 Pertama-tama, instal Service Worker di semua Halaman AMP Anda menggunakan [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), dengan terlebih dahulu menyertakan komponen melalui skripnya di `<head>` halaman Anda:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Kemudian, tambahkan komponen berikut di tempat lain dalam `<body>` (ubah agar mengarah ke Service Worker sebenarnya):
@@ -51,20 +53,20 @@ Terakhir, di langkah penginstalan Service Worker, simpan resource yang akan dibu
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -82,14 +84,14 @@ Pada kasus ini, Anda memiliki situs kanonis (bukan AMP) dan membuat halaman AMP 
 
 ### 2. Jika situs kanonis adalah AMP
 
-Dalam hal ini, halaman kanonis Anda *memang* halaman AMP: Anda membuat seluruh situs dengan AMP, dan hanya menggunakan AMP sebagai library (fakta yang menarik: situs yang sedang Anda buka ini dibuat dengan cara ini). **Pada skenario ini, sebagian besar link di halaman AMP Anda akan mengarah ke halaman AMP lain.**
+Dalam hal ini, halaman kanonis Anda _memang_ halaman AMP: Anda membuat seluruh situs dengan AMP, dan hanya menggunakan AMP sebagai library (fakta yang menarik: situs yang sedang Anda buka ini dibuat dengan cara ini). **Pada skenario ini, sebagian besar link di halaman AMP Anda akan mengarah ke halaman AMP lain.**
 
 Kini Anda dapat menerapkan PWA di jalur terpisah, seperti `your-domain.com/pwa` dan menggunakan Service Worker yang telah berjalan untuk **mencegat navigasi browser saat seseorang mengklik link di Halaman AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

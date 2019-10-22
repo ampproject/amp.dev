@@ -2,11 +2,10 @@
 $title: amp-auto-ads
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: 通过使用远程提供的配置文件，向 AMP 网页中动态投放广告。
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 通过使用远程提供的配置文件，向 AMP 网页中动态投放广告
 
@@ -52,30 +49,28 @@ limitations under the License.
     </tr>
   </table>
 
-
 ## 行为
 
 在获得足够多的有效展示位置（在配置中提供）后，`amp-auto-ads` 会尝试植入更多广告，同时遵守相应广告联盟指定的一系列限制。这些限制会限制以下内容：
 
-* 可植入的广告总数
-* 任意相邻广告之间应保持的最短距离
+- 可植入的广告总数
+- 任意相邻广告之间应保持的最短距离
 
 除此之外，广告只能植入到网页上不会导致不可接受的重排（取决于 attemptChangeSize）的位置中。
 
 `<amp-auto-ads>` 标记应作为 `<body>` 的第一个子级放置。
 
 广告联盟类型和任何其他信息（广告联盟要求提供）都应在此标记中指定。
+
 ```html
-<amp-auto-ads
-    type="adsense"
-    data-ad-client="ca-pub-5439573510495356">
-  </amp-auto-ads>
+<amp-auto-ads type="adsense" data-ad-client="ca-pub-5439573510495356">
+</amp-auto-ads>
 ```
 
 ## 支持的广告联盟 <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick（实验性）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+- [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+- [DoubleClick（实验性）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 属性
 
@@ -111,16 +106,16 @@ limitations under the License.
         "index": 2,
         "sub": {
           "selector": "P.paragraph",
-          "all": true,
-        },
+          "all": true
+        }
       },
       "pos": 4,
       "type": 1,
       "style": {
         "top_m": 5,
-        "bot_m": 10,
-      },
-    },
+        "bot_m": 10
+      }
+    }
   ]
 }
 ```
@@ -364,14 +359,14 @@ limitations under the License.
 
 要在 `subsequentMinSpacing` 配置对象中指定的字段。`subsequentMinSpacing` 条目可用于根据网页上已有广告的数量更改任何其他广告之间所需的间距。例如，请考虑以下情形：
 
-* 网页上已有 2 个广告
-* subsequentMinSpacing 字段为：
-<code>
+- 网页上已有 2 个广告
+- subsequentMinSpacing 字段为：
+  <code>
   [
-    {adCount: 3, spacing: "500px"},
-    {adCount: 5, spacing: "1000px"},
+  {adCount: 3, spacing: "500px"},
+  {adCount: 5, spacing: "1000px"},
   ]
-</code>
+  </code>
 
 网页上一开始有 2 个广告，所以没有映射匹配。
 因此，最短间距默认为 `AdConstraints` 对象中的 initialMinSpacing。

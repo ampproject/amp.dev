@@ -1,7 +1,9 @@
 {
-  "items": [{
-    "name": "My Product",
-    "price": "6.99",
-    "availability": 1
-  }]
+  "items": [
+    {
+      "name": "My Product",
+      "price": "6.99",
+      "availability": 1
+    }
+  ]
 }

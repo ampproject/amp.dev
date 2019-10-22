@@ -15,9 +15,9 @@
  */
 'use strict';
 
+const casual = require('casual');
 const express = require('express');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
-const casual = require('casual');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -53,16 +53,24 @@ examples.all('/photo-stream', (req, res) => {
     items = items[0];
   }
 
-  const nextUrl = req.baseUrl + '/photo-stream?items=' +
-    numberOfItems + '&left=' + JSON.stringify(pagesLeft - 1);
+  const nextUrl =
+    req.baseUrl +
+    '/photo-stream?items=' +
+    numberOfItems +
+    '&left=' +
+    JSON.stringify(pagesLeft - 1);
 
   const randomFalsy = () => {
     const rand = Math.floor(Math.random() * Math.floor(3));
     switch (rand) {
-      case 1: return null;
-      case 2: return undefined;
-      case 3: return '';
-      default: return false;
+      case 1:
+        return null;
+      case 2:
+        return undefined;
+      case 3:
+        return '';
+      default:
+        return false;
     }
   };
 

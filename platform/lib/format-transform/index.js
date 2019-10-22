@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-const cheerio = require('cheerio');
 const amphtmlValidator = require('amphtml-validator');
-const {htmlContent} = require('@lib/utils/cheerioHelper');
+const cheerio = require('cheerio');
 const config = require('@lib/config.js');
 const formats = require('./formats');
+const {htmlContent} = require('@lib/utils/cheerioHelper');
 
 const host = config.hosts.platform;
 const FORMATS_REGEXP = /@formats\(([^)]+)\)/;
@@ -62,7 +62,10 @@ class FormatTransform {
     const result = {transformedContent: content};
     if (validatorRuntime) {
       const fixedContent = this.prepareForValidator_(content);
-      const validation = this.validator.validateString(fixedContent, validatorRuntime);
+      const validation = this.validator.validateString(
+        fixedContent,
+        validatorRuntime
+      );
       result.validationResult = validation;
     }
     return result;
@@ -93,7 +96,7 @@ class FormatTransform {
   }
 
   applyCommentFormatFilters_($, target) {
-    const process = (node) => {
+    const process = node => {
       if (node.type === 'comment') {
         this.parseCommentNode_(node, target);
       } else if (node.children) {
@@ -134,13 +137,13 @@ class FormatTransform {
     if (!match) {
       return null;
     }
-    return new Set(match[1].split(',').map((e) => e.trim()));
+    return new Set(match[1].split(',').map(e => e.trim()));
   }
 }
 
-const instance = amphtmlValidator.getInstance().then(
-    (validator) => new FormatTransform(formats, validator)
-);
+const instance = amphtmlValidator
+  .getInstance()
+  .then(validator => new FormatTransform(formats, validator));
 
 async function getInstance() {
   return instance;

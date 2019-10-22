@@ -34,10 +34,14 @@ class HeadDedupTransformer {
 
   transform(tree) {
     const html = tree.root.firstChildByTag('html');
-    if (!html) return;
+    if (!html) {
+      return;
+    }
 
     const head = html.firstChildByTag('head');
-    if (!head) return;
+    if (!head) {
+      return;
+    }
 
     // build a map of all potential duplicates
     const matches = new Map();
@@ -50,8 +54,8 @@ class HeadDedupTransformer {
       }
     }
     // remove duplicates
-    matches.forEach((matches) => {
-      matches.slice(1).forEach((node) => {
+    matches.forEach(matches => {
+      matches.slice(1).forEach(node => {
         node.remove();
       });
     });
@@ -62,7 +66,7 @@ class HeadDedupTransformer {
       if (node.tagName === key) {
         return this.matchAttributes(node, value) ? value : null;
       }
-    };
+    }
     return null;
   }
 
@@ -71,7 +75,7 @@ class HeadDedupTransformer {
       if (node.attribs[key] !== value) {
         return false;
       }
-    };
+    }
     return true;
   }
 }

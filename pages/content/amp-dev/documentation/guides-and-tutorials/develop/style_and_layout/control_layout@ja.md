@@ -102,8 +102,8 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 `width` や `height` が指定されていない場合、
 AMP ランタイムはデフォルトで次の値を使用します。
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): width と height の両方がデフォルトで 0 に設定されます。
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): デフォルトの width と height はブラウザから推測されます。
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): width と height の両方がデフォルトで 0 に設定されます。
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): デフォルトの width と height はブラウザから推測されます。
 
 ### <code>layout</code> 属性が指定されていない場合 <a name="what-if-the-layout-attribute-isnt-specified"></a>
 

@@ -1,7 +1,7 @@
 {
-	"baseUrls": {
-	 	"playground": "/#url=",
-		"repository": "https://github.com/ampproject/docs/blob/future/"
-	},
+  "baseUrls": {
+    "playground": "/#url=",
+    "repository": "https://github.com/ampproject/docs/blob/future/"
+  },
   "gaTrackingId": "UA-67833617-1"
 }

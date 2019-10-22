@@ -16,9 +16,14 @@ $title: 사이트 탐색
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
-<div class="site-name">뉴스 사이트</div>
+  <div class="site-name">뉴스 사이트</div>
 </header>
 ```
 
@@ -46,7 +51,7 @@ article {
 }
 ```
 
-이제 페이지를 **새로고침**해 보세요. 페이지 왼쪽 상단에 `homepage.html`로 연결되는 링크가 표시됩니다.  홈 아이콘을 클릭하면 어느 곳으로도 연결되지 않는 것을 바로 확인할 수 있습니다. `homepage.html` 파일이 없기 때문입니다.
+이제 페이지를 **새로고침**해 보세요. 페이지 왼쪽 상단에 `homepage.html`로 연결되는 링크가 표시됩니다. 홈 아이콘을 클릭하면 어느 곳으로도 연결되지 않는 것을 바로 확인할 수 있습니다. `homepage.html` 파일이 없기 때문입니다.
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='홈 아이콘 탐색') }}
 
@@ -61,25 +66,39 @@ article {
 먼저 다음과 같이 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 구성요소의 자바스크립트를 `<head>` 태그에 **추가**해야 합니다.
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
-다음으로 메뉴 아이콘이 표시되게 해 보겠습니다.  아이콘을 탭하면 사이드바가 열립니다. `<header>`를 다음 코드로 **변경**하면 홈 아이콘 대신 ['햄버거'](https://en.wikipedia.org/wiki/Hamburger_button) 아이콘이 표시됩니다.
+다음으로 메뉴 아이콘이 표시되게 해 보겠습니다. 아이콘을 탭하면 사이드바가 열립니다. `<header>`를 다음 코드로 **변경**하면 홈 아이콘 대신 ['햄버거'](https://en.wikipedia.org/wiki/Hamburger_button) 아이콘이 표시됩니다.
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">뉴스 사이트</div>
 </header>
 ```
 
-위의 코드에서는 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 요소의 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 액션 속성으로 사이드바를 `전환`합니다. 이 요소는 `sidebar1` ID로 표시되어 있습니다.  사이드바를 추가해 보겠습니다.
+위의 코드에서는 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 요소의 [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) 액션 속성으로 사이드바를 `전환`합니다. 이 요소는 `sidebar1` ID로 표시되어 있습니다. 사이드바를 추가해 보겠습니다.
 
 `</header>` 바로 뒤에 다음 HTML을 **추가**하세요.
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -88,7 +107,7 @@ article {
 </amp-sidebar>
 ```
 
-사이드바는 숨겨져 있지만 사용자가 햄버거 아이콘을 탭하면 화면 왼쪽에서 메뉴가 표시됩니다.  X 아이콘을 탭하면 메뉴가 닫힙니다.
+사이드바는 숨겨져 있지만 사용자가 햄버거 아이콘을 탭하면 화면 왼쪽에서 메뉴가 표시됩니다. X 아이콘을 탭하면 메뉴가 닫힙니다.
 
 마지막으로 인라인 CSS에 다음 스타일 규칙을 **추가**하세요.
 
@@ -102,7 +121,7 @@ article {
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;
@@ -113,8 +132,8 @@ article {
 }
 ```
 
-사이드바를 확인해 보겠습니다. **새로고침**하여 AMP 페이지를 다시 로드하세요.  그러면 다음과 같이 표시될 것입니다.
+사이드바를 확인해 보겠습니다. **새로고침**하여 AMP 페이지를 다시 로드하세요. 그러면 다음과 같이 표시될 것입니다.
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='사이드바 메뉴 탐색') }}
 
-멋진 페이지가 완성되었습니다.  이제 맞춤 글꼴을 추가하여 마무리하겠습니다.
+멋진 페이지가 완성되었습니다. 이제 맞춤 글꼴을 추가하여 마무리하겠습니다.

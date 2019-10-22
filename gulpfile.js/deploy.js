@@ -16,11 +16,11 @@
 
 'use strict';
 
-const {series} = require('gulp');
-const {join} = require('path');
-const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
+const {join} = require('path');
 const {ROOT} = require('@lib/utils/project').paths;
+const {series} = require('gulp');
+const {sh} = require('@lib/utils/sh.js');
 
 const PREFIX = 'amp-dev';
 const PACKAGER_PREFIX = PREFIX + '-packager';
@@ -100,11 +100,16 @@ const config = {
  * Verifies the commit SHA1 (config.tag) hasn't already been deployed
  */
 async function verifyTag() {
-  const tags = await sh(`gcloud container images list-tags ${config.image.name}`, {quiet: true});
+  const tags = await sh(
+    `gcloud container images list-tags ${config.image.name}`,
+    {quiet: true}
+  );
   console.log('Verifying build tag', config.tag);
   if (tags.includes(config.tag)) {
-    throw new Error(`The commit ${config.tag} you are trying to build has ` +
-      'already been deployed!');
+    throw new Error(
+      `The commit ${config.tag} you are trying to build has ` +
+        'already been deployed!'
+    );
   }
 }
 
@@ -162,7 +167,7 @@ function instanceTemplateCreate() {
  * that there's always at least 1 active instance running during the update.
  */
 async function updateStart() {
-  const updates = config.instance.groups.map((group) => {
+  const updates = config.instance.groups.map(group => {
     return sh(`gcloud beta compute instance-groups managed rolling-action \
                  start-update ${group.name} \
                  --version template=${config.instance.template} \
@@ -173,9 +178,11 @@ async function updateStart() {
   });
   await Promise.all(updates);
 
-  console.log('Rolling update started, this can take a few minutes...\n\n' +
-    'Run `gulp updateStatus` to check the current status. `isStable => true` once ' +
-    'when the upate has been finished.');
+  console.log(
+    'Rolling update started, this can take a few minutes...\n\n' +
+      'Run `gulp updateStatus` to check the current status. `isStable => true` once ' +
+      'when the upate has been finished.'
+  );
 }
 
 /**
@@ -183,7 +190,7 @@ async function updateStart() {
  * all VMs have been updated to the latest version and the update is stable.
  */
 function updateStatus() {
-  const updates = config.instance.groups.map((group) => {
+  const updates = config.instance.groups.map(group => {
     return sh(`gcloud beta compute instance-groups managed describe ${group.name} \
              --zone=${group.zone}`);
   });
@@ -207,17 +214,23 @@ function updateStop() {
  * Create a new VM instance template based on the latest docker image.
  */
 function packagerInstanceTemplateCreate() {
-  return sh(`gcloud compute instance-templates create-with-container \
+  return sh(
+    `gcloud compute instance-templates create-with-container \
                                    ${config.packager.instance.template} \
                  --container-image ${config.packager.image.current} \
-                 --machine-type ${config.packager.instance.machine}`, config.packager.opts);
+                 --machine-type ${config.packager.instance.machine}`,
+    config.packager.opts
+  );
 }
 
 /**
  * Builds and uploads the packager docker image to Google Cloud Container Registry.
  */
 function packagerImageUpload() {
-  return sh(`gcloud builds submit --tag ${config.packager.image.current} .`, config.packager.opts);
+  return sh(
+    `gcloud builds submit --tag ${config.packager.image.current} .`,
+    config.packager.opts
+  );
 }
 
 /**
@@ -225,14 +238,17 @@ function packagerImageUpload() {
  * that there's always at least 1 active instance running during the update.
  */
 async function packagerUpdateStart() {
-  const updates = config.packager.instance.groups.map((group) => {
-    return sh(`gcloud beta compute instance-groups managed rolling-action \
+  const updates = config.packager.instance.groups.map(group => {
+    return sh(
+      `gcloud beta compute instance-groups managed rolling-action \
                  start-update ${group.name} \
                  --version template=${config.packager.instance.template} \
                  --zone=${group.zone} \
                  --min-ready 1m \
                  --max-surge 1 \
-                 --max-unavailable 1`, config.packager.opts);
+                 --max-unavailable 1`,
+      config.packager.opts
+    );
   });
   await Promise.all(updates);
 
@@ -241,16 +257,21 @@ async function packagerUpdateStart() {
 
 exports.verifyTag = verifyTag;
 exports.gcloudSetup = gcloudSetup;
-exports.deploy = series(verifyTag, imageUpload, instanceTemplateCreate, updateStart);
+exports.deploy = series(
+  verifyTag,
+  imageUpload,
+  instanceTemplateCreate,
+  updateStart
+);
 exports.imageBuild = imageBuild;
 exports.imageList = imageList;
 exports.imageRunLocal = imageRunLocal;
 exports.imageUpload = imageUpload;
 exports.instanceTemplateCreate = instanceTemplateCreate;
 exports.packagerDeploy = series(
-    packagerImageUpload,
-    packagerInstanceTemplateCreate,
-    packagerUpdateStart
+  packagerImageUpload,
+  packagerInstanceTemplateCreate,
+  packagerUpdateStart
 );
 exports.packagerImageUpload = packagerImageUpload;
 exports.packagerInstanceTemplateCreate = packagerInstanceTemplateCreate;

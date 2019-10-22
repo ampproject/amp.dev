@@ -2,13 +2,12 @@
 $title: amp-carousel
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 横軸に沿って複数の類似コンテンツを表示します。
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 汎用カルーセルは、横軸に沿って複数の類似コンテンツを表示します。優れた柔軟性とパフォーマンスを備えています。
 
@@ -61,20 +58,27 @@ limitations under the License.
 ユーザーがスワイプを行ったり、矢印キーを使用したり、オプションのナビゲーション矢印をクリックしたりすると、カルーセルがアイテム間を移動します。
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel width="450"
-  height="300">
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+<amp-carousel width="450" height="300">
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
     width="450"
-    height="300"></amp-img>
+    height="300"
+  ></amp-img>
 </amp-carousel>
 ```
+
 [/example]
 
 # 特定のスライドに進む <a name="advancing-to-a-specific-slide"></a>
@@ -84,49 +88,65 @@ limitations under the License.
 以下の例の場合、カルーセルは 3 つの画像で構成されており、カルーセルの下にプレビュー ボタンが配置されます。ユーザーがいずれかのボタンをクリックすると、対応するカルーセル アイテムが表示されます。
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel id="carousel-with-preview"
+<amp-carousel
+  id="carousel-with-preview"
+  width="450"
+  height="300"
+  layout="responsive"
+  type="slides"
+>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
     height="300"
     layout="responsive"
-    type="slides">
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="apples"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="lemons"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="blueberries"></amp-img>
-  </amp-carousel>
-  <div class="carousel-preview">
-    <button on="tap:carousel-with-preview.goToSlide(index=0)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-        width="60"
-        height="40"
-        alt="apples"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=1)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-        width="60"
-        height="40"
-        alt="lemons"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=2)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-        width="60"
-        height="40"
-        alt="blueberries"></amp-img>
-    </button>
-  </div>
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
 ```
+
 [/example]
 
 # 属性 <a name="attributes"></a>
@@ -188,6 +208,7 @@ limitations under the License.
             <em>例: controls、loop、delay 付き autoplay を有効にしたスライド カルーセルを表示する</em>
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
 <amp-carousel type="slides"
   width="450"
@@ -209,22 +230,23 @@ limitations under the License.
     height="300"></amp-img>
 </amp-carousel>
 ```
+
 [/example]</td>
-          </tr>
-          <tr>
-            <td width="40%"><strong>共通の属性</strong></td>
-            <td>この要素には、AMP コンポーネントに拡張された<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">共通の属性</a>が含まれます。</td>
-          </tr>
-        </table>
+</tr>
+<tr>
+<td width="40%"><strong>共通の属性</strong></td>
+<td>この要素には、AMP コンポーネントに拡張された<a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">共通の属性</a>が含まれます。</td>
+</tr>
+</table>
 
 # スタイル設定 <a name="styling"></a>
 
-* `amp-carousel` 要素セレクタを使用して、自由にスタイルを設定できます。
-* カルーセル アイテムをターゲティングするには、`.amp-carousel-slide` クラスセレクタを使用します。
-* `amp-carousel` ボタンが無効になっている場合、ボタンは非表示になります。
-* デフォルトでは、`.amp-carousel-button` はボタンの背景画像としてインライン SVG を使用します。下記の例のように、独自の SVG や画像でオーバーライドすることができます。
+- `amp-carousel` 要素セレクタを使用して、自由にスタイルを設定できます。
+- カルーセル アイテムをターゲティングするには、`.amp-carousel-slide` クラスセレクタを使用します。
+- `amp-carousel` ボタンが無効になっている場合、ボタンは非表示になります。
+- デフォルトでは、`.amp-carousel-button` はボタンの背景画像としてインライン SVG を使用します。下記の例のように、独自の SVG や画像でオーバーライドすることができます。
 
-*例: デフォルト `.amp-carousel-button` インライン SVG*
+_例: デフォルト `.amp-carousel-button` インライン SVG_
 
 ```css
 .amp-carousel-button-prev {
@@ -233,7 +255,7 @@ limitations under the License.
 }
 ```
 
-*例: デフォルト `.amp-carousel-button` インライン SVG をオーバーライドする*
+_例: デフォルト `.amp-carousel-button` インライン SVG をオーバーライドする_
 
 ```css
 .amp-carousel-button-prev {

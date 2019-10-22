@@ -1,5 +1,5 @@
 ---
-$title: "Analytics: conceitos básicos"
+$title: 'Analytics: conceitos básicos'
 ---
 
 Conheça os conceitos básicos da análise de AMP.
@@ -44,25 +44,28 @@ Para criar uma configuração simples de [`amp-analytics`](../../../../documenta
 documento de AMP (consulte também [Declaração de inclusão de componente](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 O exemplo a seguir é semelhante ao [exemplo de `amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Todas as vezes que uma página estiver visível, o evento será acionado e enviará os dados de exibição de página para um URL definido, juntamente com um código aleatório:
 
 ```html
 <amp-analytics>
+  <script type="application/json">
 
-<script type="application/json">
+      {"requests":
+        {"pageview": "https://foo.com/pixel?RANDOM
+      ", },"triggers":
+        {"trackPageview":
+          {"on": "visible",
+          "request": "pageview"
 
-  {"requests":
-    {"pageview": "https://foo.com/pixel?RANDOM
-  ", },"triggers":
-    {"trackPageview":
-      {"on": "visible",
-      "request": "pageview"
-
-} } }</script>
-
+    } } }
+  </script>
 </amp-analytics>
 ```
 
@@ -77,7 +80,9 @@ quanto [`amp-analytics`](../../../../documentation/components/reference/amp-anal
 permitem todas as substituições de variáveis ​​de URL padrão (consulte [Substituições de variáveis ​​de AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)). No exemplo abaixo, a solicitação de exibição de página é enviada ao URL juntamente com o URL canônico do documento AMP atual, o title e um [código de cliente](analytics_basics.md):
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 Por ser bastante simples, a tag [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) só pode incluir variáveis ​​definidas pela plataforma ou que possam ser analisadas pelo tempo de execução da AMP a partir da página AMP. No exemplo acima, a plataforma preenche os valores de `canonicalURL` e `clientId(site-user-id)`. A tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) pode incluir as mesmas variáveis que [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md), assim como as variáveis ​​definidas de modo exclusivo dentro da configuração da tag.
@@ -89,22 +94,21 @@ No exemplo de [`amp-analytics`](../../../../documentation/components/reference/a
 
 ```html
 <amp-analytics>
+  <script type="application/json">
 
-<script type="application/json">
-
-  {"requests":
-    {"pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars":
-    {"account":
-  "ABC123", },"triggers":
-    {"someEvent":
-      {"on": "visible",
-      "request": "pageview",
+      {"requests":
+        {"pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
+      },
       "vars":
-        {"title":
-"Minha página inicial", } } } }</script>
-
+        {"account":
+      "ABC123", },"triggers":
+        {"someEvent":
+          {"on": "visible",
+          "request": "pageview",
+          "vars":
+            {"title":
+    "Minha página inicial", } } } }
+  </script>
 </amp-analytics>
 ```
 
@@ -126,7 +130,9 @@ ou `${clientId(cid-scope-cookie-fallback-name)}`.
 Por exemplo:
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 Se a AMP descobrir que o cookie está definido, a substituição do código de cliente retornará o valor do cookie. Se a AMP descobrir que esse cookie não está definido, ela gerará um valor no formato `amp-` seguido de uma string aleatória codificada base64.

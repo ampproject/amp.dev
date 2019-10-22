@@ -9,8 +9,6 @@ teaser:
   text: Allows rendering of Mustache.js templates.
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 يسمح بعرض [Moustache.js](https://github.com/janl/mustache.js/).
 
@@ -50,19 +46,19 @@ teaser:
 
 ## ملاحظات عن الإصدارات <a name="version-notes"></a>
 
-| الإصدار | الوصف |
-|-------|-----|
-| 0.2 | يتيح عناصر `<svg>` ويقلل حجم الحزمة (12.2 كيلو بايت مقابل 20.5 كيلو بايت، مضغوط بتنسيق gzip).ينقل البيانات إلى مكتبة HTML أحدث وأنظف (Caja إلى DOMPurify). قد يحدِث هذا تغييرات قد تؤدي إلى عطل بسبب الاختلافات في القائمة البيضاء للعلامات والسمات. ننصح باختبار صفحاتك أولاً قبل الدفع بها إلى الإنتاج للتأكد من عدم تأثير التغييرات التي أُجريت على الترميز الذي تم إنشاؤه في الوظائف. |
-| 0.1 | تنفيذ مبدئي |
+| الإصدار | الوصف                                                                                                                                                                                                                                                                                                                                                                                     |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.2     | يتيح عناصر `<svg>` ويقلل حجم الحزمة (12.2 كيلو بايت مقابل 20.5 كيلو بايت، مضغوط بتنسيق gzip).ينقل البيانات إلى مكتبة HTML أحدث وأنظف (Caja إلى DOMPurify). قد يحدِث هذا تغييرات قد تؤدي إلى عطل بسبب الاختلافات في القائمة البيضاء للعلامات والسمات. ننصح باختبار صفحاتك أولاً قبل الدفع بها إلى الإنتاج للتأكد من عدم تأثير التغييرات التي أُجريت على الترميز الذي تم إنشاؤه في الوظائف. |
+| 0.1     | تنفيذ مبدئي                                                                                                                                                                                                                                                                                                                                                                               |
 
 ## البنية <a name="syntax"></a>
 
 Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات Moustache.js](https://github.com/janl/mustache.js/) للحصول على المزيد من التفاصيل. في ما يلي بعض علامات Mustache الأساسية:
 
-* {% raw %}`{{variable}}`{% endraw %}: علامة متغير تعطي القيمة HTML التي تتضمن حروف إلغاء للمتغير.
-* {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: علامة قسم يمكنها اختبار وجود متغير وتكراره إذا كان مصفوفة.
-* {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: علامة مقلوبة يمكنها اختبار عدم وجود متغير.
-* {% raw %}`{{{unescaped}}}`{% endraw %}: HTML لا تتضمن حروف إلغاء ومقيدة من حيث الترميز الذي قد تعطيه (انظر "القيود" أدناه).
+- {% raw %}`{{variable}}`{% endraw %}: علامة متغير تعطي القيمة HTML التي تتضمن حروف إلغاء للمتغير.
+- {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: علامة قسم يمكنها اختبار وجود متغير وتكراره إذا كان مصفوفة.
+- {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: علامة مقلوبة يمكنها اختبار عدم وجود متغير.
+- {% raw %}`{{{unescaped}}}`{% endraw %}: HTML لا تتضمن حروف إلغاء ومقيدة من حيث الترميز الذي قد تعطيه (انظر "القيود" أدناه).
 
 ## الاستخدام <a name="usage"></a>
 
@@ -71,8 +67,11 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 يجب أولاً إعلان/تحميل `amp-mustache` على هذا النحو:
 
 ```html
-
-<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<script
+  async
+  custom-template="amp-mustache"
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+></script>
 ```
 
 يمكن بعد ذلك تعريف نماذج Mustache في علامة `script` أو `template` هكذا:
@@ -84,9 +83,11 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 </template>
 {% endraw %}
 ```
+
 أو
 
 <!-- Using script tag. -->
+
 ```html
 {% raw %}<script type="text/plain" template="amp-mustache">
   Hello {{world}}!
@@ -104,8 +105,8 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 
 مثل جميع نماذج AMP ، يجب أن تكون نماذج `amp-mustache` أجزاء DOM جيدة التنظيم. ويعني هذا، من بين أمور أخرى، أنه لا يمكنك استخدام `amp-mustache` في ما يلي:
 
-* حساب اسم العلامة: على سبيل المثال، {% raw %}`<{{tagName}}>`{% endraw %} غير مسموح به.
-* حساب اسم السمة: على سبيل المثال، `<div {{attrName}}=something>` غير مسموح به.
+- حساب اسم العلامة: على سبيل المثال، {% raw %}`<{{tagName}}>`{% endraw %} غير مسموح به.
+- حساب اسم السمة: على سبيل المثال، `<div {{attrName}}=something>` غير مسموح به.
 
 تم تنظيف مخرجات "triple-mustache" لتسمح فقط بالعلامات التالية: `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u`, `ul`.
 
@@ -151,7 +152,9 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 {% raw %}<template type="amp-mustache">
   <table>
     <tr>
-      {{#foo}}<td></td>{{/foo}}
+      {{#foo}}
+      <td></td>
+      {{/foo}}
     </tr>
   </table>
 </template>
@@ -161,13 +164,13 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 سيعيد المتصفح ترتيب عقد النص {% raw %}`{{#foo}}`{% endraw %} و{% raw %}`{{/foo}}`{% endraw %}:
 
 ```html
-{% raw %}{{#foo}}
-{{/foo}}
+{% raw %}{{#foo}} {{/foo}}
 <table>
   <tr>
     <td></td>
   </tr>
 </table>
+
 {% endraw %}
 ```
 
@@ -191,7 +194,7 @@ Moustache هو بنية نموذج بمنطق أقل. راجِع [مستندات
 ```html
 {% raw %}<template type="amp-mustache">
   <!-- A double-quote (") in foo will cause malformed HTML. -->
-  <amp-img alt="{{foo}}" src="example.jpg" width=100 height=100></amp-img>
+  <amp-img alt="{{foo}}" src="example.jpg" width="100" height="100"></amp-img>
 
   <!-- A single-quote (') or double-quote (") in bar will cause an AMP runtime parse error. -->
   <button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>

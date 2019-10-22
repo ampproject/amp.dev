@@ -62,48 +62,48 @@ No special integration is needed to serve AMPHTML ads to non-AMP pages. Check wi
 
 ### Publishers
 
-To serve your direct-sold ad formats in AMPHTML, you must create the ads according to the [AMPHTML ad spec](a4a_spec.md) and deliver them using an ad server that supports AMPHTML ad serving.  Currently, the following ad servers support AMPHTML ads:
+To serve your direct-sold ad formats in AMPHTML, you must create the ads according to the [AMPHTML ad spec](a4a_spec.md) and deliver them using an ad server that supports AMPHTML ad serving. Currently, the following ad servers support AMPHTML ads:
 
-*   DoubleClick for Publishers
-*   TripleLift
-*   Dianomi
-*   Adzerk
-*   Google AdSense
+- DoubleClick for Publishers
+- TripleLift
+- Dianomi
+- Adzerk
+- Google AdSense
 
 To deliver AMPHTML ads through your indirect channels (e.g., exchange, SSP, etc.), use a supporting ad network/ad server on the [following list](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md).
 
 ### Creative agencies
 
-If you are a creative agency, you must create the ads in accordance with  the [AMPHTML ad spec](a4a_spec.md). For inspiration and examples, see the open-source AMPHTML ad templates on [Examples](../../../documentation/examples/index.html). Alternatively, use one of the following tools to create AMPHTML ads:
+If you are a creative agency, you must create the ads in accordance with the [AMPHTML ad spec](a4a_spec.md). For inspiration and examples, see the open-source AMPHTML ad templates on [Examples](../../../documentation/examples/index.html). Alternatively, use one of the following tools to create AMPHTML ads:
 
-*  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate (*coming soon*)
+- [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate (_coming soon_)
 
 ### Ad networks/servers
 
-To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md).  Refer to [Integrating with AMP to serve display ads](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) for details.  Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
+To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../documentation/components/reference/amp-ad.md) extension for your network (unless you already have one) which uses the [Fast Fetch ad request implementation](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md). Refer to [Integrating with AMP to serve display ads](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) for details. Keep in mind that no special integration is needed to serve AMPHTML to non-AMP pages.
 
 ## Creating AMPHTML ads
 
-**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec](a4a_spec.md).  For demos and examples, see the open-source AMPHTML ad templates on [Examples](../../../documentation/examples/documentation/amp-ad.html).
+**From scratch**: AMPHTML ads must follow the [AMPHTML ad spec](a4a_spec.md). For demos and examples, see the open-source AMPHTML ad templates on [Examples](../../../documentation/examples/documentation/amp-ad.html).
 
 **Using tools**: You can use any of the following tools to build AMPHTML creatives:
 
-*  [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate (*coming soon*)
+- [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate (_coming soon_)
 
 ### Validate AMPHTML ad syntax
 
 After creating your AMPHTML ad, you should make sure that the ad is using the correct AMPHTML syntax. Depending on your development environment, there are a few options for you to validate your AMPHTML ads:
 
-*   Use the [AMP validator NPM](https://www.npmjs.com/package/amphtml-validator) module to integrate validation into your build CI.
-*   Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
-*   Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
+- Use the [AMP validator NPM](https://www.npmjs.com/package/amphtml-validator) module to integrate validation into your build CI.
+- Use the [AMP validator](https://validator.ampproject.org/) for one-off testing.
+- Partner with [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) and use their public validator end point.
 
 [tip type="note"]
-**NOTE –**  To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct.  If the syntax isn't valid, the ad will still render, just not as quickly.
+**NOTE –** To render AMPHTML ads quickly on AMP pages (i.e., using preferential rendering in Fast Fetch), the syntax must be correct. If the syntax isn't valid, the ad will still render, just not as quickly.
 [/tip]
 
 ## Supporting AMPHTML ads in RTB
@@ -130,6 +130,6 @@ Yes. See [`amp-ad-exit`](../../../documentation/components/reference/amp-ad-exit
 
 #### I can't find what I need, where can I ask questions?
 
-*   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP; since members of the AMP Project community regularly monitor Stack Overflow you will probably receive the fastest response to your questions there.
-*   Join the [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel for solutions and answers.
-*   If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue.
+- [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) is our recommended way to find answers to questions about AMP; since members of the AMP Project community regularly monitor Stack Overflow you will probably receive the fastest response to your questions there.
+- Join the [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) channel for solutions and answers.
+- If you encounter a bug in AMP or have a feature request for AMP, see [Reporting issues with AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) for information on filing an issue.

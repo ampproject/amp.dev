@@ -8,11 +8,11 @@ $title: 创作 AMP 故事的最佳做法
 
 您应为 AMP 故事网页指定背景颜色。通过指定背景颜色，即使用户因网络状况不佳而无法下载任何图片或视频资源，您也可以为其提供出色的后备体验。
 
-*   背景颜色应能代表网页背景资源上的主色。
-*   选择一种使图片或网页本身能够平稳过渡的颜色。您可以做出如下选择：
-    *   选择能代表图片/视频的主色。
-    *   为故事的所有网页选择一致的主题背景颜色。
-*   背景颜色应不同于字体颜色，以便文本内容清晰易读（即使在图片加载之前，也是如此）。
+- 背景颜色应能代表网页背景资源上的主色。
+- 选择一种使图片或网页本身能够平稳过渡的颜色。您可以做出如下选择：
+  - 选择能代表图片/视频的主色。
+  - 为故事的所有网页选择一致的主题背景颜色。
+- 背景颜色应不同于字体颜色，以便文本内容清晰易读（即使在图片加载之前，也是如此）。
 
 ## 文本
 
@@ -20,8 +20,8 @@ $title: 创作 AMP 故事的最佳做法
 
 确保叠加在网页上的文本清晰易读：
 
-* 选择与背景图片和背景颜色形成鲜明对比的字体颜色。
-* 在图片和文本之间添加渐变叠加层，使文本与图片之间形成对比效果。
+- 选择与背景图片和背景颜色形成鲜明对比的字体颜色。
+- 在图片和文本之间添加渐变叠加层，使文本与图片之间形成对比效果。
 
 ### 文本内应短小精悍
 
@@ -38,11 +38,15 @@ $title: 创作 AMP 故事的最佳做法
 示例：指定一张海报图片
 
 ```html
-<amp-video autoplay loop
-  width="720" height="1280" layout="responsive"
-  poster="images/kitten-playing.png">
-  <source src="videos/kitten-playing.mp4"
-    type="video/mp4" />
+<amp-video
+  autoplay
+  loop
+  width="720"
+  height="1280"
+  layout="responsive"
+  poster="images/kitten-playing.png"
+>
+  <source src="videos/kitten-playing.mp4" type="video/mp4" />
 </amp-video>
 ```
 
@@ -53,20 +57,26 @@ $title: 创作 AMP 故事的最佳做法
 示例：指定多个来源文件
 
 ```html
-<amp-video id="video-page1" autoplay loop
-  layout="fill" poster="https://example.com/media/poster.jpg">
-  <source src="https://amp-example.com/media/movie.m3u8"
-    type="application/vnd.apple.mpegurl" />
-  <source src="https://amp-example.com/media/movie.mp4"
-    type="video/mp4" />
+<amp-video
+  id="video-page1"
+  autoplay
+  loop
+  layout="fill"
+  poster="https://example.com/media/poster.jpg"
+>
+  <source
+    src="https://amp-example.com/media/movie.m3u8"
+    type="application/vnd.apple.mpegurl"
+  />
+  <source src="https://amp-example.com/media/movie.mp4" type="video/mp4" />
 </amp-video>
 ```
 
 ### 视频大小/时长
 
-*  为获得最佳效果，您应提供大小不超过 4MB 的视频。
-*   对于较长的视频，请考虑拆分视频并放到多个网页上。
-*   对于封面页，请避免使用特别大的视频。
+- 为获得最佳效果，您应提供大小不超过 4MB 的视频。
+- 对于较长的视频，请考虑拆分视频并放到多个网页上。
+- 对于封面页，请避免使用特别大的视频。
 
 ### 视频格式
 
@@ -164,13 +174,13 @@ AMP 故事视频始终是竖直显示的（即纵向视图），要求宽高比�
 如果您希望视频播放结束后自动从一个网页前进到另一个网页，则应将 `<amp-story-page>` 的 `auto-advance-after` 属性值设置为视频 ID，而非视频的预计时长。也就是说，应使用
 
 ```html
-<amp-story-page auto-advance-after="myvideo">
+<amp-story-page auto-advance-after="myvideo"></amp-story-page>
 ```
 
 而非
 
 ```html
-<amp-story-page auto-advance-after="9s">
+<amp-story-page auto-advance-after="9s"></amp-story-page>
 ```
 
 这样做的原因是，视频可能不会恰好在网页显示的同时开始播放，或者指定的时长可能不正确，导致预计时长与实际时长之间存在差异。这种情况可能会导致视频循环播放，进而分散用户的注意力。

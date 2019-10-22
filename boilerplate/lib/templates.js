@@ -1,4 +1,19 @@
 /**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,9 +32,9 @@
 'use strict';
 
 const Handlebars = require('handlebars');
+const hljs = require('highlight.js');
 const io = require('./io');
 const path = require('path');
-const hljs = require('highlight.js');
 const sass = require('node-sass');
 
 const FRONTEND_DIR = '../../frontend/scss';
@@ -27,10 +42,11 @@ const TEMPLATES_DIR = '../templates';
 const NODE_MODULES = '../../node_modules';
 const STYLES = path.join(TEMPLATES_DIR, 'styles');
 
-const INCLUDE_PATHS = [FRONTEND_DIR, NODE_MODULES, STYLES].map((dir) => path.join(__dirname, dir));
+const INCLUDE_PATHS = [FRONTEND_DIR, NODE_MODULES, STYLES].map(dir =>
+  path.join(__dirname, dir)
+);
 
-
-Handlebars.registerHelper('scss', (scssPath) => {
+Handlebars.registerHelper('scss', scssPath => {
   for (const includePath of INCLUDE_PATHS) {
     const templatePath = path.join(includePath, scssPath);
     if (io.fileExists(templatePath)) {
@@ -38,7 +54,9 @@ Handlebars.registerHelper('scss', (scssPath) => {
         file: templatePath,
         includePaths: INCLUDE_PATHS,
       });
-      return new Handlebars.SafeString(result.css.toString().replace('@charset "UTF-8";', ''));
+      return new Handlebars.SafeString(
+        result.css.toString().replace('@charset "UTF-8";', '')
+      );
     }
   }
   throw new Error('File not found ' + scssPath);
@@ -60,7 +78,7 @@ function findTemplates(dir) {
   Handlebars.registerPartial(partials);
   const icons = findPartials(path.join(dir, ICONS_DIR));
   Handlebars.registerPartial(icons);
-  io.listFiles(dir).forEach((name) => {
+  io.listFiles(dir).forEach(name => {
     const templateName = path.basename(name, path.extname(name));
     templates[templateName] = readTemplate(name);
   });
@@ -98,15 +116,16 @@ function replaceEndTag(match) {
 
 function findPartials(dir) {
   const partialFiles = io.listFiles(dir, [], true);
-  return partialFiles.map((f) => {
-    const name = f.replace(dir, '');
-    const content = io.readFile(f, 'utf-8');
-    return [name, content];
-  })
-      .reduce((obj, prop) => {
-        obj[prop[0]] = prop[1];
-        return obj;
-      }, {});
+  return partialFiles
+    .map(f => {
+      const name = f.replace(dir, '');
+      const content = io.readFile(f, 'utf-8');
+      return [name, content];
+    })
+    .reduce((obj, prop) => {
+      obj[prop[0]] = prop[1];
+      return obj;
+    }, {});
 }
 module.exports.find = findTemplates;
 module.exports.render = renderTemplate;

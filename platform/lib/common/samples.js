@@ -16,16 +16,17 @@
 
 'use strict';
 
-const path = require('path');
-const url = require('url');
 const config = require('@lib/config.js');
+const path = require('path');
 const project = require('@lib/utils/project.js');
+const url = require('url');
 
 const EXAMPLE_PATH_START = '/documentation/';
-const EXAMPLE_SITEMAP_PATH = path.join(project.paths.STATICS_DEST, '/samples/samples.json');
-const EXAMPLE_COMPONENT_PATTERN =
-    /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/examples\/components\/(amp-[^/]+)\/?/;
-
+const EXAMPLE_SITEMAP_PATH = path.join(
+  project.paths.STATICS_DEST,
+  '/samples/samples.json'
+);
+const EXAMPLE_COMPONENT_PATTERN = /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/examples\/components\/(amp-[^/]+)\/?/;
 
 function getExamplePreviewUrl(exampleUrl) {
   let path = url.parse(exampleUrl).pathname;
@@ -42,8 +43,9 @@ function getExamplePreviewUrl(exampleUrl) {
 }
 
 function getPlaygroundUrlForPreviewLink(previewUrl) {
-  return config.hosts.playground.base + '/?url=' +
-      encodeURIComponent(previewUrl);
+  return (
+    config.hosts.playground.base + '/?url=' + encodeURIComponent(previewUrl)
+  );
 }
 
 function getPlaygroundUrlForExampleLink(exampleUrl) {
@@ -51,7 +53,7 @@ function getPlaygroundUrlForExampleLink(exampleUrl) {
   return getPlaygroundUrlForPreviewLink(previewUrl);
 }
 
-function getRelativeExampleUrlForPreviewLink(previewUrl, format='websites') {
+function getRelativeExampleUrlForPreviewLink(previewUrl, format = 'websites') {
   // the example url is the same path as preview url
   // we do not need absolute urls here
   let exampleUrl = url.parse(previewUrl).pathname;
@@ -70,8 +72,8 @@ function _addComponentExample(target, component, previewUrl, format) {
   const playgroundUrl = getPlaygroundUrlForPreviewLink(previewUrl);
   const exampleUrl = getRelativeExampleUrlForPreviewLink(previewUrl, format);
   target[component] = {
-    exampleUrl: exampleUrl,
-    playgroundUrl: playgroundUrl,
+    exampleUrl,
+    playgroundUrl,
   };
 }
 

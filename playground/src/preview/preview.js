@@ -1,3 +1,18 @@
+/**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 // Copyright 2018 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,11 +27,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import dimensions from './dimensions.json';
-import params from '../params/base.js';
-import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
+import debounce from '../debounce/debounce.js';
+import dimensions from './dimensions.json';
 import embedMode from '../embed-mode/';
+import params from '../params/base.js';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
@@ -81,7 +96,9 @@ class Preview {
     if (!label) {
       return null;
     }
-    return this.dimensions.find((d) => d.label.toLowerCase() === label.toLowerCase());
+    return this.dimensions.find(
+      d => d.label.toLowerCase() === label.toLowerCase()
+    );
   }
 
   updateParams() {
@@ -91,7 +108,9 @@ class Preview {
   }
 
   createHeader() {
-    const refreshButton = this.container.querySelector('#preview-header-refresh');
+    const refreshButton = this.container.querySelector(
+      '#preview-header-refresh'
+    );
     refreshButton.addEventListener('click', this.reload.bind(this));
   }
 
@@ -137,15 +156,19 @@ class Preview {
     const div = this.doc.createElement('div');
     div.setAttribute('id', 'preview-custom-dimension');
     div.appendChild(
-        this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), (width) => {
-          this.dimension.width = width;
-        })
+      this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), width => {
+        this.dimension.width = width;
+      })
     );
     div.appendChild(this.doc.createTextNode('✕'));
     div.appendChild(
-        this.createSizeInput(PARAM_HEIGHT, params.get(PARAM_HEIGHT, 250), (height) => {
+      this.createSizeInput(
+        PARAM_HEIGHT,
+        params.get(PARAM_HEIGHT, 250),
+        height => {
           this.dimension.height = height;
-        })
+        }
+      )
     );
     return div;
   }
@@ -173,7 +196,10 @@ class Preview {
   }
 
   toggleCustomSizeInput() {
-    this.customSizeInput.classList.toggle('hidden', this.dimension.label !== 'Custom');
+    this.customSizeInput.classList.toggle(
+      'hidden',
+      this.dimension.label !== 'Custom'
+    );
   }
 
   createIframe() {
@@ -182,8 +208,11 @@ class Preview {
     iframe.setAttribute('id', 'previewIframe');
     iframe.setAttribute('title', 'AMP Playground Output');
     iframe.setAttribute('allowpaymentrequest', '');
-    iframe.setAttribute('sandbox', 'allow-scripts allow-forms allow-same-origin allow-popups ' +
-      'allow-popups-to-escape-sandbox allow-presentation allow-top-navigation');
+    iframe.setAttribute(
+      'sandbox',
+      'allow-scripts allow-forms allow-same-origin allow-popups ' +
+        'allow-popups-to-escape-sandbox allow-presentation allow-top-navigation'
+    );
     iframe.setAttribute('allowfullscreen', true);
     iframe.classList.add('elevation-4dp');
     return iframe;
@@ -236,21 +265,24 @@ class Preview {
     (childWindow.AMP = childWindow.AMP || []).push(() => {
       this.restoreState(this.previewIframe, this.state);
       this.loader.hide();
-      const oldIframes = [].slice.call(this.previewContainer.querySelectorAll('iframe'))
-          .filter((e) => e !== this.previewIframe);
-      oldIframes.forEach((e) => {
+      const oldIframes = [].slice
+        .call(this.previewContainer.querySelectorAll('iframe'))
+        .filter(e => e !== this.previewIframe);
+      oldIframes.forEach(e => {
         e.classList.add('fadeout');
       });
-      setTimeout(() => oldIframes.forEach((frame) => frame.remove()), 280);
+      setTimeout(() => oldIframes.forEach(frame => frame.remove()), 280);
     });
   }
 
   getIframeWindow(iframeElement) {
-    return iframeElement.contentWindow || iframeElement.contentDocument.parentWindow;
+    return (
+      iframeElement.contentWindow || iframeElement.contentDocument.parentWindow
+    );
   }
 
   clearPlaceholders() {
-    this.previewContainer.querySelectorAll('iframe').forEach((e) => e.remove());
+    this.previewContainer.querySelectorAll('iframe').forEach(e => e.remove());
   }
 
   saveState(iframe) {

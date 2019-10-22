@@ -2,14 +2,12 @@
 $title: amp-list
 $category@: dynamic-content
 formats:
-- websites
-- email
-- stories
+  - websites
+  - email
+  - stories
 teaser:
   text: データを動的にダウンロードし、テンプレートを使用してリスト項目を作成します。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 CORS JSON エンドポイントからコンテンツを動的に取得し、指定のテンプレートを使用してレンダリングします。
 
@@ -55,61 +51,68 @@ CORS JSON エンドポイントからコンテンツを動的に取得し、指�
 
 テンプレートは次の 2 種類の方法で指定できます。
 
-* 既存の `template` または `script` 要素の ID を参照する `template` 属性。
-* `amp-list` 要素内で直接ネストされた `template` または `script` 要素。
+- 既存の `template` または `script` 要素の ID を参照する `template` 属性。
+- `amp-list` 要素内で直接ネストされた `template` または `script` 要素。
 
 テンプレートについて詳しくは、[AMP HTML テンプレート](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)をご覧ください。
 
-*例: 動的リストの表示*
+_例: 動的リストの表示_
 
 次の例では、URL とタイトルを含む JSON データを取得し、ネストされた [amp-mustache テンプレート](amp-mustache.md)でコンテンツをレンダリングします。
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="100"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
-  {% endraw %}</template>
+    {% endraw %}</template
+  >
 </amp-list>
 ```
+
 [/example]
 
 以下に、使用した JSON ファイルを示します。
 
 ```json
 {
- "items": [
-   {
-     "title": "AMP YouTube Channel",
-     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-   },
-   {
-     "title": "AMP.dev",
-     "url": "https://amp.dev/"
-   },
-   {
-     "title": "AMP Validator",
-     "url": "https://validator.amp.dev/"
-   },
-   {
-     "title": "AMP Playground",
-     "url": "https://playground.amp.dev/"
-   }
- ]
+  "items": [
+    {
+      "title": "AMP YouTube Channel",
+      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+    },
+    {
+      "title": "AMP.dev",
+      "url": "https://amp.dev/"
+    },
+    {
+      "title": "AMP Validator",
+      "url": "https://validator.amp.dev/"
+    },
+    {
+      "title": "AMP Playground",
+      "url": "https://playground.amp.dev/"
+    }
+  ]
 }
 ```
+
 以下に、取得したコンテンツのスタイル設定を示します。
 
 ```css
-amp-list div[role="list"] {
+amp-list div[role='list'] {
   display: grid;
   grid-gap: 0.5em;
-  }
+}
 ```
 
 ## 動作 <a name="behavior"></a>
@@ -130,30 +133,33 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 必要に応じて、`overflow` 属性が設定された要素を `<amp-list>` 要素に含めることができます。AMP ランタイムが `<amp-list>` 要素のサイズを要求どおりに変更できない場合、この要素が表示されます。
 
-*例: リストに追加のスペースが必要な場合のオーバーフローの表示*
+_例: リストに追加のスペースが必要な場合のオーバーフローの表示_
 
 次の例では、画像とタイトルのリストを表示します。`<amp-list>` のコンテンツで追加のスペースが必要なため、AMP ランタイムによってオーバーフロー要素が表示されます。
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="140"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="image-entry">
-      <amp-img src="{{imageUrl}}"
-        width="100"
-        height="75"></amp-img>
+      <amp-img src="{{imageUrl}}" width="100" height="75"></amp-img>
       <span class="image-title">{{title}}</span>
     </div>
-  {% endraw %}</template>
-  <div overflow
-    class="list-overflow">
+    {% endraw %}</template
+  >
+  <div overflow class="list-overflow">
     See more
   </div>
 </amp-list>
 ```
+
 [/example]
 
 以下に、`overflow` の CSS を示します。
@@ -164,15 +170,15 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
   bottom: 0;
   left: 0;
   right: 0;
-  }
+}
 ```
 
 ### プレースホルダとフォールバック <a name="placeholder-and-fallback"></a>
 
 `<amp-list>` は必要に応じて、プレースホルダまたはフォールバック（あるいはその両方）をサポートします。
 
-* プレースホルダ**は、`placeholder` 属性が設定された子要素です。この要素は、`<amp-list>` による読み込みが成功するまで表示されます。フォールバックも指定されている場合、`<amp-list>` が読み込みに失敗すると、プレースホルダが表示されなくなります。
-* フォールバック**は、`fallback` 属性が設定された子要素です。この要素は、`<amp-list>` が読み込みに失敗すると表示されます。
+- プレースホルダ\*\*は、`placeholder` 属性が設定された子要素です。この要素は、`<amp-list>` による読み込みが成功するまで表示されます。フォールバックも指定されている場合、`<amp-list>` が読み込みに失敗すると、プレースホルダが表示されなくなります。
+- フォールバック\*\*は、`fallback` 属性が設定された子要素です。この要素は、`<amp-list>` が読み込みに失敗すると表示されます。
 
 詳しくは、[プレースホルダとフォールバック](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)をご覧ください。子要素にプレースホルダとフォールバックの両方を指定することはできません。
 
@@ -205,13 +211,17 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-        width="396" height="80" layout="responsive"
-        src="/test/manual/amp-list-data.json?RANDOM">
-        <template type="amp-mustache">
-        {{title}}
-    </template>
-  </amp-list>
+<amp-list
+  id="list"
+  width="396"
+  height="80"
+  layout="responsive"
+  src="/test/manual/amp-list-data.json?RANDOM"
+>
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -232,18 +242,20 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 [Fetch API](https://fetch.spec.whatwg.org/) で指定されているとおりに `credentials` オプションを定義します。
 
-* サポートされている値: `omit`、`include`
-* デフォルト値: `omit`
+- サポートされている値: `omit`、`include`
+- デフォルト値: `omit`
 
 認証情報を送信するには、`include` を渡します。この値が設定されている場合、レスポンスは [AMP CORS セキュリティ ガイドライン](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)に準拠する必要があります。
 
 以下の例では、カスタマイズされたコンテンツをリストで表示するための認証情報などが指定されています。
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}<amp-list
+  credentials="include"
+  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+>
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -253,11 +265,12 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 レスポンス内でレンダリングする配列を特定する式を定義します。これは、JSON レスポンスのフィールドを介してナビゲートするドット表記の式です。デフォルトでは、`<amp-list>` は配列を期待しますが、`single-item` 属性を使用してオブジェクトからデータを読み込むこともできます。
 
-* デフォルト値は `"items"` です。期待されるレスポンスは `{items: [...]}` です。
-* レスポンス自体が目的の配列の場合は、`"."` の値を使用します。期待されるレスポンスは `[...]` です。
-* ネストされたナビゲーションは許容されます（`"field1.field2"` など）。期待されるレスポンスは `{field1: {field2: [...]}}` です。
+- デフォルト値は `"items"` です。期待されるレスポンスは `{items: [...]}` です。
+- レスポンス自体が目的の配列の場合は、`"."` の値を使用します。期待されるレスポンスは `[...]` です。
+- ネストされたナビゲーションは許容されます（`"field1.field2"` など）。期待されるレスポンスは `{field1: {field2: [...]}}` です。
 
 `items="items"` が指定されている場合（デフォルト）、レスポンスは `"items"` と呼ばれる配列プロパティを含む JSON オブジェクトである必要があります。
+
 ```text
 {
   "items": [...]
@@ -288,9 +301,9 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 パフォーマンスの強化のために、`binding="no"` または `binding="refresh"` を使用することをおすすめします。
 
-* `binding="no"`: レンダリングをブロックしません**（最速）**。
-* `binding="refresh"`: 最初の読み込み時にレンダリングをブロックしません**（速い）**。
-* `binding="always"`: 常にレンダリングをブロックします**（遅い）**。
+- `binding="no"`: レンダリングをブロックしません**（最速）**。
+- `binding="refresh"`: 最初の読み込み時にレンダリングをブロックしません**（速い）**。
+- `binding="always"`: 常にレンダリングをブロックします**（遅い）**。
 
 `binding` 属性を指定しない場合のデフォルト値は `always` です。
 
@@ -301,12 +314,16 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 #### 使用例 <a name="load-more-and-infinite-scroll"></a>
 
 ```html
-<amp-list height="200" src="https://my.rest.endpoint/" width="100" load-more="auto">
+<amp-list
+  height="200"
+  src="https://my.rest.endpoint/"
+  width="100"
+  load-more="auto"
+>
   <template type="amp-mustache">
     // ...
   </template>
 </amp-list>
-
 ```
 
 実際の例については、[test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) と [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) をご覧ください。
@@ -336,19 +353,30 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 ##### 例: <a name="load-more-button"></a>
 
 ```html
-<amp-list load-more="manual" src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="manual"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
-  テンプレート化するには `amp-mustache` を使用します。
+
+テンプレート化するには `amp-mustache` を使用します。
 
 ##### 例: <a name="example"></a>
 
 ```html
-{% raw %}<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
+{% raw %}<amp-list
+  load-more="auto"
+  width="100"
+  height="500"
+  src="https://www.load.more.example.com/"
+>
   ...
   <amp-list-load-more load-more-button>
     <template type="amp-mustache">
@@ -365,13 +393,19 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 #### load-more-loading <a name="example-1"></a>
 
 この要素は、ユーザーがリストの最後に到達したときにコンテンツがまだ読み込む中の場合に表示されるローダーです。また、（`<amp-list>` の新しい子要素の読み込み中に）`load-more-button` 要素をクリックした場合にも表示されます。この要素をカスタマイズするには、`load-more-loading` 属性が設定された子要素を `<amp-list>` に指定します。以下に例を示します。
+
 ```html
-<amp-list load-more=auto src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>
@@ -379,7 +413,12 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 `load-more-failed` 属性を含む `<amp-list-load-more>` 要素。読み込みが失敗した場合に `<amp-list>` の一番下に表示される、`load-more-clickable` 属性が設定されたボタンが含まれています。この要素をクリックすると、失敗した URL の読み込みが再度トリガーされます。この要素をカスタマイズするには、`load-more-failed` 属性が設定された子要素を `<amp-list>` に指定します。以下に例を示します。
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <button>Unable to Load More</button>
@@ -390,7 +429,12 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 上の例では `load-more-failed` 要素全体をクリックできますが、この要素は、クリック可能な「再読み込み」ボタンを含む、クリックできない「読み込み失敗」要素にするのが一般的です。この点を考慮して、クリックできない要素と、`load-more-clickable` 要素を含むボタンを指定することができます。以下に例を示します。
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <div>
@@ -406,7 +450,12 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 この要素はデフォルトでは指定されませんが、`load-more-end` 属性を含む `<amp-list-load-more>` 要素が子要素として `<amp-list>` に追加されると、読み込むアイテムがもうない場合、この要素が `<amp-list>` の一番下に表示されます。この要素をテンプレート化するには、`amp-mustache` を使用します。以下に例を示します。
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-end>
     Congratulations! You've reached the end. /* Custom load-end element */
@@ -423,9 +472,11 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 `<amp-list>` では、標準的な URL 変数の置換をすべて使用できます。詳しくは、[置換ガイド](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください。
 
 例:
+
 ```html
 <amp-list src="https://foo.com/list.json?RANDOM"></amp-list>
 ```
+
 この例のリクエストの送信先は、`https://foo.com/list.json?0.8390278471201` のようになります。RANDOM の値は各インプレッションに基づいてランダムに生成されます。
 
 ## 検証 <a name="validation"></a>

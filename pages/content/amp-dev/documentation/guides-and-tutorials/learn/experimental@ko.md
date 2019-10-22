@@ -27,7 +27,7 @@ AMP 개발자 채널은 **덜 안정적**이고 일부 사용자에게만 제공
 
 #### cdn.ampproject.org에서 게재
 
-[https://cdn.ampproject.org](https://cdn.ampproject.org)에서 게재된 콘텐츠는 
+[https://cdn.ampproject.org](https://cdn.ampproject.org)에서 게재된 콘텐츠는
 [AMP 실험 페이지](https://cdn.ampproject.org/experiments.html)로 이동하여
 실험 구성요소를 사용 또는 사용 안함으로 전환하여 사용 또는 사용 중지하시기 바랍니다. 실험 구성요소를 선택하면 브라우저에 Google AMP Cache를 통해 게재되는 모든 AMP 페이지에서 실험을 사용하도록 설정하는 쿠키가 설정됩니다.
 
@@ -36,7 +36,7 @@ AMP 개발자 채널은 **덜 안정적**이고 일부 사용자에게만 제공
 다른 도메인에서 게재되는 콘텐츠의 경우 다음을 통해 개발 모드를 사용 설정하는 경우 Devtools 콘솔에서 실험을 전환할 수 있습니다.
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 실험 기능이 있는 모든 AMP 파일은
@@ -50,7 +50,7 @@ AMP.toggleExperiment('experiment')
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -58,4 +58,3 @@ AMP.toggleExperiment('experiment')
 ```
 
 이렇게 하면 모든 문서 방문자에게 지정된 실험이 사용 설정됩니다. 하지만 일부 실험은 문서 수준 선택을 허용하지 않습니다. 허용된 실험의 전체 목록은 프로젝트의 `prod-config.json` 파일에서 `allow-doc-opt-in` 속성을 참조하세요. 문서 선택은 사용자가 선택 해제하면 무시될 수 있습니다.
- 

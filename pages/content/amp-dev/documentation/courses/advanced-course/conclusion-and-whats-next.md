@@ -14,8 +14,7 @@ Most importantly, stay curious. Think about how other popular websites work, and
 Of course, in these courses, we could only cover a portion of AMP’s powerful features. If you’re looking for more learning resources, there are more guides and tutorials available on the [official AMP website](../../../documentation/guides-and-tutorials/index.html). Additionally, the [AMP examples](../../../documentation/examples/index.html) section contains many examples of how to build modern websites and tackle common web development problems using AMP. Finally, the AMP library is constantly being developed and improved. Make sure to check back frequently for new features!
 
 Good luck! We look forward to seeing what you build with AMP!
-[/filter]
-[filter level="advanced"]
+[/filter][filter level="advanced"]
 Congratulations! You've completed our series of Web Development with AMP courses! You've built a feature-rich cheese bike shop site, an imitation video site, and a basic e-commerce page. You've learned how to build AMP pages, look for and use AMP components, handle user interactions with events and actions, build web forms, bind components to state variables, and dynamically display content from the server.
 
 So where do you go from here? It's time to get out there, keep learning, start creating, and participate in the AMP community!

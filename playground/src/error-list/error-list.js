@@ -1,3 +1,18 @@
+/**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 // Copyright 2018 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,9 +29,9 @@
 
 require('./error-list.scss');
 
-import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';
+import events from '../events/events.js';
 
 export const EVENT_ERROR_SELECTED = 'error-selected';
 
@@ -31,34 +46,37 @@ class ErrorList {
     this.container = container;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
     // configure validator
-    events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
-      this.update(validationResult);
-      window.requestIdleCallback(() => {
-        if (validationResult === Validator.NO_VALIDATOR) {
-          this.trigger.setHtml('valid');
-          this.trigger.disable();
-          return;
-        }
-        this.trigger.enable();
-        if (validationResult.status == 'PASS') {
-          this.trigger.disable();
-          return;
-        }
-        this.trigger.enable();
-        this.trigger.setHtml(
+    events.subscribe(
+      Validator.EVENT_NEW_VALIDATION_RESULT,
+      validationResult => {
+        this.update(validationResult);
+        window.requestIdleCallback(() => {
+          if (validationResult === Validator.NO_VALIDATOR) {
+            this.trigger.setHtml('valid');
+            this.trigger.disable();
+            return;
+          }
+          this.trigger.enable();
+          if (validationResult.status == 'PASS') {
+            this.trigger.disable();
+            return;
+          }
+          this.trigger.enable();
+          this.trigger.setHtml(
             validationResult.errors.length +
-          ' Error' +
-          (validationResult.errors.length > 1 ? 's' : ''));
-      });
-    });
+              ' Error' +
+              (validationResult.errors.length > 1 ? 's' : '')
+          );
+        });
+      }
+    );
   }
 
   update(validationResult) {
     this.validationResult = validationResult;
     window.requestIdleCallback(() => {
       /* eslint-disable max-len */
-      this.container.innerHTML =
-        `
+      this.container.innerHTML = `
         <div class="title">
         <button class="button close">
           <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

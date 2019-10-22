@@ -16,9 +16,14 @@ Coba **ganti** tag `<header>` Anda dengan versi yang menyertakan link:
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
-<div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
@@ -46,7 +51,7 @@ article {
 }
 ```
 
-Sekarang **refresh** halaman. Anda akan melihat link di pojok kiri atas halaman yang mengarah ke `homepage.html`.  Jika mengklik ikon beranda, Anda akan segera mengetahui bahwa ikon tersebut tidak akan mengarahkan ke mana pun (karena kita tidak memiliki file `homepage.html`).
+Sekarang **refresh** halaman. Anda akan melihat link di pojok kiri atas halaman yang mengarah ke `homepage.html`. Jika mengklik ikon beranda, Anda akan segera mengetahui bahwa ikon tersebut tidak akan mengarahkan ke mana pun (karena kita tidak memiliki file `homepage.html`).
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-home.png', 412, 190, align='center half', caption='Navigasi ikon beranda') }}
 
@@ -56,30 +61,44 @@ Ini adalah pendekatan paling sederhana yang memanfaatkan navigasi situs yang sud
 
 ## Bernavigasi dengan sidebar
 
-Teknik navigasi umum adalah menambahkan ikon menu yang ketika diklik akan menampilkan kumpulan link navigasi (dari samping halaman). Di AMP,  kita dapat membuat navigasi tersebut dengan komponen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
+Teknik navigasi umum adalah menambahkan ikon menu yang ketika diklik akan menampilkan kumpulan link navigasi (dari samping halaman). Di AMP, kita dapat membuat navigasi tersebut dengan komponen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md).
 
 Pertama-tama, kita harus **menambahkan** JavaScript komponen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) ke tag `<head>`:
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
-Kemudian, kita ingin menampilkan ikon menu.  Ketika di-tap, ikon akan membuka sidebar. **Ganti** `<header>` dengan kode berikut untuk menampilkan ikon ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button), bukan ikon beranda:
+Kemudian, kita ingin menampilkan ikon menu. Ketika di-tap, ikon akan membuka sidebar. **Ganti** `<header>` dengan kode berikut untuk menampilkan ikon ["hamburger"](https://en.wikipedia.org/wiki/Hamburger_button), bukan ikon beranda:
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
 
-Dalam kode di atas, kita `toggle` (mengalihkan) sidebar ke atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) di elemen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), yang ditunjukkan oleh ID `sidebar1`.  Mari kita tambahkan sidebar.
+Dalam kode di atas, kita `toggle` (mengalihkan) sidebar ke atribut tindakan [`on`](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) di elemen [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md), yang ditunjukkan oleh ID `sidebar1`. Mari kita tambahkan sidebar.
 
 **Tambahkan** HTML berikut setelah `</header>`:
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -88,7 +107,7 @@ Dalam kode di atas, kita `toggle` (mengalihkan) sidebar ke atribut tindakan [`on
 </amp-sidebar>
 ```
 
-Sidebar kami akan disembunyikan, tetapi ketika pengguna menge-tap ikon hamburger, menu akan muncul dari sisi kiri layar.  Untuk menutup menu, pengguna dapat menge-tap ikon X.
+Sidebar kami akan disembunyikan, tetapi ketika pengguna menge-tap ikon hamburger, menu akan muncul dari sisi kiri layar. Untuk menutup menu, pengguna dapat menge-tap ikon X.
 
 Terakhir, **tambahkan** aturan gaya ini ke CSS inline Anda:
 
@@ -102,7 +121,7 @@ Terakhir, **tambahkan** aturan gaya ini ke CSS inline Anda:
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;
@@ -113,8 +132,8 @@ Terakhir, **tambahkan** aturan gaya ini ke CSS inline Anda:
 }
 ```
 
-Oke, mari kita lihat sidebar kita. **Refresh** dan muat ulang halaman AMP Anda.  Anda akan melihat sesuatu seperti ini:
+Oke, mari kita lihat sidebar kita. **Refresh** dan muat ulang halaman AMP Anda. Anda akan melihat sesuatu seperti ini:
 
 {{ image('/static/img/docs/tutorials/tut-advanced-navigate-sidebar.gif', 412, 384, align='center half', caption='Navigasi menu sidebar') }}
 
-Halaman kita sudah selesai!  Mari tambahkan sentuhan terakhir&mdash;font custom.
+Halaman kita sudah selesai! Mari tambahkan sentuhan terakhir&mdash;font custom.

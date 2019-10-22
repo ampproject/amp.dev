@@ -1,4 +1,19 @@
 /**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/**
  * Copyright 2018 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -37,12 +52,13 @@ function initConfig() {
     categories: require('./data/categories.json'),
     formats: require('./data/formats.json'),
     templates: templates.find('./templates/files'),
-    highlightTheme:
-      io.readFile(path.join(__dirname, './templates/styles/code-snippet.scss')),
+    highlightTheme: io.readFile(
+      path.join(__dirname, './templates/styles/code-snippet.scss')
+    ),
   };
   // assign default template
   let defaultTemplate;
-  config.formats.forEach((format) => {
+  config.formats.forEach(format => {
     format.template = config.templates[format.id];
     if (format.default) {
       defaultTemplate = format.template;

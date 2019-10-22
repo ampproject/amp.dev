@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-const ampFormat = require('./amp');
 const amp4emailFormat = require('./amp4email');
+const ampFormat = require('./amp');
 
 module.exports = {
   websites: ampFormat,

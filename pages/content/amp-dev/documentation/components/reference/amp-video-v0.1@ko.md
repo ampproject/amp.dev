@@ -2,13 +2,12 @@
 $title: amp-video
 $category@: media
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
-    text:  HTML5 동영상 태그를 대체합니다.
+  text: HTML5 동영상 태그를 대체합니다.
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 삽입에만 사용합니다.
 
@@ -53,14 +50,15 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
 
 `amp-video` 구성요소에서는 하위 요소로 고유한 유형의 HTML 노드를 4개까지 허용합니다.
 
-* `source` 태그: HTML `<video>` 태그에서와 같이 `<source>` 태그 하위 요소를 추가하여 재생할 여러 다른 소스 미디어 파일을 지정할 수 있습니다.
-* `track` 태그: 동영상에서 자막을 사용하도록 설정합니다. 문서와 다른 원본에서 트랙을 호스팅하는 경우 `<amp-video>` 태그에 `crossorigin` 속성을 추가해야 합니다.
-* 동영상이 시작하기 전의 자리표시자
-* 브라우저에서 HTML5 동영상을 지원하지 않는 경우 대체: 하나 이상의 직속 하위 노드에 `fallback` 속성이 있을 수 있습니다. 이 노드와 하위 노드가 있으면 HTML5 동영상이 사용자의 브라우저에서 지원되지 않는 경우 해당 노드가 표시되는 콘텐츠를 구성합니다.
+- `source` 태그: HTML `<video>` 태그에서와 같이 `<source>` 태그 하위 요소를 추가하여 재생할 여러 다른 소스 미디어 파일을 지정할 수 있습니다.
+- `track` 태그: 동영상에서 자막을 사용하도록 설정합니다. 문서와 다른 원본에서 트랙을 호스팅하는 경우 `<amp-video>` 태그에 `crossorigin` 속성을 추가해야 합니다.
+- 동영상이 시작하기 전의 자리표시자
+- 브라우저에서 HTML5 동영상을 지원하지 않는 경우 대체: 하나 이상의 직속 하위 노드에 `fallback` 속성이 있을 수 있습니다. 이 노드와 하위 노드가 있으면 HTML5 동영상이 사용자의 브라우저에서 지원되지 않는 경우 해당 노드가 표시되는 콘텐츠를 구성합니다.
 
 #### 예 <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -76,6 +74,7 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## 분석 <a name="analytics"></a>
@@ -174,18 +173,23 @@ HTML5 `video` 태그의 대체 태그입니다. HTML5 동영상 파일 직접 �
 이 예에는 `poster`와 `artwork` 속성이 둘 다 포함되어 있습니다. `poster`는 동영상 재생 전의 자리표시자 이미지로 제공되는 반면 `artwork`는 MediaSession API를 통해 알림에 표시되는 이미지입니다.
 
 ```html
-<amp-video width="720" height="305" layout="responsive"
-    src="https://yourhost.com/videos/myvideo.mp4"
-    poster="https://yourhost.com/posters/poster.png"
-    artwork="https://yourhost.com/artworks/artwork.png"
-    title="Awesome video" artist="Awesome artist"
-    album="Amazing album">
+<amp-video
+  width="720"
+  height="305"
+  layout="responsive"
+  src="https://yourhost.com/videos/myvideo.mp4"
+  poster="https://yourhost.com/posters/poster.png"
+  artwork="https://yourhost.com/artworks/artwork.png"
+  title="Awesome video"
+  artist="Awesome artist"
+  album="Amazing album"
+>
 </amp-video>
 ```
 
 ## 클릭하여 재생 오버레이 <a name="click-to-play-overlay"></a>
 
-클릭하여 재생 오버레이는 웹에서 실행되는 동영상 플레이어에 대한 일반적인 UX 기능입니다.  예를 들어 사용자가 클릭할 맞춤 재생 아이콘을 표시할 뿐 아니라 동영상 제목, 다른 크기의 포스터 이미지 등을 포함할 수 있습니다.  `amp-video` 구성요소에서는 표준 `play` AMP 작업을 지원하므로 클릭하여 재생을 쉽게 구현할 수 있습니다.
+클릭하여 재생 오버레이는 웹에서 실행되는 동영상 플레이어에 대한 일반적인 UX 기능입니다. 예를 들어 사용자가 클릭할 맞춤 재생 아이콘을 표시할 뿐 아니라 동영상 제목, 다른 크기의 포스터 이미지 등을 포함할 수 있습니다. `amp-video` 구성요소에서는 표준 `play` AMP 작업을 지원하므로 클릭하여 재생을 쉽게 구현할 수 있습니다.
 
 자세한 예는 AMP By Example에 있는 [amp-video의 클릭하여 재생 오버레이](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/)를 참조하세요.
 

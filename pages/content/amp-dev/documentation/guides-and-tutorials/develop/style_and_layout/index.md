@@ -36,6 +36,7 @@ Add your CSS inside a `<style amp-custom>` tag in the head of the document.
 For example:
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     ...
@@ -53,6 +54,7 @@ For example:
       }
     </style>
     ...
+
   </head>
 [/sourcecode]
 
@@ -64,6 +66,7 @@ Define component styles with class or element selectors
 using common CSS properties. For example:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img
@@ -85,6 +88,7 @@ using common CSS properties. For example:
 If needed, AMP also allows inline styles. For example:
 
 [sourcecode:html]
+
 <body>
   <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
 </body>

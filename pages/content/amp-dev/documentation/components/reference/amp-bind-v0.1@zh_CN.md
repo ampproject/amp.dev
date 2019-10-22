@@ -2,17 +2,14 @@
 $title: amp-bind
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 利用数据绑定和类似于 JS 的简单表达式，使元素因应用户操作或数据变更而变化。
 ---
 
-
-
 通过数据绑定和表达式添加自定义互动方式。
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -29,7 +26,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
 
 <table>
   <tr>
@@ -69,7 +65,6 @@ limitations under the License.
 在下面的示例中，点按相应按钮可将 `<p>` 元素的文本从“Hello World”更改为“Hello amp-bind”。
 
 ```html
-
 <p [text]="'Hello ' + foo">Hello World</p>
 
 <button on="tap:AMP.setState({foo: 'amp-bind'})">Say "Hello amp-bind"</button>
@@ -116,28 +111,35 @@ limitations under the License.
 </p>
 
 <!-- 或通过 [src] 绑定更改图片的 src。-->
-<amp-img width="300" height="200" src="/img/dog.jpg" [src]="myAnimals[currentAnimal].imageUrl">
+<amp-img
+  width="300"
+  height="200"
+  src="/img/dog.jpg"
+  [src]="myAnimals[currentAnimal].imageUrl"
+>
 </amp-img>
 
 <button on="tap:AMP.setState({currentAnimal: 'cat'})">Set to Cat</button>
 ```
 
-  按下相应按钮后：
+按下相应按钮后：
 
-  1. 系统会根据定义为 `'cat'` 的 `currentAnimal` 对**状态**进行更新。
-  1. 系统会对依赖于 `currentAnimal` 的**表达式**进行求值：
+1. 系统会根据定义为 `'cat'` 的 `currentAnimal` 对**状态**进行更新。
+1. 系统会对依赖于 `currentAnimal` 的**表达式**进行求值：
+
 
     * `'This is a ' + currentAnimal + '.'` =&gt; `'This is a cat.'`
     * `myAnimals[currentAnimal].style` =&gt; `'redBackground'`
     * `myAnimals[currentAnimal].imageUrl` =&gt;  `/img/cat.jpg`</li>
 
-  1. 系统会对依赖于更改后的表达式的**绑定**进行更新：
+1. 系统会对依赖于更改后的表达式的**绑定**进行更新：
+
 
     * 第一个 `<p>` 元素的文本将显示为“This is a cat.”
     * 第二个 `<p>` 元素的 `class` 属性将为“redBackground”。
     * `amp-img` 元素将显示一只猫的图片。</li>
 
-  [tip type="ll callout('提示：</b><a class="type_success"]
+[tip type="ll callout('提示：</b><a class="type_success"]
 如需查看此示例的带代码注释版本，请[观看**在线演示**](https://ampbyexample.com/components/amp-bind/)！
 [/tip]
 
@@ -163,8 +165,8 @@ limitations under the License.
 
 [表达式](#expressions)可通过点语法引用状态变量。在此示例中，`myState.foo` 的求解结果为 `"bar"`。
 
-* `<amp-state>` 元素的子级 JSON 不能超过 100KB。
-* `<amp-state>` 元素还可以指定 CORS 网址，而不是子级 JSON 脚本。有关详情，请参阅[附录](#amp-state-specification)。
+- `<amp-state>` 元素的子级 JSON 不能超过 100KB。
+- `<amp-state>` 元素还可以指定 CORS 网址，而不是子级 JSON 脚本。有关详情，请参阅[附录](#amp-state-specification)。
 
 # 刷新状态 <a name="refreshing-state"></a>
 
@@ -183,7 +185,9 @@ limitations under the License.
 ```html
 <!-- 与 JavaScript 类似，您可以在
        对象字面量的值中引用现有变量。 -->
-<button on="tap:AMP.setState({foo: 'bar', baz: myAmpState.someVariable})"></button>
+<button
+  on="tap:AMP.setState({foo: 'bar', baz: myAmpState.someVariable})"
+></button>
 ```
 
 一般来说，嵌套对象的合并深度上限为 10。所有变量（包括由 `amp-state` 引入的变量）都可以被覆盖。
@@ -193,7 +197,7 @@ limitations under the License.
 ```html
 <!-- 此 <input> 元素的“change”事件包含
      可通过“event.value”引用的“value”变量。 -->
-<input type="range" on="change:AMP.setState({myRangeValue: event.value})">
+<input type="range" on="change:AMP.setState({myRangeValue: event.value})" />
 ```
 
 # 通过 `AMP.pushState()` 修改历史记录 <a name="modifying-history-with-amppushstate"></a>
@@ -201,12 +205,13 @@ limitations under the License.
 [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) 操作与 `AMP.setState()` 类似，只不过它还会将新条目推送到浏览记录堆栈。弹出此浏览记录条目（例如，通过执行返回操作）将会恢复由 `AMP.pushState()` 设置的变量的上一个值。
 
 例如：
+
 ```html
 <button on="tap:AMP.pushState({foo: '123'})">Set 'foo' to 123</button>
 ```
 
-* 点按相应按钮会将变量 `foo` 设为 123，并推送新的历史记录条目。
-* 执行返回操作会将 `foo` 恢复到之前的值“bar”（相当于调用 `AMP.setState({foo: 'bar'})`）。
+- 点按相应按钮会将变量 `foo` 设为 123，并推送新的历史记录条目。
+- 执行返回操作会将 `foo` 恢复到之前的值“bar”（相当于调用 `AMP.setState({foo: 'bar'})`）。
 
 # 表达式 <a name="expressions"></a>
 
@@ -214,12 +219,12 @@ limitations under the License.
 
 # 与 JavaScript 的区别 <a name="differences-from-javascript"></a>
 
-* 表达式只能访问所在文档的[状态](#state)。
-* 表达式**无权**访问 `window` 或 `document` 等全局属性。
-* 只能使用[列入白名单的函数](#white-listed-functions)和运算符。
-* 一般不允许使用自定义函数、类和循环。允许将箭头函数用作参数，如 `Array.prototype.map`。
-* 未定义的变量和 array-index-out-of-bound 会返回 `null`，而不是 `undefined`，也不会引发错误。
-* 为了确保性能，单个表达式中目前最多可以使用 50 个操作数。如果这无法满足您的使用需求，请[与我们联系](https://github.com/ampproject/amphtml/issues/new)。
+- 表达式只能访问所在文档的[状态](#state)。
+- 表达式**无权**访问 `window` 或 `document` 等全局属性。
+- 只能使用[列入白名单的函数](#white-listed-functions)和运算符。
+- 一般不允许使用自定义函数、类和循环。允许将箭头函数用作参数，如 `Array.prototype.map`。
+- 未定义的变量和 array-index-out-of-bound 会返回 `null`，而不是 `undefined`，也不会引发错误。
+- 为了确保性能，单个表达式中目前最多可以使用 50 个操作数。如果这无法满足您的使用需求，请[与我们联系](https://github.com/ampproject/amphtml/issues/new)。
 
 如需查看完整的表达式语法和实现，请参阅 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 和 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)。
 
@@ -228,10 +233,10 @@ limitations under the License.
 以下都是有效的表达式：
 
 ```javascript
-1 + '1'           // 11
-1 + (+'1')        // 2
-!0                // true
-null || 'default' // 'default'
+1 + '1'; // 11
+1 + +'1'; // 2
+!0; // true
+null || 'default'; // 'default'
 ```
 
 # 列入白名单的函数 <a name="white-listed-functions"></a>
@@ -352,12 +357,15 @@ null || 'default' // 'default'
 您可以通过定义 `amp-bind-macro` 重复使用 `amp-bind` 表达式片段。借助 `amp-bind-macro` 元素，您可以定义一个采用零个或多个参数并引用当前状态的表达式。您可以像调用函数一样调用宏，只需从文档中的任意位置引用宏的 `id` 属性值即可。
 
 ```html
-<amp-bind-macro id="circleArea" arguments="radius" expression="3.14 * radius * radius"></amp-bind-macro>
+<amp-bind-macro
+  id="circleArea"
+  arguments="radius"
+  expression="3.14 * radius * radius"
+></amp-bind-macro>
 
 <div>
   The circle has an area of <span [text]="circleArea(myCircle.radius)">0</span>.
 </div>
-
 ```
 
 宏还可以调用在其之前定义的其他宏，<i></i>但无法以递归方式调用自身。
@@ -405,10 +413,10 @@ null || 'default' // 'default'
 
 关于绑定的注意事项：
 
-* 为了安全起见，不允许绑定到 `innerHTML`。
-* 对于不安全的值（如 `javascript:`），系统会对所有属性绑定进行净化处理。
-* 系统会根据布尔表达式的结果切换布尔值属性。例如：`<amp-video [controls]="expr"...>`。当 `expr` 的求解结果为 `true` 时，`<amp-video>` 元素具有 `controls` 属性。当 `expr` 的求解结果为 `false` 时，系统会移除 `controls` 属性。
-* 编写 XML（如 XHTML、JSX）或通过 DOM API 编写属性时，属性名称中的括号字符 `[` 和 `]` 可能会带来问题。在这些情况下，请使用替代语法 `data-amp-bind-x="foo"`，而不是 `[x]="foo"`。
+- 为了安全起见，不允许绑定到 `innerHTML`。
+- 对于不安全的值（如 `javascript:`），系统会对所有属性绑定进行净化处理。
+- 系统会根据布尔表达式的结果切换布尔值属性。例如：`<amp-video [controls]="expr"...>`。当 `expr` 的求解结果为 `true` 时，`<amp-video>` 元素具有 `controls` 属性。当 `expr` 的求解结果为 `false` 时，系统会移除 `controls` 属性。
+- 编写 XML（如 XHTML、JSX）或通过 DOM API 编写属性时，属性名称中的括号字符 `[` 和 `]` 可能会带来问题。在这些情况下，请使用替代语法 `data-amp-bind-x="foo"`，而不是 `[x]="foo"`。
 
 # 特定于元素的属性 <a name="element-specific-attributes"></a>
 
@@ -566,7 +574,6 @@ null || 'default' // 'default'
 <!-- 该元素的默认类值 ('def') 与 [class] ('abc') 的表达式结果不一致，因此在开发模式下将发出警告。-->
 
 <p class="def" [class]="'abc'"></p>
-
 ```
 
 在开发模式下，当解除对未定义变量或属性的引用时，`amp-bind` 也会发出警告。这同样有助于防止出现因 `null` 表达式结果而导致的意外变化。例如：
@@ -638,8 +645,7 @@ null || 'default' // 'default'
   </script>
 </amp-state>
 
-<amp-state id="myRemoteState" src="https://data.com/articles.json">
-</amp-state>
+<amp-state id="myRemoteState" src="https://data.com/articles.json"> </amp-state>
 ```
 
 # XHR 批处理 <a name="xhr-batching"></a>
@@ -681,8 +687,11 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
 ```
 
 ```html
-<button on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"...></button>
-<button on="tap:AMP.setState({employee: {age: 64}})"...></button>
+<button
+  on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"
+  ...
+></button>
+<button on="tap:AMP.setState({employee: {age: 64}})" ...></button>
 ```
 
 按下第一个按钮后，状态会更改为：
@@ -718,7 +727,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
 在 `AMP.setState()` 中将现有状态变量的值设为 `null` 可移除该变量。从上一个示例中的状态开始，按下：
 
 ```html
-<button on="tap:AMP.setState({employee: {vehicle: null}})"...></button>
+<button on="tap:AMP.setState({employee: {vehicle: null}})" ...></button>
 ```
 
 会将状态更改为：
@@ -735,7 +744,7 @@ AMP 会对向 JSON 端点发出的 XMLHttpRequest (XHR) 进行批处理，也就
 同样，按下：
 
 ```html
-<button on="tap:AMP.setState({employee: null})"...></button>
+<button on="tap:AMP.setState({employee: null})" ...></button>
 ```
 
 会将状态更改为：

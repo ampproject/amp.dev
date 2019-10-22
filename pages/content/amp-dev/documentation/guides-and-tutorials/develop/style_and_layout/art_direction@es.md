@@ -13,16 +13,20 @@ En este ejemplo simple, `srcset` especifica cuál imagen se usará para el ancho
 El descriptor `w` le dice al navegador el ancho de cada imagen en la lista:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 Nota: AMP soporta srcset con el descriptor `w` en todos los navegadores web.
@@ -39,16 +43,20 @@ Basado en el tamaño calculado del medio, el agente de usuario selecciona la fue
 Considere el siguiente ejemplo:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 El atributo `sizes` define el ancho del elemento como 50% del tamaño de la ventana gráfica cuando la ventana es de 650px o más.
@@ -65,23 +73,27 @@ con las consultas de medios en este artículo en inglés ["srcset and sizes"](ht
 Todos los elementos personalizados AMP que permiten un layout `responsive`, también soportan el atributo `heights`.
 El valor de este atributo es una expresión de tamaños basada en expresiones de medios similar al [atributo img](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/img), pero con dos diferencias clave:
 
- 1. Se aplica a la altura y no a la anchura del elemento.
- 2. Se permiten valores porcentuales, p. ej. `86%`. Si se utiliza un valor porcentual, indica el porcentaje
- de ancho del elemento.
+1.  Se aplica a la altura y no a la anchura del elemento.
+2.  Se permiten valores porcentuales, p. ej. `86%`. Si se utiliza un valor porcentual, indica el porcentaje
+    de ancho del elemento.
 
 Cuando el atributo `heights` es especificado junto con `width` y `height`, el `layout` es por defecto `responsive`.
 
 Un ejemplo:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 En este ejemplo, la altura del elemento por defecto será del 80% del ancho, pero para la ventana de visualización más ancha que `500px` estará limitada a `200px`.

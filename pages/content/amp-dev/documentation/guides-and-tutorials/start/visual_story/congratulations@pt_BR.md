@@ -25,4 +25,3 @@ Saiba mais sobre as histórias AMP com estes recursos:
 O componente [`amp-story`](../../../../documentation/components/reference/amp-story.md) é **experimental**. Se você quiser se inscrever no teste para publicar páginas com esse componente, acesse <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
 
 [/tip]
-

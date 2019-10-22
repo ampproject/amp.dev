@@ -2,17 +2,14 @@
 $title: amp-bind
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Allows elements to mutate in response to user actions or data changes via data binding and simple JS-like expressions.
 ---
 
-
-
 Menambahkan interaktivitas kustom dengan data binding dan ekspresi.
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -29,7 +26,6 @@ Menambahkan interaktivitas kustom dengan data binding dan ekspresi.
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 
 <table>
   <tr>
@@ -69,7 +65,6 @@ Komponen `amp-bind` memungkinkan Anda untuk menambahkan interaktivitas stateful 
 Pada contoh berikut, menge-tap tombol akan mengubah teks elemen `<p>` dari "Hello World" menjadi "Hello amp-bind".
 
 ```html
-
 <p [text]="'Hello ' + foo">Hello World</p>
 
 <button on="tap:AMP.setState({foo: 'amp-bind'})">Say "Hello amp-bind"</button>
@@ -83,9 +78,9 @@ Untuk menjaga performa dan menghindari risiko loncatan konten, `amp-bind` tidak 
 
 `amp-bind` memiliki tiga komponen utama:
 
-1. [Status](#state): Status JSON lingkup dokumen yang dapat berubah. Pada contoh di atas, status masih kosong sebelum tombol di-tap.  Setelah tombol di-tap, statusnya menjadi `{foo: 'amp-bind'}`.
+1. [Status](#state): Status JSON lingkup dokumen yang dapat berubah. Pada contoh di atas, status masih kosong sebelum tombol di-tap. Setelah tombol di-tap, statusnya menjadi `{foo: 'amp-bind'}`.
 2. [Ekspresi](#expressions): Merupakan ekspresi mirip JavaScript yang dapat merujuk ke **state**. Contoh di atas memiliki ekspresi tunggal, `'Hello ' + foo`, yang menggabungkan literal string `'Hello '`dan variabel status `foo`.
-Ada batas 100 operand yang dapat digunakan dalam sebuah ekspresi.
+   Ada batas 100 operand yang dapat digunakan dalam sebuah ekspresi.
 3. [Binding](#bindings): Merupakan atribut khusus dari bentuk `[properti]` yang menautkan properti elemen ke sebuah **expression**. Contoh di atas memiliki binding tunggal, `[text]`, yang akan mengubah `<p>` teks elemen setiap kali nilai ekspresi berubah.
 
 `amp-bind` memerlukan penanganan khusus untuk memastikan kecepatan, keamanan, dan performa di halaman AMP.
@@ -117,29 +112,39 @@ Ada batas 100 operand yang dapat digunakan dalam sebuah ekspresi.
 </p>
 
 <!-- Or change an image's src with the [src] binding. -->
-<amp-img width="300" height="200" src="/img/dog.jpg" [src]="myAnimals[currentAnimal].imageUrl">
+<amp-img
+  width="300"
+  height="200"
+  src="/img/dog.jpg"
+  [src]="myAnimals[currentAnimal].imageUrl"
+>
 </amp-img>
 
-<p><button on="tap:AMP.setState({currentAnimal: &#39;cat&#39;})">Set to Cat</button>
+<p>
+  <button on="tap:AMP.setState({currentAnimal: &#39;cat&#39;})">
+    Set to Cat
+  </button>
+</p>
 ```
 
-  Ketika tombol ditekan:
+Ketika tombol ditekan:
 
-  1. **Status** diubah dengan `currentAnimal` yang ditetapkan ke `'cat'`.
-  1. **Ekspresi** yang bergantung pada `currentAnimal` dievaluasi:
+1. **Status** diubah dengan `currentAnimal` yang ditetapkan ke `'cat'`.
+1. **Ekspresi** yang bergantung pada `currentAnimal` dievaluasi:
+
 
     * `'This is a ' + currentAnimal + '.'` =&gt; `'This is a cat.'`
     * `myAnimals[currentAnimal].style` =&gt; `'redBackground'`
     * `myAnimals[currentAnimal].imageUrl` =&gt;  `/img/cat.jpg`</li>
 
-  1. **Binding** yang bergantung pada ekspresi yang telah diubah akan diubah:
+1. **Binding** yang bergantung pada ekspresi yang telah diubah akan diubah:
+
 
     * Teks elemen `<p>` pertama akan berbunyi "This is a cat.".
     * Atribut `class` elemen `<p>` kedua akan menjadi "redBackground".
     * Elemen `amp-img` akan menampilkan gambar seekor kucing.</li>
 
-  [tip type="success"]
-[Cobalah **demo langsung**](https://ampbyexample.com/components/amp-bind/) untuk contoh ini dengan anotasi kode.
+[tip type="success"][cobalah **demo langsung**](https://ampbyexample.com/components/amp-bind/) untuk contoh ini dengan anotasi kode.
 [/tip]
 
 # Detail <a name="details"></a>
@@ -164,8 +169,8 @@ Status `amp-bind` dapat diinisialisasi dengan komponen `amp-state`:
 
 [Ekspresi](#expressions) dapat merujuk variabel status melalui sintaks titik. Dalam contoh ini, `myState.foo` akan mengevaluasi `"bar"`.
 
-* JSON turunan elemen `<amp-state>` memiliki ukuran maksimal 100 KB.
-* Elemen `<amp-state>` juga dapat menentukan URL CORS, bukan skrip JSON turunan. Lihat [Apendiks](#amp-state-specification) untuk mengetahui detailnya.
+- JSON turunan elemen `<amp-state>` memiliki ukuran maksimal 100 KB.
+- Elemen `<amp-state>` juga dapat menentukan URL CORS, bukan skrip JSON turunan. Lihat [Apendiks](#amp-state-specification) untuk mengetahui detailnya.
 
 # Me-refresh status <a name="refreshing-state"></a>
 
@@ -184,7 +189,9 @@ Tindakan [`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/am
 ```html
 <!-- Like JavaScript, you can reference existing
       variables in the values of the  object literal. -->
-<button on="tap:AMP.setState({foo: 'bar', baz: myAmpState.someVariable})"></button>
+<button
+  on="tap:AMP.setState({foo: 'bar', baz: myAmpState.someVariable})"
+></button>
 ```
 
 Secara umum, objek bertingkat akan digabungkan hingga kedalaman maksimal 10. Semua variabel, termasuk yang diperkenalkan oleh `amp-state`, dapat diganti.
@@ -194,7 +201,7 @@ Jika dipicu oleh peristiwa tertentu, `AMP.setState()` juga dapat mengakses data 
 ```html
 <!-- The "change" event of this <input> element contains
       a "value" variable that can be referenced via "event.value". -->
-  <input type="range" on="change:AMP.setState({myRangeValue: event.value})">
+<input type="range" on="change:AMP.setState({myRangeValue: event.value})" />
 ```
 
 # Mengubah histori dengan `AMP.pushState()` <a name="modifying-history-with-amppushstate"></a>
@@ -202,12 +209,13 @@ Jika dipicu oleh peristiwa tertentu, `AMP.setState()` juga dapat mengakses data 
 Tindakan [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) mirip dengan `AMP.setState()` kecuali tindakan ini juga mendorong entri baru ke tumpukan histori browser. Memunculkan entri histori ini (misalnya dengan menavigasi mundur) akan memulihkan nilai variabel sebelumnya yang ditetapkan oleh `AMP.pushState()`.
 
 Misalnya:
+
 ```html
 <button on="tap:AMP.pushState({foo: '123'})">Set 'foo' to 123</button>
 ```
 
-* Menge-tap tombol tersebut akan menetapkan variabel `foo` ke 123 dan mengirimkan entri histori baru.
-* Menavigasi mundur akan memulihkan `foo` ke nilai sebelumnya, "bar" (setara dengan memanggil `AMP.setState({foo: 'bar'})`.
+- Menge-tap tombol tersebut akan menetapkan variabel `foo` ke 123 dan mengirimkan entri histori baru.
+- Menavigasi mundur akan memulihkan `foo` ke nilai sebelumnya, "bar" (setara dengan memanggil `AMP.setState({foo: 'bar'})`.
 
 # Ekspresi <a name="expressions"></a>
 
@@ -215,12 +223,12 @@ Ekspresi mirip dengan JavaScript dengan beberapa perbedaan penting.
 
 # Perbedaan dengan JavaScript <a name="differences-from-javascript"></a>
 
-* Ekspresi hanya dapat mengakses [status](#state) dokumen penampungnya.
-* Ekspresi **tidak** memiliki akses ke elemen global seperti `window` atau `document`.
-* Hanya operator dan [fungsi yang diizinkan](#white-listed-functions) yang dapat digunakan.
-* Fungsi, class, dan loop kustom secara umum tidak diizinkan. Fungsi panah diizinkan sebagai parameter, misalnya `Array.prototype.map`.
-* Indeks array melebihi batas dan variabel yang tidak ditentukan akan menampilkan `null`, bukan `undefined` atau memunculkan error.
-* Ekspresi tunggal saat ini dibatasi 50 operand untuk menjaga performa. Harap [hubungi kami](https://github.com/ampproject/amphtml/issues/new) jika alokasi ini tidak memadai untuk kasus penggunaan Anda.
+- Ekspresi hanya dapat mengakses [status](#state) dokumen penampungnya.
+- Ekspresi **tidak** memiliki akses ke elemen global seperti `window` atau `document`.
+- Hanya operator dan [fungsi yang diizinkan](#white-listed-functions) yang dapat digunakan.
+- Fungsi, class, dan loop kustom secara umum tidak diizinkan. Fungsi panah diizinkan sebagai parameter, misalnya `Array.prototype.map`.
+- Indeks array melebihi batas dan variabel yang tidak ditentukan akan menampilkan `null`, bukan `undefined` atau memunculkan error.
+- Ekspresi tunggal saat ini dibatasi 50 operand untuk menjaga performa. Harap [hubungi kami](https://github.com/ampproject/amphtml/issues/new) jika alokasi ini tidak memadai untuk kasus penggunaan Anda.
 
 Implementasi dan tata bahasa lengkap ekspresi dapat dilihat di [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) dan [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
@@ -229,10 +237,10 @@ Implementasi dan tata bahasa lengkap ekspresi dapat dilihat di [bind-expr-impl.j
 Berikut adalah semua ekspresi yang valid:
 
 ```javascript
-1 + '1'           // 11
-1 + (+'1')        // 2
-!0                // true
-null || 'default' // 'default'
+1 + '1'; // 11
+1 + +'1'; // 2
+!0; // true
+null || 'default'; // 'default'
 ```
 
 # Fungsi yang diizinkan <a name="white-listed-functions"></a>
@@ -352,12 +360,15 @@ null || 'default' // 'default'
 Fragmen ekspresi `amp-bind` dapat digunakan kembali dengan menentukan `amp-bind-macro`. Elemen `amp-bind-macro` memungkinkan Anda menentukan ekspresi yang memerlukan nol atau lebih argumen dan merujuk ke status saat ini. Makro dapat dipanggil seperti fungsi dengan merujuk nilai atribut `id`-nya dari mana saja dalam dokumen Anda.
 
 ```html
-<amp-bind-macro id="circleArea" arguments="radius" expression="3.14 * radius * radius"></amp-bind-macro>
+<amp-bind-macro
+  id="circleArea"
+  arguments="radius"
+  expression="3.14 * radius * radius"
+></amp-bind-macro>
 
 <div>
   The circle has an area of <span [text]="circleArea(myCircle.radius)">0</span>.
 </div>
-
 ```
 
 Makro juga dapat memanggil makro lain yang <i>ditentukan sebelum makro itu sendiri</i>. Makro tidak dapat memanggil dirinya sendiri secara berulang.
@@ -405,10 +416,10 @@ Ketika **status** berubah, ekspresi dievaluasi ulang dan properti elemen terikat
 
 Catatan tentang binding:
 
-* Demi keamanan, binding ke `innerHTML` tidak diizinkan.
-* Semua binding atribut dibersihkan dari nilai yang tidak aman (misalnya `javascript:`).
-* Hasil ekspresi boolean mengalihkan atribut boolean. Misalnya: `<amp-video [controls]="expr"...>`. Saat `expr` dievaluasi ke `true`, elemen `<amp-video>` memiliki atribut `controls`. Saat `expr` dievaluasi ke `false`, atribut `controls` akan dihapus.
-* Karakter tanda kurung `[` dan `]` dalam nama atribut dapat menyulitkan saat menulis XML (misalnya XHTML, JSX) atau menulis atribut melalui DOM API. Dalam kasus ini, gunakan sintaks alternatif `data-amp-bind-x="foo"`, bukan `[x]="foo"`.
+- Demi keamanan, binding ke `innerHTML` tidak diizinkan.
+- Semua binding atribut dibersihkan dari nilai yang tidak aman (misalnya `javascript:`).
+- Hasil ekspresi boolean mengalihkan atribut boolean. Misalnya: `<amp-video [controls]="expr"...>`. Saat `expr` dievaluasi ke `true`, elemen `<amp-video>` memiliki atribut `controls`. Saat `expr` dievaluasi ke `false`, atribut `controls` akan dihapus.
+- Karakter tanda kurung `[` dan `]` dalam nama atribut dapat menyulitkan saat menulis XML (misalnya XHTML, JSX) atau menulis atribut melalui DOM API. Dalam kasus ini, gunakan sintaks alternatif `data-amp-bind-x="foo"`, bukan `[x]="foo"`.
 
 # Atribut khusus elemen <a name="element-specific-attributes"></a>
 
@@ -552,7 +563,7 @@ Hanya binding ke komponen dan atribut berikut yang diizinkan:
     </tr>
   </table>
 
-  <sup>*</sup>Menunjukkan atribut yang dapat diikat yang tidak memiliki pasangan yang tidak dapat diikat.
+<sup>\*</sup>Menunjukkan atribut yang dapat diikat yang tidak memiliki pasangan yang tidak dapat diikat.
 
 # Debugging <a name="debugging"></a>
 
@@ -567,7 +578,6 @@ Dalam mode pengembangan, `amp-bind` akan mengeluarkan peringatan saat nilai defa
 so a warning will be issued in development mode. -->
 
 <p class="def" [class]="abc"></p>
-
 ```
 
 Dalam mode pengembangan, `amp-bind` juga akan mengeluarkan peringatan saat menghilangkan referensi ke properti atau variabel yang tidak ditentukan. Hal ini juga dapat membantu mencegah mutasi tak terduga akibat hasil ekspresi `null`. Contoh:
@@ -642,13 +652,12 @@ Elemen `amp-state` dapat berisi elemen `<script>` turunan **ATAU** atribut `src`
   </script>
 </amp-state>
 
-<amp-state id="myRemoteState" src="https://data.com/articles.json">
-</amp-state>
+<amp-state id="myRemoteState" src="https://data.com/articles.json"> </amp-state>
 ```
 
 # Pengelompokan XHR <a name="xhr-batching"></a>
 
-AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat menggunakan satu permintaan data JSON sebagai sumber data untuk banyak konsumen (misalnya beberapa elemen `<amp-list>`) di sebuah halaman AMP.  Sebagai contoh, jika elemen `amp-list` membuat XHR ke sebuah endpoint, sementara XHR sedang dalam periode tayang, semua XHR berikutnya ke endpoint yang sama tidak akan terpicu dan sebaliknya akan menampilkan hasil dari XHR pertama.
+AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat menggunakan satu permintaan data JSON sebagai sumber data untuk banyak konsumen (misalnya beberapa elemen `<amp-list>`) di sebuah halaman AMP. Sebagai contoh, jika elemen `amp-list` membuat XHR ke sebuah endpoint, sementara XHR sedang dalam periode tayang, semua XHR berikutnya ke endpoint yang sama tidak akan terpicu dan sebaliknya akan menampilkan hasil dari XHR pertama.
 
 # Atribut <a name="attributes"></a>
 
@@ -684,8 +693,11 @@ Perhatikan contoh berikut:
 ```
 
 ```html
-<button on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"...></button>
-<button on="tap:AMP.setState({employee: {age: 64}})"...></button>
+<button
+  on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"
+  ...
+></button>
+<button on="tap:AMP.setState({employee: {age: 64}})" ...></button>
 ```
 
 Saat tombol pertama ditekan, status akan berubah menjadi:
@@ -721,7 +733,7 @@ Perhatikan bahwa `amp-bind` akan memunculkan error jika Anda memanggil `AMP.setS
 Hapus variabel status yang ada dengan menetapkan nilainya ke `null` di `AMP.setState()`. Dimulai dengan status dari contoh sebelumnya, menekan:
 
 ```html
-<button on="tap:AMP.setState({employee: {vehicle: null}})"...></button>
+<button on="tap:AMP.setState({employee: {vehicle: null}})" ...></button>
 ```
 
 akan mengubah status menjadi:
@@ -738,7 +750,7 @@ akan mengubah status menjadi:
 Demikian juga menekan:
 
 ```html
-<button on="tap:AMP.setState({employee: null})"...></button>
+<button on="tap:AMP.setState({employee: null})" ...></button>
 ```
 
 akan mengubah status menjadi:

@@ -5,6 +5,7 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Rethinking The Carousel
 
 Sometimes we want a single user interaction to affect multiple components simultaneously. In a simple case, we might have several closed accordions with a single button that says "Expand All Sections." If the user presses that button, we want to open all of the accordion menus at the same time.
@@ -29,7 +30,7 @@ But how do we set the value of a state variable? As we learned in the intermedia
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({wasPressed: true})">
-    Press Me
+Press Me
 </button>
 {% endraw %}[/sourcecode]
 
@@ -43,14 +44,14 @@ The example below shows how to set initial state. Notice how we use the ID of th
 
 [sourcecode:html]
 {% raw %}<amp-state id="accordionState"/>
-    <script type="application/json">
-        {
-            "isOpen": false
-        }
-    </script>
+<script type="application/json">
+{
+"isOpen": false
+}
+</script>
 <amp-state>
 <button on="tap:AMP.setState({ accordionState: { isOpen: !accordionState.isOpen }})">
-    Open/Close All Sections
+Open/Close All Sections
 </button>
 {% endraw %}[/sourcecode]
 
@@ -70,8 +71,9 @@ For example, if we want to control an element's text, we can bind to the `text` 
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({message: ‘Hello AMP!’})">
-    Say Hello!
+Say Hello!
 </button>
+
 <p [text]="message"></p>
 {% endraw %}[/sourcecode]
 
@@ -85,8 +87,9 @@ To add a default value for a bound property, include the property both with and 
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({messageClass: ‘text-color-red’})">
-    Change to Red!
+Change to Red!
 </button>
+
 <p [class]="messageClass" class="text-color-blue">Hello AMP!</p>
 {% endraw %}[/sourcecode]
 
@@ -99,6 +102,7 @@ The value of a bound property is set to the value that's returned when an expres
     on="change:AMP.setState({ firstPassword: event.value })" />
 <input type="text" placeholder="Re-Enter Password"
     on="change:AMP.setState({ secondPassword: event.value })" />
+
 <p hidden [hidden]="firstPassword == secondPassword">
     The passwords don't match!
 </p>
@@ -120,15 +124,15 @@ To practice what we’ve learned so far, let’s convert our carousels from usin
 
 Using the [documentation](../../../documentation/components/reference/amp-bind.md) for `<amp-state>` and `<amp-bind>`, try to complete each of the following requirements:
 
-* When a user changes the slide in either the larger carousel or the thumbnail carousel, the slide of the other carousel should also change to the same slide.
+- When a user changes the slide in either the larger carousel or the thumbnail carousel, the slide of the other carousel should also change to the same slide.
 
-* Store the current slide index (0, 1, or 2) in the state variable `selectedSlide`.
+- Store the current slide index (0, 1, or 2) in the state variable `selectedSlide`.
 
-* Add a `<p>` tag after the `<amp-selector>` component.
+- Add a `<p>` tag after the `<amp-selector>` component.
 
-* The new `<p>` tag should contain text in the format "Slide X of 3" where X is the currently selected slide. **Note**: The slide index starts with 0 but the slide counter text should start with 1. **Hint**: Don’t forget to add an initial value for the paragraph tag text!
+- The new `<p>` tag should contain text in the format "Slide X of 3" where X is the currently selected slide. **Note**: The slide index starts with 0 but the slide counter text should start with 1. **Hint**: Don’t forget to add an initial value for the paragraph tag text!
 
-* **[Optional]** Store the state variables in an `<amp-state>` component with ID `carousel`.
+- **[Optional]** Store the state variables in an `<amp-state>` component with ID `carousel`.
 
 Once you have finished, the result should look like this:
 
@@ -141,33 +145,34 @@ The portion of the page containing the carousel should look like this:
 [sourcecode:html]
 {% raw %}
 <amp-state id="carousel">
-    <script type="application/json">
-        {
-            "selectedSlide": 0
-        }
-    </script>
+<script type="application/json">
+{
+"selectedSlide": 0
+}
+</script>
 </amp-state>
 <amp-carousel on="slideChange:AMP.setState({carousel: {selectedSlide:event.index}})"
-    [slide]="carousel.selectedSlide" lightbox id="imageSlides" layout="responsive"
-    width="412" height="309" type="slides" loop>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+[slide]="carousel.selectedSlide" lightbox id="imageSlides" layout="responsive"
+width="412" height="309" type="slides" loop>
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-selector id="ampSelector" [selected]="carousel.selectedSlide"
-    on="select:AMP.setState({carousel: {selectedSlide:event.targetOption}})">
-    <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+on="select:AMP.setState({carousel: {selectedSlide:event.targetOption}})">
+<amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
             option="0" selected role="button" tabindex="1" width="96" height="72" layout="fixed"></amp-img>
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
             option="1" role="button" tabindex="1"  width="96" height="72" layout="fixed"></amp-img>
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
             option="2" role="button" tabindex="1" width="96" height="72" layout="fixed"></amp-img>
-    </amp-carousel>
+</amp-carousel>
 </amp-selector>
+
 <p [text]="’Slide ‘ + (carousel.selectedSlide + 1) + ‘ of 3’">
     Slide 1 of 3
 </p>
@@ -189,7 +194,7 @@ Often, as we select these options, the page changes to match our selection. The 
 
 Other parts of the page show dynamic content as well. Usually, when we log into our account for the e-commerce site, we might see our name displayed in the top-right corner. There is usually a shopping cart icon with a small number badge indicating how many products are in our cart. As we click a button to purchase more items, that number updates to the new total of items in our cart.
 
-To start to get a feel for how much information is stored in state variables on e-commerce sites, think about someone else using the same site. They have different account information and a different shopping cart. They might be viewing different products or have different options enabled.  Each of the differences in how two users might see the same site will be described by one or more state variables.
+To start to get a feel for how much information is stored in state variables on e-commerce sites, think about someone else using the same site. They have different account information and a different shopping cart. They might be viewing different products or have different options enabled. Each of the differences in how two users might see the same site will be described by one or more state variables.
 
 With what we have learned about state variables and bindings, we now start to see how we could create such a page. We need to store the present value of each product option in its own state variable. Then, we need pricing and availability information that corresponds to the various product options (e.g., the price of a green men’s XL shirt vs. a women’s red S shirt). Finally, we bind the dynamic fields such as price, the out-of-stock error visibility, and the product image to account for each of the selected options.
 
@@ -201,58 +206,58 @@ Our next goal is to recreate a basic online product page such as the one we disc
 
 We’re not going to build this product page inside of our Chico’s Cheese Bikes shop project. Instead, you can use [this](https://glitch.com/~rustic-musician) Glitch as a starting point for this exercise. **Note**: Don’t forget to remix it so you can edit! The Glitch contains:
 
-* Some basic CSS and HTML to layout the static product page.
+- Some basic CSS and HTML to layout the static product page.
 
-* State variables describing the cost of the product, the upcharges for various options, and the URLs for the various product images by color.
+- State variables describing the cost of the product, the upcharges for various options, and the URLs for the various product images by color.
 
-* An `<amp-state>` component to hold state variables with initial values.
+- An `<amp-state>` component to hold state variables with initial values.
 
 Let’s discuss the structure of the product information that is loaded in an `<amp-state>` component in the given Glitch starter application. In a real e-commerce site, we might load this data directly from the server, but in our example, we will include the data directly in the site.
 
 [sourcecode:html]
 {% raw %}<amp-state id="productData">
-    <script type="application/json">
-        {
-            "basePrice": 14
-            "upcharges": {
-                "fit": {
-                    "Men": 0,
-                    "Women": 3
-                },
-                "size": {
-                    "Small": 0,
-                    "Medium": 2,
-                    "Large": 5
-                },
-                "color": {
-                    "Red": 0,
-                    "Blue": 1,
-                    "Green": 0
-                }
-            },
-            "images": {
-                "Red": "https://...redtshirt.jpg",
-                "Blue": "https://...Blue_Tshirt.jpg",
-                "Green": "https://...greentshirt.png"
-            }
-        }
-    </script>
+<script type="application/json">
+{
+"basePrice": 14
+"upcharges": {
+"fit": {
+"Men": 0,
+"Women": 3
+},
+"size": {
+"Small": 0,
+"Medium": 2,
+"Large": 5
+},
+"color": {
+"Red": 0,
+"Blue": 1,
+"Green": 0
+}
+},
+"images": {
+"Red": "https://...redtshirt.jpg",
+"Blue": "https://...Blue_Tshirt.jpg",
+"Green": "https://...greentshirt.png"
+}
+}
+</script>
 </amp-state>
 {% endraw %}[/sourcecode]
 
-First, notice that the ID of the `<amp-state>` component is `productData`. That means that the base price of the item ($14) can be referenced in binding expressions as `productData.basePrice`. Next, in the `upcharges` section, we list the various options for the t-shirt and how they raise the price of the item.
+First, notice that the ID of the `<amp-state>` component is `productData`. That means that the base price of the item (\$14) can be referenced in binding expressions as `productData.basePrice`. Next, in the `upcharges` section, we list the various options for the t-shirt and how they raise the price of the item.
 
-For example, referencing `productData.upcharges.size.Medium` in an expression would return the upcharge price of a medium t-shirt ($2). (An upcharge is an additional price paid for a product customization.) We simply add the upcharge price to the base price of the t-shirt (`productData.basePrice` + `productData.upcharges.size.Medium` = $14 + $2 = $16) to get the final price for the shirt. Finally, the `images` section contains the different URLs that point to images for each color of our shirt.
+For example, referencing `productData.upcharges.size.Medium` in an expression would return the upcharge price of a medium t-shirt (\$2). (An upcharge is an additional price paid for a product customization.) We simply add the upcharge price to the base price of the t-shirt (`productData.basePrice` + `productData.upcharges.size.Medium` = $14 + $2 = \$16) to get the final price for the shirt. Finally, the `images` section contains the different URLs that point to images for each color of our shirt.
 
 Using the documentation for [`<amp-bind>`](../../../documentation/components/reference/amp-bind.md), [`<amp-state>`](../../../documentation/components/reference/amp-bind.md#state), and the descriptions above, update the given basic product page to meet the following requirements:
 
-* When the fit, size, and color select boxes are updated, they should store their new selected value into the corresponding state variable in the `<amp-state>` component with ID `optionsData`.
+- When the fit, size, and color select boxes are updated, they should store their new selected value into the corresponding state variable in the `<amp-state>` component with ID `optionsData`.
 
-* The image of the t-shirt should correspond to the currently selected color option.
+- The image of the t-shirt should correspond to the currently selected color option.
 
-* The `<p>` tag containing the product description (Fit: Men - Size: Small - Color: Red) should be updated to reflect the currently selected product options.
+- The `<p>` tag containing the product description (Fit: Men - Size: Small - Color: Red) should be updated to reflect the currently selected product options.
 
-* The `<span>` tag containing the dollar portion of the product price should be updated to reflect the base price of the item and any upcharges related to currently selected product options.
+- The `<span>` tag containing the dollar portion of the product price should be updated to reflect the base price of the item and any upcharges related to currently selected product options.
 
 [tip type="read-on"]
 **Hint**: An important skill to complete this exercise is using one set of state variables to retrieve data from another state variable. In this case, we will frequently be using the variables in the `optionsData` state variable to retrieve information from the `productData` state variable. For example, to figure out what the upcharge is for the currently selected t-shirt size, we’d reference `productData.upcharges.size[optionsData.size]` in our binding expression. If `optionsData.size` is currently set to `Small`, then the previous expression is equivalent to `productData.upcharges.size.Small`. You can read more about this approach to referencing information in JSON [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors).
@@ -264,6 +269,7 @@ The solution can be found in this Glitch example. The portion of the page contai
 
 [sourcecode:html]
 {% raw %}
+
 <main>
     <h2>Tina's T-Shirts</h2>
     <div class="filter-sort-selectors">
@@ -323,7 +329,7 @@ But how do we set the value of a state variable? The AMP runtime provides an act
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({wasPressed: true})">
-    Press Me
+Press Me
 </button>
 {% endraw %}[/sourcecode]
 
@@ -335,14 +341,14 @@ It's possible to set initial values for your state variables. (If you don't, the
 
 [sourcecode:html]
 {% raw %}<amp-state id="accordionState"/>
-    <script type="application/json">
-        {
-            "isOpen": false
-        }
-    </script>
+<script type="application/json">
+{
+"isOpen": false
+}
+</script>
 <amp-state>
 <button on="tap:AMP.setState({ accordionState: { isOpen: !accordionState.isOpen }})">
-    Open/Close All Sections
+Open/Close All Sections
 </button>
 {% endraw %}[/sourcecode]
 
@@ -362,8 +368,9 @@ For example, if we want to control an element's text, we can bind to the `text` 
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({message: ‘Hello AMP!’})">
-    Say Hello!
+Say Hello!
 </button>
+
 <p [text]="message"></p>
 {% endraw %}[/sourcecode]
 
@@ -377,8 +384,9 @@ To add a default value for a bound property, include the property both with and 
 
 [sourcecode:html]
 {% raw %}<button on="tap:AMP.setState({messageClass: ‘text-color-red’})">
-    Change to Red!
+Change to Red!
 </button>
+
 <p [class]="messageClass" class="text-color-blue">Hello AMP!</p>
 {% endraw %}[/sourcecode]
 
@@ -391,6 +399,7 @@ For example, this code shows how to create an error message during account creat
     on="change:AMP.setState({ firstPassword: event.value })" />
 <input type="text" placeholder="Re-Enter Password"
     on="change:AMP.setState({ secondPassword: event.value })" />
+
 <p hidden [hidden]="firstPassword == secondPassword">
     The passwords don't match!
 </p>
@@ -427,33 +436,34 @@ The portion of the page containing the carousel should look like this:
 [sourcecode:html]
 {% raw %}
 <amp-state id="carousel">
-    <script type="application/json">
-        {
-            "selectedSlide": 0
-        }
-    </script>
+<script type="application/json">
+{
+"selectedSlide": 0
+}
+</script>
 </amp-state>
 <amp-carousel on="slideChange:AMP.setState({carousel: {selectedSlide:event.index}})"
-    [slide]="carousel.selectedSlide" lightbox id="imageSlides" layout="responsive"
-    width="412" height="309" type="slides" loop>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
+[slide]="carousel.selectedSlide" lightbox id="imageSlides" layout="responsive"
+width="412" height="309" type="slides" loop>
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser.jpg?1540228205366"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese.jpg?1540228223785"
         width="412" height="309" layout="responsive"></amp-img>
-    <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse.jpg?1540228223963"
         width="412" height="309" layout="responsive"></amp-img>
 </amp-carousel>
 <amp-selector id="ampSelector" [selected]="carousel.selectedSlide"
-    on="select:AMP.setState({carousel: {selectedSlide:event.targetOption}})">
-    <amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
+on="select:AMP.setState({carousel: {selectedSlide:event.targetOption}})">
+<amp-carousel layout="fixed-height" height="78" class="thumbnail-carousel">
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheddar-chaser-thumb.jpg?1540228250623"
             option="0" selected role="button" tabindex="1" width="96" height="72" layout="fixed"></amp-img>
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fcheese-thumb.jpg?1540228249992"
             option="1" role="button" tabindex="1"  width="96" height="72" layout="fixed"></amp-img>
-        <amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
+<amp-img src="https://cdn.glitch.com/d7f46a57-0ca4-4cca-ab0f-69068dec6631%2Fmouse-thumb.jpg?1540228249062"
             option="2" role="button" tabindex="1" width="96" height="72" layout="fixed"></amp-img>
-    </amp-carousel>
+</amp-carousel>
 </amp-selector>
+
 <p [text]="’Slide ‘ + (carousel.selectedSlide + 1) + ‘ of 3’">
     Slide 1 of 3
 </p>
@@ -495,32 +505,32 @@ Let's discuss the structure of the product information that is loaded in an `<am
 
 [sourcecode:html]
 {% raw %}<amp-state id="productData">
-    <script type="application/json">
-        {
-            "basePrice": 14
-            "upcharges": {
-                "fit": {
-                    "Men": 0,
-                    "Women": 3
-                },
-                "size": {
-                    "Small": 0,
-                    "Medium": 2,
-                    "Large": 5
-                },
-                "color": {
-                    "Red": 0,
-                    "Blue": 1,
-                    "Green": 0
-                }
-            },
-            "images": {
-                "Red": "https://...redtshirt.jpg",
-                "Blue": "https://...Blue_Tshirt.jpg",
-                "Green": "https://...greentshirt.png"
-            }
-        }
-    </script>
+<script type="application/json">
+{
+"basePrice": 14
+"upcharges": {
+"fit": {
+"Men": 0,
+"Women": 3
+},
+"size": {
+"Small": 0,
+"Medium": 2,
+"Large": 5
+},
+"color": {
+"Red": 0,
+"Blue": 1,
+"Green": 0
+}
+},
+"images": {
+"Red": "https://...redtshirt.jpg",
+"Blue": "https://...Blue_Tshirt.jpg",
+"Green": "https://...greentshirt.png"
+}
+}
+</script>
 </amp-state>
 {% endraw %}[/sourcecode]
 
@@ -544,6 +554,7 @@ The solution can be found in this Glitch example. The portion of the page contai
 
 [sourcecode:html]
 {% raw %}
+
 <main>
     <h2>Tina's T-Shirts</h2>
     <div class="filter-sort-selectors">

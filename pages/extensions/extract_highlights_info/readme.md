@@ -2,30 +2,22 @@
 
 ## Purpose
 
-This extension is used to provide the page url and translated title and description for a list of links. 
+This extension is used to provide the page url and translated title and description for a list of links.
 The input is a structure with links grouped by a category below a locale node.
-You can specify the locale node `default` that will be used for all locales with no matching entry.  
+You can specify the locale node `default` that will be used for all locales with no matching entry.
 
 **Example input:**
 
 ```json
 {
-	"default": {
-		"category": [
-			"/content/folder/file.md"
-		],
-		"another_category": [
-			"/content/other/folder/file.md"
-		]
-	},
-	"en": {
-		"category": [
-			"/content/folder/file.md"
-		],
-		"another_category": [
-			"/content/other/folder/specific_file.md"
-		]
-	}
+  "default": {
+    "category": ["/content/folder/file.md"],
+    "another_category": ["/content/other/folder/file.md"]
+  },
+  "en": {
+    "category": ["/content/folder/file.md"],
+    "another_category": ["/content/other/folder/specific_file.md"]
+  }
 }
 ```
 
@@ -36,12 +28,11 @@ with multiple properties:
 
 ```json
 {
-    "title": "The locale specific title",
-    "description": "The locale specific description",
-    "url": "/url/path/to/page.html"
+  "title": "The locale specific title",
+  "description": "The locale specific description",
+  "url": "/url/path/to/page.html"
 }
 ```
-
 
 ## Activation
 

@@ -2,18 +2,14 @@
 $title: amp-access
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: AMP ペイウォールとサブスクリプションのサポートを提供します。
 ---
 
-
-
 サイト運営者は amp-access（「AMP ペイウォールとサブスクリプションのサポート」）を利用することで、リーダーのサブスクリプション ステータス、視聴回数などの要素に基づき、リーダーがアクセスできるコンテンツや制限事項を管理できます。
 
 # amp-access <a name="amp-access"></a>
-
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -63,6 +59,7 @@ limitations under the License.
 ## ソリューション <a name="solution"></a>
 
 ここで提案するソリューションにより、サイト運営者は以下の意思決定やフローを管理できます。
+
 - ユーザーの作成と管理
 - メータリングの管理（一定数の無料視聴の許可）
 - ログインフロー
@@ -88,7 +85,7 @@ amp-access を利用するには、サイト運営者が上述のコンポーネ
 
 ### AMP リーダー ID <a name="amp-reader-id"></a>
 
-アクセス サービスとユースケースのサポートのために、amp-access にはリーダー ID** のコンセプトが導入されています。
+アクセス サービスとユースケースのサポートのために、amp-access にはリーダー ID\*\* のコンセプトが導入されています。
 
 リーダー ID は、AMP エコシステムで作成される匿名かつ一意の ID です。この ID はリーダーとサイト運営者の各ペアに対して一意であるため、リーダーは 2 つの異なるサイト運営者に対して別々に識別されます。これは非可逆的な ID です。AMP とサイト運営者間のあらゆるやり取りに使用され、非常に高いエントロピーを持ちます。サイト運営者はリーダー ID を使用してリーダーを特定し、独自の ID システムにマッピングすることができます。
 
@@ -127,14 +124,12 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
 すべてのエンドポイントは、AMP ドキュメントの先頭で、JSON オブジェクトとして設定されます。
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "property": value,
     ...
     }
 </script>
-
 ```
 
 以下のプロパティがこの設定内で定義されます。
@@ -187,24 +182,22 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
   </tr>
 </table>
 
-<URL>** の値には、代入変数を含む HTTPS URL を指定します。代入変数について詳しくは、以下の[アクセス URL 変数](#access-url-variables)をご覧ください。
+<URL>\*\* の値には、代入変数を含む HTTPS URL を指定します。代入変数について詳しくは、以下の[アクセス URL 変数](#access-url-variables)をご覧ください。
 
     以下に、amp-access の設定の例を示します。
 
 ```html
-
 <script id="amp-access" type="application/json">
-{
-  "authorization":
-      "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
-  "pingback":
-      "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
-  "login":
-      "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
-  "authorizationFallbackResponse": {"error": true}
-}
+  {
+    "authorization":
+        "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
+    "pingback":
+        "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
+    "login":
+        "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
+    "authorizationFallbackResponse": {"error": true}
+  }
 </script>
-
 ```
 
 #### 複数のアクセス プロバイダ <a name="multiple-access-providers"></a>
@@ -212,16 +205,15 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
 複数のアクセス プロバイダを指定するには、単一のオブジェクトの代わりに配列を使用し、エントリごとに `namespace` を指定します。
 
 ```html
-
 <script id="amp-access" type="application/json">
-[
-  {
-    "property": value,
+  [
+    {
+      "property": value,
+      ...
+      "namespace": value
+    },
     ...
-    "namespace": value
-  },
-  ...
-[
+  [
 </script>
 ```
 
@@ -273,6 +265,7 @@ Pingback はオプションです。無効にするには、`noPingback` 設定�
 </table>
 
 以下に、リーダー ID、正規 URL、リファラー情報、ランダムな CacheBuster で拡張された URL の例を示します。
+
 ```text
 https://pub.com/access?
   rid=READER_ID
@@ -290,24 +283,27 @@ AUTHDATA 変数は Pingback URL とログイン URL で使用できます。こ�
 `amp-access` 属性は、承認エンドポイントから返される承認応答に基づいて true または false を設定する式を提供します。設定された値は、要素とそのコンテンツが表示可能かどうかを示します。
 
 `amp-access` の値は、SQL に似た言語で定義されたブール式です。文法の定義については、[付録 A](#appendix-a-amp-access-expression-grammar) をご覧ください。ブール式は次のように定義されます。
-```html
 
+```html
 <div amp-access="expression">…</div>
 ```
+
 プロパティと値は、承認エンドポイントから返される承認応答のプロパティと値です。これにより、柔軟なシステムが実現され、さまざまなアクセス シナリオに対応できます。名前空間を使用する場合は、プロパティ名の前に名前空間を追加します（例: 「anamespace.aproperty」）。
 
 「amp-access-hide」属性を使用すると、承認応答を受け取る前にオプティミスティックに要素を非表示にすることができます（この要素は表示可能です）。この属性は、「デフォルトで非表示」というセマンティクスを規定します。後で承認エンドポイントから返される承認応答によってこのデフォルト値が無効にされ、セクションが表示されることがあります。「amp-access-hide」属性を省略すると、セクションがデフォルトで表示または追加されます。「amp-access-hide」属性は「amp-access」属性と組み合わせて使用する必要があります。
+
 ```html
 <div amp-access="expression" amp-access-hide>…</div>
 ```
 
 承認リクエストが失敗すると「amp-access」の式が評価されないため、セクションが表示されるかどうかは、ドキュメントで「amp-access-hide」属性が最初に指定されているかどうかによって決まります。
 
-「amp-access-* 」属性のセットを必要に応じて拡張することで、難読化やレンダリングに関するさまざまなニーズに対応できます。
+「amp-access-\* 」属性のセットを必要に応じて拡張することで、難読化やレンダリングに関するさまざまなニーズに対応できます。
 
 承認リクエストが失敗し、「authorizationFallbackResponse」応答がドキュメントで指定されていない場合、「amp-access」の式が評価されないため、セクションが表示されるかどうかは、ドキュメントで「amp-access-hide」属性が最初に指定されているかどうかによって決まります。
 
 以下に、サブスクリプション ステータスに基づいてログインリンクまたは完全なコンテンツを表示する例を示します。
+
 ```html
 <header>
   Title of the document
@@ -323,11 +319,12 @@ AUTHDATA 変数は Pingback URL とログイン URL で使用できます。こ�
 <div amp-access="subscriber">
   Full content.
 </div>
-
 ```
-subscriber** は、承認エンドポイントから返される承認応答のブール値フィールドです。このセクションは、デフォルトでは非表示です（オプションです）。この例では、コンテンツ全体をオプティミスティックに表示しています。
+
+subscriber\*\* は、承認エンドポイントから返される承認応答のブール値フィールドです。このセクションは、デフォルトでは非表示です（オプションです）。この例では、コンテンツ全体をオプティミスティックに表示しています。
 
 以下に、メータリングの状態に関する免責事項をリーダーに表示する例を示します。
+
 ```html
 {% raw %}
 <section amp-access="views <= maxViews">
@@ -339,6 +336,7 @@ subscriber** は、承認エンドポイントから返される承認応答の�
 ```
 
 以下に、プレミアム サブスクライバーに追加のコンテンツを表示する例を示します。
+
 ```html
 <section amp-access="subscriptonType = 'premium'">
   Shhh… No one but you can read this content.
@@ -354,12 +352,15 @@ subscriber** は、承認エンドポイントから返される承認応答の�
 このエンドポイントでは、コンテンツのさまざまな部分の表示と非表示を切り替えるためのコンテンツ マークアップの式で使用可能な承認応答を生成します。
 
 リクエストの形式は次のとおりです。
+
 ```text
 https://publisher.com/amp-access.json?
 rid=READER_ID
 &url=SOURCE_URL
 ```
+
 応答は自由形式の JSON オブジェクトです。制限事項がいくつかありますが、応答にはすべてのプロパティと値を含めることができます。制限事項は次のとおりです。
+
 - プロパティ名は、`amp-access` 式の文法（[付録 A](#appendix-a-amp-access-expression-grammar) を参照）で定義されている制限事項に従う必要があります。つまり、プロパティ名には「amp-access」の仕様に準拠していない文字（スペースやダッシュなど）を含めることはできません。
 - プロパティ値に指定できる型は、文字列、数値、ブール値のいずれかのみです。
 - 値は、同じ型（文字列、数値、ブール値）の値を持つオブジェクトとしてネストすることもできます。
@@ -367,12 +368,14 @@ rid=READER_ID
 - 個人を特定できる情報（PII）または個人データを応答に含めないでください。
 
 以下に、承認エンドポイントから返すことができるプロパティの一部を示します。
+
 - メータリング情報: 許容される最大視聴回数と現在の視聴回数。
 - リーダーがログイン中か、サブスクライバーか。
 - サブスクリプションの詳細なタイプ: 基本、プレミアム
 - 地理情報: 国、地域、カスタムの公開地域
 
 以下に、リーダーがサブスクライバーではなく、1 か月に最大 10 件の記事を閲覧できる場合に、すでに 6 件の記事を閲覧しているときの応答の例を示します。
+
 ```json
 {
   "maxViews": 10,
@@ -380,13 +383,16 @@ rid=READER_ID
   "subscriber": false
 }
 ```
+
 以下に、リーダーがログイン中で、サブスクリプション タイプがプレミアムの場合の応答の例を示します。
+
 ```json
 {
   "loggedIn": true,
   "subscriptionType": "premium"
 }
 ```
+
 この RPC は、事前レンダリング フェーズで呼び出されることがありますが、リーダーが実際にドキュメントを見ることはできないため、メーターのカウントダウンには使用しないでください。
 
 もう 1 つの重要な考慮事項は、AMP ランタイムで承認エンドポイントをドキュメントのインプレッションあたり複数回呼び出さなければならない場合があるという点です。このような状況は、リーダーのアクセス パラメータが大きく変化したと AMP ランタイムが判断したとき（ログインフローが正常に完了した後など）に生じることがあります。
@@ -410,7 +416,7 @@ AMP ランタイムは承認フローで以下の CSS クラスを使用しま�
 1. `amp-access-loading` CSS クラス: 承認フローの開始時にドキュメント ルートに設定され、承認フローが完了または失敗すると削除されます。
 2. `amp-access-error` CSS クラス: 承認フローが失敗したときにドキュメント ルートに設定されます。
 
-server** オプションでは、単純な HTTPS エンドポイントと同様に、Google AMP キャッシュから承認エンドポイントが呼び出されます。つまり、その場合はサイト運営者の Cookie を配信できません。
+server\*\* オプションでは、単純な HTTPS エンドポイントと同様に、Google AMP キャッシュから承認エンドポイントが呼び出されます。つまり、その場合はサイト運営者の Cookie を配信できません。
 
 ### Pingback エンドポイント <a name="pingback-endpoint-1"></a>
 
@@ -425,10 +431,12 @@ Pingback は応答を生成しません。AMP ランタイムはすべての応�
 Pingback エンドポイントの呼び出しは、リーダーがドキュメントの表示を開始したときと、リーダーがログインフローを正常に完了した後に行われます。
 
 サイト運営者は以下の目的で Pingback を使用できます。
+
 - ページの無料視聴回数をカウントダウンする
 - AMP リーダー ID をサイト運営者の ID にマッピングする（Pingback が認証済み CORS エンドポイントとしてサイト運営者の Cookie に含まれることがあるため）
 
 リクエストの形式は次のとおりです。
+
 ```text
 https://publisher.com/amp-pingback?
 rid=READER_ID
@@ -440,20 +448,22 @@ rid=READER_ID
 ログインページの URL は、[設定](#configuration)で説明した `login` プロパティを使用して設定します。
 
 設定では、単一のログイン URL、またはログインのタイプが統一された複数のログイン URL を指定できます。以下に、単一のログイン URL の例を示します。
+
 ```json
 {
   "login": "https://publisher.com/amp-login.html?rid={READER_ID}"
-  }
+}
 ```
 
 以下に、複数のログイン URL の例を示します。
+
 ```json
 {
   "login": {
     "signin": "https://publisher.com/signin.html?rid={READER_ID}",
     "signup": "https://publisher.com/signup.html?rid={READER_ID}"
-    }
   }
+}
 ```
 
 URL には、[アクセス URL 変数](#access-url-variables)で定義されているパラメータをすべて指定できます。たとえば、AMP リーダー ID とドキュメント URL を渡すことができます。`RETURN_URL` クエリ置換を使用すると、リターン URL のクエリ パラメータ（例: `?ret=RETURN_URL`）を指定できます。リターン URL は必須です。`RETURN_URL` クエリ置換が指定されていない場合、デフォルトのクエリ パラメータ名（「return」）が指定されたリターン URL が自動的に挿入されます。
@@ -461,16 +471,20 @@ URL には、[アクセス URL 変数](#access-url-variables)で定義されて�
 ログインページは通常のウェブページです。[ブラウザ ダイアログ](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)として正常に機能する必要があること以外に特別な制約はありません。詳しくは、[ログインフロー](#login-flow)をご覧ください。
 
 リクエストの形式は次のとおりです。
+
 ```text
 https://publisher.com/amp-login.html?
 rid=READER_ID
 &url=SOURCE_URL
 &return=RETURN_URL
 ```
+
 `RETURN_URL` クエリ置換が指定されていない場合、「return」URL パラメータが AMP ランタイムによって自動的に追加されます。ログインページの作業の完了後、次の形式で指定された「リターン URL」にリダイレクトする必要があります。
+
 ```text
 RETURN_URL#success=true|false
 ```
+
 URL ハッシュ パラメータ「success」が使用されていることに注目してください。ログインが成功したかどうかに応じて、値が「true」または「false」に設定されます。可能であれば、成功と失敗のどちらの場合にも、ログインページからシグナルが送信されるようにするのが理想的です。
 
 `success=true` シグナルが返された場合、AMP ランタイムは承認エンドポイントと Pingback エンドポイントを繰り返し呼び出してドキュメントの状態を更新し、新しいアクセス プロファイルを使用して「視聴」を報告します。
@@ -482,11 +496,13 @@ URL ハッシュ パラメータ「success」が使用されていることに�
 ログイン URL は、[設定](#configuration)で説明した「login」プロパティを使用して 1 つ以上設定します。
 
 ログインリンクは、「on」属性を指定できる HTML 要素で宣言できます。通常は、アンカー要素またはボタン要素で宣言します。単一のログイン URL を設定する場合の形式は次のとおりです。
+
 ```html
 <a on="tap:amp-access.login">Login or subscribe</a>
 ```
 
 複数のログイン URL を設定する場合の形式は、`tap:amp-access.login-{type}` です。たとえば、次のように設定します。
+
 ```html
 <a on="tap:amp-access.login-signup">Subscribe</a>
 ```
@@ -495,9 +511,9 @@ URL ハッシュ パラメータ「success」が使用されていることに�
 
 AMP では、ログインとサブスクリプションを区別しません。この区別は、サイト運営者が複数のログイン URL とログインリンクを使用することによって設定できます。また、サイト運営者側で設定することもできます。
 
-## amp-analytics** との統合 <a name="integration-with-amp-analytics"></a>
+## amp-analytics\*\* との統合 <a name="integration-with-amp-analytics"></a>
 
-amp-analytics** との統合は、[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) に記載されています。
+amp-analytics\*\* との統合は、[amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) に記載されています。
 
 ## CORS のオリジンのセキュリティ <a name="cors-origin-security"></a>
 
@@ -534,33 +550,33 @@ AMP では、ファーストパーティのウィンドウ、ポップアップ�
 5. ログイン ダイアログが「リターン URL」にリダイレクトします。
 6. AMP ランタイムがドキュメントを再承認します。
 
-サイト運営者側で行う必要があるのは 手順 2～5 のみです。サイト運営者は、独自のログインページを提供し、リダイレクトの完了後に正しくリダイレクトされていることを確認するだけです。ダイアログとして正常に機能する必要があること以外、ログインページに特別な制約はありません。
+サイト運営者側で行う必要があるのは 手順 2 ～ 5 のみです。サイト運営者は、独自のログインページを提供し、リダイレクトの完了後に正しくリダイレクトされていることを確認するだけです。ダイアログとして正常に機能する必要があること以外、ログインページに特別な制約はありません。
 
 通常どおり、ログインページの呼び出しにはリーダー ID を含める必要があります。また、サイト運営者は ID マッピングにリーダー ID を使用できます。さらに、サイト運営者はファーストパーティ ウィンドウとして Cookie を受け取って設定することもできます。リーダーがサイト運営者側ですでにログインしていることがわかった場合、サイト運営者は `success=true` 応答を使用して「リターン URL」にすぐにリダイレクトすることをおすすめします。
 
 ## AMP 用語集 <a name="amp-glossary"></a>
 
-* **AMP ドキュメント** - AMP 形式で作成された HTML ドキュメント。AMP 検証ツールによって検証され、Google AMP キャッシュでキャッシュすることも可能です。
-* **AMP 検証ツール** - HTML ドキュメントの静的分析を実行し、ドキュメントが AMP 形式に準拠しているかどうかに応じて成功または失敗を返すコンピュータ プログラム。
-* **AMP ランタイム** - AMP ドキュメントを実行する JavaScript ランタイム。
-* **Google AMP キャッシュ** - AMP ドキュメントのプロキシ キャッシュ。
-* **AMP ビューア** - AMP ドキュメントの表示や埋め込みを行うウェブまたはネイティブ アプリ。
-* **Publisher.com** - AMP サイトの運営者のサイト。
-* **CORS エンドポイント** - クロスオリジンの HTTPS エンドポイント。詳しくは、[https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) をご覧ください。リクエストを保護する方法については、[CORS のオリジンのセキュリティ](#cors-origin-security)をご覧ください。
-* **リーダー** - AMP ドキュメントを閲覧している実際のユーザー。
-* **AMP 事前レンダリング** - AMP ビューアでは、非表示のドキュメントを表示する前にレンダリングする事前レンダリングを利用できます。これにより、パフォーマンスを大幅に向上させることができます。ただし、ドキュメントの事前レンダリングではリーダーが実際にドキュメントを見ることはできないため、ビューが構成されないことを考慮することが重要です。
+- **AMP ドキュメント** - AMP 形式で作成された HTML ドキュメント。AMP 検証ツールによって検証され、Google AMP キャッシュでキャッシュすることも可能です。
+- **AMP 検証ツール** - HTML ドキュメントの静的分析を実行し、ドキュメントが AMP 形式に準拠しているかどうかに応じて成功または失敗を返すコンピュータ プログラム。
+- **AMP ランタイム** - AMP ドキュメントを実行する JavaScript ランタイム。
+- **Google AMP キャッシュ** - AMP ドキュメントのプロキシ キャッシュ。
+- **AMP ビューア** - AMP ドキュメントの表示や埋め込みを行うウェブまたはネイティブ アプリ。
+- **Publisher.com** - AMP サイトの運営者のサイト。
+- **CORS エンドポイント** - クロスオリジンの HTTPS エンドポイント。詳しくは、[https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) をご覧ください。リクエストを保護する方法については、[CORS のオリジンのセキュリティ](#cors-origin-security)をご覧ください。
+- **リーダー** - AMP ドキュメントを閲覧している実際のユーザー。
+- **AMP 事前レンダリング** - AMP ビューアでは、非表示のドキュメントを表示する前にレンダリングする事前レンダリングを利用できます。これにより、パフォーマンスを大幅に向上させることができます。ただし、ドキュメントの事前レンダリングではリーダーが実際にドキュメントを見ることはできないため、ビューが構成されないことを考慮することが重要です。
 
 ## 改訂 <a name="revisions"></a>
 
-* 2016 年 9 月 2 日: 「noPingback」設定プロパティとオプションの Pingback。
-* 2016 年 3 月 3 日: ログイン後に Pingback が再送信されるようになりました（v0.5）。
-* 2016 年 2 月 19 日: サンプルを修正し、URL 変数置換から `{}` を削除。
-* 2016 年 2 月 15 日: 承認の失敗時に使用できる「authorizationFallbackResponse」プロパティを[設定](#configuration)と[承認エンドポイント](#authorization-endpoint)で使用できるようになりました。
-* 2016 年 2 月 11 日: [承認エンドポイント](#authorization-endpoint)における承認リクエストのタイムアウト。
-* 2016 年 2 月 11 日: ネストされたフィールド参照（`object.field` など）を使用できるようになりました。
-* 2016 年 2 月 9 日: [First-Click-Free](#first-click-free) セクションと[メータリング](#metering) セクション。
-* 2016 年 2 月 3 日: 「アクセス元のオリジン」のセキュリティの仕様を [CORS のオリジンのセキュリティ](#cors-origin-security)に追加。
-* 2016 年 2 月 1 日: ログインページの「return」クエリ パラメータを、RETURN_URL URL 置換を使用してカスタマイズできるようになりました。
+- 2016 年 9 月 2 日: 「noPingback」設定プロパティとオプションの Pingback。
+- 2016 年 3 月 3 日: ログイン後に Pingback が再送信されるようになりました（v0.5）。
+- 2016 年 2 月 19 日: サンプルを修正し、URL 変数置換から `{}` を削除。
+- 2016 年 2 月 15 日: 承認の失敗時に使用できる「authorizationFallbackResponse」プロパティを[設定](#configuration)と[承認エンドポイント](#authorization-endpoint)で使用できるようになりました。
+- 2016 年 2 月 11 日: [承認エンドポイント](#authorization-endpoint)における承認リクエストのタイムアウト。
+- 2016 年 2 月 11 日: ネストされたフィールド参照（`object.field` など）を使用できるようになりました。
+- 2016 年 2 月 9 日: [First-Click-Free](#first-click-free) セクションと[メータリング](#metering) セクション。
+- 2016 年 2 月 3 日: 「アクセス元のオリジン」のセキュリティの仕様を [CORS のオリジンのセキュリティ](#cors-origin-security)に追加。
+- 2016 年 2 月 1 日: ログインページの「return」クエリ パラメータを、RETURN_URL URL 置換を使用してカスタマイズできるようになりました。
 
 ## 付録 A: 「amp-access」の式の文法 <a name="appendix-a-amp-access-expression-grammar"></a>
 

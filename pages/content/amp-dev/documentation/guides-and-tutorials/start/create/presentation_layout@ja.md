@@ -7,6 +7,7 @@ $title: 体裁とレイアウトを変更する
 AMP はウェブページなので、ページやその中に含まれる要素のスタイリングには、必ず共通の CSS プロパティを使用します。以下のように、`<head>` 内のインライン スタイルシートにあるクラスや要素セレクターを使うスタイル要素を `<style amp-custom>` と呼びます。
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -17,6 +18,7 @@ AMP はウェブページなので、ページやその中に含まれる要素�
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 各 AMP ページで使える埋め込みスタイルシートは 1 つだけで、使用できないセレクターもいくつかあります。[スタイリングの詳細については、こちらをご確認ください](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)。

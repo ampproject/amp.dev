@@ -10,6 +10,7 @@ $title: ログイン
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -18,6 +19,7 @@ $title: ログイン
 [`amp-access`](../../../../documentation/components/reference/amp-access.md) に関連する属性の動作は、[`amp-access`](../../../../documentation/components/reference/amp-access.md) に対してページ全体で適用される設定に依存します。ここでは次のようになります。
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -32,6 +34,7 @@ $title: ログイン
     }
   }
 </script>
+
 [/sourcecode]
 
 認証エンドポイントは AMPByExample の一部としてデプロイされます。ページの公開元は、このエンドポイントを提供する責任があります。このケース例では、単純化するために基本ロジックが実装されており、サーバーはこのリクエストを受信すると、`ABE_LOGGED_IN` という名前の Cookie の値を読み取ります。Cookie がない場合は、`loggedIn = false` を含む JSON レスポンスを返します。その結果、ユーザーが初めてこのページを開くと、このリクエストによって `loggedIn = false` が返され、ログインボタンが表示されます。
@@ -40,9 +43,9 @@ $title: ログイン
 
 [sourcecode:json]
 {
-    "login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

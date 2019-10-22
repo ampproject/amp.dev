@@ -13,6 +13,7 @@ If you are a technology provider for publishers or advertisers on the web, we in
 There are 4 primary ways you can integrate with AMP:
 
 ## 1. Add your support to the `amp-analytics` extension
+
 AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/index.md) to get you started.
 
 If you simply need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
@@ -21,7 +22,7 @@ There are 20+ analytics providers who have added support to amp-analytics. Here 
 
 ## 2. Using an `amp-ad` extension
 
-The amp-ad extension is reserved for serving display ads on AMP pages. Over 90 ad tech providers have added support to AMP.  To get started, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to the amp-ad extension. Depending on the ad technology your company provides, you might find these [integration instructions](ad-integration-guide.md) useful.
+The amp-ad extension is reserved for serving display ads on AMP pages. Over 90 ad tech providers have added support to AMP. To get started, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to the amp-ad extension. Depending on the ad technology your company provides, you might find these [integration instructions](ad-integration-guide.md) useful.
 
 There are 90+ ad providers who have added support for advertising related features like amp-ad. Here is a sample [pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
@@ -33,7 +34,7 @@ To learn more about how this extension might work for you, please see an [AMP By
 
 ## 4. Adding a new extension/embed
 
-If your use case cannot be accommodated by using [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md)  [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md) or [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  please open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new) to discuss alternate options. We welcome new extensions that can be broadly used by a number of different companies. See the [contributing extended components](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components) section for more details.
+If your use case cannot be accommodated by using [`amp-analytics`](../../../documentation/components/reference/amp-analytics.md) [`amp-pixel`](../../../documentation/components/reference/amp-pixel.md) or [`amp-ad`](../../../documentation/components/reference/amp-ad.md) please open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new) to discuss alternate options. We welcome new extensions that can be broadly used by a number of different companies. See the [contributing extended components](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#contributing-extended-components) section for more details.
 
 ## 5. Using `amp-iframe`
 

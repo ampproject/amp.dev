@@ -15,14 +15,14 @@
  */
 
 require('module-alias/register');
-const {Signale} = require('signale');
-const gulp = require('gulp');
-const through = require('through2');
-const search = require('recursive-search');
-const path = require('path');
-const fs = require('fs');
 const config = require('@lib/config');
+const fs = require('fs');
+const gulp = require('gulp');
+const path = require('path');
+const search = require('recursive-search');
 const SlugGenerator = require('@lib/utils/slugGenerator');
+const through = require('through2');
+const {Signale} = require('signale');
 
 // Where to look for existing documents
 const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
@@ -33,8 +33,8 @@ const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev';
 // The pattern to find links in markdown and html
 // It also matches source code blocks to skip these
 const REFERENCE_PATTERN = new RegExp(
-    // skip sourcecode block in markdown:
-    /^```[\s\S]*?```/.source +
+  // skip sourcecode block in markdown:
+  /^```[\s\S]*?```/.source +
     '|' +
     // skip sourcecode tag in markdown
     /\[sourcecode[^\]]*\][\s\S]*?\[\/sourcecode\]/.source +
@@ -46,28 +46,30 @@ const REFERENCE_PATTERN = new RegExp(
     /\[[^\]]+\]\(([^:\)\{?#]*)(?:\?[^#\)]*)?(#[^\)]*)?\)/.source +
     '|' +
     // find {{g.doc('link')}} links:
-    /g.doc\('(.*?)'/.source
-    , 'gm');
+    /g.doc\('(.*?)'/.source,
+  'gm'
+);
 /* eslint-disable max-len */
 // Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
-  '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md':
+    '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md':
-  '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md',
+    '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md':
-  '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md',
+    '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md':
-  '/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md',
+    '/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md':
+    '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md',
 };
 /* eslint-enable max-len */
 // The following paths are skipped when checked for existance
-const IGNORED_PATH_PATTERNS =
-  /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate/g;
+const IGNORED_PATH_PATTERNS = /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate/g;
 
 // The list of imported docs. Here we do not check anchors.
-const IMPORTED_DOCS = require(__dirname + '/../../config/imports/spec.json')
-    .map((spec) => '/content/amp-dev/' + spec.to);
+const IMPORTED_DOCS = require(__dirname +
+  '/../../config/imports/spec.json').map(spec => '/content/amp-dev/' + spec.to);
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -95,38 +97,48 @@ class GrowReferenceChecker {
   }
 
   start() {
-    this._log.start(`Inspecting documents in ${PAGES_SRC} for broken references ...`);
+    this._log.start(
+      `Inspecting documents in ${PAGES_SRC} for broken references ...`
+    );
 
     return new Promise(async (resolve, reject) => {
       await this._readAnchors();
 
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
 
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        callback(null, this._check(doc));
-      }));
+      stream = stream.pipe(
+        through.obj((doc, encoding, callback) => {
+          callback(null, this._check(doc));
+        })
+      );
 
       stream = stream.pipe(gulp.dest('./'));
 
       stream.on('end', async () => {
         await this._addExplicitAnchors();
 
-        if (Object.keys(this._multipleMatches).length == 0 &&
-            this._unfindableDocuments.length == 0 &&
-            this._wrongAnchorCount == 0) {
+        if (
+          Object.keys(this._multipleMatches).length == 0 &&
+          this._unfindableDocuments.length == 0 &&
+          this._wrongAnchorCount == 0
+        ) {
           this._log.success('All references intact!');
           resolve();
           return;
         }
 
         this._log.complete('Finished automatic fixing.');
-        this._log.complete(`A total of ${this._brokenReferencesCount} had ` +
-          `errors. ${this._unfindableDocuments.length +
-           Object.keys(this._multipleMatches).length} still have.`);
+        this._log.complete(
+          `A total of ${this._brokenReferencesCount} had ` +
+            `errors. ${this._unfindableDocuments.length +
+              Object.keys(this._multipleMatches).length} still have.`
+        );
 
         if (this._unfindableDocuments.length) {
-          this._log.info(`Could not automatically fix ${this._unfindableDocuments.length} ` +
-            'as there wasn\'t any document with a matching basename:');
+          this._log.info(
+            `Could not automatically fix ${this._unfindableDocuments.length} ` +
+              "as there wasn't any document with a matching basename:"
+          );
           for (const documentPath of this._unfindableDocuments) {
             this._log.pending(`- ${documentPath}`);
           }
@@ -136,22 +148,38 @@ class GrowReferenceChecker {
 
         const multipleMatchesCount = Object.keys(this._multipleMatches).length;
         if (multipleMatchesCount !== 0) {
-          this._log.info(`Encountered multiple possible matches for ${multipleMatchesCount} ` +
-          'documents:');
+          this._log.info(
+            `Encountered multiple possible matches for ${multipleMatchesCount} ` +
+              'documents:'
+          );
           for (const documentPath in this._multipleMatches) {
-            if (Object.prototype.hasOwnProperty.call(this._multipleMatches, documentPath)) {
+            if (
+              Object.prototype.hasOwnProperty.call(
+                this._multipleMatches,
+                documentPath
+              )
+            ) {
               this._log.pending(`${documentPath}`);
               for (const possibleMatch of this._multipleMatches[documentPath]) {
-                this._log.pending(`-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`);
+                this._log.pending(
+                  `-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`
+                );
               }
             }
           }
         }
 
-        if (this._unfindableDocuments.length > 0 || multipleMatchesCount > 0 ||
-            this._wrongAnchorCount > 0) {
-          reject(new Error(`${this._unfindableDocuments.length} documents with broken links` +
-              ` and ${this._wrongAnchorCount} wrong anchors found`));
+        if (
+          this._unfindableDocuments.length > 0 ||
+          multipleMatchesCount > 0 ||
+          this._wrongAnchorCount > 0
+        ) {
+          reject(
+            new Error(
+              `${this._unfindableDocuments.length} documents with broken links` +
+                ` and ${this._wrongAnchorCount} wrong anchors found`
+            )
+          );
         } else {
           resolve();
         }
@@ -163,15 +191,19 @@ class GrowReferenceChecker {
     return new Promise((resolve, reject) => {
       // we skip html files, since they sometimes use imports of other documents
       // where we cannot resolve the anchors
-      let stream = gulp.src([PAGES_SRC, `!${POD_BASE_PATH}/**/*.html`],
-          {'read': true, 'base': './'});
+      let stream = gulp.src([PAGES_SRC, `!${POD_BASE_PATH}/**/*.html`], {
+        'read': true,
+        'base': './',
+      });
       stream.on('end', () => {
         resolve();
       });
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        this._readAnchorsForDoc(doc, callback);
-        callback();
-      }));
+      stream = stream.pipe(
+        through.obj((doc, encoding, callback) => {
+          this._readAnchorsForDoc(doc, callback);
+          callback();
+        })
+      );
     });
   }
 
@@ -180,13 +212,13 @@ class GrowReferenceChecker {
     const content = doc.contents.toString();
 
     const TITLE_PATTERN =
-        // eslint-disable-next-line max-len
-        /^#+[ \t]*(.*?)(?:<a[ \t]+name="([^">]+)"[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$|<a\s+name="(.+?)"|<\w[^>]*\sid="(.+?)"/gm;
+      // eslint-disable-next-line max-len
+      /^#+[ \t]*(.*?)(?:<a[ \t]+name="([^">]+)"[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$|<a\s+name="(.+?)"|<\w[^>]*\sid="(.+?)"/gm;
 
     const slugGenerator = new SlugGenerator();
 
     let match;
-    while (match = TITLE_PATTERN.exec(content)) {
+    while ((match = TITLE_PATTERN.exec(content))) {
       const title = match[1] + match[3];
       const anchor = match[2] || match[4] || match[5];
       if (anchor) {
@@ -205,7 +237,7 @@ class GrowReferenceChecker {
         }
       }
     }
-    this._anchorsByPage[this._getPathInPod(doc)]=anchors;
+    this._anchorsByPage[this._getPathInPod(doc)] = anchors;
     return doc;
   }
 
@@ -217,28 +249,29 @@ class GrowReferenceChecker {
    */
   _check(doc) {
     let content = doc.contents.toString();
-    content = content.replace(REFERENCE_PATTERN,
-        (match, hrefLink, hrefAnchor, markdownLink, markdownAnchor, gDocLink) => {
-          let result = match;
-          const link = hrefLink || markdownLink || gDocLink;
-          const anchor = hrefAnchor || markdownAnchor;
-          let resultLink;
-          if (link) {
-            const fullLink = this._resolveRelativeLink(link, doc);
-            resultLink = this._verifyReference(fullLink, doc);
-            if (resultLink != fullLink) {
-              result = result.replace(link, resultLink);
-            }
+    content = content.replace(
+      REFERENCE_PATTERN,
+      (match, hrefLink, hrefAnchor, markdownLink, markdownAnchor, gDocLink) => {
+        let result = match;
+        const link = hrefLink || markdownLink || gDocLink;
+        const anchor = hrefAnchor || markdownAnchor;
+        let resultLink;
+        if (link) {
+          const fullLink = this._resolveRelativeLink(link, doc);
+          resultLink = this._verifyReference(fullLink, doc);
+          if (resultLink != fullLink) {
+            result = result.replace(link, resultLink);
           }
-          if (anchor) {
-            const newAnchor = this._checkAnchor(anchor,
-                resultLink, doc);
-            if (newAnchor != anchor) {
-              result = result.replace(anchor, newAnchor);
-            }
+        }
+        if (anchor) {
+          const newAnchor = this._checkAnchor(anchor, resultLink, doc);
+          if (newAnchor != anchor) {
+            result = result.replace(anchor, newAnchor);
           }
-          return result;
-        });
+        }
+        return result;
+      }
+    );
 
     doc.contents = Buffer.from(content);
     return doc;
@@ -256,8 +289,15 @@ class GrowReferenceChecker {
     if (linkedPath) {
       const targetPath = linkedPath.replace(/@[^.]+/, ''); // remove locale
       if (sourcePath.includes('@')) {
-        localePaths.add(this._getPathForLocale(targetPath, sourcePath.substring(
-            sourcePath.indexOf('@') + 1, sourcePath.lastIndexOf('.'))));
+        localePaths.add(
+          this._getPathForLocale(
+            targetPath,
+            sourcePath.substring(
+              sourcePath.indexOf('@') + 1,
+              sourcePath.lastIndexOf('.')
+            )
+          )
+        );
       } else {
         for (const locale of config.getAvailableLocales()) {
           if (sourcePath == this._getPathForLocale(sourcePath, locale)) {
@@ -273,22 +313,38 @@ class GrowReferenceChecker {
     const errorLocales = [];
     for (const localePath of localePaths) {
       const foundAnchor = this._resolveAnchor(anchorValue, localePath);
-      if (!foundAnchor || resultAnchor && foundAnchor != resultAnchor) {
+      if (!foundAnchor || (resultAnchor && foundAnchor != resultAnchor)) {
         errorLocales.push(localePath);
       } else if (!resultAnchor) {
         resultAnchor = foundAnchor;
       }
     }
     if (errorLocales.length > 0) {
-      if (IMPORTED_DOCS.includes(sourcePath) ||
-          sourcePath.match(IGNORED_PATH_PATTERNS) && !sourcePath.includes('@')) {
-        this._log.warn('anchor not found in imported document', anchor, '\n',
-            'found in:', doc.path, '\n',
-            'target:', linkedPath ? errorLocales : '<internal>');
+      if (
+        IMPORTED_DOCS.includes(sourcePath) ||
+        (sourcePath.match(IGNORED_PATH_PATTERNS) && !sourcePath.includes('@'))
+      ) {
+        this._log.warn(
+          'anchor not found in imported document',
+          anchor,
+          '\n',
+          'found in:',
+          doc.path,
+          '\n',
+          'target:',
+          linkedPath ? errorLocales : '<internal>'
+        );
       } else {
-        this._log.error('anchor not found', anchor, '\n',
-            'found in:', doc.path, '\n',
-            'target:', linkedPath ? errorLocales : '<internal>');
+        this._log.error(
+          'anchor not found',
+          anchor,
+          '\n',
+          'found in:',
+          doc.path,
+          '\n',
+          'target:',
+          linkedPath ? errorLocales : '<internal>'
+        );
         this._wrongAnchorCount++;
       }
       return anchor;
@@ -297,8 +353,8 @@ class GrowReferenceChecker {
   }
 
   _getPathForLocale(filePath, locale) {
-    const pathWithLocale = filePath.substring(
-        0, filePath.lastIndexOf('.md')) + '@' + locale + '.md';
+    const pathWithLocale =
+      filePath.substring(0, filePath.lastIndexOf('.md')) + '@' + locale + '.md';
     if (this._anchorsByPage.hasOwnProperty(pathWithLocale)) {
       return pathWithLocale;
     } else {
@@ -364,13 +420,17 @@ class GrowReferenceChecker {
 
     const basename = path.basename(documentPath);
     const results = search.recursiveSearchSync(
-        new RegExp(basename, 'i'), PAGES_BASE_PATH);
+      new RegExp(basename, 'i'),
+      PAGES_BASE_PATH
+    );
 
     // If there is more than one match store all matches for the user to
     // do the manual fixing
     if (results.length > 1) {
-      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.` +
-          ` (In ${doc.path})`);
+      this._log.error(
+        `More than one possible match for ${documentPath}. Needs manual fixing.` +
+          ` (In ${doc.path})`
+      );
       this._multipleMatches[documentPath] = results;
       return documentPath;
     } else if (results.length == 0) {
@@ -381,8 +441,10 @@ class GrowReferenceChecker {
         return this._verifyReference(documentPath, doc);
       }
 
-      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.` +
-        ` (First found in ${doc.path})`);
+      this._log.error(
+        `No matching document found for ${documentPath}. Needs manual fixing.` +
+          ` (First found in ${doc.path})`
+      );
       if (this._unfindableDocuments.indexOf(documentPath) == -1) {
         this._unfindableDocuments.push(documentPath);
       }
@@ -433,10 +495,12 @@ class GrowReferenceChecker {
       this._log.info('Add explicit anchors to:', pages);
 
       let stream = gulp.src(pages, {'read': true, 'base': './'});
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        this._addExplicitAnchorsForDoc(doc);
-        callback(null, doc);
-      }));
+      stream = stream.pipe(
+        through.obj((doc, encoding, callback) => {
+          this._addExplicitAnchorsForDoc(doc);
+          callback(null, doc);
+        })
+      );
       stream = stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
         resolve();
@@ -449,18 +513,19 @@ class GrowReferenceChecker {
     const anchors = this._anchorsByPage[this._getPathInPod(doc)];
     const slugGenerator = new SlugGenerator();
     content = content.replace(
-        /^(#+)[ \t]*(.*?)(<a[ \t]+name=[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm,
-        (line, hLevel, headlineStart, anchorTag, headlineEnd) => {
-          const headline = headlineStart + headlineEnd;
-          const slug = slugGenerator.generateSlug(headline);
-          const anchor = anchors[slug];
-          // The slug generator has to know all the headlines, since we want to generate slugs like github does.
-          // So only now do we check if we have an explicit anchor or our implicit anchor is not used.
-          if (anchorTag || !anchor || !anchor.isUsed) {
-            return line;
-          }
-          return `${hLevel} ${headline} <a name="${slug}"></a>`;
-        });
+      /^(#+)[ \t]*(.*?)(<a[ \t]+name=[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm,
+      (line, hLevel, headlineStart, anchorTag, headlineEnd) => {
+        const headline = headlineStart + headlineEnd;
+        const slug = slugGenerator.generateSlug(headline);
+        const anchor = anchors[slug];
+        // The slug generator has to know all the headlines, since we want to generate slugs like github does.
+        // So only now do we check if we have an explicit anchor or our implicit anchor is not used.
+        if (anchorTag || !anchor || !anchor.isUsed) {
+          return line;
+        }
+        return `${hLevel} ${headline} <a name="${slug}"></a>`;
+      }
+    );
 
     doc.contents = Buffer.from(content);
     return doc;

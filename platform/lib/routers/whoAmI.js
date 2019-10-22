@@ -16,13 +16,15 @@
 
 'use strict';
 
+const config = require('@lib/config');
 const express = require('express');
-const yaml = require('js-yaml');
 const fs = require('fs');
 const utils = require('@lib/utils');
-const config = require('@lib/config');
+const yaml = require('js-yaml');
 
-const BUILD_INFO_PATH = utils.project.absolute('platform/config/build-info.yaml');
+const BUILD_INFO_PATH = utils.project.absolute(
+  'platform/config/build-info.yaml'
+);
 
 // eslint-disable-next-line new-cap
 const whoAmI = express.Router();

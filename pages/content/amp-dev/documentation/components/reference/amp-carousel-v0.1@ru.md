@@ -2,9 +2,9 @@
 $title: amp-carousel
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Показ похожих материалов вдоль горизонтальной оси.
 ---
@@ -24,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Общая карусель, которая предназначена для показа похожих материалов вдоль горизонтальной оси и отличается гибкостью и эффективностью.
 
@@ -60,20 +58,27 @@ limitations under the License.
 Переход по карусели выполняется, если пользователь проводит пальцем по экрану, а также нажимает на клавиши со стрелками или на дополнительные стрелки.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel width="450"
-  height="300">
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+<amp-carousel width="450" height="300">
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
     width="450"
-    height="300"></amp-img>
+    height="300"
+  ></amp-img>
 </amp-carousel>
 ```
+
 [/example]
 
 # Переход к нужному слайду <a name="advancing-to-a-specific-slide"></a>
@@ -83,49 +88,65 @@ limitations under the License.
 В этом примере приводится карусель с тремя изображениями, под которой расположены кнопки предварительного просмотра. При нажатии на одну из кнопок показывается соответствующий элемент карусели.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel id="carousel-with-preview"
+<amp-carousel
+  id="carousel-with-preview"
+  width="450"
+  height="300"
+  layout="responsive"
+  type="slides"
+>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
     height="300"
     layout="responsive"
-    type="slides">
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="apples"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="lemons"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="blueberries"></amp-img>
-  </amp-carousel>
-  <div class="carousel-preview">
-    <button on="tap:carousel-with-preview.goToSlide(index=0)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-        width="60"
-        height="40"
-        alt="apples"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=1)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-        width="60"
-        height="40"
-        alt="lemons"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=2)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-        width="60"
-        height="40"
-        alt="blueberries"></amp-img>
-    </button>
-  </div>
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
 ```
+
 [/example]
 
 # Атрибуты <a name="attributes"></a>
@@ -187,6 +208,7 @@ limitations under the License.
             <em>Пример: показ карусели, содержащей слайды, с элементами управления, повторами и задержкой автовоспроизведения</em>
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
 <amp-carousel type="slides"
   width="450"
@@ -208,22 +230,23 @@ limitations under the License.
     height="300"></amp-img>
 </amp-carousel>
 ```
+
 [/example]</td>
-          </tr>
-          <tr>
-            <td width="40%"><strong>common attributes</strong></td>
-            <td>Этот элемент содержит <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">распространенные атрибуты</a>, которые поддерживаются компонентами AMP.</td>
-          </tr>
-        </table>
+</tr>
+<tr>
+<td width="40%"><strong>common attributes</strong></td>
+<td>Этот элемент содержит <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">распространенные атрибуты</a>, которые поддерживаются компонентами AMP.</td>
+</tr>
+</table>
 
 # Поддержка стилей <a name="styling"></a>
 
-* Настраивать стиль элемента `amp-carousel` можно с помощью селектора этого элемента.
-* Для таргетинга элементов карусели можно использовать селектор класса `.amp-carousel-slide`.
-* Если кнопка, связанная с компонентом `amp-carousel`, отключена, ее визуальное состояние скрыто.
-* В элементе `.amp-carousel-button` используется специальный встроенный файл SVG по умолчанию, который обеспечивает фоновое изображение кнопок. Вы можете заменить его на собственный файл SVG или изображение (см. пример ниже).
+- Настраивать стиль элемента `amp-carousel` можно с помощью селектора этого элемента.
+- Для таргетинга элементов карусели можно использовать селектор класса `.amp-carousel-slide`.
+- Если кнопка, связанная с компонентом `amp-carousel`, отключена, ее визуальное состояние скрыто.
+- В элементе `.amp-carousel-button` используется специальный встроенный файл SVG по умолчанию, который обеспечивает фоновое изображение кнопок. Вы можете заменить его на собственный файл SVG или изображение (см. пример ниже).
 
-*Пример: встроенный файл SVG с элементом `.amp-carousel-button`, используемый по умолчанию*
+_Пример: встроенный файл SVG с элементом `.amp-carousel-button`, используемый по умолчанию_
 
 ```css
 .amp-carousel-button-prev {
@@ -232,7 +255,7 @@ limitations under the License.
 }
 ```
 
-*Пример: замена встроенного файла SVG с элементом `.amp-carousel-button`, используемого по умолчанию*
+_Пример: замена встроенного файла SVG с элементом `.amp-carousel-button`, используемого по умолчанию_
 
 ```css
 .amp-carousel-button-prev {

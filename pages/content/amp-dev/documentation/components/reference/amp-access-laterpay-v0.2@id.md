@@ -2,11 +2,10 @@
 $title: amp-access-laterpay
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: Allows publishers to easily integrate with the LaterPay micropayments platform.
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Memungkinkan penayang untuk berintegrasi lebih mudah dengan platform pembayaran mikro [LaterPay](https://www.laterpay.net). `amp-access-laterpay` didasarkan pada, dan memerlukan [AMP Access](amp-access.md).
 
@@ -50,10 +47,9 @@ Memungkinkan penayang untuk berintegrasi lebih mudah dengan platform pembayaran 
   </tr>
 </table>
 
-
 ## Perilaku <a name="behavior"></a>
 
-[LaterPay](https://laterpay.net) adalah platform pembayaran mikro yang memungkinkan pengguna membeli konten online apa pun hanya dengan dua klik, dan mendapatkan akses langsung – tanpa pembayaran, data pribadi, atau pendaftaran di muka. Pengguna hanya membayar setelah pembelian mereka mencapai total $5 atau €5 di berbagai situs. Penyedia konten dapat menjual item tertentu atau akses berkala, yang memungkinkan akses tarif tetap atau akses berbatas waktu ke konten.
+[LaterPay](https://laterpay.net) adalah platform pembayaran mikro yang memungkinkan pengguna membeli konten online apa pun hanya dengan dua klik, dan mendapatkan akses langsung – tanpa pembayaran, data pribadi, atau pendaftaran di muka. Pengguna hanya membayar setelah pembelian mereka mencapai total \$5 atau €5 di berbagai situs. Penyedia konten dapat menjual item tertentu atau akses berkala, yang memungkinkan akses tarif tetap atau akses berbatas waktu ke konten.
 
 Jika mengintegrasikan LaterPay melalui [integrasi Skrip Konektor](https://docs.laterpay.net/connector/), Anda tidak akan dapat menggunakan integrasi tersebut di halaman AMP. Sama seperti Skrip Konektor, `amp-access-laterpay` menyediakan kumpulan fitur serupa tetapi dibuat untuk halaman AMP.
 
@@ -78,7 +74,6 @@ Komponen ini juga mengandalkan [Markup Konten Akses](amp-access.md#access-conten
 Konfigurasi mirip dengan AMP Access, tetapi tanpa memerlukan otorisasi, pingback, dan link login.
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -87,7 +82,6 @@ Konfigurasi mirip dengan AMP Access, tetapi tanpa memerlukan otorisasi, pingback
       }
     }
 </script>
-
 ```
 
 Nilai berikut dapat ditetapkan dalam objek konfigurasi `laterpay`:
@@ -165,7 +159,6 @@ Pastikan Anda menambahkan class `amp-access-laterpay` jika ingin menggunakan pen
 <div amp-access="access" amp-access-hide="">
   <p>...article content...</p>
 </div>
-
 ```
 
 ## Penataan gaya <a name="styling"></a>
@@ -177,7 +170,6 @@ Beberapa CSS tata letak dasar sudah tersedia, tetapi sebaiknya penayang menata g
 Struktur yang dibuat untuk dialog terlihat seperti berikut:
 
 ```html
-
 <div id="amp-access-laterpay-dialog" class="amp-access-laterpay">
   <div class="amp-access-laterpay-container">
     <p class="amp-access-laterpay-header">
@@ -186,30 +178,33 @@ Struktur yang dibuat untuk dialog terlihat seperti berikut:
     <ul>
       <li>
         <label>
-          <input name="purchaseOption" type="radio">
-            <div class="amp-access-laterpay-metadata">
-              <span class="amp-access-laterpay-title">Purchase option title</span>
-              <p class="amp-access-laterpay-description">Purchase option description</p>
-            </div>
-          </label>
-          <p class="amp-access-laterpay-price-container">
-            <span class="amp-access-laterpay-price">0.15</span>
-            <sup class="amp-access-laterpay-currency">USD</sup>
-          </p>
-        </li>
-        <!-- ... more list items for other purchase options ... -->
-      </ul>
-      <button class="amp-access-laterpay-purchase-button">Beli Sekarang</button>
-      <p class="amp-access-laterpay-already-purchased-container">
-        <a href="...">I already bought this</a>
-      </p>
-      <p class="amp-access-laterpay-footer">
-        Optional, appears if footer locale message is defined.
-      </p>
-    </div>
-    <p class="amp-access-laterpay-badge">Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a></p>
+          <input name="purchaseOption" type="radio" />
+          <div class="amp-access-laterpay-metadata">
+            <span class="amp-access-laterpay-title">Purchase option title</span>
+            <p class="amp-access-laterpay-description">
+              Purchase option description
+            </p>
+          </div>
+        </label>
+        <p class="amp-access-laterpay-price-container">
+          <span class="amp-access-laterpay-price">0.15</span>
+          <sup class="amp-access-laterpay-currency">USD</sup>
+        </p>
+      </li>
+      <!-- ... more list items for other purchase options ... -->
+    </ul>
+    <button class="amp-access-laterpay-purchase-button">Beli Sekarang</button>
+    <p class="amp-access-laterpay-already-purchased-container">
+      <a href="...">I already bought this</a>
+    </p>
+    <p class="amp-access-laterpay-footer">
+      Optional, appears if footer locale message is defined.
+    </p>
   </div>
-
+  <p class="amp-access-laterpay-badge">
+    Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a>
+  </p>
+</div>
 ```
 
 ## Pelokalan <a name="localization"></a>
@@ -219,7 +214,6 @@ Teks yang ditampilkan dalam dialog untuk opsi pembelian akan ditentukan oleh pen
 Teks lainnya adalah bagian dari komponen yang diperluas dan dapat diubah serta dilokalkan melalui opsi konfigurasi sebagai berikut:
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -230,7 +224,6 @@ Teks lainnya adalah bagian dari komponen yang diperluas dan dapat diubah serta d
       }
     }
 </script>
-
 ```
 
 Kunci pesan berikut dapat diterjemahkan atau disesuaikan, tetapi perhatikan bahwa kunci pesan tersebut harus mempertahankan makna dan maksud aslinya.
@@ -290,7 +283,6 @@ Bagian [banyak penyedia](amp-access.md#multiple-access-providers) menjelaskan ca
 Saat menggunakannya dengan LaterPay dan integrasi paywall yang ada, konfigurasi yang diperlukan dapat terlihat seperti ini:
 
 ```html
-
 <script id="amp-access" type="application/json">
   [
     {
@@ -312,15 +304,19 @@ Saat menggunakannya dengan LaterPay dan integrasi paywall yang ada, konfigurasi 
     }
   ]
 </script>
-
 ```
 
 Sedangkan markup akses konten dapat terlihat seperti ini:
 
 ```html
-<section amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access" amp-access-hide>
+<section
+  amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access"
+  amp-access-hide
+>
   <p>
-    <a on="tap:amp-access.login-publishername">Login here to access your PublisherName subscription.</a>
+    <a on="tap:amp-access.login-publishername"
+      >Login here to access your PublisherName subscription.</a
+    >
   </p>
 
   <div id="amp-access-laterpay-dialog" class="amp-access-laterpay"></div>
@@ -333,17 +329,16 @@ Sedangkan markup akses konten dapat terlihat seperti ini:
 <div amp-access="laterpay.access OR publishername.access" amp-access-hide>
   <p>...article content...</p>
 </div>
-
 ```
 
 Anda dapat menemukan contoh yang lebih lengkap di [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html)
 
 ## Dokumentasi Terkait <a name="related-documentation"></a>
 
-* [AMP Access](amp-access.md)
-* [LaterPay](https://www.laterpay.net)
-* [LaterPay: Cara kami menjalankan Pembayaran Mikro](https://docs.laterpay.net/how_we_do_micropayments/)
-* [Konektor LaterPay](https://connectormwi.laterpay.net/docs/index.html) - Mirip dengan AMP Access LaterPay tetapi untuk halaman non-AMP.
+- [AMP Access](amp-access.md)
+- [LaterPay](https://www.laterpay.net)
+- [LaterPay: Cara kami menjalankan Pembayaran Mikro](https://docs.laterpay.net/how_we_do_micropayments/)
+- [Konektor LaterPay](https://connectormwi.laterpay.net/docs/index.html) - Mirip dengan AMP Access LaterPay tetapi untuk halaman non-AMP.
 
 ## Validasi <a name="validation"></a>
 

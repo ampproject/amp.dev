@@ -16,10 +16,10 @@ The [`amp-animation`](../../../../documentation/components/reference/amp-animati
 
 A basic [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) is a JSON object made of the following key parts:
 
-*   The element the component is animating, or `selector`.
-*   [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
-*   [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
-*   [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
+- The element the component is animating, or `selector`.
+- [Timing Properties](../../../../documentation/components/reference/amp-animation.md#timing-properties)
+- [Keyframes](../../../../documentation/components/reference/amp-animation.md#keyframes)
+- [Trigger](../../../../documentation/components/reference/amp-animation.md#triggering-animation)
 
 ```
 <amp-animation layout="nodisplay" id="exampleAnimation">
@@ -52,7 +52,7 @@ No timing properties are required, but an animation might not run if properties 
 While CSS allows you to morph from one state to another via transitions, you must declare animation properties as keyframes to implement [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) (similar to [CSS animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)). To ensure smooth playback and cross browser compatibility, [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) [restricts what keyframe properties](../../../../documentation/components/reference/amp-animation.md#white-listed-properties-for-keyframes) are usable to GPU accelerated properties that do not cause a re-layout and can animate on the [compositor thread](https://dev.chromium.org/developers/design-documents/compositor-thread-architecture). This prevents animations from interfering with AMP and the browser's [render process](https://developers.google.com/web/updates/2018/09/inside-browser-part3#javascript_can_block_the_parsing).
 
 [tip type="note"]
- Keyframes are either defined directly in an [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) or referenced from [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) as long as they follow the property restrictions. Read more [here about keyframes in `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes).
+Keyframes are either defined directly in an [`amp-animation`](../../../../documentation/components/reference/amp-animation.md) or referenced from [`<amp style-keyframe>`](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#keyframes-stylesheet) as long as they follow the property restrictions. Read more [here about keyframes in `amp-animation`](../../../../documentation/components/reference/amp-animation.md#keyframes).
 [/tip]
 
 ### Trigger
@@ -218,14 +218,14 @@ By using [`var()` and `calc()` expressions](../../../../documentation/components
 
 This example works by:
 
-*   Declaring a variable, `--duration`, and gives it the value of two seconds.
-*   Sets the `duration` to the var `--duration`'s value.
-*   Calculates the delay applied to each element with that meets the selector `.card`.
-    1.  The [length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calculates how many `.card` elements were selected
-    1.  The length then subtracts each `.card`'s [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
-    1.  The resulting value is multiplied by the var `--duration`
-    1.  The final total is applied in seconds to that element's delay
-*   The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
+- Declaring a variable, `--duration`, and gives it the value of two seconds.
+- Sets the `duration` to the var `--duration`'s value.
+- Calculates the delay applied to each element with that meets the selector `.card`.
+  1.  The [length()` extension](<../../../../documentation/components/reference/amp-animation.md#css-length()-extension>) calculates how many `.card` elements were selected
+  1.  The length then subtracts each `.card`'s [index()](<../../../../documentation/components/reference/amp-animation.md#css-index()-extension>)
+  1.  The resulting value is multiplied by the var `--duration`
+  1.  The final total is applied in seconds to that element's delay
+- The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
 
 ### Look Great, Everywhere
 

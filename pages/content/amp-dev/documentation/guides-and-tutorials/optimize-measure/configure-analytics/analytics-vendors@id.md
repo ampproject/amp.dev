@@ -6,26 +6,26 @@ Dokumen ini mencantumkan daftar vendor analisis yang menyediakan konfigurasi ter
 
 Untuk mengirim data analisis ke vendor pihak ketiga:
 
-1. Pada tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), tambahkan atribut `type` dan setel nilainya sesuai vendor yang ditentukan, seperti dijelaskan pada bagian [*Vendor*](#vendors) di bawah.
+1. Pada tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), tambahkan atribut `type` dan setel nilainya sesuai vendor yang ditentukan, seperti dijelaskan pada bagian [_Vendor_](#vendors) di bawah.
 2. Tentukan data yang ingin Anda ambil dan pantau, dan tetapkan detail tersebut dalam data konfigurasi. Lihat dokumentasi vendor untuk mengetahui cara mengambil data analisis.
 
 Pada contoh berikut, kita akan mengirim data pageview ke [Google Analytics](#google-analytics), sebuah penyedia analisis pihak ketiga yang memiliki konfigurasi terpasang untuk [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -103,25 +103,25 @@ Menambahkan dukungan untuk Clicky Web Analytics. Detail selengkapnya tentang men
 
 Nilai atribut type: `comscore`
 
-Menambahkan dukungan untuk analisis pageview Unified Digital Measurement™ comScore. *Var* `c2` harus ditetapkan dengan *c2 id* yang disediakan comScore. Informasi lebih lanjut dapat dilihat di [comscore.com](http://www.comscore.com).
+Menambahkan dukungan untuk analisis pageview Unified Digital Measurement™ comScore. _Var_ `c2` harus ditetapkan dengan _c2 id_ yang disediakan comScore. Informasi lebih lanjut dapat dilihat di [comscore.com](http://www.comscore.com).
 
 ### Cxense
 
 Nilai atribut type: `cxense`
 
-Menambahkan dukungan untuk analisis Cxense Insight. *Var* `siteID` harus ditetapkan dengan *siteId* yang disediakan Cxense. Detail selengkapnya dapat dilihat di [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Menambahkan dukungan untuk analisis Cxense Insight. _Var_ `siteID` harus ditetapkan dengan _siteId_ yang disediakan Cxense. Detail selengkapnya dapat dilihat di [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Dynatrace
 
 Nilai atribut type: `dynatrace`
 
-Menambahkan dukungan untuk pemantauan pengguna sebenarnya Dynatrace. *Var* `app` harus ditetapkan dengan *application id* yang disediakan Dynatrace, dan `tenant` *var* dengan *environment identifier* yang disediakan Dynatrace. Detail selengkapnya tentang menambahkan dukungan pemantauan pengguna sebenarnya Dynatrace dapat dilihat di [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Menambahkan dukungan untuk pemantauan pengguna sebenarnya Dynatrace. _Var_ `app` harus ditetapkan dengan _application id_ yang disediakan Dynatrace, dan `tenant` _var_ dengan _environment identifier_ yang disediakan Dynatrace. Detail selengkapnya tentang menambahkan dukungan pemantauan pengguna sebenarnya Dynatrace dapat dilihat di [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### Eulerian Analytics
 
 Nilai atribut type: `euleriananalytics`
 
-Menambahkan dukungan untuk Eulerian Technologies Analytics. *Var* `analyticsHost` harus ditetapkan dengan domain yang didelegasikan oleh Eulerian. Detail selengkapnya dapat dilihat di [eulerian.wiki](https://eulerian.wiki).
+Menambahkan dukungan untuk Eulerian Technologies Analytics. _Var_ `analyticsHost` harus ditetapkan dengan domain yang didelegasikan oleh Eulerian. Detail selengkapnya dapat dilihat di [eulerian.wiki](https://eulerian.wiki).
 
 ### Facebook Pixel
 
@@ -155,10 +155,10 @@ Menambahkan dukungan untuk [INFOnline](https://www.infonline.de) / [IVW](http://
 
 Selain itu, variabel berikut harus ditetapkan:
 
-* `st`: Angebotskennung
-* `co`: komentar
-* `cp`: kode
-* `url`: lokasi HTTPS untuk `amp-analytics-infonline.html`
+- `st`: Angebotskennung
+- `co`: komentar
+- `cp`: kode
+- `url`: lokasi HTTPS untuk `amp-analytics-infonline.html`
 
 Detail selengkapnya tentang menambahkan dukungan INFOnline / IVW dapat dilihat di [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/).
 
@@ -184,7 +184,7 @@ Menambahkan dukungan untuk Lotame. Informasi lebih lanjut dan detail konfigurasi
 
 Nilai atribut type: `mediametrie`
 
-Menambahkan dukungan untuk halaman pelacakan Médiamétrie. *Var* `serial` harus ditetapkan. Variabel `level1` hingga `level4` bersifat opsional.  Informasi lebih lanjut dapat dilihat di [mediametrie.com](http://www.mediametrie.com/).
+Menambahkan dukungan untuk halaman pelacakan Médiamétrie. _Var_ `serial` harus ditetapkan. Variabel `level1` hingga `level4` bersifat opsional. Informasi lebih lanjut dapat dilihat di [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics
 
@@ -235,7 +235,7 @@ Di bagian `requests`:
 
 [tip type="note"]
 
-Tersedia variasi dengan nama `oewadirect` yang tidak menggunakan solusi iframe-ping dan memiliki deteksi klien yang lebih baik , yakni menggunakan `AMP CLIENT_ID`.  Variasi ini masih bersifat EKSPERIMENTAL, dan dilarang oleh OEWA karena tidak menggunakan `oewa2.js`.
+Tersedia variasi dengan nama `oewadirect` yang tidak menggunakan solusi iframe-ping dan memiliki deteksi klien yang lebih baik , yakni menggunakan `AMP CLIENT_ID`. Variasi ini masih bersifat EKSPERIMENTAL, dan dilarang oleh OEWA karena tidak menggunakan `oewa2.js`.
 
 [/tip]
 
@@ -249,7 +249,7 @@ Menambahkan dukungan untuk Parsely. Detail konfigurasi dapat dilihat di [parsely
 
 Nilai atribut type: `piano`
 
-Menambahkan dukungan untuk Piano.  Detail konfigurasi dapat dilihat di [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+Menambahkan dukungan untuk Piano. Detail konfigurasi dapat dilihat di [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
 
 ### Quantcast Measurement
 

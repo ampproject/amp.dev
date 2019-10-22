@@ -1,6 +1,7 @@
 ---
 $title: Membuat halaman AMP yang memerlukan login
 ---
+
 Beberapa interaksi pengguna dengan halaman, seperti memberikan komentar, dapat disyaratkan dengan alur login. Anda dapat menerapkan alur login dengan AMP menggunakan komponen [`amp-access`](../../../../documentation/components/reference/amp-access.md).
 
 [tip type="tip"]

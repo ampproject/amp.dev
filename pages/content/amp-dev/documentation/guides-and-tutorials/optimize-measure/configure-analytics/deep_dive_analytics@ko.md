@@ -12,41 +12,44 @@ $title: AMP 애널리틱스 심층 분석
 [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/)로 분석 데이터를 전송합니다.
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      'transport': {
+        'beacon': false,
+        'xhrpost': false,
+        'image': true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -59,9 +62,9 @@ $title: AMP 애널리틱스 심층 분석
 
 AMP는 데이터 수집의 두 가지 일반적인 패턴을 지원하도록 만들어졌습니다.
 
-* 사내 분석 시스템에 대한 게시자 소유 엔드포인트에 의한 처리
-* 공급업체 솔루션과의 상호 운용성에 대한 공급업체 소유 엔드포인트에 의한 처리
-(예: [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/))
+- 사내 분석 시스템에 대한 게시자 소유 엔드포인트에 의한 처리
+- 공급업체 솔루션과의 상호 운용성에 대한 공급업체 소유 엔드포인트에 의한 처리
+  (예: [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google 애널리틱스](https://developers.google.com/analytics/devguides/collection/amp-analytics/))
 
 분석 제공업체에 분석 데이터를 보내려면
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 태그에 `type` 속성을 포함하고
@@ -105,7 +108,9 @@ URL을 호출할 수 있습니다.
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 태그에 config 속성을 포함하는 것입니다.
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 다음으로 원격 URL에 포함된 JSON 콘텐츠를 만듭니다.
@@ -227,7 +232,7 @@ Google 애널리틱스를 포함한 일부 분석 제공업체에서는
 ```
 
 [tip type="important"]
- 위의 방법은 AMP 페이지에서만 권장되며 AMP HTML 광고에는 권장되지 않습니다. 페이지의 콘텐츠보다 분석 우선순위가 낮으므로 클릭 손실을 방지하려면 브라우저 리디렉션을 사용하여 클릭을 추적하는 것이 좋습니다.
+위의 방법은 AMP 페이지에서만 권장되며 AMP HTML 광고에는 권장되지 않습니다. 페이지의 콘텐츠보다 분석 우선순위가 낮으므로 클릭 손실을 방지하려면 브라우저 리디렉션을 사용하여 클릭을 추적하는 것이 좋습니다.
 [/tip]
 
 AMP는 다음 트리거 구성을 지원합니다.
@@ -340,26 +345,26 @@ AMP는 우선순위에 따라 변수 값을 게재합니다.
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

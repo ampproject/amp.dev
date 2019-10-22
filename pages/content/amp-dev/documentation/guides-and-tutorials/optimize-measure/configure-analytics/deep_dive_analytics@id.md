@@ -12,41 +12,44 @@ serta mengirim data analisis ke penyedia pihak ketiga,
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      'transport': {
+        'beacon': false,
+        'xhrpost': false,
+        'image': true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -59,9 +62,9 @@ Contoh kode di atas hanya digunakan untuk membantu Anda belajar, bukan sampel ko
 
 AMP dirancang untuk mendukung dua pola pengumpulan data yang umum:
 
-* Penyerapan data oleh endpoint milik penayang untuk sistem analisis internal.
-* Penyerapan data oleh endpoint milik vendor untuk interoperabilitas dengan solusi vendor
-(misalnya, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
+- Penyerapan data oleh endpoint milik penayang untuk sistem analisis internal.
+- Penyerapan data oleh endpoint milik vendor untuk interoperabilitas dengan solusi vendor
+  (misalnya, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 Untuk mengirim data analisis ke penyedia analisis,
 sertakan atribut `type` ke dalam tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) dan tetapkan nilainya
@@ -105,7 +108,9 @@ Langkah pertama untuk memuat konfigurasi jarak jauh adalah
 dengan menyertakan atribut config ke dalam tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 Langkah selanjutnya adalah membuat konten JSON yang berada di URL jarak jauh.
@@ -227,7 +232,7 @@ dan setiap kali tag `a` diklik:
 ```
 
 [tip type="important"]
- Pendekatan di atas hanya direkomendasikan untuk halaman AMP dan bukan untuk iklan AMPHTML. Karena prioritas analisis lebih rendah dibandingkan konten pada halaman, direkomendasikan untuk melacak klik menggunakan pengalihan browser untuk menghindari kehilangan klik.
+Pendekatan di atas hanya direkomendasikan untuk halaman AMP dan bukan untuk iklan AMPHTML. Karena prioritas analisis lebih rendah dibandingkan konten pada halaman, direkomendasikan untuk melacak klik menggunakan pengalihan browser untuk menghindari kehilangan klik.
 [/tip]
 
 AMP mendukung konfigurasi pemicu berikut:
@@ -340,26 +345,26 @@ variabel yang ditentukan di level teratas, pada pemicu, dan di tingkat platform:
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

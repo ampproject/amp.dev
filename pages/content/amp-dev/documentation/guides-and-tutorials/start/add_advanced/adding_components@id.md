@@ -4,13 +4,13 @@ $title: Menambahkan komponen AMP yang diperpanjang
 
 Sistem komponen AMP memungkinkan Anda membuat fitur yang efisien dan responsif ke dalam artikel dengan cepat dan mudah. Koleksi HTML AMP memiliki 3 klasifikasi komponen AMP:
 
-- **bawaan**: Ini adalah komponen yang disertakan dalam koleksi JavaScript AMP dasar (yang ditentukan dalam tag `<head>`), seperti [`amp-img`](../../../../documentation/components/reference/amp-img.md) dan [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).  Komponen ini dapat digunakan langsung dalam dokumen AMP.
+- **bawaan**: Ini adalah komponen yang disertakan dalam koleksi JavaScript AMP dasar (yang ditentukan dalam tag `<head>`), seperti [`amp-img`](../../../../documentation/components/reference/amp-img.md) dan [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Komponen ini dapat digunakan langsung dalam dokumen AMP.
 
-- **diperpanjang**: Ini adalah ekstensi koleksi dasar yang harus disertakan secara eksplisit di dalam dokumen sebagai elemen khusus.  Elemen khusus memerlukan skrip tertentu yang ditambahkan ke bagian `<head>` (misalnya, `<script async custom-element="amp-video" ...`).
+- **diperpanjang**: Ini adalah ekstensi koleksi dasar yang harus disertakan secara eksplisit di dalam dokumen sebagai elemen khusus. Elemen khusus memerlukan skrip tertentu yang ditambahkan ke bagian `<head>` (misalnya, `<script async custom-element="amp-video" ...`).
 
-- **eksperimental**: Ini adalah komponen yang dirilis, namun belum siap untuk digunakan secara luas. Developer dapat memilih untuk menggunakan fitur ini sebelum dirilis sepenuhnya.  Pelajari lebih lanjut di [Fitur eksperimental](../../../../documentation/guides-and-tutorials/learn/experimental.md).
+- **eksperimental**: Ini adalah komponen yang dirilis, namun belum siap untuk digunakan secara luas. Developer dapat memilih untuk menggunakan fitur ini sebelum dirilis sepenuhnya. Pelajari lebih lanjut di [Fitur eksperimental](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
-Sampel kami sudah menggunakan komponen bawaan, [`amp-img`](../../../../documentation/components/reference/amp-img.md).  Sekarang, mari tambahkan beberapa komponen AMP **diperpanjang** yang umum digunakan di artikel berita.
+Sampel kami sudah menggunakan komponen bawaan, [`amp-img`](../../../../documentation/components/reference/amp-img.md). Sekarang, mari tambahkan beberapa komponen AMP **diperpanjang** yang umum digunakan di artikel berita.
 
 ## Monetisasi dengan iklan
 
@@ -23,13 +23,14 @@ Lihat contoh iklan **DoubleClick** ini:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
 Seperti yang Anda lihat, konfigurasi ini sangatlah mudah. Perhatikan atribut `type`, yang menunjukkan komponen [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) dari platform iklan yang ingin kami gunakan. Dalam kasus ini, kami ingin menggunakan platform [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md), sehingga kami menentukan `doubleclick` sebagai nilainya.
 
-`data-slot` adalah atribut yang lebih unik. Dalam [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), atribut apa pun yang diawali dengan  `data-` adalah atribut khusus vendor. Artinya, tidak semua vendor akan memerlukan atribut khusus ini, dan tidak semua vendor pula akan merespons jika atribut tersebut disediakan. Misalnya, bandingkan contoh **DoubleClick** di atas dengan iklan pengujian berikut dari platform [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
+`data-slot` adalah atribut yang lebih unik. Dalam [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), atribut apa pun yang diawali dengan `data-` adalah atribut khusus vendor. Artinya, tidak semua vendor akan memerlukan atribut khusus ini, dan tidak semua vendor pula akan merespons jika atribut tersebut disediakan. Misalnya, bandingkan contoh **DoubleClick** di atas dengan iklan pengujian berikut dari platform [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md):
 
 ```html
 <amp-ad
@@ -38,7 +39,8 @@ Seperti yang Anda lihat, konfigurasi ini sangatlah mudah. Perhatikan atribut `ty
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -48,14 +50,15 @@ Coba **tambahkan** kedua contoh di atas ke dalam artikel tepat setelah tag `<hea
 
 Penting: Anda mungkin menemukan beberapa error di konsol developer, seperti `Konten Campuran` atau `XMLHttpRequest tidak dapat dimuat`. Error yang pertama kemungkinan berkaitan dengan iklan A9 karena tidak semua konten yang dimuat aman. Ini adalah persyaratan penting untuk semua iklan yang ditayangkan di AMP.
 
-Dua [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) di bawah memberikan contoh fleksibilitas yang dimiliki [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) untuk mendukung fitur platform iklan.  Dalam kasus ini, kami telah mengonfigurasi (menggunakan dasbor DoubleClick) 2 iklan pengujian DoubleClick agar hanya ditampilkan di negara tertentu--pengujian pertama hanya akan ditampilkan di Inggris Raya dan pengujian kedua hanya akan ditampilkan di Amerika Serikat.  Coba **tambahkan** 2 konfigurasi iklan penargetan-geo ini dalam dokumen AMP di bawah iklan yang Anda tambahkan sebelumnya:
+Dua [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) di bawah memberikan contoh fleksibilitas yang dimiliki [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) untuk mendukung fitur platform iklan. Dalam kasus ini, kami telah mengonfigurasi (menggunakan dasbor DoubleClick) 2 iklan pengujian DoubleClick agar hanya ditampilkan di negara tertentu--pengujian pertama hanya akan ditampilkan di Inggris Raya dan pengujian kedua hanya akan ditampilkan di Amerika Serikat. Coba **tambahkan** 2 konfigurasi iklan penargetan-geo ini dalam dokumen AMP di bawah iklan yang Anda tambahkan sebelumnya:
 
 ```html
 <amp-ad
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -63,7 +66,8 @@ Dua [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) di bawa
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -86,7 +90,8 @@ Tingkatkan dokumen AMP dan tambahkan fungsi web lanjutan lainnya yang umumnya di
 - Tweet
 - Kutipan artikel
 
-##  Menyematkan video YouTube
+## Menyematkan video YouTube
+
 Coba sematkan video YouTube ke dalam dokumen. **Tambahkan** kode berikut tepat setelah `<header>` di dokumen AMP (di atas [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) yang baru ditambahkan):
 
 ```html
@@ -94,14 +99,15 @@ Coba sematkan video YouTube ke dalam dokumen. **Tambahkan** kode berikut tepat s
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Refresh** halaman. Video tidak akan muncul, dan Anda akan melihat teks ini: *“Video tidak dapat dimuat.”*
+**Refresh** halaman. Video tidak akan muncul, dan Anda akan melihat teks ini: _“Video tidak dapat dimuat.”_
 
 Meskipun browser dapat menampilkan video YouTube tanpa masalah, Anda masih akan mengalami error ini. Mengapa demikian? Video sebenarnya belum gagal dimuat, melainkan komponennya yang gagal dimuat.
 
@@ -112,7 +118,11 @@ Catatan: Jika konsol developer masih terbuka dan `#development=1` masih ada di d
 **Tambahkan** skrip berikut ke tag `<head>`:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Refresh** halaman dan Anda akan melihat video YouTube:
@@ -126,12 +136,17 @@ Untuk mempelajari lebih lanjut tentang menyematkan video YouTube, baca dokumenta
 Tips: Gunakan atribut [`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) untuk memberi tahu pengguna jika ada komponen yang gagal dimuat atau jika komponen tersebut tidak didukung di browser mereka.
 
 ## Menampilkan Tweet
+
 Menyematkan tweet yang telah diformat sebelummnya dari Twitter merupakan fitur umum dalam artikel berita. Komponen [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) dapat memberikan fungsi ini dengan mudah.
 
 Mulai dengan menambahkan permintaan JavaScript berikut ke tag `<head>` di dokumen Anda:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Sekarang, **tambahkan** kode ini untuk menyematkan Tweet di artikel Anda:
@@ -141,7 +156,8 @@ Sekarang, **tambahkan** kode ini untuk menyematkan Tweet di artikel Anda:
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -166,7 +182,11 @@ AMP menyediakan komponen lain yang didesain khusus dalam situasi semacam ini, ya
 Cobalah. **Tambahkan** koleksi komponen ke tag `<head>` terlebih dahulu:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Tambahkan hal berikut ke halaman Anda:
@@ -191,10 +211,14 @@ Atau, apa yang terjadi jika kutipannya lebih panjang?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 
-Sebagai eksperimen terakhir dengan [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md), coba buat teks pendek,  seperti "Halo" yang jauh lebih tinggi (misalnya, sebesar 400), dan pertahankan nilai atribut max-font-size sebesar 42. Seperti apa tampilan halaman yang dihasilkan? Apakah teks sudah berada di tengah secara vertikal? Atau, apakah tinggi tag [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) menyusut agar sesuai dengan ukuran font maks? Berbekal informasi yang sudah Anda ketahui tentang sistem tata letak AMP, coba cari tahu jawaban dari pertanyaan di atas sebelum mengutak-atik kode.
+Sebagai eksperimen terakhir dengan [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md), coba buat teks pendek, seperti "Halo" yang jauh lebih tinggi (misalnya, sebesar 400), dan pertahankan nilai atribut max-font-size sebesar 42. Seperti apa tampilan halaman yang dihasilkan? Apakah teks sudah berada di tengah secara vertikal? Atau, apakah tinggi tag [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) menyusut agar sesuai dengan ukuran font maks? Berbekal informasi yang sudah Anda ketahui tentang sistem tata letak AMP, coba cari tahu jawaban dari pertanyaan di atas sebelum mengutak-atik kode.
 
 Anda dapat mempelajari lebih lanjut tentang [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) dari [Demo langsung AMP by Example](../../../../documentation/examples/documentation/amp-fit-text.html).

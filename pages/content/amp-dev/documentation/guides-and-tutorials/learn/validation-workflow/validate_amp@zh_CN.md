@@ -18,9 +18,9 @@ AMP 的强大之处在于它不仅能提升网页加载速度，还能以可验�
 
 AMP 验证工具绑定了 AMP JS 库，因此可直接在任何 AMP 网页上使用。要验证 AMP 网页，请执行以下操作：
 
-  1. 在浏览器中打开 AMP 网页。
-  1. 将 &ldquo;`#development=1` &rdquo; 附加到网址后面，例如，`http://localhost:8000/released.amp.html#development=1`。
-  1. 打开 [Chrome 开发者工具控制台](https://developers.google.com/web/tools/chrome-devtools/debug/console/)并检查有无验证错误。
+1. 在浏览器中打开 AMP 网页。
+1. 将 &ldquo;`#development=1` &rdquo; 附加到网址后面，例如，`http://localhost:8000/released.amp.html#development=1`。
+1. 打开 [Chrome 开发者工具控制台](https://developers.google.com/web/tools/chrome-devtools/debug/console/)并检查有无验证错误。
 
 开发者控制台中显示的错误与下面屏幕截图中的类似：
 
@@ -102,17 +102,18 @@ AMP 验证工具。在您浏览网页时，该扩展程序会自动验证您访�
 var amphtmlValidator = require('amphtml-validator');
 var fs = require('fs');
 
-amphtmlValidator.getInstance().then(function (validator) {
+amphtmlValidator.getInstance().then(function(validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
@@ -126,18 +127,18 @@ const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function() {});
 ```
 
 ### 命令行工具
@@ -147,13 +148,13 @@ gulp.task('default', ['amphtml:validate'], function () {
 开始使用：
 
 1.  确保您已在自己的系统上安装 [Node.js 及其软件包管理器
-'npm'](https://docs.npmjs.com/getting-started/installing-node)。
+    'npm'](https://docs.npmjs.com/getting-started/installing-node)。
 2.  通过运行以下命令安装 [AMP HTML 验证工具命令行工具](https://www.npmjs.com/package/amphtml-validator)：`npm install -g amphtml-validator`。
 
 现在，我们来验证一个真实的 AMP HTML 网页：
 
 [sourcecode:console]
-$ amphtml-validator https://amp.dev/
+\$ amphtml-validator https://amp.dev/
 https://amp.dev/: PASS
 [/sourcecode]
 
@@ -161,7 +162,7 @@ https://amp.dev/: PASS
 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html)。要运行 `amphtml-validator` 命令，您可以提供网页的网址或本地文件名称。将 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) 下载并保存到文件中，然后运行以下命令：
 
 [sourcecode:console]
-$ amphtml-validator several_errors.html
+\$ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
 several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see https://amp.dev/zh_cn/documentation/components/reference/amp-img.html)
@@ -177,7 +178,7 @@ several_errors.html:34:2 The attribute 'width' in tag 'amp-ad' is set to the inv
 要顺利着手制作自己的 AMP 网页，请考虑使用 [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html)：
 
 [sourcecode:console]
-$ amphtml-validator minimum_valid_amp.html
+\$ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
 
@@ -186,14 +187,14 @@ minimum_valid_amp.html: PASS
 验证工具 JavaScript（默认运行最新发布的脚本）。
 
 [sourcecode:console]
-$ amphtml-validator --help
+\$ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -208,6 +209,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               json。
+
 [/sourcecode]
 
 ## 如果我的网页无效，会出现什么情况？
@@ -226,37 +228,37 @@ AMP 验证工具不仅能在开发过程中为您提供便利，还可供将您�
 
 该标记生成了相关的 AMP 验证错误（在 3 种不同的工具中分别如下所示）：
 
-* 浏览器开发者控制台
-<amp-img src="/static/img/docs/validator_console_imgerror.png"
-         width="696" height="30" layout="responsive"
-         alt="AMP 错误：标记 'img' 只能是
-        标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列">
-</amp-img>
+- 浏览器开发者控制台
+  <amp-img src="/static/img/docs/validator_console_imgerror.png"
+           width="696" height="30" layout="responsive"
+           alt="AMP 错误：标记 'img' 只能是
+          标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列">
+  </amp-img>
 
-* 网页界面
-<amp-img src="/static/img/docs/validator_webui_imgerror.png"
-         width="676" height="58" layout="responsive"
-         alt="AMP 错误：标记 'img' 只能是
-        标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列">
-</amp-img>
+- 网页界面
+  <amp-img src="/static/img/docs/validator_webui_imgerror.png"
+           width="676" height="58" layout="responsive"
+           alt="AMP 错误：标记 'img' 只能是
+          标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列">
+  </amp-img>
 
-* 浏览器扩展程序
-<amp-img src="/static/img/docs/validator_extension_imgerror.png"
-         width="724" height="108" layout="responsive"
-         alt="AMP 错误：标记 'img' 只能是
-        标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列">
-</amp-img>
+- 浏览器扩展程序
+  <amp-img src="/static/img/docs/validator_extension_imgerror.png"
+           width="724" height="108" layout="responsive"
+           alt="AMP 错误：标记 'img' 只能是
+          标记 'noscript' 的子级。您是不是要使用 'amp-img'？第 11 行第 2 列">
+  </amp-img>
 
 每种工具都提供了以下几个信息：
 
-  1. HTML 文档中存在错误的位置（行和列），
-     在某些界面中可以点击，以突出显示相应位置。在本例中，
-     错误发生在第 11 行第 2 列。
-  1. 一行描述错误的文字。在本例中，这些文字表明
-     我们在本该使用 [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 标记的位置使用了 `<img>` 标记。
-  1. 指向与错误相关的文档的链接。本例中
-     是指 [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 标记的文档。并非所有错误都会生成
-     文档链接。
+1. HTML 文档中存在错误的位置（行和列），
+   在某些界面中可以点击，以突出显示相应位置。在本例中，
+   错误发生在第 11 行第 2 列。
+1. 一行描述错误的文字。在本例中，这些文字表明
+   我们在本该使用 [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 标记的位置使用了 `<img>` 标记。
+1. 指向与错误相关的文档的链接。本例中
+   是指 [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 标记的文档。并非所有错误都会生成
+   文档链接。
 
 再次仔细阅读[规范](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)之后，我们意识到我们在本该使用 [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 标记的位置使用了 `<img>` 标记。
 

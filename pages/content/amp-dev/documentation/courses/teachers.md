@@ -5,8 +5,6 @@ toc: false
 breadcrumbs: false
 ---
 
-
-
 ### Objective:
 
 A student with a basic understanding of HTML and CSS can use AMP to create full-featured, interactive websites. Thus these materials fit nicely in a curriculum after HTML and CSS, but before JavaScript.
@@ -37,4 +35,5 @@ The course consists of a series of hands-on projects, most of which step you thr
 - The course uses the online editor Glitch. No IDE or local web server is required!
 
 ### Certification
+
 If you are interested in our certification program, please <a href="mailto:morsssss@ampproject.org">get in touch.</a>

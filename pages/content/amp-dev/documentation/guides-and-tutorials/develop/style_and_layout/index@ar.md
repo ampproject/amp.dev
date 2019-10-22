@@ -45,6 +45,7 @@ $title: إنشاء صفحات AMP تفاعلية
 على سبيل المثال:
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     <meta charset="utf-8">
@@ -65,6 +66,7 @@ $title: إنشاء صفحات AMP تفاعلية
       }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+
   </head>
 [/sourcecode]
 
@@ -76,6 +78,7 @@ $title: إنشاء صفحات AMP تفاعلية
 باستخدام خصائص CSS الشائعة. على سبيل المثال:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img

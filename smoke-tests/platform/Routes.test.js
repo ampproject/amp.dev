@@ -16,10 +16,10 @@
 
 'use strict';
 
-const nodeFetch = require('node-fetch');
-const config = require('@lib/config.js');
-const Platform = require('@lib/platform.js');
 const amphtmlValidator = require('amphtml-validator');
+const config = require('@lib/config.js');
+const nodeFetch = require('node-fetch');
+const Platform = require('@lib/platform.js');
 const {HEALTH_CHECK_PATH} = require('@lib/routers/healthCheck.js');
 
 const platform = new Platform();
@@ -44,8 +44,9 @@ describe('Routes', () => {
   });
   it('serves logs', async () => {
     const sampleLogUrl = new URL(
-        '?v=011907301630320&id=2y&s[]=amp-video&s[]=amp-video',
-        config.hosts.log.base);
+      '?v=011907301630320&id=2y&s[]=amp-video&s[]=amp-video',
+      config.hosts.log.base
+    );
     const response = await fetch(sampleLogUrl);
     expect(response.status).toBe(200);
   });
@@ -61,7 +62,7 @@ describe('Routes', () => {
       '/documentation/components/amp-story-page/?format=stories',
       '/documentation/components/amp-story-cta-layer/?format=stories',
       '/boilerplate',
-    ].forEach(async (pagePath) => {
+    ].forEach(async pagePath => {
       it(pagePath, async () => {
         const response = await fetch(pagePath);
         expect(response.status).toBe(200);
@@ -82,11 +83,12 @@ async function validate(string) {
   }
   for (let ii = 0; ii < result.errors.length; ii++) {
     const error = result.errors[ii];
-    let msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    let msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
   // console.log(`\n\n${string}\n\n`);
   return false;

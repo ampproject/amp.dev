@@ -1,19 +1,19 @@
 {
   "addresses": [
     {
-      "id":"1",
-      "name":"Santa",
-      "street":"1 Santa Claus",
-      "city":"North Pole",
-      "state":"AK",
+      "id": "1",
+      "name": "Santa",
+      "street": "1 Santa Claus",
+      "city": "North Pole",
+      "state": "AK",
       "default": true
     },
     {
-      "id":"2",
-      "name":"Santa 2",
-      "street":"1 Santa Claus",
-      "city":"North Pole",
-      "state":"AK"
+      "id": "2",
+      "name": "Santa 2",
+      "street": "1 Santa Claus",
+      "city": "North Pole",
+      "state": "AK"
     }
   ],
   "manual": true

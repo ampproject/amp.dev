@@ -16,9 +16,14 @@ $title: 为您的网站添加导航元素
 ```html
 <header class="headerbar">
   <a href="homepage.html">
-    <amp-img class="home-button" src="icons/home.png" width="36" height="36"></amp-img>
+    <amp-img
+      class="home-button"
+      src="icons/home.png"
+      width="36"
+      height="36"
+    ></amp-img>
   </a>
-<div class="site-name">News Site</div>
+  <div class="site-name">News Site</div>
 </header>
 ```
 
@@ -61,14 +66,20 @@ article {
 首先，我们必须将 [`amp-sidebar`](../../../../documentation/components/reference/amp-sidebar.md) 组件的 JavaScript **添加**到 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+<script
+  async
+  custom-element="amp-sidebar"
+  src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
+></script>
 ```
 
 接着，我们需要显示菜单图标。当用户点按该图标时，它即会打开边栏。为此，我们需要将 `<header>` **替换**为以下代码，以显示[“汉堡式”](https://en.wikipedia.org/wiki/Hamburger_button)图标（而非首页图标）：
 
 ```html
 <header class="headerbar">
-  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+  <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">
+    ☰
+  </div>
   <div class="site-name">News Site</div>
 </header>
 ```
@@ -79,7 +90,15 @@ article {
 
 ```html
 <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
-  <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+  <div
+    role="button"
+    aria-label="close sidebar"
+    on="tap:sidebar1.toggle"
+    tabindex="0"
+    class="close-sidebar"
+  >
+    ✕
+  </div>
   <ul class="sidebar">
     <li><a href="#">Example 1</a></li>
     <li><a href="#">Example 2</a></li>
@@ -102,7 +121,7 @@ article {
 }
 .sidebar > li {
   list-style: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 .sidebar a {
   text-decoration: none;

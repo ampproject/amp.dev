@@ -10,15 +10,17 @@ $title: 嵌入 AMP 网页并将其用作数据源
 
 然后，您会继续操作，将原始内容转换成易用的 HTML，并将其呈现在客户端上。该过程不仅成本高昂，而且通常难以维护。因此，您不妨改为将自己现有的 AMP 网页重复用作内容来源。最棒的是：借助 AMP，您只需使用几行代码即可轻松实现这一点。
 
-##  在渐进式网页应用中添加“Shadow AMP”
+## 在渐进式网页应用中添加“Shadow AMP”
 
 第一步是在您的渐进式网页应用中添加一种特殊版本的 AMP，称为“Shadow AMP”。对，就是这样 - 您在顶级网页中加载 AMP 库，但 AMP 库实际上并不会控制顶级内容。它只会按照您的要求，将我们网页的部分内容转换成对应的 AMP 版本。
 
 请在您网页的标头中添加 Shadow AMP，所需代码如下所示：
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### 如何判断 Shadow AMP API 是否已可供使用？
@@ -29,7 +31,7 @@ $title: 嵌入 AMP 网页并将其用作数据源
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -37,8 +39,8 @@ $title: 嵌入 AMP 网页并将其用作数据源
 
 该代码可实现以下操作：
 
-  1. “如果 window.AMP 不存在，则创建一个空数组来占据其位置”
-  1. “然后，将一个当 AMP 就绪时应被执行的回调函数推送到该数组中”
+1. “如果 window.AMP 不存在，则创建一个空数组来占据其位置”
+1. “然后，将一个当 AMP 就绪时应被执行的回调函数推送到该数组中”
 
 该代码之所以会正常运行，是因为 Shadow AMP 库在实际加载时会发现 `window.AMP` 下已有一个回调数组，然后便会处理整个队列。如果您日后再次执行同一函数，该代码仍会正常运行，因为 Shadow AMP 会使用其自身以及一种能立即触发回调的自定义 `push` 方法来替换 `window.AMP`。
 
@@ -57,20 +59,20 @@ $title: 嵌入 AMP 网页并将其用作数据源
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -87,8 +89,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 
@@ -113,12 +115,11 @@ ampedDoc.close();
 
 您可在我们制作的 [React 样例](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)中了解“AMP in PWA”模式的实际运作方式。该样例演示了导航过程中的顺利过渡情形，并附有一个将上述各步骤囊括在内的简单 React 组件。在该模式中，这两者（渐进式网页应用中灵活的自定义 JavaScript，以及 AMP）实现了强强联合，因为它们都能最大限度地发挥各自对内容加载速度的积极影响。
 
-* 获取源代码：[https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
-* 通过 npm 单独使用 React 组件：[https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
-* 了解实际运作方式：[https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/)（最好通过手机或移动设备模拟器查看）
+- 获取源代码：[https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
+- 通过 npm 单独使用 React 组件：[https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
+- 了解实际运作方式：[https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/)（最好通过手机或移动设备模拟器查看）
 
 您还可查看一个使用了 Polymer 框架的 PWA + AMP 样例。该样例使用 [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) 嵌入 AMP 网页。
 
-* 获取代码：[https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
-* 了解实际运作方式：[https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
-
+- 获取代码：[https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
+- 了解实际运作方式：[https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)

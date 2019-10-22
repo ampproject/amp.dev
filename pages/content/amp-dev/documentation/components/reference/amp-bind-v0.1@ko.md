@@ -2,9 +2,9 @@
 $title: amp-bind
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 사용자 작업 또는 데이터 변경에 따라 데이터 결합 및 JS와 같은 단순한 식을 통해 요소의 변경을 허용합니다.
 ---
@@ -24,7 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
 
 데이터 결합 및 식과 함께 맞춤형 상호작용을 추가합니다.
 
@@ -66,7 +65,6 @@ limitations under the License.
 이 예에서는 버튼을 누르면 `<p>` 요소의 텍스트가 'Hello World'에서 'Hello amp-bind'로 바뀝니다.
 
 ```html
-
 <p [text]="'Hello ' + foo">Hello World</p>
 
 <button on="tap:AMP.setState({foo: 'amp-bind'})">Say "Hello amp-bind"</button>
@@ -80,9 +78,9 @@ limitations under the License.
 
 `amp-bind`에는 세 가지 주요 구성요소가 있습니다.
 
-1. [상태](#state): 문서 범위의 변경 가능한 JSON 상태. 위의 예에서, 버튼을 누르기 전에는 상태가 비어 있습니다.  버튼을 누른 후의 상태는 `{foo: 'amp-bind'}`입니다.
+1. [상태](#state): 문서 범위의 변경 가능한 JSON 상태. 위의 예에서, 버튼을 누르기 전에는 상태가 비어 있습니다. 버튼을 누른 후의 상태는 `{foo: 'amp-bind'}`입니다.
 2. [식](#expressions): **상태** 를 참조할 수 있는 자바스크립트 같은 식입니다. 위의 예에는 단일 식인 `'Hello ' + foo`가 있는데, 여기에서는 문자열 리터럴 `'Hello '`와 상태 변수 `foo`를 연결합니다.
-하나의 식에 사용할 수 있는 피연산자는 100개로 제한됩니다.
+   하나의 식에 사용할 수 있는 피연산자는 100개로 제한됩니다.
 3. [결합](#bindings): 요소의 속성을 **식** 에 연결하는 `[property]` 양식의 특수한 속성입니다. 위의 예에는 단일 결합인 `[text]`가 있는데, 이것은 식의 값이 변경될 때마다 `<p>` 요소의 텍스트를 업데이트합니다.
 
 amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해 특별한 주의를 기울입니다.
@@ -108,35 +106,41 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 <p [text]="'This is a ' + currentAnimal + '.'">이것은 개입니다.</p>
 
-
 <!-- [class]를 사용하여 CSS 클래스를 추가 또는 제거할 수도 있습니다. -->
 <p class="greenBackground" [class]="myAnimals[currentAnimal].style">
   각 동물의 배경색이 다릅니다.
 </p>
 
 <!-- 또는 [src] 결합으로 이미지의 src를 변경하세요. -->
-<amp-img width="300" height="200" src="/img/dog.jpg" [src]="myAnimals[currentAnimal].imageUrl">
+<amp-img
+  width="300"
+  height="200"
+  src="/img/dog.jpg"
+  [src]="myAnimals[currentAnimal].imageUrl"
+>
 </amp-img>
 
 <button on="tap:AMP.setState({currentAnimal: 'cat')">'Cat'으로 설정</button>
 ```
 
-  버튼을 누르면:
+버튼을 누르면:
 
-  1. **상태** 는 `'cat'`으로 정의된 `currentAnimal`로 업데이트됩니다.
-  1. `currentAnimal`에 의존하는 **식** 이 평가됩니다.
+1. **상태** 는 `'cat'`으로 정의된 `currentAnimal`로 업데이트됩니다.
+1. `currentAnimal`에 의존하는 **식** 이 평가됩니다.
+
 
     * `'This is a ' + currentAnimal + '.'` =&gt; `'This is a cat.'`
     * `myAnimals[currentAnimal].style` =&gt; `'redBackground'`
     * `myAnimals[currentAnimal].imageUrl` =&gt;  `/img/cat.jpg`</li>
 
-  1. 변경된 식에 의존하는 **결합** 이 업데이트됩니다.
+1. 변경된 식에 의존하는 **결합** 이 업데이트됩니다.
+
 
     * 첫 번째 `<p>` 요소의 텍스트에는 "This is a cat."이 표시됩니다.
     * 두 번째 `<p>` 요소의 `class` 속성은 "redBackground"가 됩니다.
     * `amp-img` 요소는 고양이의 이미지를 보여줍니다.</li>
 
-  [tip type="success"]
+[tip type="success"]
 코드 주석을 사용하여 이 예의 [**라이브 데모**를 시험해보세요](https://ampbyexample.com/components/amp-bind/)!
 [/tip]
 
@@ -162,8 +166,8 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 [식](#expressions)은 도트 구문을 통해 상태 변수를 참조할 수 있습니다. 이 예에서 `myState.foo`는 `"bar"`로 평가됩니다.
 
-* `<amp-state>` 요소의 하위 JSON은 최대 크기가 100KB입니다.
-* `<amp-state>` 요소는 하위 JSON 스크립트 대신 CORS URL을 지정할 수도 있습니다. 자세한 내용은 [부록](#amp-state-specification)을 참조하세요.
+- `<amp-state>` 요소의 하위 JSON은 최대 크기가 100KB입니다.
+- `<amp-state>` 요소는 하위 JSON 스크립트 대신 CORS URL을 지정할 수도 있습니다. 자세한 내용은 [부록](#amp-state-specification)을 참조하세요.
 
 # 상태 새로 고침 <a name="refreshing-state"></a>
 
@@ -182,8 +186,11 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 ```html
 <!-- 자바스크립트와 마찬가지로 개체 리터럴
       값에서 기존 변수를 참조할 수 있습니다. -->
- <button on="tap:AMP.setState({foo: 'bar', baz: myAmpState.someVariable})"></button>
+<button
+  on="tap:AMP.setState({foo: 'bar', baz: myAmpState.someVariable})"
+></button>
 ```
+
 일반적으로 중첩된 개체는 최대 깊이 10까지 병합됩니다. `amp-state`에 의해 추가된 변수를 포함하여 모든 변수를 재정의할 수 있습니다.
 
 특정 이벤트에 의해 트리거되면 `AMP.setState()`는 `event` 속성에 대한 이벤트 관련 데이터에 액세스할 수 있습니다.
@@ -191,20 +198,21 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 ```html
 <!-- 이 <input> 요소의 "change" 이벤트는 "event.value"를
       통해 참조할 수 있는 "value" 변수를 포함합니다. -->
-<input type="range" on="change:AMP.setState({myRangeValue: event.value})">
-  ```
+<input type="range" on="change:AMP.setState({myRangeValue: event.value})" />
+```
 
 # `AMP.pushState()`로 기록 수정 <a name="modifying-history-with-amppushstate"></a>
 
 브라우저 기록 스택에 새 항목을 푸시한다는 점을 제외하면 [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) 작업은 `AMP.setState()`와 유사합니다. 이 기록 항목을 표시하면(예: 뒤로 이동) `AMP.pushState()`에 의해 설정된 변수의 이전 값이 복원됩니다.
 
 예:
+
 ```html
 <button on="tap:AMP.pushState({foo: '123'})">Set 'foo' to 123</button>
 ```
 
-* 버튼을 누르면 변수 `foo`가 123으로 설정되고 새로운 기록 항목이 푸시됩니다.
-* 뒤로 이동하면 `foo`가 이전 값인 'bar'로 복원됩니다(`AMP.setState({foo: 'bar'} 호출과 동일)`.
+- 버튼을 누르면 변수 `foo`가 123으로 설정되고 새로운 기록 항목이 푸시됩니다.
+- 뒤로 이동하면 `foo`가 이전 값인 'bar'로 복원됩니다(`AMP.setState({foo: 'bar'} 호출과 동일)`.
 
 # 식 <a name="expressions"></a>
 
@@ -212,12 +220,12 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 # 자바스크립트와의 차이점 <a name="differences-from-javascript"></a>
 
-* 식은 포함 문서의 [상태](#state)에만 액세스할 수 있습니다.
-* 식은 `window` 또는 `document`와 같은 전역에 액세스하지 **않습니다**.
-* [화이트리스트에 있는 함수](#white-listed-functions) 및 연산자만 사용할 수 있습니다.
-* 맞춤형 함수, 클래스 및 루프는 일반적으로 허용되지 않습니다. 화살표 함수는 매개변수로서 허용됩니다(예: `Array.prototype.map`).
-* 정의되지 않은 변수 및 범위를 벗어난 배열-색인은 `undefined` 대신 `null`을 반환하거나 오류를 일으킵니다.
-* 성능을 위해 현재 단일 식의 피연산자는 50개로 제한됩니다. 이 개수가 사용 사례로 불충분한 경우 [Google에 문의](https://github.com/ampproject/amphtml/issues/new)하세요.
+- 식은 포함 문서의 [상태](#state)에만 액세스할 수 있습니다.
+- 식은 `window` 또는 `document`와 같은 전역에 액세스하지 **않습니다**.
+- [화이트리스트에 있는 함수](#white-listed-functions) 및 연산자만 사용할 수 있습니다.
+- 맞춤형 함수, 클래스 및 루프는 일반적으로 허용되지 않습니다. 화살표 함수는 매개변수로서 허용됩니다(예: `Array.prototype.map`).
+- 정의되지 않은 변수 및 범위를 벗어난 배열-색인은 `undefined` 대신 `null`을 반환하거나 오류를 일으킵니다.
+- 성능을 위해 현재 단일 식의 피연산자는 50개로 제한됩니다. 이 개수가 사용 사례로 불충분한 경우 [Google에 문의](https://github.com/ampproject/amphtml/issues/new)하세요.
 
 식 문법과 구현의 전체 내용은 [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) 및 [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js)에서 찾아볼 수 있습니다.
 
@@ -226,10 +234,10 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 다음은 모두 유효한 식입니다.
 
 ```javascript
-1 + '1'           // 11
-1 + (+'1')        // 2
-!0                // true
-null || 'default' // 'default'
+1 + '1'; // 11
+1 + +'1'; // 2
+!0; // true
+null || 'default'; // 'default'
 ```
 
 # 화이트리스트에 있는 함수 <a name="white-listed-functions"></a>
@@ -350,12 +358,15 @@ null || 'default' // 'default'
 `amp-bind-macro`를 정의하면 `amp-bind` 식의 부분들을 재사용할 수 있습니다. `amp-bind-macro` 요소를 사용하면 0개 이상의 인수를 사용하고 현재 상태를 참조하는 식을 정의할 수 있습니다. 문서의 어디서나 `id` 속성 값을 참조하여 매크로를 함수처럼 호출할 수 있습니다.
 
 ```html
-<amp-bind-macro id="circleArea" arguments="radius" expression="3.14 * radius * radius"></amp-bind-macro>
+<amp-bind-macro
+  id="circleArea"
+  arguments="radius"
+  expression="3.14 * radius * radius"
+></amp-bind-macro>
 
 <div>
   원의 면적은 <span [text]="circleArea(myCircle.radius)">0</span>입니다.
 </div>
-
 ```
 
 매크로는 또한 <i>먼저 정의된</i> 다른 매크로를 호출할 수 있습니다. 그러나 자신을 재귀적으로 호출할 수는 없습니다.
@@ -403,10 +414,10 @@ null || 'default' // 'default'
 
 결합에 대한 참고 사항:
 
-* 보안상의 이유로 `innerHTML`에 대한 결합은 허용되지 않습니다.
-* 모든 속성 결합은 안전하지 않은 값(예: `javascript:`)에 대해 보안 확인이 수행됩니다.
-* 부울 식 결과는 부울 속성을 전환합니다. 예: `<amp-video [controls]="expr"...>`. `expr`이 `true`로 평가되면 `<amp-video>` 요소는 `controls` 속성을 갖게 됩니다. `expr`이 `false`로 평가되면 `controls` 속성이 제거됩니다.
-* 속성 이름의 대괄호 `[` 및 `]`는 XML(예: XHTML, JSX)을 작성하거나 DOM API를 통해 속성을 작성할 때 문제가 될 수 있습니다. 이 경우 `[x]="foo"` 대신 대체 구문 `data-amp-bind-x="foo"`를 사용하세요.
+- 보안상의 이유로 `innerHTML`에 대한 결합은 허용되지 않습니다.
+- 모든 속성 결합은 안전하지 않은 값(예: `javascript:`)에 대해 보안 확인이 수행됩니다.
+- 부울 식 결과는 부울 속성을 전환합니다. 예: `<amp-video [controls]="expr"...>`. `expr`이 `true`로 평가되면 `<amp-video>` 요소는 `controls` 속성을 갖게 됩니다. `expr`이 `false`로 평가되면 `controls` 속성이 제거됩니다.
+- 속성 이름의 대괄호 `[` 및 `]`는 XML(예: XHTML, JSX)을 작성하거나 DOM API를 통해 속성을 작성할 때 문제가 될 수 있습니다. 이 경우 `[x]="foo"` 대신 대체 구문 `data-amp-bind-x="foo"`를 사용하세요.
 
 # 요소별 속성 <a name="element-specific-attributes"></a>
 
@@ -550,7 +561,7 @@ null || 'default' // 'default'
     </tr>
   </table>
 
-  <sup>*</sup>결합할 수 없는 대상이 없는 결합 가능한 속성을 나타냅니다.
+<sup>\*</sup>결합할 수 없는 대상이 없는 결합 가능한 속성을 나타냅니다.
 
 # 디버깅 <a name="debugging"></a>
 
@@ -634,13 +645,12 @@ null || 'default' // 'default'
   </script>
 </amp-state>
 
-<amp-state id="myRemoteState" src="https://data.com/articles.json">
-</amp-state>
+<amp-state id="myRemoteState" src="https://data.com/articles.json"> </amp-state>
 ```
 
 # XHR 배치 <a name="xhr-batching"></a>
 
-AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처리합니다. 즉, AMP 페이지에서 여러 소비자(예: 여러 `amp-state` 요소)에 대해 데이터 소스로 단일 JSON 데이터 요청을 사용할 수 있습니다.  예를 들어 `amp-state` 요소가 엔드포인트에 대해 XHR을 만드는 경우 XHR이 실행 중인 동안에는 동일한 엔드포인트에 대한 모든 후속 XHR이 트리거되지 않으며 대신 첫 번째 XHR에서 결과가 반환됩니다.
+AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처리합니다. 즉, AMP 페이지에서 여러 소비자(예: 여러 `amp-state` 요소)에 대해 데이터 소스로 단일 JSON 데이터 요청을 사용할 수 있습니다. 예를 들어 `amp-state` 요소가 엔드포인트에 대해 XHR을 만드는 경우 XHR이 실행 중인 동안에는 동일한 엔드포인트에 대한 모든 후속 XHR이 트리거되지 않으며 대신 첫 번째 XHR에서 결과가 반환됩니다.
 
 # 속성 <a name="attributes"></a>
 
@@ -677,8 +687,11 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
 ```
 
 ```html
-<button on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"...></button>
-<button on="tap:AMP.setState({employee: {age: 64}})"...></button>
+<button
+  on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"
+  ...
+></button>
+<button on="tap:AMP.setState({employee: {age: 64}})" ...></button>
 ```
 
 첫 번째 버튼을 누르면 상태가 다음과 같이 변경됩니다.
@@ -714,7 +727,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
 `AMP.setState()`에서 값을 `null` 로 설정하여 기존 상태 변수를 제거합니다. 이전 예제의 상태에서 시작하여 다음을 누릅니다.
 
 ```html
-<button on="tap:AMP.setState({employee: {vehicle: null}})"...></button>
+<button on="tap:AMP.setState({employee: {vehicle: null}})" ...></button>
 ```
 
 상태가 다음으로 변경됩니다.
@@ -731,7 +744,7 @@ AMP는 여러 JSON 엔드포인트에 대해 XMLHttpRequest(XHR)를 배치 처�
 마찬가지로:
 
 ```html
-<button on="tap:AMP.setState({employee: null})"...></button>
+<button on="tap:AMP.setState({employee: null})" ...></button>
 ```
 
 상태가 다음으로 변경됩니다.

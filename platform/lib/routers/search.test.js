@@ -1,6 +1,21 @@
+/**
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS-IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 const express = require('express');
-const request = require('supertest');
 const googleSearch = require('@lib/utils/googleSearch.js');
+const request = require('supertest');
 const samples = require('@lib/common/samples.js');
 
 jest.mock('@lib/utils/googleSearch.js');
@@ -9,7 +24,8 @@ jest.mock('@lib/common/samples.js');
 samples.getComponentExampleMap.mockReturnValue({
   'amp-test-example': {
     exampleUrl: '/documentation/examples/components/amp-test-example/',
-    playgroundUrl: 'http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example',
+    playgroundUrl:
+      'http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example',
   },
 });
 
@@ -17,13 +33,13 @@ const app = express();
 const router = require('./search.js');
 app.use(router);
 
-
 function createItem(index, isComponent) {
-  const link = isComponent ? 'https://amp.dev/documentation/components/amp-comp-' + index + '/' :
-    'https://amp.dev/documentation/examples/amp-comp-' + index + '/';
+  const link = isComponent
+    ? 'https://amp.dev/documentation/components/amp-comp-' + index + '/'
+    : 'https://amp.dev/documentation/examples/amp-comp-' + index + '/';
   return {
     title: 'long-title-' + index,
-    link: link,
+    link,
     snippet: 'snipped-' + index,
     pagemap: {
       metatags: [
@@ -49,110 +65,109 @@ function createSearchResult(numComponents, numPages, totalResults) {
     searchInformation: {
       totalResults: totalResults.toString(),
     },
-    items: items,
+    items,
   };
 }
 
-test('returns a first page with component highlights and no next link', (done) => {
+test('returns a first page with component highlights and no next link', done => {
   const searchResult = createSearchResult(2, 8, 10);
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components.length).toBe(2);
-        expect(res.body.result.pages.length).toBe(8);
-        expect(res.body.nextUrl).toBe(undefined);
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components.length).toBe(2);
+      expect(res.body.result.pages.length).toBe(8);
+      expect(res.body.nextUrl).toBe(undefined);
+      done();
+    });
 });
 
-test('returns a first page with maximum 3 component highlights', (done) => {
+test('returns a first page with maximum 3 component highlights', done => {
   const searchResult = createSearchResult(5, 5, 10);
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components.length).toBe(3); // components limit!
-        expect(res.body.result.pages.length).toBe(7);
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components.length).toBe(3); // components limit!
+      expect(res.body.result.pages.length).toBe(7);
+      done();
+    });
 });
 
-test('returns a first page with no component after max index', (done) => {
+test('returns a first page with no component after max index', done => {
   const searchResult = createSearchResult(3, 7, 10);
   // for this test we want the components at the end:
   searchResult.items = searchResult.items.reverse();
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components.length).toBe(1); // 2 components where after the max index
-        expect(res.body.result.pages.length).toBe(9);
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components.length).toBe(1); // 2 components where after the max index
+      expect(res.body.result.pages.length).toBe(9);
+      done();
+    });
 });
 
-
-test('returns a first page with no component highlights and next link', (done) => {
+test('returns a first page with no component highlights and next link', done => {
   const searchResult = createSearchResult(0, 10, 11);
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components.length).toBe(0);
-        expect(res.body.result.pages.length).toBe(10);
-        expect(res.body.nextUrl).toBe('/search/do?q=query&locale=en&page=2');
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components.length).toBe(0);
+      expect(res.body.result.pages.length).toBe(10);
+      expect(res.body.nextUrl).toBe('/search/do?q=query&locale=en&page=2');
+      done();
+    });
 });
 
-test('returns a first page with no component highlights and next link', (done) => {
+test('returns a first page with no component highlights and next link', done => {
   const searchResult = createSearchResult(0, 10, 11);
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=pt_BR&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components.length).toBe(0);
-        expect(res.body.result.pages.length).toBe(10);
-        expect(res.body.nextUrl).toBe('/search/do?q=query&locale=pt_BR&page=2');
-        expect(res.body.prevUrl).toBe(undefined);
-        done();
-      });
+    .get('/search/do?q=query&locale=pt_BR&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components.length).toBe(0);
+      expect(res.body.result.pages.length).toBe(10);
+      expect(res.body.nextUrl).toBe('/search/do?q=query&locale=pt_BR&page=2');
+      expect(res.body.prevUrl).toBe(undefined);
+      done();
+    });
 });
 
-test('returns a second page with no component highlights and no next link', (done) => {
+test('returns a second page with no component highlights and no next link', done => {
   const searchResult = createSearchResult(2, 6, 18);
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=2')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components.length).toBe(0);
-        expect(res.body.result.pages.length).toBe(8);
-        expect(res.body.nextUrl).toBe(undefined);
-        expect(res.body.prevUrl).toBe('/search/do?q=query&locale=en&page=1');
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=2')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components.length).toBe(0);
+      expect(res.body.result.pages.length).toBe(8);
+      expect(res.body.nextUrl).toBe(undefined);
+      expect(res.body.prevUrl).toBe('/search/do?q=query&locale=en&page=1');
+      done();
+    });
 });
 
-test('title and description are correct', (done) => {
+test('title and description are correct', done => {
   const searchResult = createSearchResult(2, 2, 4);
   delete searchResult.items[0].pagemap.metatags[0]['twitter:title'];
   delete searchResult.items[1].pagemap.metatags[0]['twitter:description'];
@@ -160,166 +175,190 @@ test('title and description are correct', (done) => {
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        // all items will use the title from the metatags if available
-        // components always should have the meta description if available
-        expect(res.body.result.components[0].title).toBe('long-title-0');
-        expect(res.body.result.components[0].description).toBe('description-0');
-        expect(res.body.result.components[1].title).toBe('short-title-1');
-        expect(res.body.result.components[1].description).toBe('snipped-1');
-        // pages always have the snipped as description
-        expect(res.body.result.pages[0].title).toBe('long-title-2');
-        expect(res.body.result.pages[0].description).toBe('snipped-2');
-        expect(res.body.result.pages[1].title).toBe('short-title-3');
-        expect(res.body.result.pages[1].description).toBe('snipped-3');
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      // all items will use the title from the metatags if available
+      // components always should have the meta description if available
+      expect(res.body.result.components[0].title).toBe('long-title-0');
+      expect(res.body.result.components[0].description).toBe('description-0');
+      expect(res.body.result.components[1].title).toBe('short-title-1');
+      expect(res.body.result.components[1].description).toBe('snipped-1');
+      // pages always have the snipped as description
+      expect(res.body.result.pages[0].title).toBe('long-title-2');
+      expect(res.body.result.pages[0].description).toBe('snipped-2');
+      expect(res.body.result.pages[1].title).toBe('short-title-3');
+      expect(res.body.result.pages[1].description).toBe('snipped-3');
+      done();
+    });
 });
 
-test('Component title is reduced to component name', (done) => {
+test('Component title is reduced to component name', done => {
   const searchResult = createSearchResult(2, 0, 2);
   searchResult.items[0].pagemap.metatags[0]['twitter:title'] =
-      'Documentation: Component: <amp-test>';
+    'Documentation: Component: <amp-test>';
   searchResult.items[1].pagemap.metatags[0]['twitter:title'] =
-      'Documentation amp-test:';
+    'Documentation amp-test:';
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        // when the title contains a double point only text after it is used
-        expect(res.body.result.components[0].title).toBe('<amp-test>');
-        // when the double point is last, the title is not changed
-        expect(res.body.result.components[1].title).toBe('Documentation amp-test:');
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      // when the title contains a double point only text after it is used
+      expect(res.body.result.components[0].title).toBe('<amp-test>');
+      // when the double point is last, the title is not changed
+      expect(res.body.result.components[1].title).toBe(
+        'Documentation amp-test:'
+      );
+      done();
+    });
 });
 
-
-test('Title and description are cleaned', (done) => {
+test('Title and description are cleaned', done => {
   const searchResult = createSearchResult(1, 0, 1);
   searchResult.items[0].pagemap.metatags[0]['twitter:title'] =
-      'test `img` [text](link';
+    'test `img` [text](link';
   searchResult.items[0].pagemap.metatags[0]['twitter:description'] =
-      'test `img` [text]({{g.doc(\'/doc/\').url.path}}) 123';
+    "test `img` [text]({{g.doc('/doc/').url.path}}) 123";
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        // when the title contains a double point only text after it is used
-        expect(res.body.result.components[0].title).toBe('test \'img\' text');
-        // when the double point is last, the title is not changed
-        expect(res.body.result.components[0].description).toBe('test \'img\' text 123');
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      // when the title contains a double point only text after it is used
+      expect(res.body.result.components[0].title).toBe("test 'img' text");
+      // when the double point is last, the title is not changed
+      expect(res.body.result.components[0].description).toBe(
+        "test 'img' text 123"
+      );
+      done();
+    });
 });
 
-test('amp.dev urls are converted to server relative', (done) => {
+test('amp.dev urls are converted to server relative', done => {
   const searchResult = createSearchResult(2, 3, 5);
   searchResult.items[2].link = 'https://blog.amp.dev/some/path';
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components[0].url).toBe('/documentation/components/amp-comp-0/');
-        expect(res.body.result.components[1].url).toBe('/documentation/components/amp-comp-1/');
-        expect(res.body.result.pages[0].url).toBe('https://blog.amp.dev/some/path');
-        expect(res.body.result.pages[1].url).toBe('/documentation/examples/amp-comp-3/');
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components[0].url).toBe(
+        '/documentation/components/amp-comp-0/'
+      );
+      expect(res.body.result.components[1].url).toBe(
+        '/documentation/components/amp-comp-1/'
+      );
+      expect(res.body.result.pages[0].url).toBe(
+        'https://blog.amp.dev/some/path'
+      );
+      expect(res.body.result.pages[1].url).toBe(
+        '/documentation/examples/amp-comp-3/'
+      );
+      done();
+    });
 });
 
-test('components with example get example and playground urls', (done) => {
+test('components with example get example and playground urls', done => {
   const searchResult = createSearchResult(2, 0, 2);
-  searchResult.items[0].link = 'https://amp.dev/documentation/components/amp-test-example/';
-  searchResult.items[1].link = 'https://amp.dev/documentation/components/amp-no-example/';
+  searchResult.items[0].link =
+    'https://amp.dev/documentation/components/amp-test-example/';
+  searchResult.items[1].link =
+    'https://amp.dev/documentation/components/amp-no-example/';
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=en&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components[0].url)
-            .toBe('/documentation/components/amp-test-example/');
-        expect(res.body.result.components[0].exampleUrl)
-            .toBe('/documentation/examples/components/amp-test-example/');
-        expect(res.body.result.components[0].playgroundUrl)
-            .toBe('http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example');
-        expect(res.body.result.components[1].url)
-            .toBe('/documentation/components/amp-no-example/');
-        expect(res.body.result.components[1].exampleUrl).toBe(undefined);
-        expect(res.body.result.components[1].playgroundUrl).toBe(undefined);
-        done();
-      });
+    .get('/search/do?q=query&locale=en&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components[0].url).toBe(
+        '/documentation/components/amp-test-example/'
+      );
+      expect(res.body.result.components[0].exampleUrl).toBe(
+        '/documentation/examples/components/amp-test-example/'
+      );
+      expect(res.body.result.components[0].playgroundUrl).toBe(
+        'http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example'
+      );
+      expect(res.body.result.components[1].url).toBe(
+        '/documentation/components/amp-no-example/'
+      );
+      expect(res.body.result.components[1].exampleUrl).toBe(undefined);
+      expect(res.body.result.components[1].playgroundUrl).toBe(undefined);
+      done();
+    });
 });
 
-test('components with example get example with locale and playground url without', (done) => {
+test('components with example get example with locale and playground url without', done => {
   const searchResult = createSearchResult(2, 0, 2);
-  searchResult.items[0].link = 'https://amp.dev/pt_br/documentation/components/amp-test-example/';
-  searchResult.items[1].link = 'https://amp.dev/pt_br/documentation/components/amp-no-example/';
+  searchResult.items[0].link =
+    'https://amp.dev/pt_br/documentation/components/amp-test-example/';
+  searchResult.items[1].link =
+    'https://amp.dev/pt_br/documentation/components/amp-no-example/';
   googleSearch.search.mockResolvedValue(searchResult);
 
   request(app)
-      .get('/search/do?q=query&locale=pt_BR&page=1')
-      .expect('Content-Type', /json/)
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result.components[0].url)
-            .toBe('/pt_br/documentation/components/amp-test-example/');
-        expect(res.body.result.components[0].exampleUrl)
-            .toBe('/pt_br/documentation/examples/components/amp-test-example/');
-        expect(res.body.result.components[0].playgroundUrl)
-            .toBe('http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example');
-        expect(res.body.result.components[1].url)
-            .toBe('/pt_br/documentation/components/amp-no-example/');
-        expect(res.body.result.components[1].exampleUrl).toBe(undefined);
-        expect(res.body.result.components[1].playgroundUrl).toBe(undefined);
-        done();
-      });
+    .get('/search/do?q=query&locale=pt_BR&page=1')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then(res => {
+      expect(res.body.result.components[0].url).toBe(
+        '/pt_br/documentation/components/amp-test-example/'
+      );
+      expect(res.body.result.components[0].exampleUrl).toBe(
+        '/pt_br/documentation/examples/components/amp-test-example/'
+      );
+      expect(res.body.result.components[0].playgroundUrl).toBe(
+        'http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example'
+      );
+      expect(res.body.result.components[1].url).toBe(
+        '/pt_br/documentation/components/amp-no-example/'
+      );
+      expect(res.body.result.components[1].exampleUrl).toBe(undefined);
+      expect(res.body.result.components[1].playgroundUrl).toBe(undefined);
+      done();
+    });
 });
 
-test('Invalid search', (done) => {
+test('Invalid search', done => {
   googleSearch.search.mockImplementation(async () => {
     throw Error('Should not be called');
   });
   request(app)
-      .get('/search/do')
-      .expect(200)
-      .then((res) => {
-        expect(res.body.result).toBeUndefined();
-        done();
-      });
+    .get('/search/do')
+    .expect(200)
+    .then(res => {
+      expect(res.body.result).toBeUndefined();
+      done();
+    });
 });
 
-test('exception handling', (done) => {
+test('exception handling', done => {
   googleSearch.search.mockImplementation(async () => {
     throw Error('Expected');
   });
   request(app)
-      .get('/search/do?q=query&locale=pt_BR&page=1')
-      .expect(500, done);
+    .get('/search/do?q=query&locale=pt_BR&page=1')
+    .expect(500, done);
 });
 
-
-test('autosuggest should return an ordered list with components,' +
-    ' build ins and some important included elements', (done) => {
-  request(app)
+test(
+  'autosuggest should return an ordered list with components,' +
+    ' build ins and some important included elements',
+  done => {
+    request(app)
       .get('/search/autosuggest')
       .expect('Content-Type', /json/)
       .expect(200)
-      .then((res) => {
+      .then(res => {
         // build in components
         expect(res.body.items.indexOf('amp-img')).not.toBeLessThan(0);
         // important included elements
@@ -330,16 +369,22 @@ test('autosuggest should return an ordered list with components,' +
         expect(res.body.items.indexOf('amp-story')).not.toBeLessThan(0);
         expect(res.body.items.indexOf('amp-youtube')).not.toBeLessThan(0);
         // sort order
-        expect(res.body.items.indexOf('amp-bind'))
-            .toBeLessThan(res.body.items.indexOf('amp-img'));
-        expect(res.body.items.indexOf('amp-img'))
-            .toBeLessThan(res.body.items.indexOf('amp-state'));
-        expect(res.body.items.indexOf('amp-state'))
-            .toBeLessThan(res.body.items.indexOf('amp-story'));
-        expect(res.body.items.indexOf('amp-story'))
-            .toBeLessThan(res.body.items.indexOf('amp-story-page'));
-        expect(res.body.items.indexOf('amp-story-page'))
-            .toBeLessThan(res.body.items.indexOf('amp-youtube'));
+        expect(res.body.items.indexOf('amp-bind')).toBeLessThan(
+          res.body.items.indexOf('amp-img')
+        );
+        expect(res.body.items.indexOf('amp-img')).toBeLessThan(
+          res.body.items.indexOf('amp-state')
+        );
+        expect(res.body.items.indexOf('amp-state')).toBeLessThan(
+          res.body.items.indexOf('amp-story')
+        );
+        expect(res.body.items.indexOf('amp-story')).toBeLessThan(
+          res.body.items.indexOf('amp-story-page')
+        );
+        expect(res.body.items.indexOf('amp-story-page')).toBeLessThan(
+          res.body.items.indexOf('amp-youtube')
+        );
         done();
       });
-});
+  }
+);

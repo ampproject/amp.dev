@@ -37,15 +37,16 @@ The mandatory tag 'link rel=canonical' is missing or incorrect.
 请将以下代码**添加**到 `<meta charset="utf-8" />` 标记下方：
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"]
 您可以创建独立的权威 AMP 网页。在这种情况下，权威链接仍是必需的，但应指向 AMP 文章本身：
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
+
 [/tip]
 
 现在，**重新加载**网页。虽然仍有很多错误需要修正，但权威链接错误已不复存在。
@@ -62,7 +63,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 只需将 `⚡` 属性添加到 `<html>` 标记，即可解决上述错误，如下所示：
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 现在，请重新加载网页并检查这两个错误是否已消失。
@@ -71,8 +72,9 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 虽然建议您指定 `⚡`，但您也可以使用 `amp` 属性来替代 `⚡` 属性，如下所示：
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
+
 [/tip]
 
 ## 指定视口
@@ -88,7 +90,10 @@ AMP 要求您为视口定义 `width` 和 `minimum-scale`。这两个值必须分
 要解决视口错误，请将以下 HTML 代码段添加到 `<head>` 标记中：
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta
+  name="viewport"
+  content="width=device-width,minimum-scale=1,initial-scale=1"
+/>
 ```
 
 在 AMP 中，必需为 `width` 和 `minimum-scale` 指定值。定义 `initial-scale` 不是一项强制性要求，但移动网站开发者通常都会指定此值，所以我们建议您也这么做。要详细了解视口和自适应设计，请参阅[配置视口](https://developers.google.com/speed/docs/insights/ConfigureViewport)。
@@ -113,16 +118,14 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
 接下来，我们来解决这个错误：
 
 1.  **移除** `<head>` 中指向外部样式表的 `<link>` 标记，然后将其替换为内嵌的 `<style amp-custom></style>` 标记。样式标记中的 `amp-custom` 属性必需提供。
-2. 将 [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) 文件中的所有样式**复制**到 `<style amp-custom></style>` 标记中。
+2.  将 [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) 文件中的所有样式**复制**到 `<style amp-custom></style>` 标记中。
 
 和之前一样，**重新加载**网页并验证样式表错误是否已消失。
 
@@ -154,7 +157,7 @@ The tag 'script' is disallowed except in specific forms.
 
 1.  将元数据添加到网页或配置 AMP 组件的脚本。这些脚本将具有类型属性 `application/ld+json` 或 `application/json`。
 2.  iframe 中包含的脚本。在 iframe 中包含 JavaScript 应该是在万不得已时才使用的措施。应尽可能地将 JavaScript 功能替换为使用 [AMP 组件](../../../../documentation/components/index.html)。在下一部分中，我们将探索我们的第一个 AMP 组件。
-[/tip]
+    [/tip]
 
 尝试打开外部 [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) 文件。发现了什么？此文件应该不含任何 JavaScript 代码，并且只包含如下所示的信息注释：
 
@@ -192,7 +195,63 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 每个 AMP 文档都必须具有以下 AMP 样板代码：
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 将该样板代码**添加**到文档的 `<head>` 标记底部。
@@ -255,7 +314,12 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 我们将 layout 属性**设为** `responsive`，让图片能够缩放并调整大小：
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 瞧！图片采用了正确的宽高比，并以自适应的方式填满了屏幕的整个宽度。
@@ -271,18 +335,78 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
 现在，您的 AMP 文档应该会大致如下所示：
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -318,9 +442,17 @@ The implied layout 'CONTAINER' is not supported by tag 'amp-img'.
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

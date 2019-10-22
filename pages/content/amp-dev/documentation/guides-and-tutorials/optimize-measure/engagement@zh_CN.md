@@ -39,6 +39,6 @@ $title: 提高用户互动度
 - **查看 AMP 路线图**，了解最新动态和功能：[roadmap](../../../community/roadmap.html)。
 
 - **积极参与。**
-在 [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)上贡献源代码，提交错误或提供反馈。 要分享您对 AMP 的想法，请访问 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)。
+  在 [GitHub](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)上贡献源代码，提交错误或提供反馈。 要分享您对 AMP 的想法，请访问 [Stack Overflow](https://stackoverflow.com/questions/tagged/amp-html)。
 
 - **了解**如何使用 AMP 组件：[Examples](../../../documentation/examples/index.html)。

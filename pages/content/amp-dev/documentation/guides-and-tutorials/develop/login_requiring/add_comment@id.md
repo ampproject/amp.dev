@@ -7,6 +7,7 @@ $title: Menambahkan komentar
 Di titik ini, pengguna dapat menambahkan komentar menggunakan koleksi [`amp-form`](../../../../documentation/components/reference/amp-form.md). Perhatikan bagaimana kemunculan formulir bersifat kondisional, bergantung pada status komponen [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -25,6 +26,7 @@ Berikut adalah contoh respons JSON:
 Komponen formulir hanya akan menampilkan nilai di dalam halaman menggunakan [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) template:
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -41,6 +43,7 @@ Komponen formulir hanya akan menampilkan nilai di dalam halaman menggunakan [`am
 Dalam contoh ini, kami hanya memeriksa apakah nilai komentar tidak kosong. Jika nilainya kosong, kami menampilkan error yang menyebabkan kode berikut dijalankan:
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

@@ -2,11 +2,10 @@
 $title: amp-access-laterpay
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: Permite que os editores se integrem facilmente com a plataforma de micropagamentos LaterPay.
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Permite que os editores se integrem facilmente com a plataforma de micropagamentos [LaterPay](https://www.laterpay.net). O `amp-access-laterpay` é baseado no [AMP Access](amp-access.md) e o exige.
 
@@ -49,7 +46,6 @@ Permite que os editores se integrem facilmente com a plataforma de micropagament
     <td>Consulte um exemplo <a href="https://ampbyexample.com/components/amp-access-laterpay/">com notas do amp-access-laterpay</a> no site AMP By Example.</td>
   </tr>
 </table>
-
 
 ## Comportamento <a name="behavior"></a>
 
@@ -78,7 +74,6 @@ Esse componente também depende da [marcação de conteúdo de acesso](amp-acces
 A configuração é semelhante ao AMP Access, mas não são necessários links de login, autorização e pingback.
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -87,7 +82,6 @@ A configuração é semelhante ao AMP Access, mas não são necessários links d
       }
     }
 </script>
-
 ```
 
 Os seguintes valores podem ser definidos no objeto de configuração `laterpay`:
@@ -165,7 +159,6 @@ Adicione a classe `amp-access-laterpay` se quiser usar o estilo padrão.
 <div amp-access="access" amp-access-hide="">
   <p>...article content...</p>
 </div>
-
 ```
 
 ## Estilo <a name="styling"></a>
@@ -177,7 +170,6 @@ Já existe um CSS com layout básico, mas é recomendável que os editores defin
 A estrutura criada para a caixa de diálogo se parece com a seguinte:
 
 ```html
-
 <div id="amp-access-laterpay-dialog" class="amp-access-laterpay">
   <div class="amp-access-laterpay-container">
     <p class="amp-access-laterpay-header">
@@ -186,30 +178,33 @@ A estrutura criada para a caixa de diálogo se parece com a seguinte:
     <ul>
       <li>
         <label>
-          <input name="purchaseOption" type="radio">
-            <div class="amp-access-laterpay-metadata">
-              <span class="amp-access-laterpay-title">Purchase option title</span>
-              <p class="amp-access-laterpay-description">Purchase option description</p>
-            </div>
-          </label>
-          <p class="amp-access-laterpay-price-container">
-            <span class="amp-access-laterpay-price">0.15</span>
-            <sup class="amp-access-laterpay-currency">USD</sup>
-          </p>
-        </li>
-        <!-- ... more list items for other purchase options ... -->
-      </ul>
-      <button class="amp-access-laterpay-purchase-button">Comprar agora</button>
-      <p class="amp-access-laterpay-already-purchased-container">
-        <a href="...">I already bought this</a>
-      </p>
-      <p class="amp-access-laterpay-footer">
-        Optional, appears if footer locale message is defined.
-      </p>
-    </div>
-    <p class="amp-access-laterpay-badge">Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a></p>
+          <input name="purchaseOption" type="radio" />
+          <div class="amp-access-laterpay-metadata">
+            <span class="amp-access-laterpay-title">Purchase option title</span>
+            <p class="amp-access-laterpay-description">
+              Purchase option description
+            </p>
+          </div>
+        </label>
+        <p class="amp-access-laterpay-price-container">
+          <span class="amp-access-laterpay-price">0.15</span>
+          <sup class="amp-access-laterpay-currency">USD</sup>
+        </p>
+      </li>
+      <!-- ... more list items for other purchase options ... -->
+    </ul>
+    <button class="amp-access-laterpay-purchase-button">Comprar agora</button>
+    <p class="amp-access-laterpay-already-purchased-container">
+      <a href="...">I already bought this</a>
+    </p>
+    <p class="amp-access-laterpay-footer">
+      Optional, appears if footer locale message is defined.
+    </p>
   </div>
-
+  <p class="amp-access-laterpay-badge">
+    Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a>
+  </p>
+</div>
 ```
 
 ## Localização <a name="localization"></a>
@@ -219,7 +214,6 @@ O texto mostrado na caixa de diálogo das opções de compra é definido pelo ed
 O texto restante faz parte do componente estendido e pode ser alterado e localizado usando as opções de configuração da seguinte forma:
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -230,7 +224,6 @@ O texto restante faz parte do componente estendido e pode ser alterado e localiz
       }
     }
 </script>
-
 ```
 
 As seguintes chaves de mensagem podem ser traduzidas ou personalizadas, mas precisam manter o significado e a intenção originais.
@@ -290,7 +283,6 @@ A seção sobre [vários provedores](amp-access.md#multiple-access-providers) ex
 Ao usar o AMP Access com o LaterPay e uma integração de paywall existente, a configuração necessária pode ser semelhante a esta:
 
 ```html
-
 <script id="amp-access" type="application/json">
   [
     {
@@ -312,15 +304,19 @@ Ao usar o AMP Access com o LaterPay e uma integração de paywall existente, a c
     }
   ]
 </script>
-
 ```
 
 Em que a marcação de acesso ao conteúdo pode se parecer com esta:
 
 ```html
-<section amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access" amp-access-hide>
+<section
+  amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access"
+  amp-access-hide
+>
   <p>
-    <a on="tap:amp-access.login-publishername">Login here to access your PublisherName subscription.</a>
+    <a on="tap:amp-access.login-publishername"
+      >Login here to access your PublisherName subscription.</a
+    >
   </p>
 
   <div id="amp-access-laterpay-dialog" class="amp-access-laterpay"></div>
@@ -333,17 +329,16 @@ Em que a marcação de acesso ao conteúdo pode se parecer com esta:
 <div amp-access="laterpay.access OR publishername.access" amp-access-hide>
   <p>...article content...</p>
 </div>
-
 ```
 
 Veja um exemplo mais completo em [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html) (link em inglês).
 
 ## Documentação relacionada <a name="related-documentation"></a>
 
-* [AMP Access](amp-access.md)
-* [LaterPay (link em inglês)](https://www.laterpay.net)
-* [LaterPay: como fazemos micropagamentos (link em inglês)](https://docs.laterpay.net/how_we_do_micropayments/)
-* [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) (link em inglês). Semelhante ao AMP Access LaterPay, mas voltado para páginas que não são AMP.
+- [AMP Access](amp-access.md)
+- [LaterPay (link em inglês)](https://www.laterpay.net)
+- [LaterPay: como fazemos micropagamentos (link em inglês)](https://docs.laterpay.net/how_we_do_micropayments/)
+- [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) (link em inglês). Semelhante ao AMP Access LaterPay, mas voltado para páginas que não são AMP.
 
 ## Validação <a name="validation"></a>
 

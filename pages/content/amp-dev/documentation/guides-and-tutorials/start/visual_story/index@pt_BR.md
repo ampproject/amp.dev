@@ -16,5 +16,5 @@ Neste tutorial, veremos o componente [`amp-story`](../../../../documentation/com
 - manter os leitores engajados com seu conteúdo por meio de links relacionados ao final da história.
 
 [tip type="note"]
- O componente [`amp-story`](../../../../documentation/components/reference/amp-story.md) é **experimental**.
+O componente [`amp-story`](../../../../documentation/components/reference/amp-story.md) é **experimental**.
 [/tip]

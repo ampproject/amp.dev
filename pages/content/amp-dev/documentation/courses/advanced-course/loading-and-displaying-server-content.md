@@ -5,15 +5,16 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Adding Products To Our Site
 
 Now it's time to go back and add some products to our Chico's Cheese Bikes page! Our goal is to add a new page to our site that allows us to:
 
-* Display product name, images, price, and rating for each product.
+- Display product name, images, price, and rating for each product.
 
-* Filter products to only display products for certain categories (e.g., bikes, helmets, gloves, etc.).
+- Filter products to only display products for certain categories (e.g., bikes, helmets, gloves, etc.).
 
-* Sort the list of products by price from high-to-low or low-to-high.
+- Sort the list of products by price from high-to-low or low-to-high.
 
 What might be the best way to do that? We could use HTML, CSS, and AMP components to represent a single product, and then we could duplicate that manually for each product we want to add. However, this poses a couple of significant problems.
 
@@ -35,9 +36,9 @@ We will retrieve and display server data using the [`<amp-list>`](../../../docum
 
 [sourcecode:html]
 {% raw %}<amp-list width="auto" height="100" layout="fixed-height" src="https://some.url/data.json" binding="refresh">
-    <template type="amp-mustache">
-        <p>{{name}}</p>
-    </template>
+<template type="amp-mustache">
+<p>{{name}}</p>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -45,24 +46,24 @@ The src property of `<amp-list>` contains the URL for the server endpoint that p
 
 [sourcecode:json]
 {
-    "items": [
-        {
-            "name": "Alice",
-            "age": 42
-        },
-        {
-            "name": "Bob",
-            "Age": 55
-        },
-        {
-            "name": "Carol",
-            "Age": 28
-        },
-        {
-            "name": "Dan",
-            "age": 22
-        }
-    ]
+"items": [
+{
+"name": "Alice",
+"age": 42
+},
+{
+"name": "Bob",
+"Age": 55
+},
+{
+"name": "Carol",
+"Age": 28
+},
+{
+"name": "Dan",
+"age": 22
+}
+]
 }
 [/sourcecode]
 
@@ -76,8 +77,8 @@ Because requests to the server take time and are not guaranteed to succeed, we m
 
 [sourcecode:html]
 {% raw %}<amp-list src="https://foo.com/list.json" binding="refresh">
-    <div placeholder>Loading ...</div>
-    <div fallback>Failed to load data.</div>
+<div placeholder>Loading ...</div>
+<div fallback>Failed to load data.</div>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -105,31 +106,31 @@ To start working with `<amp-list>`, let's recreate a small piece of a video site
 
 We're not going to build this product page inside of our Chico's Cheese Bikes project. Instead, you can use [this](https://glitch.com/edit/#!/snapdragon-melody) Glitch as a starting point for this exercise. **Note**: Don't forget to remix it so you can edit! The Glitch contains:
 
-* Some basic CSS and HTML to lay out the recommended video page.
+- Some basic CSS and HTML to lay out the recommended video page.
 
-* Sample video data in a JSON file.
+- Sample video data in a JSON file.
 
-* A pre-built server with a video data API endpoint and an `<amp-list>` component pre-configured to look at that endpoint.
+- A pre-built server with a video data API endpoint and an `<amp-list>` component pre-configured to look at that endpoint.
 
 [tip type="read-on"]
-**Note**: While it is not necessary for you to create a server to complete this exercise, you do have to follow the instructions on the README included in the linked Glitch sample. The README will walk you through how to update the environment configuration that the server uses in its CORS configuration. If you find that your exercise solution isn't working even when everything else seems to be right,  you probably need to update the address in the environment variables as the README instructs. If you're interested in learning more about what CORS is and why it is important, read [this](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) documentation.
+**Note**: While it is not necessary for you to create a server to complete this exercise, you do have to follow the instructions on the README included in the linked Glitch sample. The README will walk you through how to update the environment configuration that the server uses in its CORS configuration. If you find that your exercise solution isn't working even when everything else seems to be right, you probably need to update the address in the environment variables as the README instructs. If you're interested in learning more about what CORS is and why it is important, read [this](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) documentation.
 [/tip]
 
 Let's discuss the structure of the video data that we retrieve from the server:
 
 [sourcecode:json]
 {
-    "items": [
-        {
-            "id": "xEnifYNnDCA",
-            "img": "https://...02.png",
-            "title": "How to make Cheddar Cheese (Cloth Banded)",
-            "creator": "Gavin Webber",
-            "duration": "14:50",
-            "date": "Jul 24, 2016"
-        },
-        ...
-    ]
+"items": [
+{
+"id": "xEnifYNnDCA",
+"img": "https://...02.png",
+"title": "How to make Cheddar Cheese (Cloth Banded)",
+"creator": "Gavin Webber",
+"duration": "14:50",
+"date": "Jul 24, 2016"
+},
+...
+]
 }
 [/sourcecode]
 
@@ -137,25 +138,25 @@ The `id` field refers to the YouTube video ID for this video. The `img` field is
 
 Using the documentation for [`<amp-list>`](../../../documentation/components/reference/amp-list.md), [`<amp-youtube>`](../../../documentation/components/reference/amp-youtube.md), and the descriptions above, update the recommended video page to meet the following requirements:
 
-* The template for a recommended video should include an `<amp-youtube>` component, a title, the creator, the video duration, and the video's publication date.
+- The template for a recommended video should include an `<amp-youtube>` component, a title, the creator, the video duration, and the video's publication date.
 
-* When the `<amp-youtube>` video is initializing, it should have a placeholder `<amp-img>` component whose `src` comes from the server data.
+- When the `<amp-youtube>` video is initializing, it should have a placeholder `<amp-img>` component whose `src` comes from the server data.
 
-* The `<amp-list>` component should have a placeholder `<div>` that contains six skeleton loading video holders.
+- The `<amp-list>` component should have a placeholder `<div>` that contains six skeleton loading video holders.
 
 Recommended style guidelines:
 
-* Wrap the inside of the `<amp-list>` template of the `<amp-list>` component in a `<div>` with assigned class `video`.
+- Wrap the inside of the `<amp-list>` template of the `<amp-list>` component in a `<div>` with assigned class `video`.
 
-* The `<amp-youtube>` should have a `width` of 470px and a `height` of 280px with a `layout` of `responsive`.
+- The `<amp-youtube>` should have a `width` of 470px and a `height` of 280px with a `layout` of `responsive`.
 
-* The template of a recommended video can use `<h2>` for the video title; `<p>` tags for the video date, creator, and duration; and an additional `<strong>` tag for the creator.
+- The template of a recommended video can use `<h2>` for the video title; `<p>` tags for the video date, creator, and duration; and an additional `<strong>` tag for the creator.
 
-* The `<amp-list>` placeholder should contain a `<div>` with assigned class `placeholder-container`.
+- The `<amp-list>` placeholder should contain a `<div>` with assigned class `placeholder-container`.
 
-* The `placeholder-container` `<div>` should contain six `<div>` tags each with assigned class `placeholder-vid`.
+- The `placeholder-container` `<div>` should contain six `<div>` tags each with assigned class `placeholder-vid`.
 
-* Each `placeholder-vid` `<div>` should contain three `<div>` tags. The first should have assigned class `vid-pl`, and the other two should have assigned class `title-pl`.
+- Each `placeholder-vid` `<div>` should contain three `<div>` tags. The first should have assigned class `vid-pl`, and the other two should have assigned class `title-pl`.
 
 Once you've finished, your page should look like this:
 
@@ -167,22 +168,23 @@ The solution can be found in [this](https://glitch.com/edit/#!/potent-custard) G
 
 [sourcecode:html]
 {% raw %}<main>
-    <h2>Recommended</h2>
-    <amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
-        <template type="amp-mustache">
-            <div class="video">
-                <amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
-                    <amp-img src="{{img}}" placeholder layout="fill"></amp-img>
-                </amp-youtube>
-                <h2>{{title}}</h2>
-                <p>Published on {{date}}</p>
-                <p>
-                    <strong>{{creator}}</strong>
-                </p>
-                <p>Duration: {{duration}}</p>
-            </div>
-        </template>
-    </amp-list>
+<h2>Recommended</h2>
+<amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
+<template type="amp-mustache">
+<div class="video">
+<amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
+<amp-img src="{{img}}" placeholder layout="fill"></amp-img>
+</amp-youtube>
+<h2>{{title}}</h2>
+<p>Published on {{date}}</p>
+<p>
+<strong>{{creator}}</strong>
+</p>
+<p>Duration: {{duration}}</p>
+</div>
+</template>
+</amp-list>
+
 </main>
 {% endraw %}[/sourcecode]
 
@@ -190,55 +192,56 @@ If you added skeleton loading to your solution, it should look like this:
 
 [sourcecode:html]
 {% raw %}<main>
-    <h2>Recommended</h2>
-    <amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
-        <div placeholder>
-            <div class="placeholder-container">
-                <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-        </div>
-        <template type="amp-mustache">
-            <div class="video">
-                <amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
-                    <amp-img src="{{img}}" placeholder layout="fill"></amp-img>
-                </amp-youtube>
-                <h2>{{title}}</h2>
-                <p>Published on {{date}}</p>
-                <p>
-                    <strong>{{creator}}</strong>
-                </p>
-                <p>Duration: {{duration}}</p>
-            </div>
-        </template>
-    </amp-list>
+<h2>Recommended</h2>
+<amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
+<div placeholder>
+<div class="placeholder-container">
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+</div>
+<template type="amp-mustache">
+<div class="video">
+<amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
+<amp-img src="{{img}}" placeholder layout="fill"></amp-img>
+</amp-youtube>
+<h2>{{title}}</h2>
+<p>Published on {{date}}</p>
+<p>
+<strong>{{creator}}</strong>
+</p>
+<p>Duration: {{duration}}</p>
+</div>
+</template>
+</amp-list>
+
 </main>
 {% endraw %}[/sourcecode]
 
@@ -279,21 +282,21 @@ The following example shows how to combine `<amp-list>` with property bindings a
 [sourcecode:html]
 {% raw %}
 <amp-state id="productSettings">
-    <script type="application/json">
-        {
-            "category": "bikes",
-            "sort": "price-asc"
-        }
-    </script>
+<script type="application/json">
+{
+"category": "bikes",
+"sort": "price-asc"
+}
+</script>
 </amp-state>
 <amp-list src="https://pathto.ourserver.com/api/v1/products"
-          [src]="'https://pathto.ourserver.com/api/v1/products' +
-                 ‘?category=' + productSettings.category +
-                 ‘&sort=' + productSettings.sort"
-          binding="refresh">
-    <template type="amp-mustache">
-        ...
-    </template>
+[src]="'https://pathto.ourserver.com/api/v1/products' +
+‘?category=' + productSettings.category +
+‘&sort=' + productSettings.sort"
+binding="refresh">
+<template type="amp-mustache">
+...
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -307,19 +310,20 @@ The first thing we need to do is make our products page accessible from our home
 
 [sourcecode:html]
 {% raw %}<li class="nav-item">
-    <a href="/products.html">Our Products</a>
+<a href="/products.html">Our Products</a>
+
 </li>
 {% endraw %}[/sourcecode]
 
 Examine the `products.html` page. The products page already includes:
 
-* CSS necessary to complete this exercise.
+- CSS necessary to complete this exercise.
 
-* Parts of the layout that are common between the product and index pages, such as the header and slide-out menu.
+- Parts of the layout that are common between the product and index pages, such as the header and slide-out menu.
 
-* `<amp-state>` and options dropdowns to encompass all of the properties and option values that the server will expect.
+- `<amp-state>` and options dropdowns to encompass all of the properties and option values that the server will expect.
 
-* The AMP component scripts you should need to complete the exercise.
+- The AMP component scripts you should need to complete the exercise.
 
 To complete this exercise, we have to connect the select inputs to their corresponding state variables, bind the state variables to the `<amp-list>` component, and develop the template for our products. For now, the template will include an image of the product, the product name, the customer rating of the product, and the price.
 
@@ -327,19 +331,19 @@ Let’s look at the structure of the product data that we retrieve from the serv
 
 [sourcecode:json]
 {
-    "items": [
-        {
-            "id": "cheddar-chaser",
-            "type": "bicycle",
-            "url": "/pages/cheddar-chaser.html",
-            "name": "Cheddar Chaser",
-            "img": "https://...cheddar-chaser.jpg",
-            "stars": "5.0",
-            "price": 599,
-            "description": "Lorem ipsum dolor sit amet, ..."
-        },
-        ...
-    ]
+"items": [
+{
+"id": "cheddar-chaser",
+"type": "bicycle",
+"url": "/pages/cheddar-chaser.html",
+"name": "Cheddar Chaser",
+"img": "https://...cheddar-chaser.jpg",
+"stars": "5.0",
+"price": 599,
+"description": "Lorem ipsum dolor sit amet, ..."
+},
+...
+]
 }
 [/sourcecode]
 
@@ -347,23 +351,23 @@ The `id` and `type` fields are only really used by the server, so you can ignore
 
 Using the documentation for [`<amp-bind>`](../../../documentation/components/reference/amp-bind.md), [`<amp-list>`](../../../documentation/components/reference/amp-list.md), and all of the descriptions above, create a product listing page that fulfills the following requirements:
 
-* When the Product Type select input is updated, it should store its new selected value into the `category` state variable in the `<amp-state>` component with ID `products`.
+- When the Product Type select input is updated, it should store its new selected value into the `category` state variable in the `<amp-state>` component with ID `products`.
 
-* When the Sort By select input is updated, it should store its new selected value into the `sort` state variable.
+- When the Sort By select input is updated, it should store its new selected value into the `sort` state variable.
 
-* Whenever the `category` or `sort` state variables are updated, the `<amp-list>` component should retrieve an updated list of products from the server. **Note**: The query parameters that should be sent to the server have the same name as the state variables (`category` and `sort`).
+- Whenever the `category` or `sort` state variables are updated, the `<amp-list>` component should retrieve an updated list of products from the server. **Note**: The query parameters that should be sent to the server have the same name as the state variables (`category` and `sort`).
 
-* The template for a product should include an image of the product, the product name, the user rating for the product, and the price.
+- The template for a product should include an image of the product, the product name, the user rating for the product, and the price.
 
 Recommended style guidelines:
 
-* The contents of the template should be wrapped in a `<div>` with assigned class `product-card`.
+- The contents of the template should be wrapped in a `<div>` with assigned class `product-card`.
 
-* Each product image should be 200 by 150 pixels in size.
+- Each product image should be 200 by 150 pixels in size.
 
-* The text details about the product should be wrapped in a `<div>` with assigned class `product-details`.
+- The text details about the product should be wrapped in a `<div>` with assigned class `product-details`.
 
-* The product name, rating, and price can be placed in `<p>` tags with assigned classes `product-name`, `star-rank`, and `product-price`, respectively.
+- The product name, rating, and price can be placed in `<p>` tags with assigned classes `product-name`, `star-rank`, and `product-price`, respectively.
 
 Once you’ve finished, your page should look like this:
 
@@ -375,61 +379,62 @@ The portion of the page containing the product list should now look like this:
 
 [sourcecode:html]
 {% raw %}<main>
-    <div class="main-content">
-        <h2 class="main-heading">Our Products</h2>
-        <div class="filter-sort-selectors">
-            <p>Product Type:</p>
-            <select
+<div class="main-content">
+<h2 class="main-heading">Our Products</h2>
+<div class="filter-sort-selectors">
+<p>Product Type:</p>
+<select
                 class="product-selector"
                 on="change:AMP.setState({
                         products: {
                             category: event.value
                         }
                     })">
-                <option value="all">All</option>
-                <option value="bicycle">Bikes</option>
-                <option value="helmet">Helmets</option>
-                <option value="gloves">Gloves</option>
-                <option value="basket">Baskets</option>
-                <option value="bottle">Water Bottles</option>
-            </select>
-            <p class="sort-by">Sort By:</p>
-            <select
+<option value="all">All</option>
+<option value="bicycle">Bikes</option>
+<option value="helmet">Helmets</option>
+<option value="gloves">Gloves</option>
+<option value="basket">Baskets</option>
+<option value="bottle">Water Bottles</option>
+</select>
+<p class="sort-by">Sort By:</p>
+<select
                 class="order-selector"
                 on="change:AMP.setState({
                         products: {
                             sort: event.value
                         }
                     })">
-                <option value="price-desc">Price: High-Low</option>
-                <option value="price-asc">Price: Low-High</option>
-            </select>
-        </div>
-        <amp-list id="amp-list-bikes" class="product-list" width="auto"
-            height="600" layout="fixed-height" src="/products/filter"
-            [src]="'/products/filter?sort=' + products.sort +
-                   '&category=' + products.category"
-            binding="refresh">
-            <template type="amp-mustache">
-                <div class="product-card">
-                    <amp-img
+<option value="price-desc">Price: High-Low</option>
+<option value="price-asc">Price: Low-High</option>
+</select>
+</div>
+<amp-list id="amp-list-bikes" class="product-list" width="auto"
+height="600" layout="fixed-height" src="/products/filter"
+[src]="'/products/filter?sort=' + products.sort +
+'&category=' + products.category"
+binding="refresh">
+<template type="amp-mustache">
+<div class="product-card">
+<amp-img
                         width="200"
                         height="150"
                         layout="responsive"
                         alt="{{name}}"
                         src="{{img}}">
-                    </amp-img>
-                    <div class="product-details">
-                        <p class="product-name">{{name}}</p>
-                        <p class="star-rank">{{stars}} ★</p>
-                        <p class="product-price">
-                            ${{price}}
-                        </p>
-                    </div>
-                </div>
-            </template>
-        </amp-list>
-    </div>
+</amp-img>
+<div class="product-details">
+<p class="product-name">{{name}}</p>
+<p class="star-rank">{{stars}} ★</p>
+<p class="product-price">
+\${{price}}
+</p>
+</div>
+</div>
+</template>
+</amp-list>
+</div>
+
 </main>
 {% endraw %}[/sourcecode]
 [/filter]
@@ -454,9 +459,9 @@ We will retrieve and display server data using the `<amp-list>` component. The `
 
 [sourcecode:html]
 {% raw %}<amp-list width="auto" height="100" layout="fixed-height" src="https://some.url/data.json" binding="refresh">
-    <template type="amp-mustache">
-        <p>{{name}}</p>
-    </template>
+<template type="amp-mustache">
+<p>{{name}}</p>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -464,24 +469,24 @@ The src property of `<amp-list>` contains the URL for the server endpoint that p
 
 [sourcecode:json]
 {
-    "items": [
-        {
-            "name": "Alice",
-            "age": 42
-        },
-        {
-            "name": "Bob",
-            "Age": 55
-        },
-        {
-            "name": "Carol",
-            "Age": 28
-        },
-        {
-            "name": "Dan",
-            "age": 22
-        }
-    ]
+"items": [
+{
+"name": "Alice",
+"age": 42
+},
+{
+"name": "Bob",
+"Age": 55
+},
+{
+"name": "Carol",
+"Age": 28
+},
+{
+"name": "Dan",
+"age": 22
+}
+]
 }
 [/sourcecode]
 
@@ -495,8 +500,8 @@ Because requests to the server take time and are not guaranteed to succeed, we m
 
 [sourcecode:html]
 {% raw %}<amp-list src="https://foo.com/list.json" binding="refresh">
-    <div placeholder>Loading ...</div>
-    <div fallback>Failed to load data.</div>
+<div placeholder>Loading ...</div>
+<div fallback>Failed to load data.</div>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -536,17 +541,17 @@ Let's discuss the structure of the video data that we retrieve from the server:
 
 [sourcecode:json]
 {
-    "items": [
-        {
-            "id": "xEnifYNnDCA",
-            "img": "https://...02.png",
-            "title": "How to make Cheddar Cheese (Cloth Banded)",
-            "creator": "Gavin Webber",
-            "duration": "14:50",
-            "date": "Jul 24, 2016"
-        },
-        ...
-    ]
+"items": [
+{
+"id": "xEnifYNnDCA",
+"img": "https://...02.png",
+"title": "How to make Cheddar Cheese (Cloth Banded)",
+"creator": "Gavin Webber",
+"duration": "14:50",
+"date": "Jul 24, 2016"
+},
+...
+]
 }
 [/sourcecode]
 
@@ -584,22 +589,23 @@ The solution can be found in [this](https://glitch.com/edit/#!/potent-custard) G
 
 [sourcecode:html]
 {% raw %}<main>
-    <h2>Recommended</h2>
-    <amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
-        <template type="amp-mustache">
-            <div class="video">
-                <amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
-                    <amp-img src="{{img}}" placeholder layout="fill"></amp-img>
-                </amp-youtube>
-                <h2>{{title}}</h2>
-                <p>Published on {{date}}</p>
-                <p>
-                    <strong>{{creator}}</strong>
-                </p>
-                <p>Duration: {{duration}}</p>
-            </div>
-        </template>
-    </amp-list>
+<h2>Recommended</h2>
+<amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
+<template type="amp-mustache">
+<div class="video">
+<amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
+<amp-img src="{{img}}" placeholder layout="fill"></amp-img>
+</amp-youtube>
+<h2>{{title}}</h2>
+<p>Published on {{date}}</p>
+<p>
+<strong>{{creator}}</strong>
+</p>
+<p>Duration: {{duration}}</p>
+</div>
+</template>
+</amp-list>
+
 </main>
 {% endraw %}[/sourcecode]
 
@@ -607,55 +613,56 @@ If you added skeleton loading to your solution, it should look like this:
 
 [sourcecode:html]
 {% raw %}<main>
-    <h2>Recommended</h2>
-    <amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
-        <div placeholder>
-            <div class="placeholder-container">
-                <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-            <div class="placeholder-vid">
-                <div class="vid-pl"></div>
-                <div class="title-pl"></div>
-                <div class="title-pl"></div>
-            </div>
-        </div>
-        <template type="amp-mustache">
-            <div class="video">
-                <amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
-                    <amp-img src="{{img}}" placeholder layout="fill"></amp-img>
-                </amp-youtube>
-                <h2>{{title}}</h2>
-                <p>Published on {{date}}</p>
-                <p>
-                    <strong>{{creator}}</strong>
-                </p>
-                <p>Duration: {{duration}}</p>
-            </div>
-        </template>
-    </amp-list>
+<h2>Recommended</h2>
+<amp-list width="auto" height="600" layout="fixed-height" src="videos" binding="refresh">
+<div placeholder>
+<div class="placeholder-container">
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+<div class="placeholder-vid">
+<div class="vid-pl"></div>
+<div class="title-pl"></div>
+<div class="title-pl"></div>
+</div>
+</div>
+<template type="amp-mustache">
+<div class="video">
+<amp-youtube data-videoid="{{id}}" layout="responsive" width="480" height="270">
+<amp-img src="{{img}}" placeholder layout="fill"></amp-img>
+</amp-youtube>
+<h2>{{title}}</h2>
+<p>Published on {{date}}</p>
+<p>
+<strong>{{creator}}</strong>
+</p>
+<p>Duration: {{duration}}</p>
+</div>
+</template>
+</amp-list>
+
 </main>
 {% endraw %}[/sourcecode]
 
@@ -688,21 +695,21 @@ The following example shows how to combine `<amp-list>` with property bindings a
 [sourcecode:html]
 {% raw %}
 <amp-state id="productSettings">
-    <script type="application/json">
-        {
-            "category": "bikes",
-            "sort": "price-asc"
-        }
-    </script>
+<script type="application/json">
+{
+"category": "bikes",
+"sort": "price-asc"
+}
+</script>
 </amp-state>
 <amp-list src="https://pathto.ourserver.com/api/v1/products"
-          [src]="'https://pathto.ourserver.com/api/v1/products' +
-                 ‘?category=' + productSettings.category +
-                 ‘&sort=' + productSettings.sort"
-          binding="refresh">
-    <template type="amp-mustache">
-        ...
-    </template>
+[src]="'https://pathto.ourserver.com/api/v1/products' +
+‘?category=' + productSettings.category +
+‘&sort=' + productSettings.sort"
+binding="refresh">
+<template type="amp-mustache">
+...
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -716,7 +723,8 @@ The first thing we need to do is make our products page accessible from our home
 
 [sourcecode:html]
 {% raw %}<li class="nav-item">
-    <a href="/products.html">Our Products</a>
+<a href="/products.html">Our Products</a>
+
 </li>
 {% endraw %}[/sourcecode]
 
@@ -736,19 +744,19 @@ Let's look at the structure of the product data that we retrieve from the server
 
 [sourcecode:json]
 {
-    "items": [
-        {
-            "id": "cheddar-chaser",
-            "type": "bicycle",
-            "url": "/pages/cheddar-chaser.html",
-            "name": "Cheddar Chaser",
-            "img": "https://...cheddar-chaser.jpg",
-            "stars": "5.0",
-            "price": 599,
-            "description": "Lorem ipsum dolor sit amet, ..."
-        },
-        ...
-    ]
+"items": [
+{
+"id": "cheddar-chaser",
+"type": "bicycle",
+"url": "/pages/cheddar-chaser.html",
+"name": "Cheddar Chaser",
+"img": "https://...cheddar-chaser.jpg",
+"stars": "5.0",
+"price": 599,
+"description": "Lorem ipsum dolor sit amet, ..."
+},
+...
+]
 }
 [/sourcecode]
 
@@ -784,61 +792,62 @@ The portion of the page containing the product list should now look like this:co
 
 [sourcecode:html]
 {% raw %}<main>
-    <div class="main-content">
-        <h2 class="main-heading">Our Products</h2>
-        <div class="filter-sort-selectors">
-            <p>Product Type:</p>
-            <select
+<div class="main-content">
+<h2 class="main-heading">Our Products</h2>
+<div class="filter-sort-selectors">
+<p>Product Type:</p>
+<select
                 class="product-selector"
                 on="change:AMP.setState({
                         products: {
                             category: event.value
                         }
                     })">
-                <option value="all">All</option>
-                <option value="bicycle">Bikes</option>
-                <option value="helmet">Helmets</option>
-                <option value="gloves">Gloves</option>
-                <option value="basket">Baskets</option>
-                <option value="bottle">Water Bottles</option>
-            </select>
-            <p class="sort-by">Sort By:</p>
-            <select
+<option value="all">All</option>
+<option value="bicycle">Bikes</option>
+<option value="helmet">Helmets</option>
+<option value="gloves">Gloves</option>
+<option value="basket">Baskets</option>
+<option value="bottle">Water Bottles</option>
+</select>
+<p class="sort-by">Sort By:</p>
+<select
                 class="order-selector"
                 on="change:AMP.setState({
                         products: {
                             sort: event.value
                         }
                     })">
-                <option value="price-desc">Price: High-Low</option>
-                <option value="price-asc">Price: Low-High</option>
-            </select>
-        </div>
-        <amp-list id="amp-list-bikes" class="product-list" width="auto"
-            height="600" layout="fixed-height" src="/products/filter"
-            [src]="'/products/filter?sort=' + products.sort +
-                   '&category=' + products.category"
-            binding="refresh">
-            <template type="amp-mustache">
-                <div class="product-card">
-                    <amp-img
+<option value="price-desc">Price: High-Low</option>
+<option value="price-asc">Price: Low-High</option>
+</select>
+</div>
+<amp-list id="amp-list-bikes" class="product-list" width="auto"
+height="600" layout="fixed-height" src="/products/filter"
+[src]="'/products/filter?sort=' + products.sort +
+'&category=' + products.category"
+binding="refresh">
+<template type="amp-mustache">
+<div class="product-card">
+<amp-img
                         width="200"
                         height="150"
                         layout="responsive"
                         alt="{{name}}"
                         src="{{img}}">
-                    </amp-img>
-                    <div class="product-details">
-                        <p class="product-name">{{name}}</p>
-                        <p class="star-rank">{{stars}} ★</p>
-                        <p class="product-price">
-                            ${{price}}
-                        </p>
-                    </div>
-                </div>
-            </template>
-        </amp-list>
-    </div>
+</amp-img>
+<div class="product-details">
+<p class="product-name">{{name}}</p>
+<p class="star-rank">{{stars}} ★</p>
+<p class="product-price">
+\${{price}}
+</p>
+</div>
+</div>
+</template>
+</amp-list>
+</div>
+
 </main>
 {% endraw %}[/sourcecode]
 [/filter]

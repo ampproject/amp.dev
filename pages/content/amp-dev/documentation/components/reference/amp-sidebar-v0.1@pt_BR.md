@@ -10,8 +10,6 @@ toc: true
 $title: amp-sidebar
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -27,8 +25,6 @@ $title: amp-sidebar
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -58,21 +54,21 @@ No entanto, os atributos opcionais que aceitam consultas de mídia podem ser usa
 
 ## Comportamento <a name="behavior"></a>
 
-* O `<amp-sidebar>` precisa ser um filho direto do `<body>`.
-* A barra lateral só pode ser exibida no lado esquerdo ou direito de uma página.
-* O `<amp-sidebar>` pode conter qualquer elemento HTML válido (compatível com AMP).
-* O `<amp-sidebar>` pode conter qualquer um dos seguintes elementos AMP:
-    * `<amp-accordion>`
-    * `<amp-img>`
-    * `<amp-fit-text>`
-    * `<amp-list>`
-    * `<amp-live-list>`
-    * `<amp-social-share>`</li>
-* A altura máxima da barra lateral é 100 vh. Se a altura exceder 100 vh, uma barra de rolagem vertical será exibida. A altura padrão é definida como 100 vh no CSS e pode ser modificada.
-* A largura da barra lateral pode ser configurada e ajustada usando CSS (a largura mínima é de 45 px).
-* O recurso de tocar no zoom é desativado no `amp-sidebar` e é uma máscara quando a barra lateral está aberta.
+- O `<amp-sidebar>` precisa ser um filho direto do `<body>`.
+- A barra lateral só pode ser exibida no lado esquerdo ou direito de uma página.
+- O `<amp-sidebar>` pode conter qualquer elemento HTML válido (compatível com AMP).
+- O `<amp-sidebar>` pode conter qualquer um dos seguintes elementos AMP:
+  - `<amp-accordion>`
+  - `<amp-img>`
+  - `<amp-fit-text>`
+  - `<amp-list>`
+  - `<amp-live-list>`
+  - `<amp-social-share>`</li>
+- A altura máxima da barra lateral é 100 vh. Se a altura exceder 100 vh, uma barra de rolagem vertical será exibida. A altura padrão é definida como 100 vh no CSS e pode ser modificada.
+- A largura da barra lateral pode ser configurada e ajustada usando CSS (a largura mínima é de 45 px).
+- O recurso de tocar no zoom é desativado no `amp-sidebar` e é uma máscara quando a barra lateral está aberta.
 
-*Exemplo:*
+_Exemplo:_
 
 No exemplo a seguir, usamos o `amp-sidebar` para incluir itens de navegação. No entanto, o segundo e quarto itens, Nav Item 2 e Nav Item 4, são atribuídos ao código do elemento que está na página. Por meio do atributo [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md), podemos rolar suavemente até o elemento, usando o código e o `scrollTo` do elemento.
 
@@ -116,13 +112,13 @@ Se o usuário tocar novamente na área do conteúdo principal parcialmente visí
 
 Outra alternativa é pressionar a tecla Esc no teclado para fechar a barra lateral.
 
-*Exemplo:*
+_Exemplo:_
 
 ```html
-<button class="hamburger" on='tap:sidebar1.toggle'></button>
-<button on='tap:sidebar1'>Open</button>
-<button on='tap:sidebar1.open'>Open</button>
-<button on='tap:sidebar1.close'>x</button>
+<button class="hamburger" on="tap:sidebar1.toggle"></button>
+<button on="tap:sidebar1">Open</button>
+<button on="tap:sidebar1.open">Open</button>
+<button on="tap:sidebar1.close">x</button>
 ```
 
 ### Barra de ferramentas <a name="toolbar"></a>
@@ -131,14 +127,14 @@ Você pode criar um elemento `toolbar` exibido no `<body>` especificando o atrib
 
 #### Comportamento <a name="behavior-1"></a>
 
-* A barra lateral pode implementar barras de ferramentas adicionando elementos nav com os atributos `toolbar` e `toolbar-target`.
-* O elemento nav deve ser filho de `<amp-sidebar>` e seguir este formato: `<nav toolbar="(media-query)" toolbar-target="elementID">`.
-    * Por exemplo, este seria um uso válido da barra de ferramentas: `<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">`.</li>
-* O nav com o atributo toolbar precisa conter apenas um elemento `<ul>`, que contenha elementos `<li>`.
-    * Os elementos `<li>` podem conter qualquer elemento HTML válido (compatível com AMP) ou qualquer um dos elementos AMP compatíveis com `<amp-sidebar>`.</li>
-* O comportamento da barra de ferramentas só é aplicado enquanto a consulta de mídia do atributo `toolbar` é válida. Além disso, é necessário que haja um elemento com o código do atributo `toolbar-target` na página para que a barra de ferramentas seja aplicada.
+- A barra lateral pode implementar barras de ferramentas adicionando elementos nav com os atributos `toolbar` e `toolbar-target`.
+- O elemento nav deve ser filho de `<amp-sidebar>` e seguir este formato: `<nav toolbar="(media-query)" toolbar-target="elementID">`.
+  - Por exemplo, este seria um uso válido da barra de ferramentas: `<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">`.</li>
+- O nav com o atributo toolbar precisa conter apenas um elemento `<ul>`, que contenha elementos `<li>`.
+  - Os elementos `<li>` podem conter qualquer elemento HTML válido (compatível com AMP) ou qualquer um dos elementos AMP compatíveis com `<amp-sidebar>`.</li>
+- O comportamento da barra de ferramentas só é aplicado enquanto a consulta de mídia do atributo `toolbar` é válida. Além disso, é necessário que haja um elemento com o código do atributo `toolbar-target` na página para que a barra de ferramentas seja aplicada.
 
-*Exemplo: barra de ferramentas básica*
+_Exemplo: barra de ferramentas básica_
 
 No exemplo a seguir, exibimos um `toolbar` se a largura da janela for menor ou igual a 767 px. O `toolbar` contém um elemento de entrada de pesquisa. O elemento `toolbar` será anexado ao elemento `<div id="target-element">`.
 
@@ -156,32 +152,28 @@ No exemplo a seguir, exibimos um `toolbar` se a largura da janela for menor ou i
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="Pesquisar..."/>
+        <input placeholder="Pesquisar..." />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 ## Estilo da barra de ferramentas <a name="styling-toolbar"></a>
 
 O elemento `toolbar` do elemento `<amp-sidebar>` tem classes aplicadas a ele, dependendo de se o elemento `toolbar-target` é mostrado ou ocultado. Isso é útil para aplicar diferentes estilos no elemento `toolbar` e, em seguida, no elemento `toolbar-target`. As classes são `amp-sidebar-toolbar-target-shown` e `amp-sidebar-toolbar-target-hidden`. A classe `amp-sidebar-toolbar-target-shown` é aplicada ao elemento `toolbar-target` quando o elemento `toolbar-target` é mostrado. A classe `amp-sidebar-toolbar-target-hidden` é aplicada ao elemento `toolbar-target` quando o elemento `toolbar-target` está oculto.
 
-*Exemplo: classes de estado da barra de ferramentas*
+_Exemplo: classes de estado da barra de ferramentas_
 
 No exemplo a seguir, exibimos um `toolbar` se a largura da janela for menor ou igual a 767 px. O `toolbar` contém um elemento de entrada de pesquisa. O elemento `toolbar` será anexado ao elemento `<div id="target-element">`. No entanto, adicionamos alguns estilos personalizados para ocultar o elemento `toolbar` quando o elemento `<div id="toolbar-target">` é mostrado.
 
 ```html
 <style amp-custom="">
-
   .amp-sidebar-toolbar-target-shown {
-      display: none;
+    display: none;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -197,15 +189,13 @@ No exemplo a seguir, exibimos um `toolbar` se a largura da janela for menor ou i
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="Pesquisar..."/>
+        <input placeholder="Pesquisar..." />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 [tip type="success"]
@@ -218,21 +208,21 @@ O uso do `amp-sidebar` é compatível com o [componente](../../../about/stories.
 
 ### Comportamento <a name="behavior-2"></a>
 
-* O `<amp-sidebar>` precisa ser filho direto de `<amp-story>`.
-* A barra lateral tem como padrão o lado "inicial" "de documentos AMP normais, ou seja, o lado direito para idiomas escritos da esquerda para a direita e o esquerdo para idiomas da direita para a esquerda.
-* O `<amp-sidebar>` tem a cor branca como plano de fundo padrão, que pode ser modificada no CSS.
-* A largura máxima do `<amp-sidebar>` é aplicada como `280 px` e como `320 px` para experiências em computadores.
-* Um botão de estilo "hambúrguer" que abre/fecha a barra lateral aparecerá na interface do usuário da matéria.
+- O `<amp-sidebar>` precisa ser filho direto de `<amp-story>`.
+- A barra lateral tem como padrão o lado "inicial" "de documentos AMP normais, ou seja, o lado direito para idiomas escritos da esquerda para a direita e o esquerdo para idiomas da direita para a esquerda.
+- O `<amp-sidebar>` tem a cor branca como plano de fundo padrão, que pode ser modificada no CSS.
+- A largura máxima do `<amp-sidebar>` é aplicada como `280 px` e como `320 px` para experiências em computadores.
+- Um botão de estilo "hambúrguer" que abre/fecha a barra lateral aparecerá na interface do usuário da matéria.
 
 Há algumas restrições sobre quais atributos e recursos são permitidos para fornecer uma experiência de interface do usuário consistente na plataforma de matérias. Veja abaixo os atributos e recursos permitidos de um `amp-sidebar` dentro de um `amp-story`.
 
 ### Atributos permitidos <a name="allowed-attributes"></a>
 
-* [layout](#layout)
-* [data-close-button-aria-label](#data)
-* [common attributes](#common)
+- [layout](#layout)
+- [data-close-button-aria-label](#data)
+- [common attributes](#common)
 
-*Exemplo: barra lateral básica em uma matéria*
+_Exemplo: barra lateral básica em uma matéria_
 
 O exemplo a seguir mostra um `amp-sidebar` simples dentro de um `amp-story`.
 
@@ -261,7 +251,7 @@ O exemplo a seguir mostra um `amp-sidebar` simples dentro de um `amp-story`.
 
 ##### side <a name="side"></a>
 
-Indica em qual lado da página a barra lateral deve ser aberta, `left` (esquerdo) ou `right` (direito).  Se um `side` não for especificado, o valor do `side` será herdado do atributo `dir` da tag `body` (`ltr` =&gt; `left` , `rtl` =&gt; `right`). Se não houver um `dir`, o atributo `side` assumirá como padrão `left`.
+Indica em qual lado da página a barra lateral deve ser aberta, `left` (esquerdo) ou `right` (direito). Se um `side` não for especificado, o valor do `side` será herdado do atributo `dir` da tag `body` (`ltr` =&gt; `left` , `rtl` =&gt; `right`). Se não houver um `dir`, o atributo `side` assumirá como padrão `left`.
 
 ##### layout <a name="layout"></a>
 
@@ -281,7 +271,7 @@ Este atributo está presente em elementos `<nav toolbar="(media-query)" toolbar-
 
 ##### toolbar-target <a name="toolbar-target"></a>
 
-Este atributo está presente no `<nav toolbar="(media-query)" toolbar-target="elementID">` filho e aceita um código de um elemento na página.  O atributo `toolbar-target` colocará a barra de ferramentas no código especificado do elemento na página, sem o estilo padrão da barra de ferramentas. Consulte a seção [Barra de ferramentas](#toolbar-1) para ver mais informações sobre como usar barras de ferramentas.
+Este atributo está presente no `<nav toolbar="(media-query)" toolbar-target="elementID">` filho e aceita um código de um elemento na página. O atributo `toolbar-target` colocará a barra de ferramentas no código especificado do elemento na página, sem o estilo padrão da barra de ferramentas. Consulte a seção [Barra de ferramentas](#toolbar-1) para ver mais informações sobre como usar barras de ferramentas.
 
 ##### common attributes <a name="common"></a>
 
@@ -291,9 +281,9 @@ Este elemento inclui [atributos comuns](../../../documentation/guides-and-tutori
 
 O componente `amp-sidebar` pode ser estilizado com o CSS padrão.
 
-* O `width` do `amp-sidebar` pode ser configurado para ajustar a largura entre os valores mínimo (45 px) e máximo (80 vw) predefinidos.
-* O height do `amp-sidebar` pode ser configurado para ajustar a altura da barra lateral, se necessário. Se a altura exceder 100 vw, a barra lateral terá uma barra de rolagem vertical. A altura predefinida da barra lateral é de 100 vw e pode ser modificada no CSS para que seja menor.
-* O estado atual da barra lateral é exposto por meio do atributo `open`, que é configurado na tag `amp-sidebar` quando a barra lateral está aberta na página.
+- O `width` do `amp-sidebar` pode ser configurado para ajustar a largura entre os valores mínimo (45 px) e máximo (80 vw) predefinidos.
+- O height do `amp-sidebar` pode ser configurado para ajustar a altura da barra lateral, se necessário. Se a altura exceder 100 vw, a barra lateral terá uma barra de rolagem vertical. A altura predefinida da barra lateral é de 100 vw e pode ser modificada no CSS para que seja menor.
+- O estado atual da barra lateral é exposto por meio do atributo `open`, que é configurado na tag `amp-sidebar` quando a barra lateral está aberta na página.
 
 [tip type="success"]
 visite a página [AMP Start](https://ampstart.com/components#navigation) (link em inglês) para acessar menus de navegação responsivos e com estilos predefinidos que você pode usar nas suas páginas AMP.
@@ -309,11 +299,9 @@ Ao usar o recurso `toolbar`, o `autoscroll` só funciona se o elemento `<nav too
 
 ```html
 <style amp-custom="">
-
   nav [toolbar] {
     overflow: auto;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -329,9 +317,7 @@ Ao usar o recurso `toolbar`, o `autoscroll` só funciona se o elemento `<nav too
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 Consulte [este arquivo de exemplo](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) (link em inglês) para ver um código de exemplo em funcionamento.

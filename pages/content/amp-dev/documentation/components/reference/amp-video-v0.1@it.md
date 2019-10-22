@@ -2,14 +2,12 @@
 $title: amp-video
 $category@: media
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: Sostituisce il tag video HTML5.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Sostituisce il tag `video` HTML5. Deve essere utilizzato esclusivamente per gli incorporamenti di file video HTML5 diretti.
 
@@ -54,14 +50,15 @@ Il componente `amp-video` carica in un momento determinato dal tempo di esecuzio
 
 Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come secondari:
 
-* Tag `source`: come per il tag `<video>` HTML, puoi aggiungere dei tag `<source>` secondari in modo da specificare diversi file multimediali sorgente da riprodurre.
-* Tag `track` per attivare i sottotitoli nel video. Se la traccia è ospitata su un'origine diversa dal documento, devi aggiungere l'attributo `crossorigin` al tag `<amp-video>`.
-* Un segnaposto che verrà visualizzato prima che inizi la riproduzione del video.
-* Un fallback nel caso in cui il browser non supporti video HTML5: uno o zero nodi secondari immediati possono avere l'attributo `fallback`. Se presente, questo nodo e i suoi nodi secondari formano il contenuto visualizzato nel caso in cui il video HTML5 non sia supportato dal browser dell'utente.
+- Tag `source`: come per il tag `<video>` HTML, puoi aggiungere dei tag `<source>` secondari in modo da specificare diversi file multimediali sorgente da riprodurre.
+- Tag `track` per attivare i sottotitoli nel video. Se la traccia è ospitata su un'origine diversa dal documento, devi aggiungere l'attributo `crossorigin` al tag `<amp-video>`.
+- Un segnaposto che verrà visualizzato prima che inizi la riproduzione del video.
+- Un fallback nel caso in cui il browser non supporti video HTML5: uno o zero nodi secondari immediati possono avere l'attributo `fallback`. Se presente, questo nodo e i suoi nodi secondari formano il contenuto visualizzato nel caso in cui il video HTML5 non sia supportato dal browser dell'utente.
 
 #### Esempio <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -77,6 +74,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## Analisi dei dati <a name="analytics"></a>
@@ -174,18 +172,23 @@ Esempio:
 Questo esempio contiene gli attributi `poster` e `artwork`. L'attributo `poster` funge da immagine segnaposto prima della riproduzione del video, mentre `artwork` è l'immagine visualizzata nella notifica tramite l'API Media Session.
 
 ```html
-<amp-video width="720" height="305" layout="responsive"
-    src="https://yourhost.com/videos/myvideo.mp4"
-    poster="https://yourhost.com/posters/poster.png"
-    artwork="https://yourhost.com/artworks/artwork.png"
-    title="Awesome video" artist="Awesome artist"
-    album="Amazing album">
+<amp-video
+  width="720"
+  height="305"
+  layout="responsive"
+  src="https://yourhost.com/videos/myvideo.mp4"
+  poster="https://yourhost.com/posters/poster.png"
+  artwork="https://yourhost.com/artworks/artwork.png"
+  title="Awesome video"
+  artist="Awesome artist"
+  album="Amazing album"
+>
 </amp-video>
 ```
 
 ## Overlay click-to-play <a name="click-to-play-overlay"></a>
 
-La presenza di un overlay click-to-play è una funzione comune di UX per i lettori video disponibili sul Web.  Ad esempio, potresti mostrare un'icona di riproduzione personalizzata sulla quale l'utente può fare clic, includere il titolo del video, immagini di poster di varie dimensioni e così via.  Poiché il componente `amp-video` supporta l'azione AMP `play` standard, implementare il click-to-play è facile.
+La presenza di un overlay click-to-play è una funzione comune di UX per i lettori video disponibili sul Web. Ad esempio, potresti mostrare un'icona di riproduzione personalizzata sulla quale l'utente può fare clic, includere il titolo del video, immagini di poster di varie dimensioni e così via. Poiché il componente `amp-video` supporta l'azione AMP `play` standard, implementare il click-to-play è facile.
 
 Per un esempio dettagliato, visita la sezione [Overlay click-to-play per amp-video](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/) del sito AMP By Example.
 

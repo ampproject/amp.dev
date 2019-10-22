@@ -15,13 +15,13 @@
  */
 
 'use strict';
-const yaml = require('js-yaml');
-const express = require('express');
 const config = require('@lib/config.js');
+const express = require('express');
+const robots = require('./robots');
+const URL = require('url').URL;
+const yaml = require('js-yaml');
 const {join} = require('path');
 const {readFileSync} = require('fs');
-const URL = require('url').URL;
-const robots = require('./robots');
 
 const GO_LINKS_DEFINITION = join(__dirname, '../../config/go-links.yaml');
 
@@ -35,7 +35,9 @@ go.use((request, response, next) => {
   if (goLinks.simple[request.path]) {
     target = goLinks.simple[request.path];
   } else {
-    const match = goLinks.regex.find((regex) => request.path.match(regex.pattern));
+    const match = goLinks.regex.find(regex =>
+      request.path.match(regex.pattern)
+    );
     if (match) {
       target = request.path.replace(match.pattern, match.url);
     }

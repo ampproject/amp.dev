@@ -56,17 +56,17 @@ Düzen özniteliğine ilişkin desteklenen değerlerin tam listesini aşağıda 
 
 Birkaç örnekte, `width` veya `height` belirtilmemişse AMP çalışma zamanı bunları aşağıdaki gibi varsayılan değerlerine ayarlayabilir:
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Genişlik ve yükseklik varsayılan olarak 0 değerine ayarlanır.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Varsayılan genişlik ve yükseklik tarayıcıdan belirlenir.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Genişlik ve yükseklik varsayılan olarak 0 değerine ayarlanır.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): Varsayılan genişlik ve yükseklik tarayıcıdan belirlenir.
 
 ### Düzen özniteliği tanımlanmamışsa ne olur? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Düzen davranışı aşağıdaki gibi belirlenir:
 
-* `height` mevcutsa ve `width` yoksa veya `auto` değerine ayarlanmışsa `fixed-height` düzeni kabul edilir.
-* `width` veya `height` özniteliği, `sizes` özniteliğiyle birlikte mevcutsa `responsive` düzeni kabul edilir.
-* `width` veya `height` özniteliği mevcutsa `fixed` düzeni kabul edilir.
-* `width` ve `height` mevcut değilse `container` düzeni kabul edilir.
+- `height` mevcutsa ve `width` yoksa veya `auto` değerine ayarlanmışsa `fixed-height` düzeni kabul edilir.
+- `width` veya `height` özniteliği, `sizes` özniteliğiyle birlikte mevcutsa `responsive` düzeni kabul edilir.
+- `width` veya `height` özniteliği mevcutsa `fixed` düzeni kabul edilir.
+- `width` ve `height` mevcut değilse `container` düzeni kabul edilir.
 
 ## @media ve media özniteliğini kullanma
 
@@ -114,9 +114,9 @@ Bu basit örnekte, `srcset` özniteliği ekran genişliğine göre hangi resmin 
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w >
+src="wide.jpg"
+srcset="wide.jpg" 640w,
+"narrow.jpg" 320w >
 </amp-img>
 [/sourcecode]
 
@@ -132,10 +132,10 @@ Aşağıdaki örneği inceleyin:
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w
-    sizes="(min-width: 650px) 50vw, 100vw" >
+src="wide.jpg"
+srcset="wide.jpg" 640w,
+"narrow.jpg" 320w
+sizes="(min-width: 650px) 50vw, 100vw" >
 </amp-img>
 [/sourcecode]
 
@@ -156,7 +156,7 @@ Bir `placeholder` öğesi belirtilirse, AMP öğesinin doğrudan alt öğesi olm
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
-    <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -173,6 +173,7 @@ Herhangi bir öğe için tarayıcının desteklemediği yedek davranışı belir
 [sourcecode:html]
 <amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
     poster="myvideo-poster.jpg" >
+
   <div fallback>
         <p>Your browser doesn’t support HTML5 video.</p>
   </div>

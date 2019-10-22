@@ -60,7 +60,7 @@ Experiment opt-ins are saved to `localStorage` and only enables the experiment o
 For content served from non-CDN domains, experiments can be toggled in the devtools console using:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Any AMP file that includes experimental features will fail
@@ -74,7 +74,7 @@ Document can choose to opt in a certain experiments. To do that, place a meta ta
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -110,7 +110,7 @@ Components in the following list can currently be tested via an origin trial:
 Include the following `<meta>` tag within the `<head>` tag on each page that uses the origin trial experiment:
 
 ```html
-<meta name="amp-experiment-token" content="{copy your token here}">
+<meta name="amp-experiment-token" content="{copy your token here}" />
 ```
 
 Note: `"amp-experiment-token"` is the literal string, `"amp-experiment-token"`. Not the token itself (which goes into the content attribute), or the name of the experiment.

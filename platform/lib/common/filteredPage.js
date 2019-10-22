@@ -16,13 +16,13 @@
 
 'use strict';
 
-const URL = require('url').URL;
 const config = require('@lib/config.js');
+const URL = require('url').URL;
 
 const {SUPPORTED_FORMATS} = require('../amp/formatHelper.js');
 
 const FILTER_CLASSES = Object.fromEntries(
-    SUPPORTED_FORMATS.map((format) => [format, `ap--${format}`])
+  SUPPORTED_FORMATS.map(format => [format, `ap--${format}`])
 );
 
 const FILTERED_ROUTES = [
@@ -129,30 +129,30 @@ class Filter {
     });
 
     // Find possibly empty lists and remove them from sidebars
-    this._dom('.nav-list.level-2')
-        .each((index, navList) => {
-          navList = this._dom(navList);
+    this._dom('.nav-list.level-2').each((index, navList) => {
+      navList = this._dom(navList);
 
-          if (navList.children().length == 0) {
-            navList.parent().remove();
-          }
-        });
+      if (navList.children().length == 0) {
+        navList.parent().remove();
+      }
+    });
 
     // Remove empty top level categories from sidebar
-    this._dom('.nav-item.level-1')
-        .each((index, navItem) => {
-          navItem = this._dom(navItem);
+    this._dom('.nav-item.level-1').each((index, navItem) => {
+      navItem = this._dom(navItem);
 
-          // ... consider a category empty if there are no links in it
-          if (!navItem.has('a').length) {
-            navItem.remove();
-          }
-        });
+      // ... consider a category empty if there are no links in it
+      if (!navItem.has('a').length) {
+        navItem.remove();
+      }
+    });
 
     // Remove eventually unnecessary tutorial dividers left by the
     // previous transformation
-    this._dom('.nav-item-tutorial-divider:last-child,' +
-      '.nav-item-tutorial-divider:first-child').remove();
+    this._dom(
+      '.nav-item-tutorial-divider:last-child,' +
+        '.nav-item-tutorial-divider:first-child'
+    ).remove();
   }
 
   /**
@@ -173,7 +173,10 @@ class Filter {
       } else if (url.searchParams.get('url')) {
         // playground url parameters also need the filter parameter for inline examples
         const codeUrl = new URL(decodeURI(url.searchParams.get('url')));
-        if (!codeUrl.searchParams.get('format') && codeUrl.href.startsWith(previewHost)) {
+        if (
+          !codeUrl.searchParams.get('format') &&
+          codeUrl.href.startsWith(previewHost)
+        ) {
           codeUrl.searchParams.set('format', this._format);
           url.searchParams.set('url', encodeURI(codeUrl.toString()));
           a.attr('href', url.toString());
@@ -227,7 +230,10 @@ class Filter {
     this._dom('.ap-m-filter-bubble').each((index, filterBubble) => {
       filterBubble = this._dom(filterBubble);
       const category = filterBubble.data('category');
-      if (!this._dom(`.ap-m-teaser[data-category="${category}"]`).length && category) {
+      if (
+        !this._dom(`.ap-m-teaser[data-category="${category}"]`).length &&
+        category
+      ) {
         filterBubble.remove();
       }
     });

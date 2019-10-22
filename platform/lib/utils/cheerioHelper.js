@@ -24,12 +24,12 @@
 function htmlContent(dom) {
   let html = dom.html();
   html = html.replace(
-      'xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
-      'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"'
+    'xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink"',
+    'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"'
   );
   html = html.replace(
-      /xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
-      'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href='
+    /xlink="http:\/\/www\.w3\.org\/1999\/xlink" href=/gm,
+    'xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href='
   );
 
   // Ensure doctype has a line break before and after

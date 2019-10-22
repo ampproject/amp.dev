@@ -5,6 +5,7 @@ $title: AMP 페이지가 캐시되는 방법
 이 문서에서는 AMP 에코 시스템에서의 AMP 캐시의 역할과 AMP 페이지의 캐시 처리 방법에 대해 설명합니다.
 
 ## AMP 캐시란 무엇인가요?
+
 AMP 캐시는 유효한 AMP 문서들을 제공하기 위한 프록시 기반 CDN(Content Delivery Network)입니다. AMP 캐시의 용도는 다음과 같습니다.
 
 1.  오직 유효한 AMP 페이지만 제공
@@ -18,6 +19,7 @@ AMP 캐시는 유효한 AMP 문서들을 제공하기 위한 프록시 기반 CD
 ## 어떤 AMP 캐시가 이용가능한가요?
 
 현재, 두 가지 AMP 캐시 공급업체가 있습니다.
+
 - [Google AMP Cache](https://developers.google.com/amp/cache/)
 - [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
@@ -45,20 +47,20 @@ AMP는 오픈 에코 시스템이며 AMP 프로젝트는 AMP 캐시의 개발을
 </amp-img>
 
 ## AMP 페이지는 어떻게 캐시 됩니까?
+
 AMP 형식을 사용함으로써 콘텐츠가 AMP 캐시에 의해 캐시될 수 있게 합니다. AMP 페이지에 AMP 캐시를 추가할 수 있는 몇 가지 방법은 아래와 같습니다.
 
-* **플랫폼 검색**: 플랫폼은 `<html ⚡>` 또는 `<html amp>` 태그를 통해 AMP 콘텐츠를 검색하여 그 콘텐츠를 캐시 합니다. 예를 들어 구글 검색은 콘텐츠 크롤링을 하며, 식별되고 유효한 AMP 페이지들의 경우 해당 콘텐츠가 구글 AMP 캐시에 추가됩니다.
+- **플랫폼 검색**: 플랫폼은 `<html ⚡>` 또는 `<html amp>` 태그를 통해 AMP 콘텐츠를 검색하여 그 콘텐츠를 캐시 합니다. 예를 들어 구글 검색은 콘텐츠 크롤링을 하며, 식별되고 유효한 AMP 페이지들의 경우 해당 콘텐츠가 구글 AMP 캐시에 추가됩니다.
 
-* **캐시 URL 요청**: 플랫폼에서는 AMP 캐시 URL 형식을 사용하여 특별히 AMP 페이지를 요청할 수 있습니다. AMP 캐시는 역방향 프록시로 작동하므로 플랫폼이 페이지에 액세스할 경우 페이지가 자동으로 캐시됩니다.
-    - Google AMP Cache URL 예시: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+- **캐시 URL 요청**: 플랫폼에서는 AMP 캐시 URL 형식을 사용하여 특별히 AMP 페이지를 요청할 수 있습니다. AMP 캐시는 역방향 프록시로 작동하므로 플랫폼이 페이지에 액세스할 경우 페이지가 자동으로 캐시됩니다.
+  - Google AMP Cache URL 예시: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 참고 : AMP 캐시 URL은 사용자를 대상으로하는 URL이 아니며, 사용자는 일반적으로 이러한 URL을 통해 콘텐츠를 요청하지 않습니다.
 
-* **게시자 추가**: 게시자들은 AMP 캐시에 AMP 페이지를 특별히 추가할 수 있습니다. 이 옵션은 오직 Google AMP 캐시에만 적용됩니다. ([Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache) 참조).
+- **게시자 추가**: 게시자들은 AMP 캐시에 AMP 페이지를 특별히 추가할 수 있습니다. 이 옵션은 오직 Google AMP 캐시에만 적용됩니다. ([Google AMP Cache: Update AMP Content](https://developers.google.com/amp/cache/update-cache) 참조).
 
 ## 추가 리소스
 
-* [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
-* [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
-* [[Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
-
+- [AMP Project's AMP Cache guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+- [Google AMP Cache overview](https://developers.google.com/amp/cache/overview)
+- [[Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

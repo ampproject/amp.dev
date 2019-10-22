@@ -16,9 +16,9 @@
 
 'use strict';
 
-const {format} = require('util');
-const nodeFetch = require('node-fetch');
 const LRU = require('lru-cache');
+const nodeFetch = require('node-fetch');
+const {format} = require('util');
 
 const LOG_HOST = 'https://cdn.ampproject.org/rtv/%s/log-messages.json';
 const MAX_CACHE_SIZE = 10;
@@ -27,7 +27,7 @@ const MAX_CACHE_SIZE = 10;
  * Fetches and caches the runtime log.
  */
 class LogProvider {
-  constructor(fetch=nodeFetch) {
+  constructor(fetch = nodeFetch) {
     this.fetch_ = fetch;
     this.cache_ = new LRU(MAX_CACHE_SIZE);
   }

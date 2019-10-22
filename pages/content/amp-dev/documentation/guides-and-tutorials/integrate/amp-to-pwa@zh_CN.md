@@ -4,9 +4,9 @@ $title: 通过 AMP 网页预加载渐进式网页应用
 
 推荐采取的策略：**将一个 AMP 网页作为您网站的进入点**，然后**让 PWA 在后台做好准备**并切换到 PWA 以便用户继续进行浏览之旅。
 
-* 将所有的叶级内容页（包含具体内容的页面，而非概览页）发布为 AMP 网页，以便提供几乎即时交付的加载体验。
-* 当用户浏览您的内容时，这些 AMP 网页会使用 AMP 的专用元素 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) 让缓存和 PWA Shell 做好准备。
-* 当用户点击您网站上的另一个链接（例如，点击底部的号召性用语，以便获得与应用更相似的体验）时，Service Worker 会拦截相应请求、接管相应网页并改为加载 PWA Shell。
+- 将所有的叶级内容页（包含具体内容的页面，而非概览页）发布为 AMP 网页，以便提供几乎即时交付的加载体验。
+- 当用户浏览您的内容时，这些 AMP 网页会使用 AMP 的专用元素 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) 让缓存和 PWA Shell 做好准备。
+- 当用户点击您网站上的另一个链接（例如，点击底部的号召性用语，以便获得与应用更相似的体验）时，Service Worker 会拦截相应请求、接管相应网页并改为加载 PWA Shell。
 
 若想了解为何要使用此开发模式以及如何使用它，请继续阅读下文。
 
@@ -31,8 +31,10 @@ AMP 技术能够从 AMP 网页内安装渐进式网页应用的 Service Worker -
 首先，使用 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) 在您的所有 AMP 网页上安装 Service Worker；为此，请先通过相应脚本在您网页的 `<head>` 中添加该组件：
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 然后，在您 `<body>` 中的某个位置添加以下内容（请酌情进行修改以使其指向您的实际 Service Worker）：
@@ -49,20 +51,20 @@ AMP 技术能够从 AMP 网页内安装渐进式网页应用的 Service Worker -
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Perform install steps
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -84,8 +86,8 @@ self.addEventListener('install', function(event) {
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Immediately start downloading the actual resource.
       fetch(event.request.url);

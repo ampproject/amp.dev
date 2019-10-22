@@ -2,7 +2,7 @@
 $title: amp-3d-gltf
 $category@: media
 formats:
-- websites
+  - websites
 teaser:
   text: GL İletim Biçimi (gITF) 3D modellerini görüntüler.
 ---
@@ -22,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 GL İletim Biçimi (gITF) 3D modellerini görüntüler.
 
@@ -52,12 +50,13 @@ GL İletim Biçimi (gITF) 3D modellerini görüntüler.
 
 ```html
 <amp-3d-gltf
-    layout="responsive"
-    width="320"
-    height="240"
-    alpha="true"
-    antialiasing="true"
-    src="path/to/model.glb"></amp-3d-gltf>
+  layout="responsive"
+  width="320"
+  height="240"
+  alpha="true"
+  antialiasing="true"
+  src="path/to/model.glb"
+></amp-3d-gltf>
 ```
 
 ### Sınırlamalar <a name="limitations"></a>

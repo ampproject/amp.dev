@@ -6,13 +6,13 @@ description: 'AMP’s component system allows you to quickly build efficient and
 
 AMP’s component system allows you to quickly build efficient and responsive features into your articles with minimal effort. The AMP HTML library has three classifications for AMP components:
 
-- **built-in**: These are components that are included in the base AMP JavaScript library (specified in the `<head>` tag), such as [`amp-img`](../../../../documentation/components/reference/amp-img.md) and [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md).  These components can be used immediately in an AMP document.
+- **built-in**: These are components that are included in the base AMP JavaScript library (specified in the `<head>` tag), such as [`amp-img`](../../../../documentation/components/reference/amp-img.md) and [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). These components can be used immediately in an AMP document.
 
-- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements.  Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="[`amp-video`](../../../../documentation/components/reference/amp-video.md)  ...`).
+- **extended**: These are extensions to the base library that must be explicitly included in the document as custom elements. Custom elements require specific scripts that are added to the `<head>` section (e.g., `<script async custom-element="[`amp-video`](../../../../documentation/components/reference/amp-video.md) ...`).
 
-- **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released.  Learn more in [Experimental features](../../../../documentation/guides-and-tutorials/learn/experimental.md).
+- **experimental**: These are components that are released but are not yet ready for wide use. Developers can choose to opt-in to use these features before they are fully released. Learn more in [Experimental features](../../../../documentation/guides-and-tutorials/learn/experimental.md).
 
-Our sample already uses a built-in component, [`amp-img`](../../../../documentation/components/reference/amp-img.md), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial.  Now, let's add some commonly-used **extended** AMP components to our news article.
+Our sample already uses a built-in component, [`amp-img`](../../../../documentation/components/reference/amp-img.md), and we explored how that component relates to the AMP layout system in the ["Convert your HTML to AMP"](../../../../documentation/guides-and-tutorials/start/converting/index.md) tutorial. Now, let's add some commonly-used **extended** AMP components to our news article.
 
 ## Monetize with ads
 
@@ -25,13 +25,14 @@ Take a look at this example of a **DoubleClick** ad:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
 As you can see, this is a very simple configuration. Take note of the `type` attribute, which informs the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) component of the ad platform that we want to use. In this case, we want to use the [DoubleClick](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md) platform, so we specified `doubleclick` as the value.
 
-The `data-slot` attribute is more unique. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), any attributes that start with  `data-` are vendor-specific attributes. This means that not all vendors will necessarily require this particular attribute, nor will they necessarily react if it is supplied. For example, compare the **DoubleClick** example from above with the following test ad from the [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) platform:
+The `data-slot` attribute is more unique. In [`amp-ad`](../../../../documentation/components/reference/amp-ad.md), any attributes that start with `data-` are vendor-specific attributes. This means that not all vendors will necessarily require this particular attribute, nor will they necessarily react if it is supplied. For example, compare the **DoubleClick** example from above with the following test ad from the [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md) platform:
 
 ```html
 <amp-ad
@@ -40,7 +41,8 @@ The `data-slot` attribute is more unique. In [`amp-ad`](../../../../documentatio
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -51,7 +53,11 @@ Remember, not all components are included in the core AMP library JavaScript fil
 **Add** the following script to the `<head>` tag:
 
 ```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+<script
+  async
+  custom-element="amp-ad"
+  src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
+></script>
 ```
 
 **Refresh** the page and you should see two test ads:
@@ -62,14 +68,15 @@ Remember, not all components are included in the core AMP library JavaScript fil
 **IMPORTANT –** You might have some errors in your developer console, such as `Mixed Content` or `XMLHttpRequest cannot load`. The former error is likely related to the A9 advertisement because not all the content it loads is secure. This is a notable requirement for all ads served on AMP.
 [/tip]
 
-The two [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)s below provide an example of the flexibility [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) provides for supporting ad platform features.  In this case we've configured (using DoubleClick's dashboard) two DoubleClick test ads to only show in certain countries--the first will show only in the UK and the second will show only in the US.  Try **adding** these two geotargeting ad configurations in the AMP document below the ads you added earlier:
+The two [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)s below provide an example of the flexibility [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) provides for supporting ad platform features. In this case we've configured (using DoubleClick's dashboard) two DoubleClick test ads to only show in certain countries--the first will show only in the UK and the second will show only in the US. Try **adding** these two geotargeting ad configurations in the AMP document below the ads you added earlier:
 
 ```html
 <amp-ad
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -77,7 +84,8 @@ The two [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)s be
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -87,7 +95,7 @@ The two [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)s be
 {{ image('/static/img/docs/tutorials/tut-advanced-ad-geo.png', 375, 345, align='center half', caption='Test ads') }}
 
 [tip type="note"]
-**NOTE –**  You might notice that inside these [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
+**NOTE –** You might notice that inside these [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) tags are additional `div` tags with an attribute named `fallback` on them. Can you guess what the `fallback` attribute denotes? It informs AMP’s loading system to only show the contents of that element when the parent element fails to load successfully. Learn more in [Placeholders & fallbacks](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 [/tip]
 
 [tip type="read-on"]
@@ -95,7 +103,7 @@ The two [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)s be
 [/tip]
 
 [tip type="note"]
-**NOTE –**  No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via an iframe sandbox) as the AMP document and executes the ad network’s JS inside that iframe sandbox.
+**NOTE –** No ad network-provided JavaScript is allowed to run inside the AMP document. Instead, the AMP runtime loads an iframe from a different origin (via an iframe sandbox) as the AMP document and executes the ad network’s JS inside that iframe sandbox.
 [/tip]
 
 Our AMP document now includes text, an image, and an advertisement embedded on the page, which are all key ingredients to telling a story and monetizing your content. However, modern websites often include more functionality than simply pictures and text.
@@ -106,7 +114,8 @@ Let’s take our AMP document to the next level and add more advanced web functi
 - Tweets
 - Article quotes
 
-##  Embed a YouTube video
+## Embed a YouTube video
+
 Let’s try embedding a YouTube video into the document. **Add** the following code just after the `<header>` in your AMP document (above the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)s you just added):
 
 ```html
@@ -114,27 +123,32 @@ Let’s try embedding a YouTube video into the document. **Add** the following c
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Refresh** the page. Instead of the video you'll see this text: *“The video could not be loaded.”*
+**Refresh** the page. Instead of the video you'll see this text: _“The video could not be loaded.”_
 
 Even if your browser can show YouTube videos without issue, you will still receive this error. Why? The video hasn’t actually failed to load, rather the component itself failed.
 
 Remember, not all components are included in the core AMP library JavaScript file. We need to include an additional JavaScript request for the YouTube component.
 
 [tip type="note"]
-**NOTE –**  If you still have your developer console open and `#development=1` in your URL, you'll see an AMP validator error at this point reminding you to add the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) JavaScript and a link to documentation that will tell you the `script` tag to add.
+**NOTE –** If you still have your developer console open and `#development=1` in your URL, you'll see an AMP validator error at this point reminding you to add the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) JavaScript and a link to documentation that will tell you the `script` tag to add.
 [/tip]
 
 **Add** the following script to the `<head>` tag:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Refresh** the page and you should see the YouTube video:
@@ -146,16 +160,21 @@ As with the other elements on the page, we specified the `width` and `height` of
 To learn more about embedding YouTube videos, read the [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) component documentation. For even more video and media components, check out the [list of media AMP components](../../../../documentation/components/index.html#media).
 
 [tip type="tip"]
-**TIP –**  Use the [`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
+**TIP –** Use the [`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) attribute to inform users if a component fails to load or if the component is unsupported in their browser.
 [/tip]
 
 ## Display a Tweet
+
 Embedding preformatted tweets from Twitter is a common feature in news articles. The [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) component can provide this functionality with ease.
 
 Start by adding the following JavaScript request to the `<head>` tag of your document:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Now, in your article **add** this code to embed the Tweet:
@@ -165,7 +184,8 @@ Now, in your article **add** this code to embed the Tweet:
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -192,7 +212,11 @@ AMP provides another component specifically designed for this type of situation,
 Let’s give it a try. First, **add** the component’s library to the `<head>` tag:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Add the following to your page:
@@ -217,10 +241,14 @@ Or, what if the quotation is longer?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 
-As a last experiment with [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md), try creating a short piece of text,  such as "Hello" with a much larger height (for example, a value of 400), and maintaining the max-font-size attribute value of 42. What would the resulting page look like? Is the text centered vertically? Or, does the height of the [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) tag shrink to fit the max font size? With what you already know about AMP’s layout system, try to answer the question before playing with the code!
+As a last experiment with [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md), try creating a short piece of text, such as "Hello" with a much larger height (for example, a value of 400), and maintaining the max-font-size attribute value of 42. What would the resulting page look like? Is the text centered vertically? Or, does the height of the [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) tag shrink to fit the max font size? With what you already know about AMP’s layout system, try to answer the question before playing with the code!
 
 You can learn more about [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) from [AMP by Example's live demo](../../../../documentation/examples/documentation/amp-fit-text.html).

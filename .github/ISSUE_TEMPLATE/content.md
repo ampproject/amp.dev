@@ -4,7 +4,6 @@ about: I found a gap in the docs or about pages.
 title: ''
 labels: 'Category: Content, Status: Pending Triage'
 assignees: ''
-
 ---
 
 ## 📖 Missing or out-of-date documentation

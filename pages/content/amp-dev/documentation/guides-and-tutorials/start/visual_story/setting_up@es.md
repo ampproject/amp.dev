@@ -17,11 +17,11 @@ Antes de comenzar este tutorial, necesitas lo siguiente:
 
 1.  Descarga el código del tutorial, que está comprimido en un archivo ZIP, desde la siguiente URL: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
 
-2. Extrae el contenido del archivo ZIP.  En el directorio **amp-pets-story** se encuentran los archivos de imagen, vídeo, audio y datos que usaremos para crear nuestra historia, con el archivo **pets.html** como punto de partida. La versión completa de la historia se puede encontrar en el archivo [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
+2.  Extrae el contenido del archivo ZIP. En el directorio **amp-pets-story** se encuentran los archivos de imagen, vídeo, audio y datos que usaremos para crear nuestra historia, con el archivo **pets.html** como punto de partida. La versión completa de la historia se puede encontrar en el archivo [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 
 #### Paso 2. Ejecuta la página de muestra
 
-Para probar nuestra historia de muestra, se tiene que poder acceder a los archivos desde un servidor web. Hay varias formas de crear un servidor web local temporal en el que hacer pruebas.  A continuación te mostramos algunas opciones; elige la que te vaya mejor:
+Para probar nuestra historia de muestra, se tiene que poder acceder a los archivos desde un servidor web. Hay varias formas de crear un servidor web local temporal en el que hacer pruebas. A continuación te mostramos algunas opciones; elige la que te vaya mejor:
 
 - [La aplicación de Google Chrome "Web Server for Chrome"](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [Un servidor Python HTTP local](https://developer.mozilla.org/es/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

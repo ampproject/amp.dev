@@ -2,11 +2,10 @@
 $title: amp-addthis
 $category@: social
 formats:
-- websites
+  - websites
 teaser:
   text: Afficher un élément intégré Outils Web AddThis.
 ---
-
 
 <!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Ce composant affiche un élément intégré Outils Web [AddThis](https://www.addthis.com).
 
 <table>
@@ -38,8 +35,6 @@ Ce composant affiche un élément intégré Outils Web [AddThis](https://www.add
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
 </table>
-
-
 
 ## Pourquoi utiliser AddThis ? <a name="why-addthis"></a>
 
@@ -54,6 +49,7 @@ AddThis est utilisé par plus de 15 millions de sites Web qui enregistrent plus
 La barre flottante s'affiche sur les côtés, en bas ou en haut de la page. Elle suit le lecteur lorsque l'utilisateur fait défiler la page. Il s'agit là d'un excellent moyen de promouvoir le partage sans gêner la lecture.
 
 Exemple :
+
 ```html
 <!--
   This example uses a placeholder pubId.
@@ -61,12 +57,13 @@ Exemple :
   creating an account on https://www.addthis.com/dashboard.
 -->
 <amp-addthis
-width="320"
-height="92"
-layout="responsive"
-data-pub-id="ra-5c191331410932ff"
-data-widget-id="957l"
-data-widget-type="floating">
+  width="320"
+  height="92"
+  layout="responsive"
+  data-pub-id="ra-5c191331410932ff"
+  data-widget-id="957l"
+  data-widget-type="floating"
+>
 </amp-addthis>
 ```
 
@@ -75,6 +72,7 @@ data-widget-type="floating">
 Intégrez des boutons "Partager" dans votre propre contenu pour offrir une expérience de partage fluide.
 
 Exemple :
+
 ```html
 <!--
   This example uses a placeholder pubId.
@@ -82,11 +80,12 @@ Exemple :
   creating an account on https://www.addthis.com/dashboard.
 -->
 <amp-addthis
-width="320"
-height="92"
-data-pub-id="ra-5c191331410932ff"
-data-widget-id="mv93"
-data-widget-type="inline">
+  width="320"
+  height="92"
+  data-pub-id="ra-5c191331410932ff"
+  data-widget-id="mv93"
+  data-widget-type="inline"
+>
 </amp-addthis>
 ```
 
@@ -151,13 +150,13 @@ Les outils AddThis et la barre d'outils AddThis recueillent des informations à 
 
 Les données AddThis peuvent se composer des éléments suivants :
 
-* Adresse IP (Internet Protocol), identifiant publicitaire pour mobile (MAID) (un identifiant qui permet aux développeurs d'applications mobiles d'identifier les utilisateurs de leurs applications), identifiant d'application mobile, type de navigateur, langue du navigateur, type de système d'exploitation, et date et heure auxquelles l'utilisateur final a visité le site d'un éditeur ou une barre d'outils.
-* Internaute qui a utilisé la barre d'outils.
-* Comportement sur le site d'un éditeur : durée de la visite sur le site d'un éditeur, manière dont l'utilisateur final a partagé le contenu sur le site et comportement de défilement adopté par l'utilisateur.
-* URL de provenance et type de recherche sur le Web que l'utilisateur final a employée pour rechercher le site d'un éditeur et y accéder.
-* Mots clés saisis dans la fonctionnalité de recherche de la barre d'outils AddThis, et informations relatives au téléchargement, à l'installation ou à la désinstallation de la barre d'outils AddThis.
-* Informations sur la fréquence à laquelle un utilisateur final se sert des outils AddThis et sur la fréquence à laquelle un utilisateur de la barre d'outils utilise la barre d'outils AddThis.
-* Données de géolocalisation déduites de l'adresse IP d'un utilisateur final et d'un utilisateur de la barre d'outils.
+- Adresse IP (Internet Protocol), identifiant publicitaire pour mobile (MAID) (un identifiant qui permet aux développeurs d'applications mobiles d'identifier les utilisateurs de leurs applications), identifiant d'application mobile, type de navigateur, langue du navigateur, type de système d'exploitation, et date et heure auxquelles l'utilisateur final a visité le site d'un éditeur ou une barre d'outils.
+- Internaute qui a utilisé la barre d'outils.
+- Comportement sur le site d'un éditeur : durée de la visite sur le site d'un éditeur, manière dont l'utilisateur final a partagé le contenu sur le site et comportement de défilement adopté par l'utilisateur.
+- URL de provenance et type de recherche sur le Web que l'utilisateur final a employée pour rechercher le site d'un éditeur et y accéder.
+- Mots clés saisis dans la fonctionnalité de recherche de la barre d'outils AddThis, et informations relatives au téléchargement, à l'installation ou à la désinstallation de la barre d'outils AddThis.
+- Informations sur la fréquence à laquelle un utilisateur final se sert des outils AddThis et sur la fréquence à laquelle un utilisateur de la barre d'outils utilise la barre d'outils AddThis.
+- Données de géolocalisation déduites de l'adresse IP d'un utilisateur final et d'un utilisateur de la barre d'outils.
 
 Les données AddThis seront traitées comme des informations à caractère personnel dans la mesure requise par la loi applicable. Conformément aux conditions d'utilisation d'AddThis, les éditeurs sont tenus d'obtenir toutes les autorisations et tous les consentements nécessaires de la part des utilisateurs finaux, et de fournir toutes les notifications requises pour transmettre à Oracle les données AddThis collectées auprès des utilisateurs finaux.
 

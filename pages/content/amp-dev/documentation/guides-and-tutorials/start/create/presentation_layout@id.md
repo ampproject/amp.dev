@@ -7,6 +7,7 @@ $title: Memodifikasi Presentasi dan Layout
 AMP adalah laman web, setiap penerapan gaya pada halaman dan elemen-elemennya dilakukan menggunakan properti CSS umum. Elemen gaya menggunakan pemilih kelas atau elemen dalam stylesheet sisipan dalam `<head>` yang disebut dengan `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -17,6 +18,7 @@ AMP adalah laman web, setiap penerapan gaya pada halaman dan elemen-elemennya di
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Setiap halaman AMP hanya bisa memiliki satu sylesheet yang disematkan, dan ada pemilih tertentu yang tidak bisa Anda gunakan. [Ketahui semua tentang penggayaan](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

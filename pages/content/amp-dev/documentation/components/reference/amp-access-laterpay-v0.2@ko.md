@@ -23,8 +23,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 게시자가 [LaterPay](https://www.laterpay.net) 소액결제 플랫폼과 손쉽게 통합할 수 있습니다. `amp-access-laterpay`는 [AMP 액세스](amp-access.md)를 기반으로 하며 AMP 액세스가 필요합니다.
 
 <table>
@@ -48,7 +46,6 @@ limitations under the License.
     <td>AMP By Example의 <a href="https://ampbyexample.com/components/amp-access-laterpay/">annotated amp-access-laterpay</a> 예를 참조하세요.</td>
   </tr>
 </table>
-
 
 ## 동작 <a name="behavior"></a>
 
@@ -77,7 +74,6 @@ AMP 액세스와 함께 사용하려는 자체 페이월 서비스가 있고 동
 구성은 AMP 액세스와 비슷하지만 승인, 핑백, 로그인 링크가 필요하지 않습니다.
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -163,7 +159,6 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
 <div amp-access="access" amp-access-hide="">
   <p>...기사 내용...</p>
 </div>
-
 ```
 
 ## 스타일 지정 <a name="styling"></a>
@@ -175,7 +170,6 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
 대화상자용으로 생성된 구조의 형식은 다음과 같습니다.
 
 ```html
-
 <div id="amp-access-laterpay-dialog" class="amp-access-laterpay">
   <div class="amp-access-laterpay-container">
     <p class="amp-access-laterpay-header">
@@ -184,30 +178,31 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
     <ul>
       <li>
         <label>
-          <input name="purchaseOption" type="radio">
-            <div class="amp-access-laterpay-metadata">
-              <span class="amp-access-laterpay-title">구매 옵션 제목</span>
-              <p class="amp-access-laterpay-description">구매 옵션 설명</p>
-            </div>
-          </label>
-          <p class="amp-access-laterpay-price-container">
-            <span class="amp-access-laterpay-price">0.15</span>
-            <sup class="amp-access-laterpay-currency">USD</sup>
-          </p>
-        </li>
-        <!-- ... 다른 구매 옵션을 위한 추가 목록 항목 ... -->
-      </ul>
-      <button class="amp-access-laterpay-purchase-button">지금 구매</button>
-      <p class="amp-access-laterpay-already-purchased-container">
-        <a href="...">이미 구매함</a>
-      </p>
-      <p class="amp-access-laterpay-footer">
-        선택사항이며 바닥글 언어 메시지가 정의된 경우 표시됩니다.
-      </p>
-    </div>
-    <p class="amp-access-laterpay-badge"><a href="https://laterpay.net" target="_blank">LaterPay</a> 제공</p>
+          <input name="purchaseOption" type="radio" />
+          <div class="amp-access-laterpay-metadata">
+            <span class="amp-access-laterpay-title">구매 옵션 제목</span>
+            <p class="amp-access-laterpay-description">구매 옵션 설명</p>
+          </div>
+        </label>
+        <p class="amp-access-laterpay-price-container">
+          <span class="amp-access-laterpay-price">0.15</span>
+          <sup class="amp-access-laterpay-currency">USD</sup>
+        </p>
+      </li>
+      <!-- ... 다른 구매 옵션을 위한 추가 목록 항목 ... -->
+    </ul>
+    <button class="amp-access-laterpay-purchase-button">지금 구매</button>
+    <p class="amp-access-laterpay-already-purchased-container">
+      <a href="...">이미 구매함</a>
+    </p>
+    <p class="amp-access-laterpay-footer">
+      선택사항이며 바닥글 언어 메시지가 정의된 경우 표시됩니다.
+    </p>
   </div>
-
+  <p class="amp-access-laterpay-badge">
+    <a href="https://laterpay.net" target="_blank">LaterPay</a> 제공
+  </p>
+</div>
 ```
 
 ## 현지화 <a name="localization"></a>
@@ -217,7 +212,6 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
 나머지 텍스트는 확장된 구성요소의 일부이며 다음과 같이 구성 옵션을 통해 변경 및 현지화될 수 있습니다.
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -228,7 +222,6 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
       }
     }
 </script>
-
 ```
 
 다음 메시지 키는 번역되거나 맞춤설정될 수 있지만 원래 의미와 의도가 유지되어야 합니다.
@@ -288,7 +281,6 @@ ID `amp-access-laterpay-dialog`가 포함된 요소는 사용자가 기사 액�
 LaterPay 및 기존 페이월 통합과 함께 사용하는 경우 필수 구성 형식은 다음과 같을 수 있습니다.
 
 ```html
-
 <script id="amp-access" type="application/json">
   [
     {
@@ -310,15 +302,19 @@ LaterPay 및 기존 페이월 통합과 함께 사용하는 경우 필수 구성
     }
   ]
 </script>
-
 ```
 
 반면 콘텐츠 액세스 마크업 형식은 다음과 같이 될 수 있습니다.
 
 ```html
-<section amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access" amp-access-hide>
+<section
+  amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access"
+  amp-access-hide
+>
   <p>
-    <a on="tap:amp-access.login-publishername">PublisherName 구독에 액세스하려면 여기에서 로그인하세요.</a>
+    <a on="tap:amp-access.login-publishername"
+      >PublisherName 구독에 액세스하려면 여기에서 로그인하세요.</a
+    >
   </p>
 
   <div id="amp-access-laterpay-dialog" class="amp-access-laterpay"></div>
@@ -331,17 +327,16 @@ LaterPay 및 기존 페이월 통합과 함께 사용하는 경우 필수 구성
 <div amp-access="laterpay.access OR publishername.access" amp-access-hide>
   <p>...기사 내용...</p>
 </div>
-
 ```
 
 [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html)에서 더 완전한 예를 참조하세요.
 
 ## 관련 문서 <a name="related-documentation"></a>
 
-* [AMP 액세스](amp-access.md)
-* [LaterPay](https://www.laterpay.net)
-* [LaterPay: 소액결제 작동 원리](https://docs.laterpay.net/how_we_do_micropayments/)
-* [LaterPay 커넥터](https://connectormwi.laterpay.net/docs/index.html): AMP 액세스 LaterPay와 비슷하지만 AMP가 아닌 페이지를 위한 것입니다.
+- [AMP 액세스](amp-access.md)
+- [LaterPay](https://www.laterpay.net)
+- [LaterPay: 소액결제 작동 원리](https://docs.laterpay.net/how_we_do_micropayments/)
+- [LaterPay 커넥터](https://connectormwi.laterpay.net/docs/index.html): AMP 액세스 LaterPay와 비슷하지만 AMP가 아닌 페이지를 위한 것입니다.
 
 ## 확인 <a name="validation"></a>
 

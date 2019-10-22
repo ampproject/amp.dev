@@ -12,7 +12,11 @@ AMP ページにカスタム フォントを埋め込むには、次の 2 つの
 このチュートリアルでは、`<link>` タグを使用してページにフォントを追加します。次のように `<head>` にスタイルシートのリンクを**追加**して、Raleway フォントをリクエストします。
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 次に、CSS の `body` セレクタを次のように**更新**して、Raleway への参照を含めます。

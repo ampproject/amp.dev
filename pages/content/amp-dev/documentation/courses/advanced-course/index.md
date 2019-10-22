@@ -11,6 +11,7 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Welcome Back Again
 
 In the previous two courses, we learned how to create a basic AMP site. We learned how to use components to add features to our site and handle user interaction.
@@ -25,13 +26,13 @@ This type of dynamic site is common in today’s Internet. We might each visit t
 
 In the final course in this series, we’re going to learn how to change the appearance of or the content on the page based on how users interact with our site. By the end of this course, you will learn how to:
 
-* Store information in application state variables in response to user actions.
+- Store information in application state variables in response to user actions.
 
-* Change the content or appearance of a website when state variables update.
+- Change the content or appearance of a website when state variables update.
 
-* Retrieve and display server data on your page using templates.
+- Retrieve and display server data on your page using templates.
 
-* Dynamically change the content on screen (i.e., filtering and sorting data).
+- Dynamically change the content on screen (i.e., filtering and sorting data).
 
 {{ image('/static/img/courses/advanced/image2.png', 744, 1328, align='center third', caption='Our Chico’s Cheese Bikes Site So Far') }}
 
@@ -55,17 +56,17 @@ In the advanced course, the data we retrieve from the server in several examples
 
 This course is intended to be a continuation of the beginner and intermediate courses. As such, it assumes an understanding of the concepts we’ve already covered. Those concepts include:
 
-* AMP page structure and boilerplate
+- AMP page structure and boilerplate
 
-* AMP validation
+- AMP validation
 
-* AMP components and how to combine them together
+- AMP components and how to combine them together
 
-* How to use the AMP documentation
+- How to use the AMP documentation
 
-* The AMP cache
+- The AMP cache
 
-* Handling user inputs using events and actions
+- Handling user inputs using events and actions
 
 If any of these topics are unfamiliar, we suggest reviewing the material from the beginner course found [here](../../../documentation/courses/beginning-course/index.md) and/or the intermediate course found [here](../../../documentation/courses/intermediate-course/index.md).
 
@@ -76,8 +77,8 @@ In this course, we will continue using [Glitch](https://glitch.com/) to complete
 This course will also require the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. Writing valid AMP pages is an important part of getting AMP’s full performance benefits. The validator is primarily accessed via a Chrome extension. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 
 Let’s get started!
-[/filter]
-[filter level="advanced"]
+[/filter][filter level="advanced"]
+
 ## Welcome Back Again
 
 In the previous two courses, we learned how to create a basic AMP site. We learned how to use components to add features to our site and handle user interaction.
