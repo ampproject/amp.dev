@@ -4,6 +4,7 @@ $order: 1
 description: 'This guide dives deep into the amp-analytics component, breaking up a sample amp-analytics configuration into these key building blocks.'
 formats:
   - websites
+  - stories
 ---
 
 This guide dives deep into the
