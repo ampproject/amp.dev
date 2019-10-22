@@ -150,7 +150,8 @@ async function buildComponentVersions() {
   const rules = await validatorRules.fetch();
   const componentVersions = {};
   rules.extensions.forEach((e) => {
-    componentVersions[e.name] = e.version[e.version.length - 2];
+    const versions = e.version.filter((v) => v !== 'latest');
+    componentVersions[e.name] = versions[versions.length - 1];
   });
   const content = JSON.stringify(componentVersions, null, 2);
   const dir = path.join(project.paths.DIST, 'static/files');
@@ -267,6 +268,7 @@ function buildPrepare(done) {
         // All paths that contain altered files at build setup time
         const SETUP_STORED_PATHS = [
           './pages/content/',
+          './pages/shared/',
           './dist/',
           './boilerplate/dist/',
           './playground/dist/',

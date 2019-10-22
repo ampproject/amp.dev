@@ -14,16 +14,8 @@
 @import 'components/atoms/_button.scss';
 
 .#{molecule('device-toggle')} {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 10px 0;
-
-  @media (max-width: 767px) {
-    display: none;
-  }
+  text-align: center;
+  line-height: 0;
 
   &-button {
     @include unset-button;

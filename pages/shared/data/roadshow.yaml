@@ -1,36 +1,4 @@
 nextstop:
-  - title: tel aviv
-    coords: 66x22
-    location: Google Tel Aviv
-    time: 09:30–18:00
-    day: 23
-    month: sep
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-tel-aviv/
-  - title: istanbul
-    coords: 64x19
-    location: Feriye
-    time: 09:30–18:00
-    day: 26
-    month: sep
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-istanbul/
-  - title: dubai
-    coords: 70x23
-    location: Address Hotel
-    time: 09:30–17:00
-    day: 30
-    month: sep
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-dubai/
-  - title: karachi
-    coords: 74x23
-    location: Karachi Marriott
-    time: 10:00–17:30
-    day: 3
-    month: oct
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-karachi/
   - title: warsaw
     coords: 60x12
     location: MsMermaid
@@ -47,8 +15,36 @@ nextstop:
     month: oct
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-kyiv/
+  - title: seoul
+    coords: 91x16
+    location: Sejong University
+    time: 09:00–17:00
+    day: 5
+    month: nov
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-seoul-2019/
+  - title: busan
+    coords: 93x18
+    location: Design Council Busan
+    time: 13:00-18:30
+    day: 7
+    month: nov
+    year: 2019
+    link: https://events.withgoogle.com/amp-roadshow-busan-2019/
 
 past:
+  - title: KARACHI
+    coords: 74x23
+    date: 2019-10-03
+  - title: DUBAI
+    coords: 70x23
+    date: 2019-09-30
+  - title: ISTANBUL
+    coords: 64x19
+    date: 2019-09-26
+  - title: TEL AVIV
+    coords: 66x22
+    date: 2019-09-23
   - title: AUCKLAND
     coords: 108x42
     date: 2019-09-02

@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,9 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {execSync} = require('child_process');
+
+'use strict';
 
 
-module.exports.version = execSync('git log -1 --pretty=format:%h ').toString().trim();
-module.exports.message = execSync('git log -1 --pretty=%B --no-merges').toString().trim();
-module.exports.user = execSync('git config user.name').toString().trim();
+const {Templates} = require('@lib/templates/index.js');
+const express = require('express');
+
+// eslint-disable-next-line new-cap
+const sharedPages = express.Router();
+
+sharedPages.get('/shared/experiments/', async (req, res, next) => {
+  try {
+    const template = await Templates.get('/shared/experiments.html');
+    const rendered = template.render({});
+    res.send(rendered);
+  } catch (e) {
+    next(e);
+  }
+});
+
+module.exports = sharedPages;

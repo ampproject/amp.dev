@@ -5,17 +5,6 @@
 {% if not '/courses/' in doc.pod_path %}
 {% set formats = ['websites', 'stories', 'ads', 'email'] %}
 
-{# Define various landing pages for sections #}
-{% if 'examples' in doc.url.path %}
-{% set landing_page = g.doc('/content/amp-dev/documentation/examples/index.html') %}
-{% elif 'components' in doc.url.path %}
-{% set landing_page = g.doc('/content/amp-dev/documentation/components/index.html') %}
-{% elif 'courses' in doc.url.path %}
-{% set landing_page = g.doc('/content/amp-dev/documentation/courses/index.html') %}
-{% else %}
-{% set landing_page = g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html') %}
-{% endif %}
-
 <div class="ap-m-format-toggle">
   {# Use websites as default to have an element to dynamically set #}
   <button class="ap-m-format-toggle-selected ap-m-format-toggle-link-[= format =]">
@@ -32,7 +21,7 @@
     {% for format in formats %}
     [% if format != '{{ format }}' %]
     {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
-    <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }}" href="{{ landing_page.url.path }}?format={{ format }}">
+    <a class="ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }}" href="{{ doc.url.path }}?format={{ format }}">
       <span class="ap-a-ico">
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
       </span>

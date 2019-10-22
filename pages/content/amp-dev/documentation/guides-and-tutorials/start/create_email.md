@@ -17,7 +17,7 @@ Follow this tutorial to build and send your first dynamic email powered by AMP. 
 
 # Start with the AMP email boilerplate
 
-The AMP for Email team has created a playground where you can develop, test, and send yourself AMP Emails. Open the [AMP for Email Playground](https://amp.gmail.dev/playground/), login using a Gmail account, and check that the playground has `Hello, AMP4Email world` opened. You should see the following code:
+The AMP playground supports the AMP for Email format, allowing you to develop, test, and validate your AMP Emails. Open the [AMP Playground](https://playground.amp.dev/?runtime=amp4email) and make sure the format is set to `AMP for Email` in the top left corner. You should see the following code:
 
 
 ```html
@@ -27,9 +27,14 @@ The AMP for Email team has created a playground where you can develop, test, and
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    h1 {
+      margin: 1rem;
+    }
+  </style>
 </head>
 <body>
-  Hello, AMP4EMAIL world.
+  <h1>Hello, I am an AMP EMAIL!</h1>
 </body>
 </html>
 ```
@@ -280,7 +285,7 @@ Now, when you change the cat photo in the carousel, their name and description s
 
 # Send your AMP email
 
-The [AMP4Email playground](https://amp.gmail.dev/playground/) tool has a built-in validator. If your email markup is valid AMP, it will allow you to send yourself an email by clicking `send`.
+To learn how to send your email to your inbox, [read more about testing AMP emails](/content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md)
 
 <!-- TODO: Add Screen Shot. Emails sent from tool are not currently displaying. Only receiving information on how to enable AMP emails, but then getting blank messages. -->
 
