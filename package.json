@@ -148,7 +148,7 @@
     "wade": "0.3.3",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.9",
-    "webpack-dev-server": "3.8.2",
+    "webpack-dev-server": "3.9.0",
     "write": "2.0.0",
     "write-yaml": "1.0.0"
   },
