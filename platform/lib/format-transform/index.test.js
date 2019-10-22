@@ -13,6 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const {join} = require('path');
+const {BUILD} = require('@lib/utils/project').paths;
+
+// Use the downloaded validator.js:
+const VALIDATOR_TARGET_PATH = join(BUILD, 'testing/validator.js');
+jest.mock('amphtml-validator');
+const ampHtmlValidator = jest.requireActual('amphtml-validator');
+const validatorInstance = ampHtmlValidator.getInstance(VALIDATOR_TARGET_PATH);
+const ampHtmlValidatorMock = require('amphtml-validator');
+ampHtmlValidatorMock.getInstance.mockReturnValue(validatorInstance);
 
 const {getInstance} = require('./index');
 
