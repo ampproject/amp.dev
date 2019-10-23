@@ -86,7 +86,7 @@ To deliver AMPHTML ads to AMP pages, you need to create an [`amp-ad`](../../../d
 
 ## Creating AMPHTML ads
 
-**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec](a4a_spec.md).  For demos and examples, see the open-source AMPHTML ad templates on [Examples](../../../documentation/examples/documentation/amp-ad.html).
+**From scratch**: AMPHTML ads must follow  the [AMPHTML ad spec](a4a_spec.md).  For demos and examples, see the open-source AMPHTML ad templates on [Examples](/content/amp-dev/documentation/examples/documentation/amp-ad.md).
 
 **Using tools**: You can use any of the following tools to build AMPHTML creatives:
 
@@ -114,7 +114,7 @@ For SSPs and ad exchanges that want to support AMPHTML ads in a Real-Time Biddin
 
 #### Are there any AMPHTML ad samples?
 
-Yes. A number of great looking AMPHTML ad templates can be found on [Examples](../../../documentation/examples/documentation/amp-ad.html). These samples use advanced components in AMP.
+Yes. A number of great looking AMPHTML ad templates can be found on [Examples](/content/amp-dev/documentation/examples/documentation/amp-ad.md). These samples use advanced components in AMP.
 
 #### Do AMPHTML ads support 3rd party verification and viewability detection?
 

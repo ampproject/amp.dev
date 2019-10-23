@@ -32,7 +32,7 @@ para selecionar a proporção com base na largura da tela.
 ```
 [/example]
 
-Dica: Veja mais exemplos de [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) na página [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html).
+Dica: Veja mais exemplos de [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) na página [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-twitter.md).
 
 ## Incorporar uma imagem do Instagram
 
@@ -62,7 +62,7 @@ de modo que os valores de largura e altura são universais.
 ```
 [/example]
 
-Dica: Veja mais exemplos de [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) na página [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html).
+Dica: Veja mais exemplos de [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) na página [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-instagram.md).
 
 ## Exibir postagem ou vídeo do Facebook
 
@@ -107,7 +107,7 @@ Preview:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-Dica: Veja mais exemplos de [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) na página [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html).
+Dica: Veja mais exemplos de [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) na página [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-facebook.md).
 
 ## Incluir um vídeo do YouTube
 
@@ -136,7 +136,7 @@ Use `layout="responsive"` para gerar layouts de forma correta para vídeos com p
 ```
 [/example]
 
-Dica: Veja mais exemplos de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) na página [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html).
+Dica: Veja mais exemplos de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) na página [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-youtube.md).
 
 ## Exibir um anúncio
 

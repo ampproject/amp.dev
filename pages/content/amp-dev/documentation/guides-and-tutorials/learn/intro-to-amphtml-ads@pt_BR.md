@@ -78,7 +78,7 @@ Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma ext
 
 ## Criar anúncios HTML para AMP
 
-**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md).  Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](../../../documentation/examples/documentation/amp-ad.html).
+**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md).  Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](/content/amp-dev/documentation/examples/documentation/amp-ad.md).
 
 **Usando ferramentas**: use qualquer uma das seguintes ferramentas se você quiser gerar criativos HTML para AMP:
 
@@ -108,7 +108,7 @@ Se você quiser que Ad Exchanges e SSPs sejam compatíveis com anúncios HTML pa
 
 #### Há alguma amostra de anúncio HTML para AMP?
 
-Sim. Você encontra vários modelos fantásticos de anúncios HTML para AMP no site [Examples](../../../documentation/examples/documentation/amp-ad.html). Essas amostras usam componentes avançados em AMP.
+Sim. Você encontra vários modelos fantásticos de anúncios HTML para AMP no site [Examples](/content/amp-dev/documentation/examples/documentation/amp-ad.md). Essas amostras usam componentes avançados em AMP.
 
 #### Os anúncios HTML para AMP são compatíveis com verificação e detecção de visibilidade de terceiros?
 

@@ -26,7 +26,7 @@ $title: Как создать адаптивные AMP-страницы
 
 <amp-img src="/static/img/docs/responsive_amp_img.png" width="500" height="857" layout="responsive"></amp-img>
 
-[Подробнее...](../../../../documentation/examples/documentation/amp-img.html)
+[Подробнее...](/content/amp-dev/documentation/examples/documentation/amp-img.md)
 
 ## Как добавить стили на страницу
 

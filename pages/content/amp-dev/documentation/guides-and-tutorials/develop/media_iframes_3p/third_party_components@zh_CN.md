@@ -26,7 +26,7 @@ $title: 包含第三方内容
 ```
 [/example]
 
-提示: 要查看更多 [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) 的示例，请访问 [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html)。
+提示: 要查看更多 [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) 的示例，请访问 [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-twitter.md)。
 
 ## 嵌入 Instagram
 
@@ -50,7 +50,7 @@ $title: 包含第三方内容
 ```
 [/example]
 
-提示: 要查看更多 [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) 的示例，请访问 [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html)。
+提示: 要查看更多 [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) 的示例，请访问 [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-instagram.md)。
 
 ## 显示 Facebook 帖子或视频
 
@@ -94,7 +94,7 @@ Preview:
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-提示: 要查看更多 [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) 的示例，请访问 [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html)。
+提示: 要查看更多 [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) 的示例，请访问 [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-facebook.md)。
 
 ## 包含 YouTube 视频
 
@@ -120,7 +120,7 @@ Preview:
 ```
 [/example]
 
-提示: 要查看更多 [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 的示例，请访问 [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html)。
+提示: 要查看更多 [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) 的示例，请访问 [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-youtube.md)。
 
 ## 显示广告
 

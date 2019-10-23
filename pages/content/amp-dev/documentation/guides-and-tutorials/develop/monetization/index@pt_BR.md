@@ -133,12 +133,12 @@ Veja algumas dicas para maximizar a eficiência dos anúncios nas páginas AMP:
 ### Inovação: ofereça os produtos de anúncios mais interessantes
 
 *   **Implemente anúncios em páginas AMP auxiliares** para gerar receita incremental:
-    *   [anúncios em um carrossel](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    *   [anúncios em um lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    *   [anúncios em um carrossel](/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md)
+    *   [anúncios em um lightbox](/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md)
     *   e [muito mais](../../../../documentation/examples/index.html)
 *   **Implemente novos formatos de anúncios de venda direta** para que sua equipe de vendas ofereça produtos de anúncios inovadores e de alto impacto:
-    *   [anúncios fixos](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    *   [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+    *   [anúncios fixos](/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.md)
+    *   [Flying Carpet](/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.md)
 
 ## Outros recursos
 

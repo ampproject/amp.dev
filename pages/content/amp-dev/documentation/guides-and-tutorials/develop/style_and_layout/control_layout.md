@@ -40,7 +40,7 @@ determined by the given width and height. Try it out by resizing this browser wi
 <amp-img src="/static/img/background.jpg" width="1920" height="1080" layout="responsive"></amp-img>
 
 [tip type="tip"]
-**TIP –** See our side-by-side live demos of [`amp-img`](../../../../documentation/components/reference/amp-img.md): [Live Demos on AMP By Example](../../../../documentation/examples/documentation/amp-img.html?format=websites).
+**TIP –** See our side-by-side live demos of [`amp-img`](../../../../documentation/components/reference/amp-img.md): [Live Demos on AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-img.md?format=websites).
 [/tip]
 
 ## The layout attribute <a name="the-layout-attribute"></a>

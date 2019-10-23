@@ -223,4 +223,4 @@ Or, what if the quotation is longer?
 
 As a last experiment with [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md), try creating a short piece of text,  such as "Hello" with a much larger height (for example, a value of 400), and maintaining the max-font-size attribute value of 42. What would the resulting page look like? Is the text centered vertically? Or, does the height of the [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) tag shrink to fit the max font size? With what you already know about AMP’s layout system, try to answer the question before playing with the code!
 
-You can learn more about [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) from [AMP by Example's live demo](../../../../documentation/examples/documentation/amp-fit-text.html).
+You can learn more about [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) from [AMP by Example's live demo](/content/amp-dev/documentation/examples/documentation/amp-fit-text.md).

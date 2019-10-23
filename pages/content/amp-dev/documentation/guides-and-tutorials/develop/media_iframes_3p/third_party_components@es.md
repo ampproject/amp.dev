@@ -31,7 +31,7 @@ Ajusta la anchura y la altura de forma manual o usa el atributo de medios para s
 [/example]
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html).
+**TIP –** Puedes encontrar más ejemplos de [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) en [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-twitter.md).
 [/tip]
 
 ## Insertar una foto de Instagram
@@ -59,7 +59,7 @@ Además, Instagram utiliza una relación de aspecto fija para los diseños adapt
 [/example]
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html).
+**TIP –** Puedes encontrar más ejemplos de [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) en [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-instagram.md).
 [/tip]
 
 ## Mostrar entradas o vídeos de Facebook
@@ -105,7 +105,7 @@ Avance:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html).
+**TIP –** Puedes encontrar más ejemplos de [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) en [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-facebook.md).
 [/tip]
 
 ## Insertar un vídeo de YouTube
@@ -135,7 +135,7 @@ Utiliza `layout="responsive"` para producir diseños correctos para los vídeos 
 [/example]
 
 [tip type="tip"]
-**TIP –** Puedes encontrar más ejemplos de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html).
+**TIP –** Puedes encontrar más ejemplos de [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) en [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-youtube.md).
 [/tip]
 
 ## Mostrar un anuncio

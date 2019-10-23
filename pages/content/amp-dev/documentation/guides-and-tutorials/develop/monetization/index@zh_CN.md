@@ -133,12 +133,12 @@ $title: 在您的 AMP 网页中利用广告获利
 ### 创新：提供最具吸引力的广告产品
 
 *   **在辅助 AMP 网页上投放广告**，以获得增量收入：
-    *   [轮播广告](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    *   [灯箱广告](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    *   [轮播广告](/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md)
+    *   [灯箱广告](/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md)
     *   以及[更多类型](../../../../documentation/examples/index.html)
 *   **使直销型广告采用新格式**，以便为您的销售团队提供效果显著的创新广告产品：
-    *   [粘性广告](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    *   [飞毯](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+    *   [粘性广告](/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.md)
+    *   [飞毯](/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.md)
 
 ## 其他资源
 

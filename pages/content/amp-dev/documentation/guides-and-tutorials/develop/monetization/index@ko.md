@@ -133,12 +133,12 @@ AMP 페이지의 광고 효과를 극대화하기 위한 팁을 확인해 보세
 ### 혁신: 가장 좋은 성과를 내는 광고 제품 제공
 
 *   **부속 AMP 페이지에 광고를 구현**하여 수익을 늘리세요.
-    *   [캐러셀 광고](../../../../documentation/examples/documentation/Carousel_Ad.html)
-    *   [라이트박스 광고](../../../../documentation/examples/documentation/Lightbox_Ad.html)
+    *   [캐러셀 광고](/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md)
+    *   [라이트박스 광고](/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md)
     *   ... 외 [더보기](../../../../documentation/examples/index.html)
 *   **직접 판매 광고를 위한 새로운 형식을 구현**하여 영업팀에서 효과적이고 혁신적인 광고 제품을 활용할 수 있도록 하세요.
-    *   [고정 광고](../../../../documentation/examples/documentation/amp-sticky-ad.html)
-    *   [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
+    *   [고정 광고](/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.md)
+    *   [Flying Carpet](/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.md)
 
 ## 추가 리소스
 

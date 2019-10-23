@@ -67,4 +67,4 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg
 
 ## 예시
 
-[고급 데모 페이지](../../../../documentation/examples/documentation/amp-iframe.html) 에서 더 복잡한 예를 확인할 수 있으며.
+[고급 데모 페이지](/content/amp-dev/documentation/examples/documentation/amp-iframe.md) 에서 더 복잡한 예를 확인할 수 있으며.
