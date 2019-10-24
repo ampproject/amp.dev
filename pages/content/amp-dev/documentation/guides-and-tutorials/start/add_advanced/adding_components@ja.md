@@ -197,4 +197,4 @@ AMP には、この問題を解決するための専用のコンポーネント�
 
 [`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) を使った最後の実験として、max-font-size 属性の値は 42 のまま、height に 400 などの大きな値を設定し、「こんにちは」などの短いテキストを指定してみましょう。 テキストはページ上でどのように表示されるでしょうか。垂直方向の中央揃えで表示されるでしょうか。それとも、最大フォントサイズに合わせて、[`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) タグの高さが縮小されるでしょうか。AMP のレイアウト システムについてこれまでに学んだ知識を踏まえ、実際にコードを試す前に答えを考えてみてください。
 
-[`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) について詳しくは、[AMP by Example のライブデモ](/content/amp-dev/documentation/examples/documentation/amp-fit-text.md)をご覧ください。
+[`amp-fit-text`](../../../../documentation/components/reference/amp-fit-text.md) について詳しくは、[AMP by Example のライブデモ](../../../../documentation/examples/documentation/amp-fit-text.html)をご覧ください。

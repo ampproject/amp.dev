@@ -31,7 +31,7 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 
 [tip type="success"]
 
-[`amp-img`](../../../../documentation/components/reference/amp-img.md)의 비교 라이브 데모를 확인해 보세요. [AMP By Example의 라이브 데모](/content/amp-dev/documentation/examples/documentation/amp-img.md)
+[`amp-img`](../../../../documentation/components/reference/amp-img.md)의 비교 라이브 데모를 확인해 보세요. [AMP By Example의 라이브 데모](../../../../documentation/examples/documentation/amp-img.html)
 
 [/tip]
 

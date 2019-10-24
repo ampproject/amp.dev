@@ -133,12 +133,12 @@ A continuación, se incluyen algunos consejos para maximizar la eficacia de los 
 ### Innovación: ofrece los productos publicitarios que generan más interacción
 
 *   **Implementa anuncios en páginas AMP complementarias** para generar ingresos incrementales:
-    *   [Anuncios en un carrusel](/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md)
-    *   [Anuncios en un lightbox](/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md)
+    *   [Anuncios en un carrusel](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    *   [Anuncios en un lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
     *   [Anuncios avanzados](../../../../documentation/examples/index.html)
 *   **Utiliza formatos nuevos con los anuncios de venta directa** para proporcionar al equipo de ventas productos publicitarios innovadores y de elevado impacto:
-    *   [Anuncios fijos](/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.md)
-    *   [Alfombra voladora](/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.md)
+    *   [Anuncios fijos](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    *   [Alfombra voladora](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Recursos adicionales
 

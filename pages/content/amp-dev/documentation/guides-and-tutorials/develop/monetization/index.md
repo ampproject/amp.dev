@@ -135,12 +135,12 @@ Here are some tips to maximize the effectiveness of ads on your AMP pages:
 ### Innovation: Offer the most engaging ad products
 
 *   **Implement ads on ancillary AMP pages** to generate incremental revenue:
-    *   [Ads in a carousel](/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md)
-    *   [Ads in a lightbox](/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md)
+    *   [Ads in a carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    *   [Ads in a lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
     *   ... and [more](../../../../documentation/examples/index.html)
 *   **Implement new formats for direct sold ads** to equip your sales team with high-impact, innovative ad products:
-    *   [Sticky Ads](/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.md)
-    *   [Flying Carpet](/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.md)
+    *   [Sticky Ads](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    *   [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Additional resources
 

@@ -133,12 +133,12 @@ Berikut ini beberapa tips untuk memaksimalkan efektivitas iklan di halaman AMP:
 ### Inovasi: Tawarkan produk iklan yang paling menarik
 
 * **Terapkan iklan pada halaman AMP tambahan** untuk menghasilkan pendapatan tambahan:
-    *   [Iklan di carousel](/content/amp-dev/documentation/examples/documentation/Carousel_Ad.md)
-    *   [Iklan di lightbox](/content/amp-dev/documentation/examples/documentation/Lightbox_Ad.md)
+    *   [Iklan di carousel](../../../../documentation/examples/documentation/Carousel_Ad.html)
+    *   [Iklan di lightbox](../../../../documentation/examples/documentation/Lightbox_Ad.html)
     *   ... dan [lain-lain](../../../../documentation/examples/index.html)
 * **Terapkan format baru untuk iklan yang dijual langsung** untuk membekali tim penjualan Anda dengan produk iklan inovatif yang berdampak tinggi:
-    *   [Iklan Melekat](/content/amp-dev/documentation/examples/documentation/amp-sticky-ad.md)
-    *   [Flying Carpet](/content/amp-dev/documentation/examples/documentation/amp-fx-flying-carpet.md)
+    *   [Iklan Melekat](../../../../documentation/examples/documentation/amp-sticky-ad.html)
+    *   [Flying Carpet](../../../../documentation/examples/documentation/amp-fx-flying-carpet.html)
 
 ## Referensi tambahan
 

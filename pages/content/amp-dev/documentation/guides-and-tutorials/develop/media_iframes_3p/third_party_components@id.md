@@ -33,7 +33,7 @@ untuk memilih rasio aspek berdasarkan lebar layar.
 [/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) di [AMP Menurut Contoh](/content/amp-dev/documentation/examples/documentation/amp-twitter.md).
+**TIP –** Lihat lebih banyak contoh [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-twitter.html).
 [/tip]
 
 ## Menyematkan Instagram
@@ -65,7 +65,7 @@ sehingga nilai lebar dan tinggi harus universal
 [/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) di [AMP Menurut Contoh](/content/amp-dev/documentation/examples/documentation/amp-instagram.md).
+**TIP –** Lihat lebih banyak contoh [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-instagram.html).
 [/tip]
 
 ## Menampilkan pos atau video Facebook
@@ -112,7 +112,7 @@ Pratinjau:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) di [AMP Menurut Contoh](/content/amp-dev/documentation/examples/documentation/amp-facebook.md).
+**TIP –** Lihat lebih banyak contoh [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-facebook.html).
 [/tip]
 
 ## Menyertakan video youtube
@@ -143,7 +143,7 @@ Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk vide
 [/example]
 
 [tip type="tip"]
-**TIP –** Lihat lebih banyak contoh [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) di [AMP Menurut Contoh](/content/amp-dev/documentation/examples/documentation/amp-youtube.md).
+**TIP –** Lihat lebih banyak contoh [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) di [AMP Menurut Contoh](../../../../documentation/examples/documentation/amp-youtube.html).
 [/tip]
 
 ## Menampilkan iklan

@@ -45,7 +45,7 @@ to select the aspect ratio based on screen width.
 [/example]
 
 [tip type="tip"]
-**TIP –** See more [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) examples at [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-twitter.md).
+**TIP –** See more [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html).
 [/tip]
 
 ## Embed an Instagram
@@ -78,7 +78,7 @@ so the value for width and height should be universal.
 [/example]
 
 [tip type="tip"]
-**TIP –** See more [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) examples at [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-instagram.md).
+**TIP –** See more [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html).
 [/tip]
 
 ## Display a Facebook post or video
@@ -126,7 +126,7 @@ Preview:
 </amp-facebook>
 
 [tip type="tip"]
-**TIP –** See more [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) examples at [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-facebook.md).
+**TIP –** See more [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html).
 [/tip]
 
 ## Embed a YouTube video
@@ -158,7 +158,7 @@ Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 [/example]
 
 [tip type="tip"]
-**TIP –** See more [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) examples at [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-youtube.md).
+**TIP –** See more [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) examples at [AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html).
 [/tip]
 
 ## Display an ad

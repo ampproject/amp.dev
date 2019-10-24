@@ -70,4 +70,4 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg
 
 ## Ejemplos
 
-Puedes encontrar más ejemplos avanzados en la página de nuestra [demostración avanzada](/content/amp-dev/documentation/examples/documentation/amp-iframe.md).
+Puedes encontrar más ejemplos avanzados en la página de nuestra [demostración avanzada](../../../../documentation/examples/documentation/amp-iframe.html).

@@ -69,4 +69,4 @@ src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg
 
 ## Contoh
 
-Contoh tingkat lanjut lainnya dapat ditemukan di [halaman demo tingkat lanjut](/content/amp-dev/documentation/examples/documentation/amp-iframe.md).
+Contoh tingkat lanjut lainnya dapat ditemukan di [halaman demo tingkat lanjut](../../../../documentation/examples/documentation/amp-iframe.html).

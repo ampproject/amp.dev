@@ -31,7 +31,7 @@ AMP は**メディアクエリ**と**要素クエリ**の両方をサポート�
 
 [tip type="success"]
 
-[AMP By Example のライブデモ],[`amp-img`](/content/amp-dev/documentation/examples/documentation/amp-img.md).url.path}}) の動作を比較したライブデモをご覧ください。
+[AMP By Example のライブデモ],[`amp-img`](../../../../documentation/examples/documentation/amp-img.html).url.path}}) の動作を比較したライブデモをご覧ください。
 
 [/tip]
 

@@ -29,7 +29,7 @@ There are 90+ ad providers who have added support for advertising related featur
 
 If you provide call tracking measurement services, your use case may be supported with the new [`amp-call-tracking`](../../../documentation/components/reference/amp-call-tracking.md) extension. This extension dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
 
-To learn more about how this extension might work for you, please see an [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-call-tracking.md) or read about the [documentation](../../../documentation/components/reference/amp-call-tracking.md).
+To learn more about how this extension might work for you, please see an [AMP By Example](../../../documentation/examples/documentation/amp-call-tracking.html) or read about the [documentation](../../../documentation/components/reference/amp-call-tracking.md).
 
 ## 4. Adding a new extension/embed
 

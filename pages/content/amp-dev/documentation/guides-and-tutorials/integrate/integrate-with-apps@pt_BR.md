@@ -69,7 +69,7 @@ descritas acima.
 
 O Google fornece a AMP URL API para recuperar os URLs de HTML para AMP correspondentes para uma
 determinada lista de URLs ([documentação oficial](https://developers.google.com/amp/cache/use-amp-url) /
-[demonstração](/content/amp-dev/documentation/examples/documentation/Using_the_AMP_URL_API.md). Os URLs não
+[demonstração](../../../documentation/examples/documentation/Using_the_AMP_URL_API.html). Os URLs não
 precisam ser versões canônicas. Se houver uma versão AMP, a resposta
 incluirá o URL de AMP original e o URL da página AMP armazenada no cache
 de AMP do Google.

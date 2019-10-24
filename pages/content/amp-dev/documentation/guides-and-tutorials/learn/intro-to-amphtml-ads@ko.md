@@ -78,7 +78,7 @@ AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 �
 
 ## AMP HTML 광고 만들기
 
-**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양](a4a_spec.md)을 준수해야 합니다.  데모 및 예시를 확인하려면 [AMP by Example](/content/amp-dev/documentation/examples/documentation/amp-ad.md)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
+**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양](a4a_spec.md)을 준수해야 합니다.  데모 및 예시를 확인하려면 [AMP by Example](../../../documentation/examples/documentation/amp-ad.html)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
 
 **도구 사용**: 다음 중 원하는 도구를 사용하여 AMP HTML 광고 소재를 만들 수 있습니다.
 

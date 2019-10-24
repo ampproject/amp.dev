@@ -26,7 +26,7 @@ $title: サードパーティ コンテンツを追加する
 ```
 [/example]
 
-ヒント: その他の [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) の例については、[AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-twitter.md) をご覧ください。
+ヒント: その他の [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-twitter.html) をご覧ください。
 
 ## Instagram を埋め込む
 
@@ -50,7 +50,7 @@ Instagram の写真 URL にある data-shortcode を指定します。たとえ�
 ```
 [/example]
 
-ヒント: その他の [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) の例については、[AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-instagram.md) をご覧ください。
+ヒント: その他の [`amp-instagram`](../../../../documentation/components/reference/amp-instagram.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-instagram.html) をご覧ください。
 
 ## Facebook の投稿や動画を表示する
 
@@ -95,7 +95,7 @@ Facebook の投稿や動画をページに表示するには、[`amp-facebook`](
     data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
 </amp-facebook>
 
-ヒント: その他の [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) の例については、[AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-facebook.md) をご覧ください。
+ヒント: その他の [`amp-facebook`](../../../../documentation/components/reference/amp-facebook.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-facebook.html) をご覧ください。
 
 ## YouTube 動画を追加する
 
@@ -121,7 +121,7 @@ YouTube の `data-videoid` は YouTube 動画ページの URL で見つかりま
 ```
 [/example]
 
-ヒント: その他の [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) の例については、[AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-youtube.md) をご覧ください。
+ヒント: その他の [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md) の例については、[AMP By Example](../../../../documentation/examples/documentation/amp-youtube.html) をご覧ください。
 
 ## 広告を表示する
 

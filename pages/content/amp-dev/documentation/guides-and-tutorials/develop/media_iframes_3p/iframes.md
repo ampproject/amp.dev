@@ -86,4 +86,4 @@ Renders as:
 
 ## Examples
 
-You can find more advanced [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) examples in [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-iframe.md).
+You can find more advanced [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) examples in [AMP By Example](../../../../documentation/examples/documentation/amp-iframe.html).

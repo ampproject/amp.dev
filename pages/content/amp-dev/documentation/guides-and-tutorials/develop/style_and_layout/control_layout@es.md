@@ -31,7 +31,7 @@ determinada por la anchura y la altura especificadas. Puedes probarlo cambiando 
 
 [tip type="success"]
 
-Puedes ver demostraciones comparativas en directo de [`amp-img`](../../../../documentation/components/reference/amp-img.md) en [AMP By Example](/content/amp-dev/documentation/examples/documentation/amp-img.md).
+Puedes ver demostraciones comparativas en directo de [`amp-img`](../../../../documentation/components/reference/amp-img.md) en [AMP By Example](../../../../documentation/examples/documentation/amp-img.html).
 
 [/tip]
 

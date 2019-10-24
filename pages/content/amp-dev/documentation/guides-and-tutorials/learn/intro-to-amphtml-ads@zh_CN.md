@@ -78,7 +78,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 ## 制作 AMPHTML 广告
 
-**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范](a4a_spec.md)的要求。要查看演示和示例，请参阅 [AMP by Example](/content/amp-dev/documentation/examples/documentation/amp-ad.md) 中的开放源代码 AMPHTML 广告模板。
+**从头开始**：AMPHTML 广告必须遵循 [AMPHTML 广告规范](a4a_spec.md)的要求。要查看演示和示例，请参阅 [AMP by Example](../../../documentation/examples/documentation/amp-ad.html) 中的开放源代码 AMPHTML 广告模板。
 
 **使用工具**：您可以使用以下任一工具制作 AMPHTML 广告：
 
@@ -108,7 +108,7 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 #### 有 AMPHTML 广告示例吗？
 
-有。您可以在 [Examples](/content/amp-dev/documentation/examples/documentation/amp-ad.md) 中找到许多精美的 AMPHTML 广告模板。这些示例使用了 AMP 中的高级组件。
+有。您可以在 [Examples](../../../documentation/examples/documentation/amp-ad.html) 中找到许多精美的 AMPHTML 广告模板。这些示例使用了 AMP 中的高级组件。
 
 #### AMPHTML 广告支持第三方验证和可见度检测吗？
 

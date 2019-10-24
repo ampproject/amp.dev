@@ -78,7 +78,7 @@ Untuk menayangkan iklan AMPHTML ke halaman AMP, Anda perlu membuat ekstensi [`am
 
 ## Membuat iklan AMPHTML
 
-**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML](a4a_spec.md).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example](/content/amp-dev/documentation/examples/documentation/amp-ad.md).
+**Dari awal**: Iklan AMPHTML harus mengikuti [spesifikasi iklan AMPHTML](a4a_spec.md).  Untuk mengetahui demo dan contoh, lihat template iklan AMPHTML open source di [AMP by Example](../../../documentation/examples/documentation/amp-ad.html).
 
 **Menggunakan fitur**: Anda dapat menggunakan salah satu fitur berikut untuk membuat materi iklan AMPHTML:
 
@@ -108,7 +108,7 @@ Untuk SSP dan Ad Exchange yang ingin mendukung iklan AMPHTML di lingkungan Biddi
 
 #### Apakah ada contoh iklan AMPHTML?
 
-Ya. Sejumlah template iklan AMPHTML yang memiliki tampilan menarik dapat dilihat di [Examples](/content/amp-dev/documentation/examples/documentation/amp-ad.md). Contoh ini menggunakan komponen lanjutan di AMP.
+Ya. Sejumlah template iklan AMPHTML yang memiliki tampilan menarik dapat dilihat di [Examples](../../../documentation/examples/documentation/amp-ad.html). Contoh ini menggunakan komponen lanjutan di AMP.
 
 #### Apakah iklan AMPHTML mendukung deteksi visibilitas dan verifikasi pihak ketiga?
 
