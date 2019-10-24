@@ -21,13 +21,13 @@ teaser:
 stage:
   headline: Musement’s mobile-first design helps users navigate 70% faster
   subline: OCT 18, 2019
-  layout: all
+  layout: mobile
   devices:
-    - video_src: "/static/img/success-stories/musement/musement_video.mp4"
-      width: 8
+    - image_src: "/static/img/success-stories/musement/musement_3.png"
+      width: 3
       height: 5
-      type: desktop
-      alt: musement website
+      type: mobile
+      alt: Musement
 
 kpis:
   - value: 27%
@@ -49,6 +49,11 @@ contents:
       Acquired by TUI Group in September 2018
       Headquarters in Milan
 
+  - layout: media
+    video_src: "/static/img/success-stories/musement/musement_video.mp4"
+    width: 8
+    height: 5
+
   - layout: text
     headline: Goals
     text: Make it easier and faster for users to find events and attractions
@@ -62,26 +67,26 @@ contents:
       Rolled out AMP to more than 30,000 landing pages
 
   - layout: text-media
-    image_src: "/static/img/success-stories/musement/musement_1.png"
-    width: 8
+    image_src: "/static/img/success-stories/musement/musement_3.png"
+    width: 3
     height: 5
-    type: tablet
+    type: mobile
     alt: Musement
     headline: Rundown
     text: "Musement helps travellers discover experiences all over the world.Their main objective is driving bookings for the countless activities, shows, tours, and events available through the site and app.The team wanted to find ways to make it easier and faster for people to find events and attractions, believing that this would deliver on Musement’s main KPIs: return on investment and margin per sale."
     direction: right-flat
 
   - layout: text
-    text: "To drive performance, Musement was already using data-driven attribution to give the appropriate value to each touchpoint in the conversion path. They were also using Smart Bidding to bid on hundreds of thousands of keywords across several accounts with one clear return on ad spend objective.
-          To take their performance a step further, the team set out to explore the impact that faster page load times would have on their click-through rate and ultimately their conversion rate. They decided to test AMP, an open-source project that helps to create web pages that load quickly.
-          The very first AMP page they created mirrored the most transactional page type on the website: an attraction page. Of all of Musement’s marketing campaigns, 93% are directed to pages of this type."
-  
+    text:
+      "To drive performance, Musement was already using data-driven attribution to give the appropriate value to each touchpoint in the conversion path. They were also using Smart Bidding to bid on hundreds of thousands of keywords across several accounts with one clear return on ad spend objective.
+      To take their performance a step further, the team set out to explore the impact that faster page load times would have on their click-through rate and ultimately their conversion rate. They decided to test AMP, an open-source project that helps to create web pages that load quickly.
+      The very first AMP page they created mirrored the most transactional page type on the website: an attraction page. Of all of Musement’s marketing campaigns, 93% are directed to pages of this type."
 
   - layout: text-media
-    image_src: "/static/img/success-stories/musement/musement_2.png"
-    width: 8
+    image_src: "/static/img/success-stories/musement/musement_3.png"
+    width: 3
     height: 5
-    type: tablet
+    type: mobile
     alt: Musement
     text:
       Early A/B testing indicated the potential positive impact of AMP on the business. Although previous improvements had reduced the full page load time of venue pages to 8.6 seconds, creating the same page in AMP slashed the load time to just 1.8 seconds.
