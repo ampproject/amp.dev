@@ -63,7 +63,7 @@ There are 90+ ad providers who have added support for advertising related featur
 
 ## Level two contribution 
 
-Level two vendor contributions share components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe.  Vendors add configurations or features to existing extensions to implement their functionalities. If such a component does not exist they may propose a new one. 
+Level two vendor contributions share components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe.  Vendors add configurations or features to existing components to implement their functionalities. If such a component does not exist they may propose a new one. 
 
 All business logic is checked into AMP repo, but the only vendor specific logic checked in is a vendor configuration. If component works with a vendor provided config file, no design review is needed. If the vendor configuration implements a new feature or new component it will need to pass AMP’s design review. 
 
@@ -80,14 +80,14 @@ AMP analytics allows you to send events back to your server based on triggers co
 
 If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../components/reference/amp-pixel.md). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
 
-There are 20+ analytics providers who have added support to amp-analytics. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/1595) from the analytics provider [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
+There are analytics providers who have added support to amp-analytics. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/1595) from the analytics provider [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
 
 
 [**amp-call-tracking**](../../../components/reference/amp-call-tracking.md)
 
 If you provide call tracking measurement services, your use case may be supported with [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md). This component dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
 
-To learn more about how this extension might work for you, please see the [reference documentation](../../../components/reference/amp-call-tracking.md).
+To learn more about how this component might work for you, please see the [reference documentation](../../../components/reference/amp-call-tracking.md).
 
 ## Level three contribution
 
