@@ -33,7 +33,7 @@ whether or not the user engaged with social media, and more.
 [/filter]
 [filter formats="stories"]
 And you can measure how far into a story the user tapped,
-whether or not the user engaged with interactive elements, such as [`<amp-story-cta-layer>`](../../../../../components/reference/amp-story-cta-layer.md) and more.
+whether or not the user engaged with interactive elements, such as [`<amp-story-cta-layer>`](../../../../../documentation/components/reference/amp-story-cta-layer.md) and more.
 [/filter]
 
 [tip type="read-on"]
