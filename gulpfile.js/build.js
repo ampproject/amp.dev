@@ -220,7 +220,7 @@ function importAll() {
     (new ComponentReferenceImporter()).import(),
     (new SpecImporter()).import(),
     (new BlogImporter()).import(),
-    importTasks.importWorkingGroups()
+    importTasks.importWorkingGroups(),
     // TODO: Fails on Travis with HttpError: Requires authentication
     // roadmapImporter.importRoadmap(),
   ]);
