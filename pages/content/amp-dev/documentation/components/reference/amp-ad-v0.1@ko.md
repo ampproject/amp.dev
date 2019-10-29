@@ -420,6 +420,7 @@ AMP 유효성 검사기 사양의 [amp-ad 규칙](https://github.com/ampproject/
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)
 * [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
+* [Insticator](https://github.com/ampproject/amphtml/blob/master/ads/insticator.md)
 * [Jubna](https://github.com/ampproject/amphtml/blob/master/ads/jubna.md)
 * [Outbrain](https://github.com/ampproject/amphtml/blob/master/ads/outbrain.md)
 * [Postquare](https://github.com/ampproject/amphtml/blob/master/ads/postquare.md)
