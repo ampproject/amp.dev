@@ -17,6 +17,7 @@ author: CrystalOnScript
   <meta charset="utf-8">
   <title>Animated hamburger menu</title>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -79,6 +80,9 @@ author: CrystalOnScript
         #hamburger.close span:nth-child(3) {
           transform: rotate(-45deg);
         }
+        #sidebar1 {
+            width: 20vh;
+        }
     </style>
 </head>
 <body>
@@ -88,13 +92,25 @@ author: CrystalOnScript
     The hamburger menu element contains three styled `span` elements inside a `div`. The hamburger `div` uses the `tap` AMP action to trigger the `toggleClass()` event, which targets an element by its `id`. In this example, it targets `hamburger`.
 
     The `toggleClass()` event will add and remove any class it's given as an argument. This example passes `class='close'`.
+
+    When tapped, the hamburger menu opens an [`<amp-sidebar>`](/content/amp-dev/documentation/components/reference/amp-sidebar-v0.1.md)component is. The `<amp-sidebar>` listens for the `sidebarClose` event, which triggers the `close` class toggle.
   -->
   <div class="hamburger_wrapper">
-    <div id="hamburger" tabindex="1" role="button" on="tap:hamburger.toggleClass(class='close')">
+    <div id="hamburger" tabindex="1" role="button" on="tap:hamburger.toggleClass(class='close'),sidebar1.toggle">
         <span></span>
         <span></span>
         <span></span>
     </div>
   </div>
+  <amp-sidebar id="sidebar1" layout="nodisplay" side="right" on="sidebarClose:hamburger.toggleClass(class='close')">
+        <ul>
+          <li>Nav item 1</li>
+          <li><a href="#idTwo" on="tap:idTwo.scrollTo">Nav item 2</a></li>
+          <li>Nav item 3</li>
+          <li><a href="#idFour" on="tap:idFour.scrollTo">Nav item 4</a></li>
+          <li>Nav item 5</li>
+          <li>Nav item 6</li>
+        </ul>
+      </amp-sidebar>
 </body>
 </html>
