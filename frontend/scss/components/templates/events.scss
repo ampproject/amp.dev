@@ -147,11 +147,3 @@
     flex-wrap: wrap;
     justify-content: space-around;
   }
-
-  .#{utility('inline-footer')} {
-    grid-column: 3 / 22;
-
-    @media (max-width: 767px) {
-      flex-wrap: nowrap;
-    }
-  }

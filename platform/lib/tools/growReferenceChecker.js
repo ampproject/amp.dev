@@ -111,6 +111,13 @@ class GrowReferenceChecker {
       stream.on('end', async () => {
         await this._addExplicitAnchors();
 
+        if (this._brokenReferencesCount > 0) {
+          this._log.complete('Finished automatic fixing.');
+          this._log.complete(`A total of ${this._brokenReferencesCount} links had ` +
+            `errors. ${this._unfindableDocuments.length +
+            Object.keys(this._multipleMatches).length} still have.`);
+        }
+
         if (Object.keys(this._multipleMatches).length == 0 &&
             this._unfindableDocuments.length == 0 &&
             this._wrongAnchorCount == 0) {
@@ -118,11 +125,6 @@ class GrowReferenceChecker {
           resolve();
           return;
         }
-
-        this._log.complete('Finished automatic fixing.');
-        this._log.complete(`A total of ${this._brokenReferencesCount} had ` +
-          `errors. ${this._unfindableDocuments.length +
-           Object.keys(this._multipleMatches).length} still have.`);
 
         if (this._unfindableDocuments.length) {
           this._log.info(`Could not automatically fix ${this._unfindableDocuments.length} ` +
@@ -150,8 +152,8 @@ class GrowReferenceChecker {
 
         if (this._unfindableDocuments.length > 0 || multipleMatchesCount > 0 ||
             this._wrongAnchorCount > 0) {
-          reject(new Error(`${this._unfindableDocuments.length} documents with broken links` +
-              ` and ${this._wrongAnchorCount} wrong anchors found`));
+          reject(new Error(`${this._unfindableDocuments.length + multipleMatchesCount} ` +
+              `broken links and ${this._wrongAnchorCount} wrong anchors found`));
         } else {
           resolve();
         }
@@ -224,13 +226,13 @@ class GrowReferenceChecker {
           const anchor = hrefAnchor || markdownAnchor;
           let resultLink;
           if (link) {
-            const fullLink = this._resolveRelativeLink(link, doc);
-            resultLink = this._verifyReference(fullLink, doc);
-            if (resultLink != fullLink) {
+            resultLink = this._verifyReference(link, doc);
+            if (resultLink && resultLink != link) {
               result = result.replace(link, resultLink);
             }
           }
-          if (anchor) {
+          // we will only check the anchor if the target page is found
+          if (anchor && !(link && !resultLink)) {
             const newAnchor = this._checkAnchor(anchor,
                 resultLink, doc);
             if (newAnchor != anchor) {
@@ -254,7 +256,8 @@ class GrowReferenceChecker {
     const anchorValue = anchor.substring(1);
     const localePaths = new Set();
     if (linkedPath) {
-      const targetPath = linkedPath.replace(/@[^.]+/, ''); // remove locale
+      let targetPath = linkedPath.replace(/@[^.]+/, ''); // remove locale
+      targetPath = this._resolveRelativeLink(targetPath, doc);
       if (sourcePath.includes('@')) {
         localePaths.add(this._getPathForLocale(targetPath, sourcePath.substring(
             sourcePath.indexOf('@') + 1, sourcePath.lastIndexOf('.'))));
@@ -335,12 +338,61 @@ class GrowReferenceChecker {
   }
 
   /**
-   * Tries to find a given path inside the pod
-   * @param  {String} path
-   * @param |{Vinyl} doc
-   * @return {String}      The either untouched or adjusted path
+   * Tries to find a given link inside the pod
+   * @param  {String} link The target link
+   * @param |{Vinyl} doc The document where the link is found
+   * @return {String} The link to the document (adjusted if needed) or null if the target was not found.
    */
-  _verifyReference(documentPath, doc) {
+  _verifyReference(link, doc) {
+    const documentPath = this._resolveRelativeLink(link, doc);
+
+    let changedPath = this._findReference(documentPath, doc);
+    if (changedPath === documentPath) {
+      return link;
+    }
+
+    this._brokenReferencesCount++;
+
+    if (changedPath) {
+      if (changedPath.startsWith('/')) {
+        changedPath = path.relative(
+            path.dirname(doc.path),
+            path.join(POD_BASE_PATH, changedPath));
+      }
+      return changedPath;
+    }
+
+    // check if we find the document elsewhere
+    const results = this._searchReference(documentPath);
+
+    // If there is more than one match store all matches for the user to
+    // do the manual fixing
+    if (results.length > 1) {
+      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.` +
+        ` (In ${doc.path})`);
+      this._multipleMatches[documentPath] = results;
+      return null;
+    } else if (results.length == 0) {
+      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.` +
+        ` (First found in ${doc.path})`);
+      this._unfindableDocuments.push(documentPath);
+      return null;
+    }
+
+    return path.relative(path.dirname(doc.path), results[0]);
+
+    return null;
+  }
+
+  /**
+   * Will check if the reference can be found under the given path.
+   * This method also checks the lookup table and other extensions.
+   * @param documentPath
+   * @param doc
+   * @returns {null|string} The path under which the file was found or null if not found.
+   * @private
+   */
+  _findReference(documentPath, doc) {
     if (documentPath.match(IGNORED_PATH_PATTERNS)) {
       return documentPath;
     }
@@ -349,11 +401,9 @@ class GrowReferenceChecker {
       return documentPath;
     }
 
-    this._brokenReferencesCount++;
-
     // Fail early if the path is already known to be broken
     if (this._unfindableDocuments.includes(documentPath)) {
-      return documentPath;
+      return null;
     }
 
     // Check if there is a manual match for the path in the lookup table
@@ -362,36 +412,42 @@ class GrowReferenceChecker {
       return lookedUpPath;
     }
 
-    const basename = path.basename(documentPath);
-    const results = search.recursiveSearchSync(
+    // If the reference was pointing to an HTML document look if there is
+    // a matching markdown document
+    if (documentPath.endsWith('.html')) {
+      let mdPath = documentPath.replace(/\.html$/, '.md');
+      mdPath = this._findReference(mdPath, doc);
+      if (mdPath) {
+        return mdPath;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Will check if the referenced file is found in a different folder
+   * @param documentPath
+   * @returns {Array} The list of found documents with absolute paths
+   * @private
+   */
+  _searchReference(documentPath) {
+    let basename = path.basename(documentPath);
+
+    // search for the same file in other dirs
+    let results = search.recursiveSearchSync(
         new RegExp(basename, 'i'), PAGES_BASE_PATH);
 
-    // If there is more than one match store all matches for the user to
-    // do the manual fixing
-    if (results.length > 1) {
-      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.` +
-          ` (In ${doc.path})`);
-      this._multipleMatches[documentPath] = results;
-      return documentPath;
-    } else if (results.length == 0) {
-      // If the reference was pointing to an HTML document look if there is
-      // a matching markdown document
-      if (basename.indexOf('.html') !== -1) {
-        documentPath = documentPath.replace(path.extname(documentPath), '.md');
-        return this._verifyReference(documentPath, doc);
-      }
+    if (results.length === 0) {
+      const ext = path.extname(documentPath);
 
-      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.` +
-        ` (First found in ${doc.path})`);
-      if (this._unfindableDocuments.indexOf(documentPath) == -1) {
-        this._unfindableDocuments.push(documentPath);
+      // check if we can find the file with the other std extension
+      if (ext === '.html' || ext === '.md') {
+        basename = path.basename(basename, ext) + (ext === '.md' ? '.html' : '.md');
+        results = search.recursiveSearchSync(
+            new RegExp(basename, 'i'), PAGES_BASE_PATH);
       }
-      return documentPath;
     }
-
-    const newPath = results[0].replace(POD_BASE_PATH, '/');
-
-    return newPath;
+    return results;
   }
 
   /**

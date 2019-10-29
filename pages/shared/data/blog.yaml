@@ -2,6 +2,24 @@ entries:
 
 - title: "Blog"
   image: ""
+  headline: "Users Prefer Tappable Stories On The Mobile Web"
+  date: "October 25, 2019"
+  url: "https://blog.amp.dev/2019/10/25/users-prefer-tappable-stories-on-the-mobile-web/"
+
+- title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2019/10/image3-1.png"
+  headline: "The AMP Contributor Summit Hits New York"
+  date: "October 18, 2019"
+  url: "https://blog.amp.dev/2019/10/18/the-amp-contributor-summit-hits-new-york/"
+
+- title: "Blog"
+  image: ""
+  headline: "How Goibibo Got Started With AMP For Email &#8211; And How You Can Too"
+  date: "October 14, 2019"
+  url: "https://blog.amp.dev/2019/10/14/how-goibibo-got-started-with-amp-for-email-and-how-you-can-too/"
+
+- title: "Blog"
+  image: ""
   headline: "AMP is joining the OpenJS Foundation incubation program"
   date: "October 10, 2019"
   url: "https://blog.amp.dev/2019/10/10/amp-is-joining-the-openjs-foundation-incubation-program/"
@@ -11,21 +29,3 @@ entries:
   headline: "People Behind The Code: Simon Rønbøl’s AMP journey"
   date: "September 25, 2019"
   url: "https://blog.amp.dev/2019/09/25/people-behind-the-code-simon-ronbols-amp-journey/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/09/image3-2.png"
-  headline: "Powerful impact: Why we AMPized the Australian pop culture site &#8211; GOAT"
-  date: "September 19, 2019"
-  url: "https://blog.amp.dev/2019/09/19/powerful-impact-why-we-ampized-the-australian-pop-culture-site-goat/"
-
-- title: "Blog"
-  image: ""
-  headline: "AMP Advisory Committee midterm election results"
-  date: "September 12, 2019"
-  url: "https://blog.amp.dev/2019/09/12/amp-advisory-committee-midterm-election-results/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/09/genesis_compress.gif"
-  headline: "How Developers are Creating WordPress AMP Experiences Content Creators LOVE to Use"
-  date: "September 11, 2019"
-  url: "https://blog.amp.dev/2019/09/11/how-developers-are-creating-wordpress-amp-experiences-content-creators-love-to-use/"
