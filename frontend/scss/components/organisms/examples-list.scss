@@ -54,7 +54,8 @@
   }
 
   &-item {
-    line-height: 38px;
+    min-height: 51px;
+    line-height: 46px;
     padding: 0 2.5em 0 1em;
     white-space: normal;
     font-size: .75rem;
@@ -75,14 +76,16 @@
   &-label {
     display: inline-block;
     vertical-align: middle;
-    line-height: 1;
+    padding: 3px 0;
+    line-height: 1.3;
   }
 
   &-icon {
     fill: #fff;
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 50%;
+    transform: translateY(-50%)
   }
 
   .amp-carousel-button {
