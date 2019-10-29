@@ -172,7 +172,7 @@ Veja algumas práticas recomendadas gerais para implementar um visualizador de A
 *   Nos visualizadores baseados em WebView, permita cookies de terceiros.
 *   Defina um referenciador para sua plataforma ou seu aplicativo.
 
-### Compartilhar conteúdo AMP
+### Compartilhar conteúdo AMP <a name="sharing-amp-content"></a>
 
 Ao compartilhar um documento AMP a partir do visualizador de AMP de uma plataforma, ela
 precisa compartilhar o URL canônico caso isso seja possível do ponto de vista técnico. Por exemplo, se a

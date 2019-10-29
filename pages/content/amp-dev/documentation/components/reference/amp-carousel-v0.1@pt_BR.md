@@ -52,7 +52,7 @@ Um carrossel genérico para exibir vários conteúdos semelhantes em um eixo hor
     </tr>
   </table>
 
-# Comportamento
+# Comportamento <a name="behavior"></a>
 
 Cada filho imediato do componente `amp-carousel` é considerado um item do carrossel. Cada um desses nós também pode ter filhos HTML arbitrários.
 
@@ -77,7 +77,7 @@ O carrossel avança entre os itens se o usuário deslizar o dedo, usar as teclas
 ```
 [/example]
 
-# Avançar para um slide específico
+# Avançar para um slide específico <a name="advancing-to-a-specific-slide"></a>
 
 Definir um método para o atributo `on` em um elemento `tap:carousel-id.goToSlide(index=N)`, quando o usuário tocar ou clicar nele, avançará um carrossel com o código "carousel-id" para o slide em index=N (o primeiro slide está no index=0, o segundo no index=1 e assim por diante).
 
@@ -129,7 +129,7 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
 ```
 [/example]
 
-# Atributos
+# Atributos <a name="attributes"></a>
 
 <table>
   <tr>
@@ -217,7 +217,7 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
           </tr>
         </table>
 
-# Estilo
+# Estilo <a name="styling"></a>
 
 * Você pode usar o seletor de elemento `amp-carousel` para estilizá-lo à vontade.
 * Você pode usar o seletor de classe `.amp-carousel-slide` para segmentar itens do carrossel.
@@ -242,6 +242,6 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
 }
 ```
 
-# Validação
+# Validação <a name="validation"></a>
 
 Consulte as [regras do amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) (link em inglês) nas especificações do validador de AMP.

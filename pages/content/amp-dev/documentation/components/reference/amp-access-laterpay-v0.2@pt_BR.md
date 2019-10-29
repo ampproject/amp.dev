@@ -51,7 +51,7 @@ Permite que os editores se integrem facilmente com a plataforma de micropagament
 </table>
 
 
-## Comportamento
+## Comportamento <a name="behavior"></a>
 
 [O LaterPay](https://laterpay.net) é uma plataforma de micropagamento que permite aos usuários comprar qualquer conteúdo on-line com apenas dois cliques e ter acesso imediato, sem registro antecipado, dados pessoais ou pagamento. Os usuários só pagam quando as compras atingirem um total de cinco dólares ou cinco euros nos sites. Os provedores de conteúdo podem vender itens individuais ou cartões de tempo, que permitem o acesso ao conteúdo por uma taxa fixa ou por um tempo limitado.
 
@@ -73,7 +73,7 @@ A lista gerada pode ser estilizada e apresentada de acordo com a preferência do
 
 Esse componente também depende da [marcação de conteúdo de acesso](amp-access.md#access-content-markup) para mostrar e ocultar conteúdo.
 
-## Configuração
+## Configuração <a name="configuration"></a>
 
 A configuração é semelhante ao AMP Access, mas não são necessários links de login, autorização e pingback.
 
@@ -145,7 +145,7 @@ Os seguintes valores podem ser definidos no objeto de configuração `laterpay`:
         </tr>
       </table>
 
-## Usar a marcação de conteúdo de acesso e mostrar a lista de compras
+## Usar a marcação de conteúdo de acesso e mostrar a lista de compras <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 A marcação de conteúdo de acesso precisa ser usada da mesma forma que o AMP Access.
 
@@ -168,7 +168,7 @@ Adicione a classe `amp-access-laterpay` se quiser usar o estilo padrão.
 
 ```
 
-## Estilo
+## Estilo <a name="styling"></a>
 
 Várias classes são aplicadas a alguns dos elementos na marcação gerada. Os elementos sem classes podem ser citados sem ambiguidades por meio de seletores de elementos CSS.
 
@@ -212,7 +212,7 @@ A estrutura criada para a caixa de diálogo se parece com a seguinte:
 
 ```
 
-## Localização
+## Localização <a name="localization"></a>
 
 O texto mostrado na caixa de diálogo das opções de compra é definido pelo editor na IU do LaterPay Connector.
 
@@ -273,13 +273,13 @@ As seguintes chaves de mensagem podem ser traduzidas ou personalizadas, mas prec
   </tr>
 </table>
 
-## Análise
+## Análise <a name="analytics"></a>
 
 Como `amp-access-laterpay` é baseado em `amp-access`, ele é compatível com todos os [eventos de análise](amp-access.md#integration-with-amp-analytics) enviados pelo `amp-access`.
 
 Todos os exemplos disponíveis em [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/) estão configurados para enviar esses eventos de análise, caso você queira ver um exemplo mais completo de como isso é na prática.
 
-## Usar o AMP Access LaterPay com o AMP Access
+## Usar o AMP Access LaterPay com o AMP Access <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 Se você tem um sistema de assinatura e pretende usar o LaterPay somente para vendas de artigos individuais, é possível fazer com que os dois métodos de venda coexistam na mesma página, usando AMP Access e AMP Access LaterPay juntos.
 
@@ -338,13 +338,13 @@ Em que a marcação de acesso ao conteúdo pode se parecer com esta:
 
 Veja um exemplo mais completo em [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html) (link em inglês).
 
-## Documentação relacionada
+## Documentação relacionada <a name="related-documentation"></a>
 
 * [AMP Access](amp-access.md)
 * [LaterPay (link em inglês)](https://www.laterpay.net)
 * [LaterPay: como fazemos micropagamentos (link em inglês)](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) (link em inglês). Semelhante ao AMP Access LaterPay, mas voltado para páginas que não são AMP.
 
-## Validação
+## Validação <a name="validation"></a>
 
 Consulte as [regras do amp-access-laterpay](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii) (link em inglês) nas especificações do validador de AMP.

@@ -11,7 +11,7 @@ AMP HTML 페이지의 스타일과 레이아웃은 일반 HTML 페이지와 매�
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='AMP를 처음 사용할 때 어려운 점을 비롯하여 새롭게 설계된 AMP 프로젝트 사이트에 관한 UpperQuad의 이야기를 들어보세요.']
 
-## 페이지에 스타일 추가
+## 페이지에 스타일 추가 <a name="add-styles-to-a-page"></a>
 
  문서 헤드에서 `<style amp-custom>` 태그 내에 모든 CSS 를 추가합니다. 예:
 

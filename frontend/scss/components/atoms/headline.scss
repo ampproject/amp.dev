@@ -19,7 +19,10 @@ h1 {
 	&:first-of-type {
 		section.#{utility('content')} & {
 			margin-top: 0;
-			margin-bottom: 2rem;
+
+			@media (min-width: 768px) {
+				margin-bottom: 2rem;
+			}
 		}
 	}
 }

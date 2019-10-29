@@ -52,7 +52,7 @@ Bir yatay eksen boyunca birden çok benzer içerik parçasını görüntülemek 
     </tr>
   </table>
 
-# Davranış
+# Davranış <a name="behavior"></a>
 
 `amp-carousel` bileşeninin en yakın alt öğelerinin her biri, banttaki bir öğe olarak kabul edilir. Bu düğümlerin her birinde rastgele HTML alt öğeleri de olabilir.
 
@@ -77,7 +77,7 @@ Kullanıcı kaydırırsa, ok tuşlarını kullanırsa veya isteğe bağlı bir g
 ```
 [/example]
 
-# Belirli bir slayda ilerleme
+# Belirli bir slayda ilerleme <a name="advancing-to-a-specific-slide"></a>
 
 Bir öğede `on` özelliğinin yönteminin `tap:carousel-id.goToSlide(index=N)` olarak ayarlanması, kullanıcı dokunduğunda veya tıkladığında "carousel-id" kimliğine sahip bir bandı index=N konumundaki slayda ilerletir (ilk slayt index=0, ikinci slayt index=1 konumundadır ve diğer slaytların konum değeri bu düzenle devam eder).
 
@@ -129,7 +129,7 @@ Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimde
 ```
 [/example]
 
-# Özellikler
+# Özellikler <a name="attributes"></a>
 
 <table>
   <tr>
@@ -217,7 +217,7 @@ Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimde
           </tr>
         </table>
 
-# Stil
+# Stil <a name="styling"></a>
 
 * `amp-carousel` öğe seçicisini serbest bir şekilde biçimlendirmek için kullanabilirsiniz.
 * Bant öğelerini hedeflemek için `.amp-carousel-slide` sınıf seçicisini kullanabilirsiniz.
@@ -242,6 +242,6 @@ Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimde
 }
 ```
 
-# Doğrulama
+# Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonunda [amp-carousel kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) bakın.

@@ -46,15 +46,15 @@ limitations under the License.
 
 [جدول المحتويات]
 
-## نظرة عامة
+## نظرة عامة <a name="overview"></a>
 
 تعتمد "حركات AMP" على [واجهة برمجة تطبيقات Web Animations](https://www.w3.org/TR/web-animations/) لتحديد الحركات وتشغيلها في مستندات AMP.
 
-## التنسيق
+## التنسيق <a name="format"></a>
 
 يحدد عنصر `amp-animation` الحركة كبنية JSON.
 
-### مواصفات حركات المستوى الأعلى
+### مواصفات حركات المستوى الأعلى <a name="top-level-animation-specification"></a>
 
 يحدد كائن المستوى الأعلى عملية الحركة الكلية التي تتكون من عدد عشوائي من مكونات الحركة التي يتم تحديدها كمصفوفة `animations`:
 ```html
@@ -76,11 +76,11 @@ limitations under the License.
 </script>
 ```
 
-### الوضع في DOM
+### الوضع في DOM <a name="placement-in-dom"></a>
 
 يُسمح بوضع المكّوِن `<amp-animation>` فقط كعنصر ثانوي مباشر للعنصر `<body>` إذا كانت السمة `trigger="visibility"`. إذا لم يتم تحديد `trigger` وتم التحكم في تشغيل الحركة برمجيًا من خلال إجراءاتها، يمكن عندها وضع المكوِّن في أي مكان في DOM.
 
-### مكوِّن الحركة
+### مكوِّن الحركة <a name="animation-component"></a>
 
 كل مكوِّن من مكونات الحركة عبارة عن تأثير إطارات رئيسية[](https://www.w3.org/TR/web-animations/#dom-keyframeeffect-keyframeeffect) يتألف من:
 
@@ -101,25 +101,25 @@ limitations under the License.
 }
 ```
 
-### الشروط
+### الشروط <a name="conditions"></a>
 
 يمكن أن تحدد الشروط ما إذا سيتم تضمين مكون الحركة في الحركة النهائية أو لا.
 
-#### الاستعلام عن الوسائط
+#### الاستعلام عن الوسائط <a name="media-query"></a>
 
 يمكن تحديد الاستعلام عن الوسائط باستخدام الخاصية `media`. يمكن أن تحتوي هذه الخاصية على أي تعبير مسموح به لواجهة برمجة تطبيقات
 [Window.matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) ويتوافق مع قاعدة `@media` في CSS.
 
 إذا تم تحديد قيمة لأحد مكونات الحركة، لن يتم تضمين المكوِّن إلا إذا تطابق الاستعلام عن الوسائط مع البيئة الحالية.
 
-#### الشرط Supports
+#### الشرط Supports <a name="supports-condition"></a>
 
 يمكن تحديد الشرط Supports باستخدام الخاصية `supports`. يمكن أن تحتوي هذه الخاصية على أي تعبير مسموح به لواجهة برمجة تطبيقات
 [CSS.supports](https://developer.mozilla.org/en-US/docs/Web/API/CSS/supports) ويتوافق مع قاعدة `@supports` في CSS.
 
 إذا تم تحديد قيمة لأحد مكونات الحركة، لن يتم تضمين المكوِّن إلا إذا تطابق الشرط supports مع البيئة الحالية.
 
-### عبارة الحركة ` switch`
+### عبارة الحركة ` switch` <a name="animation-switch-statement"></a>
 
 في بعض الحالات، يكون من المريح الجمع بين عدة [حركات شرطية](#conditions) في حركة واحدة، مع تعيين إحداها لتكون الحركة التلقائية الاختيارية. يمكن تحقيق ذلك باستخدام عبارة الحركة `switch` بالتنسيق التالي:
 
@@ -167,7 +167,7 @@ limitations under the License.
 }
 ```
 
-### المتغيرات
+### المتغيرات <a name="variables"></a>
 
 يمكن لمكوِّن الحركة أن يعلن عن متغيرات CSS التي سيتم استخدامها لقيم التوقيت والإطارات الرئيسية من خلال التعبيرات `var()`. ويتم تقييم التعبيرات `var()` باستخدام السياق الهدف الحالي. يتم نشر متغيرات CSS المحددة في مكونات الحركة إلى حركات مدمجة، ويتم تطبيقها على أهداف الحركة وبالتالي تُلغي CSS المستخدَمة في الحركات النهائية.
 
@@ -200,7 +200,7 @@ limitations under the License.
 
 راجع قسم [`var()` و`calc()`](#var-and-calc-expressions) للحصول على المزيد من المعلومات عن `var()`.
 
-### خصائص التوقيت
+### خصائص التوقيت <a name="timing-properties"></a>
 
 قد تحتوي مكونات حركة المستوى الأعلى ومكونات الحركة على خصائص التوقيت. يتم تعريف هذه الخصائص بالتفصيل في
 [AnimationEffectTimingProperties](https://www.w3.org/TR/web-animations/#dictdef-animationeffecttimingproperties) من مواصفات Web Animation. وتتضمن مجموعة الخصائص المسموح بها هنا:
@@ -279,7 +279,7 @@ limitations under the License.
 
 تكتسب مكونات الحركة خصائص التوقيت المحددة لحركة المستوى الأعلى.
 
-### الأهداف الفرعية
+### الأهداف الفرعية <a name="subtargets"></a>
 
 متى توفرت إمكانية تحديد `selector`، فمن الممكن أيضًا تحديد `subtargets: []`. يمكن أن تلغي الأهداف الفرعية خصائص التوقيت أو المتغيرات المحددة في الحركة لأهداف فرعية معينة وموضّحة إما من خلال فهرس أو محدد CSS.
 
@@ -306,7 +306,7 @@ limitations under the License.
 
 لاحظ إمكانية تطابق عدة أهداف فرعية مع عنصر هدف واحد.
 
-### الإطارات الرئيسية
+### الإطارات الرئيسية <a name="keyframes"></a>
 
 يمكن تحديد الإطارات الرئيسية بعدة طرق موضحة في [قسم الإطارات الرئيسية](https://www.w3.org/TR/web-animations/#processing-a-keyframes-argument) من مواصفات Web Animations أو كسلسلة تشير إلى اسم `@keyframes` في CSS.
 
@@ -374,7 +374,7 @@ limitations under the License.
 
 تسمح قيم الخاصية بأي قيم CSS صالحة، بما في ذلك `calc()` و`var()` وغيرها من تعبيرات CSS.
 
-#### الإطارات الرئيسية من CSS
+#### الإطارات الرئيسية من CSS <a name="keyframes-from-css"></a>
 
 توجد طريقة أخرى لتحديد الإطارات الرئيسية كقاعدة في ورقة أنماط المستند (العلامة `<style>`) كقاعدة `@keyframes` في CSS. على سبيل المثال:
 ```html
@@ -405,7 +405,7 @@ limitations under the License.
 - لن تتمكن المنصات التي لا تتيح `calc()` و`var()` من الاستفادة من تعويضات `amp-animation` عند تحديد الإطارات الرئيسية في CSS. ننصح دائمًا بتضمين قيم احتياطية في CSS.
 - يتعذر استخدام إضافات CSS، مثل [`width()` و`height()` و`num()` و`rand()` و`index()` و`length()`](#css-extensions) في CSS.
 
-#### الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية
+#### الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية <a name="white-listed-properties-for-keyframes"></a>
 
 لا يمكن استخدام جميع خصائص CSS في الإطارات الرئيسية. وحدها خصائص CSS التي يمكن للمتصفحات الحديثة تحسينها وتحريكها بسرعة مدرَجة في القائمة البيضاء. وستزيد هذه القائمة كلما أكدت خصائص إضافية أنها توفر أداء جيدًا. تحتوي القائمة الحالية على:
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
@@ -415,7 +415,7 @@ limitations under the License.
 
 لاحظ أن استخدام خصائص CSS المبدوءة بالموردين ليست ضرورية أو مسموحًا بها.
 
-### الأشكال المختصرة لتهيئة الحركات
+### الأشكال المختصرة لتهيئة الحركات <a name="abbreviated-forms-of-animation-configuration"></a>
 
 إذا تضمنت الحركة عنصرًا واحدًا وكان تأثير واحد للإطارات الرئيسية كافيًا، يمكن اختصار التهيئة على مكّوِن الحركة هذا فقط. على سبيل المثال:
 ```html
@@ -451,7 +451,7 @@ limitations under the License.
 </amp-animation>
 ```
 
-### إنشاء الحركة
+### إنشاء الحركة <a name="animation-composition"></a>
 
 يمكن أن تشير الحركات إلى حركات أخرى، وبالتالي فهي تجمع بين عدة إعلانات للمكّوِن `amp-animation` في حركة نهائية واحدة. إن الإشارة إلى حركة من حركة أخرى تساوي تقريبًا عملية الدمج. يكمن سبب تقسيم الحركة إلى عناصر مختلفة في إعادة استخدام الحركة نفسها من عدة أماكن أو تصغير إعلان كل حركة وزيادة إمكانية إدارتها.
 
@@ -505,7 +505,7 @@ limitations under the License.
 
 يتم تمرير المتغيرات وخصائص التوقيت المحددة في حركة الطلب إلى الحركة المضمنَّة أيضًا.
 
-### تعبيرات `var()` و`calc()`
+### تعبيرات `var()` و`calc()` <a name="var-and-calc-expressions"></a>
 
 يتيح `amp-animation` استخدام تعبيرات `var()` و`calc()` لقيم التوقيت والإطارات الرئيسية.
 
@@ -543,11 +543,11 @@ limitations under the License.
 
 يمكن لمكونات الحركة تحديد متغيراتها الخاصة، مثل حقول `--var-name`. يتم نشر هذه المتغيرات في الحركات المدمجة وتلغي متغيرات العناصر الهدف المحددة من خلال ورقة الأنماط (العلامة `<style>`). تحاول تعبيرات `var()` أولاً حل قيم المتغيرات المحددة في الحركات ثم تستعلم عن أنماط الهدف.
 
-### إضافات CSS
+### إضافات CSS <a name="css-extensions"></a>
 
 يوفر `amp-animation` إضافات CSS متعددة لتلبية احتياجات الحركات المعتادة: `rand()` و`num()` و`width()` و`height()`. يمكن استخدام هذه الدوال متى أمكن استخدام قيم CSS ضمن `amp-animation`، بما في ذلك قيم التوقيت والإطارات الرئيسية.
 
-#### الإضافة `index()` من CSS
+#### الإضافة `index()` من CSS <a name="css-index-extension"></a>
 
 تعرض الدالة `index()` فهرس العنصر الهدف الحالي في تأثير الحركة. تكون الإضافة أكثر ملاءمة عندما يتم تحريك أهداف متعددة بنفس التأثير باستخدام الخاصية `selector`. سيكون لأول هدف يتطابق مع المحدد الفهرس `0`، وسيكون فهرس الثاني `1` وهكذا.
 
@@ -559,7 +559,7 @@ limitations under the License.
 }
 ```
 
-#### الإضافة `length()` من CSS
+#### الإضافة `length()` من CSS <a name="css-length-extension"></a>
 
 تعرض الدالة `length()` عدد العناصر الهدف في تأثير الحركة. وتكون هذه الإضافة أكثر صلة عند اقترانها بالإضافة `index()`:
 
@@ -570,7 +570,7 @@ limitations under the License.
 }
 ```
 
-#### الإضافة `rand()` من CSS
+#### الإضافة `rand()` من CSS <a name="css-rand-extension"></a>
 
 تعرض الدالة `rand()` قيمة CSS عشوائية ولها شكلان.
 
@@ -588,7 +588,7 @@ delay: "calc(10s * rand())"
 }
 ```
 
-#### الإضافات `width()` و`height()` من CSS
+#### الإضافات `width()` و`height()` من CSS <a name="css-width-and-height-extensions"></a>
 
 تعرض إضافتَا `width()` و`height()` عرض/ارتفاع العنصر المتحرك أو العنصر المعيَّن بالمحدد. تكون القيمة المعروضة بالبكسل، مثل `100px`.
 
@@ -606,7 +606,7 @@ delay: "calc(10s * rand())"
 }
 ```
 
-#### الإضافة `num()` من CSS
+#### الإضافة `num()` من CSS <a name="css-num-extension"></a>
 
 تعرض الدالة `num()` تمثيلاً رقميًا لقيمة CSS. على سبيل المثال:
 - `num(11px)` yields `11`;
@@ -620,21 +620,21 @@ delay: "calc(10s * rand())"
 }
 ```
 
-### صور SVG المتحركة
+### صور SVG المتحركة <a name="svg-animations"></a>
 
 صور SVG المتحركة رائعة ونحن بالتأكيد ننصح باستخدامها في الحركات.
 
-تتم إتاحة صور SVG المتحركة عبر نفس خصائص CSS الموضحة في [الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية](#whitelisted-properties-for-keyframes) مع بعض الفروق الدقيقة:
+تتم إتاحة صور SVG المتحركة عبر نفس خصائص CSS الموضحة في [الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية](#white-listed-properties-for-keyframes) مع بعض الفروق الدقيقة:
 
 * عناصر IE/Edge SVG [لا تتيح خصائص `transform` من CSS](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). يتم تعويض الحركة `transform` نفسها. ومع ذلك، لا يتم تطبيق الحالة الأولية المحددة في ورقة الأنماط. إذا كانت الحالة الأولية المحوّلة مهمة على IE/Edge، يُنصح بتكرارها عبر [ السمة SVG`transform`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
 * في حين يتم تعويض CSS `transform` لـ IE/Edge، فمن المستحيل لسوء الحظ تعويض الخاصية `transform-origin`. وبالتالي، عندما يكون التوافق مع IE/Edge مطلوبًا، يُنصح باستخدام `transform-origin` التلقائية فقط.
 * تواجه معظم المتصفحات حاليًا مشاكل في فهم CSS `transform-origin` بشكل صحيح. اطّلِع على مشاكل [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300) و[Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) و[Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340). ويُفترَض حل غالبية هذا الالتباس بمجرد تنفيذ [CSS `transform-box`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box). عندما تكون `transform-origin` مهمة، يُنصَح أيضًا بتضمين `transform-box` CSS المطلوبة حفاظًا على التوافق في المستقبل.
 
-## تشغيل الحركة
+## تشغيل الحركة <a name="triggering-animation"></a>
 
 يمكن تشغيل الحركة عبر السمة `trigger` أو الإجراء `on`.
 
-### السمة `trigger`
+### السمة `trigger` <a name="trigger-attribute"></a>
 
 القيمة `visibility` هي القيمة الوحيدة المتاحة حاليًا للسمة `trigger`. يتم تشغيل `visibility` عندما يكون المستند أو التضمين الأساسي مرئيًا (في إطار العرض).
 
@@ -646,7 +646,7 @@ delay: "calc(10s * rand())"
 </amp-animation>
 ```
 
-### التشغيل عبر الإجراء `on`
+### التشغيل عبر الإجراء `on` <a name="triggering-via-on-action"></a>
 
 على سبيل المثال:
 
@@ -657,7 +657,7 @@ delay: "calc(10s * rand())"
 <button on="tap:anim1.start">Animate</button>
 ```
 
-## الإجراء `on`
+## الإجراء `on` <a name="on-actions"></a>
 
 يصدِّر العنصر `amp-animation` الإجراءات التالية:
 

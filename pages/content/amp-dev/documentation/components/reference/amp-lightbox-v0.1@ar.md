@@ -51,7 +51,7 @@ teaser:
 
 [جدول المحتويات]
 
-## السُلوك
+## السُلوك <a name="behavior"></a>
 
 يحدد المكوِّن `amp-lightbox` العناصر الثانوية التي يتم عرضها في تراكب/شكل إطار العرض الكامل. عندما ينقر المستخدِم على عنصر (مثل زر)، فإن معرّف `amp-lightbox` المُشَار إليه في السمة `on` للعنصر يؤدي إلى ظهور العرض المبسط بحيث يأخذ حجم كامل الإطار ويعرض عناصر `amp-lightbox` الثانوية.
 
@@ -69,7 +69,7 @@ teaser:
 يوجد أيضًا المكوِّن [`<amp-image-lightbox>`](amp-image-lightbox.md) لعرض الصور في العرض المبسط.
 [/tip]
 
-## السمات
+## السمات <a name="attributes"></a>
 
 <table>
   <tr>
@@ -103,11 +103,11 @@ teaser:
 </table>
 
 
-## التصميم
+## التصميم <a name="styling"></a>
 
 يمكنك تصميم `amp-lightbox` باستخدام CSS القياسي.
 
-## الإجراءات
+## الإجراءات <a name="actions"></a>
 
 يعرض `amp-lightbox` الإجراءات التالية التي يمكنك استخدام [بنية on في AMP لتشغيلها](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md):
 
@@ -127,7 +127,7 @@ teaser:
 </table>
 
 
-## <a id="a4a"></a> استخدام `amp-lightbox` في إعلانات AMPHTML
+## <a id="a4a"></a> استخدام `amp-lightbox` في إعلانات AMPHTML <a name="a4a"></a>
 
 [tip type="note"]
 
@@ -137,7 +137,7 @@ teaser:
 
 هناك بعض الاختلافات بين استخدام `amp-lightbox` في مستندات AMP العادية و[الإعلانات المكتوبة باللغة AMPHTML](../../../documentation/guides-and-tutorials/learn/a4a_spec.md):
 
-### السمة close-button مطلوبة
+### السمة close-button مطلوبة <a name="requires-close-button"></a>
 
 تكون السمة `close-button` مطلوبة بالنسبة إلى إعلانات AMPHTML. تؤدي هذه السمة إلى عرض رأس أعلى العرض المبسط. ويحتوي الرأس على زر الإغلاق وتصنيف مكتوب عليه "إعلان". ترجع أسباب طلب هذا الرأس إلى ما يلي:
 
@@ -146,21 +146,21 @@ teaser:
 
 السمة `close-button` مطلوبة ولا يُسمح بها إلا في إعلانات AMPHTML. في مستندات AMP العادية، يمكنك تقديم زر الإغلاق في أي مكان تحتاج إليه كجزء من محتوى `<amp-lightbox>`.
 
-### غير مسموح بإعلانات العرض المبسط القابلة للتمرير
+### غير مسموح بإعلانات العرض المبسط القابلة للتمرير <a name="scrollable-lightboxes-are-disallowed"></a>
 
 بالنسبة إلى إعلانات AMPHTML، لا يُسمح باستخدام إعلانات العرض المبسط القابلة للتمرير.
 
-### الخلفية شفافة
+### الخلفية شفافة <a name="transparent-background"></a>
 
 عندما تستخدم `<amp-lightbox>` في إعلانات AMPHTML، تصبح خلفية العنصر `<body>` شفافة لأن وقت تشغيل AMP يغيّر حجم محتوى تصميم الإعلان ويعيد تنظيمه قبل توسيع العرض المبسط. يتم ذلك لمنع حدوث "قفزة" بصرية في التصميم أثناء فتح الإعلان. إذا كان تصميم إعلانك يحتاج إلى خلفية، عيّنها على حاوية متوسطة (مثل `<div>` بالحجم الكامل) بدلاً من `<body>`.
 
 عند تشغيل إعلان AMPHTML في بيئة خارجية (في مستند غير AMP مثلاً)، يتوسط التصميم في إطار العرض ثم يتم توسيعه. ويحدث هذا لأن إطارات iframe الخارجية تحتاج إلى الاعتماد على واجهة برمجة تطبيقات postMessage لتفعيل ميزات مثل تغيير حجم الإطار، وهو ما يحدث بشكل غير متزامن، لذا فإن توسيط التصميم أولاً يتيح انتقالاً سلسًا بدون حدوث قفزات مرئية.
 
-### أمثلة على الانتقال في العرض المبسط لإعلانات AMPHTML
+### أمثلة على الانتقال في العرض المبسط لإعلانات AMPHTML <a name="examples-of-transitions-in-lightbox-for-amphtml-ads"></a>
 
 في الأمثلة أدناه، نوضح شكل الانتقال لإعلان AMPHTML يحتوي على السمة `animate-in="fly-in-bottom"` وقد تم تعيينها على عنصر العرض المبسط لإعلان AMPHTML في إطار iframe صديق وإعلان AMPHTML في iframe خارجي.
 
-##### إطارات iframe صديقة (من ذاكرة التخزين المؤقت لصفحات AMP مثلاً)
+##### إطارات iframe صديقة (من ذاكرة التخزين المؤقت لصفحات AMP مثلاً) <a name="on-friendly-iframes-eg-coming-from-an-amp-cache"></a>
 
 <amp-img alt="إعلان العرض المبسط في إطار iframe صديق" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-fie.gif" layout="fixed">
 <noscript>
@@ -168,7 +168,7 @@ teaser:
 </noscript>
 </amp-img>
 
-##### إطارات iframe خارجية (من خارج ذاكرة التخزين المؤقت لصفحات AMP مثلاً)
+##### إطارات iframe خارجية (من خارج ذاكرة التخزين المؤقت لصفحات AMP مثلاً) <a name="on-third-party-iframes-eg-outside-the-amp-cache"></a>
 
 <amp-img alt="إعلان العرض المبسط في إطار iframe خارجي" width="360" height="480" src="https://github.com/ampproject/amphtml/raw/master/spec/img/lightbox-ad-3p.gif" layout="fixed">
 <noscript>
@@ -176,6 +176,6 @@ teaser:
 </noscript>
 </amp-img>
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-lightbox](https://github.com/ampproject/amphtml/blob/master/extensions/amp-lightbox/validator-amp-lightbox.protoascii) في مواصفات مدقق AMP.

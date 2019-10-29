@@ -272,8 +272,9 @@ class SamplesBuilder {
       // Unwrap code snippet from wrapping divs and remove trailing whitespace
       section.code = section.codeSnippet();
 
+      // get the markdown with the 'doc' method that does additional whitespace alignment
+      let markdown = section.doc;
       // Replace GitHub sourcecode syntax by python-markdown
-      let markdown = section.doc_;
       markdown = MarkdownDocument.rewriteCodeBlocks(markdown);
       markdown = MarkdownDocument.escapeMustacheTags(markdown);
 

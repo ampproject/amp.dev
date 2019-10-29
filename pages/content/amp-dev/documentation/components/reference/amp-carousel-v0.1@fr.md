@@ -51,7 +51,7 @@ Carrousel générique permettant d'afficher plusieurs éléments de contenu simi
     </tr>
   </table>
 
-# Comportement
+# Comportement <a name="behavior"></a>
 
 Chacun des éléments enfants immédiats du composant `amp-carousel` est considéré comme un élément du carrousel. Chacun de ces nœuds peut également comporter des éléments enfants HTML arbitraires.
 
@@ -76,7 +76,7 @@ Le carrousel change d'élément lorsque l'utilisateur balaie l'écran, utilise l
 ```
 [/example]
 
-# Accéder à une diapositive spécifique
+# Accéder à une diapositive spécifique <a name="advancing-to-a-specific-slide"></a>
 
 Si vous définissez une méthode pour l'attribut `on` d'un élément sur `tap:carousel-id.goToSlide(index=N)`, le carrousel ayant l'identifiant "carousel-id" passe à la diapositive suivante à index=N lorsque l'utilisateur appuie ou clique sur un élément (la première diapositive se situe à index=0, la deuxième à index=1 et ainsi de suite).
 
@@ -128,7 +128,7 @@ L'exemple suivant illustre un carrousel de trois images, sous lequel sont dispos
 ```
 [/example]
 
-# Attributs
+# Attributs <a name="attributes"></a>
 
 <table>
   <tr>
@@ -216,7 +216,7 @@ L'exemple suivant illustre un carrousel de trois images, sous lequel sont dispos
           </tr>
         </table>
 
-# Application d'un style
+# Application d'un style <a name="styling"></a>
 
 * Vous pouvez utiliser le sélecteur d'éléments `amp-carousel` pour appliquer un style librement.
 * Vous pouvez utiliser le sélecteur de classes `.amp-carousel-slide` pour cibler des éléments du carrousel.
@@ -241,6 +241,6 @@ L'exemple suivant illustre un carrousel de trois images, sous lequel sont dispos
 }
 ```
 
-# Validation
+# Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-carousel](https://github.com/ampproject/amphtml/blob/master/extensions/amp-carousel/validator-amp-carousel.protoascii) dans les spécifications du validateur AMP.

@@ -44,7 +44,7 @@ Exibe um iframe.
   </tr>
 </table>
 
-# Comportamento
+# Comportamento <a name="behavior"></a>
 
 O `amp-iframe` tem várias diferenças importantes em relação aos iframes vanilla, que têm como objetivo torná-lo mais seguro e evitar arquivos AMP que sejam dominados por um único iframe:
 
@@ -73,7 +73,7 @@ O `amp-iframe` tem várias diferenças importantes em relação aos iframes vani
 para ver mais demonstrações do `amp-iframe`, visite o site [AMP By Example](https://ampbyexample.com/components/amp-iframe/).
 [/tip]
 
-# Uso do amp-iframe para publicidade
+# Uso do amp-iframe para publicidade <a name="usage-of-amp-iframe-for-advertising"></a>
 
 O `amp-iframe` **não pode** ser usado com a finalidade principal de exibir publicidade. Não há problema em usar o `amp-iframe` para exibir vídeos que contenham publicidade em parte deles. Essa política de AMP pode ser aplicada ao não renderizar os respectivos iframes.
 
@@ -86,7 +86,7 @@ Os motivos dessa política são os seguintes:
 * O `amp-iframe` não tem um mecanismo de redimensionamento totalmente controlado por iframe.
 * As informações de visibilidade podem não estar disponíveis para o `amp-iframe`.
 
-# Atributos
+# Atributos <a name="attributes"></a>
 
 <table>
   <tr>
@@ -100,7 +100,7 @@ Os motivos dessa política são os seguintes:
         Se o <code>frameborder</code> não for especificado, ele será definido como <code>0</code>, por padrão.</td>
       </tr>
       <tr>
-        <td width="40%"><strong>sandbox</strong></td>
+        <td width="40%"><strong>sandbox</strong><a name="sandbox"></a></td>
         <td>Iframes criados pelo <code>amp-iframe</code> sempre têm o atributo <code>sandbox</code> definido neles. Por padrão, o valor fica vazio, o que significa que eles são "colocados em sandbox ao máximo". Ao configurar os valores de <code>sandbox</code>, é possível optar que uma parte menor do iframe seja colocada em sandbox. Todos os valores aceitos pelos navegadores são permitidos. Por exemplo, a configuração de <code>sandbox="allow-scripts"</code> permite que o iframe execute JavaScript, e de <code>sandbox="allow-scripts allow-same-origin"</code> permite que o iframe execute JavaScript, crie XHRs que não sejam CORS e leia/grave cookies.
           <br><br>
             Se você estiver transformando em iframe um documento que não foi especificamente criado com sandbox em mente, provavelmente precisará adicionar <code>allow-scripts allow-same-origin</code> ao atributo <code>sandbox</code> e talvez precise permitir recursos adicionais.
@@ -115,7 +115,7 @@ Os motivos dessa política são os seguintes:
               </tr>
             </table>
 
-# Iframe com marcador
+# Iframe com marcador <a name="iframe-with-placeholder"></a>
 
 É possível fazer com que um `amp-iframe` apareça na parte superior de um documento quando o `amp-iframe` tiver um elemento `placeholder`, como mostrado no exemplo abaixo.
 
@@ -142,7 +142,7 @@ window.parent.postMessage({
   }, '*');
 ```
 
-# Redimensionamento do iframe
+# Redimensionamento do iframe <a name="iframe-resizing"></a>
 
 Um `amp-iframe` precisa ter o layout estático definido, como acontece com qualquer outro elemento AMP. No entanto, é possível redimensionar um `amp-iframe` no tempo de execução. Para fazer isso, siga estas etapas:
 
@@ -184,7 +184,7 @@ Veja alguns fatores que afetam a rapidez com que o redimensionamento será execu
 * Se o redimensionamento for solicitado para um iframe ativo no momento.
 * Se o redimensionamento for solicitado para um iframe abaixo ou acima da janela de visualização.
 
-# Visibilidade do iframe
+# Visibilidade do iframe <a name="iframe-viewability"></a>
 
 Iframes podem enviar uma mensagem `send-intersections` aos respectivos pais para começar a receber [registros de alterações](https://developer.mozilla.org/pt-BR/docs/Web/API/IntersectionObserverEntry) com o estilo IntersectionObserver da intersecção do iframe com a janela de visualização pai.
 
@@ -220,7 +220,7 @@ window.addEventListener('message', function(event) {
 
 A mensagem de interseção seria enviada ao iframe pelo pai quando o iframe entrar ou sair da janela de visualização (ou estiver parcialmente visível), quando ele for rolado ou redimensionado.
 
-# Iframes de rastreamento/análise
+# Iframes de rastreamento/análise <a name="trackinganalytics-iframes"></a>
 
 Recomendamos o uso do [`amp-analytics`](amp-analytics.md) para fins de análise, porque ele é significativamente mais robusto, completo e uma solução eficiente que pode ser configurada para uma ampla gama de fornecedores de análise.
 
@@ -228,7 +228,7 @@ As AMP permitem apenas um iframe por página, que é usado para fins de análise
 
 Os iframes são identificados como de rastreamento/análise se não parecem atender a nenhum propósito de usuário direto, como ser invisível ou pequeno.
 
-# Diretriz: usar componentes AMP existentes sobre amp-iframe
+# Diretriz: usar componentes AMP existentes sobre amp-iframe <a name="guideline-use-existing-amp-components-over-amp-iframe"></a>
 
 O componente `amp-iframe` precisa ser considerado um substituto se a experiência do usuário necessária não for possível por outros meios em AMP, ou seja, se ainda não existir um [componente AMP](../../../documentation/components/index.html) para o caso de uso. Isso ocorre porque há muitos benefícios em usar um componente AMP personalizado para um caso de uso específico, como:
 
@@ -237,6 +237,6 @@ O componente `amp-iframe` precisa ser considerado um substituto se a experiênci
 * Redimensionamento integrado. Isso significa que o conteúdo de iframe com tamanho imprevisível pode aparecer com mais frequência para o usuário, como se fosse nativo à página, e não em um frame rolável.
 * Outros recursos adicionais podem ser incorporados (por exemplo, reprodução automática para players de vídeo).
 
-# Validação
+# Validação <a name="validation"></a>
 
 Consulte as [regras do amp-iframe](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii) (link em inglês) nas especificações do validador de AMP.

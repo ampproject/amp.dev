@@ -412,3 +412,14 @@ providers:
       fit: contain
     formats:
       - email
+  - name: Maileon
+    url: https://www.maileon.com
+    type: Email Service
+    description: Effective Newsletter Software for more conversions and revenue
+    image:
+      src: /static/img/tools/maileon.png
+      width: 1600
+      height: 465
+      fit: contain
+    formats:
+      - email

@@ -35,7 +35,7 @@ Run `npm start` and open the browser window to `http://localhost:8080/`. Our bas
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app', align='' ) }}
 
-After selecting the password input element, the [AMP `on="tap:rules.show"` action](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md?format=websites) is triggered. This reveals the [`<div id="rules" hidden>`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md?format=websites#*-(all-elements)) element, where our password requirements are listed.
+After selecting the password input element, the [AMP `on="tap:rules.show"` action](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md?format=websites) is triggered. This reveals the [`<div id="rules" hidden>`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md?format=websites#-all-elements)) element, where our password requirements are listed.
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image2.jpg', 500, 604, layout='intrinsic', alt='Image of basic amp script tutorial starter app with password requirements', align='' ) }}
 

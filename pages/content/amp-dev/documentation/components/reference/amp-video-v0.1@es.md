@@ -48,7 +48,7 @@ Funciona como sustituto de la etiqueta `video` de HTML5. Solo se utiliza para in
     </tr>
   </table>
 
-## Comportamiento
+## Comportamiento <a name="behavior"></a>
 
 El componente `amp-video` carga el recurso de vídeo que especifica su atributo `src` mediante la carga diferida, con un ritmo que determina el tiempo de ejecución de AMP. Puedes controlar los componentes `amp-video` de forma similar a las etiquetas `<video>` estándar de HTML5.
 
@@ -59,7 +59,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
 * Un marcador de posición para mostrar antes de que comience a reproducirse el vídeo.
 * Un respaldo que funcione si el navegador no admite vídeos de HTML5: uno o cero nodos secundarios inmediatos pueden tener el atributo `fallback`. Si está presente, este nodo y sus nodos secundarios forman el contenido que se muestra si el navegador del usuario no es compatible con los vídeos de HTML5.
 
-#### Ejemplo
+#### Ejemplo <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
 ```html
@@ -79,11 +79,11 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
 ```
 [/example]
 
-## Analytics
+## Analytics <a name="analytics"></a>
 
 `amp-video` admite analíticas predeterminadas. Para obtener más información, consulta esta página sobre [analíticas de vídeo](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
-## Atributos
+## Atributos <a name="attributes"></a>
 
 <table>
   <tr>
@@ -143,7 +143,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
         </tr>
       </table>
 
-## Atributos de la API de Media Session
+## Atributos de la API de Media Session <a name="media-session-api-attributes"></a>
 
 El componente `amp-video` implementa la [API de Media Session](https://developers.google.com/web/updates/2017/02/media-session), que permite a los desarrolladores especificar más información sobre el archivo de vídeo. La información adicional del vídeo se muestra en el centro de notificaciones del dispositivo del usuario (junto con los controles de reproducción y pausa).
 
@@ -180,12 +180,12 @@ En este ejemplo se incluyen los atributos `poster` y `artwork`. `poster` sirve c
 </amp-video>
 ```
 
-## Superposición de reproducción por clic
+## Superposición de reproducción por clic <a name="click-to-play-overlay"></a>
 
 En Internet, es habitual añadir una superposición de reproducción por clic a los reproductores de vídeo como una función de experiencia de usuario.  Por ejemplo, puedes hacer que se muestre un icono de reproducción personalizado en el que el usuario puede hacer clic, así como incluir el título del vídeo, imágenes de póster de distintos tamaños, etc.  Dado que el componente `amp-video` admite la acción de AMP `play` estándar, puedes implementar fácilmente la reproducción por clic.
 
 Para obtener más detalles, consulta el ejemplo de [superposición de reproducción por clic para amp-video](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/) de AMP By Example.
 
-## Validación
+## Validación <a name="validation"></a>
 
 Consulta las [reglas de amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) en la especificación de la herramienta de validación de AMP.

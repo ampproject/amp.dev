@@ -51,12 +51,12 @@ $title: amp-sidebar
   </tr>
 </table>
 
-## Genel Bakış
+## Genel Bakış <a name="overview"></a>
 
 `<amp-sidebar>`, geçici erişim için tasarlanmış meta içeriği (gezinme bağlantıları, düğmeler, menüler vb.) gizler. `<amp-sidebar>` düğme dokunuşlarıyla açılıp kapatılabilir ve amp-sidebar öğesinin dışındaki alana dokunularak kapatılabilir.
 Bununla birlikte, medya sorgularını kabul eden isteğe bağlı özellikler, sitenin diğer bölümlerindeki meta içeriği görüntülemek için kullanılabilir. Alt `<nav toolbar="(media query)" toolbar-target="elementID">` öğeleri, kenar çubuğundaki içeriğin ana içeriğin diğer bölümlerinde görüntülenmesine olanak tanır.
 
-## Davranış
+## Davranış <a name="behavior"></a>
 
 * `<amp-sidebar>`, `<body>` öğesinin doğrudan bir alt öğesi olmalıdır.
 * Kenar çubuğu yalnızca bir sayfanın sol veya sağ tarafında görünebilir.
@@ -89,7 +89,7 @@ Aşağıdaki örnekte gezinme öğelerini içermek için `amp-sidebar` özelliğ
 </amp-sidebar>
 ```
 
-### Kenar çubuğunu açma ve kapatma
+### Kenar çubuğunu açma ve kapatma <a name="opening-and-closing-the-sidebar"></a>
 
 Bir öğeye dokunulduğunda veya bir öğe tıklandığında kenar çubuğuna geçiş yapmak, kenar çubuğunu açmak veya kapatmak için öğede [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) işlem özelliğini ayarlayın ve aşağıdaki işlem yöntemlerinden birini belirtin:
 
@@ -125,11 +125,11 @@ Alternatif olarak, kenar çubuğunu klavyedeki çıkış tuşuna basarak da kapa
 <button on='tap:sidebar1.close'>x</button>
 ```
 
-### Araç çubuğu
+### Araç çubuğu <a name="toolbar"></a>
 
 Bir medya sorgusuyla `toolbar` özelliğini ve `<amp-sidebar>` öğesinin alt öğesi olan bir `<nav>` öğesinde, bir öğe kimliğiyle `toolbar-target` özelliğini belirterek, `<body>` öğesinde görüntülenen bir `toolbar` öğesi oluşturabilirsiniz. `toolbar`, `<nav>` öğesini ve alt öğelerini kopyalar ve öğeyi, `toolbar-target` öğesinin sonuna ekler.
 
-#### Davranış
+#### Davranış <a name="behavior-1"></a>
 
 * Kenar çubuğu, `toolbar` ve `toolbar-target` özelliklerine sahip nav öğeleri ekleyerek araç çubukları uygulayabilir.
 * nav öğesi, `<amp-sidebar>` bileşeninin bir alt öğesi ve şu biçimde olmalıdır: `<nav toolbar="(media-query)" toolbar-target="elementID">`.
@@ -167,7 +167,7 @@ Aşağıdaki örnekte, pencere genişliği 767 pikselden az veya bu değere eşi
 
 ```
 
-## Araç Çubuğunu Şekillendirme
+## Araç Çubuğunu Şekillendirme <a name="styling-toolbar"></a>
 
 `<amp-sidebar>` öğesinin içindeki `toolbar` öğesi, `toolbar-target` öğesinin gösterilmesine veya gizlenmesine bağlı olarak öğeye uygulanan sınıflara sahiptir. Bu, `toolbar` öğesinde ve ardından, `toolbar-target` öğesinde farklı stilleri uygulamak açısından faydalıdır. Sınıflar, `amp-sidebar-toolbar-target-shown` ve `amp-sidebar-toolbar-target-hidden` sınıflarıdır. `amp-sidebar-toolbar-target-shown` sınıfı, `toolbar-target` öğesi gösterildiğinde `toolbar` öğesine uygulanır. `amp-sidebar-toolbar-target-hidden` sınıfı, `toolbar-target` öğesi gizlendiğinde `toolbar` öğesine uygulanır.
 
@@ -212,11 +212,11 @@ Aşağıdaki örnekte, pencere genişliği 767 pikselden az veya bu değere eşi
 [Örneklerle AMP](https://ampbyexample.com/components/amp-sidebar/) sayfasında canlı demoları görebilirsiniz.
 [/tip]
 
-## Haberler için Kenar Çubuğu
+## Haberler için Kenar Çubuğu <a name="sidebar-for-stories"></a>
 
 `amp-story` [bileşeni](../../../about/stories.html) içinde `amp-sidebar` kullanımı desteklenir.
 
-### Davranış
+### Davranış <a name="behavior-2"></a>
 
 * `<amp-sidebar>`, `<amp-story>` öğesinin doğrudan bir alt öğesi olmalıdır.
 * Kenar çubuğu, normal AMP dokümanları için varsayılan olarak "başlangıç noktası"na; diğer bir deyişle, soldan sağa diller için sağa, sağdan sola diller için sola ayarlanır.
@@ -226,7 +226,7 @@ Aşağıdaki örnekte, pencere genişliği 767 pikselden az veya bu değere eşi
 
 Haber platformu genelinde tutarlı bir kullanıcı arayüzü deneyimi sağlamak için hangi özelliklere ve detaylara izin verileceği konusunda belirli kısıtlamalar vardır. Aşağıda, `amp-story` içindeki bir `amp-sidebar` öğesinin izin verilen özellikleri ve detayları gösterilmektedir.
 
-### İzin Verilen Özellikler
+### İzin Verilen Özellikler <a name="allowed-attributes"></a>
 
 * [layout](#layout)
 * [data-close-button-aria-label](#data)
@@ -257,37 +257,37 @@ Aşağıdaki örnekte, `amp-story` içindeki basit bir `amp-sidebar` gösterilme
 </body>
 ```
 
-## Özellikler
+## Özellikler <a name="attributes"></a>
 
-##### side
+##### side <a name="side"></a>
 
 Kenar çubuğunun sayfanın solundan mı (`left`) yoksa sağından mı (`right`) açılması gerektiğini belirtir.  Bir `side` değerinin belirtilmemesi durumunda, `side` değeri `body` etiketinin `dir` özelliğinden devralınır (`ltr` => `left` , `rtl` => `right`); `dir` özelliği yoksa `side` özelliği varsayılan olarak `left` değerine ayarlanır.
 
-##### layout<a name="layout"></a>
+##### layout <a name="layout"></a>
 
 Kenar çubuğunun görüntüleme düzenini belirtir; `nodisplay` değerinde olmalıdır.
 
-##### open
+##### open <a name="open"></a>
 
 Bu özellik, kenar çubuğu açıkken mevcuttur.
 
-##### data-close-button-aria-label<a name="data"></a>
+##### data-close-button-aria-label <a name="data"></a>
 
 Erişilebilirlik amacıyla eklenen kapat düğmesinin ARIA etiketini ayarlamak için kullanılan isteğe bağlı özellik.
 
-##### toolbar
+##### toolbar <a name="toolbar-1"></a>
 
-Bu özellik, alt `<nav toolbar="(media-query)" toolbar-target="elementID">` öğelerinde bulunur ve bir araç çubuğunun ne zaman gösterileceğine yönelik bir medya sorgusunu kabul eder. Araç çubuklarını kullanma hakkında daha fazla bilgi için [Araç Çubuğu](#toolbar) bölümüne bakın.
+Bu özellik, alt `<nav toolbar="(media-query)" toolbar-target="elementID">` öğelerinde bulunur ve bir araç çubuğunun ne zaman gösterileceğine yönelik bir medya sorgusunu kabul eder. Araç çubuklarını kullanma hakkında daha fazla bilgi için [Araç Çubuğu](#toolbar-1) bölümüne bakın.
 
-##### toolbar-target
+##### toolbar-target <a name="toolbar-target"></a>
 
-Bu özellik, alt `<nav toolbar="(media-query)" toolbar-target="elementID">` öğesinde bulunur ve sayfadaki bir öğenin kimliğini kabul eder.  `toolbar-target` özelliği, araç çubuğunu varsayılan araç çubuğu stilini kullanmadan, sayfadaki öğenin belirtilen kimliğine yerleştirir. Araç çubuklarını kullanma hakkında daha fazla bilgi için [Araç Çubuğu](#toolbar) bölümüne bakın.
+Bu özellik, alt `<nav toolbar="(media-query)" toolbar-target="elementID">` öğesinde bulunur ve sayfadaki bir öğenin kimliğini kabul eder.  `toolbar-target` özelliği, araç çubuğunu varsayılan araç çubuğu stilini kullanmadan, sayfadaki öğenin belirtilen kimliğine yerleştirir. Araç çubuklarını kullanma hakkında daha fazla bilgi için [Araç Çubuğu](#toolbar-1) bölümüne bakın.
 
-##### common attributes<a name="common"></a>
+##### common attributes <a name="common"></a>
 
 Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../documentation/guides-and-tutorials/learn/common_attributes.md) içerir.
 
-## Stil
+## Stil <a name="styling"></a>
 
 `amp-sidebar` bileşenine, standart CSS ile stil eklenebilir.
 
@@ -299,7 +299,7 @@ Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../docum
 AMP sayfalarınızda kullanabileceğiniz duyarlı, önceden şekillendirilmiş gezinme menüleri için [AMP Start](https://ampstart.com/components#navigation) sayfasını ziyaret edin.
 [/tip]
 
-## Taşan alanların içinde otomatik kaydırma
+## Taşan alanların içinde otomatik kaydırma <a name="auto-scrolling-within-overflowing-areas"></a>
 
 `amp-sidebar`, kenar çubuğu ve araç çubuğu örneklerinde özellik olarak kullanılan `autoscroll` öğesiyle, taşan kapsayıcıyı otomatik olarak ilk öğeye kaydırabilir.
 
@@ -336,12 +336,12 @@ Bu özellik, uzun gezinme listeleriyle uğraşırken, sayfa yüklendiğinde kena
 
 Çalışan bir örnek kod için lütfen [bu örnek dosyasına](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) bakın.
 
-## Kullanıcı deneyimi ile ilgili dikkat edilmesi gereken noktalar
+## Kullanıcı deneyimi ile ilgili dikkat edilmesi gereken noktalar <a name="ux-considerations"></a>
 
 `<amp-sidebar>` öğesini kullanırken, kullanıcılarınızın sayfanızı sık sık mobil cihazlarda bir AMP görüntüleyicide görüntüleyeceğini ve bu durumda, sabit konumlu bir üstbilgi gösterilebileceğini unutmayın. Buna ek olarak, tarayıcılar genellikle sayfanın üst kısmında kendi sabit üstbilgilerini görüntüler. Ekranın üst kısmına başka bir sabit konumlu öğe eklemeniz, mobil ekran alanının büyük bir kısmını kullanıcıya yeni bilgi sağlamayan içerikle kaplayacaktır.
 
 Bu nedenle, kenar çubuğunu açmaya yönelik olanakların sabit, tam genişlikli bir üstbilgiye yerleştirilmemesini öneririz.
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-sidebar kurallarına](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii) bakın.

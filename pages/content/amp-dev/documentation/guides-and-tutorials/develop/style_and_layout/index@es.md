@@ -12,7 +12,7 @@ Sin embargo, AMP limita el uso del CSS por razones de performance y usabilidad, 
 
 [video src='https://www.youtube.com/watch?v=y6kA3u3GIws' caption='Vea a UpperQuad hablar sobre el rediseño del sitio de AMPproject, incluyendo los retos de usar AMP por primera vez.']
 
-## Agregar estilos a una página
+## Agregar estilos a una página <a name="add-styles-to-a-page"></a>
 
 Añade todos los estilos CSS dentro de la etiqueta `<style amp-custom>` en el encabezado del documento.
 Por ejemplo:
@@ -92,7 +92,7 @@ los valores de diseño y CCS de tu página.
 
 El validador confirma que el CSS de la página no exceda el límite de 50.000 bytes,
 comprueba que no haya estilos no permitidos y garantiza que el diseño de la página sea compatible y el formato sea correcto.
-Consulta también esta lista completa de [errores de estilo y diseño](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#errores-de-estilo-y-de-diseno).
+Consulta también esta lista completa de [errores de estilo y diseño](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors).
 
 Ejemplo de error en la consola de una página con CSS que excede el límite de 50.000 bytes:
 

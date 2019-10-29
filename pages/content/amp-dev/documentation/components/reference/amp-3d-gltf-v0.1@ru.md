@@ -42,13 +42,13 @@ limitations under the License.
   </tr>
 </table>
 
-## Использование
+## Использование <a name="usage"></a>
 
 Компонент `amp-3d-gltf` предназначен для показа 3D-моделей, при создании которых использовался формат gITF.
 
 **Примечание.** Такие модели могут демонстрироваться только в браузерах, которые поддерживают WebGL.
 
-### Пример
+### Пример <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -60,7 +60,7 @@ limitations under the License.
     src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### Ограничения
+### Ограничения <a name="limitations"></a>
 
 В настоящее время поддерживается только версия glTF 2.0.
 
@@ -71,11 +71,11 @@ limitations under the License.
 
 
 
-### Поддержка CORS
+### Поддержка CORS <a name="cors"></a>
 
 Компонент `amp-3d-gltf` выполняет запрос `fetch` с исходного URL `https://<random>.ampproject.net`, поэтому в заголовке ответа конечной точки, определенной с помощью атрибута `src`, должен быть указан элемент `access-control-allow-origin: *.ampproject.net`. Поскольку исходный URL содержит случайным образом указываемый субдомен, потребуется использовать подстановочный знак.
 
-## Атрибуты
+## Атрибуты <a name="attributes"></a>
 
 <table>
   <tr>
@@ -109,7 +109,7 @@ limitations under the License.
     </tr>
   </table>
 
-## Действия
+## Действия <a name="actions"></a>
 
 <table>
   <tr>
@@ -123,6 +123,6 @@ limitations under the License.
     </tr>
   </table>
 
-## Проверка
+## Проверка <a name="validation"></a>
 
 С правилами для компонента amp-3d-gltf rules можно ознакомиться в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii).

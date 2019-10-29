@@ -31,7 +31,7 @@ the ["The Scenic" template](../../../documentation/templates/index.html) loads [
 
 If you want to skip the details, check out the [AMP Boilerplate generator](/boilerplate), which you can use to generate custom optimized AMP pages.
 
-### Optimize the AMP Runtime loading
+### Optimize the AMP Runtime loading <a name="optimize-the-amp-runtime-loading"></a>
 
 While AMP is already quite restrictive about which markup is allowed in the `<head>` section, there is still room for optimization. The key is to structure the `<head>` section in a way so that all render-blocking scripts and custom fonts load as fast as possible.
 
@@ -88,7 +88,7 @@ Let's go through it step-by-step:
 The AMP Cache performs all these optimizations automatically (and a few more). You can use the AMP Optimizer tool to automatically perform these optimizations on your own origin.
 [/tip]
 
-### Preload hero images
+### Preload hero images <a name="preload-hero-images"></a>
 
 [AMP HTML uses its own image element: `amp-img`](../../../documentation/components/reference/amp-img.md) (/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [`amp-img`](../../../documentation/components/reference/amp-img.md) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
 
@@ -191,7 +191,7 @@ The consequence is that an AMP page served from your own origin does not benefit
 In Safari, there is a key difference to how service workers are implemented -- it's not possible in Safari to install a service worker for your origin, if the page is served from an AMP cache.
 [/tip]
 
-### Optimize custom fonts
+### Optimize custom fonts <a name="optimize-custom-fonts"></a>
 
 With AMP there are a few things that you can do to optimize your font loading ([most of them are actually not specific to AMP](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization)):
 
@@ -205,13 +205,13 @@ With AMP there are a few things that you can do to optimize your font loading ([
 
 Last but not least, try to minimize the number of custom fonts that you use on your page. If you can, use the system fonts instead of custom fonts because system fonts make your website match the user's operating system, and it helps to avoid loading more resources.
 
-### Server-Side Rendering
+### Server-Side Rendering <a name="server-side-rendering"></a>
 
 [Server-side-rendering](server-side-rendering.md) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
 
 If you're interested in using server-side-rendering, check out the [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) tool.  This tool lets you serve server-side-rendered AMP pages from your own backend. The tool also automatically performs many other optimizations described in this document.
 
-### Basic optimizations
+### Basic optimizations <a name="basic-optimizations"></a>
 
 Of course, all the basics of web performance optimizations also apply to AMP pages:
 

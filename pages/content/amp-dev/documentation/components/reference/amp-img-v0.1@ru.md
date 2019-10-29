@@ -44,7 +44,7 @@ limitations under the License.
 </table>
 
 
-# Действия
+# Действия <a name="behavior"></a>
 
 Среда выполнения может задерживать загрузку ресурсов или повышать ее приоритет в зависимости от системных ресурсов, пропускной способности, положения области просмотра и других факторов. Компоненты `amp-img` позволяют среде выполнения эффективно управлять графическими ресурсами.
 
@@ -54,7 +54,7 @@ limitations under the License.
 Более подробную информацию можно найти в спецификации [системы макетов AMPHTML](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) и в списке [поддерживаемых макетов](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 [/tip]
 
-# Пример: показ адаптивного изображения
+# Пример: показ адаптивного изображения <a name="example-displaying-a-responsive-image"></a>
 
 В примере ниже показывается изображение, которое реагирует на размер области просмотра благодаря настройке `layout=responsive`.  Оно растягивается и сжимается в соответствии с соотношением сторон, заданным с помощью свойств `width` и `height`.
 
@@ -75,7 +75,7 @@ limitations under the License.
 
 Если ресурс, запрошенный компонентом `amp-img` не загружается, а дочерний элемент [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) отсутствует, пространство будет пустым. Резервное изображение показывается только в исходном макете. При последующих изменениях src, например с помощью resize + srcset, оно не используется. Это позволяет повысить эффективность.
 
-# Пример: показ резервного изображения
+# Пример: показ резервного изображения <a name="example-specifying-a-fallback-image"></a>
 
 В этом примере, если браузер не поддерживает WebP, показывается резервное изображение JPG:
 
@@ -105,7 +105,7 @@ limitations under the License.
 * [Добавление изображений и видео](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
 [/tip]
 
-# Атрибуты
+# Атрибуты <a name="attributes"></a>
 
 **src**
 
@@ -139,7 +139,7 @@ limitations under the License.
 
 Этот элемент содержит [распространенные атрибуты](../../../documentation/guides-and-tutorials/learn/common_attributes.md), расширенные до компонентов AMP.
 
-# Поддержка стилей
+# Поддержка стилей <a name="styling"></a>
 
 Стиль `amp-img` можно задать непосредственно через свойства CSS. Вот пример для серого фона:
 
@@ -149,20 +149,20 @@ amp-img {
   }
 ```
 
-# Справочный центр
+# Справочный центр <a name="tips--tricks"></a>
 
-# Масштабирование изображения до максимальной ширины
+# Масштабирование изображения до максимальной ширины <a name="scaling-an-image-up-to-a-maximum-width"></a>
 
 Если вы хотите, чтобы ваше изображение масштабировалось с учетом размера окна, но до максимальной ширины и не далее, выполните следующие действия:
 
 1. Задайте `layout=responsive` для `<amp-img>`.
 1. В контейнере изображения укажите CSS-атрибут `max-width:<max width to display image>`.  Почему в контейнере?  Элемент `amp-img` со свойством `layout=responsive` является *блочным*, тогда как `<img>` – *встроенный*. В качестве альтернативы вы можете добавить атрибут `display: inline-block` в CSS для элемента amp-img.
 
-# Различия между адаптивным и встроенным макетами
+# Различия между адаптивным и встроенным макетами <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
 Макеты `responsive` (адаптивный) и `intrinsic` (встроенный) создают изображение, которое масштабируется автоматически.  Однако `intrinsic` использует изображение SVG в качестве элемента масштабирования.  Поэтому поведение не отличается от стандартного HTML-изображения, а браузер при этом получает данные о размере в исходном макете. Макет `intrinsic` имеет собственный размер и увеличивает плавающий элемент `div`, пока не будет достигнут естественный размер изображения или ограничение в CSS (например, `max-width`). Макет `responsive` будет отображать 0 x 0 в плавающем `div`, поскольку изображение наследует размер от родительского элемента, а у него в плавающем виде размер отсутствует.
 
-# Установка изображения фиксированного размера
+# Установка изображения фиксированного размера <a name="setting-a-fixed-sized-image"></a>
 
 Чтобы изображение показывалось в фиксированном размере, выполните следующие действия:
 
@@ -170,10 +170,10 @@ amp-img {
 1. Укажите значения для `width` и `height`.
 
 [tip type="read-on"]
-Узнайте, [какие шаблоны выводятся](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isn%E2%80%99t-specified?), если атрибут `layout` не задан.
+Узнайте, [какие шаблоны выводятся](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#what-if-the-layout-attribute-isnt-specified), если атрибут `layout` не задан.
 [/tip]
 
-# Установка соотношения сторон
+# Установка соотношения сторон <a name="setting-the-aspect-ratio"></a>
 
 Для адаптивных изображений значения `width` и `height` не обязательно должны в точности совпадать с шириной и высотой `amp-img`. Достаточно соблюдать то же соотношение сторон.
 
@@ -190,7 +190,7 @@ amp-img {
 ```
 [/example]
 
-# Настройка нескольких исходных файлов для разных разрешений экрана
+# Настройка нескольких исходных файлов для разных разрешений экрана <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>
 
 Чтобы добавить варианты изображения с разным разрешением но одним и тем же соотношением сторон, используйте атрибут [`srcset`](#attributes). Браузер будет автоматически выбирать наиболее подходящий файл из списка `srcset`, учитывая разрешение и размер пользовательского экрана.
 
@@ -198,10 +198,10 @@ amp-img {
 
 Ознакомьтесь с [руководством по созданию адаптивных AMP-страниц](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md#displaying-responsive-images).
 
-# Сохранение соотношения сторон для изображений с неизвестными размерами
+# Сохранение соотношения сторон для изображений с неизвестными размерами <a name="maintaining-the-aspect-ratio-for-images-with-unknown-dimensions"></a>
 
 Системе макетов AMP необходимо знать соотношение сторон изображения до его извлечения. Однако в некоторых случаях размеры недоступны. Чтобы показать такие изображения и сохранить соотношение сторон, используйте AMP-шаблон [`fill`](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) вместе со свойством CSS [`object-fit`](https://css-tricks.com/almanac/properties/o/object-fit/)/ Ознакомьтесь со статьей о том, [как обеспечить поддержку изображений с неизвестными размерами](https://ampbyexample.com/advanced/how_to_support_images_with_unknown_dimensions) на сайте AMP By Example.
 
-# Валидация
+# Валидация <a name="validation"></a>
 
 О правилах для amp-img читайте в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).

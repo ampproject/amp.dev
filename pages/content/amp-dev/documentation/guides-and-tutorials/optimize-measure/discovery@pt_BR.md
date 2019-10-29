@@ -32,7 +32,7 @@ Se você só tiver uma página, e ela for uma AMP, ainda assim será preciso adi
 Saiba mais sobre como o Google encontra páginas AMP nas [diretrizes da Pesquisa Google para páginas AMP](https://support.google.com/webmasters/answer/6340290).
 [/tip]
 
-## Integração com plataformas de terceiros por meio de metadados adicionais
+## Integração com plataformas de terceiros por meio de metadados adicionais <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 Às vezes, um site de terceiros (que incorpora sua página AMP ou inclui links que levam a ela) precisa saber mais sobre sua página, além do fato de ela ser uma página AMP. As plataformas podem precisar de diversas informações sobre sua página, por exemplo: ela é um artigo de notícias ou um vídeo? Ela tem uma captura de tela e uma breve descrição?
 

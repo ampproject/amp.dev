@@ -53,13 +53,13 @@ limitations under the License.
   </tr>
 </table>
 
-## 動作
+## 動作 <a name="behavior"></a>
 
 広告は、AMP ドキュメントの他のすべてのリソースと同じように、`<amp-ad>` と呼ばれる特別なカスタム要素とともに読み込まれます。広告ネットワークから提供される JavaScript を AMP ドキュメント内で実行することはできません。代わりに、AMP ランタイムは（iframe サンドボックス経由で）別のオリジンから iframe を AMP ドキュメントとして読み込み、広告ネットワークの JavaScript をその iframe サンドボックス内で実行します。
 
-`<amp-ad>` では、そのレイアウト タイプの[ルール](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)に沿って、幅と高さの値を指定する必要があります。また、表示する広告ネットワークを指定する `type` 引数が必要です。タグのすべての `data-*` 属性は、最終的に広告をレンダリングするコードに引数として自動的に渡されます。特定のタイプのネットワークで必要な `data-` 属性は広告ネットワークによって異なるため、広告ネットワークとともに記述する必要があります。
+`<amp-ad>` では、そのレイアウト タイプの[ルール](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#tldr-summary-of-layout-requirements--behaviors)に沿って、幅と高さの値を指定する必要があります。また、表示する広告ネットワークを指定する `type` 引数が必要です。タグのすべての `data-*` 属性は、最終的に広告をレンダリングするコードに引数として自動的に渡されます。特定のタイプのネットワークで必要な `data-` 属性は広告ネットワークによって異なるため、広告ネットワークとともに記述する必要があります。
 
-#### 例: 複数の広告の表示
+#### 例: 複数の広告の表示 <a name="example-displaying-a-few-ads"></a>
 
 [example preview="inline" playground="true" imports="amp-ad"]
 ```html
@@ -93,7 +93,7 @@ limitations under the License.
 ```
 [/example]
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -135,7 +135,7 @@ limitations under the License.
   </tr>
 </table>
 
-## プレースホルダ
+## プレースホルダ <a name="placeholder"></a>
 
 `amp-ad` は必要に応じて、`placeholder` 属性が設定された子要素をサポートします。広告ネットワークでこの子要素がサポートされている場合、広告を表示できるようになるまでこの子要素が表示されます。詳しくは、[プレースホルダとフォールバック](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)をご覧ください。
 
@@ -146,7 +146,7 @@ limitations under the License.
 </amp-ad>
 ```
 
-## 表示可能な広告がない場合
+## 表示可能な広告がない場合 <a name="no-ad-available"></a>
 
 スロットに表示できる広告がない場合、AMPは `amp-ad` 要素を折りたたもうとします（つまり、この要素を `display: none` に設定しようとします）。AMP は、ユーザーのスクロール位置に影響を及ぼさずにこの処理を実行できるかどうかを判断します。広告が現在のビューポート内に表示されている場合は、ユーザーのスクロール位置に影響が及ぶため、広告は折りたたまれませんが、広告が現在のビューポートの外部に表示されている場合は、広告が折りたたまれます。
 
@@ -160,7 +160,7 @@ limitations under the License.
 </amp-ad>
 ```
 
-## 動画広告の配信
+## 動画広告の配信 <a name="serving-video-ads"></a>
 
 動画広告で AMP の動画を収益化する方法には次の 3 つがあります。
 
@@ -172,7 +172,7 @@ limitations under the License.
     * 最初のビューポートでプレーヤーを読み込む場合は、ポスターがあることを確認します。詳しくは、[こちら](amp-iframe.md#iframe-with-placeholder)をご覧ください。
     * 動画とポスターは HTTPS 経由で配信する必要があります。</li>
 
-## カスタム ドメインからの広告の掲載
+## カスタム ドメインからの広告の掲載 <a name="running-ads-from-a-custom-domain"></a>
 
 AMP は、独自のドメインなどのカスタム ドメインから広告を読み込むために使用するブートストラップ iframe の読み込みをサポートしています。
 
@@ -184,7 +184,7 @@ AMP は、独自のドメインなどのカスタム ドメインから広告を
 
   メタタグの `content` 属性には、ウェブサーバーにコピーした remote.html ファイルの絶対 URL を指定します。この URL には「https」スキーマを使用する必要があります。このファイルを AMP ファイルと同じオリジンに格納することはできません。たとえば、AMP ファイルを `www.example.com` にホストする場合、この URL に `www.example.com` を指定することはできませんが、`something-else.example.com` は指定できます。iframe 用に使用できるオリジンについて詳しくは、[iframe のオリジン ポリシー](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)をご覧ください。
 
-### セキュリティ
+### セキュリティ <a name="security"></a>
 
 受信データを `draw3p` 関数に渡す前に**検証**を行って、iframe が想定どおりの動作のみを行うことを確認します。これは、カスタムの JavaScript インジェクションが可能な広告ネットワークの場合は特に当てはまります。
 
@@ -197,11 +197,11 @@ AMP キャッシュの場合は、「ソースオリジン」（cdn.ampproject.o
 
 オリジンの適用は、`draw3p` の 3 番目の引数で行うことができます。さらに、ブラウザが完全にサポートされている場合、[allow-from](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options) ディレクティブを使用して行う必要もあります。
 
-### 配信元の広告設定の拡張
+### 配信元の広告設定の拡張 <a name="enhance-incoming-ad-configuration"></a>
 
 この機能はあくまでも任意です。広告サーバーへの広告リクエストを作成する前に、広告リクエストを拡張したい場合があります。
 
-広告ネットワークが[高速フェッチ](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad-implementation)をサポートしている場合は、[リアルタイム設定](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)（RTC）を使用してください（たとえば、DoubleClick と AdSense の統合により、高速フェッチと RTC がサポートされます）。
+広告ネットワークが[高速フェッチ](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad)をサポートしている場合は、[リアルタイム設定](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md)（RTC）を使用してください（たとえば、DoubleClick と AdSense の統合により、高速フェッチと RTC がサポートされます）。
 
 広告ネットワークで遅延フェッチを使用している場合は、[remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html) ファイルで `draw3p` 関数の呼び出しにコールバックを渡すことができます。コールバックは 1 つ目の引数として配信元の設定を受け取り、2 つ目の引数として別のコールバックを受け取ります（以下の例では `done` が呼び出されています）。広告レンダリングを続行するには、設定を更新してこのコールバックを呼び出す必要があります。
 
@@ -218,15 +218,15 @@ draw3p(function(config, done) {
 }, ['allowed-ad-type'], ['your-domain.com']);
 ```
 
-## スタイル設定
+## スタイル設定 <a name="styling"></a>
 
 CSS の `position: fixed` が設定されているコンテナに `<amp-ad>` 要素自体を含めたり配置したりすることはできません（`amp-lightbox` を除く）。これは、ページ全体のオーバーレイ広告の UX に影響するためです。UX を一定に維持できるよう、AMP が管理するコンテナの内部で同様の広告フォーマットを使用できるようにすることが今後検討される可能性があります。
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツールの仕様で [amp-ad のルール](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/validator-amp-ad.protoascii)をご確認ください。
 
-## サポートされている広告ネットワーク
+## サポートされている広告ネットワーク <a name="supported-ad-networks"></a>
 
 * [A8](https://github.com/ampproject/amphtml/blob/master/ads/a8.md)
 * [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md)
@@ -408,7 +408,7 @@ AMP 検証ツールの仕様で [amp-ad のルール](https://github.com/ampproj
 * [Zedo](https://github.com/ampproject/amphtml/blob/master/ads/zedo.md)
 * [Zucks](https://github.com/ampproject/amphtml/blob/master/ads/zucks.md)
 
-## サポートされている埋め込みタイプ
+## サポートされている埋め込みタイプ <a name="supported-embed-types"></a>
 
 * [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
 * [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
@@ -416,6 +416,7 @@ AMP 検証ツールの仕様で [amp-ad のルール](https://github.com/ampproj
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)
 * [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
+* [Insticator](https://github.com/ampproject/amphtml/blob/master/ads/insticator.md)
 * [Jubna](https://github.com/ampproject/amphtml/blob/master/ads/jubna.md)
 * [Outbrain](https://github.com/ampproject/amphtml/blob/master/ads/outbrain.md)
 * [Postquare](https://github.com/ampproject/amphtml/blob/master/ads/postquare.md)

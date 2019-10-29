@@ -42,7 +42,7 @@ Mengambil data analisis dari dokumen AMP.
 </table>
 
 
-## Mengirimkan analisis ke vendor atau internal?
+## Mengirimkan analisis ke vendor atau internal? <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
 Sebelum mulai menggunakan Analytics AMP di situs, Anda harus memutuskan apakah akan menggunakan fitur analisis pihak ketiga atau solusi internal Anda sendiri untuk menganalisis interaksi pengguna.
 
@@ -83,7 +83,7 @@ Pada contoh berikut, data analisis dikirim ke Nielsen, penyedia analisis pihak k
 </amp-analytics>
 ```
 
-### Mengirim data secara internal
+### Mengirim data secara internal <a name="sending-data-in-house"></a>
 
 Jika memiliki solusi internal sendiri untuk mengukur interaksi pengguna, satu-satunya hal yang Anda perlukan untuk mengintegrasikan Analytics AMP dengan solusi tersebut adalah URL. Di sinilah Anda akan mengirim data. Anda juga dapat mengirim data ke berbagai URL. Misalnya, Anda dapat mengirim data kunjungan halaman ke satu URL, dan data interaksi sosial ke URL lain.
 
@@ -126,7 +126,7 @@ Berikut adalah contoh sederhana yang memantau kunjungan halaman.  Setiap kali ha
 Untuk beberapa kasus umum penggunaan pemantauan (misalnya, kunjungan halaman, klik halaman, scroll, dll.) Lihat [Analytics: Kasus Penggunaan](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md).
 [/tip]
 
-## Menentukan data konfigurasi
+## Menentukan data konfigurasi <a name="specifying-configuration-data"></a>
 
 Pada elemen `<amp-analytics>`, tentukan objek konfigurasi JSON yang berisi detail terkait apa yang diukur dan ke mana data analisis dikirim.
 
@@ -158,7 +158,7 @@ Objek konfigurasi untuk `<amp-analytics>` menggunakan format berikut:
 }
 ```
 
-### Konfigurasi inline atau jarak jauh
+### Konfigurasi inline atau jarak jauh <a name="inline-or-remote-configuration"></a>
 
 Data konfigurasi dapat ditentukan secara inline atau diambil dari jauh dengan menentukan URL dalam atribut `config`. Selain itu, konfigurasi bawaan untuk vendor analisis populer dapat dipilih menggunakan atribut `type`.
 
@@ -167,7 +167,7 @@ Jika data konfigurasi dari beberapa sumber digunakan, objek konfigurasi (variabe
 1. Konfigurasi jarak jauh lebih diutamakan daripada konfigurasi inline, dan
 1. Konfigurasi inline lebih diutamakan daripada konfigurasi vendor.
 
-#### Memuat konfigurasi jarak jauh
+#### Memuat konfigurasi jarak jauh <a name="loading-remote-configuration"></a>
 
 Untuk memuat konfigurasi jarak jauh, dalam elemen `<amp-analytics>`, tentukan atribut `config` dan URL untuk data konfigurasi. URL yang ditentukan harus menggunakan skema HTTPS. URL ini dapat menyertakan [variabel URL AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Untuk mengakses cookie, lihat atribut [`data-credentials`](#data-credentials). Responsnya harus mengikuti [panduan keamanan CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md).
 
@@ -177,7 +177,7 @@ Dalam contoh ini, kami menentukan atribut `config` untuk memuat data konfigurasi
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-#### Rewriter Konfigurasi
+#### Rewriter Konfigurasi <a name="configuration-rewriter"></a>
 
 Fitur rewriter konfigurasi dirancang agar penyedia analisis dapat menulis ulang secara dinamis konfigurasi yang disediakan. Fitur ini mirip dengan konfigurasi jarak jauh, tetapi dengan tambahan konfigurasi buatan pengguna dalam permintaan yang dikirim ke sever. Untuk sekarang, tindakan ini hanya dapat diaktifkan oleh vendor analisis.
 
@@ -200,7 +200,7 @@ Selanjutnya, runtime menggabungkan semua konfigurasi yang disediakan untuk menen
 1. Konfigurasi Inline
 1. Konfigurasi yang ditentukan vendor
 
-##### Grup Variabel
+##### Grup Variabel <a name="variable-groups"></a>
 
 Grup Variabel adalah fitur yang memungkinkan penyedia analisis untuk mengelompokkan sekumpulan variabel yang ditentukan sebelumnya agar dapat diaktifkan dengan mudah oleh pengguna. Variabel ini kemudian ditetapkan dan dikirim ke endpoint `configRewriter` yang ditentukan.
 
@@ -264,13 +264,13 @@ Pada contoh di bawah, baik `group1` maupun `group2` telah diaktifkan. Semua grup
     }
 ```
 
-### Objek data konfigurasi
+### Objek data konfigurasi <a name="configuration-data-objects"></a>
 
-#### Permintaan
+#### Permintaan <a name="requests"></a>
 
 Objek konfigurasi `requests` menentukan URL yang digunakan untuk mengirimkan data ke platform analisis serta mengelompokkan atau melaporkan perilaku permintaan. `request-name` menentukan permintaan yang harus dikirim sebagai respons atas peristiwa tertentu (misalnya `pageview`, `event`, dll.). `request-value` berisi URL https. Nilainya dapat mencakup token placeholder yang dapat merujuk permintaan atau variabel lain. `request-value` juga dapat berupa objek yang berisi konfigurasi permintaan opsional.
 
-##### Konfigurasi permintaan
+##### Konfigurasi permintaan <a name="request-configs"></a>
 
 Properti untuk menentukan permintaan ke sebuah objek adalah:
 
@@ -295,7 +295,7 @@ Dalam contoh ini, semua permintaan valid.
 
 Beberapa penyedia analisis memiliki konfigurasi yang telah disediakan, yang Anda gunakan melalui atribut `type`. Jika menggunakan penyedia analisis, Anda tidak perlu menyertakan informasi permintaan. Lihat dokumentasi vendor Anda untuk mengetahui apakah permintaan perlu dikonfigurasi, dan bagaimana caranya.
 
-##### Konfigurasi pengelompokan
+##### Konfigurasi pengelompokan <a name="batching-configs"></a>
 
 Untuk mengurangi jumlah ping permintaan, Anda dapat menentukan perilaku pengelompokan dalam konfigurasi permintaan. Semua [`extraUrlParams`](#extra-url-params) dari `triggers` yang menggunakan permintaan yang sama akan ditambahkan ke `baseUrl` permintaan.
 
@@ -347,7 +347,7 @@ Konfigurasi berikut mengirimkan ping permintaan pertama setelah 1 detik dan kemu
 }
 ```
 
-#### Variabel
+#### Variabel <a name="vars"></a>
 
 Komponen `amp-analytics` menentukan banyak variabel dasar yang dapat digunakan dalam permintaan. Daftar semua variabel tersebut tersedia di [Panduan Variabel `amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md). Selain itu, semua variabel yang didukung oleh [Panduan Substitusi HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) juga didukung.
 
@@ -361,7 +361,7 @@ Objek konfigurasi `vars` dapat digunakan untuk menentukan key-value pair baru at
 }
 ```
 
-#### Parameter URL Tambahan
+#### Parameter URL Tambahan <a name="extra-url-params"></a>
 
 Objek konfigurasi `extraUrlParams` menetapkan parameter tambahan yang akan disertakan dalam permintaan. Secara default, parameter URL tambahan ditambahkan ke string kueri URL permintaan melalui konvensi "&foo=baz" biasa.
 
@@ -383,7 +383,7 @@ Atribut `extraUrlParamsReplaceMap` menentukan peta kunci dan nilai yang berfungs
 
 Jika `useBody` diaktifkan dan permintaan dikirim melalui metode transport `beacon` atau `xhrpost`, substitusi string `extraUrlParamsReplaceMap` hanya akan dijalankan pada kunci level paling atas di `extraUrlParams`.
 
-#### Pemicu
+#### Pemicu <a name="triggers"></a>
 
 Objek konfigurasi `triggers` menjelaskan kapan permintaan analisis harus dikirim. Atribut `triggers` berisi key-value pair yang terdiri dari nama pemicu dan konfigurasi pemicu. Nama pemicu dapat berupa sembarang string yang terdiri dari karakter alfanumerik (a-z, A-Z, 0-9). Pemicu dari konfigurasi yang prioritasnya lebih rendah akan digantikan oleh pemicu dengan nama yang sama dari konfigurasi yang prioritasnya lebih tinggi.
 
@@ -422,7 +422,7 @@ Sebagai contoh, konfigurasi berikut dapat digunakan untuk mengambil sampel 50% p
 },
 ```
 
-##### Selektor elemen
+##### Selektor elemen <a name="element-selector"></a>
 
 Beberapa pemicu seperti `click` dan `visible` memungkinkan penentuan satu atau sekumpulan elemen menggunakan properti selektor. Pemicu yang berbeda dapat menerapkan batasan dan interpretasi yang berbeda pada elemen yang dipilih, seperti apakah selektor berlaku pada semua elemen yang cocok atau elemen pertama, atau elemen mana yang dapat dicocokkan: semua elemen atau hanya elemen AMP. Lihat dokumentasi setiap pemicu yang terkait untuk penjelasan selengkapnya.
 
@@ -433,7 +433,7 @@ Properti selektor adalah:
     - `:root` - selektor khusus yang cocok dengan root dokumen.
 - `selectionMethod` Jika ditentukan, properti ini dapat memiliki salah satu dari dua nilai: `scope` atau `closest`. Nilai `scope` memungkinkan pemilihan elemen dalam elemen induk dari tag `amp-analytics`. Nilai `closest` menelusuri ancestor terdekat dari tag `amp-analytics` yang sesuai dengan selektor tertentu. Nilai defaultnya adalah `scope`.
 
-##### Pemicu awal render sematan
+##### Pemicu awal render sematan <a name="embed-render-start-trigger"></a>
 
 Elemen AMP yang menyematkan dokumen lain dalam iframe (misalnya iklan) dapat melaporkan peristiwa awal render (`"on": "render-start"`). Peristiwa ini biasanya dilaporkan segera setelah sistem dapat mengonfirmasi bahwa rendering dokumen sematan telah dimulai. Pelajari dokumentasi elemen AMP tertentu untuk mengetahui apakah elemen tersebut melaporkan peristiwa ini atau tidak.
 
@@ -458,7 +458,7 @@ Peristiwa awal render juga dilaporkan oleh dokumen itu sendiri dan dapat dikonfi
 }
 ```
 
-##### Pemicu pemuatan awal
+##### Pemicu pemuatan awal <a name="initial-load-trigger"></a>
 
 Peristiwa pemuatan awal (`"on": "ini-load"`) dipicu ketika konten awal dari sebuah elemen AMP atau dokumen AMP telah dimuat.
 
@@ -490,7 +490,7 @@ Peristiwa pemuatan awal juga dilaporkan oleh dokumen itu sendiri dan dapat dikon
 }
 ```
 
-##### Pemicu visibilitas halaman dan elemen
+##### Pemicu visibilitas halaman dan elemen <a name="page-and-element-visibility-trigger"></a>
 
 Gunakan pemicu visibilitas halaman (`"on": "visible"`) untuk mengaktifkan permintaan saat halaman mulai terlihat. Pengaktifan pemicu ini dapat dikonfigurasi menggunakan `visibilitySpec`.
 
@@ -521,7 +521,7 @@ Perhatikan bahwa selektor dapat digunakan hanya untuk menentukan satu elemen, bu
 Pemicu visibilitas elemen menunggu sinyal yang ditentukan oleh properti `waitFor` dalam `visibilitySpec` sebelum memantau visibilitas elemen. Jika `waitFor` tidak ditentukan, maka sinyal [`ini-load`](#initial-load-trigger) elemen akan terus ditunggu. Lihat dokumen `waitFor` untuk penjelasan selengkapnya.
 Jika `reportWhen` ditentukan, pemicu akan menunggu sinyal sebelum mengirim peristiwa. Hal ini berguna, misalnya, dalam mengirimkan peristiwa analisis saat halaman ditutup.
 
-##### Pemicu error
+##### Pemicu error <a name="error-trigger"></a>
 
 Peristiwa error pengguna (`"on": "user-error"`) dipicu ketika terjadi error yang dapat diatribusikan ke penulis halaman atau ke software yang digunakan untuk memublikasikan halaman. Ini meliputi, tetapi tidak terbatas pada, kesalahan konfigurasi pada komponen AMP, iklan yang salah dikonfigurasi, atau pernyataan yang gagal. Error pengguna juga dilaporkan di konsol developer.
 
@@ -615,7 +615,7 @@ Selain kondisi di atas, `visibilitySpec` juga mengaktifkan variabel tertentu yan
 
 Selain variabel yang disediakan sebagai bagian dari pemicu, Anda juga dapat menentukan tambahan/pengganti untuk [variabel sebagai atribut data](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute). Jika digunakan, atribut data ini harus menjadi bagian dari elemen yang ditentukan sebagai [`selector`](#element-selector).
 
-##### Pemicu klik
+##### Pemicu klik <a name="click-trigger"></a>
 
 Gunakan pemicu klik (`"on": "click"`) untuk mengaktifkan permintaan saat elemen tertentu diklik. Gunakan [`selector`](#element-selector) untuk mengontrol elemen mana yang akan menyebabkan permintaan ini diaktifkan. Pemicu tersebut akan diaktifkan untuk semua elemen yang sesuai dengan selektor yang ditentukan.
 
@@ -638,7 +638,7 @@ Gunakan pemicu klik (`"on": "click"`) untuk mengaktifkan permintaan saat elemen 
 
 Selain variabel yang disediakan sebagai bagian dari pemicu, Anda juga dapat menentukan tambahan/pengganti untuk [variabel sebagai atribut data](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute). Jika digunakan, atribut data ini harus menjadi bagian dari elemen yang ditentukan sebagai `selector`
 
-##### Pemicu scroll
+##### Pemicu scroll <a name="scroll-trigger"></a>
 
 Gunakan pemicu scroll (`"on": "scroll"`) untuk mengaktifkan permintaan dalam kondisi tertentu saat halaman di-scroll. Pemicu ini menyediakan [variabel khusus](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction) yang menunjukkan batas yang telah memicu dikirimnya permintaan. Gunakan `scrollSpec` untuk mengontrol waktu pengaktifan:
 
@@ -657,7 +657,7 @@ Gunakan pemicu scroll (`"on": "scroll"`) untuk mengaktifkan permintaan dalam kon
 }
 ```
 
-##### Pemicu timer
+##### Pemicu timer <a name="timer-trigger"></a>
 
 Gunakan pemicu timer (`"on": "timer"`) untuk mengaktifkan permintaan pada interval waktu yang teratur. Gunakan `timerSpec` untuk mengontrol kapan peristiwa akan diaktifkan:
 
@@ -706,7 +706,7 @@ Untuk mengonfigurasi timer yang menentukan waktu peristiwa pengguna, gunakan:
 
 Lihat spesifikasi [pemicu](#triggers) untuk penjelasan cara membuat pemicu timer bertingkat. Perhatikan bahwa penggunaan pemicu timer untuk memulai atau menghentikan timer tidak diizinkan.
 
-##### Pemicu tersembunyi
+##### Pemicu tersembunyi <a name="hidden-trigger"></a>
 
 Gunakan pemicu tersembunyi (`"on": "hidden"`) untuk mengaktifkan permintaan saat halaman disembunyikan.
 
@@ -739,15 +739,15 @@ Konfigurasi di atas diterjemahkan menjadi:
 Saat halaman disembunyikan, aktifkan permintaan jika elemen #anim-id telah terlihat (lebih dari 20% area dalam viewport) selama lebih dari 3 detik.
 </blockquote>
 
-##### Pemicu akses
+##### Pemicu akses <a name="access-triggers"></a>
 
 Sistem AMP Access mengeluarkan sejumlah peristiwa untuk berbagai status dalam alur akses. Untuk detail tentang pemicu akses (`"on": "access-*"`), lihat [AMP Access dan Analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
-#### Pemicu analisis video
+#### Pemicu analisis video <a name="video-analytics-triggers"></a>
 
 Analisis video menyediakan beberapa pemicu (`"on": "video-*"`) yang dapat digunakan penayang untuk memantau berbagai peristiwa yang terjadi selama siklus proses video. Detail selengkapnya tersedia di [Analytics Video AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
-#### Transport
+#### Transport <a name="transport"></a>
 
 Objek konfigurasi `transport` menentukan cara mengirim permintaan. Nilai ini adalah objek dengan kolom yang menunjukkan metode transport mana yang dapat diterima.
 
@@ -771,7 +771,7 @@ Dalam contoh di bawah, URL `iframe` tidak ditentukan, dan metode `beacon` serta 
 
 Untuk mempelajari lebih lanjut, lihat [contoh yang menerapkan API klien transport iframe](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) dan [halaman contoh yang menggabungkan iframe tersebut](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport.amp.html). Contoh tersebut memuat [iklan palsu](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html), yang berisi tag `amp-analytics`. Perhatikan bahwa konten iklan palsu mencakup beberapa petunjuk konfigurasi tambahan yang harus diikuti.
 
-##### Menggunakan Isi Permintaan untuk Parameter URL Tambahan
+##### Menggunakan Isi Permintaan untuk Parameter URL Tambahan <a name="use-body-for-extra-url-params"></a>
 
 Opsi konfigurasi `useBody` menunjukkan apakah `extraUrlParams` akan disertakan atau tidak dalam isi permintaan POST, bukan dalam URL sebagai parameter kueri berenkode URL.
 
@@ -788,7 +788,7 @@ Dengan `useBody`, Anda dapat menyertakan objek bertingkat dalam `extraUrlParams`
 }
 ```
 
-##### Kebijakan Perujuk
+##### Kebijakan Perujuk <a name="referrer-policy"></a>
 
 Kebijakan perujuk dapat ditetapkan sebagai kolom `referrerPolicy` dalam konfigurasi `transport`. Saat ini hanya `no-referrer` yang didukung.
 Kebijakan perujuk hanya tersedia untuk transport `image`. Jika `referrerPolicy: no-referrer` ditetapkan, transport `beacon` &amp; `xhrpost` diganti ke `false`.
@@ -802,7 +802,7 @@ Kebijakan perujuk hanya tersedia untuk transport `image`. Jika `referrerPolicy: 
 }
 ```
 
-#### Linker
+#### Linker <a name="linkers"></a>
 
 Fitur `linkers` digunakan untuk mengaktifkan sinkronisasi ID lintas domain. `amp-analytics` akan menggunakan [objek konfigurasi](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format) untuk membuat "string linker" yang akan ditambahkan ke link keluar yang ditentukan pada halaman tersebut sebagai parameter URL. Saat pengguna mengklik salah satu link ini, halaman tujuan akan membaca string linker dari parameter URL untuk menjalankan sinkronisasi ID. Hal ini biasanya digunakan untuk menggabungkan sesi pengguna di domain proxy AMP dan domain penayang.
 
@@ -810,17 +810,17 @@ Detail tentang cara menyiapkan konfigurasi linker dijelaskan dalam [Penerusan ID
 
 Jika Anda perlu menyerap parameter ini, informasi tentang pembuatan parameter ini akan dijelaskan dalam [Penerimaan ID Linker](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md).
 
-#### Cookie
+#### Cookie <a name="cookies"></a>
 
 Fitur `cookies` mendukung penulisan cookie ke domain asal dengan mengekstrak informasi [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) dan [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) dari URL dokumen. Fitur ini dapat digunakan bersama fitur `linkers` untuk menjalankan sinkronisasi ID dari domain ber-proxy AMP ke halaman AMP di domain penayang.
 
 Detail tentang cara menyiapkan konfigurasi `cookies` dapat ditemukan di [Menerima Parameter Linker di Halaman AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
-## Validasi
+## Validasi <a name="validation"></a>
 
 Lihat [aturan amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/validator-amp-analytics.protoascii) dalam spesifikasi validator AMP.
 
-### Atribut yang valid untuk `<amp-analytics>`
+### Atribut yang valid untuk `<amp-analytics>` <a name="valid-attributes-for-"></a>
 
 Berikut adalah atribut yang valid untuk komponen `amp-analytics`:
 
@@ -852,6 +852,6 @@ Jika ditetapkan ke `include`, atribut ini akan mengaktifkan kemampuan membaca da
 
 Jika disediakan, halaman tidak akan memproses permintaan analisis hingga [amp-user-notification](amp-user-notification.md) dengan ID elemen HTML yang ditentukan dikonfirmasi (diterima) oleh pengguna. Atribut ini bersifat opsional.
 
-## Analisis untuk komponen AMP
+## Analisis untuk komponen AMP <a name="analytics-for-amp-components"></a>
 
 Developer komponen AMP dapat menerapkan pengumpulan data menggunakan Analytics AMP. Untuk informasi selengkapnya, lihat bagian [Menerapkan analisis untuk komponen AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md).

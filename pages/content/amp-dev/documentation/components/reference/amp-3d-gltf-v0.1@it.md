@@ -42,13 +42,13 @@ Mostra modelli 3D nel formato glTF (GL Transmission Format).
   </tr>
 </table>
 
-## Utilizzo
+## Utilizzo <a name="usage"></a>
 
 Il componente `amp-3d-gltf` mostra i modelli 3D che sono nel formato glTF.
 
 **Nota**: per visualizzare questi modelli è necessario un browser che supporti WebGL.
 
-### Esempio
+### Esempio <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -60,7 +60,7 @@ Il componente `amp-3d-gltf` mostra i modelli 3D che sono nel formato glTF.
     src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### Limitazioni
+### Limitazioni <a name="limitations"></a>
 
 Attualmente funziona solo con glTF 2.0.
 
@@ -69,11 +69,11 @@ Funzionalità non supportate:
 - Videocamere incorporate
 - Animazione
 
-### CORS
+### CORS <a name="cors"></a>
 
 `amp-3d-gltf` effettua una richiesta `fetch` dall'origine `https://<random>.ampproject.net`, per cui `access-control-allow-origin: *.ampproject.net` deve essere impostato come intestazione della risposta dell'endpoint specificato come `src`. Il carattere jolly è necessario perché l'origine contiene un componente di sottodominio casuale.
 
-## Attributi
+## Attributi <a name="attributes"></a>
 
 <table>
   <tr>
@@ -107,7 +107,7 @@ Funzionalità non supportate:
     </tr>
   </table>
 
-## Azioni
+## Azioni <a name="actions"></a>
 
 <table>
   <tr>
@@ -121,6 +121,6 @@ Funzionalità non supportate:
     </tr>
   </table>
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) nella specifica dello strumento di convalida AMP.

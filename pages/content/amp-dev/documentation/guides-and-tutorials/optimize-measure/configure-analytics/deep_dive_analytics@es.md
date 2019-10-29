@@ -143,7 +143,7 @@ y los valores de las URL remotas tienen prioridad (consulta [Orden de sustituci�
 
 [/tip]
 
-## Los atributos requests, triggers y transports
+## Los atributos requests, triggers y transports <a name="requests-triggers--transports"></a>
 
 El atributo `requests` define qué datos se envían
 (por ejemplo, `pageviews` o `events`)
@@ -159,7 +159,7 @@ Continúa leyendo para obtener más información sobre estas configuraciones.
 También puedes consultar información sobre estas configuraciones en la
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
-### Seleccionar los datos que se envían con el atributo requests
+### Seleccionar los datos que se envían con el atributo requests <a name="what-data-gets-sent-requests-attribute"></a>
 
 El atributo `request-name` se usa en la configuración del activador para especificar
 qué solicitud debe enviarse como respuesta a un evento concreto.
@@ -326,7 +326,7 @@ se usará; si no, no se enviará ninguna solicitud.
 }
 ```
 
-## Orden de sustitución de variables
+## Orden de sustitución de variables <a name="variable-substitution-ordering"></a>
 
 AMP asigna valores a las variables según un orden de prioridades:
 

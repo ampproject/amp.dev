@@ -54,13 +54,13 @@ limitations under the License.
   </tr>
 </table>
 
-## Comportement
+## Comportement <a name="behavior"></a>
 
 Les annonces sont chargées comme toutes les autres ressources dans les documents AMP, avec un élément personnalisé spécial appelé `<amp-ad>`. Aucun code JavaScript fourni par un réseau publicitaire ne peut être exécuté dans le document AMP. À la place, l'exécution AMP charge un iFrame d'une autre origine (via le bac à sable iFrame) et exécute le code JavaScript du réseau publicitaire dans ce bac à sable iFrame.
 
-L'élément `<amp-ad>` exige que les valeurs de hauteur et de largeur soient spécifiées conformément à la [règle](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors) relative à son type de mise en page. Il nécessite un argument `type` qui sélectionne le réseau publicitaire à afficher. Tous les attributs `data-*` de la balise sont automatiquement transmis, en tant qu'arguments, au code qui diffuse finalement l'annonce. Les attributs `data-` requis pour un type de réseau publicitaire donné dépendent de ce dernier et doivent être documentés avec celui-ci.
+L'élément `<amp-ad>` exige que les valeurs de hauteur et de largeur soient spécifiées conformément à la [règle](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#tldr-summary-of-layout-requirements--behaviors) relative à son type de mise en page. Il nécessite un argument `type` qui sélectionne le réseau publicitaire à afficher. Tous les attributs `data-*` de la balise sont automatiquement transmis, en tant qu'arguments, au code qui diffuse finalement l'annonce. Les attributs `data-` requis pour un type de réseau publicitaire donné dépendent de ce dernier et doivent être documentés avec celui-ci.
 
-#### Exemple : Diffusion de quelques annonces
+#### Exemple : Diffusion de quelques annonces <a name="example-displaying-a-few-ads"></a>
 
 [example preview="inline" playground="true" imports="amp-ad"]
 ```html
@@ -94,7 +94,7 @@ L'élément `<amp-ad>` exige que les valeurs de hauteur et de largeur soient sp�
 ```
 [/example]
 
-## Attributs
+## Attributs <a name="attributes"></a>
 
 <table>
   <tr>
@@ -136,7 +136,7 @@ L'élément `<amp-ad>` exige que les valeurs de hauteur et de largeur soient sp�
   </tr>
 </table>
 
-## Espace réservé
+## Espace réservé <a name="placeholder"></a>
 
 Le composant `amp-ad` peut, si nécessaire, accepter un élément enfant avec l'attribut `placeholder`. Si le réseau publicitaire le permet, cet élément reste affiché jusqu'à ce que l'annonce soit disponible pour consultation. Pour en savoir plus, consultez la section [Espaces réservés et créations de remplacement](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md).
 
@@ -147,7 +147,7 @@ Le composant `amp-ad` peut, si nécessaire, accepter un élément enfant avec l'
 </amp-ad>
 ```
 
-## Aucune annonce disponible
+## Aucune annonce disponible <a name="no-ad-available"></a>
 
 Si aucune annonce n'est disponible pour l'espace publicitaire, AMP tente de réduire l'élément `amp-ad` (c'est-à-dire de définir `display: none`). AMP détermine que cette opération peut être effectuée sans affecter la position de défilement de l'utilisateur. Si l'annonce se trouve dans la fenêtre d'affichage ouverte, elle n'est pas réduite, car cela affecterait la position de défilement de l'utilisateur. En revanche, elle est réduite si elle se trouve en dehors de cette fenêtre.
 
@@ -161,7 +161,7 @@ Exemple avec création de remplacement :
 </amp-ad>
 ```
 
-## Diffuser des annonces vidéo
+## Diffuser des annonces vidéo <a name="serving-video-ads"></a>
 
 Il existe trois méthodes permettant de monétiser des vidéos dans AMP avec des annonces vidéo :
 
@@ -174,7 +174,7 @@ Si vous optez pour la méthode `amp-iframe` :
     * Assurez-vous qu'il existe un élément poster en cas de chargement du lecteur dans la première fenêtre d'affichage. [Détails](amp-iframe.md#iframe-with-placeholder).
     * La vidéo et l'élément poster doivent être diffusés via HTTPS.</li>
 
-## Diffuser des annonces à partir d'un domaine personnalisé
+## Diffuser des annonces à partir d'un domaine personnalisé <a name="running-ads-from-a-custom-domain"></a>
 
 AMP accepte le chargement de l'iFrame d'amorce utilisé pour charger les annonces à partir d'un domaine personnalisé (votre propre domaine, par exemple).
 
@@ -186,7 +186,7 @@ Pour l'activer, copiez le fichier [remote.html](https://github.com/ampproject/am
 
   L'attribut `content` de la balise Meta correspond à l'URL absolue de votre copie du fichier remote.html sur votre serveur Web. Cette URL doit utiliser un schéma "https". Elle ne peut pas résider sur la même origine que vos fichiers AMP. Par exemple, si vous hébergez des fichiers AMP sur `www.example.com`, cette URL ne peut pas se trouver à cet emplacement `www.example.com`. En revanche, une adresse du type `something-else.example.com` est acceptée. Pour plus d'informations sur les origines autorisées pour les cadres iFrame, reportez-vous à la section traitant des [règles relatives aux origines des cadres iFrame](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
 
-### Sécurité
+### Sécurité <a name="security"></a>
 
 **Validez les données entrantes** avant de les transmettre à la fonction `draw3p`, et ce, pour vous assurer que votre iFrame effectue uniquement les actions pour lesquelles il est prévu. Cela vaut tout particulièrement pour les réseaux publicitaires qui autorisent l'injection JavaScript personnalisée.
 
@@ -199,11 +199,11 @@ Dans le cas du cache AMP, vous devez également vérifier que l'"origine source"
 
 Pour appliquer les origines, le troisième argument de la fonction `draw3p` peut être utilisé. Il convient, en outre, d'utiliser la directive [allow-from](https://developer.mozilla.org/fr/docs/Web/HTTP/X-Frame-Options) pour disposer d'une compatibilité totale avec le navigateur.
 
-### Améliorer la configuration entrante des annonces
+### Améliorer la configuration entrante des annonces <a name="enhance-incoming-ad-configuration"></a>
 
 Cette opération est totalement facultative. Parfois, il est souhaitable d'améliorer la demande d'annonce avant de la transmettre au serveur publicitaire.
 
-Si votre réseau publicitaire est compatible avec la [récupération rapide](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad-implementation), veuillez utiliser [RTC (Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (les intégrations DoubleClick et AdSense, par exemple, sont toutes deux compatibles avec la récupération rapide et RTC).
+Si votre réseau publicitaire est compatible avec la [récupération rapide](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad), veuillez utiliser [RTC (Real Time Config)](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (les intégrations DoubleClick et AdSense, par exemple, sont toutes deux compatibles avec la récupération rapide et RTC).
 
 Si la récupération retardée est utilisée sur votre réseau publicitaire, vous pouvez transmettre un rappel à la fonction `draw3p` dans le fichier [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html). Le rappel reçoit la configuration entrante en tant que premier argument, puis reçoit un autre rappel en tant que deuxième argument (appelé `done` dans l'exemple ci-dessous). Ce rappel doit être appelé avec la configuration mise à jour pour que le rendu de l'annonce puisse avoir lieu.
 
@@ -220,16 +220,16 @@ draw3p(function(config, done) {
 }, ['allowed-ad-type'], ['your-domain.com']);
 ```
 
-## Application d'un style
+## Application d'un style <a name="styling"></a>
 
 Les éléments `<amp-ad>` proprement dits ne peuvent pas comporter de conteneurs dont le code CSS `position: fixed` est défini, ni être placés à l'intérieur de ces conteneurs (à l'exception de `amp-lightbox`).
 Cela est dû aux implications que les annonces en superposition pleine page peuvent avoir sur l'expérience utilisateur. À l'avenir, il est possible que des formats d'annonce semblables soient autorisés à l'intérieur de conteneurs contrôlés par AMP afin de conserver certaines caractéristiques constantes de l'expérience utilisateur.
 
-## Validation
+## Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-ad](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/validator-amp-ad.protoascii) dans les spécifications du validateur AMP.
 
-## Réseaux publicitaires compatibles
+## Réseaux publicitaires compatibles <a name="supported-ad-networks"></a>
 
 * [A8](https://github.com/ampproject/amphtml/blob/master/ads/a8.md)
 * [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md)
@@ -411,7 +411,7 @@ Consultez les [règles relatives à amp-ad](https://github.com/ampproject/amphtm
 * [Zedo](https://github.com/ampproject/amphtml/blob/master/ads/zedo.md)
 * [Zucks](https://github.com/ampproject/amphtml/blob/master/ads/zucks.md)
 
-## Types d'éléments intégrés compatibles
+## Types d'éléments intégrés compatibles <a name="supported-embed-types"></a>
 
 * [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
 * [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
@@ -419,6 +419,7 @@ Consultez les [règles relatives à amp-ad](https://github.com/ampproject/amphtm
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)
 * [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
+* [Insticator](https://github.com/ampproject/amphtml/blob/master/ads/insticator.md)
 * [Jubna](https://github.com/ampproject/amphtml/blob/master/ads/jubna.md)
 * [Outbrain](https://github.com/ampproject/amphtml/blob/master/ads/outbrain.md)
 * [Postquare](https://github.com/ampproject/amphtml/blob/master/ads/postquare.md)

@@ -17,7 +17,7 @@ Follow this tutorial to build and send your first dynamic email powered by AMP. 
 
 # Start with the AMP email boilerplate
 
-The AMP for Email team has created a playground where you can develop, test, and send yourself AMP Emails. Open the [AMP for Email Playground](https://amp.gmail.dev/playground/), login using a Gmail account, and check that the playground has `Hello, AMP4Email world` opened. You should see the following code:
+The AMP playground supports the AMP for Email format, allowing you to develop, test, and validate your AMP Emails. Open the [AMP Playground](https://playground.amp.dev/?runtime=amp4email) and make sure the format is set to `AMP for Email` in the top left corner. You should see the following code:
 
 
 ```html
@@ -27,14 +27,19 @@ The AMP for Email team has created a playground where you can develop, test, and
   <meta charset="utf-8">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <style amp4email-boilerplate>body{visibility:hidden}</style>
+  <style amp-custom>
+    h1 {
+      margin: 1rem;
+    }
+  </style>
 </head>
 <body>
-  Hello, AMP4EMAIL world.
+  <h1>Hello, I am an AMP EMAIL!</h1>
 </body>
 </html>
 ```
 
-It contains all the required markup and the minimum code to be a valid AMP email.
+It contains all the required markup and the minimum code to be a valid AMP email. Also note the many other examples of valid email templates in the drop down list on the top right drop down menu.
 
 Let's take a moment to call out some notable differences from classic HTML emails:
 
@@ -97,7 +102,7 @@ Emails are viewed across a variety of devices and screen sizes, and AMP comes wi
 <amp-img layout="responsive" src="https://placekitten.com/800/400" alt="Welcome" height="400" width="800"></amp-img>
 ```
 
-Grow and shrink the browser window to watch the image resize! View the [list of supported layout specific components here](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md#layout-elements).
+Grow and shrink the browser window to watch the image resize! View the [list of supported layout specific components here](../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md#layout).
 
 
 # Modify presentation and layout
@@ -151,7 +156,7 @@ You should now be able to change photos by clicking the navigation arrows on the
 
 ## Send with style
 
-AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md#emails,-with-style).
+AMP allows for styling in the head of the document within the `<style amp-custom>` tag. Additionally, previously banned CSS classes and pseudo-classes are now usable. [Read the full list here](/content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md#emails-with-style).
 
 Let's update `Hello, AMP4EMAIL world` to a real title.
 
@@ -228,7 +233,7 @@ Next, we'll declare an AMP bind variable "myState" as a JSON string inside an [`
 ```
 
 
-[AMP actions and events](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carousel[type=%22slides%22]) event, on which we will update the `currentCat` variable using `AMP.setState`.
+[AMP actions and events](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md) trigger different states. In our case, we want to update the state when the user clicks on the carousel navigation arrows. The amp-carousel fires a [`slideChange`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp-carouseltypeslides) event, on which we will update the `currentCat` variable using `AMP.setState`.
 
 
 ```html
@@ -280,7 +285,7 @@ Now, when you change the cat photo in the carousel, their name and description s
 
 # Send your AMP email
 
-The AMP4Email playground tool has a built-in validator. If your email markup is valid AMP, it will allow you to send yourself an email by clicking `send`.
+To learn how to send your email to your inbox, [read more about testing AMP emails](/content/amp-dev/documentation/guides-and-tutorials/develop/testing_amp_emails.md)
 
 <!-- TODO: Add Screen Shot. Emails sent from tool are not currently displaying. Only receiving information on how to enable AMP emails, but then getting blank messages. -->
 

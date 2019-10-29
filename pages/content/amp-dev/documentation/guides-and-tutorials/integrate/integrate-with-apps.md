@@ -168,7 +168,7 @@ Here are some general best practices for implementing an AMP Viewer:
 *   In webView-based viewers, enable third-party cookies.
 *   Set a referrer for your platform/app.
 
-### Sharing AMP Content
+### Sharing AMP Content <a name="sharing-amp-content"></a>
 
 When sharing an AMP document from within a platform's AMP Viewer, the platform
 should share the canonical URL when technically possible. For example, if the

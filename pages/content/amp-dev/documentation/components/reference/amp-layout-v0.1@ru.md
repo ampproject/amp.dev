@@ -38,7 +38,7 @@ $title: amp-layout
   </tr>
 </table>
 
-## Обзор
+## Обзор <a name="overview"></a>
 
 Компонент `amp-layout` позволяет применять адаптивные макеты на основе соотношения сторон к любому элементу. Этот компонент похож по принципу действия на атрибут [layout](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) в имеющихся компонентах AMP, но в качестве дочерних элементов поддерживает любую разметку HTML. С компонентом `amp-layout` совместимы все поддерживаемые макеты, например fixed-height, fixed и т. д.
 
@@ -55,10 +55,10 @@ $title: amp-layout
   </amp-layout>
 ```
 
-## Атрибуты
+## Атрибуты <a name="attributes"></a>
 
 Этот элемент содержит [распространенные атрибуты](../../../documentation/guides-and-tutorials/learn/common_attributes.md), расширенные до компонентов AMP.
 
-## Проверка
+## Проверка <a name="validation"></a>
 
 О правилах для amp-layout читайте в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).

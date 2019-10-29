@@ -29,8 +29,10 @@ pages/content/amp-dev/documentation/examples/*/**
 !pages/content/amp-dev/documentation/examples/*/**/_blueprint.yaml
 pages/content/amp-dev/documentation/components/reference/*.md
 !pages/content/amp-dev/documentation/components/reference/*@*.md
-pages/routescache.json
 examples/static/samples/samples.json
+pages/content/amp-dev/community/working-groups/*.yaml
+!pages/content/amp-dev/community/working-groups/_blueprint.yaml
+pages/routescache.json
 
 # Ignore files created during build process
 platform/pages*
