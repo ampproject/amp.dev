@@ -420,6 +420,7 @@ Consulta las [reglas de amp-ad](https://github.com/ampproject/amphtml/blob/maste
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)
 * [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
+* [Insticator](https://github.com/ampproject/amphtml/blob/master/ads/insticator.md)
 * [Jubna](https://github.com/ampproject/amphtml/blob/master/ads/jubna.md)
 * [Outbrain](https://github.com/ampproject/amphtml/blob/master/ads/outbrain.md)
 * [Postquare](https://github.com/ampproject/amphtml/blob/master/ads/postquare.md)
