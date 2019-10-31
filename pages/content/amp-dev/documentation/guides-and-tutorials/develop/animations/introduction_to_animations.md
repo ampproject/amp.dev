@@ -86,18 +86,9 @@ Building an animation in [`amp-animation`](../../../../documentation/components/
 
 Elements of the same tag or class can have specified timing properties and override the values of variables defined in the top level animation.
 
-[example preview="top-frame" playground="true"]
+[example preview="top-frame" playground="true" imports="amp-animation"]
 ```html
-<head>
-  <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
-  <style amp-custom>
-    h1 {
-      margin: 1rem;
-    }
-  </style>
-</head>
 <body>
-  <h1>Hello World!</h1>
   <h1>Hello World!</h1>
   <h1>Hello World!</h1>
   <h1 id="helloMe">Hello World!</h1>
@@ -246,7 +237,7 @@ By using [`var()` and `calc()` expressions](../../../../documentation/components
         "selector": ".card",
         "--duration": "2s",
         "duration": "var(--duration)",
-        "delay": "calc((length() - index()) * var(--duration))",
+        "delay": "calc((length() - index() - 1) * var(--duration))",
         "easing": "ease-in",
         "iterations": "1",
         "fill": "both",
@@ -273,13 +264,13 @@ This example works by:
 *   Declaring a variable, `--duration`, and gives it the value of two seconds.
 *   Sets the `duration` to the var `--duration`'s value.
 *   Calculates the delay applied to each element with that meets the selector `.card`.
-    1.  The [length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calculates how many `.card` elements were selected
+    1.  The [`length()` extension](../../../../documentation/components/reference/amp-animation.md#css-length()-extension) calculates how many `.card` elements were selected
     1.  The length then subtracts each `.card`'s [index()](../../../../documentation/components/reference/amp-animation.md#css-index()-extension)
     1.  The resulting value is multiplied by the var `--duration`
     1.  The final total is applied in seconds to that element's delay
 *   The animation is applied to each element individually so that the cards are shuffled one after another instead of all at the same time.
 
-Open is in the [AMP playground](http://amp.dev/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fguides-and-tutorials%2Fdevelop%2Fanimations%2Fintroduction_to_animations.example.1.html%3Fformat%3Dwebsites&format=websites) and add more [`amp-img`](../../../../documentation/components/reference/amp-img) elements to test this behavior.
+Open the animation in the AMP playground and add more [`amp-img`](../../../../documentation/components/reference/amp-img) elements to test this behavior.
 
 ### Look great, everywhere
 
