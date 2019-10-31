@@ -11,7 +11,7 @@ Triggering CSS animations [relies on adding and removing classes](https://develo
 
 ## Defining CSS and Keyframes
 
-You can define CSS in AMP in the follow ways:
+You can define CSS in AMP in the following ways:
 
 *   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit.
 *   Inline styles. Detract from the 50,000 byte `<style amp-custom>` limit.
