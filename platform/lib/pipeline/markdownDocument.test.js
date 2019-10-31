@@ -76,3 +76,30 @@ test('Test escape mustache tags', async (done) => {
 
   done();
 });
+
+test('Test anchor generation', () => {
+  const doc = new MarkdownDocument('/tmp/test.md',
+      '# TestOne\n' +
+      '# test two\n' +
+      'paragraph\n' +
+      '## test h2\n' +
+      '### test h3\n' +
+      '#no headline\n' +
+      '# test anchor <a name="existing"></a>\n' +
+      '## test anchor\n' +
+      '# with [link](#anchor)\n' +
+      '# test `<code>` &lt;html&gt;<a>foo</a>');
+  doc.addExplicitAnchors();
+
+  expect(doc.contents).toBe(
+      '# TestOne <a name="testone"></a>\n' +
+      '# test two <a name="test-two"></a>\n' +
+      'paragraph\n' +
+      '## test h2 <a name="test-h2"></a>\n' +
+      '### test h3 <a name="test-h3"></a>\n' +
+      '#no headline\n' +
+      '# test anchor <a name="existing"></a>\n' +
+      '## test anchor <a name="test-anchor-1"></a>\n' +
+      '# with [link](#anchor) <a name="with-link"></a>\n' +
+      '# test `<code>` &lt;html&gt;<a>foo</a> <a name="test-code-htmlfoo"></a>');
+});

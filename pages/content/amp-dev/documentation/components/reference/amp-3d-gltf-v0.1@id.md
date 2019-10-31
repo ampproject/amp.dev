@@ -1,4 +1,5 @@
 ---
+$title: amp-3d-gltf
 $category@: media
 formats:
 - websites
@@ -21,7 +22,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-3d-gltf
+
 
 Menampilkan model 3D GL Transmission Format (gITF).
 
@@ -40,13 +41,13 @@ Menampilkan model 3D GL Transmission Format (gITF).
   </tr>
 </table>
 
-## Penggunaan
+## Penggunaan <a name="usage"></a>
 
 Komponen `amp-3d-gltf` menampilkan model 3D dalam format gITF.
 
 **Catatan**: Browser berkemampuan WebGL diperlukan untuk menampilkan model ini.
 
-### Contoh
+### Contoh <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -58,7 +59,7 @@ Komponen `amp-3d-gltf` menampilkan model 3D dalam format gITF.
     src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### Batasan
+### Batasan <a name="limitations"></a>
 
 Saat ini, hanya berfungsi dengan glTF 2.0.
 Fitur yang tidak didukung:
@@ -66,11 +67,11 @@ Fitur yang tidak didukung:
 - kamera tersemat
 - animasi
 
-### CORS
+### CORS <a name="cors"></a>
 
 `amp-3d-gltf` membuat permintaan `fetch` dari `https://<random>.ampproject.net` asal sehingga `access-control-allow-origin: *.ampproject.net` harus ditetapkan pada header respons endpoint yang ditetapkan sebagai `src`. Karakter pengganti diperlukan karena asal memiliki komponen sub-domain acak.
 
-## Atribut
+## Atribut <a name="attributes"></a>
 
 <table>
   <tr>
@@ -104,7 +105,7 @@ Fitur yang tidak didukung:
     </tr>
   </table>
 
-## Tindakan
+## Tindakan <a name="actions"></a>
 
 <table>
   <tr>
@@ -118,6 +119,6 @@ Fitur yang tidak didukung:
     </tr>
   </table>
 
-## Validasi
+## Validasi <a name="validation"></a>
 
 Lihat [aturan amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) dalam spesifikasi validator AMP.

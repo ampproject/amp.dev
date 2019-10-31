@@ -70,7 +70,7 @@ ilgili satıcıya ayarlayın.
 Verileri yayıncıya ait bir son noktaya göndermek için,
 `type` özelliğini eklememeniz yeterlidir;
 analitik veriler her bir
-[istek](deep_dive_analytics.md#hangi-veriler-gönderilir:-istek-özelliği)için tanımlanan son noktalara gönderilir.
+[istek](deep_dive_analytics.md#what-data-gets-sent-requests-attribute)için tanımlanan son noktalara gönderilir.
 
 Analytics satıcı yapılandırmaları [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)‹e başlamanın
 hızlı bir yoludur.
@@ -137,7 +137,7 @@ Değerler, önceliğe göre değişken değiştirme sırasına göre çoğaltıl
 ve uzaktan URL›lerin içindeki değerler bu sıranın en üzerindedir
 (bkz. [Değişken değiştirme sıralaması](deep_dive_analytics.md).
 
-## İstek, tetikleme ve taşıma
+## İstek, tetikleme ve taşıma <a name="requests-triggers--transports"></a>
 
 `requests` özelliği ‹hangi verilerin gönderileceğini›
 (örneğin, `pageviews`, `events`)
@@ -153,7 +153,7 @@ Bu yapılandırmalar hakkında daha fazla bilgi için okumaya devam edin.
 (Bu yapılandırmalar hakkında bilgi için
 [amp-analitik referansı](../../../../documentation/components/reference/amp-analytics.md) bölümünü de okuyabilirsiniz.)
 
-### Hangi veriler gönderilir: istek özelliği
+### Hangi veriler gönderilir: istek özelliği <a name="what-data-gets-sent-requests-attribute"></a>
 
 `request-name` tetikleme yapılandırmasında
 belli bir etkinliğe karşı hangi isteğin gönderileceğini belirlemek için kullanılır.
@@ -236,11 +236,11 @@ AMP aşağıdaki tetikleme yapılandırmalarını destekler:
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>request</code> (gerekli)</td>
-      <td data-th="Description">Gönderilecek isteğin adı (<a href="deep_dive_analytics.md#hangi-veriler-gönderilir:-istek-özelliği">isteklerinde belirtilen şekilde</a>).</td>
+      <td data-th="Description">Gönderilecek isteğin adı (<a href="deep_dive_analytics.md#what-data-gets-sent-requests-attribute">isteklerinde belirtilen şekilde</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>vars</code></td>
-      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="deep_dive_analytics.md#değişken-değiştirme-sıralaması">Değişken değiştirme sıralaması</a>).</td>
+      <td data-th="Description">En üst seviye yapılandırmada tanımlanan <code>vars</code> geçersiz kılmak veya bu tetiklemeye özgü<code>vars</code> belirlemek için anahtar değer çiftlerini içeren bir nesne (ayrıca bkz. <a href="deep_dive_analytics.md#variable-substitution-ordering">Değişken değiştirme sıralaması</a>).</td>
     </tr>
     <tr>
       <td data-th="Trigger Config"><code>selector</code> (<code>on</code>, <code>click</code> olarak ayarlandığında gereklidir)</td>
@@ -259,7 +259,7 @@ AMP aşağıdaki tetikleme yapılandırmalarını destekler:
 
 **Önemli:** Düşük öncelikli bir yapılandırmadaki tetiklemeler,
 yüksek öncelikli yapılandırmadaki aynı adlı tetiklemelerle geçersiz kılınır
-(bkz. [Değişken değiştirme sıralaması](deep_dive_analytics.md#değişken-değiştirme-sıralaması).
+(bkz. [Değişken değiştirme sıralaması](deep_dive_analytics.md#variable-substitution-ordering).
 
 ### Verileri gönderme: aktarma özelliği
 
@@ -314,7 +314,7 @@ bu yöntem kullanılır; aksi halde hiçbir istek gönderilmez.
 }
 ```
 
-## Değişken değiştirme sıralaması
+## Değişken değiştirme sıralaması <a name="variable-substitution-ordering"></a>
 
 AMP bir öncelik sırasına göre değişkenleri değerlerle doldurur:
 

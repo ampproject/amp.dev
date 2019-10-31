@@ -15,15 +15,10 @@
  */
 
 const writeFile = require('write');
-const fs = require('fs');
 const yaml = require('js-yaml');
 const {Signale} = require('signale');
 const utils = require('@lib/utils');
-
-// Prep version template
-const nunjucks = require('nunjucks');
-const VERSION_TOGGLE_TEMPLATE = nunjucks.compile(fs.readFileSync(
-    utils.project.absolute('frontend/templates/views/partials/version-toggle.j2'), 'utf8'));
+const SlugGenerator = require('@lib/utils/slugGenerator');
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
@@ -76,6 +71,10 @@ const RELATIVE_LINK_PATTERN = new RegExp(
     /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
     , 'g');
 
+// This pattern will find the text for markdown titles skipping explicit anchors.
+const TITLE_ANCHOR_PATTERN =
+    /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/mg;
+
 class MarkdownDocument {
   constructor(path, contents) {
     this._contents = contents.trim();
@@ -126,12 +125,34 @@ class MarkdownDocument {
     this._frontmatter['$category@'] = category;
   }
 
+  /**
+   * Returns the formats supported by this version of the component.
+   */
   get formats() {
     return this._frontmatter['formats'] || [];
   }
 
   set formats(formats) {
     this._frontmatter['formats'] = formats;
+  }
+
+  /**
+   * Returns the formats supported by any version of this component.
+   */
+  get supportedFormats() {
+    return this._frontmatter['supported_formats'] || [];
+  }
+
+  set supportedFormats(formats) {
+    this._frontmatter['supported_formats'] = formats;
+  }
+
+  get component() {
+    return this._frontmatter['component'];
+  }
+
+  set component(component) {
+    this._frontmatter['component'] = component;
   }
 
   get version() {
@@ -144,8 +165,6 @@ class MarkdownDocument {
 
   set versions(versions) {
     this._frontmatter['versions'] = versions;
-    this._contents = MarkdownDocument
-        .insertVersionToggler(this._contents, this._frontmatter.version, versions);
   }
 
   get teaser() {
@@ -163,6 +182,10 @@ class MarkdownDocument {
 
   set isCurrent(bool) {
     this._frontmatter['is_current'] = bool;
+  }
+
+  get isCurrent() {
+    return this._frontmatter['is_current'];
   }
 
   get contents() {
@@ -292,21 +315,6 @@ class MarkdownDocument {
   }
 
   /**
-   * Adds version toggler to the h1 heading in case of multiple versions
-   * @param  {String} contents
-   * @return {String}          The rewritten content
-   */
-  static insertVersionToggler(contents, version, versions) {
-    const titleRegex = /^#{1}\s(.+)/m;
-    const title = contents.match(titleRegex)[1];
-    return contents.replace(titleRegex, VERSION_TOGGLE_TEMPLATE.render({
-      title: title,
-      versions: versions,
-      version: version,
-    }));
-  }
-
-  /**
    * Rewrite relative links and append the given base path to them
    * @param  {String} base
    */
@@ -331,6 +339,31 @@ class MarkdownDocument {
   stripInlineTitle() {
     const TITLE_PATTERN = /^#{1}\s.+/m;
     this._contents = this._contents.replace(TITLE_PATTERN, '');
+    return true;
+  }
+
+  /**
+   *Adds explicit anchors for titels in github notation
+   */
+  addExplicitAnchors() {
+    const slugGenerator = new SlugGenerator();
+    this._contents = this._contents.replace(TITLE_ANCHOR_PATTERN,
+        (line, hLevel, headlineStart, anchor, headlineEnd) => {
+          let headline = headlineStart + headlineEnd;
+          headline = headline.replace(/`(.*?)`|\[(.*?)\]\(.*?\)|<.*?>|&[^\s]+?;/g,
+              (line, code, linktext) => {
+                if (code || linktext) {
+                  return code || linktext;
+                }
+                return '';
+              });
+          const slug = slugGenerator.generateSlug(headline);
+          // Even if we have an anchor the slug generator has to know all the headlines.
+          if (anchor) {
+            return line;
+          }
+          return `${hLevel} ${headlineStart}${headlineEnd} <a name="${slug}"></a>`;
+        });
     return true;
   }
 

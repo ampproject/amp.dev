@@ -38,7 +38,7 @@ Qualquer elemento HTML pode ter essa função.
 
 [/tip]
 
-## Substitutos
+## Substitutos <a name="fallbacks"></a>
 
 É possível especificar o atributo `fallback` em um elemento para indicar o comportamento de substituto:
 

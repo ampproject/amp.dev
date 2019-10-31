@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: Provides an AMP paywall and subscription support.
 ---
 
-# amp-access
+
 
 AMP Access atau “dukungan paywall dan langganan AMP” memberi Penayang kontrol atas konten mana yang dapat diakses oleh Pembaca beserta batasannya, berdasarkan status langganan Pembaca, jumlah tampilan, dan faktor lainnya.
 
-# amp-access
+# amp-access <a name="amp-access"></a>
 
 
 
@@ -48,7 +49,7 @@ limitations under the License.
 </tr>
 </table>
 
-## Hubungan dengan `amp-subscriptions`
+## Hubungan dengan `amp-subscriptions` <a name="relationship-to-amp-subscriptions"></a>
 
 Ekstensi [`amp-subscriptions`](amp-subscriptions.md) menawarkan fitur yang mirip dengan `amp-access`. Namun, ekstensi ini mendukung protokol paywall akses yang lebih khusus. Beberapa perbedaan penting yang perlu dicatat:
 
@@ -59,7 +60,7 @@ Ekstensi [`amp-subscriptions`](amp-subscriptions.md) menawarkan fitur yang mirip
 
 Dengan standarisasi markup, dukungan multi-penyedia, dan dukungan viewer yang lebih baik, `amp-subscriptions` direkomendasikan bagi penayang baru dan implementasi penyedia paywall.
 
-## Solusi
+## Solusi <a name="solution"></a>
 
 Solusi yang diusulkan ini memberikan kontrol kepada pengguna atas keputusan dan alur berikut:
 - Membuat dan mempertahankan pengguna
@@ -85,7 +86,7 @@ Dalam bentuk dasarnya, solusi ini mengirimkan dokumen lengkap (meskipun disamark
 
 Untuk mendukung AMP Access, Penayang harus mengimplementasikan komponen yang dijelaskan di atas. Markup Konten Akses dan endpoint Otorisasi bersifat wajib. Endpoint Pingback dan Halaman Login bersifat opsional.
 
-### ID Pembaca AMP
+### ID Pembaca AMP <a name="amp-reader-id"></a>
 
 Untuk membantu layanan akses dan kasus penggunaan, AMP Access memperkenalkan konsep *ID Pembaca*.
 
@@ -95,33 +96,33 @@ ID Pembaca dibuat di perangkat pengguna dan dimaksudkan untuk bertahan lama. Nam
 
 ID Pembaca dibuat dengan cara yang mirip dengan mekanisme yang digunakan untuk membuat ExternalCID yang dijelaskan [di sini](https://docs.google.com/document/d/1f7z3X2GM_ASb3ZCI_7tngglxwS6WoWi1EB3aKzdf6vo/edit#heading=h.hb9q0wpwwhuf). Contoh ID Pembaca adalah `amp-OFsqR4pPKynymPyMmplPNMvxSTsNQob3TnK-oE3nwVT0clORaZ1rkeEz8xej-vV6`.
 
-### AMP Access dan Cookie
+### AMP Access dan Cookie <a name="amp-access-and-cookies"></a>
 
 Penayang dapat menggunakan cookie autentikasi mereka sendiri, mengandalkan ID Pembaca, atau kombinasi keduanya.
 
-### Markup Konten Akses
+### Markup Konten Akses <a name="access-content-markup"></a>
 
 Markup Konten Akses menentukan bagian mana yang terlihat atau tersembunyi berdasarkan respons Otorisasi yang ditampilkan dari endpoint Otorisasi. Hal ini dijelaskan melalui atribut markup khusus.
 
-### Endpoint Otorisasi
+### Endpoint Otorisasi <a name="authorization-endpoint"></a>
 
 Otorisasi adalah endpoint yang disediakan oleh penayang dan dipanggil oleh AMP Runtime atau Cache AMP Google. Endpoint ini merupakan endpoint CORS GET berkredensial. Endpoint ini menampilkan parameter akses yang dapat digunakan oleh Markup Konten untuk menyembunyikan atau menampilkan bagian-bagian berbeda dari dokumen.
 
-### Endpoint Pingback
+### Endpoint Pingback <a name="pingback-endpoint"></a>
 
 Pingback adalah endpoint yang disediakan oleh penayang dan dipanggil oleh AMP Runtime atau Cache AMP Google. Endpoint ini merupakan endpoint CORS POST berkredensial. AMP Runtime otomatis memanggil endpoint ini setelah Pembaca mulai menampilkan dokumen. Endpoint ini juga dipanggil setelah Pembaca berhasil menyelesaikan Alur Login. Salah satu tujuan utama Pingback adalah agar Penayang memperbarui informasi pengukuran.
 
 Pingback bersifat opsional. Pingback dapat dinonaktifkan dengan menetapkan properti konfigurasi `noPingback` ke `true`.
 
-### Halaman Login dan Link Login
+### Halaman Login dan Link Login <a name="login-page-and-login-link"></a>
 
 Halaman Login diimplementasikan dan ditampilkan oleh Penayang dan dipanggil oleh AMP Runtime. Biasanya, tampilannya berupa dialog browser.
 
 Halaman Login dipicu saat Pembaca menge-tap Link Login yang dapat ditempatkan oleh Penayang di mana saja dalam dokumen.
 
-## Spesifikasi v0.1
+## Spesifikasi v0.1 <a name="specification-v01"></a>
 
-### Konfigurasi
+### Konfigurasi <a name="configuration"></a>
 
 Semua endpoint dikonfigurasi dalam dokumen AMP sebagai objek JSON di HEAD dokumen:
 
@@ -206,7 +207,7 @@ Berikut ini contoh konfigurasi AMP Access:
 
 ```
 
-#### Beberapa penyedia akses
+#### Beberapa penyedia akses <a name="multiple-access-providers"></a>
 
 Anda dapat menentukan beberapa penyedia akses menggunakan array, bukan objek tunggal, dan menyediakan `namespace` untuk setiap entri.
 
@@ -224,7 +225,7 @@ Anda dapat menentukan beberapa penyedia akses menggunakan array, bukan objek tun
 </script>
 ```
 
-### Variabel URL Akses
+### Variabel URL Akses <a name="access-url-variables"></a>
 
 Saat mengonfigurasi URL untuk berbagai endpoint, Penayang dapat menggunakan variabel substitusi. Daftar lengkap variabel ini ditetapkan dalam [Spesifikasi Variabel AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). Selain itu, spesifikasi ini menambahkan beberapa variabel khusus akses seperti `READER_ID` dan `AUTHDATA`. Beberapa variabel yang paling relevan dijelaskan dalam tabel di bawah:
 
@@ -282,7 +283,7 @@ https://pub.com/access?
 
 Variabel AUTHDATA tersedia untuk URL Login dan Pingback. Dengan variabel ini, kolom apa pun dalam respons otorisasi dapat diteruskan sebagai parameter URL. Misalnya, `AUTHDATA(isSubscriber)`. Ekspresi bertingkat juga diizinkan, seperti `AUTHDATA(other.isSubscriber)`. Jika menggunakan namespace, namespace dapat ditambahkan ke awal kolom misalnya `AUTHDATA(anamespace.afield)`.
 
-### Markup Konten Akses
+### Markup Konten Akses <a name="access-content-markup-1"></a>
 
 Markup Konten Akses menjelaskan bagian mana dari dokumen yang terlihat atau tersembunyi. Markup ini terdiri dari dua atribut AMP: `amp-access` dan `amp-access-hide` yang dapat ditempatkan pada sembarang elemen HTML.
 
@@ -347,7 +348,7 @@ Dan berikut ini contoh yang menunjukkan konten tambahan ke subscriber premium:
 </section>
 ```
 
-### Endpoint Otorisasi
+### Endpoint Otorisasi <a name="authorization-endpoint-1"></a>
 
 Otorisasi dikonfigurasi melalui properti `authorization` di bagian [Konfigurasi AMP Access](#configuration). Endpoint ini merupakan endpoint CORS GET berkredensial. Lihat [Keamanan Asal CORS](#cors-origin-security) tentang metode pengamanan permintaan ini.
 
@@ -412,7 +413,7 @@ AMP Runtime menggunakan class CSS berikut selama alur otorisasi:
 
 Pada opsi *server*, panggilan ke endpoint Otorisasi dibuat oleh Cache AMP Google sebagai endpoint HTTPS sederhana. Dalam kasus ini, cookie Penayang tidak dapat dikirim.
 
-### Endpoint Pingback
+### Endpoint Pingback <a name="pingback-endpoint-1"></a>
 
 Pingback dikonfigurasi melalui properti `pingback` di bagian [Konfigurasi AMP Access](#configuration). Endpoint ini merupakan endpoint CORS POST berkredensial. Lihat [Keamanan Asal CORS](#cors-origin-security) tentang metode pengamanan permintaan ini.
 
@@ -435,7 +436,7 @@ rid=READER_ID
 &url=SOURCE_URL
 ```
 
-### Halaman Login
+### Halaman Login <a name="login-page"></a>
 
 URL Halaman Login dikonfigurasi melalui properti `login` di bagian [Konfigurasi AMP Access](#configuration).
 
@@ -475,7 +476,7 @@ Perhatikan penggunaan parameter hash URL “success”. Nilainya dapat “true�
 
 Jika sinyal `success=true` ditampilkan, AMP Runtime akan mengulangi panggilan ke endpoint Otorisasi dan Pingback untuk memperbarui status dokumen dan melaporkan "tampilan" dengan profil akses baru.
 
-#### Link Login
+#### Link Login <a name="login-link"></a>
 
 Penayang dapat memilih untuk menempatkan Link Login di mana saja dalam isi dokumen.
 
@@ -495,15 +496,15 @@ Jika namespace digunakan, formatnya adalah: `tap:amp-access.login-{namespace}` a
 
 AMP tidak membedakan antara login dan subscribe. Perbedaan ini dapat dikonfigurasi oleh Penayang menggunakan beberapa URL Login/link atau pada sistem Penayang.
 
-## Integrasi dengan *amp-analytics*
+## Integrasi dengan *amp-analytics* <a name="integration-with-amp-analytics"></a>
 
 Integrasi dengan *amp-analytics* didokumentasikan dalam [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
-## Keamanan Asal CORS
+## Keamanan Asal CORS <a name="cors-origin-security"></a>
 
 Endpoint Otorisasi dan Pingback adalah endpoint CORS dan harus mengimplementasikan protokol keamanan yang dijelaskan dalam [Spesifikasi Keamanan AMP CORS](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
-## Pengukuran
+## Pengukuran <a name="metering"></a>
 
 Pengukuran adalah sistem di mana konten premium gratis diperlihatkan kepada Pembaca untuk beberapa penayangan dokumen selama periode tertentu. Setelah kuota tertentu tercapai, Pembaca akan mulai melihat paywall dengan penggalan konten disertai pesan upsell dan link untuk mendaftar/login. Misalnya, pengukuran dapat ditetapkan sebagai “Pembaca dapat membaca 10 artikel per bulan secara gratis”.
 
@@ -513,7 +514,7 @@ AMP Access menyediakan fasilitas berikut untuk mengimplementasikan akses dengan 
 2. “Jumlah baca” hanya dapat diperbarui di endpoint Pingback.
 3. Hanya dokumen unik yang diperhitungkan terhadap kuota. Misalnya, memuat ulang dokumen yang sama sepuluh kali akan dihitung sebagai satu tampilan. Untuk keperluan ini, endpoint Otorisasi dan Pingback dapat memasukkan `SOURCE_URL` atau variabel URL serupa. Lihat [Variabel URL Akses](#access-url-variables).
 
-## Klik Pertama Gratis
+## Klik Pertama Gratis <a name="first-click-free"></a>
 
 Kebijakan Klik Pertama Gratis (atau FCF) Google dijelaskan [di sini](https://support.google.com/news/publisher/answer/40543), dengan update terbaru yang dijelaskan lebih mendetail [di sini](https://googlewebmastercentral.blogspot.com/2015/09/first-click-free-update.html).
 
@@ -521,7 +522,7 @@ Untuk mengimplementasikan FCF, Penayang harus (1) dapat menentukan layanan peruj
 
 Kedua langkah tersebut dicakup dalam spesifikasi AMP Access. Perujuk dapat dimasukkan ke URL Otorisasi dan Pingback menggunakan substitusi URL `DOCUMENT_REFERRER` seperti dijelaskan dalam [Variabel URL Akses](#access-url-variables). Penghitungan penayangan dapat dilakukan menggunakan endpoint Pingback pada sistem server. Ini sangat mirip dengan implementasi pengukuran yang dijelaskan di bagian [Pengukuran](#metering).
 
-## Alur Login
+## Alur Login <a name="login-flow"></a>
 
 AMP meluncurkan Dialog Login sebagai jendela pihak pertama atau pop-up atau tab. Kapan pun dimungkinkan, AMP Viewer akan mencoba meluncurkan Dialog Login dalam konteks browser sehingga dapat memanfaatkan API browser tingkat paling atas.
 
@@ -538,7 +539,7 @@ Hanya langkah 2-5 yang memerlukan penanganan oleh Penayang: Penayang hanya menye
 
 Seperti biasa, ID Pembaca harus disertakan dalam panggilan ke Halaman Login dan dapat digunakan oleh Penayang untuk pemetaan identitas. Sebagai jendela pihak pertama, Penayang juga akan menerima cookie mereka dan akan dapat menyetelnya. Jika ternyata Pembaca sudah login ke sistem Penayang, sebaiknya penayang segera mengalihkan kembali ke "Return URL" dengan respons `success=true`.
 
-## Glosarium AMP
+## Glosarium AMP <a name="amp-glossary"></a>
 
 * **Dokumen AMP** - dokumen HTML yang mengikuti format AMP dan divalidasi oleh Validator AMP. Dokumen AMP dapat di-cache oleh Cache AMP Google.
 * **Validator AMP** - program komputer yang menjalankan analisis statis atas dokumen HTML dan menampilkan keberhasilan atau kegagalan bergantung pada apakah dokumen sesuai dengan format AMP atau tidak.
@@ -550,7 +551,7 @@ Seperti biasa, ID Pembaca harus disertakan dalam panggilan ke Halaman Login dan 
 * **Pembaca** - orang sebenarnya yang menampilkan dokumen AMP.
 * **Pra-rendering AMP** - AMP Viewer dapat memanfaatkan pra-rendering, yang merender dokumen tersembunyi sebelum dokumen tersebut dapat ditampilkan. Pra-rendering meningkatkan performa secara signifikan. Namun, perlu diingat bahwa pra-rendering dokumen tidak dihitung sebagai penayangan karena Pembaca mungkin tidak benar-benar melihat dokumen itu.
 
-## Revisi
+## Revisi <a name="revisions"></a>
 
 * 02-Sep-2016: Properti konfigurasi "noPingback" dan pingback opsional.
 * 03-Mar-2016: Pingback kirim ulang setelah login (v0.5).
@@ -562,7 +563,7 @@ Seperti biasa, ID Pembaca harus disertakan dalam panggilan ke Halaman Login dan 
 * 03-Feb-2016: Spesifikasi keamanan "asal sumber" ditambahkan ke [Keamanan Asal CORS](#cors-origin-security).
 * 01-Feb-2016: Parameter kueri "return" untuk Halaman Login dapat disesuaikan menggunakan substitusi URL RETURN_URL.
 
-## Lampiran A: Tata bahasa ekspresi “amp-access”
+## Lampiran A: Tata bahasa ekspresi “amp-access” <a name="appendix-a-amp-access-expression-grammar"></a>
 
 Tata bahasa BNF terbaru tersedia di file [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison).
 
@@ -598,10 +599,10 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 Perhatikan bahwa ekspresi `amp-access` dievaluasi oleh AMP Runtime dan Cache AMP Google. Ini BUKAN bagian dari spesifikasi yang perlu diterapkan oleh Penayang. Ini hanya untuk keperluan penyampaian informasi.
 
-## Diskusi Mendetail
+## Diskusi Mendetail <a name="detailed-discussion"></a>
 
 Bagian ini akan membahas penjelasan mendetail tentang desain yang mendasari spesifikasi amp-access, dan mengklarifikasi pilihan desain. Segera hadir.
 
-## Validasi
+## Validasi <a name="validation"></a>
 
 Lihat [aturan amp-access](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii) dalam spesifikasi validator AMP.

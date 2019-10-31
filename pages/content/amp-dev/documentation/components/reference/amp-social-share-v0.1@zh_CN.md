@@ -1,4 +1,5 @@
 ---
+$title: amp-social-share
 $category@: ads-analytics
 formats:
 - websites
@@ -24,7 +25,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-social-share
+
 
 显示社交分享按钮。
 
@@ -48,11 +49,11 @@ teaser:
   </tr>
 </table>
 
-## 概览
+## 概览 <a name="overview"></a>
 
 `amp-social-share` 组件会显示一个针对各种社交平台提供商的社交分享按钮。
 
-## 示例
+## 示例 <a name="examples"></a>
 
 **示例：基本社交分享按钮**
 
@@ -75,7 +76,7 @@ teaser:
 
 LinkedIn 是预配置的提供商之一，因此您无需提供 `data-share-endpoint` 属性。
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -99,7 +100,7 @@ LinkedIn 是预配置的提供商之一，因此您无需提供 `data-share-endp
         </tr>
       </table>
 
-## 预配置的提供商
+## 预配置的提供商 <a name="pre-configured-providers"></a>
 
 `amp-social-share` 组件提供了[一些预配置的提供商](0.1/amp-social-share-config.js)，这些提供商知道其分享端点及部分默认参数。
 
@@ -221,7 +222,7 @@ LinkedIn 是预配置的提供商之一，因此您无需提供 `data-share-endp
     </tr>
   </table>
 
-## 未配置的提供商
+## 未配置的提供商 <a name="non-configured-providers"></a>
 
 除了预配置的提供商之外，您还可以通过在 `amp-social-share` 组件中指定其他属性来使用未配置的提供商。
 
@@ -238,9 +239,9 @@ LinkedIn 是预配置的提供商之一，因此您无需提供 `data-share-endp
 
 由于这些提供商未预先配置，因此您需要为提供商创建相应的按钮图片和样式。
 
-## 样式
+## 样式 <a name="styles"></a>
 
-### 默认样式
+### 默认样式 <a name="default-styles"></a>
 
 默认情况下，`amp-social-share` 包含一些热门的预配置提供商。这些提供商的按钮样式与提供商的官方颜色和徽标样式一致。默认宽度为 60 像素，默认高度为 44 像素。
 
@@ -248,7 +249,7 @@ LinkedIn 是预配置的提供商之一，因此您无需提供 `data-share-endp
 如需了解您可以在 AMP 网页中使用的已预设样式的自适应分享链接，请访问 [AMP Start](https://ampstart.com/components#links-and-sharing)。
 [/tip]
 
-### 自定义样式
+### 自定义样式 <a name="custom-styles"></a>
 
 有时，您可能希望使用您自己的样式。您可以通过下述方式将默认样式替换为您的自定义样式：
 ```css
@@ -258,7 +259,7 @@ amp-social-share[type="twitter"] {
 }
 ```
 
-## 变量替换
+## 变量替换 <a name="variable-substitution"></a>
 
 您可以在 `<amp-social-share>` 元素中使用[全局 AMP 变量替换](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。在下面的示例中，`TITLE` 替换为网页标题，`CANONICAL_URL` 替换为文档的规范网址。
 
@@ -268,6 +269,6 @@ amp-social-share[type="twitter"] {
 </amp-social-share>
 ```
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-social-share 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-social-share/validator-amp-social-share.protoascii)。

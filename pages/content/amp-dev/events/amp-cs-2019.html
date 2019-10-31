@@ -33,23 +33,11 @@ section_links:
     </div>
 </section>
 
-{% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-{% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-<div class="ap-o-jumpto">
-  <div class="ap--container">
-    <div class="ap-o-jumpto-content">
-      <p class="ap-o-jumpto-text">Learn more about</p>
-      <ul class="ap-o-jumpto-list">
-        {% for link in doc.section_links %}
-          <li class="ap-m-jumpto-item">
-            <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-</div>
+<section class="ap--container">
+  {% with text=_('Learn more about:') %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
+</section>
 
 <section class="ap--container">
   <p class="ap--content-default">
@@ -62,13 +50,13 @@ section_links:
   {% do doc.styles.addCssFile('css/components/molecules/agenda-item.css') %}
 
   <div class="ap--content-default">
-    <h1>Tentative schedule</h1>
+    <h1>Schedule</h1>
   </div>
 
   <div class="ap--content-x-wide">
     <amp-selector role="tablist" layout="container" class="ap--flex-container">
 
-        <div class="ap-o-agenda-selector-button ampcs" selected role="tab" tabindex="0" option="a">Tuesday<small>Hackathon / New Contributor Workshop (Optional)</small></div>
+        <div class="ap-o-agenda-selector-button ampcs" selected role="tab" tabindex="0" option="a">Tuesday, Oct. 8th<small>Hackathon / New Contributor Workshop (Optional)</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -127,7 +115,7 @@ section_links:
           </div>
         </div>
 
-        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Wednesday<small>Talks + Breakouts</small></div>
+        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Wednesday, Oct. 9th<small>Talks + Breakouts</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -188,7 +176,7 @@ section_links:
           </div>
         </div>
 
-        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Thursday<small>Talks + Breakouts</small></div>
+        <div class="ap-o-agenda-selector-button ampcs" role="tab" tabindex="0" option="b">Thursday, Oct. 10th<small>Talks + Breakouts</small></div>
 
         <div class="ap-o-agenda">
           <div class="ap--container ampconf-agenda">
@@ -302,13 +290,13 @@ section_links:
         </p>
         <ul>
           <li class="ap-m-conf-location-content-text">
-          Tuesday @ <a href="https://goo.gl/maps/ERvhnggy6MKjBpjz9">111 8th Avenue, New York, NY</a>.  Enter the 8th Avenue lobby and look for people with AMP Contributor Summit badges at the Events desk near the Chase.
+          Tuesday @ <a href="https://goo.gl/maps/ERvhnggy6MKjBpjz9">111 8th Avenue, New York, NY</a>.  Enter the main 8th Avenue lobby (near the Chase) and head to the Events section near the back.  Look for people with AMP Contributor Summit badges.
           </li>
           <li class="ap-m-conf-location-content-text">
-            Wednesday @ <a href="https://goo.gl/maps/kH779dQEdLjC967H9">85 10th Avenue, New York, NY</a>.  Enter the 10th Avenue lobby and look for people with AMP Contributor Summit badges at the registration desk.
+            Wednesday @ <a href="https://goo.gl/maps/kH779dQEdLjC967H9">85 10th Avenue, New York, NY</a>.  Enter the 10th Avenue lobby and use the elevator to go to the 3rd floor.  When you exit the elevator on the 3rd floor you will be near the summit location; look for people with AMP Contributor Summit badges.
           </li>
           <li class="ap-m-conf-location-content-text">
-            Thursday @ <a href="https://goo.gl/maps/ERvhnggy6MKjBpjz9">111 8th Avenue, New York, NY</a>.  Enter the 8th Avenue lobby and look for people with AMP Contributor Summit badges at the Events desk near the Chase.
+            Thursday @ <a href="https://goo.gl/maps/ERvhnggy6MKjBpjz9">111 8th Avenue, New York, NY</a>.  Enter the main 8th Avenue lobby (near the Chase) and head to the Events section near the back.  Look for people with AMP Contributor Summit badges.
           </li>
       </div>
 
@@ -344,23 +332,21 @@ section_links:
     </div>
 </section>
 
-<section class="ap--container">
-  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-  <div class="ap-o-jumpto ap--container">
-    <div class="ap-o-jumpto-content ap--inline-footer">
-      <ul class="ap-o-jumpto-list">
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="code-of-conduct.html">Code of Conduct</a>
-        </li>
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="accessibility.html">Accessibility</a>
-        </li>
-        <li class="ap-m-jumpto-item">
-          <a class="ap-m-jumpto-item-link" href="mailto:wg-outreach@amp.dev">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+<section class="ap--container ap--center">
+  {% with list = [
+      { "label": "Code of Conduct",
+        "url": "code-of-conduct.html"
+      },
+      {
+        "label": "Accessibility",
+        "url": "accessibility.html"
+      },
+      {
+        "label": "Contact",
+        "url": "mailto:wg-outreach@amp.dev"
+      }
+    ]
+  %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
 </section>

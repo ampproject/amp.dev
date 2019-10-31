@@ -1,4 +1,5 @@
 ---
+$title: amp-auto-ads
 $category@: ads-analytics
 formats:
   - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-auto-ads
+
 
 يعمل هذا المكّوِن ديناميكيًا على إدخال الإعلانات في صفحة AMP باستخدام ملف تهيئة يتم عرضه عن بُعد.
 
@@ -76,7 +77,7 @@ limitations under the License.
 </amp-auto-ads>
 ```
 
-## شبكات الإعلانات المتوافقة
+## شبكات الإعلانات المتوافقة <a name="supported-ad-networks"></a>
 
 * [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
 * [DoubleClick (تجريبية)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
@@ -131,7 +132,7 @@ limitations under the License.
 
 ### تعريف الكائنات
 
-#### ConfigObj
+#### ConfigObj <a name="configobj"></a>
 
 الحقول المراد تحديدها في كائن التهيئة:
 
@@ -211,7 +212,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### AnchorObj
+#### AnchorObj <a name="anchorobj"></a>
 
 الحقول المراد تحديدها في كائن التهيئة `anchor`:
 
@@ -252,7 +253,7 @@ limitations under the License.
 </table>
 
 
-#### PlacementStyleObj
+#### PlacementStyleObj <a name="placementstyleobj"></a>
 
 الحقول المراد تحديدها في كائن التهيئة `style`:
 
@@ -277,7 +278,7 @@ limitations under the License.
 </table>
 
 
-#### RelativePositionEnum
+#### RelativePositionEnum <a name="relativepositionenum"></a>
 
 قيم ENUM للحقل `pos` في كائن التهيئة `placements`:
 
@@ -310,7 +311,7 @@ limitations under the License.
 </table>
 
 
-#### PlacementTypeEnum
+#### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 قيم ENUM للحقل `type` في كائن التهيئة `placements`:
 

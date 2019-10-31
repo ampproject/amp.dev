@@ -1,4 +1,5 @@
 ---
+$title: amp-analytics
 $category@: ads-analytics
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-analytics
+
 
 AMP 문서에서 애널리틱스 데이터를 캡처합니다.
 
@@ -41,7 +42,7 @@ AMP 문서에서 애널리틱스 데이터를 캡처합니다.
 </table>
 
 
-## 공급업체 또는 사내로 애널리틱스를 전송하고 있습니까?
+## 공급업체 또는 사내로 애널리틱스를 전송하고 있습니까? <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
 사이트에서 AMP 애널리틱스를 사용하기 전에, 타사 애널리틱스 도구를 사용하여 사용자 참여도를 분석할지 아니면 자체적인 사내 솔루션을 사용할지를 결정해야 합니다.
 
@@ -82,7 +83,7 @@ AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별
 </amp-analytics>
 ```
 
-### 사내 데이터 전송
+### 사내 데이터 전송 <a name="sending-data-in-house"></a>
 
 사용자 참여도를 측정할 수 있는 자체적인 사내 솔루션이 있는 경우 데이터를 전송할 URL만 있으면 AMP 애널리틱스를 솔루션과 통합할 수 있습니다. 또한 다양한 URL로 데이터를 전송할 수 있습니다. 예를 들어, 한 URL로는 페이지 조회수 데이터를 전송하고, 다른 URL로는 소셜 참여도 데이터를 전송할 수 있습니다.
 
@@ -125,7 +126,7 @@ AMP와 통합되지 않은 애널리틱스 공급업체와의 작업이 사내 �
 일반적인 몇 가지 추적 사용 사례를 보려면(예: 페이지 조회수, 페이지 클릭수, 스크롤링 등) [애널리틱스: 사용 사례](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md)를 참조하세요.
 [/tip]
 
-## 구성 데이터 지정
+## 구성 데이터 지정 <a name="specifying-configuration-data"></a>
 
 `<amp-analytics>` 요소에서, 무엇을 측정할지와 애널리틱스 데이터를 어디로 보낼지에 대한 세부정보가 포함된 JSON 구성 개체를 지정합니다.
 
@@ -157,7 +158,7 @@ AMP와 통합되지 않은 애널리틱스 공급업체와의 작업이 사내 �
 }
 ```
 
-### 인라인 또는 원격 구성
+### 인라인 또는 원격 구성 <a name="inline-or-remote-configuration"></a>
 
 구성 데이터는 인라인으로 지정할 수도 있고 `config` 속성에서 URL을 지정하여 원격으로 가져올 수도 있습니다. 또한, `type` 속성을 사용하여 인기 있는 애널리틱스 공급업체에 대한 내장된 구성을 선택할 수도 있습니다.
 
@@ -166,7 +167,7 @@ AMP와 통합되지 않은 애널리틱스 공급업체와의 작업이 사내 �
 1. 원격 구성이 인라인 구성보다 우선합니다.
 1. 인라인 구성이 공급업체 구성보다 우선합니다.
 
-#### 원격 구성 로드
+#### 원격 구성 로드 <a name="loading-remote-configuration"></a>
 
 원격 구성을 로드하려면 `<amp-analytics>` 요소에서 구성 데이터에 대한 `config` 속성 및 URL을 지정합니다. 지정된 URL은 HTTPS 체계를 사용해야 합니다. URL에는 [AMP URL 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)가 포함될 수 있습니다. 쿠키에 액세스하려면 [`data-credentials`](#data-credentials) 속성을 참조하세요. 응답은 [AMP CORS 보안 지침](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)을 따라야 합니다.
 
@@ -176,7 +177,7 @@ AMP와 통합되지 않은 애널리틱스 공급업체와의 작업이 사내 �
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-#### 구성 재작성기
+#### 구성 재작성기 <a name="configuration-rewriter"></a>
 
 구성 재작성기는 애널리틱스 제공업체가 제공된 구성을 동적으로 재작성할 수 있도록 설계되었습니다. 이는 원격 구성 기능과 유사하지만, 사용자가 제공한 구성을 서버에 대한 요청에 추가로 포함합니다. 현재 이 기능은 애널리틱스 공급업체에서만 사용할 수 있습니다.
 
@@ -199,7 +200,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 1. 인라인 구성
 1. 공급업체가 정의한 구성
 
-##### 변수 그룹
+##### 변수 그룹 <a name="variable-groups"></a>
 
 애널리틱스 제공업체는 변수 그룹 기능을 사용하여, 사용자가 쉽게 사용할 수 있도록 사전 정의된 변수 집합을 그룹화할 수 있습니다. 이러한 변수는 해석 과정을 거친 후 지정된 `configRewriter` 엔드포인트로 전송됩니다.
 
@@ -262,13 +263,13 @@ export const VENDOR_ANALYTICS_CONFIG = {
   }
 ```
 
-### 구성 데이터 개체
+### 구성 데이터 개체 <a name="configuration-data-objects"></a>
 
-#### 요청
+#### 요청 <a name="requests"></a>
 
 `requests` 구성 개체는 데이터를 애널리틱스 플랫폼으로 전송하는 데 사용되는 URL은 물론 요청 동작의 일괄 처리 또는 보고를 위한 URL도 지정합니다. `request-name`은 특정 이벤트(예: `페이지 조회수`, `이벤트` 등)에 대한 응답으로 어떤 요청을 전송해야 할지를 지정합니다. `request-value`는 https URL을 포함하며, 다른 요청이나 변수를 참조하는 자리표시자 토큰을 포함할 수 있습니다. `request-value`는 또한 선택적 요청 구성을 포함하는 개체일 수 있습니다.
 
-##### 요청 구성
+##### 요청 구성 <a name="request-configs"></a>
 
 개체로 요청을 정의하기 위한 속성은 다음과 같습니다.
 
@@ -293,7 +294,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 일부 애널리틱스 제공업체는 이미 제공된 구성을 가지고 있으며, 이 구성은 `type` 속성을 통해 사용할 수 있습니다. 애널리틱스 제공업체를 사용하는 경우 요청 정보를 포함하지 않아도 될 수 있습니다. 요청 구성 여부와 방법에 대해 알아보려면 공급업체 설명서를 참조하세요.
 
-##### 구성 일괄 처리
+##### 구성 일괄 처리 <a name="batching-configs"></a>
 
 요청 핑의 수를 줄이려면 요청 구성에서 일괄 처리 동작을 지정할 수 있습니다. 동일한 요청을 사용하는 `triggers`의 [`extraUrlParams`](#extra-url-params)가 요청의 `baseUrl`에 추가됩니다.
 
@@ -345,7 +346,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-#### 변수
+#### 변수 <a name="vars"></a>
 
 `amp-analytics` 구성요소는 요청에 사용될 수 있는 많은 기본 변수를 정의합니다. 이러한 모든 변수 목록은 [`amp-analytics` 변수 가이드](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md)에서 이용할 수 있습니다. [AMP HTML 대체 가이드](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)에서 지원되는 모든 변수도 지원됩니다.
 
@@ -359,7 +360,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-#### 추가 URL 매개변수
+#### 추가 URL 매개변수 <a name="extra-url-params"></a>
 
 `extraUrlParams` 구성 개체는 요청에 포함할 추가 매개변수를 지정합니다. 기본적으로 추가 URL 매개변수는 일반적인 "&amp;foo=baz" 규칙을 통해 요청 URL의 쿼리 문자열에 추가됩니다.
 
@@ -381,7 +382,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 `useBody`를 사용할 수 있고 `beacon` 또는 `xhrpost` 전송 메서드를 통해 요청이 전송되는 경우, `extraUrlParamsReplaceMap` 문자열 대체는 `extraUrlParams`의 최상위 키에서만 수행됩니다.
 
-#### 트리거
+#### 트리거 <a name="triggers"></a>
 
 `triggers` 구성 개체는 애널리틱스 요청을 언제 전송해야 할지를 설명합니다. `triggers` 속성은 trigger-name 및 trigger-configuration의 키-값 쌍을 포함합니다. 트리거 이름에는 영숫자 문자(a-z, A-Z, 0-9)로 구성된 문자열을 사용할 수 있습니다. 우선순위가 낮은 구성의 트리거는 우선순위가 높은 구성의 동일한 이름을 가진 트리거에 의해 재정의됩니다.
 
@@ -420,7 +421,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 },
 ```
 
-##### 요소 선택기
+##### 요소 선택기 <a name="element-selector"></a>
 
 `click` 및 `visible`과 같은 일부 트리거에서는 선택기 속성을 사용하여 단일 요소 또는 요소 모음을 지정할 수 있습니다. 각 트리거는 선택기를 일치하는 모든 요소에 적용할지 첫 번째 요소에 적용할지, 모든 요소에 대해 일치를 확인할지 AMP 요소에 대해서만 확인할지 등 서로 다른 제한과 해석을 선택한 요소에 적용할 수 있습니다. 자세한 내용은 관련된 각 트리거에 대한 설명서를 참조하세요.
 
@@ -431,7 +432,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
     - `:root` - 문서 루트와 일치하는 특별한 선택기.
 - `selectionMethod` 이 속성을 지정할 경우 값은 `scope` 또는 `closest` 중 하나가 됩니다. `scope`인 경우 `amp-analytics` 태그의 상위 요소 내에서 요소를 선택할 수 있습니다. `closest`는 지정된 선택기를 충족하는 `amp-analytics` 태그와 가장 가까운 상위 요소를 검색합니다. 기본값은 `scope`입니다.
 
-##### 렌더 시작 트리거 삽입
+##### 렌더 시작 트리거 삽입 <a name="embed-render-start-trigger"></a>
 
 iframe에 다른 문서(예: 광고)를 삽입하는 AMP 요소는 렌더 시작 이벤트(`"on": "render-start"`)를 보고할 수 있습니다. 일반적으로 이 이벤트는 삽입된 문서의 렌더링이 시작되었음을 확인하는 즉시 발생합니다. 특정 AMP 요소가 이 이벤트를 발생시키는지 확인하려면 설명서를 참조하세요.
 
@@ -456,7 +457,7 @@ iframe에 다른 문서(예: 광고)를 삽입하는 AMP 요소는 렌더 시작
 }
 ```
 
-##### 초기 로드 트리거
+##### 초기 로드 트리거 <a name="initial-load-trigger"></a>
 
 초기 로드 이벤트(`"on": "ini-load"`)는 AMP 요소 또는 AMP 문서의 초기 내용이 로드될 때 트리거됩니다.
 
@@ -488,7 +489,7 @@ iframe에 다른 문서(예: 광고)를 삽입하는 AMP 요소는 렌더 시작
 }
 ```
 
-##### 페이지 및 요소 가시성 트리거
+##### 페이지 및 요소 가시성 트리거 <a name="page-and-element-visibility-trigger"></a>
 
 페이지가 표시될 때 요청이 실행되도록 하려면 페이지 가시성 트리거(`"on": "visible"`)를 사용합니다. 이 트리거의 실행은 `visibilitySpec`을 사용하여 구성할 수 있습니다.
 
@@ -519,7 +520,7 @@ iframe에 다른 문서(예: 광고)를 삽입하는 AMP 요소는 렌더 시작
 요소 가시성 트리거는 요소 가시성을 추적하기 전에 `visibilitySpec`의 `waitFor` 속성에 의해 지정된 신호를 기다립니다. `waitFor`를 지정하지 않을 경우 요소의 [`ini-load`](#initial-load-trigger) 신호를 기다립니다. 자세한 내용은 `waitFor` 문서를 참조하세요.
 `reportWhen`이 지정된 경우 트리거는 이벤트를 전송하기 전에 신호를 기다립니다. 이는 예를 들어 페이지가 닫힐 때 애널리틱스 이벤트를 보내는 데 유용합니다.
 
-##### 오류 트리거
+##### 오류 트리거 <a name="error-trigger"></a>
 
 페이지 작성자 때문에 또는 페이지 게시에 사용된 소프트웨어 때문에 오류가 발생할 때 사용자 오류 이벤트(`"on": "user-error"`)가 트리거됩니다. 여기에는 AMP 구성요소의 구성 오류, 잘못 구성된 광고 또는 실패한 어설션이 포함됩니다(이에 제한되지 않음). 사용자 오류는 개발자 콘솔에서도 보고됩니다.
 
@@ -615,7 +616,7 @@ visibilitySpec: {
 
 트리거의 일부로 제공된 변수 외에도 [데이터 속성으로서의 변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute)를 추가로 지정하거나 재정의할 수 있습니다. 이러한 데이터 속성은(사용되는 경우) [`selector`](#element-selector)로서 지정된 요소의 일부여야 합니다.
 
-##### 클릭 트리거
+##### 클릭 트리거 <a name="click-trigger"></a>
 
 지정된 요소를 클릭할 때 요청이 실행되도록 하려면 클릭 트리거(`"on": "click"`)를 사용합니다. 어떤 요소가 이 요청을 실행할지를 제어하려면 [`selector`](#element-selector)를 사용합니다. 지정된 selector와 일치하는 모든 요소에 대해 트리거가 실행됩니다.
 
@@ -638,7 +639,7 @@ visibilitySpec: {
 
 트리거의 일부로 제공된 변수 외에도 [데이터 속성으로서의 변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute)를 추가로 지정하거나 재정의할 수 있습니다. 이러한 데이터 속성은(사용되는 경우) `selector`로서 지정된 요소의 일부여야 합니다.
 
-##### 스크롤 트리거
+##### 스크롤 트리거 <a name="scroll-trigger"></a>
 
 페이지를 스크롤할 때 특정 조건에서 요청이 실행되도록 하려면 스크롤 트리거(`"on": "scroll"`)를 사용합니다. 이 트리거는 요청 전송을 트리거한 경계를 나타내는 [특별한 변수](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction)를 제공합니다. 실행 시기를 제어하려면 `scrollSpec`을 사용합니다
 
@@ -657,7 +658,7 @@ visibilitySpec: {
 }
 ```
 
-##### 타이머 트리거
+##### 타이머 트리거 <a name="timer-trigger"></a>
 
 일정한 간격으로 요청을 실행하려면 타이머 트리거(`"on": "timer"`)를 사용합니다. 발생 시기를 제어하려면 `timerSpec`을 사용합니다
 
@@ -706,7 +707,7 @@ visibilitySpec: {
 
 중첩된 타이머 트리거 생성에 대한 자세한 내용은 [트리거](#triggers)에 대한 사양을 참조하세요. 타이머 트리거를 사용하여 타이머를 시작하거나 중지하는 것은 허용되지 않습니다.
 
-##### 숨겨진 트리거
+##### 숨겨진 트리거 <a name="hidden-trigger"></a>
 
 페이지가 숨겨질 때 요청이 실행되도록 하려면 숨겨진 트리거(`"on": "hidden"`)를 사용합니다.
 
@@ -739,15 +740,15 @@ visibilitySpec: {
 페이지가 숨겨질 때 #anim-id 요소가 총 3초 넘게 표시된 경우(표시 영역의 20% 초과) 요청을 실행합니다.
 </blockquote>
 
-##### 액세스 트리거
+##### 액세스 트리거 <a name="access-triggers"></a>
 
 AMP 액세스 시스템은 액세스 흐름의 여러 상태에 대해 여러 이벤트를 실행합니다. 액세스 트리거(`"on": "access-*"`)에 대한 자세한 내용은 [AMP 액세스 및 애널리틱스](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)를 참조하세요.
 
-#### 동영상 애널리틱스 트리거
+#### 동영상 애널리틱스 트리거 <a name="video-analytics-triggers"></a>
 
 동영상 애널리틱스는 게시지가 동영상의 수명 주기 동안 발생하는 여러 이벤트를 추적하기 위해 사용할 수 있는 여러 트리거(`"on": "video-*"`)를 제공합니다. 자세한 내용은 [AMP 동영상 애널리틱스](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)에서 확인할 수 있습니다.
 
-#### 전송
+#### 전송 <a name="transport"></a>
 
 `transport` 구성 개체는 요청을 전송하는 방법을 지정합니다. 이 값은 어떤 전송 방법이 허용되는지를 나타내는 입력란이 있는 개체입니다.
 
@@ -771,7 +772,7 @@ MRC 공인 공급업체는 iframe-transport-vendors.js에 URL 문자열을 추�
 
 자세한 내용은 [iframe 전송 클라이언트 API 구현 예](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) 및 [iframe 통합 예 페이지](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport.amp.html)를 참조하세요. 이 예에서는 `amp-analytics` 태그가 포함된 [가짜 광고](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html)를 로드합니다. 가짜 광고 콘텐츠에는 수행해야 할 몇 가지 추가 구성 지침이 포함되어 있습니다.
 
-##### 추가 URL 매개변수에 본문 사용
+##### 추가 URL 매개변수에 본문 사용 <a name="use-body-for-extra-url-params"></a>
 
 `useBody` 구성 옵션은 URL 인코딩된 쿼리 매개변수 대신 POST 요청 본문에 `extraUrlParams`를 포함할지 여부를 나타냅니다.
 
@@ -788,7 +789,7 @@ MRC 공인 공급업체는 iframe-transport-vendors.js에 URL 문자열을 추�
 }
 ```
 
-##### 리퍼러 정책
+##### 리퍼러 정책 <a name="referrer-policy"></a>
 
 리퍼러 정책은 `transport` 구성에서 `referrerPolicy` 입력란으로 지정할 수 있습니다. 현재 `no-referrer`만 지원됩니다.
 리퍼러 정책은 `image` 전송에만 사용할 수 있습니다. `referrerPolicy: no-referrer`가 지정되면 `beacon` 및 `xhrpost` 전송이 `false`로 재정의됩니다.
@@ -802,7 +803,7 @@ MRC 공인 공급업체는 iframe-transport-vendors.js에 URL 문자열을 추�
 }
 ```
 
-#### 링커
+#### 링커 <a name="linkers"></a>
 
 `linkers` 기능은 도메인 간 ID 동기화를 사용하도록 설정하는 데 사용됩니다. `amp-analytics`는 [구성 개체](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format)를 사용하여, URL 매개변수로서 페이지의 지정된 발신 링크에 추가되는 '링커 문자열'을 만듭니다. 사용자가 이러한 링크 중 하나를 클릭하면 대상 페이지가 URL 매개변수에서 링커 문자열을 읽어 ID 동기화를 수행합니다. 이는 일반적으로 AMP 프록시 도메인과 게시자 도메인 전체에서 사용자 세션에 참가하는 데 사용됩니다.
 
@@ -810,17 +811,17 @@ MRC 공인 공급업체는 iframe-transport-vendors.js에 URL 문자열을 추�
 
 이 매개변수를 가져와야 하는 경우 이 매개변수를 만드는 방법에 대한 정보는 [링커 ID 수신](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md)을 참조하세요.
 
-#### 쿠키
+#### 쿠키 <a name="cookies"></a>
 
 `cookies` 기능은 문서 URL에서 [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) 및 [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) 정보를 추출하여 원래 도메인에 쿠키를 기록하도록 지원합니다. 이를 `linkers` 기능과 함께 사용하면, AMP 프록시 도메인에서 게시자 도메인의 AMP 페이지로 ID 동기화를 수행할 수 있습니다.
 
 `cookies` 구성 설정에 대한 자세한 내용은 [AMP 페이지에서 링커 매개변수 수신](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)을 참조하세요.
 
-## 유효성 검사
+## 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사 도구 사양의 [amp-analytics rules](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/validator-amp-analytics.protoascii)를 참조하세요.
 
-### `<amp-analytics>`의 유효한 속성
+### `<amp-analytics>`의 유효한 속성 <a name="valid-attributes-for-"></a>
 
 다음은 `amp-analytics` 구성요소의 유효한 속성입니다.
 
@@ -852,6 +853,6 @@ AMP 유효성 검사 도구 사양의 [amp-analytics rules](https://github.com/a
 
 이 속성을 제공하는 경우, 지정된 HTML 요소 ID가 포함된 [amp-user-notification](amp-user-notification.md)을 사용자가 확인할 때까지 페이지에서 애널리틱스 요청을 처리하지 않습니다. 이 속성은 선택사항입니다.
 
-## AMP 구성요소에 대한 애널리틱스
+## AMP 구성요소에 대한 애널리틱스 <a name="analytics-for-amp-components"></a>
 
 AMP 구성요소 개발자는 AMP 애널리틱스를 사용하여 데이터 수집을 구현할 수 있습니다. 자세한 내용은 [AMP 구성요소에 대한 애널리틱스 구현](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md)을 참조하세요.

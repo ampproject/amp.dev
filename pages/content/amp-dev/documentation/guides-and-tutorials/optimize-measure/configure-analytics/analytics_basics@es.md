@@ -4,7 +4,7 @@ $title: "Analytics: aspectos básicos"
 
 Con este artículo conocerás los aspectos básicos de Analytics en las páginas AMP.
 
-## ¿Se debe utilizar amp-pixel o amp-analytics?
+## ¿Se debe utilizar amp-pixel o amp-analytics? <a name="use-amp-pixel-or-amp-analytics"></a>
 
 AMP ofrece dos componentes distintos para poder realizar los análisis y mediciones que necesites: [amp-pixel](../../../../documentation/components/reference/amp-pixel.md) y [amp-analytics](../../../../documentation/components/reference/amp-analytics.md). Ambas opciones envían análisis a un punto determinado.
 
@@ -69,7 +69,7 @@ En el ejemplo anterior hemos definido una solicitud denominada "pageview" para q
 
 Al visualizarse la página (según lo especificado por el uso de la palabra clave de activación `visible`), se activa un evento y se envía la solicitud de `pageview` mencionada. El atributo triggers determina el momento en el que se activa la solicitud de página vista. Obtén más información sobre las [solicitudes y los activadores](deep_dive_analytics.md#requests-triggers--transports).
 
-## Sustitución de variables
+## Sustitución de variables <a name="variable-substitution"></a>
 
 Los componentes [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
 y [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
@@ -115,7 +115,7 @@ En el ejemplo anterior, las variables, `account` y `title` aparecen definidas en
 
 Importante: La sustitución de variables es flexible, lo que significa que puedes tener las mismas variables definidas en distintas ubicaciones y que el tiempo de ejecución de AMP analizará los valores en este orden de procedencia (consulta el apartado [Orden de sustitución de variables](deep_dive_analytics.md#variable-substitution-ordering) ).
 
-## Identificación del usuario
+## Identificación del usuario <a name="user-identification"></a>
 
 Los sitios web usan cookies para almacenar información concreta sobre el uso que se hace del navegador. Estas cookies pueden servir para saber si el usuario ya había visitado un sitio web. En AMP, las páginas se pueden publicar desde el sitio web del editor o una caché (como por ejemplo la Google AMP Cache). Lo más probable es que el sitio web del editor y la caché tengan dominios distintos. Por motivos de seguridad, los navegadores pueden, y suelen, limitar el acceso a las cookies de otro dominio (consulta también el artículo sobre [el seguimiento de usuarios en diversos orígenes](https://github.com/ampproject/amphtml/blob/master/spec/amp-managing-user-state.md)).
 

@@ -63,13 +63,13 @@ Gaya berikut diizinkan, namun dibatasi dalam hal nilai yang didukung:
   </tbody>
 </table>
 
-## Pengecualian font kustom
+## Pengecualian font kustom <a name="the-custom-fonts-exception"></a>
 
 Halaman AMP tidak dapat menyertakan stylesheet eksternal, dengan pengecualian font kustom.
 
 Baca lebih lanjut: Pelajari lebih lanjut tentang [font kustom di AMP](custom_fonts.md).
 
-## Menggunakan praprosesor CSS
+## Menggunakan praprosesor CSS <a name="using-css-preprocessors"></a>
 
 Keluaran praprosesor berfungsi sama baiknya di AMP dengan di halaman web lainnya. Misalnya, situs [amp.dev](https://amp.dev/)
 menggunakan [Sass](http://sass-lang.com/) . (Kami menggunakan [Grow](http://grow.io/)  untuk membangun halaman AMP statis yang menyusun situs [amp.dev](https://amp.dev/) .)

@@ -1,4 +1,5 @@
 ---
+$title: amp-animation
 $category@: presentation
 formats:
 - websites
@@ -24,7 +25,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-animation
+
 
 Define y ejecuta animaciones.
 
@@ -44,15 +45,15 @@ Define y ejecuta animaciones.
 </table>
 
 
-## Descripción general
+## Descripción general <a name="overview"></a>
 
 Las animaciones de AMP se basan en la [API de Web Animations](https://www.w3.org/TR/web-animations/) para definir y ejecutar animaciones en documentos de AMP.
 
-## Formato
+## Formato <a name="format"></a>
 
 Los elementos `amp-animation` definen las animaciones como una estructura JSON.
 
-### Especificación de la animación de nivel superior
+### Especificación de la animación de nivel superior <a name="top-level-animation-specification"></a>
 
 El objeto de nivel superior define un proceso de animación que consta de un número arbitrario de componentes de animación definidos como una matriz `animations`:
 ```html
@@ -75,11 +76,11 @@ El objeto de nivel superior define un proceso de animación que consta de un nú
 </amp-animation>
 ```
 
-### Ubicación en DOM
+### Ubicación en DOM <a name="placement-in-dom"></a>
 
 `<amp-animation>` solo se puede colocar como elemento secundario directo del elemento `<body>` si se cumple que `trigger="visibility"`. Se puede colocar en cualquier parte del DOM si no se define `trigger` y la reproducción de la animación se controla de forma automática a través de sus acciones.
 
-### Componentes de animación
+### Componentes de animación <a name="animation-component"></a>
 
 Cada componente de la animación es un [efecto de fotogramas clave (keyframe effect)](https://www.w3.org/TR/web-animations/#dom-keyframeeffect-keyframeeffect) compuesto por:
 
@@ -100,23 +101,23 @@ Cada componente de la animación es un [efecto de fotogramas clave (keyframe eff
 }
 ```
 
-### Condiciones
+### Condiciones <a name="conditions"></a>
 
 Las condiciones pueden definir si este componente de animación se incluye en la animación final.
 
-#### Media query
+#### Media query <a name="media-query"></a>
 
 La media query se puede especificar mediante la propiedad `media`, que puede contener cualquier expresión permitida de la API de [Window.matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia), y que se corresponde con la regla de CSS `@media`.
 
 Si se define un valor de un componente de animación, dicho componente solo se incluirá si la media query coincide con el entorno actual.
 
-#### Condición "supports"
+#### Condición "supports" <a name="supports-condition"></a>
 
 Esta condición se puede especificar utilizando la propiedad `supports`. Puede contener cualquier expresión permitida para el API de [CSS.supports](https://developer.mozilla.org/en-US/docs/Web/API/CSS/supports) y se corresponde con la regla de CSS `@supports`.
 
 Si se define un valor de un componente de animación, dicho componente solo se incluirá si la condición "supports" coincide con el entorno actual.
 
-### Instrucción de animación `switch`
+### Instrucción de animación `switch` <a name="animation-switch-statement"></a>
 
 En algunos casos, es conveniente combinar en una única animación varias [animaciones condicionales](#conditions) con un valor predeterminado opcional. Esto se puede hacer mediante la declaración de animación `switch`, siguiendo este formato:
 
@@ -163,7 +164,7 @@ Por ejemplo, esta animación ejecuta la animación de trayectoria de movimiento 
 }
 ```
 
-### Variables
+### Variables <a name="variables"></a>
 
 Los componentes de animación pueden declarar variables de CSS que se utilizarán para los valores de tiempo y de fotogramas clave mediante las expresiones `var()`, ``que se evalúan mediante el contexto actual del target. Las variables de CSS especificadas en los componentes de animación se propagan a animaciones anidadas y se aplican a los targets de animación. Como consecuencia, estas serán las que se utilicen en las animaciones finales.
 
@@ -196,7 +197,7 @@ En este ejemplo:
 
 Para obtener más información sobre `var()`, consulta la [sección sobre `var()` y `calc()`](#var-and-calc-expressions).
 
-### Propiedades de tiempo
+### Propiedades de tiempo <a name="timing-properties"></a>
 
 Los componentes de animación y animación de nivel superior pueden contener propiedades de tiempo, las cuales se definen detalladamente en el diccionario de [AnimationEffectTimingProperties](https://www.w3.org/TR/web-animations/#dictdef-animationeffecttimingproperties) de la especificación de Web Animation. El conjunto de propiedades permitidas incluye:
 
@@ -274,7 +275,7 @@ Ejemplo de propiedades de tiempo en JSON:
 
 Los componentes de animación heredan las propiedades de tiempo especificadas para la animación de nivel superior.
 
-### Subtargets
+### Subtargets <a name="subtargets"></a>
 
 En cualquier lugar donde se pueda especificar `selector`, también es posible especificar `subtargets: []`. Los subtargets pueden anular las propiedades de tiempo o las variables que se definen en la animación de subtargets específicos indicados mediante un índice o un selector de CSS.
 
@@ -301,7 +302,7 @@ En este ejemplo, todos los targets que coincidan con ".target" tendrán de forma
 
 Ten en cuenta que varios subtargets pueden coincidir con un target.
 
-### Fotogramas clave (keyframes)
+### Fotogramas clave (keyframes) <a name="keyframes"></a>
 
 Los fotogramas clave se pueden especificar de las formas que se describen en la [sección de fotogramas clave](https://www.w3.org/TR/web-animations/#processing-a-keyframes-argument) de la especificación de Web Animations o como una cadena que haga referencia al nombre `@keyframes` en el CSS.
 
@@ -369,7 +370,7 @@ Para obtener más información sobre los formatos de fotogramas clave, consulta 
 
 Los valores de propiedad admiten cualquier valor de CSS válido, como `calc()`, `var()` y otras expresiones.
 
-#### Fotogramas clave de CSS
+#### Fotogramas clave de CSS <a name="keyframes-from-css"></a>
 
 Los fotogramas clave también se pueden especificar en la hoja de estilo del documento (etiqueta `<style>`) como reglas de CSS `@keyframes`. Por ejemplo:
 ```html
@@ -400,7 +401,7 @@ Los `@keyframes` de CSS son, en su mayoría, equivalentes a la definición de fo
 - Las plataformas que no admiten `calc()` y `var()` no podrán aprovechar las ventajas de los polyfills de `amp-animation` cuando se especifiquen los fotogramas clave en CSS. Por lo tanto, se recomienda incluir siempre valores de respaldo en CSS.
 - No se pueden utilizar las extensiones de CSS como [`width()`, `height()`, `num()`, `rand()`, `index()` y `length()`](#css-extensions).
 
-#### Propiedades de fotogramas clave incluidas en la lista blanca
+#### Propiedades de fotogramas clave incluidas en la lista blanca <a name="white-listed-properties-for-keyframes"></a>
 
 No se pueden utilizar todas las propiedades de CSS en los fotogramas clave, ya que solo aparecen en la lista blanca las que los navegadores modernos pueden optimizar y animar rápidamente. Esta lista aumentará a medida que se confirme el buen rendimiento de otras propiedades. Por ahora, la lista incluye:
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
@@ -410,7 +411,7 @@ No se pueden utilizar todas las propiedades de CSS en los fotogramas clave, ya q
 
 Ten en cuenta que el uso de propiedades de CSS con prefijo de proveedor no es necesario ni está permitido.
 
-### Formas abreviadas de la configuración de animación
+### Formas abreviadas de la configuración de animación <a name="abbreviated-forms-of-animation-configuration"></a>
 
 Si la animación se compone de un único elemento y solo hace falta un efecto de fotogramas clave, la configuración se puede limitar a este componente de animación. Por ejemplo:
 ```html
@@ -446,7 +447,7 @@ Si la animación está formada por una lista de componentes, pero no tiene una a
   </amp-animation>
 ```
 
-### Composición de la animación
+### Composición de la animación <a name="animation-composition"></a>
 
 Las animaciones pueden hacer referencia a otras animaciones, combinando así varias declaraciones `amp-animation` en una única animación final. Este procedimiento es parecido a la anidación. Separar las animaciones en diferentes elementos tiene la ventaja de poder reutilizar la misma animación en varios lugares o de hacer que cada declaración de animación sea más pequeña y fácil de gestionar.
 
@@ -500,7 +501,7 @@ En este caso, tanto si ".target-class" coincide con un elemento, con varios o co
 
 Las variables y las propiedades de tiempo especificadas en la animación de llamada también se transmiten a la animación incluida.
 
-### Expresiones `var()` y `calc()`
+### Expresiones `var()` y `calc()` <a name="var-and-calc-expressions"></a>
 
 `amp-animation` permite el uso de las expresiones `var()` y `calc()` para los valores de tiempo y los fotogramas clave.
 
@@ -538,11 +539,11 @@ Tanto `var()` como `calc()` añaden un polyfill en las plataformas que no las ad
 
 Los componentes de animación pueden definir sus propias variables como campos `--var-name`. Estas variables se propagan a las animaciones anidadas y anulan las variables de los elementos target especificados en la hoja de estilo (etiqueta `<style>`). Las expresiones `var()` intentan en primer lugar resolver los valores de las variables definidas en las animaciones y, a continuación, consultan los estilos target.
 
-### Extensiones de CSS
+### Extensiones de CSS <a name="css-extensions"></a>
 
 `amp-animation` proporciona varias extensiones de CSS para las necesidades típicas de las animaciones: `rand()`, `num()`, `width()` y `height()`. Estas funciones se pueden utilizar en los lugares que admiten valores de CSS dentro de `amp-animation`, incluidos los valores de tiempo y de fotogramas clave.
 
-#### Extensión `index()` de CSS
+#### Extensión `index()` de CSS <a name="css-index-extension"></a>
 
 La función `index()` devuelve un índice del elemento target actual del efecto de animación. Es especialmente útil cuando se utilizan varios targets animados con el mismo efecto mediante la propiedad `selector`. El primer target que coincida con el selector tendrá el índice `0` , el segundo tendrá el índice `1` y así sucesivamente.
 
@@ -554,7 +555,7 @@ Entre otras cosas, esta propiedad se puede combinar con expresiones `calc()` y u
 }
 ```
 
-#### Extensión `length()` de CSS
+#### Extensión `length()` de CSS <a name="css-length-extension"></a>
 
 La función `length()` devuelve el número de elementos target incluidos en el efecto de animación. Es más útil cuando se combina con `index()`:
 
@@ -565,7 +566,7 @@ La función `length()` devuelve el número de elementos target incluidos en el e
   }
 ```
 
-#### Extensión `rand()` de CSS
+#### Extensión `rand()` de CSS <a name="css-rand-extension"></a>
 
 La función `rand()` devuelve un valor de CSS aleatorio. Se puede utilizar de dos maneras:
 
@@ -583,7 +584,7 @@ La segunda incluye dos argumentos, y devuelve un valor aleatorio que se encuentr
   }
 ```
 
-#### Extensiones `width()` y `height()` de CSS
+#### Extensiones `width()` y `height()` de CSS <a name="css-width-and-height-extensions"></a>
 
 Las extensiones `width()` y `height()` devuelven respectivamente la anchura y la altura del elemento animado o del elemento que especifica el selector, en píxeles (p. ej., `100px`).
 
@@ -602,7 +603,7 @@ Estas funciones se pueden combinar con `calc()`, `var()` y otras expresiones de 
   }
 ```
 
-#### Extensión `num()` de CSS
+#### Extensión `num()` de CSS <a name="css-num-extension"></a>
 
 La función `num()` devuelve una representación numérica de un valor de CSS. Por ejemplo:
 
@@ -617,21 +618,21 @@ Por ejemplo, la siguiente expresión calcula el retraso en segundos proporcional
   }
 ```
 
-### Animaciones SVG
+### Animaciones SVG <a name="svg-animations"></a>
 
 El formato SVG es excelente y, por ello, recomendamos su uso en las animaciones.
 
-Las animaciones con SVG se basan en las mismas propiedades de CSS que se describen en la sección [Propiedades de fotogramas clave incluidas en la lista blanca](#whitelisted-properties-for-keyframes), con algunos matices:
+Las animaciones con SVG se basan en las mismas propiedades de CSS que se describen en la sección [Propiedades de fotogramas clave incluidas en la lista blanca](#white-listed-properties-for-keyframes), con algunos matices:
 
 * Los elementos SVG de IE y Edge [no son compatibles con el CSS de las propiedades `transform`](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). La propia animación de `transform` utiliza un polyfill. Sin embargo, no se aplica el estado inicial definido en una hoja de estilo. Si el estado de transformación inicial es importante para IE o Edge, se recomienda duplicarlo mediante el [atributo `transform` de SVG](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
 * Aunque se incluye un polyfill del CSS de `transform` para IE y Edge, no se puede incluir para `transform-origin`. Por lo tanto, cuando se quiera lograr la compatibilidad con IE o Edge, se recomienda utilizar únicamente la forma predeterminada de `transform-origin`.
 * Actualmente, la mayoría de los navegadores tienen problemas para interpretar correctamente el CSS de `transform-origin`. Para obtener más información, consulta los problemas habituales en [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300), [Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) y [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340). La mayor parte de esta confusión se debería solucionar una vez que se implemente el CSS de [`transform-box`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box). Si `transform-origin` tiene importancia, se recomienda incluir también el CSS de `transform-box` que se necesite, por cuestiones de compatibilidad futura.
 
-## Activar la animación
+## Activar la animación <a name="triggering-animation"></a>
 
 La animación se puede activar mediante un atributo `trigger` o una acción `on`.
 
-### Atributo `trigger`
+### Atributo `trigger` <a name="trigger-attribute"></a>
 
 Actualmente, `visibility` es el único valor disponible para el atributo `trigger`. `visibility` se activa cuando el documento o la inserción subyacente están visibles en el viewport.
 
@@ -643,7 +644,7 @@ Por ejemplo:
   </amp-animation>
 ```
 
-### Activar mediante la acción `on`
+### Activar mediante la acción `on` <a name="triggering-via-on-action"></a>
 
 Por ejemplo:
 
@@ -654,7 +655,7 @@ Por ejemplo:
 <button on="tap:anim1.start">Animate</button>
 ```
 
-## Acciones de `on`
+## Acciones de `on` <a name="on-actions"></a>
 
 El elemento `amp-animation` exporta las siguientes acciones:
 

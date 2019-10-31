@@ -1,4 +1,5 @@
 ---
+$title: amp-addthis
 $category@: social
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-addthis
+
 
 Mostra un incorporamento degli strumenti del sito web [AddThis](https://www.addthis.com).
 
@@ -39,15 +40,15 @@ Mostra un incorporamento degli strumenti del sito web [AddThis](https://www.addt
 </table>
 
 
-## Perché AddThis?
+## Perché AddThis? <a name="why-addthis"></a>
 
 Il componente `amp-addthis` offre pulsanti di condivisione semplici e d'effetto. Consenti ai visitatori del tuo sito web di condividere più facilmente contenuti su oltre 200 canali social, tra cui Messenger, WhatsApp, Facebook, Twitter, Pinterest e molti altri.
 
 Oltre 15.000.000 siti web si affidano ad AddThis, con oltre due miliardi di utenti unici che condividono contenuti in ogni angolo del mondo in più di 60 lingue.
 
-## Pulsanti di condivisione
+## Pulsanti di condivisione <a name="share-buttons"></a>
 
-### Floating
+### Floating <a name="floating"></a>
 
 Ai lati, in alto o in basso nella pagina, segue il lettore mentre scorre. Un ottimo modo per promuovere la condivisione senza risultare troppo invadenti.
 
@@ -68,7 +69,7 @@ data-widget-type="floating">
 </amp-addthis>
 ```
 
-### Incorporato
+### Incorporato <a name="inline"></a>
 
 Integra i pulsanti di condivisione nei tuoi contenuti per un'esperienza di condivisione senza interruzioni.
 
@@ -88,7 +89,7 @@ Esempio:
 </amp-addthis>
 ```
 
-## Attributi
+## Attributi <a name="attributes"></a>
 
 <table>
   <tr>
@@ -125,7 +126,7 @@ Esempio:
     </tr>
   </table>
 
-## Documentazione sull'implementazione
+## Documentazione sull'implementazione <a name="implementation-documentation"></a>
 
 1. Se non lo hai già fatto, devi creare un account AddThis su [https://www.addthis.com/register](https://www.addthis.com/register). La creazione di un account è completamente gratuita e ti permette di accedere alla nostra suite completa di strumenti per siti web, così come ai rapporti di analisi approfonditi per meglio comprendere il traffico social del tuo sito.
 1. Accedi alla [dashboard](https://addthis.com/dashboard) e personalizza i pulsanti di condivisione (al momento, AMP supporta solo i pulsanti Floating e Incorporato).
@@ -137,11 +138,11 @@ Esempio:
 Guarda il nostro [video di YouTube](https://www.youtube.com/watch?v=BSkuAB4er2o) per le istruzioni passo passo:
 <amp-youtube width="480" height="270" data-videoid="BSkuAB4er2o" layout="responsive"></amp-youtube>
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole amp-addthis](https://github.com/ampproject/amphtml/blob/master/extensions/amp-addthis/validator-amp-addthis.protoascii) nella specifica dello strumento di convalida AMP.
 
-## Privacy
+## Privacy <a name="privacy"></a>
 
 [http://www.addthis.com/privacy/privacy-policy/](http://www.addthis.com/privacy/privacy-policy/)
 
@@ -159,6 +160,6 @@ I Dati AddThis possono essere costituiti dai seguenti elementi:
 
 I dati AddThis saranno trattati come informazioni personali nella misura prevista dalla legge vigente. Ai sensi dei Termini di servizio di AddThis, i publisher devono ottenere tutti i consensi e le autorizzazioni degli utenti finali necessari e fornire a Oracle le comunicazioni obbligatorie per la fornitura dei dati AddThis raccolti dagli Utenti finali.
 
-## Assistenza
+## Assistenza <a name="support"></a>
 
 Se hai domande o ti serve aiuto per implementare AddThis su AMP, contatta il nostro team di assistenza inviando una richiesta di supporto [qui](https://www.addthis.com/support/) o un'email all'indirizzo [help@addthis.com](mailto%3ahelp@addthis.com).

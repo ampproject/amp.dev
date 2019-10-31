@@ -678,7 +678,7 @@ The full list of unique tags is known:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Style and layout errors
+## Style and layout errors <a name="style-and-layout-errors"></a>
 
 Before diving into style and layout errors,
 it's worth understanding how
@@ -903,7 +903,7 @@ Disallowed attributes for layout types are described in the
 This error occurs when the attribute value is invalid for the specified layout.
 To understand what triggers this error,
 you need to familiarize yourself with
-the [different behaviors of layouts](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements).
+the [different behaviors of layouts](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute).
 
 Let's say you set the layout to be `fixed-height` and
 you include numeric values for both `height` and `width`.
@@ -947,7 +947,7 @@ designed to include templates, for example,
 It's OK to include templates in your source files,
 so long as the generated output of those files doesn't contain the templates
 (see also
-[Use CSS preprocessors](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors)).
+[Use CSS preprocessors](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors)).
 
 ### Attribute contains template syntax
 

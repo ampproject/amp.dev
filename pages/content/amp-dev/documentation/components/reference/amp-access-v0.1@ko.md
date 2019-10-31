@@ -1,4 +1,5 @@
 ---
+$title: amp-access
 $category@: dynamic-content
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: AMP 페이월 및 구독 지원을 제공합니다.
 ---
 
-# amp-access
+
 
 AMP 액세스 또는 'AMP 페이월 및 구독 지원'을 통해 게시자는 독자의 가입 상태, 조회수 및 기타 요인을 기반으로 독자가 액세스할 수 있는 콘텐츠와 제한 사항을 제어할 수 있습니다.
 
-# amp-access
+# amp-access <a name="amp-access"></a>
 
 
 
@@ -48,7 +49,7 @@ limitations under the License.
 </tr>
 </table>
 
-## `amp-subscriptions`에 대한 관계
+## `amp-subscriptions`에 대한 관계 <a name="relationship-to-amp-subscriptions"></a>
 
 [`amp-subscriptions`](amp-subscriptions.md) 확장 프로그램은 `amp-access`와 유사한 기능을 제공합니다. 그러나 좀 더 특수화된 액세스 페이월 프로토콜을 지원합니다. 주목할 만한 차이점은 다음과 같습니다.
 
@@ -59,7 +60,7 @@ limitations under the License.
 
 마크업의 표준화, 다중 공급자 지원 및 개선된 뷰어 지원이 제공되므로 새로운 게시자 및 페이월 공급자 구현에는 `amp-subscriptions`를 사용하는 것이 좋습니다.
 
-## 솔루션
+## 솔루션 <a name="solution"></a>
 
 제안된 솔루션은 다음의 결정 및 흐름에서 게시자에게 제어 기능을 제공합니다.
 - 사용자 생성 및 유지 관리
@@ -85,7 +86,7 @@ Google AMP 캐시는 액세스 콘텐츠 마크업을 사용하여 일부 섹션
 
 AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소를 구현해야 합니다. 액세스 콘텐츠 마크업 및 승인 엔드포인트는 필수사항입니다. 핑백 엔드포인트 및 로그인 페이지는 선택사항입니다.
 
-### AMP 독자 ID
+### AMP 독자 ID <a name="amp-reader-id"></a>
 
 액세스 서비스 및 사용 사례를 지원하기 위해 AMP 액세스에 *독자 ID*라는 개념이 도입되었습니다*.
 
@@ -95,33 +96,33 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
 
 독자 ID는 [여기](https://docs.google.com/document/d/1f7z3X2GM_ASb3ZCI_7tngglxwS6WoWi1EB3aKzdf6vo/edit#heading=h.hb9q0wpwwhuf)에 설명된 ExternalCID를 구축하는 데 사용된 메커니즘과 유사하게 구성됩니다. 독자 ID의 예: `amp-OFsqR4pPKynymPyMmplPNMvxSTsNQob3TnK-oE3nwVT0clORaZ1rkeEz8xej-vV6`.
 
-### AMP 액세스 및 쿠키
+### AMP 액세스 및 쿠키 <a name="amp-access-and-cookies"></a>
 
 게시자는 자체 인증 쿠키 또는 독자 ID를 사용하거나 둘을 조합하여 사용할 수 있습니다.
 
-### 액세스 콘텐츠 마크업
+### 액세스 콘텐츠 마크업 <a name="access-content-markup"></a>
 
 액세스 콘텐츠 마크업은 승인 엔드포인트에서 반환된 승인 응답을 기반으로 표시할 섹션과 숨길 섹션을 결정합니다. 특수한 마크업 속성을 통해 설명됩니다.
 
-### 승인 엔드포인트
+### 승인 엔드포인트 <a name="authorization-endpoint"></a>
 
 승인은 게시자가 제공하고 AMP 런타임 또는 Google AMP 캐시가 호출하는 엔드포인트이며, 인증된 CORS GET 엔드포인트입니다. 이 엔드포인트는 콘텐츠 마크업이 문서의 서로 다른 부분을 숨기거나 표시하기 위해 사용할 수 있는 액세스 매개변수를 반환합니다.
 
-### 핑백 엔드포인트
+### 핑백 엔드포인트 <a name="pingback-endpoint"></a>
 
 핑백은 게시자가 제공하고 AMP 런타임 또는 Google AMP 캐시가 호출하는 엔드포인트이며, 인증된 CORS POST 엔드포인트입니다. 독자가 문서를 보기 시작하면 자동으로 AMP 런타임이 이 엔드포인트를 호출합니다. 독자가 로그인 흐름을 성공적으로 완료한 후에도 이 엔드포인트가 호출됩니다. 핑백의 주요 목표 중 하나는 게시자가 한도 측정 정보를 업데이트하는 것입니다.
 
 핑백은 선택사항이며, `noPingback` 구성 속성을 `true`로 설정하여 사용을 중지할 수 있습니다.
 
-### 로그인 페이지 및 로그인 링크
+### 로그인 페이지 및 로그인 링크 <a name="login-page-and-login-link"></a>
 
 로그인 페이지는 게시자가 구현 및 제공하고 AMP 런타임이 호출합니다. 일반적으로 브라우저 대화상자로 표시됩니다.
 
 로그인 페이지는 게시자가 문서의 아무 곳에나 배치할 수 있는 로그인 링크를 독자가 탭할 때 트리거됩니다.
 
-## 사양 v0.1
+## 사양 v0.1 <a name="specification-v01"></a>
 
-### 구성
+### 구성 <a name="configuration"></a>
 
 모든 엔드포인트는 AMP 문서에서 문서의 HEAD에 있는 JSON 개체로서 구성됩니다.
 
@@ -206,7 +207,7 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
 
 ```
 
-#### 다중 액세스 공급자
+#### 다중 액세스 공급자 <a name="multiple-access-providers"></a>
 
 단일 개체 대신 배열을 사용하고 각 항목에 대해 `namespace`를 제공하기 위해 다중 액세스 공급자를 지정하는 것이 가능합니다.
 
@@ -223,7 +224,7 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
 </script>
 ```
 
-### URL 변수에 액세스
+### URL 변수에 액세스 <a name="access-url-variables"></a>
 
 다양한 엔드포인트에 대한 URL을 구성할 때 게시자는 대체 변수를 사용할 수 있습니다. 이러한 변수의 전체 목록은 [AMP 변수 사양](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)에 정의되어 있습니다. 또한 `READER_ID` 및 `AUTHDATA`와 같은 몇몇 액세스별 변수도 추가됩니다. 가장 관련 있는 변수 중 일부는 아래 표에 설명되어 있습니다.
 
@@ -281,7 +282,7 @@ https://pub.com/access?
 
 AUTHDATA 변수는 핑백 및 로그인 URL에서 사용할 수 있습니다. 이 변수를 사용하면 승인 응답의 입력란을 URL 매개변수로서 전달할 수 있습니다. 예: `AUTHDATA(isSubscriber)`. `AUTHDATA(other.isSubscriber)`와 같은 중첩된 표현식도 허용됩니다. 네임스페이스를 사용하는 경우 `AUTHDATA(anamespace.afield)`와 같이 입력란 앞에 네임스페이스를 추가할 수 있습니다.
 
-### 액세스 콘텐츠 마크업
+### 액세스 콘텐츠 마크업 <a name="access-content-markup-1"></a>
 
 표시되거나 숨겨지는 섹션을 설명하는 액세스 콘텐츠 마크업은 두 가지 AMP 속성, 즉 `amp-access` 및 `amp-access-hide`로 구성되며 이러한 속성은 어떤 HTML 요소에나 배치할 수 있습니다.
 
@@ -345,7 +346,7 @@ AUTHDATA 변수는 핑백 및 로그인 URL에서 사용할 수 있습니다. �
 </section>
 ```
 
-### 승인 엔드포인트
+### 승인 엔드포인트 <a name="authorization-endpoint-1"></a>
 
 승인은 [AMP 액세스 구성](#configuration) 섹션의 `authorization` 속성을 통해 구성되며, 인증된 CORS GET 엔드포인트입니다. 이 요청을 보호하는 방법은 [CORS 오리진 보안](#cors-origin-security)을 참조하세요.
 
@@ -412,7 +413,7 @@ AMP 런타임은 승인 흐름 중에 다음과 같은 CSS 클래스를 사용�
 
 *server* 옵션에서, 승인 엔드포인트에 대한 호출은 Google AMP 캐시에 의해 Simple HTTPS 엔드포인트로서 수행됩니다. 따라서 이 경우에는 게시자의 쿠키를 전달할 수 없습니다.
 
-### 핑백 엔드포인트
+### 핑백 엔드포인트 <a name="pingback-endpoint-1"></a>
 
 핑백은 [AMP 액세스 구성](#configuration) 섹션의 `pingback` 속성을 통해 구성되며, 인증된 CORS POST 엔드포인트입니다. 이 요청을 보호하는 방법은 [CORS 오리진 보안](#cors-origin-security)을 참조하세요.
 
@@ -435,7 +436,7 @@ rid=READER_ID
 &url=SOURCE_URL
 ```
 
-### 로그인 페이지
+### 로그인 페이지 <a name="login-page"></a>
 
 로그인 페이지의 URL은 [AMP 액세스 구성](#configuration) 섹션의 `login` 속성을 통해 구성됩니다.
 
@@ -475,7 +476,7 @@ URL 해시 매개변수 'success'의 사용에 유의하세요. 로그인이 성
 
 `success=true` 신호가 반환되면, AMP 런타임은 승인 및 핑백 엔드포인트에 대한 호출을 반복하여 문서의 상태를 업데이트하고 새 액세스 프로필과 함께 '보기'를 보고합니다.
 
-#### 로그인 링크
+#### 로그인 링크 <a name="login-link"></a>
 
 게시자는 문서 내용의 원하는 위치에 로그인 링크를 배치할 수 있습니다.
 
@@ -495,15 +496,15 @@ URL 해시 매개변수 'success'의 사용에 유의하세요. 로그인이 성
 
 AMP는 로그인과 구독을 구분하지 않습니다. 이러한 구분은 다중 로그인 URL/링크를 사용하여 게시자가 구성하거나 게시자 측에서 구성됩니다.
 
-## *amp-analytics* 와 통합
+## *amp-analytics* 와 통합 <a name="integration-with-amp-analytics"></a>
 
 *amp-analytics* 와의 통합은 [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)에 문서화되어 있습니다.
 
-## CORS 오리진 보안
+## CORS 오리진 보안 <a name="cors-origin-security"></a>
 
 승인 및 핑백 엔드포인트는 CORS 엔드포인트이며 [AMP CORS 보안 사양](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)에 설명된 보안 프로토콜을 구현해야 합니다.
 
-## 한도 측정
+## 한도 측정 <a name="metering"></a>
 
 한도 측정은 일정 기간 여러 문서 보기에 대해 독자에게 프리미엄 콘텐츠를 무료로 보여주는 시스템입니다. 일정한 할당량에 도달하면 독자에게 페이월 시작이 안내되고, 업셀 메시지 및 가입/로그인 링크와 함께 부분 콘텐츠가 표시됩니다. 예를 들어, '독자는 매월 10개의 기사를 무료로 읽을 수 있습니다'라고 한도 측정을 정의할 수 있습니다.
 
@@ -513,7 +514,7 @@ AMP 액세스는 한도 측정 액세스를 구현하기 위해 다음과 같은
 2. '읽기 횟수'는 핑백 엔드포인트에서만 업데이트할 수 있습니다.
 3. 고유한 문서에 대해서만 할당량을 계산할 수 있습니다. 즉, 동일한 문서를 10번 새로 고치더라도 단일 보기가 됩니다. 이를 위해 승인 및 핑백 엔드포인트는 `SOURCE_URL` 또는 유사한 URL 변수를 삽입할 수 있습니다. [URL 면수에 액세스](#access-url-variables)를 참조하세요.
 
-## 첫 번째 클릭 무료
+## 첫 번째 클릭 무료 <a name="first-click-free"></a>
 
 Google의 첫 번째 클릭 무료(FCF) 정책은 [여기](https://support.google.com/news/publisher/answer/40543)에 설명되어 있으며, 좀 더 자세한 최신 업데이트는 [여기](https://googlewebmastercentral.blogspot.com/2015/09/first-click-free-update.html)에서 확인할 수 있습니다.
 
@@ -521,7 +522,7 @@ FCF를 구현하려면 게시자는 (1) 각 보기에 대해 참조 서비스를
 
 두 단계 모두 AMP 액세스 사양에 포함됩니다. [URL 변수에 액세스](#access-url-variables)에 설명된 대로 `DOCUMENT_REFERRER` URL 대체를 사용하여 승인 및 핑백 URL에 리퍼러를 삽입할 수 있습니다. 서버 측에서 핑백 엔드포인트를 사용해 보기 카운팅을 수행할 수 있습니다. 이는 [한도 측정](#metering)에 설명된 한도 측정 구현과 매우 유사합니다.
 
-## 로그인 흐름
+## 로그인 흐름 <a name="login-flow"></a>
 
 AMP는 자체 창, 팝업 또는 탭으로 로그인 대화상자를 시작합니다. 가능한 경우 AMP 뷰어는 최상위 브라우저 API를 사용할 수 있도록 브라우저 컨텍스트에서 로그인 대화상자를 시작하려고 시도해야 합니다.
 
@@ -538,7 +539,7 @@ AMP는 자체 창, 팝업 또는 탭으로 로그인 대화상자를 시작합�
 
 항상 그렇듯이, 로그인 페이지 호출에 독자 ID를 포함해야 합니다. 게시자는 ID 매핑을 위해 독자 ID를 사용할 수 있습니다. 게시자는 자체 창에서 쿠키를 수신하게 되며 설정할 수도 있습니다. 독자가 이미 게시자 측에 로그인한 것으로 밝혀지면, 게시자는 `success=true` 응답과 함께 "반환 URL"로 즉시 리디렉션하는 것이 좋습니다.
 
-## AMP 용어집
+## AMP 용어집 <a name="amp-glossary"></a>
 
 * **AMP 문서** - AMP 형식을 따르고 AMP 유효성 검사 도구에 의해 검증된 HTML 문서. Google AMP 캐시에서 AMP 문서를 캐시할 수 있습니다.
 * **AMP 유효성 검사 도구** - HTML 문서의 정적 분석을 수행하고 문서가 AMP 형식을 따르는지에 따라 성공 또는 실패를 반환하는 컴퓨터 프로그램.
@@ -550,7 +551,7 @@ AMP는 자체 창, 팝업 또는 탭으로 로그인 대화상자를 시작합�
 * **독자** - AMP 문서를 보는 실제 사람.
 * **AMP 사전 렌더링** - AMP 뷰어는 숨겨진 문서를 표시되기 전에 렌더링하는 사전 렌더링을 이용할 수 있습니다. 이렇게 할 경우 성능이 상당히 향상됩니다. 그러나 독자가 실제로 문서를 보지 않을 수 있으므로 문서 사전 렌더링은 보기로 계산되지 않는다는 사실을 고려하는 것이 중요합니다.
 
-## 버전
+## 버전 <a name="revisions"></a>
 
 * 2016년 9월 2일: 'noPingback' 구성 속성 및 선택적 핑백
 * 2016년 3월 3일: 로그인 후 핑백 재전송(v0.5)
@@ -562,7 +563,7 @@ AMP는 자체 창, 팝업 또는 탭으로 로그인 대화상자를 시작합�
 * 2016년 2월 3일: '소스 오리진' 보안에 대한 사양이 [CORS 오리진 보안](#cors-origin-security)에 추가됨
 * 2016년 2월 1일: RETURN_URL URL 대체를 사용해 로그인 페이지에 대한 'return' 쿼리 매개변수 맞춤화 가능
 
-## 부록 A: 'amp-access' 식 문법
+## 부록 A: 'amp-access' 식 문법 <a name="appendix-a-amp-access-expression-grammar"></a>
 
 최근 BNF 문법은 [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) 파일에서 확인할 수 있습니다.
 
@@ -597,10 +598,10 @@ literal: STRING | NUMERIC | TRUE | FALSE | NULL
 
 `amp-access` 식은 AMP 런타임 및 Google AMP 캐시에 의해 평가됩니다. 게시자가 구현해야 하는 사양의 일부가 아닙니다. 정보 제공을 위해 여기에 있는 것입니다.
 
-## 자세한 설명
+## 자세한 설명 <a name="detailed-discussion"></a>
 
 이 섹션에서는 amp-access 사양의 기본 설계에 대해 자세히 설명하고 설계 선택 사항을 안내합니다. 곧 제공될 예정입니다.
 
-## 유효성 검사
+## 유효성 검사 <a name="validation"></a>
 
 AMP 유효성 검사 도구 사양의 [amp-access 규칙](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/validator-amp-access.protoascii)을 참조하세요.

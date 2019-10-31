@@ -32,12 +32,14 @@ const routers = {
     embeds: require('@lib/routers/example/embeds.js'),
     sources: require('@lib/routers/example/sources.js'),
     static: require('@lib/routers/example/static.js'),
+    experiments: require('@lib/routers/example/experiments.js'),
     inline: require('@lib/routers/inlineExamples.js'),
   },
   log: require('@lib/routers/runtimeLog.js'),
   go: require('@lib/routers/go.js'),
-  growPages: require('@lib/routers/growPages.js'),
+  growSharedPages: require('@lib/routers/growSharedPages.js'),
   growXmls: require('@lib/routers/growXmls.js'),
+  growPages: require('@lib/routers/growPages.js'),
   healthCheck: require('@lib/routers/healthCheck.js').router,
   notFound: require('@lib/routers/notFound.js'),
   packager: require('@lib/routers/packager.js'),
@@ -133,6 +135,7 @@ class Platform {
       routers.example.static,
       routers.example.embeds,
       routers.example.sources,
+      routers.example.experiments,
       routers.example.inline,
     ])));
   }
@@ -146,7 +149,10 @@ class Platform {
     this.server.use(routers.boilerplate);
     this.server.use(routers.static);
     this.server.use(routers.templates);
-    // grow xml files need to be after static xml
+    // XMLs rendered by Grow as well as all pages located under /shared
+    // are need to be served by specialized routers instead of the generic one.
+    // Therefore register them first
+    this.server.use(routers.growSharedPages);
     this.server.use(routers.growXmls);
     // Register the following router at last as it works as a catch-all
     this.server.use(routers.growPages);

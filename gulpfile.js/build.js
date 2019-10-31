@@ -38,6 +38,7 @@ const BlogImporter = require('@lib/pipeline/blogImporter');
 // const roadmapImporter = require('@lib/pipeline/roadmapImporter');
 const gulpSass = require('gulp-sass');
 const lint = require('./lint.js');
+const importTasks = require('./import.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
@@ -150,10 +151,12 @@ async function buildComponentVersions() {
   const rules = await validatorRules.fetch();
   const componentVersions = {};
   rules.extensions.forEach((e) => {
-    componentVersions[e.name] = e.version[e.version.length - 2];
+    const versions = e.version.filter((v) => v !== 'latest');
+    componentVersions[e.name] = versions[versions.length - 1];
   });
   const content = JSON.stringify(componentVersions, null, 2);
   const dir = path.join(project.paths.DIST, 'static/files');
+
   mkdirp(dir);
   fs.writeFileSync(path.join(dir, 'component-versions.json'), content, 'utf-8');
 }
@@ -217,6 +220,7 @@ function importAll() {
     (new ComponentReferenceImporter()).import(),
     (new SpecImporter()).import(),
     (new BlogImporter()).import(),
+    importTasks.importWorkingGroups(),
     // TODO: Fails on Travis with HttpError: Requires authentication
     // roadmapImporter.importRoadmap(),
   ]);
@@ -266,6 +270,7 @@ function buildPrepare(done) {
         // All paths that contain altered files at build setup time
         const SETUP_STORED_PATHS = [
           './pages/content/',
+          './pages/shared/',
           './dist/',
           './boilerplate/dist/',
           './playground/dist/',

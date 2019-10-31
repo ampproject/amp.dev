@@ -1,4 +1,5 @@
 ---
+$title: amp-youtube
 $category@: media
 formats:
   - websites
@@ -24,7 +25,7 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-# amp-youtube
+
 
 يعرض المكّوِن فيديو [YouTube](https://www.youtube.com/).
 
@@ -46,7 +47,7 @@ teaser:
 
 [جدول المحتويات]
 
-## مثال
+## مثال <a name="example"></a>
 
 باستخدام التنسيق المتجاوب، يجب أن يوفر العرض والارتفاع الواردين في المثال تنسيقات مناسبة للفيديوهات التي تبلغ نسبة العرض إلى الارتفاع لها 9:16:
 
@@ -72,7 +73,7 @@ teaser:
 </amp-youtube>
 ```
 
-## السمات
+## السمات <a name="attributes"></a>
 
 <table>
   <tr>
@@ -133,6 +134,6 @@ teaser:
 
 
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطّلِع على [قواعد amp-youtube](https://github.com/ampproject/amphtml/blob/master/extensions/amp-youtube/validator-amp-youtube.protoascii) في مواصفات مدقق AMP.

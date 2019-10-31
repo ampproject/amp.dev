@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+
 
 提供一种方式，让观看者可以大致了解网页内容并跳至任意部分。对于甚至连一个部分中的几个句子都需要滚动才能完整显示的移动设备来说，这非常有用。
 
@@ -45,7 +46,7 @@ limitations under the License.
 </table>
 
 
-## 行为
+## 行为 <a name="behavior"></a>
 
 借助 `amp-accordion` 组件，您能够显示可收起和可展开的内容部分。`amp-accordion` 组件的每个直接子级均被视为可折叠内容中的一个部分。每个节点都必须是 `<section>` 标记。
 
@@ -56,7 +57,7 @@ limitations under the License.
 * 点击/点按某个部分的标题即可展开或收起相应部分。
 * `amp-accordion` 元素中每个部分的收起/展开状态会保存下来供会话级别使用。要选择不保存此状态，请向 `amp-accordion` 元素添加 `disable-session-states` 属性。
 
-#### 示例：显示可折叠内容
+#### 示例：显示可折叠内容 <a name="example-displaying-an-accordion"></a>
 
 在此示例中，我们显示了三个部分，其中第三个部分会在网页加载时展开。此外，我们通过设置 `disable-session-states` 选择不保存收起/展开状态。
 
@@ -85,7 +86,7 @@ limitations under the License.
 如需查看 `amp-accordion` 的更多演示，请访问 [AMP By Example](https://ampbyexample.com/components/amp-accordion/)。
 [/tip]
 
-### 事件
+### 事件 <a name="events"></a>
 
 以下事件会在 `accordion` 的 `section` 上触发。
 
@@ -100,7 +101,7 @@ limitations under the License.
   </tr>
 </table>
 
-### 操作
+### 操作 <a name="actions"></a>
 
 <table>
   <tr>
@@ -121,7 +122,7 @@ limitations under the License.
   </tr>
 </table>
 
-#### 属性
+#### 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -142,7 +143,7 @@ limitations under the License.
   </tr>
 </table>
 
-## 样式设置
+## 样式设置 <a name="styling"></a>
 
 * 您可以使用 `amp-accordion` 元素选择器自由设置样式。
 * `amp-accordion` 元素始终为 `display: block`。
@@ -152,6 +153,6 @@ limitations under the License.
 * `<amp-accordion>`、`<section>`、标题和内容元素的外边距设为 0，这些值可在自定义样式中替换。
 * 标头和内容元素都是 `position: relative`。
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-accordion 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii)。

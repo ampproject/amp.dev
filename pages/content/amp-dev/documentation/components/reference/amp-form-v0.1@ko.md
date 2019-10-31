@@ -26,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-form
+
 
 <table>
   <tr>
@@ -48,9 +48,9 @@ limitations under the License.
 </table>
 
 
-# 동작
+# 동작 <a name="behavior"></a>
 
-`amp-form` 확장 프로그램을 사용하면 AMP 문서에서 입력 필드를 제출하기 위한 양식(`<form>`)을 만들 수 있습니다. `amp-form` 확장 프로그램에서는 브라우저에서 누락된 일부 동작에 [polyfill](#polyfill)도 제공합니다.
+`amp-form` 확장 프로그램을 사용하면 AMP 문서에서 입력 필드를 제출하기 위한 양식(`<form>`)을 만들 수 있습니다. `amp-form` 확장 프로그램에서는 브라우저에서 누락된 일부 동작에 [polyfill](#polyfills)도 제공합니다.
 
 [tip type="important"]
 양식의 데이터를 제출하는 경우 서버 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)의 요구사항을 구현해야 합니다.
@@ -97,13 +97,13 @@ limitations under the License.
 ```
 [/example]
 
-# 속성
+# 속성 <a name="attributes"></a>
 
-# target
+# target <a name="target"></a>
 
 양식을 제출한 후 양식 응답을 표시할 위치를 표시합니다. 값은 `_blank` 또는 `_top`이어야 합니다.
 
-# action
+# action <a name="action"></a>
 
 양식 입력을 처리할 서버 엔드포인트를 지정합니다. 값은 `https` URL(절대 또는 상대)이어야 하며 CDN의 링크가 아니어야 합니다.
 
@@ -114,7 +114,7 @@ limitations under the License.
 `target` 및 `action` 속성은 비xhr GET 요청에만 사용하세요. AMP 런타임에서는 `action-xhr`을 사용하여 요청하고 `action`과 `target`을 무시합니다. `action-xhr`이 제공되지 않은 경우 AMP에서 `action` 엔드포인트에 GET 요청을 시행하고 `target`을 사용하여 새 창을 엽니다(`_blank`인 경우). `amp-form` 확장 프로그램을 로드하지 못하는 경우 AMP 런타임에서 `action` 및 `target`을 사용하도록 대체할 수 있습니다.
 [/tip]
 
-# action-xhr
+# action-xhr <a name="action-xhr"></a>
 
 XMLHttpRequest(XHR)를 통해 양식 입력을 처리하고 양식을 제출하는 서버 엔드포인트를 지정합니다. XHR 요청(AJAX 요청이라고도 함)을 통해 브라우저에서 페이지를 완전히 로드하거나 새 페이지를 열지 않고 요청을 시행합니다. 브라우저에서 사용 가능한 경우 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)를 사용하여 백그라운드에서 요청을 보내고 이전 브라우저의 경우 [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)로 대체합니다.
 
@@ -128,17 +128,17 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 
 양식을 성공적으로 제출한 후 사용자를 리디렉션하는 방법에 관해 알아보려면 아래의 [제출 후 리디렉션](#redirecting-after-a-submission) 섹션을 참조하세요.
 
-# 기타 양식 속성
+# 기타 양식 속성 <a name="other-form-attributes"></a>
 
 기타 모든 [양식 속성](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)은 선택사항입니다.
 
-# custom-validation-reporting
+# custom-validation-reporting <a name="custom-validation-reporting"></a>
 
 맞춤 유효성 검사 보고 전략을 사용 설정하고 선택하는 선택적 속성입니다. 유효한 값은 `show-first-on-submit`, `show-all-on-submit` 또는 `as-you-go` 중 하나입니다.
 
 자세한 내용은 [맞춤 유효성 검사](#custom-validations) 섹션을 참조하세요.
 
-# 입력 및 필드
+# 입력 및 필드 <a name="inputs-and-fields"></a>
 
 **허용됨**:
 
@@ -155,7 +155,7 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 
 유효한 입력 및 필드에 관한 세부정보는 AMP 유효성 검사기 사양의 [amp-form 규칙](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)을 참조하세요.
 
-# 작업
+# 작업 <a name="actions"></a>
 
 `amp-form` 요소에서는 다음 작업을 노출합니다.
 
@@ -168,7 +168,7 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 [AMP의 작업 및 이벤트](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)에 관해 자세히 알아보세요.
 [/tip]
 
-# 이벤트
+# 이벤트 <a name="events"></a>
 
 `amp-form`에서는 다음 이벤트를 노출합니다.
 
@@ -195,7 +195,7 @@ XHR 엔드포인트에서 [CORS 보안](../../../documentation/guides-and-tutori
 
 [여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
 
-# 입력 이벤트
+# 입력 이벤트 <a name="input-events"></a>
 
 AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트를 노출합니다. 따라서 입력 값이 변경될 때 [`on` 속성](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on)을 사용하여 어떤 요소에서도 작업을 실행할 수 있습니다.
 
@@ -227,7 +227,7 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 
 [여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
 
-# 애널리틱스 트리거
+# 애널리틱스 트리거 <a name="analytics-triggers"></a>
 
 `amp-form` 확장 프로그램에서 사용자가 [amp-analytics](amp-analytics.md) 구성에서 추적할 수 있는 다음과 같은 이벤트를 트리거합니다.
 
@@ -288,9 +288,9 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
   * `formId`
   * `formFields[comment]`
 
-# 성공/오류 응답 렌더링
+# 성공/오류 응답 렌더링 <a name="successerror-response-rendering"></a>
 
-[확장 템플릿](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates)(예: [amp-mustache](amp-mustache.md))을 사용하여 양식에서 성공 또는 오류 응답을 렌더링하거나 [amp-bind](amp-bind.md) 및 다음 응답 속성을 사용하여 데이터 결합을 통해 성공 응답을 렌더링할 수 있습니다.
+[확장 템플릿](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#templates)(예: [amp-mustache](amp-mustache.md))을 사용하여 양식에서 성공 또는 오류 응답을 렌더링하거나 [amp-bind](amp-bind.md) 및 다음 응답 속성을 사용하여 데이터 결합을 통해 성공 응답을 렌더링할 수 있습니다.
 
 | 응답 속성 | 설명 |
 |-----------|---------------------|
@@ -298,7 +298,7 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 | `submit-error` | 실패 응답이 수신되어(즉, 상태가 `2XX`가 아님) 제출 오류를 표시하는 데 사용할 수 있습니다.  |
 | `submitting` | 양식을 제출할 때 메시지를 표시하는 데 사용할 수 있습니다. 이 속성의 템플릿은 표시를 위해 양식의 입력 필드에 액세스할 수 있습니다. `submitting` 속성 사용 방법은 [아래의 전체 양식 예](#example-submitting)를 참조하세요. |
 
-# 템플릿을 사용하여 응답 렌더링하기
+# 템플릿을 사용하여 응답 렌더링하기 <a name="to-render-responses-with-templating"></a>
 
 * `<form>` 요소의 *모든 직접 하위 요소*에 응답 속성을 적용합니다*.
 * `<template></template>` 또는 `<script type="text/plain"></script>` 태그를 통해 템플릿을 내부에 포함하거나 `template="id_of_other_template"` 속성으로 템플릿을 참조하여 하위 요소에 응답을 렌더링합니다.
@@ -306,7 +306,7 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 
 <a id="example-submitting"></a>
 
-# 예: 양식에서 성공, 오류 및 제출 메시지 표시
+# 예: 양식에서 성공, 오류 및 제출 메시지 표시 <a name="example-form-displays-success-error-and-submitting-messages"></a>
 
 다음 예에서 응답은 양식 내부의 인라인 템플릿에 렌더링됩니다.
 
@@ -383,7 +383,7 @@ AMP에서는 하위 `<input>` 요소에 `change` 및 `input-debounced` 이벤트
 
 [여기에서 전체 예](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)를 참조하세요.
 
-# 데이터 결합을 사용하여 성공 응답 렌더링하기
+# 데이터 결합을 사용하여 성공 응답 렌더링하기 <a name="to-render-a-successful-response-with-data-binding"></a>
 
 * [on 속성](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)을 사용하여 양식 *submit-success* 속성을 [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29)로 결합합니다.
 * `event` 속성을 사용하여 응답 데이터를 캡처합니다.
@@ -426,7 +426,7 @@ Then `amp-bind` updates the `<p>` element's text to match the `subscibe` state:
 ...
 ```
 
-# 제출 후 리디렉션
+# 제출 후 리디렉션 <a name="redirecting-after-a-submission"></a>
 
 `AMP-Redirect-To` 응답 헤더를 설정하고 리디렉션 URL을 지정하여 성공적으로 양식을 제출한 후 사용자를 새 페이지로 리디렉션할 수 있습니다. 리디렉션 URL은 HTTPS URL이어야 합니다. 그렇지 않으면 AMP에서 오류가 발생하고 리디렉션이 발생하지 않습니다.  HTTP 응답 헤더는 서버를 통해 구성됩니다.
 
@@ -443,7 +443,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 양식 제출 후 리디렉션 사용에 관해 보여주는 AMP By Example의 [업데이트를 사용하여 양식 제출하기](https://ampbyexample.com/components/amp-form/#form-submission-with-page-update) 및 [제품 페이지](https://ampbyexample.com/samples_templates/product_page/#product-page)를 확인하세요.
 [/tip]
 
-# 맞춤 유효성 검사
+# 맞춤 유효성 검사 <a name="custom-validations"></a>
 
 `amp-form` 확장 프로그램을 사용하면 `show-first-on-submit`, `show-all-on-submit` 또는 `as-you-go` 중 하나의 보고 전략과 함께 `custom-validation-reporting` 속성을 사용하여 자체 맞춤 유효성 검사 UI를 빌드할 수 있습니다.
 
@@ -503,27 +503,27 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 입력에 있을 수 있는 각 유형의 잘못된 상태에 해당하는 자체 유효성 검사 UI를 제공해야 합니다. 해당 UI가 없으면 누락된 오류 상태에 해당하는 `custom-validation-reporting`이 표시되지 않습니다. 유효성 검사 상태는 [공식 W3C HTML 유효성 검사 보고 문서](https://www.w3.org/TR/html50/forms.html#validitystate)에서 확인할 수 있습니다.
 [/tip]
 
-# 보고 전략
+# 보고 전략 <a name="reporting-strategies"></a>
 
 `custom-validation-reporting` 속성에 다음 보고 옵션 중 하나를 지정하세요.
 
-# 제출 시 첫 번째 오류 표시
+# 제출 시 첫 번째 오류 표시 <a name="show-first-on-submit"></a>
 
 `show-first-on-submit` 보고 옵션은 기본 유효성 검사가 시작되면 브라우저의 기본 동작을 모방합니다. 첫 번째 유효성 검사 오류를 찾으면 표시하고 중지합니다.
 
-# 제출 시 모든 오류 표시
+# 제출 시 모든 오류 표시 <a name="show-all-on-submit"></a>
 
 `show-all-on-submit` 보고 옵션은 양식 제출 시 모든 잘못된 입력에 관한 유효성 검사 오류를 모두 표시합니다. 이 속성은 유효성 검사 요약을 표시하려는 경우 유용합니다.
 
-# 진행하면서 오류 표시
+# 진행하면서 오류 표시 <a name="as-you-go"></a>
 
 `as-you-go` 보고 옵션을 사용하면 사용자가 입력과 상호 작용하면서 유효성 검사 메시지를 볼 수 있습니다. 예를 들어 잘못된 이메일 주소를 입력하면 바로 오류가 표시됩니다.  값을 정정하고 나면 오류가 사라집니다.
 
-# 상호 작용 및 제출
+# 상호 작용 및 제출 <a name="interact-and-submit"></a>
 
 `interact-and-submit` 보고 옵션은 `show-all-on-submit`와 `as-you-go`의 동작을 결합합니다. 개별 필드에서 상호 작용 직후에 오류를 표시하며 양식 제출 시 잘못된 필드의 오류를 모두 표시합니다.
 
-# 확인
+# 확인 <a name="verification"></a>
 
 HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값이 특정 패턴과 일치)만을 기반으로 하여 의견을 제공합니다. `amp-form` 확인을 사용하면 HTML5 유효성 검사 자체만으로는 제공하지 못하는 의견을 사용자에게 제공할 수 있습니다. 예를 들어 양식에서 확인을 사용하여 이메일 주소가 이미 등록되었는지 확인할 수 있습니다. 또 다른 사용 사례로 구/군/시 필드와 우편번호 필드가 서로 일치하는지 확인할 수 있습니다.
 
@@ -587,7 +587,7 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 더 많은 예는 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)을 참조하세요.
 
-# 대체 변수
+# 대체 변수 <a name="variable-substitutions"></a>
 
 `amp-form` 확장 프로그램에서는 `data-amp-replace` 속성이 있으며 숨겨져 있는 입력에 [플랫폼 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 양식을 제출할 때마다 `amp-form`을 통해 양식에서 모든 `input[type=hidden][data-amp-replace]`를 찾고 `value` 속성에 대체 변수를 적용하여 대체 결과로 바꿉니다.
 
@@ -626,15 +626,15 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 후속 제출에서는 매번 대체가 발생합니다. [AMP의 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)에 관해 자세히 알아보세요.
 
-# Polyfill
+# Polyfill <a name="polyfills"></a>
 
 `amp-form` 확장 프로그램에서는 일부 브라우저에서 누락되었거나 다음 버전의 CSS에서 구현되는 동작과 기능에 polyfill을 제공합니다.
 
-# 잘못된 제출 차단 및 유효성 검사 메시지 도움말 풍선
+# 잘못된 제출 차단 및 유효성 검사 메시지 도움말 풍선 <a name="invalid-submit-blocking-and-validation-message-bubble"></a>
 
 현재(2016년 8월 일자) 웹킷 기반 엔진을 사용하는 브라우저에서는 잘못된 양식 제출을 지원하지 않습니다. 여기에는 모든 플랫폼의 Safari와 모든 iOS 브라우저가 포함됩니다. `amp-form` 확장 프로그램에서는 이 동작에 polyfill을 제공하여 잘못된 제출을 차단하고 잘못된 입력에서 유효성 검사 메시지 도움말 풍선을 표시합니다.
 
-# 사용자 상호작용 가상 클래스
+# 사용자 상호작용 가상 클래스 <a name="user-interaction-pseudo-classes"></a>
 
 `:user-invalid` 및 `:user-valid` 가상 클래스는 [향후 CSS Selectors 4 사양](https://drafts.csswg.org/selectors-4/#user-pseudos)의 일부이며 몇 가지 기준을 기반으로 잘못된/유효한 필드의 스타일을 지정하는 후크를 향상하도록 도입되었습니다.
 
@@ -642,7 +642,7 @@ HTML5 유효성 검사에서는 페이지에서 사용 가능한 정보(예: 값
 
 `amp-form` 확장 프로그램에서 가상 클래스에 polyfill을 지원하는 [클래스](#classes-and-css-hooks)를 제공합니다. `amp-form` 확장 프로그램에서는 상위 `fieldset` 요소와 `form`에도 클래스를 채웁니다.
 
-# `<textarea>` 유효성 검사
+# `<textarea>` 유효성 검사 <a name="-validation"></a>
 
 정규 표현식 일치는 `<textarea>`를 제외하고 대부분의 입력 요소에서 기본적으로 지원되는 공통 유효성 검사 기능입니다. Google에서는 이 기능을 polyfill로 제공하고 `<textarea>` 요소에서 `pattern` 속성을 지원합니다.
 
@@ -652,9 +652,9 @@ AMP 양식은 `<textarea>` 요소에 `autoexpand` 속성을 제공합니다. 그
 <textarea autoexpand></textarea>
 ```
 
-# 스타일 지정
+# 스타일 지정 <a name="styling"></a>
 
-# 클래스 및 CSS 후크
+# 클래스 및 CSS 후크 <a name="classes-and-css-hooks"></a>
 
 `amp-form` 확장 프로그램에서는 게시자가 양식과 입력의 스타일을 지정하도록 클래스와 CSS 후크를 제공합니다.
 
@@ -680,9 +680,9 @@ AMP 양식은 `<textarea>` 요소에 `autoexpand` 속성을 제공합니다. 그
 AMP 페이지에서 사용할 수 있는 사전에 스타일이 지정된 응답형 AMP 양식 요소는 [AMP 시작](https://ampstart.com/components#form-elements)을 방문하세요.
 [/tip]
 
-# 보안 고려사항
+# 보안 고려사항 <a name="security-considerations"></a>
 
-# XSRF로부터 보호
+# XSRF로부터 보호 <a name="protecting-against-xsrf"></a>
 
 [AMP CORS 사양](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)의 세부정보를 따르는 것 외에도 ['상태 변경 요청 처리'](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests) 섹션에 각별히 유의하여 [XSRF 공격](https://en.wikipedia.org/wiki/Cross-site_request_forgery)으로부터 보호하세요. 이 공격에서는 공격자가 사용자 몰래 현재 사용자 세션을 사용하여 무단 명령을 실행할 수 있습니다.
 

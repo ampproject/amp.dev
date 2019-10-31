@@ -635,7 +635,7 @@ URL이 잘못된 경우에 발생합니다.
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-### 스타일 및 레이아웃 오류
+### 스타일 및 레이아웃 오류 <a name="style-and-layout-errors"></a>
 
 스타일과 레이아웃 오류를 살펴보기 전에
 AMP에서
@@ -857,7 +857,7 @@ CONTAINER가 아닌 레이아웃을 지정하거나
 
 이 오류는 속성 값이 지정된 레이아웃에 맞지 않을 때 발생합니다.
 이 오류가 발생하는 이유를 이해하려면
-[레이아웃의 다양한 동작](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#size-and-position-elements)을
+[레이아웃의 다양한 동작](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute)을
 숙지해야 합니다.
 
 레이아웃을 `fixed-height`으로 설정하고
@@ -902,7 +902,7 @@ AMP 페이지는 템플릿 구문을 포함할 수 없습니다.
 소스 파일에서 생성된 결과에
 템플릿이 포함되어 있지 않다면
 소스 파일에 템플릿을 포함해도 괜찮습니다.
-[CSS 프리프로세서 사용](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#use-css-preprocessors) 방법을 참조하세요.
+[CSS 프리프로세서 사용](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md#using-css-preprocessors) 방법을 참조하세요.
 
 ### 속성에 템플릿 구문 포함
 

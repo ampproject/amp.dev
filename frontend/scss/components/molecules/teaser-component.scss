@@ -36,10 +36,13 @@
   .#{molecule('teaser')} {
     &-container {
       display: grid;
-      grid-column-gap: 30px;
       grid-template-columns: repeat(12, 1fr);
       align-items: stretch;
       margin-top: 20px;
+
+      @media (min-width: 600px) {
+        grid-column-gap: 30px;
+      }
     }
     &-tags {
       @include teaser-tag-zero;

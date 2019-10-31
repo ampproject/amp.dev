@@ -4,7 +4,7 @@ $title: Layout supportati
 
 Rendi reattivi i tuoi elementi utilizzando `layout=responsive`.
 
-## Valori supportati per l'attributo layout
+## Valori supportati per l'attributo layout <a name="the-layout-attribute"></a>
 
 Utilizza i layout reattivi per impostazione predefinita.
 
@@ -52,14 +52,14 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
   </tbody>
 </table>
 
-### Che cosa succede se non vengono definite la larghezza e l'altezza?
+### Che cosa succede se non vengono definite la larghezza e l'altezza? <a name="what-if-width-and-height-are-undefined"></a>
 
 Se i valori `width` o `height` non vengono specificati, in alcuni casi il runtime AMP può stabilire i seguente valori predefiniti:
 
 * [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): per larghezza e altezza viene impostato il valore predefinito 0.
 * [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): la larghezza e l'altezza predefinite vengono dedotte dal browser.
 
-### Che cosa succede se non viene definito l'attributo layout?
+### Che cosa succede se non viene definito l'attributo layout? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Il comportamento del layout viene stabilito come segue:
 
@@ -74,6 +74,8 @@ Utilizza la regola [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@
 Quando cambiano le dimensioni o l'orientamento della finestra del browser, le query supporti vengono rivalutate, dopodiché gli elementi vengono nascosti e mostrati in base ai nuovi risultati.
 
 Visita la pagina [Utilizzare query supporti CSS per la reattività](https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=it) per avere ulteriori informazioni sul controllo del layout applicando query supporti.
+
+<a name="element-media-queries"></a>
 
 Una funzione aggiuntiva per il responsive design disponibile in AMP è l'attributo `media`, che può essere utilizzato in ogni elemento AMP. Funziona in modo simile alle query supporti nel foglio di stile globale, ma incide soltanto sull'elemento specifico in una singola pagina.
 

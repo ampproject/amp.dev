@@ -1,4 +1,5 @@
 ---
+$title: amp-3d-gltf
 $category@: media
 formats:
 - websites
@@ -22,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-3d-gltf
+
 
 Ce composant affiche les modèles 3D au format glTF (GL Transmission Format).
 
@@ -41,13 +42,13 @@ Ce composant affiche les modèles 3D au format glTF (GL Transmission Format).
   </tr>
 </table>
 
-## Utilisation
+## Utilisation <a name="usage"></a>
 
 Le composant `amp-3d-gltf` affiche les modèles 3D qui sont au format glTF.
 
 **Remarque** : Un navigateur compatible WebGL est requis pour afficher ces modèles.
 
-### Exemple
+### Exemple <a name="example"></a>
 
 ```html
 <amp-3d-gltf
@@ -59,7 +60,7 @@ Le composant `amp-3d-gltf` affiche les modèles 3D qui sont au format glTF.
     src="path/to/model.glb"></amp-3d-gltf>
 ```
 
-### Limitations
+### Limitations <a name="limitations"></a>
 
 Actuellement, ce composant fonctionne uniquement avec le format glTF 2.0.
 
@@ -68,11 +69,11 @@ Fonctionnalités non compatibles :
 - Caméras intégrées
 - Animation
 
-### CORS
+### CORS <a name="cors"></a>
 
 `amp-3d-gltf` effectue une requête `fetch` à partir de l'origine `https://<random>.ampproject.net`. `access-control-allow-origin : *.ampproject.net` doit donc être défini dans l'en-tête de réponse du point de terminaison spécifié en tant que `src`. Un caractère générique est nécessaire, car l'origine est associée à un composant de sous-domaine aléatoire.
 
-## Attributs
+## Attributs <a name="attributes"></a>
 
 <table>
   <tr>
@@ -106,7 +107,7 @@ Fonctionnalités non compatibles :
     </tr>
   </table>
 
-## Actions
+## Actions <a name="actions"></a>
 
 <table>
   <tr>
@@ -120,6 +121,6 @@ Fonctionnalités non compatibles :
     </tr>
   </table>
 
-## Validation
+## Validation <a name="validation"></a>
 
 Consultez les [règles relatives à amp-3d-gltf](https://github.com/ampproject/amphtml/blob/master/extensions/amp-3d-gltf/validator-amp-3d-gltf.protoascii) dans les spécifications du validateur AMP.

@@ -44,7 +44,7 @@ $title: 制作实时博客
 
 现在，您已熟悉 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件；接下来，我们来了解下如何实现更复杂的实时博客。请继续阅读，详细了解分页的实现方法和深层链接的工作原理。
 
-### 分页
+### 分页 <a name="pagination"></a>
 
 较长的博客可以使用分页来提升性能，方法是限制一个网页上显示的博客条目的数量。要实现分页，请在 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件中添加 `<div pagination></div>`，然后插入分页所需的任何标记（例如，页码或指向下一页和上一页的链接）。
 
@@ -75,7 +75,7 @@ $title: 制作实时博客
 
 您可以将“已停用”属性添加到托管的网页以阻止轮询机制。在实时博客示例中，我们在服务器端模板中执行此行为；如果请求的网页不是第一个网页，我们就会将“已停用”属性添加到 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) 组件。
 
-### 深层链接
+### 深层链接 <a name="deeplinking"></a>
 
 在您发布博文时，务必要能够深层链接到该博文，以便启用分享等功能。借助 [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)，您只需使用博客条目的 `id` 即可实现深层链接。例如，点击 [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) 可以直接转到 ID 为 `post3` 的博文。
 

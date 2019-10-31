@@ -1,4 +1,5 @@
 ---
+$title: amp-bind
 $category@: dynamic-content
 formats:
 - websites
@@ -8,7 +9,7 @@ teaser:
   text: Veri bağlama ve basit JS benzeri ifadeler aracılığıyla kullanıcı işlemlerine veya veri değişikliklerine yanıt olarak öğelerin değişmesine olanak tanır.
 ---
 
-# amp-bind
+
 
 Veri bağlama ve ifadelerle özel etkileşim özelliği ekler.
 
@@ -55,7 +56,7 @@ limitations under the License.
   </tr>
 </table>
 
-# Genel Bakış
+# Genel Bakış <a name="overview"></a>
 
 `amp-bind` bileşeni, veri bağlama ve JS benzeri ifadeler aracılığıyla AMP sayfalarınıza özel durum bilgili etkileşim özelliği eklemenize olanak tanır.
 
@@ -63,7 +64,7 @@ limitations under the License.
   <amp-youtube width="480" height="270" data-videoid="xzCFU8b5fCU" layout="responsive"></amp-youtube>
   <figcaption>amp-bind tanıtımı için bu videoyu izleyin.</figcaption></figure>
 
-# Basit bir örnek
+# Basit bir örnek <a name="a-simple-example"></a>
 
 Aşağıdaki örnekte düğmeye dokunduğunuzda, `<p>` öğesinin "Hello World" olan metni "Hello amp-bind" olarak değişir.
 
@@ -78,7 +79,7 @@ Aşağıdaki örnekte düğmeye dokunduğunuzda, `<p>` öğesinin "Hello World" 
 Yüksek performans elde etmek ve beklenmeyen içerik atlaması riskini önlemek için `amp-bind` öğesi, sayfa yüklemede ifadeleri değerlendirmez. Bu, görsel öğelere bir varsayılan durum verilmesi ve ilk oluşturma için `amp-bind` öğesine güvenilmemesi gerektiği anlamına gelir.
 [/tip]
 
-### İşleyiş şekli
+### İşleyiş şekli <a name="how-does-it-work"></a>
 
 `amp-bind` üç ana bileşene sahiptir:
 
@@ -89,7 +90,7 @@ Bir ifade içinde 100 işlenen kullanma sınırı vardır.
 
 `amp-bind`, AMP sayfalarında hız, güvenlik ve performansı sağlamaya özel önem verir.
 
-### Biraz daha karmaşık bir örnek
+### Biraz daha karmaşık bir örnek <a name="a-slightly-more-complex-example"></a>
 
 ```html
 <!-- Store complex nested JSON data in <amp-state> elements. -->
@@ -141,13 +142,13 @@ Bir ifade içinde 100 işlenen kullanma sınırı vardır.
 Kod ek açıklamalarının yer aldığı bu örnek için [**canlı demoyu** deneyin](https://ampbyexample.com/components/amp-bind/)!
 [/tip]
 
-# Ayrıntılar
+# Ayrıntılar <a name="details"></a>
 
-# Durum
+# Durum <a name="state"></a>
 
 `amp-bind` kullanan her AMP dokümanı, doküman kapsamı değişebilir JSON verilerine veya **durum** bilgisine sahiptir.
 
-# `amp-state` ile başlangıç durumu
+# `amp-state` ile başlangıç durumu <a name="initializing-state-with-amp-state"></a>
 
 `amp-bind` durumu, `amp-state` bileşeni ile başlatılabilir:
 
@@ -166,7 +167,7 @@ Kod ek açıklamalarının yer aldığı bu örnek için [**canlı demoyu** dene
 * Bir `<amp-state>` öğesinin alt JSON'ı en fazla 100 KB olur.
 * Bir `<amp-state>` öğesi, alt JSON komut dosyası yerine bir CORS URL'si de belirtebilir. Ayrıntılar için [Ek](#amp-state-specification) bölümüne bakın.
 
-# Durumu yenileme
+# Durumu yenileme <a name="refreshing-state"></a>
 
 `refresh` işlemi bu bileşen tarafından desteklenir ve durum içeriğini yenilemek için kullanılabilir.
 
@@ -176,9 +177,9 @@ Kod ek açıklamalarının yer aldığı bu örnek için [**canlı demoyu** dene
 <button on="tap:amp-state.refresh"></button>
 ```
 
-# Durumu `AMP.setState()` ile güncelleme
+# Durumu `AMP.setState()` ile güncelleme <a name="updating-state-with-ampsetstate"></a>
 
-[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) işlemi, bir nesne değişmez değerini durumla birleştirir. Örneğin, aşağıdaki düğmeye basıldığında `AMP.setState()` öğesi, nesne değişmez değerini durum ile [derinden birleştirir](#deep-merge-with-ampsetstate).
+[`AMP.setState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) işlemi, bir nesne değişmez değerini durumla birleştirir. Örneğin, aşağıdaki düğmeye basıldığında `AMP.setState()` öğesi, nesne değişmez değerini durum ile [derinden birleştirir](#deep-merge-with-ampsetstate).
 
 ```html
 <!-- Like JavaScript, you can reference existing
@@ -196,9 +197,9 @@ Belirli etkinlikler tarafından tetiklendiğinde, `AMP.setState()`, `event` öze
 <input type="range" on="change:AMP.setState({myRangeValue: event.value})">
 ```
 
-# `AMP.pushState()` ile geçmişi değiştirme
+# `AMP.pushState()` ile geçmişi değiştirme <a name="modifying-history-with-amppushstate"></a>
 
-[`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#amp) işlemi, tarayıcı geçmiş yığınına yeni bir giriş de aktarması haricinde `AMP.setState()` işlemine benzer. Bu geçmiş girişine dönülmesi (geri gidilerek), `AMP.pushState()` tarafından ayarlanan değişkenlerin önceki değerini geri yükler.
+[`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) işlemi, tarayıcı geçmiş yığınına yeni bir giriş de aktarması haricinde `AMP.setState()` işlemine benzer. Bu geçmiş girişine dönülmesi (geri gidilerek), `AMP.pushState()` tarafından ayarlanan değişkenlerin önceki değerini geri yükler.
 
 Örneğin:
 ```html
@@ -208,11 +209,11 @@ Belirli etkinlikler tarafından tetiklendiğinde, `AMP.setState()`, `event` öze
 * Düğmeye dokunulduğunda `foo` değeri 123 olarak ayarlanır ve yeni bir geçmiş girişi aktarılır.
 * Geri gidildiğinde `foo` önceki değeri olan "bar" değerine geri yüklenir (`AMP.setState({foo: 'bar'})` işleminin çağrılmasıyla eşdeğerdir).
 
-# İfadeler
+# İfadeler <a name="expressions"></a>
 
 İfadeler, bazı önemli farklılıklarla birlikte JavaScript'e benzer.
 
-# JavaScript'ten farklılıklar
+# JavaScript'ten farklılıklar <a name="differences-from-javascript"></a>
 
 * İfadeler yalnızca ifadeleri içeren dokümanın [durumuna](#state) erişebilir.
 * İfadeler, `window` veya `document` gibi genel öğelere **erişmez**.
@@ -223,7 +224,7 @@ Belirli etkinlikler tarafından tetiklendiğinde, `AMP.setState()`, `event` öze
 
 Tam ifade dil bilgisi ve uygulaması, [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) ve [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js) içinde bulunabilir.
 
-# Örnekler
+# Örnekler <a name="examples"></a>
 
 Aşağıdaki ifadelerin tümü geçerlidir:
 
@@ -234,7 +235,7 @@ Aşağıdaki ifadelerin tümü geçerlidir:
 null || 'default' // 'default'
 ```
 
-# Beyaz listedeki işlevler
+# Beyaz listedeki işlevler <a name="white-listed-functions"></a>
 
 <table>
   <tr>
@@ -347,7 +348,7 @@ null || 'default' // 'default'
 
 <sup>2</sup>Statik işlevler ad alanlı değildir; ör. `Math.abs(-1)` yerine `abs(-1)` işlevini kullanın.
 
-# Makroları `amp-bind-macro` ile tanımlama
+# Makroları `amp-bind-macro` ile tanımlama <a name="defining-macros-with-amp-bind-macro"></a>
 
 `amp-bind` ifade parçaları bir `amp-bind-macro` tanımlanarak yeniden kullanılabilir. `amp-bind-macro` öğesi, sıfır veya daha fazla bağımsız değişken alan ve geçerli duruma başvuruda bulunan bir ifade tanımlamanıza olanak tanır. Bir makro, dokümanın herhangi bir yerinden `id` özelliği değerine başvuruda bulunularak bir işlev gibi çağrılabilir.
 
@@ -362,7 +363,7 @@ null || 'default' // 'default'
 
 Bir makro, <i>kendisinden önce tanımlanan</i> diğer makroları da çağırabilir. Bir makro kendini yinelemeli olarak çağıramaz.
 
-# Bağlamalar
+# Bağlamalar <a name="bindings"></a>
 
 **Bağlama**, bir öğenin özelliğini bir [ifadeye](#expressions) bağlayan `[property]` formunun özel bir özelliğidir. `data-amp-bind-property` alternatif, XML uyumlu bir söz dizimi de kullanılabilir.
 
@@ -410,7 +411,7 @@ Bağlamalar ile ilgili notlar:
 * Boole ifadesi sonuçları, boole özelliklerini açar/kapatır. Örneğin: `<amp-video [controls]="expr"...>`. `expr`, `true` olarak değerlendirildiğinde, `<amp-video>` öğesi `controls` özelliğine sahip olur. `expr`, `false` olarak değerlendirildiğinde `controls` özelliği kaldırılır.
 * Özellik adlarındaki köşeli parantez karakterleri `[` ve `]` XML (ör. XHTML, JSX) veya DOM API'leri aracılığıyla özellikleri yazarken soruna yol açabilir. Bu durumlarda, `[x]="foo"` yerine alternatif `data-amp-bind-x="foo"` söz dizimini kullanın.
 
-# Öğeye özel özellikler
+# Öğeye özel özellikler <a name="element-specific-attributes"></a>
 
 Yalnızca aşağıdaki bileşenlere ve özelliklere bağlamaya izin verilir:
 
@@ -555,11 +556,11 @@ Yalnızca aşağıdaki bileşenlere ve özelliklere bağlamaya izin verilir:
 
   <sup>*</sup>Bağlanabilir olmayan bir eşdeğeri bulunmayan bağlanabilir özellikleri belirtir.
 
-# Hata ayıklama
+# Hata ayıklama <a name="debugging"></a>
 
 Geliştirme sırasında ortaya çıkan uyarıları ve hataları vurgulamak ve özel hata ayıklama işlevlerine erişmek için geliştirme modunda (#`development=1` URL parçasıyla) test yapın.
 
-# Uyarılar
+# Uyarılar <a name="warnings"></a>
 
 Geliştirme modunda, bir bağlama özelliğinin varsayılan değeri, karşılık gelen ifadenin ilk sonucuyla eşleşmediğinde `amp-bind` bir uyarı yayınlar. Bu, diğer durum değişkenlerindeki değişikliklerin neden olduğu istenmeyen dönüşümleri önlemeye yardımcı olabilir. Örneğin:
 
@@ -585,7 +586,7 @@ Geliştirme modunda, `amp-bind`, tanımlanmamış değişkenleri veya özellikle
 <p [text]="myAmpState.bar">Some placeholder text.</p>
 ```
 
-# Hatalar
+# Hatalar <a name="errors"></a>
 
 `amp-bind` ile çalışırken karşılaşabileceğiniz birkaç çalışma zamanı hatası türü vardır.
 
@@ -622,13 +623,13 @@ Geliştirme modunda, `amp-bind`, tanımlanmamış değişkenleri veya özellikle
   </tr>
 </table>
 
-# Hata Ayıklama Durumu
+# Hata Ayıklama Durumu <a name="debugging-state"></a>
 
 Geçerli durumu konsola yazdırmak için `AMP.printState()` kullanın.
 
-# Ek
+# Ek <a name="appendix"></a>
 
-# `<amp-state>` spesifikasyonu
+# `<amp-state>` spesifikasyonu <a name="amp-state-specification"></a>
 
 Bir `amp-state` öğesi, bir alt `<script>` öğesi **VEYA** uzak bir JSON uç noktasının CORS URL'sini içeren bir `src` özelliği içerebilir ancak bunların ikisini birden içeremez.
 
@@ -645,11 +646,11 @@ Bir `amp-state` öğesi, bir alt `<script>` öğesi **VEYA** uzak bir JSON uç n
 </amp-state>
 ```
 
-# XHR toplu işlemesi
+# XHR toplu işlemesi <a name="xhr-batching"></a>
 
 AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak işler; diğer bir deyişle, bir AMP sayfasında birden çok tüketici (ör. birden fazla `amp-state` öğesi) için veri kaynağı olarak tek bir JSON veri isteğini kullanabilirsiniz.  Örneğin, `amp-state` öğeniz bir uç noktaya XHR gönderirse XHR iletilirken aynı uç noktaya yapılacak sonraki XHR'lerin hiçbiri tetiklenmez ve bunun yerine, ilk XHR'nin sonuçları döndürülür.
 
-# Özellikler
+# Özellikler <a name="attributes"></a>
 
 <table>
   <tr>
@@ -671,7 +672,7 @@ AMP, XMLHttpRequest öğelerini (XHR'ler) JSON uç noktalarında toplu olarak i�
       </tr>
     </table>
 
-# `AMP.setState()` ile derin birleştirme
+# `AMP.setState()` ile derin birleştirme <a name="deep-merge-with-ampsetstate"></a>
 
 `AMP.setState()` çağrıldığında, `amp-bind`, sağlanan nesneyi değişmez değerini geçerli durumla derin birleştirir. Nesne değişmez değerindeki tüm değişkenler, tekrar eden bir şekilde birleştirilen iç içe yerleştirilmiş nesneler haricinde, doğrudan duruma yazılır. Nesne değişmez değerinde bulunan, temel öğeler ve dizilerle aynı ada sahip değişkenlerin değeri her zaman bunların üzerine yazılır.
 
@@ -716,7 +717,7 @@ Aşağıdaki örneği inceleyin:
 
 `AMP.setState()` işlemini döngüsel başvurular içeren bir nesne değişmez değeriyle çağırırsanız `amp-bind` öğesinin hata vereceğini lütfen unutmayın.
 
-# Bir değişkeni kaldırma
+# Bir değişkeni kaldırma <a name="circular-references"></a>
 
 Mevcut bir durum değişkeninin değerini `AMP.setState()` işleminde `null` olarak ayarlayarak değişkeni kaldırın. Önceki örnekteki durumla başlayarak:
 
@@ -749,7 +750,7 @@ Düğmesine basıldığında durum şu şekilde değişir:
   }
 ```
 
-# İfade dil bilgisi
+# İfade dil bilgisi <a name="expression-grammar"></a>
 
 `amp-bind` ifadeleri için BNF benzeri dil bilgisi:
 

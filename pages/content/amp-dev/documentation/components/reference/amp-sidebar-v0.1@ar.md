@@ -28,7 +28,7 @@ $title: amp-sidebar
      limitations under the License.
 -->
 
-# amp-sidebar
+
 
 [جدول المحتويات]
 
@@ -53,12 +53,12 @@ $title: amp-sidebar
   </tr>
 </table>
 
-## نظرة عامة
+## نظرة عامة <a name="overview"></a>
 
 يخفي المكوِّن `<amp-sidebar>` محتوى وصفيًا مخصصًا للوصول المؤقت (روابط التنقل والأزرار والقوائم وغيرها). يمكن فتح `<amp-sidebar>` وإغلاقه بالنقر على الأزرار والنقر خارج amp-sidebar.
 ومع ذلك، يمكن استخدام السمات الاختيارية التي تقبل الاستعلامات عن الوسائط لعرض محتوى وصفي في أجزاء أخرى من الموقع. تسمح عناصر `<nav toolbar="(media query)" toolbar-target="elementID">` الثانوية بعرض المحتوى داخل الشريط الجانبي على أجزاء أخرى من المحتوى الرئيسي.
 
-## السلوك
+## السلوك <a name="behavior"></a>
 
 * يجب أن يكون `<amp-sidebar>` عنصر `<body>` ثانوي مباشر.
 * يمكن للشريط الجانبي الظهور فقط على الجانب الأيسر أو الأيمن من الصفحة.
@@ -91,7 +91,7 @@ $title: amp-sidebar
 </amp-sidebar>
 ```
 
-### فتح الشريط الجانبي وإغلاقه
+### فتح الشريط الجانبي وإغلاقه <a name="opening-and-closing-the-sidebar"></a>
 
 للتبديل أو فتح الشريط الجانبي أو إغلاقه عند النقر على العنصر، اضبط سمة الإجراء [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) على العنصر وحدّد أحد أساليب الإجراءات التالية:
 
@@ -127,11 +127,11 @@ $title: amp-sidebar
 <button on='tap:sidebar1.close'>x</button>
 ```
 
-### Toolbar
+### Toolbar <a name="toolbar"></a>
 
 يمكنك إنشاء عنصر `toolbar` يتم عرضه في `<body>` عن طريق تحديد السمة `toolbar` باستعلام عن الوسائط وتحديد السمة `toolbar-target` بمعرّف عنصر في عنصر `<nav>` هو عنصر ثانوي لـ `<amp-sidebar>`. يكرر `toolbar` العنصر `<nav>` وعناصره الثانوية ويضيف العنصر إلى العنصر `toolbar-target`.
 
-#### السلوك
+#### السلوك <a name="behavior-1"></a>
 
 * قد ينفذ الشريط الجانبي أشرطة الأدوات بإضافة عناصر التنقل باستخدام السمة `toolbar` والسمة `toolbar-target`.
 * يجب أن يكون عنصر التنقل عنصر `<amp-sidebar>` ثانويًا ويتبع هذا التنسيق: `<nav toolbar="(media-query)" toolbar-target="elementID">`.
@@ -168,7 +168,7 @@ $title: amp-sidebar
 </div>
 ```
 
-## تصميم شريط الأدوات
+## تصميم شريط الأدوات <a name="styling-toolbar"></a>
 
 سيكون للعنصر `toolbar` داخل العنصر `<amp-sidebar>` فئات مُطبّقة على العنصر بناءً على ما إذا كان عنصر `toolbar-target` معروضًا أو مخفيًا. ويفيد هذا في تطبيق تصميمات مختلفة على العنصر `toolbar` ثم العنصر `toolbar-target`. والفئات هي: `amp-sidebar-toolbar-target-shown` و`amp-sidebar-toolbar-target-hidden`. يتم تطبيق الفئة `amp-sidebar-toolbar-target-shown` على العنصر `toolbar` عندما يكون العنصر `toolbar-target` معروضًا. يتم تطبيق الفئة `amp-sidebar-toolbar-target-hidden` على العنصر `toolbar` عندما يكون العنصر `toolbar-target` مخفيًا.
 
@@ -213,11 +213,11 @@ $title: amp-sidebar
 يمكنك الاطّلاع على أمثلة توضيحية في موقع [AMP بالمثال](https://ampbyexample.com/components/amp-sidebar/).
 [/tip]
 
-## الشريط الجانبي للقصص
+## الشريط الجانبي للقصص <a name="sidebar-for-stories"></a>
 
 من المقبول استخدام `amp-sidebar` داخل [المكوِّن](../../../about/stories.html) `amp-story`.
 
-### السلوك
+### السلوك <a name="behavior-2"></a>
 
 * يجب أن يكون `<amp-sidebar>` عنصرًا ثانويًا مباشرًا للمكوِّن `<amp-story>`.
 * يتم ضبط الشريط الجانبي افتراضيًا على الجانب "start" لمستندات AMP العادية، ما يعني الجانب الأيمن للغات من اليسار إلى اليمين والجانب الأيسر للغات من اليمين إلى اليسار.
@@ -227,7 +227,7 @@ $title: amp-sidebar
 
 هناك قيود معينة على السمات والميزات المسموح بها لتوفير تجربة واجهة مستخدم متسقة عبر منصة القصص. فيما يلي سمات وميزات `amp-sidebar` المسموح بها في `amp-story`.
 
-### السمات المسموح بها
+### السمات المسموح بها <a name="allowed-attributes"></a>
 
 * [layout](#layout)
 * [data-close-button-aria-label](#data)
@@ -258,37 +258,37 @@ $title: amp-sidebar
 </body>
 ```
 
-## السمات
+## السمات <a name="attributes"></a>
 
-##### side
+##### side <a name="side"></a>
 
 تشير إلى جانب الصفحة الذي يجب فتح الشريط الجانبي منه، إما `left` أو `right`.  في حال عدم تحديد `side`، سيتم اكتساب قيمة `side` من السمة `dir` للعلامة `body` (`ltr` => `left` و`rtl` => `right`). وفي حال عدم توفر `dir`، يتم ضبط `side` تلقائيًا على `left`.
 
-##### layout<a name="layout"></a>
+##### layout <a name="layout"></a>
 
 تحدد تنسيق عرض الشريط الجانبي الذي يجب أن يكون `nodisplay`.
 
-##### open
+##### open <a name="open"></a>
 
 تتوفر هذه السمة عندما يكون الشريط الجانبي مفتوحًا.
 
-##### data-close-button-aria-label<a name="data"></a>
+##### data-close-button-aria-label <a name="data"></a>
 
 سمة اختيارية تُستخدَم لتحديد تصنيف ARIA لزر الإغلاق المضَاف لسهولة الاستخدام.
 
-##### toolbar
+##### toolbar <a name="toolbar-1"></a>
 
 تتوفر هذه السمة على عناصر `<nav toolbar="(media-query)" toolbar-target="elementID">` الثانوية وتقبل الاستعلام عن الوسائط عن وقت عرض شريط الأدوات. راجِع قسم [شريط الأدوات](#toolbar) للحصول على مزيد من المعلومات عن استخدام أشرطة الأدوات.
 
-##### toolbar-target
+##### toolbar-target <a name="toolbar-target"></a>
 
 تتوفر هذه السمة على عنصر `<nav toolbar="(media-query)" toolbar-target="elementID">` الثانوي وتقبل معرّف عنصر على الصفحة.  ستضع السمة `toolbar-target` شريط الأدوات في المعرّف المحدَد للعنصر في الصفحة، بدون التصميم التلقائي لشريط الأدوات. راجِع قسم [شريط الأدوات](#toolbar) للحصول على مزيد من المعلومات عن استخدام أشرطة الأدوات.
 
-##### السمات المشتركة<a name="common"></a>
+##### السمات المشتركة <a name="common"></a>
 
 يتضمن هذا العنصر [السمات المشتركة](../../../documentation/guides-and-tutorials/learn/common_attributes.md) التي تشمل مكونات AMP.
 
-## التصميم
+## التصميم <a name="styling"></a>
 
 يمكن تصميم المكوِّن `amp-sidebar` باستخدام CSS القياسي.
 
@@ -300,7 +300,7 @@ $title: amp-sidebar
 انتقِل إلى الموقع [AMP Start](https://ampstart.com/components#navigation) للاطّلاع على قوائم التنقل المتجاوبة المُصمَمة مسبقًا التي يمكن استخدامها في صفحات AMP.
 [/tip]
 
-## التمرير التلقائي داخل المناطق الكاملة
+## التمرير التلقائي داخل المناطق الكاملة <a name="auto-scrolling-within-overflowing-areas"></a>
 
 يمكن أن يمرر `amp-sidebar` تلقائيًا الحاوية الكاملة إلى العنصر الأول المضَاف إلى السمة `autoscroll` في كل من حالات الشريط الجانبي وشريط الأدوات.
 
@@ -337,12 +337,12 @@ $title: amp-sidebar
 
 يُرجى الاطّلاع على [ملف الأمثلة هذا](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) لمعرفة أمثلة عملية للترميز.
 
-## اعتبارات تجربة المُستخدِم
+## اعتبارات تجربة المُستخدِم <a name="ux-considerations"></a>
 
 عند استخدام `<amp-sidebar>`، ضع في اعتبارك أن المستخدمين سيعرضون غالبًا صفحتك على الهاتف الجوال في عارض صفحات AMP وهو ما قد يعرض رأسًا ثابتة الموضع. بالإضافة إلى ذلك، غالبًا ما تعرض المتصفحات رأسها الثابت في أعلى الصفحة. لذا فإن إضافة عنصر آخر ثابت الموضع إلى أعلى الشاشة قد تؤدي إلى شغل قدر كبير من مساحة شاشة الجوال بمحتوى لا يمنح المستخدِم معلومات جديدة.
 
 لهذا السبب نوصي بعدم وضع خصائص فتح الشريط الجانبي في رأس ثابت بالعرض الكامل.
 
-## التحقق
+## التحقق <a name="validation"></a>
 
 اطِّلع على [قواعد amp-sidebar](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/validator-amp-sidebar.protoascii) في مواصفات مدقق AMP.

@@ -41,7 +41,7 @@ Um [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) 
 </amp-iframe>
 ```
 
-## Usar marcadores
+## Usar marcadores <a name="using-placeholders"></a>
 
 É possível exibir um [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) na parte superior de um documento desde que o [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) inclua um elemento com o atributo `placeholder` (por exemplo, um elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md)) para ser renderizado como marcador até que o iframe esteja pronto para exibição.
 

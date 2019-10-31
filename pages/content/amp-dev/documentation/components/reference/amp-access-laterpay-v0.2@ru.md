@@ -1,4 +1,5 @@
 ---
+$title: amp-access-laterpay
 $category@: dynamic-content
 formats:
 - websites
@@ -22,7 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-access-laterpay
+
 
 Позволяет издателям легко обеспечивать интеграцию с платформой для микроплатежей [LaterPay](https://www.laterpay.net). Для работы с `amp-access-laterpay` необходимо использовать [amp-access](amp-access.md).
 
@@ -49,7 +50,7 @@ limitations under the License.
 </table>
 
 
-## Действия
+## Действия <a name="behavior"></a>
 
 [LaterPay](https://laterpay.net) – это платформа для микроплатежей, которая позволяет пользователям покупать онлайн-контент всего в два клика. При этом они сразу получают доступ к оплаченным данным – без предварительной регистрации и отправки личной или платежной информации. Оплата осуществляется только после того, как сумма покупки достигла 5 долл. США или евро на разных сайтах. Поставщики контента могут продавать отдельные элементы или повременный доступ к контенту (ограниченный или постоянный).
 
@@ -71,7 +72,7 @@ limitations under the License.
 
 При работе компонента также применяется [разметка контента для доступа](amp-access.md#access-content-markup). Она позволяет скрывать и показывать контент.
 
-## Конфигурация
+## Конфигурация <a name="configuration"></a>
 
 Конфигурация похожа на ту, что используется для AMP Access, но не требует авторизации, автоматического уведомления и ссылок для входа.
 
@@ -143,7 +144,7 @@ limitations under the License.
         </tr>
       </table>
 
-## Разметка контента для доступа и список вариантов покупки
+## Разметка контента для доступа и список вариантов покупки <a name="using-access-content-markup-and-showing-the-purchase-list"></a>
 
 Разметка контента для доступа здесь используется так же, как и в случае с AMP Access.
 
@@ -166,7 +167,7 @@ limitations under the License.
 
 ```
 
-## Стилизация
+## Стилизация <a name="styling"></a>
 
 К некоторым элементам сгенерированной разметки применяется несколько классов. На элементы без классов можно однозначно ссылаться через селекторы элементов CSS.
 
@@ -210,7 +211,7 @@ limitations under the License.
 
 ```
 
-## Локализация
+## Локализация <a name="localization"></a>
 
 Текст, который отображается в диалоговом окне с вариантами покупки, указывается издателем в интерфейсе LaterPay Connector.
 
@@ -271,13 +272,13 @@ limitations under the License.
   </tr>
 </table>
 
-## Аналитика
+## Аналитика <a name="analytics"></a>
 
 Поскольку в основе `amp-access-laterpay` лежит `amp-access`, этот компонент поддерживает все [события аналитики](amp-access.md#integration-with-amp-analytics), которые отправляет `amp-access`.
 
 Подробные практические примеры можно найти на сайте [https://ampexample.laterpay.net/](https://ampexample.laterpay.net/). Все они настроены так, чтобы отправлять эти события.
 
-## Совместное использование AMP Access LaterPay и AMP Access
+## Совместное использование AMP Access LaterPay и AMP Access <a name="using-amp-access-laterpay-together-with-amp-access"></a>
 
 Если у вас есть собственная система подписки и вы собираетесь использовать LaterPay только для продажи отдельных статей, можно сочетать AMP Access LaterPay и AMP Access на одной странице.
 
@@ -336,13 +337,13 @@ limitations under the License.
 
 Более подробный пример можно найти по ссылке: [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html).
 
-## Статьи по теме
+## Статьи по теме <a name="related-documentation"></a>
 
 * [AMP Access](amp-access.md)
 * [LaterPay](https://www.laterpay.net)
 * [LaterPay: как мы работаем с микроплатежами](https://docs.laterpay.net/how_we_do_micropayments/)
 * [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) – решение, похожее на AMP Access LaterPay, но созданное для обычных страниц без AMP.
 
-## Проверка
+## Проверка <a name="validation"></a>
 
 О правилах для amp-access-laterpay читайте в [спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access-laterpay/validator-amp-access-laterpay.protoascii).

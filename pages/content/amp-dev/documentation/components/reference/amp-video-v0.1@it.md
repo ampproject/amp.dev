@@ -1,4 +1,5 @@
 ---
+$title: amp-video
 $category@: media
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-video
+
 
 Sostituisce il tag `video` HTML5. Deve essere utilizzato esclusivamente per gli incorporamenti di file video HTML5 diretti.
 
@@ -47,7 +48,7 @@ Sostituisce il tag `video` HTML5. Deve essere utilizzato esclusivamente per gli 
     </tr>
   </table>
 
-## Comportamento
+## Comportamento <a name="behavior"></a>
 
 Il componente `amp-video` carica in un momento determinato dal tempo di esecuzione la risorsa video specificata dall'attributo `src`. Puoi controllare un componente `amp-video` in modo molto simile a un tag `<video>` HTML5 standard.
 
@@ -58,7 +59,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
 * Un segnaposto che verrà visualizzato prima che inizi la riproduzione del video.
 * Un fallback nel caso in cui il browser non supporti video HTML5: uno o zero nodi secondari immediati possono avere l'attributo `fallback`. Se presente, questo nodo e i suoi nodi secondari formano il contenuto visualizzato nel caso in cui il video HTML5 non sia supportato dal browser dell'utente.
 
-#### Esempio
+#### Esempio <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
 ```html
@@ -78,11 +79,11 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
 ```
 [/example]
 
-## Analisi dei dati
+## Analisi dei dati <a name="analytics"></a>
 
 `amp-video` supporta l'analisi dei dati per impostazione predefinita. Per ulteriori informazioni, consulta la sezione [Analisi dei dati video](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
-## Attributi
+## Attributi <a name="attributes"></a>
 
 <table>
   <tr>
@@ -145,7 +146,7 @@ Il componente `amp-video` accetta fino a quattro tipi unici di nodi HTML come se
             </tr>
           </table>
 
-## Attributi dell'API Media Session
+## Attributi dell'API Media Session <a name="media-session-api-attributes"></a>
 
 Il componente `amp-video` implementa l'[API Media Session](https://developers.google.com/web/updates/2017/02/media-session), che permette agli sviluppatori di specificare più informazioni sul file video. Queste informazioni aggiuntive vengono visualizzate nel centro notifiche del dispositivo dell'utente insieme ai controlli di riproduzione/pausa.
 
@@ -182,12 +183,12 @@ Questo esempio contiene gli attributi `poster` e `artwork`. L'attributo `poster`
 </amp-video>
 ```
 
-## Overlay click-to-play
+## Overlay click-to-play <a name="click-to-play-overlay"></a>
 
 La presenza di un overlay click-to-play è una funzione comune di UX per i lettori video disponibili sul Web.  Ad esempio, potresti mostrare un'icona di riproduzione personalizzata sulla quale l'utente può fare clic, includere il titolo del video, immagini di poster di varie dimensioni e così via.  Poiché il componente `amp-video` supporta l'azione AMP `play` standard, implementare il click-to-play è facile.
 
 Per un esempio dettagliato, visita la sezione [Overlay click-to-play per amp-video](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/) del sito AMP By Example.
 
-## Convalida
+## Convalida <a name="validation"></a>
 
 Consulta le [regole amp-video](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) nella specifica dello strumento di convalida AMP.

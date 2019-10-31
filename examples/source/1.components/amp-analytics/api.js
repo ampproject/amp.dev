@@ -21,7 +21,6 @@ const SampleRenderer = require('@examples/lib/SampleRenderer');
 const {createRequestContext} = require('@lib/templates/index.js');
 const uuid = require('uuid');
 const nunjucks = require('nunjucks');
-const path = require('path');
 
 // eslint-disable-next-line new-cap
 const examples = express.Router();
@@ -32,7 +31,7 @@ const EVENTS = {};
 const USER_CHANGE_LISTENERS = {};
 const GLOBAL_ANALYTICS = '__all_users__';
 const EXPIRES = 60 * 60 * 24 * 365; // 1 year
-const embedFilePath = path.join(__dirname, 'embed.html');
+const embedFilePath = './embed.html';
 const analyticsTemplate = nunjucks.compile(`
     <table>
     <tr>

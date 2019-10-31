@@ -327,6 +327,18 @@ developer:
       height: 1303
     formats:
       - websites
+  - name: AMP Story Ad Preview Tool
+    official: true
+    type: Development
+    description: A tool to help for prototyping ads to be served in AMP Stories. Choose from pre-existing templates to get started.
+    url: https://ampstoryads.web.app
+    image:
+      src: /static/img/tools/amp-story-ad-preview.jpg
+      width: 1024
+      height: 831
+    formats:
+      - ads
+      - stories
 providers:
   - name: Amazon Simple Email Service (SES)
     url: https://aws.amazon.com/ses/
@@ -397,6 +409,17 @@ providers:
       src: /static/img/tools/clang.png
       width: 254
       height: 255
+      fit: contain
+    formats:
+      - email
+  - name: Maileon
+    url: https://www.maileon.com
+    type: Email Service
+    description: Effective Newsletter Software for more conversions and revenue
+    image:
+      src: /static/img/tools/maileon.png
+      width: 1600
+      height: 465
       fit: contain
     formats:
       - email

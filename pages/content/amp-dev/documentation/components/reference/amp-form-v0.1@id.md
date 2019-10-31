@@ -26,7 +26,7 @@ $title: amp-form
      limitations under the License.
 -->
 
-# amp-form
+
 
 <table>
   <tr>
@@ -48,7 +48,7 @@ $title: amp-form
 </table>
 
 
-# Perilaku
+# Perilaku <a name="behavior"></a>
 
 Ekstensi `amp-form` memungkinkan Anda membuat formulir (`<form>`) untuk mengirimkan kolom input dalam dokumen AMP. Ekstensi `amp-form` juga menyediakan [polyfill](#polyfills) untuk beberapa perilaku yang tidak ada di browser.
 
@@ -97,13 +97,13 @@ Berikut adalah contoh formulir dasar:
 ```
 [/example]
 
-# Atribut
+# Atribut <a name="attributes"></a>
 
-# target
+# target <a name="target"></a>
 
 Menunjukkan tempat untuk menampilkan respons formulir setelah mengirimkan formulir. Nilainya harus `_blank` atau `_top`.
 
-# action
+# action <a name="action"></a>
 
 Menentukan endpoint server untuk menangani input formulir. Nilainya harus berupa URL `https` (absolut atau relatif) dan tidak boleh berupa link ke CDN.
 
@@ -114,7 +114,7 @@ Menentukan endpoint server untuk menangani input formulir. Nilainya harus berupa
 Atribut `target` dan `action` hanya digunakan untuk permintaan GET non-xhr. AMP runtime akan menggunakan `action-xhr` untuk membuat permintaan dan akan mengabaikan `action` dan `target`. Jika `action-xhr` tidak ditentukan, AMP akan membuat permintaan GET ke endpoint `action` dan menggunakan `target` untuk membuka jendela baru (jika `_blank`). AMP runtime mungkin juga kembali menggunakan `action` dan `target` jika ekstensi `amp-form` gagal dimuat.
 [/tip]
 
-# action-xhr
+# action-xhr <a name="action-xhr"></a>
 
 Menentukan endpoint server untuk menangani input formulir dan mengirimkan formulir melalui XMLHttpRequest (XHR). Permintaan XHR (terkadang disebut permintaan AJAX) adalah tempat browser akan membuat permintaan tanpa memuat halaman secara penuh atau membuka halaman baru. Browser akan mengirimkan permintaan di latar belakang menggunakan [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) jika tersedia, dan kembali ke [XMLHttpRequest API](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) untuk browser lama.
 
@@ -128,17 +128,17 @@ Nilai untuk `action-xhr` dapat berupa endpoint yang sama atau berbeda dari `acti
 
 Untuk mempelajari cara mengalihkan pengguna setelah berhasil mengirimkan formulir, lihat bagian [Mengalihkan setelah mengirim](#redirecting-after-a-submission) di bawah.
 
-# Atribut formulir lainnya
+# Atribut formulir lainnya <a name="other-form-attributes"></a>
 
 Semua [atribut formulir](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form) lainnya bersifat opsional.
 
-# custom-validation-reporting
+# custom-validation-reporting <a name="custom-validation-reporting"></a>
 
 Ini adalah atribut opsional yang mengaktifkan dan memilih strategi pelaporan validasi kustom. Nilai yang valid adalah salah satu dari: `show-first-on-submit`, `show-all-on-submit`, atau `as-you-go`.
 
 Lihat bagian [Validasi Kustom](#custom-validations) untuk penjelasan selengkapnya.
 
-# Input dan kolom
+# Input dan kolom <a name="inputs-and-fields"></a>
 
 **Diizinkan**:
 
@@ -155,7 +155,7 @@ Lihat bagian [Validasi Kustom](#custom-validations) untuk penjelasan selengkapny
 
 Untuk detail tentang input dan kolom yang valid, lihat [aturan amp-form](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) dalam spesifikasi validator AMP.
 
-# Tindakan
+# Tindakan <a name="actions"></a>
 
 Elemen `amp-form` memperlihatkan tindakan berikut:
 
@@ -168,7 +168,7 @@ Elemen `amp-form` memperlihatkan tindakan berikut:
 Pelajari [Tindakan dan Peristiwa di AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) lebih lanjut.
 [/tip]
 
-# Peristiwa
+# Peristiwa <a name="events"></a>
 
 `amp-form` memperlihatkan peristiwa berikut:
 
@@ -195,7 +195,7 @@ Misalnya, berikut berikut mendeteksi peristiwa `submit-success` dan juga `submit
 
 Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
-# Peristiwa input
+# Peristiwa input <a name="input-events"></a>
 
 AMP memperlihatkan peristiwa `change` dan `input-debounced` pada elemen `<input>` turunan. Dengan tindakan ini, Anda dapat menggunakan [atribut `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on) untuk menjalankan tindakan pada elemen apa pun saat nilai input berubah.
 
@@ -227,7 +227,7 @@ Misalnya, salah satu kasus penggunaan umum adalah mengirimkan formulir saat terj
 
 Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
-# Pemicu analisis
+# Pemicu analisis <a name="analytics-triggers"></a>
 
 Ekstensi `amp-form` memicu peristiwa berikut yang dapat Anda pantau dalam konfigurasi [amp-analytics](amp-analytics.md):
 
@@ -289,9 +289,9 @@ Saat peristiwa `amp-form-submit`, `amp-form-submit-success`, atau `amp-form-subm
 
   * `formId`
   * `formFields[comment]`
-# Rendering respons berhasil/error
+# Rendering respons berhasil/error <a name="successerror-response-rendering"></a>
 
-Anda dapat merender respons berhasil atau error dalam formulir menggunakan [template yang diperluas](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#extended-templates), seperti [amp-mustache](amp-mustache.md), atau respons berhasil melalui data binding dengan [amp-bind](amp-bind.md) dan atribut respons berikut:
+Anda dapat merender respons berhasil atau error dalam formulir menggunakan [template yang diperluas](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#templates), seperti [amp-mustache](amp-mustache.md), atau respons berhasil melalui data binding dengan [amp-bind](amp-bind.md) dan atribut respons berikut:
 
 | Atribut respons | Deskripsi |
 |-----------|---------------------|
@@ -299,7 +299,7 @@ Anda dapat merender respons berhasil atau error dalam formulir menggunakan [temp
 | `submit-error` | Dapat digunakan untuk menampilkan error pengiriman jika responsnya adalah tidak berhasil (artinya, tidak menampilkan status `2XX`).  |
 | `submitting` | Dapat digunakan untuk menampilkan pesan saat formulir sedang dikirimkan. Template untuk atribut ini memiliki akses ke kolom input formulir untuk segala keperluan tampilan. Silakan lihat [contoh formulir lengkap di bawah](#example-submitting) untuk cara menggunakan atribut `submitting`. |
 
-# Untuk merender respons dengan template:
+# Untuk merender respons dengan template: <a name="to-render-responses-with-templating"></a>
 
   * Terapkan atribut respons ke *semua turunan langsung* elemen `<form>`.
   * Render respons dalam elemen turunan dengan menyertakan template melalui tag `<template></template>` atau `<script type="text/plain"></script>` di dalamnya, atau dengan merujuk template dengan atribut `template="id_of_other_template"`.
@@ -307,7 +307,7 @@ Anda dapat merender respons berhasil atau error dalam formulir menggunakan [temp
 
 <a id="example-submitting"></a>
 
-# Contoh: Formulir menampilkan pesan berhasil, error, dan sedang mengirim
+# Contoh: Formulir menampilkan pesan berhasil, error, dan sedang mengirim <a name="example-form-displays-success-error-and-submitting-messages"></a>
 
 Pada contoh berikut, respons dirender dalam template inline yang berada di dalam formulir.
 
@@ -384,7 +384,7 @@ untuk mengonfirmasi! Setelah itu, kami akan mulai mengirim artikel mingguan tent
 ```
 Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
-# Untuk merender respons berhasil dengan data binding
+# Untuk merender respons berhasil dengan data binding <a name="to-render-a-successful-response-with-data-binding"></a>
 
 * Gunakan [atribut on](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) untuk mengikat atribut *submit-success* formulir ke [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29).
 * Gunakan properti `event` untuk mengambil data respons.
@@ -425,7 +425,7 @@ Kemudian `amp-bind` mengupdate teks elemen `<p>` agar cocok dengan status `subsc
   <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Thanks Jane Miller! You have successfully subscribed.</p>
 ...
 ```
-# Mengalihkan setelah mengirimkan
+# Mengalihkan setelah mengirimkan <a name="redirecting-after-a-submission"></a>
 
 Anda dapat mengalihkan pengguna ke halaman baru setelah pengiriman formulir yang berhasil dengan menetapkan header respons `AMP-Redirect-To` dan menentukan URL pengalihan. URL pengalihan harus berupa URL HTTPS; jika tidak, AMP akan memunculkan error dan pengalihan tidak akan terjadi.  Header respons HTTP dikonfigurasi melalui server Anda.
 
@@ -442,7 +442,7 @@ Pastikan memperbarui header respons `Access-Control-Expose-Headers` Anda untuk m
     Periksa [Pengiriman Formulir dengan Update](https://ampbyexample.com/components/amp-form/#form-submission-with-page-update) dan [Halaman Produk](https://ampbyexample.com/samples_templates/product_page/#product-page) di AMP By Example yang menunjukkan cara menggunakan pengalihan setelah pengiriman formulir.
     [/tip]
 
-# Validasi kustom
+# Validasi kustom <a name="custom-validations"></a>
 
 Ekstensi `amp-form` memungkinkan Anda membuat UI validasi kustom sendiri dengan menggunakan atribut `custom-validation-reporting` bersama salah satu strategi pelaporan berikut: `show-first-on-submit`, `show-all-on-submit`, atau `as-you-go`.
 
@@ -502,27 +502,27 @@ Untuk pesan validasi, jika elemen Anda tidak berisi konten teks, AMP akan mengis
 Anda harus menyediakan UI validasi sendiri untuk setiap jenis status tidak valid yang dapat dimiliki input. Jika UI validasi tidak ada, pengguna tidak akan melihat `custom-validation-reporting` apa pun untuk status error yang tidak ada. Status validitas dapat ditemukan dalam [dokumentasi pelaporan validasi HTML W3C resmi](https://www.w3.org/TR/html50/forms.html#validitystate).
 [/tip]
 
-# Strategi pelaporan
+# Strategi pelaporan <a name="reporting-strategies"></a>
 
 Tentukan salah satu opsi pelaporan berikut untuk atribut `custom-validation-reporting`:
 
-# Show First on Submit
+# Show First on Submit <a name="show-first-on-submit"></a>
 
 Opsi pelaporan `show-first-on-submit` akan meniru perilaku default browser saat validasi default dimulai. Opsi ini akan menampilkan error validasi pertama yang ditemukan dan berhenti di sana.
 
-# Show All on Submit
+# Show All on Submit <a name="show-all-on-submit"></a>
 
 Opsi pelaporan `show-all-on-submit` menampilkan semua error validasi atas semua input yang tidak valid saat formulir dikirimkan. Opsi ini berguna jika Anda ingin menampilkan ringkasan validasi.
 
-# As You Go
+# As You Go <a name="as-you-go"></a>
 
 Opsi pelaporan `as-you-go` memungkinkan pengguna melihat pesan validasi saat mereka berinteraksi dengan input. Misalnya, jika mengetik alamat email yang tidak valid, pengguna akan langsung melihat error tersebut.  Setelah mereka mengoreksi nilainya, error tersebut akan hilang.
 
-# Interact and Submit
+# Interact and Submit <a name="interact-and-submit"></a>
 
 Opsi pelaporan `interact-and-submit` menggabungkan perilaku `show-all-on-submit` dan `as-you-go`. Masing-masing kolom akan menampilkan error segera setelah interaksi, dan pada saat dikirim, formulir akan menampilkan error pada semua kolom yang tidak valid.
 
-# Verifikasi
+# Verifikasi <a name="verification"></a>
 
 Validasi HTML5 memberikan masukan hanya berdasarkan informasi yang tersedia di halaman, seperti apakah nilai cocok dengan pola tertentu. Dengan verifikasi `amp-form`, Anda dapat memberikan masukan kepada pengguna yang tidak dapat dilakukan dengan validasi HTML5 saja. Misalnya, formulir dapat menggunakan verifikasi untuk memeriksa apakah alamat email telah terdaftar. Kasus penggunaan lainnya adalah memverifikasi bahwa kolom kota dan kolom kode pos cocok satu sama lain.
 
@@ -587,7 +587,7 @@ Untuk menghapus kolom dari permintaan `verify-xhr`, tambahkan atribut `no-verify
 
 Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
 
-# Substitusi variabel
+# Substitusi variabel <a name="variable-substitutions"></a>
 
 Ekstensi `amp-form` memungkinkan [substitusi variabel platform]( ../../spec/amp-var-substitutions.md) untuk input yang tersembunyi dan yang memiliki atribut `data-amp-replace`. Pada setiap pengiriman formulir, `amp-form` akan menemukan semua `input[type=hidden][data-amp-replace]` di dalam formulir dan menerapkan substitusi variabel ke atribut `value`-nya dan menggantinya dengan hasil dari substitusi tersebut.
 
@@ -626,15 +626,15 @@ Perhatikan bahwa `CANONICAL_HOSTNAME` di atas tidak diganti karena tidak tercant
 
 Substitusi akan terjadi pada setiap pengiriman berikutnya. Baca selengkapnya tentang [substitusi variabel di AMP]( ../../spec/amp-var-substitutions.md).
 
-# Polyfill
+# Polyfill <a name="polyfills"></a>
 
 Ekstensi `amp-form` menyediakan polyfill untuk perilaku dan fungsionalitas yang tidak ada pada beberapa browser atau yang diimplementasikan dalam CSS versi berikutnya.
 
-# Pemblokiran pengiriman tidak valid dan balon pesan validasi
+# Pemblokiran pengiriman tidak valid dan balon pesan validasi <a name="invalid-submit-blocking-and-validation-message-bubble"></a>
 
 Browser yang menggunakan mesin berbasis webkit saat ini (per Agustus 2016) tidak mendukung pengiriman formulir yang tidak valid. Browser ini meliputi Safari pada semua platform, dan semua browser iOS. Ekstensi `amp-form` mem-polyfill perilaku ini untuk memblokir setiap pengiriman yang tidak valid dan menampilkan balon pesan validasi pada input yang tidak valid.
 
-# Pseudo-class interaksi pengguna
+# Pseudo-class interaksi pengguna <a name="user-interaction-pseudo-classes"></a>
 
 Pseudo-class `:user-invalid` dan `:user-valid` adalah bagian dari [spesifikasi CSS Selectors 4 mendatang](https://drafts.csswg.org/selectors-4/#user-pseudos) dan diperkenalkan untuk mendukung hook yang lebih baik guna menata gaya kolom valid/tidak valid berdasarkan beberapa kriteria.
 
@@ -642,7 +642,7 @@ Salah satu perbedaan utama antara class `:invalid` dan `:user-invalid` adalah ka
 
 Ekstensi `amp-form` menyediakan [class](#classes-and-css-hooks) untuk mem-polyfill pseudo-class ini. Ekstensi `amp-form` juga menyebarkan pseudo-class ini ke elemen `fieldset` dan `form` ancestor.
 
-# Validasi `<textarea>`
+# Validasi `<textarea>` <a name="-validation"></a>
 
 Pencocokan ekspresi reguler adalah fitur validasi umum yang didukung secara native pada sebagian besar elemen input, kecuali untuk `<textarea>`. Kami mem-polyfill fungsionalitas ini dan mendukung atribut `pattern` pada elemen `<textarea>`.
 
@@ -651,9 +651,9 @@ Formulir AMP menyediakan atribut `autoexpand` ke elemen `<textarea>`. Hal ini me
 ```html
 <textarea autoexpand></textarea>
 ```
-# Penataan gaya
+# Penataan gaya <a name="styling"></a>
 
-# Class dan hook CSS
+# Class dan hook CSS <a name="classes-and-css-hooks"></a>
 
 Ekstensi `amp-form` menyediakan class dan hook CSS yang dapat dimanfaatkan penayang untuk menata gaya formulir dan input mereka.
 
@@ -679,9 +679,9 @@ Lihat [contoh lengkapnya di sini](https://github.com/ampproject/amphtml/blob/mas
 Kunjungi [AMP Start](https://ampstart.com/components#form-elements) untuk melihat elemen formulir AMP responsif dan telah ditata gayanya yang dapat Anda gunakan di halaman AMP.
 [/tip]
 
-# Pertimbangan Keamanan
+# Pertimbangan Keamanan <a name="security-considerations"></a>
 
-# Melindungi dari serangan XSRF
+# Melindungi dari serangan XSRF <a name="protecting-against-xsrf"></a>
 
 Selain mengikuti detail dalam [spesifikasi CORP AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md), harap perhatikan lebih lanjut bagian [“Memproses permintaan yang mengubah status”](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md)#processing-state-changing-requests) untuk melindungi dari [serangan XSRF](https://en.wikipedia.org/wiki/Cross-site_request_forgery) di mana penyerang dapat menjalankan perintah yang tidak sah menggunakan sesi pengguna aktif tanpa sepengetahuan mereka.
 

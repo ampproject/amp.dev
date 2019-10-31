@@ -25,7 +25,7 @@ $title: amp-layout
      limitations under the License.
 -->
 
-# <a name="amp-layout"></a> `amp-layout`
+
 
 <table>
   <tr>
@@ -38,7 +38,7 @@ $title: amp-layout
   </tr>
 </table>
 
-## Genel Bakış
+## Genel Bakış <a name="overview"></a>
 
 `amp-layout` bileşeni, herhangi bir öğeye en boy oranına dayanan duyarlı düzenler uygulamanıza olanak tanır. `amp-layout` bileşeni, mevcut AMP bileşenlerinde [düzen](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) özelliğine benzer şekilde çalışır ancak HTML işaretlemelerini alt öğe olarak destekler. Desteklenen diğer düzenlerin tümü `amp-layout` ile çalışır (ör. fixed-height, fixed vb.).
 
@@ -55,11 +55,11 @@ Bu örnekte, satır içi SVG ile çizilmiş bir dairenin çevresinde duyarlı bi
   </amp-layout>
 ```
 
-## Özellikler
+## Özellikler <a name="attributes"></a>
 
 Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../documentation/guides-and-tutorials/learn/common_attributes.md) içerir.
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonunda [amp-layout kurallarına](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.
 ,false,false

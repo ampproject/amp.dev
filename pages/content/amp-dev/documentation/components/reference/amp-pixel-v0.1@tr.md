@@ -1,4 +1,5 @@
 ---
+$title: amp-pixel
 $category@: ads-analytics
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-pixel
+
 
 
 <table>
@@ -44,7 +45,7 @@ teaser:
   </tr>
 </table>
 
-## Davranış
+## Davranış <a name="behavior"></a>
 
 `amp-pixel` bileşeni, basit bir `img` izleme pikseli gibi davranır. Tek bir URL alır ancak istekte bulunulurken URL dizesindeki bileşenle değiştirilebilen değişkenler sağlar. Daha ayrıntılı bilgi için [değişiklikler](#substitutions) bölümüne bakın.
 
@@ -59,13 +60,13 @@ Bu temel örnekte `amp-pixel`, belirtilen URL'ye basit bir GET isteği gönderir
 Analiz isteklerinin yönlendirme üstbilgisindeki AMP URL'leri işlenirken `usqp` parametresini çıkarın veya yoksayın. Bu parametre, Google tarafından Google AMP Önbelleği denemelerinin tetiklenmesi amacıyla kullanılır.
 [/tip]
 
-## Özellikler
+## Özellikler <a name="attributes"></a>
 
-##### src (gerekli)
+##### src (gerekli) <a name="src-required"></a>
 
 `https` protokolü olması gereken bir uzak uç nokta basit URL'si.
 
-##### referrerpolicy (isteğe bağlı)
+##### referrerpolicy (isteğe bağlı) <a name="referrerpolicy-optional"></a>
 
 Bu özellik, `<img>` öğesindeki `referrerpolicy` özelliğine benzer ancak yalnızca `no-referrer` değeri kabul edilir. `referrerpolicy=no-referrer` belirtilirse `referrer` üstbilgisi, HTTP isteğinden kaldırılır.
 
@@ -75,16 +76,16 @@ Bu özellik, `<img>` öğesindeki `referrerpolicy` özelliğine benzer ancak yal
     referrerpolicy="no-referrer"></amp-pixel>
 ```
 
-##### allow-ssr-img (isteğe bağlı)
+##### allow-ssr-img (isteğe bağlı) <a name="allow-ssr-img-optional"></a>
 
 AMP4ADS reklam öğelerinde kullanılan bu özellik, doğrulama sonrası dönüşümün parçası olarak, bir img öğesinin doğrudan amp-pixel öğesine yerleştirilmesiyle ping komutunun AMP çalışma zamanı getirme/yürütme işlemine paralel olarak gönderilmesine olanak tanınabileceğini belirtir.
 Bunun, URL içindeki makroların GENİŞLETİLMEYECEĞİ anlamına gelir. Bu nedenle, yalnızca src'de mevcut değillerse kullanın.
 
-##### common attributes
+##### common attributes <a name="common-attributes"></a>
 
 Bu öğe, genişletilmiş [ortak özellikleri](../../../documentation/guides-and-tutorials/learn/common_attributes.md) AMP bileşenlerine ekler.
 
-## Değişiklikler
+## Değişiklikler <a name="substitutions"></a>
 
 `amp-pixel`, tüm standart URL değişkeni değişikliklerine izin verir.
 Daha fazla bilgi için [Değişiklik Kılavuzu](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md) dokümanına bakın.
@@ -96,10 +97,10 @@ Aşağıdaki örnekte, `https://foo.com/pixel?0.8390278471201` gibi bir istekte 
     layout="nodisplay"></amp-pixel>
 ```
 
-## Stil
+## Stil <a name="styling"></a>
 
 `amp-pixel` şekillendirilmemelidir.
 
-## Doğrulama
+## Doğrulama <a name="validation"></a>
 
 AMP doğrulayıcı spesifikasyonundaki [amp-pixel kurallarına](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) bakın.

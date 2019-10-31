@@ -19,14 +19,11 @@
 const URL = require('url').URL;
 const config = require('@lib/config.js');
 
-const FORMATS = ['websites', 'stories', 'ads', 'email'];
+const {SUPPORTED_FORMATS} = require('../amp/formatHelper.js');
 
-const FILTER_CLASSES = {
-  'websites': 'ap--websites',
-  'stories': 'ap--stories',
-  'ads': 'ap--ads',
-  'email': 'ap--email',
-};
+const FILTER_CLASSES = Object.fromEntries(
+    SUPPORTED_FORMATS.map((format) => [format, `ap--${format}`])
+);
 
 const FILTERED_ROUTES = [
   /\/documentation\/guides-and-tutorials.*/,
@@ -239,4 +236,3 @@ class Filter {
 
 module.exports.filterPage = filterPage;
 module.exports.isFilterableRoute = isFilterableRoute;
-module.exports.FORMATS = FORMATS;

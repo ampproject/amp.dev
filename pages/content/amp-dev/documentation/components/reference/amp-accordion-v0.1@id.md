@@ -1,4 +1,5 @@
 ---
+$title: amp-accordion
 $category@: layout
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-accordion
+
 
 Menyediakan cara bagi pengunjung untuk melihat sekilas garis besar konten dan meloncat ke bagian mana pun. Cara ini berguna pada perangkat seluler yang bahkan beberapa kalimat dalam suatu bagian pun terkadang memerlukan scrolling.
 
@@ -45,7 +46,7 @@ Menyediakan cara bagi pengunjung untuk melihat sekilas garis besar konten dan me
 </table>
 
 
-## Perilaku
+## Perilaku <a name="behavior"></a>
 
 Komponen `amp-accordion` memungkinkan Anda menampilkan bagian konten yang dapat diciutkan dan diluaskan. Setiap turunan langsung dari komponen `amp-accordion` akan dianggap sebagai bagian dalam accordion. Setiap node tersebut harus berupa tag `<section>`.
 
@@ -56,7 +57,7 @@ Komponen `amp-accordion` memungkinkan Anda menampilkan bagian konten yang dapat 
 * Mengklik/menge-tap judul bagian akan memperluas atau menciutkan bagian itu.
 * Status diciutkan/diluaskan setiap bagian dalam elemen `amp-accordion` akan dipertahankan selama level sesi. Untuk berhenti mempertahankan status ini, tambahkan atribut `disable-session-states` ke elemen `amp-accordion`.
 
-#### Contoh: Menampilkan accordion
+#### Contoh: Menampilkan accordion <a name="example-displaying-an-accordion"></a>
 
 Dalam contoh ini, kami menampilkan tiga bagian. Bagian ketiga diluaskan saat halaman dimuat.  Selain itu, kami tidak mempertahankan status yang diciutkan/diluaskan dengan menetapkan `disable-session-states`.
 
@@ -85,7 +86,7 @@ Dalam contoh ini, kami menampilkan tiga bagian. Bagian ketiga diluaskan saat hal
 Untuk melihat demo `amp-accordion` lainnya, buka [AMP By Example](https://ampbyexample.com/components/amp-accordion/).
 [/tip]
 
-### Peristiwa
+### Peristiwa <a name="events"></a>
 
 Peristiwa di bawah akan dipicu pada `section` dari `accordion`.
 
@@ -101,7 +102,7 @@ Peristiwa di bawah akan dipicu pada `section` dari `accordion`.
   </tr>
 </table>
 
-### Tindakan
+### Tindakan <a name="actions"></a>
 
 <table>
   <tr>
@@ -122,7 +123,7 @@ Peristiwa di bawah akan dipicu pada `section` dari `accordion`.
   </tr>
 </table>
 
-#### Atribut
+#### Atribut <a name="attributes"></a>
 
 <table>
   <tr>
@@ -143,7 +144,7 @@ Peristiwa di bawah akan dipicu pada `section` dari `accordion`.
   </tr>
 </table>
 
-## Penataan gaya
+## Penataan gaya <a name="styling"></a>
 
 * Anda dapat menggunakan pemilih elemen `amp-accordion` untuk menata gayanya dengan bebas.
 * Elemen `amp-accordion` selalu berupa `display: block`.
@@ -153,6 +154,6 @@ Peristiwa di bawah akan dipicu pada `section` dari `accordion`.
 * Margin elemen `<amp-accordion>`, `<section>`, judul, dan isi ditetapkan ke 0 dan dapat diganti dalam gaya kustom.
 * Baik elemen judul maupun isi bersifat `position: relative`.
 
-## Validasi
+## Validasi <a name="validation"></a>
 
 Lihat [aturan amp-accordion](https://github.com/ampproject/amphtml/blob/master/extensions/amp-accordion/validator-amp-accordion.protoascii) dalam spesifikasi validator AMP.

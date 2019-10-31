@@ -1,4 +1,5 @@
 ---
+$title: amp-ad
 $category@: ads-analytics
 formats:
 - websites
@@ -6,11 +7,11 @@ teaser:
   text: 一种用于展示广告的容器。
 ---
 
-# amp-ad/amp-embed
+
 
 一种用于展示广告的容器。`amp-embed` 是 `amp-ad` 标记的别名，以不同的标记名称提供后者的所有功能。在语义上更准确的情况下，请使用 `amp-embed`。AMP 文档仅支持通过 HTTPS 投放的广告/嵌入内容。
 
-# `amp-ad` / `amp-embed`
+# <a name="amp-ad"></a> amp-ad / amp-embed
 
 
 [tip type="note"]
@@ -53,13 +54,13 @@ limitations under the License.
   </tr>
 </table>
 
-## 行为
+## 行为 <a name="behavior"></a>
 
 与 AMP 文档中的所有其他资源一样，广告会随一个名为 `<amp-ad>` 的特殊自定义元素一起加载。AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AMP runtime 会通过 iframe 沙盒将来自另一个来源的 iframe 加载为 AMP 文档，并且会在该 iframe 沙盒内执行相应广告网络的 JS。
 
-`<amp-ad>` 要求根据其布局类型需要遵从的[规则](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#%28tl;dr%29-summary-of-layout-requirements-&amp;-behaviors)指定宽度值和高度值，并要求提供 `type` 参数，以便选择展示哪个广告网络。标记上的所有 `data-*` 属性会自动作为参数传递给最终呈现广告的代码。给定类型的广告网络所需的 `data-` 属性取决于广告网络，并且必须与广告网络一起记录。
+`<amp-ad>` 要求根据其布局类型需要遵从的[规则](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#tldr-summary-of-layout-requirements--behaviors)指定宽度值和高度值，并要求提供 `type` 参数，以便选择展示哪个广告网络。标记上的所有 `data-*` 属性会自动作为参数传递给最终呈现广告的代码。给定类型的广告网络所需的 `data-` 属性取决于广告网络，并且必须与广告网络一起记录。
 
-#### 示例：展示一些广告
+#### 示例：展示一些广告 <a name="example-displaying-a-few-ads"></a>
 
 [example preview="inline" playground="true" imports="amp-ad"]
 ```html
@@ -93,7 +94,7 @@ limitations under the License.
 ```
 [/example]
 
-## 属性
+## 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -135,7 +136,7 @@ limitations under the License.
   </tr>
 </table>
 
-## 占位符
+## 占位符 <a name="placeholder"></a>
 
 `amp-ad` 可能支持包含 `placeholder` 属性的子元素。如果广告网络支持此元素，此元素会在广告可供查看之前一直显示。如需了解详情，请参阅[占位符和后备行为](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)。
 
@@ -146,7 +147,7 @@ limitations under the License.
 </amp-ad>
 ```
 
-## 没有广告
+## 没有广告 <a name="no-ad-available"></a>
 
 如果没有广告可投放到相应广告位，AMP 会尝试收起 `amp-ad` 元素（即，将其设为 `display: none`）。AMP 负责确定可以在不影响用户滚动位置的情况下执行此操作。如果广告位于当前视口中，则不会被收起，因为该操作会影响用户的滚动位置；不过，如果广告位于当前视口之外，则会被收起。
 
@@ -160,7 +161,7 @@ limitations under the License.
 </amp-ad>
 ```
 
-## 投放视频广告
+## 投放视频广告 <a name="serving-video-ads"></a>
 
 有 3 种方式可通过视频广告在 AMP 中利用视频获利。
 
@@ -172,7 +173,7 @@ limitations under the License.
     * 如果在第一个视口中加载播放器，请确保有一张海报。[详细信息](amp-iframe.md#iframe-with-placeholder)。
     * 必须通过 HTTPS 投放视频和海报。</li>
 
-## 从自定义网域投放广告
+## 从自定义网域投放广告 <a name="running-ads-from-a-custom-domain"></a>
 
 AMP 支持加载用于从自定义网域（例如您自己的网域）加载广告的引导 iframe。
 
@@ -184,7 +185,7 @@ AMP 支持加载用于从自定义网域（例如您自己的网域）加载广�
 
   元标记的 `content` 属性是一个绝对网址，指向您网络服务器上的 remote.html 文件副本。此网址必须使用“https”架构。它所在的位置不能与 AMP 文件所在的位置属于同一来源。例如，如果您将 AMP 文件托管在 `www.example.com` 上，则此网址不能位于 `www.example.com` 上（但可以位于 `something-else.example.com` 上）。如需详细了解允许的 iframe 来源，请参阅[《iframe 来源政策》](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)。
 
-### 安全
+### 安全 <a name="security"></a>
 
 先**验证传入的数据**，然后再将其传递给 `draw3p` 函数，以确保您的 iframe 仅执行预期的操作。对于允许自定义 JavaScript 注入的广告网络来说，尤为如此。
 
@@ -197,11 +198,11 @@ iframe 还应强制规定它们只能 iframe 到预期的来源。来源为：
 
 可以使用 `draw3p` 的第 3 个参数强制规定来源，但必须额外使用 [allow-from](https://developer.mozilla.org/en-US/docs/Web/HTTP/X-Frame-Options) 指令，以便实现全面的浏览器支持。
 
-### 优化传入广告配置
+### 优化传入广告配置 <a name="enhance-incoming-ad-configuration"></a>
 
 是否进行此项优化完全由您自己决定：有时需要先优化广告请求，然后再向广告服务器发出广告请求。
 
-如果您的广告网络支持[快速获取](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad-implementation)，请使用[实时配置](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC)。（例如，DoubleClick 和 AdSense 集成均支持快速获取和 RTC）
+如果您的广告网络支持[快速获取](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md#creating-an-amp-ad)，请使用[实时配置](https://github.com/ampproject/amphtml/blob/master/extensions/amp-a4a/rtc-documentation.md) (RTC)。（例如，DoubleClick 和 AdSense 集成均支持快速获取和 RTC）
 
 如果您的广告网络使用延迟获取，您可以将回调传递给 [remote.html](https://github.com/ampproject/amphtml/blob/master/3p/remote.html) 文件中的 `draw3p` 函数调用。该回调会接收传入配置作为第一个参数，然后接收另一个回调作为第二个参数（在下面的示例中，调用了 `done`）。必须使用更新后的配置调用该回调，广告呈现才会继续。
 
@@ -218,15 +219,15 @@ draw3p(function(config, done) {
 }, ['allowed-ad-type'], ['your-domain.com']);
 ```
 
-## 样式设置
+## 样式设置 <a name="styling"></a>
 
 `<amp-ad>` 元素本身可能不具备包含 CSS `position: fixed` 集（`amp-lightbox` 除外）的容器，或可能未位于此类容器中。这是因为全页展示的重叠式广告会影响用户体验。我们可能会考虑将来允许在能够使特定用户体验保持不变的 AMP 受控容器中使用类似的广告格式。
 
-## 验证
+## 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-ad 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad/validator-amp-ad.protoascii)。
 
-## 支持的广告网络
+## 支持的广告网络 <a name="supported-ad-networks"></a>
 
 * [A8](https://github.com/ampproject/amphtml/blob/master/ads/a8.md)
 * [A9](https://github.com/ampproject/amphtml/blob/master/ads/a9.md)
@@ -408,7 +409,7 @@ draw3p(function(config, done) {
 * [Zedo](https://github.com/ampproject/amphtml/blob/master/ads/zedo.md)
 * [Zucks](https://github.com/ampproject/amphtml/blob/master/ads/zucks.md)
 
-## 支持的嵌入类型
+## 支持的嵌入类型 <a name="supported-embed-types"></a>
 
 * [24smi](https://github.com/ampproject/amphtml/blob/master/ads/24smi.md)
 * [AJA](https://github.com/ampproject/amphtml/blob/master/ads/aja.md)
@@ -416,6 +417,7 @@ draw3p(function(config, done) {
 * [Dable](https://github.com/ampproject/amphtml/blob/master/ads/dable.md)
 * [Engageya](https://github.com/ampproject/amphtml/blob/master/ads/engageya.md)
 * [Epeex](https://github.com/ampproject/amphtml/blob/master/ads/epeex.md)
+* [Insticator](https://github.com/ampproject/amphtml/blob/master/ads/insticator.md)
 * [Jubna](https://github.com/ampproject/amphtml/blob/master/ads/jubna.md)
 * [Outbrain](https://github.com/ampproject/amphtml/blob/master/ads/outbrain.md)
 * [Postquare](https://github.com/ampproject/amphtml/blob/master/ads/postquare.md)

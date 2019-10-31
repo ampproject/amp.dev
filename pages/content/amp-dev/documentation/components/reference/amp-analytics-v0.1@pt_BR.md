@@ -1,4 +1,5 @@
 ---
+$title: amp-analytics
 $category@: ads-analytics
 formats:
 - websites
@@ -25,7 +26,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-analytics
+
 
 Registra dados de análise de documentos AMP.
 
@@ -42,7 +43,7 @@ Registra dados de análise de documentos AMP.
 
 
 
-## Pretende enviar análises para um fornecedor ou internamente?
+## Pretende enviar análises para um fornecedor ou internamente? <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
 Antes de começar a usar o AMP Analytics no seu site, é preciso decidir se você usará ferramentas de análise de terceiros para examinar o engajamento dos usuários ou sua própria solução interna.
 
@@ -83,7 +84,7 @@ No exemplo a seguir, os dados de análise são enviados à Nielsen, um fornecedo
 </amp-analytics>
 ```
 
-### Enviar dados internamente
+### Enviar dados internamente <a name="sending-data-in-house"></a>
 
 Caso você tenha sua própria solução interna para avaliar o engajamento dos usuários, basta um URL para integrar o AMP Analytics a essa solução. Será nele que você enviará os dados. Outra opção é enviar os dados a vários URLs. Por exemplo, é possível enviar dados de visualização de página para um URL e dados de envolvimento com redes sociais para outro.
 
@@ -126,7 +127,7 @@ Veja um exemplo simples que rastreia visualizações de página.  Sempre que uma
 para alguns casos de uso comuns de rastreamento (por exemplo, visualizações de página, cliques em páginas, rolagem etc.), consulte [Analytics: casos de uso](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md).
 [/tip]
 
-## Especificar dados de configuração
+## Especificar dados de configuração <a name="specifying-configuration-data"></a>
 
 No elemento `<amp-analytics>`, você especifica um objeto de configuração JSON que contenha os detalhes do que medir e para onde enviar os dados de análise.
 
@@ -158,7 +159,7 @@ O objeto de configuração para `<amp-analytics>` usa o seguinte formato:
 }
 ```
 
-### Configuração in-line ou remota
+### Configuração in-line ou remota <a name="inline-or-remote-configuration"></a>
 
 Os dados de configuração podem ser especificados in-line ou buscados remotamente especificando um URL no atributo `config`. Além disso, a configuração integrada para os fornecedores mais usados pode ser selecionada utilizando o atributo `type`.
 
@@ -167,7 +168,7 @@ Se forem usados dados de configuração de mais de uma dessas fontes, os objetos
 1. a configuração remota terá prioridade sobre a configuração in-line;
 1. e a configuração in-line terá precedência sobre a configuração do fornecedor.
 
-#### Carregar configuração remota
+#### Carregar configuração remota <a name="loading-remote-configuration"></a>
 
 Para carregar uma configuração remota, no elemento `<amp-analytics>`, especifique o atributo `config` e o URL para os dados de configuração. O URL especificado precisa usar o esquema HTTPS. O URL pode incluir [variáveis de URL de AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) (link em inglês). Para acessar cookies, consulte o atributo [`data-credentials`](#data-credentials). A resposta precisa seguir as [diretrizes de segurança de CORS nas AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md) (link em inglês).
 
@@ -177,7 +178,7 @@ Neste exemplo, especificamos o atributo `config` para carregar os dados de confi
 <amp-analytics config="https://example.com/analytics.account.config.json">
 ```
 
-#### Reescritor de configuração
+#### Reescritor de configuração <a name="configuration-rewriter"></a>
 
 O recurso de reescrever configuração foi criado para permitir que os fornecedores de análise reescrevam dinamicamente uma configuração fornecida. Isso é semelhante ao recurso de configuração remota, mas inclui também qualquer configuração fornecida pelo usuário na solicitação feita ao servidor. No momento, esse recurso só pode ser ativado por um fornecedor de análise.
 
@@ -200,7 +201,7 @@ Em seguida, o ambiente de execução mescla toda a configuração fornecida para
 1. Configuração in-line
 1. Configuração definida pelo fornecedor
 
-##### Grupos de variáveis
+##### Grupos de variáveis <a name="variable-groups"></a>
 
 Os grupos de variáveis são um recurso que permite aos fornecedores de análise agrupar um conjunto predefinido de variáveis que podem ser facilmente ativadas por um usuário. Depois, essas variáveis serão resolvidas e enviadas ao endpoint do `configRewriter` especificado.
 
@@ -263,13 +264,13 @@ Neste exemplo, o corpo da solicitação seria semelhante a este:
   }
 ```
 
-### Objetos de dados de configuração
+### Objetos de dados de configuração <a name="configuration-data-objects"></a>
 
-#### Solicitações
+#### Solicitações <a name="requests"></a>
 
 O objeto de configuração `requests` especifica os URLs usados para transmitir dados para uma plataforma de análise, bem como o comportamento de envio em lote ou de criação de relatórios da solicitação. O `request-name` especifica qual solicitação precisa ser enviada em resposta a um evento específico (por exemplo, `pageview`, `event` etc.). O `request-value` contém um URL HTTPS. O valor pode incluir tokens de marcadores que podem fazer referência a outras solicitações ou variáveis. O `request-value` também pode ser um objeto com configurações de solicitação opcionais.
 
-##### Configurações de solicitação
+##### Configurações de solicitação <a name="request-configs"></a>
 
 As propriedades para definir uma solicitação com um objeto são:
 
@@ -294,7 +295,7 @@ Neste exemplo, todas as solicitações são válidas.
 
 Alguns fornecedores de análise têm uma configuração já fornecida, que você usa por meio do atributo `type`. Se você estiver usando um fornecedor de análise, talvez não precise incluir informações de solicitações. Consulte a documentação do fornecedor para saber se as solicitações precisam ser configuradas e de que forma.
 
-##### Configuração de lotes
+##### Configuração de lotes <a name="batching-configs"></a>
 
 Para reduzir o número de pings de solicitação, especifique os comportamentos em lote na configuração da solicitação. Todos os [`extraUrlParams`](#extra-url-params) de `triggers` que usam a mesma solicitação são anexados ao `baseUrl` dela.
 
@@ -346,7 +347,7 @@ A configuração a seguir envia o primeiro ping de solicitação após um segund
 }
 ```
 
-#### Variáveis
+#### Variáveis <a name="vars"></a>
 
 O componente `amp-analytics` define muitas variáveis básicas que podem ser usadas em solicitações. Uma lista de todas essas variáveis está disponível no [Guia de variáveis do `amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md). Além disso, todas as variáveis compatíveis com o [Guia de substituições de AMP para HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) (link em inglês) também são compatíveis.
 
@@ -361,7 +362,7 @@ O objeto de configuração `vars` pode ser usado para definir novos pares de cha
 }
 ```
 
-#### Parâmetros de URL extra
+#### Parâmetros de URL extra <a name="extra-url-params"></a>
 
 O objeto de configuração `extraUrlParams` especifica mais parâmetros a serem incluídos na solicitação. Por padrão, os parâmetros de URL extras são anexados à string de consulta de um URL de solicitação por meio da convenção “&foo=baz” normal.
 
@@ -383,7 +384,7 @@ O `extraUrlParamsReplaceMap` não é necessário para usar `extraUrlParams`. Se 
 
 Se `useBody` estiver ativado e a solicitação for enviada por meio do método de transporte `beacon` ou `xhrpost`, a substituição de string `extraUrlParamsReplaceMap` será realizada apenas nas chaves de nível superior em `extraUrlParams`.
 
-#### Acionadores
+#### Acionadores <a name="triggers"></a>
 
 O objeto de configuração `triggers` descreve quando uma solicitação de análise precisa ser enviada. O atributo `triggers` contém um par de chave-valor de nome do acionador e configuração do acionador. Um nome de acionador pode ser qualquer string formada por caracteres alfanuméricos (a-z A-Z 0-9). Os acionadores de uma configuração com menor precedência serão substituídos por outros de mesmo nome que venham de uma configuração com maior precedência.
 
@@ -422,7 +423,7 @@ Por exemplo, a configuração a seguir pode ser usada para fazer uma amostragem 
 },
 ```
 
-##### Seletor de elementos
+##### Seletor de elementos <a name="element-selector"></a>
 
 Alguns acionadores, como `click` e `visible`, permitem especificar um único elemento ou um conjunto de elementos usando as propriedades do seletor. Diferentes acionadores podem aplicar limitações e interpretações diferentes em elementos selecionados, por exemplo, definindo se um seletor se aplica a todos os elementos correspondentes ou ao primeiro elemento, ou quais elementos podem ser correspondidos: todos ou apenas os elementos AMP. Consulte a documentação de cada acionador relevante para ver mais detalhes.
 
@@ -433,7 +434,7 @@ As propriedades do seletor são:
     - `:root`: um seletor especial que corresponde à raiz do documento.
 - `selectionMethod`: quando especificada, esta propriedade pode ter o valor `scope` ou `closest`. `scope` permite a seleção do elemento dentro do elemento pai da tag `amp-analytics`. `closest` pesquisa o ancestral mais próximo da tag `amp-analytics` que atenda ao seletor fornecido. O valor padrão é `scope`.
 
-##### Incorporar acionador de início de renderização
+##### Incorporar acionador de início de renderização <a name="embed-render-start-trigger"></a>
 
 Elementos AMP que incorporam outros documentos em iframes (por exemplo, anúncios) podem informar um evento de início de renderização (`"on": "render-start"`). Esse evento normalmente é emitido assim que é possível confirmar que a renderização do documento incorporado começou. Consulte a documentação de determinado elemento AMP para ver se ele emite esse evento.
 
@@ -457,7 +458,7 @@ O evento de início de renderização também é emitido pelo próprio documento
   }
 }
 
-##### Acionador de carregamento inicial
+##### Acionador de carregamento inicial <a name="initial-load-trigger"></a>
 
 O evento de carregamento inicial (`"on": "ini-load"`) é acionado quando o conteúdo inicial de um elemento ou documento AMP é carregado.
 
@@ -490,7 +491,7 @@ O evento de carregamento inicial também é emitido pelo próprio documento e po
 }
 ```
 
-##### Acionador de visibilidade de página e elemento
+##### Acionador de visibilidade de página e elemento <a name="page-and-element-visibility-trigger"></a>
 
 Use o acionador de visibilidade da página (`"on": "visible"`) para disparar uma solicitação quando a página se tornar visível. O disparo desse acionador pode ser configurado usando `visibilitySpec`.
 
@@ -521,7 +522,7 @@ O seletor só pode ser usado para especificar um único elemento, não um conjun
 O acionador de visibilidade de elemento aguarda o sinal especificado pela propriedade `waitFor` em `visibilitySpec` antes de rastrear a visibilidade do elemento. Se `waitFor` não for especificado, ele aguardará o sinal [`ini-load`](#initial-load-trigger) do elemento. Consulte a documentação de `waitFor` para ver mais detalhes.
 Se `reportWhen` for especificado, o acionador aguardará esse sinal antes de enviar o evento. Isso é útil, por exemplo, para o envio de eventos de análise quando a página é fechada.
 
-##### Acionador de erro
+##### Acionador de erro <a name="error-trigger"></a>
 
 O evento de erro do usuário (`"on": "user-error"`) é acionado quando ocorre um erro que pode ser atribuído ao autor da página ou ao software usado para publicar a página. Isso inclui, mas não se limita a, configuração incorreta de um componente AMP, anúncios configurados incorretamente ou declarações com falhas. Os erros do usuário também são informados no console para desenvolvedores.
 
@@ -622,7 +623,7 @@ Além das condições acima, o `visibilitySpec` também permite algumas variáve
 
 Além das variáveis fornecidas como parte dos acionadores, também é possível especificar outras substituições/modificações para [variáveis como atributos de dados](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute). Se usados, esses atributos de dados precisam fazer parte do elemento especificado como [`selector`](#element-selector).
 
-##### Acionador de cliques
+##### Acionador de cliques <a name="click-trigger"></a>
 
 Use o acionador de cliques (`"on": "click"`) para disparar uma solicitação quando um elemento especificado receber um clique. Use o [`selector`](#element-selector) para controlar quais elementos farão com que essa solicitação seja disparada. O acionador será disparado para todos os elementos correspondentes ao seletor especificado.
 
@@ -645,7 +646,7 @@ Use o acionador de cliques (`"on": "click"`) para disparar uma solicitação qua
 
 Além das variáveis fornecidas como parte dos acionadores, também é possível especificar outras substituições/modificações para [variáveis como atributos de dados](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#variables-as-data-attribute). Se usados, esses atributos de dados precisam fazer parte do elemento especificado como `selector`.
 
-##### Acionador de rolagem
+##### Acionador de rolagem <a name="scroll-trigger"></a>
 
 Use o acionador de rolagem (`"on": "scroll"`) para disparar uma solicitação sob determinadas condições quando a página for rolada. Esse acionador fornece [variáveis especiais](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction) que indicam os limites que acionaram o envio de uma solicitação. Use `scrollSpec` para controlar quando isso será disparado:
 
@@ -664,7 +665,7 @@ Use o acionador de rolagem (`"on": "scroll"`) para disparar uma solicitação so
 }
 ```
 
-##### Acionador de timer
+##### Acionador de timer <a name="timer-trigger"></a>
 
 Use o acionador do timer (`"on": "timer"`) para disparar uma solicitação em um intervalo de tempo normal. Use `timerSpec` para controlar quando isso será disparado:
 - `timerSpec`: especificação para acionadores do tipo `timer`. A menos que um `startSpec` seja especificado, o timer será acionado imediatamente (por padrão, que pode ser alterado) e, em seguida, em um intervalo especificado.
@@ -713,7 +714,7 @@ Para configurar um timer que é usado por eventos de tempo do usuário:
 
 Consulte a especificação dos [acionadores](#triggers) para ver detalhes sobre como criar acionadores de timers aninhados. Não é permitido usar um acionador de timer para iniciar ou parar um timer.
 
-##### Acionador oculto
+##### Acionador oculto <a name="hidden-trigger"></a>
 
 Use o acionador oculto (`"on": "hidden"`) para disparar uma solicitação quando a página ficar oculta.
 
@@ -746,15 +747,15 @@ A configuração acima é traduzida como:
 Quando a página ficar oculta, dispare uma solicitação se o elemento #anim-id ficar visível (em mais de 20% da área da janela de visualização) por mais de três segundos, no total.
 </blockquote>
 
-##### Acionadores de acesso
+##### Acionadores de acesso <a name="access-triggers"></a>
 
 O sistema AMP Access emite diversos eventos para diferentes estados do fluxo de acesso. Para ver detalhes sobre acionadores de acesso (`"on": "access-*"`), consulte [AMP Access e Analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) (link em inglês).
 
-#### Acionadores de análise de vídeo
+#### Acionadores de análise de vídeo <a name="video-analytics-triggers"></a>
 
 A análise de vídeo fornece vários acionadores (`"on": "video-*"`) que podem ser usados pelos editores para acompanhar diferentes eventos que ocorrem durante o ciclo de vida de um vídeo. Mais detalhes estão disponíveis em [Análise de vídeo de AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) (link em inglês).
 
-#### Transporte
+#### Transporte <a name="transport"></a>
 
 O objeto de configuração `transport` especifica como enviar uma solicitação. O valor é um objeto com campos que indicam quais métodos de transporte são aceitáveis.
 
@@ -778,7 +779,7 @@ No exemplo abaixo, um URL de `iframe` não é especificado, e `beacon` e `xhrpos
 
 Para saber mais, consulte [este exemplo que implementa a API de cliente para transporte de iframe](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) e [esta página de exemplo que incorpora esse iframe](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport.amp.html) (links em inglês). O exemplo carrega um [anúncio falso](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html), que contém a tag `amp-analytics`. O conteúdo falso do anúncio inclui algumas instruções extras de configuração que precisam ser seguidas.
 
-##### Usar corpo para outros parâmetros de URL
+##### Usar corpo para outros parâmetros de URL <a name="use-body-for-extra-url-params"></a>
 
 A opção de configuração `useBody` indica se os `extraUrlParams` precisam ou não ser incluídos no corpo da solicitação POST, e não no URL, como parâmetros de consulta codificados pelo URL.
 
@@ -795,7 +796,7 @@ Com o `useBody`, é possível incluir objetos aninhados em `extraUrlParams`. No 
 }
 ```
 
-##### Política do referenciador
+##### Política do referenciador <a name="referrer-policy"></a>
 
 A política do referenciador pode ser especificada como um campo `referrerPolicy` na configuração `transport`. Atualmente, apenas o valor `no-referrer` é aceito.
 A política do referenciador só está disponível para o transporte `image`. Se `referrerPolicy: no-referrer` for especificado, os transportes `beacon` e `xhrpost` serão modificados para `false`.
@@ -809,7 +810,7 @@ transport: {
   }
 ```
 
-#### Vinculadores
+#### Vinculadores <a name="linkers"></a>
 
 O recurso `linkers` é usado para ativar a sincronização de códigos entre domínios. O `amp-analytics` usará um [objeto de configuração](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-forwarding.md#format) para criar uma "string de vinculação", que será anexada aos links de saída especificados na página como parâmetro de URL. Quando um usuário clica em um desses links, a página de destino lê a string do vinculador no parâmetro de URL para executar a sincronização de código. Geralmente, esse recurso é usado para entrar em sessões de usuário em um domínio proxy de AMP e em um domínio do editor
 
@@ -817,17 +818,17 @@ Veja detalhes sobre como configurar o vinculador em [Encaminhamento do código d
 
 Se você precisar ingerir esse parâmetro, consulte as informações sobre como o parâmetro é criado em [Recebimento de código do vinculador](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md).
 
-#### Cookies
+#### Cookies <a name="cookies"></a>
 
 O recurso de `cookies` é compatível com a gravação de cookies no domínio de origem extraindo as informações de [`QUERY_PARAM`](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md#query-parameter) e [`LINKER_PARAM`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#linker-param) do URL do documento. Ele pode ser usado com os recursos `linkers` para executar a sincronização de código do domínio de AMP em proxy para páginas AMP no domínio de um editor.
 
 Detalhes sobre como configurar os `cookies` podem ser encontrados em [Receber parâmetros do vinculador em páginas AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#receiving-linker-params-on-amp-pages)
 
-## Validação
+## Validação <a name="validation"></a>
 
 Consulte [as regras do amp-analytics](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/validator-amp-analytics.protoascii) nas especificações do validador de AMP.
 
-### Atributos válidos para `<amp-analytics>`
+### Atributos válidos para `<amp-analytics>` <a name="valid-attributes-for-"></a>
 
 Estes são os atributos válidos para o componente `amp-analytics`:
 
@@ -859,6 +860,6 @@ Se for configurado como `include`, isso ativará a capacidade de ler e gravar co
 
 Se fornecido, a página não processará as solicitações de análise até que uma [amp-user-notification](amp-user-notification.md) com o código de elemento HTML especificado seja confirmada (aceita) pelo usuário. Trata-se de um atributo opcional.
 
-## Análise para componentes AMP
+## Análise para componentes AMP <a name="analytics-for-amp-components"></a>
 
 Os desenvolvedores de componentes AMP podem implementar a coleta de dados usando análise de AMP. Para ver mais informações, consulte a seção [Implementar análises para componentes AMP](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-components-analytics.md).

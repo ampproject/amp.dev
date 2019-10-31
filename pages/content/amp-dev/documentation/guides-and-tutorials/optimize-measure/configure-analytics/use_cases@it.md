@@ -72,7 +72,7 @@ Invia i dati sulla visualizzazione di pagina a Google Analytics
 </amp-analytics>
 ```
 
-## Come monitorare i clic sulla pagina
+## Come monitorare i clic sulla pagina <a name="tracking-page-clicks"></a>
 
 Scopri come monitorare i clic sulla pagina tramite
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md),
@@ -140,7 +140,7 @@ per inviare un evento `click` a Google Analytics quando si fa clic su un determi
 </amp-analytics>
 ```
 
-## Come monitorare lo scorrimento delle pagine
+## Come monitorare lo scorrimento delle pagine <a name="tracking-scrolling"></a>
 
 Puoi eseguire il monitoraggio dello scorrimento delle pagine utilizzando [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 Il seguente esempio utilizza l’attributo `scrollspec` per inviare un evento `scroll`
@@ -172,7 +172,7 @@ per il 90% della larghezza di `scroll`:
 </amp-analytics>
 ```
 
-## Come monitorare le interazioni con i social network
+## Come monitorare le interazioni con i social network <a name="tracking-social-interactions"></a>
 
 Scopri come monitorare le interazioni con i social network utilizzando
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md),

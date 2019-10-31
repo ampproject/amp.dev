@@ -60,7 +60,7 @@ AMP 提供了一系列[布局](../../../documentation/guides-and-tutorials/devel
 
 有关详情，请参阅[布局和媒体查询](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md)以及[布局规范](amp-html-layout/index.md)。
 
-## media
+## media <a name="media"></a>
 
 所有 AMP 元素均支持 `media` 属性。`media` 的值是一条媒体查询。如果查询不匹配，系统便既不会呈现相应元素，也不会获取其资源和可能存在的子资源。如果浏览器窗口改变了尺寸或屏幕方向，系统则会重新评估媒体查询，并会根据所得出的新结果来隐藏和显示各元素。
 

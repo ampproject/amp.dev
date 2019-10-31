@@ -1,4 +1,5 @@
 ---
+$title: amp-iframe
 $category@: layout
 formats:
 - websites
@@ -23,7 +24,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# amp-iframe
+
 
 显示 iframe。
 
@@ -43,7 +44,7 @@ limitations under the License.
   </tr>
 </table>
 
-# 行为
+# 行为 <a name="behavior"></a>
 
 `amp-iframe` 与 vanilla iframe 之间存在一些重大差异，后者旨在提高安全性并避免生成由单个 iframe 主导的 AMP 文件：
 
@@ -72,7 +73,7 @@ limitations under the License.
 如需查看 `amp-iframe` 的更多演示，请访问 [AMP By Example](https://ampbyexample.com/components/amp-iframe/)。
 [/tip]
 
-# 将 amp-iframe 用于广告
+# 将 amp-iframe 用于广告 <a name="usage-of-amp-iframe-for-advertising"></a>
 
 `amp-iframe` **不得** 用于以展示广告为主要目的的用途。您可以将 `amp-iframe` 用于展示其中部分内容是广告的视频。系统可能会强制实施此 AMP 政策：不呈现相应 iframe。
 
@@ -85,7 +86,7 @@ limitations under the License.
 * `amp-iframe` 没有完全由 iframe 控制的大小调整机制。
 * `amp-iframe` 可能无法使用可见度信息。
 
-# 属性
+# 属性 <a name="attributes"></a>
 
 <table>
   <tr>
@@ -98,7 +99,7 @@ limitations under the License.
       <br>如果未指定 <code>frameborder</code>，系统会默认将其设置为 <code>0</code>。</td>
       </tr>
       <tr>
-        <td width="40%"><strong>sandbox</strong></td>
+        <td width="40%"><strong>sandbox</strong><a name="sandbox"></a></td>
         <td><code>amp-iframe</code> 创建的 iframe 始终指定有 <code>sandbox</code> 属性。默认情况下，该属性的值为空，这意味着 iframe 已经“最大程度地沙盒化”。您可以通过设置 <code>sandbox</code> 值来选择降低 iframe 的沙盒化程度。允许浏览器支持的所有值。例如，您可以设置 <code>sandbox="allow-scripts"</code>，以支持 iframe 运行 JavaScript，也可以设置 <code>sandbox="allow-scripts allow-same-origin"</code>，以支持 iframe 运行 JavaScript、创建非 CORS XHR，以及读/写 Cookie。
           <br><br>如果您要对某个在创建时未特别考虑沙盒化的文档执行 iframe 处理，很可能需要将 <code>allow-scripts allow-same-origin</code> 添加到 <code>sandbox</code> 属性中，并且可能需要允许其他功能。
             <br><br>另请注意，沙盒适用于通过沙盒化 iframe 打开的所有窗口。这包括使用带 <code>target=_blank</code> 的链接创建的新窗口（添加 <code>allow-popups</code> 以允许此操作）。将 <code>allow-popups-to-escape-sandbox</code> 添加到 <code>sandbox</code> 属性中，确保这些新窗口的行为与未进行沙盒化的新窗口的行为类似。在大多数情况下，这可能是您所希望和期望的结果。遗憾的是，截至撰写此文时，仅 Chrome 支持 <code>allow-popups-to-escape-sandbox</code>。
@@ -110,7 +111,7 @@ limitations under the License.
               </tr>
             </table>
 
-# 具有 placeholder 的 iframe
+# 具有 placeholder 的 iframe <a name="iframe-with-placeholder"></a>
 
 如果 `amp-iframe` 包含 `placeholder` 元素，则 `amp-iframe` 可以显示在文档顶部，如下例所示。
 
@@ -137,7 +138,7 @@ window.parent.postMessage({
   }, '*');
 ```
 
-# iframe 大小调整
+# iframe 大小调整 <a name="iframe-resizing"></a>
 
 `amp-iframe` 必须指定静态布局，与任何其他 AMP 元素一样。不过，您可以在运行时调整 `amp-iframe` 的大小。为此，请按下列步骤操作：
 
@@ -179,7 +180,7 @@ window.parent.postMessage({
 * 调整大小是否为当前处于活动状态的 iframe 请求的。
 * 调整大小是否为位于视口下方或上方的 iframe 请求的。
 
-# iframe 可见度
+# iframe 可见度 <a name="iframe-viewability"></a>
 
 iframe 可以将 `send-intersections` 消息发送至其父级，以开始接收 iframe 与父视口相交部分的 IntersectionObserver 样式[更改记录](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)。
 
@@ -215,7 +216,7 @@ window.addEventListener('message', function(event) {
 
 在 iframe 移入或移出视口（或部分可见）时，或者在滚动 iframe 或调整其大小时，iframe 父级会将相交消息发送给 iframe。
 
-# 跟踪/分析 iframe
+# 跟踪/分析 iframe <a name="trackinganalytics-iframes"></a>
 
 我们强烈建议将 [`amp-analytics`](amp-analytics.md) 用于分析，因为该解决方案显然更加强大、全面和高效，可为各种分析服务供应商进行配置。
 
@@ -223,7 +224,7 @@ AMP 仅允许每个页面使用一个 iframe 进行分析和跟踪。为了节�
 
 如果 iframe 的直接目的看起来不是为用户提供服务（例如，不可见或很小），则标识为跟踪/分析 iframe。
 
-# 准则：使用现有 AMP 组件而非 amp-iframe
+# 准则：使用现有 AMP 组件而非 amp-iframe <a name="guideline-use-existing-amp-components-over-amp-iframe"></a>
 
 如果在 AMP 中无法通过其他方法获取所需的用户体验，则应将 `amp-iframe` 组件视为备用方法，也就是说，对于这种用例，现在还没有相应的 [AMP 组件](../../../documentation/components/index.html)。这是因为针对特定用例使用 AMP 组件有诸多益处，例如：
 
@@ -232,6 +233,6 @@ AMP 仅允许每个页面使用一个 iframe 进行分析和跟踪。为了节�
 * 内置大小调整功能。这意味着，大小无法预测的 iframe 内容能够更频繁向用户展示，这些内容就好像与页面内容浑然一体，而不是在可滚动的框架中。
 * 还可以内置其他功能（例如，视频播放器自动播放功能）
 
-# 验证
+# 验证 <a name="validation"></a>
 
 请参阅 AMP 验证工具规范中的 [amp-iframe 规则](https://github.com/ampproject/amphtml/blob/master/extensions/amp-iframe/validator-amp-iframe.protoascii)。

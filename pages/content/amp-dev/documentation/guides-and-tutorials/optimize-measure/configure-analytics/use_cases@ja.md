@@ -65,7 +65,7 @@ $title: 使用事例
 </amp-analytics>
 ```
 
-## ページクリックをトラッキングする
+## ページクリックをトラッキングする <a name="tracking-page-clicks"></a>
 
 ページクリックを [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 を使用してトラッキングし、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信する方法について説明します。
@@ -127,7 +127,7 @@ $title: 使用事例
 </amp-analytics>
 ```
 
-## スクロールをトラッキングする
+## スクロールをトラッキングする <a name="tracking-scrolling"></a>
 
 ページ スクロールをトラッキングするには [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)  を使用します。以下の例では、`scrollspec` 属性を使用して、ユーザーがページを垂直方向に 25%、50%、90% スクロールしたときに、指定の URL に `scroll` イベントが送信されるようにしています。また、ページを水平方向に `scroll` 幅の 90% スクロールしたときにもイベントが発生します。
 
@@ -155,7 +155,7 @@ $title: 使用事例
 </amp-analytics>
 ```
 
-## ソーシャル インタラクションをトラッキングする
+## ソーシャル インタラクションをトラッキングする <a name="tracking-social-interactions"></a>
 
 ソーシャル インタラクションをトラッキングするには、[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 を使用して、イベントデータを指定の URL と [Google アナリティクス](https://developers.google.com/analytics/devguides/collection/amp-analytics/)に送信します。

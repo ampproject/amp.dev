@@ -548,7 +548,7 @@ La lista completa de etiquetas únicas es la siguiente:
 * `<body>`
 * `<script src="https://cdn.ampproject.org/v0.js">`
 
-## Errores de estilo y de diseño
+## Errores de estilo y de diseño <a name="style-and-layout-errors"></a>
 
 Antes de entrar en los errores de [estilo](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md) y de [diseño](../../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md), hay que entender cómo funcionan en AMP. Como las páginas AMP son páginas HTML, el estilo es prácticamente el mismo que el de cualquier página HTML.
 Sin embargo, para garantizar que las páginas se carguen rápidamente, presentan algunas restricciones que el validador de AMP se encarga de hacer cumplir.

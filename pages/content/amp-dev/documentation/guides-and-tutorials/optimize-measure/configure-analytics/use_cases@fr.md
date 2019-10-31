@@ -72,7 +72,7 @@ Envoyez des données sur les vues de page à Google Analytics
 </amp-analytics>
 ```
 
-## Suivi des clics sur une page
+## Suivi des clics sur une page <a name="suivi-des-clics-sur-une-page"></a>
 
 Découvrez comment suivre les clics sur une page à l'aide de
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
@@ -140,7 +140,7 @@ pour envoyer un événement `click` à Google Analytics lorsque l'on clique sur 
 </amp-analytics>
 ```
 
-## Suivi du défilement
+## Suivi du défilement <a name="suivi-du-défilement"></a>
 
 Suivez le défilement des pages avec [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md).
 L'exemple suivant utilise l'attribut `scrollspec` pour envoyer un événement `scroll`
@@ -172,7 +172,7 @@ horizontalement la page sur 90 % de sa largeur `scroll` :
 </amp-analytics>
 ```
 
-## Suivi des interactions sociales
+## Suivi des interactions sociales <a name="suivi-des-interactions-sociales"></a>
 
 Découvrez comment suivre les interactions sociales à l'aide de
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)

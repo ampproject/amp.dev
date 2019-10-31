@@ -44,7 +44,7 @@ If you only have one page, and that page is an AMP page, you must still add the 
 **READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
 [/tip]
 
-## Integrate with third-party platforms through additional metadata
+## Integrate with third-party platforms through additional metadata  <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
 

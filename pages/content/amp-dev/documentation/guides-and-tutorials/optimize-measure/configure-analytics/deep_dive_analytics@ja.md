@@ -143,7 +143,7 @@ AMP では、同じ変数が複数使用されていないかどうかの検証�
 
 [/tip]
 
-## requests、triggers、transport
+## requests、triggers、transport <a name="requests-triggers--transports"></a>
 
 `requests` 属性では、送信するデータの種類
 （`pageviews` や `events` など）
@@ -159,7 +159,7 @@ AMP では、同じ変数が複数使用されていないかどうかの検証�
 （あわせて、
 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)の該当する項目をご確認ください）。
 
-### 送信するデータ: requests 属性
+### 送信するデータ: requests 属性 <a name="what-data-gets-sent-requests-attribute"></a>
 
 トリガー設定では、`request-name` を使用して、
 特定のイベントの発生時に送信するリクエストを指定します。
@@ -326,7 +326,7 @@ AMP では次のトリガー設定をサポートしています。
 }
 ```
 
-## 変数置換の順序
+## 変数置換の順序 <a name="variable-substitution-ordering"></a>
 
 AMP では、次の優先順位に沿って変数に値が設定されます。
 

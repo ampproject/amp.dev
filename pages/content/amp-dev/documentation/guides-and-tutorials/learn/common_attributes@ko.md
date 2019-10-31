@@ -61,7 +61,7 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
 
 자세한 내용은 [레이아웃 및 미디어 쿼리](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md) 및 [레이아웃 사양](amp-html-layout/index.md)을 참조하세요.
 
-## media
+## media <a name="media"></a>
 
 모든 AMP 요소는 `media` 속성을 지원합니다. `media` 값은 미디어 쿼리입니다. 쿼리가 일치하지 않으면 요소가 렌더링되지 않고 요소의 리소스를 가져올 수 없으며, 하위 요소의 리소스까지 가져오지 못할 수도 있습니다. 브라우저 창의 크기와 방향이 변경되는 경우 새로운 결과에 따라 미디어 쿼리가 재평가되며 요소가 숨겨지고 표시됩니다.
 

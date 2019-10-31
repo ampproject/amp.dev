@@ -65,7 +65,7 @@ Kirimkan data jumlah kunjungan halaman ke Google Analytics (lihat juga [Pelacaka
 </amp-analytics>
 ```
 
-## Melacak klik halaman
+## Melacak klik halaman <a name="tracking-page-clicks"></a>
 
 Pelajari cara melacak klik halaman menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), mengirim data peristiwa ke URL yang ditentukan, dan ke [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 
@@ -126,7 +126,7 @@ Contoh berikut menggunakan atribut `selector` `trigger` untuk mengirim peristiwa
 </amp-analytics>
 ```
 
-## Melacak scroll
+## Melacak scroll <a name="tracking-scrolling"></a>
 
 Lacak scroll halaman menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md). Contoh berikut menggunakan atribut `scrollspec` untuk mengirim peristiwa `scroll` ke URL yang ditentukan jika halaman di-scroll secara vertikal sebanyak 25%, 50%, dan 90%. Peristiwa ini juga dipicu ketika halaman di-scroll secara horizontal hingga 90% lebar `scroll`:
 
@@ -154,7 +154,7 @@ Lacak scroll halaman menggunakan [`amp-analytics`](../../../../documentation/com
 </amp-analytics>
 ```
 
-## Melacak interaksi sosial
+## Melacak interaksi sosial <a name="tracking-social-interactions"></a>
 
 Pelajari cara melacak interaksi sosial menggunakan [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), mengirim data peristiwa ke URL yang ditentukan, dan ke [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/).
 

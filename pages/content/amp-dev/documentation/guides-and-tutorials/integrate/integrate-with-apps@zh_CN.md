@@ -172,7 +172,7 @@ AMP runtime 提供了一个 Viewer API，后者提供了
 *   在基于 WebView 的查看工具中，启用第三方 Cookie。
 *   为您的平台/应用设置引荐来源网址。
 
-### 分享 AMP 内容
+### 分享 AMP 内容 <a name="sharing-amp-content"></a>
 
 在平台的 AMP 查看工具内分享 AMP 文档时，该平台
 应该分享规范网址（如果在技术上可行）。例如，如果

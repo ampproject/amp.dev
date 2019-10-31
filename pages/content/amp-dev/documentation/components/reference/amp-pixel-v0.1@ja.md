@@ -1,4 +1,5 @@
 ---
+$title: amp-pixel
 $category@: ads-analytics
 formats:
 - websites
@@ -26,7 +27,7 @@ teaser:
      limitations under the License.
 -->
 
-# amp-pixel
+
 
 
 <table>
@@ -44,7 +45,7 @@ teaser:
   </tr>
 </table>
 
-## 動作
+## 動作 <a name="behavior"></a>
 
 `amp-pixel` コンポーネントは、シンプルなトラッキング ピクセル `img` と同じように機能します。単一の URL を取りますが、リクエストの作成時に URL 文字列内のコンポーネントで置き換えられる変数を備えています。詳細については、[置換](#substitutions)をご覧ください。
 
@@ -59,13 +60,13 @@ teaser:
 アナリティクス リクエストのリファラー ヘッダー内の AMP URL を処理する際は、`usqp` パラメータを削除するか無視します。このパラメータは、Google が Google AMP キャッシュのテストをトリガーする際に使用されます。
 [/tip]
 
-## 属性
+## 属性 <a name="attributes"></a>
 
-##### src（必須）
+##### src（必須） <a name="src-required"></a>
 
 リモート エンドポイントへのシンプルな URL。`https` プロトコルの必要があります。
 
-##### referrerpolicy（省略可）
+##### referrerpolicy（省略可） <a name="referrerpolicy-optional"></a>
 
 この属性は、`<img>` の `referrerpolicy` 属性と似ていますが、使用できる値は `no-referrer` だけに限られています。`referrerpolicy=no-referrer` が指定されている場合、HTTP リクエストから `referrer` ヘッダーが削除されます。
 
@@ -75,15 +76,15 @@ teaser:
     referrerpolicy="no-referrer"></amp-pixel>
 ```
 
-##### allow-ssr-img（省略可）
+##### allow-ssr-img（省略可） <a name="allow-ssr-img-optional"></a>
 
 AMP4ADS クリエイティブ内で使用されるこの属性は、検証後の変換の一環として、img 要素を amp-pixel 要素内に直接配置し、AMP ランタイム フェッチ / 実行と並行して ping を送信できるようにします。つまり、URL 内のマクロは展開されません。src 内にマクロが存在しない場合に限り、この属性を使用するようにしてください。
 
-##### 共通の属性
+##### 共通の属性 <a name="common-attributes"></a>
 
 この要素には、AMP コンポーネントに拡張された[共通の属性](../../../documentation/guides-and-tutorials/learn/common_attributes.md)が含まれます。
 
-## 置換
+## 置換 <a name="substitutions"></a>
 
 `amp-pixel` では、標準的な URL 変数置換がすべて許可されています。詳細については、[置換ガイド](https://github.com/ampproject/amphtml/blob/master/extensions/spec/amp-var-substitutions.md)をご覧ください。
 
@@ -94,10 +95,10 @@ AMP4ADS クリエイティブ内で使用されるこの属性は、検証後の
     layout="nodisplay"></amp-pixel>
 ```
 
-## スタイル設定
+## スタイル設定 <a name="styling"></a>
 
 `amp-pixel` にはスタイルを設定しないでください。
 
-## 検証
+## 検証 <a name="validation"></a>
 
 AMP 検証ツール仕様の [amp-pixel ルール](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)をご覧ください。
