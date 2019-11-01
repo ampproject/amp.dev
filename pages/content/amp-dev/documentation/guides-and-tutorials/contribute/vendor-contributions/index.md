@@ -12,11 +12,11 @@ formats:
 
 Thanks for your interest in contributing to AMP! We appreciate your participation in making the web a user forward platform. 
 
-Publishers have created over 1.4B AMP documents that are hosted on over 750K unique domains. Such growth would have been impossible without strong support from over 100 third party tech companies that have already integrated with AMP.
+Publishers have created over 1.4 billion AMP documents, hosted on over 750 thousand unique domains. Such growth is only possible through the support of over 100 third party tech companies, already integrated with AMP. 
 
-If you are a technology provider for publishers or advertisers on the web, we invite you to add support to AMP so your customers can continue to leverage your technology and achieve our joint vision to build a better web.
+If you are a technology provider for publishers or advertisers on the web, we invite you to add support to AMP! Your customers can continue to leverage your technology while working to achieve our vision of building a better web.
 
-This document outlines third party vendor expectations and defines contribution levels. 
+This document outlines AMP third party vendor expectations and defines contribution levels.
 
 # Contributing guidelines
 
@@ -28,23 +28,23 @@ To qualify for inclusion, all contribution levels must:
 *   Maintain or improve the same type of service level as AMP promises to both publishers and users. 
 *   Be created in good quality.
 *   Create a troubleshooting channel for their customers. 
-*   Provide good integration test coverage from their side to test against both AMP’s prod & canary releases.
+*   Provide good integration test coverage to against AMP’s production and canary releases.
 *   Fulfill a purpose that does not exist. 
 
-Vendor contributions are divided into three different levels. Each level is dependent on how much additional business logic and vendor specific logic (logic that is not shared with other vendors) is added to the AMP repo. A general principle is that the more logic, especially vendor specific logic, added to AMP, the higher contribution level is and the more commitment needed from the vendor.
+There are three vendor contribution levels. Levels are dependent on the amount of added business logic and vendor specific logic (logic that is not shared with other vendors). The more logic added to the AMP repository, especially vendor specific logic, creates a higher contribution level. A high contribution level requires a higher commitment from the vendor. 
 
-Level one & level two contributions share components between vendors. If there is a component fulfills a purpose similar to your business, consider reusing that component. This requires much less effort and is more long-term maintainable.
+Level 1 and level 2 contributions share components between vendors. If there is a component fulfills a purpose similar to your business, consider reusing that component. This requires much less effort and is more long-term maintainable.
 
 After deciding what level of contribution meets your use case, open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new) to start. 
 
 
-## Level one contribution
+## Level 1 contribution
 
-Level one contributions share components and load vendor specific logic as custom JavaScript in a cross origin iframe. 
+Level 1 contributions share components. They load vendor specific logic as custom JavaScript in a cross origin iframe. 
 
-Vendors add configurations or features to existing extension to implement their functionalities. If such a component does not exist they may propose a new one. 
+Vendors add configurations or features to existing extension to implement their functionalities. If such a component does not exist they may propose a new 1. 
 
-The only vendor specific logic checked into AMP repo is a vendor configuration. Adding a new vendor to an existing level one contribution typically does not need a design review. Vendors can follow the documentation of the component.
+The only vendor specific logic checked into the AMP repository is a vendor configuration. Adding a new vendor to an existing level 1 contribution typically does not need a design review. Vendors can follow the documentation of the component.
 
 ### Vendor expectations
 
@@ -53,26 +53,26 @@ The only vendor specific logic checked into AMP repo is a vendor configuration. 
 *   Provide a troubleshooting channel for developers. 
 *   Respond to any and all bug filings related to their service. 
 
-### Level one example
+### Level 1 example
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-If you are an ad technology provider looking to integrate with AMP, read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) or jump to the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/reference/amp-ad.md). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
+Ad providers should read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) and the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/reference/amp-ad.md). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
 
-There are 90+ ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+There are many ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
-## Level two contribution 
+## Level 2 contribution 
 
-Level two vendor contributions share components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe.  Vendors add configurations or features to existing components to implement their functionalities. If such a component does not exist they may propose a new one. 
+Level 2 vendor contributions share components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe.  Vendors add configurations or features to existing components to implement their functionalities. If such a component does not exist they may propose a new one. 
 
-All business logic is checked into AMP repo, but the only vendor specific logic checked in is a vendor configuration. If component works with a vendor provided config file, no design review is needed. If the vendor configuration implements a new feature or new component it will need to pass AMP’s design review. 
+All business logic is checked into AMP repository, but the only vendor specific logic checked in is a vendor configuration. If component works with a vendor provided config file, no design review is needed. If the vendor configuration implements a new feature or new component it will need to pass AMP’s design review. 
 
 ### Vendor expectations
 
-*   Adding a new vendor to an existing level two contribution typically does not need a design review. Vendor can just follow the documentation of that component. 
-*   Proposing a new component for level two contribution will need to be generic and shareable by other vendors.
+*   Adding a new vendor to an existing level 2 contribution typically does not need a design review. The vendor can follow the documentation of that component. 
+*   Proposing a new component for level 2 contribution will need to be generic and shareable by other vendors.
 
-### Level two examples
+### Level 2 examples
 
 [**amp-analytics**](../../../components/reference/amp-analytics.md)
 
@@ -89,9 +89,9 @@ If you provide call tracking measurement services, your use case may be supporte
 
 To learn more about how this component might work for you, please see the [reference documentation](../../../components/reference/amp-call-tracking.md).
 
-## Level three contribution
+## Level 3 contribution
 
-A level three contribution introduces a new vendor-specific component.
+A level 3 contribution introduces a new vendor-specific component.
 This is only applicable if vendors are unable to:
 
 *   Find a component that exists for their use case. 
