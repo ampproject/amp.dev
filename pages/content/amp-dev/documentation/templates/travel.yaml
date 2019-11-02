@@ -13,3 +13,33 @@ teaser:
     alt: Travel
 
   download_url: '/static/files/templates/travel.zip'
+  template_demo_home: 'websites/travel/templates/travel.amp.html'
+  template_github_home: 'websites/travel'
+ 
+document:
+  pages: /content/amp-dev/documentation/templates/travel/pages
+  description: A sample travel site with visually attractive filters.
+
+url:
+  path: '/documentation/templates/travel'
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/templates/travel/pages/travel-desktop-above.jpg'
+      width: 4
+      height: 3
+      type: desktop
+      alt: image
+
+    - image_src: '/static/img/templates/travel/pages/travel-tablet-above.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: image
+
+    - image_src: '/static/img/templates/travel/pages/travel-mobile-above.jpg'
+      width: 1
+      height: 2
+      type: mobile
+      alt: image
