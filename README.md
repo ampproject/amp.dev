@@ -101,13 +101,13 @@ $ export AMP_DOC_TOKEN="c59f6..."
 This command enables the import from GitHub to run flawlessly. The actual import occurs by running the following command, which will also build the Playground and Boilerplate Generator once.
 
 ```sh
-$ gulp bootstrap
+$ npm run bootstrap
 ```
 
-You can then start developing in your local environment with the command below. The task will take care of building and copying all files, watching them for changes, and rebuilding them when needed. Beware that changes to the [Express](https://expressjs.com/) backend requires the Gulp task to be restarted.
+You can then start developing in your local environment with the command below. The task will take care of building and copying all files, watching them for changes, and rebuilding them when needed. Beware that changes to the [Express](https://expressjs.com/) backend require the Gulp task to be restarted.
 
 ```sh
-$ gulp develop
+$ npm run develop
 ```
 
 This command prints a lot to the shell and will most likely end on `Server ready. Press ctrl-c to quit.`. Seeing this line means everything went fine so far unless otherwise stated in the logs; the site should be available at [http://localhost:8080/](http://localhost:8080/). The service running on port `8081` is only Grow rendering the pages.
@@ -120,30 +120,40 @@ You can contribute your changes back to the main repository by [creating a pull 
 Made changes to a lot of Grow documents at once and not quite sure if all references are still valid? You can run `npm run lint:grow` to pick up broken ones.
 
 #### Samples
-Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development, only changed samples are rebuilt. To freshly build *all* samples you can run `gulp develop --clean-samples`.
+Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development, only changed samples are rebuilt. To freshly build *all* samples you can run `npx gulp develop --clean-samples`.
 
 ### Run a test build
 To run a local test build that does all the minifying and vends the static pages instead of
 proxying them through to Grow you can run:
 
 ```sh
-$ gulp build --env local
+$ npm run build:local
 $ npm run start:local
+```
+
+**Tip**: For more rapid local testing, it may be preferable to only build a subset of specified locales. Run the following command with `--locales` being a comma seperated list of locale abbreviations you want to build, e.g. `en,fr` or even just `en`.
+
+```sh
+npm run build:local -- --locales <list of locales>
 ```
 
 ## Build
 **Caution**: starting a build will automatically clean all locations of possible remainings from previous builds. Make sure you don't have anything there that you want to keep - additionally check your working copy for eventual unintended local changes.
 
+```sh
+npm run build:local -- --locales <list of locales>
+```
+
 To perform a build run the following command with `--env` being one of the following valid environments: `development`, `local`, `staging` or `production`:
 
 ```sh
-$ gulp build --env <environment>
+$ npx gulp build --env <environment>
 ```
 
 This command builds all parts of the project and might take a while. Usually, all builds on [amp-dev-staging.appspot.com](https://amp-dev-staging.appspot.com/) and [amp.dev](https://amp.dev/) are built using [Travis CI](https://travis-ci.org/ampproject/amp.dev). In case you want to reproduce one of those remote builds in your local environment, you can fetch the build artifacts by running:
 
 ```sh
-$ gulp fetchArtifacts --travis-build <build_number>
+$ npx gulp fetchArtifacts --travis-build <build_number>
 ```
 
 - - -
