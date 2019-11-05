@@ -20,7 +20,6 @@ You can define CSS in AMP in the follow ways:
 To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
 
 ```html
-...
   <style amp-custom>
     div {
       width: 100px;
@@ -43,7 +42,6 @@ To keep you pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in t
     }
   </style>
 </body>
-...
 ```
 
 ## Adding, removing, and toggling classes
@@ -147,8 +145,6 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
 Define multiple class animations by first adding a list of CSS classes within the `<style amp-custom>` tag in the `head` of the document:
 
 ```css
-...
-  <style amp-custom>
     div {
       height: 100px;
       width: 100px;
@@ -174,13 +170,11 @@ Define multiple class animations by first adding a list of CSS classes within th
       margin-left: 1rem;
     }
   </style>
-...
 ```
 
 Then pair each class with a state:
 
 ```html
-...
 <amp-state id="magicBox">
   <script type="application/json">
     {
@@ -199,20 +193,16 @@ Then pair each class with a state:
     }
   </script>
 </amp-state>
-...
 ```
 And link the element with the classes:
 
 ```html
-...
   <div [class]="magicBox[animateBox].className"> </div>
-...
 ```
 
 The states change from a linked AMP action or event. The following example changes the state from user interaction:
 
 ```html
-...
 <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
     Disappear
 </button>
@@ -225,7 +215,6 @@ The states change from a linked AMP action or event. The following example chang
 <button on="tap:AMP.setState({animateBox: 'moveRight'})">
   Move Right
 </button>
-...
 ```
 
 Using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) in this way set the class explicitly to the defined class. You will not have to tell it to remove other classes.
