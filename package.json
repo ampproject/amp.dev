@@ -90,7 +90,7 @@
     "@babel/node": "7.6.3",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/plugin-transform-runtime": "7.6.2",
-    "@babel/preset-env": "7.6.3",
+    "@babel/preset-env": "7.7.1",
     "@babel/runtime": "7.6.3",
     "@octokit/rest": "16.33.1",
     "absolutify": "0.1.0",
