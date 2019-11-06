@@ -145,14 +145,6 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
 Define multiple class animations by first adding a list of CSS classes within the `<style amp-custom>` tag in the `head` of the document:
 
 ```css
-    div {
-      height: 100px;
-      width: 100px;
-      margin: 1em;
-      background-color: green;
-      margin-left: 100px;
-      transition: 2s;
-    }
     .visible {
       opacity: 1;
     }
