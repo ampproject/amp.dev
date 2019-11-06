@@ -7,7 +7,7 @@ formats:
   - ads
 ---
 
-Triggering CSS animations [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#-all-elements)) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
+Triggering CSS animations [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#-all-elements) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
 
 ## Defining CSS and keyframes
 
@@ -108,23 +108,23 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
 </head>
 <body>
   <amp-state id="magicBox">
-  <script type="application/json">
-    {
-      "visibleBox": {
-        "className": "visible"
-      },
-      "invisibleBox": {
-        "className": "invisible"
-      },
-      "moveLeft": {
-        "className": "left"
-      },
-      "moveRight": {
-        "className": "right"
+    <script type="application/json">
+      {
+        "visibleBox": {
+          "className": "visible"
+        },
+        "invisibleBox": {
+          "className": "invisible"
+        },
+        "moveLeft": {
+          "className": "left"
+        },
+        "moveRight": {
+          "className": "right"
+        }
       }
-    }
-  </script>
-</amp-state>
+    </script>
+  </amp-state>
   <div [class]="magicBox[animateBox].className"> </div>
   <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
     Disappear
@@ -165,11 +165,6 @@ Define multiple class animations by first adding a list of CSS classes within th
     .right {
       transform: translatex(50px)
     }
-    button {
-      margin-top:  1rem;
-      margin-left: 1rem;
-    }
-  </style>
 ```
 
 Then pair each class with a state:
