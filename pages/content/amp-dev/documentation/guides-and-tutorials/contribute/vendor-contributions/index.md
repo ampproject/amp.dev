@@ -31,7 +31,12 @@ To qualify for inclusion, all contribution levels must:
 *   Provide good integration test coverage to against AMP’s production and canary releases.
 *   Fulfill a purpose that does not exist. 
 
-There are three vendor contribution levels. Levels are dependent on the amount of added business logic and vendor specific logic (logic that is not shared with other vendors). The more logic added to the AMP repository, especially vendor specific logic, creates a higher contribution level. A high contribution level requires a higher commitment from the vendor. 
+There are 3 vendor contribution levels. Levels are dependent on the amount of added logic:
+
+* Component logic: Code that dictates the core features and functionality of the AMP component.  
+* Vendor logic: Code that is specific to the vendors. This logic enables the component to leverage the vendors service. 
+
+The more logic added to the AMP repository, especially vendor specific logic, increases the contribution level. A high contribution level requires more commitment from the vendor. 
 
 Level 1 and level 2 contributions share components between vendors. If there is a component fulfills a purpose similar to your business, consider reusing that component. This requires much less effort and is more long-term maintainable.
 
@@ -40,11 +45,11 @@ After deciding what level of contribution meets your use case, open a [GitHub is
 
 ## Level 1 contribution
 
-Level 1 contributions share components. They load vendor specific logic as custom JavaScript in a cross origin iframe. 
+Level 1 contributions leverage the feature logic of existing components. They load vendor specific logic as custom JavaScript in a cross origin iframe. For example, many ad networks provide ads through the [`amp-ad`](../../../components/reference/amp-ad.md) component, but control how the rendering of ads through their own logic. 
 
-Vendors add configurations or features to existing extension to implement their functionalities. If such a component does not exist they may propose a new 1. 
+Vendors add configurations or features to existing extensions, using provided APIs, to implement their functionalities. If such a component does not exist they may propose a new one. 
 
-The only vendor specific logic checked into the AMP repository is a vendor configuration. Adding a new vendor to an existing level 1 contribution typically does not need a design review. Vendors can follow the documentation of the component.
+The only vendor specific logic checked into the AMP repository is a vendor configuration. Adding a new vendor to an existing level 1 contribution typically does not need a design review. Vendors can follow the integration documentation of the component, such as [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
 ### Vendor expectations
 
@@ -63,7 +68,9 @@ There are many ad providers who have added support for advertising related featu
 
 ## Level 2 contribution 
 
-Level 2 vendor contributions share components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe.  Vendors add configurations or features to existing components to implement their functionalities. If such a component does not exist they may propose a new one. 
+Level 2 contributions leverage the feature logic of existing components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe. For example, analytics providers add their configurations to the [`amp-analytics`](../../../components/reference/amp-analytics.md) component but including the endpoint to track data, such as user clicks.  
+
+Vendors add configurations or features, such as new APIs, to existing components to implement their functionalities. If such a component does not exist they may propose a new one. 
 
 All business logic is checked into AMP repository, but the only vendor specific logic checked in is a vendor configuration. If component works with a vendor provided config file, no design review is needed. If the vendor configuration implements a new feature or new component it will need to pass AMP’s design review. 
 
