@@ -10,27 +10,28 @@ author: CrystalOnScript
 <head>
   <meta charset="utf-8">
   <title>Animated hamburger menu</title>
-  <script async src="https://cdn.ampproject.org/v0.js"></script><!-- ## Introduction --> 
-  <!--
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- 
+    ## Introduction 
     Small interactive UI animations communicate state and purpose to users. A common case is a hamburger menu button that animates into an "X" when open. This animation communicates that the user can press the same button again to close the menu. 
   -->
   <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-
-  <!-- Custom styles and CSS animations for the hamburger menu: -->
+  <!-- 
+    ## CSS animations
+    Below is the custom styles and CSS animations for the hamburger menu: 
+  -->
     <style amp-custom>
       .hamburger_wrapper {
         padding: 5px;
-        z-index: 500;
+        z-index: 10;
       }
 
       #hamburger {
         width: 60px;
         height: 45px;
         position: relative;
-        transform: rotate(0deg);
-        transition: .5s ease-in-out;
         cursor: pointer;
         outline: none;
 
@@ -40,7 +41,7 @@ author: CrystalOnScript
         position: absolute;
         height: 9px;
         width: 100%;
-        background: #0479C4;
+        background:#005af0;
         border-radius: 9px;
         opacity: 1;
         left: 0;
@@ -79,19 +80,20 @@ author: CrystalOnScript
       
       .not-active {
         position: relative;
-        transform: translateX(-100%);
+        transform: translateX(-100vw);
         opacity: 0;
-        z-index: 499;
+        z-index: 10;
         transition: transform .5s ease, opacity ease .2s;
       }
+
       .now-active {
         transform: translateX(0);
         transition: transform .5s ease, opacity ease .2s;
         opacity: 1;
-        background-color:bisque;
+        background-color:#eaeaea;
       }
 
-      #nav-list {
+      .nav-list {
         padding: 10px;
         list-style-type: none;
         font-size: 2em;
@@ -115,7 +117,7 @@ author: CrystalOnScript
     </div>
   </div>
   <div id="nav-menu" class="not-active">
-    <ul id="nav-list">
+    <ul class="nav-list">
       <li><a href="#">Home</a></li>
       <li><a href="#">Account</a></li>
       <li><a href="#">Products</a></li>
