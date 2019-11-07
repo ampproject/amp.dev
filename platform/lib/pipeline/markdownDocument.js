@@ -199,10 +199,9 @@ class MarkdownDocument {
 
   _bootstrapFrontmatter() {
     // Check if the document defines its own frontmatter already
-    if (this._contents.startsWith('---\n')) {
-      const FRONTMATTER_PATTERN = /---\n.*\n---\n/ms;
+    if (this._contents.startsWith('---')) {
+      const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
       let frontmatter = this._contents.match(FRONTMATTER_PATTERN);
-
       if (!frontmatter) {
         LOG.warn(`Unparseable frontmatter in ${this.path}`);
       } else {
