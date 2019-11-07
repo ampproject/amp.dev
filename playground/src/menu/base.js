@@ -73,14 +73,14 @@ class Menu {
 
   _buildRuntimeSection() {
     return runtimes.values.map((runtime) =>
-      `<label><input type="radio" name="runtime" id="${runtime.id}">${runtime.name}</label>`
+      `<label><input type="radio" name="runtime" id="${runtime.id}">${runtime.name}</label>`,
     ).join('');
   }
 
   _registerActions() {
     this._menu.querySelectorAll('input[name=runtime]').forEach((input) => {
       input.addEventListener('change',
-          (e) => events.publish(EVENT_SET_RUNTIME, runtimes.get(e.target.id))
+          (e) => events.publish(EVENT_SET_RUNTIME, runtimes.get(e.target.id)),
       );
     });
   }

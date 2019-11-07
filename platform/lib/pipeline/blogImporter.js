@@ -134,7 +134,7 @@ class BlogImporter {
   headline: "${ item.title }"
   date: "${ item.date.format('MMMM D, YYYY') }"
   url: "${ item.origin }"
-`
+`,
     );
 
     const filePath = path.join(DESTINATION_BASE_PATH, './blog.yaml');

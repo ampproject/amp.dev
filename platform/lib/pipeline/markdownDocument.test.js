@@ -45,7 +45,7 @@ test('Test escape mustache tags', async (done) => {
       '[/sourcecode]\n' +
       'Test no raw `{% raw %}{{{% endraw %}`\n' +
       'Test raw outside {% raw %}`{{`{% endraw %}\n' +
-      'Test raw inside `{% raw %}{{{% endraw %}`'
+      'Test raw inside `{% raw %}{{{% endraw %}`',
   );
 
   done();
@@ -71,7 +71,7 @@ test('Test escape mustache tags', async (done) => {
       \`<a href="...">text</a>\`
       <a href="mailto:test@test.test">text</a>
       <a href="http://test.de/test/link">text</a>
-      <a class="link" href = "http://test.de/test/../rel/link">text</a>`
+      <a class="link" href = "http://test.de/test/../rel/link">text</a>`,
   );
 
   done();

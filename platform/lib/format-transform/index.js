@@ -139,7 +139,7 @@ class FormatTransform {
 }
 
 const instance = amphtmlValidator.getInstance().then(
-    (validator) => new FormatTransform(formats, validator)
+    (validator) => new FormatTransform(formats, validator),
 );
 
 async function getInstance() {
