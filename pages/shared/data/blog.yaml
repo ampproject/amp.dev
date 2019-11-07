@@ -2,6 +2,12 @@ entries:
 
 - title: "Blog"
   image: ""
+  headline: "Skimlinks’ Pioneering AMP Extension Helps Maximize Commerce Content Revenues"
+  date: "November 1, 2019"
+  url: "https://blog.amp.dev/2019/11/01/skimlinks-pioneering-amp-extension-helps-maximize-commerce-content-revenues/"
+
+- title: "Blog"
+  image: ""
   headline: "Users Prefer Tappable Stories On The Mobile Web"
   date: "October 25, 2019"
   url: "https://blog.amp.dev/2019/10/25/users-prefer-tappable-stories-on-the-mobile-web/"
@@ -23,9 +29,3 @@ entries:
   headline: "AMP is joining the OpenJS Foundation incubation program"
   date: "October 10, 2019"
   url: "https://blog.amp.dev/2019/10/10/amp-is-joining-the-openjs-foundation-incubation-program/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/09/image2-copy-2.png"
-  headline: "People Behind The Code: Simon Rønbøl’s AMP journey"
-  date: "September 25, 2019"
-  url: "https://blog.amp.dev/2019/09/25/people-behind-the-code-simon-ronbols-amp-journey/"
