@@ -71,7 +71,7 @@
     "order": 3,
 		"repo": "ampproject/amphtml",
 		"from": "ads/_integration-guide.md",
-    "to": "documentation/guides-and-tutorials/contribute/ad-integration-guide.md",
+    "to": "documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md",
     "toc": true,
     "formats": ["ads"]
   },
