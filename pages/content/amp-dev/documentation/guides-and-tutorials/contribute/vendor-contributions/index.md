@@ -72,12 +72,12 @@ Level 2 contributions leverage the feature logic of existing components. All log
 
 Vendors add configurations or features, such as new APIs, to existing components to implement their functionalities. If such a component does not exist they may propose a new one. 
 
-All business logic is checked into AMP repository, but the only vendor specific logic checked in is a vendor configuration. If component works with a vendor provided config file, no design review is needed. If the vendor configuration implements a new feature or new component it will need to pass AMP’s design review. 
+All business logic is checked into AMP repository, but the only vendor specific logic checked in is a vendor configuration. If the component works with a vendor provided config file, no design review is needed. If the vendor configuration implements a new feature or new component it will need to pass AMP’s design review. 
 
 ### Vendor expectations
 
 *   Adding a new vendor to an existing level 2 contribution typically does not need a design review. The vendor can follow the documentation of that component. 
-*   Proposing a new component for level 2 contribution will need to be generic and shareable by other vendors.
+*   Proposing a new component for level 2 contribution will need to have feature logic that is shareable by other vendors.
 
 ### Level 2 examples
 
