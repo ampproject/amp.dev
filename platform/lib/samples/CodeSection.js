@@ -194,7 +194,14 @@ module.exports = class CodeSection {
     return string;
   }
 
-  normalizeLeadingWhitespace(string) {
+  /**
+   * Normalize the leading whitespace by replacing tabs with spaces and
+   * remove unnecessary indention.
+   * @param string
+   * @param options.trimHeadlines If true whitespace before # is removed at the start of the line
+   * @returns {string}
+   */
+  normalizeLeadingWhitespace(string, options = {}) {
     let lines = string.replace(/\t/g, '  ').split(/\r?\n/);
     let offset = Number.MAX_SAFE_INTEGER;
     for (const line of lines) {
@@ -206,10 +213,12 @@ module.exports = class CodeSection {
     offset = offset === Number.MAX_SAFE_INTEGER ? 0 : offset;
     lines = lines.map((line) => {
       line = line.substring(offset);
-      // remove leading whitespace from headings for markdown compatibility
-      const trimmedString = line.trim();
-      if (trimmedString.startsWith('#')) {
-        line = trimmedString;
+      if (options.trimHeadlines) {
+        // remove leading whitespace from headings for markdown compatibility
+        const trimmedString = line.trim();
+        if (trimmedString.startsWith('#')) {
+          line = trimmedString;
+        }
       }
       return line;
     });
