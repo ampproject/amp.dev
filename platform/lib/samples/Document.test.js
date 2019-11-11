@@ -18,8 +18,8 @@ describe('Document', () => {
   const CANONICAL = '<link rel="canonical" href="https://ampbyexample.com/" >';
   const NON_CANONICAL = '<link href="https://ampbyexample.com/" >';
 
-  const CodeSection = require('../../lib/CodeSection');
-  const Document = require('../../lib/Document');
+  const CodeSection = require('./CodeSection');
+  const Document = require('./Document');
 
   beforeEach(() => {
     doc = new Document();
