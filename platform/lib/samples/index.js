@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,5 +17,32 @@
 'use strict';
 
 module.exports = {};
-module.exports.parseSample = require('./Standalone.js');
 
+const {parse} = require('./DocumentParser.js');
+const ExampleFile = require('./ExampleFile.js');
+
+const {promisify} = require('util');
+const fs = require('fs');
+const Hogan = require('hogan.js');
+const readFileAsync = promisify(fs.readFile);
+
+module.exports.parseSample = async (filePath, config, contents) => {
+  if (!contents) {
+    contents = await readFileAsync(filePath, 'utf-8');
+  }
+  const template = Hogan.compile(contents, {delimiters: '<% %>'});
+  contents = template.render(config);
+  const doc = parse(contents);
+  const exampleFile = ExampleFile.fromPath(filePath);
+  if (!doc.title) {
+    console.warn(`${filePath} has no title`);
+    doc.title = exampleFile.title();
+  } else if (doc.title !== exampleFile.title()) {
+    console.warn(
+        `${filePath} has invalid title: "${exampleFile.title()}" vs "${doc.title}"`,
+    );
+  }
+  exampleFile.source = contents.replace(/\<!---.*--->/gms, '').trim();
+  exampleFile.document = doc;
+  return exampleFile;
+};

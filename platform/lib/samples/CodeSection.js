@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 'use strict';
 
@@ -132,7 +133,7 @@ module.exports = class CodeSection {
 
   get doc() {
     if (!this.normalizedDoc_) {
-      this.normalizedDoc_ = this.normalizeLeadingWhitespace(this.doc_);
+      this.normalizedDoc_ = this.normalizeLeadingWhitespace(this.doc_, {trimHeadlines: true});
     }
     return this.normalizedDoc_;
   }
