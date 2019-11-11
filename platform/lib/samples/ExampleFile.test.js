@@ -26,49 +26,16 @@ describe('ExampleFile', () => {
       expect(ExampleFile.fromPath('src/Samples_%26_Templates/index.html')
           .title()).toBe('Samples & Templates');
     });
-    it('strips leading _', () => {
-      expect(ExampleFile.fromPath('src/10_Hello-world/_Hello.html')
-          .targetPath()).toBe('hello-world/hello/index.html');
-    });
-    it('extracts url', () => {
-      expect(file.url()).toBe('/hello-worlds/whats_up_100/');
-    });
-    it('extracts preview url', () => {
-      expect(file.urlPreview()).toBe('/hello-worlds/whats_up_100/preview/');
-    });
-    it('extracts embed url', () => {
-      expect(file.urlEmbed()).toBe('/hello-worlds/whats_up_100/embed/');
-    });
-    it('extracts preview embed url', () => {
-      expect(file.urlPreviewEmbed()).toBe('/hello-worlds/whats_up_100/preview/embed/');
-    });
-    it('extracts url without __', () => {
-      const file = ExampleFile.fromPath('src/50_Samples_%26_Templates/Test.html');
-      expect(file.url()).toBe('/samples_templates/test/');
-    });
     it('extracts file name', () => {
       expect(file.fileName()).toBe('What\'s_up_100%25?.html');
     });
     it('extracts category', () => {
       expect(file.category().name).toBe('Hello-world\'s');
     });
-    it('target path', () => {
-      expect(file.targetPath()).toBe('hello-worlds/whats_up_100/index.html');
-    });
-    it('target preview path', () => {
-      expect(file.targetPreviewPath()).toBe('hello-worlds/whats_up_100/preview/index.html');
-    });
-    it('path on github', () => {
-      expect(file.githubUrl()).toBe(
-          ExampleFile.GITHUB_PREFIX + '/10_Hello-world\'s/What\'s_up_100%2525?.html');
-    });
   });
 
   describe('non-example files', () => {
     const file = ExampleFile.fromPath('src/offline.html');
-    it('target path in root', () => {
-      expect(file.targetPath()).toBe('offline/index.html');
-    });
     it('has no category', () => {
       expect(file.category()).toBe('');
     });
@@ -106,10 +73,6 @@ describe('ExampleFile', () => {
     it('returns root path if no category', () => {
       expect(ExampleFile.fromPath('src/hello.html').section().path)
           .toEqual('/');
-    });
-    it('part of url', () => {
-      expect(ExampleFile.fromPath('src/amp-ads/10_introduction/hello.html').url())
-          .toEqual('/amp-ads/introduction/hello/');
     });
   });
 });

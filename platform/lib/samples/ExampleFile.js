@@ -21,7 +21,6 @@ const fs = require('fs');
 const path = require('path');
 const PREFIX = /(^|\/)\d\d_/g;
 const SRC_DIR = 'src';
-const GITHUB_PREFIX = 'https://github.com/ampproject/amp-by-example/blob/master/' + SRC_DIR;
 
 
 /**
@@ -89,49 +88,8 @@ class ExampleFile {
     return path.basename(this.filePath);
   }
 
-  githubUrl() {
-    return encodeURI([GITHUB_PREFIX, this.sampleParentDir(), this.fileName()].join('/'));
-  }
-
   targetParentDir() {
     return this.clean(this.stripNumberPrefix(this.sampleParentDir()));
-  }
-
-  targetName() {
-    return this.clean(this.name());
-  }
-
-  targetPath() {
-    return path.join(this.targetParentDir(), this.targetName(), 'index.html');
-  }
-
-  targetSourcePath() {
-    return path.join(this.targetParentDir(),
-        this.targetName(),
-        'source',
-        'index.html');
-  }
-
-  targetEmbedPath() {
-    return path.join(this.targetParentDir(),
-        this.targetName(),
-        'embed',
-        'index.html');
-  }
-
-  targetPreviewPath() {
-    return path.join(this.targetParentDir(),
-        this.targetName(),
-        'preview',
-        'index.html');
-  }
-
-  targetPreviewEmbedPath() {
-    return path.join(this.targetParentDir(),
-        this.targetName(),
-        'preview',
-        'embed',
-        'index.html');
   }
 
   title() {
@@ -141,30 +99,6 @@ class ExampleFile {
       fileName = this.sampleParentDir();
     }
     return FileName.toString(fileName).trim();
-  }
-
-  url() {
-    return '/' +
-      this.targetParentDir() +
-      '/' +
-      this.targetName() +
-      '/';
-  }
-
-  urlPreview() {
-    return this.url() + 'preview/';
-  }
-
-  urlPreviewEmbed() {
-    return this.urlPreview() + 'embed/';
-  }
-
-  urlEmbed() {
-    return this.url() + 'embed/';
-  }
-
-  urlSource() {
-    return this.url() + 'source/';
   }
 
   section() {
@@ -217,4 +151,3 @@ class ExampleFile {
 }
 
 module.exports.fromPath = fromPath;
-module.exports.GITHUB_PREFIX = GITHUB_PREFIX;
