@@ -92,7 +92,7 @@
     "@babel/plugin-transform-runtime": "7.6.2",
     "@babel/preset-env": "7.7.1",
     "@babel/runtime": "7.7.2",
-    "@octokit/rest": "16.34.1",
+    "@octokit/rest": "16.35.0",
     "absolutify": "0.1.0",
     "amp-toolbox-runtime-version": "0.2.7",
     "amphtml-validator": "1.0.29",
