@@ -39,7 +39,7 @@ examples.post('/send-push', (request, response) => {
   webPush.setVapidDetails(
       'mailto:drenzulli@google.com',
       'BA99vy78Qu4vuByBMUZ1W5J0H7ngllFJhF9GcjbS_GJM9iD7uXIm-dQj7nXvisXHI6372ga3mZR3kFdS9MYTdSA',
-      'zrilyCmdC3EqCUA4g4u0JP5jafJrst8kw4TeFGI3bSI'
+      'zrilyCmdC3EqCUA4g4u0JP5jafJrst8kw4TeFGI3bSI',
   );
   webPush.sendNotification(
       pushSubscription,

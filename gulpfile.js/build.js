@@ -252,7 +252,7 @@ function buildPrepare(done) {
           buildBoilerplate,
           buildSamples,
           importAll,
-          zipTemplates
+          zipTemplates,
       ),
       // run reference checker after import
       lint.lintAll,

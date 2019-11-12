@@ -69,8 +69,8 @@ async function importRoadmap() {
             cards = cards.filter((card) => card.issueUrl);
 
             return {cards: cards, id: column.id, name: column.name};
-          })
-      )
+          }),
+      ),
   );
 
   // create a flattened cards array
@@ -120,7 +120,7 @@ async function importRoadmap() {
   // Write finalized JSON to config file that gets imported by the roadmap template
   fs.writeFileSync(
       DESTINATION_JSON,
-      JSON.stringify({labels: labels, columns: columns}, null, '  ')
+      JSON.stringify({labels: labels, columns: columns}, null, '  '),
   );
 
   log.success('Successfully imported roadmap!');

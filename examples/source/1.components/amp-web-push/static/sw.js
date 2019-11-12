@@ -95,7 +95,7 @@ function onMessageReceivedSubscriptionState() {
           return null;
         } else {
           return self.registration.pushManager.permissionState(
-              pushSubscription.options
+              pushSubscription.options,
           );
         }
       }).then((permissionStateOrNull) => {
@@ -205,7 +205,7 @@ self.addEventListener('push', (event) => {
     },
   };
   event.waitUntil(
-      self.registration.showNotification('Push Notification', options)
+      self.registration.showNotification('Push Notification', options),
   );
 });
 

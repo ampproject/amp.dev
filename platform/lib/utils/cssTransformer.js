@@ -91,7 +91,7 @@ const SAFE_CLASS_NAMES = [
 ];
 
 rcs.selectorLibrary.setExclude(
-    new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$')
+    new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$'),
 );
 
 /**
