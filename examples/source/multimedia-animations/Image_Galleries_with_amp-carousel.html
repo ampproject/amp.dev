@@ -27,7 +27,10 @@ author: sebastianbenz
   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
   <!-- We sync the carousel state using the `amp-bind` component. -->
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-   <!-- The `amp-lightbox-gallery` component allows us to quickly create a lightbox gallery. -->
+  <!--
+    The `amp-lightbox-gallery` component allows us to quickly create a lightbox gallery.
+    @formats(websites)
+  -->
   <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
   <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -361,6 +364,8 @@ author: sebastianbenz
     - when user taps on image N, he enters a lightbox mode
     - user can swipe inside of lightbox mode between images
     - when user exits the lighbox mode, the carousel points to the last image seen on the lightbox
+
+    @formats(websites)
   -->
   <div>
     <amp-carousel id="carousel-with-lightbox" width="400" height="300" layout="responsive" type="slides" lightbox>
@@ -406,6 +411,7 @@ author: sebastianbenz
     </script>
     ```
 
+    @formats(websites)
     -->
 </body>
 </html>
