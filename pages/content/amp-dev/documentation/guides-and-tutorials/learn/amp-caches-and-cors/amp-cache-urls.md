@@ -26,7 +26,12 @@ You can use this URL calculator to convert an URL into an AMP cache version:
 </amp-iframe>
 </div>
 
+[tip type="tip"]
+  Use the [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url) to translate a URL from the origin to the AMP Cache URL format.
+[/tip]
+
 This document describes:
+
 *   The URL structure on an AMP Cache.
 *   How to predict how your URLs will appear on an AMP cache.
 *   How to reverse an AMP Cache Origin header to determine what its publisher domain was.
