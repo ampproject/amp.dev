@@ -22,7 +22,3 @@ Learn more about AMP story from these resources:
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
 - [AMP story best practices](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
-
-[tip type="note"]
-**NOTE –**  The [`amp-story`](../../../../documentation/components/reference/amp-story.md) component is **experimental**.
-[/tip]

@@ -67,7 +67,7 @@ class ComponentReferenceLinker {
               '\n-> Type: ',
               reference.link.type,
               ' - Name: ',
-              reference.link.name
+              reference.link.name,
           );
         }
         fs.writeFile(POD_BASE_PATH + 'content/missing.txt', referenceText, (err) => {

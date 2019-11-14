@@ -22,7 +22,7 @@ const config = require('@lib/config.js');
 const {SUPPORTED_FORMATS} = require('../amp/formatHelper.js');
 
 const FILTER_CLASSES = Object.fromEntries(
-    SUPPORTED_FORMATS.map((format) => [format, `ap--${format}`])
+    SUPPORTED_FORMATS.map((format) => [format, `ap--${format}`]),
 );
 
 const FILTERED_ROUTES = [

@@ -61,7 +61,7 @@ ErrorList.createErrorList(errorListContainer, errorIndicator);
 
 events.subscribe(
     ErrorList.EVENT_ERROR_SELECTED,
-    (error) => editor.setCursorAndFocus(error.line, error.col)
+    (error) => editor.setCursorAndFocus(error.line, error.col),
 );
 
 const validator = Validator.createValidator();
@@ -121,7 +121,7 @@ const editorUpdateListener = () => {
 };
 events.subscribe(
     [Editor.EVENT_INPUT_CHANGE],
-    editorUpdateListener
+    editorUpdateListener,
 );
 events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
   editor.setValidationResult(validationResult);
@@ -143,7 +143,7 @@ const documentController = new DocumentController(
     editor,
     runtimes.activeRuntime,
     document.querySelector('header'),
-    window
+    window,
 );
 documentController.show();
 
@@ -173,7 +173,7 @@ hidePreviewButton.addEventListener('click', closePreview);
 // load template dialog
 const loadTemplateButton = Button.from(
     document.getElementById('document-title'),
-    () => templateDialog.open(runtimes.activeRuntime)
+    () => templateDialog.open(runtimes.activeRuntime),
 );
 const templateDialog = createTemplateDialog(loadTemplateButton, {
   onStart: () => editor.showLoadingIndicator(),

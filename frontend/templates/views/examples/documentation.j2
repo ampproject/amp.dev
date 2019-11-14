@@ -68,7 +68,7 @@
 {% block body %}
 {% set body_tag = doc.example.document.body %}
 {% set available_formats = ' '.join(doc.formats or doc.collection.formats or ['websites', 'stories', 'ads', 'email']) %}
-{{ (body_tag.replace('>', ' data-available-formats="' + available_formats + '">'))|safe }}
+{{ (body_tag.replace('>', ' data-available-formats="' + available_formats + '" class="[= \'ap--\' + format if format =]">'))|safe }}
 {{ doc.example.document.elementsAfterBody|safe }}
 {% endblock %}
 
