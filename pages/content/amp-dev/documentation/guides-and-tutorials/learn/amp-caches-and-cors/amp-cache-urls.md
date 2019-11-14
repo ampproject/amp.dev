@@ -27,7 +27,7 @@ You can use this URL calculator to convert an URL into an AMP cache version:
 </div>
 
 [tip type="tip"]
-  Use the [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url) to translate a URL from the origin to the AMP Cache URL format.
+  Use the [AMP-Toolbox Cache URL](https://github.com/ampproject/amp-toolbox/tree/master/packages/cache-url) [Node.js](https://nodejs.org) module to translate a URL from the origin to the AMP Cache URL format.
 [/tip]
 
 This document describes:
