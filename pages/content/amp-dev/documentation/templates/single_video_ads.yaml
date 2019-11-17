@@ -17,3 +17,12 @@ teaser:
     height: 16
 
   download_url: '/static/files/templates/single-video.zip'
+  template_demo_home: 'ads/single-video/single-video/single-video.html'
+  template_github_home: 'ads/single-video'
+ 
+document:
+  pages: /content/amp-dev/documentation/templates/single-video/pages
+  description: Template for your own single video story.
+
+url:
+  path: '/documentation/templates/single_video_ads'

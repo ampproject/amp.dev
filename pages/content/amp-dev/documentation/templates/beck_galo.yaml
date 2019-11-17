@@ -13,3 +13,33 @@ teaser:
     alt: Beck & Galo
 
   download_url: '/static/files/templates/themes_2.zip'
+  template_demo_home: 'websites/themes_2/templates/home.amp.html'
+  template_github_home: 'websites/themes_2'
+
+document:
+  pages: /content/amp-dev/documentation/templates/beck_galo/pages
+  description: Website for a trendy restaurant with modern American cusine.
+
+url:
+  path: '/documentation/templates/beck_galo'
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/templates/beck_galo/pages/home-desktop-above.jpg'
+      width: 4
+      height: 3
+      type: desktop
+      alt: image
+
+    - image_src: '/static/img/templates/beck_galo/pages/home-tablet-above.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: image
+
+    - image_src: '/static/img/templates/beck_galo/pages/menu-mobile-above.jpg'
+      width: 1
+      height: 2
+      type: mobile
+      alt: image
