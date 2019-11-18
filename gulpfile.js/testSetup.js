@@ -29,19 +29,12 @@ const VALIDATOR_TARGET_PATH = join(BUILD, 'testing/validator.js');
 /**
  * Will download resources that are needed to test offline (e.g. the AMP validator.js)
  * Call this method when installing the dependencies.
- * @param timeout How long to wait for the response in milliseconds (default is 10 seconds)
  * @returns {Promise<void>}
  */
-async function downloadTestResources(timeout = 10000) {
-  const pageUrl = new URL(VALIDATOR_SCRIPT_URL);
-  const fetchResponse = await fetch(pageUrl, {timeout});
-
-  if (fetchResponse.status && fetchResponse.status === 200) {
-    mkdirp(dirname(VALIDATOR_TARGET_PATH));
-    fs.writeFileSync(VALIDATOR_TARGET_PATH, await fetchResponse.text());
-  } else {
-    throw new Error('Unable to load AMP validator.js');
-  }
+function downloadTestResources() {
+  // since this method will be called with a callback function parameter by gulp
+  // we need an extra function implementation that handles the timeout parameter:
+  return _doDownloadTestResources();
 }
 
 /**
@@ -51,9 +44,26 @@ async function downloadTestResources(timeout = 10000) {
 async function updateTestResources() {
   try {
     // for the update we will only wait 3 seconds...
-    await downloadTestResources(3000);
+    await _doDownloadTestResources(3000);
   } catch (err) {
     signale.info('Unable to download test resources. Will use previously downloaded files.');
+  }
+}
+
+/**
+ *
+ * @param timeout How long to wait for the response in milliseconds (default is 10 seconds)
+ * @returns {Promise<void>}
+ */
+async function _doDownloadTestResources(timeout = 10000) {
+  const pageUrl = new URL(VALIDATOR_SCRIPT_URL);
+  const fetchResponse = await fetch(pageUrl, {timeout});
+
+  if (fetchResponse.status && fetchResponse.status === 200) {
+    mkdirp(dirname(VALIDATOR_TARGET_PATH));
+    fs.writeFileSync(VALIDATOR_TARGET_PATH, await fetchResponse.text());
+  } else {
+    throw new Error('Unable to load AMP validator.js');
   }
 }
 
