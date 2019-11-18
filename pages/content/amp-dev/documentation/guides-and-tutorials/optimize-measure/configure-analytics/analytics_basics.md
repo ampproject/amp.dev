@@ -4,6 +4,7 @@ $order: 0
 description: 'AMP provides two components to meet your analytics and measurement needs: amp-pixel and amp-analytics. Both options send analytics data to a defined endpoint.'
 formats:
   - websites
+  - stories
 ---
 
 Start here to learn the basics about AMP analytics.
@@ -26,10 +27,18 @@ For most analytics solutions, use [`amp-analytics`](../../../../documentation/co
 Page view tracking works in [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) too.
 But you can also track user engagement with any type of page content,
 including clicks on links and buttons.
+[filter formats="websites"]
 And you can measure how far on the page the user scrolled,
 whether or not the user engaged with social media, and more.
+[/filter]
+[filter formats="stories"]
+And you can measure how far into a story the user tapped,
+and if the user engaged with interactive elements.
+[/filter]
 
-Learn more: See [Deep Dive into AMP Analytics](deep_dive_analytics.md).
+[tip type="read-on"]
+See [Deep Dive into AMP Analytics](deep_dive_analytics.md).
+[/tip]
 
 As part of integrating with the AMP platform,
 providers have offered pre-defined [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) configurations
@@ -118,6 +127,62 @@ When the page becomes visible
 an event triggers and the `pageview` request is sent.
 The triggers attribute determines when the pageview request fires.
 Learn more about [requests and triggers](deep_dive_analytics.md).
+
+[filter format="stories"]
+## AMP story default configuration 
+A typical user-journey for a website is very different from stories. On a website a user might read the headline, scroll to the bottom of the page, interact with a form before clicking on a link to the next page. Stories occupy the full viewport and users do not scroll but tap to move forward.
+
+{{ image('/static/img/docs/guides/analytics-pages.png', 660, 501, alt='Image of PWA' ) }}
+
+Many would like to measure each new [`<amp-story-page>`](../../../../documentation/components/reference/amp-story-page.md) in the story as a new pageview because the content from screen to screen is substantially different. However, the page is just a single element in a full story — and a user usually needs to see many story pages to get a full sense of the story. Thus, the question of how we count something as simple as the pageview has enormous implications for our analytics approach.
+
+{{ image('/static/img/docs/guides/analytics-setup-stories.png', 1037, 528, alt='Image of PWA' ) }}
+
+AMP Analytics makes it easy to implement the above using any analytics vendor. For instance, with Google Analytics’ [Global Site Tag](https://developers.google.com/gtagjs/) will look like the below snippet. 
+
+```html
+<amp-analytics type="gtag" data-credentials="include">
+ <script type="application/json">
+   {
+     "vars": {
+       "gtag_id": "YOUR_GOOGLE_ANALYTICS_ID",
+       "config": {
+         "YOUR_GOOGLE_ANALYTICS_ID": {
+           "groups": "default"
+         }
+       }
+     },
+     "triggers": {
+       "storyProgress": {
+         "on": "story-page-visible",
+         "vars": {
+           "event_name": "custom",
+           "event_action": "story_progress",
+           "event_category": "${title}",
+           "event_label": "${storyPageId}",
+           "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+         }
+       },
+       "storyEnd": {
+         "on": "story-last-page-visible",
+         "vars": {
+           "event_name": "custom",
+           "event_action": "story_complete",
+           "event_category": "${title}",
+           "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+         }
+       }
+     }
+   }
+ </script>
+</amp-analytics>
+```
+
+This default config should give you a complete working configuration for an AMP story. 
+
+If you’re interested in going beyond what the default config can give you, read [Analytics for your AMP Stories](https://blog.amp.dev/2019/08/28/analytics-for-your-amp-stories/?_gl=1*pw0bu5*_ga*MzM1MjQ0ODE5LjE1NjUwMzU1MTg) to find more advanced use cases with Google Analytics.
+
+[/filter]
 
 ## Variable substitution <a name="variable-substitution"></a>
 

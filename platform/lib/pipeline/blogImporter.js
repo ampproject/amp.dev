@@ -25,7 +25,7 @@ const moment = require('moment');
 const FeedParser = require('feedparser');
 const request = require('request');
 const util = require('util');
-const LOG = new Signale({'scope': 'Markdown Documents'});
+const LOG = new Signale({'scope': 'Blog Importer'});
 
 // Where to save the documents to
 const DESTINATION_BASE_PATH = project.absolute('pages/shared/data');
@@ -134,7 +134,7 @@ class BlogImporter {
   headline: "${ item.title }"
   date: "${ item.date.format('MMMM D, YYYY') }"
   url: "${ item.origin }"
-`
+`,
     );
 
     const filePath = path.join(DESTINATION_BASE_PATH, './blog.yaml');

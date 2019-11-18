@@ -7,7 +7,7 @@
             "classes": "cover",
             "alt-text": "Birdhouse metaphor.",
             "width": 409, "height": 305, "layout": "responsive",
-            "src": "../../img/land-see/content/tiny-houses-resized.jpg"
+            "src": "../img/land-see/content/tiny-houses-resized.jpg"
           }
         ],
         "post-classes": "land-see-pre-animate land-see-post-item land-see-post-item-wide land-see-post-featured col land-see-story",
@@ -23,7 +23,7 @@
             "classes": "cover",
             "alt-text": "Through the mist.",
             "width": 409, "height": 370, "layout": "responsive",
-            "src": "../../img/land-see/content/maine.jpg"
+            "src": "../img/land-see/content/maine.jpg"
           }
         ],
         "post-classes": "land-see-pre-animate land-see-post-item land-see-post-item-wide land-see-post-featured col land-see-story",

@@ -53,7 +53,7 @@ examples.post('/submit-poll', upload.none(), async (request, response) => {
   const pollResults = await calculatePollResults(answer, clientId, request, response);
 
   response.json(
-      pollResults
+      pollResults,
   );
 });
 
