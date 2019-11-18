@@ -39,7 +39,7 @@ AMP has an ongoing internal translation process for documentation. We are workin
         - Yes! Please translate this!
         - Thanks for your interest, but the internal team or a volunteer is currently working on this document. You will be added as a reviewer before it goes live.
 
-SSome translation contributions participate in Slack channels. We encourage you to join and introduce yourself! Join the [AMP Slack Channel here](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877).
+Some translation contributions participate in Slack channels. We encourage you to join and introduce yourself! Join the [AMP Slack Channel here](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877).
 
 ### Creating localized files
 
