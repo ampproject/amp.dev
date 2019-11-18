@@ -663,11 +663,11 @@ actions that apply to the whole document.
     <td>Opens the Print Dialog to print the current page.</td>
   </tr>
   <tr>
-    <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
-    <td>Scrolls to the provided element ID on the current page.</td>
+    <td><code>scrollTo(id='STRING', position='STRING')</code></td>
+    <td>Scrolls to the provided element ID on the current page. <code>position</code> takes value of <code>'top'</code>, <code>'center'</code>, or <code>'bottom'</code></td>
   </tr>
   <tr>
-    <td>optoutOfCid</td>
+    <td><code>optoutOfCid</code></td>
     <td>Opts out of Client ID generation for all scopes.</td>
   </tr>
   <tr>
