@@ -32,7 +32,7 @@ let formatComponentMapping = {};
 try {
   formatComponentMapping = require(FORMAT_COMPONENT_MAPPING);
 } catch (_) {
-  signale.warn('No version mapping defined . Run `gulp importAll` to fix.');
+  signale.warn('No version mapping defined . Run `npx gulp importAll` to fix.');
 }
 
 /* Potential path stubs that are used to find a matching file */
@@ -199,7 +199,8 @@ growPages.get(
       let version = req.params[3];
       const versionsByFormat = formatComponentMapping[component];
       if (!versionsByFormat) {
-        signale.warn(`No version mapping defined for ${component}. Run 'gulp importAll' to fix.`);
+        signale.warn(
+            `No version mapping defined for ${component}. Run 'npx gulp importAll' to fix.`);
         return next();
       }
       const format = getFormatFromRequest(req);
@@ -207,7 +208,7 @@ growPages.get(
       // add format supported versions to template context
       let versions = versionsByFormat[format];
       if (!versions) {
-        signale.warn(`No version mapping defined for format ${format}. Try running 'gulp ` +
+        signale.warn(`No version mapping defined for format ${format}. Try running 'npx gulp ` +
         'importAll\' to fix.');
         // set to the latest available version and tell the user on the page
         versions = [versionsByFormat.current];

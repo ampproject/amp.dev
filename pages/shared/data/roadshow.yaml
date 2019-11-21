@@ -23,14 +23,6 @@ nextstop:
     month: nov
     year: 2019
     link: https://events.withgoogle.com/amp-roadshow-seoul-2019/
-  - title: busan
-    coords: 93x18
-    location: Design Council Busan
-    time: 13:00-18:30
-    day: 7
-    month: nov
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-busan-2019/
 
 past:
   - title: KARACHI

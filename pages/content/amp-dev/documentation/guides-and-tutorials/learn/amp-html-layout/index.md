@@ -79,6 +79,7 @@ values of `layout`, `width` and `height` attributes.
 Depending on the value of the `layout` attribute, AMP component elements must have a `width` and `height` attribute that contains an integer pixel value. Actual layout behavior is determined by the `layout` attribute as described below.
 
 In a few cases, if `width` or `height` are not specified, the AMP runtime can default these values as follows:
+
 - `amp-pixel`: Both `width` and `height` are defaulted to 0.
 - `amp-audio`: The default `width` and `height` are inferred from browser.
 
@@ -89,11 +90,13 @@ AMP provides a set of layouts that specify how an AMP component behaves in the d
 **Example**: A simple responsive image, where width and height are used to determine the aspect ratio.
 
 [sourcecode:html]
-<amp-img src="/img/amp.jpg"
-    width="1080"
-    height="610"
-    layout="responsive"
-    alt="an image"></amp-img>
+<amp-img
+  src="/img/amp.jpg"
+  width="1080"
+  height="610"
+  layout="responsive"
+  alt="an image"
+></amp-img>
 [/sourcecode]
 
 Supported values for the `layout` attribute:
@@ -154,7 +157,7 @@ Supported values for the `layout` attribute:
 
 ### `sizes` <a name="sizes"></a>
 
-All AMP elements that support the `responsive` layout, also support the  `sizes` attribute. The value of this attribute is a sizes expression
+All AMP elements that support the `responsive` layout, also support the `sizes` attribute. The value of this attribute is a sizes expression
 as described in the [img sizes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but extended to all elements, not just images. In short, the `sizes` attribute describes how the width of the element is calculated depending on the media conditions.
 
 When the `sizes` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
@@ -164,10 +167,13 @@ When the `sizes` attribute is specified along with `width` and `height`, the `la
 In the following example, if the viewport is wider than `320px`, the image will be 320px wide, otherwise, it will be 100vw wide (100% of the viewport width).
 
 [sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-    width="400" height="300"
-    layout="responsive"
-    sizes="(min-width: 320px) 320px, 100vw">
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+>
 </amp-img>
 [/sourcecode]
 
@@ -177,8 +183,8 @@ All AMP elements that support the `responsive` layout, also support the `heights
 The value of this attribute is a sizes expression based on media expressions
 as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img), but with two key differences:
 
- 1. It applies to the height, not the width of the element.
- 2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
+1.  It applies to the height, not the width of the element.
+2.  Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percentage of the element's width.
 
 When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
 
@@ -186,11 +192,13 @@ When the `heights` attribute is specified along with `width` and `height`, the `
 
 In the following example, the height of the image will default to 80% of the width, but if the viewport is wider than `500px`, the height is capped at `200px`. Because the `heights` attribute is specified along with `width` and `height`, the layout defaults to `responsive`.
 
-
 [sourcecode:html]
-<amp-img src="https://acme.org/image1.png"
-    width="320" height="256"
-    heights="(min-width:500px) 200px, 80%">
+<amp-img
+  src="https://acme.org/image1.png"
+  width="320"
+  height="256"
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 [/sourcecode]
 
@@ -204,15 +212,19 @@ In the following example, we have 2 images with mutually exclusive media queries
 
 [sourcecode:html]
 <amp-img
-    media="(min-width: 650px)"
-    src="wide.jpg"
-    width=466
-    height=355 layout="responsive" ></amp-img>
+  media="(min-width: 650px)"
+  src="wide.jpg"
+  width="466"
+  height="355"
+  layout="responsive"
+></amp-img>
 <amp-img
-    media="(max-width: 649px)"
-    src="narrow.jpg"
-    width=527
-    height=193 layout="responsive" ></amp-img>
+  media="(max-width: 649px)"
+  src="narrow.jpg"
+  width="527"
+  height="193"
+  layout="responsive"
+></amp-img>
 [/sourcecode]
 
 ### `placeholder` <a name="placeholder"></a>
@@ -220,17 +232,17 @@ In the following example, we have 2 images with mutually exclusive media queries
 The `placeholder` attribute can be set on any HTML element, not just AMP elements. The `placeholder` attribute indicates that the element marked with this attribute acts as a placeholder for the parent AMP element. If specified, a placeholder element must be a direct child of the AMP element. By default, the placeholder is immediately shown for the AMP element, even if the AMP element's resources have not been downloaded or initialized. Once ready, the AMP element typically hides its placeholder and shows the content. The exact behavior with respect to the placeholder is up to the element's implementation.
 
 [sourcecode:html]
-<amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
 ### `fallback` <a name="fallback"></a>
 
-The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the  fallback is up to the element's implementation.
+The `fallback` attribute can be set on any HTML element, not just AMP elements. A fallback is a convention that allows the element to communicate to the reader that the browser does not support the element. If specified, a fallback element must be a direct child of the AMP element. The exact behavior with respect to the fallback is up to the element's implementation.
 
 [sourcecode:html]
-<amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
+<amp-anim src="animated.gif" width="466" height="355" layout="responsive">
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]

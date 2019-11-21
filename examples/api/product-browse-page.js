@@ -21,7 +21,7 @@ const utils = require('@lib/utils');
 // eslint-disable-next-line new-cap
 const examples = express.Router();
 const products = require(
-    utils.project.absolute('/examples/static/samples/json/related_products.json')
+    utils.project.absolute('/examples/static/samples/json/related_products.json'),
 );
 const productNames = products.items.map((item) => {
   return item.name;

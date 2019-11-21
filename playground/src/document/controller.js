@@ -41,11 +41,11 @@ export default class DocumentController {
     this._configureStatemachine();
     events.subscribe(
         EVENT_INPUT_CHANGE,
-        () => this.srcDoc.update()
+        () => this.srcDoc.update(),
     );
     events.subscribe(
         PlaygroundDocument.EVENT_DOCUMENT_STATE_CHANGED,
-        this._onStateChange.bind(this)
+        this._onStateChange.bind(this),
     );
     win.addEventListener('hashchange', this._onHashChange.bind(this), false);
     // TODO find a better place for key handling
@@ -104,11 +104,11 @@ export default class DocumentController {
   show() {
     this.saveButton = Button.from(
         this.win.document.getElementById('save-document'),
-        this.save.bind(this)
+        this.save.bind(this),
     );
     this.forkButton = Button.from(
         this.win.document.getElementById('fork-document'),
-        this.fork.bind(this)
+        this.fork.bind(this),
     );
     this._onStateChange(this.srcDoc.state, true);
   }

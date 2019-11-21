@@ -13,3 +13,33 @@ teaser:
     alt: App Install
 
   download_url: '/static/files/templates/app_install_ads.zip'
+  template_demo_home: 'ads/app_install_ads/app-install.html'
+  template_github_home: 'ads/app_install_ads'
+
+document:
+  pages: /content/amp-dev/documentation/templates/app_install_ads/pages
+  description: An example ad using AMP 4 Ads markup.
+
+url:
+  path: '/documentation/templates/app_install_ads'
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/templates/app_install_ads/pages/ad-desktop-above.jpg'
+      width: 4
+      height: 3
+      type: desktop
+      alt: image
+
+    - image_src: '/static/img/templates/app_install_ads/pages/ad-tablet-above.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: image
+
+    - image_src: '/static/img/templates/app_install_ads/pages/ad-mobile-above.jpg'
+      width: 1
+      height: 2
+      type: mobile
+      alt: image

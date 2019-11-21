@@ -139,13 +139,13 @@ class Preview {
     div.appendChild(
         this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), (width) => {
           this.dimension.width = width;
-        })
+        }),
     );
     div.appendChild(this.doc.createTextNode('✕'));
     div.appendChild(
         this.createSizeInput(PARAM_HEIGHT, params.get(PARAM_HEIGHT, 250), (height) => {
           this.dimension.height = height;
-        })
+        }),
     );
     return div;
   }

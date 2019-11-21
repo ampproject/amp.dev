@@ -156,20 +156,19 @@
       position: relative;
       width: 100%;
       min-height: 0;
+      padding: 1em 1em 0;
       margin-top: 0;
-      padding-bottom: 2em;
+    }
 
-      &::before {
-        content: '';
-        display: block;
-        width: calc(100% + 2em);
-        height: 2em;
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-        margin-left: -1em;
-        background: linear-gradient(0deg, rgba(color('ebony-clay'), 0) 0%, color('ebony-clay') 50%);
-      }
+    &::after {
+      content: '';
+      display: block;
+      width: calc(100% - 4px);
+      height: 2em;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: linear-gradient(0deg, rgba(color('ebony-clay'), 0) 0%, color('ebony-clay') 50%);
     }
   }
 
