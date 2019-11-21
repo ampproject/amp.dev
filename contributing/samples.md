@@ -171,7 +171,7 @@ You can use them to style your samples like this:
 }
 ```
 
-Only add the ones that you need to the sample. These CSS variable declarations will be added automatically to your sample, if you use `gulp create ...` to create the sample.
+Only add the ones that you need to the sample. These CSS variable declarations will be added automatically to your sample, if you use `npx gulp create ...` to create the sample.
 
 **Colors**
 

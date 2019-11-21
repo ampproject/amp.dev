@@ -38,7 +38,7 @@ test('returns 400 on invalid id', (done) => {
 
 test('returns 404 for unresolved message', (done) => {
   fetch.mockReturnValue(Promise.resolve(
-      new Response('', {status: 404})
+      new Response('', {status: 404}),
   ));
   request(app)
       .get('/?v=011905140117570&id=99999999')
@@ -54,7 +54,7 @@ test('shows message', (done) => {
             },
           }),
           {status: 200},
-      )
+      ),
   ));
   request(app)
       .get('/?v=011905140117570&id=1234&s[]=world')

@@ -144,6 +144,43 @@ author: sebastianbenz
     <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60"></amp-img>
   </amp-selector>
 
+  <!-- ## Keyboard select modes -->
+  <!--
+  Add the attribute `keyboard-select-mode` to opt into a pre-defined user interaction pattern for `amp-selector`. 
+  By default the value is 'NONE' and displays the following behavior.
+  -->
+  <amp-selector layout="container" keyboard-select-mode="none" class="sample-selector" disabled>
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"  width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60"></amp-img>
+  </amp-selector>
+
+  <!-- ### Keyboard select mode: Focus -->
+  <!--
+  Add the attribute `keyboard-select-mode="focus"` so the Tab key gives focus to `amp-selector`. 
+  The user navigates between items with the arrow keys. Must press space or enter to change the selection.
+  -->
+  <amp-selector layout="container" keyboard-select-mode="focus" class="sample-selector" disabled>
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"  width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60"></amp-img>
+  </amp-selector>
+
+
+  <!-- ### Keyboard select mode: Select -->
+  <!--
+  Add the attribute `keyboard-select-mode="focus"` so the Tab key gives focus to `amp-selector`. 
+  The selection changes as the user navigates options with arrow keys.
+  -->
+  <amp-selector layout="container" keyboard-select-mode="select" class="sample-selector" disabled>
+    <amp-img src="/static/samples/img/landscape_sea_300x199.jpg"  width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_desert_300x200.jpg" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_ship_300x200.jpg" width="90" height="60"></amp-img>
+    <amp-img src="/static/samples/img/landscape_village_300x200.jpg" width="90" height="60"></amp-img>
+  </amp-selector>
+
   <!-- ## Actions -->
   <!--
   The `clear` action may be used to clear all selections of an `amp-selector`.

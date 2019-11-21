@@ -17,3 +17,12 @@ teaser:
     height: 16
 
   download_url: '/static/files/templates/multi-image-ads.zip'
+  template_demo_home: 'ads/multi-image-ads/multi-image.html'
+  template_github_home: 'ads/multi-image-ads'
+ 
+document:
+  pages: /content/amp-dev/documentation/templates/multi-image-ads/pages
+  description: Template for your own multiple image story ad.
+
+url:
+  path: '/documentation/templates/multi-image-ads'

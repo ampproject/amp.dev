@@ -12,7 +12,7 @@ test('removes duplicate canonical link and viewport', async () => {
   <link rel="canonical" href="self2.html">
 </head>
 <body>
-</body></html>`
+</body></html>`,
   )).toEqual(
       `<html><head>
   <meta charset="utf-8">

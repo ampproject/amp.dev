@@ -125,27 +125,25 @@ class AutoImporter {
 
     // eslint-disable-next-line no-unused-vars
     for (const error of validationResult.errors) {
-      if (error.category === 'MANDATORY_AMP_TAG_MISSING_OR_INCORRECT') {
-        switch (error.code) {
-          case 'MANDATORY_TAG_MISSING':
-            if (error.params && ENGINE_MAP[error.params[0]]) {
-              missingElements.missingBaseScriptTag = ENGINE_MAP[error.params[0]];
+      switch (error.code) {
+        case 'MANDATORY_TAG_MISSING':
+          if (error.params && ENGINE_MAP[error.params[0]]) {
+            missingElements.missingBaseScriptTag = ENGINE_MAP[error.params[0]];
+          }
+          break;
+        case 'MISSING_REQUIRED_EXTENSION':
+        case 'ATTR_MISSING_REQUIRED_EXTENSION':
+          if (error.params && error.params.length > 1) {
+            const tagName = error.params[1];
+            if (components[tagName]) {
+              missingElements.missingTags[tagName] = 1;
+            } else {
+              console.log(`Warning: Unknown AMP component : ${tagName}`);
             }
-            break;
-          case 'MISSING_REQUIRED_EXTENSION':
-          case 'ATTR_MISSING_REQUIRED_EXTENSION':
-            if (error.params && error.params.length > 1) {
-              const tagName = error.params[1];
-              if (components[tagName]) {
-                missingElements.missingTags[tagName] = 1;
-              } else {
-                console.log(`Warning: Unknown AMP component : ${tagName}`);
-              }
-            }
-            break;
-          default:
-            // no default
-        }
+          }
+          break;
+        default:
+          // no default
       }
     }
     return missingElements;

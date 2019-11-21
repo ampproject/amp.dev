@@ -250,7 +250,7 @@ exports.instanceTemplateCreate = instanceTemplateCreate;
 exports.packagerDeploy = series(
     packagerImageUpload,
     packagerInstanceTemplateCreate,
-    packagerUpdateStart
+    packagerUpdateStart,
 );
 exports.packagerImageUpload = packagerImageUpload;
 exports.packagerInstanceTemplateCreate = packagerInstanceTemplateCreate;

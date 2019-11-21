@@ -38,6 +38,7 @@ const BlogImporter = require('@lib/pipeline/blogImporter');
 // const roadmapImporter = require('@lib/pipeline/roadmapImporter');
 const gulpSass = require('gulp-sass');
 const lint = require('./lint.js');
+const importTasks = require('./import.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
@@ -219,6 +220,7 @@ function importAll() {
     (new ComponentReferenceImporter()).import(),
     (new SpecImporter()).import(),
     (new BlogImporter()).import(),
+    importTasks.importWorkingGroups(),
     // TODO: Fails on Travis with HttpError: Requires authentication
     // roadmapImporter.importRoadmap(),
   ]);
@@ -250,7 +252,7 @@ function buildPrepare(done) {
           buildBoilerplate,
           buildSamples,
           importAll,
-          zipTemplates
+          zipTemplates,
       ),
       // run reference checker after import
       lint.lintAll,

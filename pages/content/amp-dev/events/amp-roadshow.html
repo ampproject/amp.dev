@@ -38,24 +38,10 @@ section_links:
     </div>
 </section>
 
-<section class="ap--container-fluid">
-  {% do doc.styles.addCssFile('css/components/organisms/jumpto-list.css') %}
-  {% do doc.styles.addCssFile('css/components/molecules/jumpto-item.css') %}
-
-  <div class="ap-o-jumpto">
-    <div class="ap--container">
-      <div class="ap-o-jumpto-content">
-        <p class="ap-o-jumpto-text">Jump To:</p>
-        <ul class="ap-o-jumpto-list">
-          {% for link in doc.section_links %}
-            <li class="ap-m-jumpto-item">
-              <a href="#{{ link }}"class="ap-m-jumpto-item-link">{{ link }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
+<section class="ap--container">
+  {% with text=_('Jump to:') %}
+  {% include '/views/partials/jumpto.j2' %}
+  {% endwith %}
 </section>
 
 <section id="Cities" class="ap--container">

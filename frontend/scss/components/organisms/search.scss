@@ -155,7 +155,8 @@
 
   &-submit {
     @include btn;
-    display: none;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     top: 11px;
     right: 10px;
@@ -181,9 +182,11 @@
     }
   }
 
+  &-submit:focus,
   &-input:focus + &-submit {
     @media (min-width: 1024px) {
-      display: inline-block;
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 

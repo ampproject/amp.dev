@@ -54,7 +54,7 @@ SampleRenderer.use(router, async (request, response, template) => {
   const newStatus = await updateStatus(request, response);
   response.send(template.render(createRequestContext(
       request,
-      await createLiveBlogSample(request, newStatus)
+      await createLiveBlogSample(request, newStatus),
   )));
 });
 
@@ -107,7 +107,7 @@ function writeStatus(response, newValue) {
   response.cookie(
       AMP_LIVE_LIST_COOKIE_NAME,
       {value: newValue},
-      {expires: new Date(Date.now() + EXPIRATION_DATE)}
+      {expires: new Date(Date.now() + EXPIRATION_DATE)},
   );
 }
 
@@ -119,8 +119,8 @@ function getBlogEntries(size) {
             blogs[i].heading,
             blogs[i].text,
             blogs[i].img.split(IMG_PATH)[1],
-            i + 1
-        )
+            i + 1,
+        ),
     );
   }
   return returnArray;
