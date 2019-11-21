@@ -7,14 +7,14 @@ formats:
 
 teaser:
   image:
-    src: "/static/img/success-stories/musement/musement_teaser.png"
+    src: "/static/img/success-stories/musement/musement-teaser.jpg"
     width: 1
     height: 1
     alt: Musement
   logo:
-    src: "/static/img/success-stories/musement/musement_logo.png"
-    width: 200
-    height: 20
+    src: "/static/img/success-stories/musement/musement-logo.jpg"
+    width: 271
+    height: 46
     alt: Musement
   text: Musement’s mobile-first design helps users navigate 70% faster
 
@@ -23,11 +23,11 @@ stage:
   subline: OCT 18, 2019
   layout: mobile
   devices:
-    - image_src: "/static/img/success-stories/musement/musement_3.png"
-      width: 3
-      height: 5
+    - image_src: "/static/img/success-stories/musement/musement-screen-1.jpg"
+      width: 750
+      height: 1308
       type: mobile
-      alt: Musement
+      alt: musement.com Screenshot
 
 kpis:
   - value: 27%
@@ -50,9 +50,10 @@ contents:
       Headquarters in Milan
 
   - layout: media
-    video_src: "/static/img/success-stories/musement/musement_video.mp4"
-    width: 8
-    height: 5
+    video_src: "/static/img/success-stories/musement/musement-video.mp4"
+    poster_src: "/static/img/success-stories/musement/musement-poster.jpg"
+    width: 1280
+    height: 720
 
   - layout: text
     headline: Goals
@@ -67,9 +68,9 @@ contents:
       Rolled out AMP to more than 30,000 landing pages
 
   - layout: text-media
-    image_src: "/static/img/success-stories/musement/musement_3.png"
-    width: 3
-    height: 5
+    image_src: "/static/img/success-stories/musement/musement-screen-2.jpg"
+    width: 750
+    height: 1334
     type: mobile
     alt: Musement
     headline: Rundown
@@ -83,9 +84,9 @@ contents:
       The very first AMP page they created mirrored the most transactional page type on the website: an attraction page. Of all of Musement’s marketing campaigns, 93% are directed to pages of this type."
 
   - layout: text-media
-    image_src: "/static/img/success-stories/musement/musement_3.png"
-    width: 3
-    height: 5
+    image_src: "/static/img/success-stories/musement/musement-screen-3.jpg"
+    width: 750
+    height: 1334
     type: mobile
     alt: Musement
     text:

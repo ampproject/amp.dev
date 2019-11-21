@@ -227,7 +227,6 @@
             {% if content.video_src %}
             {% do doc.amp_dependencies.add('amp-video', '0.1') %}
             <amp-video
-                autoplay
                 controls
                 class="ap--media"
                 width="{{content.width}}"

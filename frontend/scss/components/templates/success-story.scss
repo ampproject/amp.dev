@@ -129,7 +129,7 @@ body {
   }
 
   .#{organism("text-media-block")} {
-    padding-bottom: 5rem;
+    padding-bottom: 40px;
 
     h2 {
       margin-top: 1rem;
@@ -196,10 +196,6 @@ body {
 
       .#{utility("media")} {
         width: 100%;
-
-        @media (min-width: 720px) {
-          margin-top: 5em;
-        }
       }
     }
 
