@@ -149,7 +149,7 @@ format version: 1b3
 
 (Note that the `-verify` switch will not work at this point because the required certificates are not on the `https://example.com/` server.)
 
-Verify that the response *always* include the `Vary` header with the value `Accept,AMP-Cache-Transform` (irrespective of whether the MIME type is `text/html`, `application/signed-exchange`, or something else:
+Verify that the response *always* include the `Vary` header with the value `Accept,AMP-Cache-Transform` (irrespective of whether the MIME type is `text/html`, `application/signed-exchange`, or something else):
 
 ```sh
 $ curl -si https://staging.example.com/ | less
