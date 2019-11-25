@@ -31,23 +31,18 @@ stage:
 
 kpis:
   - value: 27%
-    text: more revenue per visit from PPC campaigns
+    text: More revenue per visit from PPC campaigns
 
   - value: 15%
-    text: higher conversion rate from PPC campaigns
+    text: Higher conversion rate from PPC campaigns
 
-  - value: 27%
-    text: Boosted average revenue per visit
+  - value: -79%
+    text: Mobile load time
 
 contents:
   - layout: text
     headline: About Musement
-    text:
-      Online platform for discovering and booking activities, shows, tours, and events
-      Over 1,000 destinations in 70 countries
-      Founded in 2013
-      Acquired by TUI Group in September 2018
-      Headquarters in Milan
+    text: "<ul><li>Online platform for discovering and booking activities, shows, tours, and events</li><li>Over 1,000 destinations in 70 countries</li><li>Founded in 2013</li><li>Acquired by TUI Group in September 2018</li><li>Headquarters in Milan</li></ul>"
 
   - layout: media
     video_src: "/static/img/success-stories/musement/musement-video.mp4"
@@ -57,15 +52,11 @@ contents:
 
   - layout: text
     headline: Goals
-    text: Make it easier and faster for users to find events and attractions
-      Drive click-through and conversion rates
-      Improve return on investment and margin per sale
+    text: "<ul><li>Make it easier and faster for users to find events and attractions</li><li>Drive click-through and conversion rates</li><li>Improve return on investment and margin per sale</li></ul>"
 
   - layout: text
     headline: Approach
-    text: Tested AMP pages globally
-      Analysed existing site performance against AMP
-      Rolled out AMP to more than 30,000 landing pages
+    text: "<ul><li>Tested AMP pages globally</li><li>Analysed existing site performance against AMP</li><li>Rolled out AMP to more than 30,000 landing pages</li></ul>"
 
   - layout: text-media
     image_src: "/static/img/success-stories/musement/musement-screen-2.jpg"
