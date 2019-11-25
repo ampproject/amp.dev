@@ -111,7 +111,7 @@
     "eslint": "6.6.0",
     "eslint-config-google": "0.14.0",
     "fetch-mock": "8.0.0",
-    "file-loader": "4.2.0",
+    "file-loader": "5.0.2",
     "globby": "10.0.1",
     "google-closure-compiler": "20191111.0.0",
     "got": "9.6.0",
