@@ -18,57 +18,57 @@ require('module-alias/register');
 
 const gulp = require('gulp');
 const fs = require('fs');
-const del = require('del');
-const path = require('path');
 const through = require('through2');
-// const git = require('@lib/utils/git');
-const {execSync} = require('child_process');
+const git = require('@lib/utils/git');
 const project = require('@lib/utils/project');
+const {Signale} = require('signale');
+const log = new Signale({'scope': 'Recent Guides'});
 
-// Where to save the documents to
-const TEMP_DEST_PATH = project.absolute('temp/');
-const DEST_BASE_PATH = project.absolute('pages/shared/data/');
-const GUIDES_SRC = project.absolute('pages/content/amp-dev/documentation/guides-and-tutorials/');
+// Paths of guides pages; Relative for json file; Absolute for git log function
+const PATH_RELATIVE = '/content/amp-dev/documentation/guides-and-tutorials/';
+const PATH_ABSOLUTE = project.paths.GROW_POD + PATH_RELATIVE;
+
+// Where to save the list to
+const DEST_FILE = 'pages/shared/data/recent-guides.json';
 
 class RecentGuides {
   import() {
     const guides = [];
 
+    // Look for all .md and .html files; skip localized versions
     let stream = gulp.src([
-      'pages/content/amp-dev/documentation/guides-and-tutorials/**/*.{md,html}',
-      '!pages/content/amp-dev/documentation/guides-and-tutorials/**/*@*.{md,html}',
+      `${PATH_ABSOLUTE}/**/*.{md,html}`,
+      `!${PATH_ABSOLUTE}/**/*@*.{md,html}`,
     ]);
-    stream = stream.pipe(through.obj((file, encoding, callback) => {
+
+    log.start('Refreshing recent guides list ...');
+
+    stream = stream.pipe(through.obj(async (file, encoding, callback) => {
       if (!file.isDirectory() && !file.isNull()) {
-        const filePath = GUIDES_SRC + file.relative;
-        const fileDate = execSync(`git log -1 --pretty=format:%ci ${filePath}`).toString().trim();
+        // Create file path and get file date with git log function
+        const filePath = PATH_RELATIVE + file.relative;
+        const fileDate = await git.committerDate(PATH_ABSOLUTE + file.relative);
 
         // Build array of guides objects
         guides.push({
           'path': filePath,
           'date': fileDate,
         });
-
-        // Sort guides by date in desc order
-        guides.sort((a, b) => (a.date > b.date) ? -1 : 1);
       };
 
       stream.push(file);
       callback();
-    })).pipe(gulp.dest(TEMP_DEST_PATH));
+    })).pipe(gulp.dest('./'));
 
     return new Promise((resolve) => {
       stream.on('end', resolve);
     }).then(() => {
-      console.log('Copied all guides. Refreshing guides list.');
-      fs.writeFileSync(path.join(DEST_BASE_PATH, 'recent-guides.json'), JSON.stringify(guides));
-      console.log('Refreshed guides list. Total guides count:', guides.length);
-
-      // Delete temp folder
-      (async () => {
-        const deleted = await del(['temp']);
-        console.log('Deleted files and directories:\n', deleted.join('\n'));
-      })();
+      // Sort guides by date in desc order and write them into a json file
+      guides.sort((a, b) => (a.date > b.date) ? -1 : 1);
+      fs.writeFileSync(DEST_FILE, JSON.stringify(guides));
+      log.success(
+        `Saved recent guides list to ~/${DEST_FILE}. Total guides count: ${guides.length}`
+      );
     });
   }
 }

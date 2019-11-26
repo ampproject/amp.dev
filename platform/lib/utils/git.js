@@ -19,3 +19,6 @@ const {execSync} = require('child_process');
 module.exports.version = execSync('git log -1 --pretty=format:%h ').toString().trim();
 module.exports.message = execSync('git log -1 --pretty=%B --no-merges').toString().trim();
 module.exports.user = execSync('git config user.name').toString().trim();
+module.exports.committerDate = (path) => {
+  return execSync(`git log -1 --pretty=format:%ci ${path}`).toString().trim();
+};
