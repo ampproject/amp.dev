@@ -18,18 +18,19 @@ require('module-alias/register');
 
 const gulp = require('gulp');
 const fs = require('fs');
+const yaml = require('js-yaml');
 const through = require('through2');
 const git = require('@lib/utils/git');
 const project = require('@lib/utils/project');
 const {Signale} = require('signale');
 const log = new Signale({'scope': 'Recent Guides'});
 
-// Paths of guides pages; Relative for json file; Absolute for git log function
+// Paths of guides pages; Relative for yaml file; Absolute for git log function
 const PATH_RELATIVE = '/content/amp-dev/documentation/guides-and-tutorials/';
 const PATH_ABSOLUTE = project.paths.GROW_POD + PATH_RELATIVE;
 
 // Where to save the list to
-const DEST_FILE = 'pages/shared/data/recent-guides.json';
+const DEST_FILE = 'pages/shared/data/recent-guides.yaml';
 
 class RecentGuides {
   import() {
@@ -63,9 +64,11 @@ class RecentGuides {
     return new Promise((resolve) => {
       stream.on('end', resolve);
     }).then(() => {
-      // Sort guides by date in desc order and write them into a json file
+      // Sort guides by date in desc order and write them into a yaml file
       guides.sort((a, b) => (a.date > b.date) ? -1 : 1);
-      fs.writeFileSync(DEST_FILE, JSON.stringify(guides));
+      fs.writeFileSync(DEST_FILE, yaml.safeDump(guides, {
+        lineWidth: 'none'
+      }));
       log.success(
         `Saved recent guides list to ~/${DEST_FILE}. Total guides count: ${guides.length}`
       );
