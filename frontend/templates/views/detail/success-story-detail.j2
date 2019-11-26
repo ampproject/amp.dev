@@ -189,12 +189,12 @@
 
         {# layout: media #}
         {% if content.layout == 'media' %}
-          <div class="ap-o-text-media-block">
-            {% if content.type %}
-              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
-              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
-              {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
-              <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
+        {% if content.type %}
+        <div class="ap-o-text-media-block">
+          {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-desktop.css') %}
+          {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-tablet.css') %}
+          {% do doc.styles.addCssFile('css/components/molecules/ghost-frame-mobile.css') %}
+            <div class="ap-m-ghost-frame-{{content.type}} {{content.direction}}">
               {% if content.type.video_src %}
               {% do doc.amp_dependencies.add('amp-video', '0.1') %}
               <amp-video
@@ -210,18 +210,48 @@
                   album="{{content.video_album}}">
               </amp-video>
               {% else %}
-                <amp-img
-                  class="ap--media"
-                  alt="{{content.alt}}"
-                  height="{{content.height}}"
-                  layout="responsive"
-                  src="{{content.image_src}}"
-                  width="{{content.width}}">
-                </amp-img>
-                {% endif %}
-              </div>
+              <amp-img
+                class="ap--media"
+                alt="{{content.alt}}"
+                height="{{content.height}}"
+                layout="responsive"
+                src="{{content.image_src}}"
+                width="{{content.width}}">
+              </amp-img>
+              {% endif %}
+            </div>
+        </div>
+        {% else %}
+        <div class="ap--container-fluid">
+          <div class="ap-o-text-media-block ap-o-text-media-block-center">
+            {% if content.video_src %}
+            {% do doc.amp_dependencies.add('amp-video', '0.1') %}
+            <amp-video
+                controls
+                class="ap--media"
+                width="{{content.width}}"
+                height="{{content.height}}"
+                layout="responsive"
+                src="{{content.video_src}}"
+                poster="{{content.poster_src}}"
+                artwork="{{content.artwork_src}}"
+                title="{{content.video_title}}"
+                artist="{{content.video_artist}}"
+                album="{{content.video_album}}">
+            </amp-video>
+            {% elif content.image_src %}
+            <amp-img
+                class="ap--media"
+                alt="{{content.alt}}"
+                height="{{content.height}}"
+                layout="responsive"
+                src="{{content.image_src}}"
+                width="{{content.width}}">
+            </amp-img>
             {% endif %}
           </div>
+        </div>
+        {% endif %}
         {% endif %}
 
         {# layout: quote #}
