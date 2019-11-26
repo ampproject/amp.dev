@@ -1,7 +1,7 @@
 $title: ameba.jp
 $category: social-media
 $date: 2018-03-12
-description: Ameba launched their article ranking pages as AMP Stories
+description: Ameba がブログ記事ランキングページを AMP Stories として公開
 
 formats:
   - stories
@@ -17,10 +17,10 @@ teaser:
     width: 164
     height: 50
     alt: Ameba
-  text: To provide their blog content in a more attractive format, Ameba launched their article ranking pages as AMP Stories
+  text: Ameba がブログ記事ランキングページを AMP Stories として公開
 
 stage:
-  headline: Ameba launched their article ranking pages as AMP Stories
+  headline: Ameba がブログ記事ランキングページを AMP Stories として公開
   subline: NOV 21, 2019
   layout: all
   logo:
@@ -42,13 +42,13 @@ stage:
 
 kpis:
   - value: 20%
-    text: CTR
+    text: クリック率
 
   - value: 53%
-    text: Completion ratio
+    text: 読了率
 
   - value: 1.5x
-    text: Avg. time on page
+    text: 平均滞在時間
 
 contents:
   - layout: text
