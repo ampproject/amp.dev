@@ -67,10 +67,10 @@ class RecentGuides {
       // Sort guides by date in desc order and write them into a yaml file
       guides.sort((a, b) => (a.date > b.date) ? -1 : 1);
       fs.writeFileSync(DEST_FILE, yaml.safeDump(guides, {
-        lineWidth: 'none'
+        lineWidth: 'none',
       }));
       log.success(
-        `Saved recent guides list to ~/${DEST_FILE}. Total guides count: ${guides.length}`
+          `Saved recent guides list to ~/${DEST_FILE}. Total guides count: ${guides.length}`,
       );
     });
   }
