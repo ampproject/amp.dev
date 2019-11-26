@@ -343,34 +343,23 @@ guides:
     <h2>Recent Guides & Tutorials</h2>
 
     <div class="ap-m-teaser-container">
-      {% for guide in doc.recent_guides[:6] %}
-        <div class="ap-m-teaser ap-m-teaser-column-box">
-          {% set teaser_doc = g.doc(guide.path, locale=doc.locale) %}
+      [% set counter = 0 %]
+      <div class="ap-m-teaser ap-m-teaser-column-box">
+      {% for guide in doc.recent_guides %}
+        {% set teaser_doc = g.doc(guide.path, locale=doc.locale) %}
+        [% if format in '{{ teaser_doc.formats }}' and counter < 6 %]
+
+          [% set counter = counter + 1 %]
+          [% if counter is odd and counter != 1 %]
+          </div><div class="ap-m-teaser ap-m-teaser-column-box">
+          [% endif %]
+
           {% with highlightedTeaser = True %}
           {% include 'views/partials/teaser.j2' %}
           {% endwith %}
-        </div>
+        [% endif %]
       {% endfor %}
-    </div>
-
-    <div class="ap-m-teaser-container">
-      {# for format in doc.recent_guides %}
-      [% if format == '{{ format }}' %]
-        {% set columns = doc.recent_guides[format] %}
-        {% for columns in doc.recent_guides[format]|slice(3)%}
-        <div class="ap-m-teaser ap-m-teaser-column-box">
-          {% for teaser_doc in columns %}
-          {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-            [% if format in '{{ teaser_doc.formats }}' %]
-              {% with highlightedTeaser = True %}
-              {% include 'views/partials/teaser.j2' %}
-              {% endwith %}
-            [% endif %]
-          {% endfor %}
-        </div>
-        {% endfor%}
-      [% endif%]
-      {% endfor #}
+      </div>
     </div>
   </div>
 </section>
