@@ -133,7 +133,7 @@
     "husky": "3.0.9",
     "jasmine": "3.5.0",
     "jest": "24.9.0",
-    "jimp": "0.8.5",
+    "jimp": "0.9.3",
     "js-beautify": "1.10.2",
     "keymaster": "1.6.2",
     "marked": "^0.7.0",
