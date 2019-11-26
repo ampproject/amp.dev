@@ -1,5 +1,5 @@
 - path: /content/amp-dev/documentation/guides-and-tutorials/index.html
-  date: '2019-11-25 16:07:08 +0100'
+  date: '2019-11-26 17:12:32 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/translations.md
   date: '2019-11-18 11:31:55 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md
@@ -36,11 +36,11 @@
   date: '2019-10-28 11:52:19 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-managing-user-state.md
   date: '2019-10-28 11:52:19 +0100'
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-  date: '2019-10-28 11:52:19 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md
   date: '2019-10-28 11:52:19 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
+  date: '2019-10-28 11:52:19 +0100'
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
   date: '2019-10-28 11:52:19 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-components.md
   date: '2019-10-28 11:52:19 +0100'
@@ -66,6 +66,8 @@
   date: '2019-10-02 09:10:54 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/integrate-amphtml-email.md
   date: '2019-10-02 09:10:54 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md
+  date: '2019-10-02 09:10:54 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/advertise_amp_stories.md
   date: '2019-10-02 09:10:54 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/custom-javascript-tutorial.md
@@ -73,8 +75,6 @@
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/custom-javascript.md
   date: '2019-10-02 09:10:54 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/live_blog.md
-  date: '2019-10-02 09:10:54 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/integrate-with-apps.md
   date: '2019-10-02 09:10:54 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md
   date: '2019-10-02 09:10:54 +0200'
@@ -120,13 +120,13 @@
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/index.md
   date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md
+  date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/amp_email_best_practices.md
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/seatmap.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
   date: '2019-08-14 12:53:48 +0200'
@@ -162,53 +162,17 @@
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/login_requiring/summary.md
   date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md
-  date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/monetization/ads_vendors.md
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/monetization/index.md
   date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/third_party_components.md
+  date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction.md
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/create_shell.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/image_ad.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/summary.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/track_views.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/start_story.md
-  date: '2019-08-14 12:53:48 +0200'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md
   date: '2019-08-14 12:53:48 +0200'
@@ -232,6 +196,42 @@
   date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md
   date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/include_image.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/presentation_layout.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/preview_and_validate.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/create_shell.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/image_ad.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/index.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/summary.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/track_views.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_bookend.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/create_cover_page.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/parts_of_story.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/setting_up.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/start_story.md
+  date: '2019-08-14 12:53:48 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/validation.md
+  date: '2019-08-14 12:53:48 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/secure-pages.md
   date: '2019-08-07 14:24:33 -0700'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity_data/dealing_with_data.md
@@ -246,21 +246,21 @@
   date: '2019-04-03 21:43:05 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/custom_fonts.md
   date: '2019-04-02 16:09:44 -0700'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/index.md
-  date: '2019-04-01 18:36:56 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md
+  date: '2019-04-01 18:36:56 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/index.md
   date: '2019-04-01 18:36:56 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/prereqs-setup.md
   date: '2019-03-06 14:58:06 +0100'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/prepare_for_discovery.md
-  date: '2019-03-06 14:58:06 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md
+  date: '2019-03-06 14:58:06 +0100'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create/prepare_for_discovery.md
   date: '2019-03-06 14:58:06 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md
   date: '2019-03-06 12:55:53 +0100'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md
-  date: '2019-03-06 12:55:53 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/publish.md
+  date: '2019-03-06 12:55:53 +0100'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/create_amphtml_ad/validate.md
   date: '2019-03-06 12:55:53 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/how_amp_is_different.md
   date: '2019-02-07 10:57:26 -0800'
