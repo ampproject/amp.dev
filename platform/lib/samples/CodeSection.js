@@ -88,7 +88,6 @@ module.exports = class CodeSection {
 
   appendDoc(doc) {
     doc = doc.replace(/<!--|-->/gm, '') + '\n';
-    doc = this.parseFilters(doc);
     this.extractHeadings(doc);
     this.doc_ += doc;
     this.cachedMarkedDoc = false;
@@ -252,18 +251,6 @@ module.exports = class CodeSection {
       return string;
     }
     return lines.slice(1, lines.length-1).join('\n');
-  }
-
-  parseFilters(line) {
-    const filterMatch = line.match(/@filter\(([^)]+)\)/);
-    if (!filterMatch) {
-      return line;
-    }
-    if (this.filters) {
-      throw new Error('Multiple @filter annotations found in section');
-    }
-    this.filters = filterMatch[1].split(',').map((f) => f.trim());
-    return line.replace(filterMatch[0], '');
   }
 
   extractHeadings(line) {

@@ -30,7 +30,8 @@
               on="tap:
                   AMP.setState({orientation{{ preview.index }}: false}),
                   iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
-                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait')">
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
+                  bgContainer{{ preview.index }}.toggleClass(class='initial-{{ initial_orientation }}', force=false)">
         <div class="ap-a-ico ap-o-code-preview-controls-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
         </div>
@@ -40,7 +41,8 @@
               on="tap:
                   AMP.setState({orientation{{ preview.index }}: true}),
                   iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-portrait'),
-                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape')">
+                  iframeContainer{{ preview.index }}.toggleClass(class='ap-o-code-preview-preview-iframe-landscape'),
+                  bgContainer{{ preview.index }}.toggleClass(class='initial-{{ initial_orientation }}', force=false)">
         <div class="ap-a-ico ap-o-code-preview-controls-icon">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#orientation-toggle"></use></svg>
         </div>
@@ -63,7 +65,7 @@
                   frameborder="0">
         <div placeholder></div>
       </amp-iframe>
-      <div class="ap-o-code-preview-preview-iframe-background initial-{{ initial_orientation }}"></div>
+      <div id="bgContainer{{ preview.index }}" class="ap-o-code-preview-preview-iframe-background initial-{{ initial_orientation }}"></div>
     </div>
   </div>
   {% endif %}

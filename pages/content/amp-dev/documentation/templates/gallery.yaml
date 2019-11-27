@@ -13,3 +13,33 @@ teaser:
     alt: Gallery
 
   download_url: '/static/files/templates/gallery.zip'
+  template_demo_home: 'websites/gallery/templates/gallery.amp.html'
+  template_github_home: 'websites/gallery'
+
+document:
+  pages: /content/amp-dev/documentation/templates/gallery/pages
+  description: Website for a modern art gallery.
+
+url:
+  path: '/documentation/templates/gallery'
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/templates/gallery/pages/gallery-desktop-above.jpg'
+      width: 4
+      height: 3
+      type: desktop
+      alt: image
+
+    - image_src: '/static/img/templates/gallery/pages/gallery-inner-tablet-above.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: image
+
+    - image_src: '/static/img/templates/gallery/pages/gallery-mobile-above.jpg'
+      width: 1
+      height: 2
+      type: mobile
+      alt: image

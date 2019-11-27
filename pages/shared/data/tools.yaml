@@ -423,3 +423,14 @@ providers:
       fit: contain
     formats:
       - email
+  - name: SendPulse
+    url: https://sendpulse.com/
+    type: Email Service
+    description: Send interactive emails using SendPulse email editor or API. 
+    image:
+      src: /static/img/tools/sendpulse-logo.png
+      width: 960
+      height: 300
+      fit: contain
+    formats:
+      - email

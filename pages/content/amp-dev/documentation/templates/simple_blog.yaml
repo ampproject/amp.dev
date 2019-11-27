@@ -13,3 +13,33 @@ teaser:
     alt: Simple Blog
 
   download_url: '/static/files/templates/blog.zip'
+  template_demo_home: 'websites/blog/templates/blog.amp.html'
+  template_github_home: 'websites/blog'
+ 
+document:
+  pages: /content/amp-dev/documentation/templates/blog/pages
+  description: Simple blog template.
+
+url:
+  path: '/documentation/templates/blog'
+
+stage:
+  layout: all
+  devices:
+    - image_src: '/static/img/templates/blog/pages/blog-desktop-above.jpg'
+      width: 4
+      height: 3
+      type: desktop
+      alt: image
+
+    - image_src: '/static/img/templates/blog/pages/blog-tablet-above.jpg'
+      width: 3
+      height: 4
+      type: tablet
+      alt: image
+
+    - image_src: '/static/img/templates/blog/pages/blog-mobile-above.jpg'
+      width: 1
+      height: 2
+      type: mobile
+      alt: image

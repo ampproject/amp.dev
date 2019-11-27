@@ -79,13 +79,6 @@ describe('CodeSection', () => {
       section.appendDoc('  -->');
       expect(section.doc).toEqual('\nhello\n\n\nworld\n\n');
     });
-
-    it('parses filters', () => {
-      section.appendDoc('<!--hello');
-      section.appendDoc('world! @filter(websites, email)-->');
-      expect(section.doc).toEqual('hello\nworld! \n');
-      expect(section.filters).toEqual(['websites', 'email']);
-    });
   });
   describe('hide columns if code section', () => {
     /*
