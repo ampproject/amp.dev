@@ -18,6 +18,7 @@ require('module-alias/register');
 
 const gulp = require('gulp');
 const fs = require('fs');
+const path = require('path');
 const yaml = require('js-yaml');
 const through = require('through2');
 const git = require('@lib/utils/git');
@@ -26,11 +27,11 @@ const {Signale} = require('signale');
 const log = new Signale({'scope': 'Recent Guides'});
 
 // Paths of guides pages; Relative for yaml file; Absolute for git log function
-const PATH_RELATIVE = '/content/amp-dev/documentation/guides-and-tutorials/';
-const PATH_ABSOLUTE = project.paths.GROW_POD + PATH_RELATIVE;
+const PATH_RELATIVE = project.paths.GUIDES_PATH_RELATIVE;
+const PATH_ABSOLUTE = path.join(project.paths.GROW_POD, PATH_RELATIVE);
 
 // Where to save the list to
-const DEST_FILE = 'pages/shared/data/recent-guides.yaml';
+const DEST_FILE = project.paths.RECENT_GUIDES_DEST;
 
 class RecentGuides {
   import() {
@@ -47,7 +48,7 @@ class RecentGuides {
     stream = stream.pipe(through.obj(async (file, encoding, callback) => {
       if (!file.isDirectory() && !file.isNull()) {
         // Create file path and get file date with git log function
-        const filePath = PATH_RELATIVE + file.relative;
+        const filePath = path.join(PATH_RELATIVE, file.relative);
         const fileDate = await git.committerDate(PATH_ABSOLUTE + file.relative);
 
         // Build array of guides objects
