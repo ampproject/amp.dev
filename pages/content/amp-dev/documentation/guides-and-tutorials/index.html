@@ -42,35 +42,7 @@ highlight_guides:
     - /content/amp-dev/documentation/guides-and-tutorials/develop/amp_email_best_practices.md
     - /content/amp-dev/documentation/guides-and-tutorials/learn/email-spec/amp-email-format.md
 
-recent_guides:
-  websites:
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/animations/introduction_to_animations.md
-  stories:
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/discovery.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
-  ads:
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/intro-to-amphtml-ads.md
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/animations/introduction_to_animations.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-  email:
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/index.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/email_fundamentals.md
-    - /content/amp-dev/documentation/guides-and-tutorials/develop/amp_email_best_practices.md
-    - /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-    - /content/amp-dev/documentation/guides-and-tutorials/start/create_email.md
+recent_guides: !g.yaml /shared/data/recent-guides.yaml
 
 guides:
   start:
@@ -369,24 +341,25 @@ guides:
 <section class="ap--section">
   <div class="ap-m-teaser-highlight-guides ap-m-teaser-highlight-guides-recent">
     <h2>Recent Guides & Tutorials</h2>
+
     <div class="ap-m-teaser-container">
-      {% for format in doc.recent_guides %}
-      [% if format == '{{ format }}' %]
-        {% set columns = doc.recent_guides[format] %}
-        {% for columns in doc.recent_guides[format]|slice(3)%}
-        <div class="ap-m-teaser ap-m-teaser-column-box">
-          {% for teaser_doc in columns %}
-          {% set teaser_doc = g.doc(teaser_doc, locale=doc.locale) %}
-            [% if format in '{{ teaser_doc.formats }}' %]
-              {% with highlightedTeaser = True %}
-              {% include 'views/partials/teaser.j2' %}
-              {% endwith %}
-            [% endif %]
-          {% endfor %}
-        </div>
-        {% endfor%}
-      [% endif%]
+      [% set counter = 0 %]
+      <div class="ap-m-teaser ap-m-teaser-column-box">
+      {% for guide in doc.recent_guides %}
+        {% set teaser_doc = g.doc(guide.path, locale=doc.locale) %}
+        [% if format in '{{ teaser_doc.formats }}' and counter < 6 %]
+
+          [% set counter = counter + 1 %]
+          [% if counter is odd and counter != 1 %]
+          </div><div class="ap-m-teaser ap-m-teaser-column-box">
+          [% endif %]
+
+          {% with highlightedTeaser = True %}
+          {% include 'views/partials/teaser.j2' %}
+          {% endwith %}
+        [% endif %]
       {% endfor %}
+      </div>
     </div>
   </div>
 </section>
