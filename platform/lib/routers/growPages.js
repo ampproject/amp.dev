@@ -299,10 +299,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     signale.error('[OPTIMIZER]', e);
   }
 
+  res.send(renderedTemplate);
+
   // Cache the optimized and rendered page
   pageCache.set(req.originalUrl, renderedTemplate);
-
-  res.send(renderedTemplate);
 });
 
 module.exports = growPages;

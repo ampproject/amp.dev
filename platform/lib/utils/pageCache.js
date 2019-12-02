@@ -18,21 +18,29 @@
 
 require('module-alias/register');
 
+const config = require('@lib/config.js');
 const {CloudRedisClient} = require('@google-cloud/redis');
 const Redis = require('ioredis');
 const ms = require('ms');
 const utils = require('@lib/utils');
 const yaml = require('js-yaml');
 const fs = require('fs');
-const buildInfo = yaml.safeLoad(fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8'));
-
+const LRU = require('lru-cache');
 const gcpMetadata = require('gcp-metadata');
+
+const buildInfo = yaml.safeLoad(fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8'));
 
 /**
  * Time in seconds an item in Redis will stay valid
  * @type {Integer}
  */
 const EXPIRATION_TIME = ms('1d') / 1000;
+
+/**
+ * Number of pages that is cached in the fallback LRU cache at maximum
+ * @type {Number}
+ */
+const LRU_MAX_ITEMS = 100;
 
 /**
  * The Google Cloud project which is searched for Redis instances
@@ -44,7 +52,7 @@ const PROJECT_ID = process.env.GCP_PROJECT || process.env.GOOGLE_CLOUD_PROJECT;
  * The region the querying instance is running in
  * @type {String}
  */
-const ZONE = process.env.FUNCTION_REGION || '-';
+const REGION = process.env.FUNCTION_REGION || '-';
 
 /**
  * A list of available redis instances for the region the Google Computing
@@ -52,6 +60,11 @@ const ZONE = process.env.FUNCTION_REGION || '-';
  * @type {Array}
  */
 const instances = (async () => {
+  // Do not try to search for instances if running locally
+  if (config.isDevMode() || config.isLocalMode()) {
+    return [];
+  }
+
   // Project id is most likely set by environment variable. Check if it's
   // there, otherwise query metadata servers
   let projectId = PROJECT_ID;
@@ -60,30 +73,33 @@ const instances = (async () => {
       projectId = await gcpMetadata.instance('project-id');
       console.log('[PAGE_CACHE]: Project ID', projectId);
     } catch (e) {
-      console.error('[PAGE_CACHE] Fetching project id failed');
+      console.error('[PAGE_CACHE]: Fetching project id failed');
       return [];
     }
   }
 
   if (!projectId) {
-    console.warn('Not running on Google Cloud Platform.');
+    console.warn('[PAGE_CACHE]: Not running on Google Cloud Platform.');
     return [];
   }
 
-  let zone = null;
+  let region = null;
   try {
-    zone = await gcpMetadata.instance('zone');
     // Zone is in URL like scheme: projects/123/zones/us-central1-b
+    let zone = await gcpMetadata.instance('zone');
     zone = zone.split('/').pop();
-    console.log('[PAGE_CACHE]: Zone', zone);
+
+    // As CloudRedis queries instances by region, slice the zone identifier
+    region = zone.slice(0, -2);
+
+    console.log('[PAGE_CACHE]: Zone & Region', zone, region);
   } catch (e) {
-    console.error('[PAGE_CACHE] Fetching zone failed falling back to', ZONE);
-    zone = ZONE;
+    console.error('[PAGE_CACHE] Fetching zone failed falling back to', REGION);
+    region = REGION;
   }
 
-  console.log('[PAGE_CACHE]: Searching for Redis instances', projectId, zone);
   const client = new CloudRedisClient();
-  const formattedParent = client.locationPath(projectId, zone);
+  const formattedParent = client.locationPath(projectId, region);
   const request = {
     parent: formattedParent,
   };
@@ -92,37 +108,77 @@ const instances = (async () => {
   return resp;
 })();
 
-
-// Check if there is an instance available. If there is instantiate
-// a redis client to use
 let redis = null;
-if (!instances.length) {
-  console.warn('No page cache available. Rerendering for every request.');
-} else {
-  // TODO: Pick random instance instead of first one
-  const instance = instances[0];
-  redis = new Redis(instance.port, instance.host);
-}
+let lru = null;
 
+instances.then((instances) => {
+  // Check if there is an instance available. If there is, instantiate
+  // a client to use it, if there is none fall back to LRU cache
+  if (!instances.length) {
+    console.warn('[PAGE_CACHE]: No Redis instances available. Falling back to LRU');
+    lru = new LRU({
+      max: LRU_MAX_ITEMS,
+    });
+  } else {
+    const instance = instances[0];
+    console.log('[PAGE_CACHE]: About to connect to Redis at', instance.port, instance.host);
+    try {
+      redis = new Redis(instance.port, instance.host);
+    } catch (e) {
+      console.error('[PAGE_CACHE]: Connecting to Redis failed', e);
+    }
+
+    console.log('[PAGE_CACHE]: Connected to Redics instance at',
+        instance.host, instance.port);
+  }
+});
+
+/**
+ * Prefixes the key (which should be the request URL) with the current
+ * build number (which is an integer)
+ * @param  {String} key
+ * @return {String}
+ */
 function prefixKey(key) {
   return `${buildInfo.number}-${key}`;
 }
 
-function get(key) {
-  if (!redis) {
-    console.warn('No redis server configured to retrieve', prefixKey(key));
-    return Promise.resolve();
+/**
+ * Tries to fetch a rendered page from either the LRU cache or from
+ * an redis instance or returns null if none of them is available
+ * @param  {String} key
+ * @return {Promise}
+ */
+async function get(key) {
+  const prefixedKey = prefixKey(key);
+
+  if (lru) {
+    return lru.get(prefixedKey);
+  } else if (redis) {
+    return await redis.get(prefixedKey);
   }
 
-  return redis.get(prefixKey(key));
+  return null;
 }
 
+/**
+ * Adds a rendered page to either the LRU or the Redis cache. Simply falls
+ * through if in development mode
+ * @param {String} key
+ * @param {String} html
+ */
 function set(key, html) {
-  if (!redis) {
+  if (config.isDevMode()) {
     return;
   }
 
-  redis.set(prefixKey(key), html, 'ex', EXPIRATION_TIME);
+  const prefixedKey = prefixKey(key);
+
+  if (lru) {
+    lru.set(prefixedKey, html);
+  } else if (redis) {
+    redis.set(prefixedKey, html, 'ex', EXPIRATION_TIME);
+  }
 }
 
 module.exports = {
