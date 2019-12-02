@@ -77,7 +77,8 @@ const instances = (async () => {
     zone = zone.split('/').pop();
     console.log('[PAGE_CACHE]: Zone', zone);
   } catch (e) {
-    console.error('[PAGE_CACHE] Fetching zone failed');
+    console.error('[PAGE_CACHE] Fetching zone failed falling back to', ZONE);
+    zone = ZONE;
   }
 
   console.log('[PAGE_CACHE]: Searching for Redis instances', projectId, zone);
