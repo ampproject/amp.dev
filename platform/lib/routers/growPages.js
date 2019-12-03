@@ -243,7 +243,7 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   // Check if the page has been cached
   const cachedPage = await pageCache.get(req.originalUrl);
   if (cachedPage) {
-    res.send('<!-- Cached page -->' + cachedPage);
+    res.send(cachedPage);
     return;
   }
 
