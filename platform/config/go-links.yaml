@@ -7,6 +7,7 @@
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
 /contribute/code-samples: /documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
 /contribute/docs: /documentation/guides-and-tutorials/contribute/contribute-documentation
+/contribute/process: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md
 /contribute/samples: /documentation/examples/
 /contribute/translations: /documentation/guides-and-tutorials/contribute/translations
 /cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
@@ -16,6 +17,7 @@
 /email-tools: /documentation/tools
 /email-viewer: https://github.com/ampproject/amp-email-viewer
 /governance: /community/governance
+/i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement--i2i-.md&title=I2I:%20%3Cyour%20change/update%3E
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
 /learn: /documentation/courses/
 /learn-first: /documentation/guides-and-tutorials/start/create/
@@ -26,6 +28,7 @@
 /learn-pwa: https://codelabs.developers.google.com/codelabs/amp-pwa-workbox/
 /learn-script: /documentation/guides-and-tutorials/develop/custom-javascript-tutorial/
 /optimize-amp: https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/
+/owners: https://ampproject-owners-bot.appspot.com/tree
 /publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist
 /reftemplate: https://docs.google.com/document/d/1lRFcErFBnqsuv6W9mZsfYk2qnXO9nPzMkeog4Xtunl8/edit?usp=sharing
 /shopify-apps: https://blog.amp.dev/2019/04/15/shopify-apps-make-amp-easy-and-effective-for-ecommerce
