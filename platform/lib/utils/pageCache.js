@@ -124,12 +124,12 @@ instances.then((instances) => {
     console.log('[PAGE_CACHE]: About to connect to Redis at', instance.port, instance.host);
     try {
       redis = new Redis(instance.port, instance.host);
-    } catch (e) {
+    } catch(e) {
       console.error('[PAGE_CACHE]: Connecting to Redis failed', e);
     }
 
-    console.log('[PAGE_CACHE]: Connected to Redics instance at',
-        instance.host, instance.port);
+    console.log('[PAGE_CACHE]: Connected to Redis instance at',
+      instance.host, instance.port);
   }
 });
 
@@ -154,7 +154,7 @@ async function get(key) {
 
   if (lru) {
     return lru.get(prefixedKey);
-  } else if (redis) {
+  } else if(redis) {
     return await redis.get(prefixedKey);
   }
 
