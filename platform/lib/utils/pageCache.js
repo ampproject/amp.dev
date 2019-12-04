@@ -114,23 +114,23 @@ let lru = null;
 instances.then((instances) => {
   // Check if there is an instance available. If there is, instantiate
   // a client to use it, if there is none fall back to LRU cache
-  if (!instances.length) {
-    console.warn('[PAGE_CACHE]: No Redis instances available. Falling back to LRU');
-    lru = new LRU({
-      max: LRU_MAX_ITEMS,
-    });
-  } else {
+  if (instances.length) {
     const instance = instances[0];
     console.log('[PAGE_CACHE]: About to connect to Redis at', instance.port, instance.host);
     try {
       redis = new Redis(instance.port, instance.host);
-    } catch(e) {
+      console.log('[PAGE_CACHE]: Connected to Redis instance at',
+          instance.host, instance.port);
+      return;
+    } catch (e) {
       console.error('[PAGE_CACHE]: Connecting to Redis failed', e);
     }
-
-    console.log('[PAGE_CACHE]: Connected to Redis instance at',
-      instance.host, instance.port);
   }
+
+  console.warn('[PAGE_CACHE]: No Redis instances available. Falling back to LRU');
+  lru = new LRU({
+    max: LRU_MAX_ITEMS,
+  });
 });
 
 /**
@@ -154,7 +154,7 @@ async function get(key) {
 
   if (lru) {
     return lru.get(prefixedKey);
-  } else if(redis) {
+  } else if (redis) {
     return await redis.get(prefixedKey);
   }
 
