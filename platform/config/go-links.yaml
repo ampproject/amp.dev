@@ -5,9 +5,9 @@
 /ampcs: /events/amp-cs-2019/#Schedule
 /auto-sw: https://github.com/ampproject/amp-sw/
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
+/contribute/code: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md
 /contribute/code-samples: /documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
 /contribute/docs: /documentation/guides-and-tutorials/contribute/contribute-documentation
-/contribute/process: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md
 /contribute/samples: /documentation/examples/
 /contribute/translations: /documentation/guides-and-tutorials/contribute/translations
 /cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests
