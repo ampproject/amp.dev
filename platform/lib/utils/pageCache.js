@@ -70,10 +70,10 @@ const instances = (async () => {
   let projectId = PROJECT_ID;
   if (!projectId) {
     try {
-      projectId = await gcpMetadata.instance('project-id');
+      projectId = await gcpMetadata.project('project-id');
       console.log('[PAGE_CACHE]: Project ID', projectId);
     } catch (e) {
-      console.error('[PAGE_CACHE]: Fetching project id failed');
+      console.error('[PAGE_CACHE]: Fetching project id failed', e);
       return [];
     }
   }
