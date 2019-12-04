@@ -152,6 +152,10 @@ class Config {
    * @return {String} The absolute URL
    */
   absoluteUrl(hostConfig, url) {
+    // The URL uses a template, don't process it.
+    if (url.indexOf('<%') > -1) {
+      return url;
+    }
     return new URL(url, this.getHost(hostConfig)).toString();
   }
 

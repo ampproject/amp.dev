@@ -61,6 +61,9 @@ const paths = {
   PAGES_SRC: absolute('pages/content/amp-dev'),
   STATICS_DEST: absolute('dist/static'),
   BUILD_INFO: absolute('platform/config/build-info.yaml'),
+  GUIDES_PATH_RELATIVE: '/content/amp-dev/documentation/guides-and-tutorials/',
+  RECENT_GUIDES_DEST: 'pages/shared/data/recent-guides.yaml',
+  BUILD_INFO_PATH: absolute('platform/config/build-info.yaml'),
 };
 
 paths.FORMAT_COMPONENT_MAPPING =
