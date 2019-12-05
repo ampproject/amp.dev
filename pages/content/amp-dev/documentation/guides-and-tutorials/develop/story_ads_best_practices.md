@@ -65,11 +65,12 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 </html>
 [/sourcecode]
 
-The `amp-cta-type` tag can be chosen from one of the [available options](#call-to-action-button-text-enum) for the CTA Button text value. This is recommended, as AMP will then automatically localize the text for you when appropriate.
-Alternatively, if you wish to handle localization for yourself, you can include your own custom text for this value.
+Choosing the amp-cta-type tag from the [available CTA Button text options](#call-to-action-button-text-enum) is recommended. AMP will automatically localize predefined options when appropriate.
+
+Custom text is allowed, but you will need to implement your own localization.
 
 ## Call to action button text enum <a name="call-to-action-button-text-enum"></a>
-The call to action button must be configured from a predefined set of choices:
+The call to action button can be configured from a predefined set of choices:
 
 * `APPLY_NOW`: "Apply Now"
 * `BOOK_NOW`: "Book"
@@ -262,7 +263,7 @@ There are various tools you can use to encode videos and adjust the quality of t
 Ensure the size of your HLS segments are typically no more than 10 seconds in duration.
 
 ## Animation
-If you wish to include animation in your story, there are a few things to be aware of. The concept of what is "visible" in an amp-story can be more complicated than other formats.
+Animations have a few caveats in stories, such as the concept of what is "visible".
 For instance, in our "3 panel" desktop view your creative may be visible on the page but not yet the center focus. This can be problematic if the desired effect is to start animations when a page becomes the main focal point.
 
 To help with this, AMP will add a special attribute `amp-story-visible` to your creative's body when it is the focal point in all serving contexts. It is recommended to fire you animations based on this signal.
