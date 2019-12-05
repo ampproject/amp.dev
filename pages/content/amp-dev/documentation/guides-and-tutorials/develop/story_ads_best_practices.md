@@ -65,7 +65,8 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 </html>
 [/sourcecode]
 
-The `amp-cta-type` tag must include one of the [available options](#call-to-action-button-text-enum) for the CTA Button text enum. This ensures a consistent user experience for AMP Story readers.
+The `amp-cta-type` tag can be chosen from one of the [available options](#call-to-action-button-text-enum) for the CTA Button text value. This is recommended, as AMP will then automatically localize the text for you when appropriate.
+Alternatively, if you wish to handle localization for yourself, you can include your own custom text for this value.
 
 ## Call to action button text enum <a name="call-to-action-button-text-enum"></a>
 The call to action button must be configured from a predefined set of choices:
@@ -259,6 +260,22 @@ There are various tools you can use to encode videos and adjust the quality of t
 ##### HLS segment size
 
 Ensure the size of your HLS segments are typically no more than 10 seconds in duration.
+
+## Animation
+If you wish to include animation in your story, there are a few things to be aware of. The concept of what is "visible" in an amp-story can be more complicated than other formats.
+For instance, in our "3 panel" desktop view your creative may be visible on the page but not yet the center focus. This can be problematic if the desired effect is to start animations when a page becomes the main focal point.
+
+To help with this, AMP will add a special attribute `amp-story-visible` to your creative's body when it is the focal point in all serving contexts. It is recommended to fire you animations based on this signal.
+
+Example: this animation will fire when the page comes into focus, and restart if a user clicks to another page in the story and returns.
+
+[sourcecode:html]
+<style amp-custom>
+    body[amp-story-visible] .my-animation-class {
+      animation: 2s my-animation-name;
+    }
+</style>
+[/sourcecode]
 
 ## Sponsored Story <a name="sponsored-story"></a>
 A Sponsored Story exists as a URL on the web, enabling the drive of user traffic to a Sponsored Story from the call to action button on an AMP Story ad. A Sponsored Story is an AMP Story, but with focus on an immersive and expansive ad experience.
