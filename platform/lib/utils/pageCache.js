@@ -133,6 +133,8 @@ instances.then((instances) => {
   lru = new LRU({
     max: LRU_MAX_ITEMS,
   });
+}).catch((e) => {
+  console.error('[PAGE_CACHE]: Could not initialize caches', e);
 });
 
 /**
