@@ -1,6 +1,6 @@
 $title: Musement
 $category: e-commerce
-$date: 2019-10-18
+$date: 2019-12-02
 description: With the addition of AMP pages to the purchase funnel, Musement’s performance continues to improve...
 formats:
   - websites
@@ -20,7 +20,7 @@ teaser:
 
 stage:
   headline: Musement’s mobile-first design helps users navigate 70% faster
-  subline: OCT 18, 2019
+  subline: DEC 2, 2019
   layout: mobile
   devices:
     - image_src: "/static/img/success-stories/musement/musement-screen-1.jpg"

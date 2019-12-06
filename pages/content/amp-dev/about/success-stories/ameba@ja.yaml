@@ -1,6 +1,6 @@
 $title: ameba.jp
 $category: social-media
-$date: 2018-03-12
+$date: 2019-12-02
 description: Ameba がブログ記事ランキングページを AMP Stories として公開
 
 formats:
@@ -21,7 +21,7 @@ teaser:
 
 stage:
   headline: Ameba がブログ記事ランキングページを AMP Stories として公開
-  subline: NOV 21, 2019
+  subline: DEC 2, 2019
   layout: all
   logo:
     image_src: '/static/img/success-stories/ameba/ameba-logo.png'
