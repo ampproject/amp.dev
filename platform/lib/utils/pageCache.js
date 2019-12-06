@@ -105,6 +105,8 @@ const instances = (async () => {
   };
   const resp = (await client.listInstances(request))[0];
 
+  console.log('[PAGE_CACHE]: Cloud Redis instances', resp);
+
   return resp;
 })();
 
@@ -178,6 +180,8 @@ function set(key, html) {
     lru.set(prefixedKey, html);
   } else if (redis) {
     redis.set(prefixedKey, html, 'ex', EXPIRATION_TIME);
+  } else {
+    console.warn('[PAGE_CACHE]: No cache available to cache', key);
   }
 }
 

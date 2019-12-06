@@ -189,7 +189,7 @@ Under the `Network` tab, click on your domain name and check that `Signed HTTP e
 
 Confirm that the signed exchanges are compatible with the Google AMP cache. This related to their discoverability on search engines such as Google Search.
 
-To test signed echanges in the Google AMP cache, open the network tab in DevTools, enable `Preserve log`, and visit a URL such as `https://example-com.cdn.ampproject.org/wp/s/example.com/`.
+To test signed exchanges in the Google AMP cache, open the network tab in DevTools, enable `Preserve log`, and visit a URL such as `https://example-com.cdn.ampproject.org/wp/s/example.com/`.
 
 DevTools will show a `200` with a `signed-exchange` row, and a `from signed-exchange` row, if the request was successful.
 
