@@ -437,7 +437,7 @@ providers:
   - name: eSputnik
     url: https://esputnik.com/
     type: Email Service
-    description: Supercharge Conversions of Your Bulk and Triggered Campaigns With Real-Time Recommendations In AMP Powered Emails 
+    description: Supercharge conversions of your bulk and triggered campaigns with real-time recommendations in AMP powered emails 
     image:
       src: /static/img/tools/esputnik.png
       width: 2944
