@@ -82,26 +82,29 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
   <!--
   ## Basic usage
 
-  The `amp-consent` component allows to specify the required user consent for this page. A CORS endpoints can be specified via the `checkConsentHref` attribute. The `amp-consent` component will check via a POST request if the consent UI needs to be shown. The response should look like this:
+  The `amp-consent` component allows to specify the required user consent for this page using the required 'consentRequired' flag. A CORS endpoints can be specified via the `checkConsentHref` attribute along with `consentRequired` set to false. The `amp-consent` component then will check via a POST request if the consent UI needs to be shown. The response should look like this:
 
   ```json
   {
-    "promptIfUnknown": boolean (true/false)
+    "consentRequired": boolean (required),
+    "consentStateValue": enum (accepted/rejected/unknown) (optional),
+    "consentString": string (optional),
+    "expireCache": boolean (default false),
   }
   ```
-
+  
   It is possible, to re-trigger the consent dialog using the `myConsent.prompt()` action. One use case for this is giving users the option to change their settings after consent dialog has been dismissed. For this to work, the post consent UI needs to be specified in the `amp-consent` JSON config: `"promptUI": "consentDialog"`.
+  
+  If `consentRequired` was set to true in the incline script config, then amp-consent would first check local_storage for an existing consent decision and use it if present. Otherwise it would show the promptUi (if set). If `consentRequired` was set to false, amp-consent would immedeatly unblock all elements. 
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
-      "consents": {
-            "consent1": {
-              "checkConsentHref": "/documentation/examples/api/get-consent",
-              "promptUI": "consentDialog"
-            }
-          },
-          "postPromptUI": "post-consent-ui"
-        }</script>
+      "consentInstanceId": "consent-id",
+      "consentRequired": "remote",
+      "checkConsentHref": "/documentation/examples/api/get-consent",
+      "promptUI": "consentDialog",
+      "postPromptUI": "post-consent-ui"
+    }</script>
     <div class="popupOverlay" id="consentDialog">
       <div class="consentPopup">
         <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
