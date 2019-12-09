@@ -26,4 +26,13 @@ examples.post('/get-consent', (request, response) => {
   });
 });
 
+examples.post('/get-consent-geo-override', (request, response) => {
+  response.json({
+    expireCache: true,
+    consentRequired: true,
+    consentStateValue: 'accepted',
+    consentString: 'abc123',
+  });
+});
+
 module.exports = examples;

@@ -10,7 +10,7 @@ author: sebastianbenz
 
   Sometimes is necessary to ask only users from specific countries for consent. This sample demonstrates
   how you can use `amp-consent` together with `amp-geo` to achieve this. In this sample we'll build a
-  consent dialog that will only show for users from the EU and another sample that will only show for users form NA.
+  consent dialog that will only show for users from the EU.
 -->
 <!-- -->
 <!doctype html>
@@ -75,13 +75,12 @@ author: sebastianbenz
 </head>
 <body>
   <!-- ## Setting up amp-geo -->
-  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the present `eea` which includes all countries of the European Economic Area. -->
+  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the preset `eea` which includes all countries of the European Economic Area. -->
   <amp-geo layout="nodisplay">
     <script type="application/json">
       {
         "ISOCountryGroups": {
           "eu": [ "preset-eea" ]
-          "na": [ "preset-na" ]
         }
       }
     </script>
@@ -89,15 +88,11 @@ author: sebastianbenz
 
   <!-- ## Defining the consent flow -->
   <!--
-    We define a basic consent flow, similar to [this sample](/content/amp-dev/documentation/examples/documentation/Basic_User_Consent_Flow.html). The flow should only trigger for users in the EU, so we set the flag: `"geoOverride": {
-        "eea": {
-          "consentRequired": true,
-        }
-      }`.
+    We define a basic consent flow, similar to [this sample](/content/amp-dev/documentation/examples/documentation/Basic_User_Consent_Flow.html). The flow should only trigger for users in the EU, so we configure the flag: `geoOverride`.
 
-    You can learn more about the geoOverride flag [here](https://github.com/ampproject/amphtml/blob/lannka-consent-design/extensions/amp-consent/amp-consent.md#geoOverride).
+    You can learn more about the geoOverride flag [here](https://github.com/ampproject/amphtml/tree/master/extensions/amp-consent/amp-consent.md#geoOverride).
 
-    If amp-geo finds that a user is in the country within the eea group, then the contents of the eea config will be override any top-leve config. Thus, consent would be required for a user in the eea country group.
+    If amp-geo finds that the user is within the preset-eea group, then eea consent config will be override top-level config. From this example,  consent would be required from this user.
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
@@ -106,7 +101,7 @@ author: sebastianbenz
       "promptUI": "myConsentFlow",
       "geoOverride": {
         "eea": {
-          "consentRequired": true,
+          "consentRequired": true
         }
       },
       "postPromptUI": "post-consent-ui"
@@ -125,84 +120,12 @@ author: sebastianbenz
     </div>
   </amp-consent>
 
-  
-  <!-- ## Defining a new the consent flow -->
-  <!--
-    For our next example, we will define a new consent flow. The flow should only trigger for users in the NA, and we would like our servers to determine if consent is required for this user and if we have an existing consent value for them, so we set the flag: `"geoOverride": {
-        "na": {
-          "consentRequired": "remote",
-          "checkConsentHref": "https://my-fake-server/check-consent",
-          "promptUi": null
-        }
-      }`.
-
-    You can learn more about the geoOverride flag [here](https://github.com/ampproject/amphtml/blob/lannka-consent-design/extensions/amp-consent/amp-consent.md#geoOverride).
-
-    If amp-geo finds that a user is in the country within the na group, then the contents of the na config will be override any top-leve config.
-
-    Our final config for an na user would look like this: 
-    `{
-      "consentInstanceId": "world-wide-consent",
-      "consentRequired": "remote",
-      "checkConsentHref": "https://my-fake-server/check-consent",
-      "promptUI": null,
-      "postPromptUI": "post-consent-ui"
-    }`
-
-    When a user lands on the AMP page, amp-consent will cehck local storage for an existing consent state. 
-    If a consent state exists, it will unblock all components. Otherwise, it will wait for the responsef from `checkConsentHref` to determine if consent is required for this user and if there is an existing consent state. If there is an existing consent state, amp-consent will use that value and unblock. Otherwise it will show the promptUi if configured.
-
-    Use `expireCache: true`, in your response to never save consent states to local storage and thus always prompt or rely on servers for consent state.
-
-    A reccomended design for sites that can manage their own consent (via external page) is to always respond with 
-    `{
-      "expireCache": true,
-      "consentRequired": true,
-      "consentStateValue": "accepted"/"rejected"/"unknown",
-      "consentString": "abc123"
-    }`
-
-    Note: [`onUpdateHref`](https://github.com/ampproject/amphtml/blob/lannka-consent-design/extensions/amp-consent/amp-consent.md#onUpdateHref) is mostly helpful when users are managing their consent directly on the page, and not on an external page.
-  -->
-  <amp-consent id="myUserConsent" layout="nodisplay">
-      <script type="application/json">{
-        "consentInstanceId": "world-wide-consent",
-        "consentRequired": false,
-        "promptUI": "myConsentFlow",
-        "geoOverride": {
-          "eea": {
-            "consentRequired": true,
-          },
-          "na": {
-            "consentRequired": "remote",
-            "checkConsentHref": "https://my-fake-server/check-consent",
-            "promptUi": null,
-            "postPromptUI": null
-          }
-        },
-        "postPromptUI": "post-consent-ui"
-      }</script>
-      <div id="myConsentFlow" class="popupOverlay">
-        <div class="consentPopup">
-          <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
-          <h2>Headline</h2>
-          <p>This is an important message requiring you to make a choice if you're based in the EU.</p>
-          <button on="tap:myUserConsent.accept">Accept</button>
-          <button on="tap:myUserConsent.reject">Reject</button>
-        </div>
-      </div>
-      <div id="post-consent-ui">
-        <button on="tap:myUserConsent.prompt()">Update Consent</button>
-      </div>
-    </amp-consent>
-
   <!-- ## Testing -->
   <!--
   You can test different behaviors by appending custom country codes to the URL and enabling the `dev-channel` [here](https://cdn.ampproject.org/experiments.html), for example:
 
-  - Geo based consent: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
-  - Non geo based consent: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)
-  -->
+  - EU consent: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
+  - non-eu: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)  -->
 
 </body>
 </html>
