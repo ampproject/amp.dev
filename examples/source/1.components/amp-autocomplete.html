@@ -326,6 +326,10 @@
     ## Displaying suggestions inline
 
     Suggestions can be triggered on a specified character token in an `amp-autocomplete` for multiple autosuggestions in a single input by using the `inline` attribute.
+    The token for triggering the autosuggestion must be the provided value for the `inline` attribute. For example, if `inline="+"`, then when the `+` token is entered by the user,
+    any relevant suggestions will be displayed. Otherwise, the field will behave the same as an unenhanced input field.
+
+    Note: The `inline` attribute does not support the empty string, or `""` as a legitimate token value on `amp-autocomplete`.
   -->
   <div>
     <form class="sample-form"
