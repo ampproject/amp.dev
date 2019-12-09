@@ -1,5 +1,7 @@
 <!---
 
+experiments:
+  - amp-consent-geo-override
 teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
 author: sebastianbenz
 
@@ -75,7 +77,7 @@ author: sebastianbenz
 </head>
 <body>
   <!-- ## Setting up amp-geo -->
-  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the preset `eea` which includes all countries of the European Economic Area. -->
+  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the `preset-eea` which includes all countries of the European Economic Area. -->
   <amp-geo layout="nodisplay">
     <script type="application/json">
       {
@@ -92,7 +94,7 @@ author: sebastianbenz
 
     You can learn more about the geoOverride flag [here](https://github.com/ampproject/amphtml/tree/master/extensions/amp-consent/amp-consent.md#geoOverride).
 
-    If amp-geo finds that the user is within the preset-eea group, then eea consent config will be override top-level config. From this example,  consent would be required from this user.
+    If amp-geo finds that the user is within the preset-eea group, then eu consent config will be override top-level config. From this example,  consent would be required from this user.
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
@@ -100,7 +102,7 @@ author: sebastianbenz
       "consentRequired": false,
       "promptUI": "myConsentFlow",
       "geoOverride": {
-        "eea": {
+        "eu": {
           "consentRequired": true
         }
       },
