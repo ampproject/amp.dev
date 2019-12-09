@@ -67,6 +67,14 @@ author: sebastianbenz
       top: var(--space-2);
       cursor: pointer;
     }
+    /* defaults */
+    .default:after {
+      content: 'not in the eu group. No consent is required.';
+    }
+    /* override */
+    .amp-geo-group-eu .default:after {
+      content: 'in the eu group. Consent was required.';
+    }
     #post-consent-ui {
       display: flex;
       justify-content: center;
@@ -128,6 +136,7 @@ author: sebastianbenz
 
   - EU consent: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
   - non-eu: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)  -->
+  <div>You are <span class="default"></span></div>
 
 </body>
 </html>

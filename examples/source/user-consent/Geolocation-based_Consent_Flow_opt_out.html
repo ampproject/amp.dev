@@ -67,6 +67,18 @@ author: sebastianbenz
       top: var(--space-2);
       cursor: pointer;
     }
+    /* defaults */
+    .default:after {
+      content: 'not in the eu group or the us group. Consent was not required.';
+    }
+    /* override */
+    .amp-geo-group-eu .default:after {
+      content: 'in the eu group. Consent was required with promptUi.';
+    }
+    /* override */
+    .amp-geo-group-us .default:after {
+      content: 'in the us group. Consent was required with no promptUi.';
+    }
     #post-consent-ui {
       display: flex;
       justify-content: center;
@@ -132,14 +144,13 @@ author: sebastianbenz
         "consentRequired": false,
         "promptUI": "my-consent-ui",
         "geoOverride": {
-          "eea": {
+          "eu": {
             "consentRequired": true
           },
           "us": {
             "consentRequired": "remote",
             "checkConsentHref": "/documentation/examples/api/get-consent-geo-override",
-            "promptUi": null,
-            "postPromptUI": null
+            "promptUi": null
           }
         },
         "postPromptUI": "post-consent-ui"
@@ -165,6 +176,8 @@ author: sebastianbenz
   - US: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
   - non-US: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)
   -->
+  <div>You are <span class="default"></span></div>
+
 
 </body>
 </html>
