@@ -85,7 +85,7 @@ author: sebastianbenz
 
   <!-- ## Basic usage -->
   <!--
-  The `amp-consent` component allows to specify the required user consent for this page using the required 'consentRequired' flag. A CORS endpoints can be specified via the `checkConsentHref` attribute along with `consentRequired` set to false. The `amp-consent` component then will check via a POST request if the consent UI needs to be shown. The response should look like this:
+  The `amp-consent` component allows to specify the required user consent for this page using the required 'consentRequired' flag. A CORS endpoints can be specified via the `checkConsentHref` attribute along with `consentRequired` set to true. The `amp-consent` component then will check via a POST request if the consent UI needs to be shown. The response should look like this:
 
   ```json
   {
@@ -98,7 +98,7 @@ author: sebastianbenz
 
   The response will indicate if the consent needs to be shown or not. If it needs to be shown, the element with the id given in `promptUI` will be displayed.
  
-  If `consentRequired` was set to true in the incline script config, then amp-consent would first check local_storage for an existing consent decision and use it if present. Otherwise it would show the promptUi (if set). If `consentRequired` was set to false, amp-consent would immedeatly unblock all elements. 
+  If `consentRequired` was set to true in the incline script config, then amp-consent will first check local_storage for an existing consent decision and use it if present. Otherwise it will show the promptUi (if configured). If `consentRequired` was set to false, amp-consent will immedeatly unblock all elements. 
   -->
   <amp-consent id="myConsent" layout="nodisplay">
         <script type="application/json">{
