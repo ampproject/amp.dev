@@ -1,5 +1,7 @@
 <!---
-
+  
+experiments:
+  - amp-consent-geo-override
 preview: default
 skipValidation: 'true'
 teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
@@ -23,7 +25,7 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
   <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <title>Basic User Consent Flow</title>
+  <title>CLient Side User Consent Flow</title>
   <!-- ## Setup -->
   <!-- Import the consent component in the header. -->
   <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
@@ -100,8 +102,7 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
       "consentInstanceId": "consent-id",
-      "consentRequired": "remote",
-      "checkConsentHref": "/documentation/examples/api/get-consent",
+      "consentRequired": true,
       "promptUI": "consentDialog",
       "postPromptUI": "post-consent-ui"
     }</script>
