@@ -11,6 +11,8 @@
 {% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
+<amp-state id="query" src="/search/latest-query"></amp-state>
+
 <amp-lightbox id="searchLightbox"
               class="ap-o-search"
               layout="nodisplay"
@@ -21,10 +23,7 @@
   <div class="ap-o-search-container">
 
     <div class="ap-m-search-trigger ap-m-search-trigger-close"
-         on="tap:
-              searchLightbox.close,
-              AMP.setState({ query: '' }),
-              searchForm.clear"
+         on="tap:searchLightbox.close"
          role="button"
          tabindex="0">
       <div class="ap-a-ico ap-m-search-trigger-icon">
@@ -54,6 +53,7 @@
                  name="q"
                  placeholder="{{_('What are you looking for?')}}"
                  on="input-throttled:AMP.setState({ throttledValue: event.value })"
+                 [value]="query"
                  required
           >
           <button class="ap-o-search-submit" type="submit" name="search-submit" disabled [disabled]="!throttledValue">{{_('Search')}}</button>
