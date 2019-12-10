@@ -3,7 +3,7 @@
 experiments:
   - amp-consent-geo-override
 teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
-author: sebastianbenz
+author: sebastianbenz, micajuine-ho
 
 --->
 
@@ -85,7 +85,7 @@ author: sebastianbenz
 </head>
 <body>
   <!-- ## Setting up amp-geo -->
-  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the iso code `us` which represents the United States, and "preset-eea" which is a [predefined](https://github.com/ampproject/amphtml/blob/master/extensions/amp-geo/0.1/amp-geo-presets.js) country group-->
+  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the iso code `us` which represents the United States, and "preset-eea" which is a predefined country group-->
   <amp-geo layout="nodisplay">
     <script type="application/json">
       {
@@ -102,7 +102,7 @@ author: sebastianbenz
   <!--
     The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: `geoOverride`.
 
-    You can learn more about the geoOverride flag [here](https://github.com/ampproject/amphtml/tree/master/extensions/amp-consent/amp-consent.md#geoOverride).
+    You can learn more about the geoOverride flag [here](https://amp.dev/documentation/components/amp-consent/?format=websites).
 
     If amp-geo finds that the user is in the US country group, then the contents of the US config will override the top-level consent config (and same for eu).
 

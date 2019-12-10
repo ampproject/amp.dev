@@ -3,7 +3,7 @@
 experiments:
   - amp-consent-geo-override
 teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
-author: sebastianbenz
+author: sebastianbenz, micajuine-ho
 
 --->
 
@@ -25,7 +25,7 @@ author: sebastianbenz
   <title>Server Side User Consent Flow</title>
   <!-- ## Setup -->
   <!--
-  We need to import both, the `amp-consent` ...
+  We need to import the `amp-consent` ...
   -->
   <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -75,7 +75,7 @@ author: sebastianbenz
 
   <!-- ## Defining the consent flow -->
   <!--
-    We define a basic serverside consent flow, similar to [this sample](/content/amp-dev/documentation/examples/documentation/Client_Side_User_Consent_Flow.html). The flow should only trigger when the servers response that `consentRequired` is true and there is not `consentStateValue` or `consentString` for this user.
+    We define a basic server-side consent flow, similar to [this sample](/content/amp-dev/documentation/examples/documentation/Client_Side_User_Consent_Flow.html). The flow should only trigger when the servers response that `consentRequired` is true and there is not `consentStateValue` or `consentString` for this user.
 
     When a user lands on the AMP page, amp-consent will check local storage for an existing consent state. 
     If a consent state exists, it will unblock all components. Otherwise, it will wait for the response from `checkConsentHref` to determine if consent is required for this user and if there is an existing consent state. If there is an existing consent state, amp-consent will use that value and unblock. Otherwise, it will show the promptUi (if configured).
@@ -92,7 +92,7 @@ author: sebastianbenz
     }
     ```
 
-    Note: [`onUpdateHref`](https://github.com/ampproject/amphtml/tree/master/extensions/amp-consent/amp-consent.md#onUpdateHref) is mostly helpful when users are managing their consent directly on the page (not on an external page).
+    Note: [`onUpdateHref`](https://amp.dev/documentation/components/amp-consent/?format=websites#onupdatehref) is mostly helpful when users are managing their consent directly on the page (not on an external page).
 
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">

@@ -2,7 +2,7 @@
 experiments:
   - amp-consent-geo-override
 teaserImage: '/static/samples/img/teaser/advanced_user_consent_flow.jpg'
-author: sebastianbenz
+author: sebastianbenz, micajuine-ho
 
 --->
 
@@ -99,7 +99,7 @@ author: sebastianbenz
 
   The response will indicate if the consent needs to be shown or not, if there is no localstorage value. If it needs to be shown, the element with the id given in `promptUI` will be displayed.
  
-  If `consentRequired` was set to true in the incline script config, then amp-consent will first check localstorage for an existing consent decision and use it if present. Otherwise it will show the promptUi (if configured). If `consentRequired` was set to false, amp-consent will immedeatly unblock all elements. 
+  If `consentRequired` was set to true in the inline script config, then amp-consent will first check localstorage for an existing consent decision and use it if present. Otherwise it will show the promptUi (if configured). If `consentRequired` was set to false, amp-consent will immedeatly unblock all elements. 
   -->
   <amp-consent id="myConsent" layout="nodisplay">
         <script type="application/json">{
