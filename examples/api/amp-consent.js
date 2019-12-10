@@ -26,7 +26,7 @@ examples.post('/get-consent', (request, response) => {
   });
 });
 
-examples.post('/get-consent-geo-override', (request, response) => {
+examples.post('/get-consent-sever-side', (request, response) => {
   response.json({
     expireCache: true,
     consentRequired: true,

@@ -97,13 +97,13 @@ author: sebastianbenz
   }
   ```
 
-  The response will indicate if the consent needs to be shown or not. If it needs to be shown, the element with the id given in `promptUI` will be displayed.
+  The response will indicate if the consent needs to be shown or not, if there is no localstorage value. If it needs to be shown, the element with the id given in `promptUI` will be displayed.
  
-  If `consentRequired` was set to true in the incline script config, then amp-consent will first check local_storage for an existing consent decision and use it if present. Otherwise it will show the promptUi (if configured). If `consentRequired` was set to false, amp-consent will immedeatly unblock all elements. 
+  If `consentRequired` was set to true in the incline script config, then amp-consent will first check localstorage for an existing consent decision and use it if present. Otherwise it will show the promptUi (if configured). If `consentRequired` was set to false, amp-consent will immedeatly unblock all elements. 
   -->
   <amp-consent id="myConsent" layout="nodisplay">
         <script type="application/json">{
-          "consentInstanceId": "my-consent",
+          "consentInstanceId": "consent1",
           "consentRequired": "remote",
           "checkConsentHref": "/documentation/examples/api/get-consent",
           "promptUI": "consentDialog",
