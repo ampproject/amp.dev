@@ -74,6 +74,7 @@ const search = express.Router();
 search.get('/search/autosuggest', handleAutosuggestRequest);
 search.get('/search/highlights', handleHighlightsRequest);
 search.get('/search/do', handleSearchRequest);
+search.get('/search/latest-query', handleLatestQueryRequest);
 
 
 function handleAutosuggestRequest(request, response) {
@@ -90,6 +91,11 @@ function handleHighlightsRequest(request, response) {
   }
   setMaxAge(response, RESPONSE_MAX_AGE.highlights);
   response.json(data);
+}
+
+function handleLatestQueryRequest(request, response) {
+  setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
+  response.json(null);
 }
 
 function getCseItemMetaTagValue(item, metaTag) {
