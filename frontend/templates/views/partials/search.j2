@@ -76,63 +76,61 @@
                     reset-on-refresh
                     single-item
           >
-            {% raw %}
             <template type="amp-mustache">
               <div class="ap-o-search-result-list">
-                {{^prevUrl}}
-                {{#result.components.length}}
-                <h4 class="ap-o-search-result-category">{% endraw %}{{_('Components')}}{% raw %}</h4>
-                {{/result.components.length}}
-                {{/prevUrl}}
-                {{#result.components}}
+                {{'{{^prevUrl}}'}}
+                {{'{{#result.components.length}}'}}
+                <h4 class="ap-o-search-result-category">{{_('Components')}}</h4>
+                {{'{{/result.components.length}}'}}
+                {{'{{/prevUrl}}'}}
+                {{'{{#result.components}}'}}
                 <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
-                  <a class="ap-o-search-result-link" href="{{url}}">
-                    <h4 class="ap-o-search-result-title">{{title}}</h4>
-                    <p class="ap-o-search-result-description">{{description}}</p>
+                  <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
+                    <h4 class="ap-o-search-result-title">{{'{{title}}'}}</h4>
+                    <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
                   </a>
-                  {{#exampleUrl}}
+                  {{'{{#exampleUrl}}'}}
                   <div class="ap-o-search-result-linklist">
-                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
+                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{'{{exampleUrl}}'}}">
                       <div class="ap-a-ico ap-m-lnk-icon">
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                       </div>
-                      <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
+                      <span class="ap-m-lnk-text">{{_('Open example')}}</span>
                     </a>
-                    {{#playgroundUrl}}
-                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
+                    {{'{{#playgroundUrl}}'}}
+                    <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{'{{playgroundUrl}}'}}" target="_blank">
                       <div class="ap-a-ico ap-m-lnk-icon">
                         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                       </div>
-                      <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
+                      <span class="ap-m-lnk-text">{{_('Open in playground')}}</span>
                     </a>
-                    {{/playgroundUrl}}
+                    {{'{{/playgroundUrl}}'}}
                   </div>
-                  {{/exampleUrl}}
+                  {{'{{/exampleUrl}}'}}
                 </div>
-                {{/result.components}}
+                {{'{{/result.components}}'}}
 
-                {{^prevUrl}}
-                {{#result.pages.length}}
-                <h4 class="ap-o-search-result-category">{% endraw %}{{_('Results')}}{% raw %}</h4>
-                {{/result.pages.length}}
-                {{/prevUrl}}
-                {{#result.pages}}
+                {{'{{^prevUrl}}'}}
+                {{'{{#result.pages.length}}'}}
+                <h4 class="ap-o-search-result-category">{{_('Results')}}</h4>
+                {{'{{/result.pages.length}}'}}
+                {{'{{/prevUrl}}'}}
+                {{'{{#result.pages}}'}}
                 <div class="ap-o-search-result-item">
-                  <a class="ap-o-search-result-link" href="{{url}}">
-                    <h4 class="ap-o-search-result-title">{{title}}</h4>
-                    <p class="ap-o-search-result-description">{{description}}</p>
+                  <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
+                    <h4 class="ap-o-search-result-title">{{'{{title}}'}}</h4>
+                    <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
                   </a>
                 </div>
-                {{/result.pages}}
+                {{'{{/result.pages}}'}}
 
-                {{#result.isTruncated}}
+                {{'{{#result.isTruncated}}'}}
                 <div class="ap-o-search-result-hint">
-                  {% endraw %}{{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}{% raw %}
+                  {{_('Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}')}}
                 </div>
-                {{/result.isTruncated}}
+                {{'{{/result.isTruncated}}'}}
               </div>
             </template>
-            {% endraw %}
 
             <amp-list-load-more load-more-button>
               <div class="ap-o-search-result-load-button" overflow>
@@ -178,55 +176,53 @@
                 reset-on-refresh
                 single-item
       >
-        {% raw %}
         <template type="amp-mustache">
         <div class="ap-o-search-result">
           <div class="ap-o-search-result-list">
-            {{#components.length}}
-            <h4 class="ap-o-search-result-category">{% endraw %}{{_('Important Components')}}{% raw %}</h4>
-            {{/components.length}}
-            {{#components}}
+            {{'{{#components.length}}'}}
+            <h4 class="ap-o-search-result-category">{{_('Important Components')}}</h4>
+            {{'{{/components.length}}'}}
+            {{'{{#components}}'}}
             <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
-              <a class="ap-o-search-result-link" href="{{url}}">
-                <h4 class="ap-o-search-result-title">&lt;{{title}}&gt;</h4>
-                <p class="ap-o-search-result-description">{{description}}</p>
+              <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
+                <h4 class="ap-o-search-result-title">&lt;{{'{{title}}'}}&gt;</h4>
+                <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
               </a>
-              {{#exampleUrl}}
+              {{'{{#exampleUrl}}'}}
               <div class="ap-o-search-result-linklist">
-                <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{exampleUrl}}">
+                <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-example ap-m-lnk" href="{{'{{exampleUrl}}'}}">
                   <div class="ap-a-ico ap-m-lnk-icon">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                   </div>
-                  <span class="ap-m-lnk-text">{% endraw %}{{_('Open example')}}{% raw %}</span>
+                  <span class="ap-m-lnk-text">{{_('Open example')}}</span>
                 </a>
-                {{#playgroundUrl}}
-                <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{playgroundUrl}}" target="_blank">
+                {{'{{#playgroundUrl}}'}}
+                <a class="ap-o-search-result-linklist-item ap-o-search-result-linklist-item-playground ap-m-lnk" href="{{'{{playgroundUrl}}'}}" target="_blank">
                   <div class="ap-a-ico ap-m-lnk-icon">
                     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
                   </div>
-                  <span class="ap-m-lnk-text">{% endraw %}{{_('Open in playground')}}{% raw %}</span>
+                  <span class="ap-m-lnk-text">{{_('Open in playground')}}</span>
                 </a>
-                {{/playgroundUrl}}
+                {{'{{/playgroundUrl}}'}}
               </div>
-              {{/exampleUrl}}
+              {{'{{/exampleUrl}}'}}
             </div>
-            {{/components}}
+            {{'{{/components}}'}}
 
-            {{#articles.length}}
-            <h4 class="ap-o-search-result-category">{% endraw %}{{_('Popular Articles')}}{% raw %}</h4>
-            {{/articles.length}}
-            {{#articles}}
+            {{'{{#articles.length}}'}}
+            <h4 class="ap-o-search-result-category">{{_('Popular Articles')}}</h4>
+            {{'{{/articles.length}}'}}
+            {{'{{#articles}}'}}
             <div class="ap-o-search-result-item">
-              <a class="ap-o-search-result-link" href="{{url}}">
-                <h4 class="ap-o-search-result-title">{{title}}</h4>
-                <p class="ap-o-search-result-description">{{description}}</p>
+              <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
+                <h4 class="ap-o-search-result-title">{{'{{title}}'}}</h4>
+                <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
               </a>
             </div>
-            {{/articles}}
+            {{'{{/articles}}'}}
           </div>
         </div>
         </template>
-        {% endraw %}
       </amp-list>
 
     </div>
