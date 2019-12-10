@@ -12,16 +12,16 @@ AMP_SW.init({
 });
 
 const CACHE_NAME = 'AMP-DEV-SEARCH-CACHE';
-const LATEST_QUERY_URL = '/search/latest-query'
+const LATEST_QUERY_URL = '/search/latest-query';
 
 
 // Match search request url
-const matchDo = ({url, event}) => {
+const matchDo = ({url}) => {
   return (url.pathname === '/search/do');
 };
 
 // Handle search request
-const handlerDo = async ({url, event, params}) => {
+const handlerDo = async ({url, event}) => {
   // Extract query parameter from search request url
   // Put new query as response to AMP-DEV-SEARCH-CACHE
   const searchQuery = url.search.match(/q=([^&]+)/)[1];
@@ -34,7 +34,7 @@ const handlerDo = async ({url, event, params}) => {
   // If search results are already in cache, skip
   // Else fetch new search request and cache whole results
   if (response) {
-    return response
+    return response;
   } else {
     response = await fetch(event.request);
 
@@ -42,7 +42,7 @@ const handlerDo = async ({url, event, params}) => {
       cache.put(event.request, response.clone());
     }
 
-    return response
+    return response;
   }
 };
 
@@ -51,12 +51,12 @@ workbox.routing.registerRoute(matchDo, handlerDo);
 
 
 // Match latest query url
-const matchCq = ({url, event}) => {
+const matchCq = ({url}) => {
   return (url.pathname === LATEST_QUERY_URL);
 };
 
 // Handle latest query
-const handlerCq = async ({url, event, params}) => {
+const handlerCq = async () => {
   try {
     const cache = await caches.open(CACHE_NAME);
     const response = await cache.match(LATEST_QUERY_URL);
@@ -65,11 +65,10 @@ const handlerCq = async ({url, event, params}) => {
     if (response) {
       return response;
     } else {
-      return new Response('null')
+      return new Response('null');
     }
-
-  } catch(err) {
-    return new Response('null')
+  } catch (err) {
+    return new Response('null');
   }
 };
 
