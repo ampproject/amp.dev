@@ -8,143 +8,87 @@
 <!--
   ## introduction
 
-  todo: This sample demonstrates how to create a dark mode toggle.
+  This sample demonstrates how to use dark mode. It shows both `prefers-color-scheme`
+  as well as a manual toggle for people on non-supporting browsers.
+  You can read more about `prefers-color-scheme` in the article
+  https://web.de/prefers-color-scheme.
 -->
+
 <!-- -->
 <!doctype html>
 <html ⚡>
-<head>
-  <meta charset="utf-8">
-  <link rel="canonical" href="{{filename}}">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <title>{{title}}</title>
-  <style amp-custom>
-  /* default styles, please remove any you're not using */
-  :root {
-    --color-text-light: #fff;
-    --color-text-dark: #000;
-    --color-bg-light: #FAFAFC;
-    --color-bg-dark: #111;
-    --heading-color: red;
-    --text-color: --color-text-dark;
-    --background-color: --color-text-light;
-    --image-filter: grayscale(0%);
+  <head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="./Dark_Mode_Toggle.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <title>Dark Mode Sample</title>
+    <style amp-custom>
+      /**
+       * We need a global wrapper since we work with the adjacent selector below.
+       * The wrapper needs to cover the entire viewport.
+       */
+      .wrapper {
+        --padding: 0.25rem;
 
-    font-family: sans-serif;
-  }
+        color: black;
+        background-color: white;
+        padding: var(--padding);
+        min-height: calc(100vh - 2 * var(--padding));
+      }
 
-  #dark-mode:checked ~ label::before {
-    content: "☀️";
-  }
+      /**
+       * If the user states they prefer dark, obey.
+       * Don't offer the option to override.
+       */
+      @media (prefers-color-scheme: dark) {
+        .wrapper {
+          color: white;
+          background-color: black;
+        }
 
-  label[for="dark-mode"]::before {
-    content: "🌒";
-  }
+        #dark-mode-checkbox,
+        #dark-mode-label {
+          display: none;
+        }
+      }
 
-  #dark-mode,
-  label[for="dark-mode"] {
-    color: var(--color-text-dark);
-    position: absolute;
-    top: 1rem;
-    right: 0.25rem;
-  }
+      /**
+       * If the checkbox is checked, all adjacent siblings will be in dark mode.
+       * This will only be possible if the user doesn't prefer dark,
+       * or on browsers that don't understand `prefers-color-scheme`.
+       */
+      #dark-mode-checkbox:checked ~ * {
+        color: white;
+        background-color: black;
+      }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --heading-color: turquoise;
-      --text-color: var(--color-text-light);
-      --background-color: var(--color-bg-dark);
-      --image-filter: grayscale(50%);
-    }
+      /**
+       * Position these absolutely so they don't "consume" space.
+       */
+      #dark-mode-checkbox,
+      #dark-mode-label {
+        position: absolute;
+      }
 
-    label[for="dark-mode"] {
-      display: none;
-    }
-  }
-
-  #dark-mode,
-  #dark-mode:checked ~ * {
-    --heading-color: turquoise;
-    --text-color: var(--color-text-light);
-    --background-color: var(--color-bg-dark);
-    --image-filter: grayscale(50%);
-
-    color: var(--color-text-light);
-  }
-
-  body, html, .wrapper {
-    color: var(--text-color);
-    background-color: var(--background-color);
-  }
-
-  .wrapper {
-    padding: 0.25rem;
-    min-height: 100%;
-  }
-
-  h1 {
-    color: var(--heading-color);
-  }
-
-  amp-img {
-    filter: var(--image-filter);
-  }
-
-  .visually-hidden {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    white-space: nowrap;
-  }
-  </style>
-
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-</head>
-<body>
-  <!--
-    Everything that is a direct sibling of the `<input>` will be affected,
-    so keep the `<input>` a child of the `<body>`.
-   -->
-  <input id="dark-mode" class="visually-hidden" type="checkbox">
-  <label for="dark-mode">Switch Theme</label>
-  <!-- Make sure the wrapper is higher than the viewport. -->
-  <div class="wrapper">
-    <h1>Hello World!</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec nunc sem, elementum id lectus sit amet, sollicitudin laoreet augue.
-      Integer mattis mattis est eget porta.
-      Curabitur hendrerit viverra nulla, ut blandit orci pellentesque sed.
-      Proin eu vestibulum elit, a euismod neque.
-      Etiam semper venenatis odio, eget tempor lorem ullamcorper vel.
-      Vestibulum eu odio vestibulum magna mattis viverra ac nec tellus.
-      Interdum et malesuada fames ac ante ipsum primis in faucibus.
-      In turpis nulla, tincidunt euismod felis sed, pellentesque consequat ante.
-      Nulla facilisi.
-      Maecenas lacinia enim enim, eu pretium lacus convallis hendrerit.
-      Nam in dui arcu.
-    </p>
-    <amp-img src="https://preview.amp.dev/static/samples/img/amp.jpg" width="1080" height="610" layout="responsive"></amp-img>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec nunc sem, elementum id lectus sit amet, sollicitudin laoreet augue.
-      Integer mattis mattis est eget porta.
-      Curabitur hendrerit viverra nulla, ut blandit orci pellentesque sed.
-      Proin eu vestibulum elit, a euismod neque.
-      Etiam semper venenatis odio, eget tempor lorem ullamcorper vel.
-      Vestibulum eu odio vestibulum magna mattis viverra ac nec tellus.
-      Interdum et malesuada fames ac ante ipsum primis in faucibus.
-      In turpis nulla, tincidunt euismod felis sed, pellentesque consequat ante.
-      Nulla facilisi.
-      Maecenas lacinia enim enim, eu pretium lacus convallis hendrerit.
-      Nam in dui arcu.
-    </p>
-  </div>
-</body>
+      /**
+       * Don't display the ugly checkbox. On a real site, you could style the label
+       * as a button and work with the `:checked ::before` selector of the checkbox
+       * to convey the state.
+       */
+      #dark-mode-checkbox {
+        display: none;
+      }
+    </style>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  </head>
+  <body>
+    <!-- Everything _adjacent_ to this checkbox can be styled, leave it here in the DOM tree. -->
+    <input id="dark-mode-checkbox" type=checkbox>
+    <label id="dark-mode-label" for="dark-mode-checkbox">Turn on dark mode</label>
+    <div class="wrapper">
+      <h1>Heading</h1>
+      <p>Lorem ipsum</p>
+    </div>
+  </body>
 </html>
