@@ -1,13 +1,6 @@
 ---
 $title: Contribua com traduções
-$order: 2
 description: "A missão do AMP inclui tornar a web um lugar mais acessível para todos, e não podemos atigir esse objetivo sem uma documentação localizada. A tradução da documentação AMP é um processo essencial que ajuda no sucesso e na saúde da comunidade AMP."
-
-formats:
-  - websites
-  - stories
-  - ads
-  - email
 ---
 Bem-vindo à iniciativa de tradução AMP!
 
