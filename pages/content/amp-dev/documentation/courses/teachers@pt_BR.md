@@ -1,8 +1,5 @@
 ---
 $title: Professores
-$order: 1
-toc: false
-breadcrumbs: false
 ---
 
 
