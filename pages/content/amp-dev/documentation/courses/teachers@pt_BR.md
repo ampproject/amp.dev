@@ -2,8 +2,6 @@
 $title: Professores
 ---
 
-
-
 ### Objetivo:
 
 Um aluno com conhecimento básico de HTML e CSS pode usar o AMP para criar sites interativos com todos os recursos. Portanto, esse material encaixa perfeitamente após HTML e CSS, mas antes do JavaScript.
