@@ -1,8 +1,7 @@
 <!---
-experiments:
-  - amp-consent-geo-override
+
 teaserImage: '/static/samples/img/teaser/advanced_user_consent_flow.jpg'
-author: sebastianbenz, micajuine-ho
+author: micajuine-ho
 
 --->
 
@@ -86,7 +85,7 @@ author: sebastianbenz, micajuine-ho
 
   <!-- ## Basic usage -->
   <!--
-  The `amp-consent` component allows to specify the required user consent for this page using the required 'consentRequired' flag. A CORS endpoints can be specified via the `checkConsentHref` attribute along with `consentRequired` set to true. The `amp-consent` component then will check via a POST request if the consent UI needs to be shown. The response should look like this:
+  The `amp-consent` component allows to specify the required user consent for this page using the required 'consentRequired' flag. A CORS endpoints can be specified via the `checkConsentHref` attribute. The `amp-consent` component then will check via a POST request if the consent UI needs to be shown. The response should look like this:
 
   ```json
   {
@@ -99,11 +98,11 @@ author: sebastianbenz, micajuine-ho
 
   The response will indicate if the consent needs to be shown or not, if there is no localstorage value. If it needs to be shown, the element with the id given in `promptUI` will be displayed.
  
-  If `consentRequired` was set to true in the inline script config, then amp-consent will first check localstorage for an existing consent decision and use it if present. Otherwise it will show the promptUi (if configured). If `consentRequired` was set to false, amp-consent will immedeatly unblock all elements. 
+  Amp-consent will first check localstorage for an existing consent decision and use it if present. Otherwise it will show the promptUi, if configured and `consentRequired` is true. If `consentRequired` is set to false, amp-consent will immedeatly unblock all elements. 
   -->
   <amp-consent id="myConsent" layout="nodisplay">
         <script type="application/json">{
-          "consentInstanceId": "consent1",
+          "consentInstanceId": "advanced-consent",
           "consentRequired": "remote",
           "checkConsentHref": "/documentation/examples/api/get-consent",
           "promptUI": "consentDialog",
