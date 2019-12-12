@@ -1,0 +1,47 @@
+{% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
+{% do doc.amp_dependencies.add('amp-fx-collection', '0.1') %}
+
+<div class="ap-o-component-intro">
+  <h2 class="ap-o-component-intro-headline">Description</h2>
+  <p class="ap-o-component-intro-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <div class="ap-o-component-intro-box ap-o-component-intro-box-scripts">
+    <h4>Required Scripts</h4>
+    <div class="ap-o-component-intro-box-scripts-item">
+      <code>&lt;script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"&gt;&lt;/script&gt;</code>
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/bolt-broken-solid.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-broken-solid"></use></svg>
+      </div>
+    </div>
+    <div class="ap-o-component-intro-box-scripts-item">
+      <code>&lt;script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"&gt;&lt;/script&gt;</code>
+      <div class="ap-a-ico">
+        {% do doc.icons.useIcon('/icons/bolt-broken-solid.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-broken-solid"></use></svg>
+      </div>
+    </div>
+  </div>
+  <div class="ap-o-component-intro-box ap-o-component-intro-box-layouts">
+    <h4>Supported Layouts</h4>
+    <div class="ap-o-component-intro-box-layouts-items">
+      <a href="#"><span>fixed</span></a>
+      <a href="#"><span>fixed-height</span></a>
+      <a href="#"><span>responsive</span></a>
+      <a href="#"><span>lorem</span></a>
+      <a href="#"><span>lorem</span></a>
+      <a href="#"><span>lorem</span></a>
+      <a href="#"><span>fixed</span></a>
+    </div>
+  </div>
+  <div class="ap-o-component-intro-references-container">
+    <div class="ap-o-component-intro-box ap-o-component-intro-box-reference">
+      <h4>Examples</h4>
+      <a href="#">amp-bind</a>
+      <a href="#">amp-bind</a>
+    </div>
+    <div class="ap-o-component-intro-box ap-o-component-intro-box-reference">
+      <h4>Tutorials</h4>
+      <a href="#">Create interactive AMP pages</a>
+    </div>
+  </div>
+</div>
