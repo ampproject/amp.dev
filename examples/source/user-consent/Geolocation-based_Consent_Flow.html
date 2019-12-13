@@ -75,7 +75,7 @@ author: micajuine-ho
 </head>
 <body>
   <!-- ## Setting up amp-geo -->
-  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the iso code `us` which represents the United States, and "preset-eea" which is a predefined country group-->
+  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the iso code `us` which represents the United States, `preset-eea`, and [`unknown`](https://amp.dev/documentation/components/amp-geo/?format=websites#operation)-->
   <amp-geo layout="nodisplay">
     <script type="application/json">
       {
@@ -90,11 +90,9 @@ author: micajuine-ho
   
   <!-- ## Defining the consent flow -->
   <!--
-    The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: `geoOverride`.
+    The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: [`geoOverride`](https://amp.dev/documentation/components/amp-consent/?format=websites).
 
-    You can learn more about the geoOverride flag [here](https://amp.dev/documentation/components/amp-consent/?format=websites).
-
-    If amp-geo finds that the user is in the US country group, then the contents of the US config will override the top-level consent config (and same for eea).
+    If amp-geo finds that the user is in the US country group, then the contents of the US config will override the top-level consent config (and same for EEA).
 
     Our final config for an EEA (and unknown) user would look like this: 
     ```json
@@ -105,7 +103,7 @@ author: micajuine-ho
       "postPromptUI": "post-consent-ui"
     }
     ```
-    Since `consentRequired` is true and `promptUI` is configured, amp-consent will show the prompt if no localStorage decision is found.
+    Since `consentRequired` is true and `promptUI` is configured, amp-consent will show the prompt if no localstorage decision is found.
 
     Our final config for a US user would look like this: 
     ```json
@@ -117,7 +115,7 @@ author: micajuine-ho
       "postPromptUI": "post-consent-ui"
     }
     ```
-    If no localStorage decision is found and `consentRequired` is 'remote', amp-consent will wait until it gets a response from `checkConsentHref`. In this example, no matter what the response returned, it will not show anything because `promptUI` was overriden to null (since there could be an external site to manage user consent).
+    If no localstorage decision is found and since `consentRequired` is 'remote', amp-consent will wait until it gets a response from `checkConsentHref`. In this example, no matter what the response returned, it will not show anything because `promptUI` was overriden to null (since there could be an external site to manage user consent).
 
     And our final config for a user in neither of those geo groups would be: 
     ```json
@@ -127,9 +125,9 @@ author: micajuine-ho
       "postPromptUI": "post-consent-ui"
     }
     ```
-    LocalStorage decision will be used if it exists, otherwise, since `consentRequired` is false, amp-consent will not do anything.
+    Localstorage decision will be used if it exists, otherwise, since `consentRequired` is false, amp-consent will not do anything.
 
-    Note: Use `expireCache: true` in your response to never save consent states to localStorage.
+    Note: Use `expireCache: true` in your response to never save consent states to localstorage.
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
       <script type="application/json">{
