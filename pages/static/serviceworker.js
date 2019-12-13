@@ -34,6 +34,9 @@ async function searchDoRequestHandler(url, request) {
 
   // Cache whole results if status code is OK
   if (response.status == 200) {
+    cache.delete(request, {
+      ignoreSearch: true,
+    });
     cache.put(request, response.clone());
   }
 
@@ -59,11 +62,10 @@ async function searchLatestQueryHandler() {
     if (response) {
       return response;
     }
-
-    return new Response('null');
   } catch (err) {
-    return new Response('null');
+    console.error(err);
   }
+  return new Response('null');
 };
 
 // Register new route to handle latest query
