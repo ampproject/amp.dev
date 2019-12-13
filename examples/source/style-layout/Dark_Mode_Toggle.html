@@ -6,7 +6,7 @@
 --->
 
 <!--
-  ## introduction
+  ## Introduction
 
   This sample demonstrates how to use dark mode. It shows both `prefers-color-scheme`
   as well as a manual toggle for people on non-supporting browsers.
@@ -22,7 +22,7 @@
     <link rel="canonical" href="./Dark_Mode_Toggle.html">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <title>Dark Mode Sample</title>
+    <title>Dark Mode</title>
     <style amp-custom>
       /**
        * We need a global wrapper since we work with the adjacent selector below.
@@ -34,7 +34,6 @@
         color: black;
         background-color: white;
         padding: var(--padding);
-        min-height: calc(100vh - 2 * var(--padding));
       }
 
       /**
@@ -42,7 +41,7 @@
        * Don't offer the option to override.
        */
       @media (prefers-color-scheme: dark) {
-        .wrapper {
+        .wrapper, .wrapper h1 {
           color: white;
           background-color: black;
         }
@@ -84,24 +83,26 @@
   </head>
   <body>
     <!-- Everything _adjacent_ to this checkbox can be styled, leave it here in the DOM tree. -->
-    <input id="dark-mode-checkbox" type=checkbox>
-    <label id="dark-mode-label" for="dark-mode-checkbox">Turn on dark mode</label>
-    <div class="wrapper">
-      <h1>Dark Mode Sample</h1>
-      <ul>
-        <li>
-          On browsers that support <code>prefers-color-scheme</code> and report the user prefers <code>dark</code>,
-          just obey and don't give the user an override option, since they clearly state they like dark.
-        </li>
-        <li>
-          On browsers that support <code>prefers-color-scheme</code> and report the user prefers <code>light</code>
-          or <code>no-preference</code>, offer the option to toggle dark mode manually.
-        </li>
-        <li>
-          On browsers that don't support <code>prefers-color-scheme</code>,
-          offer the option to toggle dark mode manually.
-        </li>
-      </ul>
+    <div>
+      <input id="dark-mode-checkbox" type=checkbox>
+      <label id="dark-mode-label" for="dark-mode-checkbox">Turn on dark mode</label>
+      <div class="wrapper">
+        <h1>Dark Mode Sample</h1>
+        <ul>
+          <li>
+            On browsers that support <code>prefers-color-scheme</code> and report the user prefers <code>dark</code>,
+            just obey and don't give the user an override option, since they clearly state they like dark.
+          </li>
+          <li>
+            On browsers that support <code>prefers-color-scheme</code> and report the user prefers <code>light</code>
+            or <code>no-preference</code>, offer the option to toggle dark mode manually.
+          </li>
+          <li>
+            On browsers that don't support <code>prefers-color-scheme</code>,
+            offer the option to toggle dark mode manually.
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
