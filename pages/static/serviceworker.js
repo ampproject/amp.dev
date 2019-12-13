@@ -17,7 +17,7 @@ const SEARCH_LATEST_QUERY_PATH = '/search/latest-query';
 async function searchDoRequestHandler(url, request) {
   // Extract query parameter from search request url
   // Put new query as response to AMP-DEV-SEARCH-CACHE
-  const searchQuery = url.search.match(/q=([^&]+)/)[1];
+  const searchQuery = decodeURIComponent(url.search.match(/q=([^&]+)/)[1]);
   const cache = await caches.open(SEARCH_CACHE_NAME);
 
   cache.put(SEARCH_LATEST_QUERY_PATH, new Response(`"${searchQuery}"`));
