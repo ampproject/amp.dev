@@ -67,7 +67,7 @@
     "express": "4.17.1",
     "express-formidable": "1.2.0",
     "feedparser": "2.2.9",
-    "gcp-metadata": "3.2.2",
+    "gcp-metadata": "3.3.0",
     "http-proxy": "1.18.0",
     "iltorb": "2.4.4",
     "ioredis": "4.14.1",
