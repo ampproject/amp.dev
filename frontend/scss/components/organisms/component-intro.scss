@@ -98,13 +98,14 @@
         margin-top: 10px;
 
         @media (min-width: 768px) {
+          margin-top: 0;
           padding: 10px;
         }
 
         span {
           display: inline-block;
           height: 26px;
-          margin: 5px;
+          margin: 4px 3px;
           padding: 2px 12px;
           border-radius: 13px;
           background: color('wild-sand');
