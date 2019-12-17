@@ -28,8 +28,8 @@ $view: /views/overview/custom-content.j2
   <div class="ap-m-copy ap-m-copy-left-small">
     <h2>Execute all AMP JavaScript asynchronously</h2>
     <p>JavaScript is powerful, it can modify just about every aspect of the page, but it can also block DOM construction and delay page rendering (see also <a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/adding-interactivity-with-javascript">Adding interactivity with JavaScript</a>). To keep JavaScript from delaying page rendering, AMP allows only asynchronous JavaScript. </p>
-    <p>AMP pages can’t include any author-written JavaScript. Instead of using JavaScript, interactive page features are handled in custom AMP elements. The custom AMP elements may have JavaScript under the hood, but they’re carefully designed to make sure they don’t cause performance degradation. </p>
-    <p>While third-party JS is allowed in iframes, it cannot block rendering. For example, if third-party JS uses the <a href="http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/">super-bad-for-performance <code>document.write</code> API</a>, it does not block rendering the main page.</p>
+    <p>Custom AMP elements may have JavaScript under the hood, but they’re carefully designed to make sure they don’t cause performance degradation. </p>
+    <p>While custom JS is allowed in <a href="../documentation/components/reference/amp-script.md"><code>amp-script</code></a>, and third-party JS is allowed in iframes, it cannot block rendering. For example, if third-party JS uses the <a href="http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/">super-bad-for-performance <code>document.write</code> API</a>, it does not block rendering the main page.</p>
   </div>
 
   <div class="ap-m-copy ap-m-copy-center-small">
