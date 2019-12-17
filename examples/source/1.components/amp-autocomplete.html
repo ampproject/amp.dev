@@ -1,8 +1,3 @@
-<!---
-experiments:
-  - amp-autocomplete
-preview: default
---->
 <!--
   ## Introduction
 
@@ -335,8 +330,6 @@ preview: default
     The token for triggering the autosuggestion must be the provided value for the `inline` attribute. For example, if `inline="+"`, then when the `+` token is entered by the user,
     any relevant suggestions will be displayed. Otherwise, the field will behave the same as an unenhanced input field. The `inline` attribute does not support the empty string, 
     or `""` as a legitimate token value on `amp-autocomplete`.
-
-    Note: This feature is currently only available under experimental.
   -->
   <div>
     <form class="sample-form"
@@ -423,8 +416,6 @@ preview: default
     User inputs can be passed to a statically generated endpoint when the `query` attribute is paired with the `src` attribute.
 
     For example if a `src="https://example.com` and `query="q"`, then a user who types in `abc` will get the fetch JSON result from `https://example.com?q=abc`.
-  
-    Note: This feature is currently only available under experimental.
   -->
   <div>
     <form class="sample-form"
