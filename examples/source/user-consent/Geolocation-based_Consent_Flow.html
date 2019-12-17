@@ -1,7 +1,7 @@
 <!---
   
 teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
-author: micajuine-ho
+author: micajuine-ho, sebastianbenz
 
 --->
 
@@ -23,11 +23,11 @@ author: micajuine-ho
   <title>Geolocation-based Consent Flow</title>
   <!-- ## Setup -->
   <!--
-  We need to import both, the `amp-consent` ...
+  We need to import both, the [`amp-consent`](/content/amp-dev/documentation/components/reference/amp-consent.md) ...
   -->
   <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
   <!--
-  ... and the `amp-geo` extension.
+  ... and the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo.md) extension.
   -->
   <script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -90,7 +90,7 @@ author: micajuine-ho
   
   <!-- ## Defining the consent flow -->
   <!--
-    The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: [`geoOverride`](https://amp.dev/documentation/components/amp-consent/?format=websites).
+    The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: [`geoOverride`](/content/amp-dev/documentation/components/reference/amp-consent.md).
 
     If amp-geo finds that the user is in the US country group, then the contents of the US config will override the top-level consent config (and same for EEA).
 
@@ -103,7 +103,7 @@ author: micajuine-ho
       "postPromptUI": "post-consent-ui"
     }
     ```
-    Since `consentRequired` is true and `promptUI` is configured, amp-consent will show the prompt if no localstorage decision is found.
+    Since `consentRequired` is `true` and `promptUI` is configured, `amp-consentwill show the prompt if no localstorage decision is found.
 
     Our final config for a US user would look like this: 
     ```json
@@ -115,7 +115,7 @@ author: micajuine-ho
       "postPromptUI": "post-consent-ui"
     }
     ```
-    If no localstorage decision is found and since `consentRequired` is 'remote', amp-consent will wait until it gets a response from `checkConsentHref`. In this example, no matter what the response returned, it will not show anything because `promptUI` was overriden to null (since there could be an external site to manage user consent).
+    If no localstorage decision is found and since `consentRequired` is 'remote', `amp-consent` will wait until it gets a response from `checkConsentHref`. In this example, no matter what the response returned, it will not show anything because `promptUI` was overriden to `null` (since there could be an external site to manage user consent).
 
     And our final config for a user in neither of those geo groups would be: 
     ```json
@@ -125,7 +125,7 @@ author: micajuine-ho
       "postPromptUI": "post-consent-ui"
     }
     ```
-    Localstorage decision will be used if it exists, otherwise, since `consentRequired` is false, amp-consent will not do anything.
+    Localstorage decision will be used if it exists, otherwise, since `consentRequired` is `false`, `amp-consent` will not do anything.
 
     Note: Use `expireCache: true` in your response to never save consent states to localstorage.
   -->
