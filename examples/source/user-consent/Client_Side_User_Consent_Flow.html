@@ -94,7 +94,7 @@ teaserImage: '/static/samples/img/teaser/basic_user_consent_flow.jpg'
   
   It is possible, to re-trigger the consent dialog using the `myConsent.prompt()` action. One use case for this is giving users the option to change their settings after consent dialog has been dismissed. For this to work, the post consent UI needs to be specified in the `amp-consent` JSON config: `"promptUI": "consentDialog"`.
   
-  If `consentRequired` was set to `true` in the incline script config, then `amp-consent` will first check localstorage for an existing consent decision and use it if present. Otherwise it will show the promptUi (if configured). If `consentRequired` was set to false, `amp-consentwill immediately unblock all elements. 
+  If `consentRequired` was set to `true` in the incline script config, then `amp-consent` will first check localstorage for an existing consent decision and use it if present. Otherwise it will show the promptUi (if configured). If `consentRequired` was set to false, `amp-consent` will immediately unblock all elements. 
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{

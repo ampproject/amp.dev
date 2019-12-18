@@ -75,7 +75,7 @@ author: micajuine-ho, sebastianbenz
 </head>
 <body>
   <!-- ## Setting up amp-geo -->
-  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the iso code `us` which represents the United States, `preset-eea`, and [`unknown`](https://amp.dev/documentation/components/amp-geo/?format=websites#operation)-->
+  <!-- First we need to setup the [`amp-geo`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md) extension. We'll use the iso code `us` which represents the United States, [`preset-eea`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md#preset-country-groups), and [`unknown`](/content/amp-dev/documentation/components/reference/amp-geo-v0.1.md#operation)-->
   <amp-geo layout="nodisplay">
     <script type="application/json">
       {
@@ -90,7 +90,7 @@ author: micajuine-ho, sebastianbenz
   
   <!-- ## Defining the consent flow -->
   <!--
-    The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: [`geoOverride`](/content/amp-dev/documentation/components/reference/amp-consent.md).
+    The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: [`geoOverride`](/content/amp-dev/documentation/components/reference/amp-consent.md#geoOverride).
 
     If amp-geo finds that the user is in the US country group, then the contents of the US config will override the top-level consent config (and same for EEA).
 
@@ -103,7 +103,7 @@ author: micajuine-ho, sebastianbenz
       "postPromptUI": "post-consent-ui"
     }
     ```
-    Since `consentRequired` is `true` and `promptUI` is configured, `amp-consentwill show the prompt if no localstorage decision is found.
+    Since `consentRequired` is `true` and `promptUI` is configured, `amp-consent` will show the prompt if no localstorage decision is found.
 
     Our final config for a US user would look like this: 
     ```json
