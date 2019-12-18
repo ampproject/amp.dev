@@ -1,7 +1,7 @@
 $title: ameba.jp
 $category: social-media
-$date: 2019-11-26
-description: Ameba launched their article ranking pages as AMP Stories
+$date: 2019-12-02
+description: Ameba launched their article landing pages as AMP Stories
 
 formats:
   - stories
@@ -17,11 +17,11 @@ teaser:
     width: 164
     height: 50
     alt: Ameba
-  text: To provide their blog content in a more attractive format, Ameba launched their article ranking pages as AMP Stories
+  text: To provide their blog content in a more attractive format, Ameba launched their article landing pages as AMP Stories
 
 stage:
-  headline: Ameba launched their article ranking pages as AMP Stories
-  subline: NOV 21, 2019
+  headline: Ameba launched their article landing pages as AMP Stories
+  subline: DEC 2, 2019
   layout: all
   logo:
     image_src: '/static/img/success-stories/ameba/ameba-logo.png'
@@ -52,7 +52,7 @@ kpis:
 
 contents:
   - layout: text
-    text: "Based on the company vision of “Creating a company that represents the 21st century,” CyberAgent runs their business in four major fields: media, Internet advertisement, games, and start-up investment development.<br><br>Ameba blog, one of their main media services, has been optimizing its user experience by converting blog articles into AMP pages from the very beginning of the AMP project launch. The main goal is to improve their page speed and optimize business performance such as ads CPM, PV and so on. Having over 20 million AMP pages, they see the pages loading 57% faster in Speed Index and have succeeded in improving the CPM to 149%.<br><br>To provide their blog content in a more attractive format, Ameba recently launched their article ranking pages as AMP Stories since the “stories” format has become increasingly popular among the next generation of users who spend most of their time on mobile. The main KPI was around hitting high CTR for attachments, as well as optimizing blogs for completion rate."
+    text: 'Based on the company vision of “Creating a company that represents the 21st century,” CyberAgent runs their business in four major fields: media, Internet advertisement, games, and start-up investment development.<br><br>Ameba blog, one of their main media services, has been optimizing its user experience by converting blog articles into AMP pages from the very beginning of the AMP project launch. The main goal is to improve their page speed and optimize business performance such as ads CPM, PV and so on. Having over 20 million AMP pages, they see the pages loading 57% faster in Speed Index and have succeeded in improving the CPM to 149%.<br><br>To provide their blog content in a more attractive format, Ameba recently launched their article landing pages as AMP Stories since the “stories” format has become increasingly popular among the next generation of users who spend most of their time on mobile. The main KPI was around hitting high CTR for attachments, as well as optimizing blogs for completion rate. You can see their AMP Stories <a href="https://blogger.ameba.jp/ampstories/genres/bento/blog-ranking.html">here</a>.'
 
   - layout: text-media
     image_src: '/static/img/success-stories/ameba/ameba-screen-2.jpg'
@@ -63,7 +63,7 @@ contents:
     headline: Solution
     text: "<ul>
       <li>Leveraged the default AMP components as much as possible to accelerate development</li>
-      <li>Re-used the existing ranking pages as the single source of truth to automatically publish stories for 185 categories, which would become 185 individual stories, and keep it maintainable at the same time</li>
+      <li>Re-used the existing landing pages as the single source of truth to automatically publish stories for 185 categories, which would become 185 individual stories, and keep it maintainable at the same time</li>
       <li>Followed the best practices for creating an AMP Story and used the auto-advance-after attribute to automatically transition to the next page to let users watch content just like a video channel</li>
       <li>Built a template with an A/B test approach to micro-optimize performance (in order to achieve the KPIs) and also publish at scale</li>
     </ul>"

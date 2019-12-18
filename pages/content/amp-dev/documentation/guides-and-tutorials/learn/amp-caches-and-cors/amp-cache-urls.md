@@ -137,6 +137,7 @@ A few examples of the basic algorithm:
 After running the basic algorithm, if and only if the domain prefix is not a valid DNS label, we run the Fallback Algorithm described below.
 
 The reasons for a domain prefix not being a valid DNS label include:
+
 1.  The domain prefix is longer than 63 characters.
 1.  The domain prefix has a `-` hyphen in positions 3 and 4, but does not begin with `xn--`. The `en--us-example-com` domain prefix in the above table is an example of this.
 1.  The domain prefix begins or ends with a ‘`-`’ (hyphen). This case is mentioned for completeness, however the basic algorithm can only generate this case if the publisher domain also begins or ends with a ‘`-`’ (hypen), which would mean the publisher domain is also an invalid DNS label. Therefore, this case cannot happen in practice.

@@ -41,17 +41,6 @@ creation:
       height: 549
     formats:
       - ads
-  - name: AMP Stories for WordPress (Beta)
-    official: true
-    description: The AMP for WordPress plugin now comes with a fully integrated story editor.
-    url: https://github.com/ampproject/amp-wp/wiki/AMP-Stories-Experimental
-    type: WYSIWYG Editor
-    image:
-      src: /static/img/tools/amp_stories_for_wordpress.jpg
-      width: 700
-      height: 402
-    formats:
-      - stories
   - name: Google Web Designer
     description: Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device.
     url: https://support.google.com/webdesigner/answer/7529856?hl=en

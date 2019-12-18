@@ -114,9 +114,13 @@ function createPageObject(csePageItem) {
     url: csePageItem.link,
   };
 
-  const hostMatch = page.url.match(REMOVE_HOST_PATTERN);
-  if (hostMatch) {
-    page.url = page.url.substring(hostMatch[0].length);
+  // For better DX while testing the search make links relative
+  // to point to local documents
+  if (config.isDevMode() || config.isLocalMode()) {
+    const hostMatch = page.url.match(REMOVE_HOST_PATTERN);
+    if (hostMatch) {
+      page.url = page.url.substring(hostMatch[0].length);
+    }
   }
 
   return page;

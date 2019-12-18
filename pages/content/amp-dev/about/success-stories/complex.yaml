@@ -1,0 +1,73 @@
+$title: Complex Network
+$category: publishers
+$date: 2019-12-06
+description: Complex Networks drives a 3x revenue increase with AMP
+
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/complex/complex-teaser.jpg'
+    width: 750
+    height: 750
+    alt: complex.com Screenshot
+  logo:
+    src: '/static/img/success-stories/complex/complex-logo.jpg'
+    width: 413
+    height: 413
+    alt: complex.com Logo
+  text: Complex Networks drives a 3x revenue increase with AMP
+
+stage:
+  headline: Complex Networks drives a 3x revenue increase with AMP
+  subline: DEC 6, 2019
+  layout: mobile
+  logo:
+    src: '/static/img/success-stories/complex/complex-logo.jpg'
+    width: 413
+    height: 413
+    alt: complex.com Logo
+  devices:
+    - image_src: '/static/img/success-stories/complex/complex-screen-2.jpg'
+      width: 524
+      height: 889
+      type: mobile
+      alt: complex.com Screenshot
+
+kpis:
+  - value: 200+%
+    text: Increase in CPMs
+
+  - value: 3x
+    text: Increase in daily average revenue
+
+  - value: 90%
+    text: Increase in YoY AMP sessions
+
+contents:
+  - layout: text
+    text: Complex Networks, a global lifestyle brand and media company and one of the most influential voices in popular culture today, covers topics that span across popular culture from music to movies, sports to video games, fashion to food. A diversified and profitable media business, Complex Networks is a Top 10 publisher in the U.S. for social engagement on channels like Facebook and YouTube. Amid a competitive digital publishing environment, Complex decided to adopt the AMP framework in February 2016 to improve their mobile user experience, expand reach, and increase advertising revenue.
+
+  - layout: text-media
+    image_src: '/static/img/success-stories/complex/complex-screen-1.jpg'
+    width: 347
+    height: 719
+    type: mobile
+    alt: complex.com Screenshot
+    headline: Solution
+    text: "Within a few months, Complex’s internal development team implemented AMP across 90% of their mobile pages. While search traffic and page-load speeds improved, monetization initially lagged behind that of non-AMP mobile pages. “We were using a combination of Google demand and direct deals to monetize our AMP site,” explains Chris Gironda, Senior Ad Tech Manager at Complex. “But we needed a way to increase competition and drive up CPMs.” Complex’s AMP pages were also not appearing in Google’s top news carousel or being presented in top stories.<br><br>So, the team decided to create a v2 of their AMP site, a React application based on node.js, Webpack, and Babel that would take advantage of the AMP’s growing components library and validation capability.<br><br>To enhance UX, the key was using structured data, and to implement the same JSON-LD markup (schema.org markup) from their non-AMP pages on their AMP pages. The team used different markup for news vs. non-news articles, and they implemented VideoObject and ItemLists markup on articles with embedded videos. These changes enabled the articles to surface in Google’s top story and host carousels, which require pre-rendering in order to support the ability to swipe from one story to the next.<br><br>To improve monetization, Gironda and Complex’s Director of Yield & Programmatic Operations, Alex Mason, conducted an AMP ads audit in February 2019. They determined where on their AMP site to add more ad slots, and looked at which ad slots were most visible - and most valuable. Using Google Ad Manager, they worked with their development team to increase targeting and overall demand and competition. If a campaign was dragging on performance, they would update the targeting to redirect to the most viewable and high-performing ad units."
+    direction: right-flat
+
+  - layout: quote
+    quote: The combination of updating our AMP templates and working with specifically-selected programmatic demand partners gave us a huge jump in CPMs. The results made it clear that we should be focused on opening up more AMP inventory for monetization.
+    image_src: '/static/img/success-stories/complex/complex-logo.jpg'
+    width: 413
+    height: 413
+    alt: complex.com Logo
+    author: Alex Mason, Director, Yield & Programmatic Ops, Complex Networks
+
+  - layout: text
+    headline: Results
+    text: "Complex’s v2 AMP site resulted in a better user experience, faster page load speeds, and far more search traffic. Between March 1 and August 31, 2019, the company saw a 71% increase in overall AMP site visitors and a 90% increase in overall sessions compared to the same period in 2018. In addition, by increasing advertiser competition, CPMs jumped, then jumped again when Complex added more ad inventory to their AMP pages. “It was really a compounding effect,” says Gironda, noting that CPMs are now 200% higher than before. Overall, average daily revenue is up by 3x and Complex is thinking about what’s next. They’re currently taking their learnings and applying them to their network of smaller publisher sites. Gironda shares, “Using our internal AMP findings and then rolling them out to our larger network is a great next step.”"
+    background: gradient
