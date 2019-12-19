@@ -139,33 +139,6 @@ class MarkdownDocument {
   /**
    * Returns the formats supported by any version of this component.
    */
-  get supportedFormats() {
-    return this._frontmatter['supported_formats'] || [];
-  }
-
-  set supportedFormats(formats) {
-    this._frontmatter['supported_formats'] = formats;
-  }
-
-  get component() {
-    return this._frontmatter['component'];
-  }
-
-  set component(component) {
-    this._frontmatter['component'] = component;
-  }
-
-  get version() {
-    return this._frontmatter['version'];
-  }
-
-  set version(version) {
-    this._frontmatter['version'] = version;
-  }
-
-  set versions(versions) {
-    this._frontmatter['versions'] = versions;
-  }
 
   get teaser() {
     return this._frontmatter['teaser'] || {};
@@ -178,14 +151,6 @@ class MarkdownDocument {
   set servingPath(path) {
     this._frontmatter['$path'] = path;
     this._frontmatter['$localization'] = {path: '/{locale}' + path};
-  }
-
-  set isCurrent(bool) {
-    this._frontmatter['is_current'] = bool;
-  }
-
-  get isCurrent() {
-    return this._frontmatter['is_current'];
   }
 
   get contents() {
