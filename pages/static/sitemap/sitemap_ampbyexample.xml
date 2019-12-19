@@ -187,6 +187,7 @@
 <url> <loc>https://ampbyexample.com/user_consent/advanced_user_consent_flow/</loc> </url>
 <url> <loc>https://ampbyexample.com/user_consent/basic_user_consent_flow/</loc> </url>
 <url> <loc>https://ampbyexample.com/user_consent/external_user_consent_flow/</loc> </url>
+<url> <loc>https://ampbyexample.com/user_consent/server_side_user_consent_flow/</loc> </url>
 <url> <loc>https://ampbyexample.com/user_consent/geolocation-based_consent_flow/</loc> </url>
 <url> <loc>https://ampbyexample.com/visual_effects/animated_snackbar/</loc> </url>
 <url> <loc>https://ampbyexample.com/visual_effects/animated_snackbar/preview/</loc> </url>

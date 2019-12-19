@@ -423,3 +423,14 @@ providers:
       fit: contain
     formats:
       - email
+  - name: eSputnik
+    url: https://esputnik.com/
+    type: Email Service
+    description: Supercharge conversions of your bulk and triggered campaigns with real-time recommendations in AMP powered emails 
+    image:
+      src: /static/img/tools/esputnik-logo.png
+      width: 1175
+      height: 330
+      fit: contain
+    formats:
+      - email
