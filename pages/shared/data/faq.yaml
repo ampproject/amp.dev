@@ -639,6 +639,37 @@ platform_and_vendor_partners:
         url: https://vine.co/
       - label: YouTube
         url: https://www.youtube.com/
+  - title: Real Time Config
+    id: rtc
+    list:
+      - label: AppNexus
+        url: https://www.3qsdn.com/
+      - label: APS
+        url: http://on.aol.com/
+      - label: Automatad
+        url: http://beachfrontreach.com/
+      - label: Criteo
+        url: https://www.brid.tv/
+      - label: IndexExchange
+        url: https://www.brightcove.com/
+      - label: Lotame
+        url: http://www.dailymotion.com/
+      - label: Media.net
+        url: https://gfycat.com/
+      - label: PubMatic OpenWrap
+        url: https://www.hulu.com/
+      - label: Purch
+        url: https://www.izlesene.com/
+      - label: Rubicon
+        url: https://www.jwplayer.com/
+      - label: Salesforce
+        url: https://corp.kaltura.com/
+      - label: Yieldbot
+        url: https://www.nexx.tv/
+      - label: Kargo
+        url: https://www.ooyala.com/
+      - label: Yieldlab
+        url: https://soundcloud.com/
 supported_browsers:
   - title: Chrome
     img: /static/img/platforms/chrome.png
