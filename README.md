@@ -83,11 +83,11 @@ To get started with contributing to amp.dev, you first need to [fork the reposit
 $ git clone https://github.com/YOUR-USERNAME/amp.dev
 ```
 
-... and then install the dependencies via NPM:
+... and then install the dependencies via Yarn:
 
 ```sh
 $ cd amp.dev
-$ npm install
+$ yarn
 ```
 
 ### Develop
