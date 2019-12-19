@@ -15,14 +15,12 @@
  */
 require('module-alias/register');
 
-// By default, reference docs are imported from the latest release tag.
-// If a doc is broken in a release, add it to this this list to fetch from master instead.
-//
-// DON'T FORGET TO REMOVE ONCE IT'S FIXED
 const LATEST_VERSION = 'latest';
+const DEFAULT_VERSION = 0.1;
 
 const {GitHubImporter} = require('./gitHubImporter');
 const path = require('path');
+const project = require('@lib/utils/project');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
@@ -84,6 +82,11 @@ class ComponentReferenceImporter {
 
   _getExtensionMetas(extension) {
     const spec = this.validatorRules.getExtension('AMP', extension.name);
+    if (!spec) {
+      log.warn('No extension meta found for: ', extension.name);
+      return [];
+    }
+
     const tag = this.validatorRules.raw.tags.find((tag) => {
       return tag.tagName.toLowerCase() == extension.name;
     }) || {};
@@ -93,11 +96,6 @@ class ComponentReferenceImporter {
       }
       return extension.name == script.extensionSpec.name;
     }) || {};
-
-    if (!spec) {
-      log.warn('No extension meta found for: ', extension.name);
-      return [];
-    }
 
     spec.version = spec.version.filter((version) => {
       return version != LATEST_VERSION;
@@ -114,7 +112,7 @@ class ComponentReferenceImporter {
         script: script,
         tag: tag,
         version: spec.version.pop(),
-        githubPath: this._buildPathFromVersion(extension, null),
+        githubPath: this._getGitHubPath(extension, null),
       },
     ];
     for (const version of spec.version) {
@@ -125,7 +123,7 @@ class ComponentReferenceImporter {
             script: script,
             tag: tag,
             version: version,
-            githubPath: this._buildPathFromVersion(extension, version),
+            githubPath: this._getGitHubPath(extension, version),
           },
       );
     }
@@ -133,17 +131,30 @@ class ComponentReferenceImporter {
     return extensionMetas;
   }
 
-  _buildPathFromVersion(extension, version) {
+  /**
+   * Tries to find the documentation markdown file for a certain component
+   * @param  {Object} extension
+   * @param  {String} version
+   * @return {String}
+   */
+  _getGitHubPath(extension, version) {
     return path.join(extension.path, version || '', `${extension.name}.md`);
   }
 
   async _createGrowDoc(extension) {
-    const fileContents = await this.githubImporter_.fetchFile(extension.githubPath);
+    let fileContents;
+    try {
+      fileContents = await this.githubImporter_.fetchFile(extension.githubPath);
+    } catch(e) {
+      log.error(`Could not fetch reference for ${extension.name} from ${extension.githubPath}`);
+      return;
+    }
+
     const docPath = path.join(DESTINATION_BASE_PATH, `${extension.name}-${extension.version}.md` );
 
     try {
       const doc = new ComponentReferenceDocument(docPath, fileContents, extension);
-      await doc.save();
+      await doc.save(docPath);
     } catch (e) {
       log.error('Could not create doc for: ', extension.name, e);
     }
