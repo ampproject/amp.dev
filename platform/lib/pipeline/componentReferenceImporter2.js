@@ -19,16 +19,11 @@ require('module-alias/register');
 // If a doc is broken in a release, add it to this this list to fetch from master instead.
 //
 // DON'T FORGET TO REMOVE ONCE IT'S FIXED
-const DOCS_TO_FETCH_FROM_MASTER = ['amp-script', 'amp-carousel'];
 const LATEST_VERSION = 'latest';
 
-const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
-const categories = require(__dirname + '/../../config/imports/componentCategories.json');
-const formats = require(__dirname + '/../../config/imports/componentFormats.json');
-const {writeFile} = require('fs').promises;
+const {GitHubImporter} = require('./gitHubImporter');
 const path = require('path');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
-const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
 
@@ -106,7 +101,9 @@ class ComponentReferenceImporter {
 
     spec.version = spec.version.filter((version) => {
       return version != LATEST_VERSION;
-    }).sort((version1, version2) => {
+    });
+
+    spec.version = spec.version.sort((version1, version2) => {
       return parseFloat(version1) > parseFloat(version2);
     });
 
