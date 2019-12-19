@@ -93,7 +93,7 @@
   <!-- 
     ## Basic usage 
 
-    An `amp-autocomplete` must always be nested in a form and have an **input field** and a datasource. 
+    An `amp-autocomplete` must always be nested in a form and have an **input field** specified with an `input` or `textarea` tag and a datasource. 
     When a user types into this input field, relevant suggestions will automatically appear below the input field.
 
     A **datasource** must be a JSON object containing an array property `items`, and can be specified inline with a child `script type="application/json"` tag, or a server endpoint specified with a `src` attribute.
@@ -321,5 +321,117 @@
     </form>
   </div>
 
+  <h2>Inline autocomplete</h2>
+  <!-- 
+    ## Displaying suggestions inline
+
+    Suggestions can be triggered on a specified character token in an `amp-autocomplete` for multiple autosuggestions in a single input by using the `inline` attribute.
+    
+    The token for triggering the autosuggestion must be the provided value for the `inline` attribute. For example, if `inline="+"`, then when the `+` token is entered by the user,
+    any relevant suggestions will be displayed. Otherwise, the field will behave the same as an unenhanced input field. The `inline` attribute does not support the empty string, 
+    or `""` as a legitimate token value on `amp-autocomplete`.
+  -->
+  <div>
+    <form class="sample-form"
+      method="post"
+      action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
+      target="_top">
+      <amp-autocomplete filter="prefix" inline="+" min-characters="0" filter-value="name">
+          <textarea
+          autoexpand
+          rows="2"
+          placeholder="Type your message here"
+          name="message"
+        ></textarea>
+        <template type="amp-mustache">
+          <div class="close-friends" data-value="{{ email }}">
+            <amp-img
+              class="profile-pic"
+              height="20"
+              width="20"
+              layout="responsive"
+              alt="Profile picture of AMP logo"
+              src="/static/samples/img/favicon.png"
+            ></amp-img>
+            <div class="info">
+              <div>{{ name }}</div>
+              <div class="custom">{{ email }}</div>
+            </div>
+          </div>
+        </template>
+        <script type="application/json">
+          {
+            "items": [
+              {"email": "harrypotter@hogwarts.edu", "name": "Harry Potter"},
+              {
+                "email": "albusdumbledore@hogwarts.edu",
+                "name": "Albus Dumbledore"
+              },
+              {
+                "email": "voldemort@deatheater.org",
+                "name": "Tom Marvolo Riddle"
+              },
+              {"email": "severussnape@hogwarts.edu", "name": "Severus Snape"},
+              {"email": "siriusblack@hogwarts.edu", "name": "Sirius Black"},
+              {
+                "email": "hermionegranger@hogwarts.edu",
+                "name": "Hermione Granger"
+              },
+              {"email": "ronweasley@hogwarts.edu", "name": "Ron Weasley"},
+              {"email": "dracomalfoy@hogwarts.edu", "name": "Draco Malfoy"},
+              {
+                "email": "nevillelongbottom@hogwarts.edu",
+                "name": "Neville Longbottom"
+              },
+              {"email": "rubeushagrid@hogwarts.edu", "name": "Rubeus Hagrid"},
+              {"email": "dobby@hogwarts.edu", "name": "Dobby"},
+              {
+                "email": "bellatrixlestrange@deatheater.org",
+                "name": "Bellatrix Lestrange"
+              },
+              {
+                "email": "minervamcgonagall@hogwarts.edu",
+                "name": "Minerva McGonagall"
+              }
+            ]
+          }
+        </script>
+      </amp-autocomplete>
+      <input type="submit" value="Search">
+      <div submit-success>
+        <template type="amp-mustache">
+          Success! <strong>{{message}}</strong>
+        </template>
+      </div>
+      <div submit-error>
+        Error!
+      </div>
+    </form>
+  </div>
+
+  <h2>Query data sources</h2>
+  <!-- 
+    ## Specifying query parameters
+
+    User inputs can be passed to a statically generated endpoint when the `query` attribute is paired with the `src` attribute.
+
+    For example if a `src="https://example.com` and `query="q"`, then a user who types in `abc` will get the fetch JSON result from `https://example.com?q=abc`.
+  -->
+  <div>
+    <form class="sample-form"
+      method="post"
+      action-xhr="<% hosts.platform %>/documentation/examples/api/echo"
+      target="_top">
+      <amp-autocomplete filter="none" min-characters="1" src="<% hosts.platform %>/samples_templates/products_autosuggest" query="q">
+        <input type="search" name="queryInput">
+        </amp-autocomplete>
+      <input type="submit" value="Search">
+      <div submit-success>
+        <template type="amp-mustache">
+          Success! Received <strong>{{queryInput}}</strong>.
+        </template>
+      </div>
+    </form>
+  </div>
 </body>
 </html>

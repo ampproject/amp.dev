@@ -26,12 +26,12 @@ examples.post('/get-consent', (request, response) => {
   });
 });
 
-examples.post('/get-consent-sever-side', (request, response) => {
+examples.post('/get-consent-server-side', (request, response) => {
   response.json({
     expireCache: true,
     consentRequired: true,
     consentStateValue: 'accepted',
-    consentString: 'abc123',
+    consentString: 'example-string',
   });
 });
 
