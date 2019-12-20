@@ -139,7 +139,7 @@
     "js-beautify": "1.10.2",
     "keymaster": "1.6.2",
     "marked": "^0.7.0",
-    "mini-css-extract-plugin": "0.8.0",
+    "mini-css-extract-plugin": "0.9.0",
     "node-sass": "4.13.0",
     "npm-run-all": "4.1.5",
     "octonode": "0.9.5",
