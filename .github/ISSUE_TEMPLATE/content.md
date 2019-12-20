@@ -7,16 +7,23 @@ assignees: ''
 
 ---
 
+<!--
+Thank you for wanting to make amp.dev better.
+
+Please fill in as much of the below template as you're able.
+-->
+
 ## 📖 Missing or out-of-date documentation
 
-**Describe the content that is missing or should be up dated**
-A clear and concise description of what content is missing, or needs to be updated. Could be a missing guide explaining a concept, a tutorial, or something that is confusing or doesn't work when you tried it.
+**Describe the content that is missing or should be up dated.**  
+A clear and concise description of what content is missing, or needs to be updated.
+Could be a missing guide explaining a concept, a tutorial, or something that is confusing or doesn't work when you tried it.
 
-**Which part of the site would that content live at?**
+**In which part of the site would that content live at?**  
 Where would it go? In the reference docs? About pages? Guides and tutorials?
 
-**What's the type of content?**
+**What type of content is it?**  
 Are we talking about a tutorial, a paragraph somewhere or API docs?
 
-**Optional: Proposed information architecture**
+**Optional: Propose information architecture.**  
 If you have ideas on how we should structure the content, tell us!
