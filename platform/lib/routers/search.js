@@ -22,6 +22,7 @@ const project = require('@lib/utils/project.js');
 const googleSearch = require('@lib/utils/googleSearch.js');
 const samples = require('@lib/common/samples.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
+const URL = require('url').URL;
 
 const {BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS} = require('@lib/common/AmpConstants.js');
 
@@ -84,10 +85,18 @@ function handleAutosuggestRequest(request, response) {
 function handleHighlightsRequest(request, response) {
   const locale = request.query.locale ? request.query.locale : config.getDefaultLocale();
   const data = require(path.join(HIGHLIGHTS_FOLDER_PATH, `${locale}.json`));
+
+  for (const page of data.articles) {
+    page.url = new URL(page.url, config.hosts.platform.base).toString();
+  }
+
   for (const page of data.components) {
     addExampleAndPlaygroundLink(page, locale);
     cleanupTexts(page);
+
+    page.url = new URL(page.url, config.hosts.platform.base).toString();
   }
+
   setMaxAge(response, RESPONSE_MAX_AGE.highlights);
   response.json(data);
 }
@@ -130,10 +139,15 @@ function addExampleAndPlaygroundLink(page, locale) {
       page.exampleUrl = example.exampleUrl;
       page.playgroundUrl = example.playgroundUrl;
 
-      // the preview link must not have the locale, but the example doc page has to have it:
+      // The preview link must not have the locale,
+      // but the example doc page has to have it:
       if (locale != config.getDefaultLocale()) {
         page.exampleUrl = '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
       }
+
+      // The playground URL is already absolute/environment specific,
+      // the example URL needs to get a host
+      page.exampleUrl = new URL(page.exampleUrl, config.hosts.platform.base).toString();
     }
   }
 }
@@ -170,8 +184,8 @@ function createResult(totalResults, page, lastPage, components, pages, query, lo
     result.result.isTruncated = true;
   }
 
-  const searchBaseUrl = '/search/do?q=' + encodeURIComponent(query) +
-      '&locale=' + encodeURIComponent(locale) + '&page=';
+  const searchBaseUrl = new URL('/search/do?q=' + encodeURIComponent(query) +
+      '&locale=' + encodeURIComponent(locale) + '&page=', config.hosts.platform.base).toString();
   if (page < lastPage && page < LAST_PAGE) {
     result.nextUrl = searchBaseUrl + (page + 1);
   }
