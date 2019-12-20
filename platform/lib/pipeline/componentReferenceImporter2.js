@@ -16,7 +16,7 @@
 require('module-alias/register');
 
 const LATEST_VERSION = 'latest';
-const DEFAULT_VERSION = 0.1;
+const VERSION_PATTERN = /\d.\d/;
 
 const {GitHubImporter} = require('./gitHubImporter');
 const path = require('path');
@@ -49,35 +49,54 @@ class ComponentReferenceImporter {
     log.start('Beginning to import extension docs ...');
     this.validatorRules = await validatorRules.fetch();
 
-    return this._importExtensionsDocs();
+    return this._importExtensions();
   }
 
   /**
    * Collects all needed documents from across the repository that should
    * be downloaded and put into collections
-   * @return {undefined}
+   * @return {Promise}
    */
-  async _importExtensionsDocs() {
+  async _importExtensions() {
     // Gives the contents of ampproject/amphtml/extensions
-    let extensionFiles = await this.githubImporter_.fetchJson('extensions');
+    let extensions = await this.githubImporter_.fetchJson('extensions');
 
     // As inside /extensions each component has its own folder, filter
     // down by directory
-    extensionFiles = extensionFiles[0].filter((file) => file.type === 'dir');
-
-    // Add built-in components to list to fetch them all in one go
-    for (const builtInExtension of BUILT_INS) {
-      extensionFiles.push({'name': builtInExtension, 'path': BUILT_IN_PATH});
-    }
-
-    const extensions = [];
-    for (const extension of extensionFiles) {
-      extensions.push(...(this._getExtensionMetas(extension)));
-    }
+    extensions = extensions[0].filter((file) => file.type === 'dir');
 
     for (const extension of extensions) {
-      this._createGrowDoc(extension);
+      this._importExtension(extension);
     }
+  }
+
+  async _importExtension(extension) {
+    extension.files = await this._listExtensionFiles(extension);
+
+    const versions = this._getExtensionMetas(extension);
+    return versions.map((version) => {
+      return this._createGrowDoc(version);
+    });
+  }
+
+  /**
+   * Fetches all paths inside an extension directory to be able to check
+   * file existance before downloading without doing an extra request
+   * @param  {Object}  extension
+   * @return {Promise}
+   */
+  async _listExtensionFiles(extension) {
+    const root = await this.githubImporter_.listDirectory(extension.path);
+    let tree = root.map((file) => {
+      if (file.match(VERSION_PATTERN)) {
+        return this.githubImporter_.listDirectory(file);
+      }
+
+      return Promise.resolve([file]);
+    });
+
+    tree = await Promise.all(tree);
+    return tree.reduce((acc, val) => acc.concat(val), []);
   }
 
   _getExtensionMetas(extension) {
@@ -100,32 +119,21 @@ class ComponentReferenceImporter {
     spec.version = spec.version.filter((version) => {
       return version != LATEST_VERSION;
     });
-
     spec.version = spec.version.sort((version1, version2) => {
       return parseFloat(version1) > parseFloat(version2);
     });
 
-    const extensionMetas = [
-      {
+    const latestVersion = spec.version[spec.version.length - 1];
+    const extensionMetas = [];
+    for (const version of spec.version) {
+      extensionMetas.push({
         name: extension.name,
         spec: spec,
         script: script,
         tag: tag,
-        version: spec.version.pop(),
-        githubPath: this._getGitHubPath(extension, null),
-      },
-    ];
-    for (const version of spec.version) {
-      extensionMetas.push(
-          {
-            name: extension.name,
-            spec: spec,
-            script: script,
-            tag: tag,
-            version: version,
-            githubPath: this._getGitHubPath(extension, version),
-          },
-      );
+        version: version,
+        githubPath: this._getGitHubPath(extension, version, latestVersion),
+      });
     }
 
     return extensionMetas;
@@ -135,10 +143,34 @@ class ComponentReferenceImporter {
    * Tries to find the documentation markdown file for a certain component
    * @param  {Object} extension
    * @param  {String} version
-   * @return {String}
+   * @param  {String} latestVersion
+   * @return {String|null}
    */
-  _getGitHubPath(extension, version) {
-    return path.join(extension.path, version || '', `${extension.name}.md`);
+  _getGitHubPath(extension, version, latestVersion) {
+    let gitHubPath;
+    const fileName = `${extension.name}.md`;
+
+    // Best guess: if the version equals the latest version the documentation
+    // is located in the root of the extension directory
+    if (version == latestVersion) {
+      gitHubPath = path.join(extension.path, fileName);
+      if (extension.files.includes(gitHubPath)) {
+        return gitHubPath;
+      }
+    }
+
+    // The documentation for other versions is most likely located in
+    // its version directory
+    gitHubPath = path.join(extension.path, version, fileName);
+    if (extension.files.includes(gitHubPath)) {
+      return gitHubPath;
+    }
+
+    // If no file can be found at the first location it means the extension
+    // doesn't follow the pattern in which the latest version documented
+    // is in the root of the extension
+    log.warn(`No document found for ${extension.name} v${version}`);
+    return null;
   }
 
   async _createGrowDoc(extension) {
@@ -146,7 +178,7 @@ class ComponentReferenceImporter {
     try {
       fileContents = await this.githubImporter_.fetchFile(extension.githubPath);
     } catch(e) {
-      log.error(`Could not fetch reference for ${extension.name} from ${extension.githubPath}`);
+      log.error(`Failed to fetch ${extension.githubPath}`);
       return;
     }
 
