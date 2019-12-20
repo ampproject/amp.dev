@@ -32,19 +32,21 @@ class ComponentReferenceDocument extends MarkdownDocument {
       extension.type = EXTENSION_TYPE_TEMPLATE;
     }
 
-    const scripts = [this._generateScript(extension.name, extension.version, extension.type)];
-    const requiredExtensions = [
-      ...(extension.tag.requiresExtension || []),
-      ...(extension.script.requiresExtension || []),
-    ];
-    for (const requiredExtension of requiredExtensions) {
-      if (requiredExtension == extension.name) {
-        continue;
+    if (extension.script) {
+      const scripts = [this._generateScript(extension.name, extension.version, extension.type)];
+      const requiredExtensions = [
+        ...(extension.tag.requiresExtension || []),
+        ...(extension.script.requiresExtension || []),
+      ];
+      for (const requiredExtension of requiredExtensions) {
+        if (requiredExtension == extension.name) {
+          continue;
+        }
+        scripts.push(this._generateScript(requiredExtension, DEFAULT_VERSION, extension.type));
       }
-      scripts.push(this._generateScript(requiredExtension, DEFAULT_VERSION, extension.type));
-    }
 
-    this.scripts = scripts;
+      this.scripts = scripts;
+    }
   }
 
   _generateScript(extensionName, extensionVersion, extensionType = EXTENSION_TYPE_ELEMENT) {

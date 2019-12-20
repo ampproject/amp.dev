@@ -65,6 +65,12 @@ class ComponentReferenceImporter {
     // down by directory
     extensions = extensions[0].filter((file) => file.type === 'dir');
 
+    // Add built-in components to list to fetch them all in one go
+    const builtInFiles = await this._listExtensionFiles({path: BUILT_IN_PATH});
+    for (const builtInExtension of BUILT_INS) {
+      extensions.push(...(this._getBuiltinMeta({'name': builtInExtension, 'path': BUILT_IN_PATH, files: builtInFiles})));
+    }
+
     for (const extension of extensions) {
       this._importExtension(extension);
     }
@@ -97,6 +103,22 @@ class ComponentReferenceImporter {
 
     tree = await Promise.all(tree);
     return tree.reduce((acc, val) => acc.concat(val), []);
+  }
+
+  _getBuiltinMeta(builtInExtension) {
+    const tag = this.validatorRules.raw.tags.find((tag) => {
+      return tag.tagName.toLowerCase() == builtInExtension.name;
+    }) || {};
+
+    const builtInExtensionMetas = [
+      {
+        name: builtInExtension.name,
+        tag: tag,
+        files: builtInExtension.files,
+        githubPath: this._getGitHubPath(builtInExtension, null),
+      },
+    ];
+    return builtInExtensionMetas;
   }
 
   _getExtensionMetas(extension) {
@@ -174,6 +196,9 @@ class ComponentReferenceImporter {
   }
 
   async _createGrowDoc(extension) {
+
+    console.log('--- extension');
+
     let fileContents;
     try {
       fileContents = await this.githubImporter_.fetchFile(extension.githubPath);
@@ -182,7 +207,8 @@ class ComponentReferenceImporter {
       return;
     }
 
-    const docPath = path.join(DESTINATION_BASE_PATH, `${extension.name}-${extension.version}.md` );
+    const fileName = extension.version ? `${extension.name}-${extension.version}.md` : `${extension.name}.md`;
+    const docPath = path.join(DESTINATION_BASE_PATH, fileName);
 
     try {
       const doc = new ComponentReferenceDocument(docPath, fileContents, extension);
