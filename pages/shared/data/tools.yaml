@@ -435,7 +435,7 @@ providers:
     formats:
       - email
   - name: Adobe Campaign Classic
-    url: https://www.adobe.com/fr/marketing/campaign.html
+    url: https://www.adobe.com/marketing/campaign.html
     type: Email Service
     description: Adobe Campaign Classic brings email to life with AMP 
     image:
