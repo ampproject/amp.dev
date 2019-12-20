@@ -15,7 +15,7 @@ Use CSS when you have a smaller, contained animation that doesn't need to be pre
 
 You can define CSS in AMP in the following ways:
 
-[filter="websites, stories"]
+[filter format="websites, stories"]
 
 *   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit.
 *   Inline styles. Detract from the 50,000 byte `<style amp-custom>` limit.
@@ -23,7 +23,7 @@ You can define CSS in AMP in the following ways:
 
 [/filter]
 
-[filter="ads"]
+[filter format="ads"]
 
 *   Within the `<style amp-custom>` tag inside the head of the document. 20,000 byte limit.
 *   Inline styles. Detract from the 20,000 byte `<style amp-custom>` limit.
@@ -31,11 +31,11 @@ You can define CSS in AMP in the following ways:
 
 [/filter]
 
-[filter="websites, stories"]
+[filter format="websites, stories"]
 To keep your pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles, the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
 [/filter]
 
-[filter="ads"]
+[filter format="ads"]
 To keep your ads lean and speedy, AMP has enforced a 20,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
 [/filter]
 
