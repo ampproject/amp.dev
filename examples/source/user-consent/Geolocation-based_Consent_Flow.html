@@ -65,6 +65,14 @@ author: micajuine-ho, sebastianbenz
       top: var(--space-2);
       cursor: pointer;
     }
+    /* defaults */
+    .default:after {
+      content: 'not in the preset group. No consent is required.';
+    }
+    /* override */
+    .amp-geo-group-eea .default:after {
+      content: 'in the preset eea group. Consent was required.';
+    }
     #post-consent-ui {
       display: flex;
       justify-content: center;
@@ -159,6 +167,9 @@ author: micajuine-ho, sebastianbenz
         <button on="tap:myUserConsent.prompt()">Update Consent</button>
       </div>
     </amp-consent>
+
+    <div>You are <span class="default"></span></div>
+
 
   <!-- ## Testing -->
   <!--
