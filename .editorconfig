@@ -8,6 +8,10 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 
+[*.md]
+# Trailing whitespace is significant in Markdown.
+trim_trailing_whitespace = false
+
 [*.json]
 indent_style = tab
 indent_size = 2

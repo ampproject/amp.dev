@@ -434,3 +434,14 @@ providers:
       fit: contain
     formats:
       - email
+  - name: Adobe Campaign Classic
+    url: https://www.adobe.com/marketing/campaign.html
+    type: Email Service
+    description: Adobe Campaign Classic brings email to life with AMP 
+    image:
+      src: /static/img/tools/adobe_campaign.png
+      width: 300
+      height: 300
+      fit: contain
+    formats:
+      - email
