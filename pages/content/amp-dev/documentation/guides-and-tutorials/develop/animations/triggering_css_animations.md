@@ -7,17 +7,37 @@ formats:
   - ads
 ---
 
-Triggering CSS animations [relies on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), done via JavaScript. You can achieve the same behavior on AMP pages by using the [`toggleClass`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#-all-elements) action. With `toggleClass`, AMP pages can add, remove, and toggle CSS classes like non-AMP pages.
+CSS animations enable web elements to transition from one CSS style configuration to another. The browser can start defined animations on load, but event triggered CSS animations [rely on adding and removing classes](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations). AMP supports both animation types.
+
+Use CSS when you have a smaller, contained animation that doesn't need to be precisely timed.
 
 ## Defining CSS and keyframes
 
 You can define CSS in AMP in the following ways:
 
+[filter formats="websites, stories"]
+
 *   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit.
-*   Inline styles. Detract from the 50,000 byte `<style amp-custom>` limit.
+*   Inline styles. Inline styles count towards the 50,000 byte `<style amp-custom>` limit.
 *   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
 
-To keep your pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
+[/filter]
+
+[filter formats="ads"]
+
+*   Within the `<style amp-custom>` tag inside the head of the document. 20,000 byte limit.
+*   Inline styles. Inline styles count towards the 20,000 byte `<style amp-custom>` limit.
+*   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+
+[/filter]
+
+[filter formats="websites, stories"]
+To keep your pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles, the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
+[/filter]
+
+[filter formats="ads"]
+To keep your ads lean and speedy, AMP has enforced a 20,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles,the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
+[/filter]
 
 ```html
   <style amp-custom>
