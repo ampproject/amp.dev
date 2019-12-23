@@ -44,6 +44,7 @@ const SAFE_CLASS_NAMES = [
   'ap-m-shift-card',
   'ap-m-teaser',
   'ap-m-visual-image',
+  'ap-m-format-filter',
   'ap-o-benefits',
   'ap-o-benefits',
   'ap-o-burger-menu-item',
