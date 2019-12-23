@@ -79,7 +79,7 @@ If needed, AMP allows inline styles:
 [/sourcecode]
 
 [tip type="important"]
-  Inline styles detract from the total 50,000 byte limit. 
+  Inline styles count toward the total 50,000 byte limit. 
 [/tip]
 
 ## Layout elements responsively
