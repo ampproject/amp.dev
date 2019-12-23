@@ -14,17 +14,17 @@ Please fill in as much of the below template as you're able.
 
 ## 🐛 Bug Report
 
-**Current behavior**  
+### Current behavior  
 A clear and concise description of the bug you found in amp.dev.
 
 Please also provide:
 - Page link: <insert the URL link to the amp.dev page(s) that you found the issue on>
 - (Optional) Screenshots/videos:
 
-**Expected behavior/code**  
+### Expected behavior/code  
 A clear and concise description of what you expected to happen.
 
-**How do we reproduce the issue?**  
+### How do we reproduce the issue?  
 Please provide the steps to reproduce the problem:
 
 1. Step 1 to reproduce
