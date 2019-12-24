@@ -210,7 +210,7 @@ Button.from(document.getElementById('menu-format-source'), formatSource);
 
 const loadEmail = () => {
   emailLoader.loadEmailFromFile()
-    .catch(error => alert(`Error loading email.\n${error.message}`));
+      .catch((error) => alert(`Error loading email.\n${error.message}`));
 };
 Button.from(document.getElementById('import-email'), loadEmail);
 
