@@ -19,21 +19,21 @@ Insert name here
 
 ### 2. For which format?
 Leave relevant format(s):
-- websites
-- stories
-- ads
-- email
+- [ ] websites
+- [ ] stories
+- [ ] ads
+- [ ] email
 
 
 ### 3. What type is it?  
-- editor 
-- service provider 
-- developer tool 
--content platform 
-- CMS 
-- ads 
-- audio/video 
-- analytics vendor 
+- [ ] editor 
+- [ ] service provider 
+- [ ] developer tool 
+- [ ] content platform 
+- [ ] CMS 
+- [ ] ads 
+- [ ] audio/video 
+- [ ] analytics vendor 
 
 ### 4. What page should it appear on?  
 1. [amp.dev/support/faq/platform-and-vendor-partners](https://amp.dev/support/faq/platform-and-vendor-partners)
