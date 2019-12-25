@@ -14,10 +14,10 @@ Please fill in as much of the below template as you're able.
 
 ## 🛠️ Request to Add Third-Party Tool/Service/Platform/Vendor
 
-### 1. What's the name?  
+### 1. Resource name
 Insert name here
 
-### 2. For which format?
+### 2. Relevant format(s)
 Leave relevant format(s):
 - [ ] websites
 - [ ] stories
@@ -25,22 +25,22 @@ Leave relevant format(s):
 - [ ] email
 
 
-### 3. What type is it?  
-- [ ] editor 
-- [ ] service provider 
-- [ ] developer tool 
-- [ ] content platform 
-- [ ] CMS 
-- [ ] ads 
-- [ ] audio/video 
-- [ ] analytics vendor 
+### 3. Resource type
+- [ ] editor
+- [ ] service provider
+- [ ] developer tool
+- [ ] content platform
+- [ ] CMS
+- [ ] ads
+- [ ] audio/video
+- [ ] analytics vendor
 
-### 4. What page should it appear on?  
+### 4. Destination
 1. [amp.dev/support/faq/platform-and-vendor-partners](https://amp.dev/support/faq/platform-and-vendor-partners)
 2. [amp.dev/documentation/tools](https://amp.dev/documentation/tools)
 
-#### 5. If you chose 1 in Step 4:  
+#### 4.1 If you chose 1 in Step 4:
 Please provide an image (min. 800x400 pixels) to appear on the [Tools](https://amp.dev/documentation/tools) page, as well as a short description (max. 100 characters).
 
-#### 5. If you chose 2 in Step 4:  
+#### 4.2 If you chose 2 in Step 4:
 Please provide link(s) to your documentation page(s) on your domain and for ads, the configuration page in the [ads/](https://github.com/ampproject/amphtml/tree/master/ads) folder of the `amphtml` repository.
