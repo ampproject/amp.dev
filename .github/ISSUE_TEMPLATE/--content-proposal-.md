@@ -6,6 +6,12 @@ labels: ''
 assignees: ''
 ---
 
+<!--
+Thank you for wanting to contribute content to amp.dev.
+
+Please fill in as much of the below template as you're able.
+-->
+
 ## 📝 Content Proposal
 
 ### Synopsis
