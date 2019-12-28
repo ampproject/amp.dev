@@ -12,6 +12,9 @@ assignees: ''
 A clear and concise description of the content you will be contributing.
 
 ### Content type
+
+<!-- Use [x] to mark a selection. -->
+
 - [ ] Guide
 - [ ] Tutorial
 - [ ] Example

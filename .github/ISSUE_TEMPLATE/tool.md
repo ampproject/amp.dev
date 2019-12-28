@@ -18,7 +18,9 @@ Please fill in as much of the below template as you're able.
 Insert name here
 
 ### 2. Relevant format(s)
-Leave relevant format(s):
+
+<!-- Use [x] to mark a selection. -->
+
 - [ ] websites
 - [ ] stories
 - [ ] ads
@@ -26,6 +28,9 @@ Leave relevant format(s):
 
 
 ### 3. Resource type
+
+<!-- Use [x] to mark a selection. -->
+
 - [ ] editor
 - [ ] service provider
 - [ ] developer tool
