@@ -4,7 +4,6 @@ about: "I have a suggestion (and may want to implement it \U0001F642)!"
 title: ''
 labels: 'Status: Pending Triage, Type: Feature'
 assignees: ''
-
 ---
 
 <!--
@@ -15,14 +14,14 @@ Please fill in as much of the template below as you're able.
 
 ## 🚀 Feature Request
 
-**Is your feature request related to a problem? Please describe.**  
+### Problem
 A clear and concise description of what the problem is. Ex. I have an issue when [...]
 
-**Describe the solution you'd like.**  
+### Solution
 A clear and concise description of what is desired, including any potential drawbacks.
 
-**Describe alternatives you've considered.**  
+### Alternatives
 A clear and concise description of any alternative solutions or features you've found.
 
-**Optional: Teachability, Documentation, Adoption, Migration Strategy**  
+### Additional information (optional)
 An explanation of how users will be able to use the proposed feature, potentially including screenshots or designs.
