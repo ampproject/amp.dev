@@ -16,6 +16,7 @@
 
 'use strict';
 
+const {DEFAULT_FORMAT} = require('../amp/formatHelper.js');
 
 /**
  * Helps determining the default format for a certain template
@@ -41,7 +42,7 @@ class SupportedFormatsExtension {
    * format and overwrites the one set by the global context
    */
   run(context, args) {
-    const formats = args.formats || [];
+    const formats = args.formats || [DEFAULT_FORMAT];
 
     // Check if the user did not select a specific format
     // and if so overwrite the default format with a more fitting one
