@@ -334,8 +334,8 @@ developer:
     url: https://nodemailer.com/app/
     image:
       src: /static/img/tools/nodemailer.jpg
-      width: 1000
-      height: 680
+      width: 800
+      height: 600
     formats:
       - email     
 providers:
