@@ -69,16 +69,21 @@ class ComponentReferenceImporter {
     // As inside /extensions each component has its own folder, filter
     // down by directory
     extensions = extensions[0].filter((file) => file.type === 'dir');
-
-    // Add built-in components to list to fetch them all in one go
-    const builtInFiles = await this._listExtensionFiles({path: BUILT_IN_PATH});
-    for (const builtInExtension of BUILT_INS) {
-      extensions.push(...(this._getBuiltinMeta({'name': builtInExtension, 'path': BUILT_IN_PATH, files: builtInFiles})));
-    }
-
     for (const extension of extensions) {
       this._importExtension(extension);
     }
+
+    // Add built-in components to list to fetch them all in one go
+    for (const builtIn of BUILT_INS) {
+      this._importBuiltIn(builtIn);
+    }
+  }
+
+  async _importBuiltIn(name) {
+    this._createGrowDoc({
+      name: name,
+      githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
+    });
   }
 
   async _importExtension(extension) {
@@ -108,22 +113,6 @@ class ComponentReferenceImporter {
 
     tree = await Promise.all(tree);
     return tree.reduce((acc, val) => acc.concat(val), []);
-  }
-
-  _getBuiltinMeta(builtInExtension) {
-    const tag = this.validatorRules.raw.tags.find((tag) => {
-      return tag.tagName.toLowerCase() == builtInExtension.name;
-    }) || {};
-
-    const builtInExtensionMetas = [
-      {
-        name: builtInExtension.name,
-        tag: tag,
-        files: builtInExtension.files,
-        githubPath: this._getGitHubPath(builtInExtension, null),
-      },
-    ];
-    return builtInExtensionMetas;
   }
 
   _getExtensionMetas(extension) {
