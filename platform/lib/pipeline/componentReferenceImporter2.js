@@ -37,8 +37,13 @@ const DESTINATION_BASE_PATH =
   __dirname + '/../../../pages/content/amp-dev/documentation/components/reference';
 // Names of the built-in components that need to be fetched from ...
 const BUILT_INS = ['amp-img', 'amp-pixel', 'amp-layout'];
+
+// Formats
+const FORMATS = ['AMP', 'AMP4ADS', 'AMP4EMAIL'];
+
 // ... this path
 const BUILT_IN_PATH = 'builtins';
+const AMPSTORY_PATH_PREFIX = 'amp-story';
 
 class ComponentReferenceImporter {
   constructor(githubImporter=new GitHubImporter()) {
@@ -122,7 +127,13 @@ class ComponentReferenceImporter {
   }
 
   _getExtensionMetas(extension) {
-    const spec = this.validatorRules.getExtension('AMP', extension.name);
+    let spec;
+    for (const format of FORMATS) {
+      spec = this.validatorRules.getExtension(format, extension.name);
+      if (spec) {
+        break;
+      }
+    }
     if (!spec) {
       log.warn('No extension meta found for: ', extension.name);
       return [];
@@ -172,6 +183,13 @@ class ComponentReferenceImporter {
     let gitHubPath;
     const fileName = `${extension.name}.md`;
 
+    if (extension.name.startsWith(AMPSTORY_PATH_PREFIX)) {
+      gitHubPath = path.join(extension.path, AMPSTORY_PATH_PREFIX, fileName);
+      if (extension.files.includes(gitHubPath)) {
+        return gitHubPath;
+      }
+    }
+
     // Best guess: if the version equals the latest version the documentation
     // is located in the root of the extension directory
     if (version == latestVersion) {
@@ -196,9 +214,6 @@ class ComponentReferenceImporter {
   }
 
   async _createGrowDoc(extension) {
-
-    console.log('--- extension');
-
     let fileContents;
     try {
       fileContents = await this.githubImporter_.fetchFile(extension.githubPath);
@@ -207,7 +222,7 @@ class ComponentReferenceImporter {
       return;
     }
 
-    const fileName = extension.version ? `${extension.name}-${extension.version}.md` : `${extension.name}.md`;
+    const fileName = extension.version ? `${extension.name}-v${extension.version}.md` : `${extension.name}.md`;
     const docPath = path.join(DESTINATION_BASE_PATH, fileName);
 
     try {
