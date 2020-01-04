@@ -82,6 +82,7 @@ class ComponentReferenceImporter {
   async _importBuiltIn(name) {
     this._createGrowDoc({
       name: name,
+      version: '0.1',
       githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
     });
   }

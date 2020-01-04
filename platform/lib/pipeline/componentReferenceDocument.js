@@ -24,6 +24,8 @@ class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {
     super(path, contents);
 
+    this.title = extension.name;
+
     if (extension.tag && extension.tag.ampLayout) {
       this.layouts = extension.tag.ampLayout.supportedLayouts;
     }
