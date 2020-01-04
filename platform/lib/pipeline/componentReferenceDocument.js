@@ -24,6 +24,10 @@ class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {
     super(path, contents);
 
+    if (!this.teaser.text) {
+      throw new Error('Teaser missing in', extension.name);
+    }
+
     this.title = extension.name;
 
     if (extension.tag && extension.tag.ampLayout) {
