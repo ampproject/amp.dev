@@ -46,7 +46,7 @@ const BUILT_IN_PATH = 'builtins';
 const AMPSTORY_PATH_PREFIX = 'amp-story';
 
 class ComponentReferenceImporter {
-  constructor(githubImporter=new GitHubImporter()) {
+  constructor(githubImporter = new GitHubImporter()) {
     this.githubImporter_ = githubImporter;
   }
 
@@ -206,7 +206,7 @@ class ComponentReferenceImporter {
     let fileContents;
     try {
       fileContents = await this.githubImporter_.fetchFile(extension.githubPath);
-    } catch(e) {
+    } catch (e) {
       log.error(`Failed to fetch ${extension.githubPath}`);
       return;
     }
