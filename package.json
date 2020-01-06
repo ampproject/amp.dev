@@ -114,7 +114,7 @@
     "eslint-config-google": "0.14.0",
     "fetch-mock": "8.0.1",
     "file-loader": "5.0.2",
-    "globby": "10.0.1",
+    "globby": "10.0.2",
     "google-closure-compiler": "20191111.0.0",
     "got": "10.0.1",
     "gulp": "4.0.2",
