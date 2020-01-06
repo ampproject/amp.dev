@@ -15,6 +15,7 @@
  */
 require('module-alias/register');
 
+const DEFAULT_VERSION = '0.1';
 const LATEST_VERSION = 'latest';
 const VERSION_PATTERN = /\d.\d/;
 
@@ -68,7 +69,7 @@ class ComponentReferenceImporter {
 
     // As inside /extensions each component has its own folder, filter
     // down by directory
-    extensions = extensions[0].filter((file) => file.type === 'dir' && file.name.includes('carousel'));
+    extensions = extensions[0].filter((file) => file.type === 'dir');
     for (const extension of extensions) {
       this._importExtension(extension);
     }
@@ -82,7 +83,8 @@ class ComponentReferenceImporter {
   async _importBuiltIn(name) {
     this._createGrowDoc({
       name: name,
-      version: '0.1',
+      version: DEFAULT_VERSION,
+      versions: [DEFAULT_VERSION],
       githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
     });
   }
@@ -130,7 +132,7 @@ class ComponentReferenceImporter {
     }
 
     const tag = this.validatorRules.raw.tags.find((tag) => {
-      return tag.tagName.toLowerCase() == extension.name;
+      return tag.tagName.toLowerCase() == extension.name;+
     }) || {};
     const script = this.validatorRules.raw.tags.find((script) => {
       if (!script.extensionSpec || script.tagName != 'SCRIPT') {
@@ -155,6 +157,8 @@ class ComponentReferenceImporter {
         script: script,
         tag: tag,
         version: version,
+        versions: spec.version,
+        servingPath: this._getServingPath(extension, version, latestVersion),
         githubPath: this._getGitHubPath(extension, version, latestVersion),
       });
     }
@@ -201,6 +205,12 @@ class ComponentReferenceImporter {
     // is in the root of the extension
     log.warn(`No document found for ${extension.name} v${version}`);
     return null;
+  }
+
+  _getServingPath(extension, version, latestVersion) {
+    if (version == latestVersion) {
+      return  `/documentation/components/${extension.name}.html`;
+    }
   }
 
   async _createGrowDoc(extension) {
