@@ -68,7 +68,8 @@ const API_HOST = 'https://amp-by-example-api.appspot.com';
 const BACKEND_HOST = 'https://ampbyexample.com';
 // The path where the playground's example sitemap is written
 const SITEMAP_DEST = utils.project.absolute('examples/static/samples/samples.json');
-
+// The path where the playground's example sitemap is written
+const COMPONENT_SAMPLES_DEST = utils.project.absolute('pages/shared/data/componentSamples.json');
 
 class SamplesBuilder {
   constructor() {
@@ -81,6 +82,8 @@ class SamplesBuilder {
     this._cache = {};
     // Holds all relevant sample informations after samplew have been parsed
     this._sitemap = {};
+    // Used to gather samples categorized by their used components
+    this._componentSamples = {};
   }
 
   /**
@@ -222,7 +225,7 @@ class SamplesBuilder {
 
       stream.on('end', async () => {
         this._log.success('Built samples.');
-        await this._generateSitemap();
+        await this._writeMetaFiles();
         resolve();
       });
     });
@@ -359,11 +362,11 @@ class SamplesBuilder {
   }
 
   /**
-   * Takes what has been saved to this._sitemap and adds a sitemap.json to
-   * the gulp stream that is usable by the playground
+   * Takes what has been saved to this._sitemap and this._componentSamples
+   * for use in playground and component documentation
    * @type {Vinyl}
    */
-  async _generateSitemap() {
+  async _writeMetaFiles() {
     for (const [format, categories] of Object.entries(this._sitemap)) {
       this._sitemap[format] = {
         'title': format,
@@ -381,11 +384,16 @@ class SamplesBuilder {
 
     try {
       await writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap), {
-        flag: 'wx+',
+        flag: 'w+',
       });
-      this._log.success('Wrote sample sitemap.');
+
+      await writeFileAsync(COMPONENT_SAMPLES_DEST, JSON.stringify(this._componentSamples), {
+        flag: 'w+',
+      });
+
+      this._log.success('Wrote sample sitemap and component samples file.');
     } catch (_) {
-      this._log.info('Samples sitemap already exists');
+      this._log.error('Writing samples builder meta files failed:', e);
     }
   }
 
@@ -433,9 +441,15 @@ class SamplesBuilder {
    */
   _getDocumentationRoute(sample) {
     let base = this._getBaseRoute(sample);
+
+    if (base.match(/\.[a-z]+$/)) {
+      base = base.replace(/\.[a-z]+$/, '');
+    }
+
     if (!base.endsWith('/index.html')) {
       base += '/index.html';
     }
+
     return base;
   }
 
@@ -515,7 +529,7 @@ class SamplesBuilder {
       // Add example manually as constructors may not be quoted
       `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,
       // ... and some additional information that is used by the example teaser
-      this._getTeaserData(parsedSample),
+      this._getTeaserData(sample, parsedSample),
       '---',
     ].join('\n'));
     manual.extname = '.html';
@@ -539,10 +553,10 @@ class SamplesBuilder {
    * @param  {Object} parsedSample
    * @return {string}
    */
-  _getTeaserData(parsedSample) {
+  _getTeaserData(sample, parsedSample) {
     const teaserData = {};
     teaserData.formats = parsedSample.document.formats();
-    teaserData.used_components = this._getUsedComponents(parsedSample);
+    teaserData.used_components = this._getUsedComponents(sample, parsedSample);
 
     if (parsedSample.document.metadata.teaserImage) {
       teaserData.teaser = {'image': {
@@ -558,7 +572,7 @@ class SamplesBuilder {
    * @param  {Object} parsedSample
    * @return {Object}
    */
-  _getUsedComponents(parsedSample) {
+  _getUsedComponents(sample, parsedSample) {
     // Dirty RegEx to quickly parse component names from head
     const COMPONENT_PATTERN = /<script[^>]*?custom-(?<type>[a-z]+)="(?<name>[^"]+)"[^>]*src="[^"]+-(?<version>\d+(\.\d+)*)\.js"[^>]*>\s*<\/script>/g;
 
@@ -569,6 +583,23 @@ class SamplesBuilder {
         type,
       }
     });
+
+    // Store the sample by it's used component to show all samples for a specific
+    // component on its documentation page
+    for (const [name, info] of Object.entries(usedComponents)) {
+      if (!this._componentSamples[name]) {
+        this._componentSamples[name] = {};
+      }
+
+      if (!this._componentSamples[name][parsedSample.document.formats()]) {
+        this._componentSamples[name][parsedSample.document.formats()] = []
+      }
+
+      this._componentSamples[name][parsedSample.document.formats()].push({
+        title: parsedSample.document.title,
+        url: this._getDocumentationRoute(sample),
+      });
+    }
 
     return usedComponents;
   }

@@ -128,7 +128,16 @@
 
       a {
         margin: 6px 0;
+        width: 50%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
+    }
+
+    &-examples {
+      display: flex;
+      flex-wrap: wrap;
     }
   }
   &-references-container {
