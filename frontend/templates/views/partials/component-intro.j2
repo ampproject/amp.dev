@@ -11,10 +11,16 @@
     {% for script in doc.scripts %}
     <div class="ap-o-component-intro-box-scripts-item">
       <code>{{ script }}</code>
-      <div class="ap-a-ico">
-        {% do doc.icons.useIcon('/icons/bolt-broken-solid.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-broken-solid"></use></svg>
-      </div>
+      <amp-iframe
+          width="20"
+          height="20"
+          layout="fixed"
+          sandbox="allow-scripts"
+          src="{{ podspec.base_urls.platform }}/shared/copy-script#{{ script|urlencode }}">
+          <div placeholder>
+            ..
+          </div>
+      </amp-iframe>
     </div>
     {% endfor %}
   </div>
