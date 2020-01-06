@@ -32,8 +32,9 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.version = extension.version;
     this.versions = extension.versions;
 
-    if (extension.servingPath) {
-      this.servingPath = extension.servingPath;
+    if (this.version == extension.versions[extension.versions.length - 1]) {
+      this.isCurrent = true;
+      this.servingPath = `/documentation/components/${extension.name}.html`;
     }
 
     if (extension.tag && extension.tag.ampLayout) {
