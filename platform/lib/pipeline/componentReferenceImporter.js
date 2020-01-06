@@ -68,7 +68,9 @@ class ComponentReferenceImporter {
 
     // As inside /extensions each component has its own folder, filter
     // down by directory
-    extensions = extensions[0].filter((file) => file.type === 'dir' && file.name.includes('carousel'));
+    extensions = extensions[0].filter((file) => {
+      file.type === 'dir' && file.name.includes('carousel');
+    });
     for (const extension of extensions) {
       this._importExtension(extension);
     }
