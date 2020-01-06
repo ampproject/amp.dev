@@ -21,7 +21,6 @@ const VERSION_PATTERN = /\d.\d/;
 
 const {GitHubImporter} = require('./gitHubImporter');
 const path = require('path');
-const project = require('@lib/utils/project');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
@@ -132,7 +131,7 @@ class ComponentReferenceImporter {
     }
 
     const tag = this.validatorRules.raw.tags.find((tag) => {
-      return tag.tagName.toLowerCase() == extension.name;+
+      return tag.tagName.toLowerCase() == extension.name;
     }) || {};
     const script = this.validatorRules.raw.tags.find((script) => {
       if (!script.extensionSpec || script.tagName != 'SCRIPT') {
@@ -209,7 +208,7 @@ class ComponentReferenceImporter {
 
   _getServingPath(extension, version, latestVersion) {
     if (version == latestVersion) {
-      return  `/documentation/components/${extension.name}.html`;
+      return `/documentation/components/${extension.name}.html`;
     }
   }
 
@@ -222,7 +221,13 @@ class ComponentReferenceImporter {
       return;
     }
 
-    const fileName = extension.version ? `${extension.name}-v${extension.version}.md` : `${extension.name}.md`;
+    let fileName;
+    if (extension.version) {
+      fileName = `${extension.name}-v${extension.version}.md`;
+    } else {
+      fileName = `${extension.name}.md`;
+    }
+
     const docPath = path.join(DESTINATION_BASE_PATH, fileName);
 
     try {
