@@ -90,7 +90,7 @@ function handleHighlightsRequest(request, response) {
     cleanupTexts(page);
   }
   setMaxAge(response, RESPONSE_MAX_AGE.highlights);
-  response.json(data);
+  response.json({result: data});
 }
 
 function handleLatestQueryRequest(request, response) {
