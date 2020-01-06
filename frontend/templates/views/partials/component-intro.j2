@@ -5,16 +5,18 @@
   <h2 class="ap-o-component-intro-headline">Description</h2>
   <p class="ap-o-component-intro-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-  {% if doc.script %}
+  {% if doc.scripts %}
   <div class="ap-o-component-intro-box ap-o-component-intro-box-scripts">
     <h4>Required Scripts</h4>
+    {% for script in doc.scripts %}
     <div class="ap-o-component-intro-box-scripts-item">
-      <code>{{ doc.script }}</code>
+      <code>{{ script }}</code>
       <div class="ap-a-ico">
         {% do doc.icons.useIcon('/icons/bolt-broken-solid.svg') %}
         <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-broken-solid"></use></svg>
       </div>
     </div>
+    {% endfor %}
   </div>
   {% endif %}
 
