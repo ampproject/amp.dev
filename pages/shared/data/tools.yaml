@@ -328,6 +328,16 @@ developer:
     formats:
       - ads
       - stories
+  - name: NodemailerApp
+    type: Development
+    description: NodemailerApp is an email debugging app that includes a local SMTP server and renders AMP for Email emails.
+    url: https://nodemailer.com/app/
+    image:
+      src: /static/img/tools/nodemailer.jpg
+      width: 800
+      height: 600
+    formats:
+      - email     
 providers:
   - name: Amazon Simple Email Service (SES)
     url: https://aws.amazon.com/ses/
