@@ -75,6 +75,7 @@ search.get('/search/autosuggest', handleAutosuggestRequest);
 search.get('/search/highlights', handleHighlightsRequest);
 search.get('/search/do', handleSearchRequest);
 search.get('/search/latest-query', handleNullResponse);
+search.get('/search/clear-latest-query', handleNullResponse);
 
 
 function handleAutosuggestRequest(request, response) {

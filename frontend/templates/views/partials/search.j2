@@ -12,18 +12,19 @@
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
 <amp-state id="query" src="/search/latest-query"></amp-state>
+<amp-state id="clear" [src]="clear != null ? '/search/clear-latest-query' : ''"></amp-state>
 
 <amp-lightbox id="searchLightbox"
               class="ap-o-search"
               layout="nodisplay"
-              on="lightboxOpen:searchInput.focus;
+              on="lightboxOpen:searchInput.focus,AMP.setState({clear: false});
                   lightboxClose:searchTriggerOpen.focus"
               scrollable>
   <div class="ap-o-search-escaper" role="button" tabindex="0" on="tap:searchLightbox.close"></div>
   <div class="ap-o-search-container">
 
     <div class="ap-m-search-trigger ap-m-search-trigger-close"
-         on="tap:searchLightbox.close"
+         on="tap:searchLightbox.close,AMP.setState({clear: true, query: null})"
          role="button"
          tabindex="0">
       <div class="ap-a-ico ap-m-search-trigger-icon">
@@ -53,7 +54,7 @@
                  name="q"
                  placeholder="{{_('What are you looking for?')}}"
                  on="input-throttled:AMP.setState({ throttledValue: event.value })"
-                 [value]="query"
+                 [value]="query == null || clear ? '' : query"
                  required
           >
           <button class="ap-o-search-submit" type="submit" name="search-submit" disabled [disabled]="!throttledValue">{{_('Search')}}</button>
@@ -62,14 +63,14 @@
 
       <div class="ap-o-search-result" id="searchResult" tabindex="-1">
         <amp-state id="search"
-                  [src]="query == undefined ? null : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
+                  [src]="query == null || clear ? '/search/highlights?locale={{ doc.locale }}' : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
         <amp-list src="/search/highlights?locale={{ doc.locale }}"
-                  [src]="query == undefined ? '/search/highlights?locale={{ doc.locale }}' : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
+                  [src]="query == null || clear ? '/search/highlights?locale={{ doc.locale }}' : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
                   binding="no"
                   items="."
                   height="86.8vh"
                   layout="fixed-height"
-                  [is-layout-container]="query.length"
+                  [is-layout-container]="search.result"
                   load-more="auto"
                   load-more-bookmark="nextUrl"
                   reset-on-refresh

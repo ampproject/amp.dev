@@ -75,3 +75,23 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(searchLatestQueryHandler());
   }
 });
+
+
+// Handle clear request
+async function searchClearLatestQueryRequestHandler() {
+  try {
+    const cache = await caches.open(SEARCH_CACHE_NAME);
+    cache.delete(SEARCH_LATEST_QUERY_PATH);
+  } catch (err) {
+    console.error(err);
+  }
+  return new Response('null');
+};
+
+// Register new route to handle clear request
+self.addEventListener('fetch', (event) => {
+  const requestUrl = new URL(event.request.url);
+  if (requestUrl.pathname === '/search/clear-latest-query') {
+    event.respondWith(searchClearLatestQueryRequestHandler());
+  }
+});
