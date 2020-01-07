@@ -158,6 +158,36 @@ function instanceTemplateCreate() {
 }
 
 /**
+ * Removes stale instances templates
+ */
+async function instanceTemplatesClean() {
+  // The amount of templates that should be kept sorted by currentness
+  const TEMPLATES_KEPT_COUNT = 3;
+
+  let templates = JSON.parse(await sh('gcloud compute instance-templates list --format json',
+      {quiet: true}));
+
+  // Sort templates by creation date to keep templates to rollback to
+  templates = templates.sort((template1, template2) => {
+    return new Date(template1.creationTimestamp) - new Date(template2.creationTimestamp);
+  });
+
+  // Filter out packager instance templates as they are built manually
+  templates = templates.filter((template) => {
+    return !template.name.includes(PACKAGER_PREFIX);
+  });
+
+  // Remove templates from list that need to be kept
+  templates = templates.slice(0, templates.length - TEMPLATES_KEPT_COUNT);
+
+  const templateNames = templates.map((template) => {
+    return template.name;
+  }).join(' ');
+
+  return sh(`gcloud compute instance-templates delete ${templateNames}`);
+}
+
+/**
  * Start a rolling update to a new VM instance template. This will ensure
  * that there's always at least 1 active instance running during the update.
  */
@@ -241,12 +271,14 @@ async function packagerUpdateStart() {
 
 exports.verifyTag = verifyTag;
 exports.gcloudSetup = gcloudSetup;
-exports.deploy = series(verifyTag, imageUpload, instanceTemplateCreate, updateStart);
+exports.deploy = series(verifyTag, imageUpload, instanceTemplatesClean,
+    instanceTemplateCreate, updateStart);
 exports.imageBuild = imageBuild;
 exports.imageList = imageList;
 exports.imageRunLocal = imageRunLocal;
 exports.imageUpload = imageUpload;
 exports.instanceTemplateCreate = instanceTemplateCreate;
+exports.instanceTemplatesClean = instanceTemplatesClean;
 exports.packagerDeploy = series(
     packagerImageUpload,
     packagerInstanceTemplateCreate,
