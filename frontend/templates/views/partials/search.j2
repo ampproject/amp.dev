@@ -81,8 +81,8 @@
               {{'{{^prevUrl}}'}}
               {{'{{#result.components.length}}'}}
               <h4 class="ap-o-search-result-category">
-                {{-'{{^result.currentPage}}'}}{{_('Important Components')}}{{'{{/result.currentPage}}'-}}
-                {{-'{{#result.currentPage}}'}}{{_('Components')}}{{'{{/result.currentPage}}'-}}
+                {{-'{{#initial}}'}}{{_('Important Components')}}{{'{{/initial}}'-}}
+                {{-'{{^initial}}'}}{{_('Components')}}{{'{{/initial}}'-}}
               </h4>
               {{'{{/result.components.length}}'}}
               {{'{{/prevUrl}}'}}
@@ -90,8 +90,8 @@
               <div class="ap-o-search-result-item ap-o-search-result-item-highlight">
                 <a class="ap-o-search-result-link" href="{{'{{url}}'}}">
                   <h4 class="ap-o-search-result-title">
-                    {{-'{{^result.currentPage}}'}}&lt;{{'{{title}}'}}&gt;{{'{{/result.currentPage}}'-}}
-                    {{-'{{#result.currentPage}}'}}{{'{{title}}'}}{{'{{/result.currentPage}}'-}}
+                    {{-'{{#initial}}'}}&lt;{{'{{title}}'}}&gt;{{'{{/initial}}'-}}
+                    {{-'{{^initial}}'}}{{'{{title}}'}}{{'{{/initial}}'-}}
                   </h4>
                   <p class="ap-o-search-result-description">{{'{{description}}'}}</p>
                 </a>
@@ -119,8 +119,8 @@
               {{'{{^prevUrl}}'}}
               {{'{{#result.pages.length}}'}}
               <h4 class="ap-o-search-result-category">
-                {{-'{{^result.currentPage}}'}}{{_('Popular Articles')}}{{'{{/result.currentPage}}'-}}
-                {{-'{{#result.currentPage}}'}}{{_('Results')}}{{'{{/result.currentPage}}'-}}
+                {{-'{{#initial}}'}}{{_('Popular Articles')}}{{'{{/initial}}'-}}
+                {{-'{{^initial}}'}}{{_('Results')}}{{'{{/initial}}'-}}
               </h4>
               {{'{{/result.pages.length}}'}}
               {{'{{/prevUrl}}'}}
@@ -164,7 +164,7 @@
           </div>
         </amp-list>
 
-        <div class="ap-o-search-result-error" [hidden]="search.result.totalResults != 0" hidden>
+        <div class="ap-o-search-result-error" [hidden]="search.initial == true || search.result.totalResults != 0" hidden>
           <h2 class="ap-o-search-result-error-shruggie">{{'¯\_(ツ)_/¯'}}</h2>
           <h3 class="ap-o-search-result-error-headline">{{ _('No results found.') }}</h3>
           <p class="ap-o-search-result-error-copy">{{ _('We could not find any results matching your search query.') }}</p>

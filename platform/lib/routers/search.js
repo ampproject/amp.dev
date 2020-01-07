@@ -90,7 +90,10 @@ function handleHighlightsRequest(request, response) {
     cleanupTexts(page);
   }
   setMaxAge(response, RESPONSE_MAX_AGE.highlights);
-  response.json({result: data});
+  response.json({
+    result: data,
+    initial: true,
+  });
 }
 
 function handleLatestQueryRequest(request, response) {
@@ -170,6 +173,7 @@ function createResult(totalResults, page, lastPage, components, pages, query, lo
       components: components,
       pages: pages,
     },
+    initial: false,
   });
 
   if (page == LAST_PAGE && lastPage > LAST_PAGE) {
