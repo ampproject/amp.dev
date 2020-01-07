@@ -74,7 +74,7 @@ const search = express.Router();
 search.get('/search/autosuggest', handleAutosuggestRequest);
 search.get('/search/highlights', handleHighlightsRequest);
 search.get('/search/do', handleSearchRequest);
-search.get('/search/latest-query', handleLatestQueryRequest);
+search.get('/search/latest-query', handleNullResponse);
 
 
 function handleAutosuggestRequest(request, response) {
@@ -96,7 +96,7 @@ function handleHighlightsRequest(request, response) {
   });
 }
 
-function handleLatestQueryRequest(request, response) {
+function handleNullResponse(request, response) {
   setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
   response.json(null);
 }
