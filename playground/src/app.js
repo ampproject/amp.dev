@@ -113,11 +113,7 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   activeRuntime = newRuntime;
 
   const emailButton = document.getElementById('import-email');
-  if (activeRuntime.id === 'amp4email') {
-    emailButton.classList.remove('hidden');
-  } else {
-    emailButton.classList.add('hidden');
-  }
+  emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
 });
 
 runtimes.init();
@@ -210,7 +206,7 @@ Button.from(document.getElementById('menu-format-source'), formatSource);
 
 const loadEmail = () => {
   emailLoader.loadEmailFromFile()
-      .catch((error) => alert(`Error loading email.\n${error.message}`));
+      .catch((error) => alert(`Error loading email: ${error.message}`));
 };
 Button.from(document.getElementById('import-email'), loadEmail);
 
