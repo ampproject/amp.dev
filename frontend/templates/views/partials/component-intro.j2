@@ -18,7 +18,8 @@
           sandbox="allow-scripts"
           src="{{ podspec.base_urls.platform }}/shared/copy-script#{{ script|urlencode }}">
           <div placeholder>
-            ..
+            {% do doc.icons.useIcon('/icons/clipboard.svg') %}
+            <svg class="ap-o-component-intro-box-scripts-item-copy-btn"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clipboard"></use></svg>
           </div>
       </amp-iframe>
     </div>

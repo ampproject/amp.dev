@@ -73,9 +73,9 @@
           }
         }
 
-        .#{atom('ico')} {
-          fill: color('blue-ribbon');
-          margin-left: 14px;
+        &-copy-btn {
+          width: 16px;
+          height: 24px;
         }
       }
     }
