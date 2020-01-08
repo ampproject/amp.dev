@@ -46,19 +46,10 @@
           display: flex;
           align-items: center;
           overflow-x: scroll;
-          width: 100%;
           margin: 6px 8px 6px 0;
-          padding: 0 15px;
           white-space: nowrap;
           background: color('gallery');
-
-          &:after {
-            content: '\00a0\00a0';
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-          }
+          font-size: 12.6px;
 
           &::-webkit-scrollbar {
             width: 4px;
