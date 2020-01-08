@@ -46,6 +46,7 @@
           display: flex;
           align-items: center;
           overflow-x: scroll;
+          width: 100%;
           margin: 6px 8px 6px 0;
           padding: 0 15px;
           white-space: nowrap;
@@ -99,7 +100,7 @@
 
         @media (min-width: 768px) {
           margin-top: 0;
-          padding: 10px;
+          padding: 5px;
         }
 
         span {
@@ -137,7 +138,7 @@
 
     &-examples {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
     }
   }
   &-references-container {
