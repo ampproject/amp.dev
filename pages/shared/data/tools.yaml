@@ -337,7 +337,7 @@ developer:
       width: 800
       height: 600
     formats:
-      - email     
+      - email
 providers:
   - name: Amazon Simple Email Service (SES)
     url: https://aws.amazon.com/ses/
@@ -425,7 +425,7 @@ providers:
   - name: SendPulse
     url: https://sendpulse.com/
     type: Email Service
-    description: Send interactive emails using SendPulse email editor or API. 
+    description: Send interactive emails using SendPulse email editor or API.
     image:
       src: /static/img/tools/sendpulse-logo.png
       width: 960
@@ -436,7 +436,7 @@ providers:
   - name: eSputnik
     url: https://esputnik.com/
     type: Email Service
-    description: Supercharge conversions of your bulk and triggered campaigns with real-time recommendations in AMP powered emails 
+    description: Supercharge conversions of your bulk and triggered campaigns with real-time recommendations in AMP powered emails
     image:
       src: /static/img/tools/esputnik-logo.png
       width: 1175
@@ -447,10 +447,21 @@ providers:
   - name: Adobe Campaign Classic
     url: https://www.adobe.com/marketing/campaign.html
     type: Email Service
-    description: Adobe Campaign Classic brings email to life with AMP 
+    description: Adobe Campaign Classic brings email to life with AMP
     image:
       src: /static/img/tools/adobe_campaign.png
       width: 300
+      height: 300
+      fit: contain
+    formats:
+      - email
+  - name: Copernica
+    url: https://www.copernica.com/
+    type: Email Service
+    description: Copernica is a tool to create automated email campaigns with an powerful drag & drop editor.
+    image:
+      src: /static/img/tools/copernica.png
+      width: 1917
       height: 300
       fit: contain
     formats:
