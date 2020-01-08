@@ -12,7 +12,7 @@
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
 <amp-state id="query" src="/search/latest-query"></amp-state>
-<amp-state id="clear" [src]="clear != null ? '/search/clear-latest-query' : ''"></amp-state>
+<amp-state id="clear" [src]="clear ? '/search/clear-latest-query' : ''"></amp-state>
 
 <amp-lightbox id="searchLightbox"
               class="ap-o-search"
@@ -37,7 +37,7 @@
             class="ap-o-search-form"
             id="searchForm"
             method="POST"
-            on="submit:AMP.setState({ query: throttledValue }),searchResult.focus"
+            on="submit:AMP.setState({ query: throttledValue }),searchResult.focus,searchList.changeToLayoutContainer"
             target="_top">
         <amp-autocomplete class="ap-o-search-autocomplete"
                           filter="substring"
@@ -63,14 +63,15 @@
 
       <div class="ap-o-search-result" id="searchResult" tabindex="-1">
         <amp-state id="search"
+                  src="/search/highlights?locale={{ doc.locale }}"
                   [src]="query == null || clear ? '/search/highlights?locale={{ doc.locale }}' : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
-        <amp-list src="/search/highlights?locale={{ doc.locale }}"
+        <amp-list id="searchList"
+                  src="/search/highlights?locale={{ doc.locale }}"
                   [src]="query == null || clear ? '/search/highlights?locale={{ doc.locale }}' : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
                   binding="no"
                   items="."
                   height="86.8vh"
                   layout="fixed-height"
-                  [is-layout-container]="search.result"
                   load-more="auto"
                   load-more-bookmark="nextUrl"
                   reset-on-refresh
