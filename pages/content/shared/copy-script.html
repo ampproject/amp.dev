@@ -12,7 +12,7 @@ $sitemap:
     {% do doc.styles.addCssFile('/css/components/atoms/icon.css') %}
     {{ doc.styles.emit() }}
     html, body { background: none transparent; }
-    body { display: flex; min-height: 100vh; align-items: center; }
+    body { display: flex; min-height: 100vh; align-items: center; cursor: pointer; }
     svg { fill: #005af0; }
     input { opacity: 0 }
   </style>
@@ -29,10 +29,10 @@ $sitemap:
   </div>
   <input id="script-tag">
   <script>
-    const $scriptTag = document.getElementById('script-tag');
-    const scriptTag = decodeURIComponent(window.location.hash.substr(1));
+    const scriptTag = document.getElementById('script-tag');
+    const stringToCopy = decodeURIComponent(window.location.hash.substr(1));
 
-    $scriptTag.value = scriptTag;
+    scriptTag.value = stringToCopy;
 
     document.addEventListener('click', () => {
       $scriptTag.select();
