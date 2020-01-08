@@ -54,7 +54,7 @@
                  name="q"
                  placeholder="{{_('What are you looking for?')}}"
                  on="input-throttled:AMP.setState({ throttledValue: event.value })"
-                 [value]="query == null || clear ? '' : query"
+                 [placeholder]="query == null ? '{{_('What are you looking for?')}}' : query"
                  required
           >
           <button class="ap-o-search-submit" type="submit" name="search-submit" disabled [disabled]="!throttledValue">{{_('Search')}}</button>
@@ -70,7 +70,7 @@
                   [src]="query == null || clear ? '/search/highlights?locale={{ doc.locale }}' : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
                   binding="no"
                   items="."
-                  height="86.8vh"
+                  height="80vh"
                   layout="fixed-height"
                   load-more="auto"
                   load-more-bookmark="nextUrl"
