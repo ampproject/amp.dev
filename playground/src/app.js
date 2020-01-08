@@ -206,6 +206,7 @@ Button.from(document.getElementById('menu-format-source'), formatSource);
 
 const loadEmail = () => {
   emailLoader.loadEmailFromFile()
+      .then(formatSource)
       .catch((error) => alert(`Error loading email: ${error.message}`));
 };
 Button.from(document.getElementById('import-email'), loadEmail);
