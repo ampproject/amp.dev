@@ -38,6 +38,7 @@
 
   {# Render widget to toggle experiments if there are any#}
   {% if doc.experimental %}
+  {% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
   <div class="ap-m-experiments">
     <h4>Experimental</h4>
     <p>{{ _('This page could contain example previews with experimental features. Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}">experimental features</a>.</p>
