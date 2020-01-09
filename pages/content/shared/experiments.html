@@ -24,7 +24,12 @@ $sitemap:
     {% include '/views/partials/experiments/experiments-controls.j2' %}
     <b class="ap-m-experiments-reload-hint" hidden>{{ _('Please reload the page.' ) }} ↻</b>
   </div>
-  <script>const experiments = (window.location.search.split('=')[1] || '').split(',')</script>
+  <script>
+    const experiments = (window.location.search.slice(1).split("&")[0].split('=')[1] || '').split(',')
+    const style = window.location.search.slice(1).split("&")[1].split("=")[1];
+
+    document.querySelector('.ap-m-experiments-iframe').classList.add('ap-m-experiments-' + style);
+  </script>
   {% include '/views/partials/experiments/experiments-script.j2' %}
 </body>
 </html>
