@@ -36,6 +36,23 @@
   {% include '/views/partials/level-toggle.j2' %}
   {% endif %}
 
+  {# Render widget to toggle experiments if there are any#}
+  {% if doc.experimental %}
+  <div class="ap-m-experiments">
+    <h4>Experimental</h4>
+    <p>{{ _('This page could contain example previews with experimental features. Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well.') }} Learn more about <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/learn/experimental.md', locale=doc.locale).url.path }}">experimental features</a>.</p>
+    <amp-iframe layout="fixed-height"
+                height="66"
+                sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation allow-top-navigation"
+                allowfullscreen
+                allowpaymentrequest
+                frameborder="0"
+                src="{{ podspec.base_urls.preview }}/shared/experiments/?experiments={{doc.component}}&style=default">
+      <div placeholder=""></div>
+    </amp-iframe>
+  </div>
+  {% endif %}
+
   {{ doc.html|render|safe }}
 </section>
 
