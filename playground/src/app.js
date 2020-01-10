@@ -24,6 +24,7 @@ import Fab from './fab/fab.js';
 
 import * as AutoImporter from './auto-importer/auto-importer.js';
 import * as ComponentsProvider from './components-provider/components-provider.js';
+import * as EmailLoader from './email-loader/email-loader.js';
 import * as ErrorList from './error-list/error-list.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
@@ -71,6 +72,8 @@ const componentsProvider = ComponentsProvider.createComponentsProvider();
 // Create AMP component auto-importer
 const autoImporter = AutoImporter.createAutoImporter(componentsProvider, editor);
 
+const emailLoader = EmailLoader.createEmailLoader(editor);
+
 // runtime select
 const runtimeChanged = (runtimeId) => {
   const newRuntime = runtimes.get(runtimeId);
@@ -108,6 +111,9 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   };
   validator.validate(editor.getSource());
   activeRuntime = newRuntime;
+
+  const emailButton = document.getElementById('import-email');
+  emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
 });
 
 runtimes.init();
@@ -198,6 +204,12 @@ const formatSource = () => {
 Button.from(document.getElementById('format-source'), formatSource);
 Button.from(document.getElementById('menu-format-source'), formatSource);
 
+const loadEmail = () => {
+  emailLoader.loadEmailFromFile()
+      .then(formatSource)
+      .catch((error) => alert(`Error loading email: ${error.message}`));
+};
+Button.from(document.getElementById('import-email'), loadEmail);
 
 window.onpopstate = () => {
   if (!params.get('preview')) {
