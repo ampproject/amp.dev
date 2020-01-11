@@ -55,6 +55,23 @@
     @media (min-width: 930px) {
       margin: 0 60px;
     }
+
+    .ap--cta {
+      display: flex;
+      justify-content: space-between;
+
+      .ap-a-btn {
+        margin: 0 auto;
+      }
+    }
+
+    .-n {
+      padding: 1em 0 1em;
+    }
+
+    .-r {
+      font-size: 1rem;
+    }
   }
 
   .#{utility('sidebar')} {
