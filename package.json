@@ -147,7 +147,7 @@
     "preload-webpack-plugin": "3.0.0-beta.4",
     "quoted-printable": "^1.0.1",
     "recursive-search": "1.0.1",
-    "sass-loader": "8.0.0",
+    "sass-loader": "8.0.2",
     "striptags": "3.1.1",
     "style-loader": "1.1.2",
     "supertest": "4.0.2",
