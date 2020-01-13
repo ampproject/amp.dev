@@ -122,7 +122,7 @@
     "gulp-once": "2.0.3",
     "gulp-sass": "4.0.2",
     "gulp-strip-css-comments": "2.0.0",
-    "handlebars": "4.6.0",
+    "handlebars": "4.7.2",
     "handlebars-loader": "1.7.1",
     "handlebars-registrar": "1.5.2",
     "highlight.js": "9.17.1",
