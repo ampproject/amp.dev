@@ -76,7 +76,7 @@ When a user interacts with elements wrapped inside an `<amp-script>` component, 
 
 ### Unprompted changes
 
-If your `<amp-script>` component uses a fixed layout, other than `layout=container`, and is sufficiently small, there is no interaction requirement to manipulate the DOM.
+There is no user interaction required to manipulate the DOM if the `<amp-script>` component has a fixed height.
 
 ## Script size
 
