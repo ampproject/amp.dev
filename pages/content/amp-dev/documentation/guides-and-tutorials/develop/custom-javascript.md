@@ -72,7 +72,7 @@ For user experience and security reasons, `amp-script` enforces DOM manipulation
 
 ### User interaction
 
-When a user interacts with elements wrapped inside an `<amp-script>` component, DOM manipulations must respond quickly. If running a `fetch` function, DOM manipulations must be completed within a **five second** window. If your `amp-script` logic is not preforming a fetch, the DOM has **less than one second** to update the DOM.  If a script mutates the DOM outside of the permitted window, it will result in a fatal error and the `amp-script` component will terminate the Web Worker. A terminated `<amp-script>` component will not run again.
+When a user interacts with elements wrapped inside an `<amp-script>` component, your custom JavaScript must return DOM manipulations quickly when needed. By default, changes to the DOM are permitted **less than one second** from the initial interaction. A notable exception is when your code must retrieve data from the network via `fetch`. Here DOM changes can be requested after the response is returned to the user and for **less than one second** afterwards. If a script mutates the DOM outside of a permitted window, this will result in a fatal error and the `<amp-script>` component will terminate the Web Worker. A terminated `<amp-script>` component will not run again.
 
 ### Unprompted changes
 
