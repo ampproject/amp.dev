@@ -68,11 +68,11 @@ Worker DOM permits minor changes in structure but not content:
 
 ## DOM manipulation
 
-For user experience and security reasons, `amp-script` enforced DOM manipulation restrictions.
+For user experience and security reasons, `amp-script` enforces DOM manipulation restrictions.
 
 ### User interaction
 
-When a user interacts with elements wrapped inside an `<amp-script>` components, DOM manipulations must respond quickly. If running a `fetch` function, DOM manipulations must be completed within a **five second** window. If your `amp-script` logic is not preforming a fetch, the DOM has **less than one second** to update the DOM.  If a script mutates the DOM outside of the permitted window, it will result in a fatal error and the `amp-script` component will terminate the Web Worker. A terminated `<amp-script>` component will not run again.
+When a user interacts with elements wrapped inside an `<amp-script>` component, DOM manipulations must respond quickly. If running a `fetch` function, DOM manipulations must be completed within a **five second** window. If your `amp-script` logic is not preforming a fetch, the DOM has **less than one second** to update the DOM.  If a script mutates the DOM outside of the permitted window, it will result in a fatal error and the `amp-script` component will terminate the Web Worker. A terminated `<amp-script>` component will not run again.
 
 ### Unprompted changes
 
@@ -84,11 +84,11 @@ As of April 2019, your `<amp-script>` component must be at a fixed hight of `300
 
 ## Script size
 
-AMP enforces a limit of 150 kilobytes of custom JavaScript on each page. This limit is shared  among all `<amp-script>` component on that page. If using a library, it must be imported to each individual `<amp-script>` component.
+AMP enforces a limit of 150 kilobytes of custom JavaScript on each page. This limit is shared  among all `<amp-script>` component on that page. Any external JavaScript library must be imported to each individual `<amp-script>` component.
 
 ## Scope
 
-Any DOM elements the custom JavaScript files wishes to interact with must be wrapped inside the `<amp-script>` component tags, this includes other AMP components. The `<amp-script>` component considers `document.body` to be the `amp-script` element and not the document's `<body>` element.
+Any DOM elements the custom JavaScript files wishes to interact with must be wrapped inside the `<amp-script>` component tags. This includes other AMP components. The `<amp-script>` component considers `document.body` to be the `amp-script` element and not the document's `<body>` element.
 
 If you were to call `document.body.appendChild(document.createElement('span'))` within the `<amp-script>`file in the following document:
 
@@ -102,7 +102,7 @@ If you were to call `document.body.appendChild(document.createElement('span'))` 
 </body>
 ```
 
-It will result in this:
+It would result in this:
 
 ```html
 <body>  
