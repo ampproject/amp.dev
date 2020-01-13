@@ -78,10 +78,6 @@ When a user interacts with elements wrapped inside an `<amp-script>` component, 
 
 If your `<amp-script>` component uses a fixed layout, other than `layout=container`, and is sufficiently small, there is no interaction requirement to manipulate the DOM.
 
-[tip type="note"]
-As of April 2019, your `<amp-script>` component must be at a fixed hight of `300 px` or less to meet the unprompted change requirement.
-[/tip]
-
 ## Script size
 
 AMP enforces a limit of 150 kilobytes of custom JavaScript on each page. This limit is shared  among all `<amp-script>` component on that page. Any external JavaScript library must be imported to each individual `<amp-script>` component.
