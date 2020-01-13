@@ -84,7 +84,7 @@ AMP enforces a limit of 150 kilobytes of custom JavaScript on each page. This li
 
 ## Scope
 
-Any DOM elements the custom JavaScript files wishes to interact with must be wrapped inside the `<amp-script>` component tags. This includes other AMP components. The `<amp-script>` component considers `document.body` to be the `amp-script` element and not the document's `<body>` element.
+Any DOM elements the custom JavaScript files wishes to interact with must be wrapped inside the `<amp-script>` component tags. This includes other AMP components. The `<amp-script>` component considers `document.body` to be the `<amp-script>` element and not the document's `<body>` element.
 
 If you were to call `document.body.appendChild(document.createElement('span'))` within the `<amp-script>`file in the following document:
 
