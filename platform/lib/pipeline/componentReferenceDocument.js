@@ -30,11 +30,11 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.title = extension.name;
     this.version = extension.version;
     this.versions = extension.versions;
-    this._contents = contents.replace(HEADLINE_PATTERN, '').replace(INTRO_TABLE_PATTERN, '');
+    this._contents = this._contents.replace(HEADLINE_PATTERN, '').replace(INTRO_TABLE_PATTERN, '');
 
-    if (!this.teaser.text) {
-      this.teaser = { text: this._parseTeaserText(contents) };
-    }
+    // if (!this.teaser.text) {
+    // }
+    this.teaser = { text: this._parseTeaserText(contents) };
 
     if (this.version == extension.versions[extension.versions.length - 1]) {
       this.isCurrent = true;
@@ -85,7 +85,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
     //   excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
     // }
 
-    const intro = contents.match(/(?<=-->)([^##]*)?/);
+    const intro = contents.match(/(?<=-->)([^##]*)?/m);
     console.log(intro);
     return excerpt;
   }
@@ -95,7 +95,6 @@ class ComponentReferenceDocument extends MarkdownDocument {
   }
 
   set contents(contents) {
-
     this._convertSyntax();
   }
 

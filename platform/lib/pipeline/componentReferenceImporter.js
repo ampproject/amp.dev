@@ -216,7 +216,7 @@ class ComponentReferenceImporter {
 
     let fileName;
     if (extension.version) {
-      fileName = `${extension.name}-${extension.version}.md`;
+      fileName = `${extension.name}-v${extension.version}.md`;
     } else {
       fileName = `${extension.name}.md`;
     }
