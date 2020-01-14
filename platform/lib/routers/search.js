@@ -74,6 +74,8 @@ const search = express.Router();
 search.get('/search/autosuggest', handleAutosuggestRequest);
 search.get('/search/highlights', handleHighlightsRequest);
 search.get('/search/do', handleSearchRequest);
+search.get('/search/latest-query', handleNullResponse);
+search.get('/search/clear-latest-query', handleNullResponse);
 
 
 function handleAutosuggestRequest(request, response) {
@@ -89,7 +91,15 @@ function handleHighlightsRequest(request, response) {
     cleanupTexts(page);
   }
   setMaxAge(response, RESPONSE_MAX_AGE.highlights);
-  response.json(data);
+  response.json({
+    result: data,
+    initial: true,
+  });
+}
+
+function handleNullResponse(request, response) {
+  setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
+  response.json(null);
 }
 
 function getCseItemMetaTagValue(item, metaTag) {
@@ -168,6 +178,7 @@ function createResult(totalResults, page, lastPage, components, pages, query, lo
       components: components,
       pages: pages,
     },
+    initial: false,
   });
 
   if (page == LAST_PAGE && lastPage > LAST_PAGE) {
