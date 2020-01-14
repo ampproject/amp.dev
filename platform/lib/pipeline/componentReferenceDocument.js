@@ -20,7 +20,7 @@ const EXTENSION_TYPE_ELEMENT = 'element';
 const EXTENSION_TYPE_TEMPLATE = 'template';
 
 const HEADLINE_PATTERN = /#.*/m;
-const INTRO_TABLE_PATTERN = /<table(\s[^>]*)?>[^]*?<\/table>/m;
+const INTRO_TABLE_PATTERN = /^((?:[^](?!##))*)<table(\s[^>]*)?>[^]*?<\/table>/m;
 
 
 class ComponentReferenceDocument extends MarkdownDocument {
@@ -30,7 +30,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.title = extension.name;
     this.version = extension.version;
     this.versions = extension.versions;
-    this._contents = this._contents.replace(HEADLINE_PATTERN, '').replace(INTRO_TABLE_PATTERN, '');
+    this._contents = this._contents.replace(HEADLINE_PATTERN, '').replace(INTRO_TABLE_PATTERN, '$1');
 
     // if (!this.teaser.text) {
     // }
