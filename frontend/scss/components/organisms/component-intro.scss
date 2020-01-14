@@ -46,6 +46,7 @@
           display: flex;
           align-items: center;
           overflow-x: scroll;
+          width: calc(100% - 24px);
           margin: 6px 8px 6px 0;
           white-space: nowrap;
           background: color('gallery');
