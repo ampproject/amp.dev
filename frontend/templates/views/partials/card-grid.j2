@@ -22,6 +22,9 @@
       <span class="ap-m-lnk-text">{{ link.text }}</span>
     </a>
     {% endfor %}
+    {% if item.button %}
+    <a href="{{ item.button.url }}" class="ap-a-btn">{{ item.button.text }}</a>
+    {% endif %}
   </div>
   {% endfor %}
 {% elif card_grid_items_custom %}
