@@ -121,16 +121,25 @@
 
       a {
         margin: 6px 0;
-        width: 50%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        @media (min-width: 768px) {
+          width: 50%;
+          padding-right: 12px;
+        }
       }
     }
 
     &-examples {
       display: flex;
       flex-direction: column;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
     }
   }
   &-references-container {
