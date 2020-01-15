@@ -56,13 +56,12 @@
       margin: 0 60px;
     }
 
-
-    .-n {
+    .#{molecule('lnk')} {
       padding: 1em 0 1em;
-    }
 
-    .-r {
-      font-size: 1rem;
+      &-text {
+        font-size: 1rem;
+      }
     }
   }
 
