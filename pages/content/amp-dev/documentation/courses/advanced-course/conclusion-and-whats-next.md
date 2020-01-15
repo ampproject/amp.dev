@@ -15,7 +15,7 @@ Of course, in these courses, we could only cover a portion of AMP’s powerful f
 
 Below is your shiny new AMP Developer badge. Feel free to copy it and save it. Then you can use it where you like to show that you've completed the AMP coursework! You can also download this badge in other formats, or in other snazzy designs, <a href="https://drive.google.com/drive/folders/1V0XSDCyRnJxxeX04FdoYW_pX4qP6xsWE" target="_blank">here</a>.
 
-{{ image('/static/img/courses/site/badge-shield-2x.png', 200, 200, layout='fixed', align='center', alt='Your AMP Developer badge') }}
+{{ image('/static/img/courses/site/badge-shield-2x.png', 200, 200, layout='fixed', align='center', alt='Your AMP Developer badge', shadow=False) }}
 
 Good luck! We look forward to seeing what you build with AMP!
 [/filter]
@@ -30,7 +30,7 @@ In these courses, we could only cover a portion of AMP's powerful features. If y
 
 Below is your shiny new AMP Developer badge. Feel free to copy it and save it. Then you can use it where you like to show that you've completed the AMP coursework! You can also download this badge in other formats, or in other snazzy designs, <a href="https://drive.google.com/drive/folders/1V0XSDCyRnJxxeX04FdoYW_pX4qP6xsWE" target="_blank">here</a>.
 
-{{ image('/static/img/courses/site/badge-shield-2x.png', 200, 200, layout='fixed', align='center', alt='Your AMP Developer badge') }}
+{{ image('/static/img/courses/site/badge-shield-2x.png', 200, 200, layout='fixed', align='center', alt='Your AMP Developer badge', shadow=False) }}
 
 Good luck! We look forward to seeing what you build with AMP!
 [/filter]

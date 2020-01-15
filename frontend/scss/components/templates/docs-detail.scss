@@ -106,8 +106,11 @@ body {
         }
       }
 
-      amp-img {
+      &.shadow amp-img {
         @include box-shadow;
+      }
+
+      amp-img {
         margin: 0 auto;
       }
 

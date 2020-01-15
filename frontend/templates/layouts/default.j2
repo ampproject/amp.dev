@@ -17,8 +17,8 @@
 {% endwith %}
 {%- endmacro %}
 
-{% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
-<figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+{% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='', shadow=True) -%}
+<figure class="alignment-wrapper {{ align }} margin-{{ margin }} {{'shadow' if shadow}}">
   <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"></amp-img>
   {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
 </figure>
