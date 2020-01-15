@@ -46,12 +46,9 @@
     <div class="ap-o-component-intro-box ap-o-component-intro-box-reference">
       <h4>Examples</h4>
       <div class="ap-o-component-intro-box-examples">
-        {% for format, componentExamples in examples[doc.title].items() %}
-        {# Only show examples for the current format #}
-        [% if format == {{ format|tojson }} %]
-        {% for example in componentExamples %}
+        {% for example in examples[doc.title] %}
+        [% if format in {{ example.formats|tojson }} %]
         <a href="{{ example.url }}">{{ example.title }}</a>
-        {% endfor %}
         [% endif %]
         {% endfor %}
       </div>

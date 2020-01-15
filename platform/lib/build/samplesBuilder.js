@@ -382,6 +382,16 @@ class SamplesBuilder {
       }
     }
 
+    // Sort component samples to always have the specific component
+    // sample at first
+    for (const component of Object.keys(this._componentSamples)) {
+      this._componentSamples[component] = Object.values(this._componentSamples[component]);
+
+      this._componentSamples[component].sort((sample1, sample2) => {
+        return sample1.title.startsWith(component) ? 1 : 0;
+      }).reverse();
+    }
+
     try {
       await writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap), {
         flag: 'w+',
@@ -591,14 +601,17 @@ class SamplesBuilder {
         this._componentSamples[name] = {};
       }
 
-      if (!this._componentSamples[name][parsedSample.document.formats()]) {
-        this._componentSamples[name][parsedSample.document.formats()] = []
+      const title = parsedSample.document.title;
+      const formats = parsedSample.document.formats();
+      if (!this._componentSamples[name][title]) {
+        this._componentSamples[name][title] = {
+          title: title,
+          url: this._getDocumentationRoute(sample),
+          formats: formats
+        }
+      } else {
+        this._componentSamples[name][title].formats.concat(formats);
       }
-
-      this._componentSamples[name][parsedSample.document.formats()].push({
-        title: parsedSample.document.title,
-        url: this._getDocumentationRoute(sample),
-      });
     }
 
     return usedComponents;
