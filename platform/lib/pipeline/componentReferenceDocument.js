@@ -13,15 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const {join, dirname} = require('path');
+const {Signale} = require('signale');
 const MarkdownDocument = require('./markdownDocument.js');
 
 const DEFAULT_VERSION = 0.1;
 const EXTENSION_TYPE_ELEMENT = 'element';
 const EXTENSION_TYPE_TEMPLATE = 'template';
+const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/master/';
 
-const HEADLINE_PATTERN = /#.*/m;
 const INTRO_TABLE_PATTERN = /^((?:[^](?!##))*)<table(\s[^>]*)?>[^]*?<\/table>/m;
 
+const LOG = new Signale({'scope': 'Component Reference Documents'});
 
 class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {
@@ -30,11 +33,8 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.title = extension.name;
     this.version = extension.version;
     this.versions = extension.versions;
-    this._contents = this._contents.replace(HEADLINE_PATTERN, '').replace(INTRO_TABLE_PATTERN, '$1');
 
-    // if (!this.teaser.text) {
-    // }
-    this.teaser = { text: this._parseTeaserText(contents) };
+    this.rewriteRelativePaths(join(RELATIVE_PATH_BASE, dirname(extension.githubPath)));
 
     if (this.version == extension.versions[extension.versions.length - 1]) {
       this.isCurrent = true;
@@ -66,36 +66,23 @@ class ComponentReferenceDocument extends MarkdownDocument {
     }
   }
 
-  _parseTeaserText(contents) {
-    // Splice out an excerpt to show in the teaser ...
-    // const FIRST_PARAGRAPH = /#.*$\n+(?!<table>)(.*)$/gm;
-    // let excerpt = FIRST_PARAGRAPH.exec(contents);
-    // if (excerpt == null || !excerpt[1].trim()) {
-    //   const SECOND_PARAGRAPH = /##.*$\n+((.|\n(?=\w))*)$/gm;
-    //   excerpt = SECOND_PARAGRAPH.exec(contents);
-    // }
-    //
-    // // If the extraction of an excerpt was successful write it to the teaser
-    // if (excerpt) {
-    //   // Strip out all possible HTML tags
-    //   excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, '');
-    //   // Unwrap back ticks
-    //   excerpt = excerpt.replace(/`(.+)`/g, '$1');
-    //   // And unwrap possible markdown links
-    //   excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
-    // }
-
-    const intro = contents.match(/(?<=-->)([^##]*)?/m);
-    console.log(intro);
-    return excerpt;
-  }
-
   _generateScript(extensionName, extensionVersion, extensionType = EXTENSION_TYPE_ELEMENT) {
     return `<script async custom-${extensionType}="${extensionName}" src="https://cdn.ampproject.org/v0/${extensionName}-${extensionVersion}.js"></script>`;
   }
 
+  get contents() {
+    return this._contents;
+  }
+
   set contents(contents) {
-    this._convertSyntax();
+    super.contents = contents;
+
+    // The reference documents have some additional things that need
+    // to be replaced/rewritten: the headline shouldn't be doubled
+    this.stripInlineTitle();
+
+    // ..., the manually maintained intro table should be spliced out
+    this._contents = this._contents.replace(INTRO_TABLE_PATTERN, '$1');
   }
 
   get component() {

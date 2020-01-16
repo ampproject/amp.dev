@@ -75,12 +75,28 @@ const RELATIVE_LINK_PATTERN = new RegExp(
 const TITLE_ANCHOR_PATTERN =
     /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/mg;
 
+// Matches a block of frontmatter delimited by ---
+const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
+
+// Matches a HTML comment in the form of <!-- Comment. -->
+const HTML_COMMENT_PATTERN = /<!--.*-->/gms;
+
+// Matches the next paragraph after a markdown headline
+// const PARAGRAPH_PATTERN = /^[^\[#<]*\S\s{2}/gm;
+const PARAGRAPH_PATTERN = /(?<=# .*\s{1,2}).*/gm;
+
 class MarkdownDocument {
   constructor(path, contents) {
-    this._contents = contents.trim();
+    this.contents = contents;
+    this._frontmatter = MarkdownDocument.extractFrontmatter(contents);
 
-    this._bootstrapFrontmatter();
-    this._convertSyntax();
+    if (!this.teaser.text) {
+      LOG.warn(`Auto extracting teaser text for ${path}`);
+      this.teaser = {text: MarkdownDocument.extractTeaserText(contents)};
+      if (!this.teaser.text) {
+        LOG.error(`Failed to extract teaser text for ${path}`);
+      }
+    }
 
     this.toc = contents.includes(TOC_MARKER) ? false : true;
     this.path = path;
@@ -89,6 +105,7 @@ class MarkdownDocument {
   set toc(active) {
     // Remove markers from document as inline TOCs are not supported
     this._contents = this._contents.replace(TOC_MARKER, '');
+
     this._frontmatter['toc'] = active;
     this._toc = active;
   }
@@ -107,6 +124,10 @@ class MarkdownDocument {
 
   set importURL(importURL) {
     this._importURL = importURL;
+  }
+
+  get title() {
+    return this._frontmatter['$title'] || this._frontmatter['title'];
   }
 
   set title(title) {
@@ -136,10 +157,6 @@ class MarkdownDocument {
     this._frontmatter['formats'] = formats;
   }
 
-  /**
-   * Returns the formats supported by any version of this component.
-   */
-
   get teaser() {
     return this._frontmatter['teaser'] || {};
   }
@@ -158,50 +175,87 @@ class MarkdownDocument {
   }
 
   set contents(contents) {
-    this._contents = contents;
-    this._convertSyntax();
-  }
+    this.originalContents = contents;
 
-  _bootstrapFrontmatter() {
-    // Check if the document defines its own frontmatter already
-    if (this._contents.startsWith('---')) {
-      const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
-      let frontmatter = this._contents.match(FRONTMATTER_PATTERN);
-      if (!frontmatter) {
-        LOG.warn(`Unparseable frontmatter in ${this.path}`);
-      } else {
-        frontmatter = frontmatter[0];
+    this._contents = contents.trim();
+    this._contents = this._contents.replace(FRONTMATTER_PATTERN, '');
 
-        // Strip out the frontmatter string from the actual content prior
-        // syntax conversion
-        this._contents = this._contents.replace(frontmatter, '');
-
-        // Strip out limiters from frontmatter string to be able to parse it
-        frontmatter = frontmatter.replace(/---/g, '');
-
-        // Parse frontmatter and use it as initial fill for the actual properties
-        try {
-          this._frontmatter = yaml.safeLoad(frontmatter);
-          return;
-        } catch (e) {
-          LOG.error(`Couldn't parse embedded frontmatter from ${this.path}`);
-        }
-      }
-    }
-
-    this._frontmatter = {
-      '$title': '',
-    };
-  }
-
-  _convertSyntax() {
+    this._contents = MarkdownDocument.replaceDelimiters(this._contents);
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
     this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
     this._contents = MarkdownDocument.escapeNunjucksTags(this._contents);
+  }
 
-    // Replace dividers (---) as they will break front matter
-    this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
+  /**
+   * Matches all paragraphs inside a markdown document excluding tags
+   * like [tip], [sourcecode] et al.
+   * @param  {String} contents [description]
+   * @return {String}          [description]
+   */
+  static extractTeaserText(contents) {
+    contents = contents.replace(HTML_COMMENT_PATTERN, '');
+
+    const paragraphs = contents.match(PARAGRAPH_PATTERN);
+    if (paragraphs && paragraphs[0]) {
+      let text = paragraphs[0].replace(/\n/g, ' ').trim();
+      // Strip out all possible HTML tags
+      text = text.replace(/<\/?[^>]+(>|$)/g, '');
+      // Unwrap back ticks
+      text = text.replace(/`(.+)`/g, '$1');
+      // And unwrap possible markdown links
+      text = text.replace(/\[(.+)\]\(.+\)/g, '$1');
+
+      if (text) {
+        return text;
+      }
+    }
+
+    LOG.error(`Could not parse a teaser text from "${contents.substr(0, 500)}..."`);
+    return '';
+  }
+
+  /**
+   * Checks for a frontmatter block in a string of content and tries to
+   * parse it to its JavaScript equivalent
+   * @param  {String} contents
+   * @return {Object}
+   */
+  static extractFrontmatter(contents) {
+    contents = contents.trim();
+
+    // Check if the document defines its own frontmatter already
+    if (contents.startsWith('---')) {
+      let frontmatter = contents.match(FRONTMATTER_PATTERN);
+      if (!frontmatter) {
+        LOG.warn(`Unparseable frontmatter "${contents.substr(0, 50)} ..."`);
+      } else {
+        frontmatter = frontmatter[0];
+
+        // Strip out limiters from frontmatter string to be able to parse it
+        // and then use it as initial fill for the actual properties
+        frontmatter = frontmatter.replace(/---/g, '');
+        try {
+          return yaml.safeLoad(frontmatter);
+        } catch (e) {
+          LOG.error(`Failed to parse frontmatter "${frontmatter} ..."`);
+        }
+      }
+    }
+
+    return {
+      '$title': '',
+    };
+  }
+
+  /**
+   * Replaces --- (<hr>) with *** as former one collides with
+   * Grow's way of extracting the frontmatter
+   * @param  {String} contents
+   * @return {String}          The rewritten input
+   */
+  static replaceDelimiters(contents) {
+    return contents.replace(/\n---\n/gm, '\n***\n');
   }
 
   /**
@@ -302,6 +356,7 @@ class MarkdownDocument {
    */
   stripInlineTitle() {
     const TITLE_PATTERN = /^#{1}\s.+/m;
+    /#.*/m;
     this._contents = this._contents.replace(TITLE_PATTERN, '');
     return true;
   }
