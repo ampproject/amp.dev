@@ -355,7 +355,6 @@ class MarkdownDocument {
    */
   stripInlineTitle() {
     const TITLE_PATTERN = /^#{1}\s.+/m;
-    /#.*/m;
     this._contents = this._contents.replace(TITLE_PATTERN, '');
     return true;
   }

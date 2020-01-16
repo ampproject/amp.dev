@@ -69,7 +69,7 @@ test('Test first headline removal', async (done) => {
       '\n' +
       'Lorem ipsum dolor sit amet.\n' +
       '# Section\n' +
-      'Lorem ipsum dolor sit amet.'
+      'Lorem ipsum dolor sit amet.',
   );
   done();
 });

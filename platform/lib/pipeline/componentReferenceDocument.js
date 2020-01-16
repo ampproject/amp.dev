@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 const {join, dirname} = require('path');
-const {Signale} = require('signale');
 const MarkdownDocument = require('./markdownDocument.js');
 
 const DEFAULT_VERSION = 0.1;
@@ -23,8 +22,6 @@ const EXTENSION_TYPE_TEMPLATE = 'template';
 const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/master/';
 
 const INTRO_TABLE_PATTERN = /^((?:[^](?!##))*)<table(\s[^>]*)?>[^]*?<\/table>/m;
-
-const LOG = new Signale({'scope': 'Component Reference Documents'});
 
 class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {

@@ -28,7 +28,7 @@ test('Test frontmatter extraction', async (done) => {
 
 test('Test teaser text extraction', async (done) => {
   const teaserText = MarkdownDocument.extractTeaserText(
-    '<!--\n' +
+      '<!--\n' +
     'Copyright notice\n' +
     '-->\n' +
     '\n' +
@@ -38,7 +38,7 @@ test('Test teaser text extraction', async (done) => {
     '\n' +
     'Lorem ipsum dolor sit amet.\n' +
     '# Section\n' +
-    'Lorem ipsum dolor sit amet.'
+    'Lorem ipsum dolor sit amet.',
   );
   expect(teaserText).toBe('Teaser text.');
 
