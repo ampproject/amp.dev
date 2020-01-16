@@ -82,7 +82,7 @@ const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
 const HTML_COMMENT_PATTERN = /<!--.*-->/gms;
 
 // Matches the next paragraph after a markdown headline
-const PARAGRAPH_PATTERN = /(?<=# .*\s{1,2}).*/gms;
+const PARAGRAPH_PATTERN = /(?<=# .*\n).*/gm;
 
 class MarkdownDocument {
   constructor(path, contents) {

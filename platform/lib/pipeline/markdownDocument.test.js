@@ -27,7 +27,7 @@ test('Test frontmatter extraction', async (done) => {
 });
 
 test('Test teaser text extraction', async (done) => {
-  const teaserText1 = MarkdownDocument.extractTeaserText(
+  const teaserText = MarkdownDocument.extractTeaserText(
     '<!--\n' +
     'Copyright notice\n' +
     '-->\n' +
@@ -39,25 +39,8 @@ test('Test teaser text extraction', async (done) => {
     'Lorem ipsum dolor sit amet.\n' +
     '# Section\n' +
     'Lorem ipsum dolor sit amet.'
-  )
-  expect(teaserText1).toBe('Teaser text.');
-
-  const teaserText2 = MarkdownDocument.extractTeaserText(
-    '<!--\n' +
-    'Copyright notice\n' +
-    '-->\n' +
-    '\n' +
-    '[tip]Tip[/tip].\n' +
-    '\n' +
-    '# Section\n' +
-    'Teaser\n' +
-    'text.\n' +
-    '\n' +
-    '\n' +
-    '## Section 2\n' +
-    'Another paragraph'
-  )
-  expect(teaserText2).toBe('Teaser text.');
+  );
+  expect(teaserText).toBe('Teaser text.');
 
   done();
 });
