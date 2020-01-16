@@ -68,7 +68,7 @@ class ComponentReferenceImporter {
 
     // As inside /extensions each component has its own folder, filter
     // down by directory
-    extensions = extensions[0].filter((file) => file.type === 'dir' && file.name.includes('carousel'));
+    extensions = extensions[0].filter((file) => file.type === 'dir');
     for (const extension of extensions) {
       this._importExtension(extension);
     }
@@ -126,7 +126,7 @@ class ComponentReferenceImporter {
       }
     }
     if (!spec) {
-      log.warn('No extension meta found for: ', extension.name);
+      log.warn('No extension meta found for:', extension.name);
       return [];
     }
 
@@ -206,11 +206,17 @@ class ComponentReferenceImporter {
   }
 
   async _createGrowDoc(extension) {
+    if (!extension.githubPath) {
+      // It's safe to return here without informing the user as non existing
+      // documents had been reported before
+      return;
+    }
+
     let fileContents;
     try {
       fileContents = await this.githubImporter_.fetchFile(extension.githubPath);
     } catch (e) {
-      log.error(`Failed to fetch ${extension.githubPath}`);
+      log.error(`Failed to fetch ${extension.githubPath}`, e);
       return;
     }
 

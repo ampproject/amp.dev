@@ -228,7 +228,7 @@ class MarkdownDocument {
     if (contents.startsWith('---')) {
       let frontmatter = contents.match(FRONTMATTER_PATTERN);
       if (!frontmatter) {
-        LOG.warn(`Unparseable frontmatter "${contents.substr(0, 50)} ..."`);
+        LOG.warn(`Unparseable frontmatter "${contents.substr(0, 200)} ..."`);
       } else {
         frontmatter = frontmatter[0];
 
@@ -238,7 +238,7 @@ class MarkdownDocument {
         try {
           return yaml.safeLoad(frontmatter);
         } catch (e) {
-          LOG.error(`Failed to parse frontmatter "${frontmatter} ..."`);
+          LOG.error(`Failed to parse frontmatter "${contents.substr(0, 200)} ..."`);
         }
       }
     }
