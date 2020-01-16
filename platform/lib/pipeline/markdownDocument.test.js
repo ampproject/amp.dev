@@ -1,5 +1,86 @@
 const MarkdownDocument = require('./markdownDocument.js');
 
+test('Test frontmatter extraction', async (done) => {
+  const doc = new MarkdownDocument(
+      '/docs/amp-test-v0.1.md',
+
+      '---\n' +
+      '$category: media\n' +
+      'formats:\n' +
+      '  - websites\n' +
+      '  - email\n' +
+      '  - ads\n' +
+      '  - stories\n' +
+      'teaser:\n' +
+      '  text: Teaser text.\n' +
+      '---\n' +
+      '\n' +
+      '# amp-test\n');
+
+  expect(doc.formats).toEqual(expect.arrayContaining(['websites', 'email', 'ads', 'stories']));
+  expect(doc.category).toBe('media');
+  expect(doc.teaser.text).toBe('Teaser text.');
+
+  expect(doc.contents.trim()).toBe('# amp-test');
+
+  done();
+});
+
+test('Test teaser text extraction', async (done) => {
+  const TEASER_TEXT = 'Teaser text.';
+
+  const teaserText1 = MarkdownDocument.extractTeaserText(
+    '<!--\n' +
+    'Copyright notice\n' +
+    '-->\n' +
+    '\n' +
+    '\n' +
+    '# amp-test\n' +
+    TEASER_TEXT + '\n' +
+    '\n' +
+    'Lorem ipsum dolor sit amet.\n' +
+    '# Section\n' +
+    'Lorem ipsum dolor sit amet.'
+  )
+  expect(teaserText1).toBe(TEASER_TEXT);
+
+  const teaserText2 = MarkdownDocument.extractTeaserText(
+    TEASER_TEXT + '\n' +
+    '\n' +
+    '<!--\n' +
+    'Copyright notice\n' +
+    '-->\n' +
+    '\n' +
+    '\n' +
+    '# amp-test\n' +
+    '\n' +
+    'Lorem ipsum dolor sit amet.\n' +
+    '\n' +
+    '# Section\n' +
+    'Lorem ipsum dolor sit amet.',
+  )
+  expect(teaserText2).toBe(TEASER_TEXT);
+
+  const teaserText3 = MarkdownDocument.extractTeaserText(
+    '<!--\n' +
+    'Copyright notice\n' +
+    '-->\n' +
+    '\n' +
+    '[tip]Tip[/tip].\n' +
+    '\n' +
+    '# Section\n' +
+    'Teaser\n' +
+    'text.\n' +
+    '\n' +
+    '\n' +
+    '## Section 2\n' +
+    'Another paragraph'
+  )
+  expect(teaserText3).toBe(TEASER_TEXT);
+
+  done();
+});
+
 test('Test escape nunjucks tags', async (done) => {
   const result = MarkdownDocument.escapeNunjucksTags(
       '<pre>\n' +
@@ -54,6 +135,11 @@ test('Test escape mustache tags', async (done) => {
 
 test('Test escape mustache tags', async (done) => {
   const doc = new MarkdownDocument('/tmp/test.md',
+      '---\n' +
+      'title: Title.\n' +
+      'teaser:\n' +
+      '  text: Teaser text.\n' +
+      '---\n' +
       `[text](../link/file#anchor)
       [text](#anchor)
       [sourcecode type="html"]<a href="../source/link.html">text</a>[/sourcecode]
@@ -79,6 +165,11 @@ test('Test escape mustache tags', async (done) => {
 
 test('Test anchor generation', () => {
   const doc = new MarkdownDocument('/tmp/test.md',
+      '---\n' +
+      'title: Title.\n' +
+      'teaser:\n' +
+      '  text: Teaser text.\n' +
+      '---\n' +
       '# TestOne\n' +
       '# test two\n' +
       'paragraph\n' +
