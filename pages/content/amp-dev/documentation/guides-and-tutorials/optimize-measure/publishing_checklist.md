@@ -41,7 +41,7 @@ Keep your domain's URL while maintaining portable content by implementing signed
 
 Learn more about implementing signed exchanges:
 
-* [Serve AMP using signed exchanges](/signed-exchange.md?format=websites)
+* [Serve AMP using signed exchanges](signed-exchange.md?format=websites)
 * [Signed HTTP Exchanges](https://developers.google.com/web/updates/2018/11/signed-exchanges)
 * [Cloudflare AMP Real URL](https://www.cloudflare.com/website-optimization/amp-real-url/)
 * [Signed exchanges for better AMP URLs and easier analytics (AMP Conf '19)](https://www.youtube.com/watch?v=KrjBYzPUGnw&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl&index=22)
