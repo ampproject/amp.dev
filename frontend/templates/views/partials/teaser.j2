@@ -6,9 +6,9 @@
     [hidden]="filter.category != 'none' && filter.category != '{{ teaser_doc.category|slug }}'">
   <a href="{{ teaser_doc.url.path }}">
 
-    {% if teaser_doc.formats %}
+    {% if teaser_doc.category %}
     {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-    <div class="ap-m-tag ap-m-tag-{{ teaser_doc.formats[0] }} ap-m-teaser-tag">{{ teaser_doc.formats[0] }}</div>
+    <div class="ap-m-tag ap-m-tag-general ap-m-teaser-tag">{{ teaser_doc.category }}</div>
     {% endif %}
 
     <div class="ap-m-teaser-card">
