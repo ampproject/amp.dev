@@ -8,11 +8,13 @@ COMPONENT_VERSIONS = {}
 with open(COMPONENT_VERSIONS_FILE) as f:
   COMPONENT_VERSIONS = json.load(f)
 
-class AmpComponent:
+class AmpComponent(dict):
 
   def __init__(self, name, version):
     self.name = name
     self.version = version
+    # Extend and init dict to support json serialization
+    dict.__init__(self, name=name, version=version)
 
   def __hash__(self):
     return hash(self.name) ^ hash(self.version)
