@@ -34,11 +34,46 @@
   }
 
   &-minimal {
+    padding: 0;
+    margin: 0;
     flex: 1 0 33.3333%;
     background: none;
 
     @media (max-device-width: 767px) { text-align: center; }
     @media (min-device-width: 768px) { text-align: right; }
+  }
+
+  &-preview {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: none;
+
+    &-container {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 25px 25px 5px;
+      margin: 0;
+      background: rgba(color('black'), .85);
+      z-index: 2;
+
+      @media (max-width: 767px) {
+        position: static;
+        background: none transparent;
+      }
+
+      h4 {
+        margin-top: 0;
+        color: color('white');
+      }
+
+      p {
+        margin-bottom: 0;
+        color: color('white');
+      }
+    }
   }
 
   &-controls {
@@ -59,6 +94,13 @@
       @media (max-device-width: 767px) { justify-content: center; }
       @media (min-device-width: 768px) { justify-content: flex-end; }
     }
+
+    #{$self}-preview & {
+      min-height: 102px;
+      align-items: center;
+      padding: 0;
+      margin: 0 -10px;
+    }
   }
 
   &-control {
@@ -76,15 +118,26 @@
       margin: 4px 15px;
       background: none;
     }
+
+    #{$self}-preview & {
+      padding: 10px;
+      margin: 3px 10px;
+      background: color('limed-spruce');
+    }
   }
 
   &-label {
     flex: 1 0 auto;
+    margin-right: 6px;
     @include txt-font-accent;
     color: color('black');
 
     #{$self}-minimal & {
       margin-right: 15px;
+    }
+
+    #{$self}-preview & {
+      color: color('white')
     }
   }
 
@@ -101,6 +154,14 @@
       }
 
       #{$self}-minimal & {
+        color: color('oslo-gray');
+
+        &.active {
+          color: color('blue-ribbon');
+        }
+      }
+
+      #{$self}-preview & {
         color: color('oslo-gray');
 
         &.active {
@@ -175,5 +236,9 @@
 
   &-reload-hint {
     margin-right: 15px;
+
+    #{$self}-preview & {
+      color: color('white');
+    }
   }
 }

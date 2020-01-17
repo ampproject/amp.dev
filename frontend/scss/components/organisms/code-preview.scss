@@ -33,6 +33,16 @@
       position: relative;
       padding: 6px;
       cursor: pointer;
+
+      &-experimental {
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(35%, -35%);
+        background: color('crimson');
+        border-radius: 50%;
+        z-index: 3;
+      }
     }
 
     &-icon {
@@ -41,6 +51,11 @@
       fill: color('white');
       opacity: .6;
       transition: opacity .25s ease-out;
+
+      &-experimental {
+        width: 32px;
+        height: 32px;
+      }
     }
 
     &-button:hover &-icon,
@@ -106,7 +121,7 @@
     }
 
     &-landscape {
-      max-width: 100%;
+      max-width: calc(100% - 2em);
 
       amp-iframe {
         padding-top: 56.25%;
@@ -145,7 +160,6 @@
   /* top preview like playground embed mode */
   &-top-preview {
     position: relative;
-    padding: 0 1em;
     z-index: 1;
 
     @media (min-width: 1024px) {
