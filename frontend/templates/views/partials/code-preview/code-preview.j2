@@ -48,7 +48,7 @@
   {% if preview.mode == 'inline' %}
   {{ experimental_toggle }}
   <div class="ap-o-code-preview-preview">
-     {{preview.source|render|safe}}
+    {{preview.source|render|safe}}
   </div>
   {% endif %}
 
@@ -147,7 +147,6 @@
       {% set orientations = ['portrait', 'landscape'] %}
 
       {% for orientation in orientations %}
-      {% do doc.icons.useIcon('/icons/orientation-' + orientation + '.svg') %}
       <button class="ap-m-orientation-toggle-button {% if orientation == 'portrait' %}active{% endif %}"
               [class]="orientation{{ preview.index }} == '{{ orientation }}' ? 'ap-m-orientation-toggle-button active' : 'ap-m-orientation-toggle-button'"
               on="tap:AMP.setState({orientation{{ preview.index }}: '{{ orientation }}'})">
@@ -178,7 +177,6 @@
       </amp-iframe>
     </div>
   </div>
-
   {% endif %}
 
 {% if preview.mode != 'none' %}
