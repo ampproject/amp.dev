@@ -13,31 +13,31 @@ Follow this checklist to give your site the fullest AMP experience!
 
 # Ensure AMP Specification Validation 
 
-AMP comes with a ton of built in benefits, such as decreasing user wait time by preloading content from AMP Caches. To get these benefits, pages must be valid AMP documents. Pages published with critical AMP errors are not indexable by AMP Caches, and possibly served as error pages.
+AMP comes with a ton of built in benefits, such as decreasing user wait time by preloading content from AMP Caches. To get these benefits, pages must be valid AMP documents. Pages published with errors reported by the AMP validator are not indexable by AMP Caches, and possibly served as error pages.
 
 Never publish an invalid AMP page again by using these tools:
 
 * [Validate AMP pages](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md?format=websites)
 * [The AMP Validator ](https://validator.ampproject.org/)
 * [Google AMP Tester](https://search.google.com/test/amp)
-* [AMP Tools](../../../documentation/tools.html?format=websites) 
+* [AMP Linter](https://github.com/ampproject/amp-toolbox/tree/master/packages/linter)
+* [AMP Tools](../../../documentation/tools.html?format=websites)
 
 
 # Grant cached AMP pages server access
 
-Great news, valid AMP pages automatically opt into all existing AMP Caches! This means your users experience content that loads efficiently and safely. These types of optimizations are great, but come with a small catch.
-Some users will be served AMP pages from domains that do not match your own. This can cause pages to lose access to site data when using dynamic AMP components such as [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) or [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites). These types of errors are Cross-Origin Resource Sharing, or CORS, issues. Work with safety, not against it, by enabling CORS Requests from all available [AMP Caches](https://cdn.ampproject.org/caches.json)! 
+Great news, valid AMP pages automatically opt into all existing AMP Caches! This means your users experience content that loads efficiently and safely. These types of optimizations are great, but come with a small catch. Some users will be served AMP pages from domains that do not match your own. This can cause pages to lose access to site data when using dynamic AMP components such as [`<amp-form>`](../../../documentation/components/reference/amp-form.md?format=websites) or [`<amp-list>`](../../../documentation/components/reference/amp-list.md?format=websites). These types of errors are Cross-Origin Resource Sharing, or CORS, issues. Work with safety, not against it, by enabling CORS Requests from all available [AMP Caches](https://cdn.ampproject.org/caches.json)! If you're using Node.js in your backend, you can use the [amp-cors middleware](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors).
 
-Learn more about accessing server data:
+Learn more about granting server access:
 
 * [How AMP Pages are cached ](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md?format=websites)
 * [CORS in AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md?format=websites)
-* [AMP CORS Library](https://www.npmjs.com/package/amp-toolbox-cors)
+* [AMP CORS Middleware](https://github.com/ampproject/amp-toolbox/tree/master/packages/cors) for Node.js
 
 
-# Shareable, safe, and substantiated content with signed exchanges 
+# Safe and shareable content with signed exchanges 
 
-Keep your domain's URL while maintaining portable content by implementing signed exchanges (SXG). By serving AMP pages with SXG, digital signatures protect your information by tying the document to its claimed URL. Implementing SXG delivers signed AMP content in addition to, rather than instead of, regular AMP content.
+Keep your domain's URL and simplify analytics when sharing content through signed exchanges (SXG). By serving AMP pages with SXG, digital signatures protect your information by tying the document to its claimed URL. This behavior treats user sessions and cookies as first party, closing possible analytics gaps. Implementing SXG delivers signed AMP content in addition to, rather than instead of, regular AMP content.
 
 Learn more about implementing signed exchanges:
 
@@ -68,9 +68,9 @@ Learn more about AMP caches:
 * [AMP Cache URL Format and Request Handling](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-urls.md?format=websites)
 
 
-# Destined for discoverability
+# Ensure your AMP files are discoverable by search engines
 
-AMP first and paired AMP pages all need to ensure they are discoverable! All AMP pages required the `<link rel="canonical" href="$SOME_URL">` in their `<head>`. AMP first pages need to link to themselves and AMP pages paired to a non-AMP page will need to link link to each other. 
+Pages only build in AMP(AMP first) and pages with a AMP double(paired AMP) all need to ensure they are discoverable! All AMP pages required the `<link rel="canonical" href="$SOME_URL">` in their `<head>`. AMP first pages need to link to themselves and AMP pages paired to a non-AMP page will need to link link to each other. 
 
 Ensure your [Schema.org](https://schema.org/) metadata adds useful information! Other sites and search engines may require this to share your content.
 
@@ -115,3 +115,4 @@ Learn more about setting up proper analytics for AMP:
 * [Cache vs. non-cache analysis](https://support.google.com/analytics/answer/6343176?hl=en#cache)
 * [Measuring user journeys across the AMP Cache and your website](https://blog.amp.dev/2018/11/08/so-your-amp-test-doesnt-perform%e2%80%8a-%e2%80%8anow-what/)
 * [Measuring success: What's new in AMP analytics & experiments (AMP Conf '19)](https://www.youtube.com/watch?v=wPW-kXsONqA&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl&index=27)
+* [Signed exchanges for better AMP URLs and easier analytics (AMP Conf '19)](https://www.youtube.com/watch?v=KrjBYzPUGnw&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl&index=22)
