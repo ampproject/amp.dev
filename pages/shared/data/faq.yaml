@@ -643,33 +643,33 @@ platform_and_vendor_partners:
     id: rtc
     list:
       - label: AppNexus
-        url: https://www.3qsdn.com/
-      - label: APS
-        url: http://on.aol.com/
+        url: https://www.xandr.com/
+      - label: APS (Amazon Publishing Service)
+        url: https://aps.amazon.com/aps/index.html
       - label: Automatad
-        url: http://beachfrontreach.com/
+        url: https://automatad.com/
       - label: Criteo
-        url: https://www.brid.tv/
+        url: https://www.criteo.com/
+      - label: FLUX
+        url: https://flux-g.com/
       - label: IndexExchange
-        url: https://www.brightcove.com/
+        url: https://www.indexexchange.com/
       - label: Lotame
-        url: http://www.dailymotion.com/
+        url: https://www.lotame.com/
       - label: Media.net
-        url: https://gfycat.com/
+        url: https://www.media.net/
       - label: PubMatic OpenWrap
-        url: https://www.hulu.com/
-      - label: Purch
-        url: https://www.izlesene.com/
+        url: https://pubmatic.com/
       - label: Rubicon
-        url: https://www.jwplayer.com/
+        url: https://rubiconproject.com/
       - label: Salesforce
-        url: https://corp.kaltura.com/
+        url: https://www.salesforce.com/
       - label: Yieldbot
         url: https://www.nexx.tv/
       - label: Kargo
-        url: https://www.ooyala.com/
+        url: https://kargo.com/
       - label: Yieldlab
-        url: https://soundcloud.com/
+        url: https://www.yieldlab.com/
 supported_browsers:
   - title: Chrome
     img: /static/img/platforms/chrome.png
