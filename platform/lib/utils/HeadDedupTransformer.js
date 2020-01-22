@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+const {remove, firstChildByTag} = require('@ampproject/toolbox-optimizer').NodeUtils;
 const TAGS_TO_DEDUP = {
   meta: {
     name: 'viewport',
@@ -33,10 +34,10 @@ class HeadDedupTransformer {
   }
 
   transform(tree) {
-    const html = tree.root.firstChildByTag('html');
+    const html = firstChildByTag(tree, 'html');
     if (!html) return;
 
-    const head = html.firstChildByTag('head');
+    const head = firstChildByTag(html, 'head');
     if (!head) return;
 
     // build a map of all potential duplicates
@@ -52,7 +53,7 @@ class HeadDedupTransformer {
     // remove duplicates
     matches.forEach((matches) => {
       matches.slice(1).forEach((node) => {
-        node.remove();
+        remove(node);
       });
     });
   }

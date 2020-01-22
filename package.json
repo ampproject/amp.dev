@@ -52,8 +52,8 @@
     "@lib": "platform/lib"
   },
   "dependencies": {
-    "@ampproject/toolbox-cors": "1.1.1",
-    "@ampproject/toolbox-optimizer": "1.1.2",
+    "@ampproject/toolbox-cors": "2.0.0-alpha.0",
+    "@ampproject/toolbox-optimizer": "2.0.0-alpha.2",
     "@google-cloud/datastore": "5.0.3",
     "acorn": "7.1.0",
     "casual": "1.6.2",
@@ -88,7 +88,7 @@
     "web-push": "3.4.3"
   },
   "devDependencies": {
-    "@ampproject/toolbox-validator-rules": "1.1.1",
+    "@ampproject/toolbox-validator-rules": "2.0.0-alpha.0",
     "@babel/cli": "7.7.7",
     "@babel/core": "7.7.7",
     "@babel/node": "7.7.7",
@@ -98,7 +98,6 @@
     "@babel/runtime": "7.7.7",
     "@octokit/rest": "16.36.0",
     "absolutify": "0.1.0",
-    "amp-toolbox-runtime-version": "0.2.7",
     "amphtml-validator": "1.0.29",
     "archiver": "3.1.1",
     "babel-eslint": "10.0.3",

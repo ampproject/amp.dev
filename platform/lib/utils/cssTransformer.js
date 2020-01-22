@@ -13,6 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const {
+  nextNode,
+  hasAttribute,
+  firstChildByTag,
+} = require('@ampproject/toolbox-optimizer').NodeUtils;
 const rcs = require('rcs-core');
 const csso = require('csso');
 
@@ -104,23 +109,23 @@ class CssTransformer {
   }
 
   transform(tree) {
-    const html = tree.root.firstChildByTag('html');
+    const html = firstChildByTag(tree, 'html');
     if (!html) return;
 
-    const head = html.firstChildByTag('head');
+    const head = firstChildByTag(html, 'head');
     if (!head) return;
 
     // Find style[amp-custom] to rewrite selectors
     let style = null;
     for (const child of head.children) {
-      if (child.tagName == 'style' && child.hasAttribute('amp-custom')) {
+      if (child.tagName == 'style' && hasAttribute(child, 'amp-custom')) {
         style = child;
         break;
       }
     }
     if (!style) return;
 
-    const body = html.firstChildByTag('body');
+    const body = firstChildByTag(html, 'body');
     if (!body) return;
 
     // Rewrite the selectors inside the CSS
@@ -131,8 +136,8 @@ class CssTransformer {
     style.children[0].data = styles;
 
     // Rewrite the selectors on the actual elements
-    for (let node = body; node !== null; node = node.nextNode()) {
-      if (!node.hasAttribute('class')) {
+    for (let node = body; node !== null; node = nextNode(node)) {
+      if (!hasAttribute(node, 'class')) {
         continue;
       }
 
