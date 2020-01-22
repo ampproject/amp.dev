@@ -48,7 +48,9 @@ import embedMode from './embed-mode/';
 import './service-worker/base.js';
 import './request-idle-callback/base.js';
 
-analytics.init();
+if (!embedMode.isActive) {
+  analytics.init();
+}
 
 // create editing/preview panels
 const editor = Editor.createEditor(document.getElementById('source'), window);
