@@ -642,8 +642,6 @@ platform_and_vendor_partners:
   - title: Real Time Config
     id: rtc
     list:
-      - label: AppNexus
-        url: https://www.xandr.com/
       - label: APS (Amazon Publishing Service)
         url: https://aps.amazon.com/aps/index.html
       - label: Automatad
@@ -668,6 +666,8 @@ platform_and_vendor_partners:
         url: https://www.nexx.tv/
       - label: Kargo
         url: https://kargo.com/
+      - label: Xandr (formerly Appnexus)
+        url: https://www.xandr.com/        
       - label: Yieldlab
         url: https://www.yieldlab.com/
 supported_browsers:
