@@ -14,7 +14,9 @@ test('removes duplicate canonical link and viewport', async () => {
 <body>
 </body></html>`,
   )).toEqual(
-      `<html><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> <link rel="canonical" href="self1.html">   </head> <body> </body></html>`);
+      '<html><head> <meta charset="utf-8"> ' +
+       '<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> ' +
+       '<link rel="canonical" href="self1.html">   </head> <body> </body></html>');
 });
 
 async function transform(string) {
