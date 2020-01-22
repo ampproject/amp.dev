@@ -42,7 +42,7 @@ Meta tag data specifies that the ad meets the AMP Story format, sets the CTA but
 <html amp4ads>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     <!-- Specifies where the user is directed -->
     <meta name="amp-cta-url" content="%%CLICK_URL_UNESC%%%%DEST_URL%%">
