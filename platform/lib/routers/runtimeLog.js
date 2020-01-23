@@ -41,10 +41,12 @@ runtimeLog.get('/', async (request, response) => {
   try {
     const messageTemplate = await Templates.get('message.html');
     const html = await logFormatter.apply(message);
-    response.send(messageTemplate.render({
-      title: 'Log',
-      text: html,
-    }));
+    response.send(
+      messageTemplate.render({
+        title: 'Log',
+        text: html,
+      })
+    );
   } catch (error) {
     console.error('retrieving runtime log', error);
     response.status(404).send('Message not found');
@@ -54,9 +56,9 @@ runtimeLog.get('/', async (request, response) => {
 runtimeLog.use(robots('allow_all.txt'));
 
 function isValidLogRequest(logRequest) {
-  return regexIsNumber.test(logRequest.version) && regexIsNumber.test(logRequest.id);
+  return (
+    regexIsNumber.test(logRequest.version) && regexIsNumber.test(logRequest.id)
+  );
 }
 
-
 module.exports = runtimeLog;
-

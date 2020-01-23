@@ -111,37 +111,47 @@ describe('CodeSection', () => {
   });
   describe('removes uncorrectly escaped templates', () => {
     it('contains an escaped template', () => {
-      expect(section.cleanUpCode(
-          '[[<span class="hljs-attr">.Disabled</span>]]',
-      )).toEqual('[[ .Disabled]]');
+      expect(
+        section.cleanUpCode('[[<span class="hljs-attr">.Disabled</span>]]')
+      ).toEqual('[[ .Disabled]]');
     });
     it('contains an escaped template and spaces', () => {
-      expect(section.cleanUpCode(
-          '[[    <span class="hljs-attr">.Disabled    </span>]]',
-      )).toEqual('[[ .Disabled]]');
+      expect(
+        section.cleanUpCode(
+          '[[    <span class="hljs-attr">.Disabled    </span>]]'
+        )
+      ).toEqual('[[ .Disabled]]');
     });
     it('does not alter valid escaped templates', () => {
-      expect(section.cleanUpCode(
-          '<span class="hljs-string">"[[.Timestamp]]"</span>',
-      )).toEqual('<span class="hljs-string">"[[.Timestamp]]"</span>');
+      expect(
+        section.cleanUpCode('<span class="hljs-string">"[[.Timestamp]]"</span>')
+      ).toEqual('<span class="hljs-string">"[[.Timestamp]]"</span>');
     });
     it('contains an escaped template with range clause', () => {
-      expect(section.cleanUpCode(
-          '[[<span class="hljs-attr">range</span><span class="hljs-attr">.BlogItems</span>]]',
-      )).toEqual('[[range .BlogItems]]');
+      expect(
+        section.cleanUpCode(
+          '[[<span class="hljs-attr">range</span><span class="hljs-attr">.BlogItems</span>]]'
+        )
+      ).toEqual('[[range .BlogItems]]');
     });
     it('contains an escaped template with if clause', () => {
-      expect(section.cleanUpCode(
-          '[[<span class="hljs-attr">if</span><span class="hljs-attr">.BlogItems</span>]]',
-      )).toEqual('[[if .BlogItems]]');
+      expect(
+        section.cleanUpCode(
+          '[[<span class="hljs-attr">if</span><span class="hljs-attr">.BlogItems</span>]]'
+        )
+      ).toEqual('[[if .BlogItems]]');
     });
     it('contains an escaped template with if clause and spaces', () => {
-      expect(section.cleanUpCode(
-          '[[   <span class="hljs-attr">if   </span><span class="hljs-attr">.BlogItems</span>   ]]',
-      )).toEqual('[[if .BlogItems]]');
+      expect(
+        section.cleanUpCode(
+          '[[   <span class="hljs-attr">if   </span><span class="hljs-attr">.BlogItems</span>   ]]'
+        )
+      ).toEqual('[[if .BlogItems]]');
     });
     it('contains an escaped template with end clause', () => {
-      expect(section.cleanUpCode('[[<span class="hljs-attr">end</span>]]')).toEqual('[[end ]]');
+      expect(
+        section.cleanUpCode('[[<span class="hljs-attr">end</span>]]')
+      ).toEqual('[[end ]]');
     });
   });
 
@@ -156,28 +166,35 @@ describe('CodeSection', () => {
     });
     it('adds single heading', () => {
       section.appendDoc('##Some Doc');
-      expect(section.headings).toEqual([{
-        id: 'some-doc',
-        name: 'Some Doc',
-      }]);
+      expect(section.headings).toEqual([
+        {
+          id: 'some-doc',
+          name: 'Some Doc',
+        },
+      ]);
     });
     it('removes whitespace heading', () => {
       section.appendDoc('##  Some Doc   ');
-      expect(section.headings).toEqual([{
-        id: 'some-doc',
-        name: 'Some Doc',
-      }]);
+      expect(section.headings).toEqual([
+        {
+          id: 'some-doc',
+          name: 'Some Doc',
+        },
+      ]);
     });
     it('adds multiple headings', () => {
       section.appendDoc('##Some Doc');
       section.appendDoc('##Another Doc');
-      expect(section.headings).toEqual([{
-        id: 'some-doc',
-        name: 'Some Doc',
-      }, {
-        id: 'another-doc',
-        name: 'Another Doc',
-      }]);
+      expect(section.headings).toEqual([
+        {
+          id: 'some-doc',
+          name: 'Some Doc',
+        },
+        {
+          id: 'another-doc',
+          name: 'Another Doc',
+        },
+      ]);
     });
   });
 
@@ -195,18 +212,13 @@ describe('CodeSection', () => {
       section.appendCode('    <h1>Hello</h1>');
       section.appendCode('  <h1>Hello</h1>');
       expect(section.code).toEqual(
-          '<h1>Hello</h1>\n' +
-        '  <h1>Hello</h1>\n' +
-        '<h1>Hello</h1>\n',
+        '<h1>Hello</h1>\n' + '  <h1>Hello</h1>\n' + '<h1>Hello</h1>\n'
       );
     });
     it('strips only whitespace', () => {
       section.appendCode('  <h1>Hello</h1>');
       section.appendCode('xx<h1>Hello</h1>');
-      expect(section.code).toEqual(
-          '<h1>Hello</h1>\n' +
-        'xx<h1>Hello</h1>\n',
-      );
+      expect(section.code).toEqual('<h1>Hello</h1>\n' + 'xx<h1>Hello</h1>\n');
     });
   });
   describe('wrapper divs', () => {
@@ -214,34 +226,25 @@ describe('CodeSection', () => {
       section.appendCode('<div>');
       section.appendCode('<h1>Hello</h1>');
       section.appendCode('</div>');
-      expect(section.escapedCode()).not.toContain(
-          'div',
-      );
+      expect(section.escapedCode()).not.toContain('div');
     });
     it('strips enclosing div with whitespace', () => {
       section.appendCode('  <div>   ');
       section.appendCode('<h1>Hello</h1>');
       section.appendCode('   </div>   ');
-      expect(section.escapedCode()).not.toContain(
-          'div',
-      );
+      expect(section.escapedCode()).not.toContain('div');
     });
     it('ignores divs with classes', () => {
       section.appendCode('<div class="test">');
       section.appendCode('Hello');
       section.appendCode('</div>');
-      expect(section.escapedCode()).toContain(
-          'div',
-      );
+      expect(section.escapedCode()).toContain('div');
     });
     it('ignores divs with ids', () => {
       section.appendCode('<div id="test">');
       section.appendCode('Hello');
       section.appendCode('</div>');
-      expect(section.escapedCode()).toContain(
-          'div',
-      );
+      expect(section.escapedCode()).toContain('div');
     });
   });
 });
-

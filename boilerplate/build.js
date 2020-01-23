@@ -37,12 +37,13 @@ function initConfig() {
     categories: require('./data/categories.json'),
     formats: require('./data/formats.json'),
     templates: templates.find('./templates/files'),
-    highlightTheme:
-      io.readFile(path.join(__dirname, './templates/styles/code-snippet.scss')),
+    highlightTheme: io.readFile(
+      path.join(__dirname, './templates/styles/code-snippet.scss')
+    ),
   };
   // assign default template
   let defaultTemplate;
-  config.formats.forEach((format) => {
+  config.formats.forEach(format => {
     format.template = config.templates[format.id];
     if (format.default) {
       defaultTemplate = format.template;

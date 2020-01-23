@@ -19,5 +19,3 @@ class EmbedMode {
 }
 
 export default new EmbedMode(document);
-
-

@@ -32,7 +32,11 @@ class SlugGenerator {
   generateSlug(headline) {
     const slug = SlugGenerator.sluggify(headline);
     let result = slug;
-    for (let slugCounter = 1; this.existingSlugs.includes(result); slugCounter++) {
+    for (
+      let slugCounter = 1;
+      this.existingSlugs.includes(result);
+      slugCounter++
+    ) {
       result = slug + '-' + slugCounter;
     }
     this.existingSlugs.push(result);

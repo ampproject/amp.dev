@@ -96,7 +96,7 @@ const SAFE_CLASS_NAMES = [
 ];
 
 rcs.selectorLibrary.setExclude(
-    new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$'),
+  new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$')
 );
 
 /**
@@ -141,9 +141,12 @@ class CssTransformer {
         continue;
       }
 
-      node.attribs.class = node.attribs.class.split(' ').map((className) => {
-        return rcs.selectorLibrary.get(className) || className;
-      }).join(' ');
+      node.attribs.class = node.attribs.class
+        .split(' ')
+        .map(className => {
+          return rcs.selectorLibrary.get(className) || className;
+        })
+        .join(' ');
     }
   }
 }

@@ -31,7 +31,7 @@ let templates = null;
  * @param  {expressjs.Request} request
  * @return {Object}
  */
-function createRequestContext(request={'query': {}}, context={}) {
+function createRequestContext(request = {'query': {}}, context = {}) {
   context.format = getFormatFromRequest(request);
 
   if (ALLOWED_LEVEL.includes(request.query.level)) {
@@ -72,7 +72,8 @@ class Templates {
         variableEnd: '=]',
         commentStart: '[#',
         commentEnd: '#]',
-      }});
+      },
+    });
 
     // One locale has ~860 pages with each weighing ~92KB. The cache therefore
     // maxes out at ~224MB to be safe

@@ -44,9 +44,9 @@ class TitleUpdater {
     string = this.stripFileExtension_(string);
     string = string.replace(/_/g, ' ');
     string = decodeURIComponent(string);
-    string = string.replace(/%27/g, '\'');
+    string = string.replace(/%27/g, "'");
     return string;
-  };
+  }
 
   stripTrailingSlash_(string) {
     if (!string.endsWith('/')) {

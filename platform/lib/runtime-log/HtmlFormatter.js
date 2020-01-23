@@ -24,7 +24,7 @@ const LogProvider = require('./LogProvider.js');
  * Formats a AMP runtime log requests.
  */
 class LogFormatter {
-  constructor(logProvider=new LogProvider()) {
+  constructor(logProvider = new LogProvider()) {
     this.logProvider_ = logProvider;
   }
 

@@ -1,23 +1,25 @@
 const MarkdownDocument = require('./markdownDocument.js');
 
-test('Test escape nunjucks tags', async (done) => {
+test('Test escape nunjucks tags', async done => {
   const result = MarkdownDocument.escapeNunjucksTags(
-      '<pre>\n' +
-      'var href = location.href.replace(/\?[^#]+/, \'\');\n' +
+    '<pre>\n' +
+      "var href = location.href.replace(/?[^#]+/, '');\n" +
       'history.replaceState(null, null, href);\n' +
-      '</pre>\n');
+      '</pre>\n'
+  );
 
   expect(result).toBe(
-      '<pre>\n' +
-      'var href = location.href.replace(/\?[^{{\'[% raw %]\'}}#]{{\'{% endraw %}\'}}+/, \'\');\n' +
+    '<pre>\n' +
+      "var href = location.href.replace(/?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');\n" +
       'history.replaceState(null, null, href);\n' +
-      '</pre>\n');
+      '</pre>\n'
+  );
   done();
 });
 
-test('Test escape mustache tags', async (done) => {
+test('Test escape mustache tags', async done => {
   const result = MarkdownDocument.escapeMustacheTags(
-      'The [`link`]({{notincode}}) test `code`.\n' +
+    'The [`link`]({{notincode}}) test `code`.\n' +
       '```html\n' +
       '<template type="amp-mustache">\n' +
       '  <amp-img alt="{{foo}} {%raw%}{{bar}}{%endraw%} {{baz}}"></amp-img>\n' +
@@ -28,11 +30,12 @@ test('Test escape mustache tags', async (done) => {
       '  {{foo}}\n' +
       '[/sourcecode]\n' +
       'Test no raw `{{`\n' +
-      'Test raw outside {% raw %}`{{`{% endraw %}\n'+
-      'Test raw inside `{% raw %}{{{% endraw %}`');
+      'Test raw outside {% raw %}`{{`{% endraw %}\n' +
+      'Test raw inside `{% raw %}{{{% endraw %}`'
+  );
 
   expect(result).toBe(
-      'The [`link`]({{notincode}}) test `code`.\n' +
+    'The [`link`]({{notincode}}) test `code`.\n' +
       '```html\n' +
       '<template type="amp-mustache">\n' +
       '  <amp-img alt="{% raw %}{{foo}}{% endraw %} ' +
@@ -45,23 +48,24 @@ test('Test escape mustache tags', async (done) => {
       '[/sourcecode]\n' +
       'Test no raw `{% raw %}{{{% endraw %}`\n' +
       'Test raw outside {% raw %}`{{`{% endraw %}\n' +
-      'Test raw inside `{% raw %}{{{% endraw %}`',
+      'Test raw inside `{% raw %}{{{% endraw %}`'
   );
 
   done();
 });
 
-
-test('Test escape mustache tags', async (done) => {
-  const doc = new MarkdownDocument('/tmp/test.md',
-      `[text](../link/file#anchor)
+test('Test escape mustache tags', async done => {
+  const doc = new MarkdownDocument(
+    '/tmp/test.md',
+    `[text](../link/file#anchor)
       [text](#anchor)
       [sourcecode type="html"]<a href="../source/link.html">text</a>[/sourcecode]
       <a href="#anchor">text</a>
       \`<a href="...">text</a>\`
       <a href="mailto:test@test.test">text</a>
       <a href="link">text</a>
-      <a class="link" href = "../rel/link">text</a>`);
+      <a class="link" href = "../rel/link">text</a>`
+  );
   doc.rewriteRelativePaths('http://test.de/test');
 
   expect(doc.contents).toBe(`[text](http://test.de/test/../link/file#anchor)
@@ -71,15 +75,15 @@ test('Test escape mustache tags', async (done) => {
       \`<a href="...">text</a>\`
       <a href="mailto:test@test.test">text</a>
       <a href="http://test.de/test/link">text</a>
-      <a class="link" href = "http://test.de/test/../rel/link">text</a>`,
-  );
+      <a class="link" href = "http://test.de/test/../rel/link">text</a>`);
 
   done();
 });
 
 test('Test anchor generation', () => {
-  const doc = new MarkdownDocument('/tmp/test.md',
-      '# TestOne\n' +
+  const doc = new MarkdownDocument(
+    '/tmp/test.md',
+    '# TestOne\n' +
       '# test two\n' +
       'paragraph\n' +
       '## test h2\n' +
@@ -88,11 +92,12 @@ test('Test anchor generation', () => {
       '# test anchor <a name="existing"></a>\n' +
       '## test anchor\n' +
       '# with [link](#anchor)\n' +
-      '# test `<code>` &lt;html&gt;<a>foo</a>');
+      '# test `<code>` &lt;html&gt;<a>foo</a>'
+  );
   doc.addExplicitAnchors();
 
   expect(doc.contents).toBe(
-      '# TestOne <a name="testone"></a>\n' +
+    '# TestOne <a name="testone"></a>\n' +
       '# test two <a name="test-two"></a>\n' +
       'paragraph\n' +
       '## test h2 <a name="test-h2"></a>\n' +
@@ -101,5 +106,6 @@ test('Test anchor generation', () => {
       '# test anchor <a name="existing"></a>\n' +
       '## test anchor <a name="test-anchor-1"></a>\n' +
       '# with [link](#anchor) <a name="with-link"></a>\n' +
-      '# test `<code>` &lt;html&gt;<a>foo</a> <a name="test-code-htmlfoo"></a>');
+      '# test `<code>` &lt;html&gt;<a>foo</a> <a name="test-code-htmlfoo"></a>'
+  );
 });

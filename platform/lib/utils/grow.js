@@ -25,11 +25,12 @@ const {project} = require('@lib/utils');
  */
 function exec(args) {
   return sh(
-      // to support local execution where grow is often not in the path, we add the default install path ~/bin
-      ['sh', '-c', `PATH=$PATH:~/bin && grow ${args}`],
-      {
-        workingDir: project.paths.GROW_POD,
-      });
+    // to support local execution where grow is often not in the path, we add the default install path ~/bin
+    ['sh', '-c', `PATH=$PATH:~/bin && grow ${args}`],
+    {
+      workingDir: project.paths.GROW_POD,
+    }
+  );
 }
 
 module.exports = exec;
