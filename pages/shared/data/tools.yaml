@@ -151,7 +151,7 @@ platforms:
       - stories
   - name: RebelMouse
     description: Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern.
-    url: https://www.rebelmouse.com/amp-2644865462.html
+    url: https://www.rebelmouse.com/AMP/
     type: Content Platform
     image:
       src: /static/img/tools/rebelmouse.jpg
