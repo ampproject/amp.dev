@@ -31,34 +31,37 @@ class ErrorList {
     this.container = container;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
     // configure validator
-    events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
-      this.update(validationResult);
-      window.requestIdleCallback(() => {
-        if (validationResult === Validator.NO_VALIDATOR) {
-          this.trigger.setHtml('valid');
-          this.trigger.disable();
-          return;
-        }
-        this.trigger.enable();
-        if (validationResult.status == 'PASS') {
-          this.trigger.disable();
-          return;
-        }
-        this.trigger.enable();
-        this.trigger.setHtml(
+    events.subscribe(
+      Validator.EVENT_NEW_VALIDATION_RESULT,
+      validationResult => {
+        this.update(validationResult);
+        window.requestIdleCallback(() => {
+          if (validationResult === Validator.NO_VALIDATOR) {
+            this.trigger.setHtml('valid');
+            this.trigger.disable();
+            return;
+          }
+          this.trigger.enable();
+          if (validationResult.status == 'PASS') {
+            this.trigger.disable();
+            return;
+          }
+          this.trigger.enable();
+          this.trigger.setHtml(
             validationResult.errors.length +
-          ' Error' +
-          (validationResult.errors.length > 1 ? 's' : ''));
-      });
-    });
+              ' Error' +
+              (validationResult.errors.length > 1 ? 's' : '')
+          );
+        });
+      }
+    );
   }
 
   update(validationResult) {
     this.validationResult = validationResult;
     window.requestIdleCallback(() => {
       /* eslint-disable max-len */
-      this.container.innerHTML =
-        `
+      this.container.innerHTML = `
         <div class="title">
         <button class="button close">
           <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">

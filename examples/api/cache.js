@@ -108,7 +108,9 @@ examples.get('/not-found', (request, response) => {
 examples.get('/redirect', (request, response) => {
   setImmutable(response);
   if (!request.query.url) {
-    response.status().send('No url specified via <code>?url=https://example.com</code>');
+    response
+      .status()
+      .send('No url specified via <code>?url=https://example.com</code>');
     return;
   }
   try {

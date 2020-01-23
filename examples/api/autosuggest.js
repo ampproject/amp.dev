@@ -81,7 +81,7 @@ examples.post('/autosuggest/address', upload.none(), handleAddressRequest);
 function handleSearchRequest(request, response) {
   const query = request.query ? request.query.q : '';
 
-  let results = US_CAPITAL_CITIES.filter((key) => {
+  let results = US_CAPITAL_CITIES.filter(key => {
     return key.toUpperCase().includes(query.toUpperCase());
   });
 
@@ -89,17 +89,17 @@ function handleSearchRequest(request, response) {
     results = results.slice(0, MAX_RESULT_SIZE);
   }
 
-  const items = ({
+  const items = {
     items: [
       {
         query,
         results,
       },
     ],
-  });
+  };
 
   response.json(items);
-};
+}
 
 function handleAddressRequest(request, response) {
   const city = request.body ? request.body.city : '';
@@ -114,6 +114,6 @@ function handleAddressRequest(request, response) {
   response.json({
     result,
   });
-};
+}
 
 module.exports = examples;

@@ -26,7 +26,8 @@ describe('ElementSorting', () => {
 
   const multiLineBody = '\n<body>\n<div></div>';
   const multiLineSidebar = '\n<amp-sidebar>\n<child>\n\n</child></amp-sidebar>';
-  const sidebarWithAttribute = '<amp-sidebar id="menu"><child></child></amp-sidebar>';
+  const sidebarWithAttribute =
+    '<amp-sidebar id="menu"><child></child></amp-sidebar>';
 
   beforeEach(() => {
     doc = new Document();
@@ -110,6 +111,5 @@ describe('ElementSorting', () => {
     cs.preview = string;
     doc.addSection(cs);
     return cs;
-  };
+  }
 });
-

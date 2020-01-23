@@ -31,8 +31,7 @@ const LOG = new Signale({'scope': 'Blog Importer'});
 const DESTINATION_BASE_PATH = project.absolute('pages/shared/data');
 
 class BlogImporter {
-  constructor() {
-  }
+  constructor() {}
 
   import() {
     LOG.start('Beginning to import blog entries ...');
@@ -62,7 +61,7 @@ class BlogImporter {
 
       feedparser.on('readable', function() {
         let rawItem;
-        while (rawItem = this.read()) {
+        while ((rawItem = this.read())) {
           items.push(options.parseFunction(rawItem));
         }
       });
@@ -109,44 +108,49 @@ class BlogImporter {
       promisifiedRequest({
         url: 'https://blog.amp.dev/wp-json/wp/v2/posts/?embedded=true',
         json: true,
-      }).then((response) => {
-        return response.body.map((item) => this.onParseBlogPost(item));
+      }).then(response => {
+        return response.body.map(item => this.onParseBlogPost(item));
       }),
       this.fetchFeedAsync({
-        url: 'https://www.youtube.com/feeds/videos.xml?playlist_id=PLXTOW_XMsIDTIRIu4Af-bqfGkUhPSE75A',
+        url:
+          'https://www.youtube.com/feeds/videos.xml?playlist_id=PLXTOW_XMsIDTIRIu4Af-bqfGkUhPSE75A',
         parseFunction: this.onParseVideo,
       }),
     ]);
 
     // grab all RSS entires, sort them by date and cap at 5 items
     const blogEntries = []
-        .concat(all[0], all[1])
-        .sort((a, b) => {
-          return b.date - a.date;
-        })
-        .slice(0, 5);
+      .concat(all[0], all[1])
+      .sort((a, b) => {
+        return b.date - a.date;
+      })
+      .slice(0, 5);
 
     // join all of the content
-    const blogEntriesYaml = blogEntries.map((item) =>
-      `
-- title: "${ item.type }"
-  image: "${ item.thumbnail }"
-  headline: "${ item.title }"
-  date: "${ item.date.format('MMMM D, YYYY') }"
-  url: "${ item.origin }"
-`,
+    const blogEntriesYaml = blogEntries.map(
+      item =>
+        `
+- title: "${item.type}"
+  image: "${item.thumbnail}"
+  headline: "${item.title}"
+  date: "${item.date.format('MMMM D, YYYY')}"
+  url: "${item.origin}"
+`
     );
 
     const filePath = path.join(DESTINATION_BASE_PATH, './blog.yaml');
 
     // write it to disk
-    return writeFile(
-        filePath,
-        'entries:\n' + blogEntriesYaml.join('')).then(() => {
-      LOG.success(`Saved ${filePath.replace(project.paths.ROOT, '~')}`);
-    }).catch((e) => {
-      LOG.error(`Couldn't save ${filePath.replace(project.paths.ROOT, '~')}`, e);
-    });
+    return writeFile(filePath, 'entries:\n' + blogEntriesYaml.join(''))
+      .then(() => {
+        LOG.success(`Saved ${filePath.replace(project.paths.ROOT, '~')}`);
+      })
+      .catch(e => {
+        LOG.error(
+          `Couldn't save ${filePath.replace(project.paths.ROOT, '~')}`,
+          e
+        );
+      });
   }
 }
 

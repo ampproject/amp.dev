@@ -78,7 +78,8 @@ class Templates {
         variableEnd: '=]',
         commentStart: '[#',
         commentEnd: '#]',
-      }});
+      },
+    });
 
     // Add extension to determine default document format at runtime
     this.nunjucksEnv_.addExtension('SupportedFormatsExtension', new SupportedFormatsExtension());

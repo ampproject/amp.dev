@@ -26,7 +26,7 @@ const examples = express.Router();
 examples.use(cookieParser());
 const AMP_FAVORITE_COOKIE = 'amp-favorite';
 const AMP_FAVORITE_COUNT_COOKIE = 'amp-favorite-with-count';
-const EXPIRATION_DATE = 365*24*60*60*1000; // 365 days in ms
+const EXPIRATION_DATE = 365 * 24 * 60 * 60 * 1000; // 365 days in ms
 
 examples.all('/favorite', upload.none(), (request, response) => {
   setMaxAge(response, 0);

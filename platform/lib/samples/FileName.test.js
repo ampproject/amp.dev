@@ -19,49 +19,45 @@ describe('FileName', () => {
 
   describe('fromString', () => {
     it('returns empty string for undefined', () => {
-      expect(FileName.fromString(null))
-          .toEqual('');
+      expect(FileName.fromString(null)).toEqual('');
     });
     it('appends .html', () => {
-      expect(FileName.fromString('file'))
-          .toEqual('file.html');
+      expect(FileName.fromString('file')).toEqual('file.html');
     });
     it('replaces whitespace with _', () => {
-      expect(FileName.fromString('A String with whitespace'))
-          .toEqual('A_String_with_whitespace.html');
+      expect(FileName.fromString('A String with whitespace')).toEqual(
+        'A_String_with_whitespace.html'
+      );
     });
     it('URI encodes other chars', () => {
-      expect(FileName.fromString('What\'s possible with X?'))
-          .toEqual('What%27s_possible_with_X%3F.html');
+      expect(FileName.fromString("What's possible with X?")).toEqual(
+        'What%27s_possible_with_X%3F.html'
+      );
     });
     it('returns empty string when the file is undefined', () => {
-      expect(FileName.fromString(undefined))
-          .toEqual('');
+      expect(FileName.fromString(undefined)).toEqual('');
     });
     it('Adds path', () => {
-      expect(FileName.fromString('hello', 'world'))
-          .toEqual('hello/world.html');
+      expect(FileName.fromString('hello', 'world')).toEqual('hello/world.html');
     });
   });
 
   describe('toString', () => {
     it('removes file extension', () => {
-      expect(FileName.toString('file.txt'))
-          .toEqual('file');
+      expect(FileName.toString('file.txt')).toEqual('file');
     });
     it('replaces _ with space', () => {
-      expect(FileName.toString('A_String_with_whitespace'))
-          .toEqual('A String with whitespace');
+      expect(FileName.toString('A_String_with_whitespace')).toEqual(
+        'A String with whitespace'
+      );
     });
     it('URI encodes other chars', () => {
-      expect(FileName.toString('What%27s_possible_with_X%3F'))
-          .toEqual('What\'s possible with X?');
+      expect(FileName.toString('What%27s_possible_with_X%3F')).toEqual(
+        "What's possible with X?"
+      );
     });
     it('returns empty string when the file is undefined', () => {
-      expect(FileName.toString(undefined))
-          .toEqual('');
+      expect(FileName.toString(undefined)).toEqual('');
     });
   });
 });
-
-
