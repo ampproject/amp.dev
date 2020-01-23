@@ -12,7 +12,8 @@
   ],
   "rules": {
     "max-len": [2, 100, {
-      "ignoreComments": true,
+			"ignoreComments": true,
+			"ignoreRegExpLiterals": true,
       "ignoreUrls": true,
       "tabWidth": 2
     }],

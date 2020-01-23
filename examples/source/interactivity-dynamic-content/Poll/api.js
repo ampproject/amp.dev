@@ -28,7 +28,8 @@ examples.use(cookieParser());
 
 // eslint-disable-next-line max-len
 const ALREADY_VOTED_MESSAGE =
-  'You have already answered this poll. If you want to run this sample again, use an incognito window.';
+  'You have already answered this poll. If you want to run this sample again,' +
+  'use an incognito window.';
 const THANKS_MESSAGE = 'Thanks for answering the poll!';
 const POLL_COOKIE_NAME = 'POLL_TAKEN';
 const EXPIRATION_DATE = 365 * 24 * 60 * 60 * 1000; // 365 days in ms
