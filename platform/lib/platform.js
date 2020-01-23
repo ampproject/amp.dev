@@ -141,12 +141,11 @@ class Platform {
     );
     this.server.use(await subdomain.map(config.hosts.go, routers.go));
     this.server.use(await subdomain.map(config.hosts.log, routers.log));
-    // eslint-disable-next-line new-cap
     this.server.use(
       await subdomain.map(
         config.hosts.preview,
         express
-          .Router()
+          .Router() // eslint-disable-line new-cap
           .use([
             routers.example.api,
             routers.example.static,
@@ -179,8 +178,8 @@ class Platform {
 
   _configureErrorHandlers() {
     // handle errors
+    // eslint-disable-next-line no-unused-vars
     this.server.use((err, req, res, next) => {
-      // eslint-disable-line no-unused-vars
       if (err) {
         console.error('[ERROR]', err);
         res.status(500).sendFile('500.html', {root: pagePath()});
