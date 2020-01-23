@@ -149,6 +149,17 @@ platforms:
       height: 1000
     formats:
       - stories
+  - name: RebelMouse
+    description: Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern.
+    url: https://www.rebelmouse.com/AMP/
+    type: Content Platform
+    image:
+      src: /static/img/tools/rebelmouse.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites    
+      - stories      
   - name: Tick. Done.
     description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
     url: http://tick.co/
