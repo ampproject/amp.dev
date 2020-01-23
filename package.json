@@ -131,7 +131,7 @@
     "html-webpack-inline-source-plugin": "1.0.0-beta.2",
     "html-webpack-plugin": "4.0.0-beta.11",
     "http-proxy-response-rewrite": "0.0.1",
-    "husky": "4.0.3",
+    "husky": "4.2.1",
     "jasmine": "3.5.0",
     "jest": "24.9.0",
     "jimp": "0.9.3",
