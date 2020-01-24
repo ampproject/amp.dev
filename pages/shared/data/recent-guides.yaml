@@ -1,3 +1,5 @@
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/release-schedule.md
+  date: '2020-01-24 11:07:21 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md
   date: '2019-11-08 10:50:46 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/index.md
@@ -68,9 +70,9 @@
   date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md
   date: '2019-02-04 18:46:52 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md
-  date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
+  date: '2019-02-04 18:46:52 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md
   date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md
   date: '2019-02-03 12:25:13 -0800'
@@ -226,6 +228,18 @@
   date: '2018-12-01 01:12:23 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md
   date: '2018-12-01 01:12:23 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md
+  date: '2018-11-30 08:03:59 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md
+  date: '2018-11-30 08:03:59 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md
+  date: '2018-11-30 08:03:59 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md
+  date: '2018-11-30 08:03:59 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md
+  date: '2018-11-30 08:03:59 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md
+  date: '2018-11-30 08:03:59 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_carousels.md
   date: '2018-11-30 08:03:59 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/adding_components.md
@@ -243,18 +257,6 @@
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/setting_up.md
   date: '2018-11-30 08:03:59 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/add_advanced/tracking_data.md
-  date: '2018-11-30 08:03:59 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/building-page.md
-  date: '2018-11-30 08:03:59 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/congratulations.md
-  date: '2018-11-30 08:03:59 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/discoverable.md
-  date: '2018-11-30 08:03:59 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/index.md
-  date: '2018-11-30 08:03:59 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/resolving-errors.md
-  date: '2018-11-30 08:03:59 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/start/converting/setting-up.md
   date: '2018-11-30 08:03:59 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/create/basic_markup.md
   date: '2018-11-30 08:03:59 -0800'
