@@ -16,8 +16,8 @@
     <div class="ap-o-stage">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
-          <h1 class="ap-o-stage-content-headline">Working Groups</h1>
-          <h2 class="ap-o-stage-content-subline">Encouraging More Voices in AMP</h2>
+          <h1 class="ap-o-stage-content-headline">{{ _('Working Groups') }}</h1>
+          <h2 class="ap-o-stage-content-subline">{{ _('Encouraging More Voices in AMP') }}</h2>
         </div>
         <div class="ap-o-stage-image">
           <amp-img alt="AMP Working Group"
@@ -41,16 +41,16 @@
 
   <div class="ap-o-wg">
     <section class="ap-o-wg-intro">
-      <p>An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMPS's Technical Steering Committee.</p>
-      <p>Most Working Groups provide bi-weekly status updates and present quarterly high-level updates in round-robin fashion at Design Reviews.</p>
-      <h4>AMP's Working Groups are:</h4>
+      <p>{{ _('An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.') }}</p>
+      <p>{{ _('Most Working Groups provide bi-weekly status updates and present quarterly high-level updates in round-robin fashion at Design Reviews.') }}</p>
+      <h4>{{ _('AMP’s Working Groups are:') }}</h4>
     </section>
     <section class="ap-o-wg-content">
       <div class="ap-o-wg-nav">
         <ul>
           {% for group in g.collection('/content/amp-dev/community/working-groups').list_docs(locale=doc.locale) %}
           <li class="ap-o-wg-nav-bubble {% if group.name in doc.path %} active {% endif %}">
-            <a href="{{ g.doc('/content/amp-dev/community/working-groups/' + group.name, locale=doc.locale).url.path }}">{{ group.full_name }}</a>
+            <a href="{{ g.doc('/content/amp-dev/community/working-groups/' + group.name, locale=doc.locale).url.path }}">{{ _(group.full_name) }}</a>
           </li>
           {% endfor %}
         </ul>
@@ -65,15 +65,15 @@
           </div>
 
           <section class="ap-o-wg-group-section ap-o-wg-group-description">
-            <p>Working Group</p>
-            <h2>{{ doc.full_name }}</h2>
-            <p>{{ doc.description|markdown|safe }}</p>
-            <p>The facilitator of {{ doc.full_name }} is: <a href="#">@{{ doc.facilitator.login }}</a></p>
+            <p>{{ _('Working Group') }}</p>
+            <h2>{{ _(doc.full_name) }}</h2>
+            <p>{{ _(doc.description|markdown|safe) }}</p>
+            <p>{{ _('The facilitator of {name} is: ', name=doc.full_name) }}<a href="#">@{{ doc.facilitator.login }}</a></p>
           </section>
 
           {% if doc.issues %}
           <section class="ap-o-wg-group-section">
-            <h3>Current Issues</h3>
+            <h3>{{ _('Current Issues') }}</h3>
             {% if doc.issues|length > 3 %}
             <input type="checkbox" id="load-issues-checkbox"/>
             {% endif %}
@@ -102,14 +102,14 @@
             </div>
             {% if doc.issues|length > 3 %}
             <label class="ap-a-btn ap-o-wg-load-btn" for="load-issues-checkbox">
-              <span>View all</span>
+              <span>{{ _('View all') }}</span>
             </label>
             {% endif %}
           </section>
           {% endif %}
 
           <section class="ap-o-wg-group-section">
-            <h3>Members</h3>
+            <h3>{{ _('Members') }}</h3>
             <div class="ap-o-wg-grid">
               <a href="https://github.com/{{ doc.facilitator.login }}" target="_blank" rel="noopener" class="ap-o-wg-member active">
                 <amp-img class="ap-o-wg-member-img"
@@ -141,12 +141,12 @@
               {% endfor %}
               {% endif %}
             </div>
-            <p><a href={{ doc.html_url }} target="_blank" rel="noopener">The GitHub Team</a> also includes {{ doc.full_name }} WG members.</p>
+            <p>{{ _('<a href={{ doc.html_url }} target="_blank" rel="noopener">The GitHub Team</a> also includes { name } WG members.',  name=doc.full_name) }}</p>
           </section>
 
           {% if doc.communication %}
           <section class="ap-o-wg-group-section">
-            <h3>Communication Channels</h3>
+            <h3>{{ _('Communication Channels') }}</h3>
             {% for item in doc.communication %}
             <div class="ap-o-wg-channel">
               <div class="ap-o-wg-channel-icon ap-o-wg-channel-icon-{{ item.channel }}">
@@ -156,9 +156,9 @@
                 </div>
               </div>
               <div class="ap-o-wg-channel-text">
-                <h4>{{ item.name }}</h4>
+                <h4>{{ _(item.name) }}</h4>
                 {% for el in item.content %}
-                <p>{{ el.item|markdown|safe }}</p>
+                <p>{{ _(el.item|markdown|safe) }}</p>
                 {% endfor %}
 
                 {% if (item.channel == 'slack' or item.channel == 'github') %}
@@ -181,29 +181,29 @@
       </div>
     </section>
     <section class="ap-o-wg-related">
-      <h2>Other ways to get involved with AMP</h2>
+      <h2>{{ _('Other ways to get involved with AMP') }}</h2>
       <div class="ap-o-wg-related-item">
-        <h3>Contribute to AMP</h3>
-        <p>The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP There are many ways for you to contribute.</p>
+        <h3>{{ _('Contribute to AMP') }}</h3>
+        <p>{{ _('The AMP Project would not be possible without help from all members of the community whether you are a developer, content creator or provider of services relevant to AMP There are many ways for you to contribute.') }}</p>
         <div class="ap-o-benefits-overview-link">
           <a href="{{ g.doc('/content/amp-dev/documentation/guides-and-tutorials/contribute/index.md', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ap-m-lnk-text">Contribute</span>
+            <span class="ap-m-lnk-text">{{ _('Contribute') }}</span>
           </a>
         </div>
       </div>
       <div class="ap-o-wg-related-item">
-        <h3>Governance Body</h3>
-        <p>Learn more about the Advisory Committee and Technical Steering Committee.</p>
+        <h3>{{ _('Governance Body') }}</h3>
+        <p>{{ _('Learn more about the Advisory Committee and Technical Steering Committee.') }}</p>
           <a href="{{ g.doc('/content/amp-dev/community/governance.md', locale=doc.locale).url.path }}" class="ap-m-lnk ap-m-lnk-square">
             <div class="ap-a-ico ap-m-lnk-icon">
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ap-m-lnk-text">Governance</span>
+            <span class="ap-m-lnk-text">{{ _('Governance') }}</span>
           </a>
         </div>
     </section>

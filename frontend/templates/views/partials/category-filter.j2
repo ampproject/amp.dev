@@ -14,7 +14,7 @@
     [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
     on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
     name="all">
-    All
+    {{ _('All') }}
   </button>
   {% for category, components in categories %}
   {% set scope = namespace(categoryFormats = []) %}

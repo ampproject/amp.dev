@@ -8,7 +8,7 @@
     <div class="ap-m-teaser-tag-icon ap-m-teaser-tag-{{tool.formats[0]}} ap-a-ico">
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{tool.formats[0]}}"></use></svg>
     </div>
-    {{ tool.formats[0]|title }}
+    {{ _(tool.formats[0]|title) }}
   </div>
   {% endif %}
   <a href="{{ tool.url }}">
@@ -36,15 +36,15 @@
           {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo-transparent.svg') -%}
             <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-transparent"></use></svg></div>
           {%- endif -%}
-          {{- teaser.name -}}
+          {{- _(teaser.name) -}}
           </h4>
           {% if teaser.description %}
-          <p>{{ teaser.description }}</p>
+          <p>{{ _(teaser.description) }}</p>
           {% endif %}
         </div>
 
         {% if teaser.type %}
-        <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type|lower }}">{{ teaser.type }}</div>
+        <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type|lower }}">{{ _(teaser.type) }}</div>
         {% endif %}
       </div>
 
