@@ -96,7 +96,7 @@
     "@babel/plugin-transform-runtime": "7.7.4",
     "@babel/preset-env": "7.7.7",
     "@babel/runtime": "7.7.7",
-    "@octokit/rest": "16.36.0",
+    "@octokit/rest": "16.38.3",
     "absolutify": "0.1.0",
     "amphtml-validator": "1.0.29",
     "archiver": "3.1.1",
