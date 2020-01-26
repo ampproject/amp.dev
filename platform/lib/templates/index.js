@@ -21,6 +21,7 @@ const config = require('../config.js');
 const growPageLoader = require('../common/growPageLoader');
 const LRU = require('lru-cache');
 const {getFormatFromRequest} = require('../amp/formatHelper.js');
+const {SupportedFormatsExtension} = require('./SupportedFormatsExtension.js');
 
 const ALLOWED_LEVEL = ['beginner', 'advanced'];
 let templates = null;
@@ -32,6 +33,11 @@ let templates = null;
  * @return {Object}
  */
 function createRequestContext(request={'query': {}}, context={}) {
+  // Store the initially requested format to be able
+  // to match user request against available formats later
+  context.requestedFormat = request.query.format;
+  // Then normalize what might be set by the user and set a
+  // sensible default for the templates
   context.format = getFormatFromRequest(request);
 
   if (ALLOWED_LEVEL.includes(request.query.level)) {
@@ -73,6 +79,9 @@ class Templates {
         commentStart: '[#',
         commentEnd: '#]',
       }});
+
+    // Add extension to determine default document format at runtime
+    this.nunjucksEnv_.addExtension('SupportedFormatsExtension', new SupportedFormatsExtension());
 
     // One locale has ~860 pages with each weighing ~92KB. The cache therefore
     // maxes out at ~224MB to be safe
