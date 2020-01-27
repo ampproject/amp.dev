@@ -490,6 +490,19 @@ event.response</pre></td>
   </tr>
 </table>
 
+### amp-lightbox-gallery <a name="amp-lightbox-gallery"></a>
+
+<table>
+  <tr>
+    <th>Action</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>open</code></td>
+    <td>Opens the lightbox-gallery. Can be triggered by tapping another element, if you specify the image id: `on="tap:amp-lightbox-gallery.open(id='image-id')"`.</td>
+  </tr>
+</table>
+
 ### amp-list <a name="amp-list-1"></a>
 
 <table>
@@ -663,11 +676,11 @@ actions that apply to the whole document.
     <td>Opens the Print Dialog to print the current page.</td>
   </tr>
   <tr>
-    <td><code>scrollTo(id='STRING', position='STRING')</code></td>
-    <td>Scrolls to the provided element ID on the current page. <code>position</code> takes value of <code>'top'</code>, <code>'center'</code>, or <code>'bottom'</code></td>
+    <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
+    <td>Scrolls to the provided element ID on the current page.</td>
   </tr>
   <tr>
-    <td><code>optoutOfCid</code></td>
+    <td>optoutOfCid</td>
     <td>Opts out of Client ID generation for all scopes.</td>
   </tr>
   <tr>
