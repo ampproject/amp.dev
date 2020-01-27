@@ -133,7 +133,7 @@
     "http-proxy-response-rewrite": "0.0.1",
     "husky": "4.2.1",
     "jasmine": "3.5.0",
-    "jest": "25.0.0",
+    "jest": "25.1.0",
     "jimp": "0.9.3",
     "js-beautify": "1.10.2",
     "keymaster": "1.6.2",
