@@ -1,5 +1,6 @@
 {% do doc.styles.addCssFile('css/components/molecules/teaser-success-story.css') %}
-<div class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}" [hidden]="activeFilter.chosenFilter != 'none' && !{{ tool.formats }}.includes(activeFilter.chosenFilter)">
+<div [% if format not in '{{tool.formats}}' %]hidden[% endif %]
+    class="ap-m-teaser ap-m-teaser-success-story ap-m-teaser-card-{{ tool.type|lower }} {% for format in tool.formats %} ap--{{ format }}{% endfor %}">
   {% if tool.formats and tool.formats|length == 1 and not format %}
   {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
   <div class="ap-m-tag ap-m-tag-{{ tool.formats[0] }} ap-m-teaser-tag" role="filter" tabindex="0"
@@ -24,27 +25,27 @@
       {% endif %}
 
       <div>
-          <div class="ap-m-teaser-content">
-            {% if teaser.logo %}
-            <div class="ap-a-img ap-m-teaser-logo fixed-container">
-              <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
-            </div>
-            {% endif %}
-
-            <h4 class="ap-m-teaser-headline">
-            {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo-transparent.svg') -%}
-              <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-transparent"></use></svg></div>
-            {%- endif -%}
-            {{- teaser.name -}}
-            </h4>
-            {% if teaser.description %}
-            <p>{{ teaser.description }}</p>
-            {% endif %}
+        <div class="ap-m-teaser-content">
+          {% if teaser.logo %}
+          <div class="ap-a-img ap-m-teaser-logo fixed-container">
+            <amp-img class="contain" src="{{ teaser.logo.src }}" layout="fill" alt="{{ teaser.logo.alt }}"></amp-img>
           </div>
-
-          {% if teaser.type %}
-          <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type|lower }}">{{ teaser.type }}</div>
           {% endif %}
+
+          <h4 class="ap-m-teaser-headline">
+          {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo-transparent.svg') -%}
+            <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-transparent"></use></svg></div>
+          {%- endif -%}
+          {{- teaser.name -}}
+          </h4>
+          {% if teaser.description %}
+          <p>{{ teaser.description }}</p>
+          {% endif %}
+        </div>
+
+        {% if teaser.type %}
+        <div class="ap-m-teaser-type ap-m-teaser-type-{{ tool.type|lower }}">{{ teaser.type }}</div>
+        {% endif %}
       </div>
 
     </div>
