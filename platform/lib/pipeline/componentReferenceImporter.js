@@ -19,7 +19,7 @@ require('module-alias/register');
 // If a doc is broken in a release, add it to this this list to fetch from master instead.
 //
 // DON'T FORGET TO REMOVE ONCE IT'S FIXED
-const DOCS_TO_FETCH_FROM_MASTER = ['amp-script', 'amp-carousel', 'amp-consent'];
+const DOCS_TO_FETCH_FROM_MASTER = ['amp-script', 'amp-carousel', 'amp-consent', 'amp-bind'];
 const DEFAULT_VERSION = 0.1;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
