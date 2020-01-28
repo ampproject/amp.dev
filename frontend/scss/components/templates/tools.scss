@@ -156,6 +156,10 @@ section.#{utility('tools')} {
       vertical-align: middle;
     }
 
+    &-link {
+      margin-right: 8px;
+    }
+
     &-reset {
       overflow: hidden;
       display: flex;
