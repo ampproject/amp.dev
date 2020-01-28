@@ -141,6 +141,7 @@ body.amp-mode-touch .no-touch-only {
     grid-template-columns: 4em repeat(7, 1fr);
   }
   .content span {
+    hyphens: auto;
     word-break: break-word;
   }
 }
@@ -149,35 +150,63 @@ body.amp-mode-touch .no-touch-only {
     grid-template-rows: auto 75px auto auto 75px 75px 75px auto auto 75px;
   }
   .box {
-    font-size: x-small;
     padding: 4px;
+  }
+  .header,
+  .sidebar {
+    font-size: x-small;
+  }
+  .instructions {
+    font-size: small;
   }
   .content span {
     font-size: 0;
-    hyphens: auto;
     margin-top: 3px;
     writing-mode: vertical-rl;
   }
   .content span code {
     display: none;
-    font-size: x-small;
+    font-size: small;
   }
   .content span code:first-of-type {
     display: inherit;
   }
 }
+@media (max-width: 1024px) {
+  .content.week-1:hover,
+  .content.week-5:hover {
+    font-size: x-small;
+  }
+}
 @media (max-width: 843px) {
   #calendar {
     gap: 2px;
+    grid-template-columns: 3em repeat(7, 1fr);
   }
-  .box,
-  .content span code {
+  .header,
+  .sidebar {
     font-size: xx-small;
   }
   .header {
     font-size: 0;
   }
+  .instructions,
+  .content span code,
   .header::first-letter {
     font-size: small;
+  }
+}
+@media (max-width: 768px) {
+  .content.week-1:hover,
+  .content.week-5:hover,
+  .instructions,
+  .content span code {
+    font-size: small;
+  }
+}
+@media (max-width: 656px) {
+  .content.week-1:hover,
+  .content.week-5:hover {
+    font-size: x-small;
   }
 }
