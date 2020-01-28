@@ -20,7 +20,10 @@ const nunjucks = require('nunjucks');
 const config = require('../config.js');
 const growPageLoader = require('../common/growPageLoader');
 const LRU = require('lru-cache');
-const {getFormatFromRequest} = require('../amp/formatHelper.js');
+const {
+  getFormatFromRequest,
+  SUPPORTED_FORMATS,
+} = require('../amp/formatHelper.js');
 const {SupportedFormatsExtension} = require('./SupportedFormatsExtension.js');
 
 const ALLOWED_LEVEL = ['beginner', 'advanced'];
@@ -34,8 +37,10 @@ let templates = null;
  */
 function createRequestContext(request = {'query': {}}, context = {}) {
   // Store the initially requested format to be able
-  // to match user request against available formats later
-  context.requestedFormat = request.query.format;
+  // to match user request against available formats
+  context.requestedFormat = SUPPORTED_FORMATS.includes(request.query.format)
+    ? request.query.format
+    : '';
   // Then normalize what might be set by the user and set a
   // sensible default for the templates
   context.format = getFormatFromRequest(request);
