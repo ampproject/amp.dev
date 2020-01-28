@@ -35,7 +35,8 @@ let templates = null;
 function createRequestContext(request={'query': {}}, context={}) {
   // Store the initially requested format to be able
   // to match user request against available formats
-  context.requestedFormat = SUPPORTED_FORMATS.includes(request.query.format) ? request.query.format : '';
+  context.requestedFormat =
+    SUPPORTED_FORMATS.includes(request.query.format) ? request.query.format : '';
   // Then normalize what might be set by the user and set a
   // sensible default for the templates
   context.format = getFormatFromRequest(request);
