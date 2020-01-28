@@ -33,8 +33,8 @@ const PAGES_BASE_PATH = POD_BASE_PATH + 'content/amp-dev';
 // The pattern to find links in markdown and html
 // It also matches source code blocks to skip these
 const REFERENCE_PATTERN = new RegExp(
-    // skip sourcecode block in markdown:
-    /^```[\s\S]*?```/.source +
+  // skip sourcecode block in markdown:
+  /^```[\s\S]*?```/.source +
     '|' +
     // skip sourcecode tag in markdown
     /\[sourcecode[^\]]*\][\s\S]*?\[\/sourcecode\]/.source +
@@ -46,28 +46,30 @@ const REFERENCE_PATTERN = new RegExp(
     /\[[^\]]+\]\(([^:\)\{?#]*)(?:\?[^#\)]*)?(#[^\)]*)?\)/.source +
     '|' +
     // find {{g.doc('link')}} links:
-    /g.doc\('(.*?)'/.source
-    , 'gm');
+    /g.doc\('(.*?)'/.source,
+  'gm'
+);
 /* eslint-disable max-len */
 // Contains manual hints for double filenames etc.
 const LOOKUP_TABLE = {
-  '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/validate.md':
+    '/content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/learn/how_cached.md':
-  '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md',
+    '/content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.md':
-  '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md',
+    '/content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md',
   '/content/amp-dev/documentation/guides-and-tutorials/integrate/pwa-amp/index.md':
-  '/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md',
-  '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md': '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md',
+    '/content/amp-dev/documentation/guides-and-tutorials/integrate/amp-in-pwa.md',
+  '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/index.md':
+    '/content/amp-dev/documentation/guides-and-tutorials/learn/spec/amphtml.md',
 };
 /* eslint-enable max-len */
 // The following paths are skipped when checked for existance
-const IGNORED_PATH_PATTERNS =
-  /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate/g;
+const IGNORED_PATH_PATTERNS = /\/content\/amp-dev\/documentation\/components\/reference\/.*?|\/boilerplate/g;
 
 // The list of imported docs. Here we do not check anchors.
-const IMPORTED_DOCS = require(__dirname + '/../../config/imports/spec.json')
-    .map((spec) => '/content/amp-dev/' + spec.to);
+const IMPORTED_DOCS = require(__dirname +
+  '/../../config/imports/spec.json').map(spec => '/content/amp-dev/' + spec.to);
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -95,16 +97,20 @@ class GrowReferenceChecker {
   }
 
   start() {
-    this._log.start(`Inspecting documents in ${PAGES_SRC} for broken references ...`);
+    this._log.start(
+      `Inspecting documents in ${PAGES_SRC} for broken references ...`
+    );
 
     return new Promise(async (resolve, reject) => {
       await this._readAnchors();
 
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
 
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        callback(null, this._check(doc));
-      }));
+      stream = stream.pipe(
+        through.obj((doc, encoding, callback) => {
+          callback(null, this._check(doc));
+        })
+      );
 
       stream = stream.pipe(gulp.dest('./'));
 
@@ -113,22 +119,28 @@ class GrowReferenceChecker {
 
         if (this._brokenReferencesCount > 0) {
           this._log.complete('Finished automatic fixing.');
-          this._log.complete(`A total of ${this._brokenReferencesCount} links had ` +
-            `errors. ${this._unfindableDocuments.length +
-            Object.keys(this._multipleMatches).length} still have.`);
+          this._log.complete(
+            `A total of ${this._brokenReferencesCount} links had ` +
+              `errors. ${this._unfindableDocuments.length +
+                Object.keys(this._multipleMatches).length} still have.`
+          );
         }
 
-        if (Object.keys(this._multipleMatches).length == 0 &&
-            this._unfindableDocuments.length == 0 &&
-            this._wrongAnchorCount == 0) {
+        if (
+          Object.keys(this._multipleMatches).length == 0 &&
+          this._unfindableDocuments.length == 0 &&
+          this._wrongAnchorCount == 0
+        ) {
           this._log.success('All references intact!');
           resolve();
           return;
         }
 
         if (this._unfindableDocuments.length) {
-          this._log.info(`Could not automatically fix ${this._unfindableDocuments.length} ` +
-            'as there wasn\'t any document with a matching basename:');
+          this._log.info(
+            `Could not automatically fix ${this._unfindableDocuments.length} ` +
+              "as there wasn't any document with a matching basename:"
+          );
           for (const documentPath of this._unfindableDocuments) {
             this._log.pending(`- ${documentPath}`);
           }
@@ -138,22 +150,38 @@ class GrowReferenceChecker {
 
         const multipleMatchesCount = Object.keys(this._multipleMatches).length;
         if (multipleMatchesCount !== 0) {
-          this._log.info(`Encountered multiple possible matches for ${multipleMatchesCount} ` +
-          'documents:');
+          this._log.info(
+            `Encountered multiple possible matches for ${multipleMatchesCount} ` +
+              'documents:'
+          );
           for (const documentPath in this._multipleMatches) {
-            if (Object.prototype.hasOwnProperty.call(this._multipleMatches, documentPath)) {
+            if (
+              Object.prototype.hasOwnProperty.call(
+                this._multipleMatches,
+                documentPath
+              )
+            ) {
               this._log.pending(`${documentPath}`);
               for (const possibleMatch of this._multipleMatches[documentPath]) {
-                this._log.pending(`-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`);
+                this._log.pending(
+                  `-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`
+                );
               }
             }
           }
         }
 
-        if (this._unfindableDocuments.length > 0 || multipleMatchesCount > 0 ||
-            this._wrongAnchorCount > 0) {
-          reject(new Error(`${this._unfindableDocuments.length + multipleMatchesCount} ` +
-              `broken links and ${this._wrongAnchorCount} wrong anchors found`));
+        if (
+          this._unfindableDocuments.length > 0 ||
+          multipleMatchesCount > 0 ||
+          this._wrongAnchorCount > 0
+        ) {
+          reject(
+            new Error(
+              `${this._unfindableDocuments.length + multipleMatchesCount} ` +
+                `broken links and ${this._wrongAnchorCount} wrong anchors found`
+            )
+          );
         } else {
           resolve();
         }
@@ -165,15 +193,19 @@ class GrowReferenceChecker {
     return new Promise((resolve, reject) => {
       // we skip html files, since they sometimes use imports of other documents
       // where we cannot resolve the anchors
-      let stream = gulp.src([PAGES_SRC, `!${POD_BASE_PATH}/**/*.html`],
-          {'read': true, 'base': './'});
+      let stream = gulp.src([PAGES_SRC, `!${POD_BASE_PATH}/**/*.html`], {
+        'read': true,
+        'base': './',
+      });
       stream.on('end', () => {
         resolve();
       });
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        this._readAnchorsForDoc(doc, callback);
-        callback();
-      }));
+      stream = stream.pipe(
+        through.obj((doc, encoding, callback) => {
+          this._readAnchorsForDoc(doc, callback);
+          callback();
+        })
+      );
     });
   }
 
@@ -182,13 +214,13 @@ class GrowReferenceChecker {
     const content = doc.contents.toString();
 
     const TITLE_PATTERN =
-        // eslint-disable-next-line max-len
-        /^#+[ \t]*(.*?)(?:<a[ \t]+name="([^">]+)"[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$|<a\s+name="(.+?)"|<\w[^>]*\sid="(.+?)"/gm;
+      // eslint-disable-next-line max-len
+      /^#+[ \t]*(.*?)(?:<a[ \t]+name="([^">]+)"[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$|<a\s+name="(.+?)"|<\w[^>]*\sid="(.+?)"/gm;
 
     const slugGenerator = new SlugGenerator();
 
     let match;
-    while (match = TITLE_PATTERN.exec(content)) {
+    while ((match = TITLE_PATTERN.exec(content))) {
       const title = match[1] + match[3];
       const anchor = match[2] || match[4] || match[5];
       if (anchor) {
@@ -207,7 +239,7 @@ class GrowReferenceChecker {
         }
       }
     }
-    this._anchorsByPage[this._getPathInPod(doc)]=anchors;
+    this._anchorsByPage[this._getPathInPod(doc)] = anchors;
     return doc;
   }
 
@@ -219,28 +251,29 @@ class GrowReferenceChecker {
    */
   _check(doc) {
     let content = doc.contents.toString();
-    content = content.replace(REFERENCE_PATTERN,
-        (match, hrefLink, hrefAnchor, markdownLink, markdownAnchor, gDocLink) => {
-          let result = match;
-          const link = hrefLink || markdownLink || gDocLink;
-          const anchor = hrefAnchor || markdownAnchor;
-          let resultLink;
-          if (link) {
-            resultLink = this._verifyReference(link, doc);
-            if (resultLink && resultLink != link) {
-              result = result.replace(link, resultLink);
-            }
+    content = content.replace(
+      REFERENCE_PATTERN,
+      (match, hrefLink, hrefAnchor, markdownLink, markdownAnchor, gDocLink) => {
+        let result = match;
+        const link = hrefLink || markdownLink || gDocLink;
+        const anchor = hrefAnchor || markdownAnchor;
+        let resultLink;
+        if (link) {
+          resultLink = this._verifyReference(link, doc);
+          if (resultLink && resultLink != link) {
+            result = result.replace(link, resultLink);
           }
-          // we will only check the anchor if the target page is found
-          if (anchor && !(link && !resultLink)) {
-            const newAnchor = this._checkAnchor(anchor,
-                resultLink, doc);
-            if (newAnchor != anchor) {
-              result = result.replace(anchor, newAnchor);
-            }
+        }
+        // we will only check the anchor if the target page is found
+        if (anchor && !(link && !resultLink)) {
+          const newAnchor = this._checkAnchor(anchor, resultLink, doc);
+          if (newAnchor != anchor) {
+            result = result.replace(anchor, newAnchor);
           }
-          return result;
-        });
+        }
+        return result;
+      }
+    );
 
     doc.contents = Buffer.from(content);
     return doc;
@@ -259,8 +292,15 @@ class GrowReferenceChecker {
       let targetPath = linkedPath.replace(/@[^.]+/, ''); // remove locale
       targetPath = this._resolveRelativeLink(targetPath, doc);
       if (sourcePath.includes('@')) {
-        localePaths.add(this._getPathForLocale(targetPath, sourcePath.substring(
-            sourcePath.indexOf('@') + 1, sourcePath.lastIndexOf('.'))));
+        localePaths.add(
+          this._getPathForLocale(
+            targetPath,
+            sourcePath.substring(
+              sourcePath.indexOf('@') + 1,
+              sourcePath.lastIndexOf('.')
+            )
+          )
+        );
       } else {
         for (const locale of config.getAvailableLocales()) {
           if (sourcePath == this._getPathForLocale(sourcePath, locale)) {
@@ -276,22 +316,38 @@ class GrowReferenceChecker {
     const errorLocales = [];
     for (const localePath of localePaths) {
       const foundAnchor = this._resolveAnchor(anchorValue, localePath);
-      if (!foundAnchor || resultAnchor && foundAnchor != resultAnchor) {
+      if (!foundAnchor || (resultAnchor && foundAnchor != resultAnchor)) {
         errorLocales.push(localePath);
       } else if (!resultAnchor) {
         resultAnchor = foundAnchor;
       }
     }
     if (errorLocales.length > 0) {
-      if (IMPORTED_DOCS.includes(sourcePath) ||
-          sourcePath.match(IGNORED_PATH_PATTERNS) && !sourcePath.includes('@')) {
-        this._log.warn('anchor not found in imported document', anchor, '\n',
-            'found in:', doc.path, '\n',
-            'target:', linkedPath ? errorLocales : '<internal>');
+      if (
+        IMPORTED_DOCS.includes(sourcePath) ||
+        (sourcePath.match(IGNORED_PATH_PATTERNS) && !sourcePath.includes('@'))
+      ) {
+        this._log.warn(
+          'anchor not found in imported document',
+          anchor,
+          '\n',
+          'found in:',
+          doc.path,
+          '\n',
+          'target:',
+          linkedPath ? errorLocales : '<internal>'
+        );
       } else {
-        this._log.error('anchor not found', anchor, '\n',
-            'found in:', doc.path, '\n',
-            'target:', linkedPath ? errorLocales : '<internal>');
+        this._log.error(
+          'anchor not found',
+          anchor,
+          '\n',
+          'found in:',
+          doc.path,
+          '\n',
+          'target:',
+          linkedPath ? errorLocales : '<internal>'
+        );
         this._wrongAnchorCount++;
       }
       return anchor;
@@ -300,8 +356,8 @@ class GrowReferenceChecker {
   }
 
   _getPathForLocale(filePath, locale) {
-    const pathWithLocale = filePath.substring(
-        0, filePath.lastIndexOf('.md')) + '@' + locale + '.md';
+    const pathWithLocale =
+      filePath.substring(0, filePath.lastIndexOf('.md')) + '@' + locale + '.md';
     if (this._anchorsByPage.hasOwnProperty(pathWithLocale)) {
       return pathWithLocale;
     } else {
@@ -356,8 +412,9 @@ class GrowReferenceChecker {
     if (changedPath) {
       if (changedPath.startsWith('/')) {
         changedPath = path.relative(
-            path.dirname(doc.path),
-            path.join(POD_BASE_PATH, changedPath));
+          path.dirname(doc.path),
+          path.join(POD_BASE_PATH, changedPath)
+        );
       }
       return changedPath;
     }
@@ -368,13 +425,17 @@ class GrowReferenceChecker {
     // If there is more than one match store all matches for the user to
     // do the manual fixing
     if (results.length > 1) {
-      this._log.error(`More than one possible match for ${documentPath}. Needs manual fixing.` +
-        ` (In ${doc.path})`);
+      this._log.error(
+        `More than one possible match for ${documentPath}. Needs manual fixing.` +
+          ` (In ${doc.path})`
+      );
       this._multipleMatches[documentPath] = results;
       return null;
     } else if (results.length == 0) {
-      this._log.error(`No matching document found for ${documentPath}. Needs manual fixing.` +
-        ` (First found in ${doc.path})`);
+      this._log.error(
+        `No matching document found for ${documentPath}. Needs manual fixing.` +
+          ` (First found in ${doc.path})`
+      );
       this._unfindableDocuments.push(documentPath);
       return null;
     }
@@ -435,16 +496,21 @@ class GrowReferenceChecker {
 
     // search for the same file in other dirs
     let results = search.recursiveSearchSync(
-        new RegExp(basename, 'i'), PAGES_BASE_PATH);
+      new RegExp(basename, 'i'),
+      PAGES_BASE_PATH
+    );
 
     if (results.length === 0) {
       const ext = path.extname(documentPath);
 
       // check if we can find the file with the other std extension
       if (ext === '.html' || ext === '.md') {
-        basename = path.basename(basename, ext) + (ext === '.md' ? '.html' : '.md');
+        basename =
+          path.basename(basename, ext) + (ext === '.md' ? '.html' : '.md');
         results = search.recursiveSearchSync(
-            new RegExp(basename, 'i'), PAGES_BASE_PATH);
+          new RegExp(basename, 'i'),
+          PAGES_BASE_PATH
+        );
       }
     }
     return results;
@@ -489,10 +555,12 @@ class GrowReferenceChecker {
       this._log.info('Add explicit anchors to:', pages);
 
       let stream = gulp.src(pages, {'read': true, 'base': './'});
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        this._addExplicitAnchorsForDoc(doc);
-        callback(null, doc);
-      }));
+      stream = stream.pipe(
+        through.obj((doc, encoding, callback) => {
+          this._addExplicitAnchorsForDoc(doc);
+          callback(null, doc);
+        })
+      );
       stream = stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
         resolve();
@@ -505,18 +573,19 @@ class GrowReferenceChecker {
     const anchors = this._anchorsByPage[this._getPathInPod(doc)];
     const slugGenerator = new SlugGenerator();
     content = content.replace(
-        /^(#+)[ \t]*(.*?)(<a[ \t]+name=[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm,
-        (line, hLevel, headlineStart, anchorTag, headlineEnd) => {
-          const headline = headlineStart + headlineEnd;
-          const slug = slugGenerator.generateSlug(headline);
-          const anchor = anchors[slug];
-          // The slug generator has to know all the headlines, since we want to generate slugs like github does.
-          // So only now do we check if we have an explicit anchor or our implicit anchor is not used.
-          if (anchorTag || !anchor || !anchor.isUsed) {
-            return line;
-          }
-          return `${hLevel} ${headline} <a name="${slug}"></a>`;
-        });
+      /^(#+)[ \t]*(.*?)(<a[ \t]+name=[^>]*>\s*<\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm,
+      (line, hLevel, headlineStart, anchorTag, headlineEnd) => {
+        const headline = headlineStart + headlineEnd;
+        const slug = slugGenerator.generateSlug(headline);
+        const anchor = anchors[slug];
+        // The slug generator has to know all the headlines, since we want to generate slugs like github does.
+        // So only now do we check if we have an explicit anchor or our implicit anchor is not used.
+        if (anchorTag || !anchor || !anchor.isUsed) {
+          return line;
+        }
+        return `${hLevel} ${headline} <a name="${slug}"></a>`;
+      }
+    );
 
     doc.contents = Buffer.from(content);
     return doc;

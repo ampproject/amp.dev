@@ -56,28 +56,29 @@ describe('DocumentParser', () => {
   });
 
   it('adds code', () => {
-    expect(parse(TAG).sections[0])
-        .toEqual(newSection('', TAG + '\n', '', true, true));
+    expect(parse(TAG).sections[0]).toEqual(
+      newSection('', TAG + '\n', '', true, true)
+    );
   });
 
   it('adds comments', () => {
-    expect(parse(COMMENT, TAG).sections)
-        .toEqual([
-          newSection('comment\n', TAG + '\n', '', true, true),
-        ]);
+    expect(parse(COMMENT, TAG).sections).toEqual([
+      newSection('comment\n', TAG + '\n', '', true, true),
+    ]);
   });
   it('strips whitespace before headings', () => {
-    expect(parse(COMMENT_WITH_HEADING, TAG).sections[0].doc)
-        .toEqual('\n# heading\n\ncomment\n');
+    expect(parse(COMMENT_WITH_HEADING, TAG).sections[0].doc).toEqual(
+      '\n# heading\n\ncomment\n'
+    );
   });
 
   it('adds hint', () => {
     const expected = newSection(
-        '',
-        `<!--START_HINT_0-->\n${TAG}\n<!--END_HINT-->\n`,
-        '',
-        true,
-        true,
+      '',
+      `<!--START_HINT_0-->\n${TAG}\n<!--END_HINT-->\n`,
+      '',
+      true,
+      true
     );
     expected.hints = ['hint'];
 
@@ -91,35 +92,37 @@ describe('DocumentParser', () => {
 
   describe('example spans', () => {
     it('element after comment', () => {
-      expect(parse(COMMENT, TAG, ANOTHER_TAG).sections)
-          .toEqual([
-            newSection('comment\n', TAG + '\n', '', true, false),
-            newSection('', ANOTHER_TAG + '\n', '', false, true),
-          ]);
+      expect(parse(COMMENT, TAG, ANOTHER_TAG).sections).toEqual([
+        newSection('comment\n', TAG + '\n', '', true, false),
+        newSection('', ANOTHER_TAG + '\n', '', false, true),
+      ]);
     });
 
     it('nested elements after comment', () => {
-      expect(parse(COMMENT, NESTED_TAG, ANOTHER_TAG).sections)
-          .toEqual([
-            newSection('comment\n', NESTED_TAG + '\n', '', true, false),
-            newSection('', ANOTHER_TAG + '\n', '', false, true),
-          ]);
+      expect(parse(COMMENT, NESTED_TAG, ANOTHER_TAG).sections).toEqual([
+        newSection('comment\n', NESTED_TAG + '\n', '', true, false),
+        newSection('', ANOTHER_TAG + '\n', '', false, true),
+      ]);
     });
 
     it('nested elements of same type after comment', () => {
-      expect(parse(COMMENT, NESTED_SAME_TAG, ANOTHER_TAG).sections)
-          .toEqual([
-            newSection('comment\n', NESTED_SAME_TAG + '\n', '', true, false),
-            newSection('', ANOTHER_TAG + '\n', '', false, true),
-          ]);
+      expect(parse(COMMENT, NESTED_SAME_TAG, ANOTHER_TAG).sections).toEqual([
+        newSection('comment\n', NESTED_SAME_TAG + '\n', '', true, false),
+        newSection('', ANOTHER_TAG + '\n', '', false, true),
+      ]);
     });
 
     it('ignores empty lines', () => {
-      expect(parse(COMMENT, EMPTY_LINE, TAG, ANOTHER_TAG).sections)
-          .toEqual([
-            newSection('comment\n', EMPTY_LINE + '\n' + TAG + '\n', '', true, false),
-            newSection('', ANOTHER_TAG + '\n', '', false, true),
-          ]);
+      expect(parse(COMMENT, EMPTY_LINE, TAG, ANOTHER_TAG).sections).toEqual([
+        newSection(
+          'comment\n',
+          EMPTY_LINE + '\n' + TAG + '\n',
+          '',
+          true,
+          false
+        ),
+        newSection('', ANOTHER_TAG + '\n', '', false, true),
+      ]);
     });
     it('resets current tag after tag end', () => {
       const doc = parse(HEAD, COMMENT, META, LINK, HEAD_END);
@@ -138,7 +141,8 @@ describe('DocumentParser', () => {
   });
 
   it('marks sections in body', () => {
-    const sections = parse(HEAD, HEAD_END, BODY, COMMENT, TAG, BODY_END).sections;
+    const sections = parse(HEAD, HEAD_END, BODY, COMMENT, TAG, BODY_END)
+      .sections;
     expect(sections[0].inBody).toBe(false);
     expect(sections[1].inBody).toBe(true);
   });
@@ -173,15 +177,32 @@ describe('DocumentParser', () => {
 
   describe('adds metadata to document', () => {
     it('after comment', () => {
-      const doc = parse(COMMENT, DOCUMENT_METADATA, HEAD, TITLE, HEAD_END, BODY, COMMENT, BODY_END);
+      const doc = parse(
+        COMMENT,
+        DOCUMENT_METADATA,
+        HEAD,
+        TITLE,
+        HEAD_END,
+        BODY,
+        COMMENT,
+        BODY_END
+      );
       expect(doc.metadata.experiments).toEqual(['amp-accordion']);
       expect(doc.sections.length).toEqual(3);
     });
     it('invalid metadata', () => {
       expect(() => {
-        parse(COMMENT, DOCUMENT_METADATA_INVALID, HEAD, TITLE, HEAD_END, BODY, COMMENT, BODY_END);
-      })
-          .toThrowError(/line 5/);
+        parse(
+          COMMENT,
+          DOCUMENT_METADATA_INVALID,
+          HEAD,
+          TITLE,
+          HEAD_END,
+          BODY,
+          COMMENT,
+          BODY_END
+        );
+      }).toThrowError(/line 5/);
     });
   });
 
@@ -249,17 +270,23 @@ describe('DocumentParser', () => {
 
   describe('parses stories', () => {
     it('sets isAmpStory to true', () => {
-      const document = parse('<body>', '<amp-story standalone>', '</amp-story>', '</body>');
+      const document = parse(
+        '<body>',
+        '<amp-story standalone>',
+        '</amp-story>',
+        '</body>'
+      );
       expect(document.isAmpStory).toBe(true);
     });
     it('sets story id', () => {
       const document = parse(
-          '<body>',
-          '<amp-story standalone>',
-          '<amp-story-page id="story-id">',
-          '</amp-story-page>',
-          '</amp-story>',
-          '</body>');
+        '<body>',
+        '<amp-story standalone>',
+        '<amp-story-page id="story-id">',
+        '</amp-story-page>',
+        '</amp-story>',
+        '</body>'
+      );
       expect(document.sections[0].storyPageId).toBe('story-id');
     });
   });
@@ -267,7 +294,11 @@ describe('DocumentParser', () => {
   describe('parses runtime', () => {
     it('amp-story', () => {
       const document = parse(
-          '<html ⚡>', '<body>', '<amp-story standalone>', '</amp-story>', '</body>',
+        '<html ⚡>',
+        '<body>',
+        '<amp-story standalone>',
+        '</amp-story>',
+        '</body>'
       );
       expect(document.isAmpStory).toBe(true);
       expect(document.isAmpWeb).toBe(true);

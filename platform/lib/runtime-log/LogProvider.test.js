@@ -40,7 +40,7 @@ test('returns log object', async () => {
   expect(log.message).toBe('hello world!');
 });
 
-test('throws exception if there\' no message with the given id', async () => {
+test("throws exception if there' no message with the given id", async () => {
   fetch.get(logUrl(123456), {
     123: {
       message: 'hello world!',
@@ -71,7 +71,9 @@ test('throws exception if request fails', async () => {
   } catch (err) {
     error = err;
   }
-  expect(error).toEqual(new Error(`Request failed ${logUrl(123456)} with status 404`));
+  expect(error).toEqual(
+    new Error(`Request failed ${logUrl(123456)} with status 404`)
+  );
 });
 
 test('caches messages.json', async () => {

@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-const {remove, firstChildByTag} = require('@ampproject/toolbox-optimizer').NodeUtils;
+const {
+  remove,
+  firstChildByTag,
+} = require('@ampproject/toolbox-optimizer').NodeUtils;
 const TAGS_TO_DEDUP = {
   meta: {
     name: 'viewport',
@@ -51,8 +54,8 @@ class HeadDedupTransformer {
       }
     }
     // remove duplicates
-    matches.forEach((matches) => {
-      matches.slice(1).forEach((node) => {
+    matches.forEach(matches => {
+      matches.slice(1).forEach(node => {
         remove(node);
       });
     });
@@ -63,7 +66,7 @@ class HeadDedupTransformer {
       if (node.tagName === key) {
         return this.matchAttributes(node, value) ? value : null;
       }
-    };
+    }
     return null;
   }
 
@@ -72,7 +75,7 @@ class HeadDedupTransformer {
       if (node.attribs[key] !== value) {
         return false;
       }
-    };
+    }
     return true;
   }
 }

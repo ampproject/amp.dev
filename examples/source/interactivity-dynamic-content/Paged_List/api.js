@@ -54,10 +54,10 @@ function generatePagedResponse(page) {
   };
 
   for (let i = 0; i < ITEMS_PER_PAGE; i++) {
-    const itemIndex = ITEMS_PER_PAGE*(page-1) + i + 1;
+    const itemIndex = ITEMS_PER_PAGE * (page - 1) + i + 1;
     const productListing = {
       title: `Food ${itemIndex}`,
-      image: IMAGES[itemIndex % IMAGES.length - 1],
+      image: IMAGES[(itemIndex % IMAGES.length) - 1],
       copy: `Lorem ipsum dolor sit ${itemIndex} amet consequitur sine nice fun`,
     };
     response.products.push(productListing);

@@ -18,19 +18,22 @@ describe('ExampleFile', () => {
   const ExampleFile = require('./ExampleFile');
 
   describe('created from path', () => {
-    const file = ExampleFile.fromPath('src/10_Hello-world\'s/What\'s_up_100%25?.html');
+    const file = ExampleFile.fromPath(
+      "src/10_Hello-world's/What's_up_100%25?.html"
+    );
     it('extracts title', () => {
-      expect(file.title()).toBe('What\'s up 100%?');
+      expect(file.title()).toBe("What's up 100%?");
     });
     it('use parent directory name as title if filename is index', () => {
-      expect(ExampleFile.fromPath('src/Samples_%26_Templates/index.html')
-          .title()).toBe('Samples & Templates');
+      expect(
+        ExampleFile.fromPath('src/Samples_%26_Templates/index.html').title()
+      ).toBe('Samples & Templates');
     });
     it('extracts file name', () => {
-      expect(file.fileName()).toBe('What\'s_up_100%25?.html');
+      expect(file.fileName()).toBe("What's_up_100%25?.html");
     });
     it('extracts category', () => {
-      expect(file.category().name).toBe('Hello-world\'s');
+      expect(file.category().name).toBe("Hello-world's");
     });
   });
 
@@ -44,35 +47,43 @@ describe('ExampleFile', () => {
   describe('nextFile', () => {
     const TEST_DIR = __dirname + '/FileNameTestFiles/';
     it('returns next file in alphabetical order', () => {
-      expect(ExampleFile.fromPath(TEST_DIR + 'a.html').nextFile().filePath)
-          .toEqual(TEST_DIR + 'b.html');
+      expect(
+        ExampleFile.fromPath(TEST_DIR + 'a.html').nextFile().filePath
+      ).toEqual(TEST_DIR + 'b.html');
     });
     it('returns undefined when the file is the last one in alphabetical order', () => {
-      expect(ExampleFile.fromPath(TEST_DIR + 'b.html').nextFile())
-          .toEqual(null);
+      expect(ExampleFile.fromPath(TEST_DIR + 'b.html').nextFile()).toEqual(
+        null
+      );
     });
     it('returns undefined when the file does not exist', () => {
-      expect(ExampleFile.fromPath(TEST_DIR + 'notExistentFile.html').nextFile())
-          .toEqual(null);
+      expect(
+        ExampleFile.fromPath(TEST_DIR + 'notExistentFile.html').nextFile()
+      ).toEqual(null);
     });
     it('returns undefined when the file has no category', () => {
-      expect(ExampleFile.fromPath('src/amp-form-error.html').nextFile())
-          .toEqual(null);
+      expect(
+        ExampleFile.fromPath('src/amp-form-error.html').nextFile()
+      ).toEqual(null);
     });
   });
 
   describe('section', () => {
     it('returns parent dir if section', () => {
-      expect(ExampleFile.fromPath('src/amp-ads/10_introduction/hello.html').section().path)
-          .toEqual('/amp-ads');
+      expect(
+        ExampleFile.fromPath('src/amp-ads/10_introduction/hello.html').section()
+          .path
+      ).toEqual('/amp-ads');
     });
     it('returns root path if no section', () => {
-      expect(ExampleFile.fromPath('src/10_introduction/hello.html').section().path)
-          .toEqual('/');
+      expect(
+        ExampleFile.fromPath('src/10_introduction/hello.html').section().path
+      ).toEqual('/');
     });
     it('returns root path if no category', () => {
-      expect(ExampleFile.fromPath('src/hello.html').section().path)
-          .toEqual('/');
+      expect(ExampleFile.fromPath('src/hello.html').section().path).toEqual(
+        '/'
+      );
     });
   });
 });

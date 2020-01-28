@@ -19,52 +19,56 @@ import emailTemplate from './templates/email.template.html';
 import events from '../events/events.js';
 import params from '../params/base.js';
 
-
 export const EVENT_SET_RUNTIME = 'event-set-runtime';
 
 class Runtimes {
   constructor() {
-    this.values = [{
-      id: 'amphtml',
-      name: 'AMPHTML',
-      template: amphtmlTemplate,
-      preview: {
-        mode: 'devices',
-        default: 'iPhone 6/7/8',
+    this.values = [
+      {
+        id: 'amphtml',
+        name: 'AMPHTML',
+        template: amphtmlTemplate,
+        preview: {
+          mode: 'devices',
+          default: 'iPhone 6/7/8',
+        },
+        validator: 'AMP',
       },
-      validator: 'AMP',
-    },
-    {
-      id: 'amp4ads',
-      name: 'AMP for Ads',
-      template: a4aTemplate,
-      preview: {
-        mode: 'ads',
-        default: 'Custom',
+      {
+        id: 'amp4ads',
+        name: 'AMP for Ads',
+        template: a4aTemplate,
+        preview: {
+          mode: 'ads',
+          default: 'Custom',
+        },
+        validator: 'AMP4ADS',
       },
-      validator: 'AMP4ADS',
-    },
-    {
-      id: 'amp4stories',
-      name: 'AMP for Stories',
-      preview: {
-        mode: 'devices',
-        default: 'iPhone 6/7/8',
+      {
+        id: 'amp4stories',
+        name: 'AMP for Stories',
+        preview: {
+          mode: 'devices',
+          default: 'iPhone 6/7/8',
+        },
+        validator: 'AMP',
+        template: storyTemplate,
       },
-      validator: 'AMP',
-      template: storyTemplate,
-    },
-    {
-      id: 'amp4email',
-      name: 'AMP for Email',
-      preview: {
-        mode: 'devices',
-        default: 'Responsive',
+      {
+        id: 'amp4email',
+        name: 'AMP for Email',
+        preview: {
+          mode: 'devices',
+          default: 'Responsive',
+        },
+        validator: 'AMP4EMAIL',
+        template: emailTemplate,
       },
-      validator: 'AMP4EMAIL',
-      template: emailTemplate,
-    }];
-    events.subscribe(EVENT_SET_RUNTIME, (runtime) => this.activeRuntime = runtime);
+    ];
+    events.subscribe(
+      EVENT_SET_RUNTIME,
+      runtime => (this.activeRuntime = runtime)
+    );
   }
 
   init() {
@@ -74,7 +78,7 @@ class Runtimes {
 
   get(id) {
     id = id.toLowerCase();
-    const result = this.values.find((r) => r.id === id);
+    const result = this.values.find(r => r.id === id);
     return result || this.values[0];
   }
 }

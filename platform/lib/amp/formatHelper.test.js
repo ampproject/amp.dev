@@ -1,4 +1,8 @@
-const {getFormatFromRequest, DEFAULT_FORMAT, SUPPORTED_FORMATS} = require('./formatHelper.js');
+const {
+  getFormatFromRequest,
+  DEFAULT_FORMAT,
+  SUPPORTED_FORMATS,
+} = require('./formatHelper.js');
 
 const request = {
   query: {},
@@ -24,7 +28,7 @@ test('supports uppercase formats', () => {
 });
 
 test('matches all existing formats', () => {
-  SUPPORTED_FORMATS.forEach((expectedFormat) => {
+  SUPPORTED_FORMATS.forEach(expectedFormat => {
     request.query.format = expectedFormat;
     const actualFormat = getFormatFromRequest(request);
     expect(actualFormat).toBe(expectedFormat);

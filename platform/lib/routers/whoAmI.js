@@ -27,7 +27,9 @@ const whoAmI = express.Router();
 const info = {
   'environment': config.environment,
   'instance': process.env.GAE_INSTANCE,
-  'build': yaml.safeLoad(fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8')),
+  'build': yaml.safeLoad(
+    fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8')
+  ),
 };
 
 whoAmI.get('/who-am-i', (request, response) => {

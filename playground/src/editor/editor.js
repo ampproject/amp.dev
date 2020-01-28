@@ -38,12 +38,17 @@ require('./editor.scss');
 
 const DEFAULT_DEBOUNCE_RATE = 500;
 const HINT_IGNORE_ENDS = new Set([
-  ';', ',',
+  ';',
+  ',',
   ')',
-  '`', '"', '\'',
+  '`',
+  '"',
+  "'",
   '>',
-  '{', '}',
-  '[', ']',
+  '{',
+  '}',
+  '[',
+  ']',
 ]);
 const HINTS_URL = 'amphtml-hint.json';
 
@@ -155,12 +160,16 @@ class Editor {
   setValidationResult(validationResult) {
     this.codeMirror.clearGutter('CodeMirror-error-markers');
     this.codeMirror.operation(() => {
-      validationResult.errors.forEach((error) => {
+      validationResult.errors.forEach(error => {
         const marker = document.createElement('div');
         const message = marker.appendChild(document.createElement('span'));
         message.appendChild(document.createTextNode(error.message));
         marker.className = 'gutter-' + error.icon;
-        this.codeMirror.setGutterMarker(error.line - 1, 'CodeMirror-error-markers', marker);
+        this.codeMirror.setGutterMarker(
+          error.line - 1,
+          'CodeMirror-error-markers',
+          marker
+        );
       });
     });
   }
@@ -187,7 +196,7 @@ class Editor {
   }
 
   loadHints(validator) {
-    this.amphtmlHints.then((hints) => {
+    this.amphtmlHints.then(hints => {
       // eslint-disable-next-line no-unused-vars
       for (const key of Object.keys(CodeMirror.htmlSchema)) {
         delete CodeMirror.htmlSchema[key];
@@ -204,14 +213,16 @@ class Editor {
   fetchHintsData() {
     return new Promise((resolve, reject) => {
       window.requestIdleCallback(() => {
-        fetch(HINTS_URL).then((response) => {
-          if (response.status !== 200) {
-            return reject(new Error(`Error code ${response.status}`));
-          }
-          resolve(response.json());
-        }).catch((err) => {
-          reject(err);
-        });
+        fetch(HINTS_URL)
+          .then(response => {
+            if (response.status !== 200) {
+              return reject(new Error(`Error code ${response.status}`));
+            }
+            resolve(response.json());
+          })
+          .catch(err => {
+            reject(err);
+          });
       });
     });
   }

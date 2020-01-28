@@ -39,7 +39,9 @@ module.exports.parseSample = async (filePath, config, contents) => {
     doc.title = exampleFile.title();
   } else if (doc.title !== exampleFile.title()) {
     console.warn(
-        `${filePath} has invalid title: "${exampleFile.title()}" vs "${doc.title}"`,
+      `${filePath} has invalid title: "${exampleFile.title()}" vs "${
+        doc.title
+      }"`
     );
   }
   exampleFile.source = contents.replace(/\<!---.*--->/gms, '').trim();
