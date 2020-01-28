@@ -52,7 +52,7 @@ api.get('/fetch', async (request, response) => {
     response.send(doc);
   } catch (error) {
     console.error('Could not fetch URL', error);
-    response.status(400).send('Could not fetch URL').end();
+    response.status(400).send('Could not fetch URL');
   }
 });
 
