@@ -54,6 +54,7 @@ class Subdomain {
       let subdomainApp = this.subdomainApps_[hostConfig.subdomain];
       if (!subdomainApp) {
         subdomainApp = express();
+        subdomainApp.disable('x-powered-by');
         subdomainApp.use(cors({
           origin: true,
           credentials: true,
