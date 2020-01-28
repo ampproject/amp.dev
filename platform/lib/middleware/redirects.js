@@ -26,7 +26,10 @@ const {HEALTH_CHECK_PATH} = require('@lib/routers/healthCheck.js');
 
 const WWW_PREFIX = 'www.';
 
-const REDIRECT_LINKS_DEFINITION = join(__dirname, '../../config/amp-dev-redirects.yaml');
+const REDIRECT_LINKS_DEFINITION = join(
+  __dirname,
+  '../../config/amp-dev-redirects.yaml'
+);
 const redirectLinks = yaml.safeLoad(readFileSync(REDIRECT_LINKS_DEFINITION));
 
 const AVAILABLE_LOCALES = config.getAvailableLocales();
@@ -41,8 +44,12 @@ function getRedirectLink(req) {
   let result = redirectLinks[req.path];
   if (!result) {
     const langMatch = req.path.match(LANGUAGE_PATH_PATTERN);
-    if (langMatch && AVAILABLE_LOCALES.findIndex(
-        (item) => langMatch[1] === item.toLowerCase()) >= 0) {
+    if (
+      langMatch &&
+      AVAILABLE_LOCALES.findIndex(
+        item => langMatch[1] === item.toLowerCase()
+      ) >= 0
+    ) {
       const noLangPath = req.path.substr(langMatch[1].length + 1);
       result = redirectLinks[noLangPath];
       if (result) {
@@ -83,7 +90,12 @@ module.exports = (req, res, next) => {
 
   // redirect www.amp.dev to amp.dev
   if (req.get('host').startsWith(WWW_PREFIX)) {
-    res.redirect(301, `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${req.originalUrl}`);
+    res.redirect(
+      301,
+      `${req.protocol}://${req.host.substring(WWW_PREFIX.length)}${
+        req.originalUrl
+      }`
+    );
     return;
   }
 

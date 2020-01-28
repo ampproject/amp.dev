@@ -27,14 +27,14 @@ class ComponentsProvider {
           headers: new Headers({'x-requested-by': 'playground'}),
         });
         fetch(request)
-            .then((r) => r.json())
-            .then((data) => {
-              resolve(data);
-            })
-            .catch(() => {
-              console.warn('Failed to fetch AMP component versions mapping');
-              resolve({});
-            });
+          .then(r => r.json())
+          .then(data => {
+            resolve(data);
+          })
+          .catch(() => {
+            console.warn('Failed to fetch AMP component versions mapping');
+            resolve({});
+          });
       });
     });
   }

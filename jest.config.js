@@ -80,10 +80,10 @@ module.exports = {
     // TODO: improve: jest will not work with 'module-alias', so we have define the alias here again!
     // see https://github.com/ilearnio/module-alias/issues/46
     '^@lib/utils$': '<rootDir>/platform/lib/utils/index.js',
-    '^@lib/(.*?)(\.js)?$': '<rootDir>/platform/lib/$1.js',
-    '^@examples/(.*?)(\.js)?$': '<rootDir>/examples/$1.js',
+    '^@lib/(.*?)(.js)?$': '<rootDir>/platform/lib/$1.js',
+    '^@examples/(.*?)(.js)?$': '<rootDir>/examples/$1.js',
     '^@examples$': '<rootDir>/examples/index.js',
-    '^@boilerplate/(.*?)(\.js)?$': '<rootDir>/boilerplate/$1.js',
+    '^@boilerplate/(.*?)(.js)?$': '<rootDir>/boilerplate/$1.js',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

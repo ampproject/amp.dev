@@ -46,7 +46,9 @@ async function updateTestResources() {
     // for the update we will only wait 3 seconds...
     await _doDownloadTestResources(3000);
   } catch (err) {
-    signale.info('Unable to download test resources. Will use previously downloaded files.');
+    signale.info(
+      'Unable to download test resources. Will use previously downloaded files.'
+    );
   }
 }
 

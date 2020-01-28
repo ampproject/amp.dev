@@ -39,7 +39,7 @@ class PlaygroundDocument {
     return fetch('/api/fetch?url=' + url, {
       mode: 'cors',
       headers,
-    }).then((response) => {
+    }).then(response => {
       if (!response.ok) {
         throw new Error('Failed fetching document');
       }
@@ -54,21 +54,21 @@ class PlaygroundDocument {
       mode: 'cors',
       credentials: 'include',
     })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Failed fetching document');
-          }
-          return response.json();
-        })
-        .then((jsonDocument) => {
-          if (jsonDocument.readOnly) {
-            this._changeState(READ_ONLY);
-            this.docId = '';
-          } else {
-            this.docId = jsonDocument.id;
-          }
-          return jsonDocument.content;
-        });
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed fetching document');
+        }
+        return response.json();
+      })
+      .then(jsonDocument => {
+        if (jsonDocument.readOnly) {
+          this._changeState(READ_ONLY);
+          this.docId = '';
+        } else {
+          this.docId = jsonDocument.id;
+        }
+        return jsonDocument.content;
+      });
   }
 
   update() {
@@ -89,11 +89,12 @@ class PlaygroundDocument {
       method: 'POST',
       body: snippet,
       credentials: 'include',
-    }).then((response) => response.json())
-        .then((data) => {
-          this._changeState(SAVED);
-          return data.id;
-        });
+    })
+      .then(response => response.json())
+      .then(data => {
+        this._changeState(SAVED);
+        return data.id;
+      });
   }
 
   _changeState(newState) {

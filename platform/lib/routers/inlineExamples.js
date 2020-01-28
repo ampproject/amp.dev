@@ -18,7 +18,10 @@
 
 const express = require('express');
 const project = require('@lib/utils/project');
-const {getFormatFromRequest, DEFAULT_FORMAT} = require('../amp/formatHelper.js');
+const {
+  getFormatFromRequest,
+  DEFAULT_FORMAT,
+} = require('../amp/formatHelper.js');
 
 // eslint-disable-next-line new-cap
 const inlineExamples = express.Router();

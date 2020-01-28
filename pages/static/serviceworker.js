@@ -1,9 +1,11 @@
 importScripts('https://cdn.ampproject.org/sw/amp-sw.js');
 AMP_SW.init({
-  assetCachingOptions: [{
-    regexp: /\.(png|jpg|woff2|woff|css|js)/,
-    cachingStrategy: 'CACHE_FIRST',
-  }],
+  assetCachingOptions: [
+    {
+      regexp: /\.(png|jpg|woff2|woff|css|js)/,
+      cachingStrategy: 'CACHE_FIRST',
+    },
+  ],
   offlinePageOptions: {
     url: '/offline.html',
     assets: [],
@@ -41,16 +43,15 @@ async function searchDoRequestHandler(url, request) {
   }
 
   return response;
-};
+}
 
 // Register new route to handle search request
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.pathname === '/search/do') {
     event.respondWith(searchDoRequestHandler(requestUrl, event.request));
   }
 });
-
 
 // Handle latest query
 async function searchLatestQueryHandler() {
@@ -66,16 +67,15 @@ async function searchLatestQueryHandler() {
     console.error(err);
   }
   return new Response('null');
-};
+}
 
 // Register new route to handle latest query
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.pathname === SEARCH_LATEST_QUERY_PATH) {
     event.respondWith(searchLatestQueryHandler());
   }
 });
-
 
 // Handle clear request
 async function searchClearLatestQueryRequestHandler() {
@@ -86,10 +86,10 @@ async function searchClearLatestQueryRequestHandler() {
     console.error(err);
   }
   return new Response('null');
-};
+}
 
 // Register new route to handle clear request
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.pathname === '/search/clear-latest-query') {
     event.respondWith(searchClearLatestQueryRequestHandler());

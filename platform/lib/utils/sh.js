@@ -25,7 +25,6 @@ const DEFAULT_OPTIONS = {
   quiet: false,
 };
 
-
 /**
  * Executes a shell command.
  *
@@ -50,7 +49,7 @@ function sh(commandLine, ...options) {
     const process = spawn(command, args, {cwd: opts.workingDir});
     let result = '';
 
-    process.stdout.on('data', (data) => {
+    process.stdout.on('data', data => {
       data = data.toString();
       result += data;
       if (!opts.quiet) {
@@ -58,18 +57,18 @@ function sh(commandLine, ...options) {
       }
     });
 
-    process.stderr.on('data', (data) => {
+    process.stderr.on('data', data => {
       console.log(`${data.toString()}`);
     });
 
-    process.on('close', (code) => {
+    process.on('close', code => {
       if (code !== 0) {
         reject(new Error(`${command} process exited with code ${code}`));
         return;
       }
       resolve(result);
     });
-  }).then((result) => {
+  }).then(result => {
     console.log(message);
     return result;
   });
@@ -85,13 +84,13 @@ function extractOptions(params) {
 
 function extractCommandFragments(command) {
   if (typeof command === 'string') {
-    return command.replace(/\s+/gm, ' ')
-        .trim()
-        .split(' ');
+    return command
+      .replace(/\s+/gm, ' ')
+      .trim()
+      .split(' ');
   }
   return command;
 }
-
 
 function isString(obj) {
   return obj && obj.length > 0 && typeof obj[0] === 'string';

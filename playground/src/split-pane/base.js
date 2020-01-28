@@ -31,9 +31,17 @@ class SplitPane {
     this._right = children[2];
 
     // register dragging listeners
-    this._dragHandle.addEventListener('mousedown', this._startResizing.bind(this), {passive: true});
-    document.addEventListener('mousemove', this._resizing.bind(this), {passive: true});
-    document.addEventListener('mouseup', this._endResizing.bind(this), {passive: true});
+    this._dragHandle.addEventListener(
+      'mousedown',
+      this._startResizing.bind(this),
+      {passive: true}
+    );
+    document.addEventListener('mousemove', this._resizing.bind(this), {
+      passive: true,
+    });
+    document.addEventListener('mouseup', this._endResizing.bind(this), {
+      passive: true,
+    });
   }
 
   _startResizing() {
@@ -72,7 +80,8 @@ class SplitPane {
 
   _updatePanes() {
     this._left.style.width = this._size + 'px';
-    const newRightWidth = this.container.offsetWidth - this._size - this._dragHandle.offsetWidth;
+    const newRightWidth =
+      this.container.offsetWidth - this._size - this._dragHandle.offsetWidth;
     this._right.style.width = String(newRightWidth) + 'px';
   }
 

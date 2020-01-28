@@ -27,7 +27,9 @@ const fs = require('fs');
 const LRU = require('lru-cache');
 const gcpMetadata = require('gcp-metadata');
 
-const buildInfo = yaml.safeLoad(fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8'));
+const buildInfo = yaml.safeLoad(
+  fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8')
+);
 
 /**
  * Time in seconds an item in Redis will stay valid
@@ -80,28 +82,39 @@ const instance = (async () => {
 let redis = null;
 let lru = null;
 
-instance.then((instance) => {
-  // Check if there is an instance available. If there is, instantiate
-  // a client to use it, if there is none fall back to LRU cache
-  if (instance) {
-    console.log('[PAGE_CACHE]: Connecting to Redis', instance.port, instance.host);
-    try {
-      redis = new Redis(instance.port, instance.host);
-      console.log('[PAGE_CACHE]: Connected to Redis instance at',
-          instance.host, instance.port);
-      return;
-    } catch (e) {
-      console.error('[PAGE_CACHE]: Connecting to Redis failed', e);
+instance
+  .then(instance => {
+    // Check if there is an instance available. If there is, instantiate
+    // a client to use it, if there is none fall back to LRU cache
+    if (instance) {
+      console.log(
+        '[PAGE_CACHE]: Connecting to Redis',
+        instance.port,
+        instance.host
+      );
+      try {
+        redis = new Redis(instance.port, instance.host);
+        console.log(
+          '[PAGE_CACHE]: Connected to Redis instance at',
+          instance.host,
+          instance.port
+        );
+        return;
+      } catch (e) {
+        console.error('[PAGE_CACHE]: Connecting to Redis failed', e);
+      }
     }
-  }
 
-  console.warn('[PAGE_CACHE]: No Redis instances available. Falling back to LRU');
-  lru = new LRU({
-    max: LRU_MAX_ITEMS,
+    console.warn(
+      '[PAGE_CACHE]: No Redis instances available. Falling back to LRU'
+    );
+    lru = new LRU({
+      max: LRU_MAX_ITEMS,
+    });
+  })
+  .catch(e => {
+    console.error('[PAGE_CACHE]: Could not initialize caches', e);
   });
-}).catch((e) => {
-  console.error('[PAGE_CACHE]: Could not initialize caches', e);
-});
 
 /**
  * Prefixes the key (which should be the request URL) with the current
