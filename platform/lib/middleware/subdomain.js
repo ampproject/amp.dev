@@ -58,13 +58,17 @@ class Subdomain {
       if (!subdomainApp) {
         subdomainApp = express();
         subdomainApp.disable('x-powered-by');
-        subdomainApp.use(cors({
-          origin: true,
-          credentials: true,
-        }));
-        subdomainApp.use(ampCors({
-          email: true,
-        }));
+        subdomainApp.use(
+          cors({
+            origin: true,
+            credentials: true,
+          })
+        );
+        subdomainApp.use(
+          ampCors({
+            email: true,
+          })
+        );
         subdomainApp.listen(hostConfig.port, () => {
           signale.info(
             `${hostConfig.subdomain} dev server listening on ${hostConfig.port}`
