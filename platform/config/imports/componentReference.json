@@ -1,0 +1,4 @@
+{
+	"only": ["amp-date-display", "amp-ad-custom", "amp-addthis"],
+	"fetchFromMaster": ["amp-script", "amp-carousel", "amp-consent", "amp-bind"]
+}

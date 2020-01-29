@@ -19,13 +19,15 @@ const DEFAULT_VERSION = '0.1';
 const LATEST_VERSION = 'latest';
 const VERSION_PATTERN = /\d.\d/;
 
-const {GitHubImporter} = require('./gitHubImporter');
+const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const path = require('path');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
 
 const {Signale} = require('signale');
+
+const config = require(__dirname + '/../../config/imports/componentReference.json');
 
 const log = new Signale({
   'interactive': false,
@@ -68,7 +70,13 @@ class ComponentReferenceImporter {
 
     // As inside /extensions each component has its own folder, filter
     // down by directory
-    extensions = extensions[0].filter((file) => file.type === 'dir');
+    extensions = extensions[0].filter((file) => {
+      if (!config.only) {
+        return file.type === 'dir';
+      }
+
+      return file.type === 'dir' && config.only.includes(file.name);
+    });
     for (const extension of extensions) {
       this._importExtension(extension);
     }
@@ -205,6 +213,12 @@ class ComponentReferenceImporter {
     return null;
   }
 
+  /**
+   * The last step in the importing process: uses all data gathered before
+   * (GitHub path, extension name, version) to load the actual document.
+   * @param  {Object}  extension
+   * @return {Promise}
+   */
   async _createGrowDoc(extension) {
     if (!extension.githubPath) {
       // It's safe to return here without informing the user as non existing
@@ -214,7 +228,13 @@ class ComponentReferenceImporter {
 
     let fileContents;
     try {
-      fileContents = await this.githubImporter_.fetchFile(extension.githubPath);
+      const fetchFromMaster = config.fetchFromMaster.includes(extension.name);
+      if (fetchFromMaster) {
+        log.warn(`Fetching ${extension.githubPath} from master`);
+      }
+
+      fileContents = await this.githubImporter_.fetchFile(
+          extension.githubPath, DEFAULT_REPOSITORY, fetchFromMaster);
     } catch (e) {
       log.error(`Failed to fetch ${extension.githubPath}`, e);
       return;
