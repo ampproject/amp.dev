@@ -34,11 +34,11 @@ test('Test teaser text extraction', async (done) => {
     '\n' +
     '\n' +
     '# amp-test\n' +
-    'Teaser text.\n' +
+    'Lorem ipsum dolor sit amet.\n' +
     '\n' +
     'Lorem ipsum dolor sit amet.\n' +
-    '# Section\n' +
-    'Lorem ipsum dolor sit amet.',
+    '## Section\n' +
+    'Teaser text.',
   );
   expect(teaserText).toBe('Teaser text.');
 

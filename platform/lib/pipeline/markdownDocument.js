@@ -82,12 +82,19 @@ const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
 const HTML_COMMENT_PATTERN = /<!--.*-->/gms;
 
 // Matches the next paragraph after a markdown headline
-const PARAGRAPH_PATTERN = /(?<=# .*\n).*/gm;
+const PARAGRAPH_PATTERN = /(?<=## .*\n)\n*.+/gm;
 
 class MarkdownDocument {
   constructor(path, contents) {
     this.contents = contents;
-    this._frontmatter = MarkdownDocument.extractFrontmatter(contents);
+    try {
+      this._frontmatter = MarkdownDocument.extractFrontmatter(contents);
+    } catch(e) {
+      LOG.error(`Failed to parse frontmatter for ${path}`, e.message);
+      this._frontmatter = {
+        '$title': '',
+      };
+    }
 
     if (!this.teaser.text) {
       LOG.warn(`Auto extracting teaser text for ${path}`);
@@ -234,17 +241,11 @@ class MarkdownDocument {
         // Strip out limiters from frontmatter string to be able to parse it
         // and then use it as initial fill for the actual properties
         frontmatter = frontmatter.replace(/---/g, '');
-        try {
-          return yaml.safeLoad(frontmatter);
-        } catch (e) {
-          LOG.error(`Failed to parse frontmatter "${contents.substr(0, 200)} ..."`);
-        }
+        return yaml.safeLoad(frontmatter);
       }
+    } else {
+      throw Error('contents does not contain a frontmatter block.');
     }
-
-    return {
-      '$title': '',
-    };
   }
 
   /**
