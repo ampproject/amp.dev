@@ -2,7 +2,9 @@
 {% do doc.amp_dependencies.add('amp-fx-collection', '0.1') %}
 
 <div class="ap-o-component-intro">
+  {% if doc.teaser %}
   <p class="ap-o-component-intro-description">{{ doc.teaser.text }}</p>
+  {% endif %}
 
   {% if doc.scripts %}
   <div class="ap-o-component-intro-box ap-o-component-intro-box-scripts">
