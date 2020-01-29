@@ -26,7 +26,7 @@ class EmailLoader {
   }
 
   async loadEmailFromFile() {
-    const files = await new Promise((resolve) => {
+    const files = await new Promise(resolve => {
       const dialog = document.createElement('input');
       dialog.setAttribute('type', 'file');
       dialog.setAttribute('accept', '.eml');
@@ -49,15 +49,15 @@ class EmailLoader {
 
     const headers = this._parseHeaders(head);
     const {contentType, boundary} = this._parseMultipartContentType(
-        headers.get('content-type'),
+      headers.get('content-type')
     );
     if (contentType !== 'multipart/alternative') {
       throw new Error('Email is not multipart/alternative');
     }
     const parts = this._parseMultipartBody(body, boundary);
 
-    const ampPart = parts.find((part) =>
-      part.contentType.startsWith('text/x-amp-html'),
+    const ampPart = parts.find(part =>
+      part.contentType.startsWith('text/x-amp-html')
     );
     if (!ampPart) {
       throw new Error('No AMP part found in multipart/alternative');
@@ -79,12 +79,12 @@ class EmailLoader {
     }
 
     return new Map(
-        lines
-            .filter((line) => line)
-            .map((line) => {
-              const [key, value] = twoSplit(line, ':');
-              return [key.toLowerCase(), value.trim()];
-            }),
+      lines
+        .filter(line => line)
+        .map(line => {
+          const [key, value] = twoSplit(line, ':');
+          return [key.toLowerCase(), value.trim()];
+        })
     );
   }
 
@@ -98,7 +98,7 @@ class EmailLoader {
     }
     const parts = rawParts.slice(1, -1);
 
-    return parts.map((part) => {
+    return parts.map(part => {
       let [head, body] = twoSplit(part, '\n\n');
       if (!body) {
         throw new Error('No body found in email part');
@@ -139,9 +139,9 @@ class EmailLoader {
 // like String.prototype.split, but returns only two parts
 function twoSplit(str, separator) {
   const pos =
-    separator instanceof RegExp ?
-      str.search(separator) :
-      str.indexOf(separator);
+    separator instanceof RegExp
+      ? str.search(separator)
+      : str.indexOf(separator);
   if (pos === -1) {
     return [str];
   }

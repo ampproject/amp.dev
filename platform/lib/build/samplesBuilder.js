@@ -235,7 +235,11 @@ class SamplesBuilder {
    * @return {Promise<Object>} The sample parsed by abe.com
    */
   async _parseSample(sample) {
-    const samplePath = sample.path;
+    // maintain reference to real path so this function can be called multiple
+    // times on the same sample without mangling the real path if normalized
+    sample.realPath = sample.realPath || sample.path;
+    const samplePath = sample.realPath;
+
     // normalize sample path in case it's defined in a directory
     if (sample.path.endsWith('/index.html')) {
       sample.path = path.dirname(sample.path) + '.html';

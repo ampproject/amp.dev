@@ -20,14 +20,14 @@ class EventBus {
   subscribe(channel, observer) {
     if (!channel) throw new Error('empty channel');
     const channels = Array.isArray(channel) ? channel : [channel];
-    channels.forEach((c) => {
+    channels.forEach(c => {
       this._observersForChannel(c).push(observer);
     });
   }
 
   publish(channel, data) {
     if (!channel) throw new Error('empty channel');
-    this._observersForChannel(channel).forEach((o) => {
+    this._observersForChannel(channel).forEach(o => {
       o(data);
     });
   }
@@ -43,4 +43,3 @@ class EventBus {
 }
 
 export default new EventBus();
-

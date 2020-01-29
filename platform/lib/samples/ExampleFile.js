@@ -22,7 +22,6 @@ const path = require('path');
 const PREFIX = /(^|\/)\d\d_/g;
 const SRC_DIR = 'src';
 
-
 /**
  * Encodes a string into file system compatible representation.
  */
@@ -31,7 +30,7 @@ function fromPath(filePath) {
     return null;
   }
   return new ExampleFile(filePath);
-};
+}
 
 class ExampleFile {
   constructor(filePath) {
@@ -72,17 +71,18 @@ class ExampleFile {
       return null;
     }
     const dir = path.dirname(this.filePath);
-    const files = fs.readdirSync(dir)
-        .sort()
-        .filter((file) => {
-          return path.extname(file) == '.html';
-        });
+    const files = fs
+      .readdirSync(dir)
+      .sort()
+      .filter(file => {
+        return path.extname(file) == '.html';
+      });
     const nextPos = files.indexOf(path.basename(this.fileName())) + 1;
     if (nextPos == 0 || nextPos >= files.length) {
       return null;
     }
     return fromPath(path.join(dir, files[nextPos]));
-  };
+  }
 
   fileName() {
     return path.basename(this.filePath);
@@ -143,10 +143,10 @@ class ExampleFile {
 
   clean(string) {
     return decodeURIComponent(string)
-        .toLowerCase()
-        .replace(/^_+/g, '')
-        .replace(/[!@#$%\^&*()\?']/g, '')
-        .replace(/_+/g, '_');
+      .toLowerCase()
+      .replace(/^_+/g, '')
+      .replace(/[!@#$%\^&*()\?']/g, '')
+      .replace(/_+/g, '_');
   }
 }
 

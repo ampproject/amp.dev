@@ -20,24 +20,24 @@ const host = config.hosts.platform;
 module.exports = {
   validatorRuntime: 'AMP4EMAIL',
   transforms: {
-    'html': (el) => {
+    'html': el => {
       el.removeAttr('amp');
       el.removeAttr('⚡');
       el.attr('⚡4email', '');
     },
-    'form, a': (el) => {
+    'form, a': el => {
       el.removeAttr('target');
     },
-    'form[action-xhr]': (el) => {
+    'form[action-xhr]': el => {
       el.attr('action-xhr', config.absoluteUrl(host, el.attr('action-xhr')));
     },
-    'a[href]': (el) => {
+    'a[href]': el => {
       el.attr('href', config.absoluteUrl(host, el.attr('href')));
     },
-    'amp-img[src], amp-anim[src], amp-list[src]': (el) => {
+    'amp-img[src], amp-anim[src], amp-list[src]': el => {
       el.attr('src', config.absoluteUrl(host, el.attr('src')));
     },
-    'amp-accordion[disable-session-states]': (el) => {
+    'amp-accordion[disable-session-states]': el => {
       el.removeAttr('disable-session-states');
     },
     'head > style[amp-boilerplate]':

@@ -15,7 +15,7 @@
 /docs: /documentation/guides-and-tutorials/
 /docsgfi: https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22
 /email: /about/email
-/email-tools: /documentation/tools
+/email-tools: /documentation/tools/?format=email
 /email-viewer: https://github.com/ampproject/amp-email-viewer
 /governance: /community/governance
 /i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement--i2i-.md&title=I2I:%20%3Cyour%20change/update%3E

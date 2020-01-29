@@ -1,3 +1,7 @@
+{% if doc.formats %}
+[% supportedFormats formats={{ doc.formats|tojson }} %]
+{% endif %}
+
 {% macro filter(formats='websites, ads, stories, email', level='advanced, beginner') -%}
 {% if not formats.strip() and not level.strip() %}
 {{ caller() }}

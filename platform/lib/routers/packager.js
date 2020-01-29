@@ -85,7 +85,7 @@ const packager = (request, response, next) => {
 function sxgProxy(request, response, url) {
   console.log('[packager] proxy', url);
   request.url = url;
-  proxy.web(request, response, proxyOptions, (error) => {
+  proxy.web(request, response, proxyOptions, error => {
     console.log('[packager] proxy error', error);
     response.status(502).end();
   });

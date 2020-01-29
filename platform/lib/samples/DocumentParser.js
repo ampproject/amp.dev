@@ -24,20 +24,37 @@ const elementSorting = require('./ElementSorting');
 const beautifyHtml = require('js-beautify').html;
 
 const SINGLE_LINE_TAGS = ['link', 'meta', '!doctype'];
-const VOID_TAGS = ['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
-  'link', 'meta', 'param', 'source', 'track', 'wbr'];
+const VOID_TAGS = [
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr',
+];
 
 const SAMPLE_THUMBNAIL = '/favicons/android-chrome-256x256.png';
 const DEFAULT_LANG = 'en';
-const AMP_STORY_CLEANER_REGEX =
-  ['amp-story', 'amp-story-auto-ads']
-      .map((extension) =>
-        new RegExp('<script\\s+async\\s+custom-element="' + extension +
-      '"\\s+src="https:\\/\\/cdn\\.ampproject\\.org\\/v0\\/' + extension +
-      '-\\d\\.\\d\\.js"><\\/script>'),
-      );
-const AMPHTML_BOILERPLATE = '<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>'; // eslint-disable-line max-len
-
+const AMP_STORY_CLEANER_REGEX = ['amp-story', 'amp-story-auto-ads'].map(
+  extension =>
+    new RegExp(
+      '<script\\s+async\\s+custom-element="' +
+        extension +
+        '"\\s+src="https:\\/\\/cdn\\.ampproject\\.org\\/v0\\/' +
+        extension +
+        '-\\d\\.\\d\\.js"><\\/script>'
+    )
+);
+const AMPHTML_BOILERPLATE =
+  '<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>'; // eslint-disable-line max-len
 
 /* eslint-disable */
 const BEAUTIFY_OPTIONS = {
@@ -58,7 +75,7 @@ const BEAUTIFY_OPTIONS = {
  * - starts with an HTML comment
  * - spans the next tag and its children after a comment
  */
-module.exports.parse = function(input, filePath='') {
+module.exports.parse = function(input, filePath = '') {
   input = beautifyHtml(input, BEAUTIFY_OPTIONS);
   const parsing = new DocumentParser(input.split('\n'), filePath);
   parsing.execute();
@@ -67,7 +84,7 @@ module.exports.parse = function(input, filePath='') {
 };
 
 class DocumentParser {
-  constructor(lines, filePath='') {
+  constructor(lines, filePath = '') {
     this.lines = lines;
     this.document = new Document();
     this.document.firstImage = SAMPLE_THUMBNAIL;
@@ -129,9 +146,16 @@ class DocumentParser {
             this.document.metadata = yaml.safeLoad(this.metadata);
           } catch (err) {
             throw new Error(
-                'There is an error in the YAML frontmatter in ' +
-              this.filePath + ' at line ' + (i + 1) +
-                '\n' + '"' + line + '"', err);
+              'There is an error in the YAML frontmatter in ' +
+                this.filePath +
+                ' at line ' +
+                (i + 1) +
+                '\n' +
+                '"' +
+                line +
+                '"',
+              err
+            );
           }
         } else if (trimmedLine.endsWith('~-->')) {
           this.inHint = false;
@@ -226,24 +250,32 @@ class DocumentParser {
   }
 
   replaceAmpStoryRuntime(string) {
-    AMP_STORY_CLEANER_REGEX.forEach((r) => string = string.replace(r, ''));
+    AMP_STORY_CLEANER_REGEX.forEach(r => (string = string.replace(r, '')));
     return string;
   }
 
   replaceAmpHtmlEmailRuntimeAddViewport(string) {
     return string.replace(
-        '<style amp4email-boilerplate>body{visibility:hidden}</style>',
-        '<meta name="viewport" content="width=device-width,minimum-scale' +
+      '<style amp4email-boilerplate>body{visibility:hidden}</style>',
+      '<meta name="viewport" content="width=device-width,minimum-scale' +
         '=1,initial-scale=1">' +
-      AMPHTML_BOILERPLATE);
+        AMPHTML_BOILERPLATE
+    );
   }
 
   replaceAmpAdRuntime(string) {
-    string = string.replace('https://amp-ads.firebaseapp.com/dist/amp-inabox.js', 'https://amp-ads.firebaseapp.com/dist/amp.js');
     string = string.replace(
-        '<style amp4ads-boilerplate>body{visibility:hidden}</style>',
-        AMPHTML_BOILERPLATE);
-    return string.replace('https://cdn.ampproject.org/amp4ads-v0.js', 'https://cdn.ampproject.org/v0.js');
+      'https://amp-ads.firebaseapp.com/dist/amp-inabox.js',
+      'https://amp-ads.firebaseapp.com/dist/amp.js'
+    );
+    string = string.replace(
+      '<style amp4ads-boilerplate>body{visibility:hidden}</style>',
+      AMPHTML_BOILERPLATE
+    );
+    return string.replace(
+      'https://cdn.ampproject.org/amp4ads-v0.js',
+      'https://cdn.ampproject.org/v0.js'
+    );
   }
 
   verifySectionFilters(section) {
@@ -252,7 +284,9 @@ class DocumentParser {
     }
     for (const filter of section.filters) {
       if (!this.document.formats().includes(filter)) {
-        throw new Error(`Section uses filter that's not listed in formats: ${filter}`);
+        throw new Error(
+          `Section uses filter that's not listed in formats: ${filter}`
+        );
       }
     }
   }
@@ -311,8 +345,10 @@ class DocumentParser {
       return '';
     }
     let end = closingBracket;
-    if ((nextSpace > -1 && nextSpace < closingBracket) ||
-      closingBracket == -1) {
+    if (
+      (nextSpace > -1 && nextSpace < closingBracket) ||
+      closingBracket == -1
+    ) {
       end = nextSpace;
     }
     return string.substring(start + 1, end);
@@ -370,9 +406,9 @@ class DocumentParser {
   }
 
   attr(line, name) {
-    const match = line.match(name + '=\"(.*)\"');
+    const match = line.match(name + '="(.*)"');
     return match ? match[1] : '';
   }
-};
+}
 
 module.exports.DocumentParser = DocumentParser;

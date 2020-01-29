@@ -28,14 +28,17 @@ const staticSources = express.static(SOURCES_DEST);
 
 exampleSources.use('/documentation/examples/', exampleBackend);
 
-exampleSources.use('/documentation/examples/:category/:name/:snippetId?', (req, res, next) => {
-  req.url = `/${req.params.category}/${req.params.name}`;
-  if (req.params.snippetId && req.params.snippetId !== 'index.html') {
-    req.url += `-${req.params.snippetId}`;
-  }
+exampleSources.use(
+  '/documentation/examples/:category/:name/:snippetId?',
+  (req, res, next) => {
+    req.url = `/${req.params.category}/${req.params.name}`;
+    if (req.params.snippetId && req.params.snippetId !== 'index.html') {
+      req.url += `-${req.params.snippetId}`;
+    }
 
-  req.url += '.html';
-  staticSources(req, res, next);
-});
+    req.url += '.html';
+    staticSources(req, res, next);
+  }
+);
 
 module.exports = exampleSources;

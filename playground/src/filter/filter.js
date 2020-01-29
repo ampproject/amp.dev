@@ -23,7 +23,10 @@ export default class Filter {
     this.search = wade(strings);
     this.elements = elements;
     this.input = input;
-    this.input.addEventListener('input', debounce(this.doFilter.bind(this), 200));
+    this.input.addEventListener(
+      'input',
+      debounce(this.doFilter.bind(this), 200)
+    );
   }
 
   doFilter() {
@@ -35,7 +38,7 @@ export default class Filter {
     const results = this.search(searchInput);
 
     const mapping = new Set();
-    results.forEach((r) => {
+    results.forEach(r => {
       mapping.add(r.index);
     });
 
@@ -45,7 +48,7 @@ export default class Filter {
   }
 
   clear() {
-    this.elements.forEach((e) => {
+    this.elements.forEach(e => {
       e.classList.toggle(CSS_FILTER_RULE, false);
     });
   }

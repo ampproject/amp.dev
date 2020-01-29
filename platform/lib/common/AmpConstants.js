@@ -16,11 +16,7 @@
 'mode strict';
 
 module.exports = {
-  BUILD_IN_COMPONENTS: [
-    'amp-layout',
-    'amp-img',
-    'amp-pixel',
-  ],
+  BUILD_IN_COMPONENTS: ['amp-layout', 'amp-img', 'amp-pixel'],
   IMPORTANT_INCLUDED_ELEMENTS: [
     'amp-state',
     'amp-list-load-more',

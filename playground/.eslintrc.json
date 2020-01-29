@@ -1,10 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": "google",
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
-  },
+	},
   "rules": {
     "max-len": [2, 100, {
       "ignoreComments": true,
@@ -25,8 +24,7 @@
       "args": "after-used",
       "argsIgnorePattern": "(^reject$|^_$)",
       "varsIgnorePattern": "(^_$)"
-    }],
-    "quotes": [2, "single"],
+		}],
     "require-jsdoc": 0,
     "valid-jsdoc": 0,
     "prefer-arrow-callback": 1,
