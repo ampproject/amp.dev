@@ -13,16 +13,7 @@
       </head>
       
       <body>
-        <script>
-            // Wait for API to initialize
-            (window.AmpVideoIframe = window.AmpVideoIframe || [])
-                .push(function(ampIntegration) {
-                  var myVideo = document.querySelector('#my-video');
         
-                  // Listen to element that uses Video.JS.
-                  ampIntegration.listenTo('videojs', myVideo);
-                });
-          </script>
         <video
           id="my-video"
           class="video-js"
@@ -43,5 +34,15 @@
         </video>
       
         <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+        <script>
+          // Wait for API to initialize
+          (window.AmpVideoIframe = window.AmpVideoIframe || [])
+              .push(function(ampIntegration) {
+                var myVideo = document.querySelector('#my-video');
+
+                // Listen to element that uses Video.JS.
+                ampIntegration.listenTo('videojs', myVideo);
+              });
+        </script>
       </body>
 </html>
