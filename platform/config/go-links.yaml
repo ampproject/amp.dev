@@ -50,3 +50,9 @@
 ^/e/amp-([a-z-]+)$:
   url: /documentation/examples/components/amp-$1/
   useRegex: true
+^/pr/([0-9]+)$:
+  url: https://github.com/ampproject/amphtml/pull/$1
+  useRegex: true
+^/issue/([0-9]+)$:
+  url: https://github.com/ampproject/amphtml/issues/$1
+  useRegex: true
