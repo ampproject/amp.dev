@@ -48,10 +48,18 @@ async function importWorkingGroups() {
         .repo(`${WG_GH_ORGANISATION}/${wg.name}`)
         .contentsAsync('METADATA.yaml');
     } catch (e) {
-      console.warn(`No METADATA.yaml for working group ${wg.name}.`);
+      console.warn(`No METADATA.yaml for working group ${wg.name}`);
       continue;
     }
-    meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
+    try {
+      meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
+    } catch (e) {
+      console.error(
+        `Failed loading ${WG_GH_ORGANISATION}/${wg.name}/METADATA.yaml`,
+        e
+      );
+      continue;
+    }
 
     let issues = (
       await client._github
