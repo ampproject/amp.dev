@@ -1,68 +1,27 @@
-/*
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
 
-############################
-### Organism: component-sidebar #####
-############################
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_headline.scss';
 
-*/
+@import 'components/organisms/_sidebar.scss';
 
+.#{utility('ampsidebar')} {
+  @include sidebar-ampsidebar;
 
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
-@import '../atoms/_headline.scss';
-
-@import '_sidebar.scss';
-
-amp-sidebar {
-  width: 100%;
-  max-width: 90vw;
-  background: color('whisper');
-}
-
-nav[toolbar] {
-  top: 86px;
-  height: 100vh;
-  max-height: calc(100vh - 86px);
-
-  @media (min-width: 768px){
-    position: -webkit-sticky;
-    position: sticky;
-    overflow: auto;
-  }
-
-  & > ul {
-    -webkit-overflow-scrolling: touch;
-    margin: 0;
-    padding: 0;
-
-    @media (min-width: 768px){
-      overflow: auto;
-      max-height: 100%;
-    }
-
-    &::-webkit-scrollbar {
-      width: 2px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(color('black'), 0.10);
-    }
+  &-toolbar {
+    @include sidebar-ampsidebar-toolbar;
   }
 }
 
-.#{utility('sidebar')} {
-  margin-top: 10px;
-}
+.#{organism('sidebar-component')} {
+  @include sidebar-wrapper;
 
-.#{organism('component-sidebar')} {
-  @include sidebar;
-
-  &:before {
-    z-index: 2;
+  .#{organism('sidebar')} {
+    @include sidebar;
   }
 
   .nav {
@@ -76,8 +35,6 @@ nav[toolbar] {
       }
 
       .nav-list {
-        @include sidebar-nav-list-sublevels;
-        display: block;
         padding-bottom: 10px;
         margin-bottom: 10px;
       }
@@ -122,15 +79,6 @@ nav[toolbar] {
         &:hover > .nav-link {
           color: color('gray-chateau');
         }
-
-        .nav-trigger,
-        .nav-icon {
-          @include sidebar-nav-trigger-level-1;
-        }
-
-        .nav-icon .#{atom('ico')} {
-          @include sidebar-nav-icon-level-1;
-        }
       }
 
       &.level-2 {
@@ -139,19 +87,6 @@ nav[toolbar] {
           padding: 3px 25px 3px 0;
           margin: 0;
         }
-
-        .nav-trigger,
-        .nav-icon {
-          @include sidebar-nav-trigger-level-2;
-        }
-
-        .nav-icon .#{atom('ico')} {
-          @include sidebar-nav-icon-level-2;
-        }
-      }
-
-      &.level-3 {
-        @include sidebar-nav-link-level-3;
       }
 
       &.active > .nav-link {
@@ -166,29 +101,5 @@ nav[toolbar] {
     &-link {
       @include sidebar-nav-link;
     }
-
-    &-icon,
-    &-trigger {
-      @include sidebar-nav-trigger;
-    }
-
-    &-trigger {
-      @include sidebar-nav-trigger-state;
-    }
-
-    &-icon .#{atom('ico')} {
-      @include sidebar-nav-icon;
-    }
-
-    span.nav-link + .nav-trigger {
-      width: calc(100% + 15px);
-    }
-  }
-}
-
-.#{organism('sidebar')} {
-
-  &-section {
-    max-width: 100%;
   }
 }

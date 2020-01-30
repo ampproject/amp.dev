@@ -9,13 +9,14 @@
   class="ap--ampsidebar"
   layout="nodisplay"
   side="left">
-  <nav toolbar="(min-width: 768px)"
-    toolbar-target="ap--sidebar-content">
+  <nav class="ap--ampsidebar-toolbar"
+       toolbar="(min-width: 768px)"
+       toolbar-target="ap--sidebar-content">
     <ul>
       {% include '/views/partials/format-toggle.j2' %}
-      <div class="ap-o-sidebar-section">
+      <div class="ap-o-sidebar-{{ type if type else 'default' }}">
 
-        <div class="ap-o-{{ 'component-' if type == 'component' }}sidebar">
+        <div class="ap-o-sidebar">
           <div class="nav">
 
           {# Custom content for example-sidebar #}
