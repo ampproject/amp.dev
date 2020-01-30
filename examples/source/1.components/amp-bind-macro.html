@@ -9,6 +9,7 @@ author: elisameyer, philkrie
   This example shows how you can sanitize user input for a URL with an
   `amp-bind-macro` call.
 -->
+<!-- -->
 <!doctype html>
 <html ⚡="">
   <head>
@@ -31,8 +32,9 @@ author: elisameyer, philkrie
       AMP bind macro text sanitization
     </h1>
     <!-- ## Implementation -->
-    <!-- the `replaceSpace` expression defined in `amp-bind-macro` replaces spaces in user input with %20
+    <!-- the `replaceSpace` expression defined in `amp-bind-macro` replaces spaces in user input with s/%20/`%20`/
           and sets all letters to lowercase to match url format for google search -->
+    <div>
     <amp-bind-macro
       id="replaceSpace"
       arguments="str"
@@ -53,5 +55,6 @@ author: elisameyer, philkrie
       >
         Your sanitized link will display here. You can copy and paste into search bar to test.
       </p>
+      </div>
   </body>
 </html>

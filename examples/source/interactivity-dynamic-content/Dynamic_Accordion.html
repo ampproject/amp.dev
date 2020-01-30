@@ -10,6 +10,7 @@ tags
 
   This code snippet shows how you can dynamically update data in `amp-accordion `sections using `amp-bind` and `amp-list`.ß
 -->
+<!-- -->
 <!DOCTYPE html>
 <html ⚡="">
   <head>
@@ -61,12 +62,8 @@ tags
       <!--
           The `input` section sets `amp-state` as `{climate: 1}` if 'Hot' is selected and `{climate: 2}` if 'Cold' is selected.
           The `amp-accordion` is hidden by default, but displayed if climate != 0 (so either hot or cold must be selected).
-
-          The `src` for climateCountries is dynamic. If `{climate == 1}` then `climateCountries` data is pulled from the hot.json file. Else, if `{climate == 2}` then climateCountries data is pulled from the cold.json file
-
-          Each `amp-accordion` section is a different continent, therefore the data `climateCountries` also must be filtered by continent. The filtering is done in the `[src]` section in the `amp-list`.
-          Additionally, height is dynamically set based on number of items in filtered state
         -->
+        <div>
           <input
             type="radio"
             id="f-option1"
@@ -85,6 +82,14 @@ tags
             tabindex="0"
           />
           <label for="f-option2">Cold</label>
+          </div>
+          <!-- ## Accordion -->
+          <!--
+          Each `amp-accordion` section is a different continent, therefore the `climateCountries` data also must be filtered by continent. This filtering is done in the `[src]` section of `amp-list`.
+          Additionally, height is dynamically set based on number of items in filtered state.
+
+          The `src` for `climateCountries` is dynamic based on user input. If `{climate == 1}` then `climateCountries` data is pulled from the hot.json file. Else, if `{climate == 2}` then climateCountries data is pulled from the cold.json file
+        -->
       <div id="accordion" [class]="(climate != 0) ? 'show':'hide'" class="hide">
         <p>The accordion below lists countries, organized by continent, that match the climate you chose. </p>
         <amp-state
@@ -138,7 +143,7 @@ tags
                 layout="fixed-height"
                 binding="refresh"
                 [src]="climateCountries.countries.filter(country => country.continent == 'South America')"
-                [height]="climateCountries.countries.filter(country => country.continent == 'South America').length * 35"
+                [is-layout-container]="true"
               >
                 <template type="amp-mustache">
                   <ul>
