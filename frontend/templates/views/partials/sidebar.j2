@@ -1,7 +1,7 @@
 {% if type == 'component' %}
-{% do doc.styles.addCssFile('css/components/organisms/component-sidebar.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/sidebar-component.css') %}
 {% else %}
-{% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
+{% do doc.styles.addCssFile('css/components/organisms/sidebar-default.css') %}
 {% endif %}
 {% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
 
