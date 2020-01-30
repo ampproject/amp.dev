@@ -1,4 +1,10 @@
+{% if type == 'component' %}
+{% do doc.styles.addCssFile('css/components/organisms/component-sidebar.css') %}
+{% else %}
+{% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
+{% endif %}
 {% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
+
 <amp-sidebar id="sidebar-left"
   class="ap--ampsidebar"
   layout="nodisplay"
@@ -8,9 +14,81 @@
     <ul>
       {% include '/views/partials/format-toggle.j2' %}
       <div class="ap-o-sidebar-section">
-        {% do doc.styles.addCssFile('css/components/organisms/sidebar.css') %}
-        <div class="ap-o-sidebar">
+
+        <div class="ap-o-{{ 'component-' if type == 'component' }}sidebar">
           <div class="nav">
+
+          {# Custom content for example-sidebar #}
+          {% if type == 'example' %}
+
+            {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
+            {% for category, examples in categories %}
+            [% if format in {{ examples|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
+            <ul class="nav-list level-1">
+              <li class="nav-item level-1 {% if doc.category == category %}active{% endif %}">
+                <span class="nav-link">
+                  {% set categoryName = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+                  <span>{{ _(categoryName) }}</span>
+                </span>
+                <input class="nav-trigger" type="checkbox" {% if doc.category == category %}checked{% endif %}>
+                <div class="nav-icon">
+                  <svg class="ap-a-ico">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>
+                  </svg>
+                </div>
+                <ul class="nav-list level-2">
+                  {% for example in examples %}
+                  {% if not example.draft or doc.pod.env.dev %}
+                  [% if format in {{ example.formats|tojson }} %]
+                  {% set active = true if example == doc %}
+                  <li class="nav-item level-2 {% if active %}active{% endif %}" {% if active %}autoscroll{% endif %}>
+                    <a class="nav-link" href="{{ example.url.path }}">{{ example.title }}</a>
+                  </li>
+                  [% endif %]
+                  {% endif %}
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+            [% endif %]
+            {% endfor %}
+
+          {# Custom content for component-sidebar #}
+          {% elif type == 'component' %}
+
+            {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
+            {% set scope = namespace(initial=components[0].title[4]) %}
+            <ul class="nav-list level-1">
+              <li class="nav-item level-1 ">
+                <ul class="nav-list level-2">
+                  <li class="nav-link">{{ scope.initial|upper }}</li>
+                  {% for component in components if component.is_current %}
+
+                  {% set initial = component.title[4] %}
+                  {% if scope.initial != initial %}
+                  {% set scope.initial = initial %}
+                </ul>
+              </li>
+              <li class="nav-item level-1 ">
+                <ul class="nav-list level-2">
+                  <li class="nav-link">{{ scope.initial|upper }}</li>
+                  {% endif %}
+                  {% set formats = component.formats or [] %}
+                  {% set activeDocument = true if component.url == doc.url %}
+                  {# the latest document might not support a format, hence we have to check if any version supports the format #}
+                  [% if format in {{ component.supported_formats|list|tojson }} %]
+                  <li {% if activeDocument %}autoscroll {% endif %} class="nav-item {% if activeDocument %}active {% endif %} level-2">
+                    <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
+                  </li>
+                  [% endif %]
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+
+          {# Content for default sidebar #}
+          {% else %}
+
             {% macro nav_tree(root, iteration=1, depth=None) -%}
             {% if not depth or iteration <= depth %}
             <ul class="nav-list level-{{ iteration }}">
@@ -113,6 +191,9 @@
             {% set split_path = doc.collection.collection_path.split('/') %}
             {% set current_path = '/'.join(split_path[:3]) %}
             {{ nav_tree(root=g.collection(current_path)) }}
+
+          {% endif %}
+
           </div>
         </div>
       </div>
