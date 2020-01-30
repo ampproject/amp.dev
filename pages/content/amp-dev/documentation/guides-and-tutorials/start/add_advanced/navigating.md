@@ -40,8 +40,7 @@ And **add** these style rules to your inline CSS:
   align-items: center;
 }
 .site-name {
-  flex: 1;
-  margin-left: -36px;
+  margin: auto;
 }
 article {
   margin-top: 50px;

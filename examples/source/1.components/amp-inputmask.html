@@ -60,7 +60,7 @@ The [`amp-inputmask` component](https://github.com/ampproject/amphtml/blob/maste
     If the `mask-output` attribute is set to `"alphanumeric"`, `amp-inputmask` will add a hidden input with only the alphanumeric characters from the original input. The default value is `"raw"`
    -->
   <form class="sample-form" method="post" action-xhr="/documentation/examples/api/phone" target="_top">
-    <label>Phone: <input name="code" mask="+\1_(000)_000-0000" placeholder="+1 (555) 555-5555" mask-output="alphanumeric"></label>
+    <label>Phone: <input name="code" type="tel" mask="+\1_(000)_000-0000" placeholder="+1 (555) 555-5555" mask-output="alphanumeric"></label>
     <input type="submit">
     <div submit-success>
       <template type="amp-mustache">

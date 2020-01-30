@@ -27,8 +27,10 @@ if (fs.existsSync(VALIDATOR_TARGET_PATH)) {
   const ampHtmlValidatorMock = require('amphtml-validator');
   ampHtmlValidatorMock.getInstance.mockReturnValue(validatorInstance);
 } else {
-  signale.warn('No local validator.js found. This test will not run offline.' +
-    ' Please run npm install.');
+  signale.warn(
+    'No local validator.js found. This test will not run offline.' +
+      ' Please run npm install.'
+  );
 }
 
 const {getInstance} = require('./index');
@@ -38,7 +40,7 @@ const PLATFORM_HOST = require('../config.js').hosts.platform.base;
 describe('formatTransform', () => {
   let formatTransform = null;
 
-  beforeEach(async (done) => {
+  beforeEach(async done => {
     if (!formatTransform) {
       formatTransform = await getInstance();
     }
@@ -74,7 +76,10 @@ describe('formatTransform', () => {
 </head>
 <body></body>
 </html>`);
-    const {transformedContent, validationResult} = formatTransform.transform(input, 'email');
+    const {transformedContent, validationResult} = formatTransform.transform(
+      input,
+      'email'
+    );
     expect(s(transformedContent)).toBe(want);
     expect(validationResult).toEqual({
       status: 'PASS',
@@ -143,8 +148,12 @@ describe('formatTransform', () => {
 
   it('checks if result is valid AMP', () => {
     const input = '<!doctype html><html ⚡><head></head><body></body></html>';
-    const want = '<!doctype html><html ⚡4email><head></head><body></body></html>';
-    const {transformedContent, validationResult} = formatTransform.transform(input, 'email');
+    const want =
+      '<!doctype html><html ⚡4email><head></head><body></body></html>';
+    const {transformedContent, validationResult} = formatTransform.transform(
+      input,
+      'email'
+    );
     expect(s(transformedContent)).toBe(want);
     expect(validationResult.status).toBe('FAIL');
   });

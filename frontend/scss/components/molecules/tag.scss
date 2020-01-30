@@ -53,4 +53,9 @@ TODO: Add info text to this molecule.
 		@include color-e-mails;
 		@include gradient-e-mails;
 	}
+
+	&-general {
+		color: color('white');
+		background-color: color('blue-ribbon');
+	}
 }

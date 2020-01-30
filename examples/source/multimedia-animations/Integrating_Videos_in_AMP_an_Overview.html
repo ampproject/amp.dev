@@ -167,18 +167,19 @@ author: kul3r4
   </amp-youtube>
   <!-- ## What if your Video Provider is not Supported?-->
   <!--
-    Use `amp-iframe` for videos not supported in AMP.
-    Find more examples [here](/content/amp-dev/documentation/components/reference/amp-iframe-v0.1.md).
+    Use `amp-video-iframe` for videos not supported in AMP.
+    Find more examples [here](https://amp.dev/documentation/components/amp-video-iframe/).
   -->
-  <amp-iframe title="Video of Sintel, an independently produced short film"
-              width="500"
-              height="281"
-              layout="responsive"
-              sandbox="allow-scripts allow-same-origin allow-popups"
-              allowfullscreen
-              frameborder="0"
-              src="https://player.ooyala.com/iframe.html?ec=Vxc2k0MDE6Y_C7J5podo3UDxlFxGaZrQ&pbid=6440813504804d76ba35c8c787a4b33c&platform=html5">
-  </amp-iframe>
-
+  <amp-video-iframe id="myVideo"
+               src="/static/samples/files/custom-video-player.html"
+               width="317"
+               height="210"
+               layout="responsive"
+               autoplay>
+               <amp-img placeholder
+                      src="/static/samples/img/bird.jpg"
+                      layout="fill">
+               </amp-img>
+  </amp-video-iframe>
 </body>
 </html>

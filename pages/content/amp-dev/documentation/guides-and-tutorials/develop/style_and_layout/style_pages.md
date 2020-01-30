@@ -55,8 +55,8 @@ The following styles aren’t allowed in AMP pages:
       <td data-th="Description">Disallowed with the exception of <a href="#the-custom-fonts-exception">custom fonts</a>.</td>
     </tr>
     <tr>
-      <td data-th="Banned style"><code>-amp-</code> class and <code>i-amp-</code> tag names</td>
-      <td data-th="Description">Class names, in author stylesheets, may not start with the string <code>-amp-</code>. These are reserved for internal use by the AMP runtime. It follows, that the user's stylesheet may not reference CSS selectors for <code>-amp-</code> classes and <code>i-amp</code> tags.</td>
+      <td data-th="Banned style"><code>i-amphtml-</code> class and <code>i-amphtml-</code> tag names.</td>
+      <td data-th="Description">The validator disallows class and tags names with the following regex `(^|\W)i-amphtml-`. These are reserved for internal use by the AMP framework. It follows, that the user's stylesheet may not reference CSS selectors for <code>i-amphtml-</code> classes and tags.</td>
     </tr>
   </tbody>
 </table>

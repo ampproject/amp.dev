@@ -25,6 +25,14 @@
     "formats": ["websites", "stories"]
   },
   {
+    "title": "AMP Release Schedule",
+    "order": 4,
+    "repo": "ampproject/amphtml",
+    "from": "contributing/release-schedule.md",
+    "to": "documentation/guides-and-tutorials/learn/spec/release-schedule.md",
+    "formats": ["websites", "email", "stories", "ads"]
+  },
+  {
     "title": "AMPHTML Layout System",
     "order": 1,
 		"repo": "ampproject/amphtml",

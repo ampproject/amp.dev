@@ -588,6 +588,8 @@ platform_and_vendor_partners:
         url: https://www.quintype.com/
       - label: Rabbit
         url: https://gomobile.jp/rabbit/
+      - label: RebelMouse
+        url: https://www.rebelmouse.com/AMP/       
       - label: Squarespace
         url: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
       - label: Textpattern
@@ -639,6 +641,37 @@ platform_and_vendor_partners:
         url: https://vine.co/
       - label: YouTube
         url: https://www.youtube.com/
+  - title: Real Time Config
+    id: rtc
+    list:
+      - label: APS (Amazon Publishing Service)
+        url: https://aps.amazon.com/aps/index.html
+      - label: Automatad
+        url: https://automatad.com/
+      - label: Criteo
+        url: https://www.criteo.com/
+      - label: FLUX
+        url: https://flux-g.com/
+      - label: IndexExchange
+        url: https://www.indexexchange.com/
+      - label: Lotame
+        url: https://www.lotame.com/
+      - label: Media.net
+        url: https://www.media.net/
+      - label: PubMatic OpenWrap
+        url: https://pubmatic.com/
+      - label: Rubicon
+        url: https://rubiconproject.com/
+      - label: Salesforce
+        url: https://www.salesforce.com/
+      - label: Yieldbot
+        url: https://www.nexx.tv/
+      - label: Kargo
+        url: https://kargo.com/
+      - label: Xandr (formerly Appnexus)
+        url: https://www.xandr.com/        
+      - label: Yieldlab
+        url: https://www.yieldlab.com/
 supported_browsers:
   - title: Chrome
     img: /static/img/platforms/chrome.png

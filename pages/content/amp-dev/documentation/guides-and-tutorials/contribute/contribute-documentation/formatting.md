@@ -103,7 +103,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 For a list of shortcodes and their uses, please view [documentation.md on GitHub](https://github.com/ampproject/amp.dev/blob/future/contributing/documentation.md#shortcodes).
 
 ## Images
-amp.dev is built with AMP! Therefore our images must match the [`amp-img`](../../../../documentation/components/reference/amp-img.md) criteria. The build process uses the following syntact to convert images to proper `amp-img` format.
+amp.dev is built with AMP! Therefore our images must match the [`amp-img`](../../../../documentation/components/reference/amp-img.md) criteria. The build process uses the following syntax to convert images to proper `amp-img` format.
 
 <div class="ap-m-code-snippet">
 <pre>

@@ -16,7 +16,6 @@
 
 'use strict';
 
-
 const {Templates} = require('@lib/templates/index.js');
 const express = require('express');
 

@@ -45,5 +45,11 @@
       "host": "amp-dev-sxg.appspot.com",
       "port": ""
     }
+	},
+	"redis": {
+		"us-central1": {
+			"host": "10.139.214.155",
+			"port": "6379"
+		}
 	}
 }

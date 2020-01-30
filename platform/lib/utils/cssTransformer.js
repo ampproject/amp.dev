@@ -13,6 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+const {
+  nextNode,
+  hasAttribute,
+  firstChildByTag,
+} = require('@ampproject/toolbox-optimizer').NodeUtils;
 const rcs = require('rcs-core');
 const csso = require('csso');
 
@@ -44,6 +49,7 @@ const SAFE_CLASS_NAMES = [
   'ap-m-shift-card',
   'ap-m-teaser',
   'ap-m-visual-image',
+  'ap-m-format-filter',
   'ap-o-benefits',
   'ap-o-benefits',
   'ap-o-burger-menu-item',
@@ -91,7 +97,7 @@ const SAFE_CLASS_NAMES = [
 ];
 
 rcs.selectorLibrary.setExclude(
-    new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$'),
+  new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$')
 );
 
 /**
@@ -104,23 +110,23 @@ class CssTransformer {
   }
 
   transform(tree) {
-    const html = tree.root.firstChildByTag('html');
+    const html = firstChildByTag(tree, 'html');
     if (!html) return;
 
-    const head = html.firstChildByTag('head');
+    const head = firstChildByTag(html, 'head');
     if (!head) return;
 
     // Find style[amp-custom] to rewrite selectors
     let style = null;
     for (const child of head.children) {
-      if (child.tagName == 'style' && child.hasAttribute('amp-custom')) {
+      if (child.tagName == 'style' && hasAttribute(child, 'amp-custom')) {
         style = child;
         break;
       }
     }
     if (!style) return;
 
-    const body = html.firstChildByTag('body');
+    const body = firstChildByTag(html, 'body');
     if (!body) return;
 
     // Rewrite the selectors inside the CSS
@@ -131,14 +137,17 @@ class CssTransformer {
     style.children[0].data = styles;
 
     // Rewrite the selectors on the actual elements
-    for (let node = body; node !== null; node = node.nextNode()) {
-      if (!node.hasAttribute('class')) {
+    for (let node = body; node !== null; node = nextNode(node)) {
+      if (!hasAttribute(node, 'class')) {
         continue;
       }
 
-      node.attribs.class = node.attribs.class.split(' ').map((className) => {
-        return rcs.selectorLibrary.get(className) || className;
-      }).join(' ');
+      node.attribs.class = node.attribs.class
+        .split(' ')
+        .map(className => {
+          return rcs.selectorLibrary.get(className) || className;
+        })
+        .join(' ');
     }
   }
 }

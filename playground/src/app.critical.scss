@@ -11,7 +11,7 @@
 
 * {
   box-sizing: border-box;
-  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+  -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
 }
 
 .elevation-2dp {
@@ -123,8 +123,10 @@
       height: 100%;
     }
     .button {
-      width: 48px;
       height: 48px;
+    }
+    .button.square {
+      width: 48px;
     }
     .button:active {
       background: color('silver');
@@ -166,8 +168,9 @@
       & > *:first-child {
         border-right: 1px solid color('silver');
       }
-      & > *:last-child {
+      & > *:last-child > * {
         border-left: 1px solid color('silver');
+        border-radius: 0;
       }
       select {
         background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23FFF'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
@@ -226,10 +229,10 @@
 }
 
 .button[disabled] {
-  color: color('silver'); 
+  color: color('silver');
 }
 .button[disabled] svg {
-  fill: #dddddd; 
+  fill: #dddddd;
 }
 
 .panel-header select {
@@ -240,7 +243,7 @@
   font: inherit;
   line-height: 1em;
   padding: 0.5em 1.5em 0.5em 0em;
-  margin: 0;      
+  margin: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -387,7 +390,7 @@ main > .panel + .panel {
   display: none;
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {
   .hide-on-desktop {
     display: block;
   }

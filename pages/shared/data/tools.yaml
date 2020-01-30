@@ -149,6 +149,17 @@ platforms:
       height: 1000
     formats:
       - stories
+  - name: RebelMouse
+    description: Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern.
+    url: https://www.rebelmouse.com/AMP/
+    type: Content Platform
+    image:
+      src: /static/img/tools/rebelmouse.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites    
+      - stories      
   - name: Tick. Done.
     description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
     url: http://tick.co/
@@ -328,6 +339,16 @@ developer:
     formats:
       - ads
       - stories
+  - name: NodemailerApp
+    type: Development
+    description: NodemailerApp is an email debugging app that includes a local SMTP server and renders AMP for Email emails.
+    url: https://nodemailer.com/app/
+    image:
+      src: /static/img/tools/nodemailer.jpg
+      width: 800
+      height: 600
+    formats:
+      - email
 providers:
   - name: Amazon Simple Email Service (SES)
     url: https://aws.amazon.com/ses/
@@ -415,7 +436,7 @@ providers:
   - name: SendPulse
     url: https://sendpulse.com/
     type: Email Service
-    description: Send interactive emails using SendPulse email editor or API. 
+    description: Send interactive emails using SendPulse email editor or API.
     image:
       src: /static/img/tools/sendpulse-logo.png
       width: 960
@@ -423,3 +444,47 @@ providers:
       fit: contain
     formats:
       - email
+  - name: eSputnik
+    url: https://esputnik.com/
+    type: Email Service
+    description: Supercharge conversions of your bulk and triggered campaigns with real-time recommendations in AMP powered emails
+    image:
+      src: /static/img/tools/esputnik-logo.png
+      width: 1175
+      height: 330
+      fit: contain
+    formats:
+      - email
+  - name: Adobe Campaign Classic
+    url: https://www.adobe.com/marketing/campaign.html
+    type: Email Service
+    description: Adobe Campaign Classic brings email to life with AMP
+    image:
+      src: /static/img/tools/adobe_campaign.png
+      width: 300
+      height: 300
+      fit: contain
+    formats:
+      - email
+  - name: Copernica
+    url: https://www.copernica.com/
+    type: Email Service
+    description: Copernica is a tool to create automated email campaigns with an powerful drag & drop editor.
+    image:
+      src: /static/img/tools/copernica.png
+      width: 1917
+      height: 300
+      fit: contain
+    formats:
+      - email
+  - name: WompMobile
+    url: https://www.wompmobile.com/amp-experience-platform/
+    type: Development
+    description: WompMobile is an Accelerator Platform to develop, validate, launch and manage AMP experiences. Built-in tools monitor for errors, ensure validation, purge the AMP cache, and create Signed-Exchange and Server-Side-Rendered AMPs.
+    image:
+      src: /static/img/tools/wompmobile-logo.png
+      width: 440
+      height: 110
+      fit: contain
+    formats:
+      - websites

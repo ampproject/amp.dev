@@ -28,7 +28,7 @@ class Selector {
   show() {
     this.select = this.doc.createElement('select');
     this.select.setAttribute('aria-label', this.config.label);
-    this.config.classes.forEach((c) => this.select.classList.add(c));
+    this.config.classes.forEach(c => this.select.classList.add(c));
     if (this.config.id) {
       this.select.setAttribute('id', this.config.id);
     }
@@ -36,7 +36,7 @@ class Selector {
       params.replace('runtime', this.select.value);
       this.config.onChange(this.select.value);
     });
-    this.config.values.forEach((value) => {
+    this.config.values.forEach(value => {
       const option = this.doc.createElement('option');
       option.setAttribute('value', value.id);
       if (value.selected) {

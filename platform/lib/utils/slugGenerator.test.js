@@ -4,7 +4,9 @@ test('Test anchor generation', () => {
   const slugGenerator = new SlugGenerator();
   expect(slugGenerator.generateSlug('')).toBe('');
   expect(slugGenerator.generateSlug('TestOne')).toBe('testone');
-  expect(slugGenerator.generateSlug('test two two two two two')).toBe('test-two-two-two-two-two');
+  expect(slugGenerator.generateSlug('test two two two two two')).toBe(
+    'test-two-two-two-two-two'
+  );
   expect(slugGenerator.generateSlug('test[{}](three)')).toBe('testthree');
   expect(slugGenerator.generateSlug('test four')).toBe('test-four');
   expect(slugGenerator.generateSlug('test four')).toBe('test-four-1');

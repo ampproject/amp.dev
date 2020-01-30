@@ -23,7 +23,10 @@ const googleSearch = require('@lib/utils/googleSearch.js');
 const samples = require('@lib/common/samples.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
 
-const {BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS} = require('@lib/common/AmpConstants.js');
+const {
+  BUILD_IN_COMPONENTS,
+  IMPORTANT_INCLUDED_ELEMENTS,
+} = require('@lib/common/AmpConstants.js');
 
 const PAGE_SIZE = googleSearch.PAGE_SIZE;
 const LAST_PAGE = googleSearch.MAX_PAGE;
@@ -39,8 +42,7 @@ const RESPONSE_MAX_AGE = {
   autosuggest: 86400, // 24 hours
 };
 
-const COMPONENT_REFERENCE_DOC_PATTERN =
-    /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
+const COMPONENT_REFERENCE_DOC_PATTERN = /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
 
 const REMOVE_HOST_PATTERN = /^https?:\/\/amp\.dev(?=\/)/;
 
@@ -50,20 +52,26 @@ const DESCRIPTION_META_TAG = 'twitter:description';
 
 const COMPONENT_EXAMPLES = samples.getComponentExampleMap();
 
-const COMPONENT_VERSIONS_PATH = path.join(project.paths.DIST,
-    '/static/files/component-versions.json');
+const COMPONENT_VERSIONS_PATH = path.join(
+  project.paths.DIST,
+  '/static/files/component-versions.json'
+);
 
-const HIGHLIGHTS_FOLDER_PATH = path.join(project.paths.DIST,
-    '/static/files/search-promoted-pages/');
+const HIGHLIGHTS_FOLDER_PATH = path.join(
+  project.paths.DIST,
+  '/static/files/search-promoted-pages/'
+);
 
 function buildAutosuggestComponentResult() {
   const componentVersions = require(COMPONENT_VERSIONS_PATH);
-  const components = Object.keys(componentVersions)
-      .concat(BUILD_IN_COMPONENTS, IMPORTANT_INCLUDED_ELEMENTS);
+  const components = Object.keys(componentVersions).concat(
+    BUILD_IN_COMPONENTS,
+    IMPORTANT_INCLUDED_ELEMENTS
+  );
   components.sort();
-  return ({
+  return {
     items: components,
-  });
+  };
 }
 
 const AUTOSUGGEST_COMPONENT_RESULT = buildAutosuggestComponentResult();
@@ -74,7 +82,8 @@ const search = express.Router();
 search.get('/search/autosuggest', handleAutosuggestRequest);
 search.get('/search/highlights', handleHighlightsRequest);
 search.get('/search/do', handleSearchRequest);
-
+search.get('/search/latest-query', handleNullResponse);
+search.get('/search/clear-latest-query', handleNullResponse);
 
 function handleAutosuggestRequest(request, response) {
   setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
@@ -82,21 +91,35 @@ function handleAutosuggestRequest(request, response) {
 }
 
 function handleHighlightsRequest(request, response) {
-  const locale = request.query.locale ? request.query.locale : config.getDefaultLocale();
+  const locale = request.query.locale
+    ? request.query.locale
+    : config.getDefaultLocale();
   const data = require(path.join(HIGHLIGHTS_FOLDER_PATH, `${locale}.json`));
   for (const page of data.components) {
     addExampleAndPlaygroundLink(page, locale);
     cleanupTexts(page);
   }
   setMaxAge(response, RESPONSE_MAX_AGE.highlights);
-  response.json(data);
+  response.json({
+    result: data,
+    initial: true,
+  });
+}
+
+function handleNullResponse(request, response) {
+  setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
+  response.json(null);
 }
 
 function getCseItemMetaTagValue(item, metaTag) {
   // since pagemap has always key:array the metatags dictionary is always the first element in the array
   const pagemap = item.pagemap;
-  if (pagemap && pagemap.metatags && pagemap.metatags.length > 0 &&
-      pagemap.metatags[0][metaTag]) {
+  if (
+    pagemap &&
+    pagemap.metatags &&
+    pagemap.metatags.length > 0 &&
+    pagemap.metatags[0][metaTag]
+  ) {
     return pagemap.metatags[0][metaTag];
   }
   return null;
@@ -114,9 +137,13 @@ function createPageObject(csePageItem) {
     url: csePageItem.link,
   };
 
-  const hostMatch = page.url.match(REMOVE_HOST_PATTERN);
-  if (hostMatch) {
-    page.url = page.url.substring(hostMatch[0].length);
+  // For better DX while testing the search make links relative
+  // to point to local documents
+  if (config.isDevMode() || config.isLocalMode()) {
+    const hostMatch = page.url.match(REMOVE_HOST_PATTERN);
+    if (hostMatch) {
+      page.url = page.url.substring(hostMatch[0].length);
+    }
   }
 
   return page;
@@ -132,7 +159,8 @@ function addExampleAndPlaygroundLink(page, locale) {
 
       // the preview link must not have the locale, but the example doc page has to have it:
       if (locale != config.getDefaultLocale()) {
-        page.exampleUrl = '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
+        page.exampleUrl =
+          '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
       }
     }
   }
@@ -155,8 +183,16 @@ function enrichComponentPageObject(item, page, locale) {
   addExampleAndPlaygroundLink(page, locale);
 }
 
-function createResult(totalResults, page, lastPage, components, pages, query, locale) {
-  const result = ({
+function createResult(
+  totalResults,
+  page,
+  lastPage,
+  components,
+  pages,
+  query,
+  locale
+) {
+  const result = {
     result: {
       totalResults: totalResults,
       currentPage: page,
@@ -164,14 +200,19 @@ function createResult(totalResults, page, lastPage, components, pages, query, lo
       components: components,
       pages: pages,
     },
-  });
+    initial: false,
+  };
 
   if (page == LAST_PAGE && lastPage > LAST_PAGE) {
     result.result.isTruncated = true;
   }
 
-  const searchBaseUrl = '/search/do?q=' + encodeURIComponent(query) +
-      '&locale=' + encodeURIComponent(locale) + '&page=';
+  const searchBaseUrl =
+    '/search/do?q=' +
+    encodeURIComponent(query) +
+    '&locale=' +
+    encodeURIComponent(locale) +
+    '&page=';
   if (page < lastPage && page < LAST_PAGE) {
     result.nextUrl = searchBaseUrl + (page + 1);
   }
@@ -185,9 +226,12 @@ function createResult(totalResults, page, lastPage, components, pages, query, lo
 function cleanupText(text) {
   // ` is problematic. For example `i will be rendered as ì.
   // It is not clear why, but we can simply convert it.
-  text = text.replace(/`/g, '\'');
+  text = text.replace(/`/g, "'");
   // sometimes markdown links (that may contain {{g.doc}} calls) are found, so remove them
-  text = text.replace(/\[([^\]]+)\]\([^\)]*?(?:\{\{[^}]+\}[^\)]*)?(?:\)|$)/g, '$1');
+  text = text.replace(
+    /\[([^\]]+)\]\([^\)]*?(?:\{\{[^}]+\}[^\)]*)?(?:\)|$)/g,
+    '$1'
+  );
   return text;
 }
 
@@ -198,7 +242,9 @@ function cleanupTexts(page) {
 }
 
 async function handleSearchRequest(request, response, next) {
-  const locale = request.query.locale ? request.query.locale : config.getDefaultLocale();
+  const locale = request.query.locale
+    ? request.query.locale
+    : config.getDefaultLocale();
   const page = request.query.page ? parseInt(request.query.page) : 1;
   const query = request.query.q ? request.query.q.trim() : '';
 
@@ -212,14 +258,19 @@ async function handleSearchRequest(request, response, next) {
 
   if (locale != config.getDefaultLocale()) {
     // For other languages also include en, since the index only contains the translated pages.
-    searchOptions.hiddenQuery = `more:pagemap:metatags-page-locale:${config.getDefaultLocale()}` +
-        `OR ${searchOptions.hiddenQuery}`;
+    searchOptions.hiddenQuery =
+      `more:pagemap:metatags-page-locale:${config.getDefaultLocale()}` +
+      `OR ${searchOptions.hiddenQuery}`;
     searchOptions.noLanguageFilter = true;
   }
 
   if (isNaN(page) || page < 1 || query.length == 0) {
-    const error = 'Invalid search params (q=' +
-        request.query.q + ', page=' + request.query.page + ')';
+    const error =
+      'Invalid search params (q=' +
+      request.query.q +
+      ', page=' +
+      request.query.page +
+      ')';
     console.log(error);
     // No error status since an empty query can always happen with our search template
     // and we do not want error messages in the client console
@@ -251,13 +302,15 @@ async function handleSearchRequest(request, response, next) {
 
   if (totalResults > 0) {
     let componentCount = 0;
-    for (let i=0; i<cseResult.items.length; i++) {
+    for (let i = 0; i < cseResult.items.length; i++) {
       const item = cseResult.items[i];
       const page = createPageObject(item);
 
-      if (highlightComponents &&
-          i <= MAX_HIGHLIGHT_COMPONENT_INDEX &&
-          COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)) {
+      if (
+        highlightComponents &&
+        i <= MAX_HIGHLIGHT_COMPONENT_INDEX &&
+        COMPONENT_REFERENCE_DOC_PATTERN.test(page.url)
+      ) {
         enrichComponentPageObject(item, page, locale);
         components.push(page);
         componentCount++;
@@ -273,14 +326,27 @@ async function handleSearchRequest(request, response, next) {
   }
 
   setMaxAge(response, RESPONSE_MAX_AGE.search);
-  response.json(createResult(totalResults, page, pageCount, components, pages, query, locale));
+  response.json(
+    createResult(
+      totalResults,
+      page,
+      pageCount,
+      components,
+      pages,
+      query,
+      locale
+    )
+  );
 }
 
 async function handleTestSearchRequest(request, response, next) {
   const query = request.query && request.query.q ? request.query.q : '';
-  const page = request.query && request.query.page ? parseInt(request.query.page) : 1;
-  const locale = request.query && request.query.locale ?
-      request.query.locale : config.getDefaultLocale();
+  const page =
+    request.query && request.query.page ? parseInt(request.query.page) : 1;
+  const locale =
+    request.query && request.query.locale
+      ? request.query.locale
+      : config.getDefaultLocale();
 
   const errorQuery = query.match(/(:?(\d+)-?)?error/);
   if (errorQuery) {
@@ -296,21 +362,21 @@ async function handleTestSearchRequest(request, response, next) {
   if (pageQuery) {
     lastPage = parseInt(pageQuery[1]);
   }
-  const totalResults = (lastPage -1) * PAGE_SIZE + 3;
+  const totalResults = (lastPage - 1) * PAGE_SIZE + 3;
 
   const pages = [];
   const itemCount = page == lastPage ? 3 : PAGE_SIZE;
-  for (let i=1; i <= itemCount; i++) {
+  for (let i = 1; i <= itemCount; i++) {
     pages.push({
-      title: 'test ' + query + ' a ' + ((page-1) * PAGE_SIZE + i),
-      description: 'description page a ' + ((page-1) * PAGE_SIZE + i),
+      title: 'test ' + query + ' a ' + ((page - 1) * PAGE_SIZE + i),
+      description: 'description page a ' + ((page - 1) * PAGE_SIZE + i),
       url: 'http://amp.dev',
     });
   }
 
   const components = [];
-  if (query.startsWith('amp-') && page==1) {
-    for (let i=1; i <= 2; i++) {
+  if (query.startsWith('amp-') && page == 1) {
+    for (let i = 1; i <= 2; i++) {
       components.push({
         title: 'component ' + query + ' ' + i,
         description: 'description component a ' + i,
@@ -321,7 +387,9 @@ async function handleTestSearchRequest(request, response, next) {
     }
   }
 
-  response.json(createResult(totalResults, page, lastPage, components, pages, query, locale));
+  response.json(
+    createResult(totalResults, page, lastPage, components, pages, query, locale)
+  );
 }
 
 module.exports = search;

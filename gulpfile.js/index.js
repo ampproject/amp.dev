@@ -25,10 +25,9 @@ const {join} = require('path');
 
 // load gulp tasks from files in this directory
 readdirSync(__dirname)
-    .map((path) => join(__dirname, path))
-    .filter((path) => path.endsWith('.js'))
-    .map(require)
-    .forEach((module) => {
-      Object.assign(exports, module);
-    });
-
+  .map(path => join(__dirname, path))
+  .filter(path => path.endsWith('.js'))
+  .map(require)
+  .forEach(module => {
+    Object.assign(exports, module);
+  });

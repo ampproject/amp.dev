@@ -55,7 +55,7 @@ module.exports.toString = function(file) {
   string = stripFileExtension(string);
   string = string.replace(/_/g, ' ');
   string = decodeURIComponent(string);
-  string = string.replace(/%27/g, '\'');
+  string = string.replace(/%27/g, "'");
   return string;
 };
 

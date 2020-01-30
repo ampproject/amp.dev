@@ -128,7 +128,7 @@ an event triggers and the `pageview` request is sent.
 The triggers attribute determines when the pageview request fires.
 Learn more about [requests and triggers](deep_dive_analytics.md).
 
-[filter format="stories"]
+[filter formats="stories"]
 ## AMP story default configuration 
 A typical user-journey for a website is very different from stories. On a website a user might read the headline, scroll to the bottom of the page, interact with a form before clicking on a link to the next page. Stories occupy the full viewport and users do not scroll but tap to move forward.
 

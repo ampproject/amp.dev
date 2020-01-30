@@ -33,28 +33,40 @@ describe('Document', () => {
       expect(descriptionOf('hello world. next sentence.')).toBe('hello world.');
     });
     it('trims newlines', () => {
-      expect(descriptionOf('hello\nworld. next sentence.')).toBe('hello world.');
+      expect(descriptionOf('hello\nworld. next sentence.')).toBe(
+        'hello world.'
+      );
     });
     it('sentences can span multiple lines', () => {
       expect(descriptionOf('hello\nworld. next sentence')).toBe('hello world.');
     });
     it('sentences can end at line break', () => {
-      expect(descriptionOf('hello world.\nnext sentence.')).toBe('hello world.');
+      expect(descriptionOf('hello world.\nnext sentence.')).toBe(
+        'hello world.'
+      );
     });
     it('sentences can end at line break 2', () => {
-      expect(descriptionOf('hello world.\r\nnext sentence.')).toBe('hello world.');
+      expect(descriptionOf('hello world.\r\nnext sentence.')).toBe(
+        'hello world.'
+      );
     });
     it('sentences can end at line break 3', () => {
-      expect(descriptionOf('hello world.\n\nnext sentence.')).toBe('hello world.');
+      expect(descriptionOf('hello world.\n\nnext sentence.')).toBe(
+        'hello world.'
+      );
     });
     it('sentences cannot contain links', () => {
-      expect(descriptionOf('The <a href="https://example.com/amp-access.md">amp-access</a> component. Next sentence.')).toBe('The amp-access component.');
+      expect(
+        descriptionOf(
+          'The <a href="https://example.com/amp-access.md">amp-access</a> component. Next sentence.'
+        )
+      ).toBe('The amp-access component.');
     });
     it('ignores headlines', () => {
       expect(descriptionOf('## Headline\nhello world\n')).toBe('hello world');
     });
     it('unescapes html', () => {
-      expect(descriptionOf('don\'t')).toBe('don\'t');
+      expect(descriptionOf("don't")).toBe("don't");
     });
     it('empty if there are no sections', () => {
       expect(doc.description()).toBe('');
@@ -95,7 +107,7 @@ describe('Document', () => {
       doc.appendHead(CANONICAL);
       expect(doc.hasCanonical()).toEqual(true);
     });
-    it('false if head doesn\'t include canonical link', () => {
+    it("false if head doesn't include canonical link", () => {
       doc.appendHead(NON_CANONICAL);
       expect(doc.hasCanonical()).toEqual(false);
     });
@@ -103,11 +115,15 @@ describe('Document', () => {
 
   describe('importsComponent is', () => {
     it('true if head imports component ', () => {
-      doc.appendHead('<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>');
+      doc.appendHead(
+        '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'
+      );
       expect(doc.importsComponent('amp-analytics')).toEqual(true);
     });
-    it('false if head doesn\'t include canonical link', () => {
-      doc.appendHead('<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>');
+    it("false if head doesn't include canonical link", () => {
+      doc.appendHead(
+        '<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>'
+      );
       expect(doc.importsComponent('amp-accesss')).toEqual(false);
     });
   });
@@ -143,8 +159,7 @@ describe('Document', () => {
     });
   });
 
-  describe('parses outline', () => {
-  });
+  describe('parses outline', () => {});
 
   function descriptionOf(text) {
     const section = new CodeSection();
@@ -153,4 +168,3 @@ describe('Document', () => {
     return doc.description();
   }
 });
-
