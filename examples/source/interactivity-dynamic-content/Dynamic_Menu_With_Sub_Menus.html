@@ -19,7 +19,6 @@ This uses `amp-list` in combination with `amp-sidebar` to pull in menu informati
 <!-- -->
 <!DOCTYPE html>
 <html amp lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Dynamic Menu With Sub Menus</title>
@@ -110,7 +109,6 @@ This uses `amp-list` in combination with `amp-sidebar` to pull in menu informati
 
   </style>
 </head>
-
 <!-- ## Implementation -->
   <!--
       We use two `amp-sidebar` elements nested within eachother.
@@ -134,14 +132,11 @@ This uses `amp-list` in combination with `amp-sidebar` to pull in menu informati
     </button>
   </header>
 
-  
-
   <amp-sidebar id="sideNav" layout="nodisplay" side="left">
     <div class="mobile-menu-header">
       <span>Menu</span >
       <i class="closebtn" on="tap:sideNav.close" tabindex="0" role="on">×</i>
     </div>
-   
     <ul class="header-primary">
       <amp-list width="auto" height="435" layout="fixed-height" src="/static/samples/json/menu.json" single-item
         items="." id="nav-list">
@@ -169,5 +164,4 @@ This uses `amp-list` in combination with `amp-sidebar` to pull in menu informati
     </ul>
   </amp-sidebar>
 </body>
-
 </html>
