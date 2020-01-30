@@ -1,0 +1,173 @@
+<!---
+author: philkrie
+formats:
+  - websites
+tags:
+  - dynamic-content
+--->
+
+<!--
+
+## Introduction
+
+This example demonstrates how you can generate dynamic sub menus within an `amp-sidebar` component in AMP. 
+
+This uses `amp-list` in combination with `amp-sidebar` to pull in menu information from an API.
+
+`amp-mustache` is used for templating that reacts based on the content of the JSON object.
+-->
+<!-- -->
+<!DOCTYPE html>
+<html amp lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dynamic Menu With Sub Menus</title>
+  <link rel="canonical" href="<% canonical %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- Import the `amp-mustache` component is required for managing our templates with `amp-list` -->
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <!-- Import the `amp-list` component to import the list of menu items -->
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <!-- Import the `amp-sidebar` component to manage the sidebar UI element -->
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <style amp-custom>
+    #sideNav {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      max-width: 100vw;
+    }
+
+    .header-primary li a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      border-bottom: 1px solid #e6e6e6;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      outline: 0;
+    }
+
+    .main-nav {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      max-width: 100vw;
+    }
+
+    .mobile-menu-header {
+      background-color: blue;
+      height: 45px;
+      text-align: center;
+      line-height: 45px;
+      color: white;
+    }
+
+    .closebtn {
+      top: 0px;
+      right: 15px;
+      outline: 0;
+      position: absolute;
+    }
+
+    .innermenulinks {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      border-bottom: 1px solid #e6e6e6;
+      font-family: "Open Sans", sans-serif;
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    .rightarrow:after {
+      content: ">";
+      float: right;
+      padding-right: 10px;
+      font-weight: bolder;
+      font-size: 25px;
+    }
+
+    .leftarrow:before {
+      content: "<";
+      float: left;
+      padding-left: 10px;
+      font-weight: bolder;
+      font-size: 25px;
+    }
+
+  </style>
+</head>
+
+<!-- ## Implementation -->
+  <!--
+      We use two `amp-sidebar` elements nested within eachother.
+      
+      `amp-list` is utilized to retrieve a formatted JSON describing the menu and submenus.
+
+      `amp-mustache` is used for templating. {{items}} and {{submenu}} check for the presence of the keys in the JSON object.      
+      
+  -->
+<body>
+  
+  <header>
+    <h3>
+      Dynamic Sidebar
+    </h3>
+    <p>
+      This side bar is dynamically constructed from a JSON response, which contains a top level and a sub level
+    </p>
+    <button aria-label="open sidebar" on="tap:sideNav.toggle" tabindex="0">
+      Toggle Sidebar
+    </button>
+  </header>
+
+  
+
+  <amp-sidebar id="sideNav" layout="nodisplay" side="left">
+    <div class="mobile-menu-header">
+      <span>Menu</span >
+      <i class="closebtn" on="tap:sideNav.close" tabindex="0" role="on">×</i>
+    </div>
+   
+    <ul class="header-primary">
+      <amp-list width="auto" height="435" layout="fixed-height" src="/static/samples/json/menu.json" single-item
+        items="." id="nav-list">
+        <template type="amp-mustache" id="amp-template-id">
+          {{#items}}
+          <li>
+            <a class="rightarrow"
+              role="button" 
+              on="tap:{{title}}_Slide.toggle;"
+              tabindex="0">{{title}}</a>
+          </li>
+          <amp-sidebar id="{{title}}_Slide" layout="nodisplay" class="main-nav" side="right">
+            <div class="mobile-menu-header">
+              <span class="leftarrow" on="tap:{{title}}_Slide.close" tabindex="0"
+                role="button"></span>
+              <b>{{title}}</b>
+            </div>
+            {{#submenu}}
+              <a href="" class="innermenulinks">{{title}}</a>
+            {{/submenu}}
+          </amp-sidebar>
+          {{/items}}
+        </template>
+      </amp-list>
+    </ul>
+  </amp-sidebar>
+</body>
+
+</html>
