@@ -20,15 +20,22 @@ const express = require('express');
 const URL = require('url').URL;
 const LRU = require('lru-cache');
 const config = require('@lib/config');
-const {Templates, createRequestContext} = require('@lib/templates/index.js');
+const {
+  Templates,
+  createRequestContext
+} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
 const pageCache = require('@lib/utils/pageCache');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const signale = require('signale');
-const {getFormatFromRequest} = require('../amp/formatHelper.js');
+const {
+  getFormatFromRequest
+} = require('../amp/formatHelper.js');
 
-const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
+const {
+  FORMAT_COMPONENT_MAPPING
+} = require('../utils/project.js').paths;
 let formatComponentMapping = {};
 try {
   formatComponentMapping = require(FORMAT_COMPONENT_MAPPING);
@@ -212,7 +219,7 @@ growPages.get(
     if (!versions) {
       signale.warn(
         `No version mapping defined for format ${format}. Try running 'npx gulp ` +
-          "importAll' to fix."
+        "importAll' to fix."
       );
       // set to the latest available version and tell the user on the page
       versions = [versionsByFormat.current];
@@ -275,7 +282,14 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
 
   let renderedTemplate = null;
   try {
-    renderedTemplate = template.render(templateContext);
+    renderedTemplate = await new Promise((resolve, reject) => {
+      template.render(templateContext, (err, res) => {
+        if (err) {
+          return reject(err);
+        }
+        resolve(res);
+      });
+    });
   } catch (e) {
     // If there was a rendering error show the unrendered template with line
     // count to the user to figure out what's wrong
@@ -283,10 +297,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
       res.set('content-type', 'text/plain');
       res.send(
         `SSR error: ${e}\n\n` +
-          template.tmplStr
-            .split('\n')
-            .map((line, index) => `${index + 1} ${line}`)
-            .join('\n')
+        template.tmplStr
+        .split('\n')
+        .map((line, index) => `${index + 1} ${line}`)
+        .join('\n')
       );
       signale.error(e);
       return;

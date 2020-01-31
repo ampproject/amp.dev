@@ -1,0 +1,12 @@
+---
+$title: 500
+$view: /layouts/blank.j2
+$sitemap:
+  enabled: false
+---
+<h1>Custom filter</h1>
+[% set posts = []|importBlog %]
+
+[% for post in posts %]
+[= post =]
+[% endfor %]

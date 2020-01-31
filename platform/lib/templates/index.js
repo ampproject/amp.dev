@@ -25,6 +25,7 @@ const {
   SUPPORTED_FORMATS,
 } = require('../amp/formatHelper.js');
 const {SupportedFormatsExtension} = require('./SupportedFormatsExtension.js');
+const {importBlog} = require('./ImportBlogFilter.js');
 
 const ALLOWED_LEVEL = ['beginner', 'advanced'];
 let templates = null;
@@ -86,11 +87,13 @@ class Templates {
       },
     });
 
-    // Add extension to determine default document format at runtime
+    // Add extensions and filters to determine default document format at runtime
     this.nunjucksEnv_.addExtension(
       'SupportedFormatsExtension',
       new SupportedFormatsExtension()
     );
+
+    this.nunjucksEnv_.addFilter('importBlog', importBlog, true);
 
     // One locale has ~860 pages with each weighing ~92KB. The cache therefore
     // maxes out at ~224MB to be safe
