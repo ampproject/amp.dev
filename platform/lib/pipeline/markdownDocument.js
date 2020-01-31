@@ -93,7 +93,7 @@ class MarkdownDocument {
     this.contents = contents;
     try {
       this._frontmatter = MarkdownDocument.extractFrontmatter(contents);
-    } catch(e) {
+    } catch (e) {
       LOG.error(`Failed to parse frontmatter for ${path}`, e.message);
       this._frontmatter = {
         '$title': '',
@@ -224,7 +224,9 @@ class MarkdownDocument {
       }
     }
 
-    LOG.error(`Could not parse a teaser text from "${contents.substr(0, 500)}..."`);
+    LOG.error(
+      `Could not parse a teaser text from "${contents.substr(0, 500)}..."`
+    );
     return '';
   }
 

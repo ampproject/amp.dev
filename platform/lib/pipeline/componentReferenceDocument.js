@@ -31,7 +31,9 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.version = extension.version;
     this.versions = extension.versions;
 
-    this.rewriteRelativePaths(join(RELATIVE_PATH_BASE, dirname(extension.githubPath)));
+    this.rewriteRelativePaths(
+      join(RELATIVE_PATH_BASE, dirname(extension.githubPath))
+    );
 
     if (this.version == extension.versions[extension.versions.length - 1]) {
       this.isCurrent = true;
@@ -47,7 +49,9 @@ class ComponentReferenceDocument extends MarkdownDocument {
     }
 
     if (extension.script) {
-      const scripts = [this._generateScript(extension.name, extension.version, extension.type)];
+      const scripts = [
+        this._generateScript(extension.name, extension.version, extension.type),
+      ];
       const requiredExtensions = [
         ...(extension.tag.requiresExtension || []),
         ...(extension.script.requiresExtension || []),
@@ -56,14 +60,24 @@ class ComponentReferenceDocument extends MarkdownDocument {
         if (requiredExtension == extension.name) {
           continue;
         }
-        scripts.push(this._generateScript(requiredExtension, DEFAULT_VERSION, extension.type));
+        scripts.push(
+          this._generateScript(
+            requiredExtension,
+            DEFAULT_VERSION,
+            extension.type
+          )
+        );
       }
 
       this.scripts = scripts;
     }
   }
 
-  _generateScript(extensionName, extensionVersion, extensionType = EXTENSION_TYPE_ELEMENT) {
+  _generateScript(
+    extensionName,
+    extensionVersion,
+    extensionType = EXTENSION_TYPE_ELEMENT
+  ) {
     return `<script async custom-${extensionType}="${extensionName}" src="https://cdn.ampproject.org/v0/${extensionName}-${extensionVersion}.js"></script>`;
   }
 
@@ -91,7 +105,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
   }
 
   set layouts(layouts) {
-    this._frontmatter['layouts'] = layouts.map((layout) => {
+    this._frontmatter['layouts'] = layouts.map(layout => {
       return layout.toLowerCase().replace('_', '-');
     });
   }

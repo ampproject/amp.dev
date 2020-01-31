@@ -75,9 +75,9 @@ class GitHubImporter {
    * @return {Object} A object containing all information
    * @return {Array}
    */
-  async listDirectory(filePath, repo=DEFAULT_REPOSITORY, master=false) {
+  async listDirectory(filePath, repo = DEFAULT_REPOSITORY, master = false) {
     const data = await this.fetchJson(filePath, repo, master);
-    return data[0].map((file) => {
+    return data[0].map(file => {
       return file.path;
     });
   }

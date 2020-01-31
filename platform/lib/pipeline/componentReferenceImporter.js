@@ -27,7 +27,8 @@ const ComponentReferenceDocument = require('./componentReferenceDocument.js');
 
 const {Signale} = require('signale');
 
-const config = require(__dirname + '/../../config/imports/componentReference.json');
+const config = require(__dirname +
+  '/../../config/imports/componentReference.json');
 
 const log = new Signale({
   'interactive': false,
@@ -36,7 +37,8 @@ const log = new Signale({
 
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
-  __dirname + '/../../../pages/content/amp-dev/documentation/components/reference';
+  __dirname +
+  '/../../../pages/content/amp-dev/documentation/components/reference';
 // Names of the built-in components that need to be fetched from ...
 const BUILT_INS = ['amp-img', 'amp-pixel', 'amp-layout'];
 
@@ -70,7 +72,7 @@ class ComponentReferenceImporter {
 
     // As inside /extensions each component has its own folder, filter
     // down by directory
-    extensions = extensions[0].filter((file) => {
+    extensions = extensions[0].filter(file => {
       if (!config.only) {
         return file.type === 'dir';
       }
@@ -100,7 +102,7 @@ class ComponentReferenceImporter {
     extension.files = await this._listExtensionFiles(extension);
 
     const versions = this._getExtensionMetas(extension);
-    return versions.map((version) => {
+    return versions.map(version => {
       return this._createGrowDoc(version);
     });
   }
@@ -113,7 +115,7 @@ class ComponentReferenceImporter {
    */
   async _listExtensionFiles(extension) {
     const root = await this.githubImporter_.listDirectory(extension.path);
-    let tree = root.map((file) => {
+    let tree = root.map(file => {
       if (file.match(VERSION_PATTERN)) {
         return this.githubImporter_.listDirectory(file);
       }
@@ -138,17 +140,19 @@ class ComponentReferenceImporter {
       return [];
     }
 
-    const tag = this.validatorRules.raw.tags.find((tag) => {
-      return tag.tagName.toLowerCase() == extension.name;
-    }) || {};
-    const script = this.validatorRules.raw.tags.find((script) => {
-      if (!script.extensionSpec || script.tagName != 'SCRIPT') {
-        return false;
-      }
-      return extension.name == script.extensionSpec.name;
-    }) || {};
+    const tag =
+      this.validatorRules.raw.tags.find(tag => {
+        return tag.tagName.toLowerCase() == extension.name;
+      }) || {};
+    const script =
+      this.validatorRules.raw.tags.find(script => {
+        if (!script.extensionSpec || script.tagName != 'SCRIPT') {
+          return false;
+        }
+        return extension.name == script.extensionSpec.name;
+      }) || {};
 
-    spec.version = spec.version.filter((version) => {
+    spec.version = spec.version.filter(version => {
       return version != LATEST_VERSION;
     });
     spec.version = spec.version.sort((version1, version2) => {
@@ -234,7 +238,10 @@ class ComponentReferenceImporter {
       }
 
       fileContents = await this.githubImporter_.fetchFile(
-          extension.githubPath, DEFAULT_REPOSITORY, fetchFromMaster);
+        extension.githubPath,
+        DEFAULT_REPOSITORY,
+        fetchFromMaster
+      );
     } catch (e) {
       log.error(`Failed to fetch ${extension.githubPath}`, e);
       return;
@@ -250,7 +257,11 @@ class ComponentReferenceImporter {
     const docPath = path.join(DESTINATION_BASE_PATH, fileName);
 
     try {
-      const doc = new ComponentReferenceDocument(docPath, fileContents, extension);
+      const doc = new ComponentReferenceDocument(
+        docPath,
+        fileContents,
+        extension
+      );
       await doc.save(docPath);
     } catch (e) {
       log.error('Could not create doc for: ', extension.name, e);
@@ -261,7 +272,7 @@ class ComponentReferenceImporter {
 // If not required, run directly
 if (!module.parent) {
   const importer = new ComponentReferenceImporter();
-  importer.import().catch((err) => console.log(err));
+  importer.import().catch(err => console.log(err));
 }
 
 module.exports = ComponentReferenceImporter;
