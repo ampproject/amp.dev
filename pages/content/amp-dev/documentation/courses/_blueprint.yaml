@@ -1,4 +1,4 @@
-$title@: Web Development With AMP
+$title@: Courses
 $view: /views/detail/docs-detail.j2
 $path: /documentation/courses/{base}.html
 $localization:
