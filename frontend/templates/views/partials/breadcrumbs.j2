@@ -1,118 +1,51 @@
-{# The breadcrumbs are straightened up. They just show the parent section
-and the current page title #}
 {% do doc.styles.addCssFile('css/components/molecules/breadcrumbs.css') %}
 {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
 
 {% if not doc.breadcrumbs == False %}
-{% if doc.pod_path.startswith('/content/amp-dev/documentation/guides-and-tutorials') %}
-<nav class="ap-m-breadcrumbs">
-  {% set get_started = g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale) %}
-  <a class="ap-m-breadcrumbs-crumb" href="{{ get_started.url.path }}">{{ _('Documentation') }}</a>
+{% set pod_path_segments = (doc.pod_path|string).split('/') %}
 
-  {% if not doc.pod_path.startswith('/content/amp-dev/documentation/guides-and-tutorials/index.html') %}
-    {% set guides_and_tutorials = g.doc('/content/amp-dev/documentation/guides-and-tutorials/index.html', locale=doc.locale) %}
+{# Define recursive macro for auto-generating breadcrumbs navigation #}
+{% macro breadcrumbs(i=1) %}
+  {# Strip out /content/amp-dev/ from the pod_path, and take a new segment per iteration #}
+  {% set new_path = '/' + pod_path_segments[1:i+3]|join('/') %}
+
+  {# Concatenate path with /index.md and .html extensions, and check if document exists #}
+  {% set doc_md = g.doc(new_path + '/index.md', locale=doc.locale) %}
+  {% set doc_html = g.doc(new_path + '/index.html', locale=doc.locale) %}
+  {% set doc_exists = doc_md.exists or doc_html.exists %}
+
+  {# Compare current doc path with fully expanded breadcrumb path #}
+  {% set is_current = doc.url.path == ('/'+(new_path|string).split('/')[3:]|join('/')+'/') %}
+
+  {# Define custom exemptions condition to skip iterations of the loop #}
+  {% set exemptions = g.collection(new_path).view == '/views/detail/component-detail.j2' %}
+
+  {# Check if item is an existing collection (have child pages)
+     Additionally, skip the loop for custom exemptions. See variable above #}
+  {% if g.collection(new_path) in g.collections([]) and not exemptions %}
+    {# Show divider icon before item, except of the first #}
+    {% if i > 1 %}
     <span class="ap-m-breadcrumbs-divider">
-      <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+      <svg class="ap-a-ico ap-m-breadcrumbs-icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>
+      </svg>
     </span>
-
-    {% if not doc.collection.bucket %}
-      <a class="ap-m-breadcrumbs-crumb" href="{{ guides_and_tutorials.url.path }}">{{ guides_and_tutorials.titles('navigation') }}</a>
-    {% endif %}
-    {% if doc.collection.bucket %}
-      <div class="ap-m-breadcrumbs-crumb">{{ guides_and_tutorials.titles('navigation') }}</div>
     {% endif %}
 
+    {# Only set anchor if item is an existing document and it's not the currently viewing page #}
+    {% if doc_exists and not is_current %}
+      {% set document = doc_md if doc_md.exists else doc_html %}
+      <a class="ap-m-breadcrumbs-crumb" href="{{ document.url.path }}">{{ document.collection.title }}</a>
+    {% else %}
+      <div class="ap-m-breadcrumbs-crumb">{{ g.collection(new_path).title }}</div>
+    {% endif %}
+
+    {# Recursively call the macro until the beginning condition fails #}
+    {{ breadcrumbs(i=i+1) }}
   {% endif %}
+{% endmacro %}
 
-  {% if not doc.collection.bucket %}
-  <span class="ap-m-breadcrumbs-divider">
-    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-  </span>
-
-  <div class="ap-m-breadcrumbs-crumb">{{_(doc.collection.title)}}</div>
-  {% endif %}
-</nav>
-
-{% elif doc.pod_path.startswith('/content/amp-dev/documentation/examples') %}
 <nav class="ap-m-breadcrumbs">
-  {% set get_started = g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale) %}
-  <a class="ap-m-breadcrumbs-crumb" href="{{ get_started.url.path }}">{{ _('Documentation') }}</a>
-
-  <span class="ap-m-breadcrumbs-divider">
-    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-  </span>
-
-  {% set examples = g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale) %}
-  <div class="ap-m-breadcrumbs-crumb">{{ examples.titles('navigation') }}</div>
+{{ breadcrumbs() }}
 </nav>
-
-{% elif doc.pod_path.startswith('/content/amp-dev/documentation/components') %}
-<nav class="ap-m-breadcrumbs">
-  {% set get_started = g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale) %}
-  <a class="ap-m-breadcrumbs-crumb" href="{{ get_started.url.path }}">{{ _('Documentation') }}</a>
-
-  <span class="ap-m-breadcrumbs-divider">
-    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-  </span>
-
-  {% set components = g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale) %}
-  <div class="ap-m-breadcrumbs-crumb">{{ components.titles('navigation') }}</div>
-</nav>
-
-{% elif doc.pod_path.startswith('/content/amp-dev/documentation/courses') %}
-<nav class="ap-m-breadcrumbs">
-  {% set get_started = g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale) %}
-  <a class="ap-m-breadcrumbs-crumb" href="{{ get_started.url.path }}">{{ _('Documentation') }}</a>
-
-  <span class="ap-m-breadcrumbs-divider">
-    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-  </span>
-
-  {% set courses = g.doc('/content/amp-dev/documentation/courses/index.html', locale=doc.locale) %}
-  {% if not doc.collection.bucket %}
-    <a class="ap-m-breadcrumbs-crumb" href="{{ courses.url.path }}">{{ courses.titles('navigation') }}</a>
-  {% endif %}
-  {% if doc.collection.bucket %}
-    <div class="ap-m-breadcrumbs-crumb">{{ courses.titles('navigation') }}</div>
-  {% endif %}
-
-
-  {% if not doc.collection.bucket %}
-  <span class="ap-m-breadcrumbs-divider">
-    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-  </span>
-
-  <div class="ap-m-breadcrumbs-crumb">{{ doc.collection.title }}</div>
-  {% endif %}
-</nav>
-
-{% elif doc.pod_path.startswith('/content/amp-dev/documentation/index.html') %}
-<nav class="ap-m-breadcrumbs">
-  {% set get_started = g.doc('/content/amp-dev/documentation/index.html', locale=doc.locale) %}
-  <a class="ap-m-breadcrumbs-crumb" href="{{ get_started.url.path }}">{{ _('Documentation') }}</a>
-
-  <span class="ap-m-breadcrumbs-divider">
-    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-  </span>
-
-  <div class="ap-m-breadcrumbs-crumb">{{ get_started.titles('navigation') }}</div>
-</nav>
-
-{% elif doc.pod_path.startswith('/content/amp-dev/support') %}
-<nav class="ap-m-breadcrumbs">
-  {% set support = g.doc('/content/amp-dev/support/index.md', locale=doc.locale) %}
-  <a class="ap-m-breadcrumbs-crumb" href="{{ support.url.path }}">{{ _('Support') }}</a>
-
-  <span class="ap-m-breadcrumbs-divider">
-    <svg class="ap-a-ico ap-m-breadcrumbs-angle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-  </span>
-
-  {# Use breadcrumb title if it exists #}
-  {% if doc.titles('breadcrumb') %}
-    <div class="ap-m-breadcrumbs-crumb">{{ doc.titles('breadcrumb') }}</div>
-  {% else %}
-    <div class="ap-m-breadcrumbs-crumb">{{ doc.title }}</div>
-  {% endif %}
-</nav>
-{% endif %}
 {% endif %}
