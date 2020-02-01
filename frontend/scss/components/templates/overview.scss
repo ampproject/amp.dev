@@ -30,6 +30,7 @@
     grid-column: 1 / 25;
     grid-template-columns: repeat(24, minmax(0, 1fr));
     width: 100%;
+    padding-bottom: 4em;
     background-color: color('white');
     @include content-shadow;
   }
@@ -43,6 +44,10 @@
 
     &-fullscreen {
       grid-column: 1 / 25;
+
+      &:last-child {
+        margin-bottom: -4em;
+      }
     }
   }
 
