@@ -103,7 +103,7 @@
 {% if description %}
 <meta name="twitter:description" content="{{ description }}">
 {% endif %}
-<meta name="twitter:title" content="{{ title_prefix|e }}{{ title|e|replace('&lt;'', '')|replace('&gt;'', '') }}">
+<meta name="twitter:title" content="{{ title_prefix|e }}{{ title|replace('<', '')|replace('>', '')|e }}">
 <meta name="twitter:creator" content="@ampproject">
 <meta name="twitter:site" content="@ampproject">
 <meta name="twitter:image" content="{{ base_url }}{{ sharing_images.wide }}">
