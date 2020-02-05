@@ -1,22 +1,3 @@
-<!---
-author: philkrie
-formats:
-  - websites
-tags:
-  - dynamic-content
---->
-
-<!--
-
-## Introduction
-
-This example demonstrates how you can generate dynamic sub menus within an `amp-sidebar` component in AMP. 
-
-This uses `amp-list` in combination with `amp-sidebar` to pull in menu information from an API.
-
-`amp-mustache` is used for templating that reacts based on the content of the JSON object.
--->
-<!-- -->
 <!DOCTYPE html>
 <html amp lang="en">
 <head>
@@ -109,15 +90,7 @@ This uses `amp-list` in combination with `amp-sidebar` to pull in menu informati
 
   </style>
 </head>
-<!-- ## Implementation -->
-  <!--
-      We use two `amp-sidebar` elements nested within eachother.
-      
-      `amp-list` is utilized to retrieve a formatted JSON describing the menu and submenus.
 
-      `amp-mustache` is used for templating. {{items}} and {{submenu}} check for the presence of the keys in the JSON object.      
-      
-  -->
 <body>
   
   <header>
@@ -127,41 +100,57 @@ This uses `amp-list` in combination with `amp-sidebar` to pull in menu informati
     <p>
       This side bar is dynamically constructed from a JSON response, which contains a top level and a sub level
     </p>
-    <button aria-label="open sidebar" on="tap:sideNav.toggle" tabindex="0">
+  <!-- 
+    Clicking on this button will open up the sample sidemenu
+  -->
+    <button on="tap:sideNav.toggle" tabindex="0">
       Toggle Sidebar
     </button>
   </header>
 
+  <!-- ## Implementation -->
+  <!--
+      We use two `amp-sidebar` elements nested within eachother.
+      
+      `amp-list` is utilized to retrieve a formatted JSON describing the menu and submenus.
+
+      `amp-mustache` is used for templating. {{items}} and {{submenu}} check for the presence of the keys in the JSON object.      
+      
+  -->
   <amp-sidebar id="sideNav" layout="nodisplay" side="left">
-    <div class="mobile-menu-header">
-      <span>Menu</span >
-      <i class="closebtn" on="tap:sideNav.close" tabindex="0" role="on">×</i>
-    </div>
+    <amp-nested-menu layout="fill">
+     
     <ul class="header-primary">
-      <amp-list width="auto" height="435" layout="fixed-height" src="/static/samples/json/menu.json" single-item
+      <amp-list width="auto" height="435" layout="fixed-height" src="https://amp-snippets.glitch.me/dynamic_menu_sub_menu/api.json" single-item
         items="." id="nav-list">
         <template type="amp-mustache" id="amp-template-id">
-          {{#items}}
-          <li>
-            <a class="rightarrow"
-              role="button" 
-              on="tap:{{title}}_Slide.toggle;"
-              tabindex="0">{{title}}</a>
-          </li>
-          <amp-sidebar id="{{title}}_Slide" layout="nodisplay" class="main-nav" side="right">
-            <div class="mobile-menu-header">
-              <span class="leftarrow" on="tap:{{title}}_Slide.close" tabindex="0"
-                role="button"></span>
-              <b>{{title}}</b>
-            </div>
-            {{#submenu}}
-              <a href="" class="innermenulinks">{{title}}</a>
-            {{/submenu}}
-          </amp-sidebar>
-          {{/items}}
+          <ul>
+            {{#items}}
+            <li>
+              <h4 amp-nested-submenu-open class="rightarrow"
+                role="button" 
+                tabindex="0">{{title}}</h4>
+              <div amp-nested-submenu>
+                <div class="mobile-menu-header">
+                  <b>{{title}}</b>
+                </div>
+                <ul>
+                <li><h4 amp-nested-submenu-close>Go back</h4></li>
+                 {{#submenu}}
+                
+                  <li><a href="" class="innermenulinks">{{title}}</a></li>
+                
+                 {{/submenu}}
+                  </ul>
+              </div>
+           
+            </li>
+            {{/items}}
+              </ul>
         </template>
       </amp-list>
     </ul>
+    </amp-nested-menu>
   </amp-sidebar>
 </body>
 </html>
