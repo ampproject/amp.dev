@@ -17,13 +17,18 @@
 'use strict';
 
 // the order is important: amp-sidebar must come directly after the body
-const ELEMENTS_TO_MOVE = ['amp-sidebar', 'amp-app-banner'].map((e) => matchHtmlTag(e));
+const ELEMENTS_TO_MOVE = ['amp-sidebar', 'amp-app-banner'].map(e =>
+  matchHtmlTag(e)
+);
 
 // we're using regex to match the XML tags as we might have to handle
 // incomplete html tags in code sections, which DOM parsers such as cheerio automatically
 // fix when serializing.
 function matchHtmlTag(tagName) {
-  return new RegExp('<' + tagName + '(\\s(.|\\n)*)?>(.|\\n)+<\\/' + tagName + '>', 'i');
+  return new RegExp(
+    '<' + tagName + '(\\s(.|\\n)*)?>(.|\\n)+<\\/' + tagName + '>',
+    'i'
+  );
 }
 
 /*
@@ -32,9 +37,9 @@ function matchHtmlTag(tagName) {
  */
 class ElementSorting {
   apply(doc) {
-    ELEMENTS_TO_MOVE.forEach((matcher) => {
+    ELEMENTS_TO_MOVE.forEach(matcher => {
       const elements = this._extract(doc.sections, matcher);
-      elements.forEach((e) => doc.elementsAfterBody += e);
+      elements.forEach(e => (doc.elementsAfterBody += e));
     });
   }
 
@@ -48,7 +53,10 @@ class ElementSorting {
       }
       const element = match[0];
       const prefix = preview.substr(0, match.index);
-      const postfix = preview.substr(match.index + element.length, preview.length);
+      const postfix = preview.substr(
+        match.index + element.length,
+        preview.length
+      );
       section.preview = prefix + postfix;
       result.push(element);
     }

@@ -84,11 +84,18 @@ class SampleRenderer {
    * @private
    */
   async getTemplate_(request) {
-    const samplePath = this.removeQuery_(request.originalUrl.substring(PREFIX_EXAMPLES.length));
+    const samplePath = this.removeQuery_(
+      request.originalUrl.substring(PREFIX_EXAMPLES.length)
+    );
     // If it's a preview request, load the source template
-    if (request.protocol + '://' + request.get('host') === config.hosts.preview.base) {
+    if (
+      request.protocol + '://' + request.get('host') ===
+      config.hosts.preview.base
+    ) {
       const sourcePath = join(DIR_SOURCES, samplePath + '.html');
-      return Templates.get(sourcePath, () => readFileAsync(sourcePath, 'utf-8'));
+      return Templates.get(sourcePath, () =>
+        readFileAsync(sourcePath, 'utf-8')
+      );
     }
     // else load the documentation template
     return Templates.get(samplePath, () => {
@@ -97,7 +104,11 @@ class SampleRenderer {
         return this.fetchSampleDoc_(samplePath);
       } else {
         // fetch comiled doc page from filesystem
-        const docFilePath = join(DIR_DOCS, PREFIX_EXAMPLES, this.appendIndexHtml_(samplePath));
+        const docFilePath = join(
+          DIR_DOCS,
+          PREFIX_EXAMPLES,
+          this.appendIndexHtml_(samplePath)
+        );
         return readFileAsync(docFilePath, 'utf-8');
       }
     });

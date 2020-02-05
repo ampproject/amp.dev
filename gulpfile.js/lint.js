@@ -29,16 +29,17 @@ function lintNode() {
 }
 
 function lintYaml() {
-  return gulp.src(`${project.paths.ROOT}/**/*.{yaml,yml}`)
-      .pipe(through.obj(async (file, encoding, callback) => {
-        try {
-          yaml.safeLoad(file.contents);
-          callback();
-        } catch (e) {
-          signale.fatal(`Error parsing YAML: ${file.relative}`, e);
-          callback(e);
-        }
-      }));
+  return gulp.src(`${project.paths.ROOT}/**/*.{yaml,yml}`).pipe(
+    through.obj(async (file, encoding, callback) => {
+      try {
+        yaml.safeLoad(file.contents);
+        callback();
+      } catch (e) {
+        signale.fatal(`Error parsing YAML: ${file.relative}`, e);
+        callback(e);
+      }
+    })
+  );
 }
 
 function lintGrow() {

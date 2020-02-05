@@ -29,7 +29,8 @@ export const NO_VALIDATOR = {
   status: 'NO_VALIDATOR',
 };
 
-export const EVENT_NEW_VALIDATION_RESULT = 'event-validator-new-validation-result';
+export const EVENT_NEW_VALIDATION_RESULT =
+  'event-validator-new-validation-result';
 
 export function createValidator() {
   return new Validator();
@@ -49,7 +50,10 @@ class Validator {
         events.publish(EVENT_NEW_VALIDATION_RESULT, NO_VALIDATOR);
         return;
       }
-      const validationResult = amp.validator.validateString(string, this.runtime.validator);
+      const validationResult = amp.validator.validateString(
+        string,
+        this.runtime.validator
+      );
       this.processErrors(validationResult);
       events.publish(EVENT_NEW_VALIDATION_RESULT, validationResult);
     });
@@ -63,7 +67,7 @@ class Validator {
   }
 
   processErrors(validationResult) {
-    validationResult.errors.forEach((error) => {
+    validationResult.errors.forEach(error => {
       error.message = amp.validator.renderErrorMessage(error);
       error.category = amp.validator.categorizeError(error);
       error.icon = error.severity.toLowerCase();

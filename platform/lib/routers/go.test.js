@@ -19,22 +19,22 @@ const app = express();
 const router = require('./go.js');
 app.use(router);
 
-test('redirects simple golink', (done) => {
+test('redirects simple golink', done => {
   request(app)
-      .get('/email')
-      .expect(302)
-      .expect('Location', /\/about\/email$/, done);
+    .get('/email')
+    .expect(302)
+    .expect('Location', /\/about\/email$/, done);
 });
 
-test('redirects regex golink', (done) => {
+test('redirects regex golink', done => {
   request(app)
-      .get('/c/amp-fit-text')
-      .expect(302)
-      .expect('Location', /\/documentation\/components\/amp-fit-text$/, done);
+    .get('/c/amp-fit-text')
+    .expect(302)
+    .expect('Location', /\/documentation\/components\/amp-fit-text$/, done);
 });
 
-test('returns 404 on invalid golink', (done) => {
+test('returns 404 on invalid golink', done => {
   request(app)
-      .get('/invalid')
-      .expect(404, done);
+    .get('/invalid')
+    .expect(404, done);
 });

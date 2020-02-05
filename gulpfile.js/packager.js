@@ -32,11 +32,16 @@ async function packagerRunLocal() {
   const password = argv.password || process.env.AMP_DEV_CERT_PWD;
   await sh('pwd', opts);
   await sh('docker build -t amppkg .', opts);
-  return await sh(`docker run -p 8083:8080 --env PASSWORD=${password} amppkg`, opts);
+  return await sh(
+    `docker run -p 8083:8080 --env PASSWORD=${password} amppkg`,
+    opts
+  );
 }
 
 function packagerTest() {
-  return sh('curl -si --output - -H "amp-cache-transform: google" -H "accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8" "https://amp-dev-staging.appspot.com/index.amp.html"');
+  return sh(
+    'curl -si --output - -H "amp-cache-transform: google" -H "accept: application/signed-exchange;v=b3;q=0.9,*/*;q=0.8" "https://amp-dev-staging.appspot.com/index.amp.html"'
+  );
 }
 
 function packagerLog() {

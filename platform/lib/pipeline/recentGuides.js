@@ -45,33 +45,42 @@ class RecentGuides {
 
     log.start('Refreshing recent guides list ...');
 
-    stream = stream.pipe(through.obj(async (file, encoding, callback) => {
-      if (!file.isDirectory() && !file.isNull()) {
-        // Create file path and get file date with git log function
-        const filePath = path.join(PATH_RELATIVE, file.relative);
-        const fileDate = await git.committerDate(PATH_ABSOLUTE + file.relative);
+    stream = stream
+      .pipe(
+        through.obj(async (file, encoding, callback) => {
+          if (!file.isDirectory() && !file.isNull()) {
+            // Create file path and get file date with git log function
+            const filePath = path.join(PATH_RELATIVE, file.relative);
+            const fileDate = await git.committerDate(
+              PATH_ABSOLUTE + file.relative
+            );
 
-        // Build array of guides objects
-        guides.push({
-          'path': filePath,
-          'date': fileDate,
-        });
-      };
+            // Build array of guides objects
+            guides.push({
+              'path': filePath,
+              'date': fileDate,
+            });
+          }
 
-      stream.push(file);
-      callback();
-    })).pipe(gulp.dest('./'));
+          stream.push(file);
+          callback();
+        })
+      )
+      .pipe(gulp.dest('./'));
 
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       stream.on('end', resolve);
     }).then(() => {
       // Sort guides by date in desc order and write them into a yaml file
-      guides.sort((a, b) => (a.date > b.date) ? -1 : 1);
-      fs.writeFileSync(DEST_FILE, yaml.safeDump(guides, {
-        lineWidth: 'none',
-      }));
+      guides.sort((a, b) => (a.date > b.date ? -1 : 1));
+      fs.writeFileSync(
+        DEST_FILE,
+        yaml.safeDump(guides, {
+          lineWidth: 'none',
+        })
+      );
       log.success(
-          `Saved recent guides list to ~/${DEST_FILE}. Total guides count: ${guides.length}`,
+        `Saved recent guides list to ~/${DEST_FILE}. Total guides count: ${guides.length}`
       );
     });
   }
