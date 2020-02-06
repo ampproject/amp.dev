@@ -10,12 +10,12 @@
       {% set formats = ['websites', 'stories', 'ads', 'email'] %}
       {% for format in formats %}
       {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
-      <a class="ap-m-format-filter-hint-format ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }} ap-m-format-toggle-selected" href="{{ doc.url.path }}?format={{ format }}">
+      <button on="tap:format-filter-hint.dismiss,AMP.navigateTo(url='{{ doc.url.path }}?format={{ format }}')" class="ap-m-format-filter-hint-format ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }} ap-m-format-toggle-selected">
         <span class="ap-a-ico">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
         </span>
         <span>{{ format }}</span>
-      </a>
+      </button>
       {% endfor %}
     </div>
 
