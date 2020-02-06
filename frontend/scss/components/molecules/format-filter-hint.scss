@@ -16,14 +16,18 @@ $height: 60px;
 
   &.amp-active + &-spacer {
     position: relative;
-    height: $height;
     max-width: 1440px;
     margin: 0 auto;
 
+    @media (min-width: 768px) {
+      height: $height;
+    }
+
     &:before {
       position: absolute;
+      z-index: 2;
       content: "";
-      top: 100%;
+      top: $height;
       left: 50px;
       width: 0;
       height: 0;
@@ -58,6 +62,7 @@ $height: 60px;
     }
 
       &-format {
+        cursor: pointer;
         max-width: 150px;
         margin-right: 10px;
         margin-bottom: 0;

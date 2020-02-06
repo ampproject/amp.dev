@@ -48,5 +48,7 @@
     </section>
   </div>
 </main>
-{% include 'views/partials/component-sidebar.j2' %}
+{% with type = 'component' %}
+{% include 'views/partials/sidebar.j2' %}
+{% endwith %}
 {% endblock %}
