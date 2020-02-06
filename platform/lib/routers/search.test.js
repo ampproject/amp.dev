@@ -113,7 +113,9 @@ test('returns a first page with no component highlights and next link', done => 
     .then(res => {
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(10);
-      expect(res.body.nextUrl).toBe('http://localhost:8080/search/do?q=query&locale=en&page=2');
+      expect(res.body.nextUrl).toBe(
+        'http://localhost:8080/search/do?q=query&locale=en&page=2'
+      );
       done();
     });
 });
@@ -129,7 +131,9 @@ test('returns a first page with no component highlights and next link', done => 
     .then(res => {
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(10);
-      expect(res.body.nextUrl).toBe('http://localhost:8080/search/do?q=query&locale=pt_BR&page=2');
+      expect(res.body.nextUrl).toBe(
+        'http://localhost:8080/search/do?q=query&locale=pt_BR&page=2'
+      );
       expect(res.body.prevUrl).toBe(undefined);
       done();
     });
@@ -147,7 +151,9 @@ test('returns a second page with no component highlights and no next link', done
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(8);
       expect(res.body.nextUrl).toBe(undefined);
-      expect(res.body.prevUrl).toBe('http://localhost:8080/search/do?q=query&locale=en&page=1');
+      expect(res.body.prevUrl).toBe(
+        'http://localhost:8080/search/do?q=query&locale=en&page=1'
+      );
       done();
     });
 });
