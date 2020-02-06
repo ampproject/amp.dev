@@ -33,7 +33,6 @@ const {project, travis} = require('@lib/utils');
 const git = require('@lib/utils/git');
 const ComponentReferenceImporter = require('@lib/pipeline/componentReferenceImporter');
 const SpecImporter = require('@lib/pipeline/specImporter');
-const BlogImporter = require('@lib/pipeline/blogImporter');
 const RecentGuides = require('@lib/pipeline/recentGuides');
 // TODO: Fails on Travis with HttpError: Requires authentication
 // const roadmapImporter = require('@lib/pipeline/roadmapImporter');
@@ -229,7 +228,6 @@ function importAll() {
   return Promise.all([
     new ComponentReferenceImporter().import(),
     new SpecImporter().import(),
-    new BlogImporter().import(),
     new RecentGuides().import(),
     importTasks.importWorkingGroups(),
     // TODO: Fails on Travis with HttpError: Requires authentication
