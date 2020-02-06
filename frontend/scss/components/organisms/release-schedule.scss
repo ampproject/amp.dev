@@ -7,7 +7,12 @@ body.amp-mode-touch .touch-only {
 body.amp-mode-touch .no-touch-only {
   display: none;
 }
-#calendar {
+// The AMP optimizer doesn't support the media attribute, so we hide whichever
+// calendar is not is not displayed with a media query.
+#calendar-container-mobile {
+  display: none;
+}
+.calendar {
   display: grid;
   gap: 10px;
   grid-template-columns: 5em repeat(7, 7.5em);
@@ -136,7 +141,7 @@ body.amp-mode-touch .no-touch-only {
   background-image: linear-gradient(225deg, #25b4ed 0%, #21c1fa 75%);
 }
 @media (max-width: 1465px) {
-  #calendar {
+  .calendar {
     gap: 5px;
     grid-template-columns: 4em repeat(7, 1fr);
   }
@@ -146,7 +151,13 @@ body.amp-mode-touch .no-touch-only {
   }
 }
 @media (max-width: 1101px) {
-  #calendar {
+  #calendar-container {
+    display: none;
+  }
+  #calendar-container-mobile {
+    display: block;
+  }
+  .calendar {
     grid-template-rows: auto 75px auto auto 75px 75px 75px auto auto 75px;
   }
   .box {
@@ -179,7 +190,7 @@ body.amp-mode-touch .no-touch-only {
   }
 }
 @media (max-width: 843px) {
-  #calendar {
+  .calendar {
     gap: 2px;
     grid-template-columns: 3em repeat(7, 1fr);
   }
