@@ -22,6 +22,7 @@ const project = require('@lib/utils/project.js');
 const googleSearch = require('@lib/utils/googleSearch.js');
 const samples = require('@lib/common/samples.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
+const URL = require('url').URL;
 
 const {
   BUILD_IN_COMPONENTS,
@@ -43,8 +44,6 @@ const RESPONSE_MAX_AGE = {
 };
 
 const COMPONENT_REFERENCE_DOC_PATTERN = /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
-
-const REMOVE_HOST_PATTERN = /^https?:\/\/amp\.dev(?=\/)/;
 
 // use the twitter title if available since it does not contain the site name
 const TITLE_META_TAG = 'twitter:title';
@@ -82,8 +81,6 @@ const search = express.Router();
 search.get('/search/autosuggest', handleAutosuggestRequest);
 search.get('/search/highlights', handleHighlightsRequest);
 search.get('/search/do', handleSearchRequest);
-search.get('/search/latest-query', handleNullResponse);
-search.get('/search/clear-latest-query', handleNullResponse);
 
 function handleAutosuggestRequest(request, response) {
   setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
@@ -95,20 +92,20 @@ function handleHighlightsRequest(request, response) {
     ? request.query.locale
     : config.getDefaultLocale();
   const data = require(path.join(HIGHLIGHTS_FOLDER_PATH, `${locale}.json`));
+
+  for (const page of data.articles) {
+    page.url = new URL(page.url, config.hosts.platform.base).toString();
+  }
+
   for (const page of data.components) {
     addExampleAndPlaygroundLink(page, locale);
     cleanupTexts(page);
-  }
-  setMaxAge(response, RESPONSE_MAX_AGE.highlights);
-  response.json({
-    result: data,
-    initial: true,
-  });
-}
 
-function handleNullResponse(request, response) {
-  setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
-  response.json(null);
+    page.url = new URL(page.url, config.hosts.platform.base).toString();
+  }
+
+  setMaxAge(response, RESPONSE_MAX_AGE.highlights);
+  response.json(data);
 }
 
 function getCseItemMetaTagValue(item, metaTag) {
@@ -137,15 +134,6 @@ function createPageObject(csePageItem) {
     url: csePageItem.link,
   };
 
-  // For better DX while testing the search make links relative
-  // to point to local documents
-  if (config.isDevMode() || config.isLocalMode()) {
-    const hostMatch = page.url.match(REMOVE_HOST_PATTERN);
-    if (hostMatch) {
-      page.url = page.url.substring(hostMatch[0].length);
-    }
-  }
-
   return page;
 }
 
@@ -157,11 +145,19 @@ function addExampleAndPlaygroundLink(page, locale) {
       page.exampleUrl = example.exampleUrl;
       page.playgroundUrl = example.playgroundUrl;
 
-      // the preview link must not have the locale, but the example doc page has to have it:
+      // The preview link must not have the locale,
+      // but the example doc page has to have it:
       if (locale != config.getDefaultLocale()) {
         page.exampleUrl =
           '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
       }
+
+      // The playground URL is already absolute/environment specific,
+      // the example URL needs to get a host
+      page.exampleUrl = new URL(
+        page.exampleUrl,
+        config.hosts.platform.base
+      ).toString();
     }
   }
 }
@@ -200,19 +196,20 @@ function createResult(
       components: components,
       pages: pages,
     },
-    initial: false,
   };
 
   if (page == LAST_PAGE && lastPage > LAST_PAGE) {
     result.result.isTruncated = true;
   }
 
-  const searchBaseUrl =
+  const searchBaseUrl = new URL(
     '/search/do?q=' +
-    encodeURIComponent(query) +
-    '&locale=' +
-    encodeURIComponent(locale) +
-    '&page=';
+      encodeURIComponent(query) +
+      '&locale=' +
+      encodeURIComponent(locale) +
+      '&page=',
+    config.hosts.platform.base
+  ).toString();
   if (page < lastPage && page < LAST_PAGE) {
     result.nextUrl = searchBaseUrl + (page + 1);
   }
