@@ -280,7 +280,7 @@ class GrowReferenceChecker {
   }
 
   _checkAnchor(anchor, linkedPath, doc) {
-    if (!anchor || anchor.includes('{{')) {
+    if (!anchor || anchor.includes('{{') || anchor.includes('[=')) {
       // Ignore empty and dynamic anchors
       return anchor;
     }
