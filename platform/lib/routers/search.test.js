@@ -113,7 +113,7 @@ test('returns a first page with no component highlights and next link', done => 
     .then(res => {
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(10);
-      expect(res.body.nextUrl).toBe('/search/do?q=query&locale=en&page=2');
+      expect(res.body.nextUrl).toBe('http://localhost:8080/search/do?q=query&locale=en&page=2');
       done();
     });
 });
@@ -129,7 +129,7 @@ test('returns a first page with no component highlights and next link', done => 
     .then(res => {
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(10);
-      expect(res.body.nextUrl).toBe('/search/do?q=query&locale=pt_BR&page=2');
+      expect(res.body.nextUrl).toBe('http://localhost:8080/search/do?q=query&locale=pt_BR&page=2');
       expect(res.body.prevUrl).toBe(undefined);
       done();
     });
@@ -147,7 +147,7 @@ test('returns a second page with no component highlights and no next link', done
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(8);
       expect(res.body.nextUrl).toBe(undefined);
-      expect(res.body.prevUrl).toBe('/search/do?q=query&locale=en&page=1');
+      expect(res.body.prevUrl).toBe('http://localhost:8080/search/do?q=query&locale=en&page=1');
       done();
     });
 });
@@ -225,32 +225,6 @@ test('Title and description are cleaned', done => {
     });
 });
 
-test('amp.dev urls are converted to server relative', done => {
-  const searchResult = createSearchResult(2, 3, 5);
-  searchResult.items[2].link = 'https://blog.amp.dev/some/path';
-  googleSearch.search.mockResolvedValue(searchResult);
-
-  request(app)
-    .get('/search/do?q=query&locale=en&page=1')
-    .expect('Content-Type', /json/)
-    .expect(200)
-    .then(res => {
-      expect(res.body.result.components[0].url).toBe(
-        '/documentation/components/amp-comp-0/'
-      );
-      expect(res.body.result.components[1].url).toBe(
-        '/documentation/components/amp-comp-1/'
-      );
-      expect(res.body.result.pages[0].url).toBe(
-        'https://blog.amp.dev/some/path'
-      );
-      expect(res.body.result.pages[1].url).toBe(
-        '/documentation/examples/amp-comp-3/'
-      );
-      done();
-    });
-});
-
 test('components with example get example and playground urls', done => {
   const searchResult = createSearchResult(2, 0, 2);
   searchResult.items[0].link =
@@ -265,16 +239,16 @@ test('components with example get example and playground urls', done => {
     .expect(200)
     .then(res => {
       expect(res.body.result.components[0].url).toBe(
-        '/documentation/components/amp-test-example/'
+        'https://amp.dev/documentation/components/amp-test-example/'
       );
       expect(res.body.result.components[0].exampleUrl).toBe(
-        '/documentation/examples/components/amp-test-example/'
+        'http://localhost:8080/documentation/examples/components/amp-test-example/'
       );
       expect(res.body.result.components[0].playgroundUrl).toBe(
         'http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example'
       );
       expect(res.body.result.components[1].url).toBe(
-        '/documentation/components/amp-no-example/'
+        'https://amp.dev/documentation/components/amp-no-example/'
       );
       expect(res.body.result.components[1].exampleUrl).toBe(undefined);
       expect(res.body.result.components[1].playgroundUrl).toBe(undefined);
@@ -296,16 +270,16 @@ test('components with example get example with locale and playground url without
     .expect(200)
     .then(res => {
       expect(res.body.result.components[0].url).toBe(
-        '/pt_br/documentation/components/amp-test-example/'
+        'https://amp.dev/pt_br/documentation/components/amp-test-example/'
       );
       expect(res.body.result.components[0].exampleUrl).toBe(
-        '/pt_br/documentation/examples/components/amp-test-example/'
+        'http://localhost:8080/pt_br/documentation/examples/components/amp-test-example/'
       );
       expect(res.body.result.components[0].playgroundUrl).toBe(
         'http://localhost:8083/?url=http%3A%2F%2Flocalhost%3A8084%2Fdocumentation%2Fexamples%2Fcomponents%2Famp-test-example'
       );
       expect(res.body.result.components[1].url).toBe(
-        '/pt_br/documentation/components/amp-no-example/'
+        'https://amp.dev/pt_br/documentation/components/amp-no-example/'
       );
       expect(res.body.result.components[1].exampleUrl).toBe(undefined);
       expect(res.body.result.components[1].playgroundUrl).toBe(undefined);
