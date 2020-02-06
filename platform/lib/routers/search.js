@@ -45,8 +45,6 @@ const RESPONSE_MAX_AGE = {
 
 const COMPONENT_REFERENCE_DOC_PATTERN = /^(?:https?:\/\/[^/]+)?(?:\/[^/]+)?\/documentation\/components\/(amp-[^/]+)/;
 
-const REMOVE_HOST_PATTERN = /^https?:\/\/amp\.dev(?=\/)/;
-
 // use the twitter title if available since it does not contain the site name
 const TITLE_META_TAG = 'twitter:title';
 const DESCRIPTION_META_TAG = 'twitter:description';
@@ -135,11 +133,6 @@ function createPageObject(csePageItem) {
     description: csePageItem.snippet,
     url: csePageItem.link,
   };
-
-  const hostMatch = page.url.match(REMOVE_HOST_PATTERN);
-  if (hostMatch) {
-    page.url = page.url.substring(hostMatch[0].length);
-  }
 
   return page;
 }
