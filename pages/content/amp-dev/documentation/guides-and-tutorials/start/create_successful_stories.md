@@ -1,5 +1,5 @@
 ---
-$title: Create successful stories
+$title: Successfully create stories on the web
 $order: 1
 description: 'Follow these best practices to create a satisfying snackable story'
 formats:
@@ -7,7 +7,7 @@ formats:
 author: CrystalOnScript
 ---
 
-Stories are an immersive, tappable, and easily shareable storytelling format on the open web. Stories is an opportunity for creators and publishers to structure content in a full-screen, visually rich, and engaging mobile first experience for users.  
+Stories on the web are an immersive, tappable, and easily shareable storytelling format. Stories is an opportunity for creators and publishers to structure content in a full-screen, visually rich, and engaging mobile first experience for users.  
 
 Stories are snackable, and readers like quick bites in their micro moments! Waiting for the subway or grabbing coffee opens up opportunities for condensed content consumption! Ensure each bite engages and delights by following these best practices for creating a satisfying snackable story.
 
@@ -102,18 +102,7 @@ A page with text content longer than sentence may be unavoidable. Try not to let
 
 Stories can be hand-coded from scratch or built using creation tools. In order for a story to be shared and discovered, they must meet technical requirements. 
 
-
-## Story creation
-
-There are several ways to start building a Story.
-
-
-### Hand coding
-
 If you are hand coding a story, you will build them from scratch using the [AMP Framework](https://amp.dev/documentation/examples/?format=stories). Follow the [Create your first AMP Story](https://amp.dev/documentation/guides-and-tutorials/start/visual_story/?format=stories) to get started. 
-
-
-### Creation tools 
 
 Not a developer? Use one of many [creation tools](https://amp.dev/documentation/guides-and-tutorials/start/visual_story/?format=stories) to build your Story!
 
