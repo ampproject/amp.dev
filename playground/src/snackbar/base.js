@@ -21,7 +21,7 @@ class Snackbar {
   constructor(win, doc) {
     this.win = win;
     this.doc = doc;
-    this.element = new Promise((resolve) => {
+    this.element = new Promise(resolve => {
       this.win.requestIdleCallback(() => {
         const snackbarContainer = this.doc.createElement('div');
         snackbarContainer.classList.add('snackbar-container');
@@ -32,7 +32,7 @@ class Snackbar {
   }
 
   show(message) {
-    this.element.then((snackbarContainer) => {
+    this.element.then(snackbarContainer => {
       const snackbar = this.doc.createElement('div');
       snackbar.classList.add('snackbar');
       snackbarContainer.append(snackbar);

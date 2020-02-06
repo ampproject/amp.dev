@@ -68,12 +68,10 @@ author: zhouyx
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
     <script type="application/json">{
-      "consents": {
-          "consent1": {
-            "checkConsentHref": "/documentation/examples/api/get-consent",
-            "promptUI": "myConsentFlow"
-          }
-      },
+      "consentInstanceId": "iframe-consent",
+      "checkConsent": "remote",
+      "checkConsentHref": "/documentation/examples/api/get-consent",
+      "promptUI": "myConsentFlow",
       "postPromptUI": "post-consent-ui"
     }</script>
     <div id="myConsentFlow" class="popupOverlay">

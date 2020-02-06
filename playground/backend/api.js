@@ -1,18 +1,18 @@
 /**
-* Copyright 2019 The AMPHTML Authors
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright 2019 The AMPHTML Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 const express = require('express');
 const fetch = require('node-fetch');
@@ -52,7 +52,7 @@ api.get('/fetch', async (request, response) => {
     response.send(doc);
   } catch (error) {
     console.error('Could not fetch URL', error);
-    response.send(`Could not fetch URL ${url}`).status(400).end();
+    response.status(400).send('Could not fetch URL');
   }
 });
 
@@ -70,9 +70,10 @@ async function doFetch(url) {
     headers: {
       'Accept': 'text/html',
       'x-requested-by': 'playground',
-      'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MTC19V) '+
-      'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile '+
-      'Safari/537.36 (compatible; amp.dev/playground)',
+      'User-Agent':
+        'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MTC19V) ' +
+        'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile ' +
+        'Safari/537.36 (compatible; amp.dev/playground)',
       'Referer': 'https://amp.dev/playground',
     },
   });

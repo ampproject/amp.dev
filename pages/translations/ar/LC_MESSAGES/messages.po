@@ -1103,3 +1103,51 @@ msgstr ""
 msgid "…while trying to load the search results."
 msgstr ""
 
+#: frontend/templates/layouts/default.j2:129
+msgid "Sadly this page isn't translated yet, but we could use some help doing so. See the <a href="/documentation/guides-and-tutorials/contribute/translations">translation guide</a> on how you can contribute."
+msgstr "لم تتم ترجمة هذه الصفحة حتى الآن، لكننا نرحّب ببعض المساعدة لتنفيذ ذلك. يمكنك الاطّلاع على <a href="/documentation/guides-and-tutorials/contribute/translations">دليل الترجمة</a> لمعرفة كيفية المساهمة في ذلك."
+
+#: frontend/templates/views/examples/documentation.j2:206
+msgid "If the explanations on this page don't cover all of your questions feel free to reach out to other AMP users to discuss your exact use case."
+msgstr ""
+
+#: frontend/templates/views/examples/documentation.j2:213
+msgid "The AMP project strongly encourages your participation and contributions! We hope you'll become an ongoing participant in our open source community but we also welcome one-off contributions for the issues you're particularly passionate about."
+msgstr ""
+
+#: frontend/templates/views/detail/component-detail.j2:33
+msgid "You've read this document a dozen times but it doesn't really cover all of your questions? Maybe other people felt the same  reach out to them on Stack Overflow."
+msgstr ""
+
+#: frontend/templates/views/partials/experiments/experiments.j2:4
+msgid "Enable the experiment via the button below. Some components require the AMP Dev Channel to be enabled as well."
+msgstr ""
+
+#: frontend/templates/views/partials/structured-data.j2:54
+msgid "Example  "
+msgstr ""
+
+#: frontend/templates/views/partials/structured-data.j2:56
+msgid "Demo  "
+msgstr ""
+
+#: frontend/templates/views/partials/structured-data.j2:58
+msgid "Documentation  "
+msgstr ""
+
+#: frontend/templates/views/partials/structured-data.j2:60
+msgid "Success Story  "
+msgstr ""
+
+#: frontend/templates/views/partials/search.j2:140
+msgid "Although there are {hits} hits in total we cannot show more than 100.', hits='{'+'{result.totalResults}'+'}"
+msgstr ""
+
+#: frontend/templates/views/partials/content.j2:24
+msgid "Important  this component does not support your currently selected format"
+msgstr ""
+
+#: pages/content/amp-dev/documentation/templates/index.html:112
+msgid "Get started quickly with a ready-made design. Templates designed to work with all devices - mobile, tablet and desktop."
+msgstr ""
+

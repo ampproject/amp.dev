@@ -85,6 +85,10 @@ body {
         margin-top: 1.6rem;
       }
 
+      &.left { text-align: left; }
+      &.center { text-align: center; }
+      &.right { text-align: right; }
+
       &.half {
         amp-img {
           @media (min-width: 768px) {
@@ -102,8 +106,11 @@ body {
         }
       }
 
-      amp-img {
+      &.shadow amp-img {
         @include box-shadow;
+      }
+
+      amp-img {
         margin: 0 auto;
       }
 

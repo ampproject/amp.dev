@@ -18,6 +18,7 @@
 
 {% block main %}
 {% include 'views/partials/sidebar-toggle-observer.j2' %}
+{% include 'views/partials/format-filter-hint.j2' %}
 <main class="ap--main ap-t-component-detail">
   <div class="ap--container">
     {% include 'views/partials/sidebar-toggle.j2' %}
@@ -47,5 +48,7 @@
     </section>
   </div>
 </main>
-{% include 'views/partials/component-sidebar.j2' %}
+{% with type = 'component' %}
+{% include 'views/partials/sidebar.j2' %}
+{% endwith %}
 {% endblock %}

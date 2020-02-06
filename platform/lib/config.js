@@ -22,7 +22,9 @@ const options = require('mri')(process.argv.slice(2));
 const yaml = require('js-yaml');
 const utils = require('./utils');
 
-const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute('platform/config/podspec.yaml');
+const GROW_CONFIG_TEMPLATE_PATH = utils.project.absolute(
+  'platform/config/podspec.yaml'
+);
 const GROW_CONFIG_DEST = utils.project.absolute('pages/podspec.yaml');
 
 const ENV_DEV = 'development';
@@ -56,12 +58,14 @@ class Config {
       this.test = false;
     }
     signale.info(`Config: environment=${environment} test=${this.test}`);
-    const env = require(utils.project.absolute(`platform/config/environments/${environment}.json`));
+    const env = require(utils.project.absolute(
+      `platform/config/environments/${environment}.json`
+    ));
 
     this.environment = env.name;
     this.hosts = env.hosts;
     this.hostNames = new Set();
-    Object.values(this.hosts).forEach((host) => {
+    Object.values(this.hosts).forEach(host => {
       host.base = this.getHost(host);
       let hostName = host.host;
       if (host.subdomain) {
@@ -70,7 +74,11 @@ class Config {
       this.hostNames.add(hostName);
     });
 
-    this.shared = require(utils.project.absolute('platform/config/shared.json'));
+    this.redis = env.redis || {};
+
+    this.shared = require(utils.project.absolute(
+      'platform/config/shared.json'
+    ));
 
     // Globally initialize command line arguments for use across all modules
     this.options = options;
@@ -134,7 +142,7 @@ class Config {
    */
   getHost(hostConfig) {
     let url = `${hostConfig.scheme}://`;
-    const isLocalhost = (hostConfig.host === 'localhost');
+    const isLocalhost = hostConfig.host === 'localhost';
     if (isLocalhost || !hostConfig.subdomain) {
       url += hostConfig.host;
     } else {
@@ -251,14 +259,14 @@ class Config {
     // Check if specific languages have been configured to be built
     if (options.locales) {
       const locales = options.locales.split(',');
-      if (!locales.every((locale) => AVAILABLE_LOCALES.includes(locale))) {
+      if (!locales.every(locale => AVAILABLE_LOCALES.includes(locale))) {
         signale.fatal('Invalid set of locales given:', options.locales);
         signale.info('Available locales are', AVAILABLE_LOCALES.join(', '));
         process.exit(1);
       }
 
       // we need the blacklist filter, because otherwise the sitemap will not be created
-      const skippedLocales = AVAILABLE_LOCALES.filter((locale) => {
+      const skippedLocales = AVAILABLE_LOCALES.filter(locale => {
         return !locales.includes(locale);
       });
       podspec.deployments.default['filters'] = {
@@ -272,6 +280,8 @@ class Config {
   }
 }
 
-const config = new Config(options.env || process.env.APP_ENV || process.env.NODE_ENV);
+const config = new Config(
+  options.env || process.env.APP_ENV || process.env.NODE_ENV
+);
 
 module.exports = config;

@@ -95,14 +95,6 @@ stage:
       <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
     </div>
 
-    <amp-state id="filter">
-      <script type="application/json">
-        {
-          "category": "none"
-        }
-      </script>
-    </amp-state>
-
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
     <div class="ap-o-filter-bubbles-list">
       <button
@@ -111,8 +103,6 @@ stage:
         [% else %]
         class="ap-m-filter-bubble"
         [% endif %]
-        [class]="filter.category == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-        on="tap:AMP.setState({ filter: {category: 'none' } })"
         name="all">
         All
       </button>
@@ -123,8 +113,7 @@ stage:
           [% else %]
           class="ap-m-filter-bubble"
           [% endif %]
-          [class]="filter.category == '{{ category|slug }}' && category != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-          on="tap:AMP.setState({ filter: {category: '{{ category|slug }}' } })"
+          on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/about/success-stories/index.html', locale=doc.locale).url.path }}?category={{ category|slug }}')"
           name="{{ category|slug }}">
           {{ category }}
       </button>

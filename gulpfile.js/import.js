@@ -32,7 +32,9 @@ const WG_LABEL_COLOR_THRESHOLD = 7500000;
 
 async function importWorkingGroups() {
   const client = new GitHubImporter();
-  const repos = (await client._github.org(WG_GH_ORGANISATION).reposAsync(1, 100))[0];
+  const repos = (
+    await client._github.org(WG_GH_ORGANISATION).reposAsync(1, 100)
+  )[0];
 
   for (const wg of repos) {
     if (!wg.name.startsWith('wg-')) {
@@ -42,22 +44,37 @@ async function importWorkingGroups() {
 
     let meta = null;
     try {
-      meta = await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`)
-          .contentsAsync('METADATA.yaml');
+      meta = await client._github
+        .repo(`${WG_GH_ORGANISATION}/${wg.name}`)
+        .contentsAsync('METADATA.yaml');
     } catch (e) {
-      console.warn(`No METADATA.yaml for working group ${wg.name}.`);
+      console.warn(`No METADATA.yaml for working group ${wg.name}`);
       continue;
     }
-    meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
+    try {
+      meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
+    } catch (e) {
+      console.error(
+        `Failed loading ${WG_GH_ORGANISATION}/${wg.name}/METADATA.yaml`,
+        e
+      );
+      continue;
+    }
 
-    let issues = (await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`).issuesAsync())[0];
-    issues = issues.map((issue) => {
+    let issues = (
+      await client._github
+        .repo(`${WG_GH_ORGANISATION}/${wg.name}`)
+        .issuesAsync()
+    )[0];
+    issues = issues.map(issue => {
       const date = new Date(issue.created_at).toDateString();
       const title = emojiStrip(issue.title);
 
-      issue.labels = issue.labels.map((label) => {
-        const txtColor = parseInt(`0x${label.color}`) < WG_LABEL_COLOR_THRESHOLD ?
-          'fff' : '000';
+      issue.labels = issue.labels.map(label => {
+        const txtColor =
+          parseInt(`0x${label.color}`) < WG_LABEL_COLOR_THRESHOLD
+            ? 'fff'
+            : '000';
 
         return {
           'name': label.name,
@@ -76,18 +93,21 @@ async function importWorkingGroups() {
       };
     });
 
-    await writeFileAsync(`${WG_DIRECTORY_PATH}/${name}.yaml`, yaml.dump({
-      '$title': `Working Group: ${meta.title}`,
-      '$titles': {'navigation': 'Working Groups'},
-      'html_url': wg.html_url,
-      'name': name,
-      'full_name': meta.title,
-      'facilitator': meta.facilitator,
-      'description': meta.description,
-      'issues': issues,
-      'members': meta.members || [],
-      'communication': meta.communication || [],
-    }));
+    await writeFileAsync(
+      `${WG_DIRECTORY_PATH}/${name}.yaml`,
+      yaml.dump({
+        '$title': `Working Group: ${meta.title}`,
+        '$titles': {'navigation': 'Working Groups'},
+        'html_url': wg.html_url,
+        'name': name,
+        'full_name': meta.title,
+        'facilitator': meta.facilitator,
+        'description': meta.description,
+        'issues': issues,
+        'members': meta.members || [],
+        'communication': meta.communication || [],
+      })
+    );
 
     console.log('Imported working group data', wg.name);
   }

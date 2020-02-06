@@ -36,21 +36,25 @@ const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*
 // to ensure we do not match something that belongs to different code blocks
 // or we add raw tags to existing raw blocks
 const MARKDOWN_BLOCK_PATTERN = new RegExp(
-    JINJA2_RAW_BLOCK.source +
+  JINJA2_RAW_BLOCK.source +
     '|' +
     SOURCECODE_BLOCK.source +
     '|' +
-    /`[^`]*`/.source, 'g');
+    /`[^`]*`/.source,
+  'g'
+);
 
 // Inside code blocks we search for mustache expressions
 // The constant 'server_for_email' and expressions with a dot or a bracket are not considered mustache
 // TODO: Avoid the need to distinguish between mustache and jinja2
 const MUSTACHE_PATTERN = new RegExp(
-    '(' +
+  '(' +
     JINJA2_RAW_BLOCK.source +
     '|' +
     /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
-    ')', 'g');
+    ')',
+  'g'
+);
 
 // Matches tags used for SSR
 const NUNJUCKS_PATTERN = /\[(?:%|=|#)|(?:%|=|#)\]/g;
@@ -58,8 +62,8 @@ const NUNJUCKS_PATTERN = /\[(?:%|=|#)|(?:%|=|#)\]/g;
 // This pattern will find relative urls.
 // It will als match source code blocks to skip them and not replace any links inside.
 const RELATIVE_LINK_PATTERN = new RegExp(
-    // skip sourcecode tag in markdown
-    SOURCECODE_BLOCK.source +
+  // skip sourcecode tag in markdown
+  SOURCECODE_BLOCK.source +
     '|' +
     // skip inline source marker
     /`[^`]*`/.source +
@@ -68,12 +72,12 @@ const RELATIVE_LINK_PATTERN = new RegExp(
     /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source +
     '|' +
     // find markdown link block [text](../link):
-    /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
-    , 'g');
+    /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source,
+  'g'
+);
 
 // This pattern will find the text for markdown titles skipping explicit anchors.
-const TITLE_ANCHOR_PATTERN =
-    /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/mg;
+const TITLE_ANCHOR_PATTERN = /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm;
 
 class MarkdownDocument {
   constructor(path, contents) {
@@ -172,7 +176,10 @@ class MarkdownDocument {
   }
 
   set teaser(teaser) {
-    this._frontmatter['teaser'] = Object.assign(this._frontmatter['teaser'] || {}, teaser);
+    this._frontmatter['teaser'] = Object.assign(
+      this._frontmatter['teaser'] || {},
+      teaser
+    );
   }
 
   set servingPath(path) {
@@ -245,7 +252,7 @@ class MarkdownDocument {
    * @return {String}          The rewritten input
    */
   static escapeNunjucksTags(contents) {
-    return contents.replace(NUNJUCKS_PATTERN, (tag) => {
+    return contents.replace(NUNJUCKS_PATTERN, tag => {
       // TODO(matthiasrohmer): Raw tags for nunjucks do not match.
       // See: github.com/ampproject/amp.dev#2865
       return `{{'[% raw %]'}}${tag}{{'{% endraw %}'}}`;
@@ -258,18 +265,16 @@ class MarkdownDocument {
    * @return {String}          The rewritten input
    */
   static escapeMustacheTags(contents) {
-    return contents.replace(MARKDOWN_BLOCK_PATTERN, (block) => {
+    return contents.replace(MARKDOWN_BLOCK_PATTERN, block => {
       // check for mustache tags only if we have no raw block
       if (!block.startsWith('{')) {
-        block = block.replace(
-            MUSTACHE_PATTERN,
-            (part) => {
-              // again, only if it is a mustache block wrap it with raw
-              if (part.startsWith('{{')) {
-                part = '{% raw %}' + part + '{% endraw %}';
-              }
-              return part;
-            });
+        block = block.replace(MUSTACHE_PATTERN, part => {
+          // again, only if it is a mustache block wrap it with raw
+          if (part.startsWith('{{')) {
+            part = '{% raw %}' + part + '{% endraw %}';
+          }
+          return part;
+        });
       }
       return block;
     });
@@ -304,11 +309,18 @@ class MarkdownDocument {
    */
   static rewriteCodeBlocks(contents) {
     // Rewrite code blocks in fence syntax
-    contents =
-      contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```[\t ]*\n)/gm,
-          (match, p1, p2, p3, p4) => {
-            return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
-          });
+    contents = contents.replace(
+      /(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```[\t ]*\n)/gm,
+      (match, p1, p2, p3, p4) => {
+        return (
+          '[sourcecode' +
+          (p3 ? ':' + p3 : ':none') +
+          ']\n' +
+          p4 +
+          '[/sourcecode]\n'
+        );
+      }
+    );
 
     return contents;
   }
@@ -321,14 +333,16 @@ class MarkdownDocument {
     if (!base.endsWith('/')) {
       base += '/';
     }
-    this._contents = this._contents.replace(RELATIVE_LINK_PATTERN,
-        (match, hrefLink, markdownLink) => {
-          const link = hrefLink || markdownLink;
-          if (!link) {
-            return match;
-          }
-          return match.replace(link, base + link);
-        });
+    this._contents = this._contents.replace(
+      RELATIVE_LINK_PATTERN,
+      (match, hrefLink, markdownLink) => {
+        const link = hrefLink || markdownLink;
+        if (!link) {
+          return match;
+        }
+        return match.replace(link, base + link);
+      }
+    );
   }
 
   /**
@@ -346,23 +360,27 @@ class MarkdownDocument {
    */
   addExplicitAnchors() {
     const slugGenerator = new SlugGenerator();
-    this._contents = this._contents.replace(TITLE_ANCHOR_PATTERN,
-        (line, hLevel, headlineStart, anchor, headlineEnd) => {
-          let headline = headlineStart + headlineEnd;
-          headline = headline.replace(/`(.*?)`|\[(.*?)\]\(.*?\)|<.*?>|&[^\s]+?;/g,
-              (line, code, linktext) => {
-                if (code || linktext) {
-                  return code || linktext;
-                }
-                return '';
-              });
-          const slug = slugGenerator.generateSlug(headline);
-          // Even if we have an anchor the slug generator has to know all the headlines.
-          if (anchor) {
-            return line;
+    this._contents = this._contents.replace(
+      TITLE_ANCHOR_PATTERN,
+      (line, hLevel, headlineStart, anchor, headlineEnd) => {
+        let headline = headlineStart + headlineEnd;
+        headline = headline.replace(
+          /`(.*?)`|\[(.*?)\]\(.*?\)|<.*?>|&[^\s]+?;/g,
+          (line, code, linktext) => {
+            if (code || linktext) {
+              return code || linktext;
+            }
+            return '';
           }
-          return `${hLevel} ${headlineStart}${headlineEnd} <a name="${slug}"></a>`;
-        });
+        );
+        const slug = slugGenerator.generateSlug(headline);
+        // Even if we have an anchor the slug generator has to know all the headlines.
+        if (anchor) {
+          return line;
+        }
+        return `${hLevel} ${headlineStart}${headlineEnd} <a name="${slug}"></a>`;
+      }
+    );
     return true;
   }
 
@@ -373,13 +391,15 @@ class MarkdownDocument {
    */
   save(path) {
     let content = '';
-    const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
+    const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {
+      'skipInvalid': true,
+    })}---\n\n`;
     content += frontmatter;
 
     /**
-    * check if file is imported and if so add a comment in order to inform that
-    * the file should not be changed in the amp.dev/docs - repro
-    */
+     * check if file is imported and if so add a comment in order to inform that
+     * the file should not be changed in the amp.dev/docs - repro
+     */
     if (this._importURL) {
       const importedText = `<!--
 This file is imported from ${this.importURL}.
@@ -395,11 +415,16 @@ have a look and request a pull request there.
     content += this._contents;
 
     path = path ? path : this._path;
-    return writeFile(path, content).then(() => {
-      LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
-    }).catch((e) => {
-      LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);
-    });
+    return writeFile(path, content)
+      .then(() => {
+        LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
+      })
+      .catch(e => {
+        LOG.error(
+          `Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`,
+          e
+        );
+      });
   }
 }
 

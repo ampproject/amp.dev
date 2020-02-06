@@ -42,7 +42,7 @@ class Collection {
    * Creates the necessary blueprint for the collection
    * @return {Boolean} Flag defining if file was written or not
    */
-  create(path, overwrite=false) {
+  create(path, overwrite = false) {
     // Check if the collection already exists and only write (new) blueprint
     // if overwrite is set to true
     const blueprintPath = this.destination + '/_blueprint.yaml';

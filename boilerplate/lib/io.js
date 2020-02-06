@@ -20,7 +20,7 @@ const fs = require('fs');
 const path = require('path');
 
 function listFiles(currentDirPath, result = [], recursive = false) {
-  fs.readdirSync(currentDirPath).forEach((name) => {
+  fs.readdirSync(currentDirPath).forEach(name => {
     const filePath = path.join(currentDirPath, name);
     const stat = fs.statSync(filePath);
     if (stat.isFile() && !path.basename(filePath).startsWith('.')) {
