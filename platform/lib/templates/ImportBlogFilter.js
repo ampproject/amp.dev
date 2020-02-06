@@ -23,8 +23,9 @@ const fetch = require('node-fetch');
 const moment = require('moment');
 
 async function importBlog(value, callback) {
+  let response = [];
   try {
-    const response = await fetch(BLOG_PATH).then(res => res.json());
+    response = await fetch(BLOG_PATH).then(res => res.json());
   } catch (err) {
     console.log('Could not fetch blog posts!', err);
     callback(null, []);
@@ -33,21 +34,15 @@ async function importBlog(value, callback) {
 
   const posts = [];
   for (const post of response) {
-    let image = '';
-    if (
-      post._embedded['wp:featuredmedia'][0].media_details &&
-      !post._embedded['wp:featuredmedia'][0].media_details.file.endsWith(
-        DEFAULT_IMG
-      )
-    ) {
-      image =
-        post._embedded['wp:featuredmedia'][0].media_details.sizes.medium
-          .source_url;
+    const mediaDetails = post._embedded['wp:featuredmedia'][0].media_details;
+    let imageUrl = '';
+    if (mediaDetails && !mediaDetails.file.endsWith(DEFAULT_IMG)) {
+      imageUrl = mediaDetails.sizes.medium.source_url;
     }
 
     posts.push({
       title: post._embedded['wp:term'][0][0].name,
-      image: image,
+      image: imageUrl,
       headline: post.title.rendered,
       date: moment(post.date).format('MMMM D, YYYY'),
       url: post.link,
