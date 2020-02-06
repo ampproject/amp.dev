@@ -8,49 +8,20 @@
 
 @import 'components/organisms/_sidebar.scss';
 
-amp-sidebar {
-  width: 100%;
-  max-width: 90vw;
-  background: color('whisper');
-}
+.#{utility('ampsidebar')} {
+  @include sidebar-ampsidebar;
 
-nav[toolbar] {
-  top: 86px;
-  height: 100vh;
-  max-height: calc(100vh - 86px);
-
-  @media (min-width: 768px){
-    position: -webkit-sticky;
-    position: sticky;
-    overflow: auto;
-  }
-
-  & > ul {
-    -webkit-overflow-scrolling: touch;
-    margin: 0;
-    padding: 0;
-
-    @media (min-width: 768px){
-      overflow: auto;
-      max-height: 100%;
-    }
-
-    &::-webkit-scrollbar {
-      width: 2px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: rgba(color('black'), 0.10);
-    }
+  &-toolbar {
+    @include sidebar-ampsidebar-toolbar;
   }
 }
 
-.#{utility('sidebar')} {
-  margin-top: 10px;
-}
+.#{organism('sidebar-default')} {
+  @include sidebar-wrapper;
 
-.#{organism('sidebar')} {
-  @include sidebar;
+  .#{organism('sidebar')} {
+    @include sidebar;
+  }
 
   .nav {
     @include sidebar-nav;
@@ -104,9 +75,11 @@ nav[toolbar] {
 
       &.level-3 {
         margin-left: 24px;
+
         .nav-link {
           @include sidebar-nav-link-level-3;
         }
+
         &.active {
           background: rgba(51,61,71,0.1);
           border-radius: 4px;
@@ -167,9 +140,5 @@ nav[toolbar] {
     span.nav-link + .nav-trigger {
       width: calc(100% + 15px);
     }
-  }
-
-  &-section {
-    max-width: 100%;
   }
 }
