@@ -206,13 +206,13 @@ Dans certains cas, il se peut que l'élément `<amp-list>` doive être redimensi
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-    <amp-list id="list"
+<amp-list id="list"
           width="396" height="80" layout="responsive"
           src="/test/manual/amp-list-data.json?RANDOM">
-          <template type="amp-mustache">
-          {{title}}
-      </template>
-    </amp-list>
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -242,10 +242,11 @@ Pour envoyer des identifiants, transmettez la valeur `include`. Si cette valeur 
 Dans l'exemple ci-dessous, l'insertion d'identifiants est spécifiée pour afficher du contenu personnalisé dans une liste :
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}
+<amp-list credentials="include"
+          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -344,15 +345,16 @@ L'élément `<amp-list-load-more>` avec l'attribut `load-more-button` est affich
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
   `amp-mustache` peut être utilisé afin de créer un modèle pour cet élément.
 
 ##### Exemple : <a name="example"></a>
 
 ```html
-{% raw %}<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
+{% raw %}
+<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
   ...
   <amp-list-load-more load-more-button>
     <template type="amp-mustache">
@@ -374,8 +376,8 @@ Cet élément est un chargeur qui s'affiche si l'utilisateur atteint la fin de l
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>

@@ -206,13 +206,13 @@ Dalam beberapa kasus, `<amp-list>` mungkin perlu berubah ukuran sesuai interaksi
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-        width="396" height="80" layout="responsive"
-        src="/test/manual/amp-list-data.json?RANDOM">
-        <template type="amp-mustache">
-        {{title}}
-    </template>
-  </amp-list>
+<amp-list id="list"
+          width="396" height="80" layout="responsive"
+          src="/test/manual/amp-list-data.json?RANDOM">
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -242,10 +242,11 @@ Untuk mengirim kredensial, teruskan nilai `include`. Jika nilai ini ditetapkan, 
 Berikut ini contoh yang menentukan kredensial include untuk menampilkan konten yang dipersonalisasi dalam daftar:
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}
+<amp-list credentials="include"
+          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -344,8 +345,8 @@ Elemen `<amp-list-load-more>` dengan atribut `load-more-button`, yang muncul di 
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
   Elemen ini dapat diberi template melalui `amp-mustache`.
 
@@ -374,8 +375,8 @@ Elemen ini adalah pemuat yang akan ditampilkan jika pengguna mencapai akhir daft
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>
@@ -412,7 +413,8 @@ Elemen ini tidak disediakan secara default, tetapi jika elemen `<amp-list-load-m
 ```html
 <amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
   ...
-  <amp-list-load-more load-more-end>Congratulations! You've reached the end. /* Custom load-end element */
+  <amp-list-load-more load-more-end>
+    Congratulations! You've reached the end. /* Custom load-end element */
   </amp-list-load-more>
 </amp-list>
 ```

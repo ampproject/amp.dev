@@ -206,13 +206,13 @@ Em muitos casos, o `<amp-list>` pode ser necessário para fazer o redimensioname
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-        width="396" height="80" layout="responsive"
-        src="/test/manual/amp-list-data.json?RANDOM">
-        <template type="amp-mustache">
-        {{title}}
-    </template>
-  </amp-list>
+<amp-list id="list"
+          width="396" height="80" layout="responsive"
+          src="/test/manual/amp-list-data.json?RANDOM">
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -242,10 +242,11 @@ Para enviar credenciais, transmita o valor de `include`. Se esse valor for defin
 Veja um exemplo que especifica a inclusão de credenciais para exibir conteúdo personalizado em uma lista:
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}
+<amp-list credentials="include"
+          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -341,13 +342,14 @@ Um elemento `<amp-list-load-more>` com o atributo `load-more-button`, que aparec
 ##### Exemplo: <a name="load-more-button"></a>
 
 ```html
-  {% raw %}<amp-list load-more="manual" src="https://www.load.more.example.com/" width="400" height="800">
-    ...
-    <amp-list-load-more load-more-button>
-      <button>See More</button> /* My custom see more button */
-      </amp-list-load-more>
-    </amp-list>
-    {% endraw %}
+{% raw %}
+<amp-list load-more="manual" src="https://www.load.more.example.com/" width="400" height="800">
+  ...
+  <amp-list-load-more load-more-button>
+    <button>See More</button> /* My custom see more button */
+  </amp-list-load-more>
+</amp-list>
+{% endraw %}
 ```
   Pode ser criado a partir de um modelo via `amp-mustache`.
 
@@ -376,8 +378,8 @@ Este elemento é um carregador que será exibido se o usuário chegar ao fim da 
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>
