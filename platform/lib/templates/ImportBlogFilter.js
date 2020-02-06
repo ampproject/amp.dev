@@ -18,22 +18,27 @@
 
 const POST_COUNT = 6;
 const BLOG_PATH = `https://blog.amp.dev/wp-json/wp/v2/posts?per_page=${POST_COUNT}&_embed`;
-const fetch = require("node-fetch");
+const fetch = require('node-fetch');
 
 async function importBlog(value, callback) {
   const response = await fetch(BLOG_PATH);
   const jsonData = await response.json();
 
-  const source_urls = [];
+  const posts = [];
   for (const post of jsonData) {
-    if (post._embedded['wp:featuredmedia'][0].media_details) {
-      source_urls.push(post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail.source_url);
-    } else {
-      console.log('No source_url found for', post.id);
-    }
+    posts.push({
+      title: post._embedded['wp:term'][0][0].name,
+      image: post._embedded['wp:featuredmedia'][0].media_details
+        ? post._embedded['wp:featuredmedia'][0].media_details.sizes.thumbnail
+            .source_url
+        : '',
+      headline: post.title.rendered,
+      date: post.date,
+      url: post.link,
+    });
   }
 
-  callback(null, source_urls);
+  callback(null, posts);
 }
 
 module.exports = {
