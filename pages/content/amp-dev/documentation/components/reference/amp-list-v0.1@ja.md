@@ -205,13 +205,13 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-        width="396" height="80" layout="responsive"
-        src="/test/manual/amp-list-data.json?RANDOM">
-        <template type="amp-mustache">
-        {{title}}
-    </template>
-  </amp-list>
+<amp-list id="list"
+          width="396" height="80" layout="responsive"
+          src="/test/manual/amp-list-data.json?RANDOM">
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -240,10 +240,11 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
 以下の例では、カスタマイズされたコンテンツをリストで表示するための認証情報などが指定されています。
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}
+<amp-list credentials="include"
+          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -340,8 +341,8 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
   テンプレート化するには `amp-mustache` を使用します。
 
@@ -370,8 +371,8 @@ AMP では、JSON エンドポイントに対する XMLHttpRequest（XHR）を�
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>

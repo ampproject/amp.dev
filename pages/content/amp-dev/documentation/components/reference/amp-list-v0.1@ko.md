@@ -213,13 +213,13 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-        width="396" height="80" layout="responsive"
-        src="/test/manual/amp-list-data.json?RANDOM">
-        <template type="amp-mustache">
-        {{title}}
-    </template>
-  </amp-list>
+<amp-list id="list"
+          width="396" height="80" layout="responsive"
+          src="/test/manual/amp-list-data.json?RANDOM">
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -249,10 +249,11 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 다음은 목록에 맞춤설정된 콘텐츠를 표시하기 위해 사용자 인증 정보를 비롯한 사양을 지정하는 예입니다.
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}
+<amp-list credentials="include"
+          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -352,8 +353,8 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
   `amp-mustache`를 통해 템플릿으로 작성될 수 있습니다.
 
@@ -382,8 +383,8 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-failed"></a>
