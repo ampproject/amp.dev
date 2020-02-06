@@ -223,7 +223,9 @@
     {% include 'views/partials/author.j2' %}
   </div>
 </main>
-{% include 'views/partials/example-sidebar.j2' %}
+{% with type = 'example' %}
+{% include 'views/partials/sidebar.j2' %}
+{% endwith %}
 {% endblock %}
 
 {% block serviceWorker %}
