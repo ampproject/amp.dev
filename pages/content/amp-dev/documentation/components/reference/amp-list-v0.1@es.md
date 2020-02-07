@@ -206,12 +206,10 @@ En algunos casos, puede que necesitemos que `<amp-list>` cambie de tamaño en fu
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-          width="396" height="80" layout="responsive"
-          src="/test/manual/amp-list-data.json?RANDOM">
-          <template type="amp-mustache">
-          {{title}}
-      </template>
+  <amp-list id="list" width="396" height="80" layout="responsive" src="/test/manual/amp-list-data.json?RANDOM">
+    <template type="amp-mustache">
+      {{title}}
+    </template>
   </amp-list>
 {% endraw %}
 ```
@@ -344,8 +342,8 @@ Un elemento `<amp-list-load-more>` con el atributo `load-more-button` que aparec
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
   Este elemento puede estar basado en una plantilla de `amp-mustache`.
 
@@ -374,8 +372,8 @@ Este elemento es un cargador que se muestra si el usuario llega al final de la l
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>

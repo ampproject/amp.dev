@@ -2,6 +2,12 @@ entries:
 
 - title: "Blog"
   image: "https://blog.amp.dev/wp-content/uploads/2019/11/AMP_Blog_Square.jpg"
+  headline: "Cookie classification on AMP"
+  date: "January 27, 2020"
+  url: "https://blog.amp.dev/2020/01/27/cookie-classification-on-amp/"
+
+- title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2019/11/AMP_Blog_Square.jpg"
   headline: "CCPA support in AMP"
   date: "December 20, 2019"
   url: "https://blog.amp.dev/2019/12/20/ccpa-support-in-amp/"
@@ -23,9 +29,3 @@ entries:
   headline: "From Static to Interactive: Adobe Campaign Brings Email to Life with AMP for Email"
   date: "December 9, 2019"
   url: "https://blog.amp.dev/2019/12/09/from-static-to-interactive-adobe-campaign-brings-email-to-life-with-amp-for-email/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/12/MakeStories_Blog-1.jpg"
-  headline: "How The United Nations Development Programme Engages Audiences With AMP Stories And MakeStories"
-  date: "December 4, 2019"
-  url: "https://blog.amp.dev/2019/12/04/how-the-united-nations-development-programme-engages-audiences-with-amp-stories-and-makestories/"

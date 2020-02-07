@@ -206,13 +206,13 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-        width="396" height="80" layout="responsive"
-        src="/test/manual/amp-list-data.json?RANDOM">
-        <template type="amp-mustache">
-        {{title}}
-    </template>
-  </amp-list>
+<amp-list id="list"
+          width="396" height="80" layout="responsive"
+          src="/test/manual/amp-list-data.json?RANDOM">
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -242,10 +242,11 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 以下示例指定在列表中包含凭据，以显示个性化内容：
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}
+<amp-list credentials="include"
+          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -342,8 +343,8 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* 我的自定义“查看更多”按钮 */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
   它可通过 `amp-mustache` 进行模板化。
 
@@ -372,8 +373,8 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* 我的自定义加载程序 */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>

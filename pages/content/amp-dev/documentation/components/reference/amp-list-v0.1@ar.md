@@ -209,13 +209,13 @@ amp-list div[role="list"] {
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-    width="396" height="80" layout="responsive"
-    src="/test/manual/amp-list-data.json?RANDOM">
-    <template type="amp-mustache">
-      {{title}}
-    </template>
-  </amp-list>
+<amp-list id="list"
+          width="396" height="80" layout="responsive"
+          src="/test/manual/amp-list-data.json?RANDOM">
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 

@@ -1,30 +1,14 @@
-nextstop:
-  - title: warsaw
-    coords: 60x12
-    location: MsMermaid
-    time: 09:00-17:00
-    day: 21
-    month: oct
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-warsaw/
-  - title: kyiv
-    coords: 64x12
-    location: Radisson Blu
-    time: 09:30-17:00
-    day: 24
-    month: oct
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-kyiv/
-  - title: seoul
-    coords: 91x16
-    location: Sejong University
-    time: 09:00–17:00
-    day: 5
-    month: nov
-    year: 2019
-    link: https://events.withgoogle.com/amp-roadshow-seoul-2019/
-
+nextstop: []
 past:
+  - title: SEOUL
+    coords: 91x16
+    date: 2019-11-05
+  - title: KYIV
+    coords: 64x12
+    date: 2019-10-24
+  - title: WARSAW
+    coords: 60x12
+    date: 2019-10-21
   - title: KARACHI
     coords: 74x23
     date: 2019-10-03
