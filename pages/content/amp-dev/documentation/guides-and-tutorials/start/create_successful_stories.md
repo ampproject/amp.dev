@@ -32,7 +32,7 @@ Plan the story introduction, create an arc and build up to a complete narrative.
 
 ## Tasteful and filling content
 
-Each story must be a minimum of 4 pages and ideally less than 30. Each story needs to be tasty, well told, and easy to consume. If needed for your narrative, go longer than 30. Stories that are too commercial or smell of spam will not be served. This includes stories where more than 30% is sponsored content or ads. A story using [auto ads](https://amp.dev/documentation/guides-and-tutorials/develop/advertise_amp_stories/?format=stories) is automatically compliant.
+Each story must be a minimum of 4 pages and ideally less than 30. Each story needs to be tasty, well told, and easy to consume. If needed for your narrative, go longer than 30. Stories that are too commercial or smell of spam will not be served. This includes stories where more than 30% is sponsored content or ads. A story using [auto ads](../develop/advertise_amp_stories/?format=stories) is automatically compliant.
 
 Know what your readers want to see! Insensitive, misleading or inappropriate content is never on the menu. 
 
@@ -102,7 +102,7 @@ A page with text content longer than sentence may be unavoidable. Try not to let
 
 Stories can be hand-coded from scratch or built using creation tools. In order for a story to be shared and discovered, they must meet technical requirements. 
 
-If you are hand coding a story, you will build them from scratch using the [AMP Framework](https://amp.dev/documentation/examples/?format=stories). Follow the [Create your first AMP Story](https://amp.dev/documentation/guides-and-tutorials/start/visual_story/?format=stories) to get started. 
+If you are hand coding a story, you will build them from scratch using the [AMP Framework](../../examples/?format=stories). Follow the [Create your first AMP Story](visual_story/?format=stories) to get started. 
 
 Not a developer? Use one of many [creation tools](https://amp.dev/documentation/guides-and-tutorials/start/visual_story/?format=stories) to build your Story!
 
@@ -113,6 +113,6 @@ After you’ve created your story, make sure it can be shared and discovered! Al
 
 
 *   Stories must be valid AMP. You can test yours in the [AMP validator](https://validator.ampproject.org/). 
-*   [Metadata attributes](https://amp.dev/documentation/components/amp-story/#metadata-guidelines) ensure your story is working as intended. Check that your story has them setup correctly.
+*   [Metadata attributes](../../components/amp-story/#metadata-guidelines) ensure your story is defined well. Check that your story has them setup correctly.
 *   Configure you [structured data ](https://developers.google.com/search/docs/guides/sd-policies)so that interested readers can find your story! 
 *   Clearly label sponsored content. Any and all paid or affiliated links require the [nofollow](https://support.google.com/webmasters/answer/96569?hl=en) attribute. 
