@@ -280,10 +280,10 @@ class GrowReferenceChecker {
   }
 
   _checkAnchor(anchor, linkedPath, doc) {
-    if (!anchor || anchor.includes('{{') || anchor.includes('[=')) {
-      // Ignore empty and dynamic anchors
+    if (!this._isDynamic(anchor)) {
       return anchor;
     }
+
     const sourcePath = this._getPathInPod(doc);
 
     const anchorValue = anchor.substring(1);
@@ -355,6 +355,14 @@ class GrowReferenceChecker {
     return '#' + resultAnchor;
   }
 
+  // Ignore empty and dynamic anchors
+  _isDynamic(link) {
+    if (!link || link.includes('{{') || link.includes('[=')) {
+      return false;
+    }
+    return true;
+  }
+
   _getPathForLocale(filePath, locale) {
     const pathWithLocale =
       filePath.substring(0, filePath.lastIndexOf('.md')) + '@' + locale + '.md';
@@ -400,6 +408,10 @@ class GrowReferenceChecker {
    * @return {String} The link to the document (adjusted if needed) or null if the target was not found.
    */
   _verifyReference(link, doc) {
+    if (!this._isDynamic(link)) {
+      return link;
+    }
+
     const documentPath = this._resolveRelativeLink(link, doc);
 
     let changedPath = this._findReference(documentPath, doc);
