@@ -130,9 +130,12 @@ section_links:
       </div>
     </div>
 
+    {% if doc.roadshow.nextstop %}
     <span class="ap-o-cities-sub-headline">Where we're going next</span>
+    {% endif %}
 
     <div class="ap-o-cities-next-events">
+      {% if doc.roadshow.nextstop %}
       <div class="ap-o-cities-next-events-list">
 
       {% for nextstop in doc.roadshow.nextstop %}
@@ -167,8 +170,9 @@ section_links:
           </div>
         </div>
       {% endfor %}
-
       </div>
+      {% endif %}
+
       <div class="ap-o-cities-next-events-checkback">
         <p>Your city isn't on the list? Check back soon for additional dates and cities. Or...</p>
         <h4>Want the AMP Roadshow to visit your area?</h4>

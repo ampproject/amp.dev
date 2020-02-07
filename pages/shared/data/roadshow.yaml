@@ -1,14 +1,12 @@
-nextstop:
-  
-
+nextstop: []
 past:
-  - title: seoul
+  - title: SEOUL
     coords: 91x16
     date: 2019-11-05
-  - title: kyiv
+  - title: KYIV
     coords: 64x12
     date: 2019-10-24
-  - title: warsaw
+  - title: WARSAW
     coords: 60x12
     date: 2019-10-21
   - title: KARACHI
