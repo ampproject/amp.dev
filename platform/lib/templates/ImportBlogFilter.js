@@ -23,17 +23,22 @@ const fetch = require('node-fetch');
 const moment = require('moment');
 
 async function importBlog(value, callback) {
-  let response = [];
+  let response;
   try {
-    response = await fetch(BLOG_PATH).then(res => res.json());
+    response = await fetch(BLOG_PATH);
   } catch (err) {
     console.log('Could not fetch blog posts!', err);
     callback(null, []);
     return;
   }
 
+  if (!response.ok) {
+    callback(null, []);
+    return;
+  }
+
   const posts = [];
-  for (const post of response) {
+  for (const post of await response.json()) {
     const mediaDetails = post._embedded['wp:featuredmedia'][0].media_details;
     let imageUrl = '';
     if (mediaDetails && !mediaDetails.file.endsWith(DEFAULT_IMG)) {
