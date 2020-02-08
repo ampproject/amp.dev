@@ -89,10 +89,11 @@ const HTML_COMMENT_PATTERN = /<!--.*?-->/gms;
 const PARAGRAPH_PATTERN = /(?<=## .*\n)\n*.+/gm;
 
 class MarkdownDocument {
-  constructor(path, contents) {
+  constructor(path, contents, frontmatter) {
     this.contents = contents;
     try {
-      this._frontmatter = MarkdownDocument.extractFrontmatter(contents);
+      this._frontmatter =
+        frontmatter || MarkdownDocument.extractFrontmatter(contents);
     } catch (e) {
       LOG.error(`Failed to parse frontmatter for ${path}`, e.message);
       this._frontmatter = {
