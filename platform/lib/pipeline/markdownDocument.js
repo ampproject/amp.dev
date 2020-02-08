@@ -85,9 +85,6 @@ const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
 // Matches a HTML comment in the form of <!-- Comment. -->
 const HTML_COMMENT_PATTERN = /<!--.*?-->/gms;
 
-// Matches the next paragraph after a markdown headline
-const PARAGRAPH_PATTERN = /(?<=## .*\n)\n*.+/gm;
-
 class MarkdownDocument {
   constructor(path, contents, frontmatter) {
     this.contents = contents;
@@ -209,26 +206,31 @@ class MarkdownDocument {
    */
   static extractTeaserText(contents) {
     contents = contents.replace(HTML_COMMENT_PATTERN, '');
+    contents = contents.replace(FRONTMATTER_PATTERN, '');
+    contents = contents.replace(TOC_MARKER, '');
 
-    const paragraphs = contents.match(PARAGRAPH_PATTERN);
-    if (paragraphs && paragraphs[0]) {
-      let text = paragraphs[0].replace(/\n/g, ' ').trim();
-      // Strip out all possible HTML tags
-      text = text.replace(/<\/?[^>]+(>|$)/g, '');
-      // Unwrap back ticks
-      text = text.replace(/`(.+)`/g, '$1');
-      // And unwrap possible markdown links
-      text = text.replace(/\[(.+)\]\(.+\)/g, '$1');
-
-      if (text) {
-        return text;
-      }
+    // Splice out an excerpt to show in the teaser ...
+    const FIRST_PARAGRAPH = /#.*$\n+(?!<table>)(.*)$/gm;
+    let excerpt = FIRST_PARAGRAPH.exec(contents);
+    if (excerpt == null || !excerpt[1].trim()) {
+      const SECOND_PARAGRAPH = /##.*$\n+((.|\n(?=\w))*)$/gm;
+      excerpt = SECOND_PARAGRAPH.exec(contents);
     }
 
-    LOG.error(
-      `Could not parse a teaser text from "${contents.substr(0, 500)}..."`
-    );
-    return '';
+    if(!excerpt) {
+      LOG.error(
+        `Could not parse a teaser text from "${contents.substr(0, 500)}..."`
+      );
+      return '';
+    }
+
+    // Strip out all possible HTML tags
+    excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, '');
+    // Unwrap back ticks
+    excerpt = excerpt.replace(/`(.+)`/g, '$1');
+    // And unwrap possible markdown links
+    excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
+    return excerpt;
   }
 
   /**
