@@ -1,9 +1,13 @@
 ---
-$title: AMP for Ads specification
-toc: true
-$order: 3
+title: AMP for Ads specification
+order: 3
 formats:
   - ads
+teaser:
+  text: >-
+    Unless otherwise specified below, the creative must obey all rules given by
+    the
+toc: true
 ---
 
 <!--

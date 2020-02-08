@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import json
 import os
 import re
-import json
-from grow.pods.pods import Pod
+
 from grow.documents.document import Document
+from grow.pods.pods import Pod
 
 FIRST_SENTENCE_PATTERN = re.compile(
     # We also match markup [tag]...[/tag] blocks to skip them
@@ -82,6 +83,7 @@ class PageInfoCollector(object):
     """
     :type doc: Document
     """
+    print(doc.pod_path)
     result = doc.fields.get('description')
     if not result:
       teaser = doc.fields.get('teaser')

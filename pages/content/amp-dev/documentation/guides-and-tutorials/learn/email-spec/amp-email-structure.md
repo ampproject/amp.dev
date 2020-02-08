@@ -1,9 +1,13 @@
 ---
-$title: Structure and rendering of AMP emails
-toc: true
-$order: 2
+title: Structure and rendering of AMP emails
+order: 2
 formats:
   - email
+teaser:
+  text: >-
+    The text/x-amp-html` part must be nested under a `multipart/alternative
+    node.
+toc: true
 ---
 
 <!--

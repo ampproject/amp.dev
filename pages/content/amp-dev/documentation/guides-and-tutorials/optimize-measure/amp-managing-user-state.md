@@ -1,8 +1,14 @@
 ---
-$title: Manage non-authenticated user state with AMP
-$order: 2
+title: Manage non-authenticated user state with AMP
+order: 2
 formats:
   - websites
+teaser:
+  text: >-
+    The topic of user state deserves special attention in AMP because AMP pages
+    can display in multiple contexts such as on your website, in Google Search
+    or a third party app. This introduces challenges in managing user state when
+    users travel between these.
 ---
 
 <!--

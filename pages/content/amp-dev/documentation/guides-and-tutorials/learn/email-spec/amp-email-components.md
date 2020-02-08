@@ -1,9 +1,16 @@
 ---
-$title: AMP for Email Supported Components
-toc: true
-$order: 3
+title: AMP for Email Supported Components
+order: 3
 formats:
   - email
+teaser:
+  text: >-
+    |
+    Element                                                                                                                                                                        
+    |
+    Description                                                                                                                                                                                                                                                                                                                             
+    |
+toc: true
 ---
 
 <!--

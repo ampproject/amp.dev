@@ -1,12 +1,17 @@
 ---
-$title: Governance
-toc: true
-$order: 2
+title: Governance
+order: 2
 formats:
   - websites
   - email
   - stories
   - ads
+teaser:
+  text: >-
+    * **Advisory Committee (AC).**  A group of people with representation from a
+    variety of AMP's constituencies including Users, End-users and Collaborators
+    who provide advice to the Technical Steering Committee.
+toc: true
 ---
 
 <!--
