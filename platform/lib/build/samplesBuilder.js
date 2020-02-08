@@ -101,7 +101,7 @@ class SamplesBuilder {
 
     // If samples should be rebuild (due to architectural changes for example)
     // then you should be able to clean the sample build destinations
-    if (!watch && config.options['clean-samples'] === true) {
+    if (config.options['clean-samples'] === true) {
       this._log.info('Cleaning sample destinations for rebuild ...');
       del.sync([
         // Clean old structure with multiple collections
@@ -455,15 +455,9 @@ class SamplesBuilder {
    */
   _getDocumentationRoute(sample) {
     let base = this._getBaseRoute(sample);
-
-    if (base.match(/\.[a-z]+$/)) {
-      base = base.replace(/\.[a-z]+$/, '');
-    }
-
     if (!base.endsWith('/index.html')) {
       base += '/index.html';
     }
-
     return base;
   }
 
