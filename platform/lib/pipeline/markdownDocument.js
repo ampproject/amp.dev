@@ -83,7 +83,7 @@ const TITLE_ANCHOR_PATTERN = /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?
 const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
 
 // Matches a HTML comment in the form of <!-- Comment. -->
-const HTML_COMMENT_PATTERN = /<!--.*-->/gms;
+const HTML_COMMENT_PATTERN = /<!--.*?-->/gms;
 
 // Matches the next paragraph after a markdown headline
 const PARAGRAPH_PATTERN = /(?<=## .*\n)\n*.+/gm;
