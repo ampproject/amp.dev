@@ -81,6 +81,8 @@ const search = express.Router();
 search.get('/search/autosuggest', handleAutosuggestRequest);
 search.get('/search/highlights', handleHighlightsRequest);
 search.get('/search/do', handleSearchRequest);
+search.get('/search/latest-query', handleNullResponse);
+search.get('/search/clear-latest-query', handleNullResponse);
 
 function handleAutosuggestRequest(request, response) {
   setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
@@ -93,19 +95,25 @@ function handleHighlightsRequest(request, response) {
     : config.getDefaultLocale();
   const data = require(path.join(HIGHLIGHTS_FOLDER_PATH, `${locale}.json`));
 
-  for (const page of data.articles) {
+  for (const page of data.pages) {
     page.url = new URL(page.url, config.hosts.platform.base).toString();
   }
 
   for (const page of data.components) {
     addExampleAndPlaygroundLink(page, locale);
     cleanupTexts(page);
-
     page.url = new URL(page.url, config.hosts.platform.base).toString();
   }
-
   setMaxAge(response, RESPONSE_MAX_AGE.highlights);
-  response.json(data);
+  response.json({
+    result: data,
+    initial: true,
+  });
+}
+
+function handleNullResponse(request, response) {
+  setMaxAge(response, RESPONSE_MAX_AGE.autosuggest);
+  response.json(null);
 }
 
 function getCseItemMetaTagValue(item, metaTag) {
@@ -145,8 +153,7 @@ function addExampleAndPlaygroundLink(page, locale) {
       page.exampleUrl = example.exampleUrl;
       page.playgroundUrl = example.playgroundUrl;
 
-      // The preview link must not have the locale,
-      // but the example doc page has to have it:
+      // the preview link must not have the locale, but the example doc page has to have it:
       if (locale != config.getDefaultLocale()) {
         page.exampleUrl =
           '/' + encodeURIComponent(locale.toLowerCase()) + page.exampleUrl;
@@ -196,6 +203,7 @@ function createResult(
       components: components,
       pages: pages,
     },
+    initial: false,
   };
 
   if (page == LAST_PAGE && lastPage > LAST_PAGE) {
@@ -210,6 +218,7 @@ function createResult(
       '&page=',
     config.hosts.platform.base
   ).toString();
+
   if (page < lastPage && page < LAST_PAGE) {
     result.nextUrl = searchBaseUrl + (page + 1);
   }
