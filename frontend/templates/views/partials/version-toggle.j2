@@ -1,16 +1,14 @@
 <h1>
 {{doc.title}}
-[% if versions and versions.length > 1 %]
+{% if doc.versions and doc.versions|count > 1 %}
 <div class="ap--versions">
   <select  class="ap--versions-toggle" on="change:AMP.navigateTo(url=event.value)">
     {% for v in doc.versions|reverse %}
-    [% if versions and versions.includes('{{v}}') %]
     <option {% if v == doc.version %} selected {% endif %} value="../{{doc.title}}-v{{v}}.html?format=[= format =]">
       {{v}}
     </option>
-    [% endif %]
     {% endfor %}
   </select>
 </div>
-[% endif %]
+{% endif %}
 </h1>
