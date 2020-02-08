@@ -58,7 +58,8 @@ class ComponentReferenceImporter {
     log.start('Beginning to import extension docs ...');
     this.validatorRules = await validatorRules.fetch();
 
-    return this._importExtensions();
+    await this._importExtensions();
+    log.complete('Finished importing extension docs ...');
   }
 
   /**
@@ -69,28 +70,32 @@ class ComponentReferenceImporter {
   async _importExtensions() {
     // Gives the contents of ampproject/amphtml/extensions
     let extensions = await this.githubImporter_.fetchJson('extensions');
+    const imports = [];
 
     // As inside /extensions each component has its own folder, filter
     // down by directory
     extensions = extensions[0].filter(file => {
-      if (!config.only) {
+      if (!config.only.length) {
         return file.type === 'dir';
       }
 
       return file.type === 'dir' && config.only.includes(file.name);
     });
+
     for (const extension of extensions) {
-      this._importExtension(extension);
+      imports.push(this._importExtension(extension));
     }
 
     // Add built-in components to list to fetch them all in one go
     for (const builtIn of BUILT_INS) {
-      this._importBuiltIn(builtIn);
+      imports.push(this._importBuiltIn(builtIn));
     }
+
+    await Promise.all(imports);
   }
 
   async _importBuiltIn(name) {
-    this._createGrowDoc({
+    return this._createGrowDoc({
       name: name,
       version: DEFAULT_VERSION,
       versions: [DEFAULT_VERSION],
