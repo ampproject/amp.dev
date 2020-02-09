@@ -37,11 +37,11 @@ test('Test teaser text extraction', async done => {
       '\n' +
       '\n' +
       '# amp-test\n' +
-      'Lorem ipsum dolor sit amet.\n' +
+      'Teaser text.\n' +
       '\n' +
       'Lorem ipsum dolor sit amet.\n' +
       '## Section\n' +
-      'Teaser text.'
+      'Lorem ipsum dolor sit amet.'
   );
   expect(teaserText).toBe('Teaser text.');
 
