@@ -217,7 +217,7 @@ class MarkdownDocument {
       excerpt = SECOND_PARAGRAPH.exec(contents);
     }
 
-    if(!excerpt) {
+    if (!excerpt) {
       LOG.error(
         `Could not parse a teaser text from "${contents.substr(0, 500)}..."`
       );
