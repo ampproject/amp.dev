@@ -60,7 +60,7 @@
 {% set title_prefix = _('Success Story: ') %}
 {% endif %}
 
-<title>{{ title_prefix }}{{ title }} - amp.dev</title>
+<title>{{title_prefix|e}}{{title|e}} - amp.dev</title>
 
 {% if description %}
 <meta name="description" content="{{ description }}">
@@ -103,7 +103,7 @@
 {% if description %}
 <meta name="twitter:description" content="{{ description }}">
 {% endif %}
-<meta name="twitter:title" content="{{ title_prefix }}{{ title }}">
+<meta name="twitter:title" content="{{ title_prefix|e }}{{ title|replace('<', '')|replace('>', '')|e }}">
 <meta name="twitter:creator" content="@ampproject">
 <meta name="twitter:site" content="@ampproject">
 <meta name="twitter:image" content="{{ base_url }}{{ sharing_images.wide }}">

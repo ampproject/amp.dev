@@ -206,13 +206,13 @@ Bazı durumlarda, kullanıcı etkileşiminde yeniden boyutlandırma yapmak için
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-  <amp-list id="list"
-        width="396" height="80" layout="responsive"
-        src="/test/manual/amp-list-data.json?RANDOM">
-        <template type="amp-mustache">
-        {{title}}
-    </template>
-  </amp-list>
+<amp-list id="list"
+          width="396" height="80" layout="responsive"
+          src="/test/manual/amp-list-data.json?RANDOM">
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -242,10 +242,11 @@ Kimlik bilgilerini göndermek için `include` değerini geçirin. Bu değer ayar
 Bir listede kişiselleştirilmiş içeriği görüntülemek için kimlik bilgilerinin içerilmesini belirten bir örneği burada bulabilirsiniz:
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}
+<amp-list credentials="include"
+          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -345,15 +346,16 @@ Yüklenecek daha fazla öğe varsa, listenin sonunda gösterilen (manuel load-mo
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
   `amp-mustache` aracılığıyla şablonu oluşturulabilir.
 
 ##### Örnek: <a name="example"></a>
 
 ```html
-{% raw %}<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
+{% raw %}
+<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
   ...
   <amp-list-load-more load-more-button>
     <template type="amp-mustache">
@@ -375,8 +377,8 @@ Bu öğe, kullanıcı listenin sonuna ulaşırsa ve içerik yükleme işlemi dev
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>

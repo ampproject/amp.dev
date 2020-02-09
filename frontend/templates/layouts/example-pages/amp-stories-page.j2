@@ -6,7 +6,7 @@
   <meta charset="utf-8">
 {% endif %}
 {% if not example.has_tag_in_head('title') %}
-  <title>{{export.title|e}} - {{_('Example')}} {{example.index}}</title>
+  <title>{{export.title|e}} - {{_('Example')|e}} {{example.index|e}}</title>
 {% endif %}
 {% if not example.has_amp_script() %}
   <script async src="https://cdn.ampproject.org/v0.js"></script>

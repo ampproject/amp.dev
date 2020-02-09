@@ -190,11 +190,11 @@ L'elemento `<amp-list>` espone un'azione `refresh` a cui gli altri elementi poss
 
 ```html
 {% raw %}<button on="tap:myList.refresh">Refresh List</button>
-  <amp-list id="myList" src="https://foo.com/list.json">
-    <template type="amp-mustache">
-      <div>{{title}}</div>
-    </template>
-  </amp-list>
+<amp-list id="myList" src="https://foo.com/list.json">
+  <template type="amp-mustache">
+    <div>{{title}}</div>
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -207,12 +207,12 @@ In alcuni casi, potrebbe essere necessario il ridimensionamento di `<amp-list>` 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
 <amp-list id="list"
-      width="396" height="80" layout="responsive"
-      src="/test/manual/amp-list-data.json?RANDOM">
-      <template type="amp-mustache">
-      {{title}}
-    </template>
-  </amp-list>
+          width="396" height="80" layout="responsive"
+          src="/test/manual/amp-list-data.json?RANDOM">
+  <template type="amp-mustache">
+    {{title}}
+  </template>
+</amp-list>
 {% endraw %}
 ```
 
@@ -242,10 +242,11 @@ Per inviare le credenziali, passa il valore di `include`. Se questo valore è im
 Ecco un esempio che specifica le credenziali di inclusione per visualizzare contenuti personalizzati in un elenco:
 
 ```html
-{% raw %}<amp-list credentials="include"
-      src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
-    <template type="amp-mustache">
-      Your personal offer: ${{price}}
+{% raw %}
+<amp-list credentials="include"
+          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+  <template type="amp-mustache">
+    Your personal offer: ${{price}}
   </template>
 </amp-list>
 {% endraw %}
@@ -344,15 +345,16 @@ Elemento `<amp-list-load-more>` con l'attributo `load-more-button`, che compare 
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
   Può essere basato su modelli tramite `amp-mustache`.
 
 ##### Esempi: <a name="example"></a>
 
 ```html
-{% raw %}<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
+{% raw %}
+<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
   ...
   <amp-list-load-more load-more-button>
     <template type="amp-mustache">
@@ -374,8 +376,8 @@ Questo elemento è un programma di caricamento che verrà visualizzato se l'uten
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
-    </amp-list-load-more>
-  </amp-list>
+  </amp-list-load-more>
+</amp-list>
 ```
 
 #### load-more-failed <a name="load-more-loading"></a>

@@ -4,18 +4,18 @@
 {% do doc.amp_dependencies.add('amp-user-notification', '0.1') %}
 <amp-user-notification class="ap-m-format-filter-hint" id="format-filter-hint" layout="nodisplay">
   <div class="ap-m-format-filter-hint-content">
-    <div class="ap-m-format-filter-hint-note">Select your format for a more streamlined experience</div>
+    <div class="ap-m-format-filter-hint-note">{{ _('Select your format for a more streamlined experience') }}</div>
 
     <div class="ap-m-format-filter-hint-formats">
       {% set formats = ['websites', 'stories', 'ads', 'email'] %}
       {% for format in formats %}
       {% do doc.icons.useIcon('icons/amp-' + format + '.svg') %}
-      <a class="ap-m-format-filter-hint-format ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }} ap-m-format-toggle-selected" href="{{ doc.url.path }}?format={{ format }}">
+      <button on="tap:format-filter-hint.dismiss,AMP.navigateTo(url='{{ doc.url.path }}?format={{ format }}')" class="ap-m-format-filter-hint-format ap-m-format-toggle-link ap-m-format-toggle-link-{{ format }} ap-m-format-toggle-selected">
         <span class="ap-a-ico">
           <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#amp-{{ format }}"></use></svg>
         </span>
-        <span>{{ format }}</span>
-      </a>
+        <span>{{ _(format) }}</span>
+      </button>
       {% endfor %}
     </div>
 

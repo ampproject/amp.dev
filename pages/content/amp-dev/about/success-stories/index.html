@@ -92,7 +92,7 @@ stage:
   {% set categories = g.categories('/content/amp-dev/about/success-stories', locale=doc.locale) %}
   <section class="ap--intro ap--container">
     <div class="ap--content">
-      <p>Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.</p>
+      <p>{{ _('Here we feature interesting and outstanding pages that have been published using AMP. We kindly invite you to look through them to see what AMP is capable of.') }}</p>
     </div>
 
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
@@ -104,7 +104,7 @@ stage:
         class="ap-m-filter-bubble"
         [% endif %]
         name="all">
-        All
+        {{ _('All') }}
       </button>
       {% for category, stories in categories %}
       <button
@@ -115,7 +115,7 @@ stage:
           [% endif %]
           on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/about/success-stories/index.html', locale=doc.locale).url.path }}?category={{ category|slug }}')"
           name="{{ category|slug }}">
-          {{ category }}
+          {{ _(category) }}
       </button>
       {% endfor %}
     </div>
