@@ -173,7 +173,7 @@ recent_examples:
       {% include '/views/partials/sidebar-toggle-button.j2' %}
       {% include '/views/partials/breadcrumbs.j2' %}
 
-      <h1>{{ doc.title }}</h1>
+      <h1>{{ _(doc.title) }}</h1>
 
       {% do doc.styles.addCssFile('/css/components/organisms/card-grid.css') %}
       <section class="ap--card-grid">
@@ -193,10 +193,8 @@ recent_examples:
       {% do doc.styles.addCssFile('/css/components/molecules/teaser-info.css') %}
       <section class="ap-m-teaser-info">
         <div class="ap-m-teaser-info-text">
-          <h2>AMP Playground</h2>
-          <p>
-            Try it yourself with the AMP Playground. Test your ideas directly in the browser and get instant feedback.
-          </p>
+          <h2>{{ _('AMP Playground') }}</h2>
+          <p>{{ _('Try it yourself with the AMP Playground. Test your ideas directly in the browser and get instant feedback.') }}</p>
           <a class="ap-m-lnk ap-m-lnk-square"
              [% if format == 'websites' %]
              href="https://playground.amp.dev/"
@@ -212,7 +210,7 @@ recent_examples:
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </div>
-            <span class="ap-m-lnk-text">Open in AMP Playground</span>
+            <span class="ap-m-lnk-text">{{ _('Open in AMP Playground') }}</span>
           </a>
         </div>
         <div class="ap-m-teaser-info-image">
@@ -234,7 +232,7 @@ recent_examples:
         {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
         {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
 
-        <h2>Filter by category</h2>
+        <h2>{{ _('Filter by category') }}</h2>
         {% include '/views/partials/category-filter.j2'%}
 
         {% for category, documents in categories %}
@@ -278,14 +276,14 @@ recent_examples:
                 </div>
                 {% endif %}
                 <div class="ap-m-table-component-name ap-m-table-component-name-example">
-                  <span class="ap-m-table-component-name-title">{{ document.titles('teaser') }}</span>
+                  <span class="ap-m-table-component-name-title">{{ _(document.titles('teaser')) }}</span>
                 </div>
                 {% if category_name != 'components' %}
                 <div class="ap-m-table-component-info">
                   <div class="ap-m-table-component-used-components">
                     {% if document.used_components %}
                     {% for component in document.used_components %}
-                    <code>{{ component }}</code>
+                    <code>{{ _(component) }}</code>
                     {% endfor %}
                     {% else %}
                     <p> </p>

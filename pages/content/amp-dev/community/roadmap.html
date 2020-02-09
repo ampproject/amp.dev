@@ -22,11 +22,11 @@ roadmap: !g.json /content/amp-dev/community/roadmap.json
       {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
 
       <section class="ap--content">
-        <h1>The AMP Project Roadmap</h1>
+        <h1>{{ _('The AMP Project Roadmap') }}</h1>
         <div class="ap-m-tip ap-m-tip-note">
           <div class="ap-m-tip-content">
             {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-            <p>This is a high level overview suitable for all audiences. For a more detailed developer view, <a href="https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a></p>
+            <p>{{ _('This is a high level overview suitable for all audiences. For a more detailed developer view, <a href="https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a>') }}</p>
           </div>
         </div>
 
@@ -38,7 +38,7 @@ roadmap: !g.json /content/amp-dev/community/roadmap.json
 
           <button class="ap-m-filter-bubble {{ label | slug}} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label | slug}}' } })"
           [class]="roadmapfilter.activefilter == 'all' || roadmapfilter.activefilter == '{{label|slug}}' ? 'ap-m-filter-bubble {{ label | slug}} active' : 'ap-m-filter-bubble {{ label | slug}}'">
-            {{ label }}
+            {{ _(label) }}
             <span tabindex="-1" role="reset" class="ap-m-filter-bubble-reset" [class]="roadmapfilter.activefilter == '{{ label | slug}}' ? 'ap-m-filter-bubble-reset show': 'ap-m-filter-bubble-reset'" on="tap:AMP.setState({roadmapfilter: {activefilter: 'all' }})">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
             </span>
@@ -59,7 +59,7 @@ roadmap: !g.json /content/amp-dev/community/roadmap.json
           <div class="ap-a-ico">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{% if loop.index == 1 %}notepad{% elif loop.index == 2 %}wrench{% elif loop.index == 3 %}dolly{% endif %}"></use></svg>
           </div>
-          <h4>{{ column.name }}</h4>
+          <h4>{{ _(column.name) }}</h4>
           <ul>
             {% for card in column.cards %}
             <li class="ap-o-roadmap-tiles-item ap-m-copy active {% if card.issue.labels[0] %}{% for label in card.issue.labels %}{{ label.name | slug}} {% endfor %}{% endif %}"
@@ -68,11 +68,11 @@ roadmap: !g.json /content/amp-dev/community/roadmap.json
               <a class="ap-o-roadmap-tiles-link" href="{{ card.issue.url }}">
                 <div class="ap-o-roadmap-tiles-title">{{ card.issue.title }}</div>
               </a>
-              <div class="ap-o-roadmap-tiles-description">{{ card.issue.description|markdown|safe }}</div>
+              <div class="ap-o-roadmap-tiles-description">{{ _(card.issue.description|markdown|safe) }}</div>
               <div class="ap-o-roadmap-tiles-categories">
                 {% if card.issue.labels[0] %}
                   {% for label in card.issue.labels %}
-                  <button class="ap-m-filter-bubble {{ label.name | slug }} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label.name | slug}}' }})">{{ label.name }}</button>
+                  <button class="ap-m-filter-bubble {{ label.name | slug }} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label.name | slug}}' }})">{{ _(label.name) }}</button>
                   {% endfor %}
                 {% endif %}
               </div>

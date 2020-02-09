@@ -19,17 +19,17 @@ flyout:
 {% do doc.styles.addCssFile('css/components/molecules/copy.css') %}
 
 <section class="ap--section ap--intro">
-  <h1>Learn Web Development with AMP</h1>
+  <h1>{{ _('Learn Web Development with AMP') }}</h1>
   <p>
-    AMP can help you create fast websites more quickly!
+  {{ _('AMP can help you create fast websites more quickly!') }}
     <ul>
-      <li>If you're <b>an experienced web developer</b>, you can create rich, fast sites with less code. </li>
-      <li>If you're <b>a new web developer</b>, AMP helps you learn web development. If you know some HTML and CSS, you can use AMP to make an interactive website!</li>
+      <li>{{ _('If you’re <b>an experienced web developer</b>, you can create rich, fast sites with less code.') }}</li>
+      <li>{{ _('If you’re <b>a new web developer</b>, AMP helps you learn web development. If you know some HTML and CSS, you can use AMP to make an interactive website!') }}</li>
     </ul>
   </p>
   <div class="ap-m-copy ap-m-copy-center">
     <a href="https://amp.dev/documentation/courses/beginning-course/course-introduction/?format=websites&amp;level=beginner" class="ap-a-btn">
-      Get started
+      {{ _('Get started') }}
     </a>
   </div>
 </section>
@@ -60,14 +60,9 @@ flyout:
     ></amp-img>
   </div>
   <div class="ap--section">
-    <h2>About the courses</h2>
-    <p> These three free courses are in use in schools and training programs around the world.
-        Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike,
-        they will take you from zero to AMP!
-    </p>
-    <p>
-        During this course, you'll build a sample site for Chico's famous, and fictional, Cheese Bicycles.
-    </p>
+    <h2>{{ _('About the courses') }}</h2>
+    <p>{{ _('These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!') }}</p>
+    <p>{{ _('During this course, you’ll build a sample site for Chico’s famous, and fictional, Cheese Bicycles.') }}</p>
   </div>
 </section>
 
@@ -104,17 +99,17 @@ flyout:
   <div class="ap--section">
     <h4>Requirements</h4>
     <ul>
-      <li>Internet connection</li>
-      <li><a href="https://www.google.com/chrome/" target="_blank">Chrome browser</a>, ideally, to use the <a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc" target="_blank">AMP Validator extension</a></li>
-      <li>We use the online editor <a href="https://glitch.com/" target="_blank">Glitch</a>. No IDE or local web server needed!</li>
+      <li>{{ _('Internet connection') }}</li>
+      <li>{{ _('<a href="https://www.google.com/chrome/" target="_blank">Chrome browser</a>, ideally, to use the <a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc" target="_blank">AMP Validator extension</a>') }}</li>
+      <li>{{ _('We use the online editor <a href="https://glitch.com/" target="_blank">Glitch</a>. No IDE or local web server needed!') }}</li>
     </ul>
   </div>
 
   <div class="ap--section">
-    <h4>Prerequisites</h4>
+    <h4>{{ _('Prerequisites') }}</h4>
     <ul>
-      <li>basic knowledge of HTML and CSS</li>
-      <li>for the advanced course, JavaScript expressions and simple JSON</li>
+      <li>{{ _('basic knowledge of HTML and CSS') }}</li>
+      <li>{{ _('for the advanced course, JavaScript expressions and simple JSON') }}</li>
     </ul>
   </div>
 </section>
@@ -122,8 +117,8 @@ flyout:
 
 {% do doc.styles.addCssFile('/css/components/organisms/video-slider.css') %}
 <section class="ap--video-slider">
-  <h2 class="ap-o-video-slider-text">Take the Video Courses</h2>
-  <p class="ap-o-video-slider-text">All three courses can be now be taken by video on <a href="https://www.youtube.com/playlist?list=PLXTOW_XMsIDS45GB-eBV5s_M9EGIXMjI_" target="_blank">our YouTube channel!</a></p>
+  <h2 class="ap-o-video-slider-text">{{ _('Take the Video Courses') }}</h2>
+  <p class="ap-o-video-slider-text">{{ _('All three courses can be now be taken by video on <a href="https://www.youtube.com/playlist?list=PLXTOW_XMsIDS45GB-eBV5s_M9EGIXMjI_" target="_blank">our YouTube channel!</a>') }}</p>
   {% with %}
   {% set youtube_video_ids = [
     'qWpZbADJlgE',

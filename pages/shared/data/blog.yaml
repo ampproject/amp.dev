@@ -1,6 +1,12 @@
 entries:
 
 - title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2020/01/AMP_Blog_Square_smaller.jpg"
+  headline: "Helping to fund our open-source dependencies"
+  date: "January 29, 2020"
+  url: "https://blog.amp.dev/2020/01/29/helping-to-fund-our-open-source-dependencies/"
+
+- title: "Blog"
   image: "https://blog.amp.dev/wp-content/uploads/2019/11/AMP_Blog_Square.jpg"
   headline: "Cookie classification on AMP"
   date: "January 27, 2020"
@@ -23,9 +29,3 @@ entries:
   headline: "Our 2019 Contributions to Web Platform Interoperability"
   date: "December 16, 2019"
   url: "https://blog.amp.dev/2019/12/16/our-2019-contributions-to-web-platform-interoperability/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/11/AMP_Blog_Square.jpg"
-  headline: "From Static to Interactive: Adobe Campaign Brings Email to Life with AMP for Email"
-  date: "December 9, 2019"
-  url: "https://blog.amp.dev/2019/12/09/from-static-to-interactive-adobe-campaign-brings-email-to-life-with-amp-for-email/"

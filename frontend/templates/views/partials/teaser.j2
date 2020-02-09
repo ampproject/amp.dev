@@ -8,7 +8,7 @@
 
     {% if teaser_doc.category %}
     {% do doc.styles.addCssFile('css/components/molecules/tag.css') %}
-    <div class="ap-m-tag ap-m-tag-general ap-m-teaser-tag">{{ teaser_doc.category }}</div>
+    <div class="ap-m-tag ap-m-tag-general ap-m-teaser-tag">{{ _(teaser_doc.category) }}</div>
     {% endif %}
 
     <div class="ap-m-teaser-card">
@@ -32,8 +32,8 @@
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ teaser.icon }}"></use></svg>
           </div>
           {% endif %}
-          <span class="ap-m-kpi-number">{{ teaser.figure }}</span>
-          <span class="ap-m-kpi-text">{{ teaser.description }}</span>
+          <span class="ap-m-kpi-number">{{ _(teaser.figure) }}</span>
+          <span class="ap-m-kpi-text">{{ _(teaser.description) }}</span>
         </div>
       </div>
       {% endif %}
@@ -45,7 +45,7 @@
           </div>
         {% endif %}
 
-        <h4 class="ap-m-teaser-headline">{{ teaser.text }}</h4>
+        <h4 class="ap-m-teaser-headline">{{ _(teaser.text) }}</h4>
       </div>
     </div>
   </a>
@@ -64,7 +64,7 @@
   <a href="{{ navigation_url }}">
     {% if teaser_doc.formats %}
     {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
-    <div class="ap-m-tag ap-m-tag-{{ teaser_doc.formats[0] }} ap-m-teaser-tag">{{ teaser_doc.formats[0] }}</div>
+    <div class="ap-m-tag ap-m-tag-{{ teaser_doc.formats[0] }} ap-m-teaser-tag">{{ _(teaser_doc.formats[0]) }}</div>
     {% endif %}
 
     <div class="ap-m-teaser-card">
@@ -80,7 +80,7 @@
       {% endif %}
     </div>
     <div class="ap-m-teaser-content">
-      <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+      <h4 class="ap-m-teaser-headline">{{ _(teaser_doc.titles('teaser')) }}</h4>
     </div>
   </a>
 </div>
@@ -95,9 +95,9 @@
       {% endwith %}
       <div class="ap-m-teaser-content">
         <div class="ap-m-teaser-content-text">
-          <code><span>{{ teaser_doc.title }}</span></code>
+          <code><span>{{ _(teaser_doc.title) }}</span></code>
           {% if teaser_doc.teaser %}
-          <p>{{ teaser_doc.teaser.text }}</p>
+          <p>{{ _(teaser_doc.teaser.text) }}</p>
           {% endif %}
         </div>
       </div>
@@ -112,7 +112,7 @@
 <div class="ap-m-teaser ap-m-teaser-example" data-category="{{ teaser_doc.category|slug }}" [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ teaser_doc.category|slug }}'">
   {% if teaser_doc.used_components %}
   <div class="ap-m-teaser-info-trigger">
-    <strong>{{ teaser_doc.used_components|length }} AMP components</strong> used
+    <strong>{{ _(teaser_doc.used_components|length) }} AMP components</strong> used
   </div>
 
   <div class="ap-m-teaser-info-content">
@@ -180,7 +180,7 @@
       </div>
 
       <div class="ap-m-teaser-content">
-        <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+        <h4 class="ap-m-teaser-headline">{{ _(teaser_doc.titles('teaser')) }}</h4>
       </div>
     </div>
   </a>
@@ -202,11 +202,11 @@
     <a href="{{ teaser_doc.url.path }}">
       <div class="ap-m-teaser-content">
         <div class="ap-m-teaser-content-text">
-          <h4>{{ teaser_doc.title }}</h4>
+          <h4>{{ _(teaser_doc.title) }}</h4>
           {% if teaser_doc.description %}
-          <p>{{ teaser_doc.description }}</p>
+          <p>{{ _(teaser_doc.description) }}</p>
           {% else %}
-          <p>Discover more...</p>
+          <p>{{ _('Discover more...') }}</p>
           {% endif %}
         </div>
         <div class="guide-tag">
@@ -217,7 +217,7 @@
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#tutorial"></use>
             </svg>
           </div>
-          <span class="guide-tag-text">Tutorial</span>
+          <span class="guide-tag-text">{{ _('Tutorial') }}</span>
           {% else %}
           <div class="guide-tag-icon guide-tag-icon-guide" >
             {% do doc.icons.useIcon('icons/guide.svg') %}
@@ -225,7 +225,7 @@
               <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#guide"></use>
             </svg>
           </div>
-          <span class="guide-tag-text">Guide</span>
+          <span class="guide-tag-text">{{ _('Guide') }}</span>
           {% endif %}
         </div>
       </div>
@@ -274,9 +274,9 @@
     {# card container #}
     <div class="ap-m-teaser-card">
       <div class="ap-m-teaser-content">
-        <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+        <h4 class="ap-m-teaser-headline">{{ _(teaser_doc.titles('teaser')) }}</h4>
         {% if teaser.text or teaser_doc.description %}
-          <p class="ap-m-teaser-copy">{{ teaser.text or teaser_doc.description }}</p>
+          <p class="ap-m-teaser-copy">{{ _(teaser.text or teaser_doc.description) }}</p>
         {% endif %}
         {% if teaser.label %}
           <span class="ap-m-lnk">
@@ -284,7 +284,7 @@
               {% do doc.icons.useIcon('icons/internal.svg') %}
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
             </span>
-            <span class="ap-m-lnk-text">{{ teaser.label }}</span>
+            <span class="ap-m-lnk-text">{{ _(teaser.label) }}</span>
           </span>
         {% endif %}
       </div>
@@ -319,9 +319,9 @@
 
       <div class="ap-m-teaser-card">
         <div class="ap-m-teaser-content">
-          <h4 class="ap-m-teaser-headline">{{ teaser_doc.titles('teaser') }}</h4>
+          <h4 class="ap-m-teaser-headline">{{ _(teaser_doc.titles('teaser')) }}</h4>
           {% if teaser.text or teaser_doc.description %}
-            <p class="ap-m-teaser-copy">{{ teaser.text or teaser_doc.description }}</p>
+            <p class="ap-m-teaser-copy">{{ _(teaser.text or teaser_doc.description) }}</p>
           {% endif %}
           {% if teaser.label %}
             <span class="ap-m-lnk ap-m-teaser-link">
@@ -329,7 +329,7 @@
                 {% do doc.icons.useIcon('icons/internal.svg') %}
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
               </span>
-              <span class="ap-m-lnk-text">{{ teaser.label }}</span>
+              <span class="ap-m-lnk-text">{{ _(teaser.label) }}</span>
             </span>
           {% endif %}
         </div>
