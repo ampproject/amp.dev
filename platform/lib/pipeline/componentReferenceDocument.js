@@ -30,12 +30,13 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.title = extension.name;
     this.version = extension.version;
     this.versions = extension.versions;
+    this.latestVersion = extension.versions[extension.versions.length - 1]
 
     this.rewriteRelativePaths(
       join(RELATIVE_PATH_BASE, dirname(extension.githubPath))
     );
 
-    if (this.version == extension.versions[extension.versions.length - 1]) {
+    if (this.version == this.latestVersion) {
       this.isCurrent = true;
       this.servingPath = `/documentation/components/${extension.name}.html`;
     }
@@ -122,12 +123,20 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this._frontmatter['version'] = version;
   }
 
+  set latestVersion(version) {
+    this._frontmatter['latest_version'] = version;
+  }
+
   set versions(versions) {
     this._frontmatter['versions'] = versions;
   }
 
   set isCurrent(bool) {
     this._frontmatter['is_current'] = bool;
+  }
+
+  get latestVersion() {
+    return this._frontmatter['latest_version'];
   }
 
   get isCurrent() {
