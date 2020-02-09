@@ -1,11 +1,9 @@
 ---
-title: AMP Boilerplate Code
-order: 3
+$title: AMP Boilerplate Code
+$order: 3
 formats:
   - websites
   - stories
-teaser:
-  text: AMP HTML documents must contain the following boilerplate in their head tag.
 ---
 
 <!--

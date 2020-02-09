@@ -1,11 +1,9 @@
 ---
-title: AMP for Email Supported HTML
-order: 4
+$title: AMP for Email Supported HTML
+toc: true
+$order: 4
 formats:
   - email
-teaser:
-  text: '- a'
-toc: true
 ---
 
 <!--

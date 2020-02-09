@@ -1,15 +1,11 @@
 ---
-title: AMPHTML Layout System
-order: 1
+$title: AMPHTML Layout System
+$order: 1
 formats:
   - websites
   - email
   - stories
   - ads
-teaser:
-  text: >-
-    The main goal of the layout system is to ensure that AMP elements can
-    express their layout
 ---
 
 <!--

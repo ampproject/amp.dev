@@ -1,13 +1,8 @@
 ---
-title: AMP HTML Specification
-order: 3
+$title: AMP HTML Specification
+$order: 3
 formats:
   - websites
-teaser:
-  text: >-
-    Predictable performance is a key design goal for AMP HTML. Primarily we are
-    aiming at reducing the time until the content of a page can be consumed /
-    used by the user.
 ---
 
 <!--
@@ -384,7 +379,7 @@ In the following examples `<property>` needs to be in the white list above.
 
 #### Maximum size <a name="maximum-size"></a>
 
-It is a validation error if the author stylesheet or inline styles together are larger than 75,000 bytes.
+It is a validation error if the author stylesheet or inline styles together are larger than 50,000 bytes.
 
 ### Keyframes stylesheet <a name="keyframes-stylesheet"></a>
 

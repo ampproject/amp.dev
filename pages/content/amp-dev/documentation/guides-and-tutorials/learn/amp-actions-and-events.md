@@ -1,14 +1,11 @@
 ---
 $title: Actions and events
-order: 7
+$order: 7
 formats:
   - websites
   - email
   - stories
   - ads
-teaser:
-  text: "You can listen to multiple events on an element by separating the events
-    with a semicolon "
 ---
 
 <!--

@@ -1,11 +1,9 @@
 ---
-title: Integrate your ad technologies into AMP
-order: 3
+$title: Integrate your ad technologies into AMP
+toc: true
+$order: 3
 formats:
   - ads
-teaser:
-  text: '_Examples : DFP, A9_'
-toc: true
 ---
 
 <!--

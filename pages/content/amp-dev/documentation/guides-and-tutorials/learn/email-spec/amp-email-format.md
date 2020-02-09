@@ -1,13 +1,9 @@
 ---
-title: AMP for Email Format
-order: 1
+$title: AMP for Email Format
+toc: true
+$order: 1
 formats:
   - email
-teaser:
-  text: >-
-    The following code represents the minimum amount of markup that makes up a
-    valid AMP email message:
-toc: true
 ---
 
 <!--

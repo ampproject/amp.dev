@@ -1,16 +1,10 @@
 ---
-title: Integrate your analytics tool with AMP
-order: 1
+$title: Integrate your analytics tool with AMP
+toc: true
+$order: 1
 formats:
   - websites
   - stories
-teaser:
-  text: >-
-    If you operate a software-as-a-service tool for publishers to better
-    understand their traffic and visitors, you may want to integrate your
-    service into amp-analytics. This will enable your customers to view traffic
-    patterns for their AMP HTML pages.
-toc: true
 ---
 
 <!--

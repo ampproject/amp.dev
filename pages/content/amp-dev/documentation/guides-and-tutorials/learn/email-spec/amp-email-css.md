@@ -1,11 +1,9 @@
 ---
-title: AMP for Email Supported CSS
-order: 5
+$title: AMP for Email Supported CSS
+toc: true
+$order: 5
 formats:
   - email
-teaser:
-  text: '### Internal stylesheet'
-toc: true
 ---
 
 <!--

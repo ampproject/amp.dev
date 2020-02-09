@@ -1,13 +1,11 @@
 ---
-title: Help
-order: 1
+$title: Help
+$order: 1
 formats:
   - websites
   - email
   - stories
   - ads
-teaser:
-  text: ''
 ---
 
 <!--

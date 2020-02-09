@@ -1,14 +1,10 @@
 ---
-title: Debug AMP Cache issues
-order: 8
+$title: Debug AMP Cache issues
+$order: 8
 formats:
   - websites
   - stories
   - ads
-teaser:
-  text: >-
-    Valid AMP documents typically appear and behave the same on AMP Caches as
-    they
 ---
 
 <!--
