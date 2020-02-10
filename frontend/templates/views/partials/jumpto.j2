@@ -6,7 +6,7 @@
     {% for item in (doc.section_links if not list else list) %}
     <li class="ap-o-jumpto-item">
       <a class="ap-o-jumpto-link" href="{{ '#' + item if not list else item.url }}">
-        {{- item if not list else item.label -}}
+        {{- _(item if not list else item.label) -}}
       </a>
     </li>
     {% endfor %}

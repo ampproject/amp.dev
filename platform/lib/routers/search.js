@@ -102,6 +102,7 @@ function handleHighlightsRequest(request, response) {
   for (const page of data.components) {
     addExampleAndPlaygroundLink(page, locale);
     cleanupTexts(page);
+    page.url = new URL(page.url, config.hosts.platform.base).toString();
   }
   setMaxAge(response, RESPONSE_MAX_AGE.highlights);
   response.json({

@@ -321,4 +321,8 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   pageCache.set(req.originalUrl, renderedTemplate);
 });
 
-module.exports = growPages;
+module.exports = {
+  loadTemplate,
+  ensureUrlScheme,
+  growPages,
+};
