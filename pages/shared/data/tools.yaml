@@ -21,6 +21,17 @@ creation:
       fit: contain
     formats:
       - email
+   - name: Plumrocket AMP Email
+    url: https://store.plumrocket.com/amp-email-magento2-extension.html
+    type: Magento Extension
+    description: Send engaging AMP Emails from Magento ecommerce platform. Use built-in templates for transactional and promotional dynamic emails.
+    image:
+      src: /static/img/tools/plumrocket_amp_email.png
+      width: 442
+      height: 184
+      fit: contain
+    formats:
+      - email
   - name: Bannersnack
     description: Create AMPHTML-valid and ready to be published individual designs or full sets of static or animated marketing visuals, within minutes.
     url: https://www.bannersnack.com/amp-ads.html
@@ -107,6 +118,16 @@ platforms:
     formats:
       - websites
       - stories
+   - name: AMP for Magento
+    type: CMS
+    description: Create AMP pages for Homepage, Category Pages, Product Pages and CMS Pages, highly optimized to support latest Google AMP Technology.
+    url: https://store.plumrocket.com/accelerated-mobile-pages-magento2-extension.html
+    image:
+      src: /static/img/tools/amp_for_magento.png
+      width: 700
+      height: 499
+    formats:
+      - websites
   - name: Bold by Quintype
     type: CMS
     description: Bold by Quintype is a headless CMS built for enterprise publishers with built-in support for AMP.
