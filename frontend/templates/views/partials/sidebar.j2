@@ -14,14 +14,13 @@
        toolbar-target="ap--sidebar-content">
     <ul>
       {% include '/views/partials/format-toggle.j2' %}
-      <div class="ap-o-sidebar-{{ type if type else 'default' }}">
+      <div class="ap-o-sidebar-{{ type if type and type != 'example' else 'default' }}">
 
         <div class="ap-o-sidebar">
           <div class="nav">
 
           {# Custom content for example-sidebar #}
           {% if type == 'example' %}
-
             {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
             {% for category, examples in categories %}
             [% if format in {{ examples|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]

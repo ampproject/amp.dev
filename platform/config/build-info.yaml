@@ -1,7 +1,12 @@
 number: null
-at: 2019-07-15T08:03:12.456Z
-by: Sebastian Benz
-environment: production
+at: 2020-02-01T02:26:30.748Z
+by: Patrick Kettner
+environment: local
 commit:
-  sha: 7b1b22b844ec7c04da2e51b8fc6d847959ae9a0a
-  message: "✨ Migrate oauth backend (#2392)\n\n* ✨ Migrate oauth backend\r\n\r\n* ♻️ Merge handlers into one\r\n\r\n* ♻️ Use async/await pattern\r\n\r\n* ♻️ Remove try/catch block"
+  sha: eb0c54d29
+  message: |-
+    Properly extract strings for i18n on non documentation pages
+
+    this ia part of hte ongoing i18n ramp up. this (should) go though
+    everything that is not a part of documentation pages, and ensure that
+    any user visible strings are going through the gettext i18n process

@@ -94,6 +94,9 @@
       </div>
     </div>
 
+    {# blog.amp.dev shares the header with amp.dev but isn't localized.
+       Therefore it's nice to have a way to turn off the language selector #}
+    {% if language_selector != False %}
     {% do doc.styles.addCssFile('/css/components/molecules/language-selector.css') %}
     <div class="ap-m-language-selector">
       <span class="ap-m-language-selector-label" aria-label="{{ _('Select a language') }}" tabindex="-1">
@@ -111,5 +114,6 @@
         {% endfor %}
       </div>
     </div>
+    {% endif %}
   </div>
 </header>
