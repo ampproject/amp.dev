@@ -17,7 +17,7 @@
 'use strict';
 
 const express = require('express');
-const growPageLoader = require('@lib/common/growPageLoader');
+const {ensureUrlScheme, loadTemplate} = require('./growPages.js');
 
 // eslint-disable-next-line new-cap
 const sharedPages = express.Router();
@@ -28,11 +28,13 @@ const sharedPages = express.Router();
  * and therefore can only be made accessible by their canonical path
  */
 sharedPages.get('/shared/**', async (req, res, next) => {
+  const url = ensureUrlScheme(req.originalUrl);
   try {
-    const result = await growPageLoader.fetchPage(req.path);
-    res.send(result);
+    const template = await loadTemplate(url.pathname);
+    res.send(template.render());
   } catch (e) {
     // page not found
+    console.error(e);
     next();
   }
 });
