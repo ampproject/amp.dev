@@ -11,7 +11,9 @@
 {% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
-{% set base_url = podspec.base_urls.platform %}
+{# Do not set absolute URLs for development as binding to [src]
+   explicitly checks for https:// #}
+{% set base_url = podspec.base_urls.platform if podspec.env.name != 'development' else '' %}
 
 <amp-state id="query" src="{{ base_url }}/search/latest-query"></amp-state>
 <amp-state id="clear" [src]="clear ? '{{ base_url }}/search/clear-latest-query' : ''"></amp-state>
