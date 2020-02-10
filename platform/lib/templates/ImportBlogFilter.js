@@ -48,7 +48,11 @@ async function importBlog(value, callback) {
       title: post._embedded['wp:term'][0][0].name,
       image: imageUrl,
       headline: post.title.rendered,
-      date: new Date(post.date).toLocaleString('en-us', {month: 'long', year: 'numeric', day: 'numeric'}),
+      date: new Date(post.date).toLocaleString('en-us', {
+        month: 'long',
+        year: 'numeric',
+        day: 'numeric',
+      }),
       url: post.link,
     });
   }
