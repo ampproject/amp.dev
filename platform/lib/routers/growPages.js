@@ -27,7 +27,7 @@ const pageCache = require('@lib/utils/pageCache');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const signale = require('signale');
 const {getFormatFromRequest} = require('../amp/formatHelper.js');
-const { promisify } = require("util");
+const {promisify} = require('util');
 
 const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 let formatComponentMapping = {};
