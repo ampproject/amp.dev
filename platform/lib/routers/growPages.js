@@ -27,6 +27,7 @@ const pageCache = require('@lib/utils/pageCache');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const signale = require('signale');
 const {getFormatFromRequest} = require('../amp/formatHelper.js');
+const { promisify } = require("util");
 
 const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 let formatComponentMapping = {};
@@ -273,16 +274,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     return;
   }
 
+  const renderAsync = promisify(template.render);
   let renderedTemplate = null;
   try {
-    renderedTemplate = await new Promise((resolve, reject) => {
-      template.render(templateContext, (err, res) => {
-        if (err) {
-          return reject(err);
-        }
-        resolve(res);
-      });
-    });
+    renderedTemplate = await renderAsync(templateContext);
   } catch (e) {
     // If there was a rendering error show the unrendered template with line
     // count to the user to figure out what's wrong
