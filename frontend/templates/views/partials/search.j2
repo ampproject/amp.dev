@@ -11,8 +11,12 @@
 {% do doc.amp_dependencies.add('amp-lightbox', '0.1') %}
 {% do doc.amp_dependencies.add('amp-mustache', '0.2', 'template') %}
 
-<amp-state id="query" src="/search/latest-query"></amp-state>
-<amp-state id="clear" [src]="clear ? '/search/clear-latest-query' : ''"></amp-state>
+{# Do not set absolute URLs for development as binding to [src]
+   explicitly checks for https:// #}
+{% set base_url = podspec.base_urls.platform if podspec.env.name != 'development' else '' %}
+
+<amp-state id="query" src="{{ base_url }}/search/latest-query"></amp-state>
+<amp-state id="clear" [src]="clear ? '{{ base_url }}/search/clear-latest-query' : ''"></amp-state>
 
 <amp-lightbox id="searchLightbox"
               class="ap-o-search"
@@ -33,7 +37,7 @@
     </div>
 
     <div class="ap-o-search-field">
-      <form action-xhr="/documentation/examples/api/echo"
+      <form action-xhr="{{ base_url }}/documentation/examples/api/echo"
             class="ap-o-search-form"
             id="searchForm"
             method="POST"
@@ -44,7 +48,7 @@
                           min-characters="1"
                           on="select:AMP.setState({ query: event.value })"
                           submit-on-enter="false"
-                          src="/search/autosuggest"
+                          src="{{ base_url }}/search/autosuggest"
         >
           <div class="ap-a-ico ap-o-search-input-icon">
             <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
@@ -63,11 +67,11 @@
 
       <div class="ap-o-search-result" id="searchResult" tabindex="-1">
         <amp-state id="search"
-                  src="/search/highlights?locale={{ doc.locale }}"
-                  [src]="query == null || clear ? '/search/highlights?locale={{ doc.locale }}' : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
+                  src="{{ base_url }}/search/highlights?locale={{ doc.locale }}"
+                  [src]="query == null || clear ? '{{ base_url }}/search/highlights?locale={{ doc.locale }}' : '{{ base_url }}/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"></amp-state>
         <amp-list id="searchList"
-                  src="/search/highlights?locale={{ doc.locale }}"
-                  [src]="query == null || clear ? '/search/highlights?locale={{ doc.locale }}' : '/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
+                  src="{{ base_url }}/search/highlights?locale={{ doc.locale }}"
+                  [src]="query == null || clear ? '{{ base_url }}/search/highlights?locale={{ doc.locale }}' : '{{ base_url }}/search/do?q=' + encodeURIComponent(query) + '&locale={{ doc.locale }}'"
                   binding="no"
                   items="."
                   height="80vh"
