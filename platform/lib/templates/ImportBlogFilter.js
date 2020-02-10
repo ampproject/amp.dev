@@ -20,7 +20,6 @@ const POST_COUNT = 6;
 const BLOG_PATH = `https://blog.amp.dev/wp-json/wp/v2/posts?per_page=${POST_COUNT}&_embed`;
 const DEFAULT_IMG = 'AMP_Blog_Square.jpg';
 const fetch = require('node-fetch');
-const moment = require('moment');
 
 async function importBlog(value, callback) {
   let response;
@@ -49,7 +48,7 @@ async function importBlog(value, callback) {
       title: post._embedded['wp:term'][0][0].name,
       image: imageUrl,
       headline: post.title.rendered,
-      date: moment(post.date).format('MMMM D, YYYY'),
+      date: new Date(post.date).toLocaleString('en-us', {month: 'long', year: 'numeric', day: 'numeric'}),
       url: post.link,
     });
   }
