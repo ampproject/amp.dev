@@ -274,10 +274,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     return;
   }
 
-  const renderAsync = promisify(template.render);
+  template.renderAsync = promisify(template.render);
   let renderedTemplate = null;
   try {
-    renderedTemplate = await renderAsync(templateContext);
+    renderedTemplate = await template.renderAsync(templateContext);
   } catch (e) {
     // If there was a rendering error show the unrendered template with line
     // count to the user to figure out what's wrong
