@@ -16,11 +16,11 @@
       {% if teaser.video %}
       {% do doc.amp_dependencies.add('amp-video', '0.1') %}
       <div class="ap-a-img ap-m-teaser-image">
-        <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="1" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
+        <amp-video src="{{ teaser.video.src }}" layout="responsive" width="1" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
       {% elif teaser.image %}
       <div class="ap-a-img ap-m-teaser-image">
-        <amp-img class="ap--media" src="{{ teaser.image.src }}" layout="responsive" width="1" height="1" alt="{{ teaser.image.alt }}"></amp-img>
+        <amp-img src="{{ teaser.image.src }}" layout="responsive" width="1" height="1" alt="{{ teaser.image.alt }}"></amp-img>
       </div>
       {% elif teaser.figure %}
       {% do doc.styles.addCssFile('css/components/molecules/kpi.css') %}
@@ -71,11 +71,11 @@
       {% if teaser.video %}
       {% do doc.amp_dependencies.add('amp-video', '0.1') %}
       <div class="ap-a-img ap-m-teaser-image">
-        <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="{{ teaser.video.width }}" height="{{ teaser.video.height }}" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
+        <amp-video src="{{ teaser.video.src }}" layout="responsive" width="{{ teaser.video.width }}" height="{{ teaser.video.height }}" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
       {% else %}
       <div class="ap-a-img ap-m-teaser-image">
-        <amp-img class="ap--media" src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
+        <amp-img src="{{ teaser.image.src }}" layout="responsive" width="{{ teaser.image.width }}" height="{{ teaser.image.height }}" alt="{{ teaser.image.alt }}"></amp-img>
       </div>
       {% endif %}
     </div>
@@ -196,7 +196,7 @@
     {% endwith %}
     {% if teaser_doc.image %}
     <div class="ap-a-img ap-m-teaser-image">
-      <amp-img class="ap--media" src="{{ teaser_doc.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ teaser_doc.image.alt }}"></amp-img>
+      <amp-img src="{{ teaser_doc.image.src }}" layout="responsive" width="2.3" height="1" alt="{{ teaser_doc.image.alt }}"></amp-img>
     </div>
     {% endif %}
     <a href="{{ teaser_doc.url.path }}">
