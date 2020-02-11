@@ -50,8 +50,8 @@
           <span class="ap-m-lnk-text">{{ _('Open Use Case') }}</span>
         </span>
       </div>
-      <amp-img class="ap--media" src="{{ case.img.src }}.webp" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}" alt="{{ _('Screenshot of use case:') }} {{ case.headline }}">
-        <amp-img fallback class="ap--media" src="{{ case.img.src }}" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}">
+      <amp-img src="{{ case.img.src }}.webp" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}" alt="{{ _('Screenshot of use case:') }} {{ case.headline }}">
+        <amp-img fallback src="{{ case.img.src }}" layout="responsive" width="{{ case.img.width }}" height="{{ case.img.height }}">
       </amp-img>
     </a>
   </div>
