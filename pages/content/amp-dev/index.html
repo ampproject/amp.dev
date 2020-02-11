@@ -5,8 +5,6 @@ $titles:
 $view: /views/custom.j2
 description: 'Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build websites, stories, ads and emails.'
 
-news: !g.yaml /shared/data/blog.yaml
-
 benefits: !g.yaml /shared/data/benefits.yaml
 
 format_explainer:
@@ -87,6 +85,8 @@ success_stories:
     {% do doc.styles.addCssFile('css/components/organisms/news.css') %}
     {% do doc.styles.addCssFile('css/components/molecules/copy.css') %}
 
+    [% set posts = []|importBlog %]
+    [% if posts|length %]
     <div class="ap-m-copy">
       <h2>{{ _('The latest news') }}</h2>
       <p>{{ _('Don\'t want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!') }}</p>
@@ -110,35 +110,37 @@ success_stories:
 
     <div class="ap-o-news">
       <div class="ap-o-news-list">
-        {% for news in doc.news.entries %}
-        <a class="ap-o-news-item" href="{{ news.url }}">
+        [% for post in posts %]
+        <a class="ap-o-news-item" href="[= post.url =]">
           <div class="ap-o-news-card">
-            <div class="ap-o-news-title">{{ news.title }}</div>
+            <div class="ap-o-news-title">[= post.title =]</div>
             <div class="ap-o-news-image">
-              {% if news.image and news.image != '' %}
+              [% if post.image and post.image != '' %]
               <amp-img
-                src="{{ news.image }}"
+                class="ap--media"
+                src="[= post.image =]"
                 layout="responsive"
-                width="16"
-                height="9"
-                alt="{{ news.title }}">
+                width="160"
+                height="90"
+                alt="[= post.title =]">
               </amp-img>
-              {% else %}
+              [% else %]
               <div class="ap-o-news-icon">
                 <div class="ap-a-ico">
                   {% do doc.icons.useIcon('icons/news.svg') %}
                   <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#news"></use></svg>
                 </div>
               </div>
-              {% endif %}
+              [% endif %]
             </div>
-            <h5 class="ap-o-news-headline">{{ _(news.headline|safe) }}</h5>
-            <div class="ap-o-news-date">{{ _(news.date) }}</div>
+            <h5 class="ap-o-news-headline">[= post.headline|safe =]</h5>
+            <div class="ap-o-news-date">[= post.date =]</div>
           </div>
         </a>
-        {% endfor %}
+        [% endfor %]
       </div>
     </div>
+    [% endif %]
   </section>
 
   <section class="ap--format-explainer">
