@@ -35,12 +35,7 @@ const formats = require(__dirname +
 const {writeFile} = require('fs').promises;
 const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
 
-const {Signale} = require('signale');
-
-const log = new Signale({
-  'interactive': false,
-  'scope': 'GitHub Importer',
-});
+const log = require('@lib/utils/log')('Component Reference Importer');
 
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
@@ -344,7 +339,7 @@ class ComponentReferenceImporter {
 // If not required, run directly
 if (!module.parent) {
   const importer = new ComponentReferenceImporter();
-  importer.import().catch(err => console.log(err));
+  importer.import().catch(err => log.error(err));
 }
 
 module.exports = ComponentReferenceImporter;

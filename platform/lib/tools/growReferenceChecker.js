@@ -15,7 +15,7 @@
  */
 
 require('module-alias/register');
-const {Signale} = require('signale');
+const log = require('@lib/utils/log')('Reference checker');
 const gulp = require('gulp');
 const through = require('through2');
 const search = require('recursive-search');
@@ -78,9 +78,6 @@ const IMPORTED_DOCS = require(__dirname +
  */
 class GrowReferenceChecker {
   constructor() {
-    this._log = new Signale({
-      'scope': 'Reference checker',
-    });
     this._anchorsByPage = {};
     // Keeps track of documents that could not be found and therefore need
     // to be fixed manually
@@ -97,9 +94,7 @@ class GrowReferenceChecker {
   }
 
   start() {
-    this._log.start(
-      `Inspecting documents in ${PAGES_SRC} for broken references ...`
-    );
+    log.start(`Inspecting documents in ${PAGES_SRC} for broken references ...`);
 
     return new Promise(async (resolve, reject) => {
       await this._readAnchors();
@@ -118,8 +113,8 @@ class GrowReferenceChecker {
         await this._addExplicitAnchors();
 
         if (this._brokenReferencesCount > 0) {
-          this._log.complete('Finished automatic fixing.');
-          this._log.complete(
+          log.complete('Finished automatic fixing.');
+          log.complete(
             `A total of ${this._brokenReferencesCount} links had ` +
               `errors. ${this._unfindableDocuments.length +
                 Object.keys(this._multipleMatches).length} still have.`
@@ -131,26 +126,26 @@ class GrowReferenceChecker {
           this._unfindableDocuments.length == 0 &&
           this._wrongAnchorCount == 0
         ) {
-          this._log.success('All references intact!');
+          log.success('All references intact!');
           resolve();
           return;
         }
 
         if (this._unfindableDocuments.length) {
-          this._log.info(
+          log.info(
             `Could not automatically fix ${this._unfindableDocuments.length} ` +
               "as there wasn't any document with a matching basename:"
           );
           for (const documentPath of this._unfindableDocuments) {
-            this._log.pending(`- ${documentPath}`);
+            log.pending(`- ${documentPath}`);
           }
         }
 
-        this._log.info('');
+        log.info('');
 
         const multipleMatchesCount = Object.keys(this._multipleMatches).length;
         if (multipleMatchesCount !== 0) {
-          this._log.info(
+          log.info(
             `Encountered multiple possible matches for ${multipleMatchesCount} ` +
               'documents:'
           );
@@ -161,11 +156,9 @@ class GrowReferenceChecker {
                 documentPath
               )
             ) {
-              this._log.pending(`${documentPath}`);
+              log.pending(`${documentPath}`);
               for (const possibleMatch of this._multipleMatches[documentPath]) {
-                this._log.pending(
-                  `-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`
-                );
+                log.pending(`-- ${possibleMatch.replace(POD_BASE_PATH, '/')}`);
               }
             }
           }
@@ -327,7 +320,7 @@ class GrowReferenceChecker {
         IMPORTED_DOCS.includes(sourcePath) ||
         (sourcePath.match(IGNORED_PATH_PATTERNS) && !sourcePath.includes('@'))
       ) {
-        this._log.warn(
+        log.warn(
           'anchor not found in imported document',
           anchor,
           '\n',
@@ -338,7 +331,7 @@ class GrowReferenceChecker {
           linkedPath ? errorLocales : '<internal>'
         );
       } else {
-        this._log.error(
+        log.error(
           'anchor not found',
           anchor,
           '\n',
@@ -437,14 +430,14 @@ class GrowReferenceChecker {
     // If there is more than one match store all matches for the user to
     // do the manual fixing
     if (results.length > 1) {
-      this._log.error(
+      log.error(
         `More than one possible match for ${documentPath}. Needs manual fixing.` +
           ` (In ${doc.path})`
       );
       this._multipleMatches[documentPath] = results;
       return null;
     } else if (results.length == 0) {
-      this._log.error(
+      log.error(
         `No matching document found for ${documentPath}. Needs manual fixing.` +
           ` (First found in ${doc.path})`
       );
@@ -564,7 +557,7 @@ class GrowReferenceChecker {
         return;
       }
 
-      this._log.info('Add explicit anchors to:', pages);
+      log.info('Add explicit anchors to:', pages);
 
       let stream = gulp.src(pages, {'read': true, 'base': './'});
       stream = stream.pipe(
@@ -615,7 +608,7 @@ if (!module.parent) {
     try {
       await referenceChecker.start();
     } catch (err) {
-      console.log(err);
+      log.error(err);
       process.exit(1);
     }
   })();

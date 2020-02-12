@@ -18,6 +18,7 @@
 
 const fetch = require('node-fetch');
 const credentials = require('@lib/utils/credentials');
+const log = require('@lib/utils/log')('Google Search');
 
 // google custom search does not support a page size > 10
 const PAGE_SIZE = 10;
@@ -35,8 +36,8 @@ credentials
     API_KEY = key;
   })
   .catch(err => {
-    console.log(
-      'WARN: missing Google Custom Search key, site search will not be available!',
+    log.warn(
+      'Missing Google Custom Search key, site search will not be available!',
       err.message ? err.message : err
     );
   });
@@ -69,7 +70,7 @@ async function search(query, locale, page, options = {}) {
 
   const fetchResponse = await fetch(url.toString());
   if (!fetchResponse.ok) {
-    console.log(
+    log.error(
       `CSE Error ${fetchResponse.status} for url ${url}: `,
       await fetchResponse.text()
     );

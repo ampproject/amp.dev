@@ -22,6 +22,7 @@ const project = require('@lib/utils/project.js');
 const googleSearch = require('@lib/utils/googleSearch.js');
 const samples = require('@lib/common/samples.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers');
+const log = require('@lib/utils/log')('Search');
 const URL = require('url').URL;
 
 const {
@@ -277,7 +278,7 @@ async function handleSearchRequest(request, response, next) {
       ', page=' +
       request.query.page +
       ')';
-    console.log(error);
+    log.error(error);
     // No error status since an empty query can always happen with our search template
     // and we do not want error messages in the client console
     response.status(200).json({error: error});

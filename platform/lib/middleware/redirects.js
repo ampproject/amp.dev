@@ -23,6 +23,7 @@ const yaml = require('js-yaml');
 const config = require('@lib/config.js');
 const {setHsts} = require('@lib/utils/cacheHelpers.js');
 const {HEALTH_CHECK_PATH} = require('@lib/routers/healthCheck.js');
+const log = require('@lib/utils/log')('Redirects');
 
 const WWW_PREFIX = 'www.';
 
@@ -84,7 +85,7 @@ module.exports = (req, res, next) => {
       res.redirect(targetUrl.toString());
       return;
     } catch (error) {
-      console.log('Unable to redirect to ' + redirectTarget, error);
+      log.warn('Unable to redirect to ' + redirectTarget, error);
     }
   }
 

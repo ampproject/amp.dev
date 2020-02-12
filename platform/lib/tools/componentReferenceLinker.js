@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {Signale} = require('signale');
+const log = require('@lib/utils/log')('Component Reference Linker');
 const gulp = require('gulp');
 const through = require('through2');
 const path = require('path');
@@ -39,16 +39,13 @@ const COMPONENTS_SRC =
  */
 class ComponentReferenceLinker {
   constructor() {
-    this._log = new Signale({
-      'scope': 'Reference linker',
-    });
     this._placeholders = {};
     this._codePlaceholders = {};
     this._tablePlaceholders = {};
   }
 
   async start() {
-    this._log.start(`Inspecting documents in ${PAGES_SRC} ...`);
+    log.start(`Inspecting documents in ${PAGES_SRC} ...`);
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
@@ -61,7 +58,7 @@ class ComponentReferenceLinker {
 
       stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
-        this._log.complete('Linked all component references!');
+        log.complete('Linked all component references!');
 
         resolve();
       });
@@ -135,7 +132,7 @@ class ComponentReferenceLinker {
     /* eslint-enable max-len */
     for (let i = 0; i < cases.length; i++) {
       const results = Array.from(new Set(cases[i]));
-      console.log({results});
+      log.info({results});
 
       for (let j = 0; j < results.length; j++) {
         const result = results[j];

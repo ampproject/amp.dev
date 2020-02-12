@@ -22,6 +22,7 @@ const emojiStrip = require('emoji-strip');
 const {promisify} = require('util');
 const writeFileAsync = promisify(fs.writeFile);
 const {GitHubImporter} = require('@lib/pipeline/gitHubImporter');
+const log = require('@lib/utils/log')('Import Working Groups');
 
 /* The GitHub organisation the repositories imported from are located */
 const WG_GH_ORGANISATION = 'ampproject';
@@ -36,6 +37,8 @@ async function importWorkingGroups() {
     await client._github.org(WG_GH_ORGANISATION).reposAsync(1, 100)
   )[0];
 
+  log.start('Start importing Working Groups..');
+
   for (const wg of repos) {
     if (!wg.name.startsWith('wg-')) {
       continue;
@@ -48,13 +51,13 @@ async function importWorkingGroups() {
         .repo(`${WG_GH_ORGANISATION}/${wg.name}`)
         .contentsAsync('METADATA.yaml');
     } catch (e) {
-      console.warn(`No METADATA.yaml for working group ${wg.name}`);
+      log.warn(`No METADATA.yaml for working group ${wg.name}`);
       continue;
     }
     try {
       meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
     } catch (e) {
-      console.error(
+      log.error(
         `Failed loading ${WG_GH_ORGANISATION}/${wg.name}/METADATA.yaml`,
         e
       );
@@ -109,7 +112,7 @@ async function importWorkingGroups() {
       })
     );
 
-    console.log('Imported working group data', wg.name);
+    log.success('Imported working group data for:', wg.name);
   }
 }
 

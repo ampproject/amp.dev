@@ -21,6 +21,7 @@ const path = require('path');
 
 const io = require('./lib/io');
 const templates = require('./lib/templates');
+const log = require('@lib/utils/log')('Import Blog Filter');
 
 const DIST_DIR = 'dist';
 const INPUT_FILE = 'templates/index.html';
@@ -29,7 +30,7 @@ const generatorTemplate = io.readFile(INPUT_FILE);
 const config = initConfig();
 const generatorPage = templates.render(generatorTemplate, config);
 generateOptimizedAmpFiles(generatorPage);
-console.log('Built boilerplate generator.');
+log.info('Built boilerplate generator.');
 
 function initConfig() {
   const config = {
