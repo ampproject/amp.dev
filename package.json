@@ -54,7 +54,7 @@
   "dependencies": {
     "@ampproject/toolbox-cors": "2.0.0-alpha.4",
     "@ampproject/toolbox-optimizer": "2.0.0-alpha.6",
-    "@google-cloud/datastore": "5.0.4",
+    "@google-cloud/datastore": "5.0.5",
     "acorn": "7.1.0",
     "casual": "1.6.2",
     "cheerio": "1.0.0-rc.3",
