@@ -26,9 +26,9 @@ creation:
     type: Magento Extension
     description: Send engaging AMP Emails from Magento ecommerce platform. Use built-in templates for transactional and promotional dynamic emails.
     image:
-      src: /static/img/tools/plumrocket_amp_email.png
-      width: 442
-      height: 184
+      src: /static/img/tools/plumrocket-amp-email.jpg
+      width: 440
+      height: 209
       fit: contain
     formats:
       - email
@@ -120,12 +120,12 @@ platforms:
       - stories
    - name: AMP for Magento
     type: CMS
-    description: Create AMP pages for Homepage, Category Pages, Product Pages and CMS Pages, highly optimized to support latest Google AMP Technology.
+    description: Convert Magento website into lightning fast eСommerce store powered by AMP technology.
     url: https://store.plumrocket.com/accelerated-mobile-pages-magento2-extension.html
     image:
-      src: /static/img/tools/amp_for_magento.png
-      width: 700
-      height: 499
+      src: /static/img/tools/plumrocket-amp-magento.jpg
+      width: 440
+      height: 209
     formats:
       - websites
   - name: Bold by Quintype
