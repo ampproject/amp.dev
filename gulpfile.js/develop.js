@@ -30,7 +30,7 @@ function bootstrap(done) {
     build.buildBoilerplate,
     build.buildPlayground,
     build.importAll,
-    samplesBuilder.build
+    samplesBuilder.build.bind(samplesBuilder)
   )(done);
 }
 
