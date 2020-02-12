@@ -65,7 +65,6 @@
     "emoji-strip": "1.0.1",
     "express": "4.17.1",
     "express-formidable": "1.2.0",
-    "feedparser": "2.2.9",
     "gcp-metadata": "3.3.1",
     "http-proxy": "1.18.0",
     "iltorb": "2.4.5",
@@ -117,7 +116,6 @@
     "file-loader": "5.0.2",
     "globby": "11.0.0",
     "google-closure-compiler": "20200204.0.0",
-    "got": "10.5.2",
     "gulp": "4.0.2",
     "gulp-amphtml-validator": "1.0.2",
     "gulp-once": "2.0.3",
@@ -132,11 +130,9 @@
     "html-minifier": "4.0.0",
     "html-webpack-inline-source-plugin": "1.0.0-beta.2",
     "html-webpack-plugin": "4.0.0-beta.11",
-    "http-proxy-response-rewrite": "0.0.1",
     "husky": "4.2.1",
     "jasmine": "3.5.0",
     "jest": "25.1.0",
-    "jimp": "0.9.3",
     "js-beautify": "1.10.3",
     "keymaster": "1.6.2",
     "marked": "0.8.0",
@@ -160,8 +156,7 @@
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
     "webpack-dev-server": "3.10.3",
-    "write": "2.0.0",
-    "write-yaml": "1.0.0"
+    "write": "2.0.0"
   },
   "sideEffects": [
     "./playground/src/request-idle-callback/base.js",

@@ -39,7 +39,7 @@ const routers = {
   go: require('@lib/routers/go.js'),
   growSharedPages: require('@lib/routers/growSharedPages.js'),
   growXmls: require('@lib/routers/growXmls.js'),
-  growPages: require('@lib/routers/growPages.js'),
+  growPages: require('@lib/routers/growPages.js').growPages,
   healthCheck: require('@lib/routers/healthCheck.js').router,
   notFound: require('@lib/routers/notFound.js'),
   packager: require('@lib/routers/packager.js'),

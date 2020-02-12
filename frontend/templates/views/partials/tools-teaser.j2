@@ -16,7 +16,7 @@
       {% set teaser = tool or {} %}
       {% if teaser.video %}
       <div class="ap-a-img ap-m-teaser-image">
-        <amp-video class="ap--media" src="{{ teaser.video.src }}" layout="responsive" width="2" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
+        <amp-video src="{{ teaser.video.src }}" layout="responsive" width="2" height="1" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
       {% elif teaser.image %}
       <div class="ap-a-img ap-m-teaser-image{% if teaser.image.fit %} {{teaser.image.fit}}{% endif %}" {% if teaser.image.bgcolor %}style="background-color: {{teaser.image.bgcolor}};"{% endif %}>

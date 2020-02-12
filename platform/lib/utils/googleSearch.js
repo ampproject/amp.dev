@@ -35,8 +35,8 @@ credentials
     API_KEY = key;
   })
   .catch(err => {
-    console.error(
-      'ERROR: Google site search will not be available!',
+    console.log(
+      'WARN: missing Google Custom Search key, site search will not be available!',
       err.message ? err.message : err
     );
   });

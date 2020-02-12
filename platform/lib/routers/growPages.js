@@ -26,6 +26,8 @@ const CssTransformer = require('@lib/utils/cssTransformer');
 const pageCache = require('@lib/utils/pageCache');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const signale = require('signale');
+const {promisify} = require('util');
+
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -205,9 +207,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     return;
   }
 
+  template.renderAsync = promisify(template.render);
   let renderedTemplate = null;
   try {
-    renderedTemplate = template.render(templateContext);
+    renderedTemplate = await template.renderAsync(templateContext);
   } catch (e) {
     // If there was a rendering error show the unrendered template with line
     // count to the user to figure out what's wrong
@@ -251,4 +254,8 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   pageCache.set(req.originalUrl, renderedTemplate);
 });
 
-module.exports = growPages;
+module.exports = {
+  loadTemplate,
+  ensureUrlScheme,
+  growPages,
+};

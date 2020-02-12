@@ -4,7 +4,7 @@ const request = require('supertest');
 const config = require('@lib/config');
 
 const app = express();
-const router = require('./growPages.js');
+const router = require('./growPages.js').growPages;
 app.use(router);
 
 // eslint-disable-next-line new-cap
