@@ -21,6 +21,7 @@ const VERSION_PATTERN = /\d.\d/;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
 const path = require('path');
+const del = require('del');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
@@ -55,11 +56,16 @@ class ComponentReferenceImporter {
   }
 
   async import() {
-    log.start('Beginning to import extension docs ...');
+    log.await('Cleaning previously imported extension docs ...');
+    await del([
+      `${DESTINATION_BASE_PATH}/*.md`,
+      `!${DESTINATION_BASE_PATH}/*@*.md`,
+    ]);
     this.validatorRules = await validatorRules.fetch();
 
+    log.start('Beginning to import extension docs ...');
     await this._importExtensions();
-    log.complete('Finished importing extension docs ...');
+    log.complete('Finished importing extension docs!');
   }
 
   /**
