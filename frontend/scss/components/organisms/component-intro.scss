@@ -43,11 +43,10 @@
         align-items: center;
 
         code {
-          display: flex;
-          align-items: center;
           overflow-x: scroll;
-          width: calc(100% - 24px);
+          flex: 1 0 auto;
           margin: 6px 8px 6px 0;
+          padding: 2px 4px 4px 2px;
           white-space: nowrap;
           background: color('gallery');
           font-size: 12.6px;
