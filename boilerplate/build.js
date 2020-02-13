@@ -21,7 +21,7 @@ const path = require('path');
 
 const io = require('./lib/io');
 const templates = require('./lib/templates');
-const log = require('@lib/utils/log')('Import Blog Filter');
+const log = require('@lib/utils/log')('Build');
 
 const DIST_DIR = 'dist';
 const INPUT_FILE = 'templates/index.html';

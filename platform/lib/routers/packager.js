@@ -50,7 +50,7 @@ const packager = (request, response, next) => {
     pagesHost += `:${config.hosts.platform.port}`;
   }
   if (request.get('host') !== pagesHost) {
-    log.info('[packager] not packaging', request.get('host'), pagesHost);
+    log.info('Not packaging', request.get('host'), pagesHost);
     next();
     return;
   }

@@ -22,7 +22,6 @@ import events from '../events/events.js';
 import snackbar from '../snackbar/base.js';
 import {EVENT_INPUT_CHANGE} from '../editor/editor.js';
 import key from 'keymaster/keymaster.js';
-const log = require('@lib/utils/log')('Document Controller');
 
 const URL_DOC_ID_PREFIX = 'amp/';
 const REGEX_DOC_ID = /^.*\/amp\/(.+)$/;
@@ -75,7 +74,7 @@ export default class DocumentController {
     return promise
       .then(content => this.editor.setSource(content))
       .catch(err => {
-        log.error(err);
+        console.error(err);
         snackbar.show('Could not fetch document.');
         this.editor.setSource(runtime.template);
       });
@@ -123,7 +122,7 @@ export default class DocumentController {
         snackbar.show('Document forked');
       })
       .catch(err => {
-        log.error(err);
+        console.error(err);
         this.forkButton.enable();
         snackbar.show('Could not fork document');
       });
@@ -143,7 +142,7 @@ export default class DocumentController {
         this._setDocumentId(docId);
       })
       .catch(err => {
-        log.error(err);
+        console.error(err);
         this.saveButton.enable();
         snackbar.show('Could not save document');
       });
