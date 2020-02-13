@@ -48,7 +48,8 @@ const FORMATS = ['AMP', 'AMP4ADS', 'AMP4EMAIL'];
 
 // ... this path
 const BUILT_IN_PATH = 'builtins';
-const AMPSTORY_PATH_PREFIX = 'amp-story';
+const AMP_STORY_TAG = 'amp-story';
+const MARKDOWN_EXTENSION = '.md';
 
 class ComponentReferenceImporter {
   constructor(githubImporter = new GitHubImporter()) {
@@ -112,9 +113,32 @@ class ComponentReferenceImporter {
   async _importExtension(extension) {
     extension.files = await this._listExtensionFiles(extension);
 
-    const versions = this._getExtensionMetas(extension);
-    return versions.map(version => {
-      return this._createGrowDoc(version);
+    const documents = this._getExtensionMetas(extension);
+    // amp-story has a few sub components which are documented in their
+    // own documents but share the same meta information
+    if (extension.name == AMP_STORY_TAG) {
+      for (const filePath of extension.files) {
+        if (
+          !filePath.includes(`${AMP_STORY_TAG}-`) ||
+          !filePath.endsWith(MARKDOWN_EXTENSION)
+        ) {
+          continue;
+        }
+
+        const fileName = path.basename(filePath);
+        documents.push(
+          Object.assign({}, documents[0], {
+            name: fileName.replace(MARKDOWN_EXTENSION, ''),
+            githubPath: documents[0].githubPath.replace(
+              `${AMP_STORY_TAG}${MARKDOWN_EXTENSION}`,
+              fileName
+            ),
+          })
+        );
+      }
+    }
+    return documents.map(doc => {
+      return this._createGrowDoc(doc);
     });
   }
 
@@ -197,13 +221,6 @@ class ComponentReferenceImporter {
   _getGitHubPath(extension, version, latestVersion) {
     let gitHubPath;
     const fileName = `${extension.name}.md`;
-
-    if (extension.name.startsWith(AMPSTORY_PATH_PREFIX)) {
-      gitHubPath = path.join(extension.path, AMPSTORY_PATH_PREFIX, fileName);
-      if (extension.files.includes(gitHubPath)) {
-        return gitHubPath;
-      }
-    }
 
     // Best guess: if the version equals the latest version the documentation
     // is located in the root of the extension directory
