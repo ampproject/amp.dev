@@ -1,53 +1,5 @@
 const MarkdownDocument = require('./markdownDocument.js');
 
-test('Test frontmatter extraction', async done => {
-  const doc = new MarkdownDocument(
-    '/docs/amp-test-v0.1.md',
-
-    '---\n' +
-      '$category: media\n' +
-      'formats:\n' +
-      '  - websites\n' +
-      '  - email\n' +
-      '  - ads\n' +
-      '  - stories\n' +
-      'teaser:\n' +
-      '  text: Teaser text.\n' +
-      '---\n' +
-      '\n' +
-      '# amp-test\n'
-  );
-
-  expect(doc.formats).toEqual(
-    expect.arrayContaining(['websites', 'email', 'ads', 'stories'])
-  );
-  expect(doc.category).toBe('media');
-  expect(doc.teaser.text).toBe('Teaser text.');
-
-  expect(doc.contents.trim()).toBe('# amp-test');
-
-  done();
-});
-
-test('Test teaser text extraction', async done => {
-  const teaserText = MarkdownDocument.extractTeaserText(
-    '<!--\n' +
-      'Copyright notice\n' +
-      '-->\n' +
-      '\n' +
-      '\n' +
-      '# amp-test\n' +
-      'Teaser text.\n' +
-      '\n' +
-      'Lorem ipsum dolor sit amet.\n' +
-      '## Section\n' +
-      'Lorem ipsum dolor sit amet.'
-  );
-  expect(teaserText).toBe('Teaser text.');
-
-  done();
-});
-
 test('Test escape nunjucks tags', async done => {
   const result = MarkdownDocument.escapeNunjucksTags(
     '<pre>\n' +
@@ -105,12 +57,7 @@ test('Test escape mustache tags', async done => {
 test('Test escape mustache tags', async done => {
   const doc = new MarkdownDocument(
     '/tmp/test.md',
-    '---\n' +
-      'title: Title.\n' +
-      'teaser:\n' +
-      '  text: Teaser text.\n' +
-      '---\n' +
-      `[text](../link/file#anchor)
+    `[text](../link/file#anchor)
       [text](#anchor)
       [sourcecode type="html"]<a href="../source/link.html">text</a>[/sourcecode]
       <a href="#anchor">text</a>
@@ -136,12 +83,7 @@ test('Test escape mustache tags', async done => {
 test('Test anchor generation', () => {
   const doc = new MarkdownDocument(
     '/tmp/test.md',
-    '---\n' +
-      'title: Title.\n' +
-      'teaser:\n' +
-      '  text: Teaser text.\n' +
-      '---\n' +
-      '# TestOne\n' +
+    '# TestOne\n' +
       '# test two\n' +
       'paragraph\n' +
       '## test h2\n' +

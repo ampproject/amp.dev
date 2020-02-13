@@ -1,4 +1,0 @@
-{
-	"only": [],
-	"fetchFromMaster": ["amp-script", "amp-carousel", "amp-consent", "amp-bind"]
-}

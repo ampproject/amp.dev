@@ -55,6 +55,7 @@
 
           {# Custom content for component-sidebar #}
           {% elif type == 'component' %}
+
             {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
             {% set scope = namespace(initial=components[0].title[4]) %}
             <ul class="nav-list level-1">
@@ -75,7 +76,7 @@
                   {% set formats = component.formats or [] %}
                   {% set activeDocument = true if component.url == doc.url %}
                   {# the latest document might not support a format, hence we have to check if any version supports the format #}
-                  [% if format in {{ component.formats|list|tojson }} %]
+                  [% if format in {{ component.supported_formats|list|tojson }} %]
                   <li class="nav-item{{ ' active' if activeDocument }} level-2"{{ ' autoscroll' if activeDocument }}>
                     <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
                   </li>
