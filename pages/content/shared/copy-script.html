@@ -1,0 +1,44 @@
+$view: /layouts/blank.j2
+$sitemap:
+  enabled: false
+---
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="robot" content="noindex,nofollow">
+  <style>
+    {% do doc.styles.addCssFile('/css/components/atoms/icon.css') %}
+    {{ doc.styles.emit() }}
+    html, body { background: none transparent; width: 24px; height: 24px; overflow: hidden; }
+    body { display: flex; align-items: center; margin: 0; min-height: 100vh; cursor: pointer; }
+    svg { fill: #005af0; }
+    input { opacity: 0 }
+  </style>
+</head>
+<body>
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      {{ doc.icons.emit() }}
+    </defs>
+  </svg>
+  <div class="ap-a-ico">
+    {% do doc.icons.useIcon('/icons/clipboard.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clipboard"></use></svg>
+  </div>
+  <input id="script-tag">
+  <script>
+    const scriptTag = document.getElementById('script-tag');
+    const stringToCopy = decodeURIComponent(window.location.hash.substr(1));
+
+    scriptTag.value = stringToCopy;
+
+    document.addEventListener('click', () => {
+      $scriptTag.select();
+      $scriptTag.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+    });
+  </script>
+</body>
+</html>
