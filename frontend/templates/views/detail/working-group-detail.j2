@@ -49,7 +49,7 @@
       <div class="ap-o-wg-nav">
         <ul>
           {% for group in g.collection('/content/amp-dev/community/working-groups').list_docs(locale=doc.locale) %}
-          <li class="ap-o-wg-nav-bubble {% if group.name in doc.path %} active {% endif %}">
+          <li class="ap-o-wg-nav-bubble {% if group.name in doc.pod_path %} active {% endif %}">
             <a href="{{ g.doc('/content/amp-dev/community/working-groups/' + group.name, locale=doc.locale).url.path }}">{{ _(group.full_name) }}</a>
           </li>
           {% endfor %}
