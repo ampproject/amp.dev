@@ -66,6 +66,12 @@ const paths = {
   BUILD_INFO_PATH: absolute('platform/config/build-info.yaml'),
 };
 
+paths.FORMAT_COMPONENT_MAPPING = path.join(
+  paths.STATICS_DEST,
+  'files',
+  'format-component-mapping.json'
+);
+
 module.exports = {
   absolute,
   relative,
