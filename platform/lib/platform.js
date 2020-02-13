@@ -22,7 +22,7 @@ const cors = require('cors');
 const ampCors = require('@ampproject/toolbox-cors');
 const config = require('./config.js');
 const {pagePath} = require('@lib/utils/project');
-const log = require('@lib/utils/log')('Search');
+const log = require('@lib/utils/log')('Platform');
 const subdomain = require('./middleware/subdomain.js');
 
 const routers = {
