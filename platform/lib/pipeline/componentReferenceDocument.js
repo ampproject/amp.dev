@@ -32,6 +32,9 @@ class ComponentReferenceDocument extends MarkdownDocument {
     this.versions = extension.versions;
     this.latestVersion = extension.versions[extension.versions.length - 1];
 
+    // Force enable TOC for all component docs
+    this.toc = true;
+
     this.rewriteRelativePaths(
       join(RELATIVE_PATH_BASE, dirname(extension.githubPath))
     );
