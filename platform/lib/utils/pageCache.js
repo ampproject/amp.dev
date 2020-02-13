@@ -106,9 +106,7 @@ instance
       }
     }
 
-    log.warn(
-      '[PAGE_CACHE]: No Redis instances available. Falling back to LRU'
-    );
+    log.warn('[PAGE_CACHE]: No Redis instances available. Falling back to LRU');
     lru = new LRU({
       max: LRU_MAX_ITEMS,
     });
