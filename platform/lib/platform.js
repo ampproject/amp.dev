@@ -16,13 +16,13 @@
 
 'use strict';
 
-const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
 const cors = require('cors');
 const ampCors = require('@ampproject/toolbox-cors');
 const config = require('./config.js');
 const {pagePath} = require('@lib/utils/project');
+const log = require('@lib/utils/log')('Search');
 const subdomain = require('./middleware/subdomain.js');
 
 const routers = {
@@ -55,12 +55,12 @@ const PORT = config.hosts.platform.port || process.env.APP_PORT || 80;
 
 class Platform {
   start() {
-    signale.info('Starting platform');
+    log.info('Starting platform');
     return new Promise(async (resolve, reject) => {
       try {
         await this._createServer();
         this.httpServer = this.server.listen(PORT, () => {
-          signale.success(`server listening on ${PORT}!`);
+          log.success(`server listening on ${PORT}!`);
           resolve();
         });
         // Increase keep alive timeout
@@ -73,14 +73,14 @@ class Platform {
   }
 
   stop() {
-    signale.info('Stopping platform');
+    log.info('Stopping platform');
     return new Promise(async (resolve, reject) => {
       this.httpServer.close(() => resolve());
     });
   }
 
   async _createServer() {
-    signale.await(
+    log.await(
       `Starting platform with environment ${config.environment} on ${HOST} ...`
     );
     this.server = express();

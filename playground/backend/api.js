@@ -19,6 +19,7 @@ const fetch = require('node-fetch');
 const URL = require('url').URL;
 const config = require('@lib/config.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
+const log = require('@lib/utils/log')('Playground Backend Api');
 // eslint-disable-next-line new-cap
 const api = express.Router();
 
@@ -51,7 +52,7 @@ api.get('/fetch', async (request, response) => {
     setMaxAge(response, ONE_HOUR);
     response.send(doc);
   } catch (error) {
-    console.error('Could not fetch URL', error);
+    log.error('Could not fetch URL', error);
     response.status(400).send('Could not fetch URL');
   }
 });
