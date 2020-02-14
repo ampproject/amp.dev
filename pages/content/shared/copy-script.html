@@ -35,8 +35,8 @@ $sitemap:
     scriptTag.value = stringToCopy;
 
     document.addEventListener('click', () => {
-      $scriptTag.select();
-      $scriptTag.setSelectionRange(0, 99999);
+      scriptTag.select();
+      scriptTag.setSelectionRange(0, 99999);
       document.execCommand('copy');
     });
   </script>
