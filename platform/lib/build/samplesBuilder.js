@@ -159,13 +159,13 @@ class SamplesBuilder {
       stream = stream.pipe(once({file: false}));
 
       const sampleBuilds = [];
-      stream.pipe(through.obj((sample, encoding, callback) => {
+      stream = stream.pipe(through.obj((sample, encoding, callback) => {
         sampleBuilds.push(this._buildSample(sample, callback, stream));
       }));
 
       await Promise.all(sampleBuilds);
 
-      stream = stream.pipe(gulp.dest((file) => {
+      stream.pipe(gulp.dest((file) => {
         file.dirname = `${SAMPLE_SRC}/${this._getCategory(file)}`;
         if (file.isSourceFile) {
           return SOURCE_DEST;
