@@ -297,6 +297,18 @@ section {
   }
 }
 
+
+.select {
+  padding: .1em .25em;
+  border: 1px solid color('blue-ribbon');
+  border-radius: 0;
+  background: #fff;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+
 a.anchor {
   display: block;
   position: relative;
@@ -341,4 +353,3 @@ body {
     transform: scale(1);
   }
 }
-

@@ -181,6 +181,11 @@
     "select": true,
     "help": "Language select",
     "options": [
+			{
+        "id": "en",
+        "label": "en-us",
+        "default": false
+      },
       {
         "id": "it",
         "label": "it",
