@@ -63,6 +63,8 @@ class ComponentReferenceImporter {
       `!${DESTINATION_BASE_PATH}/*@*.md`,
     ]);
     this.validatorRules = await validatorRules.fetch();
+    // Gives the contents of ampproject/amphtml/extensions
+    this.extensions = await this._listExtensions();
 
     log.start('Beginning to import extension docs ...');
     await this._importExtensions();
@@ -70,15 +72,11 @@ class ComponentReferenceImporter {
   }
 
   /**
-   * Collects all needed documents from across the repository that should
-   * be downloaded and put into collections
-   * @return {Promise}
+   * Fetches the list of available extensions from GitHub
+   * @return {Promise} [description]
    */
-  async _importExtensions() {
-    // Gives the contents of ampproject/amphtml/extensions
+  async _listExtensions() {
     let extensions = await this.githubImporter_.fetchJson('extensions');
-    const imports = [];
-
     // As inside /extensions each component has its own folder, filter
     // down by directory
     extensions = extensions[0].filter(file => {
@@ -89,7 +87,17 @@ class ComponentReferenceImporter {
       return file.type === 'dir' && config.only.includes(file.name);
     });
 
-    for (const extension of extensions) {
+    return extensions;
+  }
+
+  /**
+   * Collects all needed documents from across the repository that should
+   * be downloaded and put into collections
+   * @return {Promise}
+   */
+  async _importExtensions() {
+    const imports = [];
+    for (const extension of this.extensions) {
       imports.push(this._importExtension(extension));
     }
 
@@ -112,8 +120,8 @@ class ComponentReferenceImporter {
 
   async _importExtension(extension) {
     extension.files = await this._listExtensionFiles(extension);
-
     const documents = this._getExtensionMetas(extension);
+
     // amp-story has a few sub components which are documented in their
     // own documents but share the same meta information
     if (extension.name == AMP_STORY_TAG) {
@@ -126,9 +134,20 @@ class ComponentReferenceImporter {
         }
 
         const fileName = path.basename(filePath);
+        const extensionName = fileName.replace(MARKDOWN_EXTENSION, '');
+
+        // Verify the extension isn't available standalone
+        if (
+          this.extensions.find(extension => {
+            return extension.name == extensionName;
+          })
+        ) {
+          continue;
+        }
+
         documents.push(
           Object.assign({}, documents[0], {
-            name: fileName.replace(MARKDOWN_EXTENSION, ''),
+            name: extensionName,
             githubPath: documents[0].githubPath.replace(
               `${AMP_STORY_TAG}${MARKDOWN_EXTENSION}`,
               fileName
@@ -137,9 +156,12 @@ class ComponentReferenceImporter {
         );
       }
     }
-    return documents.map(doc => {
-      return this._createGrowDoc(doc);
-    });
+
+    return Promise.all(
+      documents.map(doc => {
+        return this._createGrowDoc(doc);
+      })
+    );
   }
 
   /**
