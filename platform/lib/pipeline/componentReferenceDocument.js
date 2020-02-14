@@ -53,17 +53,12 @@ class ComponentReferenceDocument extends MarkdownDocument {
     }
 
     if (extension.script) {
-      const scripts = [
-        this._generateScript(extension.name, extension.version, extension.type),
-      ];
+      const scripts = [];
       const requiredExtensions = [
         ...(extension.tag.requiresExtension || []),
         ...(extension.script.requiresExtension || []),
       ];
       for (const requiredExtension of requiredExtensions) {
-        if (requiredExtension == extension.name) {
-          continue;
-        }
         scripts.push(
           this._generateScript(
             requiredExtension,
