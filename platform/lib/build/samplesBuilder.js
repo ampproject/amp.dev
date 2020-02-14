@@ -112,6 +112,8 @@ class SamplesBuilder {
       formatTransform.getInstance().then((instance) => {
         this._formatTransform = instance;
         this._log.success('Created format transformer instance.');
+      }).catch((e) => {
+        this._log.warn('Could not create format transformer instance. Samples will only be build for their original format.');
       }),
 
       del([
@@ -204,7 +206,9 @@ class SamplesBuilder {
       const { document } = await this._parseSample(sample);
 
       const isWebSample = document.formats().includes(FORMAT_WEBSITES);
-      const shouldTransform = isWebSample
+      // Only samples that have been originally written for AMP for websites
+      // can be transformed and only if validator.json could be fetched
+      const shouldTransform = this._formatTransform && isWebSample
           && !document.metadata.disableTransform
           && !document.metadata.hideCode
           && !document.metadata.disablePlayground
