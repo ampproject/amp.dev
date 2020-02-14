@@ -93,7 +93,7 @@
     "checkbox": true,
     "options": [
       {
-        "id": "googleFonts", 
+        "id": "googleFonts",
         "formats": [ "websites", "stories", "ads"],
         "label": "Google Fonts",
         "values": [
@@ -170,6 +170,25 @@
       {
         "id": "jsonRecipe",
         "label": "<a href=\"https://developers.google.com/search/docs/data-types/recipe\">Recipe</a>",
+        "default": false
+      }
+    ]
+  },
+	{
+    "label": "Language",
+    "categoryId": "language-select",
+    "formats": [ "websites" ],
+    "select": true,
+    "help": "Language select",
+    "options": [
+      {
+        "id": "it",
+        "label": "it",
+        "default": false
+      },
+      {
+        "id": "id",
+        "label": "id",
         "default": false
       }
     ]
