@@ -21,7 +21,7 @@ const path = require('path');
 
 const io = require('./lib/io');
 const templates = require('./lib/templates');
-const log = require('@lib/utils/log')('Build');
+const log = require('@lib/utils/log')('Build Boilerplate');
 
 const DIST_DIR = 'dist';
 const INPUT_FILE = 'templates/index.html';
@@ -30,7 +30,7 @@ const generatorTemplate = io.readFile(INPUT_FILE);
 const config = initConfig();
 const generatorPage = templates.render(generatorTemplate, config);
 generateOptimizedAmpFiles(generatorPage);
-log.info('Built boilerplate generator.');
+log.success('Built boilerplate generator.');
 
 function initConfig() {
   const config = {
