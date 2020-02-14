@@ -156,7 +156,7 @@ class SamplesBuilder {
       let stream = gulp.src([
         `${SAMPLE_SRC}/*/*.html`, `${SAMPLE_SRC}/*/*/*.html`], {'read': true});
 
-      // stream = stream.pipe(once({file: false}));
+      stream = stream.pipe(once({file: false}));
 
       const sampleBuilds = [];
       stream.pipe(through.obj((sample, encoding, callback) => {
