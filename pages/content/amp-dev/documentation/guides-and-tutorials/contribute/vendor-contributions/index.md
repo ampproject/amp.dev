@@ -16,11 +16,11 @@ Publishers have created over 1.4 billion AMP documents, hosted on over 750 thous
 
 If you are a technology provider for publishers or advertisers on the web, we invite you to add support to AMP! Your customers can continue to leverage your technology while working to achieve our vision of building a better web.
 
-This document outlines AMP third party vendor expectations and defines contribution levels.
+This document outlines AMP third party expectations and defines contribution levels.
 
 # Contributing guidelines
 
-All general contributions are subject to the [AMPHTML universal guidelines in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). We expect vendors to test, maintain, and update their contribution to various degrees.
+All general contributions are subject to the [AMPHTML universal guidelines in CONTRIBUTING.md](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md). We expect the third party to test, maintain, and update their contribution to various degrees.
 
 To qualify for inclusion, all contribution levels must:
 
@@ -31,27 +31,27 @@ To qualify for inclusion, all contribution levels must:
 *   Provide good integration test coverage to against AMP’s production and canary releases.
 *   Fulfill a purpose that does not exist. 
 
-There are 3 vendor contribution levels. Levels are dependent on the amount of added logic:
+There are 3 third party contribution levels. Levels are dependent on the amount of added logic:
 
 * Component logic: Code that dictates the core features and functionality of the AMP component.  
-* Vendor logic: Code that is specific to the vendors. This logic enables the component to leverage the vendors service. 
+* Third party logic: Code that is specific to the third party. This logic enables the component to leverage the third party service. 
 
-The more logic added to the AMP repository, especially vendor specific logic, increases the contribution level. A high contribution level requires more commitment from the vendor. 
+The more logic added to the AMP repository, especially third party specific logic, increases the contribution level. A high contribution level requires more commitment from the third party. 
 
-Level 1 and level 2 contributions share components between vendors. If there is a component fulfills a purpose similar to your business, consider reusing that component. This requires much less effort and is more long-term maintainable.
+Level 1 and level 2 contributions share components between third parties. If there is a component fulfills a purpose similar to your business, consider reusing that component. This requires much less effort and is more long-term maintainable.
 
 After deciding what level of contribution meets your use case, open a [GitHub issue](https://github.com/ampproject/amphtml/issues/new) to start. 
 
 
 ## Level 1 contribution
 
-Level 1 contributions leverage the feature logic of existing components. They load vendor specific logic as custom JavaScript in a cross origin iframe. For example, many ad networks provide ads through the [`amp-ad`](../../../components/reference/amp-ad.md) component, but control how the rendering of ads through their own logic. 
+Level 1 contributions leverage the feature logic of existing components. They load third party specific logic as custom JavaScript in a cross origin iframe. For example, many ad networks provide ads through the [`amp-ad`](../../../components/reference/amp-ad.md) component, but control how the rendering of ads through their own logic. 
 
-Vendors add configurations or features to existing extensions, using provided APIs, to implement their functionalities. If such a component does not exist they may propose a new one. 
+Third parties add configurations or features to existing extensions, using provided APIs, to implement their functionalities. If such a component does not exist they may propose a new one. 
 
-The only vendor specific logic checked into the AMP repository is a vendor configuration. Adding a new vendor to an existing level 1 contribution typically does not need a design review. Vendors can follow the integration documentation of the component, such as [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
+The only third party specific logic checked into the AMP repository is a third party configuration. Adding a new third party to an existing level 1 contribution typically does not need a design review. Third parties can follow the integration documentation of the component, such as [Integrating ad networks into AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
-### Vendor expectations
+### Expectations for third parties
 
 *   Maintain and serve vendor’s custom JavaScript independently.
 *   Provide tests for their configuration and respond to issues. 
@@ -70,14 +70,14 @@ There are many ad providers who have added support for advertising related featu
 
 Level 2 contributions leverage the feature logic of existing components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe. For example, analytics providers add their configurations to the [`amp-analytics`](../../../components/reference/amp-analytics.md) component but including the endpoint to track data, such as user clicks.  
 
-Vendors add configurations or features, such as new APIs, to existing components to implement their functionalities. If such a component does not exist they may propose a new one. 
+Third parties add configurations or features, such as new APIs, to existing components to implement their functionalities. If such a component does not exist they may propose a new one. 
 
-All business logic is checked into AMP repository, but the only vendor specific logic checked in is a vendor configuration. If the component works with a vendor provided config file, no design review is needed. If the vendor configuration implements a new feature or new component it will need to pass AMP’s design review. 
+All business logic is checked into AMP repository, but the only third party specific logic checked in is a third party configuration. If the component works with a third party provided config file, no design review is needed. If the third party configuration implements a new feature or new component it will need to pass AMP’s design review. 
 
-### Vendor expectations
+### Expectations of third parties
 
-*   Adding a new vendor to an existing level 2 contribution typically does not need a design review. The vendor can follow the documentation of that component. 
-*   Proposing a new component for level 2 contribution will need to have feature logic that is shareable by other vendors.
+*   Adding new third party service to an existing level 2 contribution typically does not need a design review. The third party can follow the documentation of that component. 
+*   Proposing a new component for level 2 contribution will need to have feature logic that is shareable by other third party services.
 
 ### Level 2 examples
 
@@ -98,14 +98,14 @@ To learn more about how this component might work for you, please see the [refer
 
 ## Level 3 contribution
 
-A level 3 contribution introduces a new vendor-specific component.
-This is only applicable if vendors are unable to:
+A level 3 contribution introduces a new third party-specific component.
+This is only applicable if third parties are unable to:
 
 *   Find a component that exists for their use case. 
 *   Request feature improvements to meet their use case.
-*   Propose a component that applies to other vendors.
+*   Propose a component that applies to other third party services.
 
-### Vendor expectations
+### Expectations of third parties
 
 *   Write and propose a design review. 
 *   Tests must be able to catch breakage. 
