@@ -15,31 +15,25 @@
  */
 require('module-alias/register');
 
-// By default, reference docs are imported from the latest release tag.
-// If a doc is broken in a release, add it to this this list to fetch from master instead.
-//
-// DON'T FORGET TO REMOVE ONCE IT'S FIXED
-const DOCS_TO_FETCH_FROM_MASTER = [
-  'amp-script',
-  'amp-carousel',
-  'amp-consent',
-  'amp-bind',
-];
-const DEFAULT_VERSION = 0.1;
+const DEFAULT_VERSION = '0.1';
+const LATEST_VERSION = 'latest';
+const VERSION_PATTERN = /\d.\d/;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
-const categories = require(__dirname +
-  '/../../config/imports/componentCategories.json');
-const formats = require(__dirname +
-  '/../../config/imports/componentFormats.json');
-const {writeFile} = require('fs').promises;
-const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
+const path = require('path');
+const del = require('del');
+const validatorRules = require('@ampproject/toolbox-validator-rules');
+
+const ComponentReferenceDocument = require('./componentReferenceDocument.js');
 
 const {Signale} = require('signale');
 
+const config = require(__dirname +
+  '/../../config/imports/componentReference.json');
+
 const log = new Signale({
   'interactive': false,
-  'scope': 'GitHub Importer',
+  'scope': 'ComponentReferenceImporter',
 });
 
 // Where to save the documents/collection to
@@ -48,296 +42,280 @@ const DESTINATION_BASE_PATH =
   '/../../../pages/content/amp-dev/documentation/components/reference';
 // Names of the built-in components that need to be fetched from ...
 const BUILT_INS = ['amp-img', 'amp-pixel', 'amp-layout'];
+
+// Formats
+const FORMATS = ['AMP', 'AMP4ADS', 'AMP4EMAIL'];
+
 // ... this path
 const BUILT_IN_PATH = 'builtins';
+const AMP_STORY_TAG = 'amp-story';
+const MARKDOWN_EXTENSION = '.md';
 
 class ComponentReferenceImporter {
   constructor(githubImporter = new GitHubImporter()) {
     this.githubImporter_ = githubImporter;
   }
 
-  import() {
+  async import() {
+    log.await('Cleaning previously imported extension docs ...');
+    await del([
+      `${DESTINATION_BASE_PATH}/*.md`,
+      `!${DESTINATION_BASE_PATH}/*@*.md`,
+    ]);
+    this.validatorRules = await validatorRules.fetch();
+    // Gives the contents of ampproject/amphtml/extensions
+    this.extensions = await this._listExtensions();
+
     log.start('Beginning to import extension docs ...');
-    return this._importExtensionsDocs();
+    await this._importExtensions();
+    log.complete('Finished importing extension docs!');
+  }
+
+  /**
+   * Fetches the list of available extensions from GitHub
+   * @return {Promise} [description]
+   */
+  async _listExtensions() {
+    let extensions = await this.githubImporter_.fetchJson('extensions');
+    // As inside /extensions each component has its own folder, filter
+    // down by directory
+    extensions = extensions[0].filter(file => {
+      if (!config.only.length) {
+        return file.type === 'dir';
+      }
+
+      return file.type === 'dir' && config.only.includes(file.name);
+    });
+
+    return extensions;
   }
 
   /**
    * Collects all needed documents from across the repository that should
    * be downloaded and put into collections
-   * @return {undefined}
+   * @return {Promise}
    */
-  async _importExtensionsDocs() {
-    // Gives the contents of ampproject/amphtml/extensions
-    let extensions = await this.githubImporter_.fetchJson('extensions');
-
-    // As inside /extensions each component has its own folder, filter
-    // down by directory
-    extensions = extensions[0].filter(doc => doc.type === 'dir');
+  async _importExtensions() {
+    const imports = [];
+    for (const extension of this.extensions) {
+      imports.push(this._importExtension(extension));
+    }
 
     // Add built-in components to list to fetch them all in one go
-    for (const builtInExtension of BUILT_INS) {
-      extensions.push({'name': builtInExtension, 'path': BUILT_IN_PATH});
+    for (const builtIn of BUILT_INS) {
+      imports.push(this._importBuiltIn(builtIn));
     }
 
-    // Keep track of all promises to complete function
-    const savedDocuments = [];
-
-    const versionMapping = {};
-    for (const extension of extensions) {
-      const documents = await this._findExtensionDocs(extension);
-      const versions = [
-        ...new Set(
-          documents
-            .map(doc => doc.version)
-            .sort()
-            .reverse()
-        ),
-      ];
-
-      if (!documents.length) {
-        log.warn(`No matching document for component: ${extension.name}`);
-      } else {
-        const supportedVersions = {};
-        versionMapping[extension.name] = supportedVersions;
-        const supportedFormats = new Set();
-        documents.forEach(doc => {
-          // IMPORTANT: first rewrite URLs
-          this._rewriteRelativePaths(extension.path, doc.document);
-          // then set versions to avoid re-writing the relative version toggle links
-          this._setMetadata(
-            doc.tagName || extension.name,
-            doc.document,
-            doc.version,
-            versions
-          );
-          doc.document.addExplicitAnchors();
-          if (doc.document.isCurrent) {
-            supportedVersions.current = doc.version;
-          }
-          doc.document.stripInlineTitle();
-          doc.document.formats.forEach(format => {
-            supportedFormats.add(format);
-            let versionsPerFormat = supportedVersions[format];
-            if (!versionsPerFormat) {
-              versionsPerFormat = [];
-              supportedVersions[format] = versionsPerFormat;
-            }
-            versionsPerFormat.push(doc.version);
-          });
-        });
-        // We have to iterate again to be able to set the supported formats for each component
-        documents.forEach(doc => {
-          doc.document.supportedFormats = Array.from(supportedFormats);
-          savedDocuments.push(
-            this._saveDocument(
-              doc.tagName || extension.name,
-              doc.document,
-              doc.version
-            )
-          );
-        });
-      }
-    }
-
-    const writeComponentMapping = writeFile(
-      FORMAT_COMPONENT_MAPPING,
-      JSON.stringify(versionMapping, null, 2),
-      'utf-8'
-    );
-    return Promise.all(savedDocuments.concat(writeComponentMapping));
+    await Promise.all(imports);
   }
 
-  /**
-   * Rewrites possible relatively linked documents to a fully specified
-   * GitHub URL
-   * @param {MarkdownDocument} document
-   */
-  _rewriteRelativePaths(extensionPath, document) {
-    const relativeBase =
-      'https://github.com/ampproject/amphtml' + `/blob/master/${extensionPath}`;
-    document.rewriteRelativePaths(relativeBase);
+  async _importBuiltIn(name) {
+    return this._createGrowDoc({
+      name: name,
+      version: DEFAULT_VERSION,
+      versions: [DEFAULT_VERSION],
+      githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
+    });
   }
 
-  /**
-   * Set metadata that is required for the teaser
-   * @param {MarkdownDocument} document
-   */
-  _setMetadata(extensionName, document, version, versions) {
-    // Ensure that the document has a TOC
-    document.toc = true;
-    document.importURL = document.path;
+  async _importExtension(extension) {
+    extension.files = await this._listExtensionFiles(extension);
+    const documents = this._getExtensionMetas(extension);
 
-    // Only try to add meta information (category, format teaser text)
-    // if the document hasn't defined them in their frontmatter already
-    if (!document.teaser.text) {
-      document.teaser = {'text': this._parseTeaserText(document)};
-    }
-    document.component = extensionName;
-    if (!document.category) {
-      document.category = categories[extensionName];
-    }
+    // amp-story has a few sub components which are documented in their
+    // own documents but share the same meta information
+    if (extension.name == AMP_STORY_TAG) {
+      for (const filePath of extension.files) {
+        if (
+          !filePath.includes(`${AMP_STORY_TAG}-`) ||
+          !filePath.endsWith(MARKDOWN_EXTENSION)
+        ) {
+          continue;
+        }
 
-    if (!document.formats) {
-      document.formats = formats[extensionName];
-    }
+        const fileName = path.basename(filePath);
+        const extensionName = fileName.replace(MARKDOWN_EXTENSION, '');
 
-    if (version) {
-      document.version = version;
+        // Verify the extension isn't available standalone
+        if (
+          this.extensions.find(extension => {
+            return extension.name == extensionName;
+          })
+        ) {
+          continue;
+        }
 
-      // only show multiple versions in the UI when there are multiple.
-      if (versions.length > 1) {
-        document.versions = versions;
-      }
-
-      // when this doc is the highest current version, use it as default entry point
-      if ((versions[0] || DEFAULT_VERSION) === version) {
-        document.isCurrent = true;
-        document.servingPath = `/documentation/components/${extensionName}.html`;
-      }
-    }
-  }
-
-  /**
-   * Tries to parse the first or second paragraph of the imported document
-   * to use as a teaser text
-   * @param  {MarkdownDocument} document
-   * @return {String}           The teaser text
-   */
-  _parseTeaserText(document) {
-    // Splice out an excerpt to show in the teaser ...
-    const FIRST_PARAGRAPH = /#.*$\n+(?!<table>)(.*)$/gm;
-    let excerpt = FIRST_PARAGRAPH.exec(document.contents);
-    if (excerpt == null || !excerpt[1].trim()) {
-      const SECOND_PARAGRAPH = /##.*$\n+((.|\n(?=\w))*)$/gm;
-      excerpt = SECOND_PARAGRAPH.exec(document.contents);
-    }
-
-    // If the extraction of an excerpt was successful write it to the teaser
-    if (excerpt) {
-      // Strip out all possible HTML tags
-      excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, '');
-      // Unwrap back ticks
-      excerpt = excerpt.replace(/`(.+)`/g, '$1');
-      // And unwrap possible markdown links
-      excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
-    }
-
-    return excerpt;
-  }
-
-  /**
-   * Builds the destination path from the document's file name and
-   * @param  {Document} document The component's reference
-   * @return {undefined}
-   */
-  _saveDocument(extensionName, document, version) {
-    // Set the documents title
-    document.title = extensionName;
-    const documentPath = `${DESTINATION_BASE_PATH}/${extensionName}-v${version}.md`;
-    return document.save(documentPath);
-  }
-
-  /**
-   * Parses tag names from ProtoAscii file.
-   * @param {*} extension
-   * @param {*} master
-   * @return {Promise} Array of tags
-   */
-  async _getTagsViaProtoAscii(extension, files, master) {
-    // there are cases where an extension doesn't have a protoascii
-    // (I'm looking at you, a4a!), so we'll need to double check
-    const fileName = 'validator-' + extension.name + '.protoascii';
-    const hasProtoAscii = files.map(file => file.name).includes(fileName);
-    if (!hasProtoAscii) {
-      return new Set([extension.name]);
-    }
-
-    const protoAscii = await this.githubImporter_.fetchFile(
-      extension.path + '/' + fileName,
-      DEFAULT_REPOSITORY,
-      master
-    );
-
-    const tags = new Set(
-      protoAscii
-        .match(/tag_name\: \"([^\"]+)\"/g)
-        .map(str => str.match(/\"([^\"]+)\"/)[1].toLowerCase())
-    );
-
-    tags.delete('script');
-    tags.delete('$reference-point');
-
-    // always add the extension name.
-    // It might not be a tag, but the documentation might have this name
-    tags.add(extension.name);
-
-    return tags;
-  }
-
-  /**
-   * Checks a specific extension/component for documents
-   * @return {Promise} [description]
-   */
-  async _findExtensionDocs(extension, proto) {
-    let documents = [];
-    let files = await this.githubImporter_.fetchJson(extension.path);
-    files = files[0];
-
-    const highestVersion =
-      files
-        .filter(file => !isNaN(parseFloat(file.name)))
-        .map(file => this.parseVersionString_(file.name))
-        .sort()
-        .reverse()[0] || DEFAULT_VERSION;
-
-    // some components are broken on current releases and need to be imported from master
-    const master = DOCS_TO_FETCH_FROM_MASTER.includes(extension.name);
-    if (master) {
-      log.warn(`Importing ${extension.name} from master`);
-    }
-
-    // some extensions create multiple tags/custom elements, and each could have a
-    // standalone doc in the folder, so find out which they are
-    const protoAscii =
-      proto || (await this._getTagsViaProtoAscii(extension, files, master));
-
-    // Find the Markdown document that is named like the extension
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      if (file.type === 'file') {
-        const tagName = file.name.replace('.md', '');
-        if (protoAscii.has(tagName)) {
-          // imported docs must correspond to a tag defined in the protoascii
-          const documentPath = file.path;
-          const versionMatch = file.path.match(/\/([\d\.]+)/);
-          documents.push({
-            document: await this.githubImporter_.fetchDocument(
-              documentPath,
-              DEFAULT_REPOSITORY,
-              master
+        documents.push(
+          Object.assign({}, documents[0], {
+            name: extensionName,
+            githubPath: documents[0].githubPath.replace(
+              `${AMP_STORY_TAG}${MARKDOWN_EXTENSION}`,
+              fileName
             ),
-            version: versionMatch
-              ? this.parseVersionString_(versionMatch[1])
-              : highestVersion,
-            tagName: tagName,
-          });
-        }
-      } else {
-        if (!isNaN(parseFloat(file.name))) {
-          // Look into the version folder for documents
-          file.name = extension.name;
-          documents = documents.concat(
-            await this._findExtensionDocs(file, protoAscii)
-          );
-        }
+          })
+        );
       }
     }
 
-    return documents;
+    return Promise.all(
+      documents.map(doc => {
+        return this._createGrowDoc(doc);
+      })
+    );
   }
 
-  parseVersionString_(string) {
-    return parseFloat(string).toFixed(1);
+  /**
+   * Fetches all paths inside an extension directory to be able to check
+   * file existance before downloading without doing an extra request
+   * @param  {Object}  extension
+   * @return {Promise}
+   */
+  async _listExtensionFiles(extension) {
+    const root = await this.githubImporter_.listDirectory(extension.path);
+    let tree = root.map(file => {
+      if (file.match(VERSION_PATTERN)) {
+        return this.githubImporter_.listDirectory(file);
+      }
+
+      return Promise.resolve([file]);
+    });
+
+    tree = await Promise.all(tree);
+    return tree.reduce((acc, val) => acc.concat(val), []);
+  }
+
+  _getExtensionMetas(extension) {
+    let spec;
+    for (const format of FORMATS) {
+      spec = this.validatorRules.getExtension(format, extension.name);
+      if (spec) {
+        break;
+      }
+    }
+    if (!spec) {
+      log.warn('No extension meta found for:', extension.name);
+      return [];
+    }
+
+    const tag =
+      this.validatorRules.raw.tags.find(tag => {
+        return tag.tagName.toLowerCase() == extension.name;
+      }) || {};
+    const script =
+      this.validatorRules.raw.tags.find(script => {
+        if (!script.extensionSpec || script.tagName != 'SCRIPT') {
+          return false;
+        }
+        return extension.name == script.extensionSpec.name;
+      }) || {};
+
+    spec.version = spec.version.filter(version => {
+      return version != LATEST_VERSION;
+    });
+    spec.version = spec.version.sort((version1, version2) => {
+      return parseFloat(version1) > parseFloat(version2);
+    });
+
+    const latestVersion = spec.version[spec.version.length - 1];
+    const extensionMetas = [];
+    for (const version of spec.version) {
+      extensionMetas.push({
+        name: extension.name,
+        spec: spec,
+        script: script,
+        tag: tag,
+        version: version,
+        versions: spec.version,
+        githubPath: this._getGitHubPath(extension, version, latestVersion),
+      });
+    }
+
+    return extensionMetas;
+  }
+
+  /**
+   * Tries to find the documentation markdown file for a certain component
+   * @param  {Object} extension
+   * @param  {String} version
+   * @param  {String} latestVersion
+   * @return {String|null}
+   */
+  _getGitHubPath(extension, version, latestVersion) {
+    let gitHubPath;
+    const fileName = `${extension.name}.md`;
+
+    // Best guess: if the version equals the latest version the documentation
+    // is located in the root of the extension directory
+    if (version == latestVersion) {
+      gitHubPath = path.join(extension.path, fileName);
+      if (extension.files.includes(gitHubPath)) {
+        return gitHubPath;
+      }
+    }
+
+    // The documentation for other versions is most likely located in
+    // its version directory
+    gitHubPath = path.join(extension.path, version, fileName);
+    if (extension.files.includes(gitHubPath)) {
+      return gitHubPath;
+    }
+
+    // If no file can be found at the first location it means the extension
+    // doesn't follow the pattern in which the latest version documented
+    // is in the root of the extension
+    log.warn(`No document found for ${extension.name} v${version}`);
+    return null;
+  }
+
+  /**
+   * The last step in the importing process: uses all data gathered before
+   * (GitHub path, extension name, version) to load the actual document.
+   * @param  {Object}  extension
+   * @return {Promise}
+   */
+  async _createGrowDoc(extension) {
+    if (!extension.githubPath) {
+      // It's safe to return here without informing the user as non existing
+      // documents had been reported before
+      return;
+    }
+
+    let fileContents;
+    try {
+      const fetchFromMaster = config.fetchFromMaster.includes(extension.name);
+      if (fetchFromMaster) {
+        log.warn(`Fetching ${extension.githubPath} from master`);
+      }
+
+      fileContents = await this.githubImporter_.fetchFile(
+        extension.githubPath,
+        DEFAULT_REPOSITORY,
+        fetchFromMaster
+      );
+    } catch (e) {
+      log.error(`Failed to fetch ${extension.githubPath}`, e);
+      return;
+    }
+
+    let fileName;
+    if (extension.version) {
+      fileName = `${extension.name}-v${extension.version}.md`;
+    } else {
+      fileName = `${extension.name}.md`;
+    }
+
+    const docPath = path.join(DESTINATION_BASE_PATH, fileName);
+
+    try {
+      const doc = new ComponentReferenceDocument(
+        docPath,
+        fileContents,
+        extension
+      );
+      await doc.save(docPath);
+    } catch (e) {
+      log.error('Could not create doc for: ', extension.name, e);
+    }
   }
 }
 

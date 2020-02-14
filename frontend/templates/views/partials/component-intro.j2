@@ -1,0 +1,59 @@
+{% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
+
+<div class="ap-o-component-intro">
+  {% if doc.teaser %}
+  <p class="ap-o-component-intro-description">{{ doc.teaser.text }}</p>
+  {% endif %}
+
+  {% if doc.scripts %}
+  <div class="ap-o-component-intro-box ap-o-component-intro-box-scripts">
+    <h4>Required Scripts</h4>
+    {% for script in doc.scripts %}
+    <div class="ap-o-component-intro-box-scripts-item">
+      <code>{{ script }}</code>
+      <amp-iframe
+          width="24"
+          height="24"
+          layout="fixed"
+          sandbox="allow-scripts"
+          src="{{ podspec.base_urls.platform }}/shared/copy-script#{{ script|urlencode }}">
+          <div placeholder>
+            {% do doc.icons.useIcon('/icons/clipboard.svg') %}
+            <svg class="ap-o-component-intro-box-scripts-item-copy-btn"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#clipboard"></use></svg>
+          </div>
+      </amp-iframe>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if doc.layouts %}
+  <div class="ap-o-component-intro-box ap-o-component-intro-box-layouts">
+    <h4>Supported Layouts</h4>
+    <div class="ap-o-component-intro-box-layouts-items">
+      {% for item in doc.layouts %}
+      <a href="/documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html#{{ item }}">
+        <span>{{ item }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% set examples = g.json('/shared/data/componentSamples.json') %}
+  {# Check if there are examples for the current component #}
+  {% if examples[doc.title] %}
+  <div class="ap-o-component-intro-references-container">
+    <div class="ap-o-component-intro-box ap-o-component-intro-box-reference">
+      <h4>Examples</h4>
+      <div class="ap-o-component-intro-box-examples">
+        {% for example in examples[doc.title] %}
+        [% if format in {{ example.formats|tojson }} %]
+        <a href="{{ example.url }}">{{ example.title }}</a>
+        [% endif %]
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>

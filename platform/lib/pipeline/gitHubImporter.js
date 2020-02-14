@@ -19,8 +19,6 @@ const path = require('path');
 const octonode = require('octonode');
 const {Signale} = require('signale');
 
-const Document = require('./markdownDocument');
-
 const LOCAL_AMPHTML = process.env.AMP_LOCAL_AMPHTML;
 const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
 const CLIENT_SECRET = process.env.AMP_DOC_SECRET;
@@ -68,6 +66,21 @@ class GitHubImporter {
   }
 
   /**
+   * Fetches all files contained in a directory flattened down to
+   * a simple array
+   * @param  {String} path Path to the file
+   * @param  {Boolean} master true if document should be fetched from master
+   * @return {Object} A object containing all information
+   * @return {Array}
+   */
+  async listDirectory(filePath, repo = DEFAULT_REPOSITORY, master = false) {
+    const data = await this.fetchJson(filePath, repo, master);
+    return data[0].map(file => {
+      return file.path;
+    });
+  }
+
+  /**
    * Downloads a file from Github and returns its contents.
    * @param  {String} path Path to the file
    * @param  {Boolean} master true if document should be fetched from master
@@ -82,28 +95,6 @@ class GitHubImporter {
     );
     const str = Buffer.from(data[0].content || data, 'base64').toString();
     return str;
-  }
-
-  /**
-   * Downloads a path/document from GitHub and returns its contents
-   * @param  {String} path Path to the file
-   * @param  {Boolean} master true if document should be fetched from master
-   * @return {Document} A document object containing all information
-   */
-  async fetchDocument(filePath, repo = DEFAULT_REPOSITORY, master = false) {
-    const data = await this.fetchContents_(
-      filePath,
-      repo,
-      master,
-      LOCAL_AMPHTML
-    );
-    if (data && data.content !== undefined && !data.content.length) {
-      this._log.info(`${filePath} is empty. Skipping ...`);
-      return '';
-    }
-
-    const buf = Buffer.from(data[0].content || data, 'base64').toString();
-    return new Document(filePath, buf);
   }
 
   async fetchContents_(
