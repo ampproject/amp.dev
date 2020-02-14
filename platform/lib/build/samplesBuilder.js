@@ -156,12 +156,14 @@ class SamplesBuilder {
       let stream = gulp.src([
         `${SAMPLE_SRC}/*/*.html`, `${SAMPLE_SRC}/*/*/*.html`], {'read': true});
 
-      stream = stream.pipe(once({file: false}));
+      // stream = stream.pipe(once({file: false}));
 
       const sampleBuilds = [];
-      stream = stream.pipe(through.obj((sample, encoding, callback) => {
+      stream.pipe(through.obj((sample, encoding, callback) => {
         sampleBuilds.push(this._buildSample(sample, callback, stream));
       }));
+
+      await Promise.all(sampleBuilds);
 
       stream = stream.pipe(gulp.dest((file) => {
         file.dirname = `${SAMPLE_SRC}/${this._getCategory(file)}`;
@@ -257,6 +259,7 @@ class SamplesBuilder {
       this._log.error(error);
     }
 
+    this._log.success(`Built sample ${sample.relative}!`);
     callback();
   }
 
@@ -453,12 +456,12 @@ class SamplesBuilder {
    */
   _getCategory(sample, ordered = false) {
     // Check if the category has already been computed
-    let category = this._cache.categories[sample.path];
+    let category = this._cache.categories[sample.realPath];
     if (!category) {
       category = sample.dirname.replace(`${SAMPLE_SRC}/`, '');
       category = category.split('/')[0];
 
-      this._cache.categories[sample.path] = category;
+      this._cache.categories[sample.realPath] = category;
     }
 
     // Check if the category should contain ordinal
