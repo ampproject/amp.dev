@@ -24,9 +24,16 @@ const {project} = require('@lib/utils');
  * @param args the arguments for grow in a string
  */
 function exec(args) {
-  return sh(['sh', '-c', `${project.paths.GROW_POD}/bin/grow ${args}`], {
-    workingDir: project.paths.GROW_POD,
-  });
+  return sh(
+    [
+      'sh',
+      '-c',
+      `${project.paths.GROW_POD}/bin/grow-${process.platform} ${args}`,
+    ],
+    {
+      workingDir: project.paths.GROW_POD,
+    }
+  );
 }
 
 module.exports = exec;
