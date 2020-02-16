@@ -13,17 +13,12 @@ cache:
 install:
 - npm ci
 before_install:
-- |
-  if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then
-    openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv -in .staging.key.json.enc -out .staging.key.json -d
-    gcloud auth activate-service-account --key-file=.staging.key.json
-  fi
+- openssl aes-256-cbc -K $encrypted_d4a09416a845_key -iv $encrypted_d4a09416a845_iv -in .staging.key.json.enc -out .staging.key.json -d
+- gcloud auth activate-service-account --key-file=.staging.key.json
 stages:
 - preparation
-- name: build
-  if: branch = future AND type != pull_request
-- name: deploy
-  if: branch = future AND type != pull_request
+- build
+- deploy
 jobs:
   include:
   - stage: preparation
@@ -34,12 +29,11 @@ jobs:
     - scripts/unbuffer.sh gulp buildComponentVersions
     - scripts/unbuffer.sh npm test
     script:
-    - if [ $TRAVIS_BRANCH == "future" ] && [ $TRAVIS_PULL_REQUEST == "false" ]; then scripts/unbuffer.sh gulp buildPrepare; fi
+    - scripts/unbuffer.sh gulp buildPrepare
   - stage: build
     env: APP_ENV=staging
     install: &1
     - npm ci
-    - pip install grow==0.7.4 --user
     name: Build Pages (EN)
     script: scripts/unbuffer.sh gulp buildPages --locales en
   - stage: build
