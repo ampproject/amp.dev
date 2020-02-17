@@ -182,13 +182,33 @@
     "help": "Language select",
     "options": [
 			{
-        "id": "en",
-        "label": "en-us",
+        "id": "en-us",
+        "label": "English (US)",
         "default": false
       },
       {
         "id": "it",
-        "label": "it",
+        "label": "Italian",
+        "default": false
+      },
+      {
+        "id": "id",
+        "label": "id",
+        "default": false
+      },
+      {
+        "id": "id",
+        "label": "id",
+        "default": false
+      },
+      {
+        "id": "id",
+        "label": "id",
+        "default": false
+      },
+      {
+        "id": "id",
+        "label": "id",
         "default": false
       },
       {

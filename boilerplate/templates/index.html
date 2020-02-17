@@ -257,12 +257,8 @@
       {{#select}}
       <select class="select" name="{{categoryId}}" on="change:AMP.setState({
           config: {
-            {{#options}}
-            {{id}}: {
-              selected: event.value
-            },
-            {{/options}}
-            changed: true
+            changed: true,
+            lang: event.value
           }
         })">
         {{#options}}
