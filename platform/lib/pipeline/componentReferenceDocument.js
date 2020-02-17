@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 const {join, dirname} = require('path');
-const MarkdownDocument = require('./markdownDocument.js');
+const {Signale} = require('signale');
+const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
+const {FORMAT_WEBSITES} = require('@lib/amp/formatHelper.js');
 
 const DEFAULT_VERSION = 0.1;
 const EXTENSION_TYPE_ELEMENT = 'element';
@@ -22,6 +24,8 @@ const EXTENSION_TYPE_TEMPLATE = 'template';
 const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/master/';
 
 const INTRO_TABLE_PATTERN = /^((?:[^](?!##))*)<table(\s[^>]*)?>[^]*?<\/table>/m;
+
+const LOG = new Signale({'scope': 'Component Reference Documents'});
 
 class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {
@@ -34,6 +38,16 @@ class ComponentReferenceDocument extends MarkdownDocument {
 
     // Force enable TOC for all component docs
     this.toc = true;
+
+    // Verify the component is listed for a format and if it isn't force
+    // enable it for the websites runtime
+    if (!this.formats.length) {
+      this.formats = [FORMAT_WEBSITES];
+      LOG.warn(
+        `${this.title} doesn't specify any formats in its`,
+        `frontmatter and is force-listed for websites.`
+      );
+    }
 
     this.rewriteRelativePaths(
       join(RELATIVE_PATH_BASE, dirname(extension.githubPath))
