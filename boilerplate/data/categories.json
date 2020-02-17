@@ -186,34 +186,54 @@
         "label": "English (US)",
         "default": false
       },
+			{
+				"id": "en-uk",
+				"label": "English (UK)",
+				"default": false
+			},
       {
-        "id": "it",
-        "label": "Italian",
+        "id": "ar",
+        "label": "Arabic",
+        "default": false
+      },
+			{
+				"id": "it",
+				"label": "Italian",
+				"default": false
+			},
+      {
+        "id": "id",
+        "label": "Indonesian",
         "default": false
       },
       {
-        "id": "id",
-        "label": "id",
+        "id": "ja",
+        "label": "Japanese",
         "default": false
       },
       {
-        "id": "id",
-        "label": "id",
+        "id": "ko",
+        "label": "Korean",
         "default": false
       },
       {
-        "id": "id",
-        "label": "id",
+        "id": "pt",
+        "label": "Portuguese",
         "default": false
       },
       {
-        "id": "id",
-        "label": "id",
+        "id": "ru",
+        "label": "Russian",
         "default": false
       },
       {
-        "id": "id",
-        "label": "id",
+        "id": "tr",
+        "label": "Turkish",
+        "default": false
+      },
+      {
+        "id": "zh",
+        "label": "Chinese",
         "default": false
       }
     ]
