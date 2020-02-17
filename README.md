@@ -119,9 +119,6 @@ You can contribute your changes back to the main repository by [creating a pull 
 #### Documents
 Made changes to a lot of Grow documents at once and not quite sure if all references are still valid? You can run `npm run lint:grow` to pick up broken ones.
 
-#### Samples
-Building the samples creates a lot of individual files per sample. In order to still have a quick startup time for development, only changed samples are rebuilt. To freshly build *all* samples you can run `npx gulp develop --clean-samples`.
-
 ### Run a test build
 To run a local test build that does all the minifying and vends the static pages instead of
 proxying them through to Grow you can run:
