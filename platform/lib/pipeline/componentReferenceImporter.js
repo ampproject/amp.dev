@@ -208,14 +208,18 @@ class ComponentReferenceImporter {
         return extension.name == script.extensionSpec.name;
       }) || {};
 
-    spec.version = spec.version.filter(version => {
-      return version != LATEST_VERSION;
-    });
+    spec.version = spec.version.filter(version => version != LATEST_VERSION);
     spec.version = spec.version.sort((version1, version2) => {
       return parseFloat(version1) > parseFloat(version2);
     });
 
     const latestVersion = spec.version[spec.version.length - 1];
+
+    // Skip versions for which there is no dedicated doc
+    spec.version = spec.version.filter(version => {
+      return !!this._getGitHubPath(extension, version, latestVersion);
+    });
+
     const extensionMetas = [];
     for (const version of spec.version) {
       extensionMetas.push({
