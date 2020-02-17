@@ -20,6 +20,7 @@ const LATEST_VERSION = 'latest';
 const VERSION_PATTERN = /\d.\d/;
 
 const {GitHubImporter, DEFAULT_REPOSITORY} = require('./gitHubImporter');
+const {BUILT_IN_COMPONENTS} = require('@lib/common/AmpConstants.js');
 const path = require('path');
 const del = require('del');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
@@ -40,8 +41,6 @@ const log = new Signale({
 const DESTINATION_BASE_PATH =
   __dirname +
   '/../../../pages/content/amp-dev/documentation/components/reference';
-// Names of the built-in components that need to be fetched from ...
-const BUILT_INS = ['amp-img', 'amp-pixel', 'amp-layout'];
 
 // Formats
 const FORMATS = ['AMP', 'AMP4ADS', 'AMP4EMAIL'];
@@ -102,7 +101,7 @@ class ComponentReferenceImporter {
     }
 
     // Add built-in components to list to fetch them all in one go
-    for (const builtIn of BUILT_INS) {
+    for (const builtIn of BUILT_IN_COMPONENTS) {
       imports.push(this._importBuiltIn(builtIn));
     }
 

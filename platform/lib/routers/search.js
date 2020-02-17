@@ -25,7 +25,7 @@ const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const URL = require('url').URL;
 
 const {
-  BUILD_IN_COMPONENTS,
+  BUILT_IN_COMPONENTS,
   IMPORTANT_INCLUDED_ELEMENTS,
 } = require('@lib/common/AmpConstants.js');
 
@@ -64,7 +64,7 @@ const HIGHLIGHTS_FOLDER_PATH = path.join(
 function buildAutosuggestComponentResult() {
   const componentVersions = require(COMPONENT_VERSIONS_PATH);
   const components = Object.keys(componentVersions).concat(
-    BUILD_IN_COMPONENTS,
+    BUILT_IN_COMPONENTS,
     IMPORTANT_INCLUDED_ELEMENTS
   );
   components.sort();
