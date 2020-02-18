@@ -1,9 +1,14 @@
 ---
 $title: AMP for Email Supported Components
-toc: true
-$order: 3
+order: 3
 formats:
   - email
+teaser:
+  text: >-
+    The following is the list of AMP components that are currently supported in
+    AMP email messages. The components are grouped into the following
+    categories:
+toc: true
 ---
 
 <!--

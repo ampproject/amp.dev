@@ -1,9 +1,13 @@
 ---
 $title: AMP for Ads specification
-toc: true
-$order: 3
+order: 3
 formats:
   - ads
+teaser:
+  text: >-
+    _If you'd like to propose changes to the standard, please comment on the
+    [Intent
+toc: true
 ---
 
 <!--

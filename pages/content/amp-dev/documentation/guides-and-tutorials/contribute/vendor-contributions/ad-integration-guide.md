@@ -1,9 +1,13 @@
 ---
 $title: Integrate your ad technologies into AMP
-toc: true
-$order: 3
+order: 3
 formats:
   - ads
+teaser:
+  text: >-
+    If you are an ad technology provider looking to integrate with AMP HTML,
+    please see the guidelines below.
+toc: true
 ---
 
 <!--

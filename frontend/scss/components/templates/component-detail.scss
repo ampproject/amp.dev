@@ -52,25 +52,28 @@ body {
 
   .#{utility('versions')} {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     background: color('white');
     border-radius: 3px;
     border: 2px solid #d5d9de;
 
     &-toggle {
-      padding: .1em .25em;
       border: 0;
+      padding: 0 32px 0 8px;
       background: color('white');
       font-family: inherit;
       font-size: inherit;
       font-weight: inherit;
-
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
     }
+
     &:after {
       content: '';
       position: absolute;
-      top: 8px;
-      right: 4px;
+      right: 8px;
       width: 16px;
       height: 35px;
       background: color('white');
