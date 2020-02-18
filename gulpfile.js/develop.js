@@ -61,9 +61,7 @@ async function run() {
 
   config.configureGrow();
   await grow(`run --port ${config.hosts.pages.port}`).catch(() => {
-    signale.fatal(
-      'Grow had an error starting up. See log above for details.'
-    );
+    signale.fatal('Grow had an error starting up. See log above for details.');
     process.exit(1);
   });
 
