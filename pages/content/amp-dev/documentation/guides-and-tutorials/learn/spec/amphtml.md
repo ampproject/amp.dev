@@ -1,8 +1,13 @@
 ---
 $title: AMP HTML Specification
-$order: 3
+order: 3
 formats:
   - websites
+teaser:
+  text: >-
+    AMP HTML is a subset of HTML for authoring content pages such as news
+    articles in a way that guarantees certain baseline performance
+    characteristics.
 ---
 
 <!--
@@ -211,7 +216,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
   <tr>
     <td width="30%">script</td>
-    <td>Prohibited unless the type is <code>application/ld+json</code> or <code>text/plain</code>. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components.</td>
+    <td>Prohibited unless the type is <code>application/ld+json</code>, <code>application/json</code>, or <code>text/plain</code>. (Other non-executable values may be added as needed.) Exception is the mandatory script tag to load the AMP runtime and the script tags to load extended components.</td>
   </tr>
   <tr>
     <td width="30%">noscript</td>
@@ -272,7 +277,7 @@ HTML tags can be used unchanged in AMP HTML. Certain tags have equivalent custom
   </tr>
   <tr>
     <td width="30%">input elements</td>
-    <td>Mostly allowed with <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">exception of some input types</a>, namely, <code>&lt;input[type=image]&gt;</code>, <code>&lt;input[type=button]&gt;</code>, <code>&lt;input[type=password]&gt;</code>, <code>&lt;input[type=file]&gt;</code> are invalid. Related tags are also allowed: <code>&lt;fieldset&gt;</code>, <code>&lt;label&gt;</code></td>
+    <td>Mostly allowed with <a href="https://amp.dev/documentation/components/amp-form#inputs-and-fields">exception of some input types</a>, namely, <code>&lt;input type=button&gt;</code>, <code>&lt;button type=image&gt;</code> are invalid. Related tags are also allowed: <code>&lt;fieldset&gt;</code>, <code>&lt;label&gt;</code></td>
   </tr>
   <tr>
     <td width="30%">button</td>

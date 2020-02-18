@@ -1,8 +1,10 @@
 ---
 $title: Manage non-authenticated user state with AMP
-$order: 2
+order: 2
 formats:
   - websites
+teaser:
+  text: '**Table of contents**'
 ---
 
 <!--

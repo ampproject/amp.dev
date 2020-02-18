@@ -1,9 +1,13 @@
 ---
 $title: AMP for Email Supported HTML
-toc: true
-$order: 4
+order: 4
 formats:
   - email
+teaser:
+  text: >-
+    Note: This list is non-normative and is for reference purposes only. The AMP
+    Validator rules are authoritative
+toc: true
 ---
 
 <!--

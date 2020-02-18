@@ -187,7 +187,7 @@ function buildBoilerplate() {
  * @return {Promise}
  */
 function buildSamples() {
-  return samplesBuilder.build(true);
+  return samplesBuilder.build();
 }
 
 /**

@@ -1,11 +1,15 @@
 ---
 $title: Actions and events
-$order: 7
+order: 7
 formats:
   - websites
   - email
   - stories
   - ads
+teaser:
+  text: >-
+    The on attribute is used to install event handlers on elements. The events
+    that are supported depend on the element.
 ---
 
 <!--

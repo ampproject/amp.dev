@@ -1,12 +1,14 @@
 ---
 $title: Governance
-toc: true
-$order: 2
+order: 2
 formats:
   - websites
   - email
   - stories
   - ads
+teaser:
+  text: '## Glossary'
+toc: true
 ---
 
 <!--

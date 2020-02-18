@@ -1,9 +1,11 @@
 ---
 $title: AMP Boilerplate Code
-$order: 3
+order: 3
 formats:
   - websites
   - stories
+teaser:
+  text: '## head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]'
 ---
 
 <!--

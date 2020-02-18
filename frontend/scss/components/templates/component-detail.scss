@@ -51,23 +51,37 @@ body {
   }
 
   .#{utility('versions')} {
-    display: inline-block;
-    background: #fff;
-    padding: 0.1em 0.25em;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background: color('white');
     border-radius: 3px;
     border: 2px solid #d5d9de;
-    a {
-      margin-left: 0.1em;
-      &:first-child {
-        margin-left: 0;
-      }
+
+    &-toggle {
+      border: 0;
+      padding: 0 32px 0 8px;
+      background: color('white');
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
     }
-    a:not([href]) {
-      color: #20202A;
-      border-bottom: 2px solid #20212a;
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 8px;
+      width: 16px;
+      height: 35px;
+      background: color('white');
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%2320202A'%3E%3Cpath d='M59.863 17.14l4.137 5.488-32 24.232-32-24.232 4.137-5.488 27.863 21.108z'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
-
 }
 
 @media (min-width: 768px){

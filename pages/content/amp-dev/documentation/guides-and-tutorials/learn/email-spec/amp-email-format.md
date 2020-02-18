@@ -1,9 +1,11 @@
 ---
 $title: AMP for Email Format
-toc: true
-$order: 1
+order: 1
 formats:
   - email
+teaser:
+  text: '## Required markup'
+toc: true
 ---
 
 <!--

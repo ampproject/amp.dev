@@ -1,9 +1,13 @@
 ---
 $title: AMP for Email Supported CSS
-toc: true
-$order: 5
+order: 5
 formats:
   - email
+teaser:
+  text: >-
+    This document outlines the CSS features currently supported inside AMP
+    emails.
+toc: true
 ---
 
 <!--

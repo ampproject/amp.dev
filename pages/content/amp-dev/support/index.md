@@ -1,11 +1,13 @@
 ---
 $title: Help
-$order: 1
+order: 1
 formats:
   - websites
   - email
   - stories
   - ads
+teaser:
+  text: 'There are many ways to get help for questions and issues related to AMP:'
 ---
 
 <!--

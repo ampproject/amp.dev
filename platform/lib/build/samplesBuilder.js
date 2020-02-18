@@ -68,7 +68,8 @@ const API_HOST = 'https://amp-by-example-api.appspot.com';
 const BACKEND_HOST = 'https://ampbyexample.com';
 // The path where the playground's example sitemap is written
 const SITEMAP_DEST = utils.project.absolute('examples/static/samples/samples.json');
-
+// The path where the playground's example sitemap is written
+const COMPONENT_SAMPLES_DEST = utils.project.absolute('pages/shared/data/componentSamples.json');
 
 class SamplesBuilder {
   constructor() {
@@ -79,8 +80,60 @@ class SamplesBuilder {
 
     // Used to cache various properties to save computing time
     this._cache = {};
+    this._cache.categories = {};
     // Holds all relevant sample informations after samplew have been parsed
     this._sitemap = {};
+    // Used to gather samples categorized by their used components
+    this._componentSamples = {};
+  }
+
+  /**
+   * Executes all async operations that need to be done
+   * before the samples builder is operational
+   * @return {Promise<void>} Resolves when bootstrapping is done
+   */
+  async _bootstrap() {
+    if (this._bootstrapped) {
+      return;
+    }
+
+    this._log.info('Bootstrapping ...');
+    await Promise.all([
+      readFileAsync(STORY_EMBED_SNIPPET).then((template) => {
+        this._cache[STORY_EMBED_SNIPPET] = template.toString();
+        this._log.success('Loaded story embed template.');
+      }),
+
+      readFileAsync(ADS_EMBED_TEMPLATE).then((template) => {
+        this._cache[ADS_EMBED_TEMPLATE] = template.toString();
+        this._log.success('Loaded ads embed template.');
+      }),
+
+      formatTransform.getInstance().then((instance) => {
+        this._formatTransform = instance;
+        this._log.success('Created format transformer instance.');
+      }).catch((e) => {
+        this._log.warn('Could not create format transformer instance. Samples will only be build for their original format.');
+      }),
+
+      del([
+        `${DOCUMENTATION_DEST}/**/*.html`,
+        `${DOCUMENTATION_DEST}/**/*.json`,
+        `${PREVIEW_DEST}/**/*.html`,
+
+        SOURCE_DEST,
+        EMBED_DEST,
+
+        SITEMAP_DEST,
+        COMPONENT_SAMPLES_DEST,
+      ], {
+        'force': true,
+      }).then(() => {
+        this._log.success('Cleaned destination paths.');
+      })
+    ]);
+
+    this._bootstrapped = true;
   }
 
   /**
@@ -88,115 +141,29 @@ class SamplesBuilder {
    * @param {boolean} watch  Watch for changes
    * @return {Promise<void>} Resolves when build is done
    */
-  async build(watch) {
-    this._formatTransform = await formatTransform.getInstance();
+  async build(incrementalBuild = false) {
+    await this._bootstrap();
 
-    // Configure cache
-    this._cache[STORY_EMBED_SNIPPET] = await readFileAsync(STORY_EMBED_SNIPPET);
-    this._cache[ADS_EMBED_TEMPLATE] = (await readFileAsync(ADS_EMBED_TEMPLATE)).toString();
-    this._cache.categories = {};
-
-    // If samples should be rebuild (due to architectural changes for example)
-    // then you should be able to clean the sample build destinations
-    if (!watch && config.options['clean-samples'] === true) {
-      this._log.info('Cleaning sample destinations for rebuild ...');
-      del.sync([
-        // Clean old structure with multiple collections
-        utils.project.absolute(`/pages/${DOCUMENTATION_POD_PATH}/../**/*`),
-        '!' + utils.project.absolute(`/pages/${DOCUMENTATION_POD_PATH}/../`),
-        '!' + utils.project.absolute(`/pages/${DOCUMENTATION_POD_PATH}/../_blueprint.yaml`),
-        '!' + utils.project.absolute(`/pages/${DOCUMENTATION_POD_PATH}/../index.html`),
-
-        `${DOCUMENTATION_DEST}/**/*`,
-        `!${DOCUMENTATION_DEST}`,
-        `!${DOCUMENTATION_DEST}/_blueprint.yaml`,
-
-        `${PREVIEW_DEST}/**/*`,
-        `!${PREVIEW_DEST}`,
-        `!${PREVIEW_DEST}/_blueprint.yaml`,
-
-        `${SOURCE_DEST}`,
-        `${EMBED_DEST}`,
-        CACHE_DEST,
-      ], {
-        'force': true,
-      });
-    }
-
-    if (!watch && config.isDevMode() && module.parent) {
+    if (config.isDevMode() && module.parent && !incrementalBuild) {
       this._watch();
     }
 
-    this._log.start('Starting to build samples ...');
+    if (!incrementalBuild) {
+      this._log.start('Building samples ...');
+    }
 
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       let stream = gulp.src([
         `${SAMPLE_SRC}/*/*.html`, `${SAMPLE_SRC}/*/*/*.html`], {'read': true});
 
-      // Only build samples changed since last run and if it's not a fresh build
-      if ((config.options['clean-samples'] && watch) || !config.options['clean-samples']) {
-        stream = stream.pipe(once({
-          'context': false,
-          'file': CACHE_DEST,
-        }));
-      }
+      stream = stream.pipe(once({file: false}));
 
-      stream = stream.pipe(through.obj(async (sample, encoding, callback) => {
-        try {
-          this._log.await(`Building sample ${sample.relative} ...`);
-          const { document } = await this._parseSample(sample);
-
-          const isWebSample = document.formats().includes(FORMAT_WEBSITES);
-          const shouldTransform = isWebSample
-              && !document.metadata.disableTransform
-              && !document.metadata.hideCode
-              && !document.metadata.disablePlayground
-              && !document.metadata.hidePreview;
-
-          const samples = [];
-          if (!shouldTransform) {
-            samples.push(sample);
-          } else {
-            for (const format of this._formatTransform.getSupportedFormats()) {
-              const transformed = this._transformSample(sample, format);
-              if (transformed) {
-                samples.push(transformed);
-              }
-            }
-          }
-          await Promise.all(samples.map(async (sample) => {
-            const parsedSample = await this._parseSample(sample);
-
-            // Skip samples that are drafts for all envs except development
-            if (parsedSample.document.metadata.draft && config.environment !== 'development') {
-              return;
-            }
-
-            if (!parsedSample.document.metadata.disablePlayground &&
-                !parsedSample.document.metadata.draft) {
-              this._addToSitemap(sample, parsedSample);
-            }
-
-            // Build various documents and sources that are needed for Grow
-            // to successfully render the example and for the playground
-            const files = [
-              ...this._createDocumentation(sample, parsedSample),
-              ...this._buildRawSources(sample, parsedSample),
-              ...this._createPreview(sample, parsedSample),
-              ...this._renderEmbed(sample, parsedSample),
-            ];
-
-            // Since stream.push doesn't allow to push multiple files at once
-            /* eslint-disable guard-for-in */
-            for (const file of files) {
-              stream.push(file);
-            }
-          }));
-        } catch (error) {
-          this._log.error(error);
-        }
-        callback();
+      const sampleBuilds = [];
+      stream = stream.pipe(through.obj((sample, encoding, callback) => {
+        sampleBuilds.push(this._buildSample(sample, callback, stream));
       }));
+
+      await Promise.all(sampleBuilds);
 
       stream.pipe(gulp.dest((file) => {
         file.dirname = `${SAMPLE_SRC}/${this._getCategory(file)}`;
@@ -221,11 +188,79 @@ class SamplesBuilder {
       });
 
       stream.on('end', async () => {
-        this._log.success('Built samples.');
-        await this._generateSitemap();
+        if (!incrementalBuild) {
+          // Only write meta files on first build as they rely on all
+          // samples going through the pipeline
+          await this._writeMetaFiles();
+          this._log.complete('Built samples.');
+        } else {
+          this._log.success('Built changed samples.');
+        }
+
         resolve();
       });
     });
+  }
+
+  async _buildSample(sample, callback, stream) {
+    try {
+      this._log.await(`Building sample ${sample.relative} ...`);
+      const { document } = await this._parseSample(sample);
+
+      const isWebSample = document.formats().includes(FORMAT_WEBSITES);
+      // Only samples that have been originally written for AMP for websites
+      // can be transformed and only if validator.json could be fetched
+      const shouldTransform = this._formatTransform && isWebSample
+          && !document.metadata.disableTransform
+          && !document.metadata.hideCode
+          && !document.metadata.disablePlayground
+          && !document.metadata.hidePreview;
+
+      const samples = [];
+      if (!shouldTransform) {
+        samples.push(sample);
+      } else {
+        for (const format of this._formatTransform.getSupportedFormats()) {
+          const transformed = this._transformSample(sample, format);
+          if (transformed) {
+            samples.push(transformed);
+          }
+        }
+      }
+      await Promise.all(samples.map(async (sample) => {
+        const parsedSample = await this._parseSample(sample);
+
+        // Skip samples that are drafts for all envs except development
+        if (parsedSample.document.metadata.draft && config.environment !== 'development') {
+          return;
+        }
+
+        if (!parsedSample.document.metadata.disablePlayground &&
+            !parsedSample.document.metadata.draft) {
+          this._addToSitemap(sample, parsedSample);
+        }
+
+        // Build various documents and sources that are needed for Grow
+        // to successfully render the example and for the playground
+        const files = [
+          ...this._createDocumentation(sample, parsedSample),
+          ...this._buildRawSources(sample, parsedSample),
+          ...this._createPreview(sample, parsedSample),
+          ...this._renderEmbed(sample, parsedSample),
+        ];
+
+        // Since stream.push doesn't allow to push multiple files at once
+        /* eslint-disable guard-for-in */
+        for (const file of files) {
+          stream.push(file);
+        }
+      }));
+    } catch (error) {
+      this._log.error(error);
+    }
+
+    this._log.success(`Built sample ${sample.relative}!`);
+    callback();
   }
 
   /**
@@ -363,11 +398,11 @@ class SamplesBuilder {
   }
 
   /**
-   * Takes what has been saved to this._sitemap and adds a sitemap.json to
-   * the gulp stream that is usable by the playground
+   * Takes what has been saved to this._sitemap and this._componentSamples
+   * for use in playground and component documentation
    * @type {Vinyl}
    */
-  async _generateSitemap() {
+  async _writeMetaFiles() {
     for (const [format, categories] of Object.entries(this._sitemap)) {
       this._sitemap[format] = {
         'title': format,
@@ -383,16 +418,34 @@ class SamplesBuilder {
       }
     }
 
+    // Sort component samples to always have the specific component
+    // sample at first
+    for (const component of Object.keys(this._componentSamples)) {
+      this._componentSamples[component] = Object.values(this._componentSamples[component]);
+
+      this._componentSamples[component].sort((sample1, sample2) => {
+        return sample1.title.startsWith(component) ? 1 : 0;
+      }).reverse();
+    }
+
     try {
-      await writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap), {
-        flag: 'wx+',
-      });
-      this._log.success('Wrote sample sitemap.');
-    } catch (_) {
-      this._log.info('Samples sitemap already exists');
+      await Promise.all([
+        writeFileAsync(SITEMAP_DEST, JSON.stringify(this._sitemap), {
+          flag: 'w+',
+        }).then(() => {
+          this._log.success('Wrote sample sitemap.');
+        }),
+
+        writeFileAsync(COMPONENT_SAMPLES_DEST, JSON.stringify(this._componentSamples), {
+          flag: 'w+',
+        }).then(() => {
+          this._log.success('Wrote component samples map.');
+        })
+      ]);
+    } catch (e) {
+      this._log.error('Writing samples builder meta files failed', e);
     }
   }
-
 
   /**
    * Parses the category from a sample path which is the first level
@@ -403,12 +456,12 @@ class SamplesBuilder {
    */
   _getCategory(sample, ordered = false) {
     // Check if the category has already been computed
-    let category = this._cache.categories[sample.path];
+    let category = this._cache.categories[sample.realPath];
     if (!category) {
       category = sample.dirname.replace(`${SAMPLE_SRC}/`, '');
       category = category.split('/')[0];
 
-      this._cache.categories[sample.path] = category;
+      this._cache.categories[sample.realPath] = category;
     }
 
     // Check if the category should contain ordinal
@@ -519,7 +572,7 @@ class SamplesBuilder {
       // Add example manually as constructors may not be quoted
       `example: !g.json /${DOCUMENTATION_POD_PATH}/${manual.stem}.json`,
       // ... and some additional information that is used by the example teaser
-      this._getTeaserData(parsedSample),
+      this._getTeaserData(sample, parsedSample),
       '---',
     ].join('\n'));
     manual.extname = '.html';
@@ -543,10 +596,10 @@ class SamplesBuilder {
    * @param  {Object} parsedSample
    * @return {string}
    */
-  _getTeaserData(parsedSample) {
+  _getTeaserData(sample, parsedSample) {
     const teaserData = {};
     teaserData.formats = parsedSample.document.formats();
-    teaserData.used_components = this._getUsedComponents(parsedSample);
+    teaserData.used_components = this._getUsedComponents(sample, parsedSample);
 
     if (parsedSample.document.metadata.teaserImage) {
       teaserData.teaser = {'image': {
@@ -562,7 +615,7 @@ class SamplesBuilder {
    * @param  {Object} parsedSample
    * @return {Object}
    */
-  _getUsedComponents(parsedSample) {
+  _getUsedComponents(sample, parsedSample) {
     // Dirty RegEx to quickly parse component names from head
     const COMPONENT_PATTERN = /<script[^>]*?custom-(?<type>[a-z]+)="(?<name>[^"]+)"[^>]*src="[^"]+-(?<version>\d+(\.\d+)*)\.js"[^>]*>\s*<\/script>/g;
 
@@ -573,6 +626,26 @@ class SamplesBuilder {
         type,
       }
     });
+
+    // Store the sample by it's used component to show all samples for a specific
+    // component on its documentation page
+    for (const [name, info] of Object.entries(usedComponents)) {
+      if (!this._componentSamples[name]) {
+        this._componentSamples[name] = {};
+      }
+
+      const title = parsedSample.document.title;
+      const formats = parsedSample.document.formats();
+      if (!this._componentSamples[name][title]) {
+        this._componentSamples[name][title] = {
+          title: title,
+          url: this._getDocumentationRoute(sample),
+          formats: formats
+        }
+      } else {
+        this._componentSamples[name][title].formats.concat(formats);
+      }
+    }
 
     return usedComponents;
   }
