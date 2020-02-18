@@ -98,4 +98,5 @@ function isString(obj) {
 
 module.exports = {
   sh,
+  extractCommandFragments,
 };
