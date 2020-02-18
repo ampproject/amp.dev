@@ -180,88 +180,88 @@
       <p>Select the features you need on your AMP page.</p>
       {{#categories}}
       <div class="category" [hidden]="{{#formats}} config.format != '{{.}}' && {{/formats}} true">
-      <h4>{{label}} {{#help}}<span on="tap:{{id}}-help.toggleVisibility" tabindex="0" role="button" aria-label="Show help" class="help-toggle">?</span>{{/help}}
-      {{#help}}
-      <div id="{{id}}-help" class="help" hidden>{{{.}}}</div>
-      {{/help}}
-      </h4>
-      {{#unless select}}
-      {{#options}}
-      <div class="option">
-        {{#checkbox}}
-        <input id="{{id}}" type="checkbox" on="change:{{id}}-values.toggleVisibility,AMP.setState({
-          config: {
-            {{id}}: {
-              selected: event.checked
-            },
-            {{#component}}
-            {{.}}: config.{{.}} || event.checked,
-            {{/component}}
-            changed: true
-          }
-        })">
-        {{/checkbox}}
-        {{#radio}}
-        <input id="{{id}}" type="radio" name="{{categoryId}}" on="change:{{id}}-values.toggleVisibility,AMP.setState({
-          config: {
-            {{#options}}
+        <h4>
+          {{label}}
+          {{#help}}<span on="tap:{{id}}-help.toggleVisibility" tabindex="0" role="button" aria-label="Show help" class="help-toggle">?</span>{{/help}}
+          {{#help}}<div id="{{id}}-help" class="help" hidden>{{{.}}}</div>{{/help}}
+        </h4>
+        {{#unless select}}
+        {{#options}}
+        <div class="option">
+          {{#checkbox}}
+          <input id="{{id}}" type="checkbox" on="change:{{id}}-values.toggleVisibility,AMP.setState({
+            config: {
               {{id}}: {
-                selected: false
+                selected: event.checked
               },
               {{#component}}
               {{.}}: config.{{.}} || event.checked,
               {{/component}}
-            {{/options}}
-              {{id}}: {
-                selected: event.checked
-              },
               changed: true
-          }
-        })">
-        {{/radio}}
-        <label for="{{id}}">{{{label}}}</label>
-        {{#description}}
-        <span on="tap:{{id}}-help.toggleVisibility" tabindex="0" role="button" aria-label="Show help" class="help-toggle">?</span>
-        <div id="{{id}}-help" class="help" hidden>{{{.}}}</div>
-        {{/description}}
-        <div id="{{id}}-values" class="values" hidden>
-          {{#values}}
-          <div class="value">
-            <label for="{{key}}">{{{label}}}</label>
-            {{#valueCheckbox}}
-            <input id="{{key}}" value="{{value}}" type="checkbox" on="input-debounced:AMP.setState({
-              config: {
+            }
+          })">
+          {{/checkbox}}
+          {{#radio}}
+          <input id="{{id}}" type="radio" name="{{categoryId}}" on="change:{{id}}-values.toggleVisibility,AMP.setState({
+            config: {
+              {{#options}}
                 {{id}}: {
-                  {{key}}: event.checked
-                }
-              }
-            })">
-            {{/valueCheckbox}}
-            {{^valueCheckbox}}
-            <input id="{{key}}" value="{{value}}" type="text" on="input-debounced:AMP.setState({
-              config: {
+                  selected: false
+                },
+                {{#component}}
+                {{.}}: config.{{.}} || event.checked,
+                {{/component}}
+              {{/options}}
                 {{id}}: {
-                  {{key}}: event.value
+                  selected: event.checked
+                },
+                changed: true
+            }
+          })">
+          {{/radio}}
+          <label for="{{id}}">{{{label}}}</label>
+          {{#description}}
+          <span on="tap:{{id}}-help.toggleVisibility" tabindex="0" role="button" aria-label="Show help" class="help-toggle">?</span>
+          <div id="{{id}}-help" class="help" hidden>{{{.}}}</div>
+          {{/description}}
+          <div id="{{id}}-values" class="values" hidden>
+            {{#values}}
+            <div class="value">
+              <label for="{{key}}">{{{label}}}</label>
+              {{#valueCheckbox}}
+              <input id="{{key}}" value="{{value}}" type="checkbox" on="input-debounced:AMP.setState({
+                config: {
+                  {{id}}: {
+                    {{key}}: event.checked
+                  }
                 }
-              }
-            })">
-            {{/valueCheckbox}}
+              })">
+              {{/valueCheckbox}}
+              {{^valueCheckbox}}
+              <input id="{{key}}" value="{{value}}" type="text" on="input-debounced:AMP.setState({
+                config: {
+                  {{id}}: {
+                    {{key}}: event.value
+                  }
+                }
+              })">
+              {{/valueCheckbox}}
+            </div>
+            {{/values}}
           </div>
-          {{/values}}
         </div>
-      </div>
-      {{/options}}
-      {{/unless}}
+        {{/options}}
+        {{/unless}}
       </div>
 
       {{#select}}
       <div class="select">
         <select class="select-toggle" name="{{categoryId}}" on="change:AMP.setState({
-          config: {
-            changed: true,
-            lang: event.value
-          }
-        })">
+            config: {
+              changedLang: true,
+              lang: event.value
+            }
+          })">
           {{#options}}
           <option value="{{{id}}}">{{label}}</option>
           {{/options}}
