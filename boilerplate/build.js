@@ -16,6 +16,8 @@
 
 'use strict';
 
+require('module-alias/register');
+
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const path = require('path');
 
