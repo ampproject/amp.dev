@@ -1,0 +1,50 @@
+{% do doc.styles.addCssFile('css/components/organisms/component-sidebar.css') %}
+{% do doc.icons.useIcon('icons/chevron-down-solid.svg') %}
+{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
+
+<amp-sidebar id="sidebar-left"
+  class="ap--ampsidebar"
+  layout="nodisplay"
+  side="left">
+  <nav toolbar="(min-width: 768px)"
+    toolbar-target="ap--sidebar-content">
+    <ul>
+      {% include '/views/partials/format-toggle.j2' %}
+      <div class="ap-o-sidebar-section">
+        <div class="ap-o-component-sidebar">
+          <div class="nav">
+            {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
+            {% set scope = namespace(initial=components[0].title[4]) %}
+            <ul class="nav-list level-1">
+              <li class="nav-item level-1 ">
+                <ul class="nav-list level-2">
+                  <li class="nav-link">{{ scope.initial|upper }}</li>
+                  {% for component in components if component.is_current %}
+
+                  {% set initial = component.title[4] %}
+                  {% if scope.initial != initial %}
+                  {% set scope.initial = initial %}
+                </ul>
+              </li>
+              <li class="nav-item level-1 ">
+                <ul class="nav-list level-2">
+                  <li class="nav-link">{{ scope.initial|upper }}</li>
+                  {% endif %}
+                  {% set formats = component.formats or [] %}
+                  {% set activeDocument = true if component.url == doc.url %}
+                  {# the latest document might not support a format, hence we have to check if any version supports the format #}
+                  [% if format in {{ component.formats|list|tojson }} %]
+                  <li {% if activeDocument %}autoscroll {% endif %} class="nav-item {% if activeDocument %}active {% endif %} level-2">
+                    <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
+                  </li>
+                  [% endif %]
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </nav>
+</amp-sidebar>

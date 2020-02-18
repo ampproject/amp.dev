@@ -32,7 +32,7 @@ Plan the story introduction, create an arc and build up to a complete narrative.
 
 ## Tasteful and filling content
 
-Each story must be a minimum of 4 pages and ideally less than 30. Each story needs to be tasty, well told, and easy to consume. If needed for your narrative, go longer than 30. Stories that are too commercial or smell of spam will not be served. This includes stories where more than 30% is sponsored content or ads. A story using [auto ads](../develop/advertise_amp_stories/?format=stories) is automatically compliant.
+Each story must be a minimum of 4 pages and ideally less than 30. Each story needs to be tasty, well told, and easy to consume. If needed for your narrative, go longer than 30. Stories that are too commercial or smell of spam will not be served. This includes stories where more than 30% is sponsored content or ads. A story using [auto ads](../develop/advertise_amp_stories.md?format=stories) is automatically compliant.
 
 Know what your readers want to see! Insensitive, misleading or inappropriate content is never on the menu. 
 

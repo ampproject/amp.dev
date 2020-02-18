@@ -25,6 +25,7 @@ ext:
           method: 'addCssFile'
         - name: 'icons'
           method: 'useIcon'
+- extensions.log_beautifier.LogBeautifierExtension
 - extensions.amp_example_preview.AmpExamplePreviewExtension
 - extensions.amp_dependencies.AmpDependenciesExtension
 - extensions.amp_dev.AmpDevExtension

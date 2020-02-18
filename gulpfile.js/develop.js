@@ -44,8 +44,7 @@ function extract(done) {
 
     return grow('translations extract').catch(() => {
       signale.fatal(
-        'Grow had an error starting up. There probably is a broken' +
-          'document in the project. See the log above for details.'
+        'Grow had an error starting up. See log above for details.'
       );
       process.exit(1);
     });
@@ -53,21 +52,18 @@ function extract(done) {
 }
 
 async function run() {
-  config.configureGrow();
-  grow(`run --port ${config.hosts.pages.port}`).catch(() => {
-    signale.fatal(
-      'Grow had an error starting up. There probably is a broken' +
-        'document in the project. See the log above for details.'
-    );
-    process.exit(1);
-  });
-
   signale.info('Watching icons, templates, styles and samples ...');
   // await the build of samples since the search init needs the sample sitemap
   await samplesBuilder.build();
   gulp.watch(`${project.paths.ICONS}/**/*.svg`, build.icons);
   gulp.watch(`${project.paths.FRONTEND_TEMPLATES}/**/*.j2`, build.templates);
   gulp.watch(`${project.paths.SCSS}/**/*.scss`, build.sass);
+
+  config.configureGrow();
+  await grow(`run --port ${config.hosts.pages.port}`).catch(() => {
+    signale.fatal('Grow had an error starting up. See log above for details.');
+    process.exit(1);
+  });
 
   const Platform = require('@lib/platform');
   new Platform().start();
