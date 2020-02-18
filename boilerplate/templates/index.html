@@ -263,9 +263,9 @@
               lang: event.value
             }
           })">
-          <option value="">-</option>
           {{#options}}
-          <option value="{{{id}}}">{{label}}</option>
+          {{#default}}<option value="{{{id}}}" selected="selected">{{label}}</option>{{/default}}
+          {{#unless default}}<option value="{{{id}}}">{{label}}</option>{{/unless}}
           {{/options}}
         </select>
       </div>
