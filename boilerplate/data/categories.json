@@ -179,7 +179,6 @@
     "categoryId": "language-select",
     "formats": [ "websites" ],
     "select": true,
-    "help": "Language select",
     "options": [
 			{
         "id": "en-us",
