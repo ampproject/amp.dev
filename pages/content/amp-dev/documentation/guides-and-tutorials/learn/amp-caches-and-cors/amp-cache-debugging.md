@@ -1,10 +1,12 @@
 ---
 $title: Debug AMP Cache issues
-$order: 8
+order: 8
 formats:
   - websites
   - stories
   - ads
+teaser:
+  text: '## Why is my doc broken on an AMP cache?'
 ---
 
 <!--

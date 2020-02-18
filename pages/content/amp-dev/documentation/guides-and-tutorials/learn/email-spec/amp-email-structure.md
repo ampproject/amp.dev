@@ -1,9 +1,13 @@
 ---
 $title: Structure and rendering of AMP emails
-toc: true
-$order: 2
+order: 2
 formats:
   - email
+teaser:
+  text: >-
+    Email is structured as a MIME tree. This MIME tree contains the message body
+    and any attachments to the email.
+toc: true
 ---
 
 <!--
