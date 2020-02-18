@@ -88,11 +88,7 @@ instance
     // Check if there is an instance available. If there is, instantiate
     // a client to use it, if there is none fall back to LRU cache
     if (instance) {
-      log.info(
-        'Connecting to Redis',
-        instance.port,
-        instance.host
-      );
+      log.info('Connecting to Redis', instance.port, instance.host);
       try {
         redis = new Redis(instance.port, instance.host);
         log.info(
