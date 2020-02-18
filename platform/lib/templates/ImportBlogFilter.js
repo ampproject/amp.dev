@@ -27,7 +27,7 @@ async function importBlog(value, callback) {
   try {
     response = await fetch(BLOG_PATH);
   } catch (err) {
-    log.error('Could not fetch blog posts!', err);
+    log.error('Fetching blog posts failed:', err);
     callback(null, []);
     return;
   }

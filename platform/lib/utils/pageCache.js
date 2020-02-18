@@ -71,9 +71,9 @@ const instance = (async () => {
     // slice the zone identifier
     region = zone.slice(0, -2);
 
-    log.info('[PAGE_CACHE]: Zone & Region', zone, region);
+    log.info('Zone & Region', zone, region);
   } catch (e) {
-    log.error('[PAGE_CACHE] Fetching zone failed falling back to', REGION);
+    log.error('Fetching zone failed falling back to', REGION);
     region = REGION;
   }
 
@@ -89,30 +89,30 @@ instance
     // a client to use it, if there is none fall back to LRU cache
     if (instance) {
       log.info(
-        '[PAGE_CACHE]: Connecting to Redis',
+        'Connecting to Redis',
         instance.port,
         instance.host
       );
       try {
         redis = new Redis(instance.port, instance.host);
         log.info(
-          '[PAGE_CACHE]: Connected to Redis instance at',
+          'Connected to Redis instance at',
           instance.host,
           instance.port
         );
         return;
       } catch (e) {
-        log.error('[PAGE_CACHE]: Connecting to Redis failed', e);
+        log.error('Connecting to Redis failed', e);
       }
     }
 
-    log.warn('[PAGE_CACHE]: No Redis instances available. Falling back to LRU');
+    log.warn('No Redis instances available. Falling back to LRU');
     lru = new LRU({
       max: LRU_MAX_ITEMS,
     });
   })
   .catch(e => {
-    log.error('[PAGE_CACHE]: Could not initialize caches', e);
+    log.error('Could not initialize caches', e);
   });
 
 /**
@@ -161,7 +161,7 @@ function set(key, html) {
   } else if (redis) {
     redis.set(prefixedKey, html, 'ex', EXPIRATION_TIME);
   } else {
-    log.warn('[PAGE_CACHE]: No cache available to cache', key);
+    log.warn('No cache available to cache', key);
   }
 }
 

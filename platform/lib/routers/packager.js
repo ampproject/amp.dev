@@ -84,10 +84,10 @@ const packager = (request, response, next) => {
 };
 
 function sxgProxy(request, response, url) {
-  log.info('[packager] proxy', url);
+  log.info('Proxy', url);
   request.url = url;
   proxy.web(request, response, proxyOptions, error => {
-    log.info('[packager] proxy error', error);
+    log.info('Proxy error', error);
     response.status(502).end();
   });
 }

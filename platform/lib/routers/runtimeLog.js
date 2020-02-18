@@ -49,7 +49,7 @@ runtimeLog.get('/', async (request, response) => {
       })
     );
   } catch (error) {
-    log.error('retrieving runtime log', error);
+    log.error('Retrieving runtime log failed:', error);
     response.status(404).send('Message not found');
   }
 });
