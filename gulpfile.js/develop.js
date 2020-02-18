@@ -44,8 +44,7 @@ function extract(done) {
 
     return grow('translations extract').catch(() => {
       signale.fatal(
-        'Grow had an error starting up. There probably is a broken' +
-          'document in the project. See the log above for details.'
+        'Grow had an error starting up. See log above for details.'
       );
       process.exit(1);
     });
