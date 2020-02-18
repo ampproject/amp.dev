@@ -258,10 +258,12 @@
       <div class="select">
         <select class="select-toggle" name="{{categoryId}}" on="change:AMP.setState({
             config: {
-              changedLang: true,
+              changed: true,
+              changedLang: event.value ? true : false,
               lang: event.value
             }
           })">
+          <option value="">-</option>
           {{#options}}
           <option value="{{{id}}}">{{label}}</option>
           {{/options}}
