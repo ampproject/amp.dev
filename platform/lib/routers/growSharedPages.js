@@ -18,6 +18,7 @@
 
 const express = require('express');
 const {ensureUrlScheme, loadTemplate} = require('./growPages.js');
+const log = require('@lib/utils/log')('Grow Shared Pages');
 
 // eslint-disable-next-line new-cap
 const sharedPages = express.Router();
@@ -34,7 +35,7 @@ sharedPages.get('/shared/**', async (req, res, next) => {
     res.send(template.render());
   } catch (e) {
     // page not found
-    console.error(e);
+    log.error(e);
     next();
   }
 });

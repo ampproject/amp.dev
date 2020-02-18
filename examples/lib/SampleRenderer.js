@@ -20,6 +20,7 @@ const {join} = require('path');
 const utils = require('@lib/utils');
 const {Templates} = require('@lib/templates/index.js');
 const config = require('@lib/config.js');
+const log = require('@lib/utils/log')('Sample Renderer');
 const fetch = require('node-fetch');
 const {promisify} = require('util');
 
@@ -71,7 +72,7 @@ class SampleRenderer {
         const template = await this.getTemplate_(request);
         handler(request, response, template);
       } catch (err) {
-        console.log(err);
+        log.error(err);
         next(err);
       }
     };

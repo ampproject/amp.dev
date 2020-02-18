@@ -20,13 +20,14 @@ const POST_COUNT = 6;
 const BLOG_PATH = `https://blog.amp.dev/wp-json/wp/v2/posts?per_page=${POST_COUNT}&_embed`;
 const DEFAULT_IMG = 'AMP_Blog_Square.jpg';
 const fetch = require('node-fetch');
+const log = require('@lib/utils/log')('Import Blog Filter');
 
 async function importBlog(value, callback) {
   let response;
   try {
     response = await fetch(BLOG_PATH);
   } catch (err) {
-    console.log('Could not fetch blog posts!', err);
+    log.error('Fetching blog posts failed:', err);
     callback(null, []);
     return;
   }

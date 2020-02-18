@@ -18,6 +18,7 @@
 
 const express = require('express');
 const LogFormatter = require('../runtime-log/HtmlFormatter.js');
+const log = require('@lib/utils/log')('Runtime Log');
 const robots = require('./robots');
 
 const {Templates} = require('../templates/');
@@ -48,7 +49,7 @@ runtimeLog.get('/', async (request, response) => {
       })
     );
   } catch (error) {
-    console.error('retrieving runtime log', error);
+    log.error('Retrieving runtime log failed:', error);
     response.status(404).send('Message not found');
   }
 });

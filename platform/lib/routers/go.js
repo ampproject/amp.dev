@@ -18,6 +18,7 @@
 const yaml = require('js-yaml');
 const express = require('express');
 const config = require('@lib/config.js');
+const log = require('@lib/utils/log')('Go Links');
 const {join} = require('path');
 const {readFileSync} = require('fs');
 const URL = require('url').URL;
@@ -54,7 +55,7 @@ go.use((request, response, next) => {
     response.redirect(targetUrl.toString());
     return;
   } catch (error) {
-    console.log(error);
+    log.error(error);
     notFound(request, response, next);
   }
 });
