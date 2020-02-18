@@ -255,16 +255,18 @@
       </div>
 
       {{#select}}
-      <select class="select" name="{{categoryId}}" on="change:AMP.setState({
+      <div class="select">
+        <select class="select-toggle" name="{{categoryId}}" on="change:AMP.setState({
           config: {
             changed: true,
             lang: event.value
           }
         })">
-        {{#options}}
-        <option value="{{{id}}}">{{label}}</option>
-        {{/options}}
-      </select>
+          {{#options}}
+          <option value="{{{id}}}">{{label}}</option>
+          {{/options}}
+        </select>
+      </div>
       {{/select}}
 
       {{/categories}}
