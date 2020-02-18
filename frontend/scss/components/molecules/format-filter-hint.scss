@@ -8,18 +8,25 @@
 $height: 60px;
 
 .#{molecule('format-filter-hint')} {
+  display: none;
   bottom: auto;
   height: $height;
   color: color('white');
   background-color: color('ebony-clay');
   @include txt-2;
 
+  @media (min-width: 768px) {
+    display: block;
+  }
+
   &.amp-active + &-spacer {
+    display: none;
     position: relative;
     max-width: 1440px;
     margin: 0 auto;
 
     @media (min-width: 768px) {
+      display: block;
       height: $height;
     }
 
