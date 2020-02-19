@@ -40,7 +40,11 @@ author: elisameyer
 </p>
 <input
   type="textbox"
-  on="input-throttled:AMP.setState({charState: event.value.length < 10 ?  'There are under 10 characters, type more!' : 'You have typed over 10 characters, you can stop now.'})"
+  on="input-throttled:AMP.setState({
+        charState: event.value.length < 10 ?  
+          'There are under 10 characters, type more!' : 
+          'You have typed over 10 characters, you can stop now.'
+        })"
 />
 </div>
 
