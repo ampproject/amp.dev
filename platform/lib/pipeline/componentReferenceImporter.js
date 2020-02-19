@@ -27,15 +27,9 @@ const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
 
-const {Signale} = require('signale');
-
+const log = require('@lib/utils/log')('Component Reference Importer');
 const config = require(__dirname +
   '/../../config/imports/componentReference.json');
-
-const log = new Signale({
-  'interactive': false,
-  'scope': 'ComponentReferenceImporter',
-});
 
 // Where to save the documents/collection to
 const DESTINATION_BASE_PATH =
@@ -325,7 +319,7 @@ class ComponentReferenceImporter {
 // If not required, run directly
 if (!module.parent) {
   const importer = new ComponentReferenceImporter();
-  importer.import().catch(err => console.log(err));
+  importer.import().catch(err => log.error(err));
 }
 
 module.exports = ComponentReferenceImporter;

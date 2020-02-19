@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {join, dirname} = require('path');
+const {dirname} = require('path');
+const {resolve} = require('url');
 const {Signale} = require('signale');
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
 const {FORMAT_WEBSITES} = require('@lib/amp/formatHelper.js');
@@ -50,7 +51,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
     }
 
     this.rewriteRelativePaths(
-      join(RELATIVE_PATH_BASE, dirname(extension.githubPath))
+      resolve(RELATIVE_PATH_BASE, dirname(extension.githubPath))
     );
 
     if (this.version == this.latestVersion) {

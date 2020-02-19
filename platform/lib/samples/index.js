@@ -25,6 +25,7 @@ const {promisify} = require('util');
 const fs = require('fs');
 const Hogan = require('hogan.js');
 const readFileAsync = promisify(fs.readFile);
+const log = require('@lib/utils/log')('Parse Samples');
 
 module.exports.parseSample = async (filePath, config, contents) => {
   if (!contents) {
@@ -35,10 +36,10 @@ module.exports.parseSample = async (filePath, config, contents) => {
   const doc = parse(contents);
   const exampleFile = ExampleFile.fromPath(filePath);
   if (!doc.title) {
-    console.warn(`${filePath} has no title`);
+    log.warn(`${filePath} has no title`);
     doc.title = exampleFile.title();
   } else if (doc.title !== exampleFile.title()) {
-    console.warn(
+    log.warn(
       `${filePath} has invalid title: "${exampleFile.title()}" vs "${
         doc.title
       }"`

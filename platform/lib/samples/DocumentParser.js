@@ -129,7 +129,6 @@ class DocumentParser {
         this.updateHead(line);
         this.updateStory(line);
         if (this.endOfCurrentTag(line)) {
-          // console.log("end tag: " + this.currentTag);
           if (this.inHintedElement) {
             this.currentSection().endHint();
             this.inHintedElement = false;
@@ -164,7 +163,6 @@ class DocumentParser {
         } else if (this.inComment) {
           this.inComment = false;
           this.currentTag = this.nextTag(i);
-          // console.log("start tag: " + this.currentTag);
         }
       }
     }
