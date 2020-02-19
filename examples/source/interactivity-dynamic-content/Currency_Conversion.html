@@ -14,7 +14,7 @@ author: philkrie
 <head>
   <meta charset="utf-8">
   <title>
-    JSON Filter
+    Currency Conversion
   </title>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,9 +31,8 @@ author: philkrie
 <body>
   <!--
   ## Implementation
-  This example uses a public currency endpoint to populate `amp-state`.
 
-  The default value is `EUR` (euro) and we convert the currency values by updating `amp-state` when the user changes the dropdown to a different currency
+  This example uses a public currency endpoint to populate `amp-state`. The default value is `EUR` (euro) and we convert the currency values by updating `amp-state` when the user changes the dropdown to a different currency.
   -->
   <div>
     <amp-state id="currencyFilter" src="https://api.exchangeratesapi.io/latest"></amp-state>
@@ -46,7 +45,12 @@ author: philkrie
         }
       </script>
     </amp-state>
-    <select on="change:AMP.setState({defState:{currencyRate: event.value == 'EUR' ? 1 : currencyFilter.rates[event.value], currencyCode: event.value}})">
+    <select on="change:AMP.setState({
+                  defState: {
+                    currencyRate: event.value == 'EUR' ? 1 : currencyFilter.rates[event.value], 
+                    currencyCode: event.value
+                  }
+                })">
       <option value="CAD">CAD</option>
       <option value="EUR" selected="">EUR</option>
       <option value="HKD">HKD</option>
@@ -57,26 +61,12 @@ author: philkrie
       <option value="INR">INR</option>
     </select>
       <h3>Banana</h3>
-      <h4>Cavendish</h4>
-      <span [text]="defState.currencyCode">EUR</span>
-      <span [text]="(2*defState.currencyRate).toFixed(defState.currencyDecimal)">2.00</span>
+      <div>
+        <span [text]="defState.currencyCode">EUR</span>
+        <span [text]="(2*defState.currencyRate).toFixed(defState.currencyDecimal)">2.00</span>
+      </div>  
       <amp-img src="https://cdn.glitch.com/cbcdd9ba-70f9-4d53-a19d-486e4b70f73f%2F440px-Cavendish_Banana_DS.jpg?v=1578089065672" height="112" width="112" layout="fixed" title="banana"></amp-img>
-      <h3>Apple</h3>
-      <h4>Fuji</h4>
-      <span [text]="defState.currencyCode">EUR</span>
-      <span [text]="(3*defState.currencyRate).toFixed(defState.currencyDecimal)">3.00</span>
-      <amp-img src="https://cdn.glitch.com/cbcdd9ba-70f9-4d53-a19d-486e4b70f73f%2F440px-Fuji_apples.jpg?v=1578089067947" height="112" width="112" layout="fixed" title="banana"></amp-img>
-      <h3>Kiwi</h3>
-      <h4>Fuzzy</h4>
-      <span [text]="defState.currencyCode">EUR</span>
-      <span [text]="(5*defState.currencyRate).toFixed(defState.currencyDecimal)">5.00</span>
-      <amp-img src="https://cdn.glitch.com/cbcdd9ba-70f9-4d53-a19d-486e4b70f73f%2F51QHkk%2BiIUL._SX466_.jpg?v=1578090348665" height="112" width="112" layout="fixed" title="banana"></amp-img>
-      <h3>Orange</h3>
-      <h4>Clementine</h4>
-      <span [text]="defState.currencyCode">EUR</span>
-      <span [text]="(4*defState.currencyRate).toFixed(defState.currencyDecimal)">4.00</span>
-      <amp-img src="https://cdn.glitch.com/cbcdd9ba-70f9-4d53-a19d-486e4b70f73f%2Fe157f0aa4bc28b03cf71ab93926d-660x438.jpg?v=1578090351394" height="112" width="112" layout="fixed" title="banana"></amp-img>
-  </div>
+     </div>
 </body>
 
 </html>
