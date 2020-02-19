@@ -96,7 +96,7 @@ const SAFE_CLASS_NAMES = [
   'ap-t-what-is-amp',
 ];
 
-rcs.selectorLibrary.setExclude(
+rcs.selectorsLibrary.setExclude(
   new RegExp('^(?!' + SAFE_CLASS_NAMES.join('|') + ').*$')
 );
 
@@ -145,7 +145,7 @@ class CssTransformer {
       node.attribs.class = node.attribs.class
         .split(' ')
         .map(className => {
-          return rcs.selectorLibrary.get(className) || className;
+          return rcs.selectorsLibrary.get(className) || className;
         })
         .join(' ');
     }
