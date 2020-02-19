@@ -17,14 +17,13 @@ author: elisameyer
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <link rel="canonical" href="<% canonical %>">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <link rel="canonical" href="https://www.xyz.com" />
-    <!-- import `amp-bind` so recaptcha can have multiple states -->
+    <!-- Import `amp-bind` so recaptcha can have multiple states -->
     <script
       async
       custom-element="amp-bind"
       src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
     ></script>
-    <!-- recaptcha input used to verify user for `amp-form` -->
+    <!-- Recaptcha input used to verify user for `amp-form` -->
     <script
       async
       custom-element="amp-form"
@@ -68,12 +67,9 @@ author: elisameyer
       </script>
     </amp-state>
     <!-- ## Form -->
-    <!-- Recaptcha forces users to provide the correct input using the `[pattern]` requirement
-         The `[pattern]` updates dynamically as the state changes.
-         In order for the recaptcha to work on first pass, disable the input until the `amp-bind` `'state'` variable is set (i.e. `[disabled]="!state"`).
-         As another workaround, you could set a default pattern (without brackets) and have the `[pattern]` update as user refreshes the conditional.
-        Upon refresh the `'state'` is updated to provide a new equation.
-      -->
+    <!-- 
+       Recaptcha forces users to provide the correct input using the `[pattern]` requirement. The `[pattern]` updates dynamically as the state changes. In order for the recaptcha to work on first pass, disable the input until the `amp-bind` `'state'` variable is set (i.e. `[disabled]="!state"`). As another workaround, you could set a default pattern (without brackets) and have the `[pattern]` update as user refreshes the conditional. Upon refresh the `'state'` is updated to provide a new equation.
+    -->
     <form action="https://www.google.com/" method="get" target="_top">
       <input
         name="s"
@@ -95,13 +91,11 @@ author: elisameyer
         <span>4</span>
         <span>=</span>
         <span [text]="captcha[state].result">10</span>
-        <span
-          class="pl1 font_18"
-          on="tap:AMP.setState({state: (state == 'state1' ? 'state2' : state == 'state2' ? 'state3': 'state1')})"
+        <span on="tap:AMP.setState({state: (state == 'state1' ? 'state2' : state == 'state2' ? 'state3': 'state1')})"
           role="button"
           tabindex="0"
         >
-        <img src="https://fonts.gstatic.com/s/i/materialicons/autorenew/v4/24px.svg"></img>
+        <amp-img src="https://fonts.gstatic.com/s/i/materialicons/autorenew/v4/24px.svg" width="24" height="24"></amp-img>
       <input type="submit" value="Submit" />
     </form>
   </body>
