@@ -68,7 +68,7 @@
     "gcp-metadata": "3.3.1",
     "http-proxy": "1.18.0",
     "iltorb": "2.4.5",
-    "ioredis": "4.14.1",
+    "ioredis": "4.16.0",
     "js-yaml": "3.13.1",
     "linkifyjs": "2.1.9",
     "lru-cache": "5.1.1",
