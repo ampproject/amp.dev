@@ -15,7 +15,7 @@
  */
 const {dirname} = require('path');
 const {resolve} = require('url');
-const {Signale} = require('signale');
+const log = require('@lib/utils/log')('Component Reference Document');
 const MarkdownDocument = require('@lib/pipeline/markdownDocument.js');
 const {FORMAT_WEBSITES} = require('@lib/amp/formatHelper.js');
 
@@ -25,8 +25,6 @@ const EXTENSION_TYPE_TEMPLATE = 'template';
 const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/master/';
 
 const INTRO_TABLE_PATTERN = /^((?:[^](?!##))*)<table(\s[^>]*)?>[^]*?<\/table>/m;
-
-const LOG = new Signale({'scope': 'Component Reference Documents'});
 
 class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {
@@ -44,7 +42,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
     // enable it for the websites runtime
     if (!this.formats.length) {
       this.formats = [FORMAT_WEBSITES];
-      LOG.warn(
+      log.warn(
         `${this.title} doesn't specify any formats in its`,
         `frontmatter and is force-listed for websites.`
       );
@@ -67,13 +65,21 @@ class ComponentReferenceDocument extends MarkdownDocument {
       extension.type = EXTENSION_TYPE_TEMPLATE;
     }
 
+    const scripts = [];
+    const requiredExtensions = [];
     if (extension.script) {
-      const scripts = [];
-      const requiredExtensions = [
-        ...(extension.tag.requiresExtension || []),
-        ...(extension.script.requiresExtension || []),
-      ];
-      for (const requiredExtension of requiredExtensions) {
+      requiredExtensions.push(extension.name);
+      scripts.push(
+        this._generateScript(extension.name, extension.version, extension.type)
+      );
+    }
+
+    if (extension.tag && extension.tag.requiresExtension) {
+      for (const requiredExtension of extension.tag.requiresExtension) {
+        if (requiredExtensions.includes(requiredExtension)) {
+          continue;
+        }
+
         scripts.push(
           this._generateScript(
             requiredExtension,
@@ -82,9 +88,9 @@ class ComponentReferenceDocument extends MarkdownDocument {
           )
         );
       }
-
-      this.scripts = scripts;
     }
+
+    this.scripts = scripts;
   }
 
   _generateScript(

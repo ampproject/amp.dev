@@ -16,15 +16,12 @@
 
 const writeFile = require('write');
 const yaml = require('js-yaml');
-const {Signale} = require('signale');
 const utils = require('@lib/utils');
+const log = require('@lib/utils/log')('Markdown Document');
 const SlugGenerator = require('@lib/utils/slugGenerator');
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
-// It doesn't make sense to give every MarkdownDocument their own logger instance
-// therefore have one shared one
-const LOG = new Signale({'scope': 'Markdown Documents'});
 
 // This expression matches a {% raw %}...{% endraw %} block
 const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
@@ -92,17 +89,17 @@ class MarkdownDocument {
       this._frontmatter =
         frontmatter || MarkdownDocument.extractFrontmatter(contents);
     } catch (e) {
-      LOG.error(`Failed to parse frontmatter for ${path}`, e.message);
+      log.error(`Failed to parse frontmatter for ${path}`, e.message);
       this._frontmatter = {
         '$title': '',
       };
     }
 
     if (!this.teaser.text) {
-      LOG.warn(`Auto extracting teaser text for ${path}`);
+      log.warn(`Auto extracting teaser text for ${path}`);
       this.teaser = {text: MarkdownDocument.extractTeaserText(contents)};
       if (!this.teaser.text) {
-        LOG.error(`Failed to extract teaser text for ${path}`);
+        log.error(`Failed to extract teaser text for ${path}`);
       }
     }
 
@@ -218,7 +215,7 @@ class MarkdownDocument {
     }
 
     if (!excerpt) {
-      LOG.error(
+      log.error(
         `Could not parse a teaser text from "${contents.substr(0, 500)}..."`
       );
       return '';
@@ -246,7 +243,7 @@ class MarkdownDocument {
     if (contents.startsWith('---')) {
       let frontmatter = contents.match(FRONTMATTER_PATTERN);
       if (!frontmatter) {
-        LOG.warn(`Unparseable frontmatter "${contents.substr(0, 200)} ..."`);
+        log.warn(`Unparseable frontmatter "${contents.substr(0, 200)} ..."`);
       } else {
         frontmatter = frontmatter[0];
 
@@ -441,10 +438,10 @@ have a look and request a pull request there.
     path = path ? path : this._path;
     return writeFile(path, content)
       .then(() => {
-        LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
+        log.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
       })
       .catch(e => {
-        LOG.error(
+        log.error(
           `Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`,
           e
         );

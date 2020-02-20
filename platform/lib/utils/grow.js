@@ -19,11 +19,7 @@
 const {extractCommandFragments} = require('@lib/utils/sh');
 const {spawn} = require('child_process');
 const {project} = require('@lib/utils');
-const {Signale} = require('signale');
-
-const LOG = new Signale({
-  'scope': 'Grow',
-});
+const log = require('@lib/utils/log')('Grow');
 
 // Messages printed by Grow used to determine log levels
 const MESSAGES = {
@@ -48,13 +44,13 @@ function handler(data, resolve, reject) {
   // development as Grow starting should be awaited before the user
   // can access the platform
   if (message == MESSAGES.START_SUCCESSFUL) {
-    LOG.success(message);
+    log.success(message);
     resolve();
     return message;
   }
 
   if (message.includes(MESSAGES.WARNING)) {
-    LOG.warn(message);
+    log.warn(message);
     return message;
   }
 
@@ -63,11 +59,11 @@ function handler(data, resolve, reject) {
     message.includes(MESSAGES.ERROR_2) ||
     message.includes(MESSAGES.ERROR_3)
   ) {
-    LOG.error(message);
+    log.error(message);
     return message;
   }
 
-  LOG.info(message);
+  log.info(message);
   return message;
 }
 
