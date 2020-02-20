@@ -76,7 +76,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
       );
     }
 
-    if (extension.tag.requiresExtension) {
+    if (extension.tag && extension.tag.requiresExtension) {
       for (const requiredExtension of extension.tag.requiresExtension) {
         if (requiredExtensions.includes(requiredExtension)) {
           continue;
