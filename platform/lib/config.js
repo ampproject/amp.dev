@@ -54,6 +54,10 @@ class Config {
     if (environment === 'test') {
       environment = ENV_DEV;
       this.test = true;
+
+      // Config doesn't use the log util as this relies on config. Therefore
+      // the main signale instance gets disabled here
+      signale.disable();
     } else {
       this.test = false;
     }
