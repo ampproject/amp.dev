@@ -105,6 +105,9 @@ class ComponentReferenceImporter {
   async _importBuiltIn(name) {
     return this._createGrowDoc({
       name: name,
+      tag: this.validatorRules.raw.tags.find(tag => {
+        return tag.tagName.toLowerCase() == name;
+      }),
       version: DEFAULT_VERSION,
       versions: [DEFAULT_VERSION],
       githubPath: path.join(BUILT_IN_PATH, `${name}.md`),
