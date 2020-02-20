@@ -67,13 +67,23 @@ class ComponentReferenceDocument extends MarkdownDocument {
       extension.type = EXTENSION_TYPE_TEMPLATE;
     }
 
+    const scripts = [];
+    const requiredExtensions = [];
     if (extension.script) {
-      const scripts = [];
-      const requiredExtensions = [
-        ...(extension.tag.requiresExtension || []),
-        ...(extension.script.requiresExtension || []),
-      ];
-      for (const requiredExtension of requiredExtensions) {
+      requiredExtensions.push(extension.name);
+      scripts.push(this._generateScript(
+        extension.name,
+        extension.version,
+        extension.type
+      ));
+    }
+
+    if (extension.tag.requiresExtension) {
+      for (const requiredExtension of extension.tag.requiresExtension) {
+        if (requiredExtensions.includes(requiredExtension)) {
+          continue;
+        }
+
         scripts.push(
           this._generateScript(
             requiredExtension,
@@ -82,9 +92,9 @@ class ComponentReferenceDocument extends MarkdownDocument {
           )
         );
       }
-
-      this.scripts = scripts;
     }
+
+    this.scripts = scripts;
   }
 
   _generateScript(
