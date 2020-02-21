@@ -33,16 +33,6 @@
       position: relative;
       padding: 6px;
       cursor: pointer;
-
-      &-experimental {
-        position: absolute;
-        right: 0;
-        top: 0;
-        transform: translate(35%, -35%);
-        background: color('crimson');
-        border-radius: 50%;
-        z-index: 3;
-      }
     }
 
     &-icon {

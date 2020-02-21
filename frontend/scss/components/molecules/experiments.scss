@@ -45,29 +45,83 @@
     background: none;
 
     &-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: auto;
       width: 100%;
+      height: 100%;
       position: absolute;
       left: 0;
       top: 0;
-      padding: 25px 25px 5px;
+      padding: 0 10%;
       margin: 0;
-      background: rgba(color('black'), .85);
-      z-index: 2;
+      background: #fff;
+      z-index: 1002;
 
       @media (max-width: 767px) {
-        position: static;
-        background: none transparent;
+        padding: 0 5%;
       }
 
       h4 {
-        margin-top: 0;
-        color: color('white');
+        margin: 0 0 0.75rem;
+        font-size: 1rem;
       }
 
       p {
-        margin-bottom: 0;
-        color: color('white');
+        font-size: 0.75rem;
+        line-height: 1.2rem;
+        margin: 0 0 1rem;
+
+        @media (max-width: 767px) {
+          display: none;
+        }
       }
+
+      amp-iframe.amp-iframe {
+        padding-top: 0;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &-hint {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 7px);
+    padding: 3px 15px;
+    background-color: rgba(color('turbo'), .4);
+    z-index: 1003;
+
+    .inline &,
+    .side-frame & {
+      display: none;
+    }
+
+    p {
+      display: inline-block;
+      margin: 0;
+      padding-left: 30px;
+      font-family: 'Fira Mono', monospace;
+      font-size: 0.813rem;
+      line-height: 1.2rem;
+      color: #fff;
+
+      a {
+        font-family: 'Fira Mono', monospace;
+        font-size: 0.813rem;
+        font-weight: 700;
+        text-transform: none;
+        text-decoration: underline;
+        color: #fff;
+      }
+    }
+
+    .ap-a-ico {
+      position: absolute;
+      left: 15px;
+      top: 6px;
+      fill: color('turbo');
     }
   }
 
@@ -91,10 +145,9 @@
     }
 
     #{$self}-preview & {
-      min-height: 102px;
-      align-items: center;
+      display: inline-block;
       padding: 0;
-      margin: 0 -10px;
+      margin: 0;
     }
   }
 
@@ -115,9 +168,20 @@
     }
 
     #{$self}-preview & {
-      padding: 10px;
-      margin: 3px 10px;
-      background: color('limed-spruce');
+      display: none;
+      padding: 16px 24px;
+      margin: 0;
+      text-align: center;
+      background: color('blue-ribbon');
+
+      @media (max-width: 767px) {
+        font-size: 0.75rem;
+        padding: 10px 18px;
+      }
+
+      &:first-child {
+        display: block;
+      }
     }
   }
 
@@ -177,6 +241,10 @@
     margin: 0;
     cursor: pointer;
 
+    #{$self}-preview & {
+      width: 100%;
+    }
+
     &:checked {
 
       & + .#{molecule('experiments')}-indicator {
@@ -198,6 +266,16 @@
     background: #c4c4c4;
     cursor: pointer;
     transition: background 0.2s ease;
+
+    #{$self}-preview & {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+    }
 
     &:before {
       content: " ";
@@ -233,7 +311,7 @@
     margin-right: 15px;
 
     #{$self}-preview & {
-      color: color('white');
+      font-size: 0.75rem;
     }
   }
 }
