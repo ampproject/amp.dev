@@ -1057,7 +1057,7 @@ msgid "The AMP project strongly encourages your participation and contributions!
 msgstr ""
 
 #: frontend/templates/views/detail/component-detail.j2:33
-msgid "You've read this document a dozen times but it doesn't really cover all of your questions? Maybe other people felt the same  reach out to them on Stack Overflow."
+msgid "You've read this document a dozen times but it doesn't really cover all of your questions? Maybe other people felt the same:  reach out to them on Stack Overflow."
 msgstr ""
 
 #: frontend/templates/views/partials/experiments/experiments.j2:4
@@ -1085,7 +1085,7 @@ msgid "Although there are {hits} hits in total we cannot show more than 100.', h
 msgstr ""
 
 #: frontend/templates/views/partials/content.j2:24
-msgid "Important  this component does not support your currently selected format"
+msgid "Important: this component does not support your currently selected format"
 msgstr ""
 
 #: pages/content/amp-dev/documentation/templates/index.html:112
@@ -1241,7 +1241,7 @@ msgid "Get Started with our Story Ads Templates"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:421
-msgid "Affliate Links"
+msgid "Affiliate Links"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:422
@@ -1313,11 +1313,11 @@ msgid "Shaun Zacharia, President & Co-Founder, Triplelift."
 msgstr ""
 
 #: pages/content/amp-dev/about/ads.html:208
-msgid "The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things  speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem. "
+msgid "The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things:  speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem. "
 msgstr ""
 
 #: pages/content/amp-dev/about/ads.html:209
-msgid "AMP offers a way for you to give users a faster experience everywhere  on ads, landing pages or on your entire website. AMP ads help users engage with your brand and improve the performance of your campaigns. When your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result – they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase."
+msgid "AMP offers a way for you to give users a faster experience everywhere: on ads, landing pages or on your entire website. AMP ads help users engage with your brand and improve the performance of your campaigns. When your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result – they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase."
 msgstr ""
 
 #: pages/content/amp-dev/about/ads.html:228
@@ -1581,7 +1581,7 @@ msgid "Prioritize resource loading"
 msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:85
-msgid "AMP controls all resource downloads  it prioritizes resource loading, loading only what’s needed, and prefetches lazy-loaded resources."
+msgid "AMP controls all resource downloads: it prioritizes resource loading, loading only what’s needed, and prefetches lazy-loaded resources."
 msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:86
@@ -2008,7 +2008,7 @@ msgstr ""
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
 msgstr ""
 
-msgid "You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible userexperience for your customers."
+msgid "You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible user experience for your customers."
 msgstr ""
 
 msgid "It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance."
@@ -2243,7 +2243,7 @@ msgstr ""
 msgid "AMP ads are safe from malware because AMPHTML ads are verified before being served, thus, advertisers can ensure a safe user experience and building trust in the brands users are engaging with. Establish yourself as the adtech platform for the fast web and join the hundreds of technology platforms currently supporting the open source AMP ecosystem."
 msgstr ""
 
-msgid "The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem. "
+msgid "The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things:: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem. "
 msgstr ""
 
 msgid "AMP offers a way for you to give users a faster experience everywhere: on ads, landing pages or on your entire website. AMP ads help users engage with your brand and improve the performance of your campaigns. When your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result – they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase."
@@ -3044,7 +3044,7 @@ msgstr ""
 msgid "AMP Insights"
 msgstr ""
 
-msgid "AMP REadiness"
+msgid "AMP Readiness"
 msgstr ""
 
 msgid "AMP Boilerplate Generator"

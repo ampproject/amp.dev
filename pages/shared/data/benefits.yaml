@@ -11,7 +11,7 @@ home:
       icon: interaction
   developer:
     - headline: Maintain flexibility and control and reduce complexity in your code
-      text: You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible userexperience for your customers.
+      text: You can use CSS to customize your styling, dynamic data to fetch the freshest data where needed, to build the best possible user experience for your customers.
       icon: content-modules
     - headline: Building blocks that ensure performance
       text: It takes a lot of time and effort to build a great website. AMP components are already optimized for the best performance.
