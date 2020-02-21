@@ -408,10 +408,6 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: /content/amp-dev/about/stories.html
-msgid "Protecting the Antarctic - A journey to a continent in distress"
-msgstr ""
-
 #: /content/amp-dev/support/faq/publisher-monetization.md
 msgid "Publisher Monetization"
 msgstr ""
@@ -523,23 +519,11 @@ msgid "Table of contents"
 msgstr ""
 
 #: /content/amp-dev/about/stories.html
-msgid "The Amazon Gold Rush"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
 msgid "The Atlantic"
 msgstr ""
 
 #: /content/amp-dev/about/stories.html
-msgid "The Ice Cream Factory and the Rise of the Made-for-Instagram Museum | WIRED"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
 msgid "The Washington Post"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "The best battle royale games on PC"
 msgstr ""
 
 #: /content/amp-dev/404.html:15
@@ -613,14 +597,6 @@ msgstr ""
 
 #: /views/partials/search.j2:55
 msgid "What are you looking for?"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "What's left behind on the Moon?"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
-msgid "Who runs the world? ... Beyoncé over the years."
 msgstr ""
 
 #: /content/amp-dev/about/stories.html

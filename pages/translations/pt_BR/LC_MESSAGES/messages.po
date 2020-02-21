@@ -409,10 +409,6 @@ msgstr "Capítulo anterior"
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
-#: /content/amp-dev/about/stories.html
-msgid "Protecting the Antarctic - A journey to a continent in distress"
-msgstr ""
-
 #: /content/amp-dev/support/faq/publisher-monetization.md
 msgid "Publisher Monetization"
 msgstr ""
@@ -524,24 +520,12 @@ msgid "Table of contents"
 msgstr "Tabela de conteúdo"
 
 #: /content/amp-dev/about/stories.html
-msgid "The Amazon Gold Rush"
-msgstr "The Amazon Gold Rush"
-
-#: /content/amp-dev/about/stories.html
 msgid "The Atlantic"
 msgstr "The Atlantic"
 
 #: /content/amp-dev/about/stories.html
-msgid "The Ice Cream Factory and the Rise of the Made-for-Instagram Museum | WIRED"
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
 msgid "The Washington Post"
 msgstr "The Washington Post"
-
-#: /content/amp-dev/about/stories.html
-msgid "The best battle royale games on PC"
-msgstr "Os melhores jogos de battle royale no PC"
 
 #: /content/amp-dev/404.html:15
 msgid "The page you've requested can't be found. Why don't you browse around?"
@@ -615,14 +599,6 @@ msgstr "Desenvolvimento web com AMP"
 #: /views/partials/search.j2:55
 msgid "What are you looking for?"
 msgstr "O que você está procurando?"
-
-#: /content/amp-dev/about/stories.html
-msgid "What's left behind on the Moon?"
-msgstr "O que está por trás da lua?"
-
-#: /content/amp-dev/about/stories.html
-msgid "Who runs the world? ... Beyoncé over the years."
-msgstr "Who runs the world? ... Beyoncé ao longo dos anos."
 
 #: /content/amp-dev/about/stories.html
 #: /content/amp-dev/community/working-groups/_blueprint.yaml
