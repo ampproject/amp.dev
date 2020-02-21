@@ -19,8 +19,8 @@ msgid "AMP Caches & CORS"
 msgstr ""
 
 #: /views/partials/footer.j2:71
-msgid "AMP Conf 2019"
-msgstr "Konferensi AMP 2019"
+msgid "AMP Conf 2020"
+msgstr "Konferensi AMP 2020"
 
 #: /views/partials/footer.j2:72
 msgid "AMP Contributor Summit 2019"
