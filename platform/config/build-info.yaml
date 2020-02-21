@@ -1,12 +1,7 @@
 number: null
-at: 2020-02-01T02:26:30.748Z
+at: 2020-02-18T16:01:49.916Z
 by: Patrick Kettner
 environment: local
 commit:
-  sha: eb0c54d29
-  message: |-
-    Properly extract strings for i18n on non documentation pages
-
-    this ia part of hte ongoing i18n ramp up. this (should) go though
-    everything that is not a part of documentation pages, and ensure that
-    any user visible strings are going through the gettext i18n process
+  sha: 2d8d5869e
+  message: "guidelines for creating a successful story narrative and technical resources  (#3479)\n\n* initial push\r\n\r\n* small fix\r\n\r\n* small fixes\r\n\r\n* fixed links and such\r\n\r\n* fixed link!"
