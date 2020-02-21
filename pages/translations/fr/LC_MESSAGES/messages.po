@@ -1819,7 +1819,7 @@ msgid "Don’t break the web."
 msgstr ""
 
 #: pages/content/amp-dev/about/mission-and-vision.html:93
-msgid "Ensure that if AMP has outages or problems it doesn’t hurt the rest of the web. That means if the Google AMP Cache, the URL API or the library fails it should be possible for websites and consumption apps to gracefully degrade. If something works with an AMP cache it should also work without a cache."
+msgid "Ensure that if AMP has outages or problems it doesn’t hurt the rest of the web. That means if the Google AMP Cache, the URL API or the library fails it should be possible for websites to gracefully degrade. If something works with an AMP cache it should also work without a cache."
 msgstr ""
 
 #: pages/content/amp-dev/about/mission-and-vision.html:106
