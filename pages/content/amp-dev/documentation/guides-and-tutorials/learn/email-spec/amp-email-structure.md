@@ -1,9 +1,13 @@
 ---
 $title: Structure and rendering of AMP emails
-toc: true
-$order: 2
+order: 2
 formats:
   - email
+teaser:
+  text: >-
+    Email is structured as a MIME tree. This MIME tree contains the message body
+    and any attachments to the email.
+toc: true
 ---
 
 <!--
@@ -95,10 +99,10 @@ Content-Type: text/x-amp-html; charset="UTF-8"
 Hello World in AMP!
 </body>
 </html>
---001a114634ac3555ae05525685ae--
+--001a114634ac3555ae05525685ae
 Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
---001a114634ac3555ae05525685ae
+--001a114634ac3555ae05525685ae--
 [/sourcecode]
 <!-- prettier-ignore-end -->

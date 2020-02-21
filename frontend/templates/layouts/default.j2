@@ -1,3 +1,7 @@
+{% if doc.formats %}
+[% supportedFormats formats={{ doc.formats|tojson }} %]
+{% endif %}
+
 {% macro filter(formats='websites, ads, stories, email', level='advanced, beginner') -%}
 {% if not formats.strip() and not level.strip() %}
 {{ caller() }}
@@ -17,8 +21,8 @@
 {% endwith %}
 {%- endmacro %}
 
-{% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='') -%}
-<figure class="alignment-wrapper {{ align }} margin-{{ margin }}">
+{% macro image(src, width, height, layout='responsive', alt='', caption='', align='', margin='', shadow=True) -%}
+<figure class="alignment-wrapper {{ align }} margin-{{ margin }} {{'shadow' if shadow}}">
   <amp-img src="{{ src }}" width="{{ width }}" height="{{ height }}" layout="{{ layout }}" alt="{{ alt }}"></amp-img>
   {% if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
 </figure>
@@ -126,7 +130,7 @@
     {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     {% do doc.styles.addCssFile('/css/components/organisms/translation-hint.css') %}
     <aside class="ap-o-translation-hint">
-      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but we could use some help doing so. See the <a href="/documentation/guides-and-tutorials/contribute/translations">translation guide</a> on how you can contribute.') }}</p>
+      <p class="ap-o-translation-hint-wrapper">{{ _('Sadly this page isn\'t translated yet, but we could use some help doing so. See the <a href="/documentation/guides-and-tutorials/contribute/translations\">translation guide</a> on how you can contribute.') }}</p>
     </aside>
     {% endif %}
 

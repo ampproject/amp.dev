@@ -149,6 +149,7 @@ recent_components:
             <h4 id="{{ category }}">{{ _(category_name) }}</h4>
             [% endif %]
             {% for component in docs %}
+            {% if component.is_current %}
             <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in '{{ component.formats }}' and forcedFiltered != true %]hidden[% endif %]>
               <div class="ap-m-table-component-row-components">
                 {% if component.formats %}
@@ -178,6 +179,7 @@ recent_components:
                 </div>
               </div>
             </a>
+            {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -186,5 +188,7 @@ recent_components:
     </section>
   </div>
 </main>
-{% include 'views/partials/component-sidebar.j2' %}
+{% with type = 'component' %}
+{% include 'views/partials/sidebar.j2' %}
+{% endwith %}
 {% endblock %}

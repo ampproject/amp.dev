@@ -117,13 +117,13 @@ stage:
       <button class="ap-m-filter-bubble filtered"
         [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
         on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })">
-        All
+        {{ _('All') }}
       </button>
       {% for category, stories in categories %}
       <button class="ap-m-filter-bubble"
         [class]="activeFilter.chosenFilter == '{{ category|slug }}' && chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
         on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })">
-        {{ category }}
+        {{ _(category) }}
       </button>
       {% endfor %}
     </div>

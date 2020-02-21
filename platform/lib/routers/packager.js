@@ -19,6 +19,7 @@
 const HttpProxy = require('http-proxy');
 const config = require('@lib/config');
 const mime = require('mime-types');
+const log = require('@lib/utils/log')('Packager');
 
 const proxyOptions = {
   target: config.hosts.packager.base,
@@ -49,7 +50,7 @@ const packager = (request, response, next) => {
     pagesHost += `:${config.hosts.platform.port}`;
   }
   if (request.get('host') !== pagesHost) {
-    console.log('[packager] not packaging', request.get('host'), pagesHost);
+    log.info('Not packaging', request.get('host'), pagesHost);
     next();
     return;
   }
@@ -83,10 +84,10 @@ const packager = (request, response, next) => {
 };
 
 function sxgProxy(request, response, url) {
-  console.log('[packager] proxy', url);
+  log.info('Proxy', url);
   request.url = url;
-  proxy.web(request, response, proxyOptions, (error) => {
-    console.log('[packager] proxy error', error);
+  proxy.web(request, response, proxyOptions, error => {
+    log.info('Proxy error', error);
     response.status(502).end();
   });
 }

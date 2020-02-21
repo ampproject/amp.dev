@@ -1,0 +1,223 @@
+body .touch-only {
+  display: none;
+}
+body.amp-mode-touch .touch-only {
+  display: unset;
+}
+body.amp-mode-touch .no-touch-only {
+  display: none;
+}
+// The AMP optimizer doesn't support the media attribute, so we hide whichever
+// calendar is not is not displayed with a media query.
+#calendar-container-mobile {
+  display: none;
+}
+.calendar {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 5em repeat(7, 7.5em);
+  grid-auto-flow: dense;
+  grid-template-rows: auto 150px auto auto 150px 150px 150px auto auto 150px;
+  transition: all .2s ease-in-out;
+}
+@keyframes background-flash {
+  0% {
+    background-color: inherit;
+  }
+  25% {
+    background-color: #ffff00;
+  }
+  75% {
+    background-color: #ffff00;
+  }
+  100% {
+    background-color: inherit;
+  }
+}
+[data-direction="top"] .top,
+[data-direction="bottom"] .bottom {
+  animation: background-flash .5s linear;
+}
+[data-direction="top"] .bottom,
+[data-direction="initialized"] .bottom,
+[data-direction="bottom"] .top {
+  display: none;
+}
+.box {
+  border-radius: .25em;
+  color: #000000;
+  padding: .5em;
+  text-align: center;
+}
+.instructions {
+  background-image: linear-gradient(225deg, #00dcc0 0%, #1db395 75%);
+  border-radius: .5em;
+  grid-column: 1 / 9;
+  padding: .5em;
+}
+.header {
+  grid-row: 1 / 2;
+}
+.week-1 {
+  grid-row: 2 / 3;
+}
+.week-1-instructions {
+  grid-row: 3 / 4;
+}
+.ellipsis-top {
+  grid-row: 4 / 5;
+}
+.week-2 {
+  grid-row: 5 / 6;
+}
+.week-3 {
+  grid-row: 6 / 7;
+}
+.week-4 {
+  grid-row: 7 / 8;
+}
+.ellipsis-bottom {
+  grid-row: 8 / 9;
+}
+.week-5-instructions {
+  grid-row: 9 / 10;
+}
+.week-5 {
+  grid-row: 10 / 11;
+}
+.sidebar {
+  font-size: small;
+  grid-column: 1 / 2;
+}
+.ellipsis {
+  font-size: x-small;
+  height: 2.5em;
+  overflow: hidden;
+  transition: all .4s ease-in-out;
+}
+[data-direction="initialized"] .ellipsis-top,
+[data-direction="top"] .ellipsis-top,
+[data-direction="bottom"] .ellipsis-bottom {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+}
+.header,
+.sidebar,
+.ellipsis {
+  font-weight: bold;
+  color: #005af0;
+  font-family: "Poppins", sans-serif;
+}
+.content {
+  border: 1px dotted #cccccc;
+  font-size: small;
+}
+.content.week-1,
+.content.week-5 {
+  border-style: solid;
+}
+.content.week-1:hover,
+.content.week-5:hover {
+  background-image: linear-gradient(225deg, #ff52e1 0%, #eb49e1 75%);
+  cursor: pointer;
+}
+.nightly {
+  background-image: linear-gradient(225deg, #2980b9 0%, #298dc6 75%);
+}
+.opt-in {
+  background-image: linear-gradient(225deg, #298dc6 0%, #2899d3 75%);
+}
+.beta {
+  background-image: linear-gradient(225deg, #2899d3 0%, #27a6e0 75%);
+}
+.opt-in-beta {
+  background-image: linear-gradient(225deg, #298dc6 0%, #27a6e0 75%);
+}
+.stable {
+  background-image: linear-gradient(225deg, #27a6e0 0%, #25b4ed 75%);
+}
+.lts {
+  background-image: linear-gradient(225deg, #25b4ed 0%, #21c1fa 75%);
+}
+@media (max-width: 1465px) {
+  .calendar {
+    gap: 5px;
+    grid-template-columns: 4em repeat(7, 1fr);
+  }
+  .content span {
+    hyphens: auto;
+    word-break: break-word;
+  }
+}
+@media (max-width: 1101px) {
+  #calendar-container {
+    display: none;
+  }
+  #calendar-container-mobile {
+    display: block;
+  }
+  .calendar {
+    grid-template-rows: auto 75px auto auto 75px 75px 75px auto auto 75px;
+  }
+  .box {
+    padding: 4px;
+  }
+  .header,
+  .sidebar {
+    font-size: x-small;
+  }
+  .instructions {
+    font-size: small;
+  }
+  .content span {
+    font-size: 0;
+    margin-top: 3px;
+    writing-mode: vertical-rl;
+  }
+  .content span code {
+    display: none;
+    font-size: small;
+  }
+  .content span code:first-of-type {
+    display: inherit;
+  }
+}
+@media (max-width: 1024px) {
+  .content.week-1:hover,
+  .content.week-5:hover {
+    font-size: x-small;
+  }
+}
+@media (max-width: 843px) {
+  .calendar {
+    gap: 2px;
+    grid-template-columns: 3em repeat(7, 1fr);
+  }
+  .header,
+  .sidebar {
+    font-size: xx-small;
+  }
+  .header {
+    font-size: 0;
+  }
+  .instructions,
+  .content span code,
+  .header::first-letter {
+    font-size: small;
+  }
+}
+@media (max-width: 768px) {
+  .content.week-1:hover,
+  .content.week-5:hover,
+  .instructions,
+  .content span code {
+    font-size: small;
+  }
+}
+@media (max-width: 656px) {
+  .content.week-1:hover,
+  .content.week-5:hover {
+    font-size: x-small;
+  }
+}

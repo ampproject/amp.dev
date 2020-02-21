@@ -26,15 +26,7 @@ const CssTransformer = require('@lib/utils/cssTransformer');
 const pageCache = require('@lib/utils/pageCache');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const signale = require('signale');
-const {getFormatFromRequest} = require('../amp/formatHelper.js');
-
-const {FORMAT_COMPONENT_MAPPING} = require('../utils/project.js').paths;
-let formatComponentMapping = {};
-try {
-  formatComponentMapping = require(FORMAT_COMPONENT_MAPPING);
-} catch (_) {
-  signale.warn('No version mapping defined . Run `npx gulp importAll` to fix.');
-}
+const {promisify} = require('util');
 
 /* Potential path stubs that are used to find a matching file */
 const AVAILABLE_STUBS = ['.html', '/index.html', '', '/'];
@@ -191,47 +183,6 @@ const optimizer = AmpOptimizer.create({
   ],
 });
 
-// Matches component ref doc URLs. Redirects latest version to non-versioned URL
-growPages.get(
-    /^(\/[a-z]+)?\/documentation\/components\/(amp-[a-z0-9-]+)(-v(\d\.\d))?\//,
-    async (req, res, next) => {
-      const language = req.params[0] || '';
-      const component = req.params[1];
-      let version = req.params[3];
-      const versionsByFormat = formatComponentMapping[component];
-      if (!versionsByFormat) {
-        signale.warn(
-            `No version mapping defined for ${component}. Run 'npx gulp importAll' to fix.`);
-        return next();
-      }
-      const format = getFormatFromRequest(req);
-
-      // add format supported versions to template context
-      let versions = versionsByFormat[format];
-      if (!versions) {
-        signale.warn(`No version mapping defined for format ${format}. Try running 'npx gulp ` +
-        'importAll\' to fix.');
-        // set to the latest available version and tell the user on the page
-        versions = [versionsByFormat.current];
-      }
-      const latestVersionByFormat = versions[versions.length - 1];
-
-      // redirect to unversioned URL for latest format specific version
-      if (parseFloat(version) >= parseFloat(latestVersionByFormat)) {
-        res.redirect(`${language}/documentation/components/${component}/?format=${format}`);
-        return;
-      } else if (!version) {
-        version = latestVersionByFormat;
-      }
-      req.componentInfo = {
-        format,
-        latestVersion: versionsByFormat.current,
-        latestVersionByFormat,
-        versions,
-      };
-      next();
-    });
-
 // Only match urls with slash at the end or html extension or no extension
 growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   const url = ensureUrlScheme(req.originalUrl);
@@ -248,15 +199,6 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   }
 
   const templateContext = createRequestContext(req);
-  const componentInfo = req.componentInfo;
-  if (componentInfo) {
-    templateContext.versions = componentInfo.versions;
-    if (!componentInfo.version &&
-      componentInfo.latestVersionByFormat !== componentInfo.latestVersion) {
-      // change amp-carousel-v$LATEST => amp-carousel
-      url.pathname = url.pathname.slice(0, -1) + `-v${componentInfo.latestVersionByFormat}/`;
-    }
-  }
 
   const template = await loadTemplate(url.pathname);
   if (!template) {
@@ -264,20 +206,22 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     return;
   }
 
+  template.renderAsync = promisify(template.render);
   let renderedTemplate = null;
   try {
-    renderedTemplate = template.render(templateContext);
+    renderedTemplate = await template.renderAsync(templateContext);
   } catch (e) {
     // If there was a rendering error show the unrendered template with line
     // count to the user to figure out what's wrong
     if (config.isDevMode()) {
       res.set('content-type', 'text/plain');
       res.send(
-          `SSR error: ${e}\n\n` +
-        template.tmplStr
+        `SSR error: ${e}\n\n` +
+          template.tmplStr
             .split('\n')
             .map((line, index) => `${index + 1} ${line}`)
-            .join('\n'));
+            .join('\n')
+      );
       signale.error(e);
       return;
     }
@@ -289,8 +233,12 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   // The documentation pages rely on passing along their currently
   // selected format via GET paramters. The static URLs need to be rewritten
   // for this use case
-  renderedTemplate = rewriteLinks(url.pathname, renderedTemplate,
-      templateContext.format, templateContext.level);
+  renderedTemplate = rewriteLinks(
+    url.pathname,
+    renderedTemplate,
+    templateContext.format,
+    templateContext.level
+  );
 
   // Pipe the rendered template through the AMP optimizer
   try {
@@ -305,4 +253,8 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
   pageCache.set(req.originalUrl, renderedTemplate);
 });
 
-module.exports = growPages;
+module.exports = {
+  loadTemplate,
+  ensureUrlScheme,
+  growPages,
+};

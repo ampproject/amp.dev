@@ -16,15 +16,12 @@
 
 const writeFile = require('write');
 const yaml = require('js-yaml');
-const {Signale} = require('signale');
 const utils = require('@lib/utils');
+const log = require('@lib/utils/log')('Markdown Document');
 const SlugGenerator = require('@lib/utils/slugGenerator');
 
 // Inline marker used by Grow to determine if there should be TOC
 const TOC_MARKER = '[TOC]';
-// It doesn't make sense to give every MarkdownDocument their own logger instance
-// therefore have one shared one
-const LOG = new Signale({'scope': 'Markdown Documents'});
 
 // This expression matches a {% raw %}...{% endraw %} block
 const JINJA2_RAW_BLOCK = /\{%\s*raw\s*%\}(?:(?!\{%\s*endraw\s*%\})[\s\S])*\{%\s*endraw\s*%\}/;
@@ -36,21 +33,25 @@ const SOURCECODE_BLOCK = /\[\s*sourcecode[^\]]*\][\s\S]*?\[\s*\/\s*sourcecode\s*
 // to ensure we do not match something that belongs to different code blocks
 // or we add raw tags to existing raw blocks
 const MARKDOWN_BLOCK_PATTERN = new RegExp(
-    JINJA2_RAW_BLOCK.source +
+  JINJA2_RAW_BLOCK.source +
     '|' +
     SOURCECODE_BLOCK.source +
     '|' +
-    /`[^`]*`/.source, 'g');
+    /`[^`]*`/.source,
+  'g'
+);
 
 // Inside code blocks we search for mustache expressions
 // The constant 'server_for_email' and expressions with a dot or a bracket are not considered mustache
 // TODO: Avoid the need to distinguish between mustache and jinja2
 const MUSTACHE_PATTERN = new RegExp(
-    '(' +
+  '(' +
     JINJA2_RAW_BLOCK.source +
     '|' +
     /\{\{(?!\s*server_for_email\s*\}\})(?:[\s\S]*?\}\})?/.source +
-    ')', 'g');
+    ')',
+  'g'
+);
 
 // Matches tags used for SSR
 const NUNJUCKS_PATTERN = /\[(?:%|=|#)|(?:%|=|#)\]/g;
@@ -58,8 +59,8 @@ const NUNJUCKS_PATTERN = /\[(?:%|=|#)|(?:%|=|#)\]/g;
 // This pattern will find relative urls.
 // It will als match source code blocks to skip them and not replace any links inside.
 const RELATIVE_LINK_PATTERN = new RegExp(
-    // skip sourcecode tag in markdown
-    SOURCECODE_BLOCK.source +
+  // skip sourcecode tag in markdown
+  SOURCECODE_BLOCK.source +
     '|' +
     // skip inline source marker
     /`[^`]*`/.source +
@@ -68,19 +69,39 @@ const RELATIVE_LINK_PATTERN = new RegExp(
     /<a(?:\s+[^>]*)?\shref\s*=\s*"([^":\{?#]+)(?:[?#][^\)]*)?"/.source +
     '|' +
     // find markdown link block [text](../link):
-    /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source
-    , 'g');
+    /\[[^\]]+\]\(([^:\)\{?#]+)(?:[?#][^\)]*)?\)/.source,
+  'g'
+);
 
 // This pattern will find the text for markdown titles skipping explicit anchors.
-const TITLE_ANCHOR_PATTERN =
-    /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/mg;
+const TITLE_ANCHOR_PATTERN = /^(#+)[ \t]+(.*?)(<a[ \t]+name=[^>]*><\/a>)?((?:.(?!<a[ \t]+name))*?)$/gm;
+
+// Matches a block of frontmatter delimited by ---
+const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
+
+// Matches a HTML comment in the form of <!-- Comment. -->
+const HTML_COMMENT_PATTERN = /<!--.*?-->/gms;
 
 class MarkdownDocument {
-  constructor(path, contents) {
-    this._contents = contents.trim();
+  constructor(path, contents, frontmatter) {
+    this.contents = contents;
+    try {
+      this._frontmatter =
+        frontmatter || MarkdownDocument.extractFrontmatter(contents);
+    } catch (e) {
+      log.error(`Failed to parse frontmatter for ${path}`, e.message);
+      this._frontmatter = {
+        '$title': '',
+      };
+    }
 
-    this._bootstrapFrontmatter();
-    this._convertSyntax();
+    if (!this.teaser.text) {
+      log.warn(`Auto extracting teaser text for ${path}`);
+      this.teaser = {text: MarkdownDocument.extractTeaserText(contents)};
+      if (!this.teaser.text) {
+        log.error(`Failed to extract teaser text for ${path}`);
+      }
+    }
 
     this.toc = contents.includes(TOC_MARKER) ? false : true;
     this.path = path;
@@ -89,6 +110,7 @@ class MarkdownDocument {
   set toc(active) {
     // Remove markers from document as inline TOCs are not supported
     this._contents = this._contents.replace(TOC_MARKER, '');
+
     this._frontmatter['toc'] = active;
     this._toc = active;
   }
@@ -107,6 +129,10 @@ class MarkdownDocument {
 
   set importURL(importURL) {
     this._importURL = importURL;
+  }
+
+  get title() {
+    return this._frontmatter['$title'] || this._frontmatter['title'];
   }
 
   set title(title) {
@@ -136,43 +162,15 @@ class MarkdownDocument {
     this._frontmatter['formats'] = formats;
   }
 
-  /**
-   * Returns the formats supported by any version of this component.
-   */
-  get supportedFormats() {
-    return this._frontmatter['supported_formats'] || [];
-  }
-
-  set supportedFormats(formats) {
-    this._frontmatter['supported_formats'] = formats;
-  }
-
-  get component() {
-    return this._frontmatter['component'];
-  }
-
-  set component(component) {
-    this._frontmatter['component'] = component;
-  }
-
-  get version() {
-    return this._frontmatter['version'];
-  }
-
-  set version(version) {
-    this._frontmatter['version'] = version;
-  }
-
-  set versions(versions) {
-    this._frontmatter['versions'] = versions;
-  }
-
   get teaser() {
     return this._frontmatter['teaser'] || {};
   }
 
   set teaser(teaser) {
-    this._frontmatter['teaser'] = Object.assign(this._frontmatter['teaser'] || {}, teaser);
+    this._frontmatter['teaser'] = Object.assign(
+      this._frontmatter['teaser'] || {},
+      teaser
+    );
   }
 
   set servingPath(path) {
@@ -180,63 +178,93 @@ class MarkdownDocument {
     this._frontmatter['$localization'] = {path: '/{locale}' + path};
   }
 
-  set isCurrent(bool) {
-    this._frontmatter['is_current'] = bool;
-  }
-
-  get isCurrent() {
-    return this._frontmatter['is_current'];
-  }
-
   get contents() {
     return this._contents;
   }
 
   set contents(contents) {
-    this._contents = contents;
-    this._convertSyntax();
-  }
+    this.originalContents = contents;
 
-  _bootstrapFrontmatter() {
-    // Check if the document defines its own frontmatter already
-    if (this._contents.startsWith('---')) {
-      const FRONTMATTER_PATTERN = /^---\r?\n.*\r?\n---\r?\n/ms;
-      let frontmatter = this._contents.match(FRONTMATTER_PATTERN);
-      if (!frontmatter) {
-        LOG.warn(`Unparseable frontmatter in ${this.path}`);
-      } else {
-        frontmatter = frontmatter[0];
+    this._contents = contents.trim();
+    this._contents = this._contents.replace(FRONTMATTER_PATTERN, '');
 
-        // Strip out the frontmatter string from the actual content prior
-        // syntax conversion
-        this._contents = this._contents.replace(frontmatter, '');
-
-        // Strip out limiters from frontmatter string to be able to parse it
-        frontmatter = frontmatter.replace(/---/g, '');
-
-        // Parse frontmatter and use it as initial fill for the actual properties
-        try {
-          this._frontmatter = yaml.safeLoad(frontmatter);
-          return;
-        } catch (e) {
-          LOG.error(`Couldn't parse embedded frontmatter from ${this.path}`);
-        }
-      }
-    }
-
-    this._frontmatter = {
-      '$title': '',
-    };
-  }
-
-  _convertSyntax() {
+    this._contents = MarkdownDocument.replaceDelimiters(this._contents);
     this._contents = MarkdownDocument.rewriteCalloutToTip(this._contents);
     this._contents = MarkdownDocument.rewriteCodeBlocks(this._contents);
     this._contents = MarkdownDocument.escapeMustacheTags(this._contents);
     this._contents = MarkdownDocument.escapeNunjucksTags(this._contents);
+  }
 
-    // Replace dividers (---) as they will break front matter
-    this._contents = this._contents.replace(/\n---\n/gm, '\n***\n');
+  /**
+   * Matches all paragraphs inside a markdown document excluding tags
+   * like [tip], [sourcecode] et al.
+   * @param  {String} contents [description]
+   * @return {String}          [description]
+   */
+  static extractTeaserText(contents) {
+    contents = contents.replace(HTML_COMMENT_PATTERN, '');
+    contents = contents.replace(FRONTMATTER_PATTERN, '');
+    contents = contents.replace(TOC_MARKER, '');
+
+    // Splice out an excerpt to show in the teaser ...
+    const FIRST_PARAGRAPH = /#.*$\n+(?!<table>)(.*)$/gm;
+    let excerpt = FIRST_PARAGRAPH.exec(contents);
+    if (excerpt == null || !excerpt[1].trim()) {
+      const SECOND_PARAGRAPH = /##.*$\n+((.|\n(?=\w))*)$/gm;
+      excerpt = SECOND_PARAGRAPH.exec(contents);
+    }
+
+    if (!excerpt) {
+      log.error(
+        `Could not parse a teaser text from "${contents.substr(0, 500)}..."`
+      );
+      return '';
+    }
+
+    // Strip out all possible HTML tags
+    excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, '');
+    // Unwrap back ticks
+    excerpt = excerpt.replace(/`(.+)`/g, '$1');
+    // And unwrap possible markdown links
+    excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
+    return excerpt;
+  }
+
+  /**
+   * Checks for a frontmatter block in a string of content and tries to
+   * parse it to its JavaScript equivalent
+   * @param  {String} contents
+   * @return {Object}
+   */
+  static extractFrontmatter(contents) {
+    contents = contents.trim();
+
+    // Check if the document defines its own frontmatter already
+    if (contents.startsWith('---')) {
+      let frontmatter = contents.match(FRONTMATTER_PATTERN);
+      if (!frontmatter) {
+        log.warn(`Unparseable frontmatter "${contents.substr(0, 200)} ..."`);
+      } else {
+        frontmatter = frontmatter[0];
+
+        // Strip out limiters from frontmatter string to be able to parse it
+        // and then use it as initial fill for the actual properties
+        frontmatter = frontmatter.replace(/---/g, '');
+        return yaml.safeLoad(frontmatter);
+      }
+    } else {
+      throw Error('contents does not contain a frontmatter block.');
+    }
+  }
+
+  /**
+   * Replaces --- (<hr>) with *** as former one collides with
+   * Grow's way of extracting the frontmatter
+   * @param  {String} contents
+   * @return {String}          The rewritten input
+   */
+  static replaceDelimiters(contents) {
+    return contents.replace(/\n---\n/gm, '\n***\n');
   }
 
   /**
@@ -245,7 +273,7 @@ class MarkdownDocument {
    * @return {String}          The rewritten input
    */
   static escapeNunjucksTags(contents) {
-    return contents.replace(NUNJUCKS_PATTERN, (tag) => {
+    return contents.replace(NUNJUCKS_PATTERN, tag => {
       // TODO(matthiasrohmer): Raw tags for nunjucks do not match.
       // See: github.com/ampproject/amp.dev#2865
       return `{{'[% raw %]'}}${tag}{{'{% endraw %}'}}`;
@@ -258,18 +286,16 @@ class MarkdownDocument {
    * @return {String}          The rewritten input
    */
   static escapeMustacheTags(contents) {
-    return contents.replace(MARKDOWN_BLOCK_PATTERN, (block) => {
+    return contents.replace(MARKDOWN_BLOCK_PATTERN, block => {
       // check for mustache tags only if we have no raw block
       if (!block.startsWith('{')) {
-        block = block.replace(
-            MUSTACHE_PATTERN,
-            (part) => {
-              // again, only if it is a mustache block wrap it with raw
-              if (part.startsWith('{{')) {
-                part = '{% raw %}' + part + '{% endraw %}';
-              }
-              return part;
-            });
+        block = block.replace(MUSTACHE_PATTERN, part => {
+          // again, only if it is a mustache block wrap it with raw
+          if (part.startsWith('{{')) {
+            part = '{% raw %}' + part + '{% endraw %}';
+          }
+          return part;
+        });
       }
       return block;
     });
@@ -304,11 +330,18 @@ class MarkdownDocument {
    */
   static rewriteCodeBlocks(contents) {
     // Rewrite code blocks in fence syntax
-    contents =
-      contents.replace(/(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```[\t ]*\n)/gm,
-          (match, p1, p2, p3, p4) => {
-            return '[sourcecode' + (p3 ? ':' + p3 : ':none') + ']\n' + p4 + '[/sourcecode]\n';
-          });
+    contents = contents.replace(
+      /(```)(([A-z-]*)\n)(((?!```)[\s\S])+)(```[\t ]*\n)/gm,
+      (match, p1, p2, p3, p4) => {
+        return (
+          '[sourcecode' +
+          (p3 ? ':' + p3 : ':none') +
+          ']\n' +
+          p4 +
+          '[/sourcecode]\n'
+        );
+      }
+    );
 
     return contents;
   }
@@ -321,14 +354,16 @@ class MarkdownDocument {
     if (!base.endsWith('/')) {
       base += '/';
     }
-    this._contents = this._contents.replace(RELATIVE_LINK_PATTERN,
-        (match, hrefLink, markdownLink) => {
-          const link = hrefLink || markdownLink;
-          if (!link) {
-            return match;
-          }
-          return match.replace(link, base + link);
-        });
+    this._contents = this._contents.replace(
+      RELATIVE_LINK_PATTERN,
+      (match, hrefLink, markdownLink) => {
+        const link = hrefLink || markdownLink;
+        if (!link) {
+          return match;
+        }
+        return match.replace(link, base + link);
+      }
+    );
   }
 
   /**
@@ -346,23 +381,27 @@ class MarkdownDocument {
    */
   addExplicitAnchors() {
     const slugGenerator = new SlugGenerator();
-    this._contents = this._contents.replace(TITLE_ANCHOR_PATTERN,
-        (line, hLevel, headlineStart, anchor, headlineEnd) => {
-          let headline = headlineStart + headlineEnd;
-          headline = headline.replace(/`(.*?)`|\[(.*?)\]\(.*?\)|<.*?>|&[^\s]+?;/g,
-              (line, code, linktext) => {
-                if (code || linktext) {
-                  return code || linktext;
-                }
-                return '';
-              });
-          const slug = slugGenerator.generateSlug(headline);
-          // Even if we have an anchor the slug generator has to know all the headlines.
-          if (anchor) {
-            return line;
+    this._contents = this._contents.replace(
+      TITLE_ANCHOR_PATTERN,
+      (line, hLevel, headlineStart, anchor, headlineEnd) => {
+        let headline = headlineStart + headlineEnd;
+        headline = headline.replace(
+          /`(.*?)`|\[(.*?)\]\(.*?\)|<.*?>|&[^\s]+?;/g,
+          (line, code, linktext) => {
+            if (code || linktext) {
+              return code || linktext;
+            }
+            return '';
           }
-          return `${hLevel} ${headlineStart}${headlineEnd} <a name="${slug}"></a>`;
-        });
+        );
+        const slug = slugGenerator.generateSlug(headline);
+        // Even if we have an anchor the slug generator has to know all the headlines.
+        if (anchor) {
+          return line;
+        }
+        return `${hLevel} ${headlineStart}${headlineEnd} <a name="${slug}"></a>`;
+      }
+    );
     return true;
   }
 
@@ -373,13 +412,15 @@ class MarkdownDocument {
    */
   save(path) {
     let content = '';
-    const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {'skipInvalid': true})}---\n\n`;
+    const frontmatter = `---\n${yaml.safeDump(this._frontmatter, {
+      'skipInvalid': true,
+    })}---\n\n`;
     content += frontmatter;
 
     /**
-    * check if file is imported and if so add a comment in order to inform that
-    * the file should not be changed in the amp.dev/docs - repro
-    */
+     * check if file is imported and if so add a comment in order to inform that
+     * the file should not be changed in the amp.dev/docs - repro
+     */
     if (this._importURL) {
       const importedText = `<!--
 This file is imported from ${this.importURL}.
@@ -395,11 +436,16 @@ have a look and request a pull request there.
     content += this._contents;
 
     path = path ? path : this._path;
-    return writeFile(path, content).then(() => {
-      LOG.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
-    }).catch((e) => {
-      LOG.error(`Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`, e);
-    });
+    return writeFile(path, content)
+      .then(() => {
+        log.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
+      })
+      .catch(e => {
+        log.error(
+          `Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`,
+          e
+        );
+      });
   }
 }
 

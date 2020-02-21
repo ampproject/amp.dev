@@ -117,7 +117,7 @@ module.exports = class Document {
 
   headings() {
     let result = [];
-    this.sections.forEach((s) => {
+    this.sections.forEach(s => {
       result = result.concat(s.headings);
     });
     return result;
@@ -128,7 +128,10 @@ module.exports = class Document {
   }
 
   isAmpExperimentalAdSample() {
-    return this.metadata.preview && this.metadata.preview.toLowerCase() == 'a4a-experimental';
+    return (
+      this.metadata.preview &&
+      this.metadata.preview.toLowerCase() == 'a4a-experimental'
+    );
   }
 
   isAmpHtmlEmail() {
@@ -146,7 +149,7 @@ module.exports = class Document {
   }
 
   decodeHTMLEntities(string) {
-    return (String(string)).replace(/&#\d+;/gm, (s) => {
+    return String(string).replace(/&#\d+;/gm, s => {
       return String.fromCharCode(s.match(/\d+/gm)[0]);
     });
   }
@@ -165,7 +168,10 @@ module.exports = class Document {
     const result = [];
     for (let i = 0, len = str.length; i < len; i++) {
       current = str[i];
-      if (prev == '.' && (current === ' ' || current === '\r' || current === '\n' )) {
+      if (
+        prev == '.' &&
+        (current === ' ' || current === '\r' || current === '\n')
+      ) {
         break;
       }
       if (current !== '\r' && current !== '\n') {

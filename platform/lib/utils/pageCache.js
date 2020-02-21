@@ -22,12 +22,15 @@ const config = require('@lib/config.js');
 const Redis = require('ioredis');
 const ms = require('ms');
 const utils = require('@lib/utils');
+const log = require('@lib/utils/log')('Page Cache');
 const yaml = require('js-yaml');
 const fs = require('fs');
 const LRU = require('lru-cache');
 const gcpMetadata = require('gcp-metadata');
 
-const buildInfo = yaml.safeLoad(fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8'));
+const buildInfo = yaml.safeLoad(
+  fs.readFileSync(utils.project.paths.BUILD_INFO_PATH, 'utf8')
+);
 
 /**
  * Time in seconds an item in Redis will stay valid
@@ -68,9 +71,9 @@ const instance = (async () => {
     // slice the zone identifier
     region = zone.slice(0, -2);
 
-    console.log('[PAGE_CACHE]: Zone & Region', zone, region);
+    log.info('Zone & Region', zone, region);
   } catch (e) {
-    console.error('[PAGE_CACHE] Fetching zone failed falling back to', REGION);
+    log.error('Fetching zone failed falling back to', REGION);
     region = REGION;
   }
 
@@ -80,28 +83,33 @@ const instance = (async () => {
 let redis = null;
 let lru = null;
 
-instance.then((instance) => {
-  // Check if there is an instance available. If there is, instantiate
-  // a client to use it, if there is none fall back to LRU cache
-  if (instance) {
-    console.log('[PAGE_CACHE]: Connecting to Redis', instance.port, instance.host);
-    try {
-      redis = new Redis(instance.port, instance.host);
-      console.log('[PAGE_CACHE]: Connected to Redis instance at',
-          instance.host, instance.port);
-      return;
-    } catch (e) {
-      console.error('[PAGE_CACHE]: Connecting to Redis failed', e);
+instance
+  .then(instance => {
+    // Check if there is an instance available. If there is, instantiate
+    // a client to use it, if there is none fall back to LRU cache
+    if (instance) {
+      log.info('Connecting to Redis', instance.port, instance.host);
+      try {
+        redis = new Redis(instance.port, instance.host);
+        log.info(
+          'Connected to Redis instance at',
+          instance.host,
+          instance.port
+        );
+        return;
+      } catch (e) {
+        log.error('Connecting to Redis failed', e);
+      }
     }
-  }
 
-  console.warn('[PAGE_CACHE]: No Redis instances available. Falling back to LRU');
-  lru = new LRU({
-    max: LRU_MAX_ITEMS,
+    log.warn('No Redis instances available. Falling back to LRU');
+    lru = new LRU({
+      max: LRU_MAX_ITEMS,
+    });
+  })
+  .catch(e => {
+    log.error('Could not initialize caches', e);
   });
-}).catch((e) => {
-  console.error('[PAGE_CACHE]: Could not initialize caches', e);
-});
 
 /**
  * Prefixes the key (which should be the request URL) with the current
@@ -149,7 +157,7 @@ function set(key, html) {
   } else if (redis) {
     redis.set(prefixedKey, html, 'ex', EXPIRATION_TIME);
   } else {
-    console.warn('[PAGE_CACHE]: No cache available to cache', key);
+    log.warn('No cache available to cache', key);
   }
 }
 

@@ -42,21 +42,3 @@ html, body {
   h5:target::before { height: 93px; margin-top: -93px; }
   h6:target::before { height: 97px; margin-top: -97px; }
 }
-
-/* Custom loader for media elements */
-@keyframes PULSE {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-.#{utility('media')} .amp-active {
-  width: 20px;
-  height: 20px;
-  background-image: url('data:image/svg+xml;utf8,<svg id="bolt-outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 47"><path fill="%2391979D" fill-rule="nonzero" d="M16.545 1.2h2.763l-2.732 16.566 8.46-.012.119-.002c.761 0 1.38.619 1.38 1.381 0 .328-.306.883-.306.883L11.027 45.41l-2.81-.012 2.8-16.592-8.503.01-.135.002A1.38 1.38 0 0 1 1 27.437c0-.31.12-.582.293-.813L16.545 1.2z"/></svg>');
-  background-repeat: no-repeat;
-  animation: PULSE 1s infinite ease alternate;
-
-  & > div {
-    display: none;
-  }
-}

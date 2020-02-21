@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 'use strict';
 
 const hljs = require('highlight.js');
@@ -22,30 +21,38 @@ const marked = require('marked');
 const renderer = new marked.Renderer();
 renderer.heading = function(text, level) {
   const escapedText = text.toLowerCase().replace(/\s+/g, '-');
-  return '<h' + level + ' id="' + escapedText +
-    '" class="www-heading pb4 mb2 relative h3">' + text + '</h' + level +
-    '>';
+  return (
+    '<h' +
+    level +
+    ' id="' +
+    escapedText +
+    '" class="www-heading pb4 mb2 relative h3">' +
+    text +
+    '</h' +
+    level +
+    '>'
+  );
 };
 renderer.paragraph = function(text) {
   return '<p class="mb2 px1">' + text + '</p>';
 };
 
-const encodedTemplateRegexp =
-  /\[\[\s*<.*?>([A-Za-z]*?)\s*(<.*?>)?(\.[A-Za-z]*)?\s*<\/span>\s*\]\]/g;
+const encodedTemplateRegexp = /\[\[\s*<.*?>([A-Za-z]*?)\s*(<.*?>)?(\.[A-Za-z]*)?\s*<\/span>\s*\]\]/g;
 
 const hintStartPlaceholder = 'START_HINT';
-const hintStartRegexp =
-  new RegExp(
-      `<span class="hljs-comment">&lt;!--${hintStartPlaceholder}_(\\d+)--&gt;</span>\\n?`,
-      'g',
-  );
+const hintStartRegexp = new RegExp(
+  `<span class="hljs-comment">&lt;!--${hintStartPlaceholder}_(\\d+)--&gt;</span>\\n?`,
+  'g'
+);
 const hintEndPlaceholder = 'END_HINT';
-const hintEndRegexp =
-  new RegExp(`<span class="hljs-comment">&lt;!--${hintEndPlaceholder}--&gt;</span>\\n?`, 'g');
+const hintEndRegexp = new RegExp(
+  `<span class="hljs-comment">&lt;!--${hintEndPlaceholder}--&gt;</span>\\n?`,
+  'g'
+);
 
 // `${hintStartHtmlOpen} <hint text> ${hintStartHtmlClose} <element> ${hintEndHtml}`
 const hintStartHtmlOpen =
-'<label class="has-hint"><input class="show-hint" type="checkbox"><div class="hint">';
+  '<label class="has-hint"><input class="show-hint" type="checkbox"><div class="hint">';
 const hintStartHtmlClose = '</div>';
 const hintEndHtml = '</label>';
 
@@ -132,7 +139,9 @@ module.exports = class CodeSection {
 
   get doc() {
     if (!this.normalizedDoc_) {
-      this.normalizedDoc_ = this.normalizeLeadingWhitespace(this.doc_, {trimHeadlines: true});
+      this.normalizedDoc_ = this.normalizeLeadingWhitespace(this.doc_, {
+        trimHeadlines: true,
+      });
     }
     return this.normalizedDoc_;
   }
@@ -165,7 +174,10 @@ module.exports = class CodeSection {
   /* PRIVATE */
   shouldHideSection(str) {
     const lines = str.trim().split(/\r\n|\r|\n/);
-    return lines.length > HIDDEN_LINE_COUNT_THRESHOLD || lines.some(this.isBoilerplate);
+    return (
+      lines.length > HIDDEN_LINE_COUNT_THRESHOLD ||
+      lines.some(this.isBoilerplate)
+    );
   }
 
   isBoilerplate(str) {
@@ -179,8 +191,7 @@ module.exports = class CodeSection {
   normalizeDoc(string) {
     let startIndex = string.indexOf(COMMENT_START);
     if (startIndex == -1) {
-      startIndex =
-        this.stripLeadingWhitespace(string, this.commentOffset);
+      startIndex = this.stripLeadingWhitespace(string, this.commentOffset);
     } else {
       this.commentOffset = startIndex;
       startIndex = startIndex + COMMENT_START.length;
@@ -210,7 +221,7 @@ module.exports = class CodeSection {
       }
     }
     offset = offset === Number.MAX_SAFE_INTEGER ? 0 : offset;
-    lines = lines.map((line) => {
+    lines = lines.map(line => {
       line = line.substring(offset);
       if (options.trimHeadlines) {
         // remove leading whitespace from headings for markdown compatibility
@@ -246,11 +257,11 @@ module.exports = class CodeSection {
       return string;
     }
     const firstLine = lines[0];
-    const lastLine = lines[lines.length-1];
+    const lastLine = lines[lines.length - 1];
     if (!firstLine.startsWith('<div>') || !lastLine.endsWith('</div>')) {
       return string;
     }
-    return lines.slice(1, lines.length-1).join('\n');
+    return lines.slice(1, lines.length - 1).join('\n');
   }
 
   extractHeadings(line) {

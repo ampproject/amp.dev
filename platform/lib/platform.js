@@ -16,13 +16,13 @@
 
 'use strict';
 
-const signale = require('signale');
 const express = require('express');
 const shrinkRay = require('shrink-ray-current');
 const cors = require('cors');
 const ampCors = require('@ampproject/toolbox-cors');
 const config = require('./config.js');
 const {pagePath} = require('@lib/utils/project');
+const log = require('@lib/utils/log')('Platform');
 const subdomain = require('./middleware/subdomain.js');
 
 const routers = {
@@ -39,7 +39,7 @@ const routers = {
   go: require('@lib/routers/go.js'),
   growSharedPages: require('@lib/routers/growSharedPages.js'),
   growXmls: require('@lib/routers/growXmls.js'),
-  growPages: require('@lib/routers/growPages.js'),
+  growPages: require('@lib/routers/growPages.js').growPages,
   healthCheck: require('@lib/routers/healthCheck.js').router,
   notFound: require('@lib/routers/notFound.js'),
   packager: require('@lib/routers/packager.js'),
@@ -55,12 +55,12 @@ const PORT = config.hosts.platform.port || process.env.APP_PORT || 80;
 
 class Platform {
   start() {
-    signale.info('Starting platform');
+    log.info('Starting platform');
     return new Promise(async (resolve, reject) => {
       try {
         await this._createServer();
         this.httpServer = this.server.listen(PORT, () => {
-          signale.success(`server listening on ${PORT}!`);
+          log.success(`server listening on ${PORT}!`);
           resolve();
         });
         // Increase keep alive timeout
@@ -73,14 +73,16 @@ class Platform {
   }
 
   stop() {
-    signale.info('Stopping platform');
+    log.info('Stopping platform');
     return new Promise(async (resolve, reject) => {
       this.httpServer.close(() => resolve());
     });
   }
 
   async _createServer() {
-    signale.await(`Starting platform with environment ${config.environment} on ${HOST} ...`);
+    log.await(
+      `Starting platform with environment ${config.environment} on ${HOST} ...`
+    );
     this.server = express();
 
     // pass app engine HTTPS status to express app
@@ -98,13 +100,17 @@ class Platform {
     this.server.use(require('./middleware/security.js'));
     this.server.use(require('./middleware/redirects.js'));
     this.server.use(require('./middleware/caching.js'));
-    this.server.use(cors({
-      origin: true,
-      credentials: true,
-    }));
-    this.server.use(ampCors({
-      email: true,
-    }));
+    this.server.use(
+      cors({
+        origin: true,
+        credentials: true,
+      })
+    );
+    this.server.use(
+      ampCors({
+        email: true,
+      })
+    );
     // debug computing times
     this.server.use((req, res, next) => {
       const timeStart = process.hrtime();
@@ -118,7 +124,11 @@ class Platform {
         if (req.header('amp-cache-transform')) {
           postfix += ' [SXG]';
         }
-        console.log(`[${prefix}] ${req.get('host')}${req.originalUrl} ${seconds}s ${postfix}`);
+        console.log(
+          `[${prefix}] ${req.get('host')}${
+            req.originalUrl
+          } ${seconds}s ${postfix}`
+        );
       });
 
       next();
@@ -126,18 +136,26 @@ class Platform {
   }
 
   async _configureSubdomains() {
-    this.server.use(await subdomain.map(config.hosts.playground, routers.playground));
+    this.server.use(
+      await subdomain.map(config.hosts.playground, routers.playground)
+    );
     this.server.use(await subdomain.map(config.hosts.go, routers.go));
     this.server.use(await subdomain.map(config.hosts.log, routers.log));
-    // eslint-disable-next-line new-cap
-    this.server.use(await subdomain.map(config.hosts.preview, express.Router().use([
-      routers.example.api,
-      routers.example.static,
-      routers.example.embeds,
-      routers.example.sources,
-      routers.example.experiments,
-      routers.example.inline,
-    ])));
+    this.server.use(
+      await subdomain.map(
+        config.hosts.preview,
+        express
+          .Router() // eslint-disable-line new-cap
+          .use([
+            routers.example.api,
+            routers.example.static,
+            routers.example.embeds,
+            routers.example.sources,
+            routers.example.experiments,
+            routers.example.inline,
+          ])
+      )
+    );
   }
 
   _configureRouters() {
@@ -160,7 +178,8 @@ class Platform {
 
   _configureErrorHandlers() {
     // handle errors
-    this.server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+    // eslint-disable-next-line no-unused-vars
+    this.server.use((err, req, res, next) => {
       if (err) {
         console.error('[ERROR]', err);
         res.status(500).sendFile('500.html', {root: pagePath()});
@@ -169,6 +188,6 @@ class Platform {
     // handle 404s
     this.server.use(routers.notFound);
   }
-};
+}
 
 module.exports = Platform;

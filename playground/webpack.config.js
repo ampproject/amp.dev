@@ -43,9 +43,7 @@ module.exports = (env, argv) => {
       },
     },
     plugins: [
-      new CopyWebpackPlugin([
-        {from: path.join(__dirname, 'static/')},
-      ]),
+      new CopyWebpackPlugin([{from: path.join(__dirname, 'static/')}]),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[contenthash].css',
         chunkFilename: devMode ? '[id].css' : '[name].[contenthash].css',
@@ -53,13 +51,13 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({
         template,
         filename: './index.html',
-        inlineSource: 'critical\..+$',
+        inlineSource: 'critical..+$',
         gaTrackingId: config.gaTrackingId,
       }),
       new HtmlWebpackPlugin({
         template,
         filename: './embed.html',
-        inlineSource: 'critical\..+$',
+        inlineSource: 'critical..+$',
         gaTrackingId: config.gaTrackingId,
         embed: true,
       }),

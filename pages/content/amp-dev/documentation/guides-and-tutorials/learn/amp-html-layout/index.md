@@ -1,11 +1,13 @@
 ---
 $title: AMPHTML Layout System
-$order: 1
+order: 1
 formats:
   - websites
   - email
   - stories
   - ads
+teaser:
+  text: '## Overview'
 ---
 
 <!--

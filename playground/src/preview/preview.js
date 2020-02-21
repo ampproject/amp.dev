@@ -81,7 +81,9 @@ class Preview {
     if (!label) {
       return null;
     }
-    return this.dimensions.find((d) => d.label.toLowerCase() === label.toLowerCase());
+    return this.dimensions.find(
+      d => d.label.toLowerCase() === label.toLowerCase()
+    );
   }
 
   updateParams() {
@@ -91,7 +93,9 @@ class Preview {
   }
 
   createHeader() {
-    const refreshButton = this.container.querySelector('#preview-header-refresh');
+    const refreshButton = this.container.querySelector(
+      '#preview-header-refresh'
+    );
     refreshButton.addEventListener('click', this.reload.bind(this));
   }
 
@@ -137,15 +141,19 @@ class Preview {
     const div = this.doc.createElement('div');
     div.setAttribute('id', 'preview-custom-dimension');
     div.appendChild(
-        this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), (width) => {
-          this.dimension.width = width;
-        }),
+      this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), width => {
+        this.dimension.width = width;
+      })
     );
     div.appendChild(this.doc.createTextNode('✕'));
     div.appendChild(
-        this.createSizeInput(PARAM_HEIGHT, params.get(PARAM_HEIGHT, 250), (height) => {
+      this.createSizeInput(
+        PARAM_HEIGHT,
+        params.get(PARAM_HEIGHT, 250),
+        height => {
           this.dimension.height = height;
-        }),
+        }
+      )
     );
     return div;
   }
@@ -173,7 +181,10 @@ class Preview {
   }
 
   toggleCustomSizeInput() {
-    this.customSizeInput.classList.toggle('hidden', this.dimension.label !== 'Custom');
+    this.customSizeInput.classList.toggle(
+      'hidden',
+      this.dimension.label !== 'Custom'
+    );
   }
 
   createIframe() {
@@ -182,8 +193,11 @@ class Preview {
     iframe.setAttribute('id', 'previewIframe');
     iframe.setAttribute('title', 'AMP Playground Output');
     iframe.setAttribute('allowpaymentrequest', '');
-    iframe.setAttribute('sandbox', 'allow-scripts allow-forms allow-same-origin allow-popups ' +
-      'allow-popups-to-escape-sandbox allow-presentation allow-top-navigation');
+    iframe.setAttribute(
+      'sandbox',
+      'allow-scripts allow-forms allow-same-origin allow-popups ' +
+        'allow-popups-to-escape-sandbox allow-presentation allow-top-navigation'
+    );
     iframe.setAttribute('allowfullscreen', true);
     iframe.classList.add('elevation-4dp');
     return iframe;
@@ -236,21 +250,24 @@ class Preview {
     (childWindow.AMP = childWindow.AMP || []).push(() => {
       this.restoreState(this.previewIframe, this.state);
       this.loader.hide();
-      const oldIframes = [].slice.call(this.previewContainer.querySelectorAll('iframe'))
-          .filter((e) => e !== this.previewIframe);
-      oldIframes.forEach((e) => {
+      const oldIframes = [].slice
+        .call(this.previewContainer.querySelectorAll('iframe'))
+        .filter(e => e !== this.previewIframe);
+      oldIframes.forEach(e => {
         e.classList.add('fadeout');
       });
-      setTimeout(() => oldIframes.forEach((frame) => frame.remove()), 280);
+      setTimeout(() => oldIframes.forEach(frame => frame.remove()), 280);
     });
   }
 
   getIframeWindow(iframeElement) {
-    return iframeElement.contentWindow || iframeElement.contentDocument.parentWindow;
+    return (
+      iframeElement.contentWindow || iframeElement.contentDocument.parentWindow
+    );
   }
 
   clearPlaceholders() {
-    this.previewContainer.querySelectorAll('iframe').forEach((e) => e.remove());
+    this.previewContainer.querySelectorAll('iframe').forEach(e => e.remove());
   }
 
   saveState(iframe) {

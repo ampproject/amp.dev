@@ -1,9 +1,11 @@
 ---
 $title: AMP for Email Format
-toc: true
-$order: 1
+order: 1
 formats:
   - email
+teaser:
+  text: '## Required markup'
+toc: true
 ---
 
 <!--
@@ -144,6 +146,8 @@ The following AMP-specific analytic techniques are not supported:
 
 Requests for images inside [`<amp-carousel>`](https://amp.dev/documentation/components/amp-carousel) or [`<amp-accordion>`](https://amp.dev/documentation/components/amp-accordion)
 can indicate to the sender that the user is interacting with the message.
+
+Redirects in [`<amp-form>`](https://amp.dev/documentation/components/amp-form) are disallowed at runtime.
 
 ## Feedback & Support <a name="feedback--support"></a>
 

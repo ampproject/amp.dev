@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const {Signale} = require('signale');
+const log = require('@lib/utils/log')('Component Reference Linker');
 const gulp = require('gulp');
 const through = require('through2');
 const path = require('path');
@@ -26,8 +26,11 @@ const POD_BASE_PATH = path.join(__dirname, '../../../pages/');
 
 // Which documents to check for broken references
 // eslint-disable-next-line max-len
-const PAGES_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md';
-const COMPONENTS_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/components/';
+const PAGES_SRC =
+  POD_BASE_PATH +
+  'content/amp-dev/documentation/guides-and-tutorials/develop/interactivity/remote-data.md';
+const COMPONENTS_SRC =
+  POD_BASE_PATH + 'content/amp-dev/documentation/components/';
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -36,27 +39,26 @@ const COMPONENTS_SRC = POD_BASE_PATH + 'content/amp-dev/documentation/components
  */
 class ComponentReferenceLinker {
   constructor() {
-    this._log = new Signale({
-      'scope': 'Reference linker',
-    });
     this._placeholders = {};
     this._codePlaceholders = {};
     this._tablePlaceholders = {};
   }
 
   async start() {
-    this._log.start(`Inspecting documents in ${PAGES_SRC} ...`);
+    log.start(`Inspecting documents in ${PAGES_SRC} ...`);
 
     return new Promise((resolve, reject) => {
       let stream = gulp.src(PAGES_SRC, {'read': true, 'base': './'});
-      stream = stream.pipe(through.obj((doc, encoding, callback) => {
-        stream.push(this._link(doc));
-        callback();
-      }));
+      stream = stream.pipe(
+        through.obj((doc, encoding, callback) => {
+          stream.push(this._link(doc));
+          callback();
+        })
+      );
 
       stream.pipe(gulp.dest('./'));
       stream.on('end', () => {
-        this._log.complete('Linked all component references!');
+        log.complete('Linked all component references!');
 
         resolve();
       });
@@ -68,17 +70,24 @@ class ComponentReferenceLinker {
 
     // Cut out code Examples to avoid errors in replacement process
     // eslint-disable-next-line max-len
-    const codeExamples = content.match(/(<(amp-[^\s]+)(?:\s[^>]*)?>([^`]*)?<\/\2>|```html(.*?)*?```|```css(.*?)*?```|Preview:(.*?)*?<\/amp-\w*(-\w*)*\>|<script(.*?)><\/script>|<!--([^<]*)?-->|\[sourcecode:\w*](.*?)*?\[\/sourcecode]|<pre>(.*?)\/pre>)/gms);
+    const codeExamples = content.match(
+      /(<(amp-[^\s]+)(?:\s[^>]*)?>([^`]*)?<\/\2>|```html(.*?)*?```|```css(.*?)*?```|Preview:(.*?)*?<\/amp-\w*(-\w*)*\>|<script(.*?)><\/script>|<!--([^<]*)?-->|\[sourcecode:\w*](.*?)*?\[\/sourcecode]|<pre>(.*?)\/pre>)/gms
+    );
     if (codeExamples !== null) {
       for (let i = 0; i < codeExamples.length; i++) {
         const codeExample = codeExamples[i];
-        content = content.replace(codeExample, this._createCodePlaceholder(codeExample));
+        content = content.replace(
+          codeExample,
+          this._createCodePlaceholder(codeExample)
+        );
       }
     }
 
     // Check html tables for amp-component names and replace with html placeholder
     const tableExamples = [
-      content.match(/\<a href=".*?\/amp-\w*?(-\w*?)*.*?">.*?amp-\w*?(-\w*?)*?.*?<\/a>/gm),
+      content.match(
+        /\<a href=".*?\/amp-\w*?(-\w*?)*.*?">.*?amp-\w*?(-\w*?)*?.*?<\/a>/gm
+      ),
       content.match(/\<code>.*?amp-\w*?(-\w*)*.*?\/code>/gm),
     ];
     for (let i = 0; i < tableExamples.length; i++) {
@@ -93,16 +102,26 @@ class ComponentReferenceLinker {
           }
         }
       }
-    };
+    }
 
     // Check document for amp-components and replace with md placeholder
     /* eslint-disable max-len */
     const cases = [
-      content.match(/\[amp-\w*(-\w*)*\]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
-      content.match(/\[`amp-\w*(-\w*)*\`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm),
-      content.match(/\[`<amp-\w*(-\w*)*\>`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html(.*)?\)/gm),
-      content.match(/\[amp-\w*(-\w*)*]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm),
-      content.match(/\[\`amp-\w*(-\w*)*\`]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm),
+      content.match(
+        /\[amp-\w*(-\w*)*\]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm
+      ),
+      content.match(
+        /\[`amp-\w*(-\w*)*\`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html\)/gm
+      ),
+      content.match(
+        /\[`<amp-\w*(-\w*)*\>`]\(\/docs\/reference\/components\/\w*-\w*(-\w*)*\.html(.*)?\)/gm
+      ),
+      content.match(
+        /\[amp-\w*(-\w*)*]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm
+      ),
+      content.match(
+        /\[\`amp-\w*(-\w*)*\`]\(https:\/\/www.ampproject.org\/docs\/reference\/components\/\w*-\w*(-\w*)*\)/gm
+      ),
       content.match(/\[\`amp-\w*(-\w*)*\`]\(https:\/\/github.*\.md\)/gm),
       content.match(/\[amp-\w*(-\w*)*.*]\(.*\)/gm),
       content.match(/\[(.*)?amp-\w*(-\w*)*.*]\(.*\)/gm),
@@ -113,24 +132,36 @@ class ComponentReferenceLinker {
     /* eslint-enable max-len */
     for (let i = 0; i < cases.length; i++) {
       const results = Array.from(new Set(cases[i]));
-      console.log({results});
+      log.info({results});
 
       for (let j = 0; j < results.length; j++) {
         const result = results[j];
 
         // Continue when component name is found in existing path
         // eslint-disable-next-line max-len
-        if (result.slice(-1) === '/' || result.slice(-1) === '.' || result.slice(-1) === '>') {
+        if (
+          result.slice(-1) === '/' ||
+          result.slice(-1) === '.' ||
+          result.slice(-1) === '>'
+        ) {
           continue;
         } else {
           const component = result.match(/amp-\w*(-\w*)*/g)[0];
-          const linkDescription = result.match(/(?<=\[)(.* )?amp-\w*(-\w*)*( .*)?(?=])/g);
+          const linkDescription = result.match(
+            /(?<=\[)(.* )?amp-\w*(-\w*)*( .*)?(?=])/g
+          );
           // eslint-disable-next-line max-len
-          const description = ((linkDescription !== null) ? linkDescription[0].replace(component, `\`${component}\``) : `\`${component}\``);
+          const description =
+            linkDescription !== null
+              ? linkDescription[0].replace(component, `\`${component}\``)
+              : `\`${component}\``;
           if (this._componentExist(component) === true) {
             while (content.includes(result)) {
               // eslint-disable-next-line max-len
-              const placeholder = ((i === cases.length-1) ? this._createPlaceholder(component, description) + ' ' : this._createPlaceholder(component, description));
+              const placeholder =
+                i === cases.length - 1
+                  ? this._createPlaceholder(component, description) + ' '
+                  : this._createPlaceholder(component, description);
               content = content.replace(result, placeholder);
             }
           }
@@ -146,12 +177,18 @@ class ComponentReferenceLinker {
     }
     for (const placeholder of Object.keys(this._codePlaceholders)) {
       while (content.includes(codePlaceholder)) {
-        content = content.replace(placeholder, this._codePlaceholders[placeholder]);
+        content = content.replace(
+          placeholder,
+          this._codePlaceholders[placeholder]
+        );
       }
     }
     for (const placeholder of Object.keys(this._tablePlaceholders)) {
       while (content.includes(placeholder)) {
-        content = content.replace(placeholder, this._tablePlaceholders[placeholder]);
+        content = content.replace(
+          placeholder,
+          this._tablePlaceholders[placeholder]
+        );
       }
     }
 
@@ -166,9 +203,12 @@ class ComponentReferenceLinker {
   }
 
   _createPlaceholder(component, description) {
-    const placeholder =`<!--${this._hash(description)}-->`;
+    const placeholder = `<!--${this._hash(description)}-->`;
     if (!this._placeholders[placeholder]) {
-      this._placeholders[placeholder] = this._componentPath(component, description);
+      this._placeholders[placeholder] = this._componentPath(
+        component,
+        description
+      );
     }
     return placeholder;
   }
@@ -182,9 +222,11 @@ class ComponentReferenceLinker {
   }
 
   _createTablePlaceholder(component) {
-    const placeholder =`<!--${this._hash(component)}-->`;
+    const placeholder = `<!--${this._hash(component)}-->`;
     if (!this._tablePlaceholders[placeholder]) {
-      this._tablePlaceholders[placeholder] = this._tableComponentPath(component);
+      this._tablePlaceholders[placeholder] = this._tableComponentPath(
+        component
+      );
     }
     return placeholder;
   }

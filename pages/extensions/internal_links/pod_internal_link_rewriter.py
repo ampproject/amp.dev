@@ -79,7 +79,7 @@ class PodInternalLinkRewriter(object):
     # create virtual docs when calling get_doc with such a path.
     # This will make doc.exists equal True while doc.url.path only returns
     # garbage. To work around this only further check for docs in '/content'
-    if internal_link.startswith(STATIC_PATH):
+    if internal_link.startswith(STATIC_PATH) or '{{' in internal_link or '[=' in internal_link:
       return internal_link
 
     internal_path = internal_link

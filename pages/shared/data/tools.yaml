@@ -21,6 +21,17 @@ creation:
       fit: contain
     formats:
       - email
+  - name: Plumrocket AMP Email
+    url: https://store.plumrocket.com/amp-email-magento2-extension.html
+    type: Magento Extension
+    description: Send engaging AMP Emails from Magento ecommerce platform. Use built-in templates for transactional and promotional dynamic emails.
+    image:
+      src: /static/img/tools/plumrocket-amp-email.jpg
+      width: 440
+      height: 209
+      fit: contain
+    formats:
+      - email
   - name: Bannersnack
     description: Create AMPHTML-valid and ready to be published individual designs or full sets of static or animated marketing visuals, within minutes.
     url: https://www.bannersnack.com/amp-ads.html
@@ -107,6 +118,16 @@ platforms:
     formats:
       - websites
       - stories
+  - name: AMP for Magento
+    type: CMS
+    description: Convert Magento website into lightning fast eСommerce store powered by AMP technology.
+    url: https://store.plumrocket.com/accelerated-mobile-pages-magento2-extension.html
+    image:
+      src: /static/img/tools/plumrocket-amp-magento.jpg
+      width: 440
+      height: 209
+    formats:
+      - websites
   - name: Bold by Quintype
     type: CMS
     description: Bold by Quintype is a headless CMS built for enterprise publishers with built-in support for AMP.
@@ -149,6 +170,17 @@ platforms:
       height: 1000
     formats:
       - stories
+  - name: RebelMouse
+    description: Build AMP sites, posts, and stories. Win search, social, and email. Fast. Flexible. Secure. Modern.
+    url: https://www.rebelmouse.com/AMP/
+    type: Content Platform
+    image:
+      src: /static/img/tools/rebelmouse.jpg
+      width: 800
+      height: 400
+    formats:
+      - websites    
+      - stories      
   - name: Tick. Done.
     description: Platform to share and discover how-to stories that includes a creation tool on your phone to help you create how-to stories.
     url: http://tick.co/
@@ -337,7 +369,7 @@ developer:
       width: 800
       height: 600
     formats:
-      - email     
+      - email
 providers:
   - name: Amazon Simple Email Service (SES)
     url: https://aws.amazon.com/ses/
@@ -425,7 +457,7 @@ providers:
   - name: SendPulse
     url: https://sendpulse.com/
     type: Email Service
-    description: Send interactive emails using SendPulse email editor or API. 
+    description: Send interactive emails using SendPulse email editor or API.
     image:
       src: /static/img/tools/sendpulse-logo.png
       width: 960
@@ -436,7 +468,7 @@ providers:
   - name: eSputnik
     url: https://esputnik.com/
     type: Email Service
-    description: Supercharge conversions of your bulk and triggered campaigns with real-time recommendations in AMP powered emails 
+    description: Supercharge conversions of your bulk and triggered campaigns with real-time recommendations in AMP powered emails
     image:
       src: /static/img/tools/esputnik-logo.png
       width: 1175
@@ -447,7 +479,7 @@ providers:
   - name: Adobe Campaign Classic
     url: https://www.adobe.com/marketing/campaign.html
     type: Email Service
-    description: Adobe Campaign Classic brings email to life with AMP 
+    description: Adobe Campaign Classic brings email to life with AMP
     image:
       src: /static/img/tools/adobe_campaign.png
       width: 300
@@ -455,3 +487,25 @@ providers:
       fit: contain
     formats:
       - email
+  - name: Copernica
+    url: https://www.copernica.com/
+    type: Email Service
+    description: Copernica is a tool to create automated email campaigns with an powerful drag & drop editor.
+    image:
+      src: /static/img/tools/copernica.png
+      width: 1917
+      height: 300
+      fit: contain
+    formats:
+      - email
+  - name: WompMobile
+    url: https://www.wompmobile.com/amp-experience-platform/
+    type: Development
+    description: WompMobile is an Accelerator Platform to develop, validate, launch and manage AMP experiences. Built-in tools monitor for errors, ensure validation, purge the AMP cache, and create Signed-Exchange and Server-Side-Rendered AMPs.
+    image:
+      src: /static/img/tools/wompmobile-logo.png
+      width: 440
+      height: 110
+      fit: contain
+    formats:
+      - websites
