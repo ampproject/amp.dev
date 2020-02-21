@@ -409,10 +409,6 @@ msgstr "前一章"
 msgid "Privacy Policy"
 msgstr "隐私政策"
 
-#: /content/amp-dev/about/stories.html
-msgid "Protecting the Antarctic - A journey to a continent in distress"
-msgstr "Protecting the Antarctic - A journey to a continent in distress"
-
 #: /content/amp-dev/support/faq/publisher-monetization.md
 msgid "Publisher Monetization"
 msgstr "发布者获利"
@@ -524,24 +520,12 @@ msgid "Table of contents"
 msgstr "目录"
 
 #: /content/amp-dev/about/stories.html
-msgid "The Amazon Gold Rush"
-msgstr "The Amazon Gold Rush"
-
-#: /content/amp-dev/about/stories.html
 msgid "The Atlantic"
 msgstr "The Atlantic"
 
 #: /content/amp-dev/about/stories.html
-msgid "The Ice Cream Factory and the Rise of the Made-for-Instagram Museum | WIRED"
-msgstr "The Ice Cream Factory and the Rise of the Made-for-Instagram Museum | WIRED"
-
-#: /content/amp-dev/about/stories.html
 msgid "The Washington Post"
 msgstr "The Washington Post"
-
-#: /content/amp-dev/about/stories.html
-msgid "The best battle royale games on PC"
-msgstr "The best battle royale games on PC"
 
 #: /content/amp-dev/404.html:15
 msgid "The page you've requested can't be found. Why don't you browse around?"
@@ -615,14 +599,6 @@ msgstr "网络开发与 AMP"
 #: /views/partials/search.j2:55
 msgid "What are you looking for?"
 msgstr "您在寻找什么？"
-
-#: /content/amp-dev/about/stories.html
-msgid "What's left behind on the Moon?"
-msgstr "What's left behind on the Moon?"
-
-#: /content/amp-dev/about/stories.html
-msgid "Who runs the world? ... Beyoncé over the years."
-msgstr "Who runs the world? ... Beyoncé over the years."
 
 #: /content/amp-dev/about/stories.html
 #: /content/amp-dev/community/working-groups/_blueprint.yaml
@@ -3032,32 +3008,8 @@ msgstr "AMP 验证器"
 msgid "Experiment Configurator"
 msgstr "实验配置器"
 
-msgid "AMP Tag Test"
-msgstr "AMP 标签测试"
-
-msgid "AMP Toolbox"
-msgstr "AMP 工具箱"
-
-msgid "AMP Bench"
-msgstr "AMP 工作台"
-
-msgid "AMP Insights"
-msgstr "AMP 洞察"
-
-msgid "AMP Readiness"
-msgstr "AMP 准备就绪检查"
-
-msgid "AMP Boilerplate Generator"
-msgstr "AMP 样板生成器"
-
-msgid "AMP Prototyper"
-msgstr "AMP 原型器"
-
 msgid "VS Code Extension"
 msgstr "VS Code 扩展"
-
-msgid "React Storefront"
-msgstr "React Storefront"
 
 msgid "Access & Subscriptions"
 msgstr "访问 & 订阅"
