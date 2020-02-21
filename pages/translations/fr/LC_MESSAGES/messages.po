@@ -3009,31 +3009,7 @@ msgstr ""
 msgid "Experiment Configurator"
 msgstr ""
 
-msgid "AMP Tag Test"
-msgstr ""
-
-msgid "AMP Toolbox"
-msgstr ""
-
-msgid "AMP Bench"
-msgstr ""
-
-msgid "AMP Insights"
-msgstr ""
-
-msgid "AMP REadiness"
-msgstr ""
-
-msgid "AMP Boilerplate Generator"
-msgstr ""
-
-msgid "AMP Prototyper"
-msgstr ""
-
 msgid "VS Code Extension"
-msgstr ""
-
-msgid "React Storefront"
 msgstr ""
 
 msgid "Access & Subscriptions"

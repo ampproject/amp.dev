@@ -3008,32 +3008,8 @@ msgstr "AMP 验证器"
 msgid "Experiment Configurator"
 msgstr "实验配置器"
 
-msgid "AMP Tag Test"
-msgstr "AMP 标签测试"
-
-msgid "AMP Toolbox"
-msgstr "AMP 工具箱"
-
-msgid "AMP Bench"
-msgstr "AMP 工作台"
-
-msgid "AMP Insights"
-msgstr "AMP 洞察"
-
-msgid "AMP REadiness"
-msgstr "AMP 准备就绪检查"
-
-msgid "AMP Boilerplate Generator"
-msgstr "AMP 样板生成器"
-
-msgid "AMP Prototyper"
-msgstr "AMP 原型器"
-
 msgid "VS Code Extension"
 msgstr "VS Code 扩展"
-
-msgid "React Storefront"
-msgstr "React Storefront"
 
 msgid "Access & Subscriptions"
 msgstr "访问 & 订阅"
