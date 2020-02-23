@@ -1205,7 +1205,7 @@ msgid "Build your first AMP page now"
 msgstr ""
 
 #: /content/amp-dev/index.html:522
-msgid "You don’t need to download AMP and no installation is required.<br/> Because it is a open-source project, it is free!"
+msgid "You don’t need to download AMP and no installation is required.<br/> Because it is an open-source project, it is free!"
 msgstr ""
 
 #: /content/amp-dev/about/stories.html:90
