@@ -28,7 +28,7 @@ For performance and usability reasons, AMP [limits some CSS styles](style_pages.
 [/tip]
 
 ## Add styles to a page <a name="add-styles-to-a-page"></a>
-Each AMP page has a 50,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit. 
+Each AMP page has a 75,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit. 
 
 ### Define styles in head 
 
