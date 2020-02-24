@@ -56,7 +56,7 @@
         This is the script in [hello-world.js](hello-world.js):
 
         ```js
-const button = document.querySelector('#hello');
+const button = document.getElementById('hello');
 button.addEventListener('click', () => {
   const h1 = document.createElement('h1');
   h1.textContent = 'Hello World!';
@@ -76,7 +76,7 @@ button.addEventListener('click', () => {
 
       -->
       <script id="hello-world" type="text/plain" target="amp-script">
-    const button = document.querySelector('#hello2');
+    const button = document.getElementById('hello2');
     button.addEventListener('click', () => {
       const h1 = document.createElement('h1');
       h1.textContent = 'Hello World 2!';
@@ -100,7 +100,7 @@ button.addEventListener('click', () => {
     const fetchCurrentTime = async () => {
       const response = await fetch('<% hosts.platform %>/documentation/examples/api/time');
       const data = await response.json();
-      const div = document.querySelector('#time');
+      const div = document.getElementById('time');
       div.textContent = data.time;
     }
     fetchCurrentTime();
@@ -111,24 +111,24 @@ button.addEventListener('click', () => {
       You can also use `amp-script` to implement custom form validation. Here we set the 
       `disabled` state of a button based on the input value.
   -->
-  <amp-script layout="container" script="form-validation-script" class="amp-script-sample" sandbox="allow-forms">
-    <input id="validated-input" placeholder="Only upper case letters allowed...">
-    <button id="validated-input-submit" disabled>Submit</button>
-  </amp-script>
+<amp-script layout="container" script="form-validation-script" class="amp-script-sample" sandbox="allow-forms">
+  <input id="validated-input" placeholder="Only upper case letters allowed...">
+  <button id="validated-input-submit" disabled>Submit</button>
+</amp-script>
 
-  <!-- The script adds events listeners to the input elements and sets the `disabled` state based on a custom regex. -->
-  <script id="form-validation-script" type="text/plain" target="amp-script">
-    const submitButton = document.querySelector('#validated-input-submit');
-    const validatedInput = document.querySelector('#validated-input');
-    validatedInput.addEventListener('input', () => {
-      const isValid = /^[A-Z]+$/.test(validatedInput.value);
-      if (isValid) {
-        submitButton.removeAttribute('disabled');
-      } else {
-        submitButton.setAttribute('disabled', '');
-      }
-    });
-  </script>
+<!-- The script adds events listeners to the input elements and sets the `disabled` state based on a custom regex. -->
+<script id="form-validation-script" type="text/plain" target="amp-script">
+  const submitButton = document.getElementById('validated-input-submit');
+  const validatedInput = document.getElementById('validated-input');
+  validatedInput.addEventListener('input', () => {
+    const isValid = /^[A-Z]+$/.test(validatedInput.value);
+    if (isValid) {
+      submitButton.removeAttribute('disabled');
+    } else {
+      submitButton.setAttribute('disabled', '');
+    }
+  });
+</script>
 
   <!--
       ## Detecting Android vs iOS in AMP
@@ -154,7 +154,7 @@ button.addEventListener('click', () => {
         return "other";
       }
 
-      const span = document.querySelector('#user-agent');
+      const span = document.getElementById('user-agent');
       span.textContent = getMobileOperatingSystem();
 
       const pre = document.createElement('pre');
