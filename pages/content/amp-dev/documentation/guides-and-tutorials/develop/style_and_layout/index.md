@@ -20,7 +20,7 @@ contributors:
 Styling and layout on AMP HTML pages is very similar to normal HTML pages – in
 both cases, you'll use CSS.
 
-For performance and usability reasons, AMP [limits some CSS styles](style_pages.md) and total bytes to 50,000 per page. However, AMP expands responsive design capabilities with features like [placeholders & fallbacks](placeholders.md),
+For performance and usability reasons, AMP [limits some CSS styles](style_pages.md) and total bytes to 75,000 per page. However, AMP expands responsive design capabilities with features like [placeholders & fallbacks](placeholders.md),
 [advanced art direction via srcset](art_direction.md) and the [layout attribute](control_layout.md) for better control over how your elements display.
 
 [tip type="tip"]
@@ -28,7 +28,7 @@ For performance and usability reasons, AMP [limits some CSS styles](style_pages.
 [/tip]
 
 ## Add styles to a page <a name="add-styles-to-a-page"></a>
-Each AMP page has a 50,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit. 
+Each AMP page has a 75,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit. 
 
 ### Define styles in head 
 
@@ -83,7 +83,7 @@ AMP allows inline styles:
 </body>
 [/sourcecode]
 
-Each instance of an inline style has a 1,000 byte limit. Inline styles count toward the total 50,000 byte limit. 
+Each instance of an inline style has a 1,000 byte limit. Inline styles count toward the total 75,000 byte limit. 
 
 
 ## Layout elements responsively
@@ -122,12 +122,12 @@ AMP supports both `srcset` and `sizes` attributes to give you fine grained contr
 Use the AMP validator to test
 your page's CSS and layout values.
 
-The validator confirms that your page’s CSS doesn’t exceed 50,000 bytes limit,
+The validator confirms that your page’s CSS doesn’t exceed 75,000 bytes limit,
 checks for disallowed styles, and ensures that the page's layout
 is supported and correctly formatted.
 See also this complete list of [Style and layout errors](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md#style-and-layout-errors).
 
-Example error in console for page with CSS that exceeds the 50,000 bytes limit:
+Example error in console for page with CSS that exceeds the 75,000 bytes limit:
 
 <amp-img src="/static/img/docs/too_much_css.png" width="1404" height="334" layout="responsive"></amp-img>
 

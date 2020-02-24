@@ -113,7 +113,7 @@ See [AMP for Email Supported CSS](/content/amp-dev/documentation/guides-and-tuto
 for a full list of CSS allowed across email clients that support AMP.
 
 [tip type="important"]
-    AMP enforces a size limit of 50,000 bytes for styling.
+    AMP enforces a size limit of 75,000 bytes for styling.
 [/tip]
 
 ## Allowed AMP Components
