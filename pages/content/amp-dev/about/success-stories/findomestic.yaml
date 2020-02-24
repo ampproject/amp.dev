@@ -17,12 +17,12 @@ teaser:
     width: 300
     height: 92
     alt: Findomestic
-  text: Findomestic helps users find the banking product they need right from their email.
+  text: Findomestic helps users find the banking products right from their email
 
 stage:
   headline: Findomestic helps users find the banking product they need right from their email.
   subline: FEB 24, 2020
-  layout: all
+  layout: mobile
   logo:
     image_src: '/static/img/success-stories/findomestic/findomestic-logo.png'
     width: 300
