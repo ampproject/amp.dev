@@ -1,7 +1,7 @@
 overview:
   - title: What is the Accelerated Mobile Pages project?
     answer: |
-      The Accelerated Mobile Pages (“AMP”) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.
+      The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.
 
       Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.
   - title: What are the benefits of Accelerated Mobile Pages?

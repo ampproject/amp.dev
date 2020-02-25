@@ -142,7 +142,7 @@ You can customize the timing of an animation by changing the delay or duration t
       animate-in-delay="0.3s"
       animate-in-duration="0.5s">
     I'm going to fly into the page from the left!
-  </div>
+  </p>
 </amp-story-page>
 ```
 

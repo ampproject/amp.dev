@@ -17,8 +17,8 @@ You can define CSS in AMP in the following ways:
 
 [filter formats="websites, stories"]
 
-*   Within the `<style amp-custom>` tag inside the head of the document. 50,000 byte limit.
-*   Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 50,000 byte `<style amp-custom>` limit.
+*   Within the `<style amp-custom>` tag inside the head of the document. 75,000 byte limit.
+*   Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 75,000 byte `<style amp-custom>` limit.
 *   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
 
 [/filter]
@@ -36,7 +36,7 @@ You can define CSS in AMP in the following ways:
 [/tip]
 
 [filter formats="websites, stories"]
-To keep your pages lean and speedy, AMP has enforced a 50,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles, the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
+To keep your pages lean and speedy, AMP has enforced a 75,000 byte CSS limit in the `<amp style-custom>` tag. While you can use this to define animation styles, the 500,000 bye limit inside of `<amp style-keyframes>` tag allows for more verbose animations that won't take away precious site style resources.
 [/filter]
 
 [filter formats="ads"]

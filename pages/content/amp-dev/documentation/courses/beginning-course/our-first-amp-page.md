@@ -157,7 +157,7 @@ CSS customizes the look of your websites. You will almost always add custom styl
 
 - An AMP page may only have one`<style amp-custom>` tag (decorated style tag).
 
-- The page can include no more than 50K of CSS.
+- The page can include no more than 75K of CSS.
 
 - The `!important` rule is restricted.
 
@@ -385,7 +385,7 @@ To ensure good performance and to let AMP do what it needs to, AMP places some r
 
 - An AMP page may only have one`<style amp-custom>` tag (decorated style tag).
 
-- The page can include no more than 50K of CSS.
+- The page can include no more than 75K of CSS.
 
 - The `!important` rule is restricted.
 

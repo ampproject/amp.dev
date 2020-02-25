@@ -1,31 +1,31 @@
 entries:
 
 - title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2020/02/Amp-NYC_Blog.jpg"
+  headline: "AMP Conf 2020: Return to NYC"
+  date: "February 20, 2020"
+  url: "https://blog.amp.dev/2020/02/20/amp-conf-2020-return-to-nyc/"
+
+- title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2020/01/AMP_Blog_Square_smaller.jpg"
+  headline: "In search of the amp.dev search"
+  date: "February 14, 2020"
+  url: "https://blog.amp.dev/2020/02/14/in-search-of-the-amp-dev-search/"
+
+- title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2020/02/AMP_Blog_SEOforAMPStories.jpg"
+  headline: "SEO for AMP Stories"
+  date: "February 12, 2020"
+  url: "https://blog.amp.dev/2020/02/12/seo-for-amp-stories/"
+
+- title: "Blog"
+  image: "https://blog.amp.dev/wp-content/uploads/2020/01/AMP_Blog_Square_smaller.jpg"
+  headline: "Behind the Scenes: Deploying the AMP Runtime"
+  date: "February 5, 2020"
+  url: "https://blog.amp.dev/2020/02/05/behind-the-scenes-deploying-the-amp-runtime/"
+
+- title: "Blog"
   image: "https://blog.amp.dev/wp-content/uploads/2020/01/AMP_Blog_Square_smaller.jpg"
   headline: "Helping to fund our open-source dependencies"
   date: "January 29, 2020"
   url: "https://blog.amp.dev/2020/01/29/helping-to-fund-our-open-source-dependencies/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/11/AMP_Blog_Square.jpg"
-  headline: "Cookie classification on AMP"
-  date: "January 27, 2020"
-  url: "https://blog.amp.dev/2020/01/27/cookie-classification-on-amp/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/11/AMP_Blog_Square.jpg"
-  headline: "CCPA support in AMP"
-  date: "December 20, 2019"
-  url: "https://blog.amp.dev/2019/12/20/ccpa-support-in-amp/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/12/Screen-Shot-2020-01-17-at-21.23.56.png"
-  headline: "AMP 2019 Decoded: Thank You for an Incredible Year"
-  date: "December 20, 2019"
-  url: "https://blog.amp.dev/2019/12/20/amp-2019-decoded-thank-you-for-an-incredible-year/"
-
-- title: "Blog"
-  image: "https://blog.amp.dev/wp-content/uploads/2019/11/AMP_Blog_Square.jpg"
-  headline: "Our 2019 Contributions to Web Platform Interoperability"
-  date: "December 16, 2019"
-  url: "https://blog.amp.dev/2019/12/16/our-2019-contributions-to-web-platform-interoperability/"
