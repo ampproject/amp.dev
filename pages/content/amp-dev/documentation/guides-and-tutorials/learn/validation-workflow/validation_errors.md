@@ -722,7 +722,7 @@ and it will check validation rules for the pre-defined layout.
 
 The AMP validator throws this error
 when it measures the size of the styles content
-within `<style amp-custom>` to exceed the 50,000 bytes limit.
+within `<style amp-custom>` to exceed the 75,000 bytes limit.
 
 ### CSS syntax error
 
