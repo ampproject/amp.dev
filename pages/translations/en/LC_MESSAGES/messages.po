@@ -2967,10 +2967,10 @@ msgstr ""
 msgid "Presentation"
 msgstr ""
 
-msgid "Students:"
+msgid "Students"
 msgstr ""
 
-msgid "Teachers:"
+msgid "Teachers"
 msgstr ""
 
 msgid "Find the right tools to build"

@@ -2967,10 +2967,10 @@ msgstr "Зрители"
 msgid "Presentation"
 msgstr "Презентация"
 
-msgid "Students:"
+msgid "Students"
 msgstr "Студенты"
 
-msgid "Teachers:"
+msgid "Teachers"
 msgstr "Преподаватели"
 
 msgid "Find the right tools to build"
@@ -3056,4 +3056,3 @@ msgstr "AMP только для мобильных?"
 
 msgid "<p>AMP was designed with responsiveness in mind, to work across <em>all</em> screen sizes.  However, some features for third-party platforms (e.g., Google's Top Stories carousel) may only be designed for the mobile experience.  Check with the third-party platform for how they use AMP.  For more information about mobile and desktop AMP pages, see Paul Bakaus' blog post on <a href=\"https://paulbakaus.com/2016/07/01/about-that-mobile-in-accelerated-mobile-pages/\">About that ‘mobile’ in Accelerated Mobile Pages</a>.</p>"
 msgstr "<p>AMP разрабатывались с мыслью о повышенной отзывчивости страниц и о возможности работы на экранах <em>любых</em> размеров. Тем не менее, некоторые функции сторонних платформ (например, карусель Top Stories от Google) могут работать только на мобильных устройствах. Узнать о том, как та или иная платформа использует AMP, можно в её документации. Для получения дополнительной информации о мобильных и настольных AMP-страницах см. пост в блоге Пола Бакауса (Pauk Bakaus) <a href=\"https://paulbakaus.com/2016/07/01/about-that-mobile-in-accelerated-mobile-pages/\">О  \"мобильности\" в Ускоренных Мобильных Страницах</a>.</p>"
-
