@@ -13,8 +13,8 @@
     },
     "platform": {
       "scheme": "http",
-      "host": "localhost",
-      "port": "8080"
+      "host": "34.200.36.58",
+      "port": "80"
     },
     "playground": {
       "scheme": "http",
