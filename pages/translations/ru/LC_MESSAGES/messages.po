@@ -3265,3 +3265,6 @@ msgstr ""
 
 msgid "Supported Platforms, Vendors and Partners"
 msgstr ""
+
+msgid "AMP Conf 2020: Save the date!"
+msgstr ""
