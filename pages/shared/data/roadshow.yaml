@@ -10,15 +10,15 @@ nextstop:
   coords: 76x18
   location: TBA
   time: 10:00-17:00
-  day: 28
+  day: 29
   month: mar
   year: 2020
 - title: Karachi
   coords: 73x22
   location: TBA
   time: 10:00-17:00
-  day: 28
-  month: mar
+  day: 1
+  month: apr
   year: 2020
 - title: Dhaka
   coords: 82x21
