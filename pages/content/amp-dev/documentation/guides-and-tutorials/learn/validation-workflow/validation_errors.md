@@ -716,7 +716,7 @@ and it will check validation rules for the pre-defined layout.
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Fix</strong></td>
-  	<td>Reduce the size of the stylesheet to be under 50,000 bytes.</td>
+  	<td>Reduce the size of the stylesheet to be under 75,000 bytes.</td>
   </tr>
 </table>
 

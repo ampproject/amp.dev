@@ -127,7 +127,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 다시 한번 페이지를 **새로고침**하고 스타일시트 오류가 사라졌는지 확인합니다.
 
 [tip type="note"]
-인라인 스타일링이 필요할 뿐 아니라 모든 스타일링 정보의 파일 크기가 50KB로 제한됩니다. AMP 페이지에 CSS를 인라인 처리하기 전에 [SASS](http://sass-lang.com/)와 같은 CSS 사전 처리기를 사용하여 CSS를 축소해야 합니다.
+인라인 스타일링이 필요할 뿐 아니라 모든 스타일링 정보의 파일 크기가 75KB로 제한됩니다. AMP 페이지에 CSS를 인라인 처리하기 전에 [SASS](http://sass-lang.com/)와 같은 CSS 사전 처리기를 사용하여 CSS를 축소해야 합니다.
 [/tip]
 
 [tip type="important"]
