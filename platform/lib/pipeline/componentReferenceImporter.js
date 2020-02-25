@@ -141,15 +141,15 @@ class ComponentReferenceImporter {
           continue;
         }
 
-        documents.push(
-          Object.assign({}, documents[0], {
-            name: extensionName,
-            githubPath: documents[0].githubPath.replace(
-              `${AMP_STORY_TAG}${MARKDOWN_EXTENSION}`,
-              fileName
-            ),
-          })
-        );
+        const storyExtension = Object.assign({}, documents[0], {
+          name: extensionName,
+          githubPath: documents[0].githubPath.replace(
+            `${AMP_STORY_TAG}${MARKDOWN_EXTENSION}`,
+            fileName
+          ),
+        });
+        storyExtension.script = null;
+        documents.push(storyExtension);
       }
     }
 
