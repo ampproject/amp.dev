@@ -3202,3 +3202,6 @@ msgstr "实时配置"
 
 msgid "Supported Platforms, Vendors and Partners"
 msgstr "支持的平台，供应商和合作伙伴"
+
+msgid "AMP Conf 2020: Save the date!"
+msgstr ""
