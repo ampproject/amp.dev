@@ -357,12 +357,12 @@ msgstr "开放示例"
 #: /views/examples/documentation.j2:144 /views/partials/search.j2:106
 #: /views/partials/search.j2:207
 msgid "Open in playground"
-msgstr "在试验场中打开"
+msgstr "在 playground 中打开"
 
 #: /views/examples/documentation.j2:194
 #: /views/partials/code-preview/code-preview.j2:146
 msgid "Open this snippet in playground"
-msgstr "在试验场中打开此代码片段"
+msgstr "在 playground 中打开此代码片段"
 
 #: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/_blueprint.yaml
 msgid "Optimize & Measure"
@@ -986,7 +986,7 @@ msgstr "媒体"
 #: /content/amp-dev/documentation/components/reference/amp-truncate-text-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-viz-vega-v0.1.md
 msgid "presentation"
-msgstr ""
+msgstr "展示"
 
 #: /content/amp-dev/documentation/components/reference/amp-addthis-v0.1.md
 #: /content/amp-dev/documentation/components/reference/amp-addthis-v0.1@ar.md
@@ -1070,11 +1070,11 @@ msgstr "使用现成的设计快速入门。模板适用于所有设备 - 移动
 
 #: pages/content/amp-dev/index.html:65
 msgid "AMP is a web component framework to easily create <span style=\"white-space: nowrap;\">user-first</span><br>"
-msgstr "AMP 是一个易于创建 <span style=\"white-space: nowrap;\">用户为本</span><br> 的网络组件框架"
+msgstr "AMP 是一个网络组件框架，易于创建 <span style=\"white-space: nowrap;\">用户为本</span><br> 的"
 
 #: pages/content/amp-dev/index.html:91
 msgid "The latest news"
-msgstr "最新新闻"
+msgstr "最新消息"
 
 #: pages/content/amp-dev/index.html:92
 msgid "Don't want to miss any of the great stuff that happens around AMP? Then always be first in line and subscribe to our newsletter!"
@@ -1082,7 +1082,7 @@ msgstr "不想错过任何关于 AMP 的好消息？那就抢先订阅我们的�
 
 #: pages/content/amp-dev/index.html:99
 msgid "Subscribe"
-msgstr "关注"
+msgstr "订阅"
 
 #: pages/content/amp-dev/index.html:244
 msgid "Learn more about AMP {{ format.name }}"
@@ -1222,7 +1222,7 @@ msgstr "会员链接"
 
 #: pages/content/amp-dev/about/stories.html:422
 msgid "Publishers can use affiliate links as a form of monetization by placing outlinks in organic story pages."
-msgstr "发布者可使用会员链接"
+msgstr "发布者可通过在自然的故事页面中放置会员链接，将此作为获利形式。"
 
 #: pages/content/amp-dev/about/stories.html:428
 msgid "Read Best Practices Guide"
@@ -1242,23 +1242,23 @@ msgstr "探索工具"
 
 #: pages/content/amp-dev/about/ads.html:58
 msgid "These days, if it isn’t instant - it’s not fast enough. Even the most memorable creative won’t serve its purpose if the ad is slow and disruptive for a user."
-msgstr ""
+msgstr "现在是瞬息万变的时代，如果它不是即时的 - 那它就不够快。如果广告加载缓慢且对用户造成破坏，那即使有最令人印象深刻的创意也无法达到目的。"
 
 #: pages/content/amp-dev/about/ads.html:60
 msgid "Advertising continues to be the cornerstone of every publisher’s business model; AMP is fundamentally changing the way ads are built and delivered on the web by supporting ads that are fast, safe, compelling and effective for users."
-msgstr ""
+msgstr "广告仍是每个发布者的商业模式基石；AMP 通过支持对用户来说快速、安全、引人注目且有效的广告，从根本上改变了广告在网络上的构建和投放方式。"
 
 #: pages/content/amp-dev/about/ads.html:77
 msgid "A faster way to grow your business"
-msgstr "发展业务的更快方法"
+msgstr "一种发展业务的更快方法"
 
 #: pages/content/amp-dev/about/ads.html:78
 msgid "A growing number of publishers and advertisers are adopting AMP to deliver faster and more engaging content to their users. As your clients embrace the speed of AMP and more users consume content on AMP pages, ensure that your business is positioned for the future and integrate your technology with AMP. Speeding up ads is the fastest way to boost performance."
-msgstr ""
+msgstr "越来越多的发布者和广告商正在采用 AMP 来投放给用户更快速且更具吸引力的内容。当您的用户欣然接受了 AMP 的速度且更多用户在 AMP 页面消费内容时，请确保您的业务面向未来，将您的技术与 AMP 集成。加快广告投放速度是提升效果的最快方法。"
 
 #: pages/content/amp-dev/about/ads.html:79
 msgid "AMP ads greatly improve the mobile internet through their intelligent design and pre-loading features. This leads to increased traffic, higher sales conversion rates and more pages per visit - delivering the value you’re looking for in your ads."
-msgstr ""
+msgstr "AMP 广告通过其智能的设计和预加载功能极大改善了移动网络。而这带了点击量的提高，销售转化率的提高和每次访问页数的增加 - 从而实现了您期待的广告价值。"
 
 #: pages/content/amp-dev/about/ads.html:80
 msgid "Although AMP pages support traditional HTML ads, these ads can be slow to load. To make ads themselves as fast as the rest of the AMP page, you can build ads in AMPHTML."
@@ -1282,7 +1282,7 @@ msgstr "阅读有关 AMP 广告"
 
 #: pages/content/amp-dev/about/ads.html:188
 msgid "They load way faster. Users pick up on every small delay, and when the ads load fast, this has a very positive impact on their perception and advertiser performance."
-msgstr ""
+msgstr "它们加载速度更快。用户会挑剔每一个小延迟，并且当广告快速加载时，这对他们的感知和广告商的表现会产生非常积极的影响。"
 
 #: pages/content/amp-dev/about/ads.html:190
 msgid "Shaun Zacharia, President & Co-Founder, Triplelift."
@@ -1290,7 +1290,7 @@ msgstr "Shaun Zacharia, Triplelift 的总裁兼联合创始人。"
 
 #: pages/content/amp-dev/about/ads.html:208
 msgid "The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem."
-msgstr ""
+msgstr "通过 3G 连接，每个移动网站平均需要 19 秒来加载。再加上网页加载每增加一秒钟，转化率下降 12% 的事实，您可以安全地假设两件事：速度等于性能，而大多数广告商的广告还有改进空间。这就是您的专长。无论是作为 SSP , DSP , 分析提供商还是任意两者之间的任何场景，拥抱速度即意味着提升广告活动的性能，传达高质量的用户体验，成为高速网络中的广告科技平台。加入目前支持 AMP 开源生态系统的数百种技术平台。"
 
 #: pages/content/amp-dev/about/ads.html:209
 msgid "AMP offers a way for you to give users a faster experience everywhere: on ads, landing pages or on your entire website. AMP ads help users engage with your brand and improve the performance of your campaigns. When your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result – they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase."
@@ -1434,7 +1434,7 @@ msgstr "使用 AMP 的功能现代化电子邮件"
 
 #: pages/content/amp-dev/about/email.html:105
 msgid "AMP email is an expansion of the already existing blazingly fast and high-performing AMP project.   Expand your business through unprecedented features."
-msgstr ""
+msgstr "AMP 电子邮件是对现有的快速高效的 AMP 项目的扩展。   通过前所未有的功能扩展您的业务。"
 
 #: pages/content/amp-dev/about/email.html:122
 msgid "Supported Email Clients"
@@ -1454,11 +1454,11 @@ msgstr "阅读有关 AMP 电子邮件"
 
 #: pages/content/amp-dev/about/how-amp-works.html:18
 msgid "How AMP works"
-msgstr "AMP 的工作原理"
+msgstr "AMP 是如何运作的"
 
 #: pages/content/amp-dev/about/how-amp-works.html:19
 msgid "The following optimizations combined are the reason AMP pages are so fast they appear to load instantly. There are 7 reasons in total - but if that’s still too much to read, simply watch the explainer video:"
-msgstr ""
+msgstr "结合了以下优化是 AMP 页面速度之快以至于它们可以瞬时加载的原因。总共有 7 个原因 - 但如果阅读量仍然太大，只需观看解释视频： "
 
 #: pages/content/amp-dev/about/how-amp-works.html:29
 msgid "Execute all AMP JavaScript asynchronously"
@@ -1466,7 +1466,7 @@ msgstr "异步执行所有 AMP Javascript"
 
 #: pages/content/amp-dev/about/how-amp-works.html:31
 msgid "AMP components may have JavaScript under the hood, but they’re carefully designed to make sure they don’t cause performance degradation. "
-msgstr ""
+msgstr "AMP 组件可能包含了 JavaScript, 但已被精心设计以确保不会造成性能下降。"
 
 #: pages/content/amp-dev/about/how-amp-works.html:32
 msgid "While custom JS is allowed in <a href=\"../documentation/components/reference/amp-script.md\"><code>amp-script</code></a>, and third-party JS is allowed in iframes, it cannot block rendering. For example, if third-party JS uses the <a href=\"http://www.stevesouders.com/blog/2012/04/10/dont-docwrite-scripts/\">super-bad-for-performance <code>document.write</code> API</a>, it does not block rendering the main page."
@@ -1474,7 +1474,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:36
 msgid "Size all resources statically"
-msgstr ""
+msgstr "静态调整所有资源的大小"
 
 #: pages/content/amp-dev/about/how-amp-works.html:37
 msgid "External resources such as images, ads or iframes must state their size in the HTML so that AMP can determine each element’s size and position before resources are downloaded. AMP loads the layout of the page without waiting for any resources to download. "
@@ -1482,7 +1482,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:42
 msgid "Don’t let extension mechanisms block rendering"
-msgstr ""
+msgstr "别让扩展机制阻止渲染"
 
 #: pages/content/amp-dev/about/how-amp-works.html:43
 msgid "AMP doesn’t let extension mechanisms block page rendering. AMP supports extensions for things like <a href=\"../documentation/components/reference/amp-lightbox.md\">lightboxes</a>, <a href=\"../documentation/components/reference/amp-instagram.md\">instagram embeds</a>, <a href=\"../documentation/components/reference/amp-twitter.md\">tweets</a>, etc. While these require additional HTTP requests, those requests do not block page layout and rendering."
@@ -1490,7 +1490,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:53
 msgid "Keep all third-party JavaScript out of the critical path"
-msgstr ""
+msgstr "将所有的第三方 JavaScript 排除在关键路径之外"
 
 #: pages/content/amp-dev/about/how-amp-works.html:54
 msgid "Third-party JS likes to use synchronous JS loading. They also like to <code>document.write</code> more sync scripts. For example, if you have five ads on your page, and each of them cause three synchronous loads, each with a 1 second latency connection, you’re in 15 seconds of load time just for JS loading."
@@ -1506,7 +1506,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:60
 msgid "All CSS must be inline and size-bound"
-msgstr ""
+msgstr "所有 CSS 必须内联且尺寸限制"
 
 #: pages/content/amp-dev/about/how-amp-works.html:61
 msgid "CSS blocks all rendering, it blocks page load, and it tends to get bloated. In AMP HTML pages, only inline styles are allowed. This removes 1 or often more HTTP requests from the critical rendering path compared to most web pages. "
@@ -1518,7 +1518,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:66
 msgid "Font triggering must be efficient"
-msgstr ""
+msgstr "字体触发必须高效"
 
 #: pages/content/amp-dev/about/how-amp-works.html:67
 msgid "Web fonts are super large, so <a href=\"https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization\">web font optimization</a> is crucial to performance. On a typical page that has a few sync scripts and a few external style sheets, the browser waits and waits to start downloading these huge fonts until all this happens."
@@ -1530,7 +1530,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:72
 msgid "Minimize style recalculations"
-msgstr ""
+msgstr "最小样式重新计算"
 
 #: pages/content/amp-dev/about/how-amp-works.html:73
 msgid "Each time you measure something, it triggers style recalculations which are expensive because the browser has to layout the entire page. In AMP pages, all DOM reads happen first before all the writes. This ensures there’s the max of one recalc of styles per frame. "
@@ -1542,7 +1542,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:78
 msgid "Only run GPU-accelerated animations"
-msgstr ""
+msgstr "仅运行 GPU 加速的动画"
 
 #: pages/content/amp-dev/about/how-amp-works.html:79
 msgid "The only way to have fast optimizations is to run them on the GPU. GPU knows about layers, it knows how to perform some things on these layers, it can move them, it can fade them, but it can’t update the page layout; it will hand that task over to the browser, and that’s not good."
@@ -1554,7 +1554,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:84
 msgid "Prioritize resource loading"
-msgstr ""
+msgstr "优先资源加载"
 
 #: pages/content/amp-dev/about/how-amp-works.html:85
 msgid "AMP controls all resource downloads: it prioritizes resource loading, loading only what’s needed, and prefetches lazy-loaded resources."
@@ -1570,7 +1570,7 @@ msgstr ""
 
 #: pages/content/amp-dev/about/how-amp-works.html:91
 msgid "Load pages in an instant"
-msgstr ""
+msgstr "瞬时加载页面"
 
 #: pages/content/amp-dev/about/how-amp-works.html:92
 msgid "The new <a href=\"http://www.w3.org/TR/resource-hints/#dfn-preconnect\">preconnect API</a> is used heavily to ensure HTTP requests are as fast as possible when they are made. With this, a page can be rendered before the user explicitly states they’d like to navigate to it; the page might already be available by the time the user actually selects it, leading to instant loading."
@@ -1991,24 +1991,24 @@ msgstr ""
 
 #: pages/shared/data/benefits.yaml:34
 msgid "Maintain flexibility and control and reduce complexity in your code"
-msgstr ""
+msgstr "保持您代码的灵活性和控制力，减少您代码的复杂性"
 
 #: pages/shared/data/benefits.yaml:37
 msgid "Building blocks that ensure performance"
-msgstr ""
+msgstr "确保性能的构件"
 
 #: pages/shared/data/benefits.yaml:40
 msgid "Build for a sustainable future in the open web for everyone"
-msgstr ""
+msgstr "在所有人的开放网络中搭建一个可持续发展的未来"
 
 msgid "Create flawless web experiences"
-msgstr ""
+msgstr "创造完美网络体验"
 
 msgid "Snackable formats for everyone"
-msgstr ""
+msgstr "简单易懂，老少皆宜"
 
 msgid "Super fast ads on the web"
-msgstr ""
+msgstr "网络上的超快广告"
 
 msgid "Next gen email"
 msgstr "次世代电子邮件"
@@ -2017,50 +2017,50 @@ msgid "Use cases"
 msgstr "用例"
 
 msgid "Guides & Tutorials"
-msgstr ""
+msgstr "指南 & 教程"
 
 msgid "The complete AMP library"
-msgstr ""
+msgstr "AMP 库大全"
 
 msgid "Hands on Introduction to AMP"
-msgstr ""
+msgstr "手把手讲解 AMP"
 
 msgid "Learn AMP with free courses"
-msgstr ""
+msgstr "通过免费课程了解 AMP"
 
 msgid "Templates"
-msgstr ""
+msgstr "模板"
 
 msgid "Begin building"
-msgstr ""
+msgstr "开始搭建"
 
 msgid "Ready to use"
-msgstr ""
+msgstr "可以使用"
 
 msgid "Courses"
-msgstr ""
+msgstr "课程"
 
 msgid "Governance"
-msgstr ""
+msgstr "管理"
 
 msgid "advertisers"
-msgstr ""
+msgstr "广告商"
 
 msgid "publishers"
-msgstr ""
+msgstr "发布者"
 
 msgid "e-commerce"
-msgstr ""
+msgstr "电子商务"
 
 msgid "nonprofit"
-msgstr ""
+msgstr "非盈利"
 
 msgid "social-media"
-msgstr ""
+msgstr "社交媒体"
 
 #: /content/amp-dev/about/websites.html:17
 msgid "More overall traffic"
-msgstr ""
+msgstr "整体流量增加"
 
 #: /content/amp-dev/about/websites.html:18
 msgid "India Today delights readers and boosts revenue with AMP"
@@ -2076,15 +2076,15 @@ msgstr ""
 
 #: /content/amp-dev/about/websites.html:24
 msgid "Faster page load time"
-msgstr ""
+msgstr "更快的页面加载时间"
 
 #: /content/amp-dev/about/websites.html:25
 msgid "AMP makes Gizmodo 3x faster on mobile"
-msgstr ""
+msgstr "AMP 使 Gizmodo 在移动设备上快 3 倍"
 
 #: pages/shared/data/benefits.yaml:30
 msgid "AMP can be applied across various web touch points"
-msgstr ""
+msgstr "AMP 可以被应用于各种 Web 接触点"
 
 msgid "Used by global platforms like Google, Bing and Twitter, AMP allows users a native-feeling experience across all platforms by defaulting to AMP pages when available."
 msgstr ""
@@ -2095,7 +2095,7 @@ msgstr ""
 
 #: pages/shared/data/benefits.yaml:58
 msgid "Create beautiful and engaging content easily"
-msgstr ""
+msgstr "轻松构建美观且引人入胜的内容"
 
 #: pages/shared/data/benefits.yaml:61
 msgid "Creative flexibility for editorial freedom and branding"
@@ -2103,7 +2103,7 @@ msgstr ""
 
 #: pages/shared/data/benefits.yaml:64
 msgid "Sharable and linkable on the open web"
-msgstr ""
+msgstr "开放网络上的可分享性和可链接性"
 
 msgid "AMP stories make the production of stories as easy as possible from a technical perspective."
 msgstr ""
@@ -2116,11 +2116,11 @@ msgstr ""
 
 #: pages/shared/data/benefits.yaml:45
 msgid "Track and measure"
-msgstr ""
+msgstr "追踪和衡量"
 
 #: pages/shared/data/benefits.yaml:48
 msgid "Fast loading times"
-msgstr ""
+msgstr "快速加载"
 
 #: pages/shared/data/benefits.yaml:51
 msgid "Immersive storytelling"
@@ -2649,109 +2649,109 @@ msgid "If you’re <b>a new web developer</b>, AMP helps you learn web developme
 msgstr ""
 
 msgid "About the courses"
-msgstr ""
+msgstr "关于课程"
 
 msgid "These three free courses are in use in schools and training programs around the world. Now you can take them here, online, on our site. Suitable for beginners and experienced web developers alike, they will take you from zero to AMP!"
-msgstr ""
+msgstr "这三门免费课程在全球各地的学校和培训项目中使用。现在您可以在我们的网站上，在线获取课程。初学者和经验丰富的 Web 开发人员均适用，它们将带你在 AMP 上从入门到精通！"
 
 msgid "During this course, you’ll build a sample site for Chico’s famous, and fictional, Cheese Bicycles."
-msgstr ""
+msgstr "在本课程中，您将为 Chico 著名的，虚构的芝士自行车建立示例站点。"
 
 msgid "Requirements"
-msgstr ""
+msgstr "要求"
 
 msgid "Internet connection"
-msgstr ""
+msgstr "网络连接"
 
 msgid "<a href=\"https://www.google.com/chrome/\" target=\"_blank\">Chrome browser</a>, ideally, to use the <a href=\"https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc\" target=\"_blank\">AMP Validator extension</a>"
-msgstr ""
+msgstr "最好使用<a href=\"https://www.google.com/chrome/\" target=\"_blank\">Chrome 浏览器</a>，以使用 <a href=\"https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc\" target=\"_blank\">AMP 验证器扩展</a>"
 
 msgid "We use the online editor <a href=\"https://glitch.com/\" target=\"_blank\">Glitch</a>. No IDE or local web server needed!"
-msgstr ""
+msgstr "我们使用在线编辑器 <a href=\"https://glitch.com/\" target=\"_blank\">Glitch</a> 。无需 IDE 或本地 Web 服务器！"
 
 msgid "Prerequisites"
-msgstr ""
+msgstr "先决条件"
 
 msgid "basic knowledge of HTML and CSS"
-msgstr ""
+msgstr "HTML 和 CSS 的基础知识"
 
 msgid "for the advanced course, JavaScript expressions and simple JSON"
-msgstr ""
+msgstr "面向高级课程，JavaScript 表达式和简单的 JSON"
 
 msgid "Take the Video Courses"
-msgstr ""
+msgstr "参与视频课程"
 
 msgid "All three courses can be now be taken by video on <a href=\"https://www.youtube.com/playlist?list=PLXTOW_XMsIDS45GB-eBV5s_M9EGIXMjI_\" target=\"_blank\">our YouTube channel!</a>"
-msgstr ""
+msgstr "所有三门课程现可在 <a href=\"https://www.youtube.com/playlist?list=PLXTOW_XMsIDS45GB-eBV5s_M9EGIXMjI_\" target=\"_blank\">我们的 YouTube 频道</a> 通过视频收看！"
 
 msgid "AMP Websites Examples"
-msgstr ""
+msgstr "AMP 网站示例"
 
 msgid "AMP Playground"
-msgstr ""
+msgstr "AMP Playground"
 
 msgid "Try it yourself with the AMP Playground. Test your ideas directly in the browser and get instant feedback."
-msgstr ""
+msgstr "在 AMP Playground 中尝试一下。直接在浏览器中测试您的想法并获得即时反馈。"
 
 msgid "Filter by category"
-msgstr ""
+msgstr "按类别过滤"
 
 msgid "<h1 class=\"ap-o-stage-content-headline\">Tools</h1> <h2 class=\"ap-o-stage-content-subline\">for creation, design and development</h2>"
-msgstr ""
+msgstr "<h1 class=\"ap-o-stage-content-headline\">工具</h1> <h2 class=\"ap-o-stage-content-subline\">用于创作，设计和开发</h2>"
 
 msgid "Creation &amp; Design"
-msgstr ""
+msgstr "创作 &amp; 设计"
 
 msgid "CMS &amp; Platforms"
-msgstr ""
+msgstr "CMS &amp; 平台"
 
 msgid "Developer Tools"
-msgstr ""
+msgstr "开发者工具"
 
 msgid "Service providers"
-msgstr ""
+msgstr "服务提供商"
 
 msgid "Here you can find everything you need to build AMP experiences."
-msgstr ""
+msgstr "您能在这里找到建立 AMP 体验所需的一切。"
 
 msgid "The complete documented AMP library and its references."
-msgstr ""
+msgstr "完整记录的 AMP 库及其参考。"
 
 msgid "The fastest way to learn is to peak over the tangible examples."
-msgstr ""
+msgstr "最快的学习方式是精通实例。"
 
 msgid "Don't want to start from scratch? Start with a ready-made design."
-msgstr ""
+msgstr "不想从零开始？从现成的设计开始。"
 
 msgid "Begin building for creation, design and development."
-msgstr ""
+msgstr "开始进行创建，设计和开发。"
 
 msgid "Build your first AMP Website"
-msgstr ""
+msgstr "搭建您的首个 AMP 网页"
 
 msgid "Build your first AMP Story"
-msgstr ""
+msgstr "搭建您的首个 AMP 故事"
 
 msgid "Build your first AMP Ad"
-msgstr ""
+msgstr "搭建您的首个 AMP 广告"
 
 msgid "Build your first AMP Email"
-msgstr ""
+msgstr "搭建您的首个 AMP 电子邮件"
 
 msgid "Create compelling, silky smooth and instant loading websites."
-msgstr ""
+msgstr "创建引人注目的，丝滑且瞬时加载的网页。"
 
 msgid "Create snackable, immersive and tappable stories on your website."
-msgstr ""
+msgstr "于您的网站上创建简单易懂，沉浸式和点击互动的故事。"
 
 msgid "Extend your website with fast and lightweight ad experience."
-msgstr ""
+msgstr "通过快速且轻量的广告体验来扩展您的网页。"
 
 msgid "Create emails that encourage readers to interact dynamically with content."
-msgstr ""
+msgstr "创建鼓励读者与内容动态交互的电子邮件。"
 
 msgid "See the latest videos about AMP and find out more on our <a href=\"https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a>"
-msgstr ""
+msgstr "在我们的 <a href=\"https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube 频道</a>上查看有关 AMP 的最新视频，并探索更多。"
 
 msgid "CMS"
 msgstr "CMS"
@@ -3063,19 +3063,19 @@ msgid "Presentation"
 msgstr "介绍"
 
 msgid "Students"
-msgstr ""
+msgstr "学生"
 
 msgid "Teachers"
-msgstr ""
+msgstr "教师"
 
 msgid "Find the right tools to build"
-msgstr ""
+msgstr "寻找合适的工具进行搭建"
 
 msgid "<p>Responsible for user specific controlled access to AMP content (amp-subscriptions, amp-access and related extensions)</p>"
 msgstr ""
 
 msgid "What is the Accelerated Mobile Pages project?"
-msgstr ""
+msgstr "什么是移动页面加速项目？"
 
 msgid "<p>The Accelerated Mobile Pages (AMP) Project is an open source initiative that came out of discussions between publishers and technology companies about the need to improve the entire mobile content ecosystem for everyone -- publishers, consumer platforms, advertisers, creators, and users.</p>\n<p>Today, the expectation is that content should load super fast and be easy to explore. The reality is that content can take several seconds to load, or, because the user abandons the slow page, never fully loads at all. Accelerated Mobile Pages are web pages designed to load near instantaneously -- they are a step towards a better mobile web for all.</p>"
 msgstr ""
@@ -3099,7 +3099,7 @@ msgid "<p>The companies involved in the project want to make the mobile web work
 msgstr ""
 
 msgid "Who can use Accelerated Mobile Pages?"
-msgstr ""
+msgstr "谁可以使用加速移动页面？"
 
 msgid "<p>The project is open to all players in the ecosystem - publishers, consumer platforms, advertisers and creators. To get an idea who some of the companies and sites are who use AMP, head to the <a href="/support/faqs/supported-platforms.html">Who page</a>.</p>"
 msgstr ""
@@ -3135,13 +3135,13 @@ msgid "<p>Publishers and Content Management System (CMS) providers can develop a
 msgstr ""
 
 msgid "Is AMP only for mobile?"
-msgstr ""
+msgstr "AMP 仅适用于移动设备吗？"
 
 msgid "<p>AMP was designed with responsiveness in mind, to work across <em>all</em> screen sizes.  However, some features for third-party platforms (e.g., Google's Top Stories carousel) may only be designed for the mobile experience.  Check with the third-party platform for how they use AMP.  For more information about mobile and desktop AMP pages, see Paul Bakaus' blog post on <a href="https://paulbakaus.com/2016/07/01/about-that-mobile-in-accelerated-mobile-pages/">About that ‘mobile’ in Accelerated Mobile Pages</a>.</p>"
 msgstr ""
 
 msgid "Platform Involvement"
-msgstr ""
+msgstr "平台参与"
 
 msgid "How can a consumer platform get involved in Accelerated Mobile Pages?"
 msgstr ""
@@ -3162,19 +3162,19 @@ msgid "<p>A goal of the Accelerated Mobile Pages Project is to ensure effective 
 msgstr ""
 
 msgid "Are publishers able to sell their own ad inventory?"
-msgstr ""
+msgstr "发布者能够出售自己的广告资源吗？"
 
 msgid "<p>Yes, as with their existing websites, publishers control their ad inventory and how they sell it.</p>"
 msgstr ""
 
 msgid "How do subscriptions and paywalls work with Accelerated Mobile Pages?"
-msgstr ""
+msgstr "订阅和支付服务如何与加速移动页面一起使用？"
 
 msgid "<p>It is a core objective of the Accelerated Mobile Pages project to support subscriptions and paywalls. AMP currently supports a flexible access framework where publishers can control the document viewing experience for subscribers, metered users and anonymous users.</p>"
 msgstr ""
 
 msgid "How are analytics being handled in this AMP format?"
-msgstr ""
+msgstr "在 AMP 格式中分析服务将如何被处理？"
 
 msgid "<p>Ensuring publishers are able to get robust analytics insight is a core design goal for the project. AMP currently supports the collection of analytics information using features like amp-analytics, which can integrate with 3rd party systems without compromising the AMP file speed or size. Several analytics providers are <a href=\"/support/faqs/supported-platforms.html#analytics\">participating</a> in the project.</p>"
 msgstr ""
@@ -3186,19 +3186,19 @@ msgid "<p>Yes, an AMP file is the same as the rest of your site – this space i
 msgstr ""
 
 msgid "How do I become a part of this project?"
-msgstr ""
+msgstr "我如何成为该项目的一部分？"
 
 msgid "<p>We welcome interested individuals and companies who want to get involved to get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>, so that we can add you to a distribution list and keep you posted on any new information.</p>"
-msgstr ""
+msgstr "<p>我们欢迎感兴趣并想参与其中的个人和公司通过 <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> 取得联系，这样我们可以将您添加至通讯列表，并随时向您发布任何新信息。</p>"
 
 msgid "Content Platforms"
-msgstr ""
+msgstr "内容平台"
 
 msgid "Audio/Video"
-msgstr ""
+msgstr "音频/视频"
 
 msgid "Real Time Config"
-msgstr ""
+msgstr "实时配置"
 
 msgid "Supported Platforms, Vendors and Partners"
-msgstr ""
+msgstr "支持的平台，供应商和合作伙伴"
