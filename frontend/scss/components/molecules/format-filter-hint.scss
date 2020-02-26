@@ -13,10 +13,14 @@ $height: 60px;
   height: $height;
   color: color('white');
   background-color: color('ebony-clay');
+  position: sticky!important;
+  top: 50px;
+
   @include txt-2;
 
   @media (min-width: 768px) {
     display: block;
+    top: 85px;
   }
 
   &.amp-active + &-spacer {
