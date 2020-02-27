@@ -8,65 +8,74 @@
 $height: 60px;
 
 .#{molecule('format-filter-hint')} {
-  display: none;
-  bottom: auto;
-  height: $height;
-  color: color('white');
-  background-color: color('ebony-clay');
-  @include txt-2;
+  $root: &;
 
-  @media (min-width: 768px) {
-    display: block;
+  &-banner {
+    display: none;
   }
 
-  &.amp-active + &-spacer {
-    display: none;
-    position: relative;
-    max-width: 1440px;
+  &.amp-active ~ &-banner {
+    position: sticky;
+    top: 50px;
+    height: $height;
+    max-width: 2020px;
     margin: 0 auto;
+    color: color('white');
+    background-color: color('ebony-clay');
+    @include txt-2;
+    z-index: 100;
 
     @media (min-width: 768px) {
       display: block;
-      height: $height;
-    }
 
-    &:before {
-      position: absolute;
-      z-index: 2;
-      content: "";
-      top: $height;
-      left: 50px;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 16px 12px 0 12px;
-      border-color: color('ebony-clay') transparent transparent transparent;
-    }
-  }
+      & ~ .#{utility('main')} {
+        .#{utility('ampsidebar')}-toolbar {
+          top: 135px;
+        }
 
-  &-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    max-width: 1440px;
-    padding: 12px 15px;
-    margin: 0 auto;
-  }
-
-    &-note {
-      flex: 1 0;
-      padding-right: 10px;
-    }
-
-    &-formats {
-      display: none;
-      flex: 1 0 auto;
-
-      @media (min-width: 768px) {
-        display: flex;
+        .#{atom('sidebar')}-toggle-label {
+          top: 187px;
+        }
       }
     }
+
+    #{$root}-banner {
+      &-content {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-width: 1440px;
+        padding: 12px 15px;
+        margin: 0 auto;
+
+        &:after {
+          position: absolute;
+          z-index: 200;
+          content: "";
+          top: 60px;
+          left: 50px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 16px 12px 0;
+          border-color: #29323c transparent transparent;
+        }
+      }
+
+      &-note {
+        flex: 1 0;
+        padding-right: 10px;
+      }
+
+      &-formats {
+        display: none;
+        flex: 1 0 auto;
+        @media (min-width: 768px) {
+          display: flex;
+        }
+      }
 
       &-format {
         cursor: pointer;
@@ -75,18 +84,20 @@ $height: 60px;
         margin-bottom: 0;
       }
 
-    &-dismiss {
-      border-radius: 50%;
-      height: 20px;
-      width: 20px;
-      background-color: color('white');
-      border: 0;
-      cursor: pointer;
+      &-dismiss {
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        background-color: color('white');
+        border: 0;
+        cursor: pointer;
 
-      svg {
-        fill: color('blue-ribbon');
-        width: 110%;
-        height: 110%;
+        svg {
+          fill: color('blue-ribbon');
+          width: 110%;
+          height: 110%;
+        }
       }
     }
+  }
 }
