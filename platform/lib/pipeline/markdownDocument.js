@@ -223,10 +223,12 @@ class MarkdownDocument {
 
     // Strip out all possible HTML tags
     excerpt = excerpt[1].replace(/<\/?[^>]+(>|$)/g, '');
-    // Unwrap back ticks
+    // Unwrap back ticks, ...
     excerpt = excerpt.replace(/`(.+)`/g, '$1');
-    // And unwrap possible markdown links
+    // unwrap possible markdown links, ...
     excerpt = excerpt.replace(/\[(.+)\]\(.+\)/g, '$1');
+    // and remove headline markers
+    excerpt = excerpt.replace(/#/g, '');
     return excerpt;
   }
 
