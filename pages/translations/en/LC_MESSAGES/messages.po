@@ -2976,7 +2976,7 @@ msgstr ""
 msgid "Find the right tools to build"
 msgstr ""
 
-msgid "Responsible for user specific controlled access to AMP content (amp-subscriptions, amp-access and related extensions)"
+msgid "<p>Responsible for user specific controlled access to AMP content (amp-subscriptions, amp-access and related extensions)</p>"
 msgstr ""
 
 msgid "What is the Accelerated Mobile Pages project?"
@@ -3043,4 +3043,70 @@ msgid "Is AMP only for mobile?"
 msgstr ""
 
 msgid "<p>AMP was designed with responsiveness in mind, to work across <em>all</em> screen sizes.  However, some features for third-party platforms (e.g., Google's Top Stories carousel) may only be designed for the mobile experience.  Check with the third-party platform for how they use AMP.  For more information about mobile and desktop AMP pages, see Paul Bakaus' blog post on <a href="https://paulbakaus.com/2016/07/01/about-that-mobile-in-accelerated-mobile-pages/">About that ‘mobile’ in Accelerated Mobile Pages</a>.</p>"
+msgstr ""
+
+msgid "Platform Involvement"
+msgstr ""
+
+msgid "How can a consumer platform get involved in Accelerated Mobile Pages?"
+msgstr ""
+
+msgid "<p>The project is open to everyone, and existing members of the project are very enthusiastic to engage with consumer platforms on the initiative. Google has opened its cache for use for free by anyone, including to consumer platforms that would like to display AMP content in their environment. Please get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a> and we will address your questions as quickly as we can.</p>"
+msgstr ""
+
+msgid "How can an advertising or technology vendor get involved in Accelerated Mobile Pages?"
+msgstr ""
+
+msgid "<p>Please review the <a href=\"https://github.com/ampproject/amphtml/tree/master/3p#ads\">contributing guidelines</a> and get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>.</p>"
+msgstr ""
+
+msgid "How does advertising work on Accelerated Mobile Pages?"
+msgstr ""
+
+msgid "<p>A goal of the Accelerated Mobile Pages Project is to ensure effective ad monetization on the mobile web while embracing a user-centric approach. There is currently support for a comprehensive range of ad formats, ad networks and technologies in Accelerated Mobile Pages. As part of that, those involved with the project are also engaged in crafting Sustainable Ad Practices to ensure that ads in AMP files are fast, safe, compelling and effective for users.</p>"
+msgstr ""
+
+msgid "Are publishers able to sell their own ad inventory?"
+msgstr ""
+
+msgid "<p>Yes, as with their existing websites, publishers control their ad inventory and how they sell it.</p>"
+msgstr ""
+
+msgid "How do subscriptions and paywalls work with Accelerated Mobile Pages?"
+msgstr ""
+
+msgid "<p>It is a core objective of the Accelerated Mobile Pages project to support subscriptions and paywalls. AMP currently supports a flexible access framework where publishers can control the document viewing experience for subscribers, metered users and anonymous users.</p>"
+msgstr ""
+
+msgid "How are analytics being handled in this AMP format?"
+msgstr ""
+
+msgid "<p>Ensuring publishers are able to get robust analytics insight is a core design goal for the project. AMP currently supports the collection of analytics information using features like amp-analytics, which can integrate with 3rd party systems without compromising the AMP file speed or size. Several analytics providers are <a href=\"/support/faqs/supported-platforms.html#analytics\">participating</a> in the project.</p>"
+msgstr ""
+
+msgid "Do publishers receive credit for the traffic from a measurement perspective?"
+msgstr ""
+
+msgid "<p>Yes, an AMP file is the same as the rest of your site – this space is the publisher’s canvas.</p>"
+msgstr ""
+
+msgid "How do I become a part of this project?"
+msgstr ""
+
+msgid "<p>We welcome interested individuals and companies who want to get involved to get in touch via <a href=\"https://github.com/ampproject/amphtml/issues/new\">GitHub</a>, so that we can add you to a distribution list and keep you posted on any new information.</p>"
+msgstr ""
+
+msgid "Content Platforms"
+msgstr ""
+
+msgid "Audio/Video"
+msgstr ""
+
+msgid "Real Time Config"
+msgstr ""
+
+msgid "Supported Platforms, Vendors and Partners"
+msgstr ""
+
+msgid "AMP Conf 2020: Save the date!"
 msgstr ""
