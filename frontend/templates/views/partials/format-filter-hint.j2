@@ -5,6 +5,11 @@
 <amp-user-notification class="ap-m-format-filter-hint" id="format-filter-hint" layout="nodisplay">
 </amp-user-notification>
 
+{#
+  Amp user notification is used to handle the banners state.
+  Therefore it needs to directly follow the amp-user-notification element.
+#}
+
 <div class="ap-m-format-filter-hint-banner" aria-hidden="true">
   <div class="ap-m-format-filter-hint-banner-content">
     <div class="ap-m-format-filter-hint-banner-note">{{ _('Select your format for a more streamlined experience') }}</div>

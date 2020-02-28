@@ -15,8 +15,6 @@ $height: 60px;
   }
 
   &.amp-active ~ &-banner {
-    position: sticky;
-    top: 50px;
     height: $height;
     max-width: 2020px;
     margin: 0 auto;
@@ -27,16 +25,6 @@ $height: 60px;
 
     @media (min-width: 768px) {
       display: block;
-
-      & ~ .#{utility('main')} {
-        .#{utility('ampsidebar')}-toolbar {
-          top: 135px;
-        }
-
-        .#{atom('sidebar')}-toggle-label {
-          top: 187px;
-        }
-      }
     }
 
     #{$root}-banner {
