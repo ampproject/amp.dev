@@ -69,6 +69,10 @@ $height: 60px;
         max-width: 150px;
         margin-right: 10px;
         margin-bottom: 0;
+
+        &:after {
+          display: none;
+        }
       }
 
       &-dismiss {
