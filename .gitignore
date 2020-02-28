@@ -43,3 +43,6 @@ platform/config/build-info.yaml
 # Ignore pipeline cache
 .cache/**/*
 !.cache/.gitkeep
+
+# Ignore dev config
+platform/environments/development.json
