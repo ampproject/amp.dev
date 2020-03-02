@@ -55,7 +55,7 @@
     "@ampproject/toolbox-cors": "2.0.0",
     "@ampproject/toolbox-optimizer": "2.0.0",
     "@google-cloud/datastore": "5.0.6",
-    "acorn": "7.1.0",
+    "acorn": "7.1.1",
     "casual": "1.6.2",
     "cheerio": "1.0.0-rc.3",
     "client-sessions": "0.8.0",
