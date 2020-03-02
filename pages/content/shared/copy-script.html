@@ -22,7 +22,7 @@ $sitemap:
     .success .copy-script-icon--success { opacity: 1; }
   </style>
 </head>
-<body id="copy-script">
+<body>
   <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
       {{ doc.icons.emit() }}
@@ -39,7 +39,6 @@ $sitemap:
   <input id="script-tag">
   <script>
     const animationDuration = 1200;
-    const copyScript = document.getElementById('copy-script');
     const scriptTag = document.getElementById('script-tag');
     const stringToCopy = decodeURIComponent(window.location.hash.substr(1));
 
@@ -50,9 +49,9 @@ $sitemap:
       scriptTag.setSelectionRange(0, 99999);
       document.execCommand('copy');
 
-      copyScript.classList.add('success');
+      document.body.classList.add('success');
       setTimeout(function() {
-        copyScript.classList.remove('success');
+        document.body.classList.remove('success');
       }, animationDuration);
     });
   </script>
