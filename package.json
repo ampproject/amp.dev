@@ -113,7 +113,7 @@
     "fetch-mock": "8.3.2",
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-prettier": "3.1.2",
-    "file-loader": "5.0.2",
+    "file-loader": "5.1.0",
     "globby": "11.0.0",
     "google-closure-compiler": "20200204.0.0",
     "gulp": "4.0.2",
