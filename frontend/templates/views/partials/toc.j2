@@ -20,7 +20,7 @@
     <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc" autocomplete="off">
     {# Unwrap TOC from useless markup and strip first level #}
     {% set toc = doc.format.toc.replace('<div class="toc">\n<ul>\n', '<ul>').replace('\n</ul>\n</div>', '</ul>') %}
-    {{ toc|safe }}
+    {{ doc.format.filter_toc(toc)|safe }}
   </div>
 </section>
 {% endif %}

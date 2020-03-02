@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import json
 import re
 
 FILTER_TRIGGER = '[filter'
@@ -15,6 +16,7 @@ def trigger(original_body, content):
   if FILTER_TRIGGER in original_body:
     return _transform(content)
   return content
+
 
 def _transform(content):
     for match in FILTER_TAG_PATTERN.findall(content):
@@ -41,3 +43,35 @@ def _get_attributes(match):
     for match in matches:
         attributes[match[0]] = match[1]
     return attributes
+
+FILTERED_SECTION_PATTERN = re.compile(r'({% call filter\(.*?\) %})(.*?)({% endcall %})', re.MULTILINE | re.DOTALL)
+HEADLINE_PATTERN = re.compile(r'^#+ (.*)', re.MULTILINE)
+
+def filter_toc(doc, content=''):
+  filtered_sections = FILTERED_SECTION_PATTERN.findall(content)
+
+  def filter(toc):
+    # Check if any of the headlines is in a filtered section and if so
+    # then also filter it in the TOC
+    for section in filtered_sections:
+      section_content = section[1]
+
+      headlines = HEADLINE_PATTERN.findall(section_content)
+      for headline in headlines:
+        # As jinja2 has already run when the TOC is printed SSR statements
+        # have to be handcrafted here
+        filter_tags = _get_ssr_filter_tags(_get_attributes(section[0]))
+        filtered_headline = filter_tags[0] + r'\1' + headline + r'\2' + filter_tags[1]
+        toc = re.sub(r'(<a .*?>)' + headline + '(</a>)', filtered_headline, toc)
+    return toc
+
+  return filter
+
+def _get_ssr_filter_tags(attributes):
+  levels = attributes.get('levels', DEFAULT_LEVEL).replace(' ', '').split(',')
+  formats = attributes.get('formats', DEFAULT_FORMATS).replace(' ', '').split(',')
+
+  return (
+    '[% if format in ' + json.dumps(formats) + ' and level in ' + json.dumps(levels) + ' %]',
+    '[% endif %]'
+    )
