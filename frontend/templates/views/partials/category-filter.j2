@@ -1,18 +1,9 @@
 {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
 {% do doc.amp_dependencies.add('amp-bind', '0.1') %}
-<amp-state id="activeFilter">
-  <script type="application/json">
-    {
-      "chosenFilter": "none"
-    }
-  </script>
-</amp-state>
-
 
 <div class="ap-o-filter-bubbles-list">
-  <button class="ap-m-filter-bubble filtered"
-    [class]="activeFilter.chosenFilter == 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-    on="tap:AMP.setState({ activeFilter: {chosenFilter: 'none' } })"
+  <button class="ap-m-filter-bubble [% if not {{ filter_categories }}.includes(category)%]filtered[% endif %]"
+    on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path }}')"
     name="all">
     {{ _('All') }}
   </button>
@@ -24,9 +15,8 @@
     {% endfor %}
   {% if category %}
   [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' %]
-  <button class="ap-m-filter-bubble"
-    [class]="activeFilter.chosenFilter == '{{ category|slug }}' && activeFilter.chosenFilter != 'none' ? 'ap-m-filter-bubble filtered' : 'ap-m-filter-bubble'"
-    on="tap:AMP.setState({ activeFilter: {chosenFilter: '{{ category|slug }}' } })">
+  <button class="ap-m-filter-bubble [% if {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]filtered[% endif %]"
+    on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path }}?category={{category|slug}}')">
     {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
     {{ _(category) }}
   </button>
