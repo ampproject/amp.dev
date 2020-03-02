@@ -1,39 +1,24 @@
 nextstop:
-- title: Lahore
-  coords: 75x19
-  location: TBA
-  time: 10:00-17:00
-  day: 27
-  month: mar
-  year: 2020
-- title: Islamabad
-  coords: 76x18
-  location: TBA
-  time: 10:00-17:00
-  day: 29
-  month: mar
-  year: 2020
-- title: Karachi
-  coords: 73x22
-  location: TBA
-  time: 10:00-17:00
-  day: 1
-  month: apr
-  year: 2020
-- title: Dhaka
-  coords: 82x21
-  location: TBA
-  time: 10:00-17:00
-  day: 18
-  month: apr
-  year: 2020
-- title: Colombo
-  coords: 79x27
-  location: TBA
-  time: 10:00-17:00
-  day: 22
-  month: apr
-  year: 2020
+  - title: Lahore
+    coords: 75x19
+    time: Postponed
+    location: TBD
+  - title: Islamabad
+    coords: 76x18
+    time: Postponed
+    location: TBD
+  - title: Karachi
+    coords: 73x22
+    time: Postponed
+    location: TBD
+  - title: Dhaka
+    coords: 82x21
+    time: Postponed
+    location: TBD
+  - title: Colombo
+    coords: 79x27
+    time: Postponed
+    location: TBD
 past:
   - title: SEOUL
     coords: 91x16
