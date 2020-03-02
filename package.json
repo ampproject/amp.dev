@@ -99,7 +99,7 @@
     "absolutify": "0.1.0",
     "amphtml-validator": "1.0.30",
     "archiver": "3.1.1",
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "10.1.0",
     "babel-loader": "8.0.6",
     "clean-css": "4.2.3",
     "clean-webpack-plugin": "3.0.0",
