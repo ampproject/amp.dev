@@ -10,9 +10,8 @@ author: cvializ
 <!--
   ## Introduction
 
-  Input masks automatically add formatting characters to user input, and prevent users from typing input that doesn't match the mask. For example, an input mask on a telephone field automatically adds special characters like `(`, `)` and `-`, and users can type only the numbers needed while the mask prevents them from typing incorrect characters.
+The [`amp-inputmask`](/content/amp-dev/documentation/components/reference/amp-inputmask.md) component enables input masks for form fields in AMP documents. Input masks automatically add formatting characters to user input, and prevent users from typing input that doesn't match the mask. For example, an input mask on a telephone field automatically adds special characters like `(`, `)` and `-`, and users can type only the numbers needed while the mask prevents them from typing incorrect characters.
 
-The [`amp-inputmask` component](https://github.com/ampproject/amphtml/blob/master/extensions/amp-inputmask/README.md) enables input masks for form fields in AMP documents.
 -->
 <!-- -->
 <!doctype html>
@@ -43,7 +42,7 @@ The [`amp-inputmask` component](https://github.com/ampproject/amphtml/blob/maste
    <!--
      The `mask` attribute specifies the characters that users are allowed to input, and any special characters that can be automatically added by the mask. Here, the user may enter a Canadian postal code.
 
-     In the mask, `L` allows the user to enter an alphabetic character. `0` denotes a numeric character. `_` is a literal space character. See the full mask specification at [the `amp-inputmask` documentation](https://github.com/ampproject/amphtml/blob/master/extensions/amp-inputmask/README.md)
+     In the mask, `L` allows the user to enter an alphabetic character. `0` denotes a numeric character. `_` is a literal space character. See the full mask specification at [the `amp-inputmask` documentation](/content/amp-dev/documentation/components/reference/amp-inputmask.md)
    -->
   <form class="sample-form" method="post" action-xhr="/documentation/examples/api/postal" target="_top">
     <label>Postal code: <input name="code" mask="L0L_0L0" placeholder="A1A 1A1"></label>
