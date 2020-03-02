@@ -1,12 +1,11 @@
 {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 <div class="ap-o-filter-bubbles-list">
-  <button class="ap-m-filter-bubble [% if not {{ filter_categories }}.includes(category)%]filtered[% endif %]"
-    on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path }}')"
-    name="all">
+  <a class="ap-m-filter-bubble [% if not {{ filter_categories }}.includes(category)%]filtered[% endif %]"
+      href="{{ g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path }}"
+      name="all">
     {{ _('All') }}
-  </button>
+  </a>
   {% for category, components in categories %}
   {% set scope = namespace(categoryFormats = []) %}
     {% for component in components %}
@@ -15,11 +14,12 @@
     {% endfor %}
   {% if category %}
   [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' %]
-  <button class="ap-m-filter-bubble [% if {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]filtered[% endif %]"
-    on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path }}?category={{category|slug}}')">
-    {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
-    {{ _(category) }}
-  </button>
+  <a class="ap-m-filter-bubble [% if {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]filtered[% endif %]"
+      href="{{ g.doc('/content/amp-dev/documentation/components.html', locale=doc.locale).url.path }}?category={{category|slug}}"
+      name="{{ _(category) }}">
+      {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
+      {{ _(category) }}
+  </a>
   [% endif %]
   {% endif %}
   {% endfor %}
