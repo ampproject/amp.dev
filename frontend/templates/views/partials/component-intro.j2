@@ -43,6 +43,7 @@
   <div class="ap-o-component-intro-references-container">
     <div class="ap-o-component-intro-box ap-o-component-intro-box-reference">
       <h4>Examples</h4>
+      <input type="checkbox" id="load-examples-checkbox"/>
       <div class="ap-o-component-intro-box-examples">
         {% for example in examples[doc.title] %}
         [% if format in {{ example.formats|tojson }} %]
@@ -50,6 +51,11 @@
         [% endif %]
         {% endfor %}
       </div>
+      {% if examples[doc.title]|length > 6 %}
+      <label class="ap-a-btn ap-o-component-intro-load-btn" for="load-examples-checkbox">
+        <span>{{ _('Show more') }}</span>
+      </label>
+      {% endif %}
     </div>
   </div>
   {% endif %}
