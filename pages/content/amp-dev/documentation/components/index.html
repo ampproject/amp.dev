@@ -145,9 +145,9 @@ recent_components:
         [% if not {{ filter_categories }}.includes(category) or {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
         <div id="{{ category }}" class="ap-m-table-component">
-            [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' and '{{ category }}' != 'None' %]
+            {% if category %}
             <h4 id="{{ category }}">{{ _(category_name) }}</h4>
-            [% endif %]
+            {% endif %}
             {% for component in docs %}
             {% if component.is_current %}
             <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in '{{ component.formats }}' and forcedFiltered != true %]hidden[% endif %]>
