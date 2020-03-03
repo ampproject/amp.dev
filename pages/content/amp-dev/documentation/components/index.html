@@ -145,7 +145,7 @@ recent_components:
         [% if not {{ filter_categories }}.includes(category) or {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
         <div id="{{ category }}" class="ap-m-table-component">
-            [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' %]
+            [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' and '{{ category }}' != 'None' %]
             <h4 id="{{ category }}">{{ _(category_name) }}</h4>
             [% endif %]
             {% for component in docs %}
