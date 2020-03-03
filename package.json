@@ -65,7 +65,7 @@
     "emoji-strip": "1.0.1",
     "express": "4.17.1",
     "express-formidable": "1.2.0",
-    "gcp-metadata": "3.4.0",
+    "gcp-metadata": "3.5.0",
     "http-proxy": "1.18.0",
     "iltorb": "2.4.5",
     "ioredis": "4.16.0",
