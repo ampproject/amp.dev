@@ -589,7 +589,7 @@ platform_and_vendor_partners:
       - label: Rabbit
         url: https://gomobile.jp/rabbit/
       - label: RebelMouse
-        url: https://www.rebelmouse.com/AMP/       
+        url: https://www.rebelmouse.com/AMP/
       - label: Squarespace
         url: https://support.squarespace.com/hc/en-us/articles/223766868-Using-AMP-with-Squarespace
       - label: Textpattern
@@ -669,7 +669,7 @@ platform_and_vendor_partners:
       - label: Kargo
         url: https://kargo.com/
       - label: Xandr (formerly Appnexus)
-        url: https://www.xandr.com/        
+        url: https://www.xandr.com/
       - label: Yieldlab
         url: https://www.yieldlab.com/
 supported_browsers:
@@ -685,3 +685,57 @@ supported_browsers:
     img: /static/img/platforms/opera.png
   - title: UC Browser
     img: /static/img/platforms/uc_browser.png
+email:
+  clients:
+    title: Email Clients
+    list:
+      - label: Gmail
+        url: https://developers.google.com/gmail/ampemail/
+        image:
+          src: /static/img/email-clients/gmail.png
+      - label: Mail.ru
+        url: https://postmaster.mail.ru/amp
+        image:
+          src: /static/img/email-clients/mailru.png
+      - label: Outlook.com
+        url: https://docs.microsoft.com/en-us/outlook/amphtml/
+        image:
+          src: /static/img/email-clients/outlook.png
+  partners:
+    - title: Email Platforms and Service Providers (ESPs)
+      id: esp
+      list:
+        - label: Adobe Campaign Classic
+          url: https://www.adobe.com/marketing/campaign.html
+        - label: Amazon Pinpoint
+          url: https://aws.amazon.com/pinpoint/
+        - label: Amazon Simple Email Service (SES)
+          url: https://aws.amazon.com/ses/
+        - label: AWeber
+          url: https://www.aweber.com/
+        - label: Blueshift
+          url: https://blueshift.com/
+        - label: Braze
+          url: https://www.braze.com/
+        - label: Clang
+          url: https://www.e-village.com/clang/
+        - label: Copernica
+          url: https://www.copernica.com/
+        - label: eSputnik
+          url: https://esputnik.com/
+        - label: Klaviyo
+          url: https://www.klaviyo.com/
+        - label: Maileon
+          url: https://www.maileon.com
+        - label: Mailgun
+          url: https://www.mailgun.com/
+        - label: MessageGears
+          url: https://messagegears.com/
+        - label: Pepipost
+          url: https://pepipost.com/
+        - label: SendPulse
+          url: https://sendpulse.com/
+        - label: Sparkpost
+          url: https://www.sparkpost.com/
+        - label: Twilio Sendgrid
+          url: https://www.twilio.com/sendgrid

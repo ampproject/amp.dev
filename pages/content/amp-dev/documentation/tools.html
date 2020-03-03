@@ -99,6 +99,10 @@ tools: !g.yaml /shared/data/tools.yaml
       </h2>
     </div>
 
+    {% if category == 'providers' %}
+    <p [% if format == 'email' %][% else %]hidden[% endif %] class="ap-o-tool-format-filter-caption">{{ _('Looking for supported email service providers? <a href="https://amp.dev/support/faq/email-support/">They are now listed in the FAQ</a>.') }}</p>
+    {% endif %}
+
     <div class="ap-o-teaser-grid">
       <div class="ap-o-teaser-grid-list">
         {% for tool in doc.tools[category] %}
