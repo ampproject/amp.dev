@@ -1,9 +1,9 @@
 ---
 $title@: Supported Email Platforms
-$order: 4
+$order: 5
 teaser:
   image:
-    src: '/static/img/faq/faq-platform-and-vendor-partners.jpg'
+    src: '/static/img/faq/faq-email.jpg'
     width: 570
     height: 320
     alt: FAQ – Supported Email Platforms
