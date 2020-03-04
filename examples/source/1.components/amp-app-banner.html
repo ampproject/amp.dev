@@ -3,6 +3,7 @@
 comment: Don't install serviceworker as canonical domain is different than serviceworker domain
 skipServiceWorker: true
 author: juliantoledo
+disablePlayground: true
 
 --->
 
@@ -65,8 +66,9 @@ author: juliantoledo
 </head>
 <body>
 
-  <!-- ## Basic usage -->
-  <!--
+  <!-- 
+## Basic usage 
+
 The `amp-app-banner` can be fully customized by the developer as long as the height doesn't exceed 100px.  One required UI element is a button with the attribute `[open-button]`, which triggers the app install, or opens the deep-link if the app is already installed.
   -->
   <amp-app-banner layout="nodisplay" id="my-app-banner">
@@ -75,9 +77,9 @@ The `amp-app-banner` can be fully customized by the developer as long as the hei
     <button open-button>View in app</button>
   </amp-app-banner>
 
-  <!-- ## Demo -->
+  <!-- 
+  ## Demo 
 
-  <!--
   The custom app banner shows up in AMP Viewers. The banner action opens the document's canonical URL as deep-link inside the app:
 
   ```html
@@ -97,16 +99,12 @@ The `amp-app-banner` can be fully customized by the developer as long as the hei
              controls>
   </amp-video>
   ```
+  ## Testing 
 
-  -->
-
-  <!-- ## Testing -->
-  <!--
-    The `amp-app-banner` will only show in browsers that don't provide their own app install banner. This means Chrome on Android or Safari on iOS will not show the `amp-app-banner,` but the native install banner. For testing `amp-app-banner` you can open this page:
+  The `amp-app-banner` will only show in browsers that don't provide their own app install banner. This means Chrome on Android or Safari on iOS will not show the `amp-app-banner,` but the native install banner. For testing `amp-app-banner` you can open this page:
 
   * **On a mobile device:** in browser without native install banner, e.g. [Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox&hl=en_GB) on Android or [Chrome](https://itunes.apple.com/gb/app/chrome-web-browser-by-google/id535886823?mt=8) on iOS.
   * **On Desktop:** in [mobile device emulation mode](https://developers.google.com/web/tools/chrome-devtools/device-mode/) append `#webview=1` to the [page URL](<% hosts.platform %>/components/amp-app-banner/#webview=1). The other option is to use a custom user agent in mobile emulation mode, for example: `Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) CriOS/51.000.21 Mobile/13B143 Safari/601.1`
   -->
-
 </body>
 </html>
