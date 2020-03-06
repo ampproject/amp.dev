@@ -129,7 +129,7 @@ recent_components:
       <section class="ap-m-table-component-container">
         {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
         {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
-
+        {% set filter_categories = categories|map(attribute=0)|list|tojson %}
 
         <h2>Filter by category</h2>
         {% include 'views/partials/category-filter.j2'%}
@@ -142,12 +142,12 @@ recent_components:
           {% set scope.categoryFormats = scope.categoryFormats + formats %}
         {% endfor %}
 
+        [% if not {{ filter_categories }}.includes(category) or {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]
         {% set category_name = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
-        <div [hidden]="activeFilter.chosenFilter != 'none' && activeFilter.chosenFilter != '{{ category|slug }}'">
-          <div id="{{ category }}" class="ap-m-table-component">
-            [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' %]
+        <div id="{{ category }}" class="ap-m-table-component">
+            {% if category %}
             <h4 id="{{ category }}">{{ _(category_name) }}</h4>
-            [% endif %]
+            {% endif %}
             {% for component in docs %}
             {% if component.is_current %}
             <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in '{{ component.formats }}' and forcedFiltered != true %]hidden[% endif %]>
@@ -182,7 +182,7 @@ recent_components:
             {% endif %}
             {% endfor %}
           </div>
-        </div>
+        [% endif %]
         {% endfor %}
       </section>
     </section>
