@@ -36,6 +36,7 @@ const DEFAULT_LOCALE = 'en';
 
 const AVAILABLE_LOCALES = [
   'en',
+  'de',
   'fr',
   'ar',
   'es',
