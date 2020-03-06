@@ -153,25 +153,27 @@
 
   &-load-btn {
     display: flex;
-    align-self: center;
     justify-content: center;
-    max-width: 150px;
-    margin: 20px auto auto;
-    padding: 0.5rem 2rem;
-    font-size: 0.875rem;
-    color: color('blue-ribbon');
-    border: 2px solid color('blue-ribbon');
-    background: transparent;
-    box-shadow: none;
-    opacity: 0.6;
+    align-items: flex-end;
+    height: 65px;
+    width: 100%;
+    margin-top: -30px;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%);
+    z-index: 10;
+
+    &-icon {
+      max-height: 25px;
+      max-width: 25px;
+      fill: color('blue-ribbon');
+    }
 
     .loaded {
       display: none;
     }
 
     &:hover {
-      transform: none;
-      opacity: 1;
+
     }
   }
 
