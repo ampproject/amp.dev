@@ -155,17 +155,24 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 65px;
+    height: 55px;
     width: 100%;
     margin-top: -30px;
     background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%);
     z-index: 10;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      height: 65px;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%);
+    }
 
     &-icon {
       max-height: 25px;
       max-width: 25px;
       fill: color('blue-ribbon');
+      transition: transform 0.3s;
     }
 
     .loaded {
@@ -173,7 +180,9 @@
     }
 
     &:hover {
-
+      #{$root}-load-btn-icon {
+        transform: translate3d(0, -2px, 0);
+      }
     }
   }
 
