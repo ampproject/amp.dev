@@ -41,9 +41,8 @@
   {# Check if there are examples for the current component #}
   {% if examples[doc.title] %}
   <div class="ap-o-component-intro-references-container">
-    <div class="ap-o-component-intro-box ap-o-component-intro-box-reference">
+    <div id="references" class="ap-o-component-intro-box ap-o-component-intro-box-reference">
       <h4>Examples</h4>
-      <input type="checkbox" id="load-examples-checkbox"/>
       <div class="ap-o-component-intro-box-examples">
         {% for example in examples[doc.title] %}
         [% if format in {{ example.formats|tojson }} %]
@@ -52,10 +51,10 @@
         {% endfor %}
       </div>
       {% if examples[doc.title]|length > 6 %}
-      <label class="ap-o-component-intro-load-btn" for="load-examples-checkbox">
-          {% do doc.icons.useIcon('icons/chevron-down-light.svg') %}
-          <svg class="ap-o-component-intro-load-btn-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-light"></use></svg>
-      </label>
+      <button class="ap-o-component-intro-load-btn" on="tap:references.toggleClass(class='expanded', force=true)">
+        {% do doc.icons.useIcon('icons/chevron-down-light.svg') %}
+        <svg class="ap-o-component-intro-load-btn-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-light"></use></svg>
+      </button>
       {% endif %}
     </div>
   </div>
