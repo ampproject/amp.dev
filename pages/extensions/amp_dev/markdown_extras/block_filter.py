@@ -58,11 +58,16 @@ def filter_toc(doc, content=''):
 
       headlines = HEADLINE_PATTERN.findall(section_content)
       for headline in headlines:
+        # The TOC will be stripped from all Markdown tags. Assume the only
+        # ones used are backticks and replace them. Additionally prepare
+        # the string for use in the regular expression
+        headline = headline.replace('`', '')
+
         # As jinja2 has already run when the TOC is printed SSR statements
         # have to be handcrafted here
         filter_tags = _get_ssr_filter_tags(_get_attributes(section[0]))
         filtered_headline = filter_tags[0] + r'\1' + headline + r'\2' + filter_tags[1]
-        toc = re.sub(r'(<a .*?>)' + headline + '(</a>)', filtered_headline, toc)
+        toc = re.sub(r'(<a .*?>)' + re.escape(headline) + '(</a>)', filtered_headline, toc)
     return toc
 
   return filter
