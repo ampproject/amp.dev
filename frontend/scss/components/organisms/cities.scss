@@ -25,6 +25,13 @@
   .#{molecule('tip')} {
     max-width: 60%;
 
+    &-important {
+      max-width: none;
+      width: auto;
+      margin: 50px 0;
+      margin-left: 20px;
+    }
+
     button {
       float: right;
     }
