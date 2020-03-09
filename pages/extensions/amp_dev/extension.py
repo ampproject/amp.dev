@@ -8,8 +8,9 @@ from .markdown_extras import block_tip as BlockTip
 from .markdown_extras import block_video as BlockVideo
 from .markdown_extras import inline_tip as InlineTip
 
+
 class AmpDevPreRenderHook(hooks.PreRenderHook):
-    """Handle the post-render hook."""
+    """Handle the pre-render hook."""
 
     def should_trigger(self, previous_result, doc, original_body, *_args,
                        **_kwargs):
@@ -26,8 +27,17 @@ class AmpDevPreRenderHook(hooks.PreRenderHook):
 
     def trigger(self, previous_result, doc, original_body, *_args, **_kwargs):
         content = previous_result if previous_result else original_body
+
         content = self.extension.transform_markdown(doc, original_body, content)
+
+        # The TOC should not contain headlines that are actually enclosed
+        # in format filtered sections. filter_toc creates a callable that is
+        # later able to filter the TOC based on those sections. It is *not* possible
+        # to already evaluate this here as it would overwrite all transformations
+        setattr(doc.format, 'filter_toc', BlockFilter.filter_toc(doc, content))
+
         return content
+
 
 class AmpDevExtension(extensions.BaseExtension):
     """Extends Grow with specifics for amp.dev."""
