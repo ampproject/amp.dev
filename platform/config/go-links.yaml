@@ -16,6 +16,7 @@
 /docs: /documentation/guides-and-tutorials/
 /docsgfi: https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22
 /email: /about/email/
+/email-support: /support/faq/email-support/
 /email-tools: /documentation/tools/?format=email
 /email-viewer: https://github.com/ampproject/amp-email-viewer
 /governance: /community/governance/

@@ -1,6 +1,6 @@
 ---
 $title@: Supported Browsers
-$order: 5
+$order: 6
 teaser:
   image:
     src: '/static/img/faq/faq-supported-browsers.jpg'

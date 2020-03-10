@@ -36,7 +36,11 @@
           {%- if teaser.official %}{% do doc.icons.useIcon('/icons/logo-transparent.svg') -%}
             <div class="ap-m-teaser-logo ap-a-ico"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-transparent"></use></svg></div>
           {%- endif -%}
+          {% if teaser.name %}
           {{- _(teaser.name) -}}
+          {% elif teaser.label %}
+          {{- _(teaser.label) -}}
+          {% endif %}
           </h4>
           {% if teaser.description %}
           <p>{{ _(teaser.description) }}</p>

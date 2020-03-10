@@ -12,20 +12,7 @@ flyout:
   icon: amp-email
 
 benefits: !g.yaml /shared/data/benefits.yaml
-
-email_clients:
-  - name: Gmail
-    url: https://developers.google.com/gmail/ampemail/
-    image:
-      src: /static/img/email-clients/gmail.png
-  - name: Mail.ru
-    url: https://postmaster.mail.ru/amp
-    image:
-      src: /static/img/email-clients/mailru.png
-  - name: Outlook.com
-    url: https://docs.microsoft.com/en-us/outlook/amphtml/
-    image:
-      src: /static/img/email-clients/outlook.png
+faq: !g.yaml /shared/data/faq.yaml
 ---
 {% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
 {% do doc.amp_dependencies.add('amp-fx-collection', '0.1') %}
@@ -123,7 +110,7 @@ email_clients:
       <h5>{{ _('These email clients currently support receiving AMP Emails') }}</h5>
       <div class="ap-o-component-visual-link">
       <div class="ap-o-teaser-grid-list">
-        {% for tool in doc.email_clients %}
+        {% for tool in doc.faq.email.clients.list %}
         {% include '/views/partials/tools-teaser.j2' %}
         {% endfor %}
       </div>
