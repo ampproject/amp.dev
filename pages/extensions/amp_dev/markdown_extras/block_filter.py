@@ -27,7 +27,7 @@ def _transform(content):
         replacement = '{% call filter(formats=\'' + attributes['formats'] + '\' , level=\'' + attributes['level'] + '\') %}\n'
 
         # Then also replace end tags
-        content = content.replace(FILTER_END_TAG_PATTERN, '\n{% endcall %}')
+        content = content.replace(FILTER_END_TAG_PATTERN, '\n<!-- filter -->{% endcall %}')
 
         content = content.replace(match, replacement)
 
@@ -44,7 +44,7 @@ def _get_attributes(match):
         attributes[match[0]] = match[1]
     return attributes
 
-FILTERED_SECTION_PATTERN = re.compile(r'({% call filter\(.*?\) %})(.*?)({% endcall %})', re.MULTILINE | re.DOTALL)
+FILTERED_SECTION_PATTERN = re.compile(r'({% call filter\(.*?\) %})(.*?)(<!-- filter -->{% endcall %})', re.MULTILINE | re.DOTALL)
 HEADLINE_PATTERN = re.compile(r'^#+ (.*)', re.MULTILINE)
 
 def filter_toc(doc, content=''):
@@ -58,11 +58,16 @@ def filter_toc(doc, content=''):
 
       headlines = HEADLINE_PATTERN.findall(section_content)
       for headline in headlines:
+        # The TOC will be stripped from all Markdown tags. Assume the only
+        # ones used are backticks and replace them. Additionally prepare
+        # the string for use in the regular expression
+        headline = headline.replace('`', '')
+
         # As jinja2 has already run when the TOC is printed SSR statements
         # have to be handcrafted here
         filter_tags = _get_ssr_filter_tags(_get_attributes(section[0]))
         filtered_headline = filter_tags[0] + r'\1' + headline + r'\2' + filter_tags[1]
-        toc = re.sub(r'(<a .*?>)' + headline + '(</a>)', filtered_headline, toc)
+        toc = re.sub(r'(<a .*?>)' + re.escape(headline) + '(</a>)', filtered_headline, toc)
     return toc
 
   return filter
