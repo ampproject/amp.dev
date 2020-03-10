@@ -723,6 +723,8 @@ email:
           url: https://www.copernica.com/
         - label: eSputnik
           url: https://esputnik.com/
+        - label: ExpressPigeon
+          url: https://expresspigeon.com/amp-dynamic-email
         - label: Klaviyo
           url: https://www.klaviyo.com/
         - label: Maileon
