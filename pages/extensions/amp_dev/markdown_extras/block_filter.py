@@ -27,7 +27,7 @@ def _transform(content):
         replacement = '{% call filter(formats=\'' + attributes['formats'] + '\' , level=\'' + attributes['level'] + '\') %}\n'
 
         # Then also replace end tags
-        content = content.replace(FILTER_END_TAG_PATTERN, '\n{% endcall %}')
+        content = content.replace(FILTER_END_TAG_PATTERN, '\n<!-- filter -->{% endcall %}')
 
         content = content.replace(match, replacement)
 
@@ -44,7 +44,7 @@ def _get_attributes(match):
         attributes[match[0]] = match[1]
     return attributes
 
-FILTERED_SECTION_PATTERN = re.compile(r'({% call filter\(.*?\) %})(.*?)({% endcall %})', re.MULTILINE | re.DOTALL)
+FILTERED_SECTION_PATTERN = re.compile(r'({% call filter\(.*?\) %})(.*?)(<!-- filter -->{% endcall %})', re.MULTILINE | re.DOTALL)
 HEADLINE_PATTERN = re.compile(r'^#+ (.*)', re.MULTILINE)
 
 def filter_toc(doc, content=''):
