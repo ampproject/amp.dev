@@ -132,11 +132,14 @@ class ComponentReferenceImporter {
         const fileName = path.basename(filePath);
         const extensionName = fileName.replace(MARKDOWN_EXTENSION, '');
 
-        // Verify the extension isn't available standalone
+        // Verify the extension isn't available standalone by checking
+        // the list of available ones on GitHub and verify its a extension
+        // at all by searching for a tag
         if (
           this.extensions.find(extension => {
             return extension.name == extensionName;
-          })
+          }) ||
+          !this._findExtensionTag(extensionName)
         ) {
           continue;
         }
@@ -148,7 +151,6 @@ class ComponentReferenceImporter {
             fileName
           ),
         });
-        storyExtension.script = null;
         documents.push(storyExtension);
       }
     }
@@ -180,6 +182,32 @@ class ComponentReferenceImporter {
     return tree.reduce((acc, val) => acc.concat(val), []);
   }
 
+  /**
+   * Returns the first available tag that relies on a specific extension
+   * @param  {String} extensionName
+   * @return {Object|undefined}
+   */
+  _findExtensionTag(extensionName) {
+    return this.validatorRules.raw.tags.find(tag => {
+      return tag.tagName.toLowerCase() == extensionName;
+    });
+  }
+
+  /**
+   * Returns information about the `<script>` tag required to use a
+   * specific extension
+   * @param  {String} extensionName
+   * @return {Object|undefined}
+   */
+  _findExtensionScript(extensionName) {
+    return this.validatorRules.raw.tags.find(script => {
+      if (!script.extensionSpec || script.tagName != 'SCRIPT') {
+        return false;
+      }
+      return extensionName == script.extensionSpec.name;
+    });
+  }
+
   _getExtensionMetas(extension) {
     let spec;
     for (const format of FORMATS) {
@@ -193,17 +221,8 @@ class ComponentReferenceImporter {
       return [];
     }
 
-    const tag =
-      this.validatorRules.raw.tags.find(tag => {
-        return tag.tagName.toLowerCase() == extension.name;
-      }) || {};
-    const script =
-      this.validatorRules.raw.tags.find(script => {
-        if (!script.extensionSpec || script.tagName != 'SCRIPT') {
-          return false;
-        }
-        return extension.name == script.extensionSpec.name;
-      }) || {};
+    const tag = this._findExtensionTag(extension.name) || {};
+    const script = this._findExtensionScript(extension.name) || {};
 
     spec.version = spec.version.filter(version => version != LATEST_VERSION);
     spec.version = spec.version.sort((version1, version2) => {
