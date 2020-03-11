@@ -120,13 +120,19 @@
         overflow: hidden;
         text-overflow: ellipsis;
 
+        @media (max-width: 767px) {
+          &:nth-child(1n + 4) {
+            display: none;
+          }
+        }
+
         @media (min-width: 768px) {
           width: 50%;
           padding-right: 12px;
-        }
 
-        &:nth-child(1n + 9) {
-          display: none;
+          &:nth-child(1n + 9) {
+            display: none;
+          }
         }
       }
 
