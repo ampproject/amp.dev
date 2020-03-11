@@ -39,7 +39,7 @@
 
   {% set examples = g.json('/shared/data/componentSamples.json') %}
   {# Check if there are examples for the current component #}
-  {% if examples[doc.title] %}
+  [% if format in {{ examples[doc.title]|map(attribute='formats')|sum(start=[])|unique|list|tojson }} %]
   <div class="ap-o-component-intro-references-container">
     <div class="ap-o-component-intro-box ap-o-component-intro-box-reference">
       <h4>Examples</h4>
@@ -52,5 +52,5 @@
       </div>
     </div>
   </div>
-  {% endif %}
+  [% endif %]
 </div>
