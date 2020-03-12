@@ -11,6 +11,7 @@
 */
 
 .#{organism('component-intro')} {
+  $root: &;
   display: flex;
   flex-direction: column;
   background: color('wild-sand');
@@ -119,9 +120,29 @@
         overflow: hidden;
         text-overflow: ellipsis;
 
+        @media (max-width: 767px) {
+          &:nth-child(1n + 4) {
+            display: none;
+          }
+        }
+
         @media (min-width: 768px) {
           width: 50%;
           padding-right: 12px;
+
+          &:nth-child(1n + 9) {
+            display: none;
+          }
+        }
+      }
+
+      &.expanded {
+        #{$root}-load-btn {
+          display: none;
+        }
+
+        a:nth-child(1n + 9) {
+          display: block;
         }
       }
     }
@@ -136,6 +157,7 @@
       }
     }
   }
+
   &-references-container {
     display: flex;
     flex-direction: column;
@@ -145,4 +167,40 @@
     }
   }
 
+  &-load-btn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 55px;
+    width: 100%;
+    margin-top: -30px;
+    border: none;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%);
+    z-index: 10;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      height: 65px;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%);
+    }
+
+    &-icon {
+      max-height: 25px;
+      max-width: 25px;
+      margin-top: 35px;
+      fill: color('blue-ribbon');
+      transition: transform 0.3s;
+    }
+
+    .loaded {
+      display: none;
+    }
+
+    &:hover {
+      #{$root}-load-btn-icon {
+        transform: translate3d(0, -2px, 0);
+      }
+    }
+  }
 }

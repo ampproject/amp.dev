@@ -17,7 +17,7 @@
           layout="fixed"
           sandbox="allow-scripts"
           src="{{ podspec.base_urls.platform }}/shared/copy-script#{{ script|urlencode }}">
-          <div placeholder></div>
+        <div placeholder></div>
       </amp-iframe>
     </div>
     {% endfor %}
@@ -41,7 +41,7 @@
   {# Check if there are examples for the current component #}
   {% if examples[doc.title] %}
   <div class="ap-o-component-intro-references-container">
-    <div class="ap-o-component-intro-box ap-o-component-intro-box-reference">
+    <div id="references" class="ap-o-component-intro-box ap-o-component-intro-box-reference">
       <h4>Examples</h4>
       <div class="ap-o-component-intro-box-examples">
         {% for example in examples[doc.title] %}
@@ -50,6 +50,12 @@
         [% endif %]
         {% endfor %}
       </div>
+      {% if examples[doc.title]|length > 6 %}
+      <button class="ap-o-component-intro-load-btn" on="tap:references.toggleClass(class='expanded', force=true)">
+        {% do doc.icons.useIcon('icons/chevron-down-light.svg') %}
+        <svg class="ap-o-component-intro-load-btn-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-light"></use></svg>
+      </button>
+      {% endif %}
     </div>
   </div>
   {% endif %}
