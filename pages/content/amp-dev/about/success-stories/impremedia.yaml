@@ -61,14 +61,6 @@ contents:
     headline: Solution
     text: 'In April 2018, ImpreMedia kicked off a gradual approach to AMP, first implementing on a single article on <a href="https://laopinion.com/">laopinion.com</a> and eventually the whole site. They credit the ease of implementation to the extensive documentation and examples on amp.dev.<br><br>To test these changes on staging servers, they used the <a href="https://validator.ampproject.org/">AMP project validator</a>; then used the <a href="https://search.google.com/test/amp">Google AMP Validator</a> to test the live updates. Along the way, monetization of each AMP section was a priority. Laopinion.com reached an AMP RPM higher than the RPM of mobile web. After this initial success with laopinion.com, ImpreMedia implemented AMP for all canonical content sections on all of their websites. By January 2019, AMP was fully launched for three of ImpreMedia’s main sites.'
 
-  - layout: quote
-    quote: "We were very happy to find out that we were able to monetize our AMP pages better than the non-AMP version of the site."
-    image_src: '/static/img/success-stories/impremedia/impremedia-logo.png'
-    width: 300
-    height: 60
-    alt: ImpreMedia
-    author: Santiago Maniches, Director of Product at Impremedia
-
   - layout: text
     headline: Results
     text: 'With AMP,  ImpreMedia achieved the page speed and revenue improvements they were hoping for. By May 2019, the average Page RPM on AMP was 160% higher than mobile web. These sites also have a 2x faster page load time, as measured by Lighthouse and PageSpeed Insights.'
