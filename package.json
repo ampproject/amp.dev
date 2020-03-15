@@ -59,7 +59,7 @@
     "casual": "1.6.2",
     "cheerio": "1.0.0-rc.3",
     "client-sessions": "0.8.0",
-    "cookie-parser": "1.4.4",
+    "cookie-parser": "1.4.5",
     "cors": "2.8.5",
     "csso": "4.0.2",
     "emoji-strip": "1.0.1",
