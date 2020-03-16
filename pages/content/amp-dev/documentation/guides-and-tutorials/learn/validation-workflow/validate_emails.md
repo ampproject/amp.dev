@@ -56,7 +56,7 @@ You can also validate AMP Emails using the [AMP playground](https://playground.a
 
 ### Validate delivered emails
 
-Sometimes your delivered AMP Emails may be invalid even though the email markup you authored has already been validated by tools documented in this page. The most common reason for this to happen is that your ESP modified your email markup and made it invalid after you have sent your email to your ESP for delivery. For example, if you haven't configured HTTPS tracking pixels with your ESP, then your ESP will add a insecure HTTP tracking pixel to your email. Since AMP Emails only allow HTTPS images, this will make your AMP Email invalid.
+Sometimes your delivered AMP Emails may be invalid even though the email markup you authored has already been validated by tools documented in this page. The most common reason for this to happen is that your [ESP](https://amp.dev/support/faq/email-support/) modified your email markup and made it invalid after you have sent your email to your ESP for delivery. For example, if your ESP is SparkPost and you haven't configured HTTPS tracking pixels with SparkPost, then SparkPost will add an insecure HTTP tracking pixel to your email. Since AMP Emails only allow HTTPS images, this will make your AMP Email invalid.
 
 To check whether an email delivered to your inbox is valid AMP:
 
