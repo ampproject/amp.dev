@@ -1,0 +1,74 @@
+$title: ImpreMedia
+$category: publishers
+$date: 2020-03-12
+description: ImpreMedia is a digital publisher that caters to the Hispanic audience in the US.
+
+formats:
+  - websites
+
+teaser:
+  image:
+    src: '/static/img/success-stories/impremedia/impremedia-teaser.jpg'
+    width: 1
+    height: 1
+    alt: laopinion.com
+  logo:
+    src: '/static/img/success-stories/impremedia/impremedia-logo.png'
+    width: 300
+    height: 92
+    alt: ImpreMedia
+  text: ImpreMedia is a digital publisher that caters to the Hispanic audience in the US
+
+stage:
+  headline: ImpreMedia sees 160% increase in page RPM with AMP
+  subline: MAR 12, 2020
+  layout: mobile
+  logo:
+    image_src: '/static/img/success-stories/impremedia/impremedia-logo.png'
+    width: 300
+    height: 60
+    alt: ImpreMedia
+  devices:
+    - image_src: '/static/img/success-stories/impremedia/impremedia-screen-1.jpg'
+      width: 750
+      height: 1308
+      type: mobile
+
+kpis:
+  - value: '2x'
+    text: Faster Page Speed
+
+  - value: '160%'
+    text: Increase in Page RPM (AMP vs mWeb)
+
+contents:
+  - layout: text
+    text: '<a href="https://www.impremedia.com/">ImpreMedia</a> is a digital publisher that caters to the Hispanic audience in the United States. ImpreMedia’s newsroom creates over 200 articles per day. They distribute quality content and award-winning journalism from trusted and long standing brands like LA Opinion, El Diario, and LaRaza.'
+
+  - layout: text
+    headline: Challenge
+    text: 'As a digital publisher with over 28 million monthly global users, optimal site quality is a priority for ImpreMedia. While there were few indications of poor site performance, ImpreMedia knew that they needed to continuously optimize in order to sustain the long-term growth of their platforms.<br><br>In 2018, they began looking for a way to grow their online audience and speed up the mobile experience. ImpreMedia’s primary concern was achieving these UX improvements, while still increasing ad revenue. Having dealt with unsuccessful experimentation of other mobile publishing formats, they had some initial hesitation -- but AMP quickly proved to be the solution they were looking for.'
+
+  - layout: quote
+    quote: "Implementing AMP was the fastest path to facilitate an environment that is beneficial for the users, but also very positive towards the generation of incremental revenue for a publisher. AMP has really changed the game for us."
+    image_src: '/static/img/success-stories/impremedia/impremedia-logo.png'
+    width: 300
+    height: 60
+    alt: ImpreMedia
+    author: Santiago Maniches, Director of Product at Impremedia
+
+  - layout: text
+    headline: Solution
+    text: 'In April 2018, ImpreMedia kicked off a gradual approach to AMP, first implementing on a single article on <a href="https://laopinion.com/">laopinion.com</a> and eventually the whole site. They credit the ease of implementation to the extensive documentation and examples on amp.dev.<br><br>To test these changes on staging servers, they used the <a href="https://validator.ampproject.org/">AMP project validator</a>; then used the <a href="https://search.google.com/test/amp">Google AMP Validator</a> to test the live updates. Along the way, monetization of each AMP section was a priority. Laopinion.com reached an AMP RPM higher than the RPM of mobile web. After this initial success with laopinion.com, ImpreMedia implemented AMP for all canonical content sections on all of their websites. By January 2019, AMP was fully launched for three of ImpreMedia’s main sites.'
+
+  - layout: text
+    headline: Results
+    text: 'With AMP,  ImpreMedia achieved the page speed and revenue improvements they were hoping for. By May 2019, the average Page RPM on AMP was 160% higher than mobile web. These sites also have a 2x faster page load time, as measured by Lighthouse and PageSpeed Insights.'
+
+  - layout: quote
+    quote: "At first, we were skeptical about the results we were going to achieve, but AMP quickly met and even exceeded our expectations. We were able to obtain outstanding results in a very short period of time."
+    image_src: '/static/img/success-stories/impremedia/impremedia-logo.png'
+    width: 300
+    height: 60
+    alt: ImpreMedia
+    author: Santiago Maniches, Director of Product at Impremedia

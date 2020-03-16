@@ -80,6 +80,7 @@ body {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='%2320202A'%3E%3Cpath d='M59.863 17.14l4.137 5.488-32 24.232-32-24.232 4.137-5.488 27.863 21.108z'%3E%3C/path%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
+      pointer-events: none;
     }
   }
 }
