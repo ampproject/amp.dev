@@ -44,6 +44,7 @@
 /vision-mission: /about/mission-and-vision/
 /websites: /about/websites/
 /wg: https://github.com/ampproject/meta/tree/master/working-groups
+/wg-updates: https://github.com/search?o=desc&q=org%3Aampproject+label%3A%22Type%3A+Status+Update%22&s=created&
 
 # Regex-based entries
 ^/c/amp-([a-z-]+)$:
