@@ -717,6 +717,8 @@ email:
           url: https://blueshift.com/
         - label: Braze
           url: https://www.braze.com/
+        - label: Cheetah Digital
+          url: https://www.cheetahdigital.com/
         - label: Clang
           url: https://www.e-village.com/clang/
         - label: Copernica
@@ -725,6 +727,8 @@ email:
           url: https://esputnik.com/
         - label: ExpressPigeon
           url: https://expresspigeon.com/amp-dynamic-email
+        - label: Iterable
+          url: https://iterable.com/
         - label: Klaviyo
           url: https://www.klaviyo.com/
         - label: Maileon
@@ -733,10 +737,14 @@ email:
           url: https://www.mailgun.com/
         - label: MessageGears
           url: https://messagegears.com/
+        - label: MindBox
+          url: https://mindbox.cloud/
         - label: Pepipost
           url: https://pepipost.com/
         - label: SendPulse
           url: https://sendpulse.com/
+        - label: SocketLabs
+          url: https://www.socketlabs.com/
         - label: Sparkpost
           url: https://www.sparkpost.com/
         - label: Twilio Sendgrid

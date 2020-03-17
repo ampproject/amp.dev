@@ -348,6 +348,17 @@ developer:
       height: 1303
     formats:
       - websites
+  - name: SendTest.Email
+    description: Preview your email campaign's HTML, AMPHTML, and text versions before sending, in a real email client.
+    url: https://sendtest.email
+    type: Development
+    image:
+      src: /static/img/tools/sendtestemail.png
+      width: 700
+      height: 346
+      fit: contain
+    formats:
+      - email
   - name: AMP Story Ad Preview Tool
     official: true
     type: Development
