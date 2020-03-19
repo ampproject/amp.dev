@@ -30,11 +30,12 @@ You can embed AMP stories inside a non-AMP page, allowing users to tap or click 
       />
       <style>
           header {
-            display: flex;
-            justify-content: space-around;
+            height: 8vh;
             color: #545454;
             background-color: #DDB556;
-            margin-bottom: 3vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
           amp-story-player {
             margin: 1rem auto;
