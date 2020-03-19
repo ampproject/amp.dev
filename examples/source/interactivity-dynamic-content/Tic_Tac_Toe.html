@@ -154,7 +154,7 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
         <tr>
           <td class="cell">
             <button on="tap:AMP.setState({
-                          tr: tr + gameState.currentPlayer,
+                        tr: tr + gameState.currentPlayer,
                           lc: lc + gameState.currentPlayer,
                           bd: bd + gameState.currentPlayer,
                           board: {
@@ -164,10 +164,10 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.a ? board.a : ""'
-              [class]='max(abs(tr),abs(lc),abs(bd)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.a || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.a ? board.a : ''"
+              [class]="max(abs(tr),abs(lc),abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.a || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
           <td class="cell cell-vert">
@@ -181,15 +181,15 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.b ? board.b : ""'
-              [class]='max(abs(tr),abs(mc)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.b || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.b ? board.b : ''"
+              [class]="max(abs(tr),abs(mc)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.b || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
           <td class="cell">
             <button on="tap:AMP.setState({
-                          tr: tr + gameState.currentPlayer,
+                        tr: tr + gameState.currentPlayer,
                           rc: rc + gameState.currentPlayer,
                           fd: fd + gameState.currentPlayer,
                           board: {
@@ -199,10 +199,10 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.c ? board.c : ""'
-              [class]='max(abs(tr),abs(rc),abs(fd)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.c || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.c ? board.c : ''"
+              [class]="max(abs(tr),abs(rc),abs(fd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.c || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
         </tr>
@@ -218,18 +218,17 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.d ? board.d : ""'
-              [class]='max(abs(mr),abs(lc)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.d || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.d ? board.d : ''"
+              [class]="max(abs(mr),abs(lc)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.d || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
           <td class="cell cell-horiz cell-vert">
             <button on="tap:AMP.setState({
-                          mr: mr + gameState.currentPlayer,
+                        mr: mr + gameState.currentPlayer,
                           mc: mc + gameState.currentPlayer,
-                          fd: fd + gameState.currentPlayer,
-                          bd: bd + gameState.currentPlayer,
+                          fd: fd + gameState.currentPlayer,bd: bd + gameState.currentPlayer,
                           board: {
                             e: gameState.displayValues[gameState.currentPlayer]
                           },
@@ -237,10 +236,10 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.e ? board.e : ""'
-              [class]='max(abs(mr),abs(mc),abs(fd),abs(bd)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.e || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.e ? board.e : ''"
+              [class]="max(abs(mr),abs(mc),abs(fd),abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.e || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
           <td class="cell cell-horiz">
@@ -254,17 +253,17 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.f ? board.f : ""'
-              [class]='max(abs(mr),abs(rc)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.f || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.f ? board.f : ''"
+              [class]="max(abs(mr),abs(rc)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.f || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
         </tr>
         <tr>
           <td class="cell">
             <button on="tap:AMP.setState({
-                          br: br + gameState.currentPlayer,
+                        br: br + gameState.currentPlayer,
                           lc: lc + gameState.currentPlayer,
                           fd: fd + gameState.currentPlayer,
                           board: {
@@ -274,10 +273,10 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.g ? board.g : ""'
-              [class]='max(abs(br),abs(lc),abs(fd)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.g || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.g ? board.g : ''"
+              [class]="max(abs(br),abs(lc),abs(fd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.g || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
           <td class="cell cell-vert">
@@ -291,15 +290,15 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.h ? board.h : ""'
-              [class]='max(abs(br),abs(mc)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.h || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.h ? board.h : ''"
+              [class]="max(abs(br),abs(mc)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.h || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
           <td class="cell">
             <button on="tap:AMP.setState({
-                          br: br + gameState.currentPlayer,
+                        br: br + gameState.currentPlayer,
                           rc: rc + gameState.currentPlayer,
                           bd: bd + gameState.currentPlayer,
                           board: {
@@ -309,10 +308,10 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
                             currentPlayer: gameState.currentPlayer * -1
                           }
                         })"
-              [text]='board.i ? board.i : ""'
-              [class]='max(abs(br),abs(rc), abs(bd)) == 3 ? "grid-button win" : "grid-button in-play"'
-              [disabled]='board.i || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3'
-              class='grid-button in-play'>
+              [text]="board.i ? board.i : ''"
+              [class]="max(abs(br),abs(rc), abs(bd)) == 3 ? 'grid-button win' : 'grid-button in-play'"
+              [disabled]="board.i || max(abs(tr),abs(br),abs(lc),abs(rc),abs(fd),abs(bd),abs(mc),abs(mr)) == 3"
+              class="grid-button in-play">
             </button>
           </td>
         </tr>
@@ -323,24 +322,24 @@ This is a sample showing how to implement Tic-Tac-Toe. This includes:
     <!-- To start a new game, the `board` and 8 tallies are reset to `null` and the `currentPlayer` reset to `⚡`. -->
     <div class="reset-component">
       <button class="reset-button"
-              on='tap:AMP.setState({
-                    "gameState": {
-                      "currentPlayer": 1,
-                      "displayValues": {
-                        "-1": "O",
-                        "1": "⚡"
-                      }
-                    },
-                    tr: null,
-                    mr: null,
-                    br: null,
-                    lc: null,
-                    mc: null,
-                    rc: null,
-                    fd: null,
-                    bd: null,
-                    board: null
-                  })'>
+              on="tap:AMP.setState({
+                  gameState: {
+                    currentPlayer: 1,
+                    displayValues: {
+                      '-1': 'O',
+                      '1': '⚡'
+                    }
+                  },
+                  tr: null,
+                  mr: null,
+                  br: null,
+                  lc: null,
+                  mc: null,
+                  rc: null,
+                  fd: null,
+                  bd: null,
+                  board: null
+                })">
         Restart game
       </button>
     </div>
