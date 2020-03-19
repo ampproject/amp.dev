@@ -2,6 +2,7 @@
 $title: Secure from third party attacks 
 $order: 5
 description: Take measures to protect your AMP pages and users from security vulnerabilities on the web
+formats:
   - websites
 author: CrystalOnScript
 ---
