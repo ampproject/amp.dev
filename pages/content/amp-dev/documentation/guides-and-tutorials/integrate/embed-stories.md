@@ -19,64 +19,57 @@ You can embed AMP stories inside a non-AMP page, allowing users to tap or click 
 ```html
 <!doctype html>
     <head>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script
-        async
-        src="https://cdn.ampproject.org/amp-story-player-v0.js"
-    ></script>
-    <link
-        href="https://cdn.ampproject.org/amp-story-player-v0.css"
-        rel="stylesheet"
-        type="text/css"
-    />
-    <style>
-        header {
-        height: 8vh;
-        width: 100vw;
-        display: flex;
-        justify-content: space-around;
-        color: #545454;
-        background-color: #DDB556;
-        margin-bottom: 3vh;
-        }
-        .content {
-        display: flex;
-        justify-content: space-around;
-        width: 100vw;
-        }
-    </style>
+      <script
+          async
+          src="https://cdn.ampproject.org/amp-story-player-v0.js"
+      ></script>
+      <link
+          href="https://cdn.ampproject.org/amp-story-player-v0.css"
+          rel="stylesheet"
+          type="text/css"
+      />
+      <style>
+          header {
+            display: flex;
+            justify-content: space-around;
+            color: #545454;
+            background-color: #DDB556;
+            margin-bottom: 3vh;
+          }
+          amp-story-player {
+            margin: 1rem auto;
+          }
+      </style>
     </head>
     <body>
-    <header>
-        <h1>
-        Page Header
-        </h1>
-    </header>
-    <h1>
-        Article Title
-    </h1>
-    <p>
-        Doggo ipsum smol wow very biscit length boy, doing me a frighten.  Borking doggo doggo heckin dat tungg tho, heckin good boys. Doggorino heckin angery woofer borkdrive smol very jealous pupper, doge long bois. Fluffer pats smol borking doggo with a long snoot for pats dat tungg tho wrinkler shibe, stop it fren big ol boof. Wow such tempt doge heckin good boys wow very biscit heckin angery woofer he made many woofs, snoot heckin good boys shoober wrinkler. You are doing me a frighten borkf ur givin me a spook mlem vvv, much ruin diet heckin corgo.
-    </p>
-    <div class="content">
+      <header>
+          <h1>
+            Page Header
+          </h1>
+      </header>
+      <h1>
+          Article Title
+      </h1>
+      <p>
+          Doggo ipsum smol wow very biscit length boy, doing me a frighten.  Borking doggo doggo heckin dat tungg tho, heckin good boys. Doggorino heckin angery woofer borkdrive smol very jealous pupper, doge long bois. Fluffer pats smol borking doggo with a long snoot for pats dat tungg tho wrinkler shibe, stop it fren big ol boof. Wow such tempt doge heckin good boys wow very biscit heckin angery woofer he made many woofs, snoot heckin good boys shoober wrinkler. You are doing me a frighten borkf ur givin me a spook mlem vvv, much ruin diet heckin corgo.
+      </p>
         <amp-story-player style="width: 360px; height: 600px;">
-        <a
-        href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/"
-        style="--story-player-poster: url('https://amp.dev/static/samples/img/story_dog2_portrait.jpg')"
-        >
-        Stories in AMP - Hello World
-        </a>
-    </amp-story-player>
-    </div>
-    <p>
-        Such treat big ol pupper. Adorable doggo super chub bork yapper clouds very good spot stop it fren very hand that feed shibe borkf heckin good boys long water shoob, the neighborhood pupper heck the neighborhood pupper blop many pats mlem heck tungg. noodle horse. Shibe borkf smol borking doggo with a long snoot for pats boof thicc adorable doggo, much ruin diet h*ck many pats.
-    </p>
+          <a
+          href="https://preview.amp.dev/documentation/examples/introduction/stories_in_amp/"
+          style="--story-player-poster: url('https://amp.dev/static/samples/img/story_dog2_portrait.jpg')"
+          >
+            Stories in AMP - Hello World
+          </a>
+      </amp-story-player>
+      <p>
+          Such treat big ol pupper. Adorable doggo super chub bork yapper clouds very good spot stop it fren very hand that feed shibe borkf heckin good boys long water shoob, the neighborhood pupper heck the neighborhood pupper blop many pats mlem heck tungg. noodle horse. Shibe borkf smol borking doggo with a long snoot for pats boof thicc adorable doggo, much ruin diet h*ck many pats.
+      </p>
     </body>
 </html>
 ```
 [/example]
 
-## Page requirements
+## Embed AMP story player
 
 Displaying an AMP story in a non-AMP page requires the use of the [`amp-story-player`](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) element. 
 
@@ -91,18 +84,9 @@ Include the two required scripts in the head of your document:
 
 The first script imports the logic for the player and the second one sets the default styling.  
 
-### Define HTML element
-
-Include the `<amp-story-player>` element inside the document `body`. 
-
-```html
- <amp-story-player>
- </amp-story-player>
-```
-
 ### Specify the story
 
-Specify the desired story by placing an `<a>` tag inside of the `<amp-story-player>` element. Point the `href` to the story’s location. The `href` may point to the URL of a hosted story or a relative path. Place the title of the story within the `<a>` tags.
+Include the `<amp-story-player>` element inside the document `body`. Then specify the desired story by placing an `<a>` tag inside of the `<amp-story-player>` element. Point the `href` to the story’s location. The `href` may point to the URL of a hosted story or a relative path. Place the title of the story within the `<a>` tags.
 
 ```html
  <amp-story-player style="width: 360px; height: 600px;">
@@ -115,8 +99,7 @@ Specify the desired story by placing an `<a>` tag inside of the `<amp-story-play
 
 ### Size the player
 
-Avoid delays by defining the story player’s `width` and `height` as inline styles. But you may define the story player's width, height, and other styles as you would any other element's style.
-
+You may define the story player's `width`, `height`, and other styles inline or as you would any other element's style.
 
 ```html
 <body>
@@ -134,7 +117,7 @@ We recommend maintaining a 3:5 aspect ratio for the best user experience, but yo
 
 The story player's responsiveness works as any other block element. You may use media-queries or define percentages for width and height.
 
-### Provide visuals
+### Provide a placeholder
 
 Include a representative poster image by adding `style="--story-player-poster: url('...');"` to the story’s `<a>` tag, or by using the `--story-player-poster` CSS variable. The AMP story player displays this image while loading the full story. 
 
