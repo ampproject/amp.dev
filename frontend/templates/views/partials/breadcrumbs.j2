@@ -43,7 +43,7 @@ and the current page title #}
   </span>
 
   {% set examples = g.doc('/content/amp-dev/documentation/examples/index.html', locale=doc.locale) %}
-  <div class="ap-m-breadcrumbs-crumb">{{ _(examples.titles('navigation')) }}</div>
+  <a class="ap-m-breadcrumbs-crumb" href="{{ examples.url.path }}">{{ _(examples.titles('navigation')) }}</a>
 </nav>
 
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/components') %}
@@ -56,7 +56,7 @@ and the current page title #}
   </span>
 
   {% set components = g.doc('/content/amp-dev/documentation/components/index.html', locale=doc.locale) %}
-  <div class="ap-m-breadcrumbs-crumb">{{ _(components.titles('navigation')) }}</div>
+  <a class="ap-m-breadcrumbs-crumb" href="{{ components.url.path }}">{{ _(components.titles('navigation')) }}</a>
 </nav>
 
 {% elif doc.pod_path.startswith('/content/amp-dev/documentation/courses') %}
