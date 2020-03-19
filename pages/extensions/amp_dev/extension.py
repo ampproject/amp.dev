@@ -3,11 +3,7 @@ from grow import extensions
 from grow.documents import document, document_format, static_document
 from grow.extensions import hooks
 
-from .markdown_extras import block_filter as BlockFilter
-from .markdown_extras import block_tip as BlockTip
-from .markdown_extras import block_video as BlockVideo
-from .markdown_extras import inline_tip as InlineTip
-
+from .markdown_extras import render as render_markdown_extras
 
 class AmpDevPreRenderHook(hooks.PreRenderHook):
     """Handle the pre-render hook."""
@@ -28,13 +24,15 @@ class AmpDevPreRenderHook(hooks.PreRenderHook):
     def trigger(self, previous_result, doc, original_body, *_args, **_kwargs):
         content = previous_result if previous_result else original_body
 
-        content = self.extension.transform_markdown(doc, original_body, content)
+        # content = self.extension.transform_markdown(doc, original_body, content)
+        content = render_markdown_extras(content)
 
         # The TOC should not contain headlines that are actually enclosed
         # in format filtered sections. filter_toc creates a callable that is
         # later able to filter the TOC based on those sections. It is *not* possible
         # to already evaluate this here as it would overwrite all transformations
-        setattr(doc.format, 'filter_toc', BlockFilter.filter_toc(doc, content))
+        # setattr(doc.format, 'filter_toc', BlockFilter.filter_toc(doc, content))
+        setattr(doc.format, 'filter_toc', lambda toc : toc)
 
         return content
 
@@ -53,12 +51,12 @@ class AmpDevExtension(extensions.BaseExtension):
         # Expose extension direclty on pod for use in templates
         setattr(pod, 'amp_dev', self)
 
-    def transform_markdown(self, doc, original_body, content):
-        content = InlineTip.trigger(original_body, content)
-        content = BlockTip.trigger(original_body, content)
-        content = BlockVideo.trigger(original_body, content)
-        content = BlockFilter.trigger(original_body, content)
-        return content
+    # def transform_markdown(self, doc, original_body, content):
+    #     content = InlineTip.trigger(original_body, content)
+    #     content = BlockTip.trigger(original_body, content)
+    #     content = BlockVideo.trigger(original_body, content)
+    #     content = BlockFilter.trigger(original_body, content)
+    #     return content
 
     def get_represented_locales(self, doc):
         """
