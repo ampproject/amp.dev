@@ -78,7 +78,7 @@ author: juliantoledo
     .desktop-sidebar {
       background-color: lightblue;
     }
-    @media (min-width: 783px) {
+    @media (min-width: 784px) {
       .hamburger {
         display: none;
       }
@@ -93,7 +93,6 @@ author: juliantoledo
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <h1>Header</h1>
     <button
@@ -103,14 +102,10 @@ author: juliantoledo
       =
     </button>
   </header>
-  
-  <!-- Main Content -->
   <main>
-    <!-- Target for Desktop sidebar -->
     <aside id="target-element-desktop" class="desktop-sidebar">
       <h1>Desktop Sidebar</h1>
     </aside>
-
     <article>
       <h1>Main Content</h1>
       <p class="previewOnly">
@@ -198,24 +193,39 @@ author: juliantoledo
   </main>
   <!-- ## Desktop Sidebar -->
   <!--
-    The amp-sidebar can be used as a permanent navigation bar on the main page.
-    The toolbar target is defined as a left hand navigation element using css: flex.
-    (See the `aside` element under `main`.)
+    The amp-sidebar can be used as a permanent navigation bar on the main page.  The toolbar target (aside element) is defined as a left hand navigation element on the page.
+    ```html
+    <main>
+      <aside id="target-element-desktop" class="desktop-sidebar">...
+      </aside>
+    </main>
+    ```
+
+    Using a media query, the toolbar target can be made visible only when the browser window is greater than a certain width.  Using CSS flex on the parent element of the target allows us to position the target on the left side of the page.
+    ```css
+    @media (min-width: 784px) {
+      main {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    ```
     
-    The amp-sidebar uses the nav toolbar target to populate it's content into this 
-    navigation element.
+    The amp-sidebar uses the nav toolbar target to populate it's content into this navigation element.  It identifies the nav toolbar target by matching the `id` attribute (defined in the aside element above) with the `toolbar-target` attribute within the `nav` element.
   -->
-  <amp-sidebar id="sidebar-desktop" class="desktop-sidebar" layout="nodisplay" side="left">
-    <h1>Desktop Sidebar</h1>
-    <button on="tap:sidebar-desktop.close">Close sidebar</button>
-    <nav toolbar="(min-width: 784px)" toolbar-target="target-element-desktop">
-      <ul>
-        <li>Nav item A</li>
-        <li>Nav item B</li>
-        <li>Nav item C</li>
-        <li>Nav item D</li>
-      </ul>
-    </nav>
-  </amp-sidebar>
+  <div>
+    <amp-sidebar id="sidebar-desktop" class="desktop-sidebar" layout="nodisplay" side="left">
+      <h1>Desktop Sidebar</h1>
+      <button on="tap:sidebar-desktop.close">Close sidebar</button>
+      <nav toolbar="(min-width: 784px)" toolbar-target="target-element-desktop">
+        <ul>
+          <li>Nav item A</li>
+          <li>Nav item B</li>
+          <li>Nav item C</li>
+          <li>Nav item D</li>
+        </ul>
+      </nav>
+    </amp-sidebar>
+  </div>
 </body>
 </html>
