@@ -24,8 +24,6 @@ const EXTENSION_TYPE_ELEMENT = 'element';
 const EXTENSION_TYPE_TEMPLATE = 'template';
 const RELATIVE_PATH_BASE = 'https://github.com/ampproject/amphtml/blob/master/';
 
-const INTRO_TABLE_PATTERN = /^((?:[^](?!##))*)<table(\s[^>]*)?>[^]*?<\/table>/m;
-
 class ComponentReferenceDocument extends MarkdownDocument {
   constructor(path, contents, extension) {
     super(path, contents);
@@ -115,9 +113,6 @@ class ComponentReferenceDocument extends MarkdownDocument {
     // The reference documents have some additional things that need
     // to be replaced/rewritten: the headline shouldn't be doubled
     this.stripInlineTitle();
-
-    // ..., the manually maintained intro table should be spliced out
-    this._contents = this._contents.replace(INTRO_TABLE_PATTERN, '$1');
   }
 
   get component() {

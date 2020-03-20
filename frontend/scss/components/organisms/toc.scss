@@ -18,6 +18,8 @@
 }
 
 .#{organism('toc')} {
+  --spacing-top: 90px;
+
   position: relative;
   z-index: 1;
   top: 0;
@@ -50,12 +52,13 @@
     padding: 0 10px 0 0;
     margin: 0;
     height: auto;
-    top: 90px;
+    top: var(--spacing-top);
     right: auto;
+    padding-bottom: var(--spacing-top);
     background: none;
     box-shadow: none;
     overflow-y: scroll;
-    max-height: calc(100vh - 90px);
+    max-height: calc(100vh - var(--spacing-top));
   }
 
   &-hl {

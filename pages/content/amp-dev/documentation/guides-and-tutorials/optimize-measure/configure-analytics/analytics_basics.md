@@ -226,7 +226,7 @@ within the [`amp-analytics`](../../../../documentation/components/reference/amp-
 <script type="application/json">
 {
   "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
+    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
   },
   "vars": {
     "account": "ABC123",
@@ -236,7 +236,7 @@ within the [`amp-analytics`](../../../../documentation/components/reference/amp-
       "on": "visible",
       "request": "pageview",
       "vars": {
-        "title": "My homepage",
+        "title": "My homepage"
       }
     }
   }

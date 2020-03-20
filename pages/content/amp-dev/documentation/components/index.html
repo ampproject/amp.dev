@@ -126,7 +126,7 @@ recent_components:
       </section>
       {% endif %}
 
-      <section class="ap-m-table-component-container">
+      <section id="filter" class="ap-m-table-component-container">
         {% set categories = g.categories('/content/amp-dev/documentation/components/reference', locale=doc.locale) %}
         {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
         {% set filter_categories = categories|map(attribute=0)|list|tojson %}

@@ -226,7 +226,7 @@ recent_examples:
         </div>
       </section>
 
-      <section class="ap-m-table-component-container">
+      <section id="filter" class="ap-m-table-component-container">
         {% set categories = g.categories('/content/amp-dev/documentation/examples/documentation', locale=doc.locale) %}
         {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
         {% do doc.styles.addCssFile('/css/components/molecules/table-component.css') %}
@@ -239,7 +239,7 @@ recent_examples:
         {% endfor %}
         {% set filter_categories = filter_categories|tojson %}
 
-        <h2>{{ _('Filter by category') }} asd</h2>
+        <h2>{{ _('Filter by category') }}</h2>
         {% include '/views/partials/category-filter.j2'%}
 
         {% for category, documents in categories %}
