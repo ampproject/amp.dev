@@ -39,7 +39,7 @@ We welcome contributions to amp.dev.
         ```
     1. Run the following command to install Python. Version 2.7 is required.
         ```sh
-        $ brew install python@2
+        $ brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/86a44a0a552c673a05f11018459c9f5faae3becc/Formula/python@2.rb
         ````
     1. Run the following command to add the _pip user base binary directory_ to `$PATH`.
         ```sh
