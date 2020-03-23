@@ -1,7 +1,7 @@
 ---
 $title: Embed stories in web pages
 $order: 3
-description: 'The AMP Story Player enables you to embed a story that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.'
+description: 'The AMP Story Player enables you to embed stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.'
 formats:
   - websites
   - stories 
@@ -9,7 +9,7 @@ formats:
 
 Stories are a full-screen immersive experience. They’re hosted on the open web with their own URL, making them easily shareable. But, what if you want to integrate stories into your own site, for example, within a blog, product description or news article? 
 
-The [AMP Story Player](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) enables you to embed a story that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.
+The [AMP Story Player](https://github.com/ampproject/amphtml/blob/master/spec/amp-story-player.md) enables you to embed stories that users are able to tap or click through, inside of a web page. Follow this step-by-step guide to learn how.
 
 # Display stories in a non-AMP page
 
@@ -85,7 +85,7 @@ Include the two required scripts in the head of your document:
 
 The first script imports the logic for the player and the second one sets the default styling.  
 
-### Specify the story
+### Specify a story
 
 Include the `<amp-story-player>` element inside the document `body`. Then specify the desired story by placing an `<a>` tag inside of the `<amp-story-player>` element. Point the `href` to the story’s location. The `href` may point to the URL of a hosted story or a relative path. Place the title of the story within the `<a>` tags.
 
@@ -118,11 +118,10 @@ We recommend maintaining a 3:5 aspect ratio for the best user experience, but yo
 
 The story player's responsiveness works as any other block element. Use CSS to maintain width and height ratios, such as the example below:
 
-```css
-amp-story-player {
-  width: 50vw;
-  height: 83.35vw;
- }
+```html
+<amp-story-player style="width: 50vw; height: 83.35vw;">
+  ...
+</amp-story-player>
 ```
 
 ### Provide a placeholder
@@ -130,7 +129,7 @@ amp-story-player {
 Include a representative poster image by adding `style="--story-player-poster: url('...');"` to the story’s `<a>` tag, or by using the `--story-player-poster` CSS variable. The AMP story player displays this image while loading the full story. 
 
 ```html
-<amp-story-player style="width: 360px; height: 600px;">
+<amp-story-player style="width: 50vw; height: 83.35vw;">
   <a
     href="https://www.example.com/story.html"
     style="--story-player-poster: url('https://www.example.com/assets/cover1.html');"
