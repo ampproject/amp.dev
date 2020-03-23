@@ -116,7 +116,14 @@ We recommend maintaining a 3:5 aspect ratio for the best user experience, but yo
 
 #### Responsive sizing
 
-The story player's responsiveness works as any other block element. You may use media-queries or define percentages for width and height.
+The story player's responsiveness works as any other block element. Use CSS to maintain width and height ratios, such as the example below:
+
+```css
+amp-story-player {
+  width: 50vw;
+  height: 83.35vw;
+ }
+```
 
 ### Provide a placeholder
 
