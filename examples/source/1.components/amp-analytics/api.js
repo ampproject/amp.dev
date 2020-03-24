@@ -19,7 +19,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const SampleRenderer = require('@examples/lib/SampleRenderer');
 const {createRequestContext} = require('@lib/templates/index.js');
-const uuid = require('uuid');
+const {v4: uuidv4} = require('uuid');
 const nunjucks = require('nunjucks');
 const path = require('path');
 
@@ -53,7 +53,7 @@ const analyticsTemplate = nunjucks.compile(
 SampleRenderer.use(examples, (request, response, template) => {
   let user = request.cookies[AMP_ANALYTICS_COOKIE];
   if (!user) {
-    user = uuid.v4();
+    user = uuidv4();
     response.cookie(AMP_ANALYTICS_COOKIE, user, {
       maxAge: EXPIRES,
       httpOnly: true,
