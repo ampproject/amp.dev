@@ -1,3 +1,13 @@
+{% if '/documentation/examples/' in doc.pod_path %}
+{% set category = 'examples' %}
+{% elif '/documentation/components/' in doc.pod_path %}
+{% set category = 'components' %}
+{% elif '/documentation/courses/' in doc.pod_path %}
+{% set category = 'courses' %}
+{% elif '/documentation/guides-and-tutorials/' in doc.pod_path %}
+{% set category = 'guides-and-tutorials' %}
+{% endif %}
+
 {% set config = {
   'vars': {
     'gtag_id': podspec.gaTrackingId,
@@ -16,19 +26,31 @@
         'event_category': 'search',
         'event_action': 'open'
       }
+    },
+    'scrolledHalf': {
+      'on': 'scroll',
+      'scrollSpec': {
+        'verticalBoundaries': [50]
+      },
+      'vars': {
+        'event_name': 'scroll',
+        'event_category': category or 'other',
+        'event_action': 'half'
+      }
+    },
+    'scrolledEnd': {
+      'on': 'scroll',
+      'scrollSpec': {
+        'verticalBoundaries': [90]
+      },
+      'vars': {
+        'event_name': 'scroll',
+        'event_category': category or 'other',
+        'event_action': 'end'
+      }
     }
   }
 } %}
-
-{% if '/documentation/examples/' in doc.pod_path %}
-{% set category = 'examples' %}
-{% elif '/documentation/components/' in doc.pod_path %}
-{% set category = 'components' %}
-{% elif '/documentation/courses/' in doc.pod_path %}
-{% set category = 'courses' %}
-{% elif '/documentation/guides-and-tutorials/' in doc.pod_path %}
-{% set category = 'guides-and-tutorials' %}
-{% endif %}
 
 {# On the courses page track how often the courses are downloaded #}
 {% if doc.pod_path == '/content/amp-dev/documentation/courses/teachers.md' %}
@@ -113,31 +135,6 @@
     'event_name': 'format-toggle',
     'event_category': category,
     'event_action': 'link'
-  }
-}}) %}
-
-{# Scroll #}
-{# Track when certain depths of the site have been reached #}
-{% do config['triggers'].update({'scrolledHalf': {
-  'on': 'scroll',
-  'scrollSpec': {
-    'verticalBoundaries': [50]
-  },
-  'vars': {
-    'event_name': 'scroll',
-    'event_category': category,
-    'event_action': 'half'
-  }
-}}) %}
-{% do config['triggers'].update({'scrolledEnd': {
-  'on': 'scroll',
-  'scrollSpec': {
-    'verticalBoundaries': [90]
-  },
-  'vars': {
-    'event_name': 'scroll',
-    'event_category': category,
-    'event_action': 'end'
   }
 }}) %}
 {% endif %}
