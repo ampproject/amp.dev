@@ -65,6 +65,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
 
     const scripts = [];
     const requiredExtensions = [];
+
     if (extension.script) {
       requiredExtensions.push(extension.script.extensionSpec.name);
       scripts.push(
@@ -74,21 +75,21 @@ class ComponentReferenceDocument extends MarkdownDocument {
           extension.type
         )
       );
-    }
 
-    if (extension.tag && extension.tag.requiresExtension) {
-      for (const requiredExtension of extension.tag.requiresExtension) {
-        if (requiredExtensions.includes(requiredExtension)) {
-          continue;
+      if (extension.script.requiresExtension) {
+        for (const requiredExtension of extension.script.requiresExtension) {
+          if (requiredExtensions.includes(requiredExtension)) {
+            continue;
+          }
+
+          scripts.push(
+            this._generateScript(
+              requiredExtension,
+              DEFAULT_VERSION,
+              extension.type
+            )
+          );
         }
-
-        scripts.push(
-          this._generateScript(
-            requiredExtension,
-            DEFAULT_VERSION,
-            extension.type
-          )
-        );
       }
     }
 
