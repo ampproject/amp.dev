@@ -20,14 +20,11 @@ function url(path) {
   return new URL(path, config.hosts.platform.base).toString();
 }
 
-test('URL with / at the end is not redirected', done => {
-  request(app)
-    .get('/nonexisting/')
-    .expect(200, 'next')
-    .end(done);
+test('URL with / at the end is not redirected', (done) => {
+  request(app).get('/nonexisting/').expect(200, 'next').end(done);
 });
 
-test('URL without extension gets trailing slash', done => {
+test('URL without extension gets trailing slash', (done) => {
   request(app)
     .get('/nonexisting/file')
     .expect(301)
@@ -35,7 +32,7 @@ test('URL without extension gets trailing slash', done => {
     .end(done);
 });
 
-test('URL with .html extension gets .html removed and trailing slash added', done => {
+test('URL with .html extension gets .html removed and trailing slash added', (done) => {
   request(app)
     .get('/nonexisting/file.html')
     .expect(301)
@@ -43,7 +40,7 @@ test('URL with .html extension gets .html removed and trailing slash added', don
     .end(done);
 });
 
-test('URL with .amp.html extension gets .amp.html removed and trailing slash added', done => {
+test('URL with .amp.html extension gets .amp.html removed and trailing slash added', (done) => {
   request(app)
     .get('/nonexisting/file.amp.html')
     .expect(301)
@@ -51,9 +48,6 @@ test('URL with .amp.html extension gets .amp.html removed and trailing slash add
     .end(done);
 });
 
-test('URL with .js extension is not rewritten', done => {
-  request(app)
-    .get('/nonexisting/file.js')
-    .expect(200, 'next')
-    .end(done);
+test('URL with .js extension is not rewritten', (done) => {
+  request(app).get('/nonexisting/file.js').expect(200, 'next').end(done);
 });

@@ -46,7 +46,7 @@ async function searchDoRequestHandler(url, request) {
 }
 
 // Register new route to handle search request
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.pathname === '/search/do') {
     event.respondWith(searchDoRequestHandler(requestUrl, event.request));
@@ -70,7 +70,7 @@ async function searchLatestQueryHandler() {
 }
 
 // Register new route to handle latest query
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.pathname === SEARCH_LATEST_QUERY_PATH) {
     event.respondWith(searchLatestQueryHandler());
@@ -89,7 +89,7 @@ async function searchClearLatestQueryRequestHandler() {
 }
 
 // Register new route to handle clear request
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.pathname === '/search/clear-latest-query') {
     event.respondWith(searchClearLatestQueryRequestHandler());

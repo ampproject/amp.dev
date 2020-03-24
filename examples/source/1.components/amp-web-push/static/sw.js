@@ -60,7 +60,7 @@ const WorkerMessengerCommand = {
   service worker for events that aren't known for sure to be listened for.
   Also see: https://github.com/w3c/ServiceWorker/issues/1156
 */
-self.addEventListener('message', event => {
+self.addEventListener('message', (event) => {
   /*
       Messages sent from amp-web-push have the format:
       - command: A string describing the message topic (e.g.
@@ -90,7 +90,7 @@ function onMessageReceivedSubscriptionState() {
   let retrievedPushSubscription = null;
   self.registration.pushManager
     .getSubscription()
-    .then(pushSubscription => {
+    .then((pushSubscription) => {
       retrievedPushSubscription = pushSubscription;
       if (!pushSubscription) {
         return null;
@@ -100,7 +100,7 @@ function onMessageReceivedSubscriptionState() {
         );
       }
     })
-    .then(permissionStateOrNull => {
+    .then((permissionStateOrNull) => {
       if (permissionStateOrNull == null) {
         broadcastReply(WorkerMessengerCommand.AMP_SUBSCRIPTION_STATE, false);
       } else {
@@ -135,7 +135,7 @@ function onMessageReceivedSubscribe() {
       userVisibleOnly: true,
       applicationServerKey: convertedVapidKey,
     })
-    .then(pushSubscription => {
+    .then((pushSubscription) => {
       persistSubscriptionLocally(pushSubscription);
       broadcastReply(WorkerMessengerCommand.AMP_SUBSCRIBE, null);
     });
@@ -148,7 +148,7 @@ function onMessageReceivedSubscribe() {
 function onMessageReceivedUnsubscribe() {
   self.registration.pushManager
     .getSubscription()
-    .then(subscription => subscription.unsubscribe())
+    .then((subscription) => subscription.unsubscribe())
     .then(() => {
       clearLocalDatabase();
       // OPTIONALLY IMPLEMENT: Forward the unsubscription to your server here
@@ -162,7 +162,7 @@ function onMessageReceivedUnsubscribe() {
  * @param {!JsonObject} payload
  */
 function broadcastReply(command, payload) {
-  self.clients.matchAll().then(clients => {
+  self.clients.matchAll().then((clients) => {
     for (const client of clients) {
       client./* OK*/ postMessage({
         command,
@@ -186,10 +186,10 @@ self.addEventListener('install', () => self.skipWaiting());
   Creates the DB to store subscription objects and calls clients.claim(), to allow an active
   service worker to set itself as the controller for all clients within its scope.
  */
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
     (async () => {
-      await idb.open(WEB_PUSH_DB, 1, upgradeDB => {
+      await idb.open(WEB_PUSH_DB, 1, (upgradeDB) => {
         upgradeDB.createObjectStore(WEB_PUSH_SUBSCRIPTION, {
           keyPath: 'id',
         });
@@ -202,7 +202,7 @@ self.addEventListener('activate', event => {
 /**
   Listens to push events, and displays a notification, using the payload text.
  */
-self.addEventListener('push', event => {
+self.addEventListener('push', (event) => {
   const options = {
     body: event.data.text(),
     vibrate: [100, 50, 100],
@@ -221,7 +221,7 @@ self.addEventListener('push', event => {
   so WebPush messages can be sent.
   Any other request goes to the network directly.
  */
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', (event) => {
   if (
     event.request.url.includes(
       '/documentation/examples/components/amp-web-push/send-push'

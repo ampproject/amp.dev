@@ -149,7 +149,7 @@ class ShoppingCart {
 
   addItem(item) {
     // check if item exists in cart before pushing
-    const foundItem = this.cartItems.filter(elem => {
+    const foundItem = this.cartItems.filter((elem) => {
       return elem.id == item.id && elem.size == item.size;
     });
 

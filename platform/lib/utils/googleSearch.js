@@ -32,10 +32,10 @@ let API_KEY = undefined;
 
 credentials
   .get('GOOGLE_CSE_API_KEY')
-  .then(key => {
+  .then((key) => {
     API_KEY = key;
   })
-  .catch(err => {
+  .catch((err) => {
     log.warn(
       'Missing Google Custom Search key, site search will not be available!',
       err.message ? err.message : err

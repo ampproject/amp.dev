@@ -36,7 +36,7 @@ go.use((request, response, next) => {
   if (goLinks.simple[request.path]) {
     target = goLinks.simple[request.path];
   } else {
-    const match = goLinks.regex.find(regex =>
+    const match = goLinks.regex.find((regex) =>
       request.path.match(regex.pattern)
     );
     if (match) {

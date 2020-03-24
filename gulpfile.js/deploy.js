@@ -184,7 +184,7 @@ async function instanceTemplatesClean() {
   });
 
   // Filter out packager instance templates as they are built manually
-  templates = templates.filter(template => {
+  templates = templates.filter((template) => {
     return !template.name.includes(PACKAGER_PREFIX);
   });
 
@@ -192,7 +192,7 @@ async function instanceTemplatesClean() {
   templates = templates.slice(0, templates.length - TEMPLATES_KEPT_COUNT);
 
   const templateNames = templates
-    .map(template => {
+    .map((template) => {
       return template.name;
     })
     .join(' ');
@@ -205,7 +205,7 @@ async function instanceTemplatesClean() {
  * that there's always at least 1 active instance running during the update.
  */
 async function updateStart() {
-  const updates = config.instance.groups.map(group => {
+  const updates = config.instance.groups.map((group) => {
     return sh(`gcloud beta compute instance-groups managed rolling-action \
                  start-update ${group.name} \
                  --version template=${config.instance.template} \
@@ -228,7 +228,7 @@ async function updateStart() {
  * all VMs have been updated to the latest version and the update is stable.
  */
 function updateStatus() {
-  const updates = config.instance.groups.map(group => {
+  const updates = config.instance.groups.map((group) => {
     return sh(`gcloud beta compute instance-groups managed describe ${group.name} \
              --zone=${group.zone}`);
   });
@@ -276,7 +276,7 @@ function packagerImageUpload() {
  * that there's always at least 1 active instance running during the update.
  */
 async function packagerUpdateStart() {
-  const updates = config.packager.instance.groups.map(group => {
+  const updates = config.packager.instance.groups.map((group) => {
     return sh(
       `gcloud beta compute instance-groups managed rolling-action \
                  start-update ${group.name} \

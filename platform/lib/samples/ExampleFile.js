@@ -74,7 +74,7 @@ class ExampleFile {
     const files = fs
       .readdirSync(dir)
       .sort()
-      .filter(file => {
+      .filter((file) => {
         return path.extname(file) == '.html';
       });
     const nextPos = files.indexOf(path.basename(this.fileName())) + 1;

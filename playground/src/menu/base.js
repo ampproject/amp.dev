@@ -57,7 +57,7 @@ class Menu {
   }
 
   _setActiveRuntime() {
-    this._menu.querySelectorAll('input[name=runtime]').forEach(input => {
+    this._menu.querySelectorAll('input[name=runtime]').forEach((input) => {
       input.checked = runtimes.activeRuntime.id === input.id;
     });
   }
@@ -77,15 +77,15 @@ class Menu {
   _buildRuntimeSection() {
     return runtimes.values
       .map(
-        runtime =>
+        (runtime) =>
           `<label><input type="radio" name="runtime" id="${runtime.id}">${runtime.name}</label>`
       )
       .join('');
   }
 
   _registerActions() {
-    this._menu.querySelectorAll('input[name=runtime]').forEach(input => {
-      input.addEventListener('change', e =>
+    this._menu.querySelectorAll('input[name=runtime]').forEach((input) => {
+      input.addEventListener('change', (e) =>
         events.publish(EVENT_SET_RUNTIME, runtimes.get(e.target.id))
       );
     });

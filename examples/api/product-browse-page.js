@@ -23,7 +23,7 @@ const examples = express.Router();
 const products = require(utils.project.absolute(
   '/examples/static/samples/json/related_products.json'
 ));
-const productNames = products.items.map(item => {
+const productNames = products.items.map((item) => {
   return item.name;
 });
 let hasMorePages = false;
@@ -74,7 +74,7 @@ function findProducts(name = '', color = 'all') {
   color = color.toLowerCase();
   name = name.toLowerCase();
 
-  return products.items.filter(prod => {
+  return products.items.filter((prod) => {
     return (
       prod.name.toLowerCase().includes(name) &&
       (prod.color.toLowerCase().includes(color) || color === 'all')
@@ -86,7 +86,7 @@ function handleProductsAutosuggestRequest(request, response) {
   const query = request.query.q;
 
   // filter array of productnames by query
-  const filteredStrs = productNames.filter(desc => {
+  const filteredStrs = productNames.filter((desc) => {
     return desc.toLowerCase().includes(query.toLowerCase());
   });
 

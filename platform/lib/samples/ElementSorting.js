@@ -17,7 +17,7 @@
 'use strict';
 
 // the order is important: amp-sidebar must come directly after the body
-const ELEMENTS_TO_MOVE = ['amp-sidebar', 'amp-app-banner'].map(e =>
+const ELEMENTS_TO_MOVE = ['amp-sidebar', 'amp-app-banner'].map((e) =>
   matchHtmlTag(e)
 );
 
@@ -37,9 +37,9 @@ function matchHtmlTag(tagName) {
  */
 class ElementSorting {
   apply(doc) {
-    ELEMENTS_TO_MOVE.forEach(matcher => {
+    ELEMENTS_TO_MOVE.forEach((matcher) => {
       const elements = this._extract(doc.sections, matcher);
-      elements.forEach(e => (doc.elementsAfterBody += e));
+      elements.forEach((e) => (doc.elementsAfterBody += e));
     });
   }
 

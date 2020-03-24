@@ -207,9 +207,9 @@ function getNextPageId(nextPageFirstItemIndex, blogItems = []) {
 
 function getPrevPageId(firstItemIndex) {
   if (firstItemIndex >= MAX_BLOG_ITEMS_NUMBER_PER_PAGE) {
-    return `${BLOG_ID_PREFIX}${firstItemIndex -
-      MAX_BLOG_ITEMS_NUMBER_PER_PAGE +
-      1}`;
+    return `${BLOG_ID_PREFIX}${
+      firstItemIndex - MAX_BLOG_ITEMS_NUMBER_PER_PAGE + 1
+    }`;
   }
   return '';
 }

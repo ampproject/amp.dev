@@ -63,7 +63,7 @@ examples.post('/api/recaptcha', upload.array(), async (req, res) => {
         method: 'POST',
         body: params,
       }
-    ).then(response => response.json());
+    ).then((response) => response.json());
 
     if (!response.success) {
       res.status(500).json({

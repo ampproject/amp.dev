@@ -144,7 +144,7 @@ function saveToDatastore(key, data) {
     data,
   };
   return new Promise((resolve, reject) => {
-    datastore.save(entity, e => {
+    datastore.save(entity, (e) => {
       if (e) {
         reject(e);
         return;

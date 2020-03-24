@@ -69,7 +69,9 @@ const IGNORED_PATH_PATTERNS = /\/content\/amp-dev\/documentation\/components\/re
 
 // The list of imported docs. Here we do not check anchors.
 const IMPORTED_DOCS = require(__dirname +
-  '/../../config/imports/spec.json').map(spec => '/content/amp-dev/' + spec.to);
+  '/../../config/imports/spec.json').map(
+  (spec) => '/content/amp-dev/' + spec.to
+);
 
 /**
  * Walks over documents inside the Grow pod and looks for broken links either
@@ -116,8 +118,10 @@ class GrowReferenceChecker {
           log.complete('Finished automatic fixing.');
           log.complete(
             `A total of ${this._brokenReferencesCount} links had ` +
-              `errors. ${this._unfindableDocuments.length +
-                Object.keys(this._multipleMatches).length} still have.`
+              `errors. ${
+                this._unfindableDocuments.length +
+                Object.keys(this._multipleMatches).length
+              } still have.`
           );
         }
 

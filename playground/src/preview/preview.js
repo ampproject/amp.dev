@@ -82,7 +82,7 @@ class Preview {
       return null;
     }
     return this.dimensions.find(
-      d => d.label.toLowerCase() === label.toLowerCase()
+      (d) => d.label.toLowerCase() === label.toLowerCase()
     );
   }
 
@@ -141,16 +141,20 @@ class Preview {
     const div = this.doc.createElement('div');
     div.setAttribute('id', 'preview-custom-dimension');
     div.appendChild(
-      this.createSizeInput(PARAM_WIDTH, params.get(PARAM_WIDTH, 320), width => {
-        this.dimension.width = width;
-      })
+      this.createSizeInput(
+        PARAM_WIDTH,
+        params.get(PARAM_WIDTH, 320),
+        (width) => {
+          this.dimension.width = width;
+        }
+      )
     );
     div.appendChild(this.doc.createTextNode('✕'));
     div.appendChild(
       this.createSizeInput(
         PARAM_HEIGHT,
         params.get(PARAM_HEIGHT, 250),
-        height => {
+        (height) => {
           this.dimension.height = height;
         }
       )
@@ -252,11 +256,11 @@ class Preview {
       this.loader.hide();
       const oldIframes = [].slice
         .call(this.previewContainer.querySelectorAll('iframe'))
-        .filter(e => e !== this.previewIframe);
-      oldIframes.forEach(e => {
+        .filter((e) => e !== this.previewIframe);
+      oldIframes.forEach((e) => {
         e.classList.add('fadeout');
       });
-      setTimeout(() => oldIframes.forEach(frame => frame.remove()), 280);
+      setTimeout(() => oldIframes.forEach((frame) => frame.remove()), 280);
     });
   }
 
@@ -267,7 +271,7 @@ class Preview {
   }
 
   clearPlaceholders() {
-    this.previewContainer.querySelectorAll('iframe').forEach(e => e.remove());
+    this.previewContainer.querySelectorAll('iframe').forEach((e) => e.remove());
   }
 
   saveState(iframe) {
