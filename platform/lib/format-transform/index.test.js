@@ -40,7 +40,7 @@ const PLATFORM_HOST = require('../config.js').hosts.platform.base;
 describe('formatTransform', () => {
   let formatTransform = null;
 
-  beforeEach(async done => {
+  beforeEach(async (done) => {
     if (!formatTransform) {
       formatTransform = await getInstance();
     }

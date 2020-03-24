@@ -42,7 +42,7 @@ class AutoImporter {
   constructor(componentsProvider, editor) {
     this.componentsProvider = componentsProvider;
     this.editor = editor;
-    Object.keys(ENGINE_MAP).forEach(k => ENGINE_SET.add(ENGINE_MAP[k]));
+    Object.keys(ENGINE_MAP).forEach((k) => ENGINE_SET.add(ENGINE_MAP[k]));
   }
 
   update(validationResult) {
@@ -57,7 +57,7 @@ class AutoImporter {
     if (currentTag.type === 'tag') {
       return;
     }
-    this.componentsProvider.get().then(components => {
+    this.componentsProvider.get().then((components) => {
       const missing = this._parseMissingElements(validationResult, components);
 
       if (
@@ -91,14 +91,14 @@ class AutoImporter {
       // Verify that all components to insert don't already exist: In some
       // circumstances the validator has reported tags missing when in fact
       // they are present.
-      .filter(e => !existing.tags[e])
-      .map(e => this._createAmpComponentElement(e, components));
+      .filter((e) => !existing.tags[e])
+      .map((e) => this._createAmpComponentElement(e, components));
     if (missing.missingBaseScriptTag && !existing.baseScriptTagEnd) {
       const t = `<script async src=${missing.missingBaseScriptTag}></script>`;
       toAdd.unshift(t);
     }
     if (toAdd.length) {
-      const indented = toAdd.map(e => ' '.repeat(existing.indent || 0) + e);
+      const indented = toAdd.map((e) => ' '.repeat(existing.indent || 0) + e);
       const cur = this.editor.getCursor();
       this.editor.replaceRange('\n' + indented.join('\n'), pos, pos);
       this.editor.setCursor(cur.line + indented.length, cur.ch);

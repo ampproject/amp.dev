@@ -33,12 +33,12 @@
  */
 window.requestIdleCallback =
   window.requestIdleCallback ||
-  function(func) {
+  function (func) {
     return setTimeout(() => {
       const start = Date.now();
       func({
         didTimeout: false,
-        timeRemaining: function() {
+        timeRemaining: function () {
           return Math.max(0, 50 - (Date.now() - start));
         },
       });
@@ -47,6 +47,6 @@ window.requestIdleCallback =
 
 window.cancelIdleCallback =
   window.cancelIdleCallback ||
-  function(id) {
+  function (id) {
     clearTimeout(id);
   };

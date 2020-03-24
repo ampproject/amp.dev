@@ -83,15 +83,15 @@ function exec(growCommand) {
   return new Promise((resolve, reject) => {
     const process = spawn(command, args, {cwd: project.paths.GROW_POD});
 
-    process.stdout.on('data', data => {
+    process.stdout.on('data', (data) => {
       handler(data, resolve, reject);
     });
 
-    process.stderr.on('data', data => {
+    process.stderr.on('data', (data) => {
       handler(data, resolve, reject);
     });
 
-    process.on('close', code => {
+    process.on('close', (code) => {
       if (code !== 0) {
         reject(new Error(`Grow exited with code ${code}`));
         return;

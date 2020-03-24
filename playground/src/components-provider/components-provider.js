@@ -27,8 +27,8 @@ class ComponentsProvider {
           headers: new Headers({'x-requested-by': 'playground'}),
         });
         fetch(request)
-          .then(r => r.json())
-          .then(data => {
+          .then((r) => r.json())
+          .then((data) => {
             resolve(data);
           })
           .catch(() => {

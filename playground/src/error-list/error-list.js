@@ -33,7 +33,7 @@ class ErrorList {
     // configure validator
     events.subscribe(
       Validator.EVENT_NEW_VALIDATION_RESULT,
-      validationResult => {
+      (validationResult) => {
         this.update(validationResult);
         window.requestIdleCallback(() => {
           if (validationResult === Validator.NO_VALIDATOR) {

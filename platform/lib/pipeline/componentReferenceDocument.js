@@ -125,7 +125,7 @@ class ComponentReferenceDocument extends MarkdownDocument {
   }
 
   set layouts(layouts) {
-    this._frontmatter['layouts'] = layouts.map(layout => {
+    this._frontmatter['layouts'] = layouts.map((layout) => {
       return layout.toLowerCase().replace('_', '-');
     });
   }

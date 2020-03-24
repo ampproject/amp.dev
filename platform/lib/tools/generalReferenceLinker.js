@@ -79,7 +79,7 @@ class ComponentReferenceLinker {
         fs.writeFile(
           POD_BASE_PATH + 'content/missing.txt',
           referenceText,
-          err => {
+          (err) => {
             if (err) throw err;
           }
         );
@@ -177,7 +177,7 @@ class ComponentReferenceLinker {
 
   _linkType(result) {
     const linkText = this._linkText(result);
-    const isValid = str => /(\(\/)|(ampbyexample\.com)/.test(str);
+    const isValid = (str) => /(\(\/)|(ampbyexample\.com)/.test(str);
     if (!isValid(result)) {
       return {};
     }

@@ -70,7 +70,7 @@ class Config {
     this.environment = env.name;
     this.hosts = env.hosts;
     this.hostNames = new Set();
-    Object.values(this.hosts).forEach(host => {
+    Object.values(this.hosts).forEach((host) => {
       host.base = this.getHost(host);
       let hostName = host.host;
       if (host.subdomain) {
@@ -264,14 +264,14 @@ class Config {
     // Check if specific languages have been configured to be built
     if (options.locales) {
       const locales = options.locales.split(',');
-      if (!locales.every(locale => AVAILABLE_LOCALES.includes(locale))) {
+      if (!locales.every((locale) => AVAILABLE_LOCALES.includes(locale))) {
         signale.fatal('Invalid set of locales given:', options.locales);
         signale.info('Available locales are', AVAILABLE_LOCALES.join(', '));
         process.exit(1);
       }
 
       // we need the blacklist filter, because otherwise the sitemap will not be created
-      const skippedLocales = AVAILABLE_LOCALES.filter(locale => {
+      const skippedLocales = AVAILABLE_LOCALES.filter((locale) => {
         return !locales.includes(locale);
       });
       podspec.deployments.default['filters'] = {

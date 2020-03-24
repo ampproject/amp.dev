@@ -84,7 +84,7 @@ function findFile(folder, namePrefix, namePostfix) {
   }
   const files = fs.readdirSync(folder);
 
-  return files.find(fileName => {
+  return files.find((fileName) => {
     return fileName.startsWith(namePrefix) && fileName.endsWith(namePostfix);
   });
 }

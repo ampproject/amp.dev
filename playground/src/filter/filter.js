@@ -38,7 +38,7 @@ export default class Filter {
     const results = this.search(searchInput);
 
     const mapping = new Set();
-    results.forEach(r => {
+    results.forEach((r) => {
       mapping.add(r.index);
     });
 
@@ -48,7 +48,7 @@ export default class Filter {
   }
 
   clear() {
-    this.elements.forEach(e => {
+    this.elements.forEach((e) => {
       e.classList.toggle(CSS_FILTER_RULE, false);
     });
   }

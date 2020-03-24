@@ -81,7 +81,7 @@ examples.post('/autosuggest/address', upload.none(), handleAddressRequest);
 function handleSearchRequest(request, response) {
   const query = request.query ? request.query.q : '';
 
-  let results = US_CAPITAL_CITIES.filter(key => {
+  let results = US_CAPITAL_CITIES.filter((key) => {
     return key.toUpperCase().includes(query.toUpperCase());
   });
 

@@ -69,11 +69,11 @@ async function importWorkingGroups() {
         .repo(`${WG_GH_ORGANISATION}/${wg.name}`)
         .issuesAsync()
     )[0];
-    issues = issues.map(issue => {
+    issues = issues.map((issue) => {
       const date = new Date(issue.created_at).toDateString();
       const title = emojiStrip(issue.title);
 
-      issue.labels = issue.labels.map(label => {
+      issue.labels = issue.labels.map((label) => {
         const txtColor =
           parseInt(`0x${label.color}`) < WG_LABEL_COLOR_THRESHOLD
             ? 'fff'

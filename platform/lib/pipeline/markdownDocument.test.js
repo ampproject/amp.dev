@@ -1,6 +1,6 @@
 const MarkdownDocument = require('./markdownDocument.js');
 
-test('Test frontmatter extraction', async done => {
+test('Test frontmatter extraction', async (done) => {
   const doc = new MarkdownDocument(
     '/docs/amp-test-v0.1.md',
 
@@ -29,7 +29,7 @@ test('Test frontmatter extraction', async done => {
   done();
 });
 
-test('Test teaser text extraction', async done => {
+test('Test teaser text extraction', async (done) => {
   const teaserText = MarkdownDocument.extractTeaserText(
     '<!--\n' +
       'Copyright notice\n' +
@@ -48,7 +48,7 @@ test('Test teaser text extraction', async done => {
   done();
 });
 
-test('Test escape nunjucks tags', async done => {
+test('Test escape nunjucks tags', async (done) => {
   const result = MarkdownDocument.escapeNunjucksTags(
     '<pre>\n' +
       "var href = location.href.replace(/?[^#]+/, '');\n" +
@@ -65,7 +65,7 @@ test('Test escape nunjucks tags', async done => {
   done();
 });
 
-test('Test escape mustache tags', async done => {
+test('Test escape mustache tags', async (done) => {
   const result = MarkdownDocument.escapeMustacheTags(
     'The [`link`]({{notincode}}) test `code`.\n' +
       '```html\n' +
@@ -102,7 +102,7 @@ test('Test escape mustache tags', async done => {
   done();
 });
 
-test('Test escape mustache tags', async done => {
+test('Test escape mustache tags', async (done) => {
   const doc = new MarkdownDocument(
     '/tmp/test.md',
     '---\n' +

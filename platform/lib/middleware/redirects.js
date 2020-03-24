@@ -48,7 +48,7 @@ function getRedirectLink(req) {
     if (
       langMatch &&
       AVAILABLE_LOCALES.findIndex(
-        item => langMatch[1] === item.toLowerCase()
+        (item) => langMatch[1] === item.toLowerCase()
       ) >= 0
     ) {
       const noLangPath = req.path.substr(langMatch[1].length + 1);

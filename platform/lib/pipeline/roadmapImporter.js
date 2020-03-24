@@ -53,10 +53,10 @@ async function importRoadmap() {
   log.await('Fetching cards per column ...');
   // grab all card data for each column
   const columns = await Promise.all(
-    result.data.map(column =>
-      octokit.projects.listCards({column_id: column.id}).then(result => {
+    result.data.map((column) =>
+      octokit.projects.listCards({column_id: column.id}).then((result) => {
         // strip out stuff we don't need
-        let cards = result.data.map(card => ({
+        let cards = result.data.map((card) => ({
           url: card.url,
           createdAt: card.created_at,
           updatedAt: card.updated_at,
@@ -64,7 +64,7 @@ async function importRoadmap() {
         }));
 
         // filter cards that don't have attached issues
-        cards = cards.filter(card => card.issueUrl);
+        cards = cards.filter((card) => card.issueUrl);
 
         return {cards: cards, id: column.id, name: column.name};
       })
@@ -79,13 +79,13 @@ async function importRoadmap() {
 
   // fetch all related issues
   const issues = await Promise.all(
-    cards.map(card => {
+    cards.map((card) => {
       const issue = card.issueUrl.match(
         /repos\/([^/]+)\/([^/]+)\/issues\/(\d+)/
       );
       return octokit.issues
         .get({owner: issue[1], repo: issue[2], issue_number: issue[3]})
-        .then(result => {
+        .then((result) => {
           result.url = card.issueUrl;
           return result;
         });
@@ -95,11 +95,11 @@ async function importRoadmap() {
   // create a map for better lookup
   const issueMap = Object.assign(
     {},
-    ...issues.map(item => ({[item['url']]: item}))
+    ...issues.map((item) => ({[item['url']]: item}))
   );
 
   // attach issues to cards
-  cards.forEach(card => {
+  cards.forEach((card) => {
     const issue = issueMap[card.issueUrl];
     card.issue = {
       url: issue.data.html_url,
@@ -109,7 +109,7 @@ async function importRoadmap() {
         .replace(/\[ \]/g, '')
         .split('\r\n\r\n')[0],
       labels: (issue.data.labels || [])
-        .map(label => {
+        .map((label) => {
           return label.name.startsWith('Category:')
             ? {
                 url: label.url,
@@ -118,7 +118,7 @@ async function importRoadmap() {
               }
             : false;
         })
-        .filter(label => !!label),
+        .filter((label) => !!label),
     };
 
     delete card.url;
@@ -127,7 +127,7 @@ async function importRoadmap() {
 
   // create a list of unique labels
   const labels = cards
-    .map(card => card.issue.labels.map(label => label.name))
+    .map((card) => card.issue.labels.map((label) => label.name))
     .reduce((acc, val) => acc.concat(val), [])
     .filter((value, index, self) => self.indexOf(value) === index);
 
