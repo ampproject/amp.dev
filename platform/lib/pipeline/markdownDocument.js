@@ -276,7 +276,7 @@ class MarkdownDocument {
    * @return {String}          The rewritten input
    */
   static escapeNunjucksTags(contents) {
-    return contents.replace(NUNJUCKS_PATTERN, tag => {
+    return contents.replace(NUNJUCKS_PATTERN, (tag) => {
       // TODO(matthiasrohmer): Raw tags for nunjucks do not match.
       // See: github.com/ampproject/amp.dev#2865
       return `{{'[% raw %]'}}${tag}{{'{% endraw %}'}}`;
@@ -289,10 +289,10 @@ class MarkdownDocument {
    * @return {String}          The rewritten input
    */
   static escapeMustacheTags(contents) {
-    return contents.replace(MARKDOWN_BLOCK_PATTERN, block => {
+    return contents.replace(MARKDOWN_BLOCK_PATTERN, (block) => {
       // check for mustache tags only if we have no raw block
       if (!block.startsWith('{')) {
-        block = block.replace(MUSTACHE_PATTERN, part => {
+        block = block.replace(MUSTACHE_PATTERN, (part) => {
           // again, only if it is a mustache block wrap it with raw
           if (part.startsWith('{{')) {
             part = '{% raw %}' + part + '{% endraw %}';
@@ -443,7 +443,7 @@ have a look and request a pull request there.
       .then(() => {
         log.success(`Saved ${path.replace(utils.project.paths.ROOT, '~')}`);
       })
-      .catch(e => {
+      .catch((e) => {
         log.error(
           `Couldn't save ${path.replace(utils.project.paths.ROOT, '~')}`,
           e

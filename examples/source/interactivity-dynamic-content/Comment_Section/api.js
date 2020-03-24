@@ -80,7 +80,7 @@ function loadComments(request) {
   }
   const comments = commentsCache.get(cookie);
   if (comments) {
-    return comments.map(comment => {
+    return comments.map((comment) => {
       return new Comment(comment.text, comment.user, comment.date);
     });
   }

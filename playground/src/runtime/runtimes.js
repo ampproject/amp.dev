@@ -67,7 +67,7 @@ class Runtimes {
     ];
     events.subscribe(
       EVENT_SET_RUNTIME,
-      runtime => (this.activeRuntime = runtime)
+      (runtime) => (this.activeRuntime = runtime)
     );
   }
 
@@ -78,7 +78,7 @@ class Runtimes {
 
   get(id) {
     id = id.toLowerCase();
-    const result = this.values.find(r => r.id === id);
+    const result = this.values.find((r) => r.id === id);
     return result || this.values[0];
   }
 }

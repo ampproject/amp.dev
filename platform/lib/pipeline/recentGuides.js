@@ -68,7 +68,7 @@ class RecentGuides {
       )
       .pipe(gulp.dest('./'));
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       stream.on('end', resolve);
     }).then(() => {
       // Sort guides by date in desc order and write them into a yaml file

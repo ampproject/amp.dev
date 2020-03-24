@@ -144,7 +144,7 @@ class CssTransformer {
 
       node.attribs.class = node.attribs.class
         .split(' ')
-        .map(className => {
+        .map((className) => {
           return rcs.selectorsLibrary.get(className) || className;
         })
         .join(' ');

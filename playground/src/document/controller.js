@@ -47,7 +47,7 @@ export default class DocumentController {
     win.addEventListener('hashchange', this._onHashChange.bind(this), false);
     // TODO find a better place for key handling
     key.filter = () => true;
-    key('⌘+s, ctrl+s', e => {
+    key('⌘+s, ctrl+s', (e) => {
       e.preventDefault();
       this.save();
     });
@@ -72,8 +72,8 @@ export default class DocumentController {
       promise = Promise.resolve(runtime.template);
     }
     return promise
-      .then(content => this.editor.setSource(content))
-      .catch(err => {
+      .then((content) => this.editor.setSource(content))
+      .catch((err) => {
         console.error(err);
         snackbar.show('Could not fetch document.');
         this.editor.setSource(runtime.template);
@@ -116,12 +116,12 @@ export default class DocumentController {
     this.forkButton.disable();
     this.srcDoc
       .fork()
-      .then(docId => {
+      .then((docId) => {
         this._setDocumentId(docId);
         this.forkButton.enable();
         snackbar.show('Document forked');
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         this.forkButton.enable();
         snackbar.show('Could not fork document');
@@ -138,10 +138,10 @@ export default class DocumentController {
     this.saveButton.disable();
     this.srcDoc
       .save(this.editor.getSource())
-      .then(docId => {
+      .then((docId) => {
         this._setDocumentId(docId);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         this.saveButton.enable();
         snackbar.show('Could not save document');
@@ -178,10 +178,7 @@ export default class DocumentController {
     if (!embedMode.isActive) {
       navigationWarning.enable();
     }
-    this.saveButton
-      .show()
-      .setHtml('Save')
-      .enable();
+    this.saveButton.show().setHtml('Save').enable();
   }
 
   _stateReadOnly() {

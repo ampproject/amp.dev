@@ -75,7 +75,7 @@ class GitHubImporter {
    */
   async listDirectory(filePath, repo = DEFAULT_REPOSITORY, master = false) {
     const data = await this.fetchJson(filePath, repo, master);
-    return data[0].map(file => {
+    return data[0].map((file) => {
       return file.path;
     });
   }
@@ -144,11 +144,11 @@ class GitHubImporter {
         }
       );
     })
-      .then(latestReleaseTag => {
+      .then((latestReleaseTag) => {
         this._log.success(`Fetched latest release tag: ${latestReleaseTag}`);
         return latestReleaseTag;
       })
-      .catch(err => {
+      .catch((err) => {
         this._log.fatal(err);
         return null;
       });

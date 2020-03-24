@@ -49,7 +49,7 @@ examples.post('/send-push', (request, response) => {
     .then(() => {
       response.json({result: 'Web Push received!'});
     })
-    .catch(error => {
+    .catch((error) => {
       response.status(500).send('Web Push Failed: ' + error);
     });
 });

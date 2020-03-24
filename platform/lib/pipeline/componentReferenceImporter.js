@@ -72,7 +72,7 @@ class ComponentReferenceImporter {
     let extensions = await this.githubImporter_.fetchJson('extensions');
     // As inside /extensions each component has its own folder, filter
     // down by directory
-    extensions = extensions[0].filter(file => {
+    extensions = extensions[0].filter((file) => {
       if (!config.only.length) {
         return file.type === 'dir';
       }
@@ -105,7 +105,7 @@ class ComponentReferenceImporter {
   async _importBuiltIn(name) {
     return this._createGrowDoc({
       name: name,
-      tag: this.validatorRules.raw.tags.find(tag => {
+      tag: this.validatorRules.raw.tags.find((tag) => {
         return tag.tagName.toLowerCase() == name;
       }),
       version: DEFAULT_VERSION,
@@ -136,7 +136,7 @@ class ComponentReferenceImporter {
         // the list of available ones on GitHub and verify its a extension
         // at all by searching for a tag
         if (
-          this.extensions.find(extension => {
+          this.extensions.find((extension) => {
             return extension.name == extensionName;
           }) ||
           !this._findExtensionTag(extensionName)
@@ -156,7 +156,7 @@ class ComponentReferenceImporter {
     }
 
     return Promise.all(
-      documents.map(doc => {
+      documents.map((doc) => {
         return this._createGrowDoc(doc);
       })
     );
@@ -170,7 +170,7 @@ class ComponentReferenceImporter {
    */
   async _listExtensionFiles(extension) {
     const root = await this.githubImporter_.listDirectory(extension.path);
-    let tree = root.map(file => {
+    let tree = root.map((file) => {
       if (file.match(VERSION_PATTERN)) {
         return this.githubImporter_.listDirectory(file);
       }
@@ -188,7 +188,7 @@ class ComponentReferenceImporter {
    * @return {Object|undefined}
    */
   _findExtensionTag(extensionName) {
-    return this.validatorRules.raw.tags.find(tag => {
+    return this.validatorRules.raw.tags.find((tag) => {
       return tag.tagName.toLowerCase() == extensionName;
     });
   }
@@ -200,7 +200,7 @@ class ComponentReferenceImporter {
    * @return {Object|undefined}
    */
   _findExtensionScript(extensionName) {
-    return this.validatorRules.raw.tags.find(script => {
+    return this.validatorRules.raw.tags.find((script) => {
       if (!script.extensionSpec || script.tagName != 'SCRIPT') {
         return false;
       }
@@ -224,7 +224,7 @@ class ComponentReferenceImporter {
     const tag = this._findExtensionTag(extension.name) || {};
     const script = this._findExtensionScript(extension.name) || {};
 
-    spec.version = spec.version.filter(version => version != LATEST_VERSION);
+    spec.version = spec.version.filter((version) => version != LATEST_VERSION);
     spec.version = spec.version.sort((version1, version2) => {
       return parseFloat(version1) > parseFloat(version2);
     });
@@ -232,7 +232,7 @@ class ComponentReferenceImporter {
     const latestVersion = spec.version[spec.version.length - 1];
 
     // Skip versions for which there is no dedicated doc
-    spec.version = spec.version.filter(version => {
+    spec.version = spec.version.filter((version) => {
       return !!this._getGitHubPath(extension, version, latestVersion);
     });
 
@@ -341,7 +341,7 @@ class ComponentReferenceImporter {
 // If not required, run directly
 if (!module.parent) {
   const importer = new ComponentReferenceImporter();
-  importer.import().catch(err => log.error(err));
+  importer.import().catch((err) => log.error(err));
 }
 
 module.exports = ComponentReferenceImporter;

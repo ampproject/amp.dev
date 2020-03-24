@@ -38,21 +38,21 @@ const OAUTH_COOKIE_NAME = 'oauth2_cookie';
 const USERINFO_ENDPOINT = {
   google: {
     url: 'https://www.googleapis.com/oauth2/v3/userinfo',
-    headers: token => {
+    headers: (token) => {
       return `Bearer ${token}`;
     },
     propertyName: 'name',
   },
   github: {
     url: 'https://api.github.com/user',
-    headers: token => {
+    headers: (token) => {
       return `token ${token}`;
     },
     propertyName: 'login',
   },
   facebook: {
     url: 'https://graph.facebook.com/v3.3/me',
-    headers: token => {
+    headers: (token) => {
       return `Bearer ${token}`;
     },
     propertyName: 'name',
@@ -64,10 +64,10 @@ const GOOGLE_CONFIG = {
   provider: 'google',
   OAUTH_ID_KEY: 'google_client_id',
   OAUTH_SECRET_KEY: 'google_client_secret',
-  authCodeUrl: oauthConfig => {
+  authCodeUrl: (oauthConfig) => {
     return `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${oauthConfig.id}&scope=openid profile&state=${oauthConfig.state}`;
   },
-  tokenUrl: oauthConfig => {
+  tokenUrl: (oauthConfig) => {
     return {
       url: `https://accounts.google.com/o/oauth2/token?grant_type=authorization_code&client_id=${oauthConfig.id}&client_secret=${oauthConfig.secret}`,
       options: {
@@ -83,10 +83,10 @@ const GITHUB_CONFIG = {
   provider: 'github',
   OAUTH_ID_KEY: 'github_client_id',
   OAUTH_SECRET_KEY: 'github_client_secret',
-  authCodeUrl: oauthConfig => {
+  authCodeUrl: (oauthConfig) => {
     return `https://github.com/login/oauth/authorize?client_id=${oauthConfig.id}&state=${oauthConfig.state}`;
   },
-  tokenUrl: oauthConfig => {
+  tokenUrl: (oauthConfig) => {
     return {
       url: `https://github.com/login/oauth/access_token?client_id=${oauthConfig.id}&client_secret=${oauthConfig.secret}`,
       options: {
@@ -102,10 +102,10 @@ const FACEBOOK_CONFIG = {
   provider: 'facebook',
   OAUTH_ID_KEY: 'facebook_client_id',
   OAUTH_SECRET_KEY: 'facebook_client_secret',
-  authCodeUrl: oauthConfig => {
+  authCodeUrl: (oauthConfig) => {
     return `https://www.facebook.com/v3.3/dialog/oauth?response_type=code&client_id=${oauthConfig.id}&state=${oauthConfig.state}&display=popup`;
   },
-  tokenUrl: oauthConfig => {
+  tokenUrl: (oauthConfig) => {
     return {
       url: `https://graph.facebook.com/v3.3/oauth/access_token?client_id=${oauthConfig.id}&client_secret=${oauthConfig.secret}`,
       options: {

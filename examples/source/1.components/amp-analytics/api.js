@@ -109,7 +109,7 @@ function embedListenHandler(request, response) {
     'Cache-Control': 'no-cache',
   });
 
-  const onNewAnalyticsData = function(userData) {
+  const onNewAnalyticsData = function (userData) {
     const content = analyticsTemplate.render({data: userData});
     response.write('data: ' + content + '\n\n');
     response.flush();
@@ -203,7 +203,7 @@ function notifyListeners(user, data) {
     return;
   }
   const formattedData = formatData(data);
-  listeners.forEach(listener => {
+  listeners.forEach((listener) => {
     listener(formattedData);
   });
 }

@@ -42,7 +42,7 @@ module.exports = (request, response, next) => {
     next();
     return;
   }
-  const maxAgeMapping = maxAgePerMimeType.find(mapping =>
+  const maxAgeMapping = maxAgePerMimeType.find((mapping) =>
     mapping[0].test(mimeType)
   );
   const maxAge = maxAgeMapping ? maxAgeMapping[1] : defaultMaxAge;

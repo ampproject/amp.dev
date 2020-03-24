@@ -1,6 +1,6 @@
 const ComponentReferenceDocument = require('./componentReferenceDocument.js');
 
-test('Test first headline removal', async done => {
+test('Test first headline removal', async (done) => {
   const doc = new ComponentReferenceDocument(
     '/amp-dev/pages/content/amp-dev/documentation/components/reference/amp-test-v0.1.md',
 

@@ -34,8 +34,8 @@ function loadRouters(root, prefix = '') {
   const rootDir = resolve(join(__dirname, root));
   listFiles(rootDir, routers, true);
   routers
-    .filter(path => path.endsWith('.js') && !path.includes('/static/'))
-    .forEach(path => {
+    .filter((path) => path.endsWith('.js') && !path.includes('/static/'))
+    .forEach((path) => {
       const route = join(prefix, getRoute(rootDir, path));
       examples.use('/documentation/examples' + route, require(path));
     });

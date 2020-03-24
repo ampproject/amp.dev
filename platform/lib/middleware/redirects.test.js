@@ -22,14 +22,14 @@ const app = express();
 const router = require('./redirects.js');
 app.use(router);
 
-test('redirect for shortcut in default language', done => {
+test('redirect for shortcut in default language', (done) => {
   request(app)
     .get('/shortcut')
     .expect('Location', PLATFORM_HOST + '/some/deep/link/')
     .expect(302, done);
 });
 
-test('redirect for shortcut in specific short language', done => {
+test('redirect for shortcut in specific short language', (done) => {
   request(app)
     .get(`/${VALID_LANGUAGE_SHORT}/shortcut`)
     .expect(
@@ -39,7 +39,7 @@ test('redirect for shortcut in specific short language', done => {
     .expect(302, done);
 });
 
-test('redirect for shortcut in specific long language', done => {
+test('redirect for shortcut in specific long language', (done) => {
   request(app)
     .get(`/${VALID_LANGUAGE_LONG}/shortcut`)
     .expect(
@@ -49,21 +49,21 @@ test('redirect for shortcut in specific long language', done => {
     .expect(302, done);
 });
 
-test('no redirect for shortcut in an unknown language', done => {
+test('no redirect for shortcut in an unknown language', (done) => {
   request(app)
     .get('/xx/shortcut')
     .set('x-forwarded-proto', 'https')
     .expect(404, done);
 });
 
-test('redirect for shortcut in default language with param', done => {
+test('redirect for shortcut in default language with param', (done) => {
   request(app)
     .get('/shortcut?format=website')
     .expect('Location', `${PLATFORM_HOST}/some/deep/link/?format=website`)
     .expect(302, done);
 });
 
-test('redirect for shortcut in specific short language with params', done => {
+test('redirect for shortcut in specific short language with params', (done) => {
   request(app)
     .get(`/${VALID_LANGUAGE_SHORT}/shortcut?format=website&foo=bar`)
     .expect(
@@ -73,21 +73,21 @@ test('redirect for shortcut in specific short language with params', done => {
     .expect(302, done);
 });
 
-test('redirect for language specific link', done => {
+test('redirect for language specific link', (done) => {
   request(app)
     .get(`/${VALID_LANGUAGE_SHORT}/old/link`)
     .expect('Location', `${PLATFORM_HOST}/new/link/target`)
     .expect(302, done);
 });
 
-test('no redirect for language specific link in default language', done => {
+test('no redirect for language specific link in default language', (done) => {
   request(app)
     .get('/old/link')
     .set('x-forwarded-proto', 'https')
     .expect(404, done);
 });
 
-test('no redirect for language specific link in other language', done => {
+test('no redirect for language specific link in other language', (done) => {
   request(app)
     .get(`/${VALID_LANGUAGE_LONG}/old/link`)
     .set('x-forwarded-proto', 'https')

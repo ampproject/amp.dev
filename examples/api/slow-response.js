@@ -74,7 +74,7 @@ async function slowIframe(request, response) {
 }
 
 function sleep(duration) {
-  return new Promise(resolve => setTimeout(resolve, duration));
+  return new Promise((resolve) => setTimeout(resolve, duration));
 }
 
 module.exports = examples;

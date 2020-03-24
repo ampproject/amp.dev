@@ -44,7 +44,7 @@ const VOID_TAGS = [
 const SAMPLE_THUMBNAIL = '/favicons/android-chrome-256x256.png';
 const DEFAULT_LANG = 'en';
 const AMP_STORY_CLEANER_REGEX = ['amp-story', 'amp-story-auto-ads'].map(
-  extension =>
+  (extension) =>
     new RegExp(
       '<script\\s+async\\s+custom-element="' +
         extension +
@@ -75,7 +75,7 @@ const BEAUTIFY_OPTIONS = {
  * - starts with an HTML comment
  * - spans the next tag and its children after a comment
  */
-module.exports.parse = function(input, filePath = '') {
+module.exports.parse = function (input, filePath = '') {
   input = beautifyHtml(input, BEAUTIFY_OPTIONS);
   const parsing = new DocumentParser(input.split('\n'), filePath);
   parsing.execute();
@@ -248,7 +248,7 @@ class DocumentParser {
   }
 
   replaceAmpStoryRuntime(string) {
-    AMP_STORY_CLEANER_REGEX.forEach(r => (string = string.replace(r, '')));
+    AMP_STORY_CLEANER_REGEX.forEach((r) => (string = string.replace(r, '')));
     return string;
   }
 
