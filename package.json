@@ -61,7 +61,7 @@
     "client-sessions": "0.8.0",
     "cookie-parser": "1.4.5",
     "cors": "2.8.5",
-    "csso": "4.0.2",
+    "csso": "4.0.3",
     "emoji-strip": "1.0.1",
     "express": "4.17.1",
     "express-formidable": "1.2.0",
