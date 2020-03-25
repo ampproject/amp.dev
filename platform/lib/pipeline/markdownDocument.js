@@ -320,7 +320,7 @@ class MarkdownDocument {
     };
 
     contents = contents.replace(CALLOUT_PATTERN, (match, type, text) => {
-      return `[tip type="${AVAILABLE_CALLOUT_TYPES[type]}"]\n${text}\n[/tip]`;
+      return `[tip type="${AVAILABLE_CALLOUT_TYPES[type]}"]${text}[/tip]`;
     });
 
     return contents;
