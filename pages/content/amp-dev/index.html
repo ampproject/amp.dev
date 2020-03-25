@@ -115,9 +115,8 @@ success_stories:
           <div class="ap-o-news-card">
             <div class="ap-o-news-title">[= post.title =]</div>
             <div class="ap-o-news-image">
-              [% if post.image and post.image != '' %]
-              <amp-img
-                class="ap--media"
+              [% if post.image and post.image != '' and not post.image.includes('AMP_Blog_Square') %]
+              <amp-img class="ap--media"
                 src="[= post.image =]"
                 layout="responsive"
                 width="160"
