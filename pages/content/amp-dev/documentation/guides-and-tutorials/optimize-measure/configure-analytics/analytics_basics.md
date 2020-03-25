@@ -105,17 +105,17 @@ sends the pageview data to a defined URL along with a random ID:
 ```html
 <amp-analytics>
 <script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  {
+    "requests": {
+      "pageview": "https://foo.com/pixel?RANDOM"
+    },
+    "triggers": {
+      "trackPageview": {
+        "on": "visible",
+        "request": "pageview"
+      }
     }
   }
-}
 </script>
 </amp-analytics>
 ```
@@ -143,37 +143,41 @@ AMP Analytics makes it easy to implement the above using any analytics vendor. F
 ```html
 <amp-analytics type="gtag" data-credentials="include">
  <script type="application/json">
-   {
-     "vars": {
-       "gtag_id": "YOUR_GOOGLE_ANALYTICS_ID",
-       "config": {
-         "YOUR_GOOGLE_ANALYTICS_ID": {
-           "groups": "default"
-         }
-       }
-     },
-     "triggers": {
-       "storyProgress": {
-         "on": "story-page-visible",
-         "vars": {
-           "event_name": "custom",
-           "event_action": "story_progress",
-           "event_category": "${title}",
-           "event_label": "${storyPageId}",
-           "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
-         }
-       },
-       "storyEnd": {
-         "on": "story-last-page-visible",
-         "vars": {
-           "event_name": "custom",
-           "event_action": "story_complete",
-           "event_category": "${title}",
-           "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
-         }
-       }
-     }
-   }
+  {
+    "vars": {
+      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
+      "config": {
+        "YOUR_GOOGLE_ANALYTICS_ID": {
+          "groups":"default"
+        }
+      }
+    },
+    "triggers": {
+      "storyProgress": {
+        "on":"story-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_progress",
+          "event_category":"${title}",
+          "event_label":"${storyPageId}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      },
+      "storyEnd": {
+        "on":"story-last-page-visible",
+        "vars": {
+          "event_name":"custom",
+          "event_action":"story_complete",
+          "event_category":"${title}",
+          "send_to": [
+            "YOUR_GOOGLE_ANALYTICS_ID"
+          ]
+        }
+      }
+    }
+  }
  </script>
 </amp-analytics>
 ```
@@ -223,25 +227,25 @@ within the [`amp-analytics`](../../../../documentation/components/reference/amp-
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-    "someEvent": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
       "vars": {
-        "title": "My homepage"
+        "account":"ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
