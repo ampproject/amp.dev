@@ -105,17 +105,17 @@ sends the pageview data to a defined URL along with a random ID:
 ```html
 <amp-analytics>
 <script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  {
+    "requests": {
+      "pageview": "https://foo.com/pixel?RANDOM"
+    },
+    "triggers": {
+      "trackPageview": {
+        "on": "visible",
+        "request": "pageview"
+      }
     }
   }
-}
 </script>
 </amp-analytics>
 ```
