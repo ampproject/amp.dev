@@ -26,7 +26,7 @@ class EmailLoader {
   }
 
   async loadEmailFromFile() {
-    const files = await new Promise(resolve => {
+    const files = await new Promise((resolve) => {
       const dialog = document.createElement('input');
       dialog.setAttribute('type', 'file');
       dialog.setAttribute('accept', '.eml');
@@ -56,7 +56,7 @@ class EmailLoader {
     }
     const parts = this._parseMultipartBody(body, boundary);
 
-    const ampPart = parts.find(part =>
+    const ampPart = parts.find((part) =>
       part.contentType.startsWith('text/x-amp-html')
     );
     if (!ampPart) {
@@ -80,8 +80,8 @@ class EmailLoader {
 
     return new Map(
       lines
-        .filter(line => line)
-        .map(line => {
+        .filter((line) => line)
+        .map((line) => {
           const [key, value] = twoSplit(line, ':');
           return [key.toLowerCase(), value.trim()];
         })
@@ -98,7 +98,7 @@ class EmailLoader {
     }
     const parts = rawParts.slice(1, -1);
 
-    return parts.map(part => {
+    return parts.map((part) => {
       let [head, body] = twoSplit(part, '\n\n');
       if (!body) {
         throw new Error('No body found in email part');

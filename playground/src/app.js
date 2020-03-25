@@ -62,7 +62,7 @@ const errorIndicator = document.getElementById('error-indicator');
 const errorListContainer = document.getElementById('error-list');
 ErrorList.createErrorList(errorListContainer, errorIndicator);
 
-events.subscribe(ErrorList.EVENT_ERROR_SELECTED, error =>
+events.subscribe(ErrorList.EVENT_ERROR_SELECTED, (error) =>
   editor.setCursorAndFocus(error.line, error.col)
 );
 
@@ -79,7 +79,7 @@ const autoImporter = AutoImporter.createAutoImporter(
 const emailLoader = EmailLoader.createEmailLoader(editor);
 
 // runtime select
-const runtimeChanged = runtimeId => {
+const runtimeChanged = (runtimeId) => {
   const newRuntime = runtimes.get(runtimeId);
   if (!newRuntime) {
     console.error('unknown runtime: ' + newRuntime);
@@ -94,7 +94,7 @@ const runtimeSelector = createSelector(
     classes: ['caret-right'],
     id: 'runtime',
     label: 'select runtime',
-    values: runtimes.values.map(r => {
+    values: runtimes.values.map((r) => {
       return {
         id: r.id,
         label: r.name,
@@ -107,7 +107,7 @@ const runtimeSelector = createSelector(
 runtimeSelector.show();
 
 let activeRuntime;
-events.subscribe(EVENT_SET_RUNTIME, newRuntime => {
+events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   preview.setRuntime(newRuntime);
   runtimeSelector.selectOption(newRuntime.id);
   // change editor input to new runtime default if current input is unchanged
@@ -135,7 +135,7 @@ const editorUpdateListener = () => {
   titleUpdater.update(source);
 };
 events.subscribe([Editor.EVENT_INPUT_CHANGE], editorUpdateListener);
-events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, validationResult => {
+events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
   editor.setValidationResult(validationResult);
 });
 events.subscribe([Editor.EVENT_INPUT_NEW], () => {
@@ -146,7 +146,7 @@ events.subscribe([Editor.EVENT_INPUT_NEW], () => {
 });
 
 // configure auto-importer
-events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, validationResult => {
+events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
   autoImporter.update(validationResult);
 });
 
@@ -189,11 +189,11 @@ const loadTemplateButton = Button.from(
 );
 const templateDialog = createTemplateDialog(loadTemplateButton, {
   onStart: () => editor.showLoadingIndicator(),
-  onSuccess: template => {
+  onSuccess: (template) => {
     editor.setSource(template.content);
     params.replace('url', template.url);
   },
-  onError: err => {
+  onError: (err) => {
     snackbar.show(err);
   },
 });
@@ -207,7 +207,7 @@ Button.from(document.getElementById('show-menu'), () => {
 const formatSource = () => {
   formatter
     .format(editor.getSource())
-    .then(formattedCode => editor.setSource(formattedCode));
+    .then((formattedCode) => editor.setSource(formattedCode));
 };
 Button.from(document.getElementById('format-source'), formatSource);
 Button.from(document.getElementById('menu-format-source'), formatSource);
@@ -216,7 +216,7 @@ const loadEmail = () => {
   emailLoader
     .loadEmailFromFile()
     .then(formatSource)
-    .catch(error => alert(`Error loading email: ${error.message}`));
+    .catch((error) => alert(`Error loading email: ${error.message}`));
 };
 Button.from(document.getElementById('import-email'), loadEmail);
 

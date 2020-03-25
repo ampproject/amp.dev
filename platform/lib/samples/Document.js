@@ -117,7 +117,7 @@ module.exports = class Document {
 
   headings() {
     let result = [];
-    this.sections.forEach(s => {
+    this.sections.forEach((s) => {
       result = result.concat(s.headings);
     });
     return result;
@@ -149,7 +149,7 @@ module.exports = class Document {
   }
 
   decodeHTMLEntities(string) {
-    return String(string).replace(/&#\d+;/gm, s => {
+    return String(string).replace(/&#\d+;/gm, (s) => {
       return String.fromCharCode(s.match(/\d+/gm)[0]);
     });
   }

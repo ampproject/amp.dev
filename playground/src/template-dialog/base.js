@@ -37,8 +37,8 @@ class TemplateDialog {
   open(runtime) {
     this.runtime = runtime;
     this.fetchTemplates()
-      .then(sitemap => this.renderTemplates(sitemap))
-      .catch(err => {
+      .then((sitemap) => this.renderTemplates(sitemap))
+      .catch((err) => {
         console.log(err);
         this.callback.onError('Could not fetch templates');
       });
@@ -58,11 +58,11 @@ class TemplateDialog {
     this.templates = fetch(SITEMAP_URL, {
       mode: 'cors',
     })
-      .then(response => {
+      .then((response) => {
         this.button.enable();
         return response.json();
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         this.templates = null;
       });
@@ -80,7 +80,7 @@ class TemplateDialog {
     const searchStrings = [];
     const items = [];
     const templates = this.selectTemplatesForRuntime(sitemap);
-    templates.categories.forEach(c => {
+    templates.categories.forEach((c) => {
       this.addTemplateCategory(c, root, items, searchStrings);
     });
     const searchInputField = root.querySelector('#template-search-input');
@@ -95,7 +95,7 @@ class TemplateDialog {
     root.appendChild(heading);
     const templateList = this.doc.createElement('ul');
     root.appendChild(templateList);
-    category.examples.forEach(e => {
+    category.examples.forEach((e) => {
       const listItem = this.createTemplateListItem(e);
       templateList.appendChild(listItem);
       items.push(listItem);
@@ -119,14 +119,14 @@ class TemplateDialog {
     fetch(url, {
       mode: 'cors',
     })
-      .then(response => response.text())
-      .then(body => {
+      .then((response) => response.text())
+      .then((body) => {
         this.callback.onSuccess({
           url,
           content: this.makeLinksAbsolute(url, body),
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         this.callback.onError('Could not fetch template');
       });

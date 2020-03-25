@@ -21,7 +21,7 @@ const path = require('path');
 /**
  * Encodes a string into file system compatible representation.
  */
-module.exports.fromString = function(...args) {
+module.exports.fromString = function (...args) {
   let dir = '';
   let file = '';
   if (arguments.length > 1) {
@@ -39,7 +39,7 @@ module.exports.fromString = function(...args) {
 /**
  * Decodes a string from a file name.
  */
-module.exports.toString = function(file) {
+module.exports.toString = function (file) {
   if (!file) {
     return '';
   }

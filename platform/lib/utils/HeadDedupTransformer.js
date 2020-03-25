@@ -54,8 +54,8 @@ class HeadDedupTransformer {
       }
     }
     // remove duplicates
-    matches.forEach(matches => {
-      matches.slice(1).forEach(node => {
+    matches.forEach((matches) => {
+      matches.slice(1).forEach((node) => {
         remove(node);
       });
     });

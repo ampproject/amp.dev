@@ -37,7 +37,7 @@ examples.get('/rooms', (request, response) => {
   let result = rooms;
 
   if (arriving && leaving) {
-    result = rooms.filter(room => {
+    result = rooms.filter((room) => {
       return !(
         arriving <= new Date(room.booked.to) &&
         leaving >= new Date(room.booked.from)

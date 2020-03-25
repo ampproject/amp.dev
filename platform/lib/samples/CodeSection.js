@@ -19,7 +19,7 @@
 const hljs = require('highlight.js');
 const marked = require('marked');
 const renderer = new marked.Renderer();
-renderer.heading = function(text, level) {
+renderer.heading = function (text, level) {
   const escapedText = text.toLowerCase().replace(/\s+/g, '-');
   return (
     '<h' +
@@ -33,7 +33,7 @@ renderer.heading = function(text, level) {
     '>'
   );
 };
-renderer.paragraph = function(text) {
+renderer.paragraph = function (text) {
   return '<p class="mb2 px1">' + text + '</p>';
 };
 
@@ -57,7 +57,7 @@ const hintStartHtmlClose = '</div>';
 const hintEndHtml = '</label>';
 
 marked.setOptions({
-  highlight: function(code, lang) {
+  highlight: function (code, lang) {
     if (lang) {
       return hljs.highlight(lang, code).value;
     } else {
@@ -221,7 +221,7 @@ module.exports = class CodeSection {
       }
     }
     offset = offset === Number.MAX_SAFE_INTEGER ? 0 : offset;
-    lines = lines.map(line => {
+    lines = lines.map((line) => {
       line = line.substring(offset);
       if (options.trimHeadlines) {
         // remove leading whitespace from headings for markdown compatibility

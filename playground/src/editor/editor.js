@@ -160,7 +160,7 @@ class Editor {
   setValidationResult(validationResult) {
     this.codeMirror.clearGutter('CodeMirror-error-markers');
     this.codeMirror.operation(() => {
-      validationResult.errors.forEach(error => {
+      validationResult.errors.forEach((error) => {
         const marker = document.createElement('div');
         const message = marker.appendChild(document.createElement('span'));
         message.appendChild(document.createTextNode(error.message));
@@ -196,7 +196,7 @@ class Editor {
   }
 
   loadHints(validator) {
-    this.amphtmlHints.then(hints => {
+    this.amphtmlHints.then((hints) => {
       // eslint-disable-next-line no-unused-vars
       for (const key of Object.keys(CodeMirror.htmlSchema)) {
         delete CodeMirror.htmlSchema[key];
@@ -214,13 +214,13 @@ class Editor {
     return new Promise((resolve, reject) => {
       window.requestIdleCallback(() => {
         fetch(HINTS_URL)
-          .then(response => {
+          .then((response) => {
             if (response.status !== 200) {
               return reject(new Error(`Error code ${response.status}`));
             }
             resolve(response.json());
           })
-          .catch(err => {
+          .catch((err) => {
             reject(err);
           });
       });

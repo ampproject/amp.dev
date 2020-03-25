@@ -46,7 +46,7 @@ function initConfig() {
   };
   // assign default template
   let defaultTemplate;
-  config.formats.forEach(format => {
+  config.formats.forEach((format) => {
     format.template = config.templates[format.id];
     if (format.default) {
       defaultTemplate = format.template;

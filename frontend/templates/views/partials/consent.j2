@@ -15,10 +15,12 @@
 <amp-consent id="consent" class="ap-o-consent" layout="nodisplay">
   <script type="application/json">
     {
-      "consents": {
+      "consentInstanceId": "consent",
+      "promptUI": "consent-popup",
+      "consentRequired": false,
+      "geoOverride": {
         "eu": {
-          "promptIfUnknownForGeoGroup": "eu",
-          "promptUI": "consent-popup"
+          "consentRequired": true
         }
       }
     }

@@ -67,7 +67,7 @@ class Validator {
   }
 
   processErrors(validationResult) {
-    validationResult.errors.forEach(error => {
+    validationResult.errors.forEach((error) => {
       error.message = amp.validator.renderErrorMessage(error);
       error.category = amp.validator.categorizeError(error);
       error.icon = error.severity.toLowerCase();

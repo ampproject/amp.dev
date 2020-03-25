@@ -63,19 +63,21 @@ This sample demonstrates which events can be measured and how they can be config
     </style>
 </head>
 <body>
-    <!-- &nbsp; -->
-    <amp-iframe class="fixed-dashboard"
-        width="200"
-        height="240" layout="fixed"
-        sandbox="allow-scripts"
-        frameborder="0"
-        src="<% base_path %>/embed?test=1&user=[= user =]&account=ampdev">
-      <amp-img src="/static/samples/img/pixel-white.png"
-          layout="fixed-height"
-          height="350"
-          width="auto"
-          placeholder></amp-img>
+  <!-- &nbsp; -->
+  <amp-iframe class="fixed-dashboard"
+      width="200"
+      height="240" layout="fixed"
+      sandbox="allow-scripts"
+      frameborder="0"
+      src="<% base_path %>/embed?test=1&user=[= user =]&account=ampdev">
+    <amp-img src="/static/samples/img/pixel-white.png"
+        layout="fixed-height"
+        height="350"
+        width="auto"
+        placeholder>
+    </amp-img>
   </amp-iframe>
+
   <!--
     ## Pageview
   -->
@@ -351,7 +353,7 @@ The `amp-carousel-prev` event is issued when there is a traversal to the previou
     </script>
   </amp-analytics>
   <!-- ## Form -->
-  <!-- You can track events triggered by `amp-form`. Find a list of supported event [here](/content/amp-dev/documentation/components/reference/amp-form.md#analytics-triggers)-->
+  <!-- You can track events triggered by `amp-form`. Find a list of supported event [here](/content/amp-dev/documentation/components/reference/amp-form.md#analytics-triggers). -->
   <div>
     <amp-analytics>
       <script type="application/json">
@@ -399,8 +401,8 @@ The `amp-carousel-prev` event is issued when there is a traversal to the previou
           name="name"
           placeholder="Name..."
           required>
-    <input type="submit" value="Subscribe">
-  </form>
+      <input type="submit" value="Subscribe">
+    </form>
   </div>
 </body>
 </html>

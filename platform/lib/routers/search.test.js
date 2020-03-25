@@ -54,7 +54,7 @@ function createSearchResult(numComponents, numPages, totalResults) {
   };
 }
 
-test('returns a first page with component highlights and no next link', done => {
+test('returns a first page with component highlights and no next link', (done) => {
   const searchResult = createSearchResult(2, 8, 10);
   googleSearch.search.mockResolvedValue(searchResult);
 
@@ -62,7 +62,7 @@ test('returns a first page with component highlights and no next link', done => 
     .get('/search/do?q=query&locale=en&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result.components.length).toBe(2);
       expect(res.body.result.pages.length).toBe(8);
       expect(res.body.nextUrl).toBe(undefined);
@@ -70,7 +70,7 @@ test('returns a first page with component highlights and no next link', done => 
     });
 });
 
-test('returns a first page with maximum 3 component highlights', done => {
+test('returns a first page with maximum 3 component highlights', (done) => {
   const searchResult = createSearchResult(5, 5, 10);
   googleSearch.search.mockResolvedValue(searchResult);
 
@@ -78,14 +78,14 @@ test('returns a first page with maximum 3 component highlights', done => {
     .get('/search/do?q=query&locale=en&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result.components.length).toBe(3); // components limit!
       expect(res.body.result.pages.length).toBe(7);
       done();
     });
 });
 
-test('returns a first page with no component after max index', done => {
+test('returns a first page with no component after max index', (done) => {
   const searchResult = createSearchResult(3, 7, 10);
   // for this test we want the components at the end:
   searchResult.items = searchResult.items.reverse();
@@ -95,14 +95,14 @@ test('returns a first page with no component after max index', done => {
     .get('/search/do?q=query&locale=en&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result.components.length).toBe(1); // 2 components where after the max index
       expect(res.body.result.pages.length).toBe(9);
       done();
     });
 });
 
-test('returns a first page with no component highlights and next link', done => {
+test('returns a first page with no component highlights and next link', (done) => {
   const searchResult = createSearchResult(0, 10, 11);
   googleSearch.search.mockResolvedValue(searchResult);
 
@@ -110,7 +110,7 @@ test('returns a first page with no component highlights and next link', done => 
     .get('/search/do?q=query&locale=en&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(10);
       expect(res.body.nextUrl).toBe(
@@ -120,7 +120,7 @@ test('returns a first page with no component highlights and next link', done => 
     });
 });
 
-test('returns a first page with no component highlights and next link', done => {
+test('returns a first page with no component highlights and next link', (done) => {
   const searchResult = createSearchResult(0, 10, 11);
   googleSearch.search.mockResolvedValue(searchResult);
 
@@ -128,7 +128,7 @@ test('returns a first page with no component highlights and next link', done => 
     .get('/search/do?q=query&locale=pt_BR&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(10);
       expect(res.body.nextUrl).toBe(
@@ -139,7 +139,7 @@ test('returns a first page with no component highlights and next link', done => 
     });
 });
 
-test('returns a second page with no component highlights and no next link', done => {
+test('returns a second page with no component highlights and no next link', (done) => {
   const searchResult = createSearchResult(2, 6, 18);
   googleSearch.search.mockResolvedValue(searchResult);
 
@@ -147,7 +147,7 @@ test('returns a second page with no component highlights and no next link', done
     .get('/search/do?q=query&locale=en&page=2')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result.components.length).toBe(0);
       expect(res.body.result.pages.length).toBe(8);
       expect(res.body.nextUrl).toBe(undefined);
@@ -158,7 +158,7 @@ test('returns a second page with no component highlights and no next link', done
     });
 });
 
-test('title and description are correct', done => {
+test('title and description are correct', (done) => {
   const searchResult = createSearchResult(2, 2, 4);
   delete searchResult.items[0].pagemap.metatags[0]['twitter:title'];
   delete searchResult.items[1].pagemap.metatags[0]['twitter:description'];
@@ -169,7 +169,7 @@ test('title and description are correct', done => {
     .get('/search/do?q=query&locale=en&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       // all items will use the title from the metatags if available
       // components always should have the meta description if available
       expect(res.body.result.components[0].title).toBe('long-title-0');
@@ -185,7 +185,7 @@ test('title and description are correct', done => {
     });
 });
 
-test('Component title is reduced to component name', done => {
+test('Component title is reduced to component name', (done) => {
   const searchResult = createSearchResult(2, 0, 2);
   searchResult.items[0].pagemap.metatags[0]['twitter:title'] =
     'Documentation: Component: <amp-test>';
@@ -197,7 +197,7 @@ test('Component title is reduced to component name', done => {
     .get('/search/do?q=query&locale=en&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       // when the title contains a double point only text after it is used
       expect(res.body.result.components[0].title).toBe('<amp-test>');
       // when the double point is last, the title is not changed
@@ -208,7 +208,7 @@ test('Component title is reduced to component name', done => {
     });
 });
 
-test('Title and description are cleaned', done => {
+test('Title and description are cleaned', (done) => {
   const searchResult = createSearchResult(1, 0, 1);
   searchResult.items[0].pagemap.metatags[0]['twitter:title'] =
     'test `img` [text](link';
@@ -220,7 +220,7 @@ test('Title and description are cleaned', done => {
     .get('/search/do?q=query&locale=en&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       // when the title contains a double point only text after it is used
       expect(res.body.result.components[0].title).toBe("test 'img' text");
       // when the double point is last, the title is not changed
@@ -231,7 +231,7 @@ test('Title and description are cleaned', done => {
     });
 });
 
-test('components with example get example and playground urls', done => {
+test('components with example get example and playground urls', (done) => {
   const searchResult = createSearchResult(2, 0, 2);
   searchResult.items[0].link =
     'https://amp.dev/documentation/components/amp-test-example/';
@@ -243,7 +243,7 @@ test('components with example get example and playground urls', done => {
     .get('/search/do?q=query&locale=en&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result.components[0].url).toBe(
         'https://amp.dev/documentation/components/amp-test-example/'
       );
@@ -262,7 +262,7 @@ test('components with example get example and playground urls', done => {
     });
 });
 
-test('components with example get example with locale and playground url without', done => {
+test('components with example get example with locale and playground url without', (done) => {
   const searchResult = createSearchResult(2, 0, 2);
   searchResult.items[0].link =
     'https://amp.dev/pt_br/documentation/components/amp-test-example/';
@@ -274,7 +274,7 @@ test('components with example get example with locale and playground url without
     .get('/search/do?q=query&locale=pt_BR&page=1')
     .expect('Content-Type', /json/)
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result.components[0].url).toBe(
         'https://amp.dev/pt_br/documentation/components/amp-test-example/'
       );
@@ -293,37 +293,35 @@ test('components with example get example with locale and playground url without
     });
 });
 
-test('Invalid search', done => {
+test('Invalid search', (done) => {
   googleSearch.search.mockImplementation(async () => {
     throw Error('Should not be called');
   });
   request(app)
     .get('/search/do')
     .expect(200)
-    .then(res => {
+    .then((res) => {
       expect(res.body.result).toBeUndefined();
       done();
     });
 });
 
-test('exception handling', done => {
+test('exception handling', (done) => {
   googleSearch.search.mockImplementation(async () => {
     throw Error('Expected');
   });
-  request(app)
-    .get('/search/do?q=query&locale=pt_BR&page=1')
-    .expect(500, done);
+  request(app).get('/search/do?q=query&locale=pt_BR&page=1').expect(500, done);
 });
 
 test(
   'autosuggest should return an ordered list with components,' +
     ' build ins and some important included elements',
-  done => {
+  (done) => {
     request(app)
       .get('/search/autosuggest')
       .expect('Content-Type', /json/)
       .expect(200)
-      .then(res => {
+      .then((res) => {
         // We do not explicitly test for components from 'component-versions.json'
         // since we do not have it in our control here which component is listed there.
         // (and mocking is not easily done)

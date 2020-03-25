@@ -84,7 +84,7 @@ let redis = null;
 let lru = null;
 
 instance
-  .then(instance => {
+  .then((instance) => {
     // Check if there is an instance available. If there is, instantiate
     // a client to use it, if there is none fall back to LRU cache
     if (instance) {
@@ -107,7 +107,7 @@ instance
       max: LRU_MAX_ITEMS,
     });
   })
-  .catch(e => {
+  .catch((e) => {
     log.error('Could not initialize caches', e);
   });
 

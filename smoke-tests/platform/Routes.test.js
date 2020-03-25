@@ -62,7 +62,7 @@ describe('Routes', () => {
       '/documentation/components/amp-story-page/?format=stories',
       '/documentation/components/amp-story-cta-layer/?format=stories',
       '/boilerplate',
-    ].forEach(async pagePath => {
+    ].forEach(async (pagePath) => {
       it(pagePath, async () => {
         const response = await fetch(pagePath);
         expect(response.status).toBe(200);

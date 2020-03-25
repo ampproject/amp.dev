@@ -105,7 +105,7 @@ function sass() {
   return gulp
     .src(`${project.paths.SCSS}/**/[^_]*.scss`)
     .pipe(gulpSass(options))
-    .on('error', function(e) {
+    .on('error', function (e) {
       console.error(e);
       // eslint-disable-next-line no-invalid-this
       this.emit('end');
@@ -159,8 +159,8 @@ async function buildPlayground() {
 async function buildComponentVersions() {
   const rules = await validatorRules.fetch();
   const componentVersions = {};
-  rules.extensions.forEach(e => {
-    const versions = e.version.filter(v => v !== 'latest');
+  rules.extensions.forEach((e) => {
+    const versions = e.version.filter((v) => v !== 'latest');
     componentVersions[e.name] = versions[versions.length - 1];
   });
   const content = JSON.stringify(componentVersions, null, 2);
@@ -210,7 +210,7 @@ function zipTemplates() {
           signale.success(`Zipped template ${zipFilePath}`);
           callback();
         })
-        .on('error', e => {
+        .on('error', (e) => {
           signale.error(`Writing template zip ${zipFilePath} failed`, e);
           callback(e);
         });
@@ -401,7 +401,7 @@ function minifyPages() {
   return gulp
     .src(`${project.paths.GROW_BUILD_DEST}/**/*.html`)
     .pipe(
-      through.obj(function(page, encoding, callback) {
+      through.obj(function (page, encoding, callback) {
         let html = page.contents.toString();
 
         // Minify the CSS
@@ -439,7 +439,7 @@ function collectStatics(done) {
       project.absolute('examples/static/**/*'),
     ])
     .pipe(
-      through.obj(async function(file, encoding, callback) {
+      through.obj(async function (file, encoding, callback) {
         // Skip potential archive parent directories to have the path writable later
         if (file.stat.isDirectory() && file.path.endsWith('.zip')) {
           callback();
