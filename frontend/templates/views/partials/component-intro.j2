@@ -45,18 +45,23 @@
     <div id="references" class="ap-o-component-intro-box ap-o-component-intro-box-reference">
       <h4>Examples</h4>
       <div class="ap-o-component-intro-box-examples">
-        {% for example in examples[doc.title] %}
-        [% if format in {{ example.formats|tojson }} %]
-        <a href="{{ example.url }}">{{ example.title }}</a>
+        [% set examples = {{ examples[doc.title]|tojson }} %]
+        [% set examplesCount = 0 %]
+
+        [% for example in examples %]
+        [% if example.formats.includes(format) %]
+        [% set examplesCount = examplesCount + 1 %]
+        <a href="[= example.url =]">[= example.title =]</a>
         [% endif %]
-        {% endfor %}
+        [% endfor %]
       </div>
-      {% if examples[doc.title]|length > 6 %}
+
+      [% if examplesCount > 6 %]
       <button class="ap-o-component-intro-load-btn" on="tap:references.toggleClass(class='expanded', force=true)">
         {% do doc.icons.useIcon('icons/chevron-down-light.svg') %}
         <svg class="ap-o-component-intro-load-btn-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-light"></use></svg>
       </button>
-      {% endif %}
+      [% endif %]
     </div>
   </div>
   [% endif %]
