@@ -102,19 +102,23 @@ author: sebastianbenz
           "consentRequired": boolean (required),
           "consentStateValue": enum (accepted/rejected/unknown) (optional),
           "consentString": string (optional),
-          "expireCache": boolean (default false),      
+          "expireCache": boolean (default false),
         }
       ```
       The response will indicate if the consent needs to be shown or not. If it needs to be shown, the element with the id given in `promptUI` will be displayed. For AMP Stories, you can specify [consent title, message and a list of vendors](/content/amp-dev/documentation/components/reference/amp-consent.md#prompt-ui-for-stories) inside a nested `amp-story-consent` element.
       -->
       <amp-consent id="myConsent" layout="nodisplay">
         <script type="application/json">
-          {  
-            "consentInstanceId": "my-amp-story-consent",
-            "consentRequired": "remote",
-            "checkConsentHref": "https://ampbyexample.com/samples_templates/consent/getConsent",
-            "promptUI": "consentUI"
-           }
+          {
+            "consents": {
+              "myConsent": {
+                "consentInstanceId": "my-amp-story-consent",
+                "consentRequired": "remote",
+                "checkConsentHref": "https://ampbyexample.com/samples_templates/consent/getConsent",
+                "promptUI": "consentUI"
+              }
+            }
+          }
         </script>
         <amp-story-consent id="consentUI" layout="nodisplay">
           <script type="application/json">
