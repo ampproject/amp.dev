@@ -18,11 +18,22 @@
     }
   },
   'triggers': {
+    'navigation': {
+      'selector': '.ap--header a, .ap-o-burger-menu-link',
+      'on': 'click',
+      'vars': {
+        'event_name': 'navigation',
+        'event_label': 'navigation',
+        'event_category': category or 'other',
+        'event_action': 'link'
+      }
+    },
     'searchButton': {
       'selector': '#searchTriggerOpen',
       'on': 'click',
       'vars': {
         'event_name': 'search',
+        'event_label': 'search',
         'event_category': 'search',
         'event_action': 'open'
       }
@@ -34,6 +45,7 @@
       },
       'vars': {
         'event_name': 'scroll',
+        'event_label': 'scroll',
         'event_category': category or 'other',
         'event_action': 'half'
       }
@@ -45,6 +57,7 @@
       },
       'vars': {
         'event_name': 'scroll',
+        'event_label': 'scroll',
         'event_category': category or 'other',
         'event_action': 'end'
       }
@@ -59,6 +72,7 @@
   'on': 'click',
   'vars': {
     'event_name': 'courses',
+    'event_label': 'courses',
     'event_category': category,
     'event_action': 'download'
     }
@@ -74,6 +88,7 @@
   'on': 'click',
   'vars': {
     'event_name': 'toc',
+    'event_label': 'toc',
     'event_category': category,
     'event_action': 'link'
     }
@@ -85,6 +100,7 @@
   'on': 'click',
   'vars': {
     'event_name': 'toc',
+    'event_label': 'toc',
     'event_category': category,
     'event_action': 'toggle'
     }
@@ -98,6 +114,7 @@
   'on': 'click',
   'vars': {
     'event_name': 'sidebar',
+    'event_label': 'sidebar',
     'event_category': category,
     'event_action': 'link'
     }
@@ -108,6 +125,7 @@
   'on': 'click',
   'vars': {
     'event_name': 'sidebar',
+    'event_label': 'sidebar',
     'event_category': category,
     'event_action': 'toggle'
     }
@@ -120,6 +138,7 @@
   'on': 'click',
   'vars': {
     'event_name': 'breadcrumbs',
+    'event_label': 'breadcrumbs',
     'event_category': category,
     'event_action': 'link'
     }
@@ -133,6 +152,7 @@
   'on': 'click',
   'vars': {
     'event_name': 'format-toggle',
+    'event_label': 'format-toggle',
     'event_category': category,
     'event_action': 'link'
   }
