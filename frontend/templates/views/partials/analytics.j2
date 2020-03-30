@@ -18,6 +18,16 @@
     }
   },
   'triggers': {
+    'navigation': {
+      'selector': '.ap--header a, .ap-o-burger-menu-link',
+      'on': 'click',
+      'vars': {
+        'event_name': 'navigation',
+        'event_label': 'navigation',
+        'event_category': category or 'other',
+        'event_action': 'link'
+      }
+    },
     'searchButton': {
       'selector': '#searchTriggerOpen',
       'on': 'click',
