@@ -425,7 +425,7 @@ class SamplesBuilder {
 
       this._componentSamples[component].sort((sample1, sample2) => {
         return sample1.title.startsWith(component) ? 1 : 0;
-      }).reverse();
+      });
     }
 
     try {
