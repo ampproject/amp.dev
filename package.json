@@ -52,7 +52,7 @@
     "@lib": "platform/lib"
   },
   "dependencies": {
-    "@ampproject/toolbox-cors": "2.0.0",
+    "@ampproject/toolbox-cors": "2.2.0",
     "@ampproject/toolbox-optimizer": "2.0.1",
     "@google-cloud/datastore": "5.1.0",
     "acorn": "7.1.1",
