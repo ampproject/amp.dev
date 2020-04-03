@@ -1,9 +1,9 @@
 ---
 formats:
   - websites
-$title: Implement client side premium content encryption
+$title: Implement client-side premium content encryption
 $titles:
-  teaser: Implement premium subscriber validation and content decryption on the client side.
+  teaser: Implement premium subscriber validation and content decryption on the client-side.
 $order: 10
 description: 'Solve content encryption issues by implementing premium subscriber validation and content decryption on the client side. With this solution, users with premium access will be able to decrypt content without needing to load a new page or wait for a backend to respond!'
 author: CrystalOnScript
@@ -23,7 +23,7 @@ Solve both these issues by implementing premium subscriber validation and conten
 
 # Setup overview 
 
-To implement client side decryption, you will combine both symmetric-key and public-key cryptography in the following way:
+To implement client-side decryption, you will combine both symmetric-key and public-key cryptography in the following way:
 
 1.  Create a random symmetric-key for each document, granting each document a _unique_ key.
     <!-- Image here -->
@@ -38,7 +38,7 @@ To implement client side decryption, you will combine both symmetric-key and pub
 
 The AMP document stores the encrypted key in itself. This prevents decoupling of the encrypted document with the key that decodes it.
 
-# Content decryption process 
+# How does it work? 
 
 1.  AMP parses the key from encrypted content on the document the user lands on.
     <!-- Image here -->
