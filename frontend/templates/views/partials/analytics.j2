@@ -18,6 +18,16 @@
     }
   },
   'triggers': {
+    'banner': {
+      'selector': '#top-banner',
+      'on': 'click',
+      'vars': {
+        'event_name': 'banner',
+        'event_label': 'banner',
+        'event_category': category or 'other',
+        'event_action': 'click'
+      }
+    },
     'navigation': {
       'selector': '.ap--header a, .ap-o-burger-menu-link',
       'on': 'click',

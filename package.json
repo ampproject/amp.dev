@@ -52,8 +52,8 @@
     "@lib": "platform/lib"
   },
   "dependencies": {
-    "@ampproject/toolbox-cors": "2.0.0",
-    "@ampproject/toolbox-optimizer": "2.0.1",
+    "@ampproject/toolbox-cors": "2.2.0",
+    "@ampproject/toolbox-optimizer": "2.2.0",
     "@google-cloud/datastore": "5.1.0",
     "acorn": "7.1.1",
     "casual": "1.6.2",
@@ -61,7 +61,6 @@
     "client-sessions": "0.8.0",
     "cookie-parser": "1.4.5",
     "cors": "2.8.5",
-    "csso": "4.0.2",
     "emoji-strip": "1.0.1",
     "express": "4.17.1",
     "express-formidable": "1.2.0",
