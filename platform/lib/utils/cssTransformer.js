@@ -19,7 +19,6 @@ const {
   firstChildByTag,
 } = require('@ampproject/toolbox-optimizer').NodeUtils;
 const rcs = require('rcs-core');
-const csso = require('csso');
 
 /* Class names which are safe to rewrite in the context of amp.dev */
 const SAFE_CLASS_NAMES = [
@@ -132,8 +131,7 @@ class CssTransformer {
     // Rewrite the selectors inside the CSS
     const css = style.children[0].data;
     rcs.fillLibraries(css, {prefix: '-', ignoreCssVariables: true});
-    let styles = rcs.replace.css(css);
-    styles = csso.minify(styles).css;
+    const styles = rcs.replace.css(css);
     style.children[0].data = styles;
 
     // Rewrite the selectors on the actual elements
