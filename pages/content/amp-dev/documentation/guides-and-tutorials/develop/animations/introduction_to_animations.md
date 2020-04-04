@@ -101,7 +101,7 @@ Elements of the same tag or class can have specified timing properties and overr
         "selector": "h1",
         "duration": "3s",
         "fill": "both",
-        "keyframes": [{"tansform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
+        "keyframes": [{"transform": "translateX(0px)"}, {"transform": "translateX(50%)"}],
         "subtargets": [
           {
             "index": 1,
