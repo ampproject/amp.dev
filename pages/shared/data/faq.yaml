@@ -749,3 +749,5 @@ email:
           url: https://www.sparkpost.com/
         - label: Twilio Sendgrid
           url: https://www.twilio.com/sendgrid
+        - label: MoonMail
+          url: https://www.moonmail.io
