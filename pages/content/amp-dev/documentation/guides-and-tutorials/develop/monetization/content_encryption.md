@@ -1,9 +1,9 @@
 ---
 formats:
   - websites
-$title: Implement client-side premium content encryption
+$title: Protect your subscription content with client-side encryption
 $titles:
-  teaser: Implement premium subscriber validation and content decryption on the client-side.
+  teaser: Protect your subscription content with client-side encryption.
 $order: 10
 description: 'Solve content encryption issues by implementing premium subscriber validation and content decryption on the client side. With this solution, users with premium access will be able to decrypt content without needing to load a new page or wait for a backend to respond!'
 author: CrystalOnScript
