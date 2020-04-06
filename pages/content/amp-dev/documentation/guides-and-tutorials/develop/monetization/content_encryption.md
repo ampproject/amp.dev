@@ -9,10 +9,9 @@ description: 'Solve content encryption issues by implementing premium subscriber
 author: CrystalOnScript
 ---
 
-
 If you’re an online publication, you probably rely on subscribers for revenue. You might block premium content behind a paywall on the client using [CSS obfuscation](https://medium.com/paywall-hacks/how-to-bypass-virtually-every-news-paywall-705602c4c2ce) (`display: none`).
 
-<!-- Images here -->
+{{ image('/static/img/docs/guides/cse/cse1.jpg', 541, 270, align='', layout='intrinsic', alt='Premium content is hidden until users are authenticated.') }}
 
 Unfortunately, more tech savvy people can work around this.
 
@@ -26,28 +25,28 @@ Solve both these issues by implementing premium subscriber validation and conten
 To implement client-side decryption, you will combine both symmetric-key and public-key cryptography in the following way:
 
 1.  Create a random symmetric-key for each document, granting each document a _unique_ key.
-    <!-- Image here -->
-1.  Encrypt the premium content with it’s document’s symmetric-key.
-    <!-- Image here -->
+{{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
+1.  Encrypt the premium content with it's document's symmetric-key.
+{{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use the document key to encrypt premium content.') }}
     The key is symmetric to allow the same key to encrypt and decrypt the content.
-    <!-- Image here -->
+{{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='The same key that encrypts the document also decrypts it.') }}
 1.  Encrypt the document key with a public key, using a [hybrid encryption ](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)protocol to encrypt the symmetric keys.
-    <!-- Image here -->
+{{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='A hybrid encryption protocol encrypts the symmetric key with a public key.') }}
 1.  Using the [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) and/or [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites)component(s), store the encrypted document key inside of the AMP document, alongside the encrypted premium content.
-    <!-- Image here -->
+{{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Both keys are stored inside of the AMP document.') }}
 
 The AMP document stores the encrypted key in itself. This prevents decoupling of the encrypted document with the key that decodes it.
 
 # How does it work? 
 
 1.  AMP parses the key from encrypted content on the document the user lands on.
-    <!-- Image here -->
+{{ image('/static/img/docs/guides/cse/cse7.jpg', 115, 94, align='', layout='intrinsic', alt='The public and symmetric key encryptions.') }}
 1.   While serving the premium content, AMP sends the encrypted symmetric key from the document to the authorizer as a part of the user’s entitlements fetch. 
-    <!-- Image here -->
+{{ image('/static/img/docs/guides/cse/cse8.jpg', 150, 251, align='', layout='intrinsic', alt='AMP sends the encrypted symmetric key from the document to the authorizer as a part of the user’s entitlements fetch.') }}
 1.  The authorizer decides if the user has the correct permissions. If yes, the authorizer decrypts the document’s symmetric key with the authorizer’s private key from their public/private key pair. Then the authorizer returns the document key to the [amp-subscriptions component logic](https://github.com/ampproject/amphtml/blob/master/extensions/amp-subscriptions/0.1/amp-subscriptions.js#L264).
-    <!-- Image here -->
+{{ image('/static/img/docs/guides/cse/cse9.jpg', 237, 244, align='', layout='intrinsic', alt='AMP logic decrypts the keys.') }}
 1.  AMP decrypts the premium content with the document key and shows it to the user!
-    <!-- Image here -->
+{{ image('/static/img/docs/guides/cse/cse10.jpg', 250, 319, align='', layout='intrinsic', alt='AMP decrypts the premium content with the document key and shows it to the user.') }}
 
 # Implementation steps
 
