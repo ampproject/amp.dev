@@ -131,7 +131,7 @@
     "html-webpack-plugin": "4.0.1",
     "husky": "4.2.3",
     "jasmine": "3.5.0",
-    "jest": "25.1.0",
+    "jest": "25.3.0",
     "js-beautify": "1.10.3",
     "keymaster": "1.6.2",
     "marked": "0.8.2",
