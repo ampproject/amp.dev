@@ -19,7 +19,6 @@
 require('module-alias/register');
 
 const fs = require('fs');
-const yaml = require('js-yaml');
 const emojiStrip = require('emoji-strip');
 const {promisify} = require('util');
 const writeFileAsync = promisify(fs.writeFile);
@@ -28,8 +27,10 @@ const log = require('@lib/utils/log')('Import Working Groups');
 
 /* The GitHub organisation the repositories imported from are located */
 const WG_GH_ORGANISATION = 'ampproject';
-/* Path where the working group data gets imported to */
+/* Path where the roadmap data gets imported to */
 const WG_DIRECTORY_PATH = 'pages/content/amp-dev/community/working-groups';
+
+const ALLOWED_ISSUE_TYPES = ['Type: Status Update'];
 
 
 async function importRoadmap() {
@@ -45,6 +46,33 @@ async function importRoadmap() {
       continue;
     }
     const name = wg.name.substr(3);
+    log.start('--> Import data for: ', name);
+
+
+    // Get Issues for Working Group
+    let issues = (
+      await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`).issuesAsync()
+    )[0];
+    issues = issues.map((issue) => {
+      const date = new Date(issue.created_at).toDateString();
+      const title = emojiStrip(issue.title);
+      const category = issue.labels[0] ? issue.labels[0].name : '';
+
+      if (ALLOWED_ISSUE_TYPES.includes(category)) {
+        return {
+          'title': title,
+          'html_url': issue.html_url,
+          'created_at': date,
+          'author': issue.user.login,
+          'number': issue.number,
+          'labels': category,
+        };
+      } else {
+        return;
+      }
+    });
+
+    log.info(issues);
 
   }
 }
