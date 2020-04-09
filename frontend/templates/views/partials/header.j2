@@ -9,7 +9,8 @@
 {%- endmacro %}
 
 {# Simply set to False to disable banner #}
-{% set show_banner = False %}
+{% set show_banner = True %}
+{% set banner_closeable = True %}
 {% if show_banner %}
   {% set banner %}
   {% include '/views/partials/banner.j2' %}
