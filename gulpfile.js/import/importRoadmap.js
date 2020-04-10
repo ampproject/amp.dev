@@ -19,6 +19,7 @@
 require('module-alias/register');
 
 const fs = require('fs');
+const yaml = require('js-yaml');
 const emojiStrip = require('emoji-strip');
 const {promisify} = require('util');
 const writeFileAsync = promisify(fs.writeFile);
@@ -28,53 +29,88 @@ const log = require('@lib/utils/log')('Import Working Groups');
 /* The GitHub organisation the repositories imported from are located */
 const WG_GH_ORGANISATION = 'ampproject';
 /* Path where the roadmap data gets imported to */
-const WG_DIRECTORY_PATH = 'pages/content/amp-dev/community/working-groups';
+const ROADMAP_DIRECTORY_PATH = 'pages/shared/data';
 
 const ALLOWED_ISSUE_TYPES = ['Type: Status Update'];
 
+// RegEx to extract date from issue title
+const STATUS_UPDATE_REGEX = /(\d*)-(\d*)-(\d*)/;
+
+
+/**
+ * Extract status update issues from working groups and
+ * return them sorted by date/quarter
+ *
+ * @return []
+ */
 
 async function importRoadmap() {
+  var roadmap = [];
+
+  log.start('Importing Roadmap data for ..');
+
   const client = new GitHubImporter();
   const repos = (
     await client._github.org(WG_GH_ORGANISATION).reposAsync(1, 100)
   )[0];
 
-  log.start('Start importing Roadmap..');
 
+  // Get status update issues for working groups
   for (const wg of repos) {
+    log.info('..', wg.name);
+
     if (!wg.name.startsWith('wg-')) {
       continue;
     }
-    const name = wg.name.substr(3);
-    log.start('--> Import data for: ', name);
+    const workingGroupName = wg.name.substr(3);
 
-
-    // Get Issues for Working Group
     let issues = (
       await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`).issuesAsync()
     )[0];
-    issues = issues.map((issue) => {
-      const date = new Date(issue.created_at).toDateString();
-      const title = emojiStrip(issue.title);
-      const category = issue.labels[0] ? issue.labels[0].name : '';
 
-      if (ALLOWED_ISSUE_TYPES.includes(category)) {
+    issues = issues
+      .filter((issue) => {
+        const category = issue.labels[0] ? issue.labels[0].name : '';
+
+        return ALLOWED_ISSUE_TYPES.includes(category);
+      })
+      .map((issue) => {
+        const createdAt = new Date(issue.created_at).toDateString();
+        const title = emojiStrip(issue.title);
+
+        // Parse status update date from from issue title and set quarter
+        var statusUpdate = title.match(STATUS_UPDATE_REGEX);
+        let quarter;
+        if (statusUpdate) {
+          quarter = `Q:${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${statusUpdate[1]}`;
+          statusUpdate = new Date(statusUpdate[0]).toDateString();
+        }
+
         return {
+          'wg_name': workingGroupName,
+          'created_at': createdAt,
+          'status_update': statusUpdate || '',
+          'quarter': quarter || '',
           'title': title,
-          'html_url': issue.html_url,
-          'created_at': date,
-          'author': issue.user.login,
           'number': issue.number,
-          'labels': category,
+          'author': issue.user.login,
+          'html_url': issue.html_url,
+          // 'body': issue.body,
         };
-      } else {
-        return;
-      }
-    });
+      });
 
-    log.info(issues);
-
+    roadmap.push(issues);
   }
+
+  // Sort issues by date
+  roadmap = roadmap.flat().sort((a, b) => {
+    return new Date(b.status_update) - new Date(a.status_update);
+  });
+
+  await writeFileAsync(
+    `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
+    yaml.dump(roadmap)
+  );
 }
 
 exports.importRoadmap = importRoadmap;
