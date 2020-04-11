@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2020 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 
 require('module-alias/register');
 
+const utils = require('@lib/utils');
 const fs = require('fs');
 const yaml = require('js-yaml');
 const emojiStrip = require('emoji-strip');
@@ -27,9 +28,9 @@ const {GitHubImporter} = require('@lib/pipeline/gitHubImporter');
 const log = require('@lib/utils/log')('Import Working Groups');
 
 /* The GitHub organisation the repositories imported from are located */
-const WG_GH_ORGANISATION = 'ampproject';
+const WG_GH_ORGANISATION =  'ampproject';
 /* Path where the roadmap data gets imported to */
-const ROADMAP_DIRECTORY_PATH = 'pages/shared/data';
+const ROADMAP_DIRECTORY_PATH = utils.project.absolute('pages/shared/data');
 
 const ALLOWED_ISSUE_TYPES = ['Type: Status Update'];
 
@@ -45,7 +46,7 @@ const STATUS_UPDATE_REGEX = /(\d*)-(\d*)-(\d*)/;
  */
 
 async function importRoadmap() {
-  var roadmap = [];
+  let roadmap = [];
 
   log.start('Importing Roadmap data for ..');
 
@@ -57,21 +58,23 @@ async function importRoadmap() {
 
   // Get status update issues for working groups
   for (const wg of repos) {
-    log.info('..', wg.name);
-
     if (!wg.name.startsWith('wg-')) {
       continue;
     }
     const workingGroupName = wg.name.substr(3);
+    log.info('..', wg.name);
 
     let issues = (
       await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`).issuesAsync()
     )[0];
 
+    if (!issues.length) {
+      continue;
+    }
+
     issues = issues
       .filter((issue) => {
         const category = issue.labels[0] ? issue.labels[0].name : '';
-
         return ALLOWED_ISSUE_TYPES.includes(category);
       })
       .map((issue) => {
@@ -79,7 +82,7 @@ async function importRoadmap() {
         const title = emojiStrip(issue.title);
 
         // Parse status update date from from issue title and set quarter
-        var statusUpdate = title.match(STATUS_UPDATE_REGEX);
+        let statusUpdate = title.match(STATUS_UPDATE_REGEX);
         let quarter;
         if (statusUpdate) {
           quarter = `Q:${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${statusUpdate[1]}`;
@@ -95,7 +98,7 @@ async function importRoadmap() {
           'number': issue.number,
           'author': issue.user.login,
           'html_url': issue.html_url,
-          // 'body': issue.body,
+          'body': issue.body,
         };
       });
 

@@ -38,7 +38,7 @@ const RecentGuides = require('@lib/pipeline/recentGuides');
 // const roadmapImporter = require('@lib/pipeline/roadmapImporter');
 const gulpSass = require('gulp-sass');
 const lint = require('./lint.js');
-const importTasks = require('./import/importWorkingGroups.js');
+const importTasks = require('./import/index.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
