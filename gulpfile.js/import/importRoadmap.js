@@ -68,11 +68,10 @@ async function importRoadmap() {
         .issuesAsync()
     )[0];
 
-    issues = issues
-      .filter((issue) => {
-        const category = issue.labels[0] ? issue.labels[0].name : '';
-        return ALLOWED_ISSUE_TYPES.includes(category);
-      });
+    issues = issues.filter((issue) => {
+      const category = issue.labels[0] ? issue.labels[0].name : '';
+      return ALLOWED_ISSUE_TYPES.includes(category);
+    });
 
     if (!issues.length) {
       log.warn(`.. ${wg.name} - No status update issues found`);
@@ -92,7 +91,9 @@ async function importRoadmap() {
         }`;
         statusUpdate = new Date(statusUpdate[0]).toDateString();
       } else {
-        log.error(`.. ${wg.name} - Failed for issue #${issue.number}: ${title}`);
+        log.error(
+          `.. ${wg.name} - Failed for issue #${issue.number}: ${title}`
+        );
         continue;
       }
 
@@ -122,7 +123,9 @@ async function importRoadmap() {
     yaml.dump(roadmap)
   );
 
-  log.success(`Successfully imported ${roadmap.length} roadmap status update issues`);
+  log.success(
+    `Successfully imported ${roadmap.length} roadmap status update issues`
+  );
 }
 
 exports.importRoadmap = importRoadmap;
