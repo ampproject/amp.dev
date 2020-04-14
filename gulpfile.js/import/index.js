@@ -19,12 +19,10 @@ require('module-alias/register');
 
 const search = require('recursive-search');
 
-
 // load gulp tasks from files in this directory
 search
   .recursiveSearchSync(/.js/, __dirname)
   .map(require)
   .forEach((module) => {
-    console.log(module);
     Object.assign(exports, module);
   });
