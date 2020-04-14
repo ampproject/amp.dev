@@ -33,7 +33,7 @@ const log = require('@lib/utils/log')('Import Roadmap');
 /* Path where the roadmap data gets imported to */
 const ROADMAP_DIRECTORY_PATH = utils.project.absolute('pages/shared/data');
 
-const ALLOWED_ISSUE_TYPES = ['Type: Status Update'];
+const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
 // RegEx to extract date from issue title
 const STATUS_UPDATE_REGEX = /(\d*)-(\d*)-(\d*)/;
@@ -68,49 +68,52 @@ async function importRoadmap() {
         .issuesAsync()
     )[0];
 
-    if (!issues.length) {
-      log.warn('.. no issues for', wg.name);
-      continue;
-    }
-    log.info('..', wg.name);
-
     issues = issues
       .filter((issue) => {
         const category = issue.labels[0] ? issue.labels[0].name : '';
         return ALLOWED_ISSUE_TYPES.includes(category);
-      })
-      .map((issue) => {
-        const createdAt = new Date(issue.created_at).toDateString();
-        const title = emojiStrip(issue.title);
-
-        // Parse status update date from from issue title and set quarter
-        let statusUpdate = title.match(STATUS_UPDATE_REGEX);
-        let quarter;
-        if (statusUpdate) {
-          quarter = `Q:${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${
-            statusUpdate[1]
-          }`;
-          statusUpdate = new Date(statusUpdate[0]).toDateString();
-        }
-
-        return {
-          'wg_name': workingGroupName,
-          'created_at': createdAt,
-          'status_update': statusUpdate || '',
-          'quarter': quarter || '',
-          'title': title,
-          'number': issue.number,
-          'author': issue.user.login,
-          'html_url': issue.html_url,
-          'body': issue.body,
-        };
       });
 
-    roadmap.push(issues);
+    if (!issues.length) {
+      log.warn(`.. ${wg.name} - No status update issues found`);
+      continue;
+    }
+
+    for (const issue of issues) {
+      const createdAt = new Date(issue.created_at).toDateString();
+      const title = emojiStrip(issue.title);
+
+      // Parse status update date from from issue title and set quarter
+      let statusUpdate = title.match(STATUS_UPDATE_REGEX);
+      let quarter;
+      if (statusUpdate) {
+        quarter = `Q:${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${
+          statusUpdate[1]
+        }`;
+        statusUpdate = new Date(statusUpdate[0]).toDateString();
+      } else {
+        log.error(`.. ${wg.name} - Failed for issue #${issue.number}: ${title}`);
+        continue;
+      }
+
+      roadmap.push({
+        'wg_name': workingGroupName,
+        'created_at': createdAt,
+        'status_update': statusUpdate || '',
+        'quarter': quarter || '',
+        'title': title,
+        'number': issue.number,
+        'author': issue.user.login,
+        'html_url': issue.html_url,
+        'body': issue.body,
+      });
+    }
+
+    log.info(`.. ${wg.name} - ${issues.length} issues imported`);
   }
 
   // Sort issues by date
-  roadmap = roadmap.flat().sort((a, b) => {
+  roadmap = roadmap.sort((a, b) => {
     return new Date(b.status_update) - new Date(a.status_update);
   });
 
@@ -119,7 +122,7 @@ async function importRoadmap() {
     yaml.dump(roadmap)
   );
 
-  log.success(`Successfully imported ${roadmap.length} roadmap entries`);
+  log.success(`Successfully imported ${roadmap.length} roadmap status update issues`);
 }
 
 exports.importRoadmap = importRoadmap;
