@@ -16,16 +16,19 @@
 
 'use strict';
 
+require('module-alias/register');
+
 const fs = require('fs');
 const yaml = require('js-yaml');
 const emojiStrip = require('emoji-strip');
 const {promisify} = require('util');
 const writeFileAsync = promisify(fs.writeFile);
-const {GitHubImporter} = require('@lib/pipeline/gitHubImporter');
+const {
+  GitHubImporter,
+  DEFAULT_ORGANISATION,
+} = require('@lib/pipeline/gitHubImporter');
 const log = require('@lib/utils/log')('Import Working Groups');
 
-/* The GitHub organisation the repositories imported from are located */
-const WG_GH_ORGANISATION = 'ampproject';
 /* Path where the working group data gets imported to */
 const WG_DIRECTORY_PATH = 'pages/content/amp-dev/community/working-groups';
 /* Threshold for label background color from when color should switch to white */
@@ -34,7 +37,7 @@ const WG_LABEL_COLOR_THRESHOLD = 7500000;
 async function importWorkingGroups() {
   const client = new GitHubImporter();
   const repos = (
-    await client._github.org(WG_GH_ORGANISATION).reposAsync(1, 100)
+    await client._github.org(DEFAULT_ORGANISATION).reposAsync(1, 100)
   )[0];
 
   log.start('Start importing Working Groups..');
@@ -48,7 +51,7 @@ async function importWorkingGroups() {
     let meta = null;
     try {
       meta = await client._github
-        .repo(`${WG_GH_ORGANISATION}/${wg.name}`)
+        .repo(`${DEFAULT_ORGANISATION}/${wg.name}`)
         .contentsAsync('METADATA.yaml');
     } catch (e) {
       log.warn(`No METADATA.yaml for working group ${wg.name}`);
@@ -58,7 +61,7 @@ async function importWorkingGroups() {
       meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
     } catch (e) {
       log.error(
-        `Failed loading ${WG_GH_ORGANISATION}/${wg.name}/METADATA.yaml`,
+        `Failed loading ${DEFAULT_ORGANISATION}/${wg.name}/METADATA.yaml`,
         e
       );
       continue;
@@ -66,7 +69,7 @@ async function importWorkingGroups() {
 
     let issues = (
       await client._github
-        .repo(`${WG_GH_ORGANISATION}/${wg.name}`)
+        .repo(`${DEFAULT_ORGANISATION}/${wg.name}`)
         .issuesAsync()
     )[0];
     issues = issues.map((issue) => {

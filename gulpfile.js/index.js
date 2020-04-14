@@ -17,16 +17,14 @@
 'use strict';
 require('module-alias/register');
 
-const {readdirSync} = require('fs');
-const {join} = require('path');
+const search = require('recursive-search');
 
 // DON'T ADD GULP TASKS TO THIS FILE!
 // CREATE A NEW FILE IN THIS DIRECTORY INSTEAD
 
 // load gulp tasks from files in this directory
-readdirSync(__dirname)
-  .map((path) => join(__dirname, path))
-  .filter((path) => path.endsWith('.js'))
+search
+  .recursiveSearchSync(/.js/, __dirname)
   .map(require)
   .forEach((module) => {
     Object.assign(exports, module);
