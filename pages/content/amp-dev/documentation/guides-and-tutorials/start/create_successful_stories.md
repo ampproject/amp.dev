@@ -113,6 +113,6 @@ After you’ve created your story, make sure it can be shared and discovered! Al
 
 
 *   Stories must be valid AMP. You can test yours in the [AMP validator](https://validator.ampproject.org/). 
-*   [Metadata attributes](../../../documentation/components/reference/amp-story/?format=stories#metadata-guidelines) ensure your story is defined well. Check that your story has them setup correctly.
+*   [Metadata attributes](../../../documentation/components/reference/amp-story.md) ensure your story is defined well. Check that your story has them setup correctly.
 *   Configure you [structured data ](https://developers.google.com/search/docs/guides/sd-policies)so that interested readers can find your story! 
 *   Clearly label sponsored content. Any and all paid or affiliated links require the [nofollow](https://support.google.com/webmasters/answer/96569?hl=en) attribute.
