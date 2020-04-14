@@ -97,7 +97,7 @@
     "@octokit/rest": "17.1.1",
     "absolutify": "0.1.0",
     "amphtml-validator": "1.0.30",
-    "archiver": "3.1.1",
+    "archiver": "4.0.1",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
     "clean-css": "4.2.3",
