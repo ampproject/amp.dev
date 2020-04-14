@@ -102,7 +102,7 @@ A page with text content longer than sentence may be unavoidable. Try not to let
 
 Stories can be hand-coded from scratch or built using creation tools. In order for a story to be shared and discovered, they must meet technical requirements. 
 
-If you are hand coding a story, you will build them from scratch using AMP stories. Follow the [Create your first AMP Story](../visual_story/index.md/?format=stories) to get started. 
+If you are hand coding a story, you will build them from scratch using AMP stories. Follow the [Create your first AMP Story](visual_story/index.md/?format=stories) to get started. 
 
 Not a developer? Use one of many [creation tools](../../../tools.html/?format=stories) to build your Story!
 
