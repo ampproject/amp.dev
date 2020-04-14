@@ -102,9 +102,9 @@ A page with text content longer than sentence may be unavoidable. Try not to let
 
 Stories can be hand-coded from scratch or built using creation tools. In order for a story to be shared and discovered, they must meet technical requirements. 
 
-If you are hand coding a story, you will build them from scratch using the [AMP Framework](../../examples/?format=stories). Follow the [Create your first AMP Story](visual_story/?format=stories) to get started. 
+If you are hand coding a story, you will build them from scratch using AMP stories. Follow the [Create your first AMP Story](../visual_story/index.html/?format=stories) tutorial to get started. 
 
-Not a developer? Use one of many [creation tools](https://amp.dev/documentation/guides-and-tutorials/start/visual_story/?format=stories) to build your Story!
+Not a developer? Use one of many [creation tools](../../../tools/?format=stories) to build your Story!
 
 
 ## Story discoverability 
@@ -113,6 +113,6 @@ After you’ve created your story, make sure it can be shared and discovered! Al
 
 
 *   Stories must be valid AMP. You can test yours in the [AMP validator](https://validator.ampproject.org/). 
-*   [Metadata attributes](../../../documentation/components/reference/amp-story.md/#metadata-guidelines) ensure your story is defined well. Check that your story has them setup correctly.
+*   [Metadata attributes](../../../components/reference/amp-story.md/#metadata-guidelines) ensure your story is defined well. Check that your story has them setup correctly.
 *   Configure you [structured data ](https://developers.google.com/search/docs/guides/sd-policies)so that interested readers can find your story! 
-*   Clearly label sponsored content. Any and all paid or affiliated links require the [nofollow](https://support.google.com/webmasters/answer/96569?hl=en) attribute. 
+*   Clearly label sponsored content. Any and all paid or affiliated links require the [nofollow](https://support.google.com/webmasters/answer/96569?hl=en) attribute.
