@@ -28,7 +28,7 @@ const {
   GitHubImporter,
   DEFAULT_ORGANISATION,
 } = require('@lib/pipeline/gitHubImporter');
-const log = require('@lib/utils/log')('Import Working Groups');
+const log = require('@lib/utils/log')('Import Roadmap');
 
 /* Path where the roadmap data gets imported to */
 const ROADMAP_DIRECTORY_PATH = utils.project.absolute('pages/shared/data');
@@ -61,7 +61,6 @@ async function importRoadmap() {
       continue;
     }
     const workingGroupName = wg.name.substr(3);
-    log.info('..', wg.name);
 
     let issues = (
       await client._github
@@ -70,8 +69,10 @@ async function importRoadmap() {
     )[0];
 
     if (!issues.length) {
+      log.warn('.. no issues for', wg.name);
       continue;
     }
+    log.info('..', wg.name);
 
     issues = issues
       .filter((issue) => {
@@ -117,6 +118,8 @@ async function importRoadmap() {
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
     yaml.dump(roadmap)
   );
+
+  log.success(`Successfully imported ${roadmap.length} roadmap entries`);
 }
 
 exports.importRoadmap = importRoadmap;
