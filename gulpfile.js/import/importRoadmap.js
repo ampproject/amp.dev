@@ -24,11 +24,12 @@ const yaml = require('js-yaml');
 const emojiStrip = require('emoji-strip');
 const {promisify} = require('util');
 const writeFileAsync = promisify(fs.writeFile);
-const {GitHubImporter} = require('@lib/pipeline/gitHubImporter');
+const {
+  GitHubImporter,
+  DEFAULT_ORGANISATION,
+} = require('@lib/pipeline/gitHubImporter');
 const log = require('@lib/utils/log')('Import Working Groups');
 
-/* The GitHub organisation the repositories imported from are located */
-const WG_GH_ORGANISATION =  'ampproject';
 /* Path where the roadmap data gets imported to */
 const ROADMAP_DIRECTORY_PATH = utils.project.absolute('pages/shared/data');
 
@@ -36,7 +37,6 @@ const ALLOWED_ISSUE_TYPES = ['Type: Status Update'];
 
 // RegEx to extract date from issue title
 const STATUS_UPDATE_REGEX = /(\d*)-(\d*)-(\d*)/;
-
 
 /**
  * Extract status update issues from working groups and
@@ -52,9 +52,8 @@ async function importRoadmap() {
 
   const client = new GitHubImporter();
   const repos = (
-    await client._github.org(WG_GH_ORGANISATION).reposAsync(1, 100)
+    await client._github.org(DEFAULT_ORGANISATION).reposAsync(1, 100)
   )[0];
-
 
   // Get status update issues for working groups
   for (const wg of repos) {
@@ -65,7 +64,9 @@ async function importRoadmap() {
     log.info('..', wg.name);
 
     let issues = (
-      await client._github.repo(`${WG_GH_ORGANISATION}/${wg.name}`).issuesAsync()
+      await client._github
+        .repo(`${DEFAULT_ORGANISATION}/${wg.name}`)
+        .issuesAsync()
     )[0];
 
     if (!issues.length) {
@@ -85,7 +86,9 @@ async function importRoadmap() {
         let statusUpdate = title.match(STATUS_UPDATE_REGEX);
         let quarter;
         if (statusUpdate) {
-          quarter = `Q:${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${statusUpdate[1]}`;
+          quarter = `Q:${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${
+            statusUpdate[1]
+          }`;
           statusUpdate = new Date(statusUpdate[0]).toDateString();
         }
 
