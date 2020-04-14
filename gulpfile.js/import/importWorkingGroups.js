@@ -50,7 +50,6 @@ async function importWorkingGroups() {
 
     let meta = null;
     try {
-      DEFAULT_ORGANISATION;
       meta = await client._github
         .repo(`${DEFAULT_ORGANISATION}/${wg.name}`)
         .contentsAsync('METADATA.yaml');
