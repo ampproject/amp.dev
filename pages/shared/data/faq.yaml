@@ -731,6 +731,8 @@ email:
           url: https://iterable.com/
         - label: Klaviyo
           url: https://www.klaviyo.com/
+        - label: MagNews
+          url: https://www.magnews.com/
         - label: Maileon
           url: https://www.maileon.com
         - label: Mailgun
