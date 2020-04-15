@@ -120,7 +120,7 @@ async function importRoadmap() {
 
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.dump(roadmap)
+    yaml.dump({'roadmap': roadmap})
   );
 
   log.success(
