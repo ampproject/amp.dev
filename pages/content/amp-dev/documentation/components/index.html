@@ -148,23 +148,32 @@ recent_components:
             {% if category %}
             <h4 id="{{ category }}">{{ _(category_name) }}</h4>
             {% endif %}
-            {% for component in docs %}
-            {% if component.is_current %}
-            <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in '{{ component.formats }}' and forcedFiltered != true %]hidden[% endif %]>
+            {% for component in docs if component.is_current %}
+            {# The latest document might not support a format, hence we have to check if any version supports a format #}
+            {% set formats = [component.formats] %}
+            {% if component.versions|count > 1 %}
+            {% for version in component.versions %}
+            {% set versionDoc = g.doc('/content/amp-dev/documentation/components/reference/' + component.title + '-v' + version + '.md') %}
+            {% do formats.append(versionDoc.formats) %}
+            {% endfor %}
+            {% endif %}
+            {% set formats = formats|sum(start=[])|unique|list %}
+
+            <a class="ap-m-table-component-link" href="{{ component.url.path }}" [% if format not in {{ formats|tojson }} and forcedFiltered != true %]hidden[% endif %]>
               <div class="ap-m-table-component-row-components">
-                {% if component.formats %}
+                {% if formats %}
                 {% do doc.styles.addCssFile('/css/components/molecules/tag.css') %}
                 <div class="ap-m-table-component-tags">
-                  {% if 'websites' in component.formats %}
+                  {% if 'websites' in formats %}
                   <div class="ap-m-tag ap-m-tag-websites ap-m-table-component-tag"></div>
                   {% endif %}
-                  {% if 'stories' in component.formats %}
+                  {% if 'stories' in formats %}
                   <div class="ap-m-tag ap-m-tag-stories ap-m-table-component-tag"></div>
                   {% endif %}
-                  {% if 'ads' in component.formats %}
+                  {% if 'ads' in formats %}
                   <div class="ap-m-tag ap-m-tag-ads ap-m-table-component-tag"></div>
                   {% endif %}
-                  {% if 'email' in component.formats or 'emails' in component.formats %}
+                  {% if 'email' in formats or 'emails' in formats %}
                   <div class="ap-m-tag ap-m-tag-email ap-m-table-component-tag"></div>
                   {% endif %}
                 </div>
@@ -179,7 +188,6 @@ recent_components:
                 </div>
               </div>
             </a>
-            {% endif %}
             {% endfor %}
           </div>
         [% endif %]

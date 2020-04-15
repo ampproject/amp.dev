@@ -34,6 +34,7 @@ pages/content/amp-dev/community/working-groups/*.yaml
 !pages/content/amp-dev/community/working-groups/_blueprint.yaml
 pages/routescache.json
 pages/shared/data/componentSamples.json
+pages/shared/data/roadmap.yaml
 
 # Ignore files created during build process
 platform/pages*

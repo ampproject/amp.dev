@@ -72,10 +72,17 @@
                 <ul class="nav-list level-2">
                   <li class="nav-link">{{ scope.initial|upper }}</li>
                   {% endif %}
-                  {% set formats = component.formats or [] %}
                   {% set activeDocument = true if component.url == doc.url %}
-                  {# the latest document might not support a format, hence we have to check if any version supports the format #}
-                  [% if format in {{ component.formats|list|tojson }} %]
+                  {# The latest document might not support a format, hence we have to check if any version supports a format #}
+                  {% set formats = [component.formats] %}
+                  {% if component.versions|count > 1 %}
+                  {% for version in component.versions %}
+                  {% set versionDoc = g.doc('/content/amp-dev/documentation/components/reference/' + component.title + '-v' + version + '.md') %}
+                  {% do formats.append(versionDoc.formats) %}
+                  {% endfor %}
+                  {% endif %}
+
+                  [% if format in {{ formats|sum(start=[])|unique|list|tojson }} %]
                   <li class="nav-item{{ ' active' if activeDocument }} level-2"{{ ' autoscroll' if activeDocument }}>
                     <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
                   </li>
