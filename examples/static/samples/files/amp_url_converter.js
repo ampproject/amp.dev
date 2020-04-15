@@ -15,10 +15,10 @@
  */
 
 class AmpUrlConverter {
-  constructor(root, ampUrlFactory) {
+  constructor(root, createCacheUrl) {
     this.inputView = root.getElementById('input');
     this.resultView = root.getElementById('result');
-    this.ampUrlFactory = ampUrlFactory;
+    this.createCacheUrl = createCacheUrl;
     root
       .getElementById('input')
       .addEventListener('input', this.onChange.bind(this));
@@ -35,23 +35,19 @@ class AmpUrlConverter {
       this.showError('Empty input');
       return;
     }
-    try {
-      const ampUrl = this.ampUrlFactory.createAmpUrl(urlString);
-      const proxyUrl = ampUrl.getProxyUrl();
-      this.showResult(
-        '<a href="' + proxyUrl + '" target="_parent">' + proxyUrl + '</a>'
-      );
-    } catch (e) {
-      this.showError('Invalid URL');
-    }
+    this.createCacheUrl('cdn.ampproject.org', urlString)
+      .then(this.showResult.bind(this))
+      .catch(this.showError.bind(this));
   }
 
-  showError(message) {
+  showError() {
     this.resultView.className = 'error';
-    this.resultView.innerHTML = message;
+    this.resultView.innerHTML = 'invalid URL';
   }
 
-  showResult(result) {
+  showResult(cacheUrl) {
+    const result =
+      '<a href="' + cacheUrl + '" target="_blank">' + cacheUrl + '</a>';
     this.resultView.className = '';
     this.resultView.innerHTML = result;
   }
@@ -75,16 +71,9 @@ function getParameterByName(name, defaultValue) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-const proxyUrlPrefix = 'https://cdn.ampproject.org';
-const javascriptVersion = '5';
-const useCurlsEncoding = true;
-const ampUrlFactory = new AmpUrlFactory(
-  proxyUrlPrefix,
-  javascriptVersion,
-  useCurlsEncoding
-);
+const createCacheUrl = window.AmpToolboxCacheUrl.createCacheUrl;
 
-const converter = new AmpUrlConverter(document, ampUrlFactory);
+const converter = new AmpUrlConverter(document, createCacheUrl);
 const initialUrl = getParameterByName(
   'url',
   'https://www.example.com/amp?param=1'
