@@ -155,9 +155,9 @@
                 </div>
               </div>
               <div class="ap-o-wg-channel-text">
-                <h4>{{ _(item.name) }}</h4>
+                <h4>{{ item.name }}</h4>
                 {% for el in item.content %}
-                <p>{{ _(el.item|markdown|safe) }}</p>
+                <p>{{ el.item|markdown|safe }}</p>
                 {% endfor %}
 
                 {% if (item.channel == 'slack' or item.channel == 'github') %}
