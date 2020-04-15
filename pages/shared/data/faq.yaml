@@ -723,6 +723,8 @@ email:
           url: https://www.e-village.com/clang/
         - label: Copernica
           url: https://www.copernica.com/
+        - label: Customer.io
+          url: https://customer.io/
         - label: eSputnik
           url: https://esputnik.com/
         - label: ExpressPigeon
