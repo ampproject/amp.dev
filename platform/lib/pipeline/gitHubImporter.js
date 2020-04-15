@@ -24,7 +24,9 @@ const CLIENT_TOKEN = process.env.AMP_DOC_TOKEN;
 const CLIENT_SECRET = process.env.AMP_DOC_SECRET;
 const CLIENT_ID = process.env.AMP_DOC_ID;
 
-const DEFAULT_REPOSITORY = 'ampproject/amphtml';
+/* The GitHub organisation where the repositories imported from are located */
+const DEFAULT_ORGANISATION = 'ampproject';
+const DEFAULT_REPOSITORY = `${DEFAULT_ORGANISATION}/amphtml`;
 
 const log = new Signale({
   'interactive': false,
@@ -163,5 +165,6 @@ module.exports = {
   log,
   checkCredentials,
   GitHubImporter,
+  DEFAULT_ORGANISATION,
   DEFAULT_REPOSITORY,
 };
