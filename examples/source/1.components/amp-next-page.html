@@ -1,14 +1,3 @@
-<!---
-
-preview: default
-hidePreview: true
-experiments:
-  - amp-next-page
-author: peterjosling
-
-
---->
-
 <!--
   ## Introduction
 
@@ -30,7 +19,7 @@ author: peterjosling
   <!--
     Import the `amp-next-page` component.
   -->
-  <script async custom-element="amp-next-page" src="https://cdn.ampproject.org/v0/amp-next-page-0.1.js"></script>
+  <script async custom-element="amp-next-page" src="https://cdn.ampproject.org/v0/amp-next-page-1.0.js"></script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
     <style amp-custom>
@@ -78,39 +67,33 @@ author: peterjosling
   -->
   <amp-next-page>
     <script type="application/json">
-      {
-        "pages": [
-          {
-            "title": "amp-img",
-            "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
-	          "ampUrl": "<% hosts.preview %>/documentation/examples/components/amp-img/"
-          },
-          {
-            "title": "amp-bind",
-            "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
-	          "ampUrl": "<% hosts.preview %>/documentation/examples/components/amp-bind/"
-          },
-          {
-            "title": "amp-accordion",
-            "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
-	          "ampUrl": "<% hosts.preview %>/documentation/examples/components/amp-accordion/"
-          },
-          {
-            "title": "amp-lightbox-gallery",
-            "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
-	          "ampUrl": "<% hosts.preview %>/documentation/examples/components/amp-lightbox-gallery/"
-          },
-          {
-            "title": "amp-list",
-            "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
-	          "ampUrl": "<% hosts.preview %>/documentation/examples/components/amp-list/"
-          }
-        ],
-        "hideSelectors": [
-          "footer",
-          "aside"
-        ]
-      }
+      [
+        {
+          "title": "amp-img",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.preview %>/documentation/examples/components/amp-img/"
+        },
+        {
+          "title": "amp-bind",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.preview %>/documentation/examples/components/amp-bind/"
+        },
+        {
+          "title": "amp-accordion",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.preview %>/documentation/examples/components/amp-accordion/"
+        },
+        {
+          "title": "amp-lightbox-gallery",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.preview %>/documentation/examples/components/amp-lightbox-gallery/"
+        },
+        {
+          "title": "amp-list",
+          "image": "<% hosts.preview %>/static/samples/img/amp.jpg",
+          "url": "<% hosts.preview %>/documentation/examples/components/amp-list/"
+        }
+      ]
     </script>
     <div class="amp-next-page-sample-separator" separator>
       amp-next-page separator
