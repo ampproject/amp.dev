@@ -22,13 +22,13 @@ In this tutorial, you'll learn how to use `<amp-script>`, a component that allow
 
 ## Background
 
-AMP aims to make websites faster and more stable for users. Excessive JavaScript can make a webpage slow. But sometimes you need to create functionality that AMP components don't provide. In such cases, you can use the [`<amp-script>`](../../../documentation/components/amp-script) component to write custom JavaScript.
+AMP aims to make websites faster and more stable for users. Excessive JavaScript can make a webpage slow. But sometimes you need to create functionality that AMP components don't provide. In such cases, you can use the [`<amp-script>`](../../../documentation/components/reference/amp-script.md) component to write custom JavaScript.
 
 Let's get started!
 
 # Getting started
 
-To get the starter code, download or clone [this github repository](https://github.com/ampproject/samples/tree/master/amp-script-tutorial). Once you've done this, `cd` into the directory you've created. You'll see two directories: `starter_code` and `finished_code`. `finished_code` contains what you'll create during this tutorial. So let's not look at that yet. Instead, `cd` into `starter_code`. This contains a webpage that implements our form using [`<amp-form>`](../../../documentation/components/amp-form) alone, without help from `<amp-script>`.
+To get the starter code, download or clone [this github repository](https://github.com/ampproject/samples/tree/master/amp-script-tutorial). Once you've done this, `cd` into the directory you've created. You'll see two directories: `starter_code` and `finished_code`. `finished_code` contains what you'll create during this tutorial. So let's not look at that yet. Instead, `cd` into `starter_code`. This contains a webpage that implements our form using [`<amp-form>`](../../../documentation/components/reference/amp-form.md) alone, without help from `<amp-script>`.
 
 To do this exercise, you'll need to run a webserver on your computer. If you're already doing this, you'll be all set! If so, depending on your setup, you'll be able to access the starter webpage by typing into your browser a URL like `http://localhost/amp-script-tutorial/starter_code/index.html`.
 
@@ -56,7 +56,7 @@ The password `<input>` contains another interesting attribute:
 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-z\d]).{8,}$"
 ```
 
-This regular expression combines a set of smaller regular expressions, each of which expresses one of our validation rules. AMP [won't let the form be submitted ](../../../documentation/components/amp-form/?format=websites#verification) until the contents of the input match. If the user tries, they'll see a error message that provides few details:
+This regular expression combines a set of smaller regular expressions, each of which expresses one of our validation rules. AMP [won't let the form be submitted ](../../../documentation/components/reference/amp-form.md#verification) until the contents of the input match. If the user tries, they'll see a error message that provides few details:
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/starter-form-error.jpg', 600, 442, layout='intrinsic', alt='Web form showing error message', align='center' ) }}
 
@@ -95,13 +95,13 @@ To use `<amp-script>`, we need to import its own JavaScript. Open `index.html` a
 
 Our `<amp-script>` includes the attribute `sandbox="allow-forms"`. That tells AMP it's ok for the script to modify the content of the form.
 
-Since AMP aims to guarantee a fast, visually stable user experience, it won't let our JavaScript make unrestricted changes to the DOM at any time. Your JavaScript can make more changes if the size of the `<amp-script>` component can't change. It also allows more substantial changes after a user interaction. You can find details in [the reference documentation](../../../documentation/components/amp-script). For this tutorial, it suffices to know that we've specified a `layout` type that isn't `container`, and we've used HTML attributes to lock down the component's size. This means that any DOM manipulations are restricted to a certain area of the page.
+Since AMP aims to guarantee a fast, visually stable user experience, it won't let our JavaScript make unrestricted changes to the DOM at any time. Your JavaScript can make more changes if the size of the `<amp-script>` component can't change. It also allows more substantial changes after a user interaction. You can find details in [the reference documentation](../../../documentation/components/reference/amp-script.md). For this tutorial, it suffices to know that we've specified a `layout` type that isn't `container`, and we've used HTML attributes to lock down the component's size. This means that any DOM manipulations are restricted to a certain area of the page.
 
 If you're using the [AMP validator Chrome extension](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) or checking your Console, you will now see an error message:
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/relative-url-error.png', 600, 177, layout='intrinsic', alt='Error about relative URL', align='center' ) }}
 
-What does this mean? AMP components that specify a file require an absolute URL. This is necessary because our AMP document might be served from [an AMP cache](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456). When that happens, unless our site uses a [signed exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges), our content will be served from a different domain. (To learn more about AMP caches and signed exchanges, [see here](../../../documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/).) Using an absolute URL like `http://localhost/js/script.js` would fix this. But AMP also requires the use of [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). So we would still get a validation error, and setting up SSL on our local webserver is outside the scope of this tutorial. If you want to do it, you can follow the instructions in [this post](https://timonweb.com/posts/running-expressjs-server-over-https/).
+What does this mean? AMP components that specify a file require an absolute URL. This is necessary because our AMP document might be served from [an AMP cache](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456). When that happens, unless our site uses a [signed exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges), our content will be served from a different domain. (To learn more about AMP caches and signed exchanges, [see here](../../../documentation/guides-and-tutorials/optimize-and-measure/signed-exchange.md).) Using an absolute URL like `http://localhost/js/script.js` would fix this. But AMP also requires the use of [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). So we would still get a validation error, and setting up SSL on our local webserver is outside the scope of this tutorial. If you want to do it, you can follow the instructions in [this post](https://timonweb.com/posts/running-expressjs-server-over-https/).
 
 Next, we can remove the`pattern` attribute and its regular expression from our form: we won't need it anymore!
 
@@ -283,4 +283,4 @@ If you get stuck, you can always refer to the working code in the `finished_code
 
 # Congratulations! 
 
-You've learned how to use `<amp-script>` to write your own JavaScript in AMP. You've succeeded in enhancing the `<amp-form>` component with your own custom logic and UI features! Feel free to add more functionality to your new page! And, to learn more about `<amp-script>`, check out [the reference documentation](../../../documentation/components/amp-script).
+You've learned how to use `<amp-script>` to write your own JavaScript in AMP. You've succeeded in enhancing the `<amp-form>` component with your own custom logic and UI features! Feel free to add more functionality to your new page! And, to learn more about `<amp-script>`, check out [the reference documentation](../../../documentation/components/reference/amp-script.md).
