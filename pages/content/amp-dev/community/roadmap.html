@@ -2,86 +2,72 @@
 $title: Roadmap
 $order: 2
 $view: /views/custom.j2
-roadmap: !g.json /content/amp-dev/community/roadmap.json
+roadmap: !g.yaml /shared/data/roadmap.yaml
+
 ---
 {% do doc.styles.addCssFile('css/components/templates/roadmap.css') %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 <main class="ap--main ap-t-roadmap">
-  <div class="ap--container">
-    <div class="ap-o-roadmap">
+  <section class="ap--stage ap--container-fluid">
+    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
 
-      <amp-state id="roadmapfilter">
-        <script type="application/json">
-          {
-            "activefilter": "all"
-          }
-        </script>
-      </amp-state>
-
-      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
-
-      <section class="ap--content">
-        <h1>{{ _('The AMP Project Roadmap') }}</h1>
-        <div class="ap-m-tip ap-m-tip-note">
-          <div class="ap-m-tip-content">
-            {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-            <p>{{ _('This is a high level overview suitable for all audiences. For a more detailed developer view, <a href="https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a>') }}</p>
-          </div>
+    <div class="ap-o-stage">
+      <div class="ap--container-fluid">
+        <div class="ap-o-stage-content">
+          <h1 class="ap-o-stage-content-headline">{{ _('The AMP Project Roadmap') }}</h1>
         </div>
-
-
-        <!-- Filter bubbles -->
-        {% do doc.icons.useIcon('icons/close.svg') %}
-        <div class="ap-o-roadmap-filter-list all" [class]="roadmapfilter.activefilter != 'all' ? 'ap-o-roadmap-filter-list filtered' : 'ap-o-roadmap-filter-list all' ">
-          {% for label in doc.roadmap.labels %}
-
-          <button class="ap-m-filter-bubble {{ label | slug}} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label | slug}}' } })"
-          [class]="roadmapfilter.activefilter == 'all' || roadmapfilter.activefilter == '{{label|slug}}' ? 'ap-m-filter-bubble {{ label | slug}} active' : 'ap-m-filter-bubble {{ label | slug}}'">
-            {{ _(label) }}
-            <span tabindex="-1" role="reset" class="ap-m-filter-bubble-reset" [class]="roadmapfilter.activefilter == '{{ label | slug}}' ? 'ap-m-filter-bubble-reset show': 'ap-m-filter-bubble-reset'" on="tap:AMP.setState({roadmapfilter: {activefilter: 'all' }})">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
-            </span>
-          </button>
-
-          {% endfor %}
+        <div class="ap-o-stage-image">
+          <amp-img alt="AMP Working Group"
+              media="(min-width: 670px)"
+              width="800"
+              height="435"
+              src="/static/img/working-groups-top-desktop.png"
+              layout="responsive">
+          </amp-img>
+          <amp-img alt="AMP Working Group"
+              media="(max-width: 669px)"
+              width="600"
+              height="669"
+              src="/static/img/working-groups-top.png"
+              layout="responsive">
+          </amp-img>
         </div>
-      </section>
-
-      <div class="ap-o-roadmap-tiles ap--container-fluid">
-        <!-- Columns -->
-        {% do doc.icons.useIcon('icons/notepad.svg') %}
-        {% do doc.icons.useIcon('icons/wrench.svg') %}
-        {% do doc.icons.useIcon('icons/dolly.svg') %}
-
-        {% for column in doc.roadmap.columns %}
-        <div class="ap-o-roadmap-tiles-list">
-          <div class="ap-a-ico">
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{% if loop.index == 1 %}notepad{% elif loop.index == 2 %}wrench{% elif loop.index == 3 %}dolly{% endif %}"></use></svg>
-          </div>
-          <h4>{{ _(column.name) }}</h4>
-          <ul>
-            {% for card in column.cards %}
-            <li class="ap-o-roadmap-tiles-item ap-m-copy active {% if card.issue.labels[0] %}{% for label in card.issue.labels %}{{ label.name | slug}} {% endfor %}{% endif %}"
-            [class]= "{% if card.issue.labels[0] %}{% for label in card.issue.labels %}roadmapfilter.activefilter == '{{ label.name | slug}}' ||{% endfor %}{% endif %} roadmapfilter.activefilter == 'all' ? 'ap-o-roadmap-tiles-item ap-m-copy active ' : 'ap-o-roadmap-tiles-item ap-m-copy '"
-            >
-              <a class="ap-o-roadmap-tiles-link" href="{{ card.issue.url }}">
-                <div class="ap-o-roadmap-tiles-title">{{ card.issue.title }}</div>
-              </a>
-              <div class="ap-o-roadmap-tiles-description">{{ _(card.issue.description|markdown|safe) }}</div>
-              <div class="ap-o-roadmap-tiles-categories">
-                {% if card.issue.labels[0] %}
-                  {% for label in card.issue.labels %}
-                  <button class="ap-m-filter-bubble {{ label.name | slug }} active" on="tap:AMP.setState({roadmapfilter: {activefilter: '{{ label.name | slug}}' }})">{{ _(label.name) }}</button>
-                  {% endfor %}
-                {% endif %}
-              </div>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
       </div>
     </div>
+  </section>
+
+  <div class="ap-o-roadmap">
+    <section class="ap-o-roadmap-intro">
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. For the overall AMP Roadmap for 2020 please read this blogpost.<br><br>An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
+    </section>
+    <section class="ap-o-roadmap-list">
+      <a class="ap-o-roadmap-list-quarter"
+          href="#{{ doc.roadmap.issues[0].quarter|slug }}">
+        {{ doc.roadmap.issues[0].quarter }}
+      </a>
+      {% for issue in doc.roadmap.issues %}
+        {% if issue.quarter != doc.roadmap.issues[loop.index - 2].quarter and loop.index > 1 %}
+        <a class="ap-o-roadmap-list-quarter"
+            href="#{{ issue.quarter|slug }}">
+          {{ issue.quarter }}
+        </a>
+        {% endif %}
+        <amp-accordion
+            id="{{ issue.quarter|slug }}"
+            disable-session-states>
+          <section class="ap-o-roadmap-list-item">
+            <header class="ap-o-roadmap-list-item-header">
+              <h4 class="ap-o-roadmap-list-item-header-title">{{ issue.wg_name }}</h4>
+              <span>Status Update {{ issue.status_update }}</span>
+            </header>
+            <div class="ap-o-roadmap-list-item-body">
+              <p>{{ issue.body|markdown|safe }}</p>
+              <a href="{{ issue.html_url }}">See details on GitHub</a>
+            </div>
+          </section>
+        </amp-accordion>
+      {% endfor %}
+    </section>
   </div>
+  
 </main>
