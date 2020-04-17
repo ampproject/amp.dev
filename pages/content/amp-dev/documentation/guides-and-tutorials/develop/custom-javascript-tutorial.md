@@ -4,11 +4,13 @@ $order: 101
 formats:
   - websites
 tutorial: true
-author: morsssss
+author:
+  - morsssss
+  - CrystalOnScript
 description: For web experiences requiring a high amount of customization AMP has created amp-script, a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's performance.
 ---
 
-In this tutorial, you'll learn how to use `<amp-script>`, a component that allows developers to write custom JavaScript in AMP. You'll use this to build a widget that checks the contents of a password input field, only allowing it to be submitted when certain requirements are met.
+In this tutorial, you'll learn how to use `<amp-script>`, a component that allows developers to write custom JavaScript in AMP. You'll use this to build a widget that checks the contents of a password input field, only allowing it to be submitted when certain requirements are met. AMP already provides this functionality with `<amp-form>`, but `<amp-script>` will empower you to create a custom experience.
 
 ## What you'll need
 
@@ -20,17 +22,17 @@ In this tutorial, you'll learn how to use `<amp-script>`, a component that allow
 
 ## Background
 
-AMP aims to make websites faster and more stable for users. Excessive JavaScript can make a webpage slow. But sometimes you need to create functionality that AMP components don't provide. In such cases, you can use the [`<amp-script>`](https://amp.dev/documentation/components/amp-script) component to write custom JavaScript.
+AMP aims to make websites faster and more stable for users. Excessive JavaScript can make a webpage slow. But sometimes you need to create functionality that AMP components don't provide. In such cases, you can use the [`<amp-script>`](../../../documentation/components/amp-script) component to write custom JavaScript.
 
 Let's get started!
 
 # Getting started
 
-To get the starter code, download or clone [this github repository](https://github.com/ampproject/samples/tree/master/amp-script-tutorial). Once you've done this, `cd` into the directory you've created. You'll see two directories: `starter_code` and `finished_code`. `finished_code` contains what you'll create during this tutorial. So let's not look at that yet. Instead, `cd` into `starter_code`. This contains a webpage that implements our form using [`<amp-form>`](https://amp.dev/documentation/components/amp-form) alone, without help from `<amp-script>`.
+To get the starter code, download or clone [this github repository](https://github.com/ampproject/samples/tree/master/amp-script-tutorial). Once you've done this, `cd` into the directory you've created. You'll see two directories: `starter_code` and `finished_code`. `finished_code` contains what you'll create during this tutorial. So let's not look at that yet. Instead, `cd` into `starter_code`. This contains a webpage that implements our form using [`<amp-form>`](../../../documentation/components/amp-form) alone, without help from `<amp-script>`.
 
 To do this exercise, you'll need to run a webserver on your computer. If you're already doing this, you'll be all set! If so, depending on your setup, you'll be able to access the starter webpage by typing into your browser a URL like `http://localhost/amp-script-tutorial/starter_code/index.html`.
 
-Alternately, you can set up a quick local server using something like [serve](https://www.npmjs.com/package/serve), the [Node.js](https://nodejs.org/)-based static content server. If you haven't installed Node.js, download it [here](https://nodejs.org/). Once Node is installed, type `npx serve` on your command line. You can then access your website here:
+Alternately, you can set up a quick local server using something like [serve](https://www.npmjs.com/package/serve), a [Node.js](https://nodejs.org/)-based static content server. If you haven't installed Node.js, download it [here](https://nodejs.org/). Once Node is installed, type `npx serve` on your command line. You can then access your website here:
 
 `http://localhost:5000/`
 
@@ -54,7 +56,7 @@ The password `<input>` contains another interesting attribute:
 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-z\d]).{8,}$"
 ```
 
-This regular expression combines a set of smaller regular expressions, each of which expresses one of our validation rules. AMP [won't let the form be submitted ](https://amp.dev/documentation/components/amp-form/?format=websites#verification)until the contents of the input match. If the user tries, they'll see a error message that provides few details:
+This regular expression combines a set of smaller regular expressions, each of which expresses one of our validation rules. AMP [won't let the form be submitted ](../../../documentation/components/amp-form/?format=websites#verification) until the contents of the input match. If the user tries, they'll see a error message that provides few details:
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/starter-form-error.jpg', 600, 442, layout='intrinsic', alt='Web form showing error message', align='center' ) }}
 
@@ -93,13 +95,13 @@ To use `<amp-script>`, we need to import its own JavaScript. Open `index.html` a
 
 Our `<amp-script>` includes the attribute `sandbox="allow-forms"`. That tells AMP it's ok for the script to modify the content of the form.
 
-Since AMP aims to guarantee a fast, visually stable user experience, it won't let our JavaScript make unrestricted changes to the DOM at any time. Your JavaScript can make more changes if the size of the `<amp-script>` component can't change. It also allows more substantial changes after a user interaction. You can find details in [the reference documentation](https://amp.dev/documentation/components/amp-script/). For this tutorial, it suffices to know that we've specified a `layout` type that isn't `container`, and we've used HTML attributes to lock down the component's size. This means that any DOM manipulations are restricted to a certain area of the page.
+Since AMP aims to guarantee a fast, visually stable user experience, it won't let our JavaScript make unrestricted changes to the DOM at any time. Your JavaScript can make more changes if the size of the `<amp-script>` component can't change. It also allows more substantial changes after a user interaction. You can find details in [the reference documentation](../../../documentation/components/amp-script). For this tutorial, it suffices to know that we've specified a `layout` type that isn't `container`, and we've used HTML attributes to lock down the component's size. This means that any DOM manipulations are restricted to a certain area of the page.
 
 If you're using the [AMP validator Chrome extension](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) or checking your Console, you will now see an error message:
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/relative-url-error.png', 600, 177, layout='intrinsic', alt='Error about relative URL', align='center' ) }}
 
-What does this mean? AMP components that specify a file require an absolute URL. This is necessary because our AMP document might be served from [an AMP cache](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456). When that happens, unless our site uses a [signed exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges), our content will be served from a different domain. (To learn more about AMP caches and signed exchanges, [see here](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/).) Using an absolute URL like `http://localhost/js/script.js` would fix this. But AMP also requires the use of [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). So we would still get a validation error, and setting up SSL on our local webserver is outside the scope of this tutorial. If you want to do it, you can follow the instructions in [this post](https://timonweb.com/posts/running-expressjs-server-over-https/).
+What does this mean? AMP components that specify a file require an absolute URL. This is necessary because our AMP document might be served from [an AMP cache](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456). When that happens, unless our site uses a [signed exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges), our content will be served from a different domain. (To learn more about AMP caches and signed exchanges, [see here](../../../documentation/guides-and-tutorials/optimize-and-measure/signed-exchange/).) Using an absolute URL like `http://localhost/js/script.js` would fix this. But AMP also requires the use of [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). So we would still get a validation error, and setting up SSL on our local webserver is outside the scope of this tutorial. If you want to do it, you can follow the instructions in [this post](https://timonweb.com/posts/running-expressjs-server-over-https/).
 
 Next, we can remove the`pattern` attribute and its regular expression from our form: we won't need it anymore!
 
@@ -162,13 +164,13 @@ Reload the page. You can verify that these globals were set correctly by checkin
 We'll also add id's to each `<li>` in `<div id="rules">`. Each of these contains an individual rule whose color we'll want to control.
 
 ```html
-            <ul>
-              <li id="lower" class="invalid">Lowercase letter</li>
-              <li id="upper" class="invalid">Capital letter</li>
-              <li id="digit" class="invalid">Digit</li>
-              <li id="special" class="invalid">Special character (@$!%*?&)</li>
-              <li id="eight" class="invalid">At least 8 characters long</li>
-            </ul> 
+<ul>
+  <li id="lower" class="invalid">Lowercase letter</li>
+  <li id="upper" class="invalid">Capital letter</li>
+  <li id="digit" class="invalid">Digit</li>
+  <li id="special" class="invalid">Special character (@$!%*?&)</li>
+  <li id="eight" class="invalid">At least 8 characters long</li>
+</ul> 
 ```
 
 ## Implementing our password checks in JavaScript
@@ -212,47 +214,47 @@ function initCheckPassword(el) {
 Let's make those `valid` and `invalid` classes actually turn text green or red. Go back to `index.html`, and add these two rules to the `<style amp-custom>` tag:
 
 ```css
-      li.valid {
-        color: #2d7b1f;
-      } 
+li.valid {
+  color: #2d7b1f;
+} 
 
-      li.invalid {
-        color:#c11136;
-      }
+li.invalid {
+  color:#c11136;
+}
 ```
 
 Now we're ready to add the logic that checks the contents of the password `<input>` against our rules. Add a new function called `checkPassword()` to `initCheckPassword()`, right before the closing brace:
 
 ```js
-  const checkPassword = () => {
-    const password = element.value;
-    let failed = false;
+const checkPassword = () => {
+  const password = element.value;
+  let failed = false;
 
-    for (const check in checkRegexes) {
-      let li = document.getElementById(check);
+  for (const check in checkRegexes) {
+    let li = document.getElementById(check);
 
-      if (password.match(checkRegexes[check])) {
-        checkPass(li);
-      } else {
-        checkFail(li);
-        failed = true;
-      }
+    if (password.match(checkRegexes[check])) {
+      checkPass(li);
+    } else {
+      checkFail(li);
+      failed = true;
     }
+  }
 
-    if (!failed) {
-      submitButton.removeAttribute("disabled");
-    }
-  };
+  if (!failed) {
+    submitButton.removeAttribute("disabled");
+  }
+};
 ```
 
 This function does the following:
 
-* Grabs the contents of the password `<input>`.
-* Creates a flag called `failed`, initialized to `false`.
-* Iterates through each of our regexes and tests each against the password:
+1. Grabs the contents of the password `<input>`.
+1. Creates a flag called `failed`, initialized to `false`.
+1. Iterates through each of our regexes and tests each against the password:
     * If the password fails a test, call `checkFail()` to turn the corresponding rule red. Also, set `failed` to `true`.
     * If the password passes a test, call `checkPass()` to turn the corresponding rule green.
-* Finally, if no rule failed, the password is valid, and we enable the Submit button.
+1. Finally, if no rule failed, the password is valid, and we enable the Submit button.
 
 All we need now are a couple of event listeners. Remember how we were unable to use the `focus` event in AMP? In `<amp-script>`, we can. Whenever the password `<input>` receives the `focus` event, we'll display the rules. And whenever the user presses a key in that input, we'll call `checkPassword()`.
 
@@ -281,4 +283,4 @@ If you get stuck, you can always refer to the working code in the `finished_code
 
 # Congratulations! 
 
-You've learned how to use `<amp-script>` to write your own JavaScript in AMP. You've succeeded in enhancing the `<amp-form>` component with your own custom logic and UI features! Feel free to add more functionality to your new page! And, to learn more about `<amp-script>`, check out [the reference documentation](https://amp.dev/documentation/components/amp-script/).
+You've learned how to use `<amp-script>` to write your own JavaScript in AMP. You've succeeded in enhancing the `<amp-form>` component with your own custom logic and UI features! Feel free to add more functionality to your new page! And, to learn more about `<amp-script>`, check out [the reference documentation](../../../documentation/components/amp-script).
