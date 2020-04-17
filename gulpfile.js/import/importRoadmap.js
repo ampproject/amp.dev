@@ -81,6 +81,7 @@ async function importRoadmap() {
     for (const issue of issues) {
       const createdAt = new Date(issue.created_at).toDateString();
       const title = emojiStrip(issue.title);
+      const body = emojiStrip(issue.body);
 
       // Parse status update date from from issue title and set quarter
       let statusUpdate = title.match(STATUS_UPDATE_REGEX);
@@ -100,13 +101,13 @@ async function importRoadmap() {
       roadmap.push({
         'wg_name': workingGroupName,
         'created_at': createdAt,
-        'status_update': statusUpdate || '',
-        'quarter': quarter || '',
+        'status_update': statusUpdate,
+        'quarter': quarter,
         'title': title,
         'number': issue.number,
         'author': issue.user.login,
         'html_url': issue.html_url,
-        'body': issue.body,
+        'body': body,
       });
     }
 
@@ -120,7 +121,7 @@ async function importRoadmap() {
 
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.dump({'roadmap': roadmap})
+    yaml.safeDump({'roadmap': roadmap})
   );
 
   log.success(
