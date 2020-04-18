@@ -39,35 +39,71 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
   <div class="ap-o-roadmap">
     <section class="ap-o-roadmap-intro">
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. For the overall AMP Roadmap for 2020 please read this blogpost.<br><br>An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
+      <div class="ap-m-tip ap-m-tip-note">
+        <div class="ap-m-tip-content">
+          {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+          <p>{{ _('This is a high level overview suitable for all audiences. For a more detailed developer view, <a href="https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a>') }}</p>
+        </div>
+      </div>
     </section>
+
+    <section class="ap-o-roadmap-filter">
+      {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+      {% do doc.icons.useIcon('icons/close.svg') %}
+
+      <h2>Select workgroups</h2>
+      <div class="ap-o-roadmap-filter-list">
+        {% for group in g.collection('/content/amp-dev/community/working-groups').list_docs(locale=doc.locale) %}
+        <button class="ap-m-filter-bubble {{ group.name|slug }}">
+          {{ group.name }}
+          <span tabindex="-1" role="reset" class="ap-m-filter-bubble-reset">
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+          </span>
+        </button>
+        {% endfor %}
+      </div>
+    </section>
+
     <section class="ap-o-roadmap-list">
-      <a class="ap-o-roadmap-list-quarter"
+      <span class="ap-o-roadmap-list-timeline"></span>
+      <h3>
+        <a class="ap-o-roadmap-list-quarter"
           href="#{{ doc.roadmap.issues[0].quarter|slug }}">
-        {{ doc.roadmap.issues[0].quarter }}
-      </a>
+          {{ doc.roadmap.issues[0].quarter }}
+        </a>
+      </h3>
       {% for issue in doc.roadmap.issues %}
         {% if issue.quarter != doc.roadmap.issues[loop.index - 2].quarter and loop.index > 1 %}
-        <a class="ap-o-roadmap-list-quarter"
-            href="#{{ issue.quarter|slug }}">
-          {{ issue.quarter }}
-        </a>
+        <div class="ap-o-roadmap-list-item">
+        <h3><a class="ap-o-roadmap-list-quarter" href="#{{ issue.quarter|slug }}">{{ issue.quarter }}</a></h3>
         {% endif %}
-        <amp-accordion
-            id="{{ issue.quarter|slug }}"
-            disable-session-states>
-          <section class="ap-o-roadmap-list-item">
-            <header class="ap-o-roadmap-list-item-header">
-              <h4 class="ap-o-roadmap-list-item-header-title">{{ issue.wg_name }}</h4>
-              <span>Status Update {{ issue.status_update }}</span>
-            </header>
-            <div class="ap-o-roadmap-list-item-body">
-              <p>{{ issue.body|markdown|safe }}</p>
-              <a href="{{ issue.html_url }}">See details on GitHub</a>
-            </div>
-          </section>
-        </amp-accordion>
+
+        <div class="ap-o-roadmap-list-item">
+            <span class="ap-o-roadmap-list-item-timeline">
+              <span class="ap-o-roadmap-list-item-timeline-dot"></span>
+            </span>
+            <amp-accordion class="ap-o-roadmap-list-item-issue"
+                id="{{ issue.quarter|slug }}"
+                disable-session-states>
+              <section class="ap-o-roadmap-list-item-issue-section">
+                <header class="ap-o-roadmap-list-item-issue-section-header">
+                  <h4 class="ap-o-roadmap-list-item-issue-section-header-title">{{ issue.wg_name }}</h4>
+                  <span>Status Update {{ issue.status_update }}</span>
+                </header>
+                <div class="ap-o-roadmap-list-item-issue-section-body">
+                  <p>{{ issue.body|markdown|safe }}</p>
+                  <a href="{{ issue.html_url }}">See details on GitHub</a>
+                </div>
+              </section>
+            </amp-accordion>
+          </div>
+
+        {% if issue.quarter != doc.roadmap.issues[loop.index - 2].quarter and loop.index > 1 %}
+        </div>
+        {% endif %}
+
       {% endfor %}
     </section>
   </div>
-  
+
 </main>
