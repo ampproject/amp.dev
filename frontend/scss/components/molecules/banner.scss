@@ -19,10 +19,11 @@
   &-user-notification {
     display: none;
 
-    & ~ #{$root} {
+    & ~ header #{$root} {
       display: none;
     }
-    &.amp-active ~ #{$root} {
+
+    &.amp-active ~ header #{$root} {
       display: flex;
     }
   }

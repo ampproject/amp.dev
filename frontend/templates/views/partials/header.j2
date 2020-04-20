@@ -10,11 +10,15 @@
 
 {# Simply set to False to disable banner #}
 {% set show_banner = True %}
-{% set banner_closeable = True %}
-{% if show_banner %}
-  {% set banner %}
-  {% include '/views/partials/banner.j2' %}
-  {% endset %}
+{% set banner_notification_id = 'amp-devx-survey' %}
+{% set banner_closeable = False %}
+
+{% if show_banner and banner_closeable %}
+{# Outside of the banner.j2 partial as it needs to be at root level
+to provide its state to other components #}
+{% do doc.amp_dependencies.add('amp-user-notification', '0.1') %}
+<amp-user-notification id="{{ banner_notification_id }}" class="ap-m-banner-user-notification" layout="nodisplay">
+</amp-user-notification>
 {% endif %}
 
 {% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
