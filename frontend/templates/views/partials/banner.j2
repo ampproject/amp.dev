@@ -1,21 +1,14 @@
 {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
 
-{% set banner_notification_id = 'amp-devx-survey' %}
-{% if banner_closeable %}
-{% do doc.amp_dependencies.add('amp-user-notification', '0.1') %}
-<amp-user-notification id="{{ banner_notification_id }}" class="ap-m-banner-user-notification" layout="nodisplay">
-</amp-user-notification>
-{% endif %}
 <div class="ap-m-banner">
   <a id="top-banner" href="http://go.amp.dev/devx-survey" class="ap-m-banner-link">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     {{ _('Do you build things with AMP? Fill out the AMP Developer Survey!') }}
   </a>
 {% if banner_closeable %}
-    <button class="ap-m-banner-dismiss" on="tap:{{ banner_notification_id }}.dismiss">
-      {% do doc.icons.useIcon('/icons/close.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
-    </button>
+  <button class="ap-m-banner-dismiss" on="tap:{{ banner_notification_id }}.dismiss">
+    {% do doc.icons.useIcon('/icons/close.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+  </button>
 {% endif %}
 </div>
-
