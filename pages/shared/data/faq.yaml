@@ -739,6 +739,8 @@ email:
           url: https://messagegears.com/
         - label: MindBox
           url: https://mindbox.cloud/
+        - label: MoonMail
+          url: https://www.moonmail.io
         - label: Pepipost
           url: https://pepipost.com/
         - label: SendPulse
@@ -749,5 +751,4 @@ email:
           url: https://www.sparkpost.com/
         - label: Twilio Sendgrid
           url: https://www.twilio.com/sendgrid
-        - label: MoonMail
-          url: https://www.moonmail.io
+
