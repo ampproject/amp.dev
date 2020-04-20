@@ -64,45 +64,50 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       </div>
     </section>
 
-    <section class="ap-o-roadmap-list">
-      <span class="ap-o-roadmap-list-timeline"></span>
-      <h3>
-        <a class="ap-o-roadmap-list-quarter"
-          href="#{{ doc.roadmap.issues[0].quarter|slug }}">
-          {{ doc.roadmap.issues[0].quarter }}
-        </a>
-      </h3>
-      {% for issue in doc.roadmap.issues %}
-        {% if issue.quarter != doc.roadmap.issues[loop.index - 2].quarter and loop.index > 1 %}
-        <div class="ap-o-roadmap-list-item">
-        <h3><a class="ap-o-roadmap-list-quarter" href="#{{ issue.quarter|slug }}">{{ issue.quarter }}</a></h3>
-        {% endif %}
-
-        <div class="ap-o-roadmap-list-item">
-            <span class="ap-o-roadmap-list-item-timeline">
-              <span class="ap-o-roadmap-list-item-timeline-dot"></span>
-            </span>
-            <amp-accordion class="ap-o-roadmap-list-item-issue"
-                id="{{ issue.quarter|slug }}"
-                disable-session-states>
-              <section class="ap-o-roadmap-list-item-issue-section">
-                <header class="ap-o-roadmap-list-item-issue-section-header">
-                  <h4 class="ap-o-roadmap-list-item-issue-section-header-title">{{ issue.wg_name }}</h4>
-                  <span>Status Update {{ issue.status_update }}</span>
-                </header>
-                <div class="ap-o-roadmap-list-item-issue-section-body">
-                  <p>{{ issue.body|markdown|safe }}</p>
-                  <a href="{{ issue.html_url }}">See details on GitHub</a>
-                </div>
-              </section>
-            </amp-accordion>
-          </div>
-
-        {% if issue.quarter != doc.roadmap.issues[loop.index - 2].quarter and loop.index > 1 %}
+    <section class="ap-o-roadmap-container">
+      <div class="ap-o-roadmap-navigation">
+        <div class="ap-o-roadmap-navigation-list">
+          {% for quarter in doc.roadmap.list %}
+          <a class="ap-o-roadmap-navigation-list-item  {% if loop.index == 1 %}active{% endif %}"
+              href="#{{ quarter[0].quarter|slug }}">
+            <h3>{{ quarter[0].quarter }}</h3>
+          </a>
+          {% endfor %}
         </div>
-        {% endif %}
+      </div>
 
-      {% endfor %}
+      <div class="ap-o-roadmap-list">
+        {% for quarter in doc.roadmap.list %}
+        <a class="ap-o-roadmap-list-title"
+            href="#{{ quarter[0].quarter|slug }}">
+          <h3>{{ quarter[0].quarter }}</h3>
+        </a>
+
+        {% for issue in quarter %}
+        <div class="ap-o-roadmap-list-item">
+          <span class="ap-o-roadmap-list-item-timeline">
+            <span class="ap-o-roadmap-list-item-timeline-dot"></span>
+          </span>
+          <amp-accordion class="ap-o-roadmap-list-item-issue"
+              id="{{ issue.quarter|slug }}"
+              disable-session-states>
+            <section class="ap-o-roadmap-list-item-issue-section">
+              <header class="ap-o-roadmap-list-item-issue-section-header">
+                <h4 class="ap-o-roadmap-list-item-issue-section-header-title">{{ issue.wg_name }}</h4>
+                <span class="ap-o-roadmap-list-item-issue-section-header-subtitle">Status Update {{ issue.status_update }}</span>
+                <p class="ap-o-roadmap-list-item-issue-section-header-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+              </header>
+              <div class="ap-o-roadmap-list-item-issue-section-body">
+                <p>{{ issue.body|markdown|safe }}</p>
+                <a href="{{ issue.html_url }}">See details on GitHub</a>
+              </div>
+            </section>
+          </amp-accordion>
+        </div>
+        {% endfor %}
+        {% endfor %}
+      </div>
+
     </section>
   </div>
 

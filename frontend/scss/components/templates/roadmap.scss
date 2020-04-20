@@ -171,56 +171,89 @@
       }
     }
 
-    &-list {
+    &-container {
       position: relative;
       grid-column: 2/23;
 
       @media (min-width: 768px) {
-        grid-column: 3/22;
+        grid-column: 3/23;
+
+        display: flex;
+      }
+    }
+
+    &-navigation {
+      display: none;
+      width: 18%;
+      border-right: 2px solid #DDE6F7;
+
+      @media (min-width: 768px) {
+        display: block;
       }
 
-      &-timeline {
-        display: none;
-        position: absolute;
-        width: 2px;
-        height: calc(100%);
-        left: 20%;
-        top: -5px;
-        background-color: #DDE6F7;
+      &-list {
+        position: sticky;
+        top: 100px;
+        padding-top: 18px;
 
-        @media (min-width: 768px) {
+        &-item {
+          position: relative;
           display: block;
+          opacity: .3;
+          font-size: 28px;
+
+          &.active,
+          &:hover {
+            opacity: 1;
+
+            &:after {
+              opacity: 1;
+            }
+          }
+
+          &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            height: 2px;
+            width: 50%;
+            background: #DDE6F7;
+            opacity: 0;
+          }
         }
       }
+    }
 
-      &-quarter {
+    &-list {
+
+      @media (min-width: 768px) {
+        margin-left: -2px;
+        width: 82%;
+      }
+
+      &-title {
+        display: block;
+        margin: 50px 0 20px 0;
+        opacity: .3;
         font-size: 28px;
-        color: grey;
-        font-weight: bold;
 
         @media (min-width: 768px) {
-          position: sticky;
-          top: 100px;
-          z-index: 12;
+          display: none;
         }
       }
 
       &-item {
+        position: relative;
         margin-bottom: 15px;
-
-        @media (min-width: 768px) {
-          margin-left: auto;
-          width: 80%;
-          position: relative;
-        }
 
         &-timeline {
           display: none;
           position: absolute;
-          height: 2px;
-          width: 8%;
           left: 0;
-          top: 40px;
+          top: 60px;
+          width: 10%;
+          height: 2px;
           background: #DDE6F7;
 
           @media (min-width: 768px) {
@@ -230,51 +263,80 @@
           &-dot {
             height: 14px;
             width: 14px;
+            margin-left: -6px;
+            margin-top: -6px;
             border-radius: 7px;
             border: 4px solid #FAFAFC;
             background-color: #dee6f7;
-            margin-left: -6px;
-            margin-top: -6px;
           }
         }
 
         &-issue {
-
           @media (min-width: 768px) {
             margin-left: auto;
-            width: 92%;
-          }
-
-          &:target:before {
-            height: 0;
+            width: 91%;
           }
 
           &-section {
             box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
-            border-left: 5px solid #437EB4;
+            border-left: 7px solid #437EB4;
             background-color: color('white');
             border-radius: 8px;
 
             &-header {
               background-color: color('white');
               border: 0;
-              padding: 20px;
-              overflow: hidden;
+              padding: 15px 15px 15px 20px;
+              border-radius: 8px;
+
+              @media (min-width: 768px) {
+                padding: 30px 30px 30px 50px;
+              }
 
               &-title {
+                margin: 5px 0;
+                font-size: 22px;
                 text-transform: capitalize;
+              }
+
+              &-subtitle {
+                font-size: 14px;
+                color: #48525c;
+              }
+
+              &-description {
+                padding-top: 15px;
+                margin-top: 15px;
+                border-top: solid 1px #eaeaea;
+
+                @media (min-width: 768px) {
+                  width: 80%;
+                }
               }
             }
 
             &-body {
-              padding: 20px;
+              padding: 0px 15px 15px 20px;
 
-              h1, h2, h3 { font-size: 16px; }
+              @media (min-width: 768px) {
+                padding: 0px 30px 30px 50px;
+                column-count: 2;
+              }
+
+              h1, h2, h3 {
+                font-size: 16px;
+              }
+
+              h2:first-child {
+                margin-top: 0;
+              }
+
               p { font-size: 14px; }
             }
           }
         }
       }
     }
+
   }
 }
