@@ -202,13 +202,16 @@
           opacity: .3;
           font-size: 28px;
 
-          &.active,
-          &:hover {
+          &.active {
             opacity: 1;
 
             &:after {
               opacity: 1;
             }
+          }
+
+          &:hover {
+            opacity: 1;
           }
 
           &:after {
@@ -237,9 +240,13 @@
         margin: 50px 0 20px 0;
         opacity: .3;
         font-size: 28px;
+        height: 20px;
 
         @media (min-width: 768px) {
-          display: none;
+          opacity: 0;
+          &:first-child {
+            display: none;
+          }
         }
       }
 
@@ -252,7 +259,7 @@
           position: absolute;
           left: 0;
           top: 60px;
-          width: 10%;
+          width: 9%;
           height: 2px;
           background: #DDE6F7;
 
@@ -272,66 +279,70 @@
         }
 
         &-issue {
+          min-height: 200px;
+
           @media (min-width: 768px) {
             margin-left: auto;
             width: 91%;
           }
 
-          &-section {
+          &-container {
             box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
             border-left: 7px solid #437EB4;
             background-color: color('white');
             border-radius: 8px;
+            padding: 15px 15px 15px 20px;
+            border-radius: 8px;
 
-            &-header {
-              background-color: color('white');
+            @media (min-width: 768px) {
+              padding: 30px 30px 30px 50px;
+            }
+
+            &-button {
+              position: absolute;
+              top: 15px;
+              right: 15px;
+              background: white;
               border: 0;
-              padding: 15px 15px 15px 20px;
-              border-radius: 8px;
+
+              svg {
+                width: 30px;
+                height: 30px;
+
+              }
+            }
+
+            &-title {
+              margin: 5px 0;
+              font-size: 22px;
+              text-transform: capitalize;
+            }
+
+            &-subtitle {
+              font-size: 14px;
+              color: #48525c;
+            }
+
+            &-description {
+              padding-top: 15px;
+              margin-top: 15px;
+              border-top: solid 1px #eaeaea;
 
               @media (min-width: 768px) {
-                padding: 30px 30px 30px 50px;
-              }
-
-              &-title {
-                margin: 5px 0;
-                font-size: 22px;
-                text-transform: capitalize;
-              }
-
-              &-subtitle {
-                font-size: 14px;
-                color: #48525c;
-              }
-
-              &-description {
-                padding-top: 15px;
-                margin-top: 15px;
-                border-top: solid 1px #eaeaea;
-
-                @media (min-width: 768px) {
-                  width: 80%;
-                }
+                width: 80%;
               }
             }
 
             &-body {
-              padding: 0px 15px 15px 20px;
+              font-size: 14px;
 
               @media (min-width: 768px) {
-                padding: 0px 30px 30px 50px;
                 column-count: 2;
               }
 
               h1, h2, h3 {
                 font-size: 16px;
               }
-
-              h2:first-child {
-                margin-top: 0;
-              }
-
-              p { font-size: 14px; }
             }
           }
         }

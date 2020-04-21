@@ -76,33 +76,42 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
         </div>
       </div>
 
+      {% do doc.icons.useIcon('icons/chevron-down-light.svg') %}
+      {% do doc.icons.useIcon('icons/chevron-up-light.svg') %}
+
+
       <div class="ap-o-roadmap-list">
         {% for quarter in doc.roadmap.list %}
-        <a class="ap-o-roadmap-list-title"
-            href="#{{ quarter[0].quarter|slug }}">
-          <h3>{{ quarter[0].quarter }}</h3>
-        </a>
-
+        <h3 class="ap-o-roadmap-list-title"
+            id="{{ quarter[0].quarter|slug }}">
+          {{ quarter[0].quarter }}
+        </h3>
         {% for issue in quarter %}
         <div class="ap-o-roadmap-list-item">
           <span class="ap-o-roadmap-list-item-timeline">
             <span class="ap-o-roadmap-list-item-timeline-dot"></span>
           </span>
-          <amp-accordion class="ap-o-roadmap-list-item-issue"
-              id="{{ issue.quarter|slug }}"
-              disable-session-states>
-            <section class="ap-o-roadmap-list-item-issue-section">
-              <header class="ap-o-roadmap-list-item-issue-section-header">
-                <h4 class="ap-o-roadmap-list-item-issue-section-header-title">{{ issue.wg_name }}</h4>
-                <span class="ap-o-roadmap-list-item-issue-section-header-subtitle">Status Update {{ issue.status_update }}</span>
-                <p class="ap-o-roadmap-list-item-issue-section-header-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-              </header>
-              <div class="ap-o-roadmap-list-item-issue-section-body">
-                <p>{{ issue.body|markdown|safe }}</p>
+
+          <div  class="ap-o-roadmap-list-item-issue">
+            <div class="ap-o-roadmap-list-item-issue-container">
+
+              <amp-truncate-text layout="fixed-height" height="12em">
+                <h4 class="ap-o-roadmap-list-item-issue-container-title">{{ issue.wg_name }}</h4>
+                <span class="ap-o-roadmap-list-item-issue-container-subtitle">Status Update {{ issue.status_update }}</span>
+                <p class="ap-o-roadmap-list-item-issue-container-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <div class="ap-o-roadmap-list-item-issue-container-body">{{ issue.body|markdown|safe }}</div>
                 <a href="{{ issue.html_url }}">See details on GitHub</a>
-              </div>
-            </section>
-          </amp-accordion>
+                <button class="ap-o-roadmap-list-item-issue-container-button" slot="collapsed">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-light"></use></svg>
+                </button>
+                <button class="ap-o-roadmap-list-item-issue-container-button" slot="expanded">
+                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-up-light"></use></svg>
+                </button>
+              </amp-truncate-text>
+            </div>
+
+          </div>
+
         </div>
         {% endfor %}
         {% endfor %}
