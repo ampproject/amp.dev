@@ -7,10 +7,6 @@
 ### INFO:
 
 */
-// @import '_extends.scss';
-// @import '_functions.scss';
-// @import '_mixins.scss';
-// @import '_variables.scss';
 
 @import 'components/atoms/_text.scss';
 @import 'components/atoms/_color.scss';
@@ -182,7 +178,7 @@
 
     &-navigation {
       display: none;
-      width: 18%;
+      width: 20%;
       border-right: 2px solid #DDE6F7;
 
       @media (min-width: 768px) {
@@ -192,29 +188,24 @@
       &-list {
         position: sticky;
         top: 100px;
-        padding-top: 32px;
+        padding-top: 26px;
 
         &-item {
           position: relative;
-          display: block;
-          opacity: .3;
-          font-size: 28px;
-
-          &.active {
-            opacity: 1;
-
-            &:after {
-              opacity: 1;
-            }
-          }
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
           &:hover {
             opacity: 1;
           }
 
-          &:after {
-            content: '';
-            position: absolute;
+          &-title {
+            margin: 22px 0;
+            font-size: 28px;
+          }
+
+          &-timeline {
             top: 50%;
             right: 0;
             height: 2px;
@@ -230,7 +221,7 @@
 
       @media (min-width: 768px) {
         margin-left: -2px;
-        width: 82%;
+        width: 80%;
       }
 
       &-title {
@@ -258,7 +249,7 @@
           position: absolute;
           left: 0;
           top: 60px;
-          width: 9%;
+          width: 7%;
           height: 2px;
           background: #DDE6F7;
 
@@ -287,7 +278,7 @@
 
           @media (min-width: 768px) {
             margin-left: auto;
-            width: 91%;
+            width: 93%;
             padding: 30px 30px 30px 50px;
           }
 
@@ -352,7 +343,6 @@
               font-size: .9em;
             }
           }
-
 
           &.access-subscriptions {
             border-color: color('cinnabar');

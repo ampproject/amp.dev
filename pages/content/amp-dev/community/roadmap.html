@@ -68,9 +68,50 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <div class="ap-o-roadmap-navigation">
         <div class="ap-o-roadmap-navigation-list">
           {% for quarter in doc.roadmap.list %}
-          <a class="ap-o-roadmap-navigation-list-item  {% if loop.index == 1 %}active{% endif %}"
+          <amp-animation id="anim-{{ quarter[0].quarter|slug }}" layout="nodisplay">
+            <script type="application/json">
+              {
+                "duration": ".3s",
+                "fill": "both",
+                "direction": "alternate",
+                "animations": [
+                  {
+                    "selector": ".ap-o-roadmap-navigation-list-item",
+                    "keyframes": {
+                      "opacity": ".3"
+                    }
+                  },
+                  {
+                    "selector": "#nav-item-{{ quarter[0].quarter|slug }}",
+                    "keyframes": {
+                      "opacity": "1"
+                    }
+                  },
+                  {
+                    "selector": ".ap-o-roadmap-navigation-list-item-timeline",
+                    "keyframes": {
+                      "opacity": "0"
+                    }
+                  },
+                  {
+                    "selector": "#nav-item-timeline-{{ quarter[0].quarter|slug }}",
+                    "keyframes": {
+                      "opacity": "1"
+                    }
+                  }
+                ]
+              }
+            </script>
+          </amp-animation>
+          <a class="ap-o-roadmap-navigation-list-item"
+              id="nav-item-{{ quarter[0].quarter|slug }}"
               href="#{{ quarter[0].quarter|slug }}">
-            <h3>{{ quarter[0].quarter }}</h3>
+            <h3 class="ap-o-roadmap-navigation-list-item-title">
+              {{ quarter[0].quarter }}
+            </h3>
+            <span class="ap-o-roadmap-navigation-list-item-timeline"
+                id="nav-item-timeline-{{ quarter[0].quarter|slug }}">
+            </span>
           </a>
           {% endfor %}
         </div>
@@ -82,6 +123,10 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <div class="ap-o-roadmap-list">
         {% for quarter in doc.roadmap.list %}
         <div class="ap-o-roadmap-list-title">
+          <amp-position-observer intersection-ratios="1"
+              on="enter:anim-{{ quarter[0].quarter|slug }}.start"
+              layout="nodisplay">
+          </amp-position-observer>
           <h3 id="{{ quarter[0].quarter|slug }}">{{ quarter[0].quarter }}</h3>
         </div>
         {% for issue in quarter %}
