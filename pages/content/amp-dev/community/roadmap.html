@@ -54,10 +54,10 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <h2>Select workgroups</h2>
       <div class="ap-o-roadmap-filter-list">
         {% for group in g.collection('/content/amp-dev/community/working-groups').list_docs(locale=doc.locale) %}
-        <button class="ap-m-filter-bubble {{ group.name|slug }}">
+        <button class="ap-m-filter-bubble {{ group.name|slug }} active">
           {{ group.name }}
           <span tabindex="-1" role="reset" class="ap-m-filter-bubble-reset">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
           </span>
         </button>
         {% endfor %}
@@ -79,37 +79,35 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       {% do doc.icons.useIcon('icons/chevron-down-light.svg') %}
       {% do doc.icons.useIcon('icons/chevron-up-light.svg') %}
 
-
       <div class="ap-o-roadmap-list">
         {% for quarter in doc.roadmap.list %}
-        <h3 class="ap-o-roadmap-list-title"
-            id="{{ quarter[0].quarter|slug }}">
-          {{ quarter[0].quarter }}
-        </h3>
+        <div class="ap-o-roadmap-list-title">
+          <h3 id="{{ quarter[0].quarter|slug }}">{{ quarter[0].quarter }}</h3>
+        </div>
         {% for issue in quarter %}
         <div class="ap-o-roadmap-list-item">
           <span class="ap-o-roadmap-list-item-timeline">
             <span class="ap-o-roadmap-list-item-timeline-dot"></span>
           </span>
 
-          <div  class="ap-o-roadmap-list-item-issue">
-            <div class="ap-o-roadmap-list-item-issue-container">
+          <div  class="ap-o-roadmap-list-item-issue {{ issue.wg_name }}">
+            <amp-truncate-text layout="fixed-height" height="12em">
+              <h4 class="ap-o-roadmap-list-item-issue-title">{{ issue.wg_name }}</h4>
+              <span class="ap-o-roadmap-list-item-issue-subtitle">Status Update {{ issue.status_update }}</span>
+              <p class="ap-o-roadmap-list-item-issue-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Labore et dolore magna aliquyam erat, sed diam voluptua.</p>
 
-              <amp-truncate-text layout="fixed-height" height="12em">
-                <h4 class="ap-o-roadmap-list-item-issue-container-title">{{ issue.wg_name }}</h4>
-                <span class="ap-o-roadmap-list-item-issue-container-subtitle">Status Update {{ issue.status_update }}</span>
-                <p class="ap-o-roadmap-list-item-issue-container-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-                <div class="ap-o-roadmap-list-item-issue-container-body">{{ issue.body|markdown|safe }}</div>
+              <div class="ap-o-roadmap-list-item-issue-body">
+                {{ issue.body|markdown|safe }}
                 <a href="{{ issue.html_url }}">See details on GitHub</a>
-                <button class="ap-o-roadmap-list-item-issue-container-button" slot="collapsed">
-                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-light"></use></svg>
-                </button>
-                <button class="ap-o-roadmap-list-item-issue-container-button" slot="expanded">
-                  <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-up-light"></use></svg>
-                </button>
-              </amp-truncate-text>
-            </div>
+              </div>
 
+              <button class="ap-o-roadmap-list-item-issue-button" slot="collapsed">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down-light"></use></svg>
+              </button>
+              <button class="ap-o-roadmap-list-item-issue-button" slot="expanded">
+                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-up-light"></use></svg>
+              </button>
+            </amp-truncate-text>
           </div>
 
         </div>

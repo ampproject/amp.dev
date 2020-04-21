@@ -107,37 +107,35 @@
 
         &.active {
           color: color('white');
-          &.presentation {
+
+          &.access-subscriptions {
             background: color('cinnabar');
           }
-          &.dynamic-personalized-content {
+          &.amp4email, &.infra {
             background: color('mountain-meadow');
           }
-          &.runtime, &.tooling {
+          &.approvers, &.outreach {
             background: color('pickled-bluewood');
           }
-          &.user-input, &.pwa {
+          &.bento, &.ui-and-a11y {
             background: color('zest');
           }
-          &.ads {
-            background: color('studio');
-          }
-          &.amp-story {
+          &.ads, &.stories {
             background: color('buttercup');
           }
-          &.audio-video {
+          &.security-privacy, &.foundation-onboarding {
             background: color('mariner');
           }
           &.analytics {
             background: color('persimmon');
           }
-          &.email {
+          &.viewers, &.codeofconduct {
             background: color('shamrock');
           }
-          &.amp-caches {
+          &.runtime {
             background: color('lavender');
           }
-          &.validator {
+          &.performance, &.caching {
             background: color('blue-ribbon');
           }
         }
@@ -194,7 +192,7 @@
       &-list {
         position: sticky;
         top: 100px;
-        padding-top: 18px;
+        padding-top: 32px;
 
         &-item {
           position: relative;
@@ -236,14 +234,15 @@
       }
 
       &-title {
-        display: block;
-        margin: 50px 0 20px 0;
+        display: inline-block;
+        margin: 20px 0 10px;
         opacity: .3;
         font-size: 28px;
         height: 20px;
 
         @media (min-width: 768px) {
           opacity: 0;
+
           &:first-child {
             display: none;
           }
@@ -280,74 +279,113 @@
 
         &-issue {
           min-height: 200px;
+          padding: 15px 15px 15px 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
+          border-left: 7px solid #437EB4;
+          background-color: color('white');
 
           @media (min-width: 768px) {
             margin-left: auto;
             width: 91%;
+            padding: 30px 30px 30px 50px;
           }
 
-          &-container {
-            box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
-            border-left: 7px solid #437EB4;
-            background-color: color('white');
-            border-radius: 8px;
-            padding: 15px 15px 15px 20px;
-            border-radius: 8px;
+          p, li {
+            font-size: 14px;
+            line-height: 23px;
+          }
+
+          &-button {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            background: white;
+            border: 0;
+
+            svg {
+              width: 23px;
+              height: 23px;
+              fill: color('blue-ribbon');
+            }
+          }
+
+          &-title {
+            margin: 5px 0;
+            font-size: 22px;
+            text-transform: capitalize;
+          }
+
+          &-subtitle {
+            font-size: 12px;
+            color: #48525c;
+          }
+
+          &-description {
+            padding-top: 15px;
+            margin-top: 15px;
+            border-top: solid 1px #eaeaea;
 
             @media (min-width: 768px) {
-              padding: 30px 30px 30px 50px;
+              width: 80%;
+            }
+          }
+
+          &-body {
+            @media (min-width: 768px) {
+              column-count: 2;
             }
 
-            &-button {
-              position: absolute;
-              top: 15px;
-              right: 15px;
-              background: white;
-              border: 0;
-
-              svg {
-                width: 30px;
-                height: 30px;
-
-              }
+            h1, h2, h3 {
+              font-size: 16px;
+            }
+            ul {
+              padding-left: 18px;
             }
 
-            &-title {
-              margin: 5px 0;
-              font-size: 22px;
-              text-transform: capitalize;
+            code {
+              display: inline;
+              padding: 2px 4px;
+              font-weight: 500;
+              color: #000;
+              background-color: #eaeaea;
+              font-size: .9em;
             }
+          }
 
-            &-subtitle {
-              font-size: 14px;
-              color: #48525c;
-            }
 
-            &-description {
-              padding-top: 15px;
-              margin-top: 15px;
-              border-top: solid 1px #eaeaea;
-
-              @media (min-width: 768px) {
-                width: 80%;
-              }
-            }
-
-            &-body {
-              font-size: 14px;
-
-              @media (min-width: 768px) {
-                column-count: 2;
-              }
-
-              h1, h2, h3 {
-                font-size: 16px;
-              }
-            }
+          &.access-subscriptions {
+            border-color: color('cinnabar');
+          }
+          &.amp4email, &.infra {
+            border-color: color('mountain-meadow');
+          }
+          &.approvers, &.outreach {
+            border-color: color('pickled-bluewood');
+          }
+          &.bento, &.ui-and-a11y {
+            border-color: color('zest');
+          }
+          &.ads, &.stories {
+            border-color: color('buttercup');
+          }
+          &.security-privacy, &.foundation-onboarding {
+            border-color: color('mariner');
+          }
+          &.analytics {
+            border-color: color('persimmon');
+          }
+          &.viewers, &.codeofconduct {
+            border-color: color('shamrock');
+          }
+          &.runtime {
+            border-color: color('lavender');
+          }
+          &.performance, &.caching {
+            border-color: color('blue-ribbon');
           }
         }
       }
     }
-
   }
 }
