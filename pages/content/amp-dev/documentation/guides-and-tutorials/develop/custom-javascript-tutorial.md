@@ -7,6 +7,7 @@ tutorial: true
 author:
   - morsssss
   - CrystalOnScript
+
 description: For web experiences requiring a high amount of customization AMP has created amp-script, a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's performance.
 ---
 
@@ -75,18 +76,18 @@ To use `<amp-script>`, we need to import its own JavaScript. Open `index.html` a
 ```html
 <head>
  ... 
-  <script async custom-template="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
   ...
 </head>
 
 ```
 
-`<amp-script>` lets us write our own JavaScript inline or in an external file. In this exercise, we'll write enough code to merit a separate file. Create a new directory named `js`, and add to it a new file called `script.js`.
+`<amp-script>` lets us write our own JavaScript inline or in an external file. In this exercise, we'll write enough code to merit a separate file. Create a new directory named `js`, and add to it a new file called `validate.js`.
 
 `<amp-script>` allows your JavaScript to manipulate its DOM children - the elements the component encloses. It copies those DOM children into a virtual DOM, and it gives your code access to this virtual DOM. In this exercise, we want our JavaScript to control our `<form>` and its contents. So, we'll wrap the `<form>` in an `<amp-script>` component, like this:
 
 ```html
-<amp-script src="js/script.js" layout="fixed" sandbox="allow-forms" height="500" width="750">
+<amp-script src="js/validate.js" layout="fixed" sandbox="allow-forms" height="500" width="750">
   <form method="post" action-xhr="#" target="_top" class="card">
     ...
   </form>
@@ -97,11 +98,15 @@ Our `<amp-script>` includes the attribute `sandbox="allow-forms"`. That tells AM
 
 Since AMP aims to guarantee a fast, visually stable user experience, it won't let our JavaScript make unrestricted changes to the DOM at any time. Your JavaScript can make more changes if the size of the `<amp-script>` component can't change. It also allows more substantial changes after a user interaction. You can find details in [the reference documentation](../../../documentation/components/reference/amp-script.md). For this tutorial, it suffices to know that we've specified a `layout` type that isn't `container`, and we've used HTML attributes to lock down the component's size. This means that any DOM manipulations are restricted to a certain area of the page.
 
-If you're using the [AMP validator Chrome extension](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) or checking your Console, you will now see an error message:
+If you're using the [AMP validator Chrome extension](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc) you will now see an error message:
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/relative-url-error.png', 600, 177, layout='intrinsic', alt='Error about relative URL', align='center' ) }}
 
-What does this mean? AMP components that specify a file require an absolute URL. This is necessary because our AMP document might be served from [an AMP cache](https://medium.com/@pbakaus/why-amp-caches-exist-cd7938da2456). When that happens, unless our site uses a [signed exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges), our content will be served from a different domain. (To learn more about AMP caches and signed exchanges, [see here](../../../documentation/guides-and-tutorials/optimize-and-measure/signed-exchange.md).) Using an absolute URL like `http://localhost/js/script.js` would fix this. But AMP also requires the use of [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). So we would still get a validation error, and setting up SSL on our local webserver is outside the scope of this tutorial. If you want to do it, you can follow the instructions in [this post](https://timonweb.com/posts/running-expressjs-server-over-https/).
+[tip type="note"]
+If you don't have this extension, append `#development=1` to your URL, and AMP will output validation errors to your Console.
+[/tip]
+
+What does this mean? AMP components that specify a file require an absolute URL. This is necessary because our AMP document might be served from [an AMP cache](https://blog.amp.dev/2017/01/13/why-amp-caches-exist). When that happens, unless our site uses a [signed exchange](https://developers.google.com/web/updates/2018/11/signed-exchanges), our content will be served from a different domain. (To learn more about AMP caches and signed exchanges, [see here](../../../documentation/guides-and-tutorials/optimize-and-measure/signed-exchange.md).) Using an absolute URL like `http://localhost/js/validate.js` would fix this. But AMP also requires the use of [HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https). So we would still get a validation error, and setting up SSL on our local webserver is outside the scope of this tutorial. If you want to do it, you can follow the instructions in [this post](https://timonweb.com/posts/running-expressjs-server-over-https/).
 
 Next, we can remove the`pattern` attribute and its regular expression from our form: we won't need it anymore!
 
@@ -112,7 +117,7 @@ pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-z\d]).{8,}$"
 on="tap:rules.show; input-debounced:rules.show"
 ```
 
-Now let's make sure our `<amp-script>` is working. Open the `script.js` file you created and add a debug message:
+Now let's make sure our `<amp-script>` is working. Open the `validate.js` file you created and add a debug message:
 
 ```js
 console.log("Hello, amp-script!");
@@ -136,7 +141,7 @@ In Chrome DevTools, open the "Sources" tab. At the bottom you will see a long he
 
 Now that we know that our `<amp-script>` is working, let's write some JavaScript!
 
-The first thing we want to do is grab the DOM elements we'll be working with and stash those in globals. Our code will use the password input, the submit button, and the area that shows the password rules. Add these three declarations to `script.js`:
+The first thing we want to do is grab the DOM elements we'll be working with and stash those in globals. Our code will use the password input, the submit button, and the area that shows the password rules. Add these three declarations to `validate.js`:
 
 ```js
 const passwordBox = document.getElementById("passwordBox");
@@ -146,7 +151,7 @@ const rulesArea = document.getElementById("rules");
 
 Notice that we're able to use regular DOM API methods like `getElementById()`. Although our code runs in a worker, and workers lack direct access to the DOM, `<amp-script>` provides a virtual copy of the DOM and emulates some common APIs, listed [here](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md). These APIs give us enough tools to cover most use cases. But it's important to note that only a subset of the DOM API is supported. Otherwise, the JavaScript included with `<amp-script>` would be enormous, negating AMP's performance benefits!
 
-We need to add these id's to two of the elements. Open up index.html, locate the password `<input>` and the submit `<button>`, and add the id's:
+We need to add these id's to two of the elements. Open up `index.html`, locate the password `<input>` and the submit `<button>`, and add the id's:
 
 ```html
 <input type=password 
@@ -175,7 +180,7 @@ We'll also add id's to each `<li>` in `<div id="rules">`. Each of these contains
 
 ## Implementing our password checks in JavaScript
 
-Next, we'll unpack the regular expressions from our `pattern` attribute. Each regex represented one of our rules. Let's add an object map to the bottom of `script.js` that associates each rule with the criterion it checks.
+Next, we'll unpack the regular expressions from our `pattern` attribute. Each regex represented one of our rules. Let's add an object map to the bottom of `validate.js` that associates each rule with the criterion it checks.
 
 ```js
 const checkRegexes = {
@@ -265,7 +270,7 @@ element.addEventListener("focus", () => rulesArea.removeAttribute("hidden"));
 element.addEventListener("keyup", checkPassword);
 ```
 
-Finally, at the very end of `script.js`, add a line that initializes `initCheckPassword` with the password `<input>` DOM element:
+Finally, at the very end of `validate.js`, add a line that initializes `initCheckPassword` with the password `<input>` DOM element:
 
 ```js
 initCheckPassword(passwordBox);
