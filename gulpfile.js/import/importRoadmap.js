@@ -36,7 +36,7 @@ const ROADMAP_DIRECTORY_PATH = utils.project.absolute('pages/shared/data');
 const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
 // RegEx to extract date from issue title
-const STATUS_UPDATE_REGEX = /(\d*)-(\d*)-(\d*)/;
+const STATUS_UPDATE_REGEX = /(\d\d\d\d)-(\d*)-(\d*)/;
 
 /**
  * Extract status update issues from working groups and
@@ -81,7 +81,7 @@ async function importRoadmap() {
     for (const issue of issues) {
       const createdAt = new Date(issue.created_at).toDateString();
       const title = emojiStrip(issue.title);
-      const body = emojiStrip(issue.body);
+      const body = emojiStrip(issue.body).trim();
 
       // Parse status update date from from issue title and set quarter
       let statusUpdate = title.match(STATUS_UPDATE_REGEX);
@@ -103,9 +103,7 @@ async function importRoadmap() {
         'created_at': createdAt,
         'status_update': statusUpdate,
         'quarter': quarter,
-        'title': title,
         'number': issue.number,
-        'author': issue.user.login,
         'html_url': issue.html_url,
         'body': body,
       });
@@ -114,14 +112,26 @@ async function importRoadmap() {
     log.info(`.. ${wg.name} - ${issues.length} issues imported`);
   }
 
-  // Sort issues by date
-  roadmap = roadmap.sort((a, b) => {
-    return new Date(b.status_update) - new Date(a.status_update);
-  });
+  // Sort issues by date and
+  roadmap = roadmap
+    .sort((a, b) => {
+      return new Date(b.status_update) - new Date(a.status_update);
+    })
+
+  const quarters = [];
+  var prevQuater = '';
+  for (var i = 0; i < roadmap.length; i++) {
+    const issue = roadmap[i];
+    if (issue.quarter != prevQuater) {
+      quarters.push([]);
+    }
+    prevQuater = issue.quarter;
+    quarters[quarters.length -1].push(roadmap[i]);
+  }
 
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.safeDump({'roadmap': roadmap})
+    yaml.safeDump({'list': quarters})
   );
 
   log.success(
