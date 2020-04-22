@@ -381,6 +381,18 @@ developer:
       height: 600
     formats:
       - email
+  - name: Ampify.io
+    url: https://www.ampify.io/
+    type: Development Platform
+    description: Fast and accurate conversion of dynamic websites to AMP. SaaS based for easy deployment. Supports all technologies.
+    image:
+      src: /static/img/tools/ampify.svg
+      width: 1500
+      height: 1000
+      fit: contain
+      bgcolor: "#55BFA7"
+    formats:
+      - websites
 providers:
   - name: WompMobile
     url: https://www.wompmobile.com/amp-experience-platform/

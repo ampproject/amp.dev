@@ -40,11 +40,18 @@
     top: 12px;
     right: 20px;
     cursor: pointer;
+
     &.mainmenuopen {
       z-index: 1004;
     }
+
     .has-banner + & {
       top: calc(12px + #{$bannerHeight});
+    }
+
+    amp-user-notification[hidden] + .has-banner + &,
+    .amp-hidden + .has-banner + & {
+      top: 12px;
     }
 
     @media (min-width: 768px) {

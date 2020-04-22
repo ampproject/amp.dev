@@ -10,16 +10,22 @@
 
 {# Simply set to False to disable banner #}
 {% set show_banner = True %}
+{% set banner_notification_id = 'amp-devx-survey' %}
 {% set banner_closeable = True %}
-{% if show_banner %}
-  {% set banner %}
-  {% include '/views/partials/banner.j2' %}
-  {% endset %}
+
+{% if show_banner and banner_closeable %}
+{# Outside of the banner.j2 partial as it needs to be at root level
+to provide its state to other components #}
+{% do doc.amp_dependencies.add('amp-user-notification', '0.1') %}
+<amp-user-notification id="{{ banner_notification_id }}" class="ap-m-banner-user-notification" layout="nodisplay">
+</amp-user-notification>
 {% endif %}
 
 {% do doc.styles.addCssFile('/css/components/organisms/header.css') %}
-<header class="ap--header{{' has-banner' if show_banner}}" [class]="mainmenuopen ? 'ap--header{{' has-banner' if show_banner}} mainmenuopen' : 'ap--header{{' has-banner' if show_banner}}'">
-  {{ banner if show_banner }}
+<header class="ap--header {{'has-banner' if show_banner}}" [class]="'ap--header {{'has-banner' if show_banner}} ' + (mainmenuopen ? 'mainmenuopen' : '')">
+  {% if show_banner %}
+    {% include '/views/partials/banner.j2' %}
+  {% endif %}
 
   <div class="ap-o-header">
     <a class="ap-o-header-home" href="{{g.doc('/content/amp-dev/index.html', locale=doc.locale).url.path}}">
