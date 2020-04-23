@@ -723,6 +723,8 @@ email:
           url: https://www.e-village.com/clang/
         - label: Copernica
           url: https://www.copernica.com/
+        - label: Customer.io
+          url: https://customer.io/
         - label: eSputnik
           url: https://esputnik.com/
         - label: ExpressPigeon
@@ -741,6 +743,8 @@ email:
           url: https://messagegears.com/
         - label: MindBox
           url: https://mindbox.cloud/
+        - label: MoonMail
+          url: https://www.moonmail.io
         - label: Pepipost
           url: https://pepipost.com/
         - label: SendPulse
@@ -751,3 +755,4 @@ email:
           url: https://www.sparkpost.com/
         - label: Twilio Sendgrid
           url: https://www.twilio.com/sendgrid
+
