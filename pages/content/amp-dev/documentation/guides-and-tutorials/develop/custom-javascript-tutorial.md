@@ -1,5 +1,5 @@
 ---
-$title: Use JavaScript in AMP
+$title: Create a UI widget with custom JavaScript
 $order: 101
 formats:
   - websites
