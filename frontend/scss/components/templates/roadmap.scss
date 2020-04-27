@@ -103,7 +103,9 @@
 
         &.active {
           color: color('white');
-
+          &.reset {
+            background: color('blue-ribbon');
+          }
           &.access-subscriptions {
             background: color('cinnabar');
           }
@@ -133,33 +135,6 @@
           }
           &.performance, &.caching {
             background: color('blue-ribbon');
-          }
-        }
-
-        span {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          position: absolute;
-          width: 0;
-          height: 100%;
-          top: 0;
-          right: 0;
-
-          svg {
-            width: 8px;
-            height: 8px;
-            margin: 1px -10px 0 0;
-            opacity: 0;
-            fill: black; //  color('white');
-            transition: 200ms;
-          }
-          &.show {
-            width: 100%;
-            svg {
-              margin-right: 10px;
-              opacity: 1;
-            }
           }
         }
       }
@@ -224,19 +199,13 @@
         width: 80%;
       }
 
-      &-title {
+      &-quarter-separator {
         display: inline-block;
-        margin: 20px 0 10px;
         opacity: .3;
         font-size: 28px;
-        height: 20px;
 
         @media (min-width: 768px) {
           opacity: 0;
-
-          &:first-child {
-            display: none;
-          }
         }
       }
 
@@ -298,6 +267,10 @@
               width: 23px;
               height: 23px;
               fill: color('blue-ribbon');
+            }
+
+            &[slot="expanded"] svg {
+              transform: rotate(180deg);
             }
           }
 
