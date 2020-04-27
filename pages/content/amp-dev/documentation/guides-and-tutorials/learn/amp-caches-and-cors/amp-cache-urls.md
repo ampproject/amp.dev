@@ -208,7 +208,7 @@ The rest of the algorithm assumes that the “domain prefix” contains at least
 1.  Iterate through the characters output by Step 2 in order, emitting them as encountered. When you encounter a "`-`" (hyphen), peek at the following character. If the following character is also a "`-`" (hyphen), skip both characters from the input and emit a single "`-`" (hyphen). If the following character is any other character, skip only the current single "`-`" (hyphen) and emit a "`.`" (dot).  For example, `a--b-example-com` becomes `a-b.example.com`.
 1.  Punycode encode the result of Step 3. See [RFC 3492](https://tools.ietf.org/html/rfc3492) for punycode.
 
-The result of Step 3 will be the Publisher Domain. The protocol is unavailable from the domain itself, but is either `http` or `https`. The port is always the default for the protocol.
+The result of Step 4 will be the Publisher Domain. The protocol is unavailable from the domain itself, but is either `http` or `https`. The port is always the default for the protocol.
 
 
 ## Redirect & Error Handling
