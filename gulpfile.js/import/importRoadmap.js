@@ -113,10 +113,9 @@ async function importRoadmap() {
   }
 
   // Sort issues by date and
-  roadmap = roadmap
-    .sort((a, b) => {
-      return new Date(b.status_update) - new Date(a.status_update);
-    })
+  roadmap = roadmap.sort((a, b) => {
+    return new Date(b.status_update) - new Date(a.status_update);
+  });
 
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
