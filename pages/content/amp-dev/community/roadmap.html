@@ -55,10 +55,10 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <div class="ap-o-roadmap-filter-list">
         <button class="ap-m-filter-bubble reset [% if not category %]active[% endif %]"
             on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}')">
-          All
+          all
         </button>
         {% for workingGroup in doc.roadmap.list|map(attribute='wg_name')|unique|list %}
-        <button class="ap-m-filter-bubble {{ workingGroup|slug }} [% if category == '{{ workingGroup|slug }}'|lower or not category%]active[% endif %]"
+        <button class="ap-m-filter-bubble {{ workingGroup|slug }} [% if category == '{{ workingGroup|slug }}'|lower %]active[% endif %]"
             on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}?category={{ workingGroup|slug }}')">
           {{ workingGroup }}
         </button>
