@@ -126,17 +126,18 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
         [% if category in '{{ issue.wg_name }}' %]
 
         {% if doc.roadmap.list[ loop.index-2 ].quarter != issue.quarter %}
+        <amp-position-observer intersection-ratios="1"
+            target="{{ issue.quarter|slug }}"
+            on="enter:anim-{{ issue.quarter|slug }}.start"
+            layout="nodisplay">
+        </amp-position-observer>
         <div class="ap-o-roadmap-list-quarter-separator">
-          <amp-position-observer intersection-ratios="1"
-              on="enter:anim-{{ issue.quarter|slug }}.start"
-              layout="nodisplay">
-          </amp-position-observer>
-          <h3 id="{{ issue.quarter|slug }}">{{ issue.quarter }}</h3>
+          <h3>{{ issue.quarter }}</h3>
         </div>
         {% endif %}
-
-        <div class="ap-o-roadmap-list-item">
-          <span class="ap-o-roadmap-list-item-timeline">
+        <div class="ap-o-roadmap-list-item" {% if doc.roadmap.list[ loop.index-2 ].quarter != issue.quarter %}id="{{ issue.quarter|slug }}"{% endif %}>
+          <span class="ap-o-roadmap-list-item-timeline ap-o-roadmap-list-item-timeline--vertical"></span>
+          <span class="ap-o-roadmap-list-item-timeline ap-o-roadmap-list-item-timeline--horizontal">
             <span class="ap-o-roadmap-list-item-timeline-dot"></span>
           </span>
 
@@ -144,8 +145,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
             <amp-truncate-text layout="fixed-height" height="12em">
               <h4 class="ap-o-roadmap-list-item-issue-title">{{ issue.wg_name }}</h4>
               <span class="ap-o-roadmap-list-item-issue-subtitle">Status Update {{ issue.status_update }}</span>
-              <p class="ap-o-roadmap-list-item-issue-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-
               <div class="ap-o-roadmap-list-item-issue-body">
                 {{ issue.body|markdown|safe }}
                 <a href="{{ issue.html_url }}">See details on GitHub</a>

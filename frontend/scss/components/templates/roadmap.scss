@@ -91,8 +91,8 @@
     }
 
     &-filter {
-      grid-column: 8/23;
-      margin-bottom: 7em;
+      grid-column: 8/22;
+      margin-bottom: 4em;
 
       .#{molecule('filter-bubble')} {
         background: color('white');
@@ -166,30 +166,27 @@
       &-list {
         position: sticky;
         top: 100px;
-        padding-top: 26px;
+        padding-top: 27px;
+        margin-bottom: 277px;
 
         &-item {
           position: relative;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          width: 100%;
+          padding: 0;
           border: 0;
           background: transparent;
 
-          &:hover {
-            opacity: 1;
-          }
-
           &-title {
-            margin: 22px 0;
+            margin: 15px 0;
             font-size: 28px;
             white-space: nowrap;
           }
 
           &-timeline {
             flex: 1 0 auto;
-            top: 50%;
-            right: 0;
             height: 2px;
             margin-left: 20px;
             opacity: 0;
@@ -207,32 +204,47 @@
         width: 80%;
       }
 
-      &-quarter-separator {
-        display: inline-block;
-        opacity: .3;
+      &-quarter-separator h3 {
         font-size: 28px;
 
         @media (min-width: 768px) {
-          opacity: 0;
+          display: none;
         }
       }
 
       &-item {
         position: relative;
         padding-bottom: 15px;
-        border-left: 2px solid #dde6f7;
+
+        &:target:before {
+          display: none;
+        }
+
+        &:last-child {
+          .ap-o-roadmap-list-item-timeline--vertical {
+            display: none;
+          }
+        }
 
         &-timeline {
           display: none;
           position: absolute;
-          left: 0;
-          top: 60px;
-          width: 7%;
-          height: 2px;
           background: #DDE6F7;
+          left: 0;
+          top: 57px;
 
           @media (min-width: 768px) {
             display: flex;
+          }
+
+
+          &--vertical {
+            width: 2px;
+            height: 100%;
+          }
+          &--horizontal {
+            width: 7%;
+            height: 2px;
           }
 
           &-dot {
@@ -294,17 +306,12 @@
             color: #48525c;
           }
 
-          &-description {
-            padding-top: 15px;
+          &-body {
             margin-top: 15px;
+            padding-top: 15px;
             border-top: solid 1px #eaeaea;
 
-            @media (min-width: 768px) {
-              width: 80%;
-            }
-          }
 
-          &-body {
             @media (min-width: 768px) {
               column-count: 2;
             }
