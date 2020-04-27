@@ -103,38 +103,39 @@
 
         &.active {
           color: color('white');
+
           &.reset {
             background: color('blue-ribbon');
           }
-          &.access-subscriptions {
-            background: color('cinnabar');
-          }
-          &.amp4email, &.infra {
-            background: color('mountain-meadow');
-          }
-          &.approvers, &.outreach {
-            background: color('pickled-bluewood');
-          }
-          &.bento, &.ui-and-a11y {
-            background: color('zest');
-          }
-          &.ads, &.stories {
-            background: color('buttercup');
-          }
-          &.security-privacy, &.foundation-onboarding {
+          &.analytics {
             background: color('mariner');
           }
-          &.analytics {
-            background: color('persimmon');
-          }
-          &.viewers, &.codeofconduct {
-            background: color('shamrock');
+          &.ui-and-a11y {
+            background: color('bondi-blue');
           }
           &.runtime {
+            background: color('robins-egg');
+          }
+          &.stories {
+            background: color('mountain-meadow');
+          }
+          &.ads {
+            background: color('buttercup');
+          }
+          &.bento {
+            background: color('zest');
+          }
+          &.outreach {
+            background: color('crimson');
+          }
+          &.performance {
+            background: color('french-rose');
+          }
+          &.amp4email {
             background: color('lavender');
           }
-          &.performance, &.caching {
-            background: color('blue-ribbon');
+          &.infra {
+            background: color('studio');
           }
         }
       }
@@ -333,35 +334,38 @@
             }
           }
 
-          &.access-subscriptions {
-            border-color: color('cinnabar');
-          }
-          &.amp4email, &.infra {
-            border-color: color('mountain-meadow');
-          }
-          &.approvers, &.outreach {
-            border-color: color('pickled-bluewood');
-          }
-          &.bento, &.ui-and-a11y {
-            border-color: color('zest');
-          }
-          &.ads, &.stories {
-            border-color: color('buttercup');
-          }
-          &.security-privacy, &.foundation-onboarding {
-            border-color: color('mariner');
+          &.reset {
+            border-color: color('blue-ribbon');
           }
           &.analytics {
-            border-color: color('persimmon');
+            border-color: color('mariner');
           }
-          &.viewers, &.codeofconduct {
-            border-color: color('shamrock');
+          &.ui-and-a11y {
+            border-color: color('bondi-blue');
           }
           &.runtime {
+            border-color: color('robins-egg');
+          }
+          &.stories {
+            border-color: color('mountain-meadow');
+          }
+          &.ads {
+            border-color: color('buttercup');
+          }
+          &.bento {
+            border-color: color('zest');
+          }
+          &.outreach {
+            border-color: color('crimson');
+          }
+          &.performance {
+            border-color: color('french-rose');
+          }
+          &.amp4email {
             border-color: color('lavender');
           }
-          &.performance, &.caching {
-            border-color: color('blue-ribbon');
+          &.infra {
+            border-color: color('studio');
           }
         }
       }
