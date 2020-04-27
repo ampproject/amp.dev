@@ -118,20 +118,9 @@ async function importRoadmap() {
       return new Date(b.status_update) - new Date(a.status_update);
     })
 
-  const quarters = [];
-  var prevQuater = '';
-  for (var i = 0; i < roadmap.length; i++) {
-    const issue = roadmap[i];
-    if (issue.quarter != prevQuater) {
-      quarters.push([]);
-    }
-    prevQuater = issue.quarter;
-    quarters[quarters.length -1].push(roadmap[i]);
-  }
-
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.safeDump({'list': quarters})
+    yaml.safeDump({'list': roadmap})
   );
 
   log.success(
