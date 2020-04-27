@@ -725,6 +725,10 @@ email:
           url: https://www.copernica.com/
         - label: Customer.io
           url: https://customer.io/
+        - label: dotdigital
+          url: https://dotdigital.com/
+        - label: Elastic Email
+          url: https://elasticemail.com/
         - label: eSputnik
           url: https://esputnik.com/
         - label: ExpressPigeon
@@ -735,6 +739,10 @@ email:
           url: https://www.klaviyo.com/
         - label: MagNews
           url: https://www.magnews.com/
+        - label: Mailrelay
+          url: https://mailrelay.com/
+        - label: Mapp Cloud
+          url: https://mapp.com/
         - label: Maileon
           url: https://www.maileon.com
         - label: Mailgun
@@ -753,6 +761,7 @@ email:
           url: https://www.socketlabs.com/
         - label: Sparkpost
           url: https://www.sparkpost.com/
+        - label: Tripolis
+          url: https://www.tripolis.com/
         - label: Twilio Sendgrid
           url: https://www.twilio.com/sendgrid
-
