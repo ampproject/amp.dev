@@ -88,9 +88,8 @@ All publisher domains map to a unique domain prefix. The algorithm for doing so 
 The basic algorithm for converting a publisher domain to a domain prefix is as follows:
 
 1.  Punycode Decode the publisher domain. See [RFC 3492](https://tools.ietf.org/html/rfc3492)
-1.  Replace any "`-`" (hyphen) character in the output of step 1 with "`--`" (two hyphens).
-1.  Replace any "`.`" (dot) character in the output of step 2 with "`-`" (hyphen).
-1.  If the output of step 3 has a "`-`" (hyphen) at both positions 3 and 4, then to the output of step 3, add a prefix of "`0-`" and add a suffix of "`-0`". See [#26205](https://github.com/ampproject/amphtml/issues/26205) for background.
+1.  Replace any ‘`-`’ (hyphen) character in the output of step 1 with ‘`--`’ (two hyphens).
+1.  Replace any ‘`.`’ (dot) character in the output of step 2 with ‘`-`’ (hyphen).
 1.  Punycode Encode the output of step 3. See [RFC 3492](https://tools.ietf.org/html/rfc3492)
 
 A few examples of the basic algorithm:
@@ -129,7 +128,7 @@ A few examples of the basic algorithm:
   <tr>
    <td><code>en-us.example.com</code>
    </td>
-   <td><code>0-en--us-example-com-0</code>
+   <td><code>en--us-example-com</code>
    </td>
   </tr>
 </table>
@@ -137,7 +136,11 @@ A few examples of the basic algorithm:
 
 After running the basic algorithm, if and only if the domain prefix is not a valid DNS label, we run the Fallback Algorithm described below.
 
-A domain prefix is not a valid DNS label if it is longer than 63 characters
+The reasons for a domain prefix not being a valid DNS label include:
+
+1.  The domain prefix is longer than 63 characters.
+1.  The domain prefix has a `-` hyphen in positions 3 and 4, but does not begin with `xn--`. The `en--us-example-com` domain prefix in the above table is an example of this.
+1.  The domain prefix begins or ends with a ‘`-`’ (hyphen). This case is mentioned for completeness, however the basic algorithm can only generate this case if the publisher domain also begins or ends with a ‘`-`’ (hypen), which would mean the publisher domain is also an invalid DNS label. Therefore, this case cannot happen in practice.
 
 
 ### Fallback Algorithm
@@ -204,9 +207,8 @@ The rest of the algorithm assumes that the “domain prefix” contains at least
 
 
 1.  If the domain prefix starts with `xn--`, punycode decode the “domain prefix”. For example `xn---com-p33b41770a` becomes `⚡😊-com`. See [RFC 3492](https://tools.ietf.org/html/rfc3492) for punycode.
-1.  If the domain prefix starts with "`0-`" and ends with "`-0`", strip both the "`0-`" prefix and the "-0" suffix.
-1.  Iterate through the characters output by Step 2 in order, emitting them as encountered. When you encounter a "`-`" (hyphen), peek at the following character. If the following character is also a "`-`" (hyphen), skip both characters from the input and emit a single "`-`" (hyphen). If the following character is any other character, skip only the current single "`-`" (hyphen) and emit a "`.`" (dot).  For example, `a--b-example-com` becomes `a-b.example.com`.
-1.  Punycode encode the result of Step 3. See [RFC 3492](https://tools.ietf.org/html/rfc3492) for punycode.
+1.  Iterate through the characters output by Step 1 in order, emitting them as encountered. When you encounter a ‘`-`’ (hyphen), peek at the following character. If the following character is also a ‘`-`’ (hyphen), skip both characters from the input and emit a single ‘`-`’ (hyphen). If the following character is any other character, skip only the current single ‘`-`’ (hyphen) and emit a ‘`.`’ (dot).  For example, `a--b-example-com` becomes `a-b.example.com`.
+1.  Punycode encode the result of Step 2. See [RFC 3492](https://tools.ietf.org/html/rfc3492) for punycode.
 
 The result of Step 3 will be the Publisher Domain. The protocol is unavailable from the domain itself, but is either `http` or `https`. The port is always the default for the protocol.
 
