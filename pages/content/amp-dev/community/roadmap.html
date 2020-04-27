@@ -105,16 +105,16 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
               }
             </script>
           </amp-animation>
-          <a class="ap-o-roadmap-navigation-list-item"
+          <button class="ap-o-roadmap-navigation-list-item"
               id="nav-item-{{ quarter|slug }}"
-              href="#{{ quarter|slug }}">
+              on="tap:{{ quarter|slug }}.scrollTo(duration=250)">
             <h3 class="ap-o-roadmap-navigation-list-item-title">
               {{ quarter }}
             </h3>
             <span class="ap-o-roadmap-navigation-list-item-timeline"
                 id="nav-item-timeline-{{ quarter|slug }}">
             </span>
-          </a>
+          </button>
           {% endfor %}
         </div>
       </div>
