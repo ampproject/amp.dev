@@ -101,7 +101,8 @@
         transition: 200ms;
         margin: 5px;
 
-        &.active {
+        &.active,
+        &:hover {
           color: color('white');
 
           &.reset {
@@ -309,19 +310,36 @@
 
           &-body {
             margin-top: 15px;
-            padding-top: 15px;
             border-top: solid 1px #eaeaea;
-
+            display: flex;
+            flex-direction: column;
 
             @media (min-width: 768px) {
-              column-count: 2;
+              flex-direction: row;
+            }
+
+            &-column {
+              padding-right: 5px;
+
+              @media (min-width: 768px) {
+                padding-right: 20px;
+                width: 50%;
+              }
             }
 
             h1, h2, h3 {
+              margin-top: 20px;
               font-size: 16px;
+              color: #48525C;
             }
+
             ul {
               padding-left: 18px;
+            }
+
+            li, p {
+              margin: 0;
+              line-height: 2;
             }
 
             code {
@@ -331,6 +349,7 @@
               color: #000;
               background-color: #eaeaea;
               font-size: .9em;
+              white-space: nowrap;
             }
           }
 
