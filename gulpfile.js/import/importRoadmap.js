@@ -37,7 +37,8 @@ const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
 // RegEx to extract date from issue title
 const STATUS_UPDATE_REGEX = /(\d\d\d\d)-(\d*)-(\d*)/;
-
+const AMP_COMPONENT_REGEX = /\s(<amp-[\S]*>)/g;
+const TEXT_BLOCK_REGEX = /#{1,3} [^#]+/g;
 /**
  * Extract status update issues from working groups and
  * return them sorted by date/quarter
@@ -83,7 +84,10 @@ async function importRoadmap() {
       const title = emojiStrip(issue.title);
 
       // Escape amp components from markdown to prevent amp-optimizer errors
-      const body = emojiStrip(issue.body).trim().replace(/\s(<amp-[\S]*>)/g, ' `$1`');
+      let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
+
+      // Remove Emojis and split into separate text blocks to allow smoother line breaks in frontend
+      body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
 
       // Parse status update date from from issue title and set quarter
       let statusUpdate = title.match(STATUS_UPDATE_REGEX);
@@ -114,7 +118,7 @@ async function importRoadmap() {
     log.info(`.. ${wg.name} - ${issues.length} issues imported`);
   }
 
-  // Sort issues by date and
+  // Sort issues by date
   roadmap = roadmap.sort((a, b) => {
     return new Date(b.status_update) - new Date(a.status_update);
   });
