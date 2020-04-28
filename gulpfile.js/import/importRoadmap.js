@@ -81,7 +81,9 @@ async function importRoadmap() {
     for (const issue of issues) {
       const createdAt = new Date(issue.created_at).toDateString();
       const title = emojiStrip(issue.title);
-      const body = emojiStrip(issue.body).trim();
+
+      // Escape amp components from markdown to prevent amp-optimizer errors
+      const body = emojiStrip(issue.body).trim().replace(/\s(<amp-[\S]*>)/g, ' `$1`');
 
       // Parse status update date from from issue title and set quarter
       let statusUpdate = title.match(STATUS_UPDATE_REGEX);
