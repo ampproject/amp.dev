@@ -45,7 +45,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
             on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}')">
           all
         </button>
-        {% for workingGroup in doc.roadmap.list|map(attribute='wg_name')|unique|list %}
+        {% for workingGroup in doc.roadmap.working_groups %}
         <button class="ap-m-filter-bubble {{ workingGroup|slug }} [% if category == '{{ workingGroup|slug }}'|lower %]active[% endif %]"
             on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}?category={{ workingGroup|slug }}')">
           {{ workingGroup }}

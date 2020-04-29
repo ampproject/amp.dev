@@ -47,6 +47,7 @@ const TEXT_BLOCK_REGEX = /#{1,3} [^#]+/g;
  */
 
 async function importRoadmap() {
+  let workingGroups = [];
   let roadmap = [];
 
   log.start('Importing Roadmap data for ..');
@@ -104,6 +105,7 @@ async function importRoadmap() {
         continue;
       }
 
+      workingGroups.push(workingGroupName);
       roadmap.push({
         'wg_name': workingGroupName,
         'created_at': createdAt,
@@ -118,18 +120,18 @@ async function importRoadmap() {
     log.info(`.. ${wg.name} - ${issues.length} issues imported`);
   }
 
-  // Sort issues by date
   roadmap = roadmap.sort((a, b) => {
     return new Date(b.status_update) - new Date(a.status_update);
   });
+  workingGroups = [...new Set(workingGroups.sort())];
 
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.safeDump({'list': roadmap})
+    yaml.safeDump({'working_groups': workingGroups, 'list': roadmap})
   );
 
   log.success(
-    `Successfully imported ${roadmap.length} roadmap status update issues`
+    `Successfully imported ${roadmap.length} roadmap status update issues from ${workingGroups.length} working groups`
   );
 }
 
