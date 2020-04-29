@@ -2,9 +2,7 @@
 $title: Actions and events
 order: 7
 formats:
-  - websites
-  - stories
-  - ads
+  - email
 teaser:
   text: >-
     The on attribute is used to install event handlers on elements. The events
@@ -234,10 +232,6 @@ event.index</pre></td>
     <th width="40%">Data</th>
   </tr>
   <tr>
-    <td><code>changeToLayoutContainer</code></td>
-    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONAINTER"</code>.</td>
-  </tr>
-  <tr>
     <td><code>fetch-error</code>(low-trust)</td>
     <td>Fired when fetching data fails.</td>
     <td>None</td>
@@ -296,26 +290,6 @@ event.selectedOptions</pre></td>
     <td><code>fetch-error</code>(low-trust)</td>
     <td>Fired when fetching data fails.</td>
     <td>None</td>
-  </tr>
-</table>
-
-### amp-video, amp-youtube <a name="amp-video-amp-youtube"></a>
-
-<table>
-  <tr>
-    <th width="25%">Event</th>
-    <th width="35%">Description</th>
-    <th width="40%">Data</th>
-  </tr>
-  <tr>
-    <td><code>firstPlay</code>(low-trust)</td>
-    <td>Fired the first time the video is played by the user. On autoplay videos, this is fired as soon as the user interacts with the video. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><code>timeUpdate</code>(low-trust)</td>
-    <td>Fired when the playing position of a video has changed. Frequency of the event is controlled by AMP and is currently set at 1 second intervals. This event is low-trust which means it can not trigger most actions; only low-trust actions such as <code>amp-animation</code> actions can be run.</td>
-    <td><code>{time, percent}</code><code>time</code> indicates the current time in seconds, <code>percent</code> is a number between 0 and 1 and indicates current position as percentage of total time.</td>
   </tr>
 </table>
 
@@ -404,52 +378,6 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-audio <a name="amp-audio"></a>
-
-<table>
-  <tr>
-    <th width="20%">Action</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>play</code></td>
-    <td>Plays the audio. Is a no-op if the <code>&lt;amp-audio></code> element is a descendant of <code>&lt;amp-story></code>.</td>
-  </tr>
-  <tr>
-    <td><code>pause</code></td>
-    <td>Pauses the audio. Is a no-op if the <code>&lt;amp-audio></code> element is a descendant of <code>&lt;amp-story></code>.</td>
-  </tr>
-</table>
-
-### amp-bodymovin-animation <a name="amp-bodymovin-animation"></a>
-
-<table>
-  <tr>
-    <th>Action</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>play</code></td>
-    <td>Plays the animation.</td>
-  </tr>
-  <tr>
-    <td><code>pause</code></td>
-    <td>Pauses the animation.</td>
-  </tr>
-  <tr>
-    <td><code>stop</code></td>
-    <td>Stops the animation.</td>
-  </tr>
-  <tr>
-    <td><code>seekTo(time=INTEGER)</code></td>
-    <td>Sets the currentTime of the animation to the specified value and pauses animation. </td>
-  </tr>
-  <tr>
-    <td><code>seekTo(percent=[0,1])</code></td>
-    <td>Uses the given percentage value to determine the currentTime of the animation to the specified value and pauses animation. </td>
-  </tr>
-</table>
-
 ### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
 
 <table>
@@ -460,10 +388,6 @@ event.response</pre></td>
   <tr>
     <td><code>goToSlide(index=INTEGER)</code></td>
     <td>Advances the carousel to a specified slide index.</td>
-  </tr>
-  <tr>
-    <td><code>toggleAutoplay(toggleOn=true|false)</code></td>
-    <td>Toggle the carousel's autoplay status. <code>toggleOn</code> is optional.</td>
   </tr>
 </table>
 
@@ -497,19 +421,6 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-lightbox-gallery <a name="amp-lightbox-gallery"></a>
-
-<table>
-  <tr>
-    <th>Action</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>open</code></td>
-    <td>Opens the lightbox-gallery. Can be triggered by tapping another element, if you specify the image id: `on="tap:amp-lightbox-gallery.open(id='image-id')"`.</td>
-  </tr>
-</table>
-
 ### amp-list <a name="amp-list-1"></a>
 
 <table>
@@ -517,22 +428,13 @@ event.response</pre></td>
     <th>Action</th>
     <th>Description</th>
   </tr>
+    <tr>
+    <td><code>changeToLayoutContainer</code></td>
+    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONAINTER"</code>.</td>
+  </tr>
   <tr>
     <td><code>refresh</code></td>
     <td>Refreshes data from the <code>src</code> and re-renders the list.</td>
-  </tr>
-</table>
-
-### amp-live-list <a name="amp-live-list"></a>
-
-<table>
-  <tr>
-    <th>Action</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>update (default)</code></td>
-    <td>Updates the DOM items to show updated content.</td>
   </tr>
 </table>
 
@@ -582,63 +484,6 @@ event.response</pre></td>
   </tr>
 </table>
 
-### amp-state <a name="amp-state-1"></a>
-
-<table>
-  <tr>
-    <th>Action</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>refresh</code></td>
-    <td>Refetches data at the `src` attribute while ignoring browser cache.</td>
-  </tr>
-</table>
-
-### amp-user-notification <a name="amp-user-notification"></a>
-
-<table>
-  <tr>
-    <th>Action</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>dismiss (default)</code></td>
-    <td>Hides the referenced user notification element.</td>
-  </tr>
-</table>
-
-### Video elements <a name="video-elements"></a>
-
-The actions below are supported in the following AMP video elements: `amp-video`, `amp-youtube`, `amp-3q-player`, `amp-brid-player`, `amp-dailymotion`, `amp-delight-player`, `amp-ima-video`.
-
-<table>
-  <tr>
-    <th>Action</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>play</code></td>
-    <td>Plays the video.</td>
-  </tr>
-  <tr>
-    <td><code>pause</code></td>
-    <td>Pauses the video.</td>
-  </tr>
-  <tr>
-    <td><code>mute</code></td>
-    <td>Mutes the video.</td>
-  </tr>
-  <tr>
-    <td><code>unmute</code></td>
-    <td>Unmutes the video.</td>
-  </tr>
-  <tr>
-    <td><code>fullscreen</code></td>
-    <td>Takes the video to fullscreen.</td>
-  </tr>
-</table>
-
 ### form <a name="form-1"></a>
 
 <table>
@@ -671,30 +516,6 @@ actions that apply to the whole document.
     <th>Description</th>
   </tr>
   <tr>
-    <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
-    <td>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</td>
-  </tr>
-  <tr>
-    <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
-    <td>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</td>
-  </tr>
-  <tr>
-    <td><code>goBack</code></td>
-    <td>Navigates back in history.</td>
-  </tr>
-  <tr>
-    <td><code>print</code></td>
-    <td>Opens the Print Dialog to print the current page.</td>
-  </tr>
-  <tr>
-    <td>scrollTo(id=STRING, duration=INTEGER, position=STRING)</td>
-    <td>Scrolls to the provided element ID on the current page.</td>
-  </tr>
-  <tr>
-    <td>optoutOfCid</td>
-    <td>Opts out of Client ID generation for all scopes.</td>
-  </tr>
-  <tr>
     <td><code>setState({foo: 'bar'})</code><sup>1</sup></td>
     <td>
       <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#updating-state-with-ampsetstate">amp-bind</a>.</p>
@@ -702,23 +523,6 @@ actions that apply to the whole document.
       <p></p>
     </td>
   </tr>
-  <tr>
-    <td><code>pushState({foo: 'bar'})</code><sup>1</sup></td>
-    <td>
-      <p>Requires <a href="https://amp.dev/documentation/components/amp-bind.html#modifying-history-with-amppushstate">amp-bind</a>.</p>
-      <p>Merges an object literal into the bindable state and pushes a new entry onto browser history stack. Popping the entry will restore the previous values of variables (in this example, <code>foo</code>).    </td>
-  </tr>
 </table>
 
 <sup>1</sup>When used with <a href="#multiple-actions-for-one-event">multiple actions</a>, subsequent actions will wait for <code>setState()</code> or <code>pushState()</code> to complete before invocation. Only a single <code>setState()</code> or <code>pushState()</code> is allowed per event.
-
-### Target: amp-access <a name="target-amp-access"></a>
-
-The `amp-access` target is provided by the [amp-access](https://amp.dev/documentation/components/amp-access.html) component.
-
-The `amp-access` target is special for these reasons:
-
-1.  You can't give an arbitrary ID to this target. The target is always `amp-access`.
-2.  The actions for `amp-access` are dynamic depending on the structure of the [AMP Access Configuration](https://amp.dev/documentation/components/amp-access#configuration).
-
-See [details](https://amp.dev/documentation/components/amp-access#login-link) about using the `amp-access` target.
