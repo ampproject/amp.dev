@@ -134,7 +134,9 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
             <span class="ap-o-roadmap-list-item-timeline-dot"></span>
           </span>
 
-          <div class="ap-o-roadmap-list-item-issue {{ issue.wg_name }}" id="roadmap-item-{{ issue.wg_name }}">
+          <div class="ap-o-roadmap-list-item-issue {{ issue.wg_name }}"
+              id="roadmap-item-{{ issue.wg_name }}"
+              style="border-left: 7px solid {{ issue.color }};">
             <amp-truncate-text layout="fixed-height" height="12em">
               <h4 class="ap-o-roadmap-list-item-issue-title">{{ issue.wg_name }}</h4>
               <span class="ap-o-roadmap-list-item-issue-subtitle">Status Update {{ issue.status_update }}</span>
