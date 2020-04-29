@@ -104,7 +104,7 @@ Stories can be hand-coded from scratch or built using creation tools. In order f
 
 If you are hand coding a story, you will build them from scratch using AMP stories. Follow the [Create your first AMP Story](visual_story/index.md) to get started. 
 
-Not a developer? Use one of many [creation tools](../../../tools.html/?format=stories) to build your Story!
+Not a developer? Use one of many [creation tools](../../tools.html?format=stories) to build your Story!
 
 
 ## Story discoverability 
