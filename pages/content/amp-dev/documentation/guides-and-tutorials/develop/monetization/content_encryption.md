@@ -214,4 +214,4 @@ All helper scripts are in the [subscriptions-project/encryption Github repo](htt
 
 # Further support
 
-For any questions, comments, or concerns, please file a [Github Issue](https://docs.google.com/document/d/1cS6uSolvHsu58sW9x1hOVDf1MiKbcHGd63RpSGRViPA/edit#heading=h.s14eq16usaff).
+For any questions, comments, or concerns, please file a [Github Issue](https://github.com/subscriptions-project/encryption/issues).
