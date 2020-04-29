@@ -96,48 +96,31 @@
       margin-bottom: 50px;
 
       .#{molecule('filter-bubble')} {
-        background: color('white');
-        color: color('silver');
+        display: inline-block;
+        padding: 0;
         position: relative;
-        transition: 200ms;
-        margin: 5px;
 
-        &.active,
-        &:hover {
-          color: color('white');
+        &-button {
+          display: block;
+          margin: -1px;
+          padding: 5px 6px;
+          border-radius: 26px;
+          background: color('white');
+          color: color('silver');
+          border: 0;
+          font-size: inherit;
+          color: inherit;
+          font-weight: inherit;
+          transition: all .3s;
 
-          &.reset {
-            background: color('blue-ribbon');
+          @media (min-width: 1280px) {
+            padding: 7px 20px;
           }
-          &.ads {
-            background: color('mariner');
-          }
-          &.amp4email {
-            background: color('bondi-blue');
-          }
-          &.analytics {
-            background: color('robins-egg');
-          }
-          &.bento {
-            background: color('mountain-meadow');
-          }
-          &.infra {
-            background: color('buttercup');
-          }
-          &.outreach {
-            background: color('zest');
-          }
-          &.performance {
-            background: color('crimson');
-          }
-          &.runtime {
-            background: color('french-rose');
-          }
-          &.stories {
-            background: color('lavender');
-          }
-          &.ui-and-a11y {
-            background: color('studio');
+
+          &.active,
+          &:hover {
+            background: transparent;
+            color: color('white');
           }
         }
       }
@@ -352,37 +335,6 @@
               font-size: .9em;
               white-space: nowrap;
             }
-          }
-
-          &.ads {
-            border-color: color('mariner');
-          }
-          &.amp4email {
-            border-color: color('bondi-blue');
-          }
-          &.analytics {
-            border-color: color('robins-egg');
-          }
-          &.bento {
-            border-color: color('mountain-meadow');
-          }
-          &.infra {
-            border-color: color('buttercup');
-          }
-          &.outreach {
-            border-color: color('zest');
-          }
-          &.performance {
-            border-color: color('crimson');
-          }
-          &.runtime {
-            border-color: color('french-rose');
-          }
-          &.stories {
-            border-color: color('lavender');
-          }
-          &.ui-and-a11y {
-            border-color: color('studio');
           }
         }
       }

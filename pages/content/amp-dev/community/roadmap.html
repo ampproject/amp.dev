@@ -41,15 +41,20 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 
       <h2>Select workgroups</h2>
       <div class="ap-o-roadmap-filter-list">
-        <button class="ap-m-filter-bubble reset [% if not category %]active[% endif %]"
-            on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}')">
-          all
-        </button>
+        <div class="ap-m-filter-bubble" style="background: #005af0;">
+          <button class="ap-m-filter-bubble-button reset [% if not category %]active[% endif %]"
+              on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}')">
+            All
+          </button>
+        </div>
+
         {% for workingGroup in doc.roadmap.working_groups %}
-        <button class="ap-m-filter-bubble {{ workingGroup|slug }} [% if category == '{{ workingGroup|slug }}'|lower %]active[% endif %]"
-            on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}?category={{ workingGroup|slug }}')">
-          {{ workingGroup }}
-        </button>
+        <div class="ap-m-filter-bubble" style="background: {{ workingGroup.color }};">
+          <button class="ap-m-filter-bubble-button {{ workingGroup.slug }} [% if category == '{{ workingGroup.slug }}' %]active[% endif %]"
+            on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}?category={{ workingGroup.slug }}')">
+            {{ workingGroup.slug }}
+          </button>
+        </div>
         {% endfor %}
       </div>
     </section>

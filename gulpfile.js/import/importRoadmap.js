@@ -28,6 +28,8 @@ const {
   GitHubImporter,
   DEFAULT_ORGANISATION,
 } = require('@lib/pipeline/gitHubImporter');
+const config = require(__dirname +
+  '/../../platform/config/imports/roadmap.json');
 const log = require('@lib/utils/log')('Import Roadmap');
 
 /* Path where the roadmap data gets imported to */
@@ -105,7 +107,6 @@ async function importRoadmap() {
         continue;
       }
 
-      workingGroups.push(workingGroupName);
       roadmap.push({
         'wg_name': workingGroupName,
         'created_at': createdAt,
@@ -115,15 +116,22 @@ async function importRoadmap() {
         'html_url': issue.html_url,
         'body': body,
       });
+
+      workingGroups.push(workingGroupName);
     }
 
     log.info(`.. ${wg.name} - ${issues.length} issues imported`);
   }
 
+  // Get full name from working group meta.yaml and predefined color based on roadmap config
+  workingGroups = [...new Set(workingGroups.sort())];
+  workingGroups = workingGroups.map((group, index) => {
+    return {'slug': group, 'color': config.workingGroupColors[index] || ''};
+  });
+
   roadmap = roadmap.sort((a, b) => {
     return new Date(b.status_update) - new Date(a.status_update);
   });
-  workingGroups = [...new Set(workingGroups.sort())];
 
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
