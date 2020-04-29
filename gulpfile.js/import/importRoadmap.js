@@ -126,12 +126,20 @@ async function importRoadmap() {
   // Get full name from working group meta.yaml and predefined color based on roadmap config
   workingGroups = [...new Set(workingGroups.sort())];
   workingGroups = workingGroups.map((group, index) => {
-    return {'slug': group, 'color': config.workingGroupColors[index] || ''};
+    return {'slug': group, 'color': config.workingGroupColors[index] || '#000'};
   });
 
+  // Sort roadmap entries and add matching working group color
   roadmap = roadmap.sort((a, b) => {
     return new Date(b.status_update) - new Date(a.status_update);
   });
+  for (const group of workingGroups) {
+    for (let issue of roadmap) {
+      if (group.slug == issue.wg_name) {
+        issue.color = group.color;
+      }
+    }
+  }
 
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
