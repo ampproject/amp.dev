@@ -32,9 +32,10 @@
         position: absolute;
         top: 0;
         right: 0;
-        width: 60%;
+        width: 100%;
+        height: 100%;
+
         @media (min-width: 768px) {
-          right: 8%;
           width: 56%;
         }
         @media (min-width: 1024px) {

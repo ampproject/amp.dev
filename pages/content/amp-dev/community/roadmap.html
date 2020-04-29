@@ -17,20 +17,8 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           <h1 class="ap-o-stage-content-headline">{{ _('The AMP Project Roadmap') }}</h1>
         </div>
         <div class="ap-o-stage-image">
-          <amp-img alt="AMP Working Group"
-              media="(min-width: 670px)"
-              width="800"
-              height="435"
-              src="/static/img/working-groups-top-desktop.png"
-              layout="responsive">
-          </amp-img>
-          <amp-img alt="AMP Working Group"
-              media="(max-width: 669px)"
-              width="600"
-              height="669"
-              src="/static/img/working-groups-top.png"
-              layout="responsive">
-          </amp-img>
+          {% do doc.icons.useIcon('icons/roadmap-header.svg') %}
+          <svg style="height: 80%; width: 100%;"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#roadmap-header"></use></svg>
         </div>
       </div>
     </div>
