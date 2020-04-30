@@ -44,7 +44,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
         <div class="ap-m-filter-bubble" style="background: #005af0;">
           <button class="ap-m-filter-bubble-button reset [% if not category %]active[% endif %]"
               on="tap:AMP.navigateTo(url='{{ doc.url.path }}')">
-            All
+            {{ _('All') }}
           </button>
         </div>
 
@@ -63,39 +63,44 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <div class="ap-o-roadmap-navigation">
         <div class="ap-o-roadmap-navigation-list">
           {% for quarter in doc.roadmap.list|map(attribute='quarter')|unique|list %}
+
+          {% set roadmap_quarter = dict(doc.roadmap.list|groupby('quarter')) %}
+          [% set roadmap_filtered = {{ dict(roadmap_quarter[quarter]|groupby('wg_name'))|tojson }} %]
+
+          [% if not category or roadmap_filtered[category]|length > 0 %]
           <amp-animation id="anim-{{ quarter|slug }}" layout="nodisplay">
             <script type="application/json">
-              {
-                "duration": ".3s",
-                "fill": "both",
-                "direction": "alternate",
-                "animations": [
-                  {
-                    "selector": ".ap-o-roadmap-navigation-list-item",
-                    "keyframes": {
-                      "opacity": ".3"
-                    }
-                  },
-                  {
-                    "selector": "#nav-item-{{ quarter|slug }}",
-                    "keyframes": {
-                      "opacity": "1"
-                    }
-                  },
-                  {
-                    "selector": ".ap-o-roadmap-navigation-list-item-timeline",
-                    "keyframes": {
-                      "opacity": "0"
-                    }
-                  },
-                  {
-                    "selector": "#nav-item-timeline-{{ quarter|slug }}",
-                    "keyframes": {
-                      "opacity": "1"
-                    }
+            {
+              "duration": ".3s",
+              "fill": "both",
+              "direction": "alternate",
+              "animations": [
+                {
+                  "selector": ".ap-o-roadmap-navigation-list-item",
+                  "keyframes": {
+                    "opacity": ".3"
                   }
-                ]
-              }
+                },
+                {
+                  "selector": "#nav-item-{{ quarter|slug }}",
+                  "keyframes": {
+                    "opacity": "1"
+                  }
+                },
+                {
+                  "selector": ".ap-o-roadmap-navigation-list-item-timeline",
+                  "keyframes": {
+                    "opacity": "0"
+                  }
+                },
+                {
+                  "selector": "#nav-item-timeline-{{ quarter|slug }}",
+                  "keyframes": {
+                    "opacity": "1"
+                  }
+                }
+              ]
+            }
             </script>
           </amp-animation>
           <button class="ap-o-roadmap-navigation-list-item"
@@ -108,6 +113,8 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
                 id="nav-item-timeline-{{ quarter|slug }}">
             </span>
           </button>
+          [% endif %]
+
           {% endfor %}
         </div>
       </div>
