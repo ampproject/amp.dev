@@ -39,11 +39,11 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
       {% do doc.icons.useIcon('icons/close.svg') %}
 
-      <h2>Select workgroups</h2>
+      <h2>{{ _('Select working groups') }}</h2>
       <div class="ap-o-roadmap-filter-list">
         <div class="ap-m-filter-bubble" style="background: #005af0;">
           <button class="ap-m-filter-bubble-button reset [% if not category %]active[% endif %]"
-              on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}')">
+              on="tap:AMP.navigateTo(url='{{ doc.url.path }}')">
             All
           </button>
         </div>
@@ -51,7 +51,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
         {% for workingGroup in doc.roadmap.working_groups %}
         <div class="ap-m-filter-bubble" style="background: {{ workingGroup.color }};">
           <button class="ap-m-filter-bubble-button {{ workingGroup.slug }} [% if category == '{{ workingGroup.slug }}' %]active[% endif %]"
-            on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/community/roadmap.html', locale=doc.locale).url.path }}?category={{ workingGroup.slug }}')">
+            on="tap:AMP.navigateTo(url='{{ doc.url.path }}?category={{ workingGroup.slug }}')">
             {{ workingGroup.slug }}
           </button>
         </div>
@@ -117,8 +117,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 
         {% for issue in doc.roadmap.list %}
         [% if category in '{{ issue.wg_name }}' %]
-
-        {% if doc.roadmap.list[ loop.index-2 ].quarter != issue.quarter %}
+        {% if loop.changed(issue.quarter) %}
         <amp-position-observer intersection-ratios="1"
             target="{{ issue.quarter|slug }}"
             on="enter:anim-{{ issue.quarter|slug }}.start"
@@ -136,21 +135,17 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 
           <div class="ap-o-roadmap-list-item-issue {{ issue.wg_name }}"
               id="roadmap-item-{{ issue.wg_name }}"
-              style="border-left: 7px solid {{ issue.color }};">
+              style="border-color: {{ issue.color }};">
             <amp-truncate-text layout="fixed-height" height="12em">
               <h4 class="ap-o-roadmap-list-item-issue-title">{{ issue.wg_name }}</h4>
               <span class="ap-o-roadmap-list-item-issue-subtitle">Status Update {{ issue.status_update }}</span>
               <div class="ap-o-roadmap-list-item-issue-body">
-                {% set arrayDevider = (issue.body|length / 2)|round|int  %}
+                {% for column in issue.body|slice(2) %}
                 <div class="ap-o-roadmap-list-item-issue-body-column">
-                  {% for paragraph in issue.body[:arrayDevider] %}
+                  {% for paragraph in column %}
                   <div>{{ paragraph|markdown|safe }}</div>
                   {% endfor %}
-                </div>
-                <div class="ap-o-roadmap-list-item-issue-body-column">
-                  {% for paragraph in issue.body[arrayDevider:] %}
-                  <div>{{ paragraph|markdown|safe }}</div>
-                  {% endfor %}
+                  {% if loop.last %}
                   <a href="{{ issue.html_url }}" class="ap-m-lnk">
                     <div class="ap-a-ico ap-m-lnk-icon">
                       {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -158,9 +153,10 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
                     </div>
                     <span class="ap-m-lnk-text">{{ _('All details on GitHub') }}</span>
                   </a>
+                  {% endif %}
                 </div>
+                {% endfor %}
               </div>
-
               <button class="ap-o-roadmap-list-item-issue-button" slot="collapsed">
                 <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
               </button>

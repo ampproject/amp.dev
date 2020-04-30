@@ -250,6 +250,7 @@
           border-radius: 8px;
           box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
           background-color: color('white');
+          border-left: 7px solid;
 
           @media (min-width: 768px) {
             margin-left: auto;
