@@ -3,6 +3,7 @@ $title: Actions and events
 order: 7
 formats:
   - websites
+  - email
   - stories
   - ads
 teaser:
@@ -232,10 +233,6 @@ event.index</pre></td>
     <th width="25%">Event</th>
     <th width="35%">Description</th>
     <th width="40%">Data</th>
-  </tr>
-  <tr>
-    <td><code>changeToLayoutContainer</code></td>
-    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONAINTER"</code>.</td>
   </tr>
   <tr>
     <td><code>fetch-error</code>(low-trust)</td>
@@ -542,10 +539,6 @@ event.response</pre></td>
   <tr>
     <th>Action</th>
     <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>clear</code></td>
-    <td>Clears all selections from a defined <code>amp-selector</code>.</td>
   </tr>
   <tr>
     <td><code>selectUp(delta=INTEGER)</code></td>
