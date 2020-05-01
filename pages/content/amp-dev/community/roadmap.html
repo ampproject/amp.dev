@@ -130,11 +130,11 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
             on="enter:anim-{{ issue.quarter|slug }}.start"
             layout="nodisplay">
         </amp-position-observer>
-        <div class="ap-o-roadmap-list-quarter-separator">
+        <div class="ap-o-roadmap-list-quarter-separator" id="{{ issue.quarter|slug }}">
           <h3>{{ issue.quarter }}</h3>
         </div>
         {% endif %}
-        <div class="ap-o-roadmap-list-item" {% if doc.roadmap.list[ loop.index-2 ].quarter != issue.quarter %}id="{{ issue.quarter|slug }}"{% endif %}>
+        <div class="ap-o-roadmap-list-item">
           <span class="ap-o-roadmap-list-item-timeline ap-o-roadmap-list-item-timeline--vertical"></span>
           <span class="ap-o-roadmap-list-item-timeline ap-o-roadmap-list-item-timeline--horizontal">
             <span class="ap-o-roadmap-list-item-timeline-dot"></span>
