@@ -52,7 +52,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
         <div class="ap-m-filter-bubble" style="background: {{ workingGroup.color }};">
           <button class="ap-m-filter-bubble-button {{ workingGroup.slug }} [% if category == '{{ workingGroup.slug }}' %]active[% endif %]"
             on="tap:AMP.navigateTo(url='{{ doc.url.path }}?category={{ workingGroup.slug }}')">
-            {{ workingGroup.slug }}
+            {{ workingGroup.name }}
           </button>
         </div>
         {% endfor %}
@@ -65,42 +65,41 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           {% for quarter in doc.roadmap.list|map(attribute='quarter')|unique|list %}
 
           {% set roadmap_quarter = dict(doc.roadmap.list|groupby('quarter')) %}
-          [% set roadmap_filtered = {{ dict(roadmap_quarter[quarter]|groupby('wg_name'))|tojson }} %]
+          [% set roadmap_filtered = {{ dict(roadmap_quarter[quarter]|groupby('wg_slug'))|tojson }} %]
 
           [% if not category or roadmap_filtered[category]|length > 0 %]
           <amp-animation id="anim-{{ quarter|slug }}" layout="nodisplay">
             <script type="application/json">
-            {
-              "duration": ".3s",
-              "fill": "both",
-              "direction": "alternate",
-              "animations": [
-                {
-                  "selector": ".ap-o-roadmap-navigation-list-item",
-                  "keyframes": {
-                    "opacity": ".3"
-                  }
-                },
-                {
-                  "selector": "#nav-item-{{ quarter|slug }}",
-                  "keyframes": {
-                    "opacity": "1"
-                  }
-                },
-                {
-                  "selector": ".ap-o-roadmap-navigation-list-item-timeline",
-                  "keyframes": {
-                    "opacity": "0"
-                  }
-                },
-                {
+              {
+                "duration": ".3s",
+                "fill": "both",
+                "direction": "alternate",
+                "animations": [
+                  {
+                    "selector": ".ap-o-roadmap-navigation-list-item",
+                    "keyframes": {
+                      "opacity": ".3"
+                    }
+                  },
+                  {
+                    "selector": "#nav-item-{{ quarter|slug }}",
+                    "keyframes": {
+                      "opacity": "1"
+                    }
+                  },
+                  {
+                    "selector": ".ap-o-roadmap-navigation-list-item-timeline",
+                    "keyframes": {
+                      "opacity": "0"
+                    }
+                  },
+                  {
                   "selector": "#nav-item-timeline-{{ quarter|slug }}",
                   "keyframes": {
                     "opacity": "1"
                   }
-                }
-              ]
-            }
+                }]
+              }
             </script>
           </amp-animation>
           <button class="ap-o-roadmap-navigation-list-item"
@@ -123,7 +122,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
         {% do doc.icons.useIcon('icons/chevron-vertical-light.svg') %}
 
         {% for issue in doc.roadmap.list %}
-        [% if category in '{{ issue.wg_name }}' %]
+        [% if category in '{{ issue.wg_slug }}' %]
         {% if loop.changed(issue.quarter) %}
         <amp-position-observer intersection-ratios="1"
             target="{{ issue.quarter|slug }}"
@@ -140,8 +139,8 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
             <span class="ap-o-roadmap-list-item-timeline-dot"></span>
           </span>
 
-          <div class="ap-o-roadmap-list-item-issue {{ issue.wg_name }}"
-              id="roadmap-item-{{ issue.wg_name }}"
+          <div class="ap-o-roadmap-list-item-issue {{ issue.wg_slug }}"
+              id="roadmap-item-{{ issue.wg_slug }}"
               style="border-color: {{ issue.color }};">
             <amp-truncate-text layout="fixed-height" height="12em">
               <h4 class="ap-o-roadmap-list-item-issue-title">{{ issue.wg_name }}</h4>

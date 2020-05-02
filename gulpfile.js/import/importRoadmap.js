@@ -64,7 +64,7 @@ async function importRoadmap() {
     if (!wg.name.startsWith('wg-')) {
       continue;
     }
-    const workingGroupName = wg.name.substr(3);
+    const workingGroupSlug = wg.name.substr(3);
 
     let issues = (
       await client._github
@@ -81,6 +81,25 @@ async function importRoadmap() {
       log.warn(`.. ${wg.name} - No status update issues found`);
       continue;
     }
+
+    // Get full working group name from metadata yaml
+    let meta = null;
+    try {
+      meta = await client._github
+        .repo(`${DEFAULT_ORGANISATION}/${wg.name}`)
+        .contentsAsync('METADATA.yaml');
+    } catch (e) {
+      log.warn(`.. ${wg.name} - METADATA.yaml not found`);
+    }
+    try {
+      meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
+    } catch (e) {
+      log.error(
+        `.. ${wg.name} - Failed loading ${DEFAULT_ORGANISATION}/${wg.name}/METADATA.yaml`,
+        e
+      );
+    }
+    workingGroups.push({'slug': workingGroupSlug, 'name': meta.title});
 
     for (const issue of issues) {
       const createdAt = new Date(issue.created_at).toDateString();
@@ -108,7 +127,8 @@ async function importRoadmap() {
       }
 
       roadmap.push({
-        'wg_name': workingGroupName,
+        'wg_slug': workingGroupSlug,
+        'wg_name': meta.title,
         'created_at': createdAt,
         'status_update': statusUpdate,
         'quarter': quarter,
@@ -116,8 +136,6 @@ async function importRoadmap() {
         'html_url': issue.html_url,
         'body': body,
       });
-
-      workingGroups.push(workingGroupName);
     }
 
     log.info(`.. ${wg.name} - ${issues.length} issues imported`);
@@ -126,7 +144,11 @@ async function importRoadmap() {
   // Get full name from working group meta.yaml and predefined color based on roadmap config
   workingGroups = [...new Set(workingGroups.sort())];
   workingGroups = workingGroups.map((group, index) => {
-    return {'slug': group, 'color': config.workingGroupColors[index] || '#000'};
+    return {
+      'slug': group.slug,
+      'name': group.name,
+      'color': config.workingGroupColors[index] || '#000',
+    };
   });
 
   // Sort roadmap entries and add matching working group color
@@ -134,8 +156,8 @@ async function importRoadmap() {
     return new Date(b.status_update) - new Date(a.status_update);
   });
   for (const group of workingGroups) {
-    for (let issue of roadmap) {
-      if (group.slug == issue.wg_name) {
+    for (const issue of roadmap) {
+      if (group.slug == issue.wg_slug) {
         issue.color = group.color;
       }
     }
@@ -147,7 +169,8 @@ async function importRoadmap() {
   );
 
   log.success(
-    `Successfully imported ${roadmap.length} roadmap status update issues from ${workingGroups.length} working groups`
+    `Successfully imported ${roadmap.length} roadmap status update issues
+    from ${workingGroups.length} working groups`
   );
 }
 
