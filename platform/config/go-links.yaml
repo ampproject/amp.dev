@@ -12,6 +12,7 @@
 /contribute/samples: /documentation/examples/
 /contribute/translations: /documentation/guides-and-tutorials/contribute/translations/
 /cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests/
+/design-reviews: https://github.com/ampproject/amphtml/issues?q=is%3Aissue+is%3Aopen+design+review+utc+in%3Atitle
 /devx-survey: https://google.qualtrics.com/jfe/form/SV_2f10wnLh8qJclRb
 /docs: /documentation/guides-and-tutorials/
 /docsgfi: https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22
