@@ -98,10 +98,15 @@ $borderSize: 5px;
   }
 
   &-info {
-    margin: 40px 0 10px 0;
-    padding: 27px 30px;
+    margin: 30px 0 0 0;
+    padding: 24px 20px;
     border-radius: 4px;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.07);
+
+    @media (min-width: 768px) {
+      margin: 40px 0 0 0;
+      padding: 27px 30px;
+    }
 
     .#{molecule('tip')} {
       &-content {
@@ -110,12 +115,22 @@ $borderSize: 5px;
         &:before {
           content: '';
           flex: 1 0 auto;
-          width: 42px;
-          height: 42px;
-          border-radius: 21px;
-          margin-right: 23px;
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          margin-right: 13px;
           background-size: contain;
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='42'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='83.165%25' x2='18.727%25' y1='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300DCC0'/%3E%3Cstop offset='100%25' stop-color='%230388F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23a)' fill-rule='evenodd' d='M21 0c11.598 0 21 9.402 21 21s-9.402 21-21 21S0 32.598 0 21 9.402 0 21 0zm-.036 17.997a2.427 2.427 0 00-2.427 2.426v9.614a2.426 2.426 0 004.853 0v-9.614a2.426 2.426 0 00-2.426-2.426zm0-8.481a2.916 2.916 0 10-.002 5.832 2.916 2.916 0 00.002-5.832z'/%3E%3C/svg%3E");
+
+          @media (min-width: 768px) {
+            width: 42px;
+            height: 42px;
+            margin-right: 23px;
+          }
+        }
+
+        p {
+          margin: 0;
         }
       }
     }

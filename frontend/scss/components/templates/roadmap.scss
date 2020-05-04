@@ -82,6 +82,14 @@
     &-intro {
       margin-bottom: 0;
 
+      &-text {
+        margin-left: 17px;
+
+        @media (min-width: 768px) {
+          margin-left: 0px;
+        }
+      }
+
       @media (min-width: 768px) {
         grid-column: 3/22;
       }
@@ -99,6 +107,14 @@
       grid-column: 8/22;
       padding-top: 50px;
       margin-bottom: 50px;
+
+      @media (min-width: 768px) {
+        padding-top: 60px;
+      }
+
+      &-headline {
+        margin-top: 0;
+      }
 
       .#{molecule('filter-bubble')} {
         &.active,
@@ -174,6 +190,7 @@
 
       &-quarter-separator h3 {
         font-size: 28px;
+        opacity: 0.2;
 
         @media (min-width: 768px) {
           display: none;
@@ -238,7 +255,7 @@
           @media (min-width: 768px) {
             margin-left: auto;
             width: 93%;
-            padding: 30px 30px 30px 50px;
+            padding: 30px 30px 22px 50px;
           }
 
           p, li {
@@ -292,16 +309,21 @@
                 padding-right: 20px;
                 width: 50%;
               }
+
+              .#{molecule('lnk')} {
+                margin-top: 25px;
+              }
             }
 
             h1, h2, h3 {
-              margin-top: 20px;
+              margin: 20px 0 7px 0;
               font-size: 16px;
               color: color('river-bed');
             }
 
-            ul {
+            ul, ol {
               padding-left: 18px;
+              margin: 0;
             }
 
             li, p {

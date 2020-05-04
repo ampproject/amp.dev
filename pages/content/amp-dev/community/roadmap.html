@@ -27,7 +27,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
   <div class="ap-o-roadmap"
       style="{% for group in doc.roadmap.working_groups %}--{{group.slug}}: {{ group.color }};{% endfor %}">
     <section class="ap-o-roadmap-intro">
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. For the overall AMP Roadmap for 2020 please read this blogpost.<br><br>An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
+      <p class="ap-o-roadmap-intro-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. For the overall AMP Roadmap for 2020 please read this blogpost.<br><br>An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
       <div class="ap-m-tip ap-m-tip-info">
         <div class="ap-m-tip-content">
           {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
@@ -40,7 +40,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
       {% do doc.icons.useIcon('icons/close.svg') %}
 
-      <h2>{{ _('Select working groups') }}</h2>
+      <h2 class="ap-o-roadmap-filter-headline">{{ _('Select working groups') }}</h2>
       <div class="ap-o-roadmap-filter-list">
         <button class="ap-m-filter-bubble reset [% if not category %]active[% endif %]"
             on="tap:AMP.navigateTo(url='{{ doc.url.path }}#status-updates')">
@@ -137,9 +137,9 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           </span>
 
           <div class="ap-o-roadmap-list-item-issue {{ issue.wg_slug }}"
-              id="roadmap-item-{{ issue.wg_slug }}"
+              id="{{ issue.wg_slug }}-{{ issue.number }}"
               style="--wg-color: var(--{{ issue.wg_slug }});">
-            <amp-truncate-text layout="fixed-height" height="12em">
+            <amp-truncate-text layout="fixed-height" height="11.5em">
               <h4 class="ap-o-roadmap-list-item-issue-title">{{ issue.wg_name }}</h4>
               <span class="ap-o-roadmap-list-item-issue-subtitle">Status Update {{ issue.status_update }}</span>
               <div class="ap-o-roadmap-list-item-issue-body">
