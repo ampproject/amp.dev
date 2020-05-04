@@ -1096,7 +1096,7 @@ msgid "Get started with AMP"
 msgstr ""
 
 #: pages/content/amp-dev/index.html:414
-msgid "As a source for breaking news and information, AMP stories allows us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage."
+msgid "As a source for breaking news and information, Web Stories allow us to showcase our quality journalism when there are multiple elements we want to bring together. Combining reporting, photography, videos and motion graphics, this gives readers a more visual entry point when they are searching for our coverage."
 msgstr ""
 
 #: pages/content/amp-dev/index.html:416
@@ -1140,7 +1140,7 @@ msgid "You don’t need to download AMP and no installation is required.<br/> Be
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:90
-msgid "AMP Stories"
+msgid "Web Stories"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:91
@@ -1156,7 +1156,7 @@ msgid "Tell a story"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:106
-msgid "AMP<br> Stories"
+msgid "Web<br> Stories"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:107
@@ -1164,11 +1164,11 @@ msgid "visual storytelling for the open web"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:108
-msgid "AMP stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. The AMP story format is free and part of the open web and are available for everyone to try on their websites. They can be shared and embedded across the web without being confined to a closed ecosystem or platform."
+msgid "Web Stories immerse your readers in fast-loading full-screen experiences. Easily create visual narratives, with engaging animations and tappable interactions. The Web Story format (formerly known as AMP Stories) is free and part of the open web and are available for everyone to try on their websites. They can be shared and embedded across the web without being confined to a closed ecosystem or platform."
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:109
-msgid "AMP stories provides content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. AMP Stories offers a robust set of advertising opportunities for advertisers and publishers to reach a unique audience on the web with immersive experiences."
+msgid "Web Stories provide content publishers with a mobile-focused format for delivering news and information as visually rich, tap-through stories. Web Stories offers a robust set of advertising opportunities for advertisers and publishers to reach a unique audience on the web with immersive experiences."
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:119
@@ -1184,7 +1184,7 @@ msgid "Read Success Story"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:175
-msgid "The benefits of AMP stories"
+msgid "The benefits of Web Stories"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:223
@@ -1192,7 +1192,7 @@ msgid "Read on how AMP works"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:235
-msgid "AMP stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities."
+msgid "Web Stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities."
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:240
@@ -1204,7 +1204,7 @@ msgid "It’s easy to create visual effects and tappable interactions that keep 
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:325
-msgid "AMP Stories <br />Monetization Options"
+msgid "Web Stories <br />Monetization Options"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:326
@@ -1615,7 +1615,7 @@ msgid "Animations and interactions"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:255
-msgid "Check out AMP stories on the web"
+msgid "Check out Web Stories on the web"
 msgstr ""
 
 #: pages/content/amp-dev/about/stories.html:415
@@ -2006,7 +2006,7 @@ msgstr ""
 msgid "Create flawless web experiences"
 msgstr ""
 
-msgid "Snackable formats for everyone"
+msgid "Snackable Stories for everyone"
 msgstr ""
 
 msgid "Super fast ads on the web"
@@ -2107,13 +2107,13 @@ msgstr ""
 msgid "Sharable and linkable on the open web"
 msgstr ""
 
-msgid "AMP stories make the production of stories as easy as possible from a technical perspective."
+msgid "Web Stories make the production of stories as easy as possible from a technical perspective."
 msgstr ""
 
-msgid "The AMP stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content."
+msgid "The Web Stories format comes with preset but flexible layout templates, standardized UI controls, and components for sharing and adding follow-on content."
 msgstr ""
 
-msgid "AMP stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem."
+msgid "Web Stories are part of the open web and can be shared and embedded across sites and apps without being confined to a single ecosystem."
 msgstr ""
 
 #: pages/shared/data/benefits.yaml:45
@@ -2135,17 +2135,17 @@ msgstr ""
 msgid "Supports analytics and bookend capabilities for viral sharing and monetization."
 msgstr ""
 
-msgid "AMP stories are lightening fast so that your audience stays engaged and entertained."
+msgid "Web Stories are lightening fast so that your audience stays engaged and entertained."
 msgstr ""
 
-msgid "AMP stories is a new and modern way to reach existing readers."
+msgid "Web Stories are a new and modern way to reach existing readers."
 msgstr ""
 
-msgid "AMP Stories enables monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience."
+msgid "Web Stories enable monetization capability for publishers using full-screen immersive story ads and using affiliate links. For advertisers, Stories is a way to reach a unique audience within a new storytelling experience."
 msgstr ""
 
 #: /content/amp-dev/about/stories.html:327
-msgid "Story Ads are full screen, single page ads that appear within AMP Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.<br>  Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!"
+msgid "Story Ads are full screen, single page ads that appear within Web Stories. Advertisers/ Publishers can invite users to a web page, an AMP page or an App with a single tap. A story ad has a rich, flexible canvas that allows images, videos, animations or a combination of all those elements.<br>  Story ads are supported by Google Ad Manager and Google DV360 (Beta) with additional ad server support coming soon!"
 msgstr ""
 
 msgid "Pick one of several editors to start creating ads without any coding involved."
