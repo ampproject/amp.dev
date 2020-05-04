@@ -104,7 +104,7 @@
         &.active,
         &:hover {
           color: color('white');
-          background: var(--wg-color, color('black'));
+          background: var(--wg-color, color('blue-ribbon'));
         }
       }
     }
