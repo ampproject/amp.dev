@@ -1,16 +1,16 @@
 {
-  "workingGroupColors": [
-    "#447FB4",
-    "#4AA5AF",
-    "#64D8C0",
-    "#55B097",
-    "#E6A03C",
-    "#D8843B",
-    "#B72B4F",
-    "#AB62D7",
-    "#8945AF",
-    "#7474E1",
-    "#485867",
-    "#202029"
-  ]
+  "colors": {
+    "ui-and-a11y": "#447FB4",
+    "amp4email": "#4AA5AF",
+    "infra": "#64D8C0",
+    "outreach": "#55B097",
+    "runtime": "#E6A03C",
+    "stories": "#D8843B",
+    "access-subscriptions": "#B72B4F",
+    "analytics": "#AB62D7",
+    "ads": "#8945AF",
+    "performance": "#7474E1",
+    "bento": "#485867"
+  },
+  "fallbackColor": "#202029"
 }

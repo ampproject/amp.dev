@@ -24,7 +24,8 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
     </div>
   </section>
 
-  <div class="ap-o-roadmap">
+  <div class="ap-o-roadmap"
+      style="{% for group in doc.roadmap.working_groups %}--{{group.slug}}: {{ group.color }};{% endfor %}">
     <section class="ap-o-roadmap-intro">
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. For the overall AMP Roadmap for 2020 please read this blogpost.<br><br>An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
       <div class="ap-m-tip ap-m-tip-info">
@@ -35,26 +36,22 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       </div>
     </section>
 
-    <section class="ap-o-roadmap-filter">
+    <section class="ap-o-roadmap-filter" id="status-updates">
       {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
       {% do doc.icons.useIcon('icons/close.svg') %}
 
       <h2>{{ _('Select working groups') }}</h2>
       <div class="ap-o-roadmap-filter-list">
-        <div class="ap-m-filter-bubble" style="background: #005af0;">
-          <button class="ap-m-filter-bubble-button reset [% if not category %]active[% endif %]"
-              on="tap:AMP.navigateTo(url='{{ doc.url.path }}')">
-            {{ _('All') }}
-          </button>
-        </div>
-
-        {% for workingGroup in doc.roadmap.working_groups %}
-        <div class="ap-m-filter-bubble" style="background: {{ workingGroup.color }};">
-          <button class="ap-m-filter-bubble-button {{ workingGroup.slug }} [% if category == '{{ workingGroup.slug }}' %]active[% endif %]"
-            on="tap:AMP.navigateTo(url='{{ doc.url.path }}?category={{ workingGroup.slug }}')">
-            {{ workingGroup.name }}
-          </button>
-        </div>
+        <button class="ap-m-filter-bubble reset [% if not category %]active[% endif %]"
+            on="tap:AMP.navigateTo(url='{{ doc.url.path }}#status-updates')">
+          {{ _('All') }}
+        </button>
+        {% for group in doc.roadmap.working_groups %}
+        <button class="ap-m-filter-bubble {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
+            style="--wg-color: var(--{{ group.slug }});"
+            on="tap:AMP.navigateTo(url='{{ doc.url.path }}?category={{ group.slug }}#status-updates')">
+          {{ group.name }}
+        </button>
         {% endfor %}
       </div>
     </section>
@@ -141,7 +138,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 
           <div class="ap-o-roadmap-list-item-issue {{ issue.wg_slug }}"
               id="roadmap-item-{{ issue.wg_slug }}"
-              style="border-color: {{ issue.color }};">
+              style="--wg-color: var(--{{ issue.wg_slug }});">
             <amp-truncate-text layout="fixed-height" height="12em">
               <h4 class="ap-o-roadmap-list-item-issue-title">{{ issue.wg_name }}</h4>
               <span class="ap-o-roadmap-list-item-issue-subtitle">Status Update {{ issue.status_update }}</span>

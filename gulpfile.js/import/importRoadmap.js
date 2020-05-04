@@ -28,8 +28,9 @@ const {
   GitHubImporter,
   DEFAULT_ORGANISATION,
 } = require('@lib/pipeline/gitHubImporter');
-const config = require(__dirname +
-  '/../../platform/config/imports/roadmap.json');
+const config = require(utils.project.absolute(
+  'platform/config/imports/roadmap.json'
+));
 const log = require('@lib/utils/log')('Import Roadmap');
 
 /* Path where the roadmap data gets imported to */
@@ -39,7 +40,9 @@ const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
 // RegEx to extract date from issue title
 const STATUS_UPDATE_REGEX = /(\d\d\d\d)-(\d*)-(\d*)/;
-const AMP_COMPONENT_REGEX = /\s(<amp-[\S]*>)/g;
+// Match any amp-component tag. Eg. <amp-img>
+const AMP_COMPONENT_REGEX = /\s(<amp-\S*>)/g;
+// Group markdown text into text blocks starting with h1 - h3
 const TEXT_BLOCK_REGEX = /#{1,3} [^#]+/g;
 /**
  * Extract status update issues from working groups and
@@ -82,17 +85,18 @@ async function importRoadmap() {
       continue;
     }
 
-    // Get full working group name from metadata yaml
+    // Get full working group name from METADATA.yaml
     let meta = null;
     try {
-      meta = await client._github
-        .repo(`${DEFAULT_ORGANISATION}/${wg.name}`)
-        .contentsAsync('METADATA.yaml');
+      meta = await client.fetchFile(
+        `METADATA.yaml`,
+        `${DEFAULT_ORGANISATION}/${wg.name}`
+      );
     } catch (e) {
       log.warn(`.. ${wg.name} - METADATA.yaml not found`);
     }
     try {
-      meta = yaml.safeLoad(Buffer.from(meta[0].content, 'base64').toString());
+      meta = yaml.safeLoad(meta, 'base64');
     } catch (e) {
       log.error(
         `.. ${wg.name} - Failed loading ${DEFAULT_ORGANISATION}/${wg.name}/METADATA.yaml`,
@@ -141,13 +145,13 @@ async function importRoadmap() {
     log.info(`.. ${wg.name} - ${issues.length} issues imported`);
   }
 
-  // Get full name from working group meta.yaml and predefined color based on roadmap config
+  // Get predefined color based on roadmap config
   workingGroups = [...new Set(workingGroups.sort())];
-  workingGroups = workingGroups.map((group, index) => {
+  workingGroups = workingGroups.map((group) => {
     return {
       'slug': group.slug,
       'name': group.name,
-      'color': config.workingGroupColors[index] || '#000',
+      'color': config.colors[group.slug] || config.fallbackColor,
     };
   });
 
@@ -155,12 +159,8 @@ async function importRoadmap() {
   roadmap = roadmap.sort((a, b) => {
     return new Date(b.status_update) - new Date(a.status_update);
   });
-  for (const group of workingGroups) {
-    for (const issue of roadmap) {
-      if (group.slug == issue.wg_slug) {
-        issue.color = group.color;
-      }
-    }
+  for (const issue of roadmap) {
+    issue.color = config.colors[issue.wg_slug];
   }
 
   await writeFileAsync(
