@@ -96,7 +96,7 @@ async function importRoadmap() {
       log.warn(`.. ${wg.name} - METADATA.yaml not found`);
     }
     try {
-      meta = yaml.safeLoad(meta, 'base64');
+      meta = yaml.safeLoad(meta);
     } catch (e) {
       log.error(
         `.. ${wg.name} - Failed loading ${DEFAULT_ORGANISATION}/${wg.name}/METADATA.yaml`,
