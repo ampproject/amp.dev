@@ -96,7 +96,7 @@
     "@babel/runtime": "7.9.6",
     "@octokit/rest": "17.7.0",
     "absolutify": "0.1.0",
-    "amphtml-validator": "1.0.30",
+    "amphtml-validator": "1.0.31",
     "archiver": "4.0.1",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
