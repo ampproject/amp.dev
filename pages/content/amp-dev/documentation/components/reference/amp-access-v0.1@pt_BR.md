@@ -221,7 +221,7 @@ Veja um exemplo da configuração do AMP Access:
     "namespace": value
   },
   ...
-[
+]
 </script>
 ```
 
