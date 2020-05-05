@@ -209,11 +209,9 @@ JsonResponse getEntitlements(string requestUri) {
 
 Check out the documentation and examples found on the [Tink Github page](https://github.com/google/tink). 
 
-Find more information about the AMP Encryption project in the [original project description](http://go/swg-encryption-documentation) and in the [launch blog pos](http://go/premium-encryption-blog)t. 
-
 All helper scripts are in the [subscriptions-project/encryption Github repo](https://github.com/subscriptions-project/encryption).
 
 
 # Further support
 
-For any questions, comments, or concerns, please file a [Github Issue](https://docs.google.com/document/d/1cS6uSolvHsu58sW9x1hOVDf1MiKbcHGd63RpSGRViPA/edit#heading=h.s14eq16usaff).
+For any questions, comments, or concerns, please file a [Github Issue](https://github.com/subscriptions-project/encryption/issues).

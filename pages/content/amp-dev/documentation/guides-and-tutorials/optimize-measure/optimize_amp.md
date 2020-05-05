@@ -90,7 +90,7 @@ The AMP Cache performs all these optimizations automatically (and a few more). Y
 
 ### Preload hero images <a name="preload-hero-images"></a>
 
-[AMP HTML uses its own image element: `amp-img`](../../../documentation/components/reference/amp-img.md) (/documentation/guides-and-tutorials/develop/media_iframes_3p/amp_replacements.html#why-not-img%3E,-video%3E-and-audio%3E?). While [`amp-img`](../../../documentation/components/reference/amp-img.md) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
+[AMP HTML uses its own image element: `amp-img`](../../../documentation/components/reference/amp-img.md). While [`amp-img`](../../../documentation/components/reference/amp-img.md) has many advantages over the traditional HTML `img` tag, one disadvantage is that the AMP runtime must be loaded before the image download can start. For some images, such as hero images for a product page, it's critical that the images load as quickly as possible. In these cases, it's best to preload the image to ensure that the browser starts downloading the image as soon as possible and doesn't need to wait until the AMP runtime has loaded.
 
 [sourcecode:html]
 <head>
