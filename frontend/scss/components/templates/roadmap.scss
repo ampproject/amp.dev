@@ -117,6 +117,8 @@
       }
 
       .#{molecule('filter-bubble')} {
+        transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
+
         &.active,
         &:hover {
           color: color('white');
@@ -199,10 +201,15 @@
 
       &-item {
         position: relative;
-        padding-bottom: 15px;
+        padding-top: 70px;
+        margin-bottom: -50px;
 
         &:target:before {
           display: none;
+        }
+
+        &:nth-child(3) {
+          margin-top: -72px;
         }
 
         &:last-child {
@@ -216,7 +223,7 @@
           display: none;
           position: absolute;
           left: 0;
-          top: 57px;
+          top: 130px;
           background: color('link-water');
 
           @media (min-width: 768px) {
@@ -248,14 +255,15 @@
           min-height: 200px;
           padding: 15px 15px 15px 20px;
           border-radius: 8px;
-          box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
-          background-color: color('white');
           border-left: 7px solid var(--wg-color, color('black'));
+          background-color: color('white');
+          box-shadow: 0 10px 25px 0 rgba(0,0,0,.12);
+          transition: box-shadow .3s ease-in;
 
           @media (min-width: 768px) {
             margin-left: auto;
             width: 93%;
-            padding: 30px 30px 22px 50px;
+            padding: 30px 30px 40px 50px;
           }
 
           p, li {
@@ -263,36 +271,43 @@
             line-height: 23px;
           }
 
-          &-button {
-            position: absolute;
-            top: 15px;
-            right: 10px;
-            background: color('white');
-            border: 0;
+          &:hover {
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+          }
+
+          &-header {
+            position: relative;
+            outline: 0;
             cursor: pointer;
 
-            svg {
+            &-title {
+              margin: 5px 0;
+              font-size: 22px;
+            }
+
+            &-subtitle {
+              font-size: 12px;
+              color: color('river-bed');
+            }
+
+            &-toggle {
+              position: absolute;
+              top: 10px;
+              right: 10px;
               width: 23px;
               height: 23px;
+              border: 0;
               fill: color('blue-ribbon');
+              background: color('white');
+              transform-origin: center center;
+              transition: transform .2s ease-out;
             }
-
-            &[slot="expanded"] svg {
-              transform: rotate(180deg);
-            }
-          }
-
-          &-title {
-            margin: 5px 0;
-            font-size: 22px;
-          }
-
-          &-subtitle {
-            font-size: 12px;
-            color: color('river-bed');
           }
 
           &-body {
+            height: 6em;
+            overflow: hidden;
+
             margin-top: 15px;
             border-top: solid 1px color('gallery');
             display: flex;
@@ -340,6 +355,18 @@
               font-size: .9em;
               white-space: nowrap;
             }
+          }
+
+        }
+        &.expanded {
+
+          .ap-o-roadmap-list-item-issue-header {
+            &-toggle {
+              transform: rotate(180deg);
+            }
+          }
+          .ap-o-roadmap-list-item-issue-body {
+            height: auto;
           }
         }
       }

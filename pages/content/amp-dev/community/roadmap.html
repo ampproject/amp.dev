@@ -27,7 +27,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
   <div class="ap-o-roadmap"
       style="{% for group in doc.roadmap.working_groups %}--{{group.slug}}: {{ group.color }};{% endfor %}">
     <section class="ap-o-roadmap-intro">
-      <p class="ap-o-roadmap-intro-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. For the overall AMP Roadmap for 2020 please read this blogpost.<br><br>An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
+      <p class="ap-o-roadmap-intro-text">An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
       <div class="ap-m-tip ap-m-tip-info">
         <div class="ap-m-tip-content">
           {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
@@ -130,43 +130,44 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           <h3>{{ issue.quarter }}</h3>
         </div>
         {% endif %}
-        <div class="ap-o-roadmap-list-item">
+        <div class="ap-o-roadmap-list-item"
+            id="{{ issue.wg_slug }}-{{ issue.number }}">
           <span class="ap-o-roadmap-list-item-timeline ap-o-roadmap-list-item-timeline--vertical"></span>
           <span class="ap-o-roadmap-list-item-timeline ap-o-roadmap-list-item-timeline--horizontal">
             <span class="ap-o-roadmap-list-item-timeline-dot"></span>
           </span>
 
           <div class="ap-o-roadmap-list-item-issue {{ issue.wg_slug }}"
-              id="{{ issue.wg_slug }}-{{ issue.number }}"
               style="--wg-color: var(--{{ issue.wg_slug }});">
-            <amp-truncate-text layout="fixed-height" height="11.5em">
-              <h4 class="ap-o-roadmap-list-item-issue-title">{{ issue.wg_name }}</h4>
-              <span class="ap-o-roadmap-list-item-issue-subtitle">Status Update {{ issue.status_update }}</span>
-              <div class="ap-o-roadmap-list-item-issue-body">
-                {% for column in issue.body|slice(2) %}
-                <div class="ap-o-roadmap-list-item-issue-body-column">
-                  {% for paragraph in column %}
-                  <div>{{ paragraph|markdown|safe }}</div>
-                  {% endfor %}
-                  {% if loop.last %}
-                  <a href="{{ issue.html_url }}" class="ap-m-lnk">
-                    <div class="ap-a-ico ap-m-lnk-icon">
-                      {% do doc.icons.useIcon('icons/internal.svg') %}
-                      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-                    </div>
-                    <span class="ap-m-lnk-text">{{ _('All details on GitHub') }}</span>
-                  </a>
-                  {% endif %}
-                </div>
+            <div class="ap-o-roadmap-list-item-issue-header"
+                on="tap:{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), {{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)"
+                role="button"
+                tabindex="{{ loop.index }}">
+              <h4 class="ap-o-roadmap-list-item-issue-header-title">{{ issue.wg_name }}</h4>
+              <span class="ap-o-roadmap-list-item-issue-header-subtitle">Status Update {{ issue.status_update }}</span>
+              <p></p>
+              <svg class="ap-o-roadmap-list-item-issue-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
+            </div>
+
+
+            <div class="ap-o-roadmap-list-item-issue-body">
+              {% for column in issue.body|slice(2) %}
+              <div class="ap-o-roadmap-list-item-issue-body-column">
+                {% for paragraph in column %}
+                <div>{{ paragraph|markdown|safe }}</div>
                 {% endfor %}
+                {% if loop.last %}
+                <a href="{{ issue.html_url }}" class="ap-m-lnk" target="_blank" rel="noopener">
+                  <div class="ap-a-ico ap-m-lnk-icon">
+                    {% do doc.icons.useIcon('icons/internal.svg') %}
+                    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+                  </div>
+                  <span class="ap-m-lnk-text">{{ _('All details on GitHub') }}</span>
+                </a>
+                {% endif %}
               </div>
-              <button class="ap-o-roadmap-list-item-issue-button" slot="collapsed">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
-              </button>
-              <button class="ap-o-roadmap-list-item-issue-button" slot="expanded">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
-              </button>
-            </amp-truncate-text>
+              {% endfor %}
+            </div>
           </div>
 
         </div>
