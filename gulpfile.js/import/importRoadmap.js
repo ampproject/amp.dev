@@ -43,7 +43,7 @@ const STATUS_UPDATE_REGEX = /(\d\d\d\d)-(\d*)-(\d*)/;
 // Match any amp-component tag. Eg. <amp-img>
 const AMP_COMPONENT_REGEX = /\s(<amp-\S*>)/g;
 // Group markdown text into text blocks starting with h1 - h3
-const TEXT_BLOCK_REGEX = /#{1,3} [^#]+/g;
+const TEXT_BLOCK_REGEX = /^#{1,3} (?:.(?!^#))*/gms;
 /**
  * Extract status update issues from working groups and
  * return them sorted by date/quarter
