@@ -222,7 +222,7 @@ Pingback 是可选组件。将 `noPingback` 配置属性设置为 `true` 即可�
     "namespace": value
   },
   ...
-[
+]
 </script>
 ```
 

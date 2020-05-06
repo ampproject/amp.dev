@@ -221,7 +221,7 @@ Anda dapat menentukan beberapa penyedia akses menggunakan array, bukan objek tun
     "namespace": value
   },
   ...
-[
+]
 </script>
 ```
 
