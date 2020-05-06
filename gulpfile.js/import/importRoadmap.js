@@ -155,17 +155,28 @@ async function importRoadmap() {
     };
   });
 
-  // Sort roadmap entries and add matching working group color
+  // Sort roadmap entries, add matching working group color and evaluate
+  // what working groups have issued updates in which quarter
   roadmap = roadmap.sort((a, b) => {
     return new Date(b.status_update) - new Date(a.status_update);
   });
+
+  const quarters = {};
   for (const issue of roadmap) {
     issue.color = config.colors[issue.wg_slug];
+    quarters[issue.quarter] = quarters[issue.quarter] || [];
+    if (!quarters[issue.quarter].includes(issue.wg_slug)) {
+      quarters[issue.quarter].push(issue.wg_slug);
+    }
   }
 
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.safeDump({'working_groups': workingGroups, 'list': roadmap})
+    yaml.safeDump({
+      working_groups: workingGroups,
+      list: roadmap,
+      quarters: quarters,
+    })
   );
 
   log.success(
