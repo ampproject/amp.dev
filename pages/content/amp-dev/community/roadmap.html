@@ -24,8 +24,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
     </div>
   </section>
 
-  <div class="ap-o-roadmap"
-      style="{% for group in doc.roadmap.working_groups %}--{{group.slug}}: {{ group.color }};{% endfor %}">
+  <div class="ap-o-roadmap">
     <section class="ap-o-roadmap-intro">
       <p class="ap-o-roadmap-intro-text">An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
       <div class="ap-m-tip ap-m-tip-info">
@@ -43,14 +42,15 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <h2 class="ap-o-roadmap-filter-headline">{{ _('Select working groups') }}</h2>
       <div class="ap-o-roadmap-filter-list">
         <button class="ap-m-filter-bubble reset [% if not category %]active[% endif %]"
+            style="color: #005AF0;"
             on="tap:AMP.navigateTo(url='{{ doc.url.path }}#status-updates')">
-          {{ _('All') }}
+          <span class="ap-m-filter-bubble-text">{{ _('All') }}</span>
         </button>
         {% for group in doc.roadmap.working_groups %}
         <button class="ap-m-filter-bubble {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
-            style="--wg-color: var(--{{ group.slug }});"
+            style="color: {{ group.color }}"
             on="tap:AMP.navigateTo(url='{{ doc.url.path }}?category={{ group.slug }}#status-updates')">
-          {{ group.name }}
+          <span class="ap-m-filter-bubble-text">{{ group.name }}</span>
         </button>
         {% endfor %}
       </div>
@@ -139,7 +139,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           </span>
 
           <div class="ap-o-roadmap-list-item-issue {{ issue.wg_slug }}"
-              style="--wg-color: var(--{{ issue.wg_slug }});">
+              style="border-color: {{ issue.color }}">
             <div class="ap-o-roadmap-list-item-issue-header"
                 on="tap:{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), {{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)"
                 role="button"

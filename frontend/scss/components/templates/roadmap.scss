@@ -119,10 +119,16 @@
       .#{molecule('filter-bubble')} {
         transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
 
+        &-text {
+          color: color('oslo-gray');
+        }
+
         &.active,
         &:hover {
-          color: color('white');
-          background: var(--wg-color, color('blue-ribbon'));
+          .ap-m-filter-bubble-text {
+             color: color('white');
+          }
+          background-color: currentColor;
         }
       }
     }
@@ -256,7 +262,7 @@
           min-height: 200px;
           padding: 15px 15px 15px 20px;
           border-radius: 8px;
-          border-left: 7px solid var(--wg-color, color('black'));
+          border-left: 7px solid color('black');
           background-color: color('white');
           box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
           transition: box-shadow .3s ease-in;
