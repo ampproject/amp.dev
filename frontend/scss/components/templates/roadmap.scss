@@ -158,8 +158,8 @@
       &-list {
         position: sticky;
         top: 100px;
-        padding-top: 27px;
-        margin-bottom: 277px;
+        padding-top: 50px;
+        margin-bottom: 268px;
 
         &-item {
           position: relative;
@@ -200,6 +200,7 @@
       &-quarter-separator h3 {
         font-size: 28px;
         opacity: 0.2;
+        margin-bottom: -30px;
 
         @media (min-width: 768px) {
           display: none;
@@ -208,23 +209,15 @@
 
       &-item {
         position: relative;
-
-        @media (min-width: 768px) {
-          padding-top: 70px;
-          margin-bottom: -50px;
-        }
+        padding-top: 70px;
+        margin-top: -50px;
 
         &:target:before {
           display: none;
         }
 
-        &:nth-child(3) {
-          margin-top: -72px;
-        }
-
         &:last-child {
-          // #{$root}-list-item-timeline--vertical {
-          .ap-o-roadmap-list-item-timeline--vertical {
+          #{$root}-list-item-timeline--vertical {
             display: none;
           }
         }
@@ -263,7 +256,7 @@
 
         &-issue {
           min-height: 200px;
-          padding: 15px 15px 20px 20px;
+          padding: 15px 15px 0px 20px;
           border-radius: 8px;
           border-left: 7px solid color('black');
           background-color: color('white');
@@ -324,7 +317,6 @@
             }
 
             &-expand {
-              display: none;
               position: absolute;
               bottom: 0;
               left: 0;
@@ -341,8 +333,12 @@
                 transform: translate3d(0, 3px, 0);
               }
 
-              @media (min-width: 768px) {
-                display: block;
+              &-text {
+                display: none;
+
+                @media (min-width: 768px) {
+                  display: block;
+                }
               }
             }
 
@@ -389,12 +385,12 @@
 
         &.expanded {
 
-          .ap-o-roadmap-list-item-issue-header {
+          #{$root}-list-item-issue-header {
             &-toggle {
               transform: rotate(180deg);
             }
           }
-          .ap-o-roadmap-list-item-issue-body {
+          #{$root}-list-item-issue-body {
             height: auto;
 
             &-expand {
