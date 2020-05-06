@@ -101,6 +101,9 @@
           display: none;
         }
       }
+      @media (min-width: 1920px) {
+        grid-column: 8/18;
+      }
     }
 
     &-filter {
@@ -110,6 +113,10 @@
 
       @media (min-width: 768px) {
         padding-top: 60px;
+      }
+
+      @media (min-width: 1920px) {
+        grid-column: 8/20;
       }
 
       &-headline {
@@ -144,6 +151,10 @@
 
       @media (min-width: 1280px) {
         grid-column: 3/23;
+      }
+
+      @media (min-width: 1920px) {
+        grid-column: 4/20;
       }
     }
 
