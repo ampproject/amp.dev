@@ -121,8 +121,9 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 
         {% for issue in doc.roadmap.list %}
         [% if category in '{{ issue.wg_slug }}' %]
-        {% if loop.changed(issue.quarter) %}
-        <amp-position-observer intersection-ratios="1"
+        {% if current_quarter != issue.quarter %}
+        {% set current_quarter = issue.quarter %}
+        <amp-position-observer viewport-margins="25vh"
             target="{{ issue.quarter|slug }}"
             on="enter:anim-{{ issue.quarter|slug }}.start"
             layout="nodisplay">
