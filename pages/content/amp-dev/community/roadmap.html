@@ -119,8 +119,10 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <div class="ap-o-roadmap-list">
         {% do doc.icons.useIcon('icons/chevron-vertical-light.svg') %}
 
+        {% set current_quarter = '' %}
         {% for issue in doc.roadmap.list %}
         [% if category in '{{ issue.wg_slug }}' %]
+
         {% if current_quarter != issue.quarter %}
         {% set current_quarter = issue.quarter %}
         <amp-position-observer viewport-margins="25vh"
@@ -132,6 +134,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           <h3>{{ issue.quarter }}</h3>
         </div>
         {% endif %}
+
         <div class="ap-o-roadmap-list-item"
             id="{{ issue.wg_slug }}-{{ issue.number }}">
           <span class="ap-o-roadmap-list-item-timeline ap-o-roadmap-list-item-timeline--vertical"></span>
@@ -173,13 +176,11 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
               </button>
             </div>
           </div>
-
         </div>
 
         [% endif %]
         {% endfor %}
       </div>
-
     </section>
   </div>
 
