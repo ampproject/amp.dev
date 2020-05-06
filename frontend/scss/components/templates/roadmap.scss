@@ -256,7 +256,7 @@
 
         &-issue {
           min-height: 200px;
-          padding: 15px 15px 0px 20px;
+          padding: 15px 15px 5px 20px;
           border-radius: 8px;
           border-left: 7px solid color('black');
           background-color: color('white');
@@ -305,7 +305,7 @@
 
           &-body {
             position: relative;
-            height: 8em;
+            height: 7em;
             overflow: hidden;
             margin-top: 15px;
             border-top: solid 1px color('gallery');
@@ -314,20 +314,27 @@
 
             @media (min-width: 768px) {
               flex-direction: row;
+              height: 8em;
             }
 
             &-expand {
               position: absolute;
-              bottom: 0;
+              bottom: -2px;
               left: 0;
               width: 100%;
-              padding: 45px 40px 3px 0;
+              padding: 40px 0;
               border: 0;
               font-weight: bold;
               cursor: pointer;
               color: color('blue-ribbon');
-              background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 60%);
+              background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 90%);
               transition: transform .3s ease-in;
+
+              @media (min-width: 768px) {
+                bottom: 0;
+                padding: 45px 40px 3px 0;
+                background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 60%);
+              }
 
               &:hover {
                 transform: translate3d(0, 3px, 0);
