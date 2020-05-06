@@ -208,8 +208,11 @@
 
       &-item {
         position: relative;
-        padding-top: 70px;
-        margin-bottom: -50px;
+
+        @media (min-width: 768px) {
+          padding-top: 70px;
+          margin-bottom: -50px;
+        }
 
         &:target:before {
           display: none;
@@ -239,7 +242,7 @@
 
           &--vertical {
             width: 2px;
-            height: 100%;
+            height: calc(100% - 56px);
           }
 
           &--horizontal {
@@ -260,7 +263,7 @@
 
         &-issue {
           min-height: 200px;
-          padding: 15px 15px 15px 20px;
+          padding: 15px 15px 20px 20px;
           border-radius: 8px;
           border-left: 7px solid color('black');
           background-color: color('white');
@@ -270,7 +273,7 @@
           @media (min-width: 768px) {
             margin-left: auto;
             width: 93%;
-            padding: 30px 30px 40px 50px;
+            padding: 30px 30px 30px 50px;
           }
 
           p, li {
@@ -308,9 +311,9 @@
           }
 
           &-body {
-            height: 6em;
+            position: relative;
+            height: 8em;
             overflow: hidden;
-
             margin-top: 15px;
             border-top: solid 1px color('gallery');
             display: flex;
@@ -318,6 +321,29 @@
 
             @media (min-width: 768px) {
               flex-direction: row;
+            }
+
+            &-expand {
+              display: none;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              padding: 45px 40px 3px 0;
+              border: 0;
+              font-weight: bold;
+              cursor: pointer;
+              color: color('blue-ribbon');
+              background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 60%);
+              transition: transform .3s ease-in;
+
+              &:hover {
+                transform: translate3d(0, 3px, 0);
+              }
+
+              @media (min-width: 768px) {
+                display: block;
+              }
             }
 
             &-column {
@@ -359,8 +385,8 @@
               white-space: nowrap;
             }
           }
-
         }
+
         &.expanded {
 
           .ap-o-roadmap-list-item-issue-header {
@@ -370,6 +396,10 @@
           }
           .ap-o-roadmap-list-item-issue-body {
             height: auto;
+
+            &-expand {
+              display: none;
+            }
           }
         }
       }

@@ -147,7 +147,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
                 tabindex="{{ loop.index }}">
               <h4 class="ap-o-roadmap-list-item-issue-header-title">{{ issue.wg_name }}</h4>
               <span class="ap-o-roadmap-list-item-issue-header-subtitle">Status Update {{ issue.status_update }}</span>
-              <p></p>
               <svg class="ap-o-roadmap-list-item-issue-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
             </div>
 
@@ -168,6 +167,10 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
                 {% endif %}
               </div>
               {% endfor %}
+              <button class="ap-o-roadmap-list-item-issue-body-expand"
+                  on="tap:{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), {{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)">
+                {{ _('read more') }}
+              </button>
             </div>
           </div>
 
