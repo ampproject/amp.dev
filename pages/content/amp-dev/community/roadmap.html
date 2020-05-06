@@ -57,6 +57,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
     </section>
 
     <section class="ap-o-roadmap-container">
+
       <div class="ap-o-roadmap-navigation">
         <div class="ap-o-roadmap-navigation-list">
           {% for quarter in doc.roadmap.list|map(attribute='quarter')|unique|list %}
@@ -149,12 +150,11 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
               <svg class="ap-o-roadmap-list-item-issue-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
             </div>
 
-
             <div class="ap-o-roadmap-list-item-issue-body">
               {% for column in issue.body|slice(2) %}
               <div class="ap-o-roadmap-list-item-issue-body-column">
                 {% for paragraph in column %}
-                <div>{{ paragraph|markdown|safe }}</div>
+                {{ paragraph|markdown|safe }}
                 {% endfor %}
                 {% if loop.last %}
                 <a href="{{ issue.html_url }}" class="ap-m-lnk" target="_blank" rel="noopener">
