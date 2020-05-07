@@ -244,13 +244,19 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
 
   // Pipe the rendered template through the AMP optimizer
   try {
-    const experimentEsm = req.query.esm || false;
-    const preloadHeroImage = req.query.hero || false;
-    const params = {
-      experimentEsm,
-      preloadHeroImage,
-    };
-    renderedTemplate = await optimizer.transformHtml(renderedTemplate, params);
+    const optimize = req.query.optimize !== 'false';
+    if (optimize) {
+      const experimentEsm = !!req.query.esm || false;
+      const preloadHeroImage = !!req.query.hero || false;
+      const params = {
+        experimentEsm,
+        preloadHeroImage,
+      };
+      renderedTemplate = await optimizer.transformHtml(
+        renderedTemplate,
+        params
+      );
+    }
   } catch (e) {
     signale.error('[OPTIMIZER]', e);
   }
