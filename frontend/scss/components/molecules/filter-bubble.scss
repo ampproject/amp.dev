@@ -29,7 +29,7 @@ The filter-bubble molecule is a simple button used to filter content based on th
   background: color('white');
   color: color('oslo-gray');
   cursor: pointer;
-  margin: 5px 2px;
+  margin: 5px 5px;
 
   &[name="none"] {
     display: none;

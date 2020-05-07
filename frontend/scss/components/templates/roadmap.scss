@@ -125,6 +125,7 @@
     }
 
     .#{molecule('filter-bubble')} {
+      display: inline-block;
       transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
 
       &-text {
@@ -212,7 +213,7 @@
     &-quarter-separator h3 {
       font-size: 28px;
       opacity: 0.2;
-      margin-bottom: -30px;
+      margin-bottom: 0px;
 
       @media (min-width: 768px) {
         display: none;

@@ -25,7 +25,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
   </section>
 
   <section class="ap-t-roadmap-intro">
-    <p class="ap-t-roadmap-intro-text">An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.</p>
+    <p class="ap-t-roadmap-intro-text">{{ _('An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.') }}</p>
     <div class="ap-m-tip ap-m-tip-info">
       <div class="ap-m-tip-content">
         {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
@@ -40,17 +40,17 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 
     <h2 class="ap-t-roadmap-filter-headline">{{ _('Select working groups') }}</h2>
     <div class="ap-t-roadmap-filter-list">
-      <button class="ap-m-filter-bubble reset [% if not category %]active[% endif %]"
-          style="color: #005AF0;"
-          on="tap:AMP.navigateTo(url='{{ doc.url.path }}#status-updates')">
+      <a class="ap-m-filter-bubble reset [% if not category %]active[% endif %]"
+          href="{{ doc.url.path }}#status-updates"
+          style="color: #005AF0;">
         <span class="ap-m-filter-bubble-text">{{ _('All') }}</span>
-      </button>
+      </a>
       {% for group in doc.roadmap.working_groups %}
-      <button class="ap-m-filter-bubble {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
-          style="color: {{ group.color }}"
-          on="tap:AMP.navigateTo(url='{{ doc.url.path }}?category={{ group.slug }}#status-updates')">
+      <a class="ap-m-filter-bubble {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
+          href="{{ doc.url.path }}?category={{ group.slug }}#status-updates"
+          style="color: {{ group.color }}">
         <span class="ap-m-filter-bubble-text">{{ group.name }}</span>
-      </button>
+      </a>
       {% endfor %}
     </div>
   </section>
@@ -134,18 +134,22 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       [% endif %]
       {% endif %}
 
-      [% if category in '{{ issue.wg_slug }}' %]
+      [% if not category or category == '{{ issue.wg_slug }}' %]
       <div class="ap-t-roadmap-list-item"
           id="{{ issue.wg_slug }}-{{ issue.number }}">
+        <amp-action-macro
+            id="expand-{{ issue.wg_slug }}-{{ issue.number }}"
+            execute="{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), {{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)">
+        </amp-action-macro>
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--vertical"></span>
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--horizontal">
           <span class="ap-t-roadmap-list-item-timeline-dot"></span>
         </span>
 
-        <div class="ap-t-roadmap-list-item-issue {{ issue.wg_slug }}"
+        <div class="ap-t-roadmap-list-item-issue"
             style="border-color: {{ issue.color }}">
           <div class="ap-t-roadmap-list-item-issue-header"
-              on="tap:{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), {{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)"
+              on="tap:expand-{{ issue.wg_slug }}-{{ issue.number }}.execute()"
               role="button"
               tabindex="{{ loop.index }}">
             <h4 class="ap-t-roadmap-list-item-issue-header-title">{{ issue.wg_name }}</h4>
@@ -171,7 +175,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
             </div>
             {% endfor %}
             <button class="ap-t-roadmap-list-item-issue-body-expand"
-                on="tap:{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), {{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)">
+                on="tap:expand-{{ issue.wg_slug }}-{{ issue.number }}.execute()">
               <span class="ap-t-roadmap-list-item-issue-body-expand-text">{{ _('read more') }}</span>
             </button>
           </div>
