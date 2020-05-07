@@ -29,7 +29,19 @@
   }
 
   .#{utility('stage')} {
-    grid-column: 1/26;
+    @media (min-width: 768px) {
+      grid-column: 1/25;
+    }
+
+    &.#{utility('container-fluid')} {
+      width: calc(100% + 30px);
+      margin: 0 -15px;
+
+      @media (min-width: 768px) {
+        width: 100%;
+        margin: 0;
+      }
+    }
 
     .#{organism('stage')} {
       margin-bottom: 50px;
