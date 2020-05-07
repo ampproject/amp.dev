@@ -165,13 +165,14 @@ async function importRoadmap() {
     return new Date(b.status_update) - new Date(a.status_update);
   });
 
-  const quarters = { 'ordered': [], 'working_groups': {} };
+  const quarters = {'ordered': [], 'working_groups': {}};
   for (const issue of roadmap) {
     issue.color = config.colors[issue.wg_slug];
     if (!quarters.ordered.includes(issue.quarter)) {
       quarters.ordered.push(issue.quarter);
     }
-    quarters.working_groups[issue.quarter] = quarters.working_groups[issue.quarter] || [];
+    quarters.working_groups[issue.quarter] =
+      quarters.working_groups[issue.quarter] || [];
     if (!quarters.working_groups[issue.quarter].includes(issue.wg_slug)) {
       quarters.working_groups[issue.quarter].push(issue.wg_slug);
     }
