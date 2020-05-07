@@ -103,7 +103,7 @@ async function importRoadmap() {
         e
       );
     }
-    workingGroups.push({'slug': workingGroupSlug, 'name': meta.title});
+    const workingGroup = {'slug': workingGroupSlug, 'name': meta.title};
 
     for (const issue of issues) {
       const createdAt = new Date(issue.created_at).toDateString();
@@ -128,6 +128,10 @@ async function importRoadmap() {
           `.. ${wg.name} - Failed for issue #${issue.number}: ${title}`
         );
         continue;
+      }
+
+      if (!workingGroups.includes(workingGroup)) {
+        workingGroups.push(workingGroup);
       }
 
       roadmap.push({
