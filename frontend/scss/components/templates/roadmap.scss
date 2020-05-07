@@ -109,6 +109,8 @@
 
   &-filter {
     grid-column: 8/22;
+    display: flex;
+    flex-wrap: wrap;
     padding-top: 50px;
     margin-bottom: 50px;
 
@@ -124,20 +126,24 @@
       margin-top: 0;
     }
 
-    .#{molecule('filter-bubble')} {
-      display: inline-block;
-      transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
 
-      &-text {
-        color: color('oslo-gray');
-      }
+      .#{molecule('filter-bubble')} {
+        transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
 
-      &.active,
-      &:hover {
-        .ap-m-filter-bubble-text {
-           color: color('white');
+        &-text {
+          color: color('oslo-gray');
         }
-        background-color: currentColor;
+
+        &.active,
+        &:hover {
+          .ap-m-filter-bubble-text {
+            color: color('white');
+          }
+          background-color: currentColor;
+        }
       }
     }
   }
