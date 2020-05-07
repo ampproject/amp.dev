@@ -5,7 +5,7 @@ formats:
   - websites
   - stories
 teaser:
-  text: '## Overview'
+  text: ' Overview'
 toc: true
 ---
 

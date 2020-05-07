@@ -165,16 +165,12 @@ Endpoints should only allow requests from: (1) the publisher's own origin; and
 For example, endpoints should allow requests from:
 
 - Google AMP Cache subdomain: `https://<publisher's domain>.cdn.ampproject.org` <br>(for example, `https://nytimes-com.cdn.ampproject.org`)
-- Cloudflare AMP Cache: `https://<publisher's domain>.amp.cloudflare.com`
 
 [tip type="read-on"]
-
 For information on AMP Cache URL formats, see these resources:
 
 - [Google AMP Cache Overview](https://developers.google.com/amp/cache/overview)
-- [Cloudflare AMP Cache](https://amp.cloudflare.com/)
-  
-[/tip]
+  [/tip]
 
 #### 2) Allow same-origin requests <a name="2-allow-same-origin-requests"></a>
 
@@ -206,9 +202,7 @@ Although the W3 CORS spec allows the value of <code>\*</code> to be returned in 
 ### Processing state changing requests <a name="processing-state-changing-requests"></a>
 
 [tip type="important"]
-
 Perform these validation checks _before_ you process the request. This validation helps to provide protection against CSRF attacks, and avoids processing untrusted sources requests.
-
 [/tip]
 
 Before processing requests that could change the state of your system (for
@@ -221,7 +215,6 @@ following:
     response:
 
     - `<publisher's domain>.cdn.ampproject.org`
-    - `<publisher's domain>.amp.cloudflare.com`
     - the publisher's origin (aka yours)
 
     where `*` represents a wildcard match, and not an actual asterisk ( \* ).
@@ -255,7 +248,6 @@ Based on what we know about CORS and AMP (from [Verify CORS requests](#verify-co
 
 - `example.com` --- Publisher's domain
 - `example-com.cdn.ampproject.org` --- Google AMP Cache subdomain
-- `example.com.amp.cloudflare.com`--- Cloudflare AMP Cache subdomain
 
 ### Response headers for allowed requests <a name="response-headers-for-allowed-requests"></a>
 
@@ -302,7 +294,6 @@ function assertCors(req, res, opt_validMethods, opt_exposeHeaders) {
   var allowedOrigins = [
     'https://example.com',
     'https://example-com.cdn.ampproject.org',
-    'https://example.com.amp.cloudflare.com',
     'https://cdn.ampproject.org',
   ];
   var allowedSourceOrigin = 'https://example.com'; //publisher's origin
