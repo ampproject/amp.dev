@@ -59,12 +59,10 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 
     <div class="ap-t-roadmap-navigation">
       <div class="ap-t-roadmap-navigation-list">
-        {% for quarter in doc.roadmap.list|map(attribute='quarter')|unique|list %}
+        {% for quarter in doc.roadmap.quarters.ordered %}
 
-        {% set roadmap_quarter = dict(doc.roadmap.list|groupby('quarter')) %}
-        [% set roadmap_filtered = {{ dict(roadmap_quarter[quarter]|groupby('wg_slug'))|tojson }} %]
-
-        [% if not category or roadmap_filtered[category]|length > 0 %]
+        [% set roadmap_quarter = {{ doc.roadmap.quarters.working_groups[quarter]|tojson }} %]
+        [% if not category or roadmap_quarter.includes(category) %]
         <amp-animation id="anim-{{ quarter|slug }}" layout="nodisplay">
           <script type="application/json">
             {
@@ -116,7 +114,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       </div>
     </div>
 
-    [% set quarters = {{ doc.roadmap.quarters|tojson }} %]
+    [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
     <div class="ap-t-roadmap-list">
       {% do doc.icons.useIcon('icons/chevron-vertical-light.svg') %}
 
