@@ -25,11 +25,11 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
   </section>
 
   <section class="ap-t-roadmap-intro">
-    <p class="ap-t-roadmap-intro-text">{{ _('An AMP Working Group is a segment of the community with knowledge/interest in specific area of AMP. Working Groups are created by AMP’s Technical Steering Committee.') }}</p>
+    <p class="ap-t-roadmap-intro-text">The ongoing development of AMP is conducted in <a href="{{ g.doc('/content/amp-dev/community/working-groups/access-subscriptions', locale=doc.locale).url.path }}">working groups</a>, each with knowledge or interest in a specific area of AMP.<br><br>To make their work visible to the community all groups provide regular status updates with details of what they have accomplished and what's up next.</p>
     <div class="ap-m-tip ap-m-tip-info">
       <div class="ap-m-tip-content">
         {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
-        <p>{{ _('This is a high level overview, to look at detailed features up for consideration please head to <a href="https://github.com/ampproject/amphtml/projects/43">Github</a>. You can vote on issues, leave feedback or create a new issue.') }}</p>
+        <p>{{ _('All of the updates listed here are available as issues on GitHub and we\'d love you to join the conversation there!') }}</p>
       </div>
     </div>
   </section>
@@ -174,7 +174,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
             {% endfor %}
             <button class="ap-t-roadmap-list-item-issue-body-expand"
                 on="tap:expand-{{ issue.wg_slug }}-{{ issue.number }}.execute()">
-              <span class="ap-t-roadmap-list-item-issue-body-expand-text">{{ _('read more') }}</span>
+              <span class="ap-t-roadmap-list-item-issue-body-expand-text">{{ _('Expand update') }}</span>
             </button>
           </div>
         </div>
