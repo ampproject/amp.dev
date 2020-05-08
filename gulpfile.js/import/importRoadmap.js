@@ -28,6 +28,9 @@ const {
   GitHubImporter,
   DEFAULT_ORGANISATION,
 } = require('@lib/pipeline/gitHubImporter');
+const config = require(utils.project.absolute(
+  'platform/config/imports/roadmap.json'
+));
 const log = require('@lib/utils/log')('Import Roadmap');
 
 /* Path where the roadmap data gets imported to */
@@ -36,8 +39,11 @@ const ROADMAP_DIRECTORY_PATH = utils.project.absolute('pages/shared/data');
 const ALLOWED_ISSUE_TYPES = ['Type: Status Update', 'Status Update'];
 
 // RegEx to extract date from issue title
-const STATUS_UPDATE_REGEX = /(\d*)-(\d*)-(\d*)/;
-
+const STATUS_UPDATE_REGEX = /(\d\d\d\d)-(\d*)-(\d*)/;
+// Match any amp-component tag. Eg. <amp-img>
+const AMP_COMPONENT_REGEX = /\s(<amp-\S*>)/g;
+// Group markdown text into text blocks starting with h1 - h3
+const TEXT_BLOCK_REGEX = /^#{1,3} (?:.(?!^#))*/gms;
 /**
  * Extract status update issues from working groups and
  * return them sorted by date/quarter
@@ -46,6 +52,7 @@ const STATUS_UPDATE_REGEX = /(\d*)-(\d*)-(\d*)/;
  */
 
 async function importRoadmap() {
+  let workingGroups = [];
   let roadmap = [];
 
   log.start('Importing Roadmap data for ..');
@@ -60,7 +67,7 @@ async function importRoadmap() {
     if (!wg.name.startsWith('wg-')) {
       continue;
     }
-    const workingGroupName = wg.name.substr(3);
+    const workingGroupSlug = wg.name.substr(3);
 
     let issues = (
       await client._github
@@ -78,9 +85,35 @@ async function importRoadmap() {
       continue;
     }
 
+    // Get full working group name from METADATA.yaml
+    let meta = null;
+    try {
+      meta = await client.fetchFile(
+        `METADATA.yaml`,
+        `${DEFAULT_ORGANISATION}/${wg.name}`
+      );
+    } catch (e) {
+      log.warn(`.. ${wg.name} - METADATA.yaml not found`);
+    }
+    try {
+      meta = yaml.safeLoad(meta);
+    } catch (e) {
+      log.error(
+        `.. ${wg.name} - Failed loading ${DEFAULT_ORGANISATION}/${wg.name}/METADATA.yaml`,
+        e
+      );
+    }
+    const workingGroup = {'slug': workingGroupSlug, 'name': meta.title};
+
     for (const issue of issues) {
       const createdAt = new Date(issue.created_at).toDateString();
       const title = emojiStrip(issue.title);
+
+      // Escape amp components from markdown to prevent amp-optimizer errors
+      let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
+
+      // Remove Emojis and split into separate text blocks to allow smoother line breaks in frontend
+      body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
 
       // Parse status update date from from issue title and set quarter
       let statusUpdate = title.match(STATUS_UPDATE_REGEX);
@@ -97,34 +130,66 @@ async function importRoadmap() {
         continue;
       }
 
+      if (!workingGroups.includes(workingGroup)) {
+        workingGroups.push(workingGroup);
+      }
+
       roadmap.push({
-        'wg_name': workingGroupName,
+        'wg_slug': workingGroupSlug,
+        'wg_name': meta.title,
         'created_at': createdAt,
-        'status_update': statusUpdate || '',
-        'quarter': quarter || '',
-        'title': title,
+        'status_update': statusUpdate,
+        'quarter': quarter,
         'number': issue.number,
-        'author': issue.user.login,
         'html_url': issue.html_url,
-        'body': issue.body,
+        'body': body,
       });
     }
 
     log.info(`.. ${wg.name} - ${issues.length} issues imported`);
   }
 
-  // Sort issues by date
+  // Get predefined color based on roadmap config
+  workingGroups = [...new Set(workingGroups.sort())];
+  workingGroups = workingGroups.map((group) => {
+    return {
+      'slug': group.slug,
+      'name': group.name,
+      'color': config.colors[group.slug] || config.fallbackColor,
+    };
+  });
+
+  // Sort roadmap entries, add matching working group color and evaluate
+  // what working groups have issued updates in which quarter
   roadmap = roadmap.sort((a, b) => {
     return new Date(b.status_update) - new Date(a.status_update);
   });
 
+  const quarters = {'ordered': [], 'working_groups': {}};
+  for (const issue of roadmap) {
+    issue.color = config.colors[issue.wg_slug];
+    if (!quarters.ordered.includes(issue.quarter)) {
+      quarters.ordered.push(issue.quarter);
+    }
+    quarters.working_groups[issue.quarter] =
+      quarters.working_groups[issue.quarter] || [];
+    if (!quarters.working_groups[issue.quarter].includes(issue.wg_slug)) {
+      quarters.working_groups[issue.quarter].push(issue.wg_slug);
+    }
+  }
+
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.dump({'roadmap': roadmap})
+    yaml.safeDump({
+      working_groups: workingGroups,
+      list: roadmap,
+      quarters: quarters,
+    })
   );
 
   log.success(
-    `Successfully imported ${roadmap.length} roadmap status update issues`
+    `Successfully imported ${roadmap.length} roadmap status update issues
+    from ${workingGroups.length} working groups`
   );
 }
 
