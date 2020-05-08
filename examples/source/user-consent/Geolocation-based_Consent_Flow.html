@@ -1,5 +1,5 @@
 <!---
-  
+
 teaserImage: '/static/samples/img/teaser/geolocation-based_consent_flow.jpg'
 author: micajuine-ho, sebastianbenz
 
@@ -8,15 +8,15 @@ author: micajuine-ho, sebastianbenz
 <!--
   ## Introduction
 
-  Sometimes is necessary to ask only users from specific countries for consent. This sample demonstrates
+  Sometimes is necessary to ask only users from specific countries or regions for consent. This sample demonstrates
   how you can use `amp-consent` together with `amp-geo` to achieve this. In this sample we'll build a
-  consent dialog that will show for users from US and another consent dialog that will show for users in the EEA (a predefined country group).
+  consent dialog that will show for users from U.S. California and another consent dialog that will show for users in the EEA (a predefined country group).
 -->
 <!-- -->
 <!doctype html>
 <html ⚡>
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <link rel="canonical" href="<% canonical %>">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -71,7 +71,11 @@ author: micajuine-ho, sebastianbenz
     }
     /* override */
     .amp-geo-group-eea .default:after {
-      content: 'in the preset eea group. Consent was required.';
+      content: 'in the preset-eea group. Consent was required.';
+    }
+    /* override */
+    .amp-geo-group-usca .default:after {
+      content: 'in the preset-us-ca group. Consent was required.';
     }
     #post-consent-ui {
       display: flex;
@@ -89,20 +93,20 @@ author: micajuine-ho, sebastianbenz
       {
         "ISOCountryGroups": {
           "eea": [ "preset-eea", "unknown" ],
-          "us": [ "us" ]
+          "usca": [ "preset-us-ca" ]
         }
       }
     </script>
   </amp-geo>
 
-  
+
   <!-- ## Defining the consent flow -->
   <!--
     The flow should rely on amp-geo to determine which config to show based upon the user's location, so we set the flag: [`geoOverride`](/content/amp-dev/documentation/components/reference/amp-consent.md#geoOverride).
 
-    If amp-geo finds that the user is in the US country group, then the contents of the US config will override the top-level consent config (and same for EEA).
+    If amp-geo finds that the user is in the US California group, then the contents of the corresponding config will override the top-level consent config (and same for EEA).
 
-    Our final config for an EEA (and unknown) user would look like this: 
+    Our final config for an EEA (and unknown) user would look like this:
     ```json
     {
       "consentInstanceId": "world-wide-consent",
@@ -113,19 +117,17 @@ author: micajuine-ho, sebastianbenz
     ```
     Since `consentRequired` is `true` and `promptUI` is configured, `amp-consent` will show the prompt if no localstorage decision is found.
 
-    Our final config for a US user would look like this: 
+    Our final config for a US California user would look like this:
     ```json
     {
       "consentInstanceId": "world-wide-consent",
-      "consentRequired": "remote",
-      "checkConsentHref": "/documentation/examples/api/get-consent-sever-side",
-      "promptUI": null,
+      "consentRequired": true,
+      "promptUI": "usca-consent-ui",
       "postPromptUI": "post-consent-ui"
     }
     ```
-    If no localstorage decision is found and since `consentRequired` is 'remote', `amp-consent` will wait until it gets a response from `checkConsentHref`. In this example, no matter what the response returned, it will not show anything because `promptUI` was overriden to `null` (since there could be an external site to manage user consent).
 
-    And our final config for a user in neither of those geo groups would be: 
+    And our final config for a user in neither of those geo groups would be:
     ```json
     {
       "consentInstanceId": "world-wide-consent",
@@ -134,8 +136,6 @@ author: micajuine-ho, sebastianbenz
     }
     ```
     Localstorage decision will be used if it exists, otherwise, since `consentRequired` is `false`, `amp-consent` will not do anything.
-
-    Note: Use `expireCache: true` in your response to never save consent states to localstorage.
   -->
   <amp-consent id="myUserConsent" layout="nodisplay">
       <script type="application/json">{
@@ -146,10 +146,9 @@ author: micajuine-ho, sebastianbenz
             "promptUI": "eea-consent-ui",
             "consentRequired": true
           },
-          "us": {
-            "consentRequired": "remote",
-            "checkConsentHref": "/documentation/examples/api/get-consent-server-side",
-            "promptUI": null
+          "usca": {
+            "consentRequired": true,
+            "promptUI": "usca-consent-ui"
           }
         },
         "postPromptUI": "post-consent-ui"
@@ -158,11 +157,20 @@ author: micajuine-ho, sebastianbenz
         <div class="consentPopup">
           <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
           <h2>Headline</h2>
-          <p>This is an important message requiring you to make a choice if you're based in the EA.</p>
+          <p>This is an important message requiring you to make a choice if you're based in the EEA.</p>
           <button on="tap:myUserConsent.accept">Accept</button>
           <button on="tap:myUserConsent.reject">Reject</button>
         </div>
       </div>
+      <div id="usca-consent-ui" class="popupOverlay">
+          <div class="consentPopup">
+            <div class="dismiss-button" role="button" tabindex="0" on="tap:myUserConsent.dismiss">X</div>
+            <h2>Headline</h2>
+            <p>This is an important message requiring you to make a choice if you're based in the U.S. California.</p>
+            <button on="tap:myUserConsent.accept">Accept</button>
+            <button on="tap:myUserConsent.reject">Reject</button>
+          </div>
+        </div>
       <div id="post-consent-ui">
         <button on="tap:myUserConsent.prompt()">Update Consent</button>
       </div>
@@ -174,10 +182,10 @@ author: micajuine-ho, sebastianbenz
   <!-- ## Testing -->
   <!--
   You can test different behaviors by appending custom country codes to the URL and enabling the `dev-channel` [here](https://cdn.ampproject.org/experiments.html), for example:
-
-  - US: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)
-  - EEA: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
-  - Neither: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow/#amp-geo=td](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=td)
+  - US California: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow#amp-geo=us%20us-ca](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us%20us-ca)
+  - US (Not California): [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow#amp-geo=us](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=us)
+  - EEA: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow#amp-geo=de](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=de)
+  - Neither: [https://amp.dev/documentation/examples/user-consent/geolocation-based_consent_flow#amp-geo=td](/content/amp-dev/documentation/examples/documentation/Geolocation-based_Consent_Flow.html#amp-geo=td)
   -->
 
 </body>

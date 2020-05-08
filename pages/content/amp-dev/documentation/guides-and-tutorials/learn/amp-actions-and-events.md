@@ -107,7 +107,6 @@ AMP defines a `tap` event globally that you can listen to on any HTML element (i
 AMP also defines the `hide`, `show` and `toggleVisibility` actions globally that you can trigger on any HTML element.
 
 [tip type="note"]
-
 An element can only be shown if it was previously hidden by a `hide` or `toggleVisibility` action, or by using the [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) attribute. The `show` action does not support elements hidden by CSS `display:none` or AMP's `layout=nodisplay`.
 
 For example, the following is possible in AMP:
@@ -117,7 +116,6 @@ For example, the following is possible in AMP:
 
 <button on="tap:warning-message.hide">Cool, thanks!</button>
 [/sourcecode]
-
 
 [/tip]
 
@@ -627,7 +625,7 @@ The actions below are supported in the following AMP video elements: `amp-video`
     <td>Unmutes the video.</td>
   </tr>
   <tr>
-    <td><code>fullscreen</code></td>
+    <td><code>fullscreenenter</code></td>
     <td>Takes the video to fullscreen.</td>
   </tr>
 </table>
@@ -665,7 +663,7 @@ actions that apply to the whole document.
   </tr>
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
-    <td>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></a>.</td>
+    <td>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
