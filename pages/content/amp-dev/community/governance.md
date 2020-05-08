@@ -7,7 +7,7 @@ formats:
   - stories
   - ads
 teaser:
-  text: '## Glossary'
+  text: ' Glossary'
 toc: true
 ---
 
@@ -42,7 +42,7 @@ have a look and request a pull request there.
 
 #### Role <a name="role"></a>
 
-The Advisory Committee provides perspective and advice to the Technical Steering Committee.
+The Advisory Committee provides perspective and advice to the Technical Steering Committee. This advice is non-binding.
 
 #### Membership <a name="membership"></a>
 * Membership on the Advisory Committee shall include representatives from major AMP constituencies (Collaborators, Contributors, Users and End-Users) who are committed to fulfilling [AMP's vision and mission](https://www.ampproject.org/about/mission/).
