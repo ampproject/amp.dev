@@ -61,7 +61,7 @@ async function importRoadmap() {
 
   let workingGroups = repos.filter((wg) => wg.name.startsWith('wg-'));
 
-  const roadmap = (workingGroups = await Promise.all(
+  workingGroups = workingGroups = await Promise.all(
     workingGroups.map(async (workingGroup) => {
       const workingGroupMeta = await getMetaForWorkigGroup(workingGroup);
       const workingGroupIssues = await getIssuesForWorkingGroup(
@@ -72,9 +72,21 @@ async function importRoadmap() {
         'workingGroupIssues': workingGroupIssues,
       };
     })
-  ));
+  );
 
-  // writeRoadmapYaml(roadmap);
+  // Restructure data here
+  const roadmap = {
+    'working_groups': [],
+    'quarters': [],
+    'issues': [],
+  };
+
+  for (const workingGroup of workingGroups) {
+    roadmap.issues.push(...workingGroup.workingGroupIssues);
+  }
+
+  // Write file
+  writeRoadmapYaml(roadmap);
 
   log.success(
     `Successfully imported ${roadmap.length} roadmap status update issues
@@ -146,14 +158,14 @@ async function getIssuesForWorkingGroup(workingGroupMeta) {
     });
 }
 
-
 async function writeRoadmapYaml(roadmap) {
+  console.log('Write file');
   await writeFileAsync(
     `${ROADMAP_DIRECTORY_PATH}/roadmap2.yaml`,
     yaml.safeDump({
-      working_groups: workingGroups,
-      issues: roadmap,
-      quarters: quarters,
+      working_groups: roadmap.working_groups,
+      quarters: roadmap.quarters,
+      issues: roadmap.issues,
     })
   );
 }
