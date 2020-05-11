@@ -120,7 +120,7 @@
   }
 
   &-filter {
-    grid-column: 8/22;
+    grid-column: 8/23;
     display: flex;
     flex-wrap: wrap;
     padding-top: 50px;
@@ -189,8 +189,8 @@
     &-list {
       position: sticky;
       top: 50px;
-      padding-top: 100px;
-      margin-bottom: 328px;
+      padding-top: 40px;
+      margin-bottom: 368px;
 
       &-item {
         position: relative;
@@ -252,7 +252,7 @@
         display: none;
         position: absolute;
         left: 0;
-        top: 130px;
+        top: 70px;
         background: color('link-water');
 
         @media (min-width: 768px) {
@@ -281,18 +281,24 @@
       }
 
       &-issue {
+        position: relative;
         min-height: 200px;
         padding: 15px 15px 5px 20px;
         border-radius: 8px;
         border-left: 7px solid color('black');
         background-color: color('white');
-        box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.07);
-        transition: box-shadow .3s ease-in;
+        box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.07);
+        transition: transform .25s ease-in, box-shadow .3s ease-in;
 
         @media (min-width: 768px) {
           margin-left: auto;
           width: 93%;
           padding: 30px 30px 30px 50px;
+        }
+
+        &:hover {
+          transform: translate3d(0, -2px, 0);
+          box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.12);
         }
 
         p, li {
@@ -302,7 +308,6 @@
 
         &-header {
           position: relative;
-          outline: 0;
           cursor: pointer;
 
           &-title {
@@ -314,18 +319,25 @@
             font-size: 12px;
             color: color('river-bed');
           }
+        }
 
-          &-toggle {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 23px;
-            height: 23px;
-            border: 0;
-            fill: color('blue-ribbon');
-            background: color('white');
-            transform-origin: center center;
-            transition: transform .2s ease-out;
+        &-toggle {
+          position: absolute;
+          display: flex;
+          justify-content: flex-end;
+          top: 0;
+          right: 0px;
+          width: 100%;
+          height: 100%;
+          padding: 30px;
+          fill: color('blue-ribbon');
+          transition: transform .2s ease-out;
+          cursor: pointer;
+          
+          svg {
+            width: 24px;
+            height: 24px;
+            transition: transform .2s ease-in;
           }
         }
 
@@ -341,39 +353,6 @@
           @media (min-width: 768px) {
             flex-direction: row;
             height: 8em;
-          }
-
-          &-expand {
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            padding: 40px 0;
-            border: 0;
-            outline: 0;
-            font-weight: bold;
-            cursor: pointer;
-            color: color('blue-ribbon');
-            background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 90%);
-            transition: transform .3s ease-in;
-
-            @media (min-width: 768px) {
-              bottom: 0;
-              padding: 45px 40px 3px 0;
-              background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 48%);
-            }
-
-            &:hover {
-              transform: translate3d(0, 3px, 0);
-            }
-
-            &-text {
-              display: none;
-
-              @media (min-width: 768px) {
-                display: block;
-              }
-            }
           }
 
           &-column {
@@ -414,13 +393,23 @@
             font-size: .9em;
             white-space: nowrap;
           }
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 100%);
+          }
         }
       }
 
       &.expanded {
+        #{$root}-list-item-issue-toggle {
+          height: 100px;
 
-        #{$root}-list-item-issue-header {
-          &-toggle {
+          svg {
             transform: rotate(180deg);
           }
         }
