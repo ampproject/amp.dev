@@ -51,7 +51,7 @@ Content-Type: text/html
 From:  Person A <persona@example.com>
 To: Person B <personb@example.com>
 Subject: An AMP email!
-Content-Type: multipart/alternative; boundary="001a114634ac3555ae05525685ae"
+Content-Type: multipart/alternative; charset="utf-8"; boundary="001a114634ac3555ae05525685ae"
 
 --001a114634ac3555ae05525685ae
 Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
