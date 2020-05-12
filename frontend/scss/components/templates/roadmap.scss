@@ -243,6 +243,10 @@
 
       &:first-child {
         padding-top: 0;
+
+        @media (min-width: 768px) {
+          padding-top: 20px;
+        }
       }
 
       &:last-child {
