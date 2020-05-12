@@ -120,7 +120,7 @@
   }
 
   &-filter {
-    grid-column: 8/23;
+    grid-column: 3/23;
     display: flex;
     flex-wrap: wrap;
     padding-top: 50px;
@@ -128,6 +128,10 @@
 
     @media (min-width: 768px) {
       padding-top: 60px;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 8/23;
     }
 
     @media (min-width: 1920px) {
@@ -203,10 +207,15 @@
         background: transparent;
 
         &-title {
-          margin: 15px 0;
-          font-size: 28px;
+          margin: 18px 0;
+          font-size: 22px;
           white-space: nowrap;
           cursor: pointer;
+
+          @media (min-width: 1024px) {
+            margin: 15px 0;
+            font-size: 28px;
+          }
         }
 
         &-timeline {
@@ -228,24 +237,40 @@
       width: 80%;
     }
 
-    &-quarter-separator h3 {
-      font-size: 28px;
-      opacity: 0.2;
-      margin-bottom: 0px;
-
-      @media (min-width: 768px) {
-        display: none;
-      }
-    }
-
     &-item {
       position: relative;
       padding-top: 20px;
+
+      &:first-child {
+        padding-top: 0;
+      }
 
       &:last-child {
         #{$root}-list-item-timeline--vertical {
           display: none;
         }
+      }
+
+      &-quarter {
+        @media (min-width: 768px) {
+          position: absolute;
+          top: -50px;
+        }
+
+        h3 {
+          font-size: 28px;
+          opacity: 0.2;
+
+          @media (min-width: 768px) {
+            display: none;
+          }
+        }
+      }
+
+      &-scroll-spacer {
+        position: absolute;
+        top: -50px;
+        height: 50px;
       }
 
       &-timeline {
@@ -283,7 +308,7 @@
       &-issue {
         position: relative;
         min-height: 200px;
-        padding: 15px 15px 5px 20px;
+        padding: 15px 15px 8px 20px;
         border-radius: 8px;
         border-left: 7px solid color('black');
         background-color: color('white');
@@ -294,11 +319,11 @@
           margin-left: auto;
           width: 93%;
           padding: 30px 30px 30px 50px;
-        }
 
-        &:hover {
-          transform: translate3d(0, -2px, 0);
-          box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.12);
+          &:hover {
+            transform: translate3d(0, -2px, 0);
+            box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.12);
+          }
         }
 
         p, li {
@@ -329,15 +354,19 @@
           right: 0px;
           width: 100%;
           height: 100%;
-          padding: 30px;
+          padding: 17px;
           fill: color('blue-ribbon');
           transition: transform .2s ease-out;
           cursor: pointer;
-          
+
+          @media (min-width: 768px) {
+            padding: 30px;
+          }
+
           svg {
-            width: 24px;
-            height: 24px;
-            transition: transform .2s ease-in;
+            width: 21px;
+            height: 21px;
+            transition: transform 0.25s cubic-bezier(0, 0, 0.3, 1);
           }
         }
 
@@ -391,7 +420,6 @@
             color: #000;
             background: color('gallery');
             font-size: .9em;
-            white-space: nowrap;
           }
 
           &:after {
@@ -406,22 +434,29 @@
       }
 
       &.expanded {
-        #{$root}-list-item-issue-toggle {
-          height: 100px;
-
-          svg {
-            transform: rotate(180deg);
+        #{$root}-list-item-issue {
+          @media (min-width: 768px) {
+            transform: translate3d(0, -2px, 0);
+            box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.12);
           }
-        }
-        #{$root}-list-item-issue-body {
-          height: auto;
 
-          &-expand {
-            display: none;
+          &-toggle {
+            height: 100px;
+
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+
+          &-body {
+            height: auto;
+
+            &:after {
+              display: none;
+            }
           }
         }
       }
     }
   }
-
 }
