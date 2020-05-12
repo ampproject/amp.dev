@@ -117,7 +117,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
     [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
     <div class="ap-t-roadmap-list">
       {% do doc.icons.useIcon('icons/chevron-vertical-light.svg') %}
-      {% for issue in doc.roadmap.list %}
+      {% for issue in doc.roadmap.issues %}
       [% if not category or category == '{{ issue.wg_slug }}' %]
       <div class="ap-t-roadmap-list-item"
           id="{{ issue.wg_slug }}-{{ issue.number }}">
