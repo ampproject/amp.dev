@@ -98,7 +98,7 @@
       margin-left: 17px;
 
       @media (min-width: 768px) {
-        margin-left: 0px;
+        margin-left: 0;
       }
     }
 
@@ -249,12 +249,6 @@
         }
       }
 
-      &:last-child {
-        #{$root}-list-item-timeline--vertical {
-          display: none;
-        }
-      }
-
       &-quarter {
         @media (min-width: 768px) {
           position: absolute;
@@ -316,7 +310,7 @@
         border-radius: 8px;
         border-left: 7px solid color('black');
         background-color: color('white');
-        box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.07);
+        box-shadow: 0 2px 18px 0 fade-out(color('black'), 0.93);
         transition: transform .25s ease-in, box-shadow .3s ease-in;
 
         @media (min-width: 768px) {
@@ -326,7 +320,7 @@
 
           &:hover {
             transform: translate3d(0, -2px, 0);
-            box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 35px 0 fade-out(color('black'), 0.88);
           }
         }
 
@@ -355,7 +349,7 @@
           display: flex;
           justify-content: flex-end;
           top: 0;
-          right: 0px;
+          right: 0;
           width: 100%;
           height: 100%;
           padding: 17px;
@@ -421,7 +415,7 @@
             @include txt-mono;
             display: inline;
             padding: 2px 4px;
-            color: #000;
+            color: color('black');
             background: color('gallery');
             font-size: .9em;
           }
@@ -432,7 +426,7 @@
             bottom: 0;
             width: 100%;
             height: 50px;
-            background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff 100%);
+            background: linear-gradient(180deg, transparentize(color('white'), 1), color('white') 100%);
           }
         }
       }
@@ -441,7 +435,7 @@
         #{$root}-list-item-issue {
           @media (min-width: 768px) {
             transform: translate3d(0, -2px, 0);
-            box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 35px 0 fade-out(color('black'), 0.88);
           }
 
           &-toggle {

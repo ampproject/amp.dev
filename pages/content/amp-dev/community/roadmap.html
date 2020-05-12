@@ -99,7 +99,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           </script>
         </amp-animation>
         <button class="ap-t-roadmap-navigation-list-item"
-            on="tap:{% if loop.first %}status-updates{% else %}{{ quarter|slug }}{% endif %}.scrollTo(duration=500)">
+            on="tap:{{ 'status-updates' if loop.first else quarter|slug }}.scrollTo(duration=500)">
           <h3 class="ap-t-roadmap-navigation-list-item-title nav-item-title"
               id="nav-item-{{ quarter|slug }}">
             {{ quarter }}
@@ -136,7 +136,9 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
         <aside class="ap-t-roadmap-list-item-scroll-spacer"
             id="scroll-{{ issue.wg_slug }}-{{ issue.number }}">
         </aside>
+        {% if not loop.last %}
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--vertical"></span>
+        {% endif %}
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--horizontal">
           <span class="ap-t-roadmap-list-item-timeline-dot"></span>
         </span>
