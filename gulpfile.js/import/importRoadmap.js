@@ -61,6 +61,7 @@ async function importRoadmap() {
 
   let workingGroups = repos.filter((wg) => wg.name.startsWith('wg-'));
 
+  // Asynchronously retrieve working groups metadata and status update issues from GitHub repos
   workingGroups = workingGroups = await Promise.all(
     workingGroups.map(async (workingGroup) => {
       const workingGroupMeta = await getMetaForWorkigGroup(workingGroup);
@@ -68,24 +69,55 @@ async function importRoadmap() {
         workingGroupMeta
       );
       return {
-        'workingGroupMeta': workingGroupMeta,
-        'workingGroupIssues': workingGroupIssues,
+        'meta': workingGroupMeta,
+        'issues': workingGroupIssues,
       };
     })
   );
 
-  // Restructure data here
+  // Restructure imported working group data to be easily accessed in the template
   const roadmap = {
     'working_groups': [],
-    'quarters': [],
+    'quarters': {},
     'issues': [],
   };
 
   for (const workingGroup of workingGroups) {
-    roadmap.issues.push(...workingGroup.workingGroupIssues);
-  }
+    roadmap.issues.push(...workingGroup.issues);
 
-  // Write file
+    const currentWorkingGroup = {
+      'slug': workingGroup.meta.slug,
+      'name': workingGroup.meta.name,
+      'color': workingGroup.meta.color,
+    };
+    if (
+      !roadmap.working_groups.includes(currentWorkingGroup) &&
+      roadmap.issues
+        .map((issue) => issue.wg_slug)
+        .includes(currentWorkingGroup.slug)
+    ) {
+      roadmap.working_groups.push(currentWorkingGroup);
+    }
+  }
+  roadmap.issues = roadmap.issues.sort((a, b) => {
+    return new Date(b.status_update) - new Date(a.status_update);
+  });
+
+  const quarters = {'ordered': [], 'working_groups': {}};
+  for (const issue of roadmap.issues) {
+    if (!quarters.ordered.includes(issue.quarter)) {
+      quarters.ordered.push(issue.quarter);
+    }
+    quarters.working_groups[issue.quarter] =
+      quarters.working_groups[issue.quarter] || [];
+
+    if (!quarters.working_groups[issue.quarter].includes(issue.wg_slug)) {
+      quarters.working_groups[issue.quarter].push(issue.wg_slug);
+    }
+  }
+  roadmap.quarters = quarters;
+
+  // Write yaml file to ROADMAP_DIRECTORY_PATH/roadmap.yaml
   writeRoadmapYaml(roadmap);
 
   log.success(
@@ -94,7 +126,7 @@ async function importRoadmap() {
   );
 }
 
-// Get full working group name from METADATA.yaml
+// Get meta information for working group e.g. full name from METADATA.yaml
 async function getMetaForWorkigGroup(workingGroup) {
   const workingGroupSlug = workingGroup.name.substr(3);
 
@@ -142,26 +174,44 @@ async function getIssuesForWorkingGroup(workingGroupMeta) {
       const title = emojiStrip(issue.title);
 
       // Escape amp-components in markdown to prevent them from being rendered as such
-      const body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
+      // plus remove Emojis and split into separate text blocks to allow smoother line breaks in frontend
+      let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
+      body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
+
+      // Parse status update date from from issue title and set quarter
+      let statusUpdate = title.match(STATUS_UPDATE_REGEX);
+      let quarter;
+      if (statusUpdate) {
+        quarter = `Q${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${
+          statusUpdate[1]
+        }`;
+        statusUpdate = new Date(statusUpdate[0]).toDateString();
+      } else {
+        log.error(
+          `.. ${workingGroupMeta.slug} - Could not parse valid date from issue title: ${title}`
+        );
+        return;
+      }
 
       return {
         'wg_slug': workingGroupMeta.slug,
         'wg_title': workingGroupMeta.title,
         'wg_color': workingGroupMeta.color,
         'created_at': createdAt,
-        // 'status_update': statusUpdate,
-        // 'quarter': quarter,
+        'status_update': statusUpdate,
+        'quarter': quarter,
         'number': issue.number,
         'html_url': issue.html_url,
         'body': body,
       };
-    });
+    })
+    .filter((issue) => issue);
 }
 
 async function writeRoadmapYaml(roadmap) {
   console.log('Write file');
   await writeFileAsync(
-    `${ROADMAP_DIRECTORY_PATH}/roadmap2.yaml`,
+    `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
     yaml.safeDump({
       working_groups: roadmap.working_groups,
       quarters: roadmap.quarters,
