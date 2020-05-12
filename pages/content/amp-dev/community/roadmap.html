@@ -99,7 +99,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           </script>
         </amp-animation>
         <button class="ap-t-roadmap-navigation-list-item"
-            on="tap:{{ quarter|slug }}.scrollTo(duration=250)">
+            on="tap:{{ 'status-updates' if loop.first else quarter|slug }}.scrollTo(duration=500)">
           <h3 class="ap-t-roadmap-navigation-list-item-title nav-item-title"
               id="nav-item-{{ quarter|slug }}">
             {{ quarter }}
@@ -117,44 +117,37 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
     [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
     <div class="ap-t-roadmap-list">
       {% do doc.icons.useIcon('icons/chevron-vertical-light.svg') %}
-
       {% for issue in doc.roadmap.list %}
-      {% if loop.changed(issue.quarter) %}
-      [% if not category or quarters['{{ issue.quarter }}'].includes(category) %]
-      <amp-position-observer viewport-margins="25vh"
-          target="{{ issue.quarter|slug }}"
-          on="enter:anim-{{ issue.quarter|slug }}.start"
-          layout="nodisplay">
-      </amp-position-observer>
-      <div class="ap-t-roadmap-list-quarter-separator" id="{{ issue.quarter|slug }}">
-        <h3>{{ issue.quarter }}</h3>
-      </div>
-      [% endif %]
-      {% endif %}
-
       [% if not category or category == '{{ issue.wg_slug }}' %]
       <div class="ap-t-roadmap-list-item"
           id="{{ issue.wg_slug }}-{{ issue.number }}">
-        <amp-action-macro
-            id="expand-{{ issue.wg_slug }}-{{ issue.number }}"
-            execute="{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), {{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)">
-        </amp-action-macro>
+        {% if loop.changed(issue.quarter) %}
+        [% if not category or quarters['{{ issue.quarter }}'].includes(category) %]
+        <amp-position-observer viewport-margins="25vh"
+            target="{{ issue.quarter|slug }}"
+            on="enter:anim-{{ issue.quarter|slug }}.start"
+            layout="nodisplay">
+        </amp-position-observer>
+        <aside class="ap-t-roadmap-list-item-quarter" id="{{ issue.quarter|slug }}">
+          <h3>{{ issue.quarter }}</h3>
+        </aside>
+        [% endif %]
+        {% endif %}
+        <aside class="ap-t-roadmap-list-item-scroll-spacer"
+            id="scroll-{{ issue.wg_slug }}-{{ issue.number }}">
+        </aside>
+        {% if not loop.last %}
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--vertical"></span>
+        {% endif %}
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--horizontal">
           <span class="ap-t-roadmap-list-item-timeline-dot"></span>
         </span>
-
         <div class="ap-t-roadmap-list-item-issue"
             style="border-color: {{ issue.color }}">
-          <div class="ap-t-roadmap-list-item-issue-header"
-              on="tap:expand-{{ issue.wg_slug }}-{{ issue.number }}.execute()"
-              role="button"
-              tabindex="{{ loop.index }}">
+          <div class="ap-t-roadmap-list-item-issue-header">
             <h4 class="ap-t-roadmap-list-item-issue-header-title">{{ issue.wg_name }}</h4>
             <span class="ap-t-roadmap-list-item-issue-header-subtitle">Status Update {{ issue.status_update }}</span>
-            <svg class="ap-t-roadmap-list-item-issue-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
           </div>
-
           <div class="ap-t-roadmap-list-item-issue-body">
             {% for column in issue.body|slice(2) %}
             <div class="ap-t-roadmap-list-item-issue-body-column">
@@ -172,10 +165,12 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
               {% endif %}
             </div>
             {% endfor %}
-            <button class="ap-t-roadmap-list-item-issue-body-expand"
-                on="tap:expand-{{ issue.wg_slug }}-{{ issue.number }}.execute()">
-              <span class="ap-t-roadmap-list-item-issue-body-expand-text">{{ _('Expand update') }}</span>
-            </button>
+          </div>
+          <div class="ap-t-roadmap-list-item-issue-toggle"
+              on="tap:{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), scroll-{{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)"
+              role="button"
+              tabindex="0">
+            <svg class="ap-t-roadmap-list-item-issue-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
           </div>
         </div>
       </div>
