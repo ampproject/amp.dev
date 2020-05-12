@@ -44,14 +44,10 @@ const STATUS_UPDATE_REGEX = /(\d\d\d\d)-(\d*)-(\d*)/;
 const AMP_COMPONENT_REGEX = /\s(<amp-\S*>)/g;
 // Group markdown text into text blocks starting with h1 - h3
 const TEXT_BLOCK_REGEX = /^#{1,3} (?:.(?!^#))*/gms;
-/**
- * Extract status update issues from working groups and
- * return them sorted by date/quarter
- *
- * @return []
- */
+
 const client = new GitHubImporter();
 
+// Asynchronously fetch working groups metadata and status update issues from GitHub repos
 async function fetchWorkingGroupRepos() {
   const repos = (
     await client._github.org(DEFAULT_ORGANISATION).reposAsync(1, 100)
@@ -59,7 +55,6 @@ async function fetchWorkingGroupRepos() {
 
   let workingGroups = repos.filter((wg) => wg.name.startsWith('wg-'));
 
-  // Asynchronously fetch working groups metadata and status update issues from GitHub repos
   workingGroups = await Promise.all(
     workingGroups.map(async (workingGroup) => {
       const meta = await getMetaForWorkigGroup(workingGroup);
@@ -95,16 +90,16 @@ function structureDataForRoadmap(workingGroups) {
     return new Date(b.status_update) - new Date(a.status_update);
   });
 
-  const quarters = {'ordered': [], 'workingGroups': {}};
+  const quarters = {'ordered': [], 'working_groups': {}};
   for (const issue of roadmap.issues) {
     if (!quarters.ordered.includes(issue.quarter)) {
       quarters.ordered.push(issue.quarter);
     }
-    quarters.workingGroups[issue.quarter] =
-      quarters.workingGroups[issue.quarter] || [];
+    quarters.working_groups[issue.quarter] =
+      quarters.working_groups[issue.quarter] || [];
 
-    if (!quarters.workingGroups[issue.quarter].includes(issue.wg_slug)) {
-      quarters.workingGroups[issue.quarter].push(issue.wg_slug);
+    if (!quarters.working_groups[issue.quarter].includes(issue.wg_slug)) {
+      quarters.working_groups[issue.quarter].push(issue.wg_slug);
     }
   }
   roadmap.quarters = quarters;
@@ -143,65 +138,56 @@ async function getMetaForWorkigGroup(workingGroup) {
 }
 
 async function getIssuesForWorkingGroup(meta) {
-  const issues = (
+  const issues = [];
+  const issuesImport = (
     await client._github
       .repo(`${DEFAULT_ORGANISATION}/${meta.name}`)
       .issuesAsync()
   )[0];
 
-  return issues
-    .filter((issue) => {
-      const category = issue.labels[0] ? issue.labels[0].name : '';
-      return ALLOWED_ISSUE_TYPES.includes(category);
-    })
-    .map((issue) => {
-      const createdAt = new Date(issue.created_at).toDateString();
-      const title = emojiStrip(issue.title);
+  for (const issue of issuesImport) {
+    const category = issue.labels[0] ? issue.labels[0].name : '';
+    if (!ALLOWED_ISSUE_TYPES.includes(category)) {
+      continue;
+    }
 
-      // Escape amp-components in markdown to prevent them from being rendered as such
-      // plus remove Emojis and split into separate text blocks to allow smoother line breaks in frontend
-      let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
-      body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
+    const createdAt = new Date(issue.created_at).toDateString();
+    const title = emojiStrip(issue.title);
 
-      // Parse status update date from from issue title and set quarter
-      let statusUpdate = title.match(STATUS_UPDATE_REGEX);
-      let quarter;
-      if (statusUpdate) {
-        quarter = `Q${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${
-          statusUpdate[1]
-        }`;
-        statusUpdate = new Date(statusUpdate[0]).toDateString();
-      } else {
-        log.error(
-          `.. ${meta.slug} - Could not parse valid date from issue title: ${title}`
-        );
-        return;
-      }
+    // Escape amp-components in markdown to prevent them from being rendered as such
+    // plus remove Emojis and split into separate text blocks to allow smoother line breaks in frontend
+    let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
+    body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
 
-      return {
-        'wg_slug': meta.slug,
-        'wg_title': meta.title,
-        'wg_color': meta.color,
-        'created_at': createdAt,
-        'status_update': statusUpdate,
-        'quarter': quarter,
-        'number': issue.number,
-        'html_url': issue.html_url,
-        'body': body,
-      };
-    })
-    .filter((issue) => issue);
-}
+    // Parse status update date from from issue title and set quarter
+    let statusUpdate = title.match(STATUS_UPDATE_REGEX);
+    let quarter;
+    if (statusUpdate) {
+      quarter = `Q${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${
+        statusUpdate[1]
+      }`;
+      statusUpdate = new Date(statusUpdate[0]).toDateString();
+    } else {
+      log.error(
+        `.. ${meta.slug} - Could not parse valid date from issue title: ${title}`
+      );
+      continue;
+    }
 
-async function writeRoadmapYaml(roadmap) {
-  await writeFileAsync(
-    `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.safeDump({
-      working_groups: roadmap.workingGroups,
-      quarters: roadmap.quarters,
-      issues: roadmap.issues,
-    })
-  );
+    issues.push({
+      'wg_slug': meta.slug,
+      'wg_title': meta.title,
+      'wg_color': meta.color,
+      'created_at': createdAt,
+      'status_update': statusUpdate,
+      'quarter': quarter,
+      'number': issue.number,
+      'html_url': issue.html_url,
+      'body': body,
+    });
+  }
+
+  return issues;
 }
 
 async function importRoadmap() {
@@ -211,7 +197,14 @@ async function importRoadmap() {
 
   const roadmap = structureDataForRoadmap(workingGroups);
 
-  writeRoadmapYaml(roadmap);
+  await writeFileAsync(
+    `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
+    yaml.safeDump({
+      working_groups: roadmap.workingGroups,
+      quarters: roadmap.quarters,
+      issues: roadmap.issues,
+    })
+  );
 
   log.success(
     `Successfully imported ${roadmap.length} roadmap status update issues
