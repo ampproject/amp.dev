@@ -47,7 +47,10 @@ const TEXT_BLOCK_REGEX = /^#{1,3} (?:.(?!^#))*/gms;
 
 const client = new GitHubImporter();
 
-// Asynchronously fetch working groups metadata and status update issues from GitHub repos
+/**
+ * Asynchronously fetch working-groups metadata and status-update issues from GitHub repos
+ * @return {Array} Working group repos
+ */
 async function fetchWorkingGroupRepos() {
   const repos = (
     await client._github.org(DEFAULT_ORGANISATION).reposAsync(1, 100)
@@ -69,6 +72,11 @@ async function fetchWorkingGroupRepos() {
   return workingGroups;
 }
 
+/**
+ * Restructure data to be easily accessible in the template
+ * @param  {Array} Array of working-group objects
+ * @return {Object} Object containing workingGroups, quarters and issues
+ */
 function structureDataForRoadmap(workingGroups) {
   const roadmap = {
     workingGroups: [],
@@ -107,7 +115,11 @@ function structureDataForRoadmap(workingGroups) {
   return roadmap;
 }
 
-// Get meta information for working group e.g. full name from METADATA.yaml
+/**
+ * Get meta information for working-group e.g. full name from METADATA.yaml
+ * @param  {Object} Working-group repo
+ * @return {Object} Optimized working-group object
+ */
 async function getMetaForWorkigGroup(workingGroup) {
   const workingGroupSlug = workingGroup.name.substr(3);
 
@@ -137,6 +149,11 @@ async function getMetaForWorkigGroup(workingGroup) {
   };
 }
 
+/**
+ * Get status-update issues per working-group
+ * @param  {Object} Working group meta information
+ * @return {Array} Status-update issues
+ */
 async function getIssuesForWorkingGroup(meta) {
   const issues = [];
   const issuesImport = (
@@ -151,7 +168,7 @@ async function getIssuesForWorkingGroup(meta) {
       continue;
     }
 
-    // Parse status update date from from issue title and set quarter
+    // Parse status-update date from from issue title and set quarter
     let statusUpdate = issue.title.match(STATUS_UPDATE_REGEX);
     let quarter;
     if (statusUpdate) {
@@ -166,8 +183,10 @@ async function getIssuesForWorkingGroup(meta) {
       continue;
     }
 
-    // Escape amp-components in markdown to prevent them from being rendered as such
-    // plus remove Emojis and split body into separate text blocks to allow smoother line breaks in frontend
+    /**
+     * Escape amp-components in markdown to prevent them from being rendered as such
+     * plus remove Emojis and split body into separate text blocks to allow smoother line breaks in frontend
+     */
     let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
     body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
 
@@ -189,6 +208,10 @@ async function getIssuesForWorkingGroup(meta) {
   return issues;
 }
 
+/**
+ * Import status-update issues and relevant working-group data from
+ * working-group repositories on GitHub
+ */
 async function importRoadmap() {
   log.start('Start importing Roadmap data for ..');
 
@@ -205,8 +228,8 @@ async function importRoadmap() {
   );
 
   log.success(
-    `Successfully imported ${roadmap.length} roadmap status update issues
-    from ${workingGroups.length} working groups`
+    `Successfully imported ${roadmap.length} roadmap status-update issues
+    from ${workingGroups.length} working-groups`
   );
 }
 
