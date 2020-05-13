@@ -286,6 +286,17 @@ Type attribute value: `parsely`
 
 Adds support for Parsely. Configuration details can be found at [parsely.com/docs](http://parsely.com/docs/integration/tracking/google-amp.html).
 
+### Permutive
+
+Type attribute value: `permutive`
+
+Adds support for Permutive event collection. Additionally, the following `vars` must be defined:
+
+* `namespace`: your Permutive AMP namespace
+* `key`: your Permutive public API key
+
+Use `extraUrlParams` to add additional event properties. Full configuration details can be found at [support.permutive.com](http://support.permutive.com).
+
 ### Piano
 
 Type attribute value: `piano`

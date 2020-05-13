@@ -220,7 +220,7 @@ Es posible especificar varios proveedores de acceso utilizando una matriz en lug
     "namespace": value
   },
   ...
-[
+]
 </script>
 
 ```

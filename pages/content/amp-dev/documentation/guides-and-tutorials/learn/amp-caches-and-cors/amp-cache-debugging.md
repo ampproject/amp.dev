@@ -6,7 +6,7 @@ formats:
   - stories
   - ads
 teaser:
-  text: '## Why is my doc broken on an AMP cache?'
+  text: ' Why is my doc broken on an AMP cache?'
 ---
 
 <!--

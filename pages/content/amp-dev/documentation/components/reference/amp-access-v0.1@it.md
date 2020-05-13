@@ -222,7 +222,7 @@ Ecco un esempio di configurazione dell'Accesso AMP:
     "namespace": value
   },
   ...
-[
+]
 </script>
 ```
 

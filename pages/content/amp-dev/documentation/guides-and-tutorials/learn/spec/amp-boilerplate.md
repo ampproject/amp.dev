@@ -5,7 +5,7 @@ formats:
   - websites
   - stories
 teaser:
-  text: '## head > style[amp-boilerplate]` and `noscript > style[amp-boilerplate]'
+  text: ' head > style[amp-boilerplate] and noscript > style[amp-boilerplate]'
 ---
 
 <!--
