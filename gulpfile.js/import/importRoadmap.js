@@ -190,13 +190,10 @@ async function getIssuesForWorkingGroup(meta) {
     let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
     body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
 
-    const createdAt = new Date(issue.created_at).toDateString();
-
     issues.push({
       'wg_slug': meta.slug,
       'wg_title': meta.title,
       'wg_color': meta.color,
-      'created_at': createdAt,
       'status_update': statusUpdate,
       'quarter': quarter,
       'number': issue.number,
