@@ -53,7 +53,6 @@ class CspHashCalculator {
 
     let existingHashes = this._getExistingHashes();
     let inlineHashes = this._getInlineHashes();
-    console.log(existingHashes, inlineHashes);
 
     // Check if any inline hash has updated, if no hashes are left
     // meta[name="amp-script-src"] is up to date
