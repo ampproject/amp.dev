@@ -151,16 +151,8 @@ async function getIssuesForWorkingGroup(meta) {
       continue;
     }
 
-    const createdAt = new Date(issue.created_at).toDateString();
-    const title = emojiStrip(issue.title);
-
-    // Escape amp-components in markdown to prevent them from being rendered as such
-    // plus remove Emojis and split into separate text blocks to allow smoother line breaks in frontend
-    let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
-    body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
-
     // Parse status update date from from issue title and set quarter
-    let statusUpdate = title.match(STATUS_UPDATE_REGEX);
+    let statusUpdate = issue.title.match(STATUS_UPDATE_REGEX);
     let quarter;
     if (statusUpdate) {
       quarter = `Q${Math.ceil(parseInt(statusUpdate[2]) / 3)} ${
@@ -169,10 +161,17 @@ async function getIssuesForWorkingGroup(meta) {
       statusUpdate = new Date(statusUpdate[0]).toDateString();
     } else {
       log.error(
-        `.. ${meta.slug} - Could not parse valid date from issue title: ${title}`
+        `.. ${meta.slug} - Could not parse valid date from issue title: ${issue.title}`
       );
       continue;
     }
+
+    // Escape amp-components in markdown to prevent them from being rendered as such
+    // plus remove Emojis and split body into separate text blocks to allow smoother line breaks in frontend
+    let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
+    body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
+
+    const createdAt = new Date(issue.created_at).toDateString();
 
     issues.push({
       'wg_slug': meta.slug,
@@ -194,7 +193,6 @@ async function importRoadmap() {
   log.start('Start importing Roadmap data for ..');
 
   const workingGroups = await fetchWorkingGroupRepos();
-
   const roadmap = structureDataForRoadmap(workingGroups);
 
   await writeFileAsync(
