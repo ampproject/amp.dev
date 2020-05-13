@@ -142,10 +142,10 @@ async function getMetaForWorkigGroup(workingGroup) {
   }
 
   return {
-    'slug': workingGroupSlug,
-    'name': workingGroup.name,
-    'title': meta.title,
-    'color': config.colors[workingGroupSlug] || config.fallbackColor,
+    slug: workingGroupSlug,
+    name: workingGroup.name,
+    title: meta.title,
+    color: config.colors[workingGroupSlug] || config.fallbackColor,
   };
 }
 
@@ -191,14 +191,14 @@ async function getIssuesForWorkingGroup(meta) {
     body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
 
     issues.push({
-      'wg_slug': meta.slug,
-      'wg_title': meta.title,
-      'wg_color': meta.color,
-      'status_update': statusUpdate,
-      'quarter': quarter,
-      'number': issue.number,
-      'html_url': issue.html_url,
-      'body': body,
+      wg_slug: meta.slug,
+      wg_title: meta.title,
+      wg_color: meta.color,
+      status_update: statusUpdate,
+      quarter: quarter,
+      number: issue.number,
+      html_url: issue.html_url,
+      body: body,
     });
   }
 
