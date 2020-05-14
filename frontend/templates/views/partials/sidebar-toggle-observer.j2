@@ -8,17 +8,17 @@
   <amp-animation id="slideTransition" layout="nodisplay">
     <script type="application/json">
       {
-        "duration": "200ms",
+        "duration": "150ms",
         "fill": "both",
         "easing": "ease-out",
         "iterations": "1",
         "animations": [{
           "selector": ".label-title",
           "keyframes": [{
-              "opacity": "0"
+              "transform": "scale3d(0, 1, 1)"
             },
             {
-              "opacity": "1"
+              "transform": "scale3d(1, 1, 1)"
             }
           ]
         }]
