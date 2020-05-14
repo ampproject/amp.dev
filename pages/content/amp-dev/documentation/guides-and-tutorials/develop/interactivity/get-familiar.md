@@ -23,6 +23,10 @@ A bare bones AMP page looks like this:
 </html>
 ```
 
+[tip]
+You can use the [boilerplate generator](https://amp.dev/boilerplate) to quickly setup a basic skeleton for your AMP page. It also provides snippets for structured data, to create a PWA and more!
+[/tip]
+
 ## AMP components
 
 The tutorial's starter code ([`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html)) builds off the bare bones AMP page with its page content (images, text, etc.) as well as including a few AMP components:
