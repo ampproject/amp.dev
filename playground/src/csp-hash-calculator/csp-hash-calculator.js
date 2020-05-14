@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/* eslint-disable new-cap */
 import {calculateHash} from '@ampproject/toolbox-script-csp';
 
 export function createCspHashCalculator(editor) {
@@ -25,7 +24,7 @@ class CspHashCalculator {
     this.head = {from: null, to: null};
     this.metaAmpScriptSrc = {from: null, to: null};
 
-    // Populated while parsing the documents. Contains the DOM strings either
+    // Populated while parsing the documents. Contains the DOM strings
     // in the form of `<script target="amp-script">...</script>`
     this.inlineScripts = [];
 
@@ -85,11 +84,12 @@ class CspHashCalculator {
       this.metaAmpScriptSrc.from,
       this.metaAmpScriptSrc.to
     );
-    return html.match(/(?<=content=").*?(?=")/gms)[0].split(' ');
+    const hashes = html.match(/content="(.*?)"/ms)[1] || '';
+    return hashes.split(' ');
   }
 
   _getMetaAmpScriptSrc(hashes = []) {
-    return `<meta name="amp-script-src" content="${hashes.join(' ')}"/>`;
+    return `<meta name="amp-script-src" content="${hashes.join(' ')}">`;
   }
 
   _getInlineHashes() {
