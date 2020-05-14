@@ -51,8 +51,9 @@
     "@boilerplate": "boilerplate",
     "@lib": "platform/lib"
   },
-	"browserslist": [
-   "last 2 versions", "not dead"
+  "browserslist": [
+    "last 2 versions",
+    "not dead"
   ],
   "dependencies": {
     "@ampproject/toolbox-cors": "2.4.0-alpha.1",

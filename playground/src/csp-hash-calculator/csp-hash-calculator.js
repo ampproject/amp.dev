@@ -23,6 +23,7 @@ class CspHashCalculator {
     this.editor = editor;
     this.head = {from: null, to: null};
     this.metaAmpScriptSrc = {from: null, to: null};
+    this.script = {from: null, to: null};
 
     // Populated while parsing the documents. Contains the DOM strings
     // in the form of `<script target="amp-script">...</script>`
@@ -33,9 +34,17 @@ class CspHashCalculator {
     this.createdHashes = [];
   }
 
+  /**
+   * Called by the playground's event system as soon as code has
+   * changed by either user input or another plugin
+   */
   update() {
-    // Throw away previously parsed scripts and get them from the document
+    // Reset previous parsing results as the document has changed
+    // and previously saved positions might be stale
+    this.head = {};
+    this.metaAmpScriptSrc = {};
     this.inlineScripts = [];
+
     this._parseDocument();
 
     if (!this.inlineScripts.length) {
@@ -99,76 +108,87 @@ class CspHashCalculator {
     });
   }
 
-  _parseDocument() {
-    const lineCount = this.editor.lineCount();
+  /**
+   * Used by _parseDocument to determine the position of the head
+   * to have a location to add the meta element to if there is none yet
+   * @param  {Object} token
+   * @param  {Integer} line
+   */
+  _parseHead(token, line) {
+    if (token.type == 'tag' && token.string == 'head') {
+      if (!this.head.from) {
+        this.head.from = {line, ch: token.start - 1};
+      } else {
+        this.head.to = {line, ch: token.end + 1};
+      }
+    }
+  }
 
-    // Reset previous parsing results
-    this.head = {};
-    this.metaAmpScriptSrc = {};
-    this.scripts = [];
-
-    let i = 0;
-    let script = {from: null, to: null};
-    while (i < lineCount) {
-      const tokens = this.editor.getLineTokens(i);
-
-      let j = 0;
-      while (j < tokens.length) {
-        const token = tokens[j];
-        // Save head position for to know where to add the meta element if
-        // there is not already one. +/-1 to include tag brackets
-        if (token.type == 'tag' && token.string == 'head') {
-          if (!this.head.from) {
-            this.head.from = {line: i, ch: token.start - 1};
-          } else {
-            this.head.to = {line: i, ch: token.end + 1};
-          }
-        }
-
-        // Also check wether there is an existing meta[name="amp-script-src"]
-        // we could add to if none hasn't been found yet
-        if (!this.metaAmpScriptSrc.to) {
-          if (token.type == 'tag' && token.string == 'meta') {
-            this.metaAmpScriptSrc.from = {line: i, ch: token.start - 1};
-          }
-
-          if (this.metaAmpScriptSrc.from && token.type == 'tag bracket') {
-            this.metaAmpScriptSrc.to = {line: i, ch: token.end + 1};
-            // If this meta element has a name attribute with amp-script-src
-            // we found our meta element, otherwise start search again
-            if (
-              !this.editor.codeMirror
-                .getRange(this.metaAmpScriptSrc.from, this.metaAmpScriptSrc.to)
-                .includes('name="amp-script-src"')
-            ) {
-              this.metaAmpScriptSrc = {};
-            }
-          }
-        }
-
-        // Look for script elements with target="amp-script" attribute
-        if (token.type == 'tag' && token.string == 'script') {
-          if (!script.from) {
-            script.from = {line: i, ch: token.start - 1};
-          } else {
-            script.to = {line: i, ch: token.end + 7};
-            script.html = this.editor.codeMirror.getRange(
-              script.from,
-              script.to
-            );
-
-            if (script.html.includes('target="amp-script"')) {
-              this.inlineScripts.push(script.html);
-            }
-
-            script = {};
-          }
-        }
-
-        j++;
+  /**
+   * Used by _parseDocument to find a possibly existing
+   * meta[name="amp-script-src"] element
+   * @param  {Object} token
+   * @param  {Integer} line
+   */
+  _parseMetaAmpScriptSrc(token, line) {
+    if (!this.metaAmpScriptSrc.to) {
+      if (token.type == 'tag' && token.string == 'meta') {
+        this.metaAmpScriptSrc.from = {line, ch: token.start - 1};
       }
 
-      i++;
+      if (this.metaAmpScriptSrc.from && token.type == 'tag bracket') {
+        this.metaAmpScriptSrc.to = {line, ch: token.end + 1};
+        // If this meta element has a name attribute with amp-script-src
+        // we found our meta element, otherwise start search again
+        if (
+          !this.editor.codeMirror
+            .getRange(this.metaAmpScriptSrc.from, this.metaAmpScriptSrc.to)
+            .includes('name="amp-script-src"')
+        ) {
+          this.metaAmpScriptSrc = {};
+        }
+      }
+    }
+  }
+
+  /**
+   * Used by _parseDocument. Finds all script tags and stores all that
+   * match script[target="amp-script"]
+   * @param  {Object} token
+   * @param  {Integer} line
+   */
+  _parseScripts(token, line) {
+    if (token.type == 'tag' && token.string == 'script') {
+      if (!this.script.from) {
+        this.script.from = {line, ch: token.start - 1};
+      } else {
+        this.script.to = {line, ch: token.end + 7};
+        this.script.html = this.editor.codeMirror.getRange(
+          this.script.from,
+          this.script.to
+        );
+
+        if (this.script.html.includes('target="amp-script"')) {
+          this.inlineScripts.push(this.script.html);
+        }
+
+        this.script = {};
+      }
+    }
+  }
+
+  /**
+   * Walks the source that is currently in CodeMirror and tries
+   * to parse various elements from it
+   */
+  _parseDocument() {
+    for (let line = 0; line < this.editor.lineCount(); line++) {
+      const tokens = this.editor.getLineTokens(line);
+      for (const token of tokens) {
+        this._parseHead(token, line);
+        this._parseMetaAmpScriptSrc(token, line);
+        this._parseScripts(token, line);
+      }
     }
   }
 }
