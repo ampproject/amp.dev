@@ -25,6 +25,7 @@ import Fab from './fab/fab.js';
 import * as AutoImporter from './auto-importer/auto-importer.js';
 import * as ComponentsProvider from './components-provider/components-provider.js';
 import * as EmailLoader from './email-loader/email-loader.js';
+import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
@@ -77,6 +78,8 @@ const autoImporter = AutoImporter.createAutoImporter(
 );
 
 const emailLoader = EmailLoader.createEmailLoader(editor);
+
+const cspHashCalculator = CspHashCalculator.createCspHashCalculator(editor);
 
 // runtime select
 const runtimeChanged = (runtimeId) => {
@@ -133,6 +136,8 @@ const editorUpdateListener = () => {
   preview.refresh(source);
   validator.validate(source);
   titleUpdater.update(source);
+
+  cspHashCalculator.update(source);
 };
 events.subscribe([Editor.EVENT_INPUT_CHANGE], editorUpdateListener);
 events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {

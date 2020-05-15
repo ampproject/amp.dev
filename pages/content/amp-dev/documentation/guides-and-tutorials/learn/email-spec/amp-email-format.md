@@ -4,7 +4,7 @@ order: 1
 formats:
   - email
 teaser:
-  text: '## Required markup'
+  text: ' Required markup'
 toc: true
 ---
 
@@ -113,7 +113,7 @@ All CSS in any AMP document must be included in a `<style amp-custom>` tag withi
 </head>
 [/sourcecode]
 
-Note: The entire `<style>` tag cannot exceed 75,000 bytes. The validator will check for this.
+Note: The entire `<style>` tag cannot exceed 50,000 bytes. The validator will check for this.
 
 ## Document dimensions <a name="document-dimensions"></a>
 

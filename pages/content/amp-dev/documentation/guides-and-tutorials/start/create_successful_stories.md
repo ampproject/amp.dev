@@ -1,23 +1,24 @@
 ---
-$title: Successfully create stories on the web
+$title: Successfully create Web Stories
 $order: 1
-description: 'Follow these best practices to create a satisfying snackable story'
+description: 'Follow these best practices to create a satisfying snackable web story'
 formats:
   - stories
 author: CrystalOnScript
 ---
 
-Stories on the web are an immersive, tappable, and easily shareable storytelling format. Stories is an opportunity for creators and publishers to structure content in a full-screen, visually rich, and engaging mobile first experience for users.  
+Web stories are an immersive, tappable and easily shareable storytelling format. Web stories are built using a subsect of the AMP Framework, AMP stories. Web stories are an opportunity for creators and publishers to structure content in a full-screen, visually rich, and engaging mobile-first experience for users.
 
-Stories are snackable, and readers like quick bites in their micro moments! Waiting for the subway or grabbing coffee opens up opportunities for condensed content consumption! Ensure each bite engages and delights by following these best practices for creating a satisfying snackable story.
+Web stories are snackable, and readers like quick bites in their micro moments! Waiting for the subway or grabbing coffee opens up opportunities for condensed content consumption! Ensure each bite engages and delights by following these best practices for creating a satisfying snackable web story.
+
 
 
 # At a glance
 
-The main takeaways to creating a satisfying snackable story:
+The main takeaways to creating a satisfying snackable web story:
 
 
-*   Tell a full and interesting story. Overly commercial or spammy Stories won't surface to readers.
+*   Tell a full and interesting story. Overly commercial or spammy web stories won't surface to readers.
 *   Maximize the impact of your cover page with high quality imagery and a catchy title.
 *   Make it visual with videos and images that fit and fill user’s screens.
 *   You can say a lot, with less! Especially when using visual imagery. Aim to keep text below 10 words per page.
@@ -27,19 +28,19 @@ The main takeaways to creating a satisfying snackable story:
 
 # Know your narrative 
 
-Plan the story introduction, create an arc and build up to a complete narrative. Once you know what you want to say, break it up! Each Story page should convey a single idea thats works cohesively with the others. 
+Plan the story introduction, create an arc and build up to a complete narrative. Once you know what you want to say, break it up! Each web story page should convey a single idea thats works cohesively with the others. 
 
 
 ## Tasteful and filling content
 
-Each story must be a minimum of 4 pages and ideally less than 30. Each story needs to be tasty, well told, and easy to consume. If needed for your narrative, go longer than 30. Stories that are too commercial or smell of spam will not be served. This includes stories where more than 30% is sponsored content or ads. A story using [auto ads](../develop/advertise_amp_stories.md?format=stories) is automatically compliant.
+Each web story must be a minimum of 4 pages and ideally less than 30. Web stories need to be tasty, well told, and easy to consume. If needed for your narrative, go longer than 30. Web stories that are too commercial or smell of spam will not be served. This includes web stories where more than 30% is sponsored content or ads. A web story using [auto ads](../develop/advertise_amp_stories.md?format=stories) is automatically compliant.
 
 Know what your readers want to see! Insensitive, misleading or inappropriate content is never on the menu. 
 
 
 # Pick me! Packaging
 
-Your cover page is your Stories packaging! It's the first thing viewers will see, and, if they don’t open it, the _only_ thing they will see. Make sure it's appealing! A good cover page has two elements, eye catching imagery and a short memorable title. 
+Your cover page is your web story's packaging! It's the first thing viewers will see, and, if they don’t open it, the _only_ thing they will see. Make sure it's appealing! A good cover page has two elements, eye catching imagery and a short memorable title. 
 
 
 ## Imagery
@@ -61,9 +62,9 @@ All images and videos should take up the entire screen with minimal use of lette
 
 ## Video
 
-Videos are highly engaging to readers, definitely include as many as possible in your Story. Aim for videos that are less than 15 seconds. If you have a longer video, consider breaking it up into smaller chunks. Videos exceeding 60 seconds can’t be used at all. 
+Videos are highly engaging to readers, definitely include as many as possible in your web story. Aim for videos that are less than 15 seconds. If you have a longer video, consider breaking it up into smaller chunks. Videos exceeding 60 seconds can’t be used at all. 
 
-Stories are consumed in portrait mode, so keep in mind the following:
+Web stories are consumed in portrait mode, so keep in mind the following:
 
 
 
@@ -100,19 +101,20 @@ A page with text content longer than sentence may be unavoidable. Try not to let
 
 # Build and share 
 
-Stories can be hand-coded from scratch or built using creation tools. In order for a story to be shared and discovered, they must meet technical requirements. 
+Web stories can be hand-coded from scratch or built using creation tools. In order for a story to be shared and discovered, they must meet technical requirements. 
 
-If you are hand coding a story, you will build them from scratch using AMP stories. Follow the [Create your first AMP Story](visual_story/index.md) to get started. 
+If you are hand coding a web story, you will build them from scratch using the AMP framework. Follow the [Create your first Web Story](visual_story/index.md) to get started. 
 
-Not a developer? Use one of many [creation tools](../../tools.html?format=stories) to build your Story!
+Not a developer? Use one of many [creation tools](../../tools.html?format=stories) to build your Web story!
+
 
 
 ## Story discoverability 
 
-After you’ve created your story, make sure it can be shared and discovered! All stories must meet the following requirements: 
+After you’ve created your web story, make sure it can be shared and discovered! All stories must meet the following requirements: 
 
 
-*   Stories must be valid AMP. You can test yours in the [AMP validator](https://validator.ampproject.org/). 
+*   Web stories must be valid AMP. You can test yours in the [AMP validator](https://validator.ampproject.org/). 
 *   [Metadata attributes](../../../documentation/components/reference/amp-story.md) ensure your story is defined well. Check that your story has them setup correctly.
 *   Configure you [structured data ](https://developers.google.com/search/docs/guides/sd-policies)so that interested readers can find your story! 
 *   Clearly label sponsored content. Any and all paid or affiliated links require the [nofollow](https://support.google.com/webmasters/answer/96569?hl=en) attribute.
