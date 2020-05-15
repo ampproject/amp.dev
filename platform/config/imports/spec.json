@@ -10,7 +10,7 @@
   },
   {
     "title": "AMP HTML Specification",
-    "order": 3,
+    "order": 8,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-html-format.md",
     "to": "documentation/guides-and-tutorials/learn/spec/amphtml.md",
@@ -18,7 +18,7 @@
   },
   {
     "title": "AMP Boilerplate Code",
-    "order": 3,
+    "order": 9,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-boilerplate.md",
     "to": "documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md",
@@ -26,7 +26,7 @@
   },
   {
     "title": "AMP Release Schedule",
-    "order": 4,
+    "order": 10,
     "repo": "ampproject/amphtml",
     "from": "contributing/release-schedule.md",
     "to": "documentation/guides-and-tutorials/learn/spec/release-schedule.md",
@@ -42,11 +42,19 @@
   },
   {
     "title": "Actions and events",
-    "order": 7,
+    "order": 0,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-actions-and-events.md",
     "to": "documentation/guides-and-tutorials/learn/amp-actions-and-events.md",
-    "formats": ["websites","email","stories", "ads"]
+    "formats": ["websites","stories", "ads"]
+  },
+  {
+    "title": "Actions and events",
+    "order": 0,
+		"repo": "ampproject/amphtml",
+		"from": "spec/amp-email-actions-and-events.md",
+    "to": "documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md",
+    "formats": ["email"]
   },
   {
     "title": "Debug AMP Cache issues",

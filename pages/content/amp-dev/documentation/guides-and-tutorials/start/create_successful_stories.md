@@ -105,7 +105,8 @@ Web stories can be hand-coded from scratch or built using creation tools. In ord
 
 If you are hand coding a web story, you will build them from scratch using the AMP framework. Follow the [Create your first Web Story](visual_story/index.md) to get started. 
 
-Not a developer? Use one of many [creation tools](../../tools.html?format=stories) to build your web story!
+Not a developer? Use one of many [creation tools](../../tools.html?format=stories) to build your Web story!
+
 
 
 ## Story discoverability 

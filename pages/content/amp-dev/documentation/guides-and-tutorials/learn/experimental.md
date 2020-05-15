@@ -1,6 +1,6 @@
 ---
 $title: Enable experimental features
-$order: 5
+$order: 3
 description: 'AMP experimental components are released features not yet ready for wide use, so they are protected by an experimental status.'
 formats:
   - websites
