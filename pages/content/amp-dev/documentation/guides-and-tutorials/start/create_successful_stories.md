@@ -449,6 +449,6 @@ Think strategically about size, location and frequency of your link appearances.
 
 ## Code or create
 
-Web Stories can be hand-coded from scratch or built using [creation tools](../../../../tools.html/?format=stories).
+Web Stories can be hand-coded from scratch or built using [creation tools](../../tools.html?format=stories).
 
 If you are hand coding a Web Story, you will build them from scratch using the AMP framework. Follow the [Create your first Web Story](https://github.com/ampproject/amp.dev/blob/future/pages/content/amp-dev/documentation/guides-and-tutorials/start/visual_story/index.md) to get started. After you’ve created your Web Story, make sure it’s valid AMP. You can test yours in the [AMP validator](https://validator.ampproject.org/). Read [Web Story technical details](../learn/webstory_technical_detials.md) for more information.

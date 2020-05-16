@@ -1,7 +1,7 @@
 ---
-$title: Web story technical details
+$title: Web Story technical details
 $order: 1
-description: 'Web story technical details'
+description: 'Web Story technical details'
 $category: Develop
 formats:
     - stories
