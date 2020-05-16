@@ -10,7 +10,7 @@ author: CrystalOnScript
 
 # AMP Valid
 
-A Web Wtory is technically a single web page built with AMP and adheres to AMP specifications:
+A Web Story is technically a single web page built with AMP and adheres to AMP specifications:
 
 *   Start with the `<!doctype html>` doctype.
 *   Contain a top-level `<html ⚡>` or `<html amp>` tag.
