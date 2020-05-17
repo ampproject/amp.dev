@@ -69,7 +69,7 @@
     "express": "4.17.1",
     "express-formidable": "1.2.0",
     "gcp-metadata": "4.1.0",
-    "http-proxy": "1.18.0",
+    "http-proxy": "1.18.1",
     "iltorb": "2.4.5",
     "ioredis": "4.16.3",
     "js-yaml": "3.13.1",
