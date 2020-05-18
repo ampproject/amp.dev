@@ -45,7 +45,8 @@ const AMP_COMPONENT_REGEX = /\s(<amp-\S*>)/g;
 // Group markdown text into text blocks starting with h1 - h3
 const TEXT_BLOCK_REGEX = /^#{1,3} (?:.(?!^#))*/gms;
 
-const client = new GitHubImporter();
+// Holds the lazily initlaized GitHub client for all functions to share
+let client = null;
 
 /**
  * Asynchronously fetch working-groups metadata and status-update issues from GitHub repos
@@ -210,6 +211,8 @@ async function getIssuesForWorkingGroup(meta) {
  * working-group repositories on GitHub
  */
 async function importRoadmap() {
+  client = new GitHubImporter();
+
   log.start('Start importing Roadmap data for ..');
 
   const workingGroups = await fetchWorkingGroupRepos();
