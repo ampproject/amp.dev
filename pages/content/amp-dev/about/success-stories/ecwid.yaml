@@ -22,18 +22,25 @@ teaser:
 stage:
   headline: Ecwid merchants boost sales by 82% by using AMP for email for abandoned shopping carts
   subline: MAY 18, 2020
-  layout: mobile
+  layout: all
   logo:
     image_src: '/static/img/success-stories/ecwid/ecwid-logo.svg'
     width: 2000
     height: 430
     alt: Ecwid
   devices:
-    - image_src: '/static/img/success-stories/advance_create/advance_create_1.jpg'
-      width: 450
-      height: 730
-      type: mobile
-      alt: Screenshot of Advance Create on mobile
+    - poster_src: '/static/img/success-stories/ecwid/ecwid-video-1.jpg'
+      video_src: '/static/img/success-stories/ecwid/ecwid-video-1.mp4'
+      width: 900
+      height: 540
+      type: desktop
+      alt: Ecwid Order confirmation
+    - poster_src: '/static/img/success-stories/ecwid/ecwid-video-2.jpg'
+      video_src: '/static/img/success-stories/ecwid/ecwid-video-2.mp4'
+      width: 900
+      height: 540
+      type: tablet
+      alt: Complete Order Notice
 
 contents:
   - layout: text
