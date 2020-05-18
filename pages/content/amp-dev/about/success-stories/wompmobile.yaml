@@ -9,13 +9,13 @@ formats:
 teaser:
   image:
     src: '/static/img/success-stories/womp/teaser_wompmobile.jpg'
-    width: 1
-    height: 1
+    width: 240 
+    height:  240
     alt: WompMobile
   logo:
     src: '/static/img/success-stories/womp/wompmobile_logo.png'
-    width: 902
-    height: 135
+    width: 100
+    height: 30
     alt: WompMobile
   text: WompMobile consistently improves e-commerce clients’ conversion rates with AMP sites
 
@@ -27,8 +27,8 @@ stage:
   devices:
 
     - image_src: '/static/img/success-stories/womp/amp_womp_1.jpg'
-      width: 3
-      height: 5
+      width: 120
+      height: 200
       type: mobile
       alt: WompMobile
 
@@ -50,8 +50,8 @@ contents:
 
   - layout: text-media
     image_src: '/static/img/success-stories/womp/amp_womp_1.jpg'
-    width: 3
-    height: 5
+    width: 120
+    height: 200
     type: mobile
     alt: WompMobile
     headline: Solution
