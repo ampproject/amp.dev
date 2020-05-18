@@ -49,7 +49,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <a class="ap-m-filter-bubble {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
           href="{{ doc.url.path }}?category={{ group.slug }}#status-updates"
           style="color: {{ group.color }}">
-        <span class="ap-m-filter-bubble-text">{{ group.name }}</span>
+        <span class="ap-m-filter-bubble-text">{{ group.title }}</span>
       </a>
       {% endfor %}
     </div>
@@ -116,7 +116,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 
     [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
     <div class="ap-t-roadmap-list">
-      {% do doc.icons.useIcon('icons/chevron-vertical-light.svg') %}
+      {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
       {% for issue in doc.roadmap.issues %}
       [% if not category or category == '{{ issue.wg_slug }}' %]
       <div class="ap-t-roadmap-list-item"
@@ -142,8 +142,8 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
         <span class="ap-t-roadmap-list-item-timeline ap-t-roadmap-list-item-timeline--horizontal">
           <span class="ap-t-roadmap-list-item-timeline-dot"></span>
         </span>
-        <div class="ap-t-roadmap-list-item-issue"
-            style="border-color: {{ issue.wg_color }}">
+        <div class="ap-t-roadmap-list-item-issue">
+          <span class="ap-t-roadmap-list-item-issue-color" style="background: {{ issue.wg_color }}"></span>
           <div class="ap-t-roadmap-list-item-issue-header">
             <h4 class="ap-t-roadmap-list-item-issue-header-title">{{ issue.wg_title }}</h4>
             <span class="ap-t-roadmap-list-item-issue-header-subtitle">Status Update {{ issue.status_update }}</span>
@@ -170,7 +170,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
               on="tap:{{ issue.wg_slug }}-{{ issue.number }}.toggleClass(class='expanded'), scroll-{{ issue.wg_slug }}-{{ issue.number }}.scrollTo(duration=250)"
               role="button"
               tabindex="0">
-            <svg class="ap-t-roadmap-list-item-issue-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-vertical-light"></use></svg>
+            <svg class="ap-t-roadmap-list-item-issue-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </div>
       </div>
