@@ -88,7 +88,7 @@ function structureDataForRoadmap(workingGroups) {
     if (workingGroup.issues.length) {
       roadmap.workingGroups.push({
         slug: workingGroup.meta.slug,
-        name: workingGroup.meta.name,
+        title: workingGroup.meta.title,
         color: workingGroup.meta.color,
       });
     }

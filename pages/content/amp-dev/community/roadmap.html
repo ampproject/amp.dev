@@ -49,7 +49,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       <a class="ap-m-filter-bubble {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
           href="{{ doc.url.path }}?category={{ group.slug }}#status-updates"
           style="color: {{ group.color }}">
-        <span class="ap-m-filter-bubble-text">{{ group.name }}</span>
+        <span class="ap-m-filter-bubble-text">{{ group.title }}</span>
       </a>
       {% endfor %}
     </div>
