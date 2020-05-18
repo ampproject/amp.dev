@@ -94,10 +94,10 @@ to provide its state to other components #}
     </nav>
 
     {% do doc.styles.addCssFile('/css/components/molecules/search-trigger.css') %}
-    <div id="searchTriggerOpen" class="ap-m-search-trigger" on="tap:searchLightbox" role="button"  tabindex="0">
-      {% do doc.icons.useIcon('/icons/search.svg') %}
+    <div id="searchTriggerOpen" class="ap-m-search-trigger" on="tap:searchLightbox" role="button" aria-label="{{ _('Search') }}"  tabindex="0">
+      {% do doc.icons.useIcon('/icons/magnifier.svg') %}
       <div class="ap-a-ico ap-m-search-trigger-icon">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use></svg>
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#magnifier"></use></svg>
       </div>
     </div>
 
