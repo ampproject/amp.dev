@@ -107,7 +107,7 @@
     "clean-css": "4.2.3",
     "clean-webpack-plugin": "3.0.0",
     "closure-webpack-plugin": "2.3.0",
-    "codemirror": "5.53.2",
+    "codemirror": "5.54.0",
     "copy-webpack-plugin": "5.1.1",
     "css-loader": "3.5.3",
     "del": "5.1.0",
