@@ -7,8 +7,9 @@ formats:
     - stories
 author: CrystalOnScript
 ---
+This guide explains all the technical details and best practice you should know to successfully create Web Stories with AMP.
 
-# AMP Valid
+## AMP Valid
 
 A Web Story is technically a single web page built with AMP and adheres to AMP specifications:
 
@@ -81,29 +82,29 @@ The difference between an AMP webpage and a Web Story built with AMP is the [`am
 Follow the [Create your first Web Story tutorial](../start/visual_story/?format=stories) and [read the amp-story reference documentation ](../../components/reference/amp-story/?format=stories)to learn more.
 
 
-# Peak performance and user experience
+## Peak performance and user experience
 
 Users may be viewing Web Stories in areas with low network connection or older devices. Ensure they enjoy their experience by following these best practices.
 
 
-## Background color
+### Background color
 
 Specify a background color for each Web Story page. Having a background color provides a good fallback if the user’s conditions prevent them from downloading images or video assets. Choose a color that is representative of the dominant color of the page’s intended background asset, or use a consistent color theme for all story pages. Ensure the background color is different from the text for readability. 
 
 Define the background color for pages within the `<style amp-custom>` tags in the head of the Web Story document or inline on the [`<amp-story-page>`](https://amp.dev/documentation/components/amp-story-page/?format=stories) component. 
 
 
-## Layering elements
+### Layering elements
 
 The system header contains controls such as the mute and share icons. It appears at a higher z-index than the background image and video. Ensure that no essential information is covered by these icons.
 
 
-## Aspect ratio
+### Aspect ratio
 
 Design Web Story assets at a 9:16 aspect ratio. Because page height and width varies across browsers and devices don’t place essential content close to page edges. 
 
 
-## Poster images
+### Poster images
 
 A poster image is displayed to user’s while a video is downloaded. The poster image should be representative of the video to allow for a smooth transition. Specify a poster image by adding the `poster` attribute to your amp-video element and pointing it to the image location. 
 
@@ -117,7 +118,7 @@ A poster image is displayed to user’s while a video is downloaded. The poster 
 ```
 
 
-# Video
+## Video
 
 All videos must be added via the [amp-video](https://amp.dev/documentation/components/amp-video/?format=stories) component.
 
@@ -138,7 +139,7 @@ All videos must be added via the [amp-video](https://amp.dev/documentation/compo
 ```
 
 
-## Resolution and quality 
+### Resolution and quality 
 
 Encode videos to adjust quality for the following recommended optimizations:
 
@@ -160,7 +161,7 @@ Encode videos to adjust quality for the following recommended optimizations:
 Try to keep HLS segments under 10 seconds in duration.
 
 
-## Format and size
+### Format and size
 
 Keep videos smaller than 4MB for optimal performance. Consider splitting large videos up over multiple pages. 
 
@@ -182,7 +183,7 @@ If you can only provide a single video format, provide MP4. When possible, use H
 </table>
 
 
-## Specify <source> vs src
+### Specify <source> vs src
 
 Use `<source>` child elements within the `<amp-video>` component to specify the video source over the `src` attribute. Using the `<source>` element allows you to specify the video type and add backup video sources. You must use the `type` attribute to specify the MIME type. Use `application/x-mpegurl` or `application/vnd.apple.mpegurl` for HLS videos. For all other video types, use the `video/` MIME prefix and follow with the video format, such as `”video/mp4”`.
 
@@ -197,7 +198,7 @@ Use `<source>` child elements within the `<amp-video>` component to specify the 
 ```
 
 
-## Auto advancing after videos
+### Auto advancing after videos
 
 The [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-page/?format=stories#auto-advance-after-[optional]) attribute exposed by amp-story-page specifies if and when a story page should advance without the user tapping. To advance after a video, point the attribute to the video id.
 
@@ -206,7 +207,7 @@ The [`auto-advance-after`](https://amp.dev/documentation/components/amp-story-pa
 ```
 
 
-# Desktop experience
+## Desktop experience
 
 The Web Story format supports an [optional desktop experience](https://github.com/ampproject/amphtml/blob/master/extensions/amp-story/amp-story.md#landscape-orientation-and-full-bleed-desktop-experience-opt-in). This changes the desktop experience to an immersive full bleed mode, replacing the default three portrait panels experience and allows mobile users to view when their device is held horizontally. 
 
