@@ -21,4 +21,4 @@ In this tutorial, you learned to:
 Learn more about web stories and AMP from these resources:
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
-- [AMP story best practices](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
+- [AMP story best practices](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
