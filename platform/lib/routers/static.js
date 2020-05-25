@@ -22,9 +22,12 @@ const {join} = require('path');
 const config = require('@lib/config');
 const project = require('@lib/utils/project');
 const robots = require('./robots');
+const thumbor = require('./thumbor');
 
 // eslint-disable-next-line new-cap
 const staticRouter = express.Router();
+
+staticRouter.use(thumbor);
 
 staticRouter.use('/static', express.static(project.paths.STATICS_DEST));
 

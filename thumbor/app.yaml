@@ -1,0 +1,9 @@
+runtime: custom
+env: flex
+manual_scaling:
+  instances: 1
+
+liveness_check:
+  path: /healthcheck
+readiness_check:
+  path: /healthcheck
