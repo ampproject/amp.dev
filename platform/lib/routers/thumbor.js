@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 The AMP HTML Authors. All Rights Reserved.
+ * Copyright 2020 The AMP HTML Authors. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,11 +17,10 @@
 'use strict';
 
 const express = require('express');
-const {setMaxAge} = require('@lib/utils/cacheHelpers');
 const {join} = require('path');
 const config = require('@lib/config');
-const project = require('@lib/utils/project');
 const HttpProxy = require('http-proxy');
+const log = require('@lib/utils/log')('Thumbor');
 
 const SECURITY_KEY = 'unsafe';
 
@@ -39,11 +38,26 @@ const imagePaths = config.shared.thumbor.fileExtensions.map((extension) => {
 });
 
 thumborRouter.get(imagePaths, (request, response, next) => {
-  // Thumbor expects SECURITY_KEY as URL partial
-  request.url = join(SECURITY_KEY, request.url);
+  const imageUrl = new URL(request.url, config.hosts.platform.base);
+  const imageWidth = imageUrl.searchParams.get('width');
+  // Thumbor expects SECURITY_KEY as URL partial and the desired
+  // size (x * y) as another one
+  request.url = join(
+    SECURITY_KEY,
+    imageWidth ? `/${imageWidth}x0/` : '/',
+    imageUrl.pathname
+  );
 
   proxy.web(request, response, proxyOptions, (error) => {
-    log.info('Proxy error', error);
+    // Silently fail over if no thumbor instance can be reached
+    if (e.code == 'ECONNREFUSED') {
+      next();
+      return;
+    }
+
+    // Everything else is considered a error: malformed URLs,
+    // unavailable assets, ...
+    log.error(error);
     response.status(502).end();
   });
 });
