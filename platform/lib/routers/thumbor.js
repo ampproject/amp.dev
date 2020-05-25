@@ -41,11 +41,19 @@ thumborRouter.get(imagePaths, (request, response, next) => {
   const imageUrl = new URL(request.url, config.hosts.platform.base);
   const imageWidth = imageUrl.searchParams.get('width');
 
-  request.url = join(
-    SECURITY_KEY,
-    imageWidth ? `/${imageWidth}x0/` : '/',
-    imageUrl.href
-  );
+  // Thumbor requests the image itself - to prevent loops it does
+  // so by setting ?original=true
+  if (imageUrl.searchParams.get('original')) {
+    next();
+    return;
+  }
+
+  const thumborUrl = new URL(request.url, config.hosts.platform.base);
+  thumborUrl.pathname =
+    SECURITY_KEY +
+    (imageWidth ? `/${imageWidth}x0/` : '/') +
+    `${imageUrl.pathname}?original=true`;
+  request.url = thumborUrl.href;
 
   proxy.web(request, response, proxyOptions, (error) => {
     // Silently fail over if no thumbor instance can be reached. Therefore
