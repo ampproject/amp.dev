@@ -16,7 +16,6 @@
 
 'use strict';
 
-const gulp = require('gulp');
 const {join} = require('path');
 
 const config = require('@lib/config');
@@ -37,15 +36,4 @@ async function thumborRunLocal() {
   );
 }
 
-async function thumborCollectImages() {
-  const imagePaths = config.shared.thumbor.fileExtensions.map((extension) => {
-    return join(project.paths.STATICS_DEST, '/**/', `*.${extension}`);
-  });
-
-  return gulp
-    .src(imagePaths)
-    .pipe(gulp.dest(`${project.paths.THUMBOR_STATICS_DEST}`));
-}
-
 exports.thumborRunLocal = thumborRunLocal;
-exports.thumborCollectImages = thumborCollectImages;
