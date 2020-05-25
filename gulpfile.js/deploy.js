@@ -316,7 +316,6 @@ async function packagerUpdateStart() {
   console.log('Rolling update started, this can take a few minutes...');
 }
 
-
 /* Thumbor */
 /**
  * Create a new VM instance template based on the latest docker image.

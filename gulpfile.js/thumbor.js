@@ -17,13 +17,13 @@
 'use strict';
 
 const gulp = require('gulp');
-const { join } = require('path');
+const {join} = require('path');
 
 const config = require('@lib/config');
 const {sh} = require('@lib/utils/sh.js');
-const { project } = require('@lib/utils');
+const {project} = require('@lib/utils');
 
-const IMAGE_TAG = 'amp-dev-thumbor'
+const IMAGE_TAG = 'amp-dev-thumbor';
 const opts = {
   workingDir: project.paths.THUMBOR_ROOT,
 };
@@ -42,8 +42,9 @@ async function thumborCollectImages() {
     return join(project.paths.STATICS_DEST, '/**/', `*.${extension}`);
   });
 
-  return gulp.src(imagePaths)
-    .pipe(gulp.dest(`${project.paths.THUMBOR_STATICS_DEST}`))
+  return gulp
+    .src(imagePaths)
+    .pipe(gulp.dest(`${project.paths.THUMBOR_STATICS_DEST}`));
 }
 
 exports.thumborRunLocal = thumborRunLocal;
