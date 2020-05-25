@@ -32,7 +32,7 @@ async function thumborRunLocal() {
   await sh('pwd', opts);
   await sh(`docker build -t ${IMAGE_TAG} .`, opts);
   return await sh(
-    `docker run -p ${config.hosts.thumbor.port}:80 ${IMAGE_TAG}`,
+    `docker run -p ${config.hosts.thumbor.port}:8080 ${IMAGE_TAG}`,
     opts
   );
 }

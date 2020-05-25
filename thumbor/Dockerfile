@@ -1,6 +1,7 @@
 FROM minimalcompact/thumbor
 
 ENV LOG_LEVEL "DEBUG"
+ENV THUMBOR_PORT "8080"
 
 ENV AUTO_WEBP "True"
 
