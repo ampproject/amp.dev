@@ -16,6 +16,8 @@
 
 .#{template('roadmap')} {
   $root: &;
+  --filter-height: 210px;
+
   padding: 0 15px;
   background: color('whisper');
 
@@ -253,6 +255,7 @@
         @media (min-width: 768px) {
           position: absolute;
           top: -50px;
+          height: calc(90vh - var(--filter-height));
         }
 
         h3 {

@@ -10,7 +10,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 <main class="ap--main ap-t-roadmap">
   <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-
     <div class="ap-o-stage">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
@@ -56,7 +55,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
   </section>
 
   <section class="ap-t-roadmap-container">
-
     <div class="ap-t-roadmap-navigation">
       <div class="ap-t-roadmap-navigation-list">
         {% for quarter in doc.roadmap.quarters.ordered %}
@@ -123,7 +121,7 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           id="{{ issue.wg_slug }}-{{ issue.number }}">
         {% if loop.changed(issue.quarter) %}
         [% if not category or quarters['{{ issue.quarter }}'].includes(category) %]
-        <amp-position-observer viewport-margins="25vh"
+        <amp-position-observer intersection-ratios=".95"
             target="{{ issue.quarter|slug }}"
             on="enter:anim-{{ issue.quarter|slug }}.start"
             layout="nodisplay">
@@ -174,7 +172,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           </div>
         </div>
       </div>
-
       [% endif %]
       {% endfor %}
     </div>
