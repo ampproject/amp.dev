@@ -18,11 +18,10 @@ Dalam tutorial ini, Anda mempelajari cara:
 Pelajari artikel AMP lebih lanjut dari referensi berikut:
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
-- [praktik terbaik artikel AMP](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
+- [praktik terbaik artikel AMP](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
 
 [tip type="note"]
 
 Komponen [`amp-story`](../../../../documentation/components/reference/amp-story.md) masih bersifat **eksperimental**. Untuk mendaftar ke uji coba asli agar dapat memublikasikan halaman dengan komponen ini, silakan kunjungi <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
 
 [/tip]
-
