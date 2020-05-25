@@ -16,8 +16,6 @@
 
 'use strict';
 
-const {join} = require('path');
-
 const config = require('@lib/config');
 const {sh} = require('@lib/utils/sh.js');
 const {project} = require('@lib/utils');
