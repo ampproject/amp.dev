@@ -40,12 +40,11 @@ const imagePaths = config.shared.thumbor.fileExtensions.map((extension) => {
 thumborRouter.get(imagePaths, (request, response, next) => {
   const imageUrl = new URL(request.url, config.hosts.platform.base);
   const imageWidth = imageUrl.searchParams.get('width');
-  // Thumbor expects SECURITY_KEY as URL partial and the desired
-  // size (x * y) as another one
+
   request.url = join(
     SECURITY_KEY,
     imageWidth ? `/${imageWidth}x0/` : '/',
-    imageUrl.pathname
+    imageUrl.href
   );
 
   proxy.web(request, response, proxyOptions, (error) => {

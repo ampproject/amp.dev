@@ -389,6 +389,11 @@ exports.packagerUpdateStart = packagerUpdateStart;
 exports.thumborImageUpload = thumborImageUpload;
 exports.thumborInstanceTemplateCreate = thumborInstanceTemplateCreate;
 exports.thumborUpdateStart = thumborUpdateStart;
+exports.thumborDeploy = series(
+  thumborImageUpload,
+  thumborInstanceTemplateCreate,
+  thumborUpdateStart
+);
 
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;
