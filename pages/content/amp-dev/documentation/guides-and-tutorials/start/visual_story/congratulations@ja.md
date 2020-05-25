@@ -18,11 +18,10 @@ $title: お疲れ様でした
 AMP ストーリーの詳細については、下記の関連資料をご覧ください。
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
-- [AMP ストーリーのおすすめの方法](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
+- [AMP ストーリーのおすすめの方法](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
 
 [tip type="note"]
 
 [`amp-story`](../../../../documentation/components/reference/amp-story.md) は**試験運用コンポーネント**です。元のトライアルに登録して、このコンポーネントでページを公開するには、<a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a> をご覧ください。
 
 [/tip]
-

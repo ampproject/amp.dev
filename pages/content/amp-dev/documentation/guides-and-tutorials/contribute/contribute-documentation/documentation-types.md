@@ -115,7 +115,6 @@ An introductory guide provides an overview of relevant information to get starte
 amp.dev examples:
 - [AMP email fundamentals](../../../../documentation/guides-and-tutorials/learn/email_fundamentals.md?format=email)
 - [Common element attributes](../../../../documentation/guides-and-tutorials/learn/common_attributes.md?format=websites)
-- [Best practices for creating an AMP story](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md?format=stories)
 
 <table>
   <tr>
