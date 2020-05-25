@@ -59,10 +59,11 @@
         top: 0;
         right: 0;
         width: 100%;
-        height: 100%;
+        height: 70%;
 
         @media (min-width: 768px) {
-          width: 56%;
+          height: 90%;
+          width: 60%;
         }
         @media (min-width: 1024px) {
           width: 45%;
@@ -96,20 +97,13 @@
     margin-left: 17px;
 
     @media (min-width: 768px) {
-      margin-left: 0;
-    }
-
-    @media (min-width: 768px) {
       grid-column: 3/22;
+      margin-left: 0;
     }
 
     @media (min-width: 1024px) {
       grid-column: 7/19;
     }
-
-    // @media (min-width: 1920px) {
-    //   grid-column: 8/18;
-    // }
   }
 
   &-list {
@@ -119,10 +113,7 @@
 
     @media (min-width: 768px) {
       margin-left: 0;
-    }
-
-    @media (min-width: 768px) {
-      grid-column: 3/22;
+      grid-column: 3/23;
     }
 
     @media (min-width: 1024px) {
@@ -134,18 +125,22 @@
     }
 
     &-item {
-      margin-bottom: 30px;
-
       &-section {
-        border-radius: 8px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+
+        @media (min-width: 768px) {
+          margin-bottom: 30px;
+        }
 
         &-header {
-          height: 73px;
-          padding: 15px 35px 15px 25px;
+          padding: 23px 20px;
           border: solid 2px color('mercury');
           border-radius: 8px;
           background: transparent;
+
+          @media (min-width: 768px) {
+            padding: 23px 35px 23px 25px;
+          }
 
           &-container {
             display: flex;
@@ -155,6 +150,7 @@
 
           &-title {
             margin: 0;
+            max-width: calc(100% - 80px);
           }
 
           &-checkmark {
@@ -189,10 +185,22 @@
         &-body {
           font-size: 14px;
           line-height: 1.86;
-          padding: 0 35px 35px 25px;
+          padding: 0 20px 30px 25px;
+
+          @media (min-width: 768px) {
+            padding: 0 35px 35px 25px;
+          }
 
           p {
             margin: 0;
+          }
+
+          &-image {
+            margin: 30px 0;
+
+            &-caption {
+              margin-top: 10px;
+            }
           }
 
           &-separator {
