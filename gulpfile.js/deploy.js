@@ -206,9 +206,12 @@ async function instanceTemplatesClean() {
     );
   });
 
-  // Filter out packager instance templates as they are built manually
+  // Filter out packager & thumbor instance templates as they are built manually
   templates = templates.filter((template) => {
-    return !template.name.includes(PACKAGER_PREFIX);
+    return (
+      !template.name.includes(PACKAGER_PREFIX) &&
+      !template.name.includes(THUMBOR_PREFIX)
+    );
   });
 
   // Remove templates from list that need to be kept
