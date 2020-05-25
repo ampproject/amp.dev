@@ -48,13 +48,14 @@ thumborRouter.get(imagePaths, (request, response, next) => {
     return;
   }
 
+  imageUrl.searchParams.set('original', 'true');
+
   const thumborUrl = new URL(request.url, config.hosts.platform.base);
   thumborUrl.pathname =
-    SECURITY_KEY +
-    (imageWidth ? `/${imageWidth}x0/` : '/') +
-    `${imageUrl.pathname}?original=true`;
+    SECURITY_KEY + (imageWidth ? `/${imageWidth}x0/` : '/') + imageUrl.href;
   request.url = thumborUrl.href;
 
+  log.info(`Going to fetch`, request.url);
   proxy.web(request, response, proxyOptions, (error) => {
     // Silently fail over if no thumbor instance can be reached. Therefore
     // rewrite the URL back to the original one
