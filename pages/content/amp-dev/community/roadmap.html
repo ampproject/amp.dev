@@ -112,15 +112,19 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       </div>
     </div>
 
-    [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
     <div class="ap-t-roadmap-list">
       {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+      [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
+      [% set currenQuarter = 'undefined' %]
+
       {% for issue in doc.roadmap.issues %}
       [% if not category or category == '{{ issue.wg_slug }}' %]
       <div class="ap-t-roadmap-list-item"
           id="{{ issue.wg_slug }}-{{ issue.number }}">
-        {% if loop.changed(issue.quarter) %}
+
+        [% if currenQuarter != '{{ issue.quarter }}' %]
         [% if not category or quarters['{{ issue.quarter }}'].includes(category) %]
+        [% set currenQuarter = '{{ issue.quarter }}' %]
         <amp-position-observer intersection-ratios=".95"
             target="{{ issue.quarter|slug }}"
             on="enter:anim-{{ issue.quarter|slug }}.start"
@@ -130,7 +134,8 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           <h3>{{ issue.quarter }}</h3>
         </aside>
         [% endif %]
-        {% endif %}
+        [% endif %]
+
         <aside class="ap-t-roadmap-list-item-scroll-spacer"
             id="scroll-{{ issue.wg_slug }}-{{ issue.number }}">
         </aside>
