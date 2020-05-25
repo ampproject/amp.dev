@@ -44,7 +44,7 @@ describe('Routes', () => {
   });
   it('serves logs', async () => {
     const sampleLogUrl = new URL(
-      '?v=011907301630320&id=2y&s[]=amp-video&s[]=amp-video',
+      '?v=012005151844001&id=2y&s[]=amp-video&s[]=amp-video',
       config.hosts.log.base
     );
     const response = await fetch(sampleLogUrl);
