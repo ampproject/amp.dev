@@ -157,7 +157,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
               {% for paragraph in column %}
               {{ paragraph|markdown|safe }}
               {% endfor %}
-              {% if loop.last %}
               <a href="{{ issue.html_url }}" class="ap-m-lnk" target="_blank" rel="noopener">
                 <div class="ap-a-ico ap-m-lnk-icon">
                   {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -165,7 +164,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
                 </div>
                 <span class="ap-m-lnk-text">{{ _('All details on GitHub') }}</span>
               </a>
-              {% endif %}
             </div>
             {% endfor %}
           </div>

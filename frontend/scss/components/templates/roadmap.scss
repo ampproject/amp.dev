@@ -251,6 +251,12 @@
         }
       }
 
+      &:last-child {
+        #{$root}-list-item-timeline--vertical {
+          display: none;
+        }
+      }
+
       &-quarter {
         @media (min-width: 768px) {
           position: absolute;
