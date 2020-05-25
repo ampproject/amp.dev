@@ -50,7 +50,7 @@ thumborRouter.get(imagePaths, (request, response, next) => {
   proxy.web(request, response, proxyOptions, (error) => {
     // Silently fail over if no thumbor instance can be reached. Therefore
     // rewrite the URL back to the original one
-    if (e.code == 'ECONNREFUSED') {
+    if (error.code == 'ECONNREFUSED') {
       request.url = imageUrl.href;
       next();
       return;
