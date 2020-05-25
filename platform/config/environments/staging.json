@@ -44,6 +44,11 @@
       "scheme": "https",
       "host": "amp-dev-sxg.appspot.com",
       "port": ""
+    },
+		"thumbor": {
+      "scheme": "https",
+      "host": "thumbor-dot-amp-dev-staging.appspot.com",
+      "port": ""
     }
 	},
 	"redis": {
