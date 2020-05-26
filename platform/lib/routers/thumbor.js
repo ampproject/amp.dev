@@ -40,6 +40,7 @@ const imagePaths = config.shared.thumbor.fileExtensions.map((extension) => {
 thumborRouter.get(imagePaths, (request, response, next) => {
   const imageUrl = new URL(request.url, config.hosts.platform.base);
   const imageWidth = imageUrl.searchParams.get('width');
+  imageUrl.searchParams.delete('width');
 
   // Thumbor requests the image itself - to prevent loops it does
   // so by setting ?original=true
