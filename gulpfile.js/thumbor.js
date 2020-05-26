@@ -43,9 +43,11 @@ function thumborImageIndex() {
     return join(project.paths.STATICS_DEST, '/**/', `*.${extension}`);
   });
 
-  return gulp.src(imagePaths).pipe(once({
-    file: project.paths.THUMBOR_IMAGE_INDEX
-  }));
+  return gulp.src(imagePaths).pipe(
+    once({
+      file: project.paths.THUMBOR_IMAGE_INDEX,
+    })
+  );
 }
 
 exports.thumborRunLocal = thumborRunLocal;

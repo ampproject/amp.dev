@@ -21,10 +21,10 @@ const {join} = require('path');
 function getImageIndex() {
   try {
     return require(project.paths.THUMBOR_IMAGE_INDEX);
-  } catch {
-    return {}
+  } catch (_) {
+    return {};
   }
-};
+}
 
 const imageIndex = getImageIndex();
 
@@ -39,7 +39,11 @@ const imageIndex = getImageIndex();
 function imageOptimizer(src, width) {
   // Do not optimize non amp.dev URLs, as Thumbor will not process them
   // also do not try to optimize SVGs
-  if (src.startsWith('http://') || src.startsWith('https://') || src.endsWith('.svg')) {
+  if (
+    src.startsWith('http://') ||
+    src.startsWith('https://') ||
+    src.endsWith('.svg')
+  ) {
     return null;
   }
 
