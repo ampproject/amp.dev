@@ -14,7 +14,8 @@
 
 @import 'components/templates/_default.scss';
 
-.#{template('vitals')} {
+.#{template('checklist')} {
+  background: red;
   $root: &;
   padding: 0 15px;
   background: color('whisper');
