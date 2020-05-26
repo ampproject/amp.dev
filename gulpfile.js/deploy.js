@@ -20,10 +20,11 @@ const {series} = require('gulp');
 const {join} = require('path');
 const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
-const {ROOT} = require('@lib/utils/project').paths;
+const {ROOT, THUMBOR_ROOT} = require('@lib/utils/project').paths;
 
 const PREFIX = 'amp-dev';
 const PACKAGER_PREFIX = PREFIX + '-packager';
+const THUMBOR_PREFIX = PREFIX + '-thumbor';
 
 // Parse commandline arguments
 const argv = mri(process.argv.slice(2));
@@ -92,6 +93,28 @@ const config = {
     image: {
       name: `gcr.io/${PROJECT_ID}/${PACKAGER_PREFIX}`,
       current: `gcr.io/${PROJECT_ID}/${PACKAGER_PREFIX}:${TAG}`,
+    },
+  },
+  thumbor: {
+    opts: {
+      workingDir: THUMBOR_ROOT,
+    },
+    prefix: THUMBOR_PREFIX,
+    tag: TAG,
+    instance: {
+      groups: [
+        {
+          name: `ig-${THUMBOR_PREFIX}`,
+          zone: 'us-east1-b',
+        },
+      ],
+      template: `it-${THUMBOR_PREFIX}-${TAG}`,
+      count: 1,
+      machine: 'n1-standard-1',
+    },
+    image: {
+      name: `gcr.io/${PROJECT_ID}/${THUMBOR_PREFIX}`,
+      current: `gcr.io/${PROJECT_ID}/${THUMBOR_PREFIX}:${TAG}`,
     },
   },
 };
@@ -183,9 +206,12 @@ async function instanceTemplatesClean() {
     );
   });
 
-  // Filter out packager instance templates as they are built manually
+  // Filter out packager & thumbor instance templates as they are built manually
   templates = templates.filter((template) => {
-    return !template.name.includes(PACKAGER_PREFIX);
+    return (
+      !template.name.includes(PACKAGER_PREFIX) &&
+      !template.name.includes(THUMBOR_PREFIX)
+    );
   });
 
   // Remove templates from list that need to be kept
@@ -293,6 +319,52 @@ async function packagerUpdateStart() {
   console.log('Rolling update started, this can take a few minutes...');
 }
 
+/* Thumbor */
+/**
+ * Create a new VM instance template based on the latest docker image.
+ */
+function thumborInstanceTemplateCreate() {
+  return sh(
+    `gcloud compute instance-templates create-with-container \
+                                   ${config.thumbor.instance.template} \
+                 --container-image ${config.thumbor.image.current} \
+                 --machine-type ${config.thumbor.instance.machine}`,
+    config.thumbor.opts
+  );
+}
+
+/**
+ * Builds and uploads the thumbor docker image to Google Cloud Container Registry.
+ */
+function thumborImageUpload() {
+  return sh(
+    `gcloud builds submit --tag ${config.thumbor.image.current} .`,
+    config.thumbor.opts
+  );
+}
+
+/**
+ * Start a rolling update to a new thumbor VM instance template. This will ensure
+ * that there's always at least 1 active instance running during the update.
+ */
+async function thumborUpdateStart() {
+  const updates = config.thumbor.instance.groups.map((group) => {
+    return sh(
+      `gcloud beta compute instance-groups managed rolling-action \
+                 start-update ${group.name} \
+                 --version template=${config.thumbor.instance.template} \
+                 --zone=${group.zone} \
+                 --min-ready 1m \
+                 --max-surge 1 \
+                 --max-unavailable 1`,
+      config.thumbor.opts
+    );
+  });
+  await Promise.all(updates);
+
+  console.log('Rolling update started, this can take a few minutes...');
+}
+
 exports.verifyTag = verifyTag;
 exports.gcloudSetup = gcloudSetup;
 exports.deploy = series(
@@ -316,6 +388,16 @@ exports.packagerDeploy = series(
 exports.packagerImageUpload = packagerImageUpload;
 exports.packagerInstanceTemplateCreate = packagerInstanceTemplateCreate;
 exports.packagerUpdateStart = packagerUpdateStart;
+
+exports.thumborImageUpload = thumborImageUpload;
+exports.thumborInstanceTemplateCreate = thumborInstanceTemplateCreate;
+exports.thumborUpdateStart = thumborUpdateStart;
+exports.thumborDeploy = series(
+  thumborImageUpload,
+  thumborInstanceTemplateCreate,
+  thumborUpdateStart
+);
+
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;
 exports.updateStart = updateStart;
