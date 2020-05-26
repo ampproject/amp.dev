@@ -47,6 +47,7 @@ const routers = {
   search: require('@lib/routers/search.js'),
   static: require('@lib/routers/static.js'),
   templates: require('@lib/routers/templates.js'),
+  thumbor: require('@lib/routers/thumbor.js'),
   whoAmI: require('@lib/routers/whoAmI.js'),
 };
 
@@ -160,6 +161,7 @@ class Platform {
 
   _configureRouters() {
     this.server.use(routers.packager);
+    this.server.use(routers.thumbor);
     this.server.use(routers.whoAmI);
     this.server.use(routers.healthCheck);
     this.server.use(routers.example.api);

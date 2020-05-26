@@ -40,6 +40,7 @@ pages/shared/data/roadmap.yaml
 platform/pages*
 platform/static
 platform/config/build-info.yaml
+thumbor/static
 
 # Ignore pipeline cache
 .cache/**/*

@@ -64,6 +64,8 @@ const paths = {
   GUIDES_PATH_RELATIVE: '/content/amp-dev/documentation/guides-and-tutorials/',
   RECENT_GUIDES_DEST: 'pages/shared/data/recent-guides.yaml',
   BUILD_INFO_PATH: absolute('platform/config/build-info.yaml'),
+  THUMBOR_ROOT: absolute('thumbor'),
+  THUMBOR_STATICS_DEST: absolute('thumbor/static'),
 };
 
 module.exports = {
