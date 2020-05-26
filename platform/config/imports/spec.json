@@ -161,5 +161,12 @@
     "to": "documentation/guides-and-tutorials/learn/email-spec/amp-email-css.md",
     "toc": true,
     "formats": ["email"]
-  }
+  },
+	{
+		"title": "Analytics Vendors",
+		"repo": "ampproject/amphtml",
+		"from": "extensions/amp-analytics/analytics-vendors-list.md",
+		"to": "../../shared/data/analytics-vendors.md",
+		"formats": ["websites", "stories", "ads"]
+	}
 ]
