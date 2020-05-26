@@ -15,6 +15,18 @@
  */
 
 const config = require('@lib/config');
+const {project} = require('@lib/utils');
+const {join} = require('path');
+
+function getImageIndex() {
+  try {
+    return require(project.paths.THUMBOR_IMAGE_INDEX);
+  } catch {
+    return {}
+  }
+};
+
+const imageIndex = getImageIndex();
 
 /**
  * Adds the desired image width to a URL as query paramter.

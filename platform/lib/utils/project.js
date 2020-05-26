@@ -65,7 +65,7 @@ const paths = {
   RECENT_GUIDES_DEST: 'pages/shared/data/recent-guides.yaml',
   BUILD_INFO_PATH: absolute('platform/config/build-info.yaml'),
   THUMBOR_ROOT: absolute('thumbor'),
-  THUMBOR_STATICS_DEST: absolute('thumbor/static'),
+  THUMBOR_IMAGE_INDEX: absolute('dist/static/imageIndex.json'),
 };
 
 module.exports = {
