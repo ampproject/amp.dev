@@ -25,8 +25,18 @@ const config = require('@lib/config');
  * @param {Integer} width  - the target width
  */
 function imageOptimizer(src, width) {
+  // Do not optimize non amp.dev URLs, as Thumbor will not process them
+  // also do not try to optimize SVGs
+  if (src.startsWith('http://') || src.startsWith('https://') || src.endsWith('.svg')) {
+    return null;
+  }
+
   const imageUrl = new URL(src, config.hosts.platform.base);
   imageUrl.searchParams.set('width', width);
+
+  const hash = imageIndex[join('dist/', imageUrl.pathname)];
+  imageUrl.searchParams.set('hash', hash);
+
   return imageUrl.href;
 }
 
