@@ -15,7 +15,6 @@
 @import 'components/templates/_default.scss';
 
 .#{template('checklist')} {
-  background: red;
   $root: &;
   padding: 0 15px;
   background: color('whisper');
@@ -128,6 +127,7 @@
     &-item {
       &-section {
         margin-bottom: 20px;
+        border-radius: 8px;
 
         @media (min-width: 768px) {
           margin-bottom: 30px;
@@ -152,26 +152,6 @@
           &-title {
             margin: 0;
             max-width: calc(100% - 80px);
-          }
-
-          &-checkmark {
-            display: none;
-            justify-content: center;
-            align-items: center;
-            width: 26px;
-            height: 26px;
-            margin-left: 15px;
-            border-radius: 50%;
-            background: color('blue-ribbon');
-
-            svg {
-              width: 60%;
-              fill: color('white');
-            }
-
-            &.active {
-              display: flex;
-            }
           }
 
           &-toggle {
@@ -217,44 +197,6 @@
             align-items: center;
           }
 
-          // TODO: Create checkbox component
-          .ap-a-checkbox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 23px;
-            height: 23px;
-            margin-right: 15px;
-            border-radius: 4px;
-            border: solid 1px #9da7b1;
-
-
-            &-checkmark {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 19px;
-              height: 19px;
-              border-radius: 3px;
-              background: color('blue-ribbon');
-              opacity: 0;
-              transform: scale3d(.85, .85, 1);
-              transition: opacity .18s ease-in, transform .25s cubic-bezier(.6,-0.01,.32,1.95);
-
-              svg {
-                width: 60%;
-                height: 60%;
-                fill: color('white');
-              }
-            }
-
-            &.active {
-              .ap-a-checkbox-checkmark {
-                opacity: 1;
-                transform: scale3d(1, 1, 1);
-              }
-            }
-          }
         }
 
         &[expanded] {
@@ -277,6 +219,10 @@
               border-top: 0;
               border-radius: 0px 0px 8px 8px;
               background: color('white');
+
+              button {
+                border: 0;
+              }
             }
           }
         }

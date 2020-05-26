@@ -27,26 +27,20 @@ $view: /views/custom.j2
     <p class="ap-t-checklist-intro-text">This is a paragraph that explains what amp.dev/checklist is about. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. Ipsum nunc aliquet bibendum enim facilisis gravida. Amet justo donec enim diam vulputate ut pharetra. Amet facilisis magna etiam tempor orci. Suspendisse faucibus interdum posuere lorem. Sapien nec sagittis aliquam malesuada.<br><br>Feugiat nibh sed pulvinar proin. Tellus id interdum velit laoreet. Ac feugiat sed lectus vestibulum mattis ullamcorper velit. Tellus id interdum velit laoreet. Porttitor massa id neque aliquam vestibulum morbi. Tempus iaculis urna id volutpat. Ornare quam viverra orci sagittis eu volutpat odio facilisis mauris.</p>
   </section>
 
+
   <section class="ap-t-checklist-list">
-
     <h2>Analyze</h2>
-    <amp-accordion class="ap-t-checklist-list-item" animate>
-
-      <section class="ap-t-checklist-list-item-section">
+    <amp-accordion class="ap-t-checklist-list-item" id="chapter-1" animate>
+      <section class="ap-t-checklist-list-item-section"
+          id="chapter-1-1">
         <header class="ap-t-checklist-list-item-section-header">
           <div class="ap-t-checklist-list-item-section-header-container">
             <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start super long title</h4>
-            <div class="ap-t-checklist-list-item-section-header-checkmark"
-                id="id-placeholder-1">
-              {% do doc.icons.useIcon('icons/checkmark.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-            </div>
             <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </header>
         <div class="ap-t-checklist-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-
           <div class="ap-t-checklist-list-item-section-body-image">
             <amp-img src="/static/img/dummy-news-1.png"
                 width="200"
@@ -55,169 +49,120 @@ $view: /views/custom.j2
             </amp-img>
             <div class="ap-t-checklist-list-item-section-body-image-caption">This is a caption</div>
           </div>
-
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
           <span class="ap-t-checklist-list-item-section-body-separator"></span>
-          <div class="ap-t-checklist-list-item-section-body-progress"
-              on="tap:id-placeholder-1.toggleClass(class='active'), id-placeholder-2.toggleClass(class='active')"
-              role="button"
-              tabindex="0">
-            <div class="ap-a-checkbox" id="id-placeholder-2">
-              <div class="ap-a-checkbox-checkmark">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-              </div>
+          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
+              on="tap:chapter-1.collapse(section='chapter-1-1'), chapter-1.expand(section='chapter-1-2'), chapter-1-1.scrollTo(duration=500)"
+              type="button"
+              name="button">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/external.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
             </div>
-            <label>Done. I made it!</label>
-          </div>
+            <span class="ap-m-lnk-text">{{ _('Next step') }}</span>
+          </button>
         </div>
       </section>
 
-      <section class="ap-t-checklist-list-item-section">
+      <section class="ap-t-checklist-list-item-section"
+          id="chapter-1-2">
         <header class="ap-t-checklist-list-item-section-header">
           <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 2: Deep Dive</h4>
-            <div class="ap-t-checklist-list-item-section-header-checkmark"
-                id="id-placeholder-1">
-              {% do doc.icons.useIcon('icons/checkmark.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-            </div>
+            <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start super long title</h4>
             <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </header>
         <div class="ap-t-checklist-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-checklist-list-item-section-body-separator"></span>
-          <div class="ap-t-checklist-list-item-section-body-progress"
-              on="tap:id-placeholder-1.toggleClass(class='active'), id-placeholder-2.toggleClass(class='active')"
-              role="button"
-              tabindex="0">
-            <div class="ap-a-checkbox" id="id-placeholder-2">
-              <div class="ap-a-checkbox-checkmark">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-              </div>
-            </div>
-            <label>Done. I made it!</label>
+          <div class="ap-t-checklist-list-item-section-body-image">
+            <amp-img src="/static/img/dummy-news-1.png"
+                width="200"
+                height="100"
+                layout="responsive">
+            </amp-img>
+            <div class="ap-t-checklist-list-item-section-body-image-caption">This is a caption</div>
           </div>
-        </div>
-      </section>
-
-      <section class="ap-t-checklist-list-item-section">
-        <header class="ap-t-checklist-list-item-section-header">
-          <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 3: Automation</h4>
-            <div class="ap-t-checklist-list-item-section-header-checkmark"
-                id="id-placeholder-1">
-              {% do doc.icons.useIcon('icons/checkmark.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-            </div>
-            <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-          </div>
-        </header>
-        <div class="ap-t-checklist-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
           <span class="ap-t-checklist-list-item-section-body-separator"></span>
-          <div class="ap-t-checklist-list-item-section-body-progress"
-              on="tap:id-placeholder-1.toggleClass(class='active'), id-placeholder-2.toggleClass(class='active')"
-              role="button"
-              tabindex="0">
-            <div class="ap-a-checkbox" id="id-placeholder-2">
-              <div class="ap-a-checkbox-checkmark">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-              </div>
+          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
+              on="tap:chapter-1.collapse(section='chapter-1-2'), chapter-1.expand(section='chapter-2-1'), chapter-1-2.scrollTo(duration=500)"
+              type="button"
+              name="button">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/external.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
             </div>
-            <label>Done. I made it!</label>
-          </div>
+            <span class="ap-m-lnk-text">{{ _('Next step') }}</span>
+          </button>
         </div>
       </section>
     </amp-accordion>
 
-
     <h2>Take action</h2>
-
-    <amp-accordion class="ap-t-checklist-list-item" animate>
-      <section class="ap-t-checklist-list-item-section">
+    <amp-accordion class="ap-t-checklist-list-item" id="chapter-2" animate>
+      <section class="ap-t-checklist-list-item-section"
+          id="chapter-2-1">
         <header class="ap-t-checklist-list-item-section-header">
           <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start Super</h4>
-            <div class="ap-t-checklist-list-item-section-header-checkmark"
-                id="id-placeholder-1">
-              {% do doc.icons.useIcon('icons/checkmark.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-            </div>
+            <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start super long title</h4>
             <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </header>
         <div class="ap-t-checklist-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-checklist-list-item-section-body-separator"></span>
-          <div class="ap-t-checklist-list-item-section-body-progress"
-              on="tap:id-placeholder-1.toggleClass(class='active'), id-placeholder-2.toggleClass(class='active')"
-              role="button"
-              tabindex="0">
-            <div class="ap-a-checkbox" id="id-placeholder-2">
-              <div class="ap-a-checkbox-checkmark">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-              </div>
-            </div>
-            <label>Done. I made it!</label>
+          <div class="ap-t-checklist-list-item-section-body-image">
+            <amp-img src="/static/img/dummy-news-1.png"
+                width="200"
+                height="100"
+                layout="responsive">
+            </amp-img>
+            <div class="ap-t-checklist-list-item-section-body-image-caption">This is a caption</div>
           </div>
+          <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
+          <span class="ap-t-checklist-list-item-section-body-separator"></span>
+          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
+              on="tap:chapter-1.collapse(section='chapter-2-1'), chapter-1.expand(section='chapter-2-2'), chapter-2-1.scrollTo(duration=500)"
+              type="button"
+              name="button">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/external.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
+            </div>
+            <span class="ap-m-lnk-text">{{ _('Next step') }}</span>
+          </button>
         </div>
       </section>
 
-      <section class="ap-t-checklist-list-item-section">
+      <section class="ap-t-checklist-list-item-section"
+          id="chapter-2-2">
         <header class="ap-t-checklist-list-item-section-header">
           <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 2: Deep Dive</h4>
-            <div class="ap-t-checklist-list-item-section-header-checkmark"
-                id="id-placeholder-1">
-              {% do doc.icons.useIcon('icons/checkmark.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-            </div>
+            <h4 class="ap-t-checklist-list-item-section-header-title">Step 1: Quick Start super long title</h4>
             <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
           </div>
         </header>
         <div class="ap-t-checklist-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
-          <span class="ap-t-checklist-list-item-section-body-separator"></span>
-          <div class="ap-t-checklist-list-item-section-body-progress"
-              on="tap:id-placeholder-1.toggleClass(class='active'), id-placeholder-2.toggleClass(class='active')"
-              role="button"
-              tabindex="0">
-            <div class="ap-a-checkbox" id="id-placeholder-2">
-              <div class="ap-a-checkbox-checkmark">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-              </div>
-            </div>
-            <label>Done. I made it!</label>
+          <div class="ap-t-checklist-list-item-section-body-image">
+            <amp-img src="/static/img/dummy-news-1.png"
+                width="200"
+                height="100"
+                layout="responsive">
+            </amp-img>
+            <div class="ap-t-checklist-list-item-section-body-image-caption">This is a caption</div>
           </div>
-        </div>
-      </section>
-      <section class="ap-t-checklist-list-item-section">
-        <header class="ap-t-checklist-list-item-section-header">
-          <div class="ap-t-checklist-list-item-section-header-container">
-            <h4 class="ap-t-checklist-list-item-section-header-title">Step 3: Automation</h4>
-            <div class="ap-t-checklist-list-item-section-header-checkmark"
-                id="id-placeholder-1">
-              {% do doc.icons.useIcon('icons/checkmark.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-            </div>
-            <svg class="ap-t-checklist-list-item-section-header-toggle"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-          </div>
-        </header>
-        <div class="ap-t-checklist-list-item-section-body">
           <p>This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus. This is a section that describes how to set Continious Integration. it probably has links. They may have tooltips. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus.</p>
           <span class="ap-t-checklist-list-item-section-body-separator"></span>
-          <div class="ap-t-checklist-list-item-section-body-progress"
-              on="tap:id-placeholder-1.toggleClass(class='active'), id-placeholder-2.toggleClass(class='active')"
-              role="button"
-              tabindex="0">
-            <div class="ap-a-checkbox" id="id-placeholder-2">
-              <div class="ap-a-checkbox-checkmark">
-                <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checkmark"></use></svg>
-              </div>
+          <button class="ap-m-lnk ap-m-lnk-square ap--newsletter-double"
+              on="tap:chapter-2.expand"
+              type="button"
+              name="button">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do doc.icons.useIcon('icons/external.svg') %}
+              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use></svg>
             </div>
-            <label>Done. I made it!</label>
-          </div>
+            <span class="ap-m-lnk-text">{{ _('Next step') }}</span>
+          </button>
         </div>
       </section>
     </amp-accordion>
