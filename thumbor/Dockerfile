@@ -5,6 +5,8 @@ ENV THUMBOR_PORT "8080"
 
 ENV AUTO_WEBP "True"
 
+ENV MAX_AGE "31536000"
+
 ENV LOADER "thumbor.loaders.http_loader"
 ENV ALLOWED_SOURCES "[ \
   'amp.dev', \
