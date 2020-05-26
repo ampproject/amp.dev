@@ -44,6 +44,7 @@ thumborRouter.get(imagePaths, (request, response, next) => {
   // Thumbor requests the image itself - to prevent loops it does
   // so by setting ?original=true
   if (imageUrl.searchParams.get('original')) {
+    log.info('original url', imageUrl);
     next();
     return;
   }
@@ -61,6 +62,7 @@ thumborRouter.get(imagePaths, (request, response, next) => {
     // rewrite the URL back to the original one
     if (error.code == 'ECONNREFUSED') {
       request.url = imageUrl.href;
+      log.error('fail', request.url, error);
       next();
       return;
     }
