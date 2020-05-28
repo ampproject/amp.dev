@@ -547,7 +547,8 @@ exports.fetchArtifacts = fetchArtifacts;
 exports.collectStatics = collectStatics;
 exports.buildFinalize = gulp.series(
   fetchArtifacts,
-  gulp.parallel(collectStatics, thumborImageIndex, persistBuildInfo)
+  gulp.parallel(collectStatics, persistBuildInfo),
+  thumborImageIndex
 );
 
 exports.build = gulp.series(
