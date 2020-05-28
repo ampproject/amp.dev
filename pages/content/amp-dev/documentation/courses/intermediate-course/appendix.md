@@ -15,9 +15,9 @@ The red box above is the online editor where you will be inputting HTML and CSS.
 
 Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses have already been added to the Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side and click the “copy” button next to the URL in the pop-up that appears. You can use that link anywhere an image is needed.
 
-{{ image('/static/img/courses/intermediate/image10.png', 1686, 936, caption='The assets view in Glitch') }}
+{{ image('/static/img/courses/intermediate/image10.png', 843, 468, caption='The assets view in Glitch') }}
 
-{{ image('/static/img/courses/intermediate/image9.png', 1484, 1416, caption='The details pop-up -including URL- for an image in the assets collection') }}
+{{ image('/static/img/courses/intermediate/image9.png', 371, 354, caption='The details pop-up -including URL- for an image in the assets collection') }}
 
 Open [this](https://glitch.com/edit/#!/aquamarine-baritone) project. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
 

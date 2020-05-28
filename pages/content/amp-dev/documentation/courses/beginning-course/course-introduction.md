@@ -31,9 +31,9 @@ The red box above indicates the online editor where you will be typing HTML and 
 
 Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses are contained within our Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side. Click the “copy” button next to the URL in the pop-up that appears. You can then use that link anywhere an image is needed.
 
-{{ image('/static/img/courses/beginner/image8.png', 1686, 936,  align='center', caption='The assets view in Glitch') }}
+{{ image('/static/img/courses/beginner/image8.png', 843, 468,  align='center', caption='The assets view in Glitch') }}
 
-{{ image('/static/img/courses/beginner/image12.png', 1484, 1416,  align='center', caption='The details pop-up (including URL) for an image in the assets collection') }}
+{{ image('/static/img/courses/beginner/image12.png', 371, 354,  align='center', caption='The details pop-up (including URL) for an image in the assets collection') }}
 
 In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an index.html file with a title and a single image.
 
