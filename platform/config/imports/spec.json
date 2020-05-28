@@ -164,9 +164,11 @@
 	},
 	{
 		"title": "Analytics Vendors",
+		"order": 3,
+		"description": "This document lists analytics vendors that have built-in configurations for use with the amp-analytics component. To send analytics data to a third-party vendor.",
 		"repo": "ampproject/amphtml",
 		"from": "extensions/amp-analytics/analytics-vendors-list.md",
-		"to": "../../shared/data/analytics-vendors.md",
+		"to": "documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md",
 		"formats": ["websites", "stories", "ads"]
 	}
 ]
