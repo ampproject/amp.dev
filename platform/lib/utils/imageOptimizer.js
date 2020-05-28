@@ -50,7 +50,7 @@ function imageOptimizer(src, width) {
   const imageUrl = new URL(src, config.hosts.platform.base);
   imageUrl.searchParams.set('width', width);
 
-  const hash = imageIndex[join('dist/', imageUrl.pathname)];
+  const hash = imageIndex[join(project.DIST_DIR, imageUrl.pathname)];
   imageUrl.searchParams.set('hash', hash);
 
   return imageUrl.href;
