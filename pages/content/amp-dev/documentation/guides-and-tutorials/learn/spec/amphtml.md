@@ -1,6 +1,6 @@
 ---
 $title: AMP HTML Specification
-order: 3
+order: 8
 formats:
   - websites
 teaser:
