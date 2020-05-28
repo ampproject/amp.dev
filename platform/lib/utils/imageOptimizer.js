@@ -17,6 +17,7 @@
 const config = require('@lib/config');
 const {project} = require('@lib/utils');
 const {join} = require('path');
+const log = require('@lib/utils/log')('Image Optimizer');
 
 function getImageIndex() {
   try {
@@ -51,7 +52,11 @@ function imageOptimizer(src, width) {
   imageUrl.searchParams.set('width', width);
 
   const hash = imageIndex[join(project.DIST_DIR, imageUrl.pathname)];
-  imageUrl.searchParams.set('hash', hash);
+  if (hash) {
+    imageUrl.searchParams.set('hash', hash);
+  } else {
+    log.warn('No hash found for ', imageUrl.pathname);
+  }
 
   return imageUrl.href;
 }
