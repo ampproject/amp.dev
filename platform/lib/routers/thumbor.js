@@ -38,13 +38,18 @@ const imagePaths = config.shared.thumbor.fileExtensions.map((extension) => {
 });
 
 thumborRouter.get(imagePaths, (request, response, next) => {
+  if (config.isDevMode()) {
+    next();
+    return;
+  }
+
   const imageUrl = new URL(request.url, config.hosts.platform.base);
   const imageWidth = imageUrl.searchParams.get('width');
+  imageUrl.searchParams.delete('width');
 
   // Thumbor requests the image itself - to prevent loops it does
   // so by setting ?original=true
   if (imageUrl.searchParams.get('original')) {
-    log.info('original url', imageUrl);
     next();
     return;
   }
@@ -56,21 +61,14 @@ thumborRouter.get(imagePaths, (request, response, next) => {
     SECURITY_KEY + (imageWidth ? `/${imageWidth}x0/` : '/') + imageUrl.href;
   request.url = thumborUrl.href;
 
-  log.info(`Going to fetch`, request.url);
   proxy.web(request, response, proxyOptions, (error) => {
-    // Silently fail over if no thumbor instance can be reached. Therefore
-    // rewrite the URL back to the original one
-    if (error.code == 'ECONNREFUSED') {
-      request.url = imageUrl.href;
-      log.error('fail', request.url, error);
-      next();
-      return;
-    }
-
-    // Everything else is considered a error: malformed URLs,
-    // unavailable assets, ...
     log.error(error);
-    response.status(502).end();
+
+    // Fail over to default static middleware if there was an
+    // error with thumbor
+    request.url = imageUrl.href;
+    next();
+    return;
   });
 });
 
