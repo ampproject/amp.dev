@@ -16,6 +16,10 @@
 
 'use strict';
 
+const gulp = require('gulp');
+const once = require('gulp-once');
+const {join} = require('path');
+
 const config = require('@lib/config');
 const {sh} = require('@lib/utils/sh.js');
 const {project} = require('@lib/utils');
@@ -34,4 +38,17 @@ async function thumborRunLocal() {
   );
 }
 
+function thumborImageIndex() {
+  const imagePaths = config.shared.thumbor.fileExtensions.map((extension) => {
+    return join(project.paths.STATICS_DEST, '/**/', `*.${extension}`);
+  });
+
+  return gulp.src(imagePaths).pipe(
+    once({
+      file: project.paths.THUMBOR_IMAGE_INDEX,
+    })
+  );
+}
+
 exports.thumborRunLocal = thumborRunLocal;
+exports.thumborImageIndex = thumborImageIndex;

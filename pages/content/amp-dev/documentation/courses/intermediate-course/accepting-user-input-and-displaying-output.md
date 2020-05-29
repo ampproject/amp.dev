@@ -74,7 +74,7 @@ Optional style guidelines (puts the form inside a card; see screenshot below):
 
 Once you have finished, your page should look like this:
 
-{{ image('/static/img/courses/intermediate/image3.webp', 375, 667, align='center third', caption='The subscription form') }}
+{{ image('/static/img/courses/intermediate/image3.png', 300, 535, align='center third', caption='The subscription form') }}
 
 ### Solution
 

@@ -43,7 +43,9 @@ module.exports = (env, argv) => {
       },
     },
     plugins: [
-      new CopyWebpackPlugin([{from: path.join(__dirname, 'static/')}]),
+      new CopyWebpackPlugin({
+        patterns: [{from: path.join(__dirname, 'static/')}],
+      }),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[contenthash].css',
         chunkFilename: devMode ? '[id].css' : '[name].[contenthash].css',

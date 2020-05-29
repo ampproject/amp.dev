@@ -40,6 +40,7 @@ const gulpSass = require('gulp-sass');
 const lint = require('./lint.js');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
+const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
@@ -546,7 +547,8 @@ exports.fetchArtifacts = fetchArtifacts;
 exports.collectStatics = collectStatics;
 exports.buildFinalize = gulp.series(
   fetchArtifacts,
-  gulp.parallel(collectStatics, persistBuildInfo)
+  gulp.parallel(collectStatics, persistBuildInfo),
+  thumborImageIndex
 );
 
 exports.build = gulp.series(

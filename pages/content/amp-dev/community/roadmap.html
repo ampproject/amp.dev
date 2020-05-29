@@ -10,7 +10,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
 <main class="ap--main ap-t-roadmap">
   <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-
     <div class="ap-o-stage">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
@@ -56,7 +55,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
   </section>
 
   <section class="ap-t-roadmap-container">
-
     <div class="ap-t-roadmap-navigation">
       <div class="ap-t-roadmap-navigation-list">
         {% for quarter in doc.roadmap.quarters.ordered %}
@@ -114,16 +112,20 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
       </div>
     </div>
 
-    [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
     <div class="ap-t-roadmap-list">
       {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
+      [% set quarters = {{ doc.roadmap.quarters.working_groups|tojson }} %]
+      [% set currenQuarter = 'undefined' %]
+
       {% for issue in doc.roadmap.issues %}
       [% if not category or category == '{{ issue.wg_slug }}' %]
       <div class="ap-t-roadmap-list-item"
           id="{{ issue.wg_slug }}-{{ issue.number }}">
-        {% if loop.changed(issue.quarter) %}
+
+        [% if currenQuarter != '{{ issue.quarter }}' %]
         [% if not category or quarters['{{ issue.quarter }}'].includes(category) %]
-        <amp-position-observer viewport-margins="25vh"
+        [% set currenQuarter = '{{ issue.quarter }}' %]
+        <amp-position-observer intersection-ratios=".95"
             target="{{ issue.quarter|slug }}"
             on="enter:anim-{{ issue.quarter|slug }}.start"
             layout="nodisplay">
@@ -132,7 +134,8 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           <h3>{{ issue.quarter }}</h3>
         </aside>
         [% endif %]
-        {% endif %}
+        [% endif %]
+
         <aside class="ap-t-roadmap-list-item-scroll-spacer"
             id="scroll-{{ issue.wg_slug }}-{{ issue.number }}">
         </aside>
@@ -154,7 +157,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
               {% for paragraph in column %}
               {{ paragraph|markdown|safe }}
               {% endfor %}
-              {% if loop.last %}
               <a href="{{ issue.html_url }}" class="ap-m-lnk" target="_blank" rel="noopener">
                 <div class="ap-a-ico ap-m-lnk-icon">
                   {% do doc.icons.useIcon('icons/internal.svg') %}
@@ -162,7 +164,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
                 </div>
                 <span class="ap-m-lnk-text">{{ _('All details on GitHub') }}</span>
               </a>
-              {% endif %}
             </div>
             {% endfor %}
           </div>
@@ -174,7 +175,6 @@ roadmap: !g.yaml /shared/data/roadmap.yaml
           </div>
         </div>
       </div>
-
       [% endif %]
       {% endfor %}
     </div>
