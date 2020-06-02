@@ -49,7 +49,7 @@
 		"formats": ["websites","stories", "ads"]
 	},
 	{
-		"title": "Actions and events",
+		"title": "Actions and events in AMP email",
 		"order": 0,
 		"repo": "ampproject/amphtml",
 		"from": "spec/amp-email-actions-and-events.md",
