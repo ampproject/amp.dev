@@ -87,7 +87,7 @@ class ErrorList extends FlyIn {
 
     errorElement.innerHTML = (
       `<div>
-        <p class="message">${error.message}</p>
+        <p class="message">${error.message} <a href="${error.specUrl}" target="_blank" rel="noopener">Learn&nbsp;more</a></p>
         <div class="location">line ${error.line}, column ${error.col}</div>
       </div>`
     );
