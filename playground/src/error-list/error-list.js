@@ -109,6 +109,9 @@ class ErrorList extends FlyIn {
     const index = target.dataset.index;
     const error = this.validationResult.errors[index];
 
+
+    console.log(this.validationResult.errors);
+
     events.publish(EVENT_ERROR_SELECTED, error);
   }
 
