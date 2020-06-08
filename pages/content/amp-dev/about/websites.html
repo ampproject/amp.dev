@@ -61,19 +61,43 @@ kpis:
 
 <section class="ap--component-visual">
   <div class="ap-o-component-visual ap--container-fluid">
-    <div class="ap-o-component-visual-copy ap-m-copy ap-m-copy-left-small" amp-fx="fade-in fly-in-left" data-duration="1s" data-fly-in-distance="5%" data-margin-start="0%">
-      <p>{{ _('AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating and development costs.') }}</p>
-      <div class="ap-o-component-visual-link">
-        <a href="../documentation/guides-and-tutorials/index.html" class="ap-m-lnk ap-m-lnk-square">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Get Started') }}</span>
-        </a>
-      </div>
-    </div>
-    {% include 'views/partials/component-visual-image.j2' %}
+    <amp-accordion class="ap-o-component-visual-accordion" expand-single-section>
+      <section>
+        <h5>Headline small</h5>
+        <p>
+          {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+          <a>Learn more</a>
+        </p>
+      </section>
+      <section>
+        <h5>Headline small</h5>
+        <p>
+          {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+          <a>Learn more</a>
+        </p>
+      </section>
+      <section>
+        <h5>Headline small</h5>
+        <p>
+          {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+          <a>Learn more</a>
+        </p>
+      </section>
+      <section>
+        <h5>Headline small</h5>
+        <p>
+          {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+          <a>Learn more</a>
+        </p>
+      </section>
+      <section>
+        <h5>Headline small</h5>
+        <p>
+          {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+          <a>Learn more</a>
+        </p>
+      </section>
+    </amp-accordion>
   </div>
 </section>
 

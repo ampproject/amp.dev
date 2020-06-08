@@ -74,6 +74,79 @@
       &-copy {
         @include default-section-padding;
       }
+
+      amp-accordion {
+        grid-column: 4/11;
+        section {
+          position: relative;
+          border-radius: 6px;
+          padding: 17px 25px 10px 25px;
+
+          h5 {
+            position: relative;
+            background: none;
+            border: none;
+            padding-bottom: 10px;
+            &:focus {
+              border: none;
+            }
+
+            &::before {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              content: '';
+              height: 2px;
+              width: 100%;
+              background-color: color('alto');
+              opacity: 0.2;
+            }
+            &:after {
+              content: '';
+              position: absolute;
+              top: 4px;
+              right: 0;
+              height: 9px;
+              width: 1rem;
+              background-image: url('data:image/svg+xml;charset=utf-8,<svg id="internal" fill="#005AF0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M56.293 16.003c1.761-1.645 4.553-1.645 6.314 0 1.857 1.734 1.857 4.623 0 6.357l-27.45 25.638c-1.761 1.645-4.553 1.645-6.314 0l-27.45-25.638c-0.899-0.839-1.393-1.963-1.393-3.178s0.494-2.339 1.393-3.178c1.761-1.645 4.553-1.645 6.314 0l24.293 22.689 24.293-22.689z"></path></svg>');
+              background-repeat: no-repeat;
+            }
+          }
+
+          a {
+            display: block;
+            position: relative;
+            margin-top: 27px;
+            color: color('limed-spruce');
+          }
+
+          &[expanded] {
+            box-shadow: shadows('advanced');
+            border: none;
+            padding: 27px 25px 23px 25px;
+            h5 {
+              &:before {
+                display: none;
+                padding-bottom: 1rem;
+              }
+              &:after {
+                transform: rotate(180deg);
+              }
+            }
+
+            a {
+              &:after {
+                content: '';
+                right: 0;
+                top: 0;
+                height: 10px;
+                width: 1rem;
+                background-image: url('data:image/svg+xml;charset=utf-8,<svg id="internal" fill="#005AF0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M43.16 10.18c-0.881-0.881-2.322-0.881-3.203 0s-0.881 2.322 0 3.203l16.335 16.335h-54.051c-1.281 0-2.242 1.041-2.242 2.242 0 1.281 0.961 2.322 2.242 2.322h54.051l-16.415 16.335c-0.881 0.881-0.881 2.322 0 3.203s2.322 0.881 3.203 0l20.259-20.259c0.881-0.881 0.881-2.322 0-3.203l-20.179-20.179z"></path></svg>');
+              }
+            }
+          }
+        }
+      }
     }
   }
 
