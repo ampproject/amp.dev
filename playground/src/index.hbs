@@ -54,7 +54,6 @@
 
       <div id="document-title" tabindex="0" role="button" class="ap-o-header-text caret-right hidden">Untitled</div>
       <div id="toolbar">
-        {{> button/button.hbs id="error-indicator" class="elevation-2dp" text="Valid" disabled=true}}
         {{> button/button.hbs id="save-document" class="hidden" class2="underline" hideOnMobile=true  text="Save"}}
         {{> button/button.hbs id="fork-document" class="border" text="Fork" hideOnMobile=true }}
 
@@ -73,8 +72,9 @@
       <div class="panel-header hide-on-mobile">
         <div id="runtime-select"></div>
         <div class="flex-right">
-        {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
-        {{> button/button.hbs id="format-source" class="square" ariaLabel="format source code" text="{  }"}}
+          {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
+          {{> button/button.hbs id="error-indicator" class="elevation-2dp" text="Valid" disabled=true}}
+          {{> button/button.hbs id="format-source" class="" ariaLabel="format source code" text="Import URL"}}
         </div>
       </div>
       {{> loader/loader.hbs theme="light"}}
@@ -96,6 +96,9 @@
         <iframe frameborder="0" id="previewIframe" title="AMP Playground Output" class="fadein" style="width: 375px; height: 667px;"></iframe>
       </div>
     </section>
+
+    <div id="error-list" class="fly-in fly-in--right elevation-8dp" data-title="Error List"></div>
+
     </main>
   </body>
 </html>

@@ -1,0 +1,50 @@
+@import 'base.scss';
+@import 'components/atoms/_text.scss';
+
+.fly-in {
+  $headerHeight: 55px;
+
+  position: absolute;
+  z-index: 100;
+  top: - #{$headerHeight};
+  width: 100%;
+  height: calc(100% + #{$headerHeight});
+  min-width: 240px;
+  overflow: hidden;
+  background: white;
+  transition: .3s ease-in;
+
+  @media (min-width: 768px) {
+    top: 8px;
+    width: 42%;
+    height: calc(100% - 16px);
+  }
+
+  &--left {
+    left: 0;
+    transform: translate3d(-105%, 0, 0);
+  }
+
+  &--right {
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 57px;
+    padding: 15px;
+    border-bottom: 1px solid color('silver');
+
+    h2 {
+      margin: 0 auto 0 10px;
+    }
+  }
+
+  &.active {
+    transform: translate3d(0, 0, 0);
+  }
+
+}
