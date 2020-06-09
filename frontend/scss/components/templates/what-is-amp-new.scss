@@ -75,6 +75,25 @@
         @include default-section-padding;
       }
 
+      .media-container {
+        grid-column: 13/22;
+        background-color: red;
+        width: 100%;
+        height: 430px;
+        &-green {
+          background-color: green;
+        }
+        &-yellow {
+          background-color: yellow;
+        }
+        &-purple {
+          background-color: purple;
+        }
+        &-blue {
+          background-color: blue;
+        }
+      }
+
       amp-accordion {
         grid-column: 4/11;
         section {
@@ -114,7 +133,8 @@
           }
 
           a {
-            display: block;
+            display: flex;
+            align-items: center;
             position: relative;
             margin-top: 27px;
             color: color('limed-spruce');
@@ -131,17 +151,6 @@
               }
               &:after {
                 transform: rotate(180deg);
-              }
-            }
-
-            a {
-              &:after {
-                content: '';
-                right: 0;
-                top: 0;
-                height: 10px;
-                width: 1rem;
-                background-image: url('data:image/svg+xml;charset=utf-8,<svg id="internal" fill="#005AF0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M43.16 10.18c-0.881-0.881-2.322-0.881-3.203 0s-0.881 2.322 0 3.203l16.335 16.335h-54.051c-1.281 0-2.242 1.041-2.242 2.242 0 1.281 0.961 2.322 2.242 2.322h54.051l-16.415 16.335c-0.881 0.881-0.881 2.322 0 3.203s2.322 0.881 3.203 0l20.259-20.259c0.881-0.881 0.881-2.322 0-3.203l-20.179-20.179z"></path></svg>');
               }
             }
           }

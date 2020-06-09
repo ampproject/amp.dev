@@ -25,23 +25,29 @@ kpis:
     success_story: !g.doc /content/amp-dev/about/success-stories/gizmodo.yaml
 ---
 
-
-
 <section class="ap--stage ap--container-fluid">
-  {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
+  {% do 
+    doc
+      .styles
+      .addCssFile('css/components/organisms/stage.css') %}
   <div class="ap-o-stage">
     <div class="ap--container-fluid">
       <div class="ap-o-stage-content">
-          <div class="ap-o-stage-content-icon ap-a-ico">
-            {% do doc.icons.useIcon('icons/bolt-solid.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-solid"></use></svg>
-          </div>
+        <div class="ap-o-stage-content-icon ap-a-ico">
+          {% do doc.icons.useIcon('icons/bolt-solid.svg') %}
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-solid"></use>
+          </svg>
+        </div>
 
-          <h2 class="ap-o-stage-content-subline">{{ _('Compelling, smooth and instant') }}</h2>
-          <h1 class="ap-o-stage-content-headline">{{ _('Easily create user first websites with AMP.') }}</h1>
+        <h2 class="ap-o-stage-content-subline">{{ _('Compelling, smooth and instant') }}</h2>
+        <h1 class="ap-o-stage-content-headline">{{ _('Easily create user first websites with AMP.') }}</h1>
 
-          {% do doc.styles.addCssFile('/css/components/atoms/button.css') %}
-          <a href="../documentation/guides-and-tutorials/start/create/index.md?format=websites" class="ap-o-stage-content-button ap-a-btn">{{ _('Get started') }}</a>
+        {% do 
+          doc
+            .styles
+            .addCssFile('/css/components/atoms/button.css') %}
+        <a href="../documentation/guides-and-tutorials/start/create/index.md?format=websites" class="ap-o-stage-content-button ap-a-btn">{{ _('Get started') }}</a>
       </div>
     </div>
   </div>
@@ -62,43 +68,83 @@ kpis:
 <section class="ap--component-visual">
   <div class="ap-o-component-visual ap--container-fluid">
     <amp-accordion class="ap-o-component-visual-accordion" expand-single-section>
-      <section>
+      <section on="expand:accordion-video-1.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide" expanded>
         <h5>Headline small</h5>
         <p>
           {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-          <a>Learn more</a>
+          <a href="#">
+            <span class="ap-a-ico ap-m-lnk-icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+              </svg>
+            </span>
+            {{ _('Learn more')}}
+          </a>
         </p>
       </section>
-      <section>
+      <section on="expand:accordion-video-2.show,accordion-video-1.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide">
         <h5>Headline small</h5>
         <p>
           {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-          <a>Learn more</a>
+          <a href="#">
+            <span class="ap-a-ico ap-m-lnk-icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+              </svg>
+            </span>
+            {{ _('Learn more')}}
+          </a>
         </p>
       </section>
-      <section>
+      <section on="expand:accordion-video-3.show,accordion-video-2.hide,accordion-video-1.hide,accordion-video-4.hide,accordion-video-5.hide">
         <h5>Headline small</h5>
         <p>
           {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-          <a>Learn more</a>
+          <a href="#">
+            <span class="ap-a-ico ap-m-lnk-icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+              </svg>
+            </span>
+            {{ _('Learn more')}}
+          </a>
         </p>
       </section>
-      <section>
+      <section on="expand:accordion-video-4.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-1.hide,accordion-video-5.hide">
         <h5>Headline small</h5>
         <p>
           {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-          <a>Learn more</a>
+          <a href="#">
+            <span class="ap-a-ico ap-m-lnk-icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+              </svg>
+            </span>
+            {{ _('Learn more')}}
+          </a>
         </p>
       </section>
-      <section>
+      <section on="expand:accordion-video-5.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-1.hide">
         <h5>Headline small</h5>
         <p>
           {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-          <a>Learn more</a>
+          <a href="#">
+            <span class="ap-a-ico ap-m-lnk-icon">
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+              </svg>
+            </span>
+            {{ _('Learn more')}}
+          </a>
         </p>
       </section>
     </amp-accordion>
-  </div>
+    <div class="media-container" id="accordion-video-1"></div>
+    <div class="media-container media-container-green" id="accordion-video-2" hidden></div>
+    <div class="media-container media-container-blue" id="accordion-video-3" hidden></div>
+    <div class="media-container media-container-yellow" id="accordion-video-4" hidden></div>
+    <div class="media-container media-container-purple" id="accordion-video-5" hidden></div>
+  </>
 </section>
 
 <section class="ap--teaser-grid ap--container">
@@ -152,11 +198,17 @@ kpis:
 
         <div class="ap-m-benefit">
           <div class="ap-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/'+ benefit.icon +'.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
+            {% do 
+              doc
+                .icons
+                .useIcon('icons/' + benefit.icon + '.svg') %}
+            <svg class="ap-m-benefit-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use>
+            </svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline"> {{ _(benefit.headline) }}</span>
+            <span class="ap-m-benefit-text-headline">
+              {{ _(benefit.headline) }}</span>
             <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
           </div>
         </div>
@@ -166,15 +218,21 @@ kpis:
 
     <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-business">
 
-     {% for benefit in doc.benefits.websites.business %}
+      {% for benefit in doc.benefits.websites.business %}
 
         <div class="ap-m-benefit">
           <div class="ap-m-benefit-icon">
-            {% do doc.icons.useIcon('icons/'+ benefit.icon +'.svg') %}
-            <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use></svg>
+            {% do 
+              doc
+                .icons
+                .useIcon('icons/' + benefit.icon + '.svg') %}
+            <svg class="ap-m-benefit-icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use>
+            </svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline"> {{ _(benefit.headline) }}</span>
+            <span class="ap-m-benefit-text-headline">
+              {{ _(benefit.headline) }}</span>
             <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
           </div>
         </div>
@@ -186,8 +244,13 @@ kpis:
     <div class="ap-o-benefits-overview-link">
       <a href="../documentation/guides-and-tutorials/index.html" class="ap-m-lnk ap-m-lnk-square">
         <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          {% do 
+            doc
+              .icons
+              .useIcon('icons/internal.svg') %}
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+          </svg>
         </div>
         <span class="ap-m-lnk-text">{{ _('Get started with AMP') }}</span>
       </a>
@@ -196,80 +259,97 @@ kpis:
   </div>
 </section>
 
-
 <section class="ap--quote ap--container">
   <div class="ap-m-quote">
     <div class="ap-m-quote-source">
-     <div class="ap-a-ico">
-        {% do doc.icons.useIcon('icons/quote.svg') %}
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use></svg>
-     </div>
+      <div class="ap-a-ico">
+        {% do 
+          doc
+            .icons
+            .useIcon('icons/quote.svg') %}
+        <svg>
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#quote"></use>
+        </svg>
+      </div>
       <div class="ap-a-img ap-a-img-static">
-        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" height="96" width="630" alt="placeholder" />
+        <amp-img src="/static/img/logo-dummy-washingtonpost.png" layout="responsive" height="96" width="630" alt="placeholder"/>
       </div>
     </div>
     <div class="ap-m-quote-quote">
       <blockquote>
-        <p class="ap-a-txt">{{ _('We are committed to improving speed across the board. If our site takes a long time to load, it doesn’t matter how great our journalism is, some people will leave the page before they see what’s there.') }}<p>
-      </blockquote>
-      <p>{{ _('David Merrell, Senior Product Manager') }}</p>
+        <p class="ap-a-txt">{{ _('We are committed to improving speed across the board. If our site takes a long time to load, it doesn’t matter how great our journalism is, some people will leave the page before they see what’s there.') }}
+          <p></blockquote>
+          <p>{{ _('David Merrell, Senior Product Manager') }}</p>
 
-      <a href="success-stories/washingtonpost.yaml" class="ap-m-lnk">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/internal.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+          <a href="success-stories/washingtonpost.yaml" class="ap-m-lnk">
+            <div class="ap-a-ico ap-m-lnk-icon">
+              {% do 
+                doc
+                  .icons
+                  .useIcon('icons/internal.svg') %}
+              <svg>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+              </svg>
+            </div>
+            <span class="ap-m-lnk-text">{{ _('Read Success Story') }}</span>
+          </a>
         </div>
-        <span class="ap-m-lnk-text">{{ _('Read Success Story') }}</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="ap--container">
-  <h1 class="ap--made-of-headline">{{ _('What AMP HTML is made of') }}</h1>
-</div>
-
-{% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
-<section class="ap--container-fluid ap-m-biggy">
-  <div class="ap-m-biggy-aside">
-      {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
-      {% set code_snippet = g.doc('/shared/data/hello-world.html').content %}
-      {% set markdown = doc.pod.markdown %}
-      {{ markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
-    </div>
-    <div class="ap-m-biggy-main">
-      <h2 class="ap-m-biggy-headline">Hello<br> World!</h2>
-    </div>
-</section>
-
-<section class="ap--content">
-  <div class="ap--container">
-    <div class="ap-m-copy ap-m-copy-left">
-      <h2>{{ _('Built-in components') }}</h2>
-      <p>{{ _('AMP HTML is HTML with some restrictions for reliable performance.') }}</p>
-
-      <p>{{ _('Though most tags in an AMP HTML page are regular HTML tags, some HTML tags are replaced with AMP-specific tags (see also HTML Tags in the AMP spec). These custom elements,  called AMP HTML  components, make common patterns easy to implement in a performant way.') }}</p>
-
-      <p>{{ _('For example, the amp-img tag provides full srcset support even in browsers that don’t support it yet. Learn how to create your first AMP HTML page.') }}</p>
-
-      <p>{{ _('AMP pages are discovered by search engines and other platforms through the HTML tag. You can choose to have a non-AMP version and an AMP version of your page, or just an AMP version. ') }}</p>
-      <div class="ap-m-copy-left-link">
-        <a href="../documentation/guides-and-tutorials/optimize-measure/discovery.md?format=websites" class="ap-m-lnk ap-m-lnk-square">
-          <div class="ap-a-ico ap-m-lnk-icon">
-            {% do doc.icons.useIcon('icons/internal.svg') %}
-            <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-          </div>
-          <span class="ap-m-lnk-text">{{ _('Learn more in Make Your Page Discoverable.') }}</span>
-        </a>
       </div>
+    </section>
+
+    <div class="ap--container">
+      <h1 class="ap--made-of-headline">{{ _('What AMP HTML is made of') }}</h1>
     </div>
 
-    <div class="ap-m-copy ap-m-copy-right">
-      <h2>{{ _('AMP Caches') }}</h2>
+    {% do 
+      doc
+        .styles
+        .addCssFile('/css/components/molecules/biggy.css') %}
+    <section class="ap--container-fluid ap-m-biggy">
+      <div class="ap-m-biggy-aside">
+        {% do doc.styles.addCssFile('css/components/molecules/code-snippet.css') %}
+        {% set code_snippet = g.doc('/shared/data/hello-world.html').content %}
+        {% set markdown = doc.pod.markdown %}
+        {{ markdown.convert('```html\n' + code_snippet + '\n```')|safe }}
+      </div>
+      <div class="ap-m-biggy-main">
+        <h2 class="ap-m-biggy-headline">Hello<br> World!</h2>
+      </div>
+    </section>
 
-      <p>{{ _('AMP pages can be cached for near instantaneous loading on the web. Platforms like Google run AMP caches to enable fast loading of your content from their service.') }}</p>
+    <section class="ap--content">
+      <div class="ap--container">
+        <div class="ap-m-copy ap-m-copy-left">
+          <h2>{{ _('Built-in components') }}</h2>
+          <p>{{ _('AMP HTML is HTML with some restrictions for reliable performance.') }}</p>
 
-      <p>{{ _('The Google AMP Cache is a proxy-based content delivery network for delivering all valid AMP documents. It fetches AMP HTML pages, caches them, and improves page performance automatically. When using the Google AMP Cache, the document, all JS files and all images load from the same origin that is using HTTP 2.0 for maximum efficiency. <br> The cache also comes with a built-in validation system which confirms that the page is guaranteed to work, and that it doesn\'t depend on external resources. The validation system runs a series of  assertions confirming the page’s markup meets the AMP HTML specification.') }}</p>
+          <p>{{ _('Though most tags in an AMP HTML page are regular HTML tags, some HTML tags are replaced with AMP-specific tags (see also HTML Tags in the AMP spec). These custom elements,  called AMP HTML  components, make common patterns easy to implement in a performant way.') }}</p>
+
+          <p>{{ _('For example, the amp-img tag provides full srcset support even in browsers that don’t support it yet. Learn how to create your first AMP HTML page.') }}</p>
+
+          <p>{{ _('AMP pages are discovered by search engines and other platforms through the HTML tag. You can choose to have a non-AMP version and an AMP version of your page, or just an AMP version. ') }}</p>
+          <div class="ap-m-copy-left-link">
+            <a href="../documentation/guides-and-tutorials/optimize-measure/discovery.md?format=websites" class="ap-m-lnk ap-m-lnk-square">
+              <div class="ap-a-ico ap-m-lnk-icon">
+                {% do 
+                  doc
+                    .icons
+                    .useIcon('icons/internal.svg') %}
+                <svg>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+                </svg>
+              </div>
+              <span class="ap-m-lnk-text">{{ _('Learn more in Make Your Page Discoverable.') }}</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="ap-m-copy ap-m-copy-right">
+          <h2>{{ _('AMP Caches') }}</h2>
+
+          <p>{{ _('AMP pages can be cached for near instantaneous loading on the web. Platforms like Google run AMP caches to enable fast loading of your content from their service.') }}</p>
+
+          <p>{{ _('The Google AMP Cache is a proxy-based content delivery network for delivering all valid AMP documents. It fetches AMP HTML pages, caches them, and improves page performance automatically. When using the Google AMP Cache, the document, all JS files and all images load from the same origin that is using HTTP 2.0 for maximum efficiency. <br> The cache also comes with a built-in validation system which confirms that the page is guaranteed to work, and that it doesn\'t depend on external resources. The validation system runs a series of  assertions confirming the page’s markup meets the AMP HTML specification.') }}</p>
 
       <p>{{ _('Another version of the validator comes bundled with every AMP page. This version can log validation errors directly to the browser’s console when the page is rendered, allowing you to see how complex changes in your code might impact performance and user experience.') }}</p>
 
