@@ -68,13 +68,11 @@
     </header>
     <main>
     <section id="source" class="panel active">
-      <div class="panel-header hide-on-mobile">
+      <div class="panel-header">
         <div id="runtime-select"></div>
-        <div class="flex-right">
-          {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
-          {{> button/button.hbs id="error-indicator" class="elevation-2dp" text="Valid" disabled=true}}
-          {{> button/button.hbs id="format-source" class="" ariaLabel="format source code" text="Import URL"}}
-        </div>
+        {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
+        {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
+        {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
       {{> loader/loader.hbs theme="light"}}
     </section>

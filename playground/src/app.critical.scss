@@ -89,18 +89,6 @@
   #toolbar > * {
     margin: 0 8px;
   }
-  #error-list {
-    display: none;
-  }
-  #error-indicator[disabled] {
-    display: none;
-  }
-  #error-indicator {
-    background-color: color('blue-ribbon');
-    color: white;
-    border-radius: 24px;
-    padding: 0 24px;
-  }
 }
 
 .panel {
@@ -114,16 +102,19 @@
     top: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     * {
       @include txt-font-accent;
+      font-size: 14px;
     }
     & > * {
       height: 100%;
     }
     .button {
       height: 48px;
+      padding: 0 14px;
+      border-left: 1px solid rgba(0,0,0,.15);
     }
     .button.square {
       width: 48px;
@@ -131,17 +122,13 @@
     .button:active {
       background: color('silver');
     }
-    & > *:first-child {
-      border-right: 1px solid rgba(0,0,0,.15);
-    }
-    & > *:last-child {
-      border-left: 1px solid rgba(0,0,0,.15);
-    }
 
     select {
       padding: 16px;
       padding-right: 36px;
-      margin-right: 16px;
+      margin-right: 5px;
+      border-right: 1px solid rgba(0,0,0,.15);
+      border-radius: 0;
       background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23000'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
     }
 
@@ -161,22 +148,29 @@
       * {
         color: #fff;
         background-color: #29323c;
+        border-color: rgba(255, 255, 255, 0.2);
       }
       #runtime-select, select {
         background-color: #48525c;
-      }
-      & > *:first-child {
-        border-right: 1px solid color('silver');
-      }
-      & > *:last-child > * {
-        border-left: 1px solid color('silver');
-        border-radius: 0;
       }
       select {
         background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23FFF'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
       }
       .button:active {
         background: color('black');
+      }
+      #error-indicator[disabled] {
+        display: none;
+      }
+      #error-indicator {
+        background-color: #ef0000;
+        height: 28px;
+        margin: auto 12px auto auto;
+        padding: 0 15px;
+        border: 0;
+        border-radius: 24px;
+        line-height: 1;
+        color: white;
       }
     }
   }
@@ -429,7 +423,6 @@ main > .panel + .panel {
   }
   #source {
     margin-left: 0;
-    padding-top: 8px;
   }
   #preview {
     position: fixed;
