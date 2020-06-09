@@ -35,16 +35,23 @@
     align-items: center;
     justify-content: space-between;
     height: 57px;
-    padding: 15px;
+    padding: 0 15px;
     border-bottom: 1px solid color('silver');
 
     h2 {
       margin: 0 auto 0 10px;
+      color: black;
     }
+  }
+
+  &-close {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
   }
 
   &.active {
     transform: translate3d(0, 0, 0);
   }
-
 }
