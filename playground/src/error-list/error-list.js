@@ -66,9 +66,8 @@ class ErrorList extends FlyIn {
     window.requestIdleCallback(() => {
       /* eslint-disable max-len */
       const content = document.createElement('ul');
-      for (var i = 0; i < validationResult.errors.length; i++) {
-        const error = validationResult.errors[i]
-        content.appendChild(this.renderError(error, i))
+      for (const error of validationResult.errors) {
+        content.appendChild(this.renderError(error, i));
       }
 
       /* eslint-enable max-len */
@@ -83,7 +82,6 @@ class ErrorList extends FlyIn {
   renderError(error, index) {
     const errorElement = document.createElement('li');
     errorElement.className = `validation-error ${error.icon}`;
-    errorElement.setAttribute('data-index', `${index}`);
 
     errorElement.innerHTML = (
       `<div>
@@ -92,9 +90,7 @@ class ErrorList extends FlyIn {
       </div>`
     );
 
-    errorElement.addEventListener('click', (e) => {
-      this.onErrorItemClick(e)
-    });
+    errorElement.addEventListener('click', this.onErrorItemClick.bind(this));
 
     return errorElement;
   }
@@ -108,12 +104,6 @@ class ErrorList extends FlyIn {
 
     const index = target.dataset.index;
     const error = this.validationResult.errors[index];
-
-
-    console.log(this.validationResult.errors);
-
     events.publish(EVENT_ERROR_SELECTED, error);
   }
-
-
 }
