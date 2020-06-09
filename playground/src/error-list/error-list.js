@@ -66,7 +66,8 @@ class ErrorList extends FlyIn {
     window.requestIdleCallback(() => {
       /* eslint-disable max-len */
       const content = document.createElement('ul');
-      for (const error of validationResult.errors) {
+      for (let i = 0; i < validationResult.errors.length; i++) {
+        const error = validationResult.errors[i];
         content.appendChild(this.renderError(error, i));
       }
 
@@ -82,6 +83,7 @@ class ErrorList extends FlyIn {
   renderError(error, index) {
     const errorElement = document.createElement('li');
     errorElement.className = `validation-error ${error.icon}`;
+    errorElement.dataset.index = index;
 
     errorElement.innerHTML = (
       `<div>
