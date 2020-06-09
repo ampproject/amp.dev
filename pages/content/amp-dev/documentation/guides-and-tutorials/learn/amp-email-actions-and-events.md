@@ -1,12 +1,10 @@
 ---
-$title: Actions and events
+$title: Actions and events in AMP email
 order: 0
 formats:
   - email
 teaser:
-  text: >-
-    The on attribute is used to install event handlers on elements. The events
-    that are supported depend on the element.
+  text: '[tip type="note"]'
 ---
 
 <!--
@@ -35,6 +33,10 @@ limitations under the License.
 
 
 
+
+[tip type="note"]
+This documentation covers actions and events for the AMP email format. Read [Actions and events](https://github.com/ampproject/amphtml/blob/master/spec/amp-actions-and-events.md) for AMP websites, stories and ads.
+[/tip]
 
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
@@ -408,8 +410,6 @@ event.response</pre></td>
 </table>
 
 ### amp-list <a name="amp-list-1"></a>
-
-### amp-list <a name="amp-list"></a>
 
 <table>
   <tr>
