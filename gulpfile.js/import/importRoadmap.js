@@ -160,7 +160,9 @@ async function getIssuesForWorkingGroup(meta) {
   const issuesImport = (
     await client._github
       .repo(`${DEFAULT_ORGANISATION}/${meta.name}`)
-      .issuesAsync()
+      .issuesAsync({
+        state: 'all'
+      })
   )[0];
 
   for (const issue of issuesImport) {
