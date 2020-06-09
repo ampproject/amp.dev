@@ -180,7 +180,7 @@ async function getIssuesForWorkingGroup(meta) {
       statusUpdate = new Date(statusUpdate[0]).toDateString();
     } else {
       log.error(
-        `.. ${meta.slug} - Could not parse valid date from issue title: ${issue.title}`
+        `.. ${meta.slug} - Could not parse valid date from ${issue.html_url}: ${issue.title}`
       );
       continue;
     }
