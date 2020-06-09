@@ -12,19 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./state-preview.scss');
+require('./state-view.scss');
 
 // import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/base.js';
 
-export function createStatePreview(target, trigger) {
-  return new StatePreview(target, trigger);
+export function createStateView(target, trigger) {
+  return new StateView(target, trigger);
 }
 
 const DESKTOP_WIDTH = 1024;
 
-class StatePreview extends FlyIn {
+class StateView extends FlyIn {
   constructor(target, trigger) {
     super(target);
 
