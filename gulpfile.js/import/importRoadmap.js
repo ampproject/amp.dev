@@ -160,7 +160,7 @@ async function getIssuesForWorkingGroup(meta) {
     await client._github
       .repo(`${DEFAULT_ORGANISATION}/${meta.name}`)
       .issuesAsync({
-        state: 'all'
+        state: 'all',
       })
   )[0];
 
