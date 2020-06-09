@@ -177,8 +177,6 @@ function rewriteLinks(canonical, html, format, level) {
 const growPages = express.Router();
 
 const optimizer = AmpOptimizer.create({
-  experimentPreloadHeroImage: true,
-  preloadHeroImage: true,
   imageOptimizer,
   transformations: [
     HeadDedupTransformer,
@@ -249,7 +247,8 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
     const optimize = req.query.optimize !== 'false';
     if (optimize) {
       const experimentEsm = !!req.query.esm || false;
-      const preloadHeroImage = !!req.query.hero || false;
+      const preloadHeroImage =
+        req.query.hero === undefined ? true : !!req.query.hero;
       const params = {
         experimentEsm,
         preloadHeroImage,
