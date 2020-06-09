@@ -108,26 +108,25 @@
       @include txt-font-accent;
       font-size: 14px;
     }
+
     & > * {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
       height: 100%;
-    }
-    .button {
-      height: 48px;
-      padding: 0 14px;
-      border-left: 1px solid rgba(0,0,0,.15);
-    }
-    .button.square {
-      width: 48px;
-    }
-    .button:active {
-      background: color('silver');
+      padding: 0 15px;
+      border-right: 1px solid rgba(0,0,0,.15);
+      color: #20212a;
+
+      &:last-child {
+        margin-left: auto;
+        border-left: 1px solid rgba(0,0,0,.15);
+        border-right: 0;
+      }
     }
 
     select {
       padding: 16px;
-      padding-right: 36px;
-      margin-right: 5px;
-      border-right: 1px solid rgba(0,0,0,.15);
       border-radius: 0;
       background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23000'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
     }
@@ -136,6 +135,7 @@
       height: 36px;
       width: 36px;
       margin: 8px 0;
+      fill: #20212a;
     }
   }
 
