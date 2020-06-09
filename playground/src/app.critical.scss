@@ -150,6 +150,9 @@
         background-color: #29323c;
         border-color: rgba(255, 255, 255, 0.2);
       }
+      & > *:last-child {
+        margin-left: 0;
+      }
       #runtime-select, select {
         background-color: #48525c;
       }
