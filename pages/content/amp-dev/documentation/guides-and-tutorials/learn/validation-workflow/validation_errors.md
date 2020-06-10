@@ -145,20 +145,16 @@ broadly defines the set of disallowed tags.
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Fix</strong></td>
-  	<td>Remove the javascript tags.</td>
+  	<td>Remove the javascript tags or use amp-script.</td>
   </tr>
 </table>
 
-The AMP format does not allow custom JavaScript to be added to pages, except for JavaScript files
-provided by the AMP Project itself. Many common uses of JavaScript have AMP
+The AMP format does not allow custom JavaScript to be added to pages via the `<script>` element. Many common uses of JavaScript have AMP
 HTML library equivalent implementations. See [AMP
 components](../../../../documentation/components/index.html) for the set of components that can be
 used to enhance AMP HTML pages.
 
-If your use case is not covered, you may also consider contributing new
-components to the AMP Project. See the AMP Project's
-[contributing](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)
-document for more information.
+If none of the available components cover your use case, [`amp-script`](../../../../documentation/components/reference/amp-script.md) can be used to run your custom JavaScript.
 
 ### Mandatory attribute missing
 
