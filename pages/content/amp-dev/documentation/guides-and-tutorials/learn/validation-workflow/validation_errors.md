@@ -291,7 +291,7 @@ Detailed messages for this can be one of the following:
 <table>
    <tr>
   	<td class="col-thirty"><strong>Code</strong></td>
-  	<td>CDATA_VIOLATES_denylist</td>
+  	<td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Format</strong></td>
@@ -307,7 +307,7 @@ Specific CSS data has been denylisted
 to validate essential CSS AMP rules.
 
 The following is the list of denylisted CSS data
-(see also [`denylisted_cdata_regex` in the AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+(see also [`disallowed_cdata_regex` in the AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`

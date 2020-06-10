@@ -208,7 +208,7 @@ Buna ilişkin ayrıntılı ileti aşağıdakilerden biri olabilir:
 
 Belirli CSS verileri, önemli CSS AMP kurallarını doğrulamak için kara listeye eklenmiştir.
 
-Aşağıda, kara listeye alınan CSS verilerinin listesini görebilirsiniz (ayrıca, [AMP doğrulayıcı spesifikasyonunda `denylisted_cdata_regex` öğesine de bakın](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+Aşağıda, kara listeye alınan CSS verilerinin listesini görebilirsiniz (ayrıca, [AMP doğrulayıcı spesifikasyonunda `disallowed_cdata_regex` öğesine de bakın](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("CSS -amp- sınıf adı öneki")
 * `"!important"`

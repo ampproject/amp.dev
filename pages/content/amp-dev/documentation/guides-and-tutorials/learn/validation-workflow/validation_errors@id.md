@@ -280,7 +280,7 @@ Data CSS tertentu dimasukkan ke daftar yang tidak diizinkan
 untuk memvalidasi aturan AMP CSS yang penting.
 
 Berikut adalah daftar data CSS yang tidak diizinkan
-(lihat juga [`denylisted_cdata_regex` di spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+(lihat juga [`disallowed_cdata_regex` di spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("Awalan nama kelas -amp- CSS")
 * `"!important"`

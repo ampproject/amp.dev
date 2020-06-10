@@ -280,7 +280,7 @@ CDATA가 필수인 태그는 다음과 같습니다.
 유효성을 검사하기 위해 금지되었습니다.
 
 다음은 금지된 CSS 데이터 목록입니다.
-([AMP 유효성 검사 도구 사양의 `denylisted_cdata_regex`](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)도 참조하시기 바랍니다.):
+([AMP 유효성 검사 도구 사양의 `disallowed_cdata_regex`](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)도 참조하시기 바랍니다.):
 
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`

@@ -208,7 +208,7 @@ CDATA – это контент между открывающим и закры
 
 Определенные данные CSS были внесены в черный список, чтобы проверить соответствие важным правилам CSS для AMP.
 
-Черный список данных CSS (см. также [`denylisted_cdata_regex` в спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+Черный список данных CSS (см. также [`disallowed_cdata_regex` в спецификации валидатора AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("префикс имени для класса -amp- в CSS")
 * `"!important"`

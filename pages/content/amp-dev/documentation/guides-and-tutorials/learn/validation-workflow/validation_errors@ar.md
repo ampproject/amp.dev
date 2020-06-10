@@ -250,7 +250,7 @@ limitations under the License.
 للتحقق من صحة قواعد CSS AMP الأساسية.
 
 في ما يلي قائمة بيانات CSS المدرجة بالقائمة السوداء
-(راجع أيضًا <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`denylisted_cdata_regex` في مواصفات أداة التحقق من صحة صفحات AMP</a>):
+(راجع أيضًا <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` في مواصفات أداة التحقق من صحة صفحات AMP</a>):
 
 * ‎`"\\.i?-amp-"` ("CSS -amp- class name prefix"‎)‎
 * `"!important"`

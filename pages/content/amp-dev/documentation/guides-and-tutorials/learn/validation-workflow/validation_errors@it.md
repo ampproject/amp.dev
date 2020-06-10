@@ -224,7 +224,7 @@ I messaggi dettagliati relativi a questo errore possono essere i seguenti:
 
 Alcuni dati CSS specifici sono stati inseriti in una denylist per convalidare le regole AMP CSS essenziali.
 
-Di seguito è riportato l'elenco di dati CSS inseriti nella denylist (vedi anche <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`denylisted_cdata_regex` nella specifica dello strumento di convalida AMP</a>):
+Di seguito è riportato l'elenco di dati CSS inseriti nella denylist (vedi anche <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` nella specifica dello strumento di convalida AMP</a>):
 
 * `"\\.i?-amp-"` ("prefisso nome classe CSS -amp-")
 * `"!important"`

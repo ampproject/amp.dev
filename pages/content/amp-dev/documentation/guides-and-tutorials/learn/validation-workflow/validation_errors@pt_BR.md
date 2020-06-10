@@ -280,7 +280,7 @@ Os dados de CSS específicos foram colocados na lista negra
 para validar regras essenciais de CSS das AMP.
 
 A lista a seguir inclui os dados de CSS na lista negra.
-Veja também [`denylisted_cdata_regex` nas especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês):
+Veja também [`disallowed_cdata_regex` nas especificações do validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii) (em inglês):
 
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`

@@ -279,7 +279,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 以便验证基本的 CSS AMP 规则。
 
 下面列出了已列入黑名单的 CSS 数据
-（另请参阅 [AMP 验证工具规范中的 `denylisted_cdata_regex`](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)）：
+（另请参阅 [AMP 验证工具规范中的 `disallowed_cdata_regex`](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)）：
 
 * `"\\.i?-amp-"`（“CSS -amp- 类名称前缀”）
 * `"!important"`
