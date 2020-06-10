@@ -401,7 +401,7 @@ limitations under the License.
 – Для платформ, которые не поддерживают выражения `calc()` и `var()`, нельзя использовать полифилы `amp-animation`, если ключевые кадры указаны в CSS. Поэтому рекомендуется всегда задавать в CSS резервные значения.
 – В CSS нельзя использовать расширения, такие как [`width()`, `height()`, `num()`, `rand()`, `index()` и `length()`](#css-extensions).
 
-#### Допустимые свойства для ключевых кадров <a name="white-listed-properties-for-keyframes"></a>
+#### Допустимые свойства для ключевых кадров <a name="allow-listed-properties-for-keyframes"></a>
 
 В ключевых кадрах можно использовать не все свойства CSS, а только такие, для которых современные браузеры способны быстро выполнять оптимизацию и анимацию. Список допустимых свойств, отвечающих требованиям к эффективности, растет. В настоящее время в него включены:
 – [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity);
@@ -624,7 +624,7 @@ limitations under the License.
 
 SVG – отличный инструмент, и мы очень рекомендуем использовать его для анимаций.
 
-Для работы анимации SVG нужны те же свойства CSS, которые [разрешены для ключевых кадров](#white-listed-properties-for-keyframes), с некоторыми особенностями:
+Для работы анимации SVG нужны те же свойства CSS, которые [разрешены для ключевых кадров](#allow-listed-properties-for-keyframes), с некоторыми особенностями:
 
 * Элементы SVG для браузеров Internet Explorer и Edge [не поддерживают свойства CSS `transform`](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). Анимация `transform` сама является полифилом. Однако первоначальное состояние, определенное в таблице стилей, не применяется. Если оно имеет значение для этих браузеров, рекомендуется дублировать его через [атрибут SVG `transform`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
 * В то время как свойство CSS `transform` является полифилом для Internet Explorer и Edge, задействовать в качестве полифила `transform-origin` невозможно. Таким образом, если требуется совместимость с Internet Explorer или Edge, рекомендуется использовать по умолчанию только `transform-origin`.

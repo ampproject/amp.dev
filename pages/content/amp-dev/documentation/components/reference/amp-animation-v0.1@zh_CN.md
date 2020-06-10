@@ -402,7 +402,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 - 以 CSS 格式指定关键帧时，不支持 `calc()` 和 `var()` 的平台将无法使用 `amp-animation` polyfill。因此，建议您始终在 CSS 中添加后备值。
 - CSS 中无法使用 [`width()`、`height()`、`num()`、`rand()`、`index()` 和 `length()`](#css-extensions) 等 CSS 扩展。
 
-#### 列入白名单的关键帧属性 <a name="white-listed-properties-for-keyframes"></a>
+#### 列入白名单的关键帧属性 <a name="allow-listed-properties-for-keyframes"></a>
 
 并非所有 CSS 属性都可用于关键帧。只有新型浏览器可以优化和快速以动画形式呈现的 CSS 属性才可列入白名单。随着越来越多的属性被确认为可提供良好性能，此名单将不断扩充。目前，该名单包含以下属性：
 - [`opacity`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/opacity)
@@ -623,7 +623,7 @@ AMP 动画依赖 [Web Animations API](https://www.w3.org/TR/web-animations/) 在
 
 SVG 非常棒，我们建议将其用于动画！
 
-SVG 动画受到[列入白名单的关键帧属性](#white-listed-properties-for-keyframes)中所述的那些 CSS 属性的支持，但存在一些细微差别：
+SVG 动画受到[列入白名单的关键帧属性](#allow-listed-properties-for-keyframes)中所述的那些 CSS 属性的支持，但存在一些细微差别：
 
 * IE/Edge SVG 元素[不支持 CSS `transform` 属性](https://developer.microsoft.com/zh-CN/microsoft-edge/platform/issues/1173754/)。`transform` 动画本身已执行过 polyfill 操作。不过，不会应用在样式表中指定的初始状态。如果初始转换状态在 IE/Edge 上很重要，建议您通过 [SVG `transform` 属性](https://developer.mozilla.org/zh-CN/docs/Web/SVG/Attribute/transform)进行复制。
 * 虽然已针对 IE/Edge 对 `transform` CSS 执行 polyfill 操作，但遗憾的是，无法对 `transform-origin` 执行 polyfill 操作。因此，如果需要与 IE/Edge 兼容，建议仅使用默认 `transform-origin`。

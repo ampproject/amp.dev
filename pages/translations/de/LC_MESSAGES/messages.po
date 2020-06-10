@@ -2006,8 +2006,8 @@ msgstr "Bevorzuge Lösungen, mit denen die Benutzererfahrung verbessert wird –
 msgid "Some things can be made fast and are still a terrible user experience. AMPs should deliver a fantastic user experience and speed is just one part of that. Only compromise when lack of support for something would stop AMP from being widely used and deployed."
 msgstr "Manche Dinge funktionieren schnell und sorgen trotzdem für eine schreckliche Benutzererfahrung. AMP sollte eine fantastische Benutzererfahrung bieten, und Geschwindigkeit ist nur ein Teil davon. Gehe nur dann Kompromisse ein, wenn die mangelnde Unterstützung für eine Funktion die Verbreitung und Bereitstellung von AMP verhindert."
 
-msgid "No whitelists."
-msgstr "Keine Whitelists."
+msgid "No allowlists."
+msgstr "Keine allowlists."
 
 msgid "We won’t give any special treatment to specific sites, domains or origins except where needed for security or performance reasons."
 msgstr "Wir gewähren keine Sonderbehandlung für bestimmte Websites, Domänen oder Quellen, es sei denn, dies ist aus Sicherheits- oder Leistungsgründen erforderlich."
