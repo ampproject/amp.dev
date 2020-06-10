@@ -99,6 +99,10 @@ tools: !g.yaml /shared/data/tools.yaml
       </h2>
     </div>
 
+    {% if category == 'creation' %}
+    <p [% if format == 'stories' %][% else %]hidden[% endif %] class="ap-o-tool-format-filter-caption">{{ _('Looking to get your Story creation resource listed? <a href="https://github.com/shishirm/amp.dev/issues/new?assignees=&labels=&template=story_creation_tool.md&title=">Create a request here!</a>') }}</p>
+    {% endif %}
+
     {% if category == 'providers' %}
     <p [% if format == 'email' %][% else %]hidden[% endif %] class="ap-o-tool-format-filter-caption">{{ _('Looking for supported email service providers? <a href="../support/faq/email-support.md">They are now listed in the FAQ</a>.') }}</p>
     {% endif %}
