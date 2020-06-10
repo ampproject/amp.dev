@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+const JSONTreeView = require('json-tree-view');
+require('json-tree-view/example/build/devtools.css');
 require('./state-view.scss');
 
 // import events from '../events/events.js';
@@ -31,5 +33,21 @@ class StateView extends FlyIn {
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
 
+    const view = new JSONTreeView('example', this.getJSONData());
+    view.showCountOfObjectOrArray = false;
+    view.readonly = true;
+    view.expand(true);
+
+    const content = document.createElement('div');
+    content.className = 'state-view';
+    content.appendChild(view.dom);
+
+    this.upadateContent(content);
+  }
+
+  getJSONData() {
+    const json = {
+    }
+    return json;
   }
 }
