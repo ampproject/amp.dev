@@ -402,7 +402,7 @@ CSS `@keyframes`, [Web Animasyonları spesifikasyonu](https://www.w3.org/TR/web-
 - Animasyon kareleri CSS'de belirtildiğinde, `calc()` ve `var()` yöntemlerini desteklemeyen platformlar, `amp-animation` çoklu dolgularından yararlanamaz. Dolayısıyla, yedek değerlerin her zaman CSS'ye eklenmesi tavsiye edilir.
 - [`width()`, `height()`, `num()`, `rand()`, `index()` ve `length()`](#css-extensions) gibi CSS uzantıları CSS'de kullanılamaz.
 
-#### Animasyon kareleri için beyaz listedeki özellikler <a name="white-listed-properties-for-keyframes"></a>
+#### Animasyon kareleri için beyaz listedeki özellikler <a name="allow-listed-properties-for-keyframes"></a>
 
 Tüm CSS özellikleri animasyon karelerinde kullanılamaz. Yalnızca modern tarayıcıların optimize edip hızlı bir şekilde canlandırabildiği CSS özellikleri beyaz listeye eklenir. İyi performans sağladığı onaylanan özelliklerin sayısı arttıkça bu liste de genişleyecektir. Şu anda liste şu özellikleri içermektedir:
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
@@ -622,7 +622,7 @@ Bu işlevler `calc()`, `var()` ve diğer CSS ifadeleriyle birleştirilebilir. Ö
 
 SVG'ler harikadır ve bunların animasyonlar için kullanılmasını kesinlikle öneririz!
 
-SVG animasyonları, bazı küçük farklarla [Animasyon kareleri için beyaz listedeki özellikler](#white-listed-properties-for-keyframes) bölümünde açıklanan CSS özellikleri aracılığıyla desteklenir:
+SVG animasyonları, bazı küçük farklarla [Animasyon kareleri için beyaz listedeki özellikler](#allow-listed-properties-for-keyframes) bölümünde açıklanan CSS özellikleri aracılığıyla desteklenir:
 
 * IE/Edge SVG öğeleri [CSS `transform` özelliklerini desteklemez](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). `Transform` animasyonunun kendisi çok dolguludur. Bununla birlikte, bir stil sayfasında tanımlanan başlangıç durumu uygulanmaz. İlk dönüştürülmüş durum IE/Edge için önemliyse [SVG `transform` özelliği](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) aracılığıyla yinelenmesi önerilir.
 * `transform` CSS'sine IE/Edge için çoklu dolgu yapılırken, ne yazık ki `transform-origin` için çoklu dolgu yapmak mümkün değildir. Dolayısıyla, IE/Edge ile uyumluluk istendiğinde, yalnızca varsayılan `transform-origin` öğesinin kullanılması önerilir.

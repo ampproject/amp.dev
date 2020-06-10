@@ -270,12 +270,12 @@ class Config {
         process.exit(1);
       }
 
-      // we need the blacklist filter, because otherwise the sitemap will not be created
+      // we need the denylist filter, because otherwise the sitemap will not be created
       const skippedLocales = AVAILABLE_LOCALES.filter((locale) => {
         return !locales.includes(locale);
       });
       podspec.deployments.default['filters'] = {
-        'type': 'blacklist',
+        'type': 'denylist',
         'locales': skippedLocales,
       };
 

@@ -216,7 +216,7 @@ limitations under the License.
 
 * 表达式只能访问所在文档的[状态](#state)。
 * 表达式**无权**访问 `window` 或 `document` 等全局属性。
-* 只能使用[列入白名单的函数](#white-listed-functions)和运算符。
+* 只能使用[列入白名单的函数](#allow-listed-functions)和运算符。
 * 一般不允许使用自定义函数、类和循环。允许将箭头函数用作参数，如 `Array.prototype.map`。
 * 未定义的变量和 array-index-out-of-bound 会返回 `null`，而不是 `undefined`，也不会引发错误。
 * 为了确保性能，单个表达式中目前最多可以使用 50 个操作数。如果这无法满足您的使用需求，请[与我们联系](https://github.com/ampproject/amphtml/issues/new)。
@@ -234,7 +234,7 @@ limitations under the License.
 null || 'default' // 'default'
 ```
 
-# 列入白名单的函数 <a name="white-listed-functions"></a>
+# 列入白名单的函数 <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -605,7 +605,7 @@ null || 'default' // 'default'
   <tr>
     <td>函数未列入白名单</td>
     <td><em>alert 不是受支持的函数。</em></td>
-    <td>仅使用<a href="#white-listed-functions">列入白名单的函数</a>。</td>
+    <td>仅使用<a href="#allow-listed-functions">列入白名单的函数</a>。</td>
   </tr>
   <tr>
     <td>结果已经过净化处理</td>
