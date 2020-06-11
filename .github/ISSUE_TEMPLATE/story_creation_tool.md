@@ -8,50 +8,53 @@ assignees: ''
 ---
 
 <!--
-Thank you for wanting to add a Story creation resource resource to amp.dev.
+Thank you for your interest in adding a Web Story creation resource to amp.dev.
 
-The Stories submitted below will be run through the [AMP Linter](https://github.com/ampproject/amp-toolbox/tree/master/packages/linter) to ensure a minimum quality bar. In order to proceed, all Stories must pass all tests.
+The Web Stories submitted below will be run through the [AMP Linter](https://github.com/ampproject/amp-toolbox/tree/master/packages/linter) to ensure that they are valid Web Stories. In order to proceed, all Web Stories submitted must pass all AMP Linter tests.
 
-Any feedback will optionally be provided directly on the issue. Pending any outstanding changes, your tool will then be listed on amp.dev.
+If our team has any feedback, it will be provided directly on the request issue. If there are no outstanding issues, your tool will be listed on amp.dev.
 
 If your tool is already listed and you would like to change a description or image, please re-open the original issue created to list your resource on amp.dev.
 
-The process will continue to be evaluated. Updated stories may be requested or tools violating any in place checks may get de-listed.
+Please note that the criteria and process for being listed or remaining listed on amp.dev may change at any time. Tools that do not meet updated criteria over time may be removed. 
 
-***Note:** While passing the AMP Linter ensures a minimum quality bar for a Story, it does not ensure that the story is of high quality and is enjoyable for users. It is highly recommended to build features and guardrails into your tools that help story creators adhere to the [Web Story Best Practices](https://amp.dev/documentation/guides-and-tutorials/start/create_successful_stories/).*
+***Note:** Passing the AMP Linter tests ensures that your tool produces valid Web Stories, but it does not ensure that the story is of high quality and enjoyable for users. It is recommended that you build features and guardrails into your tools that help story creators adhere to the [Web Story Best Practices](https://amp.dev/documentation/guides-and-tutorials/start/create_successful_stories/).*
 
 Please fill in the template below.
 -->
 
 ## 🛠️  Request to Add Third-Party Story Creation Tool/CMS/Platform
 
-### 1. Story creation resource name
-Insert name here
+### Story creation resource name
 
-### 2. Type
+< Insert name here >
 
-<!-- Use [x] to mark a selection. -->
+### Type
 
-- [ ] Tool
+Use [x] to mark a selection:
+
+- [ ] Story Creation Tool
 - [ ] CMS
 - [ ] Platform
 - [ ] Other
 
-### 3. URL
-Insert URL to Tool/CMS/Platform here
+### URL
 
-### 4 Image
-Please provide an image (min. 800x400 pixels) to appear on the [Tools](https://amp.dev/documentation/tools) page.
+< Insert URL to Tool/CMS/Platform here >
 
-### 5 Description
-Please provide a short description (max. 100 characters) to appear on the [Tools](https://amp.dev/documentation/tools) page.
+### Image
 
-### 6 Contact
-Github username, etc
+< Please provide a screenshot of your resource’s editor window (min. 800x400 pixels) to appear on the [Tools](https://amp.dev/documentation/tools) page. JPEG, PNG or SVG images are acceptable >
 
-### 7 List of Stories
-Please list 10 Web Stories across a diverse set of topics/treatments that each meet the following criteria
-#### 7.1 Minimum of 7 pages
-#### 7.2 At least 4 images
-#### 7.3 At least 2 videos
-#### 7.4 At least four pages with some text
+### Description
+
+< Please provide a short description (max. 100 characters) to appear on the [Tools](https://amp.dev/documentation/tools) page. >
+
+### List of Stories
+
+< Please list 10 Web Stories across a diverse set of topics/treatments that each meet the following criteria
+
+* Minimum of 7 pages
+* At least 4 images
+* At least 2 videos
+* At least four pages with some text >
