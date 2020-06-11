@@ -106,8 +106,7 @@ async function importWorkingGroups() {
         `${yaml.dump({
           '$title': `Working Group: ${meta.title}`,
           '$titles': {'navigation': 'Working Groups'},
-        })}` +
-        `\ndata: !g.json ${WG_POD_PATH}/${name}.json`
+        })}` + `\ndata: !g.json ${WG_POD_PATH}/${name}.json`
       ),
       writeFileAsync(
         join(project.paths.GROW_POD, `${WG_POD_PATH}/${name}.json`),
