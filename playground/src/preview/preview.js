@@ -254,10 +254,15 @@ class Preview {
     // Enable development mode for preview iframe
     childWindow.location.hash = '#development=1';
     (childWindow.AMP = childWindow.AMP || []).push(() => {
-
-      if (childWindow.AMP.printState) {
-        console.log('Nice G');
-      }
+      childWindow.setInterval(() => {
+        if (childWindow.AMP.printState) {
+          const state = this.getAmpState();
+          if (state) {
+            console.log(state);
+          }
+        } else {
+        }
+      }, 2000);
 
       this.restoreState(this.previewIframe, this.state);
       this.loader.hide();
