@@ -251,7 +251,14 @@ class Preview {
     childDoc.write('');
     childDoc.write(this.documentString);
     childDoc.close();
+    // Enable development mode for preview iframe
+    childWindow.location.hash = '#development=1';
     (childWindow.AMP = childWindow.AMP || []).push(() => {
+
+      if (childWindow.AMP.printState) {
+        console.log('Nice G');
+      }
+
       this.restoreState(this.previewIframe, this.state);
       this.loader.hide();
       const oldIframes = [].slice
@@ -301,5 +308,27 @@ class Preview {
     if (state.scroll) {
       win.scrollTo(state.scroll.x, state.scroll.y);
     }
+  }
+
+  getAmpState() {
+    const iframe = document.getElementById('previewIframe');
+    const win = iframe.contentWindow;
+
+    const _info = win.console.info;
+
+    return new Promise((resolve, reject) => {
+      win.console.info = (tag, state) => {
+        if (tag == '[amp-bind]') {
+          resolve(state);
+        } else {
+          reject({});
+        }
+      };
+
+      win.AMP.printState();
+    }).then((state) => {
+      win.console.info = _info;
+      return state;
+    });
   }
 }
