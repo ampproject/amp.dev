@@ -32,6 +32,7 @@ pages/content/amp-dev/documentation/components/reference/*.md
 examples/static/samples/samples.json
 pages/content/amp-dev/community/working-groups/*.yaml
 !pages/content/amp-dev/community/working-groups/_blueprint.yaml
+pages/content/amp-dev/community/working-groups/*.json
 pages/routescache.json
 pages/shared/data/componentSamples.json
 pages/shared/data/roadmap.json

@@ -19,8 +19,9 @@
 require('module-alias/register');
 
 const fs = require('fs');
+const {join} = require('path');
+const {project} = require('@lib/utils');
 const yaml = require('js-yaml');
-const emojiStrip = require('emoji-strip');
 const {promisify} = require('util');
 const writeFileAsync = promisify(fs.writeFile);
 const {
@@ -30,7 +31,7 @@ const {
 const log = require('@lib/utils/log')('Import Working Groups');
 
 /* Path where the working group data gets imported to */
-const WG_DIRECTORY_PATH = 'pages/content/amp-dev/community/working-groups';
+const WG_POD_PATH = 'content/amp-dev/community/working-groups';
 /* Threshold for label background color from when color should switch to white */
 const WG_LABEL_COLOR_THRESHOLD = 7500000;
 
@@ -74,7 +75,7 @@ async function importWorkingGroups() {
     )[0];
     issues = issues.map((issue) => {
       const date = new Date(issue.created_at).toDateString();
-      const title = emojiStrip(issue.title);
+      const title = issue.title;
 
       issue.labels = issue.labels.map((label) => {
         const txtColor =
@@ -99,21 +100,28 @@ async function importWorkingGroups() {
       };
     });
 
-    await writeFileAsync(
-      `${WG_DIRECTORY_PATH}/${name}.yaml`,
-      yaml.dump({
-        '$title': `Working Group: ${meta.title}`,
-        '$titles': {'navigation': 'Working Groups'},
-        'html_url': wg.html_url,
-        'name': name,
-        'full_name': meta.title,
-        'facilitator': meta.facilitator,
-        'description': meta.description,
-        'issues': issues,
-        'members': meta.members || [],
-        'communication': meta.communication || [],
-      })
-    );
+    await Promise.all([
+      writeFileAsync(
+        join(project.paths.GROW_POD, `${WG_POD_PATH}/${name}.yaml`),
+        `${yaml.dump({
+          '$title': `Working Group: ${meta.title}`,
+          '$titles': {'navigation': 'Working Groups'},
+        })}` + `\ndata: !g.json ${WG_POD_PATH}/${name}.json`
+      ),
+      writeFileAsync(
+        join(project.paths.GROW_POD, `${WG_POD_PATH}/${name}.json`),
+        JSON.stringify({
+          'html_url': wg.html_url,
+          'name': name,
+          'full_name': meta.title,
+          'facilitator': meta.facilitator,
+          'description': meta.description,
+          'issues': issues,
+          'members': meta.members || [],
+          'communication': meta.communication || [],
+        })
+      ),
+    ]);
 
     log.success('Imported working group data for:', wg.name);
   }
