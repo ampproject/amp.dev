@@ -12,17 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import events from '../events/events.js';
 import dimensions from './dimensions.json';
 import params from '../params/base.js';
 import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
 import embedMode from '../embed-mode/';
+import * as StateView from '../state-view/state-view.js';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
 const PARAM_HEIGHT = 'height';
 
 const MOBILE_BREAK_POINT = 767;
+
+export const EVENT_AMP_BIND_READY =
+  'event-amp-bind-ready';
+
+export const EVENT_AMP_BIND_NEW_STATE =
+  'event-amp-bind-new-state';
 
 export function createPreview(container) {
   return new Preview(container, document, createLoader(container));
@@ -36,6 +44,15 @@ class Preview {
     this.previewContainer = container.querySelector('#preview-container');
     this.panelHeader = container.querySelector('.panel-header');
     this.createHeader();
+
+    events.subscribe(
+      StateView.EVENT_AMP_BIND_REQUEST_STATE,
+      () => {
+        this.getAmpState().then((state) => {
+          events.publish(EVENT_AMP_BIND_NEW_STATE, state);
+        });
+      }
+    );
   }
 
   setRuntime(runtime) {
@@ -254,15 +271,17 @@ class Preview {
     // Enable development mode for preview iframe
     childWindow.location.hash = '#development=1';
     (childWindow.AMP = childWindow.AMP || []).push(() => {
-      childWindow.setInterval(() => {
+      const checkStateIntervalID = childWindow.setInterval(() => {
         if (childWindow.AMP.printState) {
-          const state = this.getAmpState();
-          if (state) {
-            console.log(state);
-          }
+          childWindow.clearInterval(checkStateIntervalID);
+          events.publish(EVENT_AMP_BIND_READY, true);
         } else {
+          events.publish(EVENT_AMP_BIND_READY, false);
         }
-      }, 2000);
+      }, 100);
+      setTimeout(() => {
+        childWindow.clearInterval(checkStateIntervalID);
+      }, 3000);
 
       this.restoreState(this.previewIframe, this.state);
       this.loader.hide();

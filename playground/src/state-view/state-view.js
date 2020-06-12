@@ -15,39 +15,69 @@
 const JSONTreeView = require('json-tree-view');
 require('json-tree-view/example/build/devtools.css');
 require('./state-view.scss');
-
-// import events from '../events/events.js';
+import events from '../events/events.js';
 import * as Button from '../button/button.js';
+import * as Preview from '../preview/preview.js';
 import FlyIn from '../fly-in/base.js';
+
 
 export function createStateView(target, trigger) {
   return new StateView(target, trigger);
 }
 
-const DESKTOP_WIDTH = 1024;
+export const EVENT_AMP_BIND_REQUEST_STATE =
+  'event-amp-bind-request-state';
 
 class StateView extends FlyIn {
-  constructor(target, trigger) {
+  constructor(target, trigger, preview) {
     super(target);
 
     this.target = target;
-    this.trigger = Button.from(trigger, this.toggle.bind(this));
+    this.trigger = Button.from(trigger, this.requestState.bind(this));
 
-    const view = new JSONTreeView('example', this.getJSONData());
-    view.showCountOfObjectOrArray = false;
-    view.readonly = true;
-    view.expand(true);
+    // Content container
+    this.container = document.createElement('div');
+    this.container.className = 'state-view';
 
-    const content = document.createElement('div');
-    content.className = 'state-view';
-    content.appendChild(view.dom);
+    // Set treeview for state
+    this.treeView = new JSONTreeView('', {});
+    this.treeView.showCountOfObjectOrArray = false;
+    this.treeView.readonly = true;
+    this.treeView.expand(true);
 
-    this.upadateContent(content);
+    // configure amp-state listener
+    events.subscribe(
+      Preview.EVENT_AMP_BIND_READY,
+      (stateResult) => {
+        window.requestIdleCallback(() => {
+          if (!stateResult) {
+            this.trigger.disable();
+          } else {
+            this.trigger.enable();
+          }
+        });
+      }
+    );
+
+    events.subscribe(
+      Preview.EVENT_AMP_BIND_NEW_STATE,
+      (state) => {
+        this.setStateViewContent(state);
+      }
+    );
   }
 
-  getJSONData() {
-    const json = {
-    }
-    return json;
+  requestState() {
+    events.publish(EVENT_AMP_BIND_REQUEST_STATE);
+    this.container.innerHTML = ('<div class="state-view-loader"></div>');
+    this.upadateContent(this.container);
+    this.toggle();
+  }
+
+  setStateViewContent(state) {
+    this.treeView.value = state;
+    this.container.innerHTML = '';
+    this.container.appendChild(this.treeView.dom);
+    this.upadateContent(this.container);
   }
 }
