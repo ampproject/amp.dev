@@ -107,7 +107,7 @@
     "closure-webpack-plugin": "2.3.0",
     "codemirror": "5.54.0",
     "copy-webpack-plugin": "6.0.2",
-    "css-loader": "3.5.3",
+    "css-loader": "3.6.0",
     "del": "5.1.0",
     "eslint": "7.2.0",
     "eslint-config-google": "0.14.0",
