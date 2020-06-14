@@ -160,7 +160,8 @@
         background: color('black');
       }
       #error-indicator[disabled] {
-        display: none;
+        pointer-events: none;
+        background-color: #00CD3C;
       }
       #error-indicator {
         background-color: #ef0000;

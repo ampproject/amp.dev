@@ -47,6 +47,7 @@ class ErrorList extends FlyIn {
           }
           this.trigger.enable();
           if (validationResult.status == 'PASS') {
+            this.trigger.setHtml('valid');
             this.trigger.disable();
             return;
           }
