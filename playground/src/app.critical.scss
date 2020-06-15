@@ -113,7 +113,7 @@
     }
     .button {
       height: 48px;
-      padding: 0 14px;
+      padding: 0 10px;
       border-left: 1px solid rgba(0,0,0,.15);
     }
     .button.square {
@@ -147,31 +147,63 @@
 
       * {
         color: #fff;
-        background-color: #29323c;
+        border-radius: 0;
         border-color: rgba(255, 255, 255, 0.2);
       }
-      #runtime-select, select {
-        background-color: #48525c;
+
+      #runtime-select {
+        margin-right: auto;
       }
+
       select {
+        height: 100%;
         background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23FFF'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
       }
-      .button:active {
-        background: color('black');
+
+      select,
+      .button {
+        &:hover,
+        &:active {
+          background-color: #29323c;
+        }
       }
-      #error-indicator[disabled] {
-        pointer-events: none;
-        background-color: #00CD3C;
-      }
+
       #error-indicator {
-        background-color: #ef0000;
         height: 28px;
-        margin: auto 12px auto auto;
+        margin: 10px;
         padding: 0 15px;
         border: 0;
         border-radius: 24px;
         line-height: 1;
         color: white;
+
+        span {
+          display: none;
+          @media (min-width: 768px) {
+            display: inline;
+          }
+        }
+
+        &[disabled] {
+          display: none;
+        }
+
+        &.valid {
+          display: none;
+          pointer-events: none;
+
+          @media (min-width: 768px) {
+            display: block;
+            background-color: #00CD3C;
+          }
+        }
+
+        &.warning {
+          background-color: #EBC241;
+        }
+        &.error {
+          background-color: #ef0000;
+        }
       }
     }
   }
@@ -421,9 +453,6 @@ main > .panel + .panel {
   }
   header #logo {
     margin-left: 1rem;
-  }
-  header #runtime-select {
-    margin-right: 1rem;
   }
   main {
     display: block;

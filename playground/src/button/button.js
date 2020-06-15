@@ -63,11 +63,11 @@ class Button {
   }
 
   addClass(clazz) {
-    this._element.classList.toggle(clazz, true);
+    this._element.classList.add(clazz, true);
     return this;
   }
 
   removeClass(clazz) {
-    this._element.classList.toggle(clazz, false);
+    this._element.classList.remove(clazz, false);
   }
 }

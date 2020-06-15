@@ -43,18 +43,29 @@ class ErrorList extends FlyIn {
             this.trigger.disable();
             return;
           }
+
           this.trigger.enable();
-          if (validationResult.status == 'PASS') {
-            this.trigger.setHtml('valid');
-            this.trigger.disable();
+          for (const clazz of ['valid', 'warning', 'error']) {
+            this.trigger.removeClass(clazz);
+          }
+
+          const errorCount = validationResult.errors.length;
+          const plurality = errorCount > 1 ? 's' : '';
+
+          if (validationResult.status == 'FAIL') {
+            this.trigger.addClass('error');
+            this.trigger.setHtml(`${errorCount} <span>Error${plurality}</span>`);
             return;
           }
-          this.trigger.enable();
-          this.trigger.setHtml(
-            validationResult.errors.length +
-              ' Error' +
-              (validationResult.errors.length > 1 ? 's' : '')
-          );
+          if (errorCount > 0) {
+            this.trigger.addClass('warning');
+            this.trigger.setHtml(`${errorCount} <span>Warning${plurality}</span>`);
+            return;
+          }
+
+          this.trigger.addClass('valid');
+          this.trigger.setHtml('valid');
+
         });
       }
     );
