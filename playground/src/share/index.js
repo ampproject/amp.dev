@@ -33,16 +33,20 @@ class ShareDialog {
 
   open() {
     const source = this.editor.getSource();
-    const shareUrl =
-      window.location.href.split('#')[0] + '#share=' + Base64.encode(source);
+    const shareUrl = new URL(window.location.href);
+    shareUrl.searchParams.delete('url');
+    shareUrl.hash = 'share=' + Base64.encode(source);
+    const shareUrlString = shareUrl.toString();
     const root = document.createElement('div');
     root.id = 'share-dialog';
     const a = document.createElement('a');
-    a.setAttribute('href', shareUrl);
-    if (shareUrl.length > MAX_URL_DISPLAY_LENGTH) {
-      a.textContent = shareUrl.substring(0, MAX_URL_DISPLAY_LENGTH) + '...';
+    a.setAttribute('href', shareUrl.toString());
+
+    if (shareUrlString.length > MAX_URL_DISPLAY_LENGTH) {
+      a.textContent =
+        shareUrlString.substring(0, MAX_URL_DISPLAY_LENGTH) + '...';
     } else {
-      a.textContent = shareUrl;
+      a.textContent = shareUrlString;
     }
     root.appendChild(a);
 
