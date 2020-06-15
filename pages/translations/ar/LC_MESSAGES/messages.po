@@ -1907,7 +1907,7 @@ msgid "Some things can be made fast and are still a terrible user experience. AM
 msgstr ""
 
 #: pages/content/amp-dev/about/mission-and-vision.html:137
-msgid "No whitelists."
+msgid "No allowlists."
 msgstr ""
 
 #: pages/content/amp-dev/about/mission-and-vision.html:138
@@ -2427,7 +2427,7 @@ msgstr "ضع الأشياء التي تحسِّن تجربة المستخدم ع
 msgid "Some things can be made fast and are still a terrible user experience. AMPs should deliver a fantastic user experience and speed is just one part of that. Only compromise when lack of support for something would stop AMP from being widely used and deployed."
 msgstr "يمكن تسريع بعض الأشياء ولكنها ما تزال تمثّل تجربة مخيفة للمستخدمين. ويجب أن تقدم صفحات AMP تجربة رائعة للمستخدمين والسرعة ما هي إلا جزء واحد من عناصر تلك التجربة. ولا يمكن تقديم تنازلات إلا إذا كان افتقاد شيء ما للدعم سيؤدي إلى توقف استخدام وانتشار AMP على نطاق واسع."
 
-msgid "No whitelists."
+msgid "No allowlists."
 msgstr "ما مِن قوائم بيضاء."
 
 msgid "We won’t give any special treatment to specific sites, domains or origins except where needed for security or performance reasons."

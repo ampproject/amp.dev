@@ -39,16 +39,13 @@ def _transform(content):
         name = result.group(1)
         type = name
 
-        # Determine actual tip type by leading keyword
-        if name in SUCCESS_KEYWORDS:
-          type = 'default'
-        elif name in READ_ON_KEYWORDS:
+        if name in READ_ON_KEYWORDS:
           type = 'read-on'
         elif name in IMPORTANT_KEYWORDS:
           type = 'important'
         # If no fallback type is wanted, check for in NOTE_KEYWORDS
         else:
-          type = 'note'
+          type = 'default'
 
         transformed_content.append('{{% call tip(\'{name}\', type=\'{type}\') %}}'.format(
             name=name, type=type.lower()))

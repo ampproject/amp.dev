@@ -57,7 +57,7 @@
   ],
   "dependencies": {
     "@ampproject/toolbox-cors": "2.5.1",
-    "@ampproject/toolbox-optimizer": "2.5.1",
+    "@ampproject/toolbox-optimizer": "2.5.3",
     "@google-cloud/datastore": "6.0.0",
     "acorn": "7.2.0",
     "casual": "1.6.2",
@@ -65,7 +65,6 @@
     "client-sessions": "0.8.0",
     "cookie-parser": "1.4.5",
     "cors": "2.8.5",
-    "emoji-strip": "1.0.1",
     "express": "4.17.1",
     "express-formidable": "1.2.0",
     "gcp-metadata": "4.1.0",

@@ -13,6 +13,11 @@
 }
 
 
+.CodeMirror-linenumber {
+  @include txt-mono;
+  font-size: 9px;
+}
+
 .cm-s-monokai.CodeMirror {
   font-size: 14px;
   height: 100%;

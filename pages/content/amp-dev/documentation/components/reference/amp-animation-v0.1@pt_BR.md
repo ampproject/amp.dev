@@ -401,7 +401,7 @@ Outra maneira de especificar frames-chave é na folha de estilo do documento (ta
 - As plataformas que não compatíveis com `calc()` e `var()` não poderão usar polyfills do `amp-animation` quando forem especificados frames-chave no CSS. Portanto, é sempre recomendável incluir valores substitutos no CSS.
 - Extensões de CSS, como [`width()`, `height()`, `num()`, `rand()`, `index()` e `length()`](#css-extensions), não podem ser usadas no CSS.
 
-#### Propriedades permitidas para frames-chave <a name="white-listed-properties-for-keyframes"></a>
+#### Propriedades permitidas para frames-chave <a name="allow-listed-properties-for-keyframes"></a>
 
 Nem todas as propriedades do CSS podem ser usadas em frames-chave. Somente as propriedades CSS que os navegadores modernos podem otimizar e animar de forma rápida são incluídas na lista de permissões. Essa lista aumentará à medida que mais propriedades forem confirmadas como geradoras de bom desempenho. No momento, a lista contém:
 - [`opacity`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/opacity)
@@ -622,7 +622,7 @@ Por exemplo, a expressão a seguir calcula o atraso em segundos proporcional à 
 
 SVGs são incríveis e certamente recomendamos o uso deles em animações.
 
-As animações SVG são compatíveis usando as mesmas propriedades CSS descritas em [Propriedades permitidas para frames-chave](#white-listed-properties-for-keyframes), com algumas nuances:
+As animações SVG são compatíveis usando as mesmas propriedades CSS descritas em [Propriedades permitidas para frames-chave](#allow-listed-properties-for-keyframes), com algumas nuances:
 
 * Os elementos SVG do IE/Edge [não são compatíveis com as propriedades CSS `transform`](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/) (link em inglês). A própria animação `transform` tem polyfill aplicado. No entanto, o estado inicial definido em uma folha de estilo não é aplicado. Se o estado transformado inicial for importante no IE/Edge, é recomendável duplicá-lo por meio do [atributo `transform` do SVG](https://developer.mozilla.org/pt-BR/docs/Web/SVG/Attribute/transform).
 * Embora o CSS `transform` tenha polyfill aplicado para o IE/Edge, não é possível transformar `transform-origin` em um polypill. Assim, quando a compatibilidade com o IE/Edge é desejada, recomenda-se usar somente o `transform-origin` padrão.
