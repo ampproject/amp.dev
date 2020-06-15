@@ -64,8 +64,17 @@
       }
     }
 
-    &-left {
+    &-row-one {
+      display: flex;
+      grid-column: 2 / 22;
+    }
 
+    &-row-two {
+      display: flex;
+      grid-column: 2 / 22;
+    }
+
+    &-left {
       @media (min-width: 1024px) {
         grid-column: 3 / 10;
       }

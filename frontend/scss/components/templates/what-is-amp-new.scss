@@ -55,6 +55,24 @@
         margin-bottom: 0;
       }
     }
+
+    h1 {
+      @include hl-xlrg;
+      margin-bottom: 1rem;
+    }
+    h5 {
+      &.overline {
+        margin-bottom: 1rem;
+        color: color('blue-ribbon');
+      }
+
+      &.subline-medium {
+        font-family: 'Noto Sans';
+        font-size: 1.3125rem;
+        font-weight: normal;
+        margin-top: 0;
+      }
+    }
   }
 
   .#{utility('component-visual')} {
@@ -321,26 +339,6 @@
         }
       }
     }
-
-    & + .#{utility('content')} {
-      h1 {
-        @include hl-xlrg;
-        margin-bottom: 1rem;
-      }
-      h5 {
-        &.overline {
-          margin-bottom: 1rem;
-          color: color('blue-ribbon');
-        }
-
-        &.subline-medium {
-          font-family: 'Noto Sans';
-          font-size: 1.3125rem;
-          font-weight: normal;
-          margin-top: 0;
-        }
-      }
-    }
   }
 
   /* raise specificity to override some tools widget styles */
@@ -398,5 +396,10 @@
     &-headline {
       margin-bottom: -0.688rem;
     }
+  }
+
+  .about-accordion {
+    background-color: color('whisper');
+    padding: 70px 0 35px 0;
   }
 }
