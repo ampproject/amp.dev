@@ -1,6 +1,6 @@
 $title: Ecwid
 $category: e-commerce
-$date: 2020-05-18
+$date: 2020-06-15
 description: Ecwid merchants boost sales by 82% by using AMP for email for abandoned shopping carts
 
 formats:
@@ -9,8 +9,8 @@ formats:
 teaser:
   image:
     src: '/static/img/success-stories/ecwid/ecwid-teaser.jpg'
-    width: 600
-    height: 315
+    width: 750
+    height: 750
     alt: Ecwid
   logo:
     src: '/static/img/success-stories/ecwid/ecwid-logo.png'
