@@ -7,7 +7,7 @@ components:
 author: bpaduch
 ---
 
-You can further enhance a web story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP story framework provides the following preset animations to use in a webs tory:
+You can further enhance a web story by applying animation entrances to elements inside a page. For example, you can make your title fly in from the left, or drop into the page, or fade in, and so on.  The AMP story framework provides the following preset animations to use in a web story:
 
 <table>
 <thead>
