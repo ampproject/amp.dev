@@ -2,10 +2,12 @@
 # Add new entries in alphabetical order
 /ads: /about/ads/
 /amp-pwa-amp: https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/
+/amp-script-apis: https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md
 /ampcs: /events/amp-cs-2019/#Schedule
 /auto-sw: https://github.com/ampproject/amp-sw/
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
 /cherry-picks: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks
+/components: https://amp.dev/documentation/components/
 /contribute/code: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md
 /contribute/code-samples: /documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
 /contribute/docs: /documentation/guides-and-tutorials/contribute/contribute-documentation/
@@ -24,13 +26,13 @@
 /i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement--i2i-.md&title=I2I:%20%3Cyour%20change/update%3E
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
 /learn: /documentation/courses/
-/learn-first: /documentation/guides-and-tutorials/start/create/
 /learn-advanced: /documentation/guides-and-tutorials/start/add_advanced/
 /learn-email: /documentation/guides-and-tutorials/learn/email_fundamentals/?format=email
+/learn-first: /documentation/guides-and-tutorials/start/create/
 /learn-interact: /documentation/guides-and-tutorials/develop/interactivity/
+/learn-script: /documentation/guides-and-tutorials/develop/custom-javascript-tutorial/
 /learn-story: /documentation/guides-and-tutorials/start/visual_story/?format=stories
 /learn-pwa: https://codelabs.developers.google.com/codelabs/amp-pwa-workbox/
-/learn-script: /documentation/guides-and-tutorials/develop/custom-javascript-tutorial/
 /optimize-amp: https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/
 /owners: https://ampproject-owners-bot.appspot.com/tree
 /publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist/

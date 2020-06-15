@@ -264,7 +264,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 <table>
    <tr>
                 <td class="col-thirty"><strong>コード</strong></td>
-                <td>CDATA_VIOLATES_BLACKLIST</td>
+                <td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
                 <td class="col-thirty"><strong>形式</strong></td>
@@ -280,7 +280,7 @@ CDATA は、HTML の開始タグと終了タグの間に記述するコンテン
 特定の CSS データはブラックリストに登録されています。
 
 ブラックリストに登録されている CSS データは以下のとおりです
-（[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)内の `blacklisted_cdata_regex` もご覧ください）。
+（[AMP 検証ツールの仕様](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)内の `disallowed_cdata_regex` もご覧ください）。
 
 * `"\\.i?-amp-"`（「CSS クラス名接頭辞 -amp-」）
 * `"!important"`

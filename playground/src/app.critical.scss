@@ -288,6 +288,18 @@ main {
   bottom: 0;
   display: flex;
   padding: 8px 0;
+  background-image: linear-gradient(26deg, rgba(255, 255, 255, 0) 5%, #ededf1 91%);
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 17%;
+    height: 70%;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0);
+    background: white;
+  }
 }
 
 main > .panel + .panel {
@@ -325,6 +337,7 @@ main > .panel + .panel {
 
 #preview {
   position: relative;
+  z-index: 1;
   background-color: var(--light-bg-color);
 }
 

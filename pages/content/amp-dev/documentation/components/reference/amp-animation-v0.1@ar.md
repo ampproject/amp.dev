@@ -405,7 +405,7 @@ limitations under the License.
 - لن تتمكن المنصات التي لا تتيح `calc()` و`var()` من الاستفادة من تعويضات `amp-animation` عند تحديد الإطارات الرئيسية في CSS. ننصح دائمًا بتضمين قيم احتياطية في CSS.
 - يتعذر استخدام إضافات CSS، مثل [`width()` و`height()` و`num()` و`rand()` و`index()` و`length()`](#css-extensions) في CSS.
 
-#### الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية <a name="white-listed-properties-for-keyframes"></a>
+#### الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية <a name="allow-listed-properties-for-keyframes"></a>
 
 لا يمكن استخدام جميع خصائص CSS في الإطارات الرئيسية. وحدها خصائص CSS التي يمكن للمتصفحات الحديثة تحسينها وتحريكها بسرعة مدرَجة في القائمة البيضاء. وستزيد هذه القائمة كلما أكدت خصائص إضافية أنها توفر أداء جيدًا. تحتوي القائمة الحالية على:
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
@@ -624,7 +624,7 @@ delay: "calc(10s * rand())"
 
 صور SVG المتحركة رائعة ونحن بالتأكيد ننصح باستخدامها في الحركات.
 
-تتم إتاحة صور SVG المتحركة عبر نفس خصائص CSS الموضحة في [الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية](#white-listed-properties-for-keyframes) مع بعض الفروق الدقيقة:
+تتم إتاحة صور SVG المتحركة عبر نفس خصائص CSS الموضحة في [الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية](#allow-listed-properties-for-keyframes) مع بعض الفروق الدقيقة:
 
 * عناصر IE/Edge SVG [لا تتيح خصائص `transform` من CSS](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). يتم تعويض الحركة `transform` نفسها. ومع ذلك، لا يتم تطبيق الحالة الأولية المحددة في ورقة الأنماط. إذا كانت الحالة الأولية المحوّلة مهمة على IE/Edge، يُنصح بتكرارها عبر [ السمة SVG`transform`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
 * في حين يتم تعويض CSS `transform` لـ IE/Edge، فمن المستحيل لسوء الحظ تعويض الخاصية `transform-origin`. وبالتالي، عندما يكون التوافق مع IE/Edge مطلوبًا، يُنصح باستخدام `transform-origin` التلقائية فقط.

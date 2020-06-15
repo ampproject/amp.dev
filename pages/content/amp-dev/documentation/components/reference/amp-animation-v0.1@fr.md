@@ -401,7 +401,7 @@ Pour l'essentiel, utiliser des `@keyframes` CSS revient à intégrer la définit
   - Les plates-formes qui n'acceptent pas les expressions `calc()` et `var()` ne peuvent pas tirer parti des polyfills `amp-animation` lorsque des images clés sont spécifiées dans les feuilles de style. Il est donc recommandé d'inclure systématiquement des valeurs de basculement dans les fichiers CSS.
   - Les extensions CSS telles que [`width()`, `height()`, `num()`, `rand()`, `index()` et `length()`](#css-extensions) ne peuvent pas être utilisées dans les feuilles de style.
 
-#### Propriétés sur liste blanche pour les images clés <a name="white-listed-properties-for-keyframes"></a>
+#### Propriétés sur liste blanche pour les images clés <a name="allow-listed-properties-for-keyframes"></a>
 
 Certaines propriétés CSS ne peuvent pas être utilisées dans les images clés. Seules les propriétés CSS que les navigateurs les plus récents peuvent optimiser et animer rapidement figurent sur la liste blanche. De nouvelles propriétés seront ajoutées à cette liste à mesure que leurs performances seront confirmées. La liste comprend actuellement les propriétés suivantes :
 - [`opacity`](https://developer.mozilla.org/fr/docs/Web/CSS/opacity)
@@ -622,7 +622,7 @@ Par exemple, l'expression suivante calcule le délai en secondes proportionnelle
 
 Les fichiers SVG sont formidables et leur utilisation est vivement recommandée pour les animations.
 
-Les animations SVG sont acceptées en utilisant les mêmes propriétés CSS que celles décrites dans la section [Propriétés sur liste blanche pour les images clés](#white-listed-properties-for-keyframes), avec toutefois quelques nuances :
+Les animations SVG sont acceptées en utilisant les mêmes propriétés CSS que celles décrites dans la section [Propriétés sur liste blanche pour les images clés](#allow-listed-properties-for-keyframes), avec toutefois quelques nuances :
 
 * Les éléments SVG IE et Edge [ne sont pas compatibles avec les propriétés CSS `transform`](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). L'animation `transform` proprement dite est émulée. Toutefois, l'état initial défini dans une feuille de style n'est pas appliqué. Si l'état transformé initial est important dans IE ou Edge, il est recommandé de le dupliquer au moyen de l'[attribut SVG `transform`](https://developer.mozilla.org/fr/docs/Web/SVG/Attribute/transform).
 * Bien que l'animation CSS `transform` soit émulée pour IE et Edge, il est malheureusement impossible d'émuler `transform-origin`. Par conséquent, si l'on souhaite bénéficier d'une compatibilité avec IE et Edge, il est recommandé de n'utiliser que l'élément `transform-origin` par défaut.

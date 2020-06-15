@@ -643,6 +643,8 @@ email:
           url: https://www.maileon.com
         - label: Mailgun
           url: https://www.mailgun.com/
+        - label: Mailkit
+          url: https://www.mailkit.com/
         - label: MessageGears
           url: https://messagegears.com/
         - label: MindBox

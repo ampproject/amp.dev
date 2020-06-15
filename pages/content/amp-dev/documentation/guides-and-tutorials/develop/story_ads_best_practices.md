@@ -294,4 +294,4 @@ A Sponsored Story exists as a URL on the web, enabling the drive of user traffic
 
 {{ image('/static/img/docs/stampads/sponsored_story_full.png', 1600, 900, layout='intrinsic', alt='CTA button directs to a Sponsored Story', caption='CTA button directs to a Sponsored Story', align='' ) }}
 
-Read more about creating an [AMP Story here](/documentation/guides-and-tutorials/start/create_successful_stories.md).
+Read more about creating an [AMP Story here](../start/create_successful_stories.md).

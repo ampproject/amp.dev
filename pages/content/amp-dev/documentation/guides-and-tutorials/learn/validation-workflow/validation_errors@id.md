@@ -264,7 +264,7 @@ Pesan mendetail error ini dapat berupa salah satu dari yang berikut:
 <table>
    <tr>
                 <td class="col-thirty"><strong>Kode</strong></td>
-                <td>CDATA_VIOLATES_BLACKLIST</td>
+                <td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
                 <td class="col-thirty"><strong>Format</strong></td>
@@ -280,7 +280,7 @@ Data CSS tertentu dimasukkan ke daftar yang tidak diizinkan
 untuk memvalidasi aturan AMP CSS yang penting.
 
 Berikut adalah daftar data CSS yang tidak diizinkan
-(lihat juga [`blacklisted_cdata_regex` di spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+(lihat juga [`disallowed_cdata_regex` di spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("Awalan nama kelas -amp- CSS")
 * `"!important"`
