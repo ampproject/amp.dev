@@ -214,7 +214,7 @@ teaser:
 
 * 式は、含んでいるドキュメントの[状態](#state)にのみアクセスできます。
 * 式は、`window` や `document` などのグローバル変数にはアクセス**できません**。
-* [ホワイトリストに登録されている関数](#white-listed-functions)と演算子のみを使用できます。
+* [ホワイトリストに登録されている関数](#allow-listed-functions)と演算子のみを使用できます。
 * 一般に、独自の関数、クラス、ループは使用できません。arrow 関数はパラメータとして使用できます（例: `Array.prototype.map`）。
 * 未定義の変数と array-index-out-of-bounds は、`undefined` を返したりエラーをスローしたりするのではなく、`null` を返します。
 * パフォーマンスの向上のために、現在は 1 つの式で使用できるオペランドの数が 50 個に制限されています。不十分な場合は[お問い合わせください](https://github.com/ampproject/amphtml/issues/new)。
@@ -232,7 +232,7 @@ teaser:
 null || 'default' // 'default'
 ```
 
-# ホワイトリストに登録されている関数 <a name="white-listed-functions"></a>
+# ホワイトリストに登録されている関数 <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -599,7 +599,7 @@ so a warning will be issued in development mode. -->
   <tr>
     <td>ホワイトリストに登録されていない関数</td>
     <td><em>alert はサポート対象の関数ではありません。</em></td>
-    <td><a href="#white-listed-functions">ホワイトリストに登録されている関数</a>のみを使用してください。</td>
+    <td><a href="#allow-listed-functions">ホワイトリストに登録されている関数</a>のみを使用してください。</td>
   </tr>
   <tr>
     <td>サニタイズされた結果</td>

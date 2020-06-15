@@ -21,7 +21,6 @@ require('module-alias/register');
 const utils = require('@lib/utils');
 const fs = require('fs');
 const yaml = require('js-yaml');
-const emojiStrip = require('emoji-strip');
 const {promisify} = require('util');
 const writeFileAsync = promisify(fs.writeFile);
 const {
@@ -160,7 +159,9 @@ async function getIssuesForWorkingGroup(meta) {
   const issuesImport = (
     await client._github
       .repo(`${DEFAULT_ORGANISATION}/${meta.name}`)
-      .issuesAsync()
+      .issuesAsync({
+        state: 'all',
+      })
   )[0];
 
   for (const issue of issuesImport) {
@@ -179,7 +180,7 @@ async function getIssuesForWorkingGroup(meta) {
       statusUpdate = new Date(statusUpdate[0]).toDateString();
     } else {
       log.error(
-        `.. ${meta.slug} - Could not parse valid date from issue title: ${issue.title}`
+        `.. ${meta.slug} - Could not parse valid date from ${issue.html_url}: ${issue.title}`
       );
       continue;
     }
@@ -189,7 +190,7 @@ async function getIssuesForWorkingGroup(meta) {
      * plus remove Emojis and split body into separate text blocks to allow smoother line breaks in frontend
      */
     let body = issue.body.replace(AMP_COMPONENT_REGEX, ' `$1`');
-    body = emojiStrip(body).trim().match(TEXT_BLOCK_REGEX);
+    body = body.trim().match(TEXT_BLOCK_REGEX);
 
     issues.push({
       wg_slug: meta.slug,
@@ -219,8 +220,8 @@ async function importRoadmap() {
   const roadmap = structureDataForRoadmap(workingGroups);
 
   await writeFileAsync(
-    `${ROADMAP_DIRECTORY_PATH}/roadmap.yaml`,
-    yaml.safeDump({
+    `${ROADMAP_DIRECTORY_PATH}/roadmap.json`,
+    JSON.stringify({
       working_groups: roadmap.workingGroups,
       quarters: roadmap.quarters,
       issues: roadmap.issues,

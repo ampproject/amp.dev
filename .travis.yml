@@ -45,6 +45,11 @@ jobs:
   - stage: build
     env: APP_ENV=staging
     install: *1
+    name: Build Pages (DE)
+    script: scripts/unbuffer.sh gulp buildPages --locales de
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
     name: Build Pages (FR)
     script: scripts/unbuffer.sh gulp buildPages --locales fr
   - stage: build

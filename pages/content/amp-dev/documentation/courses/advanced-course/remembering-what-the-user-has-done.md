@@ -90,7 +90,7 @@ To add a default value for a bound property, include the property both with and 
 <p [class]="messageClass" class="text-color-blue">Hello AMP!</p>
 {% endraw %}[/sourcecode]
 
-So far, we’ve used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of white-listed functions. The [documentation](../../../documentation/components/reference/amp-bind.md#expressions) gives a rundown of the values that can be added to an expression.
+So far, we’ve used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of allow-listed functions. The [documentation](../../../documentation/components/reference/amp-bind.md#expressions) gives a rundown of the values that can be added to an expression.
 
 The value of a bound property is set to the value that's returned when an expression is evaluated. For example, this code shows how to create an error message during account creation. The following case checks whether a user's two entered passwords match:
 
@@ -382,7 +382,7 @@ To add a default value for a bound property, include the property both with and 
 <p [class]="messageClass" class="text-color-blue">Hello AMP!</p>
 {% endraw %}[/sourcecode]
 
-So far, we've used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of white-listed functions. The [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#expressions) gives a rundown of the values that can be added to an expression.
+So far, we've used basic expressions that directly referenced a single state variable, but we can get more elaborate. Expressions are a subset of JavaScript. They can include static values such as numbers or strings, state variables, and a set of allow-listed functions. The [documentation]({{g.doc('/content/amp-dev/documentation/components/reference/amp-bind.md', locale=doc.locale).url.path}}#expressions) gives a rundown of the values that can be added to an expression.
 
 For example, this code shows how to create an error message during account creation. The following case checks whether a user's two entered passwords match:
 

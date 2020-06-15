@@ -77,7 +77,7 @@ class Editor {
       mode: 'text/html',
       selectionPointer: true,
       styleActiveLine: true,
-      lineNumbers: false,
+      lineNumbers: true,
       showCursorWhenSelecting: true,
       cursorBlinkRate: 300,
       autoCloseBrackets: true,
