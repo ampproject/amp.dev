@@ -1,9 +1,12 @@
 {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
 
 <div class="ap-m-banner">
-  <a id="top-banner" href="http://go.amp.dev/devx-survey" class="ap-m-banner-link">
+  <a id="top-banner"
+     class="ap-m-banner-link"
+     target="_blank"
+     href="https://events.linuxfoundation.org/openjs-world/features/openjs-collaborator-summit/">
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-    {{ _('Do you build things with AMP? Fill out the AMP Developer Survey!') }}
+    {{ _('Help contribute to AMP! Join us at the OpenJS Collaborator Summit.') }}
   </a>
 {% if banner_closeable %}
   <button class="ap-m-banner-dismiss" on="tap:{{ banner_notification_id }}.dismiss">

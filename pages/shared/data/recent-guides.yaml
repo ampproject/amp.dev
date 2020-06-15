@@ -1,3 +1,7 @@
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md
+  date: '2020-05-28 17:39:06 +0200'
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/webstory_technical_details.md
+  date: '2020-05-20 12:17:48 -0700'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/monetization/content_encryption.md
   date: '2020-04-07 15:53:14 -0700'
 - path: /content/amp-dev/documentation/guides-and-tutorials/integrate/embed-stories.md
@@ -80,9 +84,9 @@
   date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/integrate/amp-to-pwa.md
   date: '2019-02-04 18:46:52 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md
-  date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/combine-amp-pwa.md
+  date: '2019-02-04 18:46:52 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/amp-as-pwa.md
   date: '2019-02-04 18:46:52 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/media_iframes_3p/index.md
   date: '2019-02-03 12:25:13 -0800'
@@ -138,8 +142,6 @@
   date: '2019-01-17 11:30:50 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md
   date: '2018-12-20 15:37:11 +0100'
-- path: /content/amp-dev/documentation/guides-and-tutorials/develop/amp_story_best_practices.md
-  date: '2018-12-20 14:59:36 +0100'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/add_more_pages.md
   date: '2018-12-07 16:50:58 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/start/visual_story/animating_elements.md
@@ -226,11 +228,11 @@
   date: '2018-12-01 03:04:02 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md
   date: '2018-12-01 03:04:02 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
+  date: '2018-12-01 02:17:35 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md
   date: '2018-12-01 02:17:35 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
-  date: '2018-12-01 02:17:35 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
   date: '2018-12-01 02:17:35 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md
   date: '2018-12-01 02:17:35 -0800'

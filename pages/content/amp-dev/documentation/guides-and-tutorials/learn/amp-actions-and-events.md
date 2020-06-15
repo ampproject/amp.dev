@@ -1,15 +1,12 @@
 ---
 $title: Actions and events
-order: 7
+order: 0
 formats:
   - websites
-  - email
   - stories
   - ads
 teaser:
-  text: >-
-    The on attribute is used to install event handlers on elements. The events
-    that are supported depend on the element.
+  text: '[tip type="note"]'
 ---
 
 <!--
@@ -39,13 +36,16 @@ limitations under the License.
 
 
 
+[tip type="note"]
+This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) for the AMP email format.
+[/tip]
+
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
 The value for the syntax is a simple domain-specific language of the form:
 
 [sourcecode:javascript]
-eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 See the table below for descriptions of each part of the syntax.
 
@@ -107,11 +107,13 @@ AMP defines a `tap` event globally that you can listen to on any HTML element (i
 AMP also defines the `hide`, `show` and `toggleVisibility` actions globally that you can trigger on any HTML element.
 
 [tip type="note"]
+
 An element can only be shown if it was previously hidden by a `hide` or `toggleVisibility` action, or by using the [`hidden`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden) attribute. The `show` action does not support elements hidden by CSS `display:none` or AMP's `layout=nodisplay`.
 
 For example, the following is possible in AMP:
 
 [sourcecode:html]
+
 <div id="warning-message">Warning...</div>
 
 <button on="tap:warning-message.hide">Cool, thanks!</button>
@@ -231,6 +233,10 @@ event.index</pre></td>
     <th width="25%">Event</th>
     <th width="35%">Description</th>
     <th width="40%">Data</th>
+  </tr>
+  <tr>
+    <td><code>changeToLayoutContainer</code></td>
+    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
   </tr>
   <tr>
     <td><code>fetch-error</code>(low-trust)</td>
@@ -539,16 +545,24 @@ event.response</pre></td>
     <th>Description</th>
   </tr>
   <tr>
+    <td><code>clear</code></td>
+    <td>Clears all selections from a defined <code>amp-selector</code>.</td>
+  </tr>
+  <tr>
     <td><code>selectUp(delta=INTEGER)</code></td>
-    <td>Moves the selection up by the value of `delta`. The default `delta` is set to 1.</td>
+    <td>Moves the selection up by the value of `delta`. The default `delta` is set to -1. If no options are selected, the selected state will become the value of the last option.</td>
   </tr>
   <tr>
     <td><code>selectDown(delta=INTEGER)</code></td>
-    <td>Moves the selection down by the value of `delta`. The default `delta` is set to -1.</td>
+    <td>Moves the selection down by the value of `delta`. The default `delta` is set to 1. If no options are selected, the selected state will become the value of the first option.</td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Sets the selected element's `selected` attribute if value is 'true', otherwise removes the attribute</td>
+    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.
+
+    You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.
+
+  </td>
   </tr>
 </table>
 
@@ -625,7 +639,7 @@ The actions below are supported in the following AMP video elements: `amp-video`
     <td>Unmutes the video.</td>
   </tr>
   <tr>
-    <td><code>fullscreenenter</code></td>
+    <td><code>fullscreencenter</code></td>
     <td>Takes the video to fullscreen.</td>
   </tr>
 </table>

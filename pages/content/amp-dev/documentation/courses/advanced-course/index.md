@@ -33,7 +33,7 @@ In the final course in this series, we’re going to learn how to change the app
 
 * Dynamically change the content on screen (i.e., filtering and sorting data).
 
-{{ image('/static/img/courses/advanced/image2.png', 744, 1328, align='center third', caption='Our Chico’s Cheese Bikes Site So Far') }}
+{{ image('/static/img/courses/advanced/image2.png', 225, 402, align='center third', caption='Our Chico’s Cheese Bikes Site So Far') }}
 
 {{ image('/static/img/courses/advanced/image10.png', 738, 1324, align='center third', caption='Site With Menu Opened') }}
 

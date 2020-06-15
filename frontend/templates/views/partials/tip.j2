@@ -1,15 +1,22 @@
 {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
 {% if type == 'important' %}
-{% do doc.icons.useIcon('icons/warning.svg') %}
 {% endif %}
 
-<div class="ap-m-tip ap-m-tip-{{ type }}">
-  <div class="ap-m-tip-content">
+<div class="ap-m-tip">
+  <div class="ap-a-ico ap-m-tip-icon">
     {% if type == 'important' %}
-    <div class="ap-a-ico ap-m-tip-icon">
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning"></use></svg>
-    </div>
+    {% do doc.icons.useIcon('icons/warning-sign.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-sign"></use></svg>
+    {% elif type == 'read-on' %}
+    {% do doc.icons.useIcon('icons/bookmark.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bookmark"></use></svg>
+    {% else %}
+    {% do doc.icons.useIcon('icons/speech-bubble.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speech-bubble"></use></svg>
     {% endif %}
-    <p>{{ text }}</p>
+  </div>
+
+  <div class="ap-m-tip-content">
+    {{ text }}
   </div>
 </div>

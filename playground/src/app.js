@@ -35,6 +35,7 @@ import * as Menu from './menu/base.js';
 
 import createSelector from './selector/selector.js';
 import createTemplateDialog from './template-dialog/base.js';
+import createShareAction from './share/';
 import params from './params/base.js';
 import events from './events/events.js';
 import titleUpdater from './title-updater/base.js';
@@ -201,6 +202,11 @@ const templateDialog = createTemplateDialog(loadTemplateButton, {
   onError: (err) => {
     snackbar.show(err);
   },
+});
+// create the share action
+const shareDialog = createShareAction(editor);
+Button.from(document.getElementById('share'), () => {
+  shareDialog.open();
 });
 
 // configure menu

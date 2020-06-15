@@ -49,8 +49,8 @@
       <div class="ap-o-wg-nav">
         <ul>
           {% for group in g.collection('/content/amp-dev/community/working-groups').list_docs(locale=doc.locale) %}
-          <li class="ap-o-wg-nav-bubble {% if group.name in doc.pod_path %} active {% endif %}">
-            <a href="{{ g.doc('/content/amp-dev/community/working-groups/' + group.name, locale=doc.locale).url.path }}">{{ _(group.full_name) }}</a>
+          <li class="ap-o-wg-nav-bubble {% if group.data.name in doc.pod_path %} active {% endif %}">
+            <a href="{{ g.doc('/content/amp-dev/community/working-groups/' + group.data.name, locale=doc.locale).url.path }}">{{ _(group.data.full_name) }}</a>
           </li>
           {% endfor %}
         </ul>
@@ -66,19 +66,19 @@
 
           <section class="ap-o-wg-group-section ap-o-wg-group-description">
             <p>{{ _('Working Group') }}</p>
-            <h2>{{ _(doc.full_name) }}</h2>
-            <p>{{ _(doc.description|markdown|safe) }}</p>
-            <p>{{ _('The facilitator of {name} is: ', name=doc.full_name) }}<a href="#">@{{ doc.facilitator.login }}</a></p>
+            <h2>{{ _(doc.data.full_name) }}</h2>
+            <p>{{ _(doc.data.description|markdown|safe) }}</p>
+            <p>{{ _('The facilitator of {name} is: ', name=doc.data.full_name) }}<a href="https://github.com/{{ doc.data.facilitator.login }}" target="_blank"  rel="noopener" >@{{ doc.data.facilitator.login }}</a></p>
           </section>
 
-          {% if doc.issues %}
+          {% if doc.data.issues %}
           <section class="ap-o-wg-group-section">
             <h3>{{ _('Current Issues') }}</h3>
-            {% if doc.issues|length > 3 %}
+            {% if doc.data.issues|length > 3 %}
             <input type="checkbox" id="load-issues-checkbox"/>
             {% endif %}
             <div class="ap-o-wg-group-issues">
-              {% for issue in doc.issues %}
+              {% for issue in doc.data.issues %}
               <a href={{ issue.html_url }} class="ap-o-wg-issue" target="_blank" rel="noopener">
                 <div class="ap-o-wg-issue-icon">
                   <div class="ap-a-ico">
@@ -100,7 +100,7 @@
               </a>
               {% endfor %}
             </div>
-            {% if doc.issues|length > 3 %}
+            {% if doc.data.issues|length > 3 %}
             <label class="ap-a-btn ap-o-wg-load-btn" for="load-issues-checkbox">
               <span>{{ _('View all') }}</span>
             </label>
@@ -111,21 +111,21 @@
           <section class="ap-o-wg-group-section">
             <h3>{{ _('Members') }}</h3>
             <div class="ap-o-wg-grid">
-              <a href="https://github.com/{{ doc.facilitator.login }}" target="_blank" rel="noopener" class="ap-o-wg-member active">
+              <a href="https://github.com/{{ doc.data.facilitator.login }}" target="_blank" rel="noopener" class="ap-o-wg-member active">
                 <amp-img class="ap-o-wg-member-img"
-                    src="https://github.com/{{ doc.facilitator.login }}.png?size=72"
+                    src="https://github.com/{{ doc.data.facilitator.login }}.png?size=72"
                     width="72"
                     height="72"
                     layout="responsive">
                 </amp-img>
                 <div class="ap-o-wg-member-text">
-                  <h4>{{ doc.facilitator.name }}</h4>
-                  <span>@{{ doc.facilitator.login }}</span>
+                  <h4>{{ doc.data.facilitator.name }}</h4>
+                  <span>@{{ doc.data.facilitator.login }}</span>
                   <p>Facilitator</p>
                 </div>
               </a>
-              {% if doc.members %}
-              {% for member in doc.members %}
+              {% if doc.data.members %}
+              {% for member in doc.data.members %}
               <a href="https://github.com/{{ member.login }}" target="_blank" rel="noopener" class="ap-o-wg-member">
                 <amp-img class="ap-o-wg-member-img"
                     src="https://github.com/{{ member.login }}.png"
@@ -143,10 +143,10 @@
             </div>
           </section>
 
-          {% if doc.communication %}
+          {% if doc.data.communication %}
           <section class="ap-o-wg-group-section">
             <h3>{{ _('Communication Channels') }}</h3>
-            {% for item in doc.communication %}
+            {% for item in doc.data.communication %}
             <div class="ap-o-wg-channel">
               <div class="ap-o-wg-channel-icon ap-o-wg-channel-icon-{{ item.channel }}">
                 <div class="ap-a-ico ap-m-lnk-icon">

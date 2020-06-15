@@ -367,7 +367,7 @@ Recommended style guidelines:
 
 Once you’ve finished, your page should look like this:
 
-{{ image('/static/img/courses/advanced/image7.png', 1512, 1162, caption='The result') }}
+{{ image('/static/img/courses/advanced/image7.png', 504, 387, caption='The result') }}
 
 ### Solution
 
