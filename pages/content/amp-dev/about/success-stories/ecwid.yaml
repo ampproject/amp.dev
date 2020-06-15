@@ -24,7 +24,7 @@ stage:
   subline: MAY 18, 2020
   layout: all
   logo:
-    src: '/static/img/success-stories/ecwid/ecwid-logo.png'
+    image_src: '/static/img/success-stories/ecwid/ecwid-logo.png'
     width: 500
     height: 162
     alt: Ecwid
@@ -50,7 +50,7 @@ contents:
     text: 'Since March 2019, Ecwid has offered its merchants AMP-powered emails as a sales tool to use with their customers. Unlike static email, AMP for email engages customers with dynamic content and interactivity, letting them make purchases from inside the email. “Customers can click through a product carousel, zoom in on product images, and read full product descriptions before they buy,” Suhonen says. “AMP for Email also looks more compelling and provides a better shopping experience.”<br><br>In 2017, Ecwid began offering merchants ways to easily monitor abandoned cart activity and automatically or manually send abandoned cart emails to customers. The company’s AMP for email implementation offers a dynamic shopping experience showing customers the same items they left in their carts, and displaying a button for them to click to complete their purchase. Merchants can easily customize AMP for email notifications with logos, graphics, and messaging. They may also include discounts or other special incentives to make the purchase more attractive.<br><br>“AMP technology made it possible to make abandoned cart emails more dynamic and interactive,” Suhonen says. “Basically, we were able to put part of the checkout process right into the email, which in turn smooths the way to making a purchase.”'
   - layout: quote
     quote: "We believe AMP for email is going to be more widespread. As for e-commerce, buying directly from email will be the new normal"
-    src: '/static/img/success-stories/ecwid/ecwid-logo.png'
+    image_src: '/static/img/success-stories/ecwid/ecwid-logo.png'
     width: 500
     height: 162
     alt: Ecwid
