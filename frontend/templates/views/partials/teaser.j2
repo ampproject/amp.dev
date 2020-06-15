@@ -120,7 +120,7 @@
     <ul class="ap-m-teaser-info-list">
       {% for used_component in teaser_doc.used_components %}
       <li class="ap-m-teaser-info-list-item">
-        {% set component_path = '/content/amp-dev/documentation/components/reference/' + used_component + '.md' %}
+        {% set component_path = '/content/amp-dev/documentation/components/reference/' + used_component + '-v0.1.md' %}
         {% if doc.pod.file_exists(component_path) %}
         <a href="{{ g.doc(component_path, locale=doc.locale).url.path }}" class="ap-m-teaser-info-list-item-link">{{ used_component }}</a>
         {% else %}
