@@ -2176,7 +2176,6 @@ msgstr "AMP le ofrece una forma de dar a los usuarios una experiencia más rápi
 msgid "Allows the creation of rich, eye-catching marketing content with Adobe Animate."
 msgstr "Permite la creación de un contenido de marketing enriquecido y llamativo con Adobe Animate."
 
-<<<<<<< HEAD
 msgid "Web Stories make the production of stories as easy as possible from a technical perspective."
 msgstr ""
 
@@ -2194,7 +2193,6 @@ msgstr "El creador de banners AMPHTML en línea le permite crear fácilmente anu
 
 msgid "Google Web Designer"
 msgstr "Google Web Designer"
->>>>>>> d8206384b... Add translations for website pages
 
 msgid "Create engaging, interactive AMPHTML Ad compliant designs and motion graphics that can run on any device."
 msgstr "Cree diseños y gráficos animados atractivos, interactivos y compatibles con los anuncios AMPHTML, que podrán ejecutarse en cualquier dispositivo."
@@ -2211,7 +2209,6 @@ msgstr "Aumente el promedio de clics"
 msgid "Teads brings AMP'd mobile video inventory to nearly 100 publishers"
 msgstr "Teads ofrece un inventario de videos de AMP para dispositivos móviles a casi 100 editores"
 
-<<<<<<< HEAD
 msgid "Web Stories are lightening fast so that your audience stays engaged and entertained."
 msgstr ""
 
@@ -2239,7 +2236,6 @@ msgstr "Las siguientes optimizaciones combinadas son la razón de que las págin
 #: pages/content/amp-dev/about/how-amp-works.html:29
 msgid "Execute all AMP JavaScript asynchronously"
 msgstr "Ejecución asíncrona de todo el JavaScript de AMP"
->>>>>>> d8206384b... Add translations for website pages
 
 #: pages/content/amp-dev/about/how-amp-works.html:31
 msgid "AMP components may have JavaScript under the hood, but they’re carefully designed to make sure they don’t cause performance degradation. "
