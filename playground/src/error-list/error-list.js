@@ -25,8 +25,6 @@ export function createErrorList(target, trigger) {
   return new ErrorList(target, trigger);
 }
 
-const DESKTOP_WIDTH = 1024;
-
 class ErrorList extends FlyIn {
   constructor(target, trigger) {
     super(target);
@@ -86,12 +84,15 @@ class ErrorList extends FlyIn {
     errorElement.className = `validation-error ${error.icon}`;
     errorElement.dataset.index = index;
 
-    errorElement.innerHTML = (
-      `<div>
-        <p class="message">${error.message} <a href="${error.specUrl}" target="_blank" rel="noopener">Learn&nbsp;more</a></p>
+    errorElement.innerHTML = `<div>
+        <p class="message">
+          ${error.message}
+          <a href="${error.specUrl}" target="_blank" rel="noopener">
+            Learn&nbsp;more
+          </a>
+        </p>
         <div class="location">line ${error.line}, column ${error.col}</div>
-      </div>`
-    );
+      </div>`;
 
     errorElement.addEventListener('click', this.onErrorItemClick.bind(this));
 
