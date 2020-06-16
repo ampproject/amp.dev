@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -63,11 +63,11 @@ class Button {
   }
 
   addClass(clazz) {
-    this._element.classList.toggle(clazz, true);
+    this._element.classList.add(clazz, true);
     return this;
   }
 
   removeClass(clazz) {
-    this._element.classList.toggle(clazz, false);
+    this._element.classList.remove(clazz, false);
   }
 }

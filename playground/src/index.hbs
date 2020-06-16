@@ -51,10 +51,8 @@
       <span class="ap-o-header-text ap-o-header-icon-text uppercase">AMP</span>
       <span class="ap-o-header-text ap-o-header-uppercase">Playground</span>
     </a>
-
       <div id="document-title" tabindex="0" role="button" class="ap-o-header-text caret-right hidden">Untitled</div>
       <div id="toolbar">
-        {{> button/button.hbs id="error-indicator" class="elevation-2dp" text="Valid" disabled=true}}
         {{> button/button.hbs id="save-document" class="hidden" class2="underline" hideOnMobile=true  text="Save"}}
         {{> button/button.hbs id="fork-document" class="border" text="Fork" hideOnMobile=true }}
 
@@ -67,16 +65,14 @@
         <a class="uppercase hide-on-mobile caret-right" href="https://amp.dev">amp.dev</a>
       </div>
     </header>
-    <div id="error-list" class="elevation-8dp"></div>
     <main>
     <section id="source" class="panel active">
-      <div class="panel-header hide-on-mobile">
+      <div class="panel-header">
         <div id="runtime-select"></div>
-        <div class="flex-right">
         {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
-        {{> button/button.hbs id="share" text="SHARE"}}
-        {{> button/button.hbs id="format-source" ariaLabel="format source code" text="FORMAT"}}
-        </div>
+        {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
+        {{> button/button.hbs id="share" text="Share"}}
+        {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
       {{> loader/loader.hbs theme="light"}}
     </section>
@@ -96,7 +92,9 @@
         <div class="preview-sizer"></div>
         <iframe frameborder="0" id="previewIframe" title="AMP Playground Output" class="fadein" style="width: 375px; height: 667px;"></iframe>
       </div>
+
     </section>
     </main>
+    <div id="error-list" class="fly-in fly-in--right fly-in--error" data-title="Validation errors"></div>
   </body>
 </html>
