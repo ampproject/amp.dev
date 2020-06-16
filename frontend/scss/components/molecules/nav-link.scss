@@ -30,7 +30,7 @@
       @include txt-2;
     }
 
-    &.#{molecule('nav-link')}-active {
+    &.active {
       text-decoration: underline;
     }
   }
