@@ -63,7 +63,7 @@ addSplitPaneBehavior(document.querySelector('main'));
 
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');
-const stateListContainer = document.getElementById('state-preview');
+const stateListContainer = document.getElementById('state-view');
 StateView.createStateView(stateListContainer, stateIndicator);
 
 events.subscribe(ErrorList.EVENT_ERROR_SELECTED, (error) =>
