@@ -12,6 +12,9 @@ flyout:
   format: websites
   description: Create flawless web experiences
   icon: amp-websites
+
+teaser:
+
 ---
 
 <section class="ap--stage ap--container-fluid">
@@ -167,66 +170,150 @@ flyout:
   </div>
 </section>
 
-<section class="ap--content">
-  <div class="ap--container-fluid">
-    <div class="ap-m-copy ap-m-copy-center">
-      <h5 class="overline">{{ _('Overline') }}</h5>
-      <h1>{{ _('Headline Title') }}</h5>
-      <h5 class="subline-medium">{{ _('Subline medium copy text.') }}</h5>
+<section class="has-background">
+  <div class="background-triangle"></div>
+  <section class="ap--content">
+    <div class="ap--container-fluid">
+      <div class="ap-m-copy ap-m-copy-center">
+        <h5 class="overline">{{ _('Overline') }}</h5>
+        <h1>{{ _('Headline Title') }}</h5>
+        <h5 class="subline-medium">{{ _('Subline medium copy text.') }}</h5>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="ap--benefits-overview">
+
+    <div class="ap-o-benefits ap--container">
+
+      <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-row-one">
+
+        {% for benefit in doc.benefits.websites.developer %}
+
+          <div class="ap-m-benefit ap-m-benefit-about">
+            <div class="ap-m-benefit-icon">
+              {% do 
+                doc
+                  .icons
+                  .useIcon('icons/' + benefit.icon + '.svg') %}
+              <svg class="ap-m-benefit-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use>
+              </svg>
+            </div>
+            <div class="ap-m-benefit-text">
+              <span class="ap-m-benefit-text-headline">
+                {{ _(benefit.headline) }}</span>
+              <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
+            </div>
+          </div>
+
+        {% endfor %}
+      </div>
+
+      <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-row-two">
+
+        {% for benefit in doc.benefits.websites.business %}
+
+          <div class="ap-m-benefit ap-m-benefit-about">
+            <div class="ap-m-benefit-icon">
+              {% do 
+                doc
+                  .icons
+                  .useIcon('icons/' + benefit.icon + '.svg') %}
+              <svg class="ap-m-benefit-icon">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use>
+              </svg>
+            </div>
+            <div class="ap-m-benefit-text">
+              <span class="ap-m-benefit-text-headline">
+                {{ _(benefit.headline) }}</span>
+              <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
+            </div>
+          </div>
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </section>
+
+  <section class="ap--content">
+    <div class="ap--container-fluid">
+      <div class="masonry-container">
+        <div class="media-container-masonry-big"></div>
+      </div>
+      <div class="masonry-container">
+        <div class="ap-m-copy ap-m-copy-left-small">
+          <h2>{{ _('Images, videos and GIFs') }}</h2>
+          <p>{{ _('Web Stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities.') }}</p>
+        </div>
+        <div class="media-container-masonry media-container-masonry-right-small"></div>
+      </div>
+
+      <div class="masonry-container">
+        <div class="media-container-masonry media-container-masonry-left-small"></div>
+        <div class="ap-m-copy ap-m-copy-right-small">
+          <h2>{{ _('Text and audio') }}</h2>
+          <p>{{ _('Convey facts and figures via bite-sized chunks of one or two sentences – ideal for mobile devices. Choose from different font colors for basic readability. Or add visual elements like subtle black transparent gradient overlays to ensure readability even on random background imagery, for example user generated content. On top of this, you can use short audio files on every page to provide spoken information or background music.') }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
 
-<section class="ap--benefits-overview">
-  <div class="ap-o-benefits ap--container">
-
-    <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-row-one">
-
-      {% for benefit in doc.benefits.websites.developer %}
-
-        <div class="ap-m-benefit">
-          <div class="ap-m-benefit-icon">
-            {% do 
-              doc
-                .icons
-                .useIcon('icons/' + benefit.icon + '.svg') %}
-            <svg class="ap-m-benefit-icon">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use>
-            </svg>
-          </div>
-          <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">
-              {{ _(benefit.headline) }}</span>
-            <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
-          </div>
-        </div>
-
-      {% endfor %}
+<section class="background-blue">
+  <section class="ap--content">
+    <div class="ap--container-fluid">
+      <div class="ap-m-copy ap-m-copy-center">
+        <h5 class="overline overline-white">{{ _('Overline') }}</h5>
+        <h1 class="white">{{ _('Headline Title') }}</h5>
+        <h5 class="subline-medium subline-medium-white">{{ _('Subline medium copy text.') }}</h5>
+      </div>
     </div>
-
-    <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-row-two">
-
-      {% for benefit in doc.benefits.websites.business %}
-
-        <div class="ap-m-benefit">
-          <div class="ap-m-benefit-icon">
-            {% do 
-              doc
-                .icons
-                .useIcon('icons/' + benefit.icon + '.svg') %}
-            <svg class="ap-m-benefit-icon">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use>
-            </svg>
-          </div>
-          <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">
-              {{ _(benefit.headline) }}</span>
-            <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
-          </div>
-        </div>
-
-      {% endfor %}
-
+  </section>
+  <section class="ap--content">
+    <div class="masonry-container">
+      <div class="ap-m-copy ap-m-copy-left-small">
+        <h2>{{ _('Images, videos and GIFs') }}</h2>
+        <p>{{ _('Web Stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities.') }}</p>
+      </div>
+      <div class="media-container-masonry media-container-masonry-right-small"></div>
     </div>
-  </div>
+  </section>
+</section>
+
+<section class="ap--container about-teaser">
+
+  <section class="ap--content teaser-masonry teaser-masonry-left">
+    <a href="#">
+      <div>
+        <div class="about-teaser-image">
+          {# <amp-img></amp-img> #}
+        </div>
+        <div>
+          <div></div>
+          <span></span>
+          <p></p>
+          <span></span>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <section class="ap--content teaser-masonry teaser-masonry-right">
+    <a href="#">
+      <div>
+        <div class="teaser-mansonry-image">
+          {# <amp-img></amp-img> #}
+        </div>
+        <div>
+          <div></div>
+          <span></span>
+          <p></p>
+          <span></span>
+        </div>
+      </div>
+    </a>
+  </section>
+
 </section>

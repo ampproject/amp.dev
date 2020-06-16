@@ -54,16 +54,32 @@
       p:last-child {
         margin-bottom: 0;
       }
+      &-left {
+        &-small {
+          grid-column: 4/10;
+        }
+      }
+      &-right {
+        &-small {
+          grid-column: 15/22;
+        }
+      }
     }
 
     h1 {
       @include hl-xlrg;
       margin-bottom: 1rem;
+      &.white {
+        color: color('white');
+      }
     }
     h5 {
       &.overline {
         margin-bottom: 1rem;
         color: color('blue-ribbon');
+        &-white {
+          color: color('white');
+        }
       }
 
       &.subline-medium {
@@ -71,6 +87,42 @@
         font-size: 1.3125rem;
         font-weight: normal;
         margin-top: 0;
+        &-white {
+          color: color('white');
+        }
+      }
+    }
+
+    .masonry-container {
+      display: grid;
+      grid-gap: 30px;
+      grid-column: 1/25;
+      grid-template-columns: repeat(24, minmax(0, 1fr));
+      align-items: center;
+      margin: 88px 0;
+      .media-container {
+        &-masonry {
+          &-big {
+            height: 460px;
+            background-color: purple;
+            grid-column: 6/20;
+            box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.41);
+          }
+          &-left,
+          &-right {
+            &-small {
+              height: 420px;
+              width: 100%;
+              background-color: purple;
+            }
+          }
+          &-left-small {
+            grid-column: 4/13;
+          }
+          &-right-small {
+            grid-column: 12/22;
+          }
+        }
       }
     }
   }
@@ -401,5 +453,51 @@
   .about-accordion {
     background-color: color('whisper');
     padding: 70px 0 35px 0;
+  }
+
+  .has-background {
+    position: relative;
+    margin-bottom: -100px;
+  }
+  .background {
+    &-blue {
+      background: transparent linear-gradient(215deg, #00dcc0 0%, #005af0 100%)
+        0% 0% no-repeat padding-box;
+    }
+    &-triangle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: top right;
+      background-attachment: fixed;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23EDEDF1"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+    }
+  }
+
+  .#{molecule('benefit')} {
+    &-about {
+      display: flex;
+      flex-direction: column;
+      margin: 0 70px 20px 0;
+    }
+    &-icon {
+      margin: 0 0 20px 0;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.28);
+    }
+    &-text {
+      &-headline {
+        font-size: 1.625rem;
+        font-family: 'Poppins';
+        line-height: 1.9375rem;
+      }
+      &-copy {
+        font-size: 1rem;
+        line-height: 1.6rem;
+      }
+    }
   }
 }
