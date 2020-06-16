@@ -55,14 +55,14 @@ class ErrorList extends FlyIn {
           if (validationResult.status == 'FAIL') {
             this.trigger.addClass('error');
             this.trigger.setHtml(
-              `${errorCount} <span>Error${plurality}</span>`
+              `${errorCount}<span>Error${plurality}</span>`
             );
             return;
           }
           if (errorCount > 0) {
             this.trigger.addClass('warning');
             this.trigger.setHtml(
-              `${errorCount} <span>Warning${plurality}</span>`
+              `${errorCount}<span>Warning${plurality}</span>`
             );
             return;
           }

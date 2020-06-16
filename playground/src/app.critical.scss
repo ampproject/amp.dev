@@ -184,8 +184,15 @@
 
         span {
           display: none;
+
           @media (min-width: 768px) {
             display: inline;
+
+            &:before {
+              content: '';
+              display: inline-block;
+              width: 4px;
+            }
           }
         }
 
