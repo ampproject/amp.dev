@@ -401,7 +401,7 @@ Los `@keyframes` de CSS son, en su mayoría, equivalentes a la definición de fo
 - Las plataformas que no admiten `calc()` y `var()` no podrán aprovechar las ventajas de los polyfills de `amp-animation` cuando se especifiquen los fotogramas clave en CSS. Por lo tanto, se recomienda incluir siempre valores de respaldo en CSS.
 - No se pueden utilizar las extensiones de CSS como [`width()`, `height()`, `num()`, `rand()`, `index()` y `length()`](#css-extensions).
 
-#### Propiedades de fotogramas clave incluidas en la lista blanca <a name="white-listed-properties-for-keyframes"></a>
+#### Propiedades de fotogramas clave incluidas en la lista blanca <a name="allow-listed-properties-for-keyframes"></a>
 
 No se pueden utilizar todas las propiedades de CSS en los fotogramas clave, ya que solo aparecen en la lista blanca las que los navegadores modernos pueden optimizar y animar rápidamente. Esta lista aumentará a medida que se confirme el buen rendimiento de otras propiedades. Por ahora, la lista incluye:
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
@@ -622,7 +622,7 @@ Por ejemplo, la siguiente expresión calcula el retraso en segundos proporcional
 
 El formato SVG es excelente y, por ello, recomendamos su uso en las animaciones.
 
-Las animaciones con SVG se basan en las mismas propiedades de CSS que se describen en la sección [Propiedades de fotogramas clave incluidas en la lista blanca](#white-listed-properties-for-keyframes), con algunos matices:
+Las animaciones con SVG se basan en las mismas propiedades de CSS que se describen en la sección [Propiedades de fotogramas clave incluidas en la lista blanca](#allow-listed-properties-for-keyframes), con algunos matices:
 
 * Los elementos SVG de IE y Edge [no son compatibles con el CSS de las propiedades `transform`](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). La propia animación de `transform` utiliza un polyfill. Sin embargo, no se aplica el estado inicial definido en una hoja de estilo. Si el estado de transformación inicial es importante para IE o Edge, se recomienda duplicarlo mediante el [atributo `transform` de SVG](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
 * Aunque se incluye un polyfill del CSS de `transform` para IE y Edge, no se puede incluir para `transform-origin`. Por lo tanto, cuando se quiera lograr la compatibilidad con IE o Edge, se recomienda utilizar únicamente la forma predeterminada de `transform-origin`.

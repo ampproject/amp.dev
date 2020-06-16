@@ -1,0 +1,16 @@
+@import 'base.scss';
+@import 'components/atoms/_button.scss';
+
+#share-dialog {
+  max-width: 700px;
+  padding: 16px;
+
+  a {
+    display: block;
+    overflow-wrap: break-word;
+    margin-top: 16px;
+  }
+  button {
+    @include btn;
+  }
+}

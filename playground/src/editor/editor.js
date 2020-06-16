@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ class Editor {
       mode: 'text/html',
       selectionPointer: true,
       styleActiveLine: true,
-      lineNumbers: false,
+      lineNumbers: true,
       showCursorWhenSelecting: true,
       cursorBlinkRate: 300,
       autoCloseBrackets: true,

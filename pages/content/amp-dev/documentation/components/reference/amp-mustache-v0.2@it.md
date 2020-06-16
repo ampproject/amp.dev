@@ -51,7 +51,7 @@ Consente il rendering di [Mustache.js](https://github.com/janl/mustache.js/).
 
 | Versione | Descrizione |
 |-------|-----|
-| 0.2 | Supporto per gli elementi `<svg>` e riduzione delle dimensioni dei gruppi (12,2 KB rispetto a 20,5 KB, compressione con gzip).<br><br>Esegue la migrazione a una più moderna libreria di strumenti di pulizia HTML (da Caja a DOMPurify). Per questo motivo, a causa delle differenze nelle whitelist di attributi e tag, potrebbero verificarsi lievi modifiche che provocano interruzioni. Ti consigliamo di verificare le pagine prima di passare alla produzione, per assicurarti che le modifiche al markup generato non influiscano sulla funzionalità. |
+| 0.2 | Supporto per gli elementi `<svg>` e riduzione delle dimensioni dei gruppi (12,2 KB rispetto a 20,5 KB, compressione con gzip).<br><br>Esegue la migrazione a una più moderna libreria di strumenti di pulizia HTML (da Caja a DOMPurify). Per questo motivo, a causa delle differenze nelle allowlist di attributi e tag, potrebbero verificarsi lievi modifiche che provocano interruzioni. Ti consigliamo di verificare le pagine prima di passare alla produzione, per assicurarti che le modifiche al markup generato non influiscano sulla funzionalità. |
 | 0.1 | Implementazione iniziale. |
 
 ## Sintassi <a name="syntax"></a>

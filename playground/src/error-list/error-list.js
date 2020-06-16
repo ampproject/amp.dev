@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,8 +25,6 @@ export function createErrorList(target, trigger) {
   return new ErrorList(target, trigger);
 }
 
-const DESKTOP_WIDTH = 1024;
-
 class ErrorList extends FlyIn {
   constructor(target, trigger) {
     super(target);
@@ -45,17 +43,32 @@ class ErrorList extends FlyIn {
             this.trigger.disable();
             return;
           }
+
           this.trigger.enable();
-          if (validationResult.status == 'PASS') {
-            this.trigger.disable();
+          for (const clazz of ['valid', 'warning', 'error']) {
+            this.trigger.removeClass(clazz);
+          }
+
+          const errorCount = validationResult.errors.length;
+          const plurality = errorCount > 1 ? 's' : '';
+
+          if (validationResult.status == 'FAIL') {
+            this.trigger.addClass('error');
+            this.trigger.setHtml(
+              `${errorCount} <span>Error${plurality}</span>`
+            );
             return;
           }
-          this.trigger.enable();
-          this.trigger.setHtml(
-            validationResult.errors.length +
-              ' Error' +
-              (validationResult.errors.length > 1 ? 's' : '')
-          );
+          if (errorCount > 0) {
+            this.trigger.addClass('warning');
+            this.trigger.setHtml(
+              `${errorCount} <span>Warning${plurality}</span>`
+            );
+            return;
+          }
+
+          this.trigger.addClass('valid');
+          this.trigger.setHtml('valid');
         });
       }
     );
@@ -85,12 +98,15 @@ class ErrorList extends FlyIn {
     errorElement.className = `validation-error ${error.icon}`;
     errorElement.dataset.index = index;
 
-    errorElement.innerHTML = (
-      `<div>
-        <p class="message">${error.message} <a href="${error.specUrl}" target="_blank" rel="noopener">Learn&nbsp;more</a></p>
+    errorElement.innerHTML = `<div>
+        <p class="message">
+          ${error.message}
+          <a href="${error.specUrl}" target="_blank" rel="noopener">
+            Learn&nbsp;more
+          </a>
+        </p>
         <div class="location">line ${error.line}, column ${error.col}</div>
-      </div>`
-    );
+      </div>`;
 
     errorElement.addEventListener('click', this.onErrorItemClick.bind(this));
 

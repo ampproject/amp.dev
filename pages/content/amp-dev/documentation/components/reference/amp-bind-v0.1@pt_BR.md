@@ -217,7 +217,7 @@ As expressões são semelhantes às do JavaScript, mas têm algumas diferenças 
 
 * As expressões só podem acessar o [estado](#state) do documento que as contém.
 * As expressões **não** têm acesso a globais, como `window` ou `document`.
-* Apenas operadores e [funções da lista de permissões](#white-listed-functions) podem ser usados.
+* Apenas operadores e [funções da lista de permissões](#allow-listed-functions) podem ser usados.
 * Funções, classes e loops personalizados geralmente não são permitidos. As funções de seta são permitidas como parâmetros, por exemplo, `Array.prototype.map`.
 * Variáveis indefinidas e array-index-out-of-bounds retornam `null`, em vez de `undefined` ou de gerar erros.
 * Uma expressão única atualmente está limitada a 50 operandos, por motivos de desempenho. [Fale conosco](https://github.com/ampproject/amphtml/issues/new) se esse número for insuficiente para seu caso de uso.
@@ -235,7 +235,7 @@ Todas as expressões a seguir são válidas:
 null || 'default' // 'default'
 ```
 
-# Funções da lista de permissões <a name="white-listed-functions"></a>
+# Funções da lista de permissões <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -607,7 +607,7 @@ Há vários tipos de erros de tempo de execução que podem ser encontrados ao t
   <tr>
     <td>Funções não permitidas</td>
     <td><em>alert não é uma função compatível.</em></td>
-    <td>Use somente <a href="#white-listed-functions">funções da lista de permissões</a>.</td>
+    <td>Use somente <a href="#allow-listed-functions">funções da lista de permissões</a>.</td>
   </tr>
   <tr>
     <td>Resultado corrigido</td>

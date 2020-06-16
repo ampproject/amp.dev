@@ -407,7 +407,7 @@ I `@keyframes` CSS sono per lo più equivalenti alla definizione di fotogrammi c
   - Le piattaforme che non supportano `calc()` e `var()` non saranno in grado di utilizzare polyfill di `amp-animation` quando i fotogrammi chiave sono specificati in CSS. Pertanto, ti consigliamo di includere sempre valori di riserva nel CSS.
   - Le estensioni CSS come [`width()`, `height()`, `num()`, `rand()`, `index()` e `length()`](#css-extensions) non possono essere utilizzate in CSS.
 
-#### Proprietà autorizzate per i fotogrammi chiave <a name="white-listed-properties-for-keyframes"></a>
+#### Proprietà autorizzate per i fotogrammi chiave <a name="allow-listed-properties-for-keyframes"></a>
 
 Non tutte le proprietà CSS possono essere utilizzate nei fotogrammi chiave. Sono autorizzate solo le proprietà CSS che i browser moderni possono ottimizzare e
 animare rapidamente. L'elenco delle proprietà autorizzate si allungherà man mano che verranno confermate le proprietà che hanno un buon
@@ -633,7 +633,7 @@ Ad esempio, la seguente espressione calcola il ritardo in secondi proporzionale 
 
 Gli elementi SVG sono fantastici e consigliamo di utilizzarli per le animazioni.
 
-Le animazioni SVG sono supportate dalle stesse proprietà CSS descritte nell'[elenco delle proprietà autorizzate per i fotogrammi chiave](#white-listed-properties-for-keyframes) con alcune piccole differenze:
+Le animazioni SVG sono supportate dalle stesse proprietà CSS descritte nell'[elenco delle proprietà autorizzate per i fotogrammi chiave](#allow-listed-properties-for-keyframes) con alcune piccole differenze:
 
 * Gli elementi SVG IE/Edge [non supportano le proprietà `transform` di CSS](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). L'animazione `transform` stessa è eseguita in polyfill. Tuttavia, lo stato iniziale definito in un foglio di stile non viene applicato. Se lo stato di trasformazione iniziale è importante su IE/Edge, ti consigliamo di duplicarlo tramite l'[attributo SVG `transform`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
 * Il polyfill di `transform` CSS viene eseguito per IE/Edge, ma purtroppo è impossibile eseguire il polyfill di `transform-origin`. Pertanto, per la compatibilità con IE/Edge, ti consigliamo di utilizzare solo `transform-origin` predefinito.

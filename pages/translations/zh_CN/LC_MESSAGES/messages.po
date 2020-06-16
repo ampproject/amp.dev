@@ -1825,7 +1825,7 @@ msgid "Some things can be made fast and are still a terrible user experience. AM
 msgstr ""
 
 #: pages/content/amp-dev/about/mission-and-vision.html:137
-msgid "No whitelists."
+msgid "No allowlists."
 msgstr ""
 
 #: pages/content/amp-dev/about/mission-and-vision.html:138
