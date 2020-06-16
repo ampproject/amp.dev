@@ -29,7 +29,7 @@ class FlyIn {
     target.innerHTML = `
       <div class="fly-in-header">
         <h2>${title}</h2>
-        <div class="fly-in-close" tabindex="0" role="button"></div>
+        <div class="fly-in-close" tabindex="0" role="button">✕</div>
       </div>
     `;
 

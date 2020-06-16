@@ -125,7 +125,6 @@
 
     .button {
       height: 48px;
-      padding: 16px 10px;
 
       @media (min-width: 786px) {
         padding: 16px 15px;
@@ -141,6 +140,14 @@
 
       svg {
         margin-left: 5px;
+      }
+
+      span {
+        display: none;
+
+        @media (min-width: 786px) {
+          display: inline;
+        }
       }
     }
 
@@ -185,7 +192,7 @@
       & > * {
         border-left: 1px solid rgba(255, 255, 255, 0.2);
 
-        *:first-child {
+        &:first-child {
           margin-right: auto;
           border-right: 1px solid rgba(255, 255, 255, 0.2);
         }
@@ -256,13 +263,15 @@
         color: #000;
       }
 
-      & > * {
-        border-right: 1px solid rgba(0, 0, 0, 0.15);
+      @media (min-width: 786px) {
+        & > * {
+          border-right: 1px solid rgba(0, 0, 0, 0.15);
 
-        &:last-child {
-          margin-left: auto;
-          border-left: 1px solid rgba(0, 0, 0, 0.15);
-          border-right: 0;
+          &:last-child {
+            margin-left: auto;
+            border-left: 1px solid rgba(0, 0, 0, 0.15);
+            border-right: 0;
+          }
         }
       }
 
@@ -325,10 +334,6 @@
 .button:active:not([disabled]), .button:hover:not([disabled]) {
   background-color: var(--dark-bg-color);
   outline: none;
-}
-
-.button[disabled] svg {
-  fill: #dddddd;
 }
 
 .panel-header select {
@@ -530,7 +535,7 @@ main > .panel + .panel {
     transition: transform 0.2s cubic-bezier(0, 0, 0.3, 1);
   }
   #preview.show {
-    z-index: 10000;
+    z-index: 1000;
     transform: translateY(0%);
     pointer-events: auto;
   }
