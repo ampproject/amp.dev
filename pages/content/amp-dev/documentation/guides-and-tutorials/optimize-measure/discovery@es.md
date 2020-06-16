@@ -11,12 +11,14 @@ Para resolver este problema, debemos añadir información sobre la página de AM
 Añade lo siguiente a la página que no es de AMP:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Y esto a la página de AMP:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,6 +27,7 @@ Y esto a la página de AMP:
 Si solo tienes una página, y es una página de AMP, sigues teniendo que añadir el enlace canónico que, simplemente, apuntará a sí mismo:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -43,6 +46,7 @@ Esto no solo es relevante para las páginas de AMP, sino para todas las páginas
 Ejemplo:
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -74,15 +78,16 @@ Ejemplo:
     }
   }
 </script>
+
 [/sourcecode]
 
 Puedes encontrar más ejemplos en la [carpeta de ejemplos de ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), que incluye la sintaxis de atributo HTML alternativa).
 
 [tip type="read-on"] Visita estas páginas para más información sobre datos estructurados:
 
-* Aprende cómo [Estructurar tu contenido para aparecer en Google como resultado enriquecido](https://developers.google.com/search/docs/guides/mark-up-content) (por ejemplo, top stories carousel, recipe cards, etc.).
-* Prueba tus datos estructurados con la [herramienta de pruebas de datos estructurados](https://developers.google.com/structured-data/testing-tool/).
-[/tip]
+- Aprende cómo [Estructurar tu contenido para aparecer en Google como resultado enriquecido](https://developers.google.com/search/docs/guides/mark-up-content) (por ejemplo, top stories carousel, recipe cards, etc.).
+- Prueba tus datos estructurados con la [herramienta de pruebas de datos estructurados](https://developers.google.com/structured-data/testing-tool/).
+  [/tip]
 
 ### Otros metadatos para aún más plataformas
 

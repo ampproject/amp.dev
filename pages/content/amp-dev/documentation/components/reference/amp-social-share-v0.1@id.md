@@ -2,11 +2,10 @@
 $title: amp-social-share
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: The share tracking feature is under development.
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,10 +23,7 @@ teaser:
      limitations under the License.
 -->
 
-
-
 Menampilkan tombol berbagi di platform sosial.
-
 
 <table>
   <tr>
@@ -65,10 +61,15 @@ Tombol berbagi otomatis menebak beberapa setelan default untuk sejumlah penyedia
 **Contoh: Meneruskan parameter**
 
 Jika ingin meneruskan parameter ke endpoint berbagi, Anda dapat menentukan `data-param-<attribute>` yang akan ditambahkan ke akhir endpoint berbagi.
+
 ```html
-<amp-social-share type="linkedin" width="60" height="44"
-    data-param-text="Hello world"
-    data-param-url="https://example.com/">
+<amp-social-share
+  type="linkedin"
+  width="60"
+  height="44"
+  data-param-text="Hello world"
+  data-param-url="https://example.com/"
+>
 </amp-social-share>
 ```
 
@@ -229,9 +230,11 @@ Selain penyedia yang dikonfigurasi sebelumnya, Anda dapat menggunakan penyedia y
 Contoh berikut membuat tombol berbagi melalui Facebook Messenger dengan menetapkan atribut `data-share-endpoint` ke endpoint yang benar untuk protokol kustom Facebook Messenger.
 
 ```html
-<amp-social-share type="facebookmessenger"
-    data-share-endpoint="fb-messenger://share"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="facebookmessenger"
+  data-share-endpoint="fb-messenger://share"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 
@@ -250,8 +253,9 @@ Kunjungi [AMP Start](https://ampstart.com/components#links-and-sharing) untuk li
 ### Gaya Kustom <a name="custom-styles"></a>
 
 Terkadang Anda ingin memberikan gaya Anda sendiri. Anda dapat mengganti gaya yang disediakan dengan mudah, seperti berikut:
+
 ```css
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
   background: red;
   background-image: url(datauri:svg/myownsvgicon);
 }
@@ -262,8 +266,10 @@ amp-social-share[type="twitter"] {
 Anda dapat menggunakan [penggantian variabel AMP global](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) dalam elemen `<amp-social-share>`. Pada contoh di bawah, `TITLE` diganti dengan judul halaman dan `CANONICAL_URL` diganti dengan URL kanonis dokumen.
 
 ```html
-<amp-social-share type="whatsapp"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="whatsapp"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 

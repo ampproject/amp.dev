@@ -12,7 +12,11 @@ $title: 添加字体
 在本教程中，我们将使用 `<link>` 标记向网页中添加字体。首先，向 `<head>` 中**添加**一个样式表链接，以请求 Raleway 字体：
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 现在，**更新**您的 CSS `body` 选择器，以添加对 Raleway 的引用：

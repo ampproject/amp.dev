@@ -12,41 +12,44 @@ e envia os dados de análise ao provedor de terceiros,
 o [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -59,9 +62,9 @@ O código de exemplo acima serve para mostrar como funciona o processo, mas não
 
 A tecnologia AMP é compatível com dois padrões comuns de coleta de dados:
 
-* o processamento feito por um ponto de extremidade do editor para sistemas de análise internos
-* o processamento feito por um ponto de extremidade do fornecedor para interoperabilidade com uma solução própria,
-como o [Adobe Analytics](https://helpx.adobe.com/br/support/analytics.html), o [Chartbeat](http://support.chartbeat.com/docs/) (em inglês) e o [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)
+- o processamento feito por um ponto de extremidade do editor para sistemas de análise internos
+- o processamento feito por um ponto de extremidade do fornecedor para interoperabilidade com uma solução própria,
+  como o [Adobe Analytics](https://helpx.adobe.com/br/support/analytics.html), o [Chartbeat](http://support.chartbeat.com/docs/) (em inglês) e o [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)
 
 Para enviar dados a um provedor de análise,
 inclua o atributo `type` na tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) e defina o valor dele de acordo com
@@ -105,7 +108,9 @@ Para carregar as configurações remotas, primeiro
 inclua o atributo "config" na tag [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 Depois disso, crie o conteúdo JSON do URL remoto.
@@ -227,7 +232,7 @@ e cada vez que uma tag `a` recebe um clique:
 ```
 
 [tip type="important"]
- A abordagem acima só é recomendada para páginas AMP, e não para anúncios HTML para AMP. Como a prioridade da análise é menor que a do conteúdo da página, recomendamos rastrear os cliques usando um redirecionamento do navegador para evitar perdas.
+A abordagem acima só é recomendada para páginas AMP, e não para anúncios HTML para AMP. Como a prioridade da análise é menor que a do conteúdo da página, recomendamos rastrear os cliques usando um redirecionamento do navegador para evitar perdas.
 [/tip]
 
 A tecnologia AMP é compatível com as seguintes configurações de acionador:
@@ -340,26 +345,26 @@ e variáveis definidas no nível superior, nos acionadores e no nível da plataf
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

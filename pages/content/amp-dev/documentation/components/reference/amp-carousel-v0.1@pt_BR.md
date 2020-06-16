@@ -2,13 +2,12 @@
 $title: amp-carousel
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Exibe vários conteúdos semelhantes em um eixo horizontal.
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Um carrossel genérico para exibir vários conteúdos semelhantes em um eixo horizontal, que visa ser flexível e com excelente desempenho.
 
@@ -61,20 +58,27 @@ O carrossel consiste em um número arbitrário de itens, bem como setas de naveg
 O carrossel avança entre os itens se o usuário deslizar o dedo, usar as teclas de seta ou clicar em uma seta de navegação opcional.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel width="450"
-  height="300">
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+<amp-carousel width="450" height="300">
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
     width="450"
-    height="300"></amp-img>
+    height="300"
+  ></amp-img>
 </amp-carousel>
 ```
+
 [/example]
 
 # Avançar para um slide específico <a name="advancing-to-a-specific-slide"></a>
@@ -84,49 +88,65 @@ Definir um método para o atributo `on` em um elemento `tap:carousel-id.goToSlid
 No exemplo a seguir, temos um carrossel de três imagens com botões de visualização abaixo do carrossel. Quando um usuário clica em um dos botões, o item correspondente do carrossel é exibido.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel id="carousel-with-preview"
+<amp-carousel
+  id="carousel-with-preview"
+  width="450"
+  height="300"
+  layout="responsive"
+  type="slides"
+>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
     height="300"
     layout="responsive"
-    type="slides">
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="apples"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="lemons"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="blueberries"></amp-img>
-  </amp-carousel>
-  <div class="carousel-preview">
-    <button on="tap:carousel-with-preview.goToSlide(index=0)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-        width="60"
-        height="40"
-        alt="apples"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=1)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-        width="60"
-        height="40"
-        alt="lemons"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=2)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-        width="60"
-        height="40"
-        alt="blueberries"></amp-img>
-    </button>
-  </div>
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
 ```
+
 [/example]
 
 # Atributos <a name="attributes"></a>
@@ -188,6 +208,7 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
             <em>Exemplo: exibição de um carrossel de slides com controles, looping e reprodução automática com atraso</em>
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
 <amp-carousel type="slides"
   width="450"
@@ -209,22 +230,24 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
     height="300"></amp-img>
 </amp-carousel>
 ```
+
 [/example]</td>
-          </tr>
-          <tr>
-            <td width="40%"><strong>common attributes</strong></td>
-            <td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
-          </tr>
-        </table>
+
+</tr>
+<tr>
+<td width="40%"><strong>common attributes</strong></td>
+<td>Este elemento inclui <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atributos comuns</a> estendidos a componentes de AMP.</td>
+</tr>
+</table>
 
 # Estilo <a name="styling"></a>
 
-* Você pode usar o seletor de elemento `amp-carousel` para estilizá-lo à vontade.
-* Você pode usar o seletor de classe `.amp-carousel-slide` para segmentar itens do carrossel.
-* Quando o estado visual de um botão `amp-carousel` está desativado, ele fica oculto.
-* Por padrão, o `.amp-carousel-button` usa um SVG in-line como a imagem de plano de fundo dos botões. Você pode substituí-lo por seu próprio SVG ou imagem, como no exemplo abaixo.
+- Você pode usar o seletor de elemento `amp-carousel` para estilizá-lo à vontade.
+- Você pode usar o seletor de classe `.amp-carousel-slide` para segmentar itens do carrossel.
+- Quando o estado visual de um botão `amp-carousel` está desativado, ele fica oculto.
+- Por padrão, o `.amp-carousel-button` usa um SVG in-line como a imagem de plano de fundo dos botões. Você pode substituí-lo por seu próprio SVG ou imagem, como no exemplo abaixo.
 
-*Exemplo: SVG in-line padrão `.amp-carousel-button`*
+_Exemplo: SVG in-line padrão `.amp-carousel-button`_
 
 ```css
 .amp-carousel-button-prev {
@@ -233,7 +256,7 @@ No exemplo a seguir, temos um carrossel de três imagens com botões de visualiz
 }
 ```
 
-*Exemplo: substituição do SVG padrão in-line `.amp-carousel-button`*
+_Exemplo: substituição do SVG padrão in-line `.amp-carousel-button`_
 
 ```css
 .amp-carousel-button-prev {

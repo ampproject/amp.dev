@@ -7,7 +7,7 @@ $sitemap:
 
 Start
 
-[example  preview="inline" playground="true"]
+[example preview="inline" playground="true"]
 
 ```html
 <h1>Headline</h1>

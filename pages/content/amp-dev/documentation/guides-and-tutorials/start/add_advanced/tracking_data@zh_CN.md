@@ -8,13 +8,28 @@ $title: 利用分析工具跟踪互动情况
 
 ```html
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    (i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    'script',
+    '//www.google-analytics.com/analytics.js',
+    'ga'
+  );
 
-ga('create', 'UA-XXXXX-Y', 'auto');
-ga('send', 'pageview');
+  ga('create', 'UA-XXXXX-Y', 'auto');
+  ga('send', 'pageview');
 </script>
 ```
 
@@ -23,29 +38,33 @@ ga('send', 'pageview');
 为了能够在 AMP 中复制此功能，我们必须先在文档的 `<head>` 中**添加** [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件库：
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 然后，将 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件**添加**到文档的 `body` 末尾处：
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -59,31 +78,31 @@ ga('send', 'pageview');
 
 ```html
 <amp-analytics type="googleanalytics">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-YYYY-Y"
-  },
-  "triggers": {
-    "default pageview": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
       "vars": {
-        "title": "Name of the Article"
-      }
-    },
-    "click on #header trigger": {
-      "on": "click",
-      "selector": "#header",
-      "request": "event",
-      "vars": {
-        "eventCategory": "examples",
-        "eventAction": "clicked-header"
+        "account": "UA-YYYY-Y"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Name of the Article"
+          }
+        },
+        "click on #header trigger": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "examples",
+            "eventAction": "clicked-header"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 

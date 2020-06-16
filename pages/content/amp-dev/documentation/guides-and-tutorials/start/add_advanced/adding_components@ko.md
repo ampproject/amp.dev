@@ -4,13 +4,13 @@ $title: 확장 AMP 구성요소 추가
 
 AMP의 구성요소 시스템을 이용하면 최소한의 노력으로 기사에 효율적인 반응형 기능을 빠르게 빌드할 수 있습니다. AMP HTML 라이브러리의 AMP 구성요소는 3가지입니다.
 
-- **기본 제공**: 기본 AMP 자바스크립트 라이브러리(`<head>` 태그에 지정됨)에 포함된 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 및 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 등의 구성요소입니다.  이러한 구성요소는 AMP 문서에서 즉시 사용할 수 있습니다.
+- **기본 제공**: 기본 AMP 자바스크립트 라이브러리(`<head>` 태그에 지정됨)에 포함된 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 및 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 등의 구성요소입니다. 이러한 구성요소는 AMP 문서에서 즉시 사용할 수 있습니다.
 
-- **확장**: 기본 라이브러리의 확장이며, 맞춤 요소로 문서에 명시적으로 포함되어야 합니다.  맞춤 요소의 경우 특정 스크립트를 `<head>` 섹션에 추가해야 합니다(예: `<script async custom-element="amp-video" ...`).
+- **확장**: 기본 라이브러리의 확장이며, 맞춤 요소로 문서에 명시적으로 포함되어야 합니다. 맞춤 요소의 경우 특정 스크립트를 `<head>` 섹션에 추가해야 합니다(예: `<script async custom-element="amp-video" ...`).
 
-- **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 구성요소입니다. 개발자는 실험용 구성요소가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다.  [실험 기능](../../../../documentation/guides-and-tutorials/learn/experimental.md)에서 자세히 알아보세요.
+- **실험용**: 이미 출시되었지만 아직 폭넓게 사용할 수 없는 구성요소입니다. 개발자는 실험용 구성요소가 완전히 출시되기 전에 이러한 기능을 사용할 수 있습니다. [실험 기능](../../../../documentation/guides-and-tutorials/learn/experimental.md)에서 자세히 알아보세요.
 
-Google의 샘플에서는 이미 기본 제공 구성요소인 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 가이드에서는 이 구성요소가 AMP 레이아웃 시스템과 어떤 관련이 있는지 살펴보았습니다.  이제 자주 사용되는 **확장** AMP 구성요소를 뉴스 기사에 추가해 보겠습니다.
+Google의 샘플에서는 이미 기본 제공 구성요소인 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 가이드에서는 이 구성요소가 AMP 레이아웃 시스템과 어떤 관련이 있는지 살펴보았습니다. 이제 자주 사용되는 **확장** AMP 구성요소를 뉴스 기사에 추가해 보겠습니다.
 
 ## 광고로 수익 창출하기
 
@@ -23,7 +23,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -38,7 +39,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -50,14 +52,15 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 개발자 콘솔에서 `Mixed Content` 또는 `XMLHttpRequest cannot load` 등의 오류가 생길 수 있습니다. `Mixed Content` 오류는 A9 광고와 관련이 있을 수 있으며 로드된 모든 콘텐츠가 안전하지 않기 때문에 생깁니다. 이러한 사항은 AMP에 광고를 게재할 때 항상 주의해야 합니다.
 [/tip]
 
-아래 두 개의 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)를 통해 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)에서 광고 플랫폼 기능을 지원할 수 있도록 제공하는 유연성의 예를 확인할 수 있습니다.  여기에서는 DoubleClick의 대시보드를 사용하여 특정 국가에서만 표시되는 두 개의 DoubleClick 테스트 광고를 구성했습니다. 첫 번째 광고는 영국에서만 표시되고 두 번째 광고는 미국에서만 표시됩니다.  AMP 문서에서 앞서 추가한 광고 아래에 이 두 개의 지역 타겟팅 광고 구성을 **추가**해 보세요.
+아래 두 개의 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)를 통해 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)에서 광고 플랫폼 기능을 지원할 수 있도록 제공하는 유연성의 예를 확인할 수 있습니다. 여기에서는 DoubleClick의 대시보드를 사용하여 특정 국가에서만 표시되는 두 개의 DoubleClick 테스트 광고를 구성했습니다. 첫 번째 광고는 영국에서만 표시되고 두 번째 광고는 미국에서만 표시됩니다. AMP 문서에서 앞서 추가한 광고 아래에 이 두 개의 지역 타겟팅 광고 구성을 **추가**해 보세요.
 
 ```html
 <amp-ad
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -65,7 +68,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -97,6 +101,7 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 - 기사 인용
 
 ## YouTube 동영상 삽입하기
+
 문서에 YouTube 동영상을 삽입해 보겠습니다. AMP 문서의 `<header>` 바로 뒤(앞서 추가한 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 위)에 다음 코드를 **추가**하세요.
 
 ```html
@@ -104,7 +109,8 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
@@ -124,7 +130,11 @@ AMP 광고는 [`amp-ad`](../../../../documentation/components/reference/amp-ad.m
 `<head>` 태그에 아래 스크립트를 **추가**하세요.
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 페이지를 **새로고침**하면 YouTube 동영상이 표시됩니다.
@@ -140,12 +150,17 @@ YouTube 동영상 삽입에 관해 자세히 알아보려면 [`amp-youtube`](../
 [/tip]
 
 ## 트윗 표시하기
+
 사전에 서식이 지정된 트위터의 트윗을 삽입하는 기능은 뉴스 기사에서 널리 쓰입니다. [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) 구성요소로 이 기능을 간편하게 사용할 수 있습니다.
 
 먼저 문서의 `<head>` 태그에 다음 자바스크립트 요청을 추가하세요.
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 이제 이 코드를 기사에 **추가**하여 트윗을 삽입하세요.
@@ -155,7 +170,8 @@ YouTube 동영상 삽입에 관해 자세히 알아보려면 [`amp-youtube`](../
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -182,7 +198,11 @@ AMP에서는 이러한 상황을 위해 특별히 만들어진 [`amp-fit-text`](
 직접 해보겠습니다. 먼저 구성요소 라이브러리를 `<head>` 태그에 **추가**하세요.
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 페이지에 다음을 추가하세요.
@@ -207,7 +227,11 @@ AMP에서는 이러한 상황을 위해 특별히 만들어진 [`amp-fit-text`](
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

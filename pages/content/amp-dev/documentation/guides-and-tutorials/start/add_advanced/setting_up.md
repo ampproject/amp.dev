@@ -34,7 +34,7 @@ The project directory contains several example resources files and the starting 
 
 ### Step 2. Run the sample page
 
-To test the sample AMP page, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing.  Here are some options, choose the one that works best for you:
+To test the sample AMP page, we need to access the files from a web server. There are several ways to create a temporary local web server for the purposes of testing. Here are some options, choose the one that works best for you:
 
 - [“Web Server for Chrome” Google Chrome app](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [A local HTTP Python server](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

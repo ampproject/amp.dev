@@ -2,12 +2,10 @@
 $title: amp-social-share
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: Функция отслеживания публикаций ссылок на ваши страницы сейчас разрабатывается.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,10 +23,7 @@ teaser:
      limitations under the License.
 -->
 
-
-
 Кнопка, с помощью которой можно поделиться контентом.
-
 
 <table>
   <tr>
@@ -66,10 +61,15 @@ teaser:
 **Передача параметров**
 
 Если вы хотите, чтобы конечной точке передавались параметры, добавьте в код атрибут `data-param-<attribute>`.
+
 ```html
-<amp-social-share type="linkedin" width="60" height="44"
-    data-param-text="Hello world"
-    data-param-url="https://example.com/">
+<amp-social-share
+  type="linkedin"
+  width="60"
+  height="44"
+  data-param-text="Hello world"
+  data-param-url="https://example.com/"
+>
 </amp-social-share>
 ```
 
@@ -230,9 +230,11 @@ LinkedIn входит в число предварительно настрое�
 В этом примере представлен код, с помощью которого создается кнопка для отправки контента через Facebook Messenger. Нужная конечная точка для специального протокола Facebook Messenger задана в атрибуте `data-share-endpoint`.
 
 ```html
-<amp-social-share type="facebookmessenger"
-    data-share-endpoint="fb-messenger://share"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="facebookmessenger"
+  data-share-endpoint="fb-messenger://share"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 
@@ -251,8 +253,9 @@ LinkedIn входит в число предварительно настрое�
 ### Собственные стили <a name="custom-styles"></a>
 
 Иногда вам может понадобиться применить собственный стиль. В таких случаях достаточно просто переопределить стандартные стили, например так:
+
 ```css
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
   background: red;
   background-image: url(datauri:svg/myownsvgicon);
 }
@@ -263,8 +266,10 @@ amp-social-share[type="twitter"] {
 Вы можете указывать в элементе `<amp-social-share>` переменные [в соответствии с общими правилами, регулирующими их использование с AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). В примере ниже переменная `TITLE` заменяется заголовком страницы, а `CANONICAL_URL` – каноническим URL документа.
 
 ```html
-<amp-social-share type="whatsapp"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="whatsapp"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 

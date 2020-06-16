@@ -2,13 +2,11 @@
 $title: amp-selector
 $category@: dynamic-content
 formats:
-- websites
-- email
+  - websites
+  - email
 teaser:
   text: Represents a control that presents a menu of options and lets the user choose from it.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Mewakili kontrol yang menampilkan menu opsi dan memungkinkan pengguna memilih dari menu tersebut.
 
@@ -45,29 +41,31 @@ Mewakili kontrol yang menampilkan menu opsi dan memungkinkan pengguna memilih da
   </tr>
 </table>
 
-
 ## Perilaku <a name="behavior"></a>
 
 AMP selector adalah kontrol yang menampilkan daftar opsi dan memungkinkan pengguna memilih satu atau beberapa opsi. Isi opsi tidak terbatas pada teks.
 
-* `amp-selector` dapat berisi sembarang elemen HTML atau komponen AMP (misalnya `amp-carousel`, `amp-img`, dll.).
-* Sebuah `amp-selector` tidak boleh berisi kontrol `amp-selector` bertingkat.
-* Opsi yang dapat dipilih bisa ditetapkan dengan menambahkan atribut `option` ke elemen dan menetapkan nilai ke atribut (misalnya `<li option='value'></li>`).
-* Opsi yang dinonaktifkan dapat ditetapkan dengan menambahkan atribut `disabled` ke elemen (misalnya `<li option='d' disabled></li>`).
-* Opsi yang dipilih sebelumnya dapat ditetapkan dengan menambahkan atribut `selected` ke elemen (misalnya `<li option='b' selected></li>`).
-* Untuk mengizinkan beberapa pilihan, tambahkan atribut `multiple` ke elemen `amp-selector`.  Secara default, `amp-selector` memungkinkan satu pilihan pada satu waktu.
-* Untuk menonaktifkan seluruh `amp-selector`, tambahkan atribut `disabled` ke elemen `amp-selector`.
-* Apabila `amp-selector` berisi atribut `name`, dan `amp-selector` berada di dalam tag `form`, maka jika peristiwa kirim terjadi pada formulir, `amp-selector` akan berperilaku seperti grup tombol pilihan/kotak centang dan mengirim nilai yang dipilih (yang ditetapkan untuk opsi itu) ke nama `amp-selector`.
+- `amp-selector` dapat berisi sembarang elemen HTML atau komponen AMP (misalnya `amp-carousel`, `amp-img`, dll.).
+- Sebuah `amp-selector` tidak boleh berisi kontrol `amp-selector` bertingkat.
+- Opsi yang dapat dipilih bisa ditetapkan dengan menambahkan atribut `option` ke elemen dan menetapkan nilai ke atribut (misalnya `<li option='value'></li>`).
+- Opsi yang dinonaktifkan dapat ditetapkan dengan menambahkan atribut `disabled` ke elemen (misalnya `<li option='d' disabled></li>`).
+- Opsi yang dipilih sebelumnya dapat ditetapkan dengan menambahkan atribut `selected` ke elemen (misalnya `<li option='b' selected></li>`).
+- Untuk mengizinkan beberapa pilihan, tambahkan atribut `multiple` ke elemen `amp-selector`. Secara default, `amp-selector` memungkinkan satu pilihan pada satu waktu.
+- Untuk menonaktifkan seluruh `amp-selector`, tambahkan atribut `disabled` ke elemen `amp-selector`.
+- Apabila `amp-selector` berisi atribut `name`, dan `amp-selector` berada di dalam tag `form`, maka jika peristiwa kirim terjadi pada formulir, `amp-selector` akan berperilaku seperti grup tombol pilihan/kotak centang dan mengirim nilai yang dipilih (yang ditetapkan untuk opsi itu) ke nama `amp-selector`.
 
 Contoh:
 
 ```html
-
 <form id="form1" action="/" method="get" target="_blank">
   <amp-selector name="single_image_select" layout="container">
     <ul>
-      <li><amp-img src="/img1.png" width="50" height="50" option="1"></amp-img></li>
-      <li><amp-img src="/img2.png" width="50" height="50" option="2"></amp-img></li>
+      <li>
+        <amp-img src="/img1.png" width="50" height="50" option="1"></amp-img>
+      </li>
+      <li>
+        <amp-img src="/img2.png" width="50" height="50" option="2"></amp-img>
+      </li>
       <li option="na" selected="">None of the Above</li>
     </ul>
   </amp-selector>
@@ -79,21 +77,52 @@ Contoh:
   <amp-selector name="multi_image_select_1" layout="container" multiple="">
     <amp-carousel id="carousel-1" width="200" height="60" controls="">
       <amp-img src="/img1.png" width="80" height="60" option="a"></amp-img>
-      <amp-img src="/img2.png" width="80" height="60" option="b" selected=""></amp-img>
+      <amp-img
+        src="/img2.png"
+        width="80"
+        height="60"
+        option="b"
+        selected=""
+      ></amp-img>
       <amp-img src="/img3.png" width="80" height="60" option="c"></amp-img>
-      <amp-img src="/img4.png" width="80" height="60" option="d" disabled=""></amp-img>
+      <amp-img
+        src="/img4.png"
+        width="80"
+        height="60"
+        option="d"
+        disabled=""
+      ></amp-img>
     </amp-carousel>
   </amp-selector>
 </form>
 
-<p><amp-selector name="multi_image_select_2" layout="container" multiple="" form="form1">
-  <amp-carousel height="300" id="carousel-1" type="slides" width="400" controls="">
-    <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
-    <amp-img height="60" src="/img2.png" width="80" option="b" selected=""></amp-img>
-    <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
-    <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
-  </amp-carousel>
-</amp-selector>
+<p>
+  <amp-selector
+    name="multi_image_select_2"
+    layout="container"
+    multiple=""
+    form="form1"
+  >
+    <amp-carousel
+      height="300"
+      id="carousel-1"
+      type="slides"
+      width="400"
+      controls=""
+    >
+      <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
+      <amp-img
+        height="60"
+        src="/img2.png"
+        width="80"
+        option="b"
+        selected=""
+      ></amp-img>
+      <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
+      <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
+    </amp-carousel>
+  </amp-selector>
+</p>
 ```
 
 ## Menghapus pilihan <a name="clearing-selections"></a>
@@ -131,6 +160,7 @@ Lihat demo langsung di [AMP By Example](https://ampbyexample.com/components/amp-
     <ul><li><code>none</code>  (default): Tombol tab mengubah fokus antar-item dalam <code>amp-selector</code>. Pengguna harus menekan Enter atau spasi untuk mengubah pilihan. Tombol panah dinonaktifkan.</li>
     <li><code>focus</code>: Tombol tab memberikan fokus pada <code>amp-selector</code>. Pengguna berpindah-pindah item menggunakan tombol panah. Harus menekan spasi atau Enter untuk mengubah pilihan.</li><li>
     <code>select</code>: Tombol tab memberikan fokus pada <code>amp-selector</code>. Pilihan berubah saat pengguna berpindah-pindah opsi menggunakan tombol panah.</li></ul></td>
+
   </tr>
     </table>
 

@@ -32,4 +32,5 @@ Curso consiste em uma série de projetos práticos, a maioria dos passos o condu
 - O curso usa o editor online Glitch. Não é necessário IDE ou servidor web local web!
 
 ### Certificação
+
 Se você está interessado em nosso programa de certificação, por favor <a href="mailto:morsssss@ampproject.org">entre em contato.</a>

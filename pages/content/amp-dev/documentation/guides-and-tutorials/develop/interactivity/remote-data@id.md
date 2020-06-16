@@ -16,15 +16,15 @@ Anda juga dapat mengikat atribut `src` untuk elemen [`<amp-state>`](../../../../
 
 Mari kita manfaatkan kemampuan pengambilan data jarak jauh untuk mencari harga SKU di contoh. Server pengembangan Express.js di `app.js` telah memiliki titik akhir `/shirts/sizesAndPrices?shirt=<sku>` yang, jika diberi SKU kemeja, menampilkan ukuran yang tersedia dan harga untuk setiap ukuran. Server pengembangan ini mengirimkan respons dengan penundaan buatan selama 1 detik untuk menyimulasikan latensi jaringan.
 
-|  Permintaan                              |  Respons |
-|---------------------------------------|-----------|
+| Permintaan                            | Respons                                      |
+| ------------------------------------- | -------------------------------------------- |
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Serupa dengan data JSON dalam elemen [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state), data jarak jauh yang ditampilkan dari pengambilan ini digabungkan dan tersedia di atribut `id` elemen. Misalnya, data yang ditampilkan dari contoh respons di atas dapat diakses di ekspresi:
 
-|  Ekspresi                  |  Hasil |
-|------------------------------|---------|
-| `shirts['1001'].sizes['XS']` | `8.99`  |
+| Ekspresi                     | Hasil  |
+| ---------------------------- | ------ |
+| `shirts['1001'].sizes['XS']` | `8.99` |
 
 ### Mengikat data
 
@@ -33,7 +33,10 @@ Sekarang, mari kita terapkan hal ini ke contoh e-commerce. Pertama-tama, ambil d
 ```html
 <!-- Jika `selected.sku` berubah, update atribut `src` dan ambil
      JSON di URL baru. Kemudian, gabungkan data tersebut pada `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### Menunjukkan ukuran yang tidak tersedia
@@ -70,7 +73,7 @@ Sekarang, muat ulang halaman dan cobalah. Memilih SKU baru (warna kemeja) akan m
 
 ### Menentukan status awal
 
-Namun ada sedikit masalah -- bagaimana dengan kemeja hitam, yaitu warna default yang dipilih?  Kita perlu menambahkan data ukuran dan harga kemeja hitam ke `amp-state#shirts` karena [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) hanya akan berjalan sebagai tanggapan terhadap tindakan pengguna yang eksplisit:
+Namun ada sedikit masalah -- bagaimana dengan kemeja hitam, yaitu warna default yang dipilih? Kita perlu menambahkan data ukuran dan harga kemeja hitam ke `amp-state#shirts` karena [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) hanya akan berjalan sebagai tanggapan terhadap tindakan pengguna yang eksplisit:
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -103,16 +106,22 @@ Selain itu, kita perlu mengupdate status default elemen yang relevan:
       </td>
       <!-- Tambahkan kelas 'unavailable' ke 3 elemen <td> berikutnya
            agar konsisten dengan ukuran SKU default yang tersedia. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -131,8 +140,10 @@ Toko AMPPAREL kita tidak biasa karena harga kemeja berbeda berdasarkan warna mau
 ```html
 <!-- Jika elemen dipilih, setel variabel `selectedSize` ke
      nilai atribut "option" elemen yang dipilih.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 Perhatikan bahwa kita tidak menginisialisasi nilai `selectedSize` melalui elemen `amp-state#selected`. Hal ini karena kita sengaja tidak memberikan ukuran default yang dipilih, dan ingin mendorong pengguna untuk memilih ukuran.
@@ -142,7 +153,8 @@ Tips: Selain untuk mengubah variabel yang ada, `AMP.setState()` juga dapat digun
 Tambahkan elemen `<span>` baru yang mencakup label harga dan ubah teks defaultnya menjadi "---" karena tidak ada pilihan ukuran default.
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Tampilkan harga kemeja yang dipilih untuk ukuran yang dipilih jika tersedia.
        Jika tidak, tampilkan teks placeholder '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -160,9 +172,13 @@ Kita hampir selesai. Mari nonaktifkan tombol "Tambahkan ke keranjang" jika ukura
      1. Ukuran tidak dipilih, ATAU
      2. Ukuran yang tersedia untuk SKU terpilih belum diambil
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
-**Cobalah**:  Jika memilih ukuran yang tidak tersedia, Anda tidak dapat menambahkannya ke keranjang.
+**Cobalah**: Jika memilih ukuran yang tidak tersedia, Anda tidak dapat menambahkannya ke keranjang.

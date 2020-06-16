@@ -8,6 +8,7 @@ $order: 2
 Las AMP son páginas web; el diseño de estas y de sus elementos se realiza a través de propiedades CSS comunes. Da estilo a los elementos con selectores de clase o elemento en una hoja de estilo en línea en el `<head>` llamada `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* Cualquier estilo personalizado va aquí */
   body {
@@ -18,6 +19,7 @@ Las AMP son páginas web; el diseño de estas y de sus elementos se realiza a tr
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Las páginas AMP pueden tener solo una hoja de estilo integrada y hay ciertos selectores que no puedes usar. [Aprende todo acerca del estilo](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

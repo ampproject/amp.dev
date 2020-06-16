@@ -12,8 +12,11 @@ $title: 본격적으로 스토리 시작하기
 
 ```html hl_lines="2 3"
 <head>
-<script async custom-element="amp-story"
-        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+  <script
+    async
+    custom-element="amp-story"
+    src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+  ></script>
 </head>
 ```
 
@@ -22,8 +25,7 @@ $title: 본격적으로 스토리 시작하기
 
 ```html hl_lines="2 3"
 <body>
-  <amp-story standalone>
-  </amp-story>
+  <amp-story standalone> </amp-story>
 </body>
 ```
 
@@ -37,19 +39,21 @@ $title: 본격적으로 스토리 시작하기
 그러기 위해서 스토리에 대한 약간의 정보를 메타데이터 형태로 제공해주어야 합니다.
 예를 들어,
 
-* 스토리의 제목: `title` 속성입니다. 이를테면 “Joy of Pets” 텍스트가 들어갑니다.
-* 퍼블리셔의 이름: `publisher` 속성입니다. 이를테면 “AMP tutorials” 텍스트가 들어갑니다.
-* 퍼블리셔의 로고: `publisher-logo-src` 속성입니다. 로고 이미지의 URL을 넣는데, 이미지는 1x1 비율(aspect ratio) 또는 정사각형이어야 합니다.
-* 스토리의 포스터(대표) 이미지: `poster-portrait-src` 속성에 들어갑니다. 포스터 이미지의 URL을 넣는데, 반드시 3x4 비율의 세로방향(portrait) 이미지로 넣습니다.
+- 스토리의 제목: `title` 속성입니다. 이를테면 “Joy of Pets” 텍스트가 들어갑니다.
+- 퍼블리셔의 이름: `publisher` 속성입니다. 이를테면 “AMP tutorials” 텍스트가 들어갑니다.
+- 퍼블리셔의 로고: `publisher-logo-src` 속성입니다. 로고 이미지의 URL을 넣는데, 이미지는 1x1 비율(aspect ratio) 또는 정사각형이어야 합니다.
+- 스토리의 포스터(대표) 이미지: `poster-portrait-src` 속성에 들어갑니다. 포스터 이미지의 URL을 넣는데, 반드시 3x4 비율의 세로방향(portrait) 이미지로 넣습니다.
 
 자, [`amp-story`](../../../../documentation/components/reference/amp-story.md) 태그의 필수 속성에 적절한 값을 채워보겠습니다:
 
 ```html hl_lines="2 3 4 5"
-<amp-story standalone
-    title="Joy of Pets"
-    publisher="AMP tutorials"
-    publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
-    poster-portrait-src="assets/cover.jpg">
+<amp-story
+  standalone
+  title="Joy of Pets"
+  publisher="AMP tutorials"
+  publisher-logo-src="assets/AMP-Brand-White-Icon.svg"
+  poster-portrait-src="assets/cover.jpg"
+></amp-story>
 ```
 
 위의 필수 속성외에도 다른 속성도 있습니다. 다른 속성에 대해서도 알고 싶으면
@@ -59,7 +63,7 @@ $title: 본격적으로 스토리 시작하기
 [tip type="note"]
 
 여기에서 설명한 메타데이터 속성은 해당 페이지의 Structured Data (예를 들면
-JSON-LD)를 대체하는 것은 아닙니다. [`amp-story`](../../../../documentation/components/reference/amp-story.md)  들어가는 title, publisher 등이
+JSON-LD)를 대체하는 것은 아닙니다. [`amp-story`](../../../../documentation/components/reference/amp-story.md) 들어가는 title, publisher 등이
 페이지에 이미 있는 Structured Data와 중복된다고 Structured Data를 없애면
 안된다는 뜻입니다.
 참고로, [Structured Data](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata)는

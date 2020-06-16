@@ -20,9 +20,11 @@ $title: 制作实时博客
 博客的初始代码如下所示：
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -51,9 +53,11 @@ $title: 制作实时博客
 分页后，我们之前使用的简单代码将变为如下所示的代码：
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -62,8 +66,8 @@ $title: 制作实时博客
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

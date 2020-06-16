@@ -9,6 +9,7 @@ $title: 将您的技术与 AMP 集成
 您可通过下述 4 种主要方法与 AMP 集成：
 
 ## 1. 添加对 amp-analytics 扩展组件的支持
+
 AMP 分析可让您根据自己配置的触发条件将事件发送回服务器。我们编写了一份[分析集成指南](../../../guides-and-tutorials/optimize-measure/configure-analytics/index.md)来帮助您着手使用这款组件。
 
 如果您只是需要向跟踪网址中添加包含动态参数的跟踪像素，请查看 [`amp-pixel`](../../../components/reference/amp-pixel.md)。请务必在您的支持页面上阐明相关用法，以供可能需要将您的技术和 AMP 结合使用的开发者参考。
@@ -33,7 +34,7 @@ AMP 分析可让您根据自己配置的触发条件将事件发送回服务器�
 
 ## 5. 使用 amp-iframe
 
-等一下 - 还有第 5 种方法？嗯，确实有，但我们建议您仅在万不得已时才使用该方法。如果以上方法都不符合您的需求，您可以使用通用的 [`amp-iframe`](../../../components/reference/amp-iframe.md)  标记来允许发布商嵌入您的内容，但由于该方法有几项与性能和用户体验相关的缺陷（详情请见[此处](../../../components/reference/amp-iframe.md).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`](../../../components/reference/amp-iframe.md))），这样做会带来不少弊端。
+等一下 - 还有第 5 种方法？嗯，确实有，但我们建议您仅在万不得已时才使用该方法。如果以上方法都不符合您的需求，您可以使用通用的 [`amp-iframe`](../../../components/reference/amp-iframe.md) 标记来允许发布商嵌入您的内容，但由于该方法有几项与性能和用户体验相关的缺陷（详情请见[此处](../../../components/reference/amp-iframe.md).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`](../../../components/reference/amp-iframe.md))），这样做会带来不少弊端。
 
 ## 总结
 

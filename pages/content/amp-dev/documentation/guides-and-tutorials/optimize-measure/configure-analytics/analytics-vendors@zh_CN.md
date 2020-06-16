@@ -13,19 +13,19 @@ $title: 分析工具供应商
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -155,10 +155,10 @@ type 属性值：`infonline`
 
 此外，还必须定义以下变量：
 
-* `st`：服务 ID
-* `co`：注释
-* `cp`：代码
-* `url`：`amp-analytics-infonline.html` 的 HTTPS 位置
+- `st`：服务 ID
+- `co`：注释
+- `cp`：代码
+- `url`：`amp-analytics-infonline.html` 的 HTTPS 位置
 
 要详细了解如何添加 INFOnline/IVW 支持，请访问 [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/)。
 

@@ -7,6 +7,7 @@ $title: تعديل المظهر والتنسيق
 صفحات AMP هي صفحات ويب؛ وأي تحكم في أنماط الصفحة وعناصرها يجري باستخدام خصائص CSS الشائعة. تحكّم في أنماط العناصر باستخدام محدّدات الفئة أو العنصر في ورقة أنماط مضمّنة في `<head>`، والتي تُسمى<span dir="ltr" class="nowrap">`<style amp-custom>`</span>:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -17,6 +18,7 @@ $title: تعديل المظهر والتنسيق
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 يمكن لكل صفحة AMP أن تحتوي فقط على ورقة أنماط واحدة مضمّنة، وهناك محدّدات معينة ليس مسموح لك باستخدامها. [تعرّف على كل المعلومات بخصوص التحكم في الأنماط](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

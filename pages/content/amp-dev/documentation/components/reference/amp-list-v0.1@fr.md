@@ -2,14 +2,12 @@
 $title: amp-list
 $category@: dynamic-content
 formats:
-- websites
-- email
-- stories
+  - websites
+  - email
+  - stories
 teaser:
   text: Télécharger des données de manière dynamique et créer des éléments de liste à l'aide d'un modèle.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Ce composant récupère du contenu de manière dynamique à partir d'un point de terminaison JSON CORS et l'affiche à l'aide d'un modèle fourni.
 
@@ -56,61 +52,68 @@ Votre point de terminaison doit mettre en œuvre les exigences énoncées dans l
 
 Vous pouvez spécifier un modèle de deux façons différentes :
 
-* Attribut `template` faisant référence à un ID d'un élément `template` ou `script` existant
-* Élément `template` ou `script` imbriqué directement dans l'élément `amp-list`
+- Attribut `template` faisant référence à un ID d'un élément `template` ou `script` existant
+- Élément `template` ou `script` imbriqué directement dans l'élément `amp-list`
 
 Pour en savoir plus sur les modèles, reportez-vous à la section [Modèles AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
-*Exemple : Affichage d'une liste dynamique*
+_Exemple : Affichage d'une liste dynamique_
 
 Dans l'exemple suivant, nous allons récupérer des données JSON contenant des URL et des titres, et afficher le contenu dans un modèle [amp-mustache](amp-mustache.md) imbriqué.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="100"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
-  {% endraw %}</template>
+    {% endraw %}</template
+  >
 </amp-list>
 ```
+
 [/example]
 
 Voici le fichier JSON que nous avons utilisé :
 
 ```json
 {
- "items": [
-   {
-     "title": "AMP YouTube Channel",
-     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-   },
-   {
-     "title": "AMP.dev",
-     "url": "https://amp.dev/"
-   },
-   {
-     "title": "AMP Validator",
-     "url": "https://validator.amp.dev/"
-   },
-   {
-     "title": "AMP Playground",
-     "url": "https://playground.amp.dev/"
-   }
- ]
+  "items": [
+    {
+      "title": "AMP YouTube Channel",
+      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+    },
+    {
+      "title": "AMP.dev",
+      "url": "https://amp.dev/"
+    },
+    {
+      "title": "AMP Validator",
+      "url": "https://validator.amp.dev/"
+    },
+    {
+      "title": "AMP Playground",
+      "url": "https://playground.amp.dev/"
+    }
+  ]
 }
 ```
+
 Le contenu récupéré a été mis en forme comme suit :
 
 ```css
-amp-list div[role="list"] {
+amp-list div[role='list'] {
   display: grid;
   grid-gap: 0.5em;
-  }
+}
 ```
 
 ## Comportement <a name="behavior"></a>
@@ -123,7 +126,7 @@ Par défaut, `<amp-list>` ajoute un rôle ARIA `list` à l'élément "list" et u
 
 ### Traitements par lots de requêtes XHR <a name="xhr-batching"></a>
 
-AMP regroupe les requêtes XHR (XMLHttpRequest) dans des points de terminaison JSON. En d'autres termes, vous pouvez utiliser une seule requête de données JSON comme source de données pour plusieurs consommateurs (plusieurs éléments `<amp-list>`, par exemple) sur une page AMP.  Supposons que l'élément `<amp-list>` adresse une requête XHR à un point de terminaison. Dans ce cas, lorsque la requête XHR sera en cours, les requêtes XHR ultérieures adressées au même point de terminaison ne se déclencheront pas et renverront, à la place, les résultats à partir de la première requête XHR.
+AMP regroupe les requêtes XHR (XMLHttpRequest) dans des points de terminaison JSON. En d'autres termes, vous pouvez utiliser une seule requête de données JSON comme source de données pour plusieurs consommateurs (plusieurs éléments `<amp-list>`, par exemple) sur une page AMP. Supposons que l'élément `<amp-list>` adresse une requête XHR à un point de terminaison. Dans ce cas, lorsque la requête XHR sera en cours, les requêtes XHR ultérieures adressées au même point de terminaison ne se déclencheront pas et renverront, à la place, les résultats à partir de la première requête XHR.
 
 Vous pouvez utiliser l'attribut [`items`](#items-optional) dans `<amp-list>` pour afficher un sous-ensemble de la réponse JSON. Ainsi, plusieurs éléments `<amp-list>` peuvent afficher un contenu différent, mais partager une même requête XHR.
 
@@ -131,30 +134,33 @@ Vous pouvez utiliser l'attribut [`items`](#items-optional) dans `<amp-list>` pou
 
 `<amp-list>` peut éventuellement contenir un élément avec un attribut `overflow`. Cet élément est affiché si l'exécution AMP n'est pas en mesure de satisfaire la demande de redimensionnement de l'élément `<amp-list>`.
 
-*Exemple : Affichage d'un dépassement de capacité lorsque la liste a besoin d'espace supplémentaire*
+_Exemple : Affichage d'un dépassement de capacité lorsque la liste a besoin d'espace supplémentaire_
 
 Dans l'exemple suivant, nous allons afficher une liste d'images et de titres. Étant donné que le contenu `<amp-list>` nécessite davantage d'espace que ce qui est disponible, l'exécution AMP affiche l'élément "overflow".
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="140"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="image-entry">
-      <amp-img src="{{imageUrl}}"
-        width="100"
-        height="75"></amp-img>
+      <amp-img src="{{imageUrl}}" width="100" height="75"></amp-img>
       <span class="image-title">{{title}}</span>
     </div>
-  {% endraw %}</template>
-  <div overflow
-    class="list-overflow">
+    {% endraw %}</template
+  >
+  <div overflow class="list-overflow">
     See more
   </div>
 </amp-list>
 ```
+
 [/example]
 
 Voici le code CSS de l'élément `overflow` :
@@ -165,15 +171,15 @@ Voici le code CSS de l'élément `overflow` :
   bottom: 0;
   left: 0;
   right: 0;
-  }
+}
 ```
 
 ### Espace réservé et création de remplacement <a name="placeholder-and-fallback"></a>
 
 L'utilisation d'espaces réservés et/ou de créations de remplacement est possible dans le composant `<amp-list>`.
 
-* Un *espace réservé* est un élément enfant contenant l'attribut `placeholder`. Cet élément est affiché jusqu'au chargement du composant `<amp-list>`. Si une création de remplacement est également fournie, l'espace réservé est masqué en cas d'échec de chargement du composant `<amp-list>`.
-* Une *création de remplacement* est un élément enfant contenant l'attribut `fallback`. Cet élément est affiché en cas d'échec de chargement du composant `<amp-list>`.
+- Un _espace réservé_ est un élément enfant contenant l'attribut `placeholder`. Cet élément est affiché jusqu'au chargement du composant `<amp-list>`. Si une création de remplacement est également fournie, l'espace réservé est masqué en cas d'échec de chargement du composant `<amp-list>`.
+- Une _création de remplacement_ est un élément enfant contenant l'attribut `fallback`. Cet élément est affiché en cas d'échec de chargement du composant `<amp-list>`.
 
 Pour en savoir plus sur les espaces réservés et les créations de remplacement, [cliquez ici](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). Notez qu'un élément enfant ne peut pas être à la fois un espace réservé et une création de remplacement.
 
@@ -206,9 +212,13 @@ Dans certains cas, il se peut que l'élément `<amp-list>` doive être redimensi
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-<amp-list id="list"
-          width="396" height="80" layout="responsive"
-          src="/test/manual/amp-list-data.json?RANDOM">
+<amp-list
+  id="list"
+  width="396"
+  height="80"
+  layout="responsive"
+  src="/test/manual/amp-list-data.json?RANDOM"
+>
   <template type="amp-mustache">
     {{title}}
   </template>
@@ -234,8 +244,8 @@ L'attribut `src` peut être omis si l'attribut `[src]` est présent. Cela s'avè
 
 Définit une option `credentials` telle qu'elle est spécifiée par l'[API Fetch](https://fetch.spec.whatwg.org/).
 
-* Valeurs acceptées : `omit`, `include`
-* Valeur par défaut : `omit`
+- Valeurs acceptées : `omit`, `include`
+- Valeur par défaut : `omit`
 
 Pour envoyer des identifiants, transmettez la valeur `include`. Si cette valeur est définie, la réponse doit respecter les [consignes de sécurité CORS dans AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
@@ -243,8 +253,10 @@ Dans l'exemple ci-dessous, l'insertion d'identifiants est spécifiée pour affic
 
 ```html
 {% raw %}
-<amp-list credentials="include"
-          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+<amp-list
+  credentials="include"
+  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+>
   <template type="amp-mustache">
     Your personal offer: ${{price}}
   </template>
@@ -257,11 +269,12 @@ Dans l'exemple ci-dessous, l'insertion d'identifiants est spécifiée pour affic
 Définit l'expression permettant de localiser le tableau à afficher dans la réponse. Il s'agit d'une expression avec notation par point qui parcourt les champs de la réponse JSON.
 Par défaut, `<amp-list>` attend un tableau. L'attribut `single-item` peut être utilisé pour charger des données à partir d'un objet.
 
-* La valeur par défaut est `"items"`. Réponse attendue : `{items: [...]}`.
-* Si la réponse correspond au tableau souhaité, utilisez la valeur `"."`. Réponse attendue : `[...]`.
-* La navigation imbriquée est autorisée (par exemple `"field1.field2"`). Réponse attendue : `{field1: {field2: [...]}}`.
+- La valeur par défaut est `"items"`. Réponse attendue : `{items: [...]}`.
+- Si la réponse correspond au tableau souhaité, utilisez la valeur `"."`. Réponse attendue : `[...]`.
+- La navigation imbriquée est autorisée (par exemple `"field1.field2"`). Réponse attendue : `{field1: {field2: [...]}}`.
 
 Lorsque `items="items"` est spécifié (il s'agit de la valeur par défaut), la réponse doit être un objet JSON contenant une propriété de tableau appelée `"items"` :
+
 ```text
 {
   "items": [...]
@@ -293,9 +306,9 @@ Pour les pages qui utilisent `<amp-list>`, mais aussi le composant `amp-bind`, c
 
 Il est conseillé d'utiliser `binding="no"` ou `binding="refresh"` pour bénéficier de meilleures performances.
 
-* `binding="no"` : le contenu est toujours affiché **(option la plus rapide)**.
-* `binding="refresh"` : ne pas empêcher l'affichage lors du chargement initial **(rapide)**.
-* `binding="always"` : toujours empêcher l'affichage **(lent)**.
+- `binding="no"` : le contenu est toujours affiché **(option la plus rapide)**.
+- `binding="refresh"` : ne pas empêcher l'affichage lors du chargement initial **(rapide)**.
+- `binding="always"` : toujours empêcher l'affichage **(lent)**.
 
 Si l'attribut `binding` n'est pas spécifié, la valeur par défaut est `always`.
 
@@ -306,12 +319,16 @@ Les attributs `load-more` sont proposés avec les options "manual" et "auto" pou
 #### Exemple d'utilisation <a name="load-more-and-infinite-scroll"></a>
 
 ```html
-<amp-list height="200" src="https://my.rest.endpoint/" width="100" load-more="auto">
+<amp-list
+  height="200"
+  src="https://my.rest.endpoint/"
+  width="100"
+  load-more="auto"
+>
   <template type="amp-mustache">
     // ...
   </template>
 </amp-list>
-
 ```
 
 Pour obtenir des exemples fonctionnels, consultez les fichiers suivants : [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) et [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
@@ -341,20 +358,31 @@ L'élément `<amp-list-load-more>` avec l'attribut `load-more-button` est affich
 ##### Exemple : <a name="load-more-button"></a>
 
 ```html
-<amp-list load-more="manual" src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="manual"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
   </amp-list-load-more>
 </amp-list>
 ```
-  `amp-mustache` peut être utilisé afin de créer un modèle pour cet élément.
+
+`amp-mustache` peut être utilisé afin de créer un modèle pour cet élément.
 
 ##### Exemple : <a name="example"></a>
 
 ```html
 {% raw %}
-<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
+<amp-list
+  load-more="auto"
+  width="100"
+  height="500"
+  src="https://www.load.more.example.com/"
+>
   ...
   <amp-list-load-more load-more-button>
     <template type="amp-mustache">
@@ -371,8 +399,14 @@ L'élément `<amp-list-load-more>` avec l'attribut `load-more-button` est affich
 #### load-more-loading <a name="example-1"></a>
 
 Cet élément est un chargeur qui s'affiche si l'utilisateur atteint la fin de la liste alors que le contenu est toujours en cours de chargement ou après avoir cliqué sur l'élément `load-more-button` (alors que les nouveaux éléments enfants de `<amp-list>` sont toujours en cours de chargement). Cet élément peut être personnalisé en fournissant à `<amp-list>` un élément enfant pourvu de l'attribut `load-more-loading`. Exemple :
+
 ```html
-<amp-list load-more=auto src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
@@ -385,7 +419,12 @@ Cet élément est un chargeur qui s'affiche si l'utilisateur atteint la fin de l
 Élément `<amp-list-load-more>` contenant l'attribut `load-more-failed`, qui contient à son tour un bouton avec l'attribut `load-more-clickable`, qui sera affiché au bas du composant `<amp-list>` en cas d'échec du chargement. Un clic sur ce bouton déclenche l'actualisation de l'URL dont le chargement a échoué. Cet élément peut être personnalisé en fournissant à `<amp-list>` un élément enfant pourvu de l'attribut `load-more-failed`. En voici un exemple :
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <button>Unable to Load More</button>
@@ -396,7 +435,12 @@ Cet élément est un chargeur qui s'affiche si l'utilisateur atteint la fin de l
 Dans l'exemple ci-dessus, l'intégralité de l'élément `load-more-failed` est cliquable. Cependant, cet élément se présente généralement sous la forme d'un élément "Échec du chargement" non cliquable contenant un bouton d'actualisation sur lequel l'utilisateur peut cliquer. Vous pouvez donc définir un élément généralement non cliquable avec un bouton contenant l'élément `load-more-clickable`. Par exemple :
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <div>
@@ -409,10 +453,15 @@ Dans l'exemple ci-dessus, l'intégralité de l'élément `load-more-failed` est 
 
 #### load-more-end <a name="load-more-failed"></a>
 
-Cet élément n'est pas fourni par défaut. Cependant, si un élément `<amp-list-load-more>` contenant l'attribut `load-more-end` est associé à `<amp-list>` en tant qu'élément enfant, il est affiché en bas du composant `<amp-list>` s'il n'y a plus d'autres éléments.  `amp-mustache` peut être utilisé afin de créer un modèle pour cet élément. En voici un exemple :
+Cet élément n'est pas fourni par défaut. Cependant, si un élément `<amp-list-load-more>` contenant l'attribut `load-more-end` est associé à `<amp-list>` en tant qu'élément enfant, il est affiché en bas du composant `<amp-list>` s'il n'y a plus d'autres éléments. `amp-mustache` peut être utilisé afin de créer un modèle pour cet élément. En voici un exemple :
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-end>
     Congratulations! You've reached the end. /* Custom load-end element */
@@ -430,9 +479,11 @@ Le composant `<amp-list>` autorise toutes les substitutions de variables d'URL s
 Pour plus d'informations, consultez le [Guide des substitutions](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 Par exemple :
+
 ```html
 <amp-list src="https://foo.com/list.json?RANDOM"></amp-list>
 ```
+
 peut effectuer une requête vers une adresse telle que `https://foo.com/list.json?0.8390278471201`, où la valeur RANDOM est générée de manière aléatoire lors de chaque impression.
 
 ## Validation <a name="validation"></a>

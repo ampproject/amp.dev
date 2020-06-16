@@ -25,8 +25,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 يتيح المكوِّن `amp-access-laterpay` للناشرين سهولة التكامل مع منصة [LaterPay](https://www.laterpay.net) للدفعات الصغيرة. ويستند المكّوِن إلى [AMP Access](amp-access.md) كما يتطلبه أيضًا.
 
 <table>
@@ -50,8 +48,6 @@ limitations under the License.
     <td>يمكن الاطّلاع على <a href="https://ampbyexample.com/components/amp-access-laterpay/">مثال amp-access-laterpay بالشرح</a> في الموقع "AMP بالمثال".</td>
   </tr>
 </table>
-
-
 
 ## السلوك <a name="behavior"></a>
 
@@ -80,7 +76,6 @@ limitations under the License.
 تشبه التهيئة AMP Access، لكن لا يلزمها التفويض ولا الرد على فحص الاتصال ولا روابط تسجيل الدخول.
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -89,7 +84,6 @@ limitations under the License.
     }
   }
 </script>
-
 ```
 
 يمكن تعيين القيم التالية في كائن التهيئة `laterpay`:
@@ -170,7 +164,6 @@ limitations under the License.
 <div amp-access="access" amp-access-hide>
   <p>...article content...</p>
 </div>
-
 ```
 
 ## التصميم <a name="styling"></a>
@@ -182,7 +175,6 @@ limitations under the License.
 تبدو البنية التي تم إنشاؤها لمربع الحوار كما يلي:
 
 ```html
-
 <div id="amp-access-laterpay-dialog" class="amp-access-laterpay">
   <div class="amp-access-laterpay-container">
     <p class="amp-access-laterpay-header">
@@ -194,7 +186,9 @@ limitations under the License.
           <input name="purchaseOption" type="radio" />
           <div class="amp-access-laterpay-metadata">
             <span class="amp-access-laterpay-title">Purchase option title</span>
-            <p class="amp-access-laterpay-description">Purchase option description</p>
+            <p class="amp-access-laterpay-description">
+              Purchase option description
+            </p>
           </div>
         </label>
         <p class="amp-access-laterpay-price-container">
@@ -212,9 +206,10 @@ limitations under the License.
       Optional, appears if footer locale message is defined.
     </p>
   </div>
-  <p class="amp-access-laterpay-badge">Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a></p>
+  <p class="amp-access-laterpay-badge">
+    Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a>
+  </p>
 </div>
-
 ```
 
 ## الأقلمة <a name="localization"></a>
@@ -224,7 +219,6 @@ limitations under the License.
 النص المتبقي هو جزء من المكّوِن الموسَع ويمكن تغييره وأقلمته من خلال خيارات التهيئة كما يلي:
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
@@ -235,7 +229,6 @@ limitations under the License.
     }
   }
 </script>
-
 ```
 
 يمكن ترجمة مفاتيح الرسائل التالية أو تخصيصها، لكن مع ملاحظة وجوب احتفاظها بمعناها الأصلي وهدفها.
@@ -295,7 +288,6 @@ limitations under the License.
 عند استخدامه مع LaterPay ومع تكامل مع "نظام حظر الاشتراك غير المدفوع"، يمكن أن تبدو التهيئة الضرورية كما يلي:
 
 ```html
-
 <script id="amp-access" type="application/json">
   [
     {
@@ -306,26 +298,27 @@ limitations under the License.
       "namespace": "laterpay"
     },
     {
-      "authorization":
-          "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
-      "pingback":
-          "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
-      "login":
-          "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
+      "authorization": "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
+      "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
+      "login": "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
       "authorizationFallbackResponse": {"error": true},
       "namespace": "publishername"
     }
   ]
 </script>
-
 ```
 
 حيث يمكن أن يكون ترميز المحتوى المتوفر بحق الوصول في النهاية بالشكل التالي:
 
 ```html
-<section amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access" amp-access-hide>
+<section
+  amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access"
+  amp-access-hide
+>
   <p>
-    <a on="tap:amp-access.login-publishername">Login here to access your PublisherName subscription.</a>
+    <a on="tap:amp-access.login-publishername"
+      >Login here to access your PublisherName subscription.</a
+    >
   </p>
 
   <div id="amp-access-laterpay-dialog" class="amp-access-laterpay"></div>
@@ -338,17 +331,16 @@ limitations under the License.
 <div amp-access="laterpay.access OR publishername.access" amp-access-hide>
   <p>...article content...</p>
 </div>
-
 ```
 
 يمكنك الحصول على مثال أكثر اكتمالاً على [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html)
 
 ## مستندات ذات صلة <a name="related-documentation"></a>
 
-* [AMP Access](amp-access.md)
-* [LaterPay](https://www.laterpay.net)
-* [LaterPay: كيف تجري الدفعات الصغيرة؟](https://docs.laterpay.net/how_we_do_micropayments/)
-* [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - يشبه AMP Access LaterPay لكنه يُستخدم للصفحات غير AMP.
+- [AMP Access](amp-access.md)
+- [LaterPay](https://www.laterpay.net)
+- [LaterPay: كيف تجري الدفعات الصغيرة؟](https://docs.laterpay.net/how_we_do_micropayments/)
+- [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - يشبه AMP Access LaterPay لكنه يُستخدم للصفحات غير AMP.
 
 ## التحقق <a name="validation"></a>
 

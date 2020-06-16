@@ -21,7 +21,7 @@ $title: 使您的网页可被轻松发现
 为了实现此目的，我们已经在 AMP 文档中执行完第一步，即在 `<head>` 中添加链接标记以关联到原来的权威网页：
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 下一步是将权威报道关联到 AMP 网页。为此，请将 `<link rel="amphtml">` 标记添加到权威报道的 `<head>` 部分。
@@ -29,7 +29,7 @@ $title: 使您的网页可被轻松发现
 在 `article.html` 文件中，将以下代码**添加**到 `<head>` 部分中：
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 以下图表展示了链接标记的配对方向：
@@ -46,38 +46,38 @@ $title: 使您的网页可被轻松发现
 
 ```html
 <script type="application/ld+json">
-{
-"@context": "http://schema.org",
-"@type": "NewsArticle",
-"mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
-},
-"headline": "My First AMP Article",
-"image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
-},
-"datePublished": "2015-02-05T08:00:00+08:00",
-"dateModified": "2015-02-05T09:20:00+08:00",
-"author": {
-   "@type": "Person",
-   "name": "John Doe"
-},
-"publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
-},
-"description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 
@@ -92,7 +92,7 @@ $title: 使您的网页可被轻松发现
 
 - [Twitter 卡片元标记](https://dev.twitter.com/cards/overview)
 - [Facebook 开放图谱元标记](https://developers.facebook.com/docs/sharing/webmasters)
-[/tip]
+  [/tip]
 
 ### 验证结构化数据
 
@@ -101,7 +101,7 @@ $title: 使您的网页可被轻松发现
 1.  在新的浏览器窗口中，打开 [Google 结构化数据验证工具](https://developers.google.com/structured-data/testing-tool/)。
 2.  选择**代码段**标签。
 3.  将 AMP 网页中的完整源代码复制并粘贴到验证工具的文本编辑器面板中。
-3.  点击**运行测试**。
+4.  点击**运行测试**。
 
 如果您的结构化数据是有效的，您应该会看到 **0 个错误**和 **0 条警告**。
 

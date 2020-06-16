@@ -1,5 +1,5 @@
 ---
-$title: "アナリティクス: 基本"
+$title: 'アナリティクス: 基本'
 ---
 
 このページで AMP アナリティクスの基本を学びましょう。
@@ -39,27 +39,30 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 シンプルに [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) を設定するには、まず `custom-element` 宣言を AMP ドキュメントの `<head>` 内に入れます（[コンポーネントを組み込むための宣言](../../../../documentation/components/index.html)もご覧ください）。
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 以下の例は [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)と似ています。ページが表示されるたびにイベントが発生して、ページビュー データがランダム ID とともに指定の URL に送信されます。
 
 ```html
 <amp-analytics>
-
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-   }
-  }
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -72,7 +75,9 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) と [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) コンポーネントは、どちらも標準的な URL の変数置換をすべて許可します（[AMP HTML の変数置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)をご覧ください）。次の例では、ページビュー リクエストを、現在の AMP ドキュメントの正規化された URL とそのタイトル（title）、[クライアント ID](analytics_basics.md#user-identification) とともに URL に送信します。
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) タグはシンプルなので、プラットフォームで定義された変数か、AMP ランタイムで AMP ページから解析できる変数のみを含めることができます。上の例では、`canonicalURL` と `clientId(site-user-id)` の値はプラットフォームで設定されます。[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) タグには、[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) と同じ変数も、タグ設定内で一意に定義された変数も含めることができます。
@@ -84,25 +89,25 @@ AMP プラットフォームを統合するにあたり、データの取得や�
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-   "someEvent": {
-     "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
       "vars": {
-        "title": "My homepage",
+        "account": "ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -123,7 +128,9 @@ AMP ページがサイト運営者のサイトから提供されている場合�
 次に例を示します。
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 AMP で Cookie が設定済みと判断されると、クライアント ID は置換されて Cookie の値が返されます。AMP で Cookie が未設定と判断されると、AMP は `amp-` の後ろに base64 エンコードされたランダムな文字列をつけたフォーマットの値を生成します。

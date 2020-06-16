@@ -17,22 +17,22 @@ You can define CSS in AMP in the following ways:
 
 [filter formats="websites, stories"]
 
-*   Within the `<style amp-custom>` tag inside the head of the document. 75,000 byte limit.
-*   Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 75,000 byte `<style amp-custom>` limit.
-*   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+- Within the `<style amp-custom>` tag inside the head of the document. 75,000 byte limit.
+- Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 75,000 byte `<style amp-custom>` limit.
+- Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
 
 [/filter]
 
 [filter formats="ads"]
 
-*   Within the `<style amp-custom>` tag inside the head of the document. 20,000 byte limit.
-*   Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 20,000 byte `<style amp-custom>` limit.
-*   Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
+- Within the `<style amp-custom>` tag inside the head of the document. 20,000 byte limit.
+- Inline styles. Each instance of an inline style has a 1,000 byte limit. Inline styles count towards the 20,000 byte `<style amp-custom>` limit.
+- Within the `<style amp-keyframes>` tag inside the head of the document. 500,000 byte limit. Restricted to keyframe properties.
 
 [/filter]
 
 [tip type="read-on"]
-  Read more in [Style & layout](../style_and_layout/index.md) about using CSS in AMP.
+Read more in [Style & layout](../style_and_layout/index.md) about using CSS in AMP.
 [/tip]
 
 [filter formats="websites, stories"]
@@ -79,16 +79,25 @@ elementName.toggleClass(class="className")
 You can toggle a class on the same element you'd like users to interact with, such as an animated hamburger menu.
 
 ```html
- <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
-
+<div
+  id="hamburger"
+  tabindex="1"
+  role="button"
+  on="tap:hamburger.toggleClass(class='close')"
+></div>
 ```
+
 The `toggleClass` action can apply to other elements as well and toggle between two classes by adding the `force` attribute.
 
 ```html
-<button on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='invisible', force=true),magicBox.toggleClass(class='visible', force=false)"
+>
   Disappear
 </button>
-<button on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)">
+<button
+  on="tap:magicBox.toggleClass(class='visible', force=true),magicBox.toggleClass(class='invisible', force=false)"
+>
   Reappear
 </button>
 ```
@@ -100,9 +109,14 @@ If you need to remove a class and disallow reapplication, add the `force` attrib
 You can add and remove any number of CSS classes with states using [`amp-bind`](../../../../documentation/components/reference/amp-bind.md).
 
 [example preview="top-frame" playground="true"]
+
 ```html
 <head>
-  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script
+    async
+    custom-element="amp-bind"
+    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+  ></script>
   <style amp-custom>
     div {
       height: 100px;
@@ -119,13 +133,13 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
       opacity: 0;
     }
     .left {
-      transform: translatex(-50px)
+      transform: translatex(-50px);
     }
     .right {
-      transform: translatex(50px)
+      transform: translatex(50px);
     }
     button {
-      margin-top:  1rem;
+      margin-top: 1rem;
       margin-left: 1rem;
     }
   </style>
@@ -149,7 +163,7 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
       }
     </script>
   </amp-state>
-  <div [class]="magicBox[animateBox].className"> </div>
+  <div [class]="magicBox[animateBox].className"></div>
   <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
     Disappear
   </button>
@@ -164,23 +178,24 @@ You can add and remove any number of CSS classes with states using [`amp-bind`](
   </button>
 </body>
 ```
+
 [/example]
 
 Define multiple class animations by first adding a list of CSS classes within the `<style amp-custom>` tag in the `head` of the document:
 
 ```css
-    .visible {
-      opacity: 1;
-    }
-    .invisible {
-      opacity: 0;
-    }
-    .left {
-      transform: translatex(-50px)
-    }
-    .right {
-      transform: translatex(50px)
-    }
+.visible {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
+.left {
+  transform: translatex(-50px);
+}
+.right {
+  transform: translatex(50px);
+}
 ```
 
 Then pair each class with a state:
@@ -205,23 +220,24 @@ Then pair each class with a state:
   </script>
 </amp-state>
 ```
+
 And link the element with the classes:
 
 ```html
-  <div [class]="magicBox[animateBox].className"> </div>
+<div [class]="magicBox[animateBox].className"></div>
 ```
 
 The states change from a linked AMP action or event. The following example changes the state from user interaction:
 
 ```html
 <button on="tap:AMP.setState({animateBox: 'invisibleBox'})">
-    Disappear
+  Disappear
 </button>
 <button on="tap:AMP.setState({animateBox: 'visibleBox'})">
-    Reappear
+  Reappear
 </button>
 <button on="tap:AMP.setState({animateBox: 'moveLeft'})">
-    Move Left
+  Move Left
 </button>
 <button on="tap:AMP.setState({animateBox: 'moveRight'})">
   Move Right

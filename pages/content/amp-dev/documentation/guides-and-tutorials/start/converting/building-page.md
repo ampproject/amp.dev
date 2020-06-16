@@ -6,20 +6,19 @@ description: 'In the project directory, you will find a file named article.html.
 
 In the project directory, you will find a file named [`article.html`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/article.html). This is the news article that we are creating an AMP-equivalent page for.
 
-1.  **Copy** the entire code from the `article.html `file and paste it into a new file.
+1.  **Copy** the entire code from the `article.html`file and paste it into a new file.
 2.  **Save** the new file as `article.amp.html`.
 
 [tip type="note"]
-**NOTE –**  You don't have to name your AMP files as `.amp.html`. In fact, AMP files can have any extension you want. It's common to see publishers differentiating AMP pages from their canonical versions by using parameters in the url. For example:  `http://publisher.com/article.html?amp`.
+**NOTE –** You don't have to name your AMP files as `.amp.html`. In fact, AMP files can have any extension you want. It's common to see publishers differentiating AMP pages from their canonical versions by using parameters in the url. For example: `http://publisher.com/article.html?amp`.
 [/tip]
 
 Your `article.amp.html` file should look like the following:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -33,9 +32,12 @@ Your `article.amp.html` file should look like the following:
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```
@@ -44,7 +46,7 @@ This is an intentionally simplistic page with common static news article element
 
 Our AMP version of the article is just a copy of the original article right now. Let's convert it to an AMP.
 
-To begin, we will add the AMP library file.  This alone won't make your new file a valid AMP page, but we'll see below how the AMP library can help us figure out what we need to do to fix that.
+To begin, we will add the AMP library file. This alone won't make your new file a valid AMP page, but we'll see below how the AMP library can help us figure out what we need to do to fix that.
 
 To include the AMP library, **add** this line to the bottom of the `<head>` tag:
 
@@ -60,7 +62,7 @@ When you inspect the JavaScript output in the Developer Console (make sure you h
 Powered by AMP ⚡ HTML
 ```
 
-The AMP library includes an [AMP validator](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) that will tell you if there is anything that is keeping your page from being a valid AMP document.  **Enable** the AMP validator by adding this fragment identifier to your document URL:
+The AMP library includes an [AMP validator](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) that will tell you if there is anything that is keeping your page from being a valid AMP document. **Enable** the AMP validator by adding this fragment identifier to your document URL:
 
 ```text
 #development=1
@@ -78,7 +80,7 @@ In the Developer Console, you should receive several validation errors (you may 
 
 In order to make this a valid AMP document we're going to have to fix all of these errors--which is exactly what we'll be doing in this codelab.
 
-Before we do that, let's **simulate** a mobile device experience in the browser's developer tools since we are working with a mobile news article.  For example, in Chrome DevTools, click the mobile phone icon, and select a mobile device from the menu.
+Before we do that, let's **simulate** a mobile device experience in the browser's developer tools since we are working with a mobile news article. For example, in Chrome DevTools, click the mobile phone icon, and select a mobile device from the menu.
 
 You should see a mobile simulated resolution in your browser such as this:
 

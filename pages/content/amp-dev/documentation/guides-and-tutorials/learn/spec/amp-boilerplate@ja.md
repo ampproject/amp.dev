@@ -29,8 +29,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 AMP HTML ドキュメント の `head` タグには、次の定型句を含める必要があります。
 検証は現在正規表現で行われているので、
 急な変更をできるだけ最小限に抑えることが重要です。

@@ -35,7 +35,7 @@ Si su caso de uso no se puede acomodar mediante [`amp-analytics`](../../../compo
 
 ## 5. Usando el `amp-iframe`
 
-Se espera su uso solamente como último recurso. Si ninguno de las extensiones anteriores se ajustan a sus necesidades, podría utilizar la etiqueta genérica [`amp-iframe`](../../../components/reference/amp-iframe.md)  para permitir a los editores integrar su contenido, pero este enfoque viene con una serie de desventajas, para optimizar el rendimiento y la experiencia del usuario que puede leer [aquí](../../../components/reference/amp-iframe.md).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`](../../../components/reference/amp-iframe.md) ).
+Se espera su uso solamente como último recurso. Si ninguno de las extensiones anteriores se ajustan a sus necesidades, podría utilizar la etiqueta genérica [`amp-iframe`](../../../components/reference/amp-iframe.md) para permitir a los editores integrar su contenido, pero este enfoque viene con una serie de desventajas, para optimizar el rendimiento y la experiencia del usuario que puede leer [aquí](../../../components/reference/amp-iframe.md).url.path}}) .html#guideline:-prefer-specific-amp-components-to-[`amp-iframe`](../../../components/reference/amp-iframe.md) ).
 
 ## Resumen
 

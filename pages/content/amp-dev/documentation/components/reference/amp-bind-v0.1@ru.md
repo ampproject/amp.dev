@@ -2,14 +2,12 @@
 $title: amp-bind
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: позволяет менять элементы в зависимости от действий пользователя или поступающих данных, поддерживает привязку данных и простые выражения, похожие на JavaScript
 ---
-
-
 
 Привязка данных и поддержка выражений позволяют добавить интерактивности.
 
@@ -29,7 +27,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
 
 <table>
   <tr>
@@ -69,7 +66,6 @@ limitations under the License.
 В примере ниже текст элемента `<p>` меняется с Hello World на Hello amp-bind.
 
 ```html
-
 <p [text]="'Hello ' + foo">Hello World</p>
 
 <button on="tap:AMP.setState({foo: 'amp-bind'})">Say "Hello amp-bind"</button>
@@ -83,9 +79,9 @@ limitations under the License.
 
 У `amp-bind` есть три основных компонента:
 
-1. [Состояние](#state): изменяемое состояние JSON для всего документа. В примере выше состояние пусто, пока не будет нажата кнопка.  После нажатия оно меняется на `{foo: 'amp-bind'}`.
+1. [Состояние](#state): изменяемое состояние JSON для всего документа. В примере выше состояние пусто, пока не будет нажата кнопка. После нажатия оно меняется на `{foo: 'amp-bind'}`.
 2. [Выражения](#expressions): похожие на JavaScript выражения, которые могут ссылаться на **состояние**. В примере выше использовано одно выражение: `'Hello ' + foo`. Оно объединяет постоянную строку `'Hello '` и переменную состояния `foo`.
-В выражении можно использовать не более 100 операндов.
+   В выражении можно использовать не более 100 операндов.
 3. [Привязки](#bindings): это специальные атрибуты вида `[property]`, которые связывают свойство элемента с **выражением**. В примере выше есть одна привязка, `[text]`, которая обновляет текст элемента `<p>` каждый раз, когда меняется значение выражения.
 
 При использовании `amp-bind` особое внимание уделяется скорости, безопасности и эффективности AMP-страниц.
@@ -117,29 +113,35 @@ limitations under the License.
 </p>
 
 <!-- Вы также можете изменить источник изображения с помощью привязки [src]. -->
-<amp-img width="300" height="200" src="/img/dog.jpg" [src]="myAnimals[currentAnimal].imageUrl">
+<amp-img
+  width="300"
+  height="200"
+  src="/img/dog.jpg"
+  [src]="myAnimals[currentAnimal].imageUrl"
+>
 </amp-img>
 
 <button on="tap:AMP.setState({currentAnimal: 'cat'})">Set to Cat</button>
 ```
 
-  При нажатии кнопки происходит следующее:
+При нажатии кнопки происходит следующее:
 
-  1. **Состояние обновляется**, для `currentAnimal` указывается значение `'cat'`.
-  1. **Выражения**, которые зависят от значения `currentAnimal`, оцениваются:
+1. **Состояние обновляется**, для `currentAnimal` указывается значение `'cat'`.
+1. **Выражения**, которые зависят от значения `currentAnimal`, оцениваются:
+
 
     * `'Это ' + currentAnimal + '.'` =&gt; `'Это кошка.'`
     * `myAnimals[currentAnimal].style` =&gt; `'redBackground'`
     * `myAnimals[currentAnimal].imageUrl` =&gt;  `/img/cat.jpg`</li>
 
-  1. **Привязки**, которые зависят от измененных выражений, обновляются:
+1. **Привязки**, которые зависят от измененных выражений, обновляются:
+
 
     * Текст первого элемента `<p>` выглядит как "Это кошка.".
     * Во втором элементе `<p>` для атрибута `class` задается значение "redBackground".
     * Элемент `amp-img` выводит изображение кошки.</li>
 
-  [tip type="ll callout('Совет</b><a class="type_success"]
-[Воспользуйтесь **демо-версией**](https://ampbyexample.com/components/amp-bind/) этого примера с аннотациями к коду.
+[tip type="ll callout('Совет</b><a class="type_success"][воспользуйтесь **демо-версией**](https://ampbyexample.com/components/amp-bind/) этого примера с аннотациями к коду.
 [/tip]
 
 # Описание <a name="details"></a>
@@ -157,15 +159,15 @@ limitations under the License.
   <script type="application/json">
     {
       "foo": "bar"
-      }
+    }
   </script>
 </amp-state>
 ```
 
 [Выражения](#expressions) могут ссылаться на переменные состояния через точечный синтаксис. В этом примере `myState.foo` оценивается как `"bar"`.
 
-* Максимальный размер дочернего скрипта JSON для элемента `<amp-state>` составляет 100 КБ.
-* Элемент `<amp-state>` также может указывать URL CORS вместо дочернего скрипта JSON. Более подробные сведения см. в [Приложении](#amp-state-specification).
+- Максимальный размер дочернего скрипта JSON для элемента `<amp-state>` составляет 100 КБ.
+- Элемент `<amp-state>` также может указывать URL CORS вместо дочернего скрипта JSON. Более подробные сведения см. в [Приложении](#amp-state-specification).
 
 # Обновление состояния <a name="refreshing-state"></a>
 
@@ -184,7 +186,9 @@ limitations under the License.
 ```html
 <!-- Like JavaScript, you can reference existing
       variables in the values of the object literal. -->
-<button on="tap:AMP.setState({foo: 'bar', baz: myAmpState.someVariable})"></button>
+<button
+  on="tap:AMP.setState({foo: 'bar', baz: myAmpState.someVariable})"
+></button>
 ```
 
 Как правило, вложенные объекты объединяются до максимальной глубины 10. Все переменные, в том числе добавленные `amp-state`, могут быть переопределены.
@@ -194,7 +198,7 @@ limitations under the License.
 ```html
 <!-- The "change" event of this <input> element contains
       a "value" variable that can be referenced via "event.value". -->
-<input type="range" on="change:AMP.setState({myRangeValue: event.value})">
+<input type="range" on="change:AMP.setState({myRangeValue: event.value})" />
 ```
 
 # Изменение истории с помощью `AMP.pushState()` <a name="modifying-history-with-amppushstate"></a>
@@ -202,12 +206,13 @@ limitations under the License.
 Действие [`AMP.pushState()`](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md#target-amp) аналогично `AMP.setState()`, но оно также передает новую запись в стек истории браузера. При извлечении этой записи (например, при переходе назад) восстанавливаются предыдущие значения переменных, установленные `AMP.pushState()`.
 
 Пример:
+
 ```html
 <button on="tap:AMP.pushState({foo: '123'})">Set 'foo' to 123</button>
 ```
 
-* При нажатии кнопки для переменной `foo` задается значение 123, а также создается новая запись в истории.
-* При переходе назад восстанавливается прежнее значение переменной `foo`, "bar" (аналогично вызову `AMP.setState({foo: 'bar'})`.
+- При нажатии кнопки для переменной `foo` задается значение 123, а также создается новая запись в истории.
+- При переходе назад восстанавливается прежнее значение переменной `foo`, "bar" (аналогично вызову `AMP.setState({foo: 'bar'})`.
 
 # Выражения <a name="expressions"></a>
 
@@ -215,12 +220,12 @@ limitations under the License.
 
 # Отличия от JavaScript <a name="differences-from-javascript"></a>
 
-* Выражения могут получать только [состояние](#state) всего документа.
-* У выражений **нет** доступа к глобальным переменным, таким как `window` и `document`.
-* Можно использовать только функции и операторы [из белого списка](#allow-listed-functions).
-* Запрещены пользовательские функции, классы и циклы. Стрелочные функции разрешены как параметры, например `Array.prototype.map`.
-* Неопределенные переменные и индекс, который выходит за границы массива, возвращают значение `null` вместо `undefined` или ошибок.
-* Для повышения эффективности в настоящее время каждое выражение поддерживает не более 50 операндов. Если вам требуется больше, [свяжитесь с нами](https://github.com/ampproject/amphtml/issues/new).
+- Выражения могут получать только [состояние](#state) всего документа.
+- У выражений **нет** доступа к глобальным переменным, таким как `window` и `document`.
+- Можно использовать только функции и операторы [из белого списка](#allow-listed-functions).
+- Запрещены пользовательские функции, классы и циклы. Стрелочные функции разрешены как параметры, например `Array.prototype.map`.
+- Неопределенные переменные и индекс, который выходит за границы массива, возвращают значение `null` вместо `undefined` или ошибок.
+- Для повышения эффективности в настоящее время каждое выражение поддерживает не более 50 операндов. Если вам требуется больше, [свяжитесь с нами](https://github.com/ampproject/amphtml/issues/new).
 
 Грамматика и реализация полного выражения представлены в [bind-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expr-impl.jison) и [bind-expression.js](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/0.1/bind-expression.js).
 
@@ -229,10 +234,10 @@ limitations under the License.
 Ниже приведены все допустимые выражения:
 
 ```javascript
-1 + '1'           // 11
-1 + (+'1')        // 2
-!0                // true
-null || 'default' // 'default'
+1 + '1'; // 11
+1 + +'1'; // 2
+!0; // true
+null || 'default'; // 'default'
 ```
 
 # Функции в белом списке <a name="allow-listed-functions"></a>
@@ -353,12 +358,15 @@ null || 'default' // 'default'
 Фрагменты выражения `amp-bind` можно использовать повторно. Для этого потребуется определить `amp-bind-macro`. Элемент `amp-bind-macro` позволяет определить выражение, которое принимает 0 или более аргументов и ссылается на текущее состояние. Макрос можно вызвать как функцию, если сослаться на значение атрибута `id` из любой части документа.
 
 ```html
-<amp-bind-macro id="circleArea" arguments="radius" expression="3.14 * radius * radius"></amp-bind-macro>
+<amp-bind-macro
+  id="circleArea"
+  arguments="radius"
+  expression="3.14 * radius * radius"
+></amp-bind-macro>
 
 <div>
   Площадь круга равна <span [text]="circleArea(myCircle.radius)">0</span>.
 </div>
-
 ```
 
 Макрос также может вызывать другие макросы, <i>определенные перед ним</i>. Рекурсивный вызов одного и того же макроса не допускается.
@@ -406,10 +414,10 @@ null || 'default' // 'default'
 
 Примечания о привязках:
 
-* Привязка к `innerHTML` запрещена в целях безопасности.
-* Все привязки атрибутов очищаются от небезопасных значений (например, `javascript:`).
-* Результаты логического выражения меняют логические атрибуты. Пример: `<amp-video [controls]="expr"...>`. Если `expr` имеет значение `true`, в элементе `<amp-video>` есть атрибут `controls`. Если `expr` имеет значение `false`, атрибут `controls` удаляется.
-* Квадратные скобки `[` и `]` в названиях атрибутов могут вызывать проблемы при записи XML (XHTML, JSX) или при записи атрибутов с помощью DOM API. В таких случаях используйте альтернативный синтаксис: `data-amp-bind-x="foo"` вместо `[x]="foo"`.
+- Привязка к `innerHTML` запрещена в целях безопасности.
+- Все привязки атрибутов очищаются от небезопасных значений (например, `javascript:`).
+- Результаты логического выражения меняют логические атрибуты. Пример: `<amp-video [controls]="expr"...>`. Если `expr` имеет значение `true`, в элементе `<amp-video>` есть атрибут `controls`. Если `expr` имеет значение `false`, атрибут `controls` удаляется.
+- Квадратные скобки `[` и `]` в названиях атрибутов могут вызывать проблемы при записи XML (XHTML, JSX) или при записи атрибутов с помощью DOM API. В таких случаях используйте альтернативный синтаксис: `data-amp-bind-x="foo"` вместо `[x]="foo"`.
 
 # Атрибуты для конкретных элементов <a name="element-specific-attributes"></a>
 
@@ -553,7 +561,7 @@ null || 'default' // 'default'
     </tr>
   </table>
 
-  <sup>*</sup>Привязываемые атрибуты, у которых нет аналогов без привязок.
+<sup>\*</sup>Привязываемые атрибуты, у которых нет аналогов без привязок.
 
 # Отладка <a name="debugging"></a>
 
@@ -568,7 +576,6 @@ null || 'default' // 'default'
 so a warning will be issued in development mode. -->
 
 <p class="def" [class]="'abc'"></p>
-
 ```
 
 В режиме разработчика `amp-bind` также выдает предупреждение при разыменовании неопределенных переменных или свойств. Это также помогает предотвратить непреднамеренные мутации из-за результатов выражения `null`. Пример:
@@ -637,17 +644,16 @@ so a warning will be issued in development mode. -->
   <script type="application/json">
     {
       "foo": "bar"
-      }
+    }
   </script>
 </amp-state>
 
-<amp-state id="myRemoteState" src="https://data.com/articles.json">
-</amp-state>
+<amp-state id="myRemoteState" src="https://data.com/articles.json"> </amp-state>
 ```
 
 # Пакетная обработка запросов XHR <a name="xhr-batching"></a>
 
-AMP объединяет запросы XHR для конечных точек JSON. Поэтому ы можете использовать один запрос данных JSON как источник для нескольких покупателей (то есть нескольких элементов `amp-state`) на AMP-странице.  Например, если элемент `amp-state` отправляет запрос XHR to an в конечную точку, в процессе отправки все последующие запросы XHR к этой же конечной точке не будут отправляться. Результаты придут в ответе на первый запрос.
+AMP объединяет запросы XHR для конечных точек JSON. Поэтому ы можете использовать один запрос данных JSON как источник для нескольких покупателей (то есть нескольких элементов `amp-state`) на AMP-странице. Например, если элемент `amp-state` отправляет запрос XHR to an в конечную точку, в процессе отправки все последующие запросы XHR к этой же конечной точке не будут отправляться. Результаты придут в ответе на первый запрос.
 
 # Атрибуты <a name="attributes"></a>
 
@@ -684,8 +690,11 @@ AMP объединяет запросы XHR для конечных точек J
 ```
 
 ```html
-<button on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"...></button>
-<button on="tap:AMP.setState({employee: {age: 64}})"...></button>
+<button
+  on="tap:AMP.setState({employee: {name: 'John Smith', age: 47, vehicle: 'Car'}})"
+  ...
+></button>
+<button on="tap:AMP.setState({employee: {age: 64}})" ...></button>
 ```
 
 При нажатии первой кнопки состояние меняется:
@@ -721,7 +730,7 @@ AMP объединяет запросы XHR для конечных точек J
 Чтобы удалить существующую переменную состояния, задайте для нее значение `null` в `AMP.setState()`. Рассмотрим состояние из предыдущего примера. При нажатии кнопки:
 
 ```html
-<button on="tap:AMP.setState({employee: {vehicle: null}})"...></button>
+<button on="tap:AMP.setState({employee: {vehicle: null}})" ...></button>
 ```
 
 Состояние меняется на следующее:
@@ -738,7 +747,7 @@ AMP объединяет запросы XHR для конечных точек J
 Аналогично при использовании такого кода:
 
 ```html
-<button on="tap:AMP.setState({employee: null})"...></button>
+<button on="tap:AMP.setState({employee: null})" ...></button>
 ```
 
 Состояние меняется на следующее:

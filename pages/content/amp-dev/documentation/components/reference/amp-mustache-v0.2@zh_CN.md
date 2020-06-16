@@ -2,14 +2,12 @@
 $title: amp-mustache
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 允许呈现 Mustache.js 模板。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 允许呈现 [Mustache.js](https://github.com/janl/mustache.js/)。
 
@@ -46,22 +42,21 @@ teaser:
   </tr>
 </table>
 
-
 ## 版本说明 <a name="version-notes"></a>
 
-| 版本 | 说明 |
-|-------|-----|
-| 0.2 | 新增了对 `<svg>` 元素的支持，同时缩小了软件包大小（从 20.5KB 缩写到了 12.2KB，经过了 Gzip 压缩）。迁移到更新型的 HTML 排错程序库（从 Caja 迁移到 DOMPurify）。由于标记和属性白名单之间的差异，这可能会导致轻微的破坏性更改。我们建议您先测试网页，然后再推送到生产环境，以确保对生成的标记造成的更改不会影响功能。 |
-| 0.1 | 初始实现版本。 |
+| 版本 | 说明                                                                                                                                                                                                                                                                                                               |
+| ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 0.2  | 新增了对 `<svg>` 元素的支持，同时缩小了软件包大小（从 20.5KB 缩写到了 12.2KB，经过了 Gzip 压缩）。迁移到更新型的 HTML 排错程序库（从 Caja 迁移到 DOMPurify）。由于标记和属性白名单之间的差异，这可能会导致轻微的破坏性更改。我们建议您先测试网页，然后再推送到生产环境，以确保对生成的标记造成的更改不会影响功能。 |
+| 0.1  | 初始实现版本。                                                                                                                                                                                                                                                                                                     |
 
 ## 语法 <a name="syntax"></a>
 
 Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustache.js 文档](https://github.com/janl/mustache.js/)。下面是一些核心的 Mustache 标记：
 
-* {% raw %}`{{variable}}`{% endraw %}：变量标记。输出变量的 HTML 转义值。
-*  {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}：版块标记。可以测试变量是否存在，如果变量为数组，则对其进行迭代。
-* {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}：反向标记。可以测试变量是否不存在。
-* {% raw %}`{{{unescaped}}}`{% endraw %}：非转义 HTML。可能输出的标记受到限制（请参阅下面的“限制”）。
+- {% raw %}`{{variable}}`{% endraw %}：变量标记。输出变量的 HTML 转义值。
+- {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}：版块标记。可以测试变量是否存在，如果变量为数组，则对其进行迭代。
+- {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}：反向标记。可以测试变量是否不存在。
+- {% raw %}`{{{unescaped}}}`{% endraw %}：非转义 HTML。可能输出的标记受到限制（请参阅下面的“限制”）。
 
 ## 用法 <a name="usage"></a>
 
@@ -70,7 +65,11 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 首先，必须按如下所示声明/加载 `amp-mustache`：
 
 ```html
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  async=""
+  custom-template="amp-mustache"
+></script>
 ```
 
 然后，可以在 `script` 或 `template` 标记中定义 Mustache 模板，如下所示：
@@ -78,15 +77,16 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 [sourcecode:html]
 {% raw %}<!-- 使用 template 标记。 -->
 <template type="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </template>
 {% endraw %}[/sourcecode]
 或
 
 <!-- 使用 script 标记。 -->
+
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </script>
 {% endraw %}[/sourcecode]
 
@@ -100,8 +100,8 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 
 与所有 AMP 模板一样，`amp-mustache` 模板必须是格式正确的 DOM 片段。这意味着您无法使用 `amp-mustache` 执行一些操作，其中包括：
 
-* 计算标记名称。例如，不允许使用 {% raw %}`<{{tagName}}>`{% endraw %}。
-* 计算属性名称。例如，不允许使用 {% raw %}`<div {{attrName}}=something>`{% endraw %}。
+- 计算标记名称。例如，不允许使用 {% raw %}`<{{tagName}}>`{% endraw %}。
+- 计算属性名称。例如，不允许使用 {% raw %}`<div {{attrName}}=something>`{% endraw %}。
 
 系统会对“triple-mustache”的输出进行排错处理，以便仅允许以下标记：`a`、`b`、`br`、`caption`、`colgroup`、`code`、`del`、`div`、`em`、`i`、`ins`、`li`、`mark`、`ol`、`p`、`q`、`s`、`small`、`span`、`strong`、`sub`、`sup`、`table`、`tbody`、`time`、`td`、`th`、`thead`、`tfoot`、`tr`、`u`、`ul`。
 
@@ -119,18 +119,19 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 
 [sourcecode:html]
 {% raw %}<amp-list id="myList" src="https://foo.com/list.json">
-  <template type="amp-mustache">
-    <div>{{title}}</div>
-  </template>
+<template type="amp-mustache">
+
+<div>{{title}}</div>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
-
 
 也可以表示为：
 
 [sourcecode:html]
 {% raw %}<!-- 外化模板以避免嵌套。 -->
 <template type="amp-mustache" id="myTemplate">
+
   <div>{{title}}</div>
 </template>
 
@@ -144,6 +145,7 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -157,6 +159,7 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 [sourcecode:html]
 {% raw %}{{#foo}}
 {{/foo}}
+
 <table>
   <tr>
     <td></td>
@@ -168,6 +171,7 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -182,10 +186,13 @@ Mustache 是一种无逻辑模板语法。如需了解详情，请参阅 [Mustac
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
 <!-- 在 foo 中使用英文双引号 (") 将导致 HTML 格式不正确。 -->
+
 <amp-img alt="{{foo}}" src="example.jpg" width="100" height="100"></amp-img>
 
 <!-- 在 bar 中使用英文单引号 (') 或英文双引号 (") 将导致 AMP runtime 解析错误。 -->
+
 <button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>
 </template>
 {% endraw %}[/sourcecode]

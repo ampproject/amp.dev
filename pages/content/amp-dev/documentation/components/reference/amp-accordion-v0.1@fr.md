@@ -2,13 +2,12 @@
 $title: amp-accordion
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Permettre aux internautes d'avoir un aperçu du contenu et d'accéder directement à la section de leur choix.
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Ce composant permet aux internautes d'avoir un aperçu du contenu et d'accéder directement à la section de leur choix. Cette fonctionnalité s'avère particulièrement utile pour les appareils mobiles sur lesquels l'utilisateur doit faire défiler ne serait-ce que quelques phrases d'une section.
 
@@ -45,23 +42,23 @@ Ce composant permet aux internautes d'avoir un aperçu du contenu et d'accéder 
   </tr>
 </table>
 
-
 ## Comportement <a name="behavior"></a>
 
 Le composant `amp-accordion` vous permet d'afficher des sections de contenu qui peuvent être réduites et développées. Chaque élément enfant immédiat du composant `amp-accordion` est considéré comme une section de l'accordéon. Chacun de ces nœuds doit être une balise `<section>`.
 
-* Un composant `amp-accordion` peut contenir un ou plusieurs éléments `<section>` en tant qu'éléments enfants directs.
-* Chaque élément `<section>` doit contenir exactement deux enfants directs.
-* Le premier élément enfant (de la section) représente le titre de la section et doit être un élément de titre (`h1`, `h2`, ..., `h6`, `header`).
-* Le deuxième élément enfant (de la section) peut être n'importe quelle balise autorisée dans AMP HTML et représente le contenu de la section.
-* Cliquer ou appuyer sur le titre d'une section a pour effet de développer ou de réduire cette dernière.
-* L'état réduit/développé de chaque section de l'élément `amp-accordion` est conservé pour le niveau de session. Pour désactiver la conservation de cet état, ajoutez l'attribut `disable-session-states` à l'élément `amp-accordion`.
+- Un composant `amp-accordion` peut contenir un ou plusieurs éléments `<section>` en tant qu'éléments enfants directs.
+- Chaque élément `<section>` doit contenir exactement deux enfants directs.
+- Le premier élément enfant (de la section) représente le titre de la section et doit être un élément de titre (`h1`, `h2`, ..., `h6`, `header`).
+- Le deuxième élément enfant (de la section) peut être n'importe quelle balise autorisée dans AMP HTML et représente le contenu de la section.
+- Cliquer ou appuyer sur le titre d'une section a pour effet de développer ou de réduire cette dernière.
+- L'état réduit/développé de chaque section de l'élément `amp-accordion` est conservé pour le niveau de session. Pour désactiver la conservation de cet état, ajoutez l'attribut `disable-session-states` à l'élément `amp-accordion`.
 
 #### Exemple : Affichage d'un accordéon <a name="example-displaying-an-accordion"></a>
 
-Trois sections sont affichées dans cet exemple. La troisième section est développée lors du chargement de la page.  Nous avons, en outre, désactivé la conservation de l'état réduit/développé en définissant l'attribut `disable-session-states`.
+Trois sections sont affichées dans cet exemple. La troisième section est développée lors du chargement de la page. Nous avons, en outre, désactivé la conservation de l'état réduit/développé en définissant l'attribut `disable-session-states`.
 
 [example preview="inline" playground="true" imports="amp-accordion"]
+
 ```html
 <amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
@@ -80,6 +77,7 @@ Trois sections sont affichées dans cet exemple. La troisième section est déve
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 [tip type="success"]
@@ -145,13 +143,13 @@ Les événements ci-dessous sont déclenchés sur les éléments `section` de `a
 
 ## Application d'un style <a name="styling"></a>
 
-* Vous pouvez utiliser le sélecteur d'élément `amp-accordion` pour appliquer un style librement.
-* Les éléments `amp-accordion` sont toujours `display: block`.
-* Les éléments `<section>`, titre et contenu ne peuvent pas être flottants.
-* Lorsque la section est développée, l'attribut `expanded` est associé à l'élément `<section>`.
-* Un "clearfix" est appliqué à l'élément de contenu avec la propriété `overflow: hidden` et, par conséquent, il ne peut pas contenir de barres de défilement.
-* Les marges des éléments `<amp-accordion>`, `<section>`, titre et contenu sont définies sur 0, et peuvent être remplacées dans des styles personnalisés.
-* Les éléments de titre et de contenu ont tous deux la propriété `position: relative`.
+- Vous pouvez utiliser le sélecteur d'élément `amp-accordion` pour appliquer un style librement.
+- Les éléments `amp-accordion` sont toujours `display: block`.
+- Les éléments `<section>`, titre et contenu ne peuvent pas être flottants.
+- Lorsque la section est développée, l'attribut `expanded` est associé à l'élément `<section>`.
+- Un "clearfix" est appliqué à l'élément de contenu avec la propriété `overflow: hidden` et, par conséquent, il ne peut pas contenir de barres de défilement.
+- Les marges des éléments `<amp-accordion>`, `<section>`, titre et contenu sont définies sur 0, et peuvent être remplacées dans des styles personnalisés.
+- Les éléments de titre et de contenu ont tous deux la propriété `position: relative`.
 
 ## Validation <a name="validation"></a>
 

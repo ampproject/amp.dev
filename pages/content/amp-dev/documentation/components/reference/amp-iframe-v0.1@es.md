@@ -2,11 +2,10 @@
 $title: amp-iframe
 $category@: layout
 formats:
-- websites
+  - websites
 teaser:
   text: Muestra un iframe.
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -24,10 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Muestra un iframe.
-
 
 <table>
   <tr>
@@ -48,20 +44,23 @@ Muestra un iframe.
 
 `amp-iframe` presenta varias diferencias importantes con respecto a los iframes estándar que tienen como objetivo aumentar la seguridad y evitar que los archivos AMP estén dominados por un único iframe:
 
-* Un `amp-iframe` no aparece cerca de la parte superior del documento, excepto los que utilizan el atributo `placeholder` (consulta la sección [Iframe con marcador de posición](#iframe-with-placeholder) de este documento). El iframe debe estar situado a 600 píxeles de distancia de la parte superior o a partir del primer 75 % del viewport cuando el desplazamiento es hasta la parte superior de la página, la opción que sea más pequeña.
-* De forma predeterminada, los amp-iframe están en zona de pruebas ([más información](#sandbox)).
-* `amp-iframe` solo debe solicitar recursos a través de HTTPS, de una URI de datos o del atributo `srcdoc`.
-* `amp-iframe` no debe estar situado en el mismo origen que el contenedor, a menos que no admitan `allow-same-origin` en el atributo `sandbox`. Para obtener más información sobre los orígenes permitidos para iframes, consulta la [política de origen de iframe](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
+- Un `amp-iframe` no aparece cerca de la parte superior del documento, excepto los que utilizan el atributo `placeholder` (consulta la sección [Iframe con marcador de posición](#iframe-with-placeholder) de este documento). El iframe debe estar situado a 600 píxeles de distancia de la parte superior o a partir del primer 75 % del viewport cuando el desplazamiento es hasta la parte superior de la página, la opción que sea más pequeña.
+- De forma predeterminada, los amp-iframe están en zona de pruebas ([más información](#sandbox)).
+- `amp-iframe` solo debe solicitar recursos a través de HTTPS, de una URI de datos o del atributo `srcdoc`.
+- `amp-iframe` no debe estar situado en el mismo origen que el contenedor, a menos que no admitan `allow-same-origin` en el atributo `sandbox`. Para obtener más información sobre los orígenes permitidos para iframes, consulta la [política de origen de iframe](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
 
-*Ejemplo: Incrustar un mapa de Google Maps en un amp-iframe*
+_Ejemplo: Incrustar un mapa de Google Maps en un amp-iframe_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland">
-  </amp-iframe>
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland"
+>
+</amp-iframe>
 ```
 
 Se renderiza así:
@@ -75,16 +74,16 @@ Para ver más ejemplos del componente `amp-iframe`, visita [AMP By Example](ht
 
 # Usar amp-iframe con fines publicitarios <a name="usage-of-amp-iframe-for-advertising"></a>
 
-`amp-iframe` ****no debe utilizarse con el propósito principal de mostrar publicidad, ``pero se puede usar para mostrar vídeos que contienen anuncios. Para aplicar esta política, se puede denegar el renderizado de los respectivos iframes.
+`amp-iframe` \*\*\*\*no debe utilizarse con el propósito principal de mostrar publicidad, ``pero se puede usar para mostrar vídeos que contienen anuncios. Para aplicar esta política, se puede denegar el renderizado de los respectivos iframes.
 
 Cuando la finalidad es mostrar anuncios, se debe utilizar [`amp-ad`](amp-ad.md).
 
 Los motivos de esta política son los siguientes:
 
-* `amp-iframe` aplica la zona de pruebas y también se aplica a los iframes secundarios. Por ello, aunque parezca que el anuncio sí funciona, puede que las páginas de destino no estén disponibles.
-* `amp-iframe` no proporciona ningún mecanismo para transferir configuración al iframe.
-* `amp-iframe` no tiene un mecanismo de cambio de tamaño que controle totalmente el iframe.
-* La información de visibilidad puede no estar disponible para `amp-iframe`.
+- `amp-iframe` aplica la zona de pruebas y también se aplica a los iframes secundarios. Por ello, aunque parezca que el anuncio sí funciona, puede que las páginas de destino no estén disponibles.
+- `amp-iframe` no proporciona ningún mecanismo para transferir configuración al iframe.
+- `amp-iframe` no tiene un mecanismo de cambio de tamaño que controle totalmente el iframe.
+- La información de visibilidad puede no estar disponible para `amp-iframe`.
 
 # Atributos <a name="attributes"></a>
 
@@ -119,27 +118,33 @@ Los motivos de esta política son los siguientes:
 
 Se puede incluir un elemento `placeholder` para lograr que `amp-iframe` aparezca en la parte superior de un documento``, como se muestra en el ejemplo que aparece más abajo.
 
-* `amp-iframe` debe contener un elemento con el atributo `placeholder`, como `amp-img`, que se renderiza como marcador de posición hasta que el iframe esté listo para mostrarse.
-* La disponibilidad del iframe se puede conocer escuchando un evento `onload` del iframe o un `embed-ready` `postMessage` que enviaría el documento de iframe, lo que suceda primero.
+- `amp-iframe` debe contener un elemento con el atributo `placeholder`, como `amp-img`, que se renderiza como marcador de posición hasta que el iframe esté listo para mostrarse.
+- La disponibilidad del iframe se puede conocer escuchando un evento `onload` del iframe o un `embed-ready` `postMessage` que enviaría el documento de iframe, lo que suceda primero.
 
-*Ejemplo: Iframe con un marcador de posición*
+_Ejemplo: Iframe con un marcador de posición_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    src="https://foo.com/iframe">
-    <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  src="https://foo.com/iframe"
+>
+  <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>
 ```
 
-*Ejemplo: Solicitud embed-ready de iframe*
+_Ejemplo: Solicitud embed-ready de iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # Cambio de tamaño del iframe <a name="iframe-resizing"></a>
@@ -154,64 +159,77 @@ window.parent.postMessage({
 
 Fíjate en que `resizable` hace que el valor de `scrolling` cambie a `no`.
 
-*Ejemplo: `amp-iframe` con elemento `overflow`*
+_Ejemplo: `amp-iframe` con elemento `overflow`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-    <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*Ejemplo: Solicitud de cambio de tamaño de iframe*
+_Ejemplo: Solicitud de cambio de tamaño de iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-size',
-  height: document.body.scrollHeight
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 Una vez recibido este mensaje, el tiempo de ejecución de AMP intenta procesar la solicitud lo antes posible, pero tiene en cuenta la posición del lector en la página, si continúa el desplazamiento y cualquier otro factor de experiencia de usuario o de rendimiento. Si el tiempo de ejecución no puede aplicar el cambio de tamaño de la solicitud, `amp-iframe` mostrará un elemento `overflow`. Al hacer clic en el elemento `overflow`, se modificará el tamaño del `amp-iframe` inmediatamente, ya que se activa mediante una acción del usuario.
 
 Algunos factores que afectan a la rapidez con la que se realizará el cambio de tamaño son:
 
-* Si se ha activado por una acción del usuario.
-* Si se ha solicitado para un iframe que está activo en ese momento.
-* Si se ha solicitado para un iframe situado debajo o encima del viewport.
+- Si se ha activado por una acción del usuario.
+- Si se ha solicitado para un iframe que está activo en ese momento.
+- Si se ha solicitado para un iframe situado debajo o encima del viewport.
 
 # Visibilidad del iframe <a name="iframe-viewability"></a>
 
 Los iframes pueden enviar un mensaje `send-intersections` a sus elementos superiores para empezar a recibir [registros de cambios de estilo IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) de la intersección del iframe con el viewport principal.
 
-*Nota: En los siguientes ejemplos, suponemos que la secuencia de comandos se encuentra en el iframe creado, en el que `window.parent` es la ventana superior. Si la secuencia de comandos se encuentra en un iframe anidado, haz que `window.parent` sea la ventana superior de AMP.*
+_Nota: En los siguientes ejemplos, suponemos que la secuencia de comandos se encuentra en el iframe creado, en el que `window.parent` es la ventana superior. Si la secuencia de comandos se encuentra en un iframe anidado, haz que `window.parent` sea la ventana superior de AMP._
 
-*Ejemplo: Solicitud `send-intersections` de iframe*
+_Ejemplo: Solicitud `send-intersections` de iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'send-intersections'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 El iframe puede escuchar un mensaje `intersection` de la ventana principal para recibir de él los datos de intersección.
 
-*Ejemplo: Solicitud `send-intersections` de iframe*
+_Ejemplo: Solicitud `send-intersections` de iframe_
 
 ```javascript
-window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-  event.origin == window.location.origin ||
-  !event.data ||
-  event.data.sentinel != 'amp' ||
-  event.data.type != 'intersection') {
+window.addEventListener('message', function (event) {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
-    }
+  }
   event.data.changes.forEach(function (change) {
     console.log(change);
   });
@@ -232,10 +250,10 @@ Los iframes se identifican como de seguimiento o de analíticas si no parecen of
 
 El componente `amp-iframe` debe considerarse como un respaldo si no se puede ofrecer la experiencia de usuario deseada utilizando otros medios de AMP; es decir, si no existe un [componente de AMP](../../../documentation/components/index.html) que se ocupe de dicho caso práctico. Si se utiliza un componente de AMP diseñado para un caso práctico específico, se logran ventajas como las siguientes:
 
-* Mejor rendimiento y gestión de los recursos.
-* En algunos casos, los componentes personalizados pueden proporcionar imágenes de marcador de posición integradas. Esto puede suponer, por ejemplo, que se pueda obtener la miniatura correspondiente de un vídeo antes de que este se cargue, y reducir de este modo el esfuerzo que supone añadir un marcador de posición de forma manual a la hora de escribir el código.
-* Cambio de tamaño integrado, lo que supone que el contenido de un iframe de tamaño impredecible se pueda mostrar al usuario como si fuera nativo de la página en lugar de un marco desplazable.
-* Se pueden integrar otras funciones adicionales (por ejemplo, la reproducción automática para reproductores de vídeo).
+- Mejor rendimiento y gestión de los recursos.
+- En algunos casos, los componentes personalizados pueden proporcionar imágenes de marcador de posición integradas. Esto puede suponer, por ejemplo, que se pueda obtener la miniatura correspondiente de un vídeo antes de que este se cargue, y reducir de este modo el esfuerzo que supone añadir un marcador de posición de forma manual a la hora de escribir el código.
+- Cambio de tamaño integrado, lo que supone que el contenido de un iframe de tamaño impredecible se pueda mostrar al usuario como si fuera nativo de la página en lugar de un marco desplazable.
+- Se pueden integrar otras funciones adicionales (por ejemplo, la reproducción automática para reproductores de vídeo).
 
 # Validación <a name="validation"></a>
 

@@ -11,12 +11,14 @@ $title: جعل صفحتك قابلة للاكتشاف
 أضف ما يلي إلى الصفحة التي لا تنتمي إلى AMP:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 وأضف ما يلي إلى صفحة AMP:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,6 +27,7 @@ $title: جعل صفحتك قابلة للاكتشاف
 إذا كانت لديك صفحة واحدة فقط، وتلك الصفحة هي صفحة AMP، فيجب مع ذلك إضافة الرابط الأساسي إليها، والذي سيشير إلى نفسه بطبيعة الحال:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -41,6 +44,7 @@ $title: جعل صفحتك قابلة للاكتشاف
 مثال:‏
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -72,6 +76,7 @@ $title: جعل صفحتك قابلة للاكتشاف
     }
   }
 </script>
+
 [/sourcecode]
 
 يمكن الاطلاع على المزيد من الأمثلة في [مجلد أمثلة ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)، بما في ذلك بنية سمة HTML البدلية.

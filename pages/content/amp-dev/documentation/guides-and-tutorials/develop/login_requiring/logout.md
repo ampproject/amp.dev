@@ -15,9 +15,9 @@ When you click the Logout button, you are directed to the URL that you specified
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

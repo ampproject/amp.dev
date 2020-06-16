@@ -11,12 +11,14 @@ Para resolver esse problema, adicionamos informações sobre a página AMP à ve
 Adicione o seguinte à página não AMP:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Da mesma forma, inclua isto na página AMP:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,6 +27,7 @@ Da mesma forma, inclua isto na página AMP:
 Se você só tiver uma página, e ela for uma AMP, ainda assim será preciso adicionar o link canônico (que levará à mesma página):
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -45,6 +48,7 @@ O [Schema.org](http://schema.org/) (em inglês) oferece vocabulários abertos pa
 Exemplo:
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -76,18 +80,17 @@ Exemplo:
     }
   }
 </script>
+
 [/sourcecode]
 
 Há mais material na [pasta de exemplos do ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), incluindo a sintaxe alternativa de atributo HTML.
 
 [tip type="read-on"] Acesse estes recursos para saber mais sobre os dados estruturados:
 
-* Saiba como [estruturar seu conteúdo para exibição na versão aprimorada da Pesquisa Google](https://developers.google.com/search/docs/guides/mark-up-content), por exemplo, notícias principais, carrossel, cards de receitas etc.
-* Teste seus dados estruturados com a [Ferramenta de teste de dados estruturados do Google](https://developers.google.com/structured-data/testing-tool/).
-[/tip]
+- Saiba como [estruturar seu conteúdo para exibição na versão aprimorada da Pesquisa Google](https://developers.google.com/search/docs/guides/mark-up-content), por exemplo, notícias principais, carrossel, cards de receitas etc.
+- Teste seus dados estruturados com a [Ferramenta de teste de dados estruturados do Google](https://developers.google.com/structured-data/testing-tool/).
+  [/tip]
 
 ### Outros metadados para mais plataformas
 
 Acesse o [guia Descoberta social no site Fundamentos da Web](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) para saber mais sobre as diferentes formas de preparar seu conteúdo para detecção e distribuição.
- 
- 

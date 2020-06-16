@@ -13,7 +13,9 @@ Para incluir un tuit en tu página,
 incluye en primer lugar la siguiente secuencia de comandos en `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
 [/sourcecode]
 
 Actualmente, los tuits se adaptan de forma automática y proporcional a escala
@@ -21,13 +23,17 @@ para encajar en el tamaño indicado, pero es posible que la apariencia resultant
 Ajusta la anchura y la altura de forma manual o usa el atributo de medios para seleccionar la relación de aspecto en función de la anchura de la pantalla.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
+
 ```html
-<amp-twitter width="500"
+<amp-twitter
+  width="500"
   height="583"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -41,7 +47,9 @@ Inserta una foto de Instagram en tu página con el elemento [`amp-instagram`](..
 Para incluir una foto de Instagram, en primer lugar incluye la siguiente secuencia de comandos en `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 [/sourcecode]
 
 Incluye el código abreviado de datos de Instagram que se encuentra en la URL de la foto de Instagram.
@@ -49,13 +57,17 @@ Por ejemplo, en `https://instagram.com/p/fBwFP`, el código abreviado de datos e
 Además, Instagram utiliza una relación de aspecto fija para los diseños adaptables, por lo que los valores de anchura y altura deben ser universales
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
+
 ```html
-<amp-instagram data-shortcode="fBwFP"
+<amp-instagram
+  data-shortcode="fBwFP"
   width="320"
   height="392"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-instagram>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -69,18 +81,25 @@ Muestra una entrada o un vídeo de Facebook en tu página con el elemento [`amp-
 Debes incluir la siguiente secuencia de comandos en `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
 [/sourcecode]
 
 ##### Ejemplo: insertar una entrada
 
 Fuente:
+
 ```html
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+<amp-facebook
+  width="486"
+  height="657"
+  layout="responsive"
+  data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+>
 </amp-facebook>
 ```
+
 Avance:
 <amp-facebook width="486" height="657"
     layout="responsive"
@@ -90,13 +109,18 @@ Avance:
 ##### Ejemplo: insertar un vídeo
 
 Fuente:
+
 ```html
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+<amp-facebook
+  width="476"
+  height="316"
+  layout="responsive"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
 </amp-facebook>
 ```
+
 Avance:
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -115,7 +139,9 @@ Inserta un vídeo de YouTube en tu página con el elemento [`amp-youtube`](../..
 Debes incluir la siguiente secuencia de comandos en `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
 [/sourcecode]
 
 El atributo `data-videoid` de YouTube se puede encontrar en todas las URL de las páginas de vídeo de YouTube.
@@ -125,13 +151,17 @@ el ID de vídeo es `Z1q71gFeRqM`.
 Utiliza `layout="responsive"` para producir diseños correctos para los vídeos con una relación de aspecto de 16:9:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -153,31 +183,39 @@ El atributo `type` identifica la plantilla de la red publicitaria.
 Los diferentes tipos de anuncios requieren diferentes atributos `data-*`.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
 </amp-ad>
 ```
+
 [/example]
 Si la red publicitaria lo admite, incluye un `placeholder` para que se muestre si no hay anuncios disponibles:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
+
 [/example]
 
 AMP es compatible con una amplia gama de redes publicitarias. Consulta la [referencia para obtener una lista completa](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).

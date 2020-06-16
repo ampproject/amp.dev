@@ -2,11 +2,10 @@
 $title: amp-iframe
 $category@: layout
 formats:
-- websites
+  - websites
 teaser:
   text: Mostra un iframe.
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -24,10 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Mostra un iframe.
-
 
 <table>
   <tr>
@@ -48,20 +44,23 @@ Mostra un iframe.
 
 `amp-iframe` presenta varie differenze importanti dagli iframe Vanilla progettati per una maggiore sicurezza e per evitare che i file AMP siano dominati da un solo iframe:
 
-* Un `amp-iframe` potrebbe non comparire vicino alla parte superiore del documento, eccetto per gli iframe che utilizzano `placeholder`, come descritto [più avanti](#iframe-with-placeholder). L'iframe deve essere distante 600 px dalla parte superiore o comunque non trovarsi nel primo 75% dell'area visibile quando si scorre verso l'alto, a seconda di quale delle due opzioni è più piccola.
-* Per impostazione predefinita, un amp-iframe è limitato tramite sandbox (vedi i [dettagli](#sandbox)).
-* Un `amp-iframe` deve richiedere risorse solo tramite HTTPS, da un URI dati o tramite l'attributo `srcdoc`.
-* Un `amp-iframe` non deve trovarsi nella stessa origine del contenitore, a meno che `allow-same-origin` non sia consentito nell'attributo `sandbox`. Vedi il documento sulle [norme relative alle origini di iframe](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) doc per ulteriori dettagli sulle origini consentite per gli iframe.
+- Un `amp-iframe` potrebbe non comparire vicino alla parte superiore del documento, eccetto per gli iframe che utilizzano `placeholder`, come descritto [più avanti](#iframe-with-placeholder). L'iframe deve essere distante 600 px dalla parte superiore o comunque non trovarsi nel primo 75% dell'area visibile quando si scorre verso l'alto, a seconda di quale delle due opzioni è più piccola.
+- Per impostazione predefinita, un amp-iframe è limitato tramite sandbox (vedi i [dettagli](#sandbox)).
+- Un `amp-iframe` deve richiedere risorse solo tramite HTTPS, da un URI dati o tramite l'attributo `srcdoc`.
+- Un `amp-iframe` non deve trovarsi nella stessa origine del contenitore, a meno che `allow-same-origin` non sia consentito nell'attributo `sandbox`. Vedi il documento sulle [norme relative alle origini di iframe](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) doc per ulteriori dettagli sulle origini consentite per gli iframe.
 
-*Esempio: incorporamento di una mappa Google in un amp-iframe*
+_Esempio: incorporamento di una mappa Google in un amp-iframe_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland">
-  </amp-iframe>
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland"
+>
+</amp-iframe>
 ```
 
 Viene visualizzata come:
@@ -81,10 +80,10 @@ I casi d'uso pubblicitari dovrebbero invece utilizzare [`amp-ad`](amp-ad.md).
 
 I motivi di questa norma sono i seguenti:
 
-* `amp-iframe` applica la limitazione tramite sandbox e la sandbox viene applicata anche agli iframe secondari. Ciò significa che le pagine di destinazione potrebbero non funzionare anche nel caso in cui l'annuncio sembri a posto.
-* `amp-iframe` non fornisce alcun modo per trasmettere la configurazione all'iframe.
-* `amp-iframe` non possiede un meccanismo di ridimensionamento controllato completamente dall'iframe.
-* Le informazioni sulla visibilità potrebbero non essere disponibili per `amp-iframe`.
+- `amp-iframe` applica la limitazione tramite sandbox e la sandbox viene applicata anche agli iframe secondari. Ciò significa che le pagine di destinazione potrebbero non funzionare anche nel caso in cui l'annuncio sembri a posto.
+- `amp-iframe` non fornisce alcun modo per trasmettere la configurazione all'iframe.
+- `amp-iframe` non possiede un meccanismo di ridimensionamento controllato completamente dall'iframe.
+- Le informazioni sulla visibilità potrebbero non essere disponibili per `amp-iframe`.
 
 # Attributi <a name="attributes"></a>
 
@@ -121,27 +120,33 @@ I motivi di questa norma sono i seguenti:
 
 È possibile far comparire un `amp-iframe` nella parte superiore di un documento quando `amp-iframe` ha un elemento `placeholder`, come mostrato nell'esempio seguente.
 
-* `amp-iframe` deve contenere un elemento con l'attributo `placeholder`, ad esempio un elemento `amp-img`, che verrebbe mostrato come segnaposto fino a che l'iframe non è pronto a essere visualizzato.
-* Puoi l'idoneità a iframe ascoltando l'`onload` dell'iframe o un `embed-ready` `postMessage` inviato dal documento iframe, a seconda di quale dei arriva per primo.
+- `amp-iframe` deve contenere un elemento con l'attributo `placeholder`, ad esempio un elemento `amp-img`, che verrebbe mostrato come segnaposto fino a che l'iframe non è pronto a essere visualizzato.
+- Puoi l'idoneità a iframe ascoltando l'`onload` dell'iframe o un `embed-ready` `postMessage` inviato dal documento iframe, a seconda di quale dei arriva per primo.
 
-*Esempio: iframe con un segnaposto*
+_Esempio: iframe con un segnaposto_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    src="https://foo.com/iframe">
-    <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  src="https://foo.com/iframe"
+>
+  <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>
 ```
 
-*Esempio: richiesta iframe embed-ready*
+_Esempio: richiesta iframe embed-ready_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # Ridimensionamento iframe <a name="iframe-resizing"></a>
@@ -157,26 +162,34 @@ Un `amp-iframe` deve avere un layout statico definito, come tutti gli altri elem
 
 Tieni presente che `resizable` sovrascrive il valore `scrolling` su `no`.
 
-*Esempio: `amp-iframe` con elemento `overflow`*
+_Esempio: `amp-iframe` con elemento `overflow`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-    <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*Esempio: richiesta di ridimensionamento iframe*
+_Esempio: richiesta di ridimensionamento iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-size',
-  height: document.body.scrollHeight
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 Una volta ricevuto questo messaggio, il runtime AMP cerca di soddisfare la richiesta al più presto, ma tiene conto di dove sta leggendo l'utente, se sta scorrendo la pagina o di altri fattori relativi all'UX o alle prestazioni. Se il runtime non è in grado di soddisfare la richiesta di ridimensionamento,
@@ -184,38 +197,43 @@ Una volta ricevuto questo messaggio, il runtime AMP cerca di soddisfare la richi
 
 La velocità di ridimensionamento può variare:
 
-* Se il ridimensionamento viene attivato dall'azione dell'utente.
-* Se il ridimensionamento è richiesto per un iframe attualmente attivo.
-* Se il ridimensionamento è richiesto per un iframe sotto o sopra l'area visibile.
+- Se il ridimensionamento viene attivato dall'azione dell'utente.
+- Se il ridimensionamento è richiesto per un iframe attualmente attivo.
+- Se il ridimensionamento è richiesto per un iframe sotto o sopra l'area visibile.
 
 # Visibilità iframe <a name="iframe-viewability"></a>
 
 Gli iframe possono inviare un messaggio `send-intersections` ai loro elementi principali per iniziare a ricevere i [registri delle modifiche](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) di stile IntersectionObserver dell'intersezione dell'iframe con l'aria visibile principale.
 
-*Nota: negli esempi di seguito, presupponiamo che lo script sia all'interno dell'iframe creato, dove `window.parent` è la finestra in alto. Se lo script si trova in un iframe nidificato, cambia `window.parent` nella finestra AMP principale.*
+_Nota: negli esempi di seguito, presupponiamo che lo script sia all'interno dell'iframe creato, dove `window.parent` è la finestra in alto. Se lo script si trova in un iframe nidificato, cambia `window.parent` nella finestra AMP principale._
 
-*Esempio: richiesta `send-intersections` iframe*
+_Esempio: richiesta `send-intersections` iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'send-intersections'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 L'iframe può ascoltare un messaggio `intersection` proveniente dalla finestra principale per ricevere i dati dell'intersezione.
 
-*Esempio: richiesta `send-intersections` iframe*
+_Esempio: richiesta `send-intersections` iframe_
 
 ```javascript
-window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-  event.origin == window.location.origin ||
-  !event.data ||
-  event.data.sentinel != 'amp' ||
-  event.data.type != 'intersection') {
+window.addEventListener('message', function (event) {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
-    }
+  }
   event.data.changes.forEach(function (change) {
     console.log(change);
   });
@@ -236,10 +254,10 @@ Gli iframe sono identificati come iframe di monitoraggio/analisi se non sembrano
 
 Puoi utilizzare il componente `amp-iframe` come metodo alternativo, nel caso in cui l'esperienza utente richiesta non sia possibile in altri modi in AMP, ossia se non è già presente un [componente AMP](../../../documentation/components/index.html) adatto al caso d'uso. Questo perché l'utilizzo di un componente AMP progettato per uno specifico caso d'uso offre numerosi vantaggi, ad esempio:
 
-* Migliore gestione e prestazioni delle risorse.
-* In alcuni casi, i componenti personalizzati possono fornire immagini segnaposto integrate. Ciò significa, ad esempio, ottenere la miniatura video corretta prima del caricamento di un video e ridurre lo sviluppo di ulteriore codice per aggiungere manualmente un segnaposto.
-* Ridimensionamento integrato. Ciò significa che i contenuti iframe con dimensioni non prevedibili possono essere visualizzati più spesso dall'utente come se fossero nativi della pagina anziché in un frame scorrevole.
-* È possibile integrare altre funzioni aggiuntive, come la riproduzione automatica dei video player.
+- Migliore gestione e prestazioni delle risorse.
+- In alcuni casi, i componenti personalizzati possono fornire immagini segnaposto integrate. Ciò significa, ad esempio, ottenere la miniatura video corretta prima del caricamento di un video e ridurre lo sviluppo di ulteriore codice per aggiungere manualmente un segnaposto.
+- Ridimensionamento integrato. Ciò significa che i contenuti iframe con dimensioni non prevedibili possono essere visualizzati più spesso dall'utente come se fossero nativi della pagina anziché in un frame scorrevole.
+- È possibile integrare altre funzioni aggiuntive, come la riproduzione automatica dei video player.
 
 # Convalida <a name="validation"></a>
 

@@ -3,7 +3,8 @@
 This document holds all the information required to maintain and contribute relevant content for each of its packages.
 
 ## Collections
-Pages inside [Grow](https://grow.io/docs/) are stored in so called collections. A collection is established by creating a *_blueprint.yaml* in a directory. The following fields are evaluated by the amp.dev setup:
+
+Pages inside [Grow](https://grow.io/docs/) are stored in so called collections. A collection is established by creating a _\_blueprint.yaml_ in a directory. The following fields are evaluated by the amp.dev setup:
 
 ```yaml
 # If true on a collection, "Get started" and "Previous chapter" and "Next chapter"
@@ -14,7 +15,8 @@ chaptered: true|false
 ## Documents
 
 ### Frontmatter
-The documents inside the *pages* package are Grow documents that use the [built-in fields](http://grow.io/docs/documents/#built-in-fields) and some additional ones that are used to categorize them:
+
+The documents inside the _pages_ package are Grow documents that use the [built-in fields](http://grow.io/docs/documents/#built-in-fields) and some additional ones that are used to categorize them:
 
 ```yaml
 formats [default: websites,ads,email,stories]:
@@ -43,11 +45,13 @@ tags [default: '']
 ```
 
 ### Format filtering documents
+
 By the categorization via the `formats` list in the frontmatter the user is able to filter the documentation by one of the formats. The filtered variants of each page get generated during build time but you are also able to create custom filtered ones by duplicating the document you want to filter it and append the format it is going to be filtered by. So for example a filtered version of `index@es.md` becomes `index.ads.md`.
 
 If the document has a specific path that is not getting inherited from the `_blueprint.yaml` also make sure to set a matching path. Same example: `index.md` has `$path: /category.html` then `index.ads.md` needs to have `$path: /category.ads.html`. Otherwise the build process is not able to match the base and the filtered variant. To not have double navigation items make sure to also give `$hidden: true` to the filtered variant.
 
 ### Format filtered paragraphs
+
 Documents will be relevant to multiple formats on a broad scope, but may contain sections and paragraphs that are not accurate for all formats listed in the frontmatter. You can wrap paragraphs in a filter to hide or show them, depending on what format the user has selected.
 
 ```
@@ -65,12 +69,16 @@ This is visible for [stories](?format=stories).
 ```
 
 ### Shortcodes
+
 The project enables various shortcodes to extend the basic functionality of markdown.
 
 **Tip**
+
 ```md
 [tip type="default|important|note|read-on"]
+
 # Headline
+
 Text.
 [/tip]
 ```
@@ -78,6 +86,7 @@ Text.
 The `type=default` can be omitted.
 
 **Video**
+
 ```md
 [video src="https://www.youtube.com/watch?v=npum8JsITQE" caption="This is the caption text."]
 ```
@@ -85,6 +94,7 @@ The `type=default` can be omitted.
 The video ID (`npum8JsITQE` in the above example) will be extracted automatically.
 
 **Stage**
+
 ```md
 <section class="ap--stage ap--container-fluid">
 [stage format="websites|stories|ads|emails"]
@@ -93,15 +103,16 @@ The video ID (`npum8JsITQE` in the above example) will be extracted automaticall
 
 [Get Started](/content/amp-dev/documentation/guides-and-tutorials/index.md)
 [/stage]
+
 </section>
 ```
 
 The Link is optional and will create a button inside the stage.
 
 **Teaser grid**
+
 ```md
-[teaser-grid]
-[](/content/shared/fill-ins/success-story.md)
+[teaser-grid][](/content/shared/fill-ins/success-story.md)
 [](/content/shared/fill-ins/success-story-2.md)
 [](/content/shared/fill-ins/success-story.md)
 
@@ -120,6 +131,7 @@ Import AMP components via:
 ```
 
 ### Code Samples
+
 Code samples are placed inside sets of three backticks. The sourcecode language specified at the end of the first backtick set.
 
 <pre>
@@ -149,6 +161,7 @@ If your code contains double curly braces, which often is the case if you use am
 **Code samples in lists**
 
 Python-Markdown has some limitations. Use the following syntax when including code samples in lists:
+
 <pre>
   <code>
   1. First:
@@ -180,13 +193,14 @@ You can let a code sample have a preview or a link to open the code sample in th
 </pre>
 
 Use the `preview` attribute to define how the preview is generated:
+
 - **none**: No preview will be generated
 
 - **inline**: The example preview is displayed above the source code.
   An inline preview is only possible for normal website examples if the code does not contain any `head` elements.
   Use this option for small examples that do not need any styling or other `head` elements
   (imports do not count, since they are specified via the `imports` attribute).
-  
+
 - **top-frame**: The example preview is displayed above the source code inside an iframe.
   The orientation can be toggled between `portrait` and `landscape` mode.
   You can preselect the orientation by specifying the additional attribute:
@@ -223,23 +237,26 @@ Arrays can contain multiple elements. The media source can be `image_src` or `vi
 
 Leave the device.direction property empty to get a flat front view.
 Device.layouts and their ratios:
-  - Desktop: 8:5
-  - Tablet: 4:3
-  - Mobile: 3:5
+
+- Desktop: 8:5
+- Tablet: 4:3
+- Mobile: 3:5
 
 The order of contents' elements is equal to the order of the resulting page.
 Content layouts:
-  - media + text
-  - media only
-  - text only
-  - quote
-  - text with media + button
+
+- media + text
+- media only
+- text only
+- quote
+- text with media + button
 
 The stage has the ability to display three different device layouts:
-  - all (Three elements with devices.type desktop, tablet and mobile)
-  - tablet-mobile (Two elements with devices.type tablet and mobile)
-  - mobile (One element with devices.type mobile)
-Other combinations aren't allowed and can lead to broken layouts.
+
+- all (Three elements with devices.type desktop, tablet and mobile)
+- tablet-mobile (Two elements with devices.type tablet and mobile)
+- mobile (One element with devices.type mobile)
+  Other combinations aren't allowed and can lead to broken layouts.
 
 ```yaml
 stage:

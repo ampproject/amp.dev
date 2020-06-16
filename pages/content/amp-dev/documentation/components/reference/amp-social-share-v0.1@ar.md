@@ -7,8 +7,6 @@ teaser:
   text: The share tracking feature is under development.
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -24,8 +22,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 يعرض هذا المكّوِن زر المشاركة على الشبكات الاجتماعية.
 
@@ -67,10 +63,15 @@ teaser:
 **مثال: تمرير المعلَمات**
 
 عندما تريد تمرير المعلَمات إلى نقطة نهاية المشاركة، يمكنك تحديد `data-param-<attribute>` التي سيتم إلحاقها بهذه النقطة.
+
 ```html
-<amp-social-share type="linkedin" width="60" height="44"
+<amp-social-share
+  type="linkedin"
+  width="60"
+  height="44"
   data-param-text="Hello world"
-  data-param-url="https://example.com/">
+  data-param-url="https://example.com/"
+>
 </amp-social-share>
 ```
 
@@ -231,9 +232,11 @@ Linkedin هو أحد موفري الخدمات الذين تمت تهيئتهم 
 ينشئ المثال التالي زر المشاركة عبر Facebook Messenger عن طريق تعيين السمة `data-share-endpoint` على نقطة النهاية الصحيحة لبروتوكول Facebook Messenger المخصص.
 
 ```html
-<amp-social-share type="facebookmessenger"
-    data-share-endpoint="fb-messenger://share"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="facebookmessenger"
+  data-share-endpoint="fb-messenger://share"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 
@@ -252,8 +255,9 @@ Linkedin هو أحد موفري الخدمات الذين تمت تهيئتهم 
 ### التصميمات المخصَّصة <a name="custom-styles"></a>
 
 تريد أحيانًا تقديم تصميمك الخاص. يمكنك ببساطة إلغاء التصميمات المتوفرة كما يلي:
+
 ```css
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
   background: red;
   background-image: url(datauri:svg/myownsvgicon);
 }
@@ -264,8 +268,10 @@ amp-social-share[type="twitter"] {
 يمكنك استخدام [الاستبدال الشامل لمتغيرات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) في العنصر `<amp-social-share>`. في المثال أدناه، تم استبدال `TITLE` بعنوان الصفحة واستبدال `CANONICAL_URL` بعنوان URL الأساسي للمستند.
 
 ```html
-<amp-social-share type="whatsapp"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="whatsapp"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 

@@ -18,8 +18,7 @@ Below is your shiny new AMP Developer badge. Feel free to copy it and save it. T
 {{ image('/static/img/courses/site/badge-shield-2x.png', 200, 200, layout='fixed', align='center', alt='Your AMP Developer badge', shadow=False) }}
 
 Good luck! We look forward to seeing what you build with AMP!
-[/filter]
-[filter level="advanced"]
+[/filter][filter level="advanced"]
 Congratulations! You've completed our series of Web Development with AMP courses! You've built a feature-rich cheese bike shop site, an imitation video site, and a basic e-commerce page. You've learned how to build AMP pages, look for and use AMP components, handle user interactions with events and actions, build web forms, bind components to state variables, and dynamically display content from the server.
 
 So where do you go from here? It's time to get out there, keep learning, start creating, and participate in the AMP community!

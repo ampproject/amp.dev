@@ -16,8 +16,11 @@ Sebelum adanya komponen [`amp-bind`](../../../../documentation/components/refere
 Buka file [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html), dan tambahkan skrip berikut ke daftar komponen AMP di bagian `<head>` halaman:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Menambahkan indikator slide
@@ -41,7 +44,7 @@ Lakukan inisialiasi variabel status untuk melacak indeks dari slide yang ditampi
 Data dalam elemen `<amp-state>` dapat diakses berdasarkan ID-nya yang terkait. Misalnya, kita dapat merujuk ke variabel ini dengan menggunakan fragmen ekspresi berikut:
 
 ```javascript
-selected.slide // Dievaluasi ke 0.
+selected.slide; // Dievaluasi ke 0.
 ```
 
 ### Mengupdate status slide
@@ -49,16 +52,21 @@ selected.slide // Dievaluasi ke 0.
 Berikutnya, update variabel ini jika pengguna mengubah slide di carousel, dengan menambahkan tindakan `"on"` berikut pada elemen [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) yang sudah ada:
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
-Sekarang, kapan pun slide yang ditampilkan untuk [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)  berubah, tindakan `AMP.setState` akan dipanggil dengan argumen berikut:
+Sekarang, kapan pun slide yang ditampilkan untuk [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) berubah, tindakan `AMP.setState` akan dipanggil dengan argumen berikut:
 
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -105,7 +113,7 @@ Lihat apakah Anda dapat menambahkan fungsi sehingga jika pengguna menge-tap titi
 
 ## Mengubah gambar di carousel
 
-Sangatlah bagus jika kita dapat melihat berbagai warna kemeja saat mengubah warna yang dipilih. Dengan [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)  kita dapat melakukannya dengan mengikat `[src]` di elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) dalam [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
+Sangatlah bagus jika kita dapat melihat berbagai warna kemeja saat mengubah warna yang dipilih. Dengan [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) kita dapat melakukannya dengan mengikat `[src]` di elemen [`amp-img`](../../../../documentation/components/reference/amp-img.md) dalam [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md).
 
 ### Melakukan inisialiasi status SKU
 
@@ -155,7 +163,7 @@ Pertama, kita perlu melakukan inisialiasi data status dengan URL sumber gambar u
 
 Elemen [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) ini berisi objek JSON yang memetakan string ID kemeja (yaitu SKU) ke URL gambar dan warna dari kemeja yang sesuai. Array JSON juga akan berfungsi di sini, namun penggunaan objek memungkinkan kita melakukan beberapa penyempurnaan yang menarik, yang akan segera Anda lihat.
 
-Sekarang kita dapat mengakses URL gambar melalui ID kemeja. Misalnya, `shirts['10014'].color` dievaluasi ke `"dark green"` dan `shirts['10030'].image `menampilkan URL gambar untuk warna kemeja `"wine"`.
+Sekarang kita dapat mengakses URL gambar melalui ID kemeja. Misalnya, `shirts['10014'].color` dievaluasi ke `"dark green"` dan `shirts['10030'].image`menampilkan URL gambar untuk warna kemeja `"wine"`.
 
 ### Melacak SKU yang dipilih
 
@@ -177,8 +185,10 @@ Jika menambahkan variabel status lain yang melacak SKU yang dipilih, kita dapat 
 Tambahkan tindakan "on" ke [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) yang akan mengupdate variabel `selected.sku` kapan pun warna baru dipilih:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"]
@@ -191,12 +201,24 @@ Kemudian, tambahkan pengikatan ke elemen [`amp-img`](../../../../documentation/c
 
 ```html
 <!-- Update `src` untuk setiap <amp-img> jika variabel `selected.sku` berubah. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 Catatan: Dalam praktiknya, setiap gambar di carousel kemungkinan akan memiliki `src` yang berbeda. Hal ini dapat dilakukan dengan mengganti 1 gambar dengan deretan gambar. Ringkasnya, tutorial ini menggunakan 1 gambar dengan berbagai pembesaran.

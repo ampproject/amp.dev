@@ -14,17 +14,23 @@ $title: 자리표시자 및 대체 콘텐츠
 `placeholder`로 표시된 요소는 항상 상위 AMP 요소를 `fill`합니다.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 기본적으로 AMP 요소의 리소스가 다운로드되거나 초기화되지 않아도
@@ -42,17 +48,18 @@ $title: 자리표시자 및 대체 콘텐츠
 
 다음과 같은 경우 요소에 `fallback` 속성을 지정하여 대체 동작을 나타낼 수 있습니다.
 
-* 요소를 브라우저에서 지원하지 않는 경우
-* 콘텐츠를 로드하지 못한 경우(예: 트윗이 삭제됨)
-* 이미지 유형이 지원되지 않는 경우(예: WebP는 모든 브라우저에서 지원되지 않음)
+- 요소를 브라우저에서 지원하지 않는 경우
+- 콘텐츠를 로드하지 못한 경우(예: 트윗이 삭제됨)
+- 이미지 유형이 지원되지 않는 경우(예: WebP는 모든 브라우저에서 지원되지 않음)
 
-`fallback` 속성은 AMP 요소뿐 아니라 *모든* HTML 요소에도 설정할 수 있습니다. 지정된 경우 `fallback` 요소는 AMP 요소의 직접 하위 요소여야 합니다.
+`fallback` 속성은 AMP 요소뿐 아니라 _모든_ HTML 요소에도 설정할 수 있습니다. 지정된 경우 `fallback` 요소는 AMP 요소의 직접 하위 요소여야 합니다.
 
 ##### 예: 지원되지 않는 기능
 
 다음 예에서 `fallback` 속성을 사용하여 사용자에게 브라우저가 특정 기능을 지원하지 않음을 알립니다.
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -64,27 +71,34 @@ $title: 자리표시자 및 대체 콘텐츠
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ##### 예: 다른 이미지 형식 게재
 
-다음 예에서 `fallback` 속성을 사용하여 WebP 형식이 지원되지 않으면 JPEG 파일을 사용하라고 브라우저에 알립니다. 
+다음 예에서 `fallback` 속성을 사용하여 WebP 형식이 지원되지 않으면 JPEG 파일을 사용하라고 브라우저에 알립니다.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 ## 자리표시자 및 대체 콘텐츠 상호작용
@@ -107,4 +121,3 @@ $title: 자리표시자 및 대체 콘텐츠
 많은 AMP 요소는 목록에 추가되어 요소가 완전히 로드되지 않았음을 나타내는
 기본 애니메이션인 '로드 중 표시기'를 표시합니다.
 요소는 `noloading` 속성을 추가하여 이 동작을 차단할 수 있습니다.
- 

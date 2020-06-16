@@ -2,12 +2,11 @@
 $title: amp-animation
 $category@: presentation
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: Bir animasyon tanımlar ve görüntüler.
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Animasyonları tanımlar ve çalıştırır.
 
@@ -44,8 +41,6 @@ Animasyonları tanımlar ve çalıştırır.
   </tr>
 </table>
 
-
-
 ## Genel Bakış <a name="overview"></a>
 
 AMP Animasyonları, AMP dokümanlarındaki animasyonları tanımlamak ve çalıştırmak için [Web Animasyonları API'sini](https://www.w3.org/TR/web-animations/) kullanır.
@@ -57,23 +52,24 @@ Bir `amp-animation` öğesi, böyle bir animasyonu JSON yapısı olarak tanımla
 ### Üst düzey animasyon spesifikasyonu <a name="top-level-animation-specification"></a>
 
 Üst düzey nesne, bir `animations` dizisi olarak tanımlanmış rastgele sayıda animasyon bileşeninden oluşan genel animasyon sürecini tanımlar:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  // Timing properties
-  ...
-  "animations": [
+  <script type="application/json">
     {
-      // Animation 1
-    },
-    ...
-    {
-      // Animation N
+      // Timing properties
+      ...
+      "animations": [
+        {
+          // Animation 1
+        },
+        ...
+        {
+          // Animation N
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script>
 </amp-animation>
 ```
 
@@ -145,6 +141,7 @@ Bazı durumlarda, birden çok [koşullu animasyonu](#conditions) isteğe bağlı
 `switch` animasyonunda, adaylar tanımlanan sırada değerlendirilir ve [koşullu deyimlerle](#conditions) eşleşen ilk animasyon yürütülür ve geri kalanlar yoksayılır.
 
 Örneğin, bu animasyon, destekleniyorsa hareket yolu animasyonunu çalıştırır ve dönüştürmeyi devreye alır:
+
 ```
 {
   "selector": "#target1",
@@ -170,23 +167,24 @@ Bazı durumlarda, birden çok [koşullu animasyonu](#conditions) isteğe bağlı
 Bir animasyon bileşeni, zamanlama ve animasyon karelerinin değerleri için kullanılacak CSS değişkenlerini `var()` ifadeleriyle bildirebilir. `var()` ifadeleri, geçerli hedef bağlamı kullanılarak değerlendirilir. Animasyon bileşenlerinde belirtilen CSS değişkenleri, iç içe yerleştirilmiş animasyonlara yayılır, animasyon hedeflerine uygulanır ve böylece, nihai animasyonlarda kullanılan CSS değişkenlerini geçersiz kılar.
 
 Örneğin:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "--delay": "0.5s",
-  "--x": "100px",
-  "animations": [
+  <script type="application/json">
     {
-      "selector": "#target1",
-      "delay": "var(--delay)",
-      "--x": "150px",
-      "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
-    },
-    ...
-  ]
-}
-</script>
+      "--delay": "0.5s",
+      "--x": "100px",
+      "animations": [
+        {
+          "selector": "#target1",
+          "delay": "var(--delay)",
+          "--x": "150px",
+          "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
+        },
+        ...
+      ]
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -262,6 +260,7 @@ Bu örnekte:
 Tüm zamanlama özellikleri, bir doğrudan sayısal değere/dize değerine veya CSS değerlerine izin verir. Örneğin, "duration" değeri `1000` veya `1s` ya da `1000ms` şeklinde belirtilebilir. Buna ek olarak, `calc()` ve `var()` ile diğer CSS ifadelerine de izin verilir.
 
 JSON'daki zamanlama özelliklerine bir örnek:
+
 ```text
 {
   ...
@@ -281,6 +280,7 @@ Animasyon bileşenleri, üst düzey animasyon için belirtilen zamanlama özelli
 `selector` öğesinin belirtilebileceği her yerde, `subtargets: []` değerinin belirtilmesi de mümkündür. Alt hedefler, bir dizin veya CSS seçici aracılığıyla belirtilen belirli alt hedefler için animasyonda tanımlanan zamanlama özelliklerini veya değişkenleri geçersiz kılabilir.
 
 Örneğin:
+
 ```text
 {
   "selector": ".target",
@@ -310,6 +310,7 @@ Animasyon kareleri, Web Animasyonları spesifikasyonunun [animasyon kareleri bö
 Animasyon karesi tanımlarının bazı tipik örnekleri aşağıda gösterilmektedir.
 
 Kısayol nesnesi biçimi "to" biçimi %100'deki son durumu belirtir:
+
 ```text
 {
   "keyframes": {"opacity": 0, "transform": "scale(2)"}
@@ -317,6 +318,7 @@ Kısayol nesnesi biçimi "to" biçimi %100'deki son durumu belirtir:
 ```
 
 Kısayol nesnesi biçimi "from-to" biçimi %0 ve 100'deki başlangıç ve son durumları belirtir:
+
 ```text
 {
   "keyframes": {
@@ -327,6 +329,7 @@ Kısayol nesnesi biçimi "from-to" biçimi %0 ve 100'deki başlangıç ve son du
 ```
 
 Kısayol nesnesi biçimi "value-array" biçimi, başlangıç, son durumlar ve birden çok (eşit aralıklı) ofseti belirtir:
+
 ```text
 {
   "keyframes": {
@@ -337,6 +340,7 @@ Kısayol nesnesi biçimi "value-array" biçimi, başlangıç, son durumlar ve bi
 ```
 
 Dizi biçimi, animasyon karelerini belirtilir. Ofsetler %0 ve 100 konumlarına otomatik olarak atanır ve eşit aralıklıdır:
+
 ```text
 {
   "keyframes": [
@@ -347,6 +351,7 @@ Dizi biçimi, animasyon karelerini belirtilir. Ofsetler %0 ve 100 konumlarına o
 ```
 
 Dizi biçimi, "offset" özelliğini açık bir şekilde de içerebilir:
+
 ```text
 {
   "keyframes": [
@@ -358,6 +363,7 @@ Dizi biçimi, "offset" özelliğini açık bir şekilde de içerebilir:
 ```
 
 Dizi biçimi "easing" öğesini de içerebilir:
+
 ```text
 {
   "keyframes": [
@@ -374,6 +380,7 @@ Ek animasyon karesi biçimleri için [Web Animasyonları spesifikasyonuna](https
 #### CSS'den animasyon kareleri <a name="keyframes-from-css"></a>
 
 Animasyon karelerini belirtmenin bir başka yolu, bunları dokümanın stil sayfasında (`<style>` etiketi) `@keyframes` CSS kuralı olarak belirtmektir. Örneğin:
+
 ```html
 <style amp-custom>
   @keyframes keyframes1 {
@@ -387,12 +394,12 @@ Animasyon karelerini belirtmenin bir başka yolu, bunları dokümanın stil sayf
 </style>
 
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "duration": "1s",
-  "keyframes": "keyframes1"
-}
-</script>
+  <script type="application/json">
+    {
+      "duration": "1s",
+      "keyframes": "keyframes1"
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -405,6 +412,7 @@ CSS `@keyframes`, [Web Animasyonları spesifikasyonu](https://www.w3.org/TR/web-
 #### Animasyon kareleri için beyaz listedeki özellikler <a name="allow-listed-properties-for-keyframes"></a>
 
 Tüm CSS özellikleri animasyon karelerinde kullanılamaz. Yalnızca modern tarayıcıların optimize edip hızlı bir şekilde canlandırabildiği CSS özellikleri beyaz listeye eklenir. İyi performans sağladığı onaylanan özelliklerin sayısı arttıkça bu liste de genişleyecektir. Şu anda liste şu özellikleri içermektedir:
+
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
 - [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
 - [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
@@ -415,37 +423,39 @@ Tedarikçi firma önekli CSS özelliklerinin kullanılmasına gerek olmadığın
 ### Animasyon yapılandırmasının kısaltılmış biçimleri <a name="abbreviated-forms-of-animation-configuration"></a>
 
 Animasyon yalnızca tek bir öğe içeriyorsa ve tek bir animasyon karesi efekti yeterliyse yapılandırma, yalnızca bu bir animasyon bileşenine indirgenebilir. Örneğin:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "selector": "#target-id",
-  "duration": "1s",
-  "keyframes": {"opacity": 1}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": "#target-id",
+      "duration": "1s",
+      "keyframes": {"opacity": 1}
+    }
+  </script>
 </amp-animation>
 ```
 
 Animasyon bir bileşen listesinden oluşuyorsa ancak üst düzey animasyona sahip değilse yapılandırma, bir bileşen dizisine indirgenebilir. Örneğin:
-  ```html
-  <amp-animation layout="nodisplay">
+
+```html
+<amp-animation layout="nodisplay">
   <script type="application/json">
-  [
-    {
-      "selector": ".target-class",
-      "duration": 1000,
-      "keyframes": {"opacity": 1}
-    },
-    {
-      "selector": ".target-class",
-      "duration": 600,
-      "delay": 400,
-      "keyframes": {"transform": "scale(2)"}
-    }
-  ]
+    [
+      {
+        "selector": ".target-class",
+        "duration": 1000,
+        "keyframes": {"opacity": 1}
+      },
+      {
+        "selector": ".target-class",
+        "duration": 600,
+        "delay": 400,
+        "keyframes": {"transform": "scale(2)"}
+      }
+    ]
   </script>
-  </amp-animation>
+</amp-animation>
 ```
 
 ### Animasyon düzeni <a name="animation-composition"></a>
@@ -453,48 +463,50 @@ Animasyon bir bileşen listesinden oluşuyorsa ancak üst düzey animasyona sahi
 Animasyonlar, diğer animasyonlara başvuruda bulunabilir ve böylece, çeşitli `amp-animation` bildirimleri tek bir nihai animasyonda birleştirebilir. Animasyona başka bir animasyondan başvurmak iç içe yerleştirmeyle büyük ölçüde aynıdır. Bir kişinin animasyonları farklı öğelere bölmek istemesinin nedeni, aynı animasyonu çeşitli yerlerden yeniden kullanmak veya her animasyon bildirimini daha küçük ve daha yönetilebilir yapmaktır.
 
 Örneğin:
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
 Bu örnek animasyon, "anim2" animasyonu, "anim1" animasyonunun bir parçası olarak birleştirir. "anim2", bir hedef (`selector`) olmadan eklenir. Böyle bir durumda, eklenen animasyonun kendi hedefine başvurması beklenir.
 
 Başka bir biçim, hedefi veya birden çok hedefi sağlamak için animasyonun eklenmesine olanak tanır. Bu durumda, eklenen animasyon her eşleşen hedef için yürütülür. Örneğin:
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -507,35 +519,37 @@ Burada, ".target-class" parametresi bir veya birden fazla öğeyle eşleşirse y
 `amp-animation`, zamanlama ve animasyon karesi değerleri için `var()` ve `calc()` ifadelerinin kullanılmasına izin verir.
 
 Örneğin:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": "4s",
-    "delay": "var(--delay)",
-    "--y": "var(--other-y, 100px)",
-    "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay)",
+        "--y": "var(--other-y, 100px)",
+        "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
 `var()` ve `calc()` ifadelerine, kendilerini doğrudan desteklemeyen platformlarda çoklu dolgu yapılır. `var()` özellikleri, karşılık gelen hedef öğelerinden ayıklanır. Ancak, `var()` ifadesinin tam olarak çoklu doldurabilmesi mümkün değildir. Bu nedenle, uyumluluğun önemli olduğu yerlerde, `var()` ifadelerine varsayılan değerlerin eklenmesi önemle tavsiye edilir. Örneğin:
-  ```html
-  <amp-animation layout="nodisplay">
+
+```html
+<amp-animation layout="nodisplay">
   <script type="application/json">
-  [
-    {
-      "selector": ".target-class",
-      "duration": "4s",
-      "delay": "var(--delay, 100ms)",
-    }
-  ]
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay, 100ms)"
+      }
+    ]
   </script>
-  </amp-animation>
+</amp-animation>
 ```
 
 Animasyon bileşenleri kendi değişkenlerini `--var-name` alanları olarak belirtebilir. Bu değişkenler, iç içe yerleştirilmiş animasyonlara yayılır ve stil sayfası (`<style>` etiketi) aracılığıyla belirtilen hedef öğelerin değişkenlerini geçersiz kılar. `var()` ifadeleri, önce animasyonlarda belirtilenleri ve ardından, hedef stilleri sorgulayarak değişken değerlerini çözümlemeye çalışır.
@@ -549,6 +563,7 @@ Animasyon bileşenleri kendi değişkenlerini `--var-name` alanları olarak beli
 `index()` işlevi, animasyon efektindeki geçerli hedef öğesinin bir dizinini döndürür. Bu en çok birden fazla hedefin `selector` özelliği kullanılarak aynı efektle canlandırıldığı durumlarla alakalıdır. Seçici tarafından eşleştirilen ilk hedef dizin `0` , ikincisi dizin `1` değerine sahip olur ve diğer hedeflerin değerleri bu düzende devam eder.
 
 Diğer özelliklerin yanı sıra, bu özellik `calc()` ifadeleriyle birleştirilebilir ve kademeli efekt oluşturmak için kullanılabilir. Örneğin:
+
 ```
 {
   "selector": ".class-x",
@@ -572,6 +587,7 @@ Diğer özelliklerin yanı sıra, bu özellik `calc()` ifadeleriyle birleştiril
 `rand()` işlevi rastgele bir CSS değeri döndürür. İki biçimi vardır.
 
 Bağımsız değişken kullanılmayan biçim 0 ile 1 arasındaki rastgele bir sayı döndürür.
+
 ```
 {
   "delay": "calc(10s * rand())"
@@ -579,6 +595,7 @@ Bağımsız değişken kullanılmayan biçim 0 ile 1 arasındaki rastgele bir sa
 ```
 
 İkinci biçim iki bağımsız değişken içerir ve bu iki bağımsız değişken arasındaki rastgele değeri döndürür.
+
 ```
 {
   "delay": "rand(5s, 10s)"
@@ -590,6 +607,7 @@ Bağımsız değişken kullanılmayan biçim 0 ile 1 arasındaki rastgele bir sa
 `width()` ve `height()` uzantıları, animasyonlu öğenin veya seçici tarafından belirtilen öğenin genişliğini/yüksekliğini döndürür. Döndürülen değer piksel cinsindendir (ör. `100px`).
 
 Şu biçimler desteklenir:
+
 - `width()` ve `height()` - canlandırılan öğenin genişliği/yüksekliği.
 - `width('.selector')` ve `height('.selector')` - seçici tarafından belirtilen öğenin genişliği/yüksekliği. Herhangi bir CSS seçici kullanılabilir. Örneğin, `width('#container &gt; li')`.
 - `width(closest('.selector'))` ve `height(closest('.selector'))` - en yakın seçici tarafından belirtilen öğenin genişliği/yüksekliği.
@@ -597,6 +615,7 @@ Bağımsız değişken kullanılmayan biçim 0 ile 1 arasındaki rastgele bir sa
 `width()` ve `height()`, özellikle dönüşümler için yararlıdır. Animasyonları kapsayıcı boyutuyla orantılı olarak ifade etmek için `%` değerleri kullanabilen `left`, `top` ve benzer CSS özellikleri. Bununla birlikte, `transform` özelliği, `%` değerlerini farklı bir şekilde, seçilen öğenin bir yüzdesi olarak yorumlar. Bu nedenle, dönüşüm animasyonlarını kapsayıcı öğeler ve benzerleri açısından ifade etmek için `width()` ve `height()` kullanılabilir.
 
 Bu işlevler `calc()`, `var()` ve diğer CSS ifadeleriyle birleştirilebilir. Örneğin:
+
 ```
 {
   "transform": "translateX(calc(width('#container') + 10px))"
@@ -612,6 +631,7 @@ Bu işlevler `calc()`, `var()` ve diğer CSS ifadeleriyle birleştirilebilir. Ö
 - vb.
 
 Örneğin, aşağıdaki ifade gecikmeyi, öğenin genişliği ile orantılı olarak saniye cinsinden hesaplar:
+
 ```
 {
   "delay": "calc(1s * num(width()) / 100)"
@@ -624,9 +644,9 @@ SVG'ler harikadır ve bunların animasyonlar için kullanılmasını kesinlikle 
 
 SVG animasyonları, bazı küçük farklarla [Animasyon kareleri için beyaz listedeki özellikler](#allow-listed-properties-for-keyframes) bölümünde açıklanan CSS özellikleri aracılığıyla desteklenir:
 
-* IE/Edge SVG öğeleri [CSS `transform` özelliklerini desteklemez](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). `Transform` animasyonunun kendisi çok dolguludur. Bununla birlikte, bir stil sayfasında tanımlanan başlangıç durumu uygulanmaz. İlk dönüştürülmüş durum IE/Edge için önemliyse [SVG `transform` özelliği](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) aracılığıyla yinelenmesi önerilir.
-* `transform` CSS'sine IE/Edge için çoklu dolgu yapılırken, ne yazık ki `transform-origin` için çoklu dolgu yapmak mümkün değildir. Dolayısıyla, IE/Edge ile uyumluluk istendiğinde, yalnızca varsayılan `transform-origin` öğesinin kullanılması önerilir.
-* Tarayıcıların çoğu, şu anda `transform-origin` CSS'sini doğru şekilde yorumlama konusunda sorun yaşamaktadır. [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300), [Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) ve [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340) ile ilgili sorunlara bakın. Bu karışıklığın büyük bir kısmı, [CSS `transform-box`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box) uygulandığında çözülür. `transform-origin` öğesinin önemli olduğu durumlarda, gelecekte uyumlu olması için istenen `transform-box` CSS'sinin de eklenmesi önerilir.
+- IE/Edge SVG öğeleri [CSS `transform` özelliklerini desteklemez](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). `Transform` animasyonunun kendisi çok dolguludur. Bununla birlikte, bir stil sayfasında tanımlanan başlangıç durumu uygulanmaz. İlk dönüştürülmüş durum IE/Edge için önemliyse [SVG `transform` özelliği](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform) aracılığıyla yinelenmesi önerilir.
+- `transform` CSS'sine IE/Edge için çoklu dolgu yapılırken, ne yazık ki `transform-origin` için çoklu dolgu yapmak mümkün değildir. Dolayısıyla, IE/Edge ile uyumluluk istendiğinde, yalnızca varsayılan `transform-origin` öğesinin kullanılması önerilir.
+- Tarayıcıların çoğu, şu anda `transform-origin` CSS'sini doğru şekilde yorumlama konusunda sorun yaşamaktadır. [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300), [Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) ve [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340) ile ilgili sorunlara bakın. Bu karışıklığın büyük bir kısmı, [CSS `transform-box`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box) uygulandığında çözülür. `transform-origin` öğesinin önemli olduğu durumlarda, gelecekte uyumlu olması için istenen `transform-box` CSS'sinin de eklenmesi önerilir.
 
 ## Animasyonu tetikleme <a name="triggering-animation"></a>
 
@@ -637,11 +657,11 @@ Animasyon, bir `trigger` özelliği veya bir `on` işlemi aracılığıyla tetik
 Şu anda, `trigger` özelliği için kullanılabilen tek değer `visibility` değeridir. `visibility`, temel doküman veya yerleştirme (görüntü alanında) görünür olduğunda tetiklenir.
 
 Örneğin:
+
 ```html
-<amp-animation id="anim1" layout="nodisplay"
-    trigger="visibility">
-    ...
-  </amp-animation>
+<amp-animation id="anim1" layout="nodisplay" trigger="visibility">
+  ...
+</amp-animation>
 ```
 
 ### `on` işlemi aracılığıyla tetikleme <a name="triggering-via-on-action"></a>
@@ -659,12 +679,12 @@ Animasyon, bir `trigger` özelliği veya bir `on` işlemi aracılığıyla tetik
 
 `amp-animation` öğesi aşağıdaki işlemleri dışa aktarır:
 
-* `start` - Halihazırda çalıştırılmamışsa animasyonu başlatır. Zamanlama özellikleri ve değişkenleri, işlem bağımsız değişkenleri olarak belirtilebilir. Ör. `anim1.start(delay=-100, --scale=2)`.
-* `restart` - Animasyonu başlatır veya şu anda çalıştırılan animasyonu yeniden başlatır. Zamanlama özellikleri ve değişkenleri, işlem bağımsız değişkenleri olarak belirtilebilir. Ör. `anim1.start(delay=-100, --scale=2)`.
-* `pause` - Şu anda çalıştırılan animasyonu duraklatır.
-* `resume` - Şu anda çalıştırılan animasyonu devam ettirir.
-* `togglePause` - Duraklat/devam ettir işlemleri arasından geçiş gerçekleştirir.
-* `seekTo` - Animasyonu duraklatır ve `time` bağımsız değişkeni tarafından milisaniye cinsinden veya `percent` bağımsız değişkeni tarafından zaman çizelgesinde bir yüzde noktası olarak belirtilen belirli bir noktayı arar.
-* `reverse` - Animasyonu tersine çevirir.
-* `finish` - Animasyonu bitirir.
-* `cancel` - Animasyonu iptal eder.
+- `start` - Halihazırda çalıştırılmamışsa animasyonu başlatır. Zamanlama özellikleri ve değişkenleri, işlem bağımsız değişkenleri olarak belirtilebilir. Ör. `anim1.start(delay=-100, --scale=2)`.
+- `restart` - Animasyonu başlatır veya şu anda çalıştırılan animasyonu yeniden başlatır. Zamanlama özellikleri ve değişkenleri, işlem bağımsız değişkenleri olarak belirtilebilir. Ör. `anim1.start(delay=-100, --scale=2)`.
+- `pause` - Şu anda çalıştırılan animasyonu duraklatır.
+- `resume` - Şu anda çalıştırılan animasyonu devam ettirir.
+- `togglePause` - Duraklat/devam ettir işlemleri arasından geçiş gerçekleştirir.
+- `seekTo` - Animasyonu duraklatır ve `time` bağımsız değişkeni tarafından milisaniye cinsinden veya `percent` bağımsız değişkeni tarafından zaman çizelgesinde bir yüzde noktası olarak belirtilen belirli bir noktayı arar.
+- `reverse` - Animasyonu tersine çevirir.
+- `finish` - Animasyonu bitirir.
+- `cancel` - Animasyonu iptal eder.

@@ -2,14 +2,12 @@
 $title: amp-video
 $category@: media
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: Sustituye la etiqueta `video` de HTML5.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Funciona como sustituto de la etiqueta `video` de HTML5. Solo se utiliza para insertar directamente archivos de vídeo en HTML5.
 
@@ -54,14 +50,15 @@ El componente `amp-video` carga el recurso de vídeo que especifica su atributo 
 
 El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como elementos secundarios:
 
-* Etiquetas `source`: al igual que en la etiqueta `<video>` de HTML, puedes añadir etiquetas `<source>` secundarias y, de este modo, especificar diferentes archivos multimedia de origen para reproducirlos.
-* Etiquetas `track` para habilitar subtítulos en el vídeo. Si la pista está alojada en un origen que no es el documento, debes añadir el atributo `crossorigin` a la etiqueta `<amp-video>`.
-* Un marcador de posición para mostrar antes de que comience a reproducirse el vídeo.
-* Un respaldo que funcione si el navegador no admite vídeos de HTML5: uno o cero nodos secundarios inmediatos pueden tener el atributo `fallback`. Si está presente, este nodo y sus nodos secundarios forman el contenido que se muestra si el navegador del usuario no es compatible con los vídeos de HTML5.
+- Etiquetas `source`: al igual que en la etiqueta `<video>` de HTML, puedes añadir etiquetas `<source>` secundarias y, de este modo, especificar diferentes archivos multimedia de origen para reproducirlos.
+- Etiquetas `track` para habilitar subtítulos en el vídeo. Si la pista está alojada en un origen que no es el documento, debes añadir el atributo `crossorigin` a la etiqueta `<amp-video>`.
+- Un marcador de posición para mostrar antes de que comience a reproducirse el vídeo.
+- Un respaldo que funcione si el navegador no admite vídeos de HTML5: uno o cero nodos secundarios inmediatos pueden tener el atributo `fallback`. Si está presente, este nodo y sus nodos secundarios forman el contenido que se muestra si el navegador del usuario no es compatible con los vídeos de HTML5.
 
 #### Ejemplo <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -77,6 +74,7 @@ El componente `amp-video` acepta hasta cuatro tipos únicos de nodos HTML como e
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## Analytics <a name="analytics"></a>
@@ -171,18 +169,23 @@ Ejemplo:
 En este ejemplo se incluyen los atributos `poster` y `artwork`. `poster` sirve como imagen de marcador de posición antes de que se reproduzca el vídeo, mientras que `artwork` es la imagen que se muestra en la notificación a través de la API de Media Session.
 
 ```html
-<amp-video width="720" height="305" layout="responsive"
-    src="https://yourhost.com/videos/myvideo.mp4"
-    poster="https://yourhost.com/posters/poster.png"
-    artwork="https://yourhost.com/artworks/artwork.png"
-    title="Awesome video" artist="Awesome artist"
-    album="Amazing album">
+<amp-video
+  width="720"
+  height="305"
+  layout="responsive"
+  src="https://yourhost.com/videos/myvideo.mp4"
+  poster="https://yourhost.com/posters/poster.png"
+  artwork="https://yourhost.com/artworks/artwork.png"
+  title="Awesome video"
+  artist="Awesome artist"
+  album="Amazing album"
+>
 </amp-video>
 ```
 
 ## Superposición de reproducción por clic <a name="click-to-play-overlay"></a>
 
-En Internet, es habitual añadir una superposición de reproducción por clic a los reproductores de vídeo como una función de experiencia de usuario.  Por ejemplo, puedes hacer que se muestre un icono de reproducción personalizado en el que el usuario puede hacer clic, así como incluir el título del vídeo, imágenes de póster de distintos tamaños, etc.  Dado que el componente `amp-video` admite la acción de AMP `play` estándar, puedes implementar fácilmente la reproducción por clic.
+En Internet, es habitual añadir una superposición de reproducción por clic a los reproductores de vídeo como una función de experiencia de usuario. Por ejemplo, puedes hacer que se muestre un icono de reproducción personalizado en el que el usuario puede hacer clic, así como incluir el título del vídeo, imágenes de póster de distintos tamaños, etc. Dado que el componente `amp-video` admite la acción de AMP `play` estándar, puedes implementar fácilmente la reproducción por clic.
 
 Para obtener más detalles, consulta el ejemplo de [superposición de reproducción por clic para amp-video](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/) de AMP By Example.
 

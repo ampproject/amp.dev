@@ -2,14 +2,13 @@
 $title: amp-img
 $category@: media
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 teaser:
   text: Remplacer la balise d'image HTML5.
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -27,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td class="col-fourty"><strong>Description</strong></td>
@@ -44,7 +41,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 # Comportement <a name="behavior"></a>
 
 L'environnement d'exécution peut différer le chargement des ressources ou le traiter en priorité en fonction de la position de la fenêtre d'affichage, des ressources système, de la bande passante de connexion ou d'autres facteurs. Le composant `amp-img` permet à l'environnement d'exécution de gérer efficacement les ressources d'image de cette manière.
@@ -57,17 +53,21 @@ Pour en savoir plus sur les mises en page, consultez la spécification [AMP HTML
 
 # Exemple : Affichage d'une image responsive <a name="example-displaying-a-responsive-image"></a>
 
-Dans l'exemple suivant, l'image affichée répond à la taille de la fenêtre d'affichage en définissant `layout=responsive`.  L'image est étirée et réduite en fonction des proportions spécifiées par les attributs `width` et `height`.
+Dans l'exemple suivant, l'image affichée répond à la taille de la fenêtre d'affichage en définissant `layout=responsive`. L'image est étirée et réduite en fonction des proportions spécifiées par les attributs `width` et `height`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"]
@@ -81,18 +81,24 @@ En cas d'échec de chargement de la ressource demandée par le composant `amp-im
 Dans l'exemple suivant, si le navigateur n'est pas compatible avec WebP, l'image JPG de remplacement est affichée :
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 Vous pouvez définir une couleur d'arrière-plan pour l'espace réservé ou un autre élément visuel en utilisant le sélecteur CSS et en appliquant un style à l'élément proprement dit.
@@ -102,9 +108,9 @@ D'autres caractéristiques d'image, comme des légendes, peuvent être mises en 
 [tip type="read-on"]
 Pour en savoir plus sur l'utilisation du composant `amp-img`, consultez les ressources suivantes :
 
-* [Espaces réservés et créations de remplacement](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
-* [Inclure des images et des vidéos](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
-[/tip]
+- [Espaces réservés et créations de remplacement](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+- [Inclure des images et des vidéos](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
+  [/tip]
 
 # Attributs <a name="attributes"></a>
 
@@ -147,7 +153,7 @@ Un style peut être appliqué directement au composant `amp-img` par le biais de
 ```css
 amp-img {
   background-color: grey;
-  }
+}
 ```
 
 # Conseils et astuces <a name="tips--tricks"></a>
@@ -157,11 +163,11 @@ amp-img {
 Si vous souhaitez que l'image soit agrandie à mesure que la fenêtre est redimensionnée, sans toutefois dépasser une largeur maximale, procédez comme suit :
 
 1. Définissez `layout=responsive` pour `<amp-img>`.
-1. Sur le conteneur de l'image, spécifiez l'attribut CSS `max-width:<max width to display image>`.  Pourquoi spécifier cet attribut sur le conteneur ?  Un élément `amp-img` avec `layout=responsive` est un élément *au niveau du bloc*, tandis que `<img>` est un élément *intégré*. Vous pouvez également définir `display: inline-block` dans votre code CSS pour l'élément amp-img.
+1. Sur le conteneur de l'image, spécifiez l'attribut CSS `max-width:<max width to display image>`. Pourquoi spécifier cet attribut sur le conteneur ? Un élément `amp-img` avec `layout=responsive` est un élément _au niveau du bloc_, tandis que `<img>` est un élément _intégré_. Vous pouvez également définir `display: inline-block` dans votre code CSS pour l'élément amp-img.
 
 # Différence entre les mises en page "responsive" et "intrinsic" <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
-Les mises en page `responsive` et `intrinsic` créent une image qui est agrandie automatiquement.  La principale différence réside dans le fait que la mise en page `intrinsic` utilise une image SVG comme élément de mise à l'échelle.  Elle se comporte de la même manière qu'une image HTML standard, tout en conservant un avantage non négligeable, à savoir que le navigateur connaît la taille d'image sur la mise en page initiale. La mise en page `intrinsic` possède une taille intrinsèque et augmente la taille d'une balise `div` flottante jusqu'à ce qu'elle atteigne la taille d'image naturelle ou une contrainte CSS telle que la `max-width`. La mise en page `responsive` affiche 0x0 dans une balise `div` flottante, car sa taille provient du parent, lequel n'a pas de taille naturelle lorsqu'il est flottant.
+Les mises en page `responsive` et `intrinsic` créent une image qui est agrandie automatiquement. La principale différence réside dans le fait que la mise en page `intrinsic` utilise une image SVG comme élément de mise à l'échelle. Elle se comporte de la même manière qu'une image HTML standard, tout en conservant un avantage non négligeable, à savoir que le navigateur connaît la taille d'image sur la mise en page initiale. La mise en page `intrinsic` possède une taille intrinsèque et augmente la taille d'une balise `div` flottante jusqu'à ce qu'elle atteigne la taille d'image naturelle ou une contrainte CSS telle que la `max-width`. La mise en page `responsive` affiche 0x0 dans une balise `div` flottante, car sa taille provient du parent, lequel n'a pas de taille naturelle lorsqu'il est flottant.
 
 # Définir une image de taille fixe <a name="setting-a-fixed-sized-image"></a>
 
@@ -181,14 +187,18 @@ Dans le cas des images responsives, les attributs `width` et `height` ne doivent
 Par exemple, au lieu de spécifier `width="900"` et `height="675"`, vous pouvez simplement indiquer `width="1.33"` et `height="1"`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="1.33"
   height="1"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 # Définir plusieurs fichiers sources pour différentes résolutions d'écran <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>

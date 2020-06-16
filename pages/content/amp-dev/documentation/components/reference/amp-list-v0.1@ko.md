@@ -6,10 +6,8 @@ formats:
   - email
   - stories
 teaser:
-  text:  동적으로 데이터를 다운로드하고 템플릿을 사용하여 목록 항목을 생성합니다.
+  text: 동적으로 데이터를 다운로드하고 템플릿을 사용하여 목록 항목을 생성합니다.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
 템플릿을 사용하여 렌더링합니다.
@@ -57,61 +53,68 @@ CORS JSON 엔드포인트에서 동적으로 콘텐츠를 가져오고 제공된
 
 다음 두 방법 중 하나로 템플릿을 지정할 수 있습니다.
 
-* 기존 `template` 또는 `script` 요소의 ID를 참조하는 `template` 속성
-* `amp-list` 요소 내에 직접 중첩된 `template` 또는 `script` 요소
+- 기존 `template` 또는 `script` 요소의 ID를 참조하는 `template` 속성
+- `amp-list` 요소 내에 직접 중첩된 `template` 또는 `script` 요소
 
 템플릿에 관한 자세한 내용은 [AMP HTML 템플릿](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)을 참조하세요.
 
-*예: 동적 목록 표시*
+_예: 동적 목록 표시_
 
 다음 예에서는 URL과 제목을 포함하는 JSON 데이터를 검색하고 중첩된 [amp-mustache template](amp-mustache.md)의 콘텐츠를 렌더링합니다.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="100"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
-  {% endraw %}</template>
+    {% endraw %}</template
+  >
 </amp-list>
 ```
+
 [/example]
 
 다음은 사용한 JSON 파일입니다.
 
 ```json
 {
- "items": [
-   {
-     "title": "AMP YouTube Channel",
-     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-   },
-   {
-     "title": "AMP.dev",
-     "url": "https://amp.dev/"
-   },
-   {
-     "title": "AMP Validator",
-     "url": "https://validator.amp.dev/"
-   },
-   {
-     "title": "AMP Playground",
-     "url": "https://playground.amp.dev/"
-   }
- ]
+  "items": [
+    {
+      "title": "AMP YouTube Channel",
+      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+    },
+    {
+      "title": "AMP.dev",
+      "url": "https://amp.dev/"
+    },
+    {
+      "title": "AMP Validator",
+      "url": "https://validator.amp.dev/"
+    },
+    {
+      "title": "AMP Playground",
+      "url": "https://playground.amp.dev/"
+    }
+  ]
 }
 ```
+
 가져온 콘텐츠의 스타일을 지정하는 방법은 다음과 같습니다.
 
 ```css
-amp-list div[role="list"] {
+amp-list div[role='list'] {
   display: grid;
   grid-gap: 0.5em;
-  }
+}
 ```
 
 ## 동작 <a name="behavior"></a>
@@ -130,7 +133,7 @@ AMP 캐시에서 문서를 제공하는 경우에도 항상 클라이언트에�
 
 ### XHR 배치 <a name="xhr-batching"></a>
 
-AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉, AMP 페이지에서 여러 소비자(예: 여러 `<amp-list>` 요소)의 데이터 소스로 단일 JSON 데이터 요청을 사용할 수 있습니다.  예를 들어 `<amp-list>`에서 엔드포인트에 대해 XHR을 작업하는 경우 XHR이 진행되는 동안 동일한 엔드포인트에 대한 모든 후속 XHR이 트리거되지 않고, 대신 첫 번째 XHR의 결과를 반환합니다.
+AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉, AMP 페이지에서 여러 소비자(예: 여러 `<amp-list>` 요소)의 데이터 소스로 단일 JSON 데이터 요청을 사용할 수 있습니다. 예를 들어 `<amp-list>`에서 엔드포인트에 대해 XHR을 작업하는 경우 XHR이 진행되는 동안 동일한 엔드포인트에 대한 모든 후속 XHR이 트리거되지 않고, 대신 첫 번째 XHR의 결과를 반환합니다.
 
 `<amp-list>`에서 [`items`](#items-optional) 속성을 사용하여 JSON 응답의 하위 세트를 렌더링할 수 있으므로, 여러 `<amp-list>` 요소에서 서로 다른 콘텐츠를 렌더링하지만 단일 XHR을 공유할 수 있습니다.
 
@@ -138,30 +141,33 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 선택적으로 `<amp-list>` 요소에는 `overflow` 속성이 있는 요소를 포함할 수 있습니다. AMP 런타임에서 요청한 대로 `<amp-list>` 요소의 크기를 조정할 수 없으면 이 요소가 표시됩니다.
 
-*예: 목록에 추가 공간이 필요한 경우 오버플로 표시*
+_예: 목록에 추가 공간이 필요한 경우 오버플로 표시_
 
 다음 예에서는 이미지와 제목의 목록을 표시합니다. `<amp-list>` 콘텐츠에 사용 가능한 것보다 많은 공간이 필요하면 AMP 런타임에서 오버플로 요소를 표시합니다.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="140"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="image-entry">
-      <amp-img src="{{imageUrl}}"
-        width="100"
-        height="75"></amp-img>
+      <amp-img src="{{imageUrl}}" width="100" height="75"></amp-img>
       <span class="image-title">{{title}}</span>
     </div>
-  {% endraw %}</template>
-  <div overflow
-    class="list-overflow">
+    {% endraw %}</template
+  >
+  <div overflow class="list-overflow">
     See more
   </div>
 </amp-list>
 ```
+
 [/example]
 
 다음은 `overflow`의 CSS입니다.
@@ -172,15 +178,15 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
   bottom: 0;
   left: 0;
   right: 0;
-  }
+}
 ```
 
 ### 자리표시자 및 대체 <a name="placeholder-and-fallback"></a>
 
 선택적으로 `<amp-list>`에서는 자리표시자 및/또는 대체를 지원합니다.
 
-* *자리표시자*는 `placeholder` 속성을 사용하는 하위 요소입니다. 이 요소는 `<amp-list>`가 성공적으로 로드될 때까지 표시됩니다. 대체도 제공되는 경우 `<amp-list>`를 로드하지 못하면 자리표시자를 숨깁니다.
-* *대체*는 `fallback` 속성을 사용하는 하위 요소입니다. `<amp-list>`를 로드하지 못하면 이 요소가 표시됩니다.
+- *자리표시자*는 `placeholder` 속성을 사용하는 하위 요소입니다. 이 요소는 `<amp-list>`가 성공적으로 로드될 때까지 표시됩니다. 대체도 제공되는 경우 `<amp-list>`를 로드하지 못하면 자리표시자를 숨깁니다.
+- *대체*는 `fallback` 속성을 사용하는 하위 요소입니다. `<amp-list>`를 로드하지 못하면 이 요소가 표시됩니다.
 
 [자리표시자 및 대체](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)에 관해 자세히 알아보세요. 하위 요소는 자리표시자와 대체 중 하나여야 합니다.
 
@@ -213,9 +219,13 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-<amp-list id="list"
-          width="396" height="80" layout="responsive"
-          src="/test/manual/amp-list-data.json?RANDOM">
+<amp-list
+  id="list"
+  width="396"
+  height="80"
+  layout="responsive"
+  src="/test/manual/amp-list-data.json?RANDOM"
+>
   <template type="amp-mustache">
     {{title}}
   </template>
@@ -241,8 +251,8 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 [Fetch API](https://fetch.spec.whatwg.org/)에 지정된 대로 `credentials` 옵션을 정의합니다.
 
-* 지원되는 값: `omit`, `include`
-* 기본값: `omit`
+- 지원되는 값: `omit`, `include`
+- 기본값: `omit`
 
 사용자 인증 정보를 보내려면 `include`의 값을 전달하세요. 이 값이 설정된 경우 응답이 [AMP CORS 보안 지침](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)을 따라야 합니다.
 
@@ -250,8 +260,10 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 ```html
 {% raw %}
-<amp-list credentials="include"
-          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+<amp-list
+  credentials="include"
+  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+>
   <template type="amp-mustache">
     Your personal offer: ${{price}}
   </template>
@@ -264,11 +276,12 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 응답에서 렌더링할 배열을 찾는 표현식을 정의합니다. 이 표현식은 JSON 응답의 필드를 통해 이동하는 점으로 표시됩니다.
 기본 `<amp-list>`는 배열되고 `single-item` 속성은 객체에서 데이터를 로드하는 데 사용할 수 있습니다.
 
-* 기본값은 `'items'`입니다. 예상 응답: `{items: [...]}`.
-* 응답 자체가 원하는 배열이면 `'.'` 값을 사용합니다. 예상 응답: `[...]`.
-* 중첩 이동이 허용됩니다(예: `'field1.field2'`). 예상 응답: `{field1: {field2: [...]}}`.
+- 기본값은 `'items'`입니다. 예상 응답: `{items: [...]}`.
+- 응답 자체가 원하는 배열이면 `'.'` 값을 사용합니다. 예상 응답: `[...]`.
+- 중첩 이동이 허용됩니다(예: `'field1.field2'`). 예상 응답: `{field1: {field2: [...]}}`.
 
 `items="items"`가 지정되면(즉, 기본값) 응답은 `'items'`라는 배열 속성이 포함된 JSON 객체여야 합니다.
+
 ```text
 {
   "items": [...]
@@ -301,9 +314,9 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 더 빠른 성능을 위해 `binding="no"` 또는 `binding="refresh"`를 사용하는 것이 좋습니다.
 
-* `binding="no"`: 렌더링을 차단하지 않습니다**(가장 빠름)**.
-* `binding="refresh"`: 초기 로드 시 렌더링을 차단하지 않습니다**(더 빠름)**.
-* `binding="always"`: 렌더링을 항상 차단합니다**(느림)**.
+- `binding="no"`: 렌더링을 차단하지 않습니다**(가장 빠름)**.
+- `binding="refresh"`: 초기 로드 시 렌더링을 차단하지 않습니다**(더 빠름)**.
+- `binding="always"`: 렌더링을 항상 차단합니다**(느림)**.
 
 `binding` 속성이 제공되지 않으면 기본값은 `always`입니다.
 
@@ -314,12 +327,16 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 #### 샘플 사용 <a name="sample-usage"></a>
 
 ```html
-<amp-list height="200" src="https://my.rest.endpoint/" width="100" load-more="auto">
+<amp-list
+  height="200"
+  src="https://my.rest.endpoint/"
+  width="100"
+  load-more="auto"
+>
   <template type="amp-mustache">
     // ...
   </template>
 </amp-list>
-
 ```
 
 작동 예를 보려면 [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) 및 [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html)을 참조하세요.
@@ -349,19 +366,30 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 ##### 예: <a name="example"></a>
 
 ```html
-<amp-list load-more="manual" src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="manual"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
   </amp-list-load-more>
 </amp-list>
 ```
-  `amp-mustache`를 통해 템플릿으로 작성될 수 있습니다.
+
+`amp-mustache`를 통해 템플릿으로 작성될 수 있습니다.
 
 ##### 예: <a name="example-1"></a>
 
 ```html
-{% raw %}<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
+{% raw %}<amp-list
+  load-more="auto"
+  width="100"
+  height="500"
+  src="https://www.load.more.example.com/"
+>
   ...
   <amp-list-load-more load-more-button>
     <template type="amp-mustache">
@@ -378,8 +406,14 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 #### load-more-loading <a name="load-more-loading"></a>
 
 이 요소는 목록의 끝에 도달하지만 콘텐츠를 여전히 로드 중이거나 사용자가 `load-more-button` 요소를 클릭한 결과(`<amp-list>`의 새 하위 요소를 여전히 로드 중) 표시되는 로더입니다. 이 요소는 `load-more-loading` 속성이 있는 하위 요소에 `<amp-list>`를 제공하여 맞춤설정할 수 있습니다. 예를 들어 다음과 같습니다.
+
 ```html
-<amp-list load-more=auto src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
@@ -392,7 +426,12 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 로드에 실패하는 경우 `<amp-list>`의 하단에 표시될 `load-more-clickable` 속성이 있는 버튼을 포함하는 `load-more-failed` 속성이 있는 `<amp-list-load-more>` 요소입니다. 이 요소를 클릭하면 실패한 url의 새로고침을 트리거합니다. 이 요소는 `load-more-failed` 속성이 있는 하위 요소에 `<amp-list>`를 제공하여 맞춤설정할 수 있습니다. 예를 들어 다음과 같습니다.
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <button>Unable to Load More</button>
@@ -403,7 +442,12 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 위의 예에서 전체 `load-more-failed` 요소를 클릭할 수 있습니다. 그러나 이 요소의 일반적인 패턴은 클릭 가능한 '새로고침' 버튼을 포함하는 일반적인 클릭 불가능 '로드 실패' 요소입니다. 이를 처리하기 위해 `load-more-clickable` 요소를 포함하는 버튼이 있는 일반적으로 클릭 불가능한 요소를 사용할 수 있습니다. 예를 들어 다음과 같습니다.
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <div>
@@ -416,10 +460,15 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 
 #### load-more-end <a name="load-more-end"></a>
 
-이 요소는 기본적으로 제공되지 않지만, `load-more-end` 속성을 포함하는 `<amp-list-load-more>` 요소가 하위 요소로 `<amp-list>`에 연결된 경우 추가 항목이 없으면 `<amp-list>`의 하단에 표시됩니다.  이 요소는 `amp-mustache`를 통해 템플릿으로 작성될 수 있습니다. 예를 들어 다음과 같습니다.
+이 요소는 기본적으로 제공되지 않지만, `load-more-end` 속성을 포함하는 `<amp-list-load-more>` 요소가 하위 요소로 `<amp-list>`에 연결된 경우 추가 항목이 없으면 `<amp-list>`의 하단에 표시됩니다. 이 요소는 `amp-mustache`를 통해 템플릿으로 작성될 수 있습니다. 예를 들어 다음과 같습니다.
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-end>
     Congratulations! You've reached the end. /* Custom load-end element */
@@ -437,9 +486,11 @@ AMP에서 XMLHttpRequests(XHRs)를 JSON 엔드포인트에 배치합니다. 즉,
 자세한 정보는 [대체 가이드](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)를 참조하세요.
 
 예를 들어 다음과 같습니다.
+
 ```html
 <amp-list src="https://foo.com/list.json?RANDOM"></amp-list>
 ```
+
 </code>에서는
 <code>https://foo.com/list.json?0.8390278471201</code>과 같은 사이트에 요청할 수 있습니다. 여기서는 노출할 때마다 RANDOM 값이 무작위로 생성됩니다.</p>
 

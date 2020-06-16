@@ -2,13 +2,11 @@
 $title: amp-youtube
 $category@: media
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: Muestra un vídeo de YouTube.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Muestra un vídeo de [YouTube](https://www.youtube.com/).
 
@@ -54,22 +50,22 @@ Con el diseño responsive (es decir, adaptable), la anchura y la altura del ejem
     data-videoid="mGENRKrdoGY"
     layout="responsive"
     width="480" height="270"></amp-youtube>
-  [/sourcecode]
+[/sourcecode]
 
-  [sourcecode:html]
-  <amp-youtube
+[sourcecode:html]
+<amp-youtube
       id="myLiveChannel"
       data-live-channelid="UCB8Kb4pxYzsDsHxzBfnid4Q"
       width="358"
       height="204"
       layout="responsive">
-    <amp-img
+<amp-img
       src="https://i.ytimg.com/vi/Wm1fWz-7nLQ/hqdefault_live.jpg"
       placeholder
       layout="fill"
       />
-  </amp-youtube>
-  [/sourcecode]
+</amp-youtube>
+[/sourcecode]
 
 ## Atributos <a name="attributes"></a>
 

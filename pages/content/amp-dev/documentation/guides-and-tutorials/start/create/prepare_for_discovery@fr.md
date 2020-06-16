@@ -2,7 +2,7 @@
 $title: Préparer votre page pour la détection et la distribution
 ---
 
-Dans certains cas, vous pouvez avoir besoin de deux versions (non-AMP et AMP) de la même page. Par exemple, pour un article d'actualités. Supposons ce qui suit : Si Google Search trouve la version non-AMP de cette page, *comment sait-il qu'il en existe également une version AMP *?
+Dans certains cas, vous pouvez avoir besoin de deux versions (non-AMP et AMP) de la même page. Par exemple, pour un article d'actualités. Supposons ce qui suit : Si Google Search trouve la version non-AMP de cette page, _comment sait-il qu'il en existe également une version AMP _?
 
 ## Relier les pages avec &lt;link>
 
@@ -11,12 +11,14 @@ Pour résoudre ce problème, nous ajoutons des informations sur la page AMP dans
 Ajoutez ce qui suit sur la page non-AMP :
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Et ce qui suit sur la page AMP
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,5 +27,6 @@ Et ce qui suit sur la page AMP
 Si vous n'avez qu'une seule page, et que cette page est une page AMP, vous devez tout de même lui ajouter le lien canonique, qui dans ce cas pointe simplement vers elle-même :
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]

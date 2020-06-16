@@ -7,9 +7,9 @@ $title: Configurazione di Analytics
 Tutte le soluzioni di analisi si basano sulla conoscenza del tipo di dati necessari
 e sul modo in cui si prevede di analizzare tali dati. Decidi prima di iniziare.
 
-* Pensi di utilizzare strumenti di analisi di terzi per valutare il coinvolgimento degli utenti
-oppure pensi di utilizzare una tua soluzione personalizzata?
-* Quali comportamenti degli utenti prenderai in esame per capirne il livello di coinvolgimento?
+- Pensi di utilizzare strumenti di analisi di terzi per valutare il coinvolgimento degli utenti
+  oppure pensi di utilizzare una tua soluzione personalizzata?
+- Quali comportamenti degli utenti prenderai in esame per capirne il livello di coinvolgimento?
 
 ### Pensi di inviare i dati a fornitori o a te stesso?
 
@@ -42,8 +42,8 @@ Devi identificare questi dati prima di poterli configurare.
 
 Fattori importanti relativi ai dati da prendere in considerazione:
 
-* Eseguirai solamente il monitoraggio delle visualizzazioni di pagina o anche di altri modelli di coinvolgimento dell’utente
-(vedi anche [amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
-* Quali tipi di dati acquisirai relativamente ai tuoi utenti, ai tuoi contenuti,
-a dispositivi o browser (vedi anche [Sostituzione delle variabili](analytics_basics.md#variable-substitution))?
-* Come identificherai i tuoi utenti (vedi anche [Identificazione dell’utente](analytics_basics.md#user-identification))?
+- Eseguirai solamente il monitoraggio delle visualizzazioni di pagina o anche di altri modelli di coinvolgimento dell’utente
+  (vedi anche [amp-pixel o amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics))?
+- Quali tipi di dati acquisirai relativamente ai tuoi utenti, ai tuoi contenuti,
+  a dispositivi o browser (vedi anche [Sostituzione delle variabili](analytics_basics.md#variable-substitution))?
+- Come identificherai i tuoi utenti (vedi anche [Identificazione dell’utente](analytics_basics.md#user-identification))?

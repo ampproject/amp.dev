@@ -24,7 +24,7 @@ Más información: Descubre cómo [habilitar funciones de las PWA](../../../docu
 
 ## Usar páginas AMP como punto de entrada de una PWA
 
-El punto fuerte de las páginas AMP es la **publicación casi instantánea**, que permite optimizar la primera interacción entre el usuario y el sitio web. Las *aplicaciones web progresivas* ofrecen funciones que **mejoran la interactividad y la interacción**, pero la carga inicial se ve perjudicada por el hecho de que el componente service worker del sitio web y, por tanto, sus recursos y el esqueleto de aplicación solo aceleran la publicación de las páginas a partir de la siguiente carga.
+El punto fuerte de las páginas AMP es la **publicación casi instantánea**, que permite optimizar la primera interacción entre el usuario y el sitio web. Las _aplicaciones web progresivas_ ofrecen funciones que **mejoran la interactividad y la interacción**, pero la carga inicial se ve perjudicada por el hecho de que el componente service worker del sitio web y, por tanto, sus recursos y el esqueleto de aplicación solo aceleran la publicación de las páginas a partir de la siguiente carga.
 
 Una buena estrategia sería, por ejemplo, definir que una página AMP fuese el punto de entrada de los usuarios a tu sitio web y después preparar la PWA de tapadillo y dirigirlos a ella durante el resto de la visita.
 

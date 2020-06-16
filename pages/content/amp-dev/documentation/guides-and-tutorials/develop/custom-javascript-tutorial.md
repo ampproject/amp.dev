@@ -15,11 +15,11 @@ In this tutorial, you'll learn how to use `<amp-script>`, a component that allow
 
 ## What you'll need
 
-* A modern web browser
-* Basic knowledge of HTML, CSS, and JavaScript
-* Either:
-    * a local webserver and a code editor like [SublimeText](https://www.sublimetext.com) or [VSCode](https://code.visualstudio.com/)
-    * _or_ [CodePen](https://codepen.io/), [Glitch](https://glitch.com/) or a similar online playground
+- A modern web browser
+- Basic knowledge of HTML, CSS, and JavaScript
+- Either:
+  - a local webserver and a code editor like [SublimeText](https://www.sublimetext.com) or [VSCode](https://code.visualstudio.com/)
+  - _or_ [CodePen](https://codepen.io/), [Glitch](https://glitch.com/) or a similar online playground
 
 ## Background
 
@@ -75,11 +75,14 @@ To use `<amp-script>`, we need to import its own JavaScript. Open `index.html` a
 
 ```html
 <head>
- ... 
-  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+  ...
+  <script
+    async
+    custom-element="amp-script"
+    src="https://cdn.ampproject.org/v0/amp-script-0.1.js"
+  ></script>
   ...
 </head>
-
 ```
 
 `<amp-script>` lets us write our own JavaScript inline or in an external file. In this exercise, we'll write enough code to merit a separate file. Create a new directory named `js`, and add to it a new file called `validate.js`.
@@ -87,7 +90,13 @@ To use `<amp-script>`, we need to import its own JavaScript. Open `index.html` a
 `<amp-script>` allows your JavaScript to manipulate its DOM children - the elements the component encloses. It copies those DOM children into a virtual DOM, and it gives your code access to this virtual DOM. In this exercise, we want our JavaScript to control our `<form>` and its contents. So, we'll wrap the `<form>` in an `<amp-script>` component, like this:
 
 ```html
-<amp-script src="js/validate.js" layout="fixed" sandbox="allow-forms" height="500" width="750">
+<amp-script
+  src="js/validate.js"
+  layout="fixed"
+  sandbox="allow-forms"
+  height="500"
+  width="750"
+>
   <form method="post" action-xhr="#" target="_top" class="card">
     ...
   </form>
@@ -113,14 +122,14 @@ Next, we can remove the`pattern` attribute and its regular expression from our f
 We're also going to remove the `on` attribute that's currently used to tell AMP to show our password rules. As foreshadowed above, we're going to instead use `<amp-script>` to capture the browser's `focus` event.
 
 ```html
-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-z\d]).{8,}$" 
+pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-z\d]).{8,}$"
 on="tap:rules.show; input-debounced:rules.show"
 ```
 
 Now let's make sure our `<amp-script>` is working. Open the `validate.js` file you created and add a debug message:
 
 ```js
-console.log("Hello, amp-script!");
+console.log('Hello, amp-script!');
 ```
 
 Go to your browser, open the console, and reload the page. Make sure you see your message!
@@ -131,7 +140,7 @@ Go to your browser, open the console, and reload the page. Make sure you see you
 
 `<amp-script>` runs your JavaScript in a Web Worker. Web Workers can't access the DOM directly, so `<amp-script>` gives the worker access to a virtual copy of the DOM, which it keeps in sync with the real DOM. `<amp-script>` provides emulations of many common DOM APIs, almost all of which you can use in your JavaScript in the usual way.
 
-If at any point you need to debug your script, you can set breakpoints in JavaScript in a Web Worker in the same way you do with any JavaScript. You just need to know where to find it. 
+If at any point you need to debug your script, you can set breakpoints in JavaScript in a Web Worker in the same way you do with any JavaScript. You just need to know where to find it.
 
 In Chrome DevTools, open the "Sources" tab. At the bottom you will see a long hexadecimal string like the one shown below. Expand that, then expand the "no domain" area, and you'll see your script:
 
@@ -144,9 +153,9 @@ Now that we know that our `<amp-script>` is working, let's write some JavaScript
 The first thing we want to do is grab the DOM elements we'll be working with and stash those in globals. Our code will use the password input, the submit button, and the area that shows the password rules. Add these three declarations to `validate.js`:
 
 ```js
-const passwordBox = document.getElementById("passwordBox");
-const submitButton = document.getElementById("submitButton");
-const rulesArea = document.getElementById("rules");
+const passwordBox = document.getElementById('passwordBox');
+const submitButton = document.getElementById('submitButton');
+const rulesArea = document.getElementById('rules');
 ```
 
 Notice that we're able to use regular DOM API methods like `getElementById()`. Although our code runs in a worker, and workers lack direct access to the DOM, `<amp-script>` provides a virtual copy of the DOM and emulates some common APIs, listed [here](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md). These APIs give us enough tools to cover most use cases. But it's important to note that only a subset of the DOM API is supported. Otherwise, the JavaScript included with `<amp-script>` would be enormous, negating AMP's performance benefits!
@@ -154,12 +163,12 @@ Notice that we're able to use regular DOM API methods like `getElementById()`. A
 We need to add these id's to two of the elements. Open up `index.html`, locate the password `<input>` and the submit `<button>`, and add the id's:
 
 ```html
-<input type=password 
+<input type=password
        id="passwordBox"
 
 ...
 
-<button type="submit" id="submitButton" tabindex="3" disabled>Submit</button> 
+<button type="submit" id="submitButton" tabindex="3" disabled>Submit</button>
 ```
 
 Reload the page. You can verify that these globals were set correctly by checking in the Console, just as you could with non-worker JavaScript:
@@ -175,7 +184,7 @@ We'll also add id's to each `<li>` in `<div id="rules">`. Each of these contains
   <li id="digit" class="invalid">Digit</li>
   <li id="special" class="invalid">Special character (@$!%*?&)</li>
   <li id="eight" class="invalid">At least 8 characters long</li>
-</ul> 
+</ul>
 ```
 
 ## Implementing our password checks in JavaScript
@@ -188,16 +197,14 @@ const checkRegexes = {
   upper: /[A-Z]/,
   digit: /\d/,
   special: /[^a-z\d]/i,
-  eight: /.{8}/
+  eight: /.{8}/,
 };
 ```
 
 With those globals set, we're ready to write the logic that checks the password and adjusts the UI accordingly. We'll put our logic inside a function called `initCheckPassword` that takes a single argument - the DOM element of the password `<input>`. This approach conveniently stashes the DOM element in a closure.
 
 ```js
-function initCheckPassword(element) {
-
-}
+function initCheckPassword(element) {}
 ```
 
 Next, let's populate `initCheckPassword` with the functions and event listener assignments we'll need. First of all, add a small function that turns an individual rule `<li>` green if the rule passes - and another that turns it red when it fails.
@@ -205,15 +212,15 @@ Next, let's populate `initCheckPassword` with the functions and event listener a
 ```js
 function initCheckPassword(el) {
   const checkPass = (el) => {
-    el.classList.remove("invalid");
-    el.classList.add("valid");
+    el.classList.remove('invalid');
+    el.classList.add('valid');
   };
 
   const checkFail = (el) => {
-    el.classList.remove("valid");
-    el.classList.add("invalid");
+    el.classList.remove('valid');
+    el.classList.add('invalid');
   };
-};
+}
 ```
 
 Let's make those `valid` and `invalid` classes actually turn text green or red. Go back to `index.html`, and add these two rules to the `<style amp-custom>` tag:
@@ -221,10 +228,10 @@ Let's make those `valid` and `invalid` classes actually turn text green or red. 
 ```css
 li.valid {
   color: #2d7b1f;
-} 
+}
 
 li.invalid {
-  color:#c11136;
+  color: #c11136;
 }
 ```
 
@@ -247,7 +254,7 @@ const checkPassword = () => {
   }
 
   if (!failed) {
-    submitButton.removeAttribute("disabled");
+    submitButton.removeAttribute('disabled');
   }
 };
 ```
@@ -257,8 +264,8 @@ This function does the following:
 1. Grabs the contents of the password `<input>`.
 1. Creates a flag called `failed`, initialized to `false`.
 1. Iterates through each of our regexes and tests each against the password:
-    * If the password fails a test, call `checkFail()` to turn the corresponding rule red. Also, set `failed` to `true`.
-    * If the password passes a test, call `checkPass()` to turn the corresponding rule green.
+   - If the password fails a test, call `checkFail()` to turn the corresponding rule red. Also, set `failed` to `true`.
+   - If the password passes a test, call `checkPass()` to turn the corresponding rule green.
 1. Finally, if no rule failed, the password is valid, and we enable the Submit button.
 
 All we need now are a couple of event listeners. Remember how we were unable to use the `focus` event in AMP? In `<amp-script>`, we can. Whenever the password `<input>` receives the `focus` event, we'll display the rules. And whenever the user presses a key in that input, we'll call `checkPassword()`.
@@ -266,8 +273,8 @@ All we need now are a couple of event listeners. Remember how we were unable to 
 Add these two event listeners to the bottom of `initCheckPassword()`, directly before the closing brace:
 
 ```js
-element.addEventListener("focus", () => rulesArea.removeAttribute("hidden"));
-element.addEventListener("keyup", checkPassword);
+element.addEventListener('focus', () => rulesArea.removeAttribute('hidden'));
+element.addEventListener('keyup', checkPassword);
 ```
 
 Finally, at the very end of `validate.js`, add a line that initializes `initCheckPassword` with the password `<input>` DOM element:
@@ -286,6 +293,6 @@ Our logic is now complete! When the password matches all our criteria, all of th
 </figure>
 If you get stuck, you can always refer to the working code in the `finished_code` directory.
 
-# Congratulations! 
+# Congratulations!
 
 You've learned how to use `<amp-script>` to write your own JavaScript in AMP. You've succeeded in enhancing the `<amp-form>` component with your own custom logic and UI features! Feel free to add more functionality to your new page! And, to learn more about `<amp-script>`, check out [the reference documentation](../../../documentation/components/reference/amp-script.md).

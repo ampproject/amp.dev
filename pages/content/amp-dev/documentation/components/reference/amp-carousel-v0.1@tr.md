@@ -2,13 +2,12 @@
 $title: amp-carousel
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Yatay eksen boyunca birden çok benzer içerik parçası görüntüler.
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Bir yatay eksen boyunca birden çok benzer içerik parçasını görüntülemek için genel bir bant; son derece eksek ve yüksek performanslı olması amaçlanmıştır.
 
@@ -61,20 +58,27 @@ Bant, rastgele sayıda öğeden ve tek bir öğe ileri veya geri gitmek için is
 Kullanıcı kaydırırsa, ok tuşlarını kullanırsa veya isteğe bağlı bir gezinme okunu tıklarsa bant ilerler.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel width="450"
-  height="300">
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+<amp-carousel width="450" height="300">
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
     width="450"
-    height="300"></amp-img>
+    height="300"
+  ></amp-img>
 </amp-carousel>
 ```
+
 [/example]
 
 # Belirli bir slayda ilerleme <a name="advancing-to-a-specific-slide"></a>
@@ -84,49 +88,65 @@ Bir öğede `on` özelliğinin yönteminin `tap:carousel-id.goToSlide(index=N)` 
 Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimden oluşan bir bant vardır. Kullanıcı düğmelerden birini tıkladığında ilgili bant öğesi görüntülenir.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel id="carousel-with-preview"
+<amp-carousel
+  id="carousel-with-preview"
+  width="450"
+  height="300"
+  layout="responsive"
+  type="slides"
+>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
     height="300"
     layout="responsive"
-    type="slides">
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="apples"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="lemons"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="blueberries"></amp-img>
-  </amp-carousel>
-  <div class="carousel-preview">
-    <button on="tap:carousel-with-preview.goToSlide(index=0)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-        width="60"
-        height="40"
-        alt="apples"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=1)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-        width="60"
-        height="40"
-        alt="lemons"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=2)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-        width="60"
-        height="40"
-        alt="blueberries"></amp-img>
-    </button>
-  </div>
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
 ```
+
 [/example]
 
 # Özellikler <a name="attributes"></a>
@@ -188,6 +208,7 @@ Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimde
             <em>Örnek: Kontroller, döngü oluşturma ve gecikmeli otomatik oynatmayı içeren bir slayt bandı görüntüler</em>
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
 <amp-carousel type="slides"
   width="450"
@@ -209,22 +230,24 @@ Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimde
     height="300"></amp-img>
 </amp-carousel>
 ```
+
 [/example]</td>
-          </tr>
-          <tr>
-            <td width="40%"><strong>common attributes</strong></td>
-            <td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">ortak özellikleri</a> içerir.</td>
-          </tr>
-        </table>
+
+</tr>
+<tr>
+<td width="40%"><strong>common attributes</strong></td>
+<td>Bu öğe, AMP bileşenlerine genişletilmiş <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">ortak özellikleri</a> içerir.</td>
+</tr>
+</table>
 
 # Stil <a name="styling"></a>
 
-* `amp-carousel` öğe seçicisini serbest bir şekilde biçimlendirmek için kullanabilirsiniz.
-* Bant öğelerini hedeflemek için `.amp-carousel-slide` sınıf seçicisini kullanabilirsiniz.
-* Bir `amp-carousel` düğmesi devre dışı bırakıldığında görsel olarak gizlenir.
-* Varsayılan olarak `.amp-carousel-button`, düğmelerin arka plan resmi olarak satır içi SVG kullanır. Aşağıdaki örnekte olduğu gibi bunu kendi SVG'niz veya resminizle geçersiz kılabilirsiniz.
+- `amp-carousel` öğe seçicisini serbest bir şekilde biçimlendirmek için kullanabilirsiniz.
+- Bant öğelerini hedeflemek için `.amp-carousel-slide` sınıf seçicisini kullanabilirsiniz.
+- Bir `amp-carousel` düğmesi devre dışı bırakıldığında görsel olarak gizlenir.
+- Varsayılan olarak `.amp-carousel-button`, düğmelerin arka plan resmi olarak satır içi SVG kullanır. Aşağıdaki örnekte olduğu gibi bunu kendi SVG'niz veya resminizle geçersiz kılabilirsiniz.
 
-*Örnek: Varsayılan `.amp-carousel-button` satır içi SVG'si*
+_Örnek: Varsayılan `.amp-carousel-button` satır içi SVG'si_
 
 ```css
 .amp-carousel-button-prev {
@@ -233,7 +256,7 @@ Aşağıdaki örnekte, bandın altında önizleme düğmeleri olan, üç resimde
 }
 ```
 
-*Örnek: Varsayılan `.amp-carousel-button` satır içi SVG'sini geçersiz kılma*
+_Örnek: Varsayılan `.amp-carousel-button` satır içi SVG'sini geçersiz kılma_
 
 ```css
 .amp-carousel-button-prev {

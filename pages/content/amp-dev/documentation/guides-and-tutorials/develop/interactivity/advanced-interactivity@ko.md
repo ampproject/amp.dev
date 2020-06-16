@@ -16,8 +16,11 @@ $title: 상호작용 개선
 [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) 파일을 열고 다음 스크립트를 페이지 `<head>` 섹션의 AMP 구성요소 목록에 추가합니다.
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## 슬라이드 표시기 추가
@@ -41,7 +44,7 @@ $title: 상호작용 개선
 `<amp-state>` 요소 내의 데이터는 연결된 ID로 액세스할 수 있습니다. 예를 들어 이 변수를 다음 표현식 프래그먼트로 나타낼 수 있습니다.
 
 ```javascript
-selected.slide // 0으로 평가합니다.
+selected.slide; // 0으로 평가합니다.
 ```
 
 ### 슬라이드 상태 업데이트
@@ -49,8 +52,13 @@ selected.slide // 0으로 평가합니다.
 다음으로 사용자가 캐러셀의 슬라이드를 변경하는 경우에 기존 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 요소에 다음의 `"on"` 작업을 추가하여 이 변수를 업데이트해 보겠습니다.
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 이제 표시된 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 슬라이드가 변경될 때마다 `AMP.setState` 작업은 다음 인수를 사용하여 호출됩니다.
@@ -58,7 +66,7 @@ selected.slide // 0으로 평가합니다.
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -103,7 +111,7 @@ selected.slide // 0으로 평가합니다.
 
 ## 캐러셀의 이미지 변경
 
-선택된 색상을 변경할 때 다른 셔츠 색상의 이미지가 표시되면 좋습니다. [`amp-bind`](../../../../documentation/components/reference/amp-bind.md)  사용하여 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 내에서 `[src]`를 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 요소에 바인딩하면 가능합니다.
+선택된 색상을 변경할 때 다른 셔츠 색상의 이미지가 표시되면 좋습니다. [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) 사용하여 [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 내에서 `[src]`를 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 요소에 바인딩하면 가능합니다.
 
 ### SKU 상태 초기화
 
@@ -153,7 +161,7 @@ selected.slide // 0으로 평가합니다.
 
 이 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state)요소에는 셔츠 식별자 문자열(예: SKU)을 해당 셔츠의 색상 및 이미지 URL에 매핑하는 JSON 객체가 포함되어 있습니다. JSON 배열은 여기에서도 작동하지만 객체를 사용하면 다른 멋진 작업을 할 수 있습니다. 이러한 작업은 곧 제공될 예정입니다.
 
-이제 셔츠의 식별자를 통해 이미지 URL에 액세스할 수 있습니다. 예를 들어 `shirts['10014'].color`는 `"dark green"`으로 평가되고 `shirts['10030'].image `는 `"wine"` 셔츠 색상의 이미지 URL을 반환합니다.
+이제 셔츠의 식별자를 통해 이미지 URL에 액세스할 수 있습니다. 예를 들어 `shirts['10014'].color`는 `"dark green"`으로 평가되고 `shirts['10030'].image`는 `"wine"` 셔츠 색상의 이미지 URL을 반환합니다.
 
 ### 선택된 SKU 추적
 
@@ -175,8 +183,10 @@ selected.slide // 0으로 평가합니다.
 새 색상이 선택될 때마다 `selected.sku` 변수를 업데이트하는 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)에 "on" 작업을 추가합니다.
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 도움말: 이는 `on="tap:AMP.setState(...)` 작업을 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 내의 각 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 하위 요소에 추가함으로써 실행할 수도 있습니다. [`amp-selector`](../../../../documentation/components/reference/amp-selector.md)의 장점 중 하나는 이러한 방식으로 마크업을 단순화한다는 것입니다.
@@ -187,12 +197,24 @@ selected.slide // 0으로 평가합니다.
 
 ```html
 <!-- `selected.sku` 변수가 변경되면 각 <amp-img>의 `src`를 업데이트합니다. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 참고: 실제 상황에서는 캐러셀의 각 이미지에 다른 `src`가 있을 가능성이 높습니다. 이는 하나의 이미지를 이미지 배열로 대체함으로써 실행할 수 있습니다. 간단한 설명을 위해 이 가이드에서는 다양한 배율에서 하나의 이미지를 사용합니다.

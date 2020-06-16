@@ -2,14 +2,12 @@
 $title: amp-pixel
 $category@: ads-analytics
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: 一种跟踪像素，用于统计网页浏览量。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -51,8 +47,7 @@ teaser:
 在下面的基本示例中，`amp-pixel` 向给定网址发出一个简单的 GET 请求，之后忽略了结果。
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/tracker/foo" layout="nodisplay"></amp-pixel>
 ```
 
 [tip type="note"]
@@ -70,9 +65,11 @@ teaser:
 此属性类似于 `<img>` 上的 `referrerpolicy` 属性，但 `no-referrer` 是唯一可接受的值。如果指定了 `referrerpolicy=no-referrer`，则系统会从 HTTP 请求中移除 `referrer` 标头。
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"
-    referrerpolicy="no-referrer"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/tracker/foo"
+  layout="nodisplay"
+  referrerpolicy="no-referrer"
+></amp-pixel>
 ```
 
 ##### allow-ssr-img（可选） <a name="allow-ssr-img-optional"></a>
@@ -90,8 +87,7 @@ AMP4ADS 广告素材中使用的此属性表示：作为验证后转换的一部
 在下面的示例中，系统可能会向 `https://foo.com/pixel?0.8390278471201` 等对象发出请求，其中 RANDOM 值是在每次展示时随机生成的。
 
 ```html
-<amp-pixel src="https://foo.com/pixel?RANDOM"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/pixel?RANDOM" layout="nodisplay"></amp-pixel>
 ```
 
 ## 样式设置 <a name="styling"></a>

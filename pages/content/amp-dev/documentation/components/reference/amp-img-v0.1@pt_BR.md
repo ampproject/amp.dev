@@ -2,14 +2,13 @@
 $title: amp-img
 $category@: media
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 teaser:
   text: Substitui a tag img de HTML5.
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -27,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td class="col-fourty"><strong>Descrição</strong></td>
@@ -44,7 +41,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 # Comportamento <a name="behavior"></a>
 
 O ambiente de execução pode optar por atrasar ou priorizar o carregamento de recursos com base na posição da janela de visualização, nos recursos do sistema, na largura de banda da conexão ou em outros fatores. Assim, os componentes de `amp-img` permitem que o ambiente de execução gerencie recursos de imagem com eficácia.
@@ -57,17 +53,21 @@ saiba mais sobre os layouts na especificação [Sistema de layout do HTML para A
 
 # Exemplo: como exibir uma imagem responsiva <a name="example-displaying-a-responsive-image"></a>
 
-No exemplo a seguir, mostramos uma imagem que responde ao tamanho da janela de visualização configurando `layout=responsive`.  A imagem se estica e encolhe de acordo com a proporção especificada por `width` e `height`.
+No exemplo a seguir, mostramos uma imagem que responde ao tamanho da janela de visualização configurando `layout=responsive`. A imagem se estica e encolhe de acordo com a proporção especificada por `width` e `height`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"]
@@ -81,18 +81,24 @@ Se o recurso solicitado pelo componente `amp-img` não for carregado, o espaço 
 No exemplo a seguir, se o navegador não for compatível com WebP, a imagem JPG substituta será exibida:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 Uma cor de segundo plano de marcador ou outro recurso visual pode ser definido usando o seletor e o estilo CSS no próprio elemento.
@@ -102,9 +108,9 @@ Outros recursos de imagem, como legendas, podem ser implementados com HTML padr�
 [tip type="read-on"]
 saiba mais sobre como utilizar o `amp-img`:
 
-* [Marcadores e substitutos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
-* [Incluir imagens e vídeo](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
-[/tip]
+- [Marcadores e substitutos](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+- [Incluir imagens e vídeo](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
+  [/tip]
 
 # Atributos <a name="attributes"></a>
 
@@ -147,7 +153,7 @@ Esse elemento inclui [atributos comuns](../../../documentation/guides-and-tutori
 ```css
 amp-img {
   background-color: grey;
-  }
+}
 ```
 
 # Dicas e truques <a name="tips--tricks"></a>
@@ -157,11 +163,11 @@ amp-img {
 Se você quiser que sua imagem seja dimensionada à medida que a janela for redimensionada, mas até uma largura máxima (para que a imagem não se estenda além da própria largura):
 
 1. Defina `layout=responsive` para `<amp-img>`.
-1. No contêiner da imagem, especifique o atributo CSS `max-width:<max width to display image>`.  Por que no contêiner?  Um elemento `amp-img` com `layout=responsive` é um elemento de *nível de bloco*, enquanto `<img>` é *in-line*. Outra alternativa é definir `display: inline-block` no seu CSS para o elemento amp-img.
+1. No contêiner da imagem, especifique o atributo CSS `max-width:<max width to display image>`. Por que no contêiner? Um elemento `amp-img` com `layout=responsive` é um elemento de _nível de bloco_, enquanto `<img>` é _in-line_. Outra alternativa é definir `display: inline-block` no seu CSS para o elemento amp-img.
 
 # Diferença entre o layout responsive e o intrinsic <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
-Os layouts `responsive` e `intrinsic` criam uma imagem que será dimensionada automaticamente.  A principal diferença é que o layout `intrinsic` usa uma imagem SVG no elemento de dimensionamento.  Isso faz com que ele se comporte da mesma forma que uma imagem HTML padrão, mantendo o benefício de o navegador saber o tamanho da imagem no layout inicial. O layout `intrinsic` terá um tamanho intrínseco e aumentará um `div` flutuante até que ele chegue ao tamanho natural da imagem ou a uma restrição de CSS, como `max-width`. O layout `responsive` renderizará 0x0 em um `div` flutuante, porque tem o tamanho do pai, que não tem tamanho natural quando flutuante.
+Os layouts `responsive` e `intrinsic` criam uma imagem que será dimensionada automaticamente. A principal diferença é que o layout `intrinsic` usa uma imagem SVG no elemento de dimensionamento. Isso faz com que ele se comporte da mesma forma que uma imagem HTML padrão, mantendo o benefício de o navegador saber o tamanho da imagem no layout inicial. O layout `intrinsic` terá um tamanho intrínseco e aumentará um `div` flutuante até que ele chegue ao tamanho natural da imagem ou a uma restrição de CSS, como `max-width`. O layout `responsive` renderizará 0x0 em um `div` flutuante, porque tem o tamanho do pai, que não tem tamanho natural quando flutuante.
 
 # Definir uma imagem de tamanho fixo <a name="setting-a-fixed-sized-image"></a>
 
@@ -181,14 +187,18 @@ Para imagens responsivas, `width` e `height` não precisam corresponder à largu
 Por exemplo, em vez de especificar `width="900"` e `height="675"`, você pode simplesmente especificar `width="1.33"` e `height="1"`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="1.33"
   height="1"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 # Configurar vários arquivos de origem para diferentes resoluções de tela <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>

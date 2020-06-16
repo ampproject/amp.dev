@@ -1,5 +1,5 @@
 ---
-$title: "Analtik: Dasar-Dasar"
+$title: 'Analtik: Dasar-Dasar'
 ---
 
 Mulailah dari sini untuk mempelajari dasar-dasar terkait analitik AMP.
@@ -43,27 +43,30 @@ Komponen [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.
 Untuk membuat konfigurasi[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 Contoh berikut mirip dengan contoh [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Setiap kali halaman terlihat, peristiwa pemicu akan diproses, dan mengirim data pageview ke URL yang telah ditentukan bersama dengan ID acak:
 
 ```html
 <amp-analytics>
-
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-    },
-    "triggers": {
-      "trackPageview": {
-        "on": "visible",
-        "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -79,7 +82,9 @@ mengizinkan semua penggantian variabel URL standar (lihat [Penggantian Variabel 
 ). Pada contoh berikut, permintaan tampilan halaman dikirim ke URL, bersama dengan URL kanonis dokumen AMP yang digunakan, title-nya, dan [ID klien](analytics_basics.md):
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 Karena sifatnya yang sederhana, tag [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
@@ -92,25 +97,25 @@ Pada contoh [`amp-analytics`](../../../../documentation/components/reference/amp
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
-      "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    },
-    "triggers": {
-      "someEvent": {
-        "on": "visible",
-        "request": "pageview",
-        "vars": {
-          "title": "My homepage",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
+      "vars": {
+        "account": "ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -128,12 +133,14 @@ followed by a random `yang diikuti oleh string yang dienkode base64 acak` dan te
 AMP mengelola pembacaan dan penulisan ID klien pada semua kasus. Hal ini biasanya terlihat saat halaman ditayangkan melalui cache, atau sebaliknya ditampilkan di luar konteks penayangan dari situs asli penayang. Jika hal ini terjadi, cookie situs penayang tidak akan dapat diakses.
 
 Jika halaman AMP ditayangkan dari situs penayang, framework ID klien yang digunakan AMP dapat diberi tahu untuk mencari dan menggunakan cookie penggantian. Dalam kasus ini, argumen `cid-scope-cookie-fallback-name` dari variabel `clientId` akan diinterpretasikan sebagai nama cookie. Formatnya akan muncul sebagai `CLIENT_ID(cid-scope-cookie-fallback-name)`
-atau` ${clientId(cid-scope-cookie-fallback-name)}`.
+atau`${clientId(cid-scope-cookie-fallback-name)}`.
 
 Misalnya:
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 Jika AMP menemukan bahwa cookie tersebut ditetapkan, penggantian ID klien akan menampilkan nilai cookie. Jika AMP menemukan bahwa cookie tersebut tidak ditetapkan, AMP akan membuat nilai dari bentuk `amp-` yang diikuti oleh string yang dienkode base64 acak.

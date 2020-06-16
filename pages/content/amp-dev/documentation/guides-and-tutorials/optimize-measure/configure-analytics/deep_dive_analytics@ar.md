@@ -12,41 +12,44 @@ $title: نظرة عميقة على AMP Analytics
 [<span dir="ltr" class="nowrap">Google Analytics</span>](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -56,9 +59,9 @@ $title: نظرة عميقة على AMP Analytics
 
 تم تصميم AMP لدعم النمطين الشائعين لتجميع البيانات:
 
-* التحويل بواسطة نقطة نهائية مملوكة للناشر لأجل أنظمة التحليلات الداخلية.
-* التحويل بواسطة نقطة نهائية مملوكة لمورّد لإتاحة التوافقية مع حل المورّد
-(مثل [<span dir="ltr" class="nowrap">Adobe Analytics</span>](../../../../documentation/components/reference/amp-analytics.md).
+- التحويل بواسطة نقطة نهائية مملوكة للناشر لأجل أنظمة التحليلات الداخلية.
+- التحويل بواسطة نقطة نهائية مملوكة لمورّد لإتاحة التوافقية مع حل المورّد
+  (مثل [<span dir="ltr" class="nowrap">Adobe Analytics</span>](../../../../documentation/components/reference/amp-analytics.md).
 
 لإرسال بيانات التحليلات إلى مزوّد تحليلات،
 ضمّن السمة `type` في العلامة <span dir="ltr" class="nowrap">`amp-analytics`</span> وعيّن قيمتها
@@ -102,7 +105,9 @@ $title: نظرة عميقة على AMP Analytics
 تضمين السمة config في العلامة <span dir="ltr" class="nowrap">[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)</span>:
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 الخطوة التالية هي إنشاء محتوى JSON المتضمّن في عنوان URL البعيد.
@@ -112,11 +117,7 @@ $title: نظرة عميقة على AMP Analytics
 نموذج المحتوى في `https://example.com/analytics.account.config.json`:
 
 ```html
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"  // Replace with your property ID.
-  }
-}
+{ "vars": { "account": "UA-XXXXX-Y" // Replace with your property ID. } }
 ```
 
 الخطوة النهائية هي التأكّد من سحب ما يحتويه الملف البعيد
@@ -126,9 +127,10 @@ $title: نظرة عميقة على AMP Analytics
 على قيمة الحساب في عنوان URL البعيد (<span dir="ltr" class="nowrap">`"account": "UA-XXXXX-Y"`</span>):
 
 ```html
-"requests": {
-  "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-  "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+"requests": { "pageview":
+"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+"event":
+"https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
 }
 ```
 
@@ -162,9 +164,10 @@ $title: نظرة عميقة على AMP Analytics
 الذي يمكن أن يشير إلى الطلبات أو المتغيرات الأخرى.
 
 ```html
-"requests": {
-  "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-  "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+"requests": { "pageview":
+"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+"event":
+"https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
 }
 ```
 
@@ -307,11 +310,7 @@ $title: نظرة عميقة على AMP Analytics
 فسوف يتم استخدامه؛ وإلا، فلن يتم إرسال أي طلب.
 
 ```html
-'transport': {
-  'beacon': false,
-  'xhrpost': false,
-  'image': true
-}
+'transport': { 'beacon': false, 'xhrpost': false, 'image': true }
 ```
 
 ## ترتيب استبدال المتغير <a name="variable-substitution-ordering"></a>
@@ -328,26 +327,26 @@ $title: نظرة عميقة على AMP Analytics
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

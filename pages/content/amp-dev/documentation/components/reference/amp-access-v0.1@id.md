@@ -2,18 +2,14 @@
 $title: amp-access
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: Provides an AMP paywall and subscription support.
 ---
 
-
-
 AMP Access atau “dukungan paywall dan langganan AMP” memberi Penayang kontrol atas konten mana yang dapat diakses oleh Pembaca beserta batasannya, berdasarkan status langganan Pembaca, jumlah tampilan, dan faktor lainnya.
 
 # amp-access <a name="amp-access"></a>
-
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -63,6 +59,7 @@ Dengan standarisasi markup, dukungan multi-penyedia, dan dukungan viewer yang le
 ## Solusi <a name="solution"></a>
 
 Solusi yang diusulkan ini memberikan kontrol kepada pengguna atas keputusan dan alur berikut:
+
 - Membuat dan mempertahankan pengguna
 - Mengontrol pengukuran (memungkinkan penayangan gratis hingga jumlah tertentu)
 - Tanggung jawab atas alur login
@@ -88,7 +85,7 @@ Untuk mendukung AMP Access, Penayang harus mengimplementasikan komponen yang dij
 
 ### ID Pembaca AMP <a name="amp-reader-id"></a>
 
-Untuk membantu layanan akses dan kasus penggunaan, AMP Access memperkenalkan konsep *ID Pembaca*.
+Untuk membantu layanan akses dan kasus penggunaan, AMP Access memperkenalkan konsep _ID Pembaca_.
 
 ID Pembaca adalah ID anonim dan unik yang dibuat oleh ekosistem AMP. ID ini unik untuk setiap pasangan Pembaca/Penayang - Pembaca diidentifikasi secara berbeda ke dua Penayang berbeda. ID ini tidak dapat dibalik. ID Pembaca disertakan dalam semua komunikasi AMP/Penayang dan memiliki entropi yang sangat tinggi. Penayang dapat menggunakan ID Pembaca untuk mengidentifikasi Pembaca dan memetakannya ke sistem identitas mereka sendiri.
 
@@ -127,14 +124,12 @@ Halaman Login dipicu saat Pembaca menge-tap Link Login yang dapat ditempatkan ol
 Semua endpoint dikonfigurasi dalam dokumen AMP sebagai objek JSON di HEAD dokumen:
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "property": value,
     ...
     }
 </script>
-
 ```
 
 Properti berikut ditetapkan dalam konfigurasi ini:
@@ -187,24 +182,19 @@ Properti berikut ditetapkan dalam konfigurasi ini:
   </tr>
 </table>
 
-Nilai *`<URL>`* menentukan URL HTTPS dengan variabel substitusi. Variabel substitusi dibahas lebih detail di bagian [Variabel URL Akses](#access-url-variables) di bawah.
+Nilai _`<URL>`_ menentukan URL HTTPS dengan variabel substitusi. Variabel substitusi dibahas lebih detail di bagian [Variabel URL Akses](#access-url-variables) di bawah.
 
 Berikut ini contoh konfigurasi AMP Access:
 
 ```html
-
 <script id="amp-access" type="application/json">
-{
-  "authorization":
-      "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
-  "pingback":
-      "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
-  "login":
-      "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
-  "authorizationFallbackResponse": {"error": true}
-}
+  {
+    "authorization": "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
+    "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
+    "login": "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
+    "authorizationFallbackResponse": {"error": true}
+  }
 </script>
-
 ```
 
 #### Beberapa penyedia akses <a name="multiple-access-providers"></a>
@@ -212,16 +202,15 @@ Berikut ini contoh konfigurasi AMP Access:
 Anda dapat menentukan beberapa penyedia akses menggunakan array, bukan objek tunggal, dan menyediakan `namespace` untuk setiap entri.
 
 ```html
-
 <script id="amp-access" type="application/json">
-[
-  {
-    "property": value,
+  [
+    {
+      "property": value,
+      ...
+      "namespace": value
+    },
     ...
-    "namespace": value
-  },
-  ...
-]
+  ]
 </script>
 ```
 
@@ -273,6 +262,7 @@ Saat mengonfigurasi URL untuk berbagai endpoint, Penayang dapat menggunakan vari
 </table>
 
 Berikut ini contoh URL yang diperluas dengan ID Pembaca, URL Kanonis, informasi Perujuk dan cachebuster acak:
+
 ```text
 https://pub.com/access?
   rid=READER_ID
@@ -290,13 +280,15 @@ Markup Konten Akses menjelaskan bagian mana dari dokumen yang terlihat atau ters
 Atribut `amp-access` menyediakan ekspresi yang menghasilkan true atau false berdasarkan respons otorisasi yang ditampilkan oleh endpoint Otorisasi. Nilai yang dihasilkan menunjukkan apakah elemen dan isinya terlihat atau tidak.
 
 Nilai `amp-access` adalah ekspresi boolean yang ditentukan dalam bahasa yang mirip SQL. Tata bahasanya ditentukan dalam [Lampiran A](#appendix-a-amp-access-expression-grammar) dan terlihat sebagai berikut:
-```html
 
+```html
 <div amp-access="expression">...</div>
 ```
+
 Properti dan nilai merujuk ke properti dan nilai respons Otorisasi yang ditampilkan oleh endpoint Otorisasi. Hal ini menghasilkan sistem yang fleksibel untuk mendukung berbagai skenario akses. Jika menggunakan namespace, cukup tambahkan namespace ke awal nama properti, misalnya `anamespace.aproperty`.
 
-Atribut `amp-access-hide` dapat digunakan untuk menyembunyikan elemen secara optimal sebelum respons Otorisasi diterima, yang dapat menampilkannya. Ini memberikan semantik “tak terlihat secara default”. Respons otorisasi yang ditampilkan oleh Otorisasi nantinya dapat membatalkan setelan default ini dan membuat bagian menjadi terlihat. Jika atribut `amp-access-hide` dihilangkan, bagian akan ditampilkan/disertakan secara default. Atribut `amp-access-hide` hanya dapat digunakan bersama dengan atribut` amp-access`.
+Atribut `amp-access-hide` dapat digunakan untuk menyembunyikan elemen secara optimal sebelum respons Otorisasi diterima, yang dapat menampilkannya. Ini memberikan semantik “tak terlihat secara default”. Respons otorisasi yang ditampilkan oleh Otorisasi nantinya dapat membatalkan setelan default ini dan membuat bagian menjadi terlihat. Jika atribut `amp-access-hide` dihilangkan, bagian akan ditampilkan/disertakan secara default. Atribut `amp-access-hide` hanya dapat digunakan bersama dengan atribut`amp-access`.
+
 ```html
 <div amp-access="expression" amp-access-hide>...</div>
 ```
@@ -308,9 +300,10 @@ Kita dapat memperluas kumpulan atribut `amp-access-*` sesuai keperluan untuk men
 Jika permintaan Otorisasi gagal dan respons "authorizationFallbackResponse" tidak ditentukan dalam dokumentasi, ekspresi `amp-access` tidak dievaluasi dan apakah suatu bagian terlihat atau disembunyikan ditentukan oleh keberadaan atribut `amp-access-hide` yang awalnya yang disediakan oleh dokumen.
 
 Berikut ini contoh yang menampilkan link login atau konten lengkap berdasarkan status langganan:
+
 ```html
 <header>
-Judul dokumen
+  Judul dokumen
 </header>
 
 <div>
@@ -324,13 +317,15 @@ Judul dokumen
 <div amp-access="subscriber">
   Konten lengkap.
 </div>
-
 ```
+
 Di sini:
-- *subscriber* adalah kolom boolean dalam respons otorisasi yang ditampilkan oleh endpoint Otorisasi. Bagian ini secara default disembunyikan, yang bersifat opsional.
+
+- _subscriber_ adalah kolom boolean dalam respons otorisasi yang ditampilkan oleh endpoint Otorisasi. Bagian ini secara default disembunyikan, yang bersifat opsional.
 - Contoh ini memilih untuk menampilkan konten lengkap secara optimal.
 
 Berikut ini contoh lain yang menunjukkan penafian bagi Pembaca tentang status pengukuran:
+
 ```html
 {% raw %}
 <section amp-access="views <= maxViews">
@@ -342,6 +337,7 @@ Berikut ini contoh lain yang menunjukkan penafian bagi Pembaca tentang status pe
 ```
 
 Dan berikut ini contoh yang menunjukkan konten tambahan ke subscriber premium:
+
 ```html
 <section amp-access="subscriptonType = 'premium'">
   Shhh… No one but you can read this content.
@@ -357,6 +353,7 @@ Otorisasi dapat menerima parameter apa pun seperti yang ditetapkan di bagian [Va
 Endpoint ini menghasilkan respons otorisasi yang dapat digunakan dalam ekspresi markup konten untuk menampilkan/menyembunyikan bagian konten yang berbeda.
 
 Format permintaannya adalah:
+
 ```text
 https://publisher.com/amp-access.json?
 rid=READER_ID
@@ -364,16 +361,19 @@ rid=READER_ID
 ```
 
 Responsnya adalah objek JSON format bebas: dapat berisi properti dan nilai apa pun dengan beberapa batasan. Batasannya adalah: - Nama properti harus sesuai dengan batasan yang ditentukan oleh tata bahasa ekspresi `amp-access` (lihat [Lampiran A](#appendix-a-amp-access-expression-grammar)). Pada sebagian besar kasus, hal ini berarti bahwa nama properti tidak boleh berisi karakter seperti spasi, tanda hubung, dan karakter lain yang tidak sesuai dengan spesifikasi “amp-access”.
+
 - Nilai properti hanya dapat berupa salah satu jenis: string, angka, boolean.
 - Nilai juga dapat disarangkan sebagai objek dengan nilai dari jenis yang sama: string, angka, boolean.
 - Ukuran total respons otorisasi yang diserialkan tidak boleh melebihi 500 byte.
 - Pastikan respons tidak menyertakan informasi identitas pribadi (PII) atau data pribadi apa pun.
 
 Berikut ini beberapa ide yang mungkin untuk properti yang dapat ditampilkan dari endpoint Otorisasi: - Informasi pengukuran: jumlah penayangan maksimum yang diizinkan dan jumlah penayangan saat ini.
+
 - Apakah Pembaca login atau seorang subscriber.
 - Jenis subscription yang lebih mendetail: basic, premium - Geografis: negara, wilayah, wilayah publikasi kustom
 
 Berikut ini contoh respons saat Pembaca bukan merupakan subscriber dan dibatasi 10 artikel/bulan dan telah melihat 6 artikel:
+
 ```json
 {
   "maxViews": 10,
@@ -381,13 +381,16 @@ Berikut ini contoh respons saat Pembaca bukan merupakan subscriber dan dibatasi 
   "subscriber": false
 }
 ```
+
 Berikut ini contoh respons saat pembaca login dan memiliki jenis langganan premium:
+
 ```json
 {
   "loggedIn": true,
   "subscriptionType": "premium"
 }
 ```
+
 RPC ini dapat dipanggil dalam fase pra-rendering dan karena itu tidak boleh digunakan untuk hitung mundur pengukuran, karena Pembaca mungkin tidak pernah benar-benar melihat dokumen.
 
 Pertimbangan penting lainnya adalah bahwa, dalam beberapa kasus, AMP runtime mungkin perlu memanggil endpoint Otorisasi beberapa kali per tayangan dokumen. Hal ini dapat terjadi jika AMP Runtime meyakini bahwa parameter akses untuk Pembaca telah berubah signifikan, misalnya setelah Alur Login yang berhasil.
@@ -411,7 +414,7 @@ AMP Runtime menggunakan class CSS berikut selama alur otorisasi:
 1. class CSS `amp-access-loading` ditetapkan pada root dokumen saat alur otorisasi dimulai dan dihapus setelah selesai atau gagal.
 2. class CSS `amp-access-error` ditetapkan pada root dokumen saat alur otorisasi gagal.
 
-Pada opsi *server*, panggilan ke endpoint Otorisasi dibuat oleh Cache AMP Google sebagai endpoint HTTPS sederhana. Dalam kasus ini, cookie Penayang tidak dapat dikirim.
+Pada opsi _server_, panggilan ke endpoint Otorisasi dibuat oleh Cache AMP Google sebagai endpoint HTTPS sederhana. Dalam kasus ini, cookie Penayang tidak dapat dikirim.
 
 ### Endpoint Pingback <a name="pingback-endpoint-1"></a>
 
@@ -426,10 +429,12 @@ Pingback tidak menghasilkan respons - semua respons diabaikan oleh AMP runtime.
 Endpoint Pingback dipanggil saat Pembaca mulai menampilkan dokumen dan setelah Pembaca berhasil menyelesaikan Alur Login.
 
 Penayang dapat memilih untuk menggunakan pingback:
+
 - untuk menghitung mundur jumlah penayangan gratis halaman
 - untuk memetakan ID Pembaca AMP ke identitas yang diberikan Penayang, karena sebagai endpoint CORS berkredensial, Pingback mungkin memuat cookie Penayang
 
 Format permintaan adalah:
+
 ```text
 https://publisher.com/amp-pingback?
 rid=READER_ID
@@ -441,20 +446,22 @@ rid=READER_ID
 URL Halaman Login dikonfigurasi melalui properti `login` di bagian [Konfigurasi AMP Access](#configuration).
 
 Konfigurasi ini dapat menentukan URL Login tunggal atau peta beberapa URL Login yang dikunci oleh jenis login. Contoh URL Login tunggal:
+
 ```json
 {
   "login": "https://publisher.com/amp-login.html?rid={READER_ID}"
-  }
+}
 ```
 
 Contoh beberapa URL Login:
+
 ```json
 {
   "login": {
     "signin": "https://publisher.com/signin.html?rid={READER_ID}",
     "signup": "https://publisher.com/signup.html?rid={READER_ID}"
-    }
   }
+}
 ```
 
 URL dapat menerima parameter apa pun seperti yang ditetapkan di bagian [Variabel URL Akses](#access-url-variables). Misalnya, URL tersebut dapat meneruskan ID Pembaca AMP dan URL dokumen. Substitusi kueri `RETURN_URL` dapat digunakan untuk menentukan parameter kueri untuk URL return, misalnya `?ret=RETURN_URL`. URL return harus ada dan jika substitusi `RETURN_URL` tidak ditentukan, maka URL tersebut akan otomatis dimasukkan dengan nama parameter kueri default “return”.
@@ -462,16 +469,20 @@ URL dapat menerima parameter apa pun seperti yang ditetapkan di bagian [Variabel
 Halaman Login adalah halaman web biasa tanpa batasan khusus, selain harus berfungsi dengan baik sebagai [dialog browser](https://developer.mozilla.org/en-US/docs/Web/API/Window/open). Lihat bagian [Alur Login](#login-flow) untuk penjelasan selengkapnya.
 
 Format permintaannya adalah:
+
 ```text
 https://publisher.com/amp-login.html?
 rid=READER_ID
 &url=SOURCE_URL
 &return=RETURN_URL
 ```
+
 Perhatikan bahwa parameter URL “return” ditambahkan oleh AMP Runtime secara otomatis jika substitusi `RETURN_URL` tidak ditentukan. Setelah menyelesaikan tugasnya, Halaman Login harus mengalihkan kembali ke “Return URL” dengan format berikut:
+
 ```text
 RETURN_URL#success=true|false
 ```
+
 Perhatikan penggunaan parameter hash URL “success”. Nilainya dapat “true” atau “false”, bergantung pada apakah login berhasil atau ditinggalkan. Idealnya, jika memungkinkan, Halaman Login akan mengirimkan sinyal jika berhasil atau gagal.
 
 Jika sinyal `success=true` ditampilkan, AMP Runtime akan mengulangi panggilan ke endpoint Otorisasi dan Pingback untuk memperbarui status dokumen dan melaporkan "tampilan" dengan profil akses baru.
@@ -483,11 +494,13 @@ Penayang dapat memilih untuk menempatkan Link Login di mana saja dalam isi dokum
 Satu atau beberapa URL Login dikonfigurasi melalui properti “login” di bagian [Konfigurasi AMP Access](#configuration).
 
 Link Login dapat dideklarasikan pada sembarang elemen HTML yang mendukung atribut “on”. Biasanya ini akan menjadi anchor atau elemen tombol. Jika URL Login tunggal dikonfigurasi, formatnya adalah:
+
 ```html
 <a on="tap:amp-access.login">Login or subscribe</a>
 ```
 
 Jika beberapa URL Login dikonfigurasi, formatnya adalah `tap:amp-access.login-{type}`. Contoh:
+
 ```html
 <a on="tap:amp-access.login-signup">Subscribe</a>
 ```
@@ -496,9 +509,9 @@ Jika namespace digunakan, formatnya adalah: `tap:amp-access.login-{namespace}` a
 
 AMP tidak membedakan antara login dan subscribe. Perbedaan ini dapat dikonfigurasi oleh Penayang menggunakan beberapa URL Login/link atau pada sistem Penayang.
 
-## Integrasi dengan *amp-analytics* <a name="integration-with-amp-analytics"></a>
+## Integrasi dengan _amp-analytics_ <a name="integration-with-amp-analytics"></a>
 
-Integrasi dengan *amp-analytics* didokumentasikan dalam [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
+Integrasi dengan _amp-analytics_ didokumentasikan dalam [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
 ## Keamanan Asal CORS <a name="cors-origin-security"></a>
 
@@ -541,27 +554,27 @@ Seperti biasa, ID Pembaca harus disertakan dalam panggilan ke Halaman Login dan 
 
 ## Glosarium AMP <a name="amp-glossary"></a>
 
-* **Dokumen AMP** - dokumen HTML yang mengikuti format AMP dan divalidasi oleh Validator AMP. Dokumen AMP dapat di-cache oleh Cache AMP Google.
-* **Validator AMP** - program komputer yang menjalankan analisis statis atas dokumen HTML dan menampilkan keberhasilan atau kegagalan bergantung pada apakah dokumen sesuai dengan format AMP atau tidak.
-* **AMP Runtime** - runtime JavaScript yang menjalankan Dokumen AMP.
-* **Cache AMP Google** - cache proxy untuk dokumen AMP.
-* **AMP Viewer** - aplikasi Web atau native yang menampilkan/menyematkan Dokumen AMP.
-* **Publisher.com** - situs penayang AMP.
-* **Endpoint CORS** - endpoint HTTPS lintas asal. Buka [https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) untuk informasi selengkapnya. Lihat [Keamanan Asal CORS](#cors-origin-security) untuk mengetahui metode pengamanan permintaan tersebut.
-* **Pembaca** - orang sebenarnya yang menampilkan dokumen AMP.
-* **Pra-rendering AMP** - AMP Viewer dapat memanfaatkan pra-rendering, yang merender dokumen tersembunyi sebelum dokumen tersebut dapat ditampilkan. Pra-rendering meningkatkan performa secara signifikan. Namun, perlu diingat bahwa pra-rendering dokumen tidak dihitung sebagai penayangan karena Pembaca mungkin tidak benar-benar melihat dokumen itu.
+- **Dokumen AMP** - dokumen HTML yang mengikuti format AMP dan divalidasi oleh Validator AMP. Dokumen AMP dapat di-cache oleh Cache AMP Google.
+- **Validator AMP** - program komputer yang menjalankan analisis statis atas dokumen HTML dan menampilkan keberhasilan atau kegagalan bergantung pada apakah dokumen sesuai dengan format AMP atau tidak.
+- **AMP Runtime** - runtime JavaScript yang menjalankan Dokumen AMP.
+- **Cache AMP Google** - cache proxy untuk dokumen AMP.
+- **AMP Viewer** - aplikasi Web atau native yang menampilkan/menyematkan Dokumen AMP.
+- **Publisher.com** - situs penayang AMP.
+- **Endpoint CORS** - endpoint HTTPS lintas asal. Buka [https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) untuk informasi selengkapnya. Lihat [Keamanan Asal CORS](#cors-origin-security) untuk mengetahui metode pengamanan permintaan tersebut.
+- **Pembaca** - orang sebenarnya yang menampilkan dokumen AMP.
+- **Pra-rendering AMP** - AMP Viewer dapat memanfaatkan pra-rendering, yang merender dokumen tersembunyi sebelum dokumen tersebut dapat ditampilkan. Pra-rendering meningkatkan performa secara signifikan. Namun, perlu diingat bahwa pra-rendering dokumen tidak dihitung sebagai penayangan karena Pembaca mungkin tidak benar-benar melihat dokumen itu.
 
 ## Revisi <a name="revisions"></a>
 
-* 02-Sep-2016: Properti konfigurasi "noPingback" dan pingback opsional.
-* 03-Mar-2016: Pingback kirim ulang setelah login (v0.5).
-* 19-Feb-2016: Sampel dikoreksi untuk menghapus `{}` dari substitusi variabel URL.
-* 15-Feb-2016: [Konfigurasi](#configuration) dan [Endpoint Otorisasi](#authorization-endpoint) kini mendukung properti "authorizationFallbackResponse" yang dapat digunakan saat otorisasi gagal.
-* 11-Feb-2016: Waktu tunggu permintaan otorisasi di [Endpoint Otorisasi](#authorization-endpoint).
-* 11-Feb-2016: Referensi kolom bertingkat seperti `object.field` kini diizinkan.
-* 09-Feb-2016: Bagian [Klik Pertama Gratis](#metering) dan [Pengukuran](#first-click-free).
-* 03-Feb-2016: Spesifikasi keamanan "asal sumber" ditambahkan ke [Keamanan Asal CORS](#cors-origin-security).
-* 01-Feb-2016: Parameter kueri "return" untuk Halaman Login dapat disesuaikan menggunakan substitusi URL RETURN_URL.
+- 02-Sep-2016: Properti konfigurasi "noPingback" dan pingback opsional.
+- 03-Mar-2016: Pingback kirim ulang setelah login (v0.5).
+- 19-Feb-2016: Sampel dikoreksi untuk menghapus `{}` dari substitusi variabel URL.
+- 15-Feb-2016: [Konfigurasi](#configuration) dan [Endpoint Otorisasi](#authorization-endpoint) kini mendukung properti "authorizationFallbackResponse" yang dapat digunakan saat otorisasi gagal.
+- 11-Feb-2016: Waktu tunggu permintaan otorisasi di [Endpoint Otorisasi](#authorization-endpoint).
+- 11-Feb-2016: Referensi kolom bertingkat seperti `object.field` kini diizinkan.
+- 09-Feb-2016: Bagian [Klik Pertama Gratis](#metering) dan [Pengukuran](#first-click-free).
+- 03-Feb-2016: Spesifikasi keamanan "asal sumber" ditambahkan ke [Keamanan Asal CORS](#cors-origin-security).
+- 01-Feb-2016: Parameter kueri "return" untuk Halaman Login dapat disesuaikan menggunakan substitusi URL RETURN_URL.
 
 ## Lampiran A: Tata bahasa ekspresi “amp-access” <a name="appendix-a-amp-access-expression-grammar"></a>
 

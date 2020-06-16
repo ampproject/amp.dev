@@ -2,7 +2,7 @@
 $title: amp-3d-gltf
 $category@: media
 formats:
-- websites
+  - websites
 teaser:
   text: GL 전송 양식(gITF) 3D 모델을 표시합니다
 ---
@@ -22,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 GL 전송 양식(gITF) 3D 모델을 표시합니다.
 
@@ -57,7 +55,8 @@ GL 전송 양식(gITF) 3D 모델을 표시합니다.
   height="240"
   alpha="true"
   antialiasing="true"
-  src="path/to/model.glb"></amp-3d-gltf>
+  src="path/to/model.glb"
+></amp-3d-gltf>
 ```
 
 ### 제한사항 <a name="limitations"></a>

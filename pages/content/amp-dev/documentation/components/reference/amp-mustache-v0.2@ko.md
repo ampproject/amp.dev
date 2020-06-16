@@ -2,13 +2,12 @@
 $title: amp-mustache
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
-    text:  Mustache.js 템플릿의 렌더링을 허용합니다.
+  text: Mustache.js 템플릿의 렌더링을 허용합니다.
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 [Mustache.js](https://github.com/janl/mustache.js/)의 렌더링을 허용합니다.
 
@@ -45,22 +42,21 @@ teaser:
   </tr>
 </table>
 
-
 ## 버전 참고사항 <a name="version-notes"></a>
 
-| 버전 | 설명 |
-|-------|-----|
-| 0.2 | `<svg>` 요소 및 감소한 번들 크기(12.2KB 대비 20.5KB, gzip으로 압축됨)를 지원합니다.최신 HTML Sanitizer 라이브러리로 이전합니다(Caja에서 DOMPurify로). 태그와 속성 허용 목록의 차이로 인해 약간의 브레이킹 체인지가 발생할 수 있습니다. 생성된 마크업의 변경사항이 기능에 영향을 미치지 않는지 확인하기 위해 프로덕션에 푸시하기 전에 페이지를 테스트하는 것이 좋습니다. |
-| 0.1 | 처음으로 구현되는 형식입니다. |
+| 버전 | 설명                                                                                                                                                                                                                                                                                                                                                                    |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.2  | `<svg>` 요소 및 감소한 번들 크기(12.2KB 대비 20.5KB, gzip으로 압축됨)를 지원합니다.최신 HTML Sanitizer 라이브러리로 이전합니다(Caja에서 DOMPurify로). 태그와 속성 허용 목록의 차이로 인해 약간의 브레이킹 체인지가 발생할 수 있습니다. 생성된 마크업의 변경사항이 기능에 영향을 미치지 않는지 확인하기 위해 프로덕션에 푸시하기 전에 페이지를 테스트하는 것이 좋습니다. |
+| 0.1  | 처음으로 구현되는 형식입니다.                                                                                                                                                                                                                                                                                                                                           |
 
 ## 구문 <a name="syntax"></a>
 
 Mustache는 로직이 없는 템플릿 구문입니다. 자세한 내용은 [Mustache.js 문서](https://github.com/janl/mustache.js/)를 참조하세요. 핵심 Mustache 태그 중 일부는 다음과 같습니다.
 
-* {% raw %}`{{variable}}`{% endraw %}: 변수 태그입니다. 변수의 HTML-이스케이프 값을 출력합니다.
-* {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: 섹션 태그입니다. 변수가 있는지 테스트하고 변수가 배열이면 테스트를 반복합니다.
-* {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: 역 태그입니다. 변수가 없는지 테스트합니다.
-* {% raw %}`{{{unescaped}}}`{% endraw %}: 이스케이프되지 않은 HTML입니다. 출력할 수 있는 마크업에 제한이 있습니다(아래 '제한사항' 참조).
+- {% raw %}`{{variable}}`{% endraw %}: 변수 태그입니다. 변수의 HTML-이스케이프 값을 출력합니다.
+- {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: 섹션 태그입니다. 변수가 있는지 테스트하고 변수가 배열이면 테스트를 반복합니다.
+- {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: 역 태그입니다. 변수가 없는지 테스트합니다.
+- {% raw %}`{{{unescaped}}}`{% endraw %}: 이스케이프되지 않은 HTML입니다. 출력할 수 있는 마크업에 제한이 있습니다(아래 '제한사항' 참조).
 
 ## 사용 <a name="usage"></a>
 
@@ -70,7 +66,11 @@ Mustache는 로직이 없는 템플릿 구문입니다. 자세한 내용은 [Mus
 먼저 `amp-mustache`를 선언/로드해야 합니다.
 
 ```html
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  async=""
+  custom-template="amp-mustache"
+></script>
 ```
 
 그리고 나서 다음과 같이 `script` 또는 `template` 태그로 Mustache 템플릿을 정의할 수 있습니다.
@@ -78,15 +78,16 @@ Mustache는 로직이 없는 템플릿 구문입니다. 자세한 내용은 [Mus
 [sourcecode:html]
 {% raw %}<!-- Using template tag. -->
 <template type="amp-mustache">
-  안녕하세요 {{world}}
+안녕하세요 {{world}}
 </template>
 {% endraw %}[/sourcecode]
 또는
 
 <!-- Using script tag. -->
+
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
-  안녕하세요  {{world}}!
+안녕하세요 {{world}}!
 </script>
 {% endraw %}[/sourcecode]
 
@@ -101,8 +102,8 @@ AMP 유효성 검사기에서 유용한 dev-x 힌트를 제공하므로 가능�
 모든 AMP 템플릿과 마찬가지로 `amp-mustache` 템플릿은 올바른 형식의 DOM 단편이어야 합니다. 즉,
 무엇보다도 `amp-mustache`를 사용하여 다음을 할 수 없습니다.
 
-* 태그 이름 계산. 예: {% raw %}`<{{tagName}}>`{% endraw %}은 허용되지 않습니다.
-* 속성 이름 계산. 예: {% raw %}`<div {{attrName}}=something>`{% endraw %} 은 허용되지 않습니다.
+- 태그 이름 계산. 예: {% raw %}`<{{tagName}}>`{% endraw %}은 허용되지 않습니다.
+- 속성 이름 계산. 예: {% raw %}`<div {{attrName}}=something>`{% endraw %} 은 허용되지 않습니다.
 
 'triple-mustache'의 출력은 다음 태그만 허용하도록 정리됩니다. `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u`, `ul`.
 
@@ -120,9 +121,10 @@ Mustache 출력은 보안상의 이유 및 AMP 유효성을 유지하기 위해 
 
 [sourcecode:html]
 {% raw %}<amp-list id="myList" src="https://foo.com/list.json">
-  <template type="amp-mustache">
-    <div>{{title}}</div>
-  </template>
+<template type="amp-mustache">
+
+<div>{{title}}</div>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -131,6 +133,7 @@ Mustache 출력은 보안상의 이유 및 AMP 유효성을 유지하기 위해 
 [sourcecode:html]
 {% raw %}<!-- Externalize templates to avoid nesting. -->
 <template type="amp-mustache" id="myTemplate">
+
   <div>{{title}}</div>
 </template>
 
@@ -144,6 +147,7 @@ AMP 템플릿 문자열은 `<template>` 요소에 지정해야 하므로 브라�
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -157,6 +161,7 @@ AMP 템플릿 문자열은 `<template>` 요소에 지정해야 하므로 브라�
 [sourcecode:html]
 {% raw %}{{#foo}}
 {{/foo}}
+
 <table>
   <tr>
     <td></td>
@@ -168,6 +173,7 @@ AMP 템플릿 문자열은 `<template>` 요소에 지정해야 하므로 브라�
 
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -182,11 +188,14 @@ AMP 템플릿 문자열은 `<template>` 요소에 지정해야 하므로 브라�
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <!-- A double-quote (") in foo will cause malformed HTML. -->
-  <amp-img alt="{{foo}}" src="example.jpg" width=100 height=100></amp-img>
+
+<amp-img alt="{{foo}}" src="example.jpg" width=100 height=100></amp-img>
 
   <!-- A single-quote (') or double-quote (") in bar will cause an AMP runtime parse error. -->
-  <button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>
+
+<button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>
 </template>
 {% endraw %}[/sourcecode]
 

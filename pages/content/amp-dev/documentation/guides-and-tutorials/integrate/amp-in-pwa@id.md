@@ -10,15 +10,17 @@ Pada skenario yang paling umum, Progressive Web App adalah aplikasi halaman tung
 
 Setelah itu, Anda dapat memproses dan mengonversi konten mentah menjadi HTML yang berguna, lalu merendernya pada klien. Proses ini memerlukan biaya yang mahal dan sering kali sulit dikelola. Sebagai gantinya, Anda dapat menggunakan kembali Halaman AMP yang sudah ada sebagai sumber konten. Yang paling penting, AMP menyederhanakan proses ini hanya dengan beberapa baris kode.
 
-##  Menyertakan "AMP Bayangan" di Progressive Web App
+## Menyertakan "AMP Bayangan" di Progressive Web App
 
 Langkah pertama adalah menyertakan AMP versi khusus yang kami sebut “AMP Bayangan” di Progressive Web App. Ya, tepat sekali – library AMP akan dimuat di halaman tingkat atas, namun tidak akan benar-benar mengontrol konten tingkat atas. Library AMP hanya akan “memperkuat” bagian halaman sesuai dengan yang Anda tetapkan.
 
 Sertakan AMP Bayangan di bagian atas halaman, seperti contoh berikut:
 
 [sourcecode:html]
+
 <!-- Muat library waktu proses AMP-with-Shadow-DOM secara asinkron. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### Bagaimana Anda tahu kapan API AMP Bayangan siap digunakan?
@@ -29,7 +31,7 @@ Sinyal yang tepat yang harus diamati adalah ketersediaan variabel `AMP` global, 
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP kini tersedia.
+// AMP kini tersedia.
 });
 [/sourcecode]
 
@@ -37,8 +39,8 @@ Kode ini akan berfungsi, dan berapa pun jumlah panggilan balik yang ditambahkan 
 
 Kode ini berarti:
 
-  1. “jika window.AMP tidak ada, buat array kosong untuk mengambil alih posisinya”
-  1. "kemudian, terapkan fungsi panggilan balik ke array yang harus dijalankan saat AMP sudah siap"
+1. “jika window.AMP tidak ada, buat array kosong untuk mengambil alih posisinya”
+1. "kemudian, terapkan fungsi panggilan balik ke array yang harus dijalankan saat AMP sudah siap"
 
 Cara ini dapat berfungsi karena library AMP Bayangan, saat pemuatan yang sebenarnya, akan mengetahui bahwa telah ada array panggilan balik pada `window.AMP`, lalu memproses seluruh antrean. Jika kemudian Anda menjalankan kembali fungsi yang sama, fungsi tersebut akan tetap bekerja, karena AMP Bayangan menggantikan `window.AMP` dengan sendirinya beserta metode `push` kustom, yang langsung mengaktifkan panggilan balik.
 
@@ -59,20 +61,20 @@ Akhirnya, jika Anda ingin menampilkan konten setelah ada tindakan dari pengguna,
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // sayangnya fetch() tidak mendukung pengambilan dokumen,
-  // sehingga kami terpaksa menggunakan XMLHttpRequest saja.
-  var xhr = new XMLHttpRequest();
+// sayangnya fetch() tidak mendukung pengambilan dokumen,
+// sehingga kami terpaksa menggunakan XMLHttpRequest saja.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML berisi objek Dokumen yang siap digunakan
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML berisi objek Dokumen yang siap digunakan
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -89,8 +91,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Gunakan metode fetchDocument kami untuk mendapatkan dokumen
 fetchDocument(url).then(function(doc) {
-  // Biarkan AMP menjalankan fungsinya dan merender halaman
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Biarkan AMP menjalankan fungsinya dan merender halaman
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 
@@ -117,11 +119,11 @@ Cara ini akan memberi tahu AMP bahwa Anda tidak lagi menggunakan dokumen ini, da
 
 Anda dapat melihat cara kerja pola "AMP di PWA" di [Contoh React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) yang telah kami buat. Contoh tersebut menunjukkan transisi yang lancar saat navigasi dan disertai dengan komponen React yang simpel, yang menggabungkan langkah-langkah di atas. Jadi, Anda akan mendapatkan 2 manfaat sekaligus – JavaScript kustom yang fleksibel di Progressive Web App, serta AMP untuk mendorong konten.
 
-* Dapatkan kode sumber di sini: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
-* Gunakan komponen React secara mandiri melalui npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
-* Lihat cara kerjanya di sini: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (hasil terbaik di ponsel atau emulasi seluler)
+- Dapatkan kode sumber di sini: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
+- Gunakan komponen React secara mandiri melalui npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
+- Lihat cara kerjanya di sini: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (hasil terbaik di ponsel atau emulasi seluler)
 
 Anda juga dapat melihat contoh PWA dan AMP menggunakan framework Polymer. Contoh tersebut menggunakan [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) untuk menyematkan halaman AMP.
 
-* Dapatkan kodenya di sini: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
-* Lihat cara kerjanya di sini: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
+- Dapatkan kodenya di sini: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
+- Lihat cara kerjanya di sini: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)

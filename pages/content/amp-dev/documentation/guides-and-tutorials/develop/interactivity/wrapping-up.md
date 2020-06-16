@@ -16,4 +16,4 @@ If you got stuck, see the [`static/final.html`](https://github.com/googlecodelab
 
 ## Next steps
 
-Learn more about the power and flexibility of building interactive AMP pages in the  [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) documentation and from other [dynamic AMP components](../../../../documentation/components/index.html).
+Learn more about the power and flexibility of building interactive AMP pages in the [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) documentation and from other [dynamic AMP components](../../../../documentation/components/index.html).

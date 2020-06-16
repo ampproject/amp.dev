@@ -16,6 +16,7 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+
   <div fallback>この端末ではアニメーション画像は再生できません。</div>
 </amp-anim>
 [/sourcecode]
@@ -25,7 +26,6 @@ AMP には、さまざまな AMP コンポーネント（および HTML 要素�
 ## heights
 
 `responsive` レイアウトに対応する AMP 要素はすべて、`heights` 属性にも対応しています。この属性の値は、メディアの式に基づくサイズの式です。[`img` タグの sizes 属性](https://developer.mozilla.org/ja/docs/Web/HTML/Element/img) と似ていますが、大きな違いが 2 つあります。
-
 
 1. この値は、要素の幅ではなく高さに適用されます。
 2. パーセントの値を使用できます。パーセント値は要素の幅の割合を示すものです。たとえば、`80%` という値は、要素の高さが幅の 80% になることを示しています。
@@ -107,15 +107,14 @@ AMP では、一連の [レイアウト](../../../documentation/guides-and-tutor
 構文:
 
 [sourcecode:text]
-eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 例:
 
 [sourcecode:html]
 <button on="tap:my-lightbox">ライトボックスを開く</button>
 <amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
+...
 </amp-lightbox>
 [/sourcecode]
 
@@ -131,7 +130,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 

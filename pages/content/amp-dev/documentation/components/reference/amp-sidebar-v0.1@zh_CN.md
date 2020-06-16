@@ -10,8 +10,6 @@ toc: true
 $title: amp-sidebar
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -27,8 +25,6 @@ $title: amp-sidebar
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -57,21 +53,21 @@ $title: amp-sidebar
 
 ## 行为 <a name="behavior"></a>
 
-* `<amp-sidebar>` 应该是 `<body>` 的直接子级。
-* 边栏只能显示在页面左侧或右侧。
-* `<amp-sidebar>` 可以包含任何有效的 HTML 元素（受 AMP 支持）。
-* `<amp-sidebar>` 可以包含以下任意 AMP 元素：
-    * `<amp-accordion>`
-    * `<amp-img>`
-    * `<amp-fit-text>`
-    * `<amp-list>`
-    * `<amp-live-list>`
-    * `<amp-social-share>`</li>
-* 边栏的最大高度为 100vh；如果高度超过 100vh，则会显示垂直滚动条。默认高度在 CSS 中设为 100vh，并可在 CSS 中替换。
-* 可以使用 CSS 设置和调整边栏的宽度（最小宽度为 45 像素）。
-* 在 `amp-sidebar` 上，触摸缩放功能处于停用状态。在边栏打开时，此功能会隐藏。
+- `<amp-sidebar>` 应该是 `<body>` 的直接子级。
+- 边栏只能显示在页面左侧或右侧。
+- `<amp-sidebar>` 可以包含任何有效的 HTML 元素（受 AMP 支持）。
+- `<amp-sidebar>` 可以包含以下任意 AMP 元素：
+  - `<amp-accordion>`
+  - `<amp-img>`
+  - `<amp-fit-text>`
+  - `<amp-list>`
+  - `<amp-live-list>`
+  - `<amp-social-share>`</li>
+- 边栏的最大高度为 100vh；如果高度超过 100vh，则会显示垂直滚动条。默认高度在 CSS 中设为 100vh，并可在 CSS 中替换。
+- 可以使用 CSS 设置和调整边栏的宽度（最小宽度为 45 像素）。
+- 在 `amp-sidebar` 上，触摸缩放功能处于停用状态。在边栏打开时，此功能会隐藏。
 
-*示例：*
+_示例：_
 
 在下面的示例中，我们使用 `amp-sidebar` 来包含导航项。不过，第二个和第四个导航项（Nav Item 2 和 Nav Item 4）分配给了页面上的元素 ID。通过使用 [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) 属性，我们可以借助元素 ID 和 `scrollTo` 平滑地滚动到相应元素。
 
@@ -115,13 +111,13 @@ $title: amp-sidebar
 
 或者，按键盘上的 Esc 键也会关闭边栏。
 
-*示例：*
+_示例：_
 
 ```html
-<button class="hamburger" on='tap:sidebar1.toggle'></button>
-<button on='tap:sidebar1'>Open</button>
-<button on='tap:sidebar1.open'>Open</button>
-<button on='tap:sidebar1.close'>x</button>
+<button class="hamburger" on="tap:sidebar1.toggle"></button>
+<button on="tap:sidebar1">Open</button>
+<button on="tap:sidebar1.open">Open</button>
+<button on="tap:sidebar1.close">x</button>
 ```
 
 ### 工具栏 <a name="toolbar"></a>
@@ -130,14 +126,14 @@ $title: amp-sidebar
 
 #### 行为 <a name="behavior-1"></a>
 
-* 通过添加具有 `toolbar` 属性和 `toolbar-target` 属性的 nav 元素，边栏可以实现工具栏。
-* nav 元素必须是 `<amp-sidebar>` 的子级，且遵循以下格式：`<nav toolbar="(media-query)" toolbar-target="elementID">`。
-    * 例如，`<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">` 便是一种有效的工具栏用法。</li>
-* 包含工具栏属性的 nav 必须仅包含单个 `<ul>` 元素（后者包含 `<li>` 元素）。
-    * `<li>` 元素可以包含任何有效的 HTML 元素（受 AMP 支持），或 `<amp-sidebar>` 支持的任何 AMP 元素。</li>
-* 仅当 `toolbar` 属性媒体查询有效时，才会应用工具栏行为。此外，要应用工具栏，相应页面上必须存在具有 `toolbar-target` 属性 ID 的元素。
+- 通过添加具有 `toolbar` 属性和 `toolbar-target` 属性的 nav 元素，边栏可以实现工具栏。
+- nav 元素必须是 `<amp-sidebar>` 的子级，且遵循以下格式：`<nav toolbar="(media-query)" toolbar-target="elementID">`。
+  - 例如，`<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">` 便是一种有效的工具栏用法。</li>
+- 包含工具栏属性的 nav 必须仅包含单个 `<ul>` 元素（后者包含 `<li>` 元素）。
+  - `<li>` 元素可以包含任何有效的 HTML 元素（受 AMP 支持），或 `<amp-sidebar>` 支持的任何 AMP 元素。</li>
+- 仅当 `toolbar` 属性媒体查询有效时，才会应用工具栏行为。此外，要应用工具栏，相应页面上必须存在具有 `toolbar-target` 属性 ID 的元素。
 
-*示例：基本工具栏*
+_示例：基本工具栏_
 
 在下面的示例中，如果窗口宽度小于或等于 767 像素，则显示 `toolbar`。`toolbar` 包含搜索输入元素。`toolbar` 元素将附加到 `<div id="target-element">` 元素。
 
@@ -155,32 +151,28 @@ $title: amp-sidebar
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="搜索…"/>
+        <input placeholder="搜索…" />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 ## 对工具栏进行样式设置 <a name="styling-toolbar"></a>
 
 `<amp-sidebar>` 元素内的 `toolbar` 元素将包含应用于该元素的类，具体取决于 `toolbar-target` 元素是处于显示状态还是隐藏状态。这有利于为 `toolbar` 元素和 `toolbar-target` 元素应用不同的样式。具体的类包括 `amp-sidebar-toolbar-target-shown` 和 `amp-sidebar-toolbar-target-hidden`。当 `toolbar-target` 元素处于显示状态时，`amp-sidebar-toolbar-target-shown` 类会应用于 `toolbar` 元素。当 `toolbar-target` 元素处于隐藏状态时，`amp-sidebar-toolbar-target-hidden` 类会应用于 `toolbar` 元素。
 
-*示例：工具栏状态类*
+_示例：工具栏状态类_
 
 在下面的示例中，如果窗口宽度小于或等于 767 像素，则显示 `toolbar`。`toolbar` 包含搜索输入元素。`toolbar` 元素将附加到 `<div id="target-element">` 元素。不过，我们添加了一些自定义样式，可用于在 `<div id="toolbar-target">` 元素处于显示状态时隐藏 `toolbar` 元素。
 
 ```html
 <style amp-custom="">
-
   .amp-sidebar-toolbar-target-shown {
-      display: none;
+    display: none;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -196,15 +188,13 @@ $title: amp-sidebar
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="搜索…"/>
+        <input placeholder="搜索…" />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 [tip type="ll callout('提示：</b><a class="type_success"]
@@ -217,21 +207,21 @@ $title: amp-sidebar
 
 ### 行为 <a name="behavior-2"></a>
 
-* `<amp-sidebar>` 必须是 `<amp-story>` 的直接子级。
-* 对于常规 AMP 文档，边栏默认显示在“开始”侧：如果使用的是从左到右书写的语言，则显示在右侧；如果使用的是从右到左书写的语言，则显示在左侧。
-* `<amp-sidebar>` 的默认背景颜色为白色，并可在 CSS 中替换。
-* `<amp-sidebar>` 的最大宽度被强制为 `280px`，在桌面设备上为 `320px`。
-* 在故事界面上，将显示用于打开/关闭边栏的“汉堡”样式按钮。
+- `<amp-sidebar>` 必须是 `<amp-story>` 的直接子级。
+- 对于常规 AMP 文档，边栏默认显示在“开始”侧：如果使用的是从左到右书写的语言，则显示在右侧；如果使用的是从右到左书写的语言，则显示在左侧。
+- `<amp-sidebar>` 的默认背景颜色为白色，并可在 CSS 中替换。
+- `<amp-sidebar>` 的最大宽度被强制为 `280px`，在桌面设备上为 `320px`。
+- 在故事界面上，将显示用于打开/关闭边栏的“汉堡”样式按钮。
 
 为了在整个故事平台上提供一致的界面体验，我们在允许使用哪些属性和功能方面设置了一些限制。下面是 `amp-story` 中的 `amp-sidebar` 可以使用的属性和功能。
 
 ### 可以使用的属性 <a name="allowed-attributes"></a>
 
-* [layout](#layout)
-* [data-close-button-aria-label](#data)
-* [常见属性](#common)
+- [layout](#layout)
+- [data-close-button-aria-label](#data)
+- [常见属性](#common)
 
-*示例：故事中的基本边栏*
+_示例：故事中的基本边栏_
 
 以下示例可在 `amp-story` 中显示一个简单的 `amp-sidebar`。
 
@@ -290,9 +280,9 @@ $title: amp-sidebar
 
 可以使用标准 CSS 对 `amp-sidebar` 组件进行样式设置。
 
-* 可以设置 `amp-sidebar` 的 `width`，以调整宽度，宽度值介于预设的最小值（45 像素）和最大值 (80vw) 之间。
-* 如果需要，可以设置 `amp-sidebar` 的高度，以调整边栏的高度。如果高度超过 100vw，边栏将显示垂直滚动条。边栏的预设高度为 100vw，可以在 CSS 中替换该值以降低高度。
-* 当边栏在页面上处于打开状态时，系统将通过为 `amp-sidebar` 标记设置的 `open` 属性显示边栏的当前状态。
+- 可以设置 `amp-sidebar` 的 `width`，以调整宽度，宽度值介于预设的最小值（45 像素）和最大值 (80vw) 之间。
+- 如果需要，可以设置 `amp-sidebar` 的高度，以调整边栏的高度。如果高度超过 100vw，边栏将显示垂直滚动条。边栏的预设高度为 100vw，可以在 CSS 中替换该值以降低高度。
+- 当边栏在页面上处于打开状态时，系统将通过为 `amp-sidebar` 标记设置的 `open` 属性显示边栏的当前状态。
 
 [tip type="ll callout('提示：</b><a class="type_success"]
 如需了解您可以在 AMP 网页中使用的自适应、已预设样式的导航菜单，请访问 [AMP Start](https://ampstart.com/components#navigation)。
@@ -308,11 +298,9 @@ $title: amp-sidebar
 
 ```html
 <style amp-custom="">
-
   nav [toolbar] {
     overflow: auto;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -328,9 +316,7 @@ $title: amp-sidebar
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 如需有效的示例代码，请参阅[此示例文件](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html)。

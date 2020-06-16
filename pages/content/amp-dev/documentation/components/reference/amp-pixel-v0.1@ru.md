@@ -2,14 +2,12 @@
 $title: amp-pixel
 $category@: ads-analytics
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: Пиксель отслеживания, используемый для регистрации просмотров страниц
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,9 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
-
 
 <table>
   <tr>
@@ -52,8 +47,7 @@ teaser:
 В примере ниже компонент `amp-pixel` направляет обычный запрос GET к выбранному URL и игнорирует ответ.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/tracker/foo" layout="nodisplay"></amp-pixel>
 ```
 
 [tip type="note"]
@@ -71,9 +65,11 @@ teaser:
 Этот атрибут аналогичен атрибуту `referrerpolicy`, предназначенному для тега `<img>`, однако ему может присваиваться только значение `no-referrer`. Если в коде представлен элемент `referrerpolicy=no-referrer`, заголовок `referrer` будет удален из HTTP-запроса.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"
-    referrerpolicy="no-referrer"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/tracker/foo"
+  layout="nodisplay"
+  referrerpolicy="no-referrer"
+></amp-pixel>
 ```
 
 ##### allow-ssr-img (необязательно) <a name="allow-ssr-img-optional"></a>
@@ -93,8 +89,7 @@ teaser:
 В примере ниже запрашивается URL вида `https://foo.com/pixel?0.8390278471201`. Значение элемента RANDOM генерируется случайным образом при каждом новом показе.
 
 ```html
-<amp-pixel src="https://foo.com/pixel?RANDOM"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/pixel?RANDOM" layout="nodisplay"></amp-pixel>
 ```
 
 ## Поддержка стилей <a name="styling"></a>

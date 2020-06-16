@@ -16,5 +16,5 @@ Dalam tutorial ini, kami akan memperkenalkan Anda dengan komponen [`amp-story`](
 - Mempertahankan interaksi pembaca dengan konten melalui penambahan link terkait ke akhir artikel
 
 [tip type="note"]
- Komponen [`amp-story`](../../../../documentation/components/reference/amp-story.md) masih bersifat **eksperimental**.
+Komponen [`amp-story`](../../../../documentation/components/reference/amp-story.md) masih bersifat **eksperimental**.
 [/tip]

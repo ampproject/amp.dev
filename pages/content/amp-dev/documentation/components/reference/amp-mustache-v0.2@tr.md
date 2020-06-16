@@ -2,14 +2,12 @@
 $title: amp-mustache
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Mustache.js şablonlarının oluşturulmasına izin verir.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 [Mustache.js](https://github.com/janl/mustache.js/) oluşturulmasına izin verir.
 
@@ -46,22 +42,21 @@ teaser:
   </tr>
 </table>
 
-
 ## Sürüm notları <a name="version-notes"></a>
 
-| Sürüm | Açıklama |
-|-------|-----|
-| 0.2 | `<svg>` öğeleri için destek ve daha küçük paket boyutu (12,2 KB - 20,5 KB, gzip ile sıkıştırılmış).<br><br> Daha modern bir temiz HTML kitaplığına (Caja'dan DOMPurify'a) geçiş. Bu, etiket ve özellik beyaz listesi oluşturmadaki farklılıklar nedeniyle zarar veren küçük değişikliklere neden olabilir. Oluşturulan işaretlemedeki değişikliklerin işlevselliği etkilemediğinden emin olmak için üretim kanalına aktarmadan önce sayfalarınızı test etmenizi öneririz. |
-| 0.1 | İlk uygulama. |
+| Sürüm | Açıklama                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.2   | `<svg>` öğeleri için destek ve daha küçük paket boyutu (12,2 KB - 20,5 KB, gzip ile sıkıştırılmış).<br><br> Daha modern bir temiz HTML kitaplığına (Caja'dan DOMPurify'a) geçiş. Bu, etiket ve özellik beyaz listesi oluşturmadaki farklılıklar nedeniyle zarar veren küçük değişikliklere neden olabilir. Oluşturulan işaretlemedeki değişikliklerin işlevselliği etkilemediğinden emin olmak için üretim kanalına aktarmadan önce sayfalarınızı test etmenizi öneririz. |
+| 0.1   | İlk uygulama.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## Söz dizimi <a name="syntax"></a>
 
 Mustache, mantık içermeyen bir şablon söz dizimidir. Daha ayrıntılı bilgi için [Mustache.js dokümanlarına](https://github.com/janl/mustache.js/) bakın. Temel Mustache etiketlerinden bazıları şunlardır:
 
-* {% raw %}`{{variable}}`{% endraw %}: Bir değişken etiketi. Bir değişkenin çıkış karakterli HTML değerini verir.
-*  {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: Bir bölüm etiketi. Bir değişkenin varlığını test edebilir ve bir dizi olması halinde testi tekrarlayabilir.
-* {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: Ters çevrilmiş bir etiket. Bir değişkenin var olmayışını test edebilir.
-* {% raw %}`{{{unescaped}}}`{% endraw %}: Çıkış karaktersiz HTML. Sağlayabileceği işaretlemede kısıtlanmıştır (aşağıdaki "Kısıtlamalar" konusuna bakın).
+- {% raw %}`{{variable}}`{% endraw %}: Bir değişken etiketi. Bir değişkenin çıkış karakterli HTML değerini verir.
+- {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: Bir bölüm etiketi. Bir değişkenin varlığını test edebilir ve bir dizi olması halinde testi tekrarlayabilir.
+- {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: Ters çevrilmiş bir etiket. Bir değişkenin var olmayışını test edebilir.
+- {% raw %}`{{{unescaped}}}`{% endraw %}: Çıkış karaktersiz HTML. Sağlayabileceği işaretlemede kısıtlanmıştır (aşağıdaki "Kısıtlamalar" konusuna bakın).
 
 ## Kullanım <a name="usage"></a>
 
@@ -70,7 +65,11 @@ Mustache, mantık içermeyen bir şablon söz dizimidir. Daha ayrıntılı bilgi
 Öncelikle `amp-mustache` şu şekilde beyan edilmeli/yüklenmelidir:
 
 ```html
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  async=""
+  custom-template="amp-mustache"
+></script>
 ```
 
 Daha sonra, Mustache şablonları bir `script` veya `template` etiketinde şu şekilde tanımlanabilir:
@@ -78,15 +77,16 @@ Daha sonra, Mustache şablonları bir `script` veya `template` etiketinde şu ş
 [sourcecode:html]
 {% raw %}<!-- Şablon etiketi kullanma. -->
 <template type="amp-mustache">
-  Hello {{world}}!
-  {% endraw %}[/sourcecode]
+Hello {{world}}!
+{% endraw %}[/sourcecode]
 
 veya
 
 <!-- Komut dosyası etiketi kullanma. -->
+
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </script>
 {% endraw %}[/sourcecode]
 
@@ -100,8 +100,8 @@ AMP doğrulaması yararlı dev-x ipuçları sağladığından, mümkün olan her
 
 Tüm AMP şablonları gibi `amp-mustache` şablonlarının da iyi biçimlendirilmiş DOM parçaları olmalıdır. Bu, diğer noktaların yanı sıra, `amp-mustache` etiketini şunlar için kullanamayacağınız anlamına gelir:
 
-* Etiket adını hesaplama. Örneğin, {% raw %}`<{{tagName}}>`{% endraw %} öğesine izin verilmez.
-* Özellik adını hesaplama. Örneğin, {% raw %}`<div {{attrName}}=something>`{% endraw %} öğesine izin verilmez.
+- Etiket adını hesaplama. Örneğin, {% raw %}`<{{tagName}}>`{% endraw %} öğesine izin verilmez.
+- Özellik adını hesaplama. Örneğin, {% raw %}`<div {{attrName}}=something>`{% endraw %} öğesine izin verilmez.
 
 "Üçlü mustache"ın sonucu yalnızca şu etiketlere izin verecek şekilde temizlenir: `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u`, `ul`.
 
@@ -119,9 +119,10 @@ Bu sorunu geçici olarak çözmek için `<template>` öğeleri, bileşendeki `te
 
 [sourcecode:html]
 {% raw %}<amp-list id="myList" src="https://foo.com/list.json">
-  <template type="amp-mustache">
-    <div>{{title}}</div>
-  </template>
+<template type="amp-mustache">
+
+<div>{{title}}</div>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -130,6 +131,7 @@ Bu sorunu geçici olarak çözmek için `<template>` öğeleri, bileşendeki `te
 [sourcecode:html]
 {% raw %}<!-- İç içe yerleştirmeyi önlemek için şablonları dışlama. -->
 <template type="amp-mustache" id="myTemplate">
+
   <div>{{title}}</div>
 </template>
 
@@ -143,6 +145,7 @@ AMP şablon dizelerinin `<template>` öğelerinde belirtilmesi gerektiğinden bu
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -156,6 +159,7 @@ Tarayıcı, {% raw %}`{{#foo}}`{% endraw %} ve {% raw %}`{{/foo}}`{% endraw %} m
 [sourcecode:html]
 {% raw %}{{#foo}}
 {{/foo}}
+
 <table>
   <tr>
     <td></td>
@@ -167,6 +171,7 @@ Geçici çözümler arasında Mustache bölümlerinin HTML yorumlarında sarmala
 
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -181,10 +186,13 @@ Geçici çözümler arasında Mustache bölümlerinin HTML yorumlarında sarmala
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
 <!-- foo değişkenindeki bir çift tırnak (") HTML'nin bozulmasına yol açar. -->
+
 <amp-img alt="{{foo}}" src="example.jpg" width="100" height="100"></amp-img>
 
 <!-- bar değişkenindeki bir tek tırnak (') veya çift tırnak (") AMP çalışma zamanı ayrıştırma hatasına neden olur. -->
+
 <button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>
 </template>
 {% endraw %}[/sourcecode]

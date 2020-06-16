@@ -2,11 +2,11 @@
 $title: Crear el enmarcado
 ---
 
-Ahora que ya has añadido todas las páginas, veamos la última pantalla de la historia, el "enmarcado".  Esta última pantalla recapitula la historia y te permite compartirla en tus redes sociales y generar enlaces relacionados a ella, de modo que los usuarios puedan compartirla o profundizar en otros contenidos de tu sitio web.
+Ahora que ya has añadido todas las páginas, veamos la última pantalla de la historia, el "enmarcado". Esta última pantalla recapitula la historia y te permite compartirla en tus redes sociales y generar enlaces relacionados a ella, de modo que los usuarios puedan compartirla o profundizar en otros contenidos de tu sitio web.
 
 La información de la pantalla del enmarcado se extrae de un archivo JSON especificado en la etiqueta `<amp-story-bookend>`. Para este tutorial ya tenemos un archivo JSON ([bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json)) que contiene los datos del enmarcado.
 
-La etiqueta `<amp-story-bookend>` debe ser la última etiqueta de [`amp-story`](../../../../documentation/components/reference/amp-story.md). Así pues, **vamos a añadir** `<amp-story-bookend></amp-story-bookend>` justo antes del final de la etiqueta `</amp-story>`.  En la etiqueta `amp-story-bookend`, dirige el atributo `src` al archivo `bookend.json` y define `layout="nodisplay"`:
+La etiqueta `<amp-story-bookend>` debe ser la última etiqueta de [`amp-story`](../../../../documentation/components/reference/amp-story.md). Así pues, **vamos a añadir** `<amp-story-bookend></amp-story-bookend>` justo antes del final de la etiqueta `</amp-story>`. En la etiqueta `amp-story-bookend`, dirige el atributo `src` al archivo `bookend.json` y define `layout="nodisplay"`:
 
 ```html hl_lines="2"
   </amp-story-page>
@@ -18,7 +18,7 @@ Al actualizar el navegador e ir a la última pantalla, verás este enmarcado:
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_full.gif', 398, 709, align='center third', alt='Enmarcado' ) }}
 
-Echemos un vistazo al archivo JSON.  Abre el archivo [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) en el editor de texto.
+Echemos un vistazo al archivo JSON. Abre el archivo [bookend.json](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/bookend.json) en el editor de texto.
 
 Cada pantalla del enmarcado requiere una `bookendVersion`, que en este tutorial es `v1.0`:
 
@@ -40,7 +40,7 @@ Para este tutorial, hemos escogido Facebook, Twitter y el correo electrónico co
 
 {{ image('/static/img/docs/tutorials/amp_story/bookend_social_share.png', 720, 240, align='center half', alt='compartir el enmarcado a través de las redes sociales' ) }}
 
-El resto de la pantalla del enmarcado está dedicado a contenido relacionado,  el cual se almacena en el objeto `components`.
+El resto de la pantalla del enmarcado está dedicado a contenido relacionado, el cual se almacena en el objeto `components`.
 
 Hay varios componentes que se pueden usar para mostrar contenidos y enlaces relacionados, y cada uno de ellos está especificado con un tipo de atributo. Veamos los componentes disponibles:
 
@@ -145,4 +145,4 @@ Hay varios componentes que se pueden usar para mostrar contenidos y enlaces rela
 
 Puedes aprender más sobre el componente bookend. Para obtener más información, consulta la documentación de referencia de [`amp-story`](../../../../documentation/components/reference/amp-story.md).
 
-Nuestra historia está casi terminada.  Antes de poder publicar nuestro contenido, comprobaremos que el HTML de nuestro AMP es válido.
+Nuestra historia está casi terminada. Antes de poder publicar nuestro contenido, comprobaremos que el HTML de nuestro AMP es válido.

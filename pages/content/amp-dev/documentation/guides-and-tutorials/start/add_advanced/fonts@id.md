@@ -12,7 +12,11 @@ Anda dapat menyematkan font kustom ke halaman AMP dengan 2 cara:
 Dalam tutorial ini, kami akan menggunakan tag `<link>` untuk menambahkan font ke halaman. **Tambahkan** link stylesheet di `<head>` untuk meminta font Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Sekarang, **perbarui** pemilih `body` CSS Anda untuk menyertakan referensi ke Raleway:
@@ -26,7 +30,7 @@ body {
 }
 ```
 
-**Muat ulang** halaman dan lihat tampilan serta nuansa baru halaman Anda. Selain itu, periksa keluaran validator AMP.  Seharusnya tidak ada error untuk permintaan stylesheet eksternal ini.
+**Muat ulang** halaman dan lihat tampilan serta nuansa baru halaman Anda. Selain itu, periksa keluaran validator AMP. Seharusnya tidak ada error untuk permintaan stylesheet eksternal ini.
 
 Anda telah menyelesaikan artikel berita AMP! AMP akan terlihat seperti ini:
 

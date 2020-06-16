@@ -2,7 +2,7 @@
 $title: amp-iframe
 $category@: layout
 formats:
-- websites
+  - websites
 teaser:
   text: Показывает окно iframe.
 ---
@@ -23,10 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Показывает окно iframe.
-
 
 <table>
   <tr>
@@ -47,20 +44,23 @@ limitations under the License.
 
 Компонент `amp-iframe` имеет ряд существенных отличий от окон iframe vanilla, которые обеспечивают высокую безопасность компонента и позволяют не использовать файлы AMP, основанных на одном окно iframe. Эти отличия перечислены ниже.
 
-* Компонент `amp-iframe` не может появляться близко к верхней части документа (исключением являются окна iframe, в которых используется элемент `placeholder` в соответствии с описанием [ниже](#iframe-with-placeholder)). Такое окно iframe должно быть удалено от верха документа по меньшей мере на 600 пикселей или не находиться в первых 75 % площади области просмотра при прокрутке вверх.
-* Компоненты amp-iframe по умолчанию проверяются в тестовой среде. [Подробнее…](#sandbox)
-* Компонент `amp-iframe` может запрашивать ресурсы только по протоколу HTTPS, атрибута `srcdoc`, а также из URI данных.
-* Компонент `amp-iframe` может относится к тому же источнику, что и контейнер, только если в атрибуте `sandbox` для них включен элемент `allow-same-origin`. Дополнительные сведения о разрешенных источниках окон iframe доступны в [специальном документе](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
+- Компонент `amp-iframe` не может появляться близко к верхней части документа (исключением являются окна iframe, в которых используется элемент `placeholder` в соответствии с описанием [ниже](#iframe-with-placeholder)). Такое окно iframe должно быть удалено от верха документа по меньшей мере на 600 пикселей или не находиться в первых 75 % площади области просмотра при прокрутке вверх.
+- Компоненты amp-iframe по умолчанию проверяются в тестовой среде. [Подробнее…](#sandbox)
+- Компонент `amp-iframe` может запрашивать ресурсы только по протоколу HTTPS, атрибута `srcdoc`, а также из URI данных.
+- Компонент `amp-iframe` может относится к тому же источнику, что и контейнер, только если в атрибуте `sandbox` для них включен элемент `allow-same-origin`. Дополнительные сведения о разрешенных источниках окон iframe доступны в [специальном документе](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
 
-*Пример: встраивание Google Карт в компонент amp-iframe*
+_Пример: встраивание Google Карт в компонент amp-iframe_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland">
-  </amp-iframe>
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland"
+>
+</amp-iframe>
 ```
 
 Как выполняется показ:
@@ -79,10 +79,10 @@ limitations under the License.
 
 Это правило действует по следующим причинам:
 
-* Компонент `amp-iframe` предусматривает проверку в тестовой среде, а такая среда также применяется к дочерним окнам iframe. Это может привести к некорректному отображению целевых страниц, даже если объявление показывается нормально.
-* Компонент `amp-iframe` не может передавать сведения о конфигурации окну iframe.
-* Компонент `amp-iframe` не содержит средств изменения размера, полностью контролируемых окном iframe.
-* Для компонента `amp-iframe` могут быть недоступны данные по видимости окон iframe.
+- Компонент `amp-iframe` предусматривает проверку в тестовой среде, а такая среда также применяется к дочерним окнам iframe. Это может привести к некорректному отображению целевых страниц, даже если объявление показывается нормально.
+- Компонент `amp-iframe` не может передавать сведения о конфигурации окну iframe.
+- Компонент `amp-iframe` не содержит средств изменения размера, полностью контролируемых окном iframe.
+- Для компонента `amp-iframe` могут быть недоступны данные по видимости окон iframe.
 
 # Атрибуты <a name="attributes"></a>
 
@@ -118,27 +118,33 @@ limitations under the License.
 
 Компонент `amp-iframe` можно настроить так, чтобы он появлялся в верхней части документа, если для этого компонента ``добавлен элемент `placeholder`, как показано в примере ниже.
 
-* Компонент `amp-iframe` должен содержать элемент с атрибутом `placeholder` (например, элемент `amp-img`) который будет обрабатываться как тег, пока окно iframe не будет готово к показу.
-* О готовности окна iframe к показу сигнализирует его элемент `onload` или элемент `embed-ready` `postMessage`, который отправляется из документа окна iframe.
+- Компонент `amp-iframe` должен содержать элемент с атрибутом `placeholder` (например, элемент `amp-img`) который будет обрабатываться как тег, пока окно iframe не будет готово к показу.
+- О готовности окна iframe к показу сигнализирует его элемент `onload` или элемент `embed-ready` `postMessage`, который отправляется из документа окна iframe.
 
-*Пример: окно iframe с тегом*
+_Пример: окно iframe с тегом_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    src="https://foo.com/iframe">
-    <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  src="https://foo.com/iframe"
+>
+  <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>
 ```
 
-*Пример: запрос готовности встраивания окна iframe*
+_Пример: запрос готовности встраивания окна iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # Изменение размера окна iframe <a name="iframe-resizing"></a>
@@ -153,64 +159,77 @@ window.parent.postMessage({
 
 Учтите, что атрибут `resizable` устанавливает для элемента `scrolling` значение `no`.
 
-*Пример: компонент `amp-iframe` с элементом `overflow`*
+_Пример: компонент `amp-iframe` с элементом `overflow`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-    <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*Пример: запрос на изменение размера окна iframe*
+_Пример: запрос на изменение размера окна iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-size',
-  height: document.body.scrollHeight
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 После получения сообщения библиотека AMP стремится как можно быстрее выполнить запрос, но учитывает различные факторы, связанные с интерфейсом и эффективностью, например место чтения и использование прокрутки. Если удовлетворить запрос не удается, компонент `amp-iframe` обеспечит показ элемента `overflow`. Нажатие на элемент `overflow` приведет к изменению размера компонента `amp-iframe`, так как для этого необходимо действие пользователя.
 
 Скорость изменения размеров может зависеть от того, связано ли оно:
 
-* с действием пользователя;
-* с запросом для активного окна iframe;
-* с запросом для окна iframe, находящегося под или над областью просмотра.
+- с действием пользователя;
+- с запросом для активного окна iframe;
+- с запросом для окна iframe, находящегося под или над областью просмотра.
 
 # Видимость окон iframe <a name="iframe-viewability"></a>
 
 Окна iframes могут отправлять родительским элементам сообщение `send-intersections`, чтобы получать [данные об изменениях](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) стиля IntersectionObserver для совпадения этих окон с областью просмотра родительских элементов.
 
-*Примечание. В приведенных ниже примерах считается, что скрипт содержится в созданном окне iframe, причем верхним окном является вариант `window.parent`. Если скрипт находится во вложенном окне iframe, вариант `window.parent` необходимо изменить на верхнее окно AMP-страницы.*
+_Примечание. В приведенных ниже примерах считается, что скрипт содержится в созданном окне iframe, причем верхним окном является вариант `window.parent`. Если скрипт находится во вложенном окне iframe, вариант `window.parent` необходимо изменить на верхнее окно AMP-страницы._
 
-*Пример: запрос `send-intersections` в окне iframe*
+_Пример: запрос `send-intersections` в окне iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'send-intersections'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 Окно iframe может получать данные о совпадении с областью просмотра родительских элементов из сообщения `intersection`, полученного от этих элементов.
 
-*Пример: запрос `send-intersections` в окне iframe*
+_Пример: запрос `send-intersections` в окне iframe_
 
 ```javascript
-window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-  event.origin == window.location.origin ||
-  !event.data ||
-  event.data.sentinel != 'amp' ||
-  event.data.type != 'intersection') {
+window.addEventListener('message', function (event) {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
-    }
+  }
   event.data.changes.forEach(function (change) {
     console.log(change);
   });
@@ -231,10 +250,10 @@ window.addEventListener('message', function(event) {
 
 Компонент `amp-iframe` считается резервным объявлением, если необходимого результата на AMP-странице нельзя добиться другими средствами или если на ней нет подходящего [компонента AMP](../../../documentation/components/index.html). Это связано с тем, что существует ряд преимуществ использования компонента AMP, предназначенного для конкретного случая, например:
 
-* Благодаря удобному управлению ресурсами обеспечивается их высокая эффективность.
-* В некоторых случаях благодаря специальным компонентам могут появиться встроенные изображения тегов. В частности, это может обеспечить подходящее уменьшенное изображение перед загрузкой видео или облегчить написание кода для добавления тега вручную.
-* Предусмотрена возможность изменения размеров. Иными словами, если контент окна iframe не имеет определенного размера, он может чаще показываться на странице в качестве ее исходного контента, а фрейма с функцией прокрутки.
-* Могут быть встроены другие дополнительные функции, такие как автовоспроизведение для проигрывателей.
+- Благодаря удобному управлению ресурсами обеспечивается их высокая эффективность.
+- В некоторых случаях благодаря специальным компонентам могут появиться встроенные изображения тегов. В частности, это может обеспечить подходящее уменьшенное изображение перед загрузкой видео или облегчить написание кода для добавления тега вручную.
+- Предусмотрена возможность изменения размеров. Иными словами, если контент окна iframe не имеет определенного размера, он может чаще показываться на странице в качестве ее исходного контента, а фрейма с функцией прокрутки.
+- Могут быть встроены другие дополнительные функции, такие как автовоспроизведение для проигрывателей.
 
 # Валидация <a name="validation"></a>
 

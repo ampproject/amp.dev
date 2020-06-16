@@ -56,17 +56,17 @@ Di seguito è riportato l'elenco completo dei valori supportati per l'attributo 
 
 Se i valori `width` o `height` non vengono specificati, in alcuni casi il runtime AMP può stabilire i seguente valori predefiniti:
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): per larghezza e altezza viene impostato il valore predefinito 0.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): la larghezza e l'altezza predefinite vengono dedotte dal browser.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): per larghezza e altezza viene impostato il valore predefinito 0.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): la larghezza e l'altezza predefinite vengono dedotte dal browser.
 
 ### Che cosa succede se non viene definito l'attributo layout? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Il comportamento del layout viene stabilito come segue:
 
-* Se è presente l'attributo `height`, ma l'attributo `width` non è presente o equivale ad `auto`, viene utilizzato il layout `fixed-height`.
-* Se sono presenti gli attributi `width` o `height` insieme all'attributo `sizes`, viene utilizzato il layout `responsive`.
-* Se sono presenti gli attributi `width` o `height`, viene utilizzato il layout `fixed`.
-* Se gli attributi `width` e `height` non sono presenti, viene utilizzato il layout `container`.
+- Se è presente l'attributo `height`, ma l'attributo `width` non è presente o equivale ad `auto`, viene utilizzato il layout `fixed-height`.
+- Se sono presenti gli attributi `width` o `height` insieme all'attributo `sizes`, viene utilizzato il layout `responsive`.
+- Se sono presenti gli attributi `width` o `height`, viene utilizzato il layout `fixed`.
+- Se gli attributi `width` e `height` non sono presenti, viene utilizzato il layout `container`.
 
 ## Utilizzare la regola @media e l'attributo media
 
@@ -113,16 +113,16 @@ Il descrittore `w` indica al browser la larghezza di ogni immagine nell'elenco:
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w >
+src="wide.jpg"
+srcset="wide.jpg" 640w,
+"narrow.jpg" 320w >
 </amp-img>
 [/sourcecode]
 
 **Nota.** AMP supporta il descrittore `w` in tutti i browser.
 
 Leggi ulteriori informazioni sulla creazione di immagini reattive utilizzando `srcset`
- nella pagina relativa all'[utilizzo delle immagini reattive](http://alistapart.com/article/using-responsive-images-now).
+nella pagina relativa all'[utilizzo delle immagini reattive](http://alistapart.com/article/using-responsive-images-now).
 
 Puoi anche utilizzare l'attributo `sizes` insieme all'attributo `srcset`.
 L'attributo `sizes` descrive come calcolare le dimensioni dell'elemento in base all'eventuale espressione di supporto.
@@ -132,10 +132,10 @@ Esamina l'esempio seguente:
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w
-    sizes="(min-width: 650px) 50vw, 100vw" >
+src="wide.jpg"
+srcset="wide.jpg" 640w,
+"narrow.jpg" 320w
+sizes="(min-width: 650px) 50vw, 100vw" >
 </amp-img>
 [/sourcecode]
 
@@ -156,7 +156,7 @@ Se specificato, un elemento `placeholder` deve essere un elemento secondario dir
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
-    <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -173,6 +173,7 @@ Ad esempio, utilizza l'attributo `fallback` per comunicare all'utente che il bro
 [sourcecode:html]
 <amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
     poster="myvideo-poster.jpg" >
+
   <div fallback>
         <p>Your browser doesn’t support HTML5 video.</p>
   </div>

@@ -11,12 +11,14 @@ Untuk memecahkan masalah ini, kami menambahkan informasi tentang halaman AMP ke 
 Tambahkan tag berikut ke halaman non-AMP:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Tambahkan tag ini ke halaman AMP:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,6 +27,7 @@ Tambahkan tag ini ke halaman AMP:
 Jika hanya memiliki satu halaman, dan halaman tersebut adalah versi AMP, Anda tetap harus menambahkan link kanonis ke halaman tersebut, yang kemudian akan mengarahkan ke halaman itu sendiri:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -45,6 +48,7 @@ Hal ini tidak hanya relevan untuk halaman AMP, namun juga untuk semua halaman. P
 Contoh:
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -76,18 +80,17 @@ Contoh:
     }
   }
 </script>
+
 [/sourcecode]
 
 Contoh lainnya dapat ditemukan di [folder contoh ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), termasuk sintaks atribut HTML alternatif).
 
 [tip type="read-on"] Kunjungi referensi ini untuk informasi lebih lanjut tentang data terstruktur:
 
-* Pelajari cara [Menyusun konten agar muncul di hasil kaya Google Penelusuran](https://developers.google.com/search/docs/guides/mark-up-content) (misalnya, carousel artikel teratas, kartu resep, dll.).
-* Uji data terstruktur Anda dengan [Fitur Pengujian Data Terstruktur Google](https://developers.google.com/structured-data/testing-tool/).
-[/tip]
+- Pelajari cara [Menyusun konten agar muncul di hasil kaya Google Penelusuran](https://developers.google.com/search/docs/guides/mark-up-content) (misalnya, carousel artikel teratas, kartu resep, dll.).
+- Uji data terstruktur Anda dengan [Fitur Pengujian Data Terstruktur Google](https://developers.google.com/structured-data/testing-tool/).
+  [/tip]
 
 ### Metadata lainnya untuk platform yang lebih lengkap
 
 Kunjungi [Panduan Temuan Sosial di Dasar-Dasar Web](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/) untuk mempelajari semua cara lain dalam menyiapkan konten untuk penemuan dan distribusi.
- 
- 

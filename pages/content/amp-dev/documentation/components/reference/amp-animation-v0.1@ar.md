@@ -8,7 +8,6 @@ teaser:
   text: Defines and displays an animation.
 ---
 
-
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -24,8 +23,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 يحدد المكّوِن الحركات ويشغّلها.
 
@@ -57,23 +54,25 @@ limitations under the License.
 ### مواصفات حركات المستوى الأعلى <a name="top-level-animation-specification"></a>
 
 يحدد كائن المستوى الأعلى عملية الحركة الكلية التي تتكون من عدد عشوائي من مكونات الحركة التي يتم تحديدها كمصفوفة `animations`:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  // Timing properties
-  ...
-  "animations": [
+  <script type="application/json">
     {
-      // Animation 1
-    },
-    ...
-    {
-      // Animation N
+      // Timing properties
+      ...
+      "animations": [
+        {
+          // Animation 1
+        },
+        ...
+        {
+          // Animation N
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script></amp-animation
+>
 ```
 
 ### الوضع في DOM <a name="placement-in-dom"></a>
@@ -84,10 +83,10 @@ limitations under the License.
 
 كل مكوِّن من مكونات الحركة عبارة عن تأثير إطارات رئيسية[](https://www.w3.org/TR/web-animations/#dom-keyframeeffect-keyframeeffect) يتألف من:
 
-  - العناصر الهدف المُشَار إليها بواسطة محدد
-  - الشروط: الاستعلام عن الوسائط والشرط supports
-  - خصائص التوقيت
-  - الإطارات الرئيسية
+- العناصر الهدف المُشَار إليها بواسطة محدد
+- الشروط: الاستعلام عن الوسائط والشرط supports
+- خصائص التوقيت
+- الإطارات الرئيسية
 
 ```text
 {
@@ -119,7 +118,7 @@ limitations under the License.
 
 إذا تم تحديد قيمة لأحد مكونات الحركة، لن يتم تضمين المكوِّن إلا إذا تطابق الشرط supports مع البيئة الحالية.
 
-### عبارة الحركة ` switch` <a name="animation-switch-statement"></a>
+### عبارة الحركة `switch` <a name="animation-switch-statement"></a>
 
 في بعض الحالات، يكون من المريح الجمع بين عدة [حركات شرطية](#conditions) في حركة واحدة، مع تعيين إحداها لتكون الحركة التلقائية الاختيارية. يمكن تحقيق ذلك باستخدام عبارة الحركة `switch` بالتنسيق التالي:
 
@@ -147,6 +146,7 @@ limitations under the License.
 في الحركة `switch`، يتم تقييم الحركات المرشحة بالترتيب المحدد، ويتم تنفيذ أول حركة تتطابق مع [العبارات الشرطية](#conditions) وتجاهل البقية.
 
 على سبيل المثال، تشغِّل هذه الحركة حركة motion-path إذا كانت متاحة، وترجع إلى التحويل:
+
 ```
 {
   "selector": "#target1",
@@ -172,23 +172,24 @@ limitations under the License.
 يمكن لمكوِّن الحركة أن يعلن عن متغيرات CSS التي سيتم استخدامها لقيم التوقيت والإطارات الرئيسية من خلال التعبيرات `var()`. ويتم تقييم التعبيرات `var()` باستخدام السياق الهدف الحالي. يتم نشر متغيرات CSS المحددة في مكونات الحركة إلى حركات مدمجة، ويتم تطبيقها على أهداف الحركة وبالتالي تُلغي CSS المستخدَمة في الحركات النهائية.
 
 على سبيل المثال:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "--delay": "0.5s",
-  "--x": "100px",
-  "animations": [
+  <script type="application/json">
     {
-      "selector": "#target1",
-      "delay": "var(--delay)",
-      "--x": "150px",
-      "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
-    },
-    ...
-  ]
-}
-</script>
+      "--delay": "0.5s",
+      "--x": "100px",
+      "animations": [
+        {
+          "selector": "#target1",
+          "delay": "var(--delay)",
+          "--x": "150px",
+          "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
+        },
+        ...
+      ]
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -265,6 +266,7 @@ limitations under the License.
 تسمح كل خصائص التوقيت إما بقيم رقمية/سلسلة مباشرة أو قيم CSS. يمكن مثلاً تحديد "duration" بالقيمة `1000` أو `1s` أو `1000ms`. بالإضافة إلى ذلك، يُسمح أيضًا باستخدام `calc()` و`var()` وتعبيرات CSS الأخرى.
 
 مثال لخصائص التوقيت بالترميز JSON:
+
 ```text
 {
   ...
@@ -284,6 +286,7 @@ limitations under the License.
 متى توفرت إمكانية تحديد `selector`، فمن الممكن أيضًا تحديد `subtargets: []`. يمكن أن تلغي الأهداف الفرعية خصائص التوقيت أو المتغيرات المحددة في الحركة لأهداف فرعية معينة وموضّحة إما من خلال فهرس أو محدد CSS.
 
 على سبيل المثال:
+
 ```text
 {
   "selector": ".target",
@@ -313,6 +316,7 @@ limitations under the License.
 في ما يلي بعض الأمثلة المعتادة لتعريفات الإطارات الرئيسية.
 
 يحدد تنسيق "to" لشكل الكائن المختزَل الحالة النهائية على 100%:
+
 ```text
 {
   "keyframes": {"opacity": 0, "transform": "scale(2)"}
@@ -320,6 +324,7 @@ limitations under the License.
 ```
 
 يحدد التنسيق "from-to" لشكل الكائن المختزَل حالتي البداية والنهاية على 0 و100%:
+
 ```text
 {
   "keyframes": {
@@ -330,6 +335,7 @@ limitations under the License.
 ```
 
 يحدد التنسيق "value-array" لشكل الكائن المختزَل عدة قيم لحالتي البداية والنهاية وعدة معادلات (متساوية التباعد):
+
 ```text
 {
   "keyframes": {
@@ -340,6 +346,7 @@ limitations under the License.
 ```
 
 يحدد شكل المصفوفة الإطارات الرئيسية. ويتم تعيين المعادلات تلقائيًا على 0 و100% مع التوزيع بين القيمتين بتباعد متساوٍ:
+
 ```text
 {
   "keyframes": [
@@ -350,6 +357,7 @@ limitations under the License.
 ```
 
 يمكن أن يتضمن شكل المصفوفة أيضًا "المعادلة" بشكل صريح:
+
 ```text
 {
   "keyframes": [
@@ -361,6 +369,7 @@ limitations under the License.
 ```
 
 يمكن أيضًا أن يتضمن شكل المصفوفة "تغيير السرعة":
+
 ```text
 {
   "keyframes": [
@@ -377,6 +386,7 @@ limitations under the License.
 #### الإطارات الرئيسية من CSS <a name="keyframes-from-css"></a>
 
 توجد طريقة أخرى لتحديد الإطارات الرئيسية كقاعدة في ورقة أنماط المستند (العلامة `<style>`) كقاعدة `@keyframes` في CSS. على سبيل المثال:
+
 ```html
 <style amp-custom>
   @keyframes keyframes1 {
@@ -390,24 +400,25 @@ limitations under the License.
 </style>
 
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "duration": "1s",
-  "keyframes": "keyframes1"
-}
-</script>
+  <script type="application/json">
+    {
+      "duration": "1s",
+      "keyframes": "keyframes1"
+    }
+  </script>
 </amp-animation>
 ```
 
 إطارات CSS `@keyframes` مساوية تقريبًا لتضمين تعريف الإطارات الرئيسية في JSON وفقًا [لمواصفات Web Animations](https://www.w3.org/TR/web-animations/#processing-a-keyframes-argument). ومع ذلك، هناك بعض الفروق
 
- - للحصول على الدعم على مستوى المنصة، قد يلزم توفير بادئات الموردين، مثل `@-ms-keyframes {}`، أو قد يلزم توفير `-moz-transform`. لا حاجة إلى بادئات الموردين ولا يُسمح بها في التنسيق JSON، ولكنها قد تكون ضرورية في CSS.
+- للحصول على الدعم على مستوى المنصة، قد يلزم توفير بادئات الموردين، مثل `@-ms-keyframes {}`، أو قد يلزم توفير `-moz-transform`. لا حاجة إلى بادئات الموردين ولا يُسمح بها في التنسيق JSON، ولكنها قد تكون ضرورية في CSS.
 - لن تتمكن المنصات التي لا تتيح `calc()` و`var()` من الاستفادة من تعويضات `amp-animation` عند تحديد الإطارات الرئيسية في CSS. ننصح دائمًا بتضمين قيم احتياطية في CSS.
 - يتعذر استخدام إضافات CSS، مثل [`width()` و`height()` و`num()` و`rand()` و`index()` و`length()`](#css-extensions) في CSS.
 
 #### الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية <a name="allow-listed-properties-for-keyframes"></a>
 
 لا يمكن استخدام جميع خصائص CSS في الإطارات الرئيسية. وحدها خصائص CSS التي يمكن للمتصفحات الحديثة تحسينها وتحريكها بسرعة مدرَجة في القائمة البيضاء. وستزيد هذه القائمة كلما أكدت خصائص إضافية أنها توفر أداء جيدًا. تحتوي القائمة الحالية على:
+
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
 - [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
 - [`visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
@@ -418,36 +429,38 @@ limitations under the License.
 ### الأشكال المختصرة لتهيئة الحركات <a name="abbreviated-forms-of-animation-configuration"></a>
 
 إذا تضمنت الحركة عنصرًا واحدًا وكان تأثير واحد للإطارات الرئيسية كافيًا، يمكن اختصار التهيئة على مكّوِن الحركة هذا فقط. على سبيل المثال:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "selector": "#target-id",
-  "duration": "1s",
-  "keyframes": {"opacity": 1}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": "#target-id",
+      "duration": "1s",
+      "keyframes": {"opacity": 1}
+    }
+  </script>
 </amp-animation>
 ```
 
 إذا كانت الحركة تتألف من قائمة مكونات، ولكن لا تحتوي على حركة المستوى الأعلى، يمكن اختصار التهيئة إلى مصفوفة من المكونات. على سبيل المثال:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": 1000,
-    "keyframes": {"opacity": 1}
-  },
-  {
-    "selector": ".target-class",
-    "duration": 600,
-    "delay": 400,
-    "keyframes": {"transform": "scale(2)"}
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": 1000,
+        "keyframes": {"opacity": 1}
+      },
+      {
+        "selector": ".target-class",
+        "duration": 600,
+        "delay": 400,
+        "keyframes": {"transform": "scale(2)"}
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
@@ -456,48 +469,50 @@ limitations under the License.
 يمكن أن تشير الحركات إلى حركات أخرى، وبالتالي فهي تجمع بين عدة إعلانات للمكّوِن `amp-animation` في حركة نهائية واحدة. إن الإشارة إلى حركة من حركة أخرى تساوي تقريبًا عملية الدمج. يكمن سبب تقسيم الحركة إلى عناصر مختلفة في إعادة استخدام الحركة نفسها من عدة أماكن أو تصغير إعلان كل حركة وزيادة إمكانية إدارتها.
 
 على سبيل المثال:
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
 تضم الحركة التي في المثال الحركة "anim2" كجزء من "anim1". ويتم تضمين "anim2" بدون هدف (`selector`). في هذه الحالة، من المتوقع أن تشير الحركة المضمنَّة إلى هدفها الخاص.
 
 يتيح نموذج آخر تضمين الحركة لتوفير الهدف أو أهداف متعددة. في هذه الحالة، يتم تنفيذ الحركة المضمنَّة لكل هدف مطابق. على سبيل المثال:
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -510,34 +525,36 @@ limitations under the License.
 يتيح `amp-animation` استخدام تعبيرات `var()` و`calc()` لقيم التوقيت والإطارات الرئيسية.
 
 على سبيل المثال:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": "4s",
-    "delay": "var(--delay)",
-    "--y": "var(--other-y, 100px)",
-    "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay)",
+        "--y": "var(--other-y, 100px)",
+        "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
 يتم تعويض كل من `var()` و`calc()` في المنصات التي لا تتيحهما بشكل مباشر. يتم استخراج الخصائص `var()` من العناصر الهدف المقابلة. ومع ذلك، يتعذر للأسف تعويض `var()` بشكل كامل. وبالتالي، عندما يكون التوافق مهمًا، ننصح بشدة بتضمين القيم التلقائية في تعبيرات `var()`. على سبيل المثال:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": "4s",
-    "delay": "var(--delay, 100ms)",
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay, 100ms)"
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
@@ -552,6 +569,7 @@ limitations under the License.
 تعرض الدالة `index()` فهرس العنصر الهدف الحالي في تأثير الحركة. تكون الإضافة أكثر ملاءمة عندما يتم تحريك أهداف متعددة بنفس التأثير باستخدام الخاصية `selector`. سيكون لأول هدف يتطابق مع المحدد الفهرس `0`، وسيكون فهرس الثاني `1` وهكذا.
 
 بالإضافة إلى الميزات الأخرى، يمكن ضم هذه الخاصية مع تعبيرات `calc()` واستخدامها لإنشاء تأثير مرحلي. على سبيل المثال:
+
 ```
 {
   "selector": ".class-x",
@@ -575,6 +593,7 @@ limitations under the License.
 تعرض الدالة `rand()` قيمة CSS عشوائية ولها شكلان.
 
 شكل بدون وسيطات يعرض الرقم العشوائي من 0 و1.
+
 ```
 {
 delay: "calc(10s * rand())"
@@ -582,6 +601,7 @@ delay: "calc(10s * rand())"
 ```
 
 الشكل الثاني يحتوي على وسيطتين ويعرض القيمة العشوائية بين هاتين الوسيطتين.
+
 ```
 {
   "delay": "rand(5s, 10s)"
@@ -593,6 +613,7 @@ delay: "calc(10s * rand())"
 تعرض إضافتَا `width()` و`height()` عرض/ارتفاع العنصر المتحرك أو العنصر المعيَّن بالمحدد. تكون القيمة المعروضة بالبكسل، مثل `100px`.
 
 الأشكال التالية متاحة:
+
 - `width()` و`height()` - عرض/ارتفاع العنصر المتحرك.
 - `width('.selector')` و`height('.selector')` - عرض/ارتفاع العنصر المعيَّن بالمحدد. يمكن استخدام أي محدد CSS مثل `width('#container &gt; li')`.
 - `width(closest('.selector'))` و`height(closest('.selector'))` - عرض/ارتفاع العنصر المعيَّن بأقرب محدد.
@@ -600,6 +621,7 @@ delay: "calc(10s * rand())"
 الإضافتان `width()` و`height()` مفيدتان بشكل خاص للتحويلات. خصائص `left` و`top` وخصائص CSS المشابهة يمكنها استخدام قيم `%` للتعبير عن الحركات نسبة حجم الحاوية. ومع ذلك، تفهم الخاصية `transform` قيم `%` بشكل مختلف، فهي تفهمها كنسبة مئوية من العنصر المحدد. وبالتالي، يمكن استخدام `width()` و`height()` للتعبير عن حركات التحويل من حيث عناصر الحاوية وما شابهها.
 
 يمكن دمج هذه الدالات مع تعبيرات `calc()` و`var()` وغيرها من تعبيرات CSS. على سبيل المثال:
+
 ```
 {
   "transform": "translateX(calc(width('#container') + 10px))"
@@ -609,11 +631,13 @@ delay: "calc(10s * rand())"
 #### الإضافة `num()` من CSS <a name="css-num-extension"></a>
 
 تعرض الدالة `num()` تمثيلاً رقميًا لقيمة CSS. على سبيل المثال:
+
 - `num(11px)` yields `11`;
 - `num(110ms)` yields `110`;
 - etc.
 
 على سبيل المثال، يحسب التعبير التالي الوقت الفاصل بالثواني نسبة إلى عرض العنصر:
+
 ```
 {
   "delay": "calc(1s * num(width()) / 100)"
@@ -626,9 +650,9 @@ delay: "calc(10s * rand())"
 
 تتم إتاحة صور SVG المتحركة عبر نفس خصائص CSS الموضحة في [الخصائص المدرجة في القائمة البيضاء للإطارات الرئيسية](#allow-listed-properties-for-keyframes) مع بعض الفروق الدقيقة:
 
-* عناصر IE/Edge SVG [لا تتيح خصائص `transform` من CSS](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). يتم تعويض الحركة `transform` نفسها. ومع ذلك، لا يتم تطبيق الحالة الأولية المحددة في ورقة الأنماط. إذا كانت الحالة الأولية المحوّلة مهمة على IE/Edge، يُنصح بتكرارها عبر [ السمة SVG`transform`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
-* في حين يتم تعويض CSS `transform` لـ IE/Edge، فمن المستحيل لسوء الحظ تعويض الخاصية `transform-origin`. وبالتالي، عندما يكون التوافق مع IE/Edge مطلوبًا، يُنصح باستخدام `transform-origin` التلقائية فقط.
-* تواجه معظم المتصفحات حاليًا مشاكل في فهم CSS `transform-origin` بشكل صحيح. اطّلِع على مشاكل [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300) و[Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) و[Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340). ويُفترَض حل غالبية هذا الالتباس بمجرد تنفيذ [CSS `transform-box`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box). عندما تكون `transform-origin` مهمة، يُنصَح أيضًا بتضمين `transform-box` CSS المطلوبة حفاظًا على التوافق في المستقبل.
+- عناصر IE/Edge SVG [لا تتيح خصائص `transform` من CSS](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). يتم تعويض الحركة `transform` نفسها. ومع ذلك، لا يتم تطبيق الحالة الأولية المحددة في ورقة الأنماط. إذا كانت الحالة الأولية المحوّلة مهمة على IE/Edge، يُنصح بتكرارها عبر [ السمة SVG`transform`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
+- في حين يتم تعويض CSS `transform` لـ IE/Edge، فمن المستحيل لسوء الحظ تعويض الخاصية `transform-origin`. وبالتالي، عندما يكون التوافق مع IE/Edge مطلوبًا، يُنصح باستخدام `transform-origin` التلقائية فقط.
+- تواجه معظم المتصفحات حاليًا مشاكل في فهم CSS `transform-origin` بشكل صحيح. اطّلِع على مشاكل [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300) و[Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) و[Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340). ويُفترَض حل غالبية هذا الالتباس بمجرد تنفيذ [CSS `transform-box`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box). عندما تكون `transform-origin` مهمة، يُنصَح أيضًا بتضمين `transform-box` CSS المطلوبة حفاظًا على التوافق في المستقبل.
 
 ## تشغيل الحركة <a name="triggering-animation"></a>
 
@@ -639,9 +663,9 @@ delay: "calc(10s * rand())"
 القيمة `visibility` هي القيمة الوحيدة المتاحة حاليًا للسمة `trigger`. يتم تشغيل `visibility` عندما يكون المستند أو التضمين الأساسي مرئيًا (في إطار العرض).
 
 على سبيل المثال:
+
 ```html
-<amp-animation id="anim1" layout="nodisplay"
-    trigger="visibility">
+<amp-animation id="anim1" layout="nodisplay" trigger="visibility">
   ...
 </amp-animation>
 ```
@@ -661,12 +685,12 @@ delay: "calc(10s * rand())"
 
 يصدِّر العنصر `amp-animation` الإجراءات التالية:
 
-* `start` - لبدء الحركة التي لم تبدأ ويمكن تحديد خصائص التوقيت والمتغيرات كوسيطات للإجراء. مثال: `anim1.start(delay=-100, --scale=2)`
-* `restart` - لبدء الحركة أو إعادة تشغيل حركة العاملة حاليًا ويمكن تحديد خصائص التوقيت والمتغيرات كوسيطات للإجراء. مثال: `anim1.start(delay=-100, --scale=2)`
-* `pause` - لإيقاف الحركة العاملة حاليًا
-* `resume` - لاستئناف الحركة العاملة حاليًا
-* `togglePause` - للتبديل بين إجراء الإيقاف المؤقت وإجراء الاستئناف
-* `seekTo` - لإيقاف الحركة مؤقتًا والانتقال إلى النقطة الزمنية المحددة في الوسيطة `time` بالملي ثانية أو الوسيطة `percent` كنقطة مئوية في المخطط الزمني
-* `reverse` - لعكس الحركة
-* `finish` - لإنهاء الحركة
-* `cancel` - لإلغاء الحركة
+- `start` - لبدء الحركة التي لم تبدأ ويمكن تحديد خصائص التوقيت والمتغيرات كوسيطات للإجراء. مثال: `anim1.start(delay=-100, --scale=2)`
+- `restart` - لبدء الحركة أو إعادة تشغيل حركة العاملة حاليًا ويمكن تحديد خصائص التوقيت والمتغيرات كوسيطات للإجراء. مثال: `anim1.start(delay=-100, --scale=2)`
+- `pause` - لإيقاف الحركة العاملة حاليًا
+- `resume` - لاستئناف الحركة العاملة حاليًا
+- `togglePause` - للتبديل بين إجراء الإيقاف المؤقت وإجراء الاستئناف
+- `seekTo` - لإيقاف الحركة مؤقتًا والانتقال إلى النقطة الزمنية المحددة في الوسيطة `time` بالملي ثانية أو الوسيطة `percent` كنقطة مئوية في المخطط الزمني
+- `reverse` - لعكس الحركة
+- `finish` - لإنهاء الحركة
+- `cancel` - لإلغاء الحركة

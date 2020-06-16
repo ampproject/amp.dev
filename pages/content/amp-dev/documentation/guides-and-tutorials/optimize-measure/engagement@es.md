@@ -1,6 +1,7 @@
 ---
 $title: Mejora la fidelización del usuario
 ---
+
 Aquí hay algunos consejos rápidos para mejorar la fidelización del usuario con AMP.
 
 ### Ayude a los lectores a identificarle con una marca coherente y contenido enriquecido en páginas de AMP y no AMP.

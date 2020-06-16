@@ -34,6 +34,7 @@ Tüm stilleri, dokümanın head bölümündeki `<style amp-custom>` etiketinin i
 Örneğin:
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     <meta charset="utf-8">
@@ -54,6 +55,7 @@ Tüm stilleri, dokümanın head bölümündeki `<style amp-custom>` etiketinin i
       }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+
   </head>
 [/sourcecode]
 
@@ -62,6 +64,7 @@ Tüm stilleri, dokümanın head bölümündeki `<style amp-custom>` etiketinin i
 Ortak CSS özelliklerini kullanarak sınıf veya öğe seçicilerle bileşen stillerini tanımlayın. Örneğin:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img

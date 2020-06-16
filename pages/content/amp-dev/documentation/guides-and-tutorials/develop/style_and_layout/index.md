@@ -28,13 +28,15 @@ For performance and usability reasons, AMP [limits some CSS styles](style_pages.
 [/tip]
 
 ## Add styles to a page <a name="add-styles-to-a-page"></a>
-Each AMP page has a 75,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit. 
 
-### Define styles in head 
+Each AMP page has a 75,000 byte CSS limit. Styles defined in the head of the document and inline count towards this limit.
 
-Define CSS within the `<style amp-custom>` tag inside the head of the document. There is only one `<style amp-custom>` tag allowed on each AMP page. 
+### Define styles in head
+
+Define CSS within the `<style amp-custom>` tag inside the head of the document. There is only one `<style amp-custom>` tag allowed on each AMP page.
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     ...
@@ -52,6 +54,7 @@ Define CSS within the `<style amp-custom>` tag inside the head of the document. 
       }
     </style>
     ...
+
   </head>
 [/sourcecode]
 
@@ -59,6 +62,7 @@ Style AMP components and HTML elements with class or selectors
 using common CSS properties:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img
@@ -78,13 +82,13 @@ using common CSS properties:
 AMP allows inline styles:
 
 [sourcecode:html]
+
 <body>
   <p style="color:pink;margin-left:30px;">Hello, Kitty.</p>
 </body>
 [/sourcecode]
 
-Each instance of an inline style has a 1,000 byte limit. Inline styles count toward the total 75,000 byte limit. 
-
+Each instance of an inline style has a 1,000 byte limit. Inline styles count toward the total 75,000 byte limit.
 
 ## Layout elements responsively
 

@@ -14,17 +14,23 @@ Si se indica un elemento `placeholder`, este debe ser un elemento secundario dir
 Los elementos marcados como `placeholder` siempre llenarán el elemento AMP principal.
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 De forma predeterminada, el marcador de posición de los elementos AMP se muestra inmediatamente,
@@ -42,9 +48,9 @@ pueden ser cualquier elemento HTML.
 
 Puedes incluir el atributo `fallback` en elementos para indicar qué comportamiento de respaldo debe seguirse en estos casos:
 
-* Si un elemento no es compatible con el navegador.
-* Si el contenido no se carga (por ejemplo, porque se ha eliminado un tuit).
-* Si no se admite el tipo de imagen (por ejemplo, WebP no es compatible con todos los navegadores).
+- Si un elemento no es compatible con el navegador.
+- Si el contenido no se carga (por ejemplo, porque se ha eliminado un tuit).
+- Si no se admite el tipo de imagen (por ejemplo, WebP no es compatible con todos los navegadores).
 
 Puedes añadir el atributo `fallback` en cualquier elemento HTML, no solo en los AMP. Si lo incluyes, el elemento con `fallback` debe ser un secundario directo del elemento AMP.
 
@@ -53,6 +59,7 @@ Puedes añadir el atributo `fallback` en cualquier elemento HTML, no solo en los
 En el ejemplo siguiente, utilizamos el atributo `fallback` para comunicar a los usuarios que su navegador no es compatible con una función concreta:
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -64,6 +71,7 @@ En el ejemplo siguiente, utilizamos el atributo `fallback` para comunicar a los 
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ##### Ejemplo: servir formatos de imagen diferentes
@@ -71,20 +79,26 @@ En el ejemplo siguiente, utilizamos el atributo `fallback` para comunicar a los 
 En el ejemplo siguiente, con el atributo `fallback` indicamos al navegador que utilice el archivo JPEG si no admite el formato WebP.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 ## Cómo interactúan los marcadores de posición y los respaldos

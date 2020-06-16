@@ -2,14 +2,12 @@
 $title: amp-mustache
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Mustache.js テンプレートのレンダリングを可能にします。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 [Mustache.js](https://github.com/janl/mustache.js/) のレンダリングを可能にします。
 
@@ -46,22 +42,21 @@ teaser:
   </tr>
 </table>
 
-
 ## バージョン履歴 <a name="version-notes"></a>
 
-| バージョン | 説明 |
-|-------|-----|
-| 0.2 | `<svg>` 要素がサポートされ、バンドルサイズが縮小されました（20.5 KB から 12.2 KB へ。gzip 形式で圧縮）。最新の HTML サニタイズ ライブラリに移行しました（Caja から DOMPurify へ）。タグと属性のホワイトリストが変更されるため、マイナー変更が発生する可能性があります。生成されるマークアップの変更が機能に影響を与えないか確認するため、本番環境に進む前に、まずページをテストしておくことをおすすめします。 |
-| 0.1 | 初期実装。 |
+| バージョン | 説明                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.2        | `<svg>` 要素がサポートされ、バンドルサイズが縮小されました（20.5 KB から 12.2 KB へ。gzip 形式で圧縮）。最新の HTML サニタイズ ライブラリに移行しました（Caja から DOMPurify へ）。タグと属性のホワイトリストが変更されるため、マイナー変更が発生する可能性があります。生成されるマークアップの変更が機能に影響を与えないか確認するため、本番環境に進む前に、まずページをテストしておくことをおすすめします。 |
+| 0.1        | 初期実装。                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ## 構文 <a name="syntax"></a>
 
 Mustache は、ロジックレスのテンプレート構文です。細については、[Mustache.js ドキュメント](https://github.com/janl/mustache.js/)をご覧ください。主な Mustache タグは次のとおりです。
 
-* {% raw %}`{{variable}}`{% endraw %}: 変数タグ。HTML エスケープした変数の値を出力します。
-* {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: セクションタグ。変数の存在をテストし、配列の場合は反復処理を行うことができます。
-* {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: 逆タグ。変数の非存在をテストできます。
-* {% raw %}`{{{unescaped}}}`{% endraw %}: エスケープなしの HTML。出力できるマークアップには制限があります（下記の「制限事項」を参照）。
+- {% raw %}`{{variable}}`{% endraw %}: 変数タグ。HTML エスケープした変数の値を出力します。
+- {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: セクションタグ。変数の存在をテストし、配列の場合は反復処理を行うことができます。
+- {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: 逆タグ。変数の非存在をテストできます。
+- {% raw %}`{{{unescaped}}}`{% endraw %}: エスケープなしの HTML。出力できるマークアップには制限があります（下記の「制限事項」を参照）。
 
 ## 使用方法 <a name="usage"></a>
 
@@ -70,7 +65,11 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 まず、以下のように `amp-mustache` を宣言して読み込む必要があります。
 
 ```html
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  async=""
+  custom-template="amp-mustache"
+></script>
 ```
 
 次に、Mustache テンプレートを `script` タグか `template` タグ内で以下のように定義します。
@@ -78,17 +77,17 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 [sourcecode:html]
 {% raw %}<!-- Using template tag. -->
 <template type="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </template>
 {% endraw %}[/sourcecode]
 
 あるいは、以下のように定義します。
 
-
 <!-- Using script tag. -->
+
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </script>
 {% endraw %}[/sourcecode]
 
@@ -102,8 +101,8 @@ Mustache は、ロジックレスのテンプレート構文です。細につ�
 
 すべての AMP テンプレートと同様、`amp-mustache` テンプレートは、適切な形式の DOM フラグメントである必要があります。そのため、`amp-mustache` を使用して次のことを行うことはできません。
 
-* タグ名の計算。たとえば、{% raw %}`<{{tagName}}>`{% endraw %} は使用できません。
-* 属性名の計算。たとえば、{% raw %}`<div {{attrName}}=something>`{% endraw %} は使用できません。
+- タグ名の計算。たとえば、{% raw %}`<{{tagName}}>`{% endraw %} は使用できません。
+- 属性名の計算。たとえば、{% raw %}`<div {{attrName}}=something>`{% endraw %} は使用できません。
 
 「triple-mustache」の出力はサニタイズされ、使用できるタグは、`a`、`b`、`br`、`caption`、`colgroup`、`code`、`del`、`div`、`em`、`i`、`ins`、`li`、`mark`、`ol`、`p`、`q`、`s`、`small`、`span`、`strong`、`sub`、`sup`、`table`、`tbody`、`time`、`td`、`th`、`thead`、`tfoot`、`tr`、`u`、`ul` だけに限られます。
 
@@ -121,9 +120,10 @@ AMP 検証の仕様により、`<template>` 要素を他の `<template>` 要素�
 
 [sourcecode:html]
 {% raw %}<amp-list id="myList" src="https://foo.com/list.json">
-  <template type="amp-mustache">
-    <div>{{title}}</div>
-  </template>
+<template type="amp-mustache">
+
+<div>{{title}}</div>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -132,6 +132,7 @@ AMP 検証の仕様により、`<template>` 要素を他の `<template>` 要素�
 [sourcecode:html]
 {% raw %}<!-- Externalize templates to avoid nesting. -->
 <template type="amp-mustache" id="myTemplate">
+
   <div>{{title}}</div>
 </template>
 
@@ -139,13 +140,13 @@ AMP 検証の仕様により、`<template>` 要素を他の `<template>` 要素�
 </amp-list>
 {% endraw %}[/sourcecode]
 
-
 ### テーブル <a name="tables"></a>
 
 AMP テンプレート文字列は `<template>` 要素内で指定する必要があるため、ブラウザの解析によって予期しない動作が発生する可能性があります。たとえば、`<table>` 要素が、テキストの[フォスター ペアレンティング](https://www.w3.org/TR/html5/syntax.html#unexpected-markup-in-tables)を引き起こすことがあります。次の例をご覧ください。
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -159,6 +160,7 @@ AMP テンプレート文字列は `<template>` 要素内で指定する必要�
 [sourcecode:html]
 {% raw %}{{#foo}}
 {{/foo}}
+
 <table>
   <tr>
     <td></td>
@@ -170,6 +172,7 @@ AMP テンプレート文字列は `<template>` 要素内で指定する必要�
 
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -184,15 +187,18 @@ AMP テンプレート文字列は `<template>` 要素内で指定する必要�
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <!-- A double-quote (") in foo will cause malformed HTML. -->
-  <amp-img alt="{{foo}}" src="example.jpg" width=100 height=100></amp-img>
+
+<amp-img alt="{{foo}}" src="example.jpg" width=100 height=100></amp-img>
 
   <!-- A single-quote (') or double-quote (") in bar will cause an AMP runtime parse error. -->
-  <button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>
+
+<button on="tap:AMP.setState({foo: '{{bar}}'})">Click me</button>
 </template>
 {% endraw %}[/sourcecode]
 
-{% raw %}`{{foo}}`{% endraw %} 変数や {% raw %}`{{bar}}`{% endraw %} 変数内で HTML 文字コードを使用した場合、Mustache が `&;` 文字を HTML エスケープするため（例: `&quot;`  -&gt; `&amp;quot;`）、正常に機能しません。対応策としては、ファクシミリ文字を使用する方法があります（例: ′（`&prime;`）、″（`&Prime;`)。
+{% raw %}`{{foo}}`{% endraw %} 変数や {% raw %}`{{bar}}`{% endraw %} 変数内で HTML 文字コードを使用した場合、Mustache が `&;` 文字を HTML エスケープするため（例: `&quot;` -&gt; `&amp;quot;`）、正常に機能しません。対応策としては、ファクシミリ文字を使用する方法があります（例: ′（`&prime;`）、″（`&Prime;`)。
 
 `amp-mustache` 内でこの置換を実行できるようにするための[オープン プロポーザル](https://github.com/ampproject/amphtml/issues/8395)もあります。賛成の方は、コメントしてください。
 

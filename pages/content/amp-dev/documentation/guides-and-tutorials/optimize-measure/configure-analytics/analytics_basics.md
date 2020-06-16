@@ -1,5 +1,5 @@
 ---
-$title: "Analytics: the basics"
+$title: 'Analytics: the basics'
 $order: 0
 description: 'AMP provides two components to meet your analytics and measurement needs: amp-pixel and amp-analytics. Both options send analytics data to a defined endpoint.'
 formats:
@@ -30,8 +30,7 @@ including clicks on links and buttons.
 [filter formats="websites"]
 And you can measure how far on the page the user scrolled,
 whether or not the user engaged with social media, and more.
-[/filter]
-[filter formats="stories"]
+[/filter][filter formats="stories"]
 And you can measure how far into a story the user tapped,
 and if the user engaged with interactive elements.
 [/filter]
@@ -94,7 +93,11 @@ in the `<head>` of the AMP document (see also
 [Component inclusion declaration](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 The following example is similar to the [`amp-pixel` example](../../../../documentation/components/reference/amp-pixel.md).
@@ -104,19 +107,19 @@ sends the pageview data to a defined URL along with a random ID:
 
 ```html
 <amp-analytics>
-<script type="application/json">
-  {
-    "requests": {
-      "pageview": "https://foo.com/pixel?RANDOM"
-    },
-    "triggers": {
-      "trackPageview": {
-        "on": "visible",
-        "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
       }
     }
-  }
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -129,7 +132,9 @@ The triggers attribute determines when the pageview request fires.
 Learn more about [requests and triggers](deep_dive_analytics.md).
 
 [filter formats="stories"]
-## AMP story default configuration 
+
+## AMP story default configuration
+
 A typical user-journey for a website is very different from stories. On a website a user might read the headline, scroll to the bottom of the page, interact with a form before clicking on a link to the next page. Stories occupy the full viewport and users do not scroll but tap to move forward.
 
 {{ image('/static/img/docs/guides/analytics-pages.png', 660, 501, alt='Image of PWA' ) }}
@@ -138,51 +143,47 @@ Many would like to measure each new [`<amp-story-page>`](../../../../documentati
 
 {{ image('/static/img/docs/guides/analytics-setup-stories.png', 1037, 528, alt='Image of PWA' ) }}
 
-AMP Analytics makes it easy to implement the above using any analytics vendor. For instance, with Google Analytics’ [Global Site Tag](https://developers.google.com/gtagjs/) will look like the below snippet. 
+AMP Analytics makes it easy to implement the above using any analytics vendor. For instance, with Google Analytics’ [Global Site Tag](https://developers.google.com/gtagjs/) will look like the below snippet.
 
 ```html
 <amp-analytics type="gtag" data-credentials="include">
- <script type="application/json">
-  {
-    "vars": {
-      "gtag_id":"YOUR_GOOGLE_ANALYTICS_ID",
-      "config": {
-        "YOUR_GOOGLE_ANALYTICS_ID": {
-          "groups":"default"
-        }
-      }
-    },
-    "triggers": {
-      "storyProgress": {
-        "on":"story-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_progress",
-          "event_category":"${title}",
-          "event_label":"${storyPageId}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+  <script type="application/json">
+    {
+      "vars": {
+        "gtag_id": "YOUR_GOOGLE_ANALYTICS_ID",
+        "config": {
+          "YOUR_GOOGLE_ANALYTICS_ID": {
+            "groups": "default"
+          }
         }
       },
-      "storyEnd": {
-        "on":"story-last-page-visible",
-        "vars": {
-          "event_name":"custom",
-          "event_action":"story_complete",
-          "event_category":"${title}",
-          "send_to": [
-            "YOUR_GOOGLE_ANALYTICS_ID"
-          ]
+      "triggers": {
+        "storyProgress": {
+          "on": "story-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_progress",
+            "event_category": "${title}",
+            "event_label": "${storyPageId}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
+        },
+        "storyEnd": {
+          "on": "story-last-page-visible",
+          "vars": {
+            "event_name": "custom",
+            "event_action": "story_complete",
+            "event_category": "${title}",
+            "send_to": ["YOUR_GOOGLE_ANALYTICS_ID"]
+          }
         }
       }
     }
-  }
- </script>
+  </script>
 </amp-analytics>
 ```
 
-This default config should give you a complete working configuration for an AMP story. 
+This default config should give you a complete working configuration for an AMP story.
 
 If you’re interested in going beyond what the default config can give you, read [Analytics for your AMP Stories](https://blog.amp.dev/2019/08/28/analytics-for-your-amp-stories/?_gl=1*pw0bu5*_ga*MzM1MjQ0ODE5LjE1NjUwMzU1MTg) to find more advanced use cases with Google Analytics.
 
@@ -200,7 +201,9 @@ along with the current AMP document’s canonical URL, its title, and a
 [client ID](analytics_basics.md#user-identification):
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 Due to its simplicity,
@@ -230,10 +233,10 @@ within the [`amp-analytics`](../../../../documentation/components/reference/amp-
   <script type="application/json">
     {
       "requests": {
-        "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
       },
       "vars": {
-        "account":"ABC123"
+        "account": "ABC123"
       },
       "triggers": {
         "someEvent": {
@@ -297,7 +300,9 @@ The formatting may appear as either
 For example:
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 If AMP finds that this cookie is set,

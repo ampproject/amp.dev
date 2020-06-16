@@ -21,32 +21,33 @@ Primeiro, crie o manifesto:
 
 [sourcecode:json]
 {
-  "short_name": "ABE",
-  "name": "AMPByExample",
-  "icons": [
-    {
-      "src": "launcher-icon-1x.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "launcher-icon-2x.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "launcher-icon-4x.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
-  "start_url": "index.html?launcher=true"
+"short_name": "ABE",
+"name": "AMPByExample",
+"icons": [
+{
+"src": "launcher-icon-1x.png",
+"type": "image/png",
+"sizes": "48x48"
+},
+{
+"src": "launcher-icon-2x.png",
+"type": "image/png",
+"sizes": "96x96"
+},
+{
+"src": "launcher-icon-4x.png",
+"type": "image/png",
+"sizes": "192x192"
+}
+],
+"start_url": "index.html?launcher=true"
 }
 [/sourcecode]
 
 Em seguida, vincule-o à seção `<head>` da página AMP:
 
 [sourcecode:html]
+
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
@@ -63,8 +64,10 @@ O service worker precisa ser registrado em uma página determinada, caso contrá
 Para isso, primeiro inclua o componente [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) por meio do script correspondente na seção `<head>` da sua página:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Em seguida, adicione o código a seguir dentro da seção `<body>` (modifique-o para apontar para seu service worker):
@@ -84,13 +87,13 @@ Você pode usar a técnica acima para permitir acesso off-line ao site AMP e est
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.open('mysite').then(function(cache) {
-      return cache.match(event.request).then(function(response) {
-        var fetchPromise = fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        })
+event.respondWith(
+caches.open('mysite').then(function(cache) {
+return cache.match(event.request).then(function(response) {
+var fetchPromise = fetch(event.request).then(function(networkResponse) {
+cache.put(event.request, networkResponse.clone());
+return networkResponse;
+})
 
         // Modify the response here before it goes out..
         …
@@ -98,12 +101,13 @@ self.addEventListener('fetch', function(event) {
         return response || fetchPromise;
       })
     })
-  );
+
+);
 });
 [/sourcecode]
 
 Com essa técnica, você poderá alterar sua página AMP com várias
 funcionalidades adicionais que não passariam na [validação de AMP](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) se fossem usadas de outra forma. Por exemplo:
 
-* recursos dinâmicos que exigem JS personalizado
-* componentes personalizados/relevantes apenas para seu site
+- recursos dinâmicos que exigem JS personalizado
+- componentes personalizados/relevantes apenas para seu site

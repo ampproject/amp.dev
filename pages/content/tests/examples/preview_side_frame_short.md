@@ -2,12 +2,12 @@
 $title: Side frame small preview
 $order: 13
 formats:
- - websites
- - email
- - stories
- - ads
+  - websites
+  - email
+  - stories
+  - ads
 $sitemap:
- enabled: False
+  enabled: False
 ---
 
 Start

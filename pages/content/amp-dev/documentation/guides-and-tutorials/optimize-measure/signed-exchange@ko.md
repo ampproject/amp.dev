@@ -6,30 +6,29 @@ $path: /signed-exchange/
 
 AMP는 캐싱이나 프리로딩과 같은 기술로 포멧 이상의 속도를 제공합니다. 이러한 이점은 [AMP 뷰어](https://developers.google.com/search/docs/guides/about-amp)에서 보여질 때 별개의 URL이 보여지는 것 같은 [단점](https://blog.amp.dev/2017/02/06/whats-in-an-amp-url/)을 가질 수도 있습니다. 이 단점을 해결하기 위해, AMP 컨텐츠를 제공할때 서명하여 교환하는 것으로 새로운 웹 플랫폼 기능을 사용할 수 있습니다.
 
-[서명하여 교환](https://developers.google.com/web/updates/2018/11/signed-exchanges)하는 것은 유효한 AMP 문서와 컨텐츠의 원래 URL로 구성됩니다. 이 정보는 디지털 서명에 의해 보호되며, 서명은 문서를 제출된 URL과 안전하게 연결합니다. 이것으로 브라우저는 안전하게 URL바에 데이터가 전달된 서버의 호스트네임 대신에 원래 URL을 보여주게 됩니다. 
+[서명하여 교환](https://developers.google.com/web/updates/2018/11/signed-exchanges)하는 것은 유효한 AMP 문서와 컨텐츠의 원래 URL로 구성됩니다. 이 정보는 디지털 서명에 의해 보호되며, 서명은 문서를 제출된 URL과 안전하게 연결합니다. 이것으로 브라우저는 안전하게 URL바에 데이터가 전달된 서버의 호스트네임 대신에 원래 URL을 보여주게 됩니다.
 
 서명된 AMP 컨텐츠는 정규 AMP 컨텐츠 _대신에_ 제공됩니다.
 
 {{ image('/static/img/docs/guides/sxg/sxg.png', 411, 293, layout='responsive', alt='Image displaying URL from signed exchange', caption=' ', align='' ) }}
 
 [tip type="note"]
-    이 기능은 현재 크롬에서 지원되지만, 추가적인 브라우저에서도 계획중에 있습니다.
+이 기능은 현재 크롬에서 지원되지만, 추가적인 브라우저에서도 계획중에 있습니다.
 [/tip]
 
 # 서명된 교환이 저에게 효과적일까요?
 
 서명된 교환을 구현하려면, 다음 요구사항을 충족해야 합니다:
 
-*   서버에 의해서 HTTP 헤더를 구성하고 제어하는 기능. (Blogger같은 대부분의 순수한 웹기반 호스팅 솔루션들은 서명된 교환과 _호환되지 않습니다._ )
-*   AMP 서명된 교환을 생성하는 기능.
-(예: [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md)를 실행하거나, [Go binary](https://golang.org/doc/install)를 실행하거나, [Docker VM](https://docs.docker.com/machine/get-started/) 내에서 실행하는 것과 같은 기능)
-    *   패키저는 매 6주마다 업데이트되어야 합니다.
-*   같은 URL에서 다른 컨텐츠를 반환하는 HTTP 서버의 [Vary](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Vary) 헤더의 기능. (예: `Vary: Accept`, `Vary: AMP-Cache-Transform`)
-*   `amppackager`를 실행하는 시스템은 다음으로 나가는 네트워크 요청을 할 수 있어야 합니다:
-    *   인증서를 발행하는 인증 기관
-    *   서명할 AMP 문서를 호스팅하는 퍼블리셔 서버
-    *   AMP의 현재 버전을 획득하기 위한 `cdn.ampproject.org`
-*   동일한 데이터 센터에서 실행되는 `amppackager`의 모든 인스턴스 사이의 영구 공유 스토리지 파일 시스템
+- 서버에 의해서 HTTP 헤더를 구성하고 제어하는 기능. (Blogger같은 대부분의 순수한 웹기반 호스팅 솔루션들은 서명된 교환과 _호환되지 않습니다._ )
+- AMP 서명된 교환을 생성하는 기능.
+  (예: [`amppackager`](https://github.com/ampproject/amppackager/blob/master/README.md)를 실행하거나, [Go binary](https://golang.org/doc/install)를 실행하거나, [Docker VM](https://docs.docker.com/machine/get-started/) 내에서 실행하는 것과 같은 기능) \* 패키저는 매 6주마다 업데이트되어야 합니다.
+- 같은 URL에서 다른 컨텐츠를 반환하는 HTTP 서버의 [Vary](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Vary) 헤더의 기능. (예: `Vary: Accept`, `Vary: AMP-Cache-Transform`)
+- `amppackager`를 실행하는 시스템은 다음으로 나가는 네트워크 요청을 할 수 있어야 합니다:
+  - 인증서를 발행하는 인증 기관
+  - 서명할 AMP 문서를 호스팅하는 퍼블리셔 서버
+  - AMP의 현재 버전을 획득하기 위한 `cdn.ampproject.org`
+- 동일한 데이터 센터에서 실행되는 `amppackager`의 모든 인스턴스 사이의 영구 공유 스토리지 파일 시스템
 
 # 서명된 교환 구현
 
@@ -48,6 +47,7 @@ $ openssl ecparam -out ampbyexample-packager.key -name prime256v1 -genkey
 # CSR을 생성 (ampbyexample-packager.csr)
 $ openssl req -new -key ampbyexample-packager.key -nodes -out ampbyexample-packager.csr -subj "/C=US/ST=California/L=Mountain View/O=Google LLC/CN=ampbyexample.com"
 ```
+
 ## 서명할 URL 결정하기
 
 서명될 문서를 정의하는 URL 패턴을 만들어야 합니다. 오해의 소지가 있거나 잘못된 내용을 전송하지 않도록 개인정보와 같은 컨텐츠에 서명하지 않아야 합니다.
@@ -83,7 +83,6 @@ MHcCAQEEINDgf1gprbdD6hM1ttmRC9+tOqJ+lNRtHwZahJIXfLADoAoGCCqGSM49
 
 **CertFile** 은 공용 인증서입니다. DIgiCert가 인증서를 제공한 경우, DigiCert 와 `DigiCertCA.crt` 파일에서 제공한 각 인증서를 같이 연결하여 만들 수 있습니다.
 
-
 ```txt
 -----BEGIN CERTIFICATE-----
 MIIE0zCCBFmgAwIBAgIQCkEgeFknZluZtdcJnvdFCjAKBggqhkjOPQQDAjBMMQsw
@@ -110,6 +109,7 @@ Ea8/B6hPatJ0ES8q/HO3X8IVQwVs1n3aAr0im0/T+Xc=
 ```
 
 ### 설치
+
 [당신의 사이트에 `amppackager`를 설정하려면 여기](https://github.com/ampproject/amppackager/blob/master/README.md)의 지침을 따르십시오.
 
 [tip type="read-on"]
@@ -151,7 +151,7 @@ format version: 1b3
 
 (필요한 인증서가 `https://example.com/` 서버에 없기 때문에, `-verify` 스위치가 이 시점에는 동작하지 않음을 주의하십시오.)
 
-응답이 *항상* `Vary` 헤더에 `Accept,AMP-Cache-Transform` 값을 포함하는지 확인하십시오. (MIME 타입이 `text/html`, `application/signed-exchange`, 혹은 다른 값인지에 관계없이):
+응답이 _항상_ `Vary` 헤더에 `Accept,AMP-Cache-Transform` 값을 포함하는지 확인하십시오. (MIME 타입이 `text/html`, `application/signed-exchange`, 혹은 다른 값인지에 관계없이):
 
 ```sh
 $ curl -si https://staging.example.com/ | less

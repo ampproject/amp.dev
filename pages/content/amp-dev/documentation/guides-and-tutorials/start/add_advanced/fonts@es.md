@@ -12,7 +12,11 @@ Puede incrustar fuentes personalizadas en su página AMP de dos maneras:
 En este tutorial, usaremos una etiqueta `<link>` para añadir fuentes a nuestra página. **Agregue** un enlace de hoja de estilo en el `<head>` para solicitar la fuente Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Ahora, **actualice** su CSS para incluir la referencia a Raleway:

@@ -11,12 +11,14 @@ $title: ページが検出されるようにする
 非 AMP ページには次のタグを追加します。
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 AMP ページには次のタグを追加します。
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,6 +27,7 @@ AMP ページには次のタグを追加します。
 一方のページだけが存在し、そのページが AMP ページである場合でも、そのページに正規のリンク、つまりそのページ自体を指すリンクを追加する必要があります。
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -45,6 +48,7 @@ Google が AMP ページを検出する方法について詳しくは、[Google 
 例:
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -76,18 +80,17 @@ Google が AMP ページを検出する方法について詳しくは、[Google 
     }
   }
 </script>
+
 [/sourcecode]
 
 [ampproject の examples フォルダ](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)には、代替の HTML 属性構文など、このほかにもサンプルが用意されています。
 
 [tip type="read-on"] 構造化データについて詳しくは、次の関連資料をご確認ください。
 
-* トップニュース カルーセルやレシピカードなど、[コンテンツを構造化して Google 検索のリッチリザルトに表示されるようにする方法](https://developers.google.com/search/docs/guides/mark-up-content)をご確認ください。
-* [Google 構造化データ テストツール](https://developers.google.com/structured-data/testing-tool/)を使用して構造化データをテストする方法をご確認ください。
-[/tip]
+- トップニュース カルーセルやレシピカードなど、[コンテンツを構造化して Google 検索のリッチリザルトに表示されるようにする方法](https://developers.google.com/search/docs/guides/mark-up-content)をご確認ください。
+- [Google 構造化データ テストツール](https://developers.google.com/structured-data/testing-tool/)を使用して構造化データをテストする方法をご確認ください。
+  [/tip]
 
 ### より多くのプラットフォームに対応するその他のメタデータ
 
 コンテンツを検出、配信可能にするその他の方法については、[ウェブの基礎サイト内のソーシャルによる検出ガイド](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)をご確認ください。
- 
- 

@@ -18,8 +18,11 @@ Prior to the introduction of the [`amp-bind`](../../../../documentation/componen
 Open the [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) file, and add the following script to the list of AMP components in the `<head>` section of the page:
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## Add a slide indicator
@@ -43,7 +46,7 @@ Let's initialize a state variable to keep track of the index of the currently di
 The data within [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) elements are accessible by their associated ID. For example, we can refer to this variable by the following expression fragment:
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### Update the slide state
@@ -51,16 +54,21 @@ selected.slide // Evaluates to 0.
 Next, let's update this variable when the user changes slides on the carousel by adding the following `"on"` action to the existing [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) element:
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
-Now, whenever the displayed slide for the [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md)  changes, the action `AMP.setState` will be called with the following argument:
+Now, whenever the displayed slide for the [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) changes, the action `AMP.setState` will be called with the following argument:
 
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -157,7 +165,7 @@ First, we need to initialize the state data with the image source URLs of each c
 
 This [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) element contains a JSON object that maps a shirt identifier string (i.e., a SKU) to the color and image URL of the corresponding shirt. A JSON array would also work here, but using an object allows us to do some more cool stuff that you'll see soon.
 
-Now we can access the image URL via a shirt's identifier. For example, `shirts['10014'].color` evaluates to `"dark green"` and `shirts['10030'].image `returns the image URL for the `"wine"` shirt color.
+Now we can access the image URL via a shirt's identifier. For example, `shirts['10014'].color` evaluates to `"dark green"` and `shirts['10030'].image`returns the image URL for the `"wine"` shirt color.
 
 ### Track the selected SKU
 
@@ -179,8 +187,10 @@ If we add another state variable that tracks the selected SKU, we can bind an ex
 Add an "on" action to the [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) that updates the `selected.sku` variable whenever a new color is selected:
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 [tip type="tip"]
@@ -193,16 +203,28 @@ Then, add bindings to the [`amp-img`](../../../../documentation/components/refer
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 [tip type="note"]
-**NOTE –**  In practice, each image in the carousel would likely have a different `src`. This could be done by replacing the single image with an array of images. For simplicity, this tutorial uses a single image at different magnifications.
+**NOTE –** In practice, each image in the carousel would likely have a different `src`. This could be done by replacing the single image with an array of images. For simplicity, this tutorial uses a single image at different magnifications.
 [/tip]
 
 **Try it out**: Refresh the page and select a different color for a shirt. When you do, the carousel's images are updated to show shirts of the selected color.

@@ -2,11 +2,10 @@
 $title: amp-iframe
 $category@: layout
 formats:
-- websites
+  - websites
 teaser:
   text: iframe を表示します。
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -24,10 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 iframe を表示します。
-
 
 <table>
   <tr>
@@ -48,20 +44,23 @@ iframe を表示します。
 
 `amp-iframe` と vanilla iframe には重要な違いがいくつかあります。vanilla iframe は安全性を重視して設計されており、単一の iframe で制御される AMP ファイルを使用しません。
 
-* `amp-iframe` はドキュメントの上部付近には表示できません（[以下](#iframe-with-placeholder)で説明するように、`placeholder` を使用する iframe は除く）。iframe は、最上部から 600 ピクセル離れた位置、または最上部までスクロールしたときにビューポートの最初の 75% の範囲内でない位置のどちらか上の位置に配置する必要があります。
-* デフォルトでは、amp-iframe はサンドボックス化されています（[詳細](#sandbox)をご確認ください）。
-* `amp-iframe` はリソースをリクエストする際に、HTTPS、データ URI、`srcdoc` 属性のいずれかのみを使用します。
-* `amp-iframe` は、`sandbox` 属性に `allow-same-origin` を指定できる場合、コンテナと同じオリジンに含めてはなりません。iframe に使用できるオリジンについて詳しくは、[iframe オリジン ポリシー](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)をご覧ください。
+- `amp-iframe` はドキュメントの上部付近には表示できません（[以下](#iframe-with-placeholder)で説明するように、`placeholder` を使用する iframe は除く）。iframe は、最上部から 600 ピクセル離れた位置、または最上部までスクロールしたときにビューポートの最初の 75% の範囲内でない位置のどちらか上の位置に配置する必要があります。
+- デフォルトでは、amp-iframe はサンドボックス化されています（[詳細](#sandbox)をご確認ください）。
+- `amp-iframe` はリソースをリクエストする際に、HTTPS、データ URI、`srcdoc` 属性のいずれかのみを使用します。
+- `amp-iframe` は、`sandbox` 属性に `allow-same-origin` を指定できる場合、コンテナと同じオリジンに含めてはなりません。iframe に使用できるオリジンについて詳しくは、[iframe オリジン ポリシー](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md)をご覧ください。
 
-*例: amp-iframe に埋め込まれた Google マップ*
+_例: amp-iframe に埋め込まれた Google マップ_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland">
-  </amp-iframe>
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland"
+>
+</amp-iframe>
 ```
 
 次のようにレンダリングされます。
@@ -80,10 +79,10 @@ iframe を表示します。
 
 このポリシーを適用する理由を以下に示します。
 
-* `amp-iframe` ではサンドボックス化が強制的に行われ、子 iframe にもサンドボックスが適用されます。つまり、広告自体は動作しているように見えても、ランディング ページは壊れている可能性があります。
-* `amp-iframe` は、設定を iframe に渡すメカニズムを備えていません。
-* `amp-iframe` は、iframe を完全に制御するサイズ変更メカニズムを備えていません。
-* 視認性に関する情報を `amp-iframe` で使用できない場合があります。
+- `amp-iframe` ではサンドボックス化が強制的に行われ、子 iframe にもサンドボックスが適用されます。つまり、広告自体は動作しているように見えても、ランディング ページは壊れている可能性があります。
+- `amp-iframe` は、設定を iframe に渡すメカニズムを備えていません。
+- `amp-iframe` は、iframe を完全に制御するサイズ変更メカニズムを備えていません。
+- 視認性に関する情報を `amp-iframe` で使用できない場合があります。
 
 # 属性 <a name="attributes"></a>
 
@@ -114,27 +113,33 @@ iframe を表示します。
 
 以下の例に示すように、`amp-iframe` に `placeholder` 要素を設定すると、`amp-iframe` をドキュメントの上部に表示させることができます。
 
-* `amp-iframe` には、`placeholder` 属性が設定された要素（`amp-img` 要素など）を含める必要があります。この要素は、iframe を表示できるようになるまで、プレースホルダとしてレンダリングされます。
-* iframe を表示できるようになったかどうかは、iframe の `onload` か、iframe ドキュメントから送信される `embed-ready` `postMessage` のいずれか先に届いた方をリッスンすることによって確認できます。
+- `amp-iframe` には、`placeholder` 属性が設定された要素（`amp-img` 要素など）を含める必要があります。この要素は、iframe を表示できるようになるまで、プレースホルダとしてレンダリングされます。
+- iframe を表示できるようになったかどうかは、iframe の `onload` か、iframe ドキュメントから送信される `embed-ready` `postMessage` のいずれか先に届いた方をリッスンすることによって確認できます。
 
-*例: プレースホルダが設定された iframe*
+_例: プレースホルダが設定された iframe_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    src="https://foo.com/iframe">
-    <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  src="https://foo.com/iframe"
+>
+  <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>
 ```
 
-*例: iframe の embed-ready リクエスト*
+_例: iframe の embed-ready リクエスト_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # iframe のサイズ変更 <a name="iframe-resizing"></a>
@@ -149,64 +154,77 @@ window.parent.postMessage({
 
 `resizable` を指定すると、`scrolling` の値が `no` にオーバーライドされることに注意してください。
 
-*例: `overflow` 要素が設定された `amp-iframe`*
+_例: `overflow` 要素が設定された `amp-iframe`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-    <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*例: iframe のサイズ変更リクエスト*
+_例: iframe のサイズ変更リクエスト_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-size',
-  height: document.body.scrollHeight
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 このメッセージを受信すると、AMP ランタイムはできるだけ早くリクエストに対応しようとしますが、リーダーが現在読んでいる場所、スクロールが実行中かどうか、その他の UX やパフォーマンスに関する要素を考慮に入れます。ライタイムがサイズ変更リクエストに対応できない場合、`amp-iframe` によって `overflow` 要素が表示されます。`overflow` 要素をクリックすると、サイズ変更がユーザー操作によってトリガーされるため、`amp-iframe` のサイズが直ちに変更されます。
 
 サイズ変更の実行速度に影響する要素の一部を以下に示します。
 
-* サイズ変更がユーザー操作によってトリガーされたかどうか。
-* サイズ変更リクエストの対象が現在アクティブな iframe かどうか。
-* サイズ変更リクエストの対象の iframe がビューポートの上と下のどちらにあるか。
+- サイズ変更がユーザー操作によってトリガーされたかどうか。
+- サイズ変更リクエストの対象が現在アクティブな iframe かどうか。
+- サイズ変更リクエストの対象の iframe がビューポートの上と下のどちらにあるか。
 
 # iframe の視認性 <a name="iframe-viewability"></a>
 
 iframe は `send-intersections` メッセージを自身の親に送信することで、iframe の親ビューポートとの共通部分に関する IntersectionObserver スタイル[変更レコード](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)の受信を開始できます。
 
-*注: 以下の例では、作成した iframe 内にスクリプトがあると想定しています（`window.parent` は上部ウィンドウ）。ネストされた iframe 内にスクリプトがある場合は、`window.parent` を上部の AMP ウィンドウに変更します。*
+_注: 以下の例では、作成した iframe 内にスクリプトがあると想定しています（`window.parent` は上部ウィンドウ）。ネストされた iframe 内にスクリプトがある場合は、`window.parent` を上部の AMP ウィンドウに変更します。_
 
-*例: iframe の `send-intersections` リクエスト*
+_例: iframe の `send-intersections` リクエスト_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'send-intersections'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 iframe は親ウィンドウからの `intersection` メッセージをリッスンして、共通部分のデータを受信することができます。
 
-*例: iframe の `send-intersections` リクエスト*
+_例: iframe の `send-intersections` リクエスト_
 
 ```javascript
-window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-  event.origin == window.location.origin ||
-  !event.data ||
-  event.data.sentinel != 'amp' ||
-  event.data.type != 'intersection') {
+window.addEventListener('message', function (event) {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
-    }
+  }
   event.data.changes.forEach(function (change) {
     console.log(change);
   });
@@ -227,10 +245,10 @@ iframe は、ユーザーの直接の目的を果たさないように思える�
 
 必要なユーザー エクスペリエンスを AMP の他の手段では実現できない場合、つまり、ユースケースに適した既存の [AMP コンポーネント](../../../documentation/components/index.html)がない場合、代わりに `amp-iframe` コンポーネントを使用することを検討してください。その理由は、特定のユースケース用に調整された AMP コンポーネントを使用することには、以下のようなさまざまなメリットがあるためです。
 
-* リソース管理を改善し、パフォーマンスを向上させることができます。
-* 場合によっては、カスタム コンポーネントで組み込みのプレースホルダ画像を提供できます。つまり、動画の読み込みの前に適切な動画のサムネイルを取得できます。また、プレースホルダを手動で追加するためのコーディング作業を減らすことができます。
-* サイズ変更機能を組み込むことができます。これにより多くの場合、予測不能なサイズの iframe コンテンツを、スクロール可能なフレーム内に表示するのではなく、ページに対してネイティブであるかのように表示できるようになります。
-* 他の追加機能（動画プレーヤーの自動再生など）を組み込むこともできます。
+- リソース管理を改善し、パフォーマンスを向上させることができます。
+- 場合によっては、カスタム コンポーネントで組み込みのプレースホルダ画像を提供できます。つまり、動画の読み込みの前に適切な動画のサムネイルを取得できます。また、プレースホルダを手動で追加するためのコーディング作業を減らすことができます。
+- サイズ変更機能を組み込むことができます。これにより多くの場合、予測不能なサイズの iframe コンテンツを、スクロール可能なフレーム内に表示するのではなく、ページに対してネイティブであるかのように表示できるようになります。
+- 他の追加機能（動画プレーヤーの自動再生など）を組み込むこともできます。
 
 # 検証 <a name="validation"></a>
 

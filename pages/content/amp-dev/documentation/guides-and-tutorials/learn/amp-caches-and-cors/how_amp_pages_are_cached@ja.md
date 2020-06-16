@@ -5,6 +5,7 @@ $title: AMP ページのキャッシュの仕組み
 このドキュメントでは、AMP エコシステムにおける AMP キャッシュの役割と、AMP ページがキャッシュされる仕組みについて学習します。
 
 ## AMP キャッシュとは
+
 AMP キャッシュは、有効な AMP ドキュメントを配信するための、プロキシベースのコンテンツ配信ネットワークです。AMP キャッシュは次のような目的で設計されています。
 
 1.  有効な AMP ページのみを配信する。
@@ -16,6 +17,7 @@ AMP キャッシュについて詳しくは、下記の YouTube 動画やブロ�
 [video src='https://www.youtube.com/watch?v=n8n7fj60lds' caption='AMP キャッシュが存在する理由については、こちらの動画をご覧ください。']
 
 ## 使用できる AMP キャッシュの種類
+
 現在、2 つの AMP キャッシュ プロバイダがあります。
 
 - [Google AMP キャッシュ](https://developers.google.com/amp/cache/)
@@ -45,19 +47,20 @@ AMP はオープン エコシステムであり、AMP プロジェクトでは A
 </amp-img>
 
 ## AMP ページがキャッシュされる仕組み
+
 AMP 形式を使用することで、コンテンツは AMP キャッシュによるキャッシュが可能な状態になります。AMP ページが AMP キャッシュに格納されるには、いくつかの方法があります。
 
-* **プラットフォームによる検出**: プラットフォームが `<html ⚡>` タグや `<html amp>` タグを介して AMP コンテンツを検出し、そのコンテンツをキャッシュします。たとえば、Google 検索はコンテンツをクロールします。有効な AMP ページを特定した場合、そのコンテンツは Google AMP キャッシュに追加されます。
+- **プラットフォームによる検出**: プラットフォームが `<html ⚡>` タグや `<html amp>` タグを介して AMP コンテンツを検出し、そのコンテンツをキャッシュします。たとえば、Google 検索はコンテンツをクロールします。有効な AMP ページを特定した場合、そのコンテンツは Google AMP キャッシュに追加されます。
 
-* **キャッシュ URL リクエスト**: プラットフォームは AMP キャッシュ URL の形式を使用して、AMP ページを明確にリクエストすることができます。AMP キャッシュはリバース プロキシとして機能するため、プラットフォームがページにアクセスすると、ページは自動的にキャッシュされることになります。
-    - Google AMP キャッシュ URL の例: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
+- **キャッシュ URL リクエスト**: プラットフォームは AMP キャッシュ URL の形式を使用して、AMP ページを明確にリクエストすることができます。AMP キャッシュはリバース プロキシとして機能するため、プラットフォームがページにアクセスすると、ページは自動的にキャッシュされることになります。
+  - Google AMP キャッシュ URL の例: `https://foo-com.cdn.ampproject.org/c/s/foo.com/amp_document.html`
 
 注: AMP キャッシュ URL はユーザーに表示される URL ではありません。つまり、通常、ユーザーがその URL を介してコンテンツをリクエストすることはありません。
 
-* **サイト運営者による追加**: サイト運営者は AMP ページを明示的に AMP キャッシュに追加することができます。これは Google AMP キャッシュ（[Google AMP キャッシュ: AMP コンテンツの更新](https://developers.google.com/amp/cache/update-cache)をご覧ください）でのみ使用できる方法です。
+- **サイト運営者による追加**: サイト運営者は AMP ページを明示的に AMP キャッシュに追加することができます。これは Google AMP キャッシュ（[Google AMP キャッシュ: AMP コンテンツの更新](https://developers.google.com/amp/cache/update-cache)をご覧ください）でのみ使用できる方法です。
 
 ## その他のリソース
 
-* [AMP プロジェクトの AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
-* [Google AMP キャッシュの概要](https://developers.google.com/amp/cache/overview)
-* [[Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
+- [AMP プロジェクトの AMP キャッシュ ガイドライン](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
+- [Google AMP キャッシュの概要](https://developers.google.com/amp/cache/overview)
+- [[Bing AMP Cache Documentation](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)

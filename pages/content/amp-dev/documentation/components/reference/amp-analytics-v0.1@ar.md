@@ -9,7 +9,6 @@ teaser:
   text: Captures analytics data from an AMP document.
 ---
 
-
 <!--
 Copyright 2019 The AMP HTML Authors. All Rights Reserved.
 
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 يعمل هذا المكّوِن على استخلاص بيانات التحليلات من مستند AMP.
 
@@ -62,25 +59,25 @@ limitations under the License.
 
 في حال عدم تكامل مورد التحليلات مع AMP، تواصل معه لطلب الدعم. ونشجعك أيضًا على إنشاء موضوع في مشروع AMP لطلب إضافة هذا المورد. يمكنك كذلك الاطّلاع على [تكامل أدوات التحليلات برمز HTML لصفحات AMP](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md). أو اعمل مع المورد على إرسال البيانات إلى عناوين URL محددة لديه. تعرّف على مزيد من المعلومات في القسم [إرسال البيانات إلى حلول داخلية](#sending-data-in-house) أدناه.
 
-*مثال: إرسال البيانات إلى موفر خارجي لخدمات التحليلات*
+_مثال: إرسال البيانات إلى موفر خارجي لخدمات التحليلات_
 
 في المثال التالي، يتم إرسال بيانات التحليلات إلى Nielsen، وهي شركة خارجية توفّر خدمات تحليلات متكاملة مع AMP. يمكن الحصول على تفاصيل تهيئة بيانات تحليلات Nielsen في وثائق [Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ```html
 <amp-analytics type="nielsen">
-<script type="application/json">
-{
-  "vars": {
-    "apid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-    "apv": "1.0",
-    "apn": "My AMP Website",
-    "section": "Entertainment",
-    "segA": "Music",
-    "segB": "News",
-    "segC": "Google AMP"
-  }
-}
-</script>
+  <script type="application/json">
+    {
+      "vars": {
+        "apid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+        "apv": "1.0",
+        "apn": "My AMP Website",
+        "section": "Entertainment",
+        "segA": "Music",
+        "segB": "News",
+        "segC": "Google AMP"
+      }
+    }
+  </script>
 </amp-analytics>
 ```
 
@@ -101,25 +98,25 @@ limitations under the License.
 عند معالجة عناوين AMP URL في الرأس المُحيل لطلبات التحليلات، أزِل المعلَمة `usqp` أو تجاهلها. يستخدم Google هذه المعلَمة لتشغيل تجارب "لذاكرة التخزين المؤقت لصفحات AMP من Google".
 [/tip]
 
-*مثال: إرسال البيانات إلى عنوان URL*
+_مثال: إرسال البيانات إلى عنوان URL_
 
-في ما يلي مثال بسيط يتتبع مشاهدات الصفحة.  وفي كل مرة تتم فيها مشاهدة الصفحة، يتم تنشيط حدث المشغّل ويرسل بيانات مشاهدة الصفحة إلى عنوان URL المحدد بالإضافة إلى معرّف عشوائي.
+في ما يلي مثال بسيط يتتبع مشاهدات الصفحة. وفي كل مرة تتم فيها مشاهدة الصفحة، يتم تنشيط حدث المشغّل ويرسل بيانات مشاهدة الصفحة إلى عنوان URL المحدد بالإضافة إلى معرّف عشوائي.
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -175,7 +172,9 @@ limitations under the License.
 في هذا المثال، نحدِد السمة `config` لتحميل بيانات التهيئة من عنوان URL المحدد.
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">;
+<amp-analytics config="https://example.com/analytics.account.config.json"
+  >;</amp-analytics
+>
 ```
 
 #### أداة إعادة كتابة التهيئة <a name="configuration-rewriter"></a>
@@ -183,6 +182,7 @@ limitations under the License.
 تم تصميم ميزة "أداة إعادة كتابة التهيئة" للسماح لموفري خدمات التحليلات بإعادة كتابة التهيئة المتوفرة بشكل ديناميكي. وهي تشبه ميزة "التهيئة عن بُعد" لكنها تتضمن أيضًا أي تهيئة يوفرها المستخدِم في الطلب المُرسَل إلى الخادم. ويمكن لمورد التحليلات وحده تفعيل هذه الميزة في الوقت الحالي.
 
 يحدد مورد التحليلات الخاصية configRewriter بعنوان URL للخادم.
+
 ```js
 export const VENDOR_ANALYTICS_CONFIG = {
     ...
@@ -196,6 +196,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 يرسل وقت التشغيل طلبًا يحتوي على التهيئة المضمّنة مدمجة مع التهيئة المتوفرة عن بُعد إلى نقطة نهاية configRewriter التي يوفرها المورد. يستخدم المورد هذا الجانب من خادم البيانات لإنشاء وعرض التهيئة الجديدة المُعاد كتابتها.
 
 يدمج وقت التشغيل بعد ذلك جميع التهيئات المتوفرة لتحديد التهيئة النهائية بترتيب تنازلي من حيث الأولوية:
+
 1. التهيئة المُعاد كتابتها
 1. التهيئة المضمّنة
 1. تهيئة المحدَدة من المورد
@@ -204,9 +205,10 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 "مجموعات المتغيرات" هي ميزة تسمح لموفري خدمات التحليلات بتجميع مجموعة محددة مسبقًا من المتغيرات التي يمكن للمستخدِم تفعيلها بسهولة. وسيتم بعد ذلك حل هذه المتغيرات وإرسالها إلى نقطة نهاية `configRewriter` المحددة.
 
-يحتاج موفرو خدمات التحليلات إلى إنشاء كائن `varGroups` جديد في التهيئة `configRewriter` لتفعيل هذه الميزة. ويمكن للناشرين بعد ذلك تضمين `varGroups` التي أنشأها موفر معين والمراد تفعليها في تهيئة التحليلات لديهم. يمكن استخدام جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md). *ملاحظة مهمة*: لن تعمل الصيغ ${varName}.
+يحتاج موفرو خدمات التحليلات إلى إنشاء كائن `varGroups` جديد في التهيئة `configRewriter` لتفعيل هذه الميزة. ويمكن للناشرين بعد ذلك تضمين `varGroups` التي أنشأها موفر معين والمراد تفعليها في تهيئة التحليلات لديهم. يمكن استخدام جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md). _ملاحظة مهمة_: لن تعمل الصيغ \${varName}.
 
 قد يكون هناك مثلاً مورد تأخذ تهيئته الشكل التالي:
+
 ```js
 // This is predefined by vendor.
 export const VENDOR_ANALYTICS_CONFIG = {
@@ -234,23 +236,24 @@ export const VENDOR_ANALYTICS_CONFIG = {
 /* Included on publisher page */
 <amp-analytics type="myVendor" id="myVendor" data-credentials="include">
   <script type="application/json">
-  {
-    "configRewriter": {
-      "varGroups": {
-        "group1": {
-          "enabled": true
-        },
-        "group2": {
-          "enabled": true
+    {
+      "configRewriter": {
+        "varGroups": {
+          "group1": {
+            "enabled": true
+          },
+          "group2": {
+            "enabled": true
+          }
         }
       }
     }
-  }
   </script>
 </amp-analytics>
 ```
 
 في هذا المثال، سيبدو نص الطلب كما يلي:
+
 ```json
 /* Sent to configuration rewriter server. */
 "configRewriter": {
@@ -271,6 +274,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 ##### تهيئات الطلبات <a name="request-configs"></a>
 
 خصائص تعريف الطلب باستخدام كائن هي:
+
 - `baseUrl`: خاصية تعرِّف عنوان URL للطلب (مطلوبة).
 - `reportWindow`: خاصية اختيارية لتحديد الوقت (بالثانية) لوقف الإبلاغ عن الطلبات. يلغي المشغل الذي يتضمن `important: true` القيد الأقصى لنافذة الإبلاغ.
 
@@ -297,10 +301,12 @@ export const VENDOR_ANALYTICS_CONFIG = {
 يمكنك تحديد سلوك التجميع في تهيئة الطلب لتقليل عدد فحص الاتصالات للطلبات. يتم إلحاق أي [`extraUrlParams`](#extra-url-params) ناتجة من `triggers` التي تستخدم الطلب نفسه بالخاصية `baseUrl` في الطلب.
 
 خصائص التجميع هي:
+
 - `batchInterval`: تحدد هذه الخاصية الفاصل الزمني (بالثانية) لتدفق فحص اتصالات الطلبات في صف التجميع. يمكن أن تكون `batchInterval` رقمًا أو مصفوفة أرقام (الحد الأدنى للفاصل الزمني هو 200 ملي ثانية). سيراعي الطلب كل قيمة في المصفوفة ثم يكرر قيمة الفاصل الأخير (أو القيمة الفردية) عند وصوله إلى نهاية المصفوفة.
 
 ترسل التهيئة التالية مثلاً فحص اتصال طلب واحد كل ثانيتين، بفحص اتصال واحد على النحو التالي:
 `https://example.com/analytics?rc=1&amp;rc=2`.
+
 ```javascript
 "requests": {
   "timer": {
@@ -323,6 +329,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 ```
 
 ترسل التهيئة التالية فحص اتصال الطلب الأول بعد ثانية واحدة ثم ترسل طلبًا كل 3 ثوانٍ. يبدو شكل فحص اتصال الطلب الأول `https://example.com/analytics?rc=1` ويأخذ فحص اتصال الطلب الثاني الشكل `https://example.com/analytics?rc=2&amp;rc=3&amp;rc=4`.
+
 ```javascript
 "requests": {
   "timer": {
@@ -348,7 +355,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 يعرّف المكوِّن `amp-analytics` العديد من المتغيرات الأساسية التي يمكن استخدامها في الطلبات. تتوفر قائمة بجميع هذه المتغيرات في [دليل متغيرات `amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md). بالإضافة إلى ذلك، تُقبل جميع المتغيرات التي يتيحها [دليل استبدالات رمز HTML لصفحات AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-subutions.md).
 
-يمكن استخدام كائن التهيئة `vars` لتحديد أزواج المفتاح/القيمة الجديدة أو لإلغاء المتغيرات الحالية التي يمكن الإشارة إليها في قيم `request`. وتستخدم المتغيرات الجديدة بشكل شائع لتحديد معلومات معينة عن الناشر.  ويمكن استخدام المصفوفات لتحديد قائمة من القيم التي يجب أن يكون عنوان URL مشفرًا بشكل منفصل مع الحفاظ على مُحدِد الفاصلة.
+يمكن استخدام كائن التهيئة `vars` لتحديد أزواج المفتاح/القيمة الجديدة أو لإلغاء المتغيرات الحالية التي يمكن الإشارة إليها في قيم `request`. وتستخدم المتغيرات الجديدة بشكل شائع لتحديد معلومات معينة عن الناشر. ويمكن استخدام المصفوفات لتحديد قائمة من القيم التي يجب أن يكون عنوان URL مشفرًا بشكل منفصل مع الحفاظ على مُحدِد الفاصلة.
 
 ```javascript
 "vars": {
@@ -374,7 +381,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 قد يتم إرسال `extraUrlParams` عبر نص الطلب بدلاً من عنوان URL في حالة تفعيل `useBody` وإرسال الطلب عبر طريقة النقل `beacon` أو `xhrpost`. في هذه الحالة، لن تكون المعلَمات عبارة عن عناوين URL مشفرة أو مسطحة. راجع [الخيار Use Body للكائن Extra URL Params](#use-body-for-extra-url-params) للحصول على مزيد من التفاصيل.
 
-تحدد السمة `extraUrlParamsReplaceMap` خريطة للمفاتيح والقيم التي تعمل كمعلَمات لـ `String.replace()` لمعالجة المفاتيح مسبقًا في تهيئة `extraUrlParams`. إذا كانت التهيئة `extraUrlParams` مثلاً تحدد `"page.title": "The title of my page"` وتحدد `extraUrlParamsReplaceMap` الصفحة `"page.": "_p_"`، سيتم إلحاق `&_p_title=The%20title%20of%20my%20page%20 `بالطلب.
+تحدد السمة `extraUrlParamsReplaceMap` خريطة للمفاتيح والقيم التي تعمل كمعلَمات لـ `String.replace()` لمعالجة المفاتيح مسبقًا في تهيئة `extraUrlParams`. إذا كانت التهيئة `extraUrlParams` مثلاً تحدد `"page.title": "The title of my page"` وتحدد `extraUrlParamsReplaceMap` الصفحة `"page.": "_p_"`، سيتم إلحاق `&_p_title=The%20title%20of%20my%20page%20`بالطلب.
 
 لا يلزم استخدام `extraUrlParamsReplaceMap` لاستخدام `extraUrlParams`. إذا لم يتم تحديد `extraUrlParamsReplaceMap`، لن يحدث أي استبدال للسلاسل ويتم استخدام السلاسل المحددة في `extraUrlParams` كما هي.
 
@@ -384,17 +391,17 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 يوضح كائن التهيئة `triggers` متى يجب إرسال طلب التحليلات. تحتوي السمة `triggers` على زوج المفتاح/القيمة trigger-name وtrigger-configuration. يمكن أن يكون trigger-name أي سلسلة تتكون من أحرف أبجدية رقمية (a-zA-Z0-9). تلغي المشغلات من التهيئة ذات الأولوية الأعلى المشغلات التي تحمل الأسماء نفسها من التهيئة ذات الأولوية الأقل.
 
-* `on` (مطلوبة): هذه السمة هي الحدث الذي سينشط له المشغِل. وقيمها الصالحة هي: `render-start` و`ini-load` و`click` و`scroll` و`timer` و`visible` و`hidden` و`user-error` و[`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) و[`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
-* `request` (مطلوبة): هذه السمة هي اسم الطلب الذي سيتم إرساله (كما هو محدد في القسم `requests`).
-* `vars`: كائن يحتوي على أزواج المفتاح/القيمة ويُستخدَم لإلغاء `vars` المحددة في التهيئة ذات المستوى الأعلى أو لتحديد المتغيرات الفريدة لهذا المشغِل.
-* يمكن تحديد `important` للعمل مع الطلبات التي تتيح سلوك التجميع أو نافذة الإبلاغ. يمكن أن يساعد تعيين `important` على `true` في تدفق صف الطلبات المجمعة مع بعض المشغلات المعينة. في هذه الحالة، من الممكن تقليل عدد فحص اتصالات الطلبات بدون فقد أحداث المشغلات المهمة. يمكن أن يؤدي تعيين `important` على `true` أيضًا إلى إلغاء قيمة `reportWindow` للطلب وإرسال فحص اتصالات الطلبات المهمة.
-* يمكن تحديد `selector` و`selectionMethod` لبعض المشغلات، مثل `click` و`visible`. يمكن مراجعة [محدِّد العناصر](#element-selector) للحصول على التفاصيل.
-* `scrollSpec` (مطلوبة عند تعيين `on` على `scroll`): يتم استخدام هذه التهيئة بالتزامن مع المشغِل `scroll`. يُرجى الاطّلاع على التفاصيل أدناه.
-* `timerSpec` (مطلوبة عند تعيين `on` على `timer`): يتم استخدام هذه التهيئة بالتزامن مع المشغل `timer`. يُرجى الاطّلاع على التفاصيل أدناه.
-* `sampleSpec` يتم استخدام هذا الكائن لتحديد أسلوب جمع عينات من الطلبات قبل إرسالها. يسمح هذا الإعداد بجمع العينات استنادًا إلى الإدخال العشوائي أو إلى المتغيرات الأخرى التي تتيحها المنصة. يحتوي الكائن على تهيئة لتحديد إدخال يُستخدَم لإنشاء تجزئة وعتبة يجب على التجزئة الوصول إليها.
-    * `sampleOn` يتم توسيع نموذج السلسلة هذا عن طريق ملء المتغيرات في المنصة ثم تجزئتها لإنشاء رقم لأغراض منطق العينات الموضح أسفل العتبة أدناه.
-    * `threshold` يتم استخدام هذه التهيئة لفلترة الطلبات التي لا تلبي معايير معينة: يجب أن يكون المنطق التالي صحيحًا `HASH(sampleOn) < threshold` حتى يتم إرسال الطلب إلى مورد التحليلات.</li>
-* `videoSpec` (تُستخدَم عند تعيين `on` على `video-*`) يتم استخدام هذه التهيئة بالتزامن مع المشغلات [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+- `on` (مطلوبة): هذه السمة هي الحدث الذي سينشط له المشغِل. وقيمها الصالحة هي: `render-start` و`ini-load` و`click` و`scroll` و`timer` و`visible` و`hidden` و`user-error` و[`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) و[`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+- `request` (مطلوبة): هذه السمة هي اسم الطلب الذي سيتم إرساله (كما هو محدد في القسم `requests`).
+- `vars`: كائن يحتوي على أزواج المفتاح/القيمة ويُستخدَم لإلغاء `vars` المحددة في التهيئة ذات المستوى الأعلى أو لتحديد المتغيرات الفريدة لهذا المشغِل.
+- يمكن تحديد `important` للعمل مع الطلبات التي تتيح سلوك التجميع أو نافذة الإبلاغ. يمكن أن يساعد تعيين `important` على `true` في تدفق صف الطلبات المجمعة مع بعض المشغلات المعينة. في هذه الحالة، من الممكن تقليل عدد فحص اتصالات الطلبات بدون فقد أحداث المشغلات المهمة. يمكن أن يؤدي تعيين `important` على `true` أيضًا إلى إلغاء قيمة `reportWindow` للطلب وإرسال فحص اتصالات الطلبات المهمة.
+- يمكن تحديد `selector` و`selectionMethod` لبعض المشغلات، مثل `click` و`visible`. يمكن مراجعة [محدِّد العناصر](#element-selector) للحصول على التفاصيل.
+- `scrollSpec` (مطلوبة عند تعيين `on` على `scroll`): يتم استخدام هذه التهيئة بالتزامن مع المشغِل `scroll`. يُرجى الاطّلاع على التفاصيل أدناه.
+- `timerSpec` (مطلوبة عند تعيين `on` على `timer`): يتم استخدام هذه التهيئة بالتزامن مع المشغل `timer`. يُرجى الاطّلاع على التفاصيل أدناه.
+- `sampleSpec` يتم استخدام هذا الكائن لتحديد أسلوب جمع عينات من الطلبات قبل إرسالها. يسمح هذا الإعداد بجمع العينات استنادًا إلى الإدخال العشوائي أو إلى المتغيرات الأخرى التي تتيحها المنصة. يحتوي الكائن على تهيئة لتحديد إدخال يُستخدَم لإنشاء تجزئة وعتبة يجب على التجزئة الوصول إليها.
+  - `sampleOn` يتم توسيع نموذج السلسلة هذا عن طريق ملء المتغيرات في المنصة ثم تجزئتها لإنشاء رقم لأغراض منطق العينات الموضح أسفل العتبة أدناه.
+  - `threshold` يتم استخدام هذه التهيئة لفلترة الطلبات التي لا تلبي معايير معينة: يجب أن يكون المنطق التالي صحيحًا `HASH(sampleOn) < threshold` حتى يتم إرسال الطلب إلى مورد التحليلات.</li>
+- `videoSpec` (تُستخدَم عند تعيين `on` على `video-*`) يتم استخدام هذه التهيئة بالتزامن مع المشغلات [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
 يمكن استخدام التهيئة التالية مثلاً لجمع عينة قدرها 50٪ من الطلبات بناءً على الإدخال العشوائي أو قدرها 1٪ بناءً على معرّف العميل.
 
@@ -435,6 +442,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 قد تبلّغ عناصر AMP التي تعمل على تضمين مستندات أخرى في إطارات iframe (مثل الإعلانات) عن حدث بدء العرض (`"on": "render-start"`). يتم إطلاق هذا الحدث عادةً بمجرد إمكانية تأكيد بدء عرض المستند المضمَّن. راجع وثائق عنصر AMP المعين لمعرفة ما إذا كان يطلق هذا الحدث.
 
 يجب أن يحتوي مشغِل عنصر التضمين على [`selector`](#element-selector) يشير إلى العنصر المضمَّن:
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -446,6 +454,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 ```
 
 يمكن أيضًا إطلاق حدث بدء العرض من قِبل المستند نفسه ويمكن تهيئته كما يلي:
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -467,6 +476,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 - بالنسبة إلى عنصر AMP بسيط (مثل `amp-img`): الموارد نفسها، مثل صورة أو فيديو.
 
 يجب أن يحتوي مشغِل عنصر التضمين أو عنصر AMP على [`selector`](#element-selector) يشير إلى العنصر:
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -478,6 +488,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 ```
 
 يمكن أيضًا إطلاق حدث التحميل الأولي من قِبل المستند نفسه ويمكن تهيئته كما يلي:
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -530,6 +541,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
   }
 }
 ```
+
 [tip type="note"]
 ملاحظة: هناك [مشكلة معروفة](https://github.com/ampproject/amphtml/issues/10891) تمثل في أن المشغِل لا يزال يُبلغ عن أخطاء من تضمينات A4A iframe، والتي لا صلة لها بالصفحة.
 [/tip]
@@ -641,6 +653,7 @@ visibilitySpec: {
 ##### مشغِل التمرير <a name="scroll-trigger"></a>
 
 استخدِم مشغِل التمرير (`"on": "scroll"`) لتنشيط طلب عند تمرير الصفحة بشروط معينة. يوفر هذا المشغِل [متغيرات خاصة](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction) تشير إلى الحدود التي أدت إلى إرسال الطلب. استخدِم `scrollSpec` للتحكم في وقت تنشيط هذا المشغِل:
+
 - `scrollSpec`: يمكن أن يحتوي هذا الكائن على `verticalBoundaries` و`horizontalBoundaries`. ويلزم توفير خاصية على الأقل من الخاصيتين حتى ينشط حدث التمرير. يجب أن تكون قيم الخاصيتين مصفوفات أرقام تحتوي على الحدود التي يتم عندها إنشاء حدث التمرير. في مقتطف الرمز التالي مثلاً، سيتم تنشيط حدث التمرير عند تمرير الصفحة رأسيًا بنسبة 25٪ و50٪ و90٪. بالإضافة إلى ذلك، سيتم أيضًا تنشيط الحدث عند تمرير الصفحة أفقيًا إلى 90٪ من عرض التمرير. ويتم تقريب حدود التمرير إلى أقرب مضاعفات `5` للحفاظ على أداء الصفحة.
 
 ```javascript
@@ -661,9 +674,9 @@ visibilitySpec: {
 استخدِم مشغِل المؤقّت (`"on": "timer"`) لتنشيط الطلب بعد فاصل زمني منتظم. استخدِم `timerSpec` للتحكم في وقت تنشيط هذا المشغِل:
 
 - `timerSpec`: هي مواصفات للمشغلات من النوع `timer`. ما لم يتم تحديد `startSpec`، سيتم تشغيل المؤقّت فورًا (افتراضيًا، مع إمكانية إلغاء تعيينه) على أن يتم تشغيله بعد ذلك حسب الفاصل الزمني المحدد.
-    - `interval` تكون مدة الموقّت بالثواني.
-    - `maxTimerLength` الحد الأقصى لمدة تشغيل الموقّت، بالثواني. سيتم تشغيل طلب إضافي عند بلوغ `maxTimerLength`. هذا ويُذكر أن القيمة التلقائية هي ساعتين. عند توفير `stopSpec`، ولكن بدون تحديد maxTimerLength، ستكون اللانهاية هي القيمة التلقائية.
-    - تُستخدَم `immediate` لتشغيل الموقّت على الفور أو لا. وتكون القيمة التلقائية المنطقية هي true.
+  - `interval` تكون مدة الموقّت بالثواني.
+  - `maxTimerLength` الحد الأقصى لمدة تشغيل الموقّت، بالثواني. سيتم تشغيل طلب إضافي عند بلوغ `maxTimerLength`. هذا ويُذكر أن القيمة التلقائية هي ساعتين. عند توفير `stopSpec`، ولكن بدون تحديد maxTimerLength، ستكون اللانهاية هي القيمة التلقائية.
+  - تُستخدَم `immediate` لتشغيل الموقّت على الفور أو لا. وتكون القيمة التلقائية المنطقية هي true.
 
 ```javascript
 "triggers": {
@@ -719,6 +732,7 @@ visibilitySpec: {
 ```
 
 يمكن تضمين [`visibilitySpec`](#visibility-spec) بحيث يتم تنشيط الطلب فقط في حال استيفاء شروط مدة الرؤية.
+
 ```json
 "triggers": {
   "defaultPageview": {
@@ -732,6 +746,7 @@ visibilitySpec: {
   }
 }
 ```
+
 تعني التهيئة أعلاه ما يلي:
 
 <blockquote>
@@ -750,11 +765,11 @@ visibilitySpec: {
 
 يحدد كائن التهيئة `transport` الكيفية التي بها إرسال الطلب. وتكون قيمته كائنًا ذا حقول يشير إلى طرق النقل المقبولة.
 
-* تشير القيمة `beacon` إلى إمكانية استخدام [`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) لنقل الطلب. وترسل طلب POST مع بيانات اعتماد. سيتم إرسال الطلب فارغًا ما لم تكن true هي قيمة الخيار `useBody`. انظر [الخيار Use Body للكائن Extra URL Params](#use-body-for-extra-url-params) للحصول على مزيد من المعلومات عن `useBody`.
-* تشير القيمة `xhrpost` إلى إمكانية استخدام `XMLHttpRequest` لإرسال الطلب. وترسل طلب POST مع بيانات اعتماد. سيتم إرسال الطلب فارغًا ما لم تكن true هي قيمة الخيار `useBody`. انظر [الخيار Use Body للكائن Extra URL Params](#use-body-for-extra-url-params) للحصول على مزيد من المعلومات عن `useBody`.
-* تشير القيمة `image` إلى إمكانية إرسال الطلب من خلال إنشاء العلامة `Image`. وترسل طلب GET. ويمكنك تعيين `"image": {"suppressWarnings": true}` لإيقاف تحذيرات وحدة التحكم بسبب الاستجابات الفارغة أو إخفاق الطلبات.
+- تشير القيمة `beacon` إلى إمكانية استخدام [`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) لنقل الطلب. وترسل طلب POST مع بيانات اعتماد. سيتم إرسال الطلب فارغًا ما لم تكن true هي قيمة الخيار `useBody`. انظر [الخيار Use Body للكائن Extra URL Params](#use-body-for-extra-url-params) للحصول على مزيد من المعلومات عن `useBody`.
+- تشير القيمة `xhrpost` إلى إمكانية استخدام `XMLHttpRequest` لإرسال الطلب. وترسل طلب POST مع بيانات اعتماد. سيتم إرسال الطلب فارغًا ما لم تكن true هي قيمة الخيار `useBody`. انظر [الخيار Use Body للكائن Extra URL Params](#use-body-for-extra-url-params) للحصول على مزيد من المعلومات عن `useBody`.
+- تشير القيمة `image` إلى إمكانية إرسال الطلب من خلال إنشاء العلامة `Image`. وترسل طلب GET. ويمكنك تعيين `"image": {"suppressWarnings": true}` لإيقاف تحذيرات وحدة التحكم بسبب الاستجابات الفارغة أو إخفاق الطلبات.
 
-قد يستخدم الموردون المعتمدون من MRC آلية نقل رابعة هي "نقل إطار iframe"، عن طريق إضافة سلسلة عنوان URL إلى iframe-transport-vendors.js. وتشير هذه إلى وجوب إنشاء إطار iframe، مع تعيين السمة `src` على عنوان URL هذا، وعندها سيتم إرسال الطلبات إلى إطار iframe هذا من خلال `window.postMessage()` . في هذه الحالة، لا يلزم أن تكون الطلبات عناوين URL كاملة. لا يمكن تحديد `iframe` إلا في `iframe-transport-vendors.js`، وليس ضمن العلامة `amp-analytics` ولا عبر التهيئة عن بُعد. علاوة على ذلك، قد يرسل إطار المورد استجابة يتم استخدامها بواسطة amp-ad-exit. راجع [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) و[fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html): يرسل الملف الأول الكائن JSON{'collected-data': 'abc'} للاستجابة ويستخدم الملف الثاني هذا الكائن لاستبدال 'abc' بـ 'bar_' في عنوان URL النهائي.
+قد يستخدم الموردون المعتمدون من MRC آلية نقل رابعة هي "نقل إطار iframe"، عن طريق إضافة سلسلة عنوان URL إلى iframe-transport-vendors.js. وتشير هذه إلى وجوب إنشاء إطار iframe، مع تعيين السمة `src` على عنوان URL هذا، وعندها سيتم إرسال الطلبات إلى إطار iframe هذا من خلال `window.postMessage()` . في هذه الحالة، لا يلزم أن تكون الطلبات عناوين URL كاملة. لا يمكن تحديد `iframe` إلا في `iframe-transport-vendors.js`، وليس ضمن العلامة `amp-analytics` ولا عبر التهيئة عن بُعد. علاوة على ذلك، قد يرسل إطار المورد استجابة يتم استخدامها بواسطة amp-ad-exit. راجع [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) و[fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html): يرسل الملف الأول الكائن JSON{'collected-data': 'abc'} للاستجابة ويستخدم الملف الثاني هذا الكائن لاستبدال 'abc' بـ 'bar\_' في عنوان URL النهائي.
 
 إذا تم تفعيل أكثر من طريقة نقل من المذكورة أعلاه، يكون ترتيب الأولوية كما يلي: `iframe` &gt; `beacon` &gt; `xhrpost` &gt; `image`. سيتم استخدام طريقة نقل واحدة فقط على أن تكون الطريقة المقبولة والمتاحة ذات الأولوية الأعلى. إذا كان وكيل المستخدم لدى العميل لا يتيح طريقة، سيتم استخدام الطريقة ذات الأولوية الأعلى التي تم تفعيلها. ويُذكر أنه يتم تفعيل جميع الطرق الأربعة أعلاه تلقائيًا.
 
@@ -825,12 +840,15 @@ visibilitySpec: {
 
 **type**
 
-تحدد هذه السمة نوع المورد.  ويمكنك مراجعة قائمة [موردي التحليلات](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) للحصول على التفاصيل.
+تحدد هذه السمة نوع المورد. ويمكنك مراجعة قائمة [موردي التحليلات](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md) للحصول على التفاصيل.
 
 مثال:
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json"></amp-analytics>
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 **config**
@@ -840,7 +858,9 @@ visibilitySpec: {
 مثال:
 
 ```html
-<amp-analytics config="https://example.com/analytics.config.json"></amp-analytics>
+<amp-analytics
+  config="https://example.com/analytics.config.json"
+></amp-analytics>
 ```
 
 **data-credentials**<a name="data-credentials"></a>

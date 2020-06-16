@@ -2,7 +2,7 @@
 $title: Convalidare le pagine AMP
 ---
 
-Il punto di forza di AMP non sta semplicemente nel fatto che velocizza le pagine, ma che le velocizza in modo tale da poter essere *convalidate*. In questo modo, terze parti quali Twitter, Instagram o la Ricerca Google possono scegliere di pubblicare le pagine AMP per gli utenti in modi sempre più interessanti.
+Il punto di forza di AMP non sta semplicemente nel fatto che velocizza le pagine, ma che le velocizza in modo tale da poter essere _convalidate_. In questo modo, terze parti quali Twitter, Instagram o la Ricerca Google possono scegliere di pubblicare le pagine AMP per gli utenti in modi sempre più interessanti.
 
 ## Come faccio a verificare se la mia è una pagina AMP valida?
 
@@ -14,9 +14,9 @@ Oltre alla validità delle tue pagine AMP, potresti voler verificare che il tuo 
 
 Nello strumento di convalida AMP è integrata la libreria JS AMP, che è quindi subito disponibile in ogni pagina AMP. Per eseguire la convalida, procedi nel seguente modo:
 
-  * Apri la pagina AMP nel browser.
-  * Aggiungi "`#development=1`" all'URL, ad esempio `http://localhost:8000/released.amp.html#development=1`.
-  * Apri la [console Strumenti per sviluppatori di Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) e controlla se ci sono errori di convalida.
+- Apri la pagina AMP nel browser.
+- Aggiungi "`#development=1`" all'URL, ad esempio `http://localhost:8000/released.amp.html#development=1`.
+- Apri la [console Strumenti per sviluppatori di Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) e controlla se ci sono errori di convalida.
 
 Gli errori della Console per sviluppatori saranno simili al seguente:
 
@@ -41,6 +41,7 @@ L'interfaccia è un editor interattivo: le modifiche apportate al codice sorgent
     </td>
     <td>Quando vengono riscontrati errori all'interno di una pagina AMP, l'icona dell'estensione viene visualizzata in rosso e viene indicato il numero di errori riscontrati.
     </td>
+
   </tr>
   <tr>
     <td>
@@ -49,6 +50,7 @@ L'interfaccia è un editor interattivo: le modifiche apportate al codice sorgent
     </td>
     <td>Quando non vengono riscontrati errori all'interno di una pagina AMP, l'icona viene visualizzata in verde e viene indicato il numero di avvisi, se presenti.
     </td>
+
   </tr>
   <tr>
     <td>
@@ -57,6 +59,7 @@ L'interfaccia è un editor interattivo: le modifiche apportate al codice sorgent
     </td>
     <td>Se la pagina non è in formato AMP, ma viene indicato che è disponibile una versione AMP, l'icona diventa un'icona di collegamento blu. Se si fa clic sull'estensione, il browser viene reindirizzato alla versione AMP.
     </td>
+
   </tr>
 </table>
 
@@ -71,14 +74,14 @@ Digita `npm install -g amphtml-validator` per installare lo [strumento della rig
 Ora convalidiamo una pagina HTML AMP esistente.
 
 [sourcecode:console]
-$ amphtml-validator https://amp.dev/
+\$ amphtml-validator https://amp.dev/
 https://amp.dev/: PASS
 [/sourcecode]
 
 Come prevedibile, questa è una pagina HTML AMP valida. Ora proviamo con una pagina non valida: [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Per eseguire il comando `amphtml-validator` puoi indicare l'URL della pagina o un nome di file locale. Scarica e salva [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) in un file, dopodiché esegui il comando seguente:
 
 [sourcecode:console]
-$ amphtml-validator several_errors.html
+\$ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
 several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
@@ -91,21 +94,21 @@ Il formato dei messaggi di errore è: nome del file, riga, colonna e messaggio, 
 Prova a iniziare a creare la tua pagina AMP utilizzando [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
 
 [sourcecode:console]
-$ amphtml-validator minimum_valid_amp.html
+\$ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
 
 Lo strumento della riga di comando offre funzioni aggiuntive, tra cui la disattivazione del colore, la stampa di output JSON o l'esecuzione di una versione specifica del codice JavaScript dello strumento di convalida (per impostazione predefinita viene eseguito l'ultimo script pubblicato).
 
 [sourcecode:console]
-$ amphtml-validator --help
+\$ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -120,6 +123,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## Cosa succede se la mia pagina non è valida?
@@ -138,20 +142,20 @@ La maggior parte degli errori di convalida è facile da correggere. Prova a util
 
 Questo genera il seguente errore di convalida AMP, mostrato nei vari strumenti che seguono:
 
- * Console per sviluppatori del browser
-<amp-img alt="Errore AMP: Il tag &quot;img&quot; può comparire solo come discendente del tag &quot;noscript&quot;. Forse intendevi &quot;amp-img&quot;? riga 11, colonna 2" height="30" src="/static/img/docs/validator_console_imgerror.png" width="696" layout="responsive"></amp-img>
+- Console per sviluppatori del browser
+  <amp-img alt="Errore AMP: Il tag &quot;img&quot; può comparire solo come discendente del tag &quot;noscript&quot;. Forse intendevi &quot;amp-img&quot;? riga 11, colonna 2" height="30" src="/static/img/docs/validator_console_imgerror.png" width="696" layout="responsive"></amp-img>
 
- * Interfaccia web
-<amp-img alt="Errore AMP: Il tag &quot;img&quot; può comparire solo come discendente del tag &quot;noscript&quot;. Forse intendevi &quot;amp-img&quot;? riga 11, colonna 2" height="58" src="/static/img/docs/validator_webui_imgerror.png" width="676" layout="responsive"></amp-img>
+- Interfaccia web
+  <amp-img alt="Errore AMP: Il tag &quot;img&quot; può comparire solo come discendente del tag &quot;noscript&quot;. Forse intendevi &quot;amp-img&quot;? riga 11, colonna 2" height="58" src="/static/img/docs/validator_webui_imgerror.png" width="676" layout="responsive"></amp-img>
 
- * Estensione del browser
-<amp-img alt="Errore AMP: Il tag &quot;img&quot; può comparire solo come discendente del tag &quot;noscript&quot;. Forse intendevi &quot;amp-img&quot;? riga 11, colonna 2" height="108" src="/static/img/docs/validator_extension_imgerror.png" width="724" layout="responsive"></amp-img>
+- Estensione del browser
+  <amp-img alt="Errore AMP: Il tag &quot;img&quot; può comparire solo come discendente del tag &quot;noscript&quot;. Forse intendevi &quot;amp-img&quot;? riga 11, colonna 2" height="108" src="/static/img/docs/validator_extension_imgerror.png" width="724" layout="responsive"></amp-img>
 
 Ogni strumento fornisce diverse informazioni:
 
-  * La posizione (riga e colonna) nel documento HTML in cui si è verificato l'errore, selezionabile in alcune interfacce per evidenziare tale posizione. In questo esempio il problema si è verificato nella riga 11, colonna 2.
-  * Una riga di testo che descrive l'errore. In questo esempio il testo indica che abbiamo utilizzato un tag `<img>`, ma che invece avremmo dovuto utilizzare un tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
-  * Un link che rimanda a un documento pertinente relativo all'errore; in questo esempio la documentazione relativa al tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Non vengono generati link alla documentazione per tutti gli errori.
+- La posizione (riga e colonna) nel documento HTML in cui si è verificato l'errore, selezionabile in alcune interfacce per evidenziare tale posizione. In questo esempio il problema si è verificato nella riga 11, colonna 2.
+- Una riga di testo che descrive l'errore. In questo esempio il testo indica che abbiamo utilizzato un tag `<img>`, ma che invece avremmo dovuto utilizzare un tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
+- Un link che rimanda a un documento pertinente relativo all'errore; in questo esempio la documentazione relativa al tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Non vengono generati link alla documentazione per tutti gli errori.
 
 Rileggendo con attenzione la specifica, ci siamo accorti di avere utilizzato un tag `<img>`, quando invece avremmo dovuto utilizzare un tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 

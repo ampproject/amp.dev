@@ -2,7 +2,7 @@
 $title: amp-auto-ads
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: 원격으로 제공되는 구성 파일을 사용하여 AMP 페이지에 동적으로 광고를 삽입합니다.
 ---
@@ -22,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 원격으로 제공되는 구성 파일을 사용하여 AMP 페이지에 동적으로 광고를 삽입합니다.
 
@@ -53,30 +51,28 @@ limitations under the License.
     </tr>
   </table>
 
-
 ## 동작
 
 충분한 수의 유효한 위치가 지정되면(구성에서 제공) `amp-auto-ads`는 광고 네트워크에서 지정한 제약 조건을 준수하면서 추가 광고를 삽입하려고 시도합니다. 이러한 제약 조건은 다음을 제한합니다.
 
-* 삽입할 수 있는 총 광고 수
-* 인접한 광고 간에 필요한 최소 거리
+- 삽입할 수 있는 총 광고 수
+- 인접한 광고 간에 필요한 최소 거리
 
 이 외에도 허용되지 않는 재흐름을 일으키지 않는 페이지의 위치에만 광고를 삽입할 수 있습니다(attemptChangeSize에 의해 결정됨).
 
 `<amp-auto-ads>` 태그는 `<body>`의 첫 번째 하위로 배치해야 합니다.
 
 광고 네트워크 유형 및 추가 정보(광고 네트워크에 필요)는 태그에서 지정해야 합니다.
+
 ```html
-<amp-auto-ads
-    type="adsense"
-    data-ad-client="ca-pub-5439573510495356">
-  </amp-auto-ads>
+<amp-auto-ads type="adsense" data-ad-client="ca-pub-5439573510495356">
+</amp-auto-ads>
 ```
 
 ## 지원되는 광고 네트워크 <a name="supported-ad-networks"></a>
 
-* [애드센스](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+- [애드센스](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+- [DoubleClick (experimental)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 속성
 
@@ -112,16 +108,16 @@ limitations under the License.
         "index": 2,
         "sub": {
           "selector": "P.paragraph",
-          "all": true,
-        },
+          "all": true
+        }
       },
       "pos": 4,
       "type": 1,
       "style": {
         "top_m": 5,
-        "bot_m": 10,
-      },
-    },
+        "bot_m": 10
+      }
+    }
   ]
 }
 ```
@@ -365,14 +361,14 @@ limitations under the License.
 
 `subsequentMinSpacing` 구성 개체에서 지정할 입력란. 이미 페이지에 있는 광고의 수를 기반으로 추가적인 광고 간에 필요한 간격을 변경하는 데 `subsequentMinSpacing` 항목을 사용할 수 있습니다. 예를 들어 다음 시나리오를 고려해볼 수 있습니다.
 
-* 페이지에 기존 광고 2개
-* subsequentMinSpacing 입력란:
-<code>
+- 페이지에 기존 광고 2개
+- subsequentMinSpacing 입력란:
+  <code>
   [
-    {adCount: 3, spacing: "500px"},
-    {adCount: 5, spacing: "1000px"},
+  {adCount: 3, spacing: "500px"},
+  {adCount: 5, spacing: "1000px"},
   ]
-</code>
+  </code>
 
 초기에는 페이지에 2개의 기존 광고가 있으므로 매핑이 일치하지 않습니다.
 따라서 최소 간격의 기본값은 `AdConstraints` 개체의 initialMinSpacing입니다.

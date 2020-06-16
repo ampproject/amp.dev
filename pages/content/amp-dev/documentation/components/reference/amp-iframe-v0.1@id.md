@@ -2,11 +2,10 @@
 $title: amp-iframe
 $category@: layout
 formats:
-- websites
+  - websites
 teaser:
   text: Displays an iframe.
 ---
-
 
 <!--
        Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -24,10 +23,7 @@ teaser:
      limitations under the License.
 -->
 
-
-
 Menampilkan iframe.
-
 
 <table>
   <tr>
@@ -48,20 +44,23 @@ Menampilkan iframe.
 
 `amp-iframe` memiliki beberapa perbedaan penting dibandingkan iframe vanilla yang dirancang untuk menjadikannya lebih aman dan menghindari file AMP yang didominasi oleh iframe tunggal:
 
-* `amp-iframe` tidak akan muncul di dekat bagian atas dokumen (kecuali untuk iframe yang menggunakan `placeholder` seperti dijelaskan [di bawah](#iframe-with-placeholder)). iframe harus berjarak 600 piksel dari atas, atau tidak dalam 75% pertama dari viewport saat di-scroll ke atas, salah satu yang lebih kecil.
-* Secara default, amp-iframe ditempatkan dalam sandbox (lihat [detail](#sandbox)).
-* `amp-iframe` hanya boleh meminta resource melalui HTTPS, dari data-URI, atau melalui atribut `srcdoc`.
-* `amp-iframe` tidak boleh berada dalam asal yang sama dengan container kecuali jika `allow-same-origin` tidak diizinkan dalam atribut `sandbox`. Lihat dokumen [“Kebijakan asal iframe”](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) untuk penjelasan selengkapnya mengenai asal yang diizinkan untuk iframe.
+- `amp-iframe` tidak akan muncul di dekat bagian atas dokumen (kecuali untuk iframe yang menggunakan `placeholder` seperti dijelaskan [di bawah](#iframe-with-placeholder)). iframe harus berjarak 600 piksel dari atas, atau tidak dalam 75% pertama dari viewport saat di-scroll ke atas, salah satu yang lebih kecil.
+- Secara default, amp-iframe ditempatkan dalam sandbox (lihat [detail](#sandbox)).
+- `amp-iframe` hanya boleh meminta resource melalui HTTPS, dari data-URI, atau melalui atribut `srcdoc`.
+- `amp-iframe` tidak boleh berada dalam asal yang sama dengan container kecuali jika `allow-same-origin` tidak diizinkan dalam atribut `sandbox`. Lihat dokumen [“Kebijakan asal iframe”](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md) untuk penjelasan selengkapnya mengenai asal yang diizinkan untuk iframe.
 
-*Contoh: Menyematkan Google Map di dalam amp-iframe*
+_Contoh: Menyematkan Google Map di dalam amp-iframe_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland">
-  </amp-iframe>
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland"
+>
+</amp-iframe>
 ```
 
 Dirender sebagai:
@@ -81,10 +80,10 @@ Untuk kasus penggunaan iklan, gunakan [`amp-ad`](amp-ad.md).
 
 Alasan penggunaan kebijakan ini adalah:
 
-* `amp-iframe` memberlakukan sandboxing dan sandbox juga diterapkan pada iframe turunan. Artinya, halaman landing mungkin rusak, meskipun iklan itu sendiri tampak berfungsi.
-* `amp-iframe` tidak menyediakan mekanisme apa pun untuk meneruskan konfigurasi ke iframe.
-* `amp-iframe` tidak memiliki mekanisme pengubahan ukuran terkontrol iframe sepenuhnya.
-* Informasi visibilitas mungkin tidak tersedia untuk `amp-iframe`.
+- `amp-iframe` memberlakukan sandboxing dan sandbox juga diterapkan pada iframe turunan. Artinya, halaman landing mungkin rusak, meskipun iklan itu sendiri tampak berfungsi.
+- `amp-iframe` tidak menyediakan mekanisme apa pun untuk meneruskan konfigurasi ke iframe.
+- `amp-iframe` tidak memiliki mekanisme pengubahan ukuran terkontrol iframe sepenuhnya.
+- Informasi visibilitas mungkin tidak tersedia untuk `amp-iframe`.
 
 # Atribut <a name="attributes"></a>
 
@@ -119,10 +118,10 @@ Alasan penggunaan kebijakan ini adalah:
 
 Anda dapat memunculkan `amp-iframe` di bagian atas dokumen jika `amp-iframe` memiliki elemen `placeholder` seperti ditunjukkan pada contoh di bawah.
 
-* `amp-iframe` harus memuat elemen dengan atribut `placeholder`, (misalnya elemen `amp-img`) yang akan dirender sebagai placeholder sampai iframe siap ditampilkan.
-* Kesiapan iframe dapat diketahui dengan mendeteksi `onload` iframe atau `embed-ready` `postMessage`, yang akan dikirim oleh dokumen iframe, salah satu yang terjadi lebih dahulu.
+- `amp-iframe` harus memuat elemen dengan atribut `placeholder`, (misalnya elemen `amp-img`) yang akan dirender sebagai placeholder sampai iframe siap ditampilkan.
+- Kesiapan iframe dapat diketahui dengan mendeteksi `onload` iframe atau `embed-ready` `postMessage`, yang akan dikirim oleh dokumen iframe, salah satu yang terjadi lebih dahulu.
 
-*Contoh: iframe dengan placeholder*
+_Contoh: iframe dengan placeholder_
 
 ```html
 <amp-iframe width=300 height=300
@@ -133,13 +132,16 @@ Anda dapat memunculkan `amp-iframe` di bagian atas dokumen jika `amp-iframe` mem
 </amp-iframe>
 ```
 
-*Contoh: Permintaan iframe siap disematkan*
+_Contoh: Permintaan iframe siap disematkan_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # Pengubahan ukuran iframe <a name="iframe-resizing"></a>
@@ -154,64 +156,77 @@ window.parent.postMessage({
 
 Perhatikan bahwa `resizable` mengganti nilai `scrolling` ke `no`.
 
-*Contoh: `amp-iframe` dengan elemen `overflow`*
+_Contoh: `amp-iframe` dengan elemen `overflow`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-    <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*Contoh: permintaan pengubahan ukuran iframe*
+_Contoh: permintaan pengubahan ukuran iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-size',
-  height: document.body.scrollHeight
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 Setelah pesan ini diterima, AMP runtime akan mencoba mengakomodasi permintaan tersebut sesegera mungkin, tetapi dengan memperhitungkan di mana pembaca sedang membaca, apakah scroll sedang berlangsung, dan faktor UX atau performa lainnya. Jika runtime tidak dapat memenuhi permintaan pengubahan ukuran, `amp-iframe` akan menampilkan elemen `overflow`. Mengklik elemen `overflow` akan langsung mengubah ukuran `amp-iframe` karena dipicu oleh tindakan pengguna.
 
 Berikut ini beberapa faktor yang memengaruhi seberapa cepat pengubahan ukuran akan dieksekusi:
 
-* Apakah pengubahan ukuran dipicu oleh tindakan pengguna.
-* Apakah pengubahan ukuran diminta untuk iframe yang sedang aktif.
-* Apakah pengubahan ukuran diminta untuk iframe yang berada di bawah, atau di atas viewport.
+- Apakah pengubahan ukuran dipicu oleh tindakan pengguna.
+- Apakah pengubahan ukuran diminta untuk iframe yang sedang aktif.
+- Apakah pengubahan ukuran diminta untuk iframe yang berada di bawah, atau di atas viewport.
 
 # Visibilitas iframe <a name="iframe-viewability"></a>
 
 iframe dapat mengirim pesan `send-intersections` kepada induknya agar mulai menerima [catatan perubahan](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) gaya IntersectionObserver untuk intersection iframe dengan viewport induk.
 
-*Catatan: Dalam contoh berikut, kami menganggap skrip berada dalam iframe yang dibuat, dengan `window.parent` menjadi jendela paling atas. Jika skrip berada di iframe bertingkat, ubah `window.parent` ke jendela AMP paling atas.*
+_Catatan: Dalam contoh berikut, kami menganggap skrip berada dalam iframe yang dibuat, dengan `window.parent` menjadi jendela paling atas. Jika skrip berada di iframe bertingkat, ubah `window.parent` ke jendela AMP paling atas._
 
-*Contoh: permintaan `send-intersections` iframe*
+_Contoh: permintaan `send-intersections` iframe_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'send-intersections'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 iframe dapat mendeteksi pesan `intersection` dari jendela induk untuk menerima data intersection.
 
-*Contoh: permintaan `send-intersections` iframe*
+_Contoh: permintaan `send-intersections` iframe_
 
 ```javascript
-window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-  event.origin == window.location.origin ||
-  !event.data ||
-  event.data.sentinel != 'amp' ||
-  event.data.type != 'intersection') {
+window.addEventListener('message', function (event) {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
-    }
+  }
   event.data.changes.forEach(function (change) {
     console.log(change);
   });
@@ -232,10 +247,10 @@ iframe diidentifikasi sebagai iframe pelacakan/analisis jika tampaknya tidak mem
 
 Komponen `amp-iframe` harus dianggap sebagai fallback jika pengalaman pengguna yang diperlukan tidak dimungkinkan melalui cara lain di AMP; artinya, belum ada [komponen AMP](../../../documentation/components/index.html) untuk kasus penggunaan itu. Hal ini karena ada banyak manfaat dari penggunaan komponen AMP yang disesuaikan dengan kasus penggunaan tertentu seperti:
 
-* Pengelolaan dan performa resource yang lebih baik
-* Pada kasus tertentu, komponen kustom dapat memberikan gambar placeholder built-in. Dengan begitu pengguna dapat, misalnya, mendapatkan thumbnail video yang tepat sebelum video dimuat, dan mengurangi upaya coding untuk menambahkan placeholder secara manual.
-* Pengubahan ukuran built-in. Hal ini berarti konten iframe dengan ukuran yang tidak dapat diprediksi dapat ditampilkan lebih sering kepada pengguna seolah-olah konten tersebut native untuk halaman itu, bukan dalam frame yang dapat di-scroll
-* Fitur tambahan lainnya dapat tersedia secara built-in (misalnya, fitur autoplay untuk pemutar video)
+- Pengelolaan dan performa resource yang lebih baik
+- Pada kasus tertentu, komponen kustom dapat memberikan gambar placeholder built-in. Dengan begitu pengguna dapat, misalnya, mendapatkan thumbnail video yang tepat sebelum video dimuat, dan mengurangi upaya coding untuk menambahkan placeholder secara manual.
+- Pengubahan ukuran built-in. Hal ini berarti konten iframe dengan ukuran yang tidak dapat diprediksi dapat ditampilkan lebih sering kepada pengguna seolah-olah konten tersebut native untuk halaman itu, bukan dalam frame yang dapat di-scroll
+- Fitur tambahan lainnya dapat tersedia secara built-in (misalnya, fitur autoplay untuk pemutar video)
 
 # Validasi <a name="validation"></a>
 

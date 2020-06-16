@@ -2,18 +2,14 @@
 $title: amp-access
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: AMP 페이월 및 구독 지원을 제공합니다.
 ---
 
-
-
 AMP 액세스 또는 'AMP 페이월 및 구독 지원'을 통해 게시자는 독자의 가입 상태, 조회수 및 기타 요인을 기반으로 독자가 액세스할 수 있는 콘텐츠와 제한 사항을 제어할 수 있습니다.
 
 # amp-access <a name="amp-access"></a>
-
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -63,6 +59,7 @@ limitations under the License.
 ## 솔루션 <a name="solution"></a>
 
 제안된 솔루션은 다음의 결정 및 흐름에서 게시자에게 제어 기능을 제공합니다.
+
 - 사용자 생성 및 유지 관리
 - 한도 측정 제어(특정 수의 무료 보기 허용)
 - 로그인 흐름 책임
@@ -88,7 +85,7 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
 
 ### AMP 독자 ID <a name="amp-reader-id"></a>
 
-액세스 서비스 및 사용 사례를 지원하기 위해 AMP 액세스에 *독자 ID*라는 개념이 도입되었습니다*.
+액세스 서비스 및 사용 사례를 지원하기 위해 AMP 액세스에 *독자 ID*라는 개념이 도입되었습니다\*.
 
 독자 ID는 AMP 생태계에 의해 생성된 익명의 고유 ID로, 각 독자/게시자 쌍 단위로 고유합니다. 즉, 서로 다른 두 게시자가 한 독자를 다르게 인식합니다. 독자 ID는 되돌릴 수 없는 ID로서 모든 AMP/게시자 통신에 포함되며 엔트로피가 매우 높습니다. 게시자는 독자 ID를 사용하여 독자를 식별하고 자체 ID 시스템에 매핑할 수 있습니다.
 
@@ -127,14 +124,12 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
 모든 엔드포인트는 AMP 문서에서 문서의 HEAD에 있는 JSON 개체로서 구성됩니다.
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "property": value,
     ...
     }
 </script>
-
 ```
 
 이 구성에서는 다음 속성이 정의됩니다.
@@ -187,24 +182,19 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
   </tr>
 </table>
 
-*`<URL>`* 값은 대체 변수가 있는 HTTPS URL을 지정합니다. 대체 변수에 대해서는 아래의 [URL 변수에 액세스](#access-url-variables) 섹션에서 자세히 설명합니다.
+_`<URL>`_ 값은 대체 변수가 있는 HTTPS URL을 지정합니다. 대체 변수에 대해서는 아래의 [URL 변수에 액세스](#access-url-variables) 섹션에서 자세히 설명합니다.
 
 다음은 AMP 액세스 구성의 예입니다.
 
 ```html
-
 <script id="amp-access" type="application/json">
-{
-  "authorization":
-      "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
-  "pingback":
-      "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
-  "login":
-      "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
-  "authorizationFallbackResponse": {"error": true}
-}
+  {
+    "authorization": "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
+    "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
+    "login": "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
+    "authorizationFallbackResponse": {"error": true}
+  }
 </script>
-
 ```
 
 #### 다중 액세스 공급자 <a name="multiple-access-providers"></a>
@@ -213,14 +203,14 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
 
 ```html
 <script id="amp-access" type="application/json">
-[
-  {
-    "property": value,
+  [
+    {
+      "property": value,
+      ...
+      "namespace": value
+    },
     ...
-    "namespace": value
-  },
-  ...
-]
+  ]
 </script>
 ```
 
@@ -272,6 +262,7 @@ AMP 액세스를 지원하려면 게시자가 위에서 설명한 구성요소�
 </table>
 
 다음은 독자 ID, 표준 URL, 리퍼러 정보 및 임의 캐시버스터로 확장된 URL의 예입니다.
+
 ```text
 https://pub.com/access?
   rid=READER_ID
@@ -289,24 +280,27 @@ AUTHDATA 변수는 핑백 및 로그인 URL에서 사용할 수 있습니다. �
 `amp-access` 속성은 승인 엔드포인트가 반환하는 승인 응답에 따라 true 또는 false를 산출하는 표현식을 제공합니다. 결과 값은 요소 및 내용 표시 여부를 나타냅니다.
 
 `amp-access` 값은 SQL과 유사한 언어로 정의되는 부울 식입니다. 문법은 [부록 A](#appendix-a-amp-access-expression-grammar)에 정의되어 있습니다. 정의되는 방식은 다음과 같습니다.
-```html
 
+```html
 <div amp-access="expression">...</div>
 ```
+
 속성 및 값은 승인 엔드포인트가 반환하는 승인 응답의 속성 및 값을 참조합니다. 이는 다양한 액세스 시나리오를 지원하는 유연한 시스템을 제공합니다. 네임스페이스를 사용하는 경우 속성 이름 앞에 네임스페이스를 추가하면 됩니다(예: `anamespace.aproperty`).
 
 `amp-access-hide` 속성은 요소를 표시할 수 있는 승인 응답을 수신하기 전에 안정적으로 요소를 숨기기 위해 사용할 수 있습니다. 이 속성은 "기본적으로 보이지 않음"의 의미를 제공합니다. 나중에 승인에 의해 반환되는 승인 응답은 이 기본값을 취소하고 섹션을 보이게 만들 수 있습니다. `amp-access-hide` 속성이 생략되면 섹션은 기본적으로 표시/포함됩니다. `amp-access-hide` 속성은 `amp-access` 속성과 결합해서만 사용할 수 있습니다.
+
 ```html
 <div amp-access="expression" amp-access-hide>...</div>
 ```
 
 승인 요청이 실패하면 `amp-access` 식은 평가되지 않으며 섹션의 표시 여부는 문서에서 처음 제공한 `amp-access-hide` 속성에 의해 결정됩니다.
 
-다양한 난독화 및 렌더링 요구를 지원하기 위해 필요에 따라 `amp-access-* '속성 세트를 확장할 수 있습니다.
+다양한 난독화 및 렌더링 요구를 지원하기 위해 필요에 따라 `amp-access-\* '속성 세트를 확장할 수 있습니다.
 
 승인 요청이 실패하고 "authorizationFallbackResponse" 응답이 문서에 지정되어 있지 않으면, `amp-access` 식은 평가되지 않으며 섹션의 표시 여부는 문서에서 처음 제공한 `amp-access-hide` 속성에 의해 결정됩니다.
 
 다음은 로그인 링크 또는 구독 상태를 기반으로 한 전체 콘텐츠를 보여주는 예입니다.
+
 ```html
 <header>
   문서 제목
@@ -322,13 +316,15 @@ AUTHDATA 변수는 핑백 및 로그인 URL에서 사용할 수 있습니다. �
 <div amp-access="subscriber">
   전체 콘텐츠.
 </div>
-
 ```
+
 여기에서
-- *subscriber* 는 승인 엔드포인트에 의해 반환된 승인 응답에 있는 부울 입력란입니다. 이 섹션은 기본적으로 숨겨져 있으며 선택사항입니다.
-이 예에서는 전체 콘텐츠를 안정적으로 표시하도록 설정합니다.
+
+- _subscriber_ 는 승인 엔드포인트에 의해 반환된 승인 응답에 있는 부울 입력란입니다. 이 섹션은 기본적으로 숨겨져 있으며 선택사항입니다.
+  이 예에서는 전체 콘텐츠를 안정적으로 표시하도록 설정합니다.
 
 다음은 독자에게 한도 측정 상태에 대한 고지 사항을 보여주는 또 다른 예입니다.
+
 ```html
 {% raw %}
 <section amp-access="views <= maxViews">
@@ -340,6 +336,7 @@ AUTHDATA 변수는 핑백 및 로그인 URL에서 사용할 수 있습니다. �
 ```
 
 다음은 프리미엄 구독자에게 추가 콘텐츠를 보여주는 예입니다.
+
 ```html
 <section amp-access="subscriptonType = 'premium'">
   쉿… 고객님만 이 내용을 읽고 계십니다.
@@ -355,12 +352,15 @@ AUTHDATA 변수는 핑백 및 로그인 URL에서 사용할 수 있습니다. �
 이 엔드포인트는 콘텐츠의 서로 다른 부분을 표시하기/숨기기 위해 콘텐츠 마크업 식에서 사용할 수 있는 승인 응답을 생성합니다.
 
 요청 형식은 다음과 같습니다.
+
 ```text
 https://publisher.com/amp-access.json?
 rid=READER_ID
 &url=SOURCE_URL
 ```
+
 응답은 자유 형식의 JSON 개체이며, 몇 가지 제한을 제외하고 어떤 속성과 값도 포함할 수 있습니다. 제한 사항은 다음과 같습니다.
+
 - 속성 이름은 `amp-access` 식 문법에 정의된 제한을 준수해야 합니다([부록 A](#appendix-a-amp-access-expression-grammar) 참조). 즉, 속성 이름에는 공백, 대시, 그리고 "amp-access" 사양을 따르지 않는 다른 문자를 포함할 수 없습니다.
 - 속성 값은 문자열, 숫자, 부울 중 하나일 수 있습니다.
 - 동일한 유형(문자열, 숫자, 부울)의 값을 갖는 개체로서 값을 중첩할 수도 있습니다.
@@ -368,12 +368,14 @@ rid=READER_ID
 - 응답에 PII(개인 식별 정보) 또는 개인 정보를 포함하지 않도록 유의하세요.
 
 다음은 승인 엔드포인트에서 반환할 수 있는 속성에 대한 가능한 작은 아이디어 목록입니다.
+
 - 한도 측정 정보: 허용되는 최대 보기 수 및 현재 보기 수.
 - 독자가 로그인했는지 또는 구독자인지 여부.
 - 좀 더 자세한 구독 유형: 기본, 프리미엄
 - 지역: 국가, 지역, 맞춤형 게시 지역
 
 다음은 독자가 구독자가 아니며 월 10개 기사로 측정되는데 이미 6개 기사를 본 경우 응답의 예입니다.
+
 ```json
 {
   "maxViews": 10,
@@ -381,13 +383,16 @@ rid=READER_ID
   "subscriber": false
 }
 ```
+
 다음은 독자가 로그인했으며 프리미엄 구독 유형을 가지고 있는 경우 응답의 예입니다.
+
 ```json
 {
   "loggedIn": true,
   "subscriptionType": "premium"
 }
 ```
+
 이 RPC는 사전 렌더링 단계에서 호출될 수 있는데, 독자가 실제로 문서를 안 볼 수도 있기 때문에 측정 카운트다운에 사용해서는 안 됩니다.
 
 또 다른 중요한 고려 사항은 경우에 따라 AMP 런타임이 문서 노출당 승인 엔드포인트를 여러 번 호출해야 할 수도 있다는 것입니다. 이는 성공적인 로그인 흐름 이후와 같이 독자에 대한 액세스 매개변수가 크게 변경되었다고 AMP 런타임이 판단하는 경우 발생할 수 있습니다.
@@ -411,7 +416,7 @@ AMP 런타임은 승인 흐름 중에 다음과 같은 CSS 클래스를 사용�
 1. 승인 흐름이 시작되면 문서 루트에 `amp-access-loading` CSS 클래스가 설정되고, 완료되거나 실패할 경우 제거됩니다.
 2. 승인 흐름이 실패할 경우 문서 루트에 `amp-access-error` CSS 클래스가 설정됩니다.
 
-*server* 옵션에서, 승인 엔드포인트에 대한 호출은 Google AMP 캐시에 의해 Simple HTTPS 엔드포인트로서 수행됩니다. 따라서 이 경우에는 게시자의 쿠키를 전달할 수 없습니다.
+_server_ 옵션에서, 승인 엔드포인트에 대한 호출은 Google AMP 캐시에 의해 Simple HTTPS 엔드포인트로서 수행됩니다. 따라서 이 경우에는 게시자의 쿠키를 전달할 수 없습니다.
 
 ### 핑백 엔드포인트 <a name="pingback-endpoint-1"></a>
 
@@ -426,10 +431,12 @@ AMP 런타임은 승인 흐름 중에 다음과 같은 CSS 클래스를 사용�
 독자가 문서를 보기 시작하고 성공적으로 로그인 흐름을 완료한 이후 핑백 엔드포인트가 호출됩니다.
 
 게시자는 다음을 위해 핑백을 사용하도록 선택할 수 있습니다.
+
 - 페이지의 무료 보기 수 카운트다운
 - AMP 독자 ID를 게시자의 ID에 매핑(인증된 CORS 엔드포인트로서 핑백은 게시자 쿠키를 포함할 수 있기 때문).
 
 요청 형식은 다음과 같습니다.
+
 ```text
 https://publisher.com/amp-pingback?
 rid=READER_ID
@@ -441,20 +448,22 @@ rid=READER_ID
 로그인 페이지의 URL은 [AMP 액세스 구성](#configuration) 섹션의 `login` 속성을 통해 구성됩니다.
 
 구성은 단일 로그인 URL을 지정하거나 로그인 유형으로 입력된 로그인 URL의 맵을 지정할 수 있습니다. 다음은 단일 로그인 URL의 예입니다.
+
 ```json
 {
   "login": "https://publisher.com/amp-login.html?rid={READER_ID}"
-  }
+}
 ```
 
 다음은 다중 로그인 URL의 예입니다.
+
 ```json
 {
   "login": {
     "signin": "https://publisher.com/signin.html?rid={READER_ID}",
     "signup": "https://publisher.com/signup.html?rid={READER_ID}"
-    }
   }
+}
 ```
 
 URL은 [URL 변수에 액세스](#access-url-variables) 섹션에 정의된 대로 매개변수를 사용할 수 있습니다. 예를 들면 AMP 독자 ID 및 문서 URL을 전달할 수 있습니다. `RETURN_URL` 쿼리 대체를 사용하여 반환 URL의 쿼리 매개변수를 지정할 수 있습니다(예: `?ret=RETURN_URL`). 반환 URL은 필수사항이며, `RETURN_URL` 대체가 지정되지 않은 경우 기본 쿼리 매개변수 이름인 'return'과 함께 자동으로 삽입됩니다.
@@ -462,16 +471,20 @@ URL은 [URL 변수에 액세스](#access-url-variables) 섹션에 정의된 대�
 로그인 페이지는 특별한 제약 조건이 없는 일반 웹페이지이며, [브라우저 대화상자](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)로서 정상적으로 작동해야 합니다. 자세한 내용은 [로그인 흐름](#login-flow) 섹션을 참조하세요.
 
 요청 형식은 다음과 같습니다.
+
 ```text
 https://publisher.com/amp-login.html?
 rid=READER_ID
 &url=SOURCE_URL
 &return=RETURN_URL
 ```
+
 `RETURN_URL` 대체가 지정되지 않은 경우 “return” URL 매개변수는 AMP 런타임에 의해 자동으로 추가됩니다. 로그인 페이지의 작업이 완료되면, 다음과 같은 형식의 지정된 “반환 URL”로 리디렉션해야 합니다.
+
 ```text
 RETURN_URL#success=true|false
 ```
+
 URL 해시 매개변수 'success'의 사용에 유의하세요. 로그인이 성공했는지 취소되었는지에 따라 값은 'true' 또는 'false'가 됩니다. 가능하면 성공 또는 실패의 경우 모두 로그인 페이지가 신호를 전송하는 것이 바람직합니다.
 
 `success=true` 신호가 반환되면, AMP 런타임은 승인 및 핑백 엔드포인트에 대한 호출을 반복하여 문서의 상태를 업데이트하고 새 액세스 프로필과 함께 '보기'를 보고합니다.
@@ -483,11 +496,13 @@ URL 해시 매개변수 'success'의 사용에 유의하세요. 로그인이 성
 [AMP 액세스 구성](#configuration) 섹션의 'login' 속성을 통해 하나 이상의 로그인 URL이 구성됩니다.
 
 로그인 링크는 'on' 속성을 허용하는 HTML 요소에서 선언할 수 있습니다. 일반적으로 앵커 또는 버튼 요소가 이에 해당합니다. 단일 로그인 URL을 구성할 경우 형식은 다음과 같습니다.
+
 ```html
 <a on="tap:amp-access.login">로그인 또는 구독</a>
 ```
 
 다중 로그인 URL을 구성할 경우 형식은 `tap:amp-access.login-{type}`입니다. 예:
+
 ```html
 <a on="tap:amp-access.login-signup">구독</a>
 ```
@@ -496,9 +511,9 @@ URL 해시 매개변수 'success'의 사용에 유의하세요. 로그인이 성
 
 AMP는 로그인과 구독을 구분하지 않습니다. 이러한 구분은 다중 로그인 URL/링크를 사용하여 게시자가 구성하거나 게시자 측에서 구성됩니다.
 
-## *amp-analytics* 와 통합 <a name="integration-with-amp-analytics"></a>
+## _amp-analytics_ 와 통합 <a name="integration-with-amp-analytics"></a>
 
-*amp-analytics* 와의 통합은 [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)에 문서화되어 있습니다.
+_amp-analytics_ 와의 통합은 [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)에 문서화되어 있습니다.
 
 ## CORS 오리진 보안 <a name="cors-origin-security"></a>
 
@@ -541,33 +556,34 @@ AMP는 자체 창, 팝업 또는 탭으로 로그인 대화상자를 시작합�
 
 ## AMP 용어집 <a name="amp-glossary"></a>
 
-* **AMP 문서** - AMP 형식을 따르고 AMP 유효성 검사 도구에 의해 검증된 HTML 문서. Google AMP 캐시에서 AMP 문서를 캐시할 수 있습니다.
-* **AMP 유효성 검사 도구** - HTML 문서의 정적 분석을 수행하고 문서가 AMP 형식을 따르는지에 따라 성공 또는 실패를 반환하는 컴퓨터 프로그램.
-* **AMP 런타임** - AMP 문서를 실행하는 자바스크립트 런타임.
-* **Google AMP 캐시** - AMP 문서의 프록싱 캐시.
-* **AMP 뷰어** - AMP 문서를 표시/삽입하는 웹 또는 기본 애플리케이션.
-* **Publisher.com** - AMP 게시자의 사이트.
-* **CORS 엔드포인트** - Cross-Origin HTTPS 엔드포인트. 자세한 내용은 [https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)를 참조하세요. 요청을 보호하는 방법은 [CORS 오리진 보안](#cors-origin-security)을 참조하세요.
-* **독자** - AMP 문서를 보는 실제 사람.
-* **AMP 사전 렌더링** - AMP 뷰어는 숨겨진 문서를 표시되기 전에 렌더링하는 사전 렌더링을 이용할 수 있습니다. 이렇게 할 경우 성능이 상당히 향상됩니다. 그러나 독자가 실제로 문서를 보지 않을 수 있으므로 문서 사전 렌더링은 보기로 계산되지 않는다는 사실을 고려하는 것이 중요합니다.
+- **AMP 문서** - AMP 형식을 따르고 AMP 유효성 검사 도구에 의해 검증된 HTML 문서. Google AMP 캐시에서 AMP 문서를 캐시할 수 있습니다.
+- **AMP 유효성 검사 도구** - HTML 문서의 정적 분석을 수행하고 문서가 AMP 형식을 따르는지에 따라 성공 또는 실패를 반환하는 컴퓨터 프로그램.
+- **AMP 런타임** - AMP 문서를 실행하는 자바스크립트 런타임.
+- **Google AMP 캐시** - AMP 문서의 프록싱 캐시.
+- **AMP 뷰어** - AMP 문서를 표시/삽입하는 웹 또는 기본 애플리케이션.
+- **Publisher.com** - AMP 게시자의 사이트.
+- **CORS 엔드포인트** - Cross-Origin HTTPS 엔드포인트. 자세한 내용은 [https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)를 참조하세요. 요청을 보호하는 방법은 [CORS 오리진 보안](#cors-origin-security)을 참조하세요.
+- **독자** - AMP 문서를 보는 실제 사람.
+- **AMP 사전 렌더링** - AMP 뷰어는 숨겨진 문서를 표시되기 전에 렌더링하는 사전 렌더링을 이용할 수 있습니다. 이렇게 할 경우 성능이 상당히 향상됩니다. 그러나 독자가 실제로 문서를 보지 않을 수 있으므로 문서 사전 렌더링은 보기로 계산되지 않는다는 사실을 고려하는 것이 중요합니다.
 
 ## 버전 <a name="revisions"></a>
 
-* 2016년 9월 2일: 'noPingback' 구성 속성 및 선택적 핑백
-* 2016년 3월 3일: 로그인 후 핑백 재전송(v0.5)
-* 2016년 2월 19일: URL var 대체에서 `{}`를 제거하도록 샘플 수정
-* 2016년 2월 15일: [구성](#configuration) 및 [승인 엔드포인트](#authorization-endpoint)가 승인 실패 시 사용할 수 있는 "authorizationFallbackResponse" 속성을 허용
-* 2016년 2월 11일: [승인 엔드포인트](#authorization-endpoint)에서 승인 요청 시간 제한
-* 2016년 2월 11일: `object.field`와 같은 중첩된 입력란 참조 허용
-* 2016년 2월 9일: [첫 번째 클릭 무료](#first-click-free) 및 [한도 측정](#metering) 섹션
-* 2016년 2월 3일: '소스 오리진' 보안에 대한 사양이 [CORS 오리진 보안](#cors-origin-security)에 추가됨
-* 2016년 2월 1일: RETURN_URL URL 대체를 사용해 로그인 페이지에 대한 'return' 쿼리 매개변수 맞춤화 가능
+- 2016년 9월 2일: 'noPingback' 구성 속성 및 선택적 핑백
+- 2016년 3월 3일: 로그인 후 핑백 재전송(v0.5)
+- 2016년 2월 19일: URL var 대체에서 `{}`를 제거하도록 샘플 수정
+- 2016년 2월 15일: [구성](#configuration) 및 [승인 엔드포인트](#authorization-endpoint)가 승인 실패 시 사용할 수 있는 "authorizationFallbackResponse" 속성을 허용
+- 2016년 2월 11일: [승인 엔드포인트](#authorization-endpoint)에서 승인 요청 시간 제한
+- 2016년 2월 11일: `object.field`와 같은 중첩된 입력란 참조 허용
+- 2016년 2월 9일: [첫 번째 클릭 무료](#first-click-free) 및 [한도 측정](#metering) 섹션
+- 2016년 2월 3일: '소스 오리진' 보안에 대한 사양이 [CORS 오리진 보안](#cors-origin-security)에 추가됨
+- 2016년 2월 1일: RETURN_URL URL 대체를 사용해 로그인 페이지에 대한 'return' 쿼리 매개변수 맞춤화 가능
 
 ## 부록 A: 'amp-access' 식 문법 <a name="appendix-a-amp-access-expression-grammar"></a>
 
 최근 BNF 문법은 [access-expr-impl.jison](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/0.1/access-expr-impl.jison) 파일에서 확인할 수 있습니다.
 
 이 문법의 주요 발췌 내용:
+
 ```javascript
 search_condition:
   search_condition OR search_condition

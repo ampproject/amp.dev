@@ -6,6 +6,7 @@ A marcação a seguir é um bom ponto de partida ou modelo.
 Copie e salve o código em um arquivo com extensão .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -36,23 +37,23 @@ Copie e salve o código em um arquivo com extensão .html.
 Até agora, o conteúdo no corpo da página é bem simples. No entanto, talvez alguns códigos adicionais no cabeçalho da página não sejam tão óbvios. Vamos analisar a marcação obrigatória.
 
 [tip type="note"]
-Ao criar páginas e conteúdos AMP, é recomendado usar o protocolo HTTPS em vez de HTTP. O HTTPS não é obrigatório para documentos AMP, imagens nem fontes. No entanto, muitos recursos das AMP exigem HTTPS (por exemplo, vídeos, iframes e muito mais). Para garantir que suas páginas AMP aproveitem todos os recursos disponíveis, use o protocolo HTTPS.  Se quiser saber mais sobre o HTTPS, leia o artigo [Por que usar o HTTPS?](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
+Ao criar páginas e conteúdos AMP, é recomendado usar o protocolo HTTPS em vez de HTTP. O HTTPS não é obrigatório para documentos AMP, imagens nem fontes. No entanto, muitos recursos das AMP exigem HTTPS (por exemplo, vídeos, iframes e muito mais). Para garantir que suas páginas AMP aproveitem todos os recursos disponíveis, use o protocolo HTTPS. Se quiser saber mais sobre o HTTPS, leia o artigo [Por que usar o HTTPS?](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https).
 [/tip]
 
 ## Marcação obrigatória
 
 Os documentos HTML para AMP PRECISAM seguir estas regras:
 
-| Regra      | Descrição |
-| --------- | ----------- |
-| Começar com o doctype `<!doctype html>` | É o padrão para HTML. |
-| Conter uma tag `<html ⚡>` de nível superior <br>(também é possível usar a tag `<html amp>`) | Identifica a página como conteúdo AMP. |
-| Conter as tags `<head>` e `<body>` | É opcional para HTML, mas obrigatório em páginas AMP.
-| Conter uma tag `<meta charset="utf-8">` que seja a primeira dentro da tag `<head>` | Identifica a codificação da página. |
-| Conter uma tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` como segunda filha da tag `<head>` | Inclui e carrega a biblioteca JavaScript AMP. |
-| Conter uma tag `<link rel="canonical" href="$ALGUM_URL">` dentro de `<head>` | Direciona para a versão em HTML comum do documento HTML para AMP. Caso essa versão não exista, essa tag redirecionará para o próprio documento atual. Saiba mais em [Torne sua página detectável](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md).
-| Conter uma tag `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dentro de `<head>` (recomendado: incluir também `initial-scale=1`) | Especifica uma janela de visualização responsiva. Saiba mais em [Criar páginas AMP responsivas](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md). |
-| Conter uma tag de [código de modelo AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) em `<head>`  | O modelo de CSS deve ocultar inicialmente o conteúdo até que a biblioteca de JavaScript AMP seja carregada. |
+| Regra                                                                                                                                                                   | Descrição                                                                                                                                                                                                                                                                        |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Começar com o doctype `<!doctype html>`                                                                                                                                 | É o padrão para HTML.                                                                                                                                                                                                                                                            |
+| Conter uma tag `<html ⚡>` de nível superior <br>(também é possível usar a tag `<html amp>`)                                                                            | Identifica a página como conteúdo AMP.                                                                                                                                                                                                                                           |
+| Conter as tags `<head>` e `<body>`                                                                                                                                      | É opcional para HTML, mas obrigatório em páginas AMP.                                                                                                                                                                                                                            |
+| Conter uma tag `<meta charset="utf-8">` que seja a primeira dentro da tag `<head>`                                                                                      | Identifica a codificação da página.                                                                                                                                                                                                                                              |
+| Conter uma tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` como segunda filha da tag `<head>`                                                      | Inclui e carrega a biblioteca JavaScript AMP.                                                                                                                                                                                                                                    |
+| Conter uma tag `<link rel="canonical" href="$ALGUM_URL">` dentro de `<head>`                                                                                            | Direciona para a versão em HTML comum do documento HTML para AMP. Caso essa versão não exista, essa tag redirecionará para o próprio documento atual. Saiba mais em [Torne sua página detectável](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md). |
+| Conter uma tag `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dentro de `<head>` (recomendado: incluir também `initial-scale=1`) | Especifica uma janela de visualização responsiva. Saiba mais em [Criar páginas AMP responsivas](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md).                                                                                   |
+| Conter uma tag de [código de modelo AMP](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md) em `<head>`                                      | O modelo de CSS deve ocultar inicialmente o conteúdo até que a biblioteca de JavaScript AMP seja carregada.                                                                                                                                                                      |
 
 ## Metadados opcionais
 
@@ -60,9 +61,9 @@ Além dos requisitos básicos, nosso exemplo também inclui a definição da Sch
 
 [tip type="read-on"] Acesse estes recursos para saber mais:
 
-* [Primeiros passos com as AMP na Pesquisa Google](https://developers.google.com/amp/docs): aprenda a preparar as páginas AMP para a Pesquisa Google.
-  * [Amostras de metadados](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) (em inglês): saiba mais sobre todos os metadados necessários em outros lugares, por exemplo, no Twitter.
-[/tip]
+- [Primeiros passos com as AMP na Pesquisa Google](https://developers.google.com/amp/docs): aprenda a preparar as páginas AMP para a Pesquisa Google.
+  - [Amostras de metadados](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) (em inglês): saiba mais sobre todos os metadados necessários em outros lugares, por exemplo, no Twitter.
+    [/tip]
 
 <hr>
 

@@ -54,13 +54,13 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 ### 게시자
 
-직접 판매 광고 형식을 AMP HTML로 게재하려면 [AMP HTML 광고 사양](a4a_spec.md)에 따라 광고를 만들고 AMP HTML 광고 게재를 지원하는 광고 서버를 사용하여 광고를 게재해야 합니다.  현재 AMP HTML 광고를 지원하는 광고 서버는 다음과 같습니다.
+직접 판매 광고 형식을 AMP HTML로 게재하려면 [AMP HTML 광고 사양](a4a_spec.md)에 따라 광고를 만들고 AMP HTML 광고 게재를 지원하는 광고 서버를 사용하여 광고를 게재해야 합니다. 현재 AMP HTML 광고를 지원하는 광고 서버는 다음과 같습니다.
 
-* DoubleClick for Publishers
-* TripleLift
-*   Dianomi
-* Adzerk
-* Google 애드센스
+- DoubleClick for Publishers
+- TripleLift
+- Dianomi
+- Adzerk
+- Google 애드센스
 
 간접 채널(예: Exchange, SSP 등)을 통해 AMP HTML 광고를 게재하려면 [이 목록](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)에 있는 지원 광고 네트워크/광고 서버를 사용하세요.
 
@@ -68,35 +68,35 @@ AMP HTML 광고는 유연하고 동적인 데다가 캐러셀, 시차 및 라이
 
 광고 회사에서는 [AMP HTML 광고 사양](a4a_spec.md)에 따라 광고를 만들어야 합니다. 아이디어를 얻고 예시를 확인하려면 [Examples](../../../documentation/examples/index.html)의 오픈소스 AMP HTML 광고 템플릿을 참조하세요. 또한 다음 도구 중 하나를 사용하여 AMP HTML 광고를 만들 수도 있습니다.
 
-*  [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate(*출시 예정*)
+- [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate(_출시 예정_)
 
 ### 광고 네트워크/서버
 
-AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우).  자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md)를 참조하세요.  비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
+AMP HTML 광고를 AMP 페이지에 게재하려면 네트워크에서 [빠른 가져오기 광고 요청 구현](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) 기능을 사용하는 `amp-ad` 확장자를 만들어야 합니다(없는 경우). 자세한 내용은 [AMP와 통합하여 디스플레이 광고 게재](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md)를 참조하세요. 비 AMP 페이지에 AMP HTML을 게재할 경우 특별한 통합이 필요하지 않습니다.
 
 ## AMP HTML 광고 만들기
 
-**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양](a4a_spec.md)을 준수해야 합니다.  데모 및 예시를 확인하려면 [AMP by Example](../../../documentation/examples/documentation/amp-ad.html)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
+**처음부터 만들기**: AMP HTML 광고는 [AMP HTML 광고 사양](a4a_spec.md)을 준수해야 합니다. 데모 및 예시를 확인하려면 [AMP by Example](../../../documentation/examples/documentation/amp-ad.html)에서 오픈소스 AMP HTML 광고 템플릿을 확인하세요.
 
 **도구 사용**: 다음 중 원하는 도구를 사용하여 AMP HTML 광고 소재를 만들 수 있습니다.
 
-*  [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate(*출시 예정*)
+- [Celtra Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate(_출시 예정_)
 
 ### AMP HTML 광고 구문의 유효성 검사
 
 AMP HTML 광고를 만든 후 광고가 적절한 AMP HTML 구문을 사용하는지 확인해야 합니다. 개발 환경에 따라 AMP HTML 광고의 유효성을 검사하는 몇 가지 옵션이 있습니다.
 
-*   [AMP 유효성 검사 도구 NPM](https://www.npmjs.com/package/amphtml-validator) 모듈을 사용하여 유효성 검사를 빌드 CI에 통합합니다.
-*   [AMP 유효성 검사 도구](https://validator.ampproject.org/)를 사용하여 일회성 검사를 실행합니다.
-*   [Cloudflare](https://blog.cloudflare.com/amp-validator-api/)와 파트너 관계를 맺어 공용 유효성 검사 도구 엔드포인트를 사용합니다.
+- [AMP 유효성 검사 도구 NPM](https://www.npmjs.com/package/amphtml-validator) 모듈을 사용하여 유효성 검사를 빌드 CI에 통합합니다.
+- [AMP 유효성 검사 도구](https://validator.ampproject.org/)를 사용하여 일회성 검사를 실행합니다.
+- [Cloudflare](https://blog.cloudflare.com/amp-validator-api/)와 파트너 관계를 맺어 공용 유효성 검사 도구 엔드포인트를 사용합니다.
 
 [tip type="note"]
 
-AMP 페이지에서 AMP HTML 광고를 빠르게 렌더링하려면(즉, 빠른 가져오기에서 우선적으로 렌더링) 정확한 구문을 사용해야 합니다.ㅏ  구문이 유효하지 않은 경우에도 광고가 계속 렌더링되지만, 이 경우 속도가 빠르지는 않습니다.
+AMP 페이지에서 AMP HTML 광고를 빠르게 렌더링하려면(즉, 빠른 가져오기에서 우선적으로 렌더링) 정확한 구문을 사용해야 합니다.ㅏ 구문이 유효하지 않은 경우에도 광고가 계속 렌더링되지만, 이 경우 속도가 빠르지는 않습니다.
 
 [/tip]
 
@@ -124,6 +124,6 @@ AMP 페이지에서 AMP HTML 광고를 빠르게 렌더링하려면(즉, 빠른 
 
 #### 필요한 기능을 찾을 수 없습니다. 어디에 질문하면 되나요?
 
-*   AMP 관련 질문의 답변은 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html)에서 찾아보는 것이 좋습니다. AMP 프로젝트 커뮤니티 구성원이 정기적으로 Stack Overflow를 모니터링하므로 질문을 가장 빠르게 해결할 수 있는 방법입니다.
-*   [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 채널에 참여하여 솔루션 및 답변을 확인해 보세요.
-*   AMP에서 버그가 발생하거나 AMP에 요청할 기능이 있다면 [AMP 문제 신고](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)에서 문제를 신고하는 방법을 확인하세요.
+- AMP 관련 질문의 답변은 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html)에서 찾아보는 것이 좋습니다. AMP 프로젝트 커뮤니티 구성원이 정기적으로 Stack Overflow를 모니터링하므로 질문을 가장 빠르게 해결할 수 있는 방법입니다.
+- [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 채널에 참여하여 솔루션 및 답변을 확인해 보세요.
+- AMP에서 버그가 발생하거나 AMP에 요청할 기능이 있다면 [AMP 문제 신고](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)에서 문제를 신고하는 방법을 확인하세요.

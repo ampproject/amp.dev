@@ -4,7 +4,7 @@ $title: Membuat blog langsung
 
 Blog langsung adalah halaman yang sering diperbarui sepanjang acara yang sedang berlangsung, seperti acara olahraga atau pemilu. Di AMP, Anda dapat menerapkan blog langsung menggunakan komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md).
 
-Tutorial ini memberikan gambaran singkat tentang komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) dan berfokus pada beberapa detail implementasi untuk blog langsung, seperti [paginasi](#pagination) dan [deep linking](#deeplinking). Kami akan menggunakan [contoh blog langsung] (live_blog.md) AMP By Example untuk mengilustrasikan implementasi blog langsung di AMP.
+Tutorial ini memberikan gambaran singkat tentang komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) dan berfokus pada beberapa detail implementasi untuk blog langsung, seperti [paginasi](#pagination) dan [deep linking](#deeplinking). Kami akan menggunakan [contoh blog langsung](live_blog.md) AMP By Example untuk mengilustrasikan implementasi blog langsung di AMP.
 
 [tip type="success"]
 
@@ -21,9 +21,11 @@ Komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-
 Kode awal untuk blog dapat terlihat seperti berikut:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">Anda memiliki item baru</button>
   <div items></div>
 </amp-live-list>
@@ -31,7 +33,7 @@ Kode awal untuk blog dapat terlihat seperti berikut:
 
 Mari kita lihat kode ini:
 
-Setiap komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) membutuhkan ID unik karena mungkin ada lebih dari satu ID pada halaman.  Dalam contoh ini, kami menetapkan `my-live-list` sebagai ID unik.
+Setiap komponen [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) membutuhkan ID unik karena mungkin ada lebih dari satu ID pada halaman. Dalam contoh ini, kami menetapkan `my-live-list` sebagai ID unik.
 
 Atribut `data-poll-interval` menentukan seberapa sering pemeriksaan akan terjadi; jika dokumen host diperbarui, item baru akan tersedia bagi pengguna setelah interval waktu berikutnya.
 
@@ -52,9 +54,11 @@ Blog yang panjang dapat menggunakan paginasi untuk meningkatkan performa dengan 
 Dengan paginasi, kode sederhana yang kami gunakan sebelumnya menjadi:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">Anda memiliki item baru</button>
   <div items></div>
   <div pagination>
@@ -63,8 +67,8 @@ Dengan paginasi, kode sederhana yang kami gunakan sebelumnya menjadi:
         <li>1</li>
         <li>Berikutnya</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 
@@ -78,7 +82,7 @@ Anda dapat menambahkan atribut yang dinonaktifkan ke halaman yang dihosting untu
 
 ### Deeplinking <a name="deeplinking"></a>
 
-Saat Anda mempublikasikan entri blog, penting untuk menempatkan deep link ke postingan untuk mengaktifkan fitur seperti berbagi. Dengan [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), deep linking dapat dilakukan dengan hanya menggunakan` id` dari item blog. Misalnya, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) mengizinkan Anda membuka postingan blog secara langsung dengan ID `post3`.
+Saat Anda mempublikasikan entri blog, penting untuk menempatkan deep link ke postingan untuk mengaktifkan fitur seperti berbagi. Dengan [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md), deep linking dapat dilakukan dengan hanya menggunakan`id` dari item blog. Misalnya, [https://amp.dev/documentation/examples/news-publishing/live_blog/preview/index.html#post3](../../../documentation/examples/previews/Live_Blog.html#post3) mengizinkan Anda membuka postingan blog secara langsung dengan ID `post3`.
 
 AMP By Example menggunakan cookie di [contoh blog langsung](live_blog.md) untuk membuat konten terkini. Karena itu, jika ini pertama kalinya Anda membuka halaman, postingan dengan ID “post3” mungkin tidak tersedia, dan Anda akan diarahkan ke postingan pertama.
 

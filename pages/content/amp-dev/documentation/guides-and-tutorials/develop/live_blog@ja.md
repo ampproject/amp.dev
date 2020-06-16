@@ -17,9 +17,11 @@ $title: ライブブログを作成する
 たとえば、次のようなシンプルなブログのコードがあるとします。
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">更新があります</button>
   <div items></div>
 </amp-live-list>
@@ -48,9 +50,11 @@ $title: ライブブログを作成する
 ページ指定を実装するには、先ほどのシンプルなコードを次のように変更します。
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">更新があります</button>
   <div items></div>
   <div pagination>
@@ -59,8 +63,8 @@ $title: ライブブログを作成する
         <li>1</li>
         <li>次へ</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

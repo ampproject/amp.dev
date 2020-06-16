@@ -2,14 +2,12 @@
 $title: amp-video
 $category@: media
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: HTML5 video etiketinin yerini alır.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 video dosyası yerleştirmeleri için kullanılır.
 
@@ -54,14 +50,15 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
 
 `amp-video` bileşeni, alt öğe olarak en fazla dört benzersiz HTML düğümü türünü kabul eder:
 
-* `source` etiketleri: Tıpkı HTML `<video>` etiketinde olduğu gibi, oynatmak üzere farklı kaynak medya dosyaları belirtmek için `<source>` etiketi alt öğelerini ekleyebilirsiniz.
-* videoda altyazıları etkinleştirmek için `track` etiketleri. Parça, dokümandan farklı bir kaynakta barındırılıyorsa `<amp-video>` etiketine `crossorigin` özelliğini eklemeniz gerekir.
-* video başlamadan önce bir yer tutucu
-* tarayıcı HTML5 videoyu desteklemiyorsa bir yedek: Bir veya hemen ilk alt düğüm `fallback` özelliğine sahip olabilir. Bu düğüm ve alt öğeleri mevcutsa ve kullanıcının tarayıcısında HTML5 video desteklenmiyorsa bu düğüm ve onun alt öğeleri görüntülenen içeriği oluşturur.
+- `source` etiketleri: Tıpkı HTML `<video>` etiketinde olduğu gibi, oynatmak üzere farklı kaynak medya dosyaları belirtmek için `<source>` etiketi alt öğelerini ekleyebilirsiniz.
+- videoda altyazıları etkinleştirmek için `track` etiketleri. Parça, dokümandan farklı bir kaynakta barındırılıyorsa `<amp-video>` etiketine `crossorigin` özelliğini eklemeniz gerekir.
+- video başlamadan önce bir yer tutucu
+- tarayıcı HTML5 videoyu desteklemiyorsa bir yedek: Bir veya hemen ilk alt düğüm `fallback` özelliğine sahip olabilir. Bu düğüm ve alt öğeleri mevcutsa ve kullanıcının tarayıcısında HTML5 video desteklenmiyorsa bu düğüm ve onun alt öğeleri görüntülenen içeriği oluşturur.
 
 #### Örnek <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -77,6 +74,7 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## Analiz <a name="analytics"></a>
@@ -171,18 +169,23 @@ HTML5 `video` etiketinin yerine gelen bir etiket; yalnızca doğrudan HTML5 vide
 Bu örnekte `poster` ve `artwork` özellikleri yer almaktadır. `poster`, video oynatılmadan önce yer tutucu resim olarak sunulurken `artwork`, MediaSession API'si aracılığıyla bildirimde görüntülenen resimdir.
 
 ```html
-<amp-video width="720" height="305" layout="responsive"
-    src="https://yourhost.com/videos/myvideo.mp4"
-    poster="https://yourhost.com/posters/poster.png"
-    artwork="https://yourhost.com/artworks/artwork.png"
-    title="Awesome video" artist="Awesome artist"
-    album="Amazing album">
+<amp-video
+  width="720"
+  height="305"
+  layout="responsive"
+  src="https://yourhost.com/videos/myvideo.mp4"
+  poster="https://yourhost.com/posters/poster.png"
+  artwork="https://yourhost.com/artworks/artwork.png"
+  title="Awesome video"
+  artist="Awesome artist"
+  album="Amazing album"
+>
 </amp-video>
 ```
 
 ## Oynatmak için Tıklama yer paylaşımı <a name="click-to-play-overlay"></a>
 
-Oynatmak için tıklama yer paylaşımının sağlanması, web'deki video oynatıcılar için yaygın olarak kullanılan bir kullanıcı deneyimi özelliğidir.  Örneğin, kullanıcının tıklayabileceği özel bir oynatma simgesi görüntüleyebilir, ayrıca videonun başlığını, farklı boyutlarda poster resimlerini vb. ekleyebilirsiniz.  `amp-video` bileşeni standart `play` AMP işlemini desteklediğinden oynatmak için tıklamayı kolayca uygulayabilirsiniz.
+Oynatmak için tıklama yer paylaşımının sağlanması, web'deki video oynatıcılar için yaygın olarak kullanılan bir kullanıcı deneyimi özelliğidir. Örneğin, kullanıcının tıklayabileceği özel bir oynatma simgesi görüntüleyebilir, ayrıca videonun başlığını, farklı boyutlarda poster resimlerini vb. ekleyebilirsiniz. `amp-video` bileşeni standart `play` AMP işlemini desteklediğinden oynatmak için tıklamayı kolayca uygulayabilirsiniz.
 
 Ayrıntılı bir örnek için Örneklerle AMP [amp-video ile ilgili oynatmak için tıklama yer paylaşımı](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/) sayfasını ziyaret edin.
 

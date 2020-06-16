@@ -13,7 +13,9 @@ $title: تضمين المحتوى من جهات خارجية
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
 [/sourcecode]
 
 يتم حاليًا تغيير أحجام التغريدات تلقائيًا بشكل نسبي
@@ -23,13 +25,17 @@ $title: تضمين المحتوى من جهات خارجية
 لتحديد نسبة العرض إلى الارتفاع بناءً على عرض الشاشة.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
+
 ```html
-<amp-twitter width="500"
+<amp-twitter
+  width="500"
   height="583"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
+
 [/example]
 
 ## تضمين Instagram
@@ -41,7 +47,9 @@ $title: تضمين المحتوى من جهات خارجية
 عليك أولاً بتضمين النص البرمجي التالي في `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 [/sourcecode]
 
 يمكنك تضمين الرمز القصير لبيانات Instagram والمتوفّر في عنوان URL لصورة Instagram.
@@ -51,13 +59,17 @@ $title: تضمين المحتوى من جهات خارجية
 وهكذا يجب أن تكون قيمة العرض والارتفاع عامة.
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
+
 ```html
-<amp-instagram data-shortcode="fBwFP"
+<amp-instagram
+  data-shortcode="fBwFP"
   width="320"
   height="392"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-instagram>
 ```
+
 [/example]
 
 ## عرض مشاركة أو فيديو Facebook
@@ -68,18 +80,25 @@ $title: تضمين المحتوى من جهات خارجية
 يجب تضمين النص البرمجي التالي في `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
 [/sourcecode]
 
 ##### مثال - تضمين مشاركة
 
 مصدر الرمز:
+
 ```html
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+<amp-facebook
+  width="486"
+  height="657"
+  layout="responsive"
+  data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+>
 </amp-facebook>
 ```
+
 معاينة:
 <amp-facebook width="486" height="657"
     layout="responsive"
@@ -89,13 +108,18 @@ $title: تضمين المحتوى من جهات خارجية
 ##### مثال - تضمين فيديو
 
 مصدر الرمز:
+
 ```html
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+<amp-facebook
+  width="476"
+  height="316"
+  layout="responsive"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
 </amp-facebook>
 ```
+
 معاينة:
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -111,7 +135,9 @@ $title: تضمين المحتوى من جهات خارجية
 يجب تضمين النص البرمجي التالي في `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
 [/sourcecode]
 
 يمكن العثور على مُعرّف `data-videoid` لموقع Youtube في كل عنوان URL لصفحة فيديو على Youtube.
@@ -121,13 +147,17 @@ $title: تضمين المحتوى من جهات خارجية
 استخدم `layout="responsive"` لعرض التنسيقات الصحيحة لمقاطع الفيديو بنسبة عرض إلى ارتفاع تبلغ 16:9:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
 ## عرض أحد الإعلانات
@@ -146,16 +176,20 @@ $title: تضمين المحتوى من جهات خارجية
 وتتطلب أنواع الإعلانات المختلفة سمات `data-*` مختلفة.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
 </amp-ad>
 ```
+
 [/example]
 
 إذا كان ذلك متاحًا من الشبكة،
@@ -163,17 +197,21 @@ $title: تضمين المحتوى من جهات خارجية
 لعرضه إذا لم يكن الإعلان متاحًا:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
+
 [/example]
 
 يتوافق AMP مع مجموعة كبيرة من الشبكات الإعلانية. راجع [إشارة إلى قائمة كاملة](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).

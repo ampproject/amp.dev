@@ -19,53 +19,52 @@ Instead, you may be showing users a document that completely lacks premium conte
 
 Solve both these issues by implementing premium subscriber validation and content decryption on the client side. With this solution, users with premium access will be able to decrypt content without needing to load a new page or wait for a backend to respond!
 
-
-# Setup overview 
+# Setup overview
 
 To implement client-side decryption, you will combine both symmetric-key and public-key cryptography in the following way:
 
 1.  Create a random symmetric-key for each document, granting each document a _unique_ key.
-{{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
+    {{ image('/static/img/docs/guides/cse/cse2.jpg', 259, 232, align='', layout='intrinsic', alt='Unique keys for each unique document.') }}
 1.  Encrypt the premium content with it's document's symmetric-key.
-{{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use the document key to encrypt premium content.') }}
+    {{ image('/static/img/docs/guides/cse/cse3.jpg', 130, 243, align='', layout='intrinsic', alt='Use the document key to encrypt premium content.') }}
     The key is symmetric to allow the same key to encrypt and decrypt the content.
-{{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='The same key that encrypts the document also decrypts it.') }}
+    {{ image('/static/img/docs/guides/cse/cse4.jpg', 188, 141, align='', layout='intrinsic', alt='The same key that encrypts the document also decrypts it.') }}
 1.  Encrypt the document key with a public key, using a [hybrid encryption ](https://en.wikipedia.org/wiki/Hybrid_cryptosystem)protocol to encrypt the symmetric keys.
-{{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='A hybrid encryption protocol encrypts the symmetric key with a public key.') }}
+    {{ image('/static/img/docs/guides/cse/cse5.jpg', 309, 114, align='', layout='intrinsic', alt='A hybrid encryption protocol encrypts the symmetric key with a public key.') }}
 1.  Using the [`<amp-subscriptions>`](https://amp.dev/documentation/components/amp-subscriptions/) and/or [`<amp-subscriptions-google>`](https://amp.dev/documentation/components/amp-subscriptions-google/?format=websites)component(s), store the encrypted document key inside of the AMP document, alongside the encrypted premium content.
-{{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Both keys are stored inside of the AMP document.') }}
+    {{ image('/static/img/docs/guides/cse/cse6.jpg', 264, 261, align='', layout='intrinsic', alt='Both keys are stored inside of the AMP document.') }}
 
 The AMP document stores the encrypted key in itself. This prevents decoupling of the encrypted document with the key that decodes it.
 
-# How does it work? 
+# How does it work?
 
 1.  AMP parses the key from encrypted content on the document the user lands on.
-{{ image('/static/img/docs/guides/cse/cse7.jpg', 115, 94, align='', layout='intrinsic', alt='The public and symmetric key encryptions.') }}
-1.   While serving the premium content, AMP sends the encrypted symmetric key from the document to the authorizer as a part of the user’s entitlements fetch. 
-{{ image('/static/img/docs/guides/cse/cse8.jpg', 150, 251, align='', layout='intrinsic', alt='AMP sends the encrypted symmetric key from the document to the authorizer as a part of the user’s entitlements fetch.') }}
+    {{ image('/static/img/docs/guides/cse/cse7.jpg', 115, 94, align='', layout='intrinsic', alt='The public and symmetric key encryptions.') }}
+1.  While serving the premium content, AMP sends the encrypted symmetric key from the document to the authorizer as a part of the user’s entitlements fetch.
+    {{ image('/static/img/docs/guides/cse/cse8.jpg', 150, 251, align='', layout='intrinsic', alt='AMP sends the encrypted symmetric key from the document to the authorizer as a part of the user’s entitlements fetch.') }}
 1.  The authorizer decides if the user has the correct permissions. If yes, the authorizer decrypts the document’s symmetric key with the authorizer’s private key from their public/private key pair. Then the authorizer returns the document key to the [amp-subscriptions component logic](https://github.com/ampproject/amphtml/blob/master/extensions/amp-subscriptions/0.1/amp-subscriptions.js#L264).
-{{ image('/static/img/docs/guides/cse/cse9.jpg', 237, 244, align='', layout='intrinsic', alt='AMP logic decrypts the keys.') }}
+    {{ image('/static/img/docs/guides/cse/cse9.jpg', 237, 244, align='', layout='intrinsic', alt='AMP logic decrypts the keys.') }}
 1.  AMP decrypts the premium content with the document key and shows it to the user!
-{{ image('/static/img/docs/guides/cse/cse10.jpg', 250, 319, align='', layout='intrinsic', alt='AMP decrypts the premium content with the document key and shows it to the user.') }}
+    {{ image('/static/img/docs/guides/cse/cse10.jpg', 250, 319, align='', layout='intrinsic', alt='AMP decrypts the premium content with the document key and shows it to the user.') }}
 
 # Implementation steps
 
-Follow the steps below to integrate AMP encryption handling with your internal entitlements server. 
+Follow the steps below to integrate AMP encryption handling with your internal entitlements server.
 
 ## Step 1: Create a public/private key pair
 
-To encrypt the document’s symmetric key, you need to have your own public/private key pair. The public-key encryption is a [hybrid encryption](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) protocol, specifically a [P-256 Elliptic Curve](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)) ECIES asymmetric encryption method with an [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bit) symmetric encryption method. 
+To encrypt the document’s symmetric key, you need to have your own public/private key pair. The public-key encryption is a [hybrid encryption](https://en.wikipedia.org/wiki/Hybrid_cryptosystem) protocol, specifically a [P-256 Elliptic Curve](<https://en.wikipedia.org/wiki/Elliptic-curve_cryptography#Fast_reduction_(NIST_curves)>) ECIES asymmetric encryption method with an [AES-GCM](https://tools.ietf.org/html/rfc5288) (128-bit) symmetric encryption method.
 
 We require public key handling to be done with [Tink](https://github.com/google/tink) using [this asymmetric key type](https://github.com/subscriptions-project/encryption/blob/617f0911c9870dae900a232e2dc8ee9196677a89/golang/vendor/github.com/google/tink/go/hybrid/hybrid_key_templates.go#L32). To create your private-public key pair, use either of the following:
 
-*   Tink’s [KeysetManager](https://github.com/google/tink/blob/master/java/src/main/java/com/google/crypto/tink/KeysetManager.java) class
-*   [Tinkey](https://github.com/google/tink/blob/master/docs/TINKEY.md) (Tink’s key utility tool)
+- Tink’s [KeysetManager](https://github.com/google/tink/blob/master/java/src/main/java/com/google/crypto/tink/KeysetManager.java) class
+- [Tinkey](https://github.com/google/tink/blob/master/docs/TINKEY.md) (Tink’s key utility tool)
 
 Both support key rotation. Implementing key rotation limits vulnerability to a compromised private key.
 
 To help you get started in creating asymmetric keys, we created [this script](https://github.com/subscriptions-project/encryption/tree/master/golang/cmd/gcp_key_gen). It:
 
-1.  Creates a new ECIES with AEAD key. 
+1.  Creates a new ECIES with AEAD key.
 1.  Outputs the public key in plaintext to an output file.
 1.  Outputs the private key to another output file.
 1.  Encrypts the generated private key using a key hosted on Google Cloud (GCP) before writing to the output file, (commonly referred to as [Envelope Encryption](https://cloud.google.com/kms/docs/envelope-encryption)).
@@ -74,13 +73,13 @@ We require storing/publishing your public [Tink Keyset](https://github.com/googl
 
 ## Step 2: Encrypt articles
 
-Decide if you will manually encrypt premium content, or automatically encrypt premium content. 
+Decide if you will manually encrypt premium content, or automatically encrypt premium content.
 
-### Manually Encrypt 
+### Manually Encrypt
 
-We require [AES-GCM 128](https://en.wikipedia.org/wiki/Galois/Counter_Mode) symmetric method using Tink to encrypt premium content. The symmetric document key used to encrypt the premium content should be unique for each document. Add the document key to a JSON object that contains the key in base64-encoded plaintext, as well as the SKUs required to access the document’s encrypted content. 
+We require [AES-GCM 128](https://en.wikipedia.org/wiki/Galois/Counter_Mode) symmetric method using Tink to encrypt premium content. The symmetric document key used to encrypt the premium content should be unique for each document. Add the document key to a JSON object that contains the key in base64-encoded plaintext, as well as the SKUs required to access the document’s encrypted content.
 
-The JSON object below contains an example of the key in base64-encoded plaintext and the SKU. 
+The JSON object below contains an example of the key in base64-encoded plaintext and the SKU.
 
 ```
 {
@@ -89,9 +88,9 @@ The JSON object below contains an example of the key in base64-encoded plaintext
 }
 ```
 
-Encrypt the above JSON object using the public key generated in Create a Public/Private Key Pair. 
+Encrypt the above JSON object using the public key generated in Create a Public/Private Key Pair.
 
-Add the encrypted result as the value to the key `"local"`. Place the key-value pair within a JSON object wrapped inside a `<script type="application/json" cryptokeys="">` tag. Place the tag in the head of the document. 
+Add the encrypted result as the value to the key `"local"`. Place the key-value pair within a JSON object wrapped inside a `<script type="application/json" cryptokeys="">` tag. Place the tag in the head of the document.
 
 ```
 <head>
@@ -106,7 +105,7 @@ Add the encrypted result as the value to the key `"local"`. Place the key-value 
 </head>
 ```
 
-You are required to encrypt the document key with the local environment and [Google’s public key](https://news.google.com/swg/encryption/keys/prod/tink/public_key). Including Google’s public key allows Google AMP cache to serve your document. You must instantiate a [Tink Keyset](https://github.com/google/tink/blob/master/docs/KEY-MANAGEMENT.md) to accept the Google public key from it’s URL: 
+You are required to encrypt the document key with the local environment and [Google’s public key](https://news.google.com/swg/encryption/keys/prod/tink/public_key). Including Google’s public key allows Google AMP cache to serve your document. You must instantiate a [Tink Keyset](https://github.com/google/tink/blob/master/docs/KEY-MANAGEMENT.md) to accept the Google public key from it’s URL:
 
 `https://news.google.com/swg/encryption/keys/prod/tink/public\_key`
 
@@ -125,7 +124,7 @@ You need to update your authorizer to decrypt document keys when a user has the 
 1.  Parsing the document key from the `"local"` JSON key field.
 1.  Document decryption.
 
-You must use Tink to decrypt document keys in your authorizer. To decrypt with Tink, instantiate a [HybridDecrypt](https://github.com/google/tink/blob/master/java/src/main/java/com/google/crypto/tink/HybridDecrypt.java) client using the private keys generated in the Create a Public/Private Key Pair section. Do this upon server startup for optimal performance. 
+You must use Tink to decrypt document keys in your authorizer. To decrypt with Tink, instantiate a [HybridDecrypt](https://github.com/google/tink/blob/master/java/src/main/java/com/google/crypto/tink/HybridDecrypt.java) client using the private keys generated in the Create a Public/Private Key Pair section. Do this upon server startup for optimal performance.
 
 Your HybridDecrypt/Authorizer deployment should roughly match your key rotation schedule. This creates availability of all generated keys to the HybridDecrypt client.
 
@@ -142,7 +141,7 @@ When a request comes to your authorizer:
 1.  Verify the user’s access to one of the entitlements listed in the AccessRequirements JSON field.
 1.  Return the document key from the “Key” field of the decrypted JSON object in the entitlements response. Add the decrypted document key in a new field entitled “decryptedDocumentKey” in the entitlements response. This grants access to the AMP framework.
 
-The sample below is a pseudo-code snippet that outlines the description steps above: 
+The sample below is a pseudo-code snippet that outlines the description steps above:
 
 ```js
 string decryptDocumentKey(string encryptedKey, List < string > usersEntitlements,
@@ -162,7 +161,7 @@ string decryptDocumentKey(string encryptedKey, List < string > usersEntitlements
     // 3. Parse the decrypted text into a JSON object.
     string decryptedKey = new string(decryptedKeyBytes, UTF_8);
     json::object decryptedParsedJson = JsonParser.parse(decryptedKey);
-    // 4. Check to see if the requesting user has the entitlements specified in               
+    // 4. Check to see if the requesting user has the entitlements specified in
     //    the AccessRequirements section of the JSON object.
     for (entitlement in usersEntitlements) {
         if (decryptedParsedJson["AccessRequirements"]
@@ -203,14 +202,11 @@ JsonResponse getEntitlements(string requestUri) {
 }
 ```
 
-
-
 # Related resources
 
-Check out the documentation and examples found on the [Tink Github page](https://github.com/google/tink). 
+Check out the documentation and examples found on the [Tink Github page](https://github.com/google/tink).
 
 All helper scripts are in the [subscriptions-project/encryption Github repo](https://github.com/subscriptions-project/encryption).
-
 
 # Further support
 

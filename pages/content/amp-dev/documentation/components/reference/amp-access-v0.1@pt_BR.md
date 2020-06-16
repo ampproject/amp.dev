@@ -2,18 +2,14 @@
 $title: amp-access
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: Oferece um paywall AMP e compatibilidade com assinaturas.
 ---
 
-
-
 O AMP Access ou "paywall AMP e compatibilidade com assinaturas" oferece aos editores controle sobre qual conteúdo pode ser acessado por um leitor e com quais restrições, com base no status da assinatura do leitor, no número de visualizações e em outros fatores.
 
 # amp-access <a name="amp-access"></a>
-
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -63,6 +59,7 @@ Devido à padronização da marcação, à compatibilidade com vários provedore
 ## Solução <a name="solution"></a>
 
 A solução proposta fornece controle ao editor sobre as decisões e os fluxos a seguir:
+
 - Criar e manter usuários
 - Controle de limite (permitir determinado número de visualizações gratuitas)
 - Responsabilidade pelo fluxo de login
@@ -88,7 +85,7 @@ Para que haja compatibilidade com o AMP Access, é necessário que o editor impl
 
 ### Código do leitor de AMP <a name="amp-reader-id"></a>
 
-Para auxiliar os serviços de acesso e casos de uso, o AMP Access introduz o conceito de *código do leitor*.
+Para auxiliar os serviços de acesso e casos de uso, o AMP Access introduz o conceito de _código do leitor_.
 
 O código do leitor é um código anônimo e exclusivo criado pelo ecossistema de AMP. Ele é exclusivo para cada par de leitor/editor, ou seja, um leitor é identificado de forma diferente para dois editores distintos. É um código não reversível. O código do leitor está incluído em todas as comunicações do AMP/editor e tem entropia muito alta. Os editores podem usar o código do leitor para identificá-lo e mapeá-lo para os próprios sistemas de identidade.
 
@@ -127,14 +124,12 @@ A página de login é acionada quando o leitor toca no link de login, que pode s
 Todos os endpoints são configurados no documento AMP como um objeto JSON no HEAD do documento:
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "property": value,
     ...
     }
 </script>
-
 ```
 
 As seguintes propriedades são definidas nessa configuração:
@@ -187,24 +182,19 @@ As seguintes propriedades são definidas nessa configuração:
   </tr>
 </table>
 
-Os valores de *`<URL>`* especificam URLs HTTPS com variáveis de substituição. As variáveis de substituição são abordadas com mais detalhes na seção abaixo [Variáveis de URL de acesso](#access-url-variables).
+Os valores de _`<URL>`_ especificam URLs HTTPS com variáveis de substituição. As variáveis de substituição são abordadas com mais detalhes na seção abaixo [Variáveis de URL de acesso](#access-url-variables).
 
 Veja um exemplo da configuração do AMP Access:
 
 ```html
-
 <script id="amp-access" type="application/json">
-{
-  "authorization":
-      "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
-  "pingback":
-      "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
-  "login":
-      "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
-  "authorizationFallbackResponse": {"error": true}
-}
+  {
+    "authorization": "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
+    "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
+    "login": "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
+    "authorizationFallbackResponse": {"error": true}
+  }
 </script>
-
 ```
 
 #### Vários provedores de acesso <a name="multiple-access-providers"></a>
@@ -212,16 +202,15 @@ Veja um exemplo da configuração do AMP Access:
 É possível especificar vários provedores de acesso usando uma matriz, em vez de um único objeto, e fornecendo um `namespace` para cada entrada.
 
 ```html
-
 <script id="amp-access" type="application/json">
-[
-  {
-    "property": value,
+  [
+    {
+      "property": value,
+      ...
+      "namespace": value
+    },
     ...
-    "namespace": value
-  },
-  ...
-]
+  ]
 </script>
 ```
 
@@ -273,6 +262,7 @@ Ao configurar os URLs para vários endpoints, o editor pode usar variáveis de s
 </table>
 
 Veja um exemplo do URL estendido com o código do leitor, o URL canônico, as informações de referência e o cachebuster aleatório:
+
 ```text
 https://pub.com/access?
   rid=READER_ID
@@ -290,13 +280,15 @@ A marcação de conteúdo de acesso descreve quais seções ficam visíveis ou o
 O atributo `amp-access` fornece a expressão que resulta em true ou false, com base na resposta de autorização retornada pelo endpoint de autorização. O valor resultante indica se o elemento e o respectivo conteúdo estão visíveis ou não.
 
 O valor `amp-access` é uma expressão booleana definida em uma linguagem semelhante a SQL. A gramática é definida no [Apêndice A](#appendix-a-amp-access-expression-grammar) da seguinte forma:
-```html
 
+```html
 <div amp-access="expression">…</div>
 ```
+
 As propriedades e os valores se referem às propriedades e aos valores da resposta de autorização retornada pelo endpoint de autorização. Isso fornece um sistema flexível, compatível com diferentes cenários de acesso. Se estiver usando namespaces, adicione-os aos nomes de propriedades, por exemplo, `anamespace.aproperty`.
 
 O atributo `amp-access-hide` pode ser usado para ocultar o elemento de maneira otimista antes que a resposta de autorização seja recebida, o que pode mostrá-lo. Ele fornece a semântica de "invisível por padrão". A resposta de autorização retornada posteriormente pela autorização pode rescindir esse padrão e tornar a seção visível. Quando o atributo `amp-access-hide` é omitido, a seção é mostrada/incluída por padrão. O atributo `amp-access-hide` só pode ser usado em conjunto com o atributo `amp-access`.
+
 ```html
 <div amp-access="expression" amp-access-hide>…</div>
 ```
@@ -308,6 +300,7 @@ Podemos estender o conjunto de atributos `amp-access-*` conforme necessário par
 Se houver falha na solicitação de autorização e a resposta "authorizationFallbackResponse" não for especificada no documento, as expressões `amp-access` não serão avaliadas, e a definição de se uma seção ficará visível ou oculta será feita pela presença do atributo `amp-access-hide` fornecido inicialmente pelo documento.
 
 Veja um exemplo que mostra o link de login ou o conteúdo completo, com base no status da assinatura:
+
 ```html
 <header>
   Title of the document
@@ -323,13 +316,15 @@ Veja um exemplo que mostra o link de login ou o conteúdo completo, com base no 
 <div amp-access="subscriber">
   Full content.
 </div>
-
 ```
+
 Aqui:
-- *subscriber* é um campo booleano da resposta de autorização retornado pelo endpoint de autorização. Essa seção fica oculta por padrão, o que é opcional.
+
+- _subscriber_ é um campo booleano da resposta de autorização retornado pelo endpoint de autorização. Essa seção fica oculta por padrão, o que é opcional.
 - Esse exemplo opta por mostrar todo o conteúdo de maneira otimista.
 
 Veja outro exemplo que mostra ao leitor a exoneração de responsabilidade sobre o estado do limite:
+
 ```html
 {% raw %}
 <section amp-access="views <= maxViews">
@@ -341,6 +336,7 @@ Veja outro exemplo que mostra ao leitor a exoneração de responsabilidade sobre
 ```
 
 E este é um exemplo que mostra conteúdo adicional para os assinantes premium:
+
 ```html
 <section amp-access="subscriptonType = 'premium'">
   Shhh… No one but you can read this content.
@@ -356,12 +352,15 @@ A autorização aceita qualquer parâmetro, conforme definido na seção [Variá
 Esse endpoint produz a resposta de autorização que pode ser usada na marcação de conteúdo para mostrar/ocultar diferentes partes do conteúdo.
 
 O formato da solicitação é:
+
 ```text
 https://publisher.com/amp-access.json?
 rid=READER_ID
 &url=SOURCE_URL
 ```
+
 A resposta é um objeto JSON de formato livre: pode conter quaisquer propriedades e valores, com poucas limitações. As limitações são:
+
 - Os nomes de propriedades precisam obedecer às restrições definidas pela gramática de expressões de `amp-access` (consulte o [Apêndice A](#appendix-a-amp-access-expression-grammar)). Isso significa, principalmente, que os nomes de propriedades não podem conter caracteres como espaços, traços e outros caracteres que não obedeçam às especificações de "amp-access".
 
 - Os valores da propriedade podem ser apenas de um destes tipos: string, number, boolean.
@@ -373,6 +372,7 @@ A resposta é um objeto JSON de formato livre: pode conter quaisquer propriedade
 - A resposta não pode incluir informações de identificação pessoal (PII, na sigla em inglês) ou dados pessoais.
 
 Veja uma pequena lista de ideias possíveis para propriedades que podem ser retornadas a partir do endpoint de autorização:
+
 - Informações de limite: número máximo permitido de visualizações e o número atual de visualizações.
 
 - Se o leitor está conectado ou é um assinante.
@@ -381,6 +381,7 @@ Veja uma pequena lista de ideias possíveis para propriedades que podem ser reto
 - Informação geográfica: país, região, região de publicação personalizada.
 
 Veja um exemplo de resposta quando o leitor não é assinante, tem um limite de 10 artigos/mês e já visualizou seis:
+
 ```json
 {
   "maxViews": 10,
@@ -388,13 +389,16 @@ Veja um exemplo de resposta quando o leitor não é assinante, tem um limite de 
   "subscriber": false
 }
 ```
+
 Este é um exemplo de resposta quando o leitor está conectado e tem uma assinatura do tipo premium:
+
 ```json
 {
   "loggedIn": true,
   "subscriptionType": "premium"
 }
 ```
+
 O RPC pode ser chamado na fase de pré-renderização e, portanto, não precisa ser usado para a contagem regressiva do limite, considerando que o leitor pode nunca chegar a ver o documento.
 
 Outra consideração importante é que, em alguns casos, o ambiente de tempo de execução de AMP precisa chamar o endpoint de autorização várias vezes em cada impressão de documento. Isso pode acontecer quando o ambiente de tempo de execução de AMP acredita que os parâmetros de acesso do leitor foram alterados significativamente, por exemplo, após um fluxo de login bem-sucedido.
@@ -419,7 +423,7 @@ O ambiente de tempo de execução de AMP usa as seguintes classes CSS durante o 
 
 2. A classe CSS `amp-access-error` é configurada na raiz do documento quando o fluxo de autorização falha.
 
-Na opção *server*, a chamada para o endpoint de autorização é feita pelo Google AMP Cache como um endpoint HTTPS simples. Isso significa que, nesse caso, os cookies do editor não podem ser entregues.
+Na opção _server_, a chamada para o endpoint de autorização é feita pelo Google AMP Cache como um endpoint HTTPS simples. Isso significa que, nesse caso, os cookies do editor não podem ser entregues.
 
 ### Endpoint de pingback <a name="pingback-endpoint-1"></a>
 
@@ -434,10 +438,12 @@ O pingback não produz uma resposta. Qualquer resposta é ignorada pelo ambiente
 O endpoint de pingback é chamado quando o leitor começa a visualizar o documento e depois que ele conclui o fluxo de login.
 
 O editor pode usar o pingback:
+
 - para fazer contagem regressiva do número de visualizações gratuitas da página;
 - para mapear o código do leitor de AMP para a identidade do editor, considerando que, pelo fato de o pingback ser um endpoint CORS credenciado, ele pode conter cookies do editor.
 
 O formato da solicitação é:
+
 ```text
 https://publisher.com/amp-pingback?
 rid=READER_ID
@@ -449,20 +455,22 @@ rid=READER_ID
 O URL da página de login é configurado por meio da propriedade `login` na seção [Configuração de acesso AMP](#configuration).
 
 A configuração pode especificar um único URL de login ou um mapa de URLs de login codificados pelo tipo de login. Um exemplo de URL de login:
+
 ```json
 {
   "login": "https://publisher.com/amp-login.html?rid={READER_ID}"
-  }
+}
 ```
 
 Um exemplo de vários URLs de login:
+
 ```json
 {
   "login": {
     "signin": "https://publisher.com/signin.html?rid={READER_ID}",
     "signup": "https://publisher.com/signup.html?rid={READER_ID}"
-    }
   }
+}
 ```
 
 O URL aceita qualquer parâmetro, conforme definido na seção [Variáveis de URL de acesso](#access-url-variables). Por exemplo, ele pode passar o código do leitor de AMP e o URL do documento. A substituição de consulta `RETURN_URL` pode ser usada para especificar o parâmetro de consulta para o URL de retorno, por exemplo, `?ret=RETURN_URL`. O URL de retorno é obrigatório. Se a substituição `RETURN_URL` não for especificada, ela será injetada automaticamente com o nome do parâmetro de consulta padrão "return".
@@ -470,16 +478,20 @@ O URL aceita qualquer parâmetro, conforme definido na seção [Variáveis de UR
 A página de login é uma página da Web normal sem restrições especiais, além de precisar funcionar bem como uma [caixa de diálogo do navegador](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/open). Consulte a seção [Fluxo de login](#login-flow) para ver mais detalhes.
 
 O formato da solicitação é:
+
 ```text
 https://publisher.com/amp-login.html?
 rid=READER_ID
 &url=SOURCE_URL
 &return=RETURN_URL
 ```
+
 Observe que o parâmetro de URL "return" será adicionado pelo ambiente de tempo de execução de AMP automaticamente se a substituição `RETURN_URL` não for especificada. Depois que a página de login concluir o trabalho, ela precisará redirecionar para o "Return URL" especificado, com o seguinte formato:
+
 ```text
 RETURN_URL#success=true|false
 ```
+
 Observe o uso do parâmetro de hash de URL “success”. O valor é “true” ou “false”, dependendo de se o login é bem-sucedido ou abandonado. O ideal é que a página de login, quando possível, envie o sinal em casos de sucesso ou falha.
 
 Se o sinal `success=true` for retornado, o ambiente de tempo de execução de AMP repetirá as chamadas para os endpoints de autorização e pingback para atualizar o estado do documento e informar a "view" com o novo perfil de acesso.
@@ -491,11 +503,13 @@ O editor pode colocar o link de login em qualquer parte do conteúdo do document
 Um ou mais URLs de login são configurados por meio da propriedade "login" na seção [Configuração do AMP Access](#configuration).
 
 O link de login pode ser declarado em qualquer elemento HTML que aceite o atributo “on”. Normalmente, é um elemento de botão ou âncora. Quando um único URL de login é configurado, o formato é:
+
 ```html
 <a on="tap:amp-access.login">Login or subscribe</a>
 ```
 
 Quando vários URLs de login são configurados, o formato é `tap:amp-access.login-{type}`. Exemplo:
+
 ```html
 <a on="tap:amp-access.login-signup">Subscribe</a>
 ```
@@ -504,9 +518,9 @@ Quando namespaces são usados, o formato é `tap:amp-access.login-{namespace}` o
 
 A AMP não faz distinção entre login e assinatura. Essa distinção pode ser configurada pelo editor usando vários URLs/links de login ou no lado do editor.
 
-## Integração com *amp-analytics* <a name="integration-with-amp-analytics"></a>
+## Integração com _amp-analytics_ <a name="integration-with-amp-analytics"></a>
 
-A integração com *amp-analytics* está documentada em [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
+A integração com _amp-analytics_ está documentada em [amp-access-analytics.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md).
 
 ## Segurança de origem do CORS <a name="cors-origin-security"></a>
 
@@ -556,27 +570,27 @@ Como de costume, o código do leitor precisa ser incluído na chamada para a pá
 
 ## Glossário de AMP <a name="amp-glossary"></a>
 
-* **Documento AMP**: o documento HTML que segue o formato AMP e é validado pelo validador de AMP. Os documentos AMP podem ser armazenados em cache pelo Google AMP Cache.
-* **Validador de AMP**: o programa de computador que faz uma análise estática de um documento HTML e retorna sucesso ou falha, dependendo de se o documento obedece ou não ao formato AMP.
-* **Ambiente de tempo de execução de AMP**: o tempo de execução do JavaScript que executa o documento AMP.
-* **Google AMP Cache**: o cache de proxy para documentos AMP.
-* **Visualizador de AMP**: o aplicativo da Web ou nativo que exibe/incorpora documentos AMP.
-* **Publisher.com**: o site de um editor de AMP.
-* **Endpoint CORS**: endpoint HTTPS de origem cruzada. Consulte [https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) para ver mais informações. Consulte [Segurança de origem do CORS](#cors-origin-security) para saber como essas solicitações precisam ser protegidas.
-* **Leitor**: a pessoa que visualiza os documentos AMP.
-* **Pré-renderização de AMP**: os visualizadores de AMP podem usar a pré-renderização, que renderiza um documento oculto antes de ele ser exibido. Isso proporciona uma melhora significativa no desempenho. No entanto, é importante levar em conta que a pré-renderização do documento não constitui uma visualização, já que o leitor pode nunca chegar a ver o documento.
+- **Documento AMP**: o documento HTML que segue o formato AMP e é validado pelo validador de AMP. Os documentos AMP podem ser armazenados em cache pelo Google AMP Cache.
+- **Validador de AMP**: o programa de computador que faz uma análise estática de um documento HTML e retorna sucesso ou falha, dependendo de se o documento obedece ou não ao formato AMP.
+- **Ambiente de tempo de execução de AMP**: o tempo de execução do JavaScript que executa o documento AMP.
+- **Google AMP Cache**: o cache de proxy para documentos AMP.
+- **Visualizador de AMP**: o aplicativo da Web ou nativo que exibe/incorpora documentos AMP.
+- **Publisher.com**: o site de um editor de AMP.
+- **Endpoint CORS**: endpoint HTTPS de origem cruzada. Consulte [https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) para ver mais informações. Consulte [Segurança de origem do CORS](#cors-origin-security) para saber como essas solicitações precisam ser protegidas.
+- **Leitor**: a pessoa que visualiza os documentos AMP.
+- **Pré-renderização de AMP**: os visualizadores de AMP podem usar a pré-renderização, que renderiza um documento oculto antes de ele ser exibido. Isso proporciona uma melhora significativa no desempenho. No entanto, é importante levar em conta que a pré-renderização do documento não constitui uma visualização, já que o leitor pode nunca chegar a ver o documento.
 
 ## Revisões <a name="revisions"></a>
 
-* 02/09/2016: propriedade de configuração "noPingback" "e pingback opcional.
-* 03/03/2016: reenvio de pingback após o login (v0.5).
-* 19/02/2016: amostras corrigidas para remover `{}` das substituições de variáveis de URL.
-* 15/02/2016: o [endpoint de configuração](#configuration) e [de autorização](#authorization-endpoint) agora permitem a propriedade "authorizationFallbackResponse", que pode ser usada quando a autorização falha.
-* 11/02/2016: tempo limite da solicitação de autorização no [endpoint de autorização](#authorization-endpoint).
-* 11/02/2016: referências de campos aninhadas, como `object.field`, agora são permitidas.
-* 09/02/2016: seções [Primeiro clique grátis](#metering) e [Limite](#first-click-free).
-* 03/02/2016: especificação para segurança da "origem da fonte" adicionada a [Segurança de origem do CORS](#cors-origin-security).
-* 01/02/2016: o parâmetro de consulta "return" da página de login pode ser personalizado usando a substituição de URL RETURN_URL.
+- 02/09/2016: propriedade de configuração "noPingback" "e pingback opcional.
+- 03/03/2016: reenvio de pingback após o login (v0.5).
+- 19/02/2016: amostras corrigidas para remover `{}` das substituições de variáveis de URL.
+- 15/02/2016: o [endpoint de configuração](#configuration) e [de autorização](#authorization-endpoint) agora permitem a propriedade "authorizationFallbackResponse", que pode ser usada quando a autorização falha.
+- 11/02/2016: tempo limite da solicitação de autorização no [endpoint de autorização](#authorization-endpoint).
+- 11/02/2016: referências de campos aninhadas, como `object.field`, agora são permitidas.
+- 09/02/2016: seções [Primeiro clique grátis](#metering) e [Limite](#first-click-free).
+- 03/02/2016: especificação para segurança da "origem da fonte" adicionada a [Segurança de origem do CORS](#cors-origin-security).
+- 01/02/2016: o parâmetro de consulta "return" da página de login pode ser personalizado usando a substituição de URL RETURN_URL.
 
 ## Apêndice A: gramática de expressões “amp-access” <a name="appendix-a-amp-access-expression-grammar"></a>
 

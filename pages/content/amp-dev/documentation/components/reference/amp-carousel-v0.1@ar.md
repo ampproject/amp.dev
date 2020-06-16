@@ -9,7 +9,6 @@ teaser:
   text: Displays multiple similar pieces of content along a horizontal axis.
 ---
 
-
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
 
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 منصّة عرض بعناصر متغيّرة لعرض عدة عناصر محتوى متشابهة متغيّرة على محور أفقي؛ وتهدف إلى توفير مرونة عالية وأداء عالٍ.
 
@@ -61,72 +58,95 @@ limitations under the License.
 تتنقل منصّة العرض ذات العناصر المتغيّرة بين العناصر عند تمرير المستخدِم سريعًا أو استخدام مفاتيح الأسهم أو النقر على أسهم التنقل الاختياريّة.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel width="450"
-  height="300">
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+<amp-carousel width="450" height="300">
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
     width="450"
-    height="300"></amp-img>
+    height="300"
+  ></amp-img>
 </amp-carousel>
 ```
+
 [/example]
 
 # التقدم إلى شريحة محددة <a name="advancing-to-a-specific-slide"></a>
 
-سيؤدي تعيين طريقة للسمة `on` في عنصر لتنفيذ `tap:carousel-id.goToSlide(index=N)`، عند نقر المستخدِم، إلى انتقال منصّة عرض بعناصر متغيّرة ذات المعرف "carousel-id" إلى الشريحة بالفهرس index=N (ستكون الشريحة الأولى عند index=0 والشريحة الثانية عند  index=1 وهكذا).
+سيؤدي تعيين طريقة للسمة `on` في عنصر لتنفيذ `tap:carousel-id.goToSlide(index=N)`، عند نقر المستخدِم، إلى انتقال منصّة عرض بعناصر متغيّرة ذات المعرف "carousel-id" إلى الشريحة بالفهرس index=N (ستكون الشريحة الأولى عند index=0 والشريحة الثانية عند index=1 وهكذا).
 
 في المثال التالي، لدينا منصّة عرض بثلاث صور مع أزرار معاينة أسفل المنصّة. عندما ينقر المستخدِم على أحد الأزرار، يتم عرض عنصر المنصّة المقابل.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel id="carousel-with-preview"
+<amp-carousel
+  id="carousel-with-preview"
+  width="450"
+  height="300"
+  layout="responsive"
+  type="slides"
+>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
     height="300"
     layout="responsive"
-    type="slides">
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="apples"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="lemons"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="blueberries"></amp-img>
-  </amp-carousel>
-  <div class="carousel-preview">
-    <button on="tap:carousel-with-preview.goToSlide(index=0)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-        width="60"
-        height="40"
-        alt="apples"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=1)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-        width="60"
-        height="40"
-        alt="lemons"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=2)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-        width="60"
-        height="40"
-        alt="blueberries"></amp-img>
-    </button>
-  </div>
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
 ```
+
 [/example]
 
 # السمات <a name="attributes"></a>
@@ -188,6 +208,7 @@ limitations under the License.
       <em>مثال: لعرض منصّة عرض بعناصر متغيّرة من النوع slides مع عناصر التحكم والتكرار والتشغيل التلقائي المتأخر</em>
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
 <amp-carousel type="slides"
   width="450"
@@ -209,23 +230,25 @@ limitations under the License.
     height="300"></amp-img>
 </amp-carousel>
 ```
-[/example]</td>
-    </tr>
-    <tr>
-      <td width="40%"><strong>السمات المشتركة</strong></td>
-      <td>يتضمن هذا العنصر <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
-    </tr>
-</table>
 
+[/example]</td>
+
+</tr>
+<tr>
+<td width="40%"><strong>السمات المشتركة</strong></td>
+<td>يتضمن هذا العنصر <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">السمات المشتركة</a> التي تشمل مكونات AMP.</td>
+</tr>
+
+</table>
 
 # التصميم <a name="styling"></a>
 
-* يمكنك استخدام محدد العنصر `amp-carousel` لتصميمه بحرية.
-* يمكنك استخدام محدد الفئة `.amp-carousel-slide` لاستهداف عناصر منصّة العرض.
-* يكون زر `amp-carousel` مخفيًا عند تعطيله.
-* بشكل تلقائي، يستخدم `.amp-carousel-button` صورة SVG مضمّنة كصورة background-image للأزرار. يمكنك إلغاء ذلك باستخدام صورة SVG أو صورة خاصة بك كما في المثال أدناه.
+- يمكنك استخدام محدد العنصر `amp-carousel` لتصميمه بحرية.
+- يمكنك استخدام محدد الفئة `.amp-carousel-slide` لاستهداف عناصر منصّة العرض.
+- يكون زر `amp-carousel` مخفيًا عند تعطيله.
+- بشكل تلقائي، يستخدم `.amp-carousel-button` صورة SVG مضمّنة كصورة background-image للأزرار. يمكنك إلغاء ذلك باستخدام صورة SVG أو صورة خاصة بك كما في المثال أدناه.
 
-*مثال: صورة SVG مضمّنة تلقائيًا للزر `.amp-carousel-button`*
+_مثال: صورة SVG مضمّنة تلقائيًا للزر `.amp-carousel-button`_
 
 ```css
 .amp-carousel-button-prev {
@@ -234,7 +257,7 @@ limitations under the License.
 }
 ```
 
-*مثال: إلغاء صورة SVG المضمنّة تلقائيًا للزر `.amp-carousel-button`*
+_مثال: إلغاء صورة SVG المضمنّة تلقائيًا للزر `.amp-carousel-button`_
 
 ```css
 .amp-carousel-button-prev {

@@ -24,22 +24,22 @@ Kirimkan data jumlah kunjungan halaman ke URL yang ditentukan menggunakan [`amp-
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
+  <script type="application/json">
+    {
+      "requests": {
         "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
-    },
-    "vars": {
+      },
+      "vars": {
         "account": "ABC123"
-    },
-    "triggers": {
+      },
+      "triggers": {
         "trackPageview": {
-            "on": "visible",
-            "request": "pageview"
+          "on": "visible",
+          "request": "pageview"
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -49,19 +49,20 @@ Kirimkan data jumlah kunjungan halaman ke Google Analytics (lihat juga [Pelacaka
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-    "vars": {
-        "account": "UA-XXXXX-Y"  // Replace with your property ID.
-    },
-    "triggers": {
-        "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
-            "on": "visible",
-            "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y" // Replace with your property ID.
+      },
+      "triggers": {
+        "trackPageview": {
+          // Trigger names can be any string. trackPageview is not a required name.
+          "on": "visible",
+          "request": "pageview"
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -75,27 +76,27 @@ Contoh berikut menggunakan atribut `selector` untuk mengirim peristiwa `click` k
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
+  <script type="application/json">
+    {
+      "requests": {
         "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-    },
-    "vars": {
+      },
+      "vars": {
         "account": "ABC123"
-    },
-    "triggers": {
+      },
+      "triggers": {
         "trackAnchorClicks": {
-            "on": "click",
-            "selector": "a",
-            "request": "event",
-            "vars": {
-                "eventId": "42",
-                "eventLabel": "clicked on a link"
-            }
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -105,24 +106,24 @@ Contoh berikut menggunakan atribut `selector` `trigger` untuk mengirim peristiwa
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics3">
-<script type="application/json">
-{
-    "vars": {
-        "account": "UA-XXXXX-Y"  // Replace with your property ID.
-    },
-    "triggers": {
-        "trackClickOnHeader" : {
-            "on": "click",
-            "selector": "#header",
-            "request": "event",
-            "vars": {
-                "eventCategory": "ui-components",
-                "eventAction": "header-click"
-            }
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y" // Replace with your property ID.
+      },
+      "triggers": {
+        "trackClickOnHeader": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "ui-components",
+            "eventAction": "header-click"
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -132,25 +133,25 @@ Lacak scroll halaman menggunakan [`amp-analytics`](../../../../documentation/com
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
+  <script type="application/json">
+    {
+      "requests": {
         "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-    },
-    "vars": {
+      },
+      "vars": {
         "account": "ABC123"
-    },
-    "triggers": {
+      },
+      "triggers": {
         "scrollPings": {
-            "on": "scroll",
-            "scrollSpec": {
-                "verticalBoundaries": [25, 50, 90],
-                "horizontalBoundaries": [90]
-            }
+          "on": "scroll",
+          "scrollSpec": {
+            "verticalBoundaries": [25, 50, 90],
+            "horizontalBoundaries": [90]
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -164,27 +165,27 @@ Contoh berikut menggunakan atribut `selector` untuk mengirim peristiwa `click` k
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
+  <script type="application/json">
+    {
+      "requests": {
         "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-    },
-    "vars": {
+      },
+      "vars": {
         "account": "ABC123"
-    },
-    "triggers": {
+      },
+      "triggers": {
         "trackClickOnTwitterLink": {
-            "on": "click",
-            "selector": "#tweet-link",
-            "request": "event",
-            "vars": {
-                "eventId": "43",
-                "eventLabel": "clicked on a tweet link"
-            }
+          "on": "click",
+          "selector": "#tweet-link",
+          "request": "event",
+          "vars": {
+            "eventId": "43",
+            "eventLabel": "clicked on a tweet link"
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -194,24 +195,24 @@ Contoh berikut menggunakan atribut `selector` `trigger` untuk mengirim peristiwa
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics4">
-<script type="application/json">
-{
-    "vars": {
+  <script type="application/json">
+    {
+      "vars": {
         "account": "UA-XXXXX-Y" // Replace with your property ID.
-    },
-    "triggers": {
-        "trackClickOnTwitterLink" : {
-            "on": "click",
-            "selector": "#tweet-link",
-            "request": "social",
-            "vars": {
-                "socialNetwork": "twitter",
-                "socialAction": "tweet",
-                "socialTarget": "https://www.examplepetstore.com"
-            }
+      },
+      "triggers": {
+        "trackClickOnTwitterLink": {
+          "on": "click",
+          "selector": "#tweet-link",
+          "request": "social",
+          "vars": {
+            "socialNetwork": "twitter",
+            "socialAction": "tweet",
+            "socialTarget": "https://www.examplepetstore.com"
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```

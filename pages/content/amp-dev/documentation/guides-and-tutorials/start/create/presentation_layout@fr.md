@@ -7,6 +7,7 @@ $title: Modifier la présentation et la disposition
 Les pages AMP sont des pages Web ; toute application de style sur la page et sur ses éléments est réalisée à l'aide de propriétés CSS communes. Vous pouvez appliquer un style aux éléments à l'aide de sélecteurs de classe ou d'élément dans une feuille de style en ligne au sein de l'en-tête (`<head>`), appelée `<style amp-custom>` :
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -17,6 +18,7 @@ Les pages AMP sont des pages Web ; toute application de style sur la page et su
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Chaque page AMP peut intégrer une seule feuille de style uniquement et l'utilisation de certains sélecteurs n'est pas autorisée. [Tout savoir sur les styles](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

@@ -2,14 +2,12 @@
 $title: amp-mustache
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Permite el renderizado de las plantillas Mustache.js
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Permite el renderizado de las plantillas [Mustache.js](https://github.com/janl/mustache.js/).
 
@@ -46,22 +42,21 @@ Permite el renderizado de las plantillas [Mustache.js](https://github.com/janl/m
   </tr>
 </table>
 
-
 ## Notas de la versión <a name="version-notes"></a>
 
-| Versión | Descripción |
-|-------|-----|
-| 0.2 | Se ha incluido la compatibilidad con los elementos `<svg>`; se ha reducido el tamaño del bundle a 12,2 KB (previamente 20,5 KB) y comprimido en formato gzip.Migra a una biblioteca de depuración HTML más moderna (antes Caja, ahora DOMPurify). Esto puede provocar pequeños puntos de ruptura debido a las diferencias en la inclusión en la lista blanca de atributos y etiquetas. Te recomendamos que pruebes primero las páginas antes de pasar a la fase de producción para asegurarte de que los cambios en el marcado generado no afectan a su funcionamiento. |
-| 0.1 | Implementación inicial. |
+| Versión | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.2     | Se ha incluido la compatibilidad con los elementos `<svg>`; se ha reducido el tamaño del bundle a 12,2 KB (previamente 20,5 KB) y comprimido en formato gzip.Migra a una biblioteca de depuración HTML más moderna (antes Caja, ahora DOMPurify). Esto puede provocar pequeños puntos de ruptura debido a las diferencias en la inclusión en la lista blanca de atributos y etiquetas. Te recomendamos que pruebes primero las páginas antes de pasar a la fase de producción para asegurarte de que los cambios en el marcado generado no afectan a su funcionamiento. |
+| 0.1     | Implementación inicial.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 ## Sintaxis <a name="syntax"></a>
 
 Mustache es una sintaxis de plantilla "sin lógica". Consulta la [documentación de Mustache.js](https://github.com/janl/mustache.js/) para obtener más información. Algunas de las etiquetas principales de Mustache son:
 
-* {% raw %}`{{variable}}`{% endraw %}: etiqueta de variable. Genera el valor de una variable con formato de escape de HTML.
-* {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: etiqueta de sección. Puede comprobar la existencia de una variable y repetir la lógica si se trata de una matriz.
-* {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: etiqueta invertida. Puede comprobar la no existencia de una variable.
-* {% raw %}`{{{unescaped}}}`{% endraw %}: HTML sin escape. Se aplican restricciones al marcado que puede generar (consulta la sección "Restricciones", que aparece más abajo).
+- {% raw %}`{{variable}}`{% endraw %}: etiqueta de variable. Genera el valor de una variable con formato de escape de HTML.
+- {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: etiqueta de sección. Puede comprobar la existencia de una variable y repetir la lógica si se trata de una matriz.
+- {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: etiqueta invertida. Puede comprobar la no existencia de una variable.
+- {% raw %}`{{{unescaped}}}`{% endraw %}: HTML sin escape. Se aplican restricciones al marcado que puede generar (consulta la sección "Restricciones", que aparece más abajo).
 
 ## Uso <a name="usage"></a>
 
@@ -70,8 +65,11 @@ La plantilla de `amp-mustache` debe definirse y utilizarse de acuerdo con las [e
 En primer lugar, `amp-mustache` debe declararse o cargarse de la siguiente manera:
 
 ```html
-
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  async=""
+  custom-template="amp-mustache"
+></script>
 ```
 
 A continuación, las plantillas de Mustache se pueden definir mediante una etiqueta `script` o `template` de la siguiente manera:
@@ -79,15 +77,16 @@ A continuación, las plantillas de Mustache se pueden definir mediante una etiqu
 [sourcecode:html]
 {% raw %}<!-- Con la etiqueta `template`. -->
 <template type="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </template>
 {% endraw %}[/sourcecode]
 o
 
 <!-- Con la etiqueta `script`. -->
+
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </script>
 {% endraw %}[/sourcecode]
 
@@ -101,8 +100,8 @@ El elemento AMP que utiliza esta plantilla para renderizar su contenido (por eje
 
 Como todas las plantillas de AMP, las de `amp-mustache` deben ser fragmentos DOM y tener el formato correcto. Esto quiere decir, entre otras cosas, que no puedes usar `amp-mustache` para:
 
-* Obtener un nombre de etiqueta; por ejemplo, no se admite el uso de {% raw %}`<{{tagName}}>`{% endraw %}.
-* Obtener un nombre de atributo; por ejemplo, no se admite el uso de {% raw %}`<div {{attrName}}=something>`{% endraw %}.
+- Obtener un nombre de etiqueta; por ejemplo, no se admite el uso de {% raw %}`<{{tagName}}>`{% endraw %}.
+- Obtener un nombre de atributo; por ejemplo, no se admite el uso de {% raw %}`<div {{attrName}}=something>`{% endraw %}.
 
 El resultado de "triple-mustache" se ha depurado para que solo admita las siguientes etiquetas: `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u` y `ul`.
 
@@ -120,9 +119,10 @@ Para solucionar este problema, se puede hacer referencia a un elemento `<templat
 
 [sourcecode:html]
 {% raw %}<amp-list id="myList" src="https://foo.com/list.json">
-  <template type="amp-mustache">
-    <div>{{title}}</div>
-  </template>
+<template type="amp-mustache">
+
+<div>{{title}}</div>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -131,6 +131,7 @@ También se puede representar como:
 [sourcecode:html]
 {% raw %}<!-- Externalize templates to avoid nesting. -->
 <template type="amp-mustache" id="myTemplate">
+
   <div>{{title}}</div>
 </template>
 
@@ -144,6 +145,7 @@ Dado que las cadenas de las plantillas de AMP deben especificarse en elementos `
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -169,6 +171,7 @@ Para solucionar este problema, se pueden encapsular las secciones de Mustache en
 
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -187,6 +190,7 @@ Cuando se utiliza `amp-mustache` para calcular valores de atributo, las comillas
 <amp-img alt="{{foo}}" src="example.jpg" width="100" height="100"></amp-img>
 
 <!-- A single-quote (') or double-quote (") in bar will cause an AMP runtime parse error. -->
+
 <button on="tap:AMP.setState({foo: &#39;{{bar}}&#39;})">Click me</button>
 </template>
 {% endraw %}[/sourcecode]

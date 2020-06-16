@@ -23,7 +23,8 @@ AMP ページに広告を掲載するには、[`amp-ad`](../../../../documentati
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -38,7 +39,8 @@ AMP ページに広告を掲載するには、[`amp-ad`](../../../../documentati
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -55,7 +57,8 @@ AMP ページに広告を掲載するには、[`amp-ad`](../../../../documentati
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -63,7 +66,8 @@ AMP ページに広告を掲載するには、[`amp-ad`](../../../../documentati
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -86,7 +90,8 @@ AMP ページに広告を掲載するには、[`amp-ad`](../../../../documentati
 - ツイート
 - 記事の引用
 
-##  YouTube 動画を埋め込む
+## YouTube 動画を埋め込む
+
 では、YouTube 動画を AMP ドキュメントに埋め込んでみましょう。AMP ドキュメントの `<header>` の直後（先ほど追加した 2 つの [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) の上）に次のコードを**追加**します。
 
 ```html
@@ -94,7 +99,8 @@ AMP ページに広告を掲載するには、[`amp-ad`](../../../../documentati
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
@@ -112,7 +118,11 @@ AMP ページに広告を掲載するには、[`amp-ad`](../../../../documentati
 次のスクリプトを `<head>` タグに**追加**します。
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 ページを**更新**すると、YouTube 動画が表示されるはずです。
@@ -126,12 +136,17 @@ YouTube 動画の埋め込みについて詳しくは、[`amp-youtube`](../../..
 ヒント: コンポーネントの読み込みに失敗したことやコンポーネントがブラウザでサポートされていないことをユーザーに伝えるには、[`fallback`](../../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md#fallbacks) 属性を使用します。
 
 ## ツイートを表示する
+
 Twitter に投稿されたツイートをそのまま埋め込む機能も、ニュース記事で広く使用されています。[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) コンポーネントを使用すると、この機能を簡単に実現できます。
 
 まず、次の JavaScript リクエストをドキュメントの `<head>` タグに追加します。
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 続いて、ツイートの埋め込み先となる記事に次のコードを**追加**します。
@@ -141,7 +156,8 @@ Twitter に投稿されたツイートをそのまま埋め込む機能も、ニ
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -166,7 +182,11 @@ AMP には、この問題を解決するための専用のコンポーネント�
 実際に試してみましょう。まず、次のようにコンポーネントのライブラリを `<head>` タグに**追加**します。
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 次の内容をページに追加します。
@@ -191,7 +211,11 @@ AMP には、この問題を解決するための専用のコンポーネント�
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

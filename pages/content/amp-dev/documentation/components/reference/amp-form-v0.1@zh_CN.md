@@ -26,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td width="40%"><strong>说明</strong></td>
@@ -47,7 +45,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 # 行为 <a name="behavior"></a>
 
 通过 `amp-form` 扩展组件，您可以创建表单 (`<form>`)，以在 AMP 文档中提交输入字段。`amp-form` 扩展组件还提供 [polyfill](#polyfills)，用于处理浏览器中的某些缺失行为。
@@ -61,9 +58,10 @@ limitations under the License.
 下面是一个基本表单示例：
 
 [example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+
 ```html
 <form method="post"
-    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}
     target="_top"{% endif %}>
     <fieldset>
       <label>
@@ -95,6 +93,7 @@ limitations under the License.
     </div>
   </form>
 ```
+
 [/example]
 
 # 属性 <a name="attributes"></a>
@@ -107,8 +106,8 @@ limitations under the License.
 
 用于指定处理表单输入的服务器端点。该值必须是 `https` 网址（绝对网址或相对网址），且不得是指向 CDN 的链接。
 
-* 对于 `method=GET`：使用此属性或 [`action-xhr`](#action-xhr)。
-* 对于 `method=POST`：使用 [`action-xhr`](#action-xhr) 属性。
+- 对于 `method=GET`：使用此属性或 [`action-xhr`](#action-xhr)。
+- 对于 `method=POST`：使用 [`action-xhr`](#action-xhr) 属性。
 
 [tip type="note"]
 `target` 和 `action` 属性仅用于非 xhr GET 请求。AMP runtime 会使用 `action-xhr` 发出请求，并会忽略 `action` 和 `target`。如果未提供 `action-xhr`，则 AMP 会向 `action` 端点发出 GET 请求，并使用 `target` 打开新窗口（如果 target 值为 `_blank`）。如果 `amp-form` 扩展组件加载失败，AMP runtime 可能还会回退为使用 `action` 和 `target`。
@@ -142,14 +141,14 @@ limitations under the License.
 
 **支持的内容**：
 
-* 其他与表单相关的元素，包括：`<textarea>`、`<select>`、`<option>`、`<fieldset>`、`<label>`、`<input type=text>`、`<input type=submit>` 等等。
-* `<form method=POST action-xhr>` 中的 `<input type=password>` 和 `<input type=file>`。
-* [`amp-selector`](amp-selector.md)
+- 其他与表单相关的元素，包括：`<textarea>`、`<select>`、`<option>`、`<fieldset>`、`<label>`、`<input type=text>`、`<input type=submit>` 等等。
+- `<form method=POST action-xhr>` 中的 `<input type=password>` 和 `<input type=file>`。
+- [`amp-selector`](amp-selector.md)
 
 **不支持的内容**：
 
-* `<input type=button>`、`<input type=image>`
-* 输入时大部分与表单相关的属性，包括：`form`、`formaction`、`formtarget`、`formmethod` 等等。
+- `<input type=button>`、`<input type=image>`
+- 输入时大部分与表单相关的属性，包括：`form`、`formaction`、`formtarget`、`formmethod` 等等。
 
 （将来我们可能会重新考虑放松上述部分规则 - 如果您需要这些规则，[请告知我们](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests)并提供相关用例）。
 
@@ -159,10 +158,10 @@ limitations under the License.
 
 `amp-form` 提供了以下操作：
 
-| 操作 | 说明 |
-|--------|-------------|
+| 操作     | 说明                                                                                      |
+| -------- | ----------------------------------------------------------------------------------------- |
 | `submit` | 允许您针对特定操作（例如，点按链接，或[更改输入时提交表单](#input-events)）触发表单提交。 |
-| `clear` | 清空表单里每个输入中的值。这样一来，用户可以再次快速填写表单。 |
+| `clear`  | 清空表单里每个输入中的值。这样一来，用户可以再次快速填写表单。                            |
 
 [tip type="read-on"]：详细了解 [AMP 中的操作和事件](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)。
 [/tip]
@@ -171,26 +170,26 @@ limitations under the License.
 
 `amp-form` 提供了以下事件：
 
-| 事件 | 触发时间 |
-|-------|-------------|
-| `submit` | 在表单已提交且提交完成之前。 |
-| `submit-success` | 在表单提交已完成且响应成功时。 |
-| `submit-error` | 在表单提交已完成且响应错误时。
- |
-| `verify` | 在发起异步验证时。 |
-| `verify-error` | 在异步验证已完成且响应错误时。 |
-| `valid` | 在表单验证状态更改为“有效”时（根据其[报告策略](#reporting-strategies)）。 |
-| `invalid` | 在表单验证状态更改为“无效”时（根据其[报告策略](#reporting-strategies)）。 |
+| 事件             | 触发时间                                                                  |
+| ---------------- | ------------------------------------------------------------------------- |
+| `submit`         | 在表单已提交且提交完成之前。                                              |
+| `submit-success` | 在表单提交已完成且响应成功时。                                            |
+| `submit-error`   | 在表单提交已完成且响应错误时。                                            |
+|                  |
+| `verify`         | 在发起异步验证时。                                                        |
+| `verify-error`   | 在异步验证已完成且响应错误时。                                            |
+| `valid`          | 在表单验证状态更改为“有效”时（根据其[报告策略](#reporting-strategies)）。 |
+| `invalid`        | 在表单验证状态更改为“无效”时（根据其[报告策略](#reporting-strategies)）。 |
 
 您可以通过 [`on` 属性](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on)使用这些事件。
 
 例如，以下代码会监听 `submit-success` 和 `submit-error` 事件，并显示不同的灯箱，具体取决于对应的事件：
 
 ```html
-
-<form ...="" on="submit-success:success-lightbox;submit-error:error-lightbox">
-</form>
-
+<form
+  ...=""
+  on="submit-success:success-lightbox;submit-error:error-lightbox"
+></form>
 ```
 
 如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
@@ -202,10 +201,11 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 我们以一个常见用例为例，在输入发生更改时提交表单（通过选择单选按钮来回复意见调查、从 `select` 输入中选择一种语言来翻译网页，等等）。
 
 [example preview="inline" playground="true" imports="amp-form"]
+
 ```html
 <form id="myform"
     method="post"
-    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    action-xhr="https://example.com/myform"{% if not format=='email'%}
     target="_blank"{% endif %}>
     <fieldset>
       <label>
@@ -223,6 +223,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
     </fieldset>
   </form>
 ```
+
 [/example]
 
 如需查看完整示例，请点击[此处](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
@@ -231,10 +232,10 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 
 `amp-form` 扩展组件会触发以下事件，您可以在 [amp-analytics](amp-analytics.md) 配置中跟踪这些事件：
 
-| 事件 | 触发时间 |
-|---------------------------|-----------------------------------|
-| `amp-form-submit`         | 在发起表单请求时。 |
-| `amp-form-submit-success` | 在收到成功响应（即响应状态为 `2XX`）时。 |
+| 事件                      | 触发时间                                   |
+| ------------------------- | ------------------------------------------ |
+| `amp-form-submit`         | 在发起表单请求时。                         |
+| `amp-form-submit-success` | 在收到成功响应（即响应状态为 `2XX`）时。   |
 | `amp-form-submit-error`   | 在收到失败响应（即响应状态不为 `2XX`）时。 |
 
 您可以对分析进行配置，以发送这些事件，如下例所示：
@@ -278,31 +279,31 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 
 ```html
 <form id="submit_form" action-xhr="/comment" method="POST">
-  <input type="text" name="comment">
-    <input type="submit" value="评论">
-    </form>
+  <input type="text" name="comment" />
+  <input type="submit" value="评论" />
+</form>
 ```
 
 当 `amp-form-submit`、`amp-form-submit-success` 或 `amp-form-submit-error` 事件触发时，会生成以下变量，这些变量包含表单中指定的值：
 
-  * `formId`
-  * `formFields[comment]`
+- `formId`
+- `formFields[comment]`
 
 # 成功/错误响应呈现 <a name="successerror-response-rendering"></a>
 
 您可以使用[扩展模板](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#templates)（如 [amp-mustache](amp-mustache.md)）在表单中呈现成功或错误响应，也可以通过将数据与 [amp-bind](amp-bind.md) 及以下响应属性绑定来呈现成功响应：
 
-| 响应属性 | 说明 |
-|-----------|---------------------|
-| `submit-success` | 可用于在响应成功（即响应状态为 `2XX`）时显示成功消息。 |
-| `submit-error` | 可用于在响应失败（即响应状态不为 `2XX`）时显示提交错误。 |
-| `submitting` | 可用于在表单提交时显示消息。该属性的模板有权访问表单的输入字段，可用于任何显示目的。如需了解如何使用 `submitting` 属性，请参阅[下面的完整表单示例](#example-submitting)。 |
+| 响应属性         | 说明                                                                                                                                                                      |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `submit-success` | 可用于在响应成功（即响应状态为 `2XX`）时显示成功消息。                                                                                                                    |
+| `submit-error`   | 可用于在响应失败（即响应状态不为 `2XX`）时显示提交错误。                                                                                                                  |
+| `submitting`     | 可用于在表单提交时显示消息。该属性的模板有权访问表单的输入字段，可用于任何显示目的。如需了解如何使用 `submitting` 属性，请参阅[下面的完整表单示例](#example-submitting)。 |
 
 # 通过模板呈现响应的具体步骤： <a name="to-render-responses-with-templating"></a>
 
-* 将响应属性应用于 `<form>` 元素的任何直接子集。**
-* 通过以下两种方式在子元素中呈现响应：通过子元素内的 `<template></template>` 或 `<script type="text/plain"></script>` 标记添加模板；通过 `template="id_of_other_template"` 属性引用模板。
-* 为 `submit-success` 和 `submit-error` 响应提供有效 JSON 对象。无论成功响应还是错误响应，均应包含 `Content-Type: application/json` 标头。
+- 将响应属性应用于 `<form>` 元素的任何直接子集。\*\*
+- 通过以下两种方式在子元素中呈现响应：通过子元素内的 `<template></template>` 或 `<script type="text/plain"></script>` 标记添加模板；通过 `template="id_of_other_template"` 属性引用模板。
+- 为 `submit-success` 和 `submit-error` 响应提供有效 JSON 对象。无论成功响应还是错误响应，均应包含 `Content-Type: application/json` 标头。
 
 <a id="example-submitting"></a>
 
@@ -311,15 +312,15 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 在下面的示例中，响应呈现在表单内嵌模板中。
 
 ```html
-{% raw %}<form ...="">
+{% raw %}
+<form ...="">
   <fieldset>
-    <input type="text" name="firstName">
-      ...
-    </fieldset>
-    <div verify-error="">
-      <template type="amp-mustache">
-        表单中存在错误！
-        {{#verifyErrors}}{{message}}{{/verifyErrors}}
+    <input type="text" name="firstName" />
+    ...
+  </fieldset>
+  <div verify-error="">
+    <template type="amp-mustache">
+      表单中存在错误！ {{#verifyErrors}}{{message}}{{/verifyErrors}}
     </template>
   </div>
   <div submitting="">
@@ -329,7 +330,8 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
   </div>
   <div submit-success="">
     <template type="amp-mustache">
-      成功！{{name}}，感谢您订阅！请务必检查您的电子邮件 {{email}} 进行确认！之后，我们会开始每周向您发送一次有关{{#interests}}<b>{{name}}</b>{{/interests}}的文章。
+      成功！{{name}}，感谢您订阅！请务必检查您的电子邮件 {{email}}
+      进行确认！之后，我们会开始每周向您发送一次有关{{#interests}}<b>{{name}}</b>{{/interests}}的文章。
     </template>
   </div>
   <div submit-error="">
@@ -348,12 +350,17 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 ```json
 {
   "name": "Jane Miller",
-  "interests": [{"name": "Basketball"}, {"name": "Swimming"}, {"name": "Reading"}],
+  "interests": [
+    {"name": "Basketball"},
+    {"name": "Swimming"},
+    {"name": "Reading"}
+  ],
   "email": "email@example.com"
 }
 ```
 
 错误时，返回以下内容：
+
 ```json
 {
   "name": "Jane Miller",
@@ -385,29 +392,28 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 
 # 通过数据绑定呈现成功响应的具体步骤 <a name="to-render-a-successful-response-with-data-binding"></a>
 
-* 使用 [on 属性](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)将表单 submit-success 属性绑定到 [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29)。**
-* 使用 `event` 属性捕获响应数据。
-* 将状态属性添加到所需元素，以绑定表单响应。
+- 使用 [on 属性](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md)将表单 submit-success 属性绑定到 [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29)。\*\*
+- 使用 `event` 属性捕获响应数据。
+- 将状态属性添加到所需元素，以绑定表单响应。
 
 下面的示例展示了使用 [`amp-bind`](amp-bind.md) 的表单 `submit-success` 响应：
+
 ```html
-<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
-<form method="post"
-    action-xhr="/components/amp-form/submit-form-input-text-xhr"
-    target="_top"
-    on="submit-success: AMP.setState({'subscribe': event.response.name})">
-    <div>
-    <input type="text"
-        name="name"
-        placeholder="Name..."
-        required>
-        <input type="email"
-            name="email"
-            placeholder="Email..."
-            required>
-          </div>
-        <input type="submit" value="Subscribe">
-        </form>
+<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">
+  Subscribe to our newsletter
+</p>
+<form
+  method="post"
+  action-xhr="/components/amp-form/submit-form-input-text-xhr"
+  target="_top"
+  on="submit-success: AMP.setState({'subscribe': event.response.name})"
+>
+  <div>
+    <input type="text" name="name" placeholder="Name..." required />
+    <input type="email" name="email" placeholder="Email..." required />
+  </div>
+  <input type="submit" value="Subscribe" />
+</form>
 ```
 
 表单成功提交后，会返回类似于以下内容的 JSON 响应：
@@ -418,11 +424,14 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
   "email": "email@example.com"
 }
 ```
+
 然后，`amp-bind` 会更新 `<p>` 元素的文本，以匹配 `subscibe` 状态：
 
 ```html
 ...
-<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Thanks Jane Miller! You have successfully subscribed.</p>
+<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">
+  Thanks Jane Miller! You have successfully subscribed.
+</p>
 ...
 ```
 
@@ -432,7 +441,7 @@ AMP 针对子 `<input>` 元素提供 `change` 和 `input-debounced` 事件。这
 
 请务必更新 `Access-Control-Expose-Headers` 响应标头，以在受支持的标头列表中添加 `AMP-Redirect-To`。如需详细了解这些标头，请参阅 [AMP 中的 CORS 安全性](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)。
 
-*响应标头示例：*
+_响应标头示例：_
 
 ```text
 AMP-Redirect-To: https://example.com/forms/thank-you
@@ -455,10 +464,11 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 示例如下：
 
 [example preview="inline" playground="true" imports="amp-form"]
+
 ```html
 <form method="post"
     action-xhr="https://example.com/subscribe"
-    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}
     target="_blank"{% endif %}>
     <fieldset>
       <label>
@@ -493,6 +503,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
     </fieldset>
   </form>
 ```
+
 [/example]
 
 如需查看更多示例，请参阅 [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html)。
@@ -528,6 +539,7 @@ Access-Control-Expose-Headers: AMP-Access-Control-Allow-Source-Origin, AMP-Redir
 HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与特定格式匹配。通过 `amp-form` 验证，您可以向用户提供 HTML5 验证自己无法提供的反馈。例如，表单可以通过验证来检查某个电子邮件地址是否已被注册。下面我们介绍另一个使用场景：验证城市字段和邮政编码字段是否互相匹配。
 
 示例如下：
+
 ```html
 {% raw %}<h4>验证示例</h4>
 <form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
@@ -573,11 +585,12 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 该表单会将 `__amp_form_verify` 字段作为表单数据的一部分发送到服务器，用于提示服务器：该请求属于验证请求，而不是正式提交。此操作非常有用，如果使用同一端点进行验证和提交，则服务器会知道不要存储该验证请求。
 
 下面介绍了错误响应应该如何查找验证：
+
 ```json
-  {
-    "verifyErrors": [
-      {"name": "email", "message": "That email is already taken."},
-      {"name": "zip", "message": "The city and zip do not match."}
+{
+  "verifyErrors": [
+    {"name": "email", "message": "That email is already taken."},
+    {"name": "zip", "message": "The city and zip do not match."}
   ]
 }
 ```
@@ -593,15 +606,22 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 您必须针对每次输入提供要用于每次替换的变量，具体方法如下：指定在 `data-amp-replace` 中使用的一连串以空格分隔的变量（请参阅下面的示例）。AMP 不会替换未明确指定的变量。
 
 下面的示例介绍了输入在替换前后的情况（请注意，您需要使用变量替换的平台语法，而不是分析语法）：
+
 ```html
 <!-- Initial Load -->
 <form ...>
-  <input name="canonicalUrl" type="hidden"
-        value="The canonical URL is: CANONICAL_URL - RANDOM - CANONICAL_HOSTNAME"
-        data-amp-replace="CANONICAL_URL RANDOM">
-  <input name="clientId" type="hidden"
-        value="CLIENT_ID(myid)"
-        data-amp-replace="CLIENT_ID">
+  <input
+    name="canonicalUrl"
+    type="hidden"
+    value="The canonical URL is: CANONICAL_URL - RANDOM - CANONICAL_HOSTNAME"
+    data-amp-replace="CANONICAL_URL RANDOM"
+  />
+  <input
+    name="clientId"
+    type="hidden"
+    value="CLIENT_ID(myid)"
+    data-amp-replace="CLIENT_ID"
+  />
   ...
 </form>
 ```
@@ -611,13 +631,19 @@ HTML5 验证仅根据页面上的信息提供反馈，例如某个值是否与�
 ```html
 <!-- User submits the form, variables values are resolved into fields' value -->
 <form ...>
-  <input name="canonicalUrl" type="hidden"
-        value="The canonical URL is: https://example.com/hello - 0.242513759125 - CANONICAL_HOSTNAME"
-        data-amp-replace="CANONICAL_URL RANDOM">
-  <input name="clientId" type="hidden"
-        value="amp:asqar893yfaiufhbas9g879ab9cha0cja0sga87scgas9ocnas0ch"
-        data-amp-replace="CLIENT_ID">
-    ...
+  <input
+    name="canonicalUrl"
+    type="hidden"
+    value="The canonical URL is: https://example.com/hello - 0.242513759125 - CANONICAL_HOSTNAME"
+    data-amp-replace="CANONICAL_URL RANDOM"
+  />
+  <input
+    name="clientId"
+    type="hidden"
+    value="amp:asqar893yfaiufhbas9g879ab9cha0cja0sga87scgas9ocnas0ch"
+    data-amp-replace="CLIENT_ID"
+  />
+  ...
 </form>
 ```
 
@@ -659,17 +685,17 @@ AMP 表单会为 `<textarea>` 元素提供 `autoexpand` 属性。这样一来，
 
 以下类可用于指明表单提交状态：
 
-* `.amp-form-initial`
-* `.amp-form-verify`
-* `.amp-form-verify-error`
-* `.amp-form-submitting`
-* `.amp-form-submit-success`
-* `.amp-form-submit-error`
+- `.amp-form-initial`
+- `.amp-form-verify`
+- `.amp-form-verify-error`
+- `.amp-form-submitting`
+- `.amp-form-submit-success`
+- `.amp-form-submit-error`
 
 以下类是[针对用户互动伪类的 polyfill](#user-interaction-pseudo-classes)：
 
-* `.user-valid`
-* `.user-invalid`
+- `.user-valid`
+- `.user-invalid`
 
 发布商可以使用这些类设置输入和字段集的样式，以响应用户操作（例如，当用户在无效输入中进行模糊处理后，使用红色边框进行突出显示）。
 
@@ -687,8 +713,8 @@ AMP 表单会为 `<textarea>` 元素提供 `autoexpand` 属性。这样一来，
 
 一般来说，在接受用户输入时，请注意以下几点：
 
-* 仅将 POST 用于状态更改请求。
-* 仅将非 XHR GET 用于导航（例如，Google 搜索）。
-    * 非 XHR GET 请求不会接收准确的来源/标头，并且后端无法使用上述机制抵御 XSRF。
-    * 一般来说，XHR/非 XHR GET 请求仅用于导航或信息检索。</li>
-* AMP 文档中不支持非 XHR POST 请求。这是因为在各个浏览器之间为这些请求设置 `Origin` 标头会导致不一致。此外，在抵御 XSRF 时，支持该功能会带来复杂问题。我们之后可能会重新考虑和推出该功能；如果您认为这一功能必不可少，请提出问题。
+- 仅将 POST 用于状态更改请求。
+- 仅将非 XHR GET 用于导航（例如，Google 搜索）。
+  - 非 XHR GET 请求不会接收准确的来源/标头，并且后端无法使用上述机制抵御 XSRF。
+  - 一般来说，XHR/非 XHR GET 请求仅用于导航或信息检索。</li>
+- AMP 文档中不支持非 XHR POST 请求。这是因为在各个浏览器之间为这些请求设置 `Origin` 标头会导致不一致。此外，在抵御 XSRF 时，支持该功能会带来复杂问题。我们之后可能会重新考虑和推出该功能；如果您认为这一功能必不可少，请提出问题。

@@ -13,7 +13,9 @@ Untuk menyertakan tweet di laman,
 sertakan dahulu skrip berikut di `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
 [/sourcecode]
 
 Tweet saat ini otomatis diskalakan secara proporsional
@@ -23,13 +25,17 @@ Sesuaikan lebar dan tinggi yang diberikan secara manual atau gunakan atribut med
 untuk memilih rasio aspek berdasarkan lebar layar.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
+
 ```html
-<amp-twitter width="500"
+<amp-twitter
+  width="500"
   height="583"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -45,7 +51,9 @@ Untuk menyertakan Instagram,
 sertakan dahulu skrip berikut di `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 [/sourcecode]
 
 Sertakan data-shortcode Instagram yang ditemukan di URL foto Instagram.
@@ -55,13 +63,17 @@ Instagram juga menggunakan rasio aspek tetap untuk tata letak responsif,
 sehingga nilai lebar dan tinggi harus universal
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
+
 ```html
-<amp-instagram data-shortcode="fBwFP"
+<amp-instagram
+  data-shortcode="fBwFP"
   width="320"
   height="392"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-instagram>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -76,18 +88,25 @@ menggunakan elemen [`amp-facebook`](../../../../documentation/components/referen
 Anda harus menyertakan skrip berikut di `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
 [/sourcecode]
 
 ##### Contoh: Menyematkan pos
 
 Sumber:
+
 ```html
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+<amp-facebook
+  width="486"
+  height="657"
+  layout="responsive"
+  data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+>
 </amp-facebook>
 ```
+
 Pratinjau:
 <amp-facebook width="486" height="657"
     layout="responsive"
@@ -97,13 +116,18 @@ Pratinjau:
 ##### Contoh: Menyematkan video
 
 Sumber:
+
 ```html
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+<amp-facebook
+  width="476"
+  height="316"
+  layout="responsive"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
 </amp-facebook>
 ```
+
 Pratinjau:
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -123,7 +147,9 @@ menggunakan elemen [`amp-youtube`](../../../../documentation/components/referenc
 Anda harus menyertakan skrip berikut di `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
 [/sourcecode]
 
 `data-videoid` Youtube dapat ditemukan di setiap URL laman video Youtube.
@@ -133,13 +159,17 @@ Misalnya, pada `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
 Gunakan `layout="responsive"` guna menghasilkan tata letak yang benar untuk video dengan rasio aspek 16:9:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -162,16 +192,20 @@ Anda harus menentukan lebar, tinggi, dan jenis jaringan iklan.
 Jenis iklan yang berbeda membutuhkan atribut `data-*` yang berbeda.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
 </amp-ad>
 ```
+
 [/example]
 
 Jika didukung oleh jaringan iklan,
@@ -179,17 +213,21 @@ sertakan `placeholder`
 untuk ditampilkan jika tidak ada iklan yang tersedia:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
+
 [/example]
 
 AMP mendukung berbagai jaringan iklan. Lihat [referensi daftar lengkap](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).

@@ -7,6 +7,7 @@ $title: Añadir un comentario
 En este momento, un usuario puede añadir un comentario utilizando la biblioteca [`amp-form`](../../../../documentation/components/reference/amp-form.md). La presencia del formulario depende del estado del componente [`amp-access`](../../../../documentation/components/reference/amp-access.md):
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -25,6 +26,7 @@ Este es un ejemplo de respuesta JSON:
 Esos valores sencillamente se mostrarán en la página utilizando la plantilla [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md):
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -41,6 +43,7 @@ Esos valores sencillamente se mostrarán en la página utilizando la plantilla [
 En este ejemplo, solo comprobamos que el valor del comentario no esté vacío; en caso contrario, devolvemos un error que ejecuta el código siguiente:
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

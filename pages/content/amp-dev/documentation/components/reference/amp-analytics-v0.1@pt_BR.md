@@ -2,13 +2,12 @@
 $title: amp-analytics
 $category@: ads-analytics
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Registra dados de análise de documentos AMP.
 ---
-
 
 <!--
 Copyright 2019 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +25,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Registra dados de análise de documentos AMP.
 
 <table>
@@ -40,8 +37,6 @@ Registra dados de análise de documentos AMP.
     <td>Veja o exemplo de <a href="https://ampbyexample.com/components/amp-analytics/">amp-analytics</a> no site AMP By Example.</td>
   </tr>
 </table>
-
-
 
 ## Pretende enviar análises para um fornecedor ou internamente? <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
@@ -62,24 +57,24 @@ Para fornecedores integrados ao AMP Analytics:
 
 Se o fornecedor de análise não tiver feito a integração com as AMP, entre em contato com ele para receber suporte. Também recomendamos que você abra um chamado no projeto AMP, pedindo que o fornecedor seja adicionado. Consulte também [Integrar suas ferramentas de análise em HTML para AMP](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md) (link em inglês). Ou você pode pedir para seu fornecedor enviar os dados ao URL especificado. Saiba mais na seção [Enviar dados internamente](#sending-data-in-house) abaixo.
 
-*Exemplo: envio de dados para um fornecedor de análise terceirizado*
+_Exemplo: envio de dados para um fornecedor de análise terceirizado_
 
 No exemplo a seguir, os dados de análise são enviados à Nielsen, um fornecedor de análise terceirizado que fez a integração com a AMP. Detalhes sobre a configuração dos dados de análise para a Nielsen podem ser encontrados na documentação da [Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API).
 
 ```html
 <amp-analytics type="nielsen">
   <script type="application/json">
-  {
-    "vars": {
-      "apid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-      "apv": "1.0",
-      "apn": "My AMP Website",
-      "section": "Entertainment",
-      "segA": "Music",
-      "segB": "News",
-      "segC": "Google AMP"
+    {
+      "vars": {
+        "apid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+        "apv": "1.0",
+        "apn": "My AMP Website",
+        "section": "Entertainment",
+        "segA": "Music",
+        "segB": "News",
+        "segC": "Google AMP"
+      }
     }
-  }
   </script>
 </amp-analytics>
 ```
@@ -101,25 +96,25 @@ Para enviar dados para um URL específico:
 ao processar URLs de AMP no cabeçalho do referenciador das solicitações de análise, remova ou ignore o parâmetro `usqp`. Esse parâmetro é usado pelo Google para acionar experimentos para o Google AMP Cache.
 [/tip]
 
-*Exemplo: envio de dados para um URL*
+_Exemplo: envio de dados para um URL_
 
-Veja um exemplo simples que rastreia visualizações de página.  Sempre que uma página estiver visível, o evento de acionamento será disparado e enviará os dados de visualização de página para um URL definido junto com um código aleatório.
+Veja um exemplo simples que rastreia visualizações de página. Sempre que uma página estiver visível, o evento de acionamento será disparado e enviará os dados de visualização de página para um URL definido junto com um código aleatório.
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -175,7 +170,9 @@ Para carregar uma configuração remota, no elemento `<amp-analytics>`, especifi
 Neste exemplo, especificamos o atributo `config` para carregar os dados de configuração a partir do URL especificado.
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 #### Reescritor de configuração <a name="configuration-rewriter"></a>
@@ -183,6 +180,7 @@ Neste exemplo, especificamos o atributo `config` para carregar os dados de confi
 O recurso de reescrever configuração foi criado para permitir que os fornecedores de análise reescrevam dinamicamente uma configuração fornecida. Isso é semelhante ao recurso de configuração remota, mas inclui também qualquer configuração fornecida pelo usuário na solicitação feita ao servidor. No momento, esse recurso só pode ser ativado por um fornecedor de análise.
 
 Um fornecedor de análise especifica uma propriedade configRewriter com um URL de servidor.
+
 ```js
 export const VENDOR_ANALYTICS_CONFIG = {
     ...
@@ -205,9 +203,10 @@ Em seguida, o ambiente de execução mescla toda a configuração fornecida para
 
 Os grupos de variáveis são um recurso que permite aos fornecedores de análise agrupar um conjunto predefinido de variáveis que podem ser facilmente ativadas por um usuário. Depois, essas variáveis serão resolvidas e enviadas ao endpoint do `configRewriter` especificado.
 
-Os fornecedores de análise precisam criar um novo objeto `varGroups` dentro da configuração de `configRewriter` para ativar esse recurso. Os editores podem, então, incluir qualquer fornecedor de análise nomeado responsável por criar `varGroups` que eles queiram ativar nas respectivas configurações de análise. Todas as variáveis compatíveis com o [Guia de substituições de HTML para AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) (link em inglês) podem ser usadas. *Observação importante*: as variantes ${varName} não funcionarão.
+Os fornecedores de análise precisam criar um novo objeto `varGroups` dentro da configuração de `configRewriter` para ativar esse recurso. Os editores podem, então, incluir qualquer fornecedor de análise nomeado responsável por criar `varGroups` que eles queiram ativar nas respectivas configurações de análise. Todas as variáveis compatíveis com o [Guia de substituições de HTML para AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) (link em inglês) podem ser usadas. _Observação importante_: as variantes \${varName} não funcionarão.
 
 Por exemplo, podemos ter um fornecedor com a seguinte configuração:
+
 ```js
 // This is predefined by vendor.
 export const VENDOR_ANALYTICS_CONFIG = {
@@ -233,9 +232,9 @@ Você pode especificar quais grupos de variáveis são ativados incluindo `{enab
 No exemplo abaixo, `group1` e `group2` foram ativados. Todos os grupos que não tiverem sido ativados especificamente serão ignorados. O ambiente de execução resolverá todas essas variáveis ativadas e as mesclará em um único objeto `configRewriter.vars`, que será enviado ao URL do reescritor da configuração.
 
 ```html
-  /* Included on publisher page */
-  <amp-analytics type="myVendor" id="myVendor" data-credentials="include">
-    <script type="application/json">
+/* Included on publisher page */
+<amp-analytics type="myVendor" id="myVendor" data-credentials="include">
+  <script type="application/json">
     {
       "configRewriter": {
         "varGroups": {
@@ -248,11 +247,12 @@ No exemplo abaixo, `group1` e `group2` foram ativados. Todos os grupos que não 
         }
       }
     }
-    </script>
-  </amp-analytics>
+  </script>
+</amp-analytics>
 ```
 
 Neste exemplo, o corpo da solicitação seria semelhante a este:
+
 ```json
   /* Sent to configuration rewriter server. */
   "configRewriter": {
@@ -304,6 +304,7 @@ As propriedades de lotes são:
 - `batchInterval`: esta propriedade especifica o intervalo de tempo (em segundos) para liberar os pings de solicitação na fila de lotes. `batchInterval` pode ser um número ou uma matriz de números (o intervalo de tempo mínimo é de 200 ms). A solicitação respeitará todos os valores da matriz e, em seguida, repetirá o último valor do intervalo (ou o valor único) quando chegar ao fim da matriz.
 
 Por exemplo, a configuração a seguir envia um único ping de solicitação a cada dois segundos. Veja um exemplo de ping de solicitação: `https://example.com/analytics?rc=1&rc=2`.
+
 ```javascript
 "requests": {
   "timer": {
@@ -326,6 +327,7 @@ Por exemplo, a configuração a seguir envia um único ping de solicitação a c
 ```
 
 A configuração a seguir envia o primeiro ping de solicitação após um segundo e depois envia uma solicitação a cada três segundos. O primeiro ping de solicitação é semelhante a `https://example.com/analytics?rc=1`, e o segundo ping de solicitação é semelhante a `https://example.com/analytics?rc=2&rc=3&rc=4`.
+
 ```javascript
 "requests": {
   "timer": {
@@ -351,8 +353,8 @@ A configuração a seguir envia o primeiro ping de solicitação após um segund
 
 O componente `amp-analytics` define muitas variáveis básicas que podem ser usadas em solicitações. Uma lista de todas essas variáveis está disponível no [Guia de variáveis do `amp-analytics`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md). Além disso, todas as variáveis compatíveis com o [Guia de substituições de AMP para HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) (link em inglês) também são compatíveis.
 
-O objeto de configuração `vars` pode ser usado para definir novos pares de chave-valor ou modificar as variáveis existentes que podem ser referenciadas nos valores de `request`. Novas variáveis geralmente são usadas para especificar informações específicas do editor.  As matrizes podem ser usadas para especificar uma lista de valores que precisam ser codificados com URL separadamente, ao mesmo tempo em que
- preservam o delimitador de vírgula.
+O objeto de configuração `vars` pode ser usado para definir novos pares de chave-valor ou modificar as variáveis existentes que podem ser referenciadas nos valores de `request`. Novas variáveis geralmente são usadas para especificar informações específicas do editor. As matrizes podem ser usadas para especificar uma lista de valores que precisam ser codificados com URL separadamente, ao mesmo tempo em que
+preservam o delimitador de vírgula.
 
 ```javascript
 "vars": {
@@ -388,17 +390,17 @@ Se `useBody` estiver ativado e a solicitação for enviada por meio do método d
 
 O objeto de configuração `triggers` descreve quando uma solicitação de análise precisa ser enviada. O atributo `triggers` contém um par de chave-valor de nome do acionador e configuração do acionador. Um nome de acionador pode ser qualquer string formada por caracteres alfanuméricos (a-z A-Z 0-9). Os acionadores de uma configuração com menor precedência serão substituídos por outros de mesmo nome que venham de uma configuração com maior precedência.
 
-* `on` (obrigatório): evento a ser ouvido. Os valores válidos são `render-start`, `ini-load`, `click`, `scroll`, `timer`, `visible`, `hidden`, `user-error`, [`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) e [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
-* `request` (obrigatório): nome da solicitação a ser enviada (conforme especificado na seção `requests`).
-* `vars`: um objeto que tem pares de chave-valor usados para modificar `vars` definidas na configuração de nível superior, ou para especificar vars exclusivas para esse acionador.
-* `important` pode ser especificado para funcionar com solicitações compatíveis com o comportamento de lotes ou com a janela de relatórios. Configurar `important` como `true` pode ajudar na liberação da fila de solicitações em lote com alguns acionadores. Nesse caso, é possível reduzir o número de pings da solicitação sem perder eventos importantes do acionador. A configuração de `important` como `true` também pode modificar o valor de `reportWindow` da solicitação para enviar pings de solicitação importantes.
-* `selector` e `selectionMethod` podem ser especificados para alguns acionadores, como `click` e `visible`. Consulte [Seletor de elementos](#element-selector) para ver detalhes.
-* `scrollSpec` (obrigatório quando `on` é configurado como `scroll`): esta configuração é usada em conjunto com o acionador `scroll`. Veja mais detalhes abaixo.
-* `timerSpec` (obrigatório quando `on` é configurado como `timer`): esta configuração é usada em conjunto com o acionador `timer`. Veja mais detalhes abaixo.
-* `sampleSpec`: este objeto é usado para definir como as solicitações podem ser coletadas como amostra antes de serem enviadas. Esta configuração permite realizar a amostragem com base em uma entrada aleatória ou em outras variáveis compatíveis com a plataforma. O objeto contém a configuração para especificar uma entrada que é usada para gerar um hash e um limite que o hash precisa atender.
-    * `sampleOn`: este modelo de string é expandido pelo preenchimento das variáveis da plataforma e, em seguida, com hash para gerar um número para fins da lógica de amostragem descrita abaixo do seguinte limite.
-    * `threshold`: esta configuração é usada para filtrar as solicitações que não atendem a critérios específicos. Para que uma solicitação passe para o fornecedor de análise, a seguinte lógica precisa ser verdadeira: `HASH(sampleOn) < threshold`.</li>
-* `videoSpec` (usado quando `on` é configurado como `video-*`): esta configuração é usada em conjunto com os acionadores [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+- `on` (obrigatório): evento a ser ouvido. Os valores válidos são `render-start`, `ini-load`, `click`, `scroll`, `timer`, `visible`, `hidden`, `user-error`, [`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) e [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
+- `request` (obrigatório): nome da solicitação a ser enviada (conforme especificado na seção `requests`).
+- `vars`: um objeto que tem pares de chave-valor usados para modificar `vars` definidas na configuração de nível superior, ou para especificar vars exclusivas para esse acionador.
+- `important` pode ser especificado para funcionar com solicitações compatíveis com o comportamento de lotes ou com a janela de relatórios. Configurar `important` como `true` pode ajudar na liberação da fila de solicitações em lote com alguns acionadores. Nesse caso, é possível reduzir o número de pings da solicitação sem perder eventos importantes do acionador. A configuração de `important` como `true` também pode modificar o valor de `reportWindow` da solicitação para enviar pings de solicitação importantes.
+- `selector` e `selectionMethod` podem ser especificados para alguns acionadores, como `click` e `visible`. Consulte [Seletor de elementos](#element-selector) para ver detalhes.
+- `scrollSpec` (obrigatório quando `on` é configurado como `scroll`): esta configuração é usada em conjunto com o acionador `scroll`. Veja mais detalhes abaixo.
+- `timerSpec` (obrigatório quando `on` é configurado como `timer`): esta configuração é usada em conjunto com o acionador `timer`. Veja mais detalhes abaixo.
+- `sampleSpec`: este objeto é usado para definir como as solicitações podem ser coletadas como amostra antes de serem enviadas. Esta configuração permite realizar a amostragem com base em uma entrada aleatória ou em outras variáveis compatíveis com a plataforma. O objeto contém a configuração para especificar uma entrada que é usada para gerar um hash e um limite que o hash precisa atender.
+  - `sampleOn`: este modelo de string é expandido pelo preenchimento das variáveis da plataforma e, em seguida, com hash para gerar um número para fins da lógica de amostragem descrita abaixo do seguinte limite.
+  - `threshold`: esta configuração é usada para filtrar as solicitações que não atendem a critérios específicos. Para que uma solicitação passe para o fornecedor de análise, a seguinte lógica precisa ser verdadeira: `HASH(sampleOn) < threshold`.</li>
+- `videoSpec` (usado quando `on` é configurado como `video-*`): esta configuração é usada em conjunto com os acionadores [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md).
 
 Por exemplo, a configuração a seguir pode ser usada para fazer uma amostragem de 50% das solicitações com base em uma entrada aleatória ou de 1% com base no ID do cliente.
 
@@ -430,8 +432,8 @@ Alguns acionadores, como `click` e `visible`, permitem especificar um único ele
 As propriedades do seletor são:
 
 - `selector`: esta propriedade é usada para localizar um elemento ou um conjunto de elementos usando a consulta CSS/DOM. A semântica de como é feita a correspondência com o elemento pode ser alterada usando `selectionMethod`. O valor dessa propriedade pode ser um dos seguintes:
-    - um seletor de CSS válido, por exemplo, `#ad1` ou `amp-ad`.
-    - `:root`: um seletor especial que corresponde à raiz do documento.
+  - um seletor de CSS válido, por exemplo, `#ad1` ou `amp-ad`.
+  - `:root`: um seletor especial que corresponde à raiz do documento.
 - `selectionMethod`: quando especificada, esta propriedade pode ter o valor `scope` ou `closest`. `scope` permite a seleção do elemento dentro do elemento pai da tag `amp-analytics`. `closest` pesquisa o ancestral mais próximo da tag `amp-analytics` que atenda ao seletor fornecido. O valor padrão é `scope`.
 
 ##### Incorporar acionador de início de renderização <a name="embed-render-start-trigger"></a>
@@ -439,6 +441,7 @@ As propriedades do seletor são:
 Elementos AMP que incorporam outros documentos em iframes (por exemplo, anúncios) podem informar um evento de início de renderização (`"on": "render-start"`). Esse evento normalmente é emitido assim que é possível confirmar que a renderização do documento incorporado começou. Consulte a documentação de determinado elemento AMP para ver se ele emite esse evento.
 
 O acionador do elemento de incorporação precisa incluir um [`selector`](#element-selector) que aponte para o elemento de incorporação:
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -450,7 +453,8 @@ O acionador do elemento de incorporação precisa incluir um [`selector`](#eleme
 ```
 
 O evento de início de renderização também é emitido pelo próprio documento e pode ser configurado como:
-```javascript
+
+````javascript
 "triggers": {
   "renderStart": {
     "on": "render-start",
@@ -479,9 +483,10 @@ O acionador do elemento AMP ou de incorporação precisa incluir um [`selector`]
     "selector": "#embed1"
   }
 }
-```
+````
 
 O evento de carregamento inicial também é emitido pelo próprio documento e pode ser configurado como:
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -534,6 +539,7 @@ O evento de erro do usuário (`"on": "user-error"`) é acionado quando ocorre um
   }
 }
 ```
+
 [tip type="note"]
 Há um [problema conhecido](https://github.com/ampproject/amphtml/issues/10891) de que ele ainda relata erros de incorporações de iframe A4A, que são irrelevantes para a página.
 [/tip]
@@ -668,9 +674,8 @@ Use o acionador de rolagem (`"on": "scroll"`) para disparar uma solicitação so
 ##### Acionador de timer <a name="timer-trigger"></a>
 
 Use o acionador do timer (`"on": "timer"`) para disparar uma solicitação em um intervalo de tempo normal. Use `timerSpec` para controlar quando isso será disparado:
-- `timerSpec`: especificação para acionadores do tipo `timer`. A menos que um `startSpec` seja especificado, o timer será acionado imediatamente (por padrão, que pode ser alterado) e, em seguida, em um intervalo especificado.
-      - `interval`: duração do intervalo do timer, em segundos.
-      - `maxTimerLength`: duração máxima pela qual o timer será disparado, em segundos. Uma outra solicitação será acionada quando o `maxTimerLength` for atingido. O padrão é duas horas. Quando um `stopSpec` estiver presente, mas nenhum maxTimerLength for especificado, o padrão será infinito.
+
+- `timerSpec`: especificação para acionadores do tipo `timer`. A menos que um `startSpec` seja especificado, o timer será acionado imediatamente (por padrão, que pode ser alterado) e, em seguida, em um intervalo especificado. - `interval`: duração do intervalo do timer, em segundos. - `maxTimerLength`: duração máxima pela qual o timer será disparado, em segundos. Uma outra solicitação será acionada quando o `maxTimerLength` for atingido. O padrão é duas horas. Quando um `stopSpec` estiver presente, mas nenhum maxTimerLength for especificado, o padrão será infinito.
 
       - `immediate`: aciona o timer imediatamente ou não. Booleano, com padrão definido como "verdadeiro".
 
@@ -728,6 +733,7 @@ Use o acionador oculto (`"on": "hidden"`) para disparar uma solicitação quando
 ```
 
 Um [`visibilitySpec`](#visibility-spec) pode ser incluído para que uma solicitação só seja disparada se as condições de duração da visibilidade forem atendidas.
+
 ```json
 "triggers": {
   "defaultPageview": {
@@ -741,6 +747,7 @@ Um [`visibilitySpec`](#visibility-spec) pode ser incluído para que uma solicita
   }
 }
 ```
+
 A configuração acima é traduzida como:
 
 <blockquote>
@@ -759,11 +766,11 @@ A análise de vídeo fornece vários acionadores (`"on": "video-*"`) que podem s
 
 O objeto de configuração `transport` especifica como enviar uma solicitação. O valor é um objeto com campos que indicam quais métodos de transporte são aceitáveis.
 
-* `beacon`: indica que [`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) pode ser usado para transmitir a solicitação. Isso enviará uma solicitação POST com credenciais. A solicitação será enviada com um corpo vazio, a menos que `useBody` seja configurado como "verdadeiro". Consulte [Usar corpo para outros parâmetros de URL](#use-body-for-extra-url-params) para ver mais informações sobre `useBody`.
-* `xhrpost`: indica que `XMLHttpRequest` pode ser usado para transmitir a solicitação. Isso enviará uma solicitação POST com credenciais. A solicitação será enviada com um corpo vazio, a menos que `useBody` seja configurado como "verdadeiro". Consulte [Usar corpo para outros parâmetros de URL](#use-body-for-extra-url-params) para ver mais informações sobre `useBody`.
-* `image`: indica que a solicitação pode ser enviada gerando uma tag `Image`. Isso enviará uma solicitação GET. Para suprimir avisos do console devido a respostas vazias ou falhas na solicitação, configure `"image": {"suppressWarnings": true}`.
+- `beacon`: indica que [`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) pode ser usado para transmitir a solicitação. Isso enviará uma solicitação POST com credenciais. A solicitação será enviada com um corpo vazio, a menos que `useBody` seja configurado como "verdadeiro". Consulte [Usar corpo para outros parâmetros de URL](#use-body-for-extra-url-params) para ver mais informações sobre `useBody`.
+- `xhrpost`: indica que `XMLHttpRequest` pode ser usado para transmitir a solicitação. Isso enviará uma solicitação POST com credenciais. A solicitação será enviada com um corpo vazio, a menos que `useBody` seja configurado como "verdadeiro". Consulte [Usar corpo para outros parâmetros de URL](#use-body-for-extra-url-params) para ver mais informações sobre `useBody`.
+- `image`: indica que a solicitação pode ser enviada gerando uma tag `Image`. Isso enviará uma solicitação GET. Para suprimir avisos do console devido a respostas vazias ou falhas na solicitação, configure `"image": {"suppressWarnings": true}`.
 
-Fornecedores certificados pelo MRC podem usar um quarto mecanismo de transporte, o "transporte de iframe", adicionando uma string de URL a iframe-transport-vendors.js. Isso indica que um iframe precisa ser criado, com o atributo `src` configurado para esse URL, e que as solicitações serão enviadas para esse iframe por meio de `window.postMessage()`. Nesse caso, as solicitações não precisam ser URLs plenamente desenvolvidos. O `iframe` só pode ser especificado em `iframe-transport-vendors.js`, não in-line dentro da tag `amp-analytics` nem por configuração remota. Além disso, o frame do fornecedor pode enviar uma resposta para ser usada pelo amp-ad-exit. Consulte [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) e [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html): o primeiro arquivo envia um objeto JSON de resposta de {'collected-data': 'abc'}, e o último arquivo usa esse objeto para substituir "abc" por "bar_" em finalUrl.
+Fornecedores certificados pelo MRC podem usar um quarto mecanismo de transporte, o "transporte de iframe", adicionando uma string de URL a iframe-transport-vendors.js. Isso indica que um iframe precisa ser criado, com o atributo `src` configurado para esse URL, e que as solicitações serão enviadas para esse iframe por meio de `window.postMessage()`. Nesse caso, as solicitações não precisam ser URLs plenamente desenvolvidos. O `iframe` só pode ser especificado em `iframe-transport-vendors.js`, não in-line dentro da tag `amp-analytics` nem por configuração remota. Além disso, o frame do fornecedor pode enviar uma resposta para ser usada pelo amp-ad-exit. Consulte [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) e [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html): o primeiro arquivo envia um objeto JSON de resposta de {'collected-data': 'abc'}, e o último arquivo usa esse objeto para substituir "abc" por "bar\_" em finalUrl.
 
 Se mais de um dos métodos de transporte acima for ativado, a precedência será de `iframe` &gt; `beacon` &gt; `xhrpost` &gt; `image`. Somente um método de transporte será usado, e será aquele com a maior precedência e que estiver disponível e for permitido. Se o user agent do cliente não for compatível com um método, a próxima opção ativada com maior precedência será usada. Por padrão, os quatro métodos acima ficam ativados.
 
@@ -834,12 +841,15 @@ Estes são os atributos válidos para o componente `amp-analytics`:
 
 **type**
 
-Especifica o tipo de fornecedor.  Para ver detalhes, consulte a lista de [fornecedores do Analytics](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md).
+Especifica o tipo de fornecedor. Para ver detalhes, consulte a lista de [fornecedores do Analytics](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics-vendors.md).
 
 Exemplo:
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json"></amp-analytics>
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 **config**
@@ -849,7 +859,9 @@ Este é um atributo opcional, que pode ser usado para carregar uma configuraçã
 Exemplo:
 
 ```html
-<amp-analytics config="https://example.com/analytics.config.json"></amp-analytics>
+<amp-analytics
+  config="https://example.com/analytics.config.json"
+></amp-analytics>
 ```
 
 **data-credentials**<a name="data-credentials"></a>

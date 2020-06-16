@@ -6,26 +6,26 @@ En este documento se enumeran los proveedores de analíticas que cuentan con con
 
 Para enviar datos de analíticas a un proveedor tercero, sigue estos pasos:
 
-1. En la etiqueta [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), añade el atributo `type` y establece su valor en el proveedor especificado tal y como se describe en la sección [*Proveedores*](#vendors) a continuación.
+1. En la etiqueta [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md), añade el atributo `type` y establece su valor en el proveedor especificado tal y como se describe en la sección [_Proveedores_](#vendors) a continuación.
 2. Define qué datos quieres registrar y supervisar, y especifica estos detalles en los datos de configuración. Consulta la documentación del proveedor para obtener instrucciones sobre cómo registrar datos de analíticas.
 
 En el ejemplo siguiente, enviamos datos de páginas vistas a [Google Analytics](#google-analytics), un proveedor de analíticas tercero con una configuración integrada para [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -103,25 +103,25 @@ Permite añadir compatibilidad con Clicky Web Analytics. Puedes encontrar más i
 
 Escribe el valor de atributo: `comscore`
 
-Permite añadir compatibilidad con las analíticas de página vista de Medición digital unificada de comScore™. Requiere la definición de la *variable* `c2` con el valor *c2 id* proporcionado por comScore. Puedes encontrar más información en [comscore.com](http://www.comscore.com).
+Permite añadir compatibilidad con las analíticas de página vista de Medición digital unificada de comScore™. Requiere la definición de la _variable_ `c2` con el valor _c2 id_ proporcionado por comScore. Puedes encontrar más información en [comscore.com](http://www.comscore.com).
 
 Cxense
 
 Escribe el valor de atributo: `cxense`
 
-Permite añadir compatibilidad con las analíticas de Cxense Insight. Requiere la definición de la *variable* `siteId` con el *ID de sitio web* proporcionado por Cxense. Puedes encontrar más información en [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
+Permite añadir compatibilidad con las analíticas de Cxense Insight. Requiere la definición de la _variable_ `siteId` con el _ID de sitio web_ proporcionado por Cxense. Puedes encontrar más información en [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration).
 
 ### Dynatrace
 
 Escribe el valor de atributo: `dynatrace`
 
-Permite añadir compatibilidad con la supervisión de usuarios reales de Dynatrace. Requiere la definición de la *variable* `app` con el *ID de aplicación* proporcionado por Dynatrace y la *variable* `tenant` con el *identificador de entorno* proporcionado por Dynatrace. Puedes encontrar más información sobre cómo añadir la supervisión de usuarios reales de Dynatrace en [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
+Permite añadir compatibilidad con la supervisión de usuarios reales de Dynatrace. Requiere la definición de la _variable_ `app` con el _ID de aplicación_ proporcionado por Dynatrace y la _variable_ `tenant` con el _identificador de entorno_ proporcionado por Dynatrace. Puedes encontrar más información sobre cómo añadir la supervisión de usuarios reales de Dynatrace en [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/).
 
 ### Eulerian Analytics
 
 Escribe el valor de atributo: `euleriananalytics`
 
-Permite añadir compatibilidad con Eulerian Technologies Analytics. Requiere la definición de la *variable* `analyticsHost` con el dominio delegado por Eulerian. Puedes encontrar más información en [eulerian.wiki](https://eulerian.wiki).
+Permite añadir compatibilidad con Eulerian Technologies Analytics. Requiere la definición de la _variable_ `analyticsHost` con el dominio delegado por Eulerian. Puedes encontrar más información en [eulerian.wiki](https://eulerian.wiki).
 
 ### Facebook Pixel
 
@@ -155,10 +155,10 @@ Permite añadir compatibilidad con [INFOnline](https://www.infonline.de) / [IVW]
 
 Además, debes definir estas variables:
 
-* `st`: ID de oferta
-* `co`: comentario
-* `cp`: código
-* `url`: ubicación HTTPS de `amp-analytics-infonline.html`
+- `st`: ID de oferta
+- `co`: comentario
+- `cp`: código
+- `url`: ubicación HTTPS de `amp-analytics-infonline.html`
 
 Puedes obtener más información sobre cómo añadir compatibilidad con INFOnline / IVW en [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/).
 
@@ -166,7 +166,7 @@ Puedes obtener más información sobre cómo añadir compatibilidad con INFOnlin
 
 Escribe el valor de atributo: `krux`
 
-Permite añadir compatibilidad con Krux.  Puedes encontrar información sobre la configuración en [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
+Permite añadir compatibilidad con Krux. Puedes encontrar información sobre la configuración en [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608).
 
 ### Linkpulse
 
@@ -178,13 +178,13 @@ Permite añadir compatibilidad con Linkpulse. Puedes encontrar información sobr
 
 Escribe el valor de atributo: `lotame`
 
-Permite añadir compatibilidad con Lotame.  Puedes encontrar más información y detalles sobre la configuración en [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
+Permite añadir compatibilidad con Lotame. Puedes encontrar más información y detalles sobre la configuración en [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP).
 
 ### Médiamétrie
 
 Escribe el valor de atributo: `mediametrie`
 
-Permite añadir compatibilidad con las páginas de seguimiento de Médiamétrie. Requiere la definición de la *variable* `serial`. Las variables de `level1` a `level4` son opcionales.  Puedes encontrar más información en [mediametrie.com](http://www.mediametrie.com/).
+Permite añadir compatibilidad con las páginas de seguimiento de Médiamétrie. Requiere la definición de la _variable_ `serial`. Las variables de `level1` a `level4` son opcionales. Puedes encontrar más información en [mediametrie.com](http://www.mediametrie.com/).
 
 ### mediarithmics
 
@@ -235,7 +235,7 @@ En la sección `requests`:
 
 [tip type="note"]
 
-Existe una variación denominada `oewadirect` que no utiliza la solución iframe-ping y tiene una mejor detección de clientes mediante `AMP CLIENT_ID`.  Actualmente, es una versión EXPERIMENTAL y está prohibida en OEWA porque no utiliza `oewa2.js`.
+Existe una variación denominada `oewadirect` que no utiliza la solución iframe-ping y tiene una mejor detección de clientes mediante `AMP CLIENT_ID`. Actualmente, es una versión EXPERIMENTAL y está prohibida en OEWA porque no utiliza `oewa2.js`.
 
 [/tip]
 
@@ -249,7 +249,7 @@ Permite añadir compatibilidad con Parsely. Puedes encontrar información sobre 
 
 Escribe el valor de atributo: `piano`
 
-Permite añadir compatibilidad con Piano.  Puedes encontrar información sobre la configuración en [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
+Permite añadir compatibilidad con Piano. Puedes encontrar información sobre la configuración en [vx.piano.io](http://vx.piano.io/javascript-tracking-amp).
 
 ### Medición de Quantcast
 
@@ -274,7 +274,7 @@ Permite añadir compatibilidad con [SOASTA mPulse](https://www.soasta.com/mPulse
 
 Escribe el valor de atributo: `simplereach`
 
-Permite añadir compatibilidad con SimpleReach.  Puedes encontrar información sobre la configuración en [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation).
+Permite añadir compatibilidad con SimpleReach. Puedes encontrar información sobre la configuración en [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation).
 
 ### Snowplow Analytics
 
@@ -316,4 +316,4 @@ Permite añadir compatibilidad con Webtrekk. Puedes encontrar información sobre
 
 Escribe el valor de atributo: `metrika`
 
-Permite añadir compatibilidad con Yandex.Metrica.  Puedes encontrar información sobre la configuración en la [página de asistencia de Yandex](https://yandex.com/support/metrica/code/install-counter-amp.xml).
+Permite añadir compatibilidad con Yandex.Metrica. Puedes encontrar información sobre la configuración en la [página de asistencia de Yandex](https://yandex.com/support/metrica/code/install-counter-amp.xml).

@@ -77,10 +77,12 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 例如，对于给定的网址列表：
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 响应正文包含 JSON 格式的 AMP 网址映射：
@@ -116,14 +118,14 @@ article with AMP version</a> and an <a href="www.example.org/b"> article without
 基于代理的内容分发网络 (CDN)，用于分发有效的 AMP 文档。
 AMP 缓存旨在：
 
-*   仅提供有效的 AMP 网页。
-*   让 AMP 网页能够安全高效地预加载。
-*   对内容进行额外的性能优化，以提升用户体验。
+- 仅提供有效的 AMP 网页。
+- 让 AMP 网页能够安全高效地预加载。
+- 对内容进行额外的性能优化，以提升用户体验。
 
 目前，有 2 家提供商提供 AMP 缓存服务：
 
-*   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
+- [Google AMP Cache](https://developers.google.com/amp/cache/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 这意味着您可以通过两种方式使用以下任一版本在应用中显示 AMP 文件：
 
@@ -132,17 +134,17 @@ AMP 缓存旨在：
 
 我们建议使用 AMP 缓存，原因如下：
 
-*   其加载速度更快且延迟更短（加载时间缩短 1 秒以上），
-    所以用户体验更佳。
-*   其会额外缓存依赖于客户端的软件工件（例如，缓存同一
-    图片的不同版本，具体取决于客户端的视口大小），因此
-    可提高性能并节省带宽。
-*   原始 AMP 文件可能不再是有效的 AMP，这样可能会导致
-    不良的用户体验。在这种情况下，AMP 缓存会提供
-    AMP 文件的最后一个有效版本。
-*   不太正派的发布商可能会向 AMP 缓存抓取工具和您的用户
-    提供两个不同的文档。使用 AMP 缓存可保证用户看到的
-    AMP 文件始终与 AMP 缓存看到的相同。
+- 其加载速度更快且延迟更短（加载时间缩短 1 秒以上），
+  所以用户体验更佳。
+- 其会额外缓存依赖于客户端的软件工件（例如，缓存同一
+  图片的不同版本，具体取决于客户端的视口大小），因此
+  可提高性能并节省带宽。
+- 原始 AMP 文件可能不再是有效的 AMP，这样可能会导致
+  不良的用户体验。在这种情况下，AMP 缓存会提供
+  AMP 文件的最后一个有效版本。
+- 不太正派的发布商可能会向 AMP 缓存抓取工具和您的用户
+  提供两个不同的文档。使用 AMP 缓存可保证用户看到的
+  AMP 文件始终与 AMP 缓存看到的相同。
 
 [tip type="important"]
 通过 AMP 缓存提供 AMP 网页时，提供的查看工具体验
@@ -165,12 +167,12 @@ AMP runtime 提供了一个 Viewer API，后者提供了
 
 下面介绍了一些关于实现 AMP 查看工具的一般最佳做法：
 
-*   从 AMP 缓存提供 AMP 网页（加载时间缩短 1 秒以上）。
-*   显示文章的发布商来源（例如，在可收起标头中）。
-*   提供分享操作（另请参阅下方的“[分享 AMP 内容](integrate-with-apps.md#sharing-amp-content)”
-    一节）。
-*   在基于 WebView 的查看工具中，启用第三方 Cookie。
-*   为您的平台/应用设置引荐来源网址。
+- 从 AMP 缓存提供 AMP 网页（加载时间缩短 1 秒以上）。
+- 显示文章的发布商来源（例如，在可收起标头中）。
+- 提供分享操作（另请参阅下方的“[分享 AMP 内容](integrate-with-apps.md#sharing-amp-content)”
+  一节）。
+- 在基于 WebView 的查看工具中，启用第三方 Cookie。
+- 为您的平台/应用设置引荐来源网址。
 
 ### 分享 AMP 内容 <a name="sharing-amp-content"></a>
 

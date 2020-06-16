@@ -4,7 +4,7 @@ $title: Atributos comunes
 
 [TOC]
 
-AMP proporciona un conjunto de atributos comunes que se aplican a muchos componentes AMP (y elementos HTML).  A continuación, se describen cada uno de estos atributos comunes.
+AMP proporciona un conjunto de atributos comunes que se aplican a muchos componentes AMP (y elementos HTML). A continuación, se describen cada uno de estos atributos comunes.
 
 ## fallback
 
@@ -16,6 +16,7 @@ Ejemplo:
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+
   <div fallback>No se pueden reproducir imágenes animadas en este dispositivo.</div>
 </amp-anim>
 [/sourcecode]
@@ -25,7 +26,6 @@ Para obtener más información, consulta [Marcadores de posición y respaldos](.
 ## heights
 
 Todos los elementos AMP compatibles con el diseño `responsive` también admiten el atributo `heights`. El valor de este atributo es una expresión de tamaño basada en expresiones de contenido multimedia, similar al [atributo sizes de las etiquetas `img`](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/img), pero con dos diferencias fundamentales:
-
 
 1. El valor se aplica a la altura, pero no al ancho del elemento.
 2. Se permiten valores porcentuales. Un valor porcentual indica el porcentaje del ancho del elemento. Por ejemplo, un valor de `80%` indica que la altura del elemento representa el 80 % del ancho del mismo.
@@ -107,15 +107,14 @@ Se suele utilizar con lightbox, barras laterales, listas que se actualizan y for
 Sintaxis:
 
 [sourcecode:text]
-eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 Ejemplo:
 
 [sourcecode:html]
 <button on="tap:my-lightbox">Abrir lightbox</button>
 <amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
+...
 </amp-lightbox>
 [/sourcecode]
 
@@ -131,7 +130,7 @@ Ejemplo:
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 

@@ -21,13 +21,13 @@ El canal para desarrolladores es perfecto para:
 
 Si encuentras un problema que parece darse únicamente en la versión del canal para desarrolladores de AMP, [regístralo](https://github.com/ampproject/amphtml/issues/new) y descríbelo. Incluye siempre la URL de una página donde se pueda reproducir el problema.
 
-Para habilitar el canal para desarrolladores de AMP en tu navegador, ve a la [página AMP Experiments] (https://cdn.ampproject.org/experiments.html) y activa el experimento "AMP Dev Channel" (Canal para desarrolladores de AMP). Si quieres recibir notificaciones sobre cambios importantes o novedades de AMP, suscríbete a la lista de distribución [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
+Para habilitar el canal para desarrolladores de AMP en tu navegador, ve a la [página AMP Experiments](https://cdn.ampproject.org/experiments.html) y activa el experimento "AMP Dev Channel" (Canal para desarrolladores de AMP). Si quieres recibir notificaciones sobre cambios importantes o novedades de AMP, suscríbete a la lista de distribución [amphtml-announce](https://groups.google.com/forum/#!forum/amphtml-announce).
 
 ## Habilitar componentes experimentales
 
 #### Publicado desde cdn.ampproject.org
 
-En el caso de contenido publicado desde [https://cdn.ampproject.org](https://cdn.ampproject.org), 
+En el caso de contenido publicado desde [https://cdn.ampproject.org](https://cdn.ampproject.org),
 ve a la [página AMP Experiments](https://cdn.ampproject.org/experiments.html)
 y habilita (o inhabilita) los componentes experimentales que quieras con el botón que aparece junto a ellos. Si activas un componente, se añadirá una cookie a tu navegador que habilitará el experimento en todas las páginas AMP que se publiquen a través de la caché de AMP de Google.
 
@@ -36,7 +36,7 @@ y habilita (o inhabilita) los componentes experimentales que quieras con el bot�
 En el caso de contenido publicado desde otros dominio, los experimentos se pueden activar o desactivar desde la consola DevTools si el modo de desarrollo está habilitado mediante:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 Los archivos de AMP que incluyan funciones experimentales no superarán la
@@ -50,7 +50,7 @@ Puedes habilitar determinados experimentos en documentos concretos. Para hacerlo
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
@@ -58,4 +58,3 @@ Puedes habilitar determinados experimentos en documentos concretos. Para hacerlo
 ```
 
 Al hacerlo, los experimentos indicados estarán habilitados para todos los visitantes del documento. Sin embargo, no todos los experimentos pueden habilitarse a nivel de documento. Para obtener una lista completa de los experimentos incluidos en la lista blanca, consulta el atributo `allow-doc-opt-in` del archivo `prod-config.json` del proyecto. Ten en cuenta que, aunque un experimento esté habilitado a nivel de documento, los usuarios pueden decidir inhabilitarlo.
- 

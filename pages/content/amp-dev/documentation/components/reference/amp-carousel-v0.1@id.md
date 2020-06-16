@@ -2,13 +2,12 @@
 $title: amp-carousel
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Displays multiple similar pieces of content along a horizontal axis.
 ---
-
 
 <!--
        Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Carousel generik untuk menampilkan beberapa konten serupa secara bergantian sepanjang sumbu horizontal; yang dimaksudkan untuk memiliki fleksibilitas dan performa tinggi.
 
@@ -61,20 +58,27 @@ Carousel terdiri dari sejumlah item, juga panah navigasi opsional untuk maju ata
 Carousel berpindah-pindah item jika pengguna menggeser, menggunakan tombol panah, atau mengklik panah navigasi opsional.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel width="450"
-  height="300">
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+<amp-carousel width="450" height="300">
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
     width="450"
-    height="300"></amp-img>
+    height="300"
+  ></amp-img>
 </amp-carousel>
 ```
+
 [/example]
 
 # Berpindah ke slide tertentu <a name="advancing-to-a-specific-slide"></a>
@@ -84,49 +88,65 @@ Apabila metode untuk atribut `on` pada suatu elemen ditetapkan ke `tap:carousel-
 Pada contoh berikut, terdapat carousel tiga gambar dengan tombol pratinjau di bawah carousel. Saat pengguna mengklik salah satu tombol, item carousel yang terkait akan ditampilkan.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel id="carousel-with-preview"
+<amp-carousel
+  id="carousel-with-preview"
+  width="450"
+  height="300"
+  layout="responsive"
+  type="slides"
+>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
     height="300"
     layout="responsive"
-    type="slides">
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="apples"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="lemons"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="blueberries"></amp-img>
-  </amp-carousel>
-  <div class="carousel-preview">
-    <button on="tap:carousel-with-preview.goToSlide(index=0)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-        width="60"
-        height="40"
-        alt="apples"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=1)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-        width="60"
-        height="40"
-        alt="lemons"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=2)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-        width="60"
-        height="40"
-        alt="blueberries"></amp-img>
-    </button>
-  </div>
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
 ```
+
 [/example]
 
 # Atribut <a name="attributes"></a>
@@ -188,6 +208,7 @@ Pada contoh berikut, terdapat carousel tiga gambar dengan tombol pratinjau di ba
             <em>Contoh: Menampilkan carousel slide dengan kontrol, loop, dan autoplay tertunda.</em>
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
 <amp-carousel type="slides"
   width="450"
@@ -209,22 +230,24 @@ Pada contoh berikut, terdapat carousel tiga gambar dengan tombol pratinjau di ba
     height="300"></amp-img>
 </amp-carousel>
 ```
+
 [/example]</td>
-          </tr>
-          <tr>
-            <td width="40%"><strong>atribut umum</strong></td>
-            <td>Elemen ini mencakup <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atribut umum</a> yang diperluas ke komponen AMP.</td>
-          </tr>
-        </table>
+
+</tr>
+<tr>
+<td width="40%"><strong>atribut umum</strong></td>
+<td>Elemen ini mencakup <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">atribut umum</a> yang diperluas ke komponen AMP.</td>
+</tr>
+</table>
 
 # Penataan gaya <a name="styling"></a>
 
-* Anda dapat menggunakan pemilih elemen `amp-carousel` untuk menata gayanya dengan bebas.
-* Anda dapat menggunakan pemilih class `.amp-carousel-slide` untuk menargetkan item carousel.
-* Status visual tombol `amp-carousel` saat nonaktif disembunyikan.
-* Secara default, `.amp-carousel-button` menggunakan SVG inline sebagai gambar latar tombol. Anda dapat menggantinya dengan SVG atau gambar Anda sendiri seperti pada contoh di bawah ini.
+- Anda dapat menggunakan pemilih elemen `amp-carousel` untuk menata gayanya dengan bebas.
+- Anda dapat menggunakan pemilih class `.amp-carousel-slide` untuk menargetkan item carousel.
+- Status visual tombol `amp-carousel` saat nonaktif disembunyikan.
+- Secara default, `.amp-carousel-button` menggunakan SVG inline sebagai gambar latar tombol. Anda dapat menggantinya dengan SVG atau gambar Anda sendiri seperti pada contoh di bawah ini.
 
-*Contoh: SVG inline `.amp-carousel-button` default*
+_Contoh: SVG inline `.amp-carousel-button` default_
 
 ```css
 .amp-carousel-button-prev {
@@ -233,7 +256,7 @@ Pada contoh berikut, terdapat carousel tiga gambar dengan tombol pratinjau di ba
 }
 ```
 
-*Contoh: Mengganti SVG inline `.amp-carousel-button` default*
+_Contoh: Mengganti SVG inline `.amp-carousel-button` default_
 
 ```css
 .amp-carousel-button-prev {

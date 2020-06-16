@@ -7,9 +7,9 @@ $title: 配置分析工具
 所有的分析解决方案都要根据以下情况来制定：您需要哪些数据，以及
 您打算如何分析这些数据。请在开始之前做出以下决定：
 
-* 您将使用第三方分析工具还是您自己的内部解决方案来分析用户
-互动情况？
-* 您将衡量哪些用户行为来了解用户互动情况？
+- 您将使用第三方分析工具还是您自己的内部解决方案来分析用户
+  互动情况？
+- 您将衡量哪些用户行为来了解用户互动情况？
 
 ### 将数据发送给供应商还是自己？
 
@@ -39,11 +39,11 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。
 
 关于数据，您需要考虑以下几个要点：
 
-* 您是想仅跟踪网页浏览量，还是也要跟踪用户互动模式
-（另请参阅 [amp-pixel 或 amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics)）？
-* 您要获取与您的用户、您的内容、
-设备或浏览器相关的哪些类型的数据（另请参阅[变量替换](analytics_basics.md#variable-substitution)）？
-* 您将如何识别您的用户（另请参阅[用户识别](analytics_basics.md#user-identification)）？
+- 您是想仅跟踪网页浏览量，还是也要跟踪用户互动模式
+  （另请参阅 [amp-pixel 或 amp-analytics](analytics_basics.md#use-amp-pixel-or-amp-analytics)）？
+- 您要获取与您的用户、您的内容、
+  设备或浏览器相关的哪些类型的数据（另请参阅[变量替换](analytics_basics.md#variable-substitution)）？
+- 您将如何识别您的用户（另请参阅[用户识别](analytics_basics.md#user-identification)）？
 
 [tip type="read-on"]
 

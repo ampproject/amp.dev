@@ -37,15 +37,16 @@ The mandatory tag 'link rel=canonical' is missing or incorrect.
 `<meta charset="utf-8" />` タグの下に次のコードを**追加**します。
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"]
 単独の正規の AMP ページを作成できます。その場合でも正規リンクは必要ですが、AMP 記事自体を指すようにしてください。
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
+
 [/tip]
 
 ここで、ページを**再読み込み**します。まだ修正すべき多数のエラーがありますが、正規リンクのエラーは表示されなくなりました。
@@ -62,7 +63,7 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 上記のエラーを解決するには、次のように、`<html>` タグに `⚡` 属性を追加します。
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 ページを再読み込みして、両方のエラーがなくなったことを確認しましょう。
@@ -71,8 +72,9 @@ The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 `⚡` を指定するのがおすすめの方法ですが、次のように、`⚡` 属性の代わりに `amp` 属性を使用することもできます。
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
+
 [/tip]
 
 ## ビューポートを指定する
@@ -88,7 +90,10 @@ AMP にはビューポートの `width` と `minimum-scale` の定義が必要�
 ビューポートに関するエラーを解決するには、次の HTML スニペットを `<head>` タグに追加します。
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta
+  name="viewport"
+  content="width=device-width,minimum-scale=1,initial-scale=1"
+/>
 ```
 
 `width` と `minimum-scale` に指定する値は、AMP で必須の値です。`initial-scale` の定義は必須ではありませんが、モバイルウェブの開発では指定するのが一般的であり、おすすめします。ビューポートとレスポンシブ デザインについて詳しくは、[ビューポートを設定する](https://developers.google.com/speed/docs/insights/ConfigureViewport)をご覧ください。
@@ -113,9 +118,7 @@ The attribute 'href' in tag 'link rel=stylesheet for fonts' is set to the invali
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
@@ -154,7 +157,7 @@ The tag 'script' is disallowed except in specific forms.
 
 1. ページにメタデータを追加するスクリプトや、AMP コンポーネントを設定するスクリプト。これらには、type 属性 `application/ld+json` または `application/json` を指定します。
 2. iframe に含まれるスクリプト。iframe に JavaScript を含める方法は、最後の手段と考えてください。可能な限り、[AMP コンポーネント](../../../../documentation/components/index.html)を使用して JavaScript の機能を置き換えてください。次のセクションでは、最初の AMP コンポーネントについて検討します。
-[/tip]
+   [/tip]
 
 外部の [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) ファイルを開いてみましょう。どのようになっていますか。このファイルでは JavaScript コードは空になっていて、次のような情報のコメントのみが含まれているはずです。
 
@@ -192,7 +195,63 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 すべての AMP ドキュメントには次のような AMP ボイラープレート コードが必要です。
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 ドキュメントの `<head>` タグの下部にボイラープレート コードを**追加**します。
@@ -255,7 +314,12 @@ AMP では、指定された幅と高さから要素のアスペクト比を算�
 画像の拡大縮小とサイズ変更が行われるように、layout 属性を `responsive` に**設定**しましょう。
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 これで、画像が正しいアスペクト比になり、画面の幅にレスポンシブに収まりました。
@@ -271,18 +335,78 @@ AMP レイアウト システムについて詳しくは、[AMP レイアウト�
 AMP ドキュメントは次のようになります。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -318,9 +442,17 @@ AMP ドキュメントは次のようになります。
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

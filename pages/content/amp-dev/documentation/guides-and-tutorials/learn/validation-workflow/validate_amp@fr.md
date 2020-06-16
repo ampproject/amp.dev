@@ -2,7 +2,7 @@
 $title: Valider les pages AMP
 ---
 
-La principale force de l'AMP n'est pas seulement d'accélérer le chargement de vos pages. Sa particularité est de permettre de *valider* cette vitesse. Ainsi, cela peut inciter des tierces parties telles que Twitter, Instagram ou la recherche Google à proposer à leurs lecteurs des pages AMP de façon toujours plus intéressante.
+La principale force de l'AMP n'est pas seulement d'accélérer le chargement de vos pages. Sa particularité est de permettre de _valider_ cette vitesse. Ainsi, cela peut inciter des tierces parties telles que Twitter, Instagram ou la recherche Google à proposer à leurs lecteurs des pages AMP de façon toujours plus intéressante.
 
 ## Comment puis-je vérifier si ma page AMP est valide ?
 
@@ -14,9 +14,9 @@ En plus d'être valide, votre document AMP doit également être [visible](../..
 
 Le validateur AMP est intégré à la bibliothèque JavaScript AMP. Il est donc disponible instantanément sur chaque page AMP. Pour procéder à la validation :
 
-  * Ouvrez votre page AMP dans votre navigateur.
-  * Ajoutez "`#development=1`" à l'URL, par exemple, `http://localhost:8000/released.amp.html#development=1`.
-  * Ouvrez la [console des outils pour les développeurs Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) et vérifiez les erreurs de validation.
+- Ouvrez votre page AMP dans votre navigateur.
+- Ajoutez "`#development=1`" à l'URL, par exemple, `http://localhost:8000/released.amp.html#development=1`.
+- Ouvrez la [console des outils pour les développeurs Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) et vérifiez les erreurs de validation.
 
 Les erreurs sont présentées de la façon suivante dans la Developer Console :
 
@@ -41,6 +41,7 @@ Le validateur AMP est accessible directement à partir de la barre d'outils de v
     </td>
     <td>Si la page AMP comporte des erreurs, l'icône de l'extension concernée s'affiche en rouge et indique le nombre d'erreurs trouvées.
     </td>
+
   </tr>
   <tr>
     <td>
@@ -49,6 +50,7 @@ Le validateur AMP est accessible directement à partir de la barre d'outils de v
     </td>
     <td>Si la page AMP ne comporte pas d'erreur, l'icône s'affiche en vert et, le cas échéant, indique le nombre d'avertissements.
     </td>
+
   </tr>
   <tr>
     <td>
@@ -57,6 +59,7 @@ Le validateur AMP est accessible directement à partir de la barre d'outils de v
     </td>
     <td>Si une version AMP d'une page standard est disponible, l'icône s'affiche en bleu, avec une icône de lien. Il suffit de cliquer sur l'extension pour être redirigé vers la version AMP de la page dans le navigateur.
     </td>
+
   </tr>
 </table>
 
@@ -71,14 +74,14 @@ Pour installer l'[outil de ligne de commande du validateur AMP HTML](https://www
 Validons à présent une véritable page AMP HTML.
 
 [sourcecode:console]
-$ amphtml-validator https://amp.dev/
+\$ amphtml-validator https://amp.dev/
 https://amp.dev/: PASS
 [/sourcecode]
 
 Cette page AMP HTML est valide. Rien de surprenant à cela. Intéressons-nous à présent à une page incorrecte : [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Pour exécuter la commande `amphtml-validator`, vous pouvez fournir l'URL de la page ou un nom de fichier local. Téléchargez et enregistrez [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) dans un fichier, puis exécutez :
 
 [sourcecode:console]
-$ amphtml-validator several_errors.html
+\$ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
 several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
@@ -91,21 +94,21 @@ Le format des messages d'erreur comprend le nom du fichier, la ligne, la colonne
 Un bon point de départ pour créer votre propre page AMP consiste à utiliser [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html) :
 
 [sourcecode:console]
-$ amphtml-validator minimum_valid_amp.html
+\$ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
 
 L'outil de ligne de commande offre des fonctionnalités supplémentaires, y compris la désactivation de la couleur, l'impression d'une sortie JSON ou l'exécution d'une version spécifique du validateur JavaScript (par défaut, il exécute le dernier script publié).
 
 [sourcecode:console]
-$ amphtml-validator --help
+\$ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -120,6 +123,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## Que se passe-t-il si ma page n'est pas valide ?
@@ -138,20 +142,20 @@ Il est facile d'identifier et de corriger la plupart des erreurs de validation. 
 
 Elle génère cette erreur de validation AMP, présentée dans ces différents outils :
 
- * Developer Console dans le navigateur
-<amp-img alt="Erreur AMP : la balise &quot;img&quot; ne peut s&#39;afficher que comme descendante de la balise &quot;noscript&quot;.Vouliez-vous dire &quot;amp-img&quot; ?ligne 11, colonne 2" height="30" src="/static/img/docs/validator_console_imgerror.png" width="696" layout="responsive"></amp-img>
+- Developer Console dans le navigateur
+  <amp-img alt="Erreur AMP : la balise &quot;img&quot; ne peut s&#39;afficher que comme descendante de la balise &quot;noscript&quot;.Vouliez-vous dire &quot;amp-img&quot; ?ligne 11, colonne 2" height="30" src="/static/img/docs/validator_console_imgerror.png" width="696" layout="responsive"></amp-img>
 
- * Interface Web
-<amp-img alt="Erreur AMP : la balise &quot;img&quot; ne peut s&#39;afficher que comme descendante de la balise &quot;noscript&quot;.Vouliez-vous dire &quot;amp-img&quot; ?ligne 11, colonne 2" height="58" src="/static/img/docs/validator_webui_imgerror.png" width="676" layout="responsive"></amp-img>
+- Interface Web
+  <amp-img alt="Erreur AMP : la balise &quot;img&quot; ne peut s&#39;afficher que comme descendante de la balise &quot;noscript&quot;.Vouliez-vous dire &quot;amp-img&quot; ?ligne 11, colonne 2" height="58" src="/static/img/docs/validator_webui_imgerror.png" width="676" layout="responsive"></amp-img>
 
- * Extension du navigateur
-<amp-img alt="Erreur AMP : la balise &quot;img&quot; ne peut s&#39;afficher que comme descendante de la balise &quot;noscript&quot;.Vouliez-vous dire &quot;amp-img&quot; ?ligne 11, colonne 2" height="108" src="/static/img/docs/validator_extension_imgerror.png" width="724" layout="responsive"></amp-img>
+- Extension du navigateur
+  <amp-img alt="Erreur AMP : la balise &quot;img&quot; ne peut s&#39;afficher que comme descendante de la balise &quot;noscript&quot;.Vouliez-vous dire &quot;amp-img&quot; ?ligne 11, colonne 2" height="108" src="/static/img/docs/validator_extension_imgerror.png" width="724" layout="responsive"></amp-img>
 
 Chaque outil donne plusieurs informations :
 
-  * L'endroit (ligne et colonne) où l'erreur est survenue dans le document HTML. Certaines interfaces permettent de cliquer dessus pour mettre en surbrillance cet endroit. Dans le cas présent, le problème se trouve à la ligne 11, colonne 2.
-  * Une ligne de texte décrivant l'erreur. Dans le cas présent, le texte indique que nous utilisons une balise `<img>`, alors que nous aurions dû utiliser une balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
-  * Un lien vers un document pertinent à propos de l'erreur. Dans le cas présent, il s'agit de la documentation concernant la balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Toutes les erreurs ne génèrent pas de liens vers la documentation connexe.
+- L'endroit (ligne et colonne) où l'erreur est survenue dans le document HTML. Certaines interfaces permettent de cliquer dessus pour mettre en surbrillance cet endroit. Dans le cas présent, le problème se trouve à la ligne 11, colonne 2.
+- Une ligne de texte décrivant l'erreur. Dans le cas présent, le texte indique que nous utilisons une balise `<img>`, alors que nous aurions dû utiliser une balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
+- Un lien vers un document pertinent à propos de l'erreur. Dans le cas présent, il s'agit de la documentation concernant la balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Toutes les erreurs ne génèrent pas de liens vers la documentation connexe.
 
 En relisant attentivement la spécification, nous réalisons que nous utilisons une balise `<img>` au lieu d'une balise [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 

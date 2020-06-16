@@ -23,12 +23,14 @@ In order to solve this problem, we add information about the AMP page to the non
 Add the following to the non-AMP page:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 And this to the AMP page:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -37,6 +39,7 @@ And this to the AMP page:
 If you only have one page, and that page is an AMP page, you must still add the canonical link to it, which will then simply point to itself:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -44,7 +47,7 @@ If you only have one page, and that page is an AMP page, you must still add the 
 **READ ON –** Learn more about how Google finds AMP pages in [Google Search guidelines for AMP pages](https://support.google.com/webmasters/answer/6340290).
 [/tip]
 
-## Integrate with third-party platforms through additional metadata  <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
+## Integrate with third-party platforms through additional metadata <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
 
 Sometimes a third-party site (that embeds your AMP page or includes links to it) needs to know more about your page other than the fact that it is an AMP page. The questions a platform might ask about your page are things like “Are you a news article?”, “Or a video?”, or “Do you have a screenshot and short description?”.
 
@@ -57,6 +60,7 @@ This isn’t just relevant for AMP pages but for all web pages. For some platfor
 Example:
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -88,6 +92,7 @@ Example:
     }
   }
 </script>
+
 [/sourcecode]
 
 More examples can be found in the [ampproject examples folder](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), including the alternative HTML attribute syntax).
@@ -95,9 +100,9 @@ More examples can be found in the [ampproject examples folder](https://github.co
 [tip type="read-on"]
 Visit these resources for more information on structured data:
 
-* Learn how to [Structure your content to appear in Google Search rich results](https://developers.google.com/search/docs/guides/mark-up-content) (e.g., top stories carousel, recipe cards, etc.).
-* Test your structured data with the [Google Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/).
-[/tip]
+- Learn how to [Structure your content to appear in Google Search rich results](https://developers.google.com/search/docs/guides/mark-up-content) (e.g., top stories carousel, recipe cards, etc.).
+- Test your structured data with the [Google Structured Data Testing Tool](https://developers.google.com/structured-data/testing-tool/).
+  [/tip]
 
 ### Other metadata for even more platforms
 

@@ -13,19 +13,19 @@ $title: アナリティクス ベンダー
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -103,7 +103,7 @@ type 属性の値: `clicky`
 
 type 属性の値: `comscore`
 
-この値を指定すると、comScore Unified Digital Measurement™ のページビュー分析を利用できるようになります。必須の設定として、変数 `c2` に comScore 提供の *c2 id* を指定します。詳しくは、[comscore.com](https://www.comscore.com/jpn/) をご覧ください。
+この値を指定すると、comScore Unified Digital Measurement™ のページビュー分析を利用できるようになります。必須の設定として、変数 `c2` に comScore 提供の _c2 id_ を指定します。詳しくは、[comscore.com](https://www.comscore.com/jpn/) をご覧ください。
 
 ### Cxense
 
@@ -128,7 +128,6 @@ type 属性の値: `euleriananalytics`
 type 属性の値: `facebookpixel`
 
 この値を指定すると、[Facebook ピクセル](https://www.facebook.com/business/a/facebook-pixel)を利用できるようになります。[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) の設定内で、ピクセル ID を `pixelId: YOUR-PIXEL-ID` の形で指定する必要があります。サポートされているイベントや、対応する指定可能なイベント値について詳しくは、[Facebook ピクセルのデベロッパー向けドキュメント](https://developers.facebook.com/docs/ads-for-websites/pixel-events)をご覧ください。
-
 
 ### Gemius
 
@@ -156,10 +155,10 @@ type 属性の値: `infonline`
 
 さらに、次の変数も指定する必要があります。
 
-* `st`: オファー ID
-* `co`: コメント
-* `cp`: コード
-* `url`: `amp-analytics-infonline.html` の場所（HTTPS）
+- `st`: オファー ID
+- `co`: コメント
+- `cp`: コード
+- `url`: `amp-analytics-infonline.html` の場所（HTTPS）
 
 INFOnline や IVW の利用を有効にする方法について詳しくは、[www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/) をご覧ください。
 

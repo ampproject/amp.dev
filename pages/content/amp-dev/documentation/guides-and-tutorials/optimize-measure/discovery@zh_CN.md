@@ -11,12 +11,14 @@ $title: 使您的网页可被轻松发现
 向非 AMP 网页添加以下标记：
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 向 AMP 网页添加以下标记：
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,6 +27,7 @@ $title: 使您的网页可被轻松发现
 如果您只有一个版本的网页，并且该版本是 AMP 网页，则您仍要为其添加规范链接，该链接会指向其自身：
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -45,6 +48,7 @@ $title: 使您的网页可被轻松发现
 示例：
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -76,6 +80,7 @@ $title: 使您的网页可被轻松发现
     }
   }
 </script>
+
 [/sourcecode]
 
 要查看更多示例（包括备用 HTML 属性语法），请访问 [ampproject 示例文件夹](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)。
@@ -89,5 +94,3 @@ $title: 使您的网页可被轻松发现
 ### 适用于更多平台的其他元数据
 
 请访问[网站开发基础中的社交发现指南](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)，了解让内容做好被发现和分发准备的其他各种不同方法。
- 
- 

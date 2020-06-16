@@ -32,7 +32,7 @@ O diretório do projeto contém diversos arquivos de recursos de exemplo e a pá
 
 ### Etapa 2. Executar a página de exemplo
 
-Para testar nossa página de exemplo, é preciso acessar os arquivos por meio de um servidor da Web. Existem várias maneiras de criar um servidor da Web temporário e local para fins de teste.  Estas são algumas opções, escolha a que funciona melhor para você:
+Para testar nossa página de exemplo, é preciso acessar os arquivos por meio de um servidor da Web. Existem várias maneiras de criar um servidor da Web temporário e local para fins de teste. Estas são algumas opções, escolha a que funciona melhor para você:
 
 - [aplicativo do Google Chrome "Web Server for Chrome"](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [um servidor HTTP Python local](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

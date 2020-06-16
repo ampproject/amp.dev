@@ -2,14 +2,12 @@
 $title: amp-mustache
 $category@: dynamic-content
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Autoriser l'affichage de modèles Mustache.js.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Ce composant autorise l'affichage de modèle [Mustache.js](https://github.com/janl/mustache.js/).
 
@@ -46,22 +42,21 @@ Ce composant autorise l'affichage de modèle [Mustache.js](https://github.com/ja
   </tr>
 </table>
 
-
 ## Remarques relatives à la version <a name="version-notes"></a>
 
-| Version | Description |
-|-------|-----|
-| 0.2 | Compatibilité avec les éléments `<svg>` et réduction de la taille du paquet (12,2 Ko contre 20,5 Ko, compressé avec gzip).<br><br>Migration vers une bibliothèque de désinfection HTML plus récente (de Caja vers DOMPurify). Cela peut entraîner de légères modifications, compte tenu des différences au niveau de la mise sur liste blanche des balises et des attributs. Nous vous recommandons de commencer par tester vos pages avant de passer en production pour vous assurer que les modifications apportées au balisage généré n'ont pas d'incidence sur la fonctionnalité. |
-| 0.1 | Mise en œuvre initiale. |
+| Version | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0.2     | Compatibilité avec les éléments `<svg>` et réduction de la taille du paquet (12,2 Ko contre 20,5 Ko, compressé avec gzip).<br><br>Migration vers une bibliothèque de désinfection HTML plus récente (de Caja vers DOMPurify). Cela peut entraîner de légères modifications, compte tenu des différences au niveau de la mise sur liste blanche des balises et des attributs. Nous vous recommandons de commencer par tester vos pages avant de passer en production pour vous assurer que les modifications apportées au balisage généré n'ont pas d'incidence sur la fonctionnalité. |
+| 0.1     | Mise en œuvre initiale.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ## Syntaxe <a name="syntax"></a>
 
 Mustache est une syntaxe de modèle sans logique. Pour plus d'informations, consultez les [documents relatifs à Mustache.js](https://github.com/janl/mustache.js/). Voici quelques-unes des principales balises de Mustache :
 
-* {% raw %}`{{variable}}`{% endraw %} : balise de variable. Affiche la valeur d'une variable avec échappement HTML.
-* {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: balise de section. Permet de vérifier l'existence d'une variable et de la répéter s'il s'agit d'un tableau.
-* {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: : balise inversée. Permet de vérifier qu'une variable n'existe pas.
-* {% raw %}`{{{unescaped}}}`{% endraw %} : balise HTML sans échappement. Elle est limitée dans le balisage qu'elle peut générer (voir la section "Restrictions" ci-dessous).
+- {% raw %}`{{variable}}`{% endraw %} : balise de variable. Affiche la valeur d'une variable avec échappement HTML.
+- {% raw %}`{{#section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: balise de section. Permet de vérifier l'existence d'une variable et de la répéter s'il s'agit d'un tableau.
+- {% raw %}`{{^section}}`{% endraw %}{% raw %}`{{/section}}`{% endraw %}: : balise inversée. Permet de vérifier qu'une variable n'existe pas.
+- {% raw %}`{{{unescaped}}}`{% endraw %} : balise HTML sans échappement. Elle est limitée dans le balisage qu'elle peut générer (voir la section "Restrictions" ci-dessous).
 
 ## Utilisation <a name="usage"></a>
 
@@ -70,7 +65,11 @@ Le modèle `amp-mustache` doit être défini et utilisé conformément aux [spé
 Tout d'abord,`amp-mustache` doit être déclaré et chargé comme suit :
 
 ```html
-<script src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js" async="" custom-template="amp-mustache"></script>
+<script
+  src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+  async=""
+  custom-template="amp-mustache"
+></script>
 ```
 
 Ensuite, les modèles Mustache peuvent être définis dans une balise `script` ou `template` comme suit :
@@ -78,30 +77,31 @@ Ensuite, les modèles Mustache peuvent être définis dans une balise `script` o
 [sourcecode:html]
 {% raw %}<!-- Utilisation de la balise template. -->
 <template type="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </template>
 {% endraw %}[/sourcecode]
 
 ou
 
 <!-- Utilisation de la balise script. -->
+
 [sourcecode:html]{% raw %}<script type="text/plain" template="amp-mustache">
-  Hello {{world}}!
+Hello {{world}}!
 </script>
 {% endraw %}[/sourcecode]
-
 
 Dans la mesure du possible, utilisez la balise `template`, car la validation AMP fournit des indications dev-x utiles. Utilisez le modèle `script` pour les cas extrêmes et les problèmes liés à la création de modèles dans le contexte des tables. Pour en savoir plus, consultez la section "Tables" ci-dessous.
 
 Le mode de détection des modèles, le moment où ils sont affichés et la manière dont les données sont fournies sont autant d'informations déterminées par l'élément AMP cible qui utilise ce modèle pour afficher son contenu (par exemple, dans un composant [amp-list](amp-list.md), [amp-form](amp-form.md), etc.).
 
 ## Restrictions <a name="restrictions"></a>
+
 ### Validation <a name="validation"></a>
 
 À l'instar de tous les modèles AMP, les modèles `amp-mustache` doivent être des fragments DOM correctement formatés. Cela signifie notamment que vous ne pouvez pas utiliser `amp-mustache` pour les tâches suivantes :
 
-* Calculer le nom de la balise. Par exemple, {% raw %}`<{{tagName}}>`{% endraw %} n'est pas autorisé.
-* Calculer le nom de l'attribut. Par exemple, {% raw %}`<div {{attrName}}=something>`{% endraw %} n'est pas autorisé.
+- Calculer le nom de la balise. Par exemple, {% raw %}`<{{tagName}}>`{% endraw %} n'est pas autorisé.
+- Calculer le nom de l'attribut. Par exemple, {% raw %}`<div {{attrName}}=something>`{% endraw %} n'est pas autorisé.
 
 La sortie de "triple mustache" est expurgée afin de n'autoriser que les balises suivantes : `a`, `b`, `br`, `caption`, `colgroup`, `code`, `del`, `div`, `em`, `i`, `ins`, `li`, `mark`, `ol`, `p`, `q`, `s`, `small`, `span`, `strong`, `sub`, `sup`, `table`, `tbody`, `time`, `td`, `th`, `thead`, `tfoot`, `tr`, `u`, `ul`.
 
@@ -119,9 +119,10 @@ Pour contourner ce problème, les éléments `<template>` peuvent également êt
 
 [sourcecode:html]
 {% raw %}<amp-list id="myList" src="https://foo.com/list.json">
-  <template type="amp-mustache">
-    <div>{{title}}</div>
-  </template>
+<template type="amp-mustache">
+
+<div>{{title}}</div>
+</template>
 </amp-list>
 {% endraw %}[/sourcecode]
 
@@ -130,6 +131,7 @@ Peut également être représenté sous la forme :
 [sourcecode:html]
 {% raw %}<!-- Externalize templates to avoid nesting. -->
 <template type="amp-mustache" id="myTemplate">
+
   <div>{{title}}</div>
 </template>
 
@@ -143,6 +145,7 @@ Peut également être représenté sous la forme :
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -168,6 +171,7 @@ Pour remédier au problème, vous pouvez encapsuler les sections Mustache dans l
 
 [sourcecode:html]
 {% raw %}<script type="text/plain" template="amp-mustache">
+
   <table>
     <tr>
       {{#foo}}<td></td>{{/foo}}
@@ -176,22 +180,22 @@ Pour remédier au problème, vous pouvez encapsuler les sections Mustache dans l
 </script>
 {% endraw %}[/sourcecode]
 
-
 ### Échappement de guillemets simples ou doubles <a name="quote-escaping"></a>
 
 Lorsque vous utilisez `amp-mustache` pour calculer des valeurs d'attribut, l'échappement de guillemets simples ou doubles peut poser problème. Par exemple :
 
 [sourcecode:html]
 {% raw %}<template type="amp-mustache">
+
 <!-- A double-quote (") in foo will cause malformed HTML. -->
+
 <amp-img alt="{{foo}}" src="example.jpg" width="100" height="100"></amp-img>
 
 <!-- A single-quote (') or double-quote (") in bar will cause an AMP runtime parse error. -->
+
 <button on="tap:AMP.setState({foo: &#39;{{bar}}&#39;})">Cliquer ici</button>
 </template>
 {% endraw %}[/sourcecode]
-
-
 
 L'utilisation de codes de caractères HTML dans les variables {% raw %}`{{foo}}`{% endraw %} et {% raw %}`{{bar}}`{% endraw %} ne fonctionne pas, car Mustache interprète les caractères `&amp;` en HTML (par exemple, `&amp;quot;` -&gt; `&amp;amp;quot;`). Une solution consiste à utiliser des caractères fac-similé ; par exemple, ′ (`&prime;`) et ″ (`&Prime;`).
 
