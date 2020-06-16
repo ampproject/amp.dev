@@ -125,14 +125,30 @@
 
     .button {
       height: 48px;
-      padding: 0 10px;
+      padding: 16px 10px;
+
+      @media (min-width: 786px) {
+        padding: 16px 15px;
+      }
 
       &.square {
         width: 48px;
       }
+
+      &[disabled] {
+        display: none;
+      }
+
+      svg {
+        margin-left: 5px;
+      }
     }
 
     svg {
+      height: 100%;
+    }
+
+    #preview-header-refresh svg {
       height: 36px;
       width: 36px;
       margin: 8px 0;
@@ -311,9 +327,6 @@
   outline: none;
 }
 
-.button[disabled] {
-  color: color('silver');
-}
 .button[disabled] svg {
   fill: #dddddd;
 }
