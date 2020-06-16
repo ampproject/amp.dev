@@ -89,18 +89,6 @@
   #toolbar > * {
     margin: 0 8px;
   }
-  #error-list {
-    display: none;
-  }
-  #error-indicator[disabled] {
-    display: none;
-  }
-  #error-indicator {
-    background-color: color('blue-ribbon');
-    color: white;
-    border-radius: 24px;
-    padding: 0 24px;
-  }
 }
 
 .panel {
@@ -114,16 +102,19 @@
     top: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     * {
       @include txt-font-accent;
+      font-size: 14px;
     }
     & > * {
       height: 100%;
     }
     .button {
       height: 48px;
+      padding: 0 10px;
+      border-left: 1px solid rgba(0,0,0,.15);
     }
     .button.square {
       width: 48px;
@@ -131,17 +122,13 @@
     .button:active {
       background: color('silver');
     }
-    & > *:first-child {
-      border-right: 1px solid rgba(0,0,0,.15);
-    }
-    & > *:last-child {
-      border-left: 1px solid rgba(0,0,0,.15);
-    }
 
     select {
       padding: 16px;
       padding-right: 36px;
-      margin-right: 16px;
+      margin-right: 5px;
+      border-right: 1px solid rgba(0,0,0,.15);
+      border-radius: 0;
       background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23000'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
     }
 
@@ -160,23 +147,63 @@
 
       * {
         color: #fff;
-        background-color: #29323c;
-      }
-      #runtime-select, select {
-        background-color: #48525c;
-      }
-      & > *:first-child {
-        border-right: 1px solid color('silver');
-      }
-      & > *:last-child > * {
-        border-left: 1px solid color('silver');
         border-radius: 0;
+        border-color: rgba(255, 255, 255, 0.2);
       }
+
+      #runtime-select {
+        margin-right: auto;
+      }
+
       select {
+        height: 100%;
         background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23FFF'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
       }
-      .button:active {
-        background: color('black');
+
+      select,
+      .button {
+        &:hover,
+        &:active {
+          background-color: #29323c;
+        }
+      }
+
+      #error-indicator {
+        height: 28px;
+        margin: 10px;
+        padding: 0 15px;
+        border: 0;
+        border-radius: 24px;
+        line-height: 1;
+        color: white;
+
+        span {
+          display: none;
+          @media (min-width: 768px) {
+            display: inline;
+          }
+        }
+
+        &[disabled] {
+          display: none;
+        }
+
+        &.valid {
+          display: none;
+          pointer-events: none;
+
+          @media (min-width: 768px) {
+            display: block;
+            background-color: #00CD3C;
+          }
+        }
+
+        &.warning {
+          background-color: #EBC241;
+        }
+        &.error {
+          background-color: #ef0000;
+        }
       }
     }
   }
@@ -318,12 +345,28 @@ main > .panel + .panel {
 }
 
 #source {
+  z-index: 1;
   margin-left: 8px;
   position: relative;
   min-width: 300px;
   display: flex;
   flex-direction: column;
   background: linear-gradient(45deg,#48525c,#29323c);
+
+  * {
+    &::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: color('oslo-gray');
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+  }
 }
 
 #source #gutters {
@@ -425,9 +468,6 @@ main > .panel + .panel {
   header #logo {
     margin-left: 1rem;
   }
-  header #runtime-select {
-    margin-right: 1rem;
-  }
   main {
     display: block;
     position: absolute;
@@ -442,7 +482,6 @@ main > .panel + .panel {
   }
   #source {
     margin-left: 0;
-    padding-top: 8px;
   }
   #preview {
     position: fixed;
