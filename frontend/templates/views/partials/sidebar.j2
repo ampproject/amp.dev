@@ -94,12 +94,12 @@
 
           {# Custom content for component-sidebar #}
           {% elif type == 'component' %}
-          {% set cache_key = 'components_sidebar' + doc.locale.get_language_name() %}
-          {% if True or not doc.pod.amp_dev.template_cache.get(cache_key) %}
-          {% do doc.pod.amp_dev.template_cache.add(cache_key, components_sidebar()) %}
+          {% set sidebar_cache_key = 'components_sidebar' + doc.locale.get_language_name() %}
+          {% if not doc.pod.amp_dev.template_cache.get(sidebar_cache_key) %}
+          {% do doc.pod.amp_dev.template_cache.add(sidebar_cache_key, components_sidebar()) %}
           {{ components_sidebar() }}
           {% else %}
-          {{ doc.pod.amp_dev.template_cache.get(cache_key)|safe }}
+          {{ doc.pod.amp_dev.template_cache.get(sidebar_cache_key)|safe }}
           {% endif %}
           {# Content for default sidebar #}
           {% else %}
