@@ -13,18 +13,15 @@
 // limitations under the License.
 
 require('./import-url.scss');
-const fetch = require('node-fetch');
 
-
-// import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/base.js';
+const fetch = require('node-fetch');
 
 export function createImportURLView(target, trigger) {
   return new ImportURL(target, trigger);
 }
 
-const DESKTOP_WIDTH = 1024;
 
 class ImportURL extends FlyIn {
   constructor(target, trigger) {
@@ -37,9 +34,9 @@ class ImportURL extends FlyIn {
     content.className = 'import-url';
     content.innerHTML = `
       <p class="experimental-view-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Learn more about experimental features.</p>
-      <form id="url-bar" class="url-bar">
-        <input id="url-bar-input" class="url-bar-input" placeholder="Your URL" type="url" required pattern="https?://.+" name="input">
-        <input id="url-bar-submit" class="url-bar-submit" type="submit" value="Import"></input>
+      <form id="url-bar" class="import-url-bar">
+        <input id="url-bar-input" class="import-url-bar-input" placeholder="Your URL" type="url" required pattern="https?://.+" name="input">
+        <input id="url-bar-submit" class="import-url-bar-submit" type="submit" value="Import"></input>
       </form>`;
     this.upadateContent(content);
 

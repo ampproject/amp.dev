@@ -2,5 +2,41 @@
 @import 'components/atoms/_text.scss';
 
 .import-url {
+  padding: 25px;
 
+  p {
+    font-size: 14px;
+    line-height: 1.64;
+    color: #333d47;
+  }
+
+  &-bar {
+    display: flex;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+
+    &-input {
+      flex: 1;
+      height: 100%;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 4px 0 0 4px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &-submit {
+      min-width: 100px;
+      border: 0;
+      border-radius: 0 4px 4px 0;
+      font-family: Poppins;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #005af0;
+    }
+  }
 }
