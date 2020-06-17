@@ -14,14 +14,18 @@
 
 require('./import-url.scss');
 
+import events from '../events/events.js';
+const fetch = require('node-fetch');
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/base.js';
-const fetch = require('node-fetch');
+
+export const EVENT_NEW_URL_INPUT =
+  'event-new-url-input';
+
 
 export function createImportURLView(target, trigger) {
   return new ImportURL(target, trigger);
 }
-
 
 class ImportURL extends FlyIn {
   constructor(target, trigger) {
@@ -49,8 +53,9 @@ class ImportURL extends FlyIn {
   }
 
   async updateEditor(url) {
-    const html = await  this.doFetch(url);
-    console.log(html);
+    const html = await this.doFetch(url);
+    events.publish(EVENT_NEW_URL_INPUT, html);
+    this.toggle();
   }
 
   async doFetch(url) {
@@ -68,5 +73,4 @@ class ImportURL extends FlyIn {
     });
     return response.text();
   }
-
 }

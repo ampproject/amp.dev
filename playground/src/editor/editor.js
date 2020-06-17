@@ -33,6 +33,7 @@ import {runtimes, EVENT_SET_RUNTIME} from '../runtime/runtimes.js';
 
 import CodeMirror from 'codemirror';
 import Loader from '../loader/base.js';
+import * as ImportURL from '../import-url/import-url.js';
 
 require('./editor.scss');
 
@@ -68,6 +69,18 @@ class Editor {
     this.errorMarkers = [];
     this.loader = new Loader(this.container, 'light');
     this.amphtmlHints = this.fetchHintsData();
+
+    
+    events.subscribe(
+      ImportURL.EVENT_NEW_URL_INPUT,
+      (html) => {
+        window.requestIdleCallback(() => {
+          if (html) {
+            this.setSource(html)
+          }
+        });
+      }
+    );
   }
 
   createCodeMirror() {
