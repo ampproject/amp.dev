@@ -72,6 +72,7 @@
         {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
         {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
         {{> button/button.hbs id="share" text="Share"}}
+        {{> button/button.hbs id="import-url-trigger" text="Import URL"}}
         {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
       {{> loader/loader.hbs theme="light"}}
@@ -104,6 +105,7 @@
 
     <div id="error-list" class="fly-in fly-in--right fly-in--error" data-title="Validation errors"></div>
     <div id="state-view" class="fly-in fly-in--left fly-in--state" data-title="State Inspect View"></div>
+    <div id="import-url-view" class="fly-in fly-in--left fly-in--import-url" data-title="Import URL"></div>
 
   </body>
 </html>

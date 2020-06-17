@@ -12,7 +12,7 @@
   min-width: 240px;
   overflow: hidden;
   background: white;
-  transition: transform 3s ease, box-shadow .2s ease-in;
+  transition: transform .3s ease, box-shadow .2s ease-in;
   color: #20202a;
 
   @media (min-width: 768px) {
@@ -57,6 +57,10 @@
       font-size: 24px;
       user-select: none;
     }
+  }
+
+  &--import-url h2 {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='29' height='29'%3E%3Cpath fill='%2320202A' d='M24.287 4.587c-5.438-5.445-14.26-5.45-19.705-.012l1.876 1.876c4.408-4.405 11.552-4.404 15.959.003 4.406 4.407 4.406 11.552 0 15.959-4.407 4.407-11.551 4.408-15.959.002l-1.857 1.876c5.437 5.423 14.237 5.423 19.675 0 5.444-5.438 5.449-14.26.01-19.704zM13.992 7.524l-1.857 1.858 3.86 3.86H.5v2.626h15.495l-3.86 3.861 1.857 1.857 7.03-7.03-7.03-7.032z'/%3E%3C/svg%3E");
   }
 
   &--error h2 {
