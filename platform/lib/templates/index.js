@@ -36,7 +36,10 @@ let templates = null;
  * @param  {expressjs.Request} request
  * @return {Object}
  */
-function createRequestContext(request = {'query': {}, 'path': ''}, context = {}) {
+function createRequestContext(
+  request = {'query': {}, 'path': ''},
+  context = {}
+) {
   context.requestPath = request.path;
 
   // Store the initially requested format to be able
