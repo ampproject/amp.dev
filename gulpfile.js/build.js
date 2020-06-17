@@ -41,7 +41,6 @@ const lint = require('./lint.js');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
 const {thumborImageIndex} = require('./thumbor.js');
-const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
 // The Google Cloud Storage bucket used to store build job artifacts
@@ -351,7 +350,6 @@ function buildPages(done) {
         process.exit(1);
       }
     },
-    minifyPages,
     // eslint-disable-next-line prefer-arrow-callback
     function sharedPages() {
       // Copy shared pages separated from PageTransformer as they should
@@ -384,47 +382,6 @@ function buildPages(done) {
       }
     }
   )(done);
-}
-
-/**
- * Removes unnecessary whitespace from rendered pages and minifies their CSS
- *
- * @return {Promise}
- */
-function minifyPages() {
-  // Configure CleanCSS to use a more aggressive set of rules to achieve better
-  // results
-  const cleanCss = new CleanCSS({
-    2: {
-      all: true,
-      mergeSemantically: true,
-      restructureRules: true,
-    },
-  });
-
-  return gulp
-    .src(`${project.paths.GROW_BUILD_DEST}/**/*.html`)
-    .pipe(
-      through.obj(function (page, encoding, callback) {
-        let html = page.contents.toString();
-
-        // Minify the CSS
-        const css = html.match(/(?<=<style amp-custom>).*?(?=<\/style>)/ms);
-        if (css) {
-          const minifiedCss = cleanCss.minify(css[0]).styles;
-          html =
-            html.slice(0, css.index) +
-            minifiedCss +
-            html.slice(css.index + css[0].length);
-        }
-
-        page.contents = Buffer.from(html);
-        // eslint-disable-next-line no-invalid-this
-        this.push(page);
-        callback();
-      })
-    )
-    .pipe(gulp.dest(`${project.paths.PAGES_DEST}`));
 }
 
 /**
@@ -542,7 +499,6 @@ exports.zipTemplates = zipTemplates;
 exports.buildPages = buildPages;
 exports.buildComponentVersions = buildComponentVersions;
 exports.buildPrepare = buildPrepare;
-exports.minifyPages = minifyPages;
 exports.fetchArtifacts = fetchArtifacts;
 exports.collectStatics = collectStatics;
 exports.buildFinalize = gulp.series(
