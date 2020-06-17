@@ -37,6 +37,11 @@
       text-transform: uppercase;
       color: #fff;
       background-color: #005af0;
+
+      &.loading {
+        pointer-events: none;
+        background-color: #a7a7a7;
+      }
     }
   }
 }

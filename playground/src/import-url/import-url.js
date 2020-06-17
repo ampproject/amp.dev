@@ -44,16 +44,22 @@ class ImportURL extends FlyIn {
       </form>`;
     this.upadateContent(content);
 
+    const urlBar = document.getElementById('url-bar');
+    const urlBarInput = document.getElementById('url-bar-input');
+    const urlBarSubmit = document.getElementById('url-bar-submit');
 
-    document.getElementById('url-bar').addEventListener('submit', (e) => {
+    urlBar.addEventListener('submit', (e) => {
       e.preventDefault();
-      const url = document.getElementById('url-bar-input').value;
-      this.updateEditor(url);
+      this.updateEditor(urlBarSubmit, urlBarInput.value);
+      urlBarSubmit.classList.add('loading');
+      urlBarSubmit.value = '. . .';
     });
   }
 
-  async updateEditor(url) {
+  async updateEditor(urlBarSubmit, url) {
     const html = await this.doFetch(url);
+    urlBarSubmit.classList.remove('loading');
+    urlBarSubmit.value = 'Import';
     events.publish(EVENT_NEW_URL_INPUT, html);
     this.toggle();
   }
