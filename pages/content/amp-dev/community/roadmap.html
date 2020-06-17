@@ -25,9 +25,15 @@ roadmap: !g.json /shared/data/roadmap.json
 
   <section class="ap-t-roadmap-intro">
     <p class="ap-t-roadmap-intro-text">The ongoing development of AMP is conducted in <a href="{{ g.doc('/content/amp-dev/community/working-groups/access-subscriptions.yaml', locale=doc.locale).url.path }}">working groups</a>, each with knowledge or interest in a specific area of AMP.<br><br>To make their work visible to the community all groups provide regular status updates with details of what they have accomplished and what's up next.</p>
-    <div class="ap-m-tip ap-m-tip-info">
+
+    {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
+    <div class="ap-m-tip">
+      <div class="ap-a-ico ap-m-tip-icon">
+        {% do doc.icons.useIcon('icons/speech-bubble.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#speech-bubble"></use></svg>
+      </div>
+
       <div class="ap-m-tip-content">
-        {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
         <p>{{ _('All of the updates listed here are available as issues on GitHub and we\'d love you to join the conversation there!') }}</p>
       </div>
     </div>
