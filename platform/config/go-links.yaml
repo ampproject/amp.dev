@@ -1,6 +1,7 @@
 # Use via: go.amp.dev/ads
 # Add new entries in alphabetical order
 /ads: /about/ads/
+/amp-optimizer: https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer
 /amp-pwa-amp: https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/
 /amp-script-apis: https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md
 /ampcs: /events/amp-cs-2019/#Schedule
