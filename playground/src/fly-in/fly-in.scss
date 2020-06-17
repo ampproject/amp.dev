@@ -12,12 +12,13 @@
   min-width: 240px;
   overflow: hidden;
   background: white;
-  transition: transform .3s ease-in, box-shadow .2s ease-in;
+  transition: transform 3s ease, box-shadow .2s ease-in;
   color: #20202a;
 
   @media (min-width: 768px) {
     top: #{$headerHeight};
     width: 42%;
+    max-width: 480px;
     height: calc(100% - #{$headerHeight} - 8px);
   }
 
