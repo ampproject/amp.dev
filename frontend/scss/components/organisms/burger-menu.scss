@@ -148,12 +148,12 @@
             display: block;
           }
           & + .nav-icon .#{atom('ico')} {
-            transform: rotate(-90deg);
+            transform: rotate(0);
           }
         }
         & + .nav-icon .#{atom('ico')} {
           display: inline-block;
-          transform: rotate(0);
+          transform: rotate(-90deg);
         }
       }
 
