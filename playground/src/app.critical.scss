@@ -227,10 +227,10 @@
         &.valid {
           display: none;
           pointer-events: none;
+          background: color('malachite');
 
           @media (min-width: 768px) {
             display: block;
-            background: color('malachite');
           }
         }
 
@@ -262,7 +262,7 @@
       .button {
         &:hover,
         &:active {
-          background-color: rgba(0, 0, 0, 0.02);
+          background-color: transparentize(color('black'), 0.98);
         }
       }
 

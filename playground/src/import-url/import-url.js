@@ -62,7 +62,7 @@ class ImportURL extends FlyIn {
       e.preventDefault();
       this.updateEditor(urlBarSubmit, urlBarInput.value);
       urlBarSubmit.classList.add('loading');
-      urlBarSubmit.value = '. . .';
+      urlBarSubmit.value = '';
     });
   }
 

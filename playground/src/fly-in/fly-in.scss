@@ -11,9 +11,9 @@
   height: 100%;
   min-width: 240px;
   overflow: hidden;
-  background: white;
-  transition: transform .3s ease, box-shadow .2s ease-in;
+  background: color('white');
   color: color('charade');
+  transition: transform .3s ease, box-shadow .2s ease-in;
 
   @media (min-width: 768px) {
     top: #{$headerHeight};

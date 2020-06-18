@@ -1,3 +1,4 @@
+@import 'mixins.scss';
 @import 'components/atoms/_text.scss';
 
 .import-url {
@@ -14,7 +15,7 @@
     height: 40px;
     margin-top: 30px;
     border-radius: 4px;
-    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.8);
 
     &-input {
       flex: 1;
