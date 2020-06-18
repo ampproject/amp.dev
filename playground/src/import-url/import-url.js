@@ -60,9 +60,11 @@ class ImportURL extends FlyIn {
 
     urlBar.addEventListener('submit', (e) => {
       e.preventDefault();
-      this.updateEditor(urlBarSubmit, urlBarInput.value);
+      const url = urlBarInput.value;
+      this.updateEditor(urlBarSubmit, url);
       urlBarSubmit.classList.add('loading');
       urlBarSubmit.value = '';
+      window.location.hash = `url=${url}`;
     });
   }
 
