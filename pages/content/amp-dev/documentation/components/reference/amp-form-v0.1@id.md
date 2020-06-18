@@ -610,7 +610,7 @@ Untuk contoh lainnya, lihat [examples/forms.amp.html](https://github.com/ampproj
 
 # Substitusi variabel <a name="variable-substitutions"></a>
 
-Ekstensi `amp-form` memungkinkan [substitusi variabel platform](../../spec/amp-var-substitutions.md) untuk input yang tersembunyi dan yang memiliki atribut `data-amp-replace`. Pada setiap pengiriman formulir, `amp-form` akan menemukan semua `input[type=hidden][data-amp-replace]` di dalam formulir dan menerapkan substitusi variabel ke atribut `value`-nya dan menggantinya dengan hasil dari substitusi tersebut.
+Ekstensi `amp-form` memungkinkan [substitusi variabel platform](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) untuk input yang tersembunyi dan yang memiliki atribut `data-amp-replace`. Pada setiap pengiriman formulir, `amp-form` akan menemukan semua `input[type=hidden][data-amp-replace]` di dalam formulir dan menerapkan substitusi variabel ke atribut `value`-nya dan menggantinya dengan hasil dari substitusi tersebut.
 
 Anda harus menyediakan variabel yang digunakan untuk setiap substitusi pada setiap input dengan menentukan string dipisahkan-spasi dari variabel yang digunakan dalam `data-amp-replace` (lihat contoh di bawah). AMP tidak akan mengganti variabel yang tidak ditentukan secara eksplisit.
 
@@ -658,7 +658,7 @@ Setelah pengguna mencoba mengirim formulir, AMP akan mencoba menetapkan variabel
 
 Perhatikan bahwa `CANONICAL_HOSTNAME` di atas tidak diganti karena tidak tercantum dalam daftar diizinkan melalui atribut `data-amp-replace` di kolom pertama.
 
-Substitusi akan terjadi pada setiap pengiriman berikutnya. Baca selengkapnya tentang [substitusi variabel di AMP](../../spec/amp-var-substitutions.md).
+Substitusi akan terjadi pada setiap pengiriman berikutnya. Baca selengkapnya tentang [substitusi variabel di AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 
 # Polyfill <a name="polyfills"></a>
 

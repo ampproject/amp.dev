@@ -290,7 +290,7 @@ Consultez les [règles relatives à amp-ad](https://github.com/ampproject/amphtm
 - [Content.ad](https://github.com/ampproject/amphtml/blob/master/ads/contentad.md)
 - [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md)
 - [CSA](https://github.com/ampproject/amphtml/blob/master/ads/google/csa.md)
-- [CxenseDisplay](../../ads/eas.md)
+- [CxenseDisplay](https://github.com/ampproject/amphtml/blob/master/ads/eas.md)
 - [Dianomi](https://github.com/ampproject/amphtml/blob/master/ads/dianomi.md)
 - [Directadvert](https://github.com/ampproject/amphtml/blob/master/ads/directadvert.md)
 - [DistroScale](https://github.com/ampproject/amphtml/blob/master/ads/distroscale.md)
