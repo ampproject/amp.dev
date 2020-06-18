@@ -39,9 +39,8 @@
       background-color: color('blue-ribbon');
 
       &.loading {
-        // TODO: Add loader here
-        pointer-events: none;
-        background: color('gray-chateau');
+        background: color('mercury');
+        @include loading-indicator;
       }
     }
   }

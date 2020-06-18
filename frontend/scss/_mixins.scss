@@ -154,6 +154,26 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 	}
 }
 
+@mixin loading-indicator {
+  pointer-events: none;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin: auto;
+    margin: 100px auto auto auto;
+    border: 3px solid color('silver');
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: rotate 1.5s linear infinite;
+  }
+  @keyframes rotate {
+    to { transform: rotate(360deg); }
+  }
+}
+
 @mixin scrollbar {
   ::-webkit-scrollbar {
     width: 4px;

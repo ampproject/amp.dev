@@ -1,17 +1,9 @@
+@import 'base.scss';
+
 .state-view {
   padding: 25px;
 
-  &-loader {
-    width: 45px;
-    height: 45px;
-    margin: 100px auto auto auto;
-    border: 2px solid color('silver');
-    border-radius: 50%;
-    border-left-color: transparent;
-    animation: rotate 1.5s linear infinite;
+  &.loading {
+    @include loading-indicator;
   }
-}
-
-@keyframes rotate{
-  to { transform: rotate(360deg); }
 }

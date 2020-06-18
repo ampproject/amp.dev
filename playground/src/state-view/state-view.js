@@ -61,14 +61,14 @@ class StateView extends FlyIn {
 
   requestState() {
     events.publish(EVENT_AMP_BIND_REQUEST_STATE);
-    this.container.innerHTML = '<div class="state-view-loader"></div>';
+    this.container.classList.add('loading');
     this.upadateContent(this.container);
     this.toggle();
   }
 
   setStateViewContent(state) {
     this.treeView.value = state;
-    this.container.innerHTML = '';
+    this.container.classList.remove('loading');
     this.container.appendChild(this.treeView.dom);
     this.upadateContent(this.container);
   }
