@@ -71,17 +71,15 @@ class Editor {
     this.loader = new Loader(this.container, 'light');
     this.amphtmlHints = this.fetchHintsData();
 
-    
-    events.subscribe(
-      ImportURL.EVENT_NEW_URL_INPUT,
-      (html) => {
-        window.requestIdleCallback(() => {
-          if (html) {
-            formatter.format(html).then((formattedCode) => this.setSource(formattedCode));
-          }
-        });
-      }
-    );
+    events.subscribe(ImportURL.EVENT_NEW_URL_INPUT, (html) => {
+      window.requestIdleCallback(() => {
+        if (html) {
+          formatter
+            .format(html)
+            .then((formattedCode) => this.setSource(formattedCode));
+        }
+      });
+    });
   }
 
   createCodeMirror() {

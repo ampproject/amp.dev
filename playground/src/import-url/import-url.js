@@ -19,9 +19,7 @@ const fetch = require('node-fetch');
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/base.js';
 
-export const EVENT_NEW_URL_INPUT =
-  'event-new-url-input';
-
+export const EVENT_NEW_URL_INPUT = 'event-new-url-input';
 
 export function createImportURLView(target, trigger) {
   return new ImportURL(target, trigger);
@@ -37,10 +35,23 @@ class ImportURL extends FlyIn {
     const content = document.createElement('div');
     content.className = 'import-url';
     content.innerHTML = `
-      <p class="experimental-view-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Learn more about experimental features.</p>
+      <p class="experimental-view-intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris. Learn more about experimental features.
+      </p>
       <form id="url-bar" class="import-url-bar">
-        <input id="url-bar-input" class="import-url-bar-input" placeholder="Your URL" type="url" required pattern="https?://.+" name="input">
-        <input id="url-bar-submit" class="import-url-bar-submit" type="submit" value="Import"></input>
+        <input id="url-bar-input"
+            class="import-url-bar-input"
+            placeholder="Your URL"
+            type="url"
+            required pattern="https?://.+"
+            name="input">
+        <input id="url-bar-submit"
+            class="import-url-bar-submit"
+            type="submit"
+            value="Import">
+        </input>
       </form>`;
     this.upadateContent(content);
 

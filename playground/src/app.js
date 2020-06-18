@@ -66,13 +66,10 @@ const importURLTrigger = document.getElementById('import-url-trigger');
 const importURLContainer = document.getElementById('import-url-view');
 ImportURL.createImportURLView(importURLContainer, importURLTrigger);
 
-
-
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');
 const stateListContainer = document.getElementById('state-view');
 StateView.createStateView(stateListContainer, stateIndicator);
-
 
 // configure error list behavior
 const errorIndicator = document.getElementById('error-indicator');

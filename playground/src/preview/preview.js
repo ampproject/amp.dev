@@ -26,11 +26,9 @@ const PARAM_HEIGHT = 'height';
 
 const MOBILE_BREAK_POINT = 767;
 
-export const EVENT_AMP_BIND_READY =
-  'event-amp-bind-ready';
+export const EVENT_AMP_BIND_READY = 'event-amp-bind-ready';
 
-export const EVENT_AMP_BIND_NEW_STATE =
-  'event-amp-bind-new-state';
+export const EVENT_AMP_BIND_NEW_STATE = 'event-amp-bind-new-state';
 
 export function createPreview(container) {
   return new Preview(container, document, createLoader(container));
@@ -45,14 +43,11 @@ class Preview {
     this.panelHeader = container.querySelector('.panel-header');
     this.createHeader();
 
-    events.subscribe(
-      StateView.EVENT_AMP_BIND_REQUEST_STATE,
-      () => {
-        this.getAmpState().then((state) => {
-          events.publish(EVENT_AMP_BIND_NEW_STATE, state);
-        });
-      }
-    );
+    events.subscribe(StateView.EVENT_AMP_BIND_REQUEST_STATE, () => {
+      this.getAmpState().then((state) => {
+        events.publish(EVENT_AMP_BIND_NEW_STATE, state);
+      });
+    });
   }
 
   setRuntime(runtime) {
@@ -345,7 +340,7 @@ class Preview {
         if (tag == '[amp-bind]') {
           resolve(state);
         } else {
-          reject({});
+          reject(new Error('Requesting AMP state failed'));
         }
       };
 

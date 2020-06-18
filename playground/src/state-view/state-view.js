@@ -20,16 +20,14 @@ import * as Button from '../button/button.js';
 import * as Preview from '../preview/preview.js';
 import FlyIn from '../fly-in/base.js';
 
-
 export function createStateView(target, trigger) {
   return new StateView(target, trigger);
 }
 
-export const EVENT_AMP_BIND_REQUEST_STATE =
-  'event-amp-bind-request-state';
+export const EVENT_AMP_BIND_REQUEST_STATE = 'event-amp-bind-request-state';
 
 class StateView extends FlyIn {
-  constructor(target, trigger, preview) {
+  constructor(target, trigger) {
     super(target);
 
     this.target = target;
@@ -46,30 +44,24 @@ class StateView extends FlyIn {
     this.treeView.expand(true);
 
     // configure amp-state listener
-    events.subscribe(
-      Preview.EVENT_AMP_BIND_READY,
-      (stateResult) => {
-        window.requestIdleCallback(() => {
-          if (!stateResult) {
-            this.trigger.disable();
-          } else {
-            this.trigger.enable();
-          }
-        });
-      }
-    );
+    events.subscribe(Preview.EVENT_AMP_BIND_READY, (stateResult) => {
+      window.requestIdleCallback(() => {
+        if (!stateResult) {
+          this.trigger.disable();
+        } else {
+          this.trigger.enable();
+        }
+      });
+    });
 
-    events.subscribe(
-      Preview.EVENT_AMP_BIND_NEW_STATE,
-      (state) => {
-        this.setStateViewContent(state);
-      }
-    );
+    events.subscribe(Preview.EVENT_AMP_BIND_NEW_STATE, (state) => {
+      this.setStateViewContent(state);
+    });
   }
 
   requestState() {
     events.publish(EVENT_AMP_BIND_REQUEST_STATE);
-    this.container.innerHTML = ('<div class="state-view-loader"></div>');
+    this.container.innerHTML = '<div class="state-view-loader"></div>';
     this.upadateContent(this.container);
     this.toggle();
   }
