@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,10 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./import-url.scss');
+import './import-url.scss';
 
 import events from '../events/events.js';
-const fetch = require('node-fetch');
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/base.js';
 

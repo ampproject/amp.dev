@@ -61,7 +61,7 @@ const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
-// configure state list behavior
+// configure url import view
 const importURLTrigger = document.getElementById('import-url-trigger');
 const importURLContainer = document.getElementById('import-url-view');
 ImportURL.createImportURLView(importURLContainer, importURLTrigger);

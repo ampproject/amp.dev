@@ -1,4 +1,5 @@
 @import 'base.scss';
+@import 'mixins.scss';
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
 @import 'components/atoms/_icon.scss';
@@ -163,6 +164,10 @@
     }
   }
 
+  .CodeMirror {
+    @include scrollbar;
+  }
+
   &--dark {
     position: relative;
     display: flex;
@@ -174,28 +179,15 @@
       background: var(--gradient-1);
 
       * {
-        color: #fff;
-
-        &::-webkit-scrollbar {
-          width: 4px;
-          height: 4px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background-color: color('oslo-gray');
-        }
-
-        &::-webkit-scrollbar-corner {
-          background-color: transparent;
-        }
+        color: color('white');
       }
 
       & > * {
-        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: 1px solid transparentize(color('white'), 0.8);
 
         &:first-child {
           margin-right: auto;
-          border-right: 1px solid rgba(255, 255, 255, 0.2);
+          border-right: 1px solid transparentize(color('white'), 0.8);
         }
       }
 
@@ -224,12 +216,7 @@
 
           @media (min-width: 768px) {
             display: inline;
-
-            &:before {
-              content: '';
-              display: inline-block;
-              width: 4px;
-            }
+            margin-left: 4px;
           }
         }
 
@@ -243,15 +230,15 @@
 
           @media (min-width: 768px) {
             display: block;
-            background-color: #00CD3C;
+            background: color('malachite');
           }
         }
 
         &.warning {
-          background-color: #EBC241;
+          background: color('school-bus');
         }
         &.error {
-          background-color: #ef0000;
+          background: color('red');
         }
       }
     }
@@ -259,18 +246,13 @@
 
   &--light {
     .panel-header {
-
-      * {
-        color: #000;
-      }
-
       @media (min-width: 786px) {
         & > * {
-          border-right: 1px solid rgba(0, 0, 0, 0.15);
+          border-right: 1px solid transparentize(color('black'), 0.85);
 
           &:last-child {
             margin-left: auto;
-            border-left: 1px solid rgba(0, 0, 0, 0.15);
+            border-left: 1px solid transparentize(color('black'), 0.85);
             border-right: 0;
           }
         }
@@ -285,7 +267,7 @@
       }
 
       svg {
-        fill: #20212a;
+        fill: color('charade');
       }
     }
   }

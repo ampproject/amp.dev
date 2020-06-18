@@ -1,4 +1,3 @@
-@import 'base.scss';
 @import 'components/atoms/_text.scss';
 
 .import-url {
@@ -7,7 +6,7 @@
   p {
     font-size: 14px;
     line-height: 1.64;
-    color: #333d47;
+    color: #color('limed-spruce');
   }
 
   &-bar {
@@ -23,24 +22,26 @@
       padding: 0 14px;
       border: 0;
       border-radius: 4px 0 0 4px;
+      font-family: Noto Sans;
       font-size: 16px;
       font-weight: bold;
     }
 
     &-submit {
+      @include txt-font-accent;
       min-width: 100px;
       border: 0;
       border-radius: 0 4px 4px 0;
       font-family: Poppins;
       font-size: 16px;
-      font-weight: bold;
       text-transform: uppercase;
-      color: #fff;
-      background-color: #005af0;
+      color: color('white');
+      background-color: color('blue-ribbon');
 
       &.loading {
+        // TODO: Add loader here
         pointer-events: none;
-        background-color: #a7a7a7;
+        background: color('gray-chateau');
       }
     }
   }

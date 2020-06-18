@@ -331,7 +331,7 @@ class Preview {
 
   getAmpState() {
     const iframe = document.getElementById('previewIframe');
-    const win = iframe.contentWindow;
+    const win = this.getIframeWindow(iframe);
 
     const _info = win.console.info;
 
