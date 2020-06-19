@@ -35,6 +35,7 @@
 /learn-script: /documentation/guides-and-tutorials/develop/custom-javascript-tutorial/
 /learn-story: /documentation/guides-and-tutorials/start/visual_story/?format=stories
 /learn-pwa: https://codelabs.developers.google.com/codelabs/amp-pwa-workbox/
+/nextjs: https://nextjs.org/docs/advanced-features/amp-support/introduction
 /optimize: https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer
 /optimize-amp: https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/
 /owners: https://ampproject-owners-bot.appspot.com/tree
