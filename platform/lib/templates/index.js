@@ -36,7 +36,12 @@ let templates = null;
  * @param  {expressjs.Request} request
  * @return {Object}
  */
-function createRequestContext(request = {'query': {}}, context = {}) {
+function createRequestContext(
+  request = {'query': {}, 'path': ''},
+  context = {}
+) {
+  context.requestPath = request.path;
+
   // Store the initially requested format to be able
   // to match user request against available formats
   context.requestedFormat = SUPPORTED_FORMATS.includes(request.query.format)
