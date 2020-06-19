@@ -1,3 +1,5 @@
+- path: /content/amp-dev/documentation/guides-and-tutorials/start/email_sender_distribution.md
+  date: '2020-06-18 00:18:31 -0700'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-email-actions-and-events.md
   date: '2020-05-28 17:39:06 +0200'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/webstory_technical_details.md
@@ -228,11 +230,11 @@
   date: '2018-12-01 03:04:02 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md
   date: '2018-12-01 03:04:02 -0800'
-- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
-  date: '2018-12-01 02:17:35 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging.md
   date: '2018-12-01 02:17:35 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md
+  date: '2018-12-01 02:17:35 -0800'
+- path: /content/amp-dev/documentation/guides-and-tutorials/learn/amp-html-layout/index.md
   date: '2018-12-01 02:17:35 -0800'
 - path: /content/amp-dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors.md
   date: '2018-12-01 02:17:35 -0800'

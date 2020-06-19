@@ -56,6 +56,7 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 
 #### Role <a name="role-1"></a>
 
+* Technical leadership of the AMP project is delegated to the TSC by the OpenJS Cross Project Council (CPC) in accordance with the [AMP Charter](https://github.com/ampproject/meta/blob/master/CHARTER.md).
 * The TSC's primary role is setting AMP's technical & product direction based on the [project guidelines](https://www.ampproject.org/about/amp-design-principles/).
 * Creates a product roadmap in consultation with the Working Groups.
 * Creates Working Groups and sets the initial membership & initial Facilitator of the Working Groups.  The TSC may initiate the creation of Working Groups or a group of people with a common interest may request recognition as a Working Group.
@@ -63,7 +64,9 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 * Sets and maintains the project guidelines.
 * Sets and maintains the project’s feature and bug fix process.
 * Enforces the Code of Conduct.
-* The TSC may designate entities to perform legal, security and privacy reviews of AMP code/features.
+* Approves changes to the AMP Charter and this document in coordination with the OpenJS CPC as described in the [AMP Charter](https://github.com/ampproject/meta/blob/master/CHARTER.md).
+* The TSC may designate entities to perform security and privacy reviews of AMP code/features.
+* The TSC may escalate legal questions to the Foundation. 
 * Decisions within the TSC follow the decision-making policy, and are facilitated by the Facilitator or their designate.
 
 #### Membership <a name="membership-1"></a>
@@ -114,7 +117,7 @@ The Advisory Committee provides perspective and advice to the Technical Steering
 
 ## Contributor License Agreement <a name="contributor-license-agreement"></a>
 
-* The AMP Project requires all Owners, Collaborators, and Contributors who open a pull request to either sign an individual Contributor License Agreement (CLA) or be covered by a corporate CLA in order to protect contributors and users in issues of intellectual property.
+* The AMP Project requires all Owners, Collaborators, and Contributors who open a pull request to either accept the terms of an individual Contributor License Agreement (CLA) or be covered by a corporate CLA in order to protect contributors and users in issues of intellectual property.
 
 * TSC members which aren't already covered by an individual or corporate CLA are required to be covered upon joining the TSC.
 
