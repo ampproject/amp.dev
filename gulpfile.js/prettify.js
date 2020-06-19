@@ -22,6 +22,7 @@
  * prettier to check (and optionally fix) the formatting in a variety of
  * non-JS files in the repo. (JS files are separately checked by eslint.)
  */
+
 'use strict';
 
 const argv = require('minimist')(process.argv.slice(2));
@@ -61,15 +62,15 @@ const prettifyGlobs = [
 // Helpers
 // -----------------------------------------------------------------------------
 
-const shellCmd = process.platform == 'win32' ? 'cmd' : '/bin/sh';
-const shellFlag = process.platform == 'win32' ? '/C' : '-c';
+const shellCmd = process.platform === 'win32' ? 'cmd' : '/bin/sh';
+const shellFlag = process.platform === 'win32' ? '/C' : '-c';
 
 /**
  * Spawns the given command in a child process with the given options.
  *
  * @param {string} cmd
  * @param {?Object} options
- * @return {!Object}
+ * @returns {!Object}
  */
 function spawnProcess(cmd, options) {
   return spawn(shellCmd, [shellFlag, cmd], options);
@@ -80,14 +81,14 @@ function spawnProcess(cmd, options) {
  *
  * @param {string} cmd
  * @param {?Object} options
- * @return {!Object}
+ * @returns {!Object}
  */
 function getOutput(cmd, options = {}) {
   const p = spawnProcess(cmd, {
-    'cwd': options.cwd || process.cwd(),
-    'env': options.env || process.env,
-    'stdio': options.stdio || 'pipe',
-    'encoding': options.encoding || 'utf-8',
+    cwd: options.cwd || process.cwd(),
+    env: options.env || process.env,
+    stdio: options.stdio || 'pipe',
+    encoding: options.encoding || 'utf-8',
   });
   return p;
 }
@@ -97,7 +98,7 @@ function getOutput(cmd, options = {}) {
  *
  * @param {string} cmd
  * @param {?Object} options
- * @return {string}
+ * @returns {string}
  */
 function getStdout(cmd, options) {
   return getOutput(cmd, options).stdout;
@@ -121,7 +122,7 @@ function logOnSameLine(message) {
  * Returns the merge base of the current branch off of future when running on
  * a local workspace.
  *
- * @return {string}
+ * @returns {string}
  */
 function gitMergeBaseLocalFuture() {
   return getStdout('git merge-base future HEAD').trim();
@@ -130,7 +131,7 @@ function gitMergeBaseLocalFuture() {
 /**
  * Returns the master baseline commit, regardless of running environment.
  *
- * @return {string}
+ * @returns {string}
  */
 function gitFutureBaseline() {
   if (onTravis()) {
@@ -143,7 +144,7 @@ function gitFutureBaseline() {
  * Returns the list of files changed relative to the branch point off of master,
  * one on each line.
  *
- * @return {!Array<string>}
+ * @returns {!Array<string>}
  */
 function gitDiffNameOnlyFuture() {
   const futureBaseline = gitFutureBaseline();
@@ -156,7 +157,7 @@ function gitDiffNameOnlyFuture() {
  * commits can be merged while a Travis build is in progress.
  * @see https://travis-ci.community/t/origin-master-moving-forward-between-build-stages/4189/6
  *
- * @return {string}
+ * @returns {string}
  */
 function gitTravisFutureBaseline() {
   return getStdout('git merge-base origin/future HEAD').trim();
@@ -167,7 +168,7 @@ function gitTravisFutureBaseline() {
  * array of glob patterns.
  *
  * @param {!Array<string>} globs
- * @return {!Array<string>}
+ * @returns {!Array<string>}
  */
 function getFilesChanged(globs) {
   const allFiles = globby.sync(globs, {dot: true});
@@ -180,7 +181,7 @@ function getFilesChanged(globs) {
  * Logs the list of files that will be checked and returns the list.
  *
  * @param {!Array<string>} files
- * @return {!Array<string>}
+ * @returns {!Array<string>}
  */
 function logFiles(files) {
   if (!onTravis()) {
@@ -198,7 +199,7 @@ function logFiles(files) {
  *
  * @param {!Array<string>} globs
  * @param {Object=} options
- * @return {!Array<string>}
+ * @returns {!Array<string>}
  */
 function getFilesToCheck(globs, options = {}) {
   if (argv.files) {
@@ -206,7 +207,7 @@ function getFilesToCheck(globs, options = {}) {
   }
   if (argv.local_changes) {
     const filesChanged = getFilesChanged(globs);
-    if (filesChanged.length == 0) {
+    if (filesChanged.length === 0) {
       log(green('INFO: ') + 'No files to check in this PR');
       return [];
     }
@@ -227,11 +228,11 @@ const header =
 /**
  * Checks files for formatting (and optionally fixes them) with Prettier.
  *
- * @return {!Promise}
+ * @returns {!Promise}
  */
 function prettify() {
   const filesToCheck = getFilesToCheck(prettifyGlobs, {dot: true});
-  if (filesToCheck.length == 0) {
+  if (filesToCheck.length === 0) {
     return Promise.resolve();
   }
   return runPrettify(filesToCheck);
@@ -270,7 +271,7 @@ function printErrorWithSuggestedFixes(file) {
  * Runs prettier on the given list of files.
  *
  * @param {!Array<string>} filesToCheck
- * @return {!Promise}
+ * @returns {!Promise}
  */
 function runPrettify(filesToCheck) {
   if (!onTravis()) {
@@ -370,7 +371,7 @@ module.exports = {
 prettify.description =
   'Checks several non-JS files in the repo for formatting using prettier';
 prettify.flags = {
-  'files': '  Checks only the specified files',
-  'local_changes': '  Checks just the files changed in the local branch',
-  'fix': '  Fixes formatting errors',
+  files: '  Checks only the specified files',
+  local_changes: '  Checks just the files changed in the local branch',
+  fix: '  Fixes formatting errors',
 };
