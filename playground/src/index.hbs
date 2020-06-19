@@ -69,10 +69,10 @@
     <section id="source" class="panel panel--dark active">
       <div class="panel-header">
         <div id="runtime-select"></div>
-        {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
         {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
         {{> button/button.hbs id="share" text="Share"}}
-        {{> button/button.hbs id="import-url-trigger" class="hide-on-mobile" text="Import URL"}}
+        {{> button/button.hbs id="import-url" class="hide-on-mobile" text="Import URL"}}
+        {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
         {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
       {{> loader/loader.hbs theme="light"}}

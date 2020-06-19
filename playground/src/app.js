@@ -62,7 +62,7 @@ const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
 // configure url import view
-const importURLTrigger = document.getElementById('import-url-trigger');
+const importURLTrigger = document.getElementById('import-url');
 const importURLContainer = document.getElementById('import-url-view');
 ImportURL.createImportURLView(importURLContainer, importURLTrigger);
 
@@ -139,6 +139,7 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
 
   const emailButton = document.getElementById('import-email');
   emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
+  importURLTrigger.classList.toggle('hidden', activeRuntime.id === 'amp4email');
 });
 
 runtimes.init();
