@@ -13,9 +13,11 @@
 // limitations under the License.
 
 import events from '../events/events.js';
+import * as ImportURL from '../import-url/import-url.js';
 
 const ROOT = '/document/';
 export const EVENT_DOCUMENT_STATE_CHANGED = 'playground-document-state-changed';
+export const EVENT_NEW_URL_CONTENT = 'event-new-url-content';
 
 export const DIRTY = 'dirty';
 export const SAVED = 'saved';
@@ -30,6 +32,26 @@ class PlaygroundDocument {
     this.win = win;
     this.state = SAVED;
     this.docId = '';
+
+
+    events.subscribe(ImportURL.EVENT_REQUEST_URL_CONTENT, (url) => {
+      window.requestIdleCallback(() => {
+        this.getURLContent(url);
+      });
+    });
+  }
+
+  async getURLContent(url) {
+    console.log('Content for URL:', url);
+
+    try {
+      const content = await this.fetchUrl(url);
+      events.publish(EVENT_NEW_URL_CONTENT, 'content');
+
+    } catch (e) {
+      console.log('Error fetching URL');
+    }
+
   }
 
   fetchUrl(url) {

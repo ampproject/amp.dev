@@ -16,9 +16,10 @@ import './import-url.scss';
 
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
+import * as Document from '../document/document.js';
 import FlyIn from '../fly-in/base.js';
 
-export const EVENT_NEW_URL_INPUT = 'event-new-url-input';
+export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
 
 export function createImportURLView(target, trigger) {
   return new ImportURL(target, trigger);
@@ -39,56 +40,53 @@ class ImportURL extends FlyIn {
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris. Learn more about experimental features.
       </p>
-      <form id="url-bar" class="import-url-bar">
+      <div class="import-url-bar">
         <input id="url-bar-input"
             class="import-url-bar-input"
-            placeholder="Your URL"
             type="url"
-            required pattern="https?://.+"
-            name="input">
-        <input id="url-bar-submit"
+            name=""
+            value=""
+            placeholder="Your URL">
+        <button id="url-bar-submit"
             class="import-url-bar-submit"
-            type="submit"
-            value="Import">
-        </input>
-      </form>`;
+            type=""
+            name="button">
+          Import
+        </button>
+      </div>`;
+
     this.upadateContent(content);
 
-    const urlBar = document.getElementById('url-bar');
-    const urlBarInput = document.getElementById('url-bar-input');
-    const urlBarSubmit = document.getElementById('url-bar-submit');
+    this.urlBarInput = document.getElementById('url-bar-input');
+    this.urlBarSubmit = document.getElementById('url-bar-submit');
 
-    urlBar.addEventListener('submit', (e) => {
+    this.urlBarSubmit.addEventListener('click', (e) => {
       e.preventDefault();
-      const url = urlBarInput.value;
-      this.updateEditor(urlBarSubmit, url);
-      urlBarSubmit.classList.add('loading');
-      urlBarSubmit.value = '';
-      window.location.hash = `url=${url}`;
+      this.importURL(this.urlBarInput.value);
+    });
+
+    events.subscribe(Document.EVENT_NEW_URL_CONTENT, (content) => {
+      window.requestIdleCallback(() => {
+        this.importSuccess(content);
+      });
     });
   }
 
-  async updateEditor(urlBarSubmit, url) {
-    const html = await this.doFetch(url);
-    urlBarSubmit.classList.remove('loading');
-    urlBarSubmit.value = 'Import';
-    events.publish(EVENT_NEW_URL_INPUT, html);
+  importURL(url) {
+    events.publish(EVENT_REQUEST_URL_CONTENT, url);
+    this.urlBarSubmit.classList.add('loading');
+    this.urlBarSubmit.innerText = '';
+    window.location.hash = `url=${url}`;
+  }
+
+  importSuccess(content) {
+    console.log('onSuccess');
+    this.urlBarSubmit.classList.remove('loading');
+    this.urlBarSubmit.innerText = 'Import';
     this.toggle();
   }
 
-  async doFetch(url) {
-    const response = await fetch(url, {
-      compress: true,
-      headers: {
-        'Accept': 'text/html',
-        'x-requested-by': 'playground',
-        'User-Agent':
-          'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MTC19V) ' +
-          'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile ' +
-          'Safari/537.36 (compatible; amp.dev/playground)',
-        'Referer': 'https://amp.dev/playground',
-      },
-    });
-    return response.text();
+  importError() {
+
   }
 }
