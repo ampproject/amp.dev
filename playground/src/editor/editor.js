@@ -71,7 +71,7 @@ class Editor {
     this.loader = new Loader(this.container, 'light');
     this.amphtmlHints = this.fetchHintsData();
 
-    events.subscribe(Document.EVENT_NEW_URL_CONTENT, (html) => {
+    events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, (html) => {
       window.requestIdleCallback(() => {
         if (html) {
           formatter

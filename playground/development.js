@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+require('module-alias/register');
+
 const express = require('express');
 const app = express();
 

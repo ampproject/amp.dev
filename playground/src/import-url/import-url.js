@@ -65,7 +65,7 @@ class ImportURL extends FlyIn {
       this.importURL(this.urlBarInput.value);
     });
 
-    events.subscribe(Document.EVENT_NEW_URL_CONTENT, (content) => {
+    events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, (content) => {
       window.requestIdleCallback(() => {
         this.importSuccess(content);
       });

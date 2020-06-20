@@ -17,7 +17,7 @@ import * as ImportURL from '../import-url/import-url.js';
 
 const ROOT = '/document/';
 export const EVENT_DOCUMENT_STATE_CHANGED = 'playground-document-state-changed';
-export const EVENT_NEW_URL_CONTENT = 'event-new-url-content';
+export const EVENT_RECEIVED_URL_CONTENT = 'event-new-url-content';
 
 export const DIRTY = 'dirty';
 export const SAVED = 'saved';
@@ -46,10 +46,10 @@ class PlaygroundDocument {
 
     try {
       const content = await this.fetchUrl(url);
-      events.publish(EVENT_NEW_URL_CONTENT, 'content');
+      events.publish(EVENT_RECEIVED_URL_CONTENT, 'content');
 
     } catch (e) {
-      console.log('Error fetching URL');
+      console.log('Error fetching URL', e);
     }
 
   }
@@ -58,7 +58,8 @@ class PlaygroundDocument {
     const headers = new Headers();
     headers.append('x-requested-by', 'playground');
     headers.append('Content-Type', 'text/html');
-    return fetch('/api/fetch?url=' + url, {
+    // Löschen
+    return fetch('http://localhost:8080/api/fetch?url=' + url, {
       mode: 'cors',
       headers,
     }).then((response) => {
