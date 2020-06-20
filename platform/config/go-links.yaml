@@ -1,10 +1,13 @@
 # Use via: go.amp.dev/ads
 # Add new entries in alphabetical order
 /ads: /about/ads/
+/ampdevmode: https://github.com/ampproject/amphtml/issues/20974
+/amp-optimizer: https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer
 /amp-pwa-amp: https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/
 /amp-script-apis: https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md
 /ampcs: /events/amp-cs-2019/#Schedule
 /auto-sw: https://github.com/ampproject/amp-sw/
+/axios-case-study: https://blog.amp.dev/2020/04/07/people-behind-the-code-the-axios-ascent/
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
 /cherry-picks: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks
 /components: https://amp.dev/documentation/components/
@@ -33,6 +36,8 @@
 /learn-script: /documentation/guides-and-tutorials/develop/custom-javascript-tutorial/
 /learn-story: /documentation/guides-and-tutorials/start/visual_story/?format=stories
 /learn-pwa: https://codelabs.developers.google.com/codelabs/amp-pwa-workbox/
+/nextjs: https://nextjs.org/docs/advanced-features/amp-support/introduction
+/optimize: https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer
 /optimize-amp: https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/
 /owners: https://ampproject-owners-bot.appspot.com/tree
 /publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist/
@@ -44,10 +49,12 @@
 /templates: /documentation/templates/
 /test-email: /documentation/guides-and-tutorials/develop/testing_amp_emails/?format=email
 /tools: /documentation/tools/
+/validate: /documentation/guides-and-tutorials/learn/validation-workflow/validate_amp/
 /vision-mission: /about/mission-and-vision/
 /websites: /about/websites/
 /wg: https://github.com/ampproject/meta/tree/master/working-groups
 /wg-updates: https://github.com/search?o=desc&q=org%3Aampproject+label%3A%22Type%3A+Status+Update%22&s=created&
+/wordpress: https://amp-wp.org/
 
 # Regex-based entries
 ^/c/amp-([a-z-]+)$:
