@@ -20,6 +20,9 @@ import * as Document from '../document/document.js';
 import FlyIn from '../fly-in/base.js';
 
 export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
+export const EVENT_UPDATE_EDITOR_CONTENT = 'event-update-editor-content';
+
+const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
 export function createImportURLView(target, trigger) {
   return new ImportURL(target, trigger);
@@ -53,21 +56,32 @@ class ImportURL extends FlyIn {
             name="button">
           Import
         </button>
-      </div>`;
+      </div>
+      <label id="url-bar-label"
+          class="import-url-bar-label"
+          for="url-bar-input">fhwe
+      </label>`;
 
     this.upadateContent(content);
 
+    this.urlBarLabel = document.getElementById('url-bar-label');
     this.urlBarInput = document.getElementById('url-bar-input');
     this.urlBarSubmit = document.getElementById('url-bar-submit');
 
     this.urlBarSubmit.addEventListener('click', (e) => {
       e.preventDefault();
-      this.importURL(this.urlBarInput.value);
+
+      const url = this.urlBarInput.value;
+      if (url.match(URL_VALIDATION_REGEX)) {
+        this.importURL(url);
+      } else {
+        this.importError('Please enter a valid URL');
+      }
     });
 
     events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, (content) => {
       window.requestIdleCallback(() => {
-        this.importSuccess(content);
+        this.receiveContent(content);
       });
     });
   }
@@ -79,14 +93,25 @@ class ImportURL extends FlyIn {
     window.location.hash = `url=${url}`;
   }
 
-  importSuccess(content) {
-    console.log('onSuccess');
+  async receiveContent(content) {
+    try {
+      this.importSuccess(await content);
+    } catch (e) {
+      this.importError(e);
+    }
+
     this.urlBarSubmit.classList.remove('loading');
     this.urlBarSubmit.innerText = 'Import';
+  }
+
+  importSuccess(content) {
+    events.publish(EVENT_UPDATE_EDITOR_CONTENT, content);
+    this.urlBarLabel.classList.remove('show');
     this.toggle();
   }
 
-  importError() {
-
+  importError(e) {
+    this.urlBarLabel.classList.add('show');
+    this.urlBarLabel.innerText = e;
   }
 }

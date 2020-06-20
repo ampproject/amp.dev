@@ -127,6 +127,7 @@
 
     .button {
       height: 48px;
+      white-space: nowrap;
 
       @media (min-width: 786px) {
         padding: 16px 15px;

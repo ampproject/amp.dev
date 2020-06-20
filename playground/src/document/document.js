@@ -33,25 +33,11 @@ class PlaygroundDocument {
     this.state = SAVED;
     this.docId = '';
 
-
     events.subscribe(ImportURL.EVENT_REQUEST_URL_CONTENT, (url) => {
       window.requestIdleCallback(() => {
-        this.getURLContent(url);
+        events.publish(EVENT_RECEIVED_URL_CONTENT, this.fetchUrl(url));
       });
     });
-  }
-
-  async getURLContent(url) {
-    console.log('Content for URL:', url);
-
-    try {
-      const content = await this.fetchUrl(url);
-      events.publish(EVENT_RECEIVED_URL_CONTENT, 'content');
-
-    } catch (e) {
-      console.log('Error fetching URL', e);
-    }
-
   }
 
   fetchUrl(url) {
@@ -59,7 +45,7 @@ class PlaygroundDocument {
     headers.append('x-requested-by', 'playground');
     headers.append('Content-Type', 'text/html');
     // Löschen
-    return fetch('http://localhost:8080/api/fetch?url=' + url, {
+    return fetch('/api/fetch?url=' + url, {
       mode: 'cors',
       headers,
     }).then((response) => {

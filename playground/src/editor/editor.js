@@ -34,7 +34,7 @@ import formatter from '../formatter/';
 
 import CodeMirror from 'codemirror';
 import Loader from '../loader/base.js';
-import * as Document from '../document/document.js';
+import * as ImportURL from '../import-url/import-url.js';
 
 require('./editor.scss');
 
@@ -71,7 +71,7 @@ class Editor {
     this.loader = new Loader(this.container, 'light');
     this.amphtmlHints = this.fetchHintsData();
 
-    events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, (html) => {
+    events.subscribe(ImportURL.EVENT_UPDATE_EDITOR_CONTENT, (html) => {
       window.requestIdleCallback(() => {
         if (html) {
           formatter
