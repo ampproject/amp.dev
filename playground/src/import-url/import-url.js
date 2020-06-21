@@ -71,7 +71,8 @@ class ImportURL extends FlyIn {
     this.urlBarSubmit.addEventListener('click', (e) => {
       e.preventDefault();
 
-      const url = this.urlBarInput.value;
+      const input = this.urlBarInput.value;
+      const url = input.startsWith('http') ? input : `http://${input}`;
       if (url.match(URL_VALIDATION_REGEX)) {
         this.importURL(url);
       } else {
