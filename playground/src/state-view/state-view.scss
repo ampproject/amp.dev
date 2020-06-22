@@ -2,8 +2,4 @@
 
 .state-view {
   padding: 25px;
-
-  &.loading {
-    @include loading-indicator;
-  }
 }

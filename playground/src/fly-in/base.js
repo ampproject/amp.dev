@@ -17,7 +17,7 @@ require('./fly-in.scss');
 class FlyIn {
   constructor(target) {
     const content = document.createElement('div');
-    content.className = 'fly-in-container';
+    content.className = 'fly-in-content';
     this.content = content;
 
     this.createFlyIn(target);
@@ -32,7 +32,6 @@ class FlyIn {
         <div class="fly-in-close" tabindex="0" role="button">✕</div>
       </div>
     `;
-
     target.appendChild(this.content);
 
     return target;

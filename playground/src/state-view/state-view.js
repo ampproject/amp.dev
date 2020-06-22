@@ -34,8 +34,8 @@ class StateView extends FlyIn {
     this.trigger = Button.from(trigger, this.requestState.bind(this));
 
     // Content container
-    this.container = document.createElement('div');
-    this.container.className = 'state-view';
+    this.stateView = document.createElement('div');
+    this.stateView.className = 'state-view';
 
     // Set treeview for state
     this.treeView = new JSONTreeView('', {});
@@ -61,15 +61,15 @@ class StateView extends FlyIn {
 
   requestState() {
     events.publish(EVENT_AMP_BIND_REQUEST_STATE);
-    this.container.classList.add('loading');
-    this.upadateContent(this.container);
+    this.content.classList.add('loading');
+    this.upadateContent(this.stateView);
     this.toggle();
   }
 
   setStateViewContent(state) {
+    this.content.classList.remove('loading');
     this.treeView.value = state;
-    this.container.classList.remove('loading');
-    this.container.appendChild(this.treeView.dom);
-    this.upadateContent(this.container);
+    this.stateView.appendChild(this.treeView.dom);
+    this.upadateContent(this.stateView);
   }
 }
