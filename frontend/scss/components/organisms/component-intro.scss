@@ -4,203 +4,72 @@
 @import 'components/atoms/_text.scss';
 /*
 
-#############################
+####################################
 ### ORGANISM: component-intro ######
-#############################
+####################################
 
 */
 
 .#{organism('component-intro')} {
   $root: &;
-  display: flex;
-  flex-direction: column;
-  background: color('wild-sand');
-  padding: 15px;
 
-  &-headline {
-    margin: 10px 0 0 0;
-  }
-
-  p {
-    margin: 5px 0;
-  }
-
-  h4 {
-    margin: 10px 0;
-  }
-
-  &-box {
-    display: flex;
-    width: 100%;
+  &-row {
     padding: 15px;
-    margin: 5px 0;
-    background: color('white');
+    background-color: color('white');
+    border: 1px solid color('gallery');
 
-    &-scripts {
-      flex-direction: column;
-
-      &-item {
-        display: flex;
-        align-items: center;
-
-        code {
-          overflow-x: scroll;
-          flex: 1 0;
-          margin: 6px 8px 6px 0;
-          padding: 4px 6px;
-          white-space: nowrap;
-          background: color('gallery');
-          font-size: 12.6px;
-
-          &::-webkit-scrollbar {
-            width: 4px;
-            height: 2px;
-          }
-
-          &::-webkit-scrollbar-corner {
-            background-color: transparent;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background-color: #91979d;
-          }
-        }
-      }
+    & + & {
+      margin-top: 10px;
     }
 
-    &-layouts {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    &-inline {
 
       @media (min-width: 768px) {
-        flex-direction: row;
+        display: flex;
+        align-items: baseline;
       }
+    }
+  }
 
-      h4 {
-        margin-right: 15px;
+    &-headline {
+      font-size: 16px;
+      margin: 0 0 10px 0;
+
+      #{$root}-row-inline & {
         white-space: nowrap;
-      }
-
-      &-items {
-        margin-top: 10px;
-
-        @media (min-width: 768px) {
-          margin-top: 0;
-          padding: 5px;
-        }
-
-        span {
-          display: inline-block;
-          height: 26px;
-          margin: 4px 3px;
-          padding: 2px 12px;
-          border-radius: 13px;
-          background: color('wild-sand');
-
-          &:hover {
-            box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
-            background: color('blue-ribbon');
-            color: color('white');
-          }
-        }
+        margin-right: 10px;
       }
     }
 
-    &-reference {
-      flex-direction: column;
+    &-text {
+      margin: 5px 0;
+    }
 
-      &:first-child { margin-right: 5px; }
-      &:last-child { margin-left: 5px; }
-      &:only-child { margin: 5px 0; }
+    &-list {
+      max-height: 142px;
+      overflow: hidden;
 
-      a {
-        margin: 6px 0;
+      @media (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &-item {
+        display: block;
+        margin-bottom: 6px;
+        @include txt-2;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
 
-        @media (max-width: 767px) {
-          &:nth-child(1n + 4) {
-            display: none;
-          }
-        }
-
         @media (min-width: 768px) {
           width: 50%;
           padding-right: 12px;
-
-          &:nth-child(1n + 9) {
-            display: none;
-          }
         }
       }
 
-      &.expanded {
-        #{$root}-load-btn {
-          display: none;
-        }
-
-        a:nth-child(1n + 9) {
-          display: block;
-        }
+      .expanded & {
+        max-height: none;
       }
     }
-
-    &-examples {
-      display: flex;
-      flex-direction: column;
-
-      @media (min-width: 768px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-    }
-  }
-
-  &-references-container {
-    display: flex;
-    flex-direction: column;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
-  }
-
-  &-load-btn {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 55px;
-    width: 100%;
-    margin-top: -30px;
-    border: none;
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 40%);
-    z-index: 10;
-    cursor: pointer;
-
-    @media (min-width: 768px) {
-      height: 65px;
-      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 35%);
-    }
-
-    &-icon {
-      max-height: 21px;
-      max-width: 21px;
-      margin-top: 35px;
-      fill: color('blue-ribbon');
-      transition: transform 0.3s;
-    }
-
-    .loaded {
-      display: none;
-    }
-
-    &:hover {
-      #{$root}-load-btn-icon {
-        transform: translate3d(0, -2px, 0);
-      }
-    }
-  }
 }
