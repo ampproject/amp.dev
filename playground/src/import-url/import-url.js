@@ -22,6 +22,7 @@ import FlyIn from '../fly-in/base.js';
 export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
 export const EVENT_UPDATE_EDITOR_CONTENT = 'event-update-editor-content';
 
+/* eslint-disable max-len */
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
 export function createImportURLView(target, trigger) {
@@ -68,7 +69,10 @@ class ImportURL extends FlyIn {
     this.urlBarInput = document.getElementById('url-bar-input');
     this.urlBarSubmit = document.getElementById('url-bar-submit');
 
-    this.urlBarSubmit.addEventListener('click', this.importEventHandler.bind(this));
+    this.urlBarSubmit.addEventListener(
+      'click',
+      this.importEventHandler.bind(this)
+    );
     this.urlBarInput.addEventListener('keyup', (e) => {
       if (e.keyCode === 13) {
         this.importEventHandler(e);
