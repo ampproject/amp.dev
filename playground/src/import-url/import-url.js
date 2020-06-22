@@ -68,15 +68,10 @@ class ImportURL extends FlyIn {
     this.urlBarInput = document.getElementById('url-bar-input');
     this.urlBarSubmit = document.getElementById('url-bar-submit');
 
-    this.urlBarSubmit.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      const input = this.urlBarInput.value;
-      const url = input.startsWith('http') ? input : `http://${input}`;
-      if (url.match(URL_VALIDATION_REGEX)) {
-        this.importURL(url);
-      } else {
-        this.importError('Please enter a valid URL');
+    this.urlBarSubmit.addEventListener('click', this.importEventHandler.bind(this));
+    this.urlBarInput.addEventListener('keyup', (e) => {
+      if (e.keyCode === 13) {
+        this.importEventHandler(e);
       }
     });
 
@@ -85,6 +80,17 @@ class ImportURL extends FlyIn {
         this.receiveContent(content);
       });
     });
+  }
+
+  importEventHandler(e) {
+    e.preventDefault();
+    const input = this.urlBarInput.value;
+    const url = input.startsWith('http') ? input : `http://${input}`;
+    if (url.match(URL_VALIDATION_REGEX)) {
+      this.importURL(url);
+    } else {
+      this.importError('Please enter a valid URL');
+    }
   }
 
   importURL(url) {
