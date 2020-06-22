@@ -17,6 +17,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const octonode = require('octonode');
+const {default: PQueue} = require('p-queue');
 const {Signale} = require('signale');
 
 const LOCAL_AMPHTML = process.env.AMP_LOCAL_AMPHTML;
@@ -27,6 +28,8 @@ const CLIENT_ID = process.env.AMP_DOC_ID;
 /* The GitHub organisation where the repositories imported from are located */
 const DEFAULT_ORGANISATION = 'ampproject';
 const DEFAULT_REPOSITORY = `${DEFAULT_ORGANISATION}/amphtml`;
+
+const MAX_CONCURRENT_OPS = 12;
 
 const log = new Signale({
   'interactive': false,
@@ -47,8 +50,8 @@ function checkCredentials() {
 
 class GitHubImporter {
   constructor() {
-    this._log = log;
     checkCredentials();
+    this._queue = new PQueue({concurrency: MAX_CONCURRENT_OPS});
     this._github = octonode.client(
       CLIENT_TOKEN || {
         'id': CLIENT_ID,
@@ -105,30 +108,38 @@ class GitHubImporter {
     master = false,
     local = false
   ) {
+    let request = Promise.resolve();
+
     if (!filePath) {
-      return Promise.reject(new Error('Can not download from undefined path.'));
+      request = Promise.reject(
+        new Error('Can not download from undefined path.')
+      );
+    } else if (local) {
+      // TODO: https://github.com/ampproject/amp.dev/issues/2965
+      request = Promise.reject(
+        new Error('Importing from a local path is currently not implemented.')
+      );
+    } else if (master || repo !== DEFAULT_REPOSITORY) {
+      request = await this._queue.add(() => {
+        log.await(`Downloading ${filePath} from remote master...`);
+        return this._github.repo(repo).contentsAsync(filePath);
+      });
+    } else {
+      const tag = await this._fetchLatestReleaseTag();
+      request = await this._queue.add(() => {
+        log.await(`Downloading ${filePath} from remote [${tag}]...`);
+        return this._github.repo(repo).contentsAsync(filePath, tag);
+      });
     }
 
-    if (local) {
-      this._log.await(`Copying ${filePath} from local file path...`);
-      return fs.readFile(path.join(local, filePath));
-    }
-
-    if (master || repo !== DEFAULT_REPOSITORY) {
-      this._log.await(`Downloading ${filePath} from remote master...`);
-      return this._github.repo(repo).contentsAsync(filePath);
-    }
-
-    const branch = await this._fetchLatestReleaseTag();
-    this._log.await(`Downloading ${filePath} from remote [${branch}]...`);
-    return this._github.repo(repo).contentsAsync(filePath, branch);
+    return request;
   }
 
   _fetchLatestReleaseTag() {
     if (this.latestReleaseTag_) {
       return this.latestReleaseTag_;
     }
-    this._log.await('Fetching latest release tag ...');
+    log.await('Fetching latest release tag ...');
 
     this.latestReleaseTag_ = new Promise((resolve, reject) => {
       this._github.get(
@@ -138,7 +149,7 @@ class GitHubImporter {
           if (body.tag_name) {
             resolve(body.tag_name);
           } else {
-            this._log.fatal(
+            log.fatal(
               'Was not able to retrieve latest AMP release from GitHub.'
             );
             reject(err);
@@ -147,11 +158,11 @@ class GitHubImporter {
       );
     })
       .then((latestReleaseTag) => {
-        this._log.success(`Fetched latest release tag: ${latestReleaseTag}`);
+        log.success(`Fetched latest release tag: ${latestReleaseTag}`);
         return latestReleaseTag;
       })
       .catch((err) => {
-        this._log.fatal(err);
+        log.fatal(err);
         return null;
       });
     return this.latestReleaseTag_;
@@ -160,7 +171,7 @@ class GitHubImporter {
 
 module.exports = {
   CLIENT_TOKEN,
-  CLIENT_SECRET: CLIENT_SECRET,
+  CLIENT_SECRET,
   CLIENT_ID,
   log,
   checkCredentials,
