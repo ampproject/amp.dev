@@ -40,9 +40,7 @@ class ImportURL extends FlyIn {
     content.className = 'import-url';
     content.innerHTML = `
       <p class="experimental-view-intro">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris. Learn more about experimental features.
+        Enter a valid URL to import the page's markup into the editor.
       </p>
       <div class="import-url-bar">
         <input id="url-bar-input"
