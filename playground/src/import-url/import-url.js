@@ -46,8 +46,7 @@ class ImportURL extends FlyIn {
         <input id="url-bar-input"
             class="import-url-bar-input"
             type="url"
-            name=""
-            value=""
+            name="import-url"
             placeholder="Your URL">
         <button id="url-bar-submit"
             class="import-url-bar-submit"
@@ -79,7 +78,7 @@ class ImportURL extends FlyIn {
 
     events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, (content) => {
       window.requestIdleCallback(() => {
-        this.receiveContent(content);
+        this.receiveContent(url, content);
       });
     });
   }
@@ -87,7 +86,7 @@ class ImportURL extends FlyIn {
   importEventHandler(e) {
     e.preventDefault();
     const input = this.urlBarInput.value;
-    const url = input.startsWith('http') ? input : `http://${input}`;
+    const url = input.startsWith('http://') || input.startsWith('https://') ? input : `http://${input}`;
     if (url.match(URL_VALIDATION_REGEX)) {
       this.importURL(url);
     } else {
@@ -100,23 +99,23 @@ class ImportURL extends FlyIn {
     events.publish(EVENT_REQUEST_URL_CONTENT, url);
     this.urlBarSubmit.classList.add('loading');
     this.urlBarSubmit.innerText = '';
-    history.replaceState({}, '', `?url=${url}`);
   }
 
-  async receiveContent(content) {
-    try {
-      this.importSuccess(await content);
-    } catch (e) {
+  async receiveContent(url, content) {
+    content.then(() => {
+      this.importSuccess(url, content);
+    }).catch((e) => {
       this.importError(e);
-    }
-
-    this.urlBarSubmit.classList.remove('loading');
-    this.urlBarSubmit.innerText = 'Import';
+    }).finally(() => {
+      this.urlBarSubmit.classList.remove('loading');
+      this.urlBarSubmit.innerText = 'Import';
+    })
   }
 
-  importSuccess(content) {
+  importSuccess(url, content) {
     events.publish(EVENT_UPDATE_EDITOR_CONTENT, content);
     this.urlBarLabel.classList.remove('show');
+    history.replaceState({}, '', `?url=${url}`);
     this.toggle();
   }
 
