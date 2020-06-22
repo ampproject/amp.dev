@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-const fs = require('fs').promises;
-const path = require('path');
 const octonode = require('octonode');
 const {default: PQueue} = require('p-queue');
 const {Signale} = require('signale');
