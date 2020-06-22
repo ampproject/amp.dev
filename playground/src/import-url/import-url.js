@@ -98,7 +98,7 @@ class ImportURL extends FlyIn {
     events.publish(EVENT_REQUEST_URL_CONTENT, url);
     this.urlBarSubmit.classList.add('loading');
     this.urlBarSubmit.innerText = '';
-    window.location.hash = `url=${url}`;
+    history.replaceState({}, '', `?url=${url}`);
   }
 
   async receiveContent(content) {
