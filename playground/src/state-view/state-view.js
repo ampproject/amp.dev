@@ -14,7 +14,6 @@
 
 import JSONTreeView from 'json-tree-view';
 import 'json-tree-view/example/build/devtools.css';
-import './state-view.scss';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Preview from '../preview/preview.js';
@@ -32,10 +31,6 @@ class StateView extends FlyIn {
 
     this.target = target;
     this.trigger = Button.from(trigger, this.requestState.bind(this));
-
-    // Content container
-    this.stateView = document.createElement('div');
-    this.stateView.className = 'state-view';
 
     // Set treeview for state
     this.treeView = new JSONTreeView('', {});
@@ -60,16 +55,14 @@ class StateView extends FlyIn {
   }
 
   requestState() {
-    events.publish(EVENT_AMP_BIND_REQUEST_STATE);
     this.content.classList.add('loading');
-    this.upadateContent(this.stateView);
+    events.publish(EVENT_AMP_BIND_REQUEST_STATE);
     this.toggle();
   }
 
   setStateViewContent(state) {
     this.content.classList.remove('loading');
     this.treeView.value = state;
-    this.stateView.appendChild(this.treeView.dom);
-    this.upadateContent(this.stateView);
+    this.upadateContent(this.treeView.dom);
   }
 }

@@ -65,7 +65,6 @@ export default class DocumentController {
     this.docUrl = params.get('url');
     this.docId = this._getDocumentId();
     const docHash = params.getHash('share');
-    console.log(this.docUrl);
     let promise;
     if (this.docUrl) {
       promise = this.srcDoc.fetchUrl(this.docUrl);

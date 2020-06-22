@@ -2,11 +2,12 @@
 @import 'components/atoms/_text.scss';
 
 #error-list {
-  .fly-in-container {
+  .fly-in-content {
     @include txt;
     display: block;
     height: 100%;
-    background: white;
+    padding: 0;
+    background: color('white');
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -23,19 +24,19 @@
       padding: 17px 20px 20px 65px;
       cursor: pointer;
       font-size: 14px;
-      background-color: white;
+      background: color('white');
       background-position: left 25px top 25px;
       background-repeat: no-repeat;
       border-bottom: 1px solid color('silver');
 
       &:hover, &:active {
-        background-color: #F4F4F4;
+        background: color('wild-sand');
       }
 
       .message {
         margin-top: 0;
         margin-bottom: 5px;
-        color: #48525c;
+        color: color('river-bed');
       }
 
       .location, .category {

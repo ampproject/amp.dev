@@ -90,6 +90,7 @@ class ImportURL extends FlyIn {
       this.importURL(url);
     } else {
       this.importError('Please enter a valid URL');
+      this.urlBarInput.focus();
     }
   }
 
