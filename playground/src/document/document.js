@@ -44,7 +44,6 @@ class PlaygroundDocument {
     const headers = new Headers();
     headers.append('x-requested-by', 'playground');
     headers.append('Content-Type', 'text/html');
-    // Löschen
     return fetch('/api/fetch?url=' + url, {
       mode: 'cors',
       headers,
