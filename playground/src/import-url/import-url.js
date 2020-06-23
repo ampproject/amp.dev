@@ -76,7 +76,7 @@ class ImportURL extends FlyIn {
       }
     });
 
-    events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, (content) => {
+    events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, (url, content) => {
       window.requestIdleCallback(() => {
         this.receiveContent(url, content);
       });

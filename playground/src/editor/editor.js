@@ -74,9 +74,7 @@ class Editor {
     events.subscribe(ImportURL.EVENT_UPDATE_EDITOR_CONTENT, (html) => {
       window.requestIdleCallback(() => {
         if (html) {
-          formatter
-            .format(html)
-            .then((formattedCode) => this.setSource(formattedCode));
+          html.then((html) => this.setSource(html));
         }
       });
     });
