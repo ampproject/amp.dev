@@ -30,7 +30,6 @@ import 'codemirror/mode/htmlmixed/htmlmixed.js';
 
 import events from '../events/events.js';
 import {runtimes, EVENT_SET_RUNTIME} from '../runtime/runtimes.js';
-import formatter from '../formatter/';
 
 import CodeMirror from 'codemirror';
 import Loader from '../loader/base.js';
