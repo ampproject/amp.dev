@@ -35,7 +35,7 @@ class PlaygroundDocument {
 
     events.subscribe(ImportURL.EVENT_REQUEST_URL_CONTENT, (url) => {
       window.requestIdleCallback(() => {
-        events.publish(EVENT_RECEIVED_URL_CONTENT, this.fetchUrl(url));
+        events.publish(EVENT_RECEIVED_URL_CONTENT, url, this.fetchUrl(url));
       });
     });
   }
@@ -44,7 +44,7 @@ class PlaygroundDocument {
     const headers = new Headers();
     headers.append('x-requested-by', 'playground');
     headers.append('Content-Type', 'text/html');
-    return fetch('/api/fetch?url=' + url, {
+    return fetch('http://localhost:8080/api/fetch?url=' + url, {
       mode: 'cors',
       headers,
     }).then((response) => {

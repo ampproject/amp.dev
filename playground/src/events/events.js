@@ -25,10 +25,11 @@ class EventBus {
     });
   }
 
-  publish(channel, data) {
+  publish(channel) {
     if (!channel) throw new Error('empty channel');
     this._observersForChannel(channel).forEach((o) => {
-      o(data);
+      const data = Array.prototype.slice.call(arguments, 1);
+      o.apply(null, data);
     });
   }
 
