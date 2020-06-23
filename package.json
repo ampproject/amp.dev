@@ -133,7 +133,7 @@
     "html-webpack-plugin": "4.3.0",
     "husky": "4.2.5",
     "jasmine": "3.5.0",
-    "jest": "26.0.1",
+    "jest": "26.1.0",
     "js-base64": "2.5.2",
     "js-beautify": "1.11.0",
     "keymaster": "1.6.2",
