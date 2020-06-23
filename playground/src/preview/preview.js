@@ -267,8 +267,10 @@ class Preview {
     childWindow.location.hash = '#development=1';
     (childWindow.AMP = childWindow.AMP || []).push(() => {
       const checkStateIntervalID = childWindow.setInterval(() => {
-        if (childWindow.AMP.printState) {
+        if (this.ampStateReady()) {
           childWindow.clearInterval(checkStateIntervalID);
+          childWindow.document.addEventListener('click', this.requestState.bind(this));
+          childWindow.document.addEventListener('keyup', this.requestState.bind(this));
           events.publish(EVENT_AMP_BIND_READY, true);
         } else {
           events.publish(EVENT_AMP_BIND_READY, false);
@@ -288,6 +290,19 @@ class Preview {
       });
       setTimeout(() => oldIframes.forEach((frame) => frame.remove()), 280);
     });
+  }
+
+  ampStateReady() {
+    const childWindow = this.getIframeWindow(this.previewIframe);
+    return childWindow.AMP.printState ? true : false;
+  }
+
+  requestState() {
+    if (this.ampStateReady()) {
+      this.getAmpState().then((state) => {
+        events.publish(EVENT_AMP_BIND_NEW_STATE, state);
+      });
+    }
   }
 
   getIframeWindow(iframeElement) {
@@ -331,22 +346,23 @@ class Preview {
 
   getAmpState() {
     const iframe = document.getElementById('previewIframe');
-    const win = this.getIframeWindow(iframe);
-
-    const _info = win.console.info;
+    const childWindow = this.getIframeWindow(iframe);
+    const _info = childWindow.console.info;
 
     return new Promise((resolve, reject) => {
-      win.console.info = (tag, state) => {
+      childWindow.console.info = (tag, state) => {
         if (tag == '[amp-bind]') {
           resolve(state);
         } else {
           reject(new Error('Requesting AMP state failed'));
         }
       };
+      setTimeout(() => {
+        childWindow.AMP.printState();
+      }, 100);
 
-      win.AMP.printState();
     }).then((state) => {
-      win.console.info = _info;
+      childWindow.console.info = _info;
       return state;
     });
   }

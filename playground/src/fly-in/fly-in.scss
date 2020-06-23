@@ -61,6 +61,7 @@
   &-content {
     height: 100%;
     padding: 25px;
+    overflow: scroll;
 
     &.loading {
       @include loading-indicator;
