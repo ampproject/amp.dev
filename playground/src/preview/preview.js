@@ -269,8 +269,14 @@ class Preview {
       const checkStateIntervalID = childWindow.setInterval(() => {
         if (this.ampStateReady()) {
           childWindow.clearInterval(checkStateIntervalID);
-          childWindow.document.addEventListener('click', this.requestState.bind(this));
-          childWindow.document.addEventListener('keyup', this.requestState.bind(this));
+          childWindow.document.addEventListener(
+            'click',
+            this.requestState.bind(this)
+          );
+          childWindow.document.addEventListener(
+            'keyup',
+            this.requestState.bind(this)
+          );
           events.publish(EVENT_AMP_BIND_READY, true);
         } else {
           events.publish(EVENT_AMP_BIND_READY, false);

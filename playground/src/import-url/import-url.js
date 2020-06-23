@@ -86,7 +86,10 @@ class ImportURL extends FlyIn {
   importEventHandler(e) {
     e.preventDefault();
     const input = this.urlBarInput.value;
-    const url = input.startsWith('http://') || input.startsWith('https://') ? input : `http://${input}`;
+    const url =
+      input.startsWith('http://') || input.startsWith('https://')
+        ? input
+        : `http://${input}`;
     if (url.match(URL_VALIDATION_REGEX)) {
       this.importURL(url);
     } else {
@@ -102,14 +105,17 @@ class ImportURL extends FlyIn {
   }
 
   async receiveContent(url, content) {
-    content.then(() => {
-      this.importSuccess(url, content);
-    }).catch((e) => {
-      this.importError(e);
-    }).finally(() => {
-      this.urlBarSubmit.classList.remove('loading');
-      this.urlBarSubmit.innerText = 'Import';
-    })
+    content
+      .then(() => {
+        this.importSuccess(url, content);
+      })
+      .catch((e) => {
+        this.importError(e);
+      })
+      .finally(() => {
+        this.urlBarSubmit.classList.remove('loading');
+        this.urlBarSubmit.innerText = 'Import';
+      });
   }
 
   importSuccess(url, content) {
