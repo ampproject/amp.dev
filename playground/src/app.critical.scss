@@ -165,10 +165,6 @@
     }
   }
 
-  .CodeMirror {
-    @include scrollbar;
-  }
-
   &--dark {
     position: relative;
     display: flex;

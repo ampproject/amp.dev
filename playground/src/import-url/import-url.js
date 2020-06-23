@@ -18,9 +18,9 @@ import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
 import FlyIn from '../fly-in/base.js';
+import * as Editor from '../editor/editor.js';
 
 export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
-export const EVENT_UPDATE_EDITOR_CONTENT = 'event-update-editor-content';
 
 /* eslint-disable max-len */
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
@@ -57,7 +57,7 @@ class ImportURL extends FlyIn {
       </div>
       <label id="url-bar-label"
           class="import-url-bar-label"
-          for="url-bar-input">fhwe
+          for="url-bar-input">
       </label>`;
 
     this.upadateContent(content);
@@ -101,25 +101,23 @@ class ImportURL extends FlyIn {
   importURL(url) {
     events.publish(EVENT_REQUEST_URL_CONTENT, url);
     this.urlBarSubmit.classList.add('loading');
-    this.urlBarSubmit.innerText = '';
   }
 
-  async receiveContent(url, content) {
-    content
-      .then(() => {
-        this.importSuccess(url, content);
+  async receiveContent(url, response) {
+    response
+      .then((markup) => {
+        this.importSuccess(url, markup);
       })
       .catch((e) => {
         this.importError(e);
       })
       .finally(() => {
         this.urlBarSubmit.classList.remove('loading');
-        this.urlBarSubmit.innerText = 'Import';
       });
   }
 
   importSuccess(url, content) {
-    events.publish(EVENT_UPDATE_EDITOR_CONTENT, content);
+    events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, content);
     this.urlBarLabel.classList.remove('show');
     history.replaceState({}, '', `?url=${url}`);
     this.toggle();
