@@ -1,7 +1,8 @@
 {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+{% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
 
 <div class="ap-o-filter-bubbles-list">
-  <a class="ap-m-filter-bubble [% if not {{ filter_categories }}.includes(category)%]filtered[% endif %]" href="{{ doc.url.path }}#filter" name="all">
+  <a class="ap-a-pill [% if not {{ filter_categories }}.includes(category)%]filtered[% endif %]" href="{{ doc.url.path }}#filter" name="all">
     {{ _('All') }}
   </a>
   {% for category, components in categories %}
@@ -14,7 +15,7 @@
   [% if format in '{{ scope.categoryFormats|unique|list|tojson }}' %]
   {% set category = category.split('.')[1] if category and category.split('.')|length == 2 else category %}
 
-  <a class="ap-m-filter-bubble [% if {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]filtered[% endif %]"
+  <a class="ap-a-pill [% if {{ filter_categories }}.includes(category) and category == '{{ category|slug }}' %]filtered[% endif %]"
       href="{{ doc.url.path }}?category={{category|slug}}#filter"
       name="{{ _(category) }}">
     {{ _(category) }}

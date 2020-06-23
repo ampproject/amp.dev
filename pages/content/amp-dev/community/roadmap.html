@@ -41,20 +41,21 @@ roadmap: !g.json /shared/data/roadmap.json
 
   <section class="ap-t-roadmap-filter" id="status-updates">
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+    {% do doc.styles.addCssFile('css/components/atoms/pill.css', -200) %}
     {% do doc.icons.useIcon('icons/close.svg') %}
 
     <h2 class="ap-t-roadmap-filter-headline">{{ _('Select working groups') }}</h2>
     <div class="ap-t-roadmap-filter-list">
-      <a class="ap-m-filter-bubble reset [% if not category %]active[% endif %]"
+      <a class="ap-a-pill reset [% if not category %]active[% endif %]"
           href="{{ doc.url.path }}#status-updates"
           style="color: #005AF0;">
-        <span class="ap-m-filter-bubble-text">{{ _('All') }}</span>
+        <span class="ap-a-pill-text">{{ _('All') }}</span>
       </a>
       {% for group in doc.roadmap.working_groups %}
-      <a class="ap-m-filter-bubble {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
+      <a class="ap-a-pill {{ group.slug }} [% if category == '{{ group.slug }}' %]active[% endif %]"
           href="{{ doc.url.path }}?category={{ group.slug }}#status-updates"
           style="color: {{ group.color }}">
-        <span class="ap-m-filter-bubble-text">{{ group.title }}</span>
+        <span class="ap-a-pill-text">{{ group.title }}</span>
       </a>
       {% endfor %}
     </div>

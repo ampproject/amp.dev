@@ -148,8 +148,7 @@
       display: flex;
       flex-wrap: wrap;
 
-      .#{molecule('filter-bubble')} {
-        transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
+      .#{atom('pill')} {
 
         &-text {
           color: color('oslo-gray');
@@ -157,9 +156,10 @@
 
         &.active,
         &:hover {
-          .ap-m-filter-bubble-text {
+          .ap-a-pill-text {
             color: color('white');
           }
+
           background-color: currentColor;
         }
       }
