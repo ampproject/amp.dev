@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+const config = require('../config.js');
 const octonode = require('octonode');
 const {default: PQueue} = require('p-queue');
 const {Signale} = require('signale');
@@ -27,7 +28,9 @@ const CLIENT_ID = process.env.AMP_DOC_ID;
 const DEFAULT_ORGANISATION = 'ampproject';
 const DEFAULT_REPOSITORY = `${DEFAULT_ORGANISATION}/amphtml`;
 
-const MAX_CONCURRENT_OPS = 12;
+const MAX_CONCURRENT_OPS = config.options['queue-imports']
+  ? 6
+  : Number.POSITIVE_INFINITY;
 
 const log = new Signale({
   'interactive': false,
