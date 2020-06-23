@@ -2,10 +2,8 @@
 
 <figure class="ap-a-video">
   {% if youtube_id %}
-  {% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
   <amp-youtube class="ap-a-video-video" data-videoid={{ youtube_id }} layout="responsive" width="{{ width }}" height="{{ height }}"></amp-youtube>
   {% else %}
-  {% do doc.amp_dependencies.add('amp-video', '0.1') %}
   <amp-video src="{{ src }}" layout="responsive" width="{{ width }}" height="{{ height}}" poster="{{ poster }}" {% if muted %}muted{% endif %} {% if autoplay %}autoplay{% endif %} {% if loop %}loop{% endif %} {% if controls %}controls{% endif %}></amp-video>
   {% endif %}
 
