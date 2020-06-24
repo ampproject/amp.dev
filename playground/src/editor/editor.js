@@ -33,7 +33,6 @@ import {runtimes, EVENT_SET_RUNTIME} from '../runtime/runtimes.js';
 
 import CodeMirror from 'codemirror';
 import Loader from '../loader/base.js';
-import * as ImportURL from '../import-url/import-url.js';
 
 require('./editor.scss');
 

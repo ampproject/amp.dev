@@ -38,6 +38,7 @@
       background-color: color('blue-ribbon');
 
       &.loading {
+        font-size: 0;
         background: color('mercury');
         @include loading-indicator;
 

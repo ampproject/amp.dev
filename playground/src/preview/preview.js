@@ -366,7 +366,6 @@ class Preview {
       setTimeout(() => {
         childWindow.AMP.printState();
       }, 100);
-
     }).then((state) => {
       childWindow.console.info = _info;
       return state;
