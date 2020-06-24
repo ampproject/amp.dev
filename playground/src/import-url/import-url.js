@@ -119,8 +119,16 @@ class ImportURL extends FlyIn {
   importSuccess(url, content) {
     events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, content);
     this.urlBarLabel.classList.remove('show');
-    history.replaceState({}, '', `?url=${url}`);
+    this.setURLParams(url);
     this.toggle();
+  }
+
+  setURLParams(url) {
+    const urlParams = new URL(window.location.href).searchParams.set(
+      'url',
+      url
+    );
+    history.replaceState({}, '', urlParams.toString());
   }
 
   importError(e) {
