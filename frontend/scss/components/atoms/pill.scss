@@ -49,8 +49,10 @@
     background-color: color('wild-sand');
   }
 
-  &-meta {
+  &-meta, &-meta:hover {
     box-shadow: none;
     background-color: color('bright-gray');
+    color: color('white');
+    pointer-events: none;
   }
 }
