@@ -124,11 +124,9 @@ class ImportURL extends FlyIn {
   }
 
   setURLParams(url) {
-    const urlParams = new URL(window.location.href).searchParams.set(
-      'url',
-      url
-    );
-    history.replaceState({}, '', urlParams.toString());
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set('url', url);
+    history.replaceState({}, '', newUrl.toString());
   }
 
   importError(e) {
