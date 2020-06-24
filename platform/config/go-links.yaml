@@ -11,6 +11,7 @@
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
 /cherry-picks: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks
 /components: https://amp.dev/documentation/components/
+/contribute: https://amp.dev/documentation/guides-and-tutorials/contribute/
 /contribute/code: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md
 /contribute/code-samples: /documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
 /contribute/docs: /documentation/guides-and-tutorials/contribute/contribute-documentation/
@@ -25,6 +26,7 @@
 /email-support: /support/faq/email-support/
 /email-tools: /documentation/tools/?format=email
 /email-viewer: https://github.com/ampproject/amp-email-viewer
+/github: https://github.com/ampproject/amphtml
 /governance: /community/governance/
 /i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement--i2i-.md&title=I2I:%20%3Cyour%20change/update%3E
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
