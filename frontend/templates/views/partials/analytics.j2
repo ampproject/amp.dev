@@ -169,7 +169,6 @@
 }}) %}
 {% endif %}
 
-{% do doc.amp_dependencies.add('amp-analytics', '0.1') %}
 <amp-analytics type="gtag" data-credentials="include" data-block-on-consent>
   <script type="application/json">
     {{ config|tojson }}
