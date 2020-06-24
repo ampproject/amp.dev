@@ -65,58 +65,58 @@ teaser:
       <div class="ap-o-component-visual ap--container-fluid">
         <amp-accordion id="accordion-container" class="ap-o-component-visual-accordion" expand-single-section>
           <section on="expand:accordion-video-1.show,accordion-background-video-1.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide" expanded>
-            <h5>Headline small</h5>
+            <h5>{{ _('Customizable components') }}</h5>
             <p>
-              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+              {{ _('AMP consists of a library of customizable front-end components that are all designed with user experience and performance top of mind. AMP components automatically update in the background so you can focus on building a great web experience and worry less about all the extras like browser compatibility, or accessibility, security, and privacy standards.') }}
               <a href="#">
+                {{ _('Components Reference')}}
                 <span class="ap-a-ico ap-m-lnk-icon">
                   <svg>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
                   </svg>
                 </span>
-                {{ _('Learn more')}}
               </a>
             </p>
           </section>
           <section on="expand:accordion-video-2.show,accordion-background-video-1.hide,accordion-video-1.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide">
-            <h5>Headline small</h5>
+            <h5>{{ _('Guaranteed performance') }}</h5>
             <p>
               {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
               <a href="#">
+                {{ _('Learn more')}}
                 <span class="ap-a-ico ap-m-lnk-icon">
                   <svg>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
                   </svg>
                 </span>
-                {{ _('Learn more')}}
               </a>
             </p>
           </section>
           <section on="expand:accordion-video-3.show,accordion-background-video-1.hide,accordion-video-2.hide,accordion-video-1.hide,accordion-video-4.hide,accordion-video-5.hide">
-            <h5>Headline small</h5>
+            <h5>{{ _('Out-of-the-box interactivity') }}</h5>
             <p>
               {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
               <a href="#">
+                {{ _('Learn more')}}
                 <span class="ap-a-ico ap-m-lnk-icon">
                   <svg>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
                   </svg>
                 </span>
-                {{ _('Learn more')}}
               </a>
             </p>
           </section>
           <section on="expand:accordion-video-4.show,accordion-video-2.hide,accordion-background-video-1.hide,accordion-video-3.hide,accordion-video-1.hide,accordion-video-5.hide">
-            <h5>Headline small</h5>
+            <h5>{{ _('Open source operated') }}</h5>
             <p>
               {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
               <a href="#">
+                {{ _('Learn more')}}
                 <span class="ap-a-ico ap-m-lnk-icon">
                   <svg>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
                   </svg>
                 </span>
-                {{ _('Learn more')}}
               </a>
             </p>
           </section>
@@ -125,12 +125,12 @@ teaser:
             <p>
               {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
               <a href="#">
+                {{ _('Learn more')}}
                 <span class="ap-a-ico ap-m-lnk-icon">
                   <svg>
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
                   </svg>
                 </span>
-                {{ _('Learn more')}}
               </a>
             </p>
           </section>
@@ -152,9 +152,9 @@ teaser:
   <section class="ap--content">
     <div class="ap--container-fluid">
       <div class="ap-m-copy ap-m-copy-center">
-        <h5 class="overline">{{ _('Overline') }}</h5>
-        <h1>{{ _('Headline Title') }}</h5>
-        <h5 class="subline-medium">{{ _('Subline medium copy text.') }}</h5>
+        <h5 class="overline">{{ _('Why AMP') }}</h5>
+        <h1>{{ _('Built to make your website succeed') }}</h5>
+        <h5 class="subline-medium">{{ _('AMP wasn’t only built with user experience in mind. The developer experience is just as important, which is why AMP websites are designed to help developers and their teams save time, cut costs, and succeed online.') }}</h5>
       </div>
     </div>
   </section>
@@ -165,7 +165,7 @@ teaser:
 
       <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-row-one">
 
-        {% for benefit in doc.benefits.websites.developer %}
+        {% for benefit in doc.benefits.websites.new %}
 
           <div class="ap-m-benefit ap-m-benefit-about">
             <div class="ap-m-benefit-icon">
@@ -195,18 +195,24 @@ teaser:
         <div class="media-container-masonry-big"></div>
       </div>
       <div class="masonry-container">
+        <div class="media-container-masonry media-container-masonry-left-big"></div>
+        <div class="ap-m-copy ap-m-copy-right-small">
+          <h2>{{ _('Components that do the heavy lifting') }}</h2>
+          <p>{{ _('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.') }}</p>
+        </div>
+      </div>
+      <div class="masonry-container">
         <div class="ap-m-copy ap-m-copy-left-small">
-          <h2>{{ _('Images, videos and GIFs') }}</h2>
-          <p>{{ _('Web Stories are built with visually rich media, and whether you utilize pictures, videos or GIF assets is up to you. Images and videos expand to visually fill the readers’ screens, providing a smooth and fully engaging experience. AMP allows you to specify the file type to account for the user’s network connection and browser capabilities.') }}</p>
+          <h2>{{ _('Use AMP with your existing workflow') }}</h2>
+          <p>{{ _('While you can build an incredible site with AMP alone, AMP plays well with others! You can use it with other frameworks, such as Next.js, or use it with your favorite CMS like Wordpress or Drupal.') }}</p>
         </div>
         <div class="media-container-masonry media-container-masonry-right-small"></div>
       </div>
-
       <div class="masonry-container">
         <div class="media-container-masonry media-container-masonry-left-small"></div>
         <div class="ap-m-copy ap-m-copy-right-small">
-          <h2>{{ _('Text and audio') }}</h2>
-          <p>{{ _('Convey facts and figures via bite-sized chunks of one or two sentences – ideal for mobile devices. Choose from different font colors for basic readability. Or add visual elements like subtle black transparent gradient overlays to ensure readability even on random background imagery, for example user generated content. On top of this, you can use short audio files on every page to provide spoken information or background music.') }}</p>
+          <h2>{{ _('AMP script') }}</h2>
+          <p>{{ _('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.') }}</p>
         </div>
       </div>
     </div>
@@ -271,10 +277,10 @@ teaser:
         <div class="teaser-masonry-image">
           {# <amp-img></amp-img> #}
         </div>
-        <div>
-          <div>Tagname</div>
-          <span>Headline</span>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+        <div class="teaser-masonry-text-box">
+          <div class="teaser-masonry-tag">Tagname</div>
+          <h2>Headline</h2>
+          <p class="teaser-masonry-copy">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
           <span>Learn more</span>
         </div>
       </div>
@@ -287,10 +293,10 @@ teaser:
         <div class="teaser-masonry-image">
           {# <amp-img></amp-img> #}
         </div>
-        <div>
-          <div>Tagname</div>
-          <span>Headline</span>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+        <div class="teaser-masonry-text-box">
+          <div class="teaser-masonry-tag">Tagname</div>
+          <h2>Headline</h2>
+          <p class="teaser-masonry-copy">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
           <span>Learn more</span>
         </div>
       </div>
