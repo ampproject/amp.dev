@@ -40,8 +40,8 @@
       &.loading {
         font-size: 0;
         background: color('mercury');
-        @include loading-indicator;
 
+        @extend %loading-indicator;
         &:after {
           width: 22px;
           height: 22px;

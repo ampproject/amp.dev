@@ -72,9 +72,7 @@ class Editor {
 
     events.subscribe(EVENT_UPDATE_EDITOR_CONTENT, (response) => {
       window.requestIdleCallback(() => {
-        if (response) {
-          response.then((markup) => this.setSource(markup));
-        }
+        response.then((markup) => this.setSource(markup));
       });
     });
   }
