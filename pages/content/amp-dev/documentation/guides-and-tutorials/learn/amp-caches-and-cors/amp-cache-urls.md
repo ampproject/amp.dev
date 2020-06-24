@@ -6,13 +6,12 @@ formats:
   - websites
   - stories
   - ads
-author: Gregable 
+author: Gregable
 contributors:
   - sebastianbenz
 ---
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 
-In this document, you'll learn about the AMP Cache URL format and how it handles requests. 
+In this document, you'll learn about the AMP Cache URL format and how it handles requests.
 
 ## URL Format
 
@@ -69,7 +68,7 @@ Multiple dotted components are not used in this prefix, such as `example.com.cdn
 
 
 ```
-Names may contain the wildcard character * which is considered to match any single domain name component or component fragment. E.g., *.a.com matches foo.a.com but not bar.foo.a.com. 
+Names may contain the wildcard character * which is considered to match any single domain name component or component fragment. E.g., *.a.com matches foo.a.com but not bar.foo.a.com.
 ```
 
 
