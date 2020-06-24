@@ -13,6 +13,7 @@
 // limitations under the License.
 
 require('./fly-in.scss');
+import loaderHtml from '../loader/loader.hbs';
 
 class FlyIn {
   constructor(target) {
@@ -26,13 +27,10 @@ class FlyIn {
 
   createFlyIn(target) {
     const title = target.getAttribute('data-title');
-    target.innerHTML = `
-      <div class="fly-in-header">
-        <h2>${title}</h2>
-        <div class="fly-in-close" tabindex="0" role="button">✕</div>
-      </div>
-    `;
-    target.appendChild(this.content);
+    target.insertAdjacentHTML(
+      'afterbegin',
+      loaderHtml({theme: this.content})
+    );
 
     return target;
   }

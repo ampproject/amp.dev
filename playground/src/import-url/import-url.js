@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import './import-url.scss';
+import loaderHtml from '../import-url/import-url.hbs';
 
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
@@ -38,27 +39,10 @@ class ImportURL extends FlyIn {
 
     const content = document.createElement('div');
     content.className = 'import-url';
-    content.innerHTML = `
-      <p class="experimental-view-intro">
-        Enter a valid URL to import the page's markup into the editor.
-      </p>
-      <div class="import-url-bar">
-        <input id="url-bar-input"
-            class="import-url-bar-input"
-            type="url"
-            name="import-url"
-            placeholder="Your URL">
-        <button id="url-bar-submit"
-            class="import-url-bar-submit"
-            type=""
-            name="button">
-          Import
-        </button>
-      </div>
-      <label id="url-bar-label"
-          class="import-url-bar-label"
-          for="url-bar-input">
-      </label>`;
+    target.insertAdjacentHTML(
+      'afterbegin',
+      loaderHtml({theme: this.content})
+    );
 
     this.upadateContent(content);
 
