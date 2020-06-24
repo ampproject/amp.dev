@@ -64,11 +64,16 @@
           grid-column: 15/22;
         }
       }
+      &-center {
+        margin-top: 46px;
+      }
     }
 
     h1 {
       @include hl-xlrg;
       margin-bottom: 1rem;
+      max-width: 50%;
+      margin: 0 auto;
       &.white {
         color: color('white');
       }
@@ -127,8 +132,35 @@
     }
   }
 
+  .#{utility('container')} {
+    .teaser-masonry {
+      border-radius: 2px;
+      background-color: color('white');
+      box-shadow: 0 15px 30px 0px rgba(0, 0, 0, 0.15);
+      &-left {
+        grid-column: 4/13;
+        margin-top: 213px;
+        margin-right: 20px;
+      }
+      &-right {
+        grid-column: 13/22;
+        margin-left: 20px;
+      }
+      &-image {
+        height: 270px;
+        width: 100%;
+        background: transparent
+          linear-gradient(215deg, #00dcc0 0%, #005af0 100%) 0% 0% no-repeat
+          padding-box;
+      }
+    }
+  }
+
   .#{utility('component-visual')} {
     overflow: visible;
+    position: sticky;
+    top: 20%;
+    left: 0;
 
     &-container {
       display: flex;
@@ -150,6 +182,7 @@
         background-color: red;
         width: 100%;
         height: 430px;
+        z-index: 2;
         &-green {
           background-color: green;
         }
@@ -161,6 +194,15 @@
         }
         &-blue {
           background-color: blue;
+        }
+        &-background {
+          position: absolute;
+          top: -30px;
+          left: 0;
+          background-color: lime;
+          z-index: 1;
+          width: 80%;
+          height: 258px;
         }
       }
 
@@ -211,6 +253,7 @@
           }
 
           &[expanded] {
+            background-color: color('white');
             box-shadow: shadows('advanced');
             border: none;
             padding: 27px 25px 23px 25px;
@@ -451,8 +494,18 @@
   }
 
   .about-accordion {
-    background-color: color('whisper');
+    background: transparent linear-gradient(237deg, #eeeeee 0%, #ccdfff 100%) 0%
+      0% no-repeat padding-box;
+    width: 100vw;
+    height: 250vh;
+  }
+  .about-accordion,
+  .about-teaser {
     padding: 70px 0 35px 0;
+  }
+  .about-teaser {
+    background-color: color('whisper');
+    height: 100vh;
   }
 
   .has-background {
@@ -468,7 +521,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      height: 100%;
+      height: calc(100% - 100px);
       width: 100%;
       background-repeat: no-repeat;
       background-size: 100% auto;

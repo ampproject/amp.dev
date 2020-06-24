@@ -16,158 +16,135 @@ flyout:
 teaser:
 
 ---
-
-<section class="ap--stage ap--container-fluid">
-  {% do 
-    doc
-      .styles
-      .addCssFile('css/components/organisms/stage.css') %}
-  <div class="ap-o-stage">
-    <div class="ap--container-fluid">
-      <div class="ap-o-stage-content">
-        <div class="ap-o-stage-content-icon ap-a-ico">
-          {% do doc.icons.useIcon('icons/bolt-solid.svg') %}
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bolt-solid"></use>
-          </svg>
-        </div>
-
-        <h2 class="ap-o-stage-content-subline">{{ _('Compelling, smooth and instant') }}</h2>
-        <h1 class="ap-o-stage-content-headline">{{ _('Easily create user first websites with AMP.') }}</h1>
-
-        {% do 
-          doc
-            .styles
-            .addCssFile('/css/components/atoms/button.css') %}
-        <a href="../documentation/guides-and-tutorials/start/create/index.md?format=websites" class="ap-o-stage-content-button ap-a-btn">{{ _('Get started') }}</a>
-      </div>
-    </div>
-  </div>
-
-  {% include 'views/partials/format-visuals/websites.j2' %}
-</section>
-
-<section class="about-accordion">
-  <section class="ap--content">
-    <div class="ap--container-fluid">
-      <div class="ap-m-copy ap-m-copy-center">
-        <h5 class="overline">{{ _('Overline') }}</h5>
-        <h1>{{ _('Headline Title') }}</h5>
-        <h5 class="subline-medium">{{ _('Subline medium copy text.') }}</h5>
-      </div>
-    </div>
-  </section>
-
-  <section class="ap--component-visual">
-    <div class="ap-o-component-visual ap--container-fluid">
-      <amp-accordion class="ap-o-component-visual-accordion" expand-single-section>
-        <section on="expand:accordion-video-1.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide" expanded>
-          <h5>Headline small</h5>
-          <p>
-            {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-            <a href="#">
-              <span class="ap-a-ico ap-m-lnk-icon">
-                <svg>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                </svg>
-              </span>
-              {{ _('Learn more')}}
-            </a>
-          </p>
-        </section>
-        <section on="expand:accordion-video-2.show,accordion-video-1.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide">
-          <h5>Headline small</h5>
-          <p>
-            {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-            <a href="#">
-              <span class="ap-a-ico ap-m-lnk-icon">
-                <svg>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                </svg>
-              </span>
-              {{ _('Learn more')}}
-            </a>
-          </p>
-        </section>
-        <section on="expand:accordion-video-3.show,accordion-video-2.hide,accordion-video-1.hide,accordion-video-4.hide,accordion-video-5.hide">
-          <h5>Headline small</h5>
-          <p>
-            {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-            <a href="#">
-              <span class="ap-a-ico ap-m-lnk-icon">
-                <svg>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                </svg>
-              </span>
-              {{ _('Learn more')}}
-            </a>
-          </p>
-        </section>
-        <section on="expand:accordion-video-4.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-1.hide,accordion-video-5.hide">
-          <h5>Headline small</h5>
-          <p>
-            {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-            <a href="#">
-              <span class="ap-a-ico ap-m-lnk-icon">
-                <svg>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                </svg>
-              </span>
-              {{ _('Learn more')}}
-            </a>
-          </p>
-        </section>
-        <section on="expand:accordion-video-5.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-1.hide">
-          <h5>Headline small</h5>
-          <p>
-            {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-            <a href="#">
-              <span class="ap-a-ico ap-m-lnk-icon">
-                <svg>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                </svg>
-              </span>
-              {{ _('Learn more')}}
-            </a>
-          </p>
-        </section>
-      </amp-accordion>
-      <div class="media-container" id="accordion-video-1"></div>
-      <div class="media-container media-container-green" id="accordion-video-2" hidden></div>
-      <div class="media-container media-container-blue" id="accordion-video-3" hidden></div>
-      <div class="media-container media-container-yellow" id="accordion-video-4" hidden></div>
-      <div class="media-container media-container-purple" id="accordion-video-5" hidden></div>
-    </>
-  </section>
-</section>
-
-<section class="ap--content">
-  <div class="ap--container-fluid">
-    <div class="ap-m-copy ap-m-copy-center">
-      <h5 class="overline">{{ _('Overline') }}</h5>
-      <h1>{{ _('Headline Title') }}</h5>
-      <h5 class="subline-medium">{{ _('Subline medium copy text.') }}</h5>
-    </div>
-  </div>
-</section>
-
-<section class="ap--case-band">
-  <div class="ap--container-fluid">
-
-    {% with %}
-    {% set case_band_images = [
-      {"src": "/static/img/case-band-post-mobile.jpg", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-vox-mobile.jpg", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-iene-desktop.jpg", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-bmw-mobile.jpg", "width": "750", "height": "1334"},
-      {"src": "/static/img/case-band-magebit-desktop.jpg", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-renovationbrands-desktop.jpg", "width": "1440", "height": "900"},
-      {"src": "/static/img/case-band-tasty-mobile.jpg", "width": "750", "height": "1334"}
+<amp-animation id="stageAnim" layout="nodisplay">
+  <script type="application/json">
+    {
+      "duration": "1",
+      "fill": "both",
+      "direction": "normal",
+      "animations": [
+        {
+          "selector": "#accordion-video-1",
+          "keyframes": [
+            {
+              "transform": "translate(200px, -70px) scale(0.6)"
+            }
+          ]
+        }, {
+          "selector": "#accordion-container, #accordion-background-video-1",
+          "keyframes": [
+            {
+              "opacity": "0",
+              "offset": 0
+            }, {
+              "opacity": "0.01",
+              "offset": 0.9
+            }, {
+              "opacity": "1",
+              "offset": 1
+            }
+          ]
+        }
       ]
-    %}
-    {% include 'views/partials/case-band.j2' %}
-    {% endwith %}
-  </div>
+    }
+  </script>
+</amp-animation>
+
+<section class="ap--stage ap--container-fluid ">
+  <section class="about-accordion">
+    <section class="ap--content">
+      <div class="ap--container-fluid">
+        <div class="ap-m-copy ap-m-copy-center">
+          <h5 class="overline">{{ _('What is AMP?') }}</h5>
+          <h1>{{ _('A turnkey solution for web development') }}</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="ap--component-visual">
+      <div class="ap-o-component-visual ap--container-fluid">
+        <amp-accordion id="accordion-container" class="ap-o-component-visual-accordion" expand-single-section>
+          <section on="expand:accordion-video-1.show,accordion-background-video-1.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide" expanded>
+            <h5>Headline small</h5>
+            <p>
+              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+              <a href="#">
+                <span class="ap-a-ico ap-m-lnk-icon">
+                  <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+                  </svg>
+                </span>
+                {{ _('Learn more')}}
+              </a>
+            </p>
+          </section>
+          <section on="expand:accordion-video-2.show,accordion-background-video-1.hide,accordion-video-1.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide">
+            <h5>Headline small</h5>
+            <p>
+              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+              <a href="#">
+                <span class="ap-a-ico ap-m-lnk-icon">
+                  <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+                  </svg>
+                </span>
+                {{ _('Learn more')}}
+              </a>
+            </p>
+          </section>
+          <section on="expand:accordion-video-3.show,accordion-background-video-1.hide,accordion-video-2.hide,accordion-video-1.hide,accordion-video-4.hide,accordion-video-5.hide">
+            <h5>Headline small</h5>
+            <p>
+              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+              <a href="#">
+                <span class="ap-a-ico ap-m-lnk-icon">
+                  <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+                  </svg>
+                </span>
+                {{ _('Learn more')}}
+              </a>
+            </p>
+          </section>
+          <section on="expand:accordion-video-4.show,accordion-video-2.hide,accordion-background-video-1.hide,accordion-video-3.hide,accordion-video-1.hide,accordion-video-5.hide">
+            <h5>Headline small</h5>
+            <p>
+              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+              <a href="#">
+                <span class="ap-a-ico ap-m-lnk-icon">
+                  <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+                  </svg>
+                </span>
+                {{ _('Learn more')}}
+              </a>
+            </p>
+          </section>
+          <section on="expand:accordion-video-5.show,accordion-video-2.hide,accordion-background-video-1.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-1.hide">
+            <h5>Headline small</h5>
+            <p>
+              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
+              <a href="#">
+                <span class="ap-a-ico ap-m-lnk-icon">
+                  <svg>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
+                  </svg>
+                </span>
+                {{ _('Learn more')}}
+              </a>
+            </p>
+          </section>
+        </amp-accordion>
+        <div class="media-container" id="accordion-video-1"></div>
+        <div id="accordion-background-video-1" class="media-container media-container-background"></div>
+        <div class="media-container media-container-green" id="accordion-video-2" hidden></div>
+        <div class="media-container media-container-blue" id="accordion-video-3" hidden></div>
+        <div class="media-container media-container-yellow" id="accordion-video-4" hidden></div>
+        <div class="media-container media-container-purple" id="accordion-video-5" hidden></div>
+      </div>
+    </section>
+  </section>
+  <amp-position-observer intersection-ratios="0.4" on="scroll:stageAnim.seekTo(percent=event.percent)" layout="nodisplay" once></amp-position-observer>
 </section>
 
 <section class="has-background">
@@ -208,31 +185,6 @@ teaser:
           </div>
 
         {% endfor %}
-      </div>
-
-      <div class="ap-o-benefits-overview-list ap-o-benefits-overview-list-row-two">
-
-        {% for benefit in doc.benefits.websites.business %}
-
-          <div class="ap-m-benefit ap-m-benefit-about">
-            <div class="ap-m-benefit-icon">
-              {% do 
-                doc
-                  .icons
-                  .useIcon('icons/' + benefit.icon + '.svg') %}
-              <svg class="ap-m-benefit-icon">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ benefit.icon }}"></use>
-              </svg>
-            </div>
-            <div class="ap-m-benefit-text">
-              <span class="ap-m-benefit-text-headline">
-                {{ _(benefit.headline) }}</span>
-              <span class="ap-m-benefit-text-copy">{{ _(benefit.text) }}</span>
-            </div>
-          </div>
-
-        {% endfor %}
-
       </div>
     </div>
   </section>
@@ -282,19 +234,48 @@ teaser:
   </section>
 </section>
 
+<section class="ap--content">
+  <div class="ap--container-fluid">
+    <div class="ap-m-copy ap-m-copy-center">
+      <h5 class="overline">{{ _('Overline') }}</h5>
+      <h1>{{ _('Headline Title') }}</h5>
+      <h5 class="subline-medium">{{ _('Subline medium copy text.') }}</h5>
+    </div>
+  </div>
+</section>
+
+<section class="ap--case-band">
+  <div class="ap--container-fluid">
+
+    {% with %}
+    {% set case_band_images = [
+      {"src": "/static/img/case-band-post-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-vox-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-iene-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-bmw-mobile.jpg", "width": "750", "height": "1334"},
+      {"src": "/static/img/case-band-magebit-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-renovationbrands-desktop.jpg", "width": "1440", "height": "900"},
+      {"src": "/static/img/case-band-tasty-mobile.jpg", "width": "750", "height": "1334"}
+      ]
+    %}
+    {% include 'views/partials/case-band.j2' %}
+    {% endwith %}
+  </div>
+</section>
+
 <section class="ap--container about-teaser">
 
   <section class="ap--content teaser-masonry teaser-masonry-left">
     <a href="#">
       <div>
-        <div class="about-teaser-image">
+        <div class="teaser-masonry-image">
           {# <amp-img></amp-img> #}
         </div>
         <div>
-          <div></div>
-          <span></span>
-          <p></p>
-          <span></span>
+          <div>Tagname</div>
+          <span>Headline</span>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+          <span>Learn more</span>
         </div>
       </div>
     </a>
@@ -303,14 +284,14 @@ teaser:
   <section class="ap--content teaser-masonry teaser-masonry-right">
     <a href="#">
       <div>
-        <div class="teaser-mansonry-image">
+        <div class="teaser-masonry-image">
           {# <amp-img></amp-img> #}
         </div>
         <div>
-          <div></div>
-          <span></span>
-          <p></p>
-          <span></span>
+          <div>Tagname</div>
+          <span>Headline</span>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
+          <span>Learn more</span>
         </div>
       </div>
     </a>
