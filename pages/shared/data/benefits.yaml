@@ -40,6 +40,16 @@ websites:
     - headline: Build for a sustainable future in the open web for everyone
       text: The AMP Project is an open source initiative to protect the future of the web by delivering a better, faster and more user-friendly experience.
       icon: interaction
+  new:
+    - headline: Efficient and always up-to-date
+      text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+      icon: interaction
+    - headline: Guaranteed speed and reliability
+      text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+      icon: interaction
+    - headline: Easy and customizable
+      text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+      icon: interaction
 stories:
   business:
     - headline: Track and measure
