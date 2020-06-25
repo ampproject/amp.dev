@@ -529,7 +529,7 @@
     background: transparent linear-gradient(237deg, #eeeeee 0%, #ccdfff 100%) 0%
       0% no-repeat padding-box;
     width: 100vw;
-    height: 250vh;
+    height: 200vh;
   }
   .about-accordion,
   .about-teaser {
@@ -550,6 +550,8 @@
       background: transparent linear-gradient(215deg, #00dcc0 0%, #005af0 100%)
         0% 0% no-repeat padding-box;
       min-height: 100vh;
+      padding-bottom: 1px;
+
       h1,
       h2,
       h5,
@@ -568,6 +570,75 @@
       background-position: top right;
       background-attachment: fixed;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768"><defs><linearGradient id="a" x1="239.67" y1="855.23" x2="606.28" y2="-152.04" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23EDEDF1"/></linearGradient></defs><g><path fill="url(%23a)" d="M0 0h1024v214L786.37 768H0V0z"/></g></svg>');
+    }
+  }
+
+  .revolver-carousel {
+    height: 100%;
+    &-holder {
+      position: sticky;
+      width: 100%;
+      height: 100%;
+      min-height: 240px;
+      top: 0;
+      left: 0;
+      overflow-x: scroll;
+    }
+    &-element {
+      position: absolute;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 350px;
+      height: 100%;
+      margin: 0 10px;
+      padding: 30px 50px 30px 50px;
+      background-color: color('white');
+    }
+    &-headline {
+      margin-bottom: 14px;
+      font-size: 1.375rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2em;
+      color: color('charade');
+    }
+
+    &-icon {
+      margin-bottom: 17px;
+      svg {
+        height: 60px;
+      }
+    }
+    p {
+      color: color('charade');
+      text-align: center;
+      margin: 0 0 13px 0;
+    }
+
+    #rv-e {
+      &-1 {
+        left: 0;
+      }
+      &-2 {
+        left: 380px;
+      }
+      &-3 {
+        left: 750px;
+      }
+      &-4 {
+        left: 1120px;
+      }
+      &-5 {
+        left: 1490px;
+      }
+      &-6 {
+        left: 1860px;
+      }
+      &-7 {
+        left: 2230px;
+      }
     }
   }
 

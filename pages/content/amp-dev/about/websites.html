@@ -34,14 +34,32 @@ teaser:
           "selector": "#accordion-container, #accordion-background-video-1",
           "keyframes": [
             {
-              "opacity": "0",
-              "offset": 0
+              "opacity": "0"
             }, {
               "opacity": "0.01",
-              "offset": 0.9
+              "offset": 0.5
             }, {
               "opacity": "1",
               "offset": 1
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</amp-animation>
+<amp-animation id="carouselAnim" layout="nodisplay">
+  <script type="application/json">
+    {
+      "duration": "1",
+      "fill": "both",
+      "direction": "normal",
+      "animations": [
+        {
+          "selector": "#rv-e-1, #rv-e-2, #rv-e-3, #rv-e-4, #rv-e-5, #rv-e-6, #rv-e-7",
+          "keyframes": [
+            {
+              "transform": "translate(-1070px, 0px)"
             }
           ]
         }
@@ -223,10 +241,77 @@ teaser:
   <section class="ap--content">
     <div class="ap--container-fluid">
       <div class="ap-m-copy ap-m-copy-center">
-        <h5 class="overline overline-white">{{ _('Overline') }}</h5>
-        <h1 class="white">{{ _('Headline Title') }}</h5>
-        <h5 class="subline-medium subline-medium-white">{{ _('Subline medium copy text.') }}</h5>
+        <h5 class="overline overline-white">{{ _('Who is AMP for?') }}</h5>
+        <h1 class="white">{{ _('For everyone who builds something for the web') }}</h5>
+        <h5 class="subline-medium subline-medium-white">{{ _('Whether you are a single freelance developer working on new websites for your clients, or a full team of developers at a larger company, AMP can help you streamline your workflow and help your website succeed in the long run.') }}</h5>
       </div>
+    </div>
+  </section>
+  <section class="ap--content revolver-carousel">
+    <div class="ap--container-fluid revolver-carousel-holder">
+      <section id="rv-e-1" class="revolver-carousel-element">
+        <div class="revolver-carousel-icon">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
+          </svg>
+        </div>
+        <span class="revolver-carousel-headline">{{ _('Enterprise') }}</span>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+      </section>
+      <section id="rv-e-2" class="revolver-carousel-element">
+        <div class="revolver-carousel-icon">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
+          </svg>
+        </div>
+        <span class="revolver-carousel-headline">{{ _('Creative Agencies') }}</span>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+      </section>
+      <section id="rv-e-3" class="revolver-carousel-element">
+        <div class="revolver-carousel-icon">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
+          </svg>
+        </div>
+        <span class="revolver-carousel-headline">{{ _('Publishers') }}</span>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+      </section>
+      <section id="rv-e-4" class="revolver-carousel-element">
+        <div class="revolver-carousel-icon">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
+          </svg>
+        </div>
+        <span class="revolver-carousel-headline">{{ _('Schools') }}</span>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+      </section>
+      <section id="rv-e-5" class="revolver-carousel-element">
+        <div class="revolver-carousel-icon">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
+          </svg>
+        </div>
+        <span class="revolver-carousel-headline">{{ _('Publishers') }}</span>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+      </section>
+      <section id="rv-e-6" class="revolver-carousel-element">
+        <div class="revolver-carousel-icon">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
+          </svg>
+        </div>
+        <span class="revolver-carousel-headline">{{ _('Enterprise') }}</span>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+      </section>
+      <section id="rv-e-7" class="revolver-carousel-element">
+        <div class="revolver-carousel-icon">
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
+          </svg>
+        </div>
+        <span class="revolver-carousel-headline">{{ _('Creative Agencies') }}</span>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+      </section>
     </div>
   </section>
   <section class="ap--content">
@@ -238,6 +323,7 @@ teaser:
       <div class="media-container-masonry media-container-masonry-right-small"></div>
     </div>
   </section>
+  <amp-position-observer intersection-ratios="0.2" on="scroll:carouselAnim.seekTo(percent=event.percent)" layout="nodisplay"></amp-position-observer>
 </section>
 
 <section class="ap--content">
