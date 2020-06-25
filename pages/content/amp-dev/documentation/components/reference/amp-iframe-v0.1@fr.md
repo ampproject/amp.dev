@@ -2,11 +2,10 @@
 $title: amp-iframe
 $category@: layout
 formats:
-- websites
+  - websites
 teaser:
   text: Afficher un iFrame.
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -24,10 +23,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Affiche un iFrame.
-
 
 <table>
   <tr>
@@ -48,20 +44,23 @@ Affiche un iFrame.
 
 Il existe plusieurs différences notables entre le composant `amp-iframe` et les cadres iFrame "vanille" qui sont conçus dans une optique de sécurité accrue et pour éviter les fichiers AMP dominés par un seul iFrame :
 
-* Un composant `amp-iframe` ne peut ne pas figurer près du bord supérieur du document (à l'exception des cadres iFrame qui utilisent `placeholder`, comme indiqué [ci-dessous](#iframe-with-placeholder)). L'iFrame doit soit se trouver à 600 pixels du haut du document, soit hors des 75 premiers % de la fenêtre d'affichage lorsque l'utilisateur fait défiler la page vers le haut, la plus petite des deux valeurs étant retenue.
-* Par défaut, un composant amp-iframe est isolé dans un bac à sable (voir les [détails](#sandbox)).
-* Un composant `amp-iframe` peut uniquement demander des ressources via HTTPS, à partir d'un URI de données ou via l'attribut `srcdoc`.
-* Un composant `amp-iframe` ne peut pas se trouver dans la même origine que le conteneur, sauf si `allow-same-origin` n'est pas autorisé dans l'attribut `sandbox`. Pour plus d'informations sur les origines autorisées pour les cadres iFrame, consultez le document ["Iframe origin policy"](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
+- Un composant `amp-iframe` ne peut ne pas figurer près du bord supérieur du document (à l'exception des cadres iFrame qui utilisent `placeholder`, comme indiqué [ci-dessous](#iframe-with-placeholder)). L'iFrame doit soit se trouver à 600 pixels du haut du document, soit hors des 75 premiers % de la fenêtre d'affichage lorsque l'utilisateur fait défiler la page vers le haut, la plus petite des deux valeurs étant retenue.
+- Par défaut, un composant amp-iframe est isolé dans un bac à sable (voir les [détails](#sandbox)).
+- Un composant `amp-iframe` peut uniquement demander des ressources via HTTPS, à partir d'un URI de données ou via l'attribut `srcdoc`.
+- Un composant `amp-iframe` ne peut pas se trouver dans la même origine que le conteneur, sauf si `allow-same-origin` n'est pas autorisé dans l'attribut `sandbox`. Pour plus d'informations sur les origines autorisées pour les cadres iFrame, consultez le document ["Iframe origin policy"](https://github.com/ampproject/amphtml/blob/master/spec/amp-iframe-origin-policy.md).
 
-*Exemple : Intégration d'une carte Google dans un composant amp-iframe*
+_Exemple : Intégration d'une carte Google dans un composant amp-iframe_
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    frameborder="0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland">
-  </amp-iframe>
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  frameborder="0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDG9YXIhKBhqclZizcSzJ0ROiE0qgVfwzI&q=iceland"
+>
+</amp-iframe>
 ```
 
 Rendu effectué sous la forme suivante :
@@ -81,10 +80,10 @@ Pour la publicité, il est conseillé d'utiliser plutôt le composant [`amp-ad`]
 
 Il y a plusieurs raisons à cela :
 
-* `amp-iframe` impose le système de bac à sable et le bac à sable est également appliqué aux cadres iFrame enfants. Cela signifie que les liens vers les pages de destination ne sont peut-être pas fonctionnels, même si l'annonce proprement dite semble fonctionner.
-* `amp-iframe` ne fournit pas de mécanisme permettant de transmettre la configuration à l'iFrame.
-* `amp-iframe` ne dispose pas d'un mécanisme de redimensionnement entièrement contrôlé par l'iFrame.
-* Les informations de visibilité ne sont peut-être pas disponibles pour le composant `amp-iframe`.
+- `amp-iframe` impose le système de bac à sable et le bac à sable est également appliqué aux cadres iFrame enfants. Cela signifie que les liens vers les pages de destination ne sont peut-être pas fonctionnels, même si l'annonce proprement dite semble fonctionner.
+- `amp-iframe` ne fournit pas de mécanisme permettant de transmettre la configuration à l'iFrame.
+- `amp-iframe` ne dispose pas d'un mécanisme de redimensionnement entièrement contrôlé par l'iFrame.
+- Les informations de visibilité ne sont peut-être pas disponibles pour le composant `amp-iframe`.
 
 # Attributs <a name="attributes"></a>
 
@@ -119,27 +118,33 @@ Il y a plusieurs raisons à cela :
 
 Il est possible de faire en sorte qu'un composant `amp-iframe` apparaisse en haut d'un document lorsqu'un élément ```placeholder` lui est associé, comme illustré dans l'exemple ci-dessous.
 
-* Le composant `amp-iframe` doit contenir un élément avec l'attribut `placeholder` (un élément `amp-img`, par exemple) qui sera rendu en tant qu'espace réservé jusqu'à ce que l'iFrame soit prêt à être affiché.
-* Il est possible de connaître la disponibilité de l'iFrame en écoutant l'événement `onload` correspondant ou un `postMessage` `embed-ready` qui sera envoyé par le document iFrame, selon la situation qui se présente en premier.
+- Le composant `amp-iframe` doit contenir un élément avec l'attribut `placeholder` (un élément `amp-img`, par exemple) qui sera rendu en tant qu'espace réservé jusqu'à ce que l'iFrame soit prêt à être affiché.
+- Il est possible de connaître la disponibilité de l'iFrame en écoutant l'événement `onload` correspondant ou un `postMessage` `embed-ready` qui sera envoyé par le document iFrame, selon la situation qui se présente en premier.
 
-*Exemple : Cadre iFrame avec espace réservé*
+_Exemple : Cadre iFrame avec espace réservé_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    src="https://foo.com/iframe">
-    <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  src="https://foo.com/iframe"
+>
+  <amp-img layout="fill" src="https://foo.com/foo.png" placeholder></amp-img>
 </amp-iframe>
 ```
 
-*Exemple : Requête embed-ready de l'iFrame*
+_Exemple : Requête embed-ready de l'iFrame_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-ready'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-ready',
+  },
+  '*'
+);
 ```
 
 # Redimensionnement des cadres iFrame <a name="iframe-resizing"></a>
@@ -154,64 +159,77 @@ Une mise en page statique doit être définie pour un composant `amp-iframe`, co
 
 Notez que l'attribut `resizable` remplace la valeur de `scrolling` par `no`.
 
-*Exemple : `amp-iframe` avec élément `overflow`*
+_Exemple : `amp-iframe` avec élément `overflow`_
 
 ```html
-<amp-iframe width=300 height=300
-    layout="responsive"
-    sandbox="allow-scripts allow-same-origin"
-    resizable
-    src="https://foo.com/iframe">
-    <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
+<amp-iframe
+  width="300"
+  height="300"
+  layout="responsive"
+  sandbox="allow-scripts allow-same-origin"
+  resizable
+  src="https://foo.com/iframe"
+>
+  <div overflow tabindex="0" role="button" aria-label="Read more">
+    Read more!
+  </div>
 </amp-iframe>
 ```
 
-*Exemple : Requête de redimensionnement (resize) de l'iFrame*
+_Exemple : Requête de redimensionnement (resize) de l'iFrame_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'embed-size',
-  height: document.body.scrollHeight
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'embed-size',
+    height: document.body.scrollHeight,
+  },
+  '*'
+);
 ```
 
 Une fois ce message reçu, l'exécution AMP tente de répondre à la demande dans les plus brefs délais, en tenant compte toutefois de l'emplacement actuel du lecteur, de l'état d'activation du défilement et de tout autre élément relatif aux performances ou à l'expérience utilisateur. Si la demande de redimensionnement ne peut pas être satisfaite, le composant `amp-iframe` affiche un élément `overflow`. Si l'utilisateur clique sur l'élément `overflow`, le composant `amp-iframe` est automatiquement redimensionné, car il est déclenché par une action de l'utilisateur.
 
 Voici quelques facteurs qui ont une incidence sur la vitesse d'exécution du redimensionnement :
 
-* Le redimensionnement est-il déclenché par l'action de l'utilisateur ?
-* La demande de redimensionnement porte-t-elle sur un iFrame actif ?
-* La demande de redimensionnement concerne-t-elle un iFrame situé en dessous ou au-dessus de la fenêtre d'affichage ?
+- Le redimensionnement est-il déclenché par l'action de l'utilisateur ?
+- La demande de redimensionnement porte-t-elle sur un iFrame actif ?
+- La demande de redimensionnement concerne-t-elle un iFrame situé en dessous ou au-dessus de la fenêtre d'affichage ?
 
 # Visibilité des cadres iFrame <a name="iframe-viewability"></a>
 
 Les cadres iFrame peuvent envoyer un message `send-intersections` à leurs éléments parents pour commencer à recevoir des [enregistrements de modification](https://developer.mozilla.org/fr/docs/Web/API/IntersectionObserverEntry) de type IntersectionObserver de l'intersection de l'iFrame avec la fenêtre d'affichage parent.
 
-*Remarque : Dans les exemples suivants, nous partons du principe que le script se trouve dans l'iFrame créé, où `window.parent` est la fenêtre supérieure. Si le script réside dans un iFrame imbriqué, remplacez `window.parent` par la fenêtre AMP supérieure.*
+_Remarque : Dans les exemples suivants, nous partons du principe que le script se trouve dans l'iFrame créé, où `window.parent` est la fenêtre supérieure. Si le script réside dans un iFrame imbriqué, remplacez `window.parent` par la fenêtre AMP supérieure._
 
-*Exemple : Requête `send-intersections` de l'iFrame*
+_Exemple : Requête `send-intersections` de l'iFrame_
 
 ```javascript
-window.parent.postMessage({
-  sentinel: 'amp',
-  type: 'send-intersections'
-  }, '*');
+window.parent.postMessage(
+  {
+    sentinel: 'amp',
+    type: 'send-intersections',
+  },
+  '*'
+);
 ```
 
 L'iFrame peut écouter un message `intersection` provenant de la fenêtre parent afin de recevoir les données d'intersection.
 
-*Exemple : Requête `send-intersections` de l'iFrame*
+_Exemple : Requête `send-intersections` de l'iFrame_
 
 ```javascript
-window.addEventListener('message', function(event) {
-  if (event.source != window.parent ||
-  event.origin == window.location.origin ||
-  !event.data ||
-  event.data.sentinel != 'amp' ||
-  event.data.type != 'intersection') {
+window.addEventListener('message', function (event) {
+  if (
+    event.source != window.parent ||
+    event.origin == window.location.origin ||
+    !event.data ||
+    event.data.sentinel != 'amp' ||
+    event.data.type != 'intersection'
+  ) {
     return;
-    }
+  }
   event.data.changes.forEach(function (change) {
     console.log(change);
   });
@@ -232,10 +250,10 @@ Les cadres iFrame sont identifiés en tant que cadres de suivi et d'analyse s'il
 
 Le composant `amp-iframe` doit être considéré comme une solution de remplacement si l'expérience utilisateur requise n'est pas possible autrement dans AMP ; c'est-à-dire, s'il n'existe pas encore de [composant AMP](../../../documentation/components/index.html) pour le cas d'utilisation. Cela s'explique par le fait que l'utilisation d'un composant AMP adapté à un cas d'utilisation spécifique présente de nombreux avantages. En voici un aperçu :
 
-* Amélioration des performances et de la gestion des ressources.
-* Dans certains cas, les composants personnalisés peuvent fournir des images d'espace réservé intégrées. Cela signifie, par exemple, l'obtention de la miniature vidéo appropriée avant le chargement d'une vidéo, ce qui simplifie les tâches de codage nécessaires pour ajouter manuellement un espace réservé.
-* Redimensionnement intégré. Dans ce cas, un contenu d'iFrame de taille imprévisible peut être présenté plus souvent à l'utilisateur comme un élément natif de la page, plutôt que dans un cadre que l'utilisateur peut faire défiler.
-* D'autres fonctionnalités peuvent être intégrées ; par exemple, la lecture automatique pour les lecteurs vidéo.
+- Amélioration des performances et de la gestion des ressources.
+- Dans certains cas, les composants personnalisés peuvent fournir des images d'espace réservé intégrées. Cela signifie, par exemple, l'obtention de la miniature vidéo appropriée avant le chargement d'une vidéo, ce qui simplifie les tâches de codage nécessaires pour ajouter manuellement un espace réservé.
+- Redimensionnement intégré. Dans ce cas, un contenu d'iFrame de taille imprévisible peut être présenté plus souvent à l'utilisateur comme un élément natif de la page, plutôt que dans un cadre que l'utilisateur peut faire défiler.
+- D'autres fonctionnalités peuvent être intégrées ; par exemple, la lecture automatique pour les lecteurs vidéo.
 
 # Validation <a name="validation"></a>
 

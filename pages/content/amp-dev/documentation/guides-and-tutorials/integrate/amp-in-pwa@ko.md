@@ -10,15 +10,17 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 
 그런 다음 원시 콘텐츠를 사용 가능한 형태의 HTML로 변환하여 클라이언트에서 렌더링합니다. 그러나 이 과정은 비용이 많이 들 뿐 아니라 유지하기 어려운 경우가 많습니다. 대신 기존의 AMP 페이지를 콘텐츠 소스로 재사용할 수 있습니다. 무엇보다도 AMP를 사용하면 코드 몇 줄로 이 과정을 간단히 처리할 수 있습니다.
 
-##  프로그레시브 웹 앱에 '그림자 AMP' 포함하기
+## 프로그레시브 웹 앱에 '그림자 AMP' 포함하기
 
 첫 번째 단계는 프로그레시브 웹 앱에 '그림자 AMP'라고 하는 특별한 버전의 AMP를 포함하는 것입니다. AMP 라이브러리는 최상위 페이지에서 로드되지만, 실제로 최상위 콘텐츠를 제어하지는 않습니다. AMP 라이브러리는 여러분이 지시한 페이지의 일부를 'AMP로 만들' 뿐입니다.
 
 페이지 헤드에 그림자 AMP를 포함하는 방법은 다음과 같습니다.
 
 [sourcecode:html]
+
 <!-- AMP-with-Shadow-DOM 런타임 라이브러리를 비동기적으로 로드합니다. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### 그림자 AMP API를 사용할 준비가 되었다는 것을 어떻게 알 수 있나요?
@@ -29,7 +31,7 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // 이제 AMP를 사용할 수 있습니다.
+// 이제 AMP를 사용할 수 있습니다.
 });
 [/sourcecode]
 
@@ -37,10 +39,10 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 
 이 코드의 의미는 다음과 같습니다.
 
-  1. 'window.AMP가 존재하지 않는 경우, 그 위치에 들어갈 빈 배열을 만듭니다.'
-  1. '그런 다음 배열에 콜백 함수를 푸시합니다. 콜백 함수는 AMP를 사용할 준비가 되면 실행되어야 합니다.'
+1. 'window.AMP가 존재하지 않는 경우, 그 위치에 들어갈 빈 배열을 만듭니다.'
+1. '그런 다음 배열에 콜백 함수를 푸시합니다. 콜백 함수는 AMP를 사용할 준비가 되면 실행되어야 합니다.'
 
-이 코드가 작동하는 이유는 그림자 AMP 라이브러리가 실제로 로드될 때 `window.AMP` 아래에 콜백 배열이 있다는 것을 인식하고 전체 대기열을 처리하기 때문입니다. 나중에 동일한 함수를 다시 실행해 보면 여전히 제대로 작동할 것입니다. `window.AMP'가 그림자 AMP와 콜백을 바로 실행하는 맞춤 `push` 메소드로 대체되기 때문입니다.
+이 코드가 작동하는 이유는 그림자 AMP 라이브러리가 실제로 로드될 때 `window.AMP` 아래에 콜백 배열이 있다는 것을 인식하고 전체 대기열을 처리하기 때문입니다. 나중에 동일한 함수를 다시 실행해 보면 여전히 제대로 작동할 것입니다. `window.AMP'가 그림자 AMP와 콜백을 바로 실행하는 맞춤`push` 메소드로 대체되기 때문입니다.
 
 도움말: 위의 코드 샘플을 실제로 사용할 수 있게 만들려면, 코드를 Promise에 넣은 다음 AMP API를 사용하기 전에 항상 앞서 말한 Promise를 사용하는 것이 좋습니다. [React 데모 코드](https://github.com/ampproject/amp-publisher-sample/blob/master/amp-pwa/src/components/amp-document/amp-document.js#L20)에서 예시를 확인하세요.
 
@@ -57,20 +59,20 @@ AMP에 시간과 노력을 투자했지만 아직 프로그레시브 웹 앱을 
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // 안타깝게도 fetch()는 문서 가져오기를 지원하지 않으므로
-  // 기존에 사용하던 XMLHttpRequest를 사용해야 합니다.
-  var xhr = new XMLHttpRequest();
+// 안타깝게도 fetch()는 문서 가져오기를 지원하지 않으므로
+// 기존에 사용하던 XMLHttpRequest를 사용해야 합니다.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML에는 사용할 준비가 끝난 문서 객체가 포함되어 있습니다.
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML에는 사용할 준비가 끝난 문서 객체가 포함되어 있습니다.
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -87,8 +89,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // fetchDocument 메소드를 사용하여 문서를 가져오세요.
 fetchDocument(url).then(function(doc) {
-  // AMP가 넘겨받아 페이지를 렌더링하게 합니다.
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// AMP가 넘겨받아 페이지를 렌더링하게 합니다.
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 
@@ -113,12 +115,11 @@ ampedDoc.close();
 
 Google에서 제작한 [React 샘플](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)에서 'PWA에 삽입된 AMP'가 실제로 작동되는 모습을 확인할 수 있습니다. 이 샘플을 보면 탐색 중 전환이 부드럽게 이루어지는 것을 확인할 수 있으며, 위에서 설명한 단계가 포함된 간단한 반응 구성요소도 함께 제공됩니다. 프로그레시브 웹 앱의 유연한 맞춤형 자바스크립트와 콘텐츠를 신속하게 로드하기 위한 AMP가 같이 사용되어 두 가지의 장점을 모두 활용할 수 있습니다.
 
-* 소스 코드 받기: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
-* npm을 통해 단독으로 React 구성요소 사용하기: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
-* 실제 작동 모습 확인하기: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/)(휴대전화 또는 모바일 에뮬레이션에 가장 적합)
+- 소스 코드 받기: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
+- npm을 통해 단독으로 React 구성요소 사용하기: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
+- 실제 작동 모습 확인하기: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/)(휴대전화 또는 모바일 에뮬레이션에 가장 적합)
 
 또한 Polymer 프레임워크를 사용한 PWA 및 AMP 샘플도 확인할 수 있습니다. 이 샘플에서는 [amp-viewer](https://github.com/PolymerLabs/amp-viewer/)를 사용하여 AMP 페이지를 삽입합니다.
 
-* 코드 받기: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
-* 실제 작동 모습 확인하기: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
-
+- 코드 받기: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
+- 실제 작동 모습 확인하기: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)

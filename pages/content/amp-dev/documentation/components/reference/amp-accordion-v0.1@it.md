@@ -2,13 +2,12 @@
 $title: amp-accordion
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Permette ai visualizzatori di dare un'occhiata alla struttura dei contenuti e passare a una sezione a loro scelta.
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Permette ai visualizzatori di dare un'occhiata alla struttura dei contenuti e passare a qualsiasi sezione. Questa funzione è utile per i dispositivi mobili dove anche solo un paio di frasi rendono indispensabile lo scorrimento per raggiungere una sezione.
 
@@ -45,23 +42,23 @@ Permette ai visualizzatori di dare un'occhiata alla struttura dei contenuti e pa
   </tr>
 </table>
 
-
 ## Comportamento <a name="behavior"></a>
 
 Il componente `amp-accordion` ti permette di mostrare sezioni di contenuti comprimibili ed espandibili. Ciascuno degli elementi secondari immediati del componente `amp-accordion` viene considerato una sezione di accordion. Ognuno di questi nodi deve essere un tag `<section>`.
 
-* Un componente `amp-accordion` può contenere uno o più elementi `<section>` come elementi secondari diretti.
-* Ciascun elemento `<section>` deve contenere esattamente due elementi secondari diretti.
-* Il primo elemento secondario della sezione deve essere un elemento di intestazione (un `header` `h1`, `h2`, ..., `h6`) e rappresenta l'intestazione della sezione.
-* Il secondo elemento secondario della sezione può essere un qualsiasi tag consentito in HTML AMP e rappresenta i contenuti della sezione.
-* Facendo clic o toccando l'intestazione di una sezione, questa si espande o si comprime.
-* Lo stato compresso/espanso di ogni sezione nell'elemento `amp-accordion` viene mantenuto al livello di sessione. Per disattivare la conservazione di questo stato, aggiungi l'attributo `disable-session-states` all'elemento `amp-accordion`.
+- Un componente `amp-accordion` può contenere uno o più elementi `<section>` come elementi secondari diretti.
+- Ciascun elemento `<section>` deve contenere esattamente due elementi secondari diretti.
+- Il primo elemento secondario della sezione deve essere un elemento di intestazione (un `header` `h1`, `h2`, ..., `h6`) e rappresenta l'intestazione della sezione.
+- Il secondo elemento secondario della sezione può essere un qualsiasi tag consentito in HTML AMP e rappresenta i contenuti della sezione.
+- Facendo clic o toccando l'intestazione di una sezione, questa si espande o si comprime.
+- Lo stato compresso/espanso di ogni sezione nell'elemento `amp-accordion` viene mantenuto al livello di sessione. Per disattivare la conservazione di questo stato, aggiungi l'attributo `disable-session-states` all'elemento `amp-accordion`.
 
 #### Esempio: visualizzazione di un accordion <a name="example-displaying-an-accordion"></a>
 
-In questo esempio vengono visualizzate tre sezioni, in cui la terza viene espansa al caricamento della pagina.  Inoltre, abbiamo disattivato la conservazione dello stato compresso/espanso impostando `disable-session-states`.
+In questo esempio vengono visualizzate tre sezioni, in cui la terza viene espansa al caricamento della pagina. Inoltre, abbiamo disattivato la conservazione dello stato compresso/espanso impostando `disable-session-states`.
 
 [example preview="inline" playground="true" imports="amp-accordion"]
+
 ```html
 <amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
@@ -80,6 +77,7 @@ In questo esempio vengono visualizzate tre sezioni, in cui la terza viene espans
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 [tip type="success"]
@@ -145,13 +143,13 @@ The events below will be triggered on `section`s of `accordion`.
 
 ## Stili <a name="styling"></a>
 
-* Puoi utilizzare il selettore di elementi `amp-accordion` per modificare lo stile come preferisci.
-* Gli elementi `amp-accordion` sono sempre `display: block`.
-* Gli elementi `<section>`, dell'intestazione e dei contenuti non consentono il floating.
-* Quando la sezione è espansa, l'elemento `<section>` ha un attributo `expanded`.
-* L'elemento dei contenuti è fissato in modo chiaro con `overflow: hidden`, quindi non può presentare barre di scorrimento.
-* I margini degli elementi `<amp-accordion>`, `<section>`, dell'intestazione e dei contenuti sono impostati su 0 e possono essere sovrascritti in stili personalizzati.
-* Gli elementi dell'intestazione e dei contenuti sono `position: relative`.
+- Puoi utilizzare il selettore di elementi `amp-accordion` per modificare lo stile come preferisci.
+- Gli elementi `amp-accordion` sono sempre `display: block`.
+- Gli elementi `<section>`, dell'intestazione e dei contenuti non consentono il floating.
+- Quando la sezione è espansa, l'elemento `<section>` ha un attributo `expanded`.
+- L'elemento dei contenuti è fissato in modo chiaro con `overflow: hidden`, quindi non può presentare barre di scorrimento.
+- I margini degli elementi `<amp-accordion>`, `<section>`, dell'intestazione e dei contenuti sono impostati su 0 e possono essere sovrascritti in stili personalizzati.
+- Gli elementi dell'intestazione e dei contenuti sono `position: relative`.
 
 ## Convalida <a name="validation"></a>
 

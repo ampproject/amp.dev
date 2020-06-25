@@ -49,7 +49,7 @@ The `layout` attribute gives you easy, per-element control over how your element
 should render on screen. Many of these things are possible with pure CSS – but
 they're much harder, and require a myriad of hacks. Use the `layout` attribute instead.
 
-### Supported values for  the `layout` attribute
+### Supported values for the `layout` attribute
 
 The following values can be used in the `layout` attribute:
 
@@ -114,8 +114,8 @@ The following values can be used in the `layout` attribute:
 In a few cases if `width` or `height` are not specified,
 the AMP runtime can default these values as the following:
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Both width and height are defaulted to 0.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): The default width and height are inferred from browser.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): Both width and height are defaulted to 0.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): The default width and height are inferred from browser.
 
 ### What if the <code>layout</code> attribute isn’t specified? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 

@@ -11,7 +11,6 @@ teaser:
     and jump to a section of their choice at will.
 ---
 
-
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -27,8 +26,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 يوفّر هذا المكّوِن طريقة للمشاهدين لإلقاء نظرة على مخطط المحتوى والانتقال إلى أي قسم. ويفيد هذا في أجهزة الجوال عند الحاجة إلى التمرير في قسم مكون من جملتين فقط.
 
@@ -47,23 +44,23 @@ limitations under the License.
   </tr>
 </table>
 
-
 ## السُلوك <a name="behavior"></a>
 
 يتيح لك المكوِّن `amp-accordion` عرض أقسام محتوى قابلة للتصغير والتوسيع. يُعتبر كل عنصر من العناصر الثانوية المباشرة للمكّوِن `amp-accordion` قسمًا من accordion. يجب أن تكون كل عقدة من هذه العقد علامة `<section>`.
 
-* يمكن أن يحتوي `amp-accordion` على عنصر `<section>` واحد أو أكثر كعناصر ثانوية مباشرة له.
-* يجب أن يحتوي كل `<section>` بالضبط على عنصرَين ثانويَين مباشرَين.
-* يمثل العنصر الثانوي الأول (من القسم) عنوان القسم ويجب أن يكون عنصر عنوان (واحد من `h1` أو `h2` أو ... أو `h6` أو `header`).
-* يمكن أن يكون العنصر الثانوي الثاني (من القسم) أي علامة مسموح بها في شفرة HTML لصفحات AMP ويمثل محتوى القسم.
-* يؤدي النقر على عنوان القسم إلى توسيع القسم أو تصغيره.
-* سيتم الاحتفاظ بحالة التصغير/التوسيع لكل قسم في العنصر `amp-accordion` على مستوى الجلسة. لإيقاف الحفاظ على هذه الحالة، أضِف السمة `disable-session-states` إلى العنصر `amp-accordion`.
+- يمكن أن يحتوي `amp-accordion` على عنصر `<section>` واحد أو أكثر كعناصر ثانوية مباشرة له.
+- يجب أن يحتوي كل `<section>` بالضبط على عنصرَين ثانويَين مباشرَين.
+- يمثل العنصر الثانوي الأول (من القسم) عنوان القسم ويجب أن يكون عنصر عنوان (واحد من `h1` أو `h2` أو ... أو `h6` أو `header`).
+- يمكن أن يكون العنصر الثانوي الثاني (من القسم) أي علامة مسموح بها في شفرة HTML لصفحات AMP ويمثل محتوى القسم.
+- يؤدي النقر على عنوان القسم إلى توسيع القسم أو تصغيره.
+- سيتم الاحتفاظ بحالة التصغير/التوسيع لكل قسم في العنصر `amp-accordion` على مستوى الجلسة. لإيقاف الحفاظ على هذه الحالة، أضِف السمة `disable-session-states` إلى العنصر `amp-accordion`.
 
 #### مثال: عرض accordion <a name="example-displaying-an-accordion"></a>
 
-في هذا المثال، نعرض ثلاثة أقسام حيث يتم توسيع القسم الثالث عند تحميل الصفحة.  وتم أيضًا إيقاف الحفاظ على حالة التصغير/التوسيع من خلال تعيين `disable-session-states`.
+في هذا المثال، نعرض ثلاثة أقسام حيث يتم توسيع القسم الثالث عند تحميل الصفحة. وتم أيضًا إيقاف الحفاظ على حالة التصغير/التوسيع من خلال تعيين `disable-session-states`.
 
 [example preview="inline" playground="true" imports="amp-accordion"]
+
 ```html
 <amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
@@ -82,6 +79,7 @@ limitations under the License.
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 [tip type="success"]
@@ -149,13 +147,13 @@ limitations under the License.
 
 ## التصميم <a name="styling"></a>
 
-* يمكنك استخدام محدد العنصر `amp-accordion` لتصميمه بحرية.
-* عناصر `amp-accordion` هي دائمًا `display: block`.
-* لا يمكن أن تكون عناصر `<section>` والعنوان والمحتوى قابلة للتعويم.
-* عندما يتم توسيع القسم، يكون للعنصر `<section>` السمة `expanded`.
-* يمحو عنصر المحتوى عناصره الثانوية بنفسه باستخدام `overflow: hidden` وبالتالي لا يمكن أن يحتوي على أشرطة التمرير.
-* يتم تعيين هوامش عناصر `<amp-accordion>` و`<section>` والعنوان والمحتوى على 0 ويمكن إلغاء هذا في التصميمات المخصصة.
-* كل من عناصر العنوان والمحتوى `position: relative`.
+- يمكنك استخدام محدد العنصر `amp-accordion` لتصميمه بحرية.
+- عناصر `amp-accordion` هي دائمًا `display: block`.
+- لا يمكن أن تكون عناصر `<section>` والعنوان والمحتوى قابلة للتعويم.
+- عندما يتم توسيع القسم، يكون للعنصر `<section>` السمة `expanded`.
+- يمحو عنصر المحتوى عناصره الثانوية بنفسه باستخدام `overflow: hidden` وبالتالي لا يمكن أن يحتوي على أشرطة التمرير.
+- يتم تعيين هوامش عناصر `<amp-accordion>` و`<section>` والعنوان والمحتوى على 0 ويمكن إلغاء هذا في التصميمات المخصصة.
+- كل من عناصر العنوان والمحتوى `position: relative`.
 
 ## التحقق <a name="validation"></a>
 

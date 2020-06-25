@@ -7,9 +7,9 @@ $title: Configuration d'Analytics
 Toutes les solutions d'analyse reposent sur la connaissance des données dont vous avez besoin
 et sur la façon dont vous comptez analyser ces données. Décidez avant de commencer :
 
-* Est-ce que pour analyser l'engagement des utilisateurs vous allez utiliser des outils d'analyse tiers
-ou votre propre solution interne ?
-* Quels comportements des utilisateurs allez-vous mesurer pour comprendre l'engagement des utilisateurs ?
+- Est-ce que pour analyser l'engagement des utilisateurs vous allez utiliser des outils d'analyse tiers
+  ou votre propre solution interne ?
+- Quels comportements des utilisateurs allez-vous mesurer pour comprendre l'engagement des utilisateurs ?
 
 ### Transmettre les données au fournisseur ou vous les envoyer à vous-même ?
 
@@ -42,8 +42,8 @@ Vous devez en effet identifier ces données avant de pouvoir les configurer.
 
 Points clés à prendre en compte concernant les données :
 
-* Allez-vous suivre uniquement les vues de page ou d'autres tendances sur l'engagement des utilisateurs
-(voir également [amp-pixel ou amp-analytics](../../../../documentation/components/reference/amp-pixel.md#use-amp-pixel-or-amp-analytics)) ?
-* Quels types de données allez-vous capturer sur vos utilisateurs, votre contenu,
-le périphérique ou le navigateur (voir également [Substitution de variables](analytics_basics.md#variable-substitution)) ?
-* Comment allez-vous identifier vos utilisateurs (voir également [Identification des utilisateurs](analytics_basics.md#user-identification)) ?
+- Allez-vous suivre uniquement les vues de page ou d'autres tendances sur l'engagement des utilisateurs
+  (voir également [amp-pixel ou amp-analytics](../../../../documentation/components/reference/amp-pixel.md#use-amp-pixel-or-amp-analytics)) ?
+- Quels types de données allez-vous capturer sur vos utilisateurs, votre contenu,
+  le périphérique ou le navigateur (voir également [Substitution de variables](analytics_basics.md#variable-substitution)) ?
+- Comment allez-vous identifier vos utilisateurs (voir également [Identification des utilisateurs](analytics_basics.md#user-identification)) ?

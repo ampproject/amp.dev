@@ -21,7 +21,7 @@ $title: ページが検出されるようにする
 AMP ドキュメントの側には `<head>` に正規ページを指す下記の link タグがすでに追加されているため、最初の手順は完了しています。
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 次の手順として、正規の記事を AMP ページにリンクします。具体的には、正規の記事の `<head>` セクションに `<link rel="amphtml">` タグを追加します。
@@ -29,7 +29,7 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 `article.html` ファイルの `<head>` セクションに以下のコードを**追加**します。
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 以下の図は、双方のファイルの link タグの方向を示したものです。
@@ -45,40 +45,39 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 このチュートリアルのニュース記事では、AMP ドキュメントの `<head>` セクションの一番下に、以下の構造化データを**追加**します。
 
 ```html
-
 <script type="application/ld+json">
-{
-"@context": "http://schema.org",
-"@type": "NewsArticle",
-"mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
-},
-"headline": "My First AMP Article",
-"image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
-},
-"datePublished": "2015-02-05T08:00:00+08:00",
-"dateModified": "2015-02-05T09:20:00+08:00",
-"author": {
-   "@type": "Person",
-   "name": "John Doe"
-},
-"publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
-},
-"description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 
@@ -93,7 +92,7 @@ AMP ドキュメントの側には `<head>` に正規ページを指す下記の
 
 - [Twitter カード メタタグ](https://dev.twitter.com/cards/overview)
 - [Facebook Open Graph メタタグ](https://developers.facebook.com/docs/sharing/webmasters)
-[/tip]
+  [/tip]
 
 ### 構造化データを検証する
 

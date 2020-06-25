@@ -8,9 +8,10 @@ $sitemap:
 First
 
 [example
-     preview="inline"
-     playground="true"
-     imports="amp-accordion:0.1"]
+preview="inline"
+playground="true"
+imports="amp-accordion:0.1"]
+
 ```html
 <amp-accordion class="sample">
   <section expanded>
@@ -23,17 +24,19 @@ First
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 Second
 
-[example  
-     preview="inline"
-     playground="false"]
+[example
+preview="inline"
+playground="false"]
 
 ```html
 <h1>Headline</h1>
 ```
+
 [/example]
 
 End

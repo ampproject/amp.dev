@@ -32,7 +32,7 @@ Direktori project berisi beberapa contoh file resource dan halaman awal [`articl
 
 ### Langkah 2. Jalankan halaman sampel tersebut
 
-Untuk menguji halaman sampel, kami perlu mengakses file dari server web. Ada beberapa cara untuk membuat server web lokal sementara untuk tujuan pengujian.  Berikut adalah beberapa opsinya, pilih salah satu opsi terbaik bagi Anda:
+Untuk menguji halaman sampel, kami perlu mengakses file dari server web. Ada beberapa cara untuk membuat server web lokal sementara untuk tujuan pengujian. Berikut adalah beberapa opsinya, pilih salah satu opsi terbaik bagi Anda:
 
 - [Aplikasi Google Chrome “Web Server for Chrome”](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [Server Python HTTP lokal](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

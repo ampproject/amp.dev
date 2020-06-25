@@ -10,8 +10,6 @@ toc: true
 $title: amp-sidebar
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -27,9 +25,6 @@ $title: amp-sidebar
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
-
 
 <table>
   <tr>
@@ -59,21 +54,21 @@ Namun, atribut opsional yang menerima kueri media dapat digunakan untuk menampil
 
 ## Perilaku <a name="behavior"></a>
 
-* `<amp-sidebar>` harus merupakan turunan langsung dari `<body>`.
-* Sidebar hanya dapat muncul di sisi kiri atau kanan halaman.
-* `<amp-sidebar>` dapat memuat semua elemen HTML yang valid (didukung oleh AMP).
-* `<amp-sidebar>` dapat memuat salah satu elemen AMP berikut:
-    * `<amp-accordion>`
-    * `<amp-img>`
-    * `<amp-fit-text>`
-    * `<amp-list>`
-    * `</amp-live-list>`
-    * `<amp-social-share>`</li>
-* Tinggi maksimum sidebar adalah 100 vh, jika tinggi melebihi 100 vh maka scrollbar vertikal akan muncul. Tinggi default ditetapkan ke 100 vh di CSS dan dapat diganti dalam CSS.
-* Lebar sidebar dapat disetel dan disesuaikan menggunakan CSS (lebar minimum adalah 45 px).
-* Zoom sentuh dinonaktifkan pada `amp-sidebar` dan mask-nya saat sidebar terbuka.
+- `<amp-sidebar>` harus merupakan turunan langsung dari `<body>`.
+- Sidebar hanya dapat muncul di sisi kiri atau kanan halaman.
+- `<amp-sidebar>` dapat memuat semua elemen HTML yang valid (didukung oleh AMP).
+- `<amp-sidebar>` dapat memuat salah satu elemen AMP berikut:
+  - `<amp-accordion>`
+  - `<amp-img>`
+  - `<amp-fit-text>`
+  - `<amp-list>`
+  - `</amp-live-list>`
+  - `<amp-social-share>`</li>
+- Tinggi maksimum sidebar adalah 100 vh, jika tinggi melebihi 100 vh maka scrollbar vertikal akan muncul. Tinggi default ditetapkan ke 100 vh di CSS dan dapat diganti dalam CSS.
+- Lebar sidebar dapat disetel dan disesuaikan menggunakan CSS (lebar minimum adalah 45 px).
+- Zoom sentuh dinonaktifkan pada `amp-sidebar` dan mask-nya saat sidebar terbuka.
 
-*Contoh:*
+_Contoh:_
 
 Pada contoh berikut, kami menggunakan `amp-sidebar` untuk memuat item navigasi. Namun, item kedua dan keempat, Nav Item 2 dan Nav Item 4, ditetapkan ke ID elemen yang ada di halaman. Dengan menggunakan atribut [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md), kami dapat men-scroll dengan lancar ke elemen tersebut, menggunakan ID elemen dan `scrollTo`.
 
@@ -117,13 +112,13 @@ Jika pengguna menge-tap kembali area konten utama yang terlihat sebagian, tindak
 
 Atau, menekan tombol escape pada keyboard juga akan menutup sidebar.
 
-*Contoh:*
+_Contoh:_
 
 ```html
-<button class="hamburger" on='tap:sidebar1.toggle'></button>
-<button on='tap:sidebar1'>Open</button>
-<button on='tap:sidebar1.open'>Open</button>
-<button on='tap:sidebar1.close'>x</button>
+<button class="hamburger" on="tap:sidebar1.toggle"></button>
+<button on="tap:sidebar1">Open</button>
+<button on="tap:sidebar1.open">Open</button>
+<button on="tap:sidebar1.close">x</button>
 ```
 
 ### Toolbar <a name="toolbar"></a>
@@ -132,14 +127,14 @@ Anda dapat membuat elemen `toolbar` yang ditampilkan di `<body>` dengan menentuk
 
 #### Perilaku <a name="behavior-1"></a>
 
-* Sidebar dapat mengimplementasikan toolbar dengan menambahkan elemen navigasi dengan atribut `toolbar` dan atribut `toolbar-target`.
-* Elemen navigasi harus merupakan turunan dari `<amp-sidebar>` dan mengikuti format ini: `<nav toolbar="(media-query)" toolbar-target="elementID">`.
-    * Misalnya, berikut ini penggunaan toolbar yang valid: `<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">`.</li>
-* Navigasi yang memuat atribut toolbar hanya boleh memuat satu elemen `<ul>`, yang berisi elemen `<li>`.
-    * Elemen `<li>` dapat memuat semua elemen HTML yang valid (didukung oleh AMP), atau salah satu elemen AMP yang didukung `<amp-sidebar>`.</li>
-* Perilaku toolbar hanya diterapkan jika kueri media atribut `toolbar` valid. Selain itu, elemen dengan ID atribut `toolbar-target` harus ada pada halaman agar toolbar dapat diterapkan.
+- Sidebar dapat mengimplementasikan toolbar dengan menambahkan elemen navigasi dengan atribut `toolbar` dan atribut `toolbar-target`.
+- Elemen navigasi harus merupakan turunan dari `<amp-sidebar>` dan mengikuti format ini: `<nav toolbar="(media-query)" toolbar-target="elementID">`.
+  - Misalnya, berikut ini penggunaan toolbar yang valid: `<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">`.</li>
+- Navigasi yang memuat atribut toolbar hanya boleh memuat satu elemen `<ul>`, yang berisi elemen `<li>`.
+  - Elemen `<li>` dapat memuat semua elemen HTML yang valid (didukung oleh AMP), atau salah satu elemen AMP yang didukung `<amp-sidebar>`.</li>
+- Perilaku toolbar hanya diterapkan jika kueri media atribut `toolbar` valid. Selain itu, elemen dengan ID atribut `toolbar-target` harus ada pada halaman agar toolbar dapat diterapkan.
 
-*Contoh: Toolbar Dasar*
+_Contoh: Toolbar Dasar_
 
 Pada contoh berikut, kami menampilkan `toolbar` jika lebar jendela kurang dari atau sama dengan 767 piksel. `toolbar` memuat elemen input penelusuran. Elemen `toolbar` akan ditambahkan ke elemen `<div id="target-element">`.
 
@@ -157,31 +152,28 @@ Pada contoh berikut, kami menampilkan `toolbar` jika lebar jendela kurang dari a
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="Telusuri..."/>
+        <input placeholder="Telusuri..." />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
+<div id="target-element"></div>
 ```
 
 ## Menata Gaya Toolbar <a name="styling-toolbar"></a>
 
 Elemen `toolbar` dalam elemen `<amp-sidebar>` akan memiliki class yang diterapkan ke elemen tersebut, bergantung pada apakah elemen `toolbar-target` ditampilkan atau disembunyikan. Hal ini berguna untuk menerapkan gaya berbeda pada elemen `toolbar` dan kemudian elemen `toolbar-target`. Class-nya adalah `amp-sidebar-toolbar-target-shown`, dan `amp-sidebar-toolbar-target-hidden`. Class `amp-sidebar-toolbar-target-shown` diterapkan ke elemen `toolbar` jika elemen `toolbar-target` ditampilkan. Class `amp-sidebar-toolbar-target-hidden` diterapkan ke elemen `toolbar` jika elemen `toolbar-target` disembunyikan.
 
-*Contoh: Class Status Toolbar*
+_Contoh: Class Status Toolbar_
 
 Pada contoh berikut, kami menampilkan `toolbar` jika lebar jendela kurang dari atau sama dengan 767 piksel. `toolbar` memuat elemen input penelusuran. Elemen `toolbar` akan ditambahkan ke elemen `<div id="target-element">`. Namun, kami menambahkan beberapa gaya kustom untuk menyembunyikan elemen `toolbar`, jika elemen `<div id="toolbar-target">` ditampilkan.
 
 ```html
 <style amp-custom="">
-
   .amp-sidebar-toolbar-target-shown {
-      display: none;
+    display: none;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -197,15 +189,13 @@ Pada contoh berikut, kami menampilkan `toolbar` jika lebar jendela kurang dari a
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="Telusuri..."/>
+        <input placeholder="Telusuri..." />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 [tip type="ll callout('Tips:</b> <a class="type_success"]Lihat demo langsung di [AMP By Example](https://ampbyexample.com/components/amp-sidebar/).
@@ -217,21 +207,21 @@ Penggunaan `amp-sidebar` didukung dalam [komponen](../../../about/stories.html) 
 
 ### Perilaku <a name="behavior-2"></a>
 
-* `<amp-sidebar>` harus merupakan turunan langsung dari `<amp-story>`.
-* Sidebar didefaultkan ke sisi "mulai" untuk dokumen AMP reguler, artinya sebelah kanan untuk bahasa kiri-kanan dan sebelah kiri untuk bahasa kanan-kiri.
-* `<amp-sidebar>` memiliki warna latar belakang default putih dan dapat diganti di CSS.
-* Lebar maksimum `<amp-sidebar>` diterapkan pada `280 piksel` dan `320 piksel` untuk perangkat desktop.
-* Tombol gaya 'hamburger' yang membuka/menutup sidebar akan muncul di UI artikel.
+- `<amp-sidebar>` harus merupakan turunan langsung dari `<amp-story>`.
+- Sidebar didefaultkan ke sisi "mulai" untuk dokumen AMP reguler, artinya sebelah kanan untuk bahasa kiri-kanan dan sebelah kiri untuk bahasa kanan-kiri.
+- `<amp-sidebar>` memiliki warna latar belakang default putih dan dapat diganti di CSS.
+- Lebar maksimum `<amp-sidebar>` diterapkan pada `280 piksel` dan `320 piksel` untuk perangkat desktop.
+- Tombol gaya 'hamburger' yang membuka/menutup sidebar akan muncul di UI artikel.
 
 Ada batasan tertentu terkait atribut dan fitur apa saja yang diizinkan untuk memberikan pengalaman UI yang konsisten di seluruh platform artikel. Berikut adalah atribut dan fitur `amp-sidebar` yang diizinkan dalam `amp-story`.
 
 ### Atribut yang Diizinkan <a name="allowed-attributes"></a>
 
-* [layout](#layout)
-* [data-close-button-aria-label](#data)
-* [atribut umum](#common)
+- [layout](#layout)
+- [data-close-button-aria-label](#data)
+- [atribut umum](#common)
 
-*Contoh: Sidebar Dasar dalam Artikel*
+_Contoh: Sidebar Dasar dalam Artikel_
 
 Contoh berikut menampilkan `amp-sidebar` sederhana dalam `amp-story`.
 
@@ -260,7 +250,7 @@ Contoh berikut menampilkan `amp-sidebar` sederhana dalam `amp-story`.
 
 ##### side <a name="side"></a>
 
-Menunjukkan dari sisi halaman mana sidebar akan dibuka, `left` atau `right`.  Jika `side` tidak ditentukan, nilai `side` akan diturunkan dari atribut `dir` tag `body` (`ltr` => `left` , `rtl` => `right`); jika tidak ada `dir`, `side` didefaultkan ke `left`.
+Menunjukkan dari sisi halaman mana sidebar akan dibuka, `left` atau `right`. Jika `side` tidak ditentukan, nilai `side` akan diturunkan dari atribut `dir` tag `body` (`ltr` => `left` , `rtl` => `right`); jika tidak ada `dir`, `side` didefaultkan ke `left`.
 
 ##### layout <a name="layout"></a>
 
@@ -280,7 +270,7 @@ Atribut ini ada di elemen `<nav toolbar="(media-query)" toolbar-target="elementI
 
 ##### toolbar-target <a name="toolbar-target"></a>
 
-Atribut ini ada di elemen `<nav toolbar="(media-query)" toolbar-target="elementID">` turunan, dan menerima ID dari elemen yang ada di halaman itu.  Atribut `toolbar-target` akan menempatkan toolbar dalam ID yang ditentukan untuk elemen di halaman tersebut, tanpa penataan gaya toolbar default. Lihat bagian [Toolbar](#toolbar) untuk informasi selengkapnya tentang cara menggunakan toolbar.
+Atribut ini ada di elemen `<nav toolbar="(media-query)" toolbar-target="elementID">` turunan, dan menerima ID dari elemen yang ada di halaman itu. Atribut `toolbar-target` akan menempatkan toolbar dalam ID yang ditentukan untuk elemen di halaman tersebut, tanpa penataan gaya toolbar default. Lihat bagian [Toolbar](#toolbar) untuk informasi selengkapnya tentang cara menggunakan toolbar.
 
 ##### atribut umum <a name="common"></a>
 
@@ -290,9 +280,9 @@ Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/l
 
 Komponen `amp-sidebar` dapat ditata gayanya menggunakan CSS standar.
 
-* `width` dari `amp-sidebar` dapat disetel untuk menyesuaikan lebar antara nilai min (45 piksel) dan maks (80 vw) pra-setel.
-* Tinggi `amp-sidebar` dapat disetel untuk menyesuaikan tinggi sidebar, jika perlu. Jika tingginya melebihi 100 vw, sidebar akan memiliki scrollbar vertikal. Tinggi preset sidebar adalah 100 vw dan dapat diganti di CSS untuk membuatnya lebih pendek.
-* Status sidebar saat ini ditunjukkan melalui atribut `open` yang ditetapkan pada tag `amp-sidebar` saat sidebar terbuka di halaman.
+- `width` dari `amp-sidebar` dapat disetel untuk menyesuaikan lebar antara nilai min (45 piksel) dan maks (80 vw) pra-setel.
+- Tinggi `amp-sidebar` dapat disetel untuk menyesuaikan tinggi sidebar, jika perlu. Jika tingginya melebihi 100 vw, sidebar akan memiliki scrollbar vertikal. Tinggi preset sidebar adalah 100 vw dan dapat diganti di CSS untuk membuatnya lebih pendek.
+- Status sidebar saat ini ditunjukkan melalui atribut `open` yang ditetapkan pada tag `amp-sidebar` saat sidebar terbuka di halaman.
 
 [tip type="success"]
 Kunjungi [Memulai AMP](https://ampstart.com/components#navigation) untuk menu navigasi responsif dengan gaya bawaan yang dapat digunakan di halaman AMP.
@@ -308,11 +298,9 @@ Saat menggunakan fitur `toolbar`, `autoscroll` hanya berfungsi jika elemen `<nav
 
 ```html
 <style amp-custom="">
-
   nav [toolbar] {
     overflow: auto;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -328,9 +316,7 @@ Saat menggunakan fitur `toolbar`, `autoscroll` hanya berfungsi jika elemen `<nav
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 Lihat [file contoh ini](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) untuk kode contoh yang berfungsi.

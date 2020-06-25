@@ -2,7 +2,6 @@
 
 Rewrite pod internal file links to site links.
 
-
 ## Purpose
 
 The best way to link from one file to another is to simply use the paths in the pod, since markdown editors
@@ -18,12 +17,11 @@ The link in the href attribute can be a link relative to the current document as
 
 You must point links to the file in the base language and not to translated files.
 
-
 ## Activation
 
 This extension has to be activated in the podspec.yaml
 
 ```yaml
 ext:
-- extensions.internal_links.PodInternalLinkExtension
+  - extensions.internal_links.PodInternalLinkExtension
 ```

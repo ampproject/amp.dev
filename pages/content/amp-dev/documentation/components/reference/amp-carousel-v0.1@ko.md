@@ -2,13 +2,12 @@
 $title: amp-carousel
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 가로축을 따라 여러 개의 유사한 콘텐츠를 표시합니다.
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 유연성과 성능을 높이도록 가로축을 따라 여러 개의 유사한 콘텐츠를 표시하기 위한 일반 캐러셀입니다.
 
@@ -61,20 +58,27 @@ limitations under the License.
 사용자가 스와이프하거나 화살표 키를 사용하거나 선택적인 탐색 화살표를 클릭하는 경우 캐러셀이 항목 간에 이동합니다.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel width="450"
-  height="300">
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+<amp-carousel width="450" height="300">
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
     width="450"
-    height="300"></amp-img>
-  <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    height="300"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
     width="450"
-    height="300"></amp-img>
+    height="300"
+  ></amp-img>
 </amp-carousel>
 ```
+
 [/example]
 
 # 특정 슬라이드로 이동 <a name="advancing-to-a-specific-slide"></a>
@@ -84,49 +88,65 @@ limitations under the License.
 다음 예에는 캐러셀 아래 미리보기 버튼이 있는 3개의 이미지 캐러셀이 있습니다. 사용자가 버튼 중 하나를 클릭하면 해당 캐러셀 항목이 표시됩니다.
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
-<amp-carousel id="carousel-with-preview"
+<amp-carousel
+  id="carousel-with-preview"
+  width="450"
+  height="300"
+  layout="responsive"
+  type="slides"
+>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
     width="450"
     height="300"
     layout="responsive"
-    type="slides">
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="apples"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="lemons"></amp-img>
-    <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-      width="450"
-      height="300"
-      layout="responsive"
-      alt="blueberries"></amp-img>
-  </amp-carousel>
-  <div class="carousel-preview">
-    <button on="tap:carousel-with-preview.goToSlide(index=0)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
-        width="60"
-        height="40"
-        alt="apples"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=1)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
-        width="60"
-        height="40"
-        alt="lemons"></amp-img>
-    </button>
-    <button on="tap:carousel-with-preview.goToSlide(index=2)">
-      <amp-img src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
-        width="60"
-        height="40"
-        alt="blueberries"></amp-img>
-    </button>
-  </div>
+    alt="apples"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="lemons"
+  ></amp-img>
+  <amp-img
+    src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+    width="450"
+    height="300"
+    layout="responsive"
+    alt="blueberries"
+  ></amp-img>
+</amp-carousel>
+<div class="carousel-preview">
+  <button on="tap:carousel-with-preview.goToSlide(index=0)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image1.jpg"
+      width="60"
+      height="40"
+      alt="apples"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=1)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image2.jpg"
+      width="60"
+      height="40"
+      alt="lemons"
+    ></amp-img>
+  </button>
+  <button on="tap:carousel-with-preview.goToSlide(index=2)">
+    <amp-img
+      src="{{server_for_email}}/static/inline-examples/images/image3.jpg"
+      width="60"
+      height="40"
+      alt="blueberries"
+    ></amp-img>
+  </button>
+</div>
 ```
+
 [/example]
 
 # 속성 <a name="attributes"></a>
@@ -188,6 +208,7 @@ limitations under the License.
             <em>예: 컨트롤, 연속 재생, 지연 자동재생으로 슬라이드 캐러셀 표시</em>
 
 [example preview="inline" playground="true" imports="amp-carousel"]
+
 ```html
 <amp-carousel type="slides"
   width="450"
@@ -209,22 +230,24 @@ limitations under the License.
     height="300"></amp-img>
 </amp-carousel>
 ```
+
 [/example]</td>
-          </tr>
-          <tr>
-            <td width="40%"><strong>공통 속성</strong></td>
-            <td>이 요소에는 AMP 구성요소로 확장된 <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">공통 속성</a>이 포함됩니다.</td>
-          </tr>
-        </table>
+
+</tr>
+<tr>
+<td width="40%"><strong>공통 속성</strong></td>
+<td>이 요소에는 AMP 구성요소로 확장된 <a href="../../../documentation/guides-and-tutorials/learn/common_attributes.md">공통 속성</a>이 포함됩니다.</td>
+</tr>
+</table>
 
 # 스타일 지정 <a name="styling"></a>
 
-* `amp-carousel` 요소 선택기를 사용해 자유롭게 스타일을 지정할 수 있습니다.
-* `.amp-carousel-slide` 클래스 선택기를 사용해 캐러셀 항목을 타겟팅할 수 있습니다.
-* `amp-carousel` 버튼이 사용 중지되면 이 버튼의 시각적 상태가 숨겨집니다.
-* 기본적으로 `.amp-carousel-button`은 인라인 SVG를 버튼의 배경 이미지로 사용합니다. 아래 예에서와 같이 나만의 SVG 또는 이미지로 이를 재정의할 수 있습니다.
+- `amp-carousel` 요소 선택기를 사용해 자유롭게 스타일을 지정할 수 있습니다.
+- `.amp-carousel-slide` 클래스 선택기를 사용해 캐러셀 항목을 타겟팅할 수 있습니다.
+- `amp-carousel` 버튼이 사용 중지되면 이 버튼의 시각적 상태가 숨겨집니다.
+- 기본적으로 `.amp-carousel-button`은 인라인 SVG를 버튼의 배경 이미지로 사용합니다. 아래 예에서와 같이 나만의 SVG 또는 이미지로 이를 재정의할 수 있습니다.
 
-*예: 기본 `.amp-carousel-button` 인라인 SVG*
+_예: 기본 `.amp-carousel-button` 인라인 SVG_
 
 ```css
 .amp-carousel-button-prev {
@@ -233,7 +256,7 @@ limitations under the License.
 }
 ```
 
-*예: 기본 `.amp-carousel-button` 인라인 SVG 재정의*
+_예: 기본 `.amp-carousel-button` 인라인 SVG 재정의_
 
 ```css
 .amp-carousel-button-prev {

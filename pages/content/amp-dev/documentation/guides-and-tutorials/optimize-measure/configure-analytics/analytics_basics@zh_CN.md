@@ -39,25 +39,28 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 要创建简单的 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 配置，您必须首先将以下 `custom-element` 声明包含在 AMP 文档的 `<head>` 中（另请参阅[组件包含声明](../../../../documentation/components/index.html)）：
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 以下示例与 [`amp-pixel` 示例](../../../../documentation/components/reference/amp-pixel.md)类似。每当用户浏览网页时，系统均会触发触发器事件，并将网页浏览数据与一个随机 ID 一起发送到定义的网址：
 
 ```html
 <amp-analytics>
+  <script type="application/json">
 
-<script type="application/json">
+      {"requests":
+        {"pageview": "https://foo.com/pixel?RANDOM
+      ", },"triggers":
+        {"trackPageview":
+          {"on": "visible",
+          "request": "pageview"
 
-  {"requests":
-    {"pageview": "https://foo.com/pixel?RANDOM
-  ", },"triggers":
-    {"trackPageview":
-      {"on": "visible",
-      "request": "pageview"
-
-} } }</script>
-
+    } } }
+  </script>
 </amp-analytics>
 ```
 
@@ -67,10 +70,12 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 ## 变量替换 <a name="variable-substitution"></a>
 
-[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换] (https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其 title 以及[客户端 ID](analytics_basics.md#user-identification)一起发送到相应网址：
+[`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 和 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 组件均允许所有标准网址变量替换（请参阅 [AMP HTML 变量替换](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)）。在以下示例中，网页浏览请求将随当前 AMP 文档的规范网址、其 title 以及[客户端 ID](analytics_basics.md#user-identification)一起发送到相应网址：
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 由于 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 标记的简单性，它只可包括平台定义的变量或 AMP 运行时可从 AMP 网页中解析的变量。在上面的示例中，平台会填充 `canonicalURL` 和 `clientId(site-user-id)` 的值。在构建分析请求时，[`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 标记可包括与 [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) 相同的变量，以及标记配置内唯一定义的变量。
@@ -81,27 +86,25 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 
 ```html
 <amp-analytics>
-
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-    "someEvent": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
       "vars": {
-        "title": "My homepage",
+        "account": "ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
       }
     }
-  }
-}
-</script>
-
+  </script>
 </amp-analytics>
 ```
 
@@ -122,7 +125,9 @@ AMP 提供了以下两个组件，可满足您的分析和衡量需求：[`amp-p
 例如：
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 如果 AMP 发现此 Cookie 已设置，则客户端 ID 替换将返回 Cookie 的值。如果 AMP 发现此 Cookie 未设置，则 AMP 将生成一个值，格式为 `amp-` ，后跟一个随机 base64 编码字符串。

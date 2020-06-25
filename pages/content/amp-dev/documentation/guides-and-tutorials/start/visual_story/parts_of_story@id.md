@@ -2,7 +2,7 @@
 $title: Memahami bagian dari artikel AMP
 ---
 
-Artikel AMP adalah fitur bercerita visual dengan layar penuh yang menyampaikan informasi dengan gambar, video, grafik, audio, dan lainnya. Fitur ini sangat cocok untuk pengguna yang menginginkan konten berukuran kecil tetapi kaya secara visual.  
+Artikel AMP adalah fitur bercerita visual dengan layar penuh yang menyampaikan informasi dengan gambar, video, grafik, audio, dan lainnya. Fitur ini sangat cocok untuk pengguna yang menginginkan konten berukuran kecil tetapi kaya secara visual.
 
 Bahan dasar yang termasuk dalam artikel AMP adalah masing-masing **halaman**. Masing-masing halaman ini terdiri dari **lapisan** individual yang berisi **elemen** AMP dan HTML dasar.
 

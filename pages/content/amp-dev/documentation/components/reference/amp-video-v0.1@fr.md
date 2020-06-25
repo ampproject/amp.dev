@@ -2,14 +2,12 @@
 $title: amp-video
 $category@: media
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: Remplacer la balise vidéo HTML5.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Ce composant remplace la balise `video` HTML5 ; il ne doit être utilisé que pour les intégrations directes de fichiers vidéo HTML5.
 
@@ -54,14 +50,15 @@ Le composant `amp-video` charge de manière différée la ressource vidéo spéc
 
 Le composant `amp-video` accepte jusqu'à quatre types de nœuds HTML uniques en tant qu'éléments enfants :
 
-* Balises `source` : comme pour la balise `<video>` HTML, vous pouvez ajouter des balises `<source>` enfants pour spécifier différents fichiers multimédias sources à lire.
-* Balises `track` pour activer les sous-titres dans la vidéo. Si le titre est hébergé sur une origine différente de celle du document, vous devez ajouter l'attribut `crossorigin` à la balise `<amp-video>`.
-* Espace réservé avant le lancement de la lecture de la vidéo.
-* Création de remplacement si le navigateur n'accepte pas le contenu vidéo HTML5 : l'attribut `fallback` peut être affecté à un ou à aucun nœud enfant immédiat. Si cet attribut est utilisé, ce nœud et ses enfants constituent le contenu qui s'affiche si la vidéo HTML5 n'est pas acceptée par le navigateur de l'utilisateur.
+- Balises `source` : comme pour la balise `<video>` HTML, vous pouvez ajouter des balises `<source>` enfants pour spécifier différents fichiers multimédias sources à lire.
+- Balises `track` pour activer les sous-titres dans la vidéo. Si le titre est hébergé sur une origine différente de celle du document, vous devez ajouter l'attribut `crossorigin` à la balise `<amp-video>`.
+- Espace réservé avant le lancement de la lecture de la vidéo.
+- Création de remplacement si le navigateur n'accepte pas le contenu vidéo HTML5 : l'attribut `fallback` peut être affecté à un ou à aucun nœud enfant immédiat. Si cet attribut est utilisé, ce nœud et ses enfants constituent le contenu qui s'affiche si la vidéo HTML5 n'est pas acceptée par le navigateur de l'utilisateur.
 
 #### Exemple <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -77,6 +74,7 @@ Le composant `amp-video` accepte jusqu'à quatre types de nœuds HTML uniques en
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## Analyse <a name="analytics"></a>
@@ -171,18 +169,23 @@ Exemple :
 Cet exemple contient à la fois les attributs `poster` et `artwork`. L'attribut `poster` sert d'image d'espace réservé avant la lecture de la vidéo, tandis que l'attribut `artwork` est l'image qui s'affiche dans la notification via l'API Media Session.
 
 ```html
-<amp-video width="720" height="305" layout="responsive"
-    src="https://yourhost.com/videos/myvideo.mp4"
-    poster="https://yourhost.com/posters/poster.png"
-    artwork="https://yourhost.com/artworks/artwork.png"
-    title="Awesome video" artist="Awesome artist"
-    album="Amazing album">
+<amp-video
+  width="720"
+  height="305"
+  layout="responsive"
+  src="https://yourhost.com/videos/myvideo.mp4"
+  poster="https://yourhost.com/posters/poster.png"
+  artwork="https://yourhost.com/artworks/artwork.png"
+  title="Awesome video"
+  artist="Awesome artist"
+  album="Amazing album"
+>
 </amp-video>
 ```
 
 ## Superposition click-to-play <a name="click-to-play-overlay"></a>
 
-La superposition click-to-play est une fonctionnalité d'utilisation courante pour les lecteurs vidéo sur le Web.  Vous pouvez, par exemple, afficher une icône de lecture personnalisée sur laquelle l'utilisateur peut cliquer, ou encore inclure le titre de la vidéo, des images poster de différentes tailles, etc.  Étant donné que le composant `amp-video` est compatible avec l'action AMP `play` standard, vous pouvez facilement mettre en œuvre la technologie click-to-play.
+La superposition click-to-play est une fonctionnalité d'utilisation courante pour les lecteurs vidéo sur le Web. Vous pouvez, par exemple, afficher une icône de lecture personnalisée sur laquelle l'utilisateur peut cliquer, ou encore inclure le titre de la vidéo, des images poster de différentes tailles, etc. Étant donné que le composant `amp-video` est compatible avec l'action AMP `play` standard, vous pouvez facilement mettre en œuvre la technologie click-to-play.
 
 Pour obtenir un exemple détaillé, consultez la page [Superposition click-to-play pour amp-video](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/) sur AMP by Example.
 

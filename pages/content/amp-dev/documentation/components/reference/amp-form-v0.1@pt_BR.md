@@ -26,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td width="40%"><strong>Descrição</strong></td>
@@ -47,7 +45,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 # Comportamento <a name="behavior"></a>
 
 A extensão `amp-form` permite que você crie formulários (`<form>`) para enviar campos de entrada em um documento AMP. A extensão `amp-form` também fornece [polyfills](#polyfills) para alguns comportamentos ausentes em navegadores.
@@ -61,9 +58,10 @@ Antes de criar um `<form>`, é preciso incluir o script exigido para a extensão
 Veja um exemplo de formulário básico:
 
 [example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+
 ```html
 <form method="post"
-    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}
     target="_top"{% endif %}>
     <fieldset>
       <label>
@@ -95,6 +93,7 @@ Veja um exemplo de formulário básico:
     </div>
   </form>
 ```
+
 [/example]
 
 # Atributos <a name="attributes"></a>
@@ -107,8 +106,8 @@ Indica onde exibir a resposta do formulário após o envio dele. O valor precisa
 
 Especifica um endpoint do servidor para processar a entrada do formulário. O valor precisa ser um URL `https` (absoluto ou relativo) e não pode ser um link para uma CDN.
 
-* Para `method=GET`: use este atributo ou [`action-xhr`](#action-xhr).
-* Para `method=POST`: use o atributo [`action-xhr`](#action-xhr).
+- Para `method=GET`: use este atributo ou [`action-xhr`](#action-xhr).
+- Para `method=POST`: use o atributo [`action-xhr`](#action-xhr).
 
 [tip type="note"]
 os atributos `target` e `action` são usados apenas para solicitações GET que não sejam xhr. O ambiente de tempo de execução de AMP usará `action-xhr` para fazer a solicitação e ignorará `action` e `target`. Quando o `action-xhr` não é fornecido, a AMP faz uma solicitação GET para o endpoint `action` e usa `target` para abrir uma nova janela (se `_blank`). O ambiente de tempo de execução de AMP também pode ser substituído usando `action` e `target` nos casos em que a extensão `amp-form` não for carregada.
@@ -142,14 +141,14 @@ Consulte a seção [Validações personalizadas](#custom-validations) para ver m
 
 **Permitidos**:
 
-* Outros elementos relacionados a formulário, incluindo: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` e assim por diante.
-* `<input type=password>` e `<input type=file>` dentro de `<form method=POST action-xhr>`.
-* [`amp-selector.`](amp-selector.md)
+- Outros elementos relacionados a formulário, incluindo: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` e assim por diante.
+- `<input type=password>` e `<input type=file>` dentro de `<form method=POST action-xhr>`.
+- [`amp-selector.`](amp-selector.md)
 
 **Não permitidos**:
 
-* `<input type=button>`, `<input type=image>`.
-* A maioria dos atributos relacionados a formulários em entradas, incluindo: `form`, `formaction`, `formtarget`, `formmethod` e outros.
+- `<input type=button>`, `<input type=image>`.
+- A maioria dos atributos relacionados a formulários em entradas, incluindo: `form`, `formaction`, `formtarget`, `formmethod` e outros.
 
 É possível que algumas dessas regras sejam flexibilizadas no futuro. Se você precisa de algum desses itens, [entre em contato](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests) e forneça casos de uso.
 
@@ -159,10 +158,10 @@ Para ver detalhes sobre entradas e campos válidos, consulte [as regras de amp-f
 
 O elemento `amp-form` expõe as seguintes ações:
 
-| Ação | Descrição |
-|--------|-------------|
+| Ação     | Descrição                                                                                                                                                        |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `submit` | Permite acionar o envio de formulário em uma ação específica, por exemplo, ao tocar em um link ou [enviar um formulário na alteração de entrada](#input-events). |
-| `clear` | Esvazia os valores de cada entrada do formulário. Isso permite que os usuários preencham formulários rapidamente pela segunda vez. |
+| `clear`  | Esvazia os valores de cada entrada do formulário. Isso permite que os usuários preencham formulários rapidamente pela segunda vez.                               |
 
 [tip type="read-on"]
 saiba mais sobre [ações e eventos em AMP](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md).
@@ -172,25 +171,25 @@ saiba mais sobre [ações e eventos em AMP](../../../documentation/guides-and-tu
 
 O `amp-form` expõe os seguintes eventos:
 
-| Event | Disparado quando |
-|-------|-------------|
-| `submit` | O formulário é enviado e antes da conclusão do envio. |
-| `submit-success` | O envio do formulário é concluído, e a resposta é um sucesso. |
-| `submit-error` | O envio do formulário é concluído, e a resposta é um erro. |
-| `verify` | A verificação assíncrona é iniciada. |
-| `verify-error` | A verificação assíncrona é concluída, e a resposta é um erro. |
-| `valid` | O estado de validação do formulário muda para “válido” (de acordo com a [estratégia de relatório](#reporting-strategies) dele). |
-| `invalid` | O estado de validação do formulário é "inválido" "(de acordo com a [estratégia de relatório](#reporting-strategies) dele). |
+| Event            | Disparado quando                                                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `submit`         | O formulário é enviado e antes da conclusão do envio.                                                                           |
+| `submit-success` | O envio do formulário é concluído, e a resposta é um sucesso.                                                                   |
+| `submit-error`   | O envio do formulário é concluído, e a resposta é um erro.                                                                      |
+| `verify`         | A verificação assíncrona é iniciada.                                                                                            |
+| `verify-error`   | A verificação assíncrona é concluída, e a resposta é um erro.                                                                   |
+| `valid`          | O estado de validação do formulário muda para “válido” (de acordo com a [estratégia de relatório](#reporting-strategies) dele). |
+| `invalid`        | O estado de validação do formulário é "inválido" "(de acordo com a [estratégia de relatório](#reporting-strategies) dele).      |
 
 Esses eventos podem ser usados por meio do [atributo `on`](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on).
 
 Por exemplo, o código a seguir escuta os eventos `submit-success` e `submit-error` e mostra lightboxes diferentes dependendo do evento:
 
 ```html
-
-<form ...="" on="submit-success:success-lightbox;submit-error:error-lightbox">
-</form>
-
+<form
+  ...=""
+  on="submit-success:success-lightbox;submit-error:error-lightbox"
+></form>
 ```
 
 Veja o [exemplo completo aqui](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
@@ -202,10 +201,11 @@ O AMP expõe eventos `change` e `input-debounced` em elementos `<input>` filhos.
 Por exemplo, um caso de uso comum é enviar um formulário quando houver alteração da entrada (ao selecionar um botão de opção para responder a uma pesquisa, escolher um idioma em uma entrada `select` para traduzir uma página etc.).
 
 [example preview="inline" playground="true" imports="amp-form"]
+
 ```html
 <form id="myform"
     method="post"
-    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    action-xhr="https://example.com/myform"{% if not format=='email'%}
     target="_blank"{% endif %}>
     <fieldset>
       <label>
@@ -223,6 +223,7 @@ Por exemplo, um caso de uso comum é enviar um formulário quando houver altera�
     </fieldset>
   </form>
 ```
+
 [/example]
 
 Veja o [exemplo completo aqui](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
@@ -231,10 +232,10 @@ Veja o [exemplo completo aqui](https://github.com/ampproject/amphtml/blob/master
 
 A extensão `amp-form` aciona os seguintes eventos, que você pode acompanhar na configuração de [amp-analytics](amp-analytics.md):
 
-| Evento                     | Disparado quando                        |
-|---------------------------|-----------------------------------|
-| `amp-form-submit`         | Uma solicitação de formulário é iniciada.      |
-| `amp-form-submit-success` | Uma resposta de sucesso é recebida (ou seja, quando a resposta tem o status `2XX`). |
+| Evento                    | Disparado quando                                                                      |
+| ------------------------- | ------------------------------------------------------------------------------------- |
+| `amp-form-submit`         | Uma solicitação de formulário é iniciada.                                             |
+| `amp-form-submit-success` | Uma resposta de sucesso é recebida (ou seja, quando a resposta tem o status `2XX`).   |
 | `amp-form-submit-error`   | Uma resposta de falha é recebida (ou seja, quando a resposta não tem o status `2XX`). |
 
 Você pode configurar sua análise para que envie esses eventos, como no exemplo a seguir:
@@ -278,31 +279,31 @@ Por exemplo, o formulário a seguir tem um único campo:
 
 ```html
 <form id="submit_form" action-xhr="/comment" method="POST">
-  <input type="text" name="comment">
-    <input type="submit" value="Comentar">
-    </form>
+  <input type="text" name="comment" />
+  <input type="submit" value="Comentar" />
+</form>
 ```
 
 Quando o evento `amp-form-submit`, `amp-form-submit-success` ou `amp-form-submit-error` é acionado, ele gera as seguintes variáveis com os valores especificados no formulário:
 
-  * `formId`
-  * `formFields[comment]`
+- `formId`
+- `formFields[comment]`
 
 # Renderização de resposta de sucesso/erro <a name="successerror-response-rendering"></a>
 
 Você pode renderizar respostas de sucesso ou erro no seu formulário usando [modelos estendidos](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#templates), como [amp-mustache](amp-mustache.md). Também é possível renderizar respostas de sucesso por meio da vinculação de dados com [amp-bind](amp-bind.md) e os seguintes atributos de resposta:
 
-| Atributo de resposta | Descrição |
-|-----------|---------------------|
-| `submit-success` | Pode ser usado para exibir uma mensagem de sucesso se a resposta for bem-sucedida (ou seja, tiver status `2XX`). |
-| `submit-error` | Pode ser usado para exibir um erro de envio se a resposta for malsucedida (ou seja, não tiver o status `2XX`).  |
-| `submitting` | Pode ser usado para exibir uma mensagem quando o formulário está sendo enviado. O modelo desse atributo tem acesso aos campos de entrada do formulário para fins de exibição. Consulte o [exemplo completo de formulário abaixo](#example-submitting) para saber como usar o atributo `submitting`. |
+| Atributo de resposta | Descrição                                                                                                                                                                                                                                                                                           |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `submit-success`     | Pode ser usado para exibir uma mensagem de sucesso se a resposta for bem-sucedida (ou seja, tiver status `2XX`).                                                                                                                                                                                    |
+| `submit-error`       | Pode ser usado para exibir um erro de envio se a resposta for malsucedida (ou seja, não tiver o status `2XX`).                                                                                                                                                                                      |
+| `submitting`         | Pode ser usado para exibir uma mensagem quando o formulário está sendo enviado. O modelo desse atributo tem acesso aos campos de entrada do formulário para fins de exibição. Consulte o [exemplo completo de formulário abaixo](#example-submitting) para saber como usar o atributo `submitting`. |
 
 # Para renderizar respostas com modelos: <a name="to-render-responses-with-templating"></a>
 
-* aplique um atributo de resposta a *qualquer filho direto* do elemento `<form>`;
-* renderize a resposta no elemento filho incluindo um modelo nela por meio da tag `<template></template>` ou `<script type="text/plain"></script>` ou fazendo referência a um modelo com o atributo `template="id_of_other_template"`;
-* forneça um objeto JSON válido para as respostas para `submit-success` e `submit-error`. As respostas de sucesso e erro precisam ter um cabeçalho `Content-Type: application/json`.
+- aplique um atributo de resposta a _qualquer filho direto_ do elemento `<form>`;
+- renderize a resposta no elemento filho incluindo um modelo nela por meio da tag `<template></template>` ou `<script type="text/plain"></script>` ou fazendo referência a um modelo com o atributo `template="id_of_other_template"`;
+- forneça um objeto JSON válido para as respostas para `submit-success` e `submit-error`. As respostas de sucesso e erro precisam ter um cabeçalho `Content-Type: application/json`.
 
 <a id="example-submitting"></a>
 
@@ -311,15 +312,16 @@ Você pode renderizar respostas de sucesso ou erro no seu formulário usando [mo
 No exemplo a seguir, as respostas são renderizadas em um modelo in-line dentro do formulário.
 
 ```html
-{% raw %}<form ...>
+{% raw %}
+<form ...>
   <fieldset>
-    <input type="text" name="firstName">
-      …
-    </fieldset>
-    <div verify-error="">
-      <template type="amp-mustache">
-        There is a mistake in the form!
-        {{#verifyErrors}}{{message}}{{/verifyErrors}}
+    <input type="text" name="firstName" />
+    …
+  </fieldset>
+  <div verify-error="">
+    <template type="amp-mustache">
+      There is a mistake in the form!
+      {{#verifyErrors}}{{message}}{{/verifyErrors}}
     </template>
   </div>
   <div submitting="">
@@ -329,15 +331,16 @@ No exemplo a seguir, as respostas são renderizadas em um modelo in-line dentro 
   </div>
   <div submit-success="">
     <template type="amp-mustache">
-      Success! Thanks {{name}} for subscribing! Please make sure to check your email {{email}}
-    to confirm! After that we'll start sending you weekly articles on {{#interests}}<b>{{name}}</b> {{/interests}}.
-  </template>
-</div>
-<div submit-error="">
-  <template type="amp-mustache">
-    Oops! {{name}}, {{message}}.
-  </template>
-</div>
+      Success! Thanks {{name}} for subscribing! Please make sure to check your
+      email {{email}} to confirm! After that we'll start sending you weekly
+      articles on {{#interests}}<b>{{name}}</b> {{/interests}}.
+    </template>
+  </div>
+  <div submit-error="">
+    <template type="amp-mustache">
+      Oops! {{name}}, {{message}}.
+    </template>
+  </div>
 </form>
 {% endraw %}
 ```
@@ -349,12 +352,17 @@ Se houver sucesso:
 ```json
 {
   "name": "Jane Miller",
-  "interests": [{"name": "Basketball"}, {"name": "Swimming"}, {"name": "Reading"}],
+  "interests": [
+    {"name": "Basketball"},
+    {"name": "Swimming"},
+    {"name": "Reading"}
+  ],
   "email": "email@example.com"
 }
 ```
 
 Se houver erro:
+
 ```json
 {
   "name": "Jane Miller",
@@ -387,28 +395,27 @@ Veja o [exemplo completo aqui](https://github.com/ampproject/amphtml/blob/master
 
 # Para renderizar uma resposta de sucesso com a vinculação de dados <a name="to-render-a-successful-response-with-data-binding"></a>
 
-* Use o [atributo on](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) para vincular o atributo *submit-success* do formulário a [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29).
-* Use a propriedade `event` para capturar os dados da resposta.
-* Adicione o atributo de estado ao elemento desejado para vincular a resposta do formulário.
+- Use o [atributo on](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) para vincular o atributo _submit-success_ do formulário a [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29).
+- Use a propriedade `event` para capturar os dados da resposta.
+- Adicione o atributo de estado ao elemento desejado para vincular a resposta do formulário.
 
 O exemplo a seguir demonstra uma resposta <code>submit-success</code> do formulário com o <a href="amp-bind.md"><code>amp-bind</code></a>:
+
 ```html
-<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
-<form method="post"
-      action-xhr="/components/amp-form/submit-form-input-text-xhr"
-      target="_ top"
-      on="submit-success: AMP.setState({'subscribe': event.response.name})">
+<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">
+  Subscribe to our newsletter
+</p>
+<form
+  method="post"
+  action-xhr="/components/amp-form/submit-form-input-text-xhr"
+  target="_ top"
+  on="submit-success: AMP.setState({'subscribe': event.response.name})"
+>
   <div>
-    <input type="text"
-        name="name"
-        placeholder="Name..."
-        required>
-    <input type="email"
-      name="email"
-      placeholder="Email..."
-      required>
+    <input type="text" name="name" placeholder="Name..." required />
+    <input type="email" name="email" placeholder="Email..." required />
   </div>
-  <input type="submit" value="Subscribe">
+  <input type="submit" value="Subscribe" />
 </form>
 ```
 
@@ -420,21 +427,24 @@ Quando o formulário for enviado com sucesso, ele retornará uma resposta JSON s
   "email": "email@example.com"
 }
 ```
+
 Em seguida, `amp-bind` atualizará o texto do elemento `<p>` para que corresponda ao estado `subscribe`:
 
 ```html
 ...
-<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Thanks Jane Miller! You have successfully subscribed.</p>
+<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">
+  Thanks Jane Miller! You have successfully subscribed.
+</p>
 ...
 ```
 
 # Redirecionamento após um envio <a name="redirecting-after-a-submission"></a>
 
-Você pode redirecionar os usuários para uma nova página após o envio de um formulário com sucesso. Para isso, basta configurar o cabeçalho de resposta `AMP-Redirect-To` e especificar um URL de redirecionamento, que precisa ser um URL HTTPS. Caso contrário, a AMP gerará um erro, e o redirecionamento não ocorrerá.  Os cabeçalhos de resposta HTTP são configurados por meio do seu servidor.
+Você pode redirecionar os usuários para uma nova página após o envio de um formulário com sucesso. Para isso, basta configurar o cabeçalho de resposta `AMP-Redirect-To` e especificar um URL de redirecionamento, que precisa ser um URL HTTPS. Caso contrário, a AMP gerará um erro, e o redirecionamento não ocorrerá. Os cabeçalhos de resposta HTTP são configurados por meio do seu servidor.
 
-Atualize o cabeçalho de resposta `Access-Control-Expose-Headers`, incluindo `AMP-Redirect-To` na lista de cabeçalhos permitidos.  Saiba mais sobre esses cabeçalhos em [Segurança do CORS em AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp) (link em inglês).
+Atualize o cabeçalho de resposta `Access-Control-Expose-Headers`, incluindo `AMP-Redirect-To` na lista de cabeçalhos permitidos. Saiba mais sobre esses cabeçalhos em [Segurança do CORS em AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp) (link em inglês).
 
-*Exemplos de cabeçalhos de resposta:*
+_Exemplos de cabeçalhos de resposta:_
 
 ```text
 AMP-Redirect-To: https://example.com/forms/thank-you
@@ -457,10 +467,11 @@ Para especificar a validação personalizada no seu formulário:
 Veja um exemplo:
 
 [example preview="inline" playground="true" imports="amp-form"]
+
 ```html
 <form method="post"
     action-xhr="https://example.com/subscribe"
-    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}
     target="_blank"{% endif %}>
     <fieldset>
       <label>
@@ -495,6 +506,7 @@ Veja um exemplo:
     </fieldset>
   </form>
 ```
+
 [/example]
 
 Para ver mais exemplos, consulte [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html).
@@ -519,7 +531,7 @@ A opção de relatório `show-all-on-submit` mostra todos os erros de validaçã
 
 # As You Go <a name="as-you-go"></a>
 
-A opção de relatório `as-you-go` permite que o usuário veja as mensagens de validação enquanto interage com a entrada. Por exemplo, se o usuário digitar um endereço de e-mail inválido, ele verá o erro imediatamente.  Depois de corrigir o valor, o erro desaparecerá.
+A opção de relatório `as-you-go` permite que o usuário veja as mensagens de validação enquanto interage com a entrada. Por exemplo, se o usuário digitar um endereço de e-mail inválido, ele verá o erro imediatamente. Depois de corrigir o valor, o erro desaparecerá.
 
 # Interact and Submit <a name="interact-and-submit"></a>
 
@@ -530,6 +542,7 @@ A opção de relatório `interact-and-submit` combina o comportamento de `show-a
 A validação de HTML5 fornece feedback com base apenas nas informações disponíveis na página, como, por exemplo, se um valor corresponde a determinado padrão. Com a verificação de `amp-form`, você pode dar ao usuário um feedback que a validação de HTML5 por si só não pode. Por exemplo, um formulário pode usar a verificação para confirmar se um endereço de e-mail já foi registrado. Outro caso de uso é verificar se um campo de cidade corresponde a um campo de CEP.
 
 Veja um exemplo:
+
 ```html
 {% raw %}<h4>Verification example</h4>
 <form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
@@ -576,13 +589,14 @@ O formulário envia um campo `__amp_form_verify` junto com os dados do formulár
 Isso é útil para que o servidor não armazene a solicitação de verificação se o mesmo endpoint for usado para verificação e envio.
 
 Veja um exemplo de resposta de erro para verificação:
+
 ```json
-  {
-    "verifyErrors": [
-      {"name": "email", "message": "That email is already taken."},
-      {"name": "zip", "message": "The city and zip do not match."}
-    ]
-  }
+{
+  "verifyErrors": [
+    {"name": "email", "message": "That email is already taken."},
+    {"name": "zip", "message": "The city and zip do not match."}
+  ]
+}
 ```
 
 Para remover um campo da solicitação `verify-xhr`, adicione o atributo `no-verify` ao elemento de entrada.
@@ -596,15 +610,22 @@ A extensão `amp-form` permite [substituições de variáveis de plataforma](htt
 Você precisa fornecer as variáveis que está usando para cada substituição em cada entrada, especificando uma string separada por espaços das variáveis usadas em `data-amp-replace` (veja o exemplo abaixo). O AMP não substitui as variáveis que não são explicitamente especificadas.
 
 Veja um exemplo da aparência das entradas antes e depois das substituições (é preciso usar a sintaxe da plataforma para substituição de variáveis, e não para análise):
+
 ```html
 <!-- Initial Load -->
 <form ...>
-  <input name="canonicalUrl" type="hidden"
-        value="The canonical URL is: CANONICAL_URL - RANDOM - CANONICAL_HOSTNAME"
-        data-amp-replace="CANONICAL_URL RANDOM">
-  <input name="clientId" type="hidden"
-        value="CLIENT_ID(myid)"
-        data-amp-replace="CLIENT_ID">
+  <input
+    name="canonicalUrl"
+    type="hidden"
+    value="The canonical URL is: CANONICAL_URL - RANDOM - CANONICAL_HOSTNAME"
+    data-amp-replace="CANONICAL_URL RANDOM"
+  />
+  <input
+    name="clientId"
+    type="hidden"
+    value="CLIENT_ID(myid)"
+    data-amp-replace="CLIENT_ID"
+  />
   ...
 </form>
 ```
@@ -614,13 +635,19 @@ Quando o usuário tentar enviar o formulário, o AMP tentará resolver as variá
 ```html
 <!-- User submits the form, variables values are resolved into fields' value -->
 <form ...>
-  <input name="canonicalUrl" type="hidden"
-        value="The canonical URL is: https://example.com/hello - 0.242513759125 - CANONICAL_HOSTNAME"
-        data-amp-replace="CANONICAL_URL RANDOM">
-  <input name="clientId" type="hidden"
-        value="amp:asqar893yfaiufhbas9g879ab9cha0cja0sga87scgas9ocnas0ch"
-        data-amp-replace="CLIENT_ID">
-    ...
+  <input
+    name="canonicalUrl"
+    type="hidden"
+    value="The canonical URL is: https://example.com/hello - 0.242513759125 - CANONICAL_HOSTNAME"
+    data-amp-replace="CANONICAL_URL RANDOM"
+  />
+  <input
+    name="clientId"
+    type="hidden"
+    value="amp:asqar893yfaiufhbas9g879ab9cha0cja0sga87scgas9ocnas0ch"
+    data-amp-replace="CLIENT_ID"
+  />
+  ...
 </form>
 ```
 
@@ -662,17 +689,17 @@ A extensão `amp-form` fornece ganchos de CSS e de classes para os editores defi
 
 As seguintes classes podem ser usadas para indicar o estado do envio do formulário:
 
-* `.amp-form-initial`
-* `.amp-form-verify`
-* `.amp-form-verify-error`
-* `.amp-form-submitting`
-* `.amp-form-submit-success`
-* `.amp-form-submit-error`
+- `.amp-form-initial`
+- `.amp-form-verify`
+- `.amp-form-verify-error`
+- `.amp-form-submitting`
+- `.amp-form-submit-success`
+- `.amp-form-submit-error`
 
 As seguintes classes são um [polyfill para as pseudoclasses de interação do usuário](#user-interaction-pseudo-classes):
 
-* `.user-valid`
-* `.user-invalid`
+- `.user-valid`
+- `.user-invalid`
 
 Os editores podem usar essas classes para definir o estilo de entradas e conjuntos de campos para que respondam às ações do usuário (por exemplo, destacar uma entrada inválida com uma borda vermelha após o usuário desfocá-la).
 
@@ -690,8 +717,8 @@ Além de seguir os detalhes das [especificações CORP AMP](../../../documentati
 
 Em geral, lembre-se dos seguintes pontos ao aceitar informações do usuário:
 
-* Use somente POST para solicitações de alteração de estado.
-* Use GET que não seja XHR apenas para fins de navegação (por exemplo, para pesquisa).
-    * As solicitações GET que não sejam XHR não receberão origem/cabeçalhos precisos, e os back-ends não poderão se proteger contra XSRF com o mecanismo acima.
-    * Em geral, use solicitações GET XHR/não XHR apenas para navegação ou recuperação de informações.</li>
-* Solicitações POST que não sejam XHR não são permitidas em documentos AMP. Isso ocorre devido a inconsistências na configuração do cabeçalho `Origin` dessas solicitações nos navegadores. Além disso, a compatibilidade traria complicações para a proteção contra XSRF. Isso pode ser reconsiderado e introduzido posteriormente. Registre um problema se achar necessário.
+- Use somente POST para solicitações de alteração de estado.
+- Use GET que não seja XHR apenas para fins de navegação (por exemplo, para pesquisa).
+  - As solicitações GET que não sejam XHR não receberão origem/cabeçalhos precisos, e os back-ends não poderão se proteger contra XSRF com o mecanismo acima.
+  - Em geral, use solicitações GET XHR/não XHR apenas para navegação ou recuperação de informações.</li>
+- Solicitações POST que não sejam XHR não são permitidas em documentos AMP. Isso ocorre devido a inconsistências na configuração do cabeçalho `Origin` dessas solicitações nos navegadores. Além disso, a compatibilidade traria complicações para a proteção contra XSRF. Isso pode ser reconsiderado e introduzido posteriormente. Registre um problema se achar necessário.

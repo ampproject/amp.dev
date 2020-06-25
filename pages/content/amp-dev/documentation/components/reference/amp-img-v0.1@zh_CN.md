@@ -2,14 +2,13 @@
 $title: amp-img
 $category@: media
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 teaser:
   text: 替换 HTML5 img 标记。
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -27,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td class="col-fourty"><strong>说明</strong></td>
@@ -43,7 +40,6 @@ limitations under the License.
     <td>请参阅 AMP By Example 的 <a href="https://ampbyexample.com/components/amp-img/">amp-img 示例</a>。</td>
   </tr>
 </table>
-
 
 # 行为 <a name="behavior"></a>
 
@@ -60,14 +56,18 @@ limitations under the License.
 在下面的示例中，我们通过设置 `layout=responsive` 来展示一张能够根据视口尺寸自行调整大小的图片。该图片会根据通过 `width` 和 `height` 指定的宽高比进行缩放。
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"]
@@ -81,18 +81,24 @@ limitations under the License.
 在下面的示例中，如果浏览器不支持 WebP，则会显示后备 JPG 图片：
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 您可以使用 CSS 选择器和元素本身的样式设置占位符背景颜色或其他视觉效果。
@@ -102,9 +108,9 @@ limitations under the License.
 [tip type="read-on"]
 如需详细了解如何使用 `amp-img`，请参阅以下资源：
 
-* [占位符和后备元素](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
-* [添加图片和视频](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
-[/tip]
+- [占位符和后备元素](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+- [添加图片和视频](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
+  [/tip]
 
 # 属性 <a name="attributes"></a>
 
@@ -147,7 +153,7 @@ limitations under the License.
 ```css
 amp-img {
   background-color: grey;
-  }
+}
 ```
 
 # 提示和技巧 <a name="tips--tricks"></a>
@@ -157,7 +163,7 @@ amp-img {
 如果您希望图片随着窗口大小的调整而缩放，但宽度不超过最大宽度（这样，拉伸图片时不会超过窗口宽度），请执行以下操作：
 
 1. 为 `<amp-img>` 设置 `layout=responsive`。
-1. 在图片的容器中，指定 `max-width:<max width to display image>` CSS 属性。为何在容器中指定？这是因为 `layout=responsive` 的 `amp-img` 元素是块级元素，而 `<img>` 是内嵌元素。****或者，您可以在 CSS 中为 amp-img 元素设置 `display: inline-block`。
+1. 在图片的容器中，指定 `max-width:<max width to display image>` CSS 属性。为何在容器中指定？这是因为 `layout=responsive` 的 `amp-img` 元素是块级元素，而 `<img>` 是内嵌元素。\*\*\*\*或者，您可以在 CSS 中为 amp-img 元素设置 `display: inline-block`。
 
 # 自适应布局和固有布局之间的区别 <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
@@ -181,14 +187,18 @@ amp-img {
 例如，您可以只指定 `width="1.33"` 和 `height="1"`，而不是指定 `width="900"` 和 `height="675"`。
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="1.33"
   height="1"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 # 为不同的屏幕分辨率设置多个源文件 <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>

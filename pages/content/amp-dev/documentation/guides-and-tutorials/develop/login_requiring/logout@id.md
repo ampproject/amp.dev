@@ -13,9 +13,9 @@ Saat mengklik tombol Logout, Anda akan diarahkan ke URL yang telah ditentukan da
 [sourcecode:json]
 {
 "login": {
-  "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-  "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-  }
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+"sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
+}
 }
 [/sourcecode]
 

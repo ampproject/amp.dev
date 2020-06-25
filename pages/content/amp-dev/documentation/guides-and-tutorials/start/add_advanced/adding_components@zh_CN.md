@@ -23,7 +23,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -38,7 +39,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -57,7 +59,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -65,7 +68,8 @@ AMP 网页中的广告是使用 [`amp-ad`](../../../../documentation/components/
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -94,7 +98,8 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 - Twitter 微博
 - 报道中的精彩语段
 
-##  嵌入 YouTube 视频
+## 嵌入 YouTube 视频
+
 我们来试着在此文档中嵌入一个 YouTube 视频。请在您的 AMP 文档中**添加**以下代码（使其紧跟在 `<header>` 后面，即您刚才添加的 [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) 上方）：
 
 ```html
@@ -102,14 +107,15 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**刷新**页面。您所看到的不会是视频，而会是以下文字：“The video could not be loaded.”**
+**刷新**页面。您所看到的不会是视频，而会是以下文字：“The video could not be loaded.”\*\*
 
 即使您的浏览器可以完全正常地显示 YouTube 视频，您仍会遇到此错误。这是为什么呢？事实上，并非是视频加载失败了，而是组件本身加载失败了。
 
@@ -122,7 +128,11 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 将以下脚本**添加**到 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **刷新**页面后，您应该会看到以下 YouTube 视频：
@@ -138,12 +148,17 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
 [/tip]
 
 ## 显示 Twitter 微博
+
 嵌入已预先设定格式的 Twitter 微博是新闻报道中的一项常见功能。[`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) 组件可轻松地提供此功能。
 
 首先，将以下 JavaScript 请求添加到文档的 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 现在，在您的报道中**添加**下述代码以嵌入 Twitter 微博：
@@ -153,7 +168,8 @@ AMP 文档中不得运行任何由广告网络提供的 JavaScript。不过，AM
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -180,7 +196,11 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`](.
 我们来试一试。首先，将该组件的库**添加**到 `<head>` 标记中：
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 将以下代码添加到您的网页中：
@@ -205,7 +225,11 @@ AMP 提供了另一个组件来专门应对这种情况，即 [`amp-fit-text`](.
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

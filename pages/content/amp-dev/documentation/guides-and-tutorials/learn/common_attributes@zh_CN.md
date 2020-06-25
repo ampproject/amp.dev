@@ -16,6 +16,7 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+
   <div fallback>Cannot play animated images on this device.</div>
 </amp-anim>
 [/sourcecode]
@@ -25,7 +26,6 @@ fallback 是一种惯例，可让相应元素告知读者，浏览器不支持�
 ## heights
 
 所有支持 `responsive` 布局的 AMP 元素也都支持 `heights` 属性。此属性的值是一个基于媒体表达式的 sizes 表达式，类似于 [`img` 标记中的 sizes 属性](https://developer.mozilla.org/zh_CN/docs/Web/HTML/Element/img)，但有以下两项主要区别：
-
 
 1. 该值适用于元素的高度，但不适用于宽度。
 2. 允许采用百分比值。百分比值表示元素的高度占宽度的百分比。例如，如果值为 `80%`，则表示元素的高度将是宽度的 80%。
@@ -107,15 +107,14 @@ AMP 提供了一系列[布局](../../../documentation/guides-and-tutorials/devel
 语法：
 
 [sourcecode:text]
-eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 示例：
 
 [sourcecode:html]
 <button on="tap:my-lightbox">Open lightbox</button>
 <amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
+...
 </amp-lightbox>
 [/sourcecode]
 
@@ -131,7 +130,7 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 

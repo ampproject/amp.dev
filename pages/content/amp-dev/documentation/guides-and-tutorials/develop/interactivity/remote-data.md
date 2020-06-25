@@ -5,8 +5,6 @@ description: 'What if your bindable data is too large or complex to retrieve at 
 toc: true
 ---
 
-
-
 What if your bindable data is too large or complex to retrieve at page load? Or what if each SKU has a price that takes a long time to look up? Looking up prices for SKUs for non-viewed items is wasted work.
 
 [tip type="success"]
@@ -21,16 +19,15 @@ You can also bind the `src` attribute for the [`<amp-state>`](../../../../docume
 
 Let's make use of the ability to fetch remote data to look up prices of SKUs in our sample. Our Express.js development server in `app.js` already has an endpoint `/shirts/sizesAndPrices?shirt=<sku>` which, given a shirt SKU, returns the available sizes and price for each size. It sends the response with an artificial delay of one second to simulate network latency.
 
-|  Request                              |  Response |
-|---------------------------------------|-----------|
+| Request                               | Response                                     |
+| ------------------------------------- | -------------------------------------------- |
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 Similar to the JSON data within [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) elements, the remote data returned from these fetches are merged into and available under the element's `id` attribute. For example, the data returned from the example response above can be accessed in an expression:
 
-
-|  Expression                  |  Result |
-|------------------------------|---------|
-| `shirts['1001'].sizes['XS']` | `8.99`  |
+| Expression                   | Result |
+| ---------------------------- | ------ |
+| `shirts['1001'].sizes['XS']` | `8.99` |
 
 ### Bind the data
 
@@ -39,7 +36,10 @@ Now, let's apply this to our e-commerce example. First let's fetch this shirt da
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
      JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### Indicate unavailable sizes
@@ -76,7 +76,7 @@ Now, reload the page and try it out. Selecting a new SKU (shirt color) will caus
 
 ### Specify initial states
 
-There's a small problem though -- what about the black shirt, the default selected color?  We'll need to add the size and price data of the black shirt to `amp-state#shirts` because [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) only runs in response to explicit user action:
+There's a small problem though -- what about the black shirt, the default selected color? We'll need to add the size and price data of the black shirt to `amp-state#shirts` because [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) only runs in response to explicit user action:
 
 ```html
 <amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
@@ -109,16 +109,22 @@ And, we'll need to update the default state of relevant elements:
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -127,7 +133,7 @@ And, we'll need to update the default state of relevant elements:
 ```
 
 [tip type="note"]
-**NOTE –**  [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) usage.
+**NOTE –** [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) does not run on page load -- only in response to explicit user action. This makes sure the initial page load is consistently fast across pages regardless of [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) usage.
 [/tip]
 
 ## Variable shirt prices
@@ -139,8 +145,10 @@ Our AMPPAREL store is peculiar in that shirt price is specific to both color AND
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 Notice that we're not initializing the value of `selectedSize` via the `amp-state#selected` element. That's because we intentionally don't provide a default selected size and instead want to force the user to choose a size.
@@ -152,7 +160,8 @@ Notice that we're not initializing the value of `selectedSize` via the `amp-stat
 Add a new `<span>` element wrapping the price label and change the default text to "---" since there's no default size selection.
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Display the price of the selected shirt in the selected size if available.
        Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -170,9 +179,13 @@ We're almost done! Let's disable the "Add to cart" button when the selected size
      1. There is no selected size, OR
      2. The available sizes for the selected SKU haven't been fetched yet
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
-**Try it out**:  If you select a size that's unavailable, you can't add it to the cart.
+**Try it out**: If you select a size that's unavailable, you can't add it to the cart.

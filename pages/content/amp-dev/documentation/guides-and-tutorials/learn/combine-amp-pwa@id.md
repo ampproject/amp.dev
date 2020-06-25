@@ -24,7 +24,7 @@ Baca lebih lanjut: Pelajari cara [mengaktifkan fitur PWA](../../../documentation
 
 ## AMP sebagai pintu masuk ke PWA
 
-Nilai jual AMP yang unik adalah **penayangan hampir instan**, keunggulan yang membuat AMP sangat sesuai untuk interaksi pengguna pertama dengan situs Anda. *Progressive web app* memungkinkan jauh lebih banyak **fitur yang mendukung interaktivitas dan engagement**, namun pemuatan pertamanya terhambat karena Service Worker situs hanya mempercepat penayangan pada pemuatan berikutnya, begitu pula aset dan app shellnya.
+Nilai jual AMP yang unik adalah **penayangan hampir instan**, keunggulan yang membuat AMP sangat sesuai untuk interaksi pengguna pertama dengan situs Anda. _Progressive web app_ memungkinkan jauh lebih banyak **fitur yang mendukung interaktivitas dan engagement**, namun pemuatan pertamanya terhambat karena Service Worker situs hanya mempercepat penayangan pada pemuatan berikutnya, begitu pula aset dan app shellnya.
 
 Strategi yang bagus adalah membuat pintu masuk ke situs sebagai halaman AMP, lalu menyiapkan PWA di belakang layar dan beralih untuk perjalanan selanjutnya.
 

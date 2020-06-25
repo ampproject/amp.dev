@@ -4,9 +4,9 @@ $title: AMP 페이지에서 프로그레시브 웹 앱 미리 로드하기
 
 **AMP 페이지를 사이트의 진입점으로 만든 다음**, 향후 사용자 여정을 위해 **보이지 않는 곳에서 PWA를 준비**한 후 전환하는 것이 좋습니다.
 
-* 모든 콘텐츠 '리프' 페이지(개요 페이지가 아닌 특정 콘텐츠가 포함된 페이지)는 AMP로 게시되어 거의 즉각적으로 로드됩니다.
-* 이러한 AMP에서는 사용자가 콘텐츠를 즐기는 동안 AMP의 특별 요소인 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)를 사용하여 캐시 및 PWA 셸을 준비합니다.
-* 사용자가 웹사이트에서 다른 링크(예: 앱과 더욱 비슷한 환경을 제공하기 위한 하단의 클릭 유도문안)를 클릭하면 서비스 워커가 그 요청을 가로채어 페이지를 넘겨받고 PWA 셸을 대신 로드합니다.
+- 모든 콘텐츠 '리프' 페이지(개요 페이지가 아닌 특정 콘텐츠가 포함된 페이지)는 AMP로 게시되어 거의 즉각적으로 로드됩니다.
+- 이러한 AMP에서는 사용자가 콘텐츠를 즐기는 동안 AMP의 특별 요소인 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)를 사용하여 캐시 및 PWA 셸을 준비합니다.
+- 사용자가 웹사이트에서 다른 링크(예: 앱과 더욱 비슷한 환경을 제공하기 위한 하단의 클릭 유도문안)를 클릭하면 서비스 워커가 그 요청을 가로채어 페이지를 넘겨받고 PWA 셸을 대신 로드합니다.
 
 계속 읽어나가며 이 개발 패턴을 사용하는 이유와 방법을 알아보세요.
 
@@ -31,8 +31,10 @@ AMP를 사용하면 AMP 캐시에서 AMP 페이지가 게시되는 경우에도 
 먼저 스크립트를 통해 페이지의 `<head>`에 구성요소를 포함하여 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md)를 사용하는 방법으로 모든 AMP 페이지에 서비스 워커를 설치합니다.
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 그런 다음 `<body>` 안에 다음을 추가합니다. 실제 서비스 워커로 연결되도록 수정하세요.
@@ -49,20 +51,20 @@ AMP를 사용하면 AMP 캐시에서 AMP 페이지가 게시되는 경우에도 
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // 설치 과정 실행
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// 설치 과정 실행
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -78,14 +80,14 @@ AMP 페이지에 있는 링크는 대부분 더 많은 콘텐츠를 담은 페�
 
 ### 2. 표준 사이트가 AMP인 경우
 
-이 경우에는 표준 페이지가 *AMP 페이지입니다*. 전체 웹사이트를 AMP로 만들고, AMP를 라이브러리로 사용합니다. 재미있는 사실은 여러분이 보고 계시는 이 사이트도 이런 방식으로 만들어졌다는 것입니다. **이 시나리오에서는 AMP 페이지에 있는 링크 대부분이 다른 AMP 페이지로 연결됩니다.**
+이 경우에는 표준 페이지가 _AMP 페이지입니다_. 전체 웹사이트를 AMP로 만들고, AMP를 라이브러리로 사용합니다. 재미있는 사실은 여러분이 보고 계시는 이 사이트도 이런 방식으로 만들어졌다는 것입니다. **이 시나리오에서는 AMP 페이지에 있는 링크 대부분이 다른 AMP 페이지로 연결됩니다.**
 
 이제 `your-domain.com/pwa`와 같은 별도의 경로에 PWA를 배포할 수 있고, 이미 실행 중인 서비스 워커를 사용하여 **사용자가 AMP 페이지의 링크를 클릭할 때 브라우저 탐색을 가로챌 수** 있습니다.
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // 즉시 실제 리소스를 다운로드하기 시작합니다.
       fetch(event.request.url);

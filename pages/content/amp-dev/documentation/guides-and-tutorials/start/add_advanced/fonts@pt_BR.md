@@ -12,7 +12,11 @@ Há duas formas de incorporar fontes personalizadas à página AMP:
 Neste tutorial, usaremos uma tag `<link>` para incluir fontes na página. **Adicione** um link de folha de estilo no `<head>` para solicitar a fonte Raleway:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 Agora **atualize** o seletor CSS `body` para incluir uma referência à Raleway:
@@ -26,7 +30,7 @@ body {
 }
 ```
 
-**Atualize** a página e confira a nova aparência. Além disso, inspecione a saída do validador de AMP.  Essa solicitação da folha de estilo externa não pode ter erros.
+**Atualize** a página e confira a nova aparência. Além disso, inspecione a saída do validador de AMP. Essa solicitação da folha de estilo externa não pode ter erros.
 
 Seu artigo de notícias AMP está pronto! Ele terá esta aparência:
 

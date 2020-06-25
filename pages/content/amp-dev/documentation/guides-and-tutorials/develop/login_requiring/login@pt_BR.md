@@ -10,6 +10,7 @@ Se procurar pelo botão de login no código, você verá o seguinte:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -18,6 +19,7 @@ Se procurar pelo botão de login no código, você verá o seguinte:
 O comportamento de atributos relacionados a [`amp-access`](../../../../documentation/components/reference/amp-access.md) dependem de uma configuração em toda a página de [`amp-access`](../../../../documentation/components/reference/amp-access.md). Neste caso, a seguinte:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -32,6 +34,7 @@ O comportamento de atributos relacionados a [`amp-access`](../../../../documenta
     }
   }
 </script>
+
 [/sourcecode]
 
 O ponto de extremidade da autorização é implantado como parte de AMPByExample. O fornecimento desse ponto de extremidade é responsabilidade do editor da página. No caso desse exemplo, por questões de simplicidade, implementamos uma lógica básica para que, quando a solicitação for recebida, o servidor leia o valor de um cookie chamado `ABE_LOGGED_IN`. Se o cookie não estiver lá, retornaremos uma resposta JSON com `loggedIn = false`. Como resultado, na primeira vez em que um usuário acessar a página, a solicitação retornará `loggedIn = false` e o botão de login será exibido.
@@ -40,9 +43,9 @@ Ao usar `on="tap:amp-access.login-sign-in"` para verificar novamente o código H
 
 [sourcecode:json]
 {
-    "login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

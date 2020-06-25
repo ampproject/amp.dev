@@ -6,6 +6,7 @@ $title: 制作 AMP HTML 网页
 请复制此标记并将其保存到扩展名为 .html 的文件中。
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -43,16 +44,16 @@ $title: 制作 AMP HTML 网页
 
 AMP HTML 文档必须：
 
-| 规则      | 说明 |
-| --------- | ----------- |
-| 以 `<!doctype html>` doctype 开头。| 适用于 HTML 的标准。|
-| 包含顶级 `<html ⚡>` 标记<br>（也可以使用 `<html amp>`）。| 将网页标识为 AMP 内容。|
-| 包含 `<head>` 和 `<body>` 标记。| 在 HTML 中是可选标记，但在 AMP 中则必须包含。
-| 包含 `<meta charset="utf-8">` 标记，以此作为其 `<head>` 标记的第一个子级。| 标识网页的编码。|
-| 包含 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 标记，以此作为其 `<head>` 标记的第二个子级。| 包含并加载 AMP JS 库。|
-| 在其 `<head>` 内包含 `<link rel="canonical" href="$SOME_URL">` 标记。| 指向常规 HTML 版 AMP HTML 文档，如果不存在此类 HTML 版本，则指向其自身。有关详情，请参阅[使您的网页可被轻松发现](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)。
-| 在其 `<head>` 标记内包含 `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` 标记。还建议您添加 `initial-scale=1`。| 指定自适应视口。有关详情，请参阅[制作自适应 AMP 网页](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)。|
-| 在其 `<head>` 标记内包含 [AMP 样板代码](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)。| CSS 样板最初会隐藏内容，直到 AMP JS 加载完毕为止。|
+| 规则                                                                                                                                                  | 说明                                                                                                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 以 `<!doctype html>` doctype 开头。                                                                                                                   | 适用于 HTML 的标准。                                                                                                                                                                             |
+| 包含顶级 `<html ⚡>` 标记<br>（也可以使用 `<html amp>`）。                                                                                            | 将网页标识为 AMP 内容。                                                                                                                                                                          |
+| 包含 `<head>` 和 `<body>` 标记。                                                                                                                      | 在 HTML 中是可选标记，但在 AMP 中则必须包含。                                                                                                                                                    |
+| 包含 `<meta charset="utf-8">` 标记，以此作为其 `<head>` 标记的第一个子级。                                                                            | 标识网页的编码。                                                                                                                                                                                 |
+| 包含 `<script async src="https://cdn.ampproject.org/v0.js"></script>` 标记，以此作为其 `<head>` 标记的第二个子级。                                    | 包含并加载 AMP JS 库。                                                                                                                                                                           |
+| 在其 `<head>` 内包含 `<link rel="canonical" href="$SOME_URL">` 标记。                                                                                 | 指向常规 HTML 版 AMP HTML 文档，如果不存在此类 HTML 版本，则指向其自身。有关详情，请参阅[使您的网页可被轻松发现](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md)。 |
+| 在其 `<head>` 标记内包含 `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` 标记。还建议您添加 `initial-scale=1`。 | 指定自适应视口。有关详情，请参阅[制作自适应 AMP 网页](../../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)。                                            |
+| 在其 `<head>` 标记内包含 [AMP 样板代码](../../../../documentation/guides-and-tutorials/learn/spec/amp-boilerplate.md)。                               | CSS 样板最初会隐藏内容，直到 AMP JS 加载完毕为止。                                                                                                                                               |
 
 ## 可选元数据
 
@@ -60,9 +61,9 @@ AMP HTML 文档必须：
 
 [tip type="read-on"] 请访问以下资源以了解详情：
 
-* [针对 Google 搜索开始增强 AMP 内容](https://developers.google.com/amp/docs) - 了解如何使 AMP 网页符合在 Google 搜索结果中显示的条件。
-  * [元数据示例](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - 详细了解您会在其他各个位置（例如 Twitter）中用到的所有元数据。
-[/tip]
+- [针对 Google 搜索开始增强 AMP 内容](https://developers.google.com/amp/docs) - 了解如何使 AMP 网页符合在 Google 搜索结果中显示的条件。
+  - [元数据示例](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) - 详细了解您会在其他各个位置（例如 Twitter）中用到的所有元数据。
+    [/tip]
 
 <hr>
 

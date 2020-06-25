@@ -11,20 +11,26 @@ Sayfalarınıza üçüncü taraf bileşenlerini nasıl ekleyeceğinizi öğrenin
 Sayfanıza tweet eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
 [sourcecode:html]
+
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
 [/sourcecode]
 
 Şu anda tweet'ler, sağlanan boyuta sığmaları için otomatik olarak belirli bir oranda ölçeklenmektedir, ancak bu ideal bir görünüm sağlamayabilir.
 Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy oranını, ekran genişliğine göre seçmek için medya özniteliğini kullanabilirsiniz.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
+
 ```html
-<amp-twitter width="500"
+<amp-twitter
+  width="500"
   height="583"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
+
 [/example]
 
 ## Instagram Fotoğrafı Yerleştirme
@@ -34,20 +40,26 @@ Sağlanan genişliği ve yüksekliği manuel olarak değiştirebilir veya en boy
 Bir Instagram fotoğrafını sayfanıza eklemek için öncelikle aşağıdaki komut dosyasını `<head>` bölümüne ekleyin:
 
 [sourcecode:html]
+
 <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 [/sourcecode]
 
 Instagram fotoğrafı URL'sinde bulunan Instagram kısa veri kodunu ekleyin. Örneğin, `https://instagram.com/p/fBwFP` URL'sindeki `fBwFP`, veri kısa kodudur.
 Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. Bu yüzden, genişlik ve yükseklik değeri evrensel olmalıdır
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
+
 ```html
-<amp-instagram data-shortcode="fBwFP"
+<amp-instagram
+  data-shortcode="fBwFP"
   width="320"
   height="392"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-instagram>
 ```
+
 [/example]
 
 ## Facebook yayını veya videosu gösterme
@@ -57,18 +69,25 @@ Ayrıca, Instagram duyarlı düzenler için sabit bir en boy oranı kullanır. B
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
 [sourcecode:html]
+
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
 [/sourcecode]
 
 ##### Örnek - Yayın yerleştirme
 
 Source:
+
 ```html
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+<amp-facebook
+  width="486"
+  height="657"
+  layout="responsive"
+  data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+>
 </amp-facebook>
 ```
+
 Preview:
 <amp-facebook width="486" height="657"
     layout="responsive"
@@ -78,13 +97,18 @@ Preview:
 ##### Örnek - Video yerleştirme
 
 Source:
+
 ```html
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+<amp-facebook
+  width="476"
+  height="316"
+  layout="responsive"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
 </amp-facebook>
 ```
+
 Preview:
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -99,7 +123,9 @@ Preview:
 Aşağıdaki komut dosyasını `<head>` bölümüne eklemeniz gerekir:
 
 [sourcecode:html]
+
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
 [/sourcecode]
 
 Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsiniz. Örneğin, https://www.youtube.com/watch?v=Z1q71gFeRqM URL'sinin Z1q71gFeRqM kısmı, video kimliğini belirtmektedir.
@@ -107,13 +133,17 @@ Youtube `data-videoid` kodunu her YouTube video sayfası URL'sinde bulabilirsini
 16:9 en boy oranlı videolar için doğru düzenleri sağlamak üzere `layout="responsive"` kodunu kullanın:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
 ## Reklam gösterme
@@ -129,32 +159,40 @@ Reklam genişliği ve yüksekliği ile reklam ağı türünü belirtmeniz gereki
 Farklı reklam türleri, farklı `data-*` öznitelikleri gerektirir.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
 </amp-ad>
 ```
+
 [/example]
 
 Reklam ağı tarafından destekleniyorsa, kullanılabilir reklam olmadığında gösterilmesi için bir `placeholder` ekleyin:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
+
 [/example]
 
 AMP, çok çeşitli reklam ağlarını destekler. [Tam liste için referansa](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks) bakın.

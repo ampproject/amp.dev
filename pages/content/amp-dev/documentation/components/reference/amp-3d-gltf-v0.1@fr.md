@@ -2,7 +2,7 @@
 $title: amp-3d-gltf
 $category@: media
 formats:
-- websites
+  - websites
 teaser:
   text: Afficher les modèles 3D au format glTF (GL Transmission Format).
 ---
@@ -22,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Ce composant affiche les modèles 3D au format glTF (GL Transmission Format).
 
@@ -52,12 +50,13 @@ Le composant `amp-3d-gltf` affiche les modèles 3D qui sont au format glTF.
 
 ```html
 <amp-3d-gltf
-    layout="responsive"
-    width="320"
-    height="240"
-    alpha="true"
-    antialiasing="true"
-    src="path/to/model.glb"></amp-3d-gltf>
+  layout="responsive"
+  width="320"
+  height="240"
+  alpha="true"
+  antialiasing="true"
+  src="path/to/model.glb"
+></amp-3d-gltf>
 ```
 
 ### Limitations <a name="limitations"></a>
@@ -71,7 +70,7 @@ Fonctionnalités non compatibles :
 
 ### CORS <a name="cors"></a>
 
-`amp-3d-gltf` effectue une requête `fetch` à partir de l'origine `https://<random>.ampproject.net`. `access-control-allow-origin : *.ampproject.net` doit donc être défini dans l'en-tête de réponse du point de terminaison spécifié en tant que `src`. Un caractère générique est nécessaire, car l'origine est associée à un composant de sous-domaine aléatoire.
+`amp-3d-gltf` effectue une requête `fetch` à partir de l'origine `https://<random>.ampproject.net`. `access-control-allow-origin : *.ampproject.net` doit donc être défini dans l'en-tête de réponse du point de terminaison spécifié en tant que `src`. Un caractère générique est nécessaire, car l'origine est associée à un composant de sous-domaine aléatoire.
 
 ## Attributs <a name="attributes"></a>
 

@@ -5,6 +5,7 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Adding Features To Our Site
 
 So far, we’ve converted our basic HTML site into a basic AMP site. There is only one validation error remaining in our site, and we’ll fix it by using an `<amp-img>` component instead of an `<img>` tag. As we fix this last validation error, we’ll learn what AMP components are, why some HTML tags are replaced or disallowed in AMP, and how to add components to our site.
@@ -136,8 +137,7 @@ Remember to include the `<amp-youtube>` script in the `<head>`:
 ```
 
 [tip type="note"]
-**Note**: AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.[/tip]
-[/filter]
+**Note**: AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.[/tip][/filter]
 [filter level="advanced"]
 There is only one validation error remaining in our site, and we’ll fix it by using an `<amp-img>` **component** instead of an `<img>` tag.
 
@@ -261,5 +261,4 @@ Remember to include the `<amp-youtube>` script in the `<head>`:
 ```
 
 [tip type="note"]
-**Note**: AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.[/tip]
-[/filter]
+**Note**: AMP also includes support for other video players. Check out "[Integrating Videos in AMP an Overview](https://ampbyexample.com/advanced/integrating_videos_in_amp_an_overview/)" on AMP by Example.[/tip][/filter]

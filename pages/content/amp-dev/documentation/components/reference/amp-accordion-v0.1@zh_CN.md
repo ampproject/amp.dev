@@ -2,13 +2,12 @@
 $title: amp-accordion
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 提供一种方式，让观看者可以大致了解网页内容并随意跳至想查看的部分。
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 提供一种方式，让观看者可以大致了解网页内容并跳至任意部分。对于甚至连一个部分中的几个句子都需要滚动才能完整显示的移动设备来说，这非常有用。
 
@@ -45,23 +42,23 @@ limitations under the License.
   </tr>
 </table>
 
-
 ## 行为 <a name="behavior"></a>
 
 借助 `amp-accordion` 组件，您能够显示可收起和可展开的内容部分。`amp-accordion` 组件的每个直接子级均被视为可折叠内容中的一个部分。每个节点都必须是 `<section>` 标记。
 
-* `amp-accordion` 可以包含一个或多个 `<section>` 元素作为其直接子级。
-* 每个 `<section>` 都必须正好包含两个直接子级。
-* 某个部分的第一个子级表示该部分的标题，且必须是标题元素（`h1`、`h2`、…、`h6`、`header` 之一）。
-* 某个部分的第二个子级可以是 AMP HTML 中允许的任何标记，表示该部分的内容。
-* 点击/点按某个部分的标题即可展开或收起相应部分。
-* `amp-accordion` 元素中每个部分的收起/展开状态会保存下来供会话级别使用。要选择不保存此状态，请向 `amp-accordion` 元素添加 `disable-session-states` 属性。
+- `amp-accordion` 可以包含一个或多个 `<section>` 元素作为其直接子级。
+- 每个 `<section>` 都必须正好包含两个直接子级。
+- 某个部分的第一个子级表示该部分的标题，且必须是标题元素（`h1`、`h2`、…、`h6`、`header` 之一）。
+- 某个部分的第二个子级可以是 AMP HTML 中允许的任何标记，表示该部分的内容。
+- 点击/点按某个部分的标题即可展开或收起相应部分。
+- `amp-accordion` 元素中每个部分的收起/展开状态会保存下来供会话级别使用。要选择不保存此状态，请向 `amp-accordion` 元素添加 `disable-session-states` 属性。
 
 #### 示例：显示可折叠内容 <a name="example-displaying-an-accordion"></a>
 
 在此示例中，我们显示了三个部分，其中第三个部分会在网页加载时展开。此外，我们通过设置 `disable-session-states` 选择不保存收起/展开状态。
 
 [example preview="inline" playground="true" imports="amp-accordion"]
+
 ```html
 <amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
@@ -80,6 +77,7 @@ limitations under the License.
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 [tip type="ll callout('提示：</b><a class="type_success"]
@@ -145,13 +143,13 @@ limitations under the License.
 
 ## 样式设置 <a name="styling"></a>
 
-* 您可以使用 `amp-accordion` 元素选择器自由设置样式。
-* `amp-accordion` 元素始终为 `display: block`。
-* `<section>`、标题和内容元素无法浮动。
-* 展开某个部分后，该 `<section>` 元素就具有 `expanded` 属性。
-* 内容元素通过 `overflow: hidden` 明确固定，因此不能有滚动条。
-* `<amp-accordion>`、`<section>`、标题和内容元素的外边距设为 0，这些值可在自定义样式中替换。
-* 标头和内容元素都是 `position: relative`。
+- 您可以使用 `amp-accordion` 元素选择器自由设置样式。
+- `amp-accordion` 元素始终为 `display: block`。
+- `<section>`、标题和内容元素无法浮动。
+- 展开某个部分后，该 `<section>` 元素就具有 `expanded` 属性。
+- 内容元素通过 `overflow: hidden` 明确固定，因此不能有滚动条。
+- `<amp-accordion>`、`<section>`、标题和内容元素的外边距设为 0，这些值可在自定义样式中替换。
+- 标头和内容元素都是 `position: relative`。
 
 ## 验证 <a name="validation"></a>
 

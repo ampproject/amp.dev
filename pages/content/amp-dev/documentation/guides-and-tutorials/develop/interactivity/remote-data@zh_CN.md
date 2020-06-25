@@ -16,15 +16,15 @@ $title: 使用远程数据
 
 我们不妨利用这项远程数据提取功能来查询我们所用示例中的 SKU 价格。我们在 `app.js` 中的 Express.js 开发服务器已具有 `/shirts/sizesAndPrices?shirt=<sku>` 端点；一旦用户选定了衬衫 SKU，该端点即会返回所有可用的尺寸以及每种尺寸的价格。它会在人为的 1 秒延迟后发送响应，以模拟网络延迟。
 
-|  Request                              |  Response |
-|---------------------------------------|-----------|
+| Request                               | Response                                     |
+| ------------------------------------- | -------------------------------------------- |
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 与 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 元素中的 JSON 数据类似，这些提取操作所返回的远程数据会被合并到相应元素的 `id` 属性中，且会显示在该属性下。例如，若要访问上文中的示例响应所返回的数据，您可以使用如下表达式：
 
-|  Expression                  |  Result |
-|------------------------------|---------|
-| `shirts['1001'].sizes['XS']` | `8.99`  |
+| Expression                   | Result |
+| ---------------------------- | ------ |
+| `shirts['1001'].sizes['XS']` | `8.99` |
 
 ### 绑定数据
 
@@ -33,7 +33,10 @@ $title: 使用远程数据
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
      JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### 指明不可用的尺寸
@@ -103,16 +106,22 @@ $title: 使用远程数据
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -131,8 +140,10 @@ $title: 使用远程数据
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 请注意：我们不会通过 `amp-state#selected` 元素对 `selectedSize` 的值进行初始化，因为我们是有意不提供默认选定尺寸的 - 我们想藉此强制用户选择一种尺寸。
@@ -142,7 +153,8 @@ $title: 使用远程数据
 然后，添加一个新的 `<span>` 元素来封装价格标签，并将默认文本改为“---”，因为没有默认选定的尺寸。
 
 ```html
-<h6>PRICE :
+<h6>
+  PRICE :
   <!-- Display the price of the selected shirt in the selected size if available.
        Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -160,9 +172,13 @@ $title: 使用远程数据
      1. There is no selected size, OR
      2. The available sizes for the selected SKU haven't been fetched yet
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
 **试试看**：如果您选择的尺寸不可用，您便无法将其加入购物车。

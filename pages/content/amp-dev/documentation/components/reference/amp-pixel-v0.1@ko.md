@@ -6,9 +6,8 @@ formats:
   - ads
   - stories
 teaser:
-  text: "페이지 조회수를 계산하는 추적 픽셀입니다."
+  text: '페이지 조회수를 계산하는 추적 픽셀입니다.'
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -50,11 +47,10 @@ teaser:
 이 기본 예에서는 `amp-pixel`에서 지정된 URL에 간단한 GET 요청을 실행하고 결과는 무시합니다.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/tracker/foo" layout="nodisplay"></amp-pixel>
 ```
 
-  [tip type="note"]
+[tip type="note"]
 애널리틱스 요청의 리퍼러 헤더에서 AMP URL을 처리할 때 `usqp` 매개변수를 제외하거나 무시하세요. 이 매개변수는 Google이 Google AMP 캐시에 대한 실험을 트리거하는 데 사용됩니다.
 [/tip]
 
@@ -69,9 +65,11 @@ teaser:
 이 속성은 `<img>`의 `referrerpolicy` 속성과 비슷하지만 `no-referrer` 값만 허용됩니다. `referrerpolicy=no-referrer`가 지정된 경우 HTTP 요청에서 `referrer` 헤더가 삭제됩니다.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"
-    referrerpolicy="no-referrer"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/tracker/foo"
+  layout="nodisplay"
+  referrerpolicy="no-referrer"
+></amp-pixel>
 ```
 
 ##### allow-ssr-img(선택사항) <a name="allow-ssr-img-optional"></a>
@@ -91,8 +89,7 @@ teaser:
 다음 예에서는 `https://foo.com/pixel?0.8390278471201`와 같은 사이트에 요청을 할 수 있으며 여기서는 노출할 때마다 RANDOM 값이 무작위로 생성됩니다.
 
 ```html
-<amp-pixel src="https://foo.com/pixel?RANDOM"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/pixel?RANDOM" layout="nodisplay"></amp-pixel>
 ```
 
 ## 스타일 지정 <a name="styling"></a>

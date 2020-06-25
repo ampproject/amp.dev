@@ -11,20 +11,26 @@ $title: Как добавлять сторонний контент
 Для этого разместите между тегами `<head>` следующий скрипт:
 
 [sourcecode:html]
+
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
 [/sourcecode]
 
 В результате пропорции твита будут изменены автоматически в соответствии с заданными вами размерами, однако его внешний вид может быть неоптимальным.
 В этом случае вручную укажите более подходящие значения ширины и высоты твита или используйте атрибут media, чтобы соотношение сторон менялось в зависимости от ширины экрана.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
+
 ```html
-<amp-twitter width="500"
+<amp-twitter
+  width="500"
   height="583"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
+
 [/example]
 
 ## Как добавлять изображения из Instagram
@@ -34,20 +40,26 @@ $title: Как добавлять сторонний контент
 Для этого разместите между тегами `<head>` следующий скрипт:
 
 [sourcecode:html]
+
 <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 [/sourcecode]
 
 Затем вставьте код data-shortcode из URL изображения. Например, в URL `https://instagram.com/p/fBwFP` он выглядит так: `fBwFP`.
 В адаптивных макетах Instagram используется фиксированное соотношение сторон, поэтому значения ширины и высоты должны быть соответствующими:
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
+
 ```html
-<amp-instagram data-shortcode="fBwFP"
+<amp-instagram
+  data-shortcode="fBwFP"
   width="320"
   height="392"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-instagram>
 ```
+
 [/example]
 
 ## Как добавлять записи или видео Facebook
@@ -57,18 +69,25 @@ $title: Как добавлять сторонний контент
 Для этого разместите между тегами `<head>` следующий скрипт:
 
 [sourcecode:html]
+
 <script async custom-element="amp-facebook" src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
 [/sourcecode]
 
 ##### Пример кода для добавления записи Facebook
 
 Source:
+
 ```html
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+<amp-facebook
+  width="486"
+  height="657"
+  layout="responsive"
+  data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+>
 </amp-facebook>
 ```
+
 Preview:
 <amp-facebook width="486" height="657"
     layout="responsive"
@@ -78,13 +97,18 @@ Preview:
 ##### Пример кода для добавления видео Facebook
 
 Source:
+
 ```html
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+<amp-facebook
+  width="476"
+  height="316"
+  layout="responsive"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
 </amp-facebook>
 ```
+
 Preview:
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -99,7 +123,9 @@ Preview:
 Для этого разместите между тегами `<head>` следующий скрипт:
 
 [sourcecode:html]
+
 <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
 [/sourcecode]
 
 Идентификатор `data-videoid` содержится в URL каждого видео YouTube. Например, в URL `https://www.youtube.com/watch?v=Z1q71gFeRqM` он выглядит так: `Z1q71gFeRqM`.
@@ -107,13 +133,17 @@ Preview:
 Добавьте элемент `layout="responsive"`, чтобы макеты для видео с соотношением сторон 16:9 создавались корректно:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
 ## Как добавлять объявления
@@ -129,32 +159,40 @@ Preview:
 У разных типов объявлений должны быть различные атрибуты `data-*`.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
 </amp-ad>
 ```
+
 [/example]
 
 Если показ объявлений выполнить нельзя, но рекламная сеть поддерживает атрибут `placeholder`, вставьте его, чтобы проверить код:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
+
 [/example]
 
 Технология AMP поддерживает множество рекламных сетей. Ознакомьтесь с их [полным списком](../../../../documentation/components/reference/amp-ad.md#supported-ad-networks).

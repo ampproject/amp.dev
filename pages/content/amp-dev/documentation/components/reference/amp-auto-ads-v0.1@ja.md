@@ -2,11 +2,10 @@
 $title: amp-auto-ads
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: リモートで提供される設定ファイルを使用して、AMP ページに広告を動的に挿入します。
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 リモートで提供される設定ファイルを使用して、AMP ページに広告を動的に挿入します。
 
@@ -52,31 +49,28 @@ limitations under the License.
     </tr>
   </table>
 
-
-
 ## 動作
 
 `amp-auto-ads` は、十分な数の有効なプレースメントが設定で指定されている場合、広告ネットワークで指定された一連の制約を遵守しながら、追加の広告を挿入しようとします。こうした制約により、以下が制限されます。
 
-* 挿入可能な広告の総数
-* 隣接する広告間の最小距離
+- 挿入可能な広告の総数
+- 隣接する広告間の最小距離
 
 また、広告が挿入される場所は、attemptChangeSize で定められているとおり、許容できないリフローを生じさせないページだけです。
 
 `<amp-auto-ads>` タグは `<body>` の最初の子要素として配置する必要があります。
 
 広告ネットワークのタイプと（広告ネットワークで必要な）その他の情報は、タグで指定する必要があります。
+
 ```html
-<amp-auto-ads
-    type="adsense"
-    data-ad-client="ca-pub-5439573510495356">
-  </amp-auto-ads>
+<amp-auto-ads type="adsense" data-ad-client="ca-pub-5439573510495356">
+</amp-auto-ads>
 ```
 
 ## サポートされている広告ネットワーク <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick（試験運用版）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+- [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+- [DoubleClick（試験運用版）](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## 属性
 
@@ -112,16 +106,16 @@ limitations under the License.
         "index": 2,
         "sub": {
           "selector": "P.paragraph",
-          "all": true,
-        },
+          "all": true
+        }
       },
       "pos": 4,
       "type": 1,
       "style": {
         "top_m": 5,
-        "bot_m": 10,
-      },
-    },
+        "bot_m": 10
+      }
+    }
   ]
 }
 ```
@@ -355,14 +349,14 @@ limitations under the License.
 
 `subsequentMinSpacing` 設定オブジェクトで指定するフィールド。`subsequentMinSpacing` のエントリを使用すると、追加の広告間に必要な間隔を、ページ上の既存の広告数に基づいて変更できます。例として、次のシナリオについて考えてみましょう。
 
-* ページ上に既存の広告が 2 つある
-* subsequentMinSpacing フィールドが次のように設定されている
-<code>
+- ページ上に既存の広告が 2 つある
+- subsequentMinSpacing フィールドが次のように設定されている
+  <code>
   [
-    {adCount: 3, spacing: "500px"},
-    {adCount: 5, spacing: "1000px"},
+  {adCount: 3, spacing: "500px"},
+  {adCount: 5, spacing: "1000px"},
   ]
-</code>
+  </code>
 
 初めは、ページ上の既存の広告数が 2 つのため、合致するマッピングはありません。そのため、最小間隔がデフォルトで `AdConstraints` オブジェクトの initialMinSpacing に設定されます。
 `amp-auto-ads` は、`adContraints` の制約を破らずに使用できるプレースメントを使い果たすまで、広告を再帰的に掲載しようとします。`amp-auto-ads` が 1 つ目の広告を掲載した後、ページ上の広告は 3 つになります。`subsequentMinSpacing` に広告数が 3 つ（またはそれ以上）の場合のマッピングが設定されているため、最小間隔が 500 ピクセルになります。ページ上の広告数が 5 つになるまではこのマッピングが適用されます（広告数が 5 つの場合のルールも設定されているため）。6 つ目以降の広告を挿入する場合、他の広告との間隔を 1000 ピクセル以上にする必要があります。

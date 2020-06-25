@@ -12,6 +12,7 @@ contributors:
 AMP pages are web pages; any styling to the page and its elements is done using common CSS properties. Style elements using class or element selectors in an embedded stylesheet in the `<head>`, called `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -22,6 +23,7 @@ AMP pages are web pages; any styling to the page and its elements is done using 
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Every AMP page can only have a single embedded stylesheet and inline styles, but there are certain selectors you’re not allowed to use. [Learn all about styling](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

@@ -7,6 +7,7 @@ $title: Modificar a apresentação e o layout
 AMPs são páginas da Web; qualquer estilo adicionado à página e a seus elementos é feito usando propriedades CSS comuns. Adicione estilos aos elementos usando os seletores de classe ou elemento em uma folha de estilo do `<head>`, que se chama `<style amp-custom>`:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -17,6 +18,7 @@ AMPs são páginas da Web; qualquer estilo adicionado à página e a seus elemen
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Cada página AMP pode ter apenas uma folha de estilo incorporada e há certos seletores que você não tem permissão para usar. [Saiba tudo sobre estilos](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

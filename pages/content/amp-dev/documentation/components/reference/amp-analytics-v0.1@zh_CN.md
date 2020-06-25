@@ -2,13 +2,12 @@
 $title: amp-analytics
 $category@: ads-analytics
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: 从 AMP 文档获取分析数据。
 ---
-
 
 <!--
 Copyright 2019 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +25,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 从 AMP 文档获取分析数据。
 
 <table>
@@ -40,7 +37,6 @@ limitations under the License.
     <td>请参阅 AMP By Example 的 <a href="https://ampbyexample.com/components/amp-analytics/">amp-analytics 示例</a>。</td>
   </tr>
 </table>
-
 
 ## 将分析数据发送到供应商还是内部？ <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
@@ -61,13 +57,13 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 
 如果分析服务供应商未集成 AMP，请与其联系以寻求支持。另外，我们建议您在 AMP 项目中创建一个问题，以请求添加相应供应商。另请参阅[在 AMP HTML 中集成您的分析工具](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md)。您也可以与供应商合作，以将数据发送到他们指定的网址。如需了解详情，请参阅下面的[在内部发送数据](#sending-data-in-house)部分。
 
-*示例：将数据发送到第三方分析服务提供商*
+_示例：将数据发送到第三方分析服务提供商_
 
 在以下示例中，分析数据会发送到 Nielsen（已集成 AMP 的第三方分析服务提供商）。如需详细了解如何为 Nielsen 配置分析数据，请参阅 [Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API) 文档。
 
 ```html
 <amp-analytics type="nielsen">
-    <script type="application/json">
+  <script type="application/json">
     {
       "vars": {
         "apid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
@@ -79,7 +75,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
         "segC": "Google AMP"
       }
     }
-    </script>
+  </script>
 </amp-analytics>
 ```
 
@@ -100,29 +96,29 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 在处理分析请求的引荐来源网址标头中包含的 AMP 网址时，请剔除或忽略 `usqp` 参数。该参数供 Google 用于触发针对 Google AMP 缓存的实验。
 [/tip]
 
-*示例：将数据发送到网址*
+_示例：将数据发送到网址_
 
 下面是一个用于跟踪网页浏览情况的简单示例。每当相应网页可见时，触发器事件就会触发，并且会将网页浏览数据和随机 ID 一起发送到指定的网址。
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
-  [tip type="success"]
+[tip type="success"]
 对于一些常见的跟踪用例（例如网页浏览、网页点击、滚动等），请参阅[分析：用例](../../../documentation/guides-and-tutorials/optimize-measure/configure-analytics/use_cases.md)。
 [/tip]
 
@@ -174,7 +170,9 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 在以下示例中，我们指定了 `config` 属性，以便从指定网址加载配置数据。
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 #### 配置重写器 <a name="configuration-rewriter"></a>
@@ -182,6 +180,7 @@ AMP 分析的设计宗旨是“一次衡量，多方报告”。如果您已在�
 “配置重写器”功能旨在方便分析服务提供商以动态方式重写由用户提供的配置。该功能与“远程配置”功能类似，但在向服务器发出的请求中，还会包括所有由用户提供的配置。该功能目前只能由分析服务供应商启用。
 
 分析服务供应商可以使用服务器网址指定 configRewriter 属性。
+
 ```js
 export const VENDOR_ANALYTICS_CONFIG = {
     ...
@@ -204,9 +203,10 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 通过“变量组”功能，分析服务提供商可以将一组预定义的变量组合在一起，以便用户轻松启用。然后，系统会解析这些变量，并将其发送到指定的 `configRewriter` 端点。
 
-分析服务提供商需要在 `configRewriter` 配置内创建一个新的 `varGroups` 对象，以便启用该功能。这样一来，如果发布商希望启用任何由指定的分析服务提供商创建的 `varGroups`，则可以将其添加到自己的分析配置中。可以使用 [AMP HTML 替代指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)中列出的所有受支持的变量。重要提示：${varName} 变体将无法使用。**
+分析服务提供商需要在 `configRewriter` 配置内创建一个新的 `varGroups` 对象，以便启用该功能。这样一来，如果发布商希望启用任何由指定的分析服务提供商创建的 `varGroups`，则可以将其添加到自己的分析配置中。可以使用 [AMP HTML 替代指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)中列出的所有受支持的变量。重要提示：\${varName} 变体将无法使用。\*\*
 
 例如，供应商的配置可能如下所示：
+
 ```js
 // 这由供应商预定义。
 export const VENDOR_ANALYTICS_CONFIG = {
@@ -232,9 +232,9 @@ export const VENDOR_ANALYTICS_CONFIG = {
 在下面的示例中，`group1` 和 `group2` 均已启用。系统将忽略未明确启用的所有组。然后，运行时会解析所有这些已启用的变量，并将其合并到一个将发送到配置重写器网址的 `configRewriter.vars` 对象中。
 
 ```html
-  /* 包含在发布商页面上 */
-  <amp-analytics type="myVendor" id="myVendor" data-credentials="include">
-    <script type="application/json">
+/* 包含在发布商页面上 */
+<amp-analytics type="myVendor" id="myVendor" data-credentials="include">
+  <script type="application/json">
     {
       "configRewriter": {
         "varGroups": {
@@ -247,10 +247,12 @@ export const VENDOR_ANALYTICS_CONFIG = {
         }
       }
     }
-    </script>
-  </amp-analytics>
+  </script>
+</amp-analytics>
 ```
-  在本例中，请求正文将如下所示：
+
+在本例中，请求正文将如下所示：
+
 ```json
   /* 已发送到配置重写器服务器。*/
   "configRewriter": {
@@ -260,7 +262,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
       "title": "Cool Amp Tips"
     }
   }
-  ```
+```
 
 ### 配置数据对象 <a name="configuration-data-objects"></a>
 
@@ -298,9 +300,11 @@ export const VENDOR_ANALYTICS_CONFIG = {
 为了减少请求 ping 的数量，您可以在请求配置中指定批处理行为。使用相同请求的 `triggers` 中的所有 [`extraUrlParams`](#extra-url-params) 都会附加到相应请求的 `baseUrl`。
 
 批处理属性如下：
+
 - `batchInterval`：此属性用于指定对批处理队列中的请求 ping 进行刷新的时间间隔（以秒为单位）。`batchInterval` 可以是一个数字，也可以是一个数字数组（最小时间间隔为 200 毫秒）。请求将遵从数组中的每个值，然后在到达数组末尾时重复最后一个间隔值（或单个值）。
 
 例如，以下配置每 2 秒发出一个请求 ping，其中一个示例请求 ping 如下所示：`https://example.com/analytics?rc=1&rc=2`。
+
 ```javascript
 "requests": {
   "timer": {
@@ -323,6 +327,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 ```
 
 以下配置会在 1 秒后发出第一个请求 ping，然后每隔 3 秒发出一个请求。第一个请求 ping 如下所示：`https://example.com/analytics?rc=1`，第二个请求 ping 如下所示：`https://example.com/analytics?rc=2&amp;rc=3&amp;rc=4`。
+
 ```javascript
 "requests": {
   "timer": {
@@ -384,17 +389,17 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 `triggers` 配置对象用于描述何时应发送分析请求。`triggers` 属性包含一个由触发器名称和触发器配置组成的键值对。触发器名称可以是由字母数字字符 (a-zA-Z0-9) 组成的任何字符串。如果存在同名触发器，来源配置优先级较低的触发器会被来源配置优先级较高的触发器覆盖。
 
-* `on`：（必需）要监听的事件。有效值为 `render-start`、`ini-load`、`click`、`scroll`、`timer`、`visible`、`hidden`、`user-error`、[`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) 和 [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)。
-* `request`：（必需）要发送的请求的名称（如 `requests` 部分中所指定）。
-* `vars`：一个对象，其中包含一些键值对，这些键值对用于覆盖在顶层配置中定义的 `vars`，或指定该触发器的专属变量。
-* `important`：可以指定该设置，以处理支持批处理行为或报告期的请求。如果将 `important` 设为 `true`，则可以使用某些特定触发器来刷新批处理请求队列。在这种情况下，可以在不丢失重要触发器事件的情况下减少请求 ping 的数量。如果将 `important` 设为 `true`，还可以覆盖相应请求的 `reportWindow` 值，以便发出重要的请求 ping。
-* `selector` 和 `selectionMethod`：可以为某些触发器（例如 `click` 和 `visible`）指定这些设置。如需了解详情，请参阅[元素选择器](#element-selector)。
-* `scrollSpec`：（`on` 设为 `scroll` 时，必须提供该配置）该配置与 `scroll` 触发器结合使用。如需了解详情，请参阅下文。
-* `timerSpec`：（`on` 设为 `timer` 时，必须提供该配置）该配置与 `timer` 触发器结合使用。如需了解详情，请参阅下文。
-* `sampleSpec`：该对象用于定义在发送请求之前如何对请求进行抽样。该设置允许根据随机输入或平台支持的其他变量进行抽样。该对象包含相应配置，以指定用于生成哈希的输入和哈希必须满足的阈值。
-    * `sampleOn`：系统会通过填充平台变量对该字符串模板进行扩展，然后再对其进行哈希处理，以生成一个供抽样逻辑（在下文中的阈值部分进行了介绍）使用的数字。
-    * `threshold`：该配置用于过滤掉不符合特定条件的请求 - 对于发送到分析服务供应商的请求，以下逻辑应为 true `HASH(sampleOn) < threshold`。</li>
-* `videoSpec`：（`on` 设为 `video-*` 时，需要使用该配置）该配置与 [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) 触发器结合使用。
+- `on`：（必需）要监听的事件。有效值为 `render-start`、`ini-load`、`click`、`scroll`、`timer`、`visible`、`hidden`、`user-error`、[`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md) 和 [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md)。
+- `request`：（必需）要发送的请求的名称（如 `requests` 部分中所指定）。
+- `vars`：一个对象，其中包含一些键值对，这些键值对用于覆盖在顶层配置中定义的 `vars`，或指定该触发器的专属变量。
+- `important`：可以指定该设置，以处理支持批处理行为或报告期的请求。如果将 `important` 设为 `true`，则可以使用某些特定触发器来刷新批处理请求队列。在这种情况下，可以在不丢失重要触发器事件的情况下减少请求 ping 的数量。如果将 `important` 设为 `true`，还可以覆盖相应请求的 `reportWindow` 值，以便发出重要的请求 ping。
+- `selector` 和 `selectionMethod`：可以为某些触发器（例如 `click` 和 `visible`）指定这些设置。如需了解详情，请参阅[元素选择器](#element-selector)。
+- `scrollSpec`：（`on` 设为 `scroll` 时，必须提供该配置）该配置与 `scroll` 触发器结合使用。如需了解详情，请参阅下文。
+- `timerSpec`：（`on` 设为 `timer` 时，必须提供该配置）该配置与 `timer` 触发器结合使用。如需了解详情，请参阅下文。
+- `sampleSpec`：该对象用于定义在发送请求之前如何对请求进行抽样。该设置允许根据随机输入或平台支持的其他变量进行抽样。该对象包含相应配置，以指定用于生成哈希的输入和哈希必须满足的阈值。
+  - `sampleOn`：系统会通过填充平台变量对该字符串模板进行扩展，然后再对其进行哈希处理，以生成一个供抽样逻辑（在下文中的阈值部分进行了介绍）使用的数字。
+  - `threshold`：该配置用于过滤掉不符合特定条件的请求 - 对于发送到分析服务供应商的请求，以下逻辑应为 true `HASH(sampleOn) < threshold`。</li>
+- `videoSpec`：（`on` 设为 `video-*` 时，需要使用该配置）该配置与 [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) 触发器结合使用。
 
 例如，以下配置可用于根据随机输入从请求中抽取 50% 的样本，或者根据客户端 ID 按 1% 进行抽样。
 
@@ -426,8 +431,8 @@ export const VENDOR_ANALYTICS_CONFIG = {
 选择器属性如下：
 
 - `selector`：此属性用于通过 CSS/DOM 查询查找某个元素或元素集合。可以使用 `selectionMethod` 更改关于如何匹配元素的语义。此属性的值可以是以下值之一：
-    - 有效的 CSS 选择器，例如 `#ad1` 或 `amp-ad`。
-    - `:root` - 一个与文档根目录匹配的特殊选择器。
+  - 有效的 CSS 选择器，例如 `#ad1` 或 `amp-ad`。
+  - `:root` - 一个与文档根目录匹配的特殊选择器。
 - `selectionMethod`：如果指定了此值，此属性可以为以下两个值之一：`scope` 或 `closest`。如果为 `scope`，则允许在 `amp-analytics` 标记的父元素内选择元素。如果为 `closest`，则会搜索与指定选择器相符且最靠近的 `amp-analytics` 标记父级。默认值为 `scope`。
 
 ##### 嵌入内容呈现开始触发器 <a name="embed-render-start-trigger"></a>
@@ -435,6 +440,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 在 iframe 中嵌入其他文档（例如广告）的 AMP 元素可能会报告呈现开始事件 (`"on": "render-start"`)。一旦可以确认嵌入的文档已开始呈现，通常就会发出此事件。请参阅特定 AMP 元素的文档，了解它是否会发出此事件。
 
 嵌入元素的触发器必须包含指向嵌入元素的 [`selector`](#element-selector)：
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -446,6 +452,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 ```
 
 文档本身也会发出呈现开始事件，并且该事件可以配置为：
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -466,6 +473,7 @@ AMP 元素或 AMP 文档的初始内容加载完毕时，初始加载事件 (`"o
 - 对于简单的 AMP 元素（例如 `amp-img`）：资源本身，例如图片或视频。
 
 嵌入元素或 AMP 元素的触发器必须包含指向相应元素的 [`selector`](#element-selector)：
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -477,6 +485,7 @@ AMP 元素或 AMP 文档的初始内容加载完毕时，初始加载事件 (`"o
 ```
 
 文档本身也会发出初始加载事件，并且该事件可以配置为：
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -528,6 +537,7 @@ AMP 元素或 AMP 文档的初始内容加载完毕时，初始加载事件 (`"o
   }
 }
 ```
+
 [tip type="note"]
 有一个[已知问题](https://github.com/ampproject/amphtml/issues/10891)是，它仍报告来自 A4A iframe 嵌入的错误，但该错误与页面无关。
 [/tip]
@@ -639,6 +649,7 @@ visibilitySpec: {
 ##### 滚动触发器 <a name="scroll-trigger"></a>
 
 使用滚动触发器 (`"on": "scroll"`)，可以在用户滚动页面时在特定条件下触发请求。该触发器提供了一些[特殊变量](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/analytics-vars.md#interaction)，用于指示发送请求的触发边界。可以使用 `scrollSpec` 控制请求何时触发：
+
 - `scrollSpec`：该对象可以包含 `verticalBoundaries` 和 `horizontalBoundaries`，而且必须至少包含这两个属性中的一个，才能触发滚动事件。这两个属性的值都应是包含边界（达到相应边界时，才会生成滚动事件）的数字数组。例如，在以下代码段中，当页面垂直滚动 25%、50% 和 90% 时，将会触发滚动事件。此外，当页面水平滚动至滚动宽度的 90% 时，也会触发该事件。为了使页面保持高效，滚动边界会四舍五入为最接近的 `5` 倍数。
 
 ```javascript
@@ -659,9 +670,9 @@ visibilitySpec: {
 使用计时器触发器 (`"on": "timer"`)，可以按一定的时间间隔触发请求。可以使用 `timerSpec` 控制请求何时触发：
 
 - `timerSpec`：`timer` 类型的触发器的规范。除非指定了 `startSpec`，否则计时器会立即触发（默认情况；可以取消设置），之后会按照指定的时间间隔触发。
-    - `interval`：计时器的时间间隔长度，以秒为单位。
-    - `maxTimerLength`：将触发计时器的最长持续时间，以秒为单位。达到 `maxTimerLength` 时，将触发其他请求。默认值为 2 个小时。如果存在 `stopSpec`，但未指定 maxTimerLength，则默认值为无穷大。
-    - `immediate`：是否立即触发计时器。这是一个布尔值，默认为 true
+  - `interval`：计时器的时间间隔长度，以秒为单位。
+  - `maxTimerLength`：将触发计时器的最长持续时间，以秒为单位。达到 `maxTimerLength` 时，将触发其他请求。默认值为 2 个小时。如果存在 `stopSpec`，但未指定 maxTimerLength，则默认值为无穷大。
+  - `immediate`：是否立即触发计时器。这是一个布尔值，默认为 true
 
 ```javascript
 "triggers": {
@@ -717,6 +728,7 @@ visibilitySpec: {
 ```
 
 可以添加 [`visibilitySpec`](#visibility-spec)，以便只有在满足可见性持续时间条件时，才触发请求。
+
 ```json
 "triggers": {
   "defaultPageview": {
@@ -730,6 +742,7 @@ visibilitySpec: {
   }
 }
 ```
+
 以上配置意味着：
 
 <blockquote>
@@ -748,11 +761,11 @@ AMP 访问系统会针对访问流程中的不同状态发出大量事件。如�
 
 `transport` 配置对象用于指定如何发送请求。该值是一个对象，其中包含用于指示哪些传输方法可接受的字段。
 
-* `beacon`：用于指示可以使用 [`navigator.sendBeacon`](https://developer.mozilla.org/zh-cn/docs/Web/API/Navigator/sendBeacon) 传输请求。该方法会发送带有凭据的 POST 请求。除非 `useBody` 为 true，否则请求在发送时正文为空。如需详细了解 `useBody`，请参阅[使用正文发送额外的网址参数](#use-body-for-extra-url-params)。
-* `xhrpost`：用于指示可以使用 `XMLHttpRequest` 传输请求。该方法会发送带有凭据的 POST 请求。除非 `useBody` 为 true，否则请求在发送时正文为空。如需详细了解 `useBody`，请参阅[使用正文发送额外的网址参数](#use-body-for-extra-url-params)。
-* `image`：用于指示可通过生成 `Image` 标记来发送请求。该方法会发送一个 GET 请求。要防止出现由于响应为空或请求失败而导致的控制台警告，请设置 `"image": {"suppressWarnings": true}`。
+- `beacon`：用于指示可以使用 [`navigator.sendBeacon`](https://developer.mozilla.org/zh-cn/docs/Web/API/Navigator/sendBeacon) 传输请求。该方法会发送带有凭据的 POST 请求。除非 `useBody` 为 true，否则请求在发送时正文为空。如需详细了解 `useBody`，请参阅[使用正文发送额外的网址参数](#use-body-for-extra-url-params)。
+- `xhrpost`：用于指示可以使用 `XMLHttpRequest` 传输请求。该方法会发送带有凭据的 POST 请求。除非 `useBody` 为 true，否则请求在发送时正文为空。如需详细了解 `useBody`，请参阅[使用正文发送额外的网址参数](#use-body-for-extra-url-params)。
+- `image`：用于指示可通过生成 `Image` 标记来发送请求。该方法会发送一个 GET 请求。要防止出现由于响应为空或请求失败而导致的控制台警告，请设置 `"image": {"suppressWarnings": true}`。
 
-经 MRC 认证的供应商可以使用第四种传输机制，即“iframe 传输”，具体方法是向 iframe-transport-vendors.js 添加网址字符串。这意味着应创建一个 iframe，并将其 `src` 属性设为此网址。这样一来，请求就会通过 `window.postMessage()` 发送到该 iframe。在这种情况下，请求不必是完整的网址。`iframe` 只能在 `iframe-transport-vendors.js` 中指定，而不能内嵌在 `amp-analytics` 标记中，也不能通过远程配置指定。此外，供应商帧可以发送响应，以供 amp-ad-exit 使用。请参阅 [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) 和 [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html)：前一个文件用于发送 {'collected-data': 'abc'} 的响应 JSON 对象，后一个文件则使用该对象将最终网址中的 'abc' 替换为 'bar_'。
+经 MRC 认证的供应商可以使用第四种传输机制，即“iframe 传输”，具体方法是向 iframe-transport-vendors.js 添加网址字符串。这意味着应创建一个 iframe，并将其 `src` 属性设为此网址。这样一来，请求就会通过 `window.postMessage()` 发送到该 iframe。在这种情况下，请求不必是完整的网址。`iframe` 只能在 `iframe-transport-vendors.js` 中指定，而不能内嵌在 `amp-analytics` 标记中，也不能通过远程配置指定。此外，供应商帧可以发送响应，以供 amp-ad-exit 使用。请参阅 [analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) 和 [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html)：前一个文件用于发送 {'collected-data': 'abc'} 的响应 JSON 对象，后一个文件则使用该对象将最终网址中的 'abc' 替换为 'bar\_'。
 
 如果启用了上述中的多种传输方法，则优先顺序为 `iframe` &gt; `beacon` &gt; `xhrpost` &gt; `image`。系统只会使用一种传输方法，即允许使用、可用且优先级最高的传输方法。如果客户端的用户代理不支持某种方法，系统会使用已启用且优先级次高的方法。默认情况下，上述全部四种方法均处于启用状态。
 
@@ -827,7 +840,10 @@ transport: {
 示例：
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json"></amp-analytics>
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 **config**
@@ -837,7 +853,9 @@ transport: {
 示例：
 
 ```html
-<amp-analytics config="https://example.com/analytics.config.json"></amp-analytics>
+<amp-analytics
+  config="https://example.com/analytics.config.json"
+></amp-analytics>
 ```
 
 **data-credentials**<a name="data-credentials"></a>

@@ -5,6 +5,7 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Who is this course for?
 
 This course is designed for aspiring first-time web developers and current developers looking to build performant websites. Throughout this and the following courses, you will:
@@ -58,8 +59,8 @@ Throughout our three courses, you will build a website for Chico’s Cheese Bicy
 You can click on [this](https://nice-consonant.glitch.me/) link to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner. Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category.
 
 We chose Chico’s site as our model because it offers a collection of features we commonly see on popular websites today. It was built entirely using AMP. Over the course of these lessons, you’re going to build this site from scratch.
-[/filter]
-[filter level="advanced"]
+[/filter][filter level="advanced"]
+
 ## Who is this course for?
 
 This course is designed for developers who want to build performant websites or simply understand AMP. All three courses assume you know HTML and CSS, and the intermediate and advanced courses presume some experience with JavaScript.

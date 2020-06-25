@@ -13,8 +13,8 @@ seperti konten yang memerlukan JavaScript yang ditulis oleh pengguna.
 
 ### `amp-iframe` persyaratan
 
-* Harus setidaknya **600 piksel** atau **75%** viewport pertama yang jauh dari bagian atas.
-* Hanya dapat meminta referensi melalui HTTPS, dan tidak boleh memiliki asal yang sama dengan penampung, kecuali permintaan tidak menentukan izinkan-asal-yang-sama.
+- Harus setidaknya **600 piksel** atau **75%** viewport pertama yang jauh dari bagian atas.
+- Hanya dapat meminta referensi melalui HTTPS, dan tidak boleh memiliki asal yang sama dengan penampung, kecuali permintaan tidak menentukan izinkan-asal-yang-sama.
 
 Baca Lebih Lanjut: Pelajari lebih lanjut di [spesifikasi penuh untuk `amp-iframe`](../../../../documentation/components/reference/amp-iframe.md).
 
@@ -24,8 +24,10 @@ Untuk menyertakan [`amp-iframe`](../../../../documentation/components/reference/
 tambahan untuk komponen yang diperluas:
 
 [sourcecode:html]
+
 <script async custom-element="amp-iframe"
     src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
 [/sourcecode]
 
 ### Menulis markup
@@ -33,10 +35,13 @@ tambahan untuk komponen yang diperluas:
 Contoh [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md):
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe"
+>
 </amp-iframe>
 ```
 
@@ -49,14 +54,21 @@ Baca Lebih Lanjut: Pelajari lebih lanjut tentang placeholder di [Iframe dengan p
 Contoh dengan placeholder:
 
 ```html
-<amp-iframe width="400" height="225"
-sandbox="allow-scripts allow-same-origin"
-layout="responsive"
-src="https://giphy.com/embed/OWabwoEn7ezug">
-<amp-img placeholder layout="fill"
-src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+<amp-iframe
+  width="400"
+  height="225"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://giphy.com/embed/OWabwoEn7ezug"
+>
+  <amp-img
+    placeholder
+    layout="fill"
+    src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"
+  ></amp-img>
 </amp-iframe>
 ```
+
 Render sebagai:
 
 <amp-iframe width="400" height="225"

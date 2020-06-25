@@ -13,16 +13,20 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 `w` 설명자는 브라우저에서 리스트 내 각 이미지의 width를 말해줍니다.
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 노트: AMP는 `w` 설명자가 있는 srcset을 모든 브라우저에서 지원합니다.
@@ -39,16 +43,20 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 아래 예제를 참고하길 바랍니다:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 `sizes` 속성은 viewport가 650px이거나 그 이상인 경우,
@@ -69,23 +77,27 @@ $title: srcset, sizes & heights를 이용한 반응형 이미지 처리
 이 속성의 값은 [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)와
 비슷하게 미디어 표현에 의존하여 사이즈를 정의하지만, 큰 차이점이 두개 있습니다.
 
- 1. 요소의 너비가 아닌 높이를 허용합니다.
- 2. `86%`같은 퍼센트 값을 허용합니다.
- 퍼센트 값은 요소의 너비에 비례합니다.
+1.  요소의 너비가 아닌 높이를 허용합니다.
+2.  `86%`같은 퍼센트 값을 허용합니다.
+    퍼센트 값은 요소의 너비에 비례합니다.
 
-`heights` 속성이 `width`, `height`와 함께 정의되어 있을 때 기본 `layout`은` responsive`으로 정의합니다.
+`heights` 속성이 `width`, `height`와 함께 정의되어 있을 때 기본 `layout`은`responsive`으로 정의합니다.
 
 예:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 이 예제에서 요소의 height는 width의 80%로 정의되어있지만,

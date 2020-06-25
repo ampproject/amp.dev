@@ -10,8 +10,6 @@ toc: true
 $title: amp-sidebar
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -27,8 +25,6 @@ $title: amp-sidebar
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -58,21 +54,21 @@ Cependant, des attributs facultatifs acceptant les requêtes média peuvent êtr
 
 ## Comportement <a name="behavior"></a>
 
-* L'élément `<amp-sidebar>` doit être un enfant direct de `<body>`.
-* La barre latérale ne peut être affichée que sur le côté gauche ou droit d'une page.
-* Le composant `<amp-sidebar>` peut contenir tout élément HTML valide (compatible avec AMP).
-* Le composant `<amp-sidebar>` peut contenir l'un des éléments AMP suivants :
-    * `<amp-accordion>`
-    * `<amp-img>`
-    * `<amp-fit-text>`
-    * `<amp-list>`
-    * `<amp-live-list>`
-    * `<amp-social-share>`</li>
-* La hauteur maximale de la barre latérale est de 100 vh. Si la hauteur est supérieure à 100 vh, une barre de défilement verticale apparaît. La hauteur par défaut est définie sur 100 vh dans la feuille de style (CSS) et peut être remplacée dans cette feuille.
-* La largeur de la barre latérale peut être définie et ajustée à l'aide d'une feuille de style (la largeur minimale est de 45 px).
-* Le zoom tactile est désactivé dans le composant `amp-sidebar` et masqué lorsque la barre latérale est ouverte.
+- L'élément `<amp-sidebar>` doit être un enfant direct de `<body>`.
+- La barre latérale ne peut être affichée que sur le côté gauche ou droit d'une page.
+- Le composant `<amp-sidebar>` peut contenir tout élément HTML valide (compatible avec AMP).
+- Le composant `<amp-sidebar>` peut contenir l'un des éléments AMP suivants :
+  - `<amp-accordion>`
+  - `<amp-img>`
+  - `<amp-fit-text>`
+  - `<amp-list>`
+  - `<amp-live-list>`
+  - `<amp-social-share>`</li>
+- La hauteur maximale de la barre latérale est de 100 vh. Si la hauteur est supérieure à 100 vh, une barre de défilement verticale apparaît. La hauteur par défaut est définie sur 100 vh dans la feuille de style (CSS) et peut être remplacée dans cette feuille.
+- La largeur de la barre latérale peut être définie et ajustée à l'aide d'une feuille de style (la largeur minimale est de 45 px).
+- Le zoom tactile est désactivé dans le composant `amp-sidebar` et masqué lorsque la barre latérale est ouverte.
 
-*Exemple :*
+_Exemple :_
 
 Dans l'exemple suivant, le composant `amp-sidebar` est utilisé comme conteneur d'éléments de navigation. Cependant, les deuxième et quatrième éléments, Nav Item 2 et Nav Item 4, sont affectés à l'identifiant d'élément qui figure sur la page. L'attribut [`on`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-sidebar/../../spec/amp-actions-and-events.md) permet d'effectuer un défilement fluide jusqu'à l'élément, en utilisant l'identifiant d'élément et `scrollTo`.
 
@@ -116,13 +112,13 @@ Si l'utilisateur appuie de nouveau sur la zone de contenu principal partiellemen
 
 Appuyer sur la touche Échap du clavier a également pour effet de fermer la barre latérale.
 
-*Exemple :*
+_Exemple :_
 
 ```html
-<button class="hamburger" on='tap:sidebar1.toggle'></button>
-<button on='tap:sidebar1'>Open</button>
-<button on='tap:sidebar1.open'>Open</button>
-<button on='tap:sidebar1.close'>x</button>
+<button class="hamburger" on="tap:sidebar1.toggle"></button>
+<button on="tap:sidebar1">Open</button>
+<button on="tap:sidebar1.open">Open</button>
+<button on="tap:sidebar1.close">x</button>
 ```
 
 ### Barre d'outils <a name="toolbar"></a>
@@ -131,14 +127,14 @@ Vous pouvez créer un élément `toolbar` qui s'affiche dans l'élément `<body>
 
 #### Comportement <a name="behavior-1"></a>
 
-* La barre latérale peut mettre en œuvre des barres d'outils en ajoutant des éléments de navigation avec les attributs `toolbar` et `toolbar-target`.
-* L'élément de navigation doit être un enfant de `<amp-sidebar>` et respecter le format suivant : `<nav toolbar="(media-query)" toolbar-target="elementID">`.
-    * Voici un exemple d'utilisation valide de la barre d'outils : `<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">`.</li>
-* L'élément de navigation qui contient l'attribut de barre d'outils ne peut comporter qu'un seul élément `<ul>` contenant, à son tour, des éléments `<li>`.
-    * Les éléments `<li>` peuvent contenir tout élément HTML valide (compatible avec AMP) ou des éléments AMP acceptés par `<amp-sidebar>`.</li>
-* Le comportement de la barre d'outils s'applique uniquement lorsque la requête média de l'attribut `toolbar` est valide. Pour que la barre d'outils soit appliquée, il faut, en outre, que la page contienne un élément avec l'identifiant d'attribut `toolbar-target`.
+- La barre latérale peut mettre en œuvre des barres d'outils en ajoutant des éléments de navigation avec les attributs `toolbar` et `toolbar-target`.
+- L'élément de navigation doit être un enfant de `<amp-sidebar>` et respecter le format suivant : `<nav toolbar="(media-query)" toolbar-target="elementID">`.
+  - Voici un exemple d'utilisation valide de la barre d'outils : `<nav toolbar="(max-width: 1024px)" toolbar-target="target-element">`.</li>
+- L'élément de navigation qui contient l'attribut de barre d'outils ne peut comporter qu'un seul élément `<ul>` contenant, à son tour, des éléments `<li>`.
+  - Les éléments `<li>` peuvent contenir tout élément HTML valide (compatible avec AMP) ou des éléments AMP acceptés par `<amp-sidebar>`.</li>
+- Le comportement de la barre d'outils s'applique uniquement lorsque la requête média de l'attribut `toolbar` est valide. Pour que la barre d'outils soit appliquée, il faut, en outre, que la page contienne un élément avec l'identifiant d'attribut `toolbar-target`.
 
-*Exemple : Barre d'outils de base*
+_Exemple : Barre d'outils de base_
 
 Dans l'exemple suivant, un élément `toolbar` est affiché si la largeur de la fenêtre est inférieure ou égale à 767 pixels. `toolbar` contient un élément de saisie de termes de recherche. `toolbar` sera ajouté à l'élément `<div id="target-element">`.
 
@@ -156,32 +152,28 @@ Dans l'exemple suivant, un élément `toolbar` est affiché si la largeur de la 
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="Rechercher..."/>
+        <input placeholder="Rechercher..." />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 ## Application d'un style à la barre d'outils <a name="styling-toolbar"></a>
 
 Des classes sont appliquées à l'élément `toolbar` à l'intérieur de l'élément `<amp-sidebar>` selon que l'élément `toolbar-target` est affiché ou masqué. Cela s'avère utile pour appliquer différents styles à l'élément `toolbar`, puis à l'élément `toolbar-target`. Ces classes sont `amp-sidebar-toolbar-target-shown` et `amp-sidebar-toolbar-target-hidden`. La classe `amp-sidebar-toolbar-target-shown` est appliquée à l'élément `toolbar` lorsque `toolbar-target` est affiché. La classe `amp-sidebar-toolbar-target-hidden`, en revanche, est appliquée à l'élément `toolbar` lorsque `toolbar-target` est masqué.
 
-*Exemple : Classes d'état de la barre d'outils*
+_Exemple : Classes d'état de la barre d'outils_
 
 Dans l'exemple suivant, un élément `toolbar` est affiché si la largeur de la fenêtre est inférieure ou égale à 767 pixels. `toolbar` contient un élément de saisie de termes de recherche. `toolbar` sera ajouté à l'élément `<div id="target-element">`. Toutefois, nous avons ajouté des styles personnalisés pour masquer l'élément `toolbar` lorsque `<div id="toolbar-target">` est affiché.
 
 ```html
 <style amp-custom="">
-
   .amp-sidebar-toolbar-target-shown {
-      display: none;
+    display: none;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -197,15 +189,13 @@ Dans l'exemple suivant, un élément `toolbar` est affiché si la largeur de la 
   <nav toolbar="(max-width: 767px)" toolbar-target="target-element">
     <ul>
       <li>
-        <input placeholder="Rechercher..."/>
+        <input placeholder="Rechercher..." />
       </li>
     </ul>
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 [tip type="success"]
@@ -218,21 +208,21 @@ Regardez les démos sur [AMP By Example](https://ampbyexample.com/components/amp
 
 ### Comportement <a name="behavior-2"></a>
 
-* L'élément `<amp-sidebar>` doit être un enfant direct de `<amp-story>`.
-* Dans le cas des documents AMP standards, la barre latérale est affichée du côté "début", c'est-à-dire à droite pour les langues qui se lisent de gauche à droite et à gauche pour les langues qui se lisent de droite à gauche.
-* L'élément `<amp-sidebar>` utilise le blanc comme couleur de fond par défaut et il peut être remplacé dans la feuille de style.
-* La largeur maximale de l'élément `<amp-sidebar>` est définie sur `280px` et sur `320px` sur les interfaces pour ordinateur.
-* Une icône de menu à trois barres est affichée dans l'interface utilisateur de la story. Elle permet d'ouvrir et de fermer la barre latérale.
+- L'élément `<amp-sidebar>` doit être un enfant direct de `<amp-story>`.
+- Dans le cas des documents AMP standards, la barre latérale est affichée du côté "début", c'est-à-dire à droite pour les langues qui se lisent de gauche à droite et à gauche pour les langues qui se lisent de droite à gauche.
+- L'élément `<amp-sidebar>` utilise le blanc comme couleur de fond par défaut et il peut être remplacé dans la feuille de style.
+- La largeur maximale de l'élément `<amp-sidebar>` est définie sur `280px` et sur `320px` sur les interfaces pour ordinateur.
+- Une icône de menu à trois barres est affichée dans l'interface utilisateur de la story. Elle permet d'ouvrir et de fermer la barre latérale.
 
 Les fonctionnalités et attributs autorisés sont soumis à certaines restrictions afin de fournir une interface utilisateur cohérente à l'échelle de la plate-forme de la story. La section suivante répertorie les fonctionnalités et attributs autorisés pour un élément `amp-sidebar` à l'intérieur d'un composant `amp-story`.
 
 ### Attributs autorisés <a name="allowed-attributes"></a>
 
-* [layout](#layout)
-* [data-close-button-aria-label](#data)
-* [common attributes](#common)
+- [layout](#layout)
+- [data-close-button-aria-label](#data)
+- [common attributes](#common)
 
-*Exemple : Barre latérale de base dans une story*
+_Exemple : Barre latérale de base dans une story_
 
 L'exemple suivant illustre un élément `amp-sidebar` simple dans un composant `amp-story`.
 
@@ -261,7 +251,7 @@ L'exemple suivant illustre un élément `amp-sidebar` simple dans un composant `
 
 ##### side <a name="side"></a>
 
-Indique le côté de la page à partir duquel la barre latérale doit s'ouvrir : `left` ou `right`.  Si aucun côté n'est spécifié, la valeur `side` est héritée de l'attribut `dir` de la balise `body` (`ltr` => `left` , `rtl` => `right`) ; en l'absence d'attribut `dir`, l'attribut `side` est défini, par défaut, sur `left`.
+Indique le côté de la page à partir duquel la barre latérale doit s'ouvrir : `left` ou `right`. Si aucun côté n'est spécifié, la valeur `side` est héritée de l'attribut `dir` de la balise `body` (`ltr` => `left` , `rtl` => `right`) ; en l'absence d'attribut `dir`, l'attribut `side` est défini, par défaut, sur `left`.
 
 ##### layout <a name="layout"></a>
 
@@ -281,7 +271,7 @@ Cet attribut est présent sur les éléments `<nav toolbar="(media-query)" toolb
 
 ##### toolbar-target <a name="toolbar-target"></a>
 
-Cet attribut est présent sur l'élément `<nav toolbar="(media-query)" toolbar-target="elementID">` enfant et accepte un identifiant d'un élément sur la page.  L'attribut `toolbar-target` place la barre d'outils dans l'identifiant spécifié de l'élément sur la page, sans le style de barre d'outils par défaut. Pour plus d'informations sur l'utilisation des barres d'outils, consultez la section [Barre d'outils](#toolbar-1).
+Cet attribut est présent sur l'élément `<nav toolbar="(media-query)" toolbar-target="elementID">` enfant et accepte un identifiant d'un élément sur la page. L'attribut `toolbar-target` place la barre d'outils dans l'identifiant spécifié de l'élément sur la page, sans le style de barre d'outils par défaut. Pour plus d'informations sur l'utilisation des barres d'outils, consultez la section [Barre d'outils](#toolbar-1).
 
 ##### common attributes <a name="common"></a>
 
@@ -291,9 +281,9 @@ Cet élément inclut des [attributs communs](../../../documentation/guides-and-t
 
 Un style peut être appliqué au composant `amp-sidebar` à l'aide d'une feuille de style (CSS) standard.
 
-* L'attribut `width` du composant `amp-sidebar` peut être défini de manière à ajuster la largeur entre les valeurs minimale (45 px) et maximale (80 vw) prédéfinies.
-* Si nécessaire, la hauteur du composant `amp-sidebar` peut être définie afin d'ajuster la hauteur de la barre latérale. Si la valeur de hauteur est supérieure à 100 vw, la barre latérale est accompagnée d'une barre de défilement verticale. La hauteur prédéfinie de la barre latérale est de 100 vw ; cette valeur peut être réduite dans la feuille de style.
-* L'état actuel de la barre latérale est affiché au moyen de l'attribut `open` défini dans la balise `amp-sidebar` lorsque la barre latérale est ouverte sur la page.
+- L'attribut `width` du composant `amp-sidebar` peut être défini de manière à ajuster la largeur entre les valeurs minimale (45 px) et maximale (80 vw) prédéfinies.
+- Si nécessaire, la hauteur du composant `amp-sidebar` peut être définie afin d'ajuster la hauteur de la barre latérale. Si la valeur de hauteur est supérieure à 100 vw, la barre latérale est accompagnée d'une barre de défilement verticale. La hauteur prédéfinie de la barre latérale est de 100 vw ; cette valeur peut être réduite dans la feuille de style.
+- L'état actuel de la barre latérale est affiché au moyen de l'attribut `open` défini dans la balise `amp-sidebar` lorsque la barre latérale est ouverte sur la page.
 
 [tip type="success"]
 Rendez-vous sur [AMP Start](https://ampstart.com/components#navigation) pour consulter des menus de navigation responsifs prédéfinis que vous pouvez utiliser dans vos pages AMP.
@@ -309,11 +299,9 @@ Lorsque la fonctionnalité `toolbar` est utilisée, `autoscroll` ne fonctionne q
 
 ```html
 <style amp-custom="">
-
   nav [toolbar] {
     overflow: auto;
   }
-
 </style>
 
 <amp-sidebar id="sidebar1" layout="nodisplay" side="right">
@@ -329,9 +317,7 @@ Lorsque la fonctionnalité `toolbar` est utilisée, `autoscroll` ne fonctionne q
   </nav>
 </amp-sidebar>
 
-<div id="target-element">
-</div>
-
+<div id="target-element"></div>
 ```
 
 Consultez [cet exemple de fichier](https://github.com/ampproject/amphtml/blob/master/examples/amp-sidebar-autoscroll.amp.html) pour obtenir un exemple de code opérationnel.

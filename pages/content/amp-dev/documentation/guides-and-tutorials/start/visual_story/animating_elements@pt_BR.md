@@ -2,7 +2,7 @@
 $title: Animação de elementos
 ---
 
-Para incrementar ainda mais uma história AMP, você pode aplicar entradas com animação a elementos na página. Por exemplo, faça o título surgir do lado esquerdo, descer da parte superior da página, aparecer lentamente e muito mais.  A estrutura das histórias AMP conta com as seguintes animações predefinidas:
+Para incrementar ainda mais uma história AMP, você pode aplicar entradas com animação a elementos na página. Por exemplo, faça o título surgir do lado esquerdo, descer da parte superior da página, aparecer lentamente e muito mais. A estrutura das histórias AMP conta com as seguintes animações predefinidas:
 
 <table>
 <thead>
@@ -106,7 +106,7 @@ Para incrementar ainda mais uma história AMP, você pode aplicar entradas com a
 </tbody>
 </table>
 
-Para aplicar uma entrada com animação a um elemento, é preciso especificar <code>animate-in="<em>&lt;animation preset></em>"</code> com um dos valores de animação predefinida.  Por exemplo, para fazer o texto descer da parte superior da página, adicione `animate-in="drop"` ao elemento text:
+Para aplicar uma entrada com animação a um elemento, é preciso especificar <code>animate-in="<em>&lt;animation preset></em>"</code> com um dos valores de animação predefinida. Por exemplo, para fazer o texto descer da parte superior da página, adicione `animate-in="drop"` ao elemento text:
 
 ```html
 <amp-story-page id="page3">
@@ -126,8 +126,8 @@ Adicione o atributo `animate-in="<animação predefinida>"` a elementos das suas
 
 Cada animação predefinida tem valores de tempo padrão:
 
-* **Atraso**: é o tempo decorrido até o início da animação.  Por exemplo, com um atraso de 0,3s, a animação entrará na página após 0,3 segundos. Se o atraso for de 0s, a animação começará imediatamente.
-* **Duração**: é o tempo total da animação.  Por exemplo, a animação de aparecimento lento leva 500ms do início ao fim.
+- **Atraso**: é o tempo decorrido até o início da animação. Por exemplo, com um atraso de 0,3s, a animação entrará na página após 0,3 segundos. Se o atraso for de 0s, a animação começará imediatamente.
+- **Duração**: é o tempo total da animação. Por exemplo, a animação de aparecimento lento leva 500ms do início ao fim.
 
 É possível personalizar o tempo da animação alterando o atraso ou a duração dela por meio dos atributos `animate-in-delay` e `animate-in-duration`. No exemplo a seguir, `my-element` entra pelo lado esquerdo da página após 0,3 segundos, e a animação termina em 0,5 segundos:
 
@@ -145,27 +145,39 @@ Cada animação predefinida tem valores de tempo padrão:
 
 ## Animação da última página
 
-A última página da nossa história AMP é composta por duas camadas: a primeira é uma colagem de imagens de animais, e a segunda exibe um texto de banner.  Para criar essa página, **adicione** o código a seguir logo após a página anterior da história:
+A última página da nossa história AMP é composta por duas camadas: a primeira é uma colagem de imagens de animais, e a segunda exibe um texto de banner. Para criar essa página, **adicione** o código a seguir logo após a página anterior da história:
 
 ```html
 <amp-story-page id="page5">
   <amp-story-grid-layer template="vertical" class="noedge">
     <div class="wrapper">
-      <amp-img src="assets/cat.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/cat.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/dog.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/dog.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/bird.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/bird.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
-      <amp-img src="assets/rabbit.jpg"
-          width="720" height="1280"
-          layout="responsive">
+      <amp-img
+        src="assets/rabbit.jpg"
+        width="720"
+        height="1280"
+        layout="responsive"
+      >
       </amp-img>
     </div>
   </amp-story-grid-layer>
@@ -174,6 +186,7 @@ A última página da nossa história AMP é composta por duas camadas: a primeir
   </amp-story-grid-layer>
 </amp-story-page>
 ```
+
 Atualize a história AMP no seu navegador e verifique se a página é renderizada corretamente e tem a seguinte aparência:
 
 {{ image('/static/img/docs/tutorials/amp_story/pg5-collage.png', 720, 1280, align='center third', alt='Static page 5' ) }}
@@ -183,9 +196,9 @@ A página está ótima, mas o conteúdo é estático. Vamos dar um toque de anim
 Primeiro, animamos a entrada do texto de banner com o efeito "whoosh in" a partir da direita da página. Insira `animate-in="whoosh-in-right"` ao elemento `<p>` da seguinte maneira:
 
 ```html hl_lines="2"
-<p class="banner-text"
-  animate-in="whoosh-in-right">
-Pets can lower your stress levels!</p>
+<p class="banner-text" animate-in="whoosh-in-right">
+  Pets can lower your stress levels!
+</p>
 ```
 
 Atualize a página da história no seu navegador e verifique se ela surge da direita.
@@ -193,61 +206,84 @@ Atualize a página da história no seu navegador e verifique se ela surge da dir
 Em seguida, faremos todas as imagens aparecerem lentamente. Insira `animate-in="fade-in"` em todos os elementos [`amp-img`](../../../../documentation/components/reference/amp-img.md). Seu código será semelhante a este:
 
 ```html hl_lines="4 9 14 19"
-<amp-img src="assets/cat.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-  width="720" height="1280"
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
   layout="responsive"
-  animate-in="fade-in">
+  animate-in="fade-in"
+>
 </amp-img>
 ```
 
-Se você atualizar a página, todas as imagens aparecerão lentamente.  Isso é ótimo, mas quase não é possível ver o efeito porque todas as imagens aparecem ao mesmo tempo. Para melhorar o efeito visual, podemos alterar o tempo das animações.
+Se você atualizar a página, todas as imagens aparecerão lentamente. Isso é ótimo, mas quase não é possível ver o efeito porque todas as imagens aparecem ao mesmo tempo. Para melhorar o efeito visual, podemos alterar o tempo das animações.
 
 Vamos atrasar a entrada da primeira imagem para que ela apareça próximo de quando a animação do banner de texto terminar: por exemplo, 0,4s. As três imagens restantes podem aparecer 0,2s após a entrada da anterior. Adicione `animate-in-delay=""` a cada elemento [`amp-img`](../../../../documentation/components/reference/amp-img.md) com o valor de atraso adequado. Seu código será semelhante a este exemplo:
 
 ```html hl_lines="5 11 17 23"
-<amp-img src="assets/cat.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.4s">
+<amp-img
+  src="assets/cat.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.4s"
+>
 </amp-img>
-<amp-img src="assets/dog.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="0.6s">
+<amp-img
+  src="assets/dog.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="0.6s"
+>
 </amp-img>
-<amp-img src="assets/bird.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay=".8s">
+<amp-img
+  src="assets/bird.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay=".8s"
+>
 </amp-img>
-<amp-img src="assets/rabbit.jpg"
-    width="720" height="1280"
-    layout="responsive"
-    animate-in="fade-in"
-    animate-in-delay="1s">
+<amp-img
+  src="assets/rabbit.jpg"
+  width="720"
+  height="1280"
+  layout="responsive"
+  animate-in="fade-in"
+  animate-in-delay="1s"
+>
 </amp-img>
-
 ```
 
-Atualize sua história.  A última página terá a seguinte aparência:
+Atualize sua história. A última página terá a seguinte aparência:
 
 {{ anim('/static/img/docs/tutorials/amp_story/pg5-collage-animation.gif', 720, 1280, align='center third', alt='Page 5 collage', poster='/static/img/docs/tutorials/amp_story/pg5-collage.png' ) }}
 

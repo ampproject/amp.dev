@@ -7,6 +7,7 @@ $title: 修改呈现形式和布局
 AMP 是一些网页；页面及其元素的任何样式设置操作都是使用常见 CSS 属性完成的。使用类或 `<head>` 中名为 `<style amp-custom>` 的内联样式表中的元素选择器来设置元素的样式：
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -17,6 +18,7 @@ AMP 是一些网页；页面及其元素的任何样式设置操作都是使用�
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 每个 AMP 页面都只有一个嵌入的样式表，并且还有一些不允许您使用的选择器。[了解所有样式设置相关信息](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md)。

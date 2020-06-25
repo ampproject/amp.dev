@@ -45,15 +45,15 @@ limitations under the License.
 
 所有 AMP 文档中都必须包含以下标记：
 
-* <a name="doctype"></a>`<!doctype html>`
-* <a name="html"></a>`<html amp> 或 <html ⚡>`
-* <a name="head"></a>`<head>`
-* <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
-* <a name="utf"></a>`<meta charset="utf-8">`
-* <a name="viewport"></a>`<meta name="viewport" content="...">`
-* <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
-* <a name="body"></a>`<body>`
+- <a name="doctype"></a>`<!doctype html>`
+- <a name="html"></a>`<html amp> 或 <html ⚡>`
+- <a name="head"></a>`<head>`
+- <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
+- <a name="utf"></a>`<meta charset="utf-8">`
+- <a name="viewport"></a>`<meta name="viewport" content="...">`
+- <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+- <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- <a name="body"></a>`<body>`
 
 在 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 验证工具规范</a>中，这些必需的标记包含 `mandatory: true` 字段；
 [AMP 规范](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)中也提到了这些标记。
@@ -206,8 +206,7 @@ HTML 库中找到等效实现。要查看
 
 可用的属性都已列入白名单，因此目前还没有列表将所有不允许使用的属性明确列出。
 要查看每个特定标记支持的属性，
-请在 [AMP 验证工具规范]
-(https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中搜索 HTML 标记，然后搜索 `attrs`。
+请在 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中搜索 HTML 标记，然后搜索 `attrs`。
 
 除了白名单中列出的每个标记专用的属性以外，
 所有 AMP 标记还可以使用 `$GLOBAL_ATTRS` 下已列入白名单的任何属性；
@@ -235,12 +234,15 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 带有必需 CDATA 的标记包括：
 
 [sourcecode:html]
+
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
 [/sourcecode]
 
 以及：
 
 [sourcecode:html]
+
 <style amp-custom>
 [/sourcecode]
 
@@ -631,8 +633,9 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 * `<meta viewport>`
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* `<body>`
-* `<script src="https://cdn.ampproject.org/v0.js">`
+
+- `<body>`
+- `<script src="https://cdn.ampproject.org/v0.js">`
 
 ## 样式和布局错误 <a name="style-and-layout-errors"></a>
 
@@ -654,8 +657,7 @@ CDATA 是开始和结束 HTML 标记之间的内容数据，
 因此 AMP 验证工具不会显示错误。
 
 每个 AMP 标记都有一份 `supported_layouts` 列表，
-如 [AMP 验证工具规范]
-(https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中所定义的那样。
+如 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中所定义的那样。
 对于不受支持的布局，验证工具会显示错误，
 并会检查预定义布局的验证规则。
 
@@ -942,7 +944,7 @@ AMP 网页不能包含模板语法，
 </table>
 
 一旦验证工具在属性值中发现
-[未转义的 Mustache 模板语法] (https://mustache.github.io/mustache.5.html)，
+[未转义的 Mustache 模板语法](https://mustache.github.io/mustache.5.html)，
 就会出现这种错误。
 
 ### 属性包含模板 partial
@@ -1009,6 +1011,5 @@ AMP 网页不能包含模板语法，
 如果在 AMP 文档中发现之前有效的 AMP 属性，就会显示此警告。
 这只是一个警告；带有警告的 AMP 文档仍然有效。
 
-请在 [AMP 验证工具规范]
-(https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中搜索 `deprecation`
+请在 [AMP 验证工具规范](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)中搜索 `deprecation`
 ，以查看每个 AMP 标记的已弃用属性。

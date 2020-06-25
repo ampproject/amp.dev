@@ -10,15 +10,17 @@ PWA として最も一般的なのは、Ajax で JSON API にアクセスする�
 
 JSON API から返されるコンテンツは未加工ですので、クライアントにレンダリングする前に HTML に変換する必要があります。この処理が大変なことが、PWA の維持管理を難しくしています。これに代わる方法として、既存の AMP ページをコンテンツ ソースとして再利用することをおすすめします。AMP を使用すれば、数行のコードを追加するだけでこの処理を実装できます。
 
-##  PWA に「Shadow AMP」をインクルードする
+## PWA に「Shadow AMP」をインクルードする
 
 最初のステップとして、「Shadow AMP」という特別な AMP を PWA に含めます。これにより、最上位のページに AMP ライブラリが読み込まれます。これは上位のコンテンツの管理ではなく、指定したページの一部を「増幅」するためだけに使用します。
 
 ページの先頭に次のように記述して Shadow AMP をインクルードします。
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### Shadow AMP API が使用可能になったことを確認する方法
@@ -29,7 +31,7 @@ Shadow AMP ライブラリが使用可能になったかどうかは、グロー
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -37,8 +39,8 @@ Shadow AMP ライブラリが使用可能になったかどうかは、グロー
 
 このコードは次のように解釈されます。
 
-  1. 「window.AMP が存在しない場合は、その位置を確保するために空の配列を作成する」
-  2. 「その配列に、AMP が使用可能になったときに実行すべきコールバック関数をプッシュする」
+1. 「window.AMP が存在しない場合は、その位置を確保するために空の配列を作成する」
+2. 「その配列に、AMP が使用可能になったときに実行すべきコールバック関数をプッシュする」
 
 Shadow AMP ライブラリが実際に読み込まれると、すでに `window.AMP` にコールバックの配列があることを認識してキュー全体を処理します。この関数は、もう一度実行しても正常に動作します。Shadow AMP によって `window.AMP` が置き換えられ、カスタムの `push` メソッドによって直ちにコールバックが処理されるからです。
 
@@ -57,20 +59,20 @@ Shadow AMP ライブラリが実際に読み込まれると、すでに `window.
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -87,8 +89,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 
@@ -113,12 +115,11 @@ ampedDoc.close();
 
 AMP を埋め込んだ PWA の動作を実際にご覧いただくため、[React サンプル](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)を作成しました。ここで説明した手順をシンプルな React コンポーネントにまとめてあります。柔軟にカスタマイズできる JavaScript の PWA と、コンテンツを瞬時に提供できる AMP の長所を兼ね備えており、ナビゲーション時の遷移もスムーズです。
 
-* ソースコードはこちら: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
-* npm により React コンポーネントをスタンドアロンで使用したい場合はこちら: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
-* 操作可能なサンプルはこちら: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/)（スマートフォンまたはモバイル エミュレーションで最適に動作します）
+- ソースコードはこちら: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa)
+- npm により React コンポーネントをスタンドアロンで使用したい場合はこちら: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document)
+- 操作可能なサンプルはこちら: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/)（スマートフォンまたはモバイル エミュレーションで最適に動作します）
 
 Polymer フレームワークを使用した PWA と AMP のサンプルも用意しました。このサンプルでは、[amp-viewer](https://github.com/PolymerLabs/amp-viewer/) を使用して AMP を埋め込んでいます。
 
-* コードはこちら: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
-* 操作可能なサンプルはこちら: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)
-
+- コードはこちら: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp)
+- 操作可能なサンプルはこちら: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/)

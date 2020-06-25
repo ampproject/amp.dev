@@ -1,5 +1,5 @@
 ---
-$title: "Analytics: الأساسيات"
+$title: 'Analytics: الأساسيات'
 ---
 
 ابدأ من هنا للتعرّف على أساسيات تحليلات AMP.
@@ -83,7 +83,11 @@ $title: "Analytics: الأساسيات"
 [تصريح بشأن تضمين مكون](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 النموذج التالي مشابه [للنموذج <span dir="ltr" class="nowrap">`amp-pixel`</span>](../../../../documentation/components/reference/amp-pixel.md).
@@ -93,19 +97,19 @@ $title: "Analytics: الأساسيات"
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM",
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -129,7 +133,9 @@ $title: "Analytics: الأساسيات"
 [رقم تعريف العميل](analytics_basics.md#user-identification):
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 نظرًا لبساطتها،
@@ -156,25 +162,25 @@ $title: "Analytics: الأساسيات"
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-    "account": "ABC123",
-  },
-  "triggers": {
-    "someEvent": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
       "vars": {
-        "title": "My homepage",
+        "account": "ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -227,7 +233,9 @@ $title: "Analytics: الأساسيات"
 على سبيل المثال:
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 إذا وجدت AMP أن ملف تعريف الارتباط هذا تم تعيينه،

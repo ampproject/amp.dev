@@ -1,8 +1,8 @@
 ## Assumptions
 
-- *You're packaging (i.e. want to create SXG for) `amp.dev` (this exact
-  domain)*, and the appropriate certificates are in the `certs/` directory.
-- *You're deploying to the Google Cloud project `amp-dev-sxg`*, and the
+- _You're packaging (i.e. want to create SXG for) `amp.dev` (this exact
+  domain)_, and the appropriate certificates are in the `certs/` directory.
+- _You're deploying to the Google Cloud project `amp-dev-sxg`_, and the
   password to decrypt the key will be available via [project-wide custom
   metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#projectwide)
   at

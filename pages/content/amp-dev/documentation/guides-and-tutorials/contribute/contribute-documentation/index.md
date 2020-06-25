@@ -10,6 +10,7 @@ formats:
   - email
 author: CrystalOnScript
 ---
+
 Documentation is the starting point for developers to learn how to build successful websites, stories, ads, and dynamic emails with AMP. The core AMP documentation team is a small one, but our responsibility is big. We appreciate your help! Contributors can fix typos, correct out of date information, and write brand new docs! Use this page to get started learning the ins and outs of becoming a documentation contributor.
 
 Thanks for your interest in contributing to the AMP Project, welcome to the team!
@@ -26,10 +27,10 @@ There are several ways to contribute documentation to amp.dev. We’ve outlined 
 
 Our tiny (although mighty) team is busy hacking away our issues large and small. If you’d like to contribute but are unsure of where to start, check our issues and filter by the [`good first issues` label](https://github.com/ampproject/amp.dev/labels/good%20first%20issue). These are easy fixes that will get you familiar with amp.dev and how the contributing process works.
 
-## Editing documentation  
+## Editing documentation
 
 If you see out of date, misplaced, or incorrect information, you can fix it! We welcome fixes as pull requests, but are equally appreciative if you file an issue. Bonus points if you file an issue and assign it to yourself. This tracks efforts and avoids duplicate work.
 
-## Writing documentation  
+## Writing documentation
 
 Want a guide or tutorial but don’t see it on amp.dev? You can write it! Start by reviewing the [types of documentation we accept](documentation-types.md) and [submitting a documentation proposal](https://github.com/ampproject/amp.dev/issues/new?assignees=&labels=&template=--content-proposal-.md&title=Content+proposal+). Once your proposal has been accepted, get familiar with the[ AMP terminology guide](formatting.md?format=websites) and [documentation formatting guidelines](formatting.md). Look [here for information on contributing examples](https://github.com/ampproject/amp.dev/blob/future/contributing/samples.md).

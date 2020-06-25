@@ -77,10 +77,12 @@ Cache AMP Google.
 Misalnya, untuk daftar URL tertentu:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 Bagian isi respons berisi pemetaan URL AMP dalam format JSON:
@@ -116,14 +118,14 @@ AMP URL API. Namun, Anda dapat mengambil URL tersimpan dari URL AMP
 jaringan penayangan konten (CDN) berbasis proxy untuk menayangkan dokumen AMP yang valid.
 Cache AMP didesain untuk:
 
-*   Hanya menayangkan halaman AMP yang valid.
-*   Memungkinkan halaman AMP dimuat sebelumnya secara efisien dan aman.
-*   Melakukan pengoptimalan performa tambahan pada konten yang berguna bagi pengguna.
+- Hanya menayangkan halaman AMP yang valid.
+- Memungkinkan halaman AMP dimuat sebelumnya secara efisien dan aman.
+- Melakukan pengoptimalan performa tambahan pada konten yang berguna bagi pengguna.
 
 Saat ini, ada 2 penyedia Cache AMP:
 
-*   [AMP Cache Google](https://developers.google.com/amp/cache/)
-*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
+- [AMP Cache Google](https://developers.google.com/amp/cache/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Hal ini memberikan dua pilihan untuk menampilkan file AMP dalam aplikasi dengan menggunakan:
 
@@ -132,17 +134,17 @@ Hal ini memberikan dua pilihan untuk menampilkan file AMP dalam aplikasi dengan 
 
 Kami merekomendasikan penggunaan Cache AMP dengan alasan berikut:
 
-*  Pengalaman pengguna yang lebih baik karena waktu muat lebih cepat dan latensi rendah
-    (waktu muat >1 detik lebih cepat).
-*  Keuntungan performa dan bandwidth karena ada penyimpanan cache tambahan untuk artefak yang
-    bergantung pada klien, misalnya penyimpanan cache versi berbeda dari gambar yang sama
-    tergantung ukuran viewport klien.
-*  File AMP asli mungkin bukan lagi AMP yang valid, yang dapat mengakibatkan
-    pengalaman pengguna yang buruk. Dalam hal ini, Cache AMP menayangkan versi
-    valid terakhir dari file AMP.
-*  Penayang yang tidak jujur dapat menayangkan dua dokumen berbeda ke
-    crawler Cache AMP dan ke pengguna. Penggunaan Cache AMP menjamin bahwa
-    pengguna akan selalu melihat file AMP yang sama dengan Cache.
+- Pengalaman pengguna yang lebih baik karena waktu muat lebih cepat dan latensi rendah
+  (waktu muat >1 detik lebih cepat).
+- Keuntungan performa dan bandwidth karena ada penyimpanan cache tambahan untuk artefak yang
+  bergantung pada klien, misalnya penyimpanan cache versi berbeda dari gambar yang sama
+  tergantung ukuran viewport klien.
+- File AMP asli mungkin bukan lagi AMP yang valid, yang dapat mengakibatkan
+  pengalaman pengguna yang buruk. Dalam hal ini, Cache AMP menayangkan versi
+  valid terakhir dari file AMP.
+- Penayang yang tidak jujur dapat menayangkan dua dokumen berbeda ke
+  crawler Cache AMP dan ke pengguna. Penggunaan Cache AMP menjamin bahwa
+  pengguna akan selalu melihat file AMP yang sama dengan Cache.
 
 [tip type="important"]
 Saat menayangkan halaman AMP melalui Cache AMP, berikan pengalaman yang
@@ -165,12 +167,12 @@ di Stack Overflow untuk mengetahui cara terbaik dalam mengonfigurasi WebView unt
 
 Berikut ini beberapa praktik terbaik umum untuk mengimplementasikan AMP Viewer:
 
-*   Tayangkan halaman AMP dari Cache AMP (waktu muat >1 detik lebih cepat).
-*   Tampilkan asal penayang artikel (misalnya dalam header yang dapat diciutkan).
-*   Sediakan tindakan berbagi (lihat juga bagian "[Membagikan Konten AMP](integrate-with-apps.md#sharing-amp-content)"
-    di bawah).
-*   Pada penampil berbasis WebView, aktifkan cookie pihak ketiga.
-*   Setel perujuk untuk platform/aplikasi Anda.
+- Tayangkan halaman AMP dari Cache AMP (waktu muat >1 detik lebih cepat).
+- Tampilkan asal penayang artikel (misalnya dalam header yang dapat diciutkan).
+- Sediakan tindakan berbagi (lihat juga bagian "[Membagikan Konten AMP](integrate-with-apps.md#sharing-amp-content)"
+  di bawah).
+- Pada penampil berbasis WebView, aktifkan cookie pihak ketiga.
+- Setel perujuk untuk platform/aplikasi Anda.
 
 ### Membagikan Konten AMP <a name="sharing-amp-content"></a>
 

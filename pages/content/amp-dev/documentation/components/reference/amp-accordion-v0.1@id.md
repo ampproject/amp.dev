@@ -2,13 +2,12 @@
 $title: amp-accordion
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Provides a way for viewers to have a glance at the outline of the content and jump to a section of their choice at will.
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Menyediakan cara bagi pengunjung untuk melihat sekilas garis besar konten dan meloncat ke bagian mana pun. Cara ini berguna pada perangkat seluler yang bahkan beberapa kalimat dalam suatu bagian pun terkadang memerlukan scrolling.
 
@@ -45,23 +42,23 @@ Menyediakan cara bagi pengunjung untuk melihat sekilas garis besar konten dan me
   </tr>
 </table>
 
-
 ## Perilaku <a name="behavior"></a>
 
 Komponen `amp-accordion` memungkinkan Anda menampilkan bagian konten yang dapat diciutkan dan diluaskan. Setiap turunan langsung dari komponen `amp-accordion` akan dianggap sebagai bagian dalam accordion. Setiap node tersebut harus berupa tag `<section>`.
 
-* Suatu `amp-accordion` dapat berisi satu atau beberapa elemen `<section>` sebagai turunan langsungnya.
-* Setiap `<section>` harus berisi persis dua turunan langsung.
-* Turunan pertama (dari bagian tersebut) menunjukkan judul bagian dan harus berupa elemen judul (salah satu dari `h1`, `h2`, ..., `h6`, `header`).
-* Turunan kedua (dari bagian tersebut) dapat berupa tag apa pun yang diizinkan dalam HTML AMP dan menunjukkan isi bagian.
-* Mengklik/menge-tap judul bagian akan memperluas atau menciutkan bagian itu.
-* Status diciutkan/diluaskan setiap bagian dalam elemen `amp-accordion` akan dipertahankan selama level sesi. Untuk berhenti mempertahankan status ini, tambahkan atribut `disable-session-states` ke elemen `amp-accordion`.
+- Suatu `amp-accordion` dapat berisi satu atau beberapa elemen `<section>` sebagai turunan langsungnya.
+- Setiap `<section>` harus berisi persis dua turunan langsung.
+- Turunan pertama (dari bagian tersebut) menunjukkan judul bagian dan harus berupa elemen judul (salah satu dari `h1`, `h2`, ..., `h6`, `header`).
+- Turunan kedua (dari bagian tersebut) dapat berupa tag apa pun yang diizinkan dalam HTML AMP dan menunjukkan isi bagian.
+- Mengklik/menge-tap judul bagian akan memperluas atau menciutkan bagian itu.
+- Status diciutkan/diluaskan setiap bagian dalam elemen `amp-accordion` akan dipertahankan selama level sesi. Untuk berhenti mempertahankan status ini, tambahkan atribut `disable-session-states` ke elemen `amp-accordion`.
 
 #### Contoh: Menampilkan accordion <a name="example-displaying-an-accordion"></a>
 
-Dalam contoh ini, kami menampilkan tiga bagian. Bagian ketiga diluaskan saat halaman dimuat.  Selain itu, kami tidak mempertahankan status yang diciutkan/diluaskan dengan menetapkan `disable-session-states`.
+Dalam contoh ini, kami menampilkan tiga bagian. Bagian ketiga diluaskan saat halaman dimuat. Selain itu, kami tidak mempertahankan status yang diciutkan/diluaskan dengan menetapkan `disable-session-states`.
 
 [example preview="inline" playground="true" imports="amp-accordion"]
+
 ```html
 <amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
@@ -80,6 +77,7 @@ Dalam contoh ini, kami menampilkan tiga bagian. Bagian ketiga diluaskan saat hal
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 [tip type="success"]
@@ -146,13 +144,13 @@ Peristiwa di bawah akan dipicu pada `section` dari `accordion`.
 
 ## Penataan gaya <a name="styling"></a>
 
-* Anda dapat menggunakan pemilih elemen `amp-accordion` untuk menata gayanya dengan bebas.
-* Elemen `amp-accordion` selalu berupa `display: block`.
-* Elemen `<section>`, judul, dan isi tidak dapat dibuat mengapung.
-* Saat bagian diluaskan, elemen `<section>` memiliki atribut `expanded`.
-* Elemen isi telah di-clearfix dengan `overflow: hidden`, sehingga tidak dapat memiliki scrollbar.
-* Margin elemen `<amp-accordion>`, `<section>`, judul, dan isi ditetapkan ke 0 dan dapat diganti dalam gaya kustom.
-* Baik elemen judul maupun isi bersifat `position: relative`.
+- Anda dapat menggunakan pemilih elemen `amp-accordion` untuk menata gayanya dengan bebas.
+- Elemen `amp-accordion` selalu berupa `display: block`.
+- Elemen `<section>`, judul, dan isi tidak dapat dibuat mengapung.
+- Saat bagian diluaskan, elemen `<section>` memiliki atribut `expanded`.
+- Elemen isi telah di-clearfix dengan `overflow: hidden`, sehingga tidak dapat memiliki scrollbar.
+- Margin elemen `<amp-accordion>`, `<section>`, judul, dan isi ditetapkan ke 0 dan dapat diganti dalam gaya kustom.
+- Baik elemen judul maupun isi bersifat `position: relative`.
 
 ## Validasi <a name="validation"></a>
 

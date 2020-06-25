@@ -2,13 +2,12 @@
 $title: amp-accordion
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Görüntüleyenlerin içeriğin ana hatlarına göz atması ve istediklerinde seçtikleri bir bölüme atlaması için bir yol sağlar.
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Görüntüleyenlerin içeriğin ana hatlarına göz atması ve herhangi bir bölüme atlaması için bir yol sağlar. Bu, bir bölümün birkaç cümlesi kaydırma gerektirdiğinde bile mobil cihazlar için yararlıdır.
 
@@ -45,23 +42,23 @@ Görüntüleyenlerin içeriğin ana hatlarına göz atması ve herhangi bir böl
   </tr>
 </table>
 
-
 ## Davranış <a name="behavior"></a>
 
 `amp-accordion` bileşeni, daraltılabilir ve genişletilebilir içerik bölümlerini görüntülemenize olanak tanır. `amp-accordion` bileşeninin en yakın alt öğelerinin her biri akordeondaki bir bölüm olarak kabul edilir. Bu düğümlerin her biri bir `<section>` etiketi olmalıdır.
 
-* Bir `amp-accordion`, doğrudan alt öğeleri olarak bir veya daha fazla `<section>` öğesi içerebilir.
-* Her bir `<section>` tam olarak iki doğrudan alt öğe içermelidir.
-* İlk alt öğe (bölümün), bölümün başlığını temsil eder ve bir başlık öğesi (`h1` , `h2` , ..., `h6` , `header`) olmalıdır.
-* İkinci alt öğe (bölümün), AMP HTML'de izin verilen herhangi bir etiket olabilir ve bölümün içeriğini temsil eder.
-* Bir bölümün başlığı tıklandığında/dokunulduğunda bölüm genişler veya daralır.
-* `amp-accordion` öğesindeki her bir bölümün daraltılmış/genişletilmiş durumu, oturum düzeyi için korunur. Bu durumu koruma özelliğini devre dışı bırakmak için `amp-accordion` öğesine `disable-session-states` özelliğini ekleyin.
+- Bir `amp-accordion`, doğrudan alt öğeleri olarak bir veya daha fazla `<section>` öğesi içerebilir.
+- Her bir `<section>` tam olarak iki doğrudan alt öğe içermelidir.
+- İlk alt öğe (bölümün), bölümün başlığını temsil eder ve bir başlık öğesi (`h1` , `h2` , ..., `h6` , `header`) olmalıdır.
+- İkinci alt öğe (bölümün), AMP HTML'de izin verilen herhangi bir etiket olabilir ve bölümün içeriğini temsil eder.
+- Bir bölümün başlığı tıklandığında/dokunulduğunda bölüm genişler veya daralır.
+- `amp-accordion` öğesindeki her bir bölümün daraltılmış/genişletilmiş durumu, oturum düzeyi için korunur. Bu durumu koruma özelliğini devre dışı bırakmak için `amp-accordion` öğesine `disable-session-states` özelliğini ekleyin.
 
 #### Örnek: Akordeon görüntüleme <a name="example-displaying-an-accordion"></a>
 
-Bu örnekte, sayfa yüklendiğinde üçüncü bölümün genişletildiği üç bölüm görüntülüyoruz.  Ayrıca, `disable-session-states` özelliğini ayarlayarak daraltılmış/genişletilmiş durumu korumayı devre dışı bıraktık.
+Bu örnekte, sayfa yüklendiğinde üçüncü bölümün genişletildiği üç bölüm görüntülüyoruz. Ayrıca, `disable-session-states` özelliğini ayarlayarak daraltılmış/genişletilmiş durumu korumayı devre dışı bıraktık.
 
 [example preview="inline" playground="true" imports="amp-accordion"]
+
 ```html
 <amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
@@ -80,6 +77,7 @@ Bu örnekte, sayfa yüklendiğinde üçüncü bölümün genişletildiği üç b
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 [tip type="success"]
@@ -145,13 +143,13 @@ Aşağıdaki etkinlikler, `accordion` `section` öğesinde tetiklenir.
 
 ## Stil <a name="styling"></a>
 
-* `amp-accordion` öğe seçicisini serbest bir şekilde biçimlendirmek için kullanabilirsiniz.
-* `amp-accordion` öğeleri her zaman `display: block` değerindedir.
-* `<section>`, başlık ve içerik öğeleri kayan özellikte olamaz.
-* Bölüm genişletildiğinde, `<section>` öğesinde bir `expanded` özelliği bulunur.
-* İçerik öğesi, `overflow: hidden` ile temizlenip sabitlenir; dolayısıyla, kaydırma çubukları olamaz.
-* `<amp-accordion>`, `<section>`, başlık ve içerik öğelerinin kenar boşlukları 0 değerine ayarlanır ve özel stillerde geçersiz kılınabilir.
-* Hem üstbilgi hem de içerik öğeleri `position: relative` değerine sahiptir.
+- `amp-accordion` öğe seçicisini serbest bir şekilde biçimlendirmek için kullanabilirsiniz.
+- `amp-accordion` öğeleri her zaman `display: block` değerindedir.
+- `<section>`, başlık ve içerik öğeleri kayan özellikte olamaz.
+- Bölüm genişletildiğinde, `<section>` öğesinde bir `expanded` özelliği bulunur.
+- İçerik öğesi, `overflow: hidden` ile temizlenip sabitlenir; dolayısıyla, kaydırma çubukları olamaz.
+- `<amp-accordion>`, `<section>`, başlık ve içerik öğelerinin kenar boşlukları 0 değerine ayarlanır ve özel stillerde geçersiz kılınabilir.
+- Hem üstbilgi hem de içerik öğeleri `position: relative` değerine sahiptir.
 
 ## Doğrulama <a name="validation"></a>
 

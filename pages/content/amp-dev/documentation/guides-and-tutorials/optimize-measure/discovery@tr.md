@@ -11,12 +11,14 @@ Bu sorunu çözmek için `<head>` bölümündeki `<link>` etiketlerini kullanara
 AMP olmayan sayfaya aşağıdakileri ekleyin:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Şimdi de bunu AMP sayfasına ekleyin:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,6 +27,7 @@ AMP olmayan sayfaya aşağıdakileri ekleyin:
 Yalnızca bir sayfanız varsa ve bu sayfa bir AMP sayfasıysa yine de standart bağlantıyı sayfaya eklemeniz gerekir. Bu bağlantı, yine sayfanın kendisini işaret edecektir:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -41,6 +44,7 @@ Bu sadece AMP sayfalarıyla değil, tüm web sayfalarıyla ilgilidir. Bazı plat
 Örnek:
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -72,6 +76,7 @@ Bu sadece AMP sayfalarıyla değil, tüm web sayfalarıyla ilgilidir. Bazı plat
     }
   }
 </script>
+
 [/sourcecode]
 
 HTML özniteliği alternatif sözdizimini de içeren daha fazla örneği [ampproject örnekleri klasöründe](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples) bulabilirsiniz.

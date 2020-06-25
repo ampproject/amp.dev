@@ -7,6 +7,7 @@ $title: Sunum ve Düzeni Değiştirin
 AMP›ler web sayfalarıdır; sayfa ve ögelerinde yapılacak biçimlendirmeler yaygın CSS özellikleri kullanılarak yapılmaktadır. `<head>` içerisinde `<style amp-custom>` adı verilen bir satır içi stil sayfasında yer alan sınıf veya öge selektörleri kullanan biçim ögeleri:
 
 [sourcecode:html]
+
 <style amp-custom>
   /* any custom style goes here */
   body {
@@ -17,6 +18,7 @@ AMP›ler web sayfalarıdır; sayfa ve ögelerinde yapılacak biçimlendirmeler 
     border: 1px solid black;
   }
 </style>
+
 [/sourcecode]
 
 Her AMP sayfasında yalnızca tek bir yerleştirilmiş stil sayfası olabilir ve kullanmanıza izin verilmeyen belli selektörler vardır. [Biçimlendirme hakkında her şeyi öğrenin](../../../../documentation/guides-and-tutorials/develop/style_and_layout/style_pages.md).

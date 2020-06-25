@@ -2,13 +2,11 @@
 $title: amp-selector
 $category@: dynamic-content
 formats:
-- websites
-- email
+  - websites
+  - email
 teaser:
   text: 表示一种控件，可显示选项菜单并让用户从中选择。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 表示一种控件，可显示选项菜单并让用户从中选择。
 
@@ -45,29 +41,31 @@ teaser:
   </tr>
 </table>
 
-
 ## 行为 <a name="behavior"></a>
 
 AMP 选择器是一种控件，可显示一系列选项并让用户从中选择一个或多个选项；选项内容不只局限于文本。
 
-* `amp-selector` 可以包含任意 HTML 元素或 AMP 组件（如 `amp-carousel`、`amp-img` 等）。
-* `amp-selector` 不能包含任何嵌套 `amp-selector` 控件。
-* 可通过向元素添加 `option` 属性并为该属性分配值，来设置可供选择的选项（如 `<li option='value'></li>`）。
-* 可通过向元素添加 `disabled` 属性，来设置处于停用状态的选项（如 `<li option='d' disabled></li>`）。
-* 可通过向元素添加 `selected` 属性，来设置预先选中的选项（如 `<li option='b' selected></li>`）。
-* 要支持选择多个选项，请向 `amp-selector` 元素添加 `multiple` 属性。默认情况下，`amp-selector` 允许一次选择一个选项。
-* 要停用整个 `amp-selector`，请向 `amp-selector` 元素添加 `disabled` 属性。
-* 当 `amp-selector` 包含 `name` 属性且 `amp-selector` 位于 `form` 标记内时，如果表单上发生提交事件，则 `amp-selector` 的行为与单选按钮/复选框组类似，并会根据 `amp-selector` 的名称提交所选值（即分配给相应选项的值）。
+- `amp-selector` 可以包含任意 HTML 元素或 AMP 组件（如 `amp-carousel`、`amp-img` 等）。
+- `amp-selector` 不能包含任何嵌套 `amp-selector` 控件。
+- 可通过向元素添加 `option` 属性并为该属性分配值，来设置可供选择的选项（如 `<li option='value'></li>`）。
+- 可通过向元素添加 `disabled` 属性，来设置处于停用状态的选项（如 `<li option='d' disabled></li>`）。
+- 可通过向元素添加 `selected` 属性，来设置预先选中的选项（如 `<li option='b' selected></li>`）。
+- 要支持选择多个选项，请向 `amp-selector` 元素添加 `multiple` 属性。默认情况下，`amp-selector` 允许一次选择一个选项。
+- 要停用整个 `amp-selector`，请向 `amp-selector` 元素添加 `disabled` 属性。
+- 当 `amp-selector` 包含 `name` 属性且 `amp-selector` 位于 `form` 标记内时，如果表单上发生提交事件，则 `amp-selector` 的行为与单选按钮/复选框组类似，并会根据 `amp-selector` 的名称提交所选值（即分配给相应选项的值）。
 
 示例：
 
 ```html
-
 <form id="form1" action="/" method="get" target="_blank">
   <amp-selector name="single_image_select" layout="container">
     <ul>
-      <li><amp-img src="/img1.png" width="50" height="50" option="1"></amp-img></li>
-      <li><amp-img src="/img2.png" width="50" height="50" option="2"></amp-img></li>
+      <li>
+        <amp-img src="/img1.png" width="50" height="50" option="1"></amp-img>
+      </li>
+      <li>
+        <amp-img src="/img2.png" width="50" height="50" option="2"></amp-img>
+      </li>
       <li option="na" selected="">None of the Above</li>
     </ul>
   </amp-selector>
@@ -79,21 +77,52 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
   <amp-selector name="multi_image_select_1" layout="container" multiple="">
     <amp-carousel id="carousel-1" width="200" height="60" controls="">
       <amp-img src="/img1.png" width="80" height="60" option="a"></amp-img>
-      <amp-img src="/img2.png" width="80" height="60" option="b" selected=""></amp-img>
+      <amp-img
+        src="/img2.png"
+        width="80"
+        height="60"
+        option="b"
+        selected=""
+      ></amp-img>
       <amp-img src="/img3.png" width="80" height="60" option="c"></amp-img>
-      <amp-img src="/img4.png" width="80" height="60" option="d" disabled=""></amp-img>
+      <amp-img
+        src="/img4.png"
+        width="80"
+        height="60"
+        option="d"
+        disabled=""
+      ></amp-img>
     </amp-carousel>
   </amp-selector>
 </form>
 
-<p><amp-selector name="multi_image_select_2" layout="container" multiple="" form="form1">
-  <amp-carousel height="300" id="carousel-1" type="slides" width="400" controls="">
-    <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
-    <amp-img height="60" src="/img2.png" width="80" option="b" selected=""></amp-img>
-    <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
-    <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
-  </amp-carousel>
-</amp-selector>
+<p>
+  <amp-selector
+    name="multi_image_select_2"
+    layout="container"
+    multiple=""
+    form="form1"
+  >
+    <amp-carousel
+      height="300"
+      id="carousel-1"
+      type="slides"
+      width="400"
+      controls=""
+    >
+      <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
+      <amp-img
+        height="60"
+        src="/img2.png"
+        width="80"
+        option="b"
+        selected=""
+      ></amp-img>
+      <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
+      <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
+    </amp-carousel>
+  </amp-selector>
+</p>
 ```
 
 ## 清除所选内容 <a name="clearing-selections"></a>
@@ -111,8 +140,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
 </amp-selector>
 ```
 
-[tip type="success"]
-[AMP By Example](https://ampbyexample.com/components/amp-selector/) 上的在线演示。
+[tip type="success"][amp by example](https://ampbyexample.com/components/amp-selector/) 上的在线演示。
 [/tip]
 
 ## 属性 <a name="attributes"></a>
@@ -132,6 +160,7 @@ AMP 选择器是一种控件，可显示一系列选项并让用户从中选择�
     <li><code>focus</code>：按 Tab 键可将焦点放在 <code>amp-selector</code>。用户可以使用箭头键在各项内容之间切换。必须按空格键或 Enter 键，才能更改所选内容。</li>
     <li><code>select</code>：按 Tab 键可将焦点放在 <code>amp-selector</code>。用户使用箭头键切换选项时，所选内容会发生变化。</li></ul></td>
     </tr>
+
   </table>
 
 ### `<amp-selector>` 选项的属性 <a name="attributes-on--options"></a>

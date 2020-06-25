@@ -14,17 +14,23 @@ $title: 占位符和后备行为
 标记为 `placeholder` 的元素将始终 `fill`（填充）父级 AMP 元素。
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 默认情况下，即使 AMP 元素的资源尚未下载或初始化，
@@ -42,9 +48,9 @@ $title: 占位符和后备行为
 
 您可以在某元素上指定 `fallback` 属性，以便指明出现以下情况时采取的后备行为：
 
-* 浏览器不支持某个元素
-* 内容未能加载（例如，Twitter 微博被删除）
-* 图片类型不受支持（例如，并非所有浏览器都支持 WebP）
+- 浏览器不支持某个元素
+- 内容未能加载（例如，Twitter 微博被删除）
+- 图片类型不受支持（例如，并非所有浏览器都支持 WebP）
 
 您可以在任何 HTML 元素（而不仅仅是 AMP 元素）上设置 `fallback` 属性。如果指定，则 `fallback` 元素必须是 AMP 元素的直接子级。
 
@@ -53,6 +59,7 @@ $title: 占位符和后备行为
 在以下示例中，我们使用 `fallback` 属性告知用户，浏览器不支持特定功能：
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -64,6 +71,7 @@ $title: 占位符和后备行为
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ##### 示例：提供不同格式的图片
@@ -71,20 +79,26 @@ $title: 占位符和后备行为
 在以下示例中，我们使用 `fallback` 属性告知浏览器，在 WebP 格式不受支持时使用 JPEG 文件。
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 ## 占位符和后备行为的互动
@@ -107,4 +121,3 @@ $title: 占位符和后备行为
 许多 AMP 元素已列入白名单，可以显示“加载指示器”，
 这是一个基本动画，用于表明元素尚未加载完毕。
 只需添加 `noloading` 属性，元素即可停用此行为。
- 

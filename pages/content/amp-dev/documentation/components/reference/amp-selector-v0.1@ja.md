@@ -2,12 +2,11 @@
 $title: amp-selector
 $category@: dynamic-content
 formats:
-- websites
-- email
+  - websites
+  - email
 teaser:
   text: オプションのメニューを提示し、ユーザーに選択を求めるコントロールを表示します。
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 オプションのメニューを提示し、ユーザーに選択を求めるコントロールを表示します。
 
@@ -44,29 +41,31 @@ teaser:
   </tr>
 </table>
 
-
 ## 動作 <a name="behavior"></a>
 
 AMP セレクタは、オプションのリストを提示し、その中から 1 つまたは複数のオプションを選択するようユーザーに求めるコントロールを表示します。オプションの内容はテキストに限定されません。
 
-* `amp-selector` は、任意の HTML 要素や AMP コンポーネントを含めることができます（たとえば、`amp-carousel`、`amp-img` など）。
-* `amp-selector` の内部に、`amp-selector` コントロールをネストすることはできません。
-* 選択可能オプションは、対象の要素に `option` 属性を追加し、その属性に値を代入することで設定できます（例: `<li option='value'></li>`）。
-* 無効オプションは、対象の要素に `disabled` 属性を追加することで設定できます（例: `<li option='d' disabled></li>`）。
-* 事前選択オプションは、対象の要素に `selected` 属性を追加することで設定できます（例: `<li option='b' selected></li>`）。
-* 複数選択を許可するには、`amp-selector` 要素に `multiple` 属性を追加します。デフォルトでは、`amp-selector` で選択できるのは、一度に 1 つずつに限られます。
-* `amp-selector` 全体を無効にするには、`amp-selector` 要素に `disabled` 属性を追加します。
-* `amp-selector` 内に `name` 属性があり、`amp-selector` が `form` タグ内にある場合、そのフォーム上で submit イベントが発生すると、`amp-selector` は radio-button / checkbox グループのように動作し、`amp-selector` の名前に基づいて、選択されている値（オプションに割り当てられている値）を送信します。
+- `amp-selector` は、任意の HTML 要素や AMP コンポーネントを含めることができます（たとえば、`amp-carousel`、`amp-img` など）。
+- `amp-selector` の内部に、`amp-selector` コントロールをネストすることはできません。
+- 選択可能オプションは、対象の要素に `option` 属性を追加し、その属性に値を代入することで設定できます（例: `<li option='value'></li>`）。
+- 無効オプションは、対象の要素に `disabled` 属性を追加することで設定できます（例: `<li option='d' disabled></li>`）。
+- 事前選択オプションは、対象の要素に `selected` 属性を追加することで設定できます（例: `<li option='b' selected></li>`）。
+- 複数選択を許可するには、`amp-selector` 要素に `multiple` 属性を追加します。デフォルトでは、`amp-selector` で選択できるのは、一度に 1 つずつに限られます。
+- `amp-selector` 全体を無効にするには、`amp-selector` 要素に `disabled` 属性を追加します。
+- `amp-selector` 内に `name` 属性があり、`amp-selector` が `form` タグ内にある場合、そのフォーム上で submit イベントが発生すると、`amp-selector` は radio-button / checkbox グループのように動作し、`amp-selector` の名前に基づいて、選択されている値（オプションに割り当てられている値）を送信します。
 
 例:
 
 ```html
-
 <form id="form1" action="/" method="get" target="_blank">
   <amp-selector name="single_image_select" layout="container">
     <ul>
-      <li><amp-img src="/img1.png" width="50" height="50" option="1"></amp-img></li>
-      <li><amp-img src="/img2.png" width="50" height="50" option="2"></amp-img></li>
+      <li>
+        <amp-img src="/img1.png" width="50" height="50" option="1"></amp-img>
+      </li>
+      <li>
+        <amp-img src="/img2.png" width="50" height="50" option="2"></amp-img>
+      </li>
       <li option="na" selected="">None of the Above</li>
     </ul>
   </amp-selector>
@@ -78,21 +77,52 @@ AMP セレクタは、オプションのリストを提示し、その中から 
   <amp-selector name="multi_image_select_1" layout="container" multiple="">
     <amp-carousel id="carousel-1" width="200" height="60" controls="">
       <amp-img src="/img1.png" width="80" height="60" option="a"></amp-img>
-      <amp-img src="/img2.png" width="80" height="60" option="b" selected=""></amp-img>
+      <amp-img
+        src="/img2.png"
+        width="80"
+        height="60"
+        option="b"
+        selected=""
+      ></amp-img>
       <amp-img src="/img3.png" width="80" height="60" option="c"></amp-img>
-      <amp-img src="/img4.png" width="80" height="60" option="d" disabled=""></amp-img>
+      <amp-img
+        src="/img4.png"
+        width="80"
+        height="60"
+        option="d"
+        disabled=""
+      ></amp-img>
     </amp-carousel>
   </amp-selector>
 </form>
 
-<p><amp-selector name="multi_image_select_2" layout="container" multiple="" form="form1">
-  <amp-carousel height="300" id="carousel-1" type="slides" width="400" controls="">
-    <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
-    <amp-img height="60" src="/img2.png" width="80" option="b" selected=""></amp-img>
-    <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
-    <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
-  </amp-carousel>
-</amp-selector>
+<p>
+  <amp-selector
+    name="multi_image_select_2"
+    layout="container"
+    multiple=""
+    form="form1"
+  >
+    <amp-carousel
+      height="300"
+      id="carousel-1"
+      type="slides"
+      width="400"
+      controls=""
+    >
+      <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
+      <amp-img
+        height="60"
+        src="/img2.png"
+        width="80"
+        option="b"
+        selected=""
+      ></amp-img>
+      <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
+      <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
+    </amp-carousel>
+  </amp-selector>
+</p>
 ```
 
 ## 選択を解除する <a name="clearing-selections"></a>
@@ -110,8 +140,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
 </amp-selector>
 ```
 
-[tip type="success"]
-[AMP By Example](https://ampbyexample.com/components/amp-selector/) のライブデモをご覧ください。
+[tip type="success"][amp by example](https://ampbyexample.com/components/amp-selector/) のライブデモをご覧ください。
 [/tip]
 
 ## 属性 <a name="attributes"></a>
@@ -131,6 +160,7 @@ AMP セレクタは、オプションのリストを提示し、その中から 
     <li><code>focus</code>: Tab キーを押すと <code>amp-selector</code> にフォーカスを移動します。矢印キーを使用して、アイテム間を移動します。選択内容を変更するには、スペースキーまたは Enter キーを押す必要があります。</amp-selector></li>
     <code>select</code>: Tab キーを押すと、<code>amp-selector</code> にフォーカスを移動します。ユーザーが矢印キーを使用してオプションを移動すると、選択内容も変更されます。</li></ul></td>
     </tr>
+
   </table>
 
 ### `<amp-selector>` オプション内の属性 <a name="attributes-on--options"></a>

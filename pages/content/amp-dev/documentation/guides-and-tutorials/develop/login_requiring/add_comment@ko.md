@@ -7,6 +7,7 @@ $title: 댓글 추가
 이 시점에서 사용자는 [`amp-form`](../../../../documentation/components/reference/amp-form.md) 라이브러리를 사용하여 댓글을 추가할 수 있습니다. [`amp-access`](../../../../documentation/components/reference/amp-access.md) 컴포넌트의 상태에 따라 form의 존재여부가 조건부인 지 확인하십시오.
 
 [sourcecode:html]
+
 <form amp-access="loggedIn" amp-access-hide method="post" action-xhr="<%host%>/samples_templates/comment_section/submit-comment-xhr" target="_top">
 [/sourcecode]
 
@@ -25,6 +26,7 @@ JSON 응답 예제입니다:
 폼 컴포넌트는 단순히 [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md) 템플릿을 이용한 페이지 내에 그 값을 표현합니다.
 
 [sourcecode:html]
+
 <div submit-success>
   <template type="amp-mustache">
     <div class="comment-user">
@@ -41,6 +43,7 @@ JSON 응답 예제입니다:
 이 예제에서는 댓글 값이 비어있는지 확인합니다. 값이 비어있으면 다음 코드가 실행되도록 하는 오류를 반환합니다.
 
 [sourcecode:html]
+
 <div submit-error>
   <template type="amp-mustache">
     Error! Looks like something went wrong with your comment, please try to submit it again.

@@ -8,7 +8,6 @@ teaser:
 $title: amp-layout
 ---
 
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -24,8 +23,6 @@ $title: amp-layout
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -50,9 +47,9 @@ $title: amp-layout
 <amp-layout layout="responsive" width="1" height="1">
   <svg viewBox="0 0 100 100">
     <circle cx="50%" cy="50%" r="40%" stroke="black" stroke-width="3" />
-      Ваш браузер не поддерживает встроенного кода SVG.
-    </svg>
-  </amp-layout>
+    Ваш браузер не поддерживает встроенного кода SVG.
+  </svg>
+</amp-layout>
 ```
 
 ## Атрибуты <a name="attributes"></a>

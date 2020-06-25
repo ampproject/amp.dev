@@ -17,8 +17,10 @@ A primeira etapa é incluir uma versão especial da AMP chamada de "Shadow AMP" 
 Inclua a Shadow AMP no cabeçalho da sua página, por exemplo:
 
 [sourcecode:html]
+
 <!-- Asynchronously load the AMP-with-Shadow-DOM runtime library. -->
 <script async src="https://cdn.ampproject.org/shadow-v0.js"></script>
+
 [/sourcecode]
 
 ### Como saber quando a Shadow AMP API está pronta para o uso?
@@ -29,7 +31,7 @@ O sinal que deve ser observado é a disponibilidade da variável global `AMP`. A
 
 [sourcecode:javascript]
 (window.AMP = window.AMP || []).push(function(AMP) {
-  // AMP is now available.
+// AMP is now available.
 });
 [/sourcecode]
 
@@ -37,8 +39,8 @@ Esse código funcionará e todos os retornos de chamada adicionados dessa maneir
 
 O código pode ser traduzido como:
 
-  1. "Se window.AMP não existir, criar uma matriz vazia para ficar na posição correspondente."
-  1. "Em seguida, enviar uma função de retorno de chamada para a matriz que será ativada quando a AMP estiver pronta."
+1. "Se window.AMP não existir, criar uma matriz vazia para ficar na posição correspondente."
+1. "Em seguida, enviar uma função de retorno de chamada para a matriz que será ativada quando a AMP estiver pronta."
 
 Isso funciona porque, após o carregamento, a biblioteca Shadow AMP detectará que já existe uma matriz de retornos de chamada em `window.AMP` e processará a fila toda. Se você usar a mesma função novamente, ela ainda funcionará, porque a Shadow AMP substitui `window.AMP` por ela própria e um método `push` personalizado que ativa o retorno de chamada imediatamente.
 
@@ -57,20 +59,20 @@ Por último, quando você quiser exibir conteúdo após uma ação do usuário, 
 [sourcecode:javascript]
 function fetchDocument(url) {
 
-  // unfortunately fetch() does not support retrieving documents,
-  // so we have to resort to good old XMLHttpRequest.
-  var xhr = new XMLHttpRequest();
+// unfortunately fetch() does not support retrieving documents,
+// so we have to resort to good old XMLHttpRequest.
+var xhr = new XMLHttpRequest();
 
-  return new Promise(function(resolve, reject) {
-    xhr.open('GET', url, true);
-    xhr.responseType = 'document';
-    xhr.setRequestHeader('Accept', 'text/html');
-    xhr.onload = function() {
-      // .responseXML contains a ready-to-use Document object
-      resolve(xhr.responseXML);
-    };
-    xhr.send();
-  });
+return new Promise(function(resolve, reject) {
+xhr.open('GET', url, true);
+xhr.responseType = 'document';
+xhr.setRequestHeader('Accept', 'text/html');
+xhr.onload = function() {
+// .responseXML contains a ready-to-use Document object
+resolve(xhr.responseXML);
+};
+xhr.send();
+});
 }
 [/sourcecode]
 
@@ -87,8 +89,8 @@ var url = "https://my-domain/amp/an-article.html";
 
 // Use our fetchDocument method to get the doc
 fetchDocument(url).then(function(doc) {
-  // Let AMP take over and render the page
-  var ampedDoc = AMP.attachShadowDoc(container, doc, url);
+// Let AMP take over and render the page
+var ampedDoc = AMP.attachShadowDoc(container, doc, url);
 });
 [/sourcecode]
 
@@ -113,12 +115,11 @@ Isso dirá à AMP que você não está mais usando o documento e reduzirá o uso
 
 Veja na prática o padrão "AMP em PWA" na [amostra React](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) que criamos (em inglês). Ela demonstra o uso de transições suaves durante a navegação e tem um componente React simples que une as etapas acima. É o melhor dos dois mundos: JavaScript flexível e personalizado no Progressive Web App e AMP para administrar o conteúdo.
 
-* Veja o código-fonte aqui: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) (em inglês).
-* Use o componente React autônomo pelo npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document) (em inglês).
-* Veja na prática aqui: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (em inglês). Para o melhor resultado, abra esse conteúdo em emulações de dispositivos móveis ou smartphones.
+- Veja o código-fonte aqui: [https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa](https://github.com/ampproject/amp-publisher-sample/tree/master/amp-pwa) (em inglês).
+- Use o componente React autônomo pelo npm: [https://www.npmjs.com/package/react-amp-document](https://www.npmjs.com/package/react-amp-document) (em inglês).
+- Veja na prática aqui: [https://choumx.github.io/amp-pwa/](https://choumx.github.io/amp-pwa/) (em inglês). Para o melhor resultado, abra esse conteúdo em emulações de dispositivos móveis ou smartphones.
 
 Você também pode ver uma amostra de PWA e AMP usando a biblioteca Polymer. A amostra utiliza [amp-viewer](https://github.com/PolymerLabs/amp-viewer/) para incorporar páginas AMP.
 
-* Encontre o código aqui: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp) (em inglês).
-* Veja na prática aqui: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/) (em inglês).
-
+- Encontre o código aqui: [https://github.com/Polymer/news/tree/amp](https://github.com/Polymer/news/tree/amp) (em inglês).
+- Veja na prática aqui: [https://polymer-news-amp.appspot.com/](https://polymer-news-amp.appspot.com/) (em inglês).

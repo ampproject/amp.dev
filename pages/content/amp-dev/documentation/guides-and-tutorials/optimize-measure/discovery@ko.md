@@ -11,12 +11,14 @@ $title: 페이지를 검색할 수 있도록 설정
 AMP가 아닌 페이지에 다음을 추가합니다.
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 AMP 페이지에 다음을 추가합니다.
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,11 +27,11 @@ AMP 페이지에 다음을 추가합니다.
 페이지가 하나만 있고 그 페이지가 AMP 페이지인 경우에도 표준(canonical) 링크를 추가해야 합니다. 이 경우 자기 자신을 가리키게 됩니다.
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
-[tip type="read-on"]
-[AMP 페이지용 Google 검색 가이드라인](https://support.google.com/webmasters/answer/6340290)에서 Google이 AMP 페이지를 확인하는 방법을 자세히 알아보세요.
+[tip type="read-on"][amp 페이지용 google 검색 가이드라인](https://support.google.com/webmasters/answer/6340290)에서 Google이 AMP 페이지를 확인하는 방법을 자세히 알아보세요.
 [/tip]
 
 ## 추가 메타데이터를 통해 타사 플랫폼으로 통합 <a name="integrate-with-third-party-platforms-through-additional-metadata"></a>
@@ -45,6 +47,7 @@ AMP 페이지에 다음을 추가합니다.
 예
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -76,18 +79,17 @@ AMP 페이지에 다음을 추가합니다.
     }
   }
 </script>
+
 [/sourcecode]
 
 대체 HTML 속성 구문을 포함한 더 많은 예시는 [AMP 프로젝트 예시 폴더](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples)에서 찾아볼 수 있습니다.
 
 [tip type="read-on"] 구조화된 데이터에 관한 자세한 내용은 다음 리소스에서 확인하세요.
 
-* 주요뉴스 캐러셀, 레시피 카드 등 [Google 검색 리치 결과에 콘텐츠가 구조적으로 표시되도록 구성](https://developers.google.com/search/docs/guides/mark-up-content)하는 방법을 알아보세요.
-* [Google 구조화된 데이터용 테스트 도구](https://developers.google.com/structured-data/testing-tool/)로 구조화된 데이터를 테스트하세요.
-[/tip]
+- 주요뉴스 캐러셀, 레시피 카드 등 [Google 검색 리치 결과에 콘텐츠가 구조적으로 표시되도록 구성](https://developers.google.com/search/docs/guides/mark-up-content)하는 방법을 알아보세요.
+- [Google 구조화된 데이터용 테스트 도구](https://developers.google.com/structured-data/testing-tool/)로 구조화된 데이터를 테스트하세요.
+  [/tip]
 
 ### 더 많은 플랫폼의 기타 데이터
 
 [웹 기초의 소셜 검색 가이드](https://developers.google.com/web/fundamentals/discovery-and-monetization/social-discovery/)로 이동하여 콘텐츠가 검색되고 배포될 수 있도록 준비하는 여러 방법을 알아보세요.
- 
- 

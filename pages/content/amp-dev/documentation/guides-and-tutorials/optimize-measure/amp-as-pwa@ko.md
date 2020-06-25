@@ -21,32 +21,33 @@ AMP 페이지에 [웹 앱 매니페스트](https://developers.google.com/web/fun
 
 [sourcecode:json]
 {
-  "short_name": "ABE",
-  "name": "AMPByExample",
-  "icons": [
-    {
-      "src": "launcher-icon-1x.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "launcher-icon-2x.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "launcher-icon-4x.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
-  "start_url": "index.html?launcher=true"
+"short_name": "ABE",
+"name": "AMPByExample",
+"icons": [
+{
+"src": "launcher-icon-1x.png",
+"type": "image/png",
+"sizes": "48x48"
+},
+{
+"src": "launcher-icon-2x.png",
+"type": "image/png",
+"sizes": "96x96"
+},
+{
+"src": "launcher-icon-4x.png",
+"type": "image/png",
+"sizes": "192x192"
+}
+],
+"start_url": "index.html?launcher=true"
 }
 [/sourcecode]
 
 그런 다음 AMP 페이지의 `<head>`에서 매니페스트를 연결합니다.
 
 [sourcecode:html]
+
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
@@ -63,8 +64,10 @@ AMP 페이지에 [웹 앱 매니페스트](https://developers.google.com/web/fun
 우선 페이지의 `<head>`에 있는 스크립트를 통해 [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) 구성요소를 포함시킵니다.
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 그런 다음 `<body>` 안에 다음 항목을 추가합니다. 실제로 사용하는 서비스 워커를 가리키도록 수정하세요.
@@ -84,13 +87,13 @@ AMP 페이지에 [웹 앱 매니페스트](https://developers.google.com/web/fun
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.open('mysite').then(function(cache) {
-      return cache.match(event.request).then(function(response) {
-        var fetchPromise = fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        })
+event.respondWith(
+caches.open('mysite').then(function(cache) {
+return cache.match(event.request).then(function(response) {
+var fetchPromise = fetch(event.request).then(function(networkResponse) {
+cache.put(event.request, networkResponse.clone());
+return networkResponse;
+})
 
         // 응답을 반환하기 전에 여기에서 수정하세요..
         ...
@@ -98,12 +101,13 @@ self.addEventListener('fetch', function(event) {
         return response || fetchPromise;
       })
     })
-  );
+
+);
 });
 [/sourcecode]
 
 이 방법을 사용하면 AMP 페이지에서
 [AMP 유효성 검사](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md)를 통과하지 못하는 모든 추가 기능을 수정할 수 있습니다.
 
-* 맞춤 JS를 필요로 하는 동적 기능
-* 내 사이트에 맞춤설정되었거나 내 사이트에만 관련이 있는 구성요소
+- 맞춤 JS를 필요로 하는 동적 기능
+- 내 사이트에 맞춤설정되었거나 내 사이트에만 관련이 있는 구성요소

@@ -2,12 +2,11 @@
 $title: amp-animation
 $category@: presentation
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: Define e exibe uma animação.
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Define e executa animações.
 
@@ -44,7 +41,6 @@ Define e executa animações.
   </tr>
 </table>
 
-
 ## Visão geral <a name="overview"></a>
 
 O AMP Animations usa a [API Web Animations](https://www.w3.org/TR/web-animations/) (link em inglês) para definir e executar animações em documentos AMP.
@@ -56,23 +52,24 @@ Um elemento `amp-animation` define a animação como uma estrutura JSON.
 ### Especificação de animação de nível superior <a name="top-level-animation-specification"></a>
 
 O objeto de nível superior define um processo geral de animação, que consiste em um número arbitrário de componentes de animação definidos como uma matriz `animations`:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  // Timing properties
-  ...
-  "animations": [
+  <script type="application/json">
     {
-      // Animation 1
-    },
-    ...
-    {
-      // Animation N
+      // Timing properties
+      ...
+      "animations": [
+        {
+          // Animation 1
+        },
+        ...
+        {
+          // Animation N
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script>
 </amp-animation>
 ```
 
@@ -144,6 +141,7 @@ Em alguns casos, é recomendável combinar várias [animações condicionais](#c
 Na animação `switch`, os candidatos são avaliados na ordem definida, e a primeira animação que corresponda às [declarações condicionais](#conditions) é executada, enquanto o restante é ignorado.
 
 Por exemplo, esta animação executa uma animação com trajetória, se compatível, e volta para transformar:
+
 ```
 {
   "selector": "#target1",
@@ -169,29 +167,31 @@ Por exemplo, esta animação executa uma animação com trajetória, se compatí
 Um componente de animação pode declarar variáveis CSS que serão usadas para valores de tempo e de frames-chave por meio de expressões `var()`. As expressões `var()` são avaliadas usando o contexto de destino atual. As variáveis CSS especificadas nos componentes de animação são propagadas para animações aninhadas, aplicadas a destinos de animação e, assim, substituem as variáveis CSS usadas nas animações finais.
 
 Por exemplo:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "--delay": "0.5s",
-  "--x": "100px",
-  "animations": [
+  <script type="application/json">
     {
-      "selector": "#target1",
-      "delay": "var(--delay)",
-      "--x": "150px",
-      "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
-    },
-    ...
-  ]
-}
-</script>
+      "--delay": "0.5s",
+      "--x": "100px",
+      "animations": [
+        {
+          "selector": "#target1",
+          "delay": "var(--delay)",
+          "--x": "150px",
+          "keyframes": {"transform": "translate(var(--x), var(--y, 0px)"}
+        },
+        ...
+      ]
+    }
+  </script>
 </amp-animation>
 ```
 
 Neste exemplo:
 
- `--delay` é propagado para animações aninhadas e usado como um atraso da animação `#target1`.
+`--delay` é propagado para animações aninhadas e usado como um atraso da animação `#target1`.
+
 - `--x` é propagado para animações aninhadas, mas substituído pela animação `#target1` e depois usado para a propriedade `transform`.
 - `--y` não é especificado em nenhum lugar do `<amp-animation>` e, portanto, será consultado no elemento `#target1`. O padrão será `0px` se não for definido no CSS.
 
@@ -261,6 +261,7 @@ Os componentes de animação e de animação de nível superior podem conter pro
 Todas as propriedades de tempo permitem valores diretos numéricos/de strings ou valores CSS. Por exemplo, "duration" pode ser especificado como `1000`, `1s` ou `1000ms`. Além disso, `calc()` e `var()` e outras expressões CSS também são permitidas.
 
 Um exemplo de propriedades de tempo em JSON:
+
 ```text
 {
   ...
@@ -280,6 +281,7 @@ Os componentes de animação herdam as propriedades de tempo especificadas para 
 Em todos os locais em que o `selector` pode ser especificado, também é possível especificar `subtargets: []`. Os subdestinos podem modificar as propriedades de tempo ou variáveis definidas na animação para subdestinos específicos, indicados por meio de um seletor de CSS ou um índice.
 
 Por exemplo:
+
 ```text
 
   "selector": ".target",
@@ -309,6 +311,7 @@ Os frames-chave podem ser especificados de várias maneiras, descritas na [seç�
 Veja abaixo alguns exemplos típicos de definições de frames-chave.
 
 O formato de objeto abreviado "to" especifica o estado final em 100%:
+
 ```text
 {
   "keyframes": {"opacity": 0, "transform": "scale(2)"}
@@ -316,6 +319,7 @@ O formato de objeto abreviado "to" especifica o estado final em 100%:
 ```
 
 O formato de objeto abreviado "from-to" especifica os estados inicial e final, em 0% e 100%:
+
 ```text
 {
   "keyframes": {
@@ -326,6 +330,7 @@ O formato de objeto abreviado "from-to" especifica os estados inicial e final, e
 ```
 
 O formato de objeto abreviado "value-array" especifica vários valores para os estados inicial e final e para vários ajustes (com espaços iguais):
+
 ```text
 {
   "keyframes": {
@@ -336,6 +341,7 @@ O formato de objeto abreviado "value-array" especifica vários valores para os e
 ```
 
 O formato de matriz especifica os frames-chave. Os ajustes são atribuídos automaticamente a 0, 100% e espaçados de maneira uniforme entre si:
+
 ```text
 {
   "keyframes": [
@@ -346,6 +352,7 @@ O formato de matriz especifica os frames-chave. Os ajustes são atribuídos auto
 ```
 
 O formato de matriz também pode incluir o "offset" de modo explícito:
+
 ```text
 {
   "keyframes": [
@@ -357,6 +364,7 @@ O formato de matriz também pode incluir o "offset" de modo explícito:
 ```
 
 O formato de matriz também pode incluir "easing":
+
 ```text
 {
   "keyframes": [
@@ -373,6 +381,7 @@ Os valores de propriedades permitem qualquer valor CSS válido, incluindo `calc(
 #### Frames-chave do CSS <a name="keyframes-from-css"></a>
 
 Outra maneira de especificar frames-chave é na folha de estilo do documento (tag `<style>`) como uma regra de `@keyframes` do CSS. Por exemplo:
+
 ```html
 <style amp-custom>
   @keyframes keyframes1 {
@@ -386,12 +395,12 @@ Outra maneira de especificar frames-chave é na folha de estilo do documento (ta
 </style>
 
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "duration": "1s",
-  "keyframes": "keyframes1"
-}
-</script>
+  <script type="application/json">
+    {
+      "duration": "1s",
+      "keyframes": "keyframes1"
+    }
+  </script>
 </amp-animation>
 ```
 
@@ -404,6 +413,7 @@ Outra maneira de especificar frames-chave é na folha de estilo do documento (ta
 #### Propriedades permitidas para frames-chave <a name="allow-listed-properties-for-keyframes"></a>
 
 Nem todas as propriedades do CSS podem ser usadas em frames-chave. Somente as propriedades CSS que os navegadores modernos podem otimizar e animar de forma rápida são incluídas na lista de permissões. Essa lista aumentará à medida que mais propriedades forem confirmadas como geradoras de bom desempenho. No momento, a lista contém:
+
 - [`opacity`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/opacity)
 - [`transform`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform)
 - [`visibility`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/visibility)
@@ -414,37 +424,39 @@ Observe que o uso de propriedades CSS com prefixos do fornecedor não é necess�
 ### Formas abreviadas de configuração de animação <a name="abbreviated-forms-of-animation-configuration"></a>
 
 Se a animação envolver apenas um único elemento, e um único efeito de frames-chave for suficiente, a configuração poderá ser reduzida a esse único componente de animação. Por exemplo:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-{
-  "selector": "#target-id",
-  "duration": "1s",
-  "keyframes": {"opacity": 1}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": "#target-id",
+      "duration": "1s",
+      "keyframes": {"opacity": 1}
+    }
+  </script>
 </amp-animation>
 ```
 
 Se a animação for composta por uma lista de componentes, mas não tiver animação de nível superior, a configuração poderá ser reduzida a uma matriz de componentes. Por exemplo:
+
 ```html
-  <amp-animation layout="nodisplay">
+<amp-animation layout="nodisplay">
   <script type="application/json">
-  [
-    {
-      "selector": ".target-class",
-      "duration": 1000,
-      "keyframes": {"opacity": 1}
-    },
-    {
-      "selector": ".target-class",
-      "duration": 600,
-      "delay": 400,
-      "keyframes": {"transform": "scale(2)"}
-    }
-  ]
+    [
+      {
+        "selector": ".target-class",
+        "duration": 1000,
+        "keyframes": {"opacity": 1}
+      },
+      {
+        "selector": ".target-class",
+        "duration": 600,
+        "delay": 400,
+        "keyframes": {"transform": "scale(2)"}
+      }
+    ]
   </script>
-  </amp-animation>
+</amp-animation>
 ```
 
 ### Composição de animação <a name="animation-composition"></a>
@@ -452,49 +464,51 @@ Se a animação for composta por uma lista de componentes, mas não tiver anima�
 As animações podem fazer referência a outras animações, combinando várias declarações de `amp-animation` em uma única animação final. Fazer referência a uma animação a partir de outra animação é basicamente o mesmo que aninhar. O motivo para dividir animações em elementos diferentes seria reutilizar a mesma animação em vários lugares ou simplesmente tornar cada declaração de animação menor e mais gerenciável.
 
 Por exemplo:
+
 ```html
 <amp-animation id="anim1" layout="nodisplay">
-<script type="application/json">
-{
-  "animation": "anim2",
-  "duration": 1000,
-  "--scale": 2
-}
-</script>
+  <script type="application/json">
+    {
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
+  </script>
 </amp-animation>
 
 <amp-animation id="anim2" layout="nodisplay">
-<script type="application/json">
-{
-  "selector": ".target-class",
-  "keyframes": {"transform": "scale(var(--scale))"}
-}
-</script>
+  <script type="application/json">
+    {
+      "selector": ".target-class",
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
 </amp-animation>
 ```
 
 Esse exemplo de animação combina a animação "anim2" "como parte de "anim1". "anim2" é incluído sem um destino (`selector`). Nesse caso, a animação incluída provavelmente fará referência ao próprio destino.
 
 Outro formato permite que a animação incluída forneça um destino ou vários. Nesse caso, a animação incluída é executada para cada destino correspondente. Por exemplo:
-  ```html
-  <amp-animation id="anim1" layout="nodisplay">
-  <script type="application/json">
-  {
-    "selector": ".target-class",
-    "animation": "anim2",
-    "duration": 1000,
-    "--scale": 2
-  }
-  </script>
-  </amp-animation>
 
-  <amp-animation id="anim2" layout="nodisplay">
+```html
+<amp-animation id="anim1" layout="nodisplay">
   <script type="application/json">
-  {
-    "keyframes": {"transform": "scale(var(--scale))"}
-  }
+    {
+      "selector": ".target-class",
+      "animation": "anim2",
+      "duration": 1000,
+      "--scale": 2
+    }
   </script>
-  </amp-animation>
+</amp-animation>
+
+<amp-animation id="anim2" layout="nodisplay">
+  <script type="application/json">
+    {
+      "keyframes": {"transform": "scale(var(--scale))"}
+    }
+  </script>
+</amp-animation>
 ```
 
 Aqui, se "target-class" corresponder a um elemento, vários ou nenhum, o "anim2' será executado para cada destino correspondente.
@@ -506,35 +520,37 @@ As variáveis e as propriedades de tempo especificadas na animação de autor da
 O `amp-animation` permite o uso de expressões `var()` e `calc()` para valores de tempo e frames-chave.
 
 Por exemplo:
+
 ```html
 <amp-animation layout="nodisplay">
-<script type="application/json">
-[
-  {
-    "selector": ".target-class",
-    "duration": "4s",
-    "delay": "var(--delay)",
-    "--y": "var(--other-y, 100px)",
-    "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
-  }
-]
-</script>
+  <script type="application/json">
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay)",
+        "--y": "var(--other-y, 100px)",
+        "keyframes": {"transform": "translate(calc(100vh + 20px), var(--y))"}
+      }
+    ]
+  </script>
 </amp-animation>
 ```
 
 O polyfill é aplicado às expressões `var()` e `calc()` em plataformas que não são diretamente compatíveis com elas. As propriedades de `var()` são extraídas dos elementos de destino correspondentes. No entanto, não é possível aplicar totalmente o polyfill a `var()`. Assim, quando a compatibilidade for importante, é recomendável incluir valores padrão nas expressões `var()`. Por exemplo:
+
 ```html
-  <amp-animation layout="nodisplay">
+<amp-animation layout="nodisplay">
   <script type="application/json">
-  [
-    {
-      "selector": ".target-class",
-      "duration": "4s",
-      "delay": "var(--delay, 100ms)",
-    }
-  ]
+    [
+      {
+        "selector": ".target-class",
+        "duration": "4s",
+        "delay": "var(--delay, 100ms)"
+      }
+    ]
   </script>
-  </amp-animation>
+</amp-animation>
 ```
 
 Os componentes de animação podem especificar as próprias variáveis como campos `--var-name`. Essas variáveis são propagadas em animações aninhadas e substituem variáveis de elementos de destino especificadas pela folha de estilo (tag `<style>`). As expressões `var()` primeiro tentam resolver os valores de variáveis especificados nas animações e depois consultam os estilos de destino.
@@ -548,6 +564,7 @@ O `amp-animation` fornece várias extensões CSS para necessidades típicas de a
 A função `index()` retorna um índice do elemento de destino atual no efeito de animação. Isso é mais relevante quando vários destinos são animados com o mesmo efeito usando a propriedade `selector`. O primeiro destino correspondido pelo seletor terá o índice `0`, o segundo terá o índice `1` e assim por diante.
 
 Entre outras coisas, essa propriedade pode ser combinada com expressões `calc()` e ser usada para criar efeito escalonado. Por exemplo:
+
 ```
 {
   "selector": ".class-x",
@@ -571,6 +588,7 @@ A função `length()` retorna o número de elementos de destino no efeito de ani
 A função `rand()` retorna um valor CSS aleatório. Existem dois formatos.
 
 A forma sem argumentos simplesmente retorna o número aleatório entre 0 e 1.
+
 ```
 {
   "delay": "calc(10s * rand())"
@@ -578,6 +596,7 @@ A forma sem argumentos simplesmente retorna o número aleatório entre 0 e 1.
 ```
 
 O segundo formato tem dois argumentos e retorna o valor aleatório entre eles.
+
 ```
 {
   "delay": "rand(5s, 10s)"
@@ -597,6 +616,7 @@ Os seguintes formatos são aceitos:
 `width()` e `height()` são especialmente úteis para transformações. As propriedades CSS `left`, `top` e semelhantes que podem usar valores em `%` para expressar animações proporcionais ao tamanho do contêiner. No entanto, a propriedade `transform` interpreta os valores em `%` de forma diferente: como uma porcentagem do elemento selecionado. Assim, `width()` e `height()` podem ser usados para expressar animações de transformação em termos de elementos de contêiner e similares.
 
 Essas funções podem ser combinadas com `calc()`, `var()` e outras expressões CSS. Por exemplo:
+
 ```
 {
   "transform": "translateX(calc(width('#container') + 10px))"
@@ -612,6 +632,7 @@ A função `num()` retorna uma representação numérica de um valor CSS. Por ex
 - etc.
 
 Por exemplo, a expressão a seguir calcula o atraso em segundos proporcional à largura do elemento:
+
 ```
 {
   "delay": "calc(1s * num(width()) / 100)"
@@ -624,9 +645,9 @@ SVGs são incríveis e certamente recomendamos o uso deles em animações.
 
 As animações SVG são compatíveis usando as mesmas propriedades CSS descritas em [Propriedades permitidas para frames-chave](#allow-listed-properties-for-keyframes), com algumas nuances:
 
-* Os elementos SVG do IE/Edge [não são compatíveis com as propriedades CSS `transform`](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/) (link em inglês). A própria animação `transform` tem polyfill aplicado. No entanto, o estado inicial definido em uma folha de estilo não é aplicado. Se o estado transformado inicial for importante no IE/Edge, é recomendável duplicá-lo por meio do [atributo `transform` do SVG](https://developer.mozilla.org/pt-BR/docs/Web/SVG/Attribute/transform).
-* Embora o CSS `transform` tenha polyfill aplicado para o IE/Edge, não é possível transformar `transform-origin` em um polypill. Assim, quando a compatibilidade com o IE/Edge é desejada, recomenda-se usar somente o `transform-origin` padrão.
-* A maioria dos navegadores atuais tem problemas para interpretar o CSS `transform-origin` corretamente. Veja os problemas do [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300), [Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) e [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340). A maior parte dessa confusão provavelmente é resolvida depois que o [CSS `transform-box`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform-box) é implementado. Quando `transform-origin` é importante, recomenda-se incluir também o CSS `transform-box` desejado para compatibilidade futura.
+- Os elementos SVG do IE/Edge [não são compatíveis com as propriedades CSS `transform`](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/) (link em inglês). A própria animação `transform` tem polyfill aplicado. No entanto, o estado inicial definido em uma folha de estilo não é aplicado. Se o estado transformado inicial for importante no IE/Edge, é recomendável duplicá-lo por meio do [atributo `transform` do SVG](https://developer.mozilla.org/pt-BR/docs/Web/SVG/Attribute/transform).
+- Embora o CSS `transform` tenha polyfill aplicado para o IE/Edge, não é possível transformar `transform-origin` em um polypill. Assim, quando a compatibilidade com o IE/Edge é desejada, recomenda-se usar somente o `transform-origin` padrão.
+- A maioria dos navegadores atuais tem problemas para interpretar o CSS `transform-origin` corretamente. Veja os problemas do [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=740300), [Safari](https://bugs.webkit.org/show_bug.cgi?id=174285) e [Firefox](https://bugzilla.mozilla.org/show_bug.cgi?id=1379340). A maior parte dessa confusão provavelmente é resolvida depois que o [CSS `transform-box`](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform-box) é implementado. Quando `transform-origin` é importante, recomenda-se incluir também o CSS `transform-box` desejado para compatibilidade futura.
 
 ## Acionar animação <a name="triggering-animation"></a>
 
@@ -637,11 +658,11 @@ A animação pode ser acionada por meio do atributo `trigger` ou da ação `on`.
 Atualmente, `visibility` é o único valor disponível para o atributo `trigger`. O `visibility` é acionado quando o documento subjacente ou a incorporação está visível (na janela de visualização).
 
 Por exemplo:
+
 ```html
-<amp-animation id="anim1" layout="nodisplay"
-    trigger="visibility">
-    ...
-  </amp-animation>
+<amp-animation id="anim1" layout="nodisplay" trigger="visibility">
+  ...
+</amp-animation>
 ```
 
 ### Acionar usando a ação `on` <a name="triggering-via-on-action"></a>
@@ -659,12 +680,12 @@ Por exemplo:
 
 O elemento `amp-animation` exporta as seguintes ações:
 
-* `start`: inicia a animação se ela ainda não estiver sendo executada. As propriedades e variáveis de tempo podem ser especificadas como argumentos de ação. Por exemplo: `anim1.start(delay=-100, --scale=2)`.
-* `restart`: inicia a animação ou reinicia a animação em execução no momento. As propriedades e variáveis de tempo podem ser especificadas como argumentos de ação. Por exemplo: `anim1.start(delay=-100, --scale=2)`.
-* `pause`: pausa a animação em execução no momento.
-* `resume`: retoma a animação em execução no momento.
-* `togglePause`: alterna entre pausar e retomar ações.
-* `seekTo`: pausa a animação e busca o ponto de tempo especificado pelo argumento `time`, em milissegundos, ou no argumento `percent`, como um ponto da porcentagem na linha do tempo.
-* `reverse`: reverte a animação.
-* `finish`: conclui a animação.
-* `cancel`: cancela a animação.
+- `start`: inicia a animação se ela ainda não estiver sendo executada. As propriedades e variáveis de tempo podem ser especificadas como argumentos de ação. Por exemplo: `anim1.start(delay=-100, --scale=2)`.
+- `restart`: inicia a animação ou reinicia a animação em execução no momento. As propriedades e variáveis de tempo podem ser especificadas como argumentos de ação. Por exemplo: `anim1.start(delay=-100, --scale=2)`.
+- `pause`: pausa a animação em execução no momento.
+- `resume`: retoma a animação em execução no momento.
+- `togglePause`: alterna entre pausar e retomar ações.
+- `seekTo`: pausa a animação e busca o ponto de tempo especificado pelo argumento `time`, em milissegundos, ou no argumento `percent`, como um ponto da porcentagem na linha do tempo.
+- `reverse`: reverte a animação.
+- `finish`: conclui a animação.
+- `cancel`: cancela a animação.

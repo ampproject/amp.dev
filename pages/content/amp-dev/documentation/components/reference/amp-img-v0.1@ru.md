@@ -2,10 +2,10 @@
 $title: amp-img
 $category@: media
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 teaser:
   text: заменяет HTML5-тег img
 ---
@@ -26,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td class="col-fourty"><strong>Описание</strong></td>
@@ -43,7 +41,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 # Действия <a name="behavior"></a>
 
 Среда выполнения может задерживать загрузку ресурсов или повышать ее приоритет в зависимости от системных ресурсов, пропускной способности, положения области просмотра и других факторов. Компоненты `amp-img` позволяют среде выполнения эффективно управлять графическими ресурсами.
@@ -56,17 +53,21 @@ limitations under the License.
 
 # Пример: показ адаптивного изображения <a name="example-displaying-a-responsive-image"></a>
 
-В примере ниже показывается изображение, которое реагирует на размер области просмотра благодаря настройке `layout=responsive`.  Оно растягивается и сжимается в соответствии с соотношением сторон, заданным с помощью свойств `width` и `height`.
+В примере ниже показывается изображение, которое реагирует на размер области просмотра благодаря настройке `layout=responsive`. Оно растягивается и сжимается в соответствии с соотношением сторон, заданным с помощью свойств `width` и `height`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"]
@@ -80,18 +81,24 @@ limitations under the License.
 В этом примере, если браузер не поддерживает WebP, показывается резервное изображение JPG:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 Цвет фона и другие графические элементы для резервного изображения можно задать с помощью селектора CSS и стиля самого элемента.
@@ -101,9 +108,9 @@ limitations under the License.
 [tip type="read-on"]
 Ознакомьтесь со статьями об использовании `amp-img`:
 
-* [Заполнители и резервные изображения](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
-* [Добавление изображений и видео](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
-[/tip]
+- [Заполнители и резервные изображения](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+- [Добавление изображений и видео](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
+  [/tip]
 
 # Атрибуты <a name="attributes"></a>
 
@@ -146,7 +153,7 @@ limitations under the License.
 ```css
 amp-img {
   background-color: grey;
-  }
+}
 ```
 
 # Справочный центр <a name="tips--tricks"></a>
@@ -156,11 +163,11 @@ amp-img {
 Если вы хотите, чтобы ваше изображение масштабировалось с учетом размера окна, но до максимальной ширины и не далее, выполните следующие действия:
 
 1. Задайте `layout=responsive` для `<amp-img>`.
-1. В контейнере изображения укажите CSS-атрибут `max-width:<max width to display image>`.  Почему в контейнере?  Элемент `amp-img` со свойством `layout=responsive` является *блочным*, тогда как `<img>` – *встроенный*. В качестве альтернативы вы можете добавить атрибут `display: inline-block` в CSS для элемента amp-img.
+1. В контейнере изображения укажите CSS-атрибут `max-width:<max width to display image>`. Почему в контейнере? Элемент `amp-img` со свойством `layout=responsive` является _блочным_, тогда как `<img>` – _встроенный_. В качестве альтернативы вы можете добавить атрибут `display: inline-block` в CSS для элемента amp-img.
 
 # Различия между адаптивным и встроенным макетами <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
-Макеты `responsive` (адаптивный) и `intrinsic` (встроенный) создают изображение, которое масштабируется автоматически.  Однако `intrinsic` использует изображение SVG в качестве элемента масштабирования.  Поэтому поведение не отличается от стандартного HTML-изображения, а браузер при этом получает данные о размере в исходном макете. Макет `intrinsic` имеет собственный размер и увеличивает плавающий элемент `div`, пока не будет достигнут естественный размер изображения или ограничение в CSS (например, `max-width`). Макет `responsive` будет отображать 0 x 0 в плавающем `div`, поскольку изображение наследует размер от родительского элемента, а у него в плавающем виде размер отсутствует.
+Макеты `responsive` (адаптивный) и `intrinsic` (встроенный) создают изображение, которое масштабируется автоматически. Однако `intrinsic` использует изображение SVG в качестве элемента масштабирования. Поэтому поведение не отличается от стандартного HTML-изображения, а браузер при этом получает данные о размере в исходном макете. Макет `intrinsic` имеет собственный размер и увеличивает плавающий элемент `div`, пока не будет достигнут естественный размер изображения или ограничение в CSS (например, `max-width`). Макет `responsive` будет отображать 0 x 0 в плавающем `div`, поскольку изображение наследует размер от родительского элемента, а у него в плавающем виде размер отсутствует.
 
 # Установка изображения фиксированного размера <a name="setting-a-fixed-sized-image"></a>
 
@@ -180,14 +187,18 @@ amp-img {
 Например, вместо `width="900"` и `height="675"` можно задать `width="1.33"` and `height="1"`.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="1.33"
   height="1"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 # Настройка нескольких исходных файлов для разных разрешений экрана <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>

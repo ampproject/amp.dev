@@ -6,26 +6,26 @@ $title: 애널리틱스 공급업체
 
 분석 데이터를 타사 공급업체로 전송하려면 다음 단계를 따르세요.
 
-1. [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 태그에서 `type` 속성을 추가하고 아래 [*공급업체*](#vendors) 섹션에서 설명한 대로 지정된 공급업체에 해당 값을 설정합니다.
+1. [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 태그에서 `type` 속성을 추가하고 아래 [_공급업체_](#vendors) 섹션에서 설명한 대로 지정된 공급업체에 해당 값을 설정합니다.
 2. 어떤 데이터를 확보 및 추적할지 결정하고 구성 데이터에서 세부정보를 지정합니다. 분석 데이터를 확보하는 방법에 관한 정보는 공급업체의 도움말을 참조하세요.
 
-다음 예에서는 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)  빌트인 환경설정을 지원하는 타사 애널리틱스 서비스 업체인 [Google 애널리틱스](#google-analytics)에 페이지뷰 데이터를 전송합니다.
+다음 예에서는 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 빌트인 환경설정을 지원하는 타사 애널리틱스 서비스 업체인 [Google 애널리틱스](#google-analytics)에 페이지뷰 데이터를 전송합니다.
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-  "vars": {
-    "account": "UA-XXXXX-Y"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -103,25 +103,25 @@ Clicky Web Analytics 지원을 추가합니다. Clicky 지원 추가에 관한 �
 
 타입 속성값: `comscore`
 
-comScore 통합 디지털 측정™ 페이지뷰 분석 지원을 추가합니다. comScore에서 제공한 *c2 id*로 *var* `c2`를 정의해야 합니다. 자세한 내용은 [comscore.com](http://www.comscore.com)을 참고하세요.
+comScore 통합 디지털 측정™ 페이지뷰 분석 지원을 추가합니다. comScore에서 제공한 *c2 id*로 _var_ `c2`를 정의해야 합니다. 자세한 내용은 [comscore.com](http://www.comscore.com)을 참고하세요.
 
 ### Cxense
 
 타입 속성값: `cxense`
 
-Cxense Insight 분석 지원을 추가합니다. Cxense에서 제공한 *siteId*로 *var* `siteId`를 정의해야 합니다. 자세한 내용은 [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration)을 참고하세요.
+Cxense Insight 분석 지원을 추가합니다. Cxense에서 제공한 *siteId*로 _var_ `siteId`를 정의해야 합니다. 자세한 내용은 [wiki.cxense.com](https://wiki.cxense.com/display/cust/Accelerated+Mobile+Pages+%28AMP%29+integration)을 참고하세요.
 
 ### Dynatrace
 
 타입 속성값: `dynatrace`
 
-Dynatrace 실제 사용자 모니터링 지원을 추가합니다. Dynatrace에서 제공한 *application id*로 *var* `app`을 정의하고 Dynatrace 제공 *environment identifier*로 *var* `tenant`를 정의해야 합니다. Dynatrace 실제 사용자 모니터링 추가에 관한 자세한 내용은 [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/)을 참고하세요.
+Dynatrace 실제 사용자 모니터링 지원을 추가합니다. Dynatrace에서 제공한 *application id*로 _var_ `app`을 정의하고 Dynatrace 제공 *environment identifier*로 _var_ `tenant`를 정의해야 합니다. Dynatrace 실제 사용자 모니터링 추가에 관한 자세한 내용은 [dynatrace.com](https://www.dynatrace.com/technologies/web/amp-monitoring/)을 참고하세요.
 
 ### Eulerian Analytics
 
 타입 속성값: `euleriananalytics`
 
-Eulerian Technologies Analytics 지원을 추가합니다. Eulerian에서 위임한 도메인으로 *var* `analyticsHost`를 정의해야 합니다. 자세한 내용은 [eulerian.wiki](https://eulerian.wiki)를 참고하세요.
+Eulerian Technologies Analytics 지원을 추가합니다. Eulerian에서 위임한 도메인으로 _var_ `analyticsHost`를 정의해야 합니다. 자세한 내용은 [eulerian.wiki](https://eulerian.wiki)를 참고하세요.
 
 ### Facebook Pixel
 
@@ -155,10 +155,10 @@ Google 애널리틱스 지원을 추가합니다. Google Analytics 지원 추가
 
 다음 변수도 정의되어야 합니다.
 
-* `st`: Angebotskennung
-* `co`: 댓글
-* `cp`: 코드
-* `url`: `amp-analytics-infonline.html`의 HTTPS 위치
+- `st`: Angebotskennung
+- `co`: 댓글
+- `cp`: 코드
+- `url`: `amp-analytics-infonline.html`의 HTTPS 위치
 
 INFOnline / IVW 지원 추가에 관한 자세한 내용은 [www.infonline.de](https://www.infonline.de/downloads/web-mew-und-ctv/)를 참고하세요.
 
@@ -166,7 +166,7 @@ INFOnline / IVW 지원 추가에 관한 자세한 내용은 [www.infonline.de](h
 
 타입 속성값: `krux`
 
-Krux 지원을 추가합니다.  구성에 관한 세부정보는 [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608)을 참고하세요.
+Krux 지원을 추가합니다. 구성에 관한 세부정보는 [help.krux.com](https://konsole.zendesk.com/hc/en-us/articles/216596608)을 참고하세요.
 
 ### Linkpulse
 
@@ -178,13 +178,13 @@ Linkpulse 지원을 추가합니다. 구성에 관한 세부정보는 [docs.link
 
 타입 속성값: `lotame`
 
-Lotame 지원을 추가합니다.  자세한 내용과 구성에 관한 세부정보는 [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP)을 참고하세요.
+Lotame 지원을 추가합니다. 자세한 내용과 구성에 관한 세부정보는 [mylotame.force.com](https://mylotame.force.com/s/article/Google-AMP)을 참고하세요.
 
 ### Médiamétrie
 
 타입 속성값: `mediametrie`
 
-Médiamétrie 추적 페이지 지원을 추가합니다. *var* `serial`을 정의해야 합니다. Vars `level1`부터 `level4`까지는 선택사항입니다.  자세한 내용은 [mediametrie.com](http://www.mediametrie.com/)을 참고하세요.
+Médiamétrie 추적 페이지 지원을 추가합니다. _var_ `serial`을 정의해야 합니다. Vars `level1`부터 `level4`까지는 선택사항입니다. 자세한 내용은 [mediametrie.com](http://www.mediametrie.com/)을 참고하세요.
 
 ### mediarithmics
 
@@ -235,7 +235,7 @@ Nielsen Marketing Cloud 지원을 추가합니다. 자세한 내용은 [Nielsen 
 
 [tip type="note"]
 
-iframe-ping 솔루션을 사용하지 않고 `AMP CLIENT_ID`를 사용하여 클라이언트 감지 기능을 개선한 `oewadirect`라는 변형 버전이 있습니다.  현재 실험실 기능으로서, `oewa2.js`를 사용하지 않으므로 OEWA에서 사용을 금지하고 있습니다.
+iframe-ping 솔루션을 사용하지 않고 `AMP CLIENT_ID`를 사용하여 클라이언트 감지 기능을 개선한 `oewadirect`라는 변형 버전이 있습니다. 현재 실험실 기능으로서, `oewa2.js`를 사용하지 않으므로 OEWA에서 사용을 금지하고 있습니다.
 
 [/tip]
 
@@ -249,7 +249,7 @@ Parsely 지원을 추가합니다. 구성에 관한 세부정보는 [parsely.com
 
 타입 속성값: `piano`
 
-Piano 지원을 추가합니다.  구성에 관한 세부정보는 [vx.piano.io](http://vx.piano.io/javascript-tracking-amp)를 참고하세요.
+Piano 지원을 추가합니다. 구성에 관한 세부정보는 [vx.piano.io](http://vx.piano.io/javascript-tracking-amp)를 참고하세요.
 
 ### Quantcast Measurement
 
@@ -274,7 +274,7 @@ Quantcast Measurement 지원을 추가합니다. Quantcast Measurement 추가에
 
 타입 속성값: `simplereach`
 
-SimpleReach 지원을 추가합니다.  구성에 관한 세부정보는 [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation)를 참고하세요.
+SimpleReach 지원을 추가합니다. 구성에 관한 세부정보는 [simplereach.com/docs](http://docs.simplereach.com/dev-guide/implementation/google-amp-implementation)를 참고하세요.
 
 ### Snowplow Analytics
 
@@ -316,4 +316,4 @@ Webtrekk 지원을 추가합니다. 환경설정에 관한 세부정보는 [supp
 
 타입 속성값: `metrika`
 
-Yandex Metrica 지원을 추가합니다.  구성에 관한 세부정보는 [Yandex 지원](https://yandex.com/support/metrica/code/install-counter-amp.xml)을 참고하세요.
+Yandex Metrica 지원을 추가합니다. 구성에 관한 세부정보는 [Yandex 지원](https://yandex.com/support/metrica/code/install-counter-amp.xml)을 참고하세요.

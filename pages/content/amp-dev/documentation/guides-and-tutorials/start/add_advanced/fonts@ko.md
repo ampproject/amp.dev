@@ -12,7 +12,11 @@ AMP 페이지에 맞춤 글꼴을 삽입하는 방법은 다음과 같이 2가�
 이 가이드에서는 `<link>` 태그를 사용하여 페이지에 글꼴을 추가해 보겠습니다. 다음과 같이 `<head>`에 스타일시트 링크를 **추가**하여 Raleway 글꼴을 요청합니다.
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway">
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://fonts.googleapis.com/css?family=Raleway"
+/>
 ```
 
 이제 다음과 같이 CSS `body` 선택자를 **업데이트**하여 Raleway 글꼴을 참조합니다.
@@ -26,7 +30,7 @@ body {
 }
 ```
 
-페이지를 **새로고침**하여 바뀐 스타일을 확인해 보세요. 또한 AMP 유효성 검사 도구에서 나온 결과를 살펴보세요.  이 외부 스타일시트 요청에는 오류가 없어야 합니다.
+페이지를 **새로고침**하여 바뀐 스타일을 확인해 보세요. 또한 AMP 유효성 검사 도구에서 나온 결과를 살펴보세요. 이 외부 스타일시트 요청에는 오류가 없어야 합니다.
 
 이제 AMP 뉴스 기사가 완성되었습니다. 뉴스 기사는 다음과 같이 표시됩니다.
 

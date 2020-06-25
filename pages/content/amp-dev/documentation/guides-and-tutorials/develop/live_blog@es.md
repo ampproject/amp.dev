@@ -21,9 +21,11 @@ El componente [`amp-live-list`](../../../documentation/components/reference/amp-
 El código inicial del blog podría tener el siguiente aspecto:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -52,9 +54,11 @@ Los blogs con páginas largas pueden usar la paginación para limitar el número
 Con la paginación, el código de antes se convierte en lo siguiente:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -63,8 +67,8 @@ Con la paginación, el código de antes se convierte en lo siguiente:
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

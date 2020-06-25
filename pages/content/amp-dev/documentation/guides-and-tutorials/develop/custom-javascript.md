@@ -23,7 +23,7 @@ AMP pages support custom JavaScript through the `<amp-script>` component. The ex
 <head>
   ...
   <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-<body>  
+<body>
   ...
   <amp-script layout="container" src="https://example.com/myfile.js">
     <p>Initial content that can be modified from JavaScript</p>
@@ -51,19 +51,21 @@ To guarantee AMP pages will load consistently fast and with smooth UIs, limitati
 
 JavaScript inside the Web Worker allows minimal change to the DOM on load. Changes allowed during this phase are:
 
-*   Registering event handlers.
-*   Splitting a TextNode into multiple TextNodes, to allow for frameworks that require it.
+- Registering event handlers.
+- Splitting a TextNode into multiple TextNodes, to allow for frameworks that require it.
 
 The DOM inside `<amp-script>` tags should be almost identical before and after initialization.
 
 For example, if starting with the code below:
+
 ```html
 <text> Hello world </text>
 ```
+
 Worker DOM permits minor changes in structure but not content:
 
 ```html
- <text>Hello </text><text>world</text>
+<text>Hello </text><text>world</text>
 ```
 
 ## DOM manipulation
@@ -89,11 +91,10 @@ Any DOM elements the custom JavaScript files wish to interact with must be wrapp
 If you were to call `document.body.appendChild(document.createElement('span'))` within the script imported into an `<amp-script>` element in the following document:
 
 ```html
-<body>  
+<body>
   <p>Hello!</p>
   <div>
-    <amp-script layout="container" src="customjs.js">
-    </amp-script>
+    <amp-script layout="container" src="customjs.js"> </amp-script>
   </div>
 </body>
 ```
@@ -101,7 +102,7 @@ If you were to call `document.body.appendChild(document.createElement('span'))` 
 It would result in this:
 
 ```html
-<body>  
+<body>
   <p>Hello!</p>
   <div>
     <amp-script layout="container" src="customjs.js">
@@ -117,6 +118,6 @@ All event triggers are allowed.
 
 ## API restrictions <a name="api-restrictions"></a>
 
- Some synchronous methods are disallowed in `<amp-script>` and replaced with alternatives, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)). Because `Element.getBoundingClientRect()` could not be implemented in a Web Worker, an async alternative to it, `getBoundingClientRectAsync()`, is provided. `getBoundingClientRectAsync()` returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) instead of returning the result directly.
+Some synchronous methods are disallowed in `<amp-script>` and replaced with alternatives, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)). Because `Element.getBoundingClientRect()` could not be implemented in a Web Worker, an async alternative to it, `getBoundingClientRectAsync()`, is provided. `getBoundingClientRectAsync()` returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) instead of returning the result directly.
 
 View [this chart](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md) to see WorkerDOM supported APIs.

@@ -22,7 +22,7 @@ Leia mais: Saiba como [ativar recursos de PWA](../../../documentation/guides-and
 
 ## AMP como ponto de entrada para o PWA
 
-Uma vantagem exclusiva das AMP é a **exibição quase instantânea**, uma característica ideal para a primeira interação do usuário com seu site. Os *Progressive Web Apps* permitem muito **mais interatividade e recursos que estimulam o engajamento**, mas o carregamento inicial é prejudicado porque o service worker do site, os recursos e o shell do app só serão exibidos rapidamente nos carregamentos posteriores.
+Uma vantagem exclusiva das AMP é a **exibição quase instantânea**, uma característica ideal para a primeira interação do usuário com seu site. Os _Progressive Web Apps_ permitem muito **mais interatividade e recursos que estimulam o engajamento**, mas o carregamento inicial é prejudicado porque o service worker do site, os recursos e o shell do app só serão exibidos rapidamente nos carregamentos posteriores.
 
 Uma boa estratégia é fazer com que o ponto de entrada do seu site seja uma página AMP, carregar o PWA em segundo plano e mudar para ele durante a navegação.
 

@@ -2,14 +2,12 @@
 $title: amp-video
 $category@: media
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: Replaces the HTML5 video tag.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Penggantian untuk tag `video` HTML5; digunakan hanya untuk sematan file video HTML5 langsung.
 
@@ -54,14 +50,15 @@ Komponen `amp-video` memuat resource video yang ditentukan oleh atribut `src` se
 
 Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
 
-* tag `source`: Sama seperti pada tag `<video>` HTML, Anda dapat menambahkan turunan tag `<source>` untuk menentukan file media sumber berbeda yang ingin diputar.
-* tag `track` untuk mengaktifkan subtitel dalam video. Jika track dihosting pada asal yang berbeda dengan dokumen, Anda harus menambahkan atribut `crossorigin` ke `<amp-video>`.
-* sebuah placeholder untuk sebelum video dimulai
-* sebuah fallback jika browser tidak mendukung video HTML5: Satu atau nol node turunan langsung dapat memiliki atribut `fallback`. Jika ada, node ini dan turunannya akan membentuk konten yang ditampilkan jika video HTML5 tidak didukung pada browser pengguna.
+- tag `source`: Sama seperti pada tag `<video>` HTML, Anda dapat menambahkan turunan tag `<source>` untuk menentukan file media sumber berbeda yang ingin diputar.
+- tag `track` untuk mengaktifkan subtitel dalam video. Jika track dihosting pada asal yang berbeda dengan dokumen, Anda harus menambahkan atribut `crossorigin` ke `<amp-video>`.
+- sebuah placeholder untuk sebelum video dimulai
+- sebuah fallback jika browser tidak mendukung video HTML5: Satu atau nol node turunan langsung dapat memiliki atribut `fallback`. Jika ada, node ini dan turunannya akan membentuk konten yang ditampilkan jika video HTML5 tidak didukung pada browser pengguna.
 
 #### Contoh <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -77,6 +74,7 @@ Komponen `amp-video` menerima hingga empat jenis node HTML unik sebagai turunan:
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## Analisis <a name="analytics"></a>
@@ -171,18 +169,23 @@ Contoh:
 Contoh di bawah berisi atribut `poster` dan `artwork`. Atribut `poster` berfungsi sebagai gambar placeholder sebelum video diputar, sedangkan `artwork` adalah gambar yang ditampilkan di notifikasi melalui MediaSession API.
 
 ```html
-<amp-video width="720" height="305" layout="responsive"
-    src="https://yourhost.com/videos/myvideo.mp4"
-    poster="https://yourhost.com/posters/poster.png"
-    artwork="https://yourhost.com/artworks/artwork.png"
-    title="Awesome video" artist="Awesome artist"
-    album="Amazing album">
+<amp-video
+  width="720"
+  height="305"
+  layout="responsive"
+  src="https://yourhost.com/videos/myvideo.mp4"
+  poster="https://yourhost.com/posters/poster.png"
+  artwork="https://yourhost.com/artworks/artwork.png"
+  title="Awesome video"
+  artist="Awesome artist"
+  album="Amazing album"
+>
 </amp-video>
 ```
 
 ## Overlay klik-untuk-putar <a name="click-to-play-overlay"></a>
 
-Overlay klik-untuk-putar adalah fitur UX umum untuk pemutar video di web.  Misalnya, Anda dapat menampilkan ikon putar kustom yang dapat diklik pengguna, serta menyertakan judul video, gambar poster berukuran berbeda, dan sebagainya.  Karena komponen `amp-video` mendukung tindakan AMP `play` standar, Anda dapat menerapkan klik-untuk-putar dengan mudah.
+Overlay klik-untuk-putar adalah fitur UX umum untuk pemutar video di web. Misalnya, Anda dapat menampilkan ikon putar kustom yang dapat diklik pengguna, serta menyertakan judul video, gambar poster berukuran berbeda, dan sebagainya. Karena komponen `amp-video` mendukung tindakan AMP `play` standar, Anda dapat menerapkan klik-untuk-putar dengan mudah.
 
 Untuk contoh lebih lengkap, kunjungi [Overlay klik-untuk-putar untuk amp-video](https://ampbyexample.com/advanced/click-to-play_overlay_for_amp-video/) di AMP By Example.
 

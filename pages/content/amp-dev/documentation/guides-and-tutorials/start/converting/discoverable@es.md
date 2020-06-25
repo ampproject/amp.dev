@@ -17,14 +17,15 @@ La mayoría de las veces, recomendamos mantener una sola versión de su página,
 Ya hemos dado el primer paso para lograr esto en nuestro documento de AMP, incluyendo una etiqueta de enlace en el `<head>` de nuevo a la página canónica:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
+
 El siguiente paso es vincular el artículo canónico a la página AMP. Esto se logra mediante la inclusión de una etiqueta `<link rel="amphtml">` en la sección <head> del artículo canónico.
 
 En el archivo `article.html`, **agregue** el siguiente código en la sección `<head>`:
 
 ```html
-<link rel="amphtml" href="/article.amp.html">
+<link rel="amphtml" href="/article.amp.html" />
 ```
 
 El siguiente diagrama ilustra las direcciones de las etiquetas de enlace:
@@ -40,40 +41,39 @@ Las páginas de AMP válidas no requieren datos estructurados de [schema.org](ht
 Para nuestro artículo de noticias, **añada** los siguientes datos estructurados al final de la sección `<head>` de su documento AMP:
 
 ```html
-
 <script type="application/ld+json">
-{
- "@context": "http://schema.org",
- "@type": "NewsArticle",
- "mainEntityOfPage":{
-   "@type":"WebPage",
-   "@id":"https://example.com/my-article.html"
- },
- "headline": "My First AMP Article",
- "image": {
-   "@type": "ImageObject",
-   "url": "https://example.com/article_thumbnail1.jpg",
-   "height": 800,
-   "width": 800
- },
- "datePublished": "2015-02-05T08:00:00+08:00",
- "dateModified": "2015-02-05T09:20:00+08:00",
- "author": {
-   "@type": "Person",
-   "name": "John Doe"
- },
- "publisher": {
-   "@type": "Organization",
-   "name": "⚡ AMP Times",
-   "logo": {
-     "@type": "ImageObject",
-     "url": "https://example.com/amptimes_logo.jpg",
-     "width": 600,
-     "height": 60
-   }
- },
- "description": "My first experience in an AMPlified world"
-}
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/my-article.html"
+    },
+    "headline": "My First AMP Article",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://example.com/article_thumbnail1.jpg",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-02-05T08:00:00+08:00",
+    "dateModified": "2015-02-05T09:20:00+08:00",
+    "author": {
+      "@type": "Person",
+      "name": "John Doe"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "⚡ AMP Times",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/amptimes_logo.jpg",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "My first experience in an AMPlified world"
+  }
 </script>
 ```
 
@@ -86,7 +86,7 @@ Además del formato de datos estructurado schema.org, existen otros formatos com
 
 - [Meta tags de Twitter](https://dev.twitter.com/cards/overview)
 - [Meta tags de Facebook Open Graph](https://developers.facebook.com/docs/sharing/webmasters)
-[/tip]
+  [/tip]
 
 ### Validar los datos estructurados
 

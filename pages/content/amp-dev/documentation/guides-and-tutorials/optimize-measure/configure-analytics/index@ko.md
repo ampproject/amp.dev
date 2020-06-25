@@ -7,9 +7,9 @@ $title: 분석 설정
 모든 분석 솔루션은 필요한 데이터와
 데이터를 분석하기 위한 방법을 기반으로 구축됩니다. 시작하기 전에 결정해야 할 사항은 다음과 같습니다.
 
-* 사용자 참여도를 분석하는 데 타사 분석 도구 또는
-자체적인 사내 솔루션 중 무엇을 사용할 것인가?
-* 사용자 참여도를 파악하기 위해 어떤 사용자 행동을 측정할 것인가?
+- 사용자 참여도를 분석하는 데 타사 분석 도구 또는
+  자체적인 사내 솔루션 중 무엇을 사용할 것인가?
+- 사용자 참여도를 파악하기 위해 어떤 사용자 행동을 측정할 것인가?
 
 ### 데이터 제공 대상(공급업체 또는 자체 전송?)
 
@@ -39,11 +39,11 @@ AMP 애널리틱스는 한 번 측정하여 여러 곳에 보고하도록 특별
 
 고려해야 할 주요 데이터 요소:
 
-* 페이지 조회수만 추적할 것인가, 아니면 추가 사용자 참여도 패턴도 추적할 것인가?
-([amp-pixel 또는 amp-analytics](../../../../documentation/components/reference/amp-pixel.md#use-amp-pixel-or-amp-analytics)도 참조)
-* 사용자, 콘텐츠, 기기 또는 브라우저에 관한
-어떤 유형의 데이터를 확보할 것인가? ([Variable substitution](analytics_basics.md#variable-substitution)도 참조)
-* 어떤 방법으로 사용자를 파악할 것인가?([사용자 파악](analytics_basics.md#variable-substitution)도 참조)
+- 페이지 조회수만 추적할 것인가, 아니면 추가 사용자 참여도 패턴도 추적할 것인가?
+  ([amp-pixel 또는 amp-analytics](../../../../documentation/components/reference/amp-pixel.md#use-amp-pixel-or-amp-analytics)도 참조)
+- 사용자, 콘텐츠, 기기 또는 브라우저에 관한
+  어떤 유형의 데이터를 확보할 것인가? ([Variable substitution](analytics_basics.md#variable-substitution)도 참조)
+- 어떤 방법으로 사용자를 파악할 것인가?([사용자 파악](analytics_basics.md#variable-substitution)도 참조)
 
 [tip type="read-on"]
 

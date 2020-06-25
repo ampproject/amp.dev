@@ -9,8 +9,6 @@ teaser:
   text: Displays elements in a full-viewport “lightbox” modal.
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -48,7 +44,6 @@ teaser:
   </tr>
 </table>
 
-
 [جدول المحتويات]
 
 ## السُلوك <a name="behavior"></a>
@@ -60,8 +55,10 @@ teaser:
 ```html
 <button on="tap:quote-lb">See Quote</button>
 <amp-lightbox id="quote-lb" layout="nodisplay">
-    <blockquote>"Don't talk to me about JavaScript fatigue" - Horse JS</blockquote>
-    <button on="tap:quote-lb.close">Nice!</button>
+  <blockquote>
+    "Don't talk to me about JavaScript fatigue" - Horse JS
+  </blockquote>
+  <button on="tap:quote-lb.close">Nice!</button>
 </amp-lightbox>
 ```
 
@@ -102,7 +99,6 @@ teaser:
   </tr>
 </table>
 
-
 ## التصميم <a name="styling"></a>
 
 يمكنك تصميم `amp-lightbox` باستخدام CSS القياسي.
@@ -126,7 +122,6 @@ teaser:
   </tr>
 </table>
 
-
 ## <a id="a4a"></a> استخدام `amp-lightbox` في إعلانات AMPHTML <a name="a4a"></a>
 
 [tip type="note"]
@@ -141,8 +136,8 @@ teaser:
 
 تكون السمة `close-button` مطلوبة بالنسبة إلى إعلانات AMPHTML. تؤدي هذه السمة إلى عرض رأس أعلى العرض المبسط. ويحتوي الرأس على زر الإغلاق وتصنيف مكتوب عليه "إعلان". ترجع أسباب طلب هذا الرأس إلى ما يلي:
 
-* إعداد تجربة متسقة للمستخدِم يمكن التنبؤ بها لإعلانات AMPHTML
-* التأكد من وجود نقطة خروج دائمة للعرض المبسط، وإلا يمكن لتصميم الإعلان اختراق محتوى مستندات المضيف بفعالية من خلال العرض المبسط.
+- إعداد تجربة متسقة للمستخدِم يمكن التنبؤ بها لإعلانات AMPHTML
+- التأكد من وجود نقطة خروج دائمة للعرض المبسط، وإلا يمكن لتصميم الإعلان اختراق محتوى مستندات المضيف بفعالية من خلال العرض المبسط.
 
 السمة `close-button` مطلوبة ولا يُسمح بها إلا في إعلانات AMPHTML. في مستندات AMP العادية، يمكنك تقديم زر الإغلاق في أي مكان تحتاج إليه كجزء من محتوى `<amp-lightbox>`.
 

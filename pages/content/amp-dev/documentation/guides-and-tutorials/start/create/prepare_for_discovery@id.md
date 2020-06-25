@@ -2,7 +2,7 @@
 $title: Menyiapkan Halaman Anda untuk Pencarian dan Distribusi
 ---
 
-Dalam beberapa kasus, Anda mungkin menginginkan versi non-AMP dan AMP dari halaman yang sama, misalnya, artikel berita. Pertimbangkan ini: Jika Google Penelusuran menemukan versi non-AMP dari halaman itu, *bagaimana Google Penelusuran mengetahui bahwa ada versi AMP dari halaman itu*?
+Dalam beberapa kasus, Anda mungkin menginginkan versi non-AMP dan AMP dari halaman yang sama, misalnya, artikel berita. Pertimbangkan ini: Jika Google Penelusuran menemukan versi non-AMP dari halaman itu, _bagaimana Google Penelusuran mengetahui bahwa ada versi AMP dari halaman itu_?
 
 ## Menautkan halaman dengan &lt;link>
 
@@ -11,12 +11,14 @@ Untuk menyelesaikan masalah ini, kami menambahkan informasi tentang halaman AMP 
 Tambahkan yang berikut ini ke halaman non-AMP:
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Tambahkan ini ke halaman AMP
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,5 +27,6 @@ Tambahkan ini ke halaman AMP
 Jika Anda hanya menautkan satu halaman, dan halaman itu adalah halaman AMP, Anda masih harus menambahkan tautan kanonis ke halaman itu, yang kemudian hanya akan menunjuk pada halaman itu sendiri:
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]

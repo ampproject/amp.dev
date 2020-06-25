@@ -8,7 +8,6 @@ teaser:
 $title: amp-layout
 ---
 
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -24,8 +23,6 @@ $title: amp-layout
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -50,9 +47,9 @@ En este ejemplo se utiliza `amp-layout` para crear un contenedor adaptable alred
 <amp-layout layout="responsive" width="1" height="1">
   <svg viewBox="0 0 100 100">
     <circle cx="50%" cy="50%" r="40%" stroke="black" stroke-width="3" />
-      Lo sentimos, pero tu navegador no es compatible con SVG insertado.
-    </svg>
-  </amp-layout>
+    Lo sentimos, pero tu navegador no es compatible con SVG insertado.
+  </svg>
+</amp-layout>
 ```
 
 ## Atributos <a name="attributes"></a>

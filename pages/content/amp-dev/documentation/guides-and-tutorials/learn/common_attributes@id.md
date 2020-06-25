@@ -4,7 +4,7 @@ $title: Atribut umum
 
 [TOC]
 
-AMP menyediakan kumpulan atribut umum yang diperluas untuk berbagai komponen AMP (dan elemen HTML).  Dokumen ini menjelaskan setiap atribut umum.
+AMP menyediakan kumpulan atribut umum yang diperluas untuk berbagai komponen AMP (dan elemen HTML). Dokumen ini menjelaskan setiap atribut umum.
 
 ## fallback
 
@@ -16,6 +16,7 @@ Contoh:
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+
   <div fallback>Tidak dapat memutar gambar animasi pada perangkat ini.</div>
 </amp-anim>
 [/sourcecode]
@@ -25,7 +26,6 @@ Untuk informasi selengkapnya, lihat [Placeholder & fallback](../../../documentat
 ## heights
 
 Semua elemen AMP yang mendukung tata letak `responsive`, juga mendukung atribut `heights`. Nilai atribut ini merupakan ekspresi ukuran berdasarkan ekspresi media, serupa dengan [atribut ukuran pada tag `img`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) namun dengan dua perbedaan utama:
-
 
 1. Nilainya berlaku pada tinggi, bukan lebar elemen.
 2. Nilai persen diizinkan. Nilai persen menunjukkan persentase lebar elemen tersebut. Misalnya, nilai `80%` menunjukkan bahwa tinggi elemen akan menjadi 80% dari lebar elemen.
@@ -107,19 +107,18 @@ Sering digunakan dengan: lightbox, sidebar, daftar langsung, dan formulir
 Sintaks:
 
 [sourcecode:text]
-eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 Contoh:
 
 [sourcecode:html]
 <button on="tap:my-lightbox">Buka lightbox</button>
 <amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
+...
 </amp-lightbox>
 [/sourcecode]
 
-Untuk informasi selengkapnya, lihat  [Tindakan dan Kejadian di AMP](amp-actions-and-events.md).
+Untuk informasi selengkapnya, lihat [Tindakan dan Kejadian di AMP](amp-actions-and-events.md).
 
 ## placeholder
 
@@ -131,7 +130,7 @@ Contoh:
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 

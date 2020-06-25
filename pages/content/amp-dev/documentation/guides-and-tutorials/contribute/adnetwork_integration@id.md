@@ -22,21 +22,24 @@ Sebagai server iklan, Anda dapat berintegrasi dengan AMP untuk menayangkan iklan
 Sebagai server iklan, penayang yang Anda dukung menyertakan library JavaScript yang Anda sediakan dan menempatkan berbagai "cuplikan iklan" yang mengandalkan library JavaScript untuk mengambil iklan dan merendernya di situs penayang. Karena AMP tidak mengizinkan penayang untuk menjalankan JavaScript arbitrer, Anda harus berkontribusi pada kode open-source AMP untuk mengizinkan tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) meminta iklan dari server iklan.
 
 [tip type="note"]
-Anda dapat menggunakan implementasi [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  ini untuk menampilkan iklan HTML biasa **dan** iklan AMPHTML.
+Anda dapat menggunakan implementasi [`amp-ad`](../../../documentation/components/reference/amp-ad.md) ini untuk menampilkan iklan HTML biasa **dan** iklan AMPHTML.
 [/tip]
 
 Misalnya, server Amazon A9 dapat dijalankan dengan menggunakan sintaks berikut:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
-Dalam kode di atas, atribut `type` menentukan jaringan iklan, dalam hal ini A9. Atribut `data-*` bergantung pada parameter yang diharapkan oleh server Amazon A9 untuk menayangkan iklan. File [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) menunjukkan bagaimana parameter dipetakan untuk membuat panggilan JavaScript ke URL server A9. Parameter terkait yang diteruskan oleh tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  ditambahkan ke akhir URL untuk menampilkan iklan.
+Dalam kode di atas, atribut `type` menentukan jaringan iklan, dalam hal ini A9. Atribut `data-*` bergantung pada parameter yang diharapkan oleh server Amazon A9 untuk menayangkan iklan. File [`a9.js`](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) menunjukkan bagaimana parameter dipetakan untuk membuat panggilan JavaScript ke URL server A9. Parameter terkait yang diteruskan oleh tag [`amp-ad`](../../../documentation/components/reference/amp-ad.md) ditambahkan ke akhir URL untuk menampilkan iklan.
 
 Untuk mempelajari cara membuat integrasi [`amp-ad`](../../../documentation/components/reference/amp-ad.md), lihat [Mengintegrasikan jaringan iklan ke dalam AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
@@ -56,6 +59,6 @@ Untuk mempelajari cara membuat integrasi Fast Fetch, lihat [Panduan Implementasi
 
 ## Referensi terkait
 
-*   [Direktori GitHub untuk semua ekstensi amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [Daftar vendor iklan yang didukung](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
-*   [Postingan blog yang menjelaskan peluncuran Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)
+- [Direktori GitHub untuk semua ekstensi amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
+- [Daftar vendor iklan yang didukung](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
+- [Postingan blog yang menjelaskan peluncuran Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

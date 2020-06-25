@@ -31,7 +31,7 @@ Veja algumas dicas rápidas para melhorar o engajamento dos usuários com as AMP
 - **Dê preferência para tipos de anúncio que ofereçam uma boa experiência ao leitor.** Explore os formatos de anúncios AMP, como [`amp-sticky-ad`](../../../documentation/components/reference/amp-sticky-ad.md) e [`amp-fx-flying-carpet`](../../../documentation/components/reference/amp-fx-flying-carpet.md). Siga as [práticas recomendadas](../../../documentation/guides-and-tutorials/develop/monetization/index.md) para monetização de anúncios.
 
 - **Aumente os downloads de aplicativos.**
-Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md).
+  Inclua um banner com um link para a instalação do aplicativo usando [`amp-app-banner`](../../../documentation/components/reference/amp-app-banner.md).
 
 - **Faça uma transição rápida** dos leitores para o site não AMP do aplicativo da Web progressivo (PWA, na sigla em inglês). Use [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para preencher o cache.
 

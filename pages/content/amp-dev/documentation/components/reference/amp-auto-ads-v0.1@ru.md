@@ -2,7 +2,7 @@
 $title: amp-auto-ads
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: Динамически размещает объявления на AMP-странице с помощью файла конфигурации с удаленного сервера.
 ---
@@ -22,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Динамически размещает объявления на AMP-странице с помощью файла конфигурации со стороннего сервера.
 
@@ -53,31 +51,28 @@ limitations under the License.
     </tr>
   </table>
 
-
-
 ## Принципы работы
 
 При достаточном количестве действительных мест размещения, заданных в конфигурации, компонент `amp-auto-ads` стремится добавить дополнительные объявления, соблюдая ограничения в рекламной сети. Ограничения касаются:
 
-* общего числа объявления, которые можно разместить;
-* минимально допустимое расстояние между находящимися рядом объявлениями.
+- общего числа объявления, которые можно разместить;
+- минимально допустимое расстояние между находящимися рядом объявлениями.
 
 Кроме того, объявления добавляются только в области на странице, которые не приводят с недопустимым исправлениям, определенным в attemptChangeSize.
 
 Тег `<amp-auto-ads>` необходимо разместить в качестве первого дочернего элемента тега `<body>`.
 
 Тип рекламной сети и дополнительные сведения, необходимые для этой сети, указываются в теге.
+
 ```html
-<amp-auto-ads
-    type="adsense"
-    data-ad-client="ca-pub-5439573510495356">
-  </amp-auto-ads>
+<amp-auto-ads type="adsense" data-ad-client="ca-pub-5439573510495356">
+</amp-auto-ads>
 ```
 
 ## Поддерживаемые рекламные сети <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (эксперимент)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+- [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+- [DoubleClick (эксперимент)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Атрибуты
 
@@ -113,16 +108,16 @@ limitations under the License.
         "index": 2,
         "sub": {
           "selector": "P.paragraph",
-          "all": true,
-        },
+          "all": true
+        }
       },
       "pos": 4,
       "type": 1,
       "style": {
         "top_m": 5,
-        "bot_m": 10,
-      },
-    },
+        "bot_m": 10
+      }
+    }
   ]
 }
 ```
@@ -366,14 +361,14 @@ limitations under the License.
 
 В этих полях указывается объект конфигурации `subsequentMinSpacing`. Данные в поле `subsequentMinSpacing` позволяют изменять интервалы между дополнительными объявлениями исходя из того, сколько рекламных материалов уже есть на странице. Приведем пример:
 
-* 2 объявления на странице;
-* значение в поле subsequentMinSpacing:
-<code>
+- 2 объявления на странице;
+- значение в поле subsequentMinSpacing:
+  <code>
   [
-    {adCount: 3, spacing: "500px"},
-    {adCount: 5, spacing: "1000px"},
+  {adCount: 3, spacing: "500px"},
+  {adCount: 5, spacing: "1000px"},
   ]
-</code>
+  </code>
 
 На странице размещены 2 объявления, поэтому сопоставление не выполняется.
 Значение интервала по умолчанию соответствует варианту initialMinSpacing из объекта `AdConstraints`.

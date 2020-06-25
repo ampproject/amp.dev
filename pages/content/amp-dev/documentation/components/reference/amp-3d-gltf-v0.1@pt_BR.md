@@ -2,7 +2,7 @@
 $title: amp-3d-gltf
 $category@: media
 formats:
-- websites
+  - websites
 teaser:
   text: Exibe modelos 3D no formato GL Transmission Format (gITF).
 ---
@@ -22,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Exibe modelos 3D no formato GL Transmission Format (gITF).
 
@@ -52,12 +50,13 @@ O componente `amp-3d-gltf` exibe modelos 3D que estão no formato gITF.
 
 ```html
 <amp-3d-gltf
-    layout="responsive"
-    width="320"
-    height="240"
-    alpha="true"
-    antialiasing="true"
-    src="path/to/model.glb"></amp-3d-gltf>
+  layout="responsive"
+  width="320"
+  height="240"
+  alpha="true"
+  antialiasing="true"
+  src="path/to/model.glb"
+></amp-3d-gltf>
 ```
 
 ### Limitações <a name="limitations"></a>

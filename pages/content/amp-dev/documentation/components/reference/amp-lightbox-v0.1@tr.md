@@ -2,13 +2,11 @@
 $title: amp-lightbox
 $category@: layout
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: Öğeleri tam görüntü alanı "lightbox" kalıcı iletişim kutusunda görüntüler.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -47,7 +43,6 @@ teaser:
   </tr>
 </table>
 
-
 ## Davranış <a name="behavior"></a>
 
 `amp-lightbox` bileşeni, tam görüntü alanı yer paylaşımı/kalıcı iletişim kutusunda görüntülenen alt öğeleri tanımlar. Kullanıcı bir öğeye (ör. bir düğme) dokunduğunda veya tıkladığında, tıklanan öğenin `on` özelliğinde referans alınan `amp-lightbox` kimliği, lightbox'ın tam görüntü alanını kaplamasını tetikler ve `amp-lightbox` alt öğelerini görüntüler.
@@ -57,7 +52,9 @@ Klavyedeki çıkış tuşuna basıldığında lightbox kapanır. Alternatif olar
 ```html
 <button on="tap:quote-lb">See Quote</button>
 <amp-lightbox id="quote-lb" layout="nodisplay">
-  <blockquote>"Don't talk to me about JavaScript fatigue" - Horse JS</blockquote>
+  <blockquote>
+    "Don't talk to me about JavaScript fatigue" - Horse JS
+  </blockquote>
   <button on="tap:quote-lb.close">Nice!</button>
 </amp-lightbox>
 ```
@@ -134,8 +131,8 @@ Lightbox'ta resimleri göstermek için [`<amp-image-lightbox>`](amp-image-lightb
 
 AMPHTML reklamları için `close-button` özelliği gerekir. Bu özellik, lightbox'ınızın üst kısmında bir başlığın oluşturulmasına neden olur. Başlık, bir kapat düğmesini ve "Reklam"ı görüntüleyen bir etiketi içerir. Bu başlık aşağıdakilerin sağlanması için gereklidir:
 
-* AMPHTML reklamları için tutarlı ve tahmin edilebilir bir kullanıcı deneyimi ayarlama.
-* Lightbox için her zaman bir çıkış noktasının var olduğundan emin olma (aksi takdirde, reklam öğesi bir lightbox aracılığıyla ana makine doküman içeriğini etkili bir şekilde ele geçirebilir).
+- AMPHTML reklamları için tutarlı ve tahmin edilebilir bir kullanıcı deneyimi ayarlama.
+- Lightbox için her zaman bir çıkış noktasının var olduğundan emin olma (aksi takdirde, reklam öğesi bir lightbox aracılığıyla ana makine doküman içeriğini etkili bir şekilde ele geçirebilir).
 
 `close-button` özelliği zorunludur ve yalnızca AMPHTML reklamlarında buna izin verilir. Normal AMP dokümanlarında, `<amp-lightbox>` içeriğinin parçası olarak ihtiyaç duyduğunuz herhangi bir yerde bir kapat düğmesi oluşturabilirsiniz.
 

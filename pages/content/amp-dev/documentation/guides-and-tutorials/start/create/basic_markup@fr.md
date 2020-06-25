@@ -6,6 +6,7 @@ Le balisage suivant est un bon point de départ, un modèle standard.
 Copiez et enregistrez ce qui suit dans un fichier .html.
 
 [sourcecode:html]
+
 <!doctype html>
 <html amp lang="en">
   <head>
@@ -39,15 +40,15 @@ Jusque là, le contenu dans le corps (body) est assez simple. Mais le code suppl
 
 Les documents AMP HTML DOIVENT :
 
-  - Commencer par le type du document `<!doctype html>`.
-  - Contenir une balise `<html ⚡>` de niveau supérieur (`<html amp>` est également accepté).
-  - Contenir les balises `<head>` et `<body>` (facultatives dans HTML).
-  - Contenir une balise `<link rel="canonical" href="$SOME_URL">` dans l'en-tête qui pointe vers la version HTML standard du document AMP HTML ou vers le document lui-même si aucune version HTML n'existe.
-  - Contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head.
-  - Contenir une balise `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dans la balise head. Il est également recommandé d'inclure initial-scale=1.
-  - Contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` comme dernier élément de l'en-tête (inclut et charge la bibliothèque AMP JS).
-  - Contenir ce qui suit dans la balise `<head>` :
-    `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+- Commencer par le type du document `<!doctype html>`.
+- Contenir une balise `<html ⚡>` de niveau supérieur (`<html amp>` est également accepté).
+- Contenir les balises `<head>` et `<body>` (facultatives dans HTML).
+- Contenir une balise `<link rel="canonical" href="$SOME_URL">` dans l'en-tête qui pointe vers la version HTML standard du document AMP HTML ou vers le document lui-même si aucune version HTML n'existe.
+- Contenir une balise `<meta charset="utf-8">` comme premier enfant de la balise head.
+- Contenir une balise `<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">` dans la balise head. Il est également recommandé d'inclure initial-scale=1.
+- Contenir une balise `<script async src="https://cdn.ampproject.org/v0.js"></script>` comme dernier élément de l'en-tête (inclut et charge la bibliothèque AMP JS).
+- Contenir ce qui suit dans la balise `<head>` :
+  `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 
 ## Métadonnées facultatives
 

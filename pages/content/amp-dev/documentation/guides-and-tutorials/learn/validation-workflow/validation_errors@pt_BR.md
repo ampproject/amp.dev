@@ -46,15 +46,15 @@ consulte as [especificações do validador de AMP](https://github.com/ampproject
 
 As seguintes tags precisam estar presentes em todos os documentos AMP:
 
-* <a name="doctype"></a>`<!doctype html>`
-* <a name="html"></a>`<html amp> ou <html ⚡>`
-* <a name="head"></a>`<head>`
-* <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
-* <a name="utf"></a>`<meta charset="utf-8">`
-* <a name="viewport"></a>`<meta name="viewport" content="...">`
-* <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
-* <a name="body"></a>`<body>`
+- <a name="doctype"></a>`<!doctype html>`
+- <a name="html"></a>`<html amp> ou <html ⚡>`
+- <a name="head"></a>`<head>`
+- <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
+- <a name="utf"></a>`<meta charset="utf-8">`
+- <a name="viewport"></a>`<meta name="viewport" content="...">`
+- <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+- <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- <a name="body"></a>`<body>`
 
 Essas tags obrigatórias incluem um campo `mandatory: true` nas <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">especificações do validador de AMP</a> (em inglês).
 Elas também são mencionadas nas [especificações das AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
@@ -236,12 +236,15 @@ e atualmente é avaliado tanto com a lista de permissões quanto com a lista neg
 As tags com CDATA obrigatório incluem:
 
 [sourcecode:html]
+
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
 [/sourcecode]
 
 e
 
 [sourcecode:html]
+
 <style amp-custom>
 [/sourcecode]
 
@@ -632,8 +635,9 @@ A lista completa de tags únicas é conhecida:
 * `<meta viewport>`
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* `<body>`
-* `<script src="https://cdn.ampproject.org/v0.js">`
+
+- `<body>`
+- `<script src="https://cdn.ampproject.org/v0.js">`
 
 ## Erros de estilo e layout <a name="style-and-layout-errors"></a>
 

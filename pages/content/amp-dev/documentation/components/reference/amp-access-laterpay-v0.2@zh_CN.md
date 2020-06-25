@@ -2,11 +2,10 @@
 $title: amp-access-laterpay
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: 可让发布商轻松集成 LaterPay 微支付平台。
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 可让发布商轻松集成 [LaterPay](https://www.laterpay.net) 微支付平台。`amp-access-laterpay` 基于 [AMP Access](amp-access.md)，而且必须使用该组件。
 
@@ -49,7 +46,6 @@ limitations under the License.
     <td>请参阅 AMP By Example 的 <a href="https://ampbyexample.com/components/amp-access-laterpay/">amp-access-laterpay</a> 示例（带注释）。</td>
   </tr>
 </table>
-
 
 ## 行为 <a name="behavior"></a>
 
@@ -78,16 +74,14 @@ limitations under the License.
 配置与 AMP Access 类似，但不需要授权、pingback 和登录链接。
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
     "laterpay": {
       "property": value
-      }
     }
+  }
 </script>
-
 ```
 
 您可以在 `laterpay` 配置对象中设置以下值：
@@ -165,7 +159,6 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 <div amp-access="access" amp-access-hide="">
   <p>...article content...</p>
 </div>
-
 ```
 
 ## 样式设置 <a name="styling"></a>
@@ -177,7 +170,6 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 为对话框创建的结构如下所示：
 
 ```html
-
 <div id="amp-access-laterpay-dialog" class="amp-access-laterpay">
   <div class="amp-access-laterpay-container">
     <p class="amp-access-laterpay-header">
@@ -186,30 +178,33 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
     <ul>
       <li>
         <label>
-          <input name="purchaseOption" type="radio">
-            <div class="amp-access-laterpay-metadata">
-              <span class="amp-access-laterpay-title">Purchase option title</span>
-              <p class="amp-access-laterpay-description">Purchase option description</p>
-            </div>
-          </label>
-          <p class="amp-access-laterpay-price-container">
-            <span class="amp-access-laterpay-price">0.15</span>
-            <sup class="amp-access-laterpay-currency">USD</sup>
-          </p>
-        </li>
-        <!-- ... 其他购买选项对应的更多列表项 ... -->
-      </ul>
-      <button class="amp-access-laterpay-purchase-button">Buy Now</button>
-      <p class="amp-access-laterpay-already-purchased-container">
-        <a href="…">I already bought this</a>
-      </p>
-      <p class="amp-access-laterpay-footer">
-        Optional, appears if footer locale message is defined.
-      </p>
-    </div>
-    <p class="amp-access-laterpay-badge">Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a></p>
+          <input name="purchaseOption" type="radio" />
+          <div class="amp-access-laterpay-metadata">
+            <span class="amp-access-laterpay-title">Purchase option title</span>
+            <p class="amp-access-laterpay-description">
+              Purchase option description
+            </p>
+          </div>
+        </label>
+        <p class="amp-access-laterpay-price-container">
+          <span class="amp-access-laterpay-price">0.15</span>
+          <sup class="amp-access-laterpay-currency">USD</sup>
+        </p>
+      </li>
+      <!-- ... 其他购买选项对应的更多列表项 ... -->
+    </ul>
+    <button class="amp-access-laterpay-purchase-button">Buy Now</button>
+    <p class="amp-access-laterpay-already-purchased-container">
+      <a href="…">I already bought this</a>
+    </p>
+    <p class="amp-access-laterpay-footer">
+      Optional, appears if footer locale message is defined.
+    </p>
   </div>
-
+  <p class="amp-access-laterpay-badge">
+    Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a>
+  </p>
+</div>
 ```
 
 ## 本地化 <a name="localization"></a>
@@ -219,18 +214,16 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 其余文字是扩展组件的一部分，可以通过如下配置选项进行更改和本地化：
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
     "laterpay": {
       "localeMessages": {
         "messageKey": "message value"
-        }
       }
     }
+  }
 </script>
-
 ```
 
 以下消息键可以进行转换或自定义，但请注意，这些键应保留其原有含义和意图。
@@ -290,7 +283,6 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 将该组件与 LaterPay 和现有的付费墙集成结合使用时，必要的配置大致如下所示：
 
 ```html
-
 <script id="amp-access" type="application/json">
   [
     {
@@ -301,26 +293,27 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
       "namespace": "laterpay"
     },
     {
-      "authorization":
-          "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
-      "pingback":
-          "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
-      "login":
-          "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
+      "authorization": "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
+      "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
+      "login": "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
       "authorizationFallbackResponse": {"error": true},
       "namespace": "publishername"
     }
   ]
 </script>
-
 ```
 
 内容访问标记最终可能如下所示：
 
 ```html
-<section amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access" amp-access-hide>
+<section
+  amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access"
+  amp-access-hide
+>
   <p>
-    <a on="tap:amp-access.login-publishername">Login here to access your PublisherName subscription.</a>
+    <a on="tap:amp-access.login-publishername"
+      >Login here to access your PublisherName subscription.</a
+    >
   </p>
 
   <div id="amp-access-laterpay-dialog" class="amp-access-laterpay"></div>
@@ -333,17 +326,16 @@ Access Content Markup 的使用方式应与 AMP Access 的使用方式相同。
 <div amp-access="laterpay.access OR publishername.access" amp-access-hide>
   <p>...article content...</p>
 </div>
-
 ```
 
 如需查看更完整的示例，请访问 [https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html)
 
 ## 相关文档 <a name="related-documentation"></a>
 
-* [AMP Access](amp-access.md)
-* [LaterPay](https://www.laterpay.net)
-* [LaterPay：我们如何进行微支付](https://docs.laterpay.net/how_we_do_micropayments/)
-* [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - 与 AMP Access LaterPay 类似，但适用于非 AMP 网页。
+- [AMP Access](amp-access.md)
+- [LaterPay](https://www.laterpay.net)
+- [LaterPay：我们如何进行微支付](https://docs.laterpay.net/how_we_do_micropayments/)
+- [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html) - 与 AMP Access LaterPay 类似，但适用于非 AMP 网页。
 
 ## 验证 <a name="validation"></a>
 

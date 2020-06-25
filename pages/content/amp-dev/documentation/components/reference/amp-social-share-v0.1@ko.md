@@ -7,8 +7,6 @@ teaser:
   text: 공유 추적 기능을 개발 중입니다.
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -25,10 +23,7 @@ teaser:
      limitations under the License.
 -->
 
-
-
 소셜 공유 버튼을 표시합니다.
-
 
 <table>
   <tr>
@@ -66,10 +61,15 @@ teaser:
 **예: 매개변수 전달**
 
 공유 엔드포인트로 매개변수를 전달하려면 공유 엔드포인트에 추가될 `data-param-<attribute>`를 지정하면 됩니다.
+
 ```html
-<amp-social-share type="linkedin" width="60" height="44"
-    data-param-text="Hello world"
-    data-param-url="https://example.com/">
+<amp-social-share
+  type="linkedin"
+  width="60"
+  height="44"
+  data-param-text="Hello world"
+  data-param-url="https://example.com/"
+>
 </amp-social-share>
 ```
 
@@ -230,9 +230,11 @@ Linkedin은 사전 구성된 제공자 중 하나이므로 `data-share-endpoint`
 다음 예에서는 `data-share-endpoint` 속성을 Facebook Messenger 맞춤 프로토콜의 올바른 엔드포인트로 설정하여 Facebook Messenger를 통한 공유 버튼을 생성합니다.
 
 ```html
-<amp-social-share type="facebookmessenger"
-    data-share-endpoint="fb-messenger://share"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="facebookmessenger"
+  data-share-endpoint="fb-messenger://share"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 
@@ -251,8 +253,9 @@ AMP 페이지에서 사용할 수 있으며 사전에 스타일이 지정된 반
 ### 맞춤 스타일 <a name="custom-styles"></a>
 
 가끔 나만의 스타일을 제공하고 싶을 수도 있습니다. 다음처럼 제공된 스타일을 간단히 재정의할 수 있습니다.
+
 ```css
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
   background: red;
   background-image: url(datauri:svg/myownsvgicon);
 }
@@ -263,8 +266,10 @@ amp-social-share[type="twitter"] {
 `<amp-social-share>` 요소에서 [전역 AMP 대체 변수](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)를 사용할 수 있습니다. 아래 예에서 `TITLE`이 페이지 제목으로 대체되고 `CANONICAL_URL`이 문서의 표준 URL로 대체됩니다.
 
 ```html
-<amp-social-share type="whatsapp"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="whatsapp"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 

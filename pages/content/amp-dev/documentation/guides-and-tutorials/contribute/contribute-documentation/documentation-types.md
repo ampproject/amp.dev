@@ -1,5 +1,5 @@
 ---
-$title: Documentation types 
+$title: Documentation types
 $order: 1
 description: 'Types of documentation contributions accepted on amp.dev'
 formats:
@@ -10,6 +10,7 @@ formats:
 author: CrystalOnScript
 toc: false
 ---
+
 Below is a brief outline of the types of documentation contributions accepted on amp.dev:
 
 - [Introductory tutorial](documentation-types.md?format=websites#introductory-tutorial)
@@ -68,11 +69,9 @@ amp.dev examples:
   </tr>
 </table>
 
-
-
 ## Advanced tutorial <a name="advanced-tutorial"></a>
 
-Advanced tutorials help developers accomplish a specific task. It assumes the developer has some familiarity with AMP. It should demonstrate how to build an experience, integrate a feature, or address implementation tasks. 
+Advanced tutorials help developers accomplish a specific task. It assumes the developer has some familiarity with AMP. It should demonstrate how to build an experience, integrate a feature, or address implementation tasks.
 
 amp.dev examples:
 
@@ -113,6 +112,7 @@ amp.dev examples:
 An introductory guide provides an overview of relevant information to get started with AMP. It should identify the feature, describe what it is, and finish with what it does. Introductory guides introduce a developer to the basic requirements of the feature without directing them to implement it. If you’re walking through a process step by step with code samples, you’re probably writing a tutorial. If you're outlining all the programmatic elements for an AMP component, you're probably writing a reference document.
 
 amp.dev examples:
+
 - [AMP email fundamentals](../../../../documentation/guides-and-tutorials/learn/email_fundamentals.md?format=email)
 - [Common element attributes](../../../../documentation/guides-and-tutorials/learn/common_attributes.md?format=websites)
 
@@ -196,7 +196,7 @@ amp.dev examples:
 
 ## Reference documentation <a name="reference-documentation"></a>
 
-Reference documentation lists all the programmatic elements for an AMP component. It provides detailed behavioral information and is designed for scanning. Reference documentation should include exemplary code samples and demonstrate use-cases.   
+Reference documentation lists all the programmatic elements for an AMP component. It provides detailed behavioral information and is designed for scanning. Reference documentation should include exemplary code samples and demonstrate use-cases.
 
 amp.dev reference documents are found under [the AMP component catalogue](../../../../documentation/components/index.html?format=websites).
 

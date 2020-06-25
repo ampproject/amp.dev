@@ -5,7 +5,7 @@ $title: Casos prácticos
 Esta guía presenta un conjunto de casos prácticos que se utilizan con frecuencia al realizar el seguimiento de las interacciones de los usuarios:
 
 [tip type="note"]
-**NOTE –**  ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](../../../../documentation/guides-and-tutorials/contribute/index.md).
+**NOTE –** ¿Quieres añadir algún otro caso? [Ponte en contacto con nosotros.](https://github.com/ampproject/docs/issues/new) También puedes enviar uno propio, consulta cómo hacerlo en [Contribuciones](../../../../documentation/guides-and-tutorials/contribute/index.md).
 [/tip]
 
 ## Seguimiento de páginas vistas
@@ -26,22 +26,22 @@ Envía los datos de páginas vistas a una URL específica mediante [`amp-analyti
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
-    },
-    "vars": {
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}"
+      },
+      "vars": {
         "account": "ABC123"
-    },
-    "triggers": {
+      },
+      "triggers": {
         "trackPageview": {
-            "on": "visible",
-            "request": "pageview"
+          "on": "visible",
+          "request": "pageview"
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -51,19 +51,20 @@ Envía los datos de páginas vistas a Google Analytics (consulta también [Segui
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics1">
-<script type="application/json">
-{
-    "vars": {
-        "account": "UA-XXXXX-Y"  // Replace with your property ID.
-    },
-    "triggers": {
-        "trackPageview": {  // Trigger names can be any string. trackPageview is not a required name.
-            "on": "visible",
-            "request": "pageview"
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y" // Replace with your property ID.
+      },
+      "triggers": {
+        "trackPageview": {
+          // Trigger names can be any string. trackPageview is not a required name.
+          "on": "visible",
+          "request": "pageview"
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -77,27 +78,27 @@ En el siguiente ejemplo se utiliza el atributo `selector` para enviar un evento 
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
+  <script type="application/json">
+    {
+      "requests": {
         "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-    },
-    "vars": {
+      },
+      "vars": {
         "account": "ABC123"
-    },
-    "triggers": {
+      },
+      "triggers": {
         "trackAnchorClicks": {
-            "on": "click",
-            "selector": "a",
-            "request": "event",
-            "vars": {
-                "eventId": "42",
-                "eventLabel": "clicked on a link"
-            }
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -107,24 +108,24 @@ En el siguiente ejemplo se utiliza el atributo `selector` del `trigger` para env
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics3">
-<script type="application/json">
-{
-    "vars": {
-        "account": "UA-XXXXX-Y"  // Replace with your property ID.
-    },
-    "triggers": {
-        "trackClickOnHeader" : {
-            "on": "click",
-            "selector": "#header",
-            "request": "event",
-            "vars": {
-                "eventCategory": "ui-components",
-                "eventAction": "header-click"
-            }
+  <script type="application/json">
+    {
+      "vars": {
+        "account": "UA-XXXXX-Y" // Replace with your property ID.
+      },
+      "triggers": {
+        "trackClickOnHeader": {
+          "on": "click",
+          "selector": "#header",
+          "request": "event",
+          "vars": {
+            "eventCategory": "ui-components",
+            "eventAction": "header-click"
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -134,25 +135,25 @@ Realiza el seguimiento del desplazamiento en la página usando [`amp-analytics`]
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
+  <script type="application/json">
+    {
+      "requests": {
         "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-    },
-    "vars": {
+      },
+      "vars": {
         "account": "ABC123"
-    },
-    "triggers": {
+      },
+      "triggers": {
         "scrollPings": {
-            "on": "scroll",
-            "scrollSpec": {
-                "verticalBoundaries": [25, 50, 90],
-                "horizontalBoundaries": [90]
-            }
+          "on": "scroll",
+          "scrollSpec": {
+            "verticalBoundaries": [25, 50, 90],
+            "horizontalBoundaries": [90]
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -166,27 +167,27 @@ En el siguiente ejemplo se utiliza el atributo `selector` para enviar un evento 
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-    "requests": {
+  <script type="application/json">
+    {
+      "requests": {
         "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-    },
-    "vars": {
+      },
+      "vars": {
         "account": "ABC123"
-    },
-    "triggers": {
+      },
+      "triggers": {
         "trackClickOnTwitterLink": {
-            "on": "click",
-            "selector": "#tweet-link",
-            "request": "event",
-            "vars": {
-                "eventId": "43",
-                "eventLabel": "clicked on a tweet link"
-            }
+          "on": "click",
+          "selector": "#tweet-link",
+          "request": "event",
+          "vars": {
+            "eventId": "43",
+            "eventLabel": "clicked on a tweet link"
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -196,24 +197,24 @@ En el ejemplo siguiente se utiliza el atributo `selector` del `trigger` para env
 
 ```html
 <amp-analytics type="googleanalytics" id="analytics4">
-<script type="application/json">
-{
-    "vars": {
+  <script type="application/json">
+    {
+      "vars": {
         "account": "UA-XXXXX-Y" // Replace with your property ID.
-    },
-    "triggers": {
-        "trackClickOnTwitterLink" : {
-            "on": "click",
-            "selector": "#tweet-link",
-            "request": "social",
-            "vars": {
-                "socialNetwork": "twitter",
-                "socialAction": "tweet",
-                "socialTarget": "https://www.examplepetstore.com"
-            }
+      },
+      "triggers": {
+        "trackClickOnTwitterLink": {
+          "on": "click",
+          "selector": "#tweet-link",
+          "request": "social",
+          "vars": {
+            "socialNetwork": "twitter",
+            "socialAction": "tweet",
+            "socialTarget": "https://www.examplepetstore.com"
+          }
         }
+      }
     }
-}
-</script>
+  </script>
 </amp-analytics>
 ```

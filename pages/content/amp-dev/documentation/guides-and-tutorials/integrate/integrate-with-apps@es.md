@@ -68,10 +68,12 @@ para una lista dada de URL ([documentación oficial](https://developers.google.c
 Por ejemplo, para una lista dada de URLs:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 El cuerpo de respuesta contiene la asignación de URL de AMP en formato JSON:
@@ -101,14 +103,14 @@ Nota: Las URL de las páginas de AMP almacenadas en caché en los cachés de AMP
 
 Un [caché AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) es una red de entrega de contenido (CDN) basada en proxy para la entrega de documentos AMP válidos. Los cachés de AMP están diseñados para:
 
-*   Entregar solo páginas válidas de AMP.
-*   Permitir que las páginas de AMP se carguen de manera eficiente y segura.
-*   Realizar optimizaciones de rendimiento beneficiosas para el usuario adicionales para el contenido.
+- Entregar solo páginas válidas de AMP.
+- Permitir que las páginas de AMP se carguen de manera eficiente y segura.
+- Realizar optimizaciones de rendimiento beneficiosas para el usuario adicionales para el contenido.
 
 Actualmente, hay dos proveedores de AMP Cache:
 
-*   [Google AMP Cache](https://developers.google.com/amp/cache/)
-*   [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
+- [Google AMP Cache](https://developers.google.com/amp/cache/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 Esto le da dos opciones para mostrar un archivo AMP en una aplicación mediante:
 
@@ -117,10 +119,10 @@ Esto le da dos opciones para mostrar un archivo AMP en una aplicación mediante:
 
 Recomendamos usar AMP Cache por los siguientes motivos:
 
-*   Mejor experiencia de usuario debido a un tiempo de carga más rápido y baja latencia (> 1s tiempo de carga más rápido).
-*   Beneficios de rendimiento y ancho de banda debido al almacenamiento adicional en caché de objetos dependientes del cliente, por ejemplo, almacenamiento en caché de diferentes versiones de la misma imagen según el tamaño de la ventana gráfica del cliente.
-*   Es posible que el archivo AMP original ya no sea un AMP válido, lo que podría ocasionar una mala experiencia del usuario. En este caso, AMP Cache sirve la última versión válida del archivo AMP.
-*   Un editor no tan fiel podría servir dos documentos diferentes a un rastreador de AMP Cache y a sus usuarios. El uso de un caché AMP garantiza que los usuarios siempre vean el mismo archivo AMP que el caché.
+- Mejor experiencia de usuario debido a un tiempo de carga más rápido y baja latencia (> 1s tiempo de carga más rápido).
+- Beneficios de rendimiento y ancho de banda debido al almacenamiento adicional en caché de objetos dependientes del cliente, por ejemplo, almacenamiento en caché de diferentes versiones de la misma imagen según el tamaño de la ventana gráfica del cliente.
+- Es posible que el archivo AMP original ya no sea un AMP válido, lo que podría ocasionar una mala experiencia del usuario. En este caso, AMP Cache sirve la última versión válida del archivo AMP.
+- Un editor no tan fiel podría servir dos documentos diferentes a un rastreador de AMP Cache y a sus usuarios. El uso de un caché AMP garantiza que los usuarios siempre vean el mismo archivo AMP que el caché.
 
 Importante: Al servir páginas de AMP a través de AMP Cache, proporcione una experiencia de visor que muestre claramente el origen de AMP y ofrezca a los usuarios la posibilidad de compartir la URL canónica (para obtener más información, consulte también las dos secciones siguientes).
 
@@ -130,11 +132,11 @@ AMP Runtime proporciona una API Viewer (o visor de AMP), que proporciona un prot
 
 Estas son algunas de las mejores prácticas generales para implementar un AMP Viewer:
 
-*   Sirva la página AMP desde un caché AMP (>1s tiempo de carga más rápido).
-*   Muestra el origen del editor del artículo (por ejemplo, en un encabezado plegable).
-*   Proporcione una acción de intercambio (consulte también la sección "[Compartir contenido AMP](#sharing-amp-content)" a continuación).
-*   En los visores basados en webView, habilite las cookies de terceros.
-*   Establezca un referente para su plataforma / aplicación.
+- Sirva la página AMP desde un caché AMP (>1s tiempo de carga más rápido).
+- Muestra el origen del editor del artículo (por ejemplo, en un encabezado plegable).
+- Proporcione una acción de intercambio (consulte también la sección "[Compartir contenido AMP](#sharing-amp-content)" a continuación).
+- En los visores basados en webView, habilite las cookies de terceros.
+- Establezca un referente para su plataforma / aplicación.
 
 ### Compartir contenido AMP <a name="sharing-amp-content"></a>
 

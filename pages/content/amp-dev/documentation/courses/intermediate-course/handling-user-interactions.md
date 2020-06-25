@@ -5,6 +5,7 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Building A Menu
 
 Users need a way to navigate websites with many pages. In many sites and apps you might have seen, this is accomplished with a navigation menu. The requirements for the menu from our product manager are as follows:
@@ -42,7 +43,7 @@ This sequence of events could be implemented in classic HTML like this:
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
 <button onclick="document.getElementById(‘warning’).hidden = true;">
-    Hide Warning
+Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -51,7 +52,7 @@ If you’ve ever used jQuery, the equivalent would be the following:
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
 <button onclick="$('#warning').hide();">
-    Hide Warning
+Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -60,7 +61,7 @@ In AMP, meanwhile, it would look like this:
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
 <button on="tap:warning.hide">
-    Hide Warning
+Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -126,8 +127,10 @@ The portion of the page containing the sidebar should look like this:
 
 [sourcecode:html]
 {% raw %}<header class="headerbar">
-    <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">☰</div>
-    <h2>Chico's Cheese Bicycles</h2>
+
+<div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">☰</div>
+<h2>Chico's Cheese Bicycles</h2>
+
 </header>
 <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
     <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">X</div>
@@ -202,20 +205,19 @@ We can place the `<amp-accordion>` component inside of the `<amp-sidebar>` compo
 
 Using the documentation for [`<amp-accordion>`](../../../documentation/components/reference/amp-accordion.md), enhance your sidebar navigation to add sub-menus with the following specifications:
 
+- Convert the "Our Bikes" list item in the `<amp-sidebar>` into an expandable list that contains Chico's Cheese Bicycles' available bikes: Ricotta Racer, Cheddar Chase, and Parmesan Pacer.
 
-* Convert the "Our Bikes" list item in the `<amp-sidebar>` into an expandable list that contains Chico's Cheese Bicycles' available bikes: Ricotta Racer, Cheddar Chase, and Parmesan Pacer.
-
-* Convert the "Latest Models" list item in the `<amp-sidebar>` into an expandable list that contains Chico's Cheese Bicycles' latest model: the notorious Ricotta Racer.
+- Convert the "Latest Models" list item in the `<amp-sidebar>` into an expandable list that contains Chico's Cheese Bicycles' latest model: the notorious Ricotta Racer.
 
 Recommended style guidelines:
 
-* Add a `nav-dropdown` class to the `<li>`'s that contain expandable lists.
+- Add a `nav-dropdown` class to the `<li>`'s that contain expandable lists.
 
-* Add a `dropdown` class to each `<amp-accordion>` that you added.
+- Add a `dropdown` class to each `<amp-accordion>` that you added.
 
-* Add a `dropdown-item` class to each of the nested list `<li>` elements and a `dropdown-items` class to the nested `<ul>` element.
+- Add a `dropdown-item` class to each of the nested list `<li>` elements and a `dropdown-items` class to the nested `<ul>` element.
 
-* Give `<amp-accordion>` that you added a `layout` of `container`.
+- Give `<amp-accordion>` that you added a `layout` of `container`.
 
 Once you have finished, your expanded side menu should look like this:
 
@@ -225,47 +227,48 @@ Once you have finished, your expanded side menu should look like this:
 
 [sourcecode:html]
 {% raw %}<amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
-    <div class="navbar-trigger" on="tap:sidebar1.toggle">X</div>
-    <nav class="nav">
-        <ul class="label">
-            <li class="nav-item">
-                <a href="#">Our Story</a>
-            </li>
-            <li class="nav-item nav-dropdown">
-                <amp-accordion layout="container" disable-session-states class="dropdown">
-                    <section>
-                        <header>Our Bikes</header>
-                        <ul class="dropdown-items">
-                            <li class="dropdown-item">
-                                <a href="#">Ricotta Racer</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#">Cheddar Chaser</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#">Parmesan Pacer</a>
-                            </li>
-                        </ul>
-                    </section>
-                </amp-accordion>
-            </li>
-            <li class="nav-item nav-dropdown">
-                <amp-accordion layout="container" disable-session-states class="dropdown">
-                    <section>
-                        <header>Latest Models</header>
-                        <ul class="dropdown-items">
-                            <li class="dropdown-item">
-                                <a href="#">Ricotta Racer</a>
-                            </li>
-                        </ul>
-                    </section>
-                </amp-accordion>
-            </li>
-            <li class="nav-item">
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
+
+<div class="navbar-trigger" on="tap:sidebar1.toggle">X</div>
+<nav class="nav">
+<ul class="label">
+<li class="nav-item">
+<a href="#">Our Story</a>
+</li>
+<li class="nav-item nav-dropdown">
+<amp-accordion layout="container" disable-session-states class="dropdown">
+<section>
+<header>Our Bikes</header>
+<ul class="dropdown-items">
+<li class="dropdown-item">
+<a href="#">Ricotta Racer</a>
+</li>
+<li class="dropdown-item">
+<a href="#">Cheddar Chaser</a>
+</li>
+<li class="dropdown-item">
+<a href="#">Parmesan Pacer</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="nav-item nav-dropdown">
+<amp-accordion layout="container" disable-session-states class="dropdown">
+<section>
+<header>Latest Models</header>
+<ul class="dropdown-items">
+<li class="dropdown-item">
+<a href="#">Ricotta Racer</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="nav-item">
+<a href="#">Contact</a>
+</li>
+</ul>
+</nav>
 </amp-sidebar>
 {% endraw %}[/sourcecode]
 
@@ -273,9 +276,9 @@ Remember to include the `<amp-accordion>` JavaScript in the `<head>`:
 
 [sourcecode:html]
 {% raw %}<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-{% endraw %}[/sourcecode]
-[/filter]
+{% endraw %}[/sourcecode][/filter]
 [filter level="advanced"]
+
 ## Building A Menu
 
 First, let's build a navigation menu. Our requirements are as follows:
@@ -303,7 +306,7 @@ In AMP, we handle events by using the on property. For example, imagine a button
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
 <button onclick="document.getElementById(‘warning’).hidden = true;">
-    Hide Warning
+Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -312,7 +315,7 @@ If you've ever used jQuery, the equivalent would be the following:
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
 <button onclick="$('#warning').hide();">
-    Hide Warning
+Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -321,7 +324,7 @@ In AMP, meanwhile, it would look like this:
 [sourcecode:html]
 {% raw %}<div id="warning">This is a warning.</div>
 <button on="tap:warning.hide">
-    Hide Warning
+Hide Warning
 </button>
 {% endraw %}[/sourcecode]
 
@@ -387,8 +390,10 @@ The portion of the page containing the sidebar should look like this:
 
 [sourcecode:html]
 {% raw %}<header class="headerbar">
-    <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">☰</div>
-    <h2>Chico's Cheese Bicycles</h2>
+
+<div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">☰</div>
+<h2>Chico's Cheese Bicycles</h2>
+
 </header>
 <amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
     <div class="navbar-trigger" role="button" tabindex="0" on="tap:sidebar1.toggle">X</div>
@@ -479,47 +484,48 @@ Once you have finished, your expanded side menu should look like this:
 
 [sourcecode:html]
 {% raw %}<amp-sidebar class="sidebar" id="sidebar1" layout="nodisplay" side="left">
-    <div class="navbar-trigger" on="tap:sidebar1.toggle">X</div>
-    <nav class="nav">
-        <ul class="label">
-            <li class="nav-item">
-                <a href="#">Our Story</a>
-            </li>
-            <li class="nav-item nav-dropdown">
-                <amp-accordion layout="container" disable-session-states class="dropdown">
-                    <section>
-                        <header>Our Bikes</header>
-                        <ul class="dropdown-items">
-                            <li class="dropdown-item">
-                                <a href="#">Ricotta Racer</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#">Cheddar Chaser</a>
-                            </li>
-                            <li class="dropdown-item">
-                                <a href="#">Parmesan Pacer</a>
-                            </li>
-                        </ul>
-                    </section>
-                </amp-accordion>
-            </li>
-            <li class="nav-item nav-dropdown">
-                <amp-accordion layout="container" disable-session-states class="dropdown">
-                    <section>
-                        <header>Latest Models</header>
-                        <ul class="dropdown-items">
-                            <li class="dropdown-item">
-                                <a href="#">Ricotta Racer</a>
-                            </li>
-                        </ul>
-                    </section>
-                </amp-accordion>
-            </li>
-            <li class="nav-item">
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </nav>
+
+<div class="navbar-trigger" on="tap:sidebar1.toggle">X</div>
+<nav class="nav">
+<ul class="label">
+<li class="nav-item">
+<a href="#">Our Story</a>
+</li>
+<li class="nav-item nav-dropdown">
+<amp-accordion layout="container" disable-session-states class="dropdown">
+<section>
+<header>Our Bikes</header>
+<ul class="dropdown-items">
+<li class="dropdown-item">
+<a href="#">Ricotta Racer</a>
+</li>
+<li class="dropdown-item">
+<a href="#">Cheddar Chaser</a>
+</li>
+<li class="dropdown-item">
+<a href="#">Parmesan Pacer</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="nav-item nav-dropdown">
+<amp-accordion layout="container" disable-session-states class="dropdown">
+<section>
+<header>Latest Models</header>
+<ul class="dropdown-items">
+<li class="dropdown-item">
+<a href="#">Ricotta Racer</a>
+</li>
+</ul>
+</section>
+</amp-accordion>
+</li>
+<li class="nav-item">
+<a href="#">Contact</a>
+</li>
+</ul>
+</nav>
 </amp-sidebar>
 {% endraw %}[/sourcecode]
 
@@ -527,5 +533,4 @@ Remember to include the `<amp-accordion>` JavaScript in the `<head>`:
 
 [sourcecode:html]
 {% raw %}<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-{% endraw %}[/sourcecode]
-[/filter]
+{% endraw %}[/sourcecode][/filter]

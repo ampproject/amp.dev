@@ -13,19 +13,19 @@ AMPHTML ads are similar to traditional HTML ads, but instead of coding them in t
 
 ## You will learn to:
 
-* Create a valid AMPHTML ad according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)
-* Track ad views by using the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) component
-* Verify the AMPHTML ad syntax by using the [AMP validator](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
+- Create a valid AMPHTML ad according to the [AMPHTML ad spec](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)
+- Track ad views by using the [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md) component
+- Verify the AMPHTML ad syntax by using the [AMP validator](https://validator.ampproject.org/#htmlFormat=AMP4ADS)
 
 ## Prerequisites:
 
-* A basic knowledge of HTML, CSS, and JavaScript
-* A browser and text editor of your choice
+- A basic knowledge of HTML, CSS, and JavaScript
+- A browser and text editor of your choice
 
 [tip]
-*Don't want to create an ad from scratch?*  Use one of the following tools to create your AMPHTML ad:
+_Don't want to create an ad from scratch?_ Use one of the following tools to create your AMPHTML ad:
 
-* [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-* [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-* Adobe Animate (*coming soon*)
-[/tip]
+- [Celtra's Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate (_coming soon_)
+  [/tip]

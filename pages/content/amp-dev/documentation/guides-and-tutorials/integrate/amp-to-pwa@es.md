@@ -4,9 +4,9 @@ $title: Precargar una aplicación web progresiva (PWA) desde páginas AMP
 
 Una buena estrategia es definir que **una página AMP sea el punto de entrada de los usuarios a tu sitio web** y después **preparar la PWA en segundo plano** y dirigirlos a ella durante el resto de la visita:
 
-* Todas las páginas de producto con contenido (las que tienen contenido específico, no las principales) se publican en AMP para obtener esta experiencia de carga casi instantánea.
-* Estas páginas AMP usan un elemento especial de AMP [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para preparar una caché y el esqueleto de la PWA mientras el usuario está disfrutando del contenido.
-* Cuando el usuario hace clic en otro enlace de tu sitio web (por ejemplo, en la llamada a la acción de la parte inferior, para obtener una experiencia más similar a una aplicación), el componente service worker intercepta la solicitud, toma el control de la página y carga el esqueleto de la PWA en su lugar.
+- Todas las páginas de producto con contenido (las que tienen contenido específico, no las principales) se publican en AMP para obtener esta experiencia de carga casi instantánea.
+- Estas páginas AMP usan un elemento especial de AMP [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) para preparar una caché y el esqueleto de la PWA mientras el usuario está disfrutando del contenido.
+- Cuando el usuario hace clic en otro enlace de tu sitio web (por ejemplo, en la llamada a la acción de la parte inferior, para obtener una experiencia más similar a una aplicación), el componente service worker intercepta la solicitud, toma el control de la página y carga el esqueleto de la PWA en su lugar.
 
 Sigue leyendo para saber por qué y cómo usar este patrón de desarrollo.
 
@@ -18,7 +18,7 @@ AMP es una solución ideal en el caso de las denominadas **páginas de producto*
 
 ### Mejorar la interactividad y la interacción con PWA
 
-Por otro lado, las aplicaciones web progresivas aumentan el grado de interactividad y de interacción, pero no tienen las *características de primera carga instantánea* de una página AMP. Su característica principal es la tecnología Service Worker, un proxy del cliente que te permite almacenar en caché todo tipo de recursos para usarlos después en las páginas. Sin embargo, estos proxies *solo se activan después de la primera carga*.
+Por otro lado, las aplicaciones web progresivas aumentan el grado de interactividad y de interacción, pero no tienen las _características de primera carga instantánea_ de una página AMP. Su característica principal es la tecnología Service Worker, un proxy del cliente que te permite almacenar en caché todo tipo de recursos para usarlos después en las páginas. Sin embargo, estos proxies _solo se activan después de la primera carga_.
 
 {{ image('/static/img/docs/pwamp_comparison.png', 977, 549, align='', caption='Pros y contras de AMP frente a PWA.') }}
 
@@ -31,8 +31,10 @@ Consejo: Si todavía no estás familiarizado con Service Worker, te recomendamos
 En primer lugar, instala el componente service worker en todas tus páginas AMP con [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md), incluyéndolo junto a su secuencia de comandos en la sección `<head>` de la página:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Luego, añade el siguiente código en cualquier lugar de la sección `<body>` (modifica lo que corresponda para que dirija a tu componente service worker):
@@ -49,20 +51,20 @@ Y, finalmente, al instalar el service worker, almacena en caché todos los recur
 [sourcecode:javascript]
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/main.css',
-  '/script/main.js'
+'/',
+'/styles/main.css',
+'/script/main.js'
 ];
 
 self.addEventListener('install', function(event) {
-  // Sigue los pasos de la instalación.
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function(cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
+// Sigue los pasos de la instalación.
+event.waitUntil(
+caches.open(CACHE_NAME)
+.then(function(cache) {
+console.log('Opened cache');
+return cache.addAll(urlsToCache);
+})
+);
 });
 [/sourcecode]
 
@@ -78,14 +80,14 @@ En este caso tienes un sitio web canónico (que no es AMP) y generas páginas AM
 
 ### 2. Si tu sitio web canónico es AMP
 
-*Si tus páginas canónicas son tus páginas AMP:* estás creando todo el sitio web con la tecnología AMP y usas solo AMP como biblioteca (dato curioso: el sitio web que estás leyendo ahora mismo se ha creado así). **Si es tu caso, la mayoría de los enlaces de tus páginas AMP dirigen a otras páginas AMP.**
+_Si tus páginas canónicas son tus páginas AMP:_ estás creando todo el sitio web con la tecnología AMP y usas solo AMP como biblioteca (dato curioso: el sitio web que estás leyendo ahora mismo se ha creado así). **Si es tu caso, la mayoría de los enlaces de tus páginas AMP dirigen a otras páginas AMP.**
 
 Ahora puedes implementar la PWA en una ruta independiente como `your-domain.com/pwa` y utilizar el componente service worker que ya está activo para **interceptar la navegación cuando un usuario hace clic en un enlace de una página AMP**:
 
 [sourcecode:javascript]
 self.addEventListener('fetch', event => {
-    if (event.request.mode === 'navigate') {
-      event.respondWith(fetch('/pwa'));
+if (event.request.mode === 'navigate') {
+event.respondWith(fetch('/pwa'));
 
       // Empieza a descargar inmediatamente el recurso.
       fetch(event.request.url);

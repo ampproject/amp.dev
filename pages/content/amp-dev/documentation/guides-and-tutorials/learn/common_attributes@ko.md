@@ -4,7 +4,7 @@ $title: 일반 속성
 
 [TOC]
 
-AMP는 여러 가지 AMP 구성요소 및 HTML 요소로 확장되는 일반 속성 집합을 제공합니다.  이 문서에서는 각각의 일반 속성을 설명합니다.
+AMP는 여러 가지 AMP 구성요소 및 HTML 요소로 확장되는 일반 속성 집합을 제공합니다. 이 문서에서는 각각의 일반 속성을 설명합니다.
 
 ## fallback
 
@@ -16,17 +16,16 @@ fallback은 브라우저에서 요소를 지원하지 않거나 필요한 리소
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive" >
+
   <div fallback>이 기기에서 애니메이션 이미지를 표시할 수 없습니다.</div>
 </amp-anim>
 [/sourcecode]
 
 자세한 내용은 [자리표시자 및 대체 동작](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)을 참조하세요.
 
-
 ## heights
 
 `responsive` 레이아웃을 지원하는 모든 AMP 요소는 `heights` 속성도 지원합니다. 이 속성의 값은 미디어 표현에 따른 크기 표현이며, [`img` 태그의 sizes 속성](https://developer.mozilla.org/ko-KR/docs/Web/HTML/Element/img)과 비슷하지만 2가지 중요한 차이점이 있습니다.
-
 
 1. 요소의 너비가 아닌 높이에 적용되는 값입니다.
 2. 백분율 값이 허용됩니다. 백분율 값은 요소 너비에 대한 백분율을 나타냅니다. 예를 들어 `80%`라는 값은 요소의 높이가 요소 너비의 80%라는 사실을 뜻합니다.
@@ -108,15 +107,14 @@ AMP는 AMP 구성요소가 문서 레이아웃에서 어떻게 작동할지 지�
 구문:
 
 [sourcecode:text]
-eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 예:
 
 [sourcecode:html]
 <button on="tap:my-lightbox">라이트박스 열기</button>
 <amp-lightbox id="my-lightbox" layout="nodisplay">
-  ...
+...
 </amp-lightbox>
 [/sourcecode]
 
@@ -132,12 +130,11 @@ eventName:targetId[.methodName[(arg1=value, arg2=value)]]
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width="466" height="355" layout="responsive">
-  <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
 자세한 내용은 [자리표시자 및 대체 동작](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)을 참조하세요.
-
 
 ## sizes
 

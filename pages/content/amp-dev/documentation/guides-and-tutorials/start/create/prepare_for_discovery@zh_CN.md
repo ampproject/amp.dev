@@ -2,7 +2,7 @@
 $title: 准备页面以供发现和分发
 ---
 
-在某些情况下，您可能希望同时拥有同一页面（例如，新闻文章）的非 AMP 版本和 AMP 版本。请考虑此情况：如果 Google 搜索找到该页面的非 AMP 版本，*它如何知道该页面有 AMP 版本*？
+在某些情况下，您可能希望同时拥有同一页面（例如，新闻文章）的非 AMP 版本和 AMP 版本。请考虑此情况：如果 Google 搜索找到该页面的非 AMP 版本，_它如何知道该页面有 AMP 版本_？
 
 ## 使用 &lt;link> 链接页面
 
@@ -11,12 +11,14 @@ $title: 准备页面以供发现和分发
 向非 AMP 页面中添加以下内容：
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 向 AMP 页面中添加以下内容
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,5 +27,6 @@ $title: 准备页面以供发现和分发
 如果您只有一个页面，并且该页面是 AMP 页面，则您仍必须向其中添加规范链接，该链接只是指向自身：
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]

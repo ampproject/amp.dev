@@ -27,7 +27,7 @@ Untuk mengikutsertakan browser ke Saluran Dev AMP, buka [halaman eksperimen AMP]
 
 #### Ditampilkan dari cdn.ampproject.org
 
-Untuk konten yang ditampilkan dari [https://cdn.ampproject.org](https://cdn.ampproject.org), 
+Untuk konten yang ditampilkan dari [https://cdn.ampproject.org](https://cdn.ampproject.org),
 buka [halaman eksperimental AMP](https://cdn.ampproject.org/experiments.html)
 dan aktifkan (atau nonaktifkan) komponen eksperimental dengan mengalihkan pengalih ke aktif (atau nonaktif). Ikut serta akan menetapkan cookie di browser yang akan mengaktifkan eksperimen pada semua halaman AMP yang ditampilkan melalui Cache Google AMP.
 
@@ -36,7 +36,7 @@ dan aktifkan (atau nonaktifkan) komponen eksperimental dengan mengalihkan pengal
 Untuk konten yang ditampilkan dari domain lain, eksperimen dapat dialihkan di konsol devtools jika mode pengembangan aktif menggunakan:
 
 ```js
-AMP.toggleExperiment('experiment')
+AMP.toggleExperiment('experiment');
 ```
 
 File AMP apa pun yang menyertakan fitur eksperimental akan gagal
@@ -50,12 +50,11 @@ Dokumen dapat memilih untuk ikut serta dalam eksperimen tertentu. Untuk melakuka
 ```html
 <head>
   ...
-  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b">
+  <meta name="amp-experiments-opt-in" content="experiment-a,experiment-b" />
   <!-- The meta tag needs to be placed before the AMP runtime script.-->
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   ...
 </head>
 ```
 
-Dengan demikian, eksperimen yang ditentukan akan diaktifkan untuk semua pengunjung dokumen. Namun, tidak semua eksperimen mengizinkan penyertaan dokumen. Untuk mengetahui daftar lengkap eksperimen yang diizinkan, lihat atribut `allow-doc-opt-in` dalam file` prod-config.json` di project. Perhatikan bahwa penyertaan dokumen dapat diganti dengan ketidakikutsertaan pengguna.
- 
+Dengan demikian, eksperimen yang ditentukan akan diaktifkan untuk semua pengunjung dokumen. Namun, tidak semua eksperimen mengizinkan penyertaan dokumen. Untuk mengetahui daftar lengkap eksperimen yang diizinkan, lihat atribut `allow-doc-opt-in` dalam file`prod-config.json` di project. Perhatikan bahwa penyertaan dokumen dapat diganti dengan ketidakikutsertaan pengguna.

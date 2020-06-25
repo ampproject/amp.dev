@@ -21,9 +21,11 @@ O componente [`amp-live-list`](../../../documentation/components/reference/amp-l
 Este é um exemplo do código inicial do blog:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
 </amp-live-list>
@@ -31,7 +33,7 @@ Este é um exemplo do código inicial do blog:
 
 Vamos analisar esse código:
 
-Cada componente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) precisa ter um código exclusivo, porque pode haver mais de um deles na página.  Nesse exemplo, especificamos `my-live-list` como o código exclusivo.
+Cada componente [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) precisa ter um código exclusivo, porque pode haver mais de um deles na página. Nesse exemplo, especificamos `my-live-list` como o código exclusivo.
 
 O atributo `data-poll-interval` especifica a frequência das pesquisas. Se o documento do host for atualizado, a atualização será disponibilizada para o usuário após o próximo intervalo.
 
@@ -52,9 +54,11 @@ Os blogs longos podem usar a paginação para melhorar o desempenho ao limitar o
 Com a paginação, o código simples que usamos antes ficará assim:
 
 ```html
-<amp-live-list id="my-live-list"
-    data-poll-interval="15000"
-    data-max-items-per-page="5">
+<amp-live-list
+  id="my-live-list"
+  data-poll-interval="15000"
+  data-max-items-per-page="5"
+>
   <button update on="tap:my-live-list.update">You have updates</button>
   <div items></div>
   <div pagination>
@@ -63,8 +67,8 @@ Com a paginação, o código simples que usamos antes ficará assim:
         <li>1</li>
         <li>Next</li>
       </ul>
-     </nav>
-   </div>
+    </nav>
+  </div>
 </amp-live-list>
 ```
 

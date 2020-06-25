@@ -2,14 +2,13 @@
 $title: amp-img
 $category@: media
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 teaser:
   text: HTML5 の img タグを置き換えます。
 ---
-
 
 <!--
        Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -27,8 +26,6 @@ teaser:
      limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td class="col-fourty"><strong>説明</strong></td>
@@ -44,7 +41,6 @@ teaser:
   </tr>
 </table>
 
-
 # 動作 <a name="behavior"></a>
 
 ランタイム環境では、ビューポートの位置、システム リソース、接続帯域幅などの要素に基づいてリソースの読み込みを遅延または優先させることができます。`amp-img` コンポーネントを使用すると、ランタイム環境における画像リソースの管理をこのように効果的に行うことができます。
@@ -59,14 +55,18 @@ teaser:
 次の例では、`layout=responsive` を設定することにより、ビューポートのサイズに合わせて画像を表示します。画像は、`width` と `height` で指定されたアスペクト比に従って伸縮します。
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="read-on"] レスポンシブな AMP ページについて詳しくは、[レスポンシブな AMP ページの作成](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md)ガイドをご覧ください。
@@ -79,18 +79,24 @@ teaser:
 次の例では、ブラウザが WebP をサポートしていない場合、JPG のフォールバック画像が表示されます。
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 プレースホルダの背景色やその他のビジュアルは、要素自体の CSS セレクタとスタイルを使用して設定できます。
@@ -99,9 +105,9 @@ teaser:
 
 [tip type="read-on"] `amp-img` の使用方法について詳しくは、以下のリソースをご覧ください。
 
-* [プレースホルダとフォールバック](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
-* [画像と動画を含める](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
-[/tip]
+- [プレースホルダとフォールバック](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+- [画像と動画を含める](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
+  [/tip]
 
 # 属性 <a name="attributes"></a>
 
@@ -143,7 +149,7 @@ teaser:
 ```css
 amp-img {
   background-color: grey;
-  }
+}
 ```
 
 # ヒントとアドバイス <a name="tips--tricks"></a>
@@ -176,14 +182,18 @@ amp-img {
 たとえば、`width="900"` と `height="675"` を指定する代わりに、`width="1.33"` と `height="1"` を指定できます。
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="1.33"
   height="1"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 # 各種の画面解像度に複数のソースファイルを設定する <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>

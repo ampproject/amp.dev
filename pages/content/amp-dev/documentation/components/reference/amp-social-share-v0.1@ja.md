@@ -2,11 +2,10 @@
 $title: amp-social-share
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: 共有トラッキング機能を開発中です。
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,10 +23,7 @@ teaser:
      limitations under the License.
 -->
 
-
-
 ソーシャル共有ボタンを表示します。
-
 
 <table>
   <tr>
@@ -65,10 +61,15 @@ teaser:
 **例: パラメータを渡す**
 
 パラメータを共有エンドポイントに渡す場合、その共有エンドポイントに付加する `data-param-<attribute>` を指定できます。
+
 ```html
-<amp-social-share type="linkedin" width="60" height="44"
-    data-param-text="Hello world"
-    data-param-url="https://example.com/">
+<amp-social-share
+  type="linkedin"
+  width="60"
+  height="44"
+  data-param-text="Hello world"
+  data-param-url="https://example.com/"
+>
 </amp-social-share>
 ```
 
@@ -228,9 +229,11 @@ LinkedIn は事前設定済みプロバイダの 1 つであるため、`data-sh
 以下の例では、Facebook Messenger 用の共有ボタンを作成するため、`data-share-endpoint` 属性に対して Facebook Messenger カスタム プロトコル用の適切なエンドポイントを設定しています。
 
 ```html
-<amp-social-share type="facebookmessenger"
-    data-share-endpoint="fb-messenger://share"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="facebookmessenger"
+  data-share-endpoint="fb-messenger://share"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 
@@ -249,8 +252,9 @@ AMP ページ内で使用できるスタイル設定済みのレスポンシブ�
 ### カスタム スタイル <a name="custom-styles"></a>
 
 独自のスタイルを指定したい場合、次のように指定するだけで、事前定義済みのスタイル設定をオーバーライドできます。
+
 ```css
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
   background: red;
   background-image: url(datauri:svg/myownsvgicon);
 }
@@ -261,8 +265,10 @@ amp-social-share[type="twitter"] {
 `<amp-social-share>` 要素内で [AMP 変数グローバル置換](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)を使用することができます。以下の例の場合、`TITLE` がページタイトルに置換され、`CANONICAL_URL` がドキュメントの正規 URL に置換されます。
 
 ```html
-<amp-social-share type="whatsapp"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="whatsapp"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 

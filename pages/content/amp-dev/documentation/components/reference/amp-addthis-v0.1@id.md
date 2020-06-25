@@ -2,11 +2,10 @@
 $title: amp-addthis
 $category@: social
 formats:
-- websites
+  - websites
 teaser:
   text: Displays an AddThis website tools embed.
 ---
-
 
 <!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Menampilkan sematan fitur situs [AddThis](https://www.addthis.com).
 
 <table>
@@ -38,7 +35,6 @@ Menampilkan sematan fitur situs [AddThis](https://www.addthis.com).
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
 </table>
-
 
 ## Mengapa AddThis? <a name="why-addthis"></a>
 
@@ -53,6 +49,7 @@ AddThis dipercaya oleh lebih dari 15.000.000 situs dengan lebih dari 2 miliar pe
 Ditempatkan di samping, di atas, atau di bawah halaman, mengikuti gerakan scroll pembaca. Cara terbaik untuk mempromosikan fitur berbagi dengan cara yang tidak terlalu mencolok.
 
 Contoh:
+
 ```html
 <!--
   This example uses a placeholder pubId.
@@ -65,7 +62,8 @@ Contoh:
   layout="responsive"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="957l"
-  data-widget-type="floating">
+  data-widget-type="floating"
+>
 </amp-addthis>
 ```
 
@@ -74,6 +72,7 @@ Contoh:
 Integrasikan tombol berbagi ke dalam konten Anda untuk memberikan pengalaman berbagi yang lancar.
 
 Contoh:
+
 ```html
 <!--
   This example uses a placeholder pubId.
@@ -85,7 +84,8 @@ Contoh:
   height="92"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="mv93"
-  data-widget-type="inline">
+  data-widget-type="inline"
+>
 </amp-addthis>
 ```
 
@@ -150,13 +150,13 @@ AddThis Tools dan AddThis Toolbar mengumpulkan informasi dari perangkat yang dig
 
 Data AddThis dapat terdiri dari berikut ini:
 
-* Alamat Internet Protocol (IP), ID Periklanan Seluler (MAID) (yang dapat digunakan oleh developer aplikasi seluler untuk mengidentifikasi siapa yang menggunakan aplikasi seluler mereka), ID aplikasi seluler, jenis browser, bahasa browser, jenis sistem operasi, serta tanggal dan waktu Pengguna Akhir mengunjungi Situs Penerbit atau Toolbar
-* Pengguna yang menggunakan Toolbar;
-* Perilaku di Situs Penerbit, seperti berapa lama Pengguna Akhir mengunjungi Situs Penerbit, perilaku berbagi Pengguna Akhir untuk Konten yang ada di Situs Penerbit, dan perilaku scroll Pengguna Akhir di Situs Penerbit;
-* URL perujuk dan penelusuran web yang digunakan Pengguna Akhir untuk menemukan dan menavigasi ke Situs Penerbit;
-* Kata kunci yang dimasukkan ke dalam fungsi penelusuran AddThis Toolbar, dan apakah dan kapan Pengguna Toolbar mendownload, menginstal, atau meng-uninstal AddThis Toolbar;
-* Informasi mengenai seberapa sering Pengguna Akhir menggunakan AddThis Tools dan seberapa sering Pengguna Toolbar menggunakan AddThis Toolbar; dan
-* Data geolokasi yang diambil dari Alamat IP Pengguna Akhir dan Pengguna Toolbar.
+- Alamat Internet Protocol (IP), ID Periklanan Seluler (MAID) (yang dapat digunakan oleh developer aplikasi seluler untuk mengidentifikasi siapa yang menggunakan aplikasi seluler mereka), ID aplikasi seluler, jenis browser, bahasa browser, jenis sistem operasi, serta tanggal dan waktu Pengguna Akhir mengunjungi Situs Penerbit atau Toolbar
+- Pengguna yang menggunakan Toolbar;
+- Perilaku di Situs Penerbit, seperti berapa lama Pengguna Akhir mengunjungi Situs Penerbit, perilaku berbagi Pengguna Akhir untuk Konten yang ada di Situs Penerbit, dan perilaku scroll Pengguna Akhir di Situs Penerbit;
+- URL perujuk dan penelusuran web yang digunakan Pengguna Akhir untuk menemukan dan menavigasi ke Situs Penerbit;
+- Kata kunci yang dimasukkan ke dalam fungsi penelusuran AddThis Toolbar, dan apakah dan kapan Pengguna Toolbar mendownload, menginstal, atau meng-uninstal AddThis Toolbar;
+- Informasi mengenai seberapa sering Pengguna Akhir menggunakan AddThis Tools dan seberapa sering Pengguna Toolbar menggunakan AddThis Toolbar; dan
+- Data geolokasi yang diambil dari Alamat IP Pengguna Akhir dan Pengguna Toolbar.
 
 Data AddThis akan diperlakukan sebagai informasi pribadi sejauh yang diwajibkan berdasarkan undang-undang yang berlaku. Sesuai Persyaratan Layanan AddThis, penerbit diwajibkan memperoleh semua persetujuan dan otorisasi Pengguna Akhir yang diperlukan, dan menyampaikan semua pemberitahuan wajib terkait penyediaan Data AddThis yang dikumpulkan dari Pengguna Akhir ke Oracle.
 

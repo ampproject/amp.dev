@@ -108,8 +108,8 @@ Para ver cómo responden los diferentes diseños al redimensionamiento de la pan
 En algunos casos, si no se han proporcionado los atributos `width` o `height`,
 el tiempo de ejecución de AMP puede asignarles un valor predeterminado del siguiente modo:
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): el valor predeterminado de anchura y altura es 0.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): el navegador infiere la anchura y la altura predeterminadas.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): el valor predeterminado de anchura y altura es 0.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): el navegador infiere la anchura y la altura predeterminadas.
 
 ### ¿Qué sucede si no se ha proporcionado el atributo <code>layout</code>? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 

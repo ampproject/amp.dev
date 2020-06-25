@@ -2,13 +2,11 @@
 $title: amp-lightbox
 $category@: layout
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: 전체 표시 영역 '라이트박스' 모달에 요소를 표시합니다.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -47,7 +43,6 @@ teaser:
   </tr>
 </table>
 
-
 ## 동작 <a name="behavior"></a>
 
 `amp-lightbox` 구성요소는 전체 표시 영역 오버레이/모달에 표시되는 하위 요소를 정의합니다. 사용자가 요소(예: 버튼)를 탭하거나 클릭하면 클릭한 요소의 `on` 속성에서 참조하는 `amp-lightbox` ID가 전체 표시 영역을 사용하도록 라이트박스를 트리거하고 `amp-lightbox`의 하위 요소를 표시합니다.
@@ -57,7 +52,9 @@ teaser:
 ```html
 <button on="tap:quote-lb">See Quote</button>
 <amp-lightbox id="quote-lb" layout="nodisplay">
-  <blockquote>"Don't talk to me about JavaScript fatigue" - Horse JS</blockquote>
+  <blockquote>
+    "Don't talk to me about JavaScript fatigue" - Horse JS
+  </blockquote>
   <button on="tap:quote-lb.close">Nice!</button>
 </amp-lightbox>
 ```
@@ -139,8 +136,8 @@ AMPHTML 광고에서 사용할 `amp-lightbox` 구성요소는 [실험적](../../
 
 AMPHTML 광고의 경우 `close-button` 속성이 필요합니다. 이 속성을 사용하면 라이트박스 상단의 헤더가 렌더링됩니다. 헤더에는 닫기 버튼과 '광고'라는 레이블이 포함되어 있습니다. 이 헤더의 요구사항은 다음과 같습니다.
 
-* AMPHTML 광고의 일관되고 예측 가능한 사용자 환경을 설정합니다.
-* 라이트박스의 이탈 지점이 항상 존재하는지 확인하세요. 그러지 않으면 광고 소재에서 라이트박스를 통해 호스트 문서 콘텐츠를 쉽게 도용할 수 있습니다.
+- AMPHTML 광고의 일관되고 예측 가능한 사용자 환경을 설정합니다.
+- 라이트박스의 이탈 지점이 항상 존재하는지 확인하세요. 그러지 않으면 광고 소재에서 라이트박스를 통해 호스트 문서 콘텐츠를 쉽게 도용할 수 있습니다.
 
 `close-button` 속성은 필수이며 AMPHTML 광고에서만 허용됩니다. 일반 AMP 문서에서 `<amp-lightbox>` 콘텐츠의 일부로 필요할 때마다 닫기 버튼을 렌더링할 수 있습니다.
 

@@ -7,6 +7,7 @@ $hidden: true
 formats:
   - websites
 ---
+
 Some user interactions with a page, such as leaving a comment, could be conditioned by a login flow. You can implement a login flow with AMP by using the [`amp-access`](../../../../documentation/components/reference/amp-access.md) component combined with the [`amp-form`](../../../../documentation/components/reference/amp-form.md) component.
 
 [tip type="tip"]

@@ -23,7 +23,8 @@ Eche un vistazo a este ejemplo de un anuncio de **DoubleClick**:
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/image/static">
+  data-slot="/35096353/amptesting/image/static"
+>
 </amp-ad>
 ```
 
@@ -38,7 +39,8 @@ El atributo `data-slot` es más único. En [`amp-ad`](../../../../documentation/
   type="a9"
   data-aax_size="300x250"
   data-aax_pubname="test123"
-  data-aax_src="302">
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -55,7 +57,8 @@ Exploremos algunas opciones más disponibles para usar con los anuncios de Doubl
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/uk">
+  data-slot="/35096353/amptesting/geo/uk"
+>
   <div fallback>No ad appeared because you're not browsing from the UK!</div>
 </amp-ad>
 
@@ -63,7 +66,8 @@ Exploremos algunas opciones más disponibles para usar con los anuncios de Doubl
   width="300"
   height="250"
   type="doubleclick"
-  data-slot="/35096353/amptesting/geo/us">
+  data-slot="/35096353/amptesting/geo/us"
+>
   <div fallback>No ad appeared because you're not browsing from the US!</div>
 </amp-ad>
 ```
@@ -90,7 +94,8 @@ Vamos a llevar nuestro documento de AMP al siguiente nivel y agregar funcionalid
 - Tweets
 - Article quotes
 
-##  Incluir un video de YouTube
+## Incluir un video de YouTube
+
 Intente incrustar un video de YouTube en el documento. **Agregue** el siguiente código justo después del `<header>` en su documento AMP:
 
 ```html
@@ -98,14 +103,15 @@ Intente incrustar un video de YouTube en el documento. **Agregue** el siguiente 
   data-videoid="npum8JsITQE"
   layout="responsive"
   width="480"
-  height="270">
+  height="270"
+>
   <div fallback>
     <p>The video could not be loaded.</p>
   </div>
 </amp-youtube>
 ```
 
-**Actualiza** la página y mira la página. Debería ver este texto en lugar de un video: *“The video could not be loaded.”*
+**Actualiza** la página y mira la página. Debería ver este texto en lugar de un video: _“The video could not be loaded.”_
 
 Incluso si su navegador puede mostrar vídeos de YouTube sin problemas, seguirá recibiendo este error. ¿Por qué? El video no ha fallado en la carga, sino que el propio componente falló.
 
@@ -114,7 +120,11 @@ Recuerde que no todos los componentes están incluidos en el archivo JavaScript 
 **Agregue** la siguiente secuencia de comandos a la etiqueta `<head>`:
 
 ```html
-<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+<script
+  async
+  custom-element="amp-youtube"
+  src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+></script>
 ```
 
 **Actualice** la página y debería ver el video de YouTube:
@@ -130,12 +140,17 @@ Para obtener más información sobre la incorporación de vídeos de YouTube, le
 [/tip]
 
 ## Mostrar un Tweet
+
 La incorporación de tweets preformateados de Twitter es una característica común en los artículos de noticias. El componente [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) puede proporcionar esta funcionalidad con facilidad.
 
 Comience agregando la siguiente solicitud de JavaScript a la etiqueta `<head>` de su documento:
 
 ```html
-<script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+<script
+  async
+  custom-element="amp-twitter"
+  src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"
+></script>
 ```
 
 Ahora, en su artículo, **agregue** este código para incrustar el Tweet:
@@ -145,7 +160,8 @@ Ahora, en su artículo, **agregue** este código para incrustar el Tweet:
   width="486"
   height="657"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
 
@@ -172,7 +188,11 @@ AMP proporciona otro componente específicamente diseñado para este tipo de sit
 Hagamos un intento. Primero, **agregue** la biblioteca del componente a la etiqueta `<head>`:
 
 ```html
-<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+<script
+  async
+  custom-element="amp-fit-text"
+  src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"
+></script>
 ```
 
 Agregue lo siguiente a su página:
@@ -197,7 +217,11 @@ O, ¿qué pasa si la cita es más larga?
 
 ```html
 <amp-fit-text width="400" height="75" layout="responsive" max-font-size="42">
-   And the Raven, never flitting, still is sitting, still is sitting. On the pallid bust of Pallas just above my chamber door; And his eyes have all the seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming throws his shadow on the floor; And my soul from out that shadow that lies floating on the floor. Shall be lifted—nevermore!
+  And the Raven, never flitting, still is sitting, still is sitting. On the
+  pallid bust of Pallas just above my chamber door; And his eyes have all the
+  seeming of a demon’s that is dreaming, And the lamp-light o’er him streaming
+  throws his shadow on the floor; And my soul from out that shadow that lies
+  floating on the floor. Shall be lifted—nevermore!
 </amp-fit-text>
 ```
 

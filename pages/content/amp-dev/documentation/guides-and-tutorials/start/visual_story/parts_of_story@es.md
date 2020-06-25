@@ -2,7 +2,7 @@
 $title: Partes de las historias de AMP
 ---
 
-Una historia de AMP es una experiencia narrativa visual a pantalla completa que transmite información con imágenes, vídeos, elementos gráficos, audio y mucho más. Es ideal para los usuarios que quieren contenido breve y visualmente atractivo.  
+Una historia de AMP es una experiencia narrativa visual a pantalla completa que transmite información con imágenes, vídeos, elementos gráficos, audio y mucho más. Es ideal para los usuarios que quieren contenido breve y visualmente atractivo.
 
 Los elementos básicos que se necesitan para crear historias de AMP son **páginas** que, a su vez, están formadas por **capas** que contienen **elementos** HTML básicos y AMP.
 

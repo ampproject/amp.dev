@@ -2,13 +2,12 @@
 $title: amp-analytics
 $category@: ads-analytics
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: AMP ドキュメントからアナリティクス データを収集します。
 ---
-
 
 <!--
 Copyright 2019 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +25,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 AMP ドキュメントからアナリティクス データを収集します。
 
 <table>
@@ -40,7 +37,6 @@ AMP ドキュメントからアナリティクス データを収集します。
     <td>AMP By Example の <a href="https://ampbyexample.com/components/amp-analytics/">amp-analytics の例</a>をご覧ください。</td>
   </tr>
 </table>
-
 
 ## ベンダーや社内へのアナリティクス データの送信 <a name="sending-analytics-to-a-vendor-or-in-house"></a>
 
@@ -60,24 +56,24 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 
 アナリティクス ベンダーが AMP を統合していない場合は、ベンダーに問い合わせてサポートを依頼してください。AMP プロジェクトに問題を報告し、ベンダーを追加するようリクエストすることをおすすめします。また、[AMP HTML にアナリティクス ツールを統合する](../../../documentation/guides-and-tutorials/contribute/integrate-your-analytics-tools.md)方法もご確認ください。さらに、指定された URL にデータを送信する際には、ベンダーと協力してください。詳しくは、以下の[社内へのデータの送信](#sending-data-in-house)をご覧ください。
 
-*例: 第三者アナリティクス プロバイダへのデータの送信*
+_例: 第三者アナリティクス プロバイダへのデータの送信_
 
 次の例では、AMP を統合済みの第三者アナリティクス プロバイダである Nielsen にアナリティクス データを送信します。Nielsen 向けにアナリティクス データを設定する方法について詳しくは、[Nielsen](https://engineeringportal.nielsen.com/docs/DCR_Static_Google_AMP_Cloud_API) のドキュメントをご覧ください。
 
 ```html
 <amp-analytics type="nielsen">
   <script type="application/json">
-  {
-    "vars": {
-      "apid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
-      "apv": "1.0",
-      "apn": "My AMP Website",
-      "section": "Entertainment",
-      "segA": "Music",
-      "segB": "News",
-      "segC": "Google AMP"
+    {
+      "vars": {
+        "apid": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX",
+        "apv": "1.0",
+        "apn": "My AMP Website",
+        "section": "Entertainment",
+        "segA": "Music",
+        "segB": "News",
+        "segC": "Google AMP"
+      }
     }
-  }
   </script>
 </amp-analytics>
 ```
@@ -97,25 +93,25 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 [tip type="note"] アナリティクス リクエストのリファラー ヘッダー内の AMP URL を処理するときには、`usqp` パラメータを取り除くか無視します。このパラメータは、Google が Google AMP キャッシュのテストをトリガーする際に使用されます。
 [/tip]
 
-*例: URL へのデータの送信*
+_例: URL へのデータの送信_
 
 以下に、ページビューをトラッキングする簡単な例を示します。ページが表示されるたびにトリガー イベントが起動し、ページビュー データがランダムな ID とともに定義済みの URL に送信されます。
 
 ```html
 <amp-analytics>
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://foo.com/pixel?RANDOM"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -170,7 +166,9 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 次の例では、指定した URL から設定データを読み込むように `config` 属性を指定しています。
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 #### 設定リライタ <a name="configuration-rewriter"></a>
@@ -178,6 +176,7 @@ AMP アナリティクスでは、1 回の測定で得たデータを複数の U
 設定リライタ機能では、指定された設定をアナリティクス プロバイダが動的に書き換えることができます。この機能はリモート設定機能に似ていますが、ユーザーが指定した設定をサーバーへのリクエストに追加することができます。現在のところ、この機能を有効にできるのはアナリティクス ベンダーだけです。
 
 アナリティクス ベンダーは、サーバーの URL を使用して configRewriter プロパティを指定します。
+
 ```js
 export const VENDOR_ANALYTICS_CONFIG = {
     ...
@@ -200,9 +199,10 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 変数グループは、ユーザーが簡単に有効化できる定義済みの変数セットをアナリティクス プロバイダがグループ化するための機能です。これらの変数は解決され、指定の `configRewriter` エンドポイントに送信されます。
 
-アナリティクス プロバイダはこの機能を有効にするために、`configRewriter` 設定の内部に新しい `varGroups` オブジェクトを作成する必要があります。サイト運営者はその後、指名したアナリティクス プロバイダが作成した有効化対象の `varGroups` をアナリティクス設定に含めることができます。[AMP HTML の置換ガイド](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)でサポートされている変数はすべて使用できます。*重要な注意事項*: ${varName} バリアントは使用できません。
+アナリティクス プロバイダはこの機能を有効にするために、`configRewriter` 設定の内部に新しい `varGroups` オブジェクトを作成する必要があります。サイト運営者はその後、指名したアナリティクス プロバイダが作成した有効化対象の `varGroups` をアナリティクス設定に含めることができます。[AMP HTML の置換ガイド](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)でサポートされている変数はすべて使用できます。_重要な注意事項_: \${varName} バリアントは使用できません。
 
 あるベンダーによる設定例を以下に示します。
+
 ```js
 // This is predefined by vendor.
 export const VENDOR_ANALYTICS_CONFIG = {
@@ -223,14 +223,14 @@ export const VENDOR_ANALYTICS_CONFIG = {
 }
 ```
 
-  プロバイダの `<amp-analytics>` 設定内に特定の `varGroups` に対する `{enabled: true}` を含めることで、どの変数グループを有効にするかを指定できます。`enabled` は予約キーワードのため、変数名として使用することはできません。
+プロバイダの `<amp-analytics>` 設定内に特定の `varGroups` に対する `{enabled: true}` を含めることで、どの変数グループを有効にするかを指定できます。`enabled` は予約キーワードのため、変数名として使用することはできません。
 
-  以下の例では、`group1` と `group2` の両方が有効化されています。明確に有効化されていないグループは無視されます。ランタイムは、有効化された変数をすべて解決し、1 つの `configRewriter.vars` オブジェクトにマージします。このオブジェクトが設定リライタの URL に送信されます。
+以下の例では、`group1` と `group2` の両方が有効化されています。明確に有効化されていないグループは無視されます。ランタイムは、有効化された変数をすべて解決し、1 つの `configRewriter.vars` オブジェクトにマージします。このオブジェクトが設定リライタの URL に送信されます。
 
 ```html
-  /* Included on publisher page */
-  <amp-analytics type="myVendor" id="myVendor" data-credentials="include">
-    <script type="application/json">
+/* Included on publisher page */
+<amp-analytics type="myVendor" id="myVendor" data-credentials="include">
+  <script type="application/json">
     {
       "configRewriter": {
         "varGroups": {
@@ -243,8 +243,8 @@ export const VENDOR_ANALYTICS_CONFIG = {
         }
       }
     }
-    </script>
-  </amp-analytics>
+  </script>
+</amp-analytics>
 ```
 
 この例のリクエストの本文は次のようになります。
@@ -300,6 +300,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 - `batchInterval`: このプロパティでは、バッチ処理のキューに登録されているリクエストの ping を実行する間隔（秒）を指定します。`batchInterval` には単一の数値または数値の配列を指定できます（最小間隔は 200 ミリ秒）。リクエストは配列内のすべての値を使用します。配列の最後に達すると、その最後の値が繰り返し使用されます（単一の数値を指定した場合は、その値が繰り返し使用されます）。
 
 たとえば次の設定では、単一のリクエストの ping が 2 秒ごとに送信されます。リクエストの ping は `https://example.com/analytics?rc=1&rc=2` のようになります。
+
 ```javascript
 "requests": {
   "timer": {
@@ -322,6 +323,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 ```
 
 次の設定では、1 秒後に 1 つ目のリクエストの ping が送信され、その後は 3 秒ごとにリクエストが送信されます。1 つ目のリクエストの ping は `https://example.com/analytics?rc=1`、2 つ目のリクエストの ping は `https://example.com/analytics?rc=2&rc=3&rc=4` のようになります。
+
 ```javascript
 "requests": {
   "timer": {
@@ -383,17 +385,17 @@ export const VENDOR_ANALYTICS_CONFIG = {
 
 `triggers` 設定オブジェクトでは、アナリティクス リクエストを送信するタイミングを指定します。`triggers` 属性は、トリガー名とトリガー設定という Key-Value ペアで構成されます。トリガー名には、英数字（a-zA-Z0-9）からなる任意の文字列を使用できます。優先順位の低い設定に記述されたトリガーは、優先順位の高い設定に記述された同名のトリガーによってオーバーライドされます。
 
-* `on`（必須）: リッスンするイベント。有効な値は、`render-start`、`ini-load`、`click`、`scroll`、`timer`、`visible`、`hidden`、`user-error`、[`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)、[`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) です。
-* `request`（必須）: 送信するリクエストの名前（`requests` セクションで指定したリクエスト）。
-* `vars`: Key-Value ペアを含むオブジェクトで、最上位レベルの設定で指定された `vars` をオーバーライドするため、またはこのトリガーに固有の vars を指定するために使用します。
-* `important`: バッチ処理の動作やレポート期間をサポートするリクエストを使用する際に指定できます。`important` を `true` に設定すると、バッチ処理されるリクエストのキューを特定のトリガーで実行できます。この場合、重要なトリガー イベントを失うことなくリクエストの ping の回数を減らすことができます。`important` を `true` に設定すると、重要なリクエストの ping をとにかく送信するようにリクエストの `reportWindow` の値をオーバーライドすることもできます。
-* `selector` と `selectionMethod`: 一部のトリガー（`click` や `visible` など）に対して指定できます。詳しくは、[要素セレクタ](#element-selector)をご覧ください。
-* `scrollSpec`（`on` が `scroll` に設定されている場合は必須）: この設定は `scroll` トリガーと組み合わせて使用します。詳しくは以下をご覧ください。
-* `timerSpec`（`on` が `timer` に設定されている場合は必須）: この設定は `timer` トリガーと組み合わせて使用します。詳しくは以下をご覧ください。
-* `sampleSpec`: このオブジェクトは、リクエストを送信する前にサンプリングする方法を定義するために使用します。この設定を使用すると、ランダムな入力またはプラットフォームでサポートされているその他の変数に基づいてサンプリングを実行できます。このオブジェクトに含まれる設定で、ハッシュの生成に使用する入力と、ハッシュが満たす必要があるしきい値を指定します。
-    * `sampleOn`: この文字列テンプレートは、プラットフォーム変数を入力することによって拡張され、以下の threshold で説明するサンプリング ロジック用の数値を生成するためにハッシュ化されます。
-    * `threshold`: この設定は、特定の条件を満たしていないリクエストを除外するために使用します。アナリティクス ベンダーに送信するリクエストでは、ロジック `HASH(sampleOn) < threshold` を true に設定する必要があります。</li>
-* `videoSpec`（`on` が `video-*` に設定されている場合に使用します）: この設定は [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) トリガーと組み合わせて使用します。
+- `on`（必須）: リッスンするイベント。有効な値は、`render-start`、`ini-load`、`click`、`scroll`、`timer`、`visible`、`hidden`、`user-error`、[`access-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-access/amp-access-analytics.md)、[`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) です。
+- `request`（必須）: 送信するリクエストの名前（`requests` セクションで指定したリクエスト）。
+- `vars`: Key-Value ペアを含むオブジェクトで、最上位レベルの設定で指定された `vars` をオーバーライドするため、またはこのトリガーに固有の vars を指定するために使用します。
+- `important`: バッチ処理の動作やレポート期間をサポートするリクエストを使用する際に指定できます。`important` を `true` に設定すると、バッチ処理されるリクエストのキューを特定のトリガーで実行できます。この場合、重要なトリガー イベントを失うことなくリクエストの ping の回数を減らすことができます。`important` を `true` に設定すると、重要なリクエストの ping をとにかく送信するようにリクエストの `reportWindow` の値をオーバーライドすることもできます。
+- `selector` と `selectionMethod`: 一部のトリガー（`click` や `visible` など）に対して指定できます。詳しくは、[要素セレクタ](#element-selector)をご覧ください。
+- `scrollSpec`（`on` が `scroll` に設定されている場合は必須）: この設定は `scroll` トリガーと組み合わせて使用します。詳しくは以下をご覧ください。
+- `timerSpec`（`on` が `timer` に設定されている場合は必須）: この設定は `timer` トリガーと組み合わせて使用します。詳しくは以下をご覧ください。
+- `sampleSpec`: このオブジェクトは、リクエストを送信する前にサンプリングする方法を定義するために使用します。この設定を使用すると、ランダムな入力またはプラットフォームでサポートされているその他の変数に基づいてサンプリングを実行できます。このオブジェクトに含まれる設定で、ハッシュの生成に使用する入力と、ハッシュが満たす必要があるしきい値を指定します。
+  - `sampleOn`: この文字列テンプレートは、プラットフォーム変数を入力することによって拡張され、以下の threshold で説明するサンプリング ロジック用の数値を生成するためにハッシュ化されます。
+  - `threshold`: この設定は、特定の条件を満たしていないリクエストを除外するために使用します。アナリティクス ベンダーに送信するリクエストでは、ロジック `HASH(sampleOn) < threshold` を true に設定する必要があります。</li>
+- `videoSpec`（`on` が `video-*` に設定されている場合に使用します）: この設定は [`video-*`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-video-analytics.md) トリガーと組み合わせて使用します。
 
 たとえば、次の設定を使用すると、ランダムな入力の場合はリクエストの 50% を、クライアント ID の場合はリクエストの 1% をサンプリングできます。
 
@@ -425,8 +427,8 @@ export const VENDOR_ANALYTICS_CONFIG = {
 セレクタ
 
 - `selector`: このプロパティは、CSS / DOM クエリを使って単一の要素または要素のコレクションを検出するために使用します。要素のマッチング方法のセマンティクスは、`selectionMethod` を使用して変更できます。このプロパティの値には次のいずれかを指定できます。
-    - 有効な CSS セレクタ（`#ad1`、`amp-ad` など）。
-    - `:root`: ドキュメント ルートに一致する特別なセレクタ。
+  - 有効な CSS セレクタ（`#ad1`、`amp-ad` など）。
+  - `:root`: ドキュメント ルートに一致する特別なセレクタ。
 - `selectionMethod`: このプロパティを指定する場合、`scope` または `closest` のいずれかを設定できます。`scope` では、`amp-analytics` タグの親要素内の要素から選択できます。`closest` では、特定のセレクタに適合する `amp-analytics` タグの最も近い祖先が検索されます。デフォルト値は `scope` です。
 
 ##### レンダリング開始トリガーを埋め込む <a name="embed-render-start-trigger"></a>
@@ -434,6 +436,7 @@ export const VENDOR_ANALYTICS_CONFIG = {
 iframe 内に他のドキュメントを埋め込む AMP 要素（広告など）では、レンダリング開始イベント（`"on": "render-start"`）をレポートできます。このイベントは通常、埋め込まれたドキュメントのレンダリングが開始されたことを確認できるようになるとすぐに発行されます。特定の AMP 要素がこのイベントを発行するかどうかを確認するには、その要素のドキュメントを参照してください。
 
 埋め込み要素のトリガーには、埋め込み要素を指す [`selector`](#element-selector) を含める必要があります。
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -445,6 +448,7 @@ iframe 内に他のドキュメントを埋め込む AMP 要素（広告など�
 ```
 
 レンダリング開始イベントはドキュメント自体からも発行され、次のように設定できます。
+
 ```javascript
 "triggers": {
   "renderStart": {
@@ -465,6 +469,7 @@ AMP 要素または AMP ドキュメントの最初のコンテンツが読み�
 - 単純な AMP 要素（`amp-img` など）の場合: リソース自体（画像や動画など）。
 
 埋め込み要素または AMP 要素のトリガーには、要素を指す [`selector`](#element-selector) を含める必要があります。
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -476,6 +481,7 @@ AMP 要素または AMP ドキュメントの最初のコンテンツが読み�
 ```
 
 初期読み込みイベントはドキュメント自体からも発行され、次のように設定できます。
+
 ```javascript
 "triggers": {
   "iniLoad": {
@@ -658,9 +664,9 @@ visibilitySpec: {
 リクエストを一定間隔で開始するには、タイマー トリガー（`"on": "timer"`）を使用します。このトリガーを起動するタイミングを制御するには、`timerSpec` を使用します。
 
 - `timerSpec`: `timer` タイプのトリガーの仕様。`startSpec` が指定されている場合を除き、タイマーは、イベント発生時（デフォルトで設定解除できます）と、それ以降の指定の間隔でトリガーされます。
-    - `interval`: タイマーの間隔（秒）。
-    - `maxTimerLength`: タイマーが起動する期間の最大長（秒）。`maxTimerLength` に達すると、追加のリクエストがトリガーされます。デフォルト値は 2 時間です。`stopSpec` が指定されているが、maxTimerLength が指定されていない場合、デフォルト値は無限大に設定されます。
-    - `immediate`: タイマーを即座にトリガーするかどうかを示します（ブール値）。デフォルト値は true です。
+  - `interval`: タイマーの間隔（秒）。
+  - `maxTimerLength`: タイマーが起動する期間の最大長（秒）。`maxTimerLength` に達すると、追加のリクエストがトリガーされます。デフォルト値は 2 時間です。`stopSpec` が指定されているが、maxTimerLength が指定されていない場合、デフォルト値は無限大に設定されます。
+  - `immediate`: タイマーを即座にトリガーするかどうかを示します（ブール値）。デフォルト値は true です。
 
 ```javascript
 "triggers": {
@@ -716,6 +722,7 @@ visibilitySpec: {
 ```
 
 [`visibilitySpec`](#visibility-spec) を含めると、表示期間の条件を満たしている場合にのみリクエストを開始できます。
+
 ```json
 "triggers": {
   "defaultPageview": {
@@ -729,6 +736,7 @@ visibilitySpec: {
   }
 }
 ```
+
 上記の設定は次のように解釈できます。
 
 <blockquote>
@@ -747,11 +755,11 @@ amp-access システムは、アクセスフローのさまざまな状態で各
 
 `transport` 設定オブジェクトでは、リクエストの送信方法を指定します。値は、使用可能な転送方法を示すフィールドを含むオブジェクトです。
 
-* `beacon`: リクエストの送信に [`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) を使用できることを示します。認証情報を含む POST リクエストを送信します。`useBody` が true の場合以外は、本文が空のリクエストが送信されます。`useBody` について詳しくは、[追加の URL パラメータの送信に本文を使用する](#use-body-for-extra-url-params)をご覧ください。
-* `xhrpost`: リクエストの送信に `XMLHttpRequest` を使用できることを示します。認証情報を含む POST リクエストを送信します。`useBody` が true の場合以外は、本文が空のリクエストが送信されます。`useBody` について詳しくは、[追加の URL パラメータの送信に本文を使用する](#use-body-for-extra-url-params)をご覧ください。
-* `image`: `Image` タグを生成してリクエストを送信できることを示します。GET リクエストを送信します。空のレスポンスやリクエストの失敗が原因のコンソールの警告を抑制するには、`"image": {"suppressWarnings": true}` を設定します。
+- `beacon`: リクエストの送信に [`navigator.sendBeacon`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon) を使用できることを示します。認証情報を含む POST リクエストを送信します。`useBody` が true の場合以外は、本文が空のリクエストが送信されます。`useBody` について詳しくは、[追加の URL パラメータの送信に本文を使用する](#use-body-for-extra-url-params)をご覧ください。
+- `xhrpost`: リクエストの送信に `XMLHttpRequest` を使用できることを示します。認証情報を含む POST リクエストを送信します。`useBody` が true の場合以外は、本文が空のリクエストが送信されます。`useBody` について詳しくは、[追加の URL パラメータの送信に本文を使用する](#use-body-for-extra-url-params)をご覧ください。
+- `image`: `Image` タグを生成してリクエストを送信できることを示します。GET リクエストを送信します。空のレスポンスやリクエストの失敗が原因のコンソールの警告を抑制するには、`"image": {"suppressWarnings": true}` を設定します。
 
-MRC 認定ベンダーは URL 文字列を iframe-transport-vendors.js に追加することで、第四の転送メカニズムである「iframe 転送」を利用できます。これは、URL に設定された `src` 属性を使用して iframe を作成する必要があること、リクエストは `window.postMessage()` によって iframe に送信されることを示します。この場合、リクエストは正式な URL である必要はありません。`iframe` は `iframe-transport-vendors.js` でのみ指定できます。`amp-analytics` タグ内のインラインで指定したり、リモート設定で指定したりすることはできません。さらに、ベンダー フレームでレスポンスを送信して、amp-ad-exit で使用することができます。詳しくは、[analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) と [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html) をご覧ください。前者のファイルでは {'collected-data': 'abc'} のレスポンス JSON オブジェクトを送信し、後者のファイルではそのオブジェクトを使用して、finalUrl 内の「bar_」を「abc」に置換します。
+MRC 認定ベンダーは URL 文字列を iframe-transport-vendors.js に追加することで、第四の転送メカニズムである「iframe 転送」を利用できます。これは、URL に設定された `src` 属性を使用して iframe を作成する必要があること、リクエストは `window.postMessage()` によって iframe に送信されることを示します。この場合、リクエストは正式な URL である必要はありません。`iframe` は `iframe-transport-vendors.js` でのみ指定できます。`amp-analytics` タグ内のインラインで指定したり、リモート設定で指定したりすることはできません。さらに、ベンダー フレームでレスポンスを送信して、amp-ad-exit で使用することができます。詳しくは、[analytics-iframe-transport-remote-frame.html](https://github.com/ampproject/amphtml/blob/master/examples/analytics-iframe-transport-remote-frame.html) と [fake_amp_ad_with_iframe_transport.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-ad-network-fake-impl/0.1/data/fake_amp_ad_with_iframe_transport.html) をご覧ください。前者のファイルでは {'collected-data': 'abc'} のレスポンス JSON オブジェクトを送信し、後者のファイルではそのオブジェクトを使用して、finalUrl 内の「bar\_」を「abc」に置換します。
 
 上記の転送方法のうち 2 つ以上が有効になっている場合、優先順位は `iframe`、`beacon`、`xhrpost`、`image` の順になります。使用できる転送方法は 1 つのみで、使用可能な方法のうち最も優先順位の高いものが使用されます。クライアントのユーザー エージェントが最も優先順位の高い方法をサポートしていない場合は、有効な方法のうち、次に優先順位の高い方法が使用されます。デフォルトでは、上記の 4 つのすべての方法が有効になっています。
 
@@ -826,7 +834,10 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 例:
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json"></amp-analytics>
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 **config**
@@ -836,7 +847,9 @@ AMP 検証ツールの仕様で [amp-analytics のルール](https://github.com/
 例:
 
 ```html
-<amp-analytics config="https://example.com/analytics.config.json"></amp-analytics>
+<amp-analytics
+  config="https://example.com/analytics.config.json"
+></amp-analytics>
 ```
 
 **data-credentials**<a name="data-credentials"></a>

@@ -16,8 +16,11 @@ $title: インタラクティブ性の向上
 [`static/index.html`](https://github.com/googlecodelabs/advanced-interactivity-in-amp/blob/master/static/index.html) ファイルを開き、ページの `<head>` セクションにある AMP コンポーネントのリストに、下記のスクリプトを追加します。
 
 ```html
-<script async custom-element="amp-bind"
-    src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+<script
+  async
+  custom-element="amp-bind"
+  src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+></script>
 ```
 
 ## スライドのインジケーターの追加
@@ -41,7 +44,7 @@ $title: インタラクティブ性の向上
 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 要素内のデータには、要素に関連付けられている ID を使ってアクセスできます。たとえば、次の式フラグメントを使ってこの変数を参照できます。
 
 ```javascript
-selected.slide // Evaluates to 0.
+selected.slide; // Evaluates to 0.
 ```
 
 ### スライドのステータスを更新する
@@ -49,8 +52,13 @@ selected.slide // Evaluates to 0.
 次に、ユーザーがカルーセルのスライドを変更したときにこの変数を更新しましょう。これを行うには、既存の [`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) 要素に下記の `"on"` アクションを追加します。
 
 ```html
-<amp-carousel type="slides" layout="fixed-height" height=250 id="carousel"
-    on="slideChange:AMP.setState({selected: {slide: event.index}})">
+<amp-carousel
+  type="slides"
+  layout="fixed-height"
+  height="250"
+  id="carousel"
+  on="slideChange:AMP.setState({selected: {slide: event.index}})"
+></amp-carousel>
 ```
 
 これで、[`amp-carousel`](../../../../documentation/components/reference/amp-carousel.md) に表示されているスライドが変わるたびに、アクション `AMP.setState` が下記の引数付きで呼び出されます。
@@ -58,7 +66,7 @@ selected.slide // Evaluates to 0.
 ```javascript
 {
   selected: {
-    slide: event.index
+    slide: event.index;
   }
 }
 ```
@@ -175,8 +183,10 @@ selected.slide // Evaluates to 0.
 [`amp-selector`](../../../../documentation/components/reference/amp-selector.md) に "on" アクションを追加します。このアクションは、別の色が選択されるたびに `selected.sku` 変数を更新します。
 
 ```html
-<amp-selector name="color"
-    on="select:AMP.setState({selected: {sku: event.targetOption}})">
+<amp-selector
+  name="color"
+  on="select:AMP.setState({selected: {sku: event.targetOption}})"
+></amp-selector>
 ```
 
 ヒント: この処理は、[`amp-selector`](../../../../documentation/components/reference/amp-selector.md) 内の各 [`amp-img`](../../../../documentation/components/reference/amp-img.md) 下位要素に `on="tap:AMP.setState(...)` を追加することによっても実装できます。[`amp-selector`](../../../../documentation/components/reference/amp-selector.md) の利点の 1 つは、上記のような方法でマークアップを簡素化できることです。
@@ -187,12 +197,24 @@ selected.slide // Evaluates to 0.
 
 ```html
 <!-- Update the `src` of each <amp-img> when the `selected.sku` variable changes. -->
-<amp-img width=200 height=250 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=300 height=375 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
-<amp-img width=400 height=500 src="./shirts/black.jpg"
-    [src]="shirts[selected.sku].image"></amp-img>
+<amp-img
+  width="200"
+  height="250"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="300"
+  height="375"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
+<amp-img
+  width="400"
+  height="500"
+  src="./shirts/black.jpg"
+  [src]="shirts[selected.sku].image"
+></amp-img>
 ```
 
 注: 実際には、カルーセル内の各画像はそれぞれ別の `src` を持つ可能性があります。そのようにするには、上記の単一の画像を複数の画像で置き換えます。説明を簡単にするため、このチュートリアルでは単一の画像を異なる複数のサイズで使用しています。

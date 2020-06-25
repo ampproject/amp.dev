@@ -2,11 +2,10 @@
 $title: amp-addthis
 $category@: social
 formats:
-- websites
+  - websites
 teaser:
   text: Mostra un incorporamento degli strumenti del sito web AddThis.
 ---
-
 
 <!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Mostra un incorporamento degli strumenti del sito web [AddThis](https://www.addthis.com).
 
 <table>
@@ -38,7 +35,6 @@ Mostra un incorporamento degli strumenti del sito web [AddThis](https://www.addt
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
 </table>
-
 
 ## Perché AddThis? <a name="why-addthis"></a>
 
@@ -53,6 +49,7 @@ Oltre 15.000.000 siti web si affidano ad AddThis, con oltre due miliardi di uten
 Ai lati, in alto o in basso nella pagina, segue il lettore mentre scorre. Un ottimo modo per promuovere la condivisione senza risultare troppo invadenti.
 
 Esempio:
+
 ```html
 <!--
   In questo esempio viene utilizzato un segnaposto pubId.
@@ -60,12 +57,13 @@ Esempio:
   aver creato un account su https://www.addthis.com/dashboard.
 -->
 <amp-addthis
-width="320"
-height="92"
-layout="responsive"
-data-pub-id="ra-5c191331410932ff"
-data-widget-id="957l"
-data-widget-type="floating">
+  width="320"
+  height="92"
+  layout="responsive"
+  data-pub-id="ra-5c191331410932ff"
+  data-widget-id="957l"
+  data-widget-type="floating"
+>
 </amp-addthis>
 ```
 
@@ -74,6 +72,7 @@ data-widget-type="floating">
 Integra i pulsanti di condivisione nei tuoi contenuti per un'esperienza di condivisione senza interruzioni.
 
 Esempio:
+
 ```html
 <!--
   In questo esempio viene utilizzato un segnaposto pubId.
@@ -85,7 +84,8 @@ Esempio:
   height="92"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="mv93"
-  data-widget-type="inline">
+  data-widget-type="inline"
+>
 </amp-addthis>
 ```
 
@@ -150,13 +150,13 @@ Gli strumenti e la barra degli strumenti di AddThis raccolgono informazioni dal 
 
 I Dati AddThis possono essere costituiti dai seguenti elementi:
 
-* Indirizzo IP, ID Pubblicità per il mobile (MAID, permette agli sviluppatori di app per dispositivi mobili di identificare chi sta utilizzando le loro app), ID dell'applicazione per dispositivi mobili, tipo di browser, lingua del browser, tipo di sistema operativo e la data e l'ora in cui l'Utente finale ha visitato un sito o una barra degli strumenti del publisher;
-* L'utente ha utilizzato la barra degli strumenti;
-* Il comportamento su un sito del publisher, ad esempio quanto a lungo l'Utente finale è rimasto sul sito, il suo comportamento di condivisione dei contenuti del sito e il comportamento di scorrimento;
-* L'URL di riferimento e la ricerca web utilizzati dall'Utente finale per individuare e raggiungere un sito del publisher;
-* Le parole chiave inserite nella funzionalità di ricerca della barra degli strumenti di AddThis e se e quando l'Utente barra degli strumenti scarica, installa o disinstalla la barra degli strumenti di AddThis;
-* Informazioni sulla frequenza d'uso da parte dell'Utente finale degli strumenti di AddThis e da parte dell'Utente barra degli strumenti della barra degli strumenti di AddThis; e
-* I dati di geolocalizzazione ricavati dall'indirizzo IP dell'Utente finale e dell'Utente barra degli strumenti.
+- Indirizzo IP, ID Pubblicità per il mobile (MAID, permette agli sviluppatori di app per dispositivi mobili di identificare chi sta utilizzando le loro app), ID dell'applicazione per dispositivi mobili, tipo di browser, lingua del browser, tipo di sistema operativo e la data e l'ora in cui l'Utente finale ha visitato un sito o una barra degli strumenti del publisher;
+- L'utente ha utilizzato la barra degli strumenti;
+- Il comportamento su un sito del publisher, ad esempio quanto a lungo l'Utente finale è rimasto sul sito, il suo comportamento di condivisione dei contenuti del sito e il comportamento di scorrimento;
+- L'URL di riferimento e la ricerca web utilizzati dall'Utente finale per individuare e raggiungere un sito del publisher;
+- Le parole chiave inserite nella funzionalità di ricerca della barra degli strumenti di AddThis e se e quando l'Utente barra degli strumenti scarica, installa o disinstalla la barra degli strumenti di AddThis;
+- Informazioni sulla frequenza d'uso da parte dell'Utente finale degli strumenti di AddThis e da parte dell'Utente barra degli strumenti della barra degli strumenti di AddThis; e
+- I dati di geolocalizzazione ricavati dall'indirizzo IP dell'Utente finale e dell'Utente barra degli strumenti.
 
 I dati AddThis saranno trattati come informazioni personali nella misura prevista dalla legge vigente. Ai sensi dei Termini di servizio di AddThis, i publisher devono ottenere tutti i consensi e le autorizzazioni degli utenti finali necessari e fornire a Oracle le comunicazioni obbligatorie per la fornitura dei dati AddThis raccolti dagli Utenti finali.
 

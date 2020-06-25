@@ -14,17 +14,23 @@ $title: プレースホルダとフォールバック
 `placeholder` として指定された要素は常に親 AMP 要素の中に入ります（`fill`）。
 
 [example preview="inline" playground="true" imports="amp-anim:0.1"]
+
 ```html
-<amp-anim src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
+<amp-anim
+  src="{{server_for_email}}/static/inline-examples/images/wavepool.gif"
   layout="responsive"
   width="400"
-  height="300">
-  <amp-img placeholder
+  height="300"
+>
+  <amp-img
+    placeholder
     src="{{server_for_email}}/static/inline-examples/images/wavepool.png"
-    layout="fill">
+    layout="fill"
+  >
   </amp-img>
 </amp-anim>
 ```
+
 [/example]
 
 デフォルトでは、AMP 要素のリソースがダウンロードや初期化されていない場合でも、
@@ -42,17 +48,18 @@ $title: プレースホルダとフォールバック
 
 要素で `fallback` 属性を使うことで代わりの動作を指定できます。
 
-* ブラウザがサポートしていない要素
-* コンテンツを読み込めなかった場合（削除されたツイートなど）
-* 画像の種類がサポートされていない場合（WebP はすべてのブラウザでサポートされていないなど）
+- ブラウザがサポートしていない要素
+- コンテンツを読み込めなかった場合（削除されたツイートなど）
+- 画像の種類がサポートされていない場合（WebP はすべてのブラウザでサポートされていないなど）
 
-`fallback` 属性は、AMP 要素だけでなく、*どの* HTML 要素でも設定できます。指定する場合、`fallback` 要素は AMP 要素の直接の子にする必要があります。
+`fallback` 属性は、AMP 要素だけでなく、_どの_ HTML 要素でも設定できます。指定する場合、`fallback` 要素は AMP 要素の直接の子にする必要があります。
 
 ##### 例: サポートされていない機能の場合
 
 次の例では、`fallback` 属性を使用して、ブラウザが特定の機能に対応していないことをユーザーに伝えます。
 
 [example preview="inline" playground="true" imports="amp-video:0.1"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -64,6 +71,7 @@ $title: プレースホルダとフォールバック
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ##### 例: 異なる画像形式を配信する場合
@@ -71,20 +79,26 @@ $title: プレースホルダとフォールバック
 次の例では、`fallback` 属性を使用して、WebP フォーマットがサポートされていない場合は JPEG ファイルを使用するようにブラウザに指示します。
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
   layout="responsive"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
     layout="responsive"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 ## プレースホルダとフォールバックの相互作用
@@ -107,4 +121,3 @@ $title: プレースホルダとフォールバック
 ほとんどの AMP 要素は、「読み込みインジケータ」を表示するようホワイトリストに登録されています。
 読み込みインジケータとは、要素がまだ完全に読み込まれていないことを示す基本的なアニメーションです。
 要素に `noloading` 属性を追加して、この動作を無効にすることができます。
- 

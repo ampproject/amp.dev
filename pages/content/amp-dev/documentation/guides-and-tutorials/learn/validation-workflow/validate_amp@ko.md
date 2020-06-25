@@ -18,9 +18,9 @@ AMP 유효성을 검사할 뿐만 아니라 AMP 문서가 타사 플랫폼에서
 
 AMP 유효성 검사 도구는 AMP JS 라이브러리에 번들로 제공되므로 모든 AMP 페이지에서 바로 사용할 수 있습니다. 유효성 검사 방법은 다음과 같습니다.
 
-  1. 브라우저에서 AMP 페이지를 엽니다.
-  1. URL에 "`#development=1`"을 추가합니다(예: `http://localhost:8000/released.amp.html#development=1`).
-  1. [Chrome DevTools Console](https://developers.google.com/web/tools/chrome-devtools/debug/console/)을 열고 유효성 검사 오류가 있는지 확인합니다.
+1. 브라우저에서 AMP 페이지를 엽니다.
+1. URL에 "`#development=1`"을 추가합니다(예: `http://localhost:8000/released.amp.html#development=1`).
+1. [Chrome DevTools Console](https://developers.google.com/web/tools/chrome-devtools/debug/console/)을 열고 유효성 검사 오류가 있는지 확인합니다.
 
 개발용 콘솔 오류는 다음과 같이 표시됩니다.
 
@@ -90,11 +90,11 @@ AMP 유효성 검사 도구는 브라우저 확장 프로그램을 통해 브라
 
 ### CI용 NPM 패키지
 
-[amphtml-validator](https://www.npmjs.com/package/amphtml-validator) 또는 [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator)(gulp 플러그인) 등의 AMP 유효성 검사 도구 NPM 패키지를 사용하여 AMP 유효성 검사를 빌드 및 테스트 파이프라인의 일부로 통합할 수 있습니다.  예를 들어, AMP 유효성 검사 도구 NPM 패키지로 통합 테스트를 진행하거나, 해당 패키지를 프로덕션 단계의 AMP 페이지의 유효성을 검사하는 예약된 작업에 응용할 수 있습니다.
+[amphtml-validator](https://www.npmjs.com/package/amphtml-validator) 또는 [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator)(gulp 플러그인) 등의 AMP 유효성 검사 도구 NPM 패키지를 사용하여 AMP 유효성 검사를 빌드 및 테스트 파이프라인의 일부로 통합할 수 있습니다. 예를 들어, AMP 유효성 검사 도구 NPM 패키지로 통합 테스트를 진행하거나, 해당 패키지를 프로덕션 단계의 AMP 페이지의 유효성을 검사하는 예약된 작업에 응용할 수 있습니다.
 
 ##### 예: AMP HTML 파일 유효성 검사
 
-이 예에서는 [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM 패키지를 사용하여 AMP HTML 파일의 유효성을 검사합니다.  유효성 검사 상태는 콘솔로 전달됩니다.
+이 예에서는 [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) NPM 패키지를 사용하여 AMP HTML 파일의 유효성을 검사합니다. 유효성 검사 상태는 콘솔로 전달됩니다.
 
 ```javascript
 'use strict';
@@ -104,39 +104,40 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
 
 #####예: AMP HTML 유효성 검사에 gulp 작업 사용
 
-이 예에서는 모든 AMP HTML 파일의 유효성을 검사하는 gulp 작업을 사용합니다.  AMP 유효성 평가 오류가 있는 경우 작업이 종료되며 오류 코드(1)가 표시됩니다.
+이 예에서는 모든 AMP HTML 파일의 유효성을 검사하는 gulp 작업을 사용합니다. AMP 유효성 평가 오류가 있는 경우 작업이 종료되며 오류 코드(1)가 표시됩니다.
 
 ```javascript
 const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### 명령줄 도구
@@ -146,13 +147,13 @@ gulp.task('default', ['amphtml:validate'], function () {
 시작하기:
 
 1.  시스템에 [Node.js와 패키지 관리자
-'npm'](https://docs.npmjs.com/getting-started/installing-node)이 있는지 확인합니다.
+    'npm'](https://docs.npmjs.com/getting-started/installing-node)이 있는지 확인합니다.
 2.  `npm install -g amphtml-validator` 명령을 실행하여 [AMP HTML 유효성 검사 도구 명령줄 도구](https://www.npmjs.com/package/amphtml-validator)를 설치합니다.
 
 이제 실제 AMP HTML 페이지의 유효성 검사를 해보겠습니다.
 
 [sourcecode:console]
-$ amphtml-validator https://amp.dev/
+\$ amphtml-validator https://amp.dev/
 https://amp.dev/: PASS
 [/sourcecode]
 
@@ -160,7 +161,7 @@ https://amp.dev/: PASS
 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). `amphtml-validator` 명령을 실행하려면 페이지의 URL 또는 로컬 파일 이름을 제공할 수 있습니다. [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html)을 다운로드하여 파일에 저장하고 다음을 실행합니다.
 
 [sourcecode:console]
-$ amphtml-validator several_errors.html
+\$ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
 several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. https://amp.dev/documentation/components/amp-img.html
@@ -176,7 +177,7 @@ AMP HTML 참조 링크가 뒤에 이어집니다. Emacs(컴파일 명령어와 �
 나만의 AMP 페이지를 만들려면 먼저 [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html)로 시작해 보세요.
 
 [sourcecode:console]
-$ amphtml-validator minimum_valid_amp.html
+\$ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
 
@@ -185,14 +186,14 @@ minimum_valid_amp.html: PASS
 스크립트를 실행함) 등의 추가 기능을 제공합니다.
 
 [sourcecode:console]
-$ amphtml-validator --help
+\$ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  옵션:
+옵션:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -207,6 +208,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## 페이지가 유효하지 않으면 어떻게 되나요?
@@ -225,37 +227,37 @@ AMP 유효성 검사 서비스에서 페이지의 오류를 감지한 경우 타
 
 이 AMP 유효성 오류의 원인은 아래의 여러 도구에 표시됩니다.
 
-* 브라우저 개발용 콘솔
-<amp-img src="/static/img/docs/validator_console_imgerror.png"
-         width="696" height="30" layout="responsive"
-         alt="AMP 오류: 'img' 태그는 'noscript' 태그의 하위 요소만으로 표시될 수
-         있습니다. 'amp-img'를 의미하셨나요? 행 11, 열 2">
-</amp-img>
+- 브라우저 개발용 콘솔
+  <amp-img src="/static/img/docs/validator_console_imgerror.png"
+           width="696" height="30" layout="responsive"
+           alt="AMP 오류: 'img' 태그는 'noscript' 태그의 하위 요소만으로 표시될 수
+           있습니다. 'amp-img'를 의미하셨나요? 행 11, 열 2">
+  </amp-img>
 
-* 웹 인터페이스
-<amp-img src="/static/img/docs/validator_webui_imgerror.png"
-         width="676" height="58" layout="responsive"
-         alt="AMP 오류: 'img' 태그는 'noscript' 태그의 하위 요소만으로 표시될 수
-         있습니다. 'amp-img'를 의미하셨나요? 행 11, 열 2">
-</amp-img>
+- 웹 인터페이스
+  <amp-img src="/static/img/docs/validator_webui_imgerror.png"
+           width="676" height="58" layout="responsive"
+           alt="AMP 오류: 'img' 태그는 'noscript' 태그의 하위 요소만으로 표시될 수
+           있습니다. 'amp-img'를 의미하셨나요? 행 11, 열 2">
+  </amp-img>
 
-* 브라우저 확장 프로그램
-<amp-img src="/static/img/docs/validator_extension_imgerror.png"
-         width="724" height="108" layout="responsive"
-         alt="AMP 오류: 'img' 태그는 'noscript' 태그의 하위 요소만으로 표시될 수
-         있습니다. 'amp-img'를 의미하셨나요? 행 11, 열 2">
-</amp-img>
+- 브라우저 확장 프로그램
+  <amp-img src="/static/img/docs/validator_extension_imgerror.png"
+           width="724" height="108" layout="responsive"
+           alt="AMP 오류: 'img' 태그는 'noscript' 태그의 하위 요소만으로 표시될 수
+           있습니다. 'amp-img'를 의미하셨나요? 행 11, 열 2">
+  </amp-img>
 
 각 도구는 여러 정보를 제공합니다.
 
-  1. HTML 문서에서 오류가 발생한 위치(행과 열):
-     일부 인터페이스에서는 이 위치를 클릭하여 강조표시할 수 있습니다. 이 경우
-     문제는 행 11, 열 2에서 발생했습니다.
-  1. 해당 오류를 설명하는 텍스트 행: 이 경우 텍스트는
-     [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 나타냅니다.
-  1. 오류 관련 문서에 대한 링크: 이 경우
-     [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 태그에 대한 문서입니다. 일부 오류는 문서 링크를
-     생성하지 않습니다.
+1. HTML 문서에서 오류가 발생한 위치(행과 열):
+   일부 인터페이스에서는 이 위치를 클릭하여 강조표시할 수 있습니다. 이 경우
+   문제는 행 11, 열 2에서 발생했습니다.
+1. 해당 오류를 설명하는 텍스트 행: 이 경우 텍스트는
+   [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 나타냅니다.
+1. 오류 관련 문서에 대한 링크: 이 경우
+   [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 태그에 대한 문서입니다. 일부 오류는 문서 링크를
+   생성하지 않습니다.
 
 [spec](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)을 신중히 다시 읽으면 [`<amp-img>`](../../../../documentation/components/reference/amp-img.md) 태그를 사용해야 하는데 `<img>` 태그를 사용 중임을 알 수 있습니다.
 

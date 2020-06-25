@@ -2,12 +2,10 @@
 $title: amp-social-share
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: 分享跟踪功能正在开发中。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,10 +23,7 @@ teaser:
      limitations under the License.
 -->
 
-
-
 显示社交分享按钮。
-
 
 <table>
   <tr>
@@ -60,17 +55,21 @@ teaser:
 分享按钮会针对某些预配置的提供商为您猜测部分默认设置。它假定当前文档规范网址是您要分享的网址，并且网页标题是您要分享的文本。
 
 ```html
-<amp-social-share type =“twitter”></amp-social-share>
+<amp-social-share type="“twitter”"></amp-social-share>
 ```
 
 **示例：传递参数**
 
-当您需要将参数传递给分享端点时，可以指定要附加到分享端点的 `data-param-
-<attribute>`。
+当您需要将参数传递给分享端点时，可以指定要附加到分享端点的 `data-param- <attribute>`。
+
 ```html
-<amp-social-share type="linkedin" width="60" height="44"
+<amp-social-share
+  type="linkedin"
+  width="60"
+  height="44"
   data-param-text="Hello world"
-  data-param-url="https://example.com/">
+  data-param-url="https://example.com/"
+>
 </amp-social-share>
 ```
 
@@ -231,9 +230,11 @@ LinkedIn 是预配置的提供商之一，因此您无需提供 `data-share-endp
 下面的示例通过将 `data-share-endpoint` 属性设为 Facebook Messenger 自定义协议的正确端点，通过 Facebook Messenger 创建分享按钮。
 
 ```html
-<amp-social-share type="facebookmessenger"
-    data-share-endpoint="fb-messenger://share"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="facebookmessenger"
+  data-share-endpoint="fb-messenger://share"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 
@@ -252,8 +253,9 @@ LinkedIn 是预配置的提供商之一，因此您无需提供 `data-share-endp
 ### 自定义样式 <a name="custom-styles"></a>
 
 有时，您可能希望使用您自己的样式。您可以通过下述方式将默认样式替换为您的自定义样式：
+
 ```css
-amp-social-share[type="twitter"] {
+amp-social-share[type='twitter'] {
   background: red;
   background-image: url(datauri:svg/myownsvgicon);
 }
@@ -264,8 +266,10 @@ amp-social-share[type="twitter"] {
 您可以在 `<amp-social-share>` 元素中使用[全局 AMP 变量替换](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。在下面的示例中，`TITLE` 替换为网页标题，`CANONICAL_URL` 替换为文档的规范网址。
 
 ```html
-<amp-social-share type="whatsapp"
-    data-param-text="Check out this article: TITLE - CANONICAL_URL">
+<amp-social-share
+  type="whatsapp"
+  data-param-text="Check out this article: TITLE - CANONICAL_URL"
+>
 </amp-social-share>
 ```
 

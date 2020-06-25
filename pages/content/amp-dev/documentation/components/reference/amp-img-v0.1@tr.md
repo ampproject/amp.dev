@@ -2,14 +2,13 @@
 $title: amp-img
 $category@: media
 formats:
-- websites
-- email
-- ads
-- stories
+  - websites
+  - email
+  - ads
+  - stories
 teaser:
   text: HTML5 img etiketinin yerini alır.
 ---
-
 
 <!--
 Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -27,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td class="col-fourty"><strong>Açıklama</strong></td>
@@ -44,34 +41,35 @@ limitations under the License.
   </tr>
 </table>
 
-
 # Davranış <a name="behavior"></a>
 
 Çalışma zamanı; görüntü alanı konumuna, sistem kaynaklarına, bağlantı bant genişliğine veya diğer faktörlere dayalı olarak kaynak yüklemesini geciktirmeyi veya öncelikli hale getirmeyi seçebilir. `amp-img` bileşenleri, çalışma zamanının resim kaynaklarını bu şekilde etkili bir şekilde yönetmesine olanak tanır.
 
 Dışarıdan getirilen tüm AMP kaynakları gibi `amp-img` bileşenlerine de önceden açık bir boyut (`witdh`/`height` gibi) verilmelidir. Böylece, resim getirilmeden en boy oranı bilinebilir. Gerçek düzen davranışı, `layout` özniteliği tarafından belirlenir.
 
-[tip type="read-on"]
-[AMP HTML Düzeni Sistemi](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) spesifikasyonundaki düzenler [Desteklenen Düzenler](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) hakkında daha fazla bilgi edinin.
+[tip type="read-on"][amp html düzeni sistemi](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md) spesifikasyonundaki düzenler [Desteklenen Düzenler](../../../documentation/guides-and-tutorials/develop/style_and_layout/control_layout.md#the-layout-attribute) hakkında daha fazla bilgi edinin.
 [/tip]
 
 # Örnek: Duyarlı bir resim gösterme <a name="example-displaying-a-responsive-image"></a>
 
-Aşağıdaki örnekte, `layout=responsive` öğesini ayarlayarak görüntü alanının boyutuna yanıt veren bir resim görüntülenmektedir.  Resim, `width` ve `height` tarafından belirtilen en boy oranına göre uzar ve küçülür.
+Aşağıdaki örnekte, `layout=responsive` öğesini ayarlayarak görüntü alanının boyutuna yanıt veren bir resim görüntülenmektedir. Resim, `width` ve `height` tarafından belirtilen en boy oranına göre uzar ve küçülür.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="900"
   height="675"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
-[tip type="read-on"]
-[Duyarlı AMP Sayfaları Oluşturma](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md) kılavuzunda, duyarlı AMP sayfaları hakkında bilgi edinin.
+[tip type="read-on"][duyarlı amp sayfaları oluşturma](../../../documentation/guides-and-tutorials/develop/style_and_layout/responsive_design.md) kılavuzunda, duyarlı AMP sayfaları hakkında bilgi edinin.
 [/tip]
 
 `amp-img` bileşeni tarafından istenen kaynak yüklenemezse bir [`fallback`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/index.md#fallback) alt öğesi sağlanıncaya kadar alan boş kalır. Bir yedek yalnızca başlangıç düzeninde oluşturulur ve olaydan sonraki src değişikliklerinin (örneğin, yeniden boyutlandırma + srcset aracılığıyla) performans sonuçları için bir yedeği olmaz.
@@ -81,18 +79,24 @@ Aşağıdaki örnekte, `layout=responsive` öğesini ayarlayarak görüntü alan
 Aşağıdaki örnekte, tarayıcı WebP'yi desteklemiyorsa yedek JPG resmi görüntülenir:
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="Mountains"
+<amp-img
+  alt="Mountains"
   width="550"
   height="368"
-  src="{{server_for_email}}/static/inline-examples/images/mountains.webp">
-  <amp-img alt="Mountains"
+  src="{{server_for_email}}/static/inline-examples/images/mountains.webp"
+>
+  <amp-img
+    alt="Mountains"
     fallback
     width="550"
     height="368"
-    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"></amp-img>
+    src="{{server_for_email}}/static/inline-examples/images/mountains.jpg"
+  ></amp-img>
 </amp-img>
 ```
+
 [/example]
 
 Yer tutucu arka plan rengi veya diğer görseller, CSS seçim aracı ve öğenin kendisinde stil belirtilerek ayarlanabilir.
@@ -102,9 +106,9 @@ Altyazılar gibi ek resim özellikleri, standart HTML ile uygulanabilir (örneğ
 [tip type="read-on"]
 Şu kaynaklardan, `amp-img` kullanma hakkında daha fazla bilgi edinin:
 
-* [Yer tutucular ve yedekler](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
-* [Resim ve Video Ekleme](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
-[/tip]
+- [Yer tutucular ve yedekler](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)
+- [Resim ve Video Ekleme](../../../documentation/guides-and-tutorials/develop/media_iframes_3p/index.md)
+  [/tip]
 
 # Özellikler <a name="attributes"></a>
 
@@ -147,7 +151,7 @@ Bu öğe, AMP bileşenlerine genişletilmiş [ortak özellikleri](../../../docum
 ```css
 amp-img {
   background-color: grey;
-  }
+}
 ```
 
 # İpuçları ve Püf Noktaları <a name="tips--tricks"></a>
@@ -157,11 +161,11 @@ amp-img {
 Pencere yeniden boyutlandırıldıkça resminizin de bir genişlik üst sınırına kadar (böylece, resim genişliğinden daha fazla uzatılmaz) ölçeklenmesini isterseniz:
 
 1. `<amp-img>` için `layout=responsive` değerini ayarlayın.
-1. Resmin kapsayıcısında, `max-width:<max width to display image>` CSS özelliğini belirtin.  Neden kapsayıcıda?  `layout=responsive` değerine sahip bir `amp-img` öğesi *blok düzeyindeyken*, `<img>` *satır içi* bir öğedir. Alternatif olarak, amp-img öğesi için CSS'nizde `display: inline-block` değerini ayarlayabilirsiniz.
+1. Resmin kapsayıcısında, `max-width:<max width to display image>` CSS özelliğini belirtin. Neden kapsayıcıda? `layout=responsive` değerine sahip bir `amp-img` öğesi _blok düzeyindeyken_, `<img>` _satır içi_ bir öğedir. Alternatif olarak, amp-img öğesi için CSS'nizde `display: inline-block` değerini ayarlayabilirsiniz.
 
 # Duyarlı ve içsel düzen arasındaki fark <a name="the-difference-between-responsive-and-intrinsic-layout"></a>
 
-Hem `responsive` hem de `intrinsic` düzenler, otomatik olarak ölçeklenen resimler oluşturur.  Temel fark, `intrinsic` düzenin ölçekleme öğesi olarak bir SVG resmi kullanmasıdır.  Bu, resmin standart bir HTML resmiyle aynı şekilde davranmasını sağlarken tarayıcının, başlangıç düzenindeki resim boyutunu bilmesi avantajını korur. `intrinsic` düzenin içsel bir boyutu olur ve kayan bir `div` öğesini, doğal resim boyutuna veya `max-width` gibi bir CSS sabitine ulaşana kadar genişletir. `responsive` düzen, boyutunu, kayan hale getirildiğinde doğal boyutu olmayan üst öğeden aldığı için kayan bir `div` öğesinde 0x0 boyutuyla oluşturulur.
+Hem `responsive` hem de `intrinsic` düzenler, otomatik olarak ölçeklenen resimler oluşturur. Temel fark, `intrinsic` düzenin ölçekleme öğesi olarak bir SVG resmi kullanmasıdır. Bu, resmin standart bir HTML resmiyle aynı şekilde davranmasını sağlarken tarayıcının, başlangıç düzenindeki resim boyutunu bilmesi avantajını korur. `intrinsic` düzenin içsel bir boyutu olur ve kayan bir `div` öğesini, doğal resim boyutuna veya `max-width` gibi bir CSS sabitine ulaşana kadar genişletir. `responsive` düzen, boyutunu, kayan hale getirildiğinde doğal boyutu olmayan üst öğeden aldığı için kayan bir `div` öğesinde 0x0 boyutuyla oluşturulur.
 
 # Sabit boyutlu resim ayarlama <a name="setting-a-fixed-sized-image"></a>
 
@@ -181,14 +185,18 @@ Duyarlı resimlerde, `width` ve `height` değerlerinin `amp-img` etiketinin geni
 Örneğin, `width="900"` ve `height="675"` değerlerini belirtmek yerine sadece `width="1.33"` ve `height="1"` değerlerini belirtebilirsiniz.
 
 [example preview="inline" playground="true"]
+
 ```html
-<amp-img alt="A view of the sea"
+<amp-img
+  alt="A view of the sea"
   src="{{server_for_email}}/static/inline-examples/images/sea.jpg"
   width="1.33"
   height="1"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-img>
 ```
+
 [/example]
 
 # Farklı ekran çözünürlükleri için birden fazla kaynak dosyası ayarlama <a name="setting-multiple-source-files-for-different-screen-resolutions"></a>

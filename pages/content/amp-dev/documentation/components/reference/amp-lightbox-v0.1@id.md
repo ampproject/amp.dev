@@ -2,12 +2,11 @@
 $title: amp-lightbox
 $category@: layout
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: Displays elements in a full-viewport “lightbox” modal.
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -46,7 +43,6 @@ teaser:
   </tr>
 </table>
 
-
 ## Perilaku <a name="behavior"></a>
 
 Komponen `amp-lightbox` menentukan elemen turunan yang ditampilkan dalam modal/overlay viewport penuh. Saat pengguna menge-tap atau mengklik sebuah elemen (misalnya tombol), ID `amp-lightbox` yang dirujuk dalam atribut `on` elemen yang diklik akan memicu lightbox agar mengisi viewport penuh dan menampilkan elemen turunan `amp-lightbox`.
@@ -56,7 +52,9 @@ Menekan tombol escape pada keyboard akan menutup lightbox. Cara lainnya, menetap
 ```html
 <button on="tap:quote-lb">See Quote</button>
 <amp-lightbox id="quote-lb" layout="nodisplay">
-  <blockquote>"Don't talk to me about JavaScript fatigue" - Horse JS</blockquote>
+  <blockquote>
+    "Don't talk to me about JavaScript fatigue" - Horse JS
+  </blockquote>
   <button on="tap:quote-lb.close">Nice!</button>
 </amp-lightbox>
 ```
@@ -133,8 +131,8 @@ Ada beberapa perbedaan antara menggunakan `amp-lightbox` dalam dokumen AMP norma
 
 Untuk iklan AMPHTML, atribut `close-button` wajib ada. Atribut ini menyebabkan header dirender di bagian atas lightbox. Header berisi tombol tutup dan label yang menampilkan "Ad" (Iklan). Persyaratan header ini diperlukan untuk:
 
-* Menetapkan pengalaman pengguna yang konsisten dan dapat diprediksi untuk iklan AMPHTML.
-* Memastikan bahwa titik keluar untuk lightbox selalu ada; jika tidak, materi iklan dapat secara efektif membajak konten dokumen host melalui lightbox.
+- Menetapkan pengalaman pengguna yang konsisten dan dapat diprediksi untuk iklan AMPHTML.
+- Memastikan bahwa titik keluar untuk lightbox selalu ada; jika tidak, materi iklan dapat secara efektif membajak konten dokumen host melalui lightbox.
 
 Atribut `close-button` wajib dan hanya diizinkan dalam iklan AMPHTML. Dalam dokumen AMP reguler, Anda dapat merender tombol tutup di mana pun diperlukan sebagai bagian dari konten `<amp-lightbox>`.
 

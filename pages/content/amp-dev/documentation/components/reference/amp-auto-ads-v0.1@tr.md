@@ -2,11 +2,10 @@
 $title: amp-auto-ads
 $category@: ads-analytics
 formats:
-- websites
+  - websites
 teaser:
   text: Uzaktan sunulan bir yapılandırma dosyası kullanarak reklamları bir AMP sayfasına dinamik şekilde yerleştirir.
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Uzaktan sunulan bir yapılandırma dosyası kullanarak reklamları bir AMP sayfasına dinamik şekilde yerleştirir.
 
@@ -54,31 +51,28 @@ Uzaktan sunulan bir yapılandırma dosyası kullanarak reklamları bir AMP sayfa
     </tr>
   </table>
 
-
-
 ## Davranış
 
 Yeterli sayıda geçerli yerleşim göz önünde bulundurulduğunda (yapılandırmada sağlanır) `amp-auto-ads`, bir yandan reklam ağı tarafından belirtilen kısıtlamalara uyarken diğer yandan ek reklamlar yerleştirmeye çalışır. Bu kısıtlamalar şunları sınırlandırır:
 
-* Eklenebilecek toplam reklam sayısı
-* Bitişik reklamlar arasında olması gereken minimum mesafe
+- Eklenebilecek toplam reklam sayısı
+- Bitişik reklamlar arasında olması gereken minimum mesafe
 
 Buna ek olarak, reklamlar yalnızca sayfada kabul edilemez yeniden akışa neden olmayacak (attemptChangeSize ile belirlenir) konumlara eklenir.
 
 `<amp-auto-ads>` etiketi, `<body>` öğesinin ilk alt öğesi olarak yerleştirilmelidir.
 
 Reklam ağı türü ve (reklam ağının gerektirdiği) ek bilgiler etikette belirtilmelidir.
+
 ```html
-<amp-auto-ads
-    type="adsense"
-    data-ad-client="ca-pub-5439573510495356">
-  </amp-auto-ads>
+<amp-auto-ads type="adsense" data-ad-client="ca-pub-5439573510495356">
+</amp-auto-ads>
 ```
 
 ## Desteklenen reklam ağları <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (deneysel)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+- [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+- [DoubleClick (deneysel)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## Özellikler
 
@@ -114,16 +108,16 @@ Aşağıdaki örnekte, reklamın sayfada üçüncü `<DIV id='domId'>` öğesi i
         "index": 2,
         "sub": {
           "selector": "P.paragraph",
-          "all": true,
-        },
+          "all": true
+        }
       },
       "pos": 4,
       "type": 1,
       "style": {
         "top_m": 5,
-        "bot_m": 10,
-      },
-    },
+        "bot_m": 10
+      }
+    }
   ]
 }
 ```
@@ -367,19 +361,20 @@ Yapılandırma nesnesinde belirtilecek alanlar:
 
 `subsequentMinSpacing` yapılandırma nesnesinde belirtilecek alanlar. `subsequentMinSpacing` girişleri, halihazırda sayfada bulunan reklamların sayısına dayalı olarak ilave reklamlar arasında bulunması gereken aralıkları değiştirmek için kullanılabilir. Örneğin, aşağıdaki senaryoyu inceleyin:
 
-* Sayfada 2 reklam vardır
-* subsequentMinSpacing alanı şöyledir:
-<code>
+- Sayfada 2 reklam vardır
+- subsequentMinSpacing alanı şöyledir:
+  <code>
   [
-    {adCount: 3, spacing: "500px"},
-    {adCount: 5, spacing: "1000px"},
+  {adCount: 3, spacing: "500px"},
+  {adCount: 5, spacing: "1000px"},
   ]
-</code>
+  </code>
 
 Başlangıçta, sayfada 2 reklam olduğundan herhangi bir eşleme gerçekleşmez.
 Dolayısıyla, minimum aralık varsayılan olarak `AdConstraints` nesnesindeki initialMinSpacing değerine ayarlanır.
 `amp-auto-ads`, `adConstraints` kısıtlamasını bozmadan kullanabileceği yerleşimler tükeninceye kadar tekrarlanan bir şekilde reklam yerleştirmeyi dener.
 `amp-auto-ads` ilk reklamını yerleştirdikten sonra sayfada artık 3 reklam vardır. `subsequentMinSpacing` alanında 3 (veya daha fazla) reklam için bir eşleme olduğundan minimum aralık şimdi 500 px olur.
+
 5. reklam için bir kural olduğundan, bu durum sayfada 5 reklam yer alıncaya kadar uygulanır. 6. ve sonraki reklamların eklenmesi için eklenen reklamın, diğer reklamlardan en az 1.000 px uzakta olması gerekir.
 
 <table>

@@ -34,6 +34,7 @@ $title: Как создать адаптивные AMP-страницы
 Пример:
 
 [sourcecode:html]
+
 <!doctype html>
   <head>
     <meta charset="utf-8">
@@ -54,6 +55,7 @@ $title: Как создать адаптивные AMP-страницы
       }
     </style>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+
   </head>
 [/sourcecode]
 
@@ -62,6 +64,7 @@ $title: Как создать адаптивные AMP-страницы
 Задайте стили компонентов с помощью селекторов классов или элементов, а также общих свойств CSS. Пример:
 
 [sourcecode:html]
+
 <body>
   <p>Hello, Kitty.</p>
   <amp-img

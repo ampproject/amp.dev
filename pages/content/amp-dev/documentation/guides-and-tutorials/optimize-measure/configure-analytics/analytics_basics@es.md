@@ -1,5 +1,5 @@
 ---
-$title: "Analytics: aspectos básicos"
+$title: 'Analytics: aspectos básicos'
 ---
 
 Con este artículo conocerás los aspectos básicos de Analytics en las páginas AMP.
@@ -37,35 +37,38 @@ El componente [`amp-pixel`](../../../../documentation/components/reference/amp-p
 
 ### Configuración de amp-analytics sencilla
 
-Para crear una configuración de [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md)  sencilla, antes debes incluir en el documento AMP la declaración `custom-element` que se indica a continuación `<head>`
+Para crear una configuración de [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) sencilla, antes debes incluir en el documento AMP la declaración `custom-element` que se indica a continuación `<head>`
 (consulta la sección sobre [cómo incluir componentes](../../../../documentation/components/index.html)):
 
 ```html
-<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script
+  async
+  custom-element="amp-analytics"
+  src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+></script>
 ```
 
 El siguiente ejemplo es parecido al [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md). Cuando se visualiza una página, el evento de activación se pone en marcha y envía los datos de página vista junto con un número de identificación aleatorio a una URL previamente definida:
 
 ```html
 <amp-analytics>
-
-<script type="application/json">
-{
-  "requests": {
-      "pageview": "https://foo.com/pixel?RANDOM",
-    },
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://foo.com/pixel?RANDOM"
+      },
       "triggers": {
         "trackPageview": {
           "on": "visible",
           "request": "pageview"
+        }
+      }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
-En el ejemplo anterior hemos definido una solicitud denominada "pageview" para que fuera `https://foo.com/pixel?RANDOM`.  Como hemos explicado anteriormente, RANDOM se sustituye por un número aleatorio, de modo que la solicitud al final tendrá un aspecto similar a este `https://foo.com/pixel?0.23479283687235653498734`.
+En el ejemplo anterior hemos definido una solicitud denominada "pageview" para que fuera `https://foo.com/pixel?RANDOM`. Como hemos explicado anteriormente, RANDOM se sustituye por un número aleatorio, de modo que la solicitud al final tendrá un aspecto similar a este `https://foo.com/pixel?0.23479283687235653498734`.
 
 Al visualizarse la página (según lo especificado por el uso de la palabra clave de activación `visible`), se activa un evento y se envía la solicitud de `pageview` mencionada. El atributo triggers determina el momento en el que se activa la solicitud de página vista. Obtén más información sobre las [solicitudes y los activadores](deep_dive_analytics.md#requests-triggers--transports).
 
@@ -76,7 +79,9 @@ y [`amp-analytics`](../../../../documentation/components/reference/amp-analytics
 permiten todas las sustituciones de variables de URL estándares (consulta el artículo sobre [sustituciones de variables AMP HTML](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). En el ejemplo siguiente, la solicitud de página vista se envía a la URL junto con la URL canónica del documento de AMP actual, su title y un [ID de cliente](analytics_basics.md):
 
 ```html
-<amp-pixel src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"></amp-pixel>
+<amp-pixel
+  src="https://example.com/analytics?url=${canonicalUrl}&title=${title}&clientId=${clientId(site-user-id)}"
+></amp-pixel>
 ```
 
 La sencillez de la etiqueta [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)
@@ -88,26 +93,25 @@ En el ejemplo de [`amp-analytics`](../../../../documentation/components/referenc
 
 ```html
 <amp-analytics>
-
-<script type="application/json">
-
-  {"requests": {
-      "pageview":"https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}",
-  },
-  "vars": {
-      "account": "ABC123",
-  },
-  "triggers": {
-      "someEvent": {
-        "on": "visible",
-        "request": "pageview",
-        "vars": {
-          "title": "My homepage",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(site-user-id)}"
+      },
+      "vars": {
+        "account": "ABC123"
+      },
+      "triggers": {
+        "someEvent": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage"
+          }
+        }
       }
     }
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -128,7 +132,9 @@ Cuando se publica una página AMP a través del sitio web de un editor, se puede
 Por ejemplo,
 
 ```html
-<amp-pixel src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/pixel?cid=CLIENT_ID(site-user-id-cookie-fallback-name)"
+></amp-pixel>
 ```
 
 Si AMP detecta que esta cookie está definida, la sustitución del ID de cliente devolverá el valor de la cookie. Si AMP detecta que esta cookie no está definida, AMP generará un valor de la forma `amp-` seguida por una cadena codificada base64 aleatoria.

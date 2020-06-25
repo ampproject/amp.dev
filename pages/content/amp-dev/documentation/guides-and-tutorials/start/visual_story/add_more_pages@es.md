@@ -2,7 +2,7 @@
 $title: Añadir más páginas
 ---
 
-Ahora que ya sabes cómo añadir una página a una historia de AMP, verás que añadir las páginas siguientes a la historia de las mascotas es muy parecido. Basándote en la información que se incluye a continuación, **crea el resto de las páginas** aplicando lo que has aprendido.  Si te atascas, consulta el (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">código completo</a>).
+Ahora que ya sabes cómo añadir una página a una historia de AMP, verás que añadir las páginas siguientes a la historia de las mascotas es muy parecido. Basándote en la información que se incluye a continuación, **crea el resto de las páginas** aplicando lo que has aprendido. Si te atascas, consulta el (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">código completo</a>).
 
 [tip type="success"]
 

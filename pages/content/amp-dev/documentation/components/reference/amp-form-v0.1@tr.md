@@ -26,8 +26,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 <table>
   <tr>
     <td width="40%"><strong>Açıklama</strong></td>
@@ -47,7 +45,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 # Davranış <a name="behavior"></a>
 
 `amp-form` uzantısı, bir AMP belgesindeki giriş alanlarını göndermek için formlar (`<form>`) oluşturmanıza olanak tanır. `amp-form` uzantısı, tarayıcılardaki bazı eksik davranışlar için [çoklu dolgular](#polyfills) da sağlar.
@@ -61,9 +58,10 @@ Bir `<form>` oluşturmadan önce, `<amp-form>` uzantısı için gerekli komut do
 Temel bir form örneğini burada bulabilirsiniz:
 
 [example preview="inline" playground="true" imports="amp-form" template="amp-mustache"]
+
 ```html
 <form method="post"
-    action-xhr="https://example.com/subscribe"{% if not format=='email'%}  
+    action-xhr="https://example.com/subscribe"{% if not format=='email'%}
     target="_top"{% endif %}>
     <fieldset>
       <label>
@@ -95,6 +93,7 @@ Temel bir form örneğini burada bulabilirsiniz:
     </div>
   </form>
 ```
+
 [/example]
 
 # Özellikler <a name="attributes"></a>
@@ -107,8 +106,8 @@ Formu gönderdikten sonra form yanıtının görüntüleneceği yeri belirtir. `
 
 Form girişini işlemek için bir sunucu uç noktası belirtir. Değer bir `https` URL'si (mutlak veya göreli) olmalı ve bir CDN bağlantısı olmamalıdır.
 
-* `method=GET` için: bu özelliği veya [`action-xhr`](#action-xhr) özelliğini kullanın.
-* `method=POST` için: [`action-xhr`](#action-xhr) özelliğini kullanın.
+- `method=GET` için: bu özelliği veya [`action-xhr`](#action-xhr) özelliğini kullanın.
+- `method=POST` için: [`action-xhr`](#action-xhr) özelliğini kullanın.
 
 [tip type="note"]
 `target` ve `action` özellikleri yalnızca xhr dışındaki GET istekleri için kullanılır. AMP çalışma zamanı, istekte bulunmak için `action-xhr` özelliğini kullanır ve `action` ve `target` özelliklerini yoksayar. `action-xhr` sağlanmadığında AMP, `action` uç noktasına bir GET isteğinde bulunur ve yeni bir pencere açmak için `target` özelliğini kullanır (`_blank` değerinde). AMP çalışma zamanı, `amp-form` uzantısının yüklenemediği durumlarda da `action` ve `target` özelliklerini kullanmaya geri dönebilir.
@@ -142,14 +141,14 @@ Daha ayrıntılı bilgi için [Özel Doğrulama](#custom-validations) bölümün
 
 **İzin Verilenler**:
 
-* Formla ilgili diğer öğeler; örneğin: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` vb.
-* `<form method=POST action-xhr>` içindeki `<input type=password>` ve `<input type=file>`.
-* [`amp-selector`](amp-selector.md)
+- Formla ilgili diğer öğeler; örneğin: `<textarea>`, `<select>`, `<option>`, `<fieldset>`, `<label>`, `<input type=text>`, `<input type=submit>` vb.
+- `<form method=POST action-xhr>` içindeki `<input type=password>` ve `<input type=file>`.
+- [`amp-selector`](amp-selector.md)
 
 **İzin Verilmeyenler**:
 
-* `<input type=button>`, `<input type=image>`
-* Girişlerdeki formla ilgili çoğu özellik; örneğin: `form`, `formaction`, `formtarget`, `formmethod` ve diğerleri.
+- `<input type=button>`, `<input type=image>`
+- Girişlerdeki formla ilgili çoğu özellik; örneğin: `form`, `formaction`, `formtarget`, `formmethod` ve diğerleri.
 
 (Gelecekte bu kurallardan bazılarının gevşetilmesi yeniden değerlendirilebilir; sizin için gerekli olanlar varsa [lütfen bunları bize bildirin](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#suggestions-and-feature-requests) ve kullanım örnekleri sağlayın).
 
@@ -159,38 +158,37 @@ Geçerli girişler ve alanlarla ilgili ayrıntılar için AMP doğrulayıcı spe
 
 `amp-form` öğesi, aşağıdaki işlemleri sunar:
 
-| İşlem | Açıklama |
-|--------|-------------|
+| İşlem    | Açıklama                                                                                                                                                                |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `submit` | Örneğin bir bağlantıya dokunulması veya [giriş değiştiğinde bir form gönderilmesi](#input-events) gibi belirli bir işlemde form gönderimini tetiklemenize olanak tanır. |
-| `clear` | Formdaki her bir girişin değerlerini boşaltır. Bu, kullanıcıların formları ikinci kez hızlıca doldurmalarına olanak tanıyabilir. |
+| `clear`  | Formdaki her bir girişin değerlerini boşaltır. Bu, kullanıcıların formları ikinci kez hızlıca doldurmalarına olanak tanıyabilir.                                        |
 
-[tip type="read-on"]
-[AMP'de İşlemler ve Etkinlikler](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) hakkında daha fazla bilgi edinin.
+[tip type="read-on"][amp'de i̇şlemler ve etkinlikler](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) hakkında daha fazla bilgi edinin.
 [/tip]
 
 # Etkinlikler <a name="events"></a>
 
 `amp-form` aşağıdaki etkinlikleri sunar:
 
-| Etkinlik | Tetiklenme zamanı |
-|-------|-------------|
-| `submit` | Form gönderildiğinde ve gönderim tamamlanmadan önce. |
-| `submit-success` | Form gönderimi bittiğinde ve yanıt başarılı olduğunda. |
-| `submit-error` | Form gönderimi bittiğinde ve hata yanıtı alındığında. |
-| `verify` | Eşzamansız doğrulama başlatıldığında. |
-| `verify-error` | Eşzamansız doğrulama bittiğinde ve hata yanıtı alındığında. |
-| `valid` | Formun doğrulama durumu "geçerli" olarak değiştiğinde ([raporlama stratejisine](#reporting-strategies) uygun olarak). |
-| `invalid` | Formun doğrulaması "geçersiz" durumunda olduğunda ([raporlama stratejisine](#reporting-strategies) uygun olarak). |
+| Etkinlik         | Tetiklenme zamanı                                                                                                     |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `submit`         | Form gönderildiğinde ve gönderim tamamlanmadan önce.                                                                  |
+| `submit-success` | Form gönderimi bittiğinde ve yanıt başarılı olduğunda.                                                                |
+| `submit-error`   | Form gönderimi bittiğinde ve hata yanıtı alındığında.                                                                 |
+| `verify`         | Eşzamansız doğrulama başlatıldığında.                                                                                 |
+| `verify-error`   | Eşzamansız doğrulama bittiğinde ve hata yanıtı alındığında.                                                           |
+| `valid`          | Formun doğrulama durumu "geçerli" olarak değiştiğinde ([raporlama stratejisine](#reporting-strategies) uygun olarak). |
+| `invalid`        | Formun doğrulaması "geçersiz" durumunda olduğunda ([raporlama stratejisine](#reporting-strategies) uygun olarak).     |
 
 Bu etkinlikler, [`on` özelliği](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#on) aracılığıyla kullanılabilir.
 
 Örneğin, aşağıdakiler hem `submit-success` hem de `submit-error` etkinliklerini dinler ve etkinliğe bağlı olarak farklı lightbox'lar gösterir:
 
 ```html
-
-<form ...="" on="submit-success:success-lightbox;submit-error:error-lightbox">
-</form>
-
+<form
+  ...=""
+  on="submit-success:success-lightbox;submit-error:error-lightbox"
+></form>
 ```
 
 [Tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) görebilirsiniz.
@@ -202,10 +200,11 @@ AMP, alt `<input>` öğelerinde `change` ve `input-debounced` etkinliklerini gö
 Örneğin, giriş değişikliğinde (bir anketi yanıtlamak için bir radyo düğmesinin seçilmesi, bir sayfanın çevirisini yapmak için `select` girişinden bir dilin seçilmesi vb.) bir form gönderilmesi yaygın bir kullanım örneğidir.
 
 [example preview="inline" playground="true" imports="amp-form"]
+
 ```html
 <form id="myform"
     method="post"
-    action-xhr="https://example.com/myform"{% if not format=='email'%}  
+    action-xhr="https://example.com/myform"{% if not format=='email'%}
     target="_blank"{% endif %}>
     <fieldset>
       <label>
@@ -223,6 +222,7 @@ AMP, alt `<input>` öğelerinde `change` ve `input-debounced` etkinliklerini gö
     </fieldset>
   </form>
 ```
+
 [/example]
 
 [Tam örneği burada](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) görebilirsiniz.
@@ -231,10 +231,10 @@ AMP, alt `<input>` öğelerinde `change` ve `input-debounced` etkinliklerini gö
 
 `amp-form` uzantısı, [amp-analytics](amp-analytics.md) yapılandırmanızda izleyebileceğiniz aşağıdaki etkinlikleri tetikler:
 
-| Etkinlik                     | Tetiklenme zamanı                        |
-|---------------------------|-----------------------------------|
-| `amp-form-submit`         | Bir form isteği başlatıldığında.      |
-| `amp-form-submit-success` | Başarılı bir yanıt alındığında (ör. yanıt `2XX` durumuna sahip olduğunda). |
+| Etkinlik                  | Tetiklenme zamanı                                                             |
+| ------------------------- | ----------------------------------------------------------------------------- |
+| `amp-form-submit`         | Bir form isteği başlatıldığında.                                              |
+| `amp-form-submit-success` | Başarılı bir yanıt alındığında (ör. yanıt `2XX` durumuna sahip olduğunda).    |
 | `amp-form-submit-error`   | Başarısız bir yanıt alındığında (ör. yanıt `2XX` durumuna sahip olmadığında). |
 
 Analizlerinizi aşağıdaki örnekte olduğu gibi bu etkinlikleri gönderecek şekilde yapılandırabilirsiniz:
@@ -278,31 +278,31 @@ Bu üç etkinlik de belirli bir forma ve formdaki alanlara karşılık gelen bir
 
 ```html
 <form id="submit_form" action-xhr="/comment" method="POST">
-  <input type="text" name="comment">
-    <input type="submit" value="Yorum">
-    </form>
+  <input type="text" name="comment" />
+  <input type="submit" value="Yorum" />
+</form>
 ```
 
 `amp-form-submit`, `amp-form-submit-success` veya `amp-form-submit-error` etkinliği etkinleştiğinde, formda belirtilen değerleri içeren şu değişkenleri oluşturur:
 
-  * `formId`
-  * `formFields[comment]`
+- `formId`
+- `formFields[comment]`
 
 # Başarı/hata yanıtı oluşturma <a name="successerror-response-rendering"></a>
 
 Formunuzdaki başarı veya hata yanıtlarını, [amp-moustache](amp-mustache.md) gibi [genişletilmiş şablonları](../../../documentation/guides-and-tutorials/learn/spec/amphtml.md#templates) kullanarak veya başarı yanıtlarını, verileri, [amp-bind](amp-bind.md) ve aşağıdaki yanıt özellikleriyle bağlayarak oluşturabilirsiniz:
 
-| Yanıt özelliği | Açıklama |
-|-----------|---------------------|
-| `submit-success` | Yanıt başarılı olursa (ör. `2XX` durumuna sahipse) bir başarı mesajı görüntülemek için kullanılabilir. |
-| `submit-error` | Yanıt başarısız olursa (ör. `2XX` durumuna sahip değilse) bir gönderim hatası görüntülemek için kullanılabilir.  |
-| `submitting` | Form gönderilirken bir mesaj görüntülemek için kullanılabilir. Bu özelliğe ait şablonun, görüntüleme amaçlı tüm form giriş alanlarına erişimi vardır. `submitting` özelliğini nasıl kullanacağınızı öğrenmek için lütfen [aşağıdaki tam form örneğine](#example-submitting) bakın. |
+| Yanıt özelliği   | Açıklama                                                                                                                                                                                                                                                                           |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `submit-success` | Yanıt başarılı olursa (ör. `2XX` durumuna sahipse) bir başarı mesajı görüntülemek için kullanılabilir.                                                                                                                                                                             |
+| `submit-error`   | Yanıt başarısız olursa (ör. `2XX` durumuna sahip değilse) bir gönderim hatası görüntülemek için kullanılabilir.                                                                                                                                                                    |
+| `submitting`     | Form gönderilirken bir mesaj görüntülemek için kullanılabilir. Bu özelliğe ait şablonun, görüntüleme amaçlı tüm form giriş alanlarına erişimi vardır. `submitting` özelliğini nasıl kullanacağınızı öğrenmek için lütfen [aşağıdaki tam form örneğine](#example-submitting) bakın. |
 
 # Yanıtları şablonlarla oluşturmak için: <a name="to-render-responses-with-templating"></a>
 
-* `<form>` öğesinin *doğrudan alt öğelerine* bir yanıt özelliği uygulayın.
-* İçinde `<template></template>` veya `<script type="text/plain"></script>` etiketiyle bir şablona ekleyerek ya da `template="id_of_other_template"` özelliğiyle bir şablonu referans alarak alt öğede yanıtı oluşturun.
-* `submit-success` ve `submit-error` yanıtları için geçerli bir JSON nesnesi sağlayın. Hem başarı hem de hata yanıtlarının `Content-Type: application/json` üstbilgisi olmalıdır.
+- `<form>` öğesinin _doğrudan alt öğelerine_ bir yanıt özelliği uygulayın.
+- İçinde `<template></template>` veya `<script type="text/plain"></script>` etiketiyle bir şablona ekleyerek ya da `template="id_of_other_template"` özelliğiyle bir şablonu referans alarak alt öğede yanıtı oluşturun.
+- `submit-success` ve `submit-error` yanıtları için geçerli bir JSON nesnesi sağlayın. Hem başarı hem de hata yanıtlarının `Content-Type: application/json` üstbilgisi olmalıdır.
 
 <a id="example-submitting"></a>
 
@@ -311,15 +311,16 @@ Formunuzdaki başarı veya hata yanıtlarını, [amp-moustache](amp-mustache.md)
 Aşağıdaki örnekte, yanıtlar, formun içindeki bir satır içi şablonda oluşturulur.
 
 ```html
-{% raw %}<form ...>
+{% raw %}
+<form ...>
   <fieldset>
-    <input type="text" name="firstName">
-      ...
-    </fieldset>
-    <div verify-error="">
-      <template type="amp-mustache">
-        There is a mistake in the form!
-        {{#verifyErrors}}{{message}}{{/verifyErrors}}
+    <input type="text" name="firstName" />
+    ...
+  </fieldset>
+  <div verify-error="">
+    <template type="amp-mustache">
+      There is a mistake in the form!
+      {{#verifyErrors}}{{message}}{{/verifyErrors}}
     </template>
   </div>
   <div submitting="">
@@ -329,15 +330,16 @@ Aşağıdaki örnekte, yanıtlar, formun içindeki bir satır içi şablonda olu
   </div>
   <div submit-success="">
     <template type="amp-mustache">
-      Success! Thanks {{name}} for subscribing! Please make sure to check your email {{email}}
-    to confirm! After that we'll start sending you weekly articles on {{#interests}}<b>{{name}}</b> {{/interests}}.
-  </template>
-</div>
-<div submit-error="">
-  <template type="amp-mustache">
-    Oops! {{name}}, {{message}}.
-  </template>
-</div>
+      Success! Thanks {{name}} for subscribing! Please make sure to check your
+      email {{email}} to confirm! After that we'll start sending you weekly
+      articles on {{#interests}}<b>{{name}}</b> {{/interests}}.
+    </template>
+  </div>
+  <div submit-error="">
+    <template type="amp-mustache">
+      Oops! {{name}}, {{message}}.
+    </template>
+  </div>
 </form>
 {% endraw %}
 ```
@@ -349,12 +351,17 @@ Başarılı olursa:
 ```json
 {
   "name": "Jane Miller",
-  "interests": [{"name": "Basketball"}, {"name": "Swimming"}, {"name": "Reading"}],
+  "interests": [
+    {"name": "Basketball"},
+    {"name": "Swimming"},
+    {"name": "Reading"}
+  ],
   "email": "email@example.com"
 }
 ```
 
 Hata için:
+
 ```json
 {
   "name": "Jane Miller",
@@ -387,28 +394,27 @@ to confirm! After that we'll start sending you weekly articles on {{#interests}}
 
 # Veri bağlama ile bir başarılı yanıtı oluşturmak için <a name="to-render-a-successful-response-with-data-binding"></a>
 
-* Form *submit-success* özelliğini [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29) yöntemine bağlamak için [on özelliğini](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) kullanın.
-* Yanıt verilerini yakalamak için `event` özelliğini kullanın.
-* Form yanıtını bağlamak için durum özelliğini istediğiniz öğeye ekleyin.
+- Form _submit-success_ özelliğini [`AMP.setState()`](amp-bind.md#updating-state-with-amp.setstate%28%29) yöntemine bağlamak için [on özelliğini](../../../documentation/guides-and-tutorials/learn/amp-actions-and-events.md) kullanın.
+- Yanıt verilerini yakalamak için `event` özelliğini kullanın.
+- Form yanıtını bağlamak için durum özelliğini istediğiniz öğeye ekleyin.
 
 Aşağıdaki örnekte [`amp-bind`](amp-bind.md) özelliğiyle oluşturulmuş bir form `submit-success` yanıtı gösterilmektedir:
+
 ```html
-<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Subscribe to our newsletter</p>
-<form method="post"
-      action-xhr="/components/amp-form/submit-form-input-text-xhr"
-      target="_ top"
-      on="submit-success: AMP.setState({'subscribe': event.response.name})">
+<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">
+  Subscribe to our newsletter
+</p>
+<form
+  method="post"
+  action-xhr="/components/amp-form/submit-form-input-text-xhr"
+  target="_ top"
+  on="submit-success: AMP.setState({'subscribe': event.response.name})"
+>
   <div>
-    <input type="text"
-        name="name"
-        placeholder="Name..."
-        required>
-    <input type="email"
-      name="email"
-      placeholder="Email..."
-      required>
+    <input type="text" name="name" placeholder="Name..." required />
+    <input type="email" name="email" placeholder="Email..." required />
   </div>
-  <input type="submit" value="Subscribe">
+  <input type="submit" value="Subscribe" />
 </form>
 ```
 
@@ -420,21 +426,24 @@ Form başarıyla gönderildiğinde, aşağıdakine benzer bir JSON yanıtı dön
   "email": "email@example.com"
 }
 ```
+
 Ardından, `amp-bind` özelliği `<p>` öğesinin metnini `subscibe` durumuyla eşleşecek şekilde günceller:
 
 ```html
 ...
-  <p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">Thanks Jane Miller! You have successfully subscribed.</p>
+<p [text]="'Thanks, ' + subscribe +'! You have successfully subscribed.'">
+  Thanks Jane Miller! You have successfully subscribed.
+</p>
 ...
 ```
 
 # Gönderimden sonra yönlendirme <a name="redirecting-after-a-submission"></a>
 
-`AMP-Redirect-To` yanıt üstbilgisini ayarlayarak ve bir yönlendirme URL'si belirterek, başarılı bir form gönderildikten sonra kullanıcıları yeni bir sayfaya yönlendirebilirsiniz. Yönlendirme URL'si bir HTTPS URL'si olmalıdır; aksi takdirde, AMP bir hata bildirir ve yönlendirme gerçekleşmez.  HTTP yanıtı üstbilgileri, sunucunuz aracılığıyla yapılandırılır.
+`AMP-Redirect-To` yanıt üstbilgisini ayarlayarak ve bir yönlendirme URL'si belirterek, başarılı bir form gönderildikten sonra kullanıcıları yeni bir sayfaya yönlendirebilirsiniz. Yönlendirme URL'si bir HTTPS URL'si olmalıdır; aksi takdirde, AMP bir hata bildirir ve yönlendirme gerçekleşmez. HTTP yanıtı üstbilgileri, sunucunuz aracılığıyla yapılandırılır.
 
-`AMP-Redirect-To` yanıt üstbilgisini izin verilen üstbilgiler listesine eklemek için `Access-Control-Expose-Headers` yanıt üstbilginizi güncellediğinizden emin olun.  Bu başlıklar hakkında daha fazla bilgiyi [AMP'de CORS Güvenliği](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp) sayfasında edinebilirsiniz.
+`AMP-Redirect-To` yanıt üstbilgisini izin verilen üstbilgiler listesine eklemek için `Access-Control-Expose-Headers` yanıt üstbilginizi güncellediğinizden emin olun. Bu başlıklar hakkında daha fazla bilgiyi [AMP'de CORS Güvenliği](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp) sayfasında edinebilirsiniz.
 
-*Örnek yanıt üstbilgileri:*
+_Örnek yanıt üstbilgileri:_
 
 ```text
 AMP-Redirect-To: https://example.com/forms/thank-you
@@ -457,10 +466,11 @@ Formunuzda özel doğrulamayı belirtmek için:
 Aşağıda bir örnek verilmiştir:
 
 [example preview="inline" playground="true" imports="amp-form"]
+
 ```html
 <form method="post"
     action-xhr="https://example.com/subscribe"
-    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}  
+    custom-validation-reporting="show-all-on-submit"{% if not format=='email'%}
     target="_blank"{% endif %}>
     <fieldset>
       <label>
@@ -495,6 +505,7 @@ Aşağıda bir örnek verilmiştir:
     </fieldset>
   </form>
 ```
+
 [/example]
 
 Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/amphtml/blob/master/examples/forms.amp.html) sayfasına bakın.
@@ -519,7 +530,7 @@ Girişin sahip olabileceği her geçersiz durum türü için kendi doğrulama ku
 
 # Devam Ederken <a name="as-you-go"></a>
 
-`as-you-go` raporlama seçeneği, kullanıcınızın girişle etkileşimde bulunurken doğrulama mesajlarını görmesine olanak tanır. Örneğin, kullanıcı geçersiz bir e-posta adresi girerse hatayı hemen görür.  Değeri düzelttikten sonra hata kaybolur.
+`as-you-go` raporlama seçeneği, kullanıcınızın girişle etkileşimde bulunurken doğrulama mesajlarını görmesine olanak tanır. Örneğin, kullanıcı geçersiz bir e-posta adresi girerse hatayı hemen görür. Değeri düzelttikten sonra hata kaybolur.
 
 # Etkileşimde Bulun ve Gönder <a name="interact-and-submit"></a>
 
@@ -530,6 +541,7 @@ Girişin sahip olabileceği her geçersiz durum türü için kendi doğrulama ku
 HTML5 doğrulaması, yalnızca sayfada bulunan bir değerin belirli bir kalıpla eşleşip eşleşmediği gibi bilgilere dayalı geri bildirimler sağlar. `amp-form` doğrulaması ile kullanıcıya, HTML5 doğrulamasının tek başına sağlayamayacağı bir geri bildirim sunabilirsiniz. Örneğin, bir form, bir e-posta adresinin önceden kayıtlı olup olmadığını kontrol etmek için doğrulamayı kullanabilir. Başka bir kullanım örneği, bir şehir alanı ve posta kodu alanının birbiriyle eşleştiğini doğrulamaktır.
 
 Burada, bir örneği görebilirsiniz:
+
 ```html
 {% raw %}<h4>Doğrulama örneği</h4>
 <form method="post" action-xhr="/form/verify-json/post" verify-xhr="/form/verify-json/post"{% if not format=='email'%}   target="_blank"{% endif %}>
@@ -576,11 +588,12 @@ Form, isteğin bir doğrulama isteği olduğuna ve resmi bir gönderim olmadığ
 Doğrulama ve gönderim için aynı uç nokta kullanılırsa sunucunun doğrulama isteğini kaydetmeyeceğini bilmesi açısından bu faydalı olur.
 
 Bir hata yanıtının doğrulama için nasıl görüneceği burada gösterilmektedir:
+
 ```json
-  {
-    "verifyErrors": [
-      {"name": "email", "message": "That email is already taken."},
-      {"name": "zip", "message": "The city and zip do not match."}
+{
+  "verifyErrors": [
+    {"name": "email", "message": "That email is already taken."},
+    {"name": "zip", "message": "The city and zip do not match."}
   ]
 }
 ```
@@ -596,15 +609,22 @@ Daha fazla örnek için [examples/forms.amp.html](https://github.com/ampproject/
 Her bir girişte, `data-amp-replace` öğesinde kullanılan boşlukla ayrılmış değişken dizesini belirterek her değişiklik için kullandığınız değişkenleri sağlamanız gerekir (aşağıdaki örneğe bakın). AMP, açıkça belirtilmeyen değişkenleri değiştirmez.
 
 Girişlerin, değişikliklerden önce ve sonra nasıl olduğuyla ilgili bir örneği burada bulabilirsiniz (değişken değişikliklerinin platform söz dizimini kullanmanız gerektiğini, analiz olanları kullanmayacağınızı unutmayın):
+
 ```html
 <!-- Initial Load -->
 <form ...>
-  <input name="canonicalUrl" type="hidden"
-        value="The canonical URL is: CANONICAL_URL - RANDOM - CANONICAL_HOSTNAME"
-        data-amp-replace="CANONICAL_URL RANDOM">
-  <input name="clientId" type="hidden"
-        value="CLIENT_ID(myid)"
-        data-amp-replace="CLIENT_ID">
+  <input
+    name="canonicalUrl"
+    type="hidden"
+    value="The canonical URL is: CANONICAL_URL - RANDOM - CANONICAL_HOSTNAME"
+    data-amp-replace="CANONICAL_URL RANDOM"
+  />
+  <input
+    name="clientId"
+    type="hidden"
+    value="CLIENT_ID(myid)"
+    data-amp-replace="CLIENT_ID"
+  />
   ...
 </form>
 ```
@@ -612,16 +632,22 @@ Girişlerin, değişikliklerden önce ve sonra nasıl olduğuyla ilgili bir örn
 Kullanıcı formu göndermeyi denedikten sonra, AMP değişkenleri çözmeye ve tüm alanların alan `value` özelliğini uygun değişikliklerle güncellemeye çalışır. XHR gönderimlerinde, büyük olasılıkla tüm değişkenler değiştirilir ve çözümlenir. Ancak, XHR olmayan GET gönderimlerinde, eşzamansız çözümleme gerektiren değerler, önceden çözümlenmedikleri için kullanılamayabilir. Örneğin, `CLIENT_ID` daha önce çözümlenmemişse ve önbelleğe alınmışsa çözümlenmez.
 
 ```html
-    <!-- User submits the form, variables values are resolved into fields' value -->
-    <form ...>
-      <input name="canonicalUrl" type="hidden"
-            value="The canonical URL is: https://example.com/hello - 0.242513759125 - CANONICAL_HOSTNAME"
-            data-amp-replace="CANONICAL_URL RANDOM">
-      <input name="clientId" type="hidden"
-            value="amp:asqar893yfaiufhbas9g879ab9cha0cja0sga87scgas9ocnas0ch"
-            data-amp-replace="CLIENT_ID">
-        ...
-    </form>
+<!-- User submits the form, variables values are resolved into fields' value -->
+<form ...>
+  <input
+    name="canonicalUrl"
+    type="hidden"
+    value="The canonical URL is: https://example.com/hello - 0.242513759125 - CANONICAL_HOSTNAME"
+    data-amp-replace="CANONICAL_URL RANDOM"
+  />
+  <input
+    name="clientId"
+    type="hidden"
+    value="amp:asqar893yfaiufhbas9g879ab9cha0cja0sga87scgas9ocnas0ch"
+    data-amp-replace="CLIENT_ID"
+  />
+  ...
+</form>
 ```
 
 Yukarıdaki `CANONICAL_HOSTNAME` öğesinin, ilk alandaki `data-amp-replace` özelliği aracılığıyla beyaz listeye alınmadığı için değiştirilmemiş olmasına dikkat edin.
@@ -662,17 +688,17 @@ AMP Formu, `<textarea>` öğelerine bir `autoexpand` özelliği sağlar. Bu, kul
 
 Aşağıdaki sınıflar form gönderiminin durumunu belirtmek için kullanılabilir:
 
-* `.amp-form-initial`
-* `.amp-form-verify`
-* `.amp-form-verify-error`
-* `.amp-form-submitting`
-* `.amp-form-submit-success`
-* `.amp-form-submit-error`
+- `.amp-form-initial`
+- `.amp-form-verify`
+- `.amp-form-verify-error`
+- `.amp-form-submitting`
+- `.amp-form-submit-success`
+- `.amp-form-submit-error`
 
 Aşağıdaki sınıflar, [kullanıcı etkileşimi sözde sınıfları için bir çoklu dolgudur](#user-interaction-pseudo-classes):
 
-* `.user-valid`
-* `.user-invalid`
+- `.user-valid`
+- `.user-invalid`
 
 Yayıncılar, girişlerini ve alan ayarlarını kullanıcı işlemlerine duyarlı olacak (ör. kullanıcı ayrıldıktan sonra sonra geçersiz bir girişi kırmızı bir kenarlık ile vurgulama) biçimde şekillendirmek için bu sınıfları kullanabilir.
 
@@ -690,8 +716,8 @@ Bir saldırganın, kullanıcının bilgisi olmadan geçerli kullanıcı oturumun
 
 Genel olarak, kullanıcıdan gelen girişleri kabul ederken aşağıdaki noktaları göz önünde bulundurun:
 
-* POST isteklerini yalnızca durum değiştirme istekleri için kullanın.
-* XHR olmayan GET isteklerini yalnızca gezinme amacıyla kullanın (ör. Arama).
-    * XHR olmayan GET istekleri doğru kaynak/üstbilgiler almaz ve arka uçlar, yukarıdaki mekanizma ile XSRF'ye karşı koruma sağlayamaz.
-    * Genel olarak, XHR/XHR olmayan GET isteklerini yalnızca gezinme veya bilgi almak için kullanın.</li>
-* AMP dokümanlarında XHR olmayan POST isteklerine izin verilmez. Bunun nedeni, farklı tarayıcılarda bu isteklerdeki `Origin` üstbilgisinin ayarlanmasında tutarsızlıkların olmasıdır. Ayrıca, bunun desteklenmesi, XSRF'ye karşı korumada zorluklara yol açacaktır. Bu durum yeniden değerlendirilebilir ve ileride kullanıma sunulabilir. Bunun gerekli olduğunu düşünüyorsanız lütfen bir sorun bildiriminde bulunun.
+- POST isteklerini yalnızca durum değiştirme istekleri için kullanın.
+- XHR olmayan GET isteklerini yalnızca gezinme amacıyla kullanın (ör. Arama).
+  - XHR olmayan GET istekleri doğru kaynak/üstbilgiler almaz ve arka uçlar, yukarıdaki mekanizma ile XSRF'ye karşı koruma sağlayamaz.
+  - Genel olarak, XHR/XHR olmayan GET isteklerini yalnızca gezinme veya bilgi almak için kullanın.</li>
+- AMP dokümanlarında XHR olmayan POST isteklerine izin verilmez. Bunun nedeni, farklı tarayıcılarda bu isteklerdeki `Origin` üstbilgisinin ayarlanmasında tutarsızlıkların olmasıdır. Ayrıca, bunun desteklenmesi, XSRF'ye karşı korumada zorluklara yol açacaktır. Bu durum yeniden değerlendirilebilir ve ileride kullanıma sunulabilir. Bunun gerekli olduğunu düşünüyorsanız lütfen bir sorun bildiriminde bulunun.

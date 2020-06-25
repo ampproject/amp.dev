@@ -2,14 +2,12 @@
 $title: amp-list
 $category@: dynamic-content
 formats:
-- websites
-- email
-- stories
+  - websites
+  - email
+  - stories
 teaser:
   text: 动态下载数据并使用模板创建列表项。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 从 CORS JSON 端点动态获取内容并使用所提供的模板呈现内容。
 
@@ -56,61 +52,68 @@ teaser:
 
 您可以通过以下两种方式之一指定模板：
 
-* 利用 `template` 属性引用现有 `template` 或 `script` 元素的 ID。
-* 在 `amp-list` 元素中直接嵌套 `template` 或 `script` 元素。
+- 利用 `template` 属性引用现有 `template` 或 `script` 元素的 ID。
+- 在 `amp-list` 元素中直接嵌套 `template` 或 `script` 元素。
 
 如需详细了解模板，请参阅 [AMP HTML 模板](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md)。
 
-*示例：显示动态列表*
+_示例：显示动态列表_
 
 在以下示例中，我们将检索包含网址和标题的 JSON 数据，并在嵌套的 [amp-mustache 模板](amp-mustache.md)中呈现内容。
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="100"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
-  {% endraw %}</template>
+    {% endraw %}</template
+  >
 </amp-list>
 ```
+
 [/example]
 
 以下是我们使用的 JSON 文件：
 
 ```json
 {
- "items": [
-   {
-     "title": "AMP YouTube Channel",
-     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-   },
-   {
-     "title": "AMP.dev",
-     "url": "https://amp.dev/"
-   },
-   {
-     "title": "AMP Validator",
-     "url": "https://validator.amp.dev/"
-   },
-   {
-     "title": "AMP Playground",
-     "url": "https://playground.amp.dev/"
-   }
- ]
+  "items": [
+    {
+      "title": "AMP YouTube Channel",
+      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+    },
+    {
+      "title": "AMP.dev",
+      "url": "https://amp.dev/"
+    },
+    {
+      "title": "AMP Validator",
+      "url": "https://validator.amp.dev/"
+    },
+    {
+      "title": "AMP Playground",
+      "url": "https://playground.amp.dev/"
+    }
+  ]
 }
 ```
+
 以下代码展示了我们如何对获取的内容进行样式设置：
 
 ```css
-amp-list div[role="list"] {
+amp-list div[role='list'] {
   display: grid;
   grid-gap: 0.5em;
-  }
+}
 ```
 
 ## 行为 <a name="behavior"></a>
@@ -131,30 +134,33 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 `<amp-list>` 元素可以选择性地包含具有 `overflow` 属性的元素。如果 AMP runtime 不能按照请求调整 `<amp-list>` 元素的大小，则此元素会一直显示。
 
-*示例：在列表需要更多空间时显示 overflow*
+_示例：在列表需要更多空间时显示 overflow_
 
 在下面的示例中，我们显示了一系列图片和标题。由于 `<amp-list>` 内容需要的空间多于可用空间，AMP runtime 将显示 overflow 元素。
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="140"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="image-entry">
-      <amp-img src="{{imageUrl}}"
-        width="100"
-        height="75"></amp-img>
+      <amp-img src="{{imageUrl}}" width="100" height="75"></amp-img>
       <span class="image-title">{{title}}</span>
     </div>
-  {% endraw %}</template>
-  <div overflow
-    class="list-overflow">
+    {% endraw %}</template
+  >
+  <div overflow class="list-overflow">
     See more
   </div>
 </amp-list>
 ```
+
 [/example]
 
 以下是 `overflow` 的 CSS：
@@ -165,15 +171,15 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
   bottom: 0;
   left: 0;
   right: 0;
-  }
+}
 ```
 
 ### 占位符和后备元素 <a name="placeholder-and-fallback"></a>
 
 `<amp-list>` 可以选择性地支持占位符和/或后备元素。
 
-* 占位符是具有 `placeholder` 属性的子元素。**在 `<amp-list>` 加载成功前，此元素会一直显示。如果还提供了后备元素，则占位符会在 `<amp-list>` 无法加载时隐藏。
-* 后备元素是具有 `fallback` 属性的子元素。**此元素会在 `<amp-list>` 无法加载时显示。
+- 占位符是具有 `placeholder` 属性的子元素。\*\*在 `<amp-list>` 加载成功前，此元素会一直显示。如果还提供了后备元素，则占位符会在 `<amp-list>` 无法加载时隐藏。
+- 后备元素是具有 `fallback` 属性的子元素。\*\*此元素会在 `<amp-list>` 无法加载时显示。
 
 如需了解详情，请参阅[占位符和后备行为](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md)。请注意，子元素不能既是占位符又是后备元素。
 
@@ -206,9 +212,13 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-<amp-list id="list"
-          width="396" height="80" layout="responsive"
-          src="/test/manual/amp-list-data.json?RANDOM">
+<amp-list
+  id="list"
+  width="396"
+  height="80"
+  layout="responsive"
+  src="/test/manual/amp-list-data.json?RANDOM"
+>
   <template type="amp-mustache">
     {{title}}
   </template>
@@ -234,8 +244,8 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 定义 [Fetch API](https://fetch.spec.whatwg.org/) 指定的 `credentials` 选项。
 
-* 支持的值：`omit`、`include`
-* 默认值：`omit`
+- 支持的值：`omit`、`include`
+- 默认值：`omit`
 
 要发送凭据，请传递 `include` 值。如果设置了此值，则响应必须遵循 [AMP CORS 安全准则](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp)。
 
@@ -243,8 +253,10 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 ```html
 {% raw %}
-<amp-list credentials="include"
-          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+<amp-list
+  credentials="include"
+  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+>
   <template type="amp-mustache">
     Your personal offer: ${{price}}
   </template>
@@ -256,11 +268,12 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 定义表达式以定位要在响应中呈现的数组。这是带点标记的表达式，可通过 JSON 响应的字段进行导航。默认情况下，`<amp-list>` 需要用到数组，`single-item` 属性可用于从对象加载数据。
 
-* 默认值为 `"items"`。预期响应：`{items: [...]}`。
-* 如果响应本身为所需的数组，请使用 `"."` 值。预期响应为：`[...]`。
-* 允许嵌套导航（例如 `"field1.field2"`）。预期响应为：`{field1: {field2: [...]}}`。
+- 默认值为 `"items"`。预期响应：`{items: [...]}`。
+- 如果响应本身为所需的数组，请使用 `"."` 值。预期响应为：`[...]`。
+- 允许嵌套导航（例如 `"field1.field2"`）。预期响应为：`{field1: {field2: [...]}}`。
 
 如果指定 `items="items"`（默认），则响应必须是包含名为 `"items"` 的数组属性的 JSON 对象：
+
 ```text
 {
   "items": [...]
@@ -291,9 +304,9 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 
 我们建议您使用 `binding="no"` 或 `binding="refresh"` 来加快速度。
 
-* `binding="no"`：永不阻止呈现**（最快）**。
-* `binding="refresh"`：在初始加载时不阻止呈现**（较快）**。
-* `binding="always"`：始终阻止呈现**（慢）**。
+- `binding="no"`：永不阻止呈现**（最快）**。
+- `binding="refresh"`：在初始加载时不阻止呈现**（较快）**。
+- `binding="always"`：始终阻止呈现**（慢）**。
 
 如未提供 `binding` 属性，则默认值为 `always`。
 
@@ -304,12 +317,16 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 #### 用法示例 <a name="load-more-and-infinite-scroll"></a>
 
 ```html
-<amp-list height="200" src="https://my.rest.endpoint/" width="100" load-more="auto">
+<amp-list
+  height="200"
+  src="https://my.rest.endpoint/"
+  width="100"
+  load-more="auto"
+>
   <template type="amp-mustache">
     // ...
   </template>
 </amp-list>
-
 ```
 
 如需查看有用示例，请访问 [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) 和 [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html)。
@@ -339,19 +356,30 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 ##### 示例： <a name="load-more-button"></a>
 
 ```html
-<amp-list load-more="manual" src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="manual"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* 我的自定义“查看更多”按钮 */
   </amp-list-load-more>
 </amp-list>
 ```
-  它可通过 `amp-mustache` 进行模板化。
+
+它可通过 `amp-mustache` 进行模板化。
 
 ##### 示例： <a name="example"></a>
 
 ```html
-{% raw %}<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
+{% raw %}<amp-list
+  load-more="auto"
+  width="100"
+  height="500"
+  src="https://www.load.more.example.com/"
+>
   ...
   <amp-list-load-more load-more-button>
     <template type="amp-mustache">
@@ -368,8 +396,14 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 #### load-more-loading <a name="example-1"></a>
 
 此元素是一个加载程序，会在以下情况显示：用户到达列表末尾且内容仍处于加载状态，或者点击了 `load-more-button` 元素且 `<amp-list>` 的新子元素仍处于加载状态。此元素可进行自定义，方法是为 `<amp-list>` 提供具有 `load-more-loading` 属性的子元素。示例如下：
+
 ```html
-<amp-list load-more=auto src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* 我的自定义加载程序 */
@@ -382,7 +416,12 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 这是带有 `load-more-failed` 属性的 `<amp-list-load-more>` 元素；该属性包含带有 `load-more-clickable` 属性的按钮，如果加载失败，该按钮会显示在 `<amp-list>` 末尾。点击此元素会触发失败的网址进行重新加载。此元素可进行自定义，方法是为 `<amp-list>` 提供具有 `load-more-failed` 属性的子元素。示例如下：
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <button>Unable to Load More</button>
@@ -393,7 +432,12 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 在上面的示例中，整个 `load-more-failed` 元素都是可点击的。不过，此元素通常会采用如下模式：在一个通常无法点击的“loading failed”元素中添加可点击的“reload”按钮。为了解决此问题，您可以为一个通常无法点击的元素添加包含 `load-more-clickable` 元素的按钮。例如：
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <div>
@@ -409,7 +453,12 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 默认情况下不提供该元素，但如果带有 `load-more-end` 属性的 `<amp-list-load-more>` 元素作为子元素附加到 `<amp-list>`，则此元素将显示在 `<amp-list>` 的底部（如果没有其他项）。此元素可通过 `amp-mustache` 进行模板化。示例如下：
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-end>
     Congratulations! You've reached the end. /* 自定义“加载结束”元素 */
@@ -426,9 +475,11 @@ AMP 会将 XMLHttpRequest (XHR) 批处理到 JSON 端点，也就是说，您可
 `<amp-list>` 支持所有标准网址变量替换。如需了解详情，请参阅[替换指南](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md)。
 
 例如：
+
 ```html
 <amp-list src="https://foo.com/list.json?RANDOM"></amp-list>
 ```
+
 可以向 `https://foo.com/list.json?0.8390278471201` 这样的网址（其中的 RANDOM 值在每次展示时随机生成）发出请求。
 
 ## 验证 <a name="validation"></a>

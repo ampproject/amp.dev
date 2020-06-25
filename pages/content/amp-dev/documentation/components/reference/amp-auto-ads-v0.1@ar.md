@@ -9,7 +9,6 @@ teaser:
     configuration file.
 ---
 
-
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
 
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 يعمل هذا المكّوِن ديناميكيًا على إدخال الإعلانات في صفحة AMP باستخدام ملف تهيئة يتم عرضه عن بُعد.
 
@@ -62,25 +59,24 @@ limitations under the License.
 
 يحاول المكوِّن `amp-auto-ads` إدراج إعلانات إضافية مع الالتزام بمجموعة من القيود التي تحددها شبكة الإعلانات، وذلك مع أخذ عدد المواضع الصالحة (المتوفرة في التهيئة) بالحسبان. تعمل هذه القيود على ما يلي:
 
-* وضع حد لإجمالي عدد الإعلانات التي يمكن إدراجها
-* وضع الحد الأدنى للمسافة الواجبة بين أي إعلانات متجاورة
+- وضع حد لإجمالي عدد الإعلانات التي يمكن إدراجها
+- وضع الحد الأدنى للمسافة الواجبة بين أي إعلانات متجاورة
 
 بالإضافة إلى ذلك، لا يتم إدراج الإعلانات في الصفحة إلا في الأماكن التي لا تؤدي إلى إعادة تدفق غير مقبولة (كما هو محدد في tryChangeSize).
 
 يجب وضع العلامة `<amp-auto-ads>` كأول عنصر ثانوي في `<body>`.
 
 يجب تحديد نوع شبكة الإعلانات وأي معلومات إضافية (تطلبها شبكة الإعلانات) في العلامة.
+
 ```html
-<amp-auto-ads
-    type="adsense"
-    data-ad-client="ca-pub-5439573510495356">
+<amp-auto-ads type="adsense" data-ad-client="ca-pub-5439573510495356">
 </amp-auto-ads>
 ```
 
 ## شبكات الإعلانات المتوافقة <a name="supported-ad-networks"></a>
 
-* [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
-* [DoubleClick (تجريبية)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
+- [AdSense](https://github.com/ampproject/amphtml/blob/master/ads/google/adsense.md)
+- [DoubleClick (تجريبية)](https://github.com/ampproject/amphtml/blob/master/ads/google/doubleclick.md)
 
 ## السمات
 
@@ -116,16 +112,16 @@ limitations under the License.
         "index": 2,
         "sub": {
           "selector": "P.paragraph",
-          "all": true,
-        },
+          "all": true
+        }
       },
       "pos": 4,
       "type": 1,
       "style": {
         "top_m": 5,
-        "bot_m": 10,
-      },
-    },
+        "bot_m": 10
+      }
+    }
   ]
 }
 ```
@@ -252,7 +248,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 #### PlacementStyleObj <a name="placementstyleobj"></a>
 
 الحقول المراد تحديدها في كائن التهيئة `style`:
@@ -276,7 +271,6 @@ limitations under the License.
     </td>
   </tr>
 </table>
-
 
 #### RelativePositionEnum <a name="relativepositionenum"></a>
 
@@ -310,7 +304,6 @@ limitations under the License.
   </tr>
 </table>
 
-
 #### PlacementTypeEnum <a name="placementtypeenum"></a>
 
 قيم ENUM للحقل `type` في كائن التهيئة `placements`:
@@ -327,7 +320,6 @@ limitations under the License.
     <td>موضع يصف متوسط موضع الإعلان البانر.</td>
   </tr>
 </table>
-
 
 #### AdConstraintsObj
 
@@ -373,8 +365,9 @@ limitations under the License.
 
 الحقول المراد تحديدها في كائن التهيئة `subsequentMinSpacing`. يمكن استخدام إدخالات `subsequentMinSpacing` لتغيير المساحات المطلوبة بين الإعلانات الإضافية بناء على عدد الإعلانات الحالي في الصفحة. فكِّر في السيناريو التالي كمثال:
 
-* إعلانان حاليان في الصفحة
-* حقل subsequentMinSpacing هو:
+- إعلانان حاليان في الصفحة
+- حقل subsequentMinSpacing هو:
+
 ```
 [
   {adCount: 3, spacing: "500px"},

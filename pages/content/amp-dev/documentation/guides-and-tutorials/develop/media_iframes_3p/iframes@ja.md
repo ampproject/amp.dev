@@ -12,8 +12,8 @@ iframe は、メインページのコンテキストでサポートされてい�
 
 ###`amp-iframe` の要件
 
-* 最初のビューポートが上部から **600 ピクセル** または **75%** 以上離れていること。
-* HTTPS 経由でのみリソースをリクエストできること（allow-same-origin を指定している場合を除き、リソースのオリジンはコンテナとは別である必要があります）。
+- 最初のビューポートが上部から **600 ピクセル** または **75%** 以上離れていること。
+- HTTPS 経由でのみリソースをリクエストできること（allow-same-origin を指定している場合を除き、リソースのオリジンはコンテナとは別である必要があります）。
 
 参照: [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) の仕様もご確認ください。
 
@@ -23,8 +23,10 @@ iframe は、メインページのコンテキストでサポートされてい�
 まず `<head>` に以下のスクリプトを追加します。これにより、拡張コンポーネントの追加コードが読み込まれます。
 
 [sourcecode:html]
+
 <script async custom-element="amp-iframe"
     src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
 [/sourcecode]
 
 ### マークアップを作成する
@@ -32,10 +34,13 @@ iframe は、メインページのコンテキストでサポートされてい�
 [`amp-iframe`](../../../../documentation/components/reference/amp-iframe.md) の例:
 
 ```html
-<amp-iframe width="200" height="100"
-    sandbox="allow-scripts allow-same-origin"
-    layout="responsive"
-    src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe">
+<amp-iframe
+  width="200"
+  height="100"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://www.google.com/maps/embed/v1/place?key={YOUR API KEY}&q=europe"
+>
 </amp-iframe>
 ```
 
@@ -48,14 +53,21 @@ iframe は、メインページのコンテキストでサポートされてい�
 プレースホルダを使用した例:
 
 ```html
-<amp-iframe width="400" height="225"
-sandbox="allow-scripts allow-same-origin"
-layout="responsive"
-src="https://giphy.com/embed/OWabwoEn7ezug">
-<amp-img placeholder layout="fill"
-src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"></amp-img>
+<amp-iframe
+  width="400"
+  height="225"
+  sandbox="allow-scripts allow-same-origin"
+  layout="responsive"
+  src="https://giphy.com/embed/OWabwoEn7ezug"
+>
+  <amp-img
+    placeholder
+    layout="fill"
+    src="https://ampproject-b5f4c.firebaseapp.com/examples/images/kittens-biting.jpg"
+  ></amp-img>
 </amp-iframe>
 ```
+
 次のようにレンダリングされます:
 
 <amp-iframe width="400" height="225"

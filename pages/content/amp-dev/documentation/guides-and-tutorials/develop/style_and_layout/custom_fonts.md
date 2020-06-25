@@ -20,16 +20,17 @@ You can embed custom fonts into your page in two ways:
 Use a `<link>` tag (usually in the head of your page), like so:
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 
 The following origins are allowlisted and allowed for font serving via link tags:
 
-* Typography.com: **https://cloud.typography.com**
-* Fonts.com: **https://fast.fonts.net**
-* Google Fonts: **https://fonts.googleapis.com**
-* Typekit: **https://use.typekit.net**
-* Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
+- Typography.com: **https://cloud.typography.com**
+- Fonts.com: **https://fast.fonts.net**
+- Google Fonts: **https://fonts.googleapis.com**
+- Typekit: **https://use.typekit.net**
+- Font Awesome: **https://maxcdn.bootstrapcdn.com**, **https://use.fontawesome.com**
 
 ### 2. Using `@font-face`
 
@@ -37,6 +38,7 @@ Alternatively, you can use [`@font-face`](https://developer.mozilla.org/en-US/do
 within your AMP stylesheet:
 
 [sourcecode:html]
+
 <style amp-custom>
   @font-face {
     font-family: "Bitstream Vera Serif Bold";
@@ -47,8 +49,9 @@ within your AMP stylesheet:
     font-family: "Bitstream Vera Serif Bold", serif;
   }
 </style>
+
 [/sourcecode]
 
 [tip type="note"]
-**NOTE –**  Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
+**NOTE –** Fonts included via `@font-face` must be fetched via the HTTP or HTTPS scheme.
 [/tip]

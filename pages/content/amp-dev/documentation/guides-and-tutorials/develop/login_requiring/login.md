@@ -12,6 +12,7 @@ If you look for the login button in the code, you will find:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -20,6 +21,7 @@ If you look for the login button in the code, you will find:
 The behaviour of [`amp-access`](../../../../documentation/components/reference/amp-access.md) related attributes are dependent on a page-wide configuration for [`amp-access`](../../../../documentation/components/reference/amp-access.md), in our case, this one:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -34,6 +36,7 @@ The behaviour of [`amp-access`](../../../../documentation/components/reference/a
     }
   }
 </script>
+
 [/sourcecode]
 
 The authorization endpoint is deployed as part of AMPByExample. It's the responsibility of the publisher of the page to provide this endpoint. In this sample case, for simplicity, we implemented basic logic so that when this request is received, the server reads the value of a cookie named `ABE_LOGGED_IN`. If the cookie is not there, we return a JSON response containing `loggedIn = false`. As a result, the first time a user lands on the page, this request will return `loggedIn = false` and the login button will be shown.
@@ -42,15 +45,15 @@ Looking again at the button's HTML code, by using `on="tap:amp-access.login-sign
 
 [sourcecode:json]
 {
-	"login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]
 
 [tip type="note"]
-**NOTE –**  Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`.
+**NOTE –** Notice that it’s possible to define different URLs inside the login node, in this case we are defining `sign-in`, and we will later define `sign-out`.
 [/tip]
 
 The login page is a non-AMP page in which we populate the login and password values for the sake of simplicity. Notice the usage of `returnURL` hidden input type, which is populated by the AMPByExample server via server-side templating. The server reads this value from a parameter called `return`, automatically added by the AMP library to the sign-in URL.

@@ -102,8 +102,8 @@ AMP 不仅同时支持**媒体查询**和**元素查询**，还内置了强大�
 在少数情况下，如果未指定 `width` 或 `height`，
 AMP runtime 会将这些值默认如下：
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)：宽度和高度均默认为 0。
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md)：根据浏览器推断出默认宽度和高度。
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md)：宽度和高度均默认为 0。
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md)：根据浏览器推断出默认宽度和高度。
 
 ### 如果未指定 <code>layout</code> 属性，会怎样？<a name="what-if-the-layout-attribute-isnt-specified"></a>
 

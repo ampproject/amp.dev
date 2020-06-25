@@ -17,11 +17,11 @@ Sebelum memulai tutorial ini, Anda akan memerlukan hal berikut:
 
 1.  Download kode untuk tutorial, yang dikompresi sebagai file zip dari URL berikut: <a href="https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip">https://github.com/ampproject/docs/raw/master/tutorial_source/amp-pets-story.zip</a>
 
-2. Ekstrak konten file zip tersebut.  Di direktori **amp-pets-story** terdapat file gambar, video, audio, dan data yang akan kita gunakan untuk membuat artikel.  File **pets.html** adalah titik awal kita untuk artikel. Artikel dalam versi jadi dapat dilihat pada file [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
+2.  Ekstrak konten file zip tersebut. Di direktori **amp-pets-story** terdapat file gambar, video, audio, dan data yang akan kita gunakan untuk membuat artikel. File **pets.html** adalah titik awal kita untuk artikel. Artikel dalam versi jadi dapat dilihat pada file [pets-completed.html](https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html).
 
 #### Langkah 2. Jalankan halaman sampel tersebut
 
-Untuk menguji contoh artikel, kita harus mengakses filenya dari server web. Ada beberapa cara untuk membuat server web lokal sementara untuk tujuan pengujian.  Berikut adalah beberapa opsinya, pilih salah satu opsi terbaik bagi Anda:
+Untuk menguji contoh artikel, kita harus mengakses filenya dari server web. Ada beberapa cara untuk membuat server web lokal sementara untuk tujuan pengujian. Berikut adalah beberapa opsinya, pilih salah satu opsi terbaik bagi Anda:
 
 - [Aplikasi Google Chrome “Web Server for Chrome”](https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb)
 - [Server Python HTTP lokal](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server#Running_a_simple_local_HTTP_server)

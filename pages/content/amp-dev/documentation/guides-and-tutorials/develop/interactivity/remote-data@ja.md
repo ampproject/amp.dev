@@ -16,15 +16,15 @@ $title: リモートデータの使用
 
 ここに用意した例で、リモートデータ取得機能を利用して SKU の価格を調べてみましょう。使用する Express.js 開発用サーバーでは、`app.js` にすでにエンドポイント `/shirts/sizesAndPrices?shirt=<sku>` が含まれており、特定のシャツ（shirt）の SKU に関して、購入可能なサイズと各サイズの価格が返されるようになっています。このサーバーは、ネットワーク遅延をシミュレートするために人為的に 1 秒遅らせて応答を送信します。
 
-|  リクエスト                              |  応答 |
-|---------------------------------------|-----------|
+| リクエスト                            | 応答                                         |
+| ------------------------------------- | -------------------------------------------- |
 | `GET /shirts/sizesAndPrices?sku=1001` | `{"1001: {"sizes": {"XS": 8.99, "S" 9.99}}}` |
 
 [`<amp-state>`](../../../../documentation/components/reference/amp-bind.md#state) 要素内の JSON データと同様に、こうした取得から返されるリモートデータは、その要素の `id` 属性の下に統合されて利用可能となります。たとえば、上記の例の応答から返されたデータは、次のような式でアクセスできます。
 
-|  式                  |  結果 |
-|------------------------------|---------|
-| `shirts['1001'].sizes['XS']` | `8.99`  |
+| 式                           | 結果   |
+| ---------------------------- | ------ |
+| `shirts['1001'].sizes['XS']` | `8.99` |
 
 ### データをバインドする
 
@@ -33,7 +33,10 @@ $title: リモートデータの使用
 ```html
 <!-- When `selected.sku` changes, update the `src` attribute and fetch
      JSON at the new URL. Then, merge that data under `id` ("shirts"). -->
-<amp-state id="shirts" [src]="'/shirts/sizesAndPrices?sku=' + selected.sku">
+<amp-state
+  id="shirts"
+  [src]="'/shirts/sizesAndPrices?sku=' + selected.sku"
+></amp-state>
 ```
 
 ### 購入できないサイズを示す
@@ -103,16 +106,22 @@ $title: リモートデータの使用
       </td>
       <!-- Add the 'unavailable' class to the next three <td> elements
            to be consistent with the available sizes of the default SKU. -->
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['M'] ? '' : 'unavailable'"
+      >
         <div option="M">M</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['L'] ? '' : 'unavailable'"
+      >
         <div option="L">L</div>
       </td>
-      <td class="unavailable"
-          [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'">
+      <td
+        class="unavailable"
+        [class]="shirts[selected.sku].sizes['XL'] ? '' : 'unavailable'"
+      >
         <div option="XL">XL</div>
       </td>
     </tr>
@@ -131,8 +140,10 @@ $title: リモートデータの使用
 ```html
 <!-- When an element is selected, set the `selectedSize` variable to the
      value of the "option" attribute of the selected element.  -->
-<amp-selector name="size"
-    on="select:AMP.setState({selectedSize: event.targetOption})">
+<amp-selector
+  name="size"
+  on="select:AMP.setState({selectedSize: event.targetOption})"
+></amp-selector>
 ```
 
 ここで、`selectedSize` の値は `amp-state#selected` 要素により初期化していません。これは、デフォルトで選択されるサイズを意図的に指定しないでおき、代わりに、ユーザーにサイズを選択させるようにしたいためです。
@@ -142,7 +153,8 @@ $title: リモートデータの使用
 価格のラベルを囲む新しい `<span>` 要素を追加して、デフォルトで選択されるサイズがないので、デフォルトのテキストを「---」に変更します。
 
 ```html
-<h6>価格:
+<h6>
+  価格:
   <!-- Display the price of the selected shirt in the selected size if available.
        Otherwise, display the placeholder text '---'. -->
   <span [text]="shirts[selected.sku].sizes[selectedSize] || '---'">---</span>
@@ -160,9 +172,13 @@ $title: リモートデータの使用
      1. There is no selected size, OR
      2. The available sizes for the selected SKU haven't been fetched yet
 -->
-<input type="submit" value="ADD TO CART" disabled
-    class="mdl-button mdl-button--raised mdl-button--accent"
-    [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
+<input
+  type="submit"
+  value="ADD TO CART"
+  disabled
+  class="mdl-button mdl-button--raised mdl-button--accent"
+  [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]"
+/>
 ```
 
 **試してみる**: 購入できないサイズを選択した場合は、そのサイズの商品をカートに追加することはできません。

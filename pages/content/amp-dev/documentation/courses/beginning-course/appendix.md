@@ -5,9 +5,11 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Explaining the boilerplate AMP HTML
 
 ### The `<link rel="canonical">` tag
+
 When AMP began, it was only used for creating web pages for mobile devices. A web page would have an AMP version that was served to mobile devices, and a version written in regular HTML for desktops (referred to as the “canonical” version). You would then link the two versions using a `<link>` tag so that search engines would know that both docs represented the same webpage.
 
 So, the non-AMP document contained a link to the AMP document, like this:
@@ -63,15 +65,17 @@ If you refresh your page, it should now look a bit better in small screens, like
 You will not notice much of a difference now, apart from the title, but you can try it as we move further along to understand how the scaling works.
 
 ## Lazy-Loading in AMP
+
 “Lazy-loading” means that resources (images, data, videos, scripts, etc) are not loaded until they are needed. When AMP downloads resources, it optimizes downloads so that the currently most important resources are downloaded first. Images and ads are only downloaded if they are likely to be seen by the user, or if the user is likely to quickly scroll to them. These equivalent components for media assets (`<amp-img>` instead of `<img>`) are called “managed resources” because whether and when they will be loaded and displayed to the user is decided by AMP. AMP may at any time decide to unload resources that are not currently in visible by the user.
 One of the performance optimizations of AMP requires that elements such as `<amp-img>` declare their height in advance. This helps AMP calculate how the layout will look in a better way. This is crucial, for example, because AMP preloads all resources that are needed in the first viewport, all that the user first sees when they visit the website.
 
 ## Fixed vs Responsive layout
+
 AMP includes a [layout system](../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) to ensure the page layout is as rigid as possible before the browser renders the page. This system gives us a [`layout`](../../../documentation/guides-and-tutorials/learn/amp-html-layout/layouts_demonstrated.html) attribute that lets us position and scale elements in a variety of ways -- fixed dimensions, responsive design, fixed height, and more. The layout system is responsible for enforcing size declarations of certain elements.
 
 The layout attribute is available for most elements and it specifies how an AMP component appears on the page. Two common values for the layout attribute are the “fixed” and the “responsive”. If an element has a fixed layout, the width and height attributes must be present. Then, the element will maintain this exact size in pixels, no matter how the screen or the viewport change. If an element has a responsive layout, again, both the width and height attributes must be present. In this case, however, the element will be resized automatically to take up all available space, maintaining the aspect ratio given by the set width and height. The available space depends on the parent element.
-[/filter]
-[filter level="advanced"]
+[/filter][filter level="advanced"]
+
 ## Explaining the boilerplate AMP HTML
 
 ### The `<link rel="canonical">` tag

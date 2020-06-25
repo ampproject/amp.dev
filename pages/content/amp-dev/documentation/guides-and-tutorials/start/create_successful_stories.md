@@ -4,7 +4,7 @@ $order: 1
 description: 'Best practices for creating a successful Web Story'
 $category: Start
 formats:
-    - stories
+  - stories
 author: CrystalOnScript
 ---
 
@@ -12,46 +12,38 @@ Web Stories are an immersive, tappable and easily shareable storytelling format.
 
 Web Stories are snackable, and readers like quick bites in their micro moments. Waiting for the subway or grabbing coffee opens up opportunities for condensed content consumption. Ensure each bite engages and delights by following these best practices for creating a satisfying snackable Web Story.
 
-
 ## At a glance
 
 The main takeaways to creating a satisfying, snackable Web Story:
 
-
-
-*   Tell a full and interesting story. 
-*   Maximize the impact of your cover page with high quality imagery and a catchy title.
-*   Make it visual with videos and images that fit and fill the user's screen.
-*   You can say a lot, with less, especially when using visual imagery. Aim to keep text below 10 words per page.
-*   When using videos, shorter ones are best so try to stick to less than 15 seconds. 
-*   Some people and some situations require viewing without sound. Keep content inclusive by adding captions to videos. 
-*   Give readers something to tap through. An average length of 10 to 20 pages enables most authors to tell a good narrative.
-*   Don’t overuse animations or embed, and pay attention to transition timing. 
+- Tell a full and interesting story.
+- Maximize the impact of your cover page with high quality imagery and a catchy title.
+- Make it visual with videos and images that fit and fill the user's screen.
+- You can say a lot, with less, especially when using visual imagery. Aim to keep text below 10 words per page.
+- When using videos, shorter ones are best so try to stick to less than 15 seconds.
+- Some people and some situations require viewing without sound. Keep content inclusive by adding captions to videos.
+- Give readers something to tap through. An average length of 10 to 20 pages enables most authors to tell a good narrative.
+- Don’t overuse animations or embed, and pay attention to transition timing.
 
 ## Know your narrative
 
 Plan the story introduction, create an arc and build up to a complete narrative. Once you know what you want to say, break it up. Each Web Story page should convey a single idea that works cohesively with the others.
 
-
 ### Tasteful and filling content
 
 Each Web Story must be a minimum of 4 pages and ideally less than 30. Web Stories need to be well told and easy to consume. If needed for your narrative, go longer than 30.
-
 
 ## Pick me! Packaging
 
 Your cover page is your Web Story's packaging. It's the first thing viewers will see, and, if they don’t open it, the only thing they will see. Make sure it's appealing! A good cover page has two elements, eye catching imagery and a short memorable title.
 
-
 ### Imagery
 
 Use a high-quality portrait image or video that fits the full screen. Let your fans know its your brand by including a favicon and logo.
 
-
 ### Title
 
 Keep the title clear and clean, ideally under 10 words in less than 40 characters. Include the author and publication name and add a publish date if the story is time sensitive.
-
 
 ### Brand and date
 
@@ -63,16 +55,15 @@ Allure readers in with quality visuals that captivate their attention and text t
 
 All images and videos should take up the entire screen with minimal use of letterboxing where it makes sense.
 
-
 ### Video
 
-Videos are highly engaging to readers, definitely include as many as possible in your Web Story. Aim for videos that are less than 15 seconds. If you have a longer video, consider breaking it up into smaller chunks. 
+Videos are highly engaging to readers, definitely include as many as possible in your Web Story. Aim for videos that are less than 15 seconds. If you have a longer video, consider breaking it up into smaller chunks.
 
 Web Stories are consumed in portrait mode, so keep in mind the following:
 
-*   Shot video in high-end mobile devices when possible.
-*   Shot at 480p.
-*   Shot in at least 24 frames per second.
+- Shot video in high-end mobile devices when possible.
+- Shot at 480p.
+- Shot in at least 24 frames per second.
 
 <table>
   <tr>
@@ -136,7 +127,6 @@ Ensure your content is accessible. Resize videos to make room for text and capti
   </tr>
 </table>
 
-
 ### Images
 
 Use full screen, portrait images with good resolution (828 x 1,792).
@@ -151,7 +141,6 @@ Use full screen, portrait images with good resolution (828 x 1,792).
 Avoid landscape cropped photos.
 
 {{ image('/static/img/docs/guides/storiesbp/dont-background.jpg', 1440, 630, layout='responsive', alt='Image showing a non-immersive AMP story', caption=' ', align='' ) }}
-
 
 #### Crop mindfully
 
@@ -349,8 +338,7 @@ Pair your animation style with your story’s aesthetic. Use the available Web S
 
 ## Hungry for more
 
-Allow users to explore your topic further by embedding third party content, attaching additional information and linking out to new locations.  
-
+Allow users to explore your topic further by embedding third party content, attaching additional information and linking out to new locations.
 
 ### Strategic embeds
 
@@ -404,7 +392,7 @@ Keep your Web Story streamlined by putting related content in attachments. This 
   </tr>
 </table>
 
-Attachments work well with long blocks of text, or if your story contains a highlight video you can include the full video as an attachment. 
+Attachments work well with long blocks of text, or if your story contains a highlight video you can include the full video as an attachment.
 
 <table>
   <tr>
@@ -444,8 +432,7 @@ You can add links anywhere on a Web Story page. Tapping on a link causes a toolt
   </tr>
 </table>
 
-Think strategically about size, location and frequency of your link appearances. Too many tappable elements can complicate navigation and frustrate readers. 
-
+Think strategically about size, location and frequency of your link appearances. Too many tappable elements can complicate navigation and frustrate readers.
 
 ## Code or create
 

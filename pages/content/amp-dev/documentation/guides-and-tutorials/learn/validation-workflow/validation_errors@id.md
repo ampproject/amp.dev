@@ -46,15 +46,15 @@ lihat [spesifikasi validator AMP](https://github.com/ampproject/amphtml/blob/mas
 
 Tag berikut harus ada di semua dokumen AMP:
 
-* <a name="doctype"></a>`<!doctype html>`
-* <a name="html"></a>`<html amp> atau <html ⚡>`
-* <a name="head"></a>`<head>`
-* <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
-* <a name="utf"></a>`<meta charset="utf-8">`
-* <a name="viewport"></a>`<meta name="viewport" content="...">`
-* <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
-* <a name="body"></a>`<body>`
+- <a name="doctype"></a>`<!doctype html>`
+- <a name="html"></a>`<html amp> atau <html ⚡>`
+- <a name="head"></a>`<head>`
+- <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
+- <a name="utf"></a>`<meta charset="utf-8">`
+- <a name="viewport"></a>`<meta name="viewport" content="...">`
+- <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+- <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- <a name="body"></a>`<body>`
 
 Tag wajib ini mencakup kolom `mandatory: true` dalam <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">spesifikasi validator AMP</a>;
 tag tersebut juga dirujuk dalam [spesifikasi AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
@@ -236,12 +236,15 @@ serta saat ini dievaluasi dengan daftar yang diizinkan dan tidak diizinkan.
 Tag dengan CDATA wajib termasuk:
 
 [sourcecode:html]
+
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
 [/sourcecode]
 
 Dan:
 
 [sourcecode:html]
+
 <style amp-custom>
 [/sourcecode]
 
@@ -632,8 +635,9 @@ Daftar lengkap tag unik yang diketahui:
 * `<meta viewport>`
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* `<body>`
-* `<script src="https://cdn.ampproject.org/v0.js">`
+
+- `<body>`
+- `<script src="https://cdn.ampproject.org/v0.js">`
 
 ## Error gaya dan tata letak <a name="style-and-layout-errors"></a>
 
@@ -890,7 +894,7 @@ Jika tidak, hal ini akan memicu error.
 Misalnya, `<amp-img src="" layout="responsive" width="42px" height="42rem">`,
 akan menyebabkan pesan error ini:
 
-"Inconsistent units for width and height in tag '[`amp-img`](../../../../documentation/components/reference/amp-img.md)  - width is specified in 'px' whereas height is specified in 'rem'."
+"Inconsistent units for width and height in tag '[`amp-img`](../../../../documentation/components/reference/amp-img.md) - width is specified in 'px' whereas height is specified in 'rem'."
 
 ## Error pemberian template
 

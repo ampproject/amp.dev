@@ -56,11 +56,11 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 要投放 AMPHTML 格式的直销型广告，您必须按照 [AMPHTML 广告规范](a4a_spec.md)制作广告，并使用支持 AMPHTML 广告投放的广告服务器投放广告。目前，以下广告服务器支持 AMPHTML 广告：
 
-*   DFP 广告管理系统
-*   TripleLift
-*   Dianomi
-*   Adzerk
-*   Google AdSense
+- DFP 广告管理系统
+- TripleLift
+- Dianomi
+- Adzerk
+- Google AdSense
 
 要通过间接渠道（例如广告交易平台、SSP 等）投放 AMPHTML 广告，请使用[相关列表](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)中列出的支持 AMPHTML 广告的广告网络/广告服务器。
 
@@ -68,9 +68,9 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 如果您是广告代理机构，则必须按照 [AMPHTML 广告规范](a4a_spec.md)制作广告。要寻求灵感并查看示例，请参阅 [Examples](../../../documentation/examples/index.html) 中的开放源代码 AMPHTML 广告模板。此外，您也可以使用以下任一工具制作 AMPHTML 广告：
 
-*  [Celtra 的 Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate（即将推出）
+- [Celtra 的 Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate（即将推出）
 
 ### 广告网络/广告服务器
 
@@ -82,17 +82,17 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 **使用工具**：您可以使用以下任一工具制作 AMPHTML 广告：
 
-*  [Celtra 的 Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate（即将推出）
+- [Celtra 的 Ad Creator](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate（即将推出）
 
 ### 验证 AMPHTML 广告语法
 
 制作好 AMPHTML 广告以后，您应该确保广告使用了正确的 AMPHTML 语法。根据您的开发环境，您可以选择通过以下几种方式验证 AMPHTML 广告：
 
-*   使用 [AMP 验证工具 NPM](https://www.npmjs.com/package/amphtml-validator) 模块将验证集成到您的 build CI 中。
-*   使用 [AMP 验证工具](https://validator.ampproject.org/)进行一次性测试。
-*   与 [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) 合作并使用其公共验证工具端点。
+- 使用 [AMP 验证工具 NPM](https://www.npmjs.com/package/amphtml-validator) 模块将验证集成到您的 build CI 中。
+- 使用 [AMP 验证工具](https://validator.ampproject.org/)进行一次性测试。
+- 与 [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) 合作并使用其公共验证工具端点。
 
 [tip type="note"]
 
@@ -124,6 +124,6 @@ AMPHTML 广告具有灵活性和动态性，并支持许多广告格式，例如
 
 #### 我找不到我需要的东西，可以在哪里提问？
 
-*   建议您在 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) 上查找 AMP 相关问题的解答；由于 AMP 项目社区成员会定期查看 Stack Overflow，因此通过 Stack Overflow 提问时可以最快得到解答。
-*   要获取解决方案和解答，请加入 [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 渠道。
-*   如果您遇到 AMP 方面的错误或有与 AMP 相关的功能请求，请参阅[报告 AMP 问题](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)，了解如何提交问题。
+- 建议您在 [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) 上查找 AMP 相关问题的解答；由于 AMP 项目社区成员会定期查看 Stack Overflow，因此通过 Stack Overflow 提问时可以最快得到解答。
+- 要获取解决方案和解答，请加入 [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) 渠道。
+- 如果您遇到 AMP 方面的错误或有与 AMP 相关的功能请求，请参阅[报告 AMP 问题](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp)，了解如何提交问题。

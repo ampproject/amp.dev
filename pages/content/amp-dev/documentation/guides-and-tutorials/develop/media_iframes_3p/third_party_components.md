@@ -3,7 +3,7 @@ $title: Include third-party content
 $order: 9
 description: 'Learn how to include third-party components in your pages ...'
 formats:
-    - websites
+  - websites
 components:
   - iframe
   - facebook
@@ -17,15 +17,17 @@ Learn how to include third-party components in your pages.
 
 ## Embed a Tweet
 
-Embed a  Tweet from Twitter in your page by
+Embed a Tweet from Twitter in your page by
 using the [`amp-twitter`](../../../../documentation/components/reference/amp-twitter.md) element.
 
 To embed a tweet in your page,
 first include the following script in the `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-twitter"
   src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+
 [/sourcecode]
 
 Currently, tweets are automatically proportionally scaled
@@ -35,13 +37,17 @@ Manually tweak the provided width and height or use the media attribute
 to select the aspect ratio based on screen width.
 
 [example preview="inline" playground="true" imports="amp-twitter:0.1"]
+
 ```html
-<amp-twitter width="500"
+<amp-twitter
+  width="500"
   height="583"
   layout="responsive"
-  data-tweetid="638793490521001985">
+  data-tweetid="638793490521001985"
+>
 </amp-twitter>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -57,8 +63,10 @@ To embed an Instagram,
 first include the following script in the `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-instagram"
   src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 [/sourcecode]
 
 Include the Instagram data-shortcode found in the Instagram photo URL.
@@ -68,13 +76,17 @@ Also, Instagram uses a fixed aspect ratio for responsive layouts,
 so the value for width and height should be universal.
 
 [example preview="inline" playground="true" imports="amp-instagram:0.1"]
+
 ```html
-<amp-instagram data-shortcode="fBwFP"
+<amp-instagram
+  data-shortcode="fBwFP"
   width="320"
   height="392"
-  layout="responsive">
+  layout="responsive"
+>
 </amp-instagram>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -89,19 +101,26 @@ using the [`amp-facebook`](../../../../documentation/components/reference/amp-fa
 You must include the following script in the `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-facebook"
   src="https://cdn.ampproject.org/v0/amp-facebook-0.1.js"></script>
+
 [/sourcecode]
 
 ##### Example: Embedding a post
 
 Source:
+
 ```html
-<amp-facebook width="486" height="657"
-    layout="responsive"
-    data-href="https://www.facebook.com/zuck/posts/10102593740125791">
+<amp-facebook
+  width="486"
+  height="657"
+  layout="responsive"
+  data-href="https://www.facebook.com/zuck/posts/10102593740125791"
+>
 </amp-facebook>
 ```
+
 Preview:
 <amp-facebook width="486" height="657"
     layout="responsive"
@@ -111,13 +130,18 @@ Preview:
 ##### Example: Embedding a video
 
 Source:
+
 ```html
-<amp-facebook width="476" height="316"
-    layout="responsive"
-    data-embed-as="video"
-    data-href="https://www.facebook.com/nasaearth/videos/10155187938052139">
+<amp-facebook
+  width="476"
+  height="316"
+  layout="responsive"
+  data-embed-as="video"
+  data-href="https://www.facebook.com/nasaearth/videos/10155187938052139"
+>
 </amp-facebook>
 ```
+
 Preview:
 <amp-facebook width="476" height="316"
     layout="responsive"
@@ -137,8 +161,10 @@ using the [`amp-youtube`](../../../../documentation/components/reference/amp-you
 You must include the following script in the `<head>`:
 
 [sourcecode:html]
+
 <script async custom-element="amp-youtube"
   src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
 [/sourcecode]
 
 The YouTube `data-videoid` can be found in every YouTube video page URL.
@@ -148,13 +174,17 @@ For example, in `https://www.youtube.com/watch?v=Z1q71gFeRqM`,
 Use `layout="responsive"` to yield correct layouts for 16:9 aspect ratio videos:
 
 [example preview="inline" playground="true" imports="amp-youtube:0.1"]
+
 ```html
-<amp-youtube data-videoid="lBTCB7yLs8Y"
+<amp-youtube
+  data-videoid="lBTCB7yLs8Y"
   layout="responsive"
   width="560"
-  height="315">
+  height="315"
+>
 </amp-youtube>
 ```
+
 [/example]
 
 [tip type="tip"]
@@ -177,16 +207,20 @@ The `type` identifies the ad network's template.
 Different ad types require different `data-*` attributes.
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
 </amp-ad>
 ```
+
 [/example]
 
 If supported by the ad network,
@@ -194,20 +228,24 @@ include a `placeholder`
 to be shown if no ad is available:
 
 [example preview="inline" playground="true" imports="amp-ad:0.1"]
+
 ```html
-<amp-ad width="300"
+<amp-ad
+  width="300"
   height="250"
   type="a9"
   data-amzn_assoc_ad_mode="auto"
   data-divid="amzn-assoc-ad-fe746097-f142-4f8d-8dfb-45ec747632e5"
   data-recomtype="async"
-  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5">
+  data-adinstanceid="fe746097-f142-4f8d-8dfb-45ec747632e5"
+>
   <div placeholder>Have a great day!</div>
 </amp-ad>
 ```
+
 [/example]
 
-AMP supports a wide range of ad networks. See the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md)  for a full list.
+AMP supports a wide range of ad networks. See the [`amp-ad`](../../../../documentation/components/reference/amp-ad.md) for a full list.
 
 [tip type="read-on"]
 **READ ON –** Learn more about ads in the [Serving Ads on AMP](../../../../documentation/guides-and-tutorials/develop/monetization/index.md) guide.

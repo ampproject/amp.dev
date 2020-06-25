@@ -21,32 +21,33 @@ Pertama, buat manifes:
 
 [sourcecode:json]
 {
-  "short_name": "ABE",
-  "name": "AMPByExample",
-  "icons": [
-    {
-      "src": "launcher-icon-1x.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "launcher-icon-2x.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "launcher-icon-4x.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
-  ],
-  "start_url": "index.html?launcher=true"
+"short_name": "ABE",
+"name": "AMPByExample",
+"icons": [
+{
+"src": "launcher-icon-1x.png",
+"type": "image/png",
+"sizes": "48x48"
+},
+{
+"src": "launcher-icon-2x.png",
+"type": "image/png",
+"sizes": "96x96"
+},
+{
+"src": "launcher-icon-4x.png",
+"type": "image/png",
+"sizes": "192x192"
+}
+],
+"start_url": "index.html?launcher=true"
 }
 [/sourcecode]
 
 Kemudian, tautkan manifes dari `<head>` halaman AMP:
 
 [sourcecode:html]
+
 <link rel="manifest" href="/manifest.json">
 [/sourcecode]
 
@@ -65,8 +66,10 @@ Service Worker perlu didaftarkan pada halaman tertentu, karena jika tidak, brows
 Untuk melakukannya, sertakan komponen [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) terlebih dahulu melalui skripnya pada `<head>` halaman Anda:
 
 [sourcecode:html]
+
 <script async custom-element="amp-install-serviceworker"
   src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+
 [/sourcecode]
 
 Kemudian, tambahkan parameter berikut di tempat lain dalam `<body>` (ubah agar mengarah ke Service Worker sebenarnya):
@@ -86,13 +89,13 @@ Anda dapat menggunakan teknik di atas untuk mengaktifkan akses offline ke situs 
 
 [sourcecode:js]
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.open('mysite').then(function(cache) {
-      return cache.match(event.request).then(function(response) {
-        var fetchPromise = fetch(event.request).then(function(networkResponse) {
-          cache.put(event.request, networkResponse.clone());
-          return networkResponse;
-        })
+event.respondWith(
+caches.open('mysite').then(function(cache) {
+return cache.match(event.request).then(function(response) {
+var fetchPromise = fetch(event.request).then(function(networkResponse) {
+cache.put(event.request, networkResponse.clone());
+return networkResponse;
+})
 
         // Ubah respons di sini sebelum hilang..
         ...
@@ -100,12 +103,13 @@ self.addEventListener('fetch', function(event) {
         return response || fetchPromise;
       })
     })
-  );
+
+);
 });
 [/sourcecode]
 
 Dengan menggunakan teknik ini, Anda dapat mengubah Halaman AMP dengan segala fungsi
 tambahan yang sebaliknya akan menggagalkan [validasi AMP](../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md), misalnya:
 
-* Fitur dinamis yang memerlukan JS kustom.
-* Komponen yang disesuaikan/hanya relevan untuk situs Anda.
+- Fitur dinamis yang memerlukan JS kustom.
+- Komponen yang disesuaikan/hanya relevan untuk situs Anda.

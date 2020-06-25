@@ -11,6 +11,7 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Welcome Back
 
 In the previous course, we learned how to create a basic AMP site by starting a website for our fictional Chico’s Cheese Bike shop. We also learned how to add static content to our site using AMP components. We added a carousel of images, social media posts, a video, and other essential elements.
@@ -72,8 +73,8 @@ Want to learn more about Glitch? You can read about it in the [appendix](../../.
 This course also requires the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. The Chrome extension provides one convenient way to access the validator. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 
 Ready? Let’s get started!
-[/filter]
-[filter level="advanced"]
+[/filter][filter level="advanced"]
+
 ## Welcome Back
 
 In the previous course, we learned how to create a basic AMP site by starting a website for our fictional Chico's Cheese Bike shop. We also learned how to add static content to our site using AMP components. We added a carousel of images, social media posts, a video, and other essential elements.

@@ -3,6 +3,7 @@ $title: Conclusion and What’s Next
 $order: 6
 leveled: true
 ---
+
 Congratulations! You’ve finished the introduction to AMP beginners’ course and have successfully created your first AMP page.
 
 Reflect on what you’ve built so far. You’ve created an engaging AMP webpage, with images, a carousel, and video. Think of all the work we didn’t have to do, like writing JavaScript that allowed us to keep track of what slide of our carousel we were on, or figuring out how to wrap our carousel around from the last slide to the first slide. Instead of getting bogged down in details and busy work, we were able to focus on building the type of site that was most effective for our burgeoning cheese bike business.

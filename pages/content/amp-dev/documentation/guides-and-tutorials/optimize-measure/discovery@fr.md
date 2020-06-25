@@ -11,12 +11,14 @@ Afin de résoudre ce problème, nous ajoutons des informations sur la page AMP d
 Ajoutez ce qui suit à la page standard :
 
 [sourcecode:html]
+
 <link rel="amphtml" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
 Et ceci à la page AMP :
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/full/document.html">
 [/sourcecode]
 
@@ -25,6 +27,7 @@ Et ceci à la page AMP :
 Si vous n'avez qu'une seule page et qu'il s'agit d'une page AMP, vous devez tout de même y ajouter le lien canonique, qui redirigera alors simplement vers lui-même :
 
 [sourcecode:html]
+
 <link rel="canonical" href="https://www.example.com/url/to/amp/document.html">
 [/sourcecode]
 
@@ -41,6 +44,7 @@ Cela n'est pas seulement valable pour les pages AMP, mais pour toutes les pages 
 Exemple :
 
 [sourcecode:html]
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -72,6 +76,7 @@ Exemple :
     }
   }
 </script>
+
 [/sourcecode]
 
 Vous trouverez plus d'exemples dans le [dossier d'exemples ampproject](https://github.com/ampproject/amphtml/tree/master/examples/metadata-examples), y compris la syntaxe alternative pour l'attribut HTML.

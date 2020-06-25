@@ -15,6 +15,5 @@ $title: ビジュアルに訴える AMP ストーリーを作成する
 - ページ上の要素をアニメーション化する
 - ストーリーの最後に関連リンクを追加し、読者を別のコンテンツに誘導する
 
-[tip type="note"]
- [`amp-story`](../../../../documentation/components/reference/amp-story.md) は**試験運用コンポーネント**です。
+[tip type="note"][`amp-story`](../../../../documentation/components/reference/amp-story.md) は**試験運用コンポーネント**です。
 [/tip]

@@ -2,13 +2,12 @@
 $title: amp-accordion
 $category@: layout
 formats:
-- websites
-- email
-- ads
+  - websites
+  - email
+  - ads
 teaser:
   text: Oferece aos usuários uma visualização rápida do conteúdo e permite pular para a seção desejada.
 ---
-
 
 <!--
 Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 Oferece aos usuários uma visualização rápida do conteúdo e permite pular para qualquer seção. Isso é útil para dispositivos móveis, em que é preciso rolar para ver até mesmo algumas frases.
 
@@ -45,23 +42,23 @@ Oferece aos usuários uma visualização rápida do conteúdo e permite pular pa
   </tr>
 </table>
 
-
 ## Comportamento <a name="behavior"></a>
 
 O componente `amp-accordion` permite exibir seções de conteúdo que podem ser recolhidas e expandidas. Cada um dos filhos imediatos do componente `amp-accordion` é considerado uma seção do accordion. Cada um desses nós precisa ser uma tag `<section>`.
 
-* Um `amp-accordion` pode conter um ou mais elementos `<section>` como filhos diretos.
-* Cada `<section>` precisa conter exatamente dois filhos diretos.
-* O primeiro filho da seção representa o cabeçalho e precisa ser um elemento de cabeçalho (ou seja, `h1`, `h2`, …, `h6`, `header`).
-* O segundo filho da seção pode ser qualquer tag permitida no HTML para AMP e representa o conteúdo da seção.
-* Ao clicar ou tocar no título de uma seção, ela se expande ou recolhe.
-* O estado recolhido/expandido de cada seção do elemento `amp-accordion` será preservado em cada nível. Para desativar a preservação desse estado, adicione o atributo `disable-session-states` ao elemento `amp-accordion`.
+- Um `amp-accordion` pode conter um ou mais elementos `<section>` como filhos diretos.
+- Cada `<section>` precisa conter exatamente dois filhos diretos.
+- O primeiro filho da seção representa o cabeçalho e precisa ser um elemento de cabeçalho (ou seja, `h1`, `h2`, …, `h6`, `header`).
+- O segundo filho da seção pode ser qualquer tag permitida no HTML para AMP e representa o conteúdo da seção.
+- Ao clicar ou tocar no título de uma seção, ela se expande ou recolhe.
+- O estado recolhido/expandido de cada seção do elemento `amp-accordion` será preservado em cada nível. Para desativar a preservação desse estado, adicione o atributo `disable-session-states` ao elemento `amp-accordion`.
 
 #### Exemplo: exibição de um accordion <a name="example-displaying-an-accordion"></a>
 
-Neste exemplo, exibimos três seções, sendo que a terceira é expandida no carregamento da página.  Além disso, desativamos a preservação do estado recolhido/expandido definindo `disable-session-states`.
+Neste exemplo, exibimos três seções, sendo que a terceira é expandida no carregamento da página. Além disso, desativamos a preservação do estado recolhido/expandido definindo `disable-session-states`.
 
 [example preview="inline" playground="true" imports="amp-accordion"]
+
 ```html
 <amp-accordion{% if not format=='email'%} disable-session-states{% endif %}>
   <section>
@@ -80,12 +77,12 @@ Neste exemplo, exibimos três seções, sendo que a terceira é expandida no car
   </section>
 </amp-accordion>
 ```
+
 [/example]
 
 [tip type="success"]
 Para ver mais demonstrações do `amp-accordion`, visite o site [AMP By Example](https://ampbyexample.com/components/amp-accordion/).
 [/tip]
-
 
 ### Eventos <a name="events"></a>
 
@@ -146,13 +143,13 @@ Os eventos abaixo serão acionados nas `section`s do `accordion`.
 
 ## Estilo <a name="styling"></a>
 
-* Você pode usar o seletor de elemento do `amp-accordion` para estilizá-lo à vontade.
-* Os elementos `amp-accordion` são sempre `display: block`.
-* Os elementos `<section>`, de cabeçalho e conteúdo não podem ser flutuantes.
-* Quando a seção é expandida, o elemento `<section>` tem um atributo `expanded`.
-* O elemento de conteúdo é clear-fixed com `overflow:hidden` e, portanto, não pode ter barras de rolagem.
-* As margens dos elementos `<amp-accordion>`, `<section>`, de cabeçalho e conteúdo são definidas como 0 e podem ser modificadas em estilos personalizados.
-* Os elementos de cabeçalho e conteúdo são `position:relative`.
+- Você pode usar o seletor de elemento do `amp-accordion` para estilizá-lo à vontade.
+- Os elementos `amp-accordion` são sempre `display: block`.
+- Os elementos `<section>`, de cabeçalho e conteúdo não podem ser flutuantes.
+- Quando a seção é expandida, o elemento `<section>` tem um atributo `expanded`.
+- O elemento de conteúdo é clear-fixed com `overflow:hidden` e, portanto, não pode ter barras de rolagem.
+- As margens dos elementos `<amp-accordion>`, `<section>`, de cabeçalho e conteúdo são definidas como 0 e podem ser modificadas em estilos personalizados.
+- Os elementos de cabeçalho e conteúdo são `position:relative`.
 
 ## Validação <a name="validation"></a>
 

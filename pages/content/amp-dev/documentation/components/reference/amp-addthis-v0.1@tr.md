@@ -2,11 +2,10 @@
 $title: amp-addthis
 $category@: social
 formats:
-- websites
+  - websites
 teaser:
   text: Bir AddThis web sitesi araçları yerleştirmesi görüntüler.
 ---
-
 
 <!--
 Copyright 2018 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-
-
 Bir [AddThis](https://www.addthis.com) web sitesi araçları yerleştirmesi görüntüler.
 
 <table>
@@ -38,7 +35,6 @@ Bir [AddThis](https://www.addthis.com) web sitesi araçları yerleştirmesi gör
     <td>fill, fixed, fixed-height, flex-item, nodisplay, responsive</td>
   </tr>
 </table>
-
 
 ## Neden AddThis? <a name="why-addthis"></a>
 
@@ -53,6 +49,7 @@ AddThis'e, altmıştan fazla dilde, dünyanın her yerinden içerik paylaşan, 2
 Sayfanızın yanlarına, üst kısmına veya alt kısmına yerleştirilir, görünümü kaydırdıkça okuyucunuzu takip eder. Çok fazla rahatsız etmeden paylaşımı teşvik etmenin harika bir yolu.
 
 Örnek:
+
 ```html
 <!--
   This example uses a placeholder pubId.
@@ -65,7 +62,8 @@ Sayfanızın yanlarına, üst kısmına veya alt kısmına yerleştirilir, gör�
   layout="responsive"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="957l"
-  data-widget-type="floating">
+  data-widget-type="floating"
+>
 </amp-addthis>
 ```
 
@@ -74,6 +72,7 @@ Sayfanızın yanlarına, üst kısmına veya alt kısmına yerleştirilir, gör�
 Paylaşım düğmelerini, kesintisiz bir paylaşım deneyimi için içeriğinize entegre edin.
 
 Örnek:
+
 ```html
 <!--
   This example uses a placeholder pubId.
@@ -85,7 +84,8 @@ Paylaşım düğmelerini, kesintisiz bir paylaşım deneyimi için içeriğinize
   height="92"
   data-pub-id="ra-5c191331410932ff"
   data-widget-id="mv93"
-  data-widget-type="inline">
+  data-widget-type="inline"
+>
 </amp-addthis>
 ```
 
@@ -150,13 +150,13 @@ AddThis Araçları, Yayıncı Siteler ile etkileşimde bulunmak için Son Kullan
 
 AddThis Verileri aşağıdakilerden oluşabilir:
 
-* İnternet Protokolü (IP) adresi, Mobil Reklamcılık Kimliği (MAID) (mobil uygulama geliştiricilerinin, mobil uygulamalarını kimlerin kullandığını belirlemelerine olanak tanır), mobil uygulama kimliği, tarayıcı türü, tarayıcı dili, işletim sistemi türü ve Son Kullanıcının bir Yayıncı Sitesini veya Araç Çubuğunu ziyaret ettiği tarih ve saat
-* Araç Çubuğunu kullanan kullanıcı;
-* Son Kullanıcının Yayıncı Sitesini ne süreyle ziyaret ettiği, Son Kullanıcının bir Yayıncı Sitesindeki içeriği paylaşma davranışları ve bir Son Kullanıcının bir Yayıncı Sitesindeki kaydırma davranışı gibi bir Yayıncı Sitesindeki davranışlar;
-* Son Kullanıcının bir Yayıncı Sitesini bulmak ve bu siteye gitmek için kullandığı yönlendiren URL ve web araması;
-* AddThis Araç Çubuğu arama işlevine girilen anahtar kelimeler ve Araç Çubuğu Kullanıcısının, AddThis Araç Çubuğunu indirip indirmediği, yükleyip yüklemediği, yüklemesini kaldırıp kaldırmadığı ve bunları yapma zamanı;
-* Bir Son Kullanıcının AddThis Araçlarını ne sıklıkta kullandığı ve bir Araç Çubuğu Kullanıcısının AddThis Araç Çubuğunu ne sıklıkta kullandığıyla ilgili bilgiler ve
-* Bir Son Kullanıcının ve Araç Çubuğu Kullanıcısının IP adresinden alınan coğrafi konum verileri.
+- İnternet Protokolü (IP) adresi, Mobil Reklamcılık Kimliği (MAID) (mobil uygulama geliştiricilerinin, mobil uygulamalarını kimlerin kullandığını belirlemelerine olanak tanır), mobil uygulama kimliği, tarayıcı türü, tarayıcı dili, işletim sistemi türü ve Son Kullanıcının bir Yayıncı Sitesini veya Araç Çubuğunu ziyaret ettiği tarih ve saat
+- Araç Çubuğunu kullanan kullanıcı;
+- Son Kullanıcının Yayıncı Sitesini ne süreyle ziyaret ettiği, Son Kullanıcının bir Yayıncı Sitesindeki içeriği paylaşma davranışları ve bir Son Kullanıcının bir Yayıncı Sitesindeki kaydırma davranışı gibi bir Yayıncı Sitesindeki davranışlar;
+- Son Kullanıcının bir Yayıncı Sitesini bulmak ve bu siteye gitmek için kullandığı yönlendiren URL ve web araması;
+- AddThis Araç Çubuğu arama işlevine girilen anahtar kelimeler ve Araç Çubuğu Kullanıcısının, AddThis Araç Çubuğunu indirip indirmediği, yükleyip yüklemediği, yüklemesini kaldırıp kaldırmadığı ve bunları yapma zamanı;
+- Bir Son Kullanıcının AddThis Araçlarını ne sıklıkta kullandığı ve bir Araç Çubuğu Kullanıcısının AddThis Araç Çubuğunu ne sıklıkta kullandığıyla ilgili bilgiler ve
+- Bir Son Kullanıcının ve Araç Çubuğu Kullanıcısının IP adresinden alınan coğrafi konum verileri.
 
 AddThis Verileri, geçerli yasa kapsamında gereken ölçüde kişisel bilgi olarak değerlendirilir. Yayıncılar, AddThis Hizmet Şartları uyarınca gerekli tüm Son Kullanıcı izinlerini ve yetkilendirmelerini almalı ve Son Kullanıcılardan toplanan AddThis Verilerinin Oracle'a sağlanması için gereken bildirimleri sağlamalıdır.
 

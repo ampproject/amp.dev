@@ -2,7 +2,7 @@
 $title: Sobre os elementos de uma história AMP
 ---
 
-Uma história AMP é uma experiência de narrativa visual em tela cheia que transmite informações com imagens, vídeos, gráficos, áudio e muito mais. Ela é perfeita para usuários que querem um conteúdo de tamanho reduzido, mas com recursos visuais completos.  
+Uma história AMP é uma experiência de narrativa visual em tela cheia que transmite informações com imagens, vídeos, gráficos, áudio e muito mais. Ela é perfeita para usuários que querem um conteúdo de tamanho reduzido, mas com recursos visuais completos.
 
 Os ingredientes básicos de uma história AMP são **páginas** individuais. Essas páginas são compostas por **camadas** separadas com **elementos** de AMP e HTML básico.
 

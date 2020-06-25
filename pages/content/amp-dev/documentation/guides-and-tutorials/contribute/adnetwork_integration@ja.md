@@ -28,11 +28,14 @@ $title: AMP との統合でディスプレイ広告を掲載する
 たとえば、Amazon A9 サーバーを呼び出すには、次の構文を使用します。
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -56,6 +59,6 @@ $title: AMP との統合でディスプレイ広告を掲載する
 
 ## 関連資料
 
-*   [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
-*   [対応広告ベンダーの一覧](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
-*   [高速フェッチのリリースに関するブログ記事](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)
+- [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
+- [対応広告ベンダーの一覧](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
+- [高速フェッチのリリースに関するブログ記事](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

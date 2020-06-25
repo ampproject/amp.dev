@@ -2,12 +2,11 @@
 $title: amp-lightbox
 $category@: layout
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: Afficher des éléments dans une fenêtre modale "lightbox" en plein écran.
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -46,7 +43,6 @@ teaser:
   </tr>
 </table>
 
-
 ## Comportement <a name="behavior"></a>
 
 Le composant `amp-lightbox` définit les éléments enfants qui s'affichent dans une superposition ou une fenêtre modale en plein écran. Lorsque l'utilisateur clique ou appuie sur un élément (un bouton, par exemple), l'identifiant `amp-lightbox` référencé dans l'attribut `on` de l'élément sélectionné affiche l'annonce Lightbox sur toute la surface de la fenêtre affichage et présente les éléments enfants du composant `amp-lightbox`.
@@ -56,7 +52,9 @@ La touche Échap permet de fermer le mode Lightbox. Vous pouvez également défi
 ```html
 <button on="tap:quote-lb">See Quote</button>
 <amp-lightbox id="quote-lb" layout="nodisplay">
-  <blockquote>"Don't talk to me about JavaScript fatigue" - Horse JS</blockquote>
+  <blockquote>
+    "Don't talk to me about JavaScript fatigue" - Horse JS
+  </blockquote>
   <button on="tap:quote-lb.close">Nice!</button>
 </amp-lightbox>
 ```
@@ -133,8 +131,8 @@ Notons quelques différences selon que le composant `amp-lightbox` est utilisé 
 
 L'attribut `close-button` est obligatoire pour les annonces AMP HTML. Cet attribut permet d'afficher un en-tête en haut de votre annonce Lightbox. L'en-tête contient un bouton de fermeture et un libellé qui indique "Ad" (Annonce). Cet en-tête est obligatoire pour :
 
-* définir une interface utilisateur cohérente et prévisible pour les annonces AMP HTML ;
-* s'assurer qu'il existe toujours un moyen de quitter le mode Lightbox ; autrement, la création risquerait de "pirater" le contenu du document hôte via une annonce Lightbox.
+- définir une interface utilisateur cohérente et prévisible pour les annonces AMP HTML ;
+- s'assurer qu'il existe toujours un moyen de quitter le mode Lightbox ; autrement, la création risquerait de "pirater" le contenu du document hôte via une annonce Lightbox.
 
 L'attribut `close-button` est obligatoire et n'est autorisé que dans les annonces AMP HTML. Dans les documents AMP standards, vous pouvez afficher un bouton de fermeture à tout moment dans le cadre du contenu `<amp-lightbox>`.
 

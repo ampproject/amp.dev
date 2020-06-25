@@ -7,15 +7,14 @@ O diretório do projeto contém um arquivo chamado [`article.html`](https://gith
 1.  **Copie** todo o código do arquivo `article.html` e cole-o em um novo arquivo.
 2.  **Salve** o novo arquivo como `article.amp.html`.
 
-Observação: Não é preciso acrescentar `.amp.html` aos arquivos AMP. Eles podem ter qualquer extensão. Os editores normalmente adicionam parâmetros ao URL para diferenciar as páginas AMP das versões canônicas (por exemplo,  `http://publisher.com/article.html?amp`).
+Observação: Não é preciso acrescentar `.amp.html` aos arquivos AMP. Eles podem ter qualquer extensão. Os editores normalmente adicionam parâmetros ao URL para diferenciar as páginas AMP das versões canônicas (por exemplo, `http://publisher.com/article.html?amp`).
 
 Seu arquivo `article.amp.html` precisa ter a seguinte forma:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-
     <title>News Article</title>
 
     <link href="base.css" rel="stylesheet" />
@@ -29,9 +28,12 @@ Seu arquivo `article.amp.html` precisa ter a seguinte forma:
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
     </article>
-    <img src="mountains.jpg">
+    <img src="mountains.jpg" />
   </body>
 </html>
 ```
@@ -40,7 +42,7 @@ Essa página é bastante simples e tem elementos de artigo estáticos comuns: CS
 
 Por enquanto, a versão AMP do artigo é somente uma cópia do original. Vamos convertê-la para AMP.
 
-Primeiro é preciso adicionar o arquivo da biblioteca AMP.  Isso não basta para converter a página, mas veremos a seguir como a biblioteca AMP pode nos ajudar a fazer isso.
+Primeiro é preciso adicionar o arquivo da biblioteca AMP. Isso não basta para converter a página, mas veremos a seguir como a biblioteca AMP pode nos ajudar a fazer isso.
 
 Para incluí-la, **adicione** esta linha ao final da tag `<head>`:
 
@@ -56,7 +58,7 @@ Quando você verificar a saída do JavaScript no Developers Console, tendo selec
 Powered by AMP ⚡ HTML
 ```
 
-Um [validador de AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) está incluído na biblioteca AMP. Ele mostrará se há algo impedindo sua página de ser um documento AMP válido.  **Ative** o validador ao adicionar este identificador de fragmento ao URL do seu documento:
+Um [validador de AMP](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md) está incluído na biblioteca AMP. Ele mostrará se há algo impedindo sua página de ser um documento AMP válido. **Ative** o validador ao adicionar este identificador de fragmento ao URL do seu documento:
 
 ```text
 #development=1
@@ -74,7 +76,7 @@ Vários erros de validação aparecerão no Developers Console. Talvez seja prec
 
 Para tornar o documento AMP válido, será preciso corrigir todos os erros. Faremos isso neste codelab.
 
-Antes, porém, vamos **simular** uma experiência em um dispositivo móvel nas ferramentas do desenvolvedor no navegador, já que estamos trabalhando com um artigo para dispositivos móveis.  Por exemplo, no Chrome DevTools, clique no ícone de smartphone e selecione um dispositivo móvel no menu.
+Antes, porém, vamos **simular** uma experiência em um dispositivo móvel nas ferramentas do desenvolvedor no navegador, já que estamos trabalhando com um artigo para dispositivos móveis. Por exemplo, no Chrome DevTools, clique no ícone de smartphone e selecione um dispositivo móvel no menu.
 
 Uma resolução simulada em dispositivo móvel, como a mostrada abaixo, aparecerá no navegador:
 

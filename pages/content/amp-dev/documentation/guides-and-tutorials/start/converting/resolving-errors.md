@@ -4,7 +4,7 @@ $order: 2
 description: In this section, we'll go through and resolve the AMP validation errors from our AMP page. Note that the errors may appear in a different order in your console.
 ---
 
-In this section, we'll go through and resolve the AMP validation errors from our AMP page.  Note that the errors may appear in a different order in your console.
+In this section, we'll go through and resolve the AMP validation errors from our AMP page. Note that the errors may appear in a different order in your console.
 
 ## Include charset
 
@@ -14,7 +14,7 @@ We will begin by fixing the following error:
 The mandatory tag 'meta charset=utf-8' is missing or incorrect.
 </pre>
 
-To correctly display text, AMP requires that you specify the charset for the page. The meta charset information must also be the first child of the `<head> ` tag. The reason this tag must be first is to avoid re-interpreting content that was added before the meta charset tag.
+To correctly display text, AMP requires that you specify the charset for the page. The meta charset information must also be the first child of the `<head>` tag. The reason this tag must be first is to avoid re-interpreting content that was added before the meta charset tag.
 
 **Add** the following code as the first line of the `<head>` tag:
 
@@ -32,25 +32,26 @@ Now, let's look at the following error:
 The mandatory tag 'link rel=canonical' is missing or incorrect.
 </pre>
 
-Every AMP document needs to have a link referencing the "canonical" version of that document.  We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable](discoverable.md) step of this tutorial.
+Every AMP document needs to have a link referencing the "canonical" version of that document. We'll learn more about what canonical pages are and different approaches to canonical linking in the [Making your page discoverable](discoverable.md) step of this tutorial.
 
 For this tutorial we'll consider the original HTML article that we're converting to be the canonical page.
 
 Go ahead and **add** the following code below the `<meta charset="utf-8" />` tag:
 
 ```html
-<link rel="canonical" href="/article.html">
+<link rel="canonical" href="/article.html" />
 ```
 
 [tip type="note"]
 You can create a standalone canonical AMP page. The canonical link is still required, but should point to the AMP article itself:
 
 ```html
-<link rel="canonical" href="article.amp.html">
+<link rel="canonical" href="article.amp.html" />
 ```
+
 [/tip]
 
-Now, **reload** the page. Although there are still plenty of errors to fix, the  canonical link error is no longer present.
+Now, **reload** the page. Although there are still plenty of errors to fix, the canonical link error is no longer present.
 
 ## Specify the AMP attribute
 
@@ -61,10 +62,10 @@ The mandatory attribute '⚡' is missing in tag 'html ⚡ for top-level html'
 The mandatory tag 'html ⚡ for top-level html' is missing or incorrect.
 </pre>
 
-The above errors can be resolved by simply adding the `⚡ `attribute to the `<html>` tag like so:
+The above errors can be resolved by simply adding the `⚡`attribute to the `<html>` tag like so:
 
 ```html
-<html ⚡ lang="en">
+<html ⚡ lang="en"></html>
 ```
 
 Now, go ahead, reload the page and check that both errors are gone.
@@ -73,8 +74,9 @@ Now, go ahead, reload the page and check that both errors are gone.
 Although specifying the `⚡` is the recommended approach, it's also possible to use the `amp` attribute in place of the `⚡` attribute, like so:
 
 ```html
-<html amp lang="en">
+<html amp lang="en"></html>
 ```
+
 [/tip]
 
 ## Specify a viewport
@@ -90,7 +92,10 @@ AMP requires the definition of a `width` and `minimum-scale` for the viewport. T
 To resolve the viewport error, add the following HTML snippet to the `<head>` tag:
 
 ```html
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta
+  name="viewport"
+  content="width=device-width,minimum-scale=1,initial-scale=1"
+/>
 ```
 
 The values specified for `width` and `minimum-scale` are the required values in AMP. Defining `initial-scale` is not mandatory but it’s a commonly included in mobile web development and it's recommended. You can read more about the viewport and responsive design in [Configure the Viewport](https://developers.google.com/speed/docs/insights/ConfigureViewport).
@@ -115,21 +120,19 @@ The problem is that this is an external stylesheet reference. In AMP, to keep th
 
 ```html
 <style amp-custom>
-
-/* The content from base.css */
-
+  /* The content from base.css */
 </style>
 ```
 
 So, let's resolve the error:
 
 1.  **Remove** the `<link>` tag pointing to the stylesheet in the `<head>` and replace it with an inline `<style amp-custom></style>` tag. The `amp-custom` attribute on the style tag is mandatory.
-2. **Copy** all the styles from the [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) file into the `<style amp-custom></style>` tags.
+2.  **Copy** all the styles from the [`base.css`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.css) file into the `<style amp-custom></style>` tags.
 
 Once again, **reload** the page and verify that the stylesheets error has disappeared.
 
 [tip type="note"]
-**NOTE –**  Not only is embedded styling required but there is a file size limit of 50 kilobytes for all styling information. You should use CSS preprocessors such as [SASS](http://sass-lang.com/) to minify your CSS before inlining the CSS in your AMP pages.
+**NOTE –** Not only is embedded styling required but there is a file size limit of 50 kilobytes for all styling information. You should use CSS preprocessors such as [SASS](http://sass-lang.com/) to minify your CSS before inlining the CSS in your AMP pages.
 [/tip]
 
 [tip type="important"]
@@ -154,9 +157,9 @@ This effectively rules out the use of all user-generated/third-party JavaScript 
 [tip type="note"]
 The only exceptions to the restriction on user-generated/third-party scripts are:
 
-1.  Script that adds metadata to the page or that configures AMP components. These will have the type attribute  `application/ld+json` or `application/json`.
-2.  Script included in iframes.  Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components](../../../../documentation/components/index.html). We will explore our first AMP component in the next section.
-[/tip]
+1.  Script that adds metadata to the page or that configures AMP components. These will have the type attribute `application/ld+json` or `application/json`.
+2.  Script included in iframes. Including JavaScript in an iframe should be considered a measure of last resort. Wherever possible, JavaScript functionality should be replaced by using [AMP components](../../../../documentation/components/index.html). We will explore our first AMP component in the next section.
+    [/tip]
 
 Try opening the external [`base.js`](https://github.com/googlecodelabs/accelerated-mobile-pages-foundations/blob/master/base.js) file. What do you see? The file should be empty of any JavaScript code and only include a comment of information such as this:
 
@@ -194,12 +197,68 @@ The mandatory tag 'noscript > style : boilerplate' is missing or incorrect.
 Every AMP document requires the following AMP boilerplate code:
 
 ```html
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<style amp-boilerplate>
+  body {
+    -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+    animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+  }
+  @-webkit-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-moz-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-ms-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @-o-keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }
+  @keyframes -amp-start {
+    from {
+      visibility: hidden;
+    }
+    to {
+      visibility: visible;
+    }
+  }</style
+><noscript
+  ><style amp-boilerplate>
+    body {
+      -webkit-animation: none;
+      -moz-animation: none;
+      -ms-animation: none;
+      animation: none;
+    }
+  </style></noscript
+>
 ```
 
 **Add** the boilerplate code to the bottom of the `<head>` tag of your document.
 
-The `<style amp-boilerplate>`  tag initially hides the content of the body until the AMP JavaScript library is loaded, then the content is rendered. AMP does this to prevent unstyled content from rendering, also known as Flash Of Unstyled Content (FOUC). This helps ensure that the user experience feels truly instant as the page’s content appears all at once and everything above the fold is rendered together. The second tag reverts this logic if JavaScript is disabled in the browser.
+The `<style amp-boilerplate>` tag initially hides the content of the body until the AMP JavaScript library is loaded, then the content is rendered. AMP does this to prevent unstyled content from rendering, also known as Flash Of Unstyled Content (FOUC). This helps ensure that the user experience feels truly instant as the page’s content appears all at once and everything above the fold is rendered together. The second tag reverts this logic if JavaScript is disabled in the browser.
 
 ## Replace `<img>` with `<amp-img>`
 
@@ -230,7 +289,7 @@ The layout error is telling us that [`amp-img`](../../../../documentation/compon
 
 To reduce DOM reflow, AMP includes a layout system to ensure the layout of the page is known as early as possible in the lifecycle of downloading and rendering the page.
 
-The image below compares how an HTML page is often laid out compared to the approach AMP enforces.  Notice in the approach on the left how the text reflows each time an ad or image is loaded.  AMP's approach to layout keeps the text from moving around--even if the images and ads take a long time to load.
+The image below compares how an HTML page is often laid out compared to the approach AMP enforces. Notice in the approach on the left how the text reflows each time an ad or image is loaded. AMP's approach to layout keeps the text from moving around--even if the images and ads take a long time to load.
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-layout-system.png', 837, 394, align='', caption="A comparison between how content is normally laid out and AMP's approach") }}
 
@@ -248,16 +307,21 @@ Why was the `container` type inferred? Because we did not specify a `height` att
 
 Refresh the page and check the validator; you should no longer see any errors!
 
-You now have a valid AMP document, but the image doesn’t look so great because it is awkwardly positioned on the page.  By default when you specify the height and width for an [`amp-img`](../../../../documentation/components/reference/amp-img.md) AMP will fix the dimensions to what you specify--but wouldn't it be great if AMP would scale the image to *responsively* stretch and fit the page no matter the screen size?
+You now have a valid AMP document, but the image doesn’t look so great because it is awkwardly positioned on the page. By default when you specify the height and width for an [`amp-img`](../../../../documentation/components/reference/amp-img.md) AMP will fix the dimensions to what you specify--but wouldn't it be great if AMP would scale the image to _responsively_ stretch and fit the page no matter the screen size?
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-not-responsive.png', 412, 660, align='center third', caption="Our image isn't responsive.") }}
 
-Fortunately AMP can figure out the aspect ratio of elements from the width & height you specify.  This allows the AMP layout system to position and scale the element in a variety of ways.  The `layout` attribute informs AMP of how you want the element positioned and scaled.
+Fortunately AMP can figure out the aspect ratio of elements from the width & height you specify. This allows the AMP layout system to position and scale the element in a variety of ways. The `layout` attribute informs AMP of how you want the element positioned and scaled.
 
 Let's **set** the layout attribute to `responsive` so that our image scales and resizes:
 
 ```html
-<amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+<amp-img
+  src="mountains.jpg"
+  layout="responsive"
+  width="266"
+  height="150"
+></amp-img>
 ```
 
 Voila! Our image is in the correct aspect ratio and responsively fills the width of the screen.
@@ -273,18 +337,78 @@ Voila! Our image is in the correct aspect ratio and responsively fills the width
 Now your AMP document should look something like this:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html ⚡ lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
 
-    <link rel="canonical" href="/article.html">
-    <link rel="shortcut icon" href="amp_favicon.png">
+    <link rel="canonical" href="/article.html" />
+    <link rel="shortcut icon" href="amp_favicon.png" />
 
     <title>News Article</title>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
     <style amp-custom>
       body {
         width: auto;
@@ -320,9 +444,17 @@ Now your AMP document should look something like this:
     <article>
       <h1>Article Name</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas tortor sapien, non tristique ligula accumsan eu.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam egestas
+        tortor sapien, non tristique ligula accumsan eu.
+      </p>
 
-      <amp-img src="mountains.jpg" layout="responsive" width="266" height="150"></amp-img>
+      <amp-img
+        src="mountains.jpg"
+        layout="responsive"
+        width="266"
+        height="150"
+      ></amp-img>
     </article>
   </body>
 </html>

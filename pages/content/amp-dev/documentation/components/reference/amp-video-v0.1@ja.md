@@ -2,13 +2,12 @@
 $title: amp-video
 $category@: media
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: HTML5 video タグの代替機能です。
 ---
-
 
 <!--
        Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋め込む場合に限り使用できます。
 
@@ -53,14 +50,15 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
 
 `amp-video` コンポーネントは、最大で 4 つのタイプの HTML ノードを子として受け取ります。
 
-* `source` タグ: HTML `<video>` タグと同様、子タグとして `<source>` タグを追加することで、異なるソース メディア ファイルを指定して再生することができます。
-* `track` タグ: 動画の字幕を有効にします。ドキュメントとは別のオリジンで字幕トラックがホストされている場合は、`<amp-video>` タグに `crossorigin` 属性を追加する必要があります。
-* 動画再生開始前のプレースホルダ。
-* ブラウザが HTML5 動画をサポートしていない場合のフォールバック: 必要に応じて、直接の子ノードの 1 つに `fallback` 属性を設定することができます。ユーザーのブラウザが HTML5 動画をサポートしていなかった場合、この属性を設定されたノードが存在していれば、このノードとその子が表示コンテンツを形成します。
+- `source` タグ: HTML `<video>` タグと同様、子タグとして `<source>` タグを追加することで、異なるソース メディア ファイルを指定して再生することができます。
+- `track` タグ: 動画の字幕を有効にします。ドキュメントとは別のオリジンで字幕トラックがホストされている場合は、`<amp-video>` タグに `crossorigin` 属性を追加する必要があります。
+- 動画再生開始前のプレースホルダ。
+- ブラウザが HTML5 動画をサポートしていない場合のフォールバック: 必要に応じて、直接の子ノードの 1 つに `fallback` 属性を設定することができます。ユーザーのブラウザが HTML5 動画をサポートしていなかった場合、この属性を設定されたノードが存在していれば、このノードとその子が表示コンテンツを形成します。
 
 #### 例 <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -76,6 +74,7 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## 分析機能 <a name="analytics"></a>
@@ -168,12 +167,17 @@ HTML5 `video` タグの代替機能です。HTML5 動画ファイルを直接埋
 以下の例では、`poster` 属性と `artwork` 属性の両方が含まれています。`poster` は、動画再生前のプレースホルダ画像として機能します。他方、`artwork` は、MediaSession API 経由で通知内に表示される画像です。
 
 ```html
-<amp-video width="720" height="305" layout="responsive"
-    src="https://yourhost.com/videos/myvideo.mp4"
-    poster="https://yourhost.com/posters/poster.png"
-    artwork="https://yourhost.com/artworks/artwork.png"
-    title="Awesome video" artist="Awesome artist"
-    album="Amazing album">
+<amp-video
+  width="720"
+  height="305"
+  layout="responsive"
+  src="https://yourhost.com/videos/myvideo.mp4"
+  poster="https://yourhost.com/posters/poster.png"
+  artwork="https://yourhost.com/artworks/artwork.png"
+  title="Awesome video"
+  artist="Awesome artist"
+  album="Amazing album"
+>
 </amp-video>
 ```
 

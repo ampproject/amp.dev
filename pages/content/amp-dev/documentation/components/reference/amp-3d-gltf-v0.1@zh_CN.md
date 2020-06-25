@@ -2,7 +2,7 @@
 $title: amp-3d-gltf
 $category@: media
 formats:
-- websites
+  - websites
 teaser:
   text: 显示 GL 传输格式 (gITF) 的 3D 模型。
 ---
@@ -22,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 显示 GL 传输格式 (gITF) 的 3D 模型。
 
@@ -52,12 +50,13 @@ limitations under the License.
 
 ```html
 <amp-3d-gltf
-    layout="responsive"
-    width="320"
-    height="240"
-    alpha="true"
-    antialiasing="true"
-    src="path/to/model.glb"></amp-3d-gltf>
+  layout="responsive"
+  width="320"
+  height="240"
+  alpha="true"
+  antialiasing="true"
+  src="path/to/model.glb"
+></amp-3d-gltf>
 ```
 
 ### 限制 <a name="limitations"></a>

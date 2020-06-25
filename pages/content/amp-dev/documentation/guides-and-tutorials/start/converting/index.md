@@ -16,7 +16,7 @@ teaser:
 
 {{ image('/static/img/docs/tutorials/tut-convert-html-end-product.png', 452, 918, align='right third', caption='Completed news article') }}
 
-In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents.  By the end of this tutorial, you'll have built an AMP page from an existing HTML page.
+In this tutorial, you’ll learn the key concepts of AMP and how AMP documents differ from traditional HTML documents. By the end of this tutorial, you'll have built an AMP page from an existing HTML page.
 
 ## You'll learn to:
 

@@ -2,14 +2,12 @@
 $title: amp-pixel
 $category@: ads-analytics
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: Um pixel de rastreamento usado para contar visualizações de páginas.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,9 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
-
 
 <table>
   <tr>
@@ -52,8 +47,7 @@ O componente `amp-pixel` se comporta como um pixel de rastreamento simples `img`
 Neste exemplo básico, o `amp-pixel` emite uma solicitação GET simples para o URL fornecido e ignora o resultado.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/tracker/foo" layout="nodisplay"></amp-pixel>
 ```
 
 [tip type="note"]
@@ -71,9 +65,11 @@ Um URL simples para um endpoint remoto que precisa ser o protocolo `https`.
 Este atributo é semelhante ao atributo `referrerpolicy` em `<img>`. No entanto, `no-referrer` é o único valor aceito. Se `referrerpolicy=no-referrer` for especificado, o cabeçalho de `referrer` será removido da solicitação HTTP.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"
-    referrerpolicy="no-referrer"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/tracker/foo"
+  layout="nodisplay"
+  referrerpolicy="no-referrer"
+></amp-pixel>
 ```
 
 ##### allow-ssr-img (opcional) <a name="allow-ssr-img-optional"></a>
@@ -93,8 +89,7 @@ Consulte o [Guia de substituições](https://github.com/ampproject/amphtml/blob/
 No exemplo a seguir, uma solicitação pode ser feita para algo como `https://foo.com/pixel?0.8390278471201`, em que o valor ALEATÓRIO é gerado de forma aleatória em cada impressão.
 
 ```html
-<amp-pixel src="https://foo.com/pixel?RANDOM"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/pixel?RANDOM" layout="nodisplay"></amp-pixel>
 ```
 
 ## Estilo <a name="styling"></a>

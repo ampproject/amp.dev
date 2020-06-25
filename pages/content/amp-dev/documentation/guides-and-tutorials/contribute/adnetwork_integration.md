@@ -23,7 +23,7 @@ As an ad server, you can integrate with AMP to serve traditional HTML ads to AMP
 
 ## Creating an `amp-ad` <a name="creating-an-amp-ad"></a>
 
-As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher's website. Because AMP doesn't allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  tag to request ads from your ad server.
+As an ad server, publishers you support include a JavaScript library provided by you and place various "ad snippets" that rely on the JavaScript library to fetch ads and render them on the publisher's website. Because AMP doesn't allow publishers to execute arbitrary JavaScript, you will need to contribute to the AMP open-source code to allow the [`amp-ad`](../../../documentation/components/reference/amp-ad.md) tag to request ads from your ad server.
 
 [tip type="note"]
 **NOTE –** You can use this [`amp-ad`](../../../documentation/components/reference/amp-ad.md) implementation to display traditional HTML ads **and** AMPHTML ads.
@@ -32,11 +32,14 @@ As an ad server, publishers you support include a JavaScript library provided by
 For example, the Amazon A9 server can be invoked by using following syntax:
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -60,6 +63,6 @@ For instructions on creating a Fast Fetch integration, see the [Fast Fetch Netwo
 
 ## Related resources
 
-*   [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
-*   [List of supported ad vendors](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
-*   [Blog entry describing launch of Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)
+- [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
+- [List of supported ad vendors](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
+- [Blog entry describing launch of Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

@@ -14,4 +14,4 @@ Jika mengalami kesulitan, lihat file [`static/final.html`](https://github.com/go
 
 ## Langkah berikutnya
 
-Pelajari lebih lanjut tentang kecanggihan dan fleksibilitas dalam pembuatan halaman AMP interaktif di dokumentasi  [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) dan dari [komponen AMP dinamis](../../../../documentation/components/index.html) lainnya.
+Pelajari lebih lanjut tentang kecanggihan dan fleksibilitas dalam pembuatan halaman AMP interaktif di dokumentasi [`amp-bind`](../../../../documentation/components/reference/amp-bind.md) dan dari [komponen AMP dinamis](../../../../documentation/components/index.html) lainnya.

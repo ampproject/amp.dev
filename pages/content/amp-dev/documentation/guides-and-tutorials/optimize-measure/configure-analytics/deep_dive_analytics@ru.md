@@ -12,41 +12,44 @@ $title: Погружение в AMP Analytics
 [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/):
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -56,9 +59,9 @@ $title: Погружение в AMP Analytics
 
 AMP поддерживает два стандартных шаблона сбора данных:
 
-* Передача данных в конечный пункт издателя страницы для внутренних аналитических систем.
-* Передача данных в конечный пункт поставщика услуг для взаимодействия с его решением
-(например, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
+- Передача данных в конечный пункт издателя страницы для внутренних аналитических систем.
+- Передача данных в конечный пункт поставщика услуг для взаимодействия с его решением
+  (например, [Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html), [Chartbeat](http://support.chartbeat.com/docs/), [Google Analytics](https://developers.google.com/analytics/devguides/collection/amp-analytics/)).
 
 Чтобы отправлять данные поставщику аналитических услуг,
 добавьте атрибут `type` в тег [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) и установите для него значение
@@ -99,7 +102,9 @@ AMP поддерживает два стандартных шаблона сбо
 добавление атрибута config в тег [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md):
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 Следующим шагом является создание контента в формате JSON на удаленном URL-адресе.
@@ -325,26 +330,26 @@ AMP заполняет значения переменных в следующе
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

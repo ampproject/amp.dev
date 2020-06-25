@@ -2,12 +2,11 @@
 $title: amp-youtube
 $category@: media
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
-    text: YouTube 동영상을 표시합니다.
+  text: YouTube 동영상을 표시합니다.
 ---
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 [YouTube](https://www.youtube.com/) 동영상을 표시합니다.
 
@@ -44,7 +41,6 @@ teaser:
   </tr>
 </table>
 
-
 ## 예 <a name="example"></a>
 
 반응형 레이아웃에서 예에 표시된 너비와 높이를 사용하면 가로세로 비율이 16:9인 동영상에 맞는 올바른 레이아웃이 생성되어야 합니다.
@@ -54,22 +50,22 @@ teaser:
     data-videoid="mGENRKrdoGY"
     layout="responsive"
     width="480" height="270"></amp-youtube>
-  [/sourcecode]
+[/sourcecode]
 
-  [sourcecode:html]
-  <amp-youtube
+[sourcecode:html]
+<amp-youtube
       id="myLiveChannel"
       data-live-channelid="UCB8Kb4pxYzsDsHxzBfnid4Q"
       width="358"
       height="204"
       layout="responsive">
-    <amp-img
+<amp-img
       src="https://i.ytimg.com/vi/Wm1fWz-7nLQ/hqdefault_live.jpg"
       placeholder
       layout="fill"
       />
-  </amp-youtube>
-  [/sourcecode]
+</amp-youtube>
+[/sourcecode]
 
 ## 속성 <a name="attributes"></a>
 

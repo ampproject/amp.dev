@@ -2,14 +2,12 @@
 $title: amp-video
 $category@: media
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: 替代 HTML5 视频标记。
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 替代 HTML5 `video` 标记；仅用于直接嵌入 HTML5 视频文件。
 
@@ -54,14 +50,15 @@ teaser:
 
 `amp-video` 组件最多接受四种不同类型的 HTML 节点作为子级：
 
-* `source` 标记：和在 HTML `<video>` 标记中一样，您可以添加 `<source>` 标记子级，以指定要播放的不同源媒体文件。
-* `track` 标记，用于在视频中启用字幕。如果字幕轨托管在文档之外的其他来源，那么您必须将 `crossorigin` 属性添加到 `<amp-video>` 标记中。
-* 视频播放前使用的占位符
-* 回调（如果浏览器不支持 HTML5 视频）：一个或零个直接子节点可以具有 `fallback` 属性。如果存在此节点，则在用户的浏览器不支持 HTML5 视频时，则显示此节点及其子级的内容。
+- `source` 标记：和在 HTML `<video>` 标记中一样，您可以添加 `<source>` 标记子级，以指定要播放的不同源媒体文件。
+- `track` 标记，用于在视频中启用字幕。如果字幕轨托管在文档之外的其他来源，那么您必须将 `crossorigin` 属性添加到 `<amp-video>` 标记中。
+- 视频播放前使用的占位符
+- 回调（如果浏览器不支持 HTML5 视频）：一个或零个直接子节点可以具有 `fallback` 属性。如果存在此节点，则在用户的浏览器不支持 HTML5 视频时，则显示此节点及其子级的内容。
 
 #### 示例 <a name="example"></a>
 
 [example preview="inline" playground="true" imports="amp-video"]
+
 ```html
 <amp-video {% if format=='stories'%}autoplay {% endif %}controls
   width="640"
@@ -77,6 +74,7 @@ teaser:
   </div>
 </amp-video>
 ```
+
 [/example]
 
 ## 分析 <a name="analytics"></a>
@@ -170,12 +168,17 @@ teaser:
 此示例同时包含 `poster` 和 `artwork` 属性。`poster` 用作视频播放前的占位符图片，而 `artwork` 是通过 MediaSession API 显示在通知中的图片。
 
 ```html
-<amp-video width="720" height="305" layout="responsive"
-    src="https://yourhost.com/videos/myvideo.mp4"
-    poster="https://yourhost.com/posters/poster.png"
-    artwork="https://yourhost.com/artworks/artwork.png"
-    title="Awesome video" artist="Awesome artist"
-    album="Amazing album">
+<amp-video
+  width="720"
+  height="305"
+  layout="responsive"
+  src="https://yourhost.com/videos/myvideo.mp4"
+  poster="https://yourhost.com/posters/poster.png"
+  artwork="https://yourhost.com/artworks/artwork.png"
+  title="Awesome video"
+  artist="Awesome artist"
+  album="Amazing album"
+>
 </amp-video>
 ```
 

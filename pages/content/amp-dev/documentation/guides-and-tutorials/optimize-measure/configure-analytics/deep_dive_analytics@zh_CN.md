@@ -12,41 +12,44 @@ $title: 深入了解 AMP 分析
 [Google Analytics（分析）](https://developers.google.com/analytics/devguides/collection/amp-analytics/)：
 
 ```html
-<amp-analytics type="googleanalytics" config="https://example.com/analytics.account.config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
-    "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
-  },
-  "vars": {
-    "account": "ABC123"
-  },
-  "extraUrlParams": {
-    "cd1": "AMP"
-  },
-  "triggers": {
-    "trackPageview": {
-      "on": "visible",
-      "request": "pageview"
-    },
-    "trackAnchorClicks": {
-      "on": "click",
-      "selector": "a",
-      "request": "event",
+<amp-analytics
+  type="googleanalytics"
+  config="https://example.com/analytics.account.config.json"
+>
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}",
+        "event": "https://example.com/analytics?eid=${eventId}&elab=${eventLabel}&acct=${account}"
+      },
       "vars": {
-        "eventId": "42",
-        "eventLabel": "clicked on a link"
+        "account": "ABC123"
+      },
+      "extraUrlParams": {
+        "cd1": "AMP"
+      },
+      "triggers": {
+        "trackPageview": {
+          "on": "visible",
+          "request": "pageview"
+        },
+        "trackAnchorClicks": {
+          "on": "click",
+          "selector": "a",
+          "request": "event",
+          "vars": {
+            "eventId": "42",
+            "eventLabel": "clicked on a link"
+          }
+        }
+      },
+      "transport": {
+        "beacon": false,
+        "xhrpost": false,
+        "image": true
       }
     }
-  },
-  'transport': {
-    'beacon': false,
-    'xhrpost': false,
-    'image': true
-  }
-}
-</script>
+  </script>
 </amp-analytics>
 ```
 
@@ -59,9 +62,9 @@ $title: 深入了解 AMP 分析
 
 AMP 支持两种常见的数据收集模式：
 
-* 对于内部分析系统，由发布商拥有的端点获取。
-* 对于采用供应商解决方案（例如，[Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、
-[Chartbeat](http://support.chartbeat.com/docs/) 和 [Google Analytics（分析）](https://developers.google.com/analytics/devguides/collection/amp-analytics/)）的网页，由供应商拥有的端点获取。
+- 对于内部分析系统，由发布商拥有的端点获取。
+- 对于采用供应商解决方案（例如，[Adobe Analytics](https://helpx.adobe.com/marketing-cloud/analytics.html)、
+  [Chartbeat](http://support.chartbeat.com/docs/) 和 [Google Analytics（分析）](https://developers.google.com/analytics/devguides/collection/amp-analytics/)）的网页，由供应商拥有的端点获取。
 
 要将分析数据发送到分析服务提供商，
 请在 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 标记中添加 `type` 属性，并将其值设为
@@ -105,7 +108,9 @@ AMP 支持两种常见的数据收集模式：
 向 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 标记添加 config 属性：
 
 ```html
-<amp-analytics config="https://example.com/analytics.account.config.json">
+<amp-analytics
+  config="https://example.com/analytics.account.config.json"
+></amp-analytics>
 ```
 
 下一步是创建位于远程网址上的 JSON 内容。
@@ -227,7 +232,7 @@ AMP 不会验证同一变量的多种用法。
 ```
 
 [tip type="important"]
- 我们建议仅对 AMP 网页（不对 AMPHTML 广告）采用上述方法。由于 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 的优先级低于网页内容的优先级，因此您最好使用浏览器重定向来跟踪点击次数，以免在统计点击次数的过程中发生遗漏。
+我们建议仅对 AMP 网页（不对 AMPHTML 广告）采用上述方法。由于 [`amp-analytics`](../../../../documentation/components/reference/amp-analytics.md) 的优先级低于网页内容的优先级，因此您最好使用浏览器重定向来跟踪点击次数，以免在统计点击次数的过程中发生遗漏。
 [/tip]
 
 AMP 支持以下触发器配置：
@@ -340,26 +345,26 @@ AMP 会按照优先顺序使用相应值来填充变量：
 
 ```html
 <amp-analytics config="http://example.com/config.json">
-<script type="application/json">
-{
-  "requests": {
-    "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
-  },
-  "vars": {
-    "account": "ABC123",
-    "title": "Homepage"
-  },
-  "triggers": {
-    "some-event": {
-      "on": "visible",
-      "request": "pageview",
+  <script type="application/json">
+    {
+      "requests": {
+        "pageview": "https://example.com/analytics?url=${canonicalUrl}&title=${title}&acct=${account}&clientId=${clientId(cid-scope)}",
+      },
       "vars": {
-        "title": "My homepage",
-        "clientId": "my user"
+        "account": "ABC123",
+        "title": "Homepage"
+      },
+      "triggers": {
+        "some-event": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "My homepage",
+            "clientId": "my user"
+          }
       }
-  }
-}
-</script>
+    }
+  </script>
 </amp-analytics>
 ```
 

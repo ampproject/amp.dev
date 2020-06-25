@@ -10,6 +10,7 @@ Jika mencari tombol login di kode, Anda akan menemukan:
 
 [sourcecode:html]
 <span amp-access="NOT loggedIn" role="button" tabindex="0" amp-access-hide>
+
   <h5>Please login to comment</h5>
   <button on="tap:amp-access.login-sign-in" class="button-primary comment-button">Login</button>
 </span>
@@ -18,6 +19,7 @@ Jika mencari tombol login di kode, Anda akan menemukan:
 Perilaku atribut yang terkait dengan [`amp-access`](../../../../documentation/components/reference/amp-access.md) bergantung pada konfigurasi di seluruh halaman untuk [`amp-access`](../../../../documentation/components/reference/amp-access.md), dalam kasus ini, adalah contoh berikut:
 
 [sourcecode:html]
+
 <script id="amp-access" type="application/json">
   {
     "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
@@ -32,6 +34,7 @@ Perilaku atribut yang terkait dengan [`amp-access`](../../../../documentation/co
     }
   }
 </script>
+
 [/sourcecode]
 
 Titik akhir otorisasi diterapkan sebagai bagian dari AMPByExample. Penayang halaman bertanggung jawab untuk menyediakan titik akhir ini. Dalam kasus sampel ini, untuk mudahnya, kami menerapkan logika dasar sehingga jika permintaan ini diterima, server membaca nilai cookie bernama `ABE_LOGGED_IN`. Jika cookie-nya tidak ada, kami menampilkan respons JSON berisi `loggedIn = false`. Hasilnya, pertama kali pengguna membuka halaman tersebut, permintaan ini akan memberikan `loggedIn = false` dan tombol login akan ditampilkan.
@@ -40,9 +43,9 @@ Jika melihat lagi kode HTML tombol menggunakan `on="tap:amp-access.login-sign-in
 
 [sourcecode:json]
 {
-    "login": {
-    "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
-  }
+"login": {
+"sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL"
+}
 }
 
 [/sourcecode]

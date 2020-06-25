@@ -22,6 +22,7 @@ $title: Поддерживаемые элементы CSS
 а также скрипт специальных элементов для атрибута [`amp-youtube`](../../../../documentation/components/reference/amp-youtube.md). Благодаря этому на многих страницах сайта можно встраивать видео YouTube.
 
 [sourcecode:html] {% raw %}
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -102,8 +103,8 @@ $title: Поддерживаемые элементы CSS
 
 В приведенных ниже примерах атрибут `<property>` должен находиться в белом списке:
 
-* `transition <property> (Also -vendorPrefix-transition)`
-* @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
+- `transition <property> (Also -vendorPrefix-transition)`
+- @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`
 
 Элементы `overflow`, `overflow-y` и `overflow-x` не могут иметь значение <span class="notranslate">“auto”</span> или <span class="notranslate">“scroll”</span>.
 Ни у одного пользовательского элемента в документе AMP не должно быть полосы прокрутки.
@@ -115,12 +116,13 @@ $title: Поддерживаемые элементы CSS
 
 Поставщиков шрифтов можно внести в белый список только в том случае, если они поддерживают интеграцию исключительно с CSS и используют протокол HTTPS. Сейчас в этом списке два поставщика:
 
-* [https://fast.fonts.net](https://fast.fonts.net)
-* [https://fonts.googleapis.com](https://fonts.googleapis.com)
+- [https://fast.fonts.net](https://fast.fonts.net)
+- [https://fonts.googleapis.com](https://fonts.googleapis.com)
 
 Пример тега со ссылкой на поставщика шрифтов, внесенного в белый список (Google Fonts):
 
 [sourcecode:html]
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 [/sourcecode]
 

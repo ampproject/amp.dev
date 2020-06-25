@@ -54,13 +54,13 @@ Os anúncios HTML para AMP são flexíveis e dinâmicos, permitindo muitos forma
 
 ### Editores
 
-Para veicular seus formatos de anúncio de venda direta em HTML para AMP, é preciso criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP](a4a_spec.md) e exibi-los usando um servidor de anúncios que seja compatível com veiculação de anúncios HTML para AMP.  Atualmente, os servidores de anúncio compatíveis com anúncios HTML para AMP são os seguintes:
+Para veicular seus formatos de anúncio de venda direta em HTML para AMP, é preciso criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP](a4a_spec.md) e exibi-los usando um servidor de anúncios que seja compatível com veiculação de anúncios HTML para AMP. Atualmente, os servidores de anúncio compatíveis com anúncios HTML para AMP são os seguintes:
 
-*   DoubleClick for Publishers
-*   TripleLift
-*   Dianomi
-*   Adzerk
-*   Google AdSense
+- DoubleClick for Publishers
+- TripleLift
+- Dianomi
+- Adzerk
+- Google AdSense
 
 Para exibir anúncios HTML para AMP usando seus canais indiretos (por exemplo, exchange, SSP etc.), escolha uma rede de publicidade ou um servidor de anúncios compatível na [lista a seguir](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md).
 
@@ -68,35 +68,35 @@ Para exibir anúncios HTML para AMP usando seus canais indiretos (por exemplo, e
 
 As agências de criação precisam criar os anúncios de acordo com as [Especificações de anúncio HTML para AMP](a4a_spec.md). Para ver exemplos e se inspirar, confira os modelos de anúncios HTML para AMP de código aberto no site [Examples](../../../documentation/examples/index.html). Como alternativa, use uma das seguintes ferramentas para criar os anúncios HTML para AMP:
 
-*  [AdCreator da Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html) (em inglês)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate (*em breve*)
+- [AdCreator da Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html) (em inglês)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate (_em breve_)
 
 ### Redes e servidores de anúncios
 
-Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma extensão [`amp-ad`](../../../documentation/components/reference/amp-ad.md) para sua rede que use a [implementação de solicitação de anúncio Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) se você ainda não tiver uma.  Consulte o artigo sobre [integração com AMP para veicular anúncios gráficos](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) para ver mais detalhes.  Tenha em mente que não é necessário fazer uma integração especial para veicular HTML para AMP em páginas não AMP.
+Para exibir anúncios HTML para AMP em páginas AMP, será preciso criar uma extensão [`amp-ad`](../../../documentation/components/reference/amp-ad.md) para sua rede que use a [implementação de solicitação de anúncio Fast Fetch](https://github.com/ampproject/amphtml/blob/master/ads/google/a4a/docs/Network-Impl-Guide.md) (em inglês) se você ainda não tiver uma. Consulte o artigo sobre [integração com AMP para veicular anúncios gráficos](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md) para ver mais detalhes. Tenha em mente que não é necessário fazer uma integração especial para veicular HTML para AMP em páginas não AMP.
 
 ## Criar anúncios HTML para AMP
 
-**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md).  Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](../../../documentation/examples/documentation/amp-ad.html).
+**Do zero**: os anúncios HTML para AMP precisam seguir as [especificações de anúncios HTML para AMP](../../../documentation/guides-and-tutorials/contribute/adnetwork_integration.md). Para ver demonstrações e exemplos, confira os modelos de anúncios HTML para AMP de código aberto no site [AMP by Example](../../../documentation/examples/documentation/amp-ad.html).
 
 **Usando ferramentas**: use qualquer uma das seguintes ferramentas se você quiser gerar criativos HTML para AMP:
 
-*  [AdCreator da Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html) (em inglês)
-*  [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
-*  Adobe Animate (*em breve*)
+- [AdCreator da Celtra](http://www.prnewswire.com/news-releases/celtra-partners-with-the-amp-project-showcases-amp-ad-creation-at-google-io-event-300459514.html) (em inglês)
+- [Google Web Designer](https://support.google.com/webdesigner/answer/7529856)
+- Adobe Animate (_em breve_)
 
 ### Validar a sintaxe do anúncio HTML para AMP
 
 Depois de criar seu anúncio HTML para AMP, certifique-se de que ele está usando a sintaxe HTML para AMP correta. Dependendo do seu ambiente de desenvolvimento, há algumas opções para validar os anúncios HTML para AMP:
 
-*   Use o módulo [NPM validador de AMP](https://www.npmjs.com/package/amphtml-validator) para validação da integração no CI de criação.
-*   Use o [validador de AMP](https://validator.ampproject.org/) para fazer um teste isolado.
-*   Estabeleça uma parceria com o [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) (em inglês) e use o ponto de extremidade público do validador que ele oferece.
+- Use o módulo [NPM validador de AMP](https://www.npmjs.com/package/amphtml-validator) para validação da integração no CI de criação.
+- Use o [validador de AMP](https://validator.ampproject.org/) para fazer um teste isolado.
+- Estabeleça uma parceria com o [Cloudflare](https://blog.cloudflare.com/amp-validator-api/) (em inglês) e use o ponto de extremidade público do validador que ele oferece.
 
 [tip type="note"]
 
-Para renderizar rapidamente os anúncios HTML para AMP em páginas AMP (ou seja, usando a renderização preferencial no Fast Fetch), a sintaxe precisa estar correta.  Se ela não for válida, o anúncio ainda será renderizado, mas isso não acontecerá tão rápido.
+Para renderizar rapidamente os anúncios HTML para AMP em páginas AMP (ou seja, usando a renderização preferencial no Fast Fetch), a sintaxe precisa estar correta. Se ela não for válida, o anúncio ainda será renderizado, mas isso não acontecerá tão rápido.
 
 [/tip]
 
@@ -124,6 +124,6 @@ Sim. Consulte [`amp-ad-exit`](../../../documentation/components/reference/amp-ad
 
 #### Não encontro o que preciso. Onde posso tirar dúvidas?
 
-*   [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) é a maneira recomendada de encontrar as respostas para suas dúvidas sobre AMP. Como os membros da comunidade do Projeto AMP monitoram regularmente o Stack Overflow, é provável que por meio dele você receba as respostas mais rápidas para suas perguntas.
-*   Participe do canal [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) para conhecer soluções e encontrar respostas.
-*   Se você encontrar um bug na AMP ou tiver uma solicitação de recurso, consulte o artigo sobre [relatar problemas com a AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) (em inglês) para ver mais informações sobre como comunicar um problema.
+- [Stack Overflow](http://stackoverflow.com/questions/tagged/amp-html) é a maneira recomendada de encontrar as respostas para suas dúvidas sobre AMP. Como os membros da comunidade do Projeto AMP monitoram regularmente o Stack Overflow, é provável que por meio dele você receba as respostas mais rápidas para suas perguntas.
+- Participe do canal [Slack #a4a-discuss](https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877) para conhecer soluções e encontrar respostas.
+- Se você encontrar um bug na AMP ou tiver uma solicitação de recurso, consulte o artigo sobre [relatar problemas com a AMP](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md#reporting-issues-with-amp) (em inglês) para ver mais informações sobre como comunicar um problema.

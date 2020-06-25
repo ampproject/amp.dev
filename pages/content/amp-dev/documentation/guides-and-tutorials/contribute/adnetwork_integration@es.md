@@ -22,7 +22,7 @@ Como servidor de anuncios, puedes integrar AMP para publicar anuncios HTML tradi
 Como servidor de anuncios, los editores admitidos incluyen una biblioteca JavaScript proporcionada por ti (el servidor) y colocan distintos "fragmentos de anuncios" que se basan en la biblioteca JavaScript para obtener anuncios y renderizarlos en el sitio web del editor. Dado que AMP no permite que los editores ejecuten JavaScript de forma arbitraria, deberás aportar el código AMP (de código abierto) para permitir que la etiqueta [`amp-ad`](../../../documentation/components/reference/amp-ad.md) solicite anuncios de tu servidor de anuncios.
 
 [tip type="note"]
-Puedes utilizar esta implementación [`amp-ad`](../../../documentation/components/reference/amp-ad.md)  para mostrar anuncios HTML tradicionales **y** anuncios AMP HTML.
+Puedes utilizar esta implementación [`amp-ad`](../../../documentation/components/reference/amp-ad.md) para mostrar anuncios HTML tradicionales **y** anuncios AMP HTML.
 [/tip]
 
 Por ejemplo, se puede invocar el servidor A9 de Amazon con esta sintaxis:
@@ -36,7 +36,7 @@ Por ejemplo, se puede invocar el servidor A9 de Amazon con esta sintaxis:
 </amp-ad>
 '''
 
-En este código, el atributo "type" especifica la red publicitaria, que en este caso es A9. Los atributos "data-*" dependen de los parámetros que el servidor A9 de Amazon espera para publicar un anuncio. El archivo ['a9.js'](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) te muestra cómo se asignan los parámetros para hacer una llamada JavaScript a la URL del servidor A9. Los parámetros correspondientes dados por la etiqueta [`amp-ad`](../../../documentation/components/reference/amp-ad.md) se añaden a la URL para devolver un anuncio.
+En este código, el atributo "type" especifica la red publicitaria, que en este caso es A9. Los atributos "data-\*" dependen de los parámetros que el servidor A9 de Amazon espera para publicar un anuncio. El archivo ['a9.js'](https://github.com/ampproject/amphtml/blob/master/ads/a9.js) te muestra cómo se asignan los parámetros para hacer una llamada JavaScript a la URL del servidor A9. Los parámetros correspondientes dados por la etiqueta [`amp-ad`](../../../documentation/components/reference/amp-ad.md) se añaden a la URL para devolver un anuncio.
 
 Para obtener más información sobre cómo crear una integración [`amp-ad`](../../../documentation/components/reference/amp-ad.md), consulta [Integrar redes publicitarias a AMP](https://github.com/ampproject/amphtml/blob/master/ads/README.md).
 
@@ -54,6 +54,6 @@ Para publicar anuncios AMP HTML desde tu servidor de anuncios, debes proporciona
 
 ## Recursos relacionados
 
-*   [Directorio GitHub de todas las extensiones amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
-*   [Lista de los proveedores de anuncios compatibles](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
-*   [Entrada de blog que describe el lanzamiento de Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)
+- [Directorio GitHub de todas las extensiones amp-ad](https://github.com/ampproject/amphtml/tree/master/ads)
+- [Lista de los proveedores de anuncios compatibles](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
+- [Entrada de blog que describe el lanzamiento de Fast Fetch](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

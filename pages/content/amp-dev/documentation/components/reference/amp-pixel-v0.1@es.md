@@ -2,14 +2,12 @@
 $title: amp-pixel
 $category@: ads-analytics
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: Píxel de seguimiento para contar las páginas vistas.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -51,8 +47,7 @@ El componente `amp-pixel` se comporta como un simple píxel de seguimiento `img`
 En este ejemplo básico, `amp-pixel` envía una solicitud GET simple a la URL especificada e ignora el resultado.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/tracker/foo" layout="nodisplay"></amp-pixel>
 ```
 
 [tip type="note"]
@@ -70,9 +65,11 @@ URL que dirige a un punto de conexión remoto; debe comenzar por el protocolo `h
 Es similar al atributo `referrerpolicy` de `<img>`, pero el único valor aceptado en este caso es `no-referrer`. Si se define `referrerpolicy=no-referrer`, el encabezado `referrer` se elimina de la solicitud HTTP.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"
-    referrerpolicy="no-referrer"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/tracker/foo"
+  layout="nodisplay"
+  referrerpolicy="no-referrer"
+></amp-pixel>
 ```
 
 ##### allow-ssr-img (opcional) <a name="allow-ssr-img-optional"></a>
@@ -92,8 +89,7 @@ Para obtener más información, consulta la [guía de sustituciones](https://git
 En el siguiente ejemplo, se puede hacer una solicitud a algo similar a `https://foo.com/pixel?0.8390278471201`. Es decir, se genera un valor RANDOM de forma aleatoria al producirse cada impresión.
 
 ```html
-<amp-pixel src="https://foo.com/pixel?RANDOM"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/pixel?RANDOM" layout="nodisplay"></amp-pixel>
 ```
 
 ## Estilo <a name="styling"></a>

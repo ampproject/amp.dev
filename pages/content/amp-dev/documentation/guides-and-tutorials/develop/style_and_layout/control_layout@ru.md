@@ -56,17 +56,17 @@ $title: Поддерживаемые макеты
 
 Если атрибуты `width` и `height` не указаны, то в некоторых случаях среда выполнения AMP может задать им значения по умолчанию согласно следующим правилам:
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): ширина и высота принимают значение, равное 0.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): значения ширины и высоты меняются соответствии с типом браузера.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): ширина и высота принимают значение, равное 0.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): значения ширины и высоты меняются соответствии с типом браузера.
 
 ### Что происходит, если атрибут layout не указан? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
 Поведение макета определяется следующими правилами:
 
-* Если атрибут `height` используется, а атрибут `width` отсутствует или имеет значение `auto`, то применяется вариант `fixed-height`.
-* Если наряду с атрибутом `width` или `height` используется `sizes`, то применяется вариант `responsive`.
-* Если используется атрибут `width` или `height`, то применяется вариант `fixed`.
-* Если атрибуты `width` и `height` отсутствуют, то применяется вариант `container`.
+- Если атрибут `height` используется, а атрибут `width` отсутствует или имеет значение `auto`, то применяется вариант `fixed-height`.
+- Если наряду с атрибутом `width` или `height` используется `sizes`, то применяется вариант `responsive`.
+- Если используется атрибут `width` или `height`, то применяется вариант `fixed`.
+- Если атрибуты `width` и `height` отсутствуют, то применяется вариант `container`.
 
 ## Использование атрибутов @media и media
 
@@ -114,9 +114,9 @@ $title: Поддерживаемые макеты
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w >
+src="wide.jpg"
+srcset="wide.jpg" 640w,
+"narrow.jpg" 320w >
 </amp-img>
 [/sourcecode]
 
@@ -132,10 +132,10 @@ $title: Поддерживаемые макеты
 
 [sourcecode:html]
 <amp-img
-    src="wide.jpg"
-    srcset="wide.jpg" 640w,
-           "narrow.jpg" 320w
-    sizes="(min-width: 650px) 50vw, 100vw" >
+src="wide.jpg"
+srcset="wide.jpg" 640w,
+"narrow.jpg" 320w
+sizes="(min-width: 650px) 50vw, 100vw" >
 </amp-img>
 [/sourcecode]
 
@@ -156,7 +156,7 @@ $title: Поддерживаемые макеты
 
 [sourcecode:html]
 <amp-anim src="animated.gif" width=466 height=355 layout="responsive" >
-    <amp-img placeholder src="preview.png" layout="fill"></amp-img>
+<amp-img placeholder src="preview.png" layout="fill"></amp-img>
 </amp-anim>
 [/sourcecode]
 
@@ -173,6 +173,7 @@ $title: Поддерживаемые макеты
 [sourcecode:html]
 <amp-video width=400 height=300 src="https://yourhost.com/videos/myvideo.mp4"
     poster="myvideo-poster.jpg" >
+
   <div fallback>
         <p>Your browser doesn’t support HTML5 video.</p>
   </div>

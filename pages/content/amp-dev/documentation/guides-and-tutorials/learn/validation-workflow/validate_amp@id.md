@@ -4,7 +4,7 @@ $title: Memvalidasi halaman AMP
 
 [video src='https://www.youtube.com/watch?v=npum8JsITQE' caption='Tonton video kami tentang berbagai opsi validasi.']
 
-Keunggulan utama AMP terletak bukan hanya pada membuat halaman cepat dimuat, namun juga membuat halaman cepat dimuat dengan cara yang dapat *divalidasi*. Dengan begitu, pihak ketiga seperti Twitter, Instagram, atau Google Penelusuran dapat merasa puas dengan penayangan halaman AMP kepada pembaca melalui cara yang semakin menarik.
+Keunggulan utama AMP terletak bukan hanya pada membuat halaman cepat dimuat, namun juga membuat halaman cepat dimuat dengan cara yang dapat _divalidasi_. Dengan begitu, pihak ketiga seperti Twitter, Instagram, atau Google Penelusuran dapat merasa puas dengan penayangan halaman AMP kepada pembaca melalui cara yang semakin menarik.
 
 ## Bagaimana cara memeriksa validitas halaman AMP saya?
 
@@ -18,9 +18,9 @@ Selain memvalidasi AMP, ada baiknya Anda juga mengonfirmasi bahwa dokumen AMP An
 
 Validator AMP hadir sepaket dengan library JS AMP, sehingga library ini tersedia di setiap halaman AMP tanpa perlu diotak-atik. Untuk memvalidasi:
 
-  1. Buka halaman AMP di browser.
-  2. Tambahkan "`#development=1`" ke akhir URL, misalnya, `http://localhost:8000/released.amp.html#development=1`.
-  3. Buka [konsol DevTools Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) dan periksa apakah ada error validasi.
+1. Buka halaman AMP di browser.
+2. Tambahkan "`#development=1`" ke akhir URL, misalnya, `http://localhost:8000/released.amp.html#development=1`.
+3. Buka [konsol DevTools Chrome](https://developers.google.com/web/tools/chrome-devtools/debug/console/) dan periksa apakah ada error validasi.
 
 Error Developer Console akan terlihat seperti ini:
 
@@ -91,7 +91,7 @@ Ekstensi Validator AMP untuk
 
 ### Paket NPM untuk CI
 
-Sebagai bagian dari pipeline build dan pengujian, Anda dapat mengintegrasikan validasi AMP melalui paket NPM Validator AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) atau [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (plugin gulp).  Misalnya, Anda dapat menggunakan paket NPM Validator AMP untuk uji integrasi atau dalam tugas terjadwal untuk memverifikasi halaman AMP produksi.
+Sebagai bagian dari pipeline build dan pengujian, Anda dapat mengintegrasikan validasi AMP melalui paket NPM Validator AMP: [amphtml-validator](https://www.npmjs.com/package/amphtml-validator) atau [gulp-amphtml-validator](https://www.npmjs.com/package/gulp-amphtml-validator) (plugin gulp). Misalnya, Anda dapat menggunakan paket NPM Validator AMP untuk uji integrasi atau dalam tugas terjadwal untuk memverifikasi halaman AMP produksi.
 
 ##### Contoh: Memvalidasi file HTML AMP
 
@@ -105,39 +105,40 @@ var fs = require('fs');
 amphtmlValidator.getInstance().then(function (validator) {
   var input = fs.readFileSync('index.html', 'utf8');
   var result = validator.validateString(input);
-  ((result.status === 'PASS') ? console.log : console.error)(result.status);
+  (result.status === 'PASS' ? console.log : console.error)(result.status);
   for (var ii = 0; ii < result.errors.length; ii++) {
     var error = result.errors[ii];
-    var msg = 'line ' + error.line + ', col ' + error.col + ': ' + error.message;
+    var msg =
+      'line ' + error.line + ', col ' + error.col + ': ' + error.message;
     if (error.specUrl !== null) {
       msg += ' (see ' + error.specUrl + ')';
     }
-    ((error.severity === 'ERROR') ? console.error : console.warn)(msg);
+    (error.severity === 'ERROR' ? console.error : console.warn)(msg);
   }
 });
 ```
 
 #####Contoh: Menggunakan tugas gulp untuk memvalidasi HTML AMP
 
-Dalam contoh ini, kita menggunakan tugas gulp untuk memvalidasi semua file HTML AMP.  Jika ada error validasi AMP, tugas akan keluar dengan kode error (1).
+Dalam contoh ini, kita menggunakan tugas gulp untuk memvalidasi semua file HTML AMP. Jika ada error validasi AMP, tugas akan keluar dengan kode error (1).
 
 ```javascript
 const gulp = require('gulp');
 const gulpAmpValidator = require('gulp-amphtml-validator');
 
 const paths = {
-  src: 'src/*.html'
+  src: 'src/*.html',
 };
 
 gulp.task('amphtml:validate', () => {
-  return gulp.src(paths.src)
+  return gulp
+    .src(paths.src)
     .pipe(gulpAmpValidator.validate())
     .pipe(gulpAmpValidator.format())
     .pipe(gulpAmpValidator.failAfterError());
 });
 
-gulp.task('default', ['amphtml:validate'], function () {
-});
+gulp.task('default', ['amphtml:validate'], function () {});
 ```
 
 ### Fitur Command-Line
@@ -147,13 +148,13 @@ Anda dapat memvalidasi file HTML AMP menggunakan [fitur command-line validator H
 Memulai:
 
 1.  Pastikan Anda memiliki [Node.js dengan pengelola paket
-'npm'](https://docs.npmjs.com/getting-started/installing-node) dalam sistem Anda.
+    'npm'](https://docs.npmjs.com/getting-started/installing-node) dalam sistem Anda.
 2.  Instal [fitur command-line validator HTML AMP](https://www.npmjs.com/package/amphtml-validator) dengan menjalankan perintah berikut: `npm install -g amphtml-validator`.
 
 Sekarang, mari kita validasi halaman HTML AMP yang sebenarnya:
 
 [sourcecode:console]
-$ amphtml-validator https://amp.dev/
+\$ amphtml-validator https://amp.dev/
 https://amp.dev/: PASS
 [/sourcecode]
 
@@ -161,7 +162,7 @@ Ternyata halaman ini adalah HTML AMP yang valid. Mari kita coba halaman yang tid
 [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html). Untuk menjalankan perintah `amphtml-validator`, Anda dapat memasukkan URL halaman atau nama file lokal. Download dan simpan [several_errors.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/several_errors.html) ke file, lalu jalankan:
 
 [sourcecode:console]
-$ amphtml-validator several_errors.html
+\$ amphtml-validator several_errors.html
 several_errors.html:23:2 The attribute 'charset' may not appear in tag 'meta name= and content='.
 several_errors.html:26:2 The tag 'script' is disallowed except in specific forms.
 several_errors.html:32:2 The mandatory attribute 'height' is missing in tag 'amp-img'. (see {{g.doc('/content/amp-dev/documentation/components/reference/amp-img.md', locale=doc.locale).url.path}})
@@ -177,7 +178,7 @@ dan memungkinkan Anda langsung menuju ke error pada file asli.
 Sebagai titik awal yang baik untuk membuat halaman AMP Anda sendiri, pertimbangkan [minimum_valid_amp.html](https://raw.githubusercontent.com/ampproject/amphtml/master/validator/testdata/feature_tests/minimum_valid_amp.html):
 
 [sourcecode:console]
-$ amphtml-validator minimum_valid_amp.html
+\$ amphtml-validator minimum_valid_amp.html
 minimum_valid_amp.html: PASS
 [/sourcecode]
 
@@ -186,14 +187,14 @@ warna, mencetak output JSON, atau menjalankan versi tertentu dari
 JavaScript validator (secara default, fitur ini menjalankan skrip terbaru yang dipublikasikan).
 
 [sourcecode:console]
-$ amphtml-validator --help
+\$ amphtml-validator --help
 
-  Usage: index [options] <fileOrUrlOrMinus...>
+Usage: index [options] <fileOrUrlOrMinus...>
 
-  Validates the files or urls provided as arguments. If "-" is
-  specified, reads from stdin instead.
+Validates the files or urls provided as arguments. If "-" is
+specified, reads from stdin instead.
 
-  Options:
+Options:
 
     -h, --help                  output usage information
     -V, --version               output the version number
@@ -208,6 +209,7 @@ $ amphtml-validator --help
               supporting color).
       "json"  emits json corresponding to the ValidationResult
               message in validator.proto.
+
 [/sourcecode]
 
 ## Apa yang terjadi jika halaman saya tidak valid?
@@ -226,37 +228,37 @@ Kebanyakan error validasi cukup mudah dideteksi dan diperbaiki. Perhatikan tag H
 
 yang menyebabkan error validasi AMP seperti ditunjukkan pada fitur lain berikut:
 
-* Developer Console Browser
-<amp-img src="/static/img/docs/validator_console_imgerror.png"
-         width="696" height="30" layout="responsive"
-         alt="Error AMP: Tag 'img' mungkin hanya muncul sebagai turunan dari tag
-         'noscript'. Mungkin maksud Anda 'amp-img'? line 11, column 2">
-</amp-img>
+- Developer Console Browser
+  <amp-img src="/static/img/docs/validator_console_imgerror.png"
+           width="696" height="30" layout="responsive"
+           alt="Error AMP: Tag 'img' mungkin hanya muncul sebagai turunan dari tag
+           'noscript'. Mungkin maksud Anda 'amp-img'? line 11, column 2">
+  </amp-img>
 
-* Antarmuka Web
-<amp-img src="/static/img/docs/validator_webui_imgerror.png"
-         width="676" height="58" layout="responsive"
-         alt="Error AMP: Tag 'img' mungkin hanya muncul sebagai turunan dari tag
-         'noscript'. Mungkin maksud Anda 'amp-img'? line 11, column 2">
-</amp-img>
+- Antarmuka Web
+  <amp-img src="/static/img/docs/validator_webui_imgerror.png"
+           width="676" height="58" layout="responsive"
+           alt="Error AMP: Tag 'img' mungkin hanya muncul sebagai turunan dari tag
+           'noscript'. Mungkin maksud Anda 'amp-img'? line 11, column 2">
+  </amp-img>
 
-* Ekstensi Browser
-<amp-img src="/static/img/docs/validator_extension_imgerror.png"
-         width="724" height="108" layout="responsive"
-         alt="Error AMP: Tag 'img' mungkin hanya muncul sebagai turunan dari tag
-         'noscript'. Mungkin maksud Anda 'amp-img'? line 11, column 2">
-</amp-img>
+- Ekstensi Browser
+  <amp-img src="/static/img/docs/validator_extension_imgerror.png"
+           width="724" height="108" layout="responsive"
+           alt="Error AMP: Tag 'img' mungkin hanya muncul sebagai turunan dari tag
+           'noscript'. Mungkin maksud Anda 'amp-img'? line 11, column 2">
+  </amp-img>
 
 Setiap fitur memberikan beberapa informasi:
 
-  1. Lokasi (baris dan kolom) dalam dokumen HTML tempat error terjadi,
-     yang pada beberapa antarmuka dapat diklik untuk menyorot lokasi tersebut. Pada
-     kasus ini, masalah terjadi di baris 11, kolom 2.
-  2. Baris teks yang menjelaskan error itu. Pada kasus ini, teks menunjukkan bahwa
-     kita menggunakan tag `<img>`, saat seharusnya menggunakan tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
-  3. Link ke dokumen yang relevan tentang error itu. Pada kasus ini,
-     dokumentasi untuk tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Tidak semua error menghasilkan
-     link dokumentasi.
+1. Lokasi (baris dan kolom) dalam dokumen HTML tempat error terjadi,
+   yang pada beberapa antarmuka dapat diklik untuk menyorot lokasi tersebut. Pada
+   kasus ini, masalah terjadi di baris 11, kolom 2.
+2. Baris teks yang menjelaskan error itu. Pada kasus ini, teks menunjukkan bahwa
+   kita menggunakan tag `<img>`, saat seharusnya menggunakan tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
+3. Link ke dokumen yang relevan tentang error itu. Pada kasus ini,
+   dokumentasi untuk tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md). Tidak semua error menghasilkan
+   link dokumentasi.
 
 Dengan membaca ulang [spek](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md) secara cermat, kita akan tahu bahwa kita menggunakan tag`<img>`, saat seharusnya menggunakan tag [`<amp-img>`](../../../../documentation/components/reference/amp-img.md).
 

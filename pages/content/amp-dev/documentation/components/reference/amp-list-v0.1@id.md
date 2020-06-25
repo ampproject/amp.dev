@@ -2,14 +2,12 @@
 $title: amp-list
 $category@: dynamic-content
 formats:
-- websites
-- email
-- stories
+  - websites
+  - email
+  - stories
 teaser:
   text: Dynamically downloads data and creates list items using a template.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Mengambil konten secara dinamis dari endpoint CORS JSON dan merendernya menggunakan template yang disediakan.
 
@@ -56,61 +52,68 @@ Endpoint Anda harus mengimplementasikan persyaratan yang ditentukan dalam spesif
 
 Anda dapat menentukan template melalui salah satu dari dua cara berikut:
 
-* atribut `template` yang mereferensikan ID dari elemen `template` atau `script` yang sudah ada.
-* elemen `template` atau `script` yang bersarang langsung di dalam elemen `amp-list`.
+- atribut `template` yang mereferensikan ID dari elemen `template` atau `script` yang sudah ada.
+- elemen `template` atau `script` yang bersarang langsung di dalam elemen `amp-list`.
 
 Untuk penjelasan selengkapnya tentang template, lihat [Template HTML AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-html-templates.md).
 
-*Contoh: Menampilkan daftar dinamis*
+_Contoh: Menampilkan daftar dinamis_
 
 Pada contoh berikut, kami mengambil data JSON yang berisi URL dan judul, dan merender konten dalam [template amp-mustache](amp-mustache.md) bersarang.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="100"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="url-entry">
       <a href="{{url}}">{{title}}</a>
     </div>
-  {% endraw %}</template>
+    {% endraw %}</template
+  >
 </amp-list>
 ```
+
 [/example]
 
 Berikut ini file JSON yang kami gunakan:
 
 ```json
 {
- "items": [
-   {
-     "title": "AMP YouTube Channel",
-     "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
-   },
-   {
-     "title": "AMP.dev",
-     "url": "https://amp.dev/"
-   },
-   {
-     "title": "AMP Validator",
-     "url": "https://validator.amp.dev/"
-   },
-   {
-     "title": "AMP Playground",
-     "url": "https://playground.amp.dev/"
-   }
- ]
+  "items": [
+    {
+      "title": "AMP YouTube Channel",
+      "url": "https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw"
+    },
+    {
+      "title": "AMP.dev",
+      "url": "https://amp.dev/"
+    },
+    {
+      "title": "AMP Validator",
+      "url": "https://validator.amp.dev/"
+    },
+    {
+      "title": "AMP Playground",
+      "url": "https://playground.amp.dev/"
+    }
+  ]
 }
 ```
+
 Berikut ini cara kami menata gaya konten yang diambil:
 
 ```css
-amp-list div[role="list"] {
+amp-list div[role='list'] {
   display: grid;
   grid-gap: 0.5em;
-  }
+}
 ```
 
 ## Perilaku <a name="behavior"></a>
@@ -123,7 +126,7 @@ Secara default, `<amp-list>` menambahkan peran ARIA `list` ke elemen daftar dan 
 
 ### Pengelompokan XHR <a name="xhr-batching"></a>
 
-AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat menggunakan satu permintaan data JSON sebagai sumber data untuk banyak konsumen (misalnya beberapa elemen `<amp-list>`) di sebuah halaman AMP.  Sebagai contoh, jika `<amp-list>` membuat XHR ke sebuah endpoint, sementara XHR sedang dalam periode tayang, semua XHR berikutnya ke endpoint yang sama tidak akan terpicu dan sebaliknya akan menampilkan hasil dari XHR pertama.
+AMP mengelompokkan XMLHttpRequest (XHR) ke endpoint JSON, artinya, Anda dapat menggunakan satu permintaan data JSON sebagai sumber data untuk banyak konsumen (misalnya beberapa elemen `<amp-list>`) di sebuah halaman AMP. Sebagai contoh, jika `<amp-list>` membuat XHR ke sebuah endpoint, sementara XHR sedang dalam periode tayang, semua XHR berikutnya ke endpoint yang sama tidak akan terpicu dan sebaliknya akan menampilkan hasil dari XHR pertama.
 
 Dalam `<amp-list>`, Anda dapat menggunakan atribut [`items`](#items-optional) untuk merender sebagian respons JSON, yang memungkinkan Anda untuk memiliki beberapa elemen `<amp-list>` yang merender konten berbeda tetapi menggunakan satu XHR yang sama.
 
@@ -131,30 +134,33 @@ Dalam `<amp-list>`, Anda dapat menggunakan atribut [`items`](#items-optional) un
 
 Secara opsional, elemen `<amp-list>` dapat memuat elemen dengan atribut `overflow`. Elemen ini ditampilkan jika AMP Runtime tidak dapat mengubah ukuran elemen `<amp-list>` seperti yang diminta.
 
-*Contoh: Menampilkan overflow saat daftar memerlukan lebih banyak ruang*
+_Contoh: Menampilkan overflow saat daftar memerlukan lebih banyak ruang_
 
 Pada contoh berikut, kami menampilkan daftar gambar dan judul. Karena konten `<amp-list>` memerlukan lebih banyak ruang dibandingkan ruang yang tersedia, AMP Runtime akan menampilkan elemen overflow.
 
 [example preview="inline" playground="true" imports="amp-list" template="amp-mustache"]
+
 ```html
-<amp-list width="auto"
+<amp-list
+  width="auto"
   height="140"
   layout="fixed-height"
-  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json">
-  <template type="amp-mustache">{% raw %}
+  src="{{server_for_email}}/static/inline-examples/data/amp-list-data.json"
+>
+  <template type="amp-mustache"
+    >{% raw %}
     <div class="image-entry">
-      <amp-img src="{{imageUrl}}"
-        width="100"
-        height="75"></amp-img>
+      <amp-img src="{{imageUrl}}" width="100" height="75"></amp-img>
       <span class="image-title">{{title}}</span>
     </div>
-  {% endraw %}</template>
-  <div overflow
-    class="list-overflow">
+    {% endraw %}</template
+  >
+  <div overflow class="list-overflow">
     See more
   </div>
 </amp-list>
 ```
+
 [/example]
 
 Berikut ini CSS untuk `overflow`:
@@ -165,15 +171,15 @@ Berikut ini CSS untuk `overflow`:
   bottom: 0;
   left: 0;
   right: 0;
-  }
+}
 ```
 
 ### Placeholder dan fallback <a name="placeholder-and-fallback"></a>
 
 Secara opsional, `<amp-list>` mendukung placeholder dan/atau fallback.
 
-* *Placeholder* adalah elemen turunan dengan atribut `placeholder`. Elemen ini ditampilkan hingga `<amp-list>` berhasil dimuat. Jika fallback juga disediakan, placeholder disembunyikan saat `<amp-list>` gagal dimuat.
-* *Fallback* adalah elemen turunan dengan atribut `fallback`. Elemen ini ditampilkan saat `<amp-list>` gagal dimuat.
+- _Placeholder_ adalah elemen turunan dengan atribut `placeholder`. Elemen ini ditampilkan hingga `<amp-list>` berhasil dimuat. Jika fallback juga disediakan, placeholder disembunyikan saat `<amp-list>` gagal dimuat.
+- _Fallback_ adalah elemen turunan dengan atribut `fallback`. Elemen ini ditampilkan saat `<amp-list>` gagal dimuat.
 
 Pelajari lebih lanjut di [Placeholder &amp; Fallback](../../../documentation/guides-and-tutorials/develop/style_and_layout/placeholders.md). Perhatikan bahwa sebuah elemen turunan tidak boleh menjadi placeholder sekaligus fallback.
 
@@ -206,9 +212,13 @@ Dalam beberapa kasus, `<amp-list>` mungkin perlu berubah ukuran sesuai interaksi
 
 ```html
 {% raw %}<button on="list.changeToLayoutContainer()">Show Grid</button>
-<amp-list id="list"
-          width="396" height="80" layout="responsive"
-          src="/test/manual/amp-list-data.json?RANDOM">
+<amp-list
+  id="list"
+  width="396"
+  height="80"
+  layout="responsive"
+  src="/test/manual/amp-list-data.json?RANDOM"
+>
   <template type="amp-mustache">
     {{title}}
   </template>
@@ -234,8 +244,8 @@ Atribut `src` dapat dihilangkan jika atribut `[src]` ada. Hal ini berguna saat m
 
 Menentukan opsi `credentials` seperti yang ditentukan oleh [Fetch API](https://fetch.spec.whatwg.org/).
 
-* Nilai yang didukung: `omit`, `include`
-* Default: `omit`
+- Nilai yang didukung: `omit`, `include`
+- Default: `omit`
 
 Untuk mengirim kredensial, teruskan nilai `include`. Jika nilai ini ditetapkan, respons harus mengikuti [panduan keamanan CORS AMP](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests.md#cors-security-in-amp).
 
@@ -243,8 +253,10 @@ Berikut ini contoh yang menentukan kredensial include untuk menampilkan konten y
 
 ```html
 {% raw %}
-<amp-list credentials="include"
-          src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)">
+<amp-list
+  credentials="include"
+  src="<%host%>/json/product.json?clientId=CLIENT_ID(myCookieId)"
+>
   <template type="amp-mustache">
     Your personal offer: ${{price}}
   </template>
@@ -257,11 +269,12 @@ Berikut ini contoh yang menentukan kredensial include untuk menampilkan konten y
 Menentukan ekspresi untuk menemukan array yang akan dirender dalam respons. Ini adalah ekspresi notasi titik yang menavigasi melalui kolom respons JSON.
 Secara default, `<amp-list>` mengharapkan array, atribut `single-item` dapat digunakan untuk memuat data dari objek.
 
-* Nilai default adalah `"items"`. Respons yang diharapkan: `{items: [...]}`.
-* Jika respons tersebut adalah array yang diinginkan, gunakan nilai `"."`. Respons yang diharapkan: `[...]`.
-* Navigasi bersarang diizinkan (misalnya, `"field1.field2"`). Respons yang diharapkan: `{field1: {field2: [...]}}`.
+- Nilai default adalah `"items"`. Respons yang diharapkan: `{items: [...]}`.
+- Jika respons tersebut adalah array yang diinginkan, gunakan nilai `"."`. Respons yang diharapkan: `[...]`.
+- Navigasi bersarang diizinkan (misalnya, `"field1.field2"`). Respons yang diharapkan: `{field1: {field2: [...]}}`.
 
 Jika `items="items"` ditentukan (yang merupakan setelan default), respons harus berupa objek JSON yang memuat properti array bernama `"items"`:
+
 ```text
 {
   "items": [...]
@@ -293,9 +306,9 @@ Untuk halaman yang menggunakan `<amp-list>` dan juga `amp-bind`, atribut ini men
 
 Sebaiknya gunakan `binding="no"` atau `binding="refresh"` untuk performa yang lebih cepat.
 
-* `binding="no"`: Rendering tidak akan diblokir **(paling cepat)**.
-* `binding="refresh"`: Rendering tidak diblokir pada pemuatan awal **(lebih cepat)**.
-* `binding="always"`: Rendering selalu diblokir **(lambat)**.
+- `binding="no"`: Rendering tidak akan diblokir **(paling cepat)**.
+- `binding="refresh"`: Rendering tidak diblokir pada pemuatan awal **(lebih cepat)**.
+- `binding="always"`: Rendering selalu diblokir **(lambat)**.
 
 Jika atribut `binding` tidak disediakan, setelan default-nya adalah `always`.
 
@@ -306,12 +319,16 @@ Kami memperkenalkan eksperimen `amp-list-load-more` sebagai implementasi untuk p
 #### Contoh Penggunaan <a name="load-more-and-infinite-scroll"></a>
 
 ```html
-<amp-list height="200" src="https://my.rest.endpoint/" width="100" load-more="auto">
+<amp-list
+  height="200"
+  src="https://my.rest.endpoint/"
+  width="100"
+  load-more="auto"
+>
   <template type="amp-mustache">
     // ...
   </template>
 </amp-list>
-
 ```
 
 Untuk contoh penggunaan, silakan lihat [test/manual/amp-list/infinite-scroll-1.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html) dan [test/manual/amp-list/infinite-scroll-2.amp.html](https://github.com/ampproject/amphtml/blob/master/test/manual/amp-list/infinite-scroll-1.amp.html).
@@ -341,19 +358,30 @@ Elemen `<amp-list-load-more>` dengan atribut `load-more-button`, yang muncul di 
 ##### Contoh: <a name="load-more-button"></a>
 
 ```html
-<amp-list load-more="manual" src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="manual"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-button>
     <button>See More</button> /* My custom see more button */
   </amp-list-load-more>
 </amp-list>
 ```
-  Elemen ini dapat diberi template melalui `amp-mustache`.
+
+Elemen ini dapat diberi template melalui `amp-mustache`.
 
 ##### Contoh: <a name="example"></a>
 
 ```html
-{% raw %}<amp-list load-more="auto" width="100" height="500" src="https://www.load.more.example.com/">
+{% raw %}<amp-list
+  load-more="auto"
+  width="100"
+  height="500"
+  src="https://www.load.more.example.com/"
+>
   ...
   <amp-list-load-more load-more-button>
     <template type="amp-mustache">
@@ -370,8 +398,14 @@ Elemen `<amp-list-load-more>` dengan atribut `load-more-button`, yang muncul di 
 #### load-more-loading <a name="example-1"></a>
 
 Elemen ini adalah pemuat yang akan ditampilkan jika pengguna mencapai akhir daftar sementara konten masih dimuat, atau sebagai akibat dari mengklik elemen `load-more-button` (sementara turunan baru `<amp-list>` masih dimuat). Elemen ini dapat disesuaikan dengan memberikan `<amp-list>` dengan elemen turunan yang memiliki atribut `load-more-loading`. Contohnya:
+
 ```html
-<amp-list load-more=auto src="https://www.load.more.example.com/" width="400" height="800">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="400"
+  height="800"
+>
   ...
   <amp-list-load-more load-more-loading>
     <svg>...</svg> /* My custom loader */
@@ -384,7 +418,12 @@ Elemen ini adalah pemuat yang akan ditampilkan jika pengguna mencapai akhir daft
 Elemen `<amp-list-load-more>` yang memuat atribut `load-more-failed` yang berisi tombol dengan atribut `load-more-clickable` yang akan ditampilkan di bawah `<amp-list>` jika pemuatan gagal. Mengklik elemen ini akan memicu pemuatan ulang URL yang gagal. Elemen ini dapat disesuaikan dengan memberikan `<amp-list>` dengan elemen turunan yang memiliki atribut `load-more-failed`. Contohnya:
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <button>Unable to Load More</button>
@@ -395,7 +434,12 @@ Elemen `<amp-list-load-more>` yang memuat atribut `load-more-failed` yang berisi
 Pada contoh di atas, seluruh elemen `load-more-failed` dapat diklik. Namun, terdapat pola umum untuk elemen ini yaitu elemen "loading failed" yang umumnya tidak dapat diklik berisi tombol "reload" yang dapat diklik. Untuk menjelaskan hal ini, Anda dapat menggunakan elemen yang umumnya tidak dapat diklik dengan tombol yang berisi elemen `load-more-clickable`. Contoh:
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-failed>
     <div>
@@ -408,10 +452,15 @@ Pada contoh di atas, seluruh elemen `load-more-failed` dapat diklik. Namun, terd
 
 #### load-more-end <a name="load-more-failed"></a>
 
-Elemen ini tidak disediakan secara default, tetapi jika elemen `<amp-list-load-more>` yang berisi atribut `load-more-end` ditambahkan ke `<amp-list>` sebagai elemen turunan, elemen ini akan ditampilkan di bawah `<amp-list>` jika tidak ada item lainnya.  Elemen ini dapat diberi template melalui `amp-mustache`. Contohnya:
+Elemen ini tidak disediakan secara default, tetapi jika elemen `<amp-list-load-more>` yang berisi atribut `load-more-end` ditambahkan ke `<amp-list>` sebagai elemen turunan, elemen ini akan ditampilkan di bawah `<amp-list>` jika tidak ada item lainnya. Elemen ini dapat diberi template melalui `amp-mustache`. Contohnya:
 
 ```html
-<amp-list load-more="auto" src="https://www.load.more.example.com/" width="200" height="500">
+<amp-list
+  load-more="auto"
+  src="https://www.load.more.example.com/"
+  width="200"
+  height="500"
+>
   ...
   <amp-list-load-more load-more-end>
     Congratulations! You've reached the end. /* Custom load-end element */
@@ -429,9 +478,11 @@ Elemen ini mencakup [atribut umum](../../../documentation/guides-and-tutorials/l
 Lihat [Panduan Substitusi](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md) untuk informasi selengkapnya.
 
 Misalnya:
+
 ```html
 <amp-list src="https://foo.com/list.json?RANDOM"></amp-list>
 ```
+
 dapat membuat permintaan ke sesuatu seperti `https://foo.com/list.json?0.8390278471201` di mana nilai RANDOM dihasilkan secara acak setelah setiap tayangan.
 
 ## Validasi <a name="validation"></a>

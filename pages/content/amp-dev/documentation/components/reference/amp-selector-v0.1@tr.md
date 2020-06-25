@@ -2,13 +2,11 @@
 $title: amp-selector
 $category@: dynamic-content
 formats:
-- websites
-- email
+  - websites
+  - email
 teaser:
   text: Bir seçenek menüsü sunan ve kullanıcının bu menüden seçim yapmasına olanak tanıyan bir kontrolü temsil eder.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -25,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 Bir seçenek menüsü sunan ve kullanıcının bu menüden seçim yapmasına olanak tanıyan bir kontrolü temsil eder.
 
@@ -45,29 +41,31 @@ Bir seçenek menüsü sunan ve kullanıcının bu menüden seçim yapmasına ola
   </tr>
 </table>
 
-
 ## Davranış <a name="behavior"></a>
 
 AMP seçici, seçeneklerin bir listesini sunan ve kullanıcının bir veya daha fazla seçenek belirlemesine olanak tanıyan bir kontroldür; seçeneklerin içeriği yalnızca metinle sınırlı değildir.
 
-* `amp-selector`, rastgele HTML öğeleri veya AMP bileşenleri içerebilir (ör. `amp-carousel`, `amp-img` vb.).
-* `amp-selector`, iç içe yerleştirilmiş `amp-selector` kontrolleri içeremez.
-* Belirlenebilir seçenekler, öğeye `option` özelliği eklenerek ve özelliğe bir değer atanarak ayarlanabilir (ör. `<li option='value'></li>`).
-* Devre dışı bırakılan seçenekler, öğeye `disabled` özniteliği eklenerek ayarlanabilir. (ör. `<li option='d' disabled></li>`).
-* Önceden belirlenmiş seçenekler, öğeye `selected` özelliği eklenerek ayarlanabilir (ör. `<li option='b' selected></li>`).
-* Birden çok seçime izin vermek için `amp-selector` öğesine `multiple` özelliği ekleyin.  Varsayılan olarak `amp-selector`, bir defada bir seçim yapılmasına izin verir.
-* `amp-selector` öğesini tamamıyla devre dışı bırakmak için `amp-selector` öğesine `disabled` özelliğini ekleyin.
-* Bir `amp-selector`, bir `name` özelliği içerdiğinde ve `amp-selector`, bir `form` etiketinin içinde olduğunda, formda bir gönderme etkinliği gerçekleşirse `amp-selector`, bir radyo düğmesi/onay kutusu gibi davranır ve seçili değerleri (seçeneğe atanan değerler) `amp-selector` adıyla gönderir.
+- `amp-selector`, rastgele HTML öğeleri veya AMP bileşenleri içerebilir (ör. `amp-carousel`, `amp-img` vb.).
+- `amp-selector`, iç içe yerleştirilmiş `amp-selector` kontrolleri içeremez.
+- Belirlenebilir seçenekler, öğeye `option` özelliği eklenerek ve özelliğe bir değer atanarak ayarlanabilir (ör. `<li option='value'></li>`).
+- Devre dışı bırakılan seçenekler, öğeye `disabled` özniteliği eklenerek ayarlanabilir. (ör. `<li option='d' disabled></li>`).
+- Önceden belirlenmiş seçenekler, öğeye `selected` özelliği eklenerek ayarlanabilir (ör. `<li option='b' selected></li>`).
+- Birden çok seçime izin vermek için `amp-selector` öğesine `multiple` özelliği ekleyin. Varsayılan olarak `amp-selector`, bir defada bir seçim yapılmasına izin verir.
+- `amp-selector` öğesini tamamıyla devre dışı bırakmak için `amp-selector` öğesine `disabled` özelliğini ekleyin.
+- Bir `amp-selector`, bir `name` özelliği içerdiğinde ve `amp-selector`, bir `form` etiketinin içinde olduğunda, formda bir gönderme etkinliği gerçekleşirse `amp-selector`, bir radyo düğmesi/onay kutusu gibi davranır ve seçili değerleri (seçeneğe atanan değerler) `amp-selector` adıyla gönderir.
 
 Örnek:
 
 ```html
-
 <form id="form1" action="/" method="get" target="_blank">
   <amp-selector name="single_image_select" layout="container">
     <ul>
-      <li><amp-img src="/img1.png" width="50" height="50" option="1"></amp-img></li>
-      <li><amp-img src="/img2.png" width="50" height="50" option="2"></amp-img></li>
+      <li>
+        <amp-img src="/img1.png" width="50" height="50" option="1"></amp-img>
+      </li>
+      <li>
+        <amp-img src="/img2.png" width="50" height="50" option="2"></amp-img>
+      </li>
       <li option="na" selected="">Yukarıdakilerin Hiçbiri</li>
     </ul>
   </amp-selector>
@@ -79,21 +77,52 @@ AMP seçici, seçeneklerin bir listesini sunan ve kullanıcının bir veya daha 
   <amp-selector name="multi_image_select_1" layout="container" multiple="">
     <amp-carousel id="carousel-1" width="200" height="60" controls="">
       <amp-img src="/img1.png" width="80" height="60" option="a"></amp-img>
-      <amp-img src="/img2.png" width="80" height="60" option="b" selected=""></amp-img>
+      <amp-img
+        src="/img2.png"
+        width="80"
+        height="60"
+        option="b"
+        selected=""
+      ></amp-img>
       <amp-img src="/img3.png" width="80" height="60" option="c"></amp-img>
-      <amp-img src="/img4.png" width="80" height="60" option="d" disabled=""></amp-img>
+      <amp-img
+        src="/img4.png"
+        width="80"
+        height="60"
+        option="d"
+        disabled=""
+      ></amp-img>
     </amp-carousel>
   </amp-selector>
 </form>
 
-<p><amp-selector name="multi_image_select_2" layout="container" multiple="" form="form1">
-  <amp-carousel height="300" id="carousel-1" type="slides" width="400" controls="">
-    <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
-    <amp-img height="60" src="/img2.png" width="80" option="b" selected=""></amp-img>
-    <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
-    <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
-  </amp-carousel>
-</amp-selector>
+<p>
+  <amp-selector
+    name="multi_image_select_2"
+    layout="container"
+    multiple=""
+    form="form1"
+  >
+    <amp-carousel
+      height="300"
+      id="carousel-1"
+      type="slides"
+      width="400"
+      controls=""
+    >
+      <amp-img height="60" src="/img1.png" width="80" option="a"></amp-img>
+      <amp-img
+        height="60"
+        src="/img2.png"
+        width="80"
+        option="b"
+        selected=""
+      ></amp-img>
+      <amp-img height="60" src="/img3.png" width="80" option="c"></amp-img>
+      <amp-img height="60" src="/img4.png" width="80" option="d"></amp-img>
+    </amp-carousel>
+  </amp-selector>
+</p>
 ```
 
 ## Seçimleri temizleme <a name="clearing-selections"></a>
@@ -111,8 +140,7 @@ Bir öğeye dokunulduğunda veya bir öğe tıklandığında tüm seçimleri tem
 </amp-selector>
 ```
 
-[tip type="success"]
-[Örneklerle AMP](https://ampbyexample.com/components/amp-selector/) sayfasında canlı demoları görebilirsiniz.
+[tip type="success"][örneklerle amp](https://ampbyexample.com/components/amp-selector/) sayfasında canlı demoları görebilirsiniz.
 [/tip]
 
 ## Özellikler <a name="attributes"></a>

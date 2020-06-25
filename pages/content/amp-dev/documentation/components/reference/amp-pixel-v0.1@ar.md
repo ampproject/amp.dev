@@ -9,8 +9,6 @@ teaser:
   text: A tracking pixel to count page views.
 ---
 
-
-
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
 
@@ -26,8 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 [جدول المحتويات]
 
@@ -53,8 +49,7 @@ teaser:
 في هذا المثال الأساسي، يصدر `amp-pixel` طلب GET بسيطًا إلى عنوان URL المحدد ويتجاهل النتيجة.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/tracker/foo" layout="nodisplay"></amp-pixel>
 ```
 
 [tip type="note"]
@@ -72,9 +67,11 @@ teaser:
 تشبه هذه السمة سمة `referrerpolicy` على `<img>` إلا أن `no-referrer` هي القيمة الوحيدة المقبولة. في حال تحديد `referrerpolicy=no-referrer`، تتم إزالة الرأس `referrer` من الطلب HTTP.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"
-    referrerpolicy="no-referrer"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/tracker/foo"
+  layout="nodisplay"
+  referrerpolicy="no-referrer"
+></amp-pixel>
 ```
 
 ##### allow-ssr-img (اختياريّة) <a name="allow-ssr-img-optional"></a>
@@ -94,8 +91,7 @@ teaser:
 في المثال التالي، قد يتم إرسال طلب لصفحة مثل `https://foo.com/pixel?0.8390278471201` حيث يتم إنشاء قيمة RANDOM بشكل عشوائي عند كل ظهور.
 
 ```html
-<amp-pixel src="https://foo.com/pixel?RANDOM"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/pixel?RANDOM" layout="nodisplay"></amp-pixel>
 ```
 
 ## التصميم <a name="styling"></a>

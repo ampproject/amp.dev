@@ -2,14 +2,12 @@
 $title: amp-pixel
 $category@: ads-analytics
 formats:
-- websites
-- ads
-- stories
+  - websites
+  - ads
+  - stories
 teaser:
   text: Sayfa görüntülemelerini saymak için bir izleme pikseli.
 ---
-
-
 
 <!--
        Copyright 2016 The AMP HTML Authors. All Rights Reserved.
@@ -26,9 +24,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
-
 
 <table>
   <tr>
@@ -52,11 +47,10 @@ teaser:
 Bu temel örnekte `amp-pixel`, belirtilen URL'ye basit bir GET isteği gönderir ve sonucu yoksayar.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/tracker/foo" layout="nodisplay"></amp-pixel>
 ```
 
-  [tip type="note"]
+[tip type="note"]
 Analiz isteklerinin yönlendirme üstbilgisindeki AMP URL'leri işlenirken `usqp` parametresini çıkarın veya yoksayın. Bu parametre, Google tarafından Google AMP Önbelleği denemelerinin tetiklenmesi amacıyla kullanılır.
 [/tip]
 
@@ -71,9 +65,11 @@ Analiz isteklerinin yönlendirme üstbilgisindeki AMP URL'leri işlenirken `usqp
 Bu özellik, `<img>` öğesindeki `referrerpolicy` özelliğine benzer ancak yalnızca `no-referrer` değeri kabul edilir. `referrerpolicy=no-referrer` belirtilirse `referrer` üstbilgisi, HTTP isteğinden kaldırılır.
 
 ```html
-<amp-pixel src="https://foo.com/tracker/foo"
-    layout="nodisplay"
-    referrerpolicy="no-referrer"></amp-pixel>
+<amp-pixel
+  src="https://foo.com/tracker/foo"
+  layout="nodisplay"
+  referrerpolicy="no-referrer"
+></amp-pixel>
 ```
 
 ##### allow-ssr-img (isteğe bağlı) <a name="allow-ssr-img-optional"></a>
@@ -93,8 +89,7 @@ Daha fazla bilgi için [Değişiklik Kılavuzu](https://github.com/ampproject/am
 Aşağıdaki örnekte, `https://foo.com/pixel?0.8390278471201` gibi bir istekte bulunabilir. Burada, RANDOM değeri, her gösterimden sonra rastgele oluşturulur.
 
 ```html
-<amp-pixel src="https://foo.com/pixel?RANDOM"
-    layout="nodisplay"></amp-pixel>
+<amp-pixel src="https://foo.com/pixel?RANDOM" layout="nodisplay"></amp-pixel>
 ```
 
 ## Stil <a name="styling"></a>

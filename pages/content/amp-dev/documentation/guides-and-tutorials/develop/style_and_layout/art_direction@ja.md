@@ -9,16 +9,20 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 次の例では、`srcset` が画面の幅に基づいて使用される画像を指定しています。`w` 記述子は、リスト内の各画像の幅をブラウザに伝えます。
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 注: AMP では、すべてのブラウザで srcset に `w` 記述子を使用できます。
@@ -32,16 +36,20 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 次の例をご覧ください。
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 この `sizes` 属性では、ビューポートが 650 ピクセル以上の場合は、要素の幅をビューポートのサイズの 50% にすると定義しています。たとえば、ビューポートが 800 ピクセルの場合、要素の幅は 400 ピクセルに設定されます。ブラウザでは、デバイス ピクセル比を 1 と想定し、400 ピクセルと比較して `srcset` のリソースを選択します。この例では `narrow.jpg`（320 ピクセル）が選択されます。
@@ -62,14 +70,18 @@ $title: srcset、sizes、heights を使ったレスポンシブな画像
 次の例をご覧ください。
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 この例では、要素の高さはデフォルトで幅の 80% ですが、ビューポートが `500px` より広い場合、`200px` が上限となります。

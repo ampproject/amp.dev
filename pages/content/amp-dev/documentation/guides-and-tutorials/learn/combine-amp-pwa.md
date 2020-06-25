@@ -5,7 +5,7 @@ description: 'Progressive Web Apps and AMP pages work great together. In fact, i
 formats:
   - websites
 components:
-    - youtube
+  - youtube
 author: pbakaus
 ---
 
@@ -33,7 +33,7 @@ AMP Pages can use many PWA features on their own, as long as they're served from
 
 ## AMP as entry point into your PWA
 
-AMP's unique selling point is the **almost-instant delivery**, a characteristic that makes AMP the perfect fit for the first user interaction with your site. *Progressive web apps* enable much **more interactivity and engagement-enabling features**, but their first load is hindered by the fact that the site's Service Worker, and therefore its assets and app shell, are only accelerating delivery on subsequent loads.
+AMP's unique selling point is the **almost-instant delivery**, a characteristic that makes AMP the perfect fit for the first user interaction with your site. _Progressive web apps_ enable much **more interactivity and engagement-enabling features**, but their first load is hindered by the fact that the site's Service Worker, and therefore its assets and app shell, are only accelerating delivery on subsequent loads.
 
 A good strategy is to make the entry point into your site an AMP page, then warm up the PWA behind the scenes and switch to it for the onward journey.
 

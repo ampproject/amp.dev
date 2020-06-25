@@ -11,6 +11,7 @@ leveled: true
 ---
 
 [filter level="beginner"]
+
 ## Why AMP?
 
 In many ways, the Internet is the central hub for the world. Every day, more people from all over the world access information online. But many don’t use the Internet on lightning-fast connections or high-powered devices. When websites are developed only for the fastest connections and devices, the experience of many users suffers.
@@ -50,8 +51,7 @@ Learning AMP is a great way to learn web development because AMP sites are:
 You’ll acquire skills while building AMP pages that can be transferred to building websites in other formats or frameworks. Like many popular frameworks, AMP is a component-based approach to designing and building websites. You will learn to build websites with recognized best practices, start thinking in components, and avoid bad habits that harm user experience. These universal skills can be applied across the web.
 
 AMP addresses performance, accessibility, and responsive design so that you can focus on the features. However, if you want to hone your skills, learning AMP can also help you discover exactly how AMP addresses these concerns. You will continue to learn and mature as a developer, even while your users enjoy the experiences that AMP helped you to build.
-[/filter]
-[filter level="advanced"]
+[/filter][filter level="advanced"]
 AMP is a web components library, a set of best practices, and a caching scheme. Together, these can help developers create performant, interactive websites quickly.
 
 Many users access websites on slower connections and lower-powered devices. When websites are developed only for the fastest connections and devices, the experience of many users suffers. Thus, AMP works to improve web performance by:

@@ -2,11 +2,10 @@
 $title: amp-access-laterpay
 $category@: dynamic-content
 formats:
-- websites
+  - websites
 teaser:
   text: このコンポーネントにより、サイト運営者は LaterPay マイクロペイメント プラットフォームと簡単に統合できます。
 ---
-
 
 <!--
 Copyright 2017 The AMP HTML Authors. All Rights Reserved.
@@ -23,8 +22,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-
-
 
 このコンポーネントにより、サイト運営者は [LaterPay](https://www.laterpay.net) マイクロペイメント プラットフォームと簡単に統合できます。`amp-access-laterpay` は [amp-access](amp-access.md) をベースとしているため、amp-access は必須です。
 
@@ -49,7 +46,6 @@ limitations under the License.
     <td>AMP By Example の<a href="https://ampbyexample.com/components/amp-access-laterpay/">アノテーション付きの amp-access-laterpay</a> の例をご覧ください。</td>
   </tr>
 </table>
-
 
 ## 動作 <a name="behavior"></a>
 
@@ -78,16 +74,14 @@ amp-access と組み合わせて使用したい独自のペイウォール サ�
 設定は amp-access に似ていますが、承認、Pingback、ログインリンクは必要ありません。
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
     "laterpay": {
       "property": value
-      }
     }
+  }
 </script>
-
 ```
 
 `laterpay` 設定オブジェクトでは以下の値を設定できます。
@@ -163,7 +157,6 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
 <div amp-access="access" amp-access-hide="">
   <p>...article content...</p>
 </div>
-
 ```
 
 ## スタイル設定 <a name="styling"></a>
@@ -175,7 +168,6 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
 ダイアログ用に作成した構造は次のようになります。
 
 ```html
-
 <div id="amp-access-laterpay-dialog" class="amp-access-laterpay">
   <div class="amp-access-laterpay-container">
     <p class="amp-access-laterpay-header">
@@ -184,30 +176,33 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
     <ul>
       <li>
         <label>
-          <input name="purchaseOption" type="radio">
-            <div class="amp-access-laterpay-metadata">
-              <span class="amp-access-laterpay-title">Purchase option title</span>
-              <p class="amp-access-laterpay-description">Purchase option description</p>
-            </div>
-          </label>
-          <p class="amp-access-laterpay-price-container">
-            <span class="amp-access-laterpay-price">0.15</span>
-            <sup class="amp-access-laterpay-currency">USD</sup>
-          </p>
-        </li>
-        <!-- ... more list items for other purchase options ... -->
-      </ul>
-      <button class="amp-access-laterpay-purchase-button">Buy Now</button>
-      <p class="amp-access-laterpay-already-purchased-container">
-        <a href="…">I already bought this</a>
-      </p>
-      <p class="amp-access-laterpay-footer">
-        Optional, appears if footer locale message is defined.
-      </p>
-    </div>
-    <p class="amp-access-laterpay-badge">Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a></p>
+          <input name="purchaseOption" type="radio" />
+          <div class="amp-access-laterpay-metadata">
+            <span class="amp-access-laterpay-title">Purchase option title</span>
+            <p class="amp-access-laterpay-description">
+              Purchase option description
+            </p>
+          </div>
+        </label>
+        <p class="amp-access-laterpay-price-container">
+          <span class="amp-access-laterpay-price">0.15</span>
+          <sup class="amp-access-laterpay-currency">USD</sup>
+        </p>
+      </li>
+      <!-- ... more list items for other purchase options ... -->
+    </ul>
+    <button class="amp-access-laterpay-purchase-button">Buy Now</button>
+    <p class="amp-access-laterpay-already-purchased-container">
+      <a href="…">I already bought this</a>
+    </p>
+    <p class="amp-access-laterpay-footer">
+      Optional, appears if footer locale message is defined.
+    </p>
   </div>
-
+  <p class="amp-access-laterpay-badge">
+    Powered by <a href="https://laterpay.net" target="_blank">LaterPay</a>
+  </p>
+</div>
 ```
 
 ## ローカライズ <a name="localization"></a>
@@ -217,18 +212,16 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
 その他のテキストは拡張コンポーネントの一部であり、設定オプションを使用して次のように変更およびローカライズできます。
 
 ```html
-
 <script id="amp-access" type="application/json">
   {
     "vendor": "laterpay",
     "laterpay": {
       "localeMessages": {
         "messageKey": "message value"
-        }
       }
     }
+  }
 </script>
-
 ```
 
 以下のメッセージキーは翻訳またはカスタマイズできますが、元の意味と目的を保持する必要があります。
@@ -288,7 +281,6 @@ ID が `amp-access-laterpay-dialog` に設定された要素では、ユーザ�
 LaterPay と既存のペイウォールを統合して使用する場合、次のような設定が必要になります。
 
 ```html
-
 <script id="amp-access" type="application/json">
   [
     {
@@ -299,26 +291,27 @@ LaterPay と既存のペイウォールを統合して使用する場合、次�
       "namespace": "laterpay"
     },
     {
-      "authorization":
-          "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
-      "pingback":
-          "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
-      "login":
-          "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
+      "authorization": "https://pub.com/amp-access?rid=READER_ID&url=SOURCE_URL",
+      "pingback": "https://pub.com/amp-ping?rid=READER_ID&url=SOURCE_URL",
+      "login": "https://pub.com/amp-login?rid=READER_ID&url=SOURCE_URL",
       "authorizationFallbackResponse": {"error": true},
       "namespace": "publishername"
     }
   ]
 </script>
-
 ```
 
 一方、アクセス コンテンツ マークアップは次のようになります。
 
 ```html
-<section amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access" amp-access-hide>
+<section
+  amp-access="NOT error AND NOT laterpay.access AND NOT publishername.access"
+  amp-access-hide
+>
   <p>
-    <a on="tap:amp-access.login-publishername">Login here to access your PublisherName subscription.</a>
+    <a on="tap:amp-access.login-publishername"
+      >Login here to access your PublisherName subscription.</a
+    >
   </p>
 
   <div id="amp-access-laterpay-dialog" class="amp-access-laterpay"></div>
@@ -331,17 +324,16 @@ LaterPay と既存のペイウォールを統合して使用する場合、次�
 <div amp-access="laterpay.access OR publishername.access" amp-access-hide>
   <p>...article content...</p>
 </div>
-
 ```
 
 詳細な例については、[https://ampexample.laterpay.net/dual-amp-access.html](https://ampexample.laterpay.net/dual-amp-access.html) をご覧ください。
 
 ## 関連ドキュメント <a name="related-documentation"></a>
 
-* [amp-access](amp-access.md)
-* [LaterPay](https://www.laterpay.net)
-* [LaterPay: マイクロペイメントの使用方法](https://docs.laterpay.net/how_we_do_micropayments/)
-* [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html): amp-access-laterpay に似ていますが、非 AMP ページが対象です。
+- [amp-access](amp-access.md)
+- [LaterPay](https://www.laterpay.net)
+- [LaterPay: マイクロペイメントの使用方法](https://docs.laterpay.net/how_we_do_micropayments/)
+- [LaterPay Connector](https://connectormwi.laterpay.net/docs/index.html): amp-access-laterpay に似ていますが、非 AMP ページが対象です。
 
 ## 検証 <a name="validation"></a>
 

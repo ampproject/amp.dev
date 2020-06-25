@@ -78,10 +78,12 @@ Google AMP 캐시에 있는 캐시된 AMP 페이지 URL이 응답에
 예를 들어, 아래와 같은 URL 목록이 주어질 경우:
 
 ```json
-{"urls": [
-  "https://www.example.org/article-with-amp-version",
-  "http://www.example.com/no-amp-version.html"
-]}
+{
+  "urls": [
+    "https://www.example.org/article-with-amp-version",
+    "http://www.example.com/no-amp-version.html"
+  ]
+}
 ```
 
 응답 본문에 JSON 형식의 AMP URL 매핑이 포함됩니다.
@@ -117,14 +119,14 @@ Google이 아닌 타사 AMP 캐시에 있는 AMP 페이지의 URL은 AMP URL API
 유효한 AMP 문서를 전송하기 위한 프록시 기반의 콘텐츠 전송 네트워크(CDN)입니다.
 AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 
-* 유효한 AMP 페이지만 게재
-* AMP 페이지가 효율적이고 안전하게 미리 로드되도록 지원
-* 콘텐츠를 대상으로 사용자에게 유용한 추가 성능 최적화 실행
+- 유효한 AMP 페이지만 게재
+- AMP 페이지가 효율적이고 안전하게 미리 로드되도록 지원
+- 콘텐츠를 대상으로 사용자에게 유용한 추가 성능 최적화 실행
 
 현재 두 가지 AMP 캐시 제공업체가 있습니다.
 
-* [Google AMP 캐시](https://developers.google.com/amp/cache/)
-* [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
+- [Google AMP 캐시](https://developers.google.com/amp/cache/)
+- [Bing AMP Cache](https://www.bing.com/webmaster/help/bing-amp-cache-bc1c884c)
 
 다음 두 가지 옵션 중 하나를 사용하여 앱에 AMP 파일을 표시할 수 있습니다.
 
@@ -133,17 +135,17 @@ AMP 캐시는 다음과 같은 목적으로 설계되었습니다.
 
 다음 이유로 인해 AMP 캐시를 사용하는 것이 좋습니다.
 
-*   더 빠른 로드 시간과 짧은 지연 시간으로 사용자 환경이 향상됩니다(1초 미만의 빠른
-    로드 시간)
-*   클라이언트 종속 아티팩트를 추가적으로 캐시(예: 클라이언트의
-    표시 영역 크기에 따라 같은 이미지의 다른 버전을 캐시)하므로
-    성능 및 대역폭 면에서 유리합니다.
-*   원본 AMP 파일이 더 이상 유효한 AMP가 아닌 경우 사용자 환경을
-    저해할 수 있습니다. 이 경우 AMP 캐시가 유효한 AMP 파일의 최종 버전을
-    게재합니다.
-*   정직하지 않은 게시자는 AMP 캐시 크롤러와 사용자를 대상으로
-    서로 다른 두 가지 문서를 게재할 수 있습니다. AMP 캐시를 사용하면
-    항상 캐시와 동일한 AMP 파일이 사용자에게 표시됩니다.
+- 더 빠른 로드 시간과 짧은 지연 시간으로 사용자 환경이 향상됩니다(1초 미만의 빠른
+  로드 시간)
+- 클라이언트 종속 아티팩트를 추가적으로 캐시(예: 클라이언트의
+  표시 영역 크기에 따라 같은 이미지의 다른 버전을 캐시)하므로
+  성능 및 대역폭 면에서 유리합니다.
+- 원본 AMP 파일이 더 이상 유효한 AMP가 아닌 경우 사용자 환경을
+  저해할 수 있습니다. 이 경우 AMP 캐시가 유효한 AMP 파일의 최종 버전을
+  게재합니다.
+- 정직하지 않은 게시자는 AMP 캐시 크롤러와 사용자를 대상으로
+  서로 다른 두 가지 문서를 게재할 수 있습니다. AMP 캐시를 사용하면
+  항상 캐시와 동일한 AMP 파일이 사용자에게 표시됩니다.
 
 [tip type="important"]
 AMP 캐시를 통해 AMP 페이지를 게재하는 경우에는 AMP의 원본을 명시하여
@@ -166,12 +168,12 @@ AMP 페이지를 표시하기 위한 WebView를 설정하는 가장 좋은 방�
 
 다음은 AMP 뷰어를 구현할 때 일반적으로 권장되는 사항입니다.
 
-*   AMP 캐시에서 AMP 페이지 게재(1초 미만의 빠른 로드 시간)
-*   기사의 게시자 원본 표시(예: 접을 수 있는 헤더에 표시)
-*   공유 작업 제공(아래 '[AMP 콘텐츠 공유](integrate-with-apps.md#sharing-amp-content)'
-    섹션 참조)
-*   WebView 기반 뷰어에서 타사 쿠키 활성화
-*   플랫폼/앱에 대한 리퍼러 설정
+- AMP 캐시에서 AMP 페이지 게재(1초 미만의 빠른 로드 시간)
+- 기사의 게시자 원본 표시(예: 접을 수 있는 헤더에 표시)
+- 공유 작업 제공(아래 '[AMP 콘텐츠 공유](integrate-with-apps.md#sharing-amp-content)'
+  섹션 참조)
+- WebView 기반 뷰어에서 타사 쿠키 활성화
+- 플랫폼/앱에 대한 리퍼러 설정
 
 ### AMP 콘텐츠 공유 <a name="sharing-amp-content"></a>
 

@@ -2,12 +2,11 @@
 $title: amp-lightbox
 $category@: layout
 formats:
-- websites
-- ads
+  - websites
+  - ads
 teaser:
   text: フルビューポートの「ライトボックス」モーダル内に要素を表示します。
 ---
-
 
 <!--
        Copyright 2015 The AMP HTML Authors. All Rights Reserved.
@@ -24,8 +23,6 @@ teaser:
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-
 
 <table>
   <tr>
@@ -55,7 +52,9 @@ teaser:
 ```html
 <button on="tap:quote-lb">See Quote</button>
 <amp-lightbox id="quote-lb" layout="nodisplay">
-  <blockquote>"Don't talk to me about JavaScript fatigue" - Horse JS</blockquote>
+  <blockquote>
+    "Don't talk to me about JavaScript fatigue" - Horse JS
+  </blockquote>
   <button on="tap:quote-lb.close">Nice!</button>
 </amp-lightbox>
 ```
@@ -132,8 +131,8 @@ AMPHTML 広告内で使用する `amp-lightbox` コンポーネントは[試験�
 
 AMPHTML 広告の場合、`close-button` 属性は必須になります。この属性により、ヘッダーがライトボックスの上部に表示されます。ヘッダーには、閉じるボタンと「Ad」と表示されるラベルがあります。このヘッダーが必要とされるのは、以下の目的のためです。
 
-* AMPHTML 広告に対して、予測可能で一貫したユーザー エクスペリエンスを設定します。
-* ライトボックスを終了させるポイントが常に存在するようにします。そうでないと、クリエイティブが、ライトボックスを通じて、ホスト ドキュメントのコンテンツを実質的にハイジャックする可能性があります。
+- AMPHTML 広告に対して、予測可能で一貫したユーザー エクスペリエンスを設定します。
+- ライトボックスを終了させるポイントが常に存在するようにします。そうでないと、クリエイティブが、ライトボックスを通じて、ホスト ドキュメントのコンテンツを実質的にハイジャックする可能性があります。
 
 `close-button` 属性は、AMPHTML 広告の場合に限り必須であり、使用することができます。通常の AMP ドキュメントの場合は、必要に応じて、`<amp-lightbox>` コンテンツの一部として、閉じるボタンを任意の場所に表示することができます。
 

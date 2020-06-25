@@ -27,15 +27,15 @@ Para obtener una visión general completa de los errores de validación, consult
 
 Todos los documentos de AMP deben contener las siguientes etiquetas:
 
-* <a name="doctype"></a>`<!doctype html>`
-* <a name="html"></a>`<html amp> or <html ⚡>`
-* <a name="head"></a>`<head>`
-* <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
-* <a name="utf"></a>`<meta charset="utf-8">`
-* <a name="viewport"></a>`<meta name="viewport" content="...">`
-* <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
-* <a name="body"></a>`<body>`
+- <a name="doctype"></a>`<!doctype html>`
+- <a name="html"></a>`<html amp> or <html ⚡>`
+- <a name="head"></a>`<head>`
+- <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
+- <a name="utf"></a>`<meta charset="utf-8">`
+- <a name="viewport"></a>`<meta name="viewport" content="...">`
+- <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+- <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- <a name="body"></a>`<body>`
 
 Estas etiquetas obligatorias incluyen un campo `mandatory: true` en la [especificación del validador de AMP](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii), y también se hace referencia a ellas en la [especificación de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md).
 
@@ -166,12 +166,15 @@ CDATA son los datos de contenido situado entre una etiqueta HTML de inicio y otr
 Las etiquetas con CDATA obligatorio incluyen:
 
 [sourcecode:html]
+
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
 [/sourcecode]
 
 Y:
 
 [sourcecode:html]
+
 <style amp-custom>
 [/sourcecode]
 
@@ -545,8 +548,9 @@ La lista completa de etiquetas únicas es la siguiente:
 * `<meta viewport>`
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* `<body>`
-* `<script src="https://cdn.ampproject.org/v0.js">`
+
+- `<body>`
+- `<script src="https://cdn.ampproject.org/v0.js">`
 
 ## Errores de estilo y de diseño <a name="style-and-layout-errors"></a>
 
@@ -758,7 +762,7 @@ De no ser así, se produce este error.
 
 Por ejemplo, `<amp-img src="" layout="responsive" width="42px" height="42rem">` tiene como resultado el mensaje de error siguiente:
 
-"La anchura y la altura de la etiqueta '[`amp-img`](../../../../documentation/components/reference/amp-img.md)  se expresan con unidades distintas. La anchura se indica en 'px', mientras que la altura se indica en 'rem'."
+"La anchura y la altura de la etiqueta '[`amp-img`](../../../../documentation/components/reference/amp-img.md) se expresan con unidades distintas. La anchura se indica en 'px', mientras que la altura se indica en 'rem'."
 
 ## Errores en las plantillas
 

@@ -4,6 +4,7 @@ description: 'Aprenda sobre AMP e como ele pode ajudar você. Crie sua primeira 
 ---
 
 [filter level="beginner"]
+
 ## Por que AMP?
 
 Em muitas maneiras, a internet é o hub central do mundo. Todos os dias, mais pessoas de todos os lugares do mundo acessam informações online. Mas muitos desses usuário não usam a internet em conexões rápidas ou em dispositivos móveis com alto desempenho. Quando sites são desenvolvidos apenas para conexões e dispositivos mais rápido, a experiência de muitos usuários ficam comprometida.
@@ -43,8 +44,7 @@ Aprender AMP é uma ótima maneira para aprender desenvolvimento web, porque os 
 Você terá habilidade de construir páginas AMP que essas nova habilidade poderá ser útil na construção de sites em outros formatos ou frameworks. Como muitos frameworks populares, AMP tem uma abordagem baseada em componentes para projetar e construir sites. Você vai aprender a construir sites utilizando boas práticas, começará a pensar em componentes e evitar maus hábitos que prejudicam a experiência do usuário. Essas são habilidades universais que podem ser aplicadas na web
 
 AMP trata do desempenho, acesibilidade e design responsivo, para que você possa se concentrar nos recursos do seu site. No entanto, se você deseja aprimorar suas habilidades, aprender AMP também pode ajudá-lo a descobrir exatamente como AMP lida com essas preocupações. Você continuará aprendend e amadurecendo esses conceitos como desenvolvedor, mesmo quando seus usuários já desfrutam dessa experiência que AMP ajudou a criar.
-[/filter]
-[filter level="advanced"]
+[/filter][filter level="advanced"]
 AMP é uma biblioteca de web components, com um conjunto de boas práticas e um esquema de cache. Juntos eles ajudam os desenvolvedores a criar sites interativos e de alto desempenho.
 
 Muitos usuários acessam sites em conexões mais lentas e em dispositivos de baixo desempenho. Quando os sites são desenvolvidos apenas para conexões e dispositivos mais rápidos, a experiência de muitos usuários é comprometida. Assim, AMP trabalha para melhorar o desempenho da web:

@@ -46,15 +46,15 @@ limitations under the License.
 
 모든 AMP 문서에는 다음 태그가 있어야 합니다:
 
-* <a name="doctype"></a>`<!doctype html>`
-* <a name="html"></a>`<html amp> or <html ⚡>`
-* <a name="head"></a>`<head>`
-* <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
-* <a name="utf"></a>`<meta charset="utf-8">`
-* <a name="viewport"></a>`<meta name="viewport" content="...">`
-* <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
-* <a name="body"></a>`<body>`
+- <a name="doctype"></a>`<!doctype html>`
+- <a name="html"></a>`<html amp> or <html ⚡>`
+- <a name="head"></a>`<head>`
+- <a name="canonical"></a>`<link rel="canonical" href="$SOME_URL">`
+- <a name="utf"></a>`<meta charset="utf-8">`
+- <a name="viewport"></a>`<meta name="viewport" content="...">`
+- <a name="boilerplate"></a>`<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
+- <a name="ampscript"></a>`<script async src="https://cdn.ampproject.org/v0.js"></script>`
+- <a name="body"></a>`<body>`
 
 이러한 필수 태그에는 <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">AMP 유효성 검사 도구 사양</a>에 `mandatory: true` 필드가 있어야 합니다.
 이러한 태그는 [AMP 사양](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)에서도 언급됩니다.
@@ -236,12 +236,15 @@ CDATA는 시작 및 끝 HTML 태그 사이에 위치한 콘텐츠 데이터이�
 CDATA가 필수인 태그는 다음과 같습니다.
 
 [sourcecode:html]
+
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
 [/sourcecode]
 
 및
 
 [sourcecode:html]
+
 <style amp-custom>
 [/sourcecode]
 
@@ -632,8 +635,9 @@ URL이 잘못된 경우에 발생합니다.
 * `<meta viewport>`
 * `<style amp-custom>`
 * `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
-* `<body>`
-* `<script src="https://cdn.ampproject.org/v0.js">`
+
+- `<body>`
+- `<script src="https://cdn.ampproject.org/v0.js">`
 
 ### 스타일 및 레이아웃 오류 <a name="style-and-layout-errors"></a>
 

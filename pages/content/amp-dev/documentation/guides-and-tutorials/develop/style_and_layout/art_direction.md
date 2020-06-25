@@ -26,20 +26,24 @@ The `w` descriptor tells the browser the width
 of each image in the list:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   layout="responsive"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
-            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w">
+            {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
+>
 </amp-img>
 ```
+
 [/example]
 
 [tip type="note"]
-**NOTE –**  AMP supports srcset with the `w` descriptor across all browsers.
+**NOTE –** AMP supports srcset with the `w` descriptor across all browsers.
 [/tip]
 
 Learn more about creating responsive images using `srcset`
@@ -57,16 +61,20 @@ the user agent selects the most relative source supplied by the `srcset` attribu
 Consider the following example:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="Hummingbird"
+<amp-img
+  alt="Hummingbird"
   src="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg"
   width="640"
   height="457"
   srcset="{{server_for_email}}/static/inline-examples/images/hummingbird-wide.jpg 640w,
             {{server_for_email}}/static/inline-examples/images/hummingbird-narrow.jpg 320w"
-  sizes="(min-width: 650px) 50vw, 100vw">
+  sizes="(min-width: 650px) 50vw, 100vw"
+>
 </amp-img>
 ```
+
 [/example]
 
 The `sizes` attribute defines the element’s width to be 50% the size of the viewport
@@ -90,23 +98,27 @@ The value of this attribute is a sizes expression based on media expressions
 as similar to the [img sizes attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img),
 but with two key differences:
 
- 1. It applies to the height and not width of the element.
- 2. Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percent
- of the element's width.
+1.  It applies to the height and not width of the element.
+2.  Percent values are allowed, e.g. `86%`. If a percent value is used, it indicates the percent
+    of the element's width.
 
 When the `heights` attribute is specified along with `width` and `height`, the `layout` is defaulted to `responsive`.
 
 An example:
 
 [example preview="top-frame" playground="true"]
+
 ```html
-<amp-img alt="AMP"
+<amp-img
+  alt="AMP"
   src="{{server_for_email}}/static/inline-examples/images/amp.jpg"
   width="320"
   height="256"
-  heights="(min-width:500px) 200px, 80%">
+  heights="(min-width:500px) 200px, 80%"
+>
 </amp-img>
 ```
+
 [/example]
 
 In this example, the height of the element by default will be 80% of the width, but for the viewport

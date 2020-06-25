@@ -28,11 +28,14 @@ $title: 与 AMP 集成以投放展示广告
 例如，可使用以下语法调用 Amazon A9 服务器：
 
 ```html
-<amp-ad width="300" height="250"
-    type="a9"
-    data-aax_size="300x250"
-    data-aax_pubname="test123"
-    data-aax_src="302">
+<amp-ad
+  width="300"
+  height="250"
+  type="a9"
+  data-aax_size="300x250"
+  data-aax_pubname="test123"
+  data-aax_src="302"
+>
 </amp-ad>
 ```
 
@@ -56,6 +59,6 @@ $title: 与 AMP 集成以投放展示广告
 
 ## 相关资源
 
-*   [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
-*   [受支持的广告供应商列表](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
-*   [关于推出快速获取功能的博客文章](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)
+- [`amp-ad`](../../../documentation/components/reference/amp-ad.md)
+- [受支持的广告供应商列表](../../../documentation/guides-and-tutorials/develop/monetization/ads_vendors.md)
+- [关于推出快速获取功能的博客文章](https://blog.amp.dev/2017/08/21/even-faster-loading-ads-in-amp/)

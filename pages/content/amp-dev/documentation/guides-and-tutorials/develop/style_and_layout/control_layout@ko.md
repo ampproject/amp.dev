@@ -108,8 +108,8 @@ AMP는 **미디어 쿼리** 및 **요소 쿼리**를 모두 지원하며, 개별
 `width` 또는 `height`가 지정되지 않은 일부 경우에
 AMP 런타임이 다음과 같이 기본값을 설정할 수 있습니다.
 
-* [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): 너비와 높이 모두 기본값을 0으로 설정합니다.
-* [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): 기본 너비와 높이 모두 브라우저를 통해 추정합니다.
+- [`amp-pixel`](../../../../documentation/components/reference/amp-pixel.md): 너비와 높이 모두 기본값을 0으로 설정합니다.
+- [`amp-audio`](../../../../documentation/components/reference/amp-audio.md): 기본 너비와 높이 모두 브라우저를 통해 추정합니다.
 
 ### <code>layout</code> 속성이 지정되지 않은 경우에는 어떻게 하나요? <a name="what-if-the-layout-attribute-isnt-specified"></a>
 
