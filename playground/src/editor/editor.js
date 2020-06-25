@@ -70,11 +70,7 @@ class Editor {
     this.loader = new Loader(this.container, 'light');
     this.amphtmlHints = this.fetchHintsData();
 
-    events.subscribe(EVENT_UPDATE_EDITOR_CONTENT, (response) => {
-      window.requestIdleCallback(() => {
-        response.then((markup) => this.setSource(markup));
-      });
-    });
+    events.subscribe(EVENT_UPDATE_EDITOR_CONTENT, this.setSource.bind(this));
   }
 
   createCodeMirror() {

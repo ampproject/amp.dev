@@ -13,7 +13,7 @@
 // limitations under the License.
 
 require('./fly-in.scss');
-import loaderHtml from '../loader/loader.hbs';
+import template from './fly-in.hbs';
 
 class FlyIn {
   constructor(target) {
@@ -29,7 +29,7 @@ class FlyIn {
     const title = target.getAttribute('data-title');
     target.insertAdjacentHTML(
       'afterbegin',
-      loaderHtml({theme: this.content})
+      template({ title: title })
     );
 
     return target;

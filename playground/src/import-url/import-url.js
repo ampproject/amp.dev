@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import './import-url.scss';
-import loaderHtml from '../import-url/import-url.hbs';
+import template from '../import-url/import-url.hbs';
 
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
@@ -37,14 +37,10 @@ class ImportURL extends FlyIn {
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
 
-    const content = document.createElement('div');
-    content.className = 'import-url';
     target.insertAdjacentHTML(
-      'afterbegin',
-      loaderHtml({theme: this.content})
+      'beforeend',
+      template()
     );
-
-    this.upadateContent(content);
 
     this.urlBarLabel = document.getElementById('url-bar-label');
     this.urlBarInput = document.getElementById('url-bar-input');
@@ -100,8 +96,8 @@ class ImportURL extends FlyIn {
       });
   }
 
-  importSuccess(url, content) {
-    events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, content);
+  importSuccess(url, markup) {
+    events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, markup);
     this.urlBarLabel.classList.remove('show');
     this.setURLParams(url);
     this.toggle();
