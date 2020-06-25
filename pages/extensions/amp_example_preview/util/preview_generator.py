@@ -27,15 +27,7 @@ def _transform(doc, original_body, content):
     return content
 
   output = output + content[0:pos]
-
-  amp_dependencies = getattr(doc, 'amp_dependencies')
-  if amp_dependencies and not amp_dependencies.injected:
-    add_amp_dependencies(amp_dependencies, doc)
-  else:
-    if amp_dependencies:
-      doc.pod.logger.warn('The AmpDependenciesExtension has already written the imports.\n'
-                          'Please configure the AmpExamplePreviewExtension before the AmpDependenciesExtension.')
-    output = output + get_dependency_scripts(doc, content)
+  output = output + get_dependency_scripts(doc, content)
 
   matches = ExamplePreviewMatch.extract_previews(content)
   for match in matches:
@@ -56,15 +48,6 @@ def generate_preview(doc, content, preview):
     content=content)
   return output
 
-def add_amp_dependencies(amp_dependencies, doc):
-  amp_imports = getattr(doc, ATTRIBUTE_EXAMPLE_IMPORTS)
-  amp_templates = getattr(doc, ATTRIBUTE_EXAMPLE_TEMPLATES)
-  if amp_imports is not None and len(amp_imports) > 0:
-    for custom_element in amp_imports:
-      amp_dependencies.add(custom_element.name, version=custom_element.version)
-  if amp_templates is not None and len(amp_templates) > 0:
-    for custom_template in amp_templates:
-      amp_dependencies.add(custom_template.name, version=custom_template.version, type='template')
 
 def get_dependency_scripts(doc, content):
   output = ''
