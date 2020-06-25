@@ -111,13 +111,6 @@ The Link is optional and will create a button inside the stage.
 
 A list of links that will expand to a row of cards that link to the document.
 
-**Importing AMP Components**
-
-Import AMP components via:
-
-```md
-{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
-```
 
 ### Code Samples
 Code samples are placed inside sets of three backticks. The sourcecode language specified at the end of the first backtick set.
@@ -186,7 +179,7 @@ Use the `preview` attribute to define how the preview is generated:
   An inline preview is only possible for normal website examples if the code does not contain any `head` elements.
   Use this option for small examples that do not need any styling or other `head` elements
   (imports do not count, since they are specified via the `imports` attribute).
-  
+
 - **top-frame**: The example preview is displayed above the source code inside an iframe.
   The orientation can be toggled between `portrait` and `landscape` mode.
   You can preselect the orientation by specifying the additional attribute:
