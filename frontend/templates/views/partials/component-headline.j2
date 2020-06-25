@@ -15,10 +15,10 @@
 <div>
 {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
 {% if doc.experimental %}
-  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">Experimental</div>
+  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Experimental') }}</div>
 {% endif %}
 {% if doc.deprecated %}
-  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">Deprecated</div>
+  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Deprecated') }}</div>
 {% endif %}
 </div>
 </h1>
