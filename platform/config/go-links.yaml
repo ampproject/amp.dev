@@ -22,6 +22,7 @@
 /devx-survey: https://google.qualtrics.com/jfe/form/SV_2f10wnLh8qJclRb
 /docs: /documentation/guides-and-tutorials/
 /docsgfi: https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22
+/eleventy: https://github.com/ampproject/eleventy-plugin-amp
 /email: /about/email/
 /email-support: /support/faq/email-support/
 /email-tools: /documentation/tools/?format=email
