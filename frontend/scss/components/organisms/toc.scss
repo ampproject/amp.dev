@@ -20,18 +20,17 @@
 .#{organism('toc')} {
   --spacing-top: 90px;
 
-  position: relative;
-  z-index: 1;
-  top: 0;
+  position: fixed;
+  z-index: 15;
+  bottom: 0;
   right: 0;
-  width: calc(100% - 20px);
+  // width: 50%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background-color: color('white');
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
   border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 10px;
+  padding: 5px 10px 5px 5px;
 
   &::-webkit-scrollbar {
     width: 2px;
@@ -63,6 +62,8 @@
 
   &-hl {
     @include txt-font-accent;
+    font-size: 12px;
+    color: color('black');
     cursor: pointer;
     width: 100%;
     margin-bottom: 0px;
