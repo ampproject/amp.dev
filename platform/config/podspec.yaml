@@ -27,7 +27,6 @@ ext:
           method: 'useIcon'
 - extensions.log_beautifier.LogBeautifierExtension
 - extensions.amp_example_preview.AmpExamplePreviewExtension
-- extensions.amp_dependencies.AmpDependenciesExtension
 - extensions.amp_dev.AmpDevExtension
 - extensions.url_beautifier.UrlBeautifierExtension
 - extensions.internal_links.PodInternalLinkExtension:
