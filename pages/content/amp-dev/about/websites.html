@@ -13,7 +13,32 @@ flyout:
   description: Create flawless web experiences
   icon: amp-websites
 
-teaser:
+stage_accordion:
+  - logic: expand:accordion-video-1.show,accordion-background-video-1.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-4.hide
+    headline: Customizable components
+    copyText: AMP consists of a library of customizable front-end components that are all designed with user experience and performance top of mind. AMP components automatically update in the background so you can focus on building a great web experience and worry less about all the extras like browser compatibility, or accessibility, security, and privacy standards.
+    linkAddress: #
+    linkText: Components Reference
+    icon: internal
+  - logic: expand:accordion-video-2.show,accordion-background-video-1.hide,accordion-video-1.hide,accordion-video-3.hide,accordion-video-4.hide
+    headline: Guaranteed performance
+    copyText: A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.
+    linkAddress: #
+    linkText: Learn more
+    icon: internal
+  - logic: expand:accordion-video-3.show,accordion-background-video-1.hide,accordion-video-2.hide,accordion-video-1.hide,accordion-video-4.hide
+    headline: Out-of-the-box interactivity
+    copyText: A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.
+    linkAddress: #
+    linkText: Learn more
+    icon: internal
+  - logic: expand:accordion-video-4.show,accordion-video-2.hide,accordion-background-video-1.hide,accordion-video-3.hide,accordion-video-1.hide
+    headline: Open source operated
+    copyText: A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.
+    linkAddress: #
+    linkText: Learn more
+    icon: internal
+
 
 ---
 <amp-animation id="stageAnim" layout="nodisplay">
@@ -82,76 +107,22 @@ teaser:
     <section class="ap--component-visual">
       <div class="ap-o-component-visual ap--container-fluid">
         <amp-accordion id="accordion-container" class="ap-o-component-visual-accordion" expand-single-section>
-          <section on="expand:accordion-video-1.show,accordion-background-video-1.show,accordion-video-2.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide" expanded>
-            <h5>{{ _('Customizable components') }}</h5>
-            <p>
-              {{ _('AMP consists of a library of customizable front-end components that are all designed with user experience and performance top of mind. AMP components automatically update in the background so you can focus on building a great web experience and worry less about all the extras like browser compatibility, or accessibility, security, and privacy standards.') }}
-              <a href="#">
-                {{ _('Components Reference')}}
-                <span class="ap-a-ico ap-m-lnk-icon">
-                  <svg>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                  </svg>
-                </span>
-              </a>
-            </p>
-          </section>
-          <section on="expand:accordion-video-2.show,accordion-background-video-1.hide,accordion-video-1.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-5.hide">
-            <h5>{{ _('Guaranteed performance') }}</h5>
-            <p>
-              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-              <a href="#">
-                {{ _('Learn more')}}
-                <span class="ap-a-ico ap-m-lnk-icon">
-                  <svg>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                  </svg>
-                </span>
-              </a>
-            </p>
-          </section>
-          <section on="expand:accordion-video-3.show,accordion-background-video-1.hide,accordion-video-2.hide,accordion-video-1.hide,accordion-video-4.hide,accordion-video-5.hide">
-            <h5>{{ _('Out-of-the-box interactivity') }}</h5>
-            <p>
-              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-              <a href="#">
-                {{ _('Learn more')}}
-                <span class="ap-a-ico ap-m-lnk-icon">
-                  <svg>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                  </svg>
-                </span>
-              </a>
-            </p>
-          </section>
-          <section on="expand:accordion-video-4.show,accordion-video-2.hide,accordion-background-video-1.hide,accordion-video-3.hide,accordion-video-1.hide,accordion-video-5.hide">
-            <h5>{{ _('Open source operated') }}</h5>
-            <p>
-              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-              <a href="#">
-                {{ _('Learn more')}}
-                <span class="ap-a-ico ap-m-lnk-icon">
-                  <svg>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                  </svg>
-                </span>
-              </a>
-            </p>
-          </section>
-          <section on="expand:accordion-video-5.show,accordion-video-2.hide,accordion-background-video-1.hide,accordion-video-3.hide,accordion-video-4.hide,accordion-video-1.hide">
-            <h5>Headline small</h5>
-            <p>
-              {{ _('A lot of publishers rely on ads to offer their services. For example ads are what allows you to enjoy your favorite magazine online - for free.') }}
-              <a href="#">
-                {{ _('Learn more')}}
-                <span class="ap-a-ico ap-m-lnk-icon">
-                  <svg>
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use>
-                  </svg>
-                </span>
-              </a>
-            </p>
-          </section>
+          {% for element in doc.stage_accordion %}
+            <section on="{{ element.logic }}" expanded>
+              <h5>{{ element.headline }}</h5>
+              <p>
+                {{ element.copyText }}
+                <a href="{{ element.linkAddress }}">
+                  {{ element.linkText }}
+                  <span class="ap-a-ico ap-m-lnk-icon">
+                    <svg>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ element.icon }}"></use>
+                    </svg>
+                  </span>
+                </a>
+              </p>
+            </section>
+          {% endfor %}
         </amp-accordion>
         <div class="media-container" id="accordion-video-1"></div>
         <div id="accordion-background-video-1" class="media-container media-container-background"></div>
