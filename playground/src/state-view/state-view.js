@@ -63,6 +63,7 @@ class StateView extends FlyIn {
   setStateViewContent(state) {
     this.content.classList.remove('loading');
     this.treeView.value = state;
+    this.treeView.refresh();
     this.upadateContent(this.treeView.dom);
   }
 }
