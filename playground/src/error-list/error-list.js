@@ -90,7 +90,7 @@ class ErrorList extends FlyIn {
         }
       }
 
-      this.upadateContent(content);
+      this.render(content);
     });
   }
 
