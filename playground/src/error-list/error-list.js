@@ -78,7 +78,7 @@ class ErrorList extends FlyIn {
       let content;
       if (!validationResult.errors.length) {
         content = document.createElement('span');
-        content.innerText = 'No validation errors.'
+        content.innerText = 'No validation errors.';
       } else {
         content = document.createElement('ul');
         for (let i = 0; i < validationResult.errors.length; i++) {
@@ -100,7 +100,7 @@ class ErrorList extends FlyIn {
     errorElement.dataset.index = index;
     errorElement.insertAdjacentHTML(
       'afterbegin',
-      template({ error: error, index: index })
+      template({error: error, index: index})
     );
     errorElement.addEventListener('click', this.onErrorItemClick.bind(this));
 

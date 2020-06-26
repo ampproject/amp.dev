@@ -37,10 +37,7 @@ class ImportURL extends FlyIn {
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
 
-    this.content.insertAdjacentHTML(
-      'beforeend',
-      template()
-    );
+    this.content.insertAdjacentHTML('beforeend', template());
 
     this.urlBarLabel = target.querySelector('#url-bar-label');
     this.urlBarInput = target.querySelector('#url-bar-input');

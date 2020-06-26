@@ -27,10 +27,7 @@ class FlyIn {
 
   createFlyIn(target) {
     const title = target.getAttribute('data-title');
-    target.insertAdjacentHTML(
-      'afterbegin',
-      template({ title })
-    );
+    target.insertAdjacentHTML('afterbegin', template({title}));
     target.appendChild(this.content);
 
     return target;
