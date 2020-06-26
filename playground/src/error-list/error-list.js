@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import './error-list.scss';
-import template from './error-list.hbs';
+import template from './error-list-item.hbs';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';

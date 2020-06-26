@@ -35,11 +35,12 @@ class StateView extends FlyIn {
     // Set treeview for state
     this.treeView = new JSONTreeView('', {});
     this.treeView.showCountOfObjectOrArray = false;
+    this.content.appendChild(this.treeView.dom);
 
     // configure amp-state listener
-    events.subscribe(Preview.EVENT_AMP_BIND_READY, (stateResult) => {
+    events.subscribe(Preview.EVENT_AMP_BIND_READY, (state) => {
       window.requestIdleCallback(() => {
-        if (!stateResult) {
+        if (!state) {
           this.trigger.disable();
         } else {
           this.trigger.enable();
@@ -48,7 +49,7 @@ class StateView extends FlyIn {
     });
 
     events.subscribe(Preview.EVENT_AMP_BIND_NEW_STATE, (state) => {
-      this.setStateViewContent(state);
+      this.render(state);
     });
   }
 
@@ -58,12 +59,11 @@ class StateView extends FlyIn {
     this.toggle();
   }
 
-  setStateViewContent(state) {
+  render(state) {
     this.content.classList.remove('loading');
     this.treeView.value = state;
     this.treeView.refresh();
     this.treeView.expand(true);
     this.treeView.readonly = true;
-    this.upadateContent(this.treeView.dom);
   }
 }
