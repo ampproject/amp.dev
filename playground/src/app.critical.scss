@@ -223,7 +223,6 @@
 
         &.valid {
           display: none;
-          pointer-events: none;
           background: color('malachite');
 
           @media (min-width: 768px) {

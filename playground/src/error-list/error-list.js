@@ -13,7 +13,7 @@
 // limitations under the License.
 
 require('./error-list.scss');
-
+import template from './error-list.hbs';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';
@@ -75,16 +75,19 @@ class ErrorList extends FlyIn {
   update(validationResult) {
     this.validationResult = validationResult;
     window.requestIdleCallback(() => {
-      /* eslint-disable max-len */
-      const content = document.createElement('ul');
-      for (let i = 0; i < validationResult.errors.length; i++) {
-        const error = validationResult.errors[i];
-        content.appendChild(this.renderError(error, i));
-      }
-
-      /* eslint-enable max-len */
-      if (validationResult.errors.length === 0) {
-        this.hideFlyIn();
+      let content;
+      if (!validationResult.errors.length) {
+        content = document.createElement('span');
+        content.innerText = 'No validation errors.'
+      } else {
+        content = document.createElement('ul');
+        for (let i = 0; i < validationResult.errors.length; i++) {
+          const error = validationResult.errors[i];
+          content.appendChild(this.renderError(error, i));
+        }
+        if (validationResult.errors.length === 0) {
+          this.hideFlyIn();
+        }
       }
 
       this.upadateContent(content);
@@ -95,17 +98,10 @@ class ErrorList extends FlyIn {
     const errorElement = document.createElement('li');
     errorElement.className = `validation-error ${error.icon}`;
     errorElement.dataset.index = index;
-
-    errorElement.innerHTML = `<div>
-        <p class="message">
-          ${error.message}
-          <a href="${error.specUrl}" target="_blank" rel="noopener">
-            Learn&nbsp;more
-          </a>
-        </p>
-        <div class="location">line ${error.line}, column ${error.col}</div>
-      </div>`;
-
+    errorElement.insertAdjacentHTML(
+      'afterbegin',
+      template({ error: error, index: index })
+    );
     errorElement.addEventListener('click', this.onErrorItemClick.bind(this));
 
     return errorElement;

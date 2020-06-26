@@ -11,6 +11,13 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
+    span {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 50%;
+    }
+
     ul {
       list-style-type: none;
       margin: 0;
@@ -30,7 +37,7 @@
       border-bottom: 1px solid color('silver');
 
       &:hover, &:active {
-        background: color('wild-sand');
+        background-color: color('wild-sand');
       }
 
       .message {
