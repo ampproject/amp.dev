@@ -37,7 +37,7 @@ class ImportURL extends FlyIn {
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
 
-    target.insertAdjacentHTML(
+    this.content.insertAdjacentHTML(
       'beforeend',
       template()
     );
