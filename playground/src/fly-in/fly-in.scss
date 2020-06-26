@@ -61,9 +61,8 @@
   }
 
   &-content {
-    height: 100%;
-    margin-top: 25px;
-    padding: 0 25px;
+    height: calc(100% + 50px);
+    padding: 25px;
     overflow: scroll;
 
     &.loading {
