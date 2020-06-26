@@ -35,8 +35,6 @@ class StateView extends FlyIn {
     // Set treeview for state
     this.treeView = new JSONTreeView('', {});
     this.treeView.showCountOfObjectOrArray = false;
-    this.treeView.readonly = true;
-    this.treeView.expand(true);
 
     // configure amp-state listener
     events.subscribe(Preview.EVENT_AMP_BIND_READY, (stateResult) => {
@@ -64,6 +62,8 @@ class StateView extends FlyIn {
     this.content.classList.remove('loading');
     this.treeView.value = state;
     this.treeView.refresh();
+    this.treeView.expand(true);
+    this.treeView.readonly = true;
     this.upadateContent(this.treeView.dom);
   }
 }
