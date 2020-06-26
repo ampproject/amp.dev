@@ -39,6 +39,36 @@ stage_accordion:
     linkText: Learn more
     icon: internal
 
+revolver_carousel:
+  - id: rv-e-1
+    icon: interaction
+    headline: Enterprise
+    copyText: Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+  - id: rv-e-2
+    icon: interaction
+    headline: Creative Agencies
+    copyText: Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+  - id: rv-e-3
+    icon: interaction
+    headline: Publishers
+    copyText: Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+  - id: rv-e-4
+    icon: interaction
+    headline: Schools
+    copyText: Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+  - id: rv-e-5
+    icon: interaction
+    headline: Development
+    copyText: Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+  - id: rv-e-6
+    icon: interaction
+    headline: Enterprise
+    copyText: Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+  - id: rv-e-7
+    icon: interaction
+    headline: Creative Agencies
+    copyText: Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+
 
 ---
 <amp-animation id="stageAnim" layout="nodisplay">
@@ -111,9 +141,9 @@ stage_accordion:
             <section on="{{ element.logic }}" expanded>
               <h5>{{ element.headline }}</h5>
               <p>
-                {{ element.copyText }}
+                {{ _(element.copyText) }}
                 <a href="{{ element.linkAddress }}">
-                  {{ element.linkText }}
+                  {{ _(element.linkText) }}
                   <span class="ap-a-ico ap-m-lnk-icon">
                     <svg>
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ element.icon }}"></use>
@@ -220,69 +250,17 @@ stage_accordion:
   </section>
   <section class="ap--content revolver-carousel">
     <div class="ap--container-fluid revolver-carousel-holder">
-      <section id="rv-e-1" class="revolver-carousel-element">
-        <div class="revolver-carousel-icon">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
-          </svg>
-        </div>
-        <span class="revolver-carousel-headline">{{ _('Enterprise') }}</span>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-      </section>
-      <section id="rv-e-2" class="revolver-carousel-element">
-        <div class="revolver-carousel-icon">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
-          </svg>
-        </div>
-        <span class="revolver-carousel-headline">{{ _('Creative Agencies') }}</span>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-      </section>
-      <section id="rv-e-3" class="revolver-carousel-element">
-        <div class="revolver-carousel-icon">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
-          </svg>
-        </div>
-        <span class="revolver-carousel-headline">{{ _('Publishers') }}</span>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-      </section>
-      <section id="rv-e-4" class="revolver-carousel-element">
-        <div class="revolver-carousel-icon">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
-          </svg>
-        </div>
-        <span class="revolver-carousel-headline">{{ _('Schools') }}</span>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-      </section>
-      <section id="rv-e-5" class="revolver-carousel-element">
-        <div class="revolver-carousel-icon">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
-          </svg>
-        </div>
-        <span class="revolver-carousel-headline">{{ _('Publishers') }}</span>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-      </section>
-      <section id="rv-e-6" class="revolver-carousel-element">
-        <div class="revolver-carousel-icon">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
-          </svg>
-        </div>
-        <span class="revolver-carousel-headline">{{ _('Enterprise') }}</span>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-      </section>
-      <section id="rv-e-7" class="revolver-carousel-element">
-        <div class="revolver-carousel-icon">
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#interaction"></use>
-          </svg>
-        </div>
-        <span class="revolver-carousel-headline">{{ _('Creative Agencies') }}</span>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-      </section>
+      {% for element in doc.revolver_carousel %}
+        <section id="{{ element.id }}" class="revolver-carousel-element">
+          <div class="revolver-carousel-icon">
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ element.icon }}"></use>
+            </svg>
+          </div>
+          <span class="revolver-carousel-headline">{{ _( element.headline) }}</span>
+          <p>{{ _(element.copyText )}}</p>
+        </section>
+      {% endfor %}}
     </div>
   </section>
   <section class="ap--content">
