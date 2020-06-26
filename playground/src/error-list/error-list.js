@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./error-list.scss');
+import './error-list.scss';
 import template from './error-list.hbs';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';

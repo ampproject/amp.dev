@@ -3,9 +3,8 @@
 
 .import-url {
   p {
-    font-size: 14px;
-    line-height: 1.64;
-    color: color('limed-spruce');
+    @include txt;
+    @include txt-2;
   }
 
   &-bar {
@@ -31,7 +30,6 @@
       min-width: 100px;
       border: 0;
       border-radius: 0 4px 4px 0;
-      font-family: Poppins;
       font-size: 16px;
       text-transform: uppercase;
       color: color('white');

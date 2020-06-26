@@ -42,9 +42,9 @@ class ImportURL extends FlyIn {
       template()
     );
 
-    this.urlBarLabel = document.getElementById('url-bar-label');
-    this.urlBarInput = document.getElementById('url-bar-input');
-    this.urlBarSubmit = document.getElementById('url-bar-submit');
+    this.urlBarLabel = target.querySelector('#url-bar-label');
+    this.urlBarInput = target.querySelector('#url-bar-input');
+    this.urlBarSubmit = target.querySelector('#url-bar-submit');
 
     this.urlBarSubmit.addEventListener(
       'click',

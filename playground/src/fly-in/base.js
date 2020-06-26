@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./fly-in.scss');
+import './fly-in.scss';
 import template from './fly-in.hbs';
 
 class FlyIn {
@@ -29,14 +29,14 @@ class FlyIn {
     const title = target.getAttribute('data-title');
     target.insertAdjacentHTML(
       'afterbegin',
-      template({ title: title })
+      template({ title })
     );
     target.appendChild(this.content);
 
     return target;
   }
 
-  upadateContent(content) {
+  render(content) {
     this.content.innerHTML = '';
     this.content.appendChild(content);
   }
