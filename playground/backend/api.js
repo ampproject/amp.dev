@@ -24,25 +24,6 @@ const log = require('@lib/utils/log')('Playground API');
 const api = express.Router();
 
 const ONE_HOUR = 60 * 60;
-const VALID_ORIGINS = new Set([
-  'amp.dev',
-  'api.amp.dev',
-  'preview.amp.dev',
-  'amp-dev-staging.appspot.com',
-  'playground-dot-amp-dev-staging.appspot.com',
-  'preview-dot-amp-dev-staging.appspot.com',
-  'ampbyexample.com',
-  'ampstart.com',
-  'ampstart-staging.firebaseapp.com',
-  'localhost',
-  'localhost:8080',
-  'localhost:8082',
-  'localhost:8084',
-  'amp-by-example-staging.appspot.com',
-  'amp-by-example-sebastian.appspot.com',
-  '0.1.0.1',
-]);
-
 const host = config.hosts.platform.base;
 
 api.get('/fetch', async (request, response) => {
@@ -59,9 +40,6 @@ api.get('/fetch', async (request, response) => {
 
 async function fetchDocument(urlString, host) {
   const url = new URL(urlString, host);
-  if (!VALID_ORIGINS.has(url.host)) {
-    throw new Error(`Unsupported host ${url.host}`);
-  }
   return doFetch(url.toString());
 }
 

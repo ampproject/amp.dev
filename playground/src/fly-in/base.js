@@ -12,12 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./fly-in.scss');
+import './fly-in.scss';
+import template from './fly-in.hbs';
 
 class FlyIn {
   constructor(target) {
     const content = document.createElement('div');
-    content.className = 'fly-in-container';
+    content.className = 'fly-in-content';
     this.content = content;
 
     this.createFlyIn(target);
@@ -26,19 +27,13 @@ class FlyIn {
 
   createFlyIn(target) {
     const title = target.getAttribute('data-title');
-    target.innerHTML = `
-      <div class="fly-in-header">
-        <h2>${title}</h2>
-        <div class="fly-in-close" tabindex="0" role="button"></div>
-      </div>
-    `;
-
+    target.insertAdjacentHTML('afterbegin', template({title}));
     target.appendChild(this.content);
 
     return target;
   }
 
-  upadateContent(content) {
+  render(content) {
     this.content.innerHTML = '';
     this.content.appendChild(content);
   }

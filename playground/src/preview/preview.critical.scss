@@ -61,26 +61,23 @@
     top: 56px;
   }
   #preview .panel-header {
+    position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 0;
+    z-index: 10;
     height: 54px;
     width: 100%;
-    background-color: #fafafa;
-    color: rgba(0,0,0,.87);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    position: fixed;
-    top: 0;
-    z-index: 125;
+    margin-left: 0;
     padding-left: 0;
-    padding-right: 1rem;
+    border-bottom: 2px solid color('mercury');
   }
   #preview-header-close {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 8px;
+    margin-right: auto;
     line-height: 54px;
     padding: 8px;
     width: 56px;
