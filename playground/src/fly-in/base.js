@@ -31,6 +31,7 @@ class FlyIn {
       'afterbegin',
       template({ title: title })
     );
+    target.appendChild(this.content);
 
     return target;
   }
