@@ -6,50 +6,6 @@
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
 
-// $originalSpeed: 0.233s;
-// $originalEasing: cubic-bezier(0,0,.21,1);
-//
-// #sidebar-left[aria-hidden="true"]:not([hidden]) ~ .ap--main  {
-//   .ap-a-sidebar-mobile-toggle-label {
-//     animation: moveSidebarToggleBackwards $originalSpeed $originalEasing forwards;
-//
-//     .label-icon svg { transform: rotate(180deg); }
-//     .label-title { transform: translateX(0) scaleX(1); transform-origin: left center; }
-//   }
-// }
-//
-// #sidebar-left[open] ~ .ap--main {
-//   .ap-a-sidebar-mobile-toggle-label {
-//     left: 0;
-//     margin-left: 0;
-//     animation: moveSidebarToggleForwards $originalSpeed $originalEasing forwards;
-//
-//     .label-icon svg { transform: rotate(0); }
-//     .label-title { transform: translateX(-150vw) scaleX(0); transform-origin: left center; }
-//   }
-// }
-//
-// #sidebar-left[open] ~ .ap--main,
-// #sidebar-left[aria-hidden="true"]:not([hidden]) ~ .ap--main {
-//   .ap-a-sidebar-mobile-toggle-label {
-//     z-index: 9999999999;
-//   }
-// }
-//
-// @keyframes moveSidebarToggleBackwards {
-//   from { transform: translateX(calc(90vw - 50%)); }
-//   to { transform: translateX(0); }
-// }
-//
-// @keyframes moveSidebarToggleForwards {
-//   from { transform: translateX(0); }
-//   to { transform: translateX(calc(90vw - 50%)); }
-// }
-
-// .#{utility('sidebar-toggle-observer')} {
-//   position: absolute;
-//   top: 50px;
-// }
 
 .#{atom('sidebar-toggle')} {
   &-input {
@@ -70,8 +26,6 @@
     box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
 
     .label-icon {
-      border-radius: 4px;
-      background: color('white');
       height: 35px;
       width: 32px;
       padding-left: 2px;
@@ -79,28 +33,25 @@
       justify-content: center;
       align-items: center;
       z-index: 1;
+      background: color('white');
 
       svg {
         height: 14px;
         width: 14px;
-        // transition: transform $originalSpeed $originalEasing;
       }
     }
 
     .label-title {
-      position: absolute;
+      position: fixed;
       left: 32px;
       display: flex;
       align-items: center;
       height: 35px;
-      margin-left: -5px;
-      padding: 5px 10px 5px 5px;
+      min-width: 40%;
+      padding: 5px 10px 5px 0;
       white-space: nowrap;
       background: color('white');
       box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
-      // transform: scale3d(0, 1, 1);
-      // transform-origin: left;
-      // transition: transform $originalSpeed $originalEasing;
     }
   }
 }
@@ -145,9 +96,23 @@
     &-label {
       // position: -webkit-sticky;
       // position: sticky;
-      top: 138px;
+      top: 160px;
       display: inline-flex;
       transform: translate(-68px, -52px);
+
+      .label-icon {
+        background: color('blue-ribbon');
+        color: color('white');
+        fill: color('white');
+        margin-left: 4px;
+        border-radius: 6px;
+      }
+
+      .label-title {
+        visibility: hidden;
+        background: color('blue-ribbon');
+        color: color('white');
+      }
     }
 
     &-input {
@@ -180,11 +145,24 @@
           padding-left: 80px;
           padding-right: 80px;
           .ap-a-sidebar-desktop-toggle-label {
-            margin-left: -88px;
+            transform: rotate(-90deg);
+            top: 250px;
+            margin-left: -125px;
+
             .label-icon {
+              width: 35px;
+              margin-left: -2px;
+              transform: rotate(90deg);
+              border-radius: 0 0 6px 6px;
               svg {
                 transform: rotate(180deg);
               }
+            }
+
+            .label-title {
+              visibility: visible;
+              border-radius: 0 6px 6px 0;
+
             }
           }
         }

@@ -19,17 +19,19 @@
 
 .#{organism('toc')} {
   --spacing-top: 90px;
-
   position: fixed;
   z-index: 15;
   bottom: 0;
   right: 0;
-  // width: 50%;
+  width: 50%;
+  height: 35px;
+  display: flex;
+  align-items: center;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background-color: color('white');
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
-  padding: 5px 10px 5px 5px;
+  padding: 5px 5px 5px 20px;
 
   &::-webkit-scrollbar {
     width: 2px;
@@ -66,6 +68,7 @@
     cursor: pointer;
     width: 100%;
     margin-bottom: 0px;
+    padding-right: 8px;
 
     @media (min-width: 1024px) {
       margin-bottom: 10px;

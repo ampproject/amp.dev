@@ -12,8 +12,8 @@
       <span class="ap-o-toc-hl">{{ _('Table of contents') }}</span>
       {# The icons direction depends on the inputs checked state #}
       <span class="nav-icon">
-        {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-        <svg class="ap-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+        {% do doc.icons.useIcon('icons/sidebar-toggle.svg') %}
+        <span class="label-icon"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#sidebar-toggle"></use></svg></span>
       </span>
     </label>
     <input class="ap-a-sidebar-toggle-input ap-a-sidebar-toggle-input-toc" type="checkbox" name="toc" id="toc" autocomplete="off">
