@@ -64,12 +64,12 @@ class Button {
     return this;
   }
 
-  addClass(clazz) {
-    this._element.classList.add(clazz, true);
+  addClass(...classes) {
+    this._element.classList.add(...classes);
     return this;
   }
 
-  removeClass(clazz) {
-    this._element.classList.remove(clazz, false);
+  removeClass(...classes) {
+    this._element.classList.remove(...classes);
   }
 }
