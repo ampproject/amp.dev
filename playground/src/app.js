@@ -206,16 +206,20 @@ const loadTemplateButton = Button.from(
   document.getElementById('document-title'),
   () => templateDialog.open(runtimes.activeRuntime)
 );
-const templateDialog = createTemplateDialog(loadTemplateButton, {
-  onStart: () => editor.showLoadingIndicator(),
-  onSuccess: (template) => {
-    editor.setSource(template.content);
-    params.replace('url', template.url);
-  },
-  onError: (err) => {
-    snackbar.show(err);
-  },
-});
+
+if (loadTemplateButton) {
+  const templateDialog = createTemplateDialog(loadTemplateButton, {
+    onStart: () => editor.showLoadingIndicator(),
+    onSuccess: (template) => {
+      editor.setSource(template.content);
+      params.replace('url', template.url);
+    },
+    onError: (err) => {
+      snackbar.show(err);
+    },
+  });
+}
+
 // create the share action
 const shareDialog = createShareAction(editor);
 Button.from(document.getElementById('share'), () => {

@@ -65,7 +65,11 @@
           {{/htmlWebpackPlugin.options.validator}}
         </span>
       </a>
+
+      {{^htmlWebpackPlugin.options.validator}}
       <div id="document-title" tabindex="0" role="button" class="ap-o-header-text caret-right hidden">Untitled</div>
+      {{/htmlWebpackPlugin.options.validator}}
+
       <div id="toolbar">
         {{> button/button.hbs id="save-document" class="hidden" class2="underline" hideOnMobile=true  text="Save"}}
         {{> button/button.hbs id="fork-document" class="border" text="Fork" hideOnMobile=true }}
