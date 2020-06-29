@@ -28,6 +28,7 @@ import * as EmailLoader from './email-loader/email-loader.js';
 import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
+import * as Experiments from './experiments/experiments.js';
 import * as ImportURL from './import-url/import-url.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
@@ -70,6 +71,11 @@ ImportURL.createImportURLView(importURLContainer, importURLTrigger);
 const stateIndicator = document.getElementById('preview-header-state');
 const stateListContainer = document.getElementById('state-view');
 StateView.createStateView(stateListContainer, stateIndicator);
+
+// configure experiments view behavior
+const experimentsIndicator = document.getElementById('preview-header-experiments');
+const experimentsContainer = document.getElementById('experiments-view');
+Experiments.createExperimentalView(experimentsContainer, experimentsIndicator);
 
 // configure error list behavior
 const errorIndicator = document.getElementById('error-indicator');
