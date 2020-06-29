@@ -45,9 +45,7 @@ class ErrorList extends FlyIn {
           }
 
           this.trigger.enable();
-          for (const clazz of ['valid', 'warning', 'error']) {
-            this.trigger.removeClass(clazz);
-          }
+          this.trigger.removeClass('valid', 'warning', 'error');
 
           const errorCount = validationResult.errors.length;
           const plurality = errorCount > 1 ? 's' : '';
