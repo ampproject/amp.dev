@@ -1,5 +1,3 @@
-@import 'base.scss';
-
 .embed {
   header {
     display: none;
@@ -83,7 +81,7 @@
       height: auto;
     }
   }
-  @media (max-width: 767px) { 
+  @media (max-width: 767px) {
     .panel {
       width: 100vw;
     }
