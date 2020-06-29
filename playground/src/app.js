@@ -54,7 +54,7 @@ import modes from './modes/';
 import './service-worker/base.js';
 import './request-idle-callback/base.js';
 
-// create editing/preview panels
+// create editing/panels
 const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
@@ -122,7 +122,6 @@ runtimeSelector.show();
 
 let activeRuntime;
 events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
-  preview.setRuntime(newRuntime);
   runtimeSelector.selectOption(newRuntime.id);
   // change editor input to new runtime default if current input is unchanged
   if (
@@ -147,7 +146,11 @@ runtimes.init();
 // configure editor
 const editorUpdateListener = () => {
   const source = editor.getSource();
-  preview.refresh(source);
+
+  if (preview) {
+    preview.refresh(source);
+  }
+
   validator.validate(source);
   titleUpdater.update(source);
 
@@ -179,27 +182,37 @@ const documentController = new DocumentController(
 documentController.show();
 
 // configure preview
-preview.setRuntime(runtimes.activeRuntime);
-const previewPanel = document.getElementById('preview');
-const showPreview = new Fab(document.body, '▶&#xFE0E;', () => {
-  params.push('preview', true);
-  previewPanel.classList.add('show');
-  if (embedMode.isActive) {
-    hidePreviewFab.show();
-  }
-});
+if (preview) {
+  const previewPanel = document.getElementById('preview');
+  const showPreview = new Fab(document.body, '▶&#xFE0E;', () => {
+    params.push('preview', true);
+    previewPanel.classList.add('show');
+    if (embedMode.isActive) {
+      hidePreviewFab.show();
+    }
+  });
 
-const closePreview = () => {
-  params.push('preview', false);
-  previewPanel.classList.remove('show');
+  const closePreview = () => {
+    params.push('preview', false);
+    previewPanel.classList.remove('show');
+    showPreview.show();
+    if (embedMode.isActive) {
+      hidePreviewFab.hide();
+    }
+  };
+  const hidePreviewFab = new Fab(document.body, '✕&#xFE0E;', closePreview);
+  const hidePreviewButton = document.getElementById('preview-header-close');
+  hidePreviewButton.addEventListener('click', closePreview);
+
+  window.onpopstate = () => {
+    if (!params.get('preview')) {
+      previewPanel.classList.remove('show');
+      showPreview.show();
+    }
+  };
+
   showPreview.show();
-  if (embedMode.isActive) {
-    hidePreviewFab.hide();
-  }
-};
-const hidePreviewFab = new Fab(document.body, '✕&#xFE0E;', closePreview);
-const hidePreviewButton = document.getElementById('preview-header-close');
-hidePreviewButton.addEventListener('click', closePreview);
+}
 
 // load template dialog
 const loadTemplateButton = Button.from(
@@ -247,12 +260,3 @@ const loadEmail = () => {
     .catch((error) => alert(`Error loading email: ${error.message}`));
 };
 Button.from(document.getElementById('import-email'), loadEmail);
-
-window.onpopstate = () => {
-  if (!params.get('preview')) {
-    previewPanel.classList.remove('show');
-    showPreview.show();
-  }
-};
-
-showPreview.show();

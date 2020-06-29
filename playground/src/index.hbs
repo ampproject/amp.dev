@@ -108,6 +108,8 @@
       {{> loader/loader.hbs theme="light"}}
     </section>
     <div id="drag"></div>
+
+    {{^htmlWebpackPlugin.options.validator}}
     <section id="preview" class="panel panel--light">
       {{> loader/loader.hbs }}
       <div class="panel-header">
@@ -131,6 +133,12 @@
       </div>
 
     </section>
+    {{/htmlWebpackPlugin.options.validator}}
+    {{#htmlWebpackPlugin.options.validator}}
+    <section id="validation" class="panel panel--light">
+    </section>
+    {{/htmlWebpackPlugin.options.validator}}
+
     </main>
 
     {{^htmlWebpackPlugin.options.validator}}

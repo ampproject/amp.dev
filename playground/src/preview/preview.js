@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import events from '../events/events.js';
+import * as Runtimes from '../runtime/runtimes.js';
 import dimensions from './dimensions.json';
 import params from '../params/base.js';
 import debounce from '../debounce/debounce.js';
@@ -27,10 +28,10 @@ const PARAM_HEIGHT = 'height';
 const MOBILE_BREAK_POINT = 767;
 
 export const EVENT_AMP_BIND_READY = 'event-amp-bind-ready';
-
 export const EVENT_AMP_BIND_NEW_STATE = 'event-amp-bind-new-state';
 
 export function createPreview(container) {
+  if (!container) return;
   return new Preview(container, document, createLoader(container));
 }
 
@@ -48,9 +49,11 @@ class Preview {
         events.publish(EVENT_AMP_BIND_NEW_STATE, state);
       });
     });
+
+    events.subscribe(Runtimes.EVENT_SET_RUNTIME, this._onSetRuntime.bind(this));
   }
 
-  setRuntime(runtime) {
+  _onSetRuntime(runtime) {
     if (this.runtime === runtime) {
       return;
     }
