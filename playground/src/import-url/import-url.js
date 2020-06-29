@@ -27,6 +27,7 @@ export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
 export function createImportURLView(target, trigger) {
+  if (!target) return;
   return new ImportURL(target, trigger);
 }
 

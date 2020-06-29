@@ -22,6 +22,7 @@ import FlyIn from '../fly-in/base.js';
 export const EVENT_ERROR_SELECTED = 'error-selected';
 
 export function createErrorList(target, trigger) {
+  if (!target) { return; }
   return new ErrorList(target, trigger);
 }
 

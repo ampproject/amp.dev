@@ -15,6 +15,8 @@
 import buttonTemplate from './button.hbs';
 
 export function from(element, onClickHandler) {
+  if (!element) { return; }
+
   element.addEventListener('click', onClickHandler);
   return new Button(element.parentNode, element);
 }
