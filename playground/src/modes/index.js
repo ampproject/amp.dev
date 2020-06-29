@@ -16,6 +16,7 @@ class Modes {
   constructor(doc) {
     this.IS_EMBED = !!doc.body.classList.contains('embed');
     this.IS_VALIDATOR = !!doc.body.classList.contains('validator');
+    this.IS_DEFAULT = !!this.IS_EMBED && !!this.IS_VALIDATOR;
   }
 }
 
