@@ -17,7 +17,7 @@ import dimensions from './dimensions.json';
 import params from '../params/base.js';
 import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
-import embedMode from '../embed-mode/';
+import modes from '../modes/';
 import * as StateView from '../state-view/state-view.js';
 
 const PARAM_MODE = 'mode';
@@ -58,7 +58,7 @@ class Preview {
     if (!this.runtime) {
       this.initDimensionFromParamsOrUseDefault(runtime);
     }
-    if (embedMode.isActive) {
+    if (modes.IS_EMBED) {
       this.dimension.width = '100%';
       this.dimension.height = '100%';
     }

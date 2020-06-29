@@ -17,7 +17,7 @@ import * as PlaygroundDocument from './document.js';
 import * as Button from '../button/button.js';
 
 import navigationWarning from '../navigation-warning/navigation-warning.js';
-import embedMode from '../embed-mode/';
+import modes from '../modes/';
 import params from '../params/base.js';
 import events from '../events/events.js';
 import snackbar from '../snackbar/base.js';
@@ -180,14 +180,14 @@ export default class DocumentController {
   }
 
   _stateDirty() {
-    if (!embedMode.isActive) {
+    if (!modes.IS_EMBED) {
       navigationWarning.enable();
     }
     this.saveButton.show().setHtml('Save').enable();
   }
 
   _stateReadOnly() {
-    if (!embedMode.isActive) {
+    if (!modes.IS_EMBED) {
       navigationWarning.enable();
     }
     this.saveButton.hide().disable();

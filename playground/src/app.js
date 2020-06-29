@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./app.critical.scss');
-require('./loader/loader.critical.scss');
-require('./embed-mode/embed.critical.scss');
-require('./preview/preview.critical.scss');
+import './app.critical.scss';
+import './loader/loader.critical.scss';
+import './modes/embed.critical.scss';
+import './preview/preview.critical.scss';
 
 import './event-listener-options/base.js';
 
@@ -47,12 +47,12 @@ import detectRuntime from './runtime/detector.js';
 import addSplitPaneBehavior from './split-pane/base.js';
 import formatter from './formatter/';
 import analytics from './analytics';
-import embedMode from './embed-mode/';
+import modes from './modes/';
 
 import './service-worker/base.js';
 import './request-idle-callback/base.js';
 
-if (!embedMode.isActive) {
+if (!modes.IS_EMBED) {
   analytics.init();
 }
 
