@@ -27,6 +27,8 @@ import * as ComponentsProvider from './components-provider/components-provider.j
 import * as EmailLoader from './email-loader/email-loader.js';
 import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
+import * as StateView from './state-view/state-view.js';
+import * as ImportURL from './import-url/import-url.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
 import * as Preview from './preview/preview.js';
@@ -58,6 +60,16 @@ if (!embedMode.isActive) {
 const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
+
+// configure url import view
+const importURLTrigger = document.getElementById('import-url');
+const importURLContainer = document.getElementById('import-url-view');
+ImportURL.createImportURLView(importURLContainer, importURLTrigger);
+
+// configure state list behavior
+const stateIndicator = document.getElementById('preview-header-state');
+const stateListContainer = document.getElementById('state-view');
+StateView.createStateView(stateListContainer, stateIndicator);
 
 // configure error list behavior
 const errorIndicator = document.getElementById('error-indicator');
@@ -127,6 +139,7 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
 
   const emailButton = document.getElementById('import-email');
   emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
+  importURLTrigger.classList.toggle('hidden', activeRuntime.id === 'amp4email');
 });
 
 runtimes.init();

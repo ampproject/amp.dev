@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
+require('module-alias/register');
+
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
+app.use(cors());
 app.use('/', require('./backend/'));
 
 const port = 8080;

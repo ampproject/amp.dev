@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./error-list.scss');
-
+import './error-list.scss';
+import template from './error-list-item.hbs';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';
@@ -54,15 +54,13 @@ class ErrorList extends FlyIn {
 
           if (validationResult.status == 'FAIL') {
             this.trigger.addClass('error');
-            this.trigger.setHtml(
-              `${errorCount} <span>Error${plurality}</span>`
-            );
+            this.trigger.setHtml(`${errorCount}<span>Error${plurality}</span>`);
             return;
           }
           if (errorCount > 0) {
             this.trigger.addClass('warning');
             this.trigger.setHtml(
-              `${errorCount} <span>Warning${plurality}</span>`
+              `${errorCount}<span>Warning${plurality}</span>`
             );
             return;
           }
@@ -77,19 +75,22 @@ class ErrorList extends FlyIn {
   update(validationResult) {
     this.validationResult = validationResult;
     window.requestIdleCallback(() => {
-      /* eslint-disable max-len */
-      const content = document.createElement('ul');
-      for (let i = 0; i < validationResult.errors.length; i++) {
-        const error = validationResult.errors[i];
-        content.appendChild(this.renderError(error, i));
+      let content;
+      if (!validationResult.errors.length) {
+        content = document.createElement('span');
+        content.innerText = 'No validation errors.';
+      } else {
+        content = document.createElement('ul');
+        for (let i = 0; i < validationResult.errors.length; i++) {
+          const error = validationResult.errors[i];
+          content.appendChild(this.renderError(error, i));
+        }
+        if (validationResult.errors.length === 0) {
+          this.hideFlyIn();
+        }
       }
 
-      /* eslint-enable max-len */
-      if (validationResult.errors.length === 0) {
-        this.hideFlyIn();
-      }
-
-      this.upadateContent(content);
+      this.render(content);
     });
   }
 
@@ -97,17 +98,10 @@ class ErrorList extends FlyIn {
     const errorElement = document.createElement('li');
     errorElement.className = `validation-error ${error.icon}`;
     errorElement.dataset.index = index;
-
-    errorElement.innerHTML = `<div>
-        <p class="message">
-          ${error.message}
-          <a href="${error.specUrl}" target="_blank" rel="noopener">
-            Learn&nbsp;more
-          </a>
-        </p>
-        <div class="location">line ${error.line}, column ${error.col}</div>
-      </div>`;
-
+    errorElement.insertAdjacentHTML(
+      'afterbegin',
+      template({error: error, index: index})
+    );
     errorElement.addEventListener('click', this.onErrorItemClick.bind(this));
 
     return errorElement;
