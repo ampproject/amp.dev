@@ -62,7 +62,7 @@ addSplitPaneBehavior(document.querySelector('main'));
 // configure url import view
 const importURLTrigger = document.getElementById('import-url');
 const importURLContainer = document.getElementById('import-url-view');
-ImportURL.createImportURLView(importURLContainer, importURLTrigger);
+const importUrlView = ImportURL.createImportURLView(importURLContainer, importURLTrigger);
 
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');
@@ -135,9 +135,11 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   validator.validate(editor.getSource());
   activeRuntime = newRuntime;
 
-  const emailButton = document.getElementById('import-email');
-  emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
-  importURLTrigger.classList.toggle('hidden', activeRuntime.id === 'amp4email');
+  if (importUrlView) {
+    const emailButton = document.getElementById('import-email');
+    emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
+    importURLTrigger.classList.toggle('hidden', activeRuntime.id === 'amp4email');
+  }
 });
 
 runtimes.init();

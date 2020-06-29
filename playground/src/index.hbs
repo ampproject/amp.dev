@@ -81,6 +81,8 @@
     </header>
     <main>
     <section id="source" class="panel panel--dark active">
+      {{^htmlWebpackPlugin.options.validator}}
+      {{! Playground panel }}
       <div class="panel-header">
         <div id="runtime-select"></div>
         {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
@@ -89,6 +91,16 @@
         {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
         {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
+      {{/htmlWebpackPlugin.options.validator}}
+      {{#htmlWebpackPlugin.options.validator}}
+      {{! Validator panel }}
+      <div class="panel-header">
+        <div id="runtime-select"></div>
+        {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
+      </div>
+      {{/htmlWebpackPlugin.options.validator}}
+
+
       {{> loader/loader.hbs theme="light"}}
     </section>
     <div id="drag"></div>
@@ -117,9 +129,10 @@
     </section>
     </main>
 
+    {{^htmlWebpackPlugin.options.validator}}
     <div id="error-list" class="fly-in fly-in--right fly-in--error" data-title="Validation errors"></div>
     <div id="state-view" class="fly-in fly-in--left fly-in--state" data-title="State Inspect View"></div>
     <div id="import-url-view" class="fly-in fly-in--left fly-in--import-url" data-title="Import URL"></div>
-
+    {{/htmlWebpackPlugin.options.validator}}
   </body>
 </html>
