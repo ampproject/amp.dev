@@ -265,6 +265,8 @@ class Preview {
     childDoc.close();
     // Enable development mode for preview iframe
     childWindow.location.hash = '#development=1';
+    childWindow.console.error = () => {};
+
     (childWindow.AMP = childWindow.AMP || []).push(() => {
       const checkStateIntervalID = childWindow.setInterval(() => {
         if (this.ampStateReady()) {
