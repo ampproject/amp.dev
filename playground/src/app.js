@@ -13,8 +13,10 @@
 // limitations under the License.
 
 import './app.critical.scss';
-import './loader/loader.critical.scss';
 import './modes/embed.critical.scss';
+import './modes/validator.critical.scss';
+
+import './loader/loader.critical.scss';
 import './preview/preview.critical.scss';
 
 import './event-listener-options/base.js';
