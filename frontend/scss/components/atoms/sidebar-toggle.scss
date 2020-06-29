@@ -94,9 +94,6 @@
     display: inline-block;
 
     &-label {
-      // position: -webkit-sticky;
-      // position: sticky;
-      top: 160px;
       display: inline-flex;
       transform: translate(-68px, -52px);
 
@@ -146,7 +143,7 @@
           padding-right: 80px;
           .ap-a-sidebar-desktop-toggle-label {
             transform: rotate(-90deg);
-            top: 250px;
+            top: 176px;
             margin-left: -125px;
 
             .label-icon {
