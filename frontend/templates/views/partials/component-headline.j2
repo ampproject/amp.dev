@@ -11,9 +11,10 @@
   </select>
 </div>
 {% endif %}
+</h1>
 
-<div>
 {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
+<div class="ap--flags">
 {% if doc.experimental %}
   <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Experimental') }}</div>
 {% endif %}
@@ -21,4 +22,3 @@
   <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Deprecated') }}</div>
 {% endif %}
 </div>
-</h1>

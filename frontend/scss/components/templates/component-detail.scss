@@ -57,6 +57,7 @@ body {
     background: color('white');
     border-radius: 3px;
     border: 2px solid #d5d9de;
+    margin-top: 5px;
 
     &-toggle {
       border: 0;
@@ -82,6 +83,10 @@ body {
       background-position: center;
       pointer-events: none;
     }
+  }
+
+  .#{utility('flags')} {
+    margin-bottom: 2rem;
   }
 }
 
