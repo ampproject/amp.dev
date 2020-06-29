@@ -55,6 +55,7 @@ const HINTS_URL = 'amphtml-hint.json';
 export const EVENT_INPUT_CHANGE = 'editor-input-change';
 export const EVENT_INPUT_NEW = 'editor-input-new';
 export const EVENT_UPDATE_EDITOR_CONTENT = 'event-update-editor-content';
+export const EVENT_UPDATE_CURSOR_FOCUS = 'event-focus-line';
 
 export function createEditor(container) {
   return new Editor(container, window);
@@ -71,6 +72,7 @@ class Editor {
     this.amphtmlHints = this.fetchHintsData();
 
     events.subscribe(EVENT_UPDATE_EDITOR_CONTENT, this.setSource.bind(this));
+    events.subscribe(EVENT_UPDATE_CURSOR_FOCUS, this.setCursorAndFocus.bind(this));
   }
 
   createCodeMirror() {

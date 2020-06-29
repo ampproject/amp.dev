@@ -13,23 +13,30 @@
 // limitations under the License.
 
 import './error-list.scss';
-import template from './error-list-item.hbs';
+
 import events from '../events/events.js';
+import modes from '../modes/';
+
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';
+import * as ErrorListItem from './error-list-item.js';
 import FlyIn from '../fly-in/base.js';
 
-export const EVENT_ERROR_SELECTED = 'error-selected';
+export function createErrorList() {
+  const target = document.getElementById('error-list');
 
-export function createErrorList(target, trigger) {
-  if (!target) { return; }
-  return new ErrorList(target, trigger);
+  if (modes.IS_DEFAULT) {
+    const trigger = document.getElementById('error-indicator');
+    return new FlyInErrorList(target, trigger);
+  } else if (modes.IS_VALIDATOR) {
+    return new InlineErrorList(target);
+  }
 }
 
-class ErrorList extends FlyIn {
+class FlyInErrorList extends FlyIn {
   constructor(target, trigger) {
     super(target);
-
+    console.log('created FlyInErrorList');
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
 
@@ -82,7 +89,7 @@ class ErrorList extends FlyIn {
         content = document.createElement('ul');
         for (let i = 0; i < validationResult.errors.length; i++) {
           const error = validationResult.errors[i];
-          content.appendChild(this.renderError(error, i));
+          ErrorListItem.createErrorListItem(content, error);
         }
         if (validationResult.errors.length === 0) {
           this.hideFlyIn();
@@ -92,29 +99,9 @@ class ErrorList extends FlyIn {
       this.render(content);
     });
   }
+}
 
-  renderError(error, index) {
-    const errorElement = document.createElement('li');
-    errorElement.className = `validation-error ${error.icon}`;
-    errorElement.dataset.index = index;
-    errorElement.insertAdjacentHTML(
-      'afterbegin',
-      template({error: error, index: index})
-    );
-    errorElement.addEventListener('click', this.onErrorItemClick.bind(this));
-
-    return errorElement;
-  }
-
-  onErrorItemClick(e) {
-    const target = e.target.closest('li.validation-error');
-    if (!target) {
-      this.hideErrorList();
-      return;
-    }
-
-    const index = target.dataset.index;
-    const error = this.validationResult.errors[index];
-    events.publish(EVENT_ERROR_SELECTED, error);
+class InlineErrorList {
+  constructor() {
   }
 }

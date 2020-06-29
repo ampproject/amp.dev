@@ -1,4 +1,4 @@
-<div>
+<li class="validation-error {{ error.icon }}" data-index="{{ index }}">
   <p class="message">
     {{ error.message }}
     <a href="{{ error.specUrl }}" target="_blank" rel="noopener">
@@ -6,4 +6,4 @@
     </a>
   </p>
   <div class="location">line {{ error.line }}, column {{ error.col }}</div>
-</div>
+</li>

@@ -28,7 +28,7 @@ import * as AutoImporter from './auto-importer/auto-importer.js';
 import * as ComponentsProvider from './components-provider/components-provider.js';
 import * as EmailLoader from './email-loader/email-loader.js';
 import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
-import * as ErrorListFlyIn from './error-list/error-list-fly-in.js';
+import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
 import * as ImportURL from './import-url/import-url.js';
 import * as Validator from './validator/validator.js';
@@ -69,14 +69,7 @@ const stateIndicator = document.getElementById('preview-header-state');
 const stateListContainer = document.getElementById('state-view');
 StateView.createStateView(stateListContainer, stateIndicator);
 
-// configure error list behavior
-const errorIndicator = document.getElementById('error-indicator');
-const errorListContainer = document.getElementById('error-list');
-ErrorListFlyIn.createErrorList(errorListContainer, errorIndicator);
-
-events.subscribe(ErrorListFlyIn.EVENT_ERROR_SELECTED, (error) =>
-  editor.setCursorAndFocus(error.line, error.col)
-);
+ErrorList.createErrorList();
 
 const validator = Validator.createValidator();
 
