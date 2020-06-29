@@ -54,10 +54,6 @@ import modes from './modes/';
 import './service-worker/base.js';
 import './request-idle-callback/base.js';
 
-if (!modes.IS_EMBED) {
-  analytics.init();
-}
-
 // create editing/preview panels
 const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));

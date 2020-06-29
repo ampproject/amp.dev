@@ -12,17 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const config = require('../../../platform/config/shared.json');
+import gaTrackingId from '../../../platform/config/shared.json';
+import modes from '../modes/';
 
 class Analytics {
-  init() {
+
+  constructor() {
+    if (modes.IS_EMBED) {
+      return;
+    }
+
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       // eslint-disable-next-line prefer-rest-params
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', config.gaTrackingId, {'use_amp_client_id': true});
+    gtag('config', gaTrackingId, {'use_amp_client_id': true});
   }
 }
 
