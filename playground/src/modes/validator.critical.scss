@@ -1,3 +1,5 @@
+@import 'components/atoms/_text.scss';
+
 .validator {
 
   main {
@@ -5,4 +7,19 @@
     margin-left: 0;
     margin-right: 8px;
   }
+
+  #validation {
+    padding: 55px 20px;
+
+    @media (min-width: 786px) {
+      padding: 55px;
+    }
+  }
+
+    h1 {
+      @include txt-font-accent;
+      @include txt-hl;
+      font-size: 32px;
+      color: color('charade');
+    }
 }
