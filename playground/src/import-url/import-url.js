@@ -40,14 +40,12 @@ class ImportURL extends FlyIn {
 
     this.content.insertAdjacentHTML('beforeend', template());
 
-    this.inputBar = createInput(
-      document.getElementById('input-bar-url'), {
-        label: 'Import',
-        type: 'url',
-        name: 'import-url',
-        placeholder: 'Your URL'
-      },
-    );
+    this.inputBar = createInput(document.getElementById('input-bar-url'), {
+      label: 'Import',
+      type: 'url',
+      name: 'import-url',
+      placeholder: 'Your URL',
+    });
 
     this.inputBar.submit.addEventListener('click', (e) => {
       this.importEventHandler(e);
