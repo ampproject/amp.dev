@@ -12,8 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import template from './error-list-item.hbs';
+import events from '../events/events.js';
 import * as Editor from '../editor/editor.js';
+
+import template from './error-list-item.hbs';
 
 export function createErrorListItem(target, error) {
   return new ErrorListItem(target, error);
@@ -25,26 +27,25 @@ class ErrorListItem {
    * @param {Element} target  Where the item gets appended to
    * @param {Object} details Holds information about the error
    */
-  constructor(target, details) {
-    console.log('Creating error', details);
-    this.element = target.appendChild(this._render(details));
+  constructor(target, details, index) {
+    this.details = details;
+
+    this.element = target.appendChild(this._render());
     this.element.addEventListener('click', this._onClick.bind(this));
   }
 
   /**
    * Renders template with the information given in details
-   * @param  {Object} details  Holds information about the error
    * @return {Element}
    */
-  _render(details) {
+  _render() {
     const element = document.createElement('template');
-    element.innerHTML = template(details);
+    element.innerHTML = template(this.details);
 
     return element.content.firstChild;
   }
 
   _onClick(e) {
-    console.log('Click error', e);
-    events.publish(Editor.EVENT_UPDATE_CURSOR_FOCUS, {});
+    events.publish(Editor.EVENT_UPDATE_CURSOR_FOCUS, this.details.line, this.details.col);
   }
 }
