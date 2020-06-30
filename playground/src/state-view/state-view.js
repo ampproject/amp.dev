@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import './state-view.scss';
 import JSONTreeView from 'json-tree-view';
 import 'json-tree-view/example/build/devtools.css';
 import events from '../events/events.js';
@@ -35,7 +36,7 @@ class StateView extends FlyIn {
     // Set treeview for state
     this.treeView = new JSONTreeView('', {});
     this.treeView.showCountOfObjectOrArray = false;
-    this.content.appendChild(this.treeView.dom);
+    this.content.appendChild(this.treeView.dom.querySelector('.children'));
 
     // configure amp-state listener
     events.subscribe(Preview.EVENT_AMP_BIND_READY, (state) => {
