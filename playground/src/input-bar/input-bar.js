@@ -31,10 +31,15 @@ class Input {
   showError(error) {
     this.label.classList.add('show');
     this.label.innerText = error;
+    this.input.focus();
   }
 
   hideError() {
     this.label.classList.remove('show');
+  }
+
+  toggleLoading() {
+    this.submit.classList.toggle('loading');
   }
 
   get value() {

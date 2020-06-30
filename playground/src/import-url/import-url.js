@@ -14,6 +14,7 @@
 
 import './import-url.scss';
 import template from '../import-url/import-url.hbs';
+import createInput from '../input-bar/input-bar.js';
 
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
@@ -39,15 +40,19 @@ class ImportURL extends FlyIn {
 
     this.content.insertAdjacentHTML('beforeend', template());
 
-    this.urlBarLabel = target.querySelector('#url-bar-label');
-    this.urlBarInput = target.querySelector('#url-bar-input');
-    this.urlBarSubmit = target.querySelector('#url-bar-submit');
-
-    this.urlBarSubmit.addEventListener(
-      'click',
-      this.importEventHandler.bind(this)
+    this.inputBar = createInput(
+      document.getElementById('input-bar-url'), {
+        label: 'Import',
+        type: 'url',
+        name: 'import-url',
+        placeholder: 'Your URL'
+      },
     );
-    this.urlBarInput.addEventListener('keyup', (e) => {
+
+    this.inputBar.submit.addEventListener('click', (e) => {
+      this.importEventHandler(e);
+    });
+    this.inputBar.input.addEventListener('keyup', (e) => {
       if (e.keyCode === 13) {
         this.importEventHandler(e);
       }
@@ -62,22 +67,17 @@ class ImportURL extends FlyIn {
 
   importEventHandler(e) {
     e.preventDefault();
-    const input = this.urlBarInput.value;
+    const input = this.inputBar.value;
     const url =
       input.startsWith('http://') || input.startsWith('https://')
         ? input
         : `http://${input}`;
     if (url.match(URL_VALIDATION_REGEX)) {
-      this.importURL(url);
+      this.inputBar.toggleLoading();
+      events.publish(EVENT_REQUEST_URL_CONTENT, url);
     } else {
-      this.importError('Please enter a valid URL');
-      this.urlBarInput.focus();
+      this.inputBar.showError('Please enter a valid URL');
     }
-  }
-
-  importURL(url) {
-    events.publish(EVENT_REQUEST_URL_CONTENT, url);
-    this.urlBarSubmit.classList.add('loading');
   }
 
   async receiveContent(url, response) {
@@ -89,13 +89,13 @@ class ImportURL extends FlyIn {
         this.importError(e);
       })
       .finally(() => {
-        this.urlBarSubmit.classList.remove('loading');
+        this.inputBar.toggleLoading();
+        this.inputBar.hideError();
       });
   }
 
   importSuccess(url, markup) {
     events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, markup);
-    this.urlBarLabel.classList.remove('show');
     this.setURLParams(url);
     this.toggle();
   }
@@ -104,10 +104,5 @@ class ImportURL extends FlyIn {
     const newUrl = new URL(window.location.href);
     newUrl.searchParams.set('url', url);
     history.replaceState({}, '', newUrl.toString());
-  }
-
-  importError(e) {
-    this.urlBarLabel.classList.add('show');
-    this.urlBarLabel.innerText = e;
   }
 }
