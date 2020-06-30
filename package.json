@@ -91,7 +91,7 @@
     "web-push": "3.4.4"
   },
   "devDependencies": {
-    "@ampproject/toolbox-validator-rules": "2.3.0",
+    "@ampproject/toolbox-validator-rules": "2.5.4",
     "@babel/cli": "7.10.1",
     "@babel/core": "7.10.2",
     "@babel/node": "7.10.1",
