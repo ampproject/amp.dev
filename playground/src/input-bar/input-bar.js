@@ -38,8 +38,8 @@ class Input {
     this.label.classList.remove('show');
   }
 
-  toggleLoading() {
-    this.submit.classList.toggle('loading');
+  toggleLoading(force) {
+    this.submit.classList.toggle('loading', force);
   }
 
   get value() {

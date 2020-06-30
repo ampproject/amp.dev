@@ -47,12 +47,10 @@ class ImportURL extends FlyIn {
       placeholder: 'Your URL',
     });
 
-    this.inputBar.submit.addEventListener('click', (e) => {
-      this.importEventHandler(e);
-    });
+    this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
     this.inputBar.input.addEventListener('keyup', (e) => {
       if (e.keyCode === 13) {
-        this.importEventHandler(e);
+        this.onSubmit(e);
       }
     });
 
@@ -63,13 +61,13 @@ class ImportURL extends FlyIn {
     });
   }
 
-  importEventHandler(e) {
+  onSubmit(e) {
     e.preventDefault();
-    const input = this.inputBar.value;
+    const value = this.inputBar.value;
     const url =
-      input.startsWith('http://') || input.startsWith('https://')
-        ? input
-        : `http://${input}`;
+      value.startsWith('http://') || value.startsWith('https://')
+        ? value
+        : `http://${value}`;
     if (url.match(URL_VALIDATION_REGEX)) {
       this.inputBar.toggleLoading();
       events.publish(EVENT_REQUEST_URL_CONTENT, url);
@@ -84,10 +82,10 @@ class ImportURL extends FlyIn {
         this.importSuccess(url, markup);
       })
       .catch((e) => {
-        this.importError(e);
+        this.inputBar.showError(e);
       })
       .finally(() => {
-        this.inputBar.toggleLoading();
+        this.inputBar.toggleLoading(false);
         this.inputBar.hideError();
       });
   }
