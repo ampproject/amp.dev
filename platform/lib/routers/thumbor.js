@@ -37,8 +37,11 @@ const imagePaths = config.shared.thumbor.fileExtensions.map((extension) => {
   return join('/static/', '/**/', `*.${extension}`);
 });
 
+// Temporarily disable thumbor
+const ENABLE_THUMBOR = false;
+
 thumborRouter.get(imagePaths, (request, response, next) => {
-  if (config.isDevMode()) {
+  if (ENABLE_THUMBOR || config.isDevMode()) {
     next();
     return;
   }
