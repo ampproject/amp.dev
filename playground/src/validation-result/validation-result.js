@@ -14,6 +14,7 @@
 
 import events from '../events/events.js';
 import * as Validator from '../validator/validator.js';
+import * as Editor from '../editor/editor.js';
 
 import template from './validation-result.hbs';
 
@@ -25,9 +26,17 @@ export function createValidationResult() {
 class ValidationResult {
   /**
    * @param {Element} target  Where the item gets appended to
-   * @param {Object} details Holds information about the error
    */
   constructor(target) {
+    this.target = target;
+    this.active = false;
+
+    // Delay initialization to when a page has been imported once
+    events.subscribe(
+      Editor.EVENT_UPDATE_EDITOR_CONTENT,
+      () => this.active = true
+    );
+
     events.subscribe(
       Validator.EVENT_NEW_VALIDATION_RESULT,
       (validationResult) => {
@@ -35,6 +44,8 @@ class ValidationResult {
         this.render();
       }
     );
+
+    this.render();
   }
 
   /**
@@ -42,14 +53,11 @@ class ValidationResult {
    * @return {Element}
    */
   render() {
-    console.log(this.validationResult);
-    if (!this.validationResult) {
-      return;
-    }
+    console.log(this);
 
-    // const element = document.createElement('template');
-    // element.innerHTML = template(this.details);
-    //
-    // return element.content.firstChild;
+    this.target.innerHTML = template({
+      active: this.active,
+      passed: this.validationResult?.status == 'PASS'
+    });
   }
 }

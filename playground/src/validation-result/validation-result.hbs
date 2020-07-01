@@ -1,0 +1,12 @@
+{{#unless active}}
+<p>Tip: The AMP Validator can be accessed directly from your browser's toolbar using the <a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc" target="_blank" rel="noopener">chrome extension</a>. As you browse, it will automatically validate each AMP page visited and give a visual indication of your page's validity.</p>
+{{/unless}}
+
+{{#if active}}
+{{#if passed}}
+Passed!
+{{/if}}
+{{#unless passed}}
+Did not pass
+{{/unless}}
+{{/if}}
