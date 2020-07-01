@@ -15,13 +15,13 @@ When using [`amp-list`](../../../documentation/components/reference/amp-list.md?
 #Usability and accessibility
 
 - When using
-  [`amp-carousel`](../../../documentation/components/amp-carousel-v0.1/), ensure the `controls` attribute is set. This lets users on touchscreen devices such as smartphones to navigate the carousel.
-- When using [`amp-form`](../../../documentation/components/amp-form), keep in mind not all input types are supported on iOS. Refer to [Supported Input Values](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/InputTypes.html) in the Safari HTML Reference for more information.
+  [`amp-carousel`](../../components/reference/amp-carousel-v0.1.md?format=email), ensure the `controls` attribute is set. This lets users on touchscreen devices such as smartphones to navigate the carousel.
+- When using [`amp-form`](../../../documentation/components/reference/amp-form.md?format=email), keep in mind not all input types are supported on iOS. Refer to [Supported Input Values](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/InputTypes.html) in the Safari HTML Reference for more information.
 - Not all [`autocomplete` attribute values](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) are supported across different apps and browsers. Assume that autocomplete isn't available to your users and keep the forms short.
 
 #Styling
 
-- Make sure your email is only using [AMP for Email Supported CSS](../../../documentation/guides-and-tutorials/learn/email-spec/amp-email-css/?format=email)
+- Make sure your email is only using [AMP for Email Supported CSS](../learn/email-spec/amp-email-css.md?format=email)
 - Avoid using viewport units (`vw`, `vh`, `vmin` and `vmax`) anywhere in your CSS and HTML. Since AMP emails render inside an iframe, the viewport of the email doesn't match the browser's viewport.
 - Different browsers have different default CSS styling. Use a CSS library that normalizes styles if needed. For more information about default styles, style normalization and a list of available libaries, see [Reboot, Resets, and Reasoning](https://css-tricks.com/reboot-resets-reasoning/).
 - Be careful with overflowing margin in CSS: they may not get rendered due to [an AMP layout limitation](https://github.com/ampproject/amphtml/issues/13343#issuecomment-447380241).
