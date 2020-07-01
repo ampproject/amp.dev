@@ -19,7 +19,7 @@ import createInput from '../input-bar/input-bar.js';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
-import FlyIn from '../fly-in/base.js';
+import FlyIn from '../fly-in/fly-in.js';
 import * as Editor from '../editor/editor.js';
 
 export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';

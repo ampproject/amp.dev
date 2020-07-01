@@ -15,15 +15,11 @@
 import './fly-in-background.scss';
 import events from '../events/events.js';
 
-export function createFlyInBackground(target) {
-  return new FlyInBackground(target);
-}
-
 export const EVENT_FLY_IN_CLOSE = 'event-fly-in-close';
 
 class FlyInBackground {
-  constructor(target) {
-    target.addEventListener('click', () => {
+  constructor() {
+    document.getElementById('fly-in-background').addEventListener('click', () => {
       events.publish(EVENT_FLY_IN_CLOSE);
     });
 
@@ -34,3 +30,5 @@ class FlyInBackground {
     });
   }
 }
+
+new FlyInBackground();

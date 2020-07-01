@@ -18,7 +18,7 @@ import 'json-tree-view/example/build/devtools.css';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Preview from '../preview/preview.js';
-import FlyIn from '../fly-in/base.js';
+import FlyIn from '../fly-in/fly-in.js';
 
 export function createStateView(target, trigger) {
   return new StateView(target, trigger);

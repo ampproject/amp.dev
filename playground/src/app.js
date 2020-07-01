@@ -81,10 +81,6 @@ events.subscribe(ErrorList.EVENT_ERROR_SELECTED, (error) =>
   editor.setCursorAndFocus(error.line, error.col)
 );
 
-// configure background layer to close fly ins
-const flyInBackground = document.getElementById('fly-in-background');
-FlyInBackground.createFlyInBackground(flyInBackground);
-
 const validator = Validator.createValidator();
 
 const componentsProvider = ComponentsProvider.createComponentsProvider();
