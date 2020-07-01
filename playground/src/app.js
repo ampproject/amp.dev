@@ -31,6 +31,7 @@ import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js
 import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
 import * as ImportURL from './import-url/import-url.js';
+import * as ValidationResult from './validation-result/validation-result.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
 import * as Preview from './preview/preview.js';
@@ -67,6 +68,7 @@ const stateListContainer = document.getElementById('state-view');
 StateView.createStateView(stateListContainer, stateIndicator);
 
 ErrorList.createErrorList();
+ValidationResult.createValidationResult();
 
 const validator = Validator.createValidator();
 
