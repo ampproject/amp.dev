@@ -19,9 +19,11 @@ export const EVENT_FLY_IN_CLOSE = 'event-fly-in-close';
 
 class FlyInBackground {
   constructor() {
-    document.getElementById('fly-in-background').addEventListener('click', () => {
-      events.publish(EVENT_FLY_IN_CLOSE);
-    });
+    document
+      .getElementById('fly-in-background')
+      .addEventListener('click', () => {
+        events.publish(EVENT_FLY_IN_CLOSE);
+      });
 
     document.addEventListener('keydown', (e) => {
       if (e.keyCode === 27) {
