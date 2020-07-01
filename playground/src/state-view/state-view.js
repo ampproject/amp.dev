@@ -57,7 +57,7 @@ class StateView extends FlyIn {
   requestState() {
     this.content.classList.add('loading');
     events.publish(EVENT_AMP_BIND_REQUEST_STATE);
-    this.toggle();
+    this.toggleFlyIn();
   }
 
   render(state) {

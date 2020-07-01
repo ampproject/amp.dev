@@ -27,7 +27,7 @@ class FlyIn {
     this.registerButtons(target);
 
     events.subscribe(FlyInBackground.EVENT_FLY_IN_CLOSE, () => {
-      this.hideFlyIn(false);
+      this.toggleFlyIn(false);
     });
   }
 
@@ -47,11 +47,11 @@ class FlyIn {
   registerButtons(target) {
     const button = target.querySelector('.fly-in-close');
     button.addEventListener('click', () => {
-      this.hideFlyIn(false);
+      this.toggleFlyIn(false);
     });
   }
 
-  toggle(force) {
+  toggleFlyIn(force) {
     this.target.classList.toggle('active', force);
   }
 }

@@ -36,7 +36,7 @@ class ImportURL extends FlyIn {
     super(target);
 
     this.target = target;
-    this.trigger = Button.from(trigger, this.toggle.bind(this));
+    this.trigger = Button.from(trigger, this.toggleFlyIn.bind(this));
 
     this.content.insertAdjacentHTML('beforeend', template());
 
@@ -93,7 +93,7 @@ class ImportURL extends FlyIn {
   importSuccess(url, markup) {
     events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, markup);
     this.setURLParams(url);
-    this.toggle();
+    this.toggleFlyIn();
   }
 
   setURLParams(url) {
