@@ -129,13 +129,9 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   validator.validate(editor.getSource());
   activeRuntime = newRuntime;
 
-  if (importUrlView) {
-    const emailButton = document.getElementById('import-email');
+  const emailButton = document.getElementById('import-email');
+  if (emailButton) {
     emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
-    importURLTrigger.classList.toggle(
-      'hidden',
-      activeRuntime.id === 'amp4email'
-    );
   }
 });
 
