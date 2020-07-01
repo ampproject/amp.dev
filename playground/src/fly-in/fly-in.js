@@ -13,7 +13,9 @@
 // limitations under the License.
 
 import './fly-in.scss';
+import events from '../events/events.js';
 import template from './fly-in.hbs';
+import * as FlyInBackground from './fly-in-background.js';
 
 class FlyIn {
   constructor(target) {
@@ -23,6 +25,10 @@ class FlyIn {
 
     this.createFlyIn(target);
     this.registerButtons(target);
+
+    events.subscribe(FlyInBackground.EVENT_FLY_IN_CLOSE, () => {
+      this.toggle(false);
+    });
   }
 
   createFlyIn(target) {
@@ -41,20 +47,12 @@ class FlyIn {
   registerButtons(target) {
     const button = target.querySelector('.fly-in-close');
     button.addEventListener('click', () => {
-      this.hideFlyIn(target);
+      this.toggle(false);
     });
   }
 
-  toggle() {
-    this.target.classList.toggle('active');
-  }
-
-  hideFlyIn() {
-    this.target.classList.remove('active');
-  }
-
-  showFlyIn() {
-    this.target.classList.add('active');
+  toggle(force) {
+    this.target.classList.toggle('active', force);
   }
 }
 

@@ -45,6 +45,8 @@
   }
 
   &-label {
+    @include txt;
+    @include txt-2;
     display: block;
     color: color('red');
     opacity: 0;
