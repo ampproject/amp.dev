@@ -412,6 +412,10 @@ main > .panel + .panel {
   display: none;
 }
 
+#preview {
+  z-index: 10;
+}
+
 #preview-header-close {
   display: none;
 }

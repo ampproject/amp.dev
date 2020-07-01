@@ -28,6 +28,7 @@ import * as EmailLoader from './email-loader/email-loader.js';
 import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
+import * as FlyInBackground from './fly-in/fly-in-background.js';
 import * as ImportURL from './import-url/import-url.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
@@ -79,6 +80,10 @@ ErrorList.createErrorList(errorListContainer, errorIndicator);
 events.subscribe(ErrorList.EVENT_ERROR_SELECTED, (error) =>
   editor.setCursorAndFocus(error.line, error.col)
 );
+
+// configure background layer to close fly ins
+const flyInBackground = document.getElementById('fly-in-background');
+FlyInBackground.createFlyInBackground(flyInBackground);
 
 const validator = Validator.createValidator();
 
