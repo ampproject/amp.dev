@@ -30,7 +30,7 @@ class ErrorList extends FlyIn {
     super(target);
 
     this.target = target;
-    this.trigger = Button.from(trigger, this.toggleFlyIn.bind(this));
+    this.trigger = Button.from(trigger, this.toggle.bind(this));
 
     // configure validator
     events.subscribe(
