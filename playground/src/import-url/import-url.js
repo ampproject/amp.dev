@@ -46,62 +46,65 @@ export function createURLImport() {
  * a page into the playground
  */
 class URLImport {
-    /**
-     * @param {Element} target
-     */
-    constructor(target, label, helpText) {
-      this.inputBar = createInput(target, {
-        helpText: helpText,
-        label: label,
-        type: 'url',
-        name: 'import-url',
-        placeholder: 'Your URL',
-      });
+  /**
+   * @param {Element} target
+   */
+  constructor(target, label, helpText) {
+    this.inputBar = createInput(target, {
+      helpText: helpText,
+      label: label,
+      type: 'url',
+      name: 'import-url',
+      placeholder: 'Your URL',
+    });
 
-      this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
-      this.inputBar.input.addEventListener('keyup', (e) => {
-        if (e.keyCode === 13) {
-          this.onSubmit(e);
-        }
-      });
-
-      events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, this.onReceiveURLContent.bind(this));
-    }
-
-    onSubmit(e) {
-      e.preventDefault();
-      const value = this.inputBar.value;
-      const url =
-        value.startsWith('http://') || value.startsWith('https://')
-          ? value
-          : `http://${value}`;
-      if (url.match(URL_VALIDATION_REGEX)) {
-        this.inputBar.toggleLoading();
-        events.publish(EVENT_REQUEST_URL_CONTENT, url);
-      } else {
-        this.inputBar.showError('Please enter a valid URL');
+    this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
+    this.inputBar.input.addEventListener('keyup', (e) => {
+      if (e.keyCode === 13) {
+        this.onSubmit(e);
       }
+    });
+
+    events.subscribe(
+      Document.EVENT_RECEIVED_URL_CONTENT,
+      this.onReceiveURLContent.bind(this)
+    );
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const value = this.inputBar.value;
+    const url =
+      value.startsWith('http://') || value.startsWith('https://')
+        ? value
+        : `http://${value}`;
+    if (url.match(URL_VALIDATION_REGEX)) {
+      this.inputBar.toggleLoading();
+      events.publish(EVENT_REQUEST_URL_CONTENT, url);
+    } else {
+      this.inputBar.showError('Please enter a valid URL');
     }
+  }
 
-    onReceiveURLContent(url, response) {
-      response
-        .then((html) => {
-          events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, html);
+  onReceiveURLContent(url, response) {
+    response
+      .then((html) => {
+        events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, html);
 
-          // Update URL for the client to create a shareable state
-          const clientUrl = new URL(window.location.href);
-          clientUrl.searchParams.set('url', url);
-          window.history.replaceState({}, '', clientUrl.toString());
+        // Update URL for the client to create a shareable state
+        const clientUrl = new URL(window.location.href);
+        clientUrl.searchParams.set('url', url);
+        window.history.replaceState({}, '', clientUrl.toString());
 
-          this.inputBar.hideError();
-        })
-        .catch((e) => {
-          this.inputBar.showError(e);
-        })
-        .finally(() => {
-          this.inputBar.toggleLoading(false);
-        });
-    }
+        this.inputBar.hideError();
+      })
+      .catch((e) => {
+        this.inputBar.showError(e);
+      })
+      .finally(() => {
+        this.inputBar.toggleLoading(false);
+      });
+  }
 }
 
 /**
@@ -117,9 +120,16 @@ class FlyInURLImport extends FlyIn {
 
     this.content.insertAdjacentHTML('beforeend', template());
 
-    this.urlImport = new URLImport(target.querySelector('#input-bar-url'), 'Import', 'Enter a valid URL to import the page\'s markup into the editor.');
+    this.urlImport = new URLImport(
+      target.querySelector('#input-bar-url'),
+      'Import',
+      "Enter a valid URL to import the page's markup into the editor."
+    );
 
-    events.subscribe(Editor.EVENT_UPDATE_EDITOR_CONTENT, this.onUpdateEditorContent.bind(this));
+    events.subscribe(
+      Editor.EVENT_UPDATE_EDITOR_CONTENT,
+      this.onUpdateEditorContent.bind(this)
+    );
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this.onSetRuntime.bind(this));
   }
@@ -139,10 +149,7 @@ class FlyInURLImport extends FlyIn {
    * @return {undefined}
    */
   onSetRuntime(runtime) {
-    this.trigger.toggleClass(
-      'hidden',
-      runtime === 'amp4email'
-    );
+    this.trigger.toggleClass('hidden', runtime === 'amp4email');
   }
 }
 
@@ -154,6 +161,9 @@ class InlineURLImport {
   constructor(target) {
     target.insertAdjacentHTML('beforeend', template());
 
-    this.urlImport = new URLImport(target.querySelector('#input-bar-url'), 'Validate');
+    this.urlImport = new URLImport(
+      target.querySelector('#input-bar-url'),
+      'Validate'
+    );
   }
 }

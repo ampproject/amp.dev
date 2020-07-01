@@ -59,8 +59,7 @@ const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
-// configure url import view
-const importUrlView = ImportURL.createURLImport();
+ImportURL.createURLImport();
 
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');

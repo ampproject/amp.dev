@@ -28,7 +28,6 @@ class ValidationResult {
    * @param {Object} details Holds information about the error
    */
   constructor(target) {
-
     events.subscribe(
       Validator.EVENT_NEW_VALIDATION_RESULT,
       (validationResult) => {
