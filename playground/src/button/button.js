@@ -74,4 +74,8 @@ class Button {
   removeClass(...classes) {
     this._element.classList.remove(...classes);
   }
+
+  toggleClass(_class, force) {
+    this._element.classList.toggle(_class, force);
+  }
 }
