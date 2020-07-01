@@ -54,13 +54,10 @@ class ErrorList {
 
     target.insertAdjacentHTML('beforeend', template());
 
-    this.list = target.querySelector('.error-list-items');
-    this.emptyLabel = target.querySelector('.error-list-empty');
+    this.list = target.querySelector('ul');
   }
 
   render() {
-    this.emptyLabel.classList.toggle('show', !this.validationResult.errors.length);
-
     this.list.innerHTML = '';
     for (const e of this.validationResult.errors) {
       ErrorListItem.createErrorListItem(this.list, e);
