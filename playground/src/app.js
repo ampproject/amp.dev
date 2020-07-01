@@ -48,9 +48,8 @@ import {runtimes, EVENT_SET_RUNTIME} from './runtime/runtimes.js';
 import detectRuntime from './runtime/detector.js';
 import addSplitPaneBehavior from './split-pane/base.js';
 import formatter from './formatter/';
-import analytics from './analytics';
-import modes from './modes/';
 
+import './analytics';
 import './service-worker/base.js';
 import './request-idle-callback/base.js';
 
@@ -62,7 +61,10 @@ addSplitPaneBehavior(document.querySelector('main'));
 // configure url import view
 const importURLTrigger = document.getElementById('import-url');
 const importURLContainer = document.getElementById('import-url-view');
-const importUrlView = ImportURL.createImportURLView(importURLContainer, importURLTrigger);
+const importUrlView = ImportURL.createImportURLView(
+  importURLContainer,
+  importURLTrigger
+);
 
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');
@@ -130,7 +132,10 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   if (importUrlView) {
     const emailButton = document.getElementById('import-email');
     emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
-    importURLTrigger.classList.toggle('hidden', activeRuntime.id === 'amp4email');
+    importURLTrigger.classList.toggle(
+      'hidden',
+      activeRuntime.id === 'amp4email'
+    );
   }
 });
 
@@ -214,6 +219,7 @@ const loadTemplateButton = Button.from(
 );
 
 if (loadTemplateButton) {
+  // eslint-disable-next-line no-unused-vars
   const templateDialog = createTemplateDialog(loadTemplateButton, {
     onStart: () => editor.showLoadingIndicator(),
     onSuccess: (template) => {

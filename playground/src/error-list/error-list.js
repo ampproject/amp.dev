@@ -39,7 +39,6 @@ export function createErrorList() {
  * by using a validation result provided by Validator
  */
 class ErrorList {
-
   /**
    * @param {Element} target Where the error list items get rendered into
    */
@@ -71,7 +70,6 @@ class ErrorList {
  * @extends FlyIn
  */
 class FlyInErrorList extends FlyIn {
-
   constructor(target, trigger) {
     super(target);
 
@@ -120,7 +118,6 @@ class FlyInErrorList extends FlyIn {
  * The error list as used for the validator
  */
 class InlineErrorList {
-
   /**
    * @param {Element} target
    */

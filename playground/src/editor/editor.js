@@ -72,7 +72,10 @@ class Editor {
     this.amphtmlHints = this.fetchHintsData();
 
     events.subscribe(EVENT_UPDATE_EDITOR_CONTENT, this.setSource.bind(this));
-    events.subscribe(EVENT_UPDATE_CURSOR_FOCUS, this.setCursorAndFocus.bind(this));
+    events.subscribe(
+      EVENT_UPDATE_CURSOR_FOCUS,
+      this.setCursorAndFocus.bind(this)
+    );
   }
 
   createCodeMirror() {

@@ -22,12 +22,11 @@ export function createErrorListItem(target, error) {
 }
 
 class ErrorListItem {
-
   /**
    * @param {Element} target  Where the item gets appended to
    * @param {Object} details Holds information about the error
    */
-  constructor(target, details, index) {
+  constructor(target, details) {
     this.details = details;
 
     this.element = target.appendChild(this._render());
@@ -46,6 +45,11 @@ class ErrorListItem {
   }
 
   _onClick(e) {
-    events.publish(Editor.EVENT_UPDATE_CURSOR_FOCUS, this.details.line, this.details.col);
+    e.preventDefault();
+    events.publish(
+      Editor.EVENT_UPDATE_CURSOR_FOCUS,
+      this.details.line,
+      this.details.col
+    );
   }
 }

@@ -16,7 +16,6 @@ import gaTrackingId from '../../../platform/config/shared.json';
 import modes from '../modes/';
 
 class Analytics {
-
   constructor() {
     if (modes.IS_EMBED) {
       return;
