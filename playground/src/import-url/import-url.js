@@ -37,7 +37,6 @@ export function createURLImport() {
     const trigger = document.getElementById('import-url');
     return new FlyInURLImport(target, trigger);
   } else if (modes.IS_VALIDATOR) {
-    console.log('validator!', target);
     return new InlineURLImport(target);
   }
 }
