@@ -27,7 +27,7 @@ class FlyIn {
     this.registerButtons(target);
 
     events.subscribe(FlyInBackground.EVENT_FLY_IN_CLOSE, () => {
-      this.hideFlyIn();
+      this.hideFlyIn(false);
     });
   }
 
@@ -47,20 +47,12 @@ class FlyIn {
   registerButtons(target) {
     const button = target.querySelector('.fly-in-close');
     button.addEventListener('click', () => {
-      this.hideFlyIn(target);
+      this.hideFlyIn(false);
     });
   }
 
-  toggle() {
-    this.target.classList.toggle('active');
-  }
-
-  hideFlyIn() {
-    this.target.classList.remove('active');
-  }
-
-  showFlyIn() {
-    this.target.classList.add('active');
+  toggle(force) {
+    this.target.classList.toggle('active', force);
   }
 }
 
