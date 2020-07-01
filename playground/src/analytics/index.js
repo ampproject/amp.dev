@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import gaTrackingId from '../../../platform/config/shared.json';
+import {gaTrackingId} from '../../../platform/config/shared.json';
 import modes from '../modes/';
 
 class Analytics {
