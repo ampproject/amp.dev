@@ -14,25 +14,102 @@
 
 import './import-url.scss';
 import template from '../import-url/import-url.hbs';
-import createInput from '../input-bar/input-bar.js';
 
 import events from '../events/events.js';
+import modes from '../modes/';
+import createInput from '../input-bar/input-bar.js';
+
 import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
 import FlyIn from '../fly-in/base.js';
 import * as Editor from '../editor/editor.js';
+import * as Runtimes from '../runtime/runtimes.js';
 
 export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
 
 /* eslint-disable max-len */
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
-export function createImportURLView(target, trigger) {
-  if (!target) return;
-  return new ImportURL(target, trigger);
+export function createURLImport() {
+  const target = document.getElementById('import-url-view');
+
+  if (modes.IS_DEFAULT) {
+    const trigger = document.getElementById('import-url');
+    return new FlyInURLImport(target, trigger);
+  } else if (modes.IS_VALIDATOR) {
+    console.log('validator!', target);
+    return new InlineURLImport(target);
+  }
 }
 
-class ImportURL extends FlyIn {
+/**
+ * Creates a input bar that takes a URL which is used to load
+ * a page into the playground
+ */
+class URLImport {
+    /**
+     * @param {Element} target
+     */
+    constructor(target, label, helpText) {
+      this.inputBar = createInput(target, {
+        helpText: helpText,
+        label: label,
+        type: 'url',
+        name: 'import-url',
+        placeholder: 'Your URL',
+      });
+
+      this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
+      this.inputBar.input.addEventListener('keyup', (e) => {
+        if (e.keyCode === 13) {
+          this.onSubmit(e);
+        }
+      });
+
+      events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, this.onReceiveURLContent.bind(this));
+    }
+
+    onSubmit(e) {
+      e.preventDefault();
+      const value = this.inputBar.value;
+      const url =
+        value.startsWith('http://') || value.startsWith('https://')
+          ? value
+          : `http://${value}`;
+      if (url.match(URL_VALIDATION_REGEX)) {
+        this.inputBar.toggleLoading();
+        events.publish(EVENT_REQUEST_URL_CONTENT, url);
+      } else {
+        this.inputBar.showError('Please enter a valid URL');
+      }
+    }
+
+    onReceiveURLContent(url, response) {
+      response
+        .then((html) => {
+          events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, html);
+
+          // Update URL for the client to create a shareable state
+          const clientUrl = new URL(window.location.href);
+          clientUrl.searchParams.set('url', url);
+          window.history.replaceState({}, '', clientUrl.toString());
+
+          this.inputBar.hideError();
+        })
+        .catch((e) => {
+          this.inputBar.showError(e);
+        })
+        .finally(() => {
+          this.inputBar.toggleLoading(false);
+        });
+    }
+}
+
+/**
+ * The import functionality shown in a layer
+ * @extends FlyIn
+ */
+class FlyInURLImport extends FlyIn {
   constructor(target, trigger) {
     super(target);
 
@@ -41,65 +118,43 @@ class ImportURL extends FlyIn {
 
     this.content.insertAdjacentHTML('beforeend', template());
 
-    this.inputBar = createInput(document.getElementById('input-bar-url'), {
-      label: 'Import',
-      type: 'url',
-      name: 'import-url',
-      placeholder: 'Your URL',
-    });
+    this.urlImport = new URLImport(target.querySelector('#input-bar-url'), 'Import', 'Enter a valid URL to import the page\'s markup into the editor.');
 
-    this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
-    this.inputBar.input.addEventListener('keyup', (e) => {
-      if (e.keyCode === 13) {
-        this.onSubmit(e);
-      }
-    });
+    events.subscribe(Editor.EVENT_UPDATE_EDITOR_CONTENT, this.onUpdateEditorContent.bind(this));
 
-    events.subscribe(Document.EVENT_RECEIVED_URL_CONTENT, (url, content) => {
-      window.requestIdleCallback(() => {
-        this.receiveContent(url, content);
-      });
-    });
+    events.subscribe(Runtimes.EVENT_SET_RUNTIME, this.onSetRuntime.bind(this));
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    const value = this.inputBar.value;
-    const url =
-      value.startsWith('http://') || value.startsWith('https://')
-        ? value
-        : `http://${value}`;
-    if (url.match(URL_VALIDATION_REGEX)) {
-      this.inputBar.toggleLoading();
-      events.publish(EVENT_REQUEST_URL_CONTENT, url);
-    } else {
-      this.inputBar.showError('Please enter a valid URL');
-    }
+  /**
+   * Fired when editor content is updated under the assumption
+   * that the update could be in consequence of a successful import
+   * @return {undefined}
+   */
+  onUpdateEditorContent() {
+    this.hideFlyIn();
   }
 
-  async receiveContent(url, response) {
-    response
-      .then((markup) => {
-        this.importSuccess(url, markup);
-      })
-      .catch((e) => {
-        this.inputBar.showError(e);
-      })
-      .finally(() => {
-        this.inputBar.toggleLoading(false);
-        this.inputBar.hideError();
-      });
+  /**
+   * Fired when a new runtime is selected in order to hide
+   * the trigger for AMP4Email as it has a different import logic
+   * @return {undefined}
+   */
+  onSetRuntime(runtime) {
+    this.trigger.toggleClass(
+      'hidden',
+      runtime === 'amp4email'
+    );
   }
+}
 
-  importSuccess(url, markup) {
-    events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, markup);
-    this.setURLParams(url);
-    this.toggle();
-  }
+/**
+ * Import functionality as used for the validator, shown inline
+ * with slightly different wording
+ */
+class InlineURLImport {
+  constructor(target) {
+    target.insertAdjacentHTML('beforeend', template());
 
-  setURLParams(url) {
-    const newUrl = new URL(window.location.href);
-    newUrl.searchParams.set('url', url);
-    history.replaceState({}, '', newUrl.toString());
+    this.urlImport = new URLImport(target.querySelector('#input-bar-url'), 'Validate');
   }
 }

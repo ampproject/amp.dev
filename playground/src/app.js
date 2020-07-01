@@ -59,12 +59,7 @@ const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
 // configure url import view
-const importURLTrigger = document.getElementById('import-url');
-const importURLContainer = document.getElementById('import-url-view');
-const importUrlView = ImportURL.createImportURLView(
-  importURLContainer,
-  importURLTrigger
-);
+const importUrlView = ImportURL.createURLImport();
 
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');
