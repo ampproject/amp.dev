@@ -41,7 +41,7 @@ class PlaygroundDocument {
     headers.append('x-requested-by', 'playground');
     headers.append('Content-Type', 'text/html');
 
-    const request = fetch('http://localhost:8081/api/fetch?url=' + url, {
+    const request = fetch('/api/fetch?url=' + url, {
       mode: 'cors',
       headers,
     }).then((response) => {
