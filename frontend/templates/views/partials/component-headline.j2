@@ -13,12 +13,14 @@
 {% endif %}
 </h1>
 
-{% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
-<div class="ap--flags">
-{% if doc.experimental %}
-  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Experimental') }}</div>
-{% endif %}
-{% if doc.deprecated %}
-  <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Deprecated') }}</div>
+{% if doc.versions or doc.versions %}
+  {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
+  <div class="ap--flags">
+  {% if doc.experimental %}
+    <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Experimental') }}</div>
+  {% endif %}
+  {% if doc.deprecated %}
+    <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Deprecated') }}</div>
+  {% endif %}
 {% endif %}
 </div>
