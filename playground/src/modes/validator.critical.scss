@@ -10,6 +10,7 @@
 
   #validation {
     padding: 55px 20px;
+    overflow-y: auto;
 
     @media (min-width: 786px) {
       padding: 55px;
@@ -21,6 +22,11 @@
       @include txt-hl;
       font-size: 32px;
       color: color('charade');
+    }
+
+    .error-list {
+      height: auto;
+      transition: opacity 0.3s ease;
     }
 
     .error-list-empty {

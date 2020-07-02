@@ -41,4 +41,17 @@
       }
     }
   }
+
+  & > * {
+    transition: opacity 0.3s ease, transform 0.5s ease;
+  }
+
+  &.loading > * {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  &.loading + #error-list {
+    opacity: 0;
+  }
 }

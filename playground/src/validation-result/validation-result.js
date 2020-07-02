@@ -17,6 +17,7 @@ import events from '../events/events.js';
 import modes from '../modes/';
 import * as Validator from '../validator/validator.js';
 import * as Editor from '../editor/editor.js';
+import * as Document from '../document/document.js';
 
 import template from './validation-result.hbs';
 import './validation-result.scss';
@@ -43,6 +44,11 @@ class ValidationResult {
     );
 
     events.subscribe(
+      Document.EVENT_RECEIVE_URL_CONTENT,
+      this.onReceiveURLContent.bind(this)
+    );
+
+    events.subscribe(
       Validator.EVENT_NEW_VALIDATION_RESULT,
       (validationResult) => {
         this.validationResult = validationResult;
@@ -54,12 +60,26 @@ class ValidationResult {
   }
 
   /**
+   * Triggers loading behaviour
+   * @return {undefined}
+   */
+  onReceiveURLContent(url, request) {
+    this.target.classList.add('loading');
+
+    request.then(() => {
+      this.active = true;
+    }).catch(() => {
+      this.active = false;
+    }).finally(() => {
+      this.target.classList.remove('loading');
+    });
+  }
+
+  /**
    * Renders template with the information given in the validationResult
    * @return {Element}
    */
   render() {
-    console.log(this);
-
     this.target.innerHTML = template({
       active: this.active,
       passed: this.validationResult?.status == 'PASS'
