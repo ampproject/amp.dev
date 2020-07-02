@@ -61,6 +61,8 @@ class ValidationResult {
 
   /**
    * Triggers loading behaviour
+   * @param  {String} url     The url that is loaded
+   * @param  {Promise} request From window.fetch
    * @return {undefined}
    */
   onReceiveURLContent(url, request) {
