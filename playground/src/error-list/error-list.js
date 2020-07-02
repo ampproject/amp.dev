@@ -17,7 +17,7 @@ import template from './error-list-item.hbs';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';
-import FlyIn from '../fly-in/base.js';
+import FlyIn from '../fly-in/fly-in.js';
 
 export const EVENT_ERROR_SELECTED = 'error-selected';
 

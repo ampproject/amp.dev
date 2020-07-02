@@ -77,13 +77,13 @@
     width: 30px;
   }
   #document-title {
-    max-width: 400px;
-    overflow: hidden;
-    margin-left: auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23005AF0'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
     cursor: pointer;
+    max-width: 400px;
+    margin-left: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 24 24'%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z' fill='%23005AF0'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
   }
   #toolbar {
     margin-left: auto;
@@ -414,6 +414,10 @@ main > .panel + .panel {
 
 #bottom-navigation {
   display: none;
+}
+
+#preview {
+  z-index: 10;
 }
 
 #preview-header-close {
