@@ -89,7 +89,13 @@ class StateView extends FlyIn {
     }
 
     const treeRoot = this.content.querySelector('.children');
-    const highlight = document.evaluate(expression, treeRoot, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null);
+    const highlight = document.evaluate(
+      expression,
+      treeRoot,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    );
 
     if (highlight.singleNodeValue) {
       highlight.singleNodeValue.classList.add('highlight');

@@ -1,6 +1,6 @@
 @import 'base.scss';
 
-@keyframes HIGHTLIGHT {
+@keyframes HIGHLIGHT {
   from {
     background: color('lavender');
   }
@@ -15,6 +15,6 @@
 
   .highlight {
     border-radius: 2px;
-    animation: HIGHTLIGHT 1s ease-out;
+    animation: HIGHLIGHT 1s ease-out;
   }
 }
