@@ -40,7 +40,7 @@ class ValidationResult {
     // Delay initialization to when a page has been imported once
     events.subscribe(
       Editor.EVENT_UPDATE_EDITOR_CONTENT,
-      () => this.active = true
+      () => (this.active = true)
     );
 
     events.subscribe(
@@ -68,13 +68,16 @@ class ValidationResult {
   onReceiveURLContent(url, request) {
     this.target.classList.add('loading');
 
-    request.then(() => {
-      this.active = true;
-    }).catch(() => {
-      this.active = false;
-    }).finally(() => {
-      this.target.classList.remove('loading');
-    });
+    request
+      .then(() => {
+        this.active = true;
+      })
+      .catch(() => {
+        this.active = false;
+      })
+      .finally(() => {
+        this.target.classList.remove('loading');
+      });
   }
 
   /**
@@ -84,7 +87,7 @@ class ValidationResult {
   render() {
     this.target.innerHTML = template({
       active: this.active,
-      passed: this.validationResult?.status == 'PASS'
+      passed: this.validationResult?.status == 'PASS',
     });
   }
 }

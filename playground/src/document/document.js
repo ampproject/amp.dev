@@ -33,7 +33,10 @@ class PlaygroundDocument {
     this.state = SAVED;
     this.docId = '';
 
-    events.subscribe(ImportURL.EVENT_REQUEST_URL_CONTENT, this.fetchUrl.bind(this));
+    events.subscribe(
+      ImportURL.EVENT_REQUEST_URL_CONTENT,
+      this.fetchUrl.bind(this)
+    );
   }
 
   fetchUrl(url) {
