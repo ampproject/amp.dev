@@ -38,6 +38,10 @@ class StateView extends FlyIn {
     this.treeView.showCountOfObjectOrArray = false;
     this.content.appendChild(this.treeView.dom.querySelector('.children'));
 
+    /**
+     * Disabled on IE11
+     * Listen for state changes in tree view and hand hand them over to highlightChanges()
+     */
     if (document.evaluate) {
       this.treeView.on('change', (self, key) => {
         this.highlightChanges(key);
@@ -66,6 +70,10 @@ class StateView extends FlyIn {
     this.toggle();
   }
 
+  /**
+   * Run highlight animation on updated tree view dom elements
+   * @param  {Array} key     Array of keys in tree view that have changed
+   */
   highlightChanges(key) {
     key.shift();
     if (!key.length) {
