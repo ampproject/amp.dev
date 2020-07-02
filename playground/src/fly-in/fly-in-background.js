@@ -25,7 +25,7 @@ export function createFlyInBackground() {
 }
 
 class FlyInBackground {
-  constructor(target) {
+  constructor() {
     document
       .getElementById('fly-in-background')
       .addEventListener('click', () => {
