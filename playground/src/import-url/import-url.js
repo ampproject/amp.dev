@@ -21,7 +21,7 @@ import createInput from '../input-bar/input-bar.js';
 
 import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
-import FlyIn from '../fly-in/base.js';
+import FlyIn from '../fly-in/fly-in.js';
 import * as Editor from '../editor/editor.js';
 import * as Runtimes from '../runtime/runtimes.js';
 
