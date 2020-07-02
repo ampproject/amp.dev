@@ -87,6 +87,8 @@ class URLImport {
   }
 
   onReceiveURLContent(url, response) {
+    this.inputBar.value = url;
+
     response
       .then((html) => {
         events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, html);
@@ -96,7 +98,6 @@ class URLImport {
         clientUrl.searchParams.set('url', url);
         window.history.replaceState({}, '', clientUrl.toString());
 
-        this.inputBar.value = url;
         this.inputBar.hideError();
       })
       .catch((e) => {
