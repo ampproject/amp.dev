@@ -66,7 +66,7 @@ class URLImport {
     });
 
     events.subscribe(
-      Document.EVENT_RECEIVED_URL_CONTENT,
+      Document.EVENT_RECEIVE_URL_CONTENT,
       this.onReceiveURLContent.bind(this)
     );
   }
@@ -96,6 +96,7 @@ class URLImport {
         clientUrl.searchParams.set('url', url);
         window.history.replaceState({}, '', clientUrl.toString());
 
+        this.inputBar.value = url;
         this.inputBar.hideError();
       })
       .catch((e) => {

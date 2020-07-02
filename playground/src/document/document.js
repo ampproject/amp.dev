@@ -17,7 +17,7 @@ import * as ImportURL from '../import-url/import-url.js';
 
 const ROOT = '/document/';
 export const EVENT_DOCUMENT_STATE_CHANGED = 'playground-document-state-changed';
-export const EVENT_RECEIVED_URL_CONTENT = 'event-new-url-content';
+export const EVENT_RECEIVE_URL_CONTENT = 'event-new-url-content';
 
 export const DIRTY = 'dirty';
 export const SAVED = 'saved';
@@ -33,18 +33,15 @@ class PlaygroundDocument {
     this.state = SAVED;
     this.docId = '';
 
-    events.subscribe(ImportURL.EVENT_REQUEST_URL_CONTENT, (url) => {
-      window.requestIdleCallback(() => {
-        events.publish(EVENT_RECEIVED_URL_CONTENT, url, this.fetchUrl(url));
-      });
-    });
+    events.subscribe(ImportURL.EVENT_REQUEST_URL_CONTENT, this.fetchUrl.bind(this));
   }
 
   fetchUrl(url) {
     const headers = new Headers();
     headers.append('x-requested-by', 'playground');
     headers.append('Content-Type', 'text/html');
-    return fetch('/api/fetch?url=' + url, {
+
+    const request = fetch('http://localhost:8081/api/fetch?url=' + url, {
       mode: 'cors',
       headers,
     }).then((response) => {
@@ -54,6 +51,9 @@ class PlaygroundDocument {
       this._changeState(READ_ONLY);
       return response.text();
     });
+
+    events.publish(EVENT_RECEIVE_URL_CONTENT, url, request);
+    return request;
   }
 
   fetchDocument(docId) {
