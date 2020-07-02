@@ -13,12 +13,17 @@
 // limitations under the License.
 
 import events from '../events/events.js';
+
+import modes from '../modes/';
 import * as Validator from '../validator/validator.js';
 import * as Editor from '../editor/editor.js';
 
 import template from './validation-result.hbs';
+import './validation-result.scss';
 
 export function createValidationResult() {
+  if (!modes.IS_VALIDATOR) return;
+
   const target = document.getElementById('validation-result');
   return new ValidationResult(target);
 }
