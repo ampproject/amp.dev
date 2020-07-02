@@ -43,6 +43,7 @@ import createTemplateDialog from './template-dialog/base.js';
 import createShareAction from './share/';
 import params from './params/base.js';
 import events from './events/events.js';
+import modes from './modes/index.js';
 import titleUpdater from './title-updater/base.js';
 import snackbar from './snackbar/base.js';
 import {runtimes, EVENT_SET_RUNTIME} from './runtime/runtimes.js';
@@ -144,7 +145,9 @@ const editorUpdateListener = () => {
   validator.validate(source);
   titleUpdater.update(source);
 
-  cspHashCalculator.update(source);
+  if (!modes.IS_VALIDATOR) {
+    cspHashCalculator.update(source);
+  }
 };
 events.subscribe([Editor.EVENT_INPUT_CHANGE], editorUpdateListener);
 events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
@@ -159,7 +162,9 @@ events.subscribe([Editor.EVENT_INPUT_NEW], () => {
 
 // configure auto-importer
 events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
-  autoImporter.update(validationResult);
+  if (!modes.IS_VALIDATOR) {
+    autoImporter.update(validationResult);
+  }
 });
 
 // setup document
