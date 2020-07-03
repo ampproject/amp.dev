@@ -14,14 +14,15 @@
 
 import './experiments.scss';
 import template from './experiments.hbs';
+import experimentListItem from './experiment-list-item.hbs';
 
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
-import FlyIn from '../fly-in/base.js';
+import FlyIn from '../fly-in/fly-in.js';
 import createInput from '../input-bar/input-bar.js';
 
-export function createExperimentalView(target, trigger) {
+export function createExperimentsView(target, trigger) {
   return new Experimental(target, trigger);
 }
 
@@ -31,10 +32,10 @@ class Experimental extends FlyIn {
 
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
-
     this.content.insertAdjacentHTML('beforeend', template());
+    this.experimentList = this.content.querySelector('#experiments-list');
 
-    // Add input bar partial
+    // Load input bar template
     const inputBar = createInput(
       document.getElementById('input-bar-experiments'), {
         label: 'Add',
@@ -44,10 +45,30 @@ class Experimental extends FlyIn {
       },
     );
 
+    const availableExperiments = this.receiveExperiments();
+
     inputBar.submit.addEventListener('click', () => {
-      console.log(inputBar.value);
-      inputBar.showError(inputBar.value);
+      if (inputBar.value && availableExperiments.includes(inputBar.value)) {
+        this.setExperiment(inputBar.value);
+      } else {
+        inputBar.showError('Enter a AMP Experiment');
+      }
     });
   }
+
+  /**
+   * Get list of experimental amp components
+   */
+  receiveExperiments() {
+    return ['amp-test', 'amp-blabla', 'amp'];
+  }
+
+  /**
+   * Render experiment list Item
+   */
+  setExperiment(experiment) {
+    this.experimentList.insertAdjacentHTML('beforeend', experimentListItem({experiment}));
+  }
+
 
 }

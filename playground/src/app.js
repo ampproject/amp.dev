@@ -75,7 +75,7 @@ StateView.createStateView(stateListContainer, stateIndicator);
 // configure experiments view behavior
 const experimentsIndicator = document.getElementById('preview-header-experiments');
 const experimentsContainer = document.getElementById('experiments-view');
-Experiments.createExperimentalView(experimentsContainer, experimentsIndicator);
+Experiments.createExperimentsView(experimentsContainer, experimentsIndicator);
 
 // configure error list behavior
 const errorIndicator = document.getElementById('error-indicator');
