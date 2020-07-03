@@ -8,18 +8,26 @@
   main {
     flex-direction: row-reverse;
     margin-left: 0;
-    margin-right: 8px;
+
+    @media (min-width: 768px) {
+      margin-right: 8px;
+    }
 
     &:after {
       bottom: auto;
       right: auto;
       left: 0;
       top: 0;
-      width: 25%;
+      width: 20%;
       max-width: 175px;
-      height: 60%;
+      height: 25%;
       clip-path: polygon(100% 0, 0 0, 0 100%);
       @include gradient-websites;
+
+      @media (min-width: 768px) {
+        width: 20%;
+        height: 30%;
+      }
     }
   }
 
