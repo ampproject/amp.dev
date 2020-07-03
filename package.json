@@ -88,7 +88,8 @@
     "shrink-ray-current": "4.1.2",
     "signale": "1.4.0",
     "uuid": "8.2.0",
-    "web-push": "3.4.4"
+    "web-push": "3.4.4",
+    "through2": "4.0.2"
   },
   "devDependencies": {
     "@ampproject/toolbox-validator-rules": "2.5.4",
@@ -153,7 +154,6 @@
     "striptags": "3.1.1",
     "style-loader": "1.2.1",
     "supertest": "4.0.2",
-    "through2": "4.0.2",
     "url-loader": "4.1.0",
     "url-search-params": "1.1.0",
     "wade": "0.3.3",
