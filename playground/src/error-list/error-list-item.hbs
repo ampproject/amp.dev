@@ -1,9 +1,11 @@
-<div>
-  <p class="message">
-    {{ error.message }}
-    <a href="{{ error.specUrl }}" target="_blank" rel="noopener">
-      Learn&nbsp;more
-    </a>
-  </p>
-  <div class="location">line {{ error.line }}, column {{ error.col }}</div>
-</div>
+<li class="error-list-item validation-error {{ icon }}">
+  <div>
+    <p class="message">
+      {{ message }}
+      <a href="{{ specUrl }}" target="_blank" rel="noopener">
+        Learn&nbsp;more
+      </a>
+    </p>
+    <div class="location">Line {{ line }}, Column {{ col }}</div>
+  </div>
+</li>

@@ -63,6 +63,13 @@ module.exports = (env, argv) => {
         gaTrackingId: config.gaTrackingId,
         embed: true,
       }),
+      new HtmlWebpackPlugin({
+        template,
+        filename: './validator.html',
+        inlineSource: 'critical..+$',
+        gaTrackingId: config.gaTrackingId,
+        validator: true,
+      }),
       new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
       new PreloadWebpackPlugin({
         rel: 'preload',

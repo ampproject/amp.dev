@@ -21,6 +21,7 @@ import * as Preview from '../preview/preview.js';
 import FlyIn from '../fly-in/fly-in.js';
 
 export function createStateView(target, trigger) {
+  if (!target) return;
   return new StateView(target, trigger);
 }
 

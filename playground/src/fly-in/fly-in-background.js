@@ -14,8 +14,15 @@
 
 import './fly-in-background.scss';
 import events from '../events/events.js';
+import modes from '../modes/index.js';
 
 export const EVENT_FLY_IN_CLOSE = 'event-fly-in-close';
+
+export function createFlyInBackground() {
+  if (modes.IS_DEFAULT) {
+    return new FlyInBackground();
+  }
+}
 
 class FlyInBackground {
   constructor() {
@@ -33,4 +40,4 @@ class FlyInBackground {
   }
 }
 
-new FlyInBackground();
+createFlyInBackground();

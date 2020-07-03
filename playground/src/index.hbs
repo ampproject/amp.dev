@@ -5,7 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-    <title>AMP Playground</title>
+    <title>
+      {{^htmlWebpackPlugin.options.validator}}
+      AMP Playground
+      {{/htmlWebpackPlugin.options.validator}}
+      {{#htmlWebpackPlugin.options.validator}}
+      AMP Validator
+      {{/htmlWebpackPlugin.options.validator}}
+    </title>
 
     <link rel="shortcut icon" href="/static/img/favicon.png">
     <!-- Disable tap highlight on IE -->
@@ -44,14 +51,25 @@
 
     <script async src="https://www.googletagmanager.com/gtag/js?id={{htmlWebpackPlugin.options.gaTrackingId}}"></script>
   </head>
-  <body {{#htmlWebpackPlugin.options.embed}}class="embed"{{/htmlWebpackPlugin.options.embed}}>
+  <body class="{{#htmlWebpackPlugin.options.embed}}embed{{/htmlWebpackPlugin.options.embed}}{{#htmlWebpackPlugin.options.validator}}validator{{/htmlWebpackPlugin.options.validator}}">
     <header class="ap-o-header">
-      <a class="ap-o-header-icon hide-on-mobile" href=".">
+      <a class="ap-o-header-icon {{^htmlWebpackPlugin.options.validator}}hide-on-mobile{{/htmlWebpackPlugin.options.validator}}" href=".">
         <svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 15c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15C6.716 0 0 6.716 0 15z" fill="#FFF"/><path d="M13.85 24.098h-1.14l1.128-6.823-3.49.005h-.05a.57.57 0 01-.568-.569c0-.135.125-.363.125-.363l6.272-10.46 1.16.005-1.156 6.834 3.508-.004h.056c.314 0 .569.254.569.568 0 .128-.05.24-.121.335L13.85 24.098zM15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.285 0 15-6.716 15-15 0-8.284-6.715-15-15-15z" fill="#005AF0" fill-rule="nonzero"/></g></svg>
         <span class="ap-o-header-text ap-o-header-icon-text uppercase">AMP</span>
-        <span class="ap-o-header-text ap-o-header-uppercase">Playground</span>
+        <span class="ap-o-header-text ap-o-header-uppercase">
+          {{^htmlWebpackPlugin.options.validator}}
+          Playground
+          {{/htmlWebpackPlugin.options.validator}}
+          {{#htmlWebpackPlugin.options.validator}}
+          Validator
+          {{/htmlWebpackPlugin.options.validator}}
+        </span>
       </a>
+
+      {{^htmlWebpackPlugin.options.validator}}
       <div id="document-title" tabindex="0" role="button" class="ap-o-header-text caret-right hidden">Untitled</div>
+      {{/htmlWebpackPlugin.options.validator}}
+
       <div id="toolbar">
         {{> button/button.hbs id="save-document" class="hidden" class2="underline" hideOnMobile=true  text="Save"}}
         {{> button/button.hbs id="fork-document" class="border" text="Fork" hideOnMobile=true }}
@@ -67,6 +85,8 @@
     </header>
     <main>
     <section id="source" class="panel panel--dark active">
+      {{^htmlWebpackPlugin.options.validator}}
+      {{! Playground panel }}
       <div class="panel-header">
         <div id="runtime-select"></div>
         {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
@@ -75,9 +95,21 @@
         {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
         {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
+      {{/htmlWebpackPlugin.options.validator}}
+      {{#htmlWebpackPlugin.options.validator}}
+      {{! Validator panel }}
+      <div class="panel-header">
+        <div id="runtime-select"></div>
+        {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
+      </div>
+      {{/htmlWebpackPlugin.options.validator}}
+
+
       {{> loader/loader.hbs theme="light"}}
     </section>
     <div id="drag"></div>
+
+    {{^htmlWebpackPlugin.options.validator}}
     <section id="preview" class="panel panel--light">
       {{> loader/loader.hbs }}
       <div class="panel-header">
@@ -101,12 +133,24 @@
       </div>
 
     </section>
+    {{/htmlWebpackPlugin.options.validator}}
+    {{#htmlWebpackPlugin.options.validator}}
+    <section id="validation" class="panel">
+      <h1>Validate your AMP page</h1>
+
+      <div id="import-url-view"></div>
+      <div id="validation-result" class="validation-result"></div>
+      <div id="error-list"></div>
+    </section>
+    {{/htmlWebpackPlugin.options.validator}}
+
     </main>
 
+    {{^htmlWebpackPlugin.options.validator}}
     <div id="error-list" class="fly-in fly-in--right fly-in--error" data-title="Validation errors"></div>
     <div id="state-view" class="fly-in fly-in--left fly-in--state" data-title="AMP State"></div>
     <div id="import-url-view" class="fly-in fly-in--left fly-in--import-url" data-title="Import URL"></div>
     <div id="fly-in-background"></div>
-
+    {{/htmlWebpackPlugin.options.validator}}
   </body>
 </html>
