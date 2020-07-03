@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import './snackbar.scss';
-import '../request-idle-callback/base.js';
 
 const SNACKBAR_TIMEOUT = 4000;
 
