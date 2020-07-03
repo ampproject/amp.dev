@@ -12,27 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import './polyfills';
+
 import './modes/default.critical.scss';
-import './modes/embed.critical.scss';
-
-import './preview/preview.critical.scss';
-
-import './event-listener-options/base.js';
+import './modes/validator.critical.scss';
 
 import DocumentController from './document/controller.js';
 import Fab from './fab/fab.js';
 
-import * as AutoImporter from './auto-importer/auto-importer.js';
-import * as ComponentsProvider from './components-provider/components-provider.js';
-import * as EmailLoader from './email-loader/email-loader.js';
-import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
-import * as StateView from './state-view/state-view.js';
 import * as ImportURL from './import-url/import-url.js';
 import * as ValidationResult from './validation-result/validation-result.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
-import * as Preview from './preview/preview.js';
 import * as Button from './button/button.js';
 import * as Menu from './menu/base.js';
 
@@ -51,36 +43,16 @@ import formatter from './formatter/';
 
 import './analytics';
 import './service-worker/base.js';
-import './request-idle-callback/base.js';
 
 // create editing/panels
 const editor = Editor.createEditor(document.getElementById('source'), window);
-const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
 ImportURL.createURLImport();
-
-// configure state list behavior
-const stateIndicator = document.getElementById('preview-header-state');
-const stateListContainer = document.getElementById('state-view');
-StateView.createStateView(stateListContainer, stateIndicator);
-
 ErrorList.createErrorList();
 ValidationResult.createValidationResult();
 
 const validator = Validator.createValidator();
-
-const componentsProvider = ComponentsProvider.createComponentsProvider();
-
-// Create AMP component auto-importer
-const autoImporter = AutoImporter.createAutoImporter(
-  componentsProvider,
-  editor
-);
-
-const emailLoader = EmailLoader.createEmailLoader(editor);
-
-const cspHashCalculator = CspHashCalculator.createCspHashCalculator(editor);
 
 // runtime select
 const runtimeChanged = (runtimeId) => {
@@ -174,65 +146,6 @@ const documentController = new DocumentController(
 );
 documentController.show();
 
-// configure preview
-if (preview) {
-  const previewPanel = document.getElementById('preview');
-  const showPreview = new Fab(document.body, '▶&#xFE0E;', () => {
-    params.push('preview', true);
-    previewPanel.classList.add('show');
-    if (embedMode.isActive) {
-      hidePreviewFab.show();
-    }
-  });
-
-  const closePreview = () => {
-    params.push('preview', false);
-    previewPanel.classList.remove('show');
-    showPreview.show();
-    if (embedMode.isActive) {
-      hidePreviewFab.hide();
-    }
-  };
-  const hidePreviewFab = new Fab(document.body, '✕&#xFE0E;', closePreview);
-  const hidePreviewButton = document.getElementById('preview-header-close');
-  hidePreviewButton.addEventListener('click', closePreview);
-
-  window.onpopstate = () => {
-    if (!params.get('preview')) {
-      previewPanel.classList.remove('show');
-      showPreview.show();
-    }
-  };
-
-  showPreview.show();
-}
-
-// load template dialog
-const loadTemplateButton = Button.from(
-  document.getElementById('document-title'),
-  () => templateDialog.open(runtimes.activeRuntime)
-);
-
-if (loadTemplateButton) {
-  // eslint-disable-next-line no-unused-vars
-  const templateDialog = createTemplateDialog(loadTemplateButton, {
-    onStart: () => editor.showLoadingIndicator(),
-    onSuccess: (template) => {
-      editor.setSource(template.content);
-      params.replace('url', template.url);
-    },
-    onError: (err) => {
-      snackbar.show(err);
-    },
-  });
-}
-
-// create the share action
-const shareDialog = createShareAction(editor);
-Button.from(document.getElementById('share'), () => {
-  shareDialog.open();
-});
-
 // configure menu
 const menu = Menu.create();
 Button.from(document.getElementById('show-menu'), () => {
@@ -246,11 +159,3 @@ const formatSource = () => {
 };
 Button.from(document.getElementById('format-source'), formatSource);
 Button.from(document.getElementById('menu-format-source'), formatSource);
-
-const loadEmail = () => {
-  emailLoader
-    .loadEmailFromFile()
-    .then(formatSource)
-    .catch((error) => alert(`Error loading email: ${error.message}`));
-};
-Button.from(document.getElementById('import-email'), loadEmail);

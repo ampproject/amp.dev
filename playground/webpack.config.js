@@ -13,7 +13,10 @@ module.exports = (env, argv) => {
   const devMode = argv.mode !== 'production';
   const template = path.join(__dirname, 'src/index.hbs');
   return {
-    entry: path.join(__dirname, 'src/app.js'),
+    entry: {
+      playground: path.join(__dirname, 'src/playground.js'),
+      validator: path.join(__dirname, 'src/validator.js')
+    },
     output: {
       filename: '[name].[hash].js',
       chunkFilename: '[name].[chunkhash].bundle.js',
@@ -52,12 +55,14 @@ module.exports = (env, argv) => {
       }),
       new HtmlWebpackPlugin({
         template,
+        chunks: ['playground'],
         filename: './index.html',
         inlineSource: 'critical..+$',
         gaTrackingId: config.gaTrackingId,
       }),
       new HtmlWebpackPlugin({
         template,
+        chunks: ['playground'],
         filename: './embed.html',
         inlineSource: 'critical..+$',
         gaTrackingId: config.gaTrackingId,
@@ -65,6 +70,7 @@ module.exports = (env, argv) => {
       }),
       new HtmlWebpackPlugin({
         template,
+        chunks: ['validator'],
         filename: './validator.html',
         inlineSource: 'critical..+$',
         gaTrackingId: config.gaTrackingId,
