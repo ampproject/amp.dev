@@ -88,8 +88,7 @@
     "shrink-ray-current": "4.1.2",
     "signale": "1.4.0",
     "uuid": "8.2.0",
-    "web-push": "3.4.4",
-    "through2": "3.0.1"
+    "web-push": "3.4.4"
   },
   "devDependencies": {
     "@ampproject/toolbox-validator-rules": "2.5.4",
@@ -160,7 +159,8 @@
     "webpack": "4.43.0",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0",
-    "write": "2.0.0"
+    "write": "2.0.0",
+    "through2": "3.0.1"
   },
   "sideEffects": [
     "./playground/src/request-idle-callback/base.js",
