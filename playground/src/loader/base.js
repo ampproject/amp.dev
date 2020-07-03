@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './loader/loader.critical.scss';
+import './loader.critical.scss';
 import loaderHtml from './loader.hbs';
 
 const FADE_OUT_ANIMATION_LENGTH = 250;

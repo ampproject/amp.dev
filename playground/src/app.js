@@ -12,9 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './app.critical.scss';
+import './modes/default.critical.scss';
 import './modes/embed.critical.scss';
-import './modes/validator.critical.scss';
 
 import './preview/preview.critical.scss';
 
