@@ -49,7 +49,7 @@ class Experimental extends FlyIn {
 
     inputBar.submit.addEventListener('click', () => {
       if (inputBar.value && availableExperiments.includes(inputBar.value)) {
-        this.setExperiment(inputBar.value);
+        this.addExperiment(inputBar.value);
       } else {
         inputBar.showError('Enter a AMP Experiment');
       }
@@ -57,18 +57,31 @@ class Experimental extends FlyIn {
   }
 
   /**
-   * Get list of experimental amp components
+   * Fetch list of experimental amp components
+   * @return {[Array]} list of active experiment components
    */
   receiveExperiments() {
     return ['amp-test', 'amp-blabla', 'amp'];
   }
 
   /**
-   * Render experiment list Item
+   * Add item to list and enable AMP experiment
+   * @param {String} experiment name of valid experiment
    */
-  setExperiment(experiment) {
-    this.experimentList.insertAdjacentHTML('beforeend', experimentListItem({experiment}));
+  addExperiment(experiment) {
+    const listItem = document.createElement('li');
+    listItem.className = 'experiments-list-item';
+    listItem.insertAdjacentHTML('beforeend', experimentListItem({experiment}));
+    listItem.addEventListener('click', () => {
+      this.removeExperiment(listItem, experiment);
+    });
+    this.experimentList.appendChild(listItem);
+
+    // AMP.addExperiment(experiment);
   }
 
-
+  removeExperiment(listItem, experiment) {
+    this.experimentList.removeChild(listItem);
+    // AMP.removeExperiment(experiment);
+  }
 }

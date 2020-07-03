@@ -1,18 +1,32 @@
 @import 'mixins.scss';
 @import 'components/atoms/_text.scss';
 
-.experiments {
+#experiments-view {
 
-  &-list {
-    list-style: none;
-    padding: 0;
+  .fly-in-content {
+    overflow: hidden;
 
-    &-item {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid black;
+    .experiments {
+      &-list {
+        max-height: 100%;
+        padding: 0;
+        overflow-y: scroll;
+        list-style: none;
+
+        &-item {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid color('gray-chateau');
+
+          &-delete {
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+          }
+        }
+      }
     }
   }
 }
