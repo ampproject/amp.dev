@@ -19,6 +19,7 @@ import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
 import embedMode from '../embed-mode/';
 import * as StateView from '../state-view/state-view.js';
+import * as Experiments from '../experiments/experiments.js';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
@@ -47,6 +48,10 @@ class Preview {
       this.getAmpState().then((state) => {
         events.publish(EVENT_AMP_BIND_NEW_STATE, state);
       });
+    });
+
+    events.subscribe(Experiments.EVENT_TOGGLE_EXPERIMENT, (experiment) => {
+      this.toggleExperiment(experiment);
     });
   }
 
@@ -309,6 +314,11 @@ class Preview {
         events.publish(EVENT_AMP_BIND_NEW_STATE, state);
       });
     }
+  }
+
+  toggleExperiment(experiment) {
+    const childWindow = this.getIframeWindow(this.previewIframe);
+    childWindow.AMP.toggleExperiment(experiment);
   }
 
   getIframeWindow(iframeElement) {

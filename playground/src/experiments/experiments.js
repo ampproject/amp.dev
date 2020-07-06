@@ -16,6 +16,7 @@ import './experiments.scss';
 import template from './experiments.hbs';
 import experimentListItem from './experiment-list-item.hbs';
 
+import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/fly-in.js';
 import createInput from '../input-bar/input-bar.js';
@@ -23,6 +24,8 @@ import createInput from '../input-bar/input-bar.js';
 const EXPERIMENTS_CONFIG_SOURCE_PATH =
   'https://raw.githubusercontent.com/ampproject/amphtml/master/tools/experiments/experiments-config.js';
 const EXPERIMENTS_ID_PATTERN = /(?:id: ')(.*?)(?:')/gm;
+
+export const EVENT_TOGGLE_EXPERIMENT = 'event-toggle-experiment';
 
 export function createExperimentsView(target, trigger) {
   return new Experimental(target, trigger);
@@ -51,6 +54,7 @@ class Experimental extends FlyIn {
     );
 
     this.inputBar.submit.addEventListener('click', () => {
+      this.inputBar.toggleLoading();
       this.init().then(() => {
         this.onSubmitExperiment();
       });
@@ -68,11 +72,12 @@ class Experimental extends FlyIn {
   onSubmitExperiment() {
     const inputValue = this.inputBar.value;
     if (!inputValue || !this.availableExperiments.includes(inputValue)) {
-      this.inputBar.showError('Not a valid AMP Experiment. Learn more');
+      this.inputBar.showError('Not a valid AMP Experiment');
     } else if (!this.activeExperiments.includes(inputValue)) {
       this.addExperiment(inputValue);
       this.inputBar.hideError();
     }
+    this.inputBar.toggleLoading(false);
   }
 
   /**
@@ -114,7 +119,7 @@ class Experimental extends FlyIn {
     });
     this.experimentList.appendChild(listItem);
     this.activeExperiments.push(experiment);
-    // AMP.addExperiment(experiment);
+    events.publish(EVENT_TOGGLE_EXPERIMENT, experiment);
   }
 
   removeExperiment(listItem, experiment) {
@@ -124,6 +129,6 @@ class Experimental extends FlyIn {
       1
     );
     this.inputBar.hideError();
-    // AMP.removeExperiment(experiment);
+    events.publish(EVENT_TOGGLE_EXPERIMENT, experiment);
   }
 }
