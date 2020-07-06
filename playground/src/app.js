@@ -73,7 +73,9 @@ const stateListContainer = document.getElementById('state-view');
 StateView.createStateView(stateListContainer, stateIndicator);
 
 // configure experiments view behavior
-const experimentsIndicator = document.getElementById('preview-header-experiments');
+const experimentsIndicator = document.getElementById(
+  'preview-header-experiments'
+);
 const experimentsContainer = document.getElementById('experiments-view');
 Experiments.createExperimentsView(experimentsContainer, experimentsIndicator);
 
