@@ -12,14 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import './state-view.scss';
 import JSONTreeView from 'json-tree-view';
 import 'json-tree-view/example/build/devtools.css';
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import * as Preview from '../preview/preview.js';
-import FlyIn from '../fly-in/base.js';
+import FlyIn from '../fly-in/fly-in.js';
 
 export function createStateView(target, trigger) {
+  if (!target) return;
   return new StateView(target, trigger);
 }
 
@@ -35,7 +37,17 @@ class StateView extends FlyIn {
     // Set treeview for state
     this.treeView = new JSONTreeView('', {});
     this.treeView.showCountOfObjectOrArray = false;
-    this.content.appendChild(this.treeView.dom);
+    this.content.appendChild(this.treeView.dom.querySelector('.children'));
+
+    /**
+     * Disabled on IE11
+     * Listen for state changes in tree view and hand hand them over to highlightChanges()
+     */
+    if (document.evaluate) {
+      this.treeView.on('change', (self, key) => {
+        this.highlightChanges(key);
+      });
+    }
 
     // configure amp-state listener
     events.subscribe(Preview.EVENT_AMP_BIND_READY, (state) => {
@@ -57,6 +69,46 @@ class StateView extends FlyIn {
     this.content.classList.add('loading');
     events.publish(EVENT_AMP_BIND_REQUEST_STATE);
     this.toggle();
+  }
+
+  /**
+   * Run highlight animation on updated tree view dom elements
+   * @param  {Array} key     Array of keys in tree view that have changed
+   */
+  highlightChanges(key) {
+    key.shift();
+    if (!key.length) {
+      return;
+    }
+
+    const highlightedItems = this.content.querySelectorAll('.highlight');
+    for (const item of highlightedItems) {
+      item.classList.remove('highlight');
+    }
+
+    let expression = ``;
+    for (let i = 0; i < key.length; i++) {
+      const selector = key[i];
+
+      expression += `//div[. = '${selector}']/..`;
+
+      if (i != key.length - 1) {
+        expression += `/div[@class='children']`;
+      }
+    }
+
+    const treeRoot = this.content.querySelector('.children');
+    const highlight = document.evaluate(
+      expression,
+      treeRoot,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    );
+
+    if (highlight.singleNodeValue) {
+      highlight.singleNodeValue.classList.add('highlight');
+    }
   }
 
   render(state) {

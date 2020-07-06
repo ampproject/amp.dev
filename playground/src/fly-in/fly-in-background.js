@@ -12,23 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {gaTrackingId} from '../../../platform/config/shared.json';
-import modes from '../modes/';
+import './fly-in-background.scss';
+import events from '../events/events.js';
+import modes from '../modes/index.js';
 
-class Analytics {
-  constructor() {
-    if (modes.IS_EMBED) {
-      return;
-    }
+export const EVENT_FLY_IN_CLOSE = 'event-fly-in-close';
 
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      // eslint-disable-next-line prefer-rest-params
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', gaTrackingId, {'use_amp_client_id': true});
+export function createFlyInBackground() {
+  if (modes.IS_DEFAULT) {
+    return new FlyInBackground();
   }
 }
 
-export default new Analytics();
+class FlyInBackground {
+  constructor() {
+    document
+      .getElementById('fly-in-background')
+      .addEventListener('click', () => {
+        events.publish(EVENT_FLY_IN_CLOSE);
+      });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.keyCode === 27) {
+        events.publish(EVENT_FLY_IN_CLOSE);
+      }
+    });
+  }
+}
+
+createFlyInBackground();

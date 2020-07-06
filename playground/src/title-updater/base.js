@@ -26,8 +26,12 @@ class TitleUpdater {
     this.win.requestIdleCallback(() => {
       const match = text.match(/<title[^>]*>([^<]+)<\/title>/im);
       const snippetTitle = match ? match[1] : this.extractTitleFromUrl_();
-      this.titleLabel.textContent = snippetTitle;
-      this.titleLabel.classList.toggle('hidden', false);
+
+      if (this.titleLabel) {
+        this.titleLabel.textContent = snippetTitle;
+        this.titleLabel.classList.toggle('hidden', false);
+      }
+
       this.win.document.title = snippetTitle + ' - ' + this.originalTitle;
     });
   }

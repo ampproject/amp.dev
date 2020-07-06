@@ -12,10 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-class EmbedMode {
+class Modes {
   constructor(doc) {
-    this.isActive = !!doc.body.classList.contains('embed');
+    this.IS_EMBED = !!doc.body.classList.contains('embed');
+    this.IS_VALIDATOR = !!doc.body.classList.contains('validator');
+    this.IS_DEFAULT = !this.IS_EMBED && !this.IS_VALIDATOR;
   }
 }
 
-export default new EmbedMode(document);
+export default new Modes(document);
