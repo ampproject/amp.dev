@@ -94,7 +94,7 @@
 
     &-label {
       display: inline-flex;
-      transform: translate(-68px, -52px);
+      transform: translate(-68px, -56px);
 
       .label-icon {
         background: color('blue-ribbon');
@@ -104,11 +104,12 @@
       }
 
       .label-title {
-        visibility: hidden;
+        display: none;
         background: color('blue-ribbon');
         color: color('white');
-        left: 32px;
-        padding: 0 5px;
+        left: 0;
+        padding: 0 10px 0 5px;
+        border-radius: 4px;
       }
     }
 
@@ -143,22 +144,21 @@
           padding-right: 80px;
           .ap-a-sidebar-desktop-toggle-label {
             transform: rotate(-90deg);
-            top: 176px;
+            top: 186px;
             margin-left: -125px;
 
             .label-icon {
               width: 35px;
               margin-left: -2px;
-              transform: rotate(90deg);
-              border-radius: 0 0 4px 4px;
+              transform: rotate(90deg) translateY(-110px);
               svg {
                 transform: rotate(180deg);
               }
             }
 
             .label-title {
-              visibility: visible;
-              border-radius: 0 4px 4px 0;
+              display: inline-flex;
+              padding-left: 10px;
 
             }
           }
@@ -166,4 +166,9 @@
       }
     }
   }
+    @media (min-width: 1024px) {
+      &-label {
+        transform: translate(-68px, -52px);
+      }
+    }
 }
