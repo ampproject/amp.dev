@@ -142,7 +142,7 @@ class FlyInURLImport extends FlyIn {
    * @return {undefined}
    */
   onUpdateEditorContent() {
-    this.toggle();
+    this.toggle(false);
   }
 
   /**
