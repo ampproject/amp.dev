@@ -22,6 +22,7 @@
   }
 
   &-submit {
+    cursor: pointer;
     @include txt-font-accent;
     min-width: 70px;
     border: 0;
