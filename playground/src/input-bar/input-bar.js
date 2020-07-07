@@ -45,4 +45,8 @@ class Input {
   get value() {
     return this.input.value;
   }
+
+  set value(value) {
+    this.input.value = value;
+  }
 }

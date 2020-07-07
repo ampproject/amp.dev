@@ -13,11 +13,12 @@
 // limitations under the License.
 
 import events from '../events/events.js';
+import * as Runtimes from '../runtime/runtimes.js';
 import dimensions from './dimensions.json';
 import params from '../params/base.js';
 import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
-import embedMode from '../embed-mode/';
+import modes from '../modes/';
 import * as StateView from '../state-view/state-view.js';
 import * as Experiments from '../experiments/experiments.js';
 
@@ -28,10 +29,10 @@ const PARAM_HEIGHT = 'height';
 const MOBILE_BREAK_POINT = 767;
 
 export const EVENT_AMP_BIND_READY = 'event-amp-bind-ready';
-
 export const EVENT_AMP_BIND_NEW_STATE = 'event-amp-bind-new-state';
 
 export function createPreview(container) {
+  if (!container) return;
   return new Preview(container, document, createLoader(container));
 }
 
@@ -50,12 +51,10 @@ class Preview {
       });
     });
 
-    events.subscribe(Experiments.EVENT_TOGGLE_EXPERIMENT, (experiment, force) => {
-      this.toggleExperiment(experiment, force);
-    });
+    events.subscribe(Runtimes.EVENT_SET_RUNTIME, this._onSetRuntime.bind(this));
   }
 
-  setRuntime(runtime) {
+  _onSetRuntime(runtime) {
     if (this.runtime === runtime) {
       return;
     }
@@ -63,7 +62,7 @@ class Preview {
     if (!this.runtime) {
       this.initDimensionFromParamsOrUseDefault(runtime);
     }
-    if (embedMode.isActive) {
+    if (modes.IS_EMBED) {
       this.dimension.width = '100%';
       this.dimension.height = '100%';
     }
@@ -270,6 +269,8 @@ class Preview {
     childDoc.close();
     // Enable development mode for preview iframe
     childWindow.location.hash = '#development=1';
+    childWindow.console.error = () => {};
+
     (childWindow.AMP = childWindow.AMP || []).push(() => {
       const checkStateIntervalID = childWindow.setInterval(() => {
         if (this.ampStateReady()) {

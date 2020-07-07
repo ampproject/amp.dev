@@ -12,10 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./app.critical.scss');
-require('./loader/loader.critical.scss');
-require('./embed-mode/embed.critical.scss');
-require('./preview/preview.critical.scss');
+import './app.critical.scss';
+import './modes/embed.critical.scss';
+import './modes/validator.critical.scss';
+
+import './loader/loader.critical.scss';
+import './preview/preview.critical.scss';
 
 import './event-listener-options/base.js';
 
@@ -30,6 +32,7 @@ import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
 import * as Experiments from './experiments/experiments.js';
 import * as ImportURL from './import-url/import-url.js';
+import * as ValidationResult from './validation-result/validation-result.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
 import * as Preview from './preview/preview.js';
@@ -41,52 +44,32 @@ import createTemplateDialog from './template-dialog/base.js';
 import createShareAction from './share/';
 import params from './params/base.js';
 import events from './events/events.js';
+import modes from './modes/index.js';
 import titleUpdater from './title-updater/base.js';
 import snackbar from './snackbar/base.js';
 import {runtimes, EVENT_SET_RUNTIME} from './runtime/runtimes.js';
 import detectRuntime from './runtime/detector.js';
 import addSplitPaneBehavior from './split-pane/base.js';
 import formatter from './formatter/';
-import analytics from './analytics';
-import embedMode from './embed-mode/';
 
+import './analytics';
 import './service-worker/base.js';
 import './request-idle-callback/base.js';
 
-if (!embedMode.isActive) {
-  analytics.init();
-}
-
-// create editing/preview panels
+// create editing/panels
 const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
-// configure url import view
-const importURLTrigger = document.getElementById('import-url');
-const importURLContainer = document.getElementById('import-url-view');
-ImportURL.createImportURLView(importURLContainer, importURLTrigger);
+ImportURL.createURLImport();
 
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');
 const stateListContainer = document.getElementById('state-view');
 StateView.createStateView(stateListContainer, stateIndicator);
 
-// configure experiments view behavior
-const experimentsIndicator = document.getElementById(
-  'preview-header-experiments'
-);
-const experimentsContainer = document.getElementById('experiments-view');
-Experiments.createExperimentsView(experimentsContainer, experimentsIndicator);
-
-// configure error list behavior
-const errorIndicator = document.getElementById('error-indicator');
-const errorListContainer = document.getElementById('error-list');
-ErrorList.createErrorList(errorListContainer, errorIndicator);
-
-events.subscribe(ErrorList.EVENT_ERROR_SELECTED, (error) =>
-  editor.setCursorAndFocus(error.line, error.col)
-);
+ErrorList.createErrorList();
+ValidationResult.createValidationResult();
 
 const validator = Validator.createValidator();
 
@@ -132,7 +115,6 @@ runtimeSelector.show();
 
 let activeRuntime;
 events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
-  preview.setRuntime(newRuntime);
   runtimeSelector.selectOption(newRuntime.id);
   // change editor input to new runtime default if current input is unchanged
   if (
@@ -146,8 +128,9 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   activeRuntime = newRuntime;
 
   const emailButton = document.getElementById('import-email');
-  emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
-  importURLTrigger.classList.toggle('hidden', activeRuntime.id === 'amp4email');
+  if (emailButton) {
+    emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
+  }
 });
 
 runtimes.init();
@@ -155,11 +138,17 @@ runtimes.init();
 // configure editor
 const editorUpdateListener = () => {
   const source = editor.getSource();
-  preview.refresh(source);
+
+  if (preview) {
+    preview.refresh(source);
+  }
+
   validator.validate(source);
   titleUpdater.update(source);
 
-  cspHashCalculator.update(source);
+  if (!modes.IS_VALIDATOR) {
+    cspHashCalculator.update(source);
+  }
 };
 events.subscribe([Editor.EVENT_INPUT_CHANGE], editorUpdateListener);
 events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
@@ -174,7 +163,9 @@ events.subscribe([Editor.EVENT_INPUT_NEW], () => {
 
 // configure auto-importer
 events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
-  autoImporter.update(validationResult);
+  if (!modes.IS_VALIDATOR) {
+    autoImporter.update(validationResult);
+  }
 });
 
 // setup document
@@ -187,43 +178,58 @@ const documentController = new DocumentController(
 documentController.show();
 
 // configure preview
-preview.setRuntime(runtimes.activeRuntime);
-const previewPanel = document.getElementById('preview');
-const showPreview = new Fab(document.body, '▶&#xFE0E;', () => {
-  params.push('preview', true);
-  previewPanel.classList.add('show');
-  if (embedMode.isActive) {
-    hidePreviewFab.show();
-  }
-});
+if (preview) {
+  const previewPanel = document.getElementById('preview');
+  const showPreview = new Fab(document.body, '▶&#xFE0E;', () => {
+    params.push('preview', true);
+    previewPanel.classList.add('show');
+    if (embedMode.isActive) {
+      hidePreviewFab.show();
+    }
+  });
 
-const closePreview = () => {
-  params.push('preview', false);
-  previewPanel.classList.remove('show');
+  const closePreview = () => {
+    params.push('preview', false);
+    previewPanel.classList.remove('show');
+    showPreview.show();
+    if (embedMode.isActive) {
+      hidePreviewFab.hide();
+    }
+  };
+  const hidePreviewFab = new Fab(document.body, '✕&#xFE0E;', closePreview);
+  const hidePreviewButton = document.getElementById('preview-header-close');
+  hidePreviewButton.addEventListener('click', closePreview);
+
+  window.onpopstate = () => {
+    if (!params.get('preview')) {
+      previewPanel.classList.remove('show');
+      showPreview.show();
+    }
+  };
+
   showPreview.show();
-  if (embedMode.isActive) {
-    hidePreviewFab.hide();
-  }
-};
-const hidePreviewFab = new Fab(document.body, '✕&#xFE0E;', closePreview);
-const hidePreviewButton = document.getElementById('preview-header-close');
-hidePreviewButton.addEventListener('click', closePreview);
+}
 
 // load template dialog
 const loadTemplateButton = Button.from(
   document.getElementById('document-title'),
   () => templateDialog.open(runtimes.activeRuntime)
 );
-const templateDialog = createTemplateDialog(loadTemplateButton, {
-  onStart: () => editor.showLoadingIndicator(),
-  onSuccess: (template) => {
-    editor.setSource(template.content);
-    params.replace('url', template.url);
-  },
-  onError: (err) => {
-    snackbar.show(err);
-  },
-});
+
+if (loadTemplateButton) {
+  // eslint-disable-next-line no-unused-vars
+  const templateDialog = createTemplateDialog(loadTemplateButton, {
+    onStart: () => editor.showLoadingIndicator(),
+    onSuccess: (template) => {
+      editor.setSource(template.content);
+      params.replace('url', template.url);
+    },
+    onError: (err) => {
+      snackbar.show(err);
+    },
+  });
+}
+
 // create the share action
 const shareDialog = createShareAction(editor);
 Button.from(document.getElementById('share'), () => {
@@ -251,12 +257,3 @@ const loadEmail = () => {
     .catch((error) => alert(`Error loading email: ${error.message}`));
 };
 Button.from(document.getElementById('import-email'), loadEmail);
-
-window.onpopstate = () => {
-  if (!params.get('preview')) {
-    previewPanel.classList.remove('show');
-    showPreview.show();
-  }
-};
-
-showPreview.show();
