@@ -12,12 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './polyfills';
-
-import './modes/default.critical.scss';
 import './modes/embed.critical.scss';
 
-import './preview/preview.critical.scss';
 
 import DocumentController from './document/controller.js';
 import Fab from './fab/fab.js';

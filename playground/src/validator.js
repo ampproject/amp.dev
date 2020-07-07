@@ -12,9 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './polyfills';
-
-import './modes/default.critical.scss';
 import './modes/validator.critical.scss';
 
 import DocumentController from './document/controller.js';
@@ -29,8 +26,6 @@ import * as Button from './button/button.js';
 import * as Menu from './menu/base.js';
 
 import createSelector from './selector/selector.js';
-import createTemplateDialog from './template-dialog/base.js';
-import createShareAction from './share/';
 import params from './params/base.js';
 import events from './events/events.js';
 import modes from './modes/index.js';
@@ -95,11 +90,6 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   }
   validator.validate(editor.getSource());
   activeRuntime = newRuntime;
-
-  const emailButton = document.getElementById('import-email');
-  if (emailButton) {
-    emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
-  }
 });
 
 runtimes.init();
@@ -114,10 +104,6 @@ const editorUpdateListener = () => {
 
   validator.validate(source);
   titleUpdater.update(source);
-
-  if (!modes.IS_VALIDATOR) {
-    cspHashCalculator.update(source);
-  }
 };
 events.subscribe([Editor.EVENT_INPUT_CHANGE], editorUpdateListener);
 events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
@@ -128,13 +114,6 @@ events.subscribe([Editor.EVENT_INPUT_NEW], () => {
   const runtime = detectRuntime(source);
   runtimeChanged(runtime.id);
   editorUpdateListener();
-});
-
-// configure auto-importer
-events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
-  if (!modes.IS_VALIDATOR) {
-    autoImporter.update(validationResult);
-  }
 });
 
 // setup document

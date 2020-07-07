@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import './preview.critical.scss';
+
 import events from '../events/events.js';
 import * as Runtimes from '../runtime/runtimes.js';
 import dimensions from './dimensions.json';
