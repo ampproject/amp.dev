@@ -5,27 +5,11 @@
   .fly-in-content {
     overflow: hidden;
   }
-}
 
-.experiments {
-  &-list {
+  .experiments-list {
     max-height: 70%;
     padding: 0;
     overflow-y: scroll;
     list-style: none;
-
-    &-item {
-      display: flex;
-      width: 100%;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid color('gray-chateau');
-
-      &-delete {
-        cursor: pointer;
-        background: transparent;
-        border: 0;
-      }
-    }
   }
 }

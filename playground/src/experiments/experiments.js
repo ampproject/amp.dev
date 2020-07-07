@@ -14,11 +14,11 @@
 
 import './experiments.scss';
 import template from './experiments.hbs';
-import experimentListItem from './experiment-list-item.hbs';
 
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/fly-in.js';
+import * as ExperimentItem from './experiment-list-item.js';
 import createInput from '../input-bar/input-bar.js';
 
 const EXPERIMENTS_CONFIG_SOURCE_PATH =
@@ -31,10 +31,10 @@ export function createExperimentsView() {
   const target = document.getElementById('experiments-view');
   const trigger = document.getElementById('preview-header-experiments');
 
-  return new Experimental(target, trigger);
+  return new Experiments(target, trigger);
 }
 
-class Experimental extends FlyIn {
+class Experiments extends FlyIn {
   constructor(target, trigger, helpText) {
     super(target);
 
@@ -49,7 +49,8 @@ class Experimental extends FlyIn {
     this.inputBar = createInput(
       document.getElementById('input-bar-experiments'),
       {
-        helpText: 'Control which release channel (prod, RC, or dev) of AMP JS will be served through the Google AMP Cache. Make sure third-party cookies are enabled, or allowlisted on the websites that you are testing.',
+        helpText:
+          'Control which release channel (prod, RC, or dev) of AMP JS will be served through the Google AMP Cache. Make sure third-party cookies are enabled, or allowlisted on the websites that you are testing.',
         label: 'Add',
         type: 'url',
         name: 'text',
@@ -59,11 +60,15 @@ class Experimental extends FlyIn {
 
     this.inputBar.input.addEventListener('keydown', (e) => {
       if (e.keyCode === 13) {
-        this.onInputValueEnter();
+        this.onSubmitExperiment();
       }
     });
     this.inputBar.submit.addEventListener('click', () => {
       this.onSubmitExperiment();
+    });
+
+    events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
+      this.removeExperiment(experiment);
     });
   }
 
@@ -116,24 +121,12 @@ class Experimental extends FlyIn {
    * @param {String} experiment name of valid experiment
    */
   async addExperiment(experiment) {
-    const listItem = document.createElement('li');
-    listItem.className = 'experiments-list-item';
-    listItem.insertAdjacentHTML(
-      'beforeend',
-      experimentListItem({
-        experiment,
-      })
-    );
-    listItem.querySelector('button').addEventListener('click', () => {
-      this.removeExperiment(listItem, experiment);
-    });
-    this.experimentList.appendChild(listItem);
+    ExperimentItem.createExperimentListItem(this.experimentList, experiment);
     this.activeExperiments.push(experiment);
     events.publish(EVENT_TOGGLE_EXPERIMENT, experiment, true);
   }
 
-  removeExperiment(listItem, experiment) {
-    this.experimentList.removeChild(listItem);
+  removeExperiment(experiment) {
     this.activeExperiments.splice(
       this.activeExperiments.indexOf(experiment),
       1
