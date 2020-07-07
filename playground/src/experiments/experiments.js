@@ -53,11 +53,13 @@ class Experimental extends FlyIn {
       }
     );
 
+    this.inputBar.input.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13) {
+        this.onInputValueEnter();
+      }
+    });
     this.inputBar.submit.addEventListener('click', () => {
-      this.inputBar.toggleLoading();
-      this.init().then(() => {
-        this.onSubmitExperiment();
-      });
+      this.onInputValueEnter();
     });
   }
 
@@ -67,6 +69,13 @@ class Experimental extends FlyIn {
     } else {
       this.availableExperiments = await this.receiveExperiments();
     }
+  }
+
+  onInputValueEnter() {
+    this.inputBar.toggleLoading();
+    this.init().then(() => {
+      this.onSubmitExperiment();
+    });
   }
 
   onSubmitExperiment() {
@@ -114,7 +123,7 @@ class Experimental extends FlyIn {
         experiment,
       })
     );
-    listItem.addEventListener('click', () => {
+    listItem.querySelector('button').addEventListener('click', () => {
       this.removeExperiment(listItem, experiment);
     });
     this.experimentList.appendChild(listItem);
