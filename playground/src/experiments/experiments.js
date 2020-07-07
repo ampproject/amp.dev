@@ -85,6 +85,7 @@ class Experimental extends FlyIn {
     } else if (!this.activeExperiments.includes(inputValue)) {
       this.addExperiment(inputValue);
       this.inputBar.hideError();
+      this.inputBar.input.value = '';
     }
     this.inputBar.toggleLoading(false);
   }
