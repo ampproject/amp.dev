@@ -20,7 +20,6 @@ import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
 import modes from '../modes/';
 import * as StateView from '../state-view/state-view.js';
-import * as Experiments from '../experiments/experiments.js';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
