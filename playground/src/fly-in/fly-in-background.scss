@@ -14,7 +14,7 @@
   transition: opacity .25s ease-in-out
 }
 
-.active ~ #fly-in-background {
+.fly-in--lightbox.active ~ #fly-in-background {
   pointer-events: all;
   opacity: .6;
 }
