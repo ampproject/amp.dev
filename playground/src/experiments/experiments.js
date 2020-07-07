@@ -128,7 +128,7 @@ class Experimental extends FlyIn {
     });
     this.experimentList.appendChild(listItem);
     this.activeExperiments.push(experiment);
-    events.publish(EVENT_TOGGLE_EXPERIMENT, experiment);
+    events.publish(EVENT_TOGGLE_EXPERIMENT, experiment, true);
   }
 
   removeExperiment(listItem, experiment) {
@@ -138,6 +138,6 @@ class Experimental extends FlyIn {
       1
     );
     this.inputBar.hideError();
-    events.publish(EVENT_TOGGLE_EXPERIMENT, experiment);
+    events.publish(EVENT_TOGGLE_EXPERIMENT, experiment, false);
   }
 }

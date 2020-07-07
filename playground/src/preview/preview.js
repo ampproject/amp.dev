@@ -50,8 +50,8 @@ class Preview {
       });
     });
 
-    events.subscribe(Experiments.EVENT_TOGGLE_EXPERIMENT, (experiment) => {
-      this.toggleExperiment(experiment);
+    events.subscribe(Experiments.EVENT_TOGGLE_EXPERIMENT, (experiment, force) => {
+      this.toggleExperiment(experiment, force);
     });
   }
 
@@ -316,9 +316,9 @@ class Preview {
     }
   }
 
-  toggleExperiment(experiment) {
+  toggleExperiment(experiment, force) {
     const childWindow = this.getIframeWindow(this.previewIframe);
-    childWindow.AMP.toggleExperiment(experiment);
+    childWindow.AMP.toggleExperiment(experiment, force);
   }
 
   getIframeWindow(iframeElement) {
