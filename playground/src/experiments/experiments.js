@@ -35,7 +35,7 @@ export function createExperimentsView() {
 }
 
 class Experimental extends FlyIn {
-  constructor(target, trigger) {
+  constructor(target, trigger, helpText) {
     super(target);
 
     this.target = target;
@@ -49,6 +49,7 @@ class Experimental extends FlyIn {
     this.inputBar = createInput(
       document.getElementById('input-bar-experiments'),
       {
+        helpText: 'Control which release channel (prod, RC, or dev) of AMP JS will be served through the Google AMP Cache. Make sure third-party cookies are enabled, or allowlisted on the websites that you are testing.',
         label: 'Add',
         type: 'url',
         name: 'text',
@@ -62,7 +63,7 @@ class Experimental extends FlyIn {
       }
     });
     this.inputBar.submit.addEventListener('click', () => {
-      this.onInputValueEnter();
+      this.onSubmitExperiment();
     });
   }
 
@@ -74,23 +75,19 @@ class Experimental extends FlyIn {
     }
   }
 
-  onInputValueEnter() {
+  onSubmitExperiment() {
     this.inputBar.toggleLoading();
     this.init().then(() => {
-      this.onSubmitExperiment();
+      const inputValue = this.inputBar.value;
+      if (!inputValue || !this.availableExperiments.includes(inputValue)) {
+        this.inputBar.showError('Not a valid AMP Experiment');
+      } else if (!this.activeExperiments.includes(inputValue)) {
+        this.addExperiment(inputValue);
+        this.inputBar.hideError();
+        this.inputBar.input.value = '';
+      }
+      this.inputBar.toggleLoading(false);
     });
-  }
-
-  onSubmitExperiment() {
-    const inputValue = this.inputBar.value;
-    if (!inputValue || !this.availableExperiments.includes(inputValue)) {
-      this.inputBar.showError('Not a valid AMP Experiment');
-    } else if (!this.activeExperiments.includes(inputValue)) {
-      this.addExperiment(inputValue);
-      this.inputBar.hideError();
-      this.inputBar.input.value = '';
-    }
-    this.inputBar.toggleLoading(false);
   }
 
   /**

@@ -9,6 +9,11 @@
   border-radius: 4px;
   box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.8);
 
+  &-help-text {
+    @include txt;
+    @include txt-2;
+  }
+
   &-field {
     display: block;
     height: 100%;
