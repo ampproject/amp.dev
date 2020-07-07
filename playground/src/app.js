@@ -62,6 +62,7 @@ const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
 ImportURL.createURLImport();
+Experiments.createExperimentsView();
 
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');

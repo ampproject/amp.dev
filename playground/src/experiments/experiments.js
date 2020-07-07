@@ -27,7 +27,10 @@ const EXPERIMENTS_ID_PATTERN = /(?:id: ')(.*?)(?:')/gm;
 
 export const EVENT_TOGGLE_EXPERIMENT = 'event-toggle-experiment';
 
-export function createExperimentsView(target, trigger) {
+export function createExperimentsView() {
+  const target = document.getElementById('experiments-view');
+  const trigger = document.getElementById('preview-header-experiments');
+
   return new Experimental(target, trigger);
 }
 
