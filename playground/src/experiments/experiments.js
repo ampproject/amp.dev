@@ -31,6 +31,7 @@ export const EVENT_REMOVE_EXPERIMENT = 'event-remove-experiment';
 export function createExperimentsView() {
   const target = document.getElementById('experiments-view');
   const trigger = document.getElementById('preview-header-experiments');
+  if (!target) return;
 
   return new Experiments(target, trigger);
 }
