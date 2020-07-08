@@ -1,3 +1,4 @@
+@import '_functions.scss';
 @import '_variables.scss';
 
 @mixin default-section-padding {
@@ -164,7 +165,7 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
     width: 45px;
     height: 45px;
     margin: 100px auto auto auto;
-    border: 3px solid #ccc;
+    border: 3px solid color('silver');
     border-radius: 50%;
     border-left-color: transparent;
     animation: rotate 1.5s linear infinite;
