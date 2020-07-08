@@ -200,25 +200,23 @@ if (preview) {
   showPreview.show();
 }
 
+// eslint-disable-next-line no-unused-vars
+const templateDialog = createTemplateDialog(loadTemplateButton, {
+  onStart: () => editor.showLoadingIndicator(),
+  onSuccess: (template) => {
+    editor.setSource(template.content);
+    params.replace('url', template.url);
+  },
+  onError: (err) => {
+    snackbar.show(err);
+  },
+});
+
 // load template dialog
 const loadTemplateButton = Button.from(
   document.getElementById('document-title'),
   () => templateDialog.open(runtimes.activeRuntime)
 );
-
-if (loadTemplateButton) {
-  // eslint-disable-next-line no-unused-vars
-  const templateDialog = createTemplateDialog(loadTemplateButton, {
-    onStart: () => editor.showLoadingIndicator(),
-    onSuccess: (template) => {
-      editor.setSource(template.content);
-      params.replace('url', template.url);
-    },
-    onError: (err) => {
-      snackbar.show(err);
-    },
-  });
-}
 
 // create the share action
 const shareDialog = createShareAction(editor);
