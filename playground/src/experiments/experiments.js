@@ -35,7 +35,7 @@ export function createExperimentsView() {
 }
 
 class Experiments extends FlyIn {
-  constructor(target, trigger, helpText) {
+  constructor(target, trigger) {
     super(target);
 
     this.target = target;
@@ -49,8 +49,9 @@ class Experiments extends FlyIn {
     this.inputBar = createInput(
       document.getElementById('input-bar-experiments'),
       {
-        helpText:
-          'Control which release channel (prod, RC, or dev) of AMP JS will be served through the Google AMP Cache. Make sure third-party cookies are enabled, or allowlisted on the websites that you are testing.',
+        helpText: `Control which release channel (prod, RC, or dev) of AMP JS will be served through
+        the Google AMP Cache. Make sure third-party cookies are enabled, or allowlisted on the
+        websites that you are testing.`,
         label: 'Add',
         type: 'url',
         name: 'text',

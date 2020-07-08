@@ -60,9 +60,6 @@ class ExperimentItem {
   _onClick(e) {
     e.preventDefault();
     this.target.removeChild(this.item);
-    events.publish(
-      EVENT_REMOVE_EXPERIMENT,
-      this.experiment
-    );
+    events.publish(Experiments.EVENT_REMOVE_EXPERIMENT, this.experiment);
   }
 }
