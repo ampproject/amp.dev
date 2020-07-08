@@ -29,7 +29,8 @@
   &-submit {
     cursor: pointer;
     @include txt-font-accent;
-    min-width: 70px;
+    min-width: 100px;
+    text-align: center;
     border: 0;
     border-radius: 0 4px 4px 0;
     font-size: 16px;
