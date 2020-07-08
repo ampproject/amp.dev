@@ -73,14 +73,14 @@
       transform: rotate(0deg);
     }
   }
-  
+
   @media (min-width: 768px) {
     display: inline-block;
 
     &-label {
       width: auto;
       display: inline-flex;
-      transform: translate(-100px, -52px);
+      transform: translate(-94px, -122px);
       background: color('blue-ribbon');
       color: color('white');
       fill: color('white');
@@ -145,6 +145,13 @@
           }
         }
       }
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+    &-label {
+      transform: translate(-100px, -52px);
     }
   }
 }
