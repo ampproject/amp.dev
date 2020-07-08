@@ -20,6 +20,7 @@ import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
 import modes from '../modes/';
 import * as StateView from '../state-view/state-view.js';
+import * as Experiment from '../experiments/experiments.js';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
@@ -48,6 +49,10 @@ class Preview {
       this.getAmpState().then((state) => {
         events.publish(EVENT_AMP_BIND_NEW_STATE, state);
       });
+    });
+
+    events.subscribe(Experiment.EVENT_TOGGLE_EXPERIMENT, (experiment, force) => {
+      this.toggleExperiment(experiment, force);
     });
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this._onSetRuntime.bind(this));
