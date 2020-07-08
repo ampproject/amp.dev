@@ -155,9 +155,7 @@ events.subscribe([Editor.EVENT_INPUT_NEW], () => {
 
 // configure auto-importer
 events.subscribe(Validator.EVENT_NEW_VALIDATION_RESULT, (validationResult) => {
-  if (!modes.IS_VALIDATOR) {
-    autoImporter.update(validationResult);
-  }
+  autoImporter.update(validationResult);
 });
 
 // setup document
