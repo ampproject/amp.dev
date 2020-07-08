@@ -2,10 +2,8 @@
 @import '_functions.scss';
 @import '_mixins.scss';
 @import '_variables.scss';
-
 @import 'components/atoms/_color.scss';
 @import 'components/atoms/_text.scss';
-
 
 .#{atom('sidebar-toggle')} {
   &-input {
@@ -27,7 +25,6 @@
     fill: color('black');
     cursor: pointer;
     box-shadow: 0 10px 20px -5px transparentize(color('black'), 0.75);
-
 
     &-icon {
       display: flex;
@@ -62,7 +59,6 @@
 }
 
 .#{atom('sidebar-desktop-toggle')} {
-  display: none;
 
   &-input {
     position: fixed;
@@ -76,11 +72,11 @@
       transform: rotate(0deg);
     }
   }
-
   @media (min-width: 768px) {
     display: inline-block;
 
     &-label {
+      width: auto;
       display: inline-flex;
       transform: translate(-100px, -52px);
       background: color('blue-ribbon');
@@ -90,10 +86,6 @@
 
       &-title {
         display: none;
-        left: 0;
-        padding: 0 10px 0 5px;
-        background: color('blue-ribbon');
-        border-radius: 4px;
       }
     }
 
@@ -101,54 +93,56 @@
       &:checked {
         &~ .ap--sidebar {
           grid-column: 1 / 2;
+
           nav {
             display: none;
           }
         }
+
         &~ .ap--toc {
           @media (max-width: 1023px) {
             grid-column: 2 / 25;
           }
         }
-        &~ .ap--toc ~ .ap--content  {
+
+        &~ .ap--toc ~ .ap--content {
           padding-left: 80px;
           padding-right: 80px;
           grid-column: 2 / 20;
+
           @media (max-width: 1023px) {
             grid-column: 2 / 25;
           }
         }
 
-        &~ .ap--content, &~ .ap--help  {
+        &~ .ap--content,
+        &~ .ap--help {
           grid-column-start: 2;
           padding-left: 80px;
           padding-right: 80px;
 
           .#{atom('sidebar-desktop-toggle')} {
             &-label {
-              width: 120px;
-              top: 186px;
-              margin-left: -125px;
+              margin-left: -185px;
               transform: rotate(-90deg);
+              flex-direction: row-reverse;
 
-            &-icon {
-              width: 35px;
-              margin-left: -2px;
-              transform: rotate(90deg) translateY(-110px);
+              &-icon {
 
-              svg {
-                transform: rotate(180deg);
+                svg {
+                  transform: rotate(-90deg);
+                }
               }
-            }
 
-            &-title {
-              display: inline-flex;
-              padding-left: 10px;
+              &-title {
+                display: inline-flex;
+                white-space: nowrap;
+                margin: 0 10px;
+              }
             }
           }
         }
       }
-        }
-      }
     }
   }
+}
