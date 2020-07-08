@@ -14,6 +14,7 @@ module.exports = (env, argv) => {
   const template = path.join(__dirname, 'src/index.hbs');
   return {
     entry: {
+      app: path.join(__dirname, 'src/app.js'),
       playground: path.join(__dirname, 'src/playground.js'),
       validator: path.join(__dirname, 'src/validator.js')
     },
@@ -36,8 +37,8 @@ module.exports = (env, argv) => {
             chunks: 'all',
             enforce: true,
           },
-          main: {
-            name: 'main',
+          commons: {
+            name: 'commons',
             test: /^(?!.*\.critical).*\.s?css$/,
             chunks: 'all',
             enforce: true,
@@ -79,7 +80,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
       new PreloadWebpackPlugin({
         rel: 'preload',
-        include: ['main'],
+        include: ['commons'],
       }),
       new CleanWebpackPlugin(),
     ],
