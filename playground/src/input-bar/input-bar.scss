@@ -30,9 +30,10 @@
     cursor: pointer;
     @include txt-font-accent;
     min-width: 100px;
-    text-align: center;
+    margin: 0;
     border: 0;
     border-radius: 0 4px 4px 0;
+    text-align: center;
     font-size: 16px;
     text-transform: uppercase;
     color: color('white');
