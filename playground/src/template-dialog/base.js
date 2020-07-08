@@ -148,14 +148,17 @@ class TemplateDialog {
 
   selectTemplatesForRuntime(sitemap) {
     let templates = null;
-    if (this.runtime.id === 'amphtml') {
-      templates = sitemap['websites'];
-    } else if (this.runtime.id === 'amp4ads') {
-      templates = sitemap['ads'];
-    } else if (this.runtime.id === 'amp4stories') {
-      templates = sitemap['stories'];
-    } else if (this.runtime.id === 'amp4email') {
-      templates = sitemap['email'];
+
+    if (sitemap) {
+      if (this.runtime.id === 'amphtml') {
+        templates = sitemap['websites'];
+      } else if (this.runtime.id === 'amp4ads') {
+        templates = sitemap['ads'];
+      } else if (this.runtime.id === 'amp4stories') {
+        templates = sitemap['stories'];
+      } else if (this.runtime.id === 'amp4email') {
+        templates = sitemap['email'];
+      }
     }
 
     if (templates && templates.categories && templates.categories.length) {
