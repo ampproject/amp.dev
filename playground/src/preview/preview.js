@@ -51,9 +51,12 @@ class Preview {
       });
     });
 
-    events.subscribe(Experiment.EVENT_TOGGLE_EXPERIMENT, (experiment, force) => {
-      this.toggleExperiment(experiment, force);
-    });
+    events.subscribe(
+      Experiment.EVENT_TOGGLE_EXPERIMENT,
+      (experiment, force) => {
+        this.toggleExperiment(experiment, force);
+      }
+    );
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this._onSetRuntime.bind(this));
   }
