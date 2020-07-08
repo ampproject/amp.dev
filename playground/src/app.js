@@ -209,13 +209,13 @@ if (preview) {
   showPreview.show();
 }
 
-// load template dialog
-const loadTemplateButton = Button.from(
-  document.getElementById('document-title'),
-  () => templateDialog.open(runtimes.activeRuntime)
-);
+if (document.getElementById('document-title')) {
+  // load template dialog
+  const loadTemplateButton = Button.from(
+    document.getElementById('document-title'),
+    () => templateDialog.open(runtimes.activeRuntime)
+  );
 
-if (loadTemplateButton) {
   // eslint-disable-next-line no-unused-vars
   const templateDialog = createTemplateDialog(loadTemplateButton, {
     onStart: () => editor.showLoadingIndicator(),
