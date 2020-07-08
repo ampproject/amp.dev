@@ -49,6 +49,7 @@
     bottom: 0;
     left: 0;
     width: 50%;
+    height: 45px;
     background: color('white');
     box-shadow: 0 10px 20px -5px transparentize(color('black'), 0.75);
 
@@ -72,6 +73,7 @@
       transform: rotate(0deg);
     }
   }
+  
   @media (min-width: 768px) {
     display: inline-block;
 
@@ -137,7 +139,7 @@
               &-title {
                 display: inline-flex;
                 white-space: nowrap;
-                margin: 0 10px;
+                margin-left: 10px;
               }
             }
           }
