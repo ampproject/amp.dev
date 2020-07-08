@@ -26,6 +26,7 @@ const EXPERIMENTS_CONFIG_SOURCE_PATH =
 const EXPERIMENTS_ID_PATTERN = /(?:id: ')(.*?)(?:')/gm;
 
 export const EVENT_TOGGLE_EXPERIMENT = 'event-toggle-experiment';
+export const EVENT_REMOVE_EXPERIMENT = 'event-remove-experiment';
 
 export function createExperimentsView() {
   const target = document.getElementById('experiments-view');
@@ -68,7 +69,7 @@ class Experiments extends FlyIn {
       this.onSubmitExperiment();
     });
 
-    events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
+    events.subscribe(EVENT_REMOVE_EXPERIMENT, (experiment) => {
       this.removeExperiment(experiment);
     });
   }

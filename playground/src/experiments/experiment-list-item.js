@@ -18,8 +18,6 @@ import template from './experiment-list-item.hbs';
 import events from '../events/events.js';
 import * as Experiments from './experiments.js';
 
-export const EVENT_REMOVE_EXPERIMENT = 'event-remove-experiment';
-
 export function createExperimentListItem(target, experiment) {
   return new ExperimentItem(target, experiment);
 }
