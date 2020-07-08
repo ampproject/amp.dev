@@ -83,11 +83,6 @@ body {
       pointer-events: none;
     }
   }
-
-  .#{utility('flags')} {
-    margin-top: -1.5rem;
-    margin-bottom: 2rem;
-  }
 }
 
 @media (min-width: 768px){
