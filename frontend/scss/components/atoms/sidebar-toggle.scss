@@ -15,38 +15,29 @@
 
   &-label {
     position: fixed;
+    height: 35px;
+    width: 32px;
     z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 12px;
     @include txt-font-accent;
     color: color('black');
     fill: color('black');
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 20px -5px transparentize(color('black'), 0.75);
 
-    .label-icon {
-      height: 35px;
-      width: 32px;
+
+    &-icon {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
-      background: color('white');
+      padding: 10px;
+      transform: rotate(180deg);
 
       svg {
         height: 14px;
         width: 14px;
       }
-    }
-
-    .label-title {
-      position: fixed;
-      left: 52px;
-      display: flex;
-      align-items: center;
-      height: 35px;
-      white-space: nowrap;
     }
   }
 }
@@ -61,18 +52,11 @@
     bottom: 0;
     left: 0;
     width: 50%;
-    padding-left: 20px;
     background: color('white');
-    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 20px -5px transparentize(color('black'), 0.75);
 
     @media (min-width: 768px) {
       display: none;
-    }
-
-    .label-icon {
-      svg {
-        transform: rotate(180deg);
-      }
     }
   }
 }
@@ -87,6 +71,10 @@
 
   &-label {
     display: none;
+
+    &-icon {
+      transform: rotate(0deg);
+    }
   }
 
   @media (min-width: 768px) {
@@ -94,21 +82,17 @@
 
     &-label {
       display: inline-flex;
-      transform: translate(-68px, -56px);
+      transform: translate(-100px, -52px);
+      background: color('blue-ribbon');
+      color: color('white');
+      fill: color('white');
+      border-radius: 4px;
 
-      .label-icon {
-        background: color('blue-ribbon');
-        color: color('white');
-        fill: color('white');
-        border-radius: 4px;
-      }
-
-      .label-title {
+      &-title {
         display: none;
-        background: color('blue-ribbon');
-        color: color('white');
         left: 0;
         padding: 0 10px 0 5px;
+        background: color('blue-ribbon');
         border-radius: 4px;
       }
     }
@@ -119,9 +103,6 @@
           grid-column: 1 / 2;
           nav {
             display: none;
-          }
-          svg {
-            transform: rotate(180deg);
           }
         }
         &~ .ap--toc {
@@ -142,33 +123,32 @@
           grid-column-start: 2;
           padding-left: 80px;
           padding-right: 80px;
-          .ap-a-sidebar-desktop-toggle-label {
-            transform: rotate(-90deg);
-            top: 186px;
-            margin-left: -125px;
 
-            .label-icon {
+          .#{atom('sidebar-desktop-toggle')} {
+            &-label {
+              width: 120px;
+              top: 186px;
+              margin-left: -125px;
+              transform: rotate(-90deg);
+
+            &-icon {
               width: 35px;
               margin-left: -2px;
               transform: rotate(90deg) translateY(-110px);
+
               svg {
                 transform: rotate(180deg);
               }
             }
 
-            .label-title {
+            &-title {
               display: inline-flex;
               padding-left: 10px;
-
             }
           }
         }
       }
-    }
-  }
-    @media (min-width: 1024px) {
-      &-label {
-        transform: translate(-68px, -52px);
+        }
       }
     }
-}
+  }
