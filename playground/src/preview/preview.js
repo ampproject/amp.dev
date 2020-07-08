@@ -324,6 +324,7 @@ class Preview {
   toggleExperiment(experiment, force) {
     const childWindow = this.getIframeWindow(this.previewIframe);
     childWindow.AMP.toggleExperiment(experiment, force);
+    this.reload();
   }
 
   getIframeWindow(iframeElement) {
