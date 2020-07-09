@@ -1,7 +1,7 @@
 @import 'mixins.scss';
 @import 'components/atoms/_text.scss';
 
-.import-url {
+.import {
   p {
     @include txt;
     @include txt-2;

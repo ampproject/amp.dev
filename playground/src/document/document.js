@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import events from '../events/events.js';
-import * as ImportURL from '../import-url/import-url.js';
+import * as Import from '../import/import.js';
 
 const ROOT = '/document/';
 export const EVENT_DOCUMENT_STATE_CHANGED = 'playground-document-state-changed';

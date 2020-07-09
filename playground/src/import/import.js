@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './import-url.scss';
-import template from '../import-url/import-url.hbs';
+import './import.scss';
+import template from '../import/import.hbs';
 
 import events from '../events/events.js';
 import modes from '../modes/';
@@ -30,11 +30,11 @@ export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
 /* eslint-disable max-len */
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
-export function createURLImport() {
-  const target = document.getElementById('import-url-view');
-
+export function createImport(runtime) {
+  const target = document.getElementById('import-view');
+  console.log(runtime);
   if (modes.IS_DEFAULT) {
-    const trigger = document.getElementById('import-url');
+    const trigger = document.getElementById('import-toggle');
     return new FlyInURLImport(target, trigger);
   } else if (modes.IS_VALIDATOR) {
     return new InlineURLImport(target);
@@ -45,7 +45,7 @@ export function createURLImport() {
  * Creates a input bar that takes a URL which is used to load
  * a page into the playground
  */
-class URLImport {
+class Import {
   /**
    * @param {Element} target
    */
@@ -54,7 +54,7 @@ class URLImport {
       helpText: helpText,
       label: label,
       type: 'url',
-      name: 'import-url',
+      name: 'import',
       placeholder: 'Your URL',
     });
 
@@ -130,7 +130,7 @@ class FlyInURLImport extends FlyIn {
 
     events.subscribe(
       Editor.EVENT_UPDATE_EDITOR_CONTENT,
-      this.onUpdateEditorContent.bind(this)
+      this.onUpdateEditorContent.bind(his)
     );
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this.onSetRuntime.bind(this));
