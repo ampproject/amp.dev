@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './import.scss';
-import template from '../import/import.hbs';
+import './importer.scss';
+import template from '../importer/importer.hbs';
 
 import events from '../events/events.js';
 import modes from '../modes/';
@@ -35,9 +35,9 @@ export function createImport(runtime) {
   console.log(runtime);
   if (modes.IS_DEFAULT) {
     const trigger = document.getElementById('import-toggle');
-    return new FlyInURLImport(target, trigger);
+    return new FlyInImporter(target, trigger);
   } else if (modes.IS_VALIDATOR) {
-    return new InlineURLImport(target);
+    return new InlineImporter(target);
   }
 }
 
@@ -45,7 +45,7 @@ export function createImport(runtime) {
  * Creates a input bar that takes a URL which is used to load
  * a page into the playground
  */
-class Import {
+class Importer {
   /**
    * @param {Element} target
    */
@@ -113,7 +113,7 @@ class Import {
  * The import functionality shown in a layer
  * @extends FlyIn
  */
-class FlyInURLImport extends FlyIn {
+class FlyInImporter extends FlyIn {
   constructor(target, trigger) {
     super(target);
 
@@ -122,7 +122,7 @@ class FlyInURLImport extends FlyIn {
 
     this.content.insertAdjacentHTML('beforeend', template());
 
-    this.urlImport = new URLImport(
+    this.importer = new Importer(
       target.querySelector('#input-bar-url'),
       'Import',
       "Enter a valid URL to import the page's markup into the editor."
@@ -130,7 +130,7 @@ class FlyInURLImport extends FlyIn {
 
     events.subscribe(
       Editor.EVENT_UPDATE_EDITOR_CONTENT,
-      this.onUpdateEditorContent.bind(his)
+      this.onUpdateEditorContent.bind(this)
     );
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this.onSetRuntime.bind(this));
@@ -156,14 +156,14 @@ class FlyInURLImport extends FlyIn {
 }
 
 /**
- * Import functionality as used for the validator, shown inline
+ * Importer functionality as used for the validator, shown inline
  * with slightly different wording
  */
-class InlineURLImport {
+class InlineImporter {
   constructor(target) {
     target.insertAdjacentHTML('beforeend', template());
 
-    this.urlImport = new URLImport(
+    this.importer = new Importer(
       target.querySelector('#input-bar-url'),
       'Validate'
     );
