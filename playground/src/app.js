@@ -60,8 +60,6 @@ const editor = Editor.createEditor(document.getElementById('source'), window);
 const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
-Importer.createImport('activeRuntime.id');
-
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');
 const stateListContainer = document.getElementById('state-view');
@@ -133,6 +131,8 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
 });
 
 runtimes.init();
+
+Importer.createImport(activeRuntime.id);
 
 // configure editor
 const editorUpdateListener = () => {

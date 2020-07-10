@@ -18,6 +18,7 @@ import template from '../importer/importer.hbs';
 import events from '../events/events.js';
 import modes from '../modes/';
 import createInput from '../input-bar/input-bar.js';
+import createDropzone from '../dropzone/dropzone.js';
 
 import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
@@ -32,10 +33,9 @@ const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~
 
 export function createImport(runtime) {
   const target = document.getElementById('import-view');
-  console.log(runtime);
   if (modes.IS_DEFAULT) {
     const trigger = document.getElementById('import-toggle');
-    return new FlyInImporter(target, trigger);
+    return new FlyInImporter(target, trigger, runtime);
   } else if (modes.IS_VALIDATOR) {
     return new InlineImporter(target);
   }
@@ -49,26 +49,32 @@ class Importer {
   /**
    * @param {Element} target
    */
-  constructor(target, label, helpText) {
-    this.inputBar = createInput(target, {
-      helpText: helpText,
-      label: label,
-      type: 'url',
-      name: 'import',
-      placeholder: 'Your URL',
-    });
+  constructor(target, runtime, label, helpText) {
+    if (runtime.id == 'amp4email') {
+      this.inputBar = createDropzone(target, {
+        helpText: 'Upload email to import the markup into the editor.',
+      });
+    } else {
+      this.inputBar = createInput(target, {
+        helpText: helpText,
+        label: label,
+        type: 'url',
+        name: 'import',
+        placeholder: 'Your URL',
+      });
 
-    this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
-    this.inputBar.input.addEventListener('keyup', (e) => {
-      if (e.keyCode === 13) {
-        this.onSubmit(e);
-      }
-    });
+      this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
+      this.inputBar.input.addEventListener('keyup', (e) => {
+        if (e.keyCode === 13) {
+          this.onSubmit(e);
+        }
+      });
 
-    events.subscribe(
-      Document.EVENT_RECEIVE_URL_CONTENT,
-      this.onReceiveURLContent.bind(this)
-    );
+      events.subscribe(
+        Document.EVENT_RECEIVE_URL_CONTENT,
+        this.onReceiveURLContent.bind(this)
+      );
+    }
   }
 
   onSubmit(e) {
@@ -114,16 +120,16 @@ class Importer {
  * @extends FlyIn
  */
 class FlyInImporter extends FlyIn {
-  constructor(target, trigger) {
+  constructor(target, trigger, runtime) {
     super(target);
 
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
-
     this.content.insertAdjacentHTML('beforeend', template());
 
     this.importer = new Importer(
-      target.querySelector('#input-bar-url'),
+      target.querySelector('#import-container'),
+      runtime,
       'Import',
       "Enter a valid URL to import the page's markup into the editor."
     );
@@ -151,7 +157,18 @@ class FlyInImporter extends FlyIn {
    * @return {undefined}
    */
   onSetRuntime(runtime) {
-    this.trigger.toggleClass('hidden', runtime === 'amp4email');
+    const content = document.createElement('div');
+    content.insertAdjacentHTML('beforeend', template());
+
+    this.importer = new Importer(
+      content.querySelector('#import-container'),
+      runtime,
+      'Import',
+      "Enter a valid URL to import the page's markup into the editor."
+    );
+
+
+    this.render(content);
   }
 }
 
