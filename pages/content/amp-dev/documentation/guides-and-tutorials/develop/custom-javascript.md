@@ -119,4 +119,4 @@ All event triggers are allowed.
 
  Some synchronous methods are disallowed in `<amp-script>` and replaced with alternatives, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)). Because `Element.getBoundingClientRect()` could not be implemented in a Web Worker, an async alternative to it, `getBoundingClientRectAsync()`, is provided. `getBoundingClientRectAsync()` returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) instead of returning the result directly.
 
-View [this chart](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md) to see WorkerDOM supported APIs.
+View [this chart](https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md) to see WorkerDOM supported APIs.
