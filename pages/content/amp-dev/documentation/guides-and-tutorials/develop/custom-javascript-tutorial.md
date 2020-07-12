@@ -149,7 +149,7 @@ const submitButton = document.getElementById("submitButton");
 const rulesArea = document.getElementById("rules");
 ```
 
-Notice that we're able to use regular DOM API methods like `getElementById()`. Although our code runs in a worker, and workers lack direct access to the DOM, `<amp-script>` provides a virtual copy of the DOM and emulates some common APIs, listed [here](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md). These APIs give us enough tools to cover most use cases. But it's important to note that only a subset of the DOM API is supported. Otherwise, the JavaScript included with `<amp-script>` would be enormous, negating AMP's performance benefits!
+Notice that we're able to use regular DOM API methods like `getElementById()`. Although our code runs in a worker, and workers lack direct access to the DOM, `<amp-script>` provides a virtual copy of the DOM and emulates some common APIs, listed [here](https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md). These APIs give us enough tools to cover most use cases. But it's important to note that only a subset of the DOM API is supported. Otherwise, the JavaScript included with `<amp-script>` would be enormous, negating AMP's performance benefits!
 
 We need to add these id's to two of the elements. Open up `index.html`, locate the password `<input>` and the submit `<button>`, and add the id's. Add a `disabled` attribute to the submit `<button>` as well, to keep the user from clicking it until we want them to.
 
