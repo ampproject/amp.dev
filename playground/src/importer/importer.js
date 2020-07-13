@@ -18,7 +18,7 @@ import template from '../importer/importer.hbs';
 import events from '../events/events.js';
 import modes from '../modes/';
 import createInput from '../input-bar/input-bar.js';
-import createDropzone from '../dropzone/dropzone.js';
+import createFileUpload from '../file-upload/file-upload.js';
 
 import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
@@ -50,11 +50,13 @@ class Importer {
    * @param {Element} target
    */
   constructor(target, runtime, label, helpText) {
+
     if (runtime.id == 'amp4email') {
-      this.inputBar = createDropzone(target, {
+      this.fileUpload = createFileUpload(target, {
         helpText: 'Upload email to import the markup into the editor.',
       });
     } else {
+      console.log('Runtime not Email');
       this.inputBar = createInput(target, {
         helpText: helpText,
         label: label,
@@ -63,10 +65,10 @@ class Importer {
         placeholder: 'Your URL',
       });
 
-      this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
+      this.inputBar.submit.addEventListener('click', this.onSubmitURL.bind(this));
       this.inputBar.input.addEventListener('keyup', (e) => {
         if (e.keyCode === 13) {
-          this.onSubmit(e);
+          this.onSubmitURL(e);
         }
       });
 
@@ -77,13 +79,13 @@ class Importer {
     }
   }
 
-  onSubmit(e) {
+  onSubmitURL(e) {
     e.preventDefault();
     const value = this.inputBar.value;
     const url =
-      value.startsWith('http://') || value.startsWith('https://')
-        ? value
-        : `http://${value}`;
+      value.startsWith('http://') || value.startsWith('https://') ?
+      value :
+      `http://${value}`;
     if (url.match(URL_VALIDATION_REGEX)) {
       this.inputBar.toggleLoading();
       events.publish(EVENT_REQUEST_URL_CONTENT, url);
@@ -113,6 +115,10 @@ class Importer {
         this.inputBar.toggleLoading(false);
       });
   }
+
+  onUploadFile(file) {
+    console.log('Upload File', file);
+  }
 }
 
 /**
@@ -126,13 +132,6 @@ class FlyInImporter extends FlyIn {
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
     this.content.insertAdjacentHTML('beforeend', template());
-
-    this.importer = new Importer(
-      target.querySelector('#import-container'),
-      runtime,
-      'Import',
-      "Enter a valid URL to import the page's markup into the editor."
-    );
 
     events.subscribe(
       Editor.EVENT_UPDATE_EDITOR_CONTENT,
@@ -168,7 +167,7 @@ class FlyInImporter extends FlyIn {
     );
 
 
-    this.render(content);
+    this.render(content.firstChild);
   }
 }
 

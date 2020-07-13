@@ -1,0 +1,76 @@
+@import '_variables.scss';
+@import '_functions.scss';
+@import 'components/atoms/_text.scss';
+
+.file-upload.dz-clickable {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  padding: 55px;
+  border: 2px dashed color('silver');
+  border-radius: 4px;
+  cursor: pointer;
+
+  .dz-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include txt;
+    @include txt-2;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: auto;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='30' width='30' viewBox='0 0 100 100'%3E%3Cpath style='text-indent:0;text-transform:none;block-progression:tb' d='M13 22c-2.753 0-5 2.247-5 5v46c0 2.753 2.247 5 5 5h74c2.753 0 5-2.247 5-5V27c0-2.753-2.247-5-5-5H13zm0 2h74c.43 0 .852.093 1.219.25L52.406 57.125c-1.236 1.135-3.576 1.135-4.812 0L11.78 24.25c.367-.157.79-.25 1.219-.25zm-2.688 1.656l26.376 24.157-26.376 24.53A3.03 3.03 0 0110 73V27c0-.493.11-.937.313-1.344zm79.376 0c.203.407.312.851.312 1.344v46c0 .486-.114.94-.313 1.344L63.314 49.813l26.374-24.157zm-51.5 25.532l8.062 7.406c2.075 1.904 5.425 1.904 7.5 0l8.063-7.406L88.25 75.75c-.377.168-.805.25-1.25.25H13c-.445 0-.873-.082-1.25-.25l26.438-24.562z' overflow='visible' color='%23000'/%3E%3C/svg%3E");
+    }
+  }
+
+  .file-upload-remove {
+    display: none;
+    border: 0;
+    margin-top: 15px;
+    text-decoration: underline;
+    @include txt-font-accent;
+  }
+
+  .dz-preview {
+    width: 100%;
+
+    .dz-filename {
+      white-space: nowrap;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      @include txt;
+      @include txt-2;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='30' width='30' viewBox='0 0 100 100'%3E%3Cpath style='text-indent:0;text-transform:none;block-progression:tb' d='M13 22c-2.753 0-5 2.247-5 5v46c0 2.753 2.247 5 5 5h74c2.753 0 5-2.247 5-5V27c0-2.753-2.247-5-5-5H13zm0 2h74c.43 0 .852.093 1.219.25L52.406 57.125c-1.236 1.135-3.576 1.135-4.812 0L11.78 24.25c.367-.157.79-.25 1.219-.25zm-2.688 1.656l26.376 24.157-26.376 24.53A3.03 3.03 0 0110 73V27c0-.493.11-.937.313-1.344zm79.376 0c.203.407.312.851.312 1.344v46c0 .486-.114.94-.313 1.344L63.314 49.813l26.374-24.157zm-51.5 25.532l8.062 7.406c2.075 1.904 5.425 1.904 7.5 0l8.063-7.406L88.25 75.75c-.377.168-.805.25-1.25.25H13c-.445 0-.873-.082-1.25-.25l26.438-24.562z' overflow='visible' color='%23000'/%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  &.dz-max-files-reached {
+    .dz-info,
+    .dz-success-mark,
+    .dz-error-mark,
+    span[data-dz-size] {
+      display: none;
+    }
+
+    .file-upload-remove {
+      display: block;
+    }
+  }
+}
