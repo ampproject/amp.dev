@@ -30,38 +30,21 @@ class FileUpload {
       maxFiles: 1,
       parallelUploads: 1,
       autoProcessQueue: false,
-      url: '#'
+      url: '#',
     });
     this.dropzone.on('addedfile', this._onAddedFile.bind(this));
-    this.dropzone.on('removedfile', this._onRemovedFile.bind(this));
     this.dropzone.on('maxfilesexceeded', this._onMaxFilesExceeded.bind(this));
-    this.dropzone.on('thumbnail', this._onThumbnail.bind(this));
-
-    this.removeButton = container.querySelector('#file-upload-remove');
-    this.removeButton.addEventListener('click', (e) => {
-      e.preventDefault;
-      this._removeFile();
-    });
   }
 
   _onAddedFile(file) {
-    this.currentFile = file;
+    events.publish(EVENT_FILE_UPLOADED, file);
   }
 
-  _removeFile() {
-    this.dropzone.removeFile(this.currentFile);
-  }
-
-  _onRemovedFile(file) {
-    console.log('_onRemovedFile', file);
+  _removeFile(file) {
+    this.dropzone.removeFile(file);
   }
 
   _onMaxFilesExceeded(file) {
-    console.log('_onMaxFilesExceeded', file);
-    this._removeFile();
-  }
-
-  _onThumbnail(file, dataUrl) {
-    console.log('_onThumbnail');
+    this._removeFile(file);
   }
 }

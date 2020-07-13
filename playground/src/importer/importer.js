@@ -50,7 +50,6 @@ class Importer {
    * @param {Element} target
    */
   constructor(target, runtime, label, helpText) {
-
     if (runtime.id == 'amp4email') {
       this.fileUpload = createFileUpload(target, {
         helpText: 'Upload email to import the markup into the editor.',
@@ -65,7 +64,10 @@ class Importer {
         placeholder: 'Your URL',
       });
 
-      this.inputBar.submit.addEventListener('click', this.onSubmitURL.bind(this));
+      this.inputBar.submit.addEventListener(
+        'click',
+        this.onSubmitURL.bind(this)
+      );
       this.inputBar.input.addEventListener('keyup', (e) => {
         if (e.keyCode === 13) {
           this.onSubmitURL(e);
@@ -83,9 +85,9 @@ class Importer {
     e.preventDefault();
     const value = this.inputBar.value;
     const url =
-      value.startsWith('http://') || value.startsWith('https://') ?
-      value :
-      `http://${value}`;
+      value.startsWith('http://') || value.startsWith('https://')
+        ? value
+        : `http://${value}`;
     if (url.match(URL_VALIDATION_REGEX)) {
       this.inputBar.toggleLoading();
       events.publish(EVENT_REQUEST_URL_CONTENT, url);
@@ -126,7 +128,7 @@ class Importer {
  * @extends FlyIn
  */
 class FlyInImporter extends FlyIn {
-  constructor(target, trigger, runtime) {
+  constructor(target, trigger) {
     super(target);
 
     this.target = target;
@@ -165,7 +167,6 @@ class FlyInImporter extends FlyIn {
       'Import',
       "Enter a valid URL to import the page's markup into the editor."
     );
-
 
     this.render(content.firstChild);
   }
