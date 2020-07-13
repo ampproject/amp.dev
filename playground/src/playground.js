@@ -14,7 +14,6 @@
 
 import './modes/embed.critical.scss';
 
-
 import DocumentController from './document/controller.js';
 import Fab from './fab/fab.js';
 

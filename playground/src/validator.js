@@ -15,7 +15,6 @@
 import './modes/validator.critical.scss';
 
 import DocumentController from './document/controller.js';
-import Fab from './fab/fab.js';
 
 import * as ErrorList from './error-list/error-list.js';
 import * as ImportURL from './import-url/import-url.js';
@@ -26,11 +25,8 @@ import * as Button from './button/button.js';
 import * as Menu from './menu/base.js';
 
 import createSelector from './selector/selector.js';
-import params from './params/base.js';
 import events from './events/events.js';
-import modes from './modes/index.js';
 import titleUpdater from './title-updater/base.js';
-import snackbar from './snackbar/base.js';
 import {runtimes, EVENT_SET_RUNTIME} from './runtime/runtimes.js';
 import detectRuntime from './runtime/detector.js';
 import addSplitPaneBehavior from './split-pane/base.js';

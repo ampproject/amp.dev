@@ -16,7 +16,7 @@ module.exports = (env, argv) => {
     entry: {
       app: path.join(__dirname, 'src/app.js'),
       playground: path.join(__dirname, 'src/playground.js'),
-      validator: path.join(__dirname, 'src/validator.js')
+      validator: path.join(__dirname, 'src/validator.js'),
     },
     output: {
       filename: '[name].[hash].js',
