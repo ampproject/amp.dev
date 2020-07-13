@@ -12,7 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import events from '../events/events.js';
 import * as quotedPrintable from 'quoted-printable';
+import * as FileUpload from '../file-upload/file-upload.js';
 
 export function createEmailLoader(editor) {
   return new EmailLoader(editor);
@@ -21,6 +23,19 @@ export function createEmailLoader(editor) {
 class EmailLoader {
   constructor(editor) {
     this.editor = editor;
+
+    events.subscribe(
+      FileUpload.EVENT_FILE_UPLOADED, (file) => {
+        console.log('FILE', file);
+        this.loadEmailContent(file);
+      }
+    );
+  }
+
+  // TODO: Parse content from file
+  async loadEmailContent(file) {
+    const data = await file.text();
+    this._loadEmail(data);
   }
 
   async loadEmailFromFile() {

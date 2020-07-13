@@ -15,7 +15,10 @@
 import './file-upload.scss';
 import template from './file-upload.hbs';
 
+import events from '../events/events.js';
 import Dropzone from 'dropzone';
+
+export const EVENT_FILE_UPLOADED = 'event-file-uploaded';
 
 export default function createFileUpload(container, config) {
   return new FileUpload(container, config);
