@@ -55,7 +55,7 @@ body {
     display: inline-flex;
     align-items: center;
     background: color('white');
-    border: 1px solid #eaeaea;
+    border: 1px solid color('gallery');
     margin-top: 5px;
 
     &-toggle {
