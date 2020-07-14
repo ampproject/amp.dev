@@ -50,7 +50,7 @@ class Experiments extends FlyIn {
     this.inputBar = createInput(
       document.getElementById('input-bar-experiments'),
       {
-        helpText: `Enter a valid experiment id to enable a certain experiment for the playground's preview. Read more about <a href="https://amp.dev/documentation/guides-and-tutorials/learn/experimental/" target="_blank" rel="noopener">experiments</a> on amp.dev`,
+        helpText: `Enter a valid experiment id to enable a certain experiment for the playground's preview. Read more about <a href="https://amp.dev/documentation/guides-and-tutorials/learn/experimental/" target="_blank" rel="noopener">experiments</a> on amp.dev.`,
         label: 'Add',
         type: 'url',
         name: 'text',
