@@ -51,13 +51,11 @@ class Experiments extends FlyIn {
     this.inputBar = createInput(
       document.getElementById('input-bar-experiments'),
       {
-        helpText: `Control which release channel (prod, RC, or dev) of AMP JS will be served through
-        the Google AMP Cache. Make sure third-party cookies are enabled, or allowlisted on the
-        websites that you are testing.`,
+        helpText: `Enter a valid experiment id to enable a certain experiment for the playground's preview. Read more about <a href="https://amp.dev/documentation/guides-and-tutorials/learn/experimental/" target="_blank" rel="noopener">experiments</a> on amp.dev`,
         label: 'Add',
         type: 'url',
         name: 'text',
-        placeholder: 'Feature name',
+        placeholder: 'Experiment ID',
       }
     );
 
@@ -106,7 +104,12 @@ class Experiments extends FlyIn {
     return fetch(EXPERIMENTS_CONFIG_SOURCE_PATH, {
       mode: 'cors',
     })
-      .then((response) => response.text())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed fetching experiments');
+        }
+        return response.text();
+      })
       .then((body) => {
         const experimentIds = body.match(EXPERIMENTS_ID_PATTERN).map((id) => {
           return id.substring(5, id.length - 1);
@@ -123,7 +126,7 @@ class Experiments extends FlyIn {
    * Add item to list and enable AMP experiment
    * @param {String} experiment name of valid experiment
    */
-  async addExperiment(experiment) {
+  addExperiment(experiment) {
     ExperimentItem.createExperimentListItem(this.experimentList, experiment);
     this.activeExperiments.push(experiment);
     events.publish(EVENT_TOGGLE_EXPERIMENT, experiment, true);
