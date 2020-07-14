@@ -17,6 +17,7 @@ import template from './file-upload.hbs';
 
 import events from '../events/events.js';
 import Dropzone from 'dropzone';
+import * as EmailLoader from '../email-loader/email-loader.js';
 
 export const EVENT_FILE_UPLOADED = 'event-file-uploaded';
 
@@ -27,31 +28,48 @@ export default function createFileUpload(container, config) {
 class FileUpload {
   constructor(container, config) {
     container.insertAdjacentHTML('beforeend', template(config));
+    this.label = container.querySelector('label');
 
     this.dropzoneTarget = container.querySelector('#file-upload');
     this.dropzone = new Dropzone(this.dropzoneTarget, {
       maxFiles: 1,
       parallelUploads: 1,
+      acceptedFiles: '.eml',
       autoProcessQueue: false,
       url: '#',
     });
-    this.dropzone.on('addedfile', this._onAddedFile.bind(this));
-    this.dropzone.on('maxfilesexceeded', this._onMaxFilesExceeded.bind(this));
+    this.dropzone.on('addedfile', this.onAddedFile.bind(this));
+    this.dropzone.on('maxfilesexceeded', this.onMaxFilesExceeded.bind(this));
+
+    events.subscribe(
+      EmailLoader.EVENT_FILE_UPLOADED_ERROR,
+      this.showError.bind(this)
+    );
   }
 
-  _onAddedFile(file) {
+  onAddedFile(file) {
+    this.hideError();
     if (this.file) {
-      this._removeFile(this.file);
+      this.removeFile(this.file);
     }
     this.file = file;
     events.publish(EVENT_FILE_UPLOADED, file);
   }
 
-  _removeFile(file) {
+  removeFile(file) {
     this.dropzone.removeFile(file);
   }
 
-  _onMaxFilesExceeded(file) {
-    this._removeFile(file);
+  onMaxFilesExceeded(file) {
+    this.removeFile(file);
+  }
+
+  showError(error) {
+    this.label.classList.add('show');
+    this.label.innerText = error;
+  }
+
+  hideError() {
+    this.label.classList.remove('show');
   }
 }

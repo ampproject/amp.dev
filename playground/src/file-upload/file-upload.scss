@@ -73,6 +73,18 @@
 
     .file-upload-remove {
       display: block;
+
+  &-label {
+    @include txt;
+    @include txt-2;
+    display: block;
+    color: color('red');
+    opacity: 0;
+    transition: transform .3s ease, opacity .2s ease;
+
+    &.show {
+      opacity: 1;
+      transform: translate3d(0, 10px, 0);
     }
   }
 }
