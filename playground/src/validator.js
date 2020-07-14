@@ -43,50 +43,48 @@ ImportURL.createURLImport();
 ErrorList.createErrorList();
 ValidationResult.createValidationResult();
 
-const validator = Validator.createValidator();
-
 // runtime select
-const runtimeChanged = (runtimeId) => {
-  const newRuntime = runtimes.get(runtimeId);
-  if (!newRuntime) {
-    console.error('unknown runtime: ' + newRuntime);
-    return;
-  }
-  events.publish(EVENT_SET_RUNTIME, newRuntime);
-};
+// const runtimeChanged = (runtimeId) => {
+//   const newRuntime = runtimes.get(runtimeId);
+//   if (!newRuntime) {
+//     console.error('unknown runtime: ' + newRuntime);
+//     return;
+//   }
+//   events.publish(EVENT_SET_RUNTIME, newRuntime);
+// };
 
-const runtimeSelector = createSelector(
-  document.getElementById('runtime-select'),
-  {
-    classes: ['caret-right'],
-    id: 'runtime',
-    label: 'select runtime',
-    values: runtimes.values.map((r) => {
-      return {
-        id: r.id,
-        label: r.name,
-        selected: r === runtimes.activeRuntime,
-      };
-    }),
-    onChange: runtimeChanged,
-  }
-);
-runtimeSelector.show();
-
-let activeRuntime;
-events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
-  runtimeSelector.selectOption(newRuntime.id);
-  // change editor input to new runtime default if current input is unchanged
-  if (
-    activeRuntime &&
-    activeRuntime != newRuntime &&
-    activeRuntime.template === editor.getSource()
-  ) {
-    editor.setSource(newRuntime.template);
-  }
-  validator.validate(editor.getSource());
-  activeRuntime = newRuntime;
-});
+// const runtimeSelector = createSelector(
+//   document.getElementById('runtime-select'),
+//   {
+//     classes: ['caret-right'],
+//     id: 'runtime',
+//     label: 'select runtime',
+//     values: runtimes.values.map((r) => {
+//       return {
+//         id: r.id,
+//         label: r.name,
+//         selected: r === runtimes.activeRuntime,
+//       };
+//     }),
+//     onChange: runtimeChanged,
+//   }
+// );
+// runtimeSelector.show();
+//
+// let activeRuntime;
+// events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
+//   runtimeSelector.selectOption(newRuntime.id);
+//   // change editor input to new runtime default if current input is unchanged
+//   if (
+//     activeRuntime &&
+//     activeRuntime != newRuntime &&
+//     activeRuntime.template === editor.getSource()
+//   ) {
+//     editor.setSource(newRuntime.template);
+//   }
+//   validator.validate(editor.getSource());
+//   activeRuntime = newRuntime;
+// });
 
 runtimes.init();
 

@@ -16,59 +16,89 @@ import amphtmlTemplate from './templates/amphtml.template.html';
 import a4aTemplate from './templates/a4a.template.html';
 import storyTemplate from './templates/story.template.html';
 import emailTemplate from './templates/email.template.html';
+import createSelector from '../selector/selector.js';
 import events from '../events/events.js';
 import params from '../params/base.js';
 
 export const EVENT_SET_RUNTIME = 'event-set-runtime';
 
+const RUNTIMES = [
+  {
+    id: 'amphtml',
+    name: 'AMPHTML',
+    template: amphtmlTemplate,
+    preview: {
+      mode: 'devices',
+      default: 'iPhone 6/7/8',
+    },
+    validator: 'AMP',
+  },
+  {
+    id: 'amp4ads',
+    name: 'AMP for Ads',
+    template: a4aTemplate,
+    preview: {
+      mode: 'ads',
+      default: 'Custom',
+    },
+    validator: 'AMP4ADS',
+  },
+  {
+    id: 'amp4stories',
+    name: 'AMP for Stories',
+    preview: {
+      mode: 'devices',
+      default: 'iPhone 6/7/8',
+    },
+    validator: 'AMP',
+    template: storyTemplate,
+  },
+  {
+    id: 'amp4email',
+    name: 'AMP for Email',
+    preview: {
+      mode: 'devices',
+      default: 'Responsive',
+    },
+    validator: 'AMP4EMAIL',
+    template: emailTemplate,
+  },
+];
+
 class Runtimes {
   constructor() {
-    this.values = [
+    this.selector = createSelector(
+      document.getElementById('runtime-select'),
       {
-        id: 'amphtml',
-        name: 'AMPHTML',
-        template: amphtmlTemplate,
-        preview: {
-          mode: 'devices',
-          default: 'iPhone 6/7/8',
-        },
-        validator: 'AMP',
-      },
-      {
-        id: 'amp4ads',
-        name: 'AMP for Ads',
-        template: a4aTemplate,
-        preview: {
-          mode: 'ads',
-          default: 'Custom',
-        },
-        validator: 'AMP4ADS',
-      },
-      {
-        id: 'amp4stories',
-        name: 'AMP for Stories',
-        preview: {
-          mode: 'devices',
-          default: 'iPhone 6/7/8',
-        },
-        validator: 'AMP',
-        template: storyTemplate,
-      },
-      {
-        id: 'amp4email',
-        name: 'AMP for Email',
-        preview: {
-          mode: 'devices',
-          default: 'Responsive',
-        },
-        validator: 'AMP4EMAIL',
-        template: emailTemplate,
-      },
-    ];
+        classes: ['caret-right'],
+        id: 'runtime',
+        label: 'Select runtime',
+        values: RUNTIMES.map((r) => {
+          return {
+            id: r.id,
+            label: r.name,
+            selected: r === this.activeRuntime,
+          };
+        }),
+        onChange: this.onSelectRuntime.bind(this),
+      }
+    );
+    this.selector.show();
+
+    this.activeRuntime = null;
     events.subscribe(
       EVENT_SET_RUNTIME,
       (runtime) => (this.activeRuntime = runtime)
     );
+  }
+
+  onSelectRuntime(runtimeId) {
+    const newRuntime = this.get(runtimeId);
+    if (!newRuntime) {
+      console.error('unknown runtime: ' + newRuntime);
+      return;
+    }
+    events.publish(EVENT_SET_RUNTIME, newRuntime);
   }
 
   init() {
@@ -78,8 +108,8 @@ class Runtimes {
 
   get(id) {
     id = id.toLowerCase();
-    const result = this.values.find((r) => r.id === id);
-    return result || this.values[0];
+    const result = RUNTIMES.find((r) => r.id === id);
+    return result || RUNTIMES[0];
   }
 }
 

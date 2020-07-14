@@ -32,10 +32,6 @@ export const NO_VALIDATOR = {
 export const EVENT_NEW_VALIDATION_RESULT =
   'event-validator-new-validation-result';
 
-export function createValidator() {
-  return new Validator();
-}
-
 class Validator {
   constructor() {
     events.subscribe(EVENT_SET_RUNTIME, this._setRuntime.bind(this));
@@ -76,3 +72,5 @@ class Validator {
     });
   }
 }
+
+export const validator = new Validator();
