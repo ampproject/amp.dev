@@ -43,10 +43,12 @@
     width: 100%;
 
     .dz-filename {
-      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       max-width: 100%;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      text-align: center;
       @include txt;
       @include txt-2;
 
