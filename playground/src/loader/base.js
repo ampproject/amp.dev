@@ -69,7 +69,7 @@ export class Loader {
    */
   hide() {
     this._findLoaders().forEach((l) => {
-      l.classList.add('loader-fadeout');
+      l.classList.add('fadeout');
       window.requestIdleCallback(() => l.remove(), {
         timeout: FADE_OUT_ANIMATION_LENGTH,
       });
