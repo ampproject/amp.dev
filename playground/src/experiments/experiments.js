@@ -26,7 +26,6 @@ const EXPERIMENTS_CONFIG_SOURCE_PATH =
 const EXPERIMENTS_ID_PATTERN = /(?:id: ')(.*?)(?:')/gm;
 
 export const EVENT_TOGGLE_EXPERIMENT = 'event-toggle-experiment';
-export const EVENT_REMOVE_EXPERIMENT = 'event-remove-experiment';
 
 export function createExperimentsView() {
   const target = document.getElementById('experiments-view');
@@ -68,7 +67,7 @@ class Experiments extends FlyIn {
       this.onSubmitExperiment();
     });
 
-    events.subscribe(EVENT_REMOVE_EXPERIMENT, (experiment) => {
+    events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
       this.removeExperiment(experiment);
     });
   }
@@ -77,7 +76,7 @@ class Experiments extends FlyIn {
     if (this.availableExperiments.length) {
       return;
     } else {
-      this.availableExperiments = await this.receiveExperiments();
+      this.availableExperiments = await this.fetchExperiments();
     }
   }
 
@@ -100,7 +99,7 @@ class Experiments extends FlyIn {
    * Fetch list of experimental amp components
    * @return {[Array]} list of active experiment components
    */
-  receiveExperiments() {
+  fetchExperiments() {
     return fetch(EXPERIMENTS_CONFIG_SOURCE_PATH, {
       mode: 'cors',
     })
