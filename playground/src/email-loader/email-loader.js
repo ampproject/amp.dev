@@ -16,6 +16,8 @@ import events from '../events/events.js';
 import * as quotedPrintable from 'quoted-printable';
 import * as FileUpload from '../file-upload/file-upload.js';
 
+export const EVENT_FILE_UPLOADED_ERROR = 'event-file-uploaded-error';
+
 export function createEmailLoader(editor) {
   return new EmailLoader(editor);
 }
@@ -24,12 +26,9 @@ class EmailLoader {
   constructor(editor) {
     this.editor = editor;
 
-    events.subscribe(
-      FileUpload.EVENT_FILE_UPLOADED, (file) => {
-        console.log('FILE', file);
-        this.loadEmailContent(file);
-      }
-    );
+    events.subscribe(FileUpload.EVENT_FILE_UPLOADED, (file) => {
+      this.loadEmailContent(file);
+    });
   }
 
   // TODO: Parse content from file
@@ -145,7 +144,9 @@ class EmailLoader {
     const parts = (contentTypeHeader || '').split(/\s*;\s*/);
     const contentType = parts[0].trim();
     if (!contentType.startsWith('multipart/')) {
-      throw new Error('Invalid content type: not multipart');
+      const errorMessage = 'Invalid content type: not multipart';
+      events.publish(EVENT_FILE_UPLOADED_ERROR, errorMessage);
+      throw new Error(errorMessage);
     }
     const params = Object.create(null);
     for (let i = 1; i < parts.length; i++) {

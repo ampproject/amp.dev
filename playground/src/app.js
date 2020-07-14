@@ -26,7 +26,6 @@ import Fab from './fab/fab.js';
 
 import * as AutoImporter from './auto-importer/auto-importer.js';
 import * as ComponentsProvider from './components-provider/components-provider.js';
-import * as EmailLoader from './email-loader/email-loader.js';
 import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
@@ -77,8 +76,6 @@ const autoImporter = AutoImporter.createAutoImporter(
   componentsProvider,
   editor
 );
-
-const emailLoader = EmailLoader.createEmailLoader(editor);
 
 const cspHashCalculator = CspHashCalculator.createCspHashCalculator(editor);
 
@@ -248,11 +245,3 @@ const formatSource = () => {
 };
 Button.from(document.getElementById('format-source'), formatSource);
 Button.from(document.getElementById('menu-format-source'), formatSource);
-
-const loadEmail = () => {
-  emailLoader
-    .loadEmailFromFile()
-    .then(formatSource)
-    .catch((error) => alert(`Error loading email: ${error.message}`));
-};
-Button.from(document.getElementById('import-email'), loadEmail);
