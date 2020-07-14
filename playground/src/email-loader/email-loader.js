@@ -31,24 +31,8 @@ class EmailLoader {
     });
   }
 
-  // TODO: Parse content from file
   async loadEmailContent(file) {
     const data = await file.text();
-    this._loadEmail(data);
-  }
-
-  async loadEmailFromFile() {
-    const files = await new Promise((resolve) => {
-      const dialog = document.createElement('input');
-      dialog.setAttribute('type', 'file');
-      dialog.setAttribute('accept', '.eml');
-      dialog.addEventListener('change', () => resolve(dialog.files));
-      dialog.click();
-    });
-    if (files.length !== 1) {
-      throw new Error('You must select a file');
-    }
-    const data = await files[0].text();
     this._loadEmail(data);
   }
 
