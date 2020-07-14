@@ -24,6 +24,7 @@ import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
 import FlyIn from '../fly-in/fly-in.js';
 import * as Editor from '../editor/editor.js';
+import * as FileUpload from '../file-upload/file-upload.js';
 import * as Runtimes from '../runtime/runtimes.js';
 
 export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
@@ -117,10 +118,6 @@ class Importer {
         this.inputBar.toggleLoading(false);
       });
   }
-
-  onUploadFile(file) {
-    console.log('Upload File', file);
-  }
 }
 
 /**
@@ -141,6 +138,11 @@ class FlyInImporter extends FlyIn {
     );
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this.onSetRuntime.bind(this));
+
+    events.subscribe(
+      FileUpload.EVENT_FILE_UPLOADED,
+      this.onUpdateEditorContent.bind(this)
+    );
   }
 
   /**

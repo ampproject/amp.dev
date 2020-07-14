@@ -40,6 +40,10 @@ class FileUpload {
   }
 
   _onAddedFile(file) {
+    if (this.file) {
+      this._removeFile(this.file);
+    }
+    this.file = file;
     events.publish(EVENT_FILE_UPLOADED, file);
   }
 
