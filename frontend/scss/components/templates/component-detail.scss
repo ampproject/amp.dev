@@ -83,6 +83,11 @@ body {
       pointer-events: none;
     }
   }
+
+  .#{utility('component-tags')} {
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media (min-width: 768px){

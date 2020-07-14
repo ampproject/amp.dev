@@ -13,6 +13,8 @@
 {% endif %}
 </h1>
 
+{% if doc.experimental or doc.deprecated %}
+<div class="ap--component-tags">
 {% if doc.experimental %}
   {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
   <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Experimental') }}</div>
@@ -20,4 +22,6 @@
 {% if doc.deprecated %}
   {% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
   <div class="ap-a-pill ap-a-pill-small ap-a-pill-meta">{{ _('Deprecated') }}</div>
+{% endif %}
+</div>
 {% endif %}
