@@ -164,11 +164,7 @@ class FlyInImporter extends FlyIn {
    * @return {undefined}
    */
   onSetRuntime(runtime) {
-    const content = document.createElement('div');
-    content.insertAdjacentHTML('beforeend', template());
-    this.content.appendChild(this.importer.render(runtime));
-
-    this.render(content.firstChild);
+    this.importer.render(runtime)
   }
 }
 
