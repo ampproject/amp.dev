@@ -1,12 +1,12 @@
-{{#if helpText}}
-  <p>{{ helpText }}</p>
-{{/if}}
-
-<div id="file-upload" class="file-upload">
-  <div class="file-upload-info dz-info">
-    <span>Drop Email here or click to upload.</span>
+<div class="file-upload">
+  {{#if helpText}}
+    <p>{{ helpText }}</p>
+  {{/if}}
+  <div id="dz-target" class="file-upload-dropzone">
+    <div class="file-upload-info dz-info">
+      <span>Drop Email here or click to upload.</span>
+    </div>
   </div>
+  <label class="file-upload-label">
+  </label>
 </div>
-
-<label class="file-upload-label">
-</label>

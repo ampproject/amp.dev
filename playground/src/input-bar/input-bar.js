@@ -49,4 +49,8 @@ class Input {
   set value(value) {
     this.input.value = value;
   }
+
+  set hidden(hide) {
+    this.container.classList.toggle('hidden', hide);
+  }
 }

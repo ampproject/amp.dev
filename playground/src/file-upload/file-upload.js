@@ -80,4 +80,8 @@ class FileUpload {
   hideError() {
     this.label.classList.remove('show');
   }
+
+  set hidden(hide) {
+    this.container.classList.toggle('hidden', hide);
+  }
 }

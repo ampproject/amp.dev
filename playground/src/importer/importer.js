@@ -50,36 +50,29 @@ class Importer {
   /**
    * @param {Element} target
    */
-  constructor(target, runtime, label, helpText) {
-    if (runtime.id == 'amp4email') {
-      this.fileUpload = createFileUpload(target, {
-        helpText: 'Upload email to import the markup into the editor.',
-      });
-    } else {
-      console.log('Runtime not Email');
-      this.inputBar = createInput(target, {
-        helpText: helpText,
-        label: label,
-        type: 'url',
-        name: 'import',
-        placeholder: 'Your URL',
-      });
+  constructor(target, label, helpText) {
+    this.fileUpload = createFileUpload(target, {
+      helpText: 'Upload email to import the markup into the editor.',
+    });
 
-      this.inputBar.submit.addEventListener(
-        'click',
-        this.onSubmitURL.bind(this)
-      );
-      this.inputBar.input.addEventListener('keyup', (e) => {
-        if (e.keyCode === 13) {
-          this.onSubmitURL(e);
-        }
-      });
+    this.inputBar = createInput(target, {
+      helpText: helpText,
+      label: label,
+      type: 'url',
+      name: 'import',
+      placeholder: 'Your URL',
+    });
+    this.inputBar.submit.addEventListener('click', this.onSubmitURL.bind(this));
+    this.inputBar.input.addEventListener('keyup', (e) => {
+      if (e.keyCode === 13) {
+        this.onSubmitURL(e);
+      }
+    });
 
-      events.subscribe(
-        Document.EVENT_RECEIVE_URL_CONTENT,
-        this.onReceiveURLContent.bind(this)
-      );
-    }
+    events.subscribe(
+      Document.EVENT_RECEIVE_URL_CONTENT,
+      this.onReceiveURLContent.bind(this)
+    );
   }
 
   onSubmitURL(e) {
@@ -118,6 +111,11 @@ class Importer {
         this.inputBar.toggleLoading(false);
       });
   }
+
+  render(runtime) {
+    this.inputBar.hidden = runtime.id != 'amphtml';
+    this.fileUpload.hidden = runtime.id != 'amp4email';
+  }
 }
 
 /**
@@ -131,6 +129,12 @@ class FlyInImporter extends FlyIn {
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
     this.content.insertAdjacentHTML('beforeend', template());
+
+    this.importer = new Importer(
+      this.content.querySelector('#import-container'),
+      'Import',
+      "Error: Enter a valid URL to import the page's markup into the editor."
+    );
 
     events.subscribe(
       Editor.EVENT_UPDATE_EDITOR_CONTENT,
@@ -162,13 +166,7 @@ class FlyInImporter extends FlyIn {
   onSetRuntime(runtime) {
     const content = document.createElement('div');
     content.insertAdjacentHTML('beforeend', template());
-
-    this.importer = new Importer(
-      content.querySelector('#import-container'),
-      runtime,
-      'Import',
-      "Enter a valid URL to import the page's markup into the editor."
-    );
+    this.content.appendChild(this.importer.render(runtime));
 
     this.render(content.firstChild);
   }
