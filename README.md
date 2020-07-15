@@ -104,6 +104,8 @@ This command enables the import from GitHub to run flawlessly. The actual import
 $ npm run bootstrap
 ```
 
+**Tip**: Due to bad network conditions or GitHub's API rate-limiting there might be errors during import. Try running the above command with the `-- --queue-imports` flag to prevent them.
+
 You can then start developing in your local environment with the command below. The task will take care of building and copying all files, watching them for changes, and rebuilding them when needed. Beware that changes to the [Express](https://expressjs.com/) backend require the Gulp task to be restarted.
 
 ```sh

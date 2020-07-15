@@ -1,0 +1,20 @@
+@import '_functions.scss';
+@import '_variables.scss';
+
+#fly-in-background {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  opacity: 0;
+  background: color('black');
+  transition: opacity .25s ease-in-out
+}
+
+.fly-in--lightbox.active ~ #fly-in-background {
+  pointer-events: all;
+  opacity: .6;
+}

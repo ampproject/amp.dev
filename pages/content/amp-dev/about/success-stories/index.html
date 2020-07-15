@@ -28,10 +28,6 @@ stage:
 ---
 {% do doc.styles.addCssFile('css/components/templates/success-story.css') %}
 
-{% do doc.amp_dependencies.add('amp-video', '0.1') %}
-{% do doc.amp_dependencies.add('amp-vimeo', '0.1') %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
-
 {% block main %}
 <main class="ap--main ap-t-success-story">
 <section class="ap--stage ap--container-fluid">
@@ -96,12 +92,13 @@ stage:
     </div>
 
     {% do doc.styles.addCssFile('css/components/organisms/filter-bubbles-list.css') %}
+    {% do doc.styles.addCssFile('css/components/atoms/pill.css', -100) %}
     <div class="ap-o-filter-bubbles-list">
       <button
-        [% if not category or category not in '{{ categories }}' %]
-        class="ap-m-filter-bubble filtered"
+        [% if not category or category not in '{{ categories }}' %]
+        class="ap-a-pill filtered"
         [% else %]
-        class="ap-m-filter-bubble"
+        class="ap-a-pill"
         [% endif %]
         name="all">
         {{ _('All') }}
@@ -109,9 +106,9 @@ stage:
       {% for category, stories in categories %}
       <button
           [% if category == '{{ category|slug }}' %]
-          class="ap-m-filter-bubble filtered"
+          class="ap-a-pill filtered"
           [% else %]
-          class="ap-m-filter-bubble"
+          class="ap-a-pill"
           [% endif %]
           on="tap:AMP.navigateTo(url='{{ g.doc('/content/amp-dev/about/success-stories/index.html', locale=doc.locale).url.path }}?category={{ category|slug }}')"
           name="{{ category|slug }}">

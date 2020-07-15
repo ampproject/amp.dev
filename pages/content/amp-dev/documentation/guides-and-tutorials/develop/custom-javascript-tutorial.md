@@ -149,9 +149,9 @@ const submitButton = document.getElementById("submitButton");
 const rulesArea = document.getElementById("rules");
 ```
 
-Notice that we're able to use regular DOM API methods like `getElementById()`. Although our code runs in a worker, and workers lack direct access to the DOM, `<amp-script>` provides a virtual copy of the DOM and emulates some common APIs, listed [here](https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md). These APIs give us enough tools to cover most use cases. But it's important to note that only a subset of the DOM API is supported. Otherwise, the JavaScript included with `<amp-script>` would be enormous, negating AMP's performance benefits!
+Notice that we're able to use regular DOM API methods like `getElementById()`. Although our code runs in a worker, and workers lack direct access to the DOM, `<amp-script>` provides a virtual copy of the DOM and emulates some common APIs, listed [here](https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md). These APIs give us enough tools to cover most use cases. But it's important to note that only a subset of the DOM API is supported. Otherwise, the JavaScript included with `<amp-script>` would be enormous, negating AMP's performance benefits!
 
-We need to add these id's to two of the elements. Open up `index.html`, locate the password `<input>` and the submit `<button>`, and add the id's:
+We need to add these id's to two of the elements. Open up `index.html`, locate the password `<input>` and the submit `<button>`, and add the id's. Add a `disabled` attribute to the submit `<button>` as well, to keep the user from clicking it until we want them to.
 
 ```html
 <input type=password 
@@ -166,15 +166,15 @@ Reload the page. You can verify that these globals were set correctly by checkin
 
 {{ image('/static/img/docs/tutorials/custom-javascript-tutorial/global-set.png', 563, 38, layout='intrinsic', alt='Console message showing submitButton is set', align='center' ) }}
 
-We'll also add id's to each `<li>` in `<div id="rules">`. Each of these contains an individual rule whose color we'll want to control.
+We'll also add id's to each `<li>` in `<div id="rules">`. Each of these contains an individual rule whose color we'll want to control. And we'll remove each instance of `class="invalid"`. Our new JavaScript will add that when it's needed!
 
 ```html
 <ul>
-  <li id="lower" class="invalid">Lowercase letter</li>
-  <li id="upper" class="invalid">Capital letter</li>
-  <li id="digit" class="invalid">Digit</li>
-  <li id="special" class="invalid">Special character (@$!%*?&)</li>
-  <li id="eight" class="invalid">At least 8 characters long</li>
+  <li id="lower">Lowercase letter</li>
+  <li id="upper">Capital letter</li>
+  <li id="digit">Digit</li>
+  <li id="special">Special character (@$!%*?&)</li>
+  <li id="eight">At least 8 characters long</li>
 </ul> 
 ```
 
@@ -187,7 +187,7 @@ const checkRegexes = {
   lower: /[a-z]/,
   upper: /[A-Z]/,
   digit: /\d/,
-  special: /[^a-z\d]/i,
+  special: /[^a-zA-Z\d]/i,
   eight: /.{8}/
 };
 ```

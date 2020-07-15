@@ -1,15 +1,17 @@
 # Use via: go.amp.dev/ads
 # Add new entries in alphabetical order
 /ads: /about/ads/
+/ampdevmode: https://github.com/ampproject/amphtml/issues/20974
 /amp-optimizer: https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer
 /amp-pwa-amp: https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/
-/amp-script-apis: https://github.com/ampproject/worker-dom/blob/master/web_compat_table.md
+/amp-script-apis: https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md
 /ampcs: /events/amp-cs-2019/#Schedule
 /auto-sw: https://github.com/ampproject/amp-sw/
 /axios-case-study: https://blog.amp.dev/2020/04/07/people-behind-the-code-the-axios-ascent/
 /camp-code: https://github.com/ampproject/samples/tree/master/amp-camp
 /cherry-picks: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md#Cherry-picks
 /components: https://amp.dev/documentation/components/
+/contribute: https://amp.dev/documentation/guides-and-tutorials/contribute/
 /contribute/code: https://github.com/ampproject/amphtml/blob/master/contributing/contributing-code.md
 /contribute/code-samples: /documentation/guides-and-tutorials/contribute/contribute-documentation/formatting/?format=websites#preview-code-samples
 /contribute/docs: /documentation/guides-and-tutorials/contribute/contribute-documentation/
@@ -17,13 +19,15 @@
 /contribute/translations: /documentation/guides-and-tutorials/contribute/translations/
 /cors: /documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cors-requests/
 /design-reviews: https://github.com/ampproject/amphtml/issues?q=is%3Aissue+is%3Aopen+design+review+utc+in%3Atitle
-/devx-survey: https://google.qualtrics.com/jfe/form/SV_2f10wnLh8qJclRb
+/devx-survey: https://google.qualtrics.com/jfe/form/SV_9LvQfQMTgksS6Ed
 /docs: /documentation/guides-and-tutorials/
 /docsgfi: https://github.com/ampproject/amp.dev/issues?q=is:open+is:issue+label:%22good+first+issue%22
+/eleventy: https://github.com/ampproject/eleventy-plugin-amp
 /email: /about/email/
 /email-support: /support/faq/email-support/
 /email-tools: /documentation/tools/?format=email
 /email-viewer: https://github.com/ampproject/amp-email-viewer
+/github: https://github.com/ampproject/amphtml
 /governance: /community/governance/
 /i2i: https://github.com/ampproject/amphtml/issues/new?assignees=&labels=INTENT+TO+IMPLEMENT&template=intent-to-implement--i2i-.md&title=I2I:%20%3Cyour%20change/update%3E
 /io-email: /documentation/examples/interactivity-dynamic-content/conference_survey_email/
@@ -41,6 +45,7 @@
 /owners: https://ampproject-owners-bot.appspot.com/tree
 /publishing-checklist: /documentation/guides-and-tutorials/optimize-and-measure/publishing_checklist/
 /reftemplate: https://docs.google.com/document/d/1lRFcErFBnqsuv6W9mZsfYk2qnXO9nPzMkeog4Xtunl8/edit?usp=sharing
+/service: https://blog.amp.dev/2020/06/29/amp-as-a-service-2020-roadmap/ 
 /shopify-apps: https://blog.amp.dev/2019/04/15/shopify-apps-make-amp-easy-and-effective-for-ecommerce
 /stories-best-practices: /documentation/guides-and-tutorials/develop/amp_story_best_practices/
 /stories: /about/stories/
@@ -48,6 +53,7 @@
 /templates: /documentation/templates/
 /test-email: /documentation/guides-and-tutorials/develop/testing_amp_emails/?format=email
 /tools: /documentation/tools/
+/validate: /documentation/guides-and-tutorials/learn/validation-workflow/validate_amp/
 /vision-mission: /about/mission-and-vision/
 /websites: /about/websites/
 /wg: https://github.com/ampproject/meta/tree/master/working-groups

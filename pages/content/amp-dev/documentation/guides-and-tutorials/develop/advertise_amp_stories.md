@@ -20,7 +20,6 @@ The [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story
 
 The AMP runtime makes the ad call as early as possible and places the first one sometime after the first two pages, and never as the last page.
 
-{% do doc.amp_dependencies.add('amp-anim', '0.1') %}
 
 <amp-anim width=360 height=640 src="/static/img/docs/stampads/stamp_gif_ad.gif">
   <amp-img placeholder width=360 height=640 src="/static/img/docs/stampads/stamp_gif_still.png">
@@ -122,7 +121,7 @@ These key value pairs are copied over to the [`amp-ad`](../../../documentation/c
   ...
 </amp-story>
 [/sourcecode]
-  
+
 [tip type="note"]
 Read [Traffic custom creatives in AMP Stories](https://support.google.com/admanager/answer/9038178) for information about uploading ads to Google Ad Manager and checkout our guide on [Best practices for creating an AMP Story ad](story_ads_best_practices.md).
 [/tip]

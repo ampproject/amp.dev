@@ -3,7 +3,6 @@
 {% else %}
 {% do doc.styles.addCssFile('css/components/organisms/sidebar-default.css') %}
 {% endif %}
-{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
 
 {% macro components_sidebar() %}
 {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}

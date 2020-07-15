@@ -12,33 +12,34 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./fly-in.scss');
+import './fly-in.scss';
+import events from '../events/events.js';
+import template from './fly-in.hbs';
+import * as FlyInBackground from './fly-in-background.js';
 
 class FlyIn {
   constructor(target) {
     const content = document.createElement('div');
-    content.className = 'fly-in-container';
+    content.className = 'fly-in-content';
     this.content = content;
 
     this.createFlyIn(target);
     this.registerButtons(target);
+
+    events.subscribe(FlyInBackground.EVENT_FLY_IN_CLOSE, () => {
+      this.toggle(false);
+    });
   }
 
   createFlyIn(target) {
     const title = target.getAttribute('data-title');
-    target.innerHTML = `
-      <div class="fly-in-header">
-        <h2>${title}</h2>
-        <div class="fly-in-close" tabindex="0" role="button"></div>
-      </div>
-    `;
-
+    target.insertAdjacentHTML('afterbegin', template({title}));
     target.appendChild(this.content);
 
     return target;
   }
 
-  upadateContent(content) {
+  render(content) {
     this.content.innerHTML = '';
     this.content.appendChild(content);
   }
@@ -46,20 +47,12 @@ class FlyIn {
   registerButtons(target) {
     const button = target.querySelector('.fly-in-close');
     button.addEventListener('click', () => {
-      this.hideFlyIn(target);
+      this.toggle(false);
     });
   }
 
-  toggle() {
-    this.target.classList.toggle('active');
-  }
-
-  hideFlyIn() {
-    this.target.classList.remove('active');
-  }
-
-  showFlyIn() {
-    this.target.classList.add('active');
+  toggle(force) {
+    this.target.classList.toggle('active', force);
   }
 }
 

@@ -14,7 +14,6 @@
     <div class="ap-m-teaser-card">
       {% set teaser = teaser or teaser_doc.teaser or {} %}
       {% if teaser.video %}
-      {% do doc.amp_dependencies.add('amp-video', '0.1') %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-video src="{{ teaser.video.src }}" layout="responsive" width="240" height="240" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
@@ -69,7 +68,6 @@
 
     <div class="ap-m-teaser-card">
       {% if teaser.video %}
-      {% do doc.amp_dependencies.add('amp-video', '0.1') %}
       <div class="ap-a-img ap-m-teaser-image">
         <amp-video src="{{ teaser.video.src }}" layout="responsive" width="{{ teaser.video.width }}" height="{{ teaser.video.height }}" poster="{{ teaser.image.src }}" autoplay muted loop></amp-video>
       </div>
@@ -120,7 +118,7 @@
     <ul class="ap-m-teaser-info-list">
       {% for used_component in teaser_doc.used_components %}
       <li class="ap-m-teaser-info-list-item">
-        {% set component_path = '/content/amp-dev/documentation/components/reference/' + used_component + '.md' %}
+        {% set component_path = '/content/amp-dev/documentation/components/reference/' + used_component + '-v0.1.md' %}
         {% if doc.pod.file_exists(component_path) %}
         <a href="{{ g.doc(component_path, locale=doc.locale).url.path }}" class="ap-m-teaser-info-list-item-link">{{ used_component }}</a>
         {% else %}
@@ -158,8 +156,8 @@
         <amp-img
           src="{{ teaser.image.src }}"
           layout="fill"
-          width="22"
-          height="9"
+          width="550"
+          height="225"
           alt="{{ teaser_doc.title }}">
         </amp-img>
         {% elif teaser.icon %}

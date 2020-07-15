@@ -12,31 +12,74 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-require('./error-list.scss');
-
 import events from '../events/events.js';
+import modes from '../modes/';
+
 import * as Button from '../button/button.js';
 import * as Validator from '../validator/validator.js';
-import FlyIn from '../fly-in/base.js';
+import * as ErrorListItem from './error-list-item.js';
+import FlyIn from '../fly-in/fly-in.js';
 
-export const EVENT_ERROR_SELECTED = 'error-selected';
+import './error-list.scss';
+import template from './error-list.hbs';
 
-export function createErrorList(target, trigger) {
-  return new ErrorList(target, trigger);
+export function createErrorList() {
+  const target = document.getElementById('error-list');
+
+  if (modes.IS_DEFAULT) {
+    const trigger = document.getElementById('error-indicator');
+    return new FlyInErrorList(target, trigger);
+  } else if (modes.IS_VALIDATOR) {
+    return new InlineErrorList(target);
+  }
 }
 
-class ErrorList extends FlyIn {
+/**
+ * The basic error list that takes care of creating a list of errors
+ * by using a validation result provided by Validator
+ */
+class ErrorList {
+  /**
+   * @param {Element} target Where the error list items get rendered into
+   */
+  constructor(target) {
+    events.subscribe(
+      Validator.EVENT_NEW_VALIDATION_RESULT,
+      (validationResult) => {
+        this.validationResult = validationResult;
+        this.render();
+      }
+    );
+
+    target.insertAdjacentHTML('beforeend', template());
+
+    this.list = target.querySelector('ul');
+  }
+
+  render() {
+    this.list.innerHTML = '';
+    for (const e of this.validationResult.errors) {
+      ErrorListItem.createErrorListItem(this.list, e);
+    }
+  }
+}
+
+/**
+ * The error list as a fly-in as used for the Playground
+ * with a trigger button that shows the current error count
+ * @extends FlyIn
+ */
+class FlyInErrorList extends FlyIn {
   constructor(target, trigger) {
     super(target);
 
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
+    this.errorList = new ErrorList(this.content);
 
-    // configure validator
     events.subscribe(
       Validator.EVENT_NEW_VALIDATION_RESULT,
       (validationResult) => {
-        this.update(validationResult);
         window.requestIdleCallback(() => {
           if (validationResult === Validator.NO_VALIDATOR) {
             this.trigger.setHtml('valid');
@@ -45,24 +88,20 @@ class ErrorList extends FlyIn {
           }
 
           this.trigger.enable();
-          for (const clazz of ['valid', 'warning', 'error']) {
-            this.trigger.removeClass(clazz);
-          }
+          this.trigger.removeClass('valid', 'warning', 'error');
 
           const errorCount = validationResult.errors.length;
           const plurality = errorCount > 1 ? 's' : '';
 
           if (validationResult.status == 'FAIL') {
             this.trigger.addClass('error');
-            this.trigger.setHtml(
-              `${errorCount} <span>Error${plurality}</span>`
-            );
+            this.trigger.setHtml(`${errorCount}<span>Error${plurality}</span>`);
             return;
           }
           if (errorCount > 0) {
             this.trigger.addClass('warning');
             this.trigger.setHtml(
-              `${errorCount} <span>Warning${plurality}</span>`
+              `${errorCount}<span>Warning${plurality}</span>`
             );
             return;
           }
@@ -73,55 +112,16 @@ class ErrorList extends FlyIn {
       }
     );
   }
+}
 
-  update(validationResult) {
-    this.validationResult = validationResult;
-    window.requestIdleCallback(() => {
-      /* eslint-disable max-len */
-      const content = document.createElement('ul');
-      for (let i = 0; i < validationResult.errors.length; i++) {
-        const error = validationResult.errors[i];
-        content.appendChild(this.renderError(error, i));
-      }
-
-      /* eslint-enable max-len */
-      if (validationResult.errors.length === 0) {
-        this.hideFlyIn();
-      }
-
-      this.upadateContent(content);
-    });
-  }
-
-  renderError(error, index) {
-    const errorElement = document.createElement('li');
-    errorElement.className = `validation-error ${error.icon}`;
-    errorElement.dataset.index = index;
-
-    errorElement.innerHTML = `<div>
-        <p class="message">
-          ${error.message}
-          <a href="${error.specUrl}" target="_blank" rel="noopener">
-            Learn&nbsp;more
-          </a>
-        </p>
-        <div class="location">line ${error.line}, column ${error.col}</div>
-      </div>`;
-
-    errorElement.addEventListener('click', this.onErrorItemClick.bind(this));
-
-    return errorElement;
-  }
-
-  onErrorItemClick(e) {
-    const target = e.target.closest('li.validation-error');
-    if (!target) {
-      this.hideErrorList();
-      return;
-    }
-
-    const index = target.dataset.index;
-    const error = this.validationResult.errors[index];
-    events.publish(EVENT_ERROR_SELECTED, error);
+/**
+ * The error list as used for the validator
+ */
+class InlineErrorList {
+  /**
+   * @param {Element} target
+   */
+  constructor(target) {
+    this.errorList = new ErrorList(target);
   }
 }
