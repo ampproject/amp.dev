@@ -7,16 +7,17 @@
 
 .#{atom('pill')} {
   display: inline-block;
-  @include txt;
-  @include txt-2;
-  @include txt-strong;
-  @include filter-bubble-shadow-regular;
   margin: 5px 5px;
   padding: 5px 10px;
   border: none;
   border-radius: 25px;
-  color: color('oslo-gray');
   background: color('white');
+  @include txt;
+  @include txt-2;
+  @include txt-strong;
+  @include filter-bubble-shadow-regular;
+  color: color('oslo-gray');
+  font-family: 'Noto Sans', sans-serif;
   transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
   cursor: pointer;
 
