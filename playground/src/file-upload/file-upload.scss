@@ -3,7 +3,7 @@
 @import 'components/atoms/_text.scss';
 
 .file-upload {
-  &.dz-clickable {
+  &-dropzone {
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;

@@ -23,17 +23,16 @@ export const EVENT_FILE_UPLOADED = 'event-file-uploaded';
 
 const ALLOWED_FILE_SUFFIX = '.eml';
 
-export default function createFileUpload(container, config) {
-  return new FileUpload(container, config);
+export default function createFileUpload(target, config) {
+  return new FileUpload(target, config);
 }
 
 class FileUpload {
-  constructor(container, config) {
-    container.insertAdjacentHTML('beforeend', template(config));
-    this.label = container.querySelector('label');
-
-    this.dropzoneTarget = container.querySelector('#file-upload');
-    this.dropzone = new Dropzone(this.dropzoneTarget, {
+  constructor(target, config) {
+    target.insertAdjacentHTML('beforeend', template(config));
+    this.container = target.querySelector('.file-upload');
+    this.label = target.querySelector('label');
+    this.dropzone = new Dropzone(target.querySelector('#dz-target'), {
       maxFiles: 1,
       parallelUploads: 1,
       acceptedFiles: '.eml',
