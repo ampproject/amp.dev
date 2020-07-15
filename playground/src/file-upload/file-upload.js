@@ -23,13 +23,13 @@ export const EVENT_FILE_UPLOADED = 'event-file-uploaded';
 
 const ALLOWED_FILE_SUFFIX = '.eml';
 
-export default function createFileUpload(target, config) {
-  return new FileUpload(target, config);
+export default function createFileUpload(target) {
+  return new FileUpload(target);
 }
 
 class FileUpload {
-  constructor(target, config) {
-    target.insertAdjacentHTML('beforeend', template(config));
+  constructor(target) {
+    target.insertAdjacentHTML('beforeend', template());
     this.container = target.querySelector('.file-upload');
     this.label = target.querySelector('label');
     this.dropzone = new Dropzone(target.querySelector('#dz-target'), {
@@ -58,7 +58,7 @@ class FileUpload {
     if (this.file.name.endsWith(ALLOWED_FILE_SUFFIX)) {
       events.publish(EVENT_FILE_UPLOADED, file);
     } else {
-      this.showError('Please add a valid .eml file');
+      this.showError('Error: File is not in EML format');
       this.removeFile(this.file);
     }
   }

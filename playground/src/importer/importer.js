@@ -51,10 +51,7 @@ class Importer {
    * @param {Element} target
    */
   constructor(target, label, helpText) {
-    this.fileUpload = createFileUpload(target, {
-      helpText: 'Upload email to import the markup into the editor.',
-    });
-
+    this.fileUpload = createFileUpload(target);
     this.inputBar = createInput(target, {
       helpText: helpText,
       label: label,
@@ -86,7 +83,7 @@ class Importer {
       this.inputBar.toggleLoading();
       events.publish(EVENT_REQUEST_URL_CONTENT, url);
     } else {
-      this.inputBar.showError('Please enter a valid URL');
+      this.inputBar.showError('Error: Please enter a valid URL');
     }
   }
 
@@ -133,7 +130,7 @@ class FlyInImporter extends FlyIn {
     this.importer = new Importer(
       this.content.querySelector('#import-container'),
       'Import',
-      "Error: Enter a valid URL to import the page's markup into the editor."
+      "Enter a valid URL to import the page's markup into the editor."
     );
 
     events.subscribe(
