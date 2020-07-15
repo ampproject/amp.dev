@@ -161,7 +161,7 @@ class FlyInImporter extends FlyIn {
    * @return {undefined}
    */
   onSetRuntime(runtime) {
-    this.importer.render(runtime)
+    this.importer.render(runtime);
   }
 }
 
