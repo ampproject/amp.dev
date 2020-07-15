@@ -53,7 +53,7 @@ class Preview {
 
     events.subscribe(
       Experiment.EVENT_TOGGLE_EXPERIMENT,
-      this.toggleExperiment.bind(this)
+      debounce(this.toggleExperiment.bind(this), 200)
     );
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this._onSetRuntime.bind(this));

@@ -67,6 +67,8 @@ class Experiments extends FlyIn {
       this.onSubmitExperiment();
     });
 
+    this.addActiveExperiments();
+
     events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
       this.removeExperiment(experiment);
     });
@@ -77,6 +79,17 @@ class Experiments extends FlyIn {
       return;
     } else {
       this.availableExperiments = await this.fetchExperiments();
+    }
+  }
+
+  addActiveExperiments() {
+    const experiments = localStorage.getItem('amp-experiment-toggles');
+    if (experiments) {
+      for (const experiment of experiments.split(',')) {
+        if (!experiment.startsWith('-')) {
+          this.addExperiment(experiment);
+        }
+      }
     }
   }
 
