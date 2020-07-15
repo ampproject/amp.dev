@@ -21,6 +21,8 @@ import * as EmailLoader from '../email-loader/email-loader.js';
 
 export const EVENT_FILE_UPLOADED = 'event-file-uploaded';
 
+const ALLOWED_FILE_SUFFIX = '.eml';
+
 export default function createFileUpload(container, config) {
   return new FileUpload(container, config);
 }
@@ -53,7 +55,13 @@ class FileUpload {
       this.removeFile(this.file);
     }
     this.file = file;
-    events.publish(EVENT_FILE_UPLOADED, file);
+
+    if (this.file.name.endsWith(ALLOWED_FILE_SUFFIX)) {
+      events.publish(EVENT_FILE_UPLOADED, file);
+    } else {
+      this.showError('Please add a valid .eml file');
+      this.removeFile(this.file);
+    }
   }
 
   removeFile(file) {
