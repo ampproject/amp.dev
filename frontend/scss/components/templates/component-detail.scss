@@ -55,8 +55,8 @@ body {
     display: inline-flex;
     align-items: center;
     background: color('white');
-    border-radius: 3px;
-    border: 2px solid #d5d9de;
+    border: 1px solid color('gallery');
+    margin-top: 5px;
 
     &-toggle {
       border: 0;
@@ -82,6 +82,11 @@ body {
       background-position: center;
       pointer-events: none;
     }
+  }
+
+  .#{utility('component-tags')} {
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
   }
 }
 
