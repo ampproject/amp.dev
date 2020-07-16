@@ -121,11 +121,6 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
   }
   validator.validate(editor.getSource());
   activeRuntime = newRuntime;
-
-  // const emailButton = document.getElementById('import-email');
-  // if (emailButton) {
-  //   emailButton.classList.toggle('hidden', activeRuntime.id !== 'amp4email');
-  // }
 });
 
 runtimes.init();
