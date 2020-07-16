@@ -17,8 +17,8 @@
     width: 32px;
     z-index: 15;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     font-size: 12px;
     @include txt-font-accent;
     color: color('black');
@@ -50,6 +50,7 @@
     left: 0;
     width: 50%;
     height: 45px;
+    padding-right: 5%;
     background: color('white');
     box-shadow: 0 10px 20px -5px transparentize(color('black'), 0.75);
 
@@ -76,10 +77,12 @@
 
   @media (min-width: 768px) {
     display: inline-block;
+    align-items: center;
 
     &-label {
       width: auto;
       display: inline-flex;
+      margin-left: 10px;
       transform: translate(-94px, -122px);
       background: color('blue-ribbon');
       color: color('white');
@@ -125,7 +128,8 @@
 
           .#{atom('sidebar-desktop-toggle')} {
             &-label {
-              margin-left: -185px;
+              top: 130px;
+              margin-left: -186px;
               transform: rotate(-90deg);
               flex-direction: row-reverse;
 
@@ -151,7 +155,7 @@
   @media (min-width: 1024px) {
 
     &-label {
-      transform: translate(-100px, -52px);
+      transform: translate(-94px, -52px);
     }
   }
 }
