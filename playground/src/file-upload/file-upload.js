@@ -35,7 +35,7 @@ class FileUpload {
     this.dropzone = new Dropzone(target.querySelector('#dz-target'), {
       maxFiles: 1,
       parallelUploads: 1,
-      acceptedFiles: '.eml',
+      acceptedFiles: 'message/rfc822',
       autoProcessQueue: false,
       url: '#',
     });
