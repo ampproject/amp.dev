@@ -59,8 +59,8 @@ class FileUpload {
       events.publish(EVENT_FILE_UPLOADED, file);
     } else {
       this.showError('Error: File is not in EML format');
-      this.removeFile(this.file);
     }
+    this.removeFile(this.file);
   }
 
   removeFile(file) {
