@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const {createEmailLoader} = require('./email-loader.js');
 
 describe('EmailLoader', () => {

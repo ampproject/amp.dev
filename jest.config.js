@@ -84,6 +84,8 @@ module.exports = {
     '^@examples/(.*?)(.js)?$': '<rootDir>/examples/$1.js',
     '^@examples$': '<rootDir>/examples/index.js',
     '^@boilerplate/(.*?)(.js)?$': '<rootDir>/boilerplate/$1.js',
+    "\\.(css|less|sass|scss)$": "<rootDir>/platform/lib/utils/noop.js",
+    "\\.(html|hbs|j2|njk)$": "<rootDir>/platform/lib/utils/noop.js",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
