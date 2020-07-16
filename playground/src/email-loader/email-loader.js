@@ -41,12 +41,12 @@ class EmailLoader {
     emailCode = emailCode.replace(/\r\n/g, '\n');
     const [head, body] = twoSplit(emailCode, '\n\n');
     if (!body) {
-      throw new Error('No body found in email');
+      this.onError('No body found in email');
     }
 
     const {parts, contentType} = this.parseMultipart(head, body);
     if (contentType !== 'multipart/alternative') {
-      throw new Error('Email is not multipart/alternative');
+      this.onError('Email is not multipart/alternative');
     }
 
     const ampPart = parts.find((part) =>
@@ -154,7 +154,7 @@ class EmailLoader {
   }
 
   onError(message) {
-    events.publish(EVENT_FILE_UPLOADED_ERROR, message);
+    events.publish(EVENT_FILE_UPLOADED_ERROR, `Error: ${message}`);
     throw new Error(message);
   }
 }
