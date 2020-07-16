@@ -17,7 +17,7 @@ describe('EmailLoader', () => {
 
   test('throws when email is not multipart', () => {
     expect(() => {
-      emailLoader._loadEmail(`
+      emailLoader.loadEmail(`
 From:  Person A <persona@example.com>
 To: Person B <personb@example.com>
 Subject: Test
@@ -30,7 +30,7 @@ Hello World in plain text!
 
   test('throws when email has no AMP part', () => {
     expect(() => {
-      emailLoader._loadEmail(`
+      emailLoader.loadEmail(`
 From:  Person A <persona@example.com>
 To: Person B <personb@example.com>
 Subject: Test
@@ -51,7 +51,7 @@ Content-Type: text/html
   });
 
   test('parses valid email', () => {
-    emailLoader._loadEmail(`
+    emailLoader.loadEmail(`
 From:  Person A <persona@example.com>
 To: Person B <personb@example.com>
 Subject: An AMP email!
