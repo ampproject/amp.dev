@@ -16,6 +16,7 @@ import events from '../events/events.js';
 import * as quotedPrintable from 'quoted-printable';
 import * as FileUpload from '../file-upload/file-upload.js';
 
+export const EVENT_FILE_UPLOADED_SUCCESS = 'event-file-uploaded-success';
 export const EVENT_FILE_UPLOADED_ERROR = 'event-file-uploaded-error';
 
 export function createEmailLoader(editor) {
@@ -52,8 +53,9 @@ class EmailLoader {
       part.contentType.startsWith('text/x-amp-html')
     );
     if (!ampPart) {
-      throw new Error('No AMP part found in multipart/alternative');
+      this.onError('No AMP part found in multipart/alternative');
     }
+    events.publish(EVENT_FILE_UPLOADED_SUCCESS);
     this.editor.setSource(ampPart.body);
   }
 
@@ -98,14 +100,14 @@ class EmailLoader {
       rawParts[0].trim() !== '' ||
       rawParts[rawParts.length - 1].trim() !== '--'
     ) {
-      throw new Error('Invalid multipart body');
+      this.onError('Invalid multipart body');
     }
     const parts = rawParts.slice(1, -1);
 
     return parts.map((part) => {
       let [head, body] = twoSplit(part, '\n\n');
       if (!body) {
-        throw new Error('No body found in email part');
+        this.onError('No body found in email part');
       }
       const headers = this._parseHeaders(head);
       const encoding = headers.get('content-transfer-encoding');
@@ -128,9 +130,7 @@ class EmailLoader {
     const parts = (contentTypeHeader || '').split(/\s*;\s*/);
     const contentType = parts[0].trim();
     if (!contentType.startsWith('multipart/')) {
-      const errorMessage = 'Invalid content type: not multipart';
-      events.publish(EVENT_FILE_UPLOADED_ERROR, errorMessage);
-      throw new Error(errorMessage);
+      this.onError('Invalid content type: not multipart');
     }
     const params = Object.create(null);
     for (let i = 1; i < parts.length; i++) {
@@ -145,12 +145,17 @@ class EmailLoader {
       params[key] = value;
     }
     if (!params.boundary) {
-      throw new Error('Invalid content type: no valid boundary in multipart');
+      this.onError('Invalid content type: no valid boundary in multipart');
     }
     return {
       contentType,
       boundary: params.boundary,
     };
+  }
+
+  onError(message) {
+    events.publish(EVENT_FILE_UPLOADED_ERROR, message);
+    throw new Error(message);
   }
 }
 
