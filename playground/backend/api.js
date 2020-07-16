@@ -50,6 +50,12 @@ const RATE_LIMIT_TIME_FRAME = 10 * 1000;
 const HOST_RATE_LIMIT = 10;
 
 /**
+ * The maximum count of limits that is tracked.
+ * @type {Number}
+ */
+const MAX_LIMITS = 500;
+
+/**
  * Fetches a user-defined remote URL and returns the response,
  * verifies that the returned response is a proper HTML document
  *
@@ -59,6 +65,7 @@ const HOST_RATE_LIMIT = 10;
 async function fetchDocument(fetchUrl) {
   const response = await fetch(fetchUrl, {
     size: MAX_FILE_SIZE,
+    max: MAX_LIMITS,
     headers: {
       'Accept': 'text/html',
       'x-requested-by': 'playground',
