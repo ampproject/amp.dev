@@ -21,7 +21,7 @@ import * as EmailLoader from '../email-loader/email-loader.js';
 
 export const EVENT_FILE_UPLOADED = 'event-file-uploaded';
 
-const ALLOWED_FILE_SUFFIX = '.eml';
+const ALLOWED_FILE_TYPE = 'message/rfc822';
 
 export default function createFileUpload(target) {
   return new FileUpload(target);
@@ -54,8 +54,7 @@ class FileUpload {
       this.removeFile(this.file);
     }
     this.file = file;
-
-    if (this.file.name.endsWith(ALLOWED_FILE_SUFFIX)) {
+    if (this.file.type == ALLOWED_FILE_TYPE) {
       events.publish(EVENT_FILE_UPLOADED, file);
     } else {
       this.showError('Error: File is not in EML format');
