@@ -34,17 +34,17 @@ class EmailLoader {
 
   async loadEmailContent(file) {
     const data = await file.text();
-    this._loadEmail(data);
+    this.loadEmail(data);
   }
 
-  _loadEmail(emailCode) {
+  loadEmail(emailCode) {
     emailCode = emailCode.replace(/\r\n/g, '\n');
     const [head, body] = twoSplit(emailCode, '\n\n');
     if (!body) {
       throw new Error('No body found in email');
     }
 
-    const {parts, contentType} = this._parseMultipart(head, body);
+    const {parts, contentType} = this.parseMultipart(head, body);
     if (contentType !== 'multipart/alternative') {
       throw new Error('Email is not multipart/alternative');
     }
@@ -59,19 +59,19 @@ class EmailLoader {
     this.editor.setSource(ampPart.body);
   }
 
-  _parseMultipart(head, body) {
-    const headers = this._parseHeaders(head);
-    const {contentType, boundary} = this._parseMultipartContentType(
+  parseMultipart(head, body) {
+    const headers = this.parseHeaders(head);
+    const {contentType, boundary} = this.parseMultipartContentType(
       headers.get('content-type')
     );
-    const parts = this._parseMultipartBody(body, boundary);
+    const parts = this.parseMultipartBody(body, boundary);
     return {
       contentType,
       parts,
     };
   }
 
-  _parseHeaders(head) {
+  parseHeaders(head) {
     const lines = head.split('\n');
     let current = 0;
     for (let i = 0; i < lines.length; i++) {
@@ -94,7 +94,7 @@ class EmailLoader {
     );
   }
 
-  _parseMultipartBody(body, boundary) {
+  parseMultipartBody(body, boundary) {
     const rawParts = body.split('--' + boundary);
     if (
       rawParts[0].trim() !== '' ||
@@ -109,7 +109,7 @@ class EmailLoader {
       if (!body) {
         this.onError('No body found in email part');
       }
-      const headers = this._parseHeaders(head);
+      const headers = this.parseHeaders(head);
       const encoding = headers.get('content-transfer-encoding');
       switch (encoding) {
         case 'base64':
@@ -126,7 +126,7 @@ class EmailLoader {
     });
   }
 
-  _parseMultipartContentType(contentTypeHeader) {
+  parseMultipartContentType(contentTypeHeader) {
     const parts = (contentTypeHeader || '').split(/\s*;\s*/);
     const contentType = parts[0].trim();
     if (!contentType.startsWith('multipart/')) {
