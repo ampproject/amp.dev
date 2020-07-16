@@ -63,9 +63,9 @@ See the table below for descriptions of each part of the syntax.
   <tr>
     <td><code>targetId</code></td>
     <td>yes</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.
-    <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
-&lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
+    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.<br>
+    <code>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Show Images&lt;/button></code>
     </td>
   </tr>
   <tr>
@@ -154,10 +154,10 @@ For example, the following is possible in AMP:
     </td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <code>event.min</code>
+      <code>event.max</code>
+      <code>event.value</code>
+      <code>event.valueAsNumber</code>
     </td>
   </tr>
   <tr>
@@ -169,9 +169,9 @@ event.valueAsNumber</pre>
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <code>event.min</code>
+      <code>event.max</code>
+      <code>event.value</code>
     </td>
   </tr>
   <!-- input-debounced -->
@@ -201,8 +201,9 @@ event.value</pre>
   <tr>
     <td><code>slideChange</code></td>
     <td>Fired when the carousel's current slide changes.</td>
-    <td><pre>// Slide number.
-event.index</pre></td>
+    <td>// Slide number.<br>
+      <code>event.index</code>
+    </td>
   </tr>
 </table>
 
@@ -256,11 +257,10 @@ event.index</pre></td>
   <tr>
     <td><code>select</code></td>
     <td>Fired when an option is selected or deselected.</td>
-    <td><pre>// Target element's "option" attribute value.
-event.targetOption
-
+    <td>// Target element's "option" attribute value.
+<code>event.targetOption</code><br>
 // Array of "option" attribute values of all selected elements.
-event.selectedOptions</pre></td>
+<code>event.selectedOptions</code></td>
 
   </tr>
 </table>
@@ -336,14 +336,16 @@ event.selectedOptions</pre></td>
   <tr>
     <td><code>submit-success</code></td>
     <td>Fired when the form submission response is success.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td>// Response JSON.<br>
+        <code>event.response</code>
+    </td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>Fired when the form submission response is an error.</td>
-    <td><pre>// Response JSON.
-event.response</pre></td>
+    <td>// Response JSON.<br>
+      <code>event.response</code>
+    </td>
   </tr>
   <tr>
     <td><code>valid</code></td>
