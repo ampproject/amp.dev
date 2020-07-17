@@ -34,26 +34,30 @@ class EmailLoader {
 
   async loadEmailContent(file) {
     const data = await file.text();
-    this.loadEmail(data);
+    try {
+      this.loadEmail(data);
+    } catch (error) {
+      events.publish(EVENT_FILE_UPLOADED_ERROR, `Error: ${error}`);
+    }
   }
 
   loadEmail(emailCode) {
     emailCode = emailCode.replace(/\r\n/g, '\n');
     const [head, body] = twoSplit(emailCode, '\n\n');
     if (!body) {
-      this.onError('No body found in email');
+      throw new Error('No body found in email');
     }
 
     const {parts, contentType} = this.parseMultipart(head, body);
     if (contentType !== 'multipart/alternative') {
-      this.onError('Email is not multipart/alternative');
+      throw new Error('Email is not multipart/alternative');
     }
 
     const ampPart = parts.find((part) =>
       part.contentType.startsWith('text/x-amp-html')
     );
     if (!ampPart) {
-      this.onError('No AMP part found in multipart/alternative');
+      throw new Error('No AMP part found in multipart/alternative');
     }
     events.publish(EVENT_FILE_UPLOADED_SUCCESS);
     this.editor.setSource(ampPart.body);
@@ -100,14 +104,14 @@ class EmailLoader {
       rawParts[0].trim() !== '' ||
       rawParts[rawParts.length - 1].trim() !== '--'
     ) {
-      this.onError('Invalid multipart body');
+      throw new Error('Invalid multipart body');
     }
     const parts = rawParts.slice(1, -1);
 
     return parts.map((part) => {
       let [head, body] = twoSplit(part, '\n\n');
       if (!body) {
-        this.onError('No body found in email part');
+        throw new Error('No body found in email part');
       }
       const headers = this.parseHeaders(head);
       const encoding = headers.get('content-transfer-encoding');
@@ -130,7 +134,7 @@ class EmailLoader {
     const parts = (contentTypeHeader || '').split(/\s*;\s*/);
     const contentType = parts[0].trim();
     if (!contentType.startsWith('multipart/')) {
-      this.onError('Invalid content type: not multipart');
+      throw new Error('Invalid content type: not multipart');
     }
     const params = Object.create(null);
     for (let i = 1; i < parts.length; i++) {
@@ -145,17 +149,12 @@ class EmailLoader {
       params[key] = value;
     }
     if (!params.boundary) {
-      this.onError('Invalid content type: no valid boundary in multipart');
+      throw new Error('Invalid content type: no valid boundary in multipart');
     }
     return {
       contentType,
       boundary: params.boundary,
     };
-  }
-
-  onError(message) {
-    events.publish(EVENT_FILE_UPLOADED_ERROR, `Error: ${message}`);
-    throw new Error(message);
   }
 }
 
