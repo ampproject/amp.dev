@@ -30,10 +30,10 @@
       &:before {
         content: '';
         display: block;
-        width: 30px;
-        height: 30px;
-        margin: auto;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Cpolygon points='11,0.3 11,12.4 5.4,6.8 4,8.3 12,16.3 20,8.3 18.6,6.8 13,12.4 13,0.3 '/%3E%3Cpolygon points='0.7,23.7 0.7,16.3 2.7,16.3 2.7,21.7 21.3,21.7 21.3,16.3 23.3,16.3 23.3,23.7 '/%3E%3C/svg%3E");
+        width: 24px;
+        height: 24px;
+        margin: 0 auto 7px auto;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2348525C' viewBox='0 0 24 24'%3E%3Cpath d='M11 .6v12.2L5.4 7.2 4 8.6l8 8 8-8-1.4-1.4-5.6 5.6V.6z'/%3E%3Cpath class='st0' d='M.7 15.9v7.5l22.6-.1v-7.4h-2v5.5H2.7v-5.5z'/%3E%3C/svg%3E");
       }
     }
 
