@@ -30,6 +30,7 @@ import * as EmailLoader from './email-loader/email-loader.js';
 import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
+import * as Experiments from './experiments/experiments.js';
 import * as ImportURL from './import-url/import-url.js';
 import * as ValidationResult from './validation-result/validation-result.js';
 import * as Validator from './validator/validator.js';
@@ -61,6 +62,7 @@ const preview = Preview.createPreview(document.getElementById('preview'));
 addSplitPaneBehavior(document.querySelector('main'));
 
 ImportURL.createURLImport();
+Experiments.createExperimentsView();
 
 // configure state list behavior
 const stateIndicator = document.getElementById('preview-header-state');

@@ -9,6 +9,11 @@
   border-radius: 4px;
   box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.8);
 
+  &-help-text {
+    @include txt;
+    @include txt-2;
+  }
+
   &-field {
     display: block;
     height: 100%;
@@ -22,10 +27,13 @@
   }
 
   &-submit {
+    cursor: pointer;
     @include txt-font-accent;
     min-width: 100px;
+    margin: 0;
     border: 0;
     border-radius: 0 4px 4px 0;
+    text-align: center;
     font-size: 16px;
     text-transform: uppercase;
     color: color('white');
