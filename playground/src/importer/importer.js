@@ -51,7 +51,10 @@ class Importer {
    * @param {Element} target
    */
   constructor(target, label, helpText) {
-    this.fileUpload = createFileUpload(target);
+    this.fileUpload = createFileUpload(target, {
+      acceptedFiles: 'message/rfc822',
+      url: '#'
+    });
     this.inputBar = createInput(target, {
       helpText: helpText,
       label: label,

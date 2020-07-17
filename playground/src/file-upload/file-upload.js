@@ -21,23 +21,26 @@ import * as EmailLoader from '../email-loader/email-loader.js';
 
 export const EVENT_FILE_UPLOADED = 'event-file-uploaded';
 
-const ALLOWED_FILE_TYPE = 'message/rfc822';
-
-export default function createFileUpload(target) {
-  return new FileUpload(target);
+export default function createFileUpload(target, config) {
+  return new FileUpload(target, config);
 }
 
+/**
+ * FileUpload creates a dropzone that takes a file type and an action URL
+ * used to load a files markup into the playground
+ */
 class FileUpload {
-  constructor(target) {
+  constructor(target, config) {
     target.insertAdjacentHTML('beforeend', template());
     this.container = target.querySelector('.file-upload');
+    this.acceptedFileType = config.acceptedFiles;
     this.label = target.querySelector('label');
     this.dropzone = new Dropzone(target.querySelector('#dz-target'), {
       maxFiles: 1,
       parallelUploads: 1,
-      acceptedFiles: 'message/rfc822',
+      acceptedFiles: config.acceptedFileType,
       autoProcessQueue: false,
-      url: '#',
+      url: config.url,
     });
     this.dropzone.on('addedfile', this.onAddedFile.bind(this));
     this.dropzone.on('maxfilesexceeded', this.onMaxFilesExceeded.bind(this));
@@ -54,10 +57,10 @@ class FileUpload {
       this.removeFile(this.file);
     }
     this.file = file;
-    if (this.file.type == ALLOWED_FILE_TYPE) {
+    if (this.file.type == this.acceptedFileType) {
       events.publish(EVENT_FILE_UPLOADED, file);
     } else {
-      this.showError('Error: File is not in EML format');
+      this.showError('Error: File format is not supported');
     }
     this.removeFile(this.file);
   }
