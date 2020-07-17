@@ -32,11 +32,11 @@ export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
 /* eslint-disable max-len */
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
-export function createImport(runtime) {
+export function createImport() {
   const target = document.getElementById('import-view');
   if (modes.IS_DEFAULT) {
     const trigger = document.getElementById('import-toggle');
-    return new FlyInImporter(target, trigger, runtime);
+    return new FlyInImporter(target, trigger);
   } else if (modes.IS_VALIDATOR) {
     return new InlineImporter(target);
   }
@@ -59,10 +59,10 @@ class Importer {
       name: 'import',
       placeholder: 'Your URL',
     });
-    this.inputBar.submit.addEventListener('click', this.onSubmitURL.bind(this));
+    this.inputBar.submit.addEventListener('click', this.onSubmitUrl.bind(this));
     this.inputBar.input.addEventListener('keyup', (e) => {
       if (e.keyCode === 13) {
-        this.onSubmitURL(e);
+        this.onSubmitUrl(e);
       }
     });
 
@@ -72,7 +72,7 @@ class Importer {
     );
   }
 
-  onSubmitURL(e) {
+  onSubmitUrl(e) {
     e.preventDefault();
     const value = this.inputBar.value;
     const url =

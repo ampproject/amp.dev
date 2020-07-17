@@ -37,7 +37,7 @@ class EmailLoader {
     try {
       this.loadEmail(data);
     } catch (error) {
-      events.publish(EVENT_FILE_UPLOADED_ERROR, `Error: ${error}`);
+      events.publish(EVENT_FILE_UPLOADED_ERROR, error);
     }
   }
 
