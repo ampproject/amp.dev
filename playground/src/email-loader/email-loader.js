@@ -17,7 +17,6 @@ import {EventBus} from '../events/events.js';
 import * as Editor from '../editor/editor.js';
 import * as quotedPrintable from 'quoted-printable';
 
-export const EVENT_FILE_UPLOADED_SUCCESS = 'event-file-uploaded-success';
 export const EVENT_LOAD_EMAIL_ERROR = 'event-file-uploaded-error';
 
 export function createEmailLoader() {
@@ -64,7 +63,6 @@ class EmailLoader {
     if (!ampPart) {
       throw new Error('No AMP part found in multipart/alternative');
     }
-    this.eventBus.publish(EVENT_FILE_UPLOADED_SUCCESS);
     events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, ampPart.body);
   }
 
