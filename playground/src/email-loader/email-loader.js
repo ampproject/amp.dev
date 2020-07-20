@@ -13,23 +13,21 @@
 // limitations under the License.
 
 import events from '../events/events.js';
-import * as quotedPrintable from 'quoted-printable';
+import {EventBus} from '../events/events.js';
+import * as Editor from '../editor/editor.js';
 import * as FileUpload from '../file-upload/file-upload.js';
+import * as quotedPrintable from 'quoted-printable';
 
 export const EVENT_FILE_UPLOADED_SUCCESS = 'event-file-uploaded-success';
-export const EVENT_FILE_UPLOADED_ERROR = 'event-file-uploaded-error';
+export const EVENT_LOAD_EMAIL_ERROR = 'event-file-uploaded-error';
 
-export function createEmailLoader(editor) {
-  return new EmailLoader(editor);
+export function createEmailLoader() {
+  return new EmailLoader();
 }
 
 class EmailLoader {
-  constructor(editor) {
-    this.editor = editor;
-
-    events.subscribe(FileUpload.EVENT_FILE_UPLOADED, (file) => {
-      this.loadEmailContent(file);
-    });
+  constructor() {
+    this.eventBus = new EventBus();
   }
 
   async loadEmailContent(file) {
@@ -37,8 +35,16 @@ class EmailLoader {
     try {
       this.loadEmail(data);
     } catch (error) {
-      events.publish(EVENT_FILE_UPLOADED_ERROR, error);
+      this.eventBus.publish(EVENT_LOAD_EMAIL_ERROR, error);
     }
+  }
+
+  subscribe(channel, observer) {
+    this.eventBus.subscribe(channel, observer);
+  }
+
+  publish(channel, data) {
+    this.eventBus.publish(channel, data);
   }
 
   loadEmail(emailCode) {
@@ -59,8 +65,8 @@ class EmailLoader {
     if (!ampPart) {
       throw new Error('No AMP part found in multipart/alternative');
     }
-    events.publish(EVENT_FILE_UPLOADED_SUCCESS);
-    this.editor.setSource(ampPart.body);
+    this.eventBus.publish(EVENT_FILE_UPLOADED_SUCCESS);
+    events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, ampPart.body);
   }
 
   parseMultipart(head, body) {

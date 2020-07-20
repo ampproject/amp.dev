@@ -15,9 +15,8 @@
 import './file-upload.scss';
 import template from './file-upload.hbs';
 
-import events from '../events/events.js';
+import {EventBus} from '../events/events.js';
 import Dropzone from 'dropzone';
-import * as EmailLoader from '../email-loader/email-loader.js';
 
 export const EVENT_FILE_UPLOADED = 'event-file-uploaded';
 
@@ -45,10 +44,11 @@ class FileUpload {
     this.dropzone.on('addedfile', this.onAddedFile.bind(this));
     this.dropzone.on('maxfilesexceeded', this.onMaxFilesExceeded.bind(this));
 
-    events.subscribe(
-      EmailLoader.EVENT_FILE_UPLOADED_ERROR,
-      this.showError.bind(this)
-    );
+    this.eventBus = new EventBus();
+  }
+
+  subscribe(channel, observer) {
+    this.eventBus.subscribe(channel, observer);
   }
 
   onAddedFile(file) {
@@ -58,7 +58,7 @@ class FileUpload {
     }
     this.file = file;
     if (this.file.type == this.acceptedFileType) {
-      events.publish(EVENT_FILE_UPLOADED, file);
+      this.eventBus.publish(EVENT_FILE_UPLOADED, file);
     } else {
       this.showError('Error: File format is not supported');
     }

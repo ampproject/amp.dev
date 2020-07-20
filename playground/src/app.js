@@ -26,7 +26,6 @@ import Fab from './fab/fab.js';
 
 import * as AutoImporter from './auto-importer/auto-importer.js';
 import * as ComponentsProvider from './components-provider/components-provider.js';
-import * as EmailLoader from './email-loader/email-loader.js';
 import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js';
 import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
@@ -67,6 +66,8 @@ StateView.createStateView(stateListContainer, stateIndicator);
 
 ErrorList.createErrorList();
 ValidationResult.createValidationResult();
+
+Importer.createImport();
 
 const validator = Validator.createValidator();
 
@@ -124,9 +125,6 @@ events.subscribe(EVENT_SET_RUNTIME, (newRuntime) => {
 });
 
 runtimes.init();
-
-EmailLoader.createEmailLoader(editor);
-Importer.createImport();
 
 // configure editor
 const editorUpdateListener = () => {

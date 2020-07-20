@@ -24,6 +24,7 @@ import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
 import FlyIn from '../fly-in/fly-in.js';
 import * as Editor from '../editor/editor.js';
+import * as FileUpload from '../file-upload/file-upload.js';
 import * as EmailLoader from '../email-loader/email-loader.js';
 import * as Runtimes from '../runtime/runtimes.js';
 
@@ -53,8 +54,10 @@ class Importer {
   constructor(target, label, helpText) {
     this.fileUpload = createFileUpload(target, {
       acceptedFiles: 'message/rfc822',
-      url: '#'
+      url: '#',
     });
+    this.emailLoader = EmailLoader.createEmailLoader();
+
     this.inputBar = createInput(target, {
       helpText: helpText,
       label: label,
@@ -62,12 +65,23 @@ class Importer {
       name: 'import',
       placeholder: 'Your URL',
     });
+
     this.inputBar.submit.addEventListener('click', this.onSubmitUrl.bind(this));
     this.inputBar.input.addEventListener('keyup', (e) => {
       if (e.keyCode === 13) {
         this.onSubmitUrl(e);
       }
     });
+
+    this.fileUpload.subscribe(
+      FileUpload.EVENT_FILE_UPLOADED,
+      this.emailLoader.loadEmailContent.bind(this.emailLoader)
+    );
+
+    // this.fileUpload.subscribe(
+    //   FileUpload.EVENT_FILE_UPLOAD_ERROR,
+    //   this.emailLoader.loadEmailContent.bind(this.emailLoader)
+    // );
 
     events.subscribe(
       Document.EVENT_RECEIVE_URL_CONTENT,
@@ -142,11 +156,6 @@ class FlyInImporter extends FlyIn {
     );
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this.onSetRuntime.bind(this));
-
-    events.subscribe(
-      EmailLoader.EVENT_FILE_UPLOADED_SUCCESS,
-      this.onUpdateEditorContent.bind(this)
-    );
   }
 
   /**
