@@ -78,10 +78,10 @@ class Importer {
       this.emailLoader.loadEmailContent.bind(this.emailLoader)
     );
 
-    // this.fileUpload.subscribe(
-    //   FileUpload.EVENT_FILE_UPLOAD_ERROR,
-    //   this.emailLoader.loadEmailContent.bind(this.emailLoader)
-    // );
+    this.emailLoader.subscribe(
+      EmailLoader.EVENT_LOAD_EMAIL_ERROR,
+      this.fileUpload.showError.bind(this.fileUpload)
+    );
 
     events.subscribe(
       Document.EVENT_RECEIVE_URL_CONTENT,
