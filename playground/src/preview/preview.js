@@ -20,6 +20,7 @@ import debounce from '../debounce/debounce.js';
 import createLoader from '../loader/base.js';
 import modes from '../modes/';
 import * as StateView from '../state-view/state-view.js';
+import * as Experiment from '../experiments/experiments.js';
 
 const PARAM_MODE = 'mode';
 const PARAM_WIDTH = 'width';
@@ -49,6 +50,11 @@ class Preview {
         events.publish(EVENT_AMP_BIND_NEW_STATE, state);
       });
     });
+
+    events.subscribe(
+      Experiment.EVENT_TOGGLE_EXPERIMENT,
+      debounce(this.toggleExperiment.bind(this), 200)
+    );
 
     events.subscribe(Runtimes.EVENT_SET_RUNTIME, this._onSetRuntime.bind(this));
   }
@@ -314,6 +320,12 @@ class Preview {
         events.publish(EVENT_AMP_BIND_NEW_STATE, state);
       });
     }
+  }
+
+  toggleExperiment(experiment, force) {
+    const childWindow = this.getIframeWindow(this.previewIframe);
+    childWindow.AMP.toggleExperiment(experiment, force);
+    this.reload();
   }
 
   getIframeWindow(iframeElement) {

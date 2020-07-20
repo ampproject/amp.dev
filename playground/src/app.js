@@ -30,6 +30,7 @@ import * as CspHashCalculator from './csp-hash-calculator/csp-hash-calculator.js
 import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
 import * as Importer from './importer/importer.js';
+import * as Experiments from './experiments/experiments.js';
 import * as ValidationResult from './validation-result/validation-result.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
