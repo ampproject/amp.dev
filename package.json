@@ -80,7 +80,7 @@
     "multer": "1.4.2",
     "node-fetch": "2.6.0",
     "node-zopfli-es": "1.0.6",
-    "nunjucks": "3.2.1",
+    "nunjucks": "3.2.2",
     "p-queue": "6.5.0",
     "randomstring": "1.1.5",
     "rcs-core": "3.3.1",
