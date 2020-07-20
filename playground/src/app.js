@@ -69,6 +69,7 @@ ErrorList.createErrorList();
 ValidationResult.createValidationResult();
 
 Importer.createImport();
+Experiments.createExperimentsView();
 
 const validator = Validator.createValidator();
 
