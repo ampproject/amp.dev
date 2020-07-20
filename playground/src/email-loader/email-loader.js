@@ -15,7 +15,6 @@
 import events from '../events/events.js';
 import {EventBus} from '../events/events.js';
 import * as Editor from '../editor/editor.js';
-import * as FileUpload from '../file-upload/file-upload.js';
 import * as quotedPrintable from 'quoted-printable';
 
 export const EVENT_FILE_UPLOADED_SUCCESS = 'event-file-uploaded-success';
