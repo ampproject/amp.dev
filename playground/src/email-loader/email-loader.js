@@ -64,6 +64,7 @@ class EmailLoader {
       throw new Error('No AMP part found in multipart/alternative');
     }
     events.publish(Editor.EVENT_UPDATE_EDITOR_CONTENT, ampPart.body);
+    return ampPart.body;
   }
 
   parseMultipart(head, body) {

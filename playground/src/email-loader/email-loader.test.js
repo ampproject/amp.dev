@@ -51,7 +51,7 @@ Content-Type: text/html
   });
 
   test('parses valid email', () => {
-    emailLoader.loadEmail(`
+    const ampPart = emailLoader.loadEmail(`
 From:  Person A <persona@example.com>
 To: Person B <personb@example.com>
 Subject: An AMP email!
@@ -82,7 +82,7 @@ Content-Type: text/html; charset="UTF-8"
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae--
     `);
-    expect(setSourceMock.mock.calls[0][0]).toBe(`<!doctype html>
+    expect(ampPart).toBe(`<!doctype html>
 <html ⚡4email>
 <head>
   <meta charset="utf-8">
