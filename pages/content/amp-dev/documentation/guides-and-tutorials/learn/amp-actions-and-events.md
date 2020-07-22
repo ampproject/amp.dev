@@ -201,7 +201,7 @@ For example, the following is possible in AMP:
   <tr>
     <td><code>slideChange</code></td>
     <td>Fired when the carousel's current slide changes.</td>
-    <td>// Slide number.<br>
+    <td>Slide number.<br>
       <code>event.index</code>
     </td>
   </tr>
@@ -257,9 +257,9 @@ For example, the following is possible in AMP:
   <tr>
     <td><code>select</code></td>
     <td>Fired when an option is selected or deselected.</td>
-    <td>// Target element's "option" attribute value.
+    <td>Target element's "option" attribute value.
 <code>event.targetOption</code><br>
-// Array of "option" attribute values of all selected elements.
+Array of "option" attribute values of all selected elements.
 <code>event.selectedOptions</code></td>
 
   </tr>
@@ -336,14 +336,14 @@ For example, the following is possible in AMP:
   <tr>
     <td><code>submit-success</code></td>
     <td>Fired when the form submission response is success.</td>
-    <td>// Response JSON.<br>
+    <td>Response JSON.<br>
         <code>event.response</code>
     </td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>Fired when the form submission response is an error.</td>
-    <td>// Response JSON.<br>
+    <td>Response JSON.<br>
       <code>event.response</code>
     </td>
   </tr>
