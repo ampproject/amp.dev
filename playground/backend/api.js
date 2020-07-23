@@ -30,13 +30,6 @@ const log = require('@lib/utils/log')('Playground API');
 const MAX_AGE = 60 * 60;
 
 /**
- * Maximum file size that is streamed before a fetch is terminated in bytes.
- * amp.dev's homepage is ~35KB - we allow triple the size
- * @type {Number}
- */
-const MAX_FILE_SIZE = 100800;
-
-/**
  * The time in milliseconds in which HOST_RATE_LIMIT requests can
  * happen before the user needs to wait
  * @type {Number}
@@ -64,8 +57,6 @@ const MAX_LIMITS = 500;
  */
 async function fetchDocument(fetchUrl) {
   const response = await fetch(fetchUrl, {
-    size: MAX_FILE_SIZE,
-    max: MAX_LIMITS,
     headers: {
       'Accept': 'text/html',
       'x-requested-by': 'playground',
@@ -90,6 +81,7 @@ async function fetchDocument(fetchUrl) {
 }
 
 const limits = new LRU({
+  max: MAX_LIMITS,
   maxAge: RATE_LIMIT_TIME_FRAME,
 });
 
