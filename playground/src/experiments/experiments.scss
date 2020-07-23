@@ -6,10 +6,28 @@
     overflow: hidden;
   }
 
-  .experiments-list {
-    max-height: 70%;
-    padding: 0;
-    overflow-y: scroll;
-    list-style: none;
+  .experiments {
+    &-hints {
+      height: 70%;
+      overflow-y: scroll;
+      list-style: none;
+      padding: 0 15px;
+      transform: scale3d(1, 0, 1);
+
+      &.active {
+        transform: scale3d(1, 1, 1);
+      }
+
+      &-item {
+
+      }
+    }
+
+    &-list {
+      max-height: 70%;
+      padding: 0;
+      overflow-y: scroll;
+      list-style: none;
+    }
   }
 }

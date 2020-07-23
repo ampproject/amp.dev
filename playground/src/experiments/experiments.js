@@ -43,6 +43,7 @@ class Experiments extends FlyIn {
     this.trigger = Button.from(trigger, this.toggle.bind(this));
     this.content.insertAdjacentHTML('beforeend', template());
     this.experimentList = this.content.querySelector('#experiments-list');
+    this.experimentHints = this.content.querySelector('#experiments-hints');
     this.availableExperiments = Promise.resolve([]);
     this.activeExperiments = [];
 
@@ -63,6 +64,7 @@ class Experiments extends FlyIn {
         this.onSubmitExperiment();
       }
     });
+    this.inputBar.input.addEventListener('focus', this.toggleAutocompleteHints.bind(this));
     this.inputBar.submit.addEventListener('click', () => {
       this.onSubmitExperiment();
     });
@@ -91,6 +93,17 @@ class Experiments extends FlyIn {
         }
       }
     }
+  }
+
+  toggleAutocompleteHints() {
+    this.experimentHints.classList.add('active');
+    this.init().then(() => {
+      for (var experiment of this.availableExperiments) {
+        const listItem = document.createElement('li');
+        listItem.innerText = experiment;
+        this.experimentHints.appendChild(listItem);
+      }
+    });
   }
 
   onSubmitExperiment() {
