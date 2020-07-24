@@ -8,18 +8,24 @@
 
   .experiments {
     &-hints {
-      height: 70%;
+      position: absolute;
+      width: calc(100% - 50px);
+      height: 60%;
       overflow-y: scroll;
+      margin-top: 0;
+      padding: 0;
+      border-radius: 4px;
       list-style: none;
-      padding: 0 15px;
-      transform: scale3d(1, 0, 1);
+      box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: .3s;
+      pointer-events: none;
 
       &.active {
-        transform: scale3d(1, 1, 1);
-      }
-
-      &-item {
-
+        pointer-events: all;
+        opacity: 1;
+        background: color('white');
+        transform: translate3d(0, 10px, 0);
       }
     }
 
