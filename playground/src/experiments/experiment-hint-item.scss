@@ -1,0 +1,26 @@
+@import '_variables.scss';
+@import '_functions.scss';
+@import 'components/atoms/_text.scss';
+
+.hint-item {
+  border-bottom: 1px solid color('silver');
+  padding: 7px 15px 7px 25px;
+  cursor: pointer;
+
+  // &:first-child { padding-top: 0; }
+  // &:last-child { border-bottom: 0; }
+
+  &:hover {
+    background: color('wild-sand');
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    margin: 5px 0;
+    @include txt;
+    @include txt-2;
+  }
+}
