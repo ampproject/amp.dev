@@ -15,6 +15,9 @@
 import './experiments.scss';
 import template from './experiments.hbs';
 
+import './experiment-hint-item.scss';
+import hintItemTemplate from './experiment-hint-item.hbs';
+
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/fly-in.js';
@@ -23,7 +26,10 @@ import createInput from '../input-bar/input-bar.js';
 
 const EXPERIMENTS_CONFIG_SOURCE_PATH =
   'https://raw.githubusercontent.com/ampproject/amphtml/master/tools/experiments/experiments-config.js';
+
+const EXPERIMENTS_ITEM_PATTERN = /(?:\{\s)(.*?)(?:})/gms;
 const EXPERIMENTS_ID_PATTERN = /(?:id: ')(.*?)(?:')/gm;
+const EXPERIMENTS_NAME_PATTERN = /(?<=name:\s)(.*?)(?=,\n)/gms;
 
 export const EVENT_TOGGLE_EXPERIMENT = 'event-toggle-experiment';
 
@@ -43,7 +49,6 @@ class Experiments extends FlyIn {
     this.trigger = Button.from(trigger, this.toggle.bind(this));
     this.content.insertAdjacentHTML('beforeend', template());
     this.experimentList = this.content.querySelector('#experiments-list');
-    this.experimentHints = this.content.querySelector('#experiments-hints');
     this.availableExperiments = Promise.resolve([]);
     this.activeExperiments = [];
 
@@ -58,18 +63,21 @@ class Experiments extends FlyIn {
         placeholder: 'Experiment ID',
       }
     );
-
     this.inputBar.input.addEventListener('keydown', (e) => {
       if (e.keyCode === 13) {
         this.onSubmitExperiment();
       }
     });
-    this.inputBar.input.addEventListener('focus', this.toggleAutocompleteHints.bind(this));
+    this.inputBar.input.addEventListener(
+      'focus',
+      this.toggleHintList.bind(this)
+    );
     this.inputBar.submit.addEventListener('click', () => {
       this.onSubmitExperiment();
     });
 
     this.addActiveExperiments();
+    this.createHintList();
 
     events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
       this.removeExperiment(experiment);
@@ -95,22 +103,41 @@ class Experiments extends FlyIn {
     }
   }
 
-  toggleAutocompleteHints() {
-    this.experimentHints.classList.add('active');
+  createHintList() {
+    this.hintList = this.content.querySelector('#experiments-hints');
     this.init().then(() => {
-      for (var experiment of this.availableExperiments) {
-        const listItem = document.createElement('li');
-        listItem.innerText = experiment;
-        this.experimentHints.appendChild(listItem);
+      for (const experiment of this.availableExperiments) {
+        const hintItem = document.createElement('li');
+        hintItem.className = 'hint-item';
+        hintItem.insertAdjacentHTML(
+          'beforeend',
+          hintItemTemplate({
+            experiment,
+          })
+        );
+
+        hintItem.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.inputBar.value = experiment.id;
+          this.onSubmitExperiment();
+          this.toggleHintList();
+        });
+
+        this.hintList.appendChild(hintItem);
       }
     });
+  }
+
+  toggleHintList() {
+    this.hintList.classList.toggle('active');
   }
 
   onSubmitExperiment() {
     this.inputBar.toggleLoading();
     this.init().then(() => {
       const inputValue = this.inputBar.value;
-      if (!inputValue || !this.availableExperiments.includes(inputValue)) {
+      const experimentIds = this.availableExperiments.map((experiment) => experiment.id);
+      if (!inputValue || !experimentIds.includes(inputValue)) {
         this.inputBar.showError('Not a valid AMP Experiment');
       } else if (!this.activeExperiments.includes(inputValue)) {
         this.addExperiment(inputValue);
