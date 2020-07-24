@@ -7,20 +7,19 @@
   padding: 7px 15px 7px 25px;
   cursor: pointer;
 
-  // &:first-child { padding-top: 0; }
-  // &:last-child { border-bottom: 0; }
+  &:last-child { border-bottom: 0; }
 
   &:hover {
     background: color('wild-sand');
-  }
-
-  h4 {
-    margin: 0;
   }
 
   p {
     margin: 5px 0;
     @include txt;
     @include txt-2;
+
+    strong {
+      color: color('black');
+    }
   }
 }

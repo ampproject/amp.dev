@@ -104,7 +104,13 @@ class Experiments extends FlyIn {
   }
 
   createHintList() {
-    this.hintList = this.content.querySelector('#experiments-hints');
+    this.hintList = this.content.querySelector('#hints-list');
+    this.hintList.querySelector('div').addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('klick');
+      this.toggleHintList();
+    });
+
     this.init().then(() => {
       for (const experiment of this.availableExperiments) {
         const hintItem = document.createElement('li');
@@ -123,7 +129,7 @@ class Experiments extends FlyIn {
           this.toggleHintList();
         });
 
-        this.hintList.appendChild(hintItem);
+        this.hintList.querySelector('ul').appendChild(hintItem);
       }
     });
   }
