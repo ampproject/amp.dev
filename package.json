@@ -134,7 +134,7 @@
     "html-webpack-inline-source-plugin": "1.0.0-beta.2",
     "html-webpack-plugin": "4.3.0",
     "husky": "4.2.5",
-    "jasmine": "3.5.0",
+    "jasmine": "3.6.1",
     "jest": "26.1.0",
     "js-base64": "2.6.3",
     "js-beautify": "1.11.0",
