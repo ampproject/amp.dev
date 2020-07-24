@@ -136,10 +136,20 @@ class Experiments extends FlyIn {
         return response.text();
       })
       .then((body) => {
-        const experimentIds = body.match(EXPERIMENTS_ID_PATTERN).map((id) => {
-          return id.substring(5, id.length - 1);
-        });
-        return experimentIds;
+        const experiments = body
+          .match(EXPERIMENTS_ITEM_PATTERN)
+          .map((experiment) => {
+            const id = experiment.match(EXPERIMENTS_ID_PATTERN)[0];
+            const name = experiment
+              .match(EXPERIMENTS_NAME_PATTERN)[0]
+              .replace(/'\s\+\s+'/, '')
+              .trim();
+            return {
+              id: id.substring(5, id.length - 1),
+              name: name.substring(1, name.length - 1),
+            };
+          });
+        return experiments;
       })
       .catch((err) => {
         console.error(err);
