@@ -142,7 +142,9 @@ class Experiments extends FlyIn {
     this.inputBar.toggleLoading();
     this.init().then(() => {
       const inputValue = this.inputBar.value;
-      const experimentIds = this.availableExperiments.map((experiment) => experiment.id);
+      const experimentIds = this.availableExperiments.map(
+        (experiment) => experiment.id
+      );
       if (!inputValue || !experimentIds.includes(inputValue)) {
         this.inputBar.showError('Not a valid AMP Experiment');
       } else if (!this.activeExperiments.includes(inputValue)) {
