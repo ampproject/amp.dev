@@ -97,6 +97,10 @@ class Experiments extends FlyIn {
     }
   }
 
+  /**
+   * Reads currently active experiments from local localStorage
+   * and adds them to the list
+   */
   addActiveExperiments() {
     const experiments = localStorage.getItem('amp-experiment-toggles');
     if (experiments) {
