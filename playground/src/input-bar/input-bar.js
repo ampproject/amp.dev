@@ -18,6 +18,10 @@ import template from './input-bar.hbs';
 import './autocomplete-item.scss';
 import autocompleteItem from './autocomplete-item.hbs';
 
+import {EventBus} from '../events/events.js';
+
+export const EVENT_SELECT_AUTOCOMPLETE = 'event-select-autocomplete';
+
 export default function createInput(target, config) {
   return new Input(target, config);
 }
@@ -34,6 +38,12 @@ class Input {
     if (config.autocomplete) {
       this.createAutocomplete(config.autocomplete);
     }
+
+    this.eventBus = new EventBus();
+  }
+
+  subscribe(channel, observer) {
+    this.eventBus.subscribe(channel, observer);
   }
 
   createAutocomplete(autocomplete) {
@@ -64,6 +74,11 @@ class Input {
           option,
         })
       );
+
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.eventBus.publish(EVENT_SELECT_AUTOCOMPLETE, option.id);
+      });
 
       list.appendChild(item);
     }

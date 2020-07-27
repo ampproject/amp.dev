@@ -19,6 +19,7 @@ import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/fly-in.js';
 import * as ExperimentItem from './experiment-list-item.js';
+import * as InputBar from '../input-bar/input-bar.js';
 import createInput from '../input-bar/input-bar.js';
 
 const EXPERIMENTS_CONFIG_SOURCE_PATH =
@@ -82,11 +83,15 @@ class Experiments extends FlyIn {
       this.onSubmitExperiment();
     });
 
-    this.addActiveExperiments();
-
     events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
       this.removeExperiment(experiment);
     });
+
+    this.inputBar.subscribe(
+      InputBar.EVENT_SELECT_AUTOCOMPLETE, this.addActiveExperiments.bind(this)
+    );
+
+    this.addActiveExperiments();
   }
 
   async init() {
