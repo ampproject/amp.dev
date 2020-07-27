@@ -12,7 +12,7 @@ O currículo e os textos do curso estão disponíveis no Google Docs. Ele també
 
 <a id="get-courses" href="https://drive.google.com/drive/folders/1QE_C-RmOjG8Sa_DGKQNzcOytXnEE5qoA" target="_blank" style="margin: 1.5em" class="ap-a-btn">{{ _('Get the courses') }}</a>
 
-Como você pode iniciar um repositório no Glitch [aqui](https://glitch.com/~enshrined-eyebrow).
+Como você pode iniciar um repositório no Glitch <a href="https://glitch.com/~enshrined-eyebrow" target="_blank">aqui</a>.
 
 ### Material do curso
 

@@ -5,7 +5,7 @@ leveled: true
 ---
 ## What is Glitch?
 
-To complete the code examples included in these courses, we will be using [Glitch](https://glitch.com/). Glitch is an online code editor that allows you to create and view web sites and server APIs without having to install anything on your computer.
+To complete the code examples included in these courses, we will be using <a href="https://glitch.com/" target="_blank">Glitch</a>. Glitch is an online code editor that allows you to create and view web sites and server APIs without having to install anything on your computer.
 
 The Glitch code editor environment looks like this:
 
@@ -19,7 +19,7 @@ Throughout these courses, you will need various images to complete the exercises
 
 {{ image('/static/img/courses/intermediate/image9.png', 371, 354, caption='The details pop-up -including URL- for an image in the assets collection') }}
 
-Open [this](https://glitch.com/edit/#!/aquamarine-baritone) project. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
+Open <a href="https://glitch.com/edit/#!/aquamarine-baritone" target="_blank">this</a> project. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
 
 It’s not necessary to use Glitch to complete these trainings. However, some of the code required to complete the exercises is not discussed in these courses, but is contained in the Glitch samples. If you’d like to use another editor, you may still need to go into the Glitch samples to copy the CSS and server code into your local solution.
 

@@ -193,7 +193,7 @@ Using the [documentation](../../../documentation/guides-and-tutorials/start/crea
 
 ### Solution
 
-The solution can be found in [this](https://glitch.com/~hungry-modem) Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in <a href="https://glitch.com/~hungry-modem" target="_blank">this</a> Glitch example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}<head>
@@ -240,7 +240,7 @@ It's our team's first day building out our Chico's Cheese Bike site. So far, the
 
 {{ image('/static/img/courses/beginner/image17.png', 824, 790,  align='center half', caption='Our basic HTML website') }}
 
-In [your](https://glitch.com/edit/#!/nosy-leech) Glitch project, open `index.html` and verify that the HTML looks like this:
+In <a href="https://glitch.com/edit/#!/nosy-leech" target="_blank">your</a> Glitch project, open `index.html` and verify that the HTML looks like this:
 
 [sourcecode:html]
 {% raw %}<!DOCTYPE html>
@@ -417,7 +417,7 @@ Using the [documentation]({{g.doc('/content/amp-dev/documentation/guides-and-tut
 
 ### Solution
 
-The solution can be found in [this](https://glitch.com/~hungry-modem) Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in <a href="https://glitch.com/~hungry-modem" target="_blank">this</a> Glitch example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}<head>
