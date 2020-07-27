@@ -91,8 +91,7 @@
         <div id="runtime-select"></div>
         {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
         {{> button/button.hbs id="share" text="Share"}}
-        {{> button/button.hbs id="import-url" class="hide-on-mobile" text="Import URL"}}
-        {{> button/button.hbs id="import-email" class="hidden" text="Import email"}}
+        {{> button/button.hbs id="import-toggle" class="hide-on-mobile" text="Import"}}
         {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
       {{/htmlWebpackPlugin.options.validator}}
@@ -144,7 +143,7 @@
     <section id="validation" class="panel">
       <h1>Validate your AMP page</h1>
 
-      <div id="import-url-view"></div>
+      <div id="import-view"></div>
       <div id="validation-result" class="validation-result"></div>
       <div id="error-list"></div>
     </section>
@@ -155,7 +154,7 @@
     {{^htmlWebpackPlugin.options.validator}}
     <div id="error-list" class="fly-in fly-in--right fly-in--error" data-title="Validation errors"></div>
     <div id="state-view" class="fly-in fly-in--left fly-in--state fly-in--lightbox" data-title="AMP State"></div>
-    <div id="import-url-view" class="fly-in fly-in--left fly-in--import-url fly-in--lightbox" data-title="Import URL"></div>
+    <div id="import-view" class="fly-in fly-in--left fly-in--import fly-in--lightbox" data-title="Import"></div>
     <div id="experiments-view" class="fly-in fly-in--right fly-in--experiments fly-in--lightbox active" data-title="Experiments"></div>
     <div id="fly-in-background"></div>
     {{/htmlWebpackPlugin.options.validator}}

@@ -12,17 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './import-url.scss';
-import template from '../import-url/import-url.hbs';
+import './importer.scss';
+import template from '../importer/importer.hbs';
 
 import events from '../events/events.js';
 import modes from '../modes/';
 import createInput from '../input-bar/input-bar.js';
+import createFileUpload from '../file-upload/file-upload.js';
 
 import * as Button from '../button/button.js';
 import * as Document from '../document/document.js';
 import FlyIn from '../fly-in/fly-in.js';
 import * as Editor from '../editor/editor.js';
+import * as FileUpload from '../file-upload/file-upload.js';
+import * as EmailLoader from '../email-loader/email-loader.js';
 import * as Runtimes from '../runtime/runtimes.js';
 
 export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
@@ -30,14 +33,13 @@ export const EVENT_REQUEST_URL_CONTENT = 'event-request-url-content';
 /* eslint-disable max-len */
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
-export function createURLImport() {
-  const target = document.getElementById('import-url-view');
-
+export function createImport() {
+  const target = document.getElementById('import-view');
   if (modes.IS_DEFAULT) {
-    const trigger = document.getElementById('import-url');
-    return new FlyInURLImport(target, trigger);
+    const trigger = document.getElementById('import-toggle');
+    return new FlyInImporter(target, trigger);
   } else if (modes.IS_VALIDATOR) {
-    return new InlineURLImport(target);
+    return new InlineImporter(target);
   }
 }
 
@@ -45,25 +47,41 @@ export function createURLImport() {
  * Creates a input bar that takes a URL which is used to load
  * a page into the playground
  */
-class URLImport {
+class Importer {
   /**
    * @param {Element} target
    */
   constructor(target, label, helpText) {
+    this.fileUpload = createFileUpload(target, {
+      acceptedFiles: 'message/rfc822',
+      url: '#',
+    });
+    this.emailLoader = EmailLoader.createEmailLoader();
+
     this.inputBar = createInput(target, {
       helpText: helpText,
       label: label,
       type: 'url',
-      name: 'import-url',
+      name: 'import',
       placeholder: 'Your URL',
     });
 
-    this.inputBar.submit.addEventListener('click', this.onSubmit.bind(this));
+    this.inputBar.submit.addEventListener('click', this.onSubmitUrl.bind(this));
     this.inputBar.input.addEventListener('keyup', (e) => {
       if (e.keyCode === 13) {
-        this.onSubmit(e);
+        this.onSubmitUrl(e);
       }
     });
+
+    this.fileUpload.subscribe(
+      FileUpload.EVENT_FILE_UPLOADED,
+      this.emailLoader.loadEmailContent.bind(this.emailLoader)
+    );
+
+    this.emailLoader.subscribe(
+      EmailLoader.EVENT_LOAD_EMAIL_ERROR,
+      this.fileUpload.showError.bind(this.fileUpload)
+    );
 
     events.subscribe(
       Document.EVENT_RECEIVE_URL_CONTENT,
@@ -71,7 +89,7 @@ class URLImport {
     );
   }
 
-  onSubmit(e) {
+  onSubmitUrl(e) {
     e.preventDefault();
     const value = this.inputBar.value;
     const url =
@@ -82,7 +100,7 @@ class URLImport {
       this.inputBar.toggleLoading();
       events.publish(EVENT_REQUEST_URL_CONTENT, url);
     } else {
-      this.inputBar.showError('Please enter a valid URL');
+      this.inputBar.showError('Error: Please enter a valid URL');
     }
   }
 
@@ -107,23 +125,27 @@ class URLImport {
         this.inputBar.toggleLoading(false);
       });
   }
+
+  render(runtime) {
+    this.inputBar.hidden = runtime.id != 'amphtml';
+    this.fileUpload.hidden = runtime.id != 'amp4email';
+  }
 }
 
 /**
  * The import functionality shown in a layer
  * @extends FlyIn
  */
-class FlyInURLImport extends FlyIn {
+class FlyInImporter extends FlyIn {
   constructor(target, trigger) {
     super(target);
 
     this.target = target;
     this.trigger = Button.from(trigger, this.toggle.bind(this));
-
     this.content.insertAdjacentHTML('beforeend', template());
 
-    this.urlImport = new URLImport(
-      target.querySelector('#input-bar-url'),
+    this.importer = new Importer(
+      this.content.querySelector('#import-container'),
       'Import',
       "Enter a valid URL to import the page's markup into the editor."
     );
@@ -151,19 +173,19 @@ class FlyInURLImport extends FlyIn {
    * @return {undefined}
    */
   onSetRuntime(runtime) {
-    this.trigger.toggleClass('hidden', runtime === 'amp4email');
+    this.importer.render(runtime);
   }
 }
 
 /**
- * Import functionality as used for the validator, shown inline
+ * Importer functionality as used for the validator, shown inline
  * with slightly different wording
  */
-class InlineURLImport {
+class InlineImporter {
   constructor(target) {
     target.insertAdjacentHTML('beforeend', template());
 
-    this.urlImport = new URLImport(
+    this.importer = new Importer(
       target.querySelector('#input-bar-url'),
       'Validate'
     );

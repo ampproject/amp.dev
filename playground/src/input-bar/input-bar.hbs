@@ -1,27 +1,25 @@
-{{#if helpText}}
-<p class="input-bar-help-text">{{{ helpText }}}</p>
-{{/if}}
-
-<div class="input-bar">
-  <input class="input-bar-field"
-      type="{{ type }}"
-      name="{{ name }}"
-      placeholder="{{ placeholder }}">
-  <button class="input-bar-submit"
-      name="button">
-    {{ label }}
-  </button>
+<div class="input">
+  {{#if helpText}}
+  <p class="input-help-text">{{{ helpText }}}</p>
+  {{/if}}
+  <div class="input-bar">
+    <input class="input-bar-field"
+        type="{{ type }}"
+        name="{{ name }}"
+        placeholder="{{ placeholder }}">
+    <button class="input-bar-submit"
+        name="button">
+      {{ label }}
+    </button>
+  </div>
+  <label class="input-bar-label"></label>
+  {{#if autocomplete}}
+  <div class="input-bar-autocomplete">
+    <header class="input-bar-autocomplete-header">
+      <h4>Active Experiments</h4>
+      <div class="input-bar-autocomplete-header-close" tabindex="0" role="button">✕</div>
+    </header>
+    <ul class="input-bar-autocomplete-list"></ul>
+  </div>
+  {{/if}}
 </div>
-
-<label class="input-bar-label">
-</label>
-
-{{#if autocomplete}}
-<div class="input-bar-autocomplete">
-  <header class="input-bar-autocomplete-header">
-    <h4>Active Experiments</h4>
-    <div class="input-bar-autocomplete-header-close" tabindex="0" role="button">✕</div>
-  </header>
-  <ul class="input-bar-autocomplete-list"></ul>
-</div>
-{{/if}}
