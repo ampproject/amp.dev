@@ -105,7 +105,12 @@
         "source": "/amp-conf-2018",
         "destination": "https://amp.dev/events/amp-conf-2019?referrer=ampproject.org",
         "type": 301
+      }{
+        "source": "/:lang/amp-conf-2018",
+        "destination": "https://amp.dev/events/amp-conf-2019?referrer=ampproject.org",
+        "type": 301
       },
+,
       {
         "source": "/amp-conf-2017",
         "destination": "https://amp.dev/events/amp-conf-2019?referrer=ampproject.org",
@@ -140,8 +145,11 @@
         "type": 301
       },
 
-
-
+      {
+          "source": "/latest/blog/ads-the-shadow-reader-improved/",
+          "destination": "https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/",
+          "type": 301
+      },
       {
           "source": "/latest/blog/1056",
           "destination": "https://blog.amp.dev/2017/02/15/1056/amp/",
@@ -228,6 +236,11 @@
           "type": 301
       },
       {
+          "source": "/latest/blog/ads-amp-roadmap-update-for-end-of-q2",
+          "destination": "https://blog.amp.dev/2017/07/14/amp-roadmap-update-for-end-of-q2/amp/",
+          "type": 301
+      },
+      {
           "source": "/latest/blog/amp-roadmap-update-for-end-of-q2",
           "destination": "https://blog.amp.dev/2017/07/14/amp-roadmap-update-for-end-of-q2/amp/",
           "type": 301
@@ -279,6 +292,11 @@
       },
       {
           "source": "/latest/blog/an-amp-paywall-and-subscription-model-for-all-publishers",
+          "destination": "https://blog.amp.dev/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers/amp/",
+          "type": 301
+      },
+      {
+          "source": "/latest/blog/ads-an-amp-paywall-and-subscription-model-for-all-publishers",
           "destination": "https://blog.amp.dev/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers/amp/",
           "type": 301
       },
@@ -689,7 +707,17 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-2058",
+      "destination": "https://blog.amp.dev/2018/06/06/2058/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/a-first-look-at-using-web-packaging-to-improve-amp-urls",
+      "destination": "https://blog.amp.dev/2018/05/08/a-first-look-at-using-web-packaging-to-improve-amp-urls/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-a-first-look-at-using-web-packaging-to-improve-amp-urls",
       "destination": "https://blog.amp.dev/2018/05/08/a-first-look-at-using-web-packaging-to-improve-amp-urls/amp/",
       "type": 301
       },
@@ -704,8 +732,23 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-addthis-is-now-available-for-amp",
+      "destination": "https://blog.amp.dev/2018/07/30/addthis-is-now-available-for-amp/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/ads-and-amp",
       "destination": "https://blog.amp.dev/2018/02/14/ads-and-amp/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-ads-and-amp",
+      "destination": "https://blog.amp.dev/2018/02/14/ads-and-amp/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-ads-on-amp-pages-became-safer-and-more-user-friendly-in-2018",
+      "destination": "https://blog.amp.dev/2018/12/11/ads-on-amp-pages-became-safer-and-more-user-friendly-in-2018/amp/",
       "type": 301
       },
       {
@@ -720,6 +763,11 @@
       },
       {
       "source": "/:lang/latest/blog/amp-and-advertising-conversions",
+      "destination": "https://blog.amp.dev/2018/05/03/amp-and-advertising-conversions/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-amp-and-advertising-conversions",
       "destination": "https://blog.amp.dev/2018/05/03/amp-and-advertising-conversions/amp/",
       "type": 301
       },
@@ -759,6 +807,11 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-amp-grows-its-footprint",
+      "destination": "https://blog.amp.dev/2017/03/07/amp-grows-its-footprint/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/amp-projects-new-governance-model-now-in-effect",
       "destination": "https://blog.amp.dev/2018/11/30/amp-projects-new-governance-model-now-in-effect/amp/",
       "type": 301
@@ -769,8 +822,18 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-amp-roadmap-update-for-end-of-q2",
+      "destination": "https://blog.amp.dev/2017/07/14/amp-roadmap-update-for-end-of-q2/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/amp-roadmap-update-for-mid-q1-2017",
       "destination": "https://blog.amp.dev/2017/02/18/amp-roadmap-update-for-mid-q1-2017/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-amp-roadmap-update-for-q2",
+      "destination": "https://blog.amp.dev/2017/05/25/amp-roadmap-update-for-q2/amp/",
       "type": 301
       },
       {
@@ -784,13 +847,28 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-amp-roadshow-more-cities-more-content",
+      "destination": "https://blog.amp.dev/2018/04/03/amp-roadshow-more-cities-more-content/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/amp-roadshow-more-cities-more-content",
       "destination": "https://blog.amp.dev/2018/04/03/amp-roadshow-more-cities-more-content/amp/",
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-amp-story-learnings-and-best-practices",
+      "destination": "https://blog.amp.dev/2018/10/25/amp-story-learnings-and-best-practices/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/amp-story-learnings-and-best-practices",
       "destination": "https://blog.amp.dev/2018/10/25/amp-story-learnings-and-best-practices/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-amp-two-years-of-user-first-webpages",
+      "destination": "https://blog.amp.dev/2017/10/19/amp-two-years-of-user-first-webpages/amp/",
       "type": 301
       },
       {
@@ -809,6 +887,16 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-amping-up-the-amp-framework",
+      "destination": "https://blog.amp.dev/2018/01/19/amping-up-the-amp-framework/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-amps-new-horizons",
+      "destination": "https://blog.amp.dev/2018/02/13/amps-new-horizons/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/amps-new-horizons",
       "destination": "https://blog.amp.dev/2018/02/13/amps-new-horizons/amp/",
       "type": 301
@@ -816,6 +904,11 @@
       {
       "source": "/:lang/latest/blog/an-amp-paywall-and-subscription-model-for-all-publishers",
       "destination": "https://blog.amp.dev/2017/11/28/an-amp-paywall-and-subscription-model-for-all-publishers/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-ads-announcing-amp-conf-2019-tokyo",
+      "destination": "https://blog.amp.dev/2019/01/08/announcing-amp-conf-2019-tokyo/amp/",
       "type": 301
       },
       {
@@ -834,11 +927,20 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-bringing-the-speed-of-amp-to-search-display-ads",
+      "destination": "https://blog.amp.dev/2017/05/23/bringing-the-speed-of-amp-to-search-display-ads/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/bringing-the-speed-of-amp-to-search-display-ads",
       "destination": "https://blog.amp.dev/2017/05/23/bringing-the-speed-of-amp-to-search-display-ads/amp/",
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis",
+      "destination": "https://blog.amp.dev/2018/10/23/child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis/amp/",
+      "type": 301
+      },
       "source": "/:lang/latest/blog/child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis",
       "destination": "https://blog.amp.dev/2018/10/23/child-mind-institute-boosts-social-shares-on-amp-pages-with-addthis/amp/",
       "type": 301
@@ -859,6 +961,11 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-contributing-to-webkit-for-a-more-predictable-web-platform",
+      "destination": "https://blog.amp.dev/2018/12/06/contributing-to-webkit-for-a-more-predictable-web-platform/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/developer-preview-of-better-amp-urls-in-google-search",
       "destination": "https://blog.amp.dev/2018/11/13/developer-preview-of-better-amp-urls-in-google-search/amp/",
       "type": 301
@@ -866,6 +973,11 @@
       {
       "source": "/:lang/latest/blog/dynamic-geo-personalization",
       "destination": "https://blog.amp.dev/2018/05/03/dynamic-geo-personalization/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-e-commerce-at-the-speed-of-amp",
+      "destination": "https://blog.amp.dev/2017/09/06/e-commerce-at-the-speed-of-amp/amp/",
       "type": 301
       },
       {
@@ -894,7 +1006,17 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-faster-ads-with-render-on-idle",
+      "destination": "https://blog.amp.dev/2018/03/05/faster-ads-with-render-on-idle/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/faster-amp-ad-landing-page-support-from-adwords",
+      "destination": "https://blog.amp.dev/2017/09/07/faster-amp-ad-landing-page-support-from-adwords/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-faster-amp-ad-landing-page-support-from-adwords",
       "destination": "https://blog.amp.dev/2017/09/07/faster-amp-ad-landing-page-support-from-adwords/amp/",
       "type": 301
       },
@@ -914,6 +1036,11 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-google-io-2018",
+      "destination": "https://blog.amp.dev/2018/05/08/google-io-2018/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/governance",
       "destination": "https://blog.amp.dev/2018/09/18/governance/amp/",
       "type": 301
@@ -921,6 +1048,11 @@
       {
       "source": "/:lang/latest/blog/grow-your-business-with-ads-on-amp",
       "destination": "https://blog.amp.dev/2017/02/27/grow-your-business-with-ads-on-amp/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-growing-the-amp-ads-initiative",
+      "destination": "https://blog.amp.dev/2017/05/18/growing-the-amp-ads-initiative/amp/",
       "type": 301
       },
       {
@@ -934,6 +1066,11 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-how-to-make-amp-even-faster",
+      "destination": "https://blog.amp.dev/2018/10/08/how-to-make-amp-even-faster/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/improving-urls-for-amp-pages",
       "destination": "https://blog.amp.dev/2018/01/09/improving-urls-for-amp-pages/amp/",
       "type": 301
@@ -941,6 +1078,11 @@
       {
       "source": "/:lang/latest/blog/introducing-bing-amp-viewer-and-bing-amp-cache",
       "destination": "https://blog.amp.dev/2018/09/19/introducing-bing-amp-viewer-and-bing-amp-cache/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-introducing-the-amp-roadshow-bringing-the-amp-team-to-you",
+      "destination": "https://blog.amp.dev/2017/09/19/introducing-the-amp-roadshow-bringing-the-amp-team-to-you/amp/",
       "type": 301
       },
       {
@@ -959,13 +1101,33 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-jung-von-matts-road-to-the-worlds-fastest-automotive-content-marketing-website",
+      "destination": "https://blog.amp.dev/2018/03/21/jung-von-matts-road-to-the-worlds-fastest-automotive-content-marketing-website/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-kicking-off-2018-with-new-amp-case-studies",
+      "destination": "https://blog.amp.dev/2018/01/25/kicking-off-2018-with-new-amp-case-studies/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/kicking-off-2018-with-new-amp-case-studies",
       "destination": "https://blog.amp.dev/2018/01/25/kicking-off-2018-with-new-amp-case-studies/amp/",
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-laterpay-lessons-learned",
+      "destination": "https://blog.amp.dev/2018/12/19/laterpay-lessons-learned/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/laterpay-lessons-learned",
       "destination": "https://blog.amp.dev/2018/12/19/laterpay-lessons-learned/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-launching-ad-monetization-for-amp-stories",
+      "destination": "https://blog.amp.dev/2018/11/14/launching-ad-monetization-for-amp-stories/amp/",
       "type": 301
       },
       {
@@ -999,8 +1161,18 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-new-functionality-to-help-manage-user-choice-in-amp-pages",
+      "destination": "https://blog.amp.dev/2018/05/04/new-functionality-to-help-manage-user-choice-in-amp-pages/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/new-functionality-to-help-manage-user-choice-in-amp-pages",
       "destination": "https://blog.amp.dev/2018/05/04/new-functionality-to-help-manage-user-choice-in-amp-pages/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-new-in-amp-date-picker-easier-css-development-and-more-amp-by-example-content",
+      "destination": "https://blog.amp.dev/2018/01/31/new-in-amp-date-picker-easier-css-development-and-more-amp-by-example-content/amp/",
       "type": 301
       },
       {
@@ -1009,8 +1181,18 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond",
+      "destination": "https://blog.amp.dev/2017/09/30/new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond",
       "destination": "https://blog.amp.dev/2017/09/30/new-in-amp-position-observers-fluid-ads-and-improved-analytics-for-video-beyond/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-new-in-amp-stories-monetization-revamped-bookends-and-metadata",
+      "destination": "https://blog.amp.dev/2018/07/16/new-in-amp-stories-monetization-revamped-bookends-and-metadata/amp/",
       "type": 301
       },
       {
@@ -1024,13 +1206,33 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-new-industry-benchmarks-for-mobile-page-speed",
+      "destination": "https://blog.amp.dev/2017/02/28/new-industry-benchmarks-for-mobile-page-speed/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-new-tools-for-building-user-controls-in-amp-pages",
+      "destination": "https://blog.amp.dev/2018/04/18/new-tools-for-building-user-controls-in-amp-pages/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/new-tools-for-building-user-controls-in-amp-pages",
       "destination": "https://blog.amp.dev/2018/04/18/new-tools-for-building-user-controls-in-amp-pages/amp/",
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-optimize-your-amp-pages-for-high-ad-viewability-rate-or-high-ads-served",
+      "destination": "https://blog.amp.dev/2018/09/24/optimize-your-amp-pages-for-high-ad-viewability-rate-or-high-ads-served/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/optimize-your-amp-pages-for-high-ad-viewability-rate-or-high-ads-served",
       "destination": "https://blog.amp.dev/2018/09/24/optimize-your-amp-pages-for-high-ad-viewability-rate-or-high-ads-served/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-privacy-and-user-choice-in-amps-software-architecture",
+      "destination": "https://blog.amp.dev/2018/07/23/privacy-and-user-choice-in-amps-software-architecture/amp/",
       "type": 301
       },
       {
@@ -1044,8 +1246,23 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-progressively-amplify-ec-cube",
+      "destination": "https://blog.amp.dev/2018/11/20/progressively-amplify-ec-cube/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/putting-the-amp-in-progressive-web-amps-meet-the-shadowreader",
       "destination": "https://blog.amp.dev/2017/07/20/putting-the-amp-in-progressive-web-amps-meet-the-shadowreader/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-putting-the-amp-in-progressive-web-amps-meet-the-shadowreader",
+      "destination": "https://blog.amp.dev/2017/07/20/putting-the-amp-in-progressive-web-amps-meet-the-shadowreader/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-see-amp-live-at-io-2017",
+      "destination": "https://blog.amp.dev/2017/05/16/see-amp-live-at-io-2017/amp/",
       "type": 301
       },
       {
@@ -1055,6 +1272,11 @@
       },
       {
       "source": "/:lang/latest/blog/serverless-amp-solution-on-aws",
+      "destination": "https://blog.amp.dev/2018/07/11/serverless-amp-solution-on-aws/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-serverless-amp-solution-on-aws",
       "destination": "https://blog.amp.dev/2018/07/11/serverless-amp-solution-on-aws/amp/",
       "type": 301
       },
@@ -1084,6 +1306,11 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-streaming-in-the-shadow-reader",
+      "destination": "https://blog.amp.dev/2018/11/05/streaming-in-the-shadow-reader/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/streaming-in-the-shadow-reader",
       "destination": "https://blog.amp.dev/2018/11/05/streaming-in-the-shadow-reader/amp/",
       "type": 301
@@ -1109,6 +1336,11 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-the-argument-for-amp-lessons-from-10-case-studies",
+      "destination": "https://blog.amp.dev/2017/10/09/the-argument-for-amp-lessons-from-10-case-studies/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/the-latest-from-amp-analytics-providers",
       "destination": "https://blog.amp.dev/2018/10/25/the-latest-from-amp-analytics-providers/amp/",
       "type": 301
@@ -1119,8 +1351,18 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-the-latest-results-with-amp",
+      "destination": "https://blog.amp.dev/2018/10/12/the-latest-results-with-amp/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/the-official-amp-plugin-for-wordpress",
       "destination": "https://blog.amp.dev/2018/12/07/the-official-amp-plugin-for-wordpress/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-the-shadow-reader-improved",
+      "destination": "https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/amp/",
       "type": 301
       },
       {
@@ -1139,8 +1381,23 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-the-why-and-how-of-accelerated-mobile-pages-at-conde-nast",
+      "destination": "https://blog.amp.dev/2017/09/08/the-why-and-how-of-accelerated-mobile-pages-at-conde-nast/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/three-years-of-amp",
       "destination": "https://blog.amp.dev/2018/10/22/three-years-of-amp/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-three-years-of-amp",
+      "destination": "https://blog.amp.dev/2018/10/22/three-years-of-amp/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-track-development-with-the-new-amp-roadmap",
+      "destination": "https://blog.amp.dev/2018/07/19/track-development-with-the-new-amp-roadmap/amp/",
       "type": 301
       },
       {
@@ -1164,12 +1421,27 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety",
+      "destination": "https://blog.amp.dev/2018/12/04/use-amphtml-ads-for-better-ad-performance-page-usability-and-user-safety/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-using-amp-to-make-display-ads-safer-faster-and-better-for-users",
+      "destination": "https://blog.amp.dev/2019/02/20/using-amp-to-make-display-ads-safer-faster-and-better-for-users/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/using-amp-to-make-display-ads-safer-faster-and-better-for-users",
       "destination": "https://blog.amp.dev/2019/02/20/using-amp-to-make-display-ads-safer-faster-and-better-for-users/amp/",
       "type": 301
       },
       {
       "source": "/:lang/latest/blog/volkswagen-and-el-pais-increase-conversions-by-76-with-the-first-end-to-end-amp-campaign",
+      "destination": "https://blog.amp.dev/2019/02/11/volkswagen-and-el-pais-increase-conversions-by-76-with-the-first-end-to-end-amp-campaign/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-volkswagen-and-el-pais-increase-conversions-by-76-with-the-first-end-to-end-amp-campaign",
       "destination": "https://blog.amp.dev/2019/02/11/volkswagen-and-el-pais-increase-conversions-by-76-with-the-first-end-to-end-amp-campaign/amp/",
       "type": 301
       },
@@ -1189,7 +1461,17 @@
       "type": 301
       },
       {
+      "source": "/:lang/latest/blog/ads-whats-new-in-amp-by-example",
+      "destination": "https://blog.amp.dev/2017/04/20/whats-new-in-amp-by-example/amp/",
+      "type": 301
+      },
+      {
       "source": "/:lang/latest/blog/whats-new-in-amp-q1-2019-improvements-consent-videos-forms-and-lists",
+      "destination": "https://blog.amp.dev/2019/02/27/whats-new-in-amp-q1-2019-improvements-consent-videos-forms-and-lists/amp/",
+      "type": 301
+      },
+      {
+      "source": "/:lang/latest/blog/ads-whats-new-in-amp-q1-2019-improvements-consent-videos-forms-and-lists",
       "destination": "https://blog.amp.dev/2019/02/27/whats-new-in-amp-q1-2019-improvements-consent-videos-forms-and-lists/amp/",
       "type": 301
       },
@@ -1213,8 +1495,21 @@
       "destination": "https://blog.amp.dev/2018/08/21/workerdom/amp/",
       "type": 301
       },
-
-
+      {
+        "source": "/:lang/latest/blog/ads-the-latest-from-amp-analytics-providers",
+        "destination": "https://blog.amp.dev/2018/10/25/the-latest-from-amp-analytics-providers/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/latest/blog/ads-are-you-leaving-revenue-on-the-table-with-amp",
+        "destination": "https://blog.amp.dev/2018/08/28/are-you-leaving-revenue-on-the-table-with-amp/",
+        "type": 301
+      },
+      {
+        "source": "/:lang/latest/blog/ads-ensure-ad-density-is-equal-on-amp-non-amp-pages",
+        "destination": "https://blog.amp.dev/2018/09/11/ensure-ad-density-is-equal-on-amp-non-amp-pages/",
+        "type": 301
+      },
       {
         "source": "/docs/fundamentals/spec/amp-boilerplate",
         "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/spec/amp-boilerplate",
@@ -1726,6 +2021,11 @@
       {
         "source": "/:lang/docs/getting_started/visual_story/animating_elements",
         "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/animating_elements?referrer=ampproject.org",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/visual_story/congratulations",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/start/visual_story/congratulations?referrer=ampproject.org",
         "type": 301
       },
       {
@@ -4914,7 +5214,11 @@
       },
       {
         "source": "/docs/guides/amp-cache-debugging?(.html)",
-        "destination": "/docs/troubleshooting/amp-cache-debugging.html",
+        "destination": "https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging/",
+        "type": 301
+      },
+        "source": "/:lang/docs/guides/amp-cache-debugging?(.html)",
+        "destination": "https://amp.dev/:lang/documentation/guides-and-tutorials/learn/amp-caches-and-cors/amp-cache-debugging/",
         "type": 301
       },
       {
@@ -5337,6 +5641,11 @@
         "type": 301
       },
       {
+        "source": "/:lang/docs/design/visual_story/parts_of_story?(.html)",
+        "destination": "/:lang/docs/getting_started/visual_story/parts_of_story.html",
+        "type": 301
+      },
+      {
         "source": "/docs/design/visual_story/parts_of_story?(.html)",
         "destination": "/docs/getting_started/visual_story/parts_of_story.html",
         "type": 301
@@ -5754,6 +6063,11 @@
       {
         "source": "/:lang/docs/tutorials/login_requiring/summary",
         "destination": "/:lang/docs/interaction_dynamic/login_requiring/summary.html",
+        "type": 301
+      },
+      {
+        "source": "/:lang/docs/guides/debug/validate.html",
+        "destination": "/:lang/docs/guides/validate.html",
         "type": 301
       },
       {
