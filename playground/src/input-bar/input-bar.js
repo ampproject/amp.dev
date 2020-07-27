@@ -44,7 +44,18 @@ class Input {
 
     this.input.addEventListener('focus', this.toggleAutocomplete.bind(this));
 
-    for (const option of autocomplete.options) {
+    if (autocomplete.options.length) {
+      this.renderAutocompleteOptions(autocomplete.options);
+    }
+  }
+
+  renderAutocompleteOptions(options) {
+    const list = this.autocomplete.querySelector(
+      '.input-bar-autocomplete-list'
+    );
+    list.innerHTML = '';
+
+    for (const option of options) {
       const item = document.createElement('li');
       item.className = 'autocomplete-item';
       item.insertAdjacentHTML(
@@ -54,9 +65,7 @@ class Input {
         })
       );
 
-      this.autocomplete
-        .querySelector('.input-bar-autocomplete-list')
-        .appendChild(item);
+      list.appendChild(item);
     }
   }
 

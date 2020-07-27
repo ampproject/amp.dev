@@ -64,6 +64,15 @@ class Experiments extends FlyIn {
         },
       }
     );
+
+    this.init()
+      .then(() => {
+        this.inputBar.renderAutocompleteOptions(this.availableExperiments);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
     this.inputBar.input.addEventListener('keydown', (e) => {
       if (e.keyCode === 13) {
         this.onSubmitExperiment();
