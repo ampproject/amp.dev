@@ -28,7 +28,7 @@
 
       &-header {
         display: flex;
-        padding: 15px 25px;
+        padding: 15px 20px 15px 25px;
         top: 0;
         justify-content: space-between;
         width: 100%;
@@ -41,6 +41,10 @@
 
         &-close {
           cursor: pointer;
+          display: flex;
+          justify-content: center;
+          width: 22px;
+          height: 22px;
         }
       }
 
