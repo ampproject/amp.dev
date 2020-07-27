@@ -37,7 +37,7 @@ Throughout these courses, you will need various images to complete the exercises
 
 In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an index.html file with a title and a single image.
 
-Open <a href="https://glitch.com/edit/#!/nosy-leech" target="_blank">this</a> project to begin. Click the “Remix This” button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
+Open <a href="https://glitch.com/edit/#!/nosy-leech" target="_blank">this project</a> to begin. Click the “Remix This” button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
 
 You don’t have to use Glitch to complete these trainings. However, some of the code required to complete the exercises is only contained in the Glitch samples. If you’d like to use another editor, you may still need to use the Glitch samples to find this code.
 
@@ -55,7 +55,7 @@ Throughout our three courses, you will build a website for Chico’s Cheese Bicy
 
 {{ image('/static/img/courses/beginner/image14.png', 311, 550, align='center third', caption='How the site looks at the end of the Advanced Course') }}
 
-You can click on <a href="https://nice-consonant.glitch.me/" target="_blank">this</a> link to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner. Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category.
+You can click on <a href="https://nice-consonant.glitch.me/" target="_blank">this link</a> to see a live preview. Take a look around the site. We have videos, a registration form, an image carousel, and ways to share our site on social media. Open the navigation menu by clicking on the icon made of three lines (also called a “hamburger menu icon”) in the upper-left corner. Once the menu expands, click on the link “Our Products” to navigate to a list of products. Try sorting the list of products by price and filtering the list of products by product category.
 
 We chose Chico’s site as our model because it offers a collection of features we commonly see on popular websites today. It was built entirely using AMP. Over the course of these lessons, you’re going to build this site from scratch.
 [/filter]
@@ -82,7 +82,7 @@ Throughout these courses, you will need various images to complete the exercises
 
 In this course, we will start with a basic HTML page. We have created an empty project on Glitch containing a few images, server code that you’ll need later, and an `index.html` file with a title and a single image.
 
-Open <a href="https://glitch.com/edit/#!/nosy-leech" target="_blank">this</a> project to begin. Click the "Remix This" button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
+Open <a href="https://glitch.com/edit/#!/nosy-leech" target="_blank">this project</a> to begin. Click the "Remix This" button on the top right-hand side to create a new project that you can edit. You can continue to use this editor for this and future courses. Each future course will also give you the opportunity to start with a reference version of the solution to that point.
 
 You don’t have to use Glitch to complete these trainings. However, some of the code required to complete the exercises is only contained in the Glitch samples. If you’d like to use another editor, you may still need to use the Glitch samples to find this code.
 
@@ -100,7 +100,7 @@ Throughout our three courses, you will build a website for Chico’s Cheese Bicy
 
 {{ image('/static/img/courses/beginner/image14.png', 311, 550, align='center third', caption='How the site looks at the end of the Advanced Course') }}
 
-You can click on <a href="https://nice-consonant.glitch.me/" target="_blank">this</a> link to see a live preview. Choose "Our Products" in the menu to see the product page.
+You can click on <a href="https://nice-consonant.glitch.me/" target="_blank">this link</a> to see a live preview. Choose "Our Products" in the menu to see the product page.
 
 We chose Chico’s site as our model because it offers a collection of features we commonly see on popular websites today. It was built entirely using AMP. Over the course of these lessons, you’re going to build this site from scratch.
 [/filter]

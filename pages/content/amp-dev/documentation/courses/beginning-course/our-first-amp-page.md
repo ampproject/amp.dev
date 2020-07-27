@@ -193,7 +193,7 @@ Using the [documentation](../../../documentation/guides-and-tutorials/start/crea
 
 ### Solution
 
-The solution can be found in <a href="https://glitch.com/~hungry-modem" target="_blank">this</a> Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in <a href="https://glitch.com/~hungry-modem" target="_blank">this Glitch</a> example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}<head>
@@ -417,7 +417,7 @@ Using the [documentation]({{g.doc('/content/amp-dev/documentation/guides-and-tut
 
 ### Solution
 
-The solution can be found in <a href="https://glitch.com/~hungry-modem" target="_blank">this</a> Glitch example. The portion of the page containing the changes should look like this:
+The solution can be found in <a href="https://glitch.com/~hungry-modem" target="_blank">this Glitch</a> example. The portion of the page containing the changes should look like this:
 
 [sourcecode:html]
 {% raw %}<head>

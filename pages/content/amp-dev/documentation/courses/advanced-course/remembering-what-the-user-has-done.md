@@ -199,7 +199,7 @@ Our next goal is to recreate a basic online product page such as the one we disc
 
 {{ image('/static/img/courses/advanced/image5.png', 1180, 942,  align='center', caption='The example product page we’re building') }}
 
-We’re not going to build this product page inside of our Chico’s Cheese Bikes shop project. Instead, you can use <a href="https://glitch.com/~rustic-musician" target="_blank">this</a> Glitch as a starting point for this exercise. **Note**: Don’t forget to remix it so you can edit! The Glitch contains:
+We’re not going to build this product page inside of our Chico’s Cheese Bikes shop project. Instead, you can use <a href="https://glitch.com/~rustic-musician" target="_blank">this Glitch</a> as a starting point for this exercise. **Note**: Don’t forget to remix it so you can edit! The Glitch contains:
 
 * Some basic CSS and HTML to layout the static product page.
 
@@ -483,7 +483,7 @@ Our next goal is to recreate a basic online product page like the one we discuss
 
 {{ image('/static/img/courses/advanced/image5.png', 1180, 942,  align='center', caption='The example product page we\'re building') }}
 
-We're not going to build this product page inside of our Chico's Cheese Bikes shop project. Instead, you can use <a href="https://glitch.com/~rustic-musician" target="_blank">this</a> Glitch as a starting point for this exercise. **Note**: Don't forget to remix it so you can edit! The Glitch contains:
+We're not going to build this product page inside of our Chico's Cheese Bikes shop project. Instead, you can use <a href="https://glitch.com/~rustic-musician" target="_blank">this Glitch</a> as a starting point for this exercise. **Note**: Don't forget to remix it so you can edit! The Glitch contains:
 
 - Some basic CSS and HTML to layout the static product page.
 

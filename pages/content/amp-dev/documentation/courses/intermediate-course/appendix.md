@@ -19,7 +19,7 @@ Throughout these courses, you will need various images to complete the exercises
 
 {{ image('/static/img/courses/intermediate/image9.png', 371, 354, caption='The details pop-up -including URL- for an image in the assets collection') }}
 
-Open <a href="https://glitch.com/edit/#!/aquamarine-baritone" target="_blank">this</a> project. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
+Open <a href="https://glitch.com/edit/#!/aquamarine-baritone" target="_blank">this projec</a>. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
 
 It’s not necessary to use Glitch to complete these trainings. However, some of the code required to complete the exercises is not discussed in these courses, but is contained in the Glitch samples. If you’d like to use another editor, you may still need to go into the Glitch samples to copy the CSS and server code into your local solution.
 
