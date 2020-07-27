@@ -37,7 +37,7 @@ Alternately, you can set up a quick local server using something like [serve](ht
 
 `http://localhost:5000/`
 
-You're also free to use an online playground like [Glitch](https://glitch.com/) or [CodePen](https://codepen.io/). [This Glitch](https://glitch.com/~grove-thankful-ragdoll) contains the same code as the github repository, and you can start there instead if you like!
+You're also free to use an online playground like [Glitch](https://glitch.com/) or [CodePen](https://codepen.io/). <a href="itch](https://glitch.com/~grove-thankful-ragdoll" target="_blank">This </a> contains the same code as the github repository, and you can start there instead if you like!
 
 Once you've done this, you'll see our starter webpage:
 
