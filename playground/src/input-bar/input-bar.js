@@ -15,6 +15,9 @@
 import './input-bar.scss';
 import template from './input-bar.hbs';
 
+import './autocomplete-item.scss';
+import autocompleteItem from './autocomplete-item.hbs';
+
 export default function createInput(container, config) {
   return new Input(container, config);
 }
@@ -22,10 +25,43 @@ export default function createInput(container, config) {
 class Input {
   constructor(container, config) {
     container.insertAdjacentHTML('beforeend', template(config));
+    this.container = container;
 
     this.input = container.querySelector('input');
     this.submit = container.querySelector('button');
     this.label = container.querySelector('label');
+
+    if (config.autocomplete) {
+      this.createAutocomplete(config.autocomplete);
+    }
+  }
+
+  createAutocomplete(autocomplete) {
+    this.autocomplete = this.container.querySelector('.input-bar-autocomplete');
+    this.autocomplete
+      .querySelector('.input-bar-autocomplete-header-close')
+      .addEventListener('click', this.toggleAutocomplete.bind(this));
+
+    this.input.addEventListener('focus', this.toggleAutocomplete.bind(this));
+
+    for (const option of autocomplete.options) {
+      const item = document.createElement('li');
+      item.className = 'autocomplete-item';
+      item.insertAdjacentHTML(
+        'beforeend',
+        autocompleteItem({
+          option,
+        })
+      );
+
+      this.autocomplete
+        .querySelector('.input-bar-autocomplete-list')
+        .appendChild(item);
+    }
+  }
+
+  toggleAutocomplete() {
+    this.autocomplete.classList.toggle('active');
   }
 
   showError(error) {

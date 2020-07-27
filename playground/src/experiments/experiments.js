@@ -15,9 +15,6 @@
 import './experiments.scss';
 import template from './experiments.hbs';
 
-import './experiment-hint-item.scss';
-import hintItemTemplate from './experiment-hint-item.hbs';
-
 import events from '../events/events.js';
 import * as Button from '../button/button.js';
 import FlyIn from '../fly-in/fly-in.js';
@@ -61,6 +58,10 @@ class Experiments extends FlyIn {
         type: 'url',
         name: 'text',
         placeholder: 'Experiment ID',
+        autocomplete: {
+          title: 'Active Experiments',
+          options: [],
+        },
       }
     );
     this.inputBar.input.addEventListener('keydown', (e) => {
@@ -68,16 +69,11 @@ class Experiments extends FlyIn {
         this.onSubmitExperiment();
       }
     });
-    this.inputBar.input.addEventListener(
-      'focus',
-      this.toggleHintList.bind(this)
-    );
     this.inputBar.submit.addEventListener('click', () => {
       this.onSubmitExperiment();
     });
 
     this.addActiveExperiments();
-    this.createHintList();
 
     events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
       this.removeExperiment(experiment);
@@ -101,41 +97,6 @@ class Experiments extends FlyIn {
         }
       }
     }
-  }
-
-  createHintList() {
-    this.hintList = this.content.querySelector('#hints-list');
-    this.hintList.querySelector('div').addEventListener('click', (e) => {
-      e.preventDefault();
-      console.log('klick');
-      this.toggleHintList();
-    });
-
-    this.init().then(() => {
-      for (const experiment of this.availableExperiments) {
-        const hintItem = document.createElement('li');
-        hintItem.className = 'hint-item';
-        hintItem.insertAdjacentHTML(
-          'beforeend',
-          hintItemTemplate({
-            experiment,
-          })
-        );
-
-        hintItem.addEventListener('click', (e) => {
-          e.preventDefault();
-          this.inputBar.value = experiment.id;
-          this.onSubmitExperiment();
-          this.toggleHintList();
-        });
-
-        this.hintList.querySelector('ul').appendChild(hintItem);
-      }
-    });
-  }
-
-  toggleHintList() {
-    this.hintList.classList.toggle('active');
   }
 
   onSubmitExperiment() {
