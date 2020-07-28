@@ -31,6 +31,7 @@ import * as ErrorList from './error-list/error-list.js';
 import * as StateView from './state-view/state-view.js';
 import * as Importer from './importer/importer.js';
 import * as Experiments from './experiments/experiments.js';
+import * as ShareView from './share-view/share-view.js';
 import * as ValidationResult from './validation-result/validation-result.js';
 import * as Validator from './validator/validator.js';
 import * as Editor from './editor/editor.js';
@@ -40,7 +41,6 @@ import * as Menu from './menu/base.js';
 
 import createSelector from './selector/selector.js';
 import createTemplateDialog from './template-dialog/base.js';
-import createShareAction from './share/';
 import params from './params/base.js';
 import events from './events/events.js';
 import modes from './modes/index.js';
@@ -223,11 +223,9 @@ if (document.getElementById('document-title')) {
   });
 }
 
-// create the share action
-const shareDialog = createShareAction(editor);
-Button.from(document.getElementById('share'), () => {
-  shareDialog.open();
-});
+// create the share fly-in
+ShareView.createShareView(editor);
+
 
 // configure menu
 const menu = Menu.create();

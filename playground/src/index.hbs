@@ -90,7 +90,7 @@
       <div class="panel-header">
         <div id="runtime-select"></div>
         {{> button/button.hbs id="error-indicator" text="Valid" disabled=true}}
-        {{> button/button.hbs id="share" text="Share"}}
+        {{> button/button.hbs id="share-toggle" text="Share"}}
         {{> button/button.hbs id="import-toggle" class="hide-on-mobile" text="Import"}}
         {{> button/button.hbs id="format-source" ariaLabel="format source code" text="Format"}}
       </div>
@@ -153,6 +153,7 @@
 
     {{^htmlWebpackPlugin.options.validator}}
     <div id="error-list" class="fly-in fly-in--right fly-in--error" data-title="Validation errors"></div>
+    <div id="share-view" class="fly-in fly-in--left fly-in--share fly-in--lightbox" data-title="Share"></div>
     <div id="state-view" class="fly-in fly-in--left fly-in--state fly-in--lightbox" data-title="AMP State"></div>
     <div id="import-view" class="fly-in fly-in--left fly-in--import fly-in--lightbox" data-title="Import"></div>
     <div id="experiments-view" class="fly-in fly-in--right fly-in--experiments fly-in--lightbox" data-title="Experiments"></div>
