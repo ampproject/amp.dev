@@ -65,7 +65,7 @@ If any of these topics are unfamiliar to you, we suggest reviewing the material 
 
 ## Getting Set Up
 
-In this course, we will continue using [Glitch](https://glitch.com). If you completed the beginning course, you can continue to use the same Glitch repository to complete the intermediate training. If you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~aquamarine-baritone) one, which has all of the code already implemented.
+In this course, we will continue using <a href="https://glitch.com" target="_blank">Glitch</a>. If you completed the beginning course, you can continue to use the same Glitch repository to complete the intermediate training. If you’d like to start from a new Glitch repository, you can remix <a href="https://glitch.com/~aquamarine-baritone" target="_blank">this one</a>, which has all of the code already implemented.
 
 Want to learn more about Glitch? You can read about it in the [appendix](../../../documentation/courses/beginning-course/appendix.md).
 
@@ -114,7 +114,7 @@ If any of these topics are unfamiliar to you, we suggest reviewing the material 
 
 ## Getting Set Up
 
-In this course, we will continue using [Glitch](https://glitch.com). If you completed the beginning course, you can continue to use the same Glitch repository to complete the intermediate training. If you'd like to start from a new Glitch repository, you can remix [this](https://glitch.com/~aquamarine-baritone) one, which has all of the code already implemented.
+In this course, we will continue using <a href="https://glitch.com" target="_blank">Glitch</a>. If you completed the beginning course, you can continue to use the same Glitch repository to complete the intermediate training. If you'd like to start from a new Glitch repository, you can remix <a href="https://glitch.com/~aquamarine-baritone" target="_blank">this</a> one, which has all of the code already implemented.
 
 Want to learn more about Glitch? You can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/beginning-course/appendix.md', locale=doc.locale).url.path}}).
 
