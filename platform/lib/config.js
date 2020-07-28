@@ -49,7 +49,7 @@ const AVAILABLE_LOCALES = [
   'tr',
   'zh_CN',
   'pl',
-  'vn',
+  'vi',
 ];
 
 class Config {

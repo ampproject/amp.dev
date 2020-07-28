@@ -111,7 +111,7 @@ jobs:
     env: APP_ENV=staging
     install: *1
     name: Build Pages (VN)
-    script: scripts/unbuffer.sh gulp buildPages --locales vn
+    script: scripts/unbuffer.sh gulp buildPages --locales vi
   - stage: deploy
     env: APP_ENV=staging
     before_script:
