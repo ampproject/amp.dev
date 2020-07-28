@@ -38,7 +38,7 @@ class ShareView extends FlyIn {
 
     this.textarea = this.content.querySelector('#share-url');
     this.textarea.setAttribute('readonly', '');
-    Button.from(
+    this.copyButton = Button.from(
       this.content.querySelector('#copy-button'),
       this.onClick.bind(this)
     );
@@ -66,5 +66,10 @@ class ShareView extends FlyIn {
   onClick() {
     this.textarea.select();
     document.execCommand('copy');
+    this.copyButton.setHtml('Success');
+
+    window.setTimeout(() => {
+      this.copyButton.setHtml('Copy to Clipboard');
+    }, 1500);
   }
 }
