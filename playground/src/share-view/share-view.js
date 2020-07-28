@@ -22,7 +22,6 @@ import * as Button from '../button/button.js';
 export function createShareView(editor) {
   const target = document.getElementById('share-view');
   const trigger = document.getElementById('share-toggle');
-  if (!target) return;
 
   return new ShareView(target, trigger, editor);
 }
@@ -36,11 +35,10 @@ class ShareView extends FlyIn {
     this.content.insertAdjacentHTML('beforeend', template());
     Button.from(trigger, this.showShare.bind(this));
 
-    this.textarea = this.content.querySelector('#share-url');
-    this.textarea.setAttribute('readonly', '');
+    this.textarea = this.content.querySelector('#share-textarea');
     this.copyButton = Button.from(
       this.content.querySelector('#copy-button'),
-      this.onClick.bind(this)
+      this.onClickCopy.bind(this)
     );
   }
 
@@ -63,7 +61,7 @@ class ShareView extends FlyIn {
     return shareUrl.toString();
   }
 
-  onClick() {
+  onClickCopy() {
     this.textarea.select();
     document.execCommand('copy');
     this.copyButton.setHtml('Success');
