@@ -27,7 +27,6 @@ export function createShareView(editor) {
   return new ShareView(target, trigger, editor);
 }
 
-
 class ShareView extends FlyIn {
   constructor(target, trigger, editor) {
     super(target);
@@ -39,7 +38,10 @@ class ShareView extends FlyIn {
 
     this.textarea = this.content.querySelector('#share-url');
     this.textarea.setAttribute('readonly', '');
-    Button.from(this.content.querySelector('#copy-button'), this.onClick.bind(this));
+    Button.from(
+      this.content.querySelector('#copy-button'),
+      this.onClick.bind(this)
+    );
   }
 
   showShare() {

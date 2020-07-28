@@ -226,7 +226,6 @@ if (document.getElementById('document-title')) {
 // create the share fly-in
 ShareView.createShareView(editor);
 
-
 // configure menu
 const menu = Menu.create();
 Button.from(document.getElementById('show-menu'), () => {
