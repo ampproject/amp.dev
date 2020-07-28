@@ -77,7 +77,9 @@ class Input {
 
       item.addEventListener('click', (e) => {
         e.preventDefault();
-        this.eventBus.publish(EVENT_SELECT_AUTOCOMPLETE, option.id);
+        this.input.value = option.id;
+        this.eventBus.publish(EVENT_SELECT_AUTOCOMPLETE);
+        this.toggleAutocomplete();
       });
 
       list.appendChild(item);

@@ -88,7 +88,7 @@ class Experiments extends FlyIn {
     });
 
     this.inputBar.subscribe(
-      InputBar.EVENT_SELECT_AUTOCOMPLETE, this.addActiveExperiments.bind(this)
+      InputBar.EVENT_SELECT_AUTOCOMPLETE, this.onSubmitExperiment.bind(this)
     );
 
     this.addActiveExperiments();
@@ -103,7 +103,7 @@ class Experiments extends FlyIn {
   }
 
   /**
-   * Reads currently active experiments from local localStorage
+   * Reads activaded experiments from local localStorage
    * and adds them to the list
    */
   addActiveExperiments() {
