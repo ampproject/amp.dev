@@ -35,15 +35,15 @@ class ShareView extends FlyIn {
     this.target = target;
     this.editor = editor;
     this.content.insertAdjacentHTML('beforeend', template());
-    Button.from(trigger, this.showSharing.bind(this));
+    Button.from(trigger, this.showShare.bind(this));
 
     this.textarea = this.content.querySelector('#share-url');
     this.textarea.setAttribute('readonly', '');
     Button.from(this.content.querySelector('#copy-button'), this.onClick.bind(this));
   }
 
-  showSharing() {
-    this.shareUrl = this.createSharingUrl();
+  showShare() {
+    this.shareUrl = this.createShareUrl();
     this.textarea.innerHTML = this.shareUrl;
     this.toggle();
   }
@@ -52,7 +52,7 @@ class ShareView extends FlyIn {
    * Create a hash from the current editor source and generate sharable URL
    * @return {String} URL string
    */
-  createSharingUrl() {
+  createShareUrl() {
     const source = this.editor.getSource();
     const shareUrl = new URL(window.location.href);
     shareUrl.searchParams.delete('url');
