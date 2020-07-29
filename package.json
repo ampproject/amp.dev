@@ -137,7 +137,7 @@
     "husky": "4.2.5",
     "jasmine": "3.5.0",
     "jest": "26.1.0",
-    "js-base64": "2.6.3",
+    "js-base64": "3.3.3",
     "js-beautify": "1.11.0",
     "keymaster": "1.6.2",
     "marked": "1.1.0",
