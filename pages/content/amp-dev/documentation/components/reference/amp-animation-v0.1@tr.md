@@ -531,7 +531,7 @@ Burada, ".target-class" parametresi bir veya birden fazla öğeyle eşleşirse y
     {
       "selector": ".target-class",
       "duration": "4s",
-      "delay": "var(--delay, 100ms)",
+      "delay": "var(--delay, 100ms)"
     }
   ]
   </script>
