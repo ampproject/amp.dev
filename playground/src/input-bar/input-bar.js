@@ -50,6 +50,10 @@ class Input {
   createAutocomplete(autocomplete) {
     this.autocomplete = new TypeAhead(this.input, autocomplete.options, {
       fulltext: true,
+      callback: (options) => {
+        console.log('TypeAhead callback:', options);
+        this.renderAutocompleteList(options);
+      },
     });
 
     this.autocompleteList = this.container.querySelector(
@@ -67,8 +71,9 @@ class Input {
   }
 
   updateAutocompleteOptions(options) {
-    const optionIds = options.map((option) => option.id);
-    this.autocomplete.update(optionIds);
+    this.autocomplete.update(options);
+    this.autocomplete.getItemValue = (option) => option.id;
+
     this.renderAutocompleteList(options);
   }
 
@@ -97,10 +102,6 @@ class Input {
 
       list.appendChild(item);
     }
-  }
-
-  updateAutocompleteList(options) {
-    console.log('updateAutocompleteList', options);
   }
 
   toggleAutocomplete() {
