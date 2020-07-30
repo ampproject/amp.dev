@@ -48,9 +48,13 @@ class Input {
   }
 
   createAutocomplete(autocomplete) {
-    this.autocomplete = new TypeAhead(this.input, autocomplete.options);
+    this.autocomplete = new TypeAhead(this.input, autocomplete.options, {
+      fulltext: true,
+    });
 
-    this.autocompleteList = this.container.querySelector('.input-bar-autocomplete');
+    this.autocompleteList = this.container.querySelector(
+      '.input-bar-autocomplete'
+    );
     this.autocompleteList
       .querySelector('.input-bar-autocomplete-header-close')
       .addEventListener('click', this.toggleAutocomplete.bind(this));
@@ -58,19 +62,23 @@ class Input {
     this.input.addEventListener('focus', this.toggleAutocomplete.bind(this));
 
     if (autocomplete.options.length) {
-      this.renderAutocompleteOptions(autocomplete.options);
+      this.updateAutocompleteOptions(autocomplete.options);
     }
   }
 
-  renderAutocompleteOptions(options) {
-    const optionIds = [];
+  updateAutocompleteOptions(options) {
+    const optionIds = options.map((option) => option.id);
+    this.autocomplete.update(optionIds);
+    this.renderAutocompleteList(options);
+  }
+
+  renderAutocompleteList(options) {
     const list = this.autocompleteList.querySelector(
       '.input-bar-autocomplete-list'
     );
     list.innerHTML = '';
 
     for (const option of options) {
-      optionIds.push(option.id)
       const item = document.createElement('li');
       item.className = 'autocomplete-item';
       item.insertAdjacentHTML(
@@ -89,8 +97,10 @@ class Input {
 
       list.appendChild(item);
     }
+  }
 
-    this.autocomplete.update(optionIds);
+  updateAutocompleteList(options) {
+    console.log('updateAutocompleteList', options);
   }
 
   toggleAutocomplete() {
