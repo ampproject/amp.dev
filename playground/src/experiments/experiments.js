@@ -25,8 +25,11 @@ import createInput from '../input-bar/input-bar.js';
 const EXPERIMENTS_CONFIG_SOURCE_PATH =
   'https://raw.githubusercontent.com/ampproject/amphtml/master/tools/experiments/experiments-config.js';
 
+// Matches items from object string
 const EXPERIMENTS_ITEM_PATTERN = /(?:\{\s)(.*?)(?:})/gms;
+// Matches id from item
 const EXPERIMENTS_ID_PATTERN = /(?:id: ')(.*?)(?:')/gm;
+// Matches name from item
 const EXPERIMENTS_NAME_PATTERN = /(?<=name:\s)(.*?)(?=,\n)/gms;
 
 export const EVENT_TOGGLE_EXPERIMENT = 'event-toggle-experiment';
