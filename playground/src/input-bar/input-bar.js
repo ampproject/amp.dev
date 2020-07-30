@@ -47,16 +47,17 @@ class Input {
   }
 
   createAutocomplete(options) {
-    this.autocomplete = this.container.querySelector(
-      '.input-bar-autocomplete'
-    );
+    this.autocomplete = this.container.querySelector('.input-bar-autocomplete');
     this.autocomplete
       .querySelector('.input-bar-autocomplete-header-close')
-      .addEventListener('click',  () => {
+      .addEventListener('click', () => {
         this.toggleAutocomplete(false);
       });
 
-    this.input.addEventListener('keyup', this.filterAutocompleteOptions.bind(this));
+    this.input.addEventListener(
+      'keyup',
+      this.filterAutocompleteOptions.bind(this)
+    );
     this.input.addEventListener('focus', () => {
       this.toggleAutocomplete(true);
     });
@@ -104,7 +105,9 @@ class Input {
 
   filterAutocompleteOptions() {
     const searchString = this.input.value;
-    const result = this.autocompleteOptions.filter((option) => option.id.includes(searchString));
+    const result = this.autocompleteOptions.filter((option) =>
+      option.id.includes(searchString)
+    );
 
     this.renderAutocompleteList(result);
   }
