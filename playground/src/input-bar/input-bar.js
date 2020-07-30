@@ -17,6 +17,7 @@ import template from './input-bar.hbs';
 
 import './autocomplete-item.scss';
 import autocompleteItem from './autocomplete-item.hbs';
+import TypeAhead from 'type-ahead';
 
 import {EventBus} from '../events/events.js';
 
@@ -47,8 +48,10 @@ class Input {
   }
 
   createAutocomplete(autocomplete) {
-    this.autocomplete = this.container.querySelector('.input-bar-autocomplete');
-    this.autocomplete
+    this.autocomplete = new TypeAhead(this.input, autocomplete.options);
+
+    this.autocompleteList = this.container.querySelector('.input-bar-autocomplete');
+    this.autocompleteList
       .querySelector('.input-bar-autocomplete-header-close')
       .addEventListener('click', this.toggleAutocomplete.bind(this));
 
@@ -60,12 +63,14 @@ class Input {
   }
 
   renderAutocompleteOptions(options) {
-    const list = this.autocomplete.querySelector(
+    const optionIds = [];
+    const list = this.autocompleteList.querySelector(
       '.input-bar-autocomplete-list'
     );
     list.innerHTML = '';
 
     for (const option of options) {
+      optionIds.push(option.id)
       const item = document.createElement('li');
       item.className = 'autocomplete-item';
       item.insertAdjacentHTML(
@@ -84,10 +89,12 @@ class Input {
 
       list.appendChild(item);
     }
+
+    this.autocomplete.update(optionIds);
   }
 
   toggleAutocomplete() {
-    this.autocomplete.classList.toggle('active');
+    this.autocompleteList.classList.toggle('active');
   }
 
   showError(error) {
