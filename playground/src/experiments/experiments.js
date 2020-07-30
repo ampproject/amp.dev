@@ -68,7 +68,7 @@ class Experiments extends FlyIn {
 
     this.init()
       .then(() => {
-        this.inputBar.updateAutocompleteOptions(this.availableExperiments);
+        this.inputBar.renderAutocompleteList(this.availableExperiments);
       })
       .catch((err) => {
         console.error(err);
