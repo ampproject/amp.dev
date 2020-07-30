@@ -52,10 +52,14 @@ class Input {
     );
     this.autocomplete
       .querySelector('.input-bar-autocomplete-header-close')
-      .addEventListener('click', this.toggleAutocomplete.bind(this));
+      .addEventListener('click',  () => {
+        this.toggleAutocomplete(false);
+      });
 
-    this.input.addEventListener('focus', this.toggleAutocomplete.bind(this));
     this.input.addEventListener('keyup', this.filterAutocompleteOptions.bind(this));
+    this.input.addEventListener('focus', () => {
+      this.toggleAutocomplete(true);
+    });
 
     if (options.length) {
       this.updateAutocompleteOptions(options);
@@ -94,8 +98,8 @@ class Input {
     }
   }
 
-  toggleAutocomplete() {
-    this.autocomplete.classList.toggle('active');
+  toggleAutocomplete(force) {
+    this.autocomplete.classList.toggle('active', force);
   }
 
   filterAutocompleteOptions() {
