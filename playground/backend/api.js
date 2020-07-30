@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 The AMPHTML Authors
+ * Copyright 2020 The AMPHTML Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,36 +16,47 @@
 
 const express = require('express');
 const fetch = require('node-fetch');
-const URL = require('url').URL;
+const url = require('url');
+const LRU = require('lru-cache');
 const config = require('@lib/config.js');
 const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
 const log = require('@lib/utils/log')('Playground API');
-// eslint-disable-next-line new-cap
-const api = express.Router();
 
-const ONE_HOUR = 60 * 60;
-const host = config.hosts.platform.base;
+/**
+ * Time a fetched document is cached on the requesting client in minutes.
+ * One hour.
+ * @type {Number}
+ */
+const MAX_AGE = 60 * 60;
 
-api.get('/fetch', async (request, response) => {
-  const url = request.query.url;
-  try {
-    const doc = await fetchDocument(url, host);
-    setMaxAge(response, ONE_HOUR);
-    response.send(doc);
-  } catch (error) {
-    log.error('Could not fetch URL', error);
-    response.status(400).send('Could not fetch URL');
-  }
-});
+/**
+ * The time in milliseconds in which HOST_RATE_LIMIT requests can
+ * happen before the user needs to wait
+ * @type {Number}
+ */
+const RATE_LIMIT_TIME_FRAME = 10 * 1000;
 
-async function fetchDocument(urlString, host) {
-  const url = new URL(urlString, host);
-  return doFetch(url.toString());
-}
+/**
+ * The number of times a certain host can be requested in RATE_LIMIT_TIME_FRAME
+ * @type {Number}
+ */
+const HOST_RATE_LIMIT = 10;
 
-async function doFetch(url) {
-  const response = await fetch(url, {
-    compress: true,
+/**
+ * The maximum count of limits that is tracked.
+ * @type {Number}
+ */
+const MAX_LIMITS = 500;
+
+/**
+ * Fetches a user-defined remote URL and returns the response,
+ * verifies that the returned response is a proper HTML document
+ *
+ * @param  {String} fetchUrl
+ * @return {String|undefined}
+ */
+async function fetchDocument(fetchUrl) {
+  const response = await fetch(fetchUrl, {
     headers: {
       'Accept': 'text/html',
       'x-requested-by': 'playground',
@@ -56,7 +67,83 @@ async function doFetch(url) {
       'Referer': 'https://amp.dev/playground',
     },
   });
+
+  if (!response.ok) {
+    throw new Error(`Request to ${fetchUrl} could not complete successfully.`);
+  }
+
+  const contentType = response.headers.get('content-type');
+  if (!contentType.includes('text/html')) {
+    throw new Error(`${fetchUrl} is no HTML document.`);
+  }
+
   return response.text();
 }
+
+const limits = new LRU({
+  max: MAX_LIMITS,
+  maxAge: RATE_LIMIT_TIME_FRAME,
+});
+
+/**
+ * Verifies that the host to a certain URL has not been called
+ * more than DEFAULT_HOST_RATE_LIMIT
+ * @param  {URL} fetchUrl
+ * @return {Boolean}
+ */
+function exceedsRateLimit(fetchUrl) {
+  const host = fetchUrl.host;
+
+  // Requests to amp.dev are not affected by rate limiting
+  if (config.hostNames.has(host)) {
+    return false;
+  }
+
+  const count = (limits.peek(host) || 0) + 1;
+  if (count > HOST_RATE_LIMIT) {
+    return true;
+  }
+
+  limits.set(host, count);
+  limits.prune();
+  return false;
+}
+
+// eslint-disable-next-line new-cap
+const api = express.Router();
+api.get('/fetch', async (request, response) => {
+  let fetchUrl = request.query.url;
+  if (!fetchUrl) {
+    response.status(400).send('No URL provided.');
+    return;
+  }
+
+  fetchUrl = url.parse(fetchUrl);
+  if (!fetchUrl.protocol || !fetchUrl.host) {
+    response.status(400).send(`${fetchUrl} is not a valid URL.`);
+    return;
+  }
+
+  // Verify that this URL is currently allowed to be fetched
+  // and is not rate-limited
+  if (exceedsRateLimit(fetchUrl)) {
+    response
+      .status(429)
+      .send(
+        `${fetchUrl.host} has been requested too many times. ` +
+          `Please wait a few seconds and then try again.`
+      );
+    return;
+  }
+
+  try {
+    const doc = await fetchDocument(fetchUrl.href);
+    setMaxAge(response, MAX_AGE);
+    response.send(doc);
+  } catch (error) {
+    log.error('Could not fetch URL', fetchUrl.href, error);
+    response.status(502).send(`Failed to fetch ${fetchUrl.href}`);
+  }
+});
 
 module.exports = api;

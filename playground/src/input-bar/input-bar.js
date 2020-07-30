@@ -15,17 +15,18 @@
 import './input-bar.scss';
 import template from './input-bar.hbs';
 
-export default function createInput(container, config) {
-  return new Input(container, config);
+export default function createInput(target, config) {
+  return new Input(target, config);
 }
 
 class Input {
-  constructor(container, config) {
-    container.insertAdjacentHTML('beforeend', template(config));
+  constructor(target, config) {
+    target.insertAdjacentHTML('beforeend', template(config));
 
-    this.input = container.querySelector('input');
-    this.submit = container.querySelector('button');
-    this.label = container.querySelector('label');
+    this.container = target.querySelector('.input');
+    this.input = target.querySelector('input');
+    this.submit = target.querySelector('button');
+    this.label = target.querySelector('label');
   }
 
   showError(error) {
@@ -48,5 +49,9 @@ class Input {
 
   set value(value) {
     this.input.value = value;
+  }
+
+  set hidden(hide) {
+    this.container.classList.toggle('hidden', hide);
   }
 }

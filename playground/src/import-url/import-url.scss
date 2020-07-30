@@ -2,11 +2,6 @@
 @import 'components/atoms/_text.scss';
 
 .import-url {
-  p {
-    @include txt;
-    @include txt-2;
-  }
-
   &-bar {
     display: flex;
     height: 40px;
