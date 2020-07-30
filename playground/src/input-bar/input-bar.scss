@@ -113,6 +113,16 @@
         overflow-y: scroll;
         padding: 0;
         list-style: none;
+
+        &-empty {
+          display: none;
+          margin-top: 35%;
+          text-align: center;
+        }
+
+        &:empty + &-empty {
+          display: block;
+        }
       }
     }
   }
