@@ -53,7 +53,9 @@ class Input {
       .addEventListener('click', () => {
         this.toggleAutocomplete(false);
       });
-    this.autocompleteList = this.autocomplete.querySelector('.input-bar-autocomplete-list');
+    this.autocompleteList = this.autocomplete.querySelector(
+      '.input-bar-autocomplete-list'
+    );
 
     this.input.addEventListener(
       'keyup',
