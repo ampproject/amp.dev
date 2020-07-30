@@ -88,7 +88,6 @@
     "safe-eval": "0.4.1",
     "shrink-ray-current": "4.1.2",
     "signale": "1.4.0",
-    "type-ahead": "2.1.0",
     "uuid": "8.2.0",
     "web-push": "3.4.4"
   },
