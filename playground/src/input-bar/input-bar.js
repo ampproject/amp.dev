@@ -53,6 +53,7 @@ class Input {
       .addEventListener('click', () => {
         this.toggleAutocomplete(false);
       });
+    this.autocompleteList = this.autocomplete.querySelector('.input-bar-autocomplete-list');
 
     this.input.addEventListener(
       'keyup',
@@ -73,14 +74,12 @@ class Input {
   }
 
   renderAutocompleteList(options) {
-    const list = this.autocomplete.querySelector(
-      '.input-bar-autocomplete-list'
-    );
-    list.innerHTML = '';
+    this.autocompleteList.innerHTML = '';
 
     for (const option of options) {
       const item = document.createElement('li');
       item.className = 'autocomplete-item';
+      item.dataset.id = option.id;
       item.insertAdjacentHTML(
         'beforeend',
         autocompleteItem({
@@ -95,7 +94,7 @@ class Input {
         this.toggleAutocomplete();
       });
 
-      list.appendChild(item);
+      this.autocompleteList.appendChild(item);
     }
   }
 
@@ -105,11 +104,11 @@ class Input {
 
   filterAutocompleteOptions() {
     const searchString = this.input.value;
-    const result = this.autocompleteOptions.filter((option) =>
-      option.id.includes(searchString)
-    );
-
-    this.renderAutocompleteList(result);
+    if (searchString.length) {
+      for (const item of this.autocompleteList.children) {
+        item.hidden = !item.dataset.id.includes(searchString);
+      }
+    }
   }
 
   showError(error) {
