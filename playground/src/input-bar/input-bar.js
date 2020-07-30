@@ -50,9 +50,10 @@ class Input {
   createAutocomplete(autocomplete) {
     this.autocomplete = new TypeAhead(this.input, autocomplete.options, {
       fulltext: true,
-      callback: (options) => {
-        console.log('TypeAhead callback:', options);
-        this.renderAutocompleteList(options);
+      minLength: 1,
+      callback: (newOptions) => {
+        console.log('TypeAhead callback:', newOptions);
+        /* this.renderAutocompleteList(newOptions); */
       },
     });
 
