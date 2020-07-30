@@ -55,6 +55,7 @@ class Input {
       .addEventListener('click', this.toggleAutocomplete.bind(this));
 
     this.input.addEventListener('focus', this.toggleAutocomplete.bind(this));
+    this.input.addEventListener('keyup', this.filterAutocompleteOptions.bind(this));
 
     if (options.length) {
       this.updateAutocompleteOptions(options);
@@ -63,16 +64,16 @@ class Input {
 
   updateAutocompleteOptions(options) {
     this.autocompleteOptions = options;
-    this.renderAutocompleteList();
+    this.renderAutocompleteList(options);
   }
 
-  renderAutocompleteList() {
+  renderAutocompleteList(options) {
     const list = this.autocomplete.querySelector(
       '.input-bar-autocomplete-list'
     );
     list.innerHTML = '';
 
-    for (const option of this.autocompleteOptions) {
+    for (const option of options) {
       const item = document.createElement('li');
       item.className = 'autocomplete-item';
       item.insertAdjacentHTML(
@@ -95,6 +96,13 @@ class Input {
 
   toggleAutocomplete() {
     this.autocomplete.classList.toggle('active');
+  }
+
+  filterAutocompleteOptions() {
+    const searchString = this.input.value;
+    const result = this.autocompleteOptions.filter((option) => option.id.includes(searchString));
+
+    this.renderAutocompleteList(result);
   }
 
   showError(error) {
