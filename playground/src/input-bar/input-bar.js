@@ -36,7 +36,7 @@ class Input {
     this.label = target.querySelector('label');
 
     if (config.autocomplete) {
-      this.createAutocomplete(config.autocomplete);
+      this.createAutocomplete(config.autocomplete.options);
     }
 
     this.eventBus = new EventBus();
@@ -46,7 +46,7 @@ class Input {
     this.eventBus.subscribe(channel, observer);
   }
 
-  createAutocomplete(autocomplete) {
+  createAutocomplete(options) {
     this.autocomplete = this.container.querySelector(
       '.input-bar-autocomplete'
     );
@@ -56,18 +56,23 @@ class Input {
 
     this.input.addEventListener('focus', this.toggleAutocomplete.bind(this));
 
-    if (autocomplete.options.length) {
-      this.renderAutocompleteList(autocomplete.options);
+    if (options.length) {
+      this.updateAutocompleteOptions(options);
     }
   }
 
-  renderAutocompleteList(options) {
+  updateAutocompleteOptions(options) {
+    this.autocompleteOptions = options;
+    this.renderAutocompleteList();
+  }
+
+  renderAutocompleteList() {
     const list = this.autocomplete.querySelector(
       '.input-bar-autocomplete-list'
     );
     list.innerHTML = '';
 
-    for (const option of options) {
+    for (const option of this.autocompleteOptions) {
       const item = document.createElement('li');
       item.className = 'autocomplete-item';
       item.insertAdjacentHTML(
