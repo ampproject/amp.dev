@@ -82,7 +82,10 @@ class Experiments extends FlyIn {
         this.onSubmitExperiment();
       }
     });
-    this.inputBar.submit.addEventListener('click', this.onSubmitExperiment.bind(this));
+    this.inputBar.submit.addEventListener(
+      'click',
+      this.onSubmitExperiment.bind(this)
+    );
 
     events.subscribe(ExperimentItem.EVENT_REMOVE_EXPERIMENT, (experiment) => {
       this.removeExperiment(experiment);
