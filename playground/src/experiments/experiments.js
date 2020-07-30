@@ -88,7 +88,8 @@ class Experiments extends FlyIn {
     });
 
     this.inputBar.subscribe(
-      InputBar.EVENT_SELECT_AUTOCOMPLETE, this.onSubmitExperiment.bind(this)
+      InputBar.EVENT_SELECT_AUTOCOMPLETE,
+      this.onSubmitExperiment.bind(this)
     );
 
     this.addActiveExperiments();
