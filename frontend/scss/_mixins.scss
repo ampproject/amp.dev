@@ -181,8 +181,8 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 
 @mixin scrollbar {
   ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 7px;
+    height: 7px;
   }
 
   ::-webkit-scrollbar-thumb {
