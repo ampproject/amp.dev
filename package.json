@@ -136,7 +136,7 @@
     "html-webpack-plugin": "4.3.0",
     "husky": "4.2.5",
     "jasmine": "3.6.1",
-    "jest": "26.1.0",
+    "jest": "26.2.2",
     "js-base64": "3.3.3",
     "js-beautify": "1.11.0",
     "keymaster": "1.6.2",
