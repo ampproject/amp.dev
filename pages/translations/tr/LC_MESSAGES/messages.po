@@ -1065,8 +1065,8 @@ msgid "…while trying to load the search results."
 msgstr "...bir şeyler ters gitti."
 
 #: frontend/templates/layouts/default.j2:129
-msgid "Sadly this page isn't translated yet, but we could use some help doing so. See the <a href=\"/documentation/guides-and-tutorials/contribute/translations\">translation guide</a> on how you can contribute."
-msgstr "Ne yazık ki bu sayfa henüz çevrilmedi, ancak bu konuda bize yardımcı olabilirsiniz. Nasıl katkıda bulunabileceğinizle ilgili <a href=\"/documentation/guides-and-tutorials/contribute/translations\">çeviri kılavuzuna</a> göz atın."
+msgid "Sadly this page isn\'t translated yet, but will be shortly - check back soon!"
+msgstr "Maalesef bu sayfa henüz çevrilmedi ancak yakında çevrilecek. Daha sonra tekrar kontrol edin."
 
 #: frontend/templates/views/examples/documentation.j2:206
 msgid "If the explanations on this page don't cover all of your questions feel free to reach out to other AMP users to discuss your exact use case."
