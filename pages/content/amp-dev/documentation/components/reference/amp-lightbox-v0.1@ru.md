@@ -91,7 +91,7 @@ teaser:
         <td width="40%"><strong>scrollable (необязательно)</strong></td>
         <td>Наличие атрибута <code>scrollable</code> означает, что содержимое окна просмотра можно прокручивать, если оно выходит за рамки окна.
           <br><br>
-            <strong>Примечание.</strong> Атрибут <code>scrollable</code> нельзя использовать с компонентом <code><amp-lightbox></code> в объявлениях HTML с технологией AMP. Подробную информацию можно найти в <a href="#a4a">этом разделе</a>.</td>
+            <strong>Примечание.</strong> Атрибут `scrollable` нельзя использовать с компонентом `&lt;amp-lightbox&gt;` в объявлениях HTML с технологией AMP. Подробную информацию можно найти в <a href="#a4a">этом разделе</a>.</td>
           </tr>
           <tr>
             <td width="40%"><strong>scrollable (необязательно)</strong></td>
