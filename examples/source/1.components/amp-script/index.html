@@ -64,6 +64,12 @@ author: sebastianbenz, morss
         color: #555;
         font-weight: bold;
       }
+
+      #translated-greeting {
+        margin: 0;
+        padding-left: 4px;
+        color: #555;
+      }
     </style>
 
     <!--
@@ -73,7 +79,8 @@ author: sebastianbenz, morss
     -->
     <meta name="amp-script-src" content="sha384-iER2Cy-P1498h1B-1f3ngpVEa9NG1xIxKqg0rNkRX0e7p5s0GYdit1MRKsELIQe8 sha384-UPY0FmlOzIjSqWqMgbuaEbqIdvpGY_FzCuTAyoLdrFJb2NYf8cPWJlugA0rUbXjL
     sha384-tvoKljCwTSMId8wpKdpz8LLZ0LX4CYPO5SHE3naqBMSpjiAXs7nqAFyDqcIyKLnu
-    sha384-28AuuOPww1R3yKdaPfiLgMoR1IpWmqwZNYtMnTVwAJuPX_HpIe6qSXPBC-E5I0Sd">
+    sha384-28AuuOPww1R3yKdaPfiLgMoR1IpWmqwZNYtMnTVwAJuPX_HpIe6qSXPBC-E5I0Sd
+    sha384-pBu1rYVMVJsNBI2deKx1-bLis8TJzkZrbMG5if7ebZ3K9DWRB092L5HUhb-PgcNI">
   </head>
 
   <body>
@@ -242,5 +249,38 @@ author: sebastianbenz, morss
         span.textContent = getOS();
       </script>
     </div>
+
+    <!--
+        ## Personalization
+        Similarly, you can use the `navigator` object, or other means, to personalize content for your user. The following script detects the browser's language and displays a localized greeting.
+    -->
+    <div>
+      <amp-script layout="fixed-height"
+        height="40"
+        script="translation-script"
+        class="sample">
+        <h2 id="translated-greeting">Saluton</h2>
+      </amp-script>
+  
+      <script id="translation-script" type="text/plain" target="amp-script">
+        const translationMap = {
+          'en': 'Hello',
+          'fr': 'Bonjour',
+          'es': 'Hola',
+          'hi': 'हैलो',
+          'zh': '你好',
+          'pr': 'Olá'
+        };
+  
+        const lang = navigator.language.slice(0, 2);
+        const translation = translationMap[lang];
+  
+        if (translation) {
+          let greeting = document.getElementById('translated-greeting');
+          greeting.innerHTML = translation;
+        }
+      </script>
+    </div>
+
   </body>
 </html>
