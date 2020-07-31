@@ -102,6 +102,16 @@ jobs:
     install: *1
     name: Build Pages (CN)
     script: scripts/unbuffer.sh gulp buildPages --locales zh_CN
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (PL)
+    script: scripts/unbuffer.sh gulp buildPages --locales pl
+  - stage: build
+    env: APP_ENV=staging
+    install: *1
+    name: Build Pages (VN)
+    script: scripts/unbuffer.sh gulp buildPages --locales vi
   - stage: deploy
     env: APP_ENV=staging
     before_script:

@@ -48,6 +48,8 @@ const AVAILABLE_LOCALES = [
   'ru',
   'tr',
   'zh_CN',
+  'pl',
+  'vi',
 ];
 
 class Config {

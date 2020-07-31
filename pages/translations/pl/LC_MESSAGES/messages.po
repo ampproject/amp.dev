@@ -645,10 +645,6 @@ msgid "What are you looking for?"
 msgstr ""
 
 #: /content/amp-dev/about/stories.html
-msgid "Who runs the world? ... Beyoncé over the years."
-msgstr ""
-
-#: /content/amp-dev/about/stories.html
 #: /content/amp-dev/community/working-groups/_blueprint.yaml
 msgid "Working Groups"
 msgstr ""
@@ -1070,7 +1066,7 @@ msgstr ""
 
 #: frontend/templates/layouts/default.j2:129
 msgid "Sadly this page isn\'t translated yet, but will be shortly - check back soon!"
-msgstr ""
+msgstr "Rất tiếc, nội dung trên trang này chưa được dịch. Chúng tôi sẽ nhanh chóng cung cấp bản dịch. Hãy sớm quay lại nhé!"
 
 #: frontend/templates/views/examples/documentation.j2:206
 msgid "If the explanations on this page don't cover all of your questions feel free to reach out to other AMP users to discuss your exact use case."
@@ -1759,7 +1755,7 @@ msgstr ""
 msgid "Grow engagement and increase conversions with faster experiences"
 msgstr ""
 
-msgid "The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem. "
+msgid "The average mobile site takes 19 seconds to load over a 3G connection. Coupled with the fact that conversions fall by 12% for every additional second a webpage takes to load, you can safely assume two things: speed equals performance, and most advertiser campaigns have room to improve. That’s where you come in. As an SSP, DSP, analytics provider, or anything in between, embracing speed means improving campaign performance, delivering quality user experiences, and establishing yourself as the adtech platform for the fast web. Join the hundreds of technology platforms currently supporting the open source AMP ecosystem."
 msgstr ""
 
 msgid "AMP offers a way for you to give users a faster experience everywhere: on ads, landing pages or on your entire website. AMP ads help users engage with your brand and improve the performance of your campaigns. When your target audience lands on an AMP page, they get what they’re looking for in the moment they’re looking for it. The net result – they’re more likely to be engaged with and receptive to your brand’s messages, and more likely to take the actions you’re guiding them towards like completing a purchase."
@@ -2072,6 +2068,9 @@ msgid "Experience Demo"
 msgstr ""
 
 msgid "Band page"
+msgstr ""
+
+msgid "Olga and the kings"
 msgstr ""
 
 msgid "Always thought that all AMP pages look the same? Checkout this incredible band website featuring various AMP components to create a vivid and enjoyable experience."
@@ -2656,7 +2655,7 @@ msgstr ""
 msgid "Create emails that encourage readers to interact dynamically with content."
 msgstr ""
 
-msgid "See the latest videos about AMP and find out more on our <a href=\"https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a>"
+msgid "See the latest videos about AMP and find out more on our <a href=\"https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw\">YouTube Channel.</a>"
 msgstr ""
 
 msgid "CMS"
@@ -2824,7 +2823,7 @@ msgstr ""
 msgid "The AMP Project Roadmap"
 msgstr ""
 
-msgid "This is a high level overview suitable for all audiences. For a more detailed developer view, <a href=\"https://github.com/ampproject/amphtml/projects/43">head to GitHub.</a>"
+msgid "This is a high level overview suitable for all audiences. For a more detailed developer view, <a href=\"https://github.com/ampproject/amphtml/projects/43\">head to GitHub.</a>"
 msgstr ""
 
 msgid "AMP Story"
@@ -2965,10 +2964,16 @@ msgstr ""
 msgid "Viewers"
 msgstr ""
 
+msgid "Presentation"
+msgstr ""
+
 msgid "Students"
 msgstr ""
 
 msgid "Teachers"
+msgstr ""
+
+msgid "Find the right tools to build"
 msgstr ""
 
 msgid "<p>Responsible for user specific controlled access to AMP content (amp-subscriptions, amp-access and related extensions)</p>"
@@ -2989,7 +2994,7 @@ msgstr ""
 msgid "How do Accelerated Mobile Pages work?"
 msgstr ""
 
-msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href="https://developers.google.com/amp/cache/">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
+msgid "<p>Accelerated Mobile Pages are just like any other HTML page, but with a limited set of allowed technical functionality that is defined and governed by the open source AMP spec. Just like all web pages, Accelerated Mobile Pages will load in any modern browser or app webview.</p>\n<p>AMP files take advantage of various technical and architectural approaches that prioritize speed to provide a faster experience for users. AMP developers can use a rich and growing library of web components that offer the ability to embed rich media objects like video and social posts, display advertising, or collect analytics. The goal is not to homogenize how content looks and feels, but instead to build a more common technical core between pages that speeds up load times.</p>\n<p>In addition, AMP files can be cached in the cloud in order to reduce the time content takes to get to a user’s mobile device. By using the AMP format, content producers are making the content in AMP files available to be cached by third parties. Under this type of framework, publishers and advertisers continue to control their content, but platforms can easily cache or mirror the content for optimal delivery speed to users. Google has provided the <a href=\"https://developers.google.com/amp/cache/\">Google AMP Cache</a> that can be used by anyone at no cost, and all AMPs will be cached by the Google AMP Cache. Other companies may build their own AMP cache as well.</p>\n<p>In summary, the goal is that the combination of limited technical functionality with a distribution system built around caching will lead to better performing pages, and increased audience development.</p>"
 msgstr ""
 
 msgid "Why does the Accelerated Mobile Pages Project take an open source approach?"
@@ -3001,7 +3006,7 @@ msgstr ""
 msgid "Who can use Accelerated Mobile Pages?"
 msgstr ""
 
-msgid "<p>The project is open to all players in the ecosystem - publishers, consumer platforms, advertisers and creators. To get an idea who some of the companies and sites are who use AMP, head to the <a href="/support/faqs/supported-platforms.html">Who page</a>.</p>"
+msgid "<p>The project is open to all players in the ecosystem - publishers, consumer platforms, advertisers and creators. To get an idea who some of the companies and sites are who use AMP, head to the <a href=\"/support/faqs/supported-platforms.html\">Who page</a>.</p>"
 msgstr ""
 
 msgid "What are the consequences of using Accelerated Mobile Pages?"
@@ -3013,7 +3018,7 @@ msgstr ""
 msgid "What responsibilities do I have when using Accelerated Mobile Pages?"
 msgstr ""
 
-msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href="/docs/reference/components/amp-user-notification.html">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
+msgid "<p>If a publisher or advertiser collects data from users who view its AMP pages, such data collection is governed by their privacy policy.  It is the publisher or advertiser’s responsibility to disclose its privacy policy, ideally by including a link to it within each of their AMP pages.</p>\n<p>Furthermore, the laws in many jurisdictions, such as in the European Union, require a website to give visitors information about cookies and other forms of local storage used on the site (including AMP pages). In many cases, these laws also require that the website obtain consent.  It is the website's responsibility to determine, based on its use of cookies, what type of notice would be appropriate.  Additional information and tools for generating cookie notices can be found at www.cookiechoices.org.  Note that the AMP component <a href=\"/docs/reference/components/amp-user-notification.html\">amp-user-notification</a> provides a way to display a dismissable notification to the user.</p>\n<p>If an AMP page is shown within a viewer on a third party platform, such as a Google AMP Viewer on Google Search, the viewer may be a hybrid environment in which the AMP page and the third party platform may each collect data about the user.  In such a case, data collection by each party is governed by that party’s privacy policy (i.e., in a hybrid viewer environment, data collected by the AMP page is governed by its privacy policy and data collected by the third party platform is governed by the platform’s privacy policy).  It is each party’s responsibility to disclose its privacy policy and comply with relevant data regulations, including European laws relating to its use of cookies.</p>"
 msgstr ""
 
 msgid "What type of content works best using Accelerated Mobile Pages?"
@@ -3025,19 +3030,19 @@ msgstr ""
 msgid "Does making my content work for Accelerated Mobile Pages entail more work?"
 msgstr ""
 
-msgid "<p>In short, not much. Since “AMP HTML” is built entirely out of existing web technologies, the development process mirrors the one publishers  and advertisers are already using today. Publishers  and advertisers can familiarize themselves with the <a href="/docs/fundamentals/spec.html">AMP HTML specification</a> on GitHub. For those used to the current process, we don’t expect a significant learning curve.</p>"
+msgid "<p>In short, not much. Since “AMP HTML” is built entirely out of existing web technologies, the development process mirrors the one publishers  and advertisers are already using today. Publishers  and advertisers can familiarize themselves with the <a href=\"/docs/fundamentals/spec.html\">AMP HTML specification</a> on GitHub. For those used to the current process, we don’t expect a significant learning curve.</p>"
 msgstr ""
 
 msgid "How can a publisher or advertiser get content into AMP HTML?"
 msgstr ""
 
-msgid "<p>Publishers and Content Management System (CMS) providers can develop an integration with their CMS to generate AMP content. Automattic has already published a <a href="https://wordpress.org/plugins/amp/">WordPress AMP plugin</a> and we hope that all content management systems will add support for AMP HTML pages.</p>"
+msgid "<p>Publishers and Content Management System (CMS) providers can develop an integration with their CMS to generate AMP content. Automattic has already published a <a href=\"https://wordpress.org/plugins/amp/\">WordPress AMP plugin</a> and we hope that all content management systems will add support for AMP HTML pages.</p>"
 msgstr ""
 
 msgid "Is AMP only for mobile?"
 msgstr ""
 
-msgid "<p>AMP was designed with responsiveness in mind, to work across <em>all</em> screen sizes.  However, some features for third-party platforms (e.g., Google's Top Stories carousel) may only be designed for the mobile experience.  Check with the third-party platform for how they use AMP.  For more information about mobile and desktop AMP pages, see Paul Bakaus' blog post on <a href="https://paulbakaus.com/2016/07/01/about-that-mobile-in-accelerated-mobile-pages/">About that ‘mobile’ in Accelerated Mobile Pages</a>.</p>"
+msgid "<p>AMP was designed with responsiveness in mind, to work across <em>all</em> screen sizes.  However, some features for third-party platforms (e.g., Google's Top Stories carousel) may only be designed for the mobile experience.  Check with the third-party platform for how they use AMP.  For more information about mobile and desktop AMP pages, see Paul Bakaus' blog post on <a href=\"https://paulbakaus.com/2016/07/01/about-that-mobile-in-accelerated-mobile-pages/\">About that ‘mobile’ in Accelerated Mobile Pages</a>.</p>"
 msgstr ""
 
 msgid "Platform Involvement"
