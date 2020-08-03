@@ -56,6 +56,7 @@ class Input {
     this.autocompleteList = this.autocomplete.querySelector(
       '.input-bar-autocomplete-list'
     );
+    this.autocompleteLabel = this.autocomplete.querySelector('aside');
 
     this.input.addEventListener(
       'keyup',
@@ -105,12 +106,20 @@ class Input {
   }
 
   filterAutocompleteOptions() {
+    let showEmpty = false;
     const searchString = this.input.value;
     if (searchString.length) {
       for (const item of this.autocompleteList.children) {
-        item.hidden = !item.dataset.id.includes(searchString);
+        if (item.dataset.id.includes(searchString)) {
+          item.hidden = false;
+          showEmpty = true;
+        } else {
+          item.hidden = true;
+        }
       }
     }
+
+    this.autocompleteLabel.hidden = showEmpty;
   }
 
   showError(error) {
