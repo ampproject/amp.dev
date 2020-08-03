@@ -37,6 +37,10 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
 
   @include scrollbar;
 
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0;
+  }
+
   @media (min-width: 768px) {
     max-width: 100%;
     margin-right: -30px;
