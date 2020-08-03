@@ -107,13 +107,9 @@
       }
 
       &-list {
-        padding: 0;
-        margin: 0;
         max-height: calc(100% - 54px);
-        overflow-y: scroll;
+        overflow-y: auto;
         padding: 0;
-        list-style: none;
-
       }
 
       aside {

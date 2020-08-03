@@ -3,27 +3,26 @@
 @import 'components/atoms/_text.scss';
 
 .autocomplete-item {
-  border-bottom: 1px solid color('silver');
+  width: 100%;
   padding: 7px 15px 7px 25px;
+  border: 0;
+  border-bottom: 1px solid color('silver');
+  background: transparent;
+  @include txt;
+  @include txt-2;
+  text-align: left;
   cursor: pointer;
 
-  &:last-child { border-bottom: 0; }
-
-  &:hover {
-    background: color('wild-sand');
+  strong {
+    color: color('black');
   }
 
-  button {
-    margin: 5px 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    text-align: left;
-    @include txt;
-    @include txt-2;
+  &:last-child {
+    border-bottom: 0;
+  }
 
-    strong {
-      color: color('black');
-    }
+  &:focus {
+    background: color('wild-sand');
+    outline: 0;
   }
 }

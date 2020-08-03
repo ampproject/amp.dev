@@ -69,6 +69,25 @@ class Input {
     if (options.length) {
       this.updateAutocompleteOptions(options);
     }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.keyCode == 38 || e.keyCode == 40) {
+        this.selectAutocompleteItem(e);
+      }
+    });
+  }
+
+  selectAutocompleteItem(e) {
+    const selected = document.activeElement;
+    if (selected.className == 'autocomplete-item') {
+      if (e.keyCode == 38 && selected != this.autocompleteList.firstChild) {
+        selected.previousElementSibling.focus();
+      } else if (e.keyCode == 40 && selected != this.autocompleteList.lastChild) {
+        selected.nextElementSibling.focus();
+      }
+    } else {
+      this.autocompleteList.querySelector('.autocomplete-item').focus();
+    }
   }
 
   updateAutocompleteOptions(options) {
@@ -80,7 +99,7 @@ class Input {
     this.autocompleteList.innerHTML = '';
 
     for (const option of options) {
-      const item = document.createElement('li');
+      const item = document.createElement('button');
       item.className = 'autocomplete-item';
       item.dataset.id = option.id;
       item.insertAdjacentHTML(
@@ -89,6 +108,13 @@ class Input {
           option,
         })
       );
+
+      item.addEventListener('mouseover', () => {
+        item.focus();
+      });
+      item.addEventListener('mouseleave', () => {
+        item.focus();
+      });
 
       item.addEventListener('click', (e) => {
         e.preventDefault();
