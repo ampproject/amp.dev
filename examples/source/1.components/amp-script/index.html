@@ -216,7 +216,7 @@ author: sebastianbenz, morss
       <amp-script layout="fixed-height" height="36" script="user-agent-script" class="sample">
         <div>
            Your operating system is:
-           <span id="operating-system" class="answer-text">(loading)</span>
+           <span id="operating-system" class="answer-text"></span>
         </div>
       </amp-script>
 
@@ -259,7 +259,7 @@ author: sebastianbenz, morss
         height="40"
         script="translation-script"
         class="sample">
-        <h2 id="translated-greeting">Saluton</h2>
+        <h2 id="translated-greeting"></h2>
       </amp-script>
   
       <script id="translation-script" type="text/plain" target="amp-script">
@@ -274,11 +274,12 @@ author: sebastianbenz, morss
   
         const lang = navigator.language.slice(0, 2);
         const translation = translationMap[lang];
-  
-        if (translation) {
-          let greeting = document.getElementById('translated-greeting');
-          greeting.innerHTML = translation;
+        if (!translation) {
+          translation = "Couldn't recognize your language. So: Saluton";
         }
+
+        let greeting = document.getElementById('translated-greeting');
+        greeting.innerHTML = translation + '!';
       </script>
     </div>
 
