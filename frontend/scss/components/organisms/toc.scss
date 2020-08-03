@@ -36,7 +36,7 @@
   @include scrollbar;
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(color('black'), 0.10);
+    background-color: transparentize(color('black'), 0.9);
   }
 
   @media (min-width: 768px) {
