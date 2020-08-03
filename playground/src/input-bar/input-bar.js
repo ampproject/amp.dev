@@ -77,6 +77,10 @@ class Input {
     });
   }
 
+  /**
+   * Overrwrite arrow key events to allow navigation between results using up/down keys
+   * @param  {event} e keyDown event with keycode either 38 (up) or 40 (down)
+   */
   selectAutocompleteItem(e) {
     const selected = document.activeElement;
     if (selected.className == 'autocomplete-item') {
