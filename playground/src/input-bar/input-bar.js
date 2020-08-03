@@ -106,6 +106,7 @@ class Input {
       const item = document.createElement('button');
       item.className = 'autocomplete-item';
       item.dataset.id = option.id;
+      item.setAttribute('role', 'listitem');
       item.insertAdjacentHTML(
         'beforeend',
         autocompleteItem({
