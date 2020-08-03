@@ -1,6 +1,18 @@
+<!---
+
+standaloneSnippets: true
+preview: true
+author: sebastianbenz, morss
+
+--->
+
 <!--
-  An [amp-script](/content/amp-dev/documentation/components/reference/amp-script.md) hello world example.
+  ## Introduction
+
+  The `amp-script` component allows you to run custom JavaScript.
+  Your code runs in a Web Worker, and certain restrictions apply.
 -->
+
 <!-- -->
 <!doctype html>
 <html ⚡>
@@ -10,158 +22,225 @@
     <link rel="canonical" href="self.html" />
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-      <script async src="https://cdn.ampproject.org/v0.js"></script>
-      <!--
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!--
 
-        ## Setup
+      ## Setup
 
-        First, you need to import the `amp-script` extension.
-      -->
-      <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-      <style amp-custom>
-        .amp-script-sample {
-          padding: 8px;
-        }
-        .amp-script-sample button {
-          background-color: #005AF0;
-          font-size: 16px;
-          font-weight: 700;
-          color: white;
-          border: none;
-          padding: 8px;
-          margin: 8px 0;
-        }
-        .amp-script-sample button[disabled] {
-          background-color: #f3f3f3;
-          color: #ccc;
-        }
-      </style>
-
-      <!--
-        For inline scripts you need to generate a CSP header. Read more about this in the [component documentation](/content/amp-dev/documentation/components/reference/amp-script-v0.1.md).
-      -->
-      <meta name="amp-script-src" content="sha384-X8xW7VFd-a-kgeKjsR4wgFSUlffP7x8zpVmqC6lm2DPadWUnwfdCBJ2KbwQn6ADE sha384-nNFaDRiLzgQEgiC5kP28pgiJVfNLVuw-nP3VBV-e2s3fOh0grENnhllLfygAuU_M sha384-u7NPnrcs7p4vsbGLhlYHsId_iDJbcOWxmBd9bhVuPoA_gM_he4vyK6GsuvFvr2ym">
-  </head>
-  <body>
-      <!--
-        ## Basic usage
-
-        An amp-script element can load a JavaScript file from a URL. This is usually the best way to integrate a script as the browser needs to download the script only once.
-      -->
-      <amp-script layout="container" src="<% hosts.platform %>/documentation/examples/components/amp-script/hello-world.js" class="amp-script-sample" >
-        <button id="hello">Click!</button>
-      </amp-script>
-
-      <!--
-        This is the script in [hello-world.js](hello-world.js):
-
-        ```js
-const button = document.getElementById('hello');
-button.addEventListener('click', () => {
-  const h1 = document.createElement('h1');
-  h1.textContent = 'Hello World!';
-  document.body.appendChild(h1);
-});```
-
-        ## Inline Scripts
-
-        You can also declare scripts inline and reference them by `id`.
-      -->
-      <amp-script layout="container" script="hello-world" class="amp-script-sample">
-        <button id="hello2">Click!</button>
-      </amp-script>
-
-      <!--
-        This is the inlined script. Note that the type needs to be `type=text/plain` and the `target=amp-script`.
-
-      -->
-      <script id="hello-world" type="text/plain" target="amp-script">
-    const button = document.getElementById('hello2');
-    button.addEventListener('click', () => {
-      const h1 = document.createElement('h1');
-      h1.textContent = 'Hello World 2!';
-      document.body.appendChild(h1);
-    });
-  </script>
-
-  <!-- Note: `document.body` refers to the `amp-script` tag and not the actual `body` tag. `document.body.appendChild(...)` actually adds an element inside the `amp-script` element. -->
-
-  <!--
-      ## Using the fetch API
-
-      `amp-script` supports using the fetch API. To be able to update the page on load, we need to use the `fixed-height` layout instead of the `container` layout (and the height needs to be less than `300px`).
-  -->
-  <amp-script layout="fixed-height" height="32" script="time-script" class="amp-script-sample">
-    <div>The time is: <span id="time"></span></div>
-  </amp-script>
-
-  <!-- As `amp-script` code is executed inside a web worker, fetch only works with absolute URLs. -->
-  <script id="time-script" type="text/plain" target="amp-script">
-    const fetchCurrentTime = async () => {
-      const response = await fetch('<% hosts.platform %>/documentation/examples/api/time');
-      const data = await response.json();
-      const div = document.getElementById('time');
-      div.textContent = data.time;
-    }
-    fetchCurrentTime();
-  </script>
-  <!--
-      ## Custom form validation
-
-      You can also use `amp-script` to implement custom form validation. Here we set the 
-      `disabled` state of a button based on the input value.
-  -->
-<amp-script layout="container" script="form-validation-script" class="amp-script-sample" sandbox="allow-forms">
-  <input id="validated-input" placeholder="Only upper case letters allowed...">
-  <button id="validated-input-submit" disabled>Submit</button>
-</amp-script>
-
-<!-- The script adds events listeners to the input elements and sets the `disabled` state based on a custom regex. -->
-<script id="form-validation-script" type="text/plain" target="amp-script">
-  const submitButton = document.getElementById('validated-input-submit');
-  const validatedInput = document.getElementById('validated-input');
-  validatedInput.addEventListener('input', () => {
-    const isValid = /^[A-Z]+$/.test(validatedInput.value);
-    if (isValid) {
-      submitButton.removeAttribute('disabled');
-    } else {
-      submitButton.setAttribute('disabled', '');
-    }
-  });
-</script>
-
-  <!--
-      ## Detecting Android vs iOS in AMP
-
-      `amp-script` is great to implement functionality not offered by AMP out-of-the-box. Here is a sample that checks if the current device is using Android or iOS.
-  -->
-  <amp-script layout="container" script="user-agent-script" class="amp-script-sample">
-    <div>Your user-agent is: <span id="user-agent">other</span></div>
-  </amp-script>
-
-  <!-- The script implementation retrieves the mobile operating system from the user agent string. -->
-  <script id="user-agent-script" type="text/plain" target="amp-script">
-    function getMobileOperatingSystem() {
-        const userAgent = navigator.userAgent;
-        if (/android/i.test(userAgent)) {
-          return "Android";
-        }
-        // iOS detection from: http://stackoverflow.com/a/9039885/177710
-        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-          return "iOS";
-        }
-
-        return "other";
+      First, you need to import the `amp-script` extension.
+    -->
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <style amp-custom>
+      .sample {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 16px;
+        padding: 8px;
       }
 
-      const span = document.getElementById('user-agent');
-      span.textContent = getMobileOperatingSystem();
+      .sample button {
+        background-color: #005AF0;
+        font-weight: 700;
+        color: white;
+        border: none;
+        outline: none;
+        border-radius: 12px;
+        padding: 8px 16px;
+        margin: 8px 0;
+      }
 
-      const pre = document.createElement('pre');
-      pre.textContent = navigator.userAgent;
-      span.appendChild(pre);
+      .sample button[disabled] {
+        background-color: #ccc;
+        color: #666;
+      }
 
-  </script>
+      #validated-input {
+        height: 26px;
+        width: 225px;
+        padding: 6px;
+        box-sizing: border-box;
+      }
 
+      .answer-text {
+        color: #555;
+        font-weight: bold;
+      }
+    </style>
+
+    <!--
+      For inline scripts, you need to generate a script hash.
+      Use the `data-ampdevmode` attribute to disable this requirement during development.
+      Visit [the documentation](/content/amp-dev/documentation/components/reference/amp-script-v0.1.md#script-hash) to learn more.
+    -->
+    <meta name="amp-script-src" content="sha384-iER2Cy-P1498h1B-1f3ngpVEa9NG1xIxKqg0rNkRX0e7p5s0GYdit1MRKsELIQe8 sha384-UPY0FmlOzIjSqWqMgbuaEbqIdvpGY_FzCuTAyoLdrFJb2NYf8cPWJlugA0rUbXjL
+    sha384-tvoKljCwTSMId8wpKdpz8LLZ0LX4CYPO5SHE3naqBMSpjiAXs7nqAFyDqcIyKLnu
+    sha384-28AuuOPww1R3yKdaPfiLgMoR1IpWmqwZNYtMnTVwAJuPX_HpIe6qSXPBC-E5I0Sd">
+  </head>
+
+  <body>
+    <!--
+      ## Loading a script from a URL
+
+      To load your script from a URL, use the `src` attribute. This example loads and runs a script called `hello.js`.
+      Valid AMP requires all URLs to be absolute and use `https`.
+
+      Here's the script in `hello-world.js`:
+
+      ```js
+      const button = document.getElementById('hello-url');
+
+      button.addEventListener('click', () => {
+        const h1 = document.createElement('h1');
+        h1.textContent = 'Hello World!';
+        document.body.appendChild(h1);
+      });
+      ```
+
+      And here's the HTML:
+    -->
+
+    <amp-script layout="container" src="<% hosts.platform %>/documentation/examples/components/amp-script/hello-world.js" class="sample">
+      <button id="hello-url">Say hello!</button>
+    </amp-script>
+
+    <!--
+
+      ## Using an inline script
+
+      You can also include a script inline and reference it by `id`.
+      Note that, on the script, you need to set `type=text/plain` and `target=amp-script`.
+    -->
+    <div>
+      <amp-script layout="container" script="hello-world" class="sample">
+        <button id="hello-inline">Say hello!</button>
+      </amp-script>
+
+      <script id="hello-world" type="text/plain" target="amp-script">
+        const button = document.getElementById('hello-inline');
+
+        button.addEventListener('click', () => {
+          const h1 = document.createElement('h1');
+          h1.textContent = 'Hello World!';
+          document.body.appendChild(h1);
+        });
+      </script>
+    </div>
+    <!-- [tip type="note"]
+    `amp-script` passes its children to your script as the virtual DOM - not the entire DOM. To your script, those children *are* the DOM.
+    Thus, `document.body` refers to what's inside the `amp-script` tag, not the actual `body`. `document.body.appendChild(...)` actually adds an element inside the `amp-script` element.
+    [/tip]
+    -->
+    <!--
+        ## Using the fetch API
+
+        `amp-script` supports the fetch API.
+        `amp-script` allows us to update the page on load if it knows that the script can't change the component's height. Here, we use `fixed-height` layout, and we specify the `height` in an HTML attribute. See [the documentation](/content/amp-dev/documentation/components/reference/amp-script-v0.1.md#script-hash) for details.
+    -->
+    <div>
+      <amp-script layout="fixed-height" height="36" script="time-script" class="sample">
+        <div>The time at page load was: <span id="time" class="answer-text"></span></div>
+      </amp-script>
+
+      <script id="time-script" type="text/plain" target="amp-script">
+        const fetchCurrentTime = async () => {
+          const response = await fetch('<% hosts.platform %>/documentation/examples/api/time');
+          const data = await response.json();
+          const span = document.getElementById('time');
+          span.textContent = data.time;
+        }
+
+        fetchCurrentTime();
+      </script>
+    </div>
+    <!-- 
+        ## Showing live data
+
+        You can also use `setInterval()` or `setTimeout` to get fresh data.
+    -->
+    <div>
+      <amp-script layout="fixed-height" height="36" script="live-time-script" class="sample">
+        <div>The current time is: <span id="live-time" class="answer-text"></span></div>
+      </amp-script>
+
+      <script id="live-time-script" type="text/plain" target="amp-script">
+        const span = document.getElementById('live-time');
+
+        const fetchCurrentTime = async () => {
+          const response = await fetch('<% hosts.platform %>/documentation/examples/api/time');
+          const data = await response.json();
+          span.textContent = data.time;
+        }
+
+        setInterval(fetchCurrentTime, 1000);
+      </script>
+    </div>    
+    <!--
+        ## Custom form validation
+
+        You can also use `amp-script` to implement custom form validation. This script enables the button when the input field contains only capital letters.
+    -->
+    <div>
+      <amp-script layout="container" script="form-validation-script" sandbox="allow-forms" class="sample">
+        <input id="validated-input" placeholder="Only uppercase letters allowed...">
+        <button id="validated-input-submit" disabled>Submit</button>
+      </amp-script>
+
+      <script id="form-validation-script" type="text/plain" target="amp-script">
+        const submitButton = document.getElementById('validated-input-submit');
+        const validatedInput = document.getElementById('validated-input');
+
+        function allUpper() {
+          let isValid = /^[A-Z]+$/.test(validatedInput.value);
+
+          if (isValid) {
+            submitButton.removeAttribute('disabled');
+          } else {
+            submitButton.setAttribute('disabled', '');
+          }
+        }
+
+        validatedInput.addEventListener('input', allUpper);
+      </script>
+    </div>
+    <!--
+        ## Detecting the operating system
+        Your script has access to global objects like `navigator`. This script uses this object to try to guess your device's operating system. 
+    -->
+    <div>
+      <amp-script layout="fixed-height" height="36" script="user-agent-script" class="sample">
+        <div>
+           Your operating system is:
+           <span id="operating-system" class="answer-text">(loading)</span>
+        </div>
+      </amp-script>
+
+      <script id="user-agent-script" type="text/plain" target="amp-script">
+        // Adapted with gratitude from https://stackoverflow.com/a/38241481
+
+        function getOS() {
+          const userAgent = navigator.userAgent,
+                platform = navigator.platform,
+                macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+                windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+                iosPlatforms = ['iPhone', 'iPad', 'iPod'];
+        
+          if (macosPlatforms.includes(platform)) {
+            return 'Mac OS';
+          } else if (iosPlatforms.includes(platform)) {
+            return 'iOS';
+          } else if (windowsPlatforms.includes(platform)) {
+            return 'Windows';
+          } else if (/Android/.test(userAgent)) {
+            return 'Android';
+          } else if (/Linux/.test(platform)) {
+            return 'Linux';
+          }
+        
+          return 'Unknown';
+        }
+
+        const span = document.getElementById('operating-system');
+        span.textContent = getOS();
+      </script>
+    </div>
   </body>
 </html>
