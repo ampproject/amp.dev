@@ -71,7 +71,7 @@ class Input {
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.keyCode == 38 || e.keyCode == 40) {
+      if (e.keyCode == 38 || e.keyCode == 40) {
         this.selectAutocompleteItem(e);
       }
     });
@@ -86,7 +86,10 @@ class Input {
     if (selected.classList.contains('autocomplete-item')) {
       if (e.keyCode == 38 && selected != this.autocompleteList.firstChild) {
         selected.previousElementSibling.focus();
-      } else if (e.keyCode == 40 && selected != this.autocompleteList.lastChild) {
+      } else if (
+        e.keyCode == 40 &&
+        selected != this.autocompleteList.lastChild
+      ) {
         selected.nextElementSibling.focus();
       }
     } else {
