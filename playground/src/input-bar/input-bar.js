@@ -83,7 +83,7 @@ class Input {
    */
   selectAutocompleteItem(e) {
     const selected = document.activeElement;
-    if (selected.className == 'autocomplete-item') {
+    if (selected.classList.contains('autocomplete-item')) {
       if (e.keyCode == 38 && selected != this.autocompleteList.firstChild) {
         selected.previousElementSibling.focus();
       } else if (e.keyCode == 40 && selected != this.autocompleteList.lastChild) {
