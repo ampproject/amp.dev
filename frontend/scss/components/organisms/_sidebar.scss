@@ -33,9 +33,7 @@
       max-height: 100%;
     }
 
-    &::-webkit-scrollbar {
-      width: 2px;
-    }
+    @include scrollbar;
 
     &::-webkit-scrollbar-thumb {
       background-color: rgba(color('black'), 0.10);

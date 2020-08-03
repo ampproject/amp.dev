@@ -35,18 +35,7 @@ Styles taken and combined from: https://raw.githubusercontent.com/richleland/pyg
     user-select: none;
   }
 
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: color('oslo-gray');
-  }
-
-  &::-webkit-scrollbar-corner {
-    background-color: transparent;
-  }
+  @include scrollbar;
 
   @media (min-width: 768px) {
     max-width: 100%;

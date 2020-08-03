@@ -16,17 +16,10 @@
     background: color('gallery');
     font-size: 12.6px;
 
+    @include scrollbar;
+
     &::-webkit-scrollbar {
-      width: 4px;
       height: 2px;
-    }
-
-    &::-webkit-scrollbar-corner {
-      background-color: transparent;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #91979d;
     }
   }
 }
