@@ -60,7 +60,7 @@ class Input {
 
     this.input.addEventListener(
       'keyup',
-      this.filterAutocompleteOptions.bind(this)
+      this.filterAutocompleteOptionsList.bind(this)
     );
     this.input.addEventListener('focus', () => {
       this.toggleAutocomplete(true);
@@ -97,6 +97,10 @@ class Input {
     }
   }
 
+  /**
+   * Allow updating the list of autocomplete options later on
+   * @param {Array} options
+   */
   updateAutocompleteOptions(options) {
     this.autocompleteOptions = options;
     this.renderAutocompleteList(options);
@@ -136,7 +140,10 @@ class Input {
     this.autocomplete.classList.toggle('active', force);
   }
 
-  filterAutocompleteOptions() {
+  /**
+   * Update autocomplete list based on input value
+   */
+  filterAutocompleteOptionsList() {
     let showEmpty = false;
     const searchString = this.input.value;
     if (searchString.length) {
