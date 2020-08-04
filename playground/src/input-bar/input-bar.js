@@ -99,7 +99,7 @@ class Input {
 
   /**
    * Allow updating the list of autocomplete options later on
-   * @param {Array} options
+   * @param {Array} options list of possible autocomplete results
    */
   updateAutocompleteOptions(options) {
     this.autocompleteOptions = options;
