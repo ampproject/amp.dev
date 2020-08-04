@@ -108,7 +108,7 @@ class Experiments extends FlyIn {
   }
 
   /**
-   * Reads activated experiments from local localStorage
+   * Reads activated experiments from localStorage
    * and adds them to the list
    */
   addActiveExperiments() {
