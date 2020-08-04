@@ -59,16 +59,6 @@
       flex-direction: row;
       overflow-x: scroll;
 
-      &::-webkit-scrollbar {
-        width: 2px;
-        height: 2px;
-        padding-bottom: 8px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: #cecece;
-      }
-
       @media (min-width: 1024px) {
         flex-wrap: wrap;
       }

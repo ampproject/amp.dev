@@ -180,16 +180,17 @@ box-shadow: 0 25px 50px 0 rgba(0,0,0,0.21);
 }
 
 @mixin scrollbar {
-  ::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
   }
 
-  ::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
     background-color: color('oslo-gray');
   }
 
-  ::-webkit-scrollbar-corner {
+  &::-webkit-scrollbar-corner {
     background-color: transparent;
   }
 }
