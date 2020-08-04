@@ -129,7 +129,7 @@ class Input {
         e.preventDefault();
         this.input.value = option.id;
         this.eventBus.publish(EVENT_SELECT_AUTOCOMPLETE);
-        this.toggleAutocomplete();
+        this.toggleAutocomplete(true);
       });
 
       this.autocompleteList.appendChild(item);
@@ -138,6 +138,15 @@ class Input {
 
   toggleAutocomplete(force) {
     this.autocomplete.classList.toggle('active', force);
+    
+    if (force) {
+      const listener = document.addEventListener('click', (e) => {
+        if (!e.target.className.startsWith('input-bar')) {
+          this.toggleAutocomplete(false);
+          document.removeEventListener('click', listener);
+        }
+      });
+    }
   }
 
   /**
