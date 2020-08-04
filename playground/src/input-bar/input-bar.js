@@ -117,10 +117,7 @@ class Input {
         })
       );
 
-      item.addEventListener('mouseover', () => {
-        item.focus();
-      });
-      item.addEventListener('mouseleave', () => {
+      item.addEventListener('mouseenter', () => {
         item.focus();
       });
 
