@@ -138,7 +138,7 @@ class Input {
 
   toggleAutocomplete(force) {
     this.autocomplete.classList.toggle('active', force);
-    
+
     if (force) {
       const listener = document.addEventListener('click', (e) => {
         if (!e.target.className.startsWith('input-bar')) {
