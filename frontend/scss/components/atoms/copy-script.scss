@@ -19,7 +19,11 @@
     @include scrollbar;
 
     &::-webkit-scrollbar {
-      height: 2px;
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0px;
     }
   }
 }
