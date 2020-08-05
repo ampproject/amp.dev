@@ -52,11 +52,23 @@ class Importer {
    * @param {Element} target
    */
   constructor(target, label, helpText) {
-    this.fileUpload = createFileUpload(target, {
-      acceptedFiles: 'message/rfc822',
-      url: '#',
-    });
-    this.emailLoader = EmailLoader.createEmailLoader();
+    if (modes.IS_DEFAULT) {
+      this.fileUpload = createFileUpload(target, {
+        acceptedFiles: 'message/rfc822',
+        url: '#',
+      });
+      this.emailLoader = EmailLoader.createEmailLoader();
+      
+      this.fileUpload.subscribe(
+        FileUpload.EVENT_FILE_UPLOADED,
+        this.emailLoader.loadEmailContent.bind(this.emailLoader)
+      );
+  
+      this.emailLoader.subscribe(
+        EmailLoader.EVENT_LOAD_EMAIL_ERROR,
+        this.fileUpload.showError.bind(this.fileUpload)
+      );
+    }
 
     this.inputBar = createInput(target, {
       helpText: helpText,
@@ -72,16 +84,6 @@ class Importer {
         this.onSubmitUrl(e);
       }
     });
-
-    this.fileUpload.subscribe(
-      FileUpload.EVENT_FILE_UPLOADED,
-      this.emailLoader.loadEmailContent.bind(this.emailLoader)
-    );
-
-    this.emailLoader.subscribe(
-      EmailLoader.EVENT_LOAD_EMAIL_ERROR,
-      this.fileUpload.showError.bind(this.fileUpload)
-    );
 
     events.subscribe(
       Document.EVENT_RECEIVE_URL_CONTENT,
@@ -186,7 +188,7 @@ class InlineImporter {
     target.insertAdjacentHTML('beforeend', template());
 
     this.importer = new Importer(
-      target.querySelector('#input-bar-url'),
+      target.querySelector('#import-container'),
       'Validate'
     );
   }
