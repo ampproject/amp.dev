@@ -16,17 +16,14 @@
     background: color('gallery');
     font-size: 12.6px;
 
-    &::-webkit-scrollbar {
-      width: 4px;
-      height: 2px;
-    }
+    @include scrollbar;
 
-    &::-webkit-scrollbar-corner {
-      background-color: transparent;
+    &::-webkit-scrollbar {
+      height: 4px;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #91979d;
+      border-radius: 0px;
     }
   }
 }
