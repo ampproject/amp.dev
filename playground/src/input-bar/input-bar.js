@@ -83,14 +83,11 @@ class Input {
    * @param  {event} e keyDown event with keycode either 38 (up) or 40 (down)
    */
   onArrowKey(e) {
-    console.log('key');
     e.preventDefault();
     const selected = document.activeElement;
 
     // If the focused element is the input field, then jump in to the list
     // of autocomplete options by selecting the first not filtered item
-    console.log('input', this.filteredAutocompleteItems[0]);
-
     if (e.key == 'ArrowDown' && selected == this.input) {
       this.filteredAutocompleteItems[0].focus();
       return;
@@ -199,10 +196,20 @@ class Input {
           item.hidden = true;
         }
       }
+      this.filteredAutocompleteItems = filteredItems;
+      this.autocompleteLabel.hidden = showEmpty;
+
+      return;
     }
 
-    this.filteredAutocompleteItems = filteredItems;
-    this.autocompleteLabel.hidden = showEmpty;
+    if (!searchString.length) {
+      this.filteredAutocompleteItems = Array.from(this.autocompleteList.children);
+      this.filteredAutocompleteItems.map((item) => {
+        item.hidden = false;
+      });
+      
+      return;
+    }
   }
 
   showError(error) {
