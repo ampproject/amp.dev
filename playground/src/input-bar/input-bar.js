@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import key from 'keymaster/keymaster.js';
+
 import './input-bar.scss';
 import template from './input-bar.hbs';
 
@@ -36,7 +38,7 @@ class Input {
     this.label = target.querySelector('label');
 
     if (config.autocomplete) {
-      this.createAutocomplete(config.autocomplete.options);
+      this.autocomplete = this.createAutocomplete(config.autocomplete.options);
     }
 
     this.eventBus = new EventBus();
@@ -70,30 +72,59 @@ class Input {
       this.updateAutocompleteOptions(options);
     }
 
-    document.addEventListener('keydown', (e) => {
-      if (e.keyCode == 38 || e.keyCode == 40) {
-        this.selectAutocompleteItem(e);
-      }
-    });
+    key('up', this.onArrowKey.bind(this));
+    key('down', this.onArrowKey.bind(this));
+
+    return this.autocomplete;
   }
 
   /**
    * Overrwrite arrow key events to allow navigation between results using up/down keys
    * @param  {event} e keyDown event with keycode either 38 (up) or 40 (down)
    */
-  selectAutocompleteItem(e) {
+  onArrowKey(e) {
+    console.log('key');
+    e.preventDefault();
     const selected = document.activeElement;
-    if (selected.classList.contains('autocomplete-item')) {
-      if (e.keyCode == 38 && selected != this.autocompleteList.firstChild) {
-        selected.previousElementSibling.focus();
-      } else if (
-        e.keyCode == 40 &&
-        selected != this.autocompleteList.lastChild
-      ) {
-        selected.nextElementSibling.focus();
+
+    // If the focused element is the input field, then jump in to the list
+    // of autocomplete options by selecting the first not filtered item
+    console.log('input', this.filteredAutocompleteItems[0]);
+
+    if (e.key == 'ArrowDown' && selected == this.input) {
+      this.filteredAutocompleteItems[0].focus();
+      return;
+    }
+
+    // If a autocomplete item is currently selected and its a children of
+    // this input then advance in the list
+    if (selected.parentElement == this.autocompleteList) {
+      if (e.key == 'ArrowUp') {
+        if (selected != this.filteredAutocompleteItems[0]) {
+          this.filteredAutocompleteItems[
+            this.filteredAutocompleteItems.indexOf(selected) - 1
+          ].focus();
+        } else {
+          // If the focused element is the first child in the list then go back
+          // into the input
+          this.input.focus();
+        }
+
+        return;
       }
-    } else {
-      this.autocompleteList.querySelector('.autocomplete-item').focus();
+
+      if (
+        e.key == 'ArrowDown' &&
+        selected !=
+          this.filteredAutocompleteItems[
+            this.filteredAutocompleteItems.length - 1
+          ]
+      ) {
+        this.filteredAutocompleteItems[
+          this.filteredAutocompleteItems.indexOf(selected) + 1
+        ].focus();
+        return;
+      }
     }
   }
 
@@ -134,6 +165,8 @@ class Input {
 
       this.autocompleteList.appendChild(item);
     }
+
+    this.filteredAutocompleteItems = Array.from(this.autocompleteList.children);
   }
 
   toggleAutocomplete(force) {
@@ -155,10 +188,12 @@ class Input {
   filterAutocompleteOptionsList() {
     let showEmpty = false;
     const searchString = this.input.value;
+    const filteredItems = [];
     if (searchString.length) {
       for (const item of this.autocompleteList.children) {
         if (item.dataset.id.includes(searchString)) {
           item.hidden = false;
+          filteredItems.push(item);
           showEmpty = true;
         } else {
           item.hidden = true;
@@ -166,6 +201,7 @@ class Input {
       }
     }
 
+    this.filteredAutocompleteItems = filteredItems;
     this.autocompleteLabel.hidden = showEmpty;
   }
 
