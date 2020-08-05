@@ -203,11 +203,13 @@ class Input {
     }
 
     if (!searchString.length) {
-      this.filteredAutocompleteItems = Array.from(this.autocompleteList.children);
+      this.filteredAutocompleteItems = Array.from(
+        this.autocompleteList.children
+      );
       this.filteredAutocompleteItems.map((item) => {
         item.hidden = false;
       });
-      
+
       return;
     }
   }
