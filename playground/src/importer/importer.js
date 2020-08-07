@@ -58,12 +58,12 @@ class Importer {
         url: '#',
       });
       this.emailLoader = EmailLoader.createEmailLoader();
-      
+
       this.fileUpload.subscribe(
         FileUpload.EVENT_FILE_UPLOADED,
         this.emailLoader.loadEmailContent.bind(this.emailLoader)
       );
-  
+
       this.emailLoader.subscribe(
         EmailLoader.EVENT_LOAD_EMAIL_ERROR,
         this.fileUpload.showError.bind(this.fileUpload)
