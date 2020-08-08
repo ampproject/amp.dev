@@ -118,20 +118,13 @@ flyout:
 <section class="ap--video-slider">
   <h2 class="ap-o-video-slider-text">{{ _('Take the Video Courses') }}</h2>
   <p class="ap-o-video-slider-text">{{ _('All three courses can be now be taken by video on <a href="https://www.youtube.com/playlist?list=PLXTOW_XMsIDS45GB-eBV5s_M9EGIXMjI_" target="_blank">our YouTube channel!</a>') }}</p>
-  [% set youTubeChannelPosts = []|importYouTubeChannel %]
-  [% if youTubeChannelPosts|length %]
-  <amp-carousel class="ap-o-video-slider-carousel"
-      type="carousel"
-      height="300"
-      layout="fixed-height"
-      controls=0>
-    [% for post in youTubeChannelPosts %]
-    <amp-youtube data-videoid="[=post.id=]"
-        width="391"
-        height="220"
-        layout="fixed">
-    </amp-youtube>
-    [% endfor %]
-  </amp-carousel>
-  [% endif %]
+  {% with %}
+  {% set youtube_video_ids = [
+    'qWpZbADJlgE',
+    'X3DybgZgN9k',
+    'v_HIPRR9E4Q'
+    ]
+  %}
+  {% include '/views/partials/video-carousel.j2' %}
+  {% endwith %}
 </section>

@@ -1,0 +1,13 @@
+<amp-carousel class="ap-o-video-slider-carousel"
+    height="300"
+    layout="fixed-height"
+    controls=0
+    type="carousel">
+  {% for id in youtube_video_ids %}
+  <amp-youtube data-videoid="{{ id }}"
+      width="391"
+      height="220"
+      layout="fixed">
+  </amp-youtube>
+  {% endfor %}
+</amp-carousel>
