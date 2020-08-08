@@ -50,15 +50,22 @@ section_links:
   <div class="ap--content-x-wide">
     <h2 class="ap-o-video-slider-text">1日目からすべてのエキサイティングなニュースを発見</h2>
     <p class="ap-o-video-slider-text">東京に行くことはできませんでしたが、それでもAMPの周りで起こっているすべての刺激的なことについて知りたいですか？ 1日目のハイライトをチェックして、AMPチームがクレーケンを解き放つのを見てください。</p>
-    {% with %}
-    {% set youtube_video_ids = [
-      '1vwOFt9FBm4',
-      'sYXkVOiz77I',
-      'BrDBsS1Sko0',
-      ]
-    %}
-    {% include '/views/partials/video-carousel.j2' %}
-    {% endwith %}
+    [% set youTubeChannelPosts = []|importYouTubeChannel %]
+    [% if youTubeChannelPosts|length %]
+    <amp-carousel class="ap-o-video-slider-carousel"
+        type="carousel"
+        height="300"
+        layout="fixed-height"
+        controls=0>
+      [% for post in youTubeChannelPosts %]
+      <amp-youtube data-videoid="[=post.id=]"
+          width="391"
+          height="220"
+          layout="fixed">
+      </amp-youtube>
+      [% endfor %]
+    </amp-carousel>
+    [% endif %]
 
     <a href="https://www.youtube.com/watch?v=W7T5tMgrrFs&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
       <div class="ap-a-ico ap-m-lnk-icon">
@@ -75,15 +82,22 @@ section_links:
   <div class="ap--content-x-wide">
     <h2 class="ap-o-video-slider-text">2日目のハイライトをまとめる</h2>
     <p class="ap-o-video-slider-text">会議の2日目にも素晴らしい講演者と講演がたくさんありました。 Signed交換の詳細など、Advertising＆AMPに関する最新のニュースをお見逃しなく。</p>
-    {% with %}
-    {% set youtube_video_ids = [
-      'Q6BmFx7ivNg',
-      'tlWT_D0XJtE',
-      'Ez_wOEmH1P0',
-      ]
-    %}
-    {% include '/views/partials/video-carousel.j2' %}
-    {% endwith %}
+    [% set youTubeChannelPosts = []|importYouTubeChannel %]
+    [% if youTubeChannelPosts|length %]
+    <amp-carousel class="ap-o-video-slider-carousel"
+        type="carousel"
+        height="300"
+        layout="fixed-height"
+        controls=0>
+      [% for post in youTubeChannelPosts %]
+      <amp-youtube data-videoid="[=post.id=]"
+          width="391"
+          height="220"
+          layout="fixed">
+      </amp-youtube>
+      [% endfor %]
+    </amp-carousel>
+    [% endif %]
 
     <a href="https://www.youtube.com/watch?v=3j540p3GxvE&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
       <div class="ap-a-ico ap-m-lnk-icon">

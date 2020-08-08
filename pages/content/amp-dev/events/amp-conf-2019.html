@@ -53,15 +53,22 @@ section_links:
   <div class="ap--content-x-wide">
     <h2 class="ap-o-video-slider-text">Discover all exciting news from Day 1</h2>
     <p class="ap-o-video-slider-text">You couldn't make it to Tokyo but still want to know about all the exciting things happening around AMP? Checkout the highlights of Day 1 and even witness the AMP team unleashing the kraken!</p>
-    {% with %}
-    {% set youtube_video_ids = [
-      '1vwOFt9FBm4',
-      'sYXkVOiz77I',
-      'BrDBsS1Sko0',
-      ]
-    %}
-    {% include '/views/partials/video-carousel.j2' %}
-    {% endwith %}
+    [% set youTubeChannelPosts = []|importYouTubeChannel %]
+    [% if youTubeChannelPosts|length %]
+    <amp-carousel class="ap-o-video-slider-carousel"
+        type="carousel"
+        height="300"
+        layout="fixed-height"
+        controls=0>
+      [% for post in youTubeChannelPosts %]
+      <amp-youtube data-videoid="[=post.id=]"
+          width="391"
+          height="220"
+          layout="fixed">
+      </amp-youtube>
+      [% endfor %]
+    </amp-carousel>
+    [% endif %]
 
     <a href="https://www.youtube.com/watch?v=W7T5tMgrrFs&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
       <div class="ap-a-ico ap-m-lnk-icon">
@@ -78,15 +85,22 @@ section_links:
   <div class="ap--content-x-wide">
     <h2 class="ap-o-video-slider-text">Recap the highlights from Day 2</h2>
     <p class="ap-o-video-slider-text">The second day of the conference also had a lot of awesome speakers and talks. Don't miss out on the latest news around Advertising & AMP, in depth details on Signed exchanges and many more!</p>
-    {% with %}
-    {% set youtube_video_ids = [
-      'Q6BmFx7ivNg',
-      'tlWT_D0XJtE',
-      'Ez_wOEmH1P0',
-      ]
-    %}
-    {% include '/views/partials/video-carousel.j2' %}
-    {% endwith %}
+    [% set youTubeChannelPosts = []|importYouTubeChannel %]
+    [% if youTubeChannelPosts|length %]
+    <amp-carousel class="ap-o-video-slider-carousel"
+        type="carousel"
+        height="300"
+        layout="fixed-height"
+        controls=0>
+      [% for post in youTubeChannelPosts %]
+      <amp-youtube data-videoid="[=post.id=]"
+          width="391"
+          height="220"
+          layout="fixed">
+      </amp-youtube>
+      [% endfor %]
+    </amp-carousel>
+    [% endif %]
 
     <a href="https://www.youtube.com/watch?v=3j540p3GxvE&list=PLXTOW_XMsIDSY0USlzgoaIkRyPcHklrEl" class="ap-m-lnk ap-m-lnk-square">
       <div class="ap-a-ico ap-m-lnk-icon">
