@@ -36,8 +36,8 @@ async function importYouTubeChannel(callback) {
   const posts = channel.items.map((post) => {
     return {
       title: post.title,
-      id: post.id
-    }
+      id: post.id,
+    };
   });
 
   callback(null, posts);
