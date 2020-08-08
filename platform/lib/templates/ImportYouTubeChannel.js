@@ -23,7 +23,7 @@ const FEED_PATH = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL
 const Feed = require('rss-to-json');
 const log = require('@lib/utils/log')('Import YouTube Channel');
 
-async function importYouTubeChannel(callback) {
+async function importYouTubeChannel(value, callback) {
   let channel;
   try {
     channel = await Feed.load(FEED_PATH);
@@ -36,7 +36,7 @@ async function importYouTubeChannel(callback) {
   const posts = channel.items.map((post) => {
     return {
       title: post.title,
-      id: post.id,
+      id: post.id.split(':')[2],
     };
   });
 
