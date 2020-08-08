@@ -14,12 +14,16 @@
 
 import './share-view.scss';
 import template from './share-view.hbs';
+import modes from '../modes/';
 
 import {Base64} from 'js-base64';
 import FlyIn from '../fly-in/fly-in.js';
 import * as Button from '../button/button.js';
 
 export function createShareView(editor) {
+  if (!modes.IS_DEFAULT) {
+    return;
+  }
   const target = document.getElementById('share-view');
   const trigger = document.getElementById('share-toggle');
 
