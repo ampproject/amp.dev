@@ -1,14 +1,18 @@
+[% set posts = []|importBlog %]
+[% if posts|length %]
 <amp-carousel class="ap-o-video-slider-carousel"
   height="300"
   layout="fixed-height"
   controls=0
   type="carousel">
-  {% for youtube_video_id in youtube_video_ids %}
-      <amp-youtube
-          data-videoid={{ youtube_video_id }}
+  [% for post in posts %]
+    [= post.id =]
+      {# <amp-youtube
+          data-videoid=[= post.id =]
           width="391"
           height="220"
           layout="fixed">
-      </amp-youtube>
-  {% endfor %}
+      </amp-youtube> #}
+  [% endfor %]
 </amp-carousel>
+[% endif %]

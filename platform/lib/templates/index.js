@@ -100,7 +100,7 @@ class Templates {
     );
 
     this.nunjucksEnv_.addFilter('importBlog', importBlog, true);
-    // this.nunjucksEnv_.addFilter('importYouTubeChannel', importBlog, true);
+    this.nunjucksEnv_.addFilter('importYouTubeChannel', importYouTubeChannel, true);
 
     // One locale has ~860 pages with each weighing ~92KB. The cache therefore
     // maxes out at ~224MB to be safe

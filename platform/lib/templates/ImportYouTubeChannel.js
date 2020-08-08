@@ -43,11 +43,11 @@ async function importYouTubeChannel(callback) {
   callback(null, posts);
 }
 
-(async () => {
-  await importYouTubeChannel(() => {
-    console.log('Done');
-  });
-})();
+// (async () => {
+//   await importYouTubeChannel(() => {
+//     console.log('Done');
+//   });
+// })();
 
 module.exports = {
   importYouTubeChannel,
