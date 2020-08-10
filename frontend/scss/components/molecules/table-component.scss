@@ -38,55 +38,6 @@
     }
   }
 
-  &-navigation {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 50px;
-    left: 0;
-    margin: 0 -60px;
-    padding: 20px 60px;
-    background-color: color('white');
-    z-index: 11;
-    box-shadow: 0 3px 5px 0 transparentize(color('black'), 0.93);
-    line-height: 2;
-
-    h2 {
-      margin: 1rem 0;
-    }
-
-    &-links {
-      display: flex;
-      flex-direction: row;
-      overflow-x: scroll;
-
-      @media (min-width: 1024px) {
-        flex-wrap: wrap;
-      }
-
-      a {
-        @include txt-2;
-        padding: 0 40px 8px 0;
-        font-weight: bold;
-        white-space: nowrap;
-        color: color('blue-ribbon');
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  &-navigation-shadow {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 40px;
-    left: 0;
-    height: 10px;
-    width: 100%;
-    z-index: 19;
-    background-color: white;
-  }
-
   &-row {
     position: relative;
     display: flex;
