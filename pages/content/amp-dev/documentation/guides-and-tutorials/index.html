@@ -369,13 +369,20 @@ guides:
 <section class="ap--video-slider">
   <h2 class="ap-o-video-slider-text">Featured Videos</h2>
   <p class="ap-o-video-slider-text">See the latest videos about AMP and find out more on our <a href="https://www.youtube.com/channel/UCXPBsjgKKG2HqsKBhWA4uQw">YouTube Channel.</a></p>
-  {% with %}
-  {% set youtube_video_ids = [
-    '4f9KU5VJpOU',
-    'axwrgJGkrNU',
-    'NySyeCLrnSA'
-    ]
-  %}
-  {% include '/views/partials/video-carousel.j2' %}
-  {% endwith %}
+  [% set youTubeChannelPosts = []|importYouTubeChannel %]
+  [% if youTubeChannelPosts|length %]
+  <amp-carousel class="ap-o-video-slider-carousel"
+      type="carousel"
+      height="300"
+      layout="fixed-height"
+      controls=0>
+    [% for post in youTubeChannelPosts %]
+    <amp-youtube data-videoid="[=post.id=]"
+        width="391"
+        height="220"
+        layout="fixed">
+    </amp-youtube>
+    [% endfor %]
+  </amp-carousel>
+  [% endif %]
 </section>
