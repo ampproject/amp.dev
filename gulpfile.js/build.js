@@ -296,7 +296,7 @@ function buildPrepare(done) {
         './dist/',
         './boilerplate/dist/',
         './playground/dist/',
-        './frontend/templates/views/partials/pixi.j2'
+        './frontend/templates/views/partials/pixi.j2',
         './.cache/',
         './examples/static/samples/samples.json',
       ];
