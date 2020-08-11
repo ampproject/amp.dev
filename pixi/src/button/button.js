@@ -16,7 +16,6 @@ const $btn = document.querySelector('button');
 console.log('Found $btn', $btn);
 
 $btn.addEventListener('click', () => {
-  $btn.setAttribute('style', 'color: red;');
   $btn.classList.add('party');
   console.log('Party!', $btn);
 });

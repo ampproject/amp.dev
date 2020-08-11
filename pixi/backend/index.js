@@ -15,15 +15,9 @@
  */
 
 const express = require('express');
-const log = require('@lib/utils/log')('Pixi API');
-
 // eslint-disable-next-line new-cap
-const api = express.Router();
-api.get('/hello-world', async (request, response) => {
-  log.info('hello-world endpoint called.');
+const pixi = express.Router();
 
-  response.setHeader('Content-Type', 'application/json');
-  response.status(200).send(JSON.stringify({'message': 'Hello World'}, null, 2));
-});
+pixi.use('/pixi/api', require('./api.js'));
 
-module.exports = api;
+module.exports = pixi;
