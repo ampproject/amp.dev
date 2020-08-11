@@ -1591,8 +1591,8 @@ msgstr "Tutarlılık ve ölçeklenebilirlik"
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr "AMP sayfaları neredeyse anında yüklenir ve tüm cihazlar ve platformlarda tutarlı şekilde hızlı bir deneyim sunabilmenizi sağlar."
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
-msgstr "Özellikle Wordpress veya Drupal gibi popüler bir CMS kullanıyorsanız, genelde kısa bir süre içinde tüm arşivinizi dönüştürebilirsiniz."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
+msgstr "Özellikle WordPress veya Drupal gibi popüler bir CMS kullanıyorsanız, genelde kısa bir süre içinde tüm arşivinizi dönüştürebilirsiniz."
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
 msgstr "Google, Bing ve Twitter gibi popüler ve küresel platformlar tarafından kullanılan AMP, tüm bu kaynaklardan gelen kullanıcılara, mevcut olduğunda AMP sayfalarını varsayılan yaparak benzersiz, genellikle anında ve doğal hissettiren bir deneyim sunmanızı sağlar."
@@ -2055,7 +2055,7 @@ msgstr ""
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr ""
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
 msgstr ""
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
@@ -3275,8 +3275,8 @@ msgstr "Kullanıcı Girdisi"
 msgid "Validator"
 msgstr "Doğrulayıcı"
 
-msgid "You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal."
-msgstr "Özellikle Wordpress veya Drupal gibi yaygın bir CMS kullanıyorsanız, arşivinizin tamamını genellikle birkaç gün içinde dönüştürebilirsiniz."
+msgid "You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal."
+msgstr "Özellikle WordPress veya Drupal gibi yaygın bir CMS kullanıyorsanız, arşivinizin tamamını genellikle birkaç gün içinde dönüştürebilirsiniz."
 
 msgid "All"
 msgstr "Tümü"

@@ -1587,8 +1587,8 @@ msgstr "Konsistenz und Skalierbarkeit"
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr "AMP Seiten werden fast unverzögert geladen, was den Nutzern ein konsequent schnelles Erlebnis auf allen Geräten und Plattformen garantiert."
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
-msgstr "Dein gesamtes Archiv kann in der Regel innerhalb weniger Tage konvertiert werden, vor allem wenn du ein gängiges CMS wie Wordpress oder Drupal verwendest."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
+msgstr "Dein gesamtes Archiv kann in der Regel innerhalb weniger Tage konvertiert werden, vor allem wenn du ein gängiges CMS wie WordPress oder Drupal verwendest."
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
 msgstr "Beliebte, globale Plattformen wie Google, Bing und Twitter nutzen AMP. Das garantiert den Nutzern dieser Dienste beim automatischen Wechsel zu verfügbaren AMP Seiten ein einzigartiges, meist blitzschnelles und natives Erlebnis."
@@ -2864,8 +2864,8 @@ msgstr "Benutzereingabe"
 msgid "Validator"
 msgstr "Validator"
 
-msgid "You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal."
-msgstr "Dein gesamtes Archiv kann in der Regel innerhalb weniger Tage konvertiert werden, vor allem wenn du ein gängiges CMS wie Wordpress oder Drupal verwendest."
+msgid "You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal."
+msgstr "Dein gesamtes Archiv kann in der Regel innerhalb weniger Tage konvertiert werden, vor allem wenn du ein gängiges CMS wie WordPress oder Drupal verwendest."
 
 msgid "All"
 msgstr "Alle"
