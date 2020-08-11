@@ -3,6 +3,8 @@
 {% else %}
 {% do doc.styles.addCssFile('css/components/organisms/sidebar-default.css') %}
 {% endif %}
+{% do doc.styles.addCssFile('/css/components/atoms/sidebar-toggle.css') %}
+{% do doc.icons.useIcon('icons/sidebar-toggle.svg') %}
 
 {% macro components_sidebar() %}
 {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
@@ -47,11 +49,14 @@
   class="ap--ampsidebar"
   layout="nodisplay"
   side="left">
-  <nav class="ap--ampsidebar-toolbar"
+  <nav id="toolbar" class="ap--ampsidebar-toolbar"
        toolbar="(min-width: 768px)"
        toolbar-target="ap--sidebar-content">
-    <ul>
+    <div class="ap-a-sidebar-toggle-container">
       {% include '/views/partials/format-toggle.j2' %}
+      {% include '/views/partials/sidebar-toggle.j2' %}
+    </div>
+    <ul id="sidebar">
       <div class="ap-o-sidebar-{{ type if type and type != 'example' else 'default' }}">
 
         <div class="ap-o-sidebar">
