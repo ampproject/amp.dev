@@ -14,4 +14,4 @@
 
 import button from './button/button.js';
 
-console.log('Hello from Pixi!');
+console.log('Hello from Pixi!', button);

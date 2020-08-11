@@ -23,7 +23,9 @@ api.get('/hello-world', async (request, response) => {
   log.info('hello-world endpoint called.');
 
   response.setHeader('Content-Type', 'application/json');
-  response.status(200).send(JSON.stringify({'message': 'Hello World'}, null, 2));
+  response
+    .status(200)
+    .send(JSON.stringify({'message': 'Hello World'}, null, 2));
 });
 
 module.exports = api;
