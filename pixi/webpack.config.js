@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
-module.exports = (env, argv) => {
+module.exports = () => {
   const template = path.join(__dirname, 'src/pixi.hbs');
 
   return {
@@ -41,7 +41,9 @@ module.exports = (env, argv) => {
       new CleanWebpackPlugin({
         dry: false,
         dangerouslyAllowCleanPatternsOutsideProject: true,
-        cleanAfterEveryBuildPatterns: [path.join(process.cwd(), '../dist/static/pixi')]
+        cleanAfterEveryBuildPatterns: [
+          path.join(process.cwd(), '../dist/static/pixi'),
+        ],
       }),
     ],
     module: {
