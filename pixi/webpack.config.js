@@ -38,7 +38,11 @@ module.exports = (env, argv) => {
           ],
         },
       }),
-      new CleanWebpackPlugin(),
+      new CleanWebpackPlugin({
+        dry: false,
+        dangerouslyAllowCleanPatternsOutsideProject: true,
+        cleanAfterEveryBuildPatterns: [path.join(process.cwd(), '../dist/static/pixi')]
+      }),
     ],
     module: {
       rules: [
