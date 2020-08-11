@@ -122,7 +122,7 @@ platforms:
     description: AMP-first content creation with the power and flexibility of WordPress.
     url: https://amp-wp.org/
     image:
-      src: /static/img/tools/amp_for_wordpress.jpg
+      src: /static/img/tools/amp_for_wordpress.png
       width: 700
       height: 499
     formats:
