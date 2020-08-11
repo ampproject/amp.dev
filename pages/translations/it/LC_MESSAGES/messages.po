@@ -1587,8 +1587,8 @@ msgstr "Coerenza e scalabilità"
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr "Le pagine AMP si caricano quasi istantaneamente, permettendo di offrire sempre un'esperienza veloce su tutti i dispositivi e le piattaforme."
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
-msgstr "Spesso è possibile convertire l'intero archivio in pochi giorni, soprattutto utilizzando CMS popolari come Wordpress o Drupal."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
+msgstr "Spesso è possibile convertire l'intero archivio in pochi giorni, soprattutto utilizzando CMS popolari come WordPress o Drupal."
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
 msgstr "Impiegato in piattaforme popolari e globali come Google, Bing e Twitter, il sistema AMP consente di garantire agli utenti di tutti questi servizi un'esperienza senza precedenti, spesso istantanea e simile a quella delle applicazioni native, selezionando le pagine AMP come impostazione predefinita quando disponibili."
@@ -2052,7 +2052,7 @@ msgstr ""
 msgid "AMP pages load near instantly, enabling you to offer a consistently fast experience across all devices and platforms."
 msgstr ""
 
-msgid "You can often convert your entire archive in days especially if you use a popular CMS such as Wordpress or Drupal."
+msgid "You can often convert your entire archive in days especially if you use a popular CMS such as WordPress or Drupal."
 msgstr ""
 
 msgid "Used by popular and global platforms like Google, Bing and Twitter, AMP allows you to ensure users from all these surfaces get an unparalleled, often instantaneous and native-feeling experience by defaulting to AMP pages when available."
@@ -3277,8 +3277,8 @@ msgstr "Input dall'utente"
 msgid "Validator"
 msgstr "Validator"
 
-msgid "You can often convert your entire archive in days – especially when using common CMS like Wordpress or Drupal."
-msgstr "Spesso è possibile convertire l'intero archivio in pochi giorni, soprattutto utilizzando CMS popolari come Wordpress o Drupal."
+msgid "You can often convert your entire archive in days – especially when using common CMS like WordPress or Drupal."
+msgstr "Spesso è possibile convertire l'intero archivio in pochi giorni, soprattutto utilizzando CMS popolari come WordPress o Drupal."
 
 msgid "All"
 msgstr "Tutto"
