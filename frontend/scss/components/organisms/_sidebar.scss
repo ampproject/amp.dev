@@ -17,10 +17,41 @@
   height: 100vh;
   max-height: calc(100vh - 86px);
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     position: -webkit-sticky;
     position: sticky;
     overflow: auto;
+
+    &.inactive {
+
+      .ap-m-format-toggle,
+      ul {
+        display: none;
+      }
+
+      // .#{atom('sidebar-desktop-toggle')} {
+      //
+      //   &-label {
+      //     top: 130px;
+      //     margin-left: -186px;
+      //     transform: rotate(-90deg);
+      //     flex-direction: row-reverse;
+      //
+      //     &-icon {
+      //
+      //       svg {
+      //         transform: rotate(-90deg);
+      //       }
+      //     }
+      //
+      //     &-title {
+      //       display: inline-flex;
+      //       white-space: nowrap;
+      //       margin-left: 10px;
+      //     }
+      //   }
+      // }
+    }
   }
 
   & > ul {
@@ -28,9 +59,9 @@
     margin: 0;
     padding: 0;
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       overflow: auto;
-      max-height: 100%;
+      max-height: calc(100% - 37px);
     }
 
     &::-webkit-scrollbar {
