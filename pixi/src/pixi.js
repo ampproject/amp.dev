@@ -12,6 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import './button/button.js';
+import button from './button/button.js';
 
-console.log('Hello World 2!');
+console.log('Hello from Pixi!');

@@ -12,13 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+const $btn = document.querySelector('button');
+console.log('Found $btn', $btn);
 
-
-module.exports = (() => {
-  console.log('Adding event listener');
-
-  document.querySelector('button').addEventListener('click', () => {
-    document.querySelector.style.color = 'red';
-    console.log('Party!');
-  })
-})();
+$btn.addEventListener('click', () => {
+  $btn.setAttribute('style', 'color: red;');
+  $btn.classList.add('party');
+  console.log('Party!', $btn);
+});
