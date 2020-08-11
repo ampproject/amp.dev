@@ -12,13 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import './button/button.js';
 
-
-module.exports = (() => {
-  console.log('Adding event listener');
-
-  document.querySelector('button').addEventListener('click', () => {
-    document.querySelector.style.color = 'red';
-    console.log('Party!');
-  })
-})();
+console.log('Hello World 2!');
