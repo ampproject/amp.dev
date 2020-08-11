@@ -79,12 +79,12 @@ cmsUsers:
 
   - image:
       src: '/static/img/docs/guides/cms_logos/wordpress.jpg'
-      alt: Wordpress logo
-    label: Wordpress.com
+      alt: WordPress logo
+    label: WordPress.com
     url: https://en.support.wordpress.com/google-amp-accelerated-mobile-pages/
 
   - image:
       src: '/static/img/docs/guides/cms_logos/wordpress.jpg'
-      alt: Wordpress logo
-    label: Wordpress.org
+      alt: WordPress logo
+    label: WordPress.org
     url: https://amp-wp.org/
