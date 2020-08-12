@@ -24,6 +24,7 @@ const config = require('./config.js');
 const {pagePath} = require('@lib/utils/project');
 const log = require('@lib/utils/log')('Platform');
 const subdomain = require('./middleware/subdomain.js');
+const webSocketServer = require('@examples/api/socket-server');
 
 const routers = {
   boilerplate: require('../../boilerplate/backend/'),
@@ -64,6 +65,9 @@ class Platform {
           log.success(`server listening on ${PORT}!`);
           resolve();
         });
+
+        webSocketServer.startLiveBlog(this.httpServer);
+
         // Increase keep alive timeout
         // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
         this.httpServer.keepAliveTimeout = 700 * 1000;
