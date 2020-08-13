@@ -1,0 +1,74 @@
+/*
+######################
+### MOLECULE: input-bar ###
+######################
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_text.scss';
+@import 'components/atoms/_color.scss';
+
+.#{molecule('input-bar')} {
+  display: flex;
+  height: 50px;
+  margin-bottom: 70px;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+
+  &-field {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 25px;
+    border: 0;
+    border-radius: 4px 0 0 4px;
+    font-family: Noto Sans;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  &-submit {
+    cursor: pointer;
+    @include txt-font-accent;
+    min-width: 156px;
+    margin: 0;
+    border: 0;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: color('white');
+    background: color('blue-ribbon');
+
+    &.loading {
+      font-size: 0;
+      background: color('mercury');
+
+      @extend %loading-indicator;
+      &:after {
+        width: 22px;
+        height: 22px;
+        margin: auto;
+        border-width: 2px;
+      }
+    }
+  }
+
+  &-label {
+    @include txt;
+    @include txt-2;
+    display: block;
+    color: color('red');
+    opacity: 0;
+    transition: transform .3s ease, opacity .2s ease;
+
+    &.show {
+      opacity: 1;
+      transform: translate3d(0, 10px, 0);
+    }
+  }
+}

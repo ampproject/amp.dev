@@ -18,6 +18,6 @@ const express = require('express');
 // eslint-disable-next-line new-cap
 const pixi = express.Router();
 
-pixi.use('/page-experience/api', require('./api.js'));
+pixi.use('/pixi/api', require('./api.js'));
 
 module.exports = pixi;
