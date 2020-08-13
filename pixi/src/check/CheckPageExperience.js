@@ -37,7 +37,7 @@ export default class CheckPageExperience extends BaseCheck {
   runCheck() {
     const apiEndpoint = `http://localhost:8080/pixi/api/page-experience-dummy`;
     // const apiEndpoint = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${this.input.value}&key=AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY`;
-    const result = this.fetchApi(apiEndpoint);
+    this.fetchApi(apiEndpoint);
     console.log('Start running Page Experience Check', apiEndpoint);
   }
 
@@ -58,7 +58,6 @@ export default class CheckPageExperience extends BaseCheck {
   }
 
   renderResult(result) {
-    console.log('result:', result);
     this.lcpLabel.textContent = `${result.lcp.category}`;
     this.fidLabel.textContent = `${result.fid.category}`;
     this.clsLabel.textContent = `${result.cls.category}`;

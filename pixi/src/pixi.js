@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import button from './button/button.js';
 import CheckPageExperience from './check/CheckPageExperience.js';
 
-const checkPX = new CheckPageExperience('px');
+new CheckPageExperience('px');

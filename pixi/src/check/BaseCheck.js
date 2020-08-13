@@ -15,7 +15,7 @@
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
 export default class BaseCheck {
-  constructor(id) {
+  constructor() {
     this.input = document.getElementById('input-field');
     this.submit = document.getElementById('input-submit');
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
@@ -29,7 +29,7 @@ export default class BaseCheck {
     try {
       this.toggleLoading(false);
 
-      const request = fetch(apiEndpoint)
+      fetch(apiEndpoint)
         .then((response) => {
           if (!response.ok) {
             throw new Error('Failed running check');
@@ -57,10 +57,10 @@ export default class BaseCheck {
   }
 
   toggleLoading(force) {
-    this.submit.classList.toggle('loading');
+    this.submit.classList.toggle('loading', force);
   }
 
-  onSuccess(response) {
+  onSuccess() {
     return;
   }
 
