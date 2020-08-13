@@ -13,5 +13,3 @@
 // limitations under the License.
 
 import button from './button/button.js';
-
-console.log('Hello from Pixi!', button);
