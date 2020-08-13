@@ -13,77 +13,57 @@
 // limitations under the License.
 
 import BaseCheck from './BaseCheck.js';
+import PrimaryCheckUI from './PrimaryCheckUI.js';
 
 // const API_ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
 // const API_KEY = '&key=AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY';
+
+const UNIT_MS = 'ms';
+const CHECKS = [
+  {
+    id: 'LARGEST_CONTENTFUL_PAINT_MS',
+    unit: UNIT_MS,
+  },
+  {
+    id: 'FIRST_INPUT_DELAY_MS',
+    unit: UNIT_MS,
+  },
+  {
+    id: 'CUMULATIVE_LAYOUT_SHIFT_SCORE',
+    unit: null,
+  },
+];
 
 export default class CheckPageExperience extends BaseCheck {
   constructor(id) {
     super(id);
 
-    this.lcp = document.getElementById('check-px-lcp');
-    this.fid = document.getElementById('check-px-fid');
-    this.cls = document.getElementById('check-px-cls');
-
-    this.lcpLabel = this.lcp.querySelector('label');
-    this.fidLabel = this.fid.querySelector('label');
-    this.clsLabel = this.cls.querySelector('label');
-
-    this.lcpIndicator = this.lcp.querySelector('aside');
-    this.fidIndicator = this.fid.querySelector('aside');
-    this.clsIndicator = this.cls.querySelector('aside');
+    this.checkUIs = {};
+    for (const check of CHECKS) {
+      this.checkUIs[check.id] = new PrimaryCheckUI(check);
+    }
   }
 
   runCheck() {
-    const apiEndpoint = `http://localhost:8080/pixi/api/page-experience-dummy`;
-    // const apiEndpoint = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${this.input.value}&key=AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY`;
-    this.fetchApi(apiEndpoint);
-    console.log('Start running Page Experience Check', apiEndpoint);
+    // const inputValue = this.input.value;
+    // const apiEndpoint = `${API_ENDPOINT}${inputValue}${API_KEY}`
+    const dummyApiEndpoint = `http://localhost:8080/pixi/api/page-experience-dummy`;
+
+    this.toggleLoading(false);
+    this.fetchApi(dummyApiEndpoint);
+    console.log('Start running Page Experience Check', dummyApiEndpoint);
   }
 
   onSuccess(response) {
-    console.log('onSuccess');
+    this.renderResult(response.loadingExperience.metrics);
     this.toggleLoading(true);
-    const result = this.parseResult(response);
-    this.renderResult(result);
-  }
-
-  parseResult(response) {
-    const metrics = response.loadingExperience.metrics;
-    return {
-      lcp: metrics.LARGEST_CONTENTFUL_PAINT_MS,
-      fid: metrics.FIRST_INPUT_DELAY_MS,
-      cls: metrics.CUMULATIVE_LAYOUT_SHIFT_SCORE,
-    };
   }
 
   renderResult(result) {
-    this.lcpLabel.textContent = `${result.lcp.category}`;
-    this.fidLabel.textContent = `${result.fid.category}`;
-    this.clsLabel.textContent = `${result.cls.category}`;
-    this.lcpLabel.classList.add(result.lcp.category.toLowerCase());
-    this.fidLabel.classList.add(result.fid.category.toLowerCase());
-    this.clsLabel.classList.add(result.cls.category.toLowerCase());
-
-    this.lcpIndicator.textContent = `${result.lcp.percentile / 1000} sec`;
-    this.fidIndicator.textContent = `${result.fid.percentile} ms`;
-    this.clsIndicator.textContent = `${result.cls.percentile / 100}`;
-
-    const lcpIndicatorX =
-      result.lcp.percentile / result.lcp.distributions[2].min;
-    const fidIndicatorX =
-      result.fid.percentile / result.fid.distributions[2].min;
-    const clsIndicatorX =
-      result.cls.percentile / result.cls.distributions[2].min;
-
-    this.lcpIndicator.style.transform = `translate3d(${
-      lcpIndicatorX * 100
-    }%, 0, 0);`;
-    this.fidIndicator.style.transform = `translate3d(${
-      fidIndicatorX * 100
-    }%, 0, 0);`;
-    this.clsIndicator.style.transform = `translate3d(${
-      clsIndicatorX * 100
-    }%, 0, 0);`;
+    for (const check of Object.keys(result)) {
+      if (this.checkUIs[check]) {
+        this.checkUIs[check].render(result[check]);
+      }
+    }
   }
 }

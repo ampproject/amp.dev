@@ -27,8 +27,6 @@ export default class BaseCheck {
 
   fetchApi(apiEndpoint) {
     try {
-      this.toggleLoading(false);
-
       fetch(apiEndpoint)
         .then((response) => {
           if (!response.ok) {
