@@ -15,17 +15,57 @@
  */
 
 const express = require('express');
+const {lint, LintMode} = require('@ampproject/toolbox-linter');
+const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
+const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
+
+const rateLimitedFetch = new RateLimitedFetch({
+  requestHeaders: {
+    'Referer': 'https://amp.dev/page-experience/',
+  },
+});
+
+const execLint = async (url) => {
+  const res = await rateLimitedFetch.fetchHtmlResponse(url);
+  const body = await res.text();
+  const context = {
+    $: cheerio.load(body),
+    headers: {},
+    raw: {
+      headers: res.headers,
+      body,
+    },
+    url,
+    mode: LintMode.Amp,
+  };
+  return lint(context);
+};
 
 // eslint-disable-next-line new-cap
 const api = express.Router();
-api.get('/hello-world', async (request, response) => {
-  log.info('hello-world endpoint called.');
-
+api.get('/lint', async (request, response) => {
+  log.info('lint endpoint called.');
   response.setHeader('Content-Type', 'application/json');
-  response
-    .status(200)
-    .send(JSON.stringify({'message': 'Hello World'}, null, 2));
+
+  const fetchUrl = request.query.url;
+  try {
+    const lintResult = await execLint(fetchUrl);
+    const result = {
+      status: 'ok',
+      data: lintResult,
+    };
+    response.json(result);
+  } catch (e) {
+    log.error('Unable to lint', fetchUrl, e.stack);
+    const result = {status: 'error'};
+    if (e.errorId) {
+      // The messages for the special RemoteFetchError can be shown in the response
+      result.errorId = e.errorId;
+      result.message = e.message;
+    }
+    response.json(result);
+  }
 });
 
 module.exports = api;
