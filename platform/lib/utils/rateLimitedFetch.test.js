@@ -1,8 +1,8 @@
 jest.mock('node-fetch');
 const fetch = require('node-fetch');
 const {Response} = jest.requireActual('node-fetch');
-const LimitedRemoteFetch = require('./limitedRemoteFetch.js');
-const RemoteFetchError = require('./remoteFetchError');
+const LimitedRemoteFetch = require('./rateLimitedFetch.js');
+const RemoteFetchError = require('./fetchError');
 
 const remoteFetch = new LimitedRemoteFetch({});
 
@@ -17,7 +17,7 @@ test('Fetch a html document without error', async () => {
       })
     )
   );
-  expect(await remoteFetch.fetchDocument('http://www.test')).toEqual(
+  expect(await remoteFetch.fetchHtmlDocument('http://www.test')).toEqual(
     '<html></html>'
   );
 });
@@ -33,7 +33,7 @@ test('Fetch error response status', () => {
       })
     )
   );
-  const result = remoteFetch.fetchDocument('http://www.test');
+  const result = remoteFetch.fetchHtmlDocument('http://www.test');
   expect.assertions(2);
   return result.catch((e) => {
     expect(e.errorId).toEqual(RemoteFetchError.NO_SUCCESS_RESPONSE);
@@ -54,7 +54,7 @@ test('Fetch error unsupported content type', () => {
       })
     )
   );
-  const result = remoteFetch.fetchDocument('http://www.test');
+  const result = remoteFetch.fetchHtmlDocument('http://www.test');
   expect.assertions(2);
   return result.catch((e) => {
     expect(e.errorId).toEqual(RemoteFetchError.UNSUPPORTED_CONTENT_TYPE);
@@ -63,7 +63,7 @@ test('Fetch error unsupported content type', () => {
 });
 
 test('Fetch error empty url', () => {
-  const result = remoteFetch.fetchDocument('');
+  const result = remoteFetch.fetchHtmlDocument('');
   expect.assertions(2);
   return result.catch((e) => {
     expect(e.errorId).toEqual(RemoteFetchError.INVALID_URL);
@@ -72,7 +72,7 @@ test('Fetch error empty url', () => {
 });
 
 test('Fetch error invalid url', () => {
-  const result = remoteFetch.fetchDocument('mailto:me@mail.test');
+  const result = remoteFetch.fetchHtmlDocument('mailto:me@mail.test');
   expect.assertions(2);
   return result.catch((e) => {
     expect(e.errorId).toEqual(RemoteFetchError.INVALID_URL);
@@ -92,14 +92,42 @@ test('Fetch error rate limit', async () => {
         })
       )
     );
-    await remoteFetch.fetchDocument(`http://www.limit/page-${i}/`);
+    await remoteFetch.fetchHtmlDocument(`http://www.limit/page-${i}/`);
   }
   expect.assertions(2);
-  const result = remoteFetch.fetchDocument('http://www.limit/page-11}/');
+  const result = remoteFetch.fetchHtmlDocument('http://www.limit/page-11}/');
   return result.catch((e) => {
     expect(e.errorId).toEqual(RemoteFetchError.TOO_MANY_REQUESTS);
     expect(e.message).toEqual(
       'www.limit has been requested too many times. Please wait a few seconds and then try again.'
+    );
+  });
+});
+
+test('Fetch error invalid host', () => {
+  fetch.mockImplementation(() => {
+    const error = new Error('Host not found');
+    error.errno = 'ENOTFOUND';
+    throw error;
+  });
+  const result = remoteFetch.fetchHtmlDocument('http://www.test');
+  expect.assertions(2);
+  return result.catch((e) => {
+    expect(e.errorId).toEqual(RemoteFetchError.INVALID_URL);
+    expect(e.message).toEqual('Host www.test not found.');
+  });
+});
+
+test('Fetch error other', () => {
+  fetch.mockImplementation(() => {
+    throw new Error('error');
+  });
+  const result = remoteFetch.fetchHtmlDocument('http://www.test');
+  expect.assertions(2);
+  return result.catch((e) => {
+    expect(e.errorId).toEqual(RemoteFetchError.OTHER);
+    expect(e.message).toEqual(
+      'An error occurred while trying to get http://www.test.'
     );
   });
 });

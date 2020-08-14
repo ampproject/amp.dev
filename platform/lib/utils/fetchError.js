@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-class RemoteFetchError extends Error {
+class FetchError extends Error {
   constructor(errorId, message) {
     super(message);
     this.errorId = errorId;
   }
 }
 
-RemoteFetchError.INVALID_URL = 'INVALID_URL';
-RemoteFetchError.TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS';
-RemoteFetchError.NO_SUCCESS_RESPONSE = 'NO_SUCCESS_RESPONSE';
-RemoteFetchError.UNSUPPORTED_CONTENT_TYPE = 'UNSUPPORTED_CONTENT_TYPE';
+FetchError.INVALID_URL = 'INVALID_URL';
+FetchError.TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS';
+FetchError.NO_SUCCESS_RESPONSE = 'NO_SUCCESS_RESPONSE';
+FetchError.UNSUPPORTED_CONTENT_TYPE = 'UNSUPPORTED_CONTENT_TYPE';
+FetchError.OTHER = 'OTHER';
 
-module.exports = RemoteFetchError;
+module.exports = FetchError;

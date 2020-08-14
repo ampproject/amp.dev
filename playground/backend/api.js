@@ -17,10 +17,10 @@
 const express = require('express');
 const {setMaxAge} = require('@lib/utils/cacheHelpers.js');
 const log = require('@lib/utils/log')('Playground API');
-const LimitedRemoteFetch = require('@lib/utils/limitedRemoteFetch');
-const RemoteFetchError = require('@lib/utils/remoteFetchError');
+const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
+const FetchError = require('@lib/utils/fetchError');
 
-const remoteFetch = new LimitedRemoteFetch({
+const rateLimitedFetch = new RateLimitedFetch({
   requestHeaders: {
     'x-requested-by': 'playground',
     'Referer': 'https://amp.dev/playground',
@@ -35,17 +35,18 @@ const remoteFetch = new LimitedRemoteFetch({
 const MAX_AGE = 60 * 60;
 
 const errorIdMap = {
-  [RemoteFetchError.INVALID_URL]: 400,
-  [RemoteFetchError.TOO_MANY_REQUESTS]: 429,
-  [RemoteFetchError.NO_SUCCESS_RESPONSE]: 502,
-  [RemoteFetchError.UNSUPPORTED_CONTENT_TYPE]: 502,
+  [FetchError.INVALID_URL]: 400,
+  [FetchError.TOO_MANY_REQUESTS]: 429,
+  [FetchError.NO_SUCCESS_RESPONSE]: 502,
+  [FetchError.UNSUPPORTED_CONTENT_TYPE]: 502,
+  [FetchError.OTHER]: 502,
 };
 
 // eslint-disable-next-line new-cap
 const api = express.Router();
 api.get('/fetch', async (request, response) => {
   try {
-    const doc = await remoteFetch.fetchDocument(request.query.url);
+    const doc = await rateLimitedFetch.fetchHtmlDocument(request.query.url);
     setMaxAge(response, MAX_AGE);
     response.send(doc);
   } catch (error) {

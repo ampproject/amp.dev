@@ -15,19 +15,19 @@
  */
 
 const express = require('express');
-const {lint, LintMode, StatusNumber} = require('@ampproject/toolbox-linter');
+const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
-const LimitedRemoteFetch = require('@lib/utils/limitedRemoteFetch');
+const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
 
-const remoteFetch = new LimitedRemoteFetch({
+const rateLimitedFetch = new RateLimitedFetch({
   requestHeaders: {
     'Referer': 'https://amp.dev/page-experience/',
   },
 });
 
 const execLint = async (url) => {
-  const res = await remoteFetch.fetchHtmlResponse(url);
+  const res = await rateLimitedFetch.fetchHtmlResponse(url);
   const body = await res.text();
   const context = {
     $: cheerio.load(body),
@@ -42,27 +42,6 @@ const execLint = async (url) => {
   return lint(context);
 };
 
-const mapLintResult = (result) => {
-  return Object.entries(result).reduce((mappedData, [key, checks]) => {
-    if (Array.isArray(checks)) {
-      mappedData[key] = checks
-        .map((item) => item.status)
-        .reduce((result, status) => {
-          if (!status) {
-            return result;
-          }
-          if (!result || StatusNumber[result] < StatusNumber[status]) {
-            return status;
-          }
-          return result;
-        });
-    } else {
-      mappedData[key] = checks.status;
-    }
-    return mappedData;
-  }, {});
-};
-
 // eslint-disable-next-line new-cap
 const api = express.Router();
 api.get('/lint', async (request, response) => {
@@ -74,9 +53,9 @@ api.get('/lint', async (request, response) => {
     const lintResult = await execLint(fetchUrl);
     const result = {
       status: 'ok',
-      data: mapLintResult(lintResult),
+      data: lintResult,
     };
-    response.status(200).send(JSON.stringify(result, null, 2));
+    response.json(result);
   } catch (e) {
     log.error('Unable to lint', fetchUrl, e.stack);
     const result = {status: 'error'};
@@ -85,7 +64,7 @@ api.get('/lint', async (request, response) => {
       result.errorId = e.errorId;
       result.message = e.message;
     }
-    response.status(200).send(JSON.stringify(result, null, 2));
+    response.json(result);
   }
 });
 
