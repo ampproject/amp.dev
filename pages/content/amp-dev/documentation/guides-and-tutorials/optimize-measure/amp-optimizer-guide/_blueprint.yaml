@@ -1,0 +1,10 @@
+$view: /views/detail/docs-detail.j2
+$path: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/{base}.html
+$localization:
+  path: /{locale}/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/{base}.html
+$title@: Using an AMP Optimizer
+$order: 1
+
+formats:
+  - websites
+  - stories
