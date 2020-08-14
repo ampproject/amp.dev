@@ -31,7 +31,7 @@ const execLint = async (url) => {
   const body = await res.text();
   const context = {
     $: cheerio.load(body),
-    headers: res.headers,
+    headers: {},
     raw: {
       headers: res.headers,
       body,
