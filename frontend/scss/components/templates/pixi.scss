@@ -128,6 +128,33 @@
         padding: 25px 0;
         border-bottom: solid 2px color('mercury');
 
+        &.fast {
+          label {
+            color: color('malachite');
+          }
+          aside:after {
+            border-top-color: color('malachite');
+          }
+        }
+
+        &.average {
+          label {
+            color: color('buttercup');
+          }
+          aside:after {
+            border-top-color: color('buttercup');
+          }
+        }
+
+        &.slow {
+          label {
+            color: color('red');
+          }
+          aside:after {
+            border-top-color: color('red');
+          }
+        }
+
         @media (min-width: 768px) {
           padding: 38px 25px;
         }
@@ -146,16 +173,6 @@
 
           label {
             color: color('silver');
-
-            &.fast {
-              color: color('malachite');
-            }
-            &.average {
-              color: color('buttercup');
-            }
-            &.slow {
-              color: color('red');
-            }
           }
         }
 
@@ -184,9 +201,9 @@
           &-indicator {
             display: flex;
             flex-direction: column;
-            // margin-left: -16px;
             white-space: nowrap;
             font-weight: bold;
+            transform: translateX(calc(100% - 16px));
             transition: all .6s ease-in-out;
 
             &:after {
@@ -194,7 +211,7 @@
               margin: 2px auto 5px 0px;
               border-left: 8px solid transparent;
               border-right: 8px solid transparent;
-              border-top: 8px solid color('malachite');
+              border-top: 8px solid color('red');
             }
 
             span {
@@ -242,6 +259,7 @@
     }
   }
 }
+
 @-webkit-keyframes rotating {
   from {
     -webkit-transform: rotate(0deg);
