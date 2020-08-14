@@ -12,26 +12,26 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 import BaseCheck from './BaseCheck.js';
 import PrimaryCheckUI from './PrimaryCheckUI.js';
 
 // const API_ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
 // const API_KEY = '&key=AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY';
 
-const UNIT_MS = 'ms';
 const CHECKS = [
   {
     id: 'LARGEST_CONTENTFUL_PAINT_MS',
-    unit: UNIT_MS,
+    unit: UNIT_SEC
   },
   {
     id: 'FIRST_INPUT_DELAY_MS',
-    unit: UNIT_MS,
+    unit: UNIT_MS
   },
   {
     id: 'CUMULATIVE_LAYOUT_SHIFT_SCORE',
-    unit: null,
-  },
+    unit: UNIT_DEC
+  }
 ];
 
 export default class CheckPageExperience extends BaseCheck {

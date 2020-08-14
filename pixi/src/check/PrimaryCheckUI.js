@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
+
 export default class PrimaryCheckUI {
   constructor(check) {
     const {id, unit} = check;
@@ -23,10 +25,12 @@ export default class PrimaryCheckUI {
   }
 
   render(result) {
-    // TODO: handle this.unit cases
+    this.container.classList.add(result.category.toLowerCase());
+    this.label.textContent = result.category;
+
     const indicatorX = result.percentile / result.distributions[2].min;
-    this.indicator.style.transform = `translateX(${indicatorX * 100}%);`;
-    this.indicator.textContent = `${result.percentile / 1000} sec`;
-    this.label.classList.add(result.category.toLowerCase());
+    this.indicator.style.transform = `translateX(${indicatorX * 100}%)`;
+    this.indicator.textContent = `${result.percentile / this.unit.conversion} ${this.unit.name}`;
+
   }
 }
