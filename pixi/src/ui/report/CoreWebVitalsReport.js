@@ -17,7 +17,7 @@ import {UNIT_DEC, UNIT_SEC, UNIT_MS} from '../../checks/constants.js';
 export default class CoreWebVitalsReport {
   constructor(reportData) {
     this.unit = reportData.unit;
-    console.log(reportData, document.getElementById(reportData.checkId))
+    console.log(reportData, document.getElementById(reportData.checkId));
     this.container = document.getElementById(reportData.checkId);
     this.label = this.container.querySelector('label');
     this.indicator = this.container.querySelector('aside');
@@ -32,6 +32,8 @@ export default class CoreWebVitalsReport {
 
     const indicatorX = data.percentile / data.distributions[2].min;
     this.indicator.style.transform = `translateX(${indicatorX * 100}%)`;
-    this.indicatorLabel.textContent = `${data.percentile / this.unit.conversion} ${this.unit.name}`;
+    this.indicatorLabel.textContent = `${
+      data.percentile / this.unit.conversion
+    } ${this.unit.name}`;
   }
 }

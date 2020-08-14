@@ -13,25 +13,21 @@
 // limitations under the License.
 
 import CoreWebVitalsReport from '../ui/report/CoreWebVitalsReport.js';
-import {
-  UNIT_DEC,
-  UNIT_SEC,
-  UNIT_MS
-} from './constants.js';
+import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
-
-const CHECKS = [{
+const CHECKS = [
+  {
     id: 'LARGEST_CONTENTFUL_PAINT_MS',
-    unit: UNIT_SEC
+    unit: UNIT_SEC,
   },
   {
     id: 'FIRST_INPUT_DELAY_MS',
-    unit: UNIT_MS
+    unit: UNIT_MS,
   },
   {
     id: 'CUMULATIVE_LAYOUT_SHIFT_SCORE',
-    unit: UNIT_DEC
-  }
+    unit: UNIT_DEC,
+  },
 ];
 
 const API_ENDPOINT = `http://localhost:8080/page-experience/api/page-experience-dummy?url=`;
@@ -58,7 +54,7 @@ export default class PageExperienceCheck {
           type: 'CoreWebVitalsReport',
           checkId: check.id,
           unit: check.unit,
-          data: apiResult.loadingExperience.metrics[check.id]
+          data: apiResult.loadingExperience.metrics[check.id],
         });
       }
     }
@@ -71,7 +67,7 @@ export default class PageExperienceCheck {
       const response = await fetch(apiUrl);
       const result = await response.json();
       return result;
-    } catch(e) {
+    } catch (e) {
       throw new Error('PageExperienceCheck failed:', e);
     }
   }

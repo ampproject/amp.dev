@@ -30,11 +30,11 @@ export default class PageExperience {
 
     const value = this.input.value;
     const url =
-      value.startsWith('http://') || value.startsWith('https://') ?
-      value :
-      `http://${value}`;
+      value.startsWith('http://') || value.startsWith('https://')
+        ? value
+        : `http://${value}`;
 
-    if (url.match(URL_VALIDATION_REGEX))  {
+    if (url.match(URL_VALIDATION_REGEX)) {
       const check = new PageExperienceCheck(url);
       const reportDataSets = await check.run();
 

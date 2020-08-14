@@ -5,8 +5,10 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = () => {
+  const template = path.join(__dirname, 'src/pixi.hbs');
+
   return {
-    entry: path.join(__dirname, 'src/ui/PageExperience.js'),
+    entry: path.join(__dirname, 'src/pixi.js'),
     output: {
       filename: 'static/pixi/pixi.[name].[hash].js',
       chunkFilename: 'pixi.[name].[chunkhash].bundle.js',
@@ -14,14 +16,11 @@ module.exports = () => {
       publicPath: '/',
     },
     optimization: {
-      minimizer: [new ClosurePlugin({mode: 'STANDARD'}, {
-        formatting: 'PRETTY_PRINT',
-        debug: true
-      })],
+      minimizer: [new ClosurePlugin({mode: 'STANDARD'}, {})],
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.join(__dirname, 'src/ui/page-experience.hbs'),
+        template,
         filename: './pixi.html',
         inject: false,
       }),
