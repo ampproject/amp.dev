@@ -27,25 +27,40 @@ const remoteFetch = new LimitedRemoteFetch({
 });
 
 const execLint = async (url) => {
-  const res = await remoteFetch.fetchResponse(url);
-  if (res.ok) {
-    const body = await res.text();
-    const context = {
-      $: cheerio.load(body),
+  const res = await remoteFetch.fetchHtmlResponse(url);
+  const body = await res.text();
+  const context = {
+    $: cheerio.load(body),
+    headers: res.headers,
+    raw: {
       headers: res.headers,
-      raw: {
-        headers: res.headers,
-        body,
-      },
-      url,
-      mode: LintMode.Amp,
-    };
+      body,
+    },
+    url,
+    mode: LintMode.Amp,
+  };
+  return lint(context);
+};
 
-    return lint(context);
-  }
-  return Promise.reject(
-    new Error(`Url returned an error: ${res.statusText}`)
-  );
+const mapLintResult = (result) => {
+  return Object.entries(result).reduce((mappedData, [key, checks]) => {
+    if (Array.isArray(checks)) {
+      mappedData[key] = checks
+        .map((item) => item.status)
+        .reduce((result, status) => {
+          if (!status) {
+            return result;
+          }
+          if (!result || StatusNumber[result] < StatusNumber[status]) {
+            return status;
+          }
+          return result;
+        });
+    } else {
+      mappedData[key] = checks.status;
+    }
+    return mappedData;
+  }, {});
 };
 
 // eslint-disable-next-line new-cap
@@ -54,39 +69,23 @@ api.get('/lint', async (request, response) => {
   log.info('lint endpoint called.');
   response.setHeader('Content-Type', 'application/json');
 
+  const fetchUrl = request.query.url;
   try {
-    const fetchUrl = request.query.url;
-    if (!fetchUrl) {
-      throw new Error('url param missing');
-    }
-    const status = await execLint(fetchUrl);
-    const data = Object.entries(status).reduce((mappedData, [key, checks]) => {
-      if (Array.isArray(checks)) {
-        mappedData[key] = checks.reduce((status, item) => {
-          if (!item.status) {
-            return status;
-          }
-          if (
-            !status ||
-            StatusNumber[status] < StatusNumber[item.status]
-          ) {
-            return item.status;
-          }
-          return status;
-        });
-      } else {
-        mappedData[key] = checks.status;
-      }
-      return mappedData;
-    }, {});
+    const lintResult = await execLint(fetchUrl);
     const result = {
       status: 'ok',
-      data,
+      data: mapLintResult(lintResult),
     };
     response.status(200).send(JSON.stringify(result, null, 2));
   } catch (e) {
-    log.error('Unable to lint', e.stack);
-    response.status(500).send(JSON.stringify({status: 'error'}, null, 2));
+    log.error('Unable to lint', fetchUrl, e.stack);
+    const result = {status: 'error'};
+    if (e.errorId) {
+      // The messages for the special RemoteFetchError can be shown in the response
+      result.errorId = e.errorId;
+      result.message = e.message;
+    }
+    response.status(200).send(JSON.stringify(result, null, 2));
   }
 });
 

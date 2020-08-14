@@ -18,6 +18,7 @@ const fetch = require('node-fetch');
 const url = require('url');
 const LRU = require('lru-cache');
 const config = require('@lib/config.js');
+const RemoteFetchError = require('./remoteFetchError');
 
 /**
  * The time in milliseconds in which HOST_RATE_LIMIT requests can
@@ -43,40 +44,43 @@ const limits = new LRU({
   maxAge: RATE_LIMIT_TIME_FRAME,
 });
 
-class RemoteFetchError extends Error {
-  constructor(errorCode, message) {
-    super(message);
-    this.errorCode = errorCode;
-  }
-}
-
 class LimitedRemoteFetch {
   constructor({requestHeaders}) {
     this.requestHeaders = requestHeaders || {};
   }
 
   /**
-   * Fetches a user-defined remote URL and returns the response,
-   * verifies that the returned response is a proper HTML document
+   * Fetches a user-defined remote URL and returns the response.
+   * Verifies that the returned response is a proper HTML document.
    *
    * @param  {String} urlString
    * @return {Response}
    */
-  async fetchResponse(urlString) {
+  async fetchHtmlResponse(urlString) {
     if (!urlString) {
-      throw new RemoteFetchError(400, 'No URL provided.');
+      throw new RemoteFetchError(
+        RemoteFetchError.INVALID_URL,
+        'No URL provided.'
+      );
     }
 
     const fetchUrl = url.parse(urlString);
-    if (!fetchUrl.protocol || !fetchUrl.host) {
-      throw new RemoteFetchError(400, `${fetchUrl} is not a valid URL.`);
+    if (
+      !fetchUrl.protocol ||
+      !fetchUrl.protocol.startsWith('http') ||
+      !fetchUrl.host
+    ) {
+      throw new RemoteFetchError(
+        RemoteFetchError.INVALID_URL,
+        `${urlString} is not a valid URL.`
+      );
     }
 
     // Verify that this URL is currently allowed to be fetched
     // and is not rate-limited
     if (this.exceedsRateLimit(fetchUrl)) {
       throw new RemoteFetchError(
-        429,
+        RemoteFetchError.TOO_MANY_REQUESTS,
         `${fetchUrl.host} has been requested too many times. ` +
           'Please wait a few seconds and then try again.'
       );
@@ -86,40 +90,42 @@ class LimitedRemoteFetch {
     const response = await fetch(fetchUrl.href, {
       headers: {
         'Accept': 'text/html',
-        'x-requested-by': 'playground',
         'User-Agent':
           'Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MTC19V) ' +
           'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.81 Mobile ' +
           'Safari/537.36 (compatible; amp.dev/playground)',
-        'Referer': 'https://amp.dev/playground',
         ...this.requestHeaders,
       },
     });
 
     if (!response.ok) {
       throw new RemoteFetchError(
-        502,
-        `Request to ${fetchUrl} could not complete successfully.`
+        RemoteFetchError.NO_SUCCESS_RESPONSE,
+        `Request to ${urlString} could not complete successfully (status ${response.status}).`
       );
     }
 
     const contentType = response.headers.get('content-type');
     if (!contentType.includes('text/html')) {
-      throw new RemoteFetchError(502, `${fetchUrl} is no HTML document.`);
+      throw new RemoteFetchError(
+        RemoteFetchError.UNSUPPORTED_CONTENT_TYPE,
+        `${urlString} is no HTML document.`
+      );
     }
 
     return response;
   }
 
   /**
-   * Fetches a user-defined remote URL and returns the response body,
-   * @see fetchResponse
+   * Fetches a user-defined remote URL and returns the response body html,
+   * @see fetchHtmlResponse
    *
    * @param  {String} urlString
    * @return {Response}
    */
   async fetchDocument(urlString) {
-    return this.fetchResponse(urlString).text();
+    const response = await this.fetchHtmlResponse(urlString);
+    return response.text();
   }
 
   /**
