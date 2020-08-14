@@ -132,7 +132,7 @@
           label {
             color: color('malachite');
           }
-          aside:after {
+          span:after {
             border-top-color: color('malachite');
           }
         }
@@ -141,7 +141,7 @@
           label {
             color: color('buttercup');
           }
-          aside:after {
+          span:after {
             border-top-color: color('buttercup');
           }
         }
@@ -150,7 +150,7 @@
           label {
             color: color('red');
           }
-          aside:after {
+          span:after {
             border-top-color: color('red');
           }
         }
@@ -206,17 +206,20 @@
             transform: translateX(calc(100% - 16px));
             transition: all .6s ease-in-out;
 
-            &:after {
-              content: '';
-              margin: 2px auto 5px 0px;
-              border-left: 8px solid transparent;
-              border-right: 8px solid transparent;
-              border-top: 8px solid color('red');
-            }
-
             span {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
               margin-right: auto;
               transform: translate3d(calc(-50% + 8px), 0, 0);
+
+              &:after {
+                content: '';
+                margin: 2px auto 5px auto;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid color('red');
+              }
             }
           }
 

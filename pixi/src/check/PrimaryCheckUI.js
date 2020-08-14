@@ -22,6 +22,7 @@ export default class PrimaryCheckUI {
     this.container = document.getElementById(id);
     this.label = this.container.querySelector('label');
     this.indicator = this.container.querySelector('aside');
+    this.indicatorLabel = this.indicator.querySelector('span');
   }
 
   render(result) {
@@ -30,7 +31,6 @@ export default class PrimaryCheckUI {
 
     const indicatorX = result.percentile / result.distributions[2].min;
     this.indicator.style.transform = `translateX(${indicatorX * 100}%)`;
-    this.indicator.textContent = `${result.percentile / this.unit.conversion} ${this.unit.name}`;
-
+    this.indicatorLabel.textContent = `${result.percentile / this.unit.conversion} ${this.unit.name}`;
   }
 }
