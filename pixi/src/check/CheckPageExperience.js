@@ -49,14 +49,13 @@ export default class CheckPageExperience extends BaseCheck {
     // const apiEndpoint = `${API_ENDPOINT}${inputValue}${API_KEY}`
     const dummyApiEndpoint = `http://localhost:8080/pixi/api/page-experience-dummy`;
 
-    this.toggleLoading(false);
     this.fetchApi(dummyApiEndpoint);
     console.log('Start running Page Experience Check', dummyApiEndpoint);
   }
 
   onSuccess(response) {
+    this.toggleLoading(false);
     this.renderResult(response.loadingExperience.metrics);
-    this.toggleLoading(true);
   }
 
   renderResult(result) {

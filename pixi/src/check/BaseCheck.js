@@ -42,6 +42,7 @@ export default class BaseCheck {
   }
 
   onSubmitUrl() {
+    this.toggleLoading(true);
     const value = this.input.value;
     const url =
       value.startsWith('http://') || value.startsWith('https://')
