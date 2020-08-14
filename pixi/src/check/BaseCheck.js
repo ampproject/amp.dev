@@ -30,7 +30,7 @@ export default class BaseCheck {
       fetch(apiEndpoint)
         .then((response) => {
           if (!response.ok) {
-            throw new Error('Failed running check');
+            this.onError();
           }
           return response.json();
         })
@@ -64,6 +64,6 @@ export default class BaseCheck {
   }
 
   onError(error) {
-    console.log(error);
+    throw new Error('Failed running check:', error);
   }
 }
