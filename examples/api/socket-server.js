@@ -24,6 +24,18 @@
 'use strict';
 
 const WebSocket = require('ws');
+const express = require('express');
+
+// eslint-disable-next-line new-cap
+const examples = express.Router();
+/* We probably don't need this, do we? Since we're actually adding the socket server in platform.js?
+ * The problem I have is that if I try to export a function like startLiveBlog below,
+ * some sort of magic process wants to include that in express anyway, throwing an error.
+ * But I was wondering if I still needed to create a Router and then do something like this:
+ * examples.put('/live-blog', function(req, res) {
+ *   // server logic here
+ * }
+*/
 
 const messages = [
   "Something thrilling is happening.",
