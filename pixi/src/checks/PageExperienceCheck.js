@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import CoreWebVitalsReport from '../ui/report/CoreWebVitalsReport.js';
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 const CHECKS = [

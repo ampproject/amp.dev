@@ -12,8 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {UNIT_DEC, UNIT_SEC, UNIT_MS} from '../../checks/constants.js';
-
 export default class CoreWebVitalsReport {
   constructor(reportData) {
     this.unit = reportData.unit;

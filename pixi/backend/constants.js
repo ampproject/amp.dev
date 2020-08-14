@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+/* eslint-disable max-len */
 const dummyApiResponse = {
   'captchaResult': 'CAPTCHA_NOT_NEEDED',
   'kind': 'pagespeedonline#result',

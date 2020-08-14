@@ -14,7 +14,6 @@
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
-import {UNIT_DEC, UNIT_SEC, UNIT_MS} from '../checks/constants.js';
 
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
@@ -25,7 +24,7 @@ export default class PageExperience {
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
   }
 
-  async onSubmitUrl(e) {
+  async onSubmitUrl() {
     this.toggleLoading(true);
 
     const value = this.input.value;
@@ -52,4 +51,4 @@ export default class PageExperience {
   }
 }
 
-const pageExperience = new PageExperience();
+new PageExperience();
