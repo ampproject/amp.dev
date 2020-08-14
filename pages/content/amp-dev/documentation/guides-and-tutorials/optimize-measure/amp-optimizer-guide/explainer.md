@@ -10,7 +10,17 @@ author: sebastianbenz
 
 An AMP Optimizer takes a valid AMPHTML document as input and transforms it into an optimized version by applying additional optimizations that would be cumbersome to do “by hand”. You can recognize the resulting “**transformed AMP**” in the `html` element via the `transformed` attribute:
 
+```
+<html ⚡ i-amphtml-layout i-amphtml-no-boilerplate transformed="self">
+```
+
 Note: AMP caches use a different transformed flag, for example, the Google AMP caches adds `transformed=google;v=1`.
+
+AMP Optimizers perform various optimizations on an AMP document ranging from server-side rendering layouts to image optimization. Here is an example showing the differences between an AMP page and its optimized version ([click for a large version](/static/img/docs/guides/optimized-amp-diff.png)).
+
+<a href="/static/img/docs/guides/optimized-amp-diff.png"><amp-img lightbox layout="responsive" width="2560" height="773" src="/static/img/docs/guides/optimized-amp-diff.png"></amp-img></a>
+
+In the rest of this guide, we will introduce these optimizations in more details.
 
 ### Server-side rendering AMP Layouts
 
@@ -39,7 +49,7 @@ Server-side rendering does three things:
 
 Warning: The AMP boilerplate cannot always be removed. You can find out if the boilerplate has been removed, by checking if the `i-amphtml-no-boilerplate` attribute is present on the`html` element. For example, the `amp-experiment` component changes page content at runtime. To avoid content shifts requires the AMP-boilerplate code needs to be present if `amp-experiment` is used on a page.
 
-### Optimize hero images
+### Hero Image Optimization
 
 An AMP Optimizer can significantly improve the time it takes to render images in the first viewport. This is critical when optimizing the [LCP times](https://web.dev/lcp/) to meet the [Core Web Vitals](https://web.dev/vitals).
 

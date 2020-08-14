@@ -1,6 +1,6 @@
 ---
 $title: Optimize your hosted AMP pages
-$order: 2
+$order: 20
 description: 'The AMP runtime is optimized for speed and if your AMP pages are served by an AMP cache, they are fully optimized and offer the highest loading performance ...'
 
 formats:
@@ -224,4 +224,3 @@ Of course, all the basics of web performance optimizations also apply to AMP pag
 - [Compress and minify CSS & HTML](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer). Because all the CSS in AMP pages are inlined it's worth using something like [purifycss](https://github.com/purifycss/purifycss) to strip out unused CSS.
 - Use [HTTP Caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 - ... and more
-

@@ -1,6 +1,6 @@
 ---
 $title: Using an AMP Optimizer
-$order: 0
+$order: 2
 $hidden: true
 description: 'AMP Optimizers are tools that bring AMP Cache optimizations to your own site. Using an AMP Optimizer is key to creating a great page experience and achieving Core Web Vitals compliance. This guides explains how to best use an AMP Optimizer to optimizer your AMP pages.'
 formats:
