@@ -120,7 +120,7 @@
     "eslint-config-google": "0.14.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
-    "fetch-mock": "9.10.6",
+    "fetch-mock": "9.10.7",
     "file-loader": "6.0.0",
     "filemanager-webpack-plugin": "2.0.5",
     "globby": "11.0.1",
