@@ -85,7 +85,7 @@
     "node-fetch": "2.6.0",
     "node-zopfli-es": "1.0.6",
     "nunjucks": "3.2.2",
-    "p-queue": "6.6.0",
+    "p-queue": "6.6.1",
     "randomstring": "1.1.5",
     "rcs-core": "3.4.0",
     "rss-to-json": "1.1.1",
