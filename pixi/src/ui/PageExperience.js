@@ -21,7 +21,7 @@ export default class PageExperience {
     this.submit = document.getElementById('input-submit');
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
-    this.reports = {};
+    this.reportViews = {};
   }
 
   isValidURL(inputUrl) {
@@ -41,22 +41,22 @@ export default class PageExperience {
 
       const check = new PageExperienceCheck();
       const report = await check.run(inputUrl);
-      const fieldData = report.CoreWebVitals.fieldData;
+      const fieldData = report.coreWebVitals.fieldData;
 
-      this.reports['lcp'] =
-        this.reports['lcp'] ||
+      this.reportViews['lcp'] =
+        this.reportViews['lcp'] ||
         new CoreWebVitalsReport(document, fieldData.lcp.id);
-      this.reports.lcp.render(fieldData.lcp);
+      this.reportViews.lcp.render(fieldData.lcp);
 
-      this.reports['fid'] =
-        this.reports['fid'] ||
+      this.reportViews['fid'] =
+        this.reportViews['fid'] ||
         new CoreWebVitalsReport(document, fieldData.fid.id);
-      this.reports.fid.render(fieldData.fid);
+      this.reportViews.fid.render(fieldData.fid);
 
-      this.reports['cls'] =
-        this.reports['cls'] ||
+      this.reportViews['cls'] =
+        this.reportViews['cls'] ||
         new CoreWebVitalsReport(document, fieldData.cls.id);
-      this.reports.cls.render(fieldData.cls);
+      this.reportViews.cls.render(fieldData.cls);
 
       // TODO: Initialize lab data reports
     } else {
@@ -69,8 +69,8 @@ export default class PageExperience {
 
   toggleLoading(force) {
     this.submit.classList.toggle('loading', force);
-    for (const report of Object.keys(this.reports)) {
-      this.reports[report].toggleLoading(force);
+    for (const report of Object.keys(this.reportViews)) {
+      this.reportViews[report].toggleLoading(force);
     }
   }
 }

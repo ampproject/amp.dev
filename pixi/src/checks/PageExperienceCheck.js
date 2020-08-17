@@ -40,7 +40,7 @@ export default class PageExperienceCheck {
 
   createReportData(apiResult) {
     const reports = {
-      CoreWebVitals: {
+      coreWebVitals: {
         fieldData: {
           lcp: {
             id: 'lcp',
