@@ -4,18 +4,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
-module.exports = () => {
+module.exports = (env, argv) => {
   return {
     entry: path.join(__dirname, 'src/ui/PageExperience.js'),
     output: {
-      filename: 'static/pixi/pixi.[name].[hash].js',
+      filename: 'pixi.[name].[hash].js',
       chunkFilename: 'pixi.[name].[chunkhash].bundle.js',
       sourceMapFilename: 'pixi.[name].map',
-      publicPath: '/',
+      publicPath: '/static/pixi/',
     },
     optimization: {
       minimizer: [new ClosurePlugin({mode: 'STANDARD'}, {})],
     },
+    devtool: argv.mode == 'development' ? 'cheap-module-source-map' : false,
     plugins: [
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src/ui/page-experience.hbs'),
@@ -30,7 +31,11 @@ module.exports = () => {
               destination: '../frontend/templates/views/partials/pixi.j2',
             },
             {
-              source: './dist/static/pixi/*.js',
+              source: './dist/*.js',
+              destination: '../dist/static/pixi/',
+            },
+            {
+              source: './dist/pixi.main.map',
               destination: '../dist/static/pixi/',
             },
           ],
