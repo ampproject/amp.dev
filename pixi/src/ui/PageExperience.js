@@ -36,7 +36,10 @@ export default class PageExperience {
   async onSubmitUrl() {
     const inputUrl = this.input.value;
 
-    if (this.isValidURL(inputUrl)) {
+    if (!this.isValidURL(inputUrl)) {
+      // TODO: Initialize lab data reports
+      throw new Error('Please enter a valid URL');
+    } else {
       this.toggleLoading(true);
 
       const check = new PageExperienceCheck();
@@ -47,10 +50,6 @@ export default class PageExperience {
         this.reportViews[id] = this.reportViews[id] || new CoreWebVitalsReport(document, id);
         this.reportViews[id].render(metric)
       }
-
-      // TODO: Initialize lab data reports
-    } else {
-      throw new Error('Please enter a valid URL');
       // TODO: Show error message in UI
     }
 
