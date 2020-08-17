@@ -2,15 +2,25 @@
  * @jest-environment jsdom
  */
 
-const { PageExperienceCheck } = require('./PageExperienceCheck.js');
+import PageExperienceCheck from './PageExperienceCheck.js';
 
-describe('bla', () => {
-  beforeEach(() => {
-    console.log(PageExperienceCheck);
-    const testCheck = new PageExperienceCheck();
+describe('Page experience check', () => {
+  const PAGE_URL = 'https://amp.dev/'
+  const pageExperienceCheck = new PageExperienceCheck();
+
+  test('fails for empty URL', async () => {
+    await expect(pageExperienceCheck.run()).rejects.toThrow();
   });
 
-  test('testMethod', () => {
-    expect('testFunc').toBe('testFunc');
+  test('create report data for url', async () => {
+    try {
+      const pxCheck = await pageExperienceCheck.run(PAGE_URL);
+    } catch(e) {
+      console.log('error', e);
+    }
+
+    expect({}).toBe({
+      test: 'jiefj'
+    });
   });
 });
