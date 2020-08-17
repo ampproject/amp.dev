@@ -44,7 +44,6 @@ export default class PageExperience {
 
       const check = new PageExperienceCheck();
       const report = await check.run(inputUrl);
-      const fieldData = report.coreWebVitals.fieldData;
 
       for (const [id, metric] of Object.entries(
         report.coreWebVitals.fieldData
