@@ -43,20 +43,10 @@ export default class PageExperience {
       const report = await check.run(inputUrl);
       const fieldData = report.coreWebVitals.fieldData;
 
-      this.reportViews['lcp'] =
-        this.reportViews['lcp'] ||
-        new CoreWebVitalsReport(document, fieldData.lcp.id);
-      this.reportViews.lcp.render(fieldData.lcp);
-
-      this.reportViews['fid'] =
-        this.reportViews['fid'] ||
-        new CoreWebVitalsReport(document, fieldData.fid.id);
-      this.reportViews.fid.render(fieldData.fid);
-
-      this.reportViews['cls'] =
-        this.reportViews['cls'] ||
-        new CoreWebVitalsReport(document, fieldData.cls.id);
-      this.reportViews.cls.render(fieldData.cls);
+      for (const [id, metric] of Object.entries(report.coreWebVitals.fieldData)) {
+        this.reportViews[id] = this.reportViews[id] || new CoreWebVitalsReport(document, id);
+        this.reportViews[id].render(metric)
+      }
 
       // TODO: Initialize lab data reports
     } else {

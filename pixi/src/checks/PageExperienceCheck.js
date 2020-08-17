@@ -43,7 +43,6 @@ export default class PageExperienceCheck {
       coreWebVitals: {
         fieldData: {
           lcp: {
-            id: 'lcp',
             unit: UNIT_SEC,
             data:
               apiResult.loadingExperience.metrics[
@@ -51,12 +50,10 @@ export default class PageExperienceCheck {
               ],
           },
           fid: {
-            id: 'fid',
             unit: UNIT_MS,
             data: apiResult.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'],
           },
           cls: {
-            id: 'cls',
             unit: UNIT_DEC,
             data:
               apiResult.loadingExperience.metrics[
