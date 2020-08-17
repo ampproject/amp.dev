@@ -14,26 +14,14 @@
 
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
-const RESULTS = [
-  {
-    id: 'LARGEST_CONTENTFUL_PAINT_MS',
-    unit: UNIT_SEC,
-  },
-  {
-    id: 'FIRST_INPUT_DELAY_MS',
-    unit: UNIT_MS,
-  },
-  {
-    id: 'CUMULATIVE_LAYOUT_SHIFT_SCORE',
-    unit: UNIT_DEC,
-  },
-];
-
 // const API_ENDPOINT = new URL('https://www.googleapis.com');
 // API_ENDPOINT.pathname = '/pagespeedonline/v5/runPagespeed';
 const API_ENDPOINT = new URL('http://localhost:8080');
 API_ENDPOINT.pathname = '/page-experience/api/page-experience-dummy';
-API_ENDPOINT.searchParams.append('key', 'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY');
+API_ENDPOINT.searchParams.append(
+  'key',
+  'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY'
+);
 
 export default class PageExperienceCheck {
   constructor(pageUrl) {
@@ -47,17 +35,50 @@ export default class PageExperienceCheck {
   }
 
   createReportData(apiResult) {
-    const reports = [];
-    for (const check of RESULTS) {
-      if (apiResult.loadingExperience.metrics[check.id]) {
-        reports.push({
-          type: 'CoreWebVitalsReport',
-          checkId: check.id,
-          unit: check.unit,
-          data: apiResult.loadingExperience.metrics[check.id],
-        });
-      }
-    }
+    const reports = {
+      CoreWebVitals: {
+        fieldData: {
+          lcp: {
+            id: 'lcp',
+            unit: UNIT_SEC,
+            data:
+              apiResult.loadingExperience.metrics[
+                'LARGEST_CONTENTFUL_PAINT_MS'
+              ],
+          },
+          fid: {
+            id: 'fid',
+            unit: UNIT_MS,
+            data: apiResult.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'],
+          },
+          cls: {
+            id: 'cls',
+            unit: UNIT_DEC,
+            data:
+              apiResult.loadingExperience.metrics[
+                'CUMULATIVE_LAYOUT_SHIFT_SCORE'
+              ],
+          },
+        },
+        labData: {
+          lcp: {
+            id: 'lcp',
+            unit: UNIT_SEC,
+            data: apiResult.lighthouseResult.audits['largest-contentful-paint'],
+          },
+          fid: {
+            id: 'fid',
+            unit: UNIT_MS,
+            data: apiResult.lighthouseResult.audits['interactive'],
+          },
+          cls: {
+            id: 'cls',
+            unit: UNIT_DEC,
+            data: apiResult.lighthouseResult.audits['cumulative-layout-shift'],
+          },
+        },
+      },
+    };
 
     return reports;
   }

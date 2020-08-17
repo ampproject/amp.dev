@@ -38,10 +38,12 @@ export default class PageExperience {
       const check = new PageExperienceCheck(url);
       const report = await check.run();
 
-      // Result contains three CoreWebVitalsReports
-      for (const reportData of report) {
-        new CoreWebVitalsReport(reportData);
-      }
+      const fieldData = report.CoreWebVitals.fieldData;
+      new CoreWebVitalsReport(fieldData.lcp);
+      new CoreWebVitalsReport(fieldData.fid);
+      new CoreWebVitalsReport(fieldData.cls);
+
+      // TODO: Initialize lab data reports
     } else {
       this.onError('Error: Please enter a valid URL');
     }

@@ -5,7 +5,6 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 module.exports = () => {
-
   return {
     entry: path.join(__dirname, 'src/ui/PageExperience.js'),
     output: {
