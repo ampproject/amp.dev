@@ -14,14 +14,17 @@
 
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
-// const API_ENDPOINT = new URL('https://www.googleapis.com/pagespeedonline/v5/runPagespeed');
-const API_ENDPOINT = 'http://localhost:8080/page-experience/api/page-experience-dummy';
+// const API_ENDPOINT =
+//   'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+const API_ENDPOINT =
+  'http://localhost:8080/page-experience/api/page-experience-dummy';
 const API_KEY = 'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY';
 
 export default class PageExperienceCheck {
   constructor(pageUrl) {
     this.apiUrl = new URL(API_ENDPOINT);
     this.apiUrl.searchParams.append('key', API_KEY);
+    this.apiUrl.searchParams.append('url', pageUrl);
   }
 
   async run() {

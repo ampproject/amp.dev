@@ -42,13 +42,19 @@ export default class PageExperience {
 
       const fieldData = report.CoreWebVitals.fieldData;
 
-      this.reports['lcp'] = this.reports['lcp'] || new CoreWebVitalsReport(document, fieldData.lcp.id);
+      this.reports['lcp'] =
+        this.reports['lcp'] ||
+        new CoreWebVitalsReport(document, fieldData.lcp.id);
       this.reports.lcp.render(fieldData.lcp);
 
-      this.reports['fid'] = this.reports['fid'] ||  new CoreWebVitalsReport(document, fieldData.fid.id);
+      this.reports['fid'] =
+        this.reports['fid'] ||
+        new CoreWebVitalsReport(document, fieldData.fid.id);
       this.reports.fid.render(fieldData.fid);
 
-      this.reports['cls'] = this.reports['cls'] ||  new CoreWebVitalsReport(document, fieldData.cls.id);
+      this.reports['cls'] =
+        this.reports['cls'] ||
+        new CoreWebVitalsReport(document, fieldData.cls.id);
       this.reports.cls.render(fieldData.cls);
 
       // TODO: Initialize lab data reports
