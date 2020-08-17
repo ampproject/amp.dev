@@ -33,4 +33,8 @@ export default class CoreWebVitalsReport {
       unit.name
     }`;
   }
+
+  toggleLoading(force) {
+    this.container.classList.toggle('loading', force);
+  }
 }

@@ -28,8 +28,6 @@ export default class PageExperience {
   }
 
   async onSubmitUrl() {
-    this.toggleLoading(true);
-
     const value = this.input.value;
     const url =
       value.startsWith('http://') || value.startsWith('https://')
@@ -37,6 +35,8 @@ export default class PageExperience {
         : `http://${value}`;
 
     if (url.match(URL_VALIDATION_REGEX)) {
+      this.toggleLoading(true);
+
       const check = new PageExperienceCheck(url);
       const report = await check.run();
 
@@ -53,12 +53,18 @@ export default class PageExperience {
 
       // TODO: Initialize lab data reports
     } else {
-      this.onError('Error: Please enter a valid URL');
+      throw new Error('Please enter a valid URL');
+      // TODO: Show error message in UI
     }
+
+    this.toggleLoading(false);
   }
 
   toggleLoading(force) {
     this.submit.classList.toggle('loading', force);
+    for (const report of Object.keys(this.reports)) {
+      this.reports[report].toggleLoading(force);
+    }
   }
 }
 
