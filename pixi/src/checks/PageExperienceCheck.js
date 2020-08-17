@@ -21,13 +21,14 @@ const API_ENDPOINT =
 const API_KEY = 'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY';
 
 export default class PageExperienceCheck {
-  constructor(pageUrl) {
+  constructor() {
     this.apiUrl = new URL(API_ENDPOINT);
     this.apiUrl.searchParams.append('key', API_KEY);
-    this.apiUrl.searchParams.append('url', pageUrl);
   }
 
-  async run() {
+  async run(pageUrl) {
+    this.apiUrl.searchParams.set('url', pageUrl);
+
     try {
       const apiResult = await this.fetchJson();
       return this.createReportData(apiResult);

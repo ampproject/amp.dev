@@ -39,9 +39,8 @@ export default class PageExperience {
     if (this.isValidURL(inputUrl)) {
       this.toggleLoading(true);
 
-      const check = new PageExperienceCheck(url);
-      const report = await check.run();
-
+      const check = new PageExperienceCheck();
+      const report = await check.run(inputUrl);
       const fieldData = report.CoreWebVitals.fieldData;
 
       this.reports['lcp'] =
