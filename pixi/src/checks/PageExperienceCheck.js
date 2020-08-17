@@ -30,8 +30,13 @@ export default class PageExperienceCheck {
   }
 
   async run() {
-    const apiResult = await this.fetchJson();
-    return this.createReportData(apiResult);
+    try {
+      const apiResult = await this.fetchJson();
+      return this.createReportData(apiResult);
+    } catch (e) {
+      // TODO: Create an Error Report
+      throw new Error('PageExperienceCheck failed fetching json:', e);
+    }
   }
 
   createReportData(apiResult) {
