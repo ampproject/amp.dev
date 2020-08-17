@@ -27,7 +27,7 @@ export default class PageExperience {
   isValidURL(inputUrl) {
     try {
       const url = new URL(inputUrl);
-      return url.protocol === 'http' || url.protocol === 'https';
+      return url.protocol === 'http:' || url.protocol === 'https:';
     } catch (e) {
       return false;
     }
