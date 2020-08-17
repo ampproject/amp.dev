@@ -11,7 +11,7 @@ module.exports = (env, argv) => {
       filename: 'pixi.[name].[hash].js',
       chunkFilename: 'pixi.[name].[chunkhash].bundle.js',
       sourceMapFilename: 'pixi.[name].map',
-      publicPath: '/static/pixi/',
+      publicPath: '/static/page-experience/',
     },
     optimization: {
       minimizer: [new ClosurePlugin({mode: 'STANDARD'}, {})],
