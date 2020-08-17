@@ -64,6 +64,9 @@ export default class PageExperienceCheck {
   async fetchJson(apiUrl) {
     try {
       const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error(`PageExperienceCheck failed for: ${apiUrl}`);
+      }
       const result = await response.json();
       return result;
     } catch (e) {
