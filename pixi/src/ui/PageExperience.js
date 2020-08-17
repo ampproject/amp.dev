@@ -46,9 +46,12 @@ export default class PageExperience {
       const report = await check.run(inputUrl);
       const fieldData = report.coreWebVitals.fieldData;
 
-      for (const [id, metric] of Object.entries(report.coreWebVitals.fieldData)) {
-        this.reportViews[id] = this.reportViews[id] || new CoreWebVitalsReport(document, id);
-        this.reportViews[id].render(metric)
+      for (const [id, metric] of Object.entries(
+        report.coreWebVitals.fieldData
+      )) {
+        this.reportViews[id] =
+          this.reportViews[id] || new CoreWebVitalsReport(document, id);
+        this.reportViews[id].render(metric);
       }
       // TODO: Show error message in UI
     }
