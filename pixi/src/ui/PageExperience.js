@@ -23,6 +23,8 @@ export default class PageExperience {
     this.input = document.getElementById('input-field');
     this.submit = document.getElementById('input-submit');
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
+
+    this.reports = {};
   }
 
   async onSubmitUrl() {
@@ -40,14 +42,14 @@ export default class PageExperience {
 
       const fieldData = report.CoreWebVitals.fieldData;
 
-      const lcpReport = new CoreWebVitalsReport(document, fieldData.lcp.id);
-      lcpReport.render(fieldData.lcp);
+      this.reports['lcp'] = this.reports['lcp'] || new CoreWebVitalsReport(document, fieldData.lcp.id);
+      this.reports.lcp.render(fieldData.lcp);
 
-      const fidReport = new CoreWebVitalsReport(document, fieldData.fid.id);
-      fidReport.render(fieldData.fid);
+      this.reports['fid'] = this.reports['fid'] ||  new CoreWebVitalsReport(document, fieldData.fid.id);
+      this.reports.fid.render(fieldData.fid);
 
-      const clsReport = new CoreWebVitalsReport(document, fieldData.cls.id);
-      clsReport.render(fieldData.cls);
+      this.reports['cls'] = this.reports['cls'] ||  new CoreWebVitalsReport(document, fieldData.cls.id);
+      this.reports.cls.render(fieldData.cls);
 
       // TODO: Initialize lab data reports
     } else {
