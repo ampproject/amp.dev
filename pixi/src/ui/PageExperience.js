@@ -15,9 +15,6 @@
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
 
-// Match legal URLs. E.g. https://amp.dev/
-const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
-
 export default class PageExperience {
   constructor() {
     this.input = document.getElementById('input-field');
@@ -27,14 +24,19 @@ export default class PageExperience {
     this.reports = {};
   }
 
-  async onSubmitUrl() {
-    const value = this.input.value;
-    const url =
-      value.startsWith('http://') || value.startsWith('https://')
-        ? value
-        : `http://${value}`;
+  isValidURL(inputUrl) {
+    try {
+      const url = new URL(inputUrl);
+      return url.protocol === 'http' || url.protocol === 'https';
+    } catch (e) {
+      return false;
+    }
+  }
 
-    if (url.match(URL_VALIDATION_REGEX)) {
+  async onSubmitUrl() {
+    const inputUrl = this.input.value;
+
+    if (this.isValidURL(inputUrl)) {
       this.toggleLoading(true);
 
       const check = new PageExperienceCheck(url);
