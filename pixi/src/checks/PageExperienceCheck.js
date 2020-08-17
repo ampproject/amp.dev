@@ -38,10 +38,6 @@ export default class PageExperienceCheck {
     }
   }
 
-  testMethod() {
-    return 'lorem';
-  }
-
   createReportData(apiResult) {
     const reports = {
       coreWebVitals: {
