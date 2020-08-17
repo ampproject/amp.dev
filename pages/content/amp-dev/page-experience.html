@@ -1,8 +1,9 @@
 ---
-$title: Page Experience
+$title: AMP Page Experience tool
 $view: /views/custom.j2
-description: The new page experience tool.
+description: Optimize your AMP pages for Google's Page Experience ranking signal using AMP's page experience tool.
 ---
+
 {% do doc.styles.addCssFile('css/components/templates/pixi.css') %}
 
 <main class="ap--main ap-t-pixi">
@@ -12,22 +13,37 @@ description: The new page experience tool.
     <div class="ap-o-stage">
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
-          <h1 class="ap-o-stage-content-headline">Web Vitals and AMP Headline</h1>
+          <h1 class="ap-o-stage-content-headline">
+            Optimize your AMP pages for Google's Page Experience ranking signal
+          </h1>
         </div>
         <div class="ap-o-stage-image">
           {% do doc.icons.useIcon('icons/vitals-header.svg') %}
           <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vitals-header"></use>
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#vitals-header"
+            ></use>
           </svg>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="ap-t-pixi-intro">
-    <p class="ap-t-pixi-intro-text"><a href="https://web.dev/vitals/">Web Vitals</a> is an initiative by Google to provide unified guidance for quality signals that are essential to delivering a great user experience on the web.</p>
+  {% if podspec.env.name == 'production' %}
+  <section class="ap-t-pixi-intro ap-t-pixi-coming-soon">
+    <p class="ap-t-pixi-intro-text">
+      Coming soon
+    </p>
   </section>
-
-  {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %}
-  {% include '/views/partials/pixi.j2' %}
+  {% else %}
+  <section class="ap-t-pixi-intro">
+    <p class="ap-t-pixi-intro-text">
+      <a href="https://web.dev/vitals/">Web Vitals</a> is an initiative by
+      Google to provide unified guidance for quality signals that are essential
+      to delivering a great user experience on the web.
+    </p>
+  </section>
+  {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %} {%
+  include '/views/partials/pixi.j2' %} {% endif %}
 </main>
