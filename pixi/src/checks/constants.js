@@ -12,4 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import _ from './button/button.js';
+const UNIT_DEC = {name: '', conversion: 100};
+const UNIT_SEC = {name: 'sec', conversion: 1000};
+const UNIT_MS = {name: 'ms', conversion: 1};
+
+module.exports = {
+  UNIT_DEC,
+  UNIT_SEC,
+  UNIT_MS,
+};

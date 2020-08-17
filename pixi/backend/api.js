@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+const {dummyApiResponse} = require('./constants.js');
 const express = require('express');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
@@ -44,6 +45,13 @@ const execLint = async (url) => {
 
 // eslint-disable-next-line new-cap
 const api = express.Router();
+api.get('/page-experience-dummy', async (request, response) => {
+  await new Promise((resolve, reject) => {
+    setTimeout(resolve, 2000);
+  });
+  response.json(dummyApiResponse);
+});
+
 api.get('/lint', async (request, response) => {
   log.info('lint endpoint called.');
   response.setHeader('Content-Type', 'application/json');
