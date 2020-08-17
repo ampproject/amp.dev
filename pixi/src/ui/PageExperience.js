@@ -15,6 +15,7 @@
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
 
+// Match legal URLs. E.g. https://amp.dev/
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
 
 export default class PageExperience {
