@@ -14,19 +14,14 @@
 
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
-// const API_ENDPOINT = new URL('https://www.googleapis.com');
-// API_ENDPOINT.pathname = '/pagespeedonline/v5/runPagespeed';
-const API_ENDPOINT = new URL('http://localhost:8080');
-API_ENDPOINT.pathname = '/page-experience/api/page-experience-dummy';
-API_ENDPOINT.searchParams.append(
-  'key',
-  'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY'
-);
+// const API_ENDPOINT = new URL('https://www.googleapis.com/pagespeedonline/v5/runPagespeed');
+const API_ENDPOINT = 'http://localhost:8080/page-experience/api/page-experience-dummy';
+const API_KEY = 'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY';
 
 export default class PageExperienceCheck {
   constructor(pageUrl) {
-    API_ENDPOINT.searchParams.append('url', pageUrl);
-    this.pageUrl = API_ENDPOINT;
+    this.apiUrl = new URL(API_ENDPOINT);
+    this.apiUrl.searchParams.append('key', API_KEY);
   }
 
   async run() {
@@ -90,9 +85,9 @@ export default class PageExperienceCheck {
 
   async fetchJson() {
     try {
-      const response = await fetch(this.pageUrl);
+      const response = await fetch(this.apiUrl);
       if (!response.ok) {
-        throw new Error(`PageExperienceCheck failed for: ${this.pageUrl}`);
+        throw new Error(`PageExperienceCheck failed for: ${this.apiUrl}`);
       }
       const result = await response.json();
       return result;
