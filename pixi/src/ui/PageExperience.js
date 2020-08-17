@@ -39,9 +39,15 @@ export default class PageExperience {
       const report = await check.run();
 
       const fieldData = report.CoreWebVitals.fieldData;
-      new CoreWebVitalsReport(fieldData.lcp);
-      new CoreWebVitalsReport(fieldData.fid);
-      new CoreWebVitalsReport(fieldData.cls);
+
+      const lcpReport = new CoreWebVitalsReport(document, fieldData.lcp.id);
+      lcpReport.render(fieldData.lcp);
+
+      const fidReport = new CoreWebVitalsReport(document, fieldData.fid.id);
+      fidReport.render(fieldData.fid);
+
+      const clsReport = new CoreWebVitalsReport(document, fieldData.cls.id);
+      clsReport.render(fieldData.cls);
 
       // TODO: Initialize lab data reports
     } else {

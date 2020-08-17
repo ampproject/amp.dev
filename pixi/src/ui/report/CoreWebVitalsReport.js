@@ -13,24 +13,24 @@
 // limitations under the License.
 
 export default class CoreWebVitalsReport {
-  constructor(reportData) {
-    this.unit = reportData.unit;
-    this.container = document.getElementById(reportData.id);
+  constructor(doc, id) {
+    this.container = doc.getElementById(id);
     this.label = this.container.querySelector('label');
     this.indicator = this.container.querySelector('aside');
     this.indicatorLabel = this.indicator.querySelector('span');
-
-    this.render(reportData.data);
   }
 
-  render(data) {
+  render(report) {
+    const unit = report.unit;
+    const data = report.data;
+
     this.container.classList.add(data.category.toLowerCase());
     this.label.textContent = data.category;
 
     const indicatorX = data.percentile / data.distributions[2].min;
     this.indicator.style.transform = `translateX(${indicatorX * 100}%)`;
-    this.indicatorLabel.textContent = `${
-      data.percentile / this.unit.conversion
-    } ${this.unit.name}`;
+    this.indicatorLabel.textContent = `${data.percentile / unit.conversion} ${
+      unit.name
+    }`;
   }
 }
