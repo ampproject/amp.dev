@@ -14,7 +14,7 @@
 
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
-const CHECKS = [
+const RESULTS = [
   {
     id: 'LARGEST_CONTENTFUL_PAINT_MS',
     unit: UNIT_SEC,
@@ -40,14 +40,14 @@ export default class PageExperienceCheck {
 
   async run() {
     const apiUrl = `${API_ENDPOINT}${this.pageUrl}${API_KEY}`;
-    const apiResult = await this.callApi(apiUrl);
+    const apiResult = await this.fetchJson(apiUrl);
 
     return this.createReportData(apiResult);
   }
 
   createReportData(apiResult) {
     const reports = [];
-    for (const check of CHECKS) {
+    for (const check of RESULTS) {
       if (apiResult.loadingExperience.metrics[check.id]) {
         reports.push({
           type: 'CoreWebVitalsReport',
@@ -61,7 +61,7 @@ export default class PageExperienceCheck {
     return reports;
   }
 
-  async callApi(apiUrl) {
+  async fetchJson(apiUrl) {
     try {
       const response = await fetch(apiUrl);
       const result = await response.json();

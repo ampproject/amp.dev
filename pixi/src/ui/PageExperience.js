@@ -36,10 +36,10 @@ export default class PageExperience {
 
     if (url.match(URL_VALIDATION_REGEX)) {
       const check = new PageExperienceCheck(url);
-      const reportDataSets = await check.run();
+      const report = await check.run();
 
       // Result contains three CoreWebVitalsReports
-      for (const reportData of reportDataSets) {
+      for (const reportData of report) {
         new CoreWebVitalsReport(reportData);
       }
     } else {

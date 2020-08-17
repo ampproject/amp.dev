@@ -15,7 +15,6 @@
 export default class CoreWebVitalsReport {
   constructor(reportData) {
     this.unit = reportData.unit;
-    console.log(reportData, document.getElementById(reportData.checkId));
     this.container = document.getElementById(reportData.checkId);
     this.label = this.container.querySelector('label');
     this.indicator = this.container.querySelector('aside');
