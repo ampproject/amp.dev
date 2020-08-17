@@ -32,11 +32,11 @@ module.exports = (env, argv) => {
             },
             {
               source: './dist/*.js',
-              destination: '../dist/static/pixi/',
+              destination: '../dist/static/page-experience/',
             },
             {
               source: './dist/pixi.main.map',
-              destination: '../dist/static/pixi/',
+              destination: '../dist/static/page-experience/',
             },
           ],
         },
@@ -45,7 +45,7 @@ module.exports = (env, argv) => {
         dry: false,
         dangerouslyAllowCleanPatternsOutsideProject: true,
         cleanAfterEveryBuildPatterns: [
-          path.join(process.cwd(), '../dist/static/pixi'),
+          path.join(process.cwd(), '../dist/static/page-experience'),
         ],
       }),
     ],
