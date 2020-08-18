@@ -59,7 +59,10 @@ export default class PageExperience {
       // Additional checks
       const safeBrowsingCheck = new SafeBrowsingCheck();
       const safeBrowsingReport = await safeBrowsingCheck.run(inputUrl);
-      const safeBrowsingReportView = new BasicCheckReport(document, 'safe-browsing');
+      const safeBrowsingReportView = new BasicCheckReport(
+        document,
+        'safe-browsing'
+      );
       safeBrowsingReportView.render(safeBrowsingReport);
       // TODO: Show error message in UI
     }

@@ -18,9 +18,6 @@ const API_KEY = 'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY';
 const API_URL = `${API_ENDPOINT}${API_KEY}`;
 
 export default class SafeBrowsingCheck {
-  constructor() {
-  }
-
   async run(pageUrl) {
     try {
       const apiResult = await this.fetchJson(pageUrl);
@@ -42,23 +39,27 @@ export default class SafeBrowsingCheck {
       const response = await fetch(API_URL, {
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         method: 'POST',
         body: JSON.stringify({
           'client': {
-            'clientId':      'amp-dev-page-experience-checker',
-            'clientVersion': '0.0.1'
+            'clientId': 'amp-dev-page-experience-checker',
+            'clientVersion': '0.0.1',
           },
           'threatInfo': {
-            'threatTypes':      ['THREAT_TYPE_UNSPECIFIED', 'MALWARE', 'SOCIAL_ENGINEERING', 'UNWANTED_SOFTWARE', 'POTENTIALLY_HARMFUL_APPLICATION'],
-            'platformTypes':    ['ANY_PLATFORM'],
+            'threatTypes': [
+              'THREAT_TYPE_UNSPECIFIED',
+              'MALWARE',
+              'SOCIAL_ENGINEERING',
+              'UNWANTED_SOFTWARE',
+              'POTENTIALLY_HARMFUL_APPLICATION',
+            ],
+            'platformTypes': ['ANY_PLATFORM'],
             'threatEntryTypes': ['URL'],
-            'threatEntries': [
-              {'url': pageUrl},
-            ]
-          }
-        })
+            'threatEntries': [{'url': pageUrl}],
+          },
+        }),
       });
 
       if (!response.ok) {

@@ -2,10 +2,8 @@
  * @jest-environment jsdom
  */
 
-import SafeBrowsing from './SafeBrowsing.js';
+// import SafeBrowsing from './SafeBrowsing.js';
 
 describe('Safe Browsing', () => {
-  test('', async () => {
-
-  });
+  test('', async () => {});
 });
