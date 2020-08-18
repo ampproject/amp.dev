@@ -49,7 +49,10 @@ function getDelay() {
 }
 
 function startLiveBlog(server) {
-  const wss = new WebSocket.Server({server, path: '/documentation/examples/api/socket/live-blog'});
+  const wss = new WebSocket.Server({
+    server,
+    path: '/documentation/examples/api/socket/live-blog',
+  });
 
   wss.on('connection', (ws) => {
     sendLiveBlogEntries(ws);
