@@ -1,7 +1,7 @@
 ---
 $title: AMP Page Experience tool
 $view: /views/custom.j2
-description: Optimize your AMP pages for Google's Page Experience ranking signal using AMP's page experience tool.
+description: Coming soon - analyze and learn how to optimize your AMP pages for Google's Page Experience ranking signal.
 ---
 
 {% do doc.styles.addCssFile('css/components/templates/pixi.css') %}
@@ -33,7 +33,11 @@ description: Optimize your AMP pages for Google's Page Experience ranking signal
   {% if podspec.env.name == 'production' %}
   <section class="ap-t-pixi-intro ap-t-pixi-coming-soon">
     <p class="ap-t-pixi-intro-text">
-      Coming soon
+      Coming soon! Read more about how AMP helps achieve a great page experience
+      in our
+      <a href="https://blog.amp.dev/2020/05/28/amp-page-experience/"
+        >blog post</a
+      >.
     </p>
   </section>
   {% else %}
@@ -44,6 +48,7 @@ description: Optimize your AMP pages for Google's Page Experience ranking signal
       to delivering a great user experience on the web.
     </p>
   </section>
-  {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %} {%
-  include '/views/partials/pixi.j2' %} {% endif %}
+  {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %}
+  {% include '/views/partials/pixi.j2' %}
+  {% endif %}
 </main>
