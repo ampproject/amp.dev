@@ -14,7 +14,6 @@
 
 .#{template('pixi')} {
   $root: &;
-  padding: 0 15px;
   background: color('whisper');
 
   @media (min-width: 768px) {
@@ -98,21 +97,13 @@
       margin-left: 0;
     }
     @media (min-width: 1024px) {
-      grid-column: 7/17;
+      grid-column: 8/20;
     }
   }
 
   &-checks {
     grid-column: 1/25;
     margin-bottom: 200px;
-
-    @media (min-width: 768px) {
-      grid-column: 3/22;
-    }
-
-    @media (min-width: 1024px) {
-      grid-column: 1/25;
-    }
 
 
     .ap-m-input-bar {
@@ -298,15 +289,31 @@
       }
 
       &-metric {
-        width: 24%;
+        margin-bottom: 15px;
         padding: 15px 25px;
         border-radius: 4px;
         border: solid 2px color('white');
         font-size: 16px;
         background: color('white');
 
+        @media (min-width: 768px) {
+          flex-direction: row;
+          width: 24%;
+        }
+
         label {
           color: color('silver');
+        }
+
+        &.passed {
+          label {
+            color: color('malachite');
+          }
+        }
+        &.failed {
+          label {
+            color: color('red');
+          }
         }
       }
     }

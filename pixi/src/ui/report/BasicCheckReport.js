@@ -12,14 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export default class SafeBrowsingReport {
+export default class BasicCheckReport {
   constructor(doc, id) {
     this.container = doc.getElementById(id);
-
+    this.label = this.container.querySelector('label');
   }
 
   render(report) {
-
+    if (report === true) {
+      this.label.textContent = 'Passed';
+      this.container.classList.add('passed');
+    } else if (report === false) {
+      this.label.textContent = 'Failed';
+      this.container.classList.add('failed');
+    } else {
+      this.label.textContent = 'Check manually';
+    }
   }
 
   toggleLoading(force) {

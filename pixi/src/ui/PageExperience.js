@@ -15,6 +15,9 @@
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
 
+import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+import BasicCheckReport from './report/BasicCheckReport.js';
+
 export default class PageExperience {
   constructor() {
     this.input = document.getElementById('input-field');
@@ -42,9 +45,9 @@ export default class PageExperience {
     } else {
       this.toggleLoading(true);
 
+      // Core Web Vitals
       const check = new PageExperienceCheck();
       const report = await check.run(inputUrl);
-
       for (const [id, metric] of Object.entries(
         report.coreWebVitals.fieldData
       )) {
@@ -52,6 +55,12 @@ export default class PageExperience {
           this.reportViews[id] || new CoreWebVitalsReport(document, id);
         this.reportViews[id].render(metric);
       }
+
+      // Additional checks
+      const safeBrowsingCheck = new SafeBrowsingCheck();
+      const safeBrowsingReport = await safeBrowsingCheck.run(inputUrl);
+      const safeBrowsingReportView = new BasicCheckReport(document, 'safe-browsing');
+      safeBrowsingReportView.render(safeBrowsingReport);
       // TODO: Show error message in UI
     }
 
