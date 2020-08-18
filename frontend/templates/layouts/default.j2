@@ -60,7 +60,7 @@
     {% endfor %}
 
     {# Do not index untranslated content #}
-    {% if doc.nocache or (not '@' in doc.pod_path and not doc.locale == podspec.default_locale) %}
+    {% if not '@' in doc.pod_path and not doc.locale == podspec.default_locale %}
     <meta name="robots" content="noindex,follow"/>
     {% endif %}
 
