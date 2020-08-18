@@ -13,7 +13,7 @@ beforeAll(() => {
 });
 
 describe('Page experience check', () => {
-  test('create report data for url', async () => {
+  it('creates report data for url', async () => {
     const pageExperienceCheck = new PageExperienceCheck();
     const reportData = await pageExperienceCheck.run('https://example.com/');
     expect(reportData).toMatchObject(expectedReportData);
