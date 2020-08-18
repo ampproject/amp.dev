@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ClosurePlugin = require('closure-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -22,6 +23,10 @@ module.exports = (env, argv) => {
         template: path.join(__dirname, 'src/ui/page-experience.hbs'),
         filename: './pixi.html',
         inject: false,
+      }),
+      new webpack.EnvironmentPlugin({
+        AMP_DEV_API_KEY_SAFE_BROWSING: '',
+        AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS: '',
       }),
       new FileManagerPlugin({
         onEnd: {
