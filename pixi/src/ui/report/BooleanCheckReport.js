@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export default class BasicCheckReport {
+export default class BooleanCheckReport {
   constructor(doc, id) {
     this.container = doc.getElementById(id);
     this.label = this.container.querySelector('label');

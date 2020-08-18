@@ -16,7 +16,7 @@ import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
 
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
-import BasicCheckReport from './report/BasicCheckReport.js';
+import BooleanCheckReport from './report/BooleanCheckReport.js';
 
 export default class PageExperience {
   constructor() {
@@ -59,7 +59,7 @@ export default class PageExperience {
       // Additional checks
       const safeBrowsingCheck = new SafeBrowsingCheck();
       const safeBrowsingReport = await safeBrowsingCheck.run(inputUrl);
-      const safeBrowsingReportView = new BasicCheckReport(
+      const safeBrowsingReportView = new BooleanCheckReport(
         document,
         'safe-browsing'
       );

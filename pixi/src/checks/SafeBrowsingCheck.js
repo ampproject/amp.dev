@@ -21,7 +21,6 @@ export default class SafeBrowsingCheck {
   async run(pageUrl) {
     try {
       const apiResult = await this.fetchJson(pageUrl);
-      console.log(apiResult);
       return this.createReportData(apiResult);
     } catch (e) {
       // TODO: Create an Error Report
@@ -65,8 +64,7 @@ export default class SafeBrowsingCheck {
       if (!response.ok) {
         throw new Error(`SafeBrowsing failed fetching from: ${this.apiUrl}`);
       }
-      const result = await response.json();
-      return result;
+      return response;
     } catch (e) {
       throw new Error('SafeBrowsing failed:', e);
     }
