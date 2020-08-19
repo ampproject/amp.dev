@@ -13,8 +13,7 @@ This guide outlines interactivity foundations in AMP. Some primitives will look 
 
 # Event listeners and event handling
 
-AMP installs event listeners on elements via the [`on` attribute](../../learn/amp-actions-and-events.md) with the event and responding action as values. Events allow you to listen and react to component specific user interactions. In the example below, the `<h1>` element hides when the user clicks the button. The `tap` event triggers the `hide` action. 
-
+AMP installs event listeners on elements via the [`on` attribute](../../learn/amp-actions-and-events.md) with the event and responding action as values. Events allow you to listen and react to component specific user interactions. In the example below, the `<h1>` element hides when the user clicks the button. The `tap` event triggers the `hide` action.
 
 ```
  <h1 id="helloHeading">Hello AMP World!</h1>
@@ -23,30 +22,25 @@ AMP installs event listeners on elements via the [`on` attribute](../../learn/am
   </button>
 ```
 
-
 Event listeners and actions follow a specific syntax in AMP:
-
 
 ```
 on="eventName:targetId.actionName"
 
 ```
 
-
 *   Registration of the listening event. Always `on` in AMP.
-*   The event name, followed by a colon. The example above uses [`tap`](../../learn/amp-actions-and-events.md#*---all-elements). 
+*   The event name, followed by a colon. The example above uses [`tap`](../../learn/amp-actions-and-events.md#*---all-elements).
 *   The id of the target element, or a [special target](../../learn/amp-actions-and-events.md#special-targets), to perform the action on, followed by a period. The example above specifies `helloHeading`, the id of the `<h1>` element.
 *   The desired action name. The example above uses [`hide`](../../learn/amp-actions-and-events.md#*-(all-elements)).
-*   You may define multiple events on a single element. The AMP event section below outlines this syntax. 
-*   You may define multiple actions in response to a single action. The AMP actions section below outlines this syntax. 
-
+*   You may define multiple events on a single element. The AMP event section below outlines this syntax.
+*   You may define multiple actions in response to a single action. The AMP actions section below outlines this syntax.
 
 ## AMP events
 
 Register event listeners by placing the `on` attribute onto the desired element or AMP component.
 
 You may register none, one, or many events on a single element. Register multiple events by placing a semicolon between declarations within the `on` attribute’s value. The example below listens for the `tap` event and the input-specific `change` event to show and hide the [hidden](#hide-elements-on-page-load) `<p>` element.
-
 
 ```
  <input  on="tap:hiddenInstructions.show;change:hiddenInstructions.hide" tabindex=0 role="textbox" type="text">
@@ -55,16 +49,13 @@ You may register none, one, or many events on a single element. Register multipl
   </p>
 ```
 
-
-The `tap` event is the AMP specific implementation of `click`. The globally-defined `tap` event is available to all elements. There are [HTML element specific](../../learn/amp-actions-and-events.md#*---all-elements) and AMP component specific events you can listen for. Find events specific to an AMP component on their [reference pages](../../../components/index.html). 
-
+The `tap` event is the AMP specific implementation of `click`. The globally-defined `tap` event is available to all elements. There are [HTML element specific](../../learn/amp-actions-and-events.md#*---all-elements) and AMP component specific events you can listen for. Find events specific to an AMP component on their [reference pages](../../../components/index.html).
 
 ## AMP actions
 
 AMP responds to events by performing the action defined. There must be a specified element id or [special target](../../learn/amp-actions-and-events.md#special-targets). You may register one or many actions for each event. Register multiple actions to a single event by placing a comma between each `targetId.action` pairing.
 
-The example below hides `helloHeading` and shows `goodbyeHeading` on the single `tap` event trigger. 
-
+The example below hides `helloHeading` and shows `goodbyeHeading` on the single `tap` event trigger.
 
 ```
  <h1 id="helloHeading">Hello AMP World!</h1>
@@ -74,30 +65,24 @@ The example below hides `helloHeading` and shows `goodbyeHeading` on the single 
   </button>
 ```
 
-
 AMP has [six globally-defined actions](../../learn/amp-actions-and-events.md#*-(all-elements)): 
-
-
 
 *   `hide`
 *   `show`
 *   `toggleVisibility`
 *   `toggleClass()`
 *   `scrollTo()`
-*   `focus` 
+*   `focus`
 
 There are HTML element specific and AMP component specific actions you can execute.
-
 
 # Hide, show and toggle element visibility
 
 AMP provides three globally-available actions that change element visibility. They are:
 
-
-
 *   `hide`
 *   `show`
-*   `toggleVisibility` 
+*   `toggleVisibility`
 
 ```
 <button on="tap:sweetImage.toggleVisibility,savoryImage.toggleVisibility">
@@ -118,15 +103,11 @@ AMP provides three globally-available actions that change element visibility. Th
            src="https://amp.dev/static/samples/img/image2.jpg"></amp-img>
 ```
 
-
-
 To reveal an element via the `show` action, it must be previously hidden with the [`hidden`](https://www.w3schools.com/tags/att_hidden.asp) attribute, or from a `hide` or `toggleVisibility` action. The `show` action does not support elements hidden by CSS `display:none` or AMP’s `layout=nodisplay`.
-
 
 ## Hide elements on page load
 
-Specify elements that should not be visible to users on page load by applying the [`hidden`](https://www.w3schools.com/tags/att_hidden.asp) attribute. 
-
+Specify elements that should not be visible to users on page load by applying the [`hidden`](https://www.w3schools.com/tags/att_hidden.asp) attribute.
 
 ```
  <p>
@@ -140,14 +121,11 @@ Specify elements that should not be visible to users on page load by applying th
   </p>
 ```
 
-
-
 # Add, remove and toggle CSS classes
 
-A common basic interactivity need is applying and removing CSS classes. The globally-defined `toggleClass()` AMP actions fills this need. You can add, remove and toggle CSS classes in response to events. 
+A common basic interactivity need is applying and removing CSS classes. The globally-defined `toggleClass()` AMP actions fills this need. You can add, remove and toggle CSS classes in response to events.
 
-The `toggleClass()` action requires one argument, `class="className"`. This works when applying and removing a single class. 
-
+The `toggleClass()` action requires one argument, `class="className"`. This works when applying and removing a single class.
 
 ```
   <style amp-custom>
@@ -164,9 +142,7 @@ The `toggleClass()` action requires one argument, `class="className"`. This work
   </button>
 ```
 
-
 The `toggleClass()` action allows for an optional additional argument `force`. The `force` attribute takes a boolean value. When set to `true` it allows the defined class to be added during that toggle, but not removed. When set to `false` it allows the defined class to be removed during that toggle, but not added. This argument is useful for toggling conflicting CSS attributes, such as the background color in the example below:
-
 
 ```
  <style amp-custom>
@@ -193,5 +169,4 @@ The `toggleClass()` action allows for an optional additional argument `force`. T
   </button>
 ```
 
-
-Read more in [Triggering CSS animations & transitions](../animations/triggering_css_animations.md). 
+Read more in [Triggering CSS animations & transitions](../animations/triggering_css_animations.md).
