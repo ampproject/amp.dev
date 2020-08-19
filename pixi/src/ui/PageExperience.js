@@ -13,10 +13,10 @@
 // limitations under the License.
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
-import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
-
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
-import BooleanCheckReport from './report/BooleanCheckReport.js';
+
+import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
+import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
 export default class PageExperience {
   constructor() {
@@ -25,6 +25,9 @@ export default class PageExperience {
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
     this.reportViews = {};
+
+    this.pageExperienceCheck = new PageExperienceCheck();
+    this.safeBrowsingCheck = new SafeBrowsingCheck();
   }
 
   isValidURL(inputUrl) {
@@ -46,20 +49,18 @@ export default class PageExperience {
       this.toggleLoading(true);
 
       // Core Web Vitals
-      const check = new PageExperienceCheck();
-      const report = await check.run(inputUrl);
+      const pageExperienceReport = await this.pageExperienceCheck .run(inputUrl);
       for (const [id, metric] of Object.entries(
-        report.coreWebVitals.fieldData
+        pageExperienceReport.coreWebVitals.fieldData
       )) {
         this.reportViews[id] =
-          this.reportViews[id] || new CoreWebVitalsReport(document, id);
+          this.reportViews[id] || new CoreWebVitalsReportView(document, id);
         this.reportViews[id].render(metric);
       }
 
       // Additional checks
-      const safeBrowsingCheck = new SafeBrowsingCheck();
-      const safeBrowsingReport = await safeBrowsingCheck.run(inputUrl);
-      const safeBrowsingReportView = new BooleanCheckReport(
+      const safeBrowsingReport = await this.safeBrowsingCheck.run(inputUrl);
+      const safeBrowsingReportView = new BooleanCheckReportView(
         document,
         'safe-browsing'
       );
