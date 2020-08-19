@@ -80,15 +80,19 @@ export default class PageExperience {
   }
 
   async runSafeBrowsingCheck() {
-    const report = await this.safeBrowsingCheck.run(pageUrl);
-    if (report.error) {
-      this.errors.push(report.error);
-    }
+    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
     this.reportViews.safeBrowsing = new BooleanCheckReportView(
       document,
       'safe-browsing'
     );
-    this.reportViews.safeBrowsing.render(report.data);
+
+    // Do not surface the actual error to the user. Simply log it
+    // The BooleanCheckReportView will show "Analysis failed"
+    // for undefined data
+    if (error) {
+      console.error('Could not perform safe browsing check', error);
+    }
+    this.reportViews.safeBrowsing.render(data);
   }
 
   toggleLoading(force) {
