@@ -1,7 +1,6 @@
 const DEFAULT_LANGUAGE = 'en';
 
 class I18n {
-
   constructor() {
     this.language = DEFAULT_LANGUAGE;
     this.translations = {};
@@ -13,7 +12,10 @@ class I18n {
       this.language = i18nConfig.language;
       this.translations = i18nConfig.translations;
     } catch (e) {
-      console.warn('Could not get translations from amp-state. Falling back to original strings', e);
+      console.warn(
+        'Could not get translations from amp-state. Falling back to original strings',
+        e
+      );
     }
   }
 
