@@ -48,7 +48,23 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       to delivering a great user experience on the web.
     </p>
   </section>
+
   {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %}
+  <amp-state id="pixi">
+    <script type="application/json">
+      {
+        "i18n": {
+          "language": "{{ doc.locale }}",
+          "translations": {
+            "Analyzing ...": "{{ _('Analyzing ...') }}",
+            "Failed": "{{ _('Failed') }}",
+            "Passed": "{{ _('Passed') }}"
+          }
+        }
+      }
+    </script>
+  </amp-state>
   {% include '/views/partials/pixi.j2' %}
+
   {% endif %}
 </main>
