@@ -23,14 +23,12 @@ export default class SafeBrowsingCheck {
       const apiResult = await this.fetchJson(pageUrl);
       return this.createReportData(apiResult);
     } catch (e) {
-      // TODO: Create an Error Report
-      throw new Error('SafeBrowsing failed running check:', e);
+      return [e];
     }
-    return true;
   }
 
   createReportData(apiResult) {
-    return !Object.keys(apiResult).length;
+    return [null, !Object.keys(apiResult).length];
   }
 
   async fetchJson(pageUrl) {
