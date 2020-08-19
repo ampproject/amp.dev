@@ -53,16 +53,13 @@ export default class PageExperience {
 
       // Core Web Vitals
       this.pageExperienceCheck.run(inputUrl).then((pageExperienceReport) => {
-        const error = pageExperienceReport[0];
-        if (error) {
-          errors.push(error);
-          // TODO: Trigger error handling
+        if (pageExperienceReport.error) {
+          errors.push(pageExperienceReport.error);
           return;
         }
 
-        const data = pageExperienceReport[1];
         for (const [id, metric] of Object.entries(
-          data.coreWebVitals.fieldData
+          pageExperienceReport.data.coreWebVitals.fieldData
         )) {
           this.reportViews[id] =
             this.reportViews[id] || new CoreWebVitalsReportView(document, id);
@@ -72,15 +69,14 @@ export default class PageExperience {
 
       // Additional checks
       this.safeBrowsingCheck.run(inputUrl).then((safeBrowsingReport) => {
-        const [error, data] = safeBrowsingReport;
-        if (error) {
-          errors.push(error);
+        if (safeBrowsingReport.error) {
+          errors.push(safeBrowsingReport.error);
         }
         this.reportViews['safeBrowsing'] = new BooleanCheckReportView(
           document,
           'safe-browsing'
         );
-        this.reportViews['safeBrowsing'].render(data);
+        this.reportViews['safeBrowsing'].render(safeBrowsingReport.data);
       });
 
       // TODO: Check error array and render banner in UI

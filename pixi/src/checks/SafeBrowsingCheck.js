@@ -28,7 +28,7 @@ export default class SafeBrowsingCheck {
   }
 
   createReportData(apiResult) {
-    return [null, !Object.keys(apiResult).length];
+    return { error: null, data: !Object.keys(apiResult).length };
   }
 
   async fetchJson(pageUrl) {
