@@ -63,7 +63,7 @@ export default class SafeBrowsingCheck {
       });
 
       if (!response.ok) {
-        throw new Error(`SafeBrowsing failed fetching from: ${this.apiUrl}`);
+        throw new Error(`SafeBrowsing failed: ${response.status}`);
       }
       return response;
     } catch (e) {
