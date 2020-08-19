@@ -16,7 +16,8 @@ beforeAll(() => {
 
 describe('Page experience check', () => {
   it('creates report data for url', async () => {
-    const apiEndpoint = pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
+    const apiEndpoint =
+      pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
     fetchMock.mock(`begin:${apiEndpoint}`, dummyApiResponse);
 
     const pageExperienceCheck = new PageExperienceCheck();
