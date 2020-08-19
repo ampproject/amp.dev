@@ -49,22 +49,24 @@ export default class PageExperience {
       this.toggleLoading(true);
 
       // Core Web Vitals
-      const pageExperienceReport = await this.pageExperienceCheck .run(inputUrl);
-      for (const [id, metric] of Object.entries(
-        pageExperienceReport.coreWebVitals.fieldData
-      )) {
-        this.reportViews[id] =
-          this.reportViews[id] || new CoreWebVitalsReportView(document, id);
-        this.reportViews[id].render(metric);
-      }
+      this.pageExperienceCheck .run(inputUrl).then((pageExperienceReport) => {
+        for (const [id, metric] of Object.entries(
+          pageExperienceReport.coreWebVitals.fieldData
+        )) {
+          this.reportViews[id] =
+            this.reportViews[id] || new CoreWebVitalsReportView(document, id);
+          this.reportViews[id].render(metric);
+        }
+      });
 
       // Additional checks
-      const safeBrowsingReport = await this.safeBrowsingCheck.run(inputUrl);
-      const safeBrowsingReportView = new BooleanCheckReportView(
-        document,
-        'safe-browsing'
-      );
-      safeBrowsingReportView.render(safeBrowsingReport);
+      this.safeBrowsingCheck.run(inputUrl).then((safeBrowsingReport) => {
+        const safeBrowsingReportView = new BooleanCheckReportView(
+          document,
+          'safe-browsing'
+        );
+        safeBrowsingReportView.render(safeBrowsingReport);
+      });
       // TODO: Show error message in UI
     }
 
