@@ -155,6 +155,15 @@ async function buildPlayground() {
 }
 
 /**
+ * Builds Pixi
+ * @return {Promise}
+ */
+async function buildPixi() {
+  await sh('mkdir -p pixi/dist');
+  return sh('npm run build:pixi');
+}
+
+/**
  * Generate component versions
  * @return {Promise}
  */
@@ -262,6 +271,7 @@ function buildPrepare(done) {
       buildComponentVersions,
       buildPlayground,
       buildBoilerplate,
+      buildPixi,
       buildSamples,
       importAll,
       zipTemplates
@@ -286,6 +296,7 @@ function buildPrepare(done) {
         './dist/',
         './boilerplate/dist/',
         './playground/dist/',
+        './frontend/templates/views/partials/pixi.j2',
         './.cache/',
         './examples/static/samples/samples.json',
       ];
@@ -535,6 +546,7 @@ exports.templates = templates;
 exports.importAll = importAll;
 exports.importComponents = importComponents;
 exports.buildPlayground = buildPlayground;
+exports.buildPixi = buildPixi;
 exports.buildBoilerplate = buildBoilerplate;
 exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;

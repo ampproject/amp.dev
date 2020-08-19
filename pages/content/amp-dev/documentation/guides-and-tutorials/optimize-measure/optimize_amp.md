@@ -1,6 +1,6 @@
 ---
 $title: Optimize your hosted AMP pages
-$order: 2
+$order: 20
 description: 'The AMP runtime is optimized for speed and if your AMP pages are served by an AMP cache, they are fully optimized and offer the highest loading performance ...'
 
 formats:
@@ -210,11 +210,11 @@ With AMP there are a few things that you can do to optimize your font loading ([
 
 Last but not least, try to minimize the number of custom fonts that you use on your page. If you can, use the system fonts instead of custom fonts because system fonts make your website match the user's operating system, and it helps to avoid loading more resources.
 
-### Server-Side Rendering <a name="server-side-rendering"></a>
+### Server-Side Rendering AMP Layouts <a name="server-side-rendering"></a>
 
-[Server-side-rendering](server-side-rendering.md) is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
+Server-side-rendering AMP Layouts is a technique that AMP caches use to even further speed up loading time. With server-side-rendering it's possible to remove the AMP boilerplate so that the AMP document can be painted without running the AMP runtime JavaScript. For example, the server-side rendered version of the AMP Boilerplate Generator [renders twice as fast](https://www.webpagetest.org/video/compare.php?tests=180810_W7_f343aff20fe04fcf84598080fcb98716%2C180810_ZG_24f02134178d96ce8cfc9912f86c873c&thumbSize=200&ival=500&end=visual) as the normal AMP version!
 
-If you're interested in using server-side-rendering, check out the [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) tool. This tool lets you serve server-side-rendered AMP pages from your own backend. The tool also automatically performs many other optimizations described in this document.
+If you're publishing an AMP page, you should definitely consider using [AMP Optimizer](amp-optimizer-guide/index.md). AMP Optimizers let you serve optimized AMP pages from your own backend which includes server-side rendering AMP layouts. AMP Optimizer also automatically performs many other optimizations described in this document.
 
 ### Basic optimizations <a name="basic-optimizations"></a>
 
@@ -224,10 +224,3 @@ Of course, all the basics of web performance optimizations also apply to AMP pag
 - [Compress and minify CSS & HTML](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/optimize-encoding-and-transfer). Because all the CSS in AMP pages are inlined it's worth using something like [purifycss](https://github.com/purifycss/purifycss) to strip out unused CSS.
 - Use [HTTP Caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 - ... and more
-
-### Additional Resources
-
-- [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer)
-- [Google AMP Cache, Optimizations for Slow Networks, and the Need for Speed](https://developers.googleblog.com/2017/01/google-amp-cache-amp-lite-and-need-for.html)
-- [AMP Cache Guidelines](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-guidelines.md)
-- [Google AMP Cache modifications Best Practices](https://github.com/ampproject/amphtml/blob/master/spec/amp-cache-modifications.md)
