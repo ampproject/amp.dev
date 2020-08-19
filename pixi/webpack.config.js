@@ -52,7 +52,7 @@ module.exports = (env, argv) => {
               destination: '../dist/static/page-experience/',
             },
             {
-              source: './dist/pixi.main.map',
+              source: './dist/*.map',
               destination: '../dist/static/page-experience/',
             },
           ],
