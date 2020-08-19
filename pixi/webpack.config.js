@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
+const config = require('./config.js');
+
 module.exports = (env, argv) => {
   const mode = argv.mode || 'production';
 
@@ -32,16 +34,11 @@ module.exports = (env, argv) => {
       }),
       new webpack.DefinePlugin({
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
-          'https://safebrowsing.googleapis.com/v4/threatMatches:find'
+          config[mode].API_ENDPOINT_SAFE_BROWSING
         ),
-        API_ENDPOINT_PAGE_SPEED_INSIGHTS:
-          mode == 'development'
-            ? JSON.stringify(
-                'http://localhost:8080/page-experience/api/page-experience-dummy'
-              )
-            : JSON.stringify(
-                'https://www.googleapis.com/pagespeedonline/v5/runPagespeed'
-              ),
+        API_ENDPOINT_PAGE_SPEED_INSIGHTS: JSON.stringify(
+          config[mode].API_ENDPOINT_PAGE_SPEED_INSIGHTS
+        ),
       }),
       new FileManagerPlugin({
         onEnd: {
