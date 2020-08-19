@@ -33,13 +33,12 @@ export default class PageExperienceCheck {
       const apiResult = await this.fetchJson();
       return this.createReportData(apiResult);
     } catch (e) {
-      // TODO: Create an Error Report
-      throw new Error('PageExperienceCheck failed fetching json:', e);
+      return [e];
     }
   }
 
   createReportData(apiResult) {
-    const reports = {
+    const report = {
       coreWebVitals: {
         fieldData: {
           lcp: {
@@ -81,7 +80,7 @@ export default class PageExperienceCheck {
       },
     };
 
-    return reports;
+    return [null, report];
   }
 
   async fetchJson() {
