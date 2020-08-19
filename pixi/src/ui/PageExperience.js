@@ -25,6 +25,7 @@ export default class PageExperience {
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
     this.reportViews = {};
+    this.errors = [];
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
@@ -40,49 +41,54 @@ export default class PageExperience {
   }
 
   async onSubmitUrl() {
-    const inputUrl = this.input.value;
+    const pageUrl = this.input.value;
 
-    if (!this.isValidURL(inputUrl)) {
+    if (!this.isValidURL(pageUrl)) {
       // TODO: Initialize lab data reports
       throw new Error('Please enter a valid URL');
-    } else {
-      this.toggleLoading(true);
-
-      // Gather errors from all test runs
-      const errors = [];
-
-      // Core Web Vitals
-      this.pageExperienceCheck.run(inputUrl).then((pageExperienceReport) => {
-        if (pageExperienceReport.error) {
-          errors.push(pageExperienceReport.error);
-          return;
-        }
-
-        for (const [id, metric] of Object.entries(
-          pageExperienceReport.data.coreWebVitals.fieldData
-        )) {
-          this.reportViews[id] =
-            this.reportViews[id] || new CoreWebVitalsReportView(document, id);
-          this.reportViews[id].render(metric);
-        }
-      });
-
-      // Additional checks
-      this.safeBrowsingCheck.run(inputUrl).then((safeBrowsingReport) => {
-        if (safeBrowsingReport.error) {
-          errors.push(safeBrowsingReport.error);
-        }
-        this.reportViews['safeBrowsing'] = new BooleanCheckReportView(
-          document,
-          'safe-browsing'
-        );
-        this.reportViews['safeBrowsing'].render(safeBrowsingReport.data);
-      });
-
-      // TODO: Check error array and render banner in UI
+      return;
     }
 
+    this.toggleLoading(true);
+
+    // Reset errors from previous runs
+    this.errors = [];
+
+    const pageExperiencePromise = this.runPageExperienceCheck();
+    const safeBrowsingPromise = this.runSafeBrowsingCheck();
+
+    await Promise.all([
+      pageExperiencePromise,
+      safeBrowsingPromise,
+    ]);
+
     this.toggleLoading(false);
+  }
+
+  async runPageExperienceCheck() {
+    const report = await this.pageExperienceCheck.run(pageUrl);
+    if (report.error) {
+      this.errors.push(pageExperienceReport.error);
+      return;
+    }
+
+    for (const [id, metric] of Object.entries(report.data.coreWebVitals.fieldData)) {
+      this.reportViews[id] =
+        this.reportViews[id] || new CoreWebVitalsReportView(document, id);
+      this.reportViews[id].render(metric);
+    }
+  }
+
+  async runSafeBrowsingCheck() {
+    const report = await this.safeBrowsingCheck.run(pageUrl);
+    if (report.error) {
+      this.errors.push(report.error);
+    }
+    this.reportViews.safeBrowsing = new BooleanCheckReportView(
+      document,
+      'safe-browsing'
+    );
+    this.reportViews.safeBrowsing.render(report.data);
   }
 
   toggleLoading(force) {
