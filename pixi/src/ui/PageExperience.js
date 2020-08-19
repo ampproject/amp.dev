@@ -54,15 +54,15 @@ export default class PageExperience {
       // Core Web Vitals
       this.pageExperienceCheck.run(inputUrl).then((pageExperienceReport) => {
         const error = pageExperienceReport[0];
-        const data = pageExperienceReport[1] || {};
         if (error) {
           errors.push(error);
           // TODO: Trigger error handling
           return;
         }
 
+        const data = pageExperienceReport[1];
         for (const [id, metric] of Object.entries(
-          pageExperienceReport.coreWebVitals.fieldData
+          data.coreWebVitals.fieldData
         )) {
           this.reportViews[id] =
             this.reportViews[id] || new CoreWebVitalsReportView(document, id);
