@@ -54,15 +54,15 @@ export default class PageExperience {
     // Reset errors from previous runs
     this.errors = [];
 
-    const pageExperiencePromise = this.runPageExperienceCheck();
-    const safeBrowsingPromise = this.runSafeBrowsingCheck();
+    const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
+    const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
 
     await Promise.all([pageExperiencePromise, safeBrowsingPromise]);
 
     this.toggleLoading(false);
   }
 
-  async runPageExperienceCheck() {
+  async runPageExperienceCheck(pageUrl) {
     const report = await this.pageExperienceCheck.run(pageUrl);
     if (report.error) {
       this.errors.push(pageExperienceReport.error);
@@ -78,7 +78,7 @@ export default class PageExperience {
     }
   }
 
-  async runSafeBrowsingCheck() {
+  async runSafeBrowsingCheck(pageUrl) {
     const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
     this.reportViews.safeBrowsing = new BooleanCheckReportView(
       document,
