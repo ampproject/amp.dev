@@ -8,8 +8,8 @@
 
   .experiments-list {
     max-height: 70%;
-    overflow-y: scroll;
     padding: 0;
+    overflow-y: auto;
     list-style: none;
   }
 }
