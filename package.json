@@ -31,6 +31,7 @@
     "test": "npm-run-all test:* --aggregate-output --parallel",
     "test:prepare": "gulp updateTestResources",
     "test:platform": "APP_ENV=test jest --testPathIgnorePatterns smoke-tests tests",
+    "test:pixi": "APP_ENV=test jest --testPathPattern pixi",
     "test:grow-extensions": "cd pages/extensions && if which grow; then python -m unittest discover -p \"*_test.py\"; else echo grow not installed with pip. skip tests; fi"
   },
   "husky": {
