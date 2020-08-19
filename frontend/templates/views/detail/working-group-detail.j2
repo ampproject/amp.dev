@@ -162,7 +162,7 @@
 
                 {% if (item.channel == 'slack' or item.channel == 'github') %}
                 <div class="ap-o-wg-btn ap-o-wg-btn-{{ item.channel }}">
-                  <a class="ap-m-lnk" href={% if item.channel == 'slack' %}https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877{% else %}{{ doc.html_url }}{% endif %} target="_blank" rel="noopener">
+                  <a class="ap-m-lnk" href="{% if item.channel == 'slack' %}https://docs.google.com/forms/d/e/1FAIpQLSd83J2IZA6cdR6jPwABGsJE8YL4pkypAbKMGgUZZriU7Qu6Tg/viewform?fbzx=4406980310789882877{% else %}{{ doc.html_url }}{% endif %}" target="_blank" rel="noopener">
                     <div class="ap-a-ico">
                       {% do doc.icons.useIcon('icons/' + item.channel + '.svg') %}
                       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ item.channel }}"></use></svg>

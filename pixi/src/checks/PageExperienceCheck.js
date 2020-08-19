@@ -14,11 +14,8 @@
 
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
-// const API_ENDPOINT =
-//   'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
-const API_ENDPOINT =
-  'http://localhost:8080/page-experience/api/page-experience-dummy';
-const API_KEY = 'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY';
+const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
+const API_KEY = process.env.AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS;
 
 export default class PageExperienceCheck {
   constructor() {
