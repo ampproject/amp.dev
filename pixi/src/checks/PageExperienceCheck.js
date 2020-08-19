@@ -80,7 +80,7 @@ export default class PageExperienceCheck {
       },
     };
 
-    return { error: null, data: report };
+    return {error: null, data: report};
   }
 
   async fetchJson() {

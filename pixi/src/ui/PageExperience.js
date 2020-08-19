@@ -57,10 +57,7 @@ export default class PageExperience {
     const pageExperiencePromise = this.runPageExperienceCheck();
     const safeBrowsingPromise = this.runSafeBrowsingCheck();
 
-    await Promise.all([
-      pageExperiencePromise,
-      safeBrowsingPromise,
-    ]);
+    await Promise.all([pageExperiencePromise, safeBrowsingPromise]);
 
     this.toggleLoading(false);
   }
@@ -72,14 +69,16 @@ export default class PageExperience {
       return;
     }
 
-    for (const [id, metric] of Object.entries(report.data.coreWebVitals.fieldData)) {
+    for (const [id, metric] of Object.entries(
+      report.data.coreWebVitals.fieldData
+    )) {
       this.reportViews[id] =
         this.reportViews[id] || new CoreWebVitalsReportView(document, id);
       this.reportViews[id].render(metric);
     }
   }
 
-  async runSafeBrowsingCheck() {
+  async runSafeBrowsingCheck() {
     const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
     this.reportViews.safeBrowsing = new BooleanCheckReportView(
       document,

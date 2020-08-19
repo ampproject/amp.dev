@@ -25,6 +25,9 @@ export default class BooleanCheckReportView {
     } else if (report === false) {
       this.label.textContent = 'Failed';
       this.container.classList.add('failed');
+    } else {
+      this.label.textContent = 'Analysis failed';
+      this.container.classList.add('error');
     }
   }
 
