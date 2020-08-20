@@ -35,7 +35,7 @@ export default class LinterCheck {
       return {error};
     }
 
-    if (apiResult.status == 'error') {
+    if (apiResult.status != 'ok') {
       return {error: new Error(apiResult.message)};
     }
 
@@ -56,8 +56,7 @@ export default class LinterCheck {
           `LinterCheck failed: response failed with status ${response.status}`
         );
       }
-      const result = await response.json();
-      return result;
+      return response.json();
     } catch (e) {
       throw new Error('LinterCheck failed:', e);
     }
