@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const API_ENDPOINT = API_ENDPOINT_SAFE_BROWSING;
-const API_KEY = process.env.AMP_DEV_API_KEY_SAFE_BROWSING;
+const API_ENDPOINT = API_ENDPOINT_MOBILE_FRIENDLINESS;
+const API_KEY = process.env.AMP_DEV_API_KEY_MOBILE_FRIENDLINESS;
 
 const API_URL = `${API_ENDPOINT}?key=${API_KEY}`;
 
-export default class SafeBrowsingCheck {
+export default class MobileFriendlinessCheck {
   async run(pageUrl) {
     try {
       const apiResult = await this.fetchJson(pageUrl);
@@ -28,10 +28,11 @@ export default class SafeBrowsingCheck {
   }
 
   createReportData(error, apiResult) {
-    if (error) {
-      return {error};
+    if (error || apiResult.testStatus.status !== 'COMPLETE') {
+      return {error, data: false};
     }
-    return {error, data: !Object.keys(apiResult).length};
+
+    return {error, data: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY'};
   }
 
   async fetchJson(pageUrl) {
@@ -43,34 +44,19 @@ export default class SafeBrowsingCheck {
         },
         method: 'POST',
         body: JSON.stringify({
-          'client': {
-            'clientId': 'amp-dev-page-experience-checker',
-            'clientVersion': '0.0.1',
-          },
-          'threatInfo': {
-            'threatTypes': [
-              'THREAT_TYPE_UNSPECIFIED',
-              'MALWARE',
-              'SOCIAL_ENGINEERING',
-              'UNWANTED_SOFTWARE',
-              'POTENTIALLY_HARMFUL_APPLICATION',
-            ],
-            'platformTypes': ['ANY_PLATFORM'],
-            'threatEntryTypes': ['URL'],
-            'threatEntries': [{'url': pageUrl}],
-          },
+          url: pageUrl,
         }),
       });
 
       if (!response.ok) {
         throw new Error(
-          `SafeBrowsingCheck failed: response failed with status ${response.status}`
+          `MobileFriendlinessCheck failed: response failed with status ${response.status}`
         );
       }
       const result = await response.json();
       return result;
     } catch (e) {
-      throw new Error('SafeBrowsingCheck failed:', e);
+      throw new Error('MobileFriendlinessCheck failed:', e);
     }
   }
 }
