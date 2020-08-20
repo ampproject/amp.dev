@@ -8,7 +8,7 @@ import SafeBrowsingCheck from './SafeBrowsingCheck.js';
 import {
   apiResponsePass,
   apiResponseFail,
-} from '../../mocks/safeBrowsing/apiResponse.js';
+} from '../../mocks/safeBrowsingCheck/apiResponse.js';
 
 import pixiConfig from '../../config.js';
 

@@ -3,7 +3,7 @@ const express = require('express');
 const dummyPageExperienceApiResponse = require('../mocks/pageExperienceCheck/apiResponse.json');
 const {
   apiResponsePass: dummySafeBrowsingApiResponse,
-} = require('../mocks/safeBrowsing/apiResponse.js');
+} = require('../mocks/safeBrowsingCheck/apiResponse.js');
 const dummyMobileFriendlinessApiResponse = require('../mocks/mobileFriendliness/apiResponse.js');
 
 const DEFAULT_TIMEOUT = 1000;
