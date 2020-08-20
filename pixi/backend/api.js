@@ -20,7 +20,6 @@ const {
   dummySafeBrowsingApiResponse,
 } = require('../mocks/safeBrowsing/apiResponse.js');
 
-
 const express = require('express');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
@@ -77,7 +76,7 @@ api.get('/page-experience-dummy', async (request, response) => {
   response.json(dummyPageExperienceApiResponse);
 });
 
-api.get('/safe-browsing-dummy', async (request, response) => {
+api.post('/safe-browsing-dummy', async (request, response) => {
   await new Promise((resolve, reject) => {
     setTimeout(resolve, 2000);
   });

@@ -5,30 +5,40 @@
 import fetchMock from 'fetch-mock';
 
 import SafeBrowsingCheck from './SafeBrowsingCheck.js';
-import {apiResponsePass, apiResponseFail} from '../../mocks/safeBrowsing/apiResponse.js';
+import {
+  apiResponsePass,
+  apiResponseFail,
+} from '../../mocks/safeBrowsing/apiResponse.js';
 
 import pixiConfig from '../../config.js';
 
-beforeAll(() => {
+beforeEach(() => {
   fetchMock.reset();
 });
 
 describe('Safe browsing check', () => {
+  const apiEndpoint = pixiConfig['development'].API_ENDPOINT_SAFE_BROWSING;
+  const safeBrowsingCheck = new SafeBrowsingCheck();
+
   it('returns empty object as report data for safe url', async () => {
-    const apiEndpoint = pixiConfig['development'].API_ENDPOINT_SAFE_BROWSING;
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponsePass);
 
-    const safeBrowsingCheck = new SafeBrowsingCheck();
     const report = await safeBrowsingCheck.run('http://example.com');
-
     expect(report.data).toBe(true);
   });
 
-  // it('returns threats for unsafe url', async () => {
-  //
-  // });
-  //
-  // it('throws for invalid API response', async () => {
-  //
-  // });
+  it('returns threats for unsafe url', async () => {
+    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseFail);
+
+    const report = await safeBrowsingCheck.run('http://example.com');
+    expect(report.data).toBe(false);
+  });
+
+  it('throws for invalid API response', async () => {
+    fetchMock.mock(`begin:${apiEndpoint}`, 500);
+
+    const report = await safeBrowsingCheck.run('http://example.com');
+    expect(report.error).toBeDefined();
+    expect(report.data).toBe(undefined);
+  });
 });

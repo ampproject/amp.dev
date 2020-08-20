@@ -23,7 +23,7 @@ export default class SafeBrowsingCheck {
       const apiResult = await this.fetchJson(pageUrl);
       return this.createReportData(null, apiResult);
     } catch (e) {
-      return this.createReportData(e, null);
+      return this.createReportData(e);
     }
   }
 
