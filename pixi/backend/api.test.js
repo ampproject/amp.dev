@@ -36,7 +36,6 @@ test('returns linter result and page info with no components', (done) => {
     .expect(200)
     .then((res) => {
       expect(res.body.status).toBe('ok');
-      expect(res.body.https).toBe(true);
       expect(res.body.redirected).toBe(false);
       expect(res.body.url).toBe('https://www.test');
       expect(res.body.components).toEqual({});
@@ -64,7 +63,6 @@ test('returns linter result and redirected page with 1 component info', (done) =
     .expect(200)
     .then((res) => {
       expect(res.body.status).toBe('ok');
-      expect(res.body.https).toBe(false);
       expect(res.body.redirected).toBe(true);
       expect(res.body.url).toBe('http://www.test');
       expect(res.body.components).toEqual({'amp-script': '0.1'});

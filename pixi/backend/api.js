@@ -55,7 +55,6 @@ const execChecks = async (url) => {
   };
   const lintResults = await lint(context);
   return {
-    https: res.url.startsWith('https://'),
     redirected: res.redirected,
     url: res.url,
     components: findAmpComponents($),
