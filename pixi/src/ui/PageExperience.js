@@ -13,10 +13,15 @@
 // limitations under the License.
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
+<<<<<<< HEAD
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
+=======
+import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
+import i18n from './I18n.js';
+>>>>>>> future
 
 export default class PageExperience {
   constructor() {
@@ -31,9 +36,9 @@ export default class PageExperience {
     this.safeBrowsingCheck = new SafeBrowsingCheck();
   }
 
-  isValidURL(inputUrl) {
+  isValidURL(pageUrl) {
     try {
-      const url = new URL(inputUrl);
+      const url = new URL(pageUrl);
       return url.protocol === 'http:' || url.protocol === 'https:';
     } catch (e) {
       return false;
@@ -42,10 +47,28 @@ export default class PageExperience {
 
   async onSubmitUrl() {
     const pageUrl = this.input.value;
-
     if (!this.isValidURL(pageUrl)) {
       // TODO: Initialize lab data reports
       throw new Error('Please enter a valid URL');
+    } else {
+      this.toggleLoading(true);
+
+      // Everything until here is statically translated by Grow. From now
+      // on Pixi might dynamically render translated strings, so wait
+      // for them to be ready
+      await i18n.init();
+
+      const check = new PageExperienceCheck();
+      const report = await check.run(pageUrl);
+
+      for (const [id, metric] of Object.entries(
+        report.coreWebVitals.fieldData
+      )) {
+        this.reportViews[id] =
+          this.reportViews[id] || new CoreWebVitalsReport(document, id);
+        this.reportViews[id].render(metric);
+      }
+      // TODO: Show error message in UI
     }
 
     this.toggleLoading(true);
