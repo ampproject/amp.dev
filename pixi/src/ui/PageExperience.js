@@ -56,7 +56,7 @@ export default class PageExperience {
     let pageUrl = this.input.value;
     // Can be removed once https://github.com/ampproject/worker-dom/issues/912
     // is fixed
-    if (!this.pageUrl) {
+    if (!pageUrl) {
       try {
         pageUrl = await AMP.getState('pixi.pageUrl');
       } catch (e) {
