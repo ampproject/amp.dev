@@ -31,6 +31,7 @@ module.exports = (env, argv) => {
       new webpack.EnvironmentPlugin({
         AMP_DEV_API_KEY_SAFE_BROWSING: '',
         AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS: '',
+        AMP_DEV_API_KEY_MOBILE_FRIENDLINESS: '',
       }),
       new webpack.DefinePlugin({
         IS_DEVELOPMENT: mode == 'development',
@@ -39,6 +40,9 @@ module.exports = (env, argv) => {
         ),
         API_ENDPOINT_PAGE_SPEED_INSIGHTS: JSON.stringify(
           config[mode].API_ENDPOINT_PAGE_SPEED_INSIGHTS
+        ),
+        API_ENDPOINT_MOBILE_FRIENDLINESS: JSON.stringify(
+          config[mode].API_ENDPOINT_MOBILE_FRIENDLINESS
         ),
       }),
       new FileManagerPlugin({
