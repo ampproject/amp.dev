@@ -4,7 +4,7 @@ const dummyPageExperienceApiResponse = require('../mocks/pageExperienceCheck/api
 const {
   apiResponsePass: dummySafeBrowsingApiResponse,
 } = require('../mocks/safeBrowsingCheck/apiResponse.js');
-const dummyMobileFriendlinessApiResponse = require('../mocks/mobileFriendliness/apiResponse.js');
+const dummyMobileFriendlinessApiResponse = require('../mocks/mobileFriendlinessCheck/apiResponse.js');
 
 const DEFAULT_TIMEOUT = 1000;
 
