@@ -14,6 +14,7 @@
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
+import i18n from './I18n.js';
 
 export default class PageExperience {
   constructor() {
@@ -35,12 +36,16 @@ export default class PageExperience {
 
   async onSubmitUrl() {
     const inputUrl = this.input.value;
-
     if (!this.isValidURL(inputUrl)) {
       // TODO: Initialize lab data reports
       throw new Error('Please enter a valid URL');
     } else {
       this.toggleLoading(true);
+
+      // Everything until here is statically translated by Grow. From now
+      // on Pixi might dynamically render translated strings, so wait
+      // for them to be ready
+      await i18n.init();
 
       const check = new PageExperienceCheck();
       const report = await check.run(inputUrl);

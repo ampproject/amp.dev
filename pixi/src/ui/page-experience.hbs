@@ -1,5 +1,5 @@
 {{#htmlWebpackPlugin.files.js }}
-  <amp-script class="ap-t-pixi-checks" src="{{ . }}" layout="container" sandbox="allow-forms">
+  <amp-script class="ap-t-pixi-checks" src="\{{ podspec.base_urls.platform }}{{ . }}" layout="container" sandbox="allow-forms">
 
     <div class="ap-m-input-bar">
       <input id="input-field" class="ap-m-input-bar-field" type="url" name="url" placeholder="Your URL" value="[= query.url =]">

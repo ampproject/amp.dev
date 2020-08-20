@@ -33,6 +33,7 @@ module.exports = (env, argv) => {
         AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS: '',
       }),
       new webpack.DefinePlugin({
+        IS_DEVELOPMENT: mode == 'development',
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
           config[mode].API_ENDPOINT_SAFE_BROWSING
         ),
