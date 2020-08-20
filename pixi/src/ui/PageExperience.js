@@ -12,9 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import PageExperienceCheck from '../checks/PageExperienceCheck.js';
-import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
 import i18n from './I18n.js';
+
+import PageExperienceCheck from '../checks/PageExperienceCheck.js';
+import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+
+import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
+import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
 export default class PageExperience {
   constructor() {
@@ -23,11 +27,15 @@ export default class PageExperience {
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
     this.reportViews = {};
+    this.errors = [];
+
+    this.pageExperienceCheck = new PageExperienceCheck();
+    this.safeBrowsingCheck = new SafeBrowsingCheck();
   }
 
-  isValidURL(inputUrl) {
+  isValidURL(pageUrl) {
     try {
-      const url = new URL(inputUrl);
+      const url = new URL(pageUrl);
       return url.protocol === 'http:' || url.protocol === 'https:';
     } catch (e) {
       return false;
@@ -35,32 +43,71 @@ export default class PageExperience {
   }
 
   async onSubmitUrl() {
-    const inputUrl = this.input.value;
-    if (!this.isValidURL(inputUrl)) {
+    const pageUrl = this.input.value;
+    if (!this.isValidURL(pageUrl)) {
       // TODO: Initialize lab data reports
       throw new Error('Please enter a valid URL');
-    } else {
-      this.toggleLoading(true);
-
-      // Everything until here is statically translated by Grow. From now
-      // on Pixi might dynamically render translated strings, so wait
-      // for them to be ready
-      await i18n.init();
-
-      const check = new PageExperienceCheck();
-      const report = await check.run(inputUrl);
-
-      for (const [id, metric] of Object.entries(
-        report.coreWebVitals.fieldData
-      )) {
-        this.reportViews[id] =
-          this.reportViews[id] || new CoreWebVitalsReport(document, id);
-        this.reportViews[id].render(metric);
-      }
-      // TODO: Show error message in UI
     }
 
+    this.toggleLoading(true);
+
+    // Everything until here is statically translated by Grow. From now
+    // on Pixi might dynamically render translated strings, so wait
+    // for them to be ready
+    await i18n.init();
+
+    const check = new PageExperienceCheck();
+    const report = await check.run(pageUrl);
+
+    for (const [id, metric] of Object.entries(report.coreWebVitals.fieldData)) {
+      this.reportViews[id] =
+        this.reportViews[id] || new CoreWebVitalsReport(document, id);
+      this.reportViews[id].render(metric);
+    }
+
+    this.toggleLoading(true);
+
+    // Reset errors from previous runs
+    this.errors = [];
+
+    const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
+    const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
+
+    await Promise.all([pageExperiencePromise, safeBrowsingPromise]);
+
     this.toggleLoading(false);
+  }
+
+  async runPageExperienceCheck(pageUrl) {
+    const report = await this.pageExperienceCheck.run(pageUrl);
+    if (report.error) {
+      this.errors.push(pageExperienceReport.error);
+      return;
+    }
+
+    for (const [id, metric] of Object.entries(
+      report.data.coreWebVitals.fieldData
+    )) {
+      this.reportViews[id] =
+        this.reportViews[id] || new CoreWebVitalsReportView(document, id);
+      this.reportViews[id].render(metric);
+    }
+  }
+
+  async runSafeBrowsingCheck(pageUrl) {
+    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
+    this.reportViews.safeBrowsing = new BooleanCheckReportView(
+      document,
+      'safe-browsing'
+    );
+
+    // Do not surface the actual error to the user. Simply log it
+    // The BooleanCheckReportView will show "Analysis failed"
+    // for undefined data
+    if (error) {
+      console.error('Could not perform safe browsing check', error);
+    }
+    this.reportViews.safeBrowsing.render(data);
   }
 
   toggleLoading(force) {

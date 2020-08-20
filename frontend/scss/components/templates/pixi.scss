@@ -14,7 +14,6 @@
 
 .#{template('pixi')} {
   $root: &;
-  padding: 0 15px;
   background: color('whisper');
 
   @media (min-width: 768px) {
@@ -101,7 +100,7 @@
       margin-left: 0;
     }
     @media (min-width: 1024px) {
-      grid-column: 7/17;
+      grid-column: 8/20;
     }
   }
 
@@ -109,17 +108,34 @@
     grid-column: 1/25;
     margin-bottom: 200px;
 
-    @media (min-width: 768px) {
-      grid-column: 3/22;
+
+    .ap-m-input-bar {
+      max-width: 900px;
+      margin: auto;
     }
 
-    @media (min-width: 1024px) {
-      grid-column: 5/20;
+
+    &-reports {
+      margin: 57px 0;
+      padding: 15px;
+      background: linear-gradient(225deg,#00dcc0 0,#005af0 75%);
+
+      @media (min-width: 1024px) {
+        padding: 35px;
+      }
+
+      h2 {
+        max-width: 900px;
+        margin: 30px auto 20px auto;
+        color: color('white');
+      }
     }
 
     &-primary {
       @media (min-width: 768px) {
-        border: solid 2px color('mercury');
+        max-width: 900px;
+        margin: auto;
+        border: solid 2px color('white');
         border-radius: 4px;
       }
 
@@ -130,6 +146,7 @@
         justify-content: space-between;
         padding: 25px 0;
         border-bottom: solid 2px color('mercury');
+        background: color('white');
 
         &.fast {
           label {
@@ -257,6 +274,48 @@
                 background: color('black');
               }
             }
+          }
+        }
+      }
+    }
+
+    &-basic {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 4px;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      &-metric {
+        margin-bottom: 15px;
+        padding: 15px 25px;
+        border-radius: 4px;
+        border: solid 2px color('white');
+        font-size: 16px;
+        background: color('white');
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+          width: 24%;
+        }
+
+        label {
+          color: color('silver');
+        }
+
+        &.passed {
+          label {
+            color: color('malachite');
+          }
+        }
+        &.failed {
+          label {
+            color: color('red');
           }
         }
       }

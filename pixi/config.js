@@ -1,7 +1,7 @@
 module.exports = {
   development: {
     API_ENDPOINT_SAFE_BROWSING:
-      'https://safebrowsing.googleapis.com/v4/threatMatches:find',
+      'http://localhost:8080/page-experience/api/safe-browsing-dummy',
     API_ENDPOINT_PAGE_SPEED_INSIGHTS:
       'http://localhost:8080/page-experience/api/page-experience-dummy',
   },
