@@ -31,7 +31,7 @@ module.exports = (env, argv) => {
         AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS: '',
       }),
       new webpack.DefinePlugin({
-        IS_DEVELOPMENT: mode == 'development' ? true : false,
+        IS_DEVELOPMENT: mode == 'development',
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
           'https://safebrowsing.googleapis.com/v4/threatMatches:find'
         ),
