@@ -16,8 +16,9 @@ const API_ENDPOINT = API_ENDPOINT_LINTER;
 
 export default class LinterCheck {
   async run(pageUrl) {
+    const apiUrl = `${API_ENDPOINT}${pageUrl}`;
     try {
-      const apiResult = await this.fetchJson(pageUrl);
+      const apiResult = await this.fetchJson(apiUrl);
       return this.createReportData(null, apiResult);
     } catch (e) {
       return this.createReportData(e);
@@ -28,14 +29,17 @@ export default class LinterCheck {
     if (error) {
       return {error};
     }
-    return {error, data: {
-      usesHttps: apiResult.url.startsWith('https:')
-    }};
+    return {
+      error,
+      data: {
+        usesHttps: apiResult.url.startsWith('https:'),
+      },
+    };
   }
 
-  async fetchJson(pageUrl) {
+  async fetchJson(apiUrl) {
     try {
-      const response = await fetch(API_ENDPOINT);
+      const response = await fetch(apiUrl);
 
       if (!response.ok) {
         throw new Error(

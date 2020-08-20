@@ -3,14 +3,14 @@ const apiResponsePass = {
   redirected: true,
   url: 'https://amp.dev/',
   components: {},
-  data: {}
+  data: {},
 };
 const apiResponseFail = {
   status: 'ok',
   redirected: true,
   url: 'http://example.com',
   components: {},
-  data: {}
+  data: {},
 };
 
 module.exports = {

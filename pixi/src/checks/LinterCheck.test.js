@@ -20,7 +20,6 @@ describe('Linter check', () => {
   const apiEndpoint = pixiConfig['development'].API_ENDPOINT_LINTER;
   const linterCheck = new LinterCheck();
 
-
   it('returns object with "usesHttps: true" for url with https protocol', async () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponsePass);
 
