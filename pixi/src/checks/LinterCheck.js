@@ -17,7 +17,6 @@ const API_ENDPOINT = API_ENDPOINT_LINTER;
 export default class LinterCheck {
   constructor() {
     this.apiUrl = new URL(API_ENDPOINT);
-    this.apiUrl.searchParams.append('key', API_KEY);
   }
 
   async run(pageUrl) {
