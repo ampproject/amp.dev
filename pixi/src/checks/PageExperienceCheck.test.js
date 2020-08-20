@@ -21,8 +21,8 @@ describe('Page experience check', () => {
     fetchMock.mock(`begin:${apiEndpoint}`, dummyApiResponse);
 
     const pageExperienceCheck = new PageExperienceCheck();
-    const reportData = await pageExperienceCheck.run('http://example.com');
-    expect(reportData).toMatchObject(expectedReportData);
+    const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
+    expect(report.data).toMatchObject(expectedReportData);
   });
 });
