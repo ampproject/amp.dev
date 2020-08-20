@@ -49,7 +49,8 @@ module.exports = (env, argv) => {
           copy: [
             {
               source: './dist/pixi.html',
-              destination: '../frontend/templates/views/partials/pixi.j2',
+              destination:
+                '../frontend/templates/views/partials/pixi/webpack.j2',
             },
             {
               source: './dist/*.js',

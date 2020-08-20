@@ -187,7 +187,7 @@
           border-bottom: 0;
         }
 
-        &-title {
+        &-header {
           margin-top: 0;
           line-height: 1.5;
 
@@ -195,7 +195,25 @@
             width: 35%;
           }
 
-          label {
+          &-full {
+            display: inline-block;
+
+            &:after {
+              content: "|";
+              margin: 0 5px;
+            }
+          }
+
+          &-id {
+            display: inline-block;
+
+            &:after {
+              display: block;
+              content: "";
+            }
+          }
+
+          &-status {
             color: color('silver');
           }
         }
