@@ -39,6 +39,25 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         >blog post</a
       >.
     </p>
+    <p><div class="ap-o-fragment-slider-ctas">
+      <a
+        href="https://web.dev/vitals/"
+        class="ap-m-lnk ap-m-lnk-square"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg>
+            <use
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xlink:href="#external"
+            ></use>
+          </svg>
+        </div>
+        <span class="ap-m-lnk-text">{{ _('Learn about web vitals') }}</span>
+      </a>
+    </div></p>
   </section>
   {% else %}
   <section class="ap-t-pixi-intro">
@@ -65,6 +84,5 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </script>
   </amp-state>
   {% include '/views/partials/pixi.j2' %}
-
   {% endif %}
 </main>
