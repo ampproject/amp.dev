@@ -22,6 +22,8 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
+import RecommendationsView from './recommendations/RecommendationsView.js';
+
 export default class PageExperience {
   constructor() {
     this.input = document.getElementById('input-field');
@@ -35,6 +37,8 @@ export default class PageExperience {
     this.safeBrowsingCheck = new SafeBrowsingCheck();
     this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
+
+    this.recommendationView = new RecommendationsView(document);
   }
 
   isValidURL(pageUrl) {
@@ -68,12 +72,14 @@ export default class PageExperience {
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    await Promise.all([
+    const reports = await Promise.all([
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
       mobileFriendlinessPromise,
     ]);
+
+    this.recommendationView.render(reports);
 
     this.toggleLoading(false);
   }
@@ -92,6 +98,8 @@ export default class PageExperience {
         this.reportViews[id] || new CoreWebVitalsReportView(document, id);
       this.reportViews[id].render(metric);
     }
+
+    return report.data;
   }
 
   async runSafeBrowsingCheck(pageUrl) {
@@ -108,6 +116,8 @@ export default class PageExperience {
       console.error('Could not perform safe browsing check', error);
     }
     this.reportViews.safeBrowsing.render(data);
+
+    return data;
   }
 
   async runLintCheck(pageUrl) {
@@ -117,6 +127,8 @@ export default class PageExperience {
     }
     this.reportViews.httpsCheck = new BooleanCheckReportView(document, 'https');
     this.reportViews.httpsCheck.render(data.usesHttps);
+
+    return data;
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
@@ -130,6 +142,8 @@ export default class PageExperience {
       'mobile-friendliness'
     );
     this.reportViews.mobileFriendliness.render(data);
+
+    return data;
   }
 
   toggleLoading(force) {
