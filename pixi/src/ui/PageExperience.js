@@ -102,7 +102,7 @@ export default class PageExperience {
   }
 
   async runLintCheck(pageUrl) {
-    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
+    const {error, data} = await this.linterCheck.run(pageUrl);
     this.reportViews.linter = new BooleanCheckReportView(document, 'linter');
 
     // Do not surface the actual error to the user. Simply log it
