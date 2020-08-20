@@ -13,9 +13,8 @@
 // limitations under the License.
 
 const API_ENDPOINT = API_ENDPOINT_SAFE_BROWSING;
-const API_KEY = process.env.AMP_DEV_API_KEY_SAFE_BROWSING;
 
-const API_URL = `${API_ENDPOINT}?key=${API_KEY}`;
+const API_URL = `${API_ENDPOINT}?key=${AMP_DEV_PIXI_APIS_KEY}`;
 
 export default class SafeBrowsingCheck {
   async run(pageUrl) {
