@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-const {dummyApiResponse} = require('./constants.js');
+const {
+  dummyApiResponse,
+} = require('../mocks/pageExperienceCheck/apiResponse.json');
 const express = require('express');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
