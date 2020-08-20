@@ -63,8 +63,13 @@ export default class PageExperience {
 
     const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
     const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
+    const linterPromise = this.runLintCheck(pageUrl);
 
-    await Promise.all([pageExperiencePromise, safeBrowsingPromise]);
+    await Promise.all([
+      pageExperiencePromise,
+      safeBrowsingPromise,
+      linterPromise,
+    ]);
 
     this.toggleLoading(false);
   }
@@ -103,15 +108,11 @@ export default class PageExperience {
 
   async runLintCheck(pageUrl) {
     const {error, data} = await this.linterCheck.run(pageUrl);
-    this.reportViews.linter = new BooleanCheckReportView(document, 'linter');
-
-    // Do not surface the actual error to the user. Simply log it
-    // The BooleanCheckReportView will show "Analysis failed"
-    // for undefined data
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.linter.render(data);
+    this.reportViews.httpsCheck = new BooleanCheckReportView(document, 'https');
+    this.reportViews.httpsCheck.render(data.usesHttps);
   }
 
   toggleLoading(force) {
