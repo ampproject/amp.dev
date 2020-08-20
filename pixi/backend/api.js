@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-const {dummyApiResponse} = require('./constants.js');
+const {
+  dummyApiResponse,
+} = require('../mocks/pageExperienceCheck/apiResponse.json');
 const express = require('express');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
@@ -27,11 +29,24 @@ const rateLimitedFetch = new RateLimitedFetch({
   },
 });
 
-const execLint = async (url) => {
+const COMPONENT_SRC_MATCHER = /\/v0\/([^.]+)-(\d+(?:\.\d+)*)\.m?js/;
+const findAmpComponents = ($) => {
+  const versionMap = {};
+  $('script[src]').each((i, script) => {
+    const match = COMPONENT_SRC_MATCHER.exec($(script).attr('src'));
+    if (match) {
+      versionMap[match[1]] = match[2];
+    }
+  });
+  return versionMap;
+};
+
+const execChecks = async (url) => {
   const res = await rateLimitedFetch.fetchHtmlResponse(url);
   const body = await res.text();
+  const $ = cheerio.load(body);
   const context = {
-    $: cheerio.load(body),
+    $,
     headers: {},
     raw: {
       headers: res.headers,
@@ -40,7 +55,13 @@ const execLint = async (url) => {
     url,
     mode: LintMode.Amp,
   };
-  return lint(context);
+  const lintResults = await lint(context);
+  return {
+    redirected: res.redirected,
+    url: res.url,
+    components: findAmpComponents($),
+    data: lintResults,
+  };
 };
 
 // eslint-disable-next-line new-cap
@@ -58,10 +79,10 @@ api.get('/lint', async (request, response) => {
 
   const fetchUrl = request.query.url;
   try {
-    const lintResult = await execLint(fetchUrl);
+    const checkResult = await execChecks(fetchUrl);
     const result = {
       status: 'ok',
-      data: lintResult,
+      ...checkResult,
     };
     response.json(result);
   } catch (e) {
