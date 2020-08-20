@@ -16,6 +16,7 @@ import i18n from './I18n.js';
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+import AmpLinterCheck from '../checks/AmpLinterCheck.js';
 import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
@@ -32,6 +33,7 @@ export default class PageExperience {
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
+    this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
   }
 
@@ -63,11 +65,13 @@ export default class PageExperience {
 
     const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
     const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
+    const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
     await Promise.all([
       pageExperiencePromise,
       safeBrowsingPromise,
+      linterPromise,
       mobileFriendlinessPromise,
     ]);
 
@@ -104,6 +108,15 @@ export default class PageExperience {
       console.error('Could not perform safe browsing check', error);
     }
     this.reportViews.safeBrowsing.render(data);
+  }
+
+  async runLintCheck(pageUrl) {
+    const {error, data} = await this.linterCheck.run(pageUrl);
+    if (error) {
+      console.error('Could not perform safe browsing check', error);
+    }
+    this.reportViews.httpsCheck = new BooleanCheckReportView(document, 'https');
+    this.reportViews.httpsCheck.render(data.usesHttps);
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
