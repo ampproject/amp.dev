@@ -12,16 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import i18n from './I18n.js';
+
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
-<<<<<<< HEAD
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
-=======
-import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
-import i18n from './I18n.js';
->>>>>>> future
 
 export default class PageExperience {
   constructor() {
