@@ -67,7 +67,8 @@ export default class SafeBrowsingCheck {
           `SafeBrowsingCheck failed: response failed with status ${response.status}`
         );
       }
-      return response;
+      const result = await response.json();
+      return result;
     } catch (e) {
       throw new Error('SafeBrowsingCheck failed:', e);
     }

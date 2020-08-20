@@ -14,8 +14,12 @@
  * limitations under the License.
  */
 const {
-  dummyApiResponse,
+  dummyPageExperienceApiResponse,
 } = require('../mocks/pageExperienceCheck/apiResponse.json');
+const {
+  dummySafeBrowsingApiResponse,
+} = require('../mocks/safeBrowsing/apiResponse.js');
+
 
 const express = require('express');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
@@ -70,7 +74,14 @@ api.get('/page-experience-dummy', async (request, response) => {
   await new Promise((resolve, reject) => {
     setTimeout(resolve, 2000);
   });
-  response.json(dummyApiResponse);
+  response.json(dummyPageExperienceApiResponse);
+});
+
+api.get('/safe-browsing-dummy', async (request, response) => {
+  await new Promise((resolve, reject) => {
+    setTimeout(resolve, 2000);
+  });
+  response.json(dummySafeBrowsingApiResponse);
 });
 
 api.get('/lint', async (request, response) => {
