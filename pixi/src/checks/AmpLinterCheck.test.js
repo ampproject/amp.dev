@@ -4,7 +4,7 @@
 
 import fetchMock from 'fetch-mock';
 
-import LinterCheck from './LinterCheck.js';
+import AmpLinterCheck from './AmpLinterCheck.js';
 import {
   apiResponsePass,
   apiResponseFail,
@@ -18,7 +18,7 @@ beforeEach(() => {
 
 describe('Linter check', () => {
   const apiEndpoint = pixiConfig['development'].API_ENDPOINT_LINTER;
-  const linterCheck = new LinterCheck();
+  const linterCheck = new AmpLinterCheck();
 
   it('returns object with "usesHttps: true" for url with https protocol', async () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponsePass);

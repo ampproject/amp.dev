@@ -14,7 +14,7 @@
 
 const API_ENDPOINT = API_ENDPOINT_LINTER;
 
-export default class LinterCheck {
+export default class AmpLinterCheck {
   constructor() {
     this.apiUrl = new URL(API_ENDPOINT);
   }
@@ -53,12 +53,12 @@ export default class LinterCheck {
 
       if (!response.ok) {
         throw new Error(
-          `LinterCheck failed: response failed with status ${response.status}`
+          `AmpLinterCheck failed: response failed with status ${response.status}`
         );
       }
       return response.json();
     } catch (e) {
-      throw new Error('LinterCheck failed:', e);
+      throw new Error('AmpLinterCheck failed:', e);
     }
   }
 }

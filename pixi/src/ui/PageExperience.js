@@ -16,7 +16,7 @@ import i18n from './I18n.js';
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
-import LinterCheck from '../checks/LinterCheck.js';
+import AmpLinterCheck from '../checks/AmpLinterCheck.js';
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
@@ -32,7 +32,7 @@ export default class PageExperience {
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
-    this.linterCheck = new LinterCheck();
+    this.linterCheck = new AmpLinterCheck();
   }
 
   isValidURL(pageUrl) {
