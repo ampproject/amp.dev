@@ -56,7 +56,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         "i18n": {
           "language": "{{ doc.locale }}",
           "translations": {
-            "Analyzing ...": "{{ _('Analyzing ...') }}",
+            "Analyzing": "{{ _('Analyzing') }}",
             "Failed": "{{ _('Failed') }}",
             "Passed": "{{ _('Passed') }}"
           }
@@ -64,7 +64,67 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       }
     </script>
   </amp-state>
-  {% include '/views/partials/pixi.j2' %}
+
+  {% import '/views/partials/pixi/webpack.j2' as webpack %}
+  <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms">
+    <div class="ap-m-input-bar">
+      <input id="input-field" class="ap-m-input-bar-field" type="url" name="url" placeholder="{{ _('Enter your URL') }}" value="[= query.url =]">
+      <button id="input-submit" class="ap-m-input-bar-submit" name="button">
+        {{ _('Analyze') }}
+      </button>
+    </div>
+
+    <div class="ap-t-pixi-checks-reports">
+      <h2>Core Web Vitals</h2>
+      <div class="ap-t-pixi-checks-primary">
+        {% with primary_metric = {
+          'id': 'lcp',
+          'title': {
+            'full': 'Loading speed',
+            'id': 'LCP'
+          }
+        } %}
+        {% include 'views/partials/pixi/primary-metric.j2' %}
+        {% endwith %}
+
+        {% with primary_metric = {
+          'id': 'fid',
+          'title': {
+            'full': 'Interactivity',
+            'id': 'FID'
+          }
+        } %}
+        {% include 'views/partials/pixi/primary-metric.j2' %}
+        {% endwith %}
+
+        {% with primary_metric = {
+          'id': 'cls',
+          'title': {
+            'full': 'Visual stability',
+            'id': 'CLS'
+          }
+        } %}
+        {% include 'views/partials/pixi/primary-metric.j2' %}
+        {% endwith %}
+      </div>
+
+      <h2>Additional checks</h2>
+      <div class="ap-t-pixi-checks-basic">
+        <div id="safe-browsing" class="ap-t-pixi-checks-basic-metric">
+          <h3 class="ap-t-pixi-checks-basic-metric-title">Safe browsing
+            <br>
+            <label>Analyzing..</label>
+          </h3>
+        </div>
+        <div class="ap-t-pixi-checks-basic-metric">
+          <h3 class="ap-t-pixi-checks-basic-metric-title">Intrusive interstitials
+            <br>
+            <label>Manual check</label>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </amp-script>
 
   {% endif %}
 </main>
