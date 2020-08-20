@@ -13,12 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const {
-  dummyPageExperienceApiResponse,
-} = require('../mocks/pageExperienceCheck/apiResponse.json');
-const {
-  dummySafeBrowsingApiResponse,
-} = require('../mocks/safeBrowsing/apiResponse.js');
 
 const express = require('express');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
@@ -69,19 +63,6 @@ const execChecks = async (url) => {
 
 // eslint-disable-next-line new-cap
 const api = express.Router();
-api.get('/page-experience-dummy', async (request, response) => {
-  await new Promise((resolve, reject) => {
-    setTimeout(resolve, 2000);
-  });
-  response.json(dummyPageExperienceApiResponse);
-});
-
-api.post('/safe-browsing-dummy', async (request, response) => {
-  await new Promise((resolve, reject) => {
-    setTimeout(resolve, 2000);
-  });
-  response.json(dummySafeBrowsingApiResponse);
-});
 
 api.get('/lint', async (request, response) => {
   log.info('lint endpoint called.');
