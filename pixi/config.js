@@ -3,9 +3,9 @@ module.exports = {
     API_ENDPOINT_LINTER:
       'http://localhost:8080/page-experience/api/lint/?url=https://amp.dev/',
     API_ENDPOINT_SAFE_BROWSING:
-      'http://localhost:8080/page-experience/api/safe-browsing-dummy',
+      'http://localhost:8080/page-experience/mock-api/safe-browsing',
     API_ENDPOINT_PAGE_SPEED_INSIGHTS:
-      'http://localhost:8080/page-experience/api/page-experience-dummy',
+      'http://localhost:8080/page-experience/mock-api/page-experience',
   },
   production: {
     API_ENDPOINT_LINTER:
