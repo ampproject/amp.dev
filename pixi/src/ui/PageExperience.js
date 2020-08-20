@@ -47,25 +47,24 @@ export default class PageExperience {
     if (!this.isValidURL(pageUrl)) {
       // TODO: Initialize lab data reports
       throw new Error('Please enter a valid URL');
-    } else {
-      this.toggleLoading(true);
+    }
 
-      // Everything until here is statically translated by Grow. From now
-      // on Pixi might dynamically render translated strings, so wait
-      // for them to be ready
-      await i18n.init();
+    this.toggleLoading(true);
 
-      const check = new PageExperienceCheck();
-      const report = await check.run(pageUrl);
+    // Everything until here is statically translated by Grow. From now
+    // on Pixi might dynamically render translated strings, so wait
+    // for them to be ready
+    await i18n.init();
 
-      for (const [id, metric] of Object.entries(
-        report.coreWebVitals.fieldData
-      )) {
-        this.reportViews[id] =
-          this.reportViews[id] || new CoreWebVitalsReport(document, id);
-        this.reportViews[id].render(metric);
-      }
-      // TODO: Show error message in UI
+    const check = new PageExperienceCheck();
+    const report = await check.run(pageUrl);
+
+    for (const [id, metric] of Object.entries(
+      report.coreWebVitals.fieldData
+    )) {
+      this.reportViews[id] =
+        this.reportViews[id] || new CoreWebVitalsReport(document, id);
+      this.reportViews[id].render(metric);
     }
 
     this.toggleLoading(true);
