@@ -30,7 +30,7 @@ const EXPERIMENTS_ITEM_PATTERN = /(?:\{\s)(.*?)(?:})/gms;
 // Matches id from item, e.g: id: 'amp-access-iframe'
 const EXPERIMENTS_ID_PATTERN = /(?:id: ')(.*?)(?:')/gm;
 // Matches name from item, e.g: 'AMP Access JWT prototype'
-const EXPERIMENTS_NAME_PATTERN = /(?<=name:\s)(.*?)(?=,\n)/gms;
+const EXPERIMENTS_NAME_PATTERN = /(?:name: ')(.*?)(?:')/gm;
 
 export const EVENT_TOGGLE_EXPERIMENT = 'event-toggle-experiment';
 
