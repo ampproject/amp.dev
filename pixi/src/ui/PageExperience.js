@@ -47,13 +47,23 @@ export default class PageExperience {
   }
 
   async onSubmitUrl() {
-    const pageUrl = this.input.value;
-    if (!this.isValidURL(pageUrl)) {
-      // TODO: Initialize lab data reports
-      throw new Error('Please enter a valid URL');
+    this.toggleLoading(true);
+
+    let pageUrl = this.input.value;
+    // Can be removed once https://github.com/ampproject/worker-dom/issues/912
+    // is fixed
+    if (!this.pageUrl) {
+      try {
+        pageUrl = await AMP.getState('pixi.pageUrl');
+      } catch (e) {
+        console.error('Could not get page URL from amp-state', e);
+      }
     }
 
-    this.toggleLoading(true);
+    if (!this.isValidURL(pageUrl)) {
+      this.toggleLoading(false);
+      throw new Error('Please enter a valid URL');
+    }
 
     // Everything until here is statically translated by Grow. From now
     // on Pixi might dynamically render translated strings, so wait
