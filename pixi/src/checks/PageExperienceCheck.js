@@ -15,12 +15,11 @@
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
-const API_KEY = process.env.AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS;
 
 export default class PageExperienceCheck {
   constructor() {
     this.apiUrl = new URL(API_ENDPOINT);
-    this.apiUrl.searchParams.append('key', API_KEY);
+    this.apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
   }
 
   async run(pageUrl) {

@@ -28,11 +28,6 @@ module.exports = (env, argv) => {
         filename: './pixi.html',
         inject: false,
       }),
-      new webpack.EnvironmentPlugin({
-        AMP_DEV_API_KEY_SAFE_BROWSING: '',
-        AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS: '',
-        AMP_DEV_API_KEY_MOBILE_FRIENDLINESS: '',
-      }),
       new webpack.DefinePlugin({
         IS_DEVELOPMENT: mode == 'development',
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
@@ -43,6 +38,9 @@ module.exports = (env, argv) => {
         ),
         API_ENDPOINT_MOBILE_FRIENDLINESS: JSON.stringify(
           config[mode].API_ENDPOINT_MOBILE_FRIENDLINESS
+        ),
+        AMP_DEV_PIXI_APIS_KEY: JSON.stringify(
+          process.env.AMP_DEV_PIXI_APIS || ''
         ),
       }),
       new FileManagerPlugin({
