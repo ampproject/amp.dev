@@ -42,8 +42,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/external.svg') %}
           <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"
-            ></use>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
           </svg>
         </div>
         <span class="ap-m-lnk-text">{{ _('Learn about web vitals') }}</span>
@@ -71,6 +70,9 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
             "Failed": "{{ _('Failed') }}",
             "Passed": "{{ _('Passed') }}"
           }
+        },
+        "recommendations": {
+          "items": []
         }
       }
     </script>
@@ -85,7 +87,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </button>
     </div>
 
-    <div class="ap-t-pixi-checks-reports --pristine">
+    <div class="ap-t-pixi-checks-reports">
       <h2>Core Web Vitals</h2>
       <div class="ap-t-pixi-checks-primary">
         {% with primary_metric = {
@@ -152,8 +154,19 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </div>
     </div>
 
-    <div id="recommendations" class="ap-t-pixi-checks-recommendations">
-    </div>
+    <amp-list class="ap-t-pixi-checks-recommendations"
+        width="auto"
+        height="100"
+        layout="fixed-height"
+        src="amp-state:pixi.recommendations">
+      <template type="amp-mustache">
+        {% raw %}
+        <div class="ap-m-recommendations-item">
+          <a href="#">{{ . }}</a>
+        </div>
+        {% endraw %}
+      </template>
+    </amp-list>
   </amp-script>
   {% endif %}
 </main>

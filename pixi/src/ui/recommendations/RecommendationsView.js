@@ -14,12 +14,24 @@
 
 export default class RecommendationsView {
   constructor(doc) {
-    this.container = doc.getElementById('recommendations');
   }
 
   render(reports) {
     for (const report of reports) {
       console.log(report);
     }
+
+    console.log('Render report');
+
+    AMP.setState({
+      pixi: {
+        recommendations: {
+          items: [
+            'test 1',
+            'test 2',
+          ]
+        }
+      }
+    })
   }
 }
