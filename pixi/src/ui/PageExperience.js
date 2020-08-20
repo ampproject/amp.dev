@@ -56,17 +56,6 @@ export default class PageExperience {
     // for them to be ready
     await i18n.init();
 
-    const check = new PageExperienceCheck();
-    const report = await check.run(pageUrl);
-
-    for (const [id, metric] of Object.entries(report.coreWebVitals.fieldData)) {
-      this.reportViews[id] =
-        this.reportViews[id] || new CoreWebVitalsReport(document, id);
-      this.reportViews[id].render(metric);
-    }
-
-    this.toggleLoading(true);
-
     // Reset errors from previous runs
     this.errors = [];
 
