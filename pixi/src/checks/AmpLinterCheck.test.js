@@ -8,7 +8,7 @@ import AmpLinterCheck from './AmpLinterCheck.js';
 import {
   apiResponsePass,
   apiResponseFail,
-} from '../../mocks/linterCheck/apiResponse.js';
+} from '../../mocks/ampLinterCheck/apiResponse.js';
 
 import pixiConfig from '../../config.js';
 
@@ -17,7 +17,7 @@ beforeEach(() => {
 });
 
 describe('Linter check', () => {
-  const apiEndpoint = pixiConfig['development'].API_ENDPOINT_LINTER;
+  const apiEndpoint = pixiConfig.development.API_ENDPOINT_LINTER;
   const linterCheck = new AmpLinterCheck();
 
   it('returns object with "usesHttps: true" for url with https protocol', async () => {

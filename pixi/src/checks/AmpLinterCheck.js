@@ -24,23 +24,26 @@ export default class AmpLinterCheck {
 
     try {
       const apiResult = await this.fetchJson();
-      return this.createReportData(null, apiResult);
+      return this.parseApiResult(apiResult);
     } catch (e) {
-      return this.createReportData(e);
+      return this.createError(e);
     }
   }
 
-  createReportData(error, apiResult) {
-    if (error) {
-      return {error};
-    }
-
+  parseApiResult(apiResult) {
     if (apiResult.status != 'ok') {
-      return {error: new Error(apiResult.message)};
+      return this.createError(new Error(apiResult.message));
     }
 
+    return this.createReportData(apiResult);
+  }
+
+  createError(error) {
+    return {error};
+  }
+
+  createReportData(apiResult) {
     return {
-      error,
       data: {
         usesHttps: apiResult.url.startsWith('https:'),
       },
