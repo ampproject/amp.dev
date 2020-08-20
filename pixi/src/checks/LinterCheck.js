@@ -28,12 +28,14 @@ export default class LinterCheck {
     if (error) {
       return {error};
     }
-    return {error, data: apiResult};
+    return {error, data: {
+      usesHttps: apiResult.url.startsWith('https:')
+    }};
   }
 
   async fetchJson(pageUrl) {
     try {
-      const response = await fetch(API_ENDPOINT, '');
+      const response = await fetch(API_ENDPOINT);
 
       if (!response.ok) {
         throw new Error(
