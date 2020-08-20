@@ -48,7 +48,9 @@ By using [common AMP attributes](../../learn/common_attributes.md) and element-s
 
 Some attributes will change a small behavior. In the example below, the [`amp-accordion`](../../../components/reference/amp-accordion.md) includes the [`animate`](../../../components/reference/amp-accordion.md#animate) attribute. This attribute adds a slight "roll down" animation to the expansion and collapse of each section when the user interacts with it.
 
-```
+[example preview="top-frame" playground="true" orientation="portrait" imports="amp-accordion"]
+```html
+<amp-accordion animate>
  <section>
     <h2>Section 1</h2>
     <p>Content in section 1.</p>
@@ -67,35 +69,43 @@ Some attributes will change a small behavior. In the example below, the [`amp-ac
   </section>
 </amp-accordion>
 ```
+[/example]
 
 ## Combination and composition
 
 Combine AMP components with other AMP components or HTML elements to improve or build more complex interactivity and user experiences. For example, combine [`amp-form`](../../../components/reference/amp-form.md) and [`amp-date-picker`](../../../components/reference/amp-date-picker.md) to create a booking flow.
 
-```
+[example preview="top-frame" playground="true" orientation="portrait" imports="amp-form, amp-date-picker"]
+```html
 <form method="post" action-xhr="/documentation/examples/api/submit-form-xhr" target="_top">
-<amp-date-picker id="form-picker" type="single" mode="static" layout="fixed-height" height="360" format="YYYY-MM-DD">
-</amp-date-picker>
-<input type="submit">
+  <amp-date-picker id="form-picker" type="single" mode="static" layout="fixed-height" height="360" format="YYYY-MM-DD">
+  </amp-date-picker>
+  <input type="submit">
+  <div submit-success>
+    Thanks!
+  </div>
 </form>
 ```
+[/example]
 
 There are no limits on the number of components you may combine. The example below builds on the previous one. We’ve added [`amp-inputmask`](../../../components/reference/amp-inputmask.md) to communicate the type of input accepted from a user and [`amp-mustache`](../../../components/reference/amp-mustache.md) to relay a success message.
 
+[example preview="top-frame" playground="true" orientation="portrait" imports="amp-form, amp-date-picker, amp-inputmask" template="amp-mustache"]
 ```html
 <form class="sample-form" method="post" action-xhr="/documentation/examples/api/postal" target="_top">
-<amp-date-picker id="form-picker" type="single" mode="static" layout="fixed-height" height="360" format="YYYY-MM-DD">
-</amp-date-picker>
-<label>Phone: <input name="code" type="tel" mask="+\1_(000)_000-0000" placeholder="+1 (555) 555-5555" mask-output="alphanumeric"></label>
-<input type="submit">
-<div submit-success>
+  <amp-date-picker id="form-picker" type="single" mode="static" layout="fixed-height" height="360" format="YYYY-MM-DD">
+  </amp-date-picker>
+  <label>Phone: <input name="code" type="tel" mask="+\1_(000)_000-0000" placeholder="+1 (555) 555-5555" mask-output="alphanumeric"></label>
+  <input type="submit">
+  <div submit-success>
     <template type="amp-mustache">
-    <p>The raw value: {% raw %}{{code}}{% endraw %}</p>
-    <p>The unmasked value: {% raw %}{{code-unmasked}}{% endraw %}</p>
+      <p>The raw value: {% raw %}{{code}}{% endraw %}</p>
+      <p>The unmasked value: {% raw %}{{code-unmasked}}{% endraw %}</p>
     </template>
-</div>
+  </div>
 </form>
 ```
+[/example]
 
 The components listed at the beginning of the guides are a great way to get started with AMP. Familiarizing with these helps you get an overview of the different building blocks AMP provides.
 
@@ -103,23 +113,17 @@ The components listed at the beginning of the guides are a great way to get star
 
 As outlined in [Interactivity foundations](foundations.md), AMP exposes globally available actions and events. Many of AMP’s components have their own component specific actions and events, made available by use of that component. [AMP’s action and event system](../../learn/amp-actions-and-events.md) is a powerful way to implement more complex interaction patterns. In the example below we open a lightbox on a successful form submission.
 
+[example preview="top-frame" playground="true" orientation="portrait" imports="amp-form, amp-lightbox-gallery" template="amp-mustache"]
+```html
+<form on="submit-success:amp-lightbox-gallery.open(id='squirrel')" method="post" action-xhr="/documentation/examples/api/postal" target="_top">
+  <label>Postal code: <input name="code" mask="L0L_0L0" placeholder="A1A 1A1"></label>
+  <input type="submit">
+  <div submit-success>
+    <amp-img src="/static/inline-examples/images/squirrel.jpg" width="320" height="256" lightbox id="squirrel"></amp-img>
+  </div>
+</form>
 ```
- <form 
-        on="submit-success:amp-lightbox-gallery.open(id='squirrel')" 
-        method="post" action-xhr="/documentation/examples/api/postal" target="_top">
-    <label>Postal code: <input name="code" mask="L0L_0L0" placeholder="A1A 1A1"></label>
-    <input type="submit">
-    <div submit-success>
-  <amp-img
-           src="/static/inline-examples/images/squirrel.jpg"
-           width="320"
-           height="256"
-           lightbox
-           id="squirrel"
-           ></amp-img>
-    </div>
-  </form>
-```
+[/example]
 
 Check out the actions and events overview page to learn more about the different kinds of actions and events available in AMP.
 
@@ -127,27 +131,16 @@ Check out the actions and events overview page to learn more about the different
 
 If you are chaining multiple actions, you can define them together as a single and reusable action. Use the [amp-action-macro](https://amp.dev/documentation/components/amp-action-macro/?format=websites) component to create AMP action macros. Each action macro needs an id and an action to execute. Call the action macro by it’s id and pass the arguments that alter its behavior.
 
-```
-  id="closeNavigations"
-  execute="AMP.setState({nav1: 'close', nav2: 'close})"
-></amp-action-macro>
-<button on="tap:closeNavigations.execute()">Close all</button>
-<div on="tap:closeNavigations.execute()">Close all</div>
-<!--
-  You can provide arguments in the macro.
--->
-<amp-carousel id="carousel" ...>...</amp-carousel>
-
+[example preview="top-frame" playground="true" imports="amp-action-macro"]
+```html
 <amp-action-macro
-  id="carousel-macro"
-  execute="carousel.goToSlide(index=foo), carousel.goToSlide(index=bar)"
-  arguments="foo, bar"
+  id="navigate-action"
+  execute="AMP.navigateTo('https://amp.dev/')"
 ></amp-action-macro>
-<button on="tap:carousel-macro.execute(foo=1, bar=2)">
-  Go to slide 1 then 2
-</button>
 
+<button on="tap:navigate-action">amp.dev</button>
 ```
+[/example]
 
 # Customization continued
 
