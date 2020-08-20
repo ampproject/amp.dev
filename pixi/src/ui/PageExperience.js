@@ -16,6 +16,7 @@ import i18n from './I18n.js';
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+import LinterCheck from '../checks/LinterCheck.js';
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
@@ -31,6 +32,7 @@ export default class PageExperience {
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
+    this.linterCheck = new LinterCheck();
   }
 
   isValidURL(pageUrl) {
@@ -108,6 +110,22 @@ export default class PageExperience {
       console.error('Could not perform safe browsing check', error);
     }
     this.reportViews.safeBrowsing.render(data);
+  }
+
+  async runLintCheck(pageUrl) {
+    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
+    this.reportViews.linter = new BooleanCheckReportView(
+      document,
+      'linter'
+    );
+
+    // Do not surface the actual error to the user. Simply log it
+    // The BooleanCheckReportView will show "Analysis failed"
+    // for undefined data
+    if (error) {
+      console.error('Could not perform safe browsing check', error);
+    }
+    this.reportViews.linter.render(data);
   }
 
   toggleLoading(force) {

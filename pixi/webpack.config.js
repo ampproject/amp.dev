@@ -34,6 +34,7 @@ module.exports = (env, argv) => {
       }),
       new webpack.DefinePlugin({
         IS_DEVELOPMENT: mode == 'development',
+        API_ENDPOINT_LINTER: JSON.stringify(config[mode].API_ENDPOINT_LINTER),
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
           config[mode].API_ENDPOINT_SAFE_BROWSING
         ),
