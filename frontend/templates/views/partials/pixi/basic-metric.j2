@@ -1,0 +1,11 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-basic-metric.css') %}
+
+<div id="{{ basic_metric.id }}" class="ap-m-pixi-basic-metric">
+  <h3 class="ap-m-basic-metric-title">
+    {{ basic_metric.title }}
+    <br>
+    <label class="ap-m-pixi-basic-metric-status">
+      {{ basic_metric.status or _('Analyzing') }}
+    </label>
+  </h3>
+</div>

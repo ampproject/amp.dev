@@ -85,13 +85,13 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </button>
     </div>
 
-    <div class="ap-t-pixi-checks-reports">
+    <div class="ap-t-pixi-checks-reports --pristine">
       <h2>Core Web Vitals</h2>
       <div class="ap-t-pixi-checks-primary">
         {% with primary_metric = {
           'id': 'lcp',
           'title': {
-            'full': 'Loading speed',
+            'full': _('Loading speed'),
             'id': 'LCP'
           }
         } %}
@@ -101,7 +101,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         {% with primary_metric = {
           'id': 'fid',
           'title': {
-            'full': 'Interactivity',
+            'full': _('Interactivity'),
             'id': 'FID'
           }
         } %}
@@ -111,7 +111,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         {% with primary_metric = {
           'id': 'cls',
           'title': {
-            'full': 'Visual stability',
+            'full': _('Visual stability'),
             'id': 'CLS'
           }
         } %}
@@ -121,18 +121,34 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
       <h2>Additional checks</h2>
       <div class="ap-t-pixi-checks-basic">
-        <div id="safe-browsing" class="ap-t-pixi-checks-basic-metric">
-          <h3 class="ap-t-pixi-checks-basic-metric-title">Safe browsing
-            <br>
-            <label>Analyzing..</label>
-          </h3>
-        </div>
-        <div class="ap-t-pixi-checks-basic-metric">
-          <h3 class="ap-t-pixi-checks-basic-metric-title">Intrusive interstitials
-            <br>
-            <label>Manual check</label>
-          </h3>
-        </div>
+        {% with basic_metric = {
+          'id': 'safe',
+          'title': _('Safe Browsing')
+        } %}
+        {% include 'views/partials/pixi/basic-metric.j2' %}
+        {% endwith %}
+
+        {% with basic_metric = {
+          'id': 'https',
+          'title': _('HTTPS')
+        } %}
+        {% include 'views/partials/pixi/basic-metric.j2' %}
+        {% endwith %}
+
+        {% with basic_metric = {
+          'id': 'mobile-friendliness',
+          'title': _('Mobile Friendliness'),
+        } %}
+        {% include 'views/partials/pixi/basic-metric.j2' %}
+        {% endwith %}
+
+        {% with basic_metric = {
+          'id': 'intrusive-interstitials',
+          'title': _('Intrusive Interstitials'),
+          'status': _('Check manually')
+        } %}
+        {% include 'views/partials/pixi/basic-metric.j2' %}
+        {% endwith %}
       </div>
     </div>
 
