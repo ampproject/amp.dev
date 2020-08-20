@@ -4,6 +4,7 @@ const dummyPageExperienceApiResponse = require('../mocks/pageExperienceCheck/api
 const {
   apiResponsePass: dummySafeBrowsingApiResponse,
 } = require('../mocks/safeBrowsing/apiResponse.js');
+const dummyMobileFriendlinessApiResponse = require('../mocks/mobileFriendliness/apiResponse.js');
 
 const DEFAULT_TIMEOUT = 1000;
 
@@ -21,11 +22,17 @@ mockApi.get('/page-experience', async (request, response) => {
   response.json(dummyPageExperienceApiResponse);
 });
 
-// This is called with POST in production, for quicker debugging
+// The following are called with POST in production, for quicker debugging
 // also allow GET requests
+
 mockApi.all('/safe-browsing', async (request, response) => {
   await timeout(request.query.timeout);
   response.json(dummySafeBrowsingApiResponse);
+});
+
+mockApi.all('/mobile-friendliness', async (request, response) => {
+  await timeout(request.query.timeout);
+  response.json(dummyMobileFriendlinessApiResponse.mobileFriendly);
 });
 
 module.exports = mockApi;
