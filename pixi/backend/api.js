@@ -53,7 +53,7 @@ const execChecks = async (url) => {
       body,
     },
     url,
-    mode: LintMode.Amp,
+    mode: LintMode.PageExperience,
   };
   const lintResults = await lint(context);
   return {
