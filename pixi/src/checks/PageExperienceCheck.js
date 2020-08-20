@@ -33,7 +33,7 @@ export default class PageExperienceCheck {
       const apiResult = await this.fetchJson();
       return this.createReportData(apiResult);
     } catch (e) {
-      return [e];
+      return {error: e};
     }
   }
 
@@ -80,7 +80,7 @@ export default class PageExperienceCheck {
       },
     };
 
-    return {error: null, data: report};
+    return {data: report};
   }
 
   async fetchJson() {

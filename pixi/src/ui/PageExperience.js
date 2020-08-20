@@ -46,7 +46,6 @@ export default class PageExperience {
     if (!this.isValidURL(pageUrl)) {
       // TODO: Initialize lab data reports
       throw new Error('Please enter a valid URL');
-      return;
     }
 
     this.toggleLoading(true);
