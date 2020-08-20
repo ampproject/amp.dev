@@ -63,7 +63,9 @@ export default class SafeBrowsingCheck {
       });
 
       if (!response.ok) {
-        throw new Error(`SafeBrowsingCheck failed: response failed with status ${response.status}`);
+        throw new Error(
+          `SafeBrowsingCheck failed: response failed with status ${response.status}`
+        );
       }
       return response;
     } catch (e) {
