@@ -16,6 +16,7 @@ import i18n from './I18n.js';
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
@@ -31,6 +32,7 @@ export default class PageExperience {
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
+    this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
   }
 
   isValidURL(pageUrl) {
@@ -61,8 +63,13 @@ export default class PageExperience {
 
     const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
     const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
+    const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    await Promise.all([pageExperiencePromise, safeBrowsingPromise]);
+    await Promise.all([
+      pageExperiencePromise,
+      safeBrowsingPromise,
+      mobileFriendlinessPromise,
+    ]);
 
     this.toggleLoading(false);
   }
@@ -97,6 +104,19 @@ export default class PageExperience {
       console.error('Could not perform safe browsing check', error);
     }
     this.reportViews.safeBrowsing.render(data);
+  }
+
+  async runMobileFriendlinessCheck(pageUrl) {
+    const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
+    if (error) {
+      console.error('Could not perform mobile friendliness check', error);
+    }
+
+    this.reportViews.mobileFriendliness = new BooleanCheckReportView(
+      document,
+      'mobile-friendliness'
+    );
+    this.reportViews.mobileFriendliness.render(data);
   }
 
   toggleLoading(force) {

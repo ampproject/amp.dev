@@ -1,10 +1,11 @@
 const express = require('express');
 
 const dummyPageExperienceApiResponse = require('../mocks/pageExperienceCheck/apiResponse.json');
+// eslint-disable-next-line max-len
+const dummyMobileFriendlinessApiResponse = require('../mocks/mobileFriendlinessCheck/apiResponse.js');
 const {
   apiResponsePass: dummySafeBrowsingApiResponse,
 } = require('../mocks/safeBrowsingCheck/apiResponse.js');
-const dummyMobileFriendlinessApiResponse = require('../mocks/mobileFriendliness/apiResponse.js');
 
 const DEFAULT_TIMEOUT = 1000;
 
