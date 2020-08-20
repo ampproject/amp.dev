@@ -2,6 +2,8 @@
 # Add new entries in alphabetical order
 /ads: /about/ads/
 /ampdevmode: https://github.com/ampproject/amphtml/issues/20974
+/email-registration: https://docs.google.com/forms/d/e/1FAIpQLSdso95e7UDLk_R-bnpzsAmuUMDQEMUgTErcfGGItBDkghHU2A/viewform?gxids=7628
+/email-support: https://amp.dev/support/faq/email-support/
 /amp-optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
 /amp-pwa-amp: https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/
 /amp-script-apis: https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md
