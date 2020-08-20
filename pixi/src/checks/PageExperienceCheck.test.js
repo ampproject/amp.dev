@@ -23,5 +23,6 @@ describe('Page experience check', () => {
     const pageExperienceCheck = new PageExperienceCheck();
     const reportData = await pageExperienceCheck.run('http://example.com');
     expect(reportData).toMatchObject(expectedReportData);
+    expect(report.error).toBeUndefined();
   });
 });
