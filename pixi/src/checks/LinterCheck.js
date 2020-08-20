@@ -34,6 +34,11 @@ export default class LinterCheck {
     if (error) {
       return {error};
     }
+
+    if (apiResult.status == 'error') {
+      return {error: new Error(apiResult.message)};
+    }
+
     return {
       error,
       data: {
