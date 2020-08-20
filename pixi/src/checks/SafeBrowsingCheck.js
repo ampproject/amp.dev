@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const API_ENDPOINT =
-  'https://safebrowsing.googleapis.com/v4/threatMatches:find?key=';
-const API_KEY = 'AIzaSyCKKBvhpC73FqDcO-T7_4Yqdx4nQXh2sQY';
+const API_ENDPOINT = API_ENDPOINT_SAFE_BROWSING;
+const API_KEY = process.env.AMP_DEV_API_KEY_SAFE_BROWSING;
+
 const API_URL = `${API_ENDPOINT}${API_KEY}`;
 
 export default class SafeBrowsingCheck {
