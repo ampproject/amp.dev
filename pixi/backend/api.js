@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 const {
   dummyApiResponse,
 } = require('../mocks/pageExperienceCheck/apiResponse.json');
+
 const express = require('express');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
