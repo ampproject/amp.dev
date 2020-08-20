@@ -44,7 +44,7 @@ export default class MobileFriendlinessCheck {
         },
         method: 'POST',
         body: JSON.stringify({
-          url: pageUrl
+          url: pageUrl,
         }),
       });
 
