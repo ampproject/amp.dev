@@ -79,7 +79,7 @@ export default class PageExperience {
       mobileFriendlinessPromise,
     ]);
 
-    this.recommendationView.render(reports);
+    this.recommendationView.render(...reports);
 
     this.toggleLoading(false);
   }
@@ -99,7 +99,7 @@ export default class PageExperience {
       this.reportViews[id].render(metric);
     }
 
-    return report.data;
+    return report.data.recommendations;
   }
 
   async runSafeBrowsingCheck(pageUrl) {

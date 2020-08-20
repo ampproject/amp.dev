@@ -18,6 +18,8 @@ export default class RecommendationsView {
   }
 
   render(reports) {
-    console.log('Render recommendations:', reports);
+    for (const report of reports) {
+      console.log(report);
+    }
   }
 }
