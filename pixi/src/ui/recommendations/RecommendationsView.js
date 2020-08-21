@@ -22,15 +22,20 @@ export default class RecommendationsView {
 
   render(reports) {
     for (const report of reports) {
-      const reportView = this.item.cloneNode(true);
-      reportView.style = null;
-      reportView.id = `recommendation-${report.id}`;
+      const recommendation = this.item.cloneNode(true);
+      recommendation.style = null;
+      recommendation.id = `recommendation-${report.id}`;
 
-      reportView.querySelector('header').setAttribute('on', `tap:recommendation-${report.id}.toggleClass(class=expanded)`);
-      reportView.querySelector('h3').textContent = report.title;
-      reportView.querySelector('p').innerHTML = marked(report.description);
+      recommendation
+        .querySelector('header')
+        .setAttribute(
+          'on',
+          `tap:recommendation-${report.id}.toggleClass(class=expanded)`
+        );
+      recommendation.querySelector('h3').textContent = report.title;
+      recommendation.querySelector('p').innerHTML = marked(report.description);
 
-      this.container.appendChild(reportView);
+      this.container.appendChild(recommendation);
     }
   }
 }
