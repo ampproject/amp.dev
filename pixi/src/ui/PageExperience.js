@@ -12,8 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import i18n from './I18n.js';
+
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
-import CoreWebVitalsReport from './report/CoreWebVitalsReport.js';
+import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
+import AmpLinterCheck from '../checks/AmpLinterCheck.js';
+import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
+
+import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
+import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
 export default class PageExperience {
   constructor() {
@@ -22,11 +29,17 @@ export default class PageExperience {
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
     this.reportViews = {};
+    this.errors = [];
+
+    this.pageExperienceCheck = new PageExperienceCheck();
+    this.safeBrowsingCheck = new SafeBrowsingCheck();
+    this.linterCheck = new AmpLinterCheck();
+    this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
   }
 
-  isValidURL(inputUrl) {
+  isValidURL(pageUrl) {
     try {
-      const url = new URL(inputUrl);
+      const url = new URL(pageUrl);
       return url.protocol === 'http:' || url.protocol === 'https:';
     } catch (e) {
       return false;
@@ -34,28 +47,99 @@ export default class PageExperience {
   }
 
   async onSubmitUrl() {
-    const inputUrl = this.input.value;
+    this.toggleLoading(true);
 
-    if (!this.isValidURL(inputUrl)) {
-      // TODO: Initialize lab data reports
-      throw new Error('Please enter a valid URL');
-    } else {
-      this.toggleLoading(true);
-
-      const check = new PageExperienceCheck();
-      const report = await check.run(inputUrl);
-
-      for (const [id, metric] of Object.entries(
-        report.coreWebVitals.fieldData
-      )) {
-        this.reportViews[id] =
-          this.reportViews[id] || new CoreWebVitalsReport(document, id);
-        this.reportViews[id].render(metric);
+    let pageUrl = this.input.value;
+    // Can be removed once https://github.com/ampproject/worker-dom/issues/912
+    // is fixed
+    if (!pageUrl) {
+      try {
+        pageUrl = await AMP.getState('pixi.pageUrl');
+      } catch (e) {
+        console.error('Could not get page URL from amp-state', e);
       }
-      // TODO: Show error message in UI
     }
 
+    if (!this.isValidURL(pageUrl)) {
+      this.toggleLoading(false);
+      throw new Error('Please enter a valid URL');
+    }
+
+    // Everything until here is statically translated by Grow. From now
+    // on Pixi might dynamically render translated strings, so wait
+    // for them to be ready
+    await i18n.init();
+
+    // Reset errors from previous runs
+    this.errors = [];
+
+    const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
+    const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
+    const linterPromise = this.runLintCheck(pageUrl);
+    const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
+
+    await Promise.all([
+      pageExperiencePromise,
+      safeBrowsingPromise,
+      linterPromise,
+      mobileFriendlinessPromise,
+    ]);
+
     this.toggleLoading(false);
+  }
+
+  async runPageExperienceCheck(pageUrl) {
+    const report = await this.pageExperienceCheck.run(pageUrl);
+    if (report.error) {
+      this.errors.push(pageExperienceReport.error);
+      return;
+    }
+
+    for (const [id, metric] of Object.entries(
+      report.data.coreWebVitals.fieldData
+    )) {
+      this.reportViews[id] =
+        this.reportViews[id] || new CoreWebVitalsReportView(document, id);
+      this.reportViews[id].render(metric);
+    }
+  }
+
+  async runSafeBrowsingCheck(pageUrl) {
+    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
+    this.reportViews.safeBrowsing = new BooleanCheckReportView(
+      document,
+      'safe-browsing'
+    );
+
+    // Do not surface the actual error to the user. Simply log it
+    // The BooleanCheckReportView will show "Analysis failed"
+    // for undefined data
+    if (error) {
+      console.error('Could not perform safe browsing check', error);
+    }
+    this.reportViews.safeBrowsing.render(data);
+  }
+
+  async runLintCheck(pageUrl) {
+    const {error, data} = await this.linterCheck.run(pageUrl);
+    if (error) {
+      console.error('Could not perform safe browsing check', error);
+    }
+    this.reportViews.httpsCheck = new BooleanCheckReportView(document, 'https');
+    this.reportViews.httpsCheck.render(data.usesHttps);
+  }
+
+  async runMobileFriendlinessCheck(pageUrl) {
+    const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
+    if (error) {
+      console.error('Could not perform mobile friendliness check', error);
+    }
+
+    this.reportViews.mobileFriendliness = new BooleanCheckReportView(
+      document,
+      'mobile-friendliness'
+    );
+    this.reportViews.mobileFriendliness.render(data);
   }
 
   toggleLoading(force) {

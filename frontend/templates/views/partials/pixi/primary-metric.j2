@@ -1,0 +1,35 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-primary-metric.css') %}
+
+<div id="{{ primary_metric.id }}" class="ap-m-pixi-primary-metric">
+  <h3 class="ap-m-pixi-primary-metric-header">
+    <div class="ap-m-pixi-primary-metric-header-full">
+      {{ primary_metric.title.full }}
+    </div>
+    <div class="ap-m-pixi-primary-metric-header-id">
+      {{ primary_metric.title.id }}
+    </div>
+    <label class="ap-m-pixi-primary-metric-header-status">
+      {{ _('Analyzing') }} ...
+    </label>
+  </h3>
+  <div class="ap-m-pixi-primary-metric-graph">
+    <aside class="ap-m-pixi-primary-metric-graph-indicator">
+      <span></span>
+    </aside>
+    <div class="ap-m-pixi-primary-metric-graph-bar">
+      <span>2.5 sec</span>
+      <span>4.0 sec</span>
+    </div>
+  </div>
+  <div class="ap-m-pixi-primary-metric-info">
+    <div>
+      {{ _('Opportunity to improve') }}:
+      <span>{{ _('Calculating') }}</span>
+    </div>
+
+    <div>
+      {{ _('Take action') }}:
+      <span>{{ _('Analyzing') }}</span>
+    </div>
+  </div>
+</div>

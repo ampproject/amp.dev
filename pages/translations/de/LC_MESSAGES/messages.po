@@ -3121,3 +3121,15 @@ msgstr "Unterstützte Plattformen, Anbieter und Partner"
 
 msgid "AMP Conf 2020: Save the date!"
 msgstr "AMP Conf 2020: Termin vormerken!"
+
+#: /content/amp-dev/page-experience.html:52
+msgid "Analyzing ..."
+msgstr "Analyse läuft ..."
+
+#: /content/amp-dev/page-experience.html:53
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#: /content/amp-dev/page-experience.html:54
+msgid "Passed"
+msgstr "Bestanden"

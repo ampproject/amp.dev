@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 
+const config = require('./config.js');
+
 module.exports = (env, argv) => {
   const mode = argv.mode || 'production';
 
@@ -26,36 +28,36 @@ module.exports = (env, argv) => {
         filename: './pixi.html',
         inject: false,
       }),
-      new webpack.EnvironmentPlugin({
-        AMP_DEV_API_KEY_SAFE_BROWSING: '',
-        AMP_DEV_API_KEY_PAGE_SPEED_INSIGHTS: '',
-      }),
       new webpack.DefinePlugin({
+        IS_DEVELOPMENT: mode == 'development',
+        API_ENDPOINT_LINTER: JSON.stringify(config[mode].API_ENDPOINT_LINTER),
         API_ENDPOINT_SAFE_BROWSING: JSON.stringify(
-          'https://safebrowsing.googleapis.com/v4/threatMatches:find'
+          config[mode].API_ENDPOINT_SAFE_BROWSING
         ),
-        API_ENDPOINT_PAGE_SPEED_INSIGHTS:
-          mode == 'development'
-            ? JSON.stringify(
-                'http://localhost:8080/page-experience/api/page-experience-dummy'
-              )
-            : JSON.stringify(
-                'https://www.googleapis.com/pagespeedonline/v5/runPagespeed'
-              ),
+        API_ENDPOINT_PAGE_SPEED_INSIGHTS: JSON.stringify(
+          config[mode].API_ENDPOINT_PAGE_SPEED_INSIGHTS
+        ),
+        API_ENDPOINT_MOBILE_FRIENDLINESS: JSON.stringify(
+          config[mode].API_ENDPOINT_MOBILE_FRIENDLINESS
+        ),
+        AMP_DEV_PIXI_APIS_KEY: JSON.stringify(
+          process.env.AMP_DEV_PIXI_APIS || ''
+        ),
       }),
       new FileManagerPlugin({
         onEnd: {
           copy: [
             {
               source: './dist/pixi.html',
-              destination: '../frontend/templates/views/partials/pixi.j2',
+              destination:
+                '../frontend/templates/views/partials/pixi/webpack.j2',
             },
             {
               source: './dist/*.js',
               destination: '../dist/static/page-experience/',
             },
             {
-              source: './dist/pixi.main.map',
+              source: './dist/*.map',
               destination: '../dist/static/page-experience/',
             },
           ],
