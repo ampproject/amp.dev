@@ -40,7 +40,19 @@
       margin: 2px auto 5px auto;
       border-left: 8px solid transparent;
       border-right: 8px solid transparent;
-      border-top: 8px solid color('red');
+      border-top: 8px solid color('limed-spruce');
+
+      .fast & {
+        border-top-color: color('malachite');
+      }
+
+      .average & {
+        border-top-color: color('buttercup');
+      }
+
+      .slow & {
+        border-top-color: color('red');
+      }
     }
   }
 
