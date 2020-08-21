@@ -157,10 +157,9 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </div>
     </div>
 
-    <section id="recommendations" class="ap-t-pixi-checks-recommendations">
-      <h2>Take action. Improve your AMP site</h2>
-      {% include 'views/partials/pixi/recommendation.j2' %}
-    </section>
+    {% do doc.styles.addCssFile('css/components/organism/pixi-recommendations.css') %}
+    {% include 'views/partials/pixi/recommendations.j2' %}
+
   </amp-script>
   {% endif %}
 </main>

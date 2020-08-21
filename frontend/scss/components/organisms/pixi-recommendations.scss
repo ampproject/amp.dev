@@ -1,0 +1,44 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{organism('pixi-recommendations')} {
+  $root: &;
+
+  &-skeleton {
+    display: none;
+    padding: 40px 46px;
+    border: solid 2px color('mercury');
+    border-radius: 8px;
+
+    h3 {
+      max-width: 580px;
+      margin: 0;
+      line-height: 1.4;
+      color: color('silver');
+      opacity: 0;
+      transition: opacity .3s ease-in;
+    }
+  }
+
+  &.pristine {
+    #{$root}-skeleton {
+      display: block;
+
+      h3 {
+        opacity: 0;
+      }
+    }
+  }
+
+  &.loading {
+    #{$root}-skeleton {
+      display: block;
+
+      h3 {
+        opacity: 1;
+      }
+    }
+  }
+}

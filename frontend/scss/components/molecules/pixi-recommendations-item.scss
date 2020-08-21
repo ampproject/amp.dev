@@ -3,13 +3,13 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
-.#{molecule('pixi-recommendation')} {
+.#{molecule('pixi-recommendations-item')} {
   $root: &;
-  margin-bottom: 30px;
+  margin-top: 30px;
   padding: 30px;
   border: solid 2px color('mercury');
   border-radius: 8px;
-  transition: transform .25s ease-in,  background .25s ease-in, box-shadow .3s ease-in, border-color .3s ease-in;
+  transition: transform .25s ease-in, background .25s ease-in, box-shadow .3s ease-in, border-color .3s ease-in;
 
   &.expanded {
     @media (min-width: 768px) {
