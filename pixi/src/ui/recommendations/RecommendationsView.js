@@ -17,7 +17,7 @@ import marked from 'marked';
 export default class RecommendationsView {
   constructor(doc) {
     this.container = doc.getElementById('recommendations');
-    this.item = this.container.querySelector('.ap-m-pixi-recommendation');
+    this.item = this.container.querySelector('.ap-m-pixi-recommendations-item');
   }
 
   render(reports) {

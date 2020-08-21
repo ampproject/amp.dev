@@ -45,9 +45,8 @@
       height: 21px;
       margin-top: 5px;
       fill: color('river-bed');
-      transition: transform 0.25s cubic-bezier(0, 0, 0.3, 1);
-
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M56.293 16.003c1.761-1.645 4.553-1.645 6.314 0a4.323 4.323 0 010 6.357l-27.45 25.638c-1.761 1.645-4.553 1.645-6.314 0L1.393 22.36C.494 21.521 0 20.397 0 19.182s.494-2.339 1.393-3.178c1.761-1.645 4.553-1.645 6.314 0L32 38.693l24.293-22.689z'/%3E%3C/svg%3E");
+      transition: transform 0.25s cubic-bezier(0, 0, 0.3, 1);
     }
   }
 
@@ -64,7 +63,7 @@
 
   &-footer {
     padding-top: 15px;
-    border-top: 1px solid color('silver');
+    border-top: solid 2px color('mercury');
 
     span {
       height: 30px;
