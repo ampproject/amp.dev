@@ -71,8 +71,11 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
             "Passed": "{{ _('Passed') }}"
           }
         },
+        "testText": "Test",
         "recommendations": {
-          "items": []
+          "items": [
+            "initial item"
+          ]
         }
       }
     </script>
@@ -154,19 +157,9 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </div>
     </div>
 
-    <amp-list class="ap-t-pixi-checks-recommendations"
-        width="auto"
-        height="100"
-        layout="fixed-height"
-        src="amp-state:pixi.recommendations">
-      <template type="amp-mustache">
-        {% raw %}
-        <div class="ap-m-recommendations-item">
-          <a href="#">{{ . }}</a>
-        </div>
-        {% endraw %}
-      </template>
-    </amp-list>
+    <section id="recommendations" class="ap-t-pixi-intro">
+      <h3>Test</h3>
+    </section>
   </amp-script>
   {% endif %}
 </main>

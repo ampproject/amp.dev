@@ -14,24 +14,15 @@
 
 export default class RecommendationsView {
   constructor(doc) {
+    this.container = doc.getElementById('recommendations');
+    this.item = this.container.querySelector('h3');
   }
 
   render(reports) {
     for (const report of reports) {
       console.log(report);
+      const node = this.item.cloneNode(true);
+      this.container.appendChild(node);
     }
-
-    console.log('Render report');
-
-    AMP.setState({
-      pixi: {
-        recommendations: {
-          items: [
-            'test 1',
-            'test 2',
-          ]
-        }
-      }
-    })
   }
 }
