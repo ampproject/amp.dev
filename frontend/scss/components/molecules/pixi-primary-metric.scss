@@ -8,12 +8,15 @@
   display: flex;
   flex-direction: column;
   padding: 15px 25px;
-  border-bottom: solid 2px color('mercury');
   background-color: color('white');
   transition: opacity 0.2s ease;
 
   @media (min-width: 768px) {
     padding: 38px 25px;
+  }
+
+  & + & {
+    border-top: solid 2px color('mercury');
   }
 
   &:nth-child(2) {
@@ -63,39 +66,21 @@
     }
 
     &-status {
+      display: block;
       color: color('silver');
-    }
-  }
 
-  &.fast {
-    label {
-      color: color('malachite');
-    }
-    span:after {
-      border-top-color: color('malachite');
-    }
-  }
+      .fast & {
+        color: color('malachite');
+      }
 
-  &.average {
-    label {
-      color: color('buttercup');
-    }
-    span:after {
-      border-top-color: color('buttercup');
-    }
-  }
+      .average & {
+        color: color('buttercup');
+      }
 
-  &.slow {
-    label {
-      color: color('red');
+      .slow & {
+        color: color('red');
+      }
     }
-    span:after {
-      border-top-color: color('red');
-    }
-  }
-
-  &:last-child {
-    border-bottom: 0;
   }
 
   .pristine & {
