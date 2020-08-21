@@ -28,6 +28,7 @@ export default class PageExperience {
     this.submit = document.getElementById('input-submit');
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
+    this.reports = document.getElementById('reports');
     this.reportViews = {};
     this.errors = [];
 
@@ -48,6 +49,7 @@ export default class PageExperience {
 
   async onSubmitUrl() {
     this.toggleLoading(true);
+    this.reports.classList.remove('pristine');
 
     let pageUrl = this.input.value;
     // Can be removed once https://github.com/ampproject/worker-dom/issues/912
@@ -89,27 +91,37 @@ export default class PageExperience {
   }
 
   async runPageExperienceCheck(pageUrl) {
+    // Initialize views before running the check to be able
+    // to toggle the loading state
+    for (const reportViewContainer of document.querySelectorAll('.ap-m-pixi-primary-metric')) {
+      this.reportViews[reportViewContainer.id] = this.reportViews[reportViewContainer.id] || new CoreWebVitalsReportView(reportViewContainer);
+
+      this.reportViews[reportViewContainer.id].toggleLoading(true);
+    }
+
     const report = await this.pageExperienceCheck.run(pageUrl);
     if (report.error) {
       this.errors.push(pageExperienceReport.error);
+      // TODO: Render error states to views
+      console.log('PX failed', report);
       return;
     }
 
     for (const [id, metric] of Object.entries(
       report.data.coreWebVitals.fieldData
     )) {
-      this.reportViews[id] =
-        this.reportViews[id] || new CoreWebVitalsReportView(document, id);
       this.reportViews[id].render(metric);
     }
   }
 
   async runSafeBrowsingCheck(pageUrl) {
-    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
     this.reportViews.safeBrowsing = new BooleanCheckReportView(
       document,
       'safe-browsing'
     );
+    this.reportViews.safeBrowsing.toggleLoading(true);
+
+    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
 
     // Do not surface the actual error to the user. Simply log it
     // The BooleanCheckReportView will show "Analysis failed"
@@ -121,32 +133,32 @@ export default class PageExperience {
   }
 
   async runLintCheck(pageUrl) {
+    this.reportViews.httpsCheck = new BooleanCheckReportView(document, 'https');
+    this.reportViews.httpsCheck.toggleLoading(true);
+
     const {error, data} = await this.linterCheck.run(pageUrl);
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.httpsCheck = new BooleanCheckReportView(document, 'https');
     this.reportViews.httpsCheck.render(data.usesHttps);
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
-    const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
-    if (error) {
-      console.error('Could not perform mobile friendliness check', error);
-    }
-
     this.reportViews.mobileFriendliness = new BooleanCheckReportView(
       document,
       'mobile-friendliness'
     );
+    this.reportViews.mobileFriendliness.toggleLoading(true);
+
+    const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
+    if (error) {
+      console.error('Could not perform mobile friendliness check', error);
+    }
     this.reportViews.mobileFriendliness.render(data);
   }
 
   toggleLoading(force) {
     this.submit.classList.toggle('loading', force);
-    for (const report of Object.keys(this.reportViews)) {
-      this.reportViews[report].toggleLoading(force);
-    }
   }
 }
 
