@@ -12,10 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import i18n from '../I18n.js';
+
+const CATEGORIES = {
+  fast: 'fast',
+  average: 'average',
+  slow: 'slow',
+};
+
 export default class CoreWebVitalsReport {
   constructor(container) {
     this.container = container;
-    this.label = this.container.querySelector('label');
+    this.pristine = true;
+
+    this.category = this.container.querySelector('.ap-m-pixi-primary-metric-category');
+    this.improvement = this.container.querySelector('.ap-m-pixi-primary-metric-improvement');
+    this.recommendations = this.container.querySelector('.ap-m-pixi-primary-metric-recommendations');
 
     this.scale = {
       bar: {
@@ -32,6 +44,8 @@ export default class CoreWebVitalsReport {
   }
 
   render(report) {
+    this.pristine = false;
+
     const unit = report.unit;
     const data = report.data;
 
@@ -59,10 +73,25 @@ export default class CoreWebVitalsReport {
     }
     this.scale.indicator.style.marginLeft = `${distributionOffset}%`;
 
-    this.container.classList.add(data.category.toLowerCase());
-    this.label.textContent = data.category;
+    const category = CATEGORIES[data.category.toLowerCase()] || category.average;
+    this.container.classList.add(category);
+    this.category.textContent = category.toUpperCase();
+
+    this.improvement.textContent = 'Not yet implemented';
+    this.recommendations.textContent = 'Not yet implemented';
 
     this.toggleLoading(false);
+  }
+
+  reset() {
+    if (this.pristine) {
+      return;
+    }
+
+    this.container.classList.remove(...Object.values(CATEGORIES));
+    this.category.textContent = i18n.translate('Analyzing');
+    this.improvement.textContent = i18n.translate('Calculating');
+    this.recommendations.textContent = i18n.translate('Analyzing');
   }
 
   toggleLoading(force) {

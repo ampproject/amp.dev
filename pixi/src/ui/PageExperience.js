@@ -96,6 +96,7 @@ export default class PageExperience {
     for (const reportViewContainer of document.querySelectorAll('.ap-m-pixi-primary-metric')) {
       this.reportViews[reportViewContainer.id] = this.reportViews[reportViewContainer.id] || new CoreWebVitalsReportView(reportViewContainer);
 
+      this.reportViews[reportViewContainer.id].reset();
       this.reportViews[reportViewContainer.id].toggleLoading(true);
     }
 
