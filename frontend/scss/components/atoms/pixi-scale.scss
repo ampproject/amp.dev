@@ -115,7 +115,7 @@
     }
   }
 
-  .loading & {
+  .loading &, .pristine & {
 
     &-bar {
       &:after {
