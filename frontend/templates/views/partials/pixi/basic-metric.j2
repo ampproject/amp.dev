@@ -1,11 +1,16 @@
 {% do doc.styles.addCssFile('css/components/molecules/pixi-basic-metric.css') %}
 
 <div id="{{ basic_metric.id }}" class="ap-m-pixi-basic-metric">
-  <h3 class="ap-m-basic-metric-title">
+  <h3 class="ap-m-pixi-basic-metric-title">
     {{ basic_metric.title }}
     <br>
     <label class="ap-m-pixi-basic-metric-status">
-      {{ basic_metric.status or _('Analyzing') }}
+      {% if not basic_metric.status %}
+      {{ _('Analyzing') }}
+      {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      {% else %}
+      {{ basic_metric.status }}
+      {% endif %}
     </label>
   </h3>
 </div>
