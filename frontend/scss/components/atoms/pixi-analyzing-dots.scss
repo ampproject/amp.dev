@@ -12,16 +12,22 @@
 .#{atom('pixi-analyzing-dots')} {
   display: inline;
   letter-spacing: -2px;
+  transition: opacity 0.2s ease;
+  opacity: 0;
 
-  span {
-    animation: FADE 2s infinite both;
+  .loading & {
+    opacity: 1;
 
-    &:nth-child(2) {
-      animation-delay: 250ms;
-    }
+    span {
+      animation: FADE 2s infinite both;
 
-    &:nth-child(3) {
-      animation-delay: 500ms;
+      &:nth-child(2) {
+        animation-delay: 250ms;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 500ms;
+      }
     }
   }
 }
