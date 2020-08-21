@@ -93,7 +93,9 @@ export default class PageExperience {
   async runPageExperienceCheck(pageUrl) {
     // Initialize views before running the check to be able
     // to toggle the loading state
-    this.reportViews.pageExperience = this.reportViews.pageExperience || new CoreWebVitalsReportView(document, 'core-web-vitals');
+    this.reportViews.pageExperience =
+      this.reportViews.pageExperience ||
+      new CoreWebVitalsReportView(document, 'core-web-vitals');
 
     const report = await this.pageExperienceCheck.run(pageUrl);
     if (report.error) {

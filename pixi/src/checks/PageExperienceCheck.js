@@ -74,12 +74,12 @@ export default class PageExperienceCheck {
           lcp: {
             id: 'lcp',
             unit: UNIT_SEC,
-            data: this.createLabData(labData['largest-contentful-paint'])
+            data: this.createLabData(labData['largest-contentful-paint']),
           },
           fid: {
             id: 'fid',
             unit: UNIT_MS,
-            data: this.createLabData(labData['interactive'])
+            data: this.createLabData(labData['interactive']),
           },
           cls: {
             id: 'cls',

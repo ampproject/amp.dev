@@ -22,7 +22,7 @@ const CATEGORIES = {
 
 class SimpleScale {
   constructor(container) {
-    this.bar = container.querySelector('.ap-a-pixi-scale-bar-positive')
+    this.bar = container.querySelector('.ap-a-pixi-scale-bar-positive');
     this.indicator = container.querySelector('.ap-a-pixi-scale-indicator');
     this.value = container.querySelector('.ap-a-pixi-scale-value');
   }
@@ -32,7 +32,9 @@ class SimpleScale {
     this.bar.style.transform = `scale3d(${data.score}, 1, 1)`;
 
     // Add a value to the scale and position in distributions
-    this.value.textContent = `${data.numericValue / unit.conversion}${unit.name}`;
+    this.value.textContent = `${data.numericValue / unit.conversion}${
+      unit.name
+    }`;
     this.indicator.style.marginLeft = `${data.score * 100}%`;
     this.value.style.width = `0`;
   }
@@ -46,7 +48,7 @@ class WeightedScale {
     };
     this.pitch = {
       positive: container.querySelector('.ap-a-pixi-scale-pitch-line-positive'),
-      negative: container.querySelector('.ap-a-pixi-scale-pitch-line-negative')
+      negative: container.querySelector('.ap-a-pixi-scale-pitch-line-negative'),
     };
     this.indicator = container.querySelector('.ap-a-pixi-scale-indicator');
     this.value = container.querySelector('.ap-a-pixi-scale-value');
@@ -54,22 +56,32 @@ class WeightedScale {
 
   render(data, unit) {
     // Update bar to match distributions
-    this.bar.positive.style.transform = `scale3d(${ data.distributions[0].proportion}, 1, 1)`;
-    this.bar.negative.style.transform = `scale3d(${ data.distributions[2].proportion}, 1, 1)`;
+    this.bar.positive.style.transform = `scale3d(${data.distributions[0].proportion}, 1, 1)`;
+    this.bar.negative.style.transform = `scale3d(${data.distributions[2].proportion}, 1, 1)`;
 
     // Update pitch lines
-    this.pitch.positive.style.transform = `translateX(${data.distributions[0].proportion * 100}%)`;
-    this.pitch.positive.textContent = `${data.distributions[0].max / unit.conversion}${unit.name}`;
+    this.pitch.positive.style.transform = `translateX(${
+      data.distributions[0].proportion * 100
+    }%)`;
+    this.pitch.positive.textContent = `${
+      data.distributions[0].max / unit.conversion
+    }${unit.name}`;
 
-    this.pitch.negative.style.transform = `translateX(${100 - data.distributions[2].proportion * 100}%)`;
-    this.pitch.negative.textContent = `${data.distributions[2].min / unit.conversion}${unit.name}`;
+    this.pitch.negative.style.transform = `translateX(${
+      100 - data.distributions[2].proportion * 100
+    }%)`;
+    this.pitch.negative.textContent = `${
+      data.distributions[2].min / unit.conversion
+    }${unit.name}`;
 
     // Add a value to the scale and position in distributions
     this.value.textContent = `${data.percentile / unit.conversion}${unit.name}`;
     let distributionOffset = 0;
     for (const distribution of data.distributions) {
       if (data.percentile < distribution.max) {
-        this.value.style.width = `${data.percentile / distribution.max * 100}%`;
+        this.value.style.width = `${
+          (data.percentile / distribution.max) * 100
+        }%`;
         break;
       }
 
@@ -92,9 +104,15 @@ class CoreWebVitalView {
       this.scale = new SimpleScale(container);
     }
 
-    this.category = this.container.querySelector('.ap-m-pixi-primary-metric-category');
-    this.improvement = this.container.querySelector('.ap-m-pixi-primary-metric-improvement');
-    this.recommendations = this.container.querySelector('.ap-m-pixi-primary-metric-recommendations');
+    this.category = this.container.querySelector(
+      '.ap-m-pixi-primary-metric-category'
+    );
+    this.improvement = this.container.querySelector(
+      '.ap-m-pixi-primary-metric-improvement'
+    );
+    this.recommendations = this.container.querySelector(
+      '.ap-m-pixi-primary-metric-recommendations'
+    );
   }
 
   render(report) {
@@ -132,16 +150,22 @@ export default class CoreWebVitalsReportView {
     this.coreWebVitalViews = {};
     // Initialize views before running the check to be able
     // to toggle the loading state
-    for (const coreWebVitalsContainer of document.querySelectorAll('.ap-m-pixi-primary-metric')) {
-      this.coreWebVitalViews[coreWebVitalsContainer.id] = this.coreWebVitalViews[coreWebVitalsContainer.id] || new CoreWebVitalView(coreWebVitalsContainer);
+    for (const coreWebVitalsContainer of document.querySelectorAll(
+      '.ap-m-pixi-primary-metric'
+    )) {
+      this.coreWebVitalViews[coreWebVitalsContainer.id] =
+        this.coreWebVitalViews[coreWebVitalsContainer.id] ||
+        new CoreWebVitalView(coreWebVitalsContainer);
 
       this.coreWebVitalViews[coreWebVitalsContainer.id].toggleLoading(true);
     }
 
     this.tabs = document.querySelectorAll('.ap-o-pixi-primary-checks-tabs-tab');
-    this.tabContents = document.querySelectorAll('.ap-o-pixi-primary-checks-data');
+    this.tabContents = document.querySelectorAll(
+      '.ap-o-pixi-primary-checks-data'
+    );
     for (let i = 0; i < this.tabContents.length; i++) {
-      this.tabs[i].addEventListener('click', (e) => {
+      this.tabs[i].addEventListener('click', () => {
         this.onClickTab(i);
       });
     }
@@ -158,9 +182,9 @@ export default class CoreWebVitalsReportView {
     this.pristine = false;
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
-      const type = report[coreWebVitalView.type]
+      const type = report[coreWebVitalView.type];
       if (type) {
-        const metric = type[coreWebVitalView.metric]
+        const metric = type[coreWebVitalView.metric];
         if (metric) {
           coreWebVitalView.render(metric);
           continue;
