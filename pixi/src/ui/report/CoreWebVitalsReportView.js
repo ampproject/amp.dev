@@ -28,10 +28,8 @@ class SimpleScale {
   }
 
   render(data, unit) {
-    // Update bar to match distributions
     this.bar.style.transform = `scale3d(${data.score}, 1, 1)`;
 
-    // Add a value to the scale and position in distributions
     this.value.textContent = `${data.numericValue / unit.conversion}${
       unit.name
     }`;
@@ -135,6 +133,8 @@ class CoreWebVitalView {
     this.category.textContent = i18n.translate('Analyzing');
     this.improvement.textContent = i18n.translate('Calculating');
     this.recommendations.textContent = i18n.translate('Analyzing');
+
+    this.toggleLoading(true);
   }
 
   toggleLoading(force) {

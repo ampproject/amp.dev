@@ -96,12 +96,13 @@ export default class PageExperience {
     this.reportViews.pageExperience =
       this.reportViews.pageExperience ||
       new CoreWebVitalsReportView(document, 'core-web-vitals');
+    this.reportViews.pageExperience.reset();
 
     const report = await this.pageExperienceCheck.run(pageUrl);
     if (report.error) {
       this.errors.push(report.error);
+      console.error('Page experience check failed', report.error);
       // TODO: Render error states to views
-      console.log('PX failed', report);
       return;
     }
 
