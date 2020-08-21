@@ -93,26 +93,17 @@ export default class PageExperience {
   async runPageExperienceCheck(pageUrl) {
     // Initialize views before running the check to be able
     // to toggle the loading state
-    for (const reportViewContainer of document.querySelectorAll('.ap-m-pixi-primary-metric')) {
-      this.reportViews[reportViewContainer.id] = this.reportViews[reportViewContainer.id] || new CoreWebVitalsReportView(reportViewContainer);
-
-      this.reportViews[reportViewContainer.id].reset();
-      this.reportViews[reportViewContainer.id].toggleLoading(true);
-    }
+    this.reportViews.pageExperience = this.reportViews.pageExperience || new CoreWebVitalsReportView(document, 'core-web-vitals');
 
     const report = await this.pageExperienceCheck.run(pageUrl);
     if (report.error) {
-      this.errors.push(pageExperienceReport.error);
+      this.errors.push(report.error);
       // TODO: Render error states to views
       console.log('PX failed', report);
       return;
     }
 
-    for (const [id, metric] of Object.entries(
-      report.data.coreWebVitals.fieldData
-    )) {
-      this.reportViews[id].render(metric);
-    }
+    this.reportViews.pageExperience.render(report.data.coreWebVitals);
   }
 
   async runSafeBrowsingCheck(pageUrl) {

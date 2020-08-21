@@ -60,9 +60,13 @@
     position: relative;
     width: 100%;
     height: 5px;
-    background-color: color('buttercup');
     border-radius: 2px;
     overflow: hidden;
+    background-color: color('silver');
+
+    &.weighted {
+      background-color: color('buttercup');
+    }
 
     &:after {
       position: absolute;
@@ -85,7 +89,12 @@
     &-positive {
       position: absolute;
       transform-origin: left;
-      background-image: linear-gradient(90deg, color('malachite') 80%, transparentize(color('malachite'), 1));
+      background-color: color('malachite');
+
+
+      .weighted & {
+        background-image: linear-gradient(90deg, color('malachite') 80%, transparentize(color('malachite'), 1));
+      }
     }
 
     &-negative {

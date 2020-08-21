@@ -5,13 +5,19 @@
     <span class="ap-a-pixi-scale-value">0</span>
   </aside>
 
-  <div class="ap-a-pixi-scale-bar">
+  <div class="ap-a-pixi-scale-bar {{ primary_metric.scale or '' }}">
     <div class="ap-a-pixi-scale-bar-positive"></div>
+    {% if primary_metric.scale == 'weighted' %}
     <div class="ap-a-pixi-scale-bar-negative"></div>
+    {% endif %}
   </div>
 
   <div class="ap-a-pixi-scale-pitch">
     <div class="ap-a-pixi-scale-pitch-line-positive">0</div>
+    {% if primary_metric.scale == 'weighted' %}
     <div class="ap-a-pixi-scale-pitch-line-negative">0</div>
+    {% else %}
+    <div class="ap-a-pixi-scale-pitch-line-negative" style="transform: translateX(100%);">100</div>
+    {% endif %}
   </div>
 </div>

@@ -142,22 +142,6 @@
       }
     }
 
-    &-primary {
-      border-radius: 4px;
-      overflow: hidden;
-
-      @media (min-width: 768px) {
-        max-width: 900px;
-        margin: auto;
-        border: solid 2px color('white');
-        transition: border-color 0.2s ease;
-      }
-
-      .pristine & {
-        border-color: transparentize(color('white'), 0.8);
-      }
-    }
-
     &-basic {
       display: flex;
       flex-direction: column;
