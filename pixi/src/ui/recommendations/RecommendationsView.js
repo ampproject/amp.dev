@@ -12,17 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import marked from 'marked';
+
 export default class RecommendationsView {
   constructor(doc) {
     this.container = doc.getElementById('recommendations');
-    this.item = this.container.querySelector('.ap-m-recommendation');
+    this.item = this.container.querySelector('.ap-m-pixi-recommendation');
   }
 
   render(reports) {
     for (const report of reports) {
-      console.log(report);
-      const node = this.item.cloneNode(true);
-      this.container.appendChild(node);
+      const reportView = this.item.cloneNode(true);
+      reportView.style = null;
+      reportView.id = `recommendation-${report.id}`;
+
+      reportView.querySelector('header').setAttribute('on', `tap:recommendation-${report.id}.toggleClass(class=expanded)`);
+      reportView.querySelector('h3').textContent = report.title;
+      reportView.querySelector('p').innerHTML = marked(report.description);
+
+      this.container.appendChild(reportView);
     }
   }
 }
