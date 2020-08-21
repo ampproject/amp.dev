@@ -23,17 +23,26 @@ export default class RecommendationsView {
   render(reports) {
     for (const report of reports) {
       const recommendation = this.item.cloneNode(true);
+      const header = recommendation.querySelector(
+        '.ap-m-pixi-recommendations-item-header'
+      );
+      const title = recommendation.querySelector(
+        '.ap-m-pixi-recommendations-item-header-title'
+      );
+      const body = recommendation.querySelector(
+        '.ap-m-pixi-recommendations-item-body'
+      );
+
       recommendation.style = null;
       recommendation.id = `recommendation-${report.id}`;
 
-      recommendation
-        .querySelector('header')
-        .setAttribute(
-          'on',
-          `tap:recommendation-${report.id}.toggleClass(class=expanded)`
-        );
-      recommendation.querySelector('h3').textContent = report.title;
-      recommendation.querySelector('p').innerHTML = marked(report.description);
+      header.setAttribute(
+        'on',
+        `tap:recommendation-${report.id}.toggleClass(class=expanded)`
+      );
+
+      title.innerHTML = marked(report.title);
+      body.innerHTML = marked(report.description);
 
       this.container.appendChild(recommendation);
     }
