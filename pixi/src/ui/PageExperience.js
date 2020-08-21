@@ -38,7 +38,7 @@ export default class PageExperience {
     this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
 
-    this.recommendationView = new RecommendationsView(document);
+    this.recommendationsView = new RecommendationsView(document);
   }
 
   isValidURL(pageUrl) {
@@ -89,7 +89,7 @@ export default class PageExperience {
       mobileFriendlinessPromise,
     ]);
 
-    this.recommendationView.render(...reports);
+    this.recommendationsView.render(...reports);
 
     this.toggleLoading(false);
   }
@@ -158,6 +158,9 @@ export default class PageExperience {
 
   toggleLoading(force) {
     this.submit.classList.toggle('loading', force);
+    this.recommendationsView.container.classList.remove('pristine');
+    this.recommendationsView.container.classList.toggle('loading', force);
+
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
     }
