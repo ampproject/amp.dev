@@ -1,0 +1,77 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{molecule('pixi-recommendation')} {
+  $root: &;
+  padding: 30px;
+  border: solid 2px color('mercury');
+  border-radius: 4px;
+  transition: transform .25s ease-in,  background .25s ease-in, box-shadow .3s ease-in, border-color .3s ease-in;
+
+  &.expanded {
+    @media (min-width: 768px) {
+      transform: translateY(-.125em);
+      border-color: transparent;
+      background: color('white');
+      box-shadow: 0 15px 30px 0 fade-out(color('black'), .85);
+    }
+
+    #{$root} {
+      &-header {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+      &-body {
+        display: block;
+      }
+    }
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    cursor: pointer;
+
+    h3 {
+      margin: 0;
+    }
+
+    svg {
+      transition: transform .2s ease-out;
+      width: 21px;
+      height: 21px;
+      margin-top: 5px;
+      fill: color('river-bed');
+      transition: transform 0.25s cubic-bezier(0, 0, 0.3, 1);
+    }
+  }
+
+  &-body {
+    display: none;
+    margin-bottom: 30px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &-footer {
+    padding-top: 15px;
+    border-top: 1px solid color('silver');
+
+    span {
+      height: 30px;
+      margin: 15px 8px 15px 0;
+      padding: 3px 10px;
+      border: 1px solid color('silver');
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+      color: color('silver');
+    }
+  }
+}

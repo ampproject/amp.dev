@@ -89,6 +89,12 @@
     @include container-fluid;
   }
 
+  section {
+    max-width: 1050px;
+    margin: auto;
+    padding: 15px;
+  }
+
   &-coming-soon {
     margin-bottom: 100px;
     font-size: 18px;

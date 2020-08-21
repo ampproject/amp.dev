@@ -15,7 +15,7 @@
 export default class RecommendationsView {
   constructor(doc) {
     this.container = doc.getElementById('recommendations');
-    this.item = this.container.querySelector('h3');
+    this.item = this.container.querySelector('.ap-m-recommendation');
   }
 
   render(reports) {
