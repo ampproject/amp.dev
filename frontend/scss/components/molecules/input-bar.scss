@@ -14,13 +14,16 @@
 
 .#{molecule('input-bar')} {
   $root: &;
-  min-height: 96px;
 
   &-container {
     display: flex;
-    height: 60px;
+    height: 50px;
     border-radius: 4px;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+
+    @media (min-width: 1024px) {
+      height: 60px;
+    }
   }
 
   &-textbox {
@@ -32,46 +35,76 @@
       display: block;
       position: absolute;
       bottom: 0;
-      left: 25px;
-      width: calc(100% - 50px);
+      left: 20px;
+      width: calc(100% - 40px);
       height: 2px;
       background: color('red');
       opacity: 0;
       transition: opacity .3s ease-in-out;
+
+      @media (min-width: 1024px) {
+        left: 25px;
+        width: calc(100% - 50px);
+      }
     }
 
     &-field {
       height: 100%;
       width: 100%;
-      padding: 0 25px;
+      padding: 0 20px;
       border: 0;
       border-radius: 4px 0 0 4px;
       font-family: Noto Sans;
       font-size: 18px;
       font-weight: bold;
+
+      @media (min-width: 1024px) {
+        padding: 0 25px;
+      }
     }
   }
 
   &-submit {
     cursor: pointer;
     @include txt-font-accent;
-    min-width: 156px;
+    min-width: 60px;
     margin: 0;
     border: 0;
     border-radius: 0 4px 4px 0;
     text-align: center;
-    font-size: 18px;
+    font-size: 0;
     color: color('white');
     background: color('blue-ribbon');
+
+    svg {
+      transform: rotate(-90deg);
+      height: 20px;
+      width: 20px;
+      fill: color('white');
+    }
+
+    @media (min-width: 600px) {
+      min-width: 156px;
+      font-size: 18px;
+
+      svg {
+        display: none;
+        font-size: 18px;
+      }
+    }
 
     &.loading {
       font-size: 0;
       background: color('mercury');
 
+      svg {
+        display: none;
+      }
+
       @extend %loading-indicator;
       &:after {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
         margin: auto;
         border-width: 2px;
       }
