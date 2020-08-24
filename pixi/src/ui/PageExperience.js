@@ -108,11 +108,13 @@ export default class PageExperience {
     if (report.error) {
       this.errors.push(report.error);
       console.error('Page experience check failed', report.error);
-      // TODO: Render error states to views
+
       return;
     }
 
     this.reportViews.pageExperience.render(report.data.coreWebVitals);
+
+    return report.data.recommendations;
   }
 
   async runSafeBrowsingCheck(pageUrl) {
@@ -130,9 +132,9 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.safeBrowsing.render(data);
+    this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
-    return data;
+    return data.recommendations;
   }
 
   async runLintCheck(pageUrl) {
@@ -145,7 +147,7 @@ export default class PageExperience {
     }
     this.reportViews.httpsCheck.render(data.usesHttps);
 
-    return data;
+    return data.recommendations;
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
@@ -159,9 +161,9 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
     }
-    this.reportViews.mobileFriendliness.render(data);
+    this.reportViews.mobileFriendliness.render(data.mobileFriendliness);
 
-    return data;
+    return data.recommendations;
   }
 
   toggleLoading(force) {

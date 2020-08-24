@@ -30,8 +30,13 @@ export default class MobileFriendlinessCheck {
     if (error || apiResult.testStatus.status !== 'COMPLETE') {
       return {error, data: false};
     }
-
-    return {error, data: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY'};
+    return {
+      error,
+      data: {
+        mobileFriendliness: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY',
+        recommendations: [],
+      },
+    };
   }
 
   async fetchJson(pageUrl) {
