@@ -13,9 +13,9 @@ AMP Optimizers are tools that bring AMP Cache optimizations to your own site. Us
 
 ## Isn’t AMP already fast?
 
-In the beginning, AMP caches served the majority of AMP pages. These caches performed additional optimizations on pages to guarantee a strong user experience. But, over time, more surfaces started linking to AMP pages and developers began building entire websites with AMP.
+You may be thinking: wait – isn’t AMP supposed to be fast out-of-the-box? And you would be right: the AMP runtime is optimized for speed and all valid AMP pages load fast. However, there are additional performance optimizations you can implement on your server to help the browser load AMP pages even faster.
 
-To ensure best performance and user experience for AMP pages served on the origin. the AMP team
+In the beginning, AMP caches served the majority of AMP pages. These caches performed additional optimizations on pages to guarantee a strong user experience. But, over time, more surfaces started linking to AMP pages and developers began building entire websites with AMP. That's why the AMP team has started working on AMP Optimizers to allow everyone to serve AMP pages with AMP Cache like performance on their own origin.
 
 ## Integrate an AMP Optimizer
 

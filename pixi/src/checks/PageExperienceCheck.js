@@ -33,44 +33,58 @@ export default class PageExperienceCheck {
     }
   }
 
+  createLabData(metric) {
+    const labData = {
+      numericValue: metric.numericValue,
+      score: metric.score,
+    };
+
+    if (labData.score < 0.5) {
+      labData.category = 'slow';
+    } else if (labData.score < 0.75) {
+      labData.category = 'average';
+    } else {
+      labData.category = 'fast';
+    }
+
+    return labData;
+  }
+
   createReportData(apiResult) {
+    const fieldData = apiResult.loadingExperience.metrics;
+    const labData = apiResult.lighthouseResult.audits;
+
     const report = {
       coreWebVitals: {
         fieldData: {
           lcp: {
             unit: UNIT_SEC,
-            data:
-              apiResult.loadingExperience.metrics[
-                'LARGEST_CONTENTFUL_PAINT_MS'
-              ],
+            data: fieldData.LARGEST_CONTENTFUL_PAINT_MS,
           },
           fid: {
             unit: UNIT_MS,
-            data: apiResult.loadingExperience.metrics['FIRST_INPUT_DELAY_MS'],
+            data: fieldData.FIRST_INPUT_DELAY_MS,
           },
           cls: {
             unit: UNIT_DEC,
-            data:
-              apiResult.loadingExperience.metrics[
-                'CUMULATIVE_LAYOUT_SHIFT_SCORE'
-              ],
+            data: fieldData.CUMULATIVE_LAYOUT_SHIFT_SCORE,
           },
         },
         labData: {
           lcp: {
             id: 'lcp',
             unit: UNIT_SEC,
-            data: apiResult.lighthouseResult.audits['largest-contentful-paint'],
+            data: this.createLabData(labData['largest-contentful-paint']),
           },
           fid: {
             id: 'fid',
             unit: UNIT_MS,
-            data: apiResult.lighthouseResult.audits['interactive'],
+            data: this.createLabData(labData['interactive']),
           },
           cls: {
             id: 'cls',
             unit: UNIT_DEC,
-            data: apiResult.lighthouseResult.audits['cumulative-layout-shift'],
+            data: this.createLabData(labData['cumulative-layout-shift']),
           },
         },
       },

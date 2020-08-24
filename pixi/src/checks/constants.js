@@ -13,7 +13,7 @@
 // limitations under the License.
 
 const UNIT_DEC = {name: '', conversion: 100};
-const UNIT_SEC = {name: 'sec', conversion: 1000};
+const UNIT_SEC = {name: 's', conversion: 1000};
 const UNIT_MS = {name: 'ms', conversion: 1};
 
 module.exports = {

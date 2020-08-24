@@ -4,47 +4,39 @@
 @import '_variables.scss';
 
 .#{molecule('pixi-primary-metric')} {
+  $primary-metric: &;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 25px 0;
-  border-bottom: solid 2px color('mercury');
-  background: color('white');
-
-  &.fast {
-    label {
-      color: color('malachite');
-    }
-    span:after {
-      border-top-color: color('malachite');
-    }
-  }
-
-  &.average {
-    label {
-      color: color('buttercup');
-    }
-    span:after {
-      border-top-color: color('buttercup');
-    }
-  }
-
-  &.slow {
-    label {
-      color: color('red');
-    }
-    span:after {
-      border-top-color: color('red');
-    }
-  }
+  flex-direction: column;
+  padding: 15px 25px;
+  background-color: color('white');
+  transition: opacity 0.2s ease;
 
   @media (min-width: 768px) {
     padding: 38px 25px;
   }
 
-  &:last-child {
-    border-bottom: 0;
+  & + & {
+    border-top: solid 2px color('mercury');
+  }
+
+  &:nth-child(2) {
+    transition-delay: 80ms;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 160ms;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+
+    &:first-child {
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
   }
 
   &-header {
@@ -74,88 +66,24 @@
     }
 
     &-status {
+      display: block;
       color: color('silver');
+
+      .fast & {
+        color: color('malachite');
+      }
+
+      .average & {
+        color: color('buttercup');
+      }
+
+      .slow & {
+        color: color('red');
+      }
     }
   }
 
-  &-info {
-    font-weight: bold;
-    font-size: 14px;
-
-    @media (min-width: 768px) {
-      width: 35%;
-    }
-
-    span {
-      font-weight: normal;
-    }
-  }
-
-  &-graph {
-    height: 100%;
-    width: 100%;
-
-    @media (min-width: 768px) {
-      width: 62%;
-      padding-left: 30px;
-    }
-
-    &-indicator {
-      display: flex;
-      flex-direction: column;
-      white-space: nowrap;
-      font-weight: bold;
-      transform: translateX(calc(100% - 16px));
-      transition: all .6s ease-in-out;
-
-      span {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-right: auto;
-        transform: translate3d(calc(-50% + 8px), 0, 0);
-
-        &:after {
-          content: '';
-          margin: 2px auto 5px auto;
-          border-left: 8px solid transparent;
-          border-right: 8px solid transparent;
-          border-top: 8px solid color('red');
-        }
-      }
-    }
-
-    &-bar {
-      position: relative;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(to right, color('malachite') 0%,color('buttercup') 33%,color('buttercup') 66%, color('red') 100%);
-
-      span {
-        position: absolute;
-        top: -2px;
-        display: flex;
-        flex-direction: column;
-        line-height: 1;
-        white-space: nowrap;
-        transform: translateX(-50%);
-
-        &:first-child {
-          left: 33%;
-        }
-
-        &:last-child {
-          left: 66%;
-        }
-
-        &:before {
-          content: '';
-          width: 1px;
-          height: 10px;
-          margin: 0 auto 5px;
-          background: color('black');
-        }
-      }
-    }
+  .pristine & {
+    opacity: 0;
   }
 }
