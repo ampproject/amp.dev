@@ -24,14 +24,14 @@ describe('Safe browsing check', () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponsePass);
 
     const report = await safeBrowsingCheck.run('http://example.com');
-    expect(report.data).toBe(true);
+    expect(report.data.result).toBe(true);
   });
 
   it('returns threats for unsafe url', async () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponseFail);
 
     const report = await safeBrowsingCheck.run('http://example.com');
-    expect(report.data).toBe(false);
+    expect(report.data.result).toBe(false);
   });
 
   it('throws for invalid API response', async () => {

@@ -112,7 +112,7 @@ export default class PageExperience {
       return;
     }
 
-    this.reportViews.pageExperience.render(report.data.coreWebVitals);
+    this.reportViews.pageExperience.render(report.data.result);
 
     return report.data.recommendations;
   }
@@ -132,7 +132,7 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.safeBrowsing.render(data.safeBrowsing);
+    this.reportViews.safeBrowsing.render(data.result);
 
     return data.recommendations;
   }
@@ -145,7 +145,7 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.httpsCheck.render(data.usesHttps);
+    this.reportViews.httpsCheck.render(data.result);
 
     return data.recommendations;
   }
@@ -161,7 +161,7 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
     }
-    this.reportViews.mobileFriendliness.render(data.mobileFriendliness);
+    this.reportViews.mobileFriendliness.render(data.result);
 
     return data.recommendations;
   }

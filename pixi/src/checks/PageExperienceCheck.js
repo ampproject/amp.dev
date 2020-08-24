@@ -55,7 +55,7 @@ export default class PageExperienceCheck {
     const labData = apiResult.lighthouseResult.audits;
 
     const report = {
-      coreWebVitals: {
+      result: {
         fieldData: {
           lcp: {
             unit: UNIT_SEC,
