@@ -108,7 +108,7 @@ export default class PageExperience {
     if (report.error) {
       this.errors.push(report.error);
       console.error('Page experience check failed', report.error);
-
+      // TODO: Render error states to views
       return;
     }
 
