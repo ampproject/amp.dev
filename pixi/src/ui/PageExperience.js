@@ -22,6 +22,8 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
+import RecommendationsView from './recommendations/RecommendationsView.js';
+
 export default class PageExperience {
   constructor() {
     this.input = document.getElementById('input-field');
@@ -36,6 +38,8 @@ export default class PageExperience {
     this.safeBrowsingCheck = new SafeBrowsingCheck();
     this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
+
+    this.recommendationsView = new RecommendationsView(document);
   }
 
   isValidURL(pageUrl) {
@@ -80,12 +84,14 @@ export default class PageExperience {
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    await Promise.all([
+    const recommendations = await Promise.all([
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
       mobileFriendlinessPromise,
     ]);
+
+    this.recommendationsView.render(recommendations.flat());
 
     this.toggleLoading(false);
   }
@@ -106,7 +112,9 @@ export default class PageExperience {
       return;
     }
 
-    this.reportViews.pageExperience.render(report.data.coreWebVitals);
+    this.reportViews.pageExperience.render(report.data.result);
+
+    return report.data.recommendations;
   }
 
   async runSafeBrowsingCheck(pageUrl) {
@@ -124,7 +132,9 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.safeBrowsing.render(data);
+    this.reportViews.safeBrowsing.render(data.result);
+
+    return data.recommendations;
   }
 
   async runLintCheck(pageUrl) {
@@ -135,7 +145,9 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.httpsCheck.render(data.usesHttps);
+    this.reportViews.httpsCheck.render(data.result);
+
+    return data.recommendations;
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
@@ -149,11 +161,19 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
     }
-    this.reportViews.mobileFriendliness.render(data);
+    this.reportViews.mobileFriendliness.render(data.result);
+
+    return data.recommendations;
   }
 
   toggleLoading(force) {
     this.submit.classList.toggle('loading', force);
+    this.recommendationsView.container.classList.remove('pristine');
+    this.recommendationsView.container.classList.toggle('loading', force);
+
+    for (const report of Object.keys(this.reportViews)) {
+      this.reportViews[report].toggleLoading(force);
+    }
   }
 }
 

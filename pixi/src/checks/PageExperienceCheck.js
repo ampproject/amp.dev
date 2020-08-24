@@ -55,7 +55,7 @@ export default class PageExperienceCheck {
     const labData = apiResult.lighthouseResult.audits;
 
     const report = {
-      coreWebVitals: {
+      result: {
         fieldData: {
           lcp: {
             unit: UNIT_SEC,
@@ -89,6 +89,19 @@ export default class PageExperienceCheck {
         },
       },
     };
+
+    report.recommendations = [];
+    for (const [key, details] of Object.entries(
+      apiResult.lighthouseResult.audits
+    )) {
+      if (details.score) {
+        report.recommendations.push({
+          id: key,
+          title: details.title,
+          description: details.description,
+        });
+      }
+    }
 
     return {data: report};
   }

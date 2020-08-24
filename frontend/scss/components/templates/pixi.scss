@@ -89,6 +89,12 @@
     @include container-fluid;
   }
 
+  section {
+    max-width: 1050px;
+    margin: auto;
+    padding: 15px;
+  }
+
   &-coming-soon {
     margin-bottom: 100px;
     font-size: 18px;
@@ -112,12 +118,10 @@
     grid-column: 1/25;
     margin-bottom: 200px;
 
-
     .ap-m-input-bar {
       max-width: 900px;
       margin: auto;
     }
-
 
     &-reports {
       margin: 57px 0;

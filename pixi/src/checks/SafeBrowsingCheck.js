@@ -30,7 +30,13 @@ export default class SafeBrowsingCheck {
     if (error) {
       return {error};
     }
-    return {error, data: !Object.keys(apiResult).length};
+    return {
+      error,
+      data: {
+        result: !Object.keys(apiResult).length,
+        recommendations: [],
+      },
+    };
   }
 
   async fetchJson(pageUrl) {
