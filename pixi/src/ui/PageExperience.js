@@ -84,14 +84,14 @@ export default class PageExperience {
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    const reports = await Promise.all([
+    const recommendations = await Promise.all([
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
       mobileFriendlinessPromise,
     ]);
 
-    this.recommendationsView.render(...reports);
+    this.recommendationsView.render(recommendations.flat());
 
     this.toggleLoading(false);
   }

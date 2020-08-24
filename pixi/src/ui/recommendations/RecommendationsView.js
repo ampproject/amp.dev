@@ -17,12 +17,14 @@ import marked from 'marked';
 export default class RecommendationsView {
   constructor(doc) {
     this.container = doc.getElementById('recommendations');
-    this.item = this.container.querySelector('.ap-m-pixi-recommendations-item');
+    this.template = this.container.querySelector(
+      '.ap-m-pixi-recommendations-item'
+    );
   }
 
-  render(reports) {
-    for (const report of reports) {
-      const recommendation = this.item.cloneNode(true);
+  render(recommendations) {
+    for (const item of recommendations) {
+      const recommendation = this.template.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
       );
@@ -34,15 +36,15 @@ export default class RecommendationsView {
       );
 
       recommendation.style = null;
-      recommendation.id = `recommendation-${report.id}`;
+      recommendation.id = `recommendation-${item.id}`;
 
       header.setAttribute(
         'on',
-        `tap:recommendation-${report.id}.toggleClass(class=expanded)`
+        `tap:recommendation-${item.id}.toggleClass(class=expanded)`
       );
 
-      title.innerHTML = marked(report.title);
-      body.innerHTML = marked(report.description);
+      title.innerHTML = marked(item.title);
+      body.innerHTML = marked(item.description);
 
       this.container.appendChild(recommendation);
     }
