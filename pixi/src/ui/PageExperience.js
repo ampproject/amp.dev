@@ -112,19 +112,7 @@ export default class PageExperience {
       return;
     }
 
-<<<<<<< HEAD
-    for (const [id, metric] of Object.entries(
-      report.data.coreWebVitals.fieldData
-    )) {
-      this.reportViews[id] =
-        this.reportViews[id] || new CoreWebVitalsReportView(document, id);
-      this.reportViews[id].render(metric);
-    }
-
-    return report.data.recommendations;
-=======
     this.reportViews.pageExperience.render(report.data.coreWebVitals);
->>>>>>> future
   }
 
   async runSafeBrowsingCheck(pageUrl) {
@@ -178,15 +166,12 @@ export default class PageExperience {
 
   toggleLoading(force) {
     this.submit.classList.toggle('loading', force);
-<<<<<<< HEAD
     this.recommendationsView.container.classList.remove('pristine');
     this.recommendationsView.container.classList.toggle('loading', force);
 
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
     }
-=======
->>>>>>> future
   }
 }
 
