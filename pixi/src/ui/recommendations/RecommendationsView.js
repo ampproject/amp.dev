@@ -24,6 +24,9 @@ export default class RecommendationsView {
 
   render(recommendations) {
     for (const item of recommendations) {
+      if (item === undefined) {
+        continue;
+      }
       const recommendation = this.template.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
