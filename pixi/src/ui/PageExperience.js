@@ -145,7 +145,7 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform AMP Linter check', error);
     }
-    this.reportViews.httpsCheck.render(data.result);
+    this.reportViews.httpsCheck.render(data.usesHttps);
 
     return data.recommendations;
   }
