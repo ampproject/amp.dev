@@ -43,7 +43,7 @@ export default class InputBar {
   }
 
   toggleLoading(force) {
-    this.container.classList.toggle('loading', force);
+    this.submit.classList.toggle('loading', force);
   }
 
   get value() {

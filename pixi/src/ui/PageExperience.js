@@ -42,7 +42,6 @@ export default class PageExperience {
 
   async onSubmitUrl() {
     this.toggleLoading(true);
-    this.reports.classList.remove('pristine');
 
     let pageUrl;
     try {
@@ -56,6 +55,8 @@ export default class PageExperience {
       this.inputBar.toggleError(true, 'Please enter a valid URL');
       return;
     }
+
+    this.reports.classList.remove('pristine');
 
     // Everything until here is statically translated by Grow. From now
     // on Pixi might dynamically render translated strings, so wait
