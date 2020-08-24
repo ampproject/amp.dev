@@ -1,0 +1,79 @@
+{% do doc.styles.addCssFile('css/components/organisms/pixi-primary-checks.css') %}
+
+<div class="ap-o-pixi-primary-checks" id="core-web-vitals">
+  <div class="ap-o-pixi-primary-checks-tabs">
+    <button class="ap-o-pixi-primary-checks-tabs-tab active">
+      {{ _('Field data') }}
+    </button>
+    <button class="ap-o-pixi-primary-checks-tabs-tab">
+      {{ _('Lab data') }}
+    </button>
+  </div>
+
+  <div class="ap-o-pixi-primary-checks-data active">
+    {% with primary_metric = {
+      'id': 'fieldData.lcp',
+      'title': {
+        'full': _('Loading speed'),
+        'id': 'LCP'
+      },
+      'scale': 'weighted'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    {% with primary_metric = {
+      'id': 'fieldData.fid',
+      'title': {
+        'full': _('Interactivity'),
+        'id': 'FID'
+      },
+      'scale': 'weighted'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    {% with primary_metric = {
+      'id': 'fieldData.cls',
+      'title': {
+        'full': _('Visual stability'),
+        'id': 'CLS'
+      },
+      'scale': 'weighted'
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+  </div>
+
+  <div class="ap-o-pixi-primary-checks-data">
+    {% with primary_metric = {
+      'id': 'labData.lcp',
+      'title': {
+        'full': _('Loading speed'),
+        'id': 'LCP'
+      }
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    {% with primary_metric = {
+      'id': 'labData.fid',
+      'title': {
+        'full': _('Interactivity'),
+        'id': 'FID'
+      }
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+
+    {% with primary_metric = {
+      'id': 'labData.cls',
+      'title': {
+        'full': _('Visual stability'),
+        'id': 'CLS'
+      }
+    } %}
+    {% include 'views/partials/pixi/primary-metric.j2' %}
+    {% endwith %}
+  </div>
+</div>

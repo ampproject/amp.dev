@@ -85,39 +85,9 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </button>
     </div>
 
-    <div class="ap-t-pixi-checks-reports --pristine">
+    <div id="reports" class="ap-t-pixi-checks-reports pristine">
       <h2>Core Web Vitals</h2>
-      <div class="ap-t-pixi-checks-primary">
-        {% with primary_metric = {
-          'id': 'lcp',
-          'title': {
-            'full': _('Loading speed'),
-            'id': 'LCP'
-          }
-        } %}
-        {% include 'views/partials/pixi/primary-metric.j2' %}
-        {% endwith %}
-
-        {% with primary_metric = {
-          'id': 'fid',
-          'title': {
-            'full': _('Interactivity'),
-            'id': 'FID'
-          }
-        } %}
-        {% include 'views/partials/pixi/primary-metric.j2' %}
-        {% endwith %}
-
-        {% with primary_metric = {
-          'id': 'cls',
-          'title': {
-            'full': _('Visual stability'),
-            'id': 'CLS'
-          }
-        } %}
-        {% include 'views/partials/pixi/primary-metric.j2' %}
-        {% endwith %}
-      </div>
+      {% include 'views/partials/pixi/primary-checks.j2' %}
 
       <h2>Additional checks</h2>
       <div class="ap-t-pixi-checks-basic">

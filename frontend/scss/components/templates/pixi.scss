@@ -132,15 +132,13 @@
         max-width: 900px;
         margin: 30px auto 20px auto;
         color: color('white');
+        transition: opacity 0.2s ease;
       }
-    }
 
-    &-primary {
-      @media (min-width: 768px) {
-        max-width: 900px;
-        margin: auto;
-        border: solid 2px color('white');
-        border-radius: 4px;
+      &.pristine {
+        h2 {
+          opacity: 0.8;
+        }
       }
     }
 
