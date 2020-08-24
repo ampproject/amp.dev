@@ -21,17 +21,13 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
-
 import RecommendationsView from './recommendations/RecommendationsView.js';
+
+import InputBar from './InputBar.js';
 
 export default class PageExperience {
   constructor() {
-    this.input = document.getElementById('input-bar');
-    this.inputField = this.input.querySelector('#input-field');
-    this.inputSubmit = this.input.querySelector('#input-submit');
-    this.inputLabel = this.input.querySelector('label');
-    this.inputSubmit.addEventListener('click', this.onSubmitUrl.bind(this));
-
+    console.log('fgfgh', document);
     this.reports = document.getElementById('reports');
     this.reportViews = {};
     this.errors = [];
@@ -41,39 +37,25 @@ export default class PageExperience {
     this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
 
+    this.inputBar = new InputBar(document, this.onSubmitUrl.bind(this));
     this.recommendationsView = new RecommendationsView(document);
-  }
-
-  isValidURL(pageUrl) {
-    try {
-      const url = new URL(pageUrl);
-      return url.protocol === 'http:' || url.protocol === 'https:';
-    } catch (e) {
-      return false;
-    }
   }
 
   async onSubmitUrl() {
     this.toggleLoading(true);
-    this.toggleInputError(false);
     this.reports.classList.remove('pristine');
 
-    let pageUrl = this.inputField.value;
-    // Can be removed once https://github.com/ampproject/worker-dom/issues/912
-    // is fixed
-    if (!pageUrl) {
-      try {
-        pageUrl = await AMP.getState('pixi.pageUrl');
-      } catch (e) {
-        this.toggleInputError(true, e);
-        console.error('Could not get page URL from amp-state', e);
-      }
+    let pageUrl;
+    try {
+      pageUrl = await this.inputBar.value;
+    } catch (e) {
+      inputBar.toggleInputError(true, e);
     }
 
-    if (!this.isValidURL(pageUrl)) {
+    if (!await this.inputBar.isValid()) {
       this.toggleLoading(false);
-      this.toggleInputError(true, 'Please enter a valid URL')
-      throw new Error('Please enter a valid URL');
+      this.inputBar.toggleError(true, 'Please enter a valid URL');
+      return;
     }
 
     // Everything until here is statically translated by Grow. From now
@@ -172,18 +154,13 @@ export default class PageExperience {
   }
 
   toggleLoading(force) {
-    this.inputSubmit.classList.toggle('loading', force);
+    this.inputBar.toggleLoading(force);
     this.recommendationsView.container.classList.remove('pristine');
     this.recommendationsView.container.classList.toggle('loading', force);
 
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
     }
-  }
-
-  toggleInputError(force, error) {
-    this.input.classList.toggle('error', force)
-    this.inputLabel.textContent = error;
   }
 }
 
