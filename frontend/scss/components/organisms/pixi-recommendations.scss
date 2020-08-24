@@ -18,7 +18,7 @@
       line-height: 1.4;
       color: color('silver');
       opacity: 0;
-      transition: opacity .3s ease-in;
+      transition: opacity 0.3s ease-in;
     }
   }
 
@@ -40,5 +40,9 @@
         opacity: 1;
       }
     }
+  }
+
+  &.loading > .#{molecule('pixi-recommendations-item')} {
+    display: none;
   }
 }
