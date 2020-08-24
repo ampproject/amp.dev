@@ -27,7 +27,6 @@ import InputBar from './InputBar.js';
 
 export default class PageExperience {
   constructor() {
-    console.log('fgfgh', document);
     this.reports = document.getElementById('reports');
     this.reportViews = {};
     this.errors = [];
@@ -52,7 +51,7 @@ export default class PageExperience {
       inputBar.toggleInputError(true, e);
     }
 
-    if (!await this.inputBar.isValid()) {
+    if (!(await this.inputBar.isValid())) {
       this.toggleLoading(false);
       this.inputBar.toggleError(true, 'Please enter a valid URL');
       return;
