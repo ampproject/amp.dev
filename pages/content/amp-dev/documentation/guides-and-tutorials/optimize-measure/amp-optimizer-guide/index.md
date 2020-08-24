@@ -36,10 +36,11 @@ The best way to publish optimized AMP is using a site generator or CMS with buil
 
 ### Custom Build or Server Integrations
 
-You can also integrate an AMP Optimizer yourself. There are two different open source AMP Optimizer implementations available:
+You can also integrate an AMP Optimizer yourself. There are multiple open source AMP Optimizer implementations available:
 
-- [Node.js AMP Optimizer](node-amp-optimizer.md): a Node.js based library for producing optimized AMP. Check out the our getting started guide here on amp.dev.
-- [PHP AMP Optimizer](https://github.com/ampproject/amp-wp/tree/develop/lib/optimizer): a PHP based library for producing optimized AMP.
+- [AMP Optimizer (Node.js)](node-amp-optimizer.md): a Node.js based library for producing optimized AMP. Check out the our getting started guide here on amp.dev.  The implementation is maintained by the AMP team.
+- [AMP Optimizer (PHP)](https://github.com/ampproject/amp-wp/tree/develop/lib/optimizer): a PHP based library for producing optimized AMP. The implementation is maintained by the AMP team.
+- [amp-renderer (Python)](https://github.com/chasefinch/amp-renderer): a Python port of the Node AMP Optimizer.
 
 There are different integrations for pages rendered dynamically by your server and static sites:
 
