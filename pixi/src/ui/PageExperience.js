@@ -26,9 +26,11 @@ import RecommendationsView from './recommendations/RecommendationsView.js';
 
 export default class PageExperience {
   constructor() {
-    this.input = document.getElementById('input-field');
-    this.submit = document.getElementById('input-submit');
-    this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
+    this.input = document.getElementById('input-bar');
+    this.inputField = this.input.querySelector('#input-field');
+    this.inputSubmit = this.input.querySelector('#input-submit');
+    this.inputLabel = this.input.querySelector('label');
+    this.inputSubmit.addEventListener('click', this.onSubmitUrl.bind(this));
 
     this.reports = document.getElementById('reports');
     this.reportViews = {};
@@ -53,21 +55,24 @@ export default class PageExperience {
 
   async onSubmitUrl() {
     this.toggleLoading(true);
+    this.toggleInputError(false);
     this.reports.classList.remove('pristine');
 
-    let pageUrl = this.input.value;
+    let pageUrl = this.inputField.value;
     // Can be removed once https://github.com/ampproject/worker-dom/issues/912
     // is fixed
     if (!pageUrl) {
       try {
         pageUrl = await AMP.getState('pixi.pageUrl');
       } catch (e) {
+        this.toggleInputError(true, e);
         console.error('Could not get page URL from amp-state', e);
       }
     }
 
     if (!this.isValidURL(pageUrl)) {
       this.toggleLoading(false);
+      this.toggleInputError(true, 'Please enter a valid URL')
       throw new Error('Please enter a valid URL');
     }
 
@@ -167,13 +172,18 @@ export default class PageExperience {
   }
 
   toggleLoading(force) {
-    this.submit.classList.toggle('loading', force);
+    this.inputSubmit.classList.toggle('loading', force);
     this.recommendationsView.container.classList.remove('pristine');
     this.recommendationsView.container.classList.toggle('loading', force);
 
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
     }
+  }
+
+  toggleInputError(force, error) {
+    this.input.classList.toggle('error', force)
+    this.inputLabel.textContent = error;
   }
 }
 
