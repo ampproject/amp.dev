@@ -13,6 +13,7 @@
 // limitations under the License.
 
 const API_ENDPOINT = API_ENDPOINT_LINTER;
+const PASSING_STATUS = 'PASS';
 
 export default class AmpLinterCheck {
   constructor() {
@@ -24,18 +25,28 @@ export default class AmpLinterCheck {
 
     try {
       const apiResult = await this.fetchJson();
-      return this.parseApiResult(apiResult);
+      return this.createReportData(apiResult);
     } catch (e) {
       return this.createError(e);
     }
   }
 
-  parseApiResult(apiResult) {
-    if (apiResult.status != 'ok') {
-      return this.createError(new Error(apiResult.message));
-    }
-
-    return this.createReportData(apiResult);
+  parseRecommendations(data) {
+    const values = Object.entries(data).map(([key, value]) => {
+      return Array.isArray(value)
+        ? value.map((x) => ({id: key, ...x}))
+        : {id: key, ...value};
+    });
+    const recommendations = values
+      .flat()
+      .filter((finding) => finding.status !== PASSING_STATUS)
+      .map((finding) => ({
+        id: finding.id,
+        title: finding.title,
+        description: finding.message || '',
+        url: finding.url,
+      }));
+    return recommendations;
   }
 
   createError(error) {
@@ -43,11 +54,16 @@ export default class AmpLinterCheck {
   }
 
   createReportData(apiResult) {
+    if (apiResult.status != 'ok') {
+      return this.createError(new Error(apiResult.message));
+    }
+
     return {
       data: {
+        components: apiResult.components,
+        recommendations: this.parseRecommendations(apiResult.data || {}),
         usesHttps:
           apiResult.url != undefined && apiResult.url.startsWith('https:'),
-        recommendations: [],
       },
     };
   }
