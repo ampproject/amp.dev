@@ -78,10 +78,15 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   {% import '/views/partials/pixi/webpack.j2' as webpack %}
   <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
     <div class="ap-m-input-bar">
-      <input id="input-field" class="ap-m-input-bar-field" type="url" name="url" placeholder="{{ _('Enter your URL') }}" value="[= query.url =]">
-      <button id="input-submit" class="ap-m-input-bar-submit" name="button">
-        {{ _('Analyze') }}
-      </button>
+      <div class="ap-m-input-bar-container">
+        <div class="ap-m-input-bar-textbox">
+          <input id="input-field" class="ap-m-input-bar-textbox-field" type="url" name="url" placeholder="{{ _('Enter your URL') }}" value="[= query.url =]">
+        </div>
+        <button id="input-submit" class="ap-m-input-bar-submit" name="button">
+          {{ _('Analyze') }}
+        </button>
+      </div>
+      <label class="ap-m-input-bar-label">Lorem bals</label>
     </div>
 
     <div id="reports" class="ap-t-pixi-checks-reports pristine">
