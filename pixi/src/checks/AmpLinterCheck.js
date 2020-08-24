@@ -45,7 +45,9 @@ export default class AmpLinterCheck {
   createReportData(apiResult) {
     return {
       data: {
-        usesHttps: apiResult.url.startsWith('https:'),
+        usesHttps:
+          apiResult.url != undefined && apiResult.url.startsWith('https:'),
+        recommendations: [],
       },
     };
   }

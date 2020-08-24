@@ -29,6 +29,8 @@ export default class BooleanCheckReportView {
       this.label.textContent = 'Analysis failed';
       this.container.classList.add('error');
     }
+
+    this.toggleLoading(false);
   }
 
   toggleLoading(force) {

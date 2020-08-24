@@ -28,10 +28,20 @@ export default class MobileFriendlinessCheck {
 
   createReportData(error, apiResult) {
     if (error || apiResult.testStatus.status !== 'COMPLETE') {
-      return {error, data: false};
+      return {
+        error,
+        data: {
+          result: false,
+        },
+      };
     }
-
-    return {error, data: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY'};
+    return {
+      error,
+      data: {
+        result: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY',
+        recommendations: [],
+      },
+    };
   }
 
   async fetchJson(pageUrl) {

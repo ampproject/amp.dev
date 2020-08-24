@@ -22,12 +22,15 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
+import RecommendationsView from './recommendations/RecommendationsView.js';
+
 export default class PageExperience {
   constructor() {
     this.input = document.getElementById('input-field');
     this.submit = document.getElementById('input-submit');
     this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
 
+    this.reports = document.getElementById('reports');
     this.reportViews = {};
     this.errors = [];
 
@@ -35,6 +38,8 @@ export default class PageExperience {
     this.safeBrowsingCheck = new SafeBrowsingCheck();
     this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
+
+    this.recommendationsView = new RecommendationsView(document);
   }
 
   isValidURL(pageUrl) {
@@ -48,6 +53,7 @@ export default class PageExperience {
 
   async onSubmitUrl() {
     this.toggleLoading(true);
+    this.reports.classList.remove('pristine');
 
     let pageUrl = this.input.value;
     // Can be removed once https://github.com/ampproject/worker-dom/issues/912
@@ -78,38 +84,47 @@ export default class PageExperience {
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    await Promise.all([
+    const recommendations = await Promise.all([
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
       mobileFriendlinessPromise,
     ]);
 
+    this.recommendationsView.render(recommendations.flat());
+
     this.toggleLoading(false);
   }
 
   async runPageExperienceCheck(pageUrl) {
+    // Initialize views before running the check to be able
+    // to toggle the loading state
+    this.reportViews.pageExperience =
+      this.reportViews.pageExperience ||
+      new CoreWebVitalsReportView(document, 'core-web-vitals');
+    this.reportViews.pageExperience.reset();
+
     const report = await this.pageExperienceCheck.run(pageUrl);
     if (report.error) {
-      this.errors.push(pageExperienceReport.error);
+      this.errors.push(report.error);
+      console.error('Page experience check failed', report.error);
+      // TODO: Render error states to views
       return;
     }
 
-    for (const [id, metric] of Object.entries(
-      report.data.coreWebVitals.fieldData
-    )) {
-      this.reportViews[id] =
-        this.reportViews[id] || new CoreWebVitalsReportView(document, id);
-      this.reportViews[id].render(metric);
-    }
+    this.reportViews.pageExperience.render(report.data.result);
+
+    return report.data.recommendations;
   }
 
   async runSafeBrowsingCheck(pageUrl) {
-    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
     this.reportViews.safeBrowsing = new BooleanCheckReportView(
       document,
       'safe-browsing'
     );
+    this.reportViews.safeBrowsing.toggleLoading(true);
+
+    const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
 
     // Do not surface the actual error to the user. Simply log it
     // The BooleanCheckReportView will show "Analysis failed"
@@ -117,33 +132,45 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.safeBrowsing.render(data);
+    this.reportViews.safeBrowsing.render(data.result);
+
+    return data.recommendations;
   }
 
   async runLintCheck(pageUrl) {
+    this.reportViews.httpsCheck = new BooleanCheckReportView(document, 'https');
+    this.reportViews.httpsCheck.toggleLoading(true);
+
     const {error, data} = await this.linterCheck.run(pageUrl);
     if (error) {
-      console.error('Could not perform safe browsing check', error);
+      console.error('Could not perform AMP Linter check', error);
     }
-    this.reportViews.httpsCheck = new BooleanCheckReportView(document, 'https');
-    this.reportViews.httpsCheck.render(data.usesHttps);
+    this.reportViews.httpsCheck.render(data.result);
+
+    return data.recommendations;
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
-    const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
-    if (error) {
-      console.error('Could not perform mobile friendliness check', error);
-    }
-
     this.reportViews.mobileFriendliness = new BooleanCheckReportView(
       document,
       'mobile-friendliness'
     );
-    this.reportViews.mobileFriendliness.render(data);
+    this.reportViews.mobileFriendliness.toggleLoading(true);
+
+    const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
+    if (error) {
+      console.error('Could not perform mobile friendliness check', error);
+    }
+    this.reportViews.mobileFriendliness.render(data.result);
+
+    return data.recommendations;
   }
 
   toggleLoading(force) {
     this.submit.classList.toggle('loading', force);
+    this.recommendationsView.container.classList.remove('pristine');
+    this.recommendationsView.container.classList.toggle('loading', force);
+
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
     }

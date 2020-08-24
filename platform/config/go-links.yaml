@@ -3,6 +3,7 @@
 /ads: /about/ads/
 /ampdevmode: https://github.com/ampproject/amphtml/issues/20974
 /amp-optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
+/amp-packager: https://github.com/ampproject/amppackager
 /amp-pwa-amp: https://blog.amp.dev/2018/06/19/the-shadow-reader-improved/
 /amp-script-apis: https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md
 /ampcs: /events/amp-cs-2019/#Schedule
