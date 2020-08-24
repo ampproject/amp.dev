@@ -102,15 +102,35 @@
 
   &-intro {
     margin-left: 17px;
+
     &-text {
       padding: 0px 0px 20px;
     }
+
     @media (min-width: 768px) {
       grid-column: 4/22;
       margin-left: 0;
     }
+
     @media (min-width: 1024px) {
       grid-column: 8/20;
+    }
+  }
+
+  &-title {
+    margin-left: 17px;
+
+    &-text {
+      padding: 0px 0px 20px;
+    }
+
+    @media (min-width: 768px) {
+      grid-column: 4/22;
+      margin-left: 0;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 6/20;
     }
   }
 

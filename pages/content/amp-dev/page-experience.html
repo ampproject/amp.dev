@@ -75,6 +75,8 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </script>
   </amp-state>
 
+  <h2 class="ap-t-pixi-title">{{ _('Analyze your AMP page') }}</h2>
+
   {% import '/views/partials/pixi/webpack.j2' as webpack %}
   <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
     <div class="ap-m-input-bar">
