@@ -28,9 +28,12 @@ export default class MobileFriendlinessCheck {
 
   createReportData(error, apiResult) {
     if (error || apiResult.testStatus.status !== 'COMPLETE') {
-      return {error, data: {
-        result: false
-      }};
+      return {
+        error,
+        data: {
+          result: false,
+        },
+      };
     }
     return {
       error,
