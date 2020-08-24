@@ -41,4 +41,13 @@ describe('Linter check', () => {
     expect(report.error).toBeDefined();
     expect(report.data).toBe(undefined);
   });
+
+  it('should parse recommendation from result', async () => {
+    fetchMock.mock(`begin:${apiEndpoint}`, apiResponsePass);
+
+    const report = await linterCheck.run('http://example.com');
+    expect(report.data.components).toBeDefined();
+    expect(report.data.recommendations).toBeDefined();
+    expect(report.data.usesHttps).toBe(true);
+  });
 });
