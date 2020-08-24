@@ -143,7 +143,7 @@ export default class PageExperience {
 
     const {error, data} = await this.linterCheck.run(pageUrl);
     if (error) {
-      console.error('Could not perform safe browsing check', error);
+      console.error('Could not perform AMP Linter check', error);
     }
     this.reportViews.httpsCheck.render(data.result);
 
