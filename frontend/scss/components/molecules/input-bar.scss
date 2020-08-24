@@ -36,7 +36,7 @@
       position: absolute;
       bottom: 0;
       left: 20px;
-      width: calc(100% - 40px);
+      right: 20px;
       height: 2px;
       background: color('red');
       opacity: 0;
@@ -44,7 +44,7 @@
 
       @media (min-width: 1024px) {
         left: 25px;
-        width: calc(100% - 50px);
+        right: 25px;
       }
     }
 
@@ -76,20 +76,19 @@
     color: color('white');
     background: color('blue-ribbon');
 
+    @media (min-width: 600px) {
+      min-width: 156px;
+      font-size: 18px;
+    }
+
     svg {
       transform: rotate(-90deg);
       height: 20px;
       width: 20px;
       fill: color('white');
-    }
 
-    @media (min-width: 600px) {
-      min-width: 156px;
-      font-size: 18px;
-
-      svg {
+      @media (min-width: 600px) {
         display: none;
-        font-size: 18px;
       }
     }
 
