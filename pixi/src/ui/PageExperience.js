@@ -22,6 +22,7 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
+import SatusBannerView from './SatusBannerView.js';
 import RecommendationsView from './recommendations/RecommendationsView.js';
 
 export default class PageExperience {
@@ -39,6 +40,7 @@ export default class PageExperience {
     this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
 
+    this.satusBannerView = new SatusBannerView(document);
     this.recommendationsView = new RecommendationsView(document);
   }
 
@@ -91,6 +93,7 @@ export default class PageExperience {
       mobileFriendlinessPromise,
     ]);
 
+    this.satusBannerView.render(this.errors);
     this.recommendationsView.render(recommendations.flat());
 
     this.toggleLoading(false);
