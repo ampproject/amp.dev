@@ -39,6 +39,6 @@ describe('Linter check', () => {
 
     const report = await linterCheck.run('http://example.com');
     expect(report.error).toBeDefined();
-    expect(report.data).toBe(undefined);
+    expect(report.data.result).toBe(undefined);
   });
 });
