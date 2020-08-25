@@ -30,9 +30,9 @@ class SimpleScale {
   render(data, unit) {
     this.bar.style.transform = `scale3d(${data.score}, 1, 1)`;
 
-    this.value.textContent = `${data.numericValue / unit.conversion}${
-      unit.name
-    }`;
+    this.value.textContent = `${(data.numericValue / unit.conversion).toFixed(
+      1
+    )}${unit.name}`;
     this.indicator.style.marginLeft = `${data.score * 100}%`;
     this.value.style.width = `0`;
   }
