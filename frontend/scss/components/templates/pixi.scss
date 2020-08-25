@@ -117,33 +117,15 @@
     }
   }
 
-  &-title {
-    margin-left: 17px;
-
-    @media (min-width: 768px) {
-      grid-column: 4/22;
-      margin-left: 0;
-    }
-
-    @media (min-width: 1024px) {
-      grid-column: 6/20;
-    }
-  }
-
   &-checks {
     grid-column: 1/25;
     margin-bottom: 200px;
 
-    @media (min-width: 768px) {
-      grid-column: 1/25;
-      margin-bottom: 200px;
-      display: grid;
-      grid-template-columns: repeat(24,1fr);
-      grid-gap: 30px;
-    }
-
     section {
       grid-column: 6/20;
+      max-width: 1050px;
+      margin: 30px auto;
+      padding: 15px;
     }
 
     &-reports {
@@ -151,13 +133,6 @@
       margin: 57px 0;
       padding: 60px 0 80px;
       background: linear-gradient(225deg,#00dcc0 0,#005af0 75%);
-
-      @media (min-width: 768px) {
-        grid-column: 1/25;
-        display: grid;
-        grid-template-columns: repeat(24,1fr);
-        grid-gap: 30px;
-      }
 
       section {
         grid-column: 6/20;
