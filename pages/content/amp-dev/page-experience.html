@@ -79,8 +79,6 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </script>
   </amp-state>
 
-  <h2 class="ap-t-pixi-title">{{ _('Analyze your AMP page') }}</h2>
-
   {% import '/views/partials/pixi/webpack.j2' as webpack %}
   <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
 
@@ -89,40 +87,44 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     {% include 'views/partials/pixi/status-banner.j2' %}
 
     <div id="reports" class="ap-t-pixi-checks-reports pristine">
-      <h2>Core Web Vitals</h2>
-      {% include 'views/partials/pixi/primary-checks.j2' %}
+      <section>
+        <h2>Core Web Vitals</h2>
+        {% include 'views/partials/pixi/primary-checks.j2' %}
+      </section>
 
-      <h2>Additional checks</h2>
-      <div class="ap-t-pixi-checks-basic">
-        {% with basic_metric = {
-          'id': 'safe-browsing',
-          'title': _('Safe Browsing')
-        } %}
-        {% include 'views/partials/pixi/basic-metric.j2' %}
-        {% endwith %}
+      <section>
+        <h2>Additional checks</h2>
+        <div class="ap-t-pixi-checks-basic">
+          {% with basic_metric = {
+            'id': 'safe-browsing',
+            'title': _('Safe Browsing')
+          } %}
+          {% include 'views/partials/pixi/basic-metric.j2' %}
+          {% endwith %}
 
-        {% with basic_metric = {
-          'id': 'https',
-          'title': _('HTTPS')
-        } %}
-        {% include 'views/partials/pixi/basic-metric.j2' %}
-        {% endwith %}
+          {% with basic_metric = {
+            'id': 'https',
+            'title': _('HTTPS')
+          } %}
+          {% include 'views/partials/pixi/basic-metric.j2' %}
+          {% endwith %}
 
-        {% with basic_metric = {
-          'id': 'mobile-friendliness',
-          'title': _('Mobile Friendliness'),
-        } %}
-        {% include 'views/partials/pixi/basic-metric.j2' %}
-        {% endwith %}
+          {% with basic_metric = {
+            'id': 'mobile-friendliness',
+            'title': _('Mobile Friendliness'),
+          } %}
+          {% include 'views/partials/pixi/basic-metric.j2' %}
+          {% endwith %}
 
-        {% with basic_metric = {
-          'id': 'intrusive-interstitials',
-          'title': _('Intrusive Interstitials'),
-          'status': _('Check manually')
-        } %}
-        {% include 'views/partials/pixi/basic-metric.j2' %}
-        {% endwith %}
-      </div>
+          {% with basic_metric = {
+            'id': 'intrusive-interstitials',
+            'title': _('Intrusive Interstitials'),
+            'status': _('Check manually')
+          } %}
+          {% include 'views/partials/pixi/basic-metric.j2' %}
+          {% endwith %}
+        </div>
+      </section>
     </div>
 
     {% include 'views/partials/pixi/recommendations.j2' %}

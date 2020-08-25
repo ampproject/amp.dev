@@ -15,6 +15,14 @@
 .#{molecule('input-bar')} {
   $root: &;
 
+  &-title {
+    padding-left: 20px;
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
+  }
+
   &-container {
     display: flex;
     height: 50px;
