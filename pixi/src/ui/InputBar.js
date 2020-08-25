@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/* eslint-disable max-len */
+const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+
 export default class InputBar {
   constructor(doc, callback) {
     this.container = doc.getElementById('input-bar');
@@ -27,13 +30,29 @@ export default class InputBar {
     });
   }
 
-  async isValid() {
-    const pageUrl = await this.value;
-    try {
-      const url = new URL(pageUrl);
-      return url.protocol === 'http:' || url.protocol === 'https:';
-    } catch (e) {
-      return false;
+  async getPageUrl() {
+    let value = this.field.value;
+
+    if (!value) {
+      try {
+        // Can be removed once https://github.com/ampproject/worker-dom/issues/912
+        value = await AMP.getState('pixi.pageUrl');
+      } catch (e) {
+        console.error('Could not get URL from amp state', e);
+      }
+    }
+
+    const pageUrl =
+      value.startsWith('http://') || value.startsWith('https://') ?
+      value :
+      `http://${value}`;
+
+    if (pageUrl.match(URL_VALIDATION_REGEX)) {
+      this.toggleError(false);
+      return pageUrl;
+    } else {
+      this.toggleError(true, 'Please enter a valid URL');
+      return;
     }
   }
 
@@ -46,12 +65,4 @@ export default class InputBar {
     this.submit.classList.toggle('loading', force);
   }
 
-  get value() {
-    if (this.field.value) {
-      return Promise.resolve(this.field.value);
-    }
-
-    // Can be removed once https://github.com/ampproject/worker-dom/issues/912
-    return AMP.getState('pixi.pageUrl');
-  }
 }
