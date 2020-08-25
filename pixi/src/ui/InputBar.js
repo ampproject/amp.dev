@@ -24,7 +24,7 @@ export default class InputBar {
 
     this.submit.addEventListener('click', callback);
     this.field.addEventListener('keydown', (e) => {
-      if (e.keyCode == 13) {
+      if (e.keyCode == 13 && !this.submit.classList.contains('loading')) {
         callback();
       }
     });
