@@ -46,20 +46,20 @@ export default class PageExperience {
   async onSubmitUrl() {
     this.toggleLoading(true);
 
+    // Everything until here is statically translated by Grow. From now
+    // on Pixi might dynamically render translated strings, so wait
+    // for them to be ready
+    await i18n.init();
+
     const pageUrl = await this.inputBar.getPageUrl();
     if (!pageUrl) {
       this.toggleLoading(false);
-      this.inputBar.toggleError(true, 'Please enter a valid URL');
+      this.inputBar.toggleError(true, i18n.translate('Please enter a valid URL'));
       return;
     }
 
     this.reports.classList.remove('pristine');
     this.recommendationsView.container.classList.remove('pristine');
-
-    // Everything until here is statically translated by Grow. From now
-    // on Pixi might dynamically render translated strings, so wait
-    // for them to be ready
-    await i18n.init();
 
     // Reset errors from previous runs
     this.errors = [];
