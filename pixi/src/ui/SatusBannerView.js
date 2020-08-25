@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import i18n from './I18n.js';
+
 export default class SatusBannerView {
   constructor(doc) {
     this.banner = doc.getElementById('status-banner');
@@ -26,15 +28,12 @@ export default class SatusBannerView {
   render(errors) {
     if (!errors.length) {
       this.banner.classList.add('pass');
-      this.bannerTitle.textContent =
-        'Wow! Your AMP page has a great page experience!';
-      this.bannerText.textContent =
-        'This page creates a great page experience!';
+      this.bannerTitle.textContent = i18n.translate('Wow! Your AMP page has a great page experience!');
+      this.bannerText.textContent = i18n.translate('This page creates a great page experience!');
     } else {
       this.banner.classList.add('fail');
-      this.bannerTitle.textContent = 'Oops! Looks like something went wrong.';
-      this.bannerText.textContent =
-        "It seems like we weren't able to get reliable results. Please rerun the test.";
+      this.bannerTitle.textContent = i18n.translate('Oops! Looks like something went wrong.');
+      this.bannerText.textContent = i18n.translate('It seems like we weren\'t able to get reliable results. Please rerun the test.');
     }
   }
 }
