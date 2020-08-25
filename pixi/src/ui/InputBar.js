@@ -43,9 +43,9 @@ export default class InputBar {
     }
 
     const pageUrl =
-      value.startsWith('http://') || value.startsWith('https://') ?
-      value :
-      `http://${value}`;
+      value.startsWith('http://') || value.startsWith('https://')
+        ? value
+        : `http://${value}`;
 
     if (pageUrl.match(URL_VALIDATION_REGEX)) {
       this.toggleError(false);
@@ -64,5 +64,4 @@ export default class InputBar {
   toggleLoading(force) {
     this.submit.classList.toggle('loading', force);
   }
-
 }
