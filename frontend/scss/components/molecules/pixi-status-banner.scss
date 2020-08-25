@@ -4,9 +4,7 @@
 @import '_variables.scss';
 
 .#{molecule('pixi-status-banner')} {
-  max-width: 900px;
   min-height: 220px;
-  margin: 60px auto;
   padding: 30px 30px 50px 60px;
   border-radius: 4px;
   border: solid 2px color('mercury');

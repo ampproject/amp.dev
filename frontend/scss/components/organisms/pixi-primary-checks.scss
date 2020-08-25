@@ -13,8 +13,6 @@
   transition: opacity 0.2s ease;
 
   @media (min-width: 768px) {
-    max-width: 900px;
-    margin: auto;
     border: solid 2px transparent;
     transition: border-color 0.05s ease;
   }
