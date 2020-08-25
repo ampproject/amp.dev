@@ -155,10 +155,20 @@
       display: flex;
       flex-direction: column;
       border-radius: 4px;
+      overflow: hidden;
+
+      .pristine & {
+        border: solid 2px transparentize(color('white'), 0.8);
+
+        @media (min-width: 768px) {
+          border: 0;
+        }
+      }
 
       @media (min-width: 768px) {
         flex-direction: row;
         justify-content: space-between;
+        border: 0;
       }
     }
   }
