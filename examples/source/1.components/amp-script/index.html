@@ -175,7 +175,7 @@ author:
     </div>
 
     <!--
-      ## Using a WebSocket for a live blog
+      ## Using a WebSocket for live updates
       `amp-script` supports WebSockets. This example simulates a live blog.
     -->
     <div>
@@ -191,7 +191,7 @@ author:
         button.addEventListener("click", () => {
           button.setAttribute('disabled', '');
           button.textContent = 'Live blog begun';
-          const socket = new WebSocket('ws://localhost:8080/documentation/examples/api/socket/live-blog');
+          const socket = new WebSocket('<% hosts.platform.replace(/.+\/\//, "ws://") %>/documentation/examples/api/socket/live-blog');
           
           socket.onmessage = event => {
             let newDiv = document.createElement('div');
