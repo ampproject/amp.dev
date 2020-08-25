@@ -28,12 +28,20 @@ export default class SatusBannerView {
   render(errors) {
     if (!errors.length) {
       this.banner.classList.add('pass');
-      this.bannerTitle.textContent = i18n.translate('Wow! Your AMP page has a great page experience!');
-      this.bannerText.textContent = i18n.translate('This page creates a great page experience!');
+      this.bannerTitle.textContent = i18n.translate(
+        'Wow! Your AMP page has a great page experience!'
+      );
+      this.bannerText.textContent = i18n.translate(
+        'This page creates a great page experience!'
+      );
     } else {
       this.banner.classList.add('fail');
-      this.bannerTitle.textContent = i18n.translate('Oops! Looks like something went wrong.');
-      this.bannerText.textContent = i18n.translate('It seems like we weren\'t able to get reliable results. Please rerun the test.');
+      this.bannerTitle.textContent = i18n.translate(
+        'Oops! Looks like something went wrong.'
+      );
+      this.bannerText.textContent = i18n.translate(
+        "It seems like we weren't able to get reliable results. Please rerun the test."
+      );
     }
   }
 }
