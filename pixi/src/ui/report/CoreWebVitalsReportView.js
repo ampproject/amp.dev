@@ -15,9 +15,9 @@
 import i18n from '../I18n.js';
 
 const CATEGORIES = {
-  fast: 'fast',
-  average: 'average',
-  slow: 'slow',
+  fast: 'Good',
+  average: 'Needs Improvement',
+  slow: 'Poor',
 };
 
 class SimpleScale {
@@ -118,9 +118,10 @@ class CoreWebVitalView {
 
     this.scale.render(data, unit);
 
-    const category = CATEGORIES[data.category.toLowerCase()];
-    this.container.classList.add(category);
-    this.category.textContent = category.toUpperCase();
+    const responseCategory = data.category.toLowerCase();
+    const displayCategory = CATEGORIES[responseCategory];
+    this.container.classList.add(responseCategory);
+    this.category.textContent = displayCategory;
 
     this.improvement.textContent = 'Not yet implemented';
     this.recommendations.textContent = 'Not yet implemented';
