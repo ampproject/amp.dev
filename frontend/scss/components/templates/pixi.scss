@@ -100,33 +100,32 @@
     font-size: 18px;
   }
 
+  section {
+    grid-column: 6/20;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 15px;
+
+    @media (min-width: 1024px) {
+      margin: 30px auto;
+    }
+  }
+
   &-intro {
     margin-left: 17px;
 
-    &-text {
-      padding: 0 0 20px;
-    }
+    p {
+      padding-left: 20px;
 
-    @media (min-width: 768px) {
-      grid-column: 4/22;
-      margin-left: 0;
-    }
-
-    @media (min-width: 1024px) {
-      grid-column: 9/19;
+      @media (min-width: 768px) {
+        padding: 0;
+      }
     }
   }
 
   &-checks {
     grid-column: 1/25;
     margin-bottom: 200px;
-
-    section {
-      grid-column: 6/20;
-      max-width: 1050px;
-      margin: 30px auto;
-      padding: 15px;
-    }
 
     &-reports {
       grid-column: 1/25;
