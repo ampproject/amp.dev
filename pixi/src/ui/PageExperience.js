@@ -46,20 +46,15 @@ export default class PageExperience {
   async onSubmitUrl() {
     this.toggleLoading(true);
 
-    let pageUrl;
-    try {
-      pageUrl = await this.inputBar.value;
-    } catch (e) {
-      inputBar.toggleInputError(true, e);
-    }
-
-    if (!(await this.inputBar.isValid())) {
+    const pageUrl = await this.inputBar.getPageUrl();
+    if (!pageUrl) {
       this.toggleLoading(false);
       this.inputBar.toggleError(true, 'Please enter a valid URL');
       return;
     }
 
     this.reports.classList.remove('pristine');
+    this.recommendationsView.container.classList.remove('pristine');
 
     // Everything until here is statically translated by Grow. From now
     // on Pixi might dynamically render translated strings, so wait
@@ -159,7 +154,6 @@ export default class PageExperience {
 
   toggleLoading(force) {
     this.inputBar.toggleLoading(force);
-    this.recommendationsView.container.classList.remove('pristine');
     this.recommendationsView.container.classList.toggle('loading', force);
 
     for (const report of Object.keys(this.reportViews)) {
