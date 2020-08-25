@@ -58,7 +58,6 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </p>
   </section>
 
-  {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %}
   <amp-state id="pixi">
     <script type="application/json">
       {
@@ -72,21 +71,20 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
             "Wow! Your AMP page has a great page experience!": "{{ _('Wow! Your AMP page has a great page experience!') }}",
             "This page creates a great page experience!": "{{ _('This page creates a great page experience!') }}",
             "Oops! Looks like something went wrong.": "{{ _('Oops! Looks like something went wrong.') }}",
-            "It seems like we weren't able to get reliable results. Please rerun the test.": "{{ _('It seems like we weren\'t able to get reliable results. Please rerun the test.') }}"
+            "It seems like we weren't able to get reliable results. Please rerun the test.": "{{ _('It seems like we weren\'t able to get reliable results. Please rerun the test.') }}",
+            "Please enter a valid URL": "{{ _('Please enter a valid URL') }}"
           }
         }
       }
     </script>
   </amp-state>
 
+  <h2 class="ap-t-pixi-title">{{ _('Analyze your AMP page') }}</h2>
+
   {% import '/views/partials/pixi/webpack.j2' as webpack %}
   <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
-    <div class="ap-m-input-bar">
-      <input id="input-field" class="ap-m-input-bar-field" type="url" name="url" placeholder="{{ _('Enter your URL') }}" value="[= query.url =]">
-      <button id="input-submit" class="ap-m-input-bar-submit" name="button">
-        {{ _('Analyze') }}
-      </button>
-    </div>
+
+    {% include 'views/partials/pixi/input-bar.j2' %}
 
     {% include 'views/partials/pixi/status-banner.j2' %}
 
