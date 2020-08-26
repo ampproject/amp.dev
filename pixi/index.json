@@ -1,0 +1,41 @@
+{
+  "globalText": {
+    "analyzeFieldPlaceholder": "Gib die URL ein",
+    "analyzeHeadline": "Analysiere deine AMP Seite",
+    "analyzeButton": "Analysieren"
+  },
+  "statusBanners": {
+    "invalid-url": {
+      "body": "We were unable to load the page you requested.\nMake sure you are testing the correct URL and that the server is responding properly.",
+      "status": "error",
+      "title": "This URL is invalid."
+    }
+  },
+  "recommendations": {
+    "valid-cached-amp": {
+      "body": "AMP doesn't just make your pages fast, it validates your page's speed!\nValidation makes third parties, such as Twitter, Instagram, or Google Search,\nfeel great about serving AMP pages in new and interesting ways.\nCreating valid AMP pages makes your content available for caching in \n[AMP caches](https://amp.dev/documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached/#what-amp-caches-are-available?),\nwhich is essentially access to free CDNs!   \n\nLearn how to build valid AMP pages by following [our guide](https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validate_amp/),\nand use [the AMP validator](http://validator.amp.dev/#url=${URL}) to identify any issues!",
+      "tags": [
+        "lcp",
+        "fid",
+        "cls"
+      ],
+      "title": "Publish valid cached AMP"
+    },
+    "use-amp-optimizer": {
+      "body": "AMP pages are not always served from an AMP Cache. Instead, a website may send AMP pages from its own servers. In these cases, it's important to make sure your AMP pages offer the optimal loading performance. Use an AMP Optimizer to improve the loading performance of your AMP pages when served from the origin!",
+      "tags": [
+        "lcp",
+        "fid"
+      ],
+      "title": "Use an AMP Optimizer"
+    }
+  },
+  "tags": {
+    "safeBrowsing": "Safe browsing",
+    "https": "HTTPS",
+    "lcp": "LCP",
+    "fid": "FID",
+    "mobileFriendliness": "Mobile-friendliness",
+    "cls": "CLS"
+  }
+}

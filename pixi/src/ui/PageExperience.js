@@ -69,7 +69,7 @@ export default class PageExperience {
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    const recommendations = await Promise.all([
+    const recommendationTags = await Promise.all([
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
@@ -77,7 +77,7 @@ export default class PageExperience {
     ]);
 
     this.satusBannerView.render(this.errors);
-    this.recommendationsView.render(recommendations.flat());
+    this.recommendationsView.render(recommendationTags.flat());
 
     this.toggleLoading(false);
   }
@@ -100,7 +100,7 @@ export default class PageExperience {
 
     this.reportViews.pageExperience.render(report.data.result);
 
-    return report.data.recommendations;
+    return report.data.recommendationTags;
   }
 
   async runSafeBrowsingCheck(pageUrl) {
@@ -120,7 +120,7 @@ export default class PageExperience {
     }
     this.reportViews.safeBrowsing.render(data.result);
 
-    return data.recommendations;
+    return data.recommendationTags;
   }
 
   async runLintCheck(pageUrl) {
@@ -133,7 +133,7 @@ export default class PageExperience {
     }
     this.reportViews.httpsCheck.render(data.result);
 
-    return data.recommendations;
+    return data.recommendationTags;
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
@@ -149,7 +149,7 @@ export default class PageExperience {
     }
     this.reportViews.mobileFriendliness.render(data.result);
 
-    return data.recommendations;
+    return data.recommendationTags;
   }
 
   toggleLoading(force) {

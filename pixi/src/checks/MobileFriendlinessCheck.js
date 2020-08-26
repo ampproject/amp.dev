@@ -39,7 +39,7 @@ export default class MobileFriendlinessCheck {
       error,
       data: {
         result: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY',
-        recommendations: [],
+        recommendationTags: ['mobileFriendliness'],
       },
     };
   }

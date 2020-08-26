@@ -14,6 +14,9 @@
 
 import marked from 'marked';
 
+// TODO: Fetch instead
+import data from '../../../index.json';
+
 export default class RecommendationsView {
   constructor(doc) {
     this.container = doc.getElementById('recommendations');
@@ -22,11 +25,18 @@ export default class RecommendationsView {
     );
   }
 
-  render(recommendations) {
-    for (const item of recommendations) {
-      if (item === undefined) {
-        continue;
+  render(recommendationTags) {
+    const recommendations = [];
+
+    for (const recommendation of Object.entries(data.recommendations)) {
+      for (const tag of recommendation[1].tags) {
+        if (recommendationTags.includes(tag) && !recommendations.includes(recommendation)) {
+          recommendations.push(recommendation);
+        }
       }
+    }
+
+    for (const item of recommendations) {
       const recommendation = this.template.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
@@ -38,16 +48,19 @@ export default class RecommendationsView {
         '.ap-m-pixi-recommendations-item-body'
       );
 
+      const itemId = item[0];
+      const itemValue = item[1];
+
       recommendation.style = null;
-      recommendation.id = `recommendation-${item.id}`;
+      recommendation.id = `recommendation-${itemId}`;
 
       header.setAttribute(
         'on',
-        `tap:recommendation-${item.id}.toggleClass(class=expanded)`
+        `tap:recommendation-${item[0]}.toggleClass(class=expanded)`
       );
 
-      title.innerHTML = marked(item.title);
-      body.innerHTML = marked(item.description);
+      title.innerHTML = marked(itemValue.title);
+      body.innerHTML = marked(itemValue.body);
 
       this.container.appendChild(recommendation);
     }
