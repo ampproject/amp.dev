@@ -18,7 +18,7 @@
 
   @media (min-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(24,1fr);
+    grid-template-columns: repeat(24, 1fr);
     grid-gap: 30px;
     max-width: 1920px;
     margin: auto;
@@ -33,6 +33,7 @@
     &.#{utility('container-fluid')} {
       width: calc(100% + 30px);
       margin: 0 -15px;
+
       @media (min-width: 768px) {
         width: 100%;
         margin: 0;
@@ -44,6 +45,7 @@
 
       &-content {
         margin: 15em 0 2em;
+
         @media (min-width: 768px) {
           margin: 7vw 0 11vw;
         }
@@ -55,16 +57,19 @@
         right: 0;
         width: 62%;
         height: 100%;
+
         @media (min-width: 768px) {
           height: 90%;
           width: 60%;
         }
+
         @media (min-width: 1024px) {
           width: 45%;
         }
 
         svg {
           height: 100%;
+
           @media (min-width: 1024px) {
             height: 140%;
             width: 100%;
@@ -89,28 +94,43 @@
     @include container-fluid;
   }
 
-  section {
-    max-width: 1050px;
-    margin: auto;
-    padding: 15px;
+  &-coming-soon {
+    font-size: 18px;
   }
 
-  &-coming-soon {
+  section {
+    grid-column: 6/20;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 15px;
+
+    @media (min-width: 1024px) {
+      margin: 30px auto;
+    }
+  }
+
+  &-ctas {
     margin-bottom: 100px;
-    font-size: 18px;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    a {
+      padding: 0 1.5em 1.5em 0;
+      transition-delay: 400ms;
+    }
   }
 
   &-intro {
     margin-left: 17px;
-    &-text {
-      padding: 0px 0px 20px;
-    }
-    @media (min-width: 768px) {
-      grid-column: 4/22;
-      margin-left: 0;
-    }
-    @media (min-width: 1024px) {
-      grid-column: 8/20;
+
+    p {
+      padding-left: 20px;
+
+      @media (min-width: 768px) {
+        padding: 0;
+      }
     }
   }
 
@@ -118,23 +138,18 @@
     grid-column: 1/25;
     margin-bottom: 200px;
 
-    .ap-m-input-bar {
-      max-width: 900px;
-      margin: auto;
-    }
-
     &-reports {
+      grid-column: 1/25;
       margin: 57px 0;
-      padding: 15px;
-      background: linear-gradient(225deg,#00dcc0 0,#005af0 75%);
+      padding: 60px 0 80px;
+      background: linear-gradient(225deg, #00dcc0 0, #005af0 75%);
 
-      @media (min-width: 1024px) {
-        padding: 35px;
+      section {
+        grid-column: 6/20;
       }
 
       h2 {
-        max-width: 900px;
-        margin: 30px auto 20px auto;
+        margin: 30px 0 20px;
         color: color('white');
         transition: opacity 0.2s ease;
       }
@@ -149,13 +164,21 @@
     &-basic {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      max-width: 900px;
-      margin: auto;
       border-radius: 4px;
+      overflow: hidden;
+
+      .pristine & {
+        border: solid 2px transparentize(color('white'), 0.8);
+
+        @media (min-width: 768px) {
+          border: 0;
+        }
+      }
 
       @media (min-width: 768px) {
         flex-direction: row;
+        justify-content: space-between;
+        border: 0;
       }
     }
   }

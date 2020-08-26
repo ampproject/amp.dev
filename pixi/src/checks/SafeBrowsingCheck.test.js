@@ -39,6 +39,6 @@ describe('Safe browsing check', () => {
 
     const report = await safeBrowsingCheck.run('http://example.com');
     expect(report.error).toBeDefined();
-    expect(report.data).toBe(undefined);
+    expect(report.data.result).toBe(undefined);
   });
 });

@@ -1,0 +1,5 @@
+$view: /views/pixi/pixi-json.j2
+$path: /pixi/{base}.json
+$localization:
+  path: /{locale}/pixi/{base}.json
+$order: 89

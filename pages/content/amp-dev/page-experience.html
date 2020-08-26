@@ -37,7 +37,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       in our <a href="https://blog.amp.dev/2020/05/28/amp-page-experience/">blog post</a>.
     </p>
     <br>
-    <div class="ap-o-fragment-slider-ctas">
+    <div class="ap-t-pixi-ctas">
       <a href="https://web.dev/vitals/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
         <div class="ap-a-ico ap-m-lnk-icon">
           {% do doc.icons.useIcon('icons/external.svg') %}
@@ -45,7 +45,16 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
           </svg>
         </div>
-        <span class="ap-m-lnk-text">{{ _('Learn about web vitals') }}</span>
+        <span class="ap-m-lnk-text">{{ _('Learn about Web Vitals') }}</span>
+      </a>
+      <a href="https://developers.google.com/search/docs/guides/page-experience" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+        <div class="ap-a-ico ap-m-lnk-icon">
+          {% do doc.icons.useIcon('icons/external.svg') %}
+          <svg>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
+          </svg>
+        </div>
+        <span class="ap-m-lnk-text">{{ _('Learn about page experience') }}</span>
       </a>
     </div>
   </section>
@@ -58,7 +67,6 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </p>
   </section>
 
-  {% do doc.styles.addCssFile('css/components/molecules/input-bar.css') %}
   <amp-state id="pixi">
     <script type="application/json">
       {
@@ -68,7 +76,12 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
           "translations": {
             "Analyzing": "{{ _('Analyzing') }}",
             "Failed": "{{ _('Failed') }}",
-            "Passed": "{{ _('Passed') }}"
+            "Passed": "{{ _('Passed') }}",
+            "Wow! Your AMP page has a great page experience!": "{{ _('Wow! Your AMP page has a great page experience!') }}",
+            "This page creates a great page experience!": "{{ _('This page creates a great page experience!') }}",
+            "Oops! Looks like something went wrong.": "{{ _('Oops! Looks like something went wrong.') }}",
+            "It seems like we weren't able to get reliable results. Please rerun the test.": "{{ _('It seems like we weren\'t able to get reliable results. Please rerun the test.') }}",
+            "Please enter a valid URL": "{{ _('Please enter a valid URL') }}"
           }
         }
       }
@@ -77,48 +90,50 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
   {% import '/views/partials/pixi/webpack.j2' as webpack %}
   <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
-    <div class="ap-m-input-bar">
-      <input id="input-field" class="ap-m-input-bar-field" type="url" name="url" placeholder="{{ _('Enter your URL') }}" value="[= query.url =]">
-      <button id="input-submit" class="ap-m-input-bar-submit" name="button">
-        {{ _('Analyze') }}
-      </button>
-    </div>
+
+    {% include 'views/partials/pixi/input-bar.j2' %}
+
+    {% include 'views/partials/pixi/status-banner.j2' %}
 
     <div id="reports" class="ap-t-pixi-checks-reports pristine">
-      <h2>Core Web Vitals</h2>
-      {% include 'views/partials/pixi/primary-checks.j2' %}
+      <section>
+        <h2>Core Web Vitals</h2>
+        {% include 'views/partials/pixi/primary-checks.j2' %}
+      </section>
 
-      <h2>Additional checks</h2>
-      <div class="ap-t-pixi-checks-basic">
-        {% with basic_metric = {
-          'id': 'safe-browsing',
-          'title': _('Safe Browsing')
-        } %}
-        {% include 'views/partials/pixi/basic-metric.j2' %}
-        {% endwith %}
+      <section>
+        <h2>Additional checks</h2>
+        <div class="ap-t-pixi-checks-basic">
+          {% with basic_metric = {
+            'id': 'safe-browsing',
+            'title': _('Safe Browsing')
+          } %}
+          {% include 'views/partials/pixi/basic-metric.j2' %}
+          {% endwith %}
 
-        {% with basic_metric = {
-          'id': 'https',
-          'title': _('HTTPS')
-        } %}
-        {% include 'views/partials/pixi/basic-metric.j2' %}
-        {% endwith %}
+          {% with basic_metric = {
+            'id': 'https',
+            'title': _('HTTPS')
+          } %}
+          {% include 'views/partials/pixi/basic-metric.j2' %}
+          {% endwith %}
 
-        {% with basic_metric = {
-          'id': 'mobile-friendliness',
-          'title': _('Mobile Friendliness'),
-        } %}
-        {% include 'views/partials/pixi/basic-metric.j2' %}
-        {% endwith %}
+          {% with basic_metric = {
+            'id': 'mobile-friendliness',
+            'title': _('Mobile Friendliness'),
+          } %}
+          {% include 'views/partials/pixi/basic-metric.j2' %}
+          {% endwith %}
 
-        {% with basic_metric = {
-          'id': 'intrusive-interstitials',
-          'title': _('Intrusive Interstitials'),
-          'status': _('Check manually')
-        } %}
-        {% include 'views/partials/pixi/basic-metric.j2' %}
-        {% endwith %}
-      </div>
+          {% with basic_metric = {
+            'id': 'intrusive-interstitials',
+            'title': _('Intrusive Interstitials'),
+            'status': _('Check manually')
+          } %}
+          {% include 'views/partials/pixi/basic-metric.j2' %}
+          {% endwith %}
+        </div>
+      </section>
     </div>
 
     {% include 'views/partials/pixi/recommendations.j2' %}

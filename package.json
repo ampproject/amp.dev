@@ -61,7 +61,7 @@
   ],
   "dependencies": {
     "@ampproject/toolbox-cors": "2.6.0",
-    "@ampproject/toolbox-linter": "2.7.0-alpha.2",
+    "@ampproject/toolbox-linter": "2.7.0-alpha.3",
     "@ampproject/toolbox-optimizer": "2.6.0",
     "@google-cloud/datastore": "6.1.0",
     "acorn": "8.0.0",
