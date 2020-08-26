@@ -81,7 +81,7 @@ author: sebastianbenz
   <!--
     `amp-img` supports AMP's [common attributes](/content/amp-dev/documentation/guides-and-tutorials/learn/common_attributes.md#fallback), which means you can show a `fallback` in case the image couldn't be loaded. This is great for adding offline support to your AMPs.
   -->
-  <amp-img src="/static/samples/img/does-not-exist.jpg" width="300" height="100" layout="responsive">
+  <amp-img src="/static/samples/img/does-not-exist.jpg" width="300" height="100" layout="responsive" alt="a non-existent image">
     <div fallback>offline</div>
   </amp-img>
 
@@ -89,7 +89,7 @@ author: sebastianbenz
   <!--
     If you want to ensure that users with JavaScript disabled can see your images, you can add an additional `img` element inside a `noscript` tag. This also makes it possible for webcrawlers without JavaScript runtime to discover your images.
   -->
-  <amp-img src="/static/samples/img/amp.jpg" alt="AMP" width="475" height="268" layout="responsive">
+  <amp-img src="/static/samples/img/amp.jpg" width="475" height="268" layout="responsive" alt="AMP">
     <noscript>
       <img src="/static/samples/img/amp.jpg" width="475" height="268" alt="AMP">
     </noscript>
@@ -102,7 +102,7 @@ author: sebastianbenz
   <!--
     ## Dynamically changing the src
 
-    You can use `amp-bind` to dynamically change the `src` URL of an `amp-img`.
+    You can use `amp-bind` to dynamically change the `src` URL of an `amp-img`. Remember to also change the `alt` if the content/meaning of the image changes.
 
     @formats(websites)
   -->
@@ -110,11 +110,13 @@ author: sebastianbenz
     <amp-img src="https://unsplash.it/300/200/?image=100"
              width="300"
              height="200"
-             [src]="myImageUrl">
+             alt="Example image"             
+             [src]="myImageUrl"
+             [alt]="myImageAlt">
     </amp-img>
-    <button on="tap:AMP.setState({ myImageUrl: 'https://unsplash.it/300/200/?image=200' })">Change image</button>
+    <button on="tap:AMP.setState({ myImageUrl: 'https://unsplash.it/300/200/?image=200', myImageAlt: 'Another example image' })">Change image</button>
   </div>
-
+  
   <!-- ## Vertically centering an amp-img 
 
   Here is a simple approach to vertically center an `amp-img` using the flex layout ([src](https://stackoverflow.com/a/57949451/967)):
