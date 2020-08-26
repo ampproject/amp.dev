@@ -39,7 +39,7 @@ export default class AmpLinterCheck {
   }
 
   createError(error) {
-    return {error};
+    return {error, data: {}};
   }
 
   createReportData(apiResult) {

@@ -5,17 +5,17 @@
 
 .#{molecule('pixi-basic-metric')} {
   $basic-metric: &;
-  margin-bottom: 15px;
   padding: 15px 25px;
-  border-radius: 4px;
-  border: solid 2px color('white');
   font-size: 16px;
-  background-color: color('white');
   transition: background-color 0.2s ease, border-color 0.2s ease;
+  background: color('white');
+  border-bottom: solid 2px color('mercury');
 
   @media (min-width: 768px) {
     flex-direction: row;
     width: 24%;
+    border-radius: 4px;
+    border: solid 2px color('white');
   }
 
   &-title {
@@ -40,7 +40,12 @@
 
   .pristine & {
     background-color: transparent;
-    border-color: transparentize(color('white'), 0.8);
+    border-color: transparent;
+
+    @media (min-width: 768px) {
+      border-color: transparentize(color('white'), 0.8);
+    }
+
 
     #{$basic-metric}-title {
       opacity: 0;

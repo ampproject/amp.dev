@@ -22,14 +22,13 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
+import SatusBannerView from './SatusBannerView.js';
 import RecommendationsView from './recommendations/RecommendationsView.js';
+
+import InputBar from './InputBar.js';
 
 export default class PageExperience {
   constructor() {
-    this.input = document.getElementById('input-field');
-    this.submit = document.getElementById('input-submit');
-    this.submit.addEventListener('click', this.onSubmitUrl.bind(this));
-
     this.reports = document.getElementById('reports');
     this.reportViews = {};
     this.errors = [];
@@ -39,42 +38,31 @@ export default class PageExperience {
     this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
 
+    this.inputBar = new InputBar(document, this.onSubmitUrl.bind(this));
+    this.satusBannerView = new SatusBannerView(document);
     this.recommendationsView = new RecommendationsView(document);
-  }
-
-  isValidURL(pageUrl) {
-    try {
-      const url = new URL(pageUrl);
-      return url.protocol === 'http:' || url.protocol === 'https:';
-    } catch (e) {
-      return false;
-    }
   }
 
   async onSubmitUrl() {
     this.toggleLoading(true);
-    this.reports.classList.remove('pristine');
-
-    let pageUrl = this.input.value;
-    // Can be removed once https://github.com/ampproject/worker-dom/issues/912
-    // is fixed
-    if (!pageUrl) {
-      try {
-        pageUrl = await AMP.getState('pixi.pageUrl');
-      } catch (e) {
-        console.error('Could not get page URL from amp-state', e);
-      }
-    }
-
-    if (!this.isValidURL(pageUrl)) {
-      this.toggleLoading(false);
-      throw new Error('Please enter a valid URL');
-    }
 
     // Everything until here is statically translated by Grow. From now
     // on Pixi might dynamically render translated strings, so wait
     // for them to be ready
     await i18n.init();
+
+    const pageUrl = await this.inputBar.getPageUrl();
+    if (!pageUrl) {
+      this.toggleLoading(false);
+      this.inputBar.toggleError(
+        true,
+        i18n.translate('Please enter a valid URL')
+      );
+      return;
+    }
+
+    this.reports.classList.remove('pristine');
+    this.recommendationsView.container.classList.remove('pristine');
 
     // Reset errors from previous runs
     this.errors = [];
@@ -91,6 +79,7 @@ export default class PageExperience {
       mobileFriendlinessPromise,
     ]);
 
+    this.satusBannerView.render(this.errors);
     this.recommendationsView.render(recommendations.flat());
 
     this.toggleLoading(false);
@@ -167,8 +156,7 @@ export default class PageExperience {
   }
 
   toggleLoading(force) {
-    this.submit.classList.toggle('loading', force);
-    this.recommendationsView.container.classList.remove('pristine');
+    this.inputBar.toggleLoading(force);
     this.recommendationsView.container.classList.toggle('loading', force);
 
     for (const report of Object.keys(this.reportViews)) {

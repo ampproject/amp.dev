@@ -28,7 +28,7 @@ export default class SafeBrowsingCheck {
 
   createReportData(error, apiResult) {
     if (error) {
-      return {error};
+      return {error, data: {}};
     }
     return {
       error,
