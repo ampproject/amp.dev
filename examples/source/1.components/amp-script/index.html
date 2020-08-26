@@ -2,7 +2,9 @@
 
 standaloneSnippets: true
 preview: true
-author: sebastianbenz, morss
+author:
+ - sebastianbenz
+ - morss
 
 --->
 
@@ -156,6 +158,37 @@ author: sebastianbenz, morss
         }
 
         fetchCurrentTime();
+      </script>
+    </div>
+    <!--
+        ## Multiple fetches
+
+        In a container whose size can change, your code can make DOM changes until 5 seconds after the final `fetch()` completes. This example makes multiple calls to a slow API. It displays the result from each call when it returns.
+    -->
+    <div>
+      <amp-script layout="container" script="multi-fetch-script" class="sample" data-ampdevmode>
+        <button id="multi-fetch">How slow is our API?</button>
+      </amp-script>
+      <script id="multi-fetch-script" type="text/plain" target="amp-script">    
+        const randomTime = () =>  Math.floor(Math.random() * 10) + 5;
+    
+        const button = document.getElementById('multi-fetch');
+        
+        function tripleFetch() {
+          for (let i =0; i < 3; i++) {
+            fetch('<% hosts.platform %>/documentation/examples/api/slow-text?delay=' + randomTime())
+              .then(response => response.text())
+              .then(text => insertText(text));
+          }
+        }
+    
+        function insertText(text) {
+          const div = document.createElement('div');
+          div.innerHTML = text;
+          document.body.appendChild(div);
+        }
+    
+        button.addEventListener('click', tripleFetch);
       </script>
     </div>
     <!-- 
