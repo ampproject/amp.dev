@@ -1,6 +1,7 @@
 ---
-globalText:
-  analyzeHeadline: Analysiere deine AMP Seite
-  analyzeFieldPlaceholder: Gib die URL ein
-  analyzeButton: Analysieren
+staticText:
+  analyze:
+    headline: Analysiere deine AMP Seite
+    fieldPlaceholder: Gib die URL ein
+    button: Analysieren
 ---
