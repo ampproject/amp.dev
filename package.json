@@ -95,7 +95,8 @@
     "shrink-ray-current": "4.1.2",
     "signale": "1.4.0",
     "uuid": "8.3.0",
-    "web-push": "3.4.4"
+    "web-push": "3.4.4",
+    "ws": "7.3.1"
   },
   "devDependencies": {
     "@ampproject/toolbox-validator-rules": "2.5.4",
