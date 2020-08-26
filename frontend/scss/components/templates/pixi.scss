@@ -110,8 +110,11 @@
   }
 
   &-ctas {
-    display: flex;
     margin-bottom: 100px;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
 
     a {
       padding: 0 10px 10px 0;
