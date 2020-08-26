@@ -16,6 +16,11 @@
 			"host": "amp.dev",
 			"port": ""
     },
+		"websocket": {
+			"scheme": "ws",
+			"host": "amp.dev",
+			"port": ""
+    },
     "playground": {
       "scheme": "https",
       "subdomain": "playground",

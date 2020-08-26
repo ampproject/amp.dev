@@ -66,7 +66,7 @@ class Platform {
           resolve();
         });
 
-        webSocketServer.startLiveBlog(this.httpServer);
+        webSocketServer.start(this.httpServer);
 
         // Increase keep alive timeout
         // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
