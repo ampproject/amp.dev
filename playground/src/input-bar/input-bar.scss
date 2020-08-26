@@ -66,5 +66,56 @@
         transform: translate3d(0, 10px, 0);
       }
     }
+
+    &-autocomplete {
+      position: absolute;
+      width: calc(100% - 50px);
+      height: 60%;
+      margin-top: 0;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: .3s;
+      pointer-events: none;
+
+      &.active {
+        pointer-events: all;
+        opacity: 1;
+        background: color('white');
+        transform: translate3d(0, 10px, 0);
+      }
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 15px 15px 25px;
+        white-space: nowrap;
+        border-bottom: 1px solid color('silver');
+
+        h4 {
+          margin: 0;
+        }
+
+        &-close {
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          width: 22px;
+          height: 22px;
+        }
+      }
+
+      &-list {
+        max-height: calc(100% - 54px);
+        overflow-y: auto;
+        padding: 0;
+      }
+
+      aside {
+        margin-top: 35%;
+        text-align: center;
+      }
+    }
   }
 }

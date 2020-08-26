@@ -1,0 +1,36 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-primary-metric.css') %}
+
+<div id="{{ primary_metric.id }}" class="ap-m-pixi-primary-metric">
+  <div class="ap-m-pixi-primary-metric-row">
+    <h3 class="ap-m-pixi-primary-metric-header">
+      <div class="ap-m-pixi-primary-metric-header-full">
+        {{ primary_metric.title.full }}
+      </div>
+      <div class="ap-m-pixi-primary-metric-header-id">
+        {{ primary_metric.title.id }}
+      </div>
+      <label class="ap-m-pixi-primary-metric-header-status">
+        <span class="ap-m-pixi-primary-metric-category">{{ _('Analyzing') }}</span>
+        {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      </label>
+    </h3>
+
+    {% include 'views/partials/pixi/scale.j2' %}
+  </div>
+
+  <div class="ap-m-pixi-primary-metric-row">
+    <div>
+      <strong>{{ _('Opportunity to improve') }}:</strong>
+      <span class="ap-m-pixi-primary-metric-improvement">{{ _('Calculating') }}</span>
+      {% include 'views/partials/pixi/analyzing-dots.j2' %}
+    </div>
+
+    <div>
+      <strong>{{ _('Take action') }}:</strong>
+      <span>
+        <span class="ap-m-pixi-primary-metric-recommendations">{{ _('Analyzing') }}</span>
+        {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      </span>
+    </div>
+  </div>
+</div>

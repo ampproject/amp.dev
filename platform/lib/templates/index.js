@@ -26,6 +26,7 @@ const {
 } = require('../amp/formatHelper.js');
 const {SupportedFormatsExtension} = require('./SupportedFormatsExtension.js');
 const {importBlog} = require('./ImportBlogFilter.js');
+const {importYouTubeChannel} = require('./ImportYouTubeChannel.js');
 
 const ALLOWED_LEVEL = ['beginner', 'advanced'];
 let templates = null;
@@ -41,6 +42,7 @@ function createRequestContext(
   context = {}
 ) {
   context.requestPath = request.path;
+  context.query = request.query;
 
   // Store the initially requested format to be able
   // to match user request against available formats
@@ -99,6 +101,11 @@ class Templates {
     );
 
     this.nunjucksEnv_.addFilter('importBlog', importBlog, true);
+    this.nunjucksEnv_.addFilter(
+      'importYouTubeChannel',
+      importYouTubeChannel,
+      true
+    );
 
     // One locale has ~860 pages with each weighing ~92KB. The cache therefore
     // maxes out at ~224MB to be safe

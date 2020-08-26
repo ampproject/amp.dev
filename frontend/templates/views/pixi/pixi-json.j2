@@ -1,0 +1,29 @@
+{% set status_banners = {} %}
+{% set recommendations = {} %}
+{% set result = {
+  'staticText': doc.staticText,
+  'statusBanners': status_banners,
+  'recommendations': recommendations
+} %}
+
+{% set nodes = g.docs('/content/pixi/status-banners', locale=doc.locale) %}
+{% for node in nodes %}
+  {% set nodeDict = {
+    'title': node.title,
+    'type': node.type,
+    'body': node.body
+  } %}
+  {% set x=status_banners.__setitem__(node.base, nodeDict) %}
+{% endfor %}
+
+{% set nodes = g.docs('/content/pixi/recommendations', locale=doc.locale) %}
+{% for node in nodes %}
+  {% set nodeDict = {
+    'title': node.title,
+    'tags': node.tags if node.tags else [],
+    'body': node.body
+  } %}
+  {% set x=recommendations.__setitem__(node.base, nodeDict) %}
+{% endfor %}
+
+{{result|jsonify}}

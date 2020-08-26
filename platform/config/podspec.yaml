@@ -17,6 +17,7 @@ markdown:
     classes: True
     class_name: ap-m-code-snippet
   - kind: markdown.extensions.extra
+  - kind: markdown.extensions.sane_lists
 
 ext:
 - extensions.inline_text_assets.InlineTextAssetsExtension:

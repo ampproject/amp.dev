@@ -1,0 +1,89 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{molecule('pixi-primary-metric')} {
+  $primary-metric: &;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 25px;
+  background-color: color('white');
+  transition: opacity 0.2s ease;
+
+  @media (min-width: 768px) {
+    padding: 38px 25px;
+  }
+
+  & + & {
+    border-top: solid 2px color('mercury');
+  }
+
+  &:nth-child(2) {
+    transition-delay: 80ms;
+  }
+
+  &:nth-child(3) {
+    transition-delay: 160ms;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+
+    &:first-child {
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &-header {
+    margin-top: 0;
+    line-height: 1.5;
+
+    @media (min-width: 768px) {
+      width: 35%;
+    }
+
+    &-full {
+      display: inline-block;
+
+      &:after {
+        content: "|";
+        margin: 0 5px;
+      }
+    }
+
+    &-id {
+      display: inline-block;
+
+      &:after {
+        display: block;
+        content: "";
+      }
+    }
+
+    &-status {
+      display: block;
+      color: color('silver');
+
+      .fast & {
+        color: color('malachite');
+      }
+
+      .average & {
+        color: color('buttercup');
+      }
+
+      .slow & {
+        color: color('red');
+      }
+    }
+  }
+
+  .pristine & {
+    opacity: 0;
+  }
+}
