@@ -27,6 +27,9 @@ import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
+// import getStatusBannerIds from '../checkAgregation/statusBanner.js';
+import getRecommendationIds from '../checkAgregation/recommendations.js';
+
 export default class PageExperience {
   constructor() {
     this.reports = document.getElementById('reports');
@@ -69,15 +72,15 @@ export default class PageExperience {
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    const recommendationTags = await Promise.all([
+    const recommendationIds = await getRecommendationIds(
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
-      mobileFriendlinessPromise,
-    ]);
+      mobileFriendlinessPromise
+    );
 
+    this.recommendationsView.render(recommendationIds);
     this.satusBannerView.render(this.errors);
-    this.recommendationsView.render(recommendationTags.flat());
 
     this.toggleLoading(false);
   }

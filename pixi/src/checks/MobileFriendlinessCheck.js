@@ -38,8 +38,7 @@ export default class MobileFriendlinessCheck {
     return {
       error,
       data: {
-        result: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY',
-        recommendationTags: ['mobileFriendliness'],
+        mobileFriendliness: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY',
       },
     };
   }

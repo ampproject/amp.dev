@@ -26,18 +26,21 @@ export default class RecommendationsView {
     this.tag = this.container.querySelector('span');
   }
 
-  render(recommendationTags) {
+  render(recommendationIds) {
     const recommendations = [];
 
     for (const recommendation of Object.entries(data.recommendations)) {
       for (const tag of recommendation[1].tags) {
-        if (recommendationTags.includes(tag) && !recommendations.includes(recommendation)) {
+        if (
+          recommendationTags.includes(tag) &&
+          !recommendations.includes(recommendation)
+        ) {
           recommendations.push(recommendation);
         }
       }
     }
 
-    for (const item of recommendations) {
+    for (const item of recommendationIds) {
       const recommendation = this.template.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
@@ -48,7 +51,9 @@ export default class RecommendationsView {
       const body = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-body'
       );
-      const tagsBar = recommendation.querySelector('.ap-m-pixi-recommendations-item-tags');
+      const tagsBar = recommendation.querySelector(
+        '.ap-m-pixi-recommendations-item-tags'
+      );
 
       const itemId = item[0];
       const itemValue = item[1];

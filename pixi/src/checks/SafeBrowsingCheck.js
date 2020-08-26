@@ -33,8 +33,7 @@ export default class SafeBrowsingCheck {
     return {
       error,
       data: {
-        result: !Object.keys(apiResult).length,
-        recommendationTags: ['safeBrowsing'],
+        safeBrowsing: !Object.keys(apiResult).length,
       },
     };
   }

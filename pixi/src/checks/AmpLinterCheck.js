@@ -47,7 +47,6 @@ export default class AmpLinterCheck {
       data: {
         usesHttps:
           apiResult.url != undefined && apiResult.url.startsWith('https:'),
-        recommendationTags: ['https'],
       },
     };
   }

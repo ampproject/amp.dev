@@ -55,7 +55,7 @@ export default class PageExperienceCheck {
     const labData = apiResult.lighthouseResult.audits;
 
     const report = {
-      result: {
+      lighthouseResult: {
         fieldData: {
           lcp: {
             unit: UNIT_SEC,
@@ -90,7 +90,6 @@ export default class PageExperienceCheck {
       },
     };
 
-    report.recommendationTags = ['cls', 'fid'];
     // for (const [key, details] of Object.entries(
     //   apiResult.lighthouseResult.audits
     // )) {
