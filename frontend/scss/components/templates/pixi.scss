@@ -96,8 +96,17 @@
   }
 
   &-coming-soon {
-    margin-bottom: 100px;
     font-size: 18px;
+  }
+
+  &-ctas {
+    display: flex;
+    margin-bottom: 100px;
+
+    a {
+      padding: 0 10px 10px 0;
+      transition-delay: 400ms;
+    }
   }
 
   &-intro {
