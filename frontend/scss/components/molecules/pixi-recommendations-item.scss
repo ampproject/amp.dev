@@ -46,7 +46,7 @@
     }
   }
 
-  &-footer {
+  &-tags {
     padding-top: 15px;
     border-top: solid 2px color('mercury');
 
@@ -59,6 +59,10 @@
       font-size: 12px;
       font-weight: bold;
       color: color('silver');
+
+      &:first-child {
+        display: none;
+      }
     }
   }
 

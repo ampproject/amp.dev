@@ -23,6 +23,7 @@ export default class RecommendationsView {
     this.template = this.container.querySelector(
       '.ap-m-pixi-recommendations-item'
     );
+    this.tag = this.container.querySelector('span');
   }
 
   render(recommendationTags) {
@@ -47,6 +48,7 @@ export default class RecommendationsView {
       const body = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-body'
       );
+      const tagsBar = recommendation.querySelector('.ap-m-pixi-recommendations-item-tags');
 
       const itemId = item[0];
       const itemValue = item[1];
@@ -61,6 +63,12 @@ export default class RecommendationsView {
 
       title.innerHTML = marked(itemValue.title);
       body.innerHTML = marked(itemValue.body);
+
+      for (const tagId of itemValue.tags) {
+        const tag = this.tag.cloneNode(true);
+        tag.textContent = data.tags[tagId];
+        tagsBar.appendChild(tag);
+      }
 
       this.container.appendChild(recommendation);
     }
