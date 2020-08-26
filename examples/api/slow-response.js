@@ -67,12 +67,12 @@ async function slowJsonWithItems(request, response) {
 // Note that this function expects its delay measured in seconds.
 async function slowText(request, response) {
   const delay = getDelay(request);
-  console.log("delay is" + delay);
+  console.log('delay is' + delay);
   await sleep(delay * 1000);
   errorIfRequested(request, response);
 
   const timeWord = delay == 1 ? 'second' : 'seconds';
-  
+
   response.send(`This call returned in ${delay} ${timeWord}!`);
 }
 
