@@ -54,10 +54,7 @@ export default class PageExperience {
     const pageUrl = await this.inputBar.getPageUrl();
     if (!pageUrl) {
       this.toggleLoading(false);
-      this.inputBar.toggleError(
-        true,
-        i18n.translate('Please enter a valid URL')
-      );
+      this.inputBar.toggleError(true, i18n.getText('analyze.fieldError'));
       return;
     }
 

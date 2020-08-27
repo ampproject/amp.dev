@@ -6,6 +6,31 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
 {% do doc.styles.addCssFile('css/components/templates/pixi.css') %}
 
+{% set status_banners = {} %}
+{% set recommendations = {} %}
+{% set pixi = g.doc('/content/pixi/index.md', locale=doc.locale) %}
+
+{% set nodes = g.docs('/content/pixi/status-banners', locale=doc.locale) %}
+{% for node in nodes %}
+  {% set nodeDict = {
+    'title': node.title,
+    'type': node.type,
+    'body': node.body
+  } %}
+  {% set x=status_banners.__setitem__(node.base, nodeDict) %}
+{% endfor %}
+
+{% set nodes = g.docs('/content/pixi/recommendations', locale=doc.locale) %}
+{% for node in nodes %}
+  {% set nodeDict = {
+    'title': node.title,
+    'tags': node.tags if node.tags else [],
+    'body': node.body
+  } %}
+  {% set x=recommendations.__setitem__(node.base, nodeDict) %}
+{% endfor %}
+
+
 <main class="ap--main ap-t-pixi">
   <section class="ap--stage ap--container-fluid">
     {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
@@ -14,15 +39,15 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       <div class="ap--container-fluid">
         <div class="ap-o-stage-content">
           <h1 class="ap-o-stage-content-headline">
-            AMP Page Experience Guide
+            {{ pixi.title }}
           </h1>
         </div>
         <div class="ap-o-stage-image">
           {% do doc.icons.useIcon('icons/vitals-header.svg') %}
           <svg>
             <use
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xlink:href="#vitals-header"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="#vitals-header"
             ></use>
           </svg>
         </div>
@@ -31,113 +56,114 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   </section>
 
   {% if podspec.env.name == 'production' %}
-  <section class="ap-t-pixi-intro ap-t-pixi-coming-soon">
-    <p class="ap-t-pixi-intro-text">
-      Coming soon! Read more about how AMP helps achieve a great page experience
-      in our <a href="https://blog.amp.dev/2020/05/28/amp-page-experience/">blog post</a>.
-    </p>
-    <br>
-    <div class="ap-t-pixi-ctas">
-      <a href="https://web.dev/vitals/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/external.svg') %}
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
-          </svg>
-        </div>
-        <span class="ap-m-lnk-text">{{ _('Learn about Web Vitals') }}</span>
-      </a>
-      <a href="https://developers.google.com/search/docs/guides/page-experience" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
-        <div class="ap-a-ico ap-m-lnk-icon">
-          {% do doc.icons.useIcon('icons/external.svg') %}
-          <svg>
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
-          </svg>
-        </div>
-        <span class="ap-m-lnk-text">{{ _('Learn about page experience') }}</span>
-      </a>
-    </div>
-  </section>
+    <section class="ap-t-pixi-intro ap-t-pixi-coming-soon">
+      <p class="ap-t-pixi-intro-text">
+        Coming soon! Read more about how AMP helps achieve a great page experience
+        in our <a href="https://blog.amp.dev/2020/05/28/amp-page-experience/">blog post</a>.
+      </p>
+      <br>
+      <div class="ap-t-pixi-ctas">
+        <a href="https://web.dev/vitals/" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Learn about Web Vitals') }}</span>
+        </a>
+        <a href="https://developers.google.com/search/docs/guides/page-experience" class="ap-m-lnk ap-m-lnk-square" target="_blank" rel="noopener">
+          <div class="ap-a-ico ap-m-lnk-icon">
+            {% do doc.icons.useIcon('icons/external.svg') %}
+            <svg>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#external"></use>
+            </svg>
+          </div>
+          <span class="ap-m-lnk-text">{{ _('Learn about page experience') }}</span>
+        </a>
+      </div>
+    </section>
   {% else %}
-  <section class="ap-t-pixi-intro">
-    <p class="ap-t-pixi-intro-text">
-      <a href="https://web.dev/vitals/">Web Vitals</a> is an initiative by
-      Google to provide unified guidance for quality signals that are essential
-      to delivering a great user experience on the web.
-    </p>
-  </section>
+    <section class="ap-t-pixi-intro">
+      <p class="ap-t-pixi-intro-text">
+        {{pixi.html|safe}}
+      </p>
+    </section>
 
-  <amp-state id="pixi">
-    <script type="application/json">
+    <amp-state id="pixiRecommendations">
+      <script type="application/json">
+      {{recommendations|jsonify|safe}}
+    </script>
+    </amp-state>
+
+    <amp-state id="pixiStatusBanners">
+      <script type="application/json">
+      {{status_banners|jsonify|safe}}
+    </script>
+    </amp-state>
+
+    <amp-state id="pixi">
+      <script type="application/json">
       {
         "pageUrl": "[= query.url =]",
         "i18n": {
           "language": "{{ doc.locale }}",
-          "translations": {
-            "Analyzing": "{{ _('Analyzing') }}",
-            "Failed": "{{ _('Failed') }}",
-            "Passed": "{{ _('Passed') }}",
-            "Wow! Your AMP page has a great page experience!": "{{ _('Wow! Your AMP page has a great page experience!') }}",
-            "This page creates a great page experience!": "{{ _('This page creates a great page experience!') }}",
-            "Oops! Looks like something went wrong.": "{{ _('Oops! Looks like something went wrong.') }}",
-            "It seems like we weren't able to get reliable results. Please rerun the test.": "{{ _('It seems like we weren\'t able to get reliable results. Please rerun the test.') }}",
-            "Please enter a valid URL": "{{ _('Please enter a valid URL') }}"
-          }
+          "staticText": {{pixi.staticText|jsonify|safe}}
         }
       }
     </script>
-  </amp-state>
+    </amp-state>
 
-  {% import '/views/partials/pixi/webpack.j2' as webpack %}
-  <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
+    {% import '/views/partials/pixi/webpack.j2' as webpack %}
+    <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
 
-    {% include 'views/partials/pixi/input-bar.j2' %}
+      {% include 'views/partials/pixi/input-bar.j2' %}
 
-    {% include 'views/partials/pixi/status-banner.j2' %}
+      {% include 'views/partials/pixi/status-banner.j2' %}
 
-    <div id="reports" class="ap-t-pixi-checks-reports pristine">
-      <section>
-        <h2>Core Web Vitals</h2>
-        {% include 'views/partials/pixi/primary-checks.j2' %}
-      </section>
+      <div id="reports" class="ap-t-pixi-checks-reports pristine">
+        <section>
+          <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+          {% include 'views/partials/pixi/primary-checks.j2' %}
+        </section>
 
-      <section>
-        <h2>Additional checks</h2>
-        <div class="ap-t-pixi-checks-basic">
-          {% with basic_metric = {
+        <section>
+          <h2>Additional checks</h2>
+          <div class="ap-t-pixi-checks-basic">
+            {% with basic_metric = {
             'id': 'safe-browsing',
-            'title': _('Safe Browsing')
+            'title': pixi.staticText.additionalChecks.safeBrowsing
           } %}
-          {% include 'views/partials/pixi/basic-metric.j2' %}
-          {% endwith %}
+              {% include 'views/partials/pixi/basic-metric.j2' %}
+            {% endwith %}
 
-          {% with basic_metric = {
+            {% with basic_metric = {
             'id': 'https',
-            'title': _('HTTPS')
+            'title': pixi.staticText.additionalChecks.https
           } %}
-          {% include 'views/partials/pixi/basic-metric.j2' %}
-          {% endwith %}
+              {% include 'views/partials/pixi/basic-metric.j2' %}
+            {% endwith %}
 
-          {% with basic_metric = {
+            {% with basic_metric = {
             'id': 'mobile-friendliness',
-            'title': _('Mobile Friendliness'),
+            'title': pixi.staticText.additionalChecks.mobileFriendliness,
           } %}
-          {% include 'views/partials/pixi/basic-metric.j2' %}
-          {% endwith %}
+              {% include 'views/partials/pixi/basic-metric.j2' %}
+            {% endwith %}
 
-          {% with basic_metric = {
+            {% with basic_metric = {
             'id': 'intrusive-interstitials',
-            'title': _('Intrusive Interstitials'),
-            'status': _('Check manually')
+            'title': pixi.staticText.additionalChecks.intrusiveInterstitials,
+            'status': pixi.staticText.additionalChecks.checkManually
           } %}
-          {% include 'views/partials/pixi/basic-metric.j2' %}
-          {% endwith %}
-        </div>
-      </section>
-    </div>
+              {% include 'views/partials/pixi/basic-metric.j2' %}
+            {% endwith %}
+          </div>
+        </section>
+      </div>
 
-    {% include 'views/partials/pixi/recommendations.j2' %}
+      {% include 'views/partials/pixi/recommendations.j2' %}
 
-  </amp-script>
+    </amp-script>
   {% endif %}
 </main>
