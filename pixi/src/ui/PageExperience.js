@@ -27,8 +27,8 @@ import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
-// import getStatusBannerIds from '../checkAgregation/statusBanner.js';
-import getRecommendationIds from '../checkAgregation/recommendations.js';
+// import getStatusBannerIds from '../checkAggregation/statusBanner.js';
+import getRecommendationIds from '../checkAggregation/recommendations.js';
 
 export default class PageExperience {
   constructor() {
