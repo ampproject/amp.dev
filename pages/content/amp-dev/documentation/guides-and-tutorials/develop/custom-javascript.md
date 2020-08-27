@@ -3,7 +3,9 @@ $title: Use custom JavaScript in AMP pages
 $order: 7
 formats:
   - websites
-author: CrystalOnScript
+author:
+  - CrystalOnScript
+  - morss
 contributors:
   - fstanis
 description: For web experiences requiring a high amount of customization AMP has created amp-script, a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
