@@ -54,55 +54,43 @@ export default class PageExperienceCheck {
     const fieldData = apiResult.loadingExperience.metrics;
     const labData = apiResult.lighthouseResult.audits;
 
-    const report = {
-      lighthouseResult: {
-        fieldData: {
-          lcp: {
-            unit: UNIT_SEC,
-            data: fieldData.LARGEST_CONTENTFUL_PAINT_MS,
+    return {
+      data: {
+        pageExperience: {
+          fieldData: {
+            lcp: {
+              unit: UNIT_SEC,
+              data: fieldData.LARGEST_CONTENTFUL_PAINT_MS,
+            },
+            fid: {
+              unit: UNIT_MS,
+              data: fieldData.FIRST_INPUT_DELAY_MS,
+            },
+            cls: {
+              unit: UNIT_DEC,
+              data: fieldData.CUMULATIVE_LAYOUT_SHIFT_SCORE,
+            },
           },
-          fid: {
-            unit: UNIT_MS,
-            data: fieldData.FIRST_INPUT_DELAY_MS,
-          },
-          cls: {
-            unit: UNIT_DEC,
-            data: fieldData.CUMULATIVE_LAYOUT_SHIFT_SCORE,
-          },
-        },
-        labData: {
-          lcp: {
-            id: 'lcp',
-            unit: UNIT_SEC,
-            data: this.createLabData(labData['largest-contentful-paint']),
-          },
-          fid: {
-            id: 'fid',
-            unit: UNIT_MS,
-            data: this.createLabData(labData['interactive']),
-          },
-          cls: {
-            id: 'cls',
-            unit: UNIT_DEC,
-            data: this.createLabData(labData['cumulative-layout-shift']),
+          labData: {
+            lcp: {
+              id: 'lcp',
+              unit: UNIT_SEC,
+              data: this.createLabData(labData['largest-contentful-paint']),
+            },
+            fid: {
+              id: 'fid',
+              unit: UNIT_MS,
+              data: this.createLabData(labData['interactive']),
+            },
+            cls: {
+              id: 'cls',
+              unit: UNIT_DEC,
+              data: this.createLabData(labData['cumulative-layout-shift']),
+            },
           },
         },
       },
     };
-
-    // for (const [key, details] of Object.entries(
-    //   apiResult.lighthouseResult.audits
-    // )) {
-    //   if (details.score) {
-    //     report.recommendations.push({
-    //       id: key,
-    //       title: details.title,
-    //       description: details.description,
-    //     });
-    //   }
-    // }
-
-    return {data: report};
   }
 
   async fetchJson() {

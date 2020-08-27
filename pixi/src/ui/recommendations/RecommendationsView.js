@@ -27,20 +27,11 @@ export default class RecommendationsView {
   }
 
   render(recommendationIds) {
-    const recommendations = [];
+    console.log('recommendationIds', recommendationIds);
 
-    for (const recommendation of Object.entries(data.recommendations)) {
-      for (const tag of recommendation[1].tags) {
-        if (
-          recommendationTags.includes(tag) &&
-          !recommendations.includes(recommendation)
-        ) {
-          recommendations.push(recommendation);
-        }
-      }
-    }
+    for (const id of recommendationIds) {
+      const value = data.recommendations[id];
 
-    for (const item of recommendationIds) {
       const recommendation = this.template.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
@@ -55,23 +46,20 @@ export default class RecommendationsView {
         '.ap-m-pixi-recommendations-item-tags'
       );
 
-      const itemId = item[0];
-      const itemValue = item[1];
-
       recommendation.style = null;
-      recommendation.id = `recommendation-${itemId}`;
+      recommendation.id = `recommendation-${id}`;
 
       header.setAttribute(
         'on',
-        `tap:recommendation-${item[0]}.toggleClass(class=expanded)`
+        `tap:recommendation-${id}.toggleClass(class=expanded)`
       );
 
-      title.innerHTML = marked(itemValue.title);
-      body.innerHTML = marked(itemValue.body);
+      title.innerHTML = marked(value.title);
+      body.innerHTML = marked(value.body);
 
-      for (const tagId of itemValue.tags) {
+      for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);
-        tag.textContent = data.tags[tagId];
+        tag.textContent = data.staticText.tags[tagId];
         tagsBar.appendChild(tag);
       }
 

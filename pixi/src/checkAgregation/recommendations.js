@@ -23,16 +23,16 @@ export default async function getRecommendationIds(
     safeBrowsing,
     linter,
     mobileFriendliness,
-  ] = await Promise.all(
+  ] = await Promise.all([
     pageExperiencePromise,
     safeBrowsingPromise,
     linterPromise,
-    mobileFriendlinessPromise
-  );
+    mobileFriendlinessPromise,
+  ]);
 
   const result = [];
 
-  if (!linter.data.usesHttps) {
+  if (linter.usesHttps) {
     result.push('https');
   }
 

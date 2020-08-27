@@ -101,9 +101,8 @@ export default class PageExperience {
       return;
     }
 
-    this.reportViews.pageExperience.render(report.data.result);
-
-    return report.data.recommendationTags;
+    this.reportViews.pageExperience.render(report);
+    return report.data;
   }
 
   async runSafeBrowsingCheck(pageUrl) {
@@ -123,7 +122,7 @@ export default class PageExperience {
     }
     this.reportViews.safeBrowsing.render(data.result);
 
-    return data.recommendationTags;
+    return data;
   }
 
   async runLintCheck(pageUrl) {
@@ -136,7 +135,7 @@ export default class PageExperience {
     }
     this.reportViews.httpsCheck.render(data.result);
 
-    return data.recommendationTags;
+    return data;
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
@@ -152,7 +151,7 @@ export default class PageExperience {
     }
     this.reportViews.mobileFriendliness.render(data.result);
 
-    return data.recommendationTags;
+    return data;
   }
 
   toggleLoading(force) {
