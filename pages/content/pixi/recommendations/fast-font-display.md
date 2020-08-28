@@ -1,5 +1,5 @@
 ---
-$title: Ensure text remains visible during webfont load
+$title: Ensure text remains visible during font load
 tags:
 - lcp
 ---
