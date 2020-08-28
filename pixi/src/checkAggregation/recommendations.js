@@ -32,9 +32,66 @@ export default async function getRecommendationIds(
 
   const result = [];
 
-  if (linter.usesHttps) {
+  if (linter.usesHttps === false) {
     result.push('https');
   }
+  if (linter.isValid === false) {
+    result.push('valid-cached-amp');
+  }
+  if (linter.runtimeIsPreloaded === false) {
+    result.push('preload-amp-runtime');
+  }
+  if (linter.blockingExtensionsPreloaded === false) {
+    result.push('preload-render-blocking-extensions');
+  }
+  if (linter.fontsArePreloaded === false) {
+    result.push('preload-web-fonts');
+  }
+  if (linter.fastGoogleFontsDisplay === false) {
+    result.push('fast-font-display');
+  }
+  if (linter.googleFontPreconnect === false) {
+    result.push('preconnect-google-fonts');
+  }
+  if (linter.isTransformedAmp === false) {
+    result.push('use-amp-optimizer');
+  }
+  if (linter.moduleRuntimeIsUsed === false) {
+    result.push('upgrade-amp-optimizer');
+  }
+  if (linter.heroImageIsDefined === false) {
+    result.push('hero-images');
+  }
 
-  return result;
+  if (linter.boilerplateIsRemoved === false) {
+    if (linter.updateOptimizerForBoilerplateRemoval) {
+      result.push('upgrade-amp-optimizer');
+    } else {
+      result.push('amp-boilerplate-removal');
+    }
+  }
+
+  if (linter.noRenderBlockingExtension === false) {
+    result.push('prevent-render-blocking-extensions');
+  }
+  if (linter.noDynamicLayoutExtensions === false) {
+    // TODO: also check for CLS
+    result.push('dynamic-layout-extensions');
+  }
+
+  if (safeBrowsing.safeBrowsing === false) {
+    result.push('safe-browsing');
+  }
+
+  if (mobileFriendliness.mobileFriendly === false) {
+    result.push('mobile-friendly');
+  }
+
+  // This here is only to silence the linter complaining about unused vars
+  if (!pageExperience) {
+    // TODO: specific page experience results
+    result.push('responsive-images');
+  }
+
+  return result.filter((item, i, ar) => ar.indexOf(item) === i);
 }

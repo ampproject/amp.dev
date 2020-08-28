@@ -13,9 +13,7 @@
 // limitations under the License.
 
 import marked from 'marked';
-
-// TODO: Fetch instead
-import data from '../../../index.json';
+import i18n from '../I18n.js';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -30,7 +28,7 @@ export default class RecommendationsView {
     console.log('recommendationIds', recommendationIds);
 
     for (const id of recommendationIds) {
-      const value = data.recommendations[id];
+      const value = i18n.getRecommendation(id);
 
       const recommendation = this.template.cloneNode(true);
       const header = recommendation.querySelector(
@@ -55,11 +53,11 @@ export default class RecommendationsView {
       );
 
       title.innerHTML = marked(value.title);
-      body.innerHTML = marked(value.body);
+      body.innerHTML = '<p>It&#39;s important</p>'; // marked(value.body);
 
       for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);
-        tag.textContent = data.staticText.tags[tagId];
+        tag.textContent = i18n.getText(`tags.${tagId}`);
         tagsBar.appendChild(tag);
       }
 

@@ -120,7 +120,7 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.safeBrowsing.render(data.result);
+    this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
     return data;
   }
@@ -133,7 +133,7 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform AMP Linter check', error);
     }
-    this.reportViews.httpsCheck.render(data.result);
+    this.reportViews.httpsCheck.render(data.usesHttps);
 
     return data;
   }
@@ -149,7 +149,7 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
     }
-    this.reportViews.mobileFriendliness.render(data.result);
+    this.reportViews.mobileFriendliness.render(data.mobileFriendly);
 
     return data;
   }
