@@ -53,7 +53,7 @@ export default class RecommendationsView {
       );
 
       title.innerHTML = marked(value.title);
-      body.innerHTML = '<p>It&#39;s important</p>'; // marked(value.body);
+      body.innerHTML = marked(value.body);
 
       for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);
