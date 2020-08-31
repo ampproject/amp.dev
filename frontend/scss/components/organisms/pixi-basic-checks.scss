@@ -1,0 +1,13 @@
+
+.#{organism('pixi-basic-checks')} {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    border: 0;
+  }
+}

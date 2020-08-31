@@ -138,63 +138,20 @@
     grid-column: 1/25;
     margin-bottom: 200px;
 
-
     &-reports {
       grid-column: 1/25;
       margin: 57px 0;
       padding: 60px 0 80px;
-      background: linear-gradient(225deg, #00dcc0 0, #005af0 75%);
+      background: linear-gradient(225deg, color('robins-egg') 0, color('blue-ribbon') 75%);
 
       @media (min-width: 768px) {
         margin: 57px 15px;
       }
 
-      section {
-        grid-column: 6/20;
-      }
-
       h2 {
         margin: 30px 0 20px;
         color: color('white');
-        transition: opacity 0.2s ease;
-      }
-
-      &.pristine {
-        h2 {
-          opacity: 0.8;
-        }
       }
     }
-
-    &-basic {
-      display: flex;
-      flex-direction: column;
-      border-radius: 4px;
-      overflow: hidden;
-
-      .pristine & {
-        border: solid 2px transparentize(color('white'), 0.8);
-
-        @media (min-width: 768px) {
-          border: 0;
-        }
-      }
-
-      @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-between;
-        border: 0;
-      }
-    }
-  }
-}
-
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 }
