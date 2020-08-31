@@ -23,8 +23,8 @@
 
     &-tab {
       flex-grow: 1;
-      padding: 14px 20px;
       @include unset-button;
+      padding: 14px 20px;
       @include txt-font-accent;
       font-size: 18px;
       text-align: left;
