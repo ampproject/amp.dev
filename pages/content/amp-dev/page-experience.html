@@ -32,27 +32,15 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
 
 <main class="ap--main ap-t-pixi">
-  <section class="ap--stage ap--container-fluid">
-    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-
-    <div class="ap-o-stage">
-      <div class="ap--container-fluid">
-        <div class="ap-o-stage-content">
-          <h1 class="ap-o-stage-content-headline">
-            {{ pixi.title }}
-          </h1>
-        </div>
-        <div class="ap-o-stage-image">
-          {% do doc.icons.useIcon('icons/vitals-header.svg') %}
-          <svg>
-            <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#vitals-header"
-            ></use>
-          </svg>
-        </div>
-      </div>
-    </div>
+  <section class="ap-t-pixi-stage">
+    <h1>AMP Page Experience <br>Guide</h1>
+    {% do doc.icons.useIcon('icons/vitals-header.svg') %}
+    <svg>
+      <use
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xlink:href="#vitals-header"
+      ></use>
+    </svg>
   </section>
 
   {% if podspec.env.name == 'production' %}
@@ -84,12 +72,6 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </div>
     </section>
   {% else %}
-    <section class="ap-t-pixi-intro">
-      <p class="ap-t-pixi-intro-text">
-        {{pixi.html|safe}}
-      </p>
-    </section>
-
     <amp-state id="pixiRecommendations">
       <script type="application/json">
       {{recommendations|jsonify|safe}}
@@ -117,21 +99,19 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     {% import '/views/partials/pixi/webpack.j2' as webpack %}
     <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
 
-      {% include 'views/partials/pixi/input-bar.j2' %}
+      <div class="ap-t-pixi-checks-input">
+        {% include 'views/partials/pixi/input-bar.j2' %}
 
-      {% include 'views/partials/pixi/status-banner.j2' %}
-
-      <div id="reports" class="ap-t-pixi-checks-reports pristine">
-        <section>
-          <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
-          {% include 'views/partials/pixi/primary-checks.j2' %}
-        </section>
-
-        <section>
-          <h2>Additional checks</h2>
-          {% include 'views/partials/pixi/basic-checks.j2' %}
-        </section>
+        {% include 'views/partials/pixi/status-banner.j2' %}
       </div>
+
+      <section id="reports" class="ap-t-pixi-checks-reports pristine">
+        <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+        {% include 'views/partials/pixi/primary-checks.j2' %}
+
+        <h2>Additional checks</h2>
+        {% include 'views/partials/pixi/basic-checks.j2' %}
+      </section>
 
       {% include 'views/partials/pixi/recommendations.j2' %}
 
