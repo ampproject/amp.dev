@@ -36,6 +36,7 @@
     background-repeat: no-repeat;
     background-position: 60px 50px;
     transition: all 0.3s ease-in-out;
+    pointer-events: none;
 
     h3 {
       color: color('silver');
@@ -49,6 +50,7 @@
         opacity: 0;
       }
       &-banner {
+        pointer-events: all;
         background-color: color('white');
         box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.7);
       }
