@@ -35,12 +35,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   <section class="ap-t-pixi-stage">
     <h1>AMP Page Experience <br>Guide</h1>
     {% do doc.icons.useIcon('icons/vitals-header.svg') %}
-    <svg>
-      <use
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          xlink:href="#vitals-header"
-      ></use>
-    </svg>
+
   </section>
 
   {% if podspec.env.name == 'production' %}
@@ -101,7 +96,6 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
       <div class="ap-t-pixi-checks-input">
         {% include 'views/partials/pixi/input-bar.j2' %}
-
         {% include 'views/partials/pixi/status-banner.j2' %}
       </div>
 
