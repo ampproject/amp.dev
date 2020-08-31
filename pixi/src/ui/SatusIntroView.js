@@ -14,9 +14,10 @@
 
 import i18n from './I18n.js';
 
-export default class SatusBannerView {
+export default class SatusIntroView {
   constructor(doc) {
-    this.banner = doc.getElementById('status-banner');
+    this.container = doc.getElementById('status-intro');
+    this.banner = doc.getElementById('status-intro-banner');
     this.bannerTitle = this.banner.querySelector('h3');
     this.bannerText = this.banner.querySelector('p');
   }
@@ -27,7 +28,7 @@ export default class SatusBannerView {
    */
   render(errors) {
     if (!errors.length) {
-      this.banner.classList.add('pass');
+      this.container.classList.add('pass');
       this.bannerTitle.textContent = i18n.translate(
         'Wow! Your AMP page has a great page experience!'
       );
@@ -35,7 +36,7 @@ export default class SatusBannerView {
         'This page creates a great page experience!'
       );
     } else {
-      this.banner.classList.add('fail');
+      this.container.classList.add('fail');
       this.bannerTitle.textContent = i18n.translate(
         'Oops! Looks like something went wrong.'
       );

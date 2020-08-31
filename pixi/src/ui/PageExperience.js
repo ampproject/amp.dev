@@ -22,7 +22,7 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
-import SatusBannerView from './SatusBannerView.js';
+import SatusIntroView from './SatusIntroView.js';
 import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
@@ -42,7 +42,7 @@ export default class PageExperience {
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
 
     this.inputBar = new InputBar(document, this.onSubmitUrl.bind(this));
-    this.satusBannerView = new SatusBannerView(document);
+    this.satusIntroView = new SatusIntroView(document);
     this.recommendationsView = new RecommendationsView(document);
   }
 
@@ -80,7 +80,7 @@ export default class PageExperience {
     );
 
     this.recommendationsView.render(recommendationIds);
-    this.satusBannerView.render(this.errors);
+    this.satusIntroView.render(this.errors);
 
     this.toggleLoading(false);
   }
