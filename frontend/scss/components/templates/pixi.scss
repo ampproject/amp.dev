@@ -138,6 +138,10 @@
     grid-column: 1/25;
     margin-bottom: 200px;
 
+    .pristine {
+      display: none;
+    }
+
     &-reports {
       grid-column: 1/25;
       margin: 57px 0;

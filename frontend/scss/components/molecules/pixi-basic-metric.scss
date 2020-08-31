@@ -18,10 +18,6 @@
     border: solid 2px color('white');
   }
 
-  &-title {
-    transition: opacity 0.2s ease;
-  }
-
   &-status {
     color: color('silver');
   }
@@ -35,20 +31,6 @@
   &.failed {
     label {
       color: color('red');
-    }
-  }
-
-  .pristine & {
-    background-color: transparent;
-    border-color: transparent;
-
-    @media (min-width: 768px) {
-      border-color: transparentize(color('white'), 0.8);
-    }
-
-
-    #{$basic-metric}-title {
-      opacity: 0;
     }
   }
 }

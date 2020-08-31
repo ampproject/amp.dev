@@ -10,12 +10,6 @@
   $primary-checks: &;
   border-radius: 4px;
   overflow: hidden;
-  transition: opacity 0.2s ease;
-
-  @media (min-width: 768px) {
-    border: solid 2px transparent;
-    transition: border-color 0.05s ease;
-  }
 
   &-tabs {
     display: flex;
@@ -24,8 +18,8 @@
 
     &-tab {
       flex-grow: 1;
-      @include unset-button;
       padding: 14px 20px;
+      @include unset-button;
       @include txt-font-accent;
       font-size: 18px;
       text-align: left;
@@ -54,15 +48,6 @@
 
     &.active {
       display: block;
-    }
-  }
-
-  .pristine & {
-    opacity: 0.2;
-    border-color: color('white');
-
-    &-tabs {
-      opacity: 0;
     }
   }
 }
