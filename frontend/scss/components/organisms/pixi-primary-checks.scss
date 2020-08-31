@@ -8,34 +8,36 @@
 
 .#{organism('pixi-primary-checks')} {
   $primary-checks: &;
+  margin-bottom: 70px;
   border-radius: 4px;
   overflow: hidden;
-  transition: opacity 0.2s ease;
-
-  @media (min-width: 768px) {
-    border: solid 2px transparent;
-    transition: border-color 0.05s ease;
-  }
+  filter: drop-shadow(0 0 20px transparentize(color('black'), 0.87));
 
   &-tabs {
     display: flex;
-    border-bottom: solid 2px color('mercury');
     transition: opacity 0.2s ease;
+
+    @media (min-width: 768px) {
+      width: 66.6%;
+    }
 
     &-tab {
       flex-grow: 1;
-      @include unset-button;
       padding: 14px 20px;
+      @include unset-button;
       @include txt-font-accent;
       font-size: 18px;
       text-align: left;
-      color: color('white');
-      background-color: transparentize(color('black'), 0.9);
+      background-color: color('alto');
       transition: color 0.2s ease, background-color 0.2s ease;
       cursor: pointer;
 
       @media (min-width: 768px) {
         padding: 16px 36px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 4px;
       }
 
       &:hover {
@@ -54,15 +56,6 @@
 
     &.active {
       display: block;
-    }
-  }
-
-  .pristine & {
-    opacity: 0.2;
-    border-color: color('white');
-
-    &-tabs {
-      opacity: 0;
     }
   }
 }
