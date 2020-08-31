@@ -181,9 +181,10 @@ export default class CoreWebVitalsReportView {
 
   render(report = {}) {
     this.pristine = false;
+    const results = report.data.pageExperience;
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
-      const type = report[coreWebVitalView.type];
+      const type = results[coreWebVitalView.type];
       if (type) {
         const metric = type[coreWebVitalView.metric];
         if (metric) {
