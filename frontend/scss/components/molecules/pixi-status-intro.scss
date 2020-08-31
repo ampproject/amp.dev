@@ -9,12 +9,16 @@
   display: flex;
   align-items: center;
   min-height: 280px;
+  padding: 0 15px;
 
   &-text {
     display: flex;
+    padding: 0 15px;
+    overflow-x: scroll;
 
     &-item {
       flex: 1;
+      min-width: 250px;
 
       & + & {
         margin-left: 30px;
@@ -29,7 +33,7 @@
   &-banner {
     position: absolute;
     top: 0;
-    width: 100%;
+    width: calc(100% - 30px);
     min-height: 100%;
     padding: 30px 30px 50px 60px;
     border-radius: 4px;
