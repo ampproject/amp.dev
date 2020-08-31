@@ -9,12 +9,15 @@
   display: flex;
   align-items: center;
   min-height: 280px;
-  padding: 0 15px;
 
   &-text {
     display: flex;
     padding: 0 15px;
     overflow-x: scroll;
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
 
     &-item {
       flex: 1;
@@ -33,6 +36,7 @@
   &-banner {
     position: absolute;
     top: 0;
+    left: 15px;
     width: calc(100% - 30px);
     min-height: 100%;
     padding: 30px 30px 50px 60px;
@@ -41,6 +45,11 @@
     background-position: 60px 50px;
     transition: all 0.3s ease-in-out;
     pointer-events: none;
+
+    @media (min-width: 768px) {
+      left: 0;
+      width: 100%;
+    }
 
     h3 {
       color: color('silver');
