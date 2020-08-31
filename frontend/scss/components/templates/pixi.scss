@@ -23,7 +23,7 @@
   }
 
   &-stage {
-    padding: 0 15px;
+    padding: 120px 15px 0 15px;
     position: relative;
 
     @media (min-width: 768px) {
@@ -34,6 +34,7 @@
     h1 {
       font-size: 42px;
       margin: 0;
+      margin-bottom: -40px;
       max-width: 600px;
 
       @media (min-width: 768px) {
