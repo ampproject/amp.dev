@@ -9,6 +9,7 @@ import {
   apiResponsePassAll,
   apiResponseFailAll,
   apiResponseInfoBoilerplate,
+  apiResponseNoAmp,
 } from '../../mocks/ampLinterCheck/apiResponse.js';
 
 import pixiConfig from '../../config.js';
@@ -67,6 +68,14 @@ describe('Linter check', () => {
     const report = await linterCheck.run('http://example.com');
     expect(report.data.boilerplateIsRemoved).toBe(false);
     expect(report.data.updateOptimizerForBoilerplateRemoval).not.toBe(true);
+  });
+
+  it('returns object with only the isAmp flag', async () => {
+    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoAmp);
+
+    const report = await linterCheck.run('http://example.com');
+    expect(report.data.isAmp).toBe(false);
+    expect(report.data.isValid).toBeUndefined();
   });
 
   it('throws for invalid API response', async () => {
