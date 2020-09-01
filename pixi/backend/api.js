@@ -38,6 +38,11 @@ const findAmpComponents = ($) => {
   return versionMap;
 };
 
+const isAmp = ($) => {
+  const ampHtml = $('html[amp],html[⚡]');
+  return ampHtml.length > 0;
+};
+
 const execChecks = async (url) => {
   const res = await rateLimitedFetch.fetchHtmlResponse(url);
   const body = await res.text();
@@ -52,12 +57,21 @@ const execChecks = async (url) => {
     url,
     mode: LintMode.PageExperience,
   };
-  const lintResults = await lint(context);
-  return {
+  const result = {
     redirected: res.redirected,
     url: res.url,
+    isAmp: isAmp($),
+  };
+
+  if (!result.isAmp) {
+    return result;
+  }
+
+  const lintResults = await lint(context);
+  return {
     components: findAmpComponents($),
     data: lintResults,
+    ...result,
   };
 };
 
