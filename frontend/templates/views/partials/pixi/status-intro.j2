@@ -1,6 +1,6 @@
 {% do doc.styles.addCssFile('css/components/molecules/pixi-status-intro.css') %}
 
-<section id="status-intro" class="ap-m-pixi-status-intro">
+<section id="status-intro" class="ap-m-pixi-status-intro pass">
   <amp-lightbox id="sharing-dialog" layout="nodisplay">
     <div class="ap-m-pixi-status-intro-sharing-dialog"
         role="button"
@@ -11,14 +11,17 @@
         </textarea>
         <button class="ap-a-btn"
             type="button"
-            name="button">
+            name="button"
+            tabindex="0">
           {{ _('Copy to clipboard') }}
         </button>
-        <button class="ap-a-btn"
+        <button class="ap-m-pixi-status-intro-sharing-dialog-box-close"
             on="tap:sharing-dialog.close"
             type="button"
-            name="button">
-          Close
+            name="button"
+            tabindex="1">
+          {% do doc.icons.useIcon('icons/close.svg') %}
+          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
         </button>
       </div>
     </div>
