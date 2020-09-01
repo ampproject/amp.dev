@@ -7,19 +7,19 @@
   $basic-metric: &;
   padding: 15px 25px;
   font-size: 16px;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
   background: color('white');
   border-bottom: solid 2px color('mercury');
+
+  &:last-child {
+    border-bottom: 0;
+  }
 
   @media (min-width: 768px) {
     flex-direction: row;
     width: 24%;
     border-radius: 4px;
-    border: solid 2px color('white');
-  }
-
-  &-title {
-    transition: opacity 0.2s ease;
+    border-bottom: 0;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
   }
 
   &-status {
@@ -35,20 +35,6 @@
   &.failed {
     label {
       color: color('red');
-    }
-  }
-
-  .pristine & {
-    background-color: transparent;
-    border-color: transparent;
-
-    @media (min-width: 768px) {
-      border-color: transparentize(color('white'), 0.8);
-    }
-
-
-    #{$basic-metric}-title {
-      opacity: 0;
     }
   }
 }

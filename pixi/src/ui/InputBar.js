@@ -48,7 +48,7 @@ export default class InputBar {
         : `http://${value}`;
 
     if (pageUrl.match(URL_VALIDATION_REGEX)) {
-      this.toggleError(false);
+      this.toggleError(false, '&nbsp;');
       return pageUrl;
     } else {
       this.toggleError(true, 'Please enter a valid URL');
