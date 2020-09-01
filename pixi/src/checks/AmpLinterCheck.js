@@ -56,22 +56,21 @@ export default class AmpLinterCheck {
   }
 
   createReportData(apiResult) {
-    const linterStatus = Object.entries(apiResult.data).reduce(
-      (mappedData, [key, checks]) => {
-        // most checks are mapped 1:1 ro the result
-        const resultKey = directMapping[key];
-        if (resultKey) {
-          if (Array.isArray(checks)) {
-            mappedData[resultKey] =
-              checks.length === 1 && checks[0].status === 'PASS';
-          } else {
-            mappedData[resultKey] = checks.status === 'PASS';
+    const linterStatus = !apiResult.data
+      ? {}
+      : Object.entries(apiResult.data).reduce((mappedData, [key, checks]) => {
+          // most checks are mapped 1:1 ro the result
+          const resultKey = directMapping[key];
+          if (resultKey) {
+            if (Array.isArray(checks)) {
+              mappedData[resultKey] =
+                checks.length === 1 && checks[0].status === 'PASS';
+            } else {
+              mappedData[resultKey] = checks.status === 'PASS';
+            }
           }
-        }
-        return mappedData;
-      },
-      {}
-    );
+          return mappedData;
+        }, {});
 
     if (linterStatus.boilerplateIsRemoved === false) {
       if (apiResult.data.boilerplateisremoved.status === 'WARN') {
@@ -83,6 +82,7 @@ export default class AmpLinterCheck {
 
     return {
       data: {
+        isAmp: apiResult.isAmp,
         usesHttps:
           apiResult.url != undefined && apiResult.url.startsWith('https:'),
         noRenderBlockingExtension: !(
