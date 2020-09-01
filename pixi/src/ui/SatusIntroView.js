@@ -29,7 +29,7 @@ export default class SatusIntroView {
    * @param  {array} errors List of errors occurred in the checks
    */
   render(errors, pageUrl) {
-    AMP.setState({ pixi: { shareUrl: pageUrl }});
+    AMP.setState({pixi: {shareUrl: pageUrl}});
 
     if (!errors.length) {
       this.container.classList.add('pass');

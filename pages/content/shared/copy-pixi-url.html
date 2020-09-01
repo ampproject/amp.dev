@@ -58,9 +58,9 @@ $sitemap:
       scriptTag.setSelectionRange(0, 99999);
       document.execCommand('copy');
 
-      document.body.classList.add('success');
+      button.textContent = "Success";
       setTimeout(function() {
-        button.textContent = "Copy to clipboard"
+        button.textContent = "Copy to clipboard";
       }, animationDuration);
     });
   </script>

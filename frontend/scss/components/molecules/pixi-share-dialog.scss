@@ -3,6 +3,8 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
+@import 'components/atoms/_button.scss';
+
 .#{molecule('share-dialog ')} {
   position: absolute;
   top: 0;
@@ -45,11 +47,14 @@
       resize: none;
       margin: 10px 0 20px;
       padding: 10px 15px;
-      border: 1px solid color('sliver');
+      border: 1px solid color('silver');
       border-radius: 4px;
-      color: color('river-bed');
-      font-family: Noto Sans;
       color: color('gray-chateau');
+      font-family: Noto Sans;
+
+      @media (min-width: 768px) {
+        padding: 30px;
+      }
     }
 
     &-copy-button {
@@ -57,15 +62,13 @@
     }
 
     &-close {
+      @include unset-button;
       position: absolute;
       top: 130px;
       right: 20px;
-      height: 22px;
-      width: 22px;
-      padding: 0;
-      border: none;
-      -webkit-appearance: none;
-      background-color: transparent;
+      height: 28px;
+      width: 28px;
+      padding: 5px;
 
       @media (min-width: 768px) {
         top: 36px;
