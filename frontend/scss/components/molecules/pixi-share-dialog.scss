@@ -43,13 +43,17 @@
     &-textarea {
       width: 100%;
       resize: none;
-      margin: 10px 0 30px;
+      margin: 10px 0 20px;
       padding: 10px 15px;
       border: 1px solid color('sliver');
       border-radius: 4px;
       color: color('river-bed');
       font-family: Noto Sans;
       color: color('gray-chateau');
+    }
+
+    &-copy-button {
+      margin-left: -7px;
     }
 
     &-close {

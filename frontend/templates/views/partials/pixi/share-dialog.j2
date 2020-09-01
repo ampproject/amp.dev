@@ -11,12 +11,15 @@
           value="{{ doc.url }}"
           [value]="'{{ doc.url }}' + pixi.shareUrl"
           readonly>
-      <button class="ap-a-btn"
-          type="button"
-          name="button"
-          tabindex="0">
-        {{ _('Copy to clipboard') }}
-      </button>
+      <amp-iframe class="ap-m-share-dialog-container-copy-button"
+          width="300px"
+          height="75"
+          layout="fixed"
+          sandbox="allow-scripts"
+          src="{{ podspec.base_urls.platform }}/shared/copy-pixi-url/"
+          [src]="'{{ podspec.base_urls.platform }}/shared/copy-pixi-url/#{{ doc.url }}' + pixi.shareUrl">
+        <div placeholder></div>
+      </amp-iframe>
       <button class="ap-m-share-dialog-container-close"
           on="tap:share-dialog.close"
           type="button"
