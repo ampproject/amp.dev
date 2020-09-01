@@ -87,6 +87,9 @@ export default async function getRecommendationIds(
     result.push('mobile-friendly');
   }
 
+  // Always include recommendation for intrusive interstitials.
+  result.push('intrusive-interstitials');
+
   // This here is only to silence the linter complaining about unused vars
   if (!pageExperience) {
     // TODO: specific page experience results
