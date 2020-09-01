@@ -96,7 +96,8 @@
     "signale": "1.4.0",
     "uuid": "8.3.0",
     "ws": "7.3.1",
-    "web-push": "3.4.4"
+    "web-push": "3.4.4",
+    "amphtml-validator": "1.0.33"
   },
   "devDependencies": {
     "@ampproject/toolbox-validator-rules": "2.5.4",
@@ -108,7 +109,6 @@
     "@babel/preset-env": "7.11.0",
     "@babel/runtime": "7.11.2",
     "absolutify": "0.1.0",
-    "amphtml-validator": "1.0.33",
     "archiver": "5.0.0",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.1.0",
