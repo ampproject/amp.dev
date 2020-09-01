@@ -15,6 +15,7 @@
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
+const DEVICE_STRATEGY = 'MOBILE';
 
 export default class PageExperienceCheck {
   constructor() {
@@ -24,6 +25,7 @@ export default class PageExperienceCheck {
 
   async run(pageUrl) {
     this.apiUrl.searchParams.set('url', pageUrl);
+    this.apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
 
     try {
       const apiResult = await this.fetchJson();
