@@ -76,6 +76,39 @@
     }
   }
 
+  &-sharing-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: transparentize(color('black'), 0.2);
+
+    &-box {
+      width: 90%;
+      max-width: 810px;
+      padding: 34px 60px;
+      border-radius: 4px;
+      background: color('white');
+      box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.07);
+
+      h2 {
+        margin-top: 0;
+      }
+
+      textarea {
+        width: 100%;
+        resize: none;
+        margin: 10px 0 30px;
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: #48525c;
+        font-family: Noto Sans;
+        color: #a3a8ad;
+      }
+    }
+  }
+
   &.fail,
   &.pass {
     #{$status-intro} {
