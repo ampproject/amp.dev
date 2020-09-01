@@ -1,31 +1,6 @@
 {% do doc.styles.addCssFile('css/components/molecules/pixi-status-intro.css') %}
 
 <section id="status-intro" class="ap-m-pixi-status-intro pass">
-  <amp-lightbox id="sharing-dialog" layout="nodisplay">
-    <div class="ap-m-pixi-status-intro-sharing-dialog"
-        role="button"
-        tabindex="0">
-      <div class="ap-m-pixi-status-intro-sharing-dialog-box">
-        <h2>{{ _('Copy & paste URL') }}</h2>
-        <textarea id="share-textarea" class="share-view-textarea" readonly="">
-        </textarea>
-        <button class="ap-a-btn"
-            type="button"
-            name="button"
-            tabindex="0">
-          {{ _('Copy to clipboard') }}
-        </button>
-        <button class="ap-m-pixi-status-intro-sharing-dialog-box-close"
-            on="tap:sharing-dialog.close"
-            type="button"
-            name="button"
-            tabindex="1">
-          {% do doc.icons.useIcon('icons/close.svg') %}
-          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
-        </button>
-      </div>
-    </div>
-  </amp-lightbox>
   <div class="ap-m-pixi-status-intro-text">
     <div class="ap-m-pixi-status-intro-text-item">
       <h4>Why is it important</h4>
@@ -53,7 +28,7 @@
           {{ _('Fix it now') }}
         </button>
         <button class="ap-a-btn ap-a-btn-light"
-            on="tap:sharing-dialog"
+            on="tap:share-dialog"
             type="button"
             name="button">
           {{ _('Share') }}

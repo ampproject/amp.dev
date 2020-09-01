@@ -17,9 +17,11 @@ import i18n from './I18n.js';
 export default class SatusIntroView {
   constructor(doc) {
     this.container = doc.getElementById('status-intro');
-    this.banner = doc.getElementById('status-intro-banner');
+    this.banner = this.container.querySelector('#status-intro-banner');
     this.bannerTitle = this.banner.querySelector('h3');
     this.bannerText = this.banner.querySelector('p');
+
+    this.shareTextarea = this.container.querySelector('#share-textarea');
   }
 
   /**
@@ -27,6 +29,8 @@ export default class SatusIntroView {
    * @param  {array} errors List of errors occurred in the checks
    */
   render(errors) {
+    AMP.setState({ pixi: { shareUrl: 'inputvalue' }});
+
     if (!errors.length) {
       this.container.classList.add('pass');
       this.bannerTitle.textContent = i18n.translate(

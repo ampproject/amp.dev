@@ -1,0 +1,30 @@
+{% do doc.styles.addCssFile('css/components/molecules/pixi-share-dialog.css') %}
+
+<amp-lightbox id="share-dialog" layout="nodisplay">
+  <div class="ap-m-share-dialog"
+      role="button"
+      tabindex="0">
+    <div class="ap-m-share-dialog-container">
+      <h2>{{ _('Copy & paste URL') }}</h2>
+      <input class="ap-m-share-dialog-container-textarea"
+          type="text"
+          value="{{ doc.url }}"
+          [value]="'{{ doc.url }}' + pixi.shareUrl"
+          readonly>
+      <button class="ap-a-btn"
+          type="button"
+          name="button"
+          tabindex="0">
+        {{ _('Copy to clipboard') }}
+      </button>
+      <button class="ap-m-share-dialog-container-close"
+          on="tap:share-dialog.close"
+          type="button"
+          name="button"
+          tabindex="1">
+        {% do doc.icons.useIcon('icons/close.svg') %}
+        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+      </button>
+    </div>
+  </div>
+</amp-lightbox>
