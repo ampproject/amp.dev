@@ -12,6 +12,49 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+export const fixedRecommendations = ['intrusive-interstitials'];
+
+const directLinterRecommendations = {
+  usesHttps: 'https',
+  isValid: 'valid-cached-amp',
+  runtimeIsPreloaded: 'preload-amp-runtime',
+  blockingExtensionsPreloaded: 'preload-render-blocking-extensions',
+  fontsArePreloaded: 'preload-web-fonts',
+  fastGoogleFontsDisplay: 'fast-font-display',
+  googleFontPreconnect: 'preconnect-google-fonts',
+  isTransformedAmp: 'use-amp-optimizer',
+  moduleRuntimeIsUsed: 'upgrade-amp-optimizer',
+  heroImageIsDefined: 'hero-images',
+  noRenderBlockingExtension: 'prevent-render-blocking-extensions',
+};
+
+const directPageExperienceRecommendations = {
+  usesAppropriatelySizedImages: 'appropriately-sized-images',
+  textCompression: 'text-compression',
+  fastServerResponse: 'server-response-time',
+  usesOptimizedImages: 'optimized-images',
+  usesWebpImages: 'next-gen-images',
+  fastFontDisplay: 'fast-font-display',
+  minifiedCss: 'minify-css',
+};
+
+const directSafeBrowsingRecommendations = {
+  safeBrowsing: 'safe-browsing',
+};
+
+const directMobileFriendlinessRecommendations = {
+  mobileFriendly: 'mobile-friendly',
+  noResourceIssues: 'resource-issues',
+};
+
+const addDirectRecommendations = (result, checks, mapping) => {
+  for (const [check, status] of Object.entries(checks)) {
+    if (status === false && mapping[check]) {
+      result.push(mapping[check]);
+    }
+  }
+};
+
 export default async function getRecommendationIds(
   pageExperiencePromise,
   safeBrowsingPromise,
@@ -30,38 +73,24 @@ export default async function getRecommendationIds(
     mobileFriendlinessPromise,
   ]);
 
-  const result = [];
+  const result = [...fixedRecommendations];
 
-  if (linter.usesHttps === false) {
-    result.push('https');
-  }
-  if (linter.isValid === false) {
-    result.push('valid-cached-amp');
-  }
-  if (linter.runtimeIsPreloaded === false) {
-    result.push('preload-amp-runtime');
-  }
-  if (linter.blockingExtensionsPreloaded === false) {
-    result.push('preload-render-blocking-extensions');
-  }
-  if (linter.fontsArePreloaded === false) {
-    result.push('preload-web-fonts');
-  }
-  if (linter.fastGoogleFontsDisplay === false) {
-    result.push('fast-font-display');
-  }
-  if (linter.googleFontPreconnect === false) {
-    result.push('preconnect-google-fonts');
-  }
-  if (linter.isTransformedAmp === false) {
-    result.push('use-amp-optimizer');
-  }
-  if (linter.moduleRuntimeIsUsed === false) {
-    result.push('upgrade-amp-optimizer');
-  }
-  if (linter.heroImageIsDefined === false) {
-    result.push('hero-images');
-  }
+  addDirectRecommendations(result, linter, directLinterRecommendations);
+  addDirectRecommendations(
+    result,
+    pageExperience,
+    directPageExperienceRecommendations
+  );
+  addDirectRecommendations(
+    result,
+    safeBrowsing,
+    directSafeBrowsingRecommendations
+  );
+  addDirectRecommendations(
+    result,
+    mobileFriendliness,
+    directMobileFriendlinessRecommendations
+  );
 
   if (linter.boilerplateIsRemoved === false) {
     if (linter.updateOptimizerForBoilerplateRemoval) {
@@ -71,29 +100,9 @@ export default async function getRecommendationIds(
     }
   }
 
-  if (linter.noRenderBlockingExtension === false) {
-    result.push('prevent-render-blocking-extensions');
-  }
   if (linter.noDynamicLayoutExtensions === false) {
     // TODO: also check for CLS
     result.push('dynamic-layout-extensions');
-  }
-
-  if (safeBrowsing.safeBrowsing === false) {
-    result.push('safe-browsing');
-  }
-
-  if (mobileFriendliness.mobileFriendly === false) {
-    result.push('mobile-friendly');
-  }
-
-  // Always include recommendation for intrusive interstitials.
-  result.push('intrusive-interstitials');
-
-  // This here is only to silence the linter complaining about unused vars
-  if (!pageExperience) {
-    // TODO: specific page experience results
-    result.push('responsive-images');
   }
 
   return result.filter((item, i, ar) => ar.indexOf(item) === i);

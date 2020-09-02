@@ -187,6 +187,97 @@ describe('getRecommendationIds', () => {
     expect(ids).toContain('dynamic-layout-extensions');
   });
 
+  it('returns responsive-images', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        usesAppropriatelySizedImages: false,
+      }),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('appropriately-sized-images');
+  });
+
+  it('returns text-compression', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        textCompression: false,
+      }),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('text-compression');
+  });
+
+  it('returns server-response-time', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        fastServerResponse: false,
+      }),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('server-response-time');
+  });
+
+  it('returns optimized-images', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        usesOptimizedImages: false,
+      }),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('optimized-images');
+  });
+
+  it('returns next-gen-images', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        usesWebpImages: false,
+      }),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('next-gen-images');
+  });
+
+  it('returns fast-font-display', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        fastFontDisplay: false,
+      }),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('fast-font-display');
+  });
+
+  it('returns minify-css', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        minifiedCss: false,
+      }),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('minify-css');
+  });
+
   it('returns safe-browsing', async () => {
     const ids = await getRecommendationIds(
       Promise.resolve({}),
@@ -213,9 +304,25 @@ describe('getRecommendationIds', () => {
     expect(ids).toContain('mobile-friendly');
   });
 
-  it('returns multiple recommendations', async () => {
+  it('returns mobile-friendly', async () => {
     const ids = await getRecommendationIds(
       Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({
+        noResourceIssues: false,
+      })
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('resource-issues');
+  });
+
+  it('returns multiple recommendations', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        usesAppropriatelySizedImages: false,
+        minifiedCss: false,
+      }),
       Promise.resolve({
         safeBrowsing: false,
       }),
@@ -227,7 +334,9 @@ describe('getRecommendationIds', () => {
         mobileFriendly: false,
       })
     );
-    expect(ids.length).toBe(fixedRecommendations.length + 4);
+    expect(ids.length).toBe(fixedRecommendations.length + 6);
+    expect(ids).toContain('appropriately-sized-images');
+    expect(ids).toContain('minify-css');
     expect(ids).toContain('safe-browsing');
     expect(ids).toContain('https');
     expect(ids).toContain('valid-cached-amp');

@@ -105,6 +105,13 @@
 					"category": "fast"
 				}
 			}
-		}
+		},
+		"usesAppropriatelySizedImages": true,
+		"textCompression": true,
+		"fastServerResponse": true,
+		"usesOptimizedImages": true,
+		"usesWebpImages": true,
+		"fastFontDisplay": true,
+		"minifiedCss": true
 	}
 }
