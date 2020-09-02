@@ -37,7 +37,7 @@ export default class MobileFriendlinessCheck {
       error,
       data: {
         mobileFriendly: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY',
-        resourceIssues: !!(
+        noResourceIssues: !(
           apiResult.resourceIssues && apiResult.resourceIssues.length > 0
         ),
       },

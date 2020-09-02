@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import {fixedRecommendations} from './recommendations';
+
 export default async function getStatusId(
   recommendationsPromise,
   pageExperiencePromise,
@@ -47,7 +49,7 @@ export default async function getStatusId(
     }
 
     // if we reach this point all the page has passed the tests...
-    if (recommendations.length > 0) {
+    if (recommendations.length > fixedRecommendations.length) {
       return 'passed-with-info';
     }
     return 'all-passed';
