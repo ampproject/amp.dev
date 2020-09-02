@@ -82,6 +82,31 @@
       display: flex;
       flex-direction: column;
       line-height: 1.8;
+
+      div {
+        white-space: nowrap;
+      }
+
+      span {
+        color: color('silver');
+      }
+
+      #{$primary-metric}-average {
+        .fast & {
+          font-weight: bold;
+          color: color('malachite');
+        }
+
+        .average & {
+          font-weight: bold;
+          color: color('buttercup');
+        }
+
+        .slow & {
+          font-weight: bold;
+          color: color('red');
+        }
+      }
     }
   }
 }

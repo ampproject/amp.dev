@@ -105,6 +105,10 @@ class CoreWebVitalView {
     this.category = this.container.querySelector(
       '.ap-m-pixi-primary-metric-category'
     );
+
+    this.average = this.container.querySelector(
+      '.ap-m-pixi-primary-metric-average'
+    );
     this.improvement = this.container.querySelector(
       '.ap-m-pixi-primary-metric-improvement'
     );
@@ -123,6 +127,7 @@ class CoreWebVitalView {
     this.container.classList.add(responseCategory);
     this.category.textContent = displayCategory;
 
+    this.average.textContent = `${data.percentile / unit.conversion} ${unit.name}`;
     this.improvement.textContent = 'Not yet implemented';
     this.recommendations.textContent = 'Not yet implemented';
 
