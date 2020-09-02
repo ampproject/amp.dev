@@ -31,7 +31,7 @@ export default class SatusIntroView {
   async render(errors, pageUrl) {
     const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
     shareUrl.searchParams.set('url', pageUrl);
-    AMP.setState({ pixi: { shareUrl: shareUrl.toString() }});
+    AMP.setState({pixi: {shareUrl: shareUrl.toString()}});
 
     if (!errors.length) {
       this.container.classList.add('pass');
