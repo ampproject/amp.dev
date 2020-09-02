@@ -101,7 +101,7 @@
       position: absolute;
       right: 0;
       transform-origin: right;
-      background-image: linear-gradient(-90deg, color('red'), transparentize(color('red'), 1));
+      background-color: color('red');
     }
   }
 
