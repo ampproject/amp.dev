@@ -1,5 +1,7 @@
 import getRecommendationIds from './recommendations';
 
+const fixedRecommendations = ['intrusive-interstitials'];
+
 describe('getRecommendationIds', () => {
   it('returns https', async () => {
     const ids = await getRecommendationIds(
@@ -10,7 +12,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['https']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('https');
   });
 
   it('returns valid-cached-amp', async () => {
@@ -22,7 +25,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['valid-cached-amp']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('valid-cached-amp');
   });
 
   it('returns preload-amp-runtime', async () => {
@@ -34,7 +38,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['preload-amp-runtime']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('preload-amp-runtime');
   });
 
   it('returns preload-render-blocking-extensions', async () => {
@@ -46,7 +51,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['preload-render-blocking-extensions']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('preload-render-blocking-extensions');
   });
 
   it('returns preload-web-fonts', async () => {
@@ -58,7 +64,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['preload-web-fonts']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('preload-web-fonts');
   });
 
   it('returns fast-font-display', async () => {
@@ -70,7 +77,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['fast-font-display']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('fast-font-display');
   });
 
   it('returns preconnect-google-fonts', async () => {
@@ -82,7 +90,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['preconnect-google-fonts']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('preconnect-google-fonts');
   });
 
   it('returns use-amp-optimizer', async () => {
@@ -94,7 +103,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['use-amp-optimizer']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('use-amp-optimizer');
   });
 
   it('returns upgrade-amp-optimizer (module runtime)', async () => {
@@ -106,7 +116,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['upgrade-amp-optimizer']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('upgrade-amp-optimizer');
   });
 
   it('returns hero-images', async () => {
@@ -118,7 +129,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['hero-images']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('hero-images');
   });
 
   it('returns amp-boilerplate-removal', async () => {
@@ -131,7 +143,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['amp-boilerplate-removal']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('amp-boilerplate-removal');
   });
 
   it('returns upgrade-amp-optimizer (boilerplate removal)', async () => {
@@ -144,7 +157,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['upgrade-amp-optimizer']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('upgrade-amp-optimizer');
   });
 
   it('returns prevent-render-blocking-extensions', async () => {
@@ -156,7 +170,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['prevent-render-blocking-extensions']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('prevent-render-blocking-extensions');
   });
 
   it('returns dynamic-layout-extensions', async () => {
@@ -168,7 +183,8 @@ describe('getRecommendationIds', () => {
       }),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['dynamic-layout-extensions']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('dynamic-layout-extensions');
   });
 
   it('returns safe-browsing', async () => {
@@ -180,7 +196,8 @@ describe('getRecommendationIds', () => {
       Promise.resolve({}),
       Promise.resolve({})
     );
-    expect(ids).toEqual(['safe-browsing']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('safe-browsing');
   });
 
   it('returns mobile-friendly', async () => {
@@ -192,7 +209,8 @@ describe('getRecommendationIds', () => {
         mobileFriendly: false,
       })
     );
-    expect(ids).toEqual(['mobile-friendly']);
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContain('mobile-friendly');
   });
 
   it('returns multiple recommendations', async () => {
@@ -209,13 +227,14 @@ describe('getRecommendationIds', () => {
         mobileFriendly: false,
       })
     );
+    expect(ids.length).toBe(fixedRecommendations.length + 4);
     expect(ids).toContain('safe-browsing');
     expect(ids).toContain('https');
     expect(ids).toContain('valid-cached-amp');
     expect(ids).toContain('mobile-friendly');
   });
 
-  it('returns no recommendations', async () => {
+  it('returns fixed recommendations', async () => {
     const ids = await getRecommendationIds(
       Promise.resolve({}),
       Promise.resolve({
@@ -229,6 +248,9 @@ describe('getRecommendationIds', () => {
         mobileFriendly: true,
       })
     );
-    expect(ids).toEqual([]);
+    expect(ids.length).toBe(fixedRecommendations.length);
+    for (let i = 0; i < fixedRecommendations.length; i++) {
+      expect(ids).toContain(fixedRecommendations[i]);
+    }
   });
 });
