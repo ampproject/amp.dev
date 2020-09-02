@@ -95,18 +95,23 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
     <amp-state id="pixi">
       <script type="application/json">
-      {
-        "pageUrl": "[= query.url =]",
-        "i18n": {
-          "language": "{{ doc.locale }}",
-          "staticText": {{pixi.staticText|jsonify|safe}}
+        {
+          "baseUrl": "{{ podspec.base_urls.platform }}{{ doc.url.path }}",
+          "pageUrl": "[= query.url =]",
+          "i18n": {
+            "language": "{{ doc.locale }}",
+            "staticText": {{pixi.staticText|jsonify|safe}}
+          }
         }
-      }
-    </script>
+      </script>
     </amp-state>
 
     {% import '/views/partials/pixi/webpack.j2' as webpack %}
-    <amp-script id="pixi-checks" class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
+    <amp-script id="pixi-checks"
+        class="ap-t-pixi-checks"
+        src="{{ podspec.base_urls.platform }}{{ webpack.src }}"
+        layout="container"
+        sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
 
       <div class="ap-t-pixi-checks-input">
         {% include 'views/partials/pixi/input-bar.j2' %}
@@ -124,5 +129,8 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       {% include 'views/partials/pixi/recommendations.j2' %}
 
     </amp-script>
+
+    {% include 'views/partials/pixi/share-dialog.j2' %}
+
   {% endif %}
 </main>

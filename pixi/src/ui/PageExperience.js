@@ -80,7 +80,7 @@ export default class PageExperience {
     );
 
     this.recommendationsView.render(recommendationIds);
-    this.satusIntroView.render(this.errors);
+    this.satusIntroView.render(this.errors, pageUrl);
 
     this.toggleLoading(false);
   }
