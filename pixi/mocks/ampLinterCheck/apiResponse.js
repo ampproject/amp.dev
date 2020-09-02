@@ -112,9 +112,15 @@ const apiResponseNoAmp = {
   isAmp: false,
 };
 
+const apiResponseError = {
+  status: 'error',
+  errorId: 'NO_SUCCESS_RESPONSE',
+};
+
 module.exports = {
   apiResponsePassAll,
   apiResponseFailAll,
   apiResponseInfoBoilerplate,
   apiResponseNoAmp,
+  apiResponseError,
 };

@@ -44,8 +44,8 @@ export default class AmpLinterCheck {
   }
 
   parseApiResult(apiResult) {
-    if (apiResult.status != 'ok') {
-      return this.createError(new Error(apiResult.message));
+    if (apiResult.status !== 'ok') {
+      return {data: {isLoaded: false}};
     }
 
     return this.createReportData(apiResult);
@@ -82,6 +82,7 @@ export default class AmpLinterCheck {
 
     return {
       data: {
+        isLoaded: true,
         isAmp: apiResult.isAmp,
         usesHttps:
           apiResult.url != undefined && apiResult.url.startsWith('https:'),
@@ -100,16 +101,10 @@ export default class AmpLinterCheck {
 
   async fetchJson() {
     try {
-      const response = await fetch(this.apiUrl);
-
-      if (!response.ok) {
-        throw new Error(
-          `AmpLinterCheck failed: response failed with status ${response.status}`
-        );
-      }
+      const response = await fetch(this.apiUrl.href);
       return response.json();
     } catch (e) {
-      throw new Error('AmpLinterCheck failed:', e);
+      throw new Error(`AmpLinterCheck failed: ${e.message}`);
     }
   }
 }
