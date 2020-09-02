@@ -17,7 +17,7 @@ export default async function getStatusId(
   pageExperiencePromise,
   safeBrowsingPromise,
   linterPromise,
-  mobileFriendlinessPromise,
+  mobileFriendlinessPromise
 ) {
   try {
     const linter = await linterPromise;
