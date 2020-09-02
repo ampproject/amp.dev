@@ -43,18 +43,14 @@
     }
 
     &-textarea {
-      width: 100%;
       resize: none;
+      width: 100%;
       margin: 10px 0 20px;
       padding: 10px 15px;
       border: 1px solid color('silver');
       border-radius: 4px;
-      color: color('gray-chateau');
       font-family: Noto Sans;
-
-      @media (min-width: 768px) {
-        padding: 30px;
-      }
+      color: color('gray-chateau');
     }
 
     &-copy-button {
