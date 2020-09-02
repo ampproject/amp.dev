@@ -100,11 +100,7 @@ export default class AmpLinterCheck {
   }
 
   async fetchJson() {
-    try {
-      const response = await fetch(this.apiUrl.href);
-      return response.json();
-    } catch (e) {
-      throw new Error(`AmpLinterCheck failed: ${e.message}`);
-    }
+    const response = await fetch(this.apiUrl.href);
+    return response.json();
   }
 }
