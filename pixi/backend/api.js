@@ -19,6 +19,7 @@ const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
 const RateLimitedFetch = require('@lib/utils/rateLimitedFetch');
+const API_VERSION = 0;
 
 const rateLimitedFetch = new RateLimitedFetch({
   requestHeaders: {
@@ -61,6 +62,7 @@ const execChecks = async (url) => {
     redirected: res.redirected,
     url: res.url,
     isAmp: isAmp($),
+    version: API_VERSION
   };
 
   if (!result.isAmp) {
@@ -72,6 +74,7 @@ const execChecks = async (url) => {
     components: findAmpComponents($),
     data: lintResults,
     ...result,
+    version: API_VERSION
   };
 };
 
@@ -88,6 +91,7 @@ api.get('/lint', async (request, response) => {
     const result = {
       status: 'ok',
       ...checkResult,
+      version: API_VERSION
     };
     response.json(result);
   } catch (e) {
