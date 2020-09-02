@@ -9,7 +9,7 @@
   background-color: color('white');
 
   @media (min-width: 768px) {
-    padding: 32px;
+    padding: 35px;
   }
 
   & + & {
@@ -26,8 +26,9 @@
 
   &-header {
     display: flex;
+    justify-content: space-between;
 
-    h3 {
+    &-title {
       margin-top: 0;
       font-size: 28px;
       line-height: 1.4;
@@ -35,40 +36,60 @@
       @media (min-width: 768px) {
         width: 35%;
       }
-    }
 
-    &-full {
-      display: inline-block;
+      &-full {
+        display: inline-block;
 
-      &:after {
-        content: "|";
-        margin: 0 5px;
+        &:after {
+          content: "|";
+          margin: 0 5px;
+        }
       }
-    }
 
-    &-id {
-      display: inline-block;
+      &-id {
+        display: inline-block;
 
-      &:after {
+        &:after {
+          display: block;
+          content: "";
+        }
+      }
+
+      &-status {
         display: block;
-        content: "";
+        color: color('silver');
+
+        .fast & {
+          color: color('malachite');
+        }
+
+        .average & {
+          color: color('buttercup');
+        }
+
+        .slow & {
+          color: color('red');
+        }
       }
     }
 
-    &-status {
-      display: block;
-      color: color('silver');
+    &-tooltip {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      padding: 2px;
 
-      .fast & {
-        color: color('malachite');
+      svg {
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        transition: opacity .2s ease-in-out;
       }
 
-      .average & {
-        color: color('buttercup');
-      }
-
-      .slow & {
-        color: color('red');
+      &:hover {
+        svg {
+          opacity: 1;
+        }
       }
     }
   }

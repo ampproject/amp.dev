@@ -2,18 +2,22 @@
 
 <div id="{{ primary_metric.id }}" class="ap-m-pixi-primary-metric">
   <div class="ap-m-pixi-primary-metric-header">
-    <h3>
-      <div class="ap-m-pixi-primary-metric-header-full">
+    <h3 class="ap-m-pixi-primary-metric-header-title">
+      <div class="ap-m-pixi-primary-metric-header-title-full">
         {{ primary_metric.title.full }}
       </div>
-      <div class="ap-m-pixi-primary-metric-header-id">
+      <div class="ap-m-pixi-primary-metric-header-title-id">
         {{ primary_metric.title.id }}
       </div>
-      <label class="ap-m-pixi-primary-metric-header-status">
+      <label class="ap-m-pixi-primary-metric-header-title-status">
         <span class="ap-m-pixi-primary-metric-category">{{ _('Analyzing') }}</span>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </label>
     </h3>
+    <div class="ap-m-pixi-primary-metric-header-tooltip" role="button">
+      {% do doc.icons.useIcon('icons/questionmark-outline.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark-outline"></use></svg>
+    </div>
   </div>
 
   <div class="ap-m-pixi-primary-metric-body">
