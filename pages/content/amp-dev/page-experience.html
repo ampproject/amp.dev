@@ -6,10 +6,9 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
 {% do doc.styles.addCssFile('css/components/templates/pixi.css') %}
 
-{% set status_banners = {} %}
-{% set recommendations = {} %}
 {% set pixi = g.doc('/content/pixi/index.md', locale=doc.locale) %}
 
+{% set status_banners = {} %}
 {% set nodes = g.docs('/content/pixi/status-banners', locale=doc.locale) %}
 {% for node in nodes %}
   {% set nodeDict = {
@@ -20,6 +19,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   {% set x=status_banners.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
+{% set recommendations = {} %}
 {% set nodes = g.docs('/content/pixi/recommendations', locale=doc.locale) %}
 {% for node in nodes %}
   {% set nodeDict = {
@@ -28,6 +28,15 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     'body': node.body
   } %}
   {% set x=recommendations.__setitem__(node.base, nodeDict) %}
+{% endfor %}
+
+{% set info_texts = {} %}
+{% set nodes = g.docs('/content/pixi/info-texts', locale=doc.locale) %}
+{% for node in nodes %}
+  {% set nodeDict = {
+    'body': node.body
+  } %}
+  {% set x=info_texts.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
 
@@ -75,6 +84,12 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     <amp-state id="pixiStatusBanners">
       <script type="application/json">
       {{status_banners|jsonify|safe}}
+    </script>
+    </amp-state>
+
+    <amp-state id="pixiInfoTexts">
+      <script type="application/json">
+      {{info_texts|jsonify|safe}}
     </script>
     </amp-state>
 
