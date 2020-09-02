@@ -15,6 +15,7 @@
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
+const DEVICE_STRATEGY = 'MOBILE';
 
 export default class PageExperienceCheck {
   constructor() {
@@ -24,6 +25,7 @@ export default class PageExperienceCheck {
 
   async run(pageUrl) {
     this.apiUrl.searchParams.set('url', pageUrl);
+    this.apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
 
     try {
       const apiResult = await this.fetchJson();
@@ -48,6 +50,13 @@ export default class PageExperienceCheck {
     }
 
     return labData;
+  }
+
+  getAuditScore(audits, testName) {
+    if (audits && audits[testName] && !Number.isNaN(audits[testName].score)) {
+      return audits[testName].score;
+    }
+    return -1;
   }
 
   createReportData(apiResult) {
@@ -88,21 +97,28 @@ export default class PageExperienceCheck {
               data: this.createLabData(labData['cumulative-layout-shift']),
             },
           },
+          textCompression:
+            this.getAuditScore(labData, 'uses-text-compression') === 1,
+          fastServerResponse:
+            this.getAuditScore(labData, 'server-response-time') === 1,
+          usesAppropriatelySizedImages:
+            this.getAuditScore(labData, 'uses-responsive-images') === 1,
+          usesOptimizedImages:
+            this.getAuditScore(labData, 'uses-optimized-images') === 1,
+          usesWebpImages: this.getAuditScore(labData, 'uses-webp-images') === 1,
+          fastFontDisplay: this.getAuditScore(labData, 'font-display') === 1,
+          minifiedCss: this.getAuditScore(labData, 'unminified-css') === 1,
         },
       },
     };
   }
 
   async fetchJson() {
-    try {
-      const response = await fetch(this.apiUrl);
-      if (!response.ok) {
-        throw new Error(`PageExperienceCheck failed for: ${this.apiUrl}`);
-      }
-      const result = await response.json();
-      return result;
-    } catch (e) {
-      throw new Error('PageExperienceCheck failed:', e);
+    const response = await fetch(this.apiUrl.href);
+    if (!response.ok) {
+      throw new Error(`PageExperienceCheck failed for: ${this.apiUrl}`);
     }
+    const result = await response.json();
+    return result;
   }
 }

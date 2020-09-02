@@ -6,10 +6,9 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
 {% do doc.styles.addCssFile('css/components/templates/pixi.css') %}
 
-{% set status_banners = {} %}
-{% set recommendations = {} %}
 {% set pixi = g.doc('/content/pixi/index.md', locale=doc.locale) %}
 
+{% set status_banners = {} %}
 {% set nodes = g.docs('/content/pixi/status-banners', locale=doc.locale) %}
 {% for node in nodes %}
   {% set nodeDict = {
@@ -20,6 +19,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   {% set x=status_banners.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
+{% set recommendations = {} %}
 {% set nodes = g.docs('/content/pixi/recommendations', locale=doc.locale) %}
 {% for node in nodes %}
   {% set nodeDict = {
@@ -28,6 +28,15 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     'body': node.body
   } %}
   {% set x=recommendations.__setitem__(node.base, nodeDict) %}
+{% endfor %}
+
+{% set info_texts = {} %}
+{% set nodes = g.docs('/content/pixi/info-texts', locale=doc.locale) %}
+{% for node in nodes %}
+  {% set nodeDict = {
+    'body': node.body
+  } %}
+  {% set x=info_texts.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
 
@@ -78,20 +87,31 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </script>
     </amp-state>
 
-    <amp-state id="pixi">
+    <amp-state id="pixiInfoTexts">
       <script type="application/json">
-      {
-        "pageUrl": "[= query.url =]",
-        "i18n": {
-          "language": "{{ doc.locale }}",
-          "staticText": {{pixi.staticText|jsonify|safe}}
-        }
-      }
+      {{info_texts|jsonify|safe}}
     </script>
     </amp-state>
 
+    <amp-state id="pixi">
+      <script type="application/json">
+        {
+          "baseUrl": "{{ podspec.base_urls.platform }}{{ doc.url.path }}",
+          "pageUrl": "[= query.url =]",
+          "i18n": {
+            "language": "{{ doc.locale }}",
+            "staticText": {{pixi.staticText|jsonify|safe}}
+          }
+        }
+      </script>
+    </amp-state>
+
     {% import '/views/partials/pixi/webpack.j2' as webpack %}
-    <amp-script id="pixi-checks" class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
+    <amp-script id="pixi-checks"
+        class="ap-t-pixi-checks"
+        src="{{ podspec.base_urls.platform }}{{ webpack.src }}"
+        layout="container"
+        sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
 
       <div class="ap-t-pixi-checks-input">
         {% include 'views/partials/pixi/input-bar.j2' %}
@@ -109,5 +129,8 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       {% include 'views/partials/pixi/recommendations.j2' %}
 
     </amp-script>
+
+    {% include 'views/partials/pixi/share-dialog.j2' %}
+
   {% endif %}
 </main>

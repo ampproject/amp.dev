@@ -1,11 +1,12 @@
 ---
-$title: Upgrade AMP Optimizer - use the JavaScript Module version of the AMP Runtime
+$title: Upgrade AMP Optimizer version
 tags:
 - lcp
 - fid
+- cls
 ---
-It's important to respect your users and their bandwidth. 
-Reduce the bytes consumed by network activity easily with the latest 
+Please upgrade the version of 
 [AMP Optimizer](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/) 
-version. Keeping your implementation up-to-date splits up JavaScript
-programs into separate modules, and only imports what's needed! 
+you are using to the latest release.
+Each AMP Optimizer release adds transformations that will make it easier for
+your page to have a good page experience. 
