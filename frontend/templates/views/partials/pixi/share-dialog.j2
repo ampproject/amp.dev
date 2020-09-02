@@ -8,8 +8,8 @@
       <h2>{{ _('Copy & paste URL') }}</h2>
       <input class="ap-m-share-dialog-container-textarea"
           type="text"
-          value="{{ doc.url }}"
-          [value]="'{{ doc.url }}' + pixi.shareUrl"
+          value=""
+          [value]="pixi.shareUrl"
           readonly>
       <amp-iframe class="ap-m-share-dialog-container-copy-button"
           width="300px"
@@ -17,7 +17,7 @@
           layout="fixed"
           sandbox="allow-scripts"
           src="{{ podspec.base_urls.platform }}/shared/copy-pixi-url/"
-          [src]="'{{ podspec.base_urls.platform }}/shared/copy-pixi-url/#{{ doc.url }}' + pixi.shareUrl">
+          [src]="'{{ podspec.base_urls.platform }}/shared/copy-pixi-url/#' + pixi.shareUrl">
         <div placeholder></div>
       </amp-iframe>
       <button class="ap-m-share-dialog-container-close"

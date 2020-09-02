@@ -28,8 +28,10 @@ export default class SatusIntroView {
    * Check error array and render banner
    * @param  {array} errors List of errors occurred in the checks
    */
-  render(errors, pageUrl) {
-    AMP.setState({pixi: {shareUrl: pageUrl}});
+  async render(errors, pageUrl) {
+    const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
+    shareUrl.searchParams.set('url', pageUrl);
+    AMP.setState({ pixi: { shareUrl: shareUrl.toString() }});
 
     if (!errors.length) {
       this.container.classList.add('pass');
