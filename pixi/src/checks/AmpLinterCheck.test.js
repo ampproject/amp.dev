@@ -10,6 +10,7 @@ import {
   apiResponseFailAll,
   apiResponseInfoBoilerplate,
   apiResponseNoAmp,
+  apiResponseError,
 } from '../../mocks/ampLinterCheck/apiResponse.js';
 
 import pixiConfig from '../../config.js';
@@ -26,6 +27,8 @@ describe('Linter check', () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponsePassAll);
 
     const report = await linterCheck.run('http://example.com');
+    expect(report.data.isLoaded).toBe(true);
+    expect(report.data.isAmp).toBe(true);
     expect(report.data.usesHttps).toBe(true);
     expect(report.data.isValid).toBe(true);
     expect(report.data.runtimeIsPreloaded).toBe(true);
@@ -46,6 +49,8 @@ describe('Linter check', () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponseFailAll);
 
     const report = await linterCheck.run('http://example.com');
+    expect(report.data.isLoaded).toBe(true);
+    expect(report.data.isAmp).toBe(true);
     expect(report.data.usesHttps).toBe(false);
     expect(report.data.isValid).toBe(false);
     expect(report.data.runtimeIsPreloaded).toBe(false);
@@ -70,11 +75,21 @@ describe('Linter check', () => {
     expect(report.data.updateOptimizerForBoilerplateRemoval).not.toBe(true);
   });
 
-  it('returns object with only the isAmp flag', async () => {
+  it('returns object with only the isAmp and isLoaded flag', async () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponseNoAmp);
 
     const report = await linterCheck.run('http://example.com');
+    expect(report.data.isLoaded).toBe(true);
     expect(report.data.isAmp).toBe(false);
+    expect(report.data.isValid).toBeUndefined();
+  });
+
+  it('returns object with only the isLoaded flag', async () => {
+    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseError);
+
+    const report = await linterCheck.run('http://example.com');
+    expect(report.data.isLoaded).toBe(false);
+    expect(report.data.isAmp).toBeUndefined();
     expect(report.data.isValid).toBeUndefined();
   });
 
