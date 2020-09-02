@@ -14,10 +14,7 @@
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </label>
     </h3>
-    <div class="ap-m-pixi-primary-metric-header-tooltip" role="button">
-      {% do doc.icons.useIcon('icons/questionmark-outline.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark-outline"></use></svg>
-    </div>
+    {% include 'views/partials/pixi/tooltip.j2' %}
   </div>
 
   <div class="ap-m-pixi-primary-metric-body">
