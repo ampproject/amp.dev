@@ -5,13 +5,11 @@
 
 .#{molecule('pixi-primary-metric')} {
   $primary-metric: &;
-  display: flex;
-  flex-direction: column;
   padding: 15px 25px;
   background-color: color('white');
 
   @media (min-width: 768px) {
-    padding: 38px 25px;
+    padding: 32px;
   }
 
   & + & {
@@ -26,24 +24,17 @@
     transition-delay: 160ms;
   }
 
-  &-row {
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-
-    &:first-child {
-      @media (min-width: 768px) {
-        flex-direction: row;
-      }
-    }
-  }
-
   &-header {
-    margin-top: 0;
-    line-height: 1.5;
+    display: flex;
 
-    @media (min-width: 768px) {
-      width: 35%;
+    h3 {
+      margin-top: 0;
+      font-size: 28px;
+      line-height: 1.4;
+
+      @media (min-width: 768px) {
+        width: 35%;
+      }
     }
 
     &-full {
@@ -79,6 +70,17 @@
       .slow & {
         color: color('red');
       }
+    }
+  }
+
+  &-body {
+    display: flex;
+    width: 100%;
+
+    &-result {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.8;
     }
   }
 }
