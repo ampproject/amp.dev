@@ -71,7 +71,8 @@ class CoreWebVitalView {
     this.container.classList.add(responseCategory);
     this.category.textContent = displayCategory;
 
-    this.average.textContent = `${data.numericValue / unit.conversion} ${unit.name}`;
+    const average = (data.numericValue / unit.conversion).toFixed(2)
+    this.average.textContent = `${average} ${unit.name}`;
     this.improvement.textContent = 'Not yet implemented';
     this.recommendations.textContent = 'Not yet implemented';
 
