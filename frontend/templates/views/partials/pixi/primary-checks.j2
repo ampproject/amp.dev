@@ -17,7 +17,7 @@
         'full': _('Loading speed'),
         'id': 'LCP'
       },
-      'scale': 'weighted'
+      'scale': 'simple'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -28,7 +28,7 @@
         'full': _('Interactivity'),
         'id': 'FID'
       },
-      'scale': 'weighted'
+      'scale': 'simple'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -39,7 +39,7 @@
         'full': _('Visual stability'),
         'id': 'CLS'
       },
-      'scale': 'weighted'
+      'scale': 'simple'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -51,7 +51,8 @@
       'title': {
         'full': _('Loading speed'),
         'id': 'LCP'
-      }
+      },
+      'scale': 'weighted'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -61,7 +62,8 @@
       'title': {
         'full': _('Interactivity'),
         'id': 'TBT'
-      }
+      },
+      'scale': 'weighted'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -71,7 +73,8 @@
       'title': {
         'full': _('Visual stability'),
         'id': 'CLS'
-      }
+      },
+      'scale': 'weighted'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}

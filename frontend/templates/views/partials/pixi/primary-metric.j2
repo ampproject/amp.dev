@@ -37,6 +37,9 @@
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </div>
     </div>
+
+    {% with scale = primary_metric.scale %}
     {% include 'views/partials/pixi/scale.j2' %}
+    {% endwith %}
   </div>
 </div>

@@ -28,22 +28,23 @@ class WeightedScale {
   }
 
   render(data, unit) {
+    this.pitch.style.left = `${data.score * 100}%`;
+    this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
+      1
+    )} ${unit.name}`;
+
     for (const bar of this.bars) {
       const label = bar.querySelector('span');
       const type = bar.getAttribute('data-type');
       const perc = Math.round(
         (data.proportion[type] / data.proportion.slow) * 100
       );
+
       bar.style.width = `${perc}%`;
       label.textContent = `${
         data.proportion[type] / unit.conversion.toFixed(1)
       } ${unit.name}`;
     }
-
-    this.pitch.style.left = `${data.score * 100}%`;
-    this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
-      1
-    )} ${unit.name}`;
   }
 }
 

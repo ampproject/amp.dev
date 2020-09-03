@@ -2,12 +2,14 @@
 <div class="ap-a-pixi-scale">
   <label class="ap-a-pixi-scale-label">Page loads</label>
   <div class="ap-a-pixi-scale-chart">
+    {% if scale == 'weighted' %}
     <div class="ap-a-pixi-scale-chart-bar" data-type="slow">
       <span>&nbsp;</span>
     </div>
     <div class="ap-a-pixi-scale-chart-bar" data-type="average">
       <span>&nbsp;</span>
     </div>
+    {% endif %}
     <div class="ap-a-pixi-scale-chart-bar" data-type="fast">
       <span>&nbsp;</span>
     </div>
