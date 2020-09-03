@@ -3,12 +3,6 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
-@keyframes BUMP {
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
 .#{atom('pixi-scale')} {
   $pixi-scale: &;
   width: 100%;
@@ -38,7 +32,7 @@
       display: flex;
       justify-content: flex-end;
       height: 100%;
-      width: 75%;
+      width: 0%;
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
 
@@ -110,21 +104,9 @@
   }
 
 
-  // .loading &, .pristine & {
-  //
-  //   &-bar {
-  //     &:after {
-  //       animation: BUMP 2s infinite both alternate linear;
-  //       opacity: 1;
-  //     }
-  //   }
-  //
-  //   &-indicator {
-  //     opacity: 0;
-  //   }
-  //
-  //   &-pitch {
-  //     opacity: 0;
-  //   }
-  // }
+  .loading &, .pristine & {
+    &-bar-indicator {
+      opacity: 0;
+    }
+  }
 }
