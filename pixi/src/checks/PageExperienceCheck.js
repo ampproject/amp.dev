@@ -16,6 +16,11 @@ import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
+const METRICS_MAX = {
+  LARGEST_CONTENTFUL_PAINT_MS: 6000,
+  FIRST_INPUT_DELAY_MS: 1000,
+  CUMULATIVE_LAYOUT_SHIFT_SCORE: 40
+}
 
 export default class PageExperienceCheck {
   constructor() {
@@ -35,21 +40,33 @@ export default class PageExperienceCheck {
     }
   }
 
+  createFieldData(fieldData, id) {
+    const metric = fieldData[id];
+    const score = metric.percentile / METRICS_MAX[id];
+    const data = {
+      numericValue: metric.percentile,
+      score: score,
+      category: metric.category
+    };
+
+    return data;
+  }
+
   createLabData(metric) {
-    const labData = {
+    const data = {
       numericValue: metric.numericValue,
       score: metric.score,
     };
 
-    if (labData.score < 0.5) {
-      labData.category = 'slow';
-    } else if (labData.score < 0.75) {
-      labData.category = 'average';
+    if (data.score < 0.5) {
+      data.category = 'SLOW';
+    } else if (data.score < 0.75) {
+      data.category = 'AVERAGE';
     } else {
-      labData.category = 'fast';
+      data.category = 'FAST';
     }
 
-    return labData;
+    return data;
   }
 
   createReportData(apiResult) {
@@ -62,15 +79,15 @@ export default class PageExperienceCheck {
           fieldData: {
             lcp: {
               unit: UNIT_SEC,
-              data: fieldData.LARGEST_CONTENTFUL_PAINT_MS,
+              data: this.createFieldData(fieldData, 'LARGEST_CONTENTFUL_PAINT_MS'),
             },
             fid: {
               unit: UNIT_MS,
-              data: fieldData.FIRST_INPUT_DELAY_MS,
+              data: this.createFieldData(fieldData, 'FIRST_INPUT_DELAY_MS'),
             },
             cls: {
               unit: UNIT_DEC,
-              data: fieldData.CUMULATIVE_LAYOUT_SHIFT_SCORE,
+              data: this.createFieldData(fieldData, 'CUMULATIVE_LAYOUT_SHIFT_SCORE'),
             },
           },
           labData: {
