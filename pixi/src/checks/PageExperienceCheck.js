@@ -67,7 +67,6 @@ export default class PageExperienceCheck {
   createLabData(metric, id) {
     const data = {
       numericValue: metric.numericValue,
-      score: metric.score,
       proportion: METRICS_SCALES[id],
     };
 
