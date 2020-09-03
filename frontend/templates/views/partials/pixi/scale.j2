@@ -1,11 +1,17 @@
 {% do doc.styles.addCssFile('css/components/atoms/pixi-scale.css') %}
-<div class="ap-a-pixi-scale fast">
+<div class="ap-a-pixi-scale">
   <label class="ap-a-pixi-scale-label">Page loads</label>
-  <div class="ap-a-pixi-scale-bar">
-    <div class="ap-a-pixi-scale-bar-indicator">
-      <span>58% passed</span>
+  <div class="ap-a-pixi-scale-chart">
+    <div class="ap-a-pixi-scale-chart-bar" data-type="slow">
+      <span>&nbsp;</span>
     </div>
-    <aside class="ap-a-pixi-scale-bar-pitch">
+    <div class="ap-a-pixi-scale-chart-bar" data-type="average">
+      <span>&nbsp;</span>
+    </div>
+    <div class="ap-a-pixi-scale-chart-bar" data-type="fast">
+      <span>&nbsp;</span>
+    </div>
+    <aside class="ap-a-pixi-scale-chart-pitch">
       75th percentile
     </aside>
   </div>

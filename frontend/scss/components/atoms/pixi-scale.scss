@@ -19,16 +19,18 @@
     font-weight: bold;
   }
 
-  &-bar {
+  &-chart {
     position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     width: 100%;
     height: 5px;
     border-radius: 2px;
-    overflow: hidden;
     background-color: color('silver');
-    overflow: visible;
 
-    &-indicator {
+    &-bar {
+      position: absolute;
       display: flex;
       justify-content: flex-end;
       height: 100%;
@@ -36,24 +38,31 @@
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
 
-      &.inversed {
+      &[data-type="fast"] {
+        background: color('malachite');
+
         span {
-          border-right: 0;
-          border-left: 2px dotted;
-          transform: translateX(calc(100% - 2px));
+          border-color: color('malachite');
         }
       }
 
-      .fast & {
-        background: color('malachite');
-      }
-
-      .average & {
+      &[data-type="average"] {
         background: color('buttercup');
+
+        span {
+          border-color: color('buttercup');
+        }
       }
 
-      .slow & {
+      &[data-type="slow"] {
+        width: 100%;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
         background: color('red');
+
+        span {
+          border-color: color('red');
+        }
       }
 
       span {
@@ -64,17 +73,13 @@
         padding: 0 5px;
         font-size: 14px;
         white-space: nowrap;
+      }
 
-        .fast & {
-          border-color: color('malachite');
-        }
-
-        .average & {
-          border-color: color('buttercup');
-        }
-
-        .slow & {
-          border-color: color('red');
+      &.inversed {
+        span {
+          border-right: 0;
+          border-left: 2px dotted;
+          transform: translateX(calc(100% - 2px));
         }
       }
     }
@@ -104,7 +109,7 @@
   }
 
   .loading &, .pristine & {
-    &-bar-indicator {
+    &-chart-bar {
       opacity: 0;
     }
   }
