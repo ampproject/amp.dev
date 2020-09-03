@@ -69,6 +69,13 @@ export default class PageExperienceCheck {
     return data;
   }
 
+  getAuditScore(audits, testName) {
+    if (audits && audits[testName] && !Number.isNaN(audits[testName].score)) {
+      return audits[testName].score;
+    }
+    return -1;
+  }
+
   createReportData(apiResult) {
     const fieldData = apiResult.loadingExperience.metrics;
     const labData = apiResult.lighthouseResult.audits;
@@ -113,21 +120,28 @@ export default class PageExperienceCheck {
               data: this.createLabData(labData['cumulative-layout-shift']),
             },
           },
+          textCompression:
+            this.getAuditScore(labData, 'uses-text-compression') === 1,
+          fastServerResponse:
+            this.getAuditScore(labData, 'server-response-time') === 1,
+          usesAppropriatelySizedImages:
+            this.getAuditScore(labData, 'uses-responsive-images') === 1,
+          usesOptimizedImages:
+            this.getAuditScore(labData, 'uses-optimized-images') === 1,
+          usesWebpImages: this.getAuditScore(labData, 'uses-webp-images') === 1,
+          fastFontDisplay: this.getAuditScore(labData, 'font-display') === 1,
+          minifiedCss: this.getAuditScore(labData, 'unminified-css') === 1,
         },
       },
     };
   }
 
   async fetchJson() {
-    try {
-      const response = await fetch(this.apiUrl);
-      if (!response.ok) {
-        throw new Error(`PageExperienceCheck failed for: ${this.apiUrl}`);
-      }
-      const result = await response.json();
-      return result;
-    } catch (e) {
-      throw new Error('PageExperienceCheck failed:', e);
+    const response = await fetch(this.apiUrl.href);
+    if (!response.ok) {
+      throw new Error(`PageExperienceCheck failed for: ${this.apiUrl}`);
     }
+    const result = await response.json();
+    return result;
   }
 }
