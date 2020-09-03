@@ -105,7 +105,7 @@ export default class PageExperienceCheck {
             fid: {
               id: 'fid',
               unit: UNIT_MS,
-              data: this.createLabData(labData['interactive']),
+              data: this.createLabData(labData['total-blocking-time']),
             },
             cls: {
               id: 'cls',
