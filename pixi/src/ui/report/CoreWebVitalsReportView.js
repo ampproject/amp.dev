@@ -25,12 +25,17 @@ class Scale {
   constructor(container) {
     this.container = container;
     this.indicator = container.querySelector('.ap-a-pixi-scale-bar-indicator');
-
-    console.log('Indi', this.indicator);
+    this.label = this.indicator.querySelector('span');
   }
 
   render(data, unit) {
-    // this.indicator.style.width = '20%';
+    const percentile = Math.round(data.score * 100);
+
+    this.indicator.style.width = `${percentile}%`;
+    this.label.textContent = `${percentile}% passed`;
+    if (percentile < 20) {
+      this.indicator.classList.add('inversed');
+    }
   }
 }
 
