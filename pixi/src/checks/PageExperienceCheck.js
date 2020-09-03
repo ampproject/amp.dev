@@ -20,17 +20,17 @@ const METRICS_SCALES = {
   lcp: {
     fast: 2500,
     average: 4000,
-    slow: 6000
+    slow: 6000,
   },
   fid: {
     fast: 100,
     average: 300,
-    slow: 800
+    slow: 800,
   },
   cls: {
     fast: 10,
     average: 25,
-    slow: 40
+    slow: 40,
   },
 };
 
@@ -68,7 +68,7 @@ export default class PageExperienceCheck {
     const data = {
       numericValue: metric.numericValue,
       score: metric.score,
-      proportion: METRICS_SCALES[id]
+      proportion: METRICS_SCALES[id],
     };
 
     if (data.score < 0.5) {
