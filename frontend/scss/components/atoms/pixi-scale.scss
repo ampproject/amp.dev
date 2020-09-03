@@ -29,11 +29,21 @@
     background-color: color('silver');
     overflow: visible;
 
-    &-pitch {
+    &-indicator {
+      display: flex;
+      justify-content: flex-end;
       height: 100%;
-      width: 60%;
+      width: 75%;
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
+
+      &.inversed {
+        span {
+          border-right: 0;
+          border-left: 2px dotted;
+          transform: translateX(calc(100% - 2px));
+        }
+      }
 
       .fast & {
         background: color('malachite');
@@ -48,13 +58,13 @@
       }
 
       span {
-        display: flex;
-        justify-content: flex-end;
+        display: inline-flex;
+        align-items: flex-end;
         border-right: 2px dotted;
         height: 35px;
-        align-items: flex-end;
-        padding-right: 5px;
+        padding: 0 5px;
         font-size: 14px;
+        white-space: nowrap;
 
         .fast & {
           border-color: color('malachite');
@@ -70,7 +80,7 @@
       }
     }
 
-    &-indicator {
+    &-pitch {
       position: absolute;
       left: 75%;
       top: -30px;
