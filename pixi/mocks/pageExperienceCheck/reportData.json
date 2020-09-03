@@ -73,9 +73,9 @@
 				}
 			}
 		},
-		"usesAppropriatelySizedImages": true,
 		"textCompression": true,
 		"fastServerResponse": true,
+		"usesAppropriatelySizedImages": true,
 		"usesOptimizedImages": true,
 		"usesWebpImages": true,
 		"fastFontDisplay": true,
