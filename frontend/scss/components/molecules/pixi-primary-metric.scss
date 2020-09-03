@@ -34,7 +34,7 @@
       line-height: 1.4;
 
       @media (min-width: 768px) {
-        width: 35%;
+        width: 40%;
       }
 
       &-full {
@@ -76,19 +76,27 @@
 
   &-body {
     display: flex;
+    flex-direction: column;
     width: 100%;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
 
     &-result {
       display: flex;
+      flex: 1 0 auto;
       flex-direction: column;
       line-height: 1.8;
 
-      div {
-        white-space: nowrap;
+      @media (min-width: 768px) {
+        width: 40%;
+        margin-right: 20px;
       }
 
       span {
         color: color('silver');
+        white-space: nowrap;
       }
 
       #{$primary-metric}-average {
