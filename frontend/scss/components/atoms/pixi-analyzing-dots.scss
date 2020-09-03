@@ -12,7 +12,6 @@
 .#{atom('pixi-analyzing-dots')} {
   display: none;
   letter-spacing: -2px;
-  transition: opacity 0.2s ease;
 
   .loading & {
     display: inline;
