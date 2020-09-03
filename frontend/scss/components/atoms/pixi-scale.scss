@@ -38,6 +38,27 @@
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
 
+      span {
+        display: inline-flex;
+        align-items: flex-end;
+        border-right: 2px dotted;
+        height: 35px;
+        margin-top: 2px;
+        padding: 0 5px;
+        font-size: 14px;
+        white-space: nowrap;
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: -2px;
+          width: 2px;
+          height: 100%;
+          background: color('white');
+        }
+      }
+
       &[data-type="fast"] {
         background: color('malachite');
 
@@ -62,17 +83,11 @@
 
         span {
           border-color: color('red');
-        }
-      }
 
-      span {
-        display: inline-flex;
-        align-items: flex-end;
-        border-right: 2px dotted;
-        height: 35px;
-        padding: 0 5px;
-        font-size: 14px;
-        white-space: nowrap;
+          &:after {
+            display: none;
+          }
+        }
       }
 
       &.inversed {
