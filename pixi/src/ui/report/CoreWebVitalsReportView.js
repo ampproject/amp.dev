@@ -27,7 +27,7 @@ class Scale {
     this.label = this.indicator.querySelector('span');
   }
 
-  render(data, unit) {
+  render(data) {
     const percentile = Math.round(data.score * 100);
 
     this.indicator.style.width = `${percentile}%`;
@@ -63,7 +63,7 @@ class CoreWebVitalView {
   render(report) {
     const {data, unit} = report;
 
-    this.scale.render(data, unit);
+    this.scale.render(data);
 
     const responseCategory = data.category.toLowerCase();
     const displayCategory = CATEGORIES[responseCategory];
