@@ -28,7 +28,9 @@ class WeightedScale {
   }
 
   render(data, unit) {
-    this.pitch.style.left = `${(data.numericValue / data.proportion.slow) * 100}%`;
+    this.pitch.style.left = `${
+      (data.numericValue / data.proportion.slow) * 100
+    }%`;
     this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
       1
     )} ${unit.name}`;
