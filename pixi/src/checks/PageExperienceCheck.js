@@ -19,8 +19,8 @@ const DEVICE_STRATEGY = 'MOBILE';
 const METRICS_MAX = {
   LARGEST_CONTENTFUL_PAINT_MS: 6000,
   FIRST_INPUT_DELAY_MS: 1000,
-  CUMULATIVE_LAYOUT_SHIFT_SCORE: 40
-}
+  CUMULATIVE_LAYOUT_SHIFT_SCORE: 40,
+};
 
 export default class PageExperienceCheck {
   constructor() {
@@ -46,7 +46,7 @@ export default class PageExperienceCheck {
     const data = {
       numericValue: metric.percentile,
       score: score,
-      category: metric.category
+      category: metric.category,
     };
 
     return data;
@@ -79,7 +79,10 @@ export default class PageExperienceCheck {
           fieldData: {
             lcp: {
               unit: UNIT_SEC,
-              data: this.createFieldData(fieldData, 'LARGEST_CONTENTFUL_PAINT_MS'),
+              data: this.createFieldData(
+                fieldData,
+                'LARGEST_CONTENTFUL_PAINT_MS'
+              ),
             },
             fid: {
               unit: UNIT_MS,
@@ -87,7 +90,10 @@ export default class PageExperienceCheck {
             },
             cls: {
               unit: UNIT_DEC,
-              data: this.createFieldData(fieldData, 'CUMULATIVE_LAYOUT_SHIFT_SCORE'),
+              data: this.createFieldData(
+                fieldData,
+                'CUMULATIVE_LAYOUT_SHIFT_SCORE'
+              ),
             },
           },
           labData: {

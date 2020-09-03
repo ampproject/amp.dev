@@ -20,7 +20,6 @@ const CATEGORIES = {
   slow: 'Poor',
 };
 
-
 class Scale {
   constructor(container) {
     this.container = container;
@@ -71,7 +70,7 @@ class CoreWebVitalView {
     this.container.classList.add(responseCategory);
     this.category.textContent = displayCategory;
 
-    const average = (data.numericValue / unit.conversion).toFixed(2)
+    const average = (data.numericValue / unit.conversion).toFixed(2);
     this.average.textContent = `${average} ${unit.name}`;
     this.improvement.textContent = 'Not yet implemented';
     this.recommendations.textContent = 'Not yet implemented';
