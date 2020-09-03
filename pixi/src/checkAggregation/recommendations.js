@@ -44,7 +44,7 @@ const directSafeBrowsingRecommendations = {
 
 const directMobileFriendlinessRecommendations = {
   mobileFriendly: 'mobile-friendly',
-  noResourceIssues: 'resource-issues',
+  resourcesLoadable: 'resource-issues',
 };
 
 const addDirectRecommendations = (result, checks, mapping) => {

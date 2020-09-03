@@ -26,7 +26,7 @@ describe('Mobile Friendliness check', () => {
     );
     expect(report.error).toBeFalsy();
     expect(report.data.mobileFriendly).toBe(true);
-    expect(report.data.noResourceIssues).toBe(true);
+    expect(report.data.resourcesLoadable).toBe(true);
   });
 
   it('returns true for a mobile friendly URL that has isues', async () => {
@@ -40,7 +40,7 @@ describe('Mobile Friendliness check', () => {
     );
     expect(report.error).toBeFalsy();
     expect(report.data.mobileFriendly).toBe(true);
-    expect(report.data.noResourceIssues).toBe(false);
+    expect(report.data.resourcesLoadable).toBe(false);
   });
 
   it('returns false for a mobile unfriendly URL', async () => {

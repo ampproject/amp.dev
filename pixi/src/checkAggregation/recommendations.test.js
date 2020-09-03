@@ -310,7 +310,7 @@ describe('getRecommendationIds', () => {
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
-        noResourceIssues: false,
+        resourcesLoadable: false,
       })
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
