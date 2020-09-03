@@ -20,73 +20,17 @@ const CATEGORIES = {
   slow: 'Poor',
 };
 
-class SimpleScale {
+
+class Scale {
   constructor(container) {
-    this.bar = container.querySelector('.ap-a-pixi-scale-bar-positive');
-    this.indicator = container.querySelector('.ap-a-pixi-scale-indicator');
-    this.value = container.querySelector('.ap-a-pixi-scale-value');
+    this.container = container;
+    this.indicator = container.querySelector('.ap-a-pixi-scale-bar-indicator');
+
+    console.log('Indi', this.indicator);
   }
 
   render(data, unit) {
-    this.bar.style.transform = `scale3d(${data.score}, 1, 1)`;
-
-    this.value.textContent = `${(data.numericValue / unit.conversion).toFixed(
-      1
-    )}${unit.name}`;
-    this.indicator.style.marginLeft = `${data.score * 100}%`;
-    this.value.style.width = `0`;
-  }
-}
-
-class WeightedScale {
-  constructor(container) {
-    this.bar = {
-      positive: container.querySelector('.ap-a-pixi-scale-bar-positive'),
-      negative: container.querySelector('.ap-a-pixi-scale-bar-negative'),
-    };
-    this.pitch = {
-      positive: container.querySelector('.ap-a-pixi-scale-pitch-line-positive'),
-      negative: container.querySelector('.ap-a-pixi-scale-pitch-line-negative'),
-    };
-    this.indicator = container.querySelector('.ap-a-pixi-scale-indicator');
-    this.value = container.querySelector('.ap-a-pixi-scale-value');
-  }
-
-  render(data, unit) {
-    // Update bar to match distributions
-    this.bar.positive.style.transform = `scale3d(${data.distributions[0].proportion}, 1, 1)`;
-    this.bar.negative.style.transform = `scale3d(${data.distributions[2].proportion}, 1, 1)`;
-
-    // Update pitch lines
-    this.pitch.positive.style.transform = `translateX(${
-      data.distributions[0].proportion * 100
-    }%)`;
-    this.pitch.positive.textContent = `${
-      data.distributions[0].max / unit.conversion
-    }${unit.name}`;
-
-    this.pitch.negative.style.transform = `translateX(${
-      100 - data.distributions[2].proportion * 100
-    }%)`;
-    this.pitch.negative.textContent = `${
-      data.distributions[2].min / unit.conversion
-    }${unit.name}`;
-
-    // Add a value to the scale and position in distributions
-    this.value.textContent = `${data.percentile / unit.conversion}${unit.name}`;
-    let distributionOffset = 0;
-    for (const distribution of data.distributions) {
-      if (data.percentile < distribution.max) {
-        this.value.style.width = `${
-          (data.percentile / distribution.max) * 100
-        }%`;
-        break;
-      }
-
-      distributionOffset += distribution.proportion * 100;
-    }
-
-    this.indicator.style.marginLeft = `${distributionOffset}%`;
+    // this.indicator.style.width = '20%';
   }
 }
 
@@ -96,16 +40,11 @@ class CoreWebVitalView {
     this.type = container.id.split('.')[0];
     this.metric = container.id.split('.')[1];
 
-    if (this.type == 'fieldData') {
-      this.scale = new WeightedScale(container);
-    } else {
-      this.scale = new SimpleScale(container);
-    }
+    this.scale = new Scale(container);
 
     this.category = this.container.querySelector(
       '.ap-m-pixi-primary-metric-category'
     );
-
     this.average = this.container.querySelector(
       '.ap-m-pixi-primary-metric-average'
     );
@@ -137,6 +76,7 @@ class CoreWebVitalView {
   reset() {
     this.container.classList.remove(...Object.values(CATEGORIES));
     this.category.textContent = i18n.translate('Analyzing');
+    this.average.textContent = i18n.translate('Analyzing');
     this.improvement.textContent = i18n.translate('Calculating');
     this.recommendations.textContent = i18n.translate('Analyzing');
 
