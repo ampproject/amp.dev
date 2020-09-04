@@ -1,5 +1,6 @@
 ---
 $title: Preload render-blocking components
+$order: 40
 tags:
 - lcp
 - fid

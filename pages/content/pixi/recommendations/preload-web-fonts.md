@@ -1,5 +1,6 @@
 ---
 $title: Preload web fonts
+$order: 140
 tags:
 - lcp
 ---
