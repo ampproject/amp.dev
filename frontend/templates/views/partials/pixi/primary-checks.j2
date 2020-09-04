@@ -17,7 +17,8 @@
         'full': _('Loading speed'),
         'id': 'LCP'
       },
-      'scale': 'simple'
+      'scale': 'simple',
+      'tooltip': 'Loading speed is measured by Largest Contentful Paint (LCP), the metric reporting the render time of the largest image or text block visible within the first viewport. <a href="https://web.dev/lcp/" rel="noopener" target="_blank">Learn more.</a>.'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -28,7 +29,8 @@
         'full': _('Interactivity'),
         'id': 'FID'
       },
-      'scale': 'simple'
+      'scale': 'simple',
+      'tooltip': 'Interactivity is measured by First Input Delay (FID), the metric reporting the time from when a user interacts with a page, such as tapping a button, to when the browser is able to process that event. <a href="https://web.dev/fid/" rel="noopener" target="_blank">Learn more.</a>.'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -39,7 +41,8 @@
         'full': _('Visual stability'),
         'id': 'CLS'
       },
-      'scale': 'simple'
+      'scale': 'simple',
+      'tooltip': 'Visual stability is measured by Cumulative Layout Shift (CLS), the metric reporting the layout shift scores during the lifespan of a page. Each time a visible element changes its position unexpectedly, the page\'s layout shift score worsens. <a href="https://web.dev/cls/" rel="noopener" target="_blank">Learn more.</a>.'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -52,7 +55,8 @@
         'full': _('Loading speed'),
         'id': 'LCP'
       },
-      'scale': 'weighted'
+      'scale': 'weighted',
+      'tooltip': 'Loading speed is measured by Largest Contentful Paint (LCP), the metric reporting the render time of the largest image or text block visible within the first viewport. <a href="https://web.dev/lcp/" rel="noopener" target="_blank">Learn more.</a>.'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -63,7 +67,8 @@
         'full': _('Interactivity'),
         'id': 'TBT'
       },
-      'scale': 'weighted'
+      'scale': 'weighted',
+      'tooltip': 'Interactivity is measured in lab environemtns by Total Blocking Time (TBT). This lab metric reports the load responsiveness and helps quantify the severity of how non-interactive a page is prior to it becoming reliably interactive. <a href="http://web.dev/tbt" rel="noopener" target="_blank">Learn more.</a>.'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -74,7 +79,8 @@
         'full': _('Visual stability'),
         'id': 'CLS'
       },
-      'scale': 'weighted'
+      'scale': 'weighted',
+      'tooltip': 'Visual stability is measured by Cumulative Layout Shift (CLS), the metric reporting the layout shift scores during the lifespan of a page. Each time a visible element changes its position unexpectedly, the page\'s layout shift score worsens. <a href="https://web.dev/cls/" rel="noopener" target="_blank">Learn more.</a>.'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
