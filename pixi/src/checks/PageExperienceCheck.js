@@ -68,9 +68,11 @@ export default class PageExperienceCheck {
     return data;
   }
 
-  createLabData(metric, id) {
+  createLabData(metricOrigin, metricCache, id) {
+    const improvement = metricOrigin.numericValue - metricCache.numericValue;
     const data = {
-      numericValue: metric.numericValue,
+      numericValue: metricOrigin.numericValue,
+      improvement: improvement,
       proportion: METRICS_SCALES[id],
     };
 
@@ -130,6 +132,7 @@ export default class PageExperienceCheck {
               unit: UNIT_SEC,
               data: this.createLabData(
                 labDataOrigin['largest-contentful-paint'],
+                labDataCache['largest-contentful-paint'],
                 'lcp'
               ),
             },
@@ -137,6 +140,7 @@ export default class PageExperienceCheck {
               unit: UNIT_MS,
               data: this.createLabData(
                 labDataOrigin['total-blocking-time'],
+                labDataCache['total-blocking-time'],
                 'fid'
               ),
             },
@@ -144,6 +148,7 @@ export default class PageExperienceCheck {
               unit: UNIT_DEC,
               data: this.createLabData(
                 labDataOrigin['cumulative-layout-shift'],
+                labDataCache['cumulative-layout-shift'],
                 'cls'
               ),
             },
