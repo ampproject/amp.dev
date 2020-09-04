@@ -38,11 +38,11 @@ class WeightedScale {
     for (const bar of this.bars) {
       const label = bar.querySelector('span');
       const type = bar.getAttribute('data-type');
-      const perc = Math.round(
+      const percent = Math.round(
         (data.proportion[type] / data.proportion.slow) * 100
       );
 
-      bar.style.width = `${perc}%`;
+      bar.style.width = `${percent}%`;
       label.textContent = `${
         data.proportion[type] / unit.conversion.toFixed(1)
       } ${unit.name}`;
