@@ -12,11 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {ampToolboxCacheUrl} from 'toolbox-cache-url';
+import ampToolboxCacheUrl from '@ampproject/toolbox-cache-url';
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
+const AMP_PROJECT_CDN_URL = 'cdn.ampproject.org';
 const METRICS_SCALES = {
   lcp: {
     fast: 2500,
@@ -37,9 +38,10 @@ const METRICS_SCALES = {
 
 export default class PageExperienceCheck {
   async run(originUrl) {
+
     const cacheUrl = await ampToolboxCacheUrl.createCacheUrl(
       AMP_PROJECT_CDN_URL,
-      pageUrl
+      originUrl
     );
 
     try {
