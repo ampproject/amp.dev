@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import marked from 'marked';
-import i18n from './I18n'
+import i18n from './I18n';
 
 const classNameMapping = {
   error: 'fail',
