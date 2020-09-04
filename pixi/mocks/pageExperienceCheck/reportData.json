@@ -19,7 +19,7 @@
 				},
 				"data": {
 					"numericValue": 289,
-					"score": 0.289,
+					"score": 0.36125,
 					"category": "AVERAGE"
 				}
 			},
@@ -37,38 +37,47 @@
 		},
 		"labData": {
 			"lcp": {
-				"id": "lcp",
 				"unit": {
 					"name": "s",
 					"conversion": 1000
 				},
 				"data": {
 					"numericValue": 3395.517406396801,
-					"score": 0.67,
-					"category": "AVERAGE"
+					"proportion": {
+						"fast": 2500,
+						"average": 4000,
+						"slow": 6000
+					},
+					"category": "FAST"
 				}
 			},
 			"fid": {
-				"id": "fid",
 				"unit": {
 					"name": "ms",
 					"conversion": 1
 				},
 				"data": {
 					"numericValue": 316.4999999999998,
-					"score": 0.87,
+					"proportion": {
+						"fast": 100,
+						"average": 300,
+						"slow": 800
+					},
 					"category": "FAST"
 				}
 			},
 			"cls": {
-				"id": "cls",
 				"unit": {
 					"name": "",
 					"conversion": 100
 				},
 				"data": {
 					"numericValue": 0,
-					"score": 1,
+					"proportion": {
+						"fast": 10,
+						"average": 25,
+						"slow": 40
+					},
 					"category": "FAST"
 				}
 			}
