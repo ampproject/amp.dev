@@ -14,7 +14,13 @@
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </label>
     </h3>
+
+    {% with tooltip = {
+      'id': primary_metric.id,
+      'text': primary_metric.tooltip
+    } %}
     {% include 'views/partials/pixi/tooltip.j2' %}
+    {% endwith %}
   </div>
 
   <div class="ap-m-pixi-primary-metric-body">

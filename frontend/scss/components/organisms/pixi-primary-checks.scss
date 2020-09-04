@@ -10,7 +10,7 @@
   $primary-checks: &;
   margin-bottom: 70px;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: visible;
   filter: drop-shadow(0 0 20px transparentize(color('black'), 0.87));
 
   &-tabs {
