@@ -56,8 +56,8 @@ export default class PageExperienceCheck {
     const score = metric.percentile / METRICS_SCALES[id].slow;
     const data = {
       numericValue: metric.percentile,
-      score: score,
       category: metric.category,
+      proportion: metric.distributions[0].proportion
     };
 
     return data;

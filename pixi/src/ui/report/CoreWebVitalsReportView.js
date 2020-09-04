@@ -59,7 +59,7 @@ class SimpleScale {
   }
 
   render(data) {
-    const percentile = Math.round(data.score * 100);
+    const percentile = Math.round(data.proportion * 100);
 
     this.bar.style.width = `${percentile}%`;
     this.label.textContent = `${percentile}% passed`;
