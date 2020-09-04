@@ -108,7 +108,9 @@ class CoreWebVitalView {
     const score = (data.numericValue / unit.conversion).toFixed(1);
     this.score.textContent = `${score} ${unit.name}`;
 
-    this.improvement.textContent = 'Not yet implemented';
+    const improvement = (data.improvement / unit.conversion).toFixed(1);
+    this.improvement.textContent = `- ${improvement} ${unit.name}`;
+
     this.recommendations.textContent = 'Not yet implemented';
 
     this.toggleLoading(false);

@@ -50,17 +50,19 @@ export default class PageExperienceCheck {
         this.fetchJson(cacheUrl),
       ]);
 
-      return this.createReportData(apiResultOrigin);
+      return this.createReportData(apiResultOrigin, apiResultCache);
     } catch (e) {
       return {error: e};
     }
   }
 
-  createFieldData(metric) {
+  createFieldData(metricOrigin, metricCache) {
+    const improvement = metricOrigin.percentile - metricCache.percentile;
     const data = {
-      numericValue: metric.percentile,
-      category: metric.category,
-      proportion: metric.distributions[0].proportion,
+      numericValue: metricOrigin.percentile,
+      category: metricOrigin.category,
+      improvement: improvement,
+      proportion: metricOrigin.distributions[0].proportion,
     };
 
     return data;
@@ -90,9 +92,12 @@ export default class PageExperienceCheck {
     return -1;
   }
 
-  createReportData(apiResult) {
-    const fieldData = apiResult.loadingExperience.metrics;
-    const labData = apiResult.lighthouseResult.audits;
+  createReportData(apiResultOrigin, apiResultCache) {
+    const fieldDataOrigin = apiResultOrigin.loadingExperience.metrics;
+    const labData = apiResultOrigin.lighthouseResult.audits;
+
+    const fieldDataCache = apiResultCache.loadingExperience.metrics;
+    const labDataCache = apiResultCache.lighthouseResult.audits;
 
     return {
       data: {
@@ -101,22 +106,22 @@ export default class PageExperienceCheck {
             lcp: {
               unit: UNIT_SEC,
               data: this.createFieldData(
-                fieldData['LARGEST_CONTENTFUL_PAINT_MS'],
-                'lcp'
+                fieldDataOrigin['LARGEST_CONTENTFUL_PAINT_MS'],
+                fieldDataCache['LARGEST_CONTENTFUL_PAINT_MS']
               ),
             },
             fid: {
               unit: UNIT_MS,
               data: this.createFieldData(
-                fieldData['FIRST_INPUT_DELAY_MS'],
-                'fid'
+                fieldDataOrigin['FIRST_INPUT_DELAY_MS'],
+                fieldDataCache['FIRST_INPUT_DELAY_MS']
               ),
             },
             cls: {
               unit: UNIT_DEC,
               data: this.createFieldData(
-                fieldData['CUMULATIVE_LAYOUT_SHIFT_SCORE'],
-                'cls'
+                fieldDataOrigin['CUMULATIVE_LAYOUT_SHIFT_SCORE'],
+                fieldDataCache['CUMULATIVE_LAYOUT_SHIFT_SCORE']
               ),
             },
           },
