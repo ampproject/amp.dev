@@ -38,7 +38,6 @@ const METRICS_SCALES = {
 
 export default class PageExperienceCheck {
   async run(originUrl) {
-
     const cacheUrl = await ampToolboxCacheUrl.createCacheUrl(
       AMP_PROJECT_CDN_URL,
       originUrl
@@ -161,9 +160,12 @@ export default class PageExperienceCheck {
             this.getAuditScore(labDataOrigin, 'uses-responsive-images') === 1,
           usesOptimizedImages:
             this.getAuditScore(labDataOrigin, 'uses-optimized-images') === 1,
-          usesWebpImages: this.getAuditScore(labDataOrigin, 'uses-webp-images') === 1,
-          fastFontDisplay: this.getAuditScore(labDataOrigin, 'font-display') === 1,
-          minifiedCss: this.getAuditScore(labDataOrigin, 'unminified-css') === 1,
+          usesWebpImages:
+            this.getAuditScore(labDataOrigin, 'uses-webp-images') === 1,
+          fastFontDisplay:
+            this.getAuditScore(labDataOrigin, 'font-display') === 1,
+          minifiedCss:
+            this.getAuditScore(labDataOrigin, 'unminified-css') === 1,
         },
       },
     };
