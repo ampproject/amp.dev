@@ -59,6 +59,14 @@
         }
       }
 
+      &.inversed {
+        span {
+          border-right: 0;
+          border-left: 2px dotted;
+          transform: translateX(calc(100% - 2px));
+        }
+      }
+
       &[data-type="fast"] {
         background: color('malachite');
 
@@ -87,14 +95,6 @@
           &:after {
             display: none;
           }
-        }
-      }
-
-      &.inversed {
-        span {
-          border-right: 0;
-          border-left: 2px dotted;
-          transform: translateX(calc(100% - 2px));
         }
       }
     }
