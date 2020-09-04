@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import ampToolboxCacheUrl from '@ampproject/toolbox-cache-url';
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 export const Category = {
@@ -22,6 +23,7 @@ export const Category = {
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
+const AMP_PROJECT_CDN_URL = 'cdn.ampproject.org';
 const METRICS_SCALES = {
   lcp: {
     fast: 2500,
@@ -41,36 +43,41 @@ const METRICS_SCALES = {
 };
 
 export default class PageExperienceCheck {
-  constructor() {
-    this.apiUrl = new URL(API_ENDPOINT);
-    this.apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
-  }
-
-  async run(pageUrl) {
-    this.apiUrl.searchParams.set('url', pageUrl);
-    this.apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
+  async run(originUrl) {
+    const cacheUrl = await ampToolboxCacheUrl.createCacheUrl(
+      AMP_PROJECT_CDN_URL,
+      originUrl
+    );
 
     try {
-      const apiResult = await this.fetchJson();
-      return this.createReportData(apiResult);
+      const [apiResultOrigin, apiResultCache] = await Promise.all([
+        this.fetchJson(originUrl),
+        this.fetchJson(cacheUrl),
+      ]);
+
+      return this.createReportData(apiResultOrigin, apiResultCache);
     } catch (e) {
       return {error: e};
     }
   }
 
-  createFieldData(metric) {
+  createFieldData(metricOrigin, metricCache) {
+    const improvement = metricOrigin.percentile - metricCache.percentile;
     const data = {
-      numericValue: metric.percentile,
-      category: metric.category,
-      proportion: metric.distributions[0].proportion,
+      numericValue: metricOrigin.percentile,
+      category: metricOrigin.category,
+      improvement: improvement,
+      proportion: metricOrigin.distributions[0].proportion,
     };
 
     return data;
   }
 
-  createLabData(metric, id) {
+  createLabData(metricOrigin, metricCache, id) {
+    const improvement = metricOrigin.numericValue - metricCache.numericValue;
     const data = {
-      numericValue: metric.numericValue,
+      numericValue: metricOrigin.numericValue,
+      improvement: improvement,
       proportion: METRICS_SCALES[id],
     };
 
@@ -100,32 +107,35 @@ export default class PageExperienceCheck {
     return metrics[checkId].data.category === Category.FAST;
   }
 
-  createReportData(apiResult) {
-    const fieldMetrics = apiResult.loadingExperience.metrics;
-    const audits = apiResult.lighthouseResult.audits;
+  createReportData(apiResultOrigin, apiResultCache) {
+    const fieldMetricsOrigin = apiResultOrigin.loadingExperience.metrics;
+    const auditsOrigin = apiResultOrigin.lighthouseResult.audits;
 
-    const fieldData = !fieldMetrics
+    const fieldMetricsCache = apiResultCache.loadingExperience.metrics;
+    const auditsCache = apiResultCache.lighthouseResult.audits;
+
+    const fieldData = !fieldMetricsOrigin
       ? undefined
       : {
           lcp: {
             unit: UNIT_SEC,
             data: this.createFieldData(
-              fieldMetrics['LARGEST_CONTENTFUL_PAINT_MS'],
-              'lcp'
+              fieldMetricsOrigin['LARGEST_CONTENTFUL_PAINT_MS'],
+              fieldMetricsCache['LARGEST_CONTENTFUL_PAINT_MS']
             ),
           },
           fid: {
             unit: UNIT_MS,
             data: this.createFieldData(
-              fieldMetrics['FIRST_INPUT_DELAY_MS'],
-              'fid'
+              fieldMetricsOrigin['FIRST_INPUT_DELAY_MS'],
+              fieldMetricsCache['FIRST_INPUT_DELAY_MS']
             ),
           },
           cls: {
             unit: UNIT_DEC,
             data: this.createFieldData(
-              fieldMetrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'],
-              'cls'
+              fieldMetricsOrigin['CUMULATIVE_LAYOUT_SHIFT_SCORE'],
+              fieldMetricsCache['CUMULATIVE_LAYOUT_SHIFT_SCORE']
             ),
           },
         };
@@ -133,15 +143,27 @@ export default class PageExperienceCheck {
     const labData = {
       lcp: {
         unit: UNIT_SEC,
-        data: this.createLabData(audits['largest-contentful-paint'], 'lcp'),
+        data: this.createLabData(
+          auditsOrigin['largest-contentful-paint'],
+          auditsCache['largest-contentful-paint'],
+          'lcp'
+        ),
       },
       fid: {
         unit: UNIT_MS,
-        data: this.createLabData(audits['total-blocking-time'], 'fid'),
+        data: this.createLabData(
+          auditsOrigin['total-blocking-time'],
+          auditsCache['total-blocking-time'],
+          'fid'
+        ),
       },
       cls: {
         unit: UNIT_DEC,
-        data: this.createLabData(audits['cumulative-layout-shift'], 'cls'),
+        data: this.createLabData(
+          auditsOrigin['cumulative-layout-shift'],
+          auditsCache['cumulative-layout-shift'],
+          'cls'
+        ),
       },
     };
 
@@ -158,16 +180,17 @@ export default class PageExperienceCheck {
       labData,
       isAllFast,
       textCompression:
-        this.getAuditScore(audits, 'uses-text-compression') === 1,
+        this.getAuditScore(auditsOrigin, 'uses-text-compression') === 1,
       fastServerResponse:
-        this.getAuditScore(audits, 'server-response-time') === 1,
+        this.getAuditScore(auditsOrigin, 'server-response-time') === 1,
       usesAppropriatelySizedImages:
-        this.getAuditScore(audits, 'uses-responsive-images') === 1,
+        this.getAuditScore(auditsOrigin, 'uses-responsive-images') === 1,
       usesOptimizedImages:
-        this.getAuditScore(audits, 'uses-optimized-images') === 1,
-      usesWebpImages: this.getAuditScore(audits, 'uses-webp-images') === 1,
-      fastFontDisplay: this.getAuditScore(audits, 'font-display') === 1,
-      minifiedCss: this.getAuditScore(audits, 'unminified-css') === 1,
+        this.getAuditScore(auditsOrigin, 'uses-optimized-images') === 1,
+      usesWebpImages:
+        this.getAuditScore(auditsOrigin, 'uses-webp-images') === 1,
+      fastFontDisplay: this.getAuditScore(auditsOrigin, 'font-display') === 1,
+      minifiedCss: this.getAuditScore(auditsOrigin, 'unminified-css') === 1,
     };
 
     return {
@@ -177,10 +200,15 @@ export default class PageExperienceCheck {
     };
   }
 
-  async fetchJson() {
-    const response = await fetch(this.apiUrl.href);
+  async fetchJson(pageUrl) {
+    const apiUrl = new URL(API_ENDPOINT);
+    apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
+    apiUrl.searchParams.set('url', pageUrl);
+    apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
+
+    const response = await fetch(apiUrl.href);
     if (!response.ok) {
-      throw new Error(`PageExperienceCheck failed for: ${this.apiUrl}`);
+      throw new Error(`PageExperienceCheck failed for: ${apiUrl}`);
     }
     const result = await response.json();
     return result;

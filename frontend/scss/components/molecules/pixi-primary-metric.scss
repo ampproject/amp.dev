@@ -96,11 +96,18 @@
       }
 
       span {
-        color: color('silver');
         white-space: nowrap;
+        opacity: 0.3;
+        transition: opacity .3s ease;
+
+        .fast &,
+        .average &,
+        .slow & {
+          opacity: 1;
+        }
       }
 
-      #{$primary-metric}-average {
+      #{$primary-metric}-score {
         .fast & {
           font-weight: bold;
           color: color('malachite');
