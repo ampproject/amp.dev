@@ -43,7 +43,6 @@
         align-items: flex-end;
         border-right: 2px dotted;
         height: 35px;
-        margin-top: 2px;
         padding: 0 5px;
         font-size: 14px;
         white-space: nowrap;
@@ -64,6 +63,10 @@
           border-right: 0;
           border-left: 2px dotted;
           transform: translateX(calc(100% - 2px));
+
+          &:after {
+            left: 0;
+          }
         }
       }
 
@@ -85,8 +88,6 @@
 
       &[data-type="slow"] {
         width: 100%;
-        border-top-right-radius: 2px;
-        border-bottom-right-radius: 2px;
         background: color('red');
 
         span {
