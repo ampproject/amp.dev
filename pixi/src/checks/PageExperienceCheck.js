@@ -146,21 +146,24 @@ export default class PageExperienceCheck {
         data: this.createLabData(
           auditsOrigin['largest-contentful-paint'],
           auditsCache['largest-contentful-paint'],
-          'lcp'),
+          'lcp'
+        ),
       },
       fid: {
         unit: UNIT_MS,
         data: this.createLabData(
           auditsOrigin['total-blocking-time'],
           auditsCache['total-blocking-time'],
-          'fid'),
+          'fid'
+        ),
       },
       cls: {
         unit: UNIT_DEC,
         data: this.createLabData(
           auditsOrigin['cumulative-layout-shift'],
           auditsCache['cumulative-layout-shift'],
-          'cls'),
+          'cls'
+        ),
       },
     };
 
@@ -184,7 +187,8 @@ export default class PageExperienceCheck {
         this.getAuditScore(auditsOrigin, 'uses-responsive-images') === 1,
       usesOptimizedImages:
         this.getAuditScore(auditsOrigin, 'uses-optimized-images') === 1,
-      usesWebpImages: this.getAuditScore(auditsOrigin, 'uses-webp-images') === 1,
+      usesWebpImages:
+        this.getAuditScore(auditsOrigin, 'uses-webp-images') === 1,
       fastFontDisplay: this.getAuditScore(auditsOrigin, 'font-display') === 1,
       minifiedCss: this.getAuditScore(auditsOrigin, 'unminified-css') === 1,
     };
