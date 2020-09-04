@@ -33,14 +33,28 @@ export default async function getStatusId(
       return 'invalid-amp';
     }
 
-    // We need to check all promises for general error (handled by catch below)
-    // But we only use the results of the first two
-    const [recommendations, pageExperience] = await Promise.all([
+    // We need to check all promises for general error
+    // (promise can be rejected or error is set in result)
+    const [
+      recommendations,
+      pageExperience,
+      safeBrowsing,
+      mobileFriendliness,
+    ] = await Promise.all([
       recommendationsPromise,
       pageExperiencePromise,
       safeBrowsingPromise,
       mobileFriendlinessPromise,
     ]);
+
+    if (
+      linter.error ||
+      pageExperience.error ||
+      safeBrowsing.error ||
+      mobileFriendliness.error
+    ) {
+      return 'api-error';
+    }
 
     // This here is only to silence the linter complaining about unused vars
     if (!pageExperience) {

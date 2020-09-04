@@ -15,13 +15,24 @@
 				"category": "FAST"
 			},
 			"FIRST_INPUT_DELAY_MS": {
-				"percentile": 289,
+				"percentile": 2,
 				"distributions": [
-					{"min": 0, "max": 100, "proportion": 0.09960294951786727},
-					{"min": 100, "max": 300, "proportion": 0.6889393079977311},
-					{"min": 300, "proportion": 0.21145774248440163}
+					{
+						"min": 0,
+						"max": 100,
+						"proportion": 0.99185423365487668
+					},
+					{
+						"min": 100,
+						"max": 300,
+						"proportion": 0.0042515183994283664
+					},
+					{
+						"min": 300,
+						"proportion": 0.0038942479456948922
+					}
 				],
-				"category": "AVERAGE"
+				"category": "FAST"
 			},
 			"FIRST_CONTENTFUL_PAINT_MS": {
 				"percentile": 3058,
@@ -33,13 +44,24 @@
 				"category": "SLOW"
 			},
 			"LARGEST_CONTENTFUL_PAINT_MS": {
-				"percentile": 3100,
+				"percentile": 2372,
 				"distributions": [
-					{"min": 0, "max": 2500, "proportion": 0.6472574979735206},
-					{"min": 2500, "max": 4000, "proportion": 0.2092677654687922},
-					{"min": 4000, "proportion": 0.14347473655768708}
+					{
+						"min": 0,
+						"max": 2500,
+						"proportion": 0.77533248688648648
+					},
+					{
+						"min": 2500,
+						"max": 4000,
+						"proportion": 0.15472022366716684
+					},
+					{
+						"min": 4000,
+						"proportion": 0.069947289446346775
+					}
 				],
-				"category": "AVERAGE"
+				"category": "FAST"
 			}
 		},
 		"overall_category": "SLOW",
