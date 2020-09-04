@@ -1,40 +1,5 @@
 {
 	"pageExperience": {
-		"fieldData": {
-			"lcp": {
-				"unit": {
-					"name": "s",
-					"conversion": 1000
-				},
-				"data": {
-					"numericValue": 2372,
-					"category": "FAST",
-					"proportion": 0.7753324868864865
-				}
-			},
-			"fid": {
-				"unit": {
-					"name": "ms",
-					"conversion": 1
-				},
-				"data": {
-					"numericValue": 2,
-					"category": "FAST",
-					"proportion": 0.9918542336548767
-				}
-			},
-			"cls": {
-				"unit": {
-					"name": "",
-					"conversion": 100
-				},
-				"data": {
-					"numericValue": 7,
-					"category": "FAST",
-					"proportion": 0.816381257056831
-				}
-			}
-		},
 		"labData": {
 			"lcp": {
 				"unit": {
@@ -42,7 +7,7 @@
 					"conversion": 1000
 				},
 				"data": {
-					"numericValue": 3395.517406396801,
+					"numericValue": 2119,
 					"proportion": {
 						"fast": 2500,
 						"average": 4000,
@@ -57,7 +22,7 @@
 					"conversion": 1
 				},
 				"data": {
-					"numericValue": 316.4999999999998,
+					"numericValue": 68.5,
 					"proportion": {
 						"fast": 100,
 						"average": 300,
