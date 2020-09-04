@@ -53,7 +53,6 @@ export default class PageExperienceCheck {
   }
 
   createFieldData(metric, id) {
-    console.log(METRICS_SCALES[id].slow);
     const score = metric.percentile / METRICS_SCALES[id].slow;
     const data = {
       numericValue: metric.percentile,
