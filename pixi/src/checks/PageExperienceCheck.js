@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import {ampToolboxCacheUrl} from 'toolbox-cache-url';
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
@@ -35,18 +36,19 @@ const METRICS_SCALES = {
 };
 
 export default class PageExperienceCheck {
-  constructor() {
-    this.apiUrl = new URL(API_ENDPOINT);
-    this.apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
-  }
-
-  async run(pageUrl) {
-    this.apiUrl.searchParams.set('url', pageUrl);
-    this.apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
+  async run(originUrl) {
+    const cacheUrl = await ampToolboxCacheUrl.createCacheUrl(
+      AMP_PROJECT_CDN_URL,
+      pageUrl
+    );
 
     try {
-      const apiResult = await this.fetchJson();
-      return this.createReportData(apiResult);
+      const [apiResultOrigin, apiResultCache] = await Promise.all([
+        this.fetchJson(originUrl),
+        this.fetchJson(cacheUrl),
+      ]);
+
+      return this.createReportData(apiResultOrigin);
     } catch (e) {
       return {error: e};
     }
@@ -152,10 +154,15 @@ export default class PageExperienceCheck {
     };
   }
 
-  async fetchJson() {
-    const response = await fetch(this.apiUrl.href);
+  async fetchJson(pageUrl) {
+    const apiUrl = new URL(API_ENDPOINT);
+    apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
+    apiUrl.searchParams.set('url', pageUrl);
+    apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
+
+    const response = await fetch(apiUrl.href);
     if (!response.ok) {
-      throw new Error(`PageExperienceCheck failed for: ${this.apiUrl}`);
+      throw new Error(`PageExperienceCheck failed for: ${apiUrl}`);
     }
     const result = await response.json();
     return result;
