@@ -84,8 +84,8 @@ class CoreWebVitalView {
     this.category = this.container.querySelector(
       '.ap-m-pixi-primary-metric-category'
     );
-    this.average = this.container.querySelector(
-      '.ap-m-pixi-primary-metric-average'
+    this.score = this.container.querySelector(
+      '.ap-m-pixi-primary-metric-score'
     );
     this.improvement = this.container.querySelector(
       '.ap-m-pixi-primary-metric-improvement'
@@ -105,8 +105,9 @@ class CoreWebVitalView {
     this.container.classList.add(responseCategory);
     this.category.textContent = displayCategory;
 
-    const average = (data.numericValue / unit.conversion).toFixed(1);
-    this.average.textContent = `${average} ${unit.name}`;
+    const score = (data.numericValue / unit.conversion).toFixed(1);
+    this.score.textContent = `${score} ${unit.name}`;
+
     this.improvement.textContent = 'Not yet implemented';
     this.recommendations.textContent = 'Not yet implemented';
 
@@ -116,7 +117,7 @@ class CoreWebVitalView {
   reset() {
     this.container.classList.remove(...Object.values(CATEGORIES));
     this.category.textContent = i18n.translate('Analyzing');
-    this.average.textContent = i18n.translate('Analyzing');
+    this.score.textContent = i18n.translate('Analyzing');
     this.improvement.textContent = i18n.translate('Calculating');
     this.recommendations.textContent = i18n.translate('Analyzing');
 
