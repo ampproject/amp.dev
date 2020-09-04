@@ -7,9 +7,9 @@
 					"conversion": 1000
 				},
 				"data": {
-					"numericValue": 2372,
-					"category": "FAST",
-					"proportion": 0.7753324868864865
+					"numericValue": 3100,
+					"category": "AVERAGE",
+					"proportion": 0.6472574979735206
 				}
 			},
 			"fid": {
@@ -18,9 +18,9 @@
 					"conversion": 1
 				},
 				"data": {
-					"numericValue": 2,
-					"category": "FAST",
-					"proportion": 0.9918542336548767
+					"numericValue": 289,
+					"category": "AVERAGE",
+					"proportion": 0.09960294951786727
 				}
 			},
 			"cls": {
@@ -88,6 +88,7 @@
 		"usesOptimizedImages": false,
 		"usesWebpImages": false,
 		"fastFontDisplay": false,
-		"minifiedCss": false
+		"minifiedCss": false,
+		"isAllFast": false
 	}
 }

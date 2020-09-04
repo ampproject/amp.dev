@@ -135,7 +135,9 @@ describe('getRecommendationIds', () => {
 
   it('returns amp-boilerplate-removal', async () => {
     const ids = await getRecommendationIds(
-      Promise.resolve({}),
+      Promise.resolve({
+        fieldData: {lcp: {data: {category: 'SLOW'}}},
+      }),
       Promise.resolve({}),
       Promise.resolve({
         boilerplateIsRemoved: false,
@@ -145,6 +147,22 @@ describe('getRecommendationIds', () => {
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
     expect(ids).toContain('amp-boilerplate-removal');
+  });
+
+  it('returns no amp-boilerplate-removal', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        fieldData: {lcp: {data: {category: 'FAST'}}},
+      }),
+      Promise.resolve({}),
+      Promise.resolve({
+        boilerplateIsRemoved: false,
+        updateOptimizerForBoilerplateRemoval: false,
+      }),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length);
+    expect(ids).not.toContain('amp-boilerplate-removal');
   });
 
   it('returns upgrade-amp-optimizer (boilerplate removal)', async () => {
@@ -176,7 +194,9 @@ describe('getRecommendationIds', () => {
 
   it('returns dynamic-layout-extensions', async () => {
     const ids = await getRecommendationIds(
-      Promise.resolve({}),
+      Promise.resolve({
+        fieldData: {cls: {data: {category: 'SLOW'}}},
+      }),
       Promise.resolve({}),
       Promise.resolve({
         noDynamicLayoutExtensions: false,
@@ -185,6 +205,21 @@ describe('getRecommendationIds', () => {
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
     expect(ids).toContain('dynamic-layout-extensions');
+  });
+
+  it('returns no dynamic-layout-extensions', async () => {
+    const ids = await getRecommendationIds(
+      Promise.resolve({
+        fieldData: {cls: {data: {category: 'FAST'}}},
+      }),
+      Promise.resolve({}),
+      Promise.resolve({
+        noDynamicLayoutExtensions: false,
+      }),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length);
+    expect(ids).not.toContain('dynamic-layout-extensions');
   });
 
   it('returns responsive-images', async () => {

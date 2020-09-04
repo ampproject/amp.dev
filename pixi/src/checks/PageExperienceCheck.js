@@ -15,6 +15,12 @@
 import ampToolboxCacheUrl from '@ampproject/toolbox-cache-url';
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
+export const Category = {
+  FAST: 'FAST',
+  SLOW: 'SLOW',
+  AVERAGE: 'AVERAGE',
+};
+
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
 const AMP_PROJECT_CDN_URL = 'cdn.ampproject.org';
@@ -76,11 +82,11 @@ export default class PageExperienceCheck {
     };
 
     if (data.score < 0.5) {
-      data.category = 'SLOW';
+      data.category = Category.SLOW;
     } else if (data.score < 0.75) {
-      data.category = 'AVERAGE';
+      data.category = Category.AVERAGE;
     } else {
-      data.category = 'FAST';
+      data.category = Category.FAST;
     }
 
     return data;
@@ -93,80 +99,87 @@ export default class PageExperienceCheck {
     return -1;
   }
 
-  createReportData(apiResultOrigin, apiResultCache) {
-    const fieldDataOrigin = apiResultOrigin.loadingExperience.metrics;
-    const labDataOrigin = apiResultOrigin.lighthouseResult.audits;
+  isFastData(metrics, checkId) {
+    if (!metrics) {
+      // no error when we have no data
+      return true;
+    }
+    return metrics[checkId].data.category === Category.FAST;
+  }
 
-    const fieldDataCache = apiResultCache.loadingExperience.metrics;
-    const labDataCache = apiResultCache.lighthouseResult.audits;
+  createReportData(apiResult) {
+    const fieldMetrics = apiResult.loadingExperience.metrics;
+    const audits = apiResult.lighthouseResult.audits;
+
+    const fieldData = !fieldMetrics
+      ? undefined
+      : {
+          lcp: {
+            unit: UNIT_SEC,
+            data: this.createFieldData(
+              fieldMetrics['LARGEST_CONTENTFUL_PAINT_MS'],
+              'lcp'
+            ),
+          },
+          fid: {
+            unit: UNIT_MS,
+            data: this.createFieldData(
+              fieldMetrics['FIRST_INPUT_DELAY_MS'],
+              'fid'
+            ),
+          },
+          cls: {
+            unit: UNIT_DEC,
+            data: this.createFieldData(
+              fieldMetrics['CUMULATIVE_LAYOUT_SHIFT_SCORE'],
+              'cls'
+            ),
+          },
+        };
+
+    const labData = {
+      lcp: {
+        unit: UNIT_SEC,
+        data: this.createLabData(audits['largest-contentful-paint'], 'lcp'),
+      },
+      fid: {
+        unit: UNIT_MS,
+        data: this.createLabData(audits['total-blocking-time'], 'fid'),
+      },
+      cls: {
+        unit: UNIT_DEC,
+        data: this.createLabData(audits['cumulative-layout-shift'], 'cls'),
+      },
+    };
+
+    const isAllFast =
+      this.isFastData(fieldData, 'cls') &&
+      this.isFastData(fieldData, 'fid') &&
+      this.isFastData(fieldData, 'lcp') &&
+      this.isFastData(labData, 'cls') &&
+      this.isFastData(labData, 'fid') &&
+      this.isFastData(labData, 'lcp');
+
+    const result = {
+      fieldData,
+      labData,
+      isAllFast,
+      textCompression:
+        this.getAuditScore(audits, 'uses-text-compression') === 1,
+      fastServerResponse:
+        this.getAuditScore(audits, 'server-response-time') === 1,
+      usesAppropriatelySizedImages:
+        this.getAuditScore(audits, 'uses-responsive-images') === 1,
+      usesOptimizedImages:
+        this.getAuditScore(audits, 'uses-optimized-images') === 1,
+      usesWebpImages: this.getAuditScore(audits, 'uses-webp-images') === 1,
+      fastFontDisplay: this.getAuditScore(audits, 'font-display') === 1,
+      minifiedCss: this.getAuditScore(audits, 'unminified-css') === 1,
+    };
 
     return {
       data: {
-        pageExperience: {
-          fieldData: {
-            lcp: {
-              unit: UNIT_SEC,
-              data: this.createFieldData(
-                fieldDataOrigin['LARGEST_CONTENTFUL_PAINT_MS'],
-                fieldDataCache['LARGEST_CONTENTFUL_PAINT_MS']
-              ),
-            },
-            fid: {
-              unit: UNIT_MS,
-              data: this.createFieldData(
-                fieldDataOrigin['FIRST_INPUT_DELAY_MS'],
-                fieldDataCache['FIRST_INPUT_DELAY_MS']
-              ),
-            },
-            cls: {
-              unit: UNIT_DEC,
-              data: this.createFieldData(
-                fieldDataOrigin['CUMULATIVE_LAYOUT_SHIFT_SCORE'],
-                fieldDataCache['CUMULATIVE_LAYOUT_SHIFT_SCORE']
-              ),
-            },
-          },
-          labData: {
-            lcp: {
-              unit: UNIT_SEC,
-              data: this.createLabData(
-                labDataOrigin['largest-contentful-paint'],
-                labDataCache['largest-contentful-paint'],
-                'lcp'
-              ),
-            },
-            fid: {
-              unit: UNIT_MS,
-              data: this.createLabData(
-                labDataOrigin['total-blocking-time'],
-                labDataCache['total-blocking-time'],
-                'fid'
-              ),
-            },
-            cls: {
-              unit: UNIT_DEC,
-              data: this.createLabData(
-                labDataOrigin['cumulative-layout-shift'],
-                labDataCache['cumulative-layout-shift'],
-                'cls'
-              ),
-            },
-          },
-          textCompression:
-            this.getAuditScore(labDataOrigin, 'uses-text-compression') === 1,
-          fastServerResponse:
-            this.getAuditScore(labDataOrigin, 'server-response-time') === 1,
-          usesAppropriatelySizedImages:
-            this.getAuditScore(labDataOrigin, 'uses-responsive-images') === 1,
-          usesOptimizedImages:
-            this.getAuditScore(labDataOrigin, 'uses-optimized-images') === 1,
-          usesWebpImages:
-            this.getAuditScore(labDataOrigin, 'uses-webp-images') === 1,
-          fastFontDisplay:
-            this.getAuditScore(labDataOrigin, 'font-display') === 1,
-          minifiedCss:
-            this.getAuditScore(labDataOrigin, 'unminified-css') === 1,
-        },
+        pageExperience: result,
       },
     };
   }
