@@ -1,5 +1,6 @@
 ---
 $title: Ensure your site is mobile-friendly
+$order: 500
 tags:
 - mobileFriendliness
 ---

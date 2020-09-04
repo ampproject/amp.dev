@@ -1,5 +1,6 @@
 ---
 $title: Use an AMP Optimizer
+$order: 10
 tags:
 - lcp
 - fid

@@ -1,5 +1,6 @@
 ---
 $title: Enable AMP boilerplate removal
+$order: 50
 tags:
 - lcp
 ---

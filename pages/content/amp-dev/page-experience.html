@@ -24,6 +24,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 {% for node in nodes %}
   {% set nodeDict = {
     'title': node.title,
+    'order': node.order,
     'tags': node.tags if node.tags else [],
     'body': node.body
   } %}

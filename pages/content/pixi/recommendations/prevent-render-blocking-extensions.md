@@ -1,5 +1,6 @@
 ---
 $title: Use render-blocking extensions with caution
+$order: 60
 tags:
 - lcp
 ---
