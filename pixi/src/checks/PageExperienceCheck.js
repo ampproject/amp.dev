@@ -94,7 +94,7 @@ export default class PageExperienceCheck {
 
   createReportData(apiResultOrigin, apiResultCache) {
     const fieldDataOrigin = apiResultOrigin.loadingExperience.metrics;
-    const labData = apiResultOrigin.lighthouseResult.audits;
+    const labDataOrigin = apiResultOrigin.lighthouseResult.audits;
 
     const fieldDataCache = apiResultCache.loadingExperience.metrics;
     const labDataCache = apiResultCache.lighthouseResult.audits;
@@ -129,33 +129,36 @@ export default class PageExperienceCheck {
             lcp: {
               unit: UNIT_SEC,
               data: this.createLabData(
-                labData['largest-contentful-paint'],
+                labDataOrigin['largest-contentful-paint'],
                 'lcp'
               ),
             },
             fid: {
               unit: UNIT_MS,
-              data: this.createLabData(labData['total-blocking-time'], 'fid'),
+              data: this.createLabData(
+                labDataOrigin['total-blocking-time'],
+                'fid'
+              ),
             },
             cls: {
               unit: UNIT_DEC,
               data: this.createLabData(
-                labData['cumulative-layout-shift'],
+                labDataOrigin['cumulative-layout-shift'],
                 'cls'
               ),
             },
           },
           textCompression:
-            this.getAuditScore(labData, 'uses-text-compression') === 1,
+            this.getAuditScore(labDataOrigin, 'uses-text-compression') === 1,
           fastServerResponse:
-            this.getAuditScore(labData, 'server-response-time') === 1,
+            this.getAuditScore(labDataOrigin, 'server-response-time') === 1,
           usesAppropriatelySizedImages:
-            this.getAuditScore(labData, 'uses-responsive-images') === 1,
+            this.getAuditScore(labDataOrigin, 'uses-responsive-images') === 1,
           usesOptimizedImages:
-            this.getAuditScore(labData, 'uses-optimized-images') === 1,
-          usesWebpImages: this.getAuditScore(labData, 'uses-webp-images') === 1,
-          fastFontDisplay: this.getAuditScore(labData, 'font-display') === 1,
-          minifiedCss: this.getAuditScore(labData, 'unminified-css') === 1,
+            this.getAuditScore(labDataOrigin, 'uses-optimized-images') === 1,
+          usesWebpImages: this.getAuditScore(labDataOrigin, 'uses-webp-images') === 1,
+          fastFontDisplay: this.getAuditScore(labDataOrigin, 'font-display') === 1,
+          minifiedCss: this.getAuditScore(labDataOrigin, 'unminified-css') === 1,
         },
       },
     };
