@@ -1,5 +1,6 @@
 ---
 $title: Transform hero images on the page
+$order: 80
 tags:
 - lcp
 ---

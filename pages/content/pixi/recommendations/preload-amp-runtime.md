@@ -1,5 +1,6 @@
 ---
 $title: Preload AMP Runtime
+$order: 30
 tags:
 - lcp
 - fid

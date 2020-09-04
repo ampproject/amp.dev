@@ -1,5 +1,6 @@
 ---
 $title: Publish valid cached AMP
+$order: 1
 tags:
 - lcp
 - fid

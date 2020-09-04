@@ -1,5 +1,6 @@
 ---
 $title: Ensure all resources are loadable
+$order: 510
 tags:
 - mobileFriendliness
 ---

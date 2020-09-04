@@ -1,5 +1,6 @@
 ---
 $title: Preconnect to Google fonts
+$order: 150
 tags:
 - lcp
 ---
