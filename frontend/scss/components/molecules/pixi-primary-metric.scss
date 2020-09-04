@@ -9,7 +9,6 @@
   flex-direction: column;
   padding: 15px 25px;
   background-color: color('white');
-  transition: opacity 0.2s ease;
 
   @media (min-width: 768px) {
     padding: 38px 25px;
@@ -81,9 +80,5 @@
         color: color('red');
       }
     }
-  }
-
-  .pristine & {
-    opacity: 0;
   }
 }

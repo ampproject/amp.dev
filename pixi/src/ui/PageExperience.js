@@ -22,10 +22,13 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
-import SatusBannerView from './SatusBannerView.js';
+import SatusIntroView from './SatusIntroView.js';
 import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
+
+// import getStatusBannerIds from '../checkAggregation/statusBanner.js';
+import getRecommendationIds from '../checkAggregation/recommendations.js';
 
 export default class PageExperience {
   constructor() {
@@ -39,7 +42,7 @@ export default class PageExperience {
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
 
     this.inputBar = new InputBar(document, this.onSubmitUrl.bind(this));
-    this.satusBannerView = new SatusBannerView(document);
+    this.satusIntroView = new SatusIntroView(document);
     this.recommendationsView = new RecommendationsView(document);
   }
 
@@ -54,10 +57,7 @@ export default class PageExperience {
     const pageUrl = await this.inputBar.getPageUrl();
     if (!pageUrl) {
       this.toggleLoading(false);
-      this.inputBar.toggleError(
-        true,
-        i18n.translate('Please enter a valid URL')
-      );
+      this.inputBar.toggleError(true, i18n.getText('analyze.fieldError'));
       return;
     }
 
@@ -72,15 +72,15 @@ export default class PageExperience {
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    const recommendations = await Promise.all([
+    const recommendationIds = await getRecommendationIds(
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
-      mobileFriendlinessPromise,
-    ]);
+      mobileFriendlinessPromise
+    );
 
-    this.satusBannerView.render(this.errors);
-    this.recommendationsView.render(recommendations.flat());
+    this.recommendationsView.render(recommendationIds);
+    this.satusIntroView.render(this.errors, pageUrl);
 
     this.toggleLoading(false);
   }
@@ -101,9 +101,8 @@ export default class PageExperience {
       return;
     }
 
-    this.reportViews.pageExperience.render(report.data.result);
-
-    return report.data.recommendations;
+    this.reportViews.pageExperience.render(report);
+    return report.data;
   }
 
   async runSafeBrowsingCheck(pageUrl) {
@@ -121,9 +120,9 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform safe browsing check', error);
     }
-    this.reportViews.safeBrowsing.render(data.result);
+    this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
-    return data.recommendations;
+    return data;
   }
 
   async runLintCheck(pageUrl) {
@@ -134,9 +133,9 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform AMP Linter check', error);
     }
-    this.reportViews.httpsCheck.render(data.result);
+    this.reportViews.httpsCheck.render(data.usesHttps);
 
-    return data.recommendations;
+    return data;
   }
 
   async runMobileFriendlinessCheck(pageUrl) {
@@ -150,9 +149,9 @@ export default class PageExperience {
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
     }
-    this.reportViews.mobileFriendliness.render(data.result);
+    this.reportViews.mobileFriendliness.render(data.mobileFriendly);
 
-    return data.recommendations;
+    return data;
   }
 
   toggleLoading(force) {

@@ -14,6 +14,19 @@
 
 const API_ENDPOINT = API_ENDPOINT_LINTER;
 
+const directMapping = {
+  isvalid: 'isValid',
+  runtimeispreloaded: 'runtimeIsPreloaded',
+  blockingextensionspreloaded: 'blockingExtensionsPreloaded',
+  fontsarepreloaded: 'fontsArePreloaded',
+  fastgooglefontsdisplay: 'fastGoogleFontsDisplay',
+  googlefontpreconnect: 'googleFontPreconnect',
+  istransformedamp: 'isTransformedAmp',
+  boilerplateisremoved: 'boilerplateIsRemoved',
+  moduleruntimeused: 'moduleRuntimeIsUsed',
+  heroimageisdefined: 'heroImageIsDefined',
+};
+
 export default class AmpLinterCheck {
   constructor() {
     this.apiUrl = new URL(API_ENDPOINT);
@@ -31,8 +44,8 @@ export default class AmpLinterCheck {
   }
 
   parseApiResult(apiResult) {
-    if (apiResult.status != 'ok') {
-      return this.createError(new Error(apiResult.message));
+    if (apiResult.status !== 'ok') {
+      return {data: {isLoaded: false}};
     }
 
     return this.createReportData(apiResult);
@@ -43,27 +56,51 @@ export default class AmpLinterCheck {
   }
 
   createReportData(apiResult) {
+    const linterStatus = !apiResult.data
+      ? {}
+      : Object.entries(apiResult.data).reduce((mappedData, [key, checks]) => {
+          // most checks are mapped 1:1 ro the result
+          const resultKey = directMapping[key];
+          if (resultKey) {
+            if (Array.isArray(checks)) {
+              mappedData[resultKey] =
+                checks.length === 1 && checks[0].status === 'PASS';
+            } else {
+              mappedData[resultKey] = checks.status === 'PASS';
+            }
+          }
+          return mappedData;
+        }, {});
+
+    if (linterStatus.boilerplateIsRemoved === false) {
+      if (apiResult.data.boilerplateisremoved.status === 'WARN') {
+        linterStatus.updateOptimizerForBoilerplateRemoval = true;
+      }
+    }
+
+    const components = apiResult.components || {};
+
     return {
       data: {
+        isLoaded: true,
+        isAmp: apiResult.isAmp,
         usesHttps:
           apiResult.url != undefined && apiResult.url.startsWith('https:'),
-        recommendations: [],
+        noRenderBlockingExtension: !(
+          components['amp-experiment'] || components['amp-dynamic-css-classes']
+        ),
+        noDynamicLayoutExtensions: !(
+          components['amp-access'] ||
+          components['amp-user-notification'] ||
+          components['amp-script']
+        ),
+        ...linterStatus,
       },
     };
   }
 
   async fetchJson() {
-    try {
-      const response = await fetch(this.apiUrl);
-
-      if (!response.ok) {
-        throw new Error(
-          `AmpLinterCheck failed: response failed with status ${response.status}`
-        );
-      }
-      return response.json();
-    } catch (e) {
-      throw new Error('AmpLinterCheck failed:', e);
-    }
+    const response = await fetch(this.apiUrl.href);
+    return response.json();
   }
 }

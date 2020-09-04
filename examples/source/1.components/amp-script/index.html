@@ -3,9 +3,8 @@
 standaloneSnippets: true
 preview: true
 author:
- - sebastianbenz
- - morss
-
+  - sebastianbenz
+  - morss
 --->
 
 <!--
@@ -84,6 +83,20 @@ author:
 
       #carousel-button {
         top: -100px;
+        
+      #live-blog-start {
+        margin-top: 0;
+      }
+
+      #live-blog-area {
+        border: 2px solid #ccc;
+        height: 150px;
+        overflow-y: scroll;
+      }
+
+      #live-blog-area .time {
+        color: #666;
+        font-weight: bold;
       }
     </style>
 
@@ -125,7 +138,6 @@ author:
     </amp-script>
 
     <!--
-
       ## Using an inline script
 
       You can also include a script inline and reference it by `id`.
@@ -173,6 +185,7 @@ author:
         fetchCurrentTime();
       </script>
     </div>
+
     <!--
         ## Multiple fetches
 
@@ -204,6 +217,36 @@ author:
         button.addEventListener('click', tripleFetch);
       </script>
     </div>
+
+    <!--
+      ## Using a WebSocket for live updates
+      `amp-script` supports WebSockets. This example simulates a live blog.
+    -->
+    <div>
+      <amp-script layout="fixed-height" height="200" script="live-blog-script" class="sample" sandbox="allow-forms">
+        <button id="live-blog-start">Start live blog</button>
+        <div id="live-blog-area"></div>
+      </amp-script>
+  
+      <script id="live-blog-script" type="text/plain" target="amp-script">
+        const button = document.getElementById('live-blog-start');
+        const blogDiv = document.getElementById('live-blog-area');
+  
+        button.addEventListener("click", () => {
+          button.setAttribute('disabled', '');
+          button.textContent = 'Live blog begun';
+          const socket = new WebSocket('<% hosts.websocket %>/documentation/examples/api/socket/live-blog');
+          
+          socket.onmessage = event => {
+            let newDiv = document.createElement('div');
+            let time = new Date().toLocaleTimeString();
+            newDiv.innerHTML = `<span class="time">${time}: </span><span>${event.data}</span>`;
+            blogDiv.appendChild(newDiv);
+          };        
+        });      
+      </script>
+    </div>
+
     <!-- 
         ## Showing live data
 

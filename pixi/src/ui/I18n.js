@@ -3,30 +3,50 @@ const DEFAULT_LANGUAGE = 'en';
 class I18n {
   constructor() {
     this.language = DEFAULT_LANGUAGE;
-    this.translations = {};
+    this.staticText = {};
+    this.statusBanners = {};
+    this.recommendations = {};
+    this.infoTexts = {};
   }
 
   async init() {
-    try {
-      const i18nConfig = JSON.parse(await AMP.getState('pixi.i18n'));
-      this.language = i18nConfig.language;
-      this.translations = i18nConfig.translations;
-    } catch (e) {
-      console.warn(
-        'Could not get translations from amp-state. Falling back to original strings',
-        e
-      );
-    }
+    const pixiContent = await Promise.all([
+      AMP.getState('pixi.i18n'),
+      AMP.getState('pixiStatusBanners'),
+      AMP.getState('pixiRecommendations'),
+      AMP.getState('pixiInfoTexts'),
+    ]);
+    const i18nConfig = JSON.parse(pixiContent[0]);
+    this.language = i18nConfig.language;
+    this.staticText = i18nConfig.staticText;
+    this.statusBanners = JSON.parse(pixiContent[1]);
+    this.recommendations = JSON.parse(pixiContent[2]);
+    this.infoTexts = JSON.parse(pixiContent[3]);
   }
 
+  /** @deprecated use getText instead */
   translate(originalString) {
-    const translation = this.translations[originalString];
-    if (!translation && IS_DEVELOPMENT) {
-      // Mark untranslated strings during development
-      return `[${this.language}] ${originalString}`;
-    }
+    return originalString;
+  }
 
-    return translation || originalString;
+  getText(textKey) {
+    const keys = textKey.split('.');
+    return keys.reduce(
+      (node, key) => (node && node[key]) || '',
+      this.staticText
+    );
+  }
+
+  getRecommendation(recommendationId) {
+    return this.recommendations[recommendationId];
+  }
+
+  getStatusBanner(statusBannerId) {
+    return this.statusBanners[statusBannerId];
+  }
+
+  getInfoText(infoTextId) {
+    return this.infoTexts[infoTextId];
   }
 }
 

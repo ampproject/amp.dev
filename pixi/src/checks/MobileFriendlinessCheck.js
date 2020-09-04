@@ -30,42 +30,38 @@ export default class MobileFriendlinessCheck {
     if (error || apiResult.testStatus.status !== 'COMPLETE') {
       return {
         error,
-        data: {
-          result: false,
-        },
+        data: {},
       };
     }
     return {
       error,
       data: {
-        result: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY',
-        recommendations: [],
+        mobileFriendly: apiResult.mobileFriendliness == 'MOBILE_FRIENDLY',
+        resourcesLoadable: !(
+          apiResult.resourceIssues && apiResult.resourceIssues.length > 0
+        ),
       },
     };
   }
 
   async fetchJson(pageUrl) {
-    try {
-      const response = await fetch(API_URL, {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-        body: JSON.stringify({
-          url: pageUrl,
-        }),
-      });
+    const response = await fetch(API_URL, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        url: pageUrl,
+      }),
+    });
 
-      if (!response.ok) {
-        throw new Error(
-          `MobileFriendlinessCheck failed: response failed with status ${response.status}`
-        );
-      }
-      const result = await response.json();
-      return result;
-    } catch (e) {
-      throw new Error('MobileFriendlinessCheck failed:', e);
+    if (!response.ok) {
+      throw new Error(
+        `MobileFriendlinessCheck failed: response failed with status ${response.status}`
+      );
     }
+    const result = await response.json();
+    return result;
   }
 }

@@ -30,9 +30,9 @@ class SimpleScale {
   render(data, unit) {
     this.bar.style.transform = `scale3d(${data.score}, 1, 1)`;
 
-    this.value.textContent = `${data.numericValue / unit.conversion}${
-      unit.name
-    }`;
+    this.value.textContent = `${(data.numericValue / unit.conversion).toFixed(
+      1
+    )}${unit.name}`;
     this.indicator.style.marginLeft = `${data.score * 100}%`;
     this.value.style.width = `0`;
   }
@@ -181,9 +181,10 @@ export default class CoreWebVitalsReportView {
 
   render(report = {}) {
     this.pristine = false;
+    const results = report.data.pageExperience;
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
-      const type = report[coreWebVitalView.type];
+      const type = results[coreWebVitalView.type];
       if (type) {
         const metric = type[coreWebVitalView.metric];
         if (metric) {

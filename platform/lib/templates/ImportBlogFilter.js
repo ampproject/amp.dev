@@ -39,7 +39,8 @@ async function importBlog(value, callback) {
 
   const posts = [];
   for (const post of await response.json()) {
-    const mediaDetails = post._embedded['wp:featuredmedia'][0].media_details;
+    const featuredMedia = post._embedded['wp:featuredmedia'];
+    const mediaDetails = featuredMedia && featuredMedia[0].media_details;
     let imageUrl = '';
     if (mediaDetails && !mediaDetails.file.endsWith(DEFAULT_IMG)) {
       imageUrl = mediaDetails.sizes.medium.source_url;
