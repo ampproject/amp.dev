@@ -52,12 +52,11 @@ export default class PageExperienceCheck {
     }
   }
 
-  createFieldData(metric, id) {
-    const score = metric.percentile / METRICS_SCALES[id].slow;
+  createFieldData(metric) {
     const data = {
       numericValue: metric.percentile,
       category: metric.category,
-      proportion: metric.distributions[0].proportion
+      proportion: metric.distributions[0].proportion,
     };
 
     return data;
