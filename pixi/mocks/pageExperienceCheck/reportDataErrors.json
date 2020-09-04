@@ -8,8 +8,8 @@
 				},
 				"data": {
 					"numericValue": 2372,
-					"score": 0.3953333333333333,
-					"category": "FAST"
+					"category": "FAST",
+					"proportion": 0.7753324868864865
 				}
 			},
 			"fid": {
@@ -19,8 +19,8 @@
 				},
 				"data": {
 					"numericValue": 2,
-					"score": 0.0025,
-					"category": "FAST"
+					"category": "FAST",
+					"proportion": 0.9918542336548767
 				}
 			},
 			"cls": {
@@ -30,8 +30,8 @@
 				},
 				"data": {
 					"numericValue": 0,
-					"score": 0,
-					"category": "FAST"
+					"category": "FAST",
+					"proportion": 0.932653831634579
 				}
 			}
 		},
