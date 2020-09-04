@@ -48,7 +48,6 @@ describe('Page experience check', () => {
 
     const pageExperienceCheck = new PageExperienceCheck();
     const report = await pageExperienceCheck.run('http://example.com');
-    console.log('###', report);
     expect(report.error).toBeUndefined();
     expect(report.data).toMatchObject(reportDataNoFieldData);
   });
