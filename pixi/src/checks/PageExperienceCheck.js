@@ -16,6 +16,23 @@ import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
+const METRICS_SCALES = {
+  lcp: {
+    fast: 2500,
+    average: 4000,
+    slow: 6000,
+  },
+  fid: {
+    fast: 100,
+    average: 300,
+    slow: 800,
+  },
+  cls: {
+    fast: 10,
+    average: 25,
+    slow: 40,
+  },
+};
 
 export default class PageExperienceCheck {
   constructor() {
@@ -35,21 +52,31 @@ export default class PageExperienceCheck {
     }
   }
 
-  createLabData(metric) {
-    const labData = {
-      numericValue: metric.numericValue,
-      score: metric.score,
+  createFieldData(metric) {
+    const data = {
+      numericValue: metric.percentile,
+      category: metric.category,
+      proportion: metric.distributions[0].proportion,
     };
 
-    if (labData.score < 0.5) {
-      labData.category = 'slow';
-    } else if (labData.score < 0.75) {
-      labData.category = 'average';
+    return data;
+  }
+
+  createLabData(metric, id) {
+    const data = {
+      numericValue: metric.numericValue,
+      proportion: METRICS_SCALES[id],
+    };
+
+    if (data.score < 0.5) {
+      data.category = 'SLOW';
+    } else if (data.score < 0.75) {
+      data.category = 'AVERAGE';
     } else {
-      labData.category = 'fast';
+      data.category = 'FAST';
     }
 
-    return labData;
+    return data;
   }
 
   getAuditScore(audits, testName) {
@@ -69,32 +96,44 @@ export default class PageExperienceCheck {
           fieldData: {
             lcp: {
               unit: UNIT_SEC,
-              data: fieldData.LARGEST_CONTENTFUL_PAINT_MS,
+              data: this.createFieldData(
+                fieldData['LARGEST_CONTENTFUL_PAINT_MS'],
+                'lcp'
+              ),
             },
             fid: {
               unit: UNIT_MS,
-              data: fieldData.FIRST_INPUT_DELAY_MS,
+              data: this.createFieldData(
+                fieldData['FIRST_INPUT_DELAY_MS'],
+                'fid'
+              ),
             },
             cls: {
               unit: UNIT_DEC,
-              data: fieldData.CUMULATIVE_LAYOUT_SHIFT_SCORE,
+              data: this.createFieldData(
+                fieldData['CUMULATIVE_LAYOUT_SHIFT_SCORE'],
+                'cls'
+              ),
             },
           },
           labData: {
             lcp: {
-              id: 'lcp',
               unit: UNIT_SEC,
-              data: this.createLabData(labData['largest-contentful-paint']),
+              data: this.createLabData(
+                labData['largest-contentful-paint'],
+                'lcp'
+              ),
             },
             fid: {
-              id: 'fid',
               unit: UNIT_MS,
-              data: this.createLabData(labData['interactive']),
+              data: this.createLabData(labData['total-blocking-time'], 'fid'),
             },
             cls: {
-              id: 'cls',
               unit: UNIT_DEC,
-              data: this.createLabData(labData['cumulative-layout-shift']),
+              data: this.createLabData(
+                labData['cumulative-layout-shift'],
+                'cls'
+              ),
             },
           },
           textCompression:

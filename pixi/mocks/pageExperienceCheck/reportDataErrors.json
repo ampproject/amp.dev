@@ -7,24 +7,9 @@
 					"conversion": 1000
 				},
 				"data": {
-					"percentile": 2372,
-					"distributions": [
-						{
-							"min": 0,
-							"max": 2500,
-							"proportion": 0.7753324868864865
-						},
-						{
-							"min": 2500,
-							"max": 4000,
-							"proportion": 0.15472022366716684
-						},
-						{
-							"min": 4000,
-							"proportion": 0.06994728944634677
-						}
-					],
-					"category": "FAST"
+					"numericValue": 2372,
+					"category": "FAST",
+					"proportion": 0.7753324868864865
 				}
 			},
 			"fid": {
@@ -33,24 +18,9 @@
 					"conversion": 1
 				},
 				"data": {
-					"percentile": 2,
-					"distributions": [
-						{
-							"min": 0,
-							"max": 100,
-							"proportion": 0.9918542336548767
-						},
-						{
-							"min": 100,
-							"max": 300,
-							"proportion": 0.004251518399428366
-						},
-						{
-							"min": 300,
-							"proportion": 0.003894247945694892
-						}
-					],
-					"category": "FAST"
+					"numericValue": 2,
+					"category": "FAST",
+					"proportion": 0.9918542336548767
 				}
 			},
 			"cls": {
@@ -59,68 +29,62 @@
 					"conversion": 100
 				},
 				"data": {
-					"percentile": 0,
-					"distributions": [
-						{
-							"min": 0,
-							"max": 10,
-							"proportion": 0.932653831634579
-						},
-						{
-							"min": 10,
-							"max": 25,
-							"proportion": 0.004186066020720607
-						},
-						{
-							"min": 25,
-							"proportion": 0.06316010234470032
-						}
-					],
-					"category": "FAST"
+					"numericValue": 0,
+					"category": "FAST",
+					"proportion": 0.932653831634579
 				}
 			}
 		},
 		"labData": {
 			"lcp": {
-				"id": "lcp",
 				"unit": {
 					"name": "s",
 					"conversion": 1000
 				},
 				"data": {
 					"numericValue": 1710,
-					"score": 0.73,
-					"category": "average"
+					"proportion": {
+						"fast": 2500,
+						"average": 4000,
+						"slow": 6000
+					},
+					"category": "FAST"
 				}
 			},
 			"fid": {
-				"id": "fid",
 				"unit": {
 					"name": "ms",
 					"conversion": 1
 				},
 				"data": {
-					"numericValue": 2710,
-					"score": 0.86,
-					"category": "fast"
+					"numericValue": 229,
+					"proportion": {
+						"fast": 100,
+						"average": 300,
+						"slow": 800
+					},
+					"category": "FAST"
 				}
 			},
 			"cls": {
-				"id": "cls",
 				"unit": {
 					"name": "",
 					"conversion": 100
 				},
 				"data": {
 					"numericValue": 0.000004316609753962,
-					"score": 1,
-					"category": "fast"
+					"proportion": {
+						"fast": 10,
+						"average": 25,
+						"slow": 40
+					},
+					"category": "FAST"
 				}
 			}
 		},
-		"usesAppropriatelySizedImages": false,
 		"textCompression": false,
 		"fastServerResponse": false,
+		"usesAppropriatelySizedImages": false,
 		"usesOptimizedImages": false,
 		"usesWebpImages": false,
 		"fastFontDisplay": false,
