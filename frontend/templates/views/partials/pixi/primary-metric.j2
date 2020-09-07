@@ -16,8 +16,7 @@
     </h3>
 
     {% with tooltip = {
-      'id': primary_metric.id,
-      'text': primary_metric.tooltip
+      'id': primary_metric.title.id|lower
     } %}
     {% include 'views/partials/pixi/tooltip.j2' %}
     {% endwith %}
