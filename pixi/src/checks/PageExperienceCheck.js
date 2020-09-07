@@ -61,15 +61,17 @@ export default class PageExperienceCheck {
     }
   }
 
-  createFieldData(metricOrigin, metricCache) {
-    const improvement = metricOrigin.percentile - metricCache.percentile;
+  createFieldData(metricsOrigin, metricsCache, metricKey) {
+    const metricOrigin = metricsOrigin[metricKey];
     const data = {
       numericValue: metricOrigin.percentile,
       category: metricOrigin.category,
-      improvement: improvement,
       proportion: metricOrigin.distributions[0].proportion,
     };
-
+    if (metricsCache) {
+      data.improvement =
+        metricOrigin.percentile - metricsCache[metricKey].percentile;
+    }
     return data;
   }
 
@@ -120,22 +122,25 @@ export default class PageExperienceCheck {
           lcp: {
             unit: UNIT_SEC,
             data: this.createFieldData(
-              fieldMetricsOrigin['LARGEST_CONTENTFUL_PAINT_MS'],
-              fieldMetricsCache['LARGEST_CONTENTFUL_PAINT_MS']
+              fieldMetricsOrigin,
+              fieldMetricsCache,
+              'LARGEST_CONTENTFUL_PAINT_MS'
             ),
           },
           fid: {
             unit: UNIT_MS,
             data: this.createFieldData(
-              fieldMetricsOrigin['FIRST_INPUT_DELAY_MS'],
-              fieldMetricsCache['FIRST_INPUT_DELAY_MS']
+              fieldMetricsOrigin,
+              fieldMetricsCache,
+              'FIRST_INPUT_DELAY_MS'
             ),
           },
           cls: {
             unit: UNIT_DEC,
             data: this.createFieldData(
-              fieldMetricsOrigin['CUMULATIVE_LAYOUT_SHIFT_SCORE'],
-              fieldMetricsCache['CUMULATIVE_LAYOUT_SHIFT_SCORE']
+              fieldMetricsOrigin,
+              fieldMetricsCache,
+              'CUMULATIVE_LAYOUT_SHIFT_SCORE'
             ),
           },
         };
