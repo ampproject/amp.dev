@@ -5,9 +5,8 @@
 
 .#{molecule('tooltip')} {
   $tooltip: &;
-  background: red;
 
-  &-button {
+  &-toggle {
     cursor: pointer;
     width: 30px;
     height: 30px;
@@ -16,7 +15,7 @@
     svg {
       width: 100%;
       height: 100%;
-      opacity: 0.3;
+      opacity: .3;
       transition: opacity .2s ease-in-out;
     }
 
@@ -26,15 +25,62 @@
       }
     }
   }
+
+  &-close {
+    height: 60px;
+
+    @media (min-width: 768px) {
+      margin-left: 14px;
+    }
+
+    svg {
+      cursor: pointer;
+      max-width: 20px;
+      max-height: 20px;
+      fill: color('blue-ribbon');
+    }
+  }
+
   &-tip {
     position: absolute;
     z-index: 934834;
     width: 300px;
+    margin-top: 25px;
+    padding: 24px 16px 24px 24px;
     pointer-events: none;
-    transform: translateX(-70%);
-    background: white;
-    border: 1px solid red;
+    // transform: translateX(-80%);
+    background: color('white');
     opacity: 0;
+    filter: drop-shadow(0 0 20px transparentize(color('black'), 0.80));
+
+    @media (min-width: 575px) {
+      display: flex;
+      transform: translateX(-80%);
+    }
+
+    @media (min-width: 1024px) {
+      transform: translateX(-70%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: 100%;
+      right: calc(20% - 30px);
+      border: 15px solid transparent;
+      border-top: 0;
+      border-bottom-color: color('white');
+
+      @media (min-width: 575px) {
+        right: calc(20% - 30px);
+      }
+
+      @media (min-width: 1024px) {
+        right: calc(30% - 30px);
+      }
+    }
 
     #{$tooltip}.active & {
       opacity: 1;
