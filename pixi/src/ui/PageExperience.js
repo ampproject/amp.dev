@@ -60,7 +60,6 @@ export default class PageExperience {
       return;
     }
 
-    this.reports.classList.remove('pristine');
     this.recommendationsView.container.classList.remove('pristine');
 
     const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
@@ -160,8 +159,10 @@ export default class PageExperience {
       console.error('Could not perform AMP Linter check', error);
       return {error};
     }
-    this.reportViews.httpsCheck.render(data.usesHttps);
-
+    if (data.isAmp) {
+      this.reports.classList.remove('pristine');
+      this.reportViews.httpsCheck.render(data.usesHttps);
+    }
     return data;
   }
 

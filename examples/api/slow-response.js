@@ -24,6 +24,7 @@ const examples = express.Router();
 examples.get('/slow-json', slowJson);
 examples.get('/slow-json-with-items', slowJsonWithItems);
 examples.get('/slow-iframe', slowIframe);
+examples.get('/slow-text', slowText);
 
 function getDelay(request) {
   let delay = Number(request.query.delay);
@@ -42,6 +43,7 @@ function errorIfRequested(request, response) {
 async function slowJson(request, response) {
   await sleep(getDelay(request));
   errorIfRequested(request, response);
+
   response.json({
     items: [
       {
@@ -60,6 +62,17 @@ async function slowJsonWithItems(request, response) {
   response.sendFile(
     path.join(__dirname, '../static/samples/json/related_products.json')
   );
+}
+
+// Note that this function expects its delay measured in seconds.
+async function slowText(request, response) {
+  const delay = getDelay(request);
+  await sleep(delay * 1000);
+  errorIfRequested(request, response);
+
+  const timeWord = delay == 1 ? 'second' : 'seconds';
+
+  response.send(`This call returned in ${delay} ${timeWord}!`);
 }
 
 async function slowIframe(request, response) {
