@@ -27,14 +27,13 @@ import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
-// import getStatusBannerIds from '../checkAggregation/statusBanner.js';
 import getRecommendationIds from '../checkAggregation/recommendations.js';
+import getStatusId from '../checkAggregation/statusBanner';
 
 export default class PageExperience {
   constructor() {
     this.reports = document.getElementById('reports');
     this.reportViews = {};
-    this.errors = [];
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
@@ -64,25 +63,53 @@ export default class PageExperience {
     this.reports.classList.remove('pristine');
     this.recommendationsView.container.classList.remove('pristine');
 
-    // Reset errors from previous runs
-    this.errors = [];
-
     const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
     const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    const recommendationIds = await getRecommendationIds(
+    const recommendationIdsPromise = getRecommendationIds(
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
       mobileFriendlinessPromise
     );
 
-    this.recommendationsView.render(recommendationIds);
-    this.satusIntroView.render(this.errors, pageUrl);
+    this.runStatusBannerResult(
+      pageUrl,
+      pageExperiencePromise,
+      linterPromise,
+      mobileFriendlinessPromise,
+      safeBrowsingPromise,
+      recommendationIdsPromise
+    );
 
-    this.toggleLoading(false);
+    this.recommendationsView.render(await recommendationIdsPromise);
+  }
+
+  async runStatusBannerResult(
+    pageUrl,
+    pageExperiencePromise,
+    linterPromise,
+    mobileFriendlinessPromise,
+    safeBrowsingPromise,
+    recommendationIdsPromise
+  ) {
+    try {
+      const statusBannerId = await getStatusId(
+        recommendationIdsPromise,
+        pageExperiencePromise,
+        safeBrowsingPromise,
+        linterPromise,
+        mobileFriendlinessPromise
+      );
+      this.toggleLoading(false);
+      return this.satusIntroView.render(statusBannerId, pageUrl);
+    } catch (error) {
+      console.log('unable to get page status', error);
+      this.toggleLoading(false);
+      return this.satusIntroView.render('api-error.md', pageUrl);
+    }
   }
 
   async runPageExperienceCheck(pageUrl) {
@@ -95,10 +122,8 @@ export default class PageExperience {
 
     const report = await this.pageExperienceCheck.run(pageUrl);
     if (report.error) {
-      this.errors.push(report.error);
-      console.error('Page experience check failed', report.error);
-      // TODO: Render error states to views
-      return;
+      console.error('Could not perform page experience check', report.error);
+      return {error: report.error};
     }
 
     this.reportViews.pageExperience.render(report);
@@ -119,6 +144,7 @@ export default class PageExperience {
     // for undefined data
     if (error) {
       console.error('Could not perform safe browsing check', error);
+      return {error};
     }
     this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
@@ -132,6 +158,7 @@ export default class PageExperience {
     const {error, data} = await this.linterCheck.run(pageUrl);
     if (error) {
       console.error('Could not perform AMP Linter check', error);
+      return {error};
     }
     this.reportViews.httpsCheck.render(data.usesHttps);
 
@@ -148,6 +175,7 @@ export default class PageExperience {
     const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
+      return {error};
     }
     this.reportViews.mobileFriendliness.render(data.mobileFriendly);
 

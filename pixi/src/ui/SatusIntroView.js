@@ -12,7 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import i18n from './I18n.js';
+import marked from 'marked';
+import i18n from './I18n';
+
+const classNameMapping = {
+  error: 'fail',
+  success: 'pass',
+};
 
 export default class SatusIntroView {
   constructor(doc) {
@@ -25,30 +31,17 @@ export default class SatusIntroView {
   }
 
   /**
-   * Check error array and render banner
+   * Load and render banner with the given id
    * @param  {array} errors List of errors occurred in the checks
    */
-  async render(errors, pageUrl) {
+  async render(statusBannerId, pageUrl) {
+    const statusBanner = i18n.getStatusBanner(statusBannerId);
     const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
     shareUrl.searchParams.set('url', pageUrl);
     AMP.setState({pixi: {shareUrl: shareUrl.toString()}});
 
-    if (!errors.length) {
-      this.container.classList.add('pass');
-      this.bannerTitle.textContent = i18n.translate(
-        'Wow! Your AMP page has a great page experience!'
-      );
-      this.bannerText.textContent = i18n.translate(
-        'This page creates a great page experience!'
-      );
-    } else {
-      this.container.classList.add('fail');
-      this.bannerTitle.textContent = i18n.translate(
-        'Oops! Looks like something went wrong.'
-      );
-      this.bannerText.textContent = i18n.translate(
-        "It seems like we weren't able to get reliable results. Please rerun the test."
-      );
-    }
+    this.container.classList.add(classNameMapping[statusBanner.type]);
+    this.bannerTitle.textContent = statusBanner.title;
+    this.bannerText.innerHTML = marked(statusBanner.body);
   }
 }
