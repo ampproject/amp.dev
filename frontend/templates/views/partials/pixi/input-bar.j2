@@ -4,9 +4,18 @@
   <h2 class="ap-m-input-bar-title">{{ _('Analyze your AMP page') }}</h2>
   <div class="ap-m-input-bar-container">
     <div class="ap-m-input-bar-input">
-      <input id="input-field" class="ap-m-input-bar-input-field" type="url" name="url" placeholder="{{ _('Enter valid URL') }}" value="[= query.url =]" aria-label="{{ _('Enter your URL') }}">
+      <input id="input-field"
+        class="ap-m-input-bar-input-field"
+        type="url"
+        name="url"
+        placeholder="{{ _('Enter valid URL') }}"
+        value="[= query.url =]"
+        aria-label="{{ _('Enter valid URL') }}">
     </div>
-    <button id="input-submit" on="tap:pixi-checks.scrollTo(duration=300)" class="ap-m-input-bar-submit" name="button">
+    <button id="input-submit"
+        class="ap-m-input-bar-submit"
+        on="tap:pixi-checks.scrollTo(duration=300)"
+        name="button">
       {{ _('Analyze') }}
       {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
       <svg>
