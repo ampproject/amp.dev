@@ -3,6 +3,8 @@
 @import '_mixins.scss';
 @import '_variables.scss';
 
+@import 'components/atoms/_button.scss';
+
 .#{molecule('tooltip')} {
   $tooltip: &;
 
@@ -50,7 +52,6 @@
     margin-top: 25px;
     padding: 24px 16px 24px 24px;
     pointer-events: none;
-    // transform: translateX(-80%);
     background: color('white');
     opacity: 0;
     filter: drop-shadow(0 0 20px transparentize(color('black'), 0.80));
@@ -87,6 +88,54 @@
     #{$tooltip}.active & {
       opacity: 1;
       pointer-events: all;
+    }
+  }
+}
+
+// amp-lightbox
+#tooltip {
+  @media (min-width: 575px) {
+    display: none;
+  }
+}
+.ap-m-tooltip-lightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparentize(color('black'), 0.2);
+
+  &-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    height: 100%;
+    width: 90%;
+    margin-left: auto;
+    padding: 120px 20px;
+    border-radius: 4px;
+    background: color('white');
+
+    button {
+      @include unset-button;
+      height: 28px;
+      width: 28px;
+      margin-bottom: 60px;
+      padding: 5px;
+
+      svg {
+        fill: color('blue-ribbon');
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.57;
     }
   }
 }
