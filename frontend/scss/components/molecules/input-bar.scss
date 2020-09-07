@@ -71,7 +71,7 @@
       padding: 0 8px;
       border: 0;
       border-radius: 4px 0 0 4px;
-      font-family: Noto Sans, sans-serif;
+      font-family: Poppins, sans-serif;
       font-size: 18px;
       font-weight: bold;
 
@@ -90,13 +90,14 @@
     border: 0;
     border-radius: 4px;
     text-align: center;
+    font-family: Poppins, sans-serif;
     font-size: 0;
     color: color('white');
     background: color('blue-ribbon');
 
     @media (min-width: 600px) {
       min-width: 129px;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     svg {
