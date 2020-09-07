@@ -143,7 +143,7 @@
     "html-minifier": "4.0.0",
     "html-webpack-inline-source-plugin": "1.0.0-beta.2",
     "html-webpack-plugin": "4.4.1",
-    "husky": "4.2.5",
+    "husky": "4.3.0",
     "jasmine": "3.6.1",
     "jest": "26.4.2",
     "js-base64": "3.4.5",
