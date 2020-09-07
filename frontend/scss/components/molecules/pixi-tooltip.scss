@@ -19,6 +19,7 @@
       transition: opacity .2s ease-in-out;
     }
 
+    #{$tooltip}.active &,
     &:hover {
       svg {
         opacity: 1;
@@ -43,7 +44,8 @@
 
   &-tip {
     position: absolute;
-    z-index: 934834;
+    z-index: 10;
+    display: none;
     width: 300px;
     margin-top: 25px;
     padding: 24px 16px 24px 24px;
