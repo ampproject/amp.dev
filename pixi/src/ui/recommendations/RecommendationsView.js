@@ -18,16 +18,21 @@ import i18n from '../I18n.js';
 export default class RecommendationsView {
   constructor(doc) {
     this.container = doc.getElementById('recommendations');
-    this.template = this.container.querySelector(
+
+    this.filter = this.container.querySelector('.ap-o-pixi-recommendations-filter');
+    this.pill = this.filter.querySelector('.ap-a-pill');
+
+    this.recommendation = this.container.querySelector(
       '.ap-m-pixi-recommendations-item'
     );
-    this.tag = this.container.querySelector('span');
+    this.tag = this.recommendation.querySelector('span');
   }
 
   render(recommendationIds) {
     const recommendations = i18n.getSortedRecommendations(recommendationIds);
+    const tagIds = [];
     for (const value of recommendations) {
-      const recommendation = this.template.cloneNode(true);
+      const recommendation = this.recommendation.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
       );
@@ -56,9 +61,16 @@ export default class RecommendationsView {
         const tag = this.tag.cloneNode(true);
         tag.textContent = i18n.getText(`tags.${tagId}`);
         tagsBar.appendChild(tag);
+        tagIds.push(tagId);
       }
 
       this.container.appendChild(recommendation);
+    }
+
+    for (const tagId of [...new Set(tagIds)]) {
+      const pill = this.pill.cloneNode(true);
+      pill.textContent = i18n.getText(`tags.${tagId}`);
+      this.filter.appendChild(pill);
     }
   }
 }

@@ -4,4 +4,10 @@
 
 .#{organism('pixi-recommendations')} {
   padding: 0 15px;
+
+  &-filter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
 }

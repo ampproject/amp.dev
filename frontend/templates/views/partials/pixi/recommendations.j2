@@ -1,6 +1,12 @@
 {% do doc.styles.addCssFile('css/components/organisms/pixi-recommendations.css') %}
+{% do doc.styles.addCssFile('css/components/atoms/pill.css') %}
 
 <section id="recommendations" class="ap-o-pixi-recommendations pristine">
   <h2>Take action. Improve your AMP site</h2>
+  <div class="ap-o-pixi-recommendations-filter">
+    <div class="ap-a-pill">
+      <span class="ap-a-pill-text">{{ _('All') }}</span>
+    </div>
+  </div>
   {% include 'views/partials/pixi/recommendations-item.j2' %}
 </section>
