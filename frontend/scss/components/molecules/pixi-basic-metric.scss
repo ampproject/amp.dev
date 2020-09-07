@@ -5,6 +5,8 @@
 
 .#{molecule('pixi-basic-metric')} {
   $basic-metric: &;
+  display: flex;
+  justify-content: space-between;
   padding: 15px 25px;
   font-size: 16px;
   background: color('white');
@@ -17,9 +19,15 @@
   @media (min-width: 768px) {
     flex-direction: row;
     width: 24%;
+    padding: 25px 15px 25px 25px;
     border-radius: 4px;
     border-bottom: 0;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+  }
+
+  &-title {
+    margin: 0;
+    font-size: 18px;
   }
 
   &-status {
