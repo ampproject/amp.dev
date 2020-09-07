@@ -70,6 +70,8 @@ export default class RecommendationsView {
     for (const tagId of [...new Set(tagIds)]) {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
+      pill.setAttribute('on', `tap:AMP.setState({ recommendationFilter: '${tagId}' })`);
+      pill.setAttribute('[class]', `recommendationFilter == ${tagId} ? 'ap-a-pill filtered' : 'ap-a-pill'`);
       this.filter.appendChild(pill);
     }
   }
