@@ -13,7 +13,8 @@
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "FAST"
+					"category": "FAST",
+					"improvement": 0
 				}
 			},
 			"fid": {
@@ -28,7 +29,8 @@
 						"average": 300,
 						"slow": 800
 					},
-					"category": "FAST"
+					"category": "FAST",
+					"improvement": 0
 				}
 			},
 			"cls": {
@@ -43,7 +45,8 @@
 						"average": 25,
 						"slow": 40
 					},
-					"category": "FAST"
+					"category": "FAST",
+					"improvement": 0
 				}
 			}
 		},
