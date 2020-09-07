@@ -14,6 +14,7 @@
 
 /* eslint-disable max-len */
 const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+const AMP_PROJECT_CDN_URL = 'cdn.ampproject.org';
 
 export default class InputBar {
   constructor(doc, callback) {
@@ -53,13 +54,16 @@ export default class InputBar {
         ? value
         : `http://${value}`;
 
-    if (this.isValidUrl(pageUrl)) {
-      this.toggleError(false, '&nbsp;');
-      return pageUrl;
-    } else {
-      this.toggleError(true, 'Please enter a valid URL');
+    if (pageUrl.includes(AMP_PROJECT_CDN_URL)) {
       return;
     }
+
+    if (!this.isValidUrl(pageUrl)) {
+      return;
+    }
+
+    this.toggleError(false, '&nbsp;');
+    return pageUrl;
   }
 
   toggleValid(force) {
