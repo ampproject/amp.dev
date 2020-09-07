@@ -23,11 +23,17 @@ export default class InputBar {
     this.label = this.container.querySelector('label');
 
     this.submit.addEventListener('click', callback);
-    this.field.addEventListener('keydown', (e) => {
+    this.field.addEventListener('keyup', (e) => {
       if (e.keyCode == 13 && !this.submit.classList.contains('loading')) {
         callback();
       }
+
+      this.toggleValid(this.isValidUrl(this.field.value));
     });
+  }
+
+  isValidUrl(pageUrl) {
+    return pageUrl.match(URL_VALIDATION_REGEX) ? true : false;
   }
 
   async getPageUrl() {
@@ -47,7 +53,7 @@ export default class InputBar {
         ? value
         : `http://${value}`;
 
-    if (pageUrl.match(URL_VALIDATION_REGEX)) {
+    if (this.isValidUrl(pageUrl)) {
       this.toggleError(false, '&nbsp;');
       return pageUrl;
     } else {
@@ -56,12 +62,16 @@ export default class InputBar {
     }
   }
 
+  toggleValid(force) {
+    this.submit.disabled = !force;
+  }
+
   toggleError(force, error) {
     this.container.classList.toggle('error', force);
     this.label.textContent = error;
   }
 
   toggleLoading(force) {
-    this.submit.classList.toggle('loading', force);
+    this.container.classList.toggle('loading', force);
   }
 }

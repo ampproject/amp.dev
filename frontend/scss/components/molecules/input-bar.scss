@@ -89,8 +89,8 @@
     margin: 0;
     border: 0;
     border-radius: 4px;
-    text-align: center;
     font-family: Poppins, sans-serif;
+    text-align: center;
     font-size: 0;
     color: color('white');
     background: color('blue-ribbon');
@@ -111,20 +111,16 @@
       }
     }
 
-    &.loading {
+    &[disabled] {
+      background: color('mercury');
+    }
+
+    .loading & {
       font-size: 0;
       background: color('mercury');
 
       svg {
         display: none;
-      }
-
-      @extend %loading-indicator;
-      &:after {
-        width: 20px;
-        height: 20px;
-        margin: auto;
-        border-width: 2px;
       }
     }
   }
