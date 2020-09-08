@@ -21,6 +21,7 @@ const {join} = require('path');
 const {sh} = require('@lib/utils/sh.js');
 const mri = require('mri');
 const {ROOT, THUMBOR_ROOT} = require('@lib/utils/project').paths;
+const {execSync} = require('child_process');
 
 const PREFIX = 'amp-dev';
 const PACKAGER_PREFIX = PREFIX + '-packager';
@@ -144,6 +145,32 @@ async function gcloudSetup() {
   await sh('gcloud auth configure-docker');
   await sh(`gcloud config set compute/region ${config.gcloud.region}`);
   await sh(`gcloud config set compute/zone ${config.gcloud.zone}`);
+}
+
+/**
+ * Invalidate any static URLs that were changed
+ */
+async function invalidateCachedURLs() {
+  const [thisMerge, lastMerge] = JSON.parse(
+    await sh(
+      `gcloud container images list-tags ${config.image.name} --limit=2 --format=json`
+    )
+  ).map((t) => t.tags[0].split('-')[0]);
+  const changedFilelist = execSync(
+    `git diff --stat ${thisMerge} ${lastMerge} --diff-filter=MRD --name-only`
+  )
+    .toString()
+    .split('\n');
+  const updatedStaticFiles = changedFilelist.filter((filename) =>
+    filename.startsWith('pages/static')
+  );
+
+  updatedStaticFiles.forEach(async (filename) => {
+    const urlToInvalidate = filename.replace(/^pages/, '');
+    await sh(
+      `gcloud compute url-maps invalidate-cdn-cache --path "${urlToInvalidate}" --host "https://amp.dev"`
+    );
+  });
 }
 
 /**
@@ -372,7 +399,8 @@ exports.deploy = series(
   imageUpload,
   instanceTemplatesClean,
   instanceTemplateCreate,
-  updateStart
+  updateStart,
+  invalidateCachedURLs
 );
 exports.imageBuild = imageBuild;
 exports.imageList = imageList;
@@ -401,3 +429,4 @@ exports.thumborDeploy = series(
 exports.updateStop = updateStop;
 exports.updateStatus = updateStatus;
 exports.updateStart = updateStart;
+exports.invalidateCachedURLs = invalidateCachedURLs;
