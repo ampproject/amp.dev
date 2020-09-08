@@ -44,6 +44,9 @@ export default class RecommendationsView {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationIds);
     const tagIds = [];
+    const filterPills = [];
+    const recommendationNodes = [];
+
     for (const value of recommendations) {
       const recommendation = this.recommendation.cloneNode(true);
       const header = recommendation.querySelector(
@@ -72,11 +75,13 @@ export default class RecommendationsView {
 
       for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);
+        recommendation.classList.add(tagId);
         tag.textContent = i18n.getText(`tags.${tagId}`);
         tagsBar.appendChild(tag);
         tagIds.push(tagId);
       }
 
+      recommendationNodes.push(recommendation);
       this.container.appendChild(recommendation);
     }
 
@@ -89,9 +94,17 @@ export default class RecommendationsView {
       );
 
       pill.addEventListener('click', () => {
+        for (const filterPill of filterPills) {
+          filterPill.classList.remove('filtered');
+        }
         pill.classList.toggle('filtered');
+
+        for (const recommendation of recommendationNodes) {
+          recommendation.hidden = !recommendation.classList.contains(tagId);
+        }
       });
 
+      filterPills.push(pill);
       this.filter.appendChild(pill);
     }
   }
