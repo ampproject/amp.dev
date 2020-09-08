@@ -2,14 +2,8 @@
 
 <div id="tooltip-{{ tooltip.id|replace(".", "-") }}"
     class="ap-m-tooltip">
-  <div class="ap-m-tooltip-toggle"
-      on="tap:tooltip, AMP.setState({pixi: { tooltip: pixiInfoTexts['{{ tooltip.id }}'] }})"
-      role="button">
-    {% do doc.icons.useIcon('icons/questionmark-outline.svg') %}
-    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark-outline"></use></svg>
-  </div>
 
-  <div class="ap-m-tooltip-toggle ap-m-tooltip-toggle--desktop"
+  <div class="ap-m-tooltip-toggle"
       on="tap:tooltip-{{ tooltip.id|replace(".", "-") }}.toggleClass(class=active)"
       role="button">
     {% do doc.icons.useIcon('icons/questionmark-outline.svg') %}
@@ -18,7 +12,7 @@
 
   <div class="ap-m-tooltip-tip">
     <div>
-      {{ info_texts[tooltip.id].html|safe }}
+      {{ info_texts[tooltip.id].body|markdown|safe }}
     </div>
     <div class="ap-m-tooltip-close"
         on="tap:tooltip-{{ tooltip.id|replace(".", "-") }}.toggleClass(class=active)"
