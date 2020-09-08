@@ -13,7 +13,7 @@
 @import 'components/atoms/_color.scss';
 
 .#{molecule('input-bar')} {
-  $root: &;
+  $inputBar: &;
   padding: 0 15px 50px 15px;
 
   @media (min-width: 768px) {
@@ -118,7 +118,7 @@
     &.loading {
       background: color('mercury');
 
-      label {
+      #{$inputBar}-submit-title {
         font-size: 0;
       }
 
@@ -143,7 +143,7 @@
   }
 
   &.error {
-    #{$root} {
+    #{$inputBar} {
       &-textbox:after {
         opacity: 1;
       }
