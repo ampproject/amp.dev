@@ -71,7 +71,11 @@ export default class RecommendationsView {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
       pill.setAttribute('on', `tap:AMP.setState({ recommendationFilter: '${tagId}' })`);
-      pill.setAttribute('[class]', `recommendationFilter == ${tagId} ? 'ap-a-pill filtered' : 'ap-a-pill'`);
+
+      pill.addEventListener('click', (e) => {
+        pill.classList.toggle('filtered');
+      });
+
       this.filter.appendChild(pill);
     }
   }
