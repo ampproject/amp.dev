@@ -112,14 +112,10 @@ export default class PageExperience {
         mobileFriendlinessPromise
       );
       linterPromise.then(() => {
-        statusView.increaseFinishedChecks(
-          AmpLinterCheck.getCheckCount()
-        );
+        statusView.increaseFinishedChecks(AmpLinterCheck.getCheckCount());
       });
       pageExperiencePromise.then(() => {
-        statusView.increaseFinishedChecks(
-          PageExperienceCheck.getCheckCount()
-        );
+        statusView.increaseFinishedChecks(PageExperienceCheck.getCheckCount());
       });
       mobileFriendlinessPromise.then(() => {
         statusView.increaseFinishedChecks(
@@ -127,9 +123,7 @@ export default class PageExperience {
         );
       });
       safeBrowsingPromise.then(() => {
-        statusView.increaseFinishedChecks(
-          SafeBrowsingCheck.getCheckCount()
-        );
+        statusView.increaseFinishedChecks(SafeBrowsingCheck.getCheckCount());
       });
       statusView.render(statusBannerIdPromise, pageUrl);
       await statusBannerIdPromise;

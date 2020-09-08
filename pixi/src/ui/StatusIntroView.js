@@ -92,5 +92,4 @@ export default class StatusIntroView {
         Number.parseInt(this.finishedChecks.innerHTML) + amount;
     }
   }
-
 }
