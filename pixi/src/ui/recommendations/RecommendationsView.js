@@ -24,7 +24,18 @@ export default class RecommendationsView {
     this.tag = this.container.querySelector('span');
   }
 
+  resetView() {
+    this.container.classList.add('pristine');
+    const items = this.container.querySelectorAll(
+      '.ap-m-pixi-recommendations-item'
+    );
+    for (let i = 1; i < items.length; i++) {
+      this.container.removeChild(items[i]);
+    }
+  }
+
   render(recommendationIds) {
+    this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationIds);
     for (const value of recommendations) {
       const recommendation = this.template.cloneNode(true);
