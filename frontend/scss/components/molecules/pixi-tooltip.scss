@@ -10,6 +10,7 @@
   position: relative;
 
   &-toggle {
+    @include unset-button;
     cursor: pointer;
     width: 30px;
     height: 30px;
@@ -31,11 +32,13 @@
   }
 
   &-close {
+    @include unset-button;
     height: 60px;
     width: 22px;
     margin-left: auto;
 
     @media (min-width: 768px) {
+      height: 22px;
       margin-left: 14px;
     }
 
