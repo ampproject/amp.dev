@@ -187,7 +187,6 @@ export default class CoreWebVitalsReportView {
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
       const metric = this.getMetric(results, coreWebVitalView);
-      console.log('### metric', coreWebVitalView, metric);
       if (metric) {
         const cacheMetric = this.getMetric(
           this.getPageExperience(cacheReport),
