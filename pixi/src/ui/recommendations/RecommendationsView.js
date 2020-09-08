@@ -19,7 +19,9 @@ export default class RecommendationsView {
   constructor(doc) {
     this.container = doc.getElementById('recommendations');
 
-    this.filter = this.container.querySelector('.ap-o-pixi-recommendations-filter');
+    this.filter = this.container.querySelector(
+      '.ap-o-pixi-recommendations-filter'
+    );
     this.pill = this.filter.querySelector('.ap-a-pill');
 
     this.recommendation = this.container.querySelector(
@@ -81,9 +83,12 @@ export default class RecommendationsView {
     for (const tagId of [...new Set(tagIds)]) {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
-      pill.setAttribute('on', `tap:AMP.setState({ recommendationFilter: '${tagId}' })`);
+      pill.setAttribute(
+        'on',
+        `tap:AMP.setState({ recommendationFilter: '${tagId}' })`
+      );
 
-      pill.addEventListener('click', (e) => {
+      pill.addEventListener('click', () => {
         pill.classList.toggle('filtered');
       });
 
