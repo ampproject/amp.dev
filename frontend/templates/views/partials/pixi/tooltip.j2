@@ -18,6 +18,7 @@
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
     </div>
     <div>
+      <h2>{{ info_texts[tooltip.id].title|markdown|safe }}</h2>
       {{ info_texts[tooltip.id].body|markdown|safe }}
     </div>
   </div>

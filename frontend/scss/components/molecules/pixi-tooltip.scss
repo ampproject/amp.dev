@@ -94,6 +94,16 @@
       }
     }
 
+    h2 {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid color('mercury');
+
+      @media (min-width: 575px) {
+        display: none;
+      }
+    }
+
     p {
       margin: 0;
     }
