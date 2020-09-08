@@ -7,6 +7,7 @@
 
 .#{molecule('tooltip')} {
   $tooltip: &;
+  position: relative;
 
   &-toggle {
     cursor: pointer;
@@ -31,6 +32,8 @@
 
   &-close {
     height: 60px;
+    width: 22px;
+    margin-left: auto;
 
     @media (min-width: 768px) {
       margin-left: 14px;
@@ -45,21 +48,33 @@
   }
 
   &-tip {
+    z-index: 10;
     position: fixed;
     top: 0;
-    z-index: 10;
-    display: flex;
-    width: 300px;
+    right: 0;
+    width: 90%;
+    height: 100%;
     margin-top: 25px;
-    padding: 24px 16px 24px 24px;
-    pointer-events: none;
+    padding: 110px 16px 24px 24px;
     background: color('white');
+
+    pointer-events: none;
     opacity: 0;
-    transform: translateX(-80%);
     filter: drop-shadow(0 0 20px transparentize(color('black'), 0.80));
 
+    @media (min-width: 575px) {
+      position: absolute;
+      top: 25px;
+      display: flex;
+      flex-direction: row-reverse;
+      width: 300px;
+      height: auto;
+      padding: 24px 16px 24px 24px;
+      transform: translateX(10%);
+    }
+
     @media (min-width: 1024px) {
-      transform: translateX(-70%);
+      transform: translateX(20%);
     }
 
     &:after {
@@ -72,63 +87,20 @@
       border: 15px solid transparent;
       border-top: 0;
       border-bottom-color: color('white');
-
-      @media (min-width: 575px) {
-        right: calc(20% - 30px);
-      }
+      right: calc(20% - 30px);
 
       @media (min-width: 1024px) {
         right: calc(30% - 30px);
       }
     }
 
-    #{$tooltip}.active & {
+    p {
+      margin: 0;
+    }
 
+    #{$tooltip}.active & {
       opacity: 1;
       pointer-events: all;
-    }
-  }
-}
-
-// amp-lightbox will be shown on small screens
-.ap-m-tooltip-lightbox {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparentize(color('black'), 0.2);
-
-  &-container {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    justify-content: flex-end;
-    position: relative;
-    height: 100%;
-    width: 90%;
-    margin-left: auto;
-    padding: 120px 20px;
-    border-radius: 4px;
-    background: color('white');
-
-    button {
-      @include unset-button;
-      height: 28px;
-      width: 28px;
-      margin-bottom: 60px;
-      padding: 5px;
-
-      svg {
-        fill: color('blue-ribbon');
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.57;
     }
   }
 }
