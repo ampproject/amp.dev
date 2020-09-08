@@ -11,11 +11,11 @@
   margin-bottom: 70px;
   border-radius: 4px;
   overflow: visible;
-  // box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
 
   &-tabs {
     display: flex;
     transition: opacity 0.2s ease;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
 
     @media (min-width: 768px) {
       width: 66.6%;
@@ -36,6 +36,10 @@
         padding: 16px 36px;
       }
 
+      &:first-child {
+        border-top-left-radius: 4px;
+      }
+
       &:last-child {
         border-top-right-radius: 4px;
       }
@@ -53,6 +57,7 @@
 
   &-data {
     display: none;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
 
     &.active {
       display: block;
