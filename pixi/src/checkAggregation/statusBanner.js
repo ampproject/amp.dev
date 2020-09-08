@@ -56,10 +56,11 @@ export default async function getStatusId(
       return 'api-error';
     }
 
-    // This here is only to silence the linter complaining about unused vars
-    if (!pageExperience) {
-      // TODO: specific page experience results
-      return 'failed-with-info';
+    if (!pageExperience.isAllFast) {
+      if (recommendations.length > fixedRecommendations.length) {
+        return 'failed-with-info';
+      }
+      return 'failed-no-info';
     }
 
     // if we reach this point all the page has passed the tests...
