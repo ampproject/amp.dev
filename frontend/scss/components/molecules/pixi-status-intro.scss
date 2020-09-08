@@ -74,7 +74,7 @@
     }
 
     &-ctas {
-      display: flex;
+      display: none;
       margin-top: 30px;
     }
 
@@ -88,6 +88,7 @@
     }
   }
 
+  &.loading,
   &.fail,
   &.pass {
     #{$status-intro} {
@@ -101,10 +102,27 @@
         box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.7);
       }
     }
+  }
 
+  &.loading {
+    h3,
+    p {
+      color: color('silver');
+    }
+  }
+
+  &.fail,
+  &.pass {
     h3,
     p {
       color: color('black');
+    }
+    #{$status-intro} {
+      &-banner {
+        &-ctas {
+          display: flex;
+        }
+      }
     }
   }
 
