@@ -122,16 +122,14 @@ export default class RecommendationsView {
     pill.classList.toggle('filtered');
 
     const activeFilter = this.container.className.split(' ');
-    const showAll = activeFilter.length == 1;
-    if (showAll) {
+    if (activeFilter.length == 1) {
       this.resetFilter();
       return;
     }
 
     for (const recommendation of this.recommendationNodes) {
-      const recommendationTags = recommendation.className.split(' ');
       const commonValues = activeFilter.filter((value) => {
-        return recommendationTags.indexOf(value) > -1;
+        return recommendation.classList.contains(value);
       });
 
       recommendation.hidden = !commonValues.length;
