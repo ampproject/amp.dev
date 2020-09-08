@@ -44,7 +44,7 @@ export default class RecommendationsView {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationIds);
     const tagIds = [];
-    const filterPills = [];
+
     this.recommendationNodes = [];
 
     for (const value of recommendations) {
@@ -104,7 +104,7 @@ export default class RecommendationsView {
     pill.classList.toggle('filtered');
 
     const activeFilter = this.container.className.split(' ');
-    let showAll = activeFilter.length == 1;
+    const showAll = activeFilter.length == 1;
 
     for (const recommendation of this.recommendationNodes) {
       if (showAll) {
