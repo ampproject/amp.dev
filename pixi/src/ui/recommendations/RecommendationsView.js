@@ -45,7 +45,7 @@ export default class RecommendationsView {
     const recommendations = i18n.getSortedRecommendations(recommendationIds);
     const tagIds = [];
     const filterPills = [];
-    const recommendationNodes = [];
+    this.recommendationNodes = [];
 
     for (const value of recommendations) {
       const recommendation = this.recommendation.cloneNode(true);
@@ -81,31 +81,42 @@ export default class RecommendationsView {
         tagIds.push(tagId);
       }
 
-      recommendationNodes.push(recommendation);
+      this.recommendationNodes.push(recommendation);
       this.container.appendChild(recommendation);
     }
 
     for (const tagId of [...new Set(tagIds)]) {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
-      pill.setAttribute(
-        'on',
-        `tap:AMP.setState({ recommendationFilter: '${tagId}' })`
-      );
+      pill.id = `filter-pill-${tagId}`;
 
       pill.addEventListener('click', () => {
-        for (const filterPill of filterPills) {
-          filterPill.classList.remove('filtered');
-        }
-        pill.classList.toggle('filtered');
-
-        for (const recommendation of recommendationNodes) {
-          recommendation.hidden = !recommendation.classList.contains(tagId);
-        }
+        this.toggleFilter(tagId);
       });
 
-      filterPills.push(pill);
       this.filter.appendChild(pill);
+    }
+  }
+
+  toggleFilter(tagId) {
+    this.container.classList.toggle(tagId);
+    const pill = this.container.querySelector(`#filter-pill-${tagId}`);
+    pill.classList.toggle('filtered');
+
+    const activeFilter = this.container.className.split(' ');
+    let showAll = activeFilter.length == 1;
+
+    for (const recommendation of this.recommendationNodes) {
+      if (showAll) {
+        recommendation.hidden = false;
+        continue;
+      }
+      const recommendationTags = recommendation.className.split(' ');
+      const commonValues = activeFilter.filter((value) => {
+        return recommendationTags.indexOf(value) > -1;
+      });
+
+      recommendation.hidden = !commonValues.length;
     }
   }
 }
