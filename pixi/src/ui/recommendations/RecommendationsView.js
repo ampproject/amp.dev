@@ -46,6 +46,7 @@ export default class RecommendationsView {
     const tagIds = [];
 
     this.recommendationNodes = [];
+    this.filterPills = [];
 
     for (const value of recommendations) {
       const recommendation = this.recommendation.cloneNode(true);
@@ -85,7 +86,7 @@ export default class RecommendationsView {
       this.container.appendChild(recommendation);
     }
 
-    for (const tagId of [...new Set(tagIds)]) {
+    for (const tagId of tagIds.values()) {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
       pill.id = `filter-pill-${tagId}`;
@@ -94,23 +95,40 @@ export default class RecommendationsView {
         this.toggleFilter(tagId);
       });
 
+      this.filterPills.push(pill);
       this.filter.appendChild(pill);
+    }
+
+    this.pill.addEventListener('click', () => {
+      this.resetFilter();
+    });
+  }
+
+  resetFilter() {
+    this.pill.classList.add('filtered');
+
+    for (const pill of this.filterPills) {
+      pill.classList.remove('filtered');
+      for (const recommendation of this.recommendationNodes) {
+        recommendation.hidden = false;
+      }
     }
   }
 
   toggleFilter(tagId) {
     this.container.classList.toggle(tagId);
+    this.pill.classList.remove('filtered');
     const pill = this.container.querySelector(`#filter-pill-${tagId}`);
     pill.classList.toggle('filtered');
 
     const activeFilter = this.container.className.split(' ');
     const showAll = activeFilter.length == 1;
+    if (showAll) {
+      this.resetFilter();
+      return;
+    }
 
     for (const recommendation of this.recommendationNodes) {
-      if (showAll) {
-        recommendation.hidden = false;
-        continue;
-      }
       const recommendationTags = recommendation.className.split(' ');
       const commonValues = activeFilter.filter((value) => {
         return recommendationTags.indexOf(value) > -1;
