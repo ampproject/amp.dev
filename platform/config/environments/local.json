@@ -17,7 +17,7 @@
       "port": "8080"
     },
     "websocket": {
-      "scheme": "http",
+      "scheme": "ws",
       "host": "localhost",
       "port": "8080"
     },
