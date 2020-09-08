@@ -13,4 +13,10 @@
       {% endif %}
     </label>
   </h3>
+
+  {% with tooltip = {
+    'id': basic_metric.id
+  } %}
+  {% include 'views/partials/pixi/tooltip.j2' %}
+  {% endwith %}
 </div>

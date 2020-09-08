@@ -72,6 +72,18 @@ author:
         color: #555;
       }
 
+      .fruit-button {
+        position: relative;
+        top: -60px;
+      }
+      
+      #carousel-sample p {
+        margin-left: 16px;
+      }
+
+      #carousel-button {
+        top: -100px;
+        
       #live-blog-start {
         margin-top: 0;
       }
@@ -175,6 +187,38 @@ author:
     </div>
 
     <!--
+        ## Multiple fetches
+
+        In a container whose size can change, your code can make DOM changes until 5 seconds after the final `fetch()` completes. This example makes multiple calls to a slow API. It displays the result from each call when it returns.
+    -->
+    <div>
+      <amp-script layout="container" script="multi-fetch-script" class="sample">
+        <button id="multi-fetch">How slow is our API?</button>
+      </amp-script>
+      <script id="multi-fetch-script" type="text/plain" target="amp-script">    
+        const randomTime = () =>  Math.floor(Math.random() * 10) + 5;
+    
+        const button = document.getElementById('multi-fetch');
+        
+        function tripleFetch() {
+          for (let i =0; i < 3; i++) {
+            fetch('<% hosts.platform %>/documentation/examples/api/slow-text?delay=' + randomTime())
+              .then(response => response.text())
+              .then(insertText);
+          }
+        }
+    
+        function insertText(text) {
+          const div = document.createElement('div');
+          div.textContent = text;
+          document.body.appendChild(div);
+        }
+    
+        button.addEventListener('click', tripleFetch);
+      </script>
+    </div>
+
+    <!--
       ## Using a WebSocket for live updates
       `amp-script` supports WebSockets. This example simulates a live blog.
     -->
@@ -224,7 +268,7 @@ author:
 
         setInterval(fetchCurrentTime, 1000);
       </script>
-    </div>    
+    </div>
     <!--
         ## Custom form validation
 
@@ -294,7 +338,6 @@ author:
         span.textContent = getOS();
       </script>
     </div>
-
     <!--
         ## Personalization
         Similarly, you can use the `navigator` object, or other means, to personalize content for your user. The following script detects the browser's language and displays a localized greeting.
@@ -327,6 +370,73 @@ author:
         greeting.innerHTML = translation + '!';
       </script>
     </div>
+    <!--
+        ## Interacting with `<amp-state>`
+        Your script can use state variables and binding to affect the area outside the `<amp-script>` component.
+        Here, when a button is clicked, we set a state variable's value to an image URL.
+        That state variable is bound to the `src` attribute of an `<amp-img>`.
+     -->
+    <div>
+      <amp-img layout="responsive" height="426" width="640" src="<% hosts.platform %>/static/samples/img/product1_640x426.jpg" [src]="imgSrc"></amp-img>
+      <amp-script layout="container" script="state-script" class="sample">
+        <button id="apple-button" class="fruit-button">Apple</button>
+        <button id="orange-button" class="fruit-button">Orange</button>
+      </amp-script>
 
+      <script id="state-script" type="text/plain" target="amp-script">
+        const appleButton = document.getElementById('apple-button');
+        const orangeButton = document.getElementById('orange-button');
+        const path = '<% hosts.platform %>/static/samples/img/';
+
+        appleButton.addEventListener(
+          'click',
+          () => AMP.setState({imgSrc: path + 'product1_640x426.jpg'})
+        );
+
+        orangeButton.addEventListener(
+          'click',
+          () => AMP.setState({imgSrc: path + 'product2_640x426.jpg'})
+        );
+      </script>
+    </div>
+    <!--
+        ## Interacting with AMP components
+        Your script can use state variables and binding to communicate with an AMP component.
+        Bind an attribute in the component to an expression containing a state variable.
+        When your script modifies that state variable, the change will propagate to the component.
+        Similarly, if an AMP component changes the state variable's value, your script can get the new value.
+    -->
+    <div id="carousel-sample">
+      <amp-carousel
+        type="slides"
+        layout="responsive"
+        width="450"
+        height="300"
+        controls
+        loop
+        [slide]="slideIndex"
+        on="slideChange: AMP.setState({slideIndex: event.index})"
+      >
+        <amp-img src="<% hosts.platform %>/static/inline-examples/images/image1.jpg" layout="responsive" width="450" height="300"></amp-img>
+        <amp-img src="<% hosts.platform %>/static/inline-examples/images/image2.jpg" layout="responsive" width="450" height="300"></amp-img>
+        <amp-img src="<% hosts.platform %>/static/inline-examples/images/image3.jpg" layout="responsive" width="450" height="300"></amp-img>
+      </amp-carousel> 
+      <p>Slide <span [text]="slideIndex + 1">1</span> of 3</p>
+      
+      <amp-script layout="container" script="carousel-script" class="sample">
+        <button id="carousel-button" class="fruit-button">Surprise me</button>
+      </amp-script>
+
+      <script id="carousel-script" type="text/plain" target="amp-script">
+        const button = document.getElementById('carousel-button');
+
+        function gotoRandomSlide() {
+          const slide = Math.floor(Math.random() * 3);
+          AMP.setState({slideIndex: slide});
+        }
+
+        button.addEventListener('click', gotoRandomSlide);
+      </script>
+    </div>  
   </body>
 </html>

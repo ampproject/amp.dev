@@ -10,13 +10,11 @@
 }
 
 .#{atom('pixi-analyzing-dots')} {
-  display: inline;
+  display: none;
   letter-spacing: -2px;
-  transition: opacity 0.2s ease;
-  opacity: 0;
 
   .loading & {
-    opacity: 1;
+    display: inline;
 
     span {
       animation: FADE 2s infinite both;

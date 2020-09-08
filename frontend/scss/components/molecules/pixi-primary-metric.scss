@@ -5,13 +5,15 @@
 
 .#{molecule('pixi-primary-metric')} {
   $primary-metric: &;
-  display: flex;
-  flex-direction: column;
-  padding: 15px 25px;
+  padding: 15px 20px;
   background-color: color('white');
 
   @media (min-width: 768px) {
-    padding: 38px 25px;
+    padding: 15px 25px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 35px;
   }
 
   & + & {
@@ -26,58 +28,104 @@
     transition-delay: 160ms;
   }
 
-  &-row {
+  &-header {
     display: flex;
-    flex-direction: column;
-    font-size: 14px;
+    justify-content: space-between;
 
-    &:first-child {
+    &-title {
+      margin-top: 0;
+      font-size: 24px;
+      line-height: 1.4;
+
       @media (min-width: 768px) {
-        flex-direction: row;
+        width: 40%;
+        font-size: 28px;
+      }
+
+      &-full {
+        display: inline-block;
+
+        &:after {
+          content: "|";
+          margin: 0 5px;
+        }
+      }
+
+      &-id {
+        display: inline-block;
+
+        &:after {
+          display: block;
+          content: "";
+        }
+      }
+
+      &-status {
+        display: block;
+        color: color('silver');
+
+        .fast & {
+          color: color('malachite');
+        }
+
+        .average & {
+          color: color('buttercup');
+        }
+
+        .slow & {
+          color: color('red');
+        }
       }
     }
   }
 
-  &-header {
-    margin-top: 0;
-    line-height: 1.5;
+  &-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
     @media (min-width: 768px) {
-      width: 35%;
+      flex-direction: row;
     }
 
-    &-full {
-      display: inline-block;
+    &-result {
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: column;
+      line-height: 1.8;
 
-      &:after {
-        content: "|";
-        margin: 0 5px;
-      }
-    }
-
-    &-id {
-      display: inline-block;
-
-      &:after {
-        display: block;
-        content: "";
-      }
-    }
-
-    &-status {
-      display: block;
-      color: color('silver');
-
-      .fast & {
-        color: color('malachite');
+      @media (min-width: 768px) {
+        width: 40%;
+        margin-right: 20px;
       }
 
-      .average & {
-        color: color('buttercup');
+      span {
+        white-space: nowrap;
+        opacity: 0.3;
+        transition: opacity .3s ease;
+
+        .fast &,
+        .average &,
+        .slow & {
+          opacity: 1;
+        }
       }
 
-      .slow & {
-        color: color('red');
+      #{$primary-metric}-score {
+        .fast & {
+          font-weight: bold;
+          color: color('malachite');
+        }
+
+        .average & {
+          font-weight: bold;
+          color: color('buttercup');
+        }
+
+        .slow & {
+          font-weight: bold;
+          color: color('red');
+        }
       }
     }
   }

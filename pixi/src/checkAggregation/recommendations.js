@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import {Category} from '../checks/PageExperienceCheck';
+
 export const fixedRecommendations = ['intrusive-interstitials'];
 
 const directLinterRecommendations = {
@@ -23,7 +25,7 @@ const directLinterRecommendations = {
   fastGoogleFontsDisplay: 'fast-font-display',
   googleFontPreconnect: 'preconnect-google-fonts',
   isTransformedAmp: 'use-amp-optimizer',
-  moduleRuntimeIsUsed: 'upgrade-amp-optimizer',
+  moduleRuntimeIsUsed: 'upgrade-amp-optimizer', // TODO use specific recommendation when text is ready
   heroImageIsDefined: 'hero-images',
   noRenderBlockingExtension: 'prevent-render-blocking-extensions',
 };
@@ -95,13 +97,19 @@ export default async function getRecommendationIds(
   if (linter.boilerplateIsRemoved === false) {
     if (linter.updateOptimizerForBoilerplateRemoval) {
       result.push('upgrade-amp-optimizer');
-    } else {
+    } else if (
+      pageExperience.fieldData &&
+      pageExperience.fieldData.lcp.data.category !== Category.FAST
+    ) {
       result.push('amp-boilerplate-removal');
     }
   }
 
-  if (linter.noDynamicLayoutExtensions === false) {
-    // TODO: also check for CLS
+  if (
+    linter.noDynamicLayoutExtensions === false &&
+    pageExperience.fieldData &&
+    pageExperience.fieldData.cls.data.category !== Category.FAST
+  ) {
     result.push('dynamic-layout-extensions');
   }
 

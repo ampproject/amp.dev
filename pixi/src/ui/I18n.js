@@ -41,6 +41,23 @@ class I18n {
     return this.recommendations[recommendationId];
   }
 
+  getSortedRecommendations(recommendationIds) {
+    const result = [];
+    for (const id of recommendationIds) {
+      const recommendation = this.getRecommendation(id);
+      if (recommendation) {
+        result.push({
+          id,
+          ...recommendation,
+        });
+      } else {
+        console.error('Unable to find recommendation text', id);
+      }
+    }
+    result.sort((a, b) => a.order - b.order);
+    return result;
+  }
+
   getStatusBanner(statusBannerId) {
     return this.statusBanners[statusBannerId];
   }

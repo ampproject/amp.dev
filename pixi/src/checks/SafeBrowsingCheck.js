@@ -17,6 +17,10 @@ const API_ENDPOINT = API_ENDPOINT_SAFE_BROWSING;
 const API_URL = `${API_ENDPOINT}?key=${AMP_DEV_PIXI_APIS_KEY}`;
 
 export default class SafeBrowsingCheck {
+  static getCheckCount() {
+    return 1;
+  }
+
   async run(pageUrl) {
     try {
       const apiResult = await this.fetchJson(pageUrl);

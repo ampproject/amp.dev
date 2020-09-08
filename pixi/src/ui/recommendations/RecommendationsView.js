@@ -24,12 +24,20 @@ export default class RecommendationsView {
     this.tag = this.container.querySelector('span');
   }
 
+  resetView() {
+    this.container.classList.add('pristine');
+    const items = this.container.querySelectorAll(
+      '.ap-m-pixi-recommendations-item'
+    );
+    for (let i = 1; i < items.length; i++) {
+      this.container.removeChild(items[i]);
+    }
+  }
+
   render(recommendationIds) {
-    console.log('recommendationIds', recommendationIds);
-
-    for (const id of recommendationIds) {
-      const value = i18n.getRecommendation(id);
-
+    this.container.classList.remove('pristine');
+    const recommendations = i18n.getSortedRecommendations(recommendationIds);
+    for (const value of recommendations) {
       const recommendation = this.template.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
@@ -45,11 +53,11 @@ export default class RecommendationsView {
       );
 
       recommendation.style = null;
-      recommendation.id = `recommendation-${id}`;
+      recommendation.id = `recommendation-${value.id}`;
 
       header.setAttribute(
         'on',
-        `tap:recommendation-${id}.toggleClass(class=expanded)`
+        `tap:recommendation-${value.id}.toggleClass(class=expanded)`
       );
 
       title.innerHTML = marked(value.title);

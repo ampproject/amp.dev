@@ -24,6 +24,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 {% for node in nodes %}
   {% set nodeDict = {
     'title': node.title,
+    'order': node.order,
     'tags': node.tags if node.tags else [],
     'body': node.body
   } %}
@@ -34,6 +35,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 {% set nodes = g.docs('/content/pixi/info-texts', locale=doc.locale) %}
 {% for node in nodes %}
   {% set nodeDict = {
+    'title': node.title,
     'body': node.body
   } %}
   {% set x=info_texts.__setitem__(node.base, nodeDict) %}
@@ -118,16 +120,17 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         {% include 'views/partials/pixi/status-intro.j2' %}
       </div>
 
-      <section id="reports" class="ap-t-pixi-checks-reports pristine">
-        <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
-        {% include 'views/partials/pixi/primary-checks.j2' %}
+      <div id="reports" class="pristine">
+        <section class="ap-t-pixi-checks-reports">
+          <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+          {% include 'views/partials/pixi/primary-checks.j2' %}
 
-        <h2>Additional checks</h2>
-        {% include 'views/partials/pixi/basic-checks.j2' %}
-      </section>
+          <h2>Additional checks</h2>
+          {% include 'views/partials/pixi/basic-checks.j2' %}
+        </section>
 
-      {% include 'views/partials/pixi/recommendations.j2' %}
-
+        {% include 'views/partials/pixi/recommendations.j2' %}
+      </div>
     </amp-script>
 
     {% include 'views/partials/pixi/share-dialog.j2' %}

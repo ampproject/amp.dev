@@ -20,73 +20,52 @@ const CATEGORIES = {
   slow: 'Poor',
 };
 
-class SimpleScale {
+class WeightedScale {
   constructor(container) {
-    this.bar = container.querySelector('.ap-a-pixi-scale-bar-positive');
-    this.indicator = container.querySelector('.ap-a-pixi-scale-indicator');
-    this.value = container.querySelector('.ap-a-pixi-scale-value');
+    this.container = container;
+    this.bars = container.querySelectorAll('.ap-a-pixi-scale-chart-bar');
+    this.pitch = container.querySelector('.ap-a-pixi-scale-chart-pitch');
   }
 
   render(data, unit) {
-    this.bar.style.transform = `scale3d(${data.score}, 1, 1)`;
-
-    this.value.textContent = `${(data.numericValue / unit.conversion).toFixed(
+    this.pitch.style.left = `${
+      (data.numericValue / data.proportion.slow) * 100
+    }%`;
+    this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
       1
-    )}${unit.name}`;
-    this.indicator.style.marginLeft = `${data.score * 100}%`;
-    this.value.style.width = `0`;
+    )} ${unit.name}`;
+
+    for (const bar of this.bars) {
+      const label = bar.querySelector('span');
+      const type = bar.getAttribute('data-type');
+      const percent = Math.round(
+        (data.proportion[type] / data.proportion.slow) * 100
+      );
+
+      bar.style.width = `${percent}%`;
+      label.textContent = `${
+        data.proportion[type] / unit.conversion.toFixed(1)
+      } ${unit.name}`;
+    }
   }
 }
 
-class WeightedScale {
+class SimpleScale {
   constructor(container) {
-    this.bar = {
-      positive: container.querySelector('.ap-a-pixi-scale-bar-positive'),
-      negative: container.querySelector('.ap-a-pixi-scale-bar-negative'),
-    };
-    this.pitch = {
-      positive: container.querySelector('.ap-a-pixi-scale-pitch-line-positive'),
-      negative: container.querySelector('.ap-a-pixi-scale-pitch-line-negative'),
-    };
-    this.indicator = container.querySelector('.ap-a-pixi-scale-indicator');
-    this.value = container.querySelector('.ap-a-pixi-scale-value');
+    this.container = container;
+    this.bar = container.querySelector('.ap-a-pixi-scale-chart-bar');
+    this.label = this.bar.querySelector('span');
+    this.pitch = container.querySelector('aside');
   }
 
-  render(data, unit) {
-    // Update bar to match distributions
-    this.bar.positive.style.transform = `scale3d(${data.distributions[0].proportion}, 1, 1)`;
-    this.bar.negative.style.transform = `scale3d(${data.distributions[2].proportion}, 1, 1)`;
+  render(data) {
+    const percentile = Math.round(data.proportion * 100);
 
-    // Update pitch lines
-    this.pitch.positive.style.transform = `translateX(${
-      data.distributions[0].proportion * 100
-    }%)`;
-    this.pitch.positive.textContent = `${
-      data.distributions[0].max / unit.conversion
-    }${unit.name}`;
-
-    this.pitch.negative.style.transform = `translateX(${
-      100 - data.distributions[2].proportion * 100
-    }%)`;
-    this.pitch.negative.textContent = `${
-      data.distributions[2].min / unit.conversion
-    }${unit.name}`;
-
-    // Add a value to the scale and position in distributions
-    this.value.textContent = `${data.percentile / unit.conversion}${unit.name}`;
-    let distributionOffset = 0;
-    for (const distribution of data.distributions) {
-      if (data.percentile < distribution.max) {
-        this.value.style.width = `${
-          (data.percentile / distribution.max) * 100
-        }%`;
-        break;
-      }
-
-      distributionOffset += distribution.proportion * 100;
+    this.bar.style.width = `${percentile}%`;
+    this.label.textContent = `${percentile}% passed`;
+    if (percentile < 30) {
+      this.bar.classList.add('inversed');
     }
-
-    this.indicator.style.marginLeft = `${distributionOffset}%`;
   }
 }
 
@@ -97,13 +76,16 @@ class CoreWebVitalView {
     this.metric = container.id.split('.')[1];
 
     if (this.type == 'fieldData') {
-      this.scale = new WeightedScale(container);
-    } else {
       this.scale = new SimpleScale(container);
+    } else {
+      this.scale = new WeightedScale(container);
     }
 
     this.category = this.container.querySelector(
       '.ap-m-pixi-primary-metric-category'
+    );
+    this.score = this.container.querySelector(
+      '.ap-m-pixi-primary-metric-score'
     );
     this.improvement = this.container.querySelector(
       '.ap-m-pixi-primary-metric-improvement'
@@ -123,7 +105,12 @@ class CoreWebVitalView {
     this.container.classList.add(responseCategory);
     this.category.textContent = displayCategory;
 
-    this.improvement.textContent = 'Not yet implemented';
+    const score = (data.numericValue / unit.conversion).toFixed(1);
+    this.score.textContent = `${score} ${unit.name}`;
+
+    const improvement = (data.improvement / unit.conversion).toFixed(1);
+    this.improvement.textContent = `${improvement} ${unit.name}`;
+
     this.recommendations.textContent = 'Not yet implemented';
 
     this.toggleLoading(false);
@@ -132,6 +119,7 @@ class CoreWebVitalView {
   reset() {
     this.container.classList.remove(...Object.values(CATEGORIES));
     this.category.textContent = i18n.translate('Analyzing');
+    this.score.textContent = i18n.translate('Analyzing');
     this.improvement.textContent = i18n.translate('Calculating');
     this.recommendations.textContent = i18n.translate('Analyzing');
 
@@ -193,7 +181,7 @@ export default class CoreWebVitalsReportView {
         }
       }
 
-      coreWebVitalView.render();
+      // TODO: show no data
     }
 
     this.toggleLoading(false);

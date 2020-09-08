@@ -1,5 +1,6 @@
 ---
 $title: Ensure that your site is safe to browse
+$order: 700
 tags:
 - safeBrowsing
 ---

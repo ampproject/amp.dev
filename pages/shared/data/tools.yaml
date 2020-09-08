@@ -123,8 +123,8 @@ platforms:
     url: https://amp-wp.org/
     image:
       src: /static/img/tools/amp_for_wordpress.jpg
-      width: 700
-      height: 499
+      width: 800
+      height: 400
     formats:
       - websites
       - stories

@@ -22,19 +22,24 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
-import SatusIntroView from './SatusIntroView.js';
+import StatusIntroView from './StatusIntroView.js';
 import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
-// import getStatusBannerIds from '../checkAggregation/statusBanner.js';
 import getRecommendationIds from '../checkAggregation/recommendations.js';
+import getStatusId from '../checkAggregation/statusBanner';
+
+const totalNumberOfChecks =
+  AmpLinterCheck.getCheckCount() +
+  PageExperienceCheck.getCheckCount() +
+  MobileFriendlinessCheck.getCheckCount() +
+  SafeBrowsingCheck.getCheckCount();
 
 export default class PageExperience {
   constructor() {
     this.reports = document.getElementById('reports');
     this.reportViews = {};
-    this.errors = [];
 
     this.pageExperienceCheck = new PageExperienceCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
@@ -42,11 +47,11 @@ export default class PageExperience {
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
 
     this.inputBar = new InputBar(document, this.onSubmitUrl.bind(this));
-    this.satusIntroView = new SatusIntroView(document);
     this.recommendationsView = new RecommendationsView(document);
   }
 
   async onSubmitUrl() {
+    this.statusIntroView = new StatusIntroView(document, totalNumberOfChecks);
     this.toggleLoading(true);
 
     // Everything until here is statically translated by Grow. From now
@@ -61,27 +66,70 @@ export default class PageExperience {
       return;
     }
 
-    this.reports.classList.remove('pristine');
-    this.recommendationsView.container.classList.remove('pristine');
-
-    // Reset errors from previous runs
-    this.errors = [];
-
     const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
     const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
     const linterPromise = this.runLintCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    const recommendationIds = await getRecommendationIds(
+    const recommendationIdsPromise = getRecommendationIds(
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
       mobileFriendlinessPromise
     );
 
-    this.recommendationsView.render(recommendationIds);
-    this.satusIntroView.render(this.errors, pageUrl);
+    this.runStatusBannerResult(
+      pageUrl,
+      pageExperiencePromise,
+      linterPromise,
+      mobileFriendlinessPromise,
+      safeBrowsingPromise,
+      recommendationIdsPromise
+    );
 
+    const recommendationIds = await recommendationIdsPromise;
+    if (recommendationIds.length > 0) {
+      this.recommendationsView.render(recommendationIds);
+    }
+  }
+
+  async runStatusBannerResult(
+    pageUrl,
+    pageExperiencePromise,
+    linterPromise,
+    mobileFriendlinessPromise,
+    safeBrowsingPromise,
+    recommendationIdsPromise
+  ) {
+    try {
+      // remember the current instance to ensure the promises will not modify a future instance
+      const statusView = this.statusIntroView;
+      const statusBannerIdPromise = getStatusId(
+        recommendationIdsPromise,
+        pageExperiencePromise,
+        safeBrowsingPromise,
+        linterPromise,
+        mobileFriendlinessPromise
+      );
+      linterPromise.then(() => {
+        statusView.increaseFinishedChecks(AmpLinterCheck.getCheckCount());
+      });
+      pageExperiencePromise.then(() => {
+        statusView.increaseFinishedChecks(PageExperienceCheck.getCheckCount());
+      });
+      mobileFriendlinessPromise.then(() => {
+        statusView.increaseFinishedChecks(
+          MobileFriendlinessCheck.getCheckCount()
+        );
+      });
+      safeBrowsingPromise.then(() => {
+        statusView.increaseFinishedChecks(SafeBrowsingCheck.getCheckCount());
+      });
+      statusView.render(statusBannerIdPromise, pageUrl);
+      await statusBannerIdPromise;
+    } catch (error) {
+      console.error('unable to get page status', error);
+    }
     this.toggleLoading(false);
   }
 
@@ -95,10 +143,8 @@ export default class PageExperience {
 
     const report = await this.pageExperienceCheck.run(pageUrl);
     if (report.error) {
-      this.errors.push(report.error);
-      console.error('Page experience check failed', report.error);
-      // TODO: Render error states to views
-      return;
+      console.error('Could not perform page experience check', report.error);
+      return {error: report.error};
     }
 
     this.reportViews.pageExperience.render(report);
@@ -119,6 +165,7 @@ export default class PageExperience {
     // for undefined data
     if (error) {
       console.error('Could not perform safe browsing check', error);
+      return {error};
     }
     this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
@@ -132,9 +179,12 @@ export default class PageExperience {
     const {error, data} = await this.linterCheck.run(pageUrl);
     if (error) {
       console.error('Could not perform AMP Linter check', error);
+      return {error};
     }
-    this.reportViews.httpsCheck.render(data.usesHttps);
-
+    if (data.isAmp) {
+      this.reports.classList.remove('pristine');
+      this.reportViews.httpsCheck.render(data.usesHttps);
+    }
     return data;
   }
 
@@ -148,6 +198,7 @@ export default class PageExperience {
     const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
+      return {error};
     }
     this.reportViews.mobileFriendliness.render(data.mobileFriendly);
 
@@ -156,10 +207,14 @@ export default class PageExperience {
 
   toggleLoading(force) {
     this.inputBar.toggleLoading(force);
-    this.recommendationsView.container.classList.toggle('loading', force);
-
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
+    }
+
+    if (force) {
+      this.statusIntroView.resetView();
+      this.recommendationsView.resetView();
+      this.reports.classList.add('pristine');
     }
   }
 }

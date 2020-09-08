@@ -15,11 +15,11 @@
       <p>That recommendations will come up Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt.</p>
     </div>
   </div>
-  <div id="status-intro-banner" class="ap-m-pixi-status-intro-banner">
+  <div id="status-intro-banner-loading" class="ap-m-pixi-status-intro-banner">
     <div class="ap-m-pixi-status-intro-banner-icon"></div>
     <div>
-      <h3>&nbsp;</h3>
-      <p>&nbsp;</p>
+      <h3>Please wait a moment<br>We are currently analyzing your page{% include 'views/partials/pixi/analyzing-dots.j2' %}</h3>
+      <p><span id="finished-checks">0</span> out of <span id="total-checks">0</span> checks are completed</p>
       <div class="ap-m-pixi-status-intro-banner-ctas">
         <button class="ap-a-btn"
             on="tap:recommendations.scrollTo(duration=400)"

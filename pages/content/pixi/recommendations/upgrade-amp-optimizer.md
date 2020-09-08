@@ -1,5 +1,6 @@
 ---
 $title: Upgrade AMP Optimizer version
+$order: 20
 tags:
 - lcp
 - fid

@@ -32,6 +32,10 @@ export default class AmpLinterCheck {
     this.apiUrl = new URL(API_ENDPOINT);
   }
 
+  static getCheckCount() {
+    return 15;
+  }
+
   async run(pageUrl) {
     this.apiUrl.searchParams.set('url', pageUrl);
 
