@@ -99,6 +99,7 @@ export default class RecommendationsView {
       this.filter.appendChild(pill);
     }
 
+    this.pill.classList.add('filtered');
     this.pill.addEventListener('click', () => {
       this.resetFilter();
     });
@@ -106,6 +107,7 @@ export default class RecommendationsView {
 
   resetFilter() {
     this.pill.classList.add('filtered');
+    this.container.className = this.container.className.split(' ')[0];
 
     for (const pill of this.filterPills) {
       pill.classList.remove('filtered');
