@@ -181,7 +181,7 @@ export default class CoreWebVitalsReportView {
         }
       }
 
-      coreWebVitalView.render();
+      // TODO: show no data
     }
 
     this.toggleLoading(false);

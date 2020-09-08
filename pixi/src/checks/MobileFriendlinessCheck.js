@@ -17,6 +17,10 @@ const API_ENDPOINT = API_ENDPOINT_MOBILE_FRIENDLINESS;
 const API_URL = `${API_ENDPOINT}?key=${AMP_DEV_PIXI_APIS_KEY}`;
 
 export default class MobileFriendlinessCheck {
+  static getCheckCount() {
+    return 2;
+  }
+
   async run(pageUrl) {
     try {
       const apiResult = await this.fetchJson(pageUrl);

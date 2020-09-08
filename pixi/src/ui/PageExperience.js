@@ -22,13 +22,19 @@ import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
 import CoreWebVitalsReportView from './report/CoreWebVitalsReportView.js';
 import BooleanCheckReportView from './report/BooleanCheckReportView.js';
 
-import SatusIntroView from './SatusIntroView.js';
+import StatusIntroView from './StatusIntroView.js';
 import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
 import getRecommendationIds from '../checkAggregation/recommendations.js';
 import getStatusId from '../checkAggregation/statusBanner';
+
+const totalNumberOfChecks =
+  AmpLinterCheck.getCheckCount() +
+  PageExperienceCheck.getCheckCount() +
+  MobileFriendlinessCheck.getCheckCount() +
+  SafeBrowsingCheck.getCheckCount();
 
 export default class PageExperience {
   constructor() {
@@ -41,11 +47,11 @@ export default class PageExperience {
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
 
     this.inputBar = new InputBar(document, this.onSubmitUrl.bind(this));
-    this.satusIntroView = new SatusIntroView(document);
     this.recommendationsView = new RecommendationsView(document);
   }
 
   async onSubmitUrl() {
+    this.statusIntroView = new StatusIntroView(document, totalNumberOfChecks);
     this.toggleLoading(true);
 
     // Everything until here is statically translated by Grow. From now
@@ -59,8 +65,6 @@ export default class PageExperience {
       this.inputBar.toggleError(true, i18n.getText('analyze.fieldError'));
       return;
     }
-
-    this.recommendationsView.container.classList.remove('pristine');
 
     const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
     const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
@@ -83,7 +87,10 @@ export default class PageExperience {
       recommendationIdsPromise
     );
 
-    this.recommendationsView.render(await recommendationIdsPromise);
+    const recommendationIds = await recommendationIdsPromise;
+    if (recommendationIds.length > 0) {
+      this.recommendationsView.render(recommendationIds);
+    }
   }
 
   async runStatusBannerResult(
@@ -95,20 +102,41 @@ export default class PageExperience {
     recommendationIdsPromise
   ) {
     try {
-      const statusBannerId = await getStatusId(
+      // remember the current instance to ensure the promises will not modify a future instance
+      const statusView = this.statusIntroView;
+      const statusBannerIdPromise = getStatusId(
         recommendationIdsPromise,
         pageExperiencePromise,
         safeBrowsingPromise,
         linterPromise,
         mobileFriendlinessPromise
       );
-      this.toggleLoading(false);
-      return this.satusIntroView.render(statusBannerId, pageUrl);
+      linterPromise.then(() => {
+        statusView.increaseFinishedChecks(
+          AmpLinterCheck.getCheckCount()
+        );
+      });
+      pageExperiencePromise.then(() => {
+        statusView.increaseFinishedChecks(
+          PageExperienceCheck.getCheckCount()
+        );
+      });
+      mobileFriendlinessPromise.then(() => {
+        statusView.increaseFinishedChecks(
+          MobileFriendlinessCheck.getCheckCount()
+        );
+      });
+      safeBrowsingPromise.then(() => {
+        statusView.increaseFinishedChecks(
+          SafeBrowsingCheck.getCheckCount()
+        );
+      });
+      statusView.render(statusBannerIdPromise, pageUrl);
+      await statusBannerIdPromise;
     } catch (error) {
-      console.log('unable to get page status', error);
-      this.toggleLoading(false);
-      return this.satusIntroView.render('api-error.md', pageUrl);
+      console.error('unable to get page status', error);
     }
+    this.toggleLoading(false);
   }
 
   async runPageExperienceCheck(pageUrl) {
@@ -185,10 +213,14 @@ export default class PageExperience {
 
   toggleLoading(force) {
     this.inputBar.toggleLoading(force);
-    this.recommendationsView.container.classList.toggle('loading', force);
-
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
+    }
+
+    if (force) {
+      this.statusIntroView.resetView();
+      this.recommendationsView.resetView();
+      this.reports.classList.add('pristine');
     }
   }
 }
