@@ -21,7 +21,7 @@ export default class InputBar {
     this.container = doc.getElementById('input-bar');
     this.field = this.container.querySelector('#input-field');
     this.submit = this.container.querySelector('#input-submit');
-    this.label = this.container.querySelector('label');
+    this.label = this.container.querySelector('#input-label');
 
     this.submit.addEventListener('click', callback);
     this.field.addEventListener('keyup', (e) => {
@@ -76,6 +76,6 @@ export default class InputBar {
   }
 
   toggleLoading(force) {
-    this.container.classList.toggle('loading', force);
+    this.submit.classList.toggle('loading', force);
   }
 }

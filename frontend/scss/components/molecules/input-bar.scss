@@ -115,13 +115,20 @@
       background: color('mercury');
     }
 
-    .loading & {
-      font-size: 0;
+    &.loading {
       background: color('mercury');
+
+      label {
+        font-size: 0;
+      }
 
       svg {
         display: none;
       }
+    }
+
+    .#{atom('pixi-analyzing-dots')} {
+      font-size: 20px;
     }
   }
 
