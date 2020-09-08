@@ -16,6 +16,7 @@ export default class BooleanCheckReportView {
   constructor(doc, id) {
     this.container = doc.getElementById(id);
     this.label = this.container.querySelector('label');
+    this.initialLabelContent = this.label.innerHTML;
   }
 
   render(report) {
@@ -35,5 +36,9 @@ export default class BooleanCheckReportView {
 
   toggleLoading(force) {
     this.container.classList.toggle('loading', force);
+    if (force) {
+      this.container.classList.remove('passed', 'failed', 'error');
+      this.label.innerHTML = this.initialLabelContent;
+    }
   }
 }

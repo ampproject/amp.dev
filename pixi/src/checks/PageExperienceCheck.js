@@ -43,6 +43,10 @@ const METRICS_SCALES = {
 };
 
 export default class PageExperienceCheck {
+  static getCheckCount() {
+    return 10;
+  }
+
   async run(originUrl) {
     const cacheUrl = await ampToolboxCacheUrl.createCacheUrl(
       AMP_PROJECT_CDN_URL,
