@@ -82,13 +82,13 @@
 				}
 			}
 		},
-		"textCompression": false,
-		"fastServerResponse": false,
-		"usesAppropriatelySizedImages": false,
-		"usesOptimizedImages": false,
-		"usesWebpImages": false,
-		"fastFontDisplay": false,
-		"minifiedCss": false,
 		"isAllFast": false
-	}
+	},
+	"textCompression": false,
+	"fastServerResponse": false,
+	"usesAppropriatelySizedImages": false,
+	"usesOptimizedImages": false,
+	"usesWebpImages": false,
+	"fastFontDisplay": false,
+	"minifiedCss": false
 }

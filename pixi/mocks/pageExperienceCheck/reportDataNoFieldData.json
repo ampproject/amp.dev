@@ -47,13 +47,13 @@
 				}
 			}
 		},
-		"textCompression": true,
-		"fastServerResponse": true,
-		"usesAppropriatelySizedImages": true,
-		"usesOptimizedImages": true,
-		"usesWebpImages": true,
-		"fastFontDisplay": true,
-		"minifiedCss": true,
 		"isAllFast": true
-	}
+	},
+	"textCompression": true,
+	"fastServerResponse": true,
+	"usesAppropriatelySizedImages": true,
+	"usesOptimizedImages": true,
+	"usesWebpImages": true,
+	"fastFontDisplay": true,
+	"minifiedCss": true
 }

@@ -56,6 +56,9 @@ export default class PageExperienceCacheCheck {
   addImprovement(cacheMetric, originMetric, key) {
     const cacheData = cacheMetric[key].data;
     const originData = originMetric[key].data;
-    cacheData.improvement = originData.numericValue - cacheData.numericValue;
+    cacheData.improvement = Math.max(
+      0,
+      originData.numericValue - cacheData.numericValue
+    );
   }
 }

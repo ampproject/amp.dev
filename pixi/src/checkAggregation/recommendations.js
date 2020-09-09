@@ -57,6 +57,25 @@ const addDirectRecommendations = (result, checks, mapping) => {
   }
 };
 
+const getMetricCategory = (dataNode, metricName) => {
+  if (!dataNode) {
+    return null;
+  }
+  const metric = dataNode[metricName];
+  if (!metric) {
+    return null;
+  }
+  return metric.data.category;
+};
+
+const getFieldOrLabDataCategory = (pageExperienceChecks, metricName) => {
+  const pageExperience = pageExperienceChecks.pageExperience;
+  return getMetricCategory(
+    pageExperience.fieldData || pageExperience.labData,
+    metricName
+  );
+};
+
 export default async function getRecommendationIds(
   pageExperiencePromise,
   safeBrowsingPromise,
@@ -98,8 +117,7 @@ export default async function getRecommendationIds(
     if (linter.updateOptimizerForBoilerplateRemoval) {
       result.push('upgrade-amp-optimizer');
     } else if (
-      pageExperience.fieldData &&
-      pageExperience.fieldData.lcp.data.category !== Category.FAST
+      getFieldOrLabDataCategory(pageExperience, 'lcp') !== Category.FAST
     ) {
       result.push('amp-boilerplate-removal');
     }
@@ -107,8 +125,7 @@ export default async function getRecommendationIds(
 
   if (
     linter.noDynamicLayoutExtensions === false &&
-    pageExperience.fieldData &&
-    pageExperience.fieldData.cls.data.category !== Category.FAST
+    getFieldOrLabDataCategory(pageExperience, 'cls') !== Category.FAST
   ) {
     result.push('dynamic-layout-extensions');
   }

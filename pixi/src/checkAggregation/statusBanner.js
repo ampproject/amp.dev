@@ -56,7 +56,7 @@ export default async function getStatusId(
       return 'api-error';
     }
 
-    if (!pageExperience.isAllFast) {
+    if (!pageExperience.pageExperience.isAllFast) {
       if (recommendations.length > fixedRecommendations.length) {
         return 'failed-with-info';
       }

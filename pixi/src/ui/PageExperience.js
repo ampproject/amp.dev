@@ -168,8 +168,8 @@ export default class PageExperience {
 
     this.reportViews.pageExperience.render(report, cacheReport);
     return {
-      pageExperience: report.data,
-      pageExperienceCached: cacheReport.data,
+      pageExperienceCached: (cacheReport.data || {}).pageExperience,
+      ...report.data,
     };
   }
 

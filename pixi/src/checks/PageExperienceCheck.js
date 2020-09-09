@@ -154,27 +154,25 @@ export default class PageExperienceCheck {
       this.isFastData(labData, 'fid') &&
       this.isFastData(labData, 'lcp');
 
-    const result = {
-      fieldData,
-      labData,
-      isAllFast,
-      textCompression:
-        this.getAuditScore(auditsOrigin, 'uses-text-compression') === 1,
-      fastServerResponse:
-        this.getAuditScore(auditsOrigin, 'server-response-time') === 1,
-      usesAppropriatelySizedImages:
-        this.getAuditScore(auditsOrigin, 'uses-responsive-images') === 1,
-      usesOptimizedImages:
-        this.getAuditScore(auditsOrigin, 'uses-optimized-images') === 1,
-      usesWebpImages:
-        this.getAuditScore(auditsOrigin, 'uses-webp-images') === 1,
-      fastFontDisplay: this.getAuditScore(auditsOrigin, 'font-display') === 1,
-      minifiedCss: this.getAuditScore(auditsOrigin, 'unminified-css') === 1,
-    };
-
     return {
       data: {
-        pageExperience: result,
+        pageExperience: {
+          fieldData,
+          labData,
+          isAllFast,
+        },
+        textCompression:
+          this.getAuditScore(auditsOrigin, 'uses-text-compression') === 1,
+        fastServerResponse:
+          this.getAuditScore(auditsOrigin, 'server-response-time') === 1,
+        usesAppropriatelySizedImages:
+          this.getAuditScore(auditsOrigin, 'uses-responsive-images') === 1,
+        usesOptimizedImages:
+          this.getAuditScore(auditsOrigin, 'uses-optimized-images') === 1,
+        usesWebpImages:
+          this.getAuditScore(auditsOrigin, 'uses-webp-images') === 1,
+        fastFontDisplay: this.getAuditScore(auditsOrigin, 'font-display') === 1,
+        minifiedCss: this.getAuditScore(auditsOrigin, 'unminified-css') === 1,
       },
     };
   }
