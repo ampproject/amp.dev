@@ -181,6 +181,7 @@ export default class PageExperience {
     this.reportViews.safeBrowsing.toggleLoading(true);
 
     const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
+    this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
     // Do not surface the actual error to the user. Simply log it
     // The BooleanCheckReportView will show "Analysis failed"
@@ -189,7 +190,6 @@ export default class PageExperience {
       console.error('Could not perform safe browsing check', error);
       return {error};
     }
-    this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
     return data;
   }
@@ -218,11 +218,11 @@ export default class PageExperience {
     this.reportViews.mobileFriendliness.toggleLoading(true);
 
     const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
+    this.reportViews.mobileFriendliness.render(data.mobileFriendly);
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
       return {error};
     }
-    this.reportViews.mobileFriendliness.render(data.mobileFriendly);
 
     return data;
   }
