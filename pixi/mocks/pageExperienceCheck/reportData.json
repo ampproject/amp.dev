@@ -4,37 +4,37 @@
 			"lcp": {
 				"unit": {
 					"name": "s",
-					"conversion": 1000
+					"conversion": 1000,
+					"digits": 1
 				},
 				"data": {
 					"numericValue": 2372,
 					"category": "FAST",
-					"proportion": 0.7753324868864865,
-					"improvement": 0
+					"proportion": 0.7753324868864865
 				}
 			},
 			"fid": {
 				"unit": {
 					"name": "ms",
-					"conversion": 1
+					"conversion": 1,
+					"digits": 0
 				},
 				"data": {
 					"numericValue": 2,
 					"category": "FAST",
-					"proportion": 0.9918542336548767,
-					"improvement": 0
+					"proportion": 0.9918542336548767
 				}
 			},
 			"cls": {
 				"unit": {
 					"name": "",
-					"conversion": 100
+					"conversion": 100,
+					"digits": 2
 				},
 				"data": {
 					"numericValue": 7,
 					"category": "FAST",
-					"proportion": 0.816381257056831,
-					"improvement": 0
+					"proportion": 0.816381257056831
 				}
 			}
 		},
@@ -42,7 +42,8 @@
 			"lcp": {
 				"unit": {
 					"name": "s",
-					"conversion": 1000
+					"conversion": 1000,
+					"digits": 1
 				},
 				"data": {
 					"numericValue": 3395.517406396801,
@@ -51,14 +52,14 @@
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			},
 			"fid": {
 				"unit": {
 					"name": "ms",
-					"conversion": 1
+					"conversion": 1,
+					"digits": 0
 				},
 				"data": {
 					"numericValue": 316.4999999999998,
@@ -67,14 +68,14 @@
 						"average": 300,
 						"slow": 800
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			},
 			"cls": {
 				"unit": {
 					"name": "",
-					"conversion": 100
+					"conversion": 100,
+					"digits": 2
 				},
 				"data": {
 					"numericValue": 0,
@@ -83,18 +84,17 @@
 						"average": 25,
 						"slow": 40
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			}
 		},
-		"textCompression": true,
-		"fastServerResponse": true,
-		"usesAppropriatelySizedImages": true,
-		"usesOptimizedImages": true,
-		"usesWebpImages": true,
-		"fastFontDisplay": true,
-		"minifiedCss": true,
 		"isAllFast": true
-	}
+	},
+	"textCompression": true,
+	"fastServerResponse": true,
+	"usesAppropriatelySizedImages": true,
+	"usesOptimizedImages": true,
+	"usesWebpImages": true,
+	"fastFontDisplay": true,
+	"minifiedCss": true
 }

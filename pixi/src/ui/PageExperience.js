@@ -15,6 +15,7 @@
 import i18n from './I18n.js';
 
 import PageExperienceCheck from '../checks/PageExperienceCheck.js';
+import PageExperienceCacheCheck from '../checks/PageExperienceCacheCheck.js';
 import SafeBrowsingCheck from '../checks/SafeBrowsingCheck.js';
 import AmpLinterCheck from '../checks/AmpLinterCheck.js';
 import MobileFriendlinessCheck from '../checks/MobileFriendlinessCheck.js';
@@ -42,6 +43,7 @@ export default class PageExperience {
     this.reportViews = {};
 
     this.pageExperienceCheck = new PageExperienceCheck();
+    this.pageExperienceCacheCheck = new PageExperienceCacheCheck();
     this.safeBrowsingCheck = new SafeBrowsingCheck();
     this.linterCheck = new AmpLinterCheck();
     this.mobileFriendlinessCheck = new MobileFriendlinessCheck();
@@ -66,9 +68,12 @@ export default class PageExperience {
       return;
     }
 
-    const pageExperiencePromise = this.runPageExperienceCheck(pageUrl);
-    const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
     const linterPromise = this.runLintCheck(pageUrl);
+    const pageExperiencePromise = this.runPageExperienceCheck(
+      pageUrl,
+      linterPromise
+    );
+    const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
     const recommendationIdsPromise = getRecommendationIds(
@@ -133,7 +138,7 @@ export default class PageExperience {
     this.toggleLoading(false);
   }
 
-  async runPageExperienceCheck(pageUrl) {
+  async runPageExperienceCheck(pageUrl, linterDataPromise) {
     // Initialize views before running the check to be able
     // to toggle the loading state
     this.reportViews.pageExperience =
@@ -141,14 +146,31 @@ export default class PageExperience {
       new CoreWebVitalsReportView(document, 'core-web-vitals');
     this.reportViews.pageExperience.reset();
 
-    const report = await this.pageExperienceCheck.run(pageUrl);
+    const reportPromise = this.pageExperienceCheck.run(pageUrl);
+
+    const linter = await linterDataPromise;
+    let cacheReport = null;
+    if (!linter.isAmp || !linter.isValid) {
+      cacheReport = Promise.resolve({data: {}});
+    } else {
+      cacheReport = await this.pageExperienceCacheCheck.run(
+        pageUrl,
+        reportPromise
+      );
+    }
+
+    const report = await reportPromise;
+
     if (report.error) {
       console.error('Could not perform page experience check', report.error);
       return {error: report.error};
     }
 
-    this.reportViews.pageExperience.render(report);
-    return report.data;
+    this.reportViews.pageExperience.render(report, cacheReport);
+    return {
+      pageExperienceCached: (cacheReport.data || {}).pageExperience,
+      ...report.data,
+    };
   }
 
   async runSafeBrowsingCheck(pageUrl) {

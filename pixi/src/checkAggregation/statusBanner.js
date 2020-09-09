@@ -14,13 +14,13 @@
 
 import {fixedRecommendations} from './recommendations';
 
-export default async function getStatusId(
+const getStatusId = async (
   recommendationsPromise,
   pageExperiencePromise,
   safeBrowsingPromise,
   linterPromise,
   mobileFriendlinessPromise
-) {
+) => {
   try {
     const linter = await linterPromise;
     if (!linter.isLoaded) {
@@ -37,7 +37,7 @@ export default async function getStatusId(
     // (promise can be rejected or error is set in result)
     const [
       recommendations,
-      pageExperience,
+      pageExperienceChecks,
       safeBrowsing,
       mobileFriendliness,
     ] = await Promise.all([
@@ -49,20 +49,49 @@ export default async function getStatusId(
 
     if (
       linter.error ||
-      pageExperience.error ||
+      pageExperienceChecks.error ||
       safeBrowsing.error ||
       mobileFriendliness.error
     ) {
       return 'api-error';
     }
 
-    // This here is only to silence the linter complaining about unused vars
-    if (!pageExperience) {
-      // TODO: specific page experience results
-      return 'failed-with-info';
+    const pageExperience = pageExperienceChecks.pageExperience;
+    const cacheExperience = pageExperienceChecks.pageExperienceCached;
+
+    // These are the other main checks apart from the core web vitals:
+    const passedOtherCriteria =
+      mobileFriendliness.mobileFriendly &&
+      safeBrowsing.safeBrowsing &&
+      linter.usesHttps;
+
+    const pagePassedAll = pageExperience.isAllFast && passedOtherCriteria;
+
+    if (cacheExperience) {
+      const cachePassedAll = cacheExperience.isAllFast && passedOtherCriteria;
+
+      if (cachePassedAll && !pagePassedAll) {
+        if (recommendations.length > fixedRecommendations.length) {
+          return 'origin-failed-with-info';
+        }
+        return 'origin-failed-no-info';
+      }
+
+      if (!cachePassedAll && pagePassedAll) {
+        if (recommendations.length > fixedRecommendations.length) {
+          return 'cache-failed-with-info';
+        }
+        return 'cache-failed-no-info';
+      }
     }
 
-    // if we reach this point all the page has passed the tests...
+    if (!pagePassedAll) {
+      if (recommendations.length > fixedRecommendations.length) {
+        return 'failed-with-info';
+      }
+      return 'failed-no-info';
+    }
+
     if (recommendations.length > fixedRecommendations.length) {
       return 'passed-with-info';
     }
@@ -70,4 +99,6 @@ export default async function getStatusId(
   } catch (err) {
     return 'api-error';
   }
-}
+};
+
+export default getStatusId;
