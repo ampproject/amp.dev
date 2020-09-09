@@ -25,7 +25,7 @@ const directLinterRecommendations = {
   fastGoogleFontsDisplay: 'fast-font-display',
   googleFontPreconnect: 'preconnect-google-fonts',
   isTransformedAmp: 'use-amp-optimizer',
-  moduleRuntimeIsUsed: 'upgrade-amp-optimizer', // TODO use specific recommendation when text is ready
+  moduleRuntimeIsUsed: 'enable-js-module-runtime',
   heroImageIsDefined: 'hero-images',
   noRenderBlockingExtension: 'prevent-render-blocking-extensions',
 };
