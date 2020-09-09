@@ -107,7 +107,7 @@ describe('getRecommendationIds', () => {
     expect(ids).toContain('use-amp-optimizer');
   });
 
-  it('returns upgrade-amp-optimizer (module runtime)', async () => {
+  it('returns enable-js-module-runtime', async () => {
     const ids = await getRecommendationIds(
       Promise.resolve({}),
       Promise.resolve({}),
@@ -117,7 +117,7 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('upgrade-amp-optimizer');
+    expect(ids).toContain('enable-js-module-runtime');
   });
 
   it('returns hero-images', async () => {
