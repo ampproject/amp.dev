@@ -136,7 +136,7 @@ describe('getRecommendationIds', () => {
   it('returns amp-boilerplate-removal', async () => {
     const ids = await getRecommendationIds(
       Promise.resolve({
-        fieldData: {lcp: {data: {category: 'SLOW'}}},
+        pageExperience: {fieldData: {lcp: {data: {category: 'SLOW'}}}},
       }),
       Promise.resolve({}),
       Promise.resolve({
@@ -152,7 +152,7 @@ describe('getRecommendationIds', () => {
   it('returns no amp-boilerplate-removal', async () => {
     const ids = await getRecommendationIds(
       Promise.resolve({
-        fieldData: {lcp: {data: {category: 'FAST'}}},
+        pageExperience: {fieldData: {lcp: {data: {category: 'FAST'}}}},
       }),
       Promise.resolve({}),
       Promise.resolve({
@@ -195,7 +195,7 @@ describe('getRecommendationIds', () => {
   it('returns dynamic-layout-extensions', async () => {
     const ids = await getRecommendationIds(
       Promise.resolve({
-        fieldData: {cls: {data: {category: 'SLOW'}}},
+        pageExperience: {fieldData: {cls: {data: {category: 'SLOW'}}}},
       }),
       Promise.resolve({}),
       Promise.resolve({
@@ -210,7 +210,7 @@ describe('getRecommendationIds', () => {
   it('returns no dynamic-layout-extensions', async () => {
     const ids = await getRecommendationIds(
       Promise.resolve({
-        fieldData: {cls: {data: {category: 'FAST'}}},
+        pageExperience: {fieldData: {cls: {data: {category: 'FAST'}}}},
       }),
       Promise.resolve({}),
       Promise.resolve({

@@ -13,8 +13,7 @@
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			},
 			"fid": {
@@ -29,8 +28,7 @@
 						"average": 300,
 						"slow": 800
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			},
 			"cls": {
@@ -45,18 +43,17 @@
 						"average": 25,
 						"slow": 40
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			}
 		},
-		"textCompression": true,
-		"fastServerResponse": true,
-		"usesAppropriatelySizedImages": true,
-		"usesOptimizedImages": true,
-		"usesWebpImages": true,
-		"fastFontDisplay": true,
-		"minifiedCss": true,
 		"isAllFast": true
-	}
+	},
+	"textCompression": true,
+	"fastServerResponse": true,
+	"usesAppropriatelySizedImages": true,
+	"usesOptimizedImages": true,
+	"usesWebpImages": true,
+	"fastFontDisplay": true,
+	"minifiedCss": true
 }
