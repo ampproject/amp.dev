@@ -28,9 +28,10 @@ class WeightedScale {
   }
 
   render(data, unit) {
-    this.pitch.style.left = `${
+    this.pitch.style.left = `${Math.min(
+      100,
       (data.numericValue / data.proportion.slow) * 100
-    }%`;
+    )}%`;
     this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
       unit.digits
     )} ${unit.name}`;
