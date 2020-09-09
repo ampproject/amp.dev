@@ -38,6 +38,11 @@ const METRICS_SCALES = {
     average: 25,
     slow: 40,
   },
+  tbt: {
+    fast: 300,
+    average: 600,
+    slow: 900,
+  },
 };
 
 export default class PageExperienceCheck {
@@ -133,9 +138,9 @@ export default class PageExperienceCheck {
           'lcp'
         ),
       },
-      fid: {
+      tbt: {
         unit: UNIT_MS,
-        data: this.createLabData(auditsOrigin['total-blocking-time'], 'fid'),
+        data: this.createLabData(auditsOrigin['total-blocking-time'], 'tbt'),
       },
       cls: {
         unit: UNIT_DEC,
@@ -151,7 +156,7 @@ export default class PageExperienceCheck {
       this.isFastData(fieldData, 'fid') &&
       this.isFastData(fieldData, 'lcp') &&
       this.isFastData(labData, 'cls') &&
-      this.isFastData(labData, 'fid') &&
+      this.isFastData(labData, 'tbt') &&
       this.isFastData(labData, 'lcp');
 
     return {

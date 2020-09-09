@@ -47,7 +47,7 @@ export default class PageExperienceCacheCheck {
       if (cacheLabData && originLabData) {
         this.addImprovement(cacheLabData, originLabData, 'lcp');
         this.addImprovement(cacheLabData, originLabData, 'cls');
-        this.addImprovement(cacheLabData, originLabData, 'fid');
+        this.addImprovement(cacheLabData, originLabData, 'tbt');
       }
     }
     return cacheResult;
