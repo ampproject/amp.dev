@@ -4,7 +4,8 @@
 			"lcp": {
 				"unit": {
 					"name": "s",
-					"conversion": 1000
+					"conversion": 1000,
+					"digits": 1
 				},
 				"data": {
 					"numericValue": 3100,
@@ -15,7 +16,8 @@
 			"fid": {
 				"unit": {
 					"name": "ms",
-					"conversion": 1
+					"conversion": 1,
+					"digits": 0
 				},
 				"data": {
 					"numericValue": 289,
@@ -26,7 +28,8 @@
 			"cls": {
 				"unit": {
 					"name": "",
-					"conversion": 100
+					"conversion": 100,
+					"digits": 2
 				},
 				"data": {
 					"numericValue": 0,
@@ -39,7 +42,8 @@
 			"lcp": {
 				"unit": {
 					"name": "s",
-					"conversion": 1000
+					"conversion": 1000,
+					"digits": 1
 				},
 				"data": {
 					"numericValue": 1710,
@@ -54,7 +58,8 @@
 			"fid": {
 				"unit": {
 					"name": "ms",
-					"conversion": 1
+					"conversion": 1,
+					"digits": 0
 				},
 				"data": {
 					"numericValue": 229,
@@ -69,7 +74,8 @@
 			"cls": {
 				"unit": {
 					"name": "",
-					"conversion": 100
+					"conversion": 100,
+					"digits": 2
 				},
 				"data": {
 					"numericValue": 0.000004316609753962,

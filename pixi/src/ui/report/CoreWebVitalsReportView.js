@@ -32,7 +32,7 @@ class WeightedScale {
       (data.numericValue / data.proportion.slow) * 100
     }%`;
     this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
-      1
+      unit.digits
     )} ${unit.name}`;
 
     for (const bar of this.bars) {
@@ -44,7 +44,7 @@ class WeightedScale {
 
       bar.style.width = `${percent}%`;
       label.textContent = `${
-        data.proportion[type] / unit.conversion.toFixed(1)
+        data.proportion[type] / unit.conversion.toFixed(unit.digits)
       } ${unit.name}`;
     }
   }
@@ -105,7 +105,7 @@ class CoreWebVitalView {
     this.container.classList.add(responseCategory);
     this.category.textContent = displayCategory;
 
-    const score = (data.numericValue / unit.conversion).toFixed(1);
+    const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;
 
     if (
@@ -119,7 +119,7 @@ class CoreWebVitalView {
     } else if (!Number.isNaN(cacheMetric.data.improvement)) {
       const improvement = (
         cacheMetric.data.improvement / unit.conversion
-      ).toFixed(1);
+      ).toFixed(unit.digits);
       this.improvement.textContent = `${improvement} ${unit.name}`;
     } else {
       this.improvement.textContent = 'Check recommendations';

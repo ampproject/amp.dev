@@ -4,7 +4,8 @@
 			"lcp": {
 				"unit": {
 					"name": "s",
-					"conversion": 1000
+					"conversion": 1000,
+					"digits": 1
 				},
 				"data": {
 					"numericValue": 2119,
@@ -19,7 +20,8 @@
 			"fid": {
 				"unit": {
 					"name": "ms",
-					"conversion": 1
+					"conversion": 1,
+					"digits": 0
 				},
 				"data": {
 					"numericValue": 68.5,
@@ -34,7 +36,8 @@
 			"cls": {
 				"unit": {
 					"name": "",
-					"conversion": 100
+					"conversion": 100,
+					"digits": 2
 				},
 				"data": {
 					"numericValue": 0,
