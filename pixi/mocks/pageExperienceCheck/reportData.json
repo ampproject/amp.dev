@@ -52,10 +52,10 @@
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "FAST"
+					"category": "AVERAGE"
 				}
 			},
-			"fid": {
+			"tbt": {
 				"unit": {
 					"name": "ms",
 					"conversion": 1,
@@ -64,11 +64,11 @@
 				"data": {
 					"numericValue": 316.4999999999998,
 					"proportion": {
-						"fast": 100,
-						"average": 300,
-						"slow": 800
+						"fast": 300,
+						"average": 600,
+						"slow": 900
 					},
-					"category": "FAST"
+					"category": "AVERAGE"
 				}
 			},
 			"cls": {
@@ -88,7 +88,7 @@
 				}
 			}
 		},
-		"isAllFast": true
+		"isAllFast": false
 	},
 	"textCompression": true,
 	"fastServerResponse": true,

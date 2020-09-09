@@ -35,7 +35,7 @@ describe('Page experience cache check', () => {
     expect(fieldData.fid.data.improvement).toEqual(0);
     expect(labData.lcp.data.improvement).toEqual(0);
     expect(labData.cls.data.improvement).toEqual(0);
-    expect(labData.fid.data.improvement).toEqual(0);
+    expect(labData.tbt.data.improvement).toEqual(0);
   });
 
   it('creates report data for url with no field data', async () => {
@@ -54,7 +54,7 @@ describe('Page experience cache check', () => {
     expect(fieldData).toBeFalsy();
     expect(labData.lcp.data.improvement).toEqual(0);
     expect(labData.cls.data.improvement).toEqual(0);
-    expect(labData.fid.data.improvement).toEqual(0);
+    expect(labData.tbt.data.improvement).toEqual(0);
   });
 
   it('creates report data for url with no field data for cache', async () => {
@@ -72,7 +72,7 @@ describe('Page experience cache check', () => {
     const {fieldData, labData} = report.data.pageExperience;
     expect(fieldData).toBeFalsy();
     expect(labData.lcp.data.improvement).toEqual(1276.517406396801);
-    expect(labData.fid.data.improvement).toEqual(247.99999999999977);
+    expect(labData.tbt.data.improvement).toEqual(247.99999999999977);
     expect(labData.cls.data.improvement).toEqual(0);
   });
 });
