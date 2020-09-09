@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import ampToolboxCacheUrl from '@ampproject/toolbox-cache-url';
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 export const Category = {
@@ -23,7 +22,6 @@ export const Category = {
 
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
-const AMP_PROJECT_CDN_URL = 'cdn.ampproject.org';
 const METRICS_SCALES = {
   lcp: {
     fast: 2500,
@@ -48,42 +46,27 @@ export default class PageExperienceCheck {
   }
 
   async run(originUrl) {
-    const cacheUrl = await ampToolboxCacheUrl.createCacheUrl(
-      AMP_PROJECT_CDN_URL,
-      originUrl
-    );
-
     try {
-      const [apiResultOrigin, apiResultCache] = await Promise.all([
-        this.fetchJson(originUrl),
-        this.fetchJson(cacheUrl),
-      ]);
-
-      return this.createReportData(apiResultOrigin, apiResultCache);
+      const apiResultOrigin = await this.fetchJson(originUrl);
+      return this.createReportData(apiResultOrigin);
     } catch (e) {
       return {error: e};
     }
   }
 
-  createFieldData(metricsOrigin, metricsCache, metricKey) {
+  createFieldData(metricsOrigin, metricKey) {
     const metricOrigin = metricsOrigin[metricKey];
     const data = {
       numericValue: metricOrigin.percentile,
       category: metricOrigin.category,
       proportion: metricOrigin.distributions[0].proportion,
     };
-    if (metricsCache) {
-      data.improvement =
-        metricOrigin.percentile - metricsCache[metricKey].percentile;
-    }
     return data;
   }
 
-  createLabData(metricOrigin, metricCache, id) {
-    const improvement = metricOrigin.numericValue - metricCache.numericValue;
+  createLabData(metricOrigin, id) {
     const data = {
       numericValue: metricOrigin.numericValue,
-      improvement: improvement,
       proportion: METRICS_SCALES[id],
     };
 
@@ -113,13 +96,9 @@ export default class PageExperienceCheck {
     return metrics[checkId].data.category === Category.FAST;
   }
 
-  createReportData(apiResultOrigin, apiResultCache) {
+  createReportData(apiResultOrigin) {
     const fieldMetricsOrigin = apiResultOrigin.loadingExperience.metrics;
     const auditsOrigin = apiResultOrigin.lighthouseResult.audits;
-
-    const fieldMetricsCache = apiResultCache.loadingExperience.metrics;
-    const auditsCache = apiResultCache.lighthouseResult.audits;
-
     const fieldData = !fieldMetricsOrigin
       ? undefined
       : {
@@ -127,7 +106,6 @@ export default class PageExperienceCheck {
             unit: UNIT_SEC,
             data: this.createFieldData(
               fieldMetricsOrigin,
-              fieldMetricsCache,
               'LARGEST_CONTENTFUL_PAINT_MS'
             ),
           },
@@ -135,7 +113,6 @@ export default class PageExperienceCheck {
             unit: UNIT_MS,
             data: this.createFieldData(
               fieldMetricsOrigin,
-              fieldMetricsCache,
               'FIRST_INPUT_DELAY_MS'
             ),
           },
@@ -143,7 +120,6 @@ export default class PageExperienceCheck {
             unit: UNIT_DEC,
             data: this.createFieldData(
               fieldMetricsOrigin,
-              fieldMetricsCache,
               'CUMULATIVE_LAYOUT_SHIFT_SCORE'
             ),
           },
@@ -154,23 +130,17 @@ export default class PageExperienceCheck {
         unit: UNIT_SEC,
         data: this.createLabData(
           auditsOrigin['largest-contentful-paint'],
-          auditsCache['largest-contentful-paint'],
           'lcp'
         ),
       },
       fid: {
         unit: UNIT_MS,
-        data: this.createLabData(
-          auditsOrigin['total-blocking-time'],
-          auditsCache['total-blocking-time'],
-          'fid'
-        ),
+        data: this.createLabData(auditsOrigin['total-blocking-time'], 'fid'),
       },
       cls: {
         unit: UNIT_DEC,
         data: this.createLabData(
           auditsOrigin['cumulative-layout-shift'],
-          auditsCache['cumulative-layout-shift'],
           'cls'
         ),
       },
@@ -184,27 +154,25 @@ export default class PageExperienceCheck {
       this.isFastData(labData, 'fid') &&
       this.isFastData(labData, 'lcp');
 
-    const result = {
-      fieldData,
-      labData,
-      isAllFast,
-      textCompression:
-        this.getAuditScore(auditsOrigin, 'uses-text-compression') === 1,
-      fastServerResponse:
-        this.getAuditScore(auditsOrigin, 'server-response-time') === 1,
-      usesAppropriatelySizedImages:
-        this.getAuditScore(auditsOrigin, 'uses-responsive-images') === 1,
-      usesOptimizedImages:
-        this.getAuditScore(auditsOrigin, 'uses-optimized-images') === 1,
-      usesWebpImages:
-        this.getAuditScore(auditsOrigin, 'uses-webp-images') === 1,
-      fastFontDisplay: this.getAuditScore(auditsOrigin, 'font-display') === 1,
-      minifiedCss: this.getAuditScore(auditsOrigin, 'unminified-css') === 1,
-    };
-
     return {
       data: {
-        pageExperience: result,
+        pageExperience: {
+          fieldData,
+          labData,
+          isAllFast,
+        },
+        textCompression:
+          this.getAuditScore(auditsOrigin, 'uses-text-compression') === 1,
+        fastServerResponse:
+          this.getAuditScore(auditsOrigin, 'server-response-time') === 1,
+        usesAppropriatelySizedImages:
+          this.getAuditScore(auditsOrigin, 'uses-responsive-images') === 1,
+        usesOptimizedImages:
+          this.getAuditScore(auditsOrigin, 'uses-optimized-images') === 1,
+        usesWebpImages:
+          this.getAuditScore(auditsOrigin, 'uses-webp-images') === 1,
+        fastFontDisplay: this.getAuditScore(auditsOrigin, 'font-display') === 1,
+        minifiedCss: this.getAuditScore(auditsOrigin, 'unminified-css') === 1,
       },
     };
   }

@@ -10,8 +10,7 @@
 				"data": {
 					"numericValue": 3100,
 					"category": "AVERAGE",
-					"proportion": 0.6472574979735206,
-					"improvement": 0
+					"proportion": 0.6472574979735206
 				}
 			},
 			"fid": {
@@ -23,8 +22,7 @@
 				"data": {
 					"numericValue": 289,
 					"category": "AVERAGE",
-					"proportion": 0.09960294951786727,
-					"improvement": 0
+					"proportion": 0.09960294951786727
 				}
 			},
 			"cls": {
@@ -36,8 +34,7 @@
 				"data": {
 					"numericValue": 0,
 					"category": "FAST",
-					"proportion": 0.932653831634579,
-					"improvement": 0
+					"proportion": 0.932653831634579
 				}
 			}
 		},
@@ -55,8 +52,7 @@
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			},
 			"fid": {
@@ -72,8 +68,7 @@
 						"average": 300,
 						"slow": 800
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			},
 			"cls": {
@@ -89,18 +84,17 @@
 						"average": 25,
 						"slow": 40
 					},
-					"category": "FAST",
-					"improvement": 0
+					"category": "FAST"
 				}
 			}
 		},
-		"textCompression": false,
-		"fastServerResponse": false,
-		"usesAppropriatelySizedImages": false,
-		"usesOptimizedImages": false,
-		"usesWebpImages": false,
-		"fastFontDisplay": false,
-		"minifiedCss": false,
 		"isAllFast": false
-	}
+	},
+	"textCompression": false,
+	"fastServerResponse": false,
+	"usesAppropriatelySizedImages": false,
+	"usesOptimizedImages": false,
+	"usesWebpImages": false,
+	"fastFontDisplay": false,
+	"minifiedCss": false
 }
