@@ -70,9 +70,9 @@ export default class PageExperienceCheck {
       proportion: METRICS_SCALES[id],
     };
 
-    if (data.score < 0.5) {
+    if (metricOrigin.score < 0.5) {
       data.category = Category.SLOW;
-    } else if (data.score < 0.75) {
+    } else if (metricOrigin.score < 0.9) {
       data.category = Category.AVERAGE;
     } else {
       data.category = Category.FAST;
