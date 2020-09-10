@@ -69,7 +69,7 @@ const getStatusId = async (
     const pagePassedAll =
       pageExperience.summary.isAllFast[dataType] && passedOtherCriteria;
 
-    if (cacheExperience[dataType] !== undefined) {
+    if (cacheExperience && cacheExperience[dataType] !== undefined) {
       const cachePassedAll =
         cacheExperience.summary.isAllFast[dataType] && passedOtherCriteria;
       if (cachePassedAll && !pagePassedAll) {

@@ -50,7 +50,12 @@
 				}
 			}
 		},
-		"isAllFast": true
+		"summary": {
+			"source": "labData",
+			"isAllFast": {
+				"labData": true
+			}
+		}
 	},
 	"textCompression": true,
 	"fastServerResponse": true,

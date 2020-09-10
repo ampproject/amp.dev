@@ -88,7 +88,13 @@
 				}
 			}
 		},
-		"isAllFast": true
+		"summary": {
+			"source": "fieldData",
+			"isAllFast": {
+				"fieldData": true,
+				"labData": true
+			}
+		}
 	},
 	"textCompression": true,
 	"fastServerResponse": true,
