@@ -28,11 +28,6 @@ const METRICS_SCALES = {
     average: 4000,
     slow: 6000,
   },
-  fid: {
-    fast: 100,
-    average: 300,
-    slow: 800,
-  },
   cls: {
     fast: 10,
     average: 25,
