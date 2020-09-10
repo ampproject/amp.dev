@@ -69,6 +69,7 @@ export default class PageExperience {
     }
 
     const linterPromise = this.runLintCheck(pageUrl);
+    this.pageExperienceCheck.setLocale(i18n.getLanguage());
     const pageExperiencePromise = this.runPageExperienceCheck(
       pageUrl,
       linterPromise

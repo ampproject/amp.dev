@@ -65,6 +65,10 @@ class I18n {
   getInfoText(infoTextId) {
     return this.infoTexts[infoTextId];
   }
+
+  getLanguage() {
+    return this.language;
+  }
 }
 
 export default new I18n();
