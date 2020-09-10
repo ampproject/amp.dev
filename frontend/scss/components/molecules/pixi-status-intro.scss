@@ -7,10 +7,14 @@
   $status-intro: &;
   position: relative;
   display: flex;
-  min-height: 290px;
+  min-height: 260px;
 
   @media (min-width: 768px) {
     align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    min-height: 290px;
   }
 
   &-text {
