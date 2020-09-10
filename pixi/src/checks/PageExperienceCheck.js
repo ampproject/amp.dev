@@ -20,6 +20,7 @@ export const Category = {
   AVERAGE: 'AVERAGE',
 };
 
+let locale;
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
 const METRICS_SCALES = {
@@ -43,6 +44,10 @@ const METRICS_SCALES = {
 export default class PageExperienceCheck {
   static getCheckCount() {
     return 10;
+  }
+
+  setLocale(language) {
+    locale = language;
   }
 
   async run(originUrl) {
@@ -182,6 +187,7 @@ export default class PageExperienceCheck {
     apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
     apiUrl.searchParams.set('url', pageUrl);
     apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
+    apiUrl.searchParams.set('locale', locale);
 
     const response = await fetch(apiUrl.href);
     if (!response.ok) {
