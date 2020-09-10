@@ -38,6 +38,10 @@ export default class RecommendationsView {
     for (let i = 1; i < items.length; i++) {
       this.container.removeChild(items[i]);
     }
+
+    for (let i = 1; i < this.filter.children.length; i++) {
+      this.filter.removeChild(this.filterPills[i]);
+    }
   }
 
   render(recommendationIds) {
@@ -90,6 +94,7 @@ export default class RecommendationsView {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
       pill.id = `filter-pill-${tagId}`;
+      pill.className = 'ap-a-pill';
 
       pill.addEventListener('click', () => {
         this.toggleFilter(tagId);
