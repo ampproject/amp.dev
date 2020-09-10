@@ -35,6 +35,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 {% set nodes = g.docs('/content/pixi/info-texts', locale=doc.locale) %}
 {% for node in nodes %}
   {% set nodeDict = {
+    'title': node.title,
     'body': node.body
   } %}
   {% set x=info_texts.__setitem__(node.base, nodeDict) %}

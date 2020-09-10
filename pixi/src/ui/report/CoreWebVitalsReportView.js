@@ -32,7 +32,7 @@ class WeightedScale {
       (data.numericValue / data.proportion.slow) * 100
     }%`;
     this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
-      1
+      unit.digits
     )} ${unit.name}`;
 
     for (const bar of this.bars) {
@@ -44,7 +44,7 @@ class WeightedScale {
 
       bar.style.width = `${percent}%`;
       label.textContent = `${
-        data.proportion[type] / unit.conversion.toFixed(1)
+        data.proportion[type] / unit.conversion.toFixed(unit.digits)
       } ${unit.name}`;
     }
   }
@@ -95,8 +95,8 @@ class CoreWebVitalView {
     );
   }
 
-  render(report) {
-    const {data, unit} = report;
+  render(metric, cacheMetric) {
+    const {data, unit} = metric;
 
     this.scale.render(data, unit);
 
@@ -105,11 +105,25 @@ class CoreWebVitalView {
     this.container.classList.add(responseCategory);
     this.category.textContent = displayCategory;
 
-    const score = (data.numericValue / unit.conversion).toFixed(1);
+    const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;
 
-    const improvement = (data.improvement / unit.conversion).toFixed(1);
-    this.improvement.textContent = `${improvement} ${unit.name}`;
+    if (
+      !cacheMetric ||
+      !cacheMetric.data ||
+      cacheMetric.data.improvement == undefined
+    ) {
+      this.improvement.textContent = 'Check recommendations';
+    } else if (cacheMetric.data.improvement === 0) {
+      this.improvement.textContent = 'None';
+    } else if (!Number.isNaN(cacheMetric.data.improvement)) {
+      const improvement = (
+        cacheMetric.data.improvement / unit.conversion
+      ).toFixed(unit.digits);
+      this.improvement.textContent = `${improvement} ${unit.name}`;
+    } else {
+      this.improvement.textContent = 'Check recommendations';
+    }
 
     this.recommendations.textContent = 'Not yet implemented';
 
@@ -167,24 +181,43 @@ export default class CoreWebVitalsReportView {
     }
   }
 
-  render(report = {}) {
+  render(report = {}, cacheReport = {}) {
     this.pristine = false;
-    const results = report.data.pageExperience;
+    const results = this.getPageExperience(report);
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
-      const type = results[coreWebVitalView.type];
-      if (type) {
-        const metric = type[coreWebVitalView.metric];
-        if (metric) {
-          coreWebVitalView.render(metric);
-          continue;
-        }
+      const metric = this.getMetric(results, coreWebVitalView);
+      if (metric) {
+        const cacheMetric = this.getMetric(
+          this.getPageExperience(cacheReport),
+          coreWebVitalView
+        );
+        coreWebVitalView.render(metric, cacheMetric);
+        continue;
       }
 
       // TODO: show no data
     }
 
     this.toggleLoading(false);
+  }
+
+  getPageExperience(result) {
+    if (result && result.data) {
+      return result.data.pageExperience;
+    }
+    return null;
+  }
+
+  getMetric(pageExperience, coreWebVitalView) {
+    if (!pageExperience) {
+      return null;
+    }
+    const type = pageExperience[coreWebVitalView.type];
+    if (!type) {
+      return null;
+    }
+    return type[coreWebVitalView.metric];
   }
 
   reset() {

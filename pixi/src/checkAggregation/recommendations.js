@@ -25,7 +25,7 @@ const directLinterRecommendations = {
   fastGoogleFontsDisplay: 'fast-font-display',
   googleFontPreconnect: 'preconnect-google-fonts',
   isTransformedAmp: 'use-amp-optimizer',
-  moduleRuntimeIsUsed: 'upgrade-amp-optimizer', // TODO use specific recommendation when text is ready
+  moduleRuntimeIsUsed: 'enable-js-module-runtime',
   heroImageIsDefined: 'hero-images',
   noRenderBlockingExtension: 'prevent-render-blocking-extensions',
 };
@@ -55,6 +55,25 @@ const addDirectRecommendations = (result, checks, mapping) => {
       result.push(mapping[check]);
     }
   }
+};
+
+const getMetricCategory = (dataNode, metricName) => {
+  if (!dataNode) {
+    return null;
+  }
+  const metric = dataNode[metricName];
+  if (!metric) {
+    return null;
+  }
+  return metric.data.category;
+};
+
+const getFieldOrLabDataCategory = (pageExperienceChecks, metricName) => {
+  const pageExperience = pageExperienceChecks.pageExperience;
+  return getMetricCategory(
+    pageExperience.fieldData || pageExperience.labData,
+    metricName
+  );
 };
 
 export default async function getRecommendationIds(
@@ -98,8 +117,7 @@ export default async function getRecommendationIds(
     if (linter.updateOptimizerForBoilerplateRemoval) {
       result.push('upgrade-amp-optimizer');
     } else if (
-      pageExperience.fieldData &&
-      pageExperience.fieldData.lcp.data.category !== Category.FAST
+      getFieldOrLabDataCategory(pageExperience, 'lcp') !== Category.FAST
     ) {
       result.push('amp-boilerplate-removal');
     }
@@ -107,8 +125,7 @@ export default async function getRecommendationIds(
 
   if (
     linter.noDynamicLayoutExtensions === false &&
-    pageExperience.fieldData &&
-    pageExperience.fieldData.cls.data.category !== Category.FAST
+    getFieldOrLabDataCategory(pageExperience, 'cls') !== Category.FAST
   ) {
     result.push('dynamic-layout-extensions');
   }
