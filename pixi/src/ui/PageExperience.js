@@ -69,6 +69,7 @@ export default class PageExperience {
     }
 
     const linterPromise = this.runLintCheck(pageUrl);
+    this.pageExperienceCheck.setLocale(i18n.getLanguage());
     const pageExperiencePromise = this.runPageExperienceCheck(
       pageUrl,
       linterPromise
@@ -130,7 +131,11 @@ export default class PageExperience {
       safeBrowsingPromise.then(() => {
         statusView.increaseFinishedChecks(SafeBrowsingCheck.getCheckCount());
       });
-      statusView.render(statusBannerIdPromise, pageUrl);
+      statusView.render(
+        statusBannerIdPromise,
+        recommendationIdsPromise,
+        pageUrl
+      );
       await statusBannerIdPromise;
     } catch (error) {
       console.error('unable to get page status', error);
@@ -181,6 +186,7 @@ export default class PageExperience {
     this.reportViews.safeBrowsing.toggleLoading(true);
 
     const {error, data} = await this.safeBrowsingCheck.run(pageUrl);
+    this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
     // Do not surface the actual error to the user. Simply log it
     // The BooleanCheckReportView will show "Analysis failed"
@@ -189,7 +195,6 @@ export default class PageExperience {
       console.error('Could not perform safe browsing check', error);
       return {error};
     }
-    this.reportViews.safeBrowsing.render(data.safeBrowsing);
 
     return data;
   }
@@ -218,11 +223,11 @@ export default class PageExperience {
     this.reportViews.mobileFriendliness.toggleLoading(true);
 
     const {error, data} = await this.mobileFriendlinessCheck.run(pageUrl);
+    this.reportViews.mobileFriendliness.render(data.mobileFriendly);
     if (error) {
       console.error('Could not perform mobile friendliness check', error);
       return {error};
     }
-    this.reportViews.mobileFriendliness.render(data.mobileFriendly);
 
     return data;
   }

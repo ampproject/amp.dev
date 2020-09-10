@@ -99,7 +99,8 @@
         margin-right: 20px;
       }
 
-      span {
+      span,
+      svg {
         white-space: nowrap;
         opacity: 0.3;
         transition: opacity .3s ease;
@@ -109,6 +110,16 @@
         .slow & {
           opacity: 1;
         }
+      }
+
+      svg {
+        width: 11px;
+        height: 11px;
+        fill: currentcolor;
+      }
+
+      [role="button"] {
+        cursor: pointer;
       }
 
       #{$primary-metric}-score {

@@ -46,7 +46,7 @@
 					"digits": 1
 				},
 				"data": {
-					"numericValue": 3395.517406396801,
+					"numericValue": 2495.517406396801,
 					"proportion": {
 						"fast": 2500,
 						"average": 4000,
@@ -55,18 +55,18 @@
 					"category": "FAST"
 				}
 			},
-			"fid": {
+			"tbt": {
 				"unit": {
 					"name": "ms",
 					"conversion": 1,
 					"digits": 0
 				},
 				"data": {
-					"numericValue": 316.4999999999998,
+					"numericValue": 296.4999999999998,
 					"proportion": {
-						"fast": 100,
-						"average": 300,
-						"slow": 800
+						"fast": 300,
+						"average": 600,
+						"slow": 900
 					},
 					"category": "FAST"
 				}

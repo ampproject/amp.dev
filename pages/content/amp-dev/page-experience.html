@@ -14,6 +14,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   {% set nodeDict = {
     'title': node.title,
     'type': node.type,
+    'hideShare': node.hide_share == true,
     'body': node.body
   } %}
   {% set x=status_banners.__setitem__(node.base, nodeDict) %}

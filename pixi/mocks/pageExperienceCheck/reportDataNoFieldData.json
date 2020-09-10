@@ -17,7 +17,7 @@
 					"category": "FAST"
 				}
 			},
-			"fid": {
+			"tbt": {
 				"unit": {
 					"name": "ms",
 					"conversion": 1,
@@ -26,9 +26,9 @@
 				"data": {
 					"numericValue": 68.5,
 					"proportion": {
-						"fast": 100,
-						"average": 300,
-						"slow": 800
+						"fast": 300,
+						"average": 600,
+						"slow": 900
 					},
 					"category": "FAST"
 				}

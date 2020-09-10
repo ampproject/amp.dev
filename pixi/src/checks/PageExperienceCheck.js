@@ -20,6 +20,7 @@ export const Category = {
   AVERAGE: 'AVERAGE',
 };
 
+let locale;
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
 const DEVICE_STRATEGY = 'MOBILE';
 const METRICS_SCALES = {
@@ -28,21 +29,25 @@ const METRICS_SCALES = {
     average: 4000,
     slow: 6000,
   },
-  fid: {
-    fast: 100,
-    average: 300,
-    slow: 800,
-  },
   cls: {
     fast: 10,
     average: 25,
     slow: 40,
+  },
+  tbt: {
+    fast: 300,
+    average: 600,
+    slow: 900,
   },
 };
 
 export default class PageExperienceCheck {
   static getCheckCount() {
     return 10;
+  }
+
+  setLocale(language) {
+    locale = language;
   }
 
   async run(originUrl) {
@@ -70,9 +75,9 @@ export default class PageExperienceCheck {
       proportion: METRICS_SCALES[id],
     };
 
-    if (data.score < 0.5) {
+    if (metricOrigin.score < 0.5) {
       data.category = Category.SLOW;
-    } else if (data.score < 0.75) {
+    } else if (metricOrigin.score < 0.9) {
       data.category = Category.AVERAGE;
     } else {
       data.category = Category.FAST;
@@ -133,9 +138,9 @@ export default class PageExperienceCheck {
           'lcp'
         ),
       },
-      fid: {
+      tbt: {
         unit: UNIT_MS,
-        data: this.createLabData(auditsOrigin['total-blocking-time'], 'fid'),
+        data: this.createLabData(auditsOrigin['total-blocking-time'], 'tbt'),
       },
       cls: {
         unit: UNIT_DEC,
@@ -151,7 +156,7 @@ export default class PageExperienceCheck {
       this.isFastData(fieldData, 'fid') &&
       this.isFastData(fieldData, 'lcp') &&
       this.isFastData(labData, 'cls') &&
-      this.isFastData(labData, 'fid') &&
+      this.isFastData(labData, 'tbt') &&
       this.isFastData(labData, 'lcp');
 
     return {
@@ -182,6 +187,7 @@ export default class PageExperienceCheck {
     apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
     apiUrl.searchParams.set('url', pageUrl);
     apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
+    apiUrl.searchParams.set('locale', locale);
 
     const response = await fetch(apiUrl.href);
     if (!response.ok) {
