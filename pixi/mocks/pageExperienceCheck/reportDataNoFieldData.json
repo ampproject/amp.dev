@@ -48,14 +48,10 @@
 					},
 					"category": "FAST"
 				}
-			}
+			},
+			"isAllFast": true
 		},
-		"summary": {
-			"source": "labData",
-			"isAllFast": {
-				"labData": true
-			}
-		}
+		"source": "labData"
 	},
 	"textCompression": true,
 	"fastServerResponse": true,

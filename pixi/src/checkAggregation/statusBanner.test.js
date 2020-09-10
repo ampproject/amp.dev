@@ -66,23 +66,22 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
         pageExperienceCached: {
-          fieldData: {},
-          summary: {
-            isAllFast: {
-              fieldData: false,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: false,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -97,23 +96,19 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: undefined,
-              labData: true,
-            },
-            source: 'labData',
+          labData: {
+            isAllFast: true,
           },
+          source: 'labData',
         },
         pageExperienceCached: {
-          labData: {},
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: false,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: false,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -128,23 +123,22 @@ describe('getStatusId', () => {
       Promise.resolve(['one-more', ...fixedRecommendations]),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
         pageExperienceCached: {
-          fieldData: {},
-          summary: {
-            isAllFast: {
-              fieldData: false,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: false,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -159,23 +153,19 @@ describe('getStatusId', () => {
       Promise.resolve(['one-more', ...fixedRecommendations]),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: undefined,
-              labData: true,
-            },
-            source: 'labData',
+          labData: {
+            isAllFast: true,
           },
+          source: 'labData',
         },
         pageExperienceCached: {
-          labData: {},
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: false,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: false,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -190,23 +180,22 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: false,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: false,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
         pageExperienceCached: {
-          fieldData: {},
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: false,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: false,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -221,23 +210,19 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: undefined,
-              labData: false,
-            },
-            source: 'labData',
+          labData: {
+            isAllFast: false,
           },
+          source: 'labData',
         },
         pageExperienceCached: {
-          labData: {},
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: false,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -252,23 +237,22 @@ describe('getStatusId', () => {
       Promise.resolve(['one-more', ...fixedRecommendations]),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: false,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: false,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
         pageExperienceCached: {
-          fieldData: {},
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: false,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: false,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -283,23 +267,19 @@ describe('getStatusId', () => {
       Promise.resolve(['one-more', ...fixedRecommendations]),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: undefined,
-              labData: false,
-            },
-            source: 'labData',
+          labData: {
+            isAllFast: false,
           },
+          source: 'labData',
         },
         pageExperienceCached: {
-          labData: {},
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: false,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -314,13 +294,13 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: false,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: false,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -335,13 +315,13 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
       }),
       Promise.resolve({}),
@@ -356,13 +336,13 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -377,13 +357,10 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: undefined,
-              labData: false,
-            },
-            source: 'labData',
+          labData: {
+            isAllFast: true,
           },
+          source: 'labData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -403,13 +380,13 @@ describe('getStatusId', () => {
       Promise.resolve(['one-more', ...fixedRecommendations]),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: false,
-              labData: true,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: false,
           },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -424,13 +401,13 @@ describe('getStatusId', () => {
       Promise.resolve(fixedRecommendations),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: false,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: false,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,
@@ -445,13 +422,13 @@ describe('getStatusId', () => {
       Promise.resolve(['one-more', ...fixedRecommendations]),
       Promise.resolve({
         pageExperience: {
-          summary: {
-            isAllFast: {
-              fieldData: true,
-              labData: false,
-            },
-            source: 'fieldData',
+          fieldData: {
+            isAllFast: true,
           },
+          labData: {
+            isAllFast: false,
+          },
+          source: 'fieldData',
         },
       }),
       passedSafeBrowsingPromise,

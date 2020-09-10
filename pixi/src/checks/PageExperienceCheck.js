@@ -146,25 +146,26 @@ export default class PageExperienceCheck {
       },
     };
 
-    const summary = {
-      isAllFast: {
-        fieldData:
-          this.isFastData(fieldData, 'cls') &&
-          this.isFastData(fieldData, 'fid') &&
-          this.isFastData(fieldData, 'lcp'),
-        labData:
-          this.isFastData(labData, 'cls') &&
-          this.isFastData(labData, 'tbt') &&
-          this.isFastData(labData, 'lcp'),
-      },
-      source: fieldData ? 'fieldData' : 'labData',
-    };
     return {
       data: {
         pageExperience: {
-          fieldData,
-          labData,
-          summary,
+          fieldData: fieldData
+            ? {
+                isAllFast:
+                  this.isFastData(fieldData, 'cls') &&
+                  this.isFastData(fieldData, 'fid') &&
+                  this.isFastData(fieldData, 'lcp'),
+                ...fieldData,
+              }
+            : undefined,
+          labData: {
+            isAllFast:
+              this.isFastData(labData, 'cls') &&
+              this.isFastData(labData, 'tbt') &&
+              this.isFastData(labData, 'lcp'),
+            ...labData,
+          },
+          source: fieldData ? 'fieldData' : 'labData',
         },
         textCompression:
           this.getAuditScore(auditsOrigin, 'uses-text-compression') === 1,

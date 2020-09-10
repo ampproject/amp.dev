@@ -36,7 +36,8 @@
 					"category": "FAST",
 					"proportion": 0.816381257056831
 				}
-			}
+			},
+			"isAllFast": true
 		},
 		"labData": {
 			"lcp": {
@@ -86,15 +87,10 @@
 					},
 					"category": "FAST"
 				}
-			}
+			},
+			"isAllFast": true
 		},
-		"summary": {
-			"source": "fieldData",
-			"isAllFast": {
-				"fieldData": true,
-				"labData": true
-			}
-		}
+		"source": "fieldData"
 	},
 	"textCompression": true,
 	"fastServerResponse": true,
