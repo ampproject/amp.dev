@@ -14,6 +14,7 @@
 
 import marked from 'marked';
 import i18n from './I18n';
+import {fixedRecommendations} from '../checkAggregation/recommendations';
 
 const classNameMapping = {
   error: 'fail',
@@ -50,12 +51,16 @@ export default class StatusIntroView {
   /**
    * Load and render banner with the given id
    * @param {statusBannerIdPromise} The promise for the banner id.
+   * @param {recommendationIdsPromise} The promise for the recommendations.
    * @param {pageUrl} The URL of the checked page to be used in the share dialog.
-   * @param {totalChecks} The number of total checks that will be performed.
    */
-  async render(statusBannerIdPromise, pageUrl) {
+  async render(statusBannerIdPromise, recommendationIdsPromise, pageUrl) {
     this.resetView();
     this.container.classList.add('loading');
+    let hideFixButton = true;
+    recommendationIdsPromise.then((ids) => {
+      hideFixButton = ids.length <= fixedRecommendations;
+    });
 
     const statusBannerId = await this.determineBannerId(statusBannerIdPromise);
     const statusBanner = i18n.getStatusBanner(statusBannerId);
@@ -73,6 +78,16 @@ export default class StatusIntroView {
     const bannerText = banner.querySelector('p');
     bannerTitle.textContent = statusBanner.title;
     bannerText.innerHTML = marked(statusBanner.body);
+
+    const buttons = banner.querySelectorAll('button');
+    if (hideFixButton) {
+      buttons[0].classList.add('pristine');
+      // make second button primary
+      buttons[1].classList.remove('ap-a-btn-light');
+    }
+    if (statusBanner.hideShare) {
+      buttons[1].classList.add('pristine');
+    }
 
     this.bannerLoading.classList.add('pristine');
     this.container.appendChild(banner);
