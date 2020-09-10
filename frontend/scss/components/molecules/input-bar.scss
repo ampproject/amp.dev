@@ -68,12 +68,16 @@
     &-field {
       height: 100%;
       width: 100%;
-      padding: 0 15px;
+      padding: 0 10px;
       border: 0;
       border-radius: 4px 0 0 4px;
       font-family: Poppins, sans-serif;
       font-size: 18px;
       font-weight: bold;
+
+      @media (min-width: 1024px) {
+        padding: 0 15px;
+      }
 
       @media (min-width: 1024px) {
         padding: 0 20px;
