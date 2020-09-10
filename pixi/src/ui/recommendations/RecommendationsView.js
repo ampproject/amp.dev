@@ -86,7 +86,7 @@ export default class RecommendationsView {
       this.container.appendChild(recommendation);
     }
 
-    for (const tagId of tagIds.values()) {
+    for (const tagId of new Set(tagIds).values()) {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
       pill.id = `filter-pill-${tagId}`;
