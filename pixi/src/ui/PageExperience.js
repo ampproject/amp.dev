@@ -130,7 +130,11 @@ export default class PageExperience {
       safeBrowsingPromise.then(() => {
         statusView.increaseFinishedChecks(SafeBrowsingCheck.getCheckCount());
       });
-      statusView.render(statusBannerIdPromise, pageUrl);
+      statusView.render(
+        statusBannerIdPromise,
+        recommendationIdsPromise,
+        pageUrl
+      );
       await statusBannerIdPromise;
     } catch (error) {
       console.error('unable to get page status', error);
