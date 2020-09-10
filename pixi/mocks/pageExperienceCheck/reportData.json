@@ -46,13 +46,13 @@
 					"digits": 1
 				},
 				"data": {
-					"numericValue": 3395.517406396801,
+					"numericValue": 2495.517406396801,
 					"proportion": {
 						"fast": 2500,
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "AVERAGE"
+					"category": "FAST"
 				}
 			},
 			"tbt": {
@@ -62,13 +62,13 @@
 					"digits": 0
 				},
 				"data": {
-					"numericValue": 316.4999999999998,
+					"numericValue": 296.4999999999998,
 					"proportion": {
 						"fast": 300,
 						"average": 600,
 						"slow": 900
 					},
-					"category": "AVERAGE"
+					"category": "FAST"
 				}
 			},
 			"cls": {
@@ -88,7 +88,7 @@
 				}
 			}
 		},
-		"isAllFast": false
+		"isAllFast": true
 	},
 	"textCompression": true,
 	"fastServerResponse": true,

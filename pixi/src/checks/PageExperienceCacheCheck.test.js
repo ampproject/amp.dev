@@ -71,8 +71,8 @@ describe('Page experience cache check', () => {
     expect(report.data).toMatchObject(reportDataNoFieldData);
     const {fieldData, labData} = report.data.pageExperience;
     expect(fieldData).toBeFalsy();
-    expect(labData.lcp.data.improvement).toEqual(1276.517406396801);
-    expect(labData.tbt.data.improvement).toEqual(247.99999999999977);
+    expect(labData.lcp.data.improvement).toEqual(376.5174063968011);
+    expect(labData.tbt.data.improvement).toEqual(227.99999999999977);
     expect(labData.cls.data.improvement).toEqual(0);
   });
 });
