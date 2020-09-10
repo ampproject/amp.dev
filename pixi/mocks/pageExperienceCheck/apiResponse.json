@@ -133,10 +133,10 @@
 				"id": "largest-contentful-paint",
 				"title": "Largest Contentful Paint",
 				"description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn More](https://web.dev/lighthouse-largest-contentful-paint/)",
-				"score": 0.67,
+				"score": 0.9,
 				"scoreDisplayMode": "numeric",
-				"displayValue": "3.4 s",
-				"numericValue": 3395.517406396801
+				"displayValue": "2.5 s",
+				"numericValue": 2495.517406396801
 			},
 			"render-blocking-resources": {
 				"id": "render-blocking-resources",
@@ -1211,10 +1211,10 @@
 				"id": "total-blocking-time",
 				"title": "Total Blocking Time",
 				"description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more](https://web.dev/lighthouse-total-blocking-time/).",
-				"score": 0.87,
+				"score": 0.91,
 				"scoreDisplayMode": "numeric",
-				"displayValue": "320 ms",
-				"numericValue": 316.4999999999998
+				"displayValue": "296 ms",
+				"numericValue": 296.4999999999998
 			},
 			"network-rtt": {
 				"id": "network-rtt",
@@ -1593,7 +1593,7 @@
 							"observedFirstMeaningfulPaint": 158,
 							"estimatedInputLatency": 42,
 							"observedFirstMeaningfulPaintTs": 121775849279,
-							"totalBlockingTime": 316,
+							"totalBlockingTime": 296,
 							"observedLastVisualChange": 1720,
 							"cumulativeLayoutShift": 0,
 							"interactive": 4456,
@@ -1608,7 +1608,7 @@
 							"observedFirstPaintTs": 121775849279,
 							"maxPotentialFID": 160,
 							"observedFirstContentfulPaint": 158,
-							"largestContentfulPaint": 3396,
+							"largestContentfulPaint": 2496,
 							"speedIndex": 2346,
 							"observedCumulativeLayoutShift": 0,
 							"observedFirstContentfulPaintTs": 121775849279,

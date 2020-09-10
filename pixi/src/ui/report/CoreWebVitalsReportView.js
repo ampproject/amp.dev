@@ -28,9 +28,10 @@ class WeightedScale {
   }
 
   render(data, unit) {
-    this.pitch.style.left = `${
+    this.pitch.style.left = `${Math.min(
+      100,
       (data.numericValue / data.proportion.slow) * 100
-    }%`;
+    )}%`;
     this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
       unit.digits
     )} ${unit.name}`;
@@ -113,7 +114,7 @@ class CoreWebVitalView {
       !cacheMetric.data ||
       cacheMetric.data.improvement == undefined
     ) {
-      this.improvement.textContent = 'Check recommendations';
+      this.improvement.textContent = '---';
     } else if (cacheMetric.data.improvement === 0) {
       this.improvement.textContent = 'None';
     } else if (!Number.isNaN(cacheMetric.data.improvement)) {
@@ -122,7 +123,7 @@ class CoreWebVitalView {
       ).toFixed(unit.digits);
       this.improvement.textContent = `${improvement} ${unit.name}`;
     } else {
-      this.improvement.textContent = 'Check recommendations';
+      this.improvement.textContent = '---';
     }
 
     this.recommendations.textContent = 'Not yet implemented';
