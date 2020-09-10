@@ -28,7 +28,7 @@
 
     @media (min-width: 1024px) {
       margin: 0 auto;
-      padding: 0;
+      padding: 90px 0 0 0;
     }
 
     h1 {
@@ -45,9 +45,23 @@
 
     svg {
       position: absolute;
-      top: 100px;
-      right: 0;
-      stroke: blue;
+      top: 20px;
+      right: 15px;
+      width: 120px;
+
+      @media (min-width: 768px) {
+        top: -20px;
+        right: 25px;
+        width: 200px;
+        height: 200px;
+      }
+
+      @media (min-width: 1024px) {
+        top: 0;
+        right: -20px;
+        width: 250px;
+        height: 250px;
+      }
     }
   }
 
@@ -68,7 +82,7 @@
       margin: 30px auto;
 
       &:first-child {
-        margin: 0 auto;
+        margin: 0 auto 30px auto;
       }
     }
   }
