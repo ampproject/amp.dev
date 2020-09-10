@@ -48,15 +48,25 @@ describe('getStatusId', () => {
 
   it('returns invalid-amp', async () => {
     const statusId = await getStatusId(
-      pendingPromise,
-      pendingPromise,
-      pendingPromise,
+      Promise.resolve(fixedRecommendations),
+      Promise.resolve({
+        pageExperience: {
+          fieldData: {
+            isAllFast: true,
+          },
+          labData: {
+            isAllFast: true,
+          },
+          source: 'fieldData',
+        },
+      }),
+      passedSafeBrowsingPromise,
       Promise.resolve({
         isLoaded: true,
         isAmp: true,
         isValid: false,
       }),
-      pendingPromise
+      passedMobileFriendlinessPromise
     );
     expect(statusId).toBe('invalid-amp');
   });
