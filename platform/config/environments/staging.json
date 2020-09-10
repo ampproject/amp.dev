@@ -17,7 +17,7 @@
 			"port": ""
     },
 		"websocket": {
-			"scheme": "ws",
+			"scheme": "wss",
 			"host": "amp-dev-staging.appspot.com",
 			"port": ""
     },

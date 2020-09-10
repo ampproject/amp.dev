@@ -3,5 +3,11 @@
 @import '_variables.scss';
 
 .#{organism('pixi-recommendations')} {
-  padding: 0 15px;
+  padding: 80px 15px 0px;
+
+  &-filter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
 }
