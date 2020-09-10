@@ -1,17 +1,17 @@
 {% do doc.styles.addCssFile('css/components/molecules/pixi-tooltip.css') %}
 
-<div id="tooltip-{{ tooltip.id|replace(".", "-") }}"
+<div id="tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}"
     class="ap-m-tooltip">
 
   <button class="ap-m-tooltip-toggle"
-      on="tap:tooltip-{{ tooltip.id|replace(".", "-") }}.toggleClass(class=active)">
+      on="tap:tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}.toggleClass(class=active)">
     {% do doc.icons.useIcon('icons/questionmark-outline.svg') %}
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark-outline"></use></svg>
   </button>
 
   <div class="ap-m-tooltip-tip">
     <button class="ap-m-tooltip-close"
-        on="tap:tooltip-{{ tooltip.id|replace(".", "-") }}.toggleClass(class=active)">
+        on="tap:tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}.toggleClass(class=active)">
       {% do doc.icons.useIcon('/icons/close.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
     </button>
