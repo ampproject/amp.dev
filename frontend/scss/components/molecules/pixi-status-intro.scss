@@ -60,17 +60,22 @@
     @media (min-width: 768px) {
       left: 0;
       width: 100%;
-      padding: 60px 50px;
+      padding: 40px 25px;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 60px 35px;
     }
 
     &-icon {
       flex: 1 0 auto;
-      min-width: 40px;
+      width: 40px;
+      max-width: 40px;
       margin-right: 14px;
       background-repeat: no-repeat;
       background-position-x: center;
 
-      @media (min-width: 768px) {
+      @media (min-width: 1024px) {
         width: 70px;
         max-width: 70px;
         margin-right: 28px;
