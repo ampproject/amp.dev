@@ -7,8 +7,11 @@
   $status-intro: &;
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 280px;
+  min-height: 300px;
+
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 
   &-text {
     display: flex;
@@ -21,10 +24,14 @@
 
     &-item {
       flex: 1;
-      min-width: 250px;
+      min-width: 230px;
 
       & + & {
-        margin-left: 30px;
+        margin-left: 20px;
+
+        @media (min-width: 1024px) {
+          margin-left: 30px;
+        }
       }
 
       h3,

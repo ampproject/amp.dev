@@ -26,16 +26,17 @@
     padding: 120px 15px 0 15px;
     position: relative;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       margin: 0 auto;
       padding: 0;
     }
 
     h1 {
-      font-size: 42px;
+      max-width: 600px;
       margin: 0;
       margin-bottom: -40px;
-      max-width: 600px;
+      font-size: 42px;
+      line-height: 1.14;
 
       @media (min-width: 768px) {
         font-size: 64px;
@@ -98,6 +99,10 @@
       padding: 30px 0;
 
       @media (min-width: 768px) {
+        padding: 30px 15px;
+      }
+
+      @media (min-width: 1024px) {
         padding: 50px 0 30px 0;
       }
 
@@ -116,6 +121,10 @@
         clip-path: polygon(0% 40%, 100% 35%, 100% 92%, 0% 100%);
 
         @media (min-width: 768px) {
+          clip-path: polygon(0% 48%, 100% 40%, 100% 90%, 0% 100%);
+        }
+
+        @media (min-width: 1024px) {
           clip-path: polygon(0% 50%, 100% 37%, 100% 83%, 0% 100%);
         }
       }
