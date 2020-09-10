@@ -7,7 +7,7 @@
   $status-intro: &;
   position: relative;
   display: flex;
-  min-height: 300px;
+  min-height: 290px;
 
   @media (min-width: 768px) {
     align-items: center;
@@ -64,13 +64,14 @@
     }
 
     &-icon {
-      flex: 1;
+      flex: 1 0 auto;
       min-width: 40px;
       margin-right: 14px;
       background-repeat: no-repeat;
       background-position-x: center;
 
       @media (min-width: 768px) {
+        width: 70px;
         max-width: 70px;
         margin-right: 28px;
       }
