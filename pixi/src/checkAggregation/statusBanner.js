@@ -65,11 +65,13 @@ const getStatusId = async (
       safeBrowsing.safeBrowsing &&
       linter.usesHttps;
 
-    const pagePassedAll = pageExperience.isAllFast && passedOtherCriteria;
+    const dataType = pageExperience.summary.source;
+    const pagePassedAll =
+      pageExperience.summary.isAllFast[dataType] && passedOtherCriteria;
 
-    if (cacheExperience) {
-      const cachePassedAll = cacheExperience.isAllFast && passedOtherCriteria;
-
+    if (cacheExperience[dataType] !== undefined) {
+      const cachePassedAll =
+        cacheExperience.summary.isAllFast[dataType] && passedOtherCriteria;
       if (cachePassedAll && !pagePassedAll) {
         if (recommendations.length > fixedRecommendations.length) {
           return 'origin-failed-with-info';
