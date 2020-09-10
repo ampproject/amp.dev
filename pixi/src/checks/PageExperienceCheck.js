@@ -96,7 +96,7 @@ export default class PageExperienceCheck {
   isFastData(metrics, checkId) {
     if (!metrics) {
       // no error when we have no data
-      return true;
+      return undefined;
     }
     return metrics[checkId].data.category === Category.FAST;
   }
@@ -151,20 +151,26 @@ export default class PageExperienceCheck {
       },
     };
 
-    const isAllFast =
-      this.isFastData(fieldData, 'cls') &&
-      this.isFastData(fieldData, 'fid') &&
-      this.isFastData(fieldData, 'lcp') &&
-      this.isFastData(labData, 'cls') &&
-      this.isFastData(labData, 'tbt') &&
-      this.isFastData(labData, 'lcp');
-
     return {
       data: {
         pageExperience: {
-          fieldData,
-          labData,
-          isAllFast,
+          fieldData: fieldData
+            ? {
+                isAllFast:
+                  this.isFastData(fieldData, 'cls') &&
+                  this.isFastData(fieldData, 'fid') &&
+                  this.isFastData(fieldData, 'lcp'),
+                ...fieldData,
+              }
+            : undefined,
+          labData: {
+            isAllFast:
+              this.isFastData(labData, 'cls') &&
+              this.isFastData(labData, 'tbt') &&
+              this.isFastData(labData, 'lcp'),
+            ...labData,
+          },
+          source: fieldData ? 'fieldData' : 'labData',
         },
         textCompression:
           this.getAuditScore(auditsOrigin, 'uses-text-compression') === 1,

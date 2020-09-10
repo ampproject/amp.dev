@@ -48,9 +48,10 @@
 					},
 					"category": "FAST"
 				}
-			}
+			},
+			"isAllFast": true
 		},
-		"isAllFast": true
+		"source": "labData"
 	},
 	"textCompression": true,
 	"fastServerResponse": true,
