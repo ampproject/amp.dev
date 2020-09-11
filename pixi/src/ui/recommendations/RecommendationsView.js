@@ -108,18 +108,19 @@ export default class RecommendationsView {
     for (const key of Object.keys(metricUis)) {
       const metricUi = metricUis[key];
       const count = tagIdCounts[metricUi.metric];
-      let text;
       if (!count) {
-        text = i18n.getText('status.none');
-        metricUi.setHasStatus(false);
+        metricUi.setRecommendationStatus(false, i18n.getText('status.none'));
       } else if (count === 1) {
-        text = `${count} ${i18n.getText('status.recommendation')}`;
-        metricUi.setHasStatus(true);
+        metricUi.setRecommendationStatus(
+          true,
+          `${count} ${i18n.getText('status.recommendation')}`
+        );
       } else {
-        text = `${count} ${i18n.getText('status.recommendations')}`;
-        metricUi.setHasStatus(true);
+        metricUi.setRecommendationStatus(
+          true,
+          `${count} ${i18n.getText('status.recommendations')}`
+        );
       }
-      metricUi.setRecommendations(text);
     }
 
     this.pill.classList.add('filtered');

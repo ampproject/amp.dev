@@ -128,12 +128,9 @@ class CoreWebVitalView {
     this.toggleLoading(false);
   }
 
-  setRecommendations(text) {
+  setRecommendationStatus(hasStatus, text) {
     this.recommendations.textContent = text;
-  }
-
-  setHasStatus(force) {
-    this.container.classList.toggle('has-status', force);
+    this.container.classList.toggle('has-status', hasStatus);
   }
 
   reset() {
