@@ -13,8 +13,7 @@
 // limitations under the License.
 
 /* eslint-disable max-len */
-const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
-const AMP_PROJECT_CDN_URL = 'cdn.ampproject.org';
+const URL_VALIDATION_REGEX = /^(?:https?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w._~:/?#\[\]@!$&'()*+,;=-]+$/gm;
 
 export default class InputBar {
   constructor(doc, callback) {
@@ -53,10 +52,6 @@ export default class InputBar {
       value.startsWith('http://') || value.startsWith('https://')
         ? value
         : `http://${value}`;
-
-    if (pageUrl.includes(AMP_PROJECT_CDN_URL)) {
-      return;
-    }
 
     if (!this.isValidUrl(pageUrl)) {
       return;

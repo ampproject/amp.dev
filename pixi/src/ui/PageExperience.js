@@ -95,7 +95,10 @@ export default class PageExperience {
 
     const recommendationIds = await recommendationIdsPromise;
     if (recommendationIds.length > 0) {
-      this.recommendationsView.render(recommendationIds);
+      this.recommendationsView.render(
+        recommendationIds,
+        this.reportViews.pageExperience.coreWebVitalViews
+      );
     }
   }
 
@@ -155,7 +158,7 @@ export default class PageExperience {
 
     const linter = await linterDataPromise;
     let cacheReport = null;
-    if (!linter.isAmp || !linter.isValid) {
+    if (!linter.isAmp || !linter.isValid || !linter.isOriginUrl) {
       cacheReport = Promise.resolve({data: {}});
     } else {
       cacheReport = await this.pageExperienceCacheCheck.run(
@@ -208,7 +211,7 @@ export default class PageExperience {
       console.error('Could not perform AMP Linter check', error);
       return {error};
     }
-    if (data.isAmp) {
+    if (data.isAmp && data.isOriginUrl) {
       this.reports.classList.remove('pristine');
       this.reportViews.httpsCheck.render(data.usesHttps);
     }

@@ -15,10 +15,14 @@ staticText:
     mobileFriendliness: Mobile Friendliness
     intrusiveInterstitials: Intrusive Interstitials
     checkManually: Check manually
-  status:  
+  status:
     analyzing: Analyzing
+    calculating: Calculating
     failed: Failed
     passed: Passed
+    none: None
+    recommendation: recommendation
+    recommendations: recommendations
   tags:
     lcp: LCP
     fid: FID
@@ -28,6 +32,7 @@ staticText:
     safeBrowsing: Safe browsing
     intrusiveInterstitials: Intrusive Interstitials
 ---
+
 [Web Vitals](https://web.dev/vitals/) is an initiative by
 Google to provide unified guidance for quality signals that are essential
 to delivering a great user experience on the web.
