@@ -95,7 +95,10 @@ export default class PageExperience {
 
     const recommendationIds = await recommendationIdsPromise;
     if (recommendationIds.length > 0) {
-      this.recommendationsView.render(recommendationIds);
+      this.recommendationsView.render(
+        recommendationIds,
+        this.reportViews.pageExperience.coreWebVitalViews
+      );
     }
   }
 

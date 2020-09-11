@@ -125,10 +125,11 @@ class CoreWebVitalView {
     } else {
       this.improvement.textContent = '---';
     }
-
-    this.recommendations.textContent = 'Not yet implemented';
-
     this.toggleLoading(false);
+  }
+
+  setRecommendations(text) {
+    this.recommendations.textContent = text;
   }
 
   reset() {

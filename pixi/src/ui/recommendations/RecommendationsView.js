@@ -44,10 +44,10 @@ export default class RecommendationsView {
     }
   }
 
-  render(recommendationIds) {
+  render(recommendationIds, metricUis) {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationIds);
-    const tagIds = [];
+    const tagIdCounts = {};
 
     this.recommendationNodes = [];
     this.filterPills = [];
@@ -83,14 +83,15 @@ export default class RecommendationsView {
         recommendation.classList.add(tagId);
         tag.textContent = i18n.getText(`tags.${tagId}`);
         tagsBar.appendChild(tag);
-        tagIds.push(tagId);
+        const count = tagIdCounts[tagId] || 0;
+        tagIdCounts[tagId] = count + 1;
       }
 
       this.recommendationNodes.push(recommendation);
       this.container.appendChild(recommendation);
     }
 
-    for (const tagId of new Set(tagIds).values()) {
+    for (const tagId of Object.keys(tagIdCounts)) {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
       pill.id = `filter-pill-${tagId}`;
@@ -102,6 +103,20 @@ export default class RecommendationsView {
 
       this.filterPills.push(pill);
       this.filter.appendChild(pill);
+    }
+
+    for (const key of Object.keys(metricUis)) {
+      const metricUi = metricUis[key];
+      const count = tagIdCounts[metricUi.metric];
+      let text;
+      if (!count) {
+        text = i18n.getText('status.none');
+      } else if (count === 1) {
+        text = `${count} ${i18n.getText('status.recommendation')}`;
+      } else {
+        text = `${count} ${i18n.getText('status.recommendations')}`;
+      }
+      metricUi.setRecommendations(text);
     }
 
     this.pill.classList.add('filtered');
