@@ -134,7 +134,7 @@ class CoreWebVitalView {
   }
 
   reset() {
-    this.container.classList.remove(...Object.values(CATEGORIES));
+    this.container.classList.remove(...Object.keys(CATEGORIES));
     this.category.textContent = i18n.getText('status.analyzing');
     this.score.textContent = i18n.getText('status.analyzing');
     this.improvement.textContent = i18n.getText('status.calculating');
