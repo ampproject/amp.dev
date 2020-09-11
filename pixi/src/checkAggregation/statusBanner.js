@@ -29,6 +29,9 @@ const getStatusId = async (
     if (!linter.isAmp) {
       return 'no-amp';
     }
+    if (!linter.isNotCacheUrl) {
+      return 'amp-cache-url';
+    }
 
     // We need to check all promises for general error
     // (promise can be rejected or error is set in result)

@@ -29,6 +29,7 @@ describe('Linter check', () => {
     const report = await linterCheck.run('http://example.com');
     expect(report.data.isLoaded).toBe(true);
     expect(report.data.isAmp).toBe(true);
+    expect(report.data.isNotCacheUrl).toBe(true);
     expect(report.data.usesHttps).toBe(true);
     expect(report.data.isValid).toBe(true);
     expect(report.data.runtimeIsPreloaded).toBe(true);
@@ -48,9 +49,12 @@ describe('Linter check', () => {
   it('returns object with all checks failed', async () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponseFailAll);
 
-    const report = await linterCheck.run('http://example.com');
+    const report = await linterCheck.run(
+      'http://www-test.cdn.ampproject.org/c/s/www.test/'
+    );
     expect(report.data.isLoaded).toBe(true);
     expect(report.data.isAmp).toBe(true);
+    expect(report.data.isNotCacheUrl).toBe(false);
     expect(report.data.usesHttps).toBe(false);
     expect(report.data.isValid).toBe(false);
     expect(report.data.runtimeIsPreloaded).toBe(false);

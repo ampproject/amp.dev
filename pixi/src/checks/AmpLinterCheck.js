@@ -88,6 +88,7 @@ export default class AmpLinterCheck {
       data: {
         isLoaded: true,
         isAmp: apiResult.isAmp,
+        isNotCacheUrl: !apiResult.isCacheUrl,
         usesHttps:
           apiResult.url != undefined && apiResult.url.startsWith('https:'),
         noRenderBlockingExtension: !(
