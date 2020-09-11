@@ -29,7 +29,7 @@ const getStatusId = async (
     if (!linter.isAmp) {
       return 'no-amp';
     }
-    if (!linter.isNotCacheUrl) {
+    if (!linter.isOriginUrl) {
       return 'amp-cache-url';
     }
 

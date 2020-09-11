@@ -8,7 +8,7 @@ const passedLinterPromise = Promise.resolve({
   isAmp: true,
   isValid: true,
   usesHttps: true,
-  isNotCacheUrl: true,
+  isOriginUrl: true,
 });
 
 const passedMobileFriendlinessPromise = Promise.resolve({
@@ -41,7 +41,7 @@ describe('getStatusId', () => {
       Promise.resolve({
         isLoaded: true,
         isAmp: false,
-        isNotCacheUrl: true,
+        isOriginUrl: true,
       }),
       pendingPromise
     );
@@ -56,7 +56,7 @@ describe('getStatusId', () => {
       Promise.resolve({
         isLoaded: true,
         isAmp: true,
-        isNotCacheUrl: false,
+        isOriginUrl: false,
       }),
       pendingPromise
     );
@@ -81,7 +81,7 @@ describe('getStatusId', () => {
       Promise.resolve({
         isLoaded: true,
         isAmp: true,
-        isNotCacheUrl: true,
+        isOriginUrl: true,
         isValid: false,
       }),
       passedMobileFriendlinessPromise
@@ -395,7 +395,7 @@ describe('getStatusId', () => {
       Promise.resolve({
         isLoaded: true,
         isAmp: true,
-        isNotCacheUrl: true,
+        isOriginUrl: true,
         isValid: true,
         usesHttps: false,
       }),
