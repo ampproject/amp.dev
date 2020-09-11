@@ -116,7 +116,7 @@ class CoreWebVitalView {
     ) {
       this.improvement.textContent = '---';
     } else if (cacheMetric.data.improvement === 0) {
-      this.improvement.textContent = 'None';
+      this.improvement.textContent = i18n.getText('status.none');
     } else if (!Number.isNaN(cacheMetric.data.improvement)) {
       const improvement = (
         cacheMetric.data.improvement / unit.conversion
@@ -138,10 +138,10 @@ class CoreWebVitalView {
 
   reset() {
     this.container.classList.remove(...Object.values(CATEGORIES));
-    this.category.textContent = i18n.translate('Analyzing');
-    this.score.textContent = i18n.translate('Analyzing');
-    this.improvement.textContent = i18n.translate('Calculating');
-    this.recommendations.textContent = i18n.translate('Analyzing');
+    this.category.textContent = i18n.getText('status.analyzing');
+    this.score.textContent = i18n.getText('status.analyzing');
+    this.improvement.textContent = i18n.getText('status.calculating');
+    this.recommendations.textContent = i18n.getText('status.analyzing');
 
     this.toggleLoading(true);
   }
