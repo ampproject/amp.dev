@@ -132,6 +132,10 @@ class CoreWebVitalView {
     this.recommendations.textContent = text;
   }
 
+  setHasStatus(force) {
+    this.container.classList.toggle('has-status', force);
+  }
+
   reset() {
     this.container.classList.remove(...Object.values(CATEGORIES));
     this.category.textContent = i18n.translate('Analyzing');

@@ -111,10 +111,13 @@ export default class RecommendationsView {
       let text;
       if (!count) {
         text = i18n.getText('status.none');
+        metricUi.setHasStatus(false);
       } else if (count === 1) {
         text = `${count} ${i18n.getText('status.recommendation')}`;
+        metricUi.setHasStatus(true);
       } else {
         text = `${count} ${i18n.getText('status.recommendations')}`;
+        metricUi.setHasStatus(true);
       }
       metricUi.setRecommendations(text);
     }

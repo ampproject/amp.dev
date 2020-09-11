@@ -113,12 +113,13 @@
       }
 
       svg {
+        display: none;
         width: 11px;
         height: 11px;
         fill: currentcolor;
 
-        .loading & {
-          display: none;
+        .has-status & {
+          display: inline;
         }
       }
 
