@@ -96,3 +96,23 @@ test('returns linter result and redirected page with 1 component info', (done) =
       done();
     });
 });
+
+
+test('returns api version', (done) => {
+  mockResponse = {
+    url: 'http://www.test',
+    redirected: true,
+    text: () =>
+      '<html ⚡><head><script src="https://server/v0/amp-script-0.1.js"></script></head><body></body></html>',
+  };
+
+  request(app)
+    .get('/lint?url=https://www.test/amp')
+    .expect('Content-Type', /json/)
+    .expect(200)
+    .then((res) => {
+      expect(res.body.status).toBe('ok');
+      expect(typeof res.body.version).toBe('number');
+      done();
+    });
+});
