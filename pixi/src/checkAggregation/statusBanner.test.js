@@ -8,6 +8,7 @@ const passedLinterPromise = Promise.resolve({
   isAmp: true,
   isValid: true,
   usesHttps: true,
+  isOriginUrl: true,
 });
 
 const passedMobileFriendlinessPromise = Promise.resolve({
@@ -40,10 +41,26 @@ describe('getStatusId', () => {
       Promise.resolve({
         isLoaded: true,
         isAmp: false,
+        isOriginUrl: true,
       }),
       pendingPromise
     );
     expect(statusId).toBe('no-amp');
+  });
+
+  it('returns amp-cache-url', async () => {
+    const statusId = await getStatusId(
+      pendingPromise,
+      pendingPromise,
+      pendingPromise,
+      Promise.resolve({
+        isLoaded: true,
+        isAmp: true,
+        isOriginUrl: false,
+      }),
+      pendingPromise
+    );
+    expect(statusId).toBe('amp-cache-url');
   });
 
   it('returns invalid-amp', async () => {
@@ -64,6 +81,7 @@ describe('getStatusId', () => {
       Promise.resolve({
         isLoaded: true,
         isAmp: true,
+        isOriginUrl: true,
         isValid: false,
       }),
       passedMobileFriendlinessPromise
@@ -377,6 +395,7 @@ describe('getStatusId', () => {
       Promise.resolve({
         isLoaded: true,
         isAmp: true,
+        isOriginUrl: true,
         isValid: true,
         usesHttps: false,
       }),

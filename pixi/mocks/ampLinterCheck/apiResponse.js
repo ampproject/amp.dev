@@ -3,6 +3,7 @@ const apiResponsePassAll = {
   redirected: true,
   url: 'https://amp.dev/',
   isAmp: true,
+  isCacheUrl: false,
   components: {
     'amp-install-serviceworker': '0.1',
     'amp-consent': '0.1',
@@ -47,8 +48,9 @@ const apiResponsePassAll = {
 const apiResponseFailAll = {
   status: 'ok',
   redirected: true,
-  url: 'http://example.com',
+  url: 'http://www-test.cdn.ampproject.org/c/s/www.test/',
   isAmp: true,
+  isCacheUrl: true,
   components: {
     'amp-experiment': '0.1',
     'amp-access': '0.1',
@@ -97,6 +99,7 @@ const apiResponseInfoBoilerplate = {
   redirected: true,
   url: 'http://example.com',
   isAmp: true,
+  isCacheUrl: false,
   components: {},
   data: {
     boilerplateisremoved: {
@@ -110,6 +113,7 @@ const apiResponseNoAmp = {
   redirected: true,
   url: 'http://example.com',
   isAmp: false,
+  isCacheUrl: false,
 };
 
 const apiResponseError = {
