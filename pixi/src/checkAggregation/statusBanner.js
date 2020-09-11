@@ -29,9 +29,6 @@ const getStatusId = async (
     if (!linter.isAmp) {
       return 'no-amp';
     }
-    if (!linter.isValid) {
-      return 'invalid-amp';
-    }
 
     // We need to check all promises for general error
     // (promise can be rejected or error is set in result)
@@ -46,6 +43,10 @@ const getStatusId = async (
       safeBrowsingPromise,
       mobileFriendlinessPromise,
     ]);
+
+    if (!linter.isValid) {
+      return 'invalid-amp';
+    }
 
     if (
       linter.error ||
