@@ -39,8 +39,9 @@ export default class RecommendationsView {
       this.container.removeChild(items[i]);
     }
 
-    for (let i = 1; i < this.filter.children.length; i++) {
-      this.filter.removeChild(this.filterPills[i]);
+    const length = this.filter.children.length;
+    for (let i = 1; i < length; i++) {
+      this.filter.removeChild(this.filter.lastChild);
     }
   }
 
