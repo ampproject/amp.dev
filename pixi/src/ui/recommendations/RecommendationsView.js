@@ -70,11 +70,15 @@ export default class RecommendationsView {
 
       recommendation.style = null;
       recommendation.id = `recommendation-${value.id}`;
+      header.id = `header-${value.id}`;
+      body.id = `body-${value.id}`;
 
-      header.setAttribute(
-        'on',
-        `tap:recommendation-${value.id}.toggleClass(class=expanded)`
-      );
+      header.addEventListener('click', () => {
+        const isExpanded = recommendation.classList.toggle('expanded');
+        header.setAttribute('aria-expanded', String(isExpanded));
+      });
+      header.setAttribute('aria-controls', body.id);
+      body.setAttribute('aria-labelledby', header.id);
 
       title.innerHTML = marked(value.title);
       body.innerHTML = marked(value.body);
