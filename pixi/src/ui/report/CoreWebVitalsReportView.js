@@ -24,17 +24,27 @@ class WeightedScale {
   constructor(container) {
     this.container = container;
     this.bars = container.querySelectorAll('.ap-a-pixi-scale-chart-bar');
-    this.pitch = container.querySelector('.ap-a-pixi-scale-chart-pitch');
+    this.indicator = container.querySelector(
+      '.ap-a-pixi-scale-chart-indicator'
+    );
   }
 
   render(data, unit) {
-    this.pitch.style.left = `${Math.min(
+    const score = Math.min(
       100,
       (data.numericValue / data.proportion.slow) * 100
-    )}%`;
-    this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
-      unit.digits
-    )} ${unit.name}`;
+    );
+    this.indicator.style.left = `${Math.round(score)}%`;
+    this.indicator.textContent = `${(
+      data.numericValue / unit.conversion
+    ).toFixed(unit.digits)} ${unit.name}`;
+
+    this.indicator.classList.add(data.category.toLowerCase());
+    if (score < 40) {
+      this.indicator.classList.add('inversed');
+    } else if (score > 100) {
+      this.indicator.classList.add('max');
+    }
 
     for (const bar of this.bars) {
       const label = bar.querySelector('span');
@@ -56,7 +66,6 @@ class SimpleScale {
     this.container = container;
     this.bar = container.querySelector('.ap-a-pixi-scale-chart-bar');
     this.label = this.bar.querySelector('span');
-    this.pitch = container.querySelector('aside');
   }
 
   render(data) {
@@ -128,12 +137,17 @@ class CoreWebVitalView {
     this.toggleLoading(false);
   }
 
+  renderError() {
+    this.container.parentNode.classList.add('error');
+  }
+
   setRecommendationStatus(hasStatus, text) {
     this.recommendations.textContent = text;
     this.container.classList.toggle('has-status', hasStatus);
   }
 
   reset() {
+    this.container.parentNode.classList.remove('error');
     this.container.classList.remove(...Object.keys(CATEGORIES));
     this.category.textContent = i18n.getText('status.analyzing');
     this.score.textContent = i18n.getText('status.analyzing');
@@ -190,16 +204,16 @@ export default class CoreWebVitalsReportView {
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
       const metric = this.getMetric(results, coreWebVitalView);
-      if (metric) {
-        const cacheMetric = this.getMetric(
-          this.getPageExperience(cacheReport),
-          coreWebVitalView
-        );
-        coreWebVitalView.render(metric, cacheMetric);
+      if (!metric) {
+        coreWebVitalView.renderError();
         continue;
       }
 
-      // TODO: show no data
+      const cacheMetric = this.getMetric(
+        this.getPageExperience(cacheReport),
+        coreWebVitalView
+      );
+      coreWebVitalView.render(metric, cacheMetric);
     }
 
     this.toggleLoading(false);

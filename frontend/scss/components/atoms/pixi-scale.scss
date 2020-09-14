@@ -122,10 +122,63 @@
         border: 2px solid color('white');
       }
     }
+
+    &-indicator {
+      position: absolute;
+      left: 0;
+      top: -30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 0;
+      font-size: 14px;
+      white-space: nowrap;
+      font-weight: bold;
+      color: color('malachite');
+      transform: translateX(7px);
+
+      &:after {
+        content: '';
+        width: 0;
+        height: 0;
+        margin: 0 0 0 6px;
+        border: 7.5px solid transparent;
+        border-bottom: 0;
+        border-top-color: currentcolor;
+      }
+
+      &.average {
+        color: color('buttercup');
+      }
+
+      &.slow {
+        color: color('red');
+      }
+
+      &.inversed {
+        flex-direction: row-reverse;
+        transform: translateX(-7px);
+
+        &:after {
+          margin: 0 6px 0 0;
+        }
+      }
+
+      &.max {
+        transform: translateX(0);
+
+        &:after {
+          border: 7.5px solid transparent;
+          border-right: 0;
+          border-left-color: color('red');
+        }
+      }
+    }
   }
 
   .loading &, .pristine & {
-    &-chart-bar {
+    &-chart-bar,
+    &-chart-indicator {
       opacity: 0;
     }
   }

@@ -52,7 +52,11 @@ const directMobileFriendlinessRecommendations = {
 const addDirectRecommendations = (result, checks, mapping) => {
   for (const [check, status] of Object.entries(checks)) {
     if (status === false && mapping[check]) {
-      result.push(mapping[check]);
+      const recommendation = {id: mapping[check]};
+      if (checks.descriptions && checks.descriptions[check]) {
+        recommendation.description = checks.descriptions[check];
+      }
+      result.push(recommendation);
     }
   }
 };
@@ -76,7 +80,7 @@ const getFieldOrLabDataCategory = (pageExperienceChecks, metricName) => {
   );
 };
 
-export default async function getRecommendationIds(
+export default async function getRecommendations(
   pageExperiencePromise,
   safeBrowsingPromise,
   linterPromise,
@@ -94,7 +98,7 @@ export default async function getRecommendationIds(
     mobileFriendlinessPromise,
   ]);
 
-  const result = [...fixedRecommendations];
+  const result = fixedRecommendations.map((id) => ({id}));
 
   addDirectRecommendations(result, linter, directLinterRecommendations);
   addDirectRecommendations(
@@ -115,11 +119,11 @@ export default async function getRecommendationIds(
 
   if (linter.boilerplateIsRemoved === false) {
     if (linter.updateOptimizerForBoilerplateRemoval) {
-      result.push('upgrade-amp-optimizer');
+      result.push({id: 'upgrade-amp-optimizer'});
     } else if (
       getFieldOrLabDataCategory(pageExperience, 'lcp') !== Category.FAST
     ) {
-      result.push('amp-boilerplate-removal');
+      result.push({id: 'amp-boilerplate-removal'});
     }
   }
 
@@ -127,8 +131,10 @@ export default async function getRecommendationIds(
     linter.noDynamicLayoutExtensions === false &&
     getFieldOrLabDataCategory(pageExperience, 'cls') !== Category.FAST
   ) {
-    result.push('dynamic-layout-extensions');
+    result.push({id: 'dynamic-layout-extensions'});
   }
 
-  return result.filter((item, i, ar) => ar.indexOf(item) === i);
+  return result.filter(
+    (item, i, ar) => ar.findIndex((checkItem) => checkItem.id === item.id) === i
+  );
 }

@@ -33,8 +33,13 @@
       cursor: pointer;
 
       @media (min-width: 768px) {
-        padding: 16px 36px;
+        padding: 16px 25px;
       }
+
+      @media (min-width: 1024px) {
+        padding: 16px 35px;
+      }
+
 
       &:first-child {
         border-top-left-radius: 4px;
@@ -59,8 +64,32 @@
     display: none;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
 
+    &-error-label {
+      position: absolute;
+      left: 0;
+      top: 230px;
+      display: none;
+      justify-content: center;
+      width: 100%;
+
+      label {
+        max-width: 700px;
+        padding: 15px;
+        text-align: center;
+      }
+    }
+
     &.active {
       display: block;
+    }
+
+
+    &.error {
+      position: relative;
+
+      #{$primary-checks}-data-error-label {
+        display: flex;
+      }
     }
   }
 }

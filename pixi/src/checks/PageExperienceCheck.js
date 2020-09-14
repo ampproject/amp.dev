@@ -86,11 +86,11 @@ export default class PageExperienceCheck {
     return data;
   }
 
-  getAuditScore(audits, testName) {
+  addScoreCheck(result, resultName, audits, testName) {
     if (audits && audits[testName] && !Number.isNaN(audits[testName].score)) {
-      return audits[testName].score;
+      result.data[resultName] = audits[testName].score === 1;
+      result.descriptions[resultName] = audits[testName].description;
     }
-    return -1;
   }
 
   isFastData(metrics, checkId) {
@@ -101,30 +101,27 @@ export default class PageExperienceCheck {
     return metrics[checkId].data.category === Category.FAST;
   }
 
-  createReportData(apiResultOrigin) {
-    const fieldMetricsOrigin = apiResultOrigin.loadingExperience.metrics;
-    const auditsOrigin = apiResultOrigin.lighthouseResult.audits;
-    const fieldData = !fieldMetricsOrigin
+  createReportData(apiResult) {
+    const fieldMetrics = apiResult.loadingExperience.metrics;
+    const audits = apiResult.lighthouseResult.audits;
+    const fieldData = !fieldMetrics
       ? undefined
       : {
           lcp: {
             unit: UNIT_SEC,
             data: this.createFieldData(
-              fieldMetricsOrigin,
+              fieldMetrics,
               'LARGEST_CONTENTFUL_PAINT_MS'
             ),
           },
           fid: {
             unit: UNIT_MS,
-            data: this.createFieldData(
-              fieldMetricsOrigin,
-              'FIRST_INPUT_DELAY_MS'
-            ),
+            data: this.createFieldData(fieldMetrics, 'FIRST_INPUT_DELAY_MS'),
           },
           cls: {
             unit: UNIT_DEC,
             data: this.createFieldData(
-              fieldMetricsOrigin,
+              fieldMetrics,
               'CUMULATIVE_LAYOUT_SHIFT_SCORE'
             ),
           },
@@ -133,25 +130,19 @@ export default class PageExperienceCheck {
     const labData = {
       lcp: {
         unit: UNIT_SEC,
-        data: this.createLabData(
-          auditsOrigin['largest-contentful-paint'],
-          'lcp'
-        ),
+        data: this.createLabData(audits['largest-contentful-paint'], 'lcp'),
       },
       tbt: {
         unit: UNIT_MS,
-        data: this.createLabData(auditsOrigin['total-blocking-time'], 'tbt'),
+        data: this.createLabData(audits['total-blocking-time'], 'tbt'),
       },
       cls: {
         unit: UNIT_DEC,
-        data: this.createLabData(
-          auditsOrigin['cumulative-layout-shift'],
-          'cls'
-        ),
+        data: this.createLabData(audits['cumulative-layout-shift'], 'cls'),
       },
     };
 
-    return {
+    const result = {
       data: {
         pageExperience: {
           fieldData: fieldData
@@ -172,20 +163,39 @@ export default class PageExperienceCheck {
           },
           source: fieldData ? 'fieldData' : 'labData',
         },
-        textCompression:
-          this.getAuditScore(auditsOrigin, 'uses-text-compression') === 1,
-        fastServerResponse:
-          this.getAuditScore(auditsOrigin, 'server-response-time') === 1,
-        usesAppropriatelySizedImages:
-          this.getAuditScore(auditsOrigin, 'uses-responsive-images') === 1,
-        usesOptimizedImages:
-          this.getAuditScore(auditsOrigin, 'uses-optimized-images') === 1,
-        usesWebpImages:
-          this.getAuditScore(auditsOrigin, 'uses-webp-images') === 1,
-        fastFontDisplay: this.getAuditScore(auditsOrigin, 'font-display') === 1,
-        minifiedCss: this.getAuditScore(auditsOrigin, 'unminified-css') === 1,
       },
+      descriptions: {},
     };
+
+    this.addScoreCheck(
+      result,
+      'textCompression',
+      audits,
+      'uses-text-compression'
+    );
+    this.addScoreCheck(
+      result,
+      'fastServerResponse',
+      audits,
+      'server-response-time'
+    );
+    this.addScoreCheck(
+      result,
+      'usesAppropriatelySizedImages',
+      audits,
+      'uses-responsive-images'
+    );
+    this.addScoreCheck(
+      result,
+      'usesOptimizedImages',
+      audits,
+      'uses-optimized-images'
+    );
+    this.addScoreCheck(result, 'usesWebpImages', audits, 'uses-webp-images');
+    this.addScoreCheck(result, 'fastFontDisplay', audits, 'font-display');
+    this.addScoreCheck(result, 'minifiedCss', audits, 'unminified-css');
+
+    return result;
   }
 
   async fetchJson(pageUrl) {
