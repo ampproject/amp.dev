@@ -24,17 +24,27 @@ class WeightedScale {
   constructor(container) {
     this.container = container;
     this.bars = container.querySelectorAll('.ap-a-pixi-scale-chart-bar');
-    this.pitch = container.querySelector('.ap-a-pixi-scale-chart-pitch');
+    this.indicator = container.querySelector(
+      '.ap-a-pixi-scale-chart-indicator'
+    );
   }
 
   render(data, unit) {
-    this.pitch.style.left = `${Math.min(
+    const score = Math.min(
       100,
       (data.numericValue / data.proportion.slow) * 100
-    )}%`;
-    this.pitch.textContent = `${(data.numericValue / unit.conversion).toFixed(
-      unit.digits
-    )} ${unit.name}`;
+    );
+    this.indicator.style.left = `${Math.round(score)}%`;
+    this.indicator.textContent = `${(
+      data.numericValue / unit.conversion
+    ).toFixed(unit.digits)} ${unit.name}`;
+
+    this.indicator.classList.add(data.category.toLowerCase());
+    if (score < 40) {
+      this.indicator.classList.add('inversed');
+    } else if (score > 100) {
+      this.indicator.classList.add('max');
+    }
 
     for (const bar of this.bars) {
       const label = bar.querySelector('span');
@@ -56,7 +66,6 @@ class SimpleScale {
     this.container = container;
     this.bar = container.querySelector('.ap-a-pixi-scale-chart-bar');
     this.label = this.bar.querySelector('span');
-    this.pitch = container.querySelector('aside');
   }
 
   render(data) {
