@@ -103,6 +103,16 @@ creation:
       height: 3
     formats:
       - stories
+  - name: CleverPush
+    description: CleverPush
+    url: https://cleverpush.com/
+    type: CleverPush lets you build feature-rich stories in an easy to use WYSIWYG editor and use them on your own domain.
+    image:
+      src: /static/img/tools/cleverpush.svg
+      width: 1792
+      height: 495
+    formats:
+      - stories
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
