@@ -91,6 +91,7 @@ class CoreWebVitalView {
       this.scale = new WeightedScale(container);
     }
 
+    this.performanceCategory = null;
     this.category = this.container.querySelector(
       '.ap-m-pixi-primary-metric-category'
     );
@@ -111,9 +112,9 @@ class CoreWebVitalView {
     this.scale.render(data, unit);
 
     const responseCategory = data.category.toLowerCase();
-    const displayCategory = CATEGORIES[responseCategory];
+    this.performanceCategory = CATEGORIES[responseCategory];
     this.container.classList.add(responseCategory);
-    this.category.textContent = displayCategory;
+    this.category.textContent = this.performanceCategory;
 
     const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;
@@ -141,9 +142,23 @@ class CoreWebVitalView {
     this.container.parentNode.classList.add('error');
   }
 
-  setRecommendationStatus(hasStatus, text) {
-    this.recommendations.textContent = text;
-    this.container.classList.toggle('has-status', hasStatus);
+  setRecommendationStatus(count) {
+    this.container.classList.toggle('has-status', !!count);
+    if (!count) {
+      if (this.performanceCategory === CATEGORIES.fast) {
+        this.recommendations.textContent = i18n.getText('status.nothingToDo');
+      } else {
+        this.recommendations.textContent = i18n.getText('status.fileAnIssue');
+      }
+    } else if (count === 1) {
+      this.recommendations.textContent = `${count} ${i18n.getText(
+        'status.recommendation'
+      )}`;
+    } else {
+      this.recommendations.textContent = `${count} ${i18n.getText(
+        'status.recommendations'
+      )}`;
+    }
   }
 
   reset() {

@@ -108,20 +108,9 @@ export default class RecommendationsView {
 
     for (const key of Object.keys(metricUis)) {
       const metricUi = metricUis[key];
-      const count = tagIdCounts[metricUi.metric];
-      if (!count) {
-        metricUi.setRecommendationStatus(false, i18n.getText('status.none'));
-      } else if (count === 1) {
-        metricUi.setRecommendationStatus(
-          true,
-          `${count} ${i18n.getText('status.recommendation')}`
-        );
-      } else {
-        metricUi.setRecommendationStatus(
-          true,
-          `${count} ${i18n.getText('status.recommendations')}`
-        );
-      }
+      const metricToUse = metricUi.metric === 'tbt' ? 'fid' : metricUi.metric;
+      const count = tagIdCounts[metricToUse];
+      metricUi.setRecommendationStatus(count);
     }
 
     this.pill.classList.add('filtered');
