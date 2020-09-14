@@ -19,6 +19,8 @@ const CATEGORIES = {
   average: 'Needs Improvement',
   slow: 'Poor',
 };
+const FILE_ISSUE_URL =
+  'https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&template=page-experience.md&title=Page+experience+issue';
 
 class WeightedScale {
   constructor(container) {
@@ -104,6 +106,12 @@ class CoreWebVitalView {
     this.recommendations = this.container.querySelector(
       '.ap-m-pixi-primary-metric-recommendations'
     );
+    this.defaultAttrs = {
+      on: this.recommendations.getAttribute('on'),
+      text: this.recommendations.getAttribute('aria-label'),
+    };
+    this.recommendations.removeAttribute('on');
+    this.recommendations.removeAttribute('aria-label');
   }
 
   render(metric, cacheMetric) {
@@ -147,10 +155,22 @@ class CoreWebVitalView {
     if (!count) {
       if (this.performanceCategory === CATEGORIES.fast) {
         this.recommendations.textContent = i18n.getText('status.nothingToDo');
-      } else {
-        this.recommendations.textContent = i18n.getText('status.fileAnIssue');
+        return;
       }
-    } else if (count === 1) {
+      const fileIssueText = i18n.getText('status.fileAnIssue');
+      this.recommendations.setAttribute('aria-label', fileIssueText);
+      this.recommendations.setAttribute(
+        'on',
+        `tap:AMP.navigateTo(url="${FILE_ISSUE_URL}", target="_blank")`
+      );
+      this.recommendations.setAttribute('role', 'button');
+      this.recommendations.textContent = fileIssueText;
+      return;
+    }
+    this.recommendations.setAttribute('aria-label', this.defaultAttrs.text);
+    this.recommendations.setAttribute('on', this.defaultAttrs.on);
+    this.recommendations.setAttribute('role', 'button');
+    if (count === 1) {
       this.recommendations.textContent = `${count} ${i18n.getText(
         'status.recommendation'
       )}`;
@@ -168,6 +188,9 @@ class CoreWebVitalView {
     this.score.textContent = i18n.getText('status.analyzing');
     this.improvement.textContent = i18n.getText('status.calculating');
     this.recommendations.textContent = i18n.getText('status.analyzing');
+    this.recommendations.removeAttribute('on');
+    this.recommendations.removeAttribute('aria-label');
+    this.recommendations.removeAttribute('role');
 
     this.toggleLoading(true);
   }
