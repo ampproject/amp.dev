@@ -28,7 +28,7 @@ import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
-import getRecommendationIds from '../checkAggregation/recommendations.js';
+import getRecommendations from '../checkAggregation/recommendations.js';
 import getStatusId from '../checkAggregation/statusBanner';
 
 const totalNumberOfChecks =
@@ -77,7 +77,7 @@ export default class PageExperience {
     const safeBrowsingPromise = this.runSafeBrowsingCheck(pageUrl);
     const mobileFriendlinessPromise = this.runMobileFriendlinessCheck(pageUrl);
 
-    const recommendationIdsPromise = getRecommendationIds(
+    const recommendationsPromise = getRecommendations(
       pageExperiencePromise,
       safeBrowsingPromise,
       linterPromise,
@@ -90,13 +90,13 @@ export default class PageExperience {
       linterPromise,
       mobileFriendlinessPromise,
       safeBrowsingPromise,
-      recommendationIdsPromise
+      recommendationsPromise
     );
 
-    const recommendationIds = await recommendationIdsPromise;
-    if (recommendationIds.length > 0) {
+    const recommendations = await recommendationsPromise;
+    if (recommendations.length > 0) {
       this.recommendationsView.render(
-        recommendationIds,
+        recommendations,
         this.reportViews.pageExperience.coreWebVitalViews
       );
     }
@@ -108,13 +108,13 @@ export default class PageExperience {
     linterPromise,
     mobileFriendlinessPromise,
     safeBrowsingPromise,
-    recommendationIdsPromise
+    recommendationsPromise
   ) {
     try {
       // remember the current instance to ensure the promises will not modify a future instance
       const statusView = this.statusIntroView;
       const statusBannerIdPromise = getStatusId(
-        recommendationIdsPromise,
+        recommendationsPromise,
         pageExperiencePromise,
         safeBrowsingPromise,
         linterPromise,
@@ -134,11 +134,7 @@ export default class PageExperience {
       safeBrowsingPromise.then(() => {
         statusView.increaseFinishedChecks(SafeBrowsingCheck.getCheckCount());
       });
-      statusView.render(
-        statusBannerIdPromise,
-        recommendationIdsPromise,
-        pageUrl
-      );
+      statusView.render(statusBannerIdPromise, recommendationsPromise, pageUrl);
       await statusBannerIdPromise;
     } catch (error) {
       console.error('unable to get page status', error);
@@ -176,6 +172,7 @@ export default class PageExperience {
 
     this.reportViews.pageExperience.render(report, cacheReport);
     return {
+      descriptions: report.descriptions,
       pageExperienceCached: (cacheReport.data || {}).pageExperience,
       ...report.data,
     };

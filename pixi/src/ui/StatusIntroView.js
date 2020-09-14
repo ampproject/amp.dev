@@ -51,14 +51,14 @@ export default class StatusIntroView {
   /**
    * Load and render banner with the given id
    * @param {statusBannerIdPromise} The promise for the banner id.
-   * @param {recommendationIdsPromise} The promise for the recommendations.
+   * @param {recommendationsPromise} The promise for the recommendations.
    * @param {pageUrl} The URL of the checked page to be used in the share dialog.
    */
-  async render(statusBannerIdPromise, recommendationIdsPromise, pageUrl) {
+  async render(statusBannerIdPromise, recommendationsPromise, pageUrl) {
     this.resetView();
     this.container.classList.add('loading');
     let hideFixButton = true;
-    recommendationIdsPromise.then((ids) => {
+    recommendationsPromise.then((ids) => {
       hideFixButton = ids.length <= fixedRecommendations;
     });
 

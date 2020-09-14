@@ -45,9 +45,9 @@ export default class RecommendationsView {
     }
   }
 
-  render(recommendationIds, metricUis) {
+  render(recommendationList, metricUis) {
     this.container.classList.remove('pristine');
-    const recommendations = i18n.getSortedRecommendations(recommendationIds);
+    const recommendations = i18n.getSortedRecommendations(recommendationList);
     const tagIdCounts = {};
 
     this.recommendationNodes = [];
