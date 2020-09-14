@@ -17,7 +17,7 @@
   }
 
   & + & {
-    border-top: solid 2px color('mercury');
+    border-top: solid 1px color('boulder');
   }
 
   &:nth-child(2) {
@@ -62,7 +62,7 @@
 
       &-status {
         display: block;
-        color: color('silver');
+        color: color('boulder');
 
         .fast & {
           color: color('malachite');

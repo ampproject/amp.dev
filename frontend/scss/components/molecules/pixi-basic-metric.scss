@@ -10,7 +10,7 @@
   padding: 15px 20px;
   font-size: 16px;
   background: color('white');
-  border-bottom: solid 2px color('mercury');
+  border-bottom: solid 2px color('boulder');
 
   &:last-child {
     border-bottom: 0;
@@ -29,14 +29,13 @@
     padding: 25px 20px 25px 35px;
   }
 
-
   &-title {
     margin: 0;
     font-size: 18px;
   }
 
   &-status {
-    color: color('silver');
+    color: color('boulder');
   }
 
   &.passed {
