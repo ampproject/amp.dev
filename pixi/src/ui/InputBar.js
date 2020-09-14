@@ -23,15 +23,9 @@ export default class InputBar {
     this.label = this.container.querySelector('#input-label');
 
     this.submit.addEventListener('click', callback);
-    this.field.addEventListener('keyup', (e) => {
+    this.field.addEventListener('input', (e) => {
       if (e.keyCode === 13 && !this.submit.classList.contains('loading')) {
         callback();
-      }
-
-      // Ignore tab key which only happens on focus because
-      // amp-script does not consider tabbing to be a user-activation.
-      if (e.keyCode === 9) {
-        return;
       }
 
       this.toggleValid(this.isValidUrl(this.field.value));
