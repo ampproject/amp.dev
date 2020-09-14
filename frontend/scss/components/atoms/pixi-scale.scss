@@ -172,6 +172,8 @@
       }
 
       &.max {
+        transform: translateX(0);
+
         &:after {
           border: 7.5px solid transparent;
           border-right: 0;
