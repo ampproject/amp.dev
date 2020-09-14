@@ -24,8 +24,13 @@ export default class InputBar {
 
     this.submit.addEventListener('click', callback);
     this.field.addEventListener('keyup', (e) => {
-      if (e.keyCode == 13 && !this.submit.classList.contains('loading')) {
+      if (e.keyCode === 13 && !this.submit.classList.contains('loading')) {
         callback();
+      }
+
+      // Ignore tab key.
+      if (e.keyCode === 9) {
+        return;
       }
 
       this.toggleValid(this.isValidUrl(this.field.value));
