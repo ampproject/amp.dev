@@ -144,22 +144,15 @@
         margin: 0 0 0 6px;
         border: 7.5px solid transparent;
         border-bottom: 0;
-        border-top-color: color('malachite');
+        border-top-color: currentcolor;
       }
 
       &.average {
         color: color('buttercup');
-
-        &:after {
-          border-top-color: color('buttercup');
-        }
       }
 
       &.slow {
         color: color('red');
-        &:after {
-          border-top-color: color('red');
-        }
       }
 
       &.inversed {
