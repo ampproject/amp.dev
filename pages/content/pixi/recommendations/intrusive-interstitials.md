@@ -2,9 +2,10 @@
 $title: Ensure there are no intrusive interstitials
 $order: 900
 tags:
-- intrusiveInterstitials
+  - intrusiveInterstitials
 ---
-We cannot automaticallly check this, but it is important to manually
+
+We cannot automatically check this, but it is important to manually
 confirm your site has no intrusive interstitials. These can frustrate
 users because they are unable to easily access the content that they
 were expecting when they navigated to your page. Please [manually
