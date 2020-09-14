@@ -32,7 +32,7 @@
   &-container {
     display: flex;
     height: 66px;
-    padding: 12px;
+    padding: 10px;
     border-radius: 6px;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
     background: color('white');
@@ -68,15 +68,19 @@
     &-field {
       height: 100%;
       width: 100%;
-      padding: 0 8px;
+      padding: 0 10px;
       border: 0;
       border-radius: 4px 0 0 4px;
       font-family: Poppins, sans-serif;
       font-size: 18px;
       font-weight: bold;
 
+      @media (min-width: 720px) {
+        padding: 0 15px;
+      }
+
       @media (min-width: 1024px) {
-        padding: 0 25px;
+        padding: 0 20px;
         font-size: 22px;
       }
     }

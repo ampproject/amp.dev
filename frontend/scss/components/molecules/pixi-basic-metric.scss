@@ -7,7 +7,7 @@
   $basic-metric: &;
   display: flex;
   justify-content: space-between;
-  padding: 15px 25px;
+  padding: 15px 20px;
   font-size: 16px;
   background: color('white');
   border-bottom: solid 2px color('mercury');
@@ -24,6 +24,11 @@
     border-bottom: 0;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
   }
+
+  @media (min-width: 1024px) {
+    padding: 25px 20px 25px 35px;
+  }
+
 
   &-title {
     margin: 0;

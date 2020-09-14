@@ -33,8 +33,13 @@
       cursor: pointer;
 
       @media (min-width: 768px) {
-        padding: 16px 36px;
+        padding: 16px 25px;
       }
+
+      @media (min-width: 1024px) {
+        padding: 16px 35px;
+      }
+
 
       &:first-child {
         border-top-left-radius: 4px;
