@@ -4,121 +4,40 @@ $order: 7
 formats:
   - websites
 author:
-  - CrystalOnScript
   - morss
 contributors:
+  - CrystalOnScript
   - fstanis
-description: For web experiences requiring a high amount of customization AMP has created amp-script, a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
+description: A guide to using amp-script, an AMP component that allows you to write custom JavaScript
 ---
 
-AMP strives to provide a consistently great experience to all users across the web by encouraging the use of high-functioning and seamless components that are ready to go out of the box.
+## What is amp-script?
 
-Some web experiences require a high amount of customization that goes beyond the state binding capabilities of [`amp-bind`](../../../documentation/components/reference/amp-bind.md?format=websites) and the dynamic data retrieval and templating functionality of [`amp-list`](../../../documentation/components/reference/amp-list.md?format=websites) and [`amp-mustache`](../../../documentation/components/reference/amp-mustache.md?format=websites). For those one-off cases, AMP has created [`<amp-script>`](../../../documentation/components/reference/amp-script.md?format=websites), a component that allows the use of arbitrary JavaScript on your AMP page without affecting the page's overall performance.
+`amp-script` is a bit of an outlier among AMP components. Most AMP components provide the logic and functionality that custom JavaScript usually does, so you don't need to write your own JavaScript. In contrast, `amp-script`'s purpose is to let you run your own JavaScript, but in a way that keeps that JavaScript from breaking AMP's performance guarantees. This guide provides background on this component and best practices for its use.
 
-# Inserting custom JavaScript
 
-AMP pages support custom JavaScript through the `<amp-script>` component. The example below demonstrates how to use `amp-script` with a JavaScript file loaded from a URL:
+## Why was amp-script created?
 
-```html
-<!doctype html>
-<html ⚡>
-<head>
-  ...
-  <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
-<body>  
-  ...
-  <amp-script layout="container" src="https://example.com/myfile.js">
-    <p>Initial content that can be modified from JavaScript</p>
-  </amp-script>
-  ...
-</body>
-</html>
-```
+When AMP was created, its validation rules precluded AMP developers from writing any of their own JavaScript. After all, AMP was created to make it easier to build faster, more reliable websites - and excessive JavaScript is a common speed culprit. Not only does JavaScript take time to load, parse, and execute, but JavaScript in any given browser tab runs in a single thread. This means that if a JavaScript task is running, and the user takes an action that fires an event handler, that handler can't execute until that task is finished. This can make the page unresponsive. Worse still, the browser itself may be unable to change the UI until the task is done.
 
-The `<amp-script>` component registers a [Web Worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) to run on a separate thread than the main page. The Web Worker is given its own copy of the DOM through `amp-script` use of [Worker DOM](https://github.com/ampproject/worker-dom). This allows the Web Worker to use JavaScript libraries, such as [React](https://reactjs.org/) and [jQuery](https://jquery.com/), without modification.
+[Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers), which have existed [since Firefox 3.5](https://caniuse.com/?search=worker), have long offered a way out. These workers run in a separate thread. This is possible because they don't have access to the DOM or the `window` object, and each worker runs in its own global scope. Thus they can't interfere with each other's work or with mutations caused by code in the main thread. They can only communicate with the main thread and with one another via [messages containing objects](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage). Workers offer a path to a multithreaded Web, to encapsulating JavaScript in a sandbox where it can't block the UI!
 
-The `amp-script` component sends messages between the Web Worker thread and the main thread, causing any changes the user makes on the main DOM to be echoed on the Web Worker's false DOM. In turn, the Web Worker can then update the false DOM, which is reflected on the main DOM.
 
-## Custom scripts caching
+## How does amp-script work?
 
-The [AMP cache](../../../documentation/guides-and-tutorials/learn/amp-caches-and-cors/how_amp_pages_are_cached.md) serves custom JavaScript files inserted with `<amp-script>` the same way it serves AMP component scripts, which ensures that any custom JavaScript will not slow the speed of an AMP document.
+Thus workers seem like a perfect way to run custom JavaScript in AMP. Unfortunately, they don't have access to the DOM. To fill this gap, the AMP team created an open-source library called [WorkerDOM](https://github.com/ampproject/worker-dom/). WorkerDOM copies the DOM to a virtual DOM and makes this copy available to the worker. WorkerDOM also recreates a subset of the standard DOM API. When the worker makes changes to the virtual DOM, WorkerDOM recreates those changes in the real DOM. This lets the Worker manipulate the DOM and make changes on the page using standard techniques.
 
-The AMP cache proxies the JavaScript files and then delivers them. Users can expect the same performance experience from a page using `<amp-script>` as a page that doesn't include it.
+(Note that this synchronizing only goes in one direction. If you modify the DOM in the main thread, `amp-script` won't know about it. Thus it's not advisable to use `amp-script` on an area that, say, your own JavaScript could modify in an invalid AMP context.)
 
-# Using `<amp-script>`
+`amp-script` is essentially a wrapper around WorkerDOM that makes it usable in AMP. Some of its functionality is provided by WorkerDOM, and the rest comes from [the component itself](https://github.com/ampproject/amphtml/blob/master/extensions/amp-script/0.1/amp-script.js). For simplicity, henceforth we'll simply refer to `amp-script`.
 
-To guarantee AMP pages will load consistently fast and with smooth UIs, limitations exist on `<amp-script>`.
 
-## Initialization
+## What can amp-script do?
 
-JavaScript inside the Web Worker allows minimal change to the DOM on load. Changes allowed during this phase are:
+Workers can use JavaScript just as it's used elsewhere in the browser. WorkerDOM recreates many commonly used DOM APIs and makes them available for your use. It also supports common Web APIs like `Fetch` and `Canvas`. You can assign handlers for browser events in the usual way.
 
-*   Registering event handlers.
-*   Splitting a TextNode into multiple TextNodes, to allow for frameworks that require it.
+However, `amp-script` does not support the entire DOM API or Web API, as this would make its own JavaScript too large and slow. See [the documentation](https://amp.dev/documentation/components/amp-script/#supported-apis) for details, and see [these samples](https://amp.dev/documentation/examples/components/amp-script/) to see `amp-script` in use.
 
-The DOM inside `<amp-script>` tags should be almost identical before and after initialization.
+A handful of synchronous DOM API methods are replaced with alternatives that return a Promise. For example,  `getBoundingClientRect()` is replaced by `getBoundingClientRectAsync()`.
 
-For example, if starting with the code below:
-```html
-<text> Hello world </text>
-```
-Worker DOM permits minor changes in structure but not content:
-
-```html
- <text>Hello </text><text>world</text>
-```
-
-## DOM manipulation
-
-For user experience and security reasons, `amp-script` enforces DOM manipulation restrictions.
-
-### User interaction
-
-When a user interacts with elements wrapped inside an `<amp-script>` component, your custom JavaScript must return DOM manipulations quickly when needed. By default, changes to the DOM are permitted **less than one second** from the initial interaction. A notable exception is when your code must retrieve data from the network via `fetch`. Here DOM changes can be requested after the response is returned to the user and for **less than one second** afterward. If a script mutates the DOM outside of a permitted window, this will result in a fatal error and the `<amp-script>` component will terminate the Web Worker. A terminated `<amp-script>` component will not run again.
-
-### Unprompted changes
-
-There is no user interaction required to manipulate the DOM if the `<amp-script>` component has a fixed height.
-
-## Script size
-
-AMP enforces a limit of 150 kilobytes of custom JavaScript on each page. This limit is shared among all `<amp-script>` components on that page. Any external JavaScript library must be imported to each individual `<amp-script>` component.
-
-## Scope
-
-Any DOM elements the custom JavaScript files wish to interact with must be wrapped inside the `<amp-script>` component tags. This includes other AMP components. The `<amp-script>` component considers `document.body` to be the `<amp-script>` element and not the document's `<body>` element.
-
-If you were to call `document.body.appendChild(document.createElement('span'))` within the script imported into an `<amp-script>` element in the following document:
-
-```html
-<body>  
-  <p>Hello!</p>
-  <div>
-    <amp-script layout="container" src="customjs.js">
-    </amp-script>
-  </div>
-</body>
-```
-
-It would result in this:
-
-```html
-<body>  
-  <p>Hello!</p>
-  <div>
-    <amp-script layout="container" src="customjs.js">
-      <span></span>
-    </amp-script>
-  </div>
-</body>
-```
-
-## Event triggers
-
-All event triggers are allowed.
-
-## API restrictions <a name="api-restrictions"></a>
-
- Some synchronous methods are disallowed in `<amp-script>` and replaced with alternatives, such as [`Element.getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)). Because `Element.getBoundingClientRect()` could not be implemented in a Web Worker, an async alternative to it, `getBoundingClientRectAsync()`, is provided. `getBoundingClientRectAsync()` returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) instead of returning the result directly.
-
-View [this chart](https://github.com/ampproject/worker-dom/blob/main/web_compat_table.md) to see WorkerDOM supported APIs.
+In addition, to maintain AMP's performance guarantees, certain actions are restricted. Your code is discouraged from making DOM mutations that are overly distracting unless they follow a user interaction (see xxx). You can't add stylesheets or additional scripts to the DOM, and [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) is not supported.
