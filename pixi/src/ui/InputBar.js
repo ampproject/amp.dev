@@ -13,21 +13,27 @@
 // limitations under the License.
 
 /* eslint-disable max-len */
-const URL_VALIDATION_REGEX = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+const URL_VALIDATION_REGEX = /^(?:https?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w._~:/?#\[\]@!$%&'()*+,;=-]+$/gm;
 
 export default class InputBar {
   constructor(doc, callback) {
     this.container = doc.getElementById('input-bar');
     this.field = this.container.querySelector('#input-field');
     this.submit = this.container.querySelector('#input-submit');
-    this.label = this.container.querySelector('label');
+    this.label = this.container.querySelector('#input-label');
 
     this.submit.addEventListener('click', callback);
-    this.field.addEventListener('keydown', (e) => {
+    this.field.addEventListener('keyup', (e) => {
       if (e.keyCode == 13 && !this.submit.classList.contains('loading')) {
         callback();
       }
+
+      this.toggleValid(this.isValidUrl(this.field.value));
     });
+  }
+
+  isValidUrl(pageUrl) {
+    return pageUrl.match(URL_VALIDATION_REGEX) ? true : false;
   }
 
   async getPageUrl() {
@@ -47,13 +53,16 @@ export default class InputBar {
         ? value
         : `http://${value}`;
 
-    if (pageUrl.match(URL_VALIDATION_REGEX)) {
-      this.toggleError(false);
-      return pageUrl;
-    } else {
-      this.toggleError(true, 'Please enter a valid URL');
+    if (!this.isValidUrl(pageUrl)) {
       return;
     }
+
+    this.toggleError(false, '&nbsp;');
+    return pageUrl;
+  }
+
+  toggleValid(force) {
+    this.submit.disabled = !force;
   }
 
   toggleError(force, error) {

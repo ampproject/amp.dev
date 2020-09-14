@@ -6,53 +6,50 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
 {% do doc.styles.addCssFile('css/components/templates/pixi.css') %}
 
-{% set status_banners = {} %}
-{% set recommendations = {} %}
 {% set pixi = g.doc('/content/pixi/index.md', locale=doc.locale) %}
 
+{% set status_banners = {} %}
 {% set nodes = g.docs('/content/pixi/status-banners', locale=doc.locale) %}
 {% for node in nodes %}
   {% set nodeDict = {
     'title': node.title,
     'type': node.type,
+    'hideShare': node.hide_share == true,
     'body': node.body
   } %}
   {% set x=status_banners.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
+{% set recommendations = {} %}
 {% set nodes = g.docs('/content/pixi/recommendations', locale=doc.locale) %}
 {% for node in nodes %}
   {% set nodeDict = {
     'title': node.title,
+    'order': node.order,
     'tags': node.tags if node.tags else [],
     'body': node.body
   } %}
   {% set x=recommendations.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
+{% set info_texts = {} %}
+{% set nodes = g.docs('/content/pixi/info-texts', locale=doc.locale) %}
+{% for node in nodes %}
+  {% set nodeDict = {
+    'title': node.title,
+    'body': node.body
+  } %}
+  {% set x=info_texts.__setitem__(node.base, nodeDict) %}
+{% endfor %}
+
 
 <main class="ap--main ap-t-pixi">
-  <section class="ap--stage ap--container-fluid">
-    {% do doc.styles.addCssFile('css/components/organisms/stage.css') %}
-
-    <div class="ap-o-stage">
-      <div class="ap--container-fluid">
-        <div class="ap-o-stage-content">
-          <h1 class="ap-o-stage-content-headline">
-            {{ pixi.title }}
-          </h1>
-        </div>
-        <div class="ap-o-stage-image">
-          {% do doc.icons.useIcon('icons/vitals-header.svg') %}
-          <svg>
-            <use
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                xlink:href="#vitals-header"
-            ></use>
-          </svg>
-        </div>
-      </div>
-    </div>
+  <section class="ap-t-pixi-stage">
+    <h1>{{ doc.title }}</h1>
+    {% do doc.icons.useIcon('icons/page-experience.svg') %}
+    <svg>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#page-experience"></use>
+    </svg>
   </section>
 
   {% if podspec.env.name == 'production' %}
@@ -84,12 +81,6 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </div>
     </section>
   {% else %}
-    <section class="ap-t-pixi-intro">
-      <p class="ap-t-pixi-intro-text">
-        {{pixi.html|safe}}
-      </p>
-    </section>
-
     <amp-state id="pixiRecommendations">
       <script type="application/json">
       {{recommendations|jsonify|safe}}
@@ -102,68 +93,51 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     </script>
     </amp-state>
 
-    <amp-state id="pixi">
+    <amp-state id="pixiInfoTexts">
       <script type="application/json">
-      {
-        "pageUrl": "[= query.url =]",
-        "i18n": {
-          "language": "{{ doc.locale }}",
-          "staticText": {{pixi.staticText|jsonify|safe}}
-        }
-      }
+      {{info_texts|jsonify|safe}}
     </script>
     </amp-state>
 
+    <amp-state id="pixi">
+      <script type="application/json">
+        {
+          "baseUrl": "{{ podspec.base_urls.platform }}{{ doc.url.path }}",
+          "pageUrl": "[= query.url =]",
+          "i18n": {
+            "language": "{{ doc.locale }}",
+            "staticText": {{pixi.staticText|jsonify|safe}}
+          }
+        }
+      </script>
+    </amp-state>
+
     {% import '/views/partials/pixi/webpack.j2' as webpack %}
-    <amp-script class="ap-t-pixi-checks" src="{{ podspec.base_urls.platform }}{{ webpack.src }}" layout="container" sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
+    <amp-script id="pixi-checks"
+        class="ap-t-pixi-checks"
+        src="{{ podspec.base_urls.platform }}{{ webpack.src }}"
+        layout="container"
+        sandbox="allow-forms" {% if podspec.env.name == 'development' %}data-ampdevmode{% endif %}>
 
-      {% include 'views/partials/pixi/input-bar.j2' %}
-
-      {% include 'views/partials/pixi/status-banner.j2' %}
-
-      <div id="reports" class="ap-t-pixi-checks-reports pristine">
-        <section>
-          <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
-          {% include 'views/partials/pixi/primary-checks.j2' %}
-        </section>
-
-        <section>
-          <h2>Additional checks</h2>
-          <div class="ap-t-pixi-checks-basic">
-            {% with basic_metric = {
-            'id': 'safe-browsing',
-            'title': pixi.staticText.additionalChecks.safeBrowsing
-          } %}
-              {% include 'views/partials/pixi/basic-metric.j2' %}
-            {% endwith %}
-
-            {% with basic_metric = {
-            'id': 'https',
-            'title': pixi.staticText.additionalChecks.https
-          } %}
-              {% include 'views/partials/pixi/basic-metric.j2' %}
-            {% endwith %}
-
-            {% with basic_metric = {
-            'id': 'mobile-friendliness',
-            'title': pixi.staticText.additionalChecks.mobileFriendliness,
-          } %}
-              {% include 'views/partials/pixi/basic-metric.j2' %}
-            {% endwith %}
-
-            {% with basic_metric = {
-            'id': 'intrusive-interstitials',
-            'title': pixi.staticText.additionalChecks.intrusiveInterstitials,
-            'status': pixi.staticText.additionalChecks.checkManually
-          } %}
-              {% include 'views/partials/pixi/basic-metric.j2' %}
-            {% endwith %}
-          </div>
-        </section>
+      <div class="ap-t-pixi-checks-input">
+        {% include 'views/partials/pixi/input-bar.j2' %}
+        {% include 'views/partials/pixi/status-intro.j2' %}
       </div>
 
-      {% include 'views/partials/pixi/recommendations.j2' %}
+      <div id="reports" class="pristine">
+        <section class="ap-t-pixi-checks-reports">
+          <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+          {% include 'views/partials/pixi/primary-checks.j2' %}
 
+          <h2>Additional checks</h2>
+          {% include 'views/partials/pixi/basic-checks.j2' %}
+        </section>
+
+        {% include 'views/partials/pixi/recommendations.j2' %}
+      </div>
     </amp-script>
+
+    {% include 'views/partials/pixi/share-dialog.j2' %}
+
   {% endif %}
 </main>

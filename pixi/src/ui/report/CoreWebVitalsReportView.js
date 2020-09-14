@@ -19,74 +19,65 @@ const CATEGORIES = {
   average: 'Needs Improvement',
   slow: 'Poor',
 };
-
-class SimpleScale {
-  constructor(container) {
-    this.bar = container.querySelector('.ap-a-pixi-scale-bar-positive');
-    this.indicator = container.querySelector('.ap-a-pixi-scale-indicator');
-    this.value = container.querySelector('.ap-a-pixi-scale-value');
-  }
-
-  render(data, unit) {
-    this.bar.style.transform = `scale3d(${data.score}, 1, 1)`;
-
-    this.value.textContent = `${data.numericValue / unit.conversion}${
-      unit.name
-    }`;
-    this.indicator.style.marginLeft = `${data.score * 100}%`;
-    this.value.style.width = `0`;
-  }
-}
+const FILE_ISSUE_URL =
+  'https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&template=page-experience.md&title=Page+experience+issue';
 
 class WeightedScale {
   constructor(container) {
-    this.bar = {
-      positive: container.querySelector('.ap-a-pixi-scale-bar-positive'),
-      negative: container.querySelector('.ap-a-pixi-scale-bar-negative'),
-    };
-    this.pitch = {
-      positive: container.querySelector('.ap-a-pixi-scale-pitch-line-positive'),
-      negative: container.querySelector('.ap-a-pixi-scale-pitch-line-negative'),
-    };
-    this.indicator = container.querySelector('.ap-a-pixi-scale-indicator');
-    this.value = container.querySelector('.ap-a-pixi-scale-value');
+    this.container = container;
+    this.bars = container.querySelectorAll('.ap-a-pixi-scale-chart-bar');
+    this.indicator = container.querySelector(
+      '.ap-a-pixi-scale-chart-indicator'
+    );
   }
 
   render(data, unit) {
-    // Update bar to match distributions
-    this.bar.positive.style.transform = `scale3d(${data.distributions[0].proportion}, 1, 1)`;
-    this.bar.negative.style.transform = `scale3d(${data.distributions[2].proportion}, 1, 1)`;
+    const score = Math.min(
+      100,
+      (data.numericValue / data.proportion.slow) * 100
+    );
+    this.indicator.style.left = `${Math.round(score)}%`;
+    this.indicator.textContent = `${(
+      data.numericValue / unit.conversion
+    ).toFixed(unit.digits)} ${unit.name}`;
 
-    // Update pitch lines
-    this.pitch.positive.style.transform = `translateX(${
-      data.distributions[0].proportion * 100
-    }%)`;
-    this.pitch.positive.textContent = `${
-      data.distributions[0].max / unit.conversion
-    }${unit.name}`;
-
-    this.pitch.negative.style.transform = `translateX(${
-      100 - data.distributions[2].proportion * 100
-    }%)`;
-    this.pitch.negative.textContent = `${
-      data.distributions[2].min / unit.conversion
-    }${unit.name}`;
-
-    // Add a value to the scale and position in distributions
-    this.value.textContent = `${data.percentile / unit.conversion}${unit.name}`;
-    let distributionOffset = 0;
-    for (const distribution of data.distributions) {
-      if (data.percentile < distribution.max) {
-        this.value.style.width = `${
-          (data.percentile / distribution.max) * 100
-        }%`;
-        break;
-      }
-
-      distributionOffset += distribution.proportion * 100;
+    this.indicator.classList.add(data.category.toLowerCase());
+    if (score < 40) {
+      this.indicator.classList.add('inversed');
+    } else if (score > 100) {
+      this.indicator.classList.add('max');
     }
 
-    this.indicator.style.marginLeft = `${distributionOffset}%`;
+    for (const bar of this.bars) {
+      const label = bar.querySelector('span');
+      const type = bar.getAttribute('data-type');
+      const percent = Math.round(
+        (data.proportion[type] / data.proportion.slow) * 100
+      );
+
+      bar.style.width = `${percent}%`;
+      label.textContent = `${
+        data.proportion[type] / unit.conversion.toFixed(unit.digits)
+      } ${unit.name}`;
+    }
+  }
+}
+
+class SimpleScale {
+  constructor(container) {
+    this.container = container;
+    this.bar = container.querySelector('.ap-a-pixi-scale-chart-bar');
+    this.label = this.bar.querySelector('span');
+  }
+
+  render(data) {
+    const percentile = Math.round(data.proportion * 100);
+
+    this.bar.style.width = `${percentile}%`;
+    this.label.textContent = `${percentile}% passed`;
+    if (percentile < 30) {
+      this.bar.classList.add('inversed');
+    }
   }
 }
 
@@ -97,13 +88,17 @@ class CoreWebVitalView {
     this.metric = container.id.split('.')[1];
 
     if (this.type == 'fieldData') {
-      this.scale = new WeightedScale(container);
-    } else {
       this.scale = new SimpleScale(container);
+    } else {
+      this.scale = new WeightedScale(container);
     }
 
+    this.performanceCategory = null;
     this.category = this.container.querySelector(
       '.ap-m-pixi-primary-metric-category'
+    );
+    this.score = this.container.querySelector(
+      '.ap-m-pixi-primary-metric-score'
     );
     this.improvement = this.container.querySelector(
       '.ap-m-pixi-primary-metric-improvement'
@@ -111,29 +106,79 @@ class CoreWebVitalView {
     this.recommendations = this.container.querySelector(
       '.ap-m-pixi-primary-metric-recommendations'
     );
+    this.defaultHref = this.recommendations.getAttribute('href');
+    this.recommendations.removeAttribute('href');
   }
 
-  render(report) {
-    const {data, unit} = report;
+  render(metric, cacheMetric) {
+    const {data, unit} = metric;
 
     this.scale.render(data, unit);
 
     const responseCategory = data.category.toLowerCase();
-    const displayCategory = CATEGORIES[responseCategory];
+    this.performanceCategory = CATEGORIES[responseCategory];
     this.container.classList.add(responseCategory);
-    this.category.textContent = displayCategory;
+    this.category.textContent = this.performanceCategory;
 
-    this.improvement.textContent = 'Not yet implemented';
-    this.recommendations.textContent = 'Not yet implemented';
+    const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
+    this.score.textContent = `${score} ${unit.name}`;
 
+    if (
+      !cacheMetric ||
+      !cacheMetric.data ||
+      cacheMetric.data.improvement == undefined
+    ) {
+      this.improvement.textContent = '---';
+    } else if (cacheMetric.data.improvement === 0) {
+      this.improvement.textContent = i18n.getText('status.none');
+    } else if (!Number.isNaN(cacheMetric.data.improvement)) {
+      const improvement = (
+        cacheMetric.data.improvement / unit.conversion
+      ).toFixed(unit.digits);
+      this.improvement.textContent = `${improvement} ${unit.name}`;
+    } else {
+      this.improvement.textContent = '---';
+    }
     this.toggleLoading(false);
   }
 
+  renderError() {
+    this.container.parentNode.classList.add('error');
+  }
+
+  setRecommendationStatus(count) {
+    this.container.classList.toggle('has-status', !!count);
+    if (!count) {
+      if (this.performanceCategory === CATEGORIES.fast) {
+        this.recommendations.textContent = i18n.getText('status.nothingToDo');
+        return;
+      }
+      this.recommendations.setAttribute('href', FILE_ISSUE_URL);
+      this.recommendations.setAttribute('target', '_blank');
+      this.recommendations.textContent = i18n.getText('status.fileAnIssue');
+      return;
+    }
+    this.recommendations.setAttribute('href', this.defaultHref);
+    if (count === 1) {
+      this.recommendations.textContent = `${count} ${i18n.getText(
+        'status.recommendation'
+      )}`;
+    } else {
+      this.recommendations.textContent = `${count} ${i18n.getText(
+        'status.recommendations'
+      )}`;
+    }
+  }
+
   reset() {
-    this.container.classList.remove(...Object.values(CATEGORIES));
-    this.category.textContent = i18n.translate('Analyzing');
-    this.improvement.textContent = i18n.translate('Calculating');
-    this.recommendations.textContent = i18n.translate('Analyzing');
+    this.container.parentNode.classList.remove('error');
+    this.container.classList.remove(...Object.keys(CATEGORIES));
+    this.category.textContent = i18n.getText('status.analyzing');
+    this.score.textContent = i18n.getText('status.analyzing');
+    this.improvement.textContent = i18n.getText('status.calculating');
+    this.recommendations.textContent = i18n.getText('status.analyzing');
+    this.recommendations.removeAttribute('href');
+    this.recommendations.removeAttribute('target');
 
     this.toggleLoading(true);
   }
@@ -179,23 +224,43 @@ export default class CoreWebVitalsReportView {
     }
   }
 
-  render(report = {}) {
+  render(report = {}, cacheReport = {}) {
     this.pristine = false;
+    const results = this.getPageExperience(report);
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
-      const type = report[coreWebVitalView.type];
-      if (type) {
-        const metric = type[coreWebVitalView.metric];
-        if (metric) {
-          coreWebVitalView.render(metric);
-          continue;
-        }
+      const metric = this.getMetric(results, coreWebVitalView);
+      if (!metric) {
+        coreWebVitalView.renderError();
+        continue;
       }
 
-      coreWebVitalView.render();
+      const cacheMetric = this.getMetric(
+        this.getPageExperience(cacheReport),
+        coreWebVitalView
+      );
+      coreWebVitalView.render(metric, cacheMetric);
     }
 
     this.toggleLoading(false);
+  }
+
+  getPageExperience(result) {
+    if (result && result.data) {
+      return result.data.pageExperience;
+    }
+    return null;
+  }
+
+  getMetric(pageExperience, coreWebVitalView) {
+    if (!pageExperience) {
+      return null;
+    }
+    const type = pageExperience[coreWebVitalView.type];
+    if (!type) {
+      return null;
+    }
+    return type[coreWebVitalView.metric];
   }
 
   reset() {

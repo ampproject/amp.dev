@@ -8,19 +8,18 @@
 
 .#{organism('pixi-primary-checks')} {
   $primary-checks: &;
+  margin-bottom: 70px;
   border-radius: 4px;
-  overflow: hidden;
-  transition: opacity 0.2s ease;
-
-  @media (min-width: 768px) {
-    border: solid 2px transparent;
-    transition: border-color 0.05s ease;
-  }
+  overflow: visible;
 
   &-tabs {
     display: flex;
-    border-bottom: solid 2px color('mercury');
     transition: opacity 0.2s ease;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+
+    @media (min-width: 768px) {
+      width: 66.6%;
+    }
 
     &-tab {
       flex-grow: 1;
@@ -29,13 +28,25 @@
       @include txt-font-accent;
       font-size: 18px;
       text-align: left;
-      color: color('white');
-      background-color: transparentize(color('black'), 0.9);
+      background-color: color('alto');
       transition: color 0.2s ease, background-color 0.2s ease;
       cursor: pointer;
 
       @media (min-width: 768px) {
-        padding: 16px 36px;
+        padding: 16px 25px;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 16px 35px;
+      }
+
+
+      &:first-child {
+        border-top-left-radius: 4px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 4px;
       }
 
       &:hover {
@@ -51,18 +62,34 @@
 
   &-data {
     display: none;
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+
+    &-error-label {
+      position: absolute;
+      left: 0;
+      top: 230px;
+      display: none;
+      justify-content: center;
+      width: 100%;
+
+      label {
+        max-width: 700px;
+        padding: 15px;
+        text-align: center;
+      }
+    }
 
     &.active {
       display: block;
     }
-  }
 
-  .pristine & {
-    opacity: 0.2;
-    border-color: color('white');
 
-    &-tabs {
-      opacity: 0;
+    &.error {
+      position: relative;
+
+      #{$primary-checks}-data-error-label {
+        display: flex;
+      }
     }
   }
 }

@@ -17,7 +17,7 @@
         'full': _('Loading speed'),
         'id': 'LCP'
       },
-      'scale': 'weighted'
+      'scale': 'simple'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -28,7 +28,7 @@
         'full': _('Interactivity'),
         'id': 'FID'
       },
-      'scale': 'weighted'
+      'scale': 'simple'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
@@ -39,39 +39,50 @@
         'full': _('Visual stability'),
         'id': 'CLS'
       },
-      'scale': 'weighted'
+      'scale': 'simple'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
+
+    <div class="ap-o-pixi-primary-checks-data-error-label">
+      <label>{{ _('Unfortunately, we do not have sufficient real-world performance data for this page. Please have a look at the lab data or come back later in a view days.') }}</label>
+    </div>
+
   </div>
 
   <div class="ap-o-pixi-primary-checks-data">
     {% with primary_metric = {
       'id': 'labData.lcp',
+      'type': '-lab',
       'title': {
         'full': _('Loading speed'),
         'id': 'LCP'
-      }
+      },
+      'scale': 'weighted'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
 
     {% with primary_metric = {
-      'id': 'labData.fid',
+      'id': 'labData.tbt',
+      'type': '-lab',
       'title': {
         'full': _('Interactivity'),
-        'id': 'FID'
-      }
+        'id': 'TBT'
+      },
+      'scale': 'weighted'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
 
     {% with primary_metric = {
       'id': 'labData.cls',
+      'type': '-lab',
       'title': {
         'full': _('Visual stability'),
         'id': 'CLS'
-      }
+      },
+      'scale': 'weighted'
     } %}
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}

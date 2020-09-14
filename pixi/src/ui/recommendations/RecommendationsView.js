@@ -13,21 +13,48 @@
 // limitations under the License.
 
 import marked from 'marked';
+import i18n from '../I18n.js';
 
 export default class RecommendationsView {
   constructor(doc) {
     this.container = doc.getElementById('recommendations');
-    this.template = this.container.querySelector(
+
+    this.filter = this.container.querySelector(
+      '.ap-o-pixi-recommendations-filter'
+    );
+    this.pill = this.filter.querySelector('.ap-a-pill');
+
+    this.recommendation = this.container.querySelector(
       '.ap-m-pixi-recommendations-item'
     );
+    this.tag = this.recommendation.querySelector('span');
   }
 
-  render(recommendations) {
-    for (const item of recommendations) {
-      if (item === undefined) {
-        continue;
-      }
-      const recommendation = this.template.cloneNode(true);
+  resetView() {
+    this.container.classList.add('pristine');
+    const items = this.container.querySelectorAll(
+      '.ap-m-pixi-recommendations-item'
+    );
+    for (let i = 1; i < items.length; i++) {
+      this.container.removeChild(items[i]);
+    }
+
+    const length = this.filter.children.length;
+    for (let i = 1; i < length; i++) {
+      this.filter.removeChild(this.filter.lastChild);
+    }
+  }
+
+  render(recommendationList, metricUis) {
+    this.container.classList.remove('pristine');
+    const recommendations = i18n.getSortedRecommendations(recommendationList);
+    const tagIdCounts = {};
+
+    this.recommendationNodes = [];
+    this.filterPills = [];
+
+    for (const value of recommendations) {
+      const recommendation = this.recommendation.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
       );
@@ -37,19 +64,91 @@ export default class RecommendationsView {
       const body = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-body'
       );
+      const tagsBar = recommendation.querySelector(
+        '.ap-m-pixi-recommendations-item-tags'
+      );
 
       recommendation.style = null;
-      recommendation.id = `recommendation-${item.id}`;
+      recommendation.id = `recommendation-${value.id}`;
 
       header.setAttribute(
         'on',
-        `tap:recommendation-${item.id}.toggleClass(class=expanded)`
+        `tap:recommendation-${value.id}.toggleClass(class=expanded)`
       );
 
-      title.innerHTML = marked(item.title);
-      body.innerHTML = marked(item.description);
+      title.innerHTML = marked(value.title);
+      body.innerHTML = marked(value.body);
 
+      for (const tagId of value.tags) {
+        const tag = this.tag.cloneNode(true);
+        recommendation.classList.add(tagId);
+        tag.textContent = i18n.getText(`tags.${tagId}`);
+        tagsBar.appendChild(tag);
+        const count = tagIdCounts[tagId] || 0;
+        tagIdCounts[tagId] = count + 1;
+      }
+
+      this.recommendationNodes.push(recommendation);
       this.container.appendChild(recommendation);
+    }
+
+    for (const tagId of Object.keys(tagIdCounts)) {
+      const pill = this.pill.cloneNode(true);
+      pill.textContent = i18n.getText(`tags.${tagId}`);
+      pill.id = `filter-pill-${tagId}`;
+      pill.className = 'ap-a-pill';
+
+      pill.addEventListener('click', () => {
+        this.toggleFilter(tagId);
+      });
+
+      this.filterPills.push(pill);
+      this.filter.appendChild(pill);
+    }
+
+    for (const key of Object.keys(metricUis)) {
+      const metricUi = metricUis[key];
+      const metricToUse = metricUi.metric === 'tbt' ? 'fid' : metricUi.metric;
+      const count = tagIdCounts[metricToUse];
+      metricUi.setRecommendationStatus(count);
+    }
+
+    this.pill.classList.add('filtered');
+    this.pill.addEventListener('click', () => {
+      this.resetFilter();
+    });
+  }
+
+  resetFilter() {
+    this.pill.classList.add('filtered');
+    this.container.className = this.container.className.split(' ')[0];
+
+    for (const pill of this.filterPills) {
+      pill.classList.remove('filtered');
+      for (const recommendation of this.recommendationNodes) {
+        recommendation.hidden = false;
+      }
+    }
+  }
+
+  toggleFilter(tagId) {
+    this.container.classList.toggle(tagId);
+    this.pill.classList.remove('filtered');
+    const pill = this.container.querySelector(`#filter-pill-${tagId}`);
+    pill.classList.toggle('filtered');
+
+    const activeFilter = this.container.className.split(' ');
+    if (activeFilter.length == 1) {
+      this.resetFilter();
+      return;
+    }
+
+    for (const recommendation of this.recommendationNodes) {
+      const commonValues = activeFilter.filter((value) => {
+        return recommendation.classList.contains(value);
+      });
+
+      recommendation.hidden = !commonValues.length;
     }
   }
 }

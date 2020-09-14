@@ -5,18 +5,19 @@
 
 .#{molecule('pixi-primary-metric')} {
   $primary-metric: &;
-  display: flex;
-  flex-direction: column;
-  padding: 15px 25px;
+  padding: 15px 20px;
   background-color: color('white');
-  transition: opacity 0.2s ease;
 
   @media (min-width: 768px) {
-    padding: 38px 25px;
+    padding: 15px 25px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 35px;
   }
 
   & + & {
-    border-top: solid 2px color('mercury');
+    border-top: solid 1px color('boulder');
   }
 
   &:nth-child(2) {
@@ -27,63 +28,128 @@
     transition-delay: 160ms;
   }
 
-  &-row {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+      margin-top: 0;
+      font-size: 24px;
+      line-height: 1.4;
+
+      @media (min-width: 768px) {
+        width: 40%;
+        font-size: 28px;
+      }
+
+      &-full {
+        display: inline-block;
+
+        &:after {
+          content: "|";
+          margin: 0 5px;
+        }
+      }
+
+      &-id {
+        display: inline-block;
+
+        &:after {
+          display: block;
+          content: "";
+        }
+      }
+
+      &-status {
+        display: block;
+        color: color('boulder');
+
+        .fast & {
+          color: color('green-haze');
+        }
+
+        .average & {
+          color: color('christine');
+        }
+
+        .slow & {
+          color: color('red');
+        }
+      }
+    }
+  }
+
+  &-body {
     display: flex;
     flex-direction: column;
-    font-size: 14px;
-
-    &:first-child {
-      @media (min-width: 768px) {
-        flex-direction: row;
-      }
-    }
-  }
-
-  &-header {
-    margin-top: 0;
-    line-height: 1.5;
+    width: 100%;
 
     @media (min-width: 768px) {
-      width: 35%;
+      flex-direction: row;
     }
 
-    &-full {
-      display: inline-block;
+    &-result {
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: column;
+      line-height: 1.8;
 
-      &:after {
-        content: "|";
-        margin: 0 5px;
-      }
-    }
-
-    &-id {
-      display: inline-block;
-
-      &:after {
-        display: block;
-        content: "";
-      }
-    }
-
-    &-status {
-      display: block;
-      color: color('silver');
-
-      .fast & {
-        color: color('malachite');
+      @media (min-width: 768px) {
+        width: 40%;
+        margin-right: 20px;
       }
 
-      .average & {
-        color: color('buttercup');
+      a,
+      svg {
+        white-space: nowrap;
+        transition: opacity 0.3s ease;
+
+        .fast &,
+        .average &,
+        .slow & {
+          opacity: 1;
+        }
       }
 
-      .slow & {
-        color: color('red');
+      svg {
+        display: none;
+        width: 11px;
+        height: 11px;
+        fill: currentcolor;
+
+        .has-status & {
+          display: inline;
+        }
+      }
+
+      [role="button"] {
+        cursor: pointer;
+      }
+
+      #{$primary-metric}-score {
+        .fast & {
+          font-weight: bold;
+          color: color('green-haze');
+        }
+
+        .average & {
+          font-weight: bold;
+          color: color('christine');
+        }
+
+        .slow & {
+          font-weight: bold;
+          color: color('red');
+        }
       }
     }
   }
 
-  .pristine & {
-    opacity: 0;
+  .error & {
+    border-top-color: transparent;
+
+    & > div {
+      opacity: 0;
+    }
   }
 }

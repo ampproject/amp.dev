@@ -1,110 +1,102 @@
 {
-	"result": {
+	"pageExperience": {
 		"fieldData": {
 			"lcp": {
 				"unit": {
 					"name": "s",
-					"conversion": 1000
+					"conversion": 1000,
+					"digits": 1
 				},
 				"data": {
-					"percentile": 3100,
-					"distributions": [{
-						"min": 0,
-						"max": 2500,
-						"proportion": 0.6472574979735206
-					}, {
-						"min": 2500,
-						"max": 4000,
-						"proportion": 0.2092677654687922
-					}, {
-						"min": 4000,
-						"proportion": 0.14347473655768708
-					}],
-					"category": "AVERAGE"
+					"numericValue": 2372,
+					"category": "FAST",
+					"proportion": 0.7753324868864865
 				}
 			},
 			"fid": {
 				"unit": {
 					"name": "ms",
-					"conversion": 1
+					"conversion": 1,
+					"digits": 0
 				},
 				"data": {
-					"percentile": 289,
-					"distributions": [{
-						"min": 0,
-						"max": 100,
-						"proportion": 0.09960294951786727
-					}, {
-						"min": 100,
-						"max": 300,
-						"proportion": 0.6889393079977311
-					}, {
-						"min": 300,
-						"proportion": 0.21145774248440163
-					}],
-					"category": "AVERAGE"
+					"numericValue": 2,
+					"category": "FAST",
+					"proportion": 0.9918542336548767
 				}
 			},
 			"cls": {
 				"unit": {
 					"name": "",
-					"conversion": 100
+					"conversion": 100,
+					"digits": 2
 				},
 				"data": {
-					"percentile": 7,
-					"distributions": [{
-						"min": 0,
-						"max": 10,
-						"proportion": 0.816381257056831
-					}, {
-						"min": 10,
-						"max": 25,
-						"proportion": 0.15609710199473087
-					}, {
-						"min": 25,
-						"proportion": 0.02752164094843808
-					}],
-					"category": "FAST"
+					"numericValue": 7,
+					"category": "FAST",
+					"proportion": 0.816381257056831
 				}
-			}
+			},
+			"isAllFast": true
 		},
 		"labData": {
 			"lcp": {
-				"id": "lcp",
 				"unit": {
 					"name": "s",
-					"conversion": 1000
+					"conversion": 1000,
+					"digits": 1
 				},
 				"data": {
-					"numericValue": 3395.517406396801,
-					"score": 0.67,
-					"category": "average"
+					"numericValue": 2495.517406396801,
+					"proportion": {
+						"fast": 2500,
+						"average": 4000,
+						"slow": 6000
+					},
+					"category": "FAST"
 				}
 			},
-			"fid": {
-				"id": "fid",
+			"tbt": {
 				"unit": {
 					"name": "ms",
-					"conversion": 1
+					"conversion": 1,
+					"digits": 0
 				},
 				"data": {
-					"numericValue": 4455.760415752422,
-					"score": 0.83,
-					"category": "fast"
+					"numericValue": 296.4999999999998,
+					"proportion": {
+						"fast": 300,
+						"average": 600,
+						"slow": 900
+					},
+					"category": "FAST"
 				}
 			},
 			"cls": {
-				"id": "cls",
 				"unit": {
 					"name": "",
-					"conversion": 100
+					"conversion": 100,
+					"digits": 2
 				},
 				"data": {
 					"numericValue": 0,
-					"score": 1,
-					"category": "fast"
+					"proportion": {
+						"fast": 10,
+						"average": 25,
+						"slow": 40
+					},
+					"category": "FAST"
 				}
-			}
-		}
-	}
+			},
+			"isAllFast": true
+		},
+		"source": "fieldData"
+	},
+	"textCompression": true,
+	"fastServerResponse": true,
+	"usesAppropriatelySizedImages": true,
+	"usesOptimizedImages": true,
+	"usesWebpImages": true,
+	"fastFontDisplay": true,
+	"minifiedCss": true
 }

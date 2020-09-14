@@ -6,6 +6,7 @@ class I18n {
     this.staticText = {};
     this.statusBanners = {};
     this.recommendations = {};
+    this.infoTexts = {};
   }
 
   async init() {
@@ -13,17 +14,14 @@ class I18n {
       AMP.getState('pixi.i18n'),
       AMP.getState('pixiStatusBanners'),
       AMP.getState('pixiRecommendations'),
+      AMP.getState('pixiInfoTexts'),
     ]);
     const i18nConfig = JSON.parse(pixiContent[0]);
     this.language = i18nConfig.language;
     this.staticText = i18nConfig.staticText;
     this.statusBanners = JSON.parse(pixiContent[1]);
     this.recommendations = JSON.parse(pixiContent[2]);
-  }
-
-  /** @deprecated use getText instead */
-  translate(originalString) {
-    return originalString;
+    this.infoTexts = JSON.parse(pixiContent[3]);
   }
 
   getText(textKey) {
@@ -38,8 +36,36 @@ class I18n {
     return this.recommendations[recommendationId];
   }
 
+  getSortedRecommendations(recommendations) {
+    const result = [];
+    for (const item of recommendations) {
+      const id = item.id;
+      const recommendation = this.getRecommendation(id);
+      if (recommendation) {
+        const {body, ...props} = recommendation;
+        result.push({
+          id,
+          body: body || item.description,
+          ...props,
+        });
+      } else {
+        console.error('Unable to find recommendation text', id);
+      }
+    }
+    result.sort((a, b) => a.order - b.order);
+    return result;
+  }
+
   getStatusBanner(statusBannerId) {
     return this.statusBanners[statusBannerId];
+  }
+
+  getInfoText(infoTextId) {
+    return this.infoTexts[infoTextId];
+  }
+
+  getLanguage() {
+    return this.language;
   }
 }
 

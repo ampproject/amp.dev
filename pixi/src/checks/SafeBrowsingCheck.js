@@ -17,6 +17,10 @@ const API_ENDPOINT = API_ENDPOINT_SAFE_BROWSING;
 const API_URL = `${API_ENDPOINT}?key=${AMP_DEV_PIXI_APIS_KEY}`;
 
 export default class SafeBrowsingCheck {
+  static getCheckCount() {
+    return 1;
+  }
+
   async run(pageUrl) {
     try {
       const apiResult = await this.fetchJson(pageUrl);
@@ -33,49 +37,44 @@ export default class SafeBrowsingCheck {
     return {
       error,
       data: {
-        result: !Object.keys(apiResult).length,
-        recommendations: [],
+        safeBrowsing: !Object.keys(apiResult).length,
       },
     };
   }
 
   async fetchJson(pageUrl) {
-    try {
-      const response = await fetch(API_URL, {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
+    const response = await fetch(API_URL, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        'client': {
+          'clientId': 'amp-dev-page-experience-checker',
+          'clientVersion': '0.0.1',
         },
-        method: 'POST',
-        body: JSON.stringify({
-          'client': {
-            'clientId': 'amp-dev-page-experience-checker',
-            'clientVersion': '0.0.1',
-          },
-          'threatInfo': {
-            'threatTypes': [
-              'THREAT_TYPE_UNSPECIFIED',
-              'MALWARE',
-              'SOCIAL_ENGINEERING',
-              'UNWANTED_SOFTWARE',
-              'POTENTIALLY_HARMFUL_APPLICATION',
-            ],
-            'platformTypes': ['ANY_PLATFORM'],
-            'threatEntryTypes': ['URL'],
-            'threatEntries': [{'url': pageUrl}],
-          },
-        }),
-      });
+        'threatInfo': {
+          'threatTypes': [
+            'THREAT_TYPE_UNSPECIFIED',
+            'MALWARE',
+            'SOCIAL_ENGINEERING',
+            'UNWANTED_SOFTWARE',
+            'POTENTIALLY_HARMFUL_APPLICATION',
+          ],
+          'platformTypes': ['ANY_PLATFORM'],
+          'threatEntryTypes': ['URL'],
+          'threatEntries': [{'url': pageUrl}],
+        },
+      }),
+    });
 
-      if (!response.ok) {
-        throw new Error(
-          `SafeBrowsingCheck failed: response failed with status ${response.status}`
-        );
-      }
-      const result = await response.json();
-      return result;
-    } catch (e) {
-      throw new Error('SafeBrowsingCheck failed:', e);
+    if (!response.ok) {
+      throw new Error(
+        `SafeBrowsingCheck failed: response failed with status ${response.status}`
+      );
     }
+    const result = await response.json();
+    return result;
   }
 }

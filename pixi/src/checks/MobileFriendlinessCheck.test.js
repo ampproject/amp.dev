@@ -24,7 +24,9 @@ describe('Mobile Friendliness check', () => {
     const report = await mobileFriendlinessCheck.run(
       'http://mobile-friendly.com'
     );
-    expect(report.data.result).toBe(true);
+    expect(report.error).toBeFalsy();
+    expect(report.data.mobileFriendly).toBe(true);
+    expect(report.data.resourcesLoadable).toBe(true);
   });
 
   it('returns true for a mobile friendly URL that has isues', async () => {
@@ -36,7 +38,9 @@ describe('Mobile Friendliness check', () => {
     const report = await mobileFriendlinessCheck.run(
       'http://a-little-mobile-friendly.com'
     );
-    expect(report.data.result).toBe(true);
+    expect(report.error).toBeFalsy();
+    expect(report.data.mobileFriendly).toBe(true);
+    expect(report.data.resourcesLoadable).toBe(false);
   });
 
   it('returns false for a mobile unfriendly URL', async () => {
@@ -45,7 +49,8 @@ describe('Mobile Friendliness check', () => {
     const report = await mobileFriendlinessCheck.run(
       'http://mobile-unfriendly.com'
     );
-    expect(report.data.result).toBe(false);
+    expect(report.error).toBeFalsy();
+    expect(report.data.mobileFriendly).toBe(false);
   });
 
   describe('returns false if the upstream API', () => {
@@ -54,8 +59,7 @@ describe('Mobile Friendliness check', () => {
       const report = await mobileFriendlinessCheck.run(
         'http://unreachable.com'
       );
-
-      expect(report.data.result).toBe(false);
+      expect(report.error).toBeDefined();
     });
 
     it('could not complete the test', async () => {
@@ -63,15 +67,13 @@ describe('Mobile Friendliness check', () => {
       const report = await mobileFriendlinessCheck.run(
         'http://mobile-unfriendly.com'
       );
-
-      expect(report.data.result).toBe(false);
+      expect(report.error).toBeDefined();
     });
 
     it('has infrastructure problems', async () => {
       fetchMock.mock(`begin:${apiEndpoint}`, apiResponse.internalError);
       const report = await mobileFriendlinessCheck.run('http://500error.com');
-
-      expect(report.data.result).toBe(false);
+      expect(report.error).toBeDefined();
     });
   });
 });

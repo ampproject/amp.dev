@@ -14,108 +14,202 @@
 
 import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
+export const Category = {
+  FAST: 'FAST',
+  SLOW: 'SLOW',
+  AVERAGE: 'AVERAGE',
+};
+
+let locale;
 const API_ENDPOINT = API_ENDPOINT_PAGE_SPEED_INSIGHTS;
+const DEVICE_STRATEGY = 'MOBILE';
+const METRICS_SCALES = {
+  lcp: {
+    fast: 2500,
+    average: 4000,
+    slow: 6000,
+  },
+  cls: {
+    fast: 10,
+    average: 25,
+    slow: 40,
+  },
+  tbt: {
+    fast: 300,
+    average: 600,
+    slow: 900,
+  },
+};
 
 export default class PageExperienceCheck {
-  constructor() {
-    this.apiUrl = new URL(API_ENDPOINT);
-    this.apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
+  static getCheckCount() {
+    return 10;
   }
 
-  async run(pageUrl) {
-    this.apiUrl.searchParams.set('url', pageUrl);
+  setLocale(language) {
+    locale = language;
+  }
 
+  async run(originUrl) {
     try {
-      const apiResult = await this.fetchJson();
-      return this.createReportData(apiResult);
+      const apiResultOrigin = await this.fetchJson(originUrl);
+      return this.createReportData(apiResultOrigin);
     } catch (e) {
       return {error: e};
     }
   }
 
-  createLabData(metric) {
-    const labData = {
-      numericValue: metric.numericValue,
-      score: metric.score,
+  createFieldData(metricsOrigin, metricKey) {
+    const metricOrigin = metricsOrigin[metricKey];
+    const data = {
+      numericValue: metricOrigin.percentile,
+      category: metricOrigin.category,
+      proportion: metricOrigin.distributions[0].proportion,
+    };
+    return data;
+  }
+
+  createLabData(metricOrigin, id) {
+    const data = {
+      numericValue: metricOrigin.numericValue,
+      proportion: METRICS_SCALES[id],
     };
 
-    if (labData.score < 0.5) {
-      labData.category = 'slow';
-    } else if (labData.score < 0.75) {
-      labData.category = 'average';
+    if (metricOrigin.score < 0.5) {
+      data.category = Category.SLOW;
+    } else if (metricOrigin.score < 0.9) {
+      data.category = Category.AVERAGE;
     } else {
-      labData.category = 'fast';
+      data.category = Category.FAST;
     }
 
-    return labData;
+    return data;
+  }
+
+  addScoreCheck(result, resultName, audits, testName) {
+    if (audits && audits[testName] && !Number.isNaN(audits[testName].score)) {
+      result.data[resultName] = audits[testName].score === 1;
+      result.descriptions[resultName] = audits[testName].description;
+    }
+  }
+
+  isFastData(metrics, checkId) {
+    if (!metrics) {
+      // no error when we have no data
+      return undefined;
+    }
+    return metrics[checkId].data.category === Category.FAST;
   }
 
   createReportData(apiResult) {
-    const fieldData = apiResult.loadingExperience.metrics;
-    const labData = apiResult.lighthouseResult.audits;
+    const fieldMetrics = apiResult.loadingExperience.metrics;
+    const audits = apiResult.lighthouseResult.audits;
+    const fieldData = !fieldMetrics
+      ? undefined
+      : {
+          lcp: {
+            unit: UNIT_SEC,
+            data: this.createFieldData(
+              fieldMetrics,
+              'LARGEST_CONTENTFUL_PAINT_MS'
+            ),
+          },
+          fid: {
+            unit: UNIT_MS,
+            data: this.createFieldData(fieldMetrics, 'FIRST_INPUT_DELAY_MS'),
+          },
+          cls: {
+            unit: UNIT_DEC,
+            data: this.createFieldData(
+              fieldMetrics,
+              'CUMULATIVE_LAYOUT_SHIFT_SCORE'
+            ),
+          },
+        };
 
-    const report = {
-      result: {
-        fieldData: {
-          lcp: {
-            unit: UNIT_SEC,
-            data: fieldData.LARGEST_CONTENTFUL_PAINT_MS,
-          },
-          fid: {
-            unit: UNIT_MS,
-            data: fieldData.FIRST_INPUT_DELAY_MS,
-          },
-          cls: {
-            unit: UNIT_DEC,
-            data: fieldData.CUMULATIVE_LAYOUT_SHIFT_SCORE,
-          },
-        },
-        labData: {
-          lcp: {
-            id: 'lcp',
-            unit: UNIT_SEC,
-            data: this.createLabData(labData['largest-contentful-paint']),
-          },
-          fid: {
-            id: 'fid',
-            unit: UNIT_MS,
-            data: this.createLabData(labData['interactive']),
-          },
-          cls: {
-            id: 'cls',
-            unit: UNIT_DEC,
-            data: this.createLabData(labData['cumulative-layout-shift']),
-          },
-        },
+    const labData = {
+      lcp: {
+        unit: UNIT_SEC,
+        data: this.createLabData(audits['largest-contentful-paint'], 'lcp'),
+      },
+      tbt: {
+        unit: UNIT_MS,
+        data: this.createLabData(audits['total-blocking-time'], 'tbt'),
+      },
+      cls: {
+        unit: UNIT_DEC,
+        data: this.createLabData(audits['cumulative-layout-shift'], 'cls'),
       },
     };
 
-    report.recommendations = [];
-    for (const [key, details] of Object.entries(
-      apiResult.lighthouseResult.audits
-    )) {
-      if (details.score) {
-        report.recommendations.push({
-          id: key,
-          title: details.title,
-          description: details.description,
-        });
-      }
-    }
+    const result = {
+      data: {
+        pageExperience: {
+          fieldData: fieldData
+            ? {
+                isAllFast:
+                  this.isFastData(fieldData, 'cls') &&
+                  this.isFastData(fieldData, 'fid') &&
+                  this.isFastData(fieldData, 'lcp'),
+                ...fieldData,
+              }
+            : undefined,
+          labData: {
+            isAllFast:
+              this.isFastData(labData, 'cls') &&
+              this.isFastData(labData, 'tbt') &&
+              this.isFastData(labData, 'lcp'),
+            ...labData,
+          },
+          source: fieldData ? 'fieldData' : 'labData',
+        },
+      },
+      descriptions: {},
+    };
 
-    return {data: report};
+    this.addScoreCheck(
+      result,
+      'textCompression',
+      audits,
+      'uses-text-compression'
+    );
+    this.addScoreCheck(
+      result,
+      'fastServerResponse',
+      audits,
+      'server-response-time'
+    );
+    this.addScoreCheck(
+      result,
+      'usesAppropriatelySizedImages',
+      audits,
+      'uses-responsive-images'
+    );
+    this.addScoreCheck(
+      result,
+      'usesOptimizedImages',
+      audits,
+      'uses-optimized-images'
+    );
+    this.addScoreCheck(result, 'usesWebpImages', audits, 'uses-webp-images');
+    this.addScoreCheck(result, 'fastFontDisplay', audits, 'font-display');
+    this.addScoreCheck(result, 'minifiedCss', audits, 'unminified-css');
+
+    return result;
   }
 
-  async fetchJson() {
-    try {
-      const response = await fetch(this.apiUrl);
-      if (!response.ok) {
-        throw new Error(`PageExperienceCheck failed for: ${this.apiUrl}`);
-      }
-      const result = await response.json();
-      return result;
-    } catch (e) {
-      throw new Error('PageExperienceCheck failed:', e);
+  async fetchJson(pageUrl) {
+    const apiUrl = new URL(API_ENDPOINT);
+    apiUrl.searchParams.append('key', AMP_DEV_PIXI_APIS_KEY);
+    apiUrl.searchParams.set('url', pageUrl);
+    apiUrl.searchParams.set('strategy', DEVICE_STRATEGY);
+    apiUrl.searchParams.set('locale', locale);
+
+    const response = await fetch(apiUrl.href);
+    if (!response.ok) {
+      throw new Error(`PageExperienceCheck failed for: ${apiUrl}`);
     }
+    const result = await response.json();
+    return result;
   }
 }

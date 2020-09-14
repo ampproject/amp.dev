@@ -13,28 +13,37 @@
 @import 'components/atoms/_color.scss';
 
 .#{molecule('input-bar')} {
-  $root: &;
+  $inputBar: &;
+  padding: 0 15px 50px 15px;
+
+  @media (min-width: 768px) {
+    padding: 0 0 30px 0;
+  }
 
   &-title {
-    padding-left: 20px;
+    font-size: 24px;
 
     @media (min-width: 768px) {
       padding: 0;
+      font-size: 28px;
     }
   }
 
   &-container {
     display: flex;
-    height: 50px;
-    border-radius: 4px;
+    height: 66px;
+    padding: 10px;
+    border-radius: 6px;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+    background: color('white');
 
     @media (min-width: 1024px) {
-      height: 60px;
+      height: 76px;
+      padding: 13px 15px;
     }
   }
 
-  &-textbox {
+  &-input {
     position: relative;
     width: 100%;
 
@@ -48,7 +57,7 @@
       height: 2px;
       background: color('red');
       opacity: 0;
-      transition: opacity .3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
 
       @media (min-width: 1024px) {
         left: 25px;
@@ -59,15 +68,20 @@
     &-field {
       height: 100%;
       width: 100%;
-      padding: 0 20px;
+      padding: 0 10px;
       border: 0;
       border-radius: 4px 0 0 4px;
-      font-family: Noto Sans, sans-serif;
+      font-family: Poppins, sans-serif;
       font-size: 18px;
       font-weight: bold;
 
+      @media (min-width: 720px) {
+        padding: 0 15px;
+      }
+
       @media (min-width: 1024px) {
-        padding: 0 25px;
+        padding: 0 20px;
+        font-size: 22px;
       }
     }
   }
@@ -75,18 +89,19 @@
   &-submit {
     cursor: pointer;
     @include txt-font-accent;
-    min-width: 60px;
+    min-width: 45px;
     margin: 0;
     border: 0;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
+    font-family: Poppins, sans-serif;
     text-align: center;
     font-size: 0;
     color: color('white');
     background: color('blue-ribbon');
 
     @media (min-width: 600px) {
-      min-width: 156px;
-      font-size: 18px;
+      min-width: 129px;
+      font-size: 16px;
     }
 
     svg {
@@ -100,21 +115,24 @@
       }
     }
 
+    &[disabled] {
+      background: color('boulder');
+    }
+
     &.loading {
-      font-size: 0;
-      background: color('mercury');
+      background: color('boulder');
+
+      #{$inputBar}-submit-title {
+        font-size: 0;
+      }
 
       svg {
         display: none;
       }
+    }
 
-      @extend %loading-indicator;
-      &:after {
-        width: 20px;
-        height: 20px;
-        margin: auto;
-        border-width: 2px;
-      }
+    .#{atom('pixi-analyzing-dots')} {
+      font-size: 20px;
     }
   }
 
@@ -125,11 +143,11 @@
     padding-left: 25px;
     color: color('red');
     opacity: 0;
-    transition: transform .3s ease, opacity .2s ease;
+    transition: transform 0.3s ease, opacity 0.2s ease;
   }
 
   &.error {
-    #{$root} {
+    #{$inputBar} {
       &-textbox:after {
         opacity: 1;
       }

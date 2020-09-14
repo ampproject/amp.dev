@@ -1,0 +1,119 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@import 'components/atoms/_button.scss';
+
+.#{molecule('tooltip')} {
+  $tooltip: &;
+  position: relative;
+
+  &-toggle {
+    @include unset-button;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    #{$tooltip}.active &,
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-close {
+    @include unset-button;
+    height: 60px;
+    width: 22px;
+    margin-left: auto;
+
+    @media (min-width: 768px) {
+      height: 22px;
+      margin-left: 14px;
+    }
+
+    svg {
+      cursor: pointer;
+      max-width: 20px;
+      max-height: 20px;
+      fill: color('blue-ribbon');
+    }
+  }
+
+  &-tip {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 100%;
+    margin-top: 25px;
+    padding: 110px 16px 24px 24px;
+    background: color('white');
+
+    pointer-events: none;
+    opacity: 0;
+    filter: drop-shadow(0 0 20px transparentize(color('black'), 0.8));
+
+    @media (min-width: 575px) {
+      position: absolute;
+      top: 25px;
+      display: flex;
+      flex-direction: row-reverse;
+      width: 300px;
+      height: auto;
+      padding: 24px 16px 24px 24px;
+      transform: translateX(10%);
+    }
+
+    @media (min-width: 1024px) {
+      transform: translateX(20%);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: 100%;
+      right: calc(20% - 30px);
+      border: 15px solid transparent;
+      border-top: 0;
+      border-bottom-color: color('white');
+      right: calc(20% - 30px);
+
+      @media (min-width: 1024px) {
+        right: calc(30% - 30px);
+      }
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid color('boulder');
+
+      @media (min-width: 575px) {
+        display: none;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+
+    #{$tooltip}.active & {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
