@@ -21,6 +21,8 @@ staticText:
     failed: Failed
     passed: Passed
     none: None
+    nothingToDo: Nothing to do
+    fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations
   tags:
