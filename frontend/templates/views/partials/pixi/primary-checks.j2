@@ -45,7 +45,12 @@
     {% endwith %}
 
     <div class="ap-o-pixi-primary-checks-data-error-label">
-      <label>{{ _('Unfortunately, we do not have sufficient real-world performance data for this page. Please have a look at the lab data or come back later in a view days.') }}</label>
+      <label>
+        {{ _('Unfortunately, we do not have sufficient real-world performance data for this page. Please have a look at the lab data or use the ') }} 
+        <a href="https://support.google.com/webmasters/answer/7576553?hl=en&ref_topic=9384513">
+          {{ _('Search Console Performance report.') }}
+        </a>
+      </label>
     </div>
 
   </div>
