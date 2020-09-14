@@ -116,11 +116,11 @@
     }
 
     &[disabled] {
-      background: #767676;
+      background: color('boulder');
     }
 
     &.loading {
-      background: #767676;
+      background: color('boulder');
 
       #{$inputBar}-submit-title {
         font-size: 0;
