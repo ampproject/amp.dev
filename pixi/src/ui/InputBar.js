@@ -28,7 +28,8 @@ export default class InputBar {
         callback();
       }
 
-      // Ignore tab key.
+      // Ignore tab key which only happens on focus because
+      // amp-script does not consider tabbing focus to be a user-activation.
       if (e.keyCode === 9) {
         return;
       }
