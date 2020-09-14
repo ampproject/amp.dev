@@ -221,6 +221,7 @@ export default class CoreWebVitalsReportView {
     for (let i = 0; i < this.tabs.length; i++) {
       this.tabs[i].classList.toggle('active', i == index);
       this.tabContents[i].classList.toggle('active', i == index);
+      this.tabs[i].setAttribute('aria-selected', i == index);
     }
   }
 
