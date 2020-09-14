@@ -137,12 +137,17 @@ class CoreWebVitalView {
     this.toggleLoading(false);
   }
 
+  renderError() {
+    this.container.parentNode.classList.add('error');
+  }
+
   setRecommendationStatus(hasStatus, text) {
     this.recommendations.textContent = text;
     this.container.classList.toggle('has-status', hasStatus);
   }
 
   reset() {
+    this.container.parentNode.classList.remove('error');
     this.container.classList.remove(...Object.keys(CATEGORIES));
     this.category.textContent = i18n.getText('status.analyzing');
     this.score.textContent = i18n.getText('status.analyzing');
@@ -199,16 +204,16 @@ export default class CoreWebVitalsReportView {
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
       const metric = this.getMetric(results, coreWebVitalView);
-      if (metric) {
-        const cacheMetric = this.getMetric(
-          this.getPageExperience(cacheReport),
-          coreWebVitalView
-        );
-        coreWebVitalView.render(metric, cacheMetric);
+      if (!metric) {
+        coreWebVitalView.renderError();
         continue;
       }
 
-      // TODO: show no data
+      const cacheMetric = this.getMetric(
+        this.getPageExperience(cacheReport),
+        coreWebVitalView
+      );
+      coreWebVitalView.render(metric, cacheMetric);
     }
 
     this.toggleLoading(false);
