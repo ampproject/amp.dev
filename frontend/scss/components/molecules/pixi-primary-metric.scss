@@ -65,7 +65,7 @@
         color: color('boulder');
 
         .fast & {
-          color: color('malachite');
+          color: color('green-haze');
         }
 
         .average & {
@@ -130,7 +130,7 @@
       #{$primary-metric}-score {
         .fast & {
           font-weight: bold;
-          color: color('malachite');
+          color: color('green-haze');
         }
 
         .average & {
