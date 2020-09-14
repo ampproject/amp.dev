@@ -1,37 +1,33 @@
 {% do doc.styles.addCssFile('css/components/atoms/pixi-scale.css') %}
 <div class="ap-a-pixi-scale">
 
-  {% if scale != 'weighted' %}
-  <label class="ap-a-pixi-scale-label">Page loads</label>
-  {% endif %}
-
-
-  <div class="ap-a-pixi-scale-chart">
     {% if scale != 'weighted' %}
-    <div class="ap-a-pixi-scale-chart-bar" data-type="fast">
-      <span>&nbsp;</span>
+    <label class="ap-a-pixi-scale-label">{{ _('Page loads')}}</label>
+
+    <div class="ap-a-pixi-scale-chart">
+      <div class="ap-a-pixi-scale-chart-bar" data-type="fast">
+        <span>&nbsp;</span>
+      </div>
+      <aside class="ap-a-pixi-scale-chart-pitch">
+        75th percentile
+      </aside>
     </div>
-    <aside class="ap-a-pixi-scale-chart-pitch">
-      75th percentile
-    </aside>
     {% endif %}
 
 
     {% if scale == 'weighted' %}
-    <div class="ap-a-pixi-scale-chart-bar" data-type="slow">
-      <span>&nbsp;</span>
+    <div class="ap-a-pixi-scale-chart weighted">
+      <div class="ap-a-pixi-scale-chart-bar" data-type="average">
+        <span>&nbsp;</span>
+      </div>
+      <div class="ap-a-pixi-scale-chart-bar" data-type="fast">
+        <span>&nbsp;</span>
+      </div>
+      <aside class="ap-a-pixi-scale-chart-indicator">
+        &nbsp;
+      </aside>
     </div>
-    <div class="ap-a-pixi-scale-chart-bar" data-type="average">
-      <span>&nbsp;</span>
-    </div>
-    <div class="ap-a-pixi-scale-chart-bar" data-type="fast">
-      <span>&nbsp;</span>
-    </div>
-    <aside class="ap-a-pixi-scale-chart-indicator">
-      &nbsp;
-    </aside>
     {% endif %}
 
 
-  </div>
 </div>

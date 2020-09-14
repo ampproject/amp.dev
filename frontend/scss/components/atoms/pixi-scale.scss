@@ -29,6 +29,10 @@
     border-radius: 2px;
     background-color: color('silver');
 
+    &.weighted {
+      background-color: color('red');
+    }
+
     &-bar {
       position: absolute;
       display: flex;
@@ -85,25 +89,12 @@
           border-color: color('buttercup');
         }
       }
-
-      &[data-type="slow"] {
-        width: 100%;
-        background: color('red');
-
-        span {
-          border-color: color('red');
-
-          &:after {
-            display: none;
-          }
-        }
-      }
     }
 
     &-pitch {
       position: absolute;
       left: 75%;
-      top: -30px;
+      top: -28px;
       display: flex;
       justify-content: center;
       width: 1px;
@@ -177,6 +168,9 @@
   }
 
   .loading &, .pristine & {
+    &-chart {
+      background-color: color('silver');
+    }
     &-chart-bar,
     &-chart-indicator {
       opacity: 0;
