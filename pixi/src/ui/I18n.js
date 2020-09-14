@@ -36,14 +36,17 @@ class I18n {
     return this.recommendations[recommendationId];
   }
 
-  getSortedRecommendations(recommendationIds) {
+  getSortedRecommendations(recommendations) {
     const result = [];
-    for (const id of recommendationIds) {
+    for (const item of recommendations) {
+      const id = item.id;
       const recommendation = this.getRecommendation(id);
       if (recommendation) {
+        const {body, ...props} = recommendation;
         result.push({
           id,
-          ...recommendation,
+          body: body || item.description,
+          ...props,
         });
       } else {
         console.error('Unable to find recommendation text', id);

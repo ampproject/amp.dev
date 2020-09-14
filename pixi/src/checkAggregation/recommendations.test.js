@@ -1,10 +1,10 @@
-import getRecommendationIds from './recommendations';
+import getRecommendations from './recommendations';
 
 const fixedRecommendations = ['intrusive-interstitials'];
 
 describe('getRecommendationIds', () => {
   it('returns https', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -13,11 +13,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('https');
+    expect(ids).toContainEqual({id: 'https'});
   });
 
   it('returns valid-cached-amp', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -26,11 +26,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('valid-cached-amp');
+    expect(ids).toContainEqual({id: 'valid-cached-amp'});
   });
 
   it('returns preload-amp-runtime', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -39,11 +39,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('preload-amp-runtime');
+    expect(ids).toContainEqual({id: 'preload-amp-runtime'});
   });
 
   it('returns preload-render-blocking-extensions', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -52,11 +52,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('preload-render-blocking-extensions');
+    expect(ids).toContainEqual({id: 'preload-render-blocking-extensions'});
   });
 
   it('returns preload-web-fonts', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -65,11 +65,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('preload-web-fonts');
+    expect(ids).toContainEqual({id: 'preload-web-fonts'});
   });
 
   it('returns fast-font-display', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -78,11 +78,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('fast-font-display');
+    expect(ids).toContainEqual({id: 'fast-font-display'});
   });
 
   it('returns preconnect-google-fonts', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -91,11 +91,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('preconnect-google-fonts');
+    expect(ids).toContainEqual({id: 'preconnect-google-fonts'});
   });
 
   it('returns use-amp-optimizer', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -104,11 +104,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('use-amp-optimizer');
+    expect(ids).toContainEqual({id: 'use-amp-optimizer'});
   });
 
   it('returns enable-js-module-runtime', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -117,11 +117,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('enable-js-module-runtime');
+    expect(ids).toContainEqual({id: 'enable-js-module-runtime'});
   });
 
   it('returns hero-images', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -130,11 +130,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('hero-images');
+    expect(ids).toContainEqual({id: 'hero-images'});
   });
 
   it('returns amp-boilerplate-removal', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         pageExperience: {fieldData: {lcp: {data: {category: 'SLOW'}}}},
       }),
@@ -146,11 +146,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('amp-boilerplate-removal');
+    expect(ids).toContainEqual({id: 'amp-boilerplate-removal'});
   });
 
   it('returns no amp-boilerplate-removal', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         pageExperience: {fieldData: {lcp: {data: {category: 'FAST'}}}},
       }),
@@ -166,7 +166,7 @@ describe('getRecommendationIds', () => {
   });
 
   it('returns upgrade-amp-optimizer (boilerplate removal)', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -176,11 +176,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('upgrade-amp-optimizer');
+    expect(ids).toContainEqual({id: 'upgrade-amp-optimizer'});
   });
 
   it('returns prevent-render-blocking-extensions', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({
@@ -189,11 +189,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('prevent-render-blocking-extensions');
+    expect(ids).toContainEqual({id: 'prevent-render-blocking-extensions'});
   });
 
   it('returns dynamic-layout-extensions', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         pageExperience: {fieldData: {cls: {data: {category: 'SLOW'}}}},
       }),
@@ -204,11 +204,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('dynamic-layout-extensions');
+    expect(ids).toContainEqual({id: 'dynamic-layout-extensions'});
   });
 
   it('returns no dynamic-layout-extensions', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         pageExperience: {fieldData: {cls: {data: {category: 'FAST'}}}},
       }),
@@ -223,7 +223,7 @@ describe('getRecommendationIds', () => {
   });
 
   it('returns responsive-images', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         usesAppropriatelySizedImages: false,
       }),
@@ -232,11 +232,30 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('appropriately-sized-images');
+    expect(ids).toContainEqual({id: 'appropriately-sized-images'});
+  });
+
+  it('returns responsive-images with description', async () => {
+    const ids = await getRecommendations(
+      Promise.resolve({
+        usesAppropriatelySizedImages: false,
+        descriptions: {
+          usesAppropriatelySizedImages: 'Responsive images!',
+        },
+      }),
+      Promise.resolve({}),
+      Promise.resolve({}),
+      Promise.resolve({})
+    );
+    expect(ids.length).toBe(fixedRecommendations.length + 1);
+    expect(ids).toContainEqual({
+      id: 'appropriately-sized-images',
+      description: 'Responsive images!',
+    });
   });
 
   it('returns text-compression', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         textCompression: false,
       }),
@@ -245,11 +264,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('text-compression');
+    expect(ids).toContainEqual({id: 'text-compression'});
   });
 
   it('returns server-response-time', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         fastServerResponse: false,
       }),
@@ -258,11 +277,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('server-response-time');
+    expect(ids).toContainEqual({id: 'server-response-time'});
   });
 
   it('returns optimized-images', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         usesOptimizedImages: false,
       }),
@@ -271,11 +290,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('optimized-images');
+    expect(ids).toContainEqual({id: 'optimized-images'});
   });
 
   it('returns next-gen-images', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         usesWebpImages: false,
       }),
@@ -284,11 +303,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('next-gen-images');
+    expect(ids).toContainEqual({id: 'next-gen-images'});
   });
 
   it('returns fast-font-display', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         fastFontDisplay: false,
       }),
@@ -297,11 +316,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('fast-font-display');
+    expect(ids).toContainEqual({id: 'fast-font-display'});
   });
 
   it('returns minify-css', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         minifiedCss: false,
       }),
@@ -310,11 +329,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('minify-css');
+    expect(ids).toContainEqual({id: 'minify-css'});
   });
 
   it('returns safe-browsing', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({
         safeBrowsing: false,
@@ -323,11 +342,11 @@ describe('getRecommendationIds', () => {
       Promise.resolve({})
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('safe-browsing');
+    expect(ids).toContainEqual({id: 'safe-browsing'});
   });
 
   it('returns mobile-friendly', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({}),
@@ -336,11 +355,11 @@ describe('getRecommendationIds', () => {
       })
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('mobile-friendly');
+    expect(ids).toContainEqual({id: 'mobile-friendly'});
   });
 
   it('returns mobile-friendly', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({}),
       Promise.resolve({}),
@@ -349,11 +368,11 @@ describe('getRecommendationIds', () => {
       })
     );
     expect(ids.length).toBe(fixedRecommendations.length + 1);
-    expect(ids).toContain('resource-issues');
+    expect(ids).toContainEqual({id: 'resource-issues'});
   });
 
   it('returns multiple recommendations', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({
         usesAppropriatelySizedImages: false,
         minifiedCss: false,
@@ -370,16 +389,16 @@ describe('getRecommendationIds', () => {
       })
     );
     expect(ids.length).toBe(fixedRecommendations.length + 6);
-    expect(ids).toContain('appropriately-sized-images');
-    expect(ids).toContain('minify-css');
-    expect(ids).toContain('safe-browsing');
-    expect(ids).toContain('https');
-    expect(ids).toContain('valid-cached-amp');
-    expect(ids).toContain('mobile-friendly');
+    expect(ids).toContainEqual({id: 'appropriately-sized-images'});
+    expect(ids).toContainEqual({id: 'minify-css'});
+    expect(ids).toContainEqual({id: 'safe-browsing'});
+    expect(ids).toContainEqual({id: 'https'});
+    expect(ids).toContainEqual({id: 'valid-cached-amp'});
+    expect(ids).toContainEqual({id: 'mobile-friendly'});
   });
 
   it('returns fixed recommendations', async () => {
-    const ids = await getRecommendationIds(
+    const ids = await getRecommendations(
       Promise.resolve({}),
       Promise.resolve({
         safeBrowsing: true,
@@ -394,7 +413,7 @@ describe('getRecommendationIds', () => {
     );
     expect(ids.length).toBe(fixedRecommendations.length);
     for (let i = 0; i < fixedRecommendations.length; i++) {
-      expect(ids).toContain(fixedRecommendations[i]);
+      expect(ids).toContainEqual({id: fixedRecommendations[i]});
     }
   });
 });

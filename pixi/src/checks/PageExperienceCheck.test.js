@@ -11,6 +11,7 @@ import apiResponseErrors from '../../mocks/pageExperienceCheck/apiResponseErrors
 import reportDataErrors from '../../mocks/pageExperienceCheck/reportDataErrors.json';
 import apiResponseNoFieldData from '../../mocks/pageExperienceCheck/apiResponseNoFieldData.json';
 import reportDataNoFieldData from '../../mocks/pageExperienceCheck/reportDataNoFieldData.json';
+import reportDescriptions from '../../mocks/pageExperienceCheck/reportDescriptions.json';
 
 import pixiConfig from '../../config.js';
 
@@ -28,6 +29,7 @@ describe('Page experience check', () => {
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataNoErrors);
+    expect(report.descriptions).toEqual(reportDescriptions);
   });
 
   it('creates report data for url with errors', async () => {
@@ -39,6 +41,7 @@ describe('Page experience check', () => {
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataErrors);
+    expect(report.descriptions).toEqual(reportDescriptions);
   });
 
   it('creates report data for url with no field data', async () => {
@@ -50,5 +53,6 @@ describe('Page experience check', () => {
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataNoFieldData);
+    expect(report.descriptions).toEqual(reportDescriptions);
   });
 });
