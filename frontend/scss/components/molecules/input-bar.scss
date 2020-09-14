@@ -57,7 +57,7 @@
       height: 2px;
       background: color('red');
       opacity: 0;
-      transition: opacity .3s ease-in-out;
+      transition: opacity 0.3s ease-in-out;
 
       @media (min-width: 1024px) {
         left: 25px;
@@ -116,11 +116,11 @@
     }
 
     &[disabled] {
-      background: color('mercury');
+      background: color('boulder');
     }
 
     &.loading {
-      background: color('mercury');
+      background: color('boulder');
 
       #{$inputBar}-submit-title {
         font-size: 0;
@@ -143,7 +143,7 @@
     padding-left: 25px;
     color: color('red');
     opacity: 0;
-    transition: transform .3s ease, opacity .2s ease;
+    transition: transform 0.3s ease, opacity 0.2s ease;
   }
 
   &.error {

@@ -70,19 +70,19 @@
         }
       }
 
-      &[data-type="fast"] {
-        background: color('malachite');
+      &[data-type='fast'] {
+        background: color('green-haze');
 
         span {
-          border-color: color('malachite');
+          border-color: color('green-haze');
         }
       }
 
       &[data-type="average"] {
-        background: color('buttercup');
+        background: color('christine');
 
         span {
-          border-color: color('buttercup');
+          border-color: color('christine');
         }
       }
 
@@ -134,7 +134,7 @@
       font-size: 14px;
       white-space: nowrap;
       font-weight: bold;
-      color: color('malachite');
+      color: color('green-haze');
       transform: translateX(7px);
 
       &:after {
@@ -148,7 +148,7 @@
       }
 
       &.average {
-        color: color('buttercup');
+        color: color('christine');
       }
 
       &.slow {
