@@ -13,7 +13,7 @@
 // limitations under the License.
 
 /* eslint-disable max-len */
-const URL_VALIDATION_REGEX = /^(?:https?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w._~:/?#\[\]@!$&'()*+,;=-]+$/gm;
+const URL_VALIDATION_REGEX = /^(?:https?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w._~:/?#\[\]@!$%&'()*+,;=-]+$/gm;
 
 export default class InputBar {
   constructor(doc, callback) {
