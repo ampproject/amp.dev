@@ -657,9 +657,9 @@ email:
           url: https://sendpulse.com/
         - label: SocketLabs
           url: https://www.socketlabs.com/
-        - label: Sparkpost
+        - label: SparkPost
           url: https://www.sparkpost.com/
         - label: Tripolis
           url: https://www.tripolis.com/
-        - label: Twilio Sendgrid
+        - label: Twilio SendGrid
           url: https://www.twilio.com/sendgrid

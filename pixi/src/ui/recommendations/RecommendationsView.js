@@ -39,15 +39,16 @@ export default class RecommendationsView {
       this.container.removeChild(items[i]);
     }
 
-    for (let i = 1; i < this.filter.children.length; i++) {
-      this.filter.removeChild(this.filterPills[i]);
+    const length = this.filter.children.length;
+    for (let i = 1; i < length; i++) {
+      this.filter.removeChild(this.filter.lastChild);
     }
   }
 
-  render(recommendationIds) {
+  render(recommendationIds, metricUis) {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationIds);
-    const tagIds = [];
+    const tagIdCounts = {};
 
     this.recommendationNodes = [];
     this.filterPills = [];
@@ -83,14 +84,15 @@ export default class RecommendationsView {
         recommendation.classList.add(tagId);
         tag.textContent = i18n.getText(`tags.${tagId}`);
         tagsBar.appendChild(tag);
-        tagIds.push(tagId);
+        const count = tagIdCounts[tagId] || 0;
+        tagIdCounts[tagId] = count + 1;
       }
 
       this.recommendationNodes.push(recommendation);
       this.container.appendChild(recommendation);
     }
 
-    for (const tagId of new Set(tagIds).values()) {
+    for (const tagId of Object.keys(tagIdCounts)) {
       const pill = this.pill.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
       pill.id = `filter-pill-${tagId}`;
@@ -102,6 +104,24 @@ export default class RecommendationsView {
 
       this.filterPills.push(pill);
       this.filter.appendChild(pill);
+    }
+
+    for (const key of Object.keys(metricUis)) {
+      const metricUi = metricUis[key];
+      const count = tagIdCounts[metricUi.metric];
+      if (!count) {
+        metricUi.setRecommendationStatus(false, i18n.getText('status.none'));
+      } else if (count === 1) {
+        metricUi.setRecommendationStatus(
+          true,
+          `${count} ${i18n.getText('status.recommendation')}`
+        );
+      } else {
+        metricUi.setRecommendationStatus(
+          true,
+          `${count} ${i18n.getText('status.recommendations')}`
+        );
+      }
     }
 
     this.pill.classList.add('filtered');

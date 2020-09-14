@@ -15,6 +15,8 @@
  */
 
 const express = require('express');
+const url = require('url');
+const AmpCaches = require('@ampproject/toolbox-cache-list');
 const {lint, LintMode} = require('@ampproject/toolbox-linter');
 const cheerio = require('cheerio');
 const log = require('@lib/utils/log')('Pixi API');
@@ -43,10 +45,20 @@ const isAmp = ($) => {
   return ampHtml.length > 0;
 };
 
+const isCacheUrl = (urlString, cachesList) => {
+  const pageUrl = url.parse(urlString);
+  const matchedCache = cachesList.find((cache) =>
+    pageUrl.hostname.endsWith(cache.cacheDomain)
+  );
+  return !!matchedCache;
+};
+
 const execChecks = async (url) => {
+  const ampCacheListPromise = AmpCaches.list();
   const res = await rateLimitedFetch.fetchHtmlResponse(url);
   const body = await res.text();
   const $ = cheerio.load(body);
+  const ampCacheList = await ampCacheListPromise;
   const context = {
     $,
     headers: {},
@@ -61,6 +73,7 @@ const execChecks = async (url) => {
     redirected: res.redirected,
     url: res.url,
     isAmp: isAmp($),
+    isCacheUrl: isCacheUrl(res.url, ampCacheList),
   };
 
   if (!result.isAmp) {

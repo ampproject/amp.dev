@@ -113,9 +113,14 @@
       }
 
       svg {
+        display: none;
         width: 11px;
         height: 11px;
         fill: currentcolor;
+
+        .has-status & {
+          display: inline;
+        }
       }
 
       [role="button"] {

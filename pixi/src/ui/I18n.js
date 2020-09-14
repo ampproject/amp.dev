@@ -24,11 +24,6 @@ class I18n {
     this.infoTexts = JSON.parse(pixiContent[3]);
   }
 
-  /** @deprecated use getText instead */
-  translate(originalString) {
-    return originalString;
-  }
-
   getText(textKey) {
     const keys = textKey.split('.');
     return keys.reduce(
@@ -64,6 +59,10 @@ class I18n {
 
   getInfoText(infoTextId) {
     return this.infoTexts[infoTextId];
+  }
+
+  getLanguage() {
+    return this.language;
   }
 }
 

@@ -36,15 +36,16 @@ test('returns only the isAmp result with no linter data', (done) => {
       expect(res.body.redirected).toBe(false);
       expect(res.body.url).toBe('https://www.test');
       expect(res.body.isAmp).toBe(false);
+      expect(res.body.isCacheUrl).toBe(false);
       expect(res.body.components).toBeUndefined();
       expect(res.body.data).toBeUndefined();
       done();
     });
 });
 
-test('returns linter result and page info with no components', (done) => {
+test('returns linter result and page info with cache flag and no components', (done) => {
   mockResponse = {
-    url: 'https://www.test',
+    url: 'https://www-test.cdn.ampproject.org/c/s/www.test/',
     redirected: false,
     text: () => '<html amp><head></head><body></body></html>',
   };
@@ -55,14 +56,17 @@ test('returns linter result and page info with no components', (done) => {
   });
 
   request(app)
-    .get('/lint?url=https://www.test')
+    .get('/lint?url=https://www-test.cdn.ampproject.org/c/s/www.test/')
     .expect('Content-Type', /json/)
     .expect(200)
     .then((res) => {
       expect(res.body.status).toBe('ok');
       expect(res.body.redirected).toBe(false);
-      expect(res.body.url).toBe('https://www.test');
+      expect(res.body.url).toBe(
+        'https://www-test.cdn.ampproject.org/c/s/www.test/'
+      );
       expect(res.body.isAmp).toBe(true);
+      expect(res.body.isCacheUrl).toBe(true);
       expect(res.body.components).toEqual({});
       expect(res.body.data.isvalid.status).toBe('FAIL');
       done();
@@ -91,6 +95,7 @@ test('returns linter result and redirected page with 1 component info', (done) =
       expect(res.body.redirected).toBe(true);
       expect(res.body.url).toBe('http://www.test');
       expect(res.body.isAmp).toBe(true);
+      expect(res.body.isCacheUrl).toBe(false);
       expect(res.body.components).toEqual({'amp-script': '0.1'});
       expect(res.body.data.isvalid.status).toBe('PASS');
       done();
