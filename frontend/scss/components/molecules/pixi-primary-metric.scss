@@ -99,11 +99,10 @@
         margin-right: 20px;
       }
 
-      span,
+      a,
       svg {
         white-space: nowrap;
-        opacity: 0.3;
-        transition: opacity .3s ease;
+        transition: opacity 0.3s ease;
 
         .fast &,
         .average &,
