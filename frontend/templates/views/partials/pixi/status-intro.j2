@@ -2,44 +2,34 @@
 
 <section id="status-intro" class="ap-m-pixi-status-intro">
   <div class="ap-m-pixi-status-intro-text">
-    <div class="ap-m-pixi-status-intro-text-item">
-    <p>
-      The AMP page experience guide is a tool that shows AMP developers how 
-      their AMP pages are performing against the Google Search page experience 
-      ranking signal, and provides actionable feedback on how they can improve.
-    </p>
-
-    <p>
-      If we aren't able to provide you with actionable insights please use 
-      the available prompts to <a href="https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue">file an issue on GitHub</a> 
-      so our team can help you understand how your AMP pages can be improved.
-    </p>
-
-    <p>
-      We use publicly available APIs such as 
-      <a href="https://developers.google.com/speed/pagespeed/insights/">PageSpeed Insights</a>, 
-      <a href="https://developers.google.com/safe-browsing/v4/lookup-api">Safe Browsing</a>, and 
-      <a href="https://search.google.com/test/mobile-friendly">Mobile-friendliness Test</a>.
-    </p>
-    </div>
+   {{ pixi.html|render|safe }}
   </div>
   <div id="status-intro-banner-loading" class="ap-m-pixi-status-intro-banner">
     <div class="ap-m-pixi-status-intro-banner-icon"></div>
     <div>
-      <h3>Please wait a moment<br>We are currently analyzing your page{% include 'views/partials/pixi/analyzing-dots.j2' %}</h3>
-      <p><span id="finished-checks">0</span> out of <span id="total-checks">0</span> checks are completed</p>
+      <h3>
+        {{ pixi.staticText.statusIntro.headline }}
+        {% if pixi.staticText.statusIntro.headline2 %}
+          <br>
+          {{ pixi.staticText.statusIntro.headline2 }}
+        {% endif %}
+        {% include 'views/partials/pixi/analyzing-dots.j2' %}
+      </h3>
+      <p>
+        {{ pixi.staticText.statusIntro.loadingCopy|replace('${finishedChecks}', '<span id="finished-checks">0</span>')|replace('${totalChecks}','<span id="total-checks">0</span>')|safe }}
+      </p>
       <div class="ap-m-pixi-status-intro-banner-ctas">
         <button class="ap-a-btn"
             on="tap:recommendations.scrollTo(duration=400)"
             type="button"
             name="button">
-          {{ _('Fix it now') }}
+          {{ pixi.staticText.statusIntro.buttonFixIt }}
         </button>
         <button class="ap-a-btn ap-a-btn-light"
             on="tap:share-dialog"
             type="button"
             name="button">
-          {{ _('Share') }}
+          {{ pixi.staticText.statusIntro.buttonShare }}
         </button>
       </div>
     </div>

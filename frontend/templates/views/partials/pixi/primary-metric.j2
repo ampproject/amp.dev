@@ -10,7 +10,7 @@
         {{ primary_metric.title.id }}
       </div>
       <label class="ap-m-pixi-primary-metric-header-title-status">
-        <span class="ap-m-pixi-primary-metric-category">{{ _('Analyzing') }}</span>
+        <span class="ap-m-pixi-primary-metric-category">{{ pixi.staticText.status.analyzing }}</span>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </label>
     </h3>
@@ -26,20 +26,20 @@
   <div class="ap-m-pixi-primary-metric-body">
     <div class="ap-m-pixi-primary-metric-body-result">
       <div>
-        <strong>{{ _('Your score') }}:</strong>
-        <span class="ap-m-pixi-primary-metric-score">{{ _('Calculating') }}</span>
+        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.score }}:</strong>
+        <span class="ap-m-pixi-primary-metric-score">{{ pixi.staticText.status.calculating }}</span>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </div>
 
       <div>
-        <strong>{{ _('Opportunity to improve') }}:</strong>
-        <span class="ap-m-pixi-primary-metric-improvement">{{ _('Calculating') }}</span>
+        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.opportunity }}:</strong>
+        <span class="ap-m-pixi-primary-metric-improvement">{{ pixi.staticText.status.calculating }}</span>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </div>
 
       <div>
-        <strong>{{ _('Take action') }}:</strong>
-        <a href="#recommendations" class="ap-m-pixi-primary-metric-recommendations">{{ _('Analyzing') }}</a>
+        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.action }}:</strong>
+        <a href="#recommendations" class="ap-m-pixi-primary-metric-recommendations">{{ pixi.staticText.status.analyzing }}</a>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
         {% do doc.icons.useIcon('icons/arrow-down.svg') %}
         <svg>

@@ -1,13 +1,33 @@
 ---
 $title: AMP Page Experience Guide
 staticText:
-  analyze:
+  inputBar:
     headline: Analyze your AMP page
-    fieldPlaceholder: Enter your URL
+    fieldPlaceholder: Enter valid URL
     fieldError: Please enter a valid URL
     button: Analyze
+  shareDialog:
+    headline: Copy & paste URL
+  statusIntro:
+    headline: Please wait a moment
+    headline2: We are currently analyzing your page
+    loadingCopy: ${finishedChecks} out of ${totalChecks} checks are completed
+    buttonFixIt: Fix it now
+    buttonShare: Share
   coreWebVitals:
     headline: Core Web Vitals
+    tabsAriaLabel: Field and lab data tabs
+    fieldData: Field data
+    labData: Lab data
+    loadingSpeed: Loading speed
+    interactivity: Interactivity
+    visualStability: Visual stability
+    pageLoads: Page loads
+    thresholdMarker: 75th percentile
+    resultLabels:
+      score: Your score
+      opportunity: Opportunity to improve
+      action: Take action
   additionalChecks:
     headline: Additional checks
     safeBrowsing: Safe Browsing
@@ -25,7 +45,10 @@ staticText:
     fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations
+  recommendations:
+    headline: Take action. Improve your AMP site
   tags:
+    all: All
     lcp: LCP
     fid: FID
     cls: CLS

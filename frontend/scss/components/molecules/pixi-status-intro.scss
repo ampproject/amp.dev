@@ -26,11 +26,12 @@
       padding: 0;
     }
 
-    &-item {
+    & p {
       flex: 1;
       min-width: 230px;
+      color: color('white');
 
-      & + & {
+      & + p {
         margin-left: 20px;
 
         @media (min-width: 1024px) {
@@ -39,7 +40,6 @@
       }
 
       h3,
-      p,
       a {
         color: color('white');
       }
