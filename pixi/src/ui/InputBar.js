@@ -23,11 +23,12 @@ export default class InputBar {
     this.label = this.container.querySelector('#input-label');
 
     this.submit.addEventListener('click', callback);
-    this.field.addEventListener('input', (e) => {
+    this.field.addEventListener('keyup', (e) => {
       if (e.keyCode === 13 && !this.submit.classList.contains('loading')) {
         callback();
       }
-
+    });
+    this.field.addEventListener('input', () => {
       this.toggleValid(this.isValidUrl(this.field.value));
     });
   }
