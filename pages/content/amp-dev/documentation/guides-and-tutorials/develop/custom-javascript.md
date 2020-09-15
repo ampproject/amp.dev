@@ -36,7 +36,7 @@ Thus workers seem like a perfect way to run custom JavaScript in AMP. Unfortunat
 
 Workers can use JavaScript just as it's used elsewhere in the browser. WorkerDOM recreates many commonly used DOM APIs and makes them available for your use. It also supports common Web APIs like `Fetch` and `Canvas`. You can assign handlers for browser events in the usual way.
 
-However, `amp-script` does not support the entire DOM API or Web API, as this would make its own JavaScript too large and slow. See [the documentation](../../../documentation/components/reference/amp-script.md#supported-apis) for details, and see [these samples](../../../documentation/examples/components/amp-script.md) to see `amp-script` in use.
+However, `amp-script` does not support the entire DOM API or Web API, as this would make its own JavaScript too large and slow. See [the documentation](../../../documentation/components/reference/amp-script.md#supported-apis) for details, and see [these samples](../../../documentation/examples/components/amp-script/index.html) to see `amp-script` in use.
 
 A handful of synchronous DOM API methods are replaced with alternatives that return a Promise. For example,  `getBoundingClientRect()` is replaced by `getBoundingClientRectAsync()`.
 
@@ -72,7 +72,7 @@ When possible, it's better to use an AMP component for a DOM interaction. If the
 
 ### Enhance AMP components <a name="enhance-amp-components"></a>
 
-`amp-script` has access to AMP state variables and the `AMP.getState()` and `AMP.setState()` methods. This lets you enhance existing AMP components with your own logic. It also provides a way to affect the DOM outside of the `<amp-script>` component itself. See [here](../../../documentation/examples/components/amp-script.md#interacting-with-%3Camp-state%3E) and [here](../../../documentation/examples/components/amp-script.md#interacting-with-amp-components) for examples.
+`amp-script` has access to AMP state variables and the `AMP.getState()` and `AMP.setState()` methods. This lets you enhance existing AMP components with your own logic. It also provides a way to affect the DOM outside of the `<amp-script>` component itself. See [here](../../../documentation/examples/components/amp-script/index.html#interacting-with-%3Camp-state%3E) and [here](../../../documentation/examples/components/amp-script/index.html#interacting-with-amp-components) for examples.
 
 ### Replace interactive components
 
@@ -84,7 +84,7 @@ AMP allows you to retrieve server data using `amp-list` and to format it using [
 
 ### Introduce new capabilities
 
-You can use `amp-script` to access elements of the Web and DOM APIs that aren't currently accessible to AMP components, or in ways that AMP components don't support. For example, `amp-script` supports `WebSockets` ([example](../../../documentation/examples/components/amp-script.md#using-a-websocket-for-live-updates)), `localStorage`, and `Canvas`. It supports browser events that AMP doesn't normally pass along. And since you can access the `navigator` object, you can retrieve information about [the user's browser](../../../documentation/examples/components/amp-script.md#detecting-the-operating-system) or [preferred language](../../../documentation/examples/components/amp-script.md#personalization).
+You can use `amp-script` to access elements of the Web and DOM APIs that aren't currently accessible to AMP components, or in ways that AMP components don't support. For example, `amp-script` supports `WebSockets` ([example](../../../documentation/examples/components/amp-script/index.html#using-a-websocket-for-live-updates)), `localStorage`, and `Canvas`. It supports browser events that AMP doesn't normally pass along. And since you can access the `navigator` object, you can retrieve information about [the user's browser](../../../documentation/examples/components/amp-script/index.html#detecting-the-operating-system) or [preferred language](../../../documentation/examples/components/amp-script/index.html#personalization).
 
 ## amp-script - or amp-bind and amp-list? <a name="amp-script---or-amp-bind-and-amp-list"></a>
 
