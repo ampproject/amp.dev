@@ -21,3 +21,6 @@
     </div>
   </div>
 </div>
+<div class="ap-m-tooltip-background"
+    on="tap:tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}.toggleClass(class=active)">
+</div>
