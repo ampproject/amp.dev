@@ -467,7 +467,7 @@ describe('getStatusId', () => {
     expect(statusId).toBe('passed-with-info');
   });
 
-  it('returns api-error for linter error', async () => {
+  it('returns generic-error for linter error', async () => {
     const statusId = await getStatusId(
       pendingPromise,
       pendingPromise,
@@ -475,38 +475,42 @@ describe('getStatusId', () => {
       Promise.reject(new Error('error')),
       pendingPromise
     );
-    expect(statusId).toBe('api-error');
+    expect(statusId).toBe('generic-error');
   });
 
-  it('returns api-error for page experience error', async () => {
+  it('returns cwv-error for page experience error', async () => {
     const statusId = await getStatusId(
-      pendingPromise,
-      Promise.reject(new Error('error')),
-      pendingPromise,
+      Promise.resolve(fixedRecommendations),
+      Promise.resolve({error: new Error('error')}),
+      passedSafeBrowsingPromise,
       passedLinterPromise,
-      pendingPromise
+      passedMobileFriendlinessPromise
     );
-    expect(statusId).toBe('api-error');
+    expect(statusId).toBe('cwv-error');
   });
 
   it('returns api-error for safe browsing error', async () => {
     const statusId = await getStatusId(
-      pendingPromise,
-      pendingPromise,
-      Promise.reject(new Error('error')),
+      Promise.resolve(fixedRecommendations),
+      Promise.resolve({
+        pageExperience: {},
+      }),
+      Promise.resolve({error: new Error('error')}),
       passedLinterPromise,
-      pendingPromise
+      passedMobileFriendlinessPromise
     );
     expect(statusId).toBe('api-error');
   });
 
   it('returns api-error for mobile friendliness error', async () => {
     const statusId = await getStatusId(
-      pendingPromise,
-      pendingPromise,
-      pendingPromise,
+      Promise.resolve(fixedRecommendations),
+      Promise.resolve({
+        pageExperience: {},
+      }),
+      passedSafeBrowsingPromise,
       passedLinterPromise,
-      Promise.reject(new Error('error'))
+      Promise.resolve({error: new Error('error')})
     );
     expect(statusId).toBe('api-error');
   });

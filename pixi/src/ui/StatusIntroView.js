@@ -80,11 +80,10 @@ export default class StatusIntroView {
     bannerText.innerHTML = marked(statusBanner.body);
 
     const buttons = banner.querySelectorAll('button');
-    const anchor = banner.querySelectorAll('a')[0];
+    const anchor = banner.querySelector('a');
     if (statusBanner.investigate) {
       anchor.setAttribute('href', statusBanner.investigate);
-    } else {
-      anchor.classList.add('pristine');
+      anchor.classList.remove('pristine');
     }
     if (hideFixButton) {
       buttons[0].classList.add('pristine');
@@ -103,7 +102,7 @@ export default class StatusIntroView {
     try {
       return await statusBannerIdPromise;
     } catch (err) {
-      return 'api-error';
+      return 'generic-error';
     }
   }
 
