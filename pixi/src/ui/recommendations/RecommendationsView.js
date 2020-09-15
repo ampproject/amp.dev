@@ -53,7 +53,7 @@ export default class RecommendationsView {
     this.recommendationNodes = [];
     this.filterPills = [];
 
-    for (const value of recommendations) {
+    for (const [i, value] of recommendations.entries()) {
       const recommendation = this.recommendation.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
@@ -72,6 +72,11 @@ export default class RecommendationsView {
       recommendation.id = `recommendation-${value.id}`;
       header.id = `header-${value.id}`;
       body.id = `body-${value.id}`;
+
+      if (i == 0) {
+        recommendation.classList.add('expanded');
+        header.setAttribute('aria-expanded', 'true');
+      }
 
       header.addEventListener('click', () => {
         const isExpanded = recommendation.classList.toggle('expanded');
