@@ -2,7 +2,7 @@
 <div class="ap-a-pixi-scale">
 
     {% if scale != 'weighted' %}
-    <label class="ap-a-pixi-scale-label">{{ _('Page loads')}}</label>
+    <label class="ap-a-pixi-scale-label">{{ _('Page loads rating')}}</label>
 
     <div class="ap-a-pixi-scale-chart">
       <div class="ap-a-pixi-scale-chart-bar" data-type="fast">
@@ -16,6 +16,8 @@
 
 
     {% if scale == 'weighted' %}
+    <label class="ap-a-pixi-scale-label">&nbsp;</label>
+
     <div class="ap-a-pixi-scale-chart weighted">
       <div class="ap-a-pixi-scale-chart-bar" data-type="average">
         <span>&nbsp;</span>
