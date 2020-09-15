@@ -75,6 +75,7 @@ export default class RecommendationsView {
 
       if (i == 0) {
         recommendation.classList.add('expanded');
+        header.setAttribute('aria-expanded', 'true');
       }
 
       header.addEventListener('click', () => {
