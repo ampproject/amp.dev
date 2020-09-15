@@ -9,11 +9,11 @@
   background-color: color('white');
 
   @media (min-width: 768px) {
-    padding: 15px 25px;
+    padding: 15px 15px 15px 25px;
   }
 
   @media (min-width: 1024px) {
-    padding: 35px;
+    padding: 35px 25px 35px 35px;
   }
 
   & + & {
