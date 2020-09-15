@@ -19,8 +19,8 @@
     svg {
       width: 100%;
       height: 100%;
-      opacity: .3;
-      transition: opacity .2s ease-in-out;
+      opacity: 0.3;
+      transition: opacity 0.2s ease-in-out;
     }
 
     #{$tooltip}.active &,
@@ -63,7 +63,7 @@
 
     pointer-events: none;
     opacity: 0;
-    filter: drop-shadow(0 0 20px transparentize(color('black'), 0.80));
+    filter: drop-shadow(0 0 20px transparentize(color('black'), 0.8));
 
     @media (min-width: 575px) {
       position: absolute;
@@ -100,7 +100,7 @@
     h2 {
       margin-bottom: 30px;
       padding-bottom: 30px;
-      border-bottom: 1px solid color('mercury');
+      border-bottom: 1px solid color('boulder');
 
       @media (min-width: 575px) {
         display: none;

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 /* eslint-disable max-len */
-const URL_VALIDATION_REGEX = /^(?:https?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w._~:/?#\[\]@!$&'()*+,;=-]+$/gm;
+const URL_VALIDATION_REGEX = /^(?:https?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w._~:/?#\[\]@!$%&'()*+,;=-]+$/gm;
 
 export default class InputBar {
   constructor(doc, callback) {
@@ -23,8 +23,8 @@ export default class InputBar {
     this.label = this.container.querySelector('#input-label');
 
     this.submit.addEventListener('click', callback);
-    this.field.addEventListener('keyup', (e) => {
-      if (e.keyCode == 13 && !this.submit.classList.contains('loading')) {
+    this.field.addEventListener('input', (e) => {
+      if (e.keyCode === 13 && !this.submit.classList.contains('loading')) {
         callback();
       }
 

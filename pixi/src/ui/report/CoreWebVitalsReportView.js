@@ -19,6 +19,8 @@ const CATEGORIES = {
   average: 'Needs Improvement',
   slow: 'Poor',
 };
+const FILE_ISSUE_URL =
+  'https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&template=page-experience.md&title=Page+experience+issue';
 
 class WeightedScale {
   constructor(container) {
@@ -91,6 +93,7 @@ class CoreWebVitalView {
       this.scale = new WeightedScale(container);
     }
 
+    this.performanceCategory = null;
     this.category = this.container.querySelector(
       '.ap-m-pixi-primary-metric-category'
     );
@@ -103,6 +106,8 @@ class CoreWebVitalView {
     this.recommendations = this.container.querySelector(
       '.ap-m-pixi-primary-metric-recommendations'
     );
+    this.defaultHref = this.recommendations.getAttribute('href');
+    this.recommendations.removeAttribute('href');
   }
 
   render(metric, cacheMetric) {
@@ -111,9 +116,9 @@ class CoreWebVitalView {
     this.scale.render(data, unit);
 
     const responseCategory = data.category.toLowerCase();
-    const displayCategory = CATEGORIES[responseCategory];
+    this.performanceCategory = CATEGORIES[responseCategory];
     this.container.classList.add(responseCategory);
-    this.category.textContent = displayCategory;
+    this.category.textContent = this.performanceCategory;
 
     const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;
@@ -141,9 +146,28 @@ class CoreWebVitalView {
     this.container.parentNode.classList.add('error');
   }
 
-  setRecommendationStatus(hasStatus, text) {
-    this.recommendations.textContent = text;
-    this.container.classList.toggle('has-status', hasStatus);
+  setRecommendationStatus(count) {
+    this.container.classList.toggle('has-status', !!count);
+    if (!count) {
+      if (this.performanceCategory === CATEGORIES.fast) {
+        this.recommendations.textContent = i18n.getText('status.nothingToDo');
+        return;
+      }
+      this.recommendations.setAttribute('href', FILE_ISSUE_URL);
+      this.recommendations.setAttribute('target', '_blank');
+      this.recommendations.textContent = i18n.getText('status.fileAnIssue');
+      return;
+    }
+    this.recommendations.setAttribute('href', this.defaultHref);
+    if (count === 1) {
+      this.recommendations.textContent = `${count} ${i18n.getText(
+        'status.recommendation'
+      )}`;
+    } else {
+      this.recommendations.textContent = `${count} ${i18n.getText(
+        'status.recommendations'
+      )}`;
+    }
   }
 
   reset() {
@@ -153,6 +177,8 @@ class CoreWebVitalView {
     this.score.textContent = i18n.getText('status.analyzing');
     this.improvement.textContent = i18n.getText('status.calculating');
     this.recommendations.textContent = i18n.getText('status.analyzing');
+    this.recommendations.removeAttribute('href');
+    this.recommendations.removeAttribute('target');
 
     this.toggleLoading(true);
   }

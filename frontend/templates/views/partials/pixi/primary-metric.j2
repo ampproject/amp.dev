@@ -37,12 +37,9 @@
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </div>
 
-      <div on="tap:recommendations.scrollTo(duration=400),
-              recommendations.toggleClass(class={{ primary_metric.title.id|slug }})"
-            aria-label="{{ _('Filter by') + primary_metric.title.id|slug }}"
-            role="button">
+      <div>
         <strong>{{ _('Take action') }}:</strong>
-        <span class="ap-m-pixi-primary-metric-recommendations">{{ _('Analyzing') }}</span>
+        <a href="#recommendations" class="ap-m-pixi-primary-metric-recommendations">{{ _('Analyzing') }}</a>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
         {% do doc.icons.useIcon('icons/arrow-down.svg') %}
         <svg>
