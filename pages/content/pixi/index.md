@@ -16,6 +16,7 @@ staticText:
     buttonShare: Share
   coreWebVitals:
     headline: Core Web Vitals
+    tabsAriaLabel: Field and lab data tabs
     fieldData: Field data
     labData: Lab data
     loadingSpeed: Loading speed
