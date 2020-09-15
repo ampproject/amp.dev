@@ -1,16 +1,19 @@
 {% do doc.styles.addCssFile('css/components/organisms/pixi-primary-checks.css') %}
 
 <div class="ap-o-pixi-primary-checks" id="core-web-vitals">
-  <div class="ap-o-pixi-primary-checks-tabs">
-    <button class="ap-o-pixi-primary-checks-tabs-tab active">
+  <div class="ap-o-pixi-primary-checks-tabs" aria-label="{{ _('Field and lab data tabs') }}">
+    <button role="tab" aria-selected="true" aria-controls="primary-checks-field-data" 
+      id="field-data-tab" class="ap-o-pixi-primary-checks-tabs-tab active">
       {{ _('Field data') }}
     </button>
-    <button class="ap-o-pixi-primary-checks-tabs-tab">
+    <button role="tab" aria-selected="false" aria-controls="primary-checks-lab-data" 
+      id="lab-data-tab" class="ap-o-pixi-primary-checks-tabs-tab">
       {{ _('Lab data') }}
     </button>
   </div>
 
-  <div class="ap-o-pixi-primary-checks-data active">
+  <div id="primary-checks-field-data" class="ap-o-pixi-primary-checks-data active" tabindex="0"
+    role="tabpanel" tabindex="0" aria-labelledby="field-data-tab">
     {% with primary_metric = {
       'id': 'fieldData.lcp',
       'title': {
@@ -50,7 +53,8 @@
 
   </div>
 
-  <div class="ap-o-pixi-primary-checks-data">
+  <div class="ap-o-pixi-primary-checks-data" tabindex="0"
+    role="tabpanel" tabindex="0" aria-labelledby="lab-data-tab">
     {% with primary_metric = {
       'id': 'labData.lcp',
       'type': '-lab',
