@@ -6,29 +6,11 @@ formats:
   - ads
 teaser:
   text: 替代 HTML5 audio 标记。
-toc: true
-$title: amp-audio
-version: '0.1'
-versions:
-  - '0.1'
-latest_version: '0.1'
-is_current: true
-$path: /documentation/components/amp-audio.html
-$localization:
-  path: '/{locale}/documentation/components/amp-audio.html'
-layouts:
-  - fixed
-  - fixed-height
-  - nodisplay
-scripts:
-  - >-
-    <script async custom-element="amp-audio"
-    src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
 ---
 
 
 <!---
-Copyright 2015 The AMP HTML Authors. All Rights Reserved.
+Copyright 2020 The AMP HTML Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
