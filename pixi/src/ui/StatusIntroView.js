@@ -80,6 +80,12 @@ export default class StatusIntroView {
     bannerText.innerHTML = marked(statusBanner.body);
 
     const buttons = banner.querySelectorAll('button');
+    const anchor = banner.querySelectorAll('a')[0];
+    if (statusBanner.investigate) {
+      anchor.setAttribute('href', statusBanner.investigate);
+    } else {
+      anchor.classList.add('pristine');
+    }
     if (hideFixButton) {
       buttons[0].classList.add('pristine');
       // make second button primary

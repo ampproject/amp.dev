@@ -14,6 +14,7 @@ staticText:
     loadingCopy: ${finishedChecks} out of ${totalChecks} checks are completed
     buttonFixIt: Fix it now
     buttonShare: Share
+    buttonInvestigate: Investigate
   coreWebVitals:
     headline: Core Web Vitals
     tabsAriaLabel: Field and lab data tabs
