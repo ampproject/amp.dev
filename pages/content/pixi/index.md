@@ -3,7 +3,7 @@ $title: AMP Page Experience Guide
 staticText:
   inputBar:
     headline: Analyze your AMP page
-    fieldPlaceholder: Enter valid URL
+    fieldPlaceholder: Enter URL
     fieldError: Please enter a valid URL
     button: Analyze
   shareDialog:
