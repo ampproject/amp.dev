@@ -14,7 +14,7 @@
 
   &-label {
     display: block;
-    margin-bottom: 32px;
+    margin: 3px 0 20px 0;
     font-size: 14px;
     font-weight: bold;
   }
@@ -28,6 +28,10 @@
     height: 5px;
     border-radius: 2px;
     background-color: color('silver');
+
+    &.weighted {
+      background-color: color('red');
+    }
 
     &-bar {
       position: absolute;
@@ -85,25 +89,12 @@
           border-color: color('christine');
         }
       }
-
-      &[data-type="slow"] {
-        width: 100%;
-        background: color('red');
-
-        span {
-          border-color: color('red');
-
-          &:after {
-            display: none;
-          }
-        }
-      }
     }
 
     &-pitch {
       position: absolute;
       left: 75%;
-      top: -30px;
+      top: -28px;
       display: flex;
       justify-content: center;
       width: 1px;
@@ -177,6 +168,9 @@
   }
 
   .loading &, .pristine & {
+    &-chart {
+      background-color: color('silver');
+    }
     &-chart-bar,
     &-chart-indicator {
       opacity: 0;
