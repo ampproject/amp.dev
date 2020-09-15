@@ -76,9 +76,7 @@ When possible, it's better to use an AMP component for a DOM interaction. If the
 
 ### Replace interactive components
 
-AMP has an extensive system of [actions and events](https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events/) that allow you to handle browser events, taking standard actions on the DOM and mutating the state of AMP components. It also includes interactive components like [`amp-bind`](https://amp.dev/documentation/components/amp-bind/) and [`amp-list`](https://amp.dev/documentation/components/amp-list/). If you're new to AMP and you're comfortable with JavaScript, it may be easier to simply use `amp-script`. For more elaborate interactions, `amp-script` will likely be easier, as discussed here.
-
-**(TODO: insert link)**
+AMP has an extensive system of [actions and events](https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events/) that allow you to handle browser events, taking standard actions on the DOM and mutating the state of AMP components. It also includes interactive components like [`amp-bind`](https://amp.dev/documentation/components/amp-bind/) and [`amp-list`](https://amp.dev/documentation/components/amp-list/). If you're new to AMP and you're comfortable with JavaScript, it may be easier to simply use `amp-script`. For more elaborate interactions, `amp-script` will likely be easier, as discussed [here](#amp-script-or-amp-bind-and-amp-list).
 
 ### Handle server data
 
@@ -87,3 +85,62 @@ AMP allows you to retrieve server data using `amp-list` and to format it using [
 ### Introduce new capabilities
 
 You can use `amp-script` to access elements of the Web and DOM APIs that aren't currently accessible to AMP components, or in ways that AMP components don't support. For example, `amp-script` supports `WebSockets` ([example](https://amp.dev/documentation/examples/components/amp-script/#using-a-websocket-for-live-updates)), `localStorage`, and `Canvas`. It supports browser events that AMP doesn't normally pass along. And since you can access the `navigator` object, you can retrieve information about [the user's browser](https://amp.dev/documentation/examples/components/amp-script/#detecting-the-operating-system) or [preferred language](https://amp.dev/documentation/examples/components/amp-script/#personalization).
+
+## amp-script - or amp-bind and amp-list?
+
+This is a matter of personal preference. But you'll probably want to use both techniques.
+
+`amp-bind` and `amp-list` are tightly integrated with the rest of AMP. You can sprinkle these components throughout your page. `amp-script` is more suited to controlling its DOM children, though, [as noted above](#enhance-amp-components), it can also affect the rest of the page by mutating state variables, just like `amp-bind`.
+
+For simple interactions, `amp-bind` may be easier. For example, pressing this button changes a bit of text.
+
+```
+<p [text]="name">Rajesh&lt;/p>
+
+<button on="tap:AMP.setState({name: 'Priya'})">I am Priya&lt;/button>
+```
+
+`amp-bind` also provides a straightforward mechanism to communicate between AMP components. In this example, tapping on an image in an `&lt;amp-selector>` sets the state variable `selectedSlide` to `0`, which in turn makes an `&lt;amp-carousel>` move to its first slide.
+
+```
+<amp-carousel slide="selectedSlide">
+...
+
+</amp-carousel>
+
+<amp-selector>
+
+  &lt;amp-img on="tap:AMP.setState({selectedSlide: 0})"/>
+
+</amp-selector>
+```
+
+Traditional interactive AMP components may also be more suitable for interactions that span large sections of a webpage - as you may not wish to wrap so much of the DOM in an `&lt;amp-script>`. 
+
+On the other hand, on pages that involve more complex state variables or multiple interactions, `amp-script` provides a simpler path. This example is from [the AMP Camp e-commerce demo site](https://camp.samples.amp.dev/product-details?categoryId=women-shirts&productId=79121):
+
+```
+<amp-selector
+  name="color"
+  layout="container"
+  [selected]="product.selectedColor"
+  on="select:AMP.setState({
+      product: 
+        {
+          selectedSlide: product[event.targetOption].option - 1,
+          selectedColor: event.targetOption,
+          selectedSize: product[event.targetOption].sizes[product.selectedSize] != null ?
+                        product.selectedSize : 
+                        product[event.targetOption].defaultSize,
+          selectedQuantity: 1
+        }
+      })"
+></amp-selector>
+```
+
+This site was created before `amp-script` was released. But this sort of logic might easily be easier to write and debug in JavaScript. In general, for pages with more business logic, `amp-script` may well be less confusing and will allow you to follow better programming practices.
+
+
+## You can help
+
+At the time this guide is being written, `amp-script` is still an evolving technology. Developers are encouraged to get involved - to think of ways to improve it, to [submit issues](https://github.com/ampproject/amphtml/issues), and of course to [suggest and contribute new features](https://github.com/ampproject/amphtml/pulls)!
