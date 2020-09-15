@@ -2,14 +2,14 @@
 <div class="ap-a-pixi-scale">
 
     {% if scale != 'weighted' %}
-    <label class="ap-a-pixi-scale-label">{{ _('Page loads rating')}}</label>
+    <label class="ap-a-pixi-scale-label">{{ pixi.staticText.coreWebVitals.pageLoads }}</label>
 
     <div class="ap-a-pixi-scale-chart">
       <div class="ap-a-pixi-scale-chart-bar" data-type="fast">
         <span>&nbsp;</span>
       </div>
       <aside class="ap-a-pixi-scale-chart-pitch">
-        75th percentile
+        {{ pixi.staticText.coreWebVitals.thresholdMarker }}
       </aside>
     </div>
     {% endif %}
@@ -30,6 +30,5 @@
       </aside>
     </div>
     {% endif %}
-
 
 </div>

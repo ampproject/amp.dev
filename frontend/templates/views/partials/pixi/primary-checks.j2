@@ -2,13 +2,13 @@
 
 <div class="ap-o-pixi-primary-checks" id="core-web-vitals">
   <div class="ap-o-pixi-primary-checks-tabs" aria-label="{{ _('Field and lab data tabs') }}">
-    <button role="tab" aria-selected="true" aria-controls="primary-checks-field-data" 
-      id="field-data-tab" class="ap-o-pixi-primary-checks-tabs-tab active">
-      {{ _('Field data') }}
+    <button role="tab" aria-selected="true" aria-controls="primary-checks-field-data"
+            id="field-data-tab" class="ap-o-pixi-primary-checks-tabs-tab active">
+      {{ pixi.staticText.coreWebVitals.fieldData }}
     </button>
-    <button role="tab" aria-selected="false" aria-controls="primary-checks-lab-data" 
-      id="lab-data-tab" class="ap-o-pixi-primary-checks-tabs-tab">
-      {{ _('Lab data') }}
+    <button role="tab" aria-selected="false" aria-controls="primary-checks-lab-data"
+            id="lab-data-tab" class="ap-o-pixi-primary-checks-tabs-tab">
+      {{ pixi.staticText.coreWebVitals.labData }}
     </button>
   </div>
 
@@ -17,7 +17,7 @@
     {% with primary_metric = {
       'id': 'fieldData.lcp',
       'title': {
-        'full': _('Loading speed'),
+        'full': pixi.staticText.coreWebVitals.loadingSpeed,
         'id': 'LCP'
       },
       'scale': 'simple'
@@ -28,7 +28,7 @@
     {% with primary_metric = {
       'id': 'fieldData.fid',
       'title': {
-        'full': _('Interactivity'),
+        'full':pixi.staticText.coreWebVitals.interactivity,
         'id': 'FID'
       },
       'scale': 'simple'
@@ -39,7 +39,7 @@
     {% with primary_metric = {
       'id': 'fieldData.cls',
       'title': {
-        'full': _('Visual stability'),
+        'full': pixi.staticText.coreWebVitals.visualStability,
         'id': 'CLS'
       },
       'scale': 'simple'
@@ -48,7 +48,7 @@
     {% endwith %}
 
     <div class="ap-o-pixi-primary-checks-data-error-label">
-      <label>{{ _('Unfortunately, we do not have sufficient real-world performance data for this page. Please have a look at the lab data or come back later in a view days.') }}</label>
+      <label>{{ g.doc('/content/pixi/no-field-data.md', locale=doc.locale).html|render|safe }}</label>
     </div>
 
   </div>
@@ -59,7 +59,7 @@
       'id': 'labData.lcp',
       'type': '-lab',
       'title': {
-        'full': _('Loading speed'),
+        'full': pixi.staticText.coreWebVitals.loadingSpeed,
         'id': 'LCP'
       },
       'scale': 'weighted'
@@ -71,7 +71,7 @@
       'id': 'labData.tbt',
       'type': '-lab',
       'title': {
-        'full': _('Interactivity'),
+        'full': pixi.staticText.coreWebVitals.interactivity,
         'id': 'TBT'
       },
       'scale': 'weighted'
@@ -83,7 +83,7 @@
       'id': 'labData.cls',
       'type': '-lab',
       'title': {
-        'full': _('Visual stability'),
+        'full': pixi.staticText.coreWebVitals.visualStability,
         'id': 'CLS'
       },
       'scale': 'weighted'
