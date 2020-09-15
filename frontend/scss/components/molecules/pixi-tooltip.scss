@@ -73,7 +73,7 @@
       width: 300px;
       height: auto;
       padding: 24px 16px 24px 24px;
-      transform: translateX(10%);
+      transform: translateX(7%);
     }
 
     @media (min-width: 1024px) {
@@ -90,7 +90,7 @@
       border: 15px solid transparent;
       border-top: 0;
       border-bottom-color: color('white');
-      right: calc(20% - 30px);
+      right: calc(17% - 30px);
 
       @media (min-width: 1024px) {
         right: calc(30% - 30px);
@@ -110,6 +110,18 @@
     p {
       margin: 0;
     }
+
+    .invert & {
+
+      @media (min-width: 575px) {
+        transform: translateX(70%);
+      }
+
+      &:after {
+        left: calc(30% - 30px);
+      }
+    }
+
 
     #{$tooltip}.active & {
       opacity: 1;

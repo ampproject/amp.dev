@@ -2,31 +2,35 @@
 
 <div class="ap-o-pixi-basic-checks">
   {% with basic_metric = {
-  'id': 'safe-browsing',
-  'title': pixi.staticText.additionalChecks.safeBrowsing
-} %}
-    {% include 'views/partials/pixi/basic-metric.j2' %}
+    'id': 'safe-browsing',
+    'title': pixi.staticText.additionalChecks.safeBrowsing,
+    'invert_tooltip': true
+  }%}
+  {% include 'views/partials/pixi/basic-metric.j2' %}
   {% endwith %}
 
   {% with basic_metric = {
-  'id': 'https',
-  'title': pixi.staticText.additionalChecks.https
-} %}
-    {% include 'views/partials/pixi/basic-metric.j2' %}
+    'id': 'https',
+    'title': pixi.staticText.additionalChecks.https,
+    'invert_tooltip': true
+  }%}
+  {% include 'views/partials/pixi/basic-metric.j2' %}
   {% endwith %}
 
   {% with basic_metric = {
-  'id': 'mobile-friendliness',
-  'title': pixi.staticText.additionalChecks.mobileFriendliness,
-} %}
-    {% include 'views/partials/pixi/basic-metric.j2' %}
+    'id': 'mobile-friendliness',
+    'title': pixi.staticText.additionalChecks.mobileFriendliness,
+    'invert_tooltip': false
+  }%}
+  {% include 'views/partials/pixi/basic-metric.j2' %}
   {% endwith %}
 
   {% with basic_metric = {
-  'id': 'intrusive-interstitials',
-  'title': pixi.staticText.additionalChecks.intrusiveInterstitials,
-  'status': pixi.staticText.additionalChecks.checkManually
-} %}
-    {% include 'views/partials/pixi/basic-metric.j2' %}
+    'id': 'intrusive-interstitials',
+    'title': pixi.staticText.additionalChecks.intrusiveInterstitials,
+    'status': pixi.staticText.additionalChecks.checkManually,
+    'invert_tooltip': false
+  }%}
+  {% include 'views/partials/pixi/basic-metric.j2' %}
   {% endwith %}
 </div>
