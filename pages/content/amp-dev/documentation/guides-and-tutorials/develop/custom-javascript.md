@@ -38,7 +38,7 @@ Note that the DOM synchronization only goes in one direction. If you modify the 
 
 The JavaScript language is the same in a worker as it is elsewhere in the browser. WorkerDOM also recreates many commonly used DOM APIs and makes them available for your use. It supports common Web APIs like `Fetch` and `Canvas`, and it gives you to selected global objects like `navigator` and `localStorage`. You can assign handlers for browser events in the usual way.
 
-However, `amp-script` does not support the entire DOM API or Web API, as this would make its own JavaScript too large and cumbersome. See [the documentation](../../../documentation/components/reference/amp-script.md#supported-apis) for details, and see [these samples](../../../documentation/examples/components/amp-script/index.html) to see `amp-script` in use.
+However, `amp-script` does not support the entire DOM API or Web API, as this would make its own JavaScript too large and cumbersome. See [the documentation](../../../documentation/components/reference/amp-script.md#supported-apis) for details, and see [these samples](https://amp.dev/documentation/examples/components/amp-script/) to see `amp-script` in use.
 
 A handful of synchronous DOM API methods are replaced with alternatives that return a Promise. For example,  `getBoundingClientRect()` is replaced by `getBoundingClientRectAsync()`.
 
@@ -73,7 +73,7 @@ When possible, it's better to use an AMP component for a DOM interaction. If the
 
 ### Enhance AMP components <a name="enhance-amp-components"></a>
 
-`amp-script` has access to AMP state variables and the `AMP.getState()` and `AMP.setState()` methods. This provides a path to enhance existing AMP components with your own logic. It also makes it possible to affect the DOM outside of the `<amp-script>` component itself. See [here](../../../documentation/examples/components/amp-script/index.html#interacting-with-%3Camp-state%3E) and [here](../../../documentation/examples/components/amp-script/index.html#interacting-with-amp-components) for examples.
+`amp-script` has access to AMP state variables and the `AMP.getState()` and `AMP.setState()` methods. This provides a path to enhance existing AMP components with your own logic. It also makes it possible to affect the DOM outside of the `<amp-script>` component itself. See [here](https://amp.dev/documentation/examples/components/amp-script/#interacting-with-%3Camp-state%3E) and [here](https://amp.dev/documentation/examples/components/amp-script/#interacting-with-amp-components) for examples.
 
 ### Replace amp-bind and amp-list
 
@@ -85,7 +85,7 @@ AMP allows you to retrieve server data using `amp-list` and to format it using [
 
 ### Introduce new capabilities
 
-You can use `amp-script` to leverage areas of the Web API and DOM API that aren't currently accessible to AMP components, or to use these APIs in ways that AMP components don't support. For example, `amp-script` supports `WebSockets` ([example](../../../documentation/examples/components/amp-script/index.html#using-a-websocket-for-live-updates)), `localStorage`, and `Canvas`. It supports browser events that AMP doesn't pass to traditional components. And since `amp-script` provides access to the `navigator` object, you can retrieve information about [the user's browser](../../../documentation/examples/components/amp-script/index.html#detecting-the-operating-system) or [preferred language](../../../documentation/examples/components/amp-script/index.html#personalization).
+You can use `amp-script` to leverage areas of the Web API and DOM API that aren't currently accessible to AMP components, or to use these APIs in ways that AMP components don't support. For example, `amp-script` supports `WebSockets` ([example](https://amp.dev/documentation/examples/components/amp-script/#using-a-websocket-for-live-updates)), `localStorage`, and `Canvas`. It supports browser events that AMP doesn't pass to traditional components. And since `amp-script` provides access to the `navigator` object, you can retrieve information about [the user's browser](https://amp.dev/documentation/examples/components/amp-script/#detecting-the-operating-system) or [preferred language](https://amp.dev/documentation/examples/components/amp-script/#personalization).
 
 ## amp-script - or amp-bind and amp-list? <a name="amp-script---or-amp-bind-and-amp-list"></a>
 
