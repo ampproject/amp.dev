@@ -4,7 +4,6 @@ staticText:
   inputBar:
     headline: Analyze your AMP page
     fieldPlaceholder: Enter URL
-    fieldError: Please enter a valid URL
     button: Analyze
   shareDialog:
     headline: Copy & paste URL
@@ -35,20 +34,30 @@ staticText:
     mobileFriendliness: Mobile Friendliness
     intrusiveInterstitials: Intrusive Interstitials
     checkManually: Check manually
+  recommendations:
+    headline: Take action. Improve your AMP site
+  tags:
+    all: All
+scriptText:
+  inputBar:
+    fieldError: Please enter a valid URL
   status:
     analyzing: Analyzing
     calculating: Calculating
+    error: Analysis failed
     failed: Failed
     passed: Passed
+    passedAddition: passed
     none: None
     nothingToDo: Nothing to do
     fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations
-  recommendations:
-    headline: Take action. Improve your AMP site
+  categories:
+    fast: Good
+    average: Needs Improvement
+    slow: Poor
   tags:
-    all: All
     lcp: LCP
     fid: FID
     cls: CLS
