@@ -64,12 +64,12 @@ export default class PageExperience {
     this.statusIntroView = new StatusIntroView(document, totalNumberOfChecks);
     this.toggleLoading(true);
 
-    const pageUrl = await this.inputBar.getPageUrl();
-    if (!pageUrl) {
+    if (!await this.inputBar.validate()) {
       this.toggleLoading(false);
       return;
     }
 
+    const pageUrl = await this.inputBar.getPageUrl();
     this.running = true;
 
     const linterPromise = this.runLintCheck(pageUrl);

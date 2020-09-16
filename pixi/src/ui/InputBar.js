@@ -24,12 +24,14 @@ export default class InputBar {
     this.submit = this.container.querySelector('#input-submit');
     this.label = this.container.querySelector('#input-label');
 
-    this.submit.addEventListener('click', callback);
-    this.field.addEventListener('input', this.validate.bind(this));
-    this.field.addEventListener('keyup', (e) => {
-      const valid = this.validate();
+    this.submit.addEventListener('click', async () => {
+      if (await this.validate()) {
+        callback();
+      }
+    });
+    this.field.addEventListener('keyup', async (e) => {
       if (
-        valid &&
+        await this.validate(true) &&
         e.keyCode === 13 &&
         !this.submit.classList.contains('loading')
       ) {
@@ -42,11 +44,11 @@ export default class InputBar {
     return pageUrl.match(URL_VALIDATION_REGEX) ? true : false;
   }
 
-  validate() {
-    const valid = this.isValidUrl(this.field.value);
+  async validate(silent) {
+    const valid = this.isValidUrl(await this.getPageUrl());
     this.submit.disabled = !valid;
 
-    if (!valid) {
+    if (!valid && silent !== false) {
       this.toggleError(true, i18n.getText('inputBar.fieldError'));
     } else {
       this.toggleError(false, ' ');
@@ -74,9 +76,6 @@ export default class InputBar {
         ? value
         : `http://${value}`;
 
-    if (!this.isValidUrl(pageUrl)) {
-      return;
-    }
 
     return pageUrl;
   }
