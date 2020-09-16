@@ -144,6 +144,10 @@
     color: color('red');
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.2s ease;
+
+    &:before {
+      content: "\00a0";
+    }
   }
 
   &.error {
