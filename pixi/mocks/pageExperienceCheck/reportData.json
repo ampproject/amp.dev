@@ -74,6 +74,11 @@
 				}
 			},
 			"cls": {
+				"unit": {
+					"name": "",
+					"conversion": 1,
+					"digits": 2
+				},
 				"data": {
 					"numericValue": 0,
 					"proportion": {
