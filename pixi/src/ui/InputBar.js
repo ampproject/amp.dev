@@ -25,6 +25,7 @@ export default class InputBar {
     this.label = this.container.querySelector('#input-label');
 
     this.submit.addEventListener('click', callback);
+    this.field.addEventListener('input', this.validate.bind(this));
     this.field.addEventListener('keyup', (e) => {
       const valid = this.validate();
       if (
