@@ -67,7 +67,6 @@
 
   &-tags {
     padding-top: 15px;
-    border-top: solid 1px color('boulder');
 
     span {
       height: 30px;
@@ -83,6 +82,10 @@
         display: none;
       }
     }
+  }
+
+  &-body + &-tags {
+    border-top: solid 1px color('boulder');
   }
 
   &.expanded {
