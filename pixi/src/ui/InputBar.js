@@ -46,9 +46,8 @@ export default class InputBar {
 
   async validate(silent) {
     const valid = this.isValidUrl(await this.getPageUrl());
-    this.submit.disabled = !valid;
 
-    if (!valid && silent !== false) {
+    if (!valid && silent !== true) {
       this.toggleError(true, i18n.getText('inputBar.fieldError'));
     } else {
       this.toggleError(false, ' ');

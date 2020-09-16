@@ -25,8 +25,8 @@ export default class SafeBrowsingCheck {
 
   async run(pageUrl) {
     try {
-      const cacheKey = `${API_ENDPOINT}${pageUrl}`;
-      let apiResult = checkCache.getItem(cacheKey);
+      this.cacheKey = `${API_ENDPOINT}${pageUrl}`;
+      let apiResult = checkCache.getItem(this.cacheKey);
       if (!apiResult) {
         apiResult = await this.fetchJson(pageUrl);
       }
@@ -42,7 +42,7 @@ export default class SafeBrowsingCheck {
       return {error, data: {}};
     }
 
-    checkCache.setItem(cacheKey, apiResult);
+    checkCache.setItem(this.cacheKey, apiResult);
     return {
       error,
       data: {
