@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import i18n from '../I18n';
+
 export default class BooleanCheckReportView {
   constructor(doc, id) {
     this.container = doc.getElementById(id);
@@ -21,13 +23,13 @@ export default class BooleanCheckReportView {
 
   render(report) {
     if (report === true) {
-      this.label.textContent = 'Passed';
+      this.label.textContent = i18n.getText('status.passed');
       this.container.classList.add('passed');
     } else if (report === false) {
-      this.label.textContent = 'Failed';
+      this.label.textContent = i18n.getText('status.failed');
       this.container.classList.add('failed');
     } else {
-      this.label.textContent = 'Analysis failed';
+      this.label.textContent = i18n.getText('status.error');
       this.container.classList.add('error');
     }
 

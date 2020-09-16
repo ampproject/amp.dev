@@ -3,8 +3,7 @@ $title: AMP Page Experience Guide
 staticText:
   inputBar:
     headline: Analysiere deine AMP Seite
-    fieldPlaceholder: Gib eine gültige URL ein
-    fieldError: Bitte gebe eine gültige URL ein
+    fieldPlaceholder: URL eingeben
     button: Analysieren
   shareDialog:
     headline: Copy & paste URL
@@ -35,18 +34,29 @@ staticText:
     mobileFriendliness: Mobile Friendliness
     intrusiveInterstitials: Intrusive Interstitials
     checkManually: Bitte manuell prüfen
+  recommendations:
+    headline: Jetzt handeln. Verbessere deine AMP Seite
+  tags:
+    all: Alle
+scriptText:
+  inputBar:
+    fieldError: Bitte gebe eine gültige URL ein
   status:
     analyzing: Analysiere
     calculating: Berechne
+    error: Analyse fehlgeschlagen
     failed: Nicht bestanden
     passed: Bestanden
+    passedAddition: bestanden
     none: Keins
     nothingToDo: Nichts zu tun
     fileAnIssue: Melde ein Problem bei AMP
     recommendation: Empfehlung
     recommendations: Empfehlungen
-  recommendations:
-    headline: Jetzt handeln. Verbessere deine AMP Seite
+  categories:
+    fast: Schnell
+    average: Verbesserungswürdig
+    slow: Schlecht
   tags:
     all: Alle
     lcp: LCP
