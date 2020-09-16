@@ -102,10 +102,12 @@ export default class PageExperienceCheck {
   }
 
   createReportData(apiResult) {
-    const fieldMetrics = apiResult.loadingExperience.metrics;
+    const fieldMetrics = apiResult.loadingExperience.origin_fallback
+      ? null
+      : apiResult.loadingExperience.metrics;
     const audits = apiResult.lighthouseResult.audits;
     const fieldData = !fieldMetrics
-      ? undefined
+      ? null
       : {
           lcp: {
             unit: UNIT_SEC,
@@ -153,7 +155,7 @@ export default class PageExperienceCheck {
                   this.isFastData(fieldData, 'lcp'),
                 ...fieldData,
               }
-            : undefined,
+            : null,
           labData: {
             isAllFast:
               this.isFastData(labData, 'cls') &&
