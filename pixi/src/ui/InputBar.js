@@ -27,7 +27,11 @@ export default class InputBar {
     this.submit.addEventListener('click', callback);
     this.field.addEventListener('keyup', (e) => {
       const valid = this.validate();
-      if (valid && e.keyCode === 13 && !this.submit.classList.contains('loading')) {
+      if (
+        valid &&
+        e.keyCode === 13 &&
+        !this.submit.classList.contains('loading')
+      ) {
         callback();
       }
     });
