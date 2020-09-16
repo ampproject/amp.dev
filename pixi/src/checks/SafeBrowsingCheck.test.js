@@ -23,7 +23,7 @@ describe('Safe browsing check', () => {
   it('returns empty object as report data for safe url', async () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponsePass);
 
-    const report = await safeBrowsingCheck.run('http://example.com');
+    const report = await safeBrowsingCheck.run('https://example.com');
     expect(report.error).toBeFalsy();
     expect(report.data.safeBrowsing).toBe(true);
   });
@@ -31,7 +31,7 @@ describe('Safe browsing check', () => {
   it('returns threats for unsafe url', async () => {
     fetchMock.mock(`begin:${apiEndpoint}`, apiResponseFail);
 
-    const report = await safeBrowsingCheck.run('http://example.com');
+    const report = await safeBrowsingCheck.run('http://evil.com');
     expect(report.error).toBeFalsy();
     expect(report.data.safeBrowsing).toBe(false);
   });
@@ -39,7 +39,7 @@ describe('Safe browsing check', () => {
   it('throws for invalid API response', async () => {
     fetchMock.mock(`begin:${apiEndpoint}`, 500);
 
-    const report = await safeBrowsingCheck.run('http://example.com');
+    const report = await safeBrowsingCheck.run('htp:/malformed');
     expect(report.error).toBeDefined();
     expect(report.data.safeBrowsing).toBe(undefined);
   });
