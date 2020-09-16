@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import marked from 'marked';
 import i18n from '../I18n.js';
 
 export default class RecommendationsView {
@@ -85,8 +84,8 @@ export default class RecommendationsView {
       header.setAttribute('aria-controls', body.id);
       body.setAttribute('aria-labelledby', header.id);
 
-      title.innerHTML = marked(value.title);
-      body.innerHTML = marked(value.body);
+      title.innerHTML = value.title;
+      body.innerHTML = value.body;
 
       for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);
