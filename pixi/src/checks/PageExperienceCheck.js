@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
+import {UNIT_DEFAULT, UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 export const Category = {
   FAST: 'FAST',
@@ -102,10 +102,12 @@ export default class PageExperienceCheck {
   }
 
   createReportData(apiResult) {
-    const fieldMetrics = apiResult.loadingExperience.metrics;
+    const fieldMetrics = apiResult.loadingExperience.origin_fallback
+      ? null
+      : apiResult.loadingExperience.metrics;
     const audits = apiResult.lighthouseResult.audits;
     const fieldData = !fieldMetrics
-      ? undefined
+      ? null
       : {
           lcp: {
             unit: UNIT_SEC,
@@ -137,7 +139,7 @@ export default class PageExperienceCheck {
         data: this.createLabData(audits['total-blocking-time'], 'tbt'),
       },
       cls: {
-        unit: UNIT_DEC,
+        unit: UNIT_DEFAULT,
         data: this.createLabData(audits['cumulative-layout-shift'], 'cls'),
       },
     };
@@ -153,7 +155,7 @@ export default class PageExperienceCheck {
                   this.isFastData(fieldData, 'lcp'),
                 ...fieldData,
               }
-            : undefined,
+            : null,
           labData: {
             isAllFast:
               this.isFastData(labData, 'cls') &&

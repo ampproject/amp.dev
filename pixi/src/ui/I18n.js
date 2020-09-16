@@ -18,7 +18,7 @@ class I18n {
     ]);
     const i18nConfig = JSON.parse(pixiContent[0]);
     this.language = i18nConfig.language;
-    this.staticText = i18nConfig.staticText;
+    this.scriptText = i18nConfig.scriptText;
     this.statusBanners = JSON.parse(pixiContent[1]);
     this.recommendations = JSON.parse(pixiContent[2]);
     this.infoTexts = JSON.parse(pixiContent[3]);
@@ -28,7 +28,7 @@ class I18n {
     const keys = textKey.split('.');
     return keys.reduce(
       (node, key) => (node && node[key]) || '',
-      this.staticText
+      this.scriptText
     );
   }
 

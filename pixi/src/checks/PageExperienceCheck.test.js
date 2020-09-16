@@ -4,6 +4,7 @@
 
 import fetchMock from 'fetch-mock';
 
+/* eslint-disable max-len */
 import PageExperienceCheck from './PageExperienceCheck.js';
 import apiResponseNoErrors from '../../mocks/pageExperienceCheck/apiResponse.json';
 import reportDataNoErrors from '../../mocks/pageExperienceCheck/reportData.json';
@@ -11,6 +12,8 @@ import apiResponseErrors from '../../mocks/pageExperienceCheck/apiResponseErrors
 import reportDataErrors from '../../mocks/pageExperienceCheck/reportDataErrors.json';
 import apiResponseNoFieldData from '../../mocks/pageExperienceCheck/apiResponseNoFieldData.json';
 import reportDataNoFieldData from '../../mocks/pageExperienceCheck/reportDataNoFieldData.json';
+import apiResponseOriginFieldData from '../../mocks/pageExperienceCheck/apiResponseOriginFieldData.json';
+import reportDataOriginFieldData from '../../mocks/pageExperienceCheck/reportDataOriginFieldData.json';
 import reportDescriptions from '../../mocks/pageExperienceCheck/reportDescriptions.json';
 
 import pixiConfig from '../../config.js';
@@ -53,6 +56,18 @@ describe('Page experience check', () => {
     const report = await pageExperienceCheck.run('http://example.com');
     expect(report.error).toBeUndefined();
     expect(report.data).toEqual(reportDataNoFieldData);
+    expect(report.descriptions).toEqual(reportDescriptions);
+  });
+
+  it('creates report data for url with origin field data', async () => {
+    const apiEndpoint =
+      pixiConfig['development'].API_ENDPOINT_PAGE_SPEED_INSIGHTS;
+    fetchMock.mock(`begin:${apiEndpoint}`, apiResponseOriginFieldData);
+
+    const pageExperienceCheck = new PageExperienceCheck();
+    const report = await pageExperienceCheck.run('http://example.com');
+    expect(report.error).toBeUndefined();
+    expect(report.data).toEqual(reportDataOriginFieldData);
     expect(report.descriptions).toEqual(reportDescriptions);
   });
 });
