@@ -19,12 +19,10 @@
         {{ pixi.staticText.statusIntro.loadingCopy|replace('${finishedChecks}', '<span id="finished-checks">0</span>')|replace('${totalChecks}','<span id="total-checks">0</span>')|safe }}
       </p>
       <div class="ap-m-pixi-status-intro-banner-ctas">
-        <button class="ap-a-btn"
-            on="tap:recommendations.scrollTo(duration=400)"
-            type="button"
-            name="button">
+        <a href="#recommendations" class="ap-a-btn"
+            type="button">
           {{ pixi.staticText.statusIntro.buttonFixIt }}
-        </button>
+        </a>
         <button class="ap-a-btn ap-a-btn-light"
             on="tap:share-dialog"
             type="button"
