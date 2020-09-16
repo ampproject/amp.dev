@@ -58,8 +58,17 @@ staticText:
     intrusiveInterstitials: Intrusive Interstitials
 ---
 
-The AMP page experience guide is a tool that shows AMP developers how their AMP pages are performing against the Google Search page experience ranking signal, and provides actionable feedback on how they can improve.
+Der AMP Page Experience Guide ist ein Werkzeug das Entwicklern zeigt
+wie ihre Seite beim Google Page Experience Ranking abschneidet und
+was sie tun können um das Ergebnis zu verbessern.
+ 
+Falls es uns nicht möglich ist verwertbare Erkenntnisse zu liefern,
+nutze bitte die Möglichkeit 
+[ein Ticket auf Github anzulegen](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue),
+damit unser Team dir helfen kann, zu verstehen, wie deine AMP Seiten
+verbessert werden können.
 
-If we aren't able to provide you with actionable insights please use the available prompts to [file an issue on GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue) so our team can help you understand how your AMP pages can be improved.
-
-We use publicly available APIs such as [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/), [Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api), and [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly).
+Wir nutzen öffentlich verfügbare APIs wie
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
+[Safe Browsing](https://developers.google.com/safe-browsing/v4/lookup-api),
+und [Mobile-friendliness Test](https://search.google.com/test/mobile-friendly).
