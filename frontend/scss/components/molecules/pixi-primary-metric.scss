@@ -103,6 +103,7 @@
       a,
       svg {
         white-space: nowrap;
+        color: color('river-bed');
         transition: opacity 0.3s ease;
 
         .fast &,
@@ -110,6 +111,10 @@
         .slow & {
           opacity: 1;
         }
+      }
+
+      a {
+        font-weight: normal;
       }
 
       svg {
@@ -123,8 +128,14 @@
         }
       }
 
-      [role="button"] {
-        cursor: pointer;
+
+      a[href^="#"] {
+        font-weight: bold;
+        color: color('blue-ribbon');
+
+        & ~ svg {
+          fill: color('blue-ribbon');
+        }
       }
 
       #{$primary-metric}-score {
