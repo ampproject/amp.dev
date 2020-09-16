@@ -29,7 +29,6 @@ export default class MobileFriendlinessCheck {
       let apiResult = checkCache.getItem(cacheKey);
       if (!apiResult) {
         apiResult = await this.fetchJson(pageUrl);
-        checkCache.setItem(cacheKey, apiResult);
       }
 
       return this.createReportData(null, apiResult);
@@ -45,6 +44,8 @@ export default class MobileFriendlinessCheck {
         data: {},
       };
     }
+
+    checkCache.setItem(cacheKey, apiResult);
     return {
       error,
       data: {

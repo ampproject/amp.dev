@@ -29,7 +29,6 @@ export default class SafeBrowsingCheck {
       let apiResult = checkCache.getItem(cacheKey);
       if (!apiResult) {
         apiResult = await this.fetchJson(pageUrl);
-        checkCache.setItem(cacheKey, apiResult);
       }
 
       return this.createReportData(null, apiResult);
@@ -42,6 +41,8 @@ export default class SafeBrowsingCheck {
     if (error) {
       return {error, data: {}};
     }
+
+    checkCache.setItem(cacheKey, apiResult);
     return {
       error,
       data: {
