@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+const UNIT_DEFAULT = {name: '', conversion: 1, digits: 2};
 const UNIT_DEC = {name: '', conversion: 100, digits: 2};
 const UNIT_SEC = {name: 's', conversion: 1000, digits: 1};
 const UNIT_MS = {name: 'ms', conversion: 1, digits: 0};

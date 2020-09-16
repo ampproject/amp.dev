@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
+import {UNIT_DEFAULT, UNIT_DEC, UNIT_SEC, UNIT_MS} from './constants.js';
 
 export const Category = {
   FAST: 'FAST',
@@ -137,7 +137,7 @@ export default class PageExperienceCheck {
         data: this.createLabData(audits['total-blocking-time'], 'tbt'),
       },
       cls: {
-        unit: UNIT_DEC,
+        unit: UNIT_DEFAULT,
         data: this.createLabData(audits['cumulative-layout-shift'], 'cls'),
       },
     };
