@@ -59,7 +59,7 @@ scriptText:
     slow: Poor
   tags:
     lcp: LCP
-    fid: FID
+    fid: FID and TBT
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobile-friendliness
