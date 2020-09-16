@@ -14,5 +14,4 @@ components by using the
 flag with the latest
 [AMP Optimizer](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/)
 version. Keeping your implementation up-to-date splits up JavaScript programs into
-separate modules, and only imports what's needed! Please note that since this feature
-is experimental (launching soon!), using this feature would make your AMP page invalid.
+separate modules, and only imports what's needed! 
