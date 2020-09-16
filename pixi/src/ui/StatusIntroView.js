@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import marked from 'marked';
 import i18n from './I18n';
 import {fixedRecommendations} from '../utils/checkAggregation/recommendations';
 
@@ -77,7 +76,7 @@ export default class StatusIntroView {
     const bannerTitle = banner.querySelector('h3');
     const bannerText = banner.querySelector('p');
     bannerTitle.textContent = statusBanner.title;
-    bannerText.innerHTML = marked(statusBanner.body);
+    bannerText.innerHTML = statusBanner.body;
 
     const buttons = banner.querySelectorAll('button');
     if (hideFixButton) {
