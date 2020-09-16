@@ -102,7 +102,9 @@ export default class PageExperienceCheck {
   }
 
   createReportData(apiResult) {
-    const fieldMetrics = apiResult.loadingExperience.metrics;
+    const fieldMetrics = apiResult.loadingExperience.origin_fallback
+      ? undefined
+      : apiResult.loadingExperience.metrics;
     const audits = apiResult.lighthouseResult.audits;
     const fieldData = !fieldMetrics
       ? undefined
