@@ -1,6 +1,7 @@
 {
 	"pageExperience": {
 		"labData": {
+			"isAllFast": true,
 			"lcp": {
 				"unit": {
 					"name": "s",
@@ -34,11 +35,6 @@
 				}
 			},
 			"cls": {
-				"unit": {
-					"name": "",
-					"conversion": 100,
-					"digits": 2
-				},
 				"data": {
 					"numericValue": 0,
 					"proportion": {
@@ -48,8 +44,7 @@
 					},
 					"category": "FAST"
 				}
-			},
-			"isAllFast": true
+			}
 		},
 		"source": "labData"
 	},

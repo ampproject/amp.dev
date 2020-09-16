@@ -1,6 +1,7 @@
 {
 	"pageExperience": {
 		"fieldData": {
+			"isAllFast": false,
 			"lcp": {
 				"unit": {
 					"name": "s",
@@ -36,10 +37,10 @@
 					"category": "FAST",
 					"proportion": 0.932653831634579
 				}
-			},
-			"isAllFast": false
+			}
 		},
 		"labData": {
+			"isAllFast": false,
 			"lcp": {
 				"unit": {
 					"name": "s",
@@ -73,11 +74,6 @@
 				}
 			},
 			"cls": {
-				"unit": {
-					"name": "",
-					"conversion": 100,
-					"digits": 2
-				},
 				"data": {
 					"numericValue": 0.000004316609753962,
 					"proportion": {
@@ -87,8 +83,7 @@
 					},
 					"category": "FAST"
 				}
-			},
-			"isAllFast": false
+			}
 		},
 		"source": "fieldData"
 	},
