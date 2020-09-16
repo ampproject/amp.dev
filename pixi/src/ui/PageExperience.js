@@ -64,7 +64,7 @@ export default class PageExperience {
     this.statusIntroView = new StatusIntroView(document, totalNumberOfChecks);
     this.toggleLoading(true);
 
-    if (!await this.inputBar.validate()) {
+    if (!(await this.inputBar.validate())) {
       this.toggleLoading(false);
       return;
     }

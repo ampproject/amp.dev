@@ -31,7 +31,7 @@ export default class InputBar {
     });
     this.field.addEventListener('keyup', async (e) => {
       if (
-        await this.validate(true) &&
+        (await this.validate(true)) &&
         e.keyCode === 13 &&
         !this.submit.classList.contains('loading')
       ) {
@@ -74,7 +74,6 @@ export default class InputBar {
       value.startsWith('http://') || value.startsWith('https://')
         ? value
         : `http://${value}`;
-
 
     return pageUrl;
   }
