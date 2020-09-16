@@ -14,7 +14,7 @@
 
 import marked from 'marked';
 import i18n from './I18n';
-import {fixedRecommendations} from '../checkAggregation/recommendations';
+import {fixedRecommendations} from '../utils/checkAggregation/recommendations';
 
 const classNameMapping = {
   error: 'fail',

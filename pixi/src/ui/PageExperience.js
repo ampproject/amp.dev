@@ -28,8 +28,8 @@ import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
-import getRecommendations from '../checkAggregation/recommendations.js';
-import getStatusId from '../checkAggregation/statusBanner';
+import getRecommendations from '../utils/checkAggregation/recommendations.js';
+import getStatusId from '../utils/checkAggregation/statusBanner';
 
 const totalNumberOfChecks =
   AmpLinterCheck.getCheckCount() +
