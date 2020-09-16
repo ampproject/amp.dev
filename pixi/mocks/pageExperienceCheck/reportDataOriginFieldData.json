@@ -37,7 +37,7 @@
 			"cls": {
 				"unit": {
 					"name": "",
-					"conversion": 100,
+					"conversion": 1,
 					"digits": 2
 				},
 				"data": {
