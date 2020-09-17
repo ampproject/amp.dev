@@ -15,9 +15,9 @@
 import i18n from '../I18n.js';
 
 const CATEGORIES = {
-  fast: 'Good',
-  average: 'Needs Improvement',
-  slow: 'Poor',
+  fast: 'fast',
+  average: 'average',
+  slow: 'slow',
 };
 const FILE_ISSUE_URL =
   'https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&template=page-experience.md&title=Page+experience+issue';
@@ -74,7 +74,9 @@ class SimpleScale {
     const percentile = Math.round(data.proportion * 100);
 
     this.bar.style.width = `${percentile}%`;
-    this.label.textContent = `${percentile}% passed`;
+    this.label.textContent = `${percentile}% ${i18n.getText(
+      'status.passedAddition'
+    )}`;
     if (percentile < 30) {
       this.bar.classList.add('inversed');
     }
@@ -116,7 +118,7 @@ class CoreWebVitalView {
     this.scale.render(data, unit);
 
     const responseCategory = data.category.toLowerCase();
-    this.performanceCategory = CATEGORIES[responseCategory];
+    this.performanceCategory = i18n.getText(`categories.${responseCategory}`);
     this.container.classList.add(responseCategory);
     this.category.textContent = this.performanceCategory;
 
@@ -221,6 +223,7 @@ export default class CoreWebVitalsReportView {
     for (let i = 0; i < this.tabs.length; i++) {
       this.tabs[i].classList.toggle('active', i == index);
       this.tabContents[i].classList.toggle('active', i == index);
+      this.tabs[i].setAttribute('aria-selected', i == index);
     }
   }
 

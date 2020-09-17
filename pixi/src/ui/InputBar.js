@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import i18n from './I18n.js';
+
 /* eslint-disable max-len */
 const URL_VALIDATION_REGEX = /^(?:https?:\/\/)?[\w.-]+(?:\.[\w.-]+)+[\w._~:/?#\[\]@!$%&'()*+,;=-]+$/gm;
 
@@ -23,12 +25,16 @@ export default class InputBar {
     this.label = this.container.querySelector('#input-label');
 
     this.submit.addEventListener('click', callback);
+    this.field.addEventListener('input', this.validate.bind(this));
     this.field.addEventListener('keyup', (e) => {
-      if (e.keyCode == 13 && !this.submit.classList.contains('loading')) {
+      const valid = this.validate();
+      if (
+        valid &&
+        e.keyCode === 13 &&
+        !this.submit.classList.contains('loading')
+      ) {
         callback();
       }
-
-      this.toggleValid(this.isValidUrl(this.field.value));
     });
   }
 
@@ -36,15 +42,30 @@ export default class InputBar {
     return pageUrl.match(URL_VALIDATION_REGEX) ? true : false;
   }
 
+  validate() {
+    const valid = this.isValidUrl(this.field.value);
+    this.submit.disabled = !valid;
+
+    if (!valid) {
+      this.toggleError(true, i18n.getText('inputBar.fieldError'));
+    } else {
+      this.toggleError(false, ' ');
+    }
+
+    return valid;
+  }
+
   async getPageUrl() {
     let value = this.field.value;
 
     if (!value) {
       try {
-        // Can be removed once https://github.com/ampproject/worker-dom/issues/912
+        // Can be removed once
+        // https://github.com/ampproject/worker-dom/issues/912
+        // is fixed and released
         value = await AMP.getState('pixi.pageUrl');
       } catch (e) {
-        console.error('Could not get URL from amp state', e);
+        console.error('Could not get URL from AMP state', e);
       }
     }
 
@@ -57,12 +78,7 @@ export default class InputBar {
       return;
     }
 
-    this.toggleError(false, '&nbsp;');
     return pageUrl;
-  }
-
-  toggleValid(force) {
-    this.submit.disabled = !force;
   }
 
   toggleError(force, error) {

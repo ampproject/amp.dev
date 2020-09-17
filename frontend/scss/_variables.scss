@@ -47,7 +47,6 @@ $colors: (
   'mine-shaft':      #3E3E3E,
   'river-bed':       #48525C,
   'limed-spruce':    #333D47,
-  'boulder':         #767676,
   'oslo-gray':       #91979D,
   'gray-chateau':    #A3A8AD,
   'silver':          #CCCCCC,
@@ -67,7 +66,6 @@ $colors: (
   'robins-egg':      #00DCC0,
   'emerald':         #38CA71,
   'malachite':       #00CD3C,
-  'green-haze':      #00AD20,
   'forest-green':    #2DB932,
   'fruit-salad':     #4D9F66,
   'shamrock':        #2ECC71,
@@ -80,7 +78,6 @@ $colors: (
   'school-bus':      #FFDC00,
   'manz':            #F1F068,
   'pizazz':          #FF8F00,
-  'christine':       #E26E08,
   'zest':            #E67E22,
   'buttercup':       #F39C12,
   'carnation':       #F56C64,
@@ -97,7 +94,17 @@ $colors: (
   'electric-violet': #5500D7,
   'ultramarine':     #180CA4,
   'pickled-bluewood':#2C3E50,
+);
 
+$safeColors: (
+  'white':           #fff,
+  'black':           #000,
+  'charade':         #20202A,
+  'oslo-gray':       #8C8F94,
+  'blue-ribbon':     #005AF0,
+  'apple':           #09A600,
+  'clementine':      #EC6600,
+  'guardsman-red':   #C80000,
 );
 
 $shadows: (

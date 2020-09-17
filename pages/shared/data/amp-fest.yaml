@@ -1,0 +1,69 @@
+agenda:
+  day_1:
+    - title: Keynote
+      time: "9AM PT"
+      speakers:
+        - Malte Ubl, Google
+        - Joey Rozier, Google
+        - Crystal Lambert, Google
+        - Vamsee Jasti, Google
+    - title: The Road To Great Page Experiences
+      speakers:
+        - Ben Morss, Google
+
+    - title: Success with WordPress, Powered By AMP
+      speakers:
+        - Alberto Medina, Google
+
+    - title: "AMP As A Service: Productive Web Development"
+      speakers:
+        - Naina Raisinghani, Google
+
+    - title: Accessibility In AMP
+      speakers:
+        - Caroline Liu, Google
+
+    - title: How AMP Speeds Up The Production Process For Agencies
+      speakers:
+        - Thomas Feldhaus, Jung von Matt
+
+    - title: 5 Ways Recruit Maintains High Performance And Productivity Using AMP
+      speakers:
+        - Yosuke Furukawa, Recruit
+
+    - title: What's Next In AMP?
+      speakers:
+        - Naina Raisinghani, Google
+
+    - title: An Update On Web Stories
+      speakers:
+        - Varun Rao, Google
+
+    - title: Web Stories For WordPress
+      speakers:
+        - Pascal Birchler, Google
+
+
+    - title: An Update On AMP For Email
+      speakers:
+        - Jon Harmer, Google
+        - Rachel Boyles, Salesforce
+        - Nirmal Thangaraj, Yahoo
+
+    - title: Sender Success With AMP For Email
+      speakers:
+        - Sefunmi Osinaike, Copper
+        - Dmitry Krudenko, Stripo
+        - Leo Koster, VOGSY
+        - Jason Maynard, Guru
+    - title: WordPress.com - Democratizing Performance With AMP
+      speakers:
+        - Jason Caldwell, Automattic
+    - title: "UnoTV: From Mobile First to AMP First"
+      speakers:
+        - Violeta Rosales, UnoTV
+    - title: "Televisa: Our Journey To AMP"
+      speakers:
+        - Antonio González de Leon, Televisa
+
+

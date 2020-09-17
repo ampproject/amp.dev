@@ -28,8 +28,8 @@ import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
-import getRecommendations from '../checkAggregation/recommendations.js';
-import getStatusId from '../checkAggregation/statusBanner';
+import getRecommendations from '../utils/checkAggregation/recommendations.js';
+import getStatusId from '../utils/checkAggregation/statusBanner';
 
 const totalNumberOfChecks =
   AmpLinterCheck.getCheckCount() +
@@ -39,6 +39,8 @@ const totalNumberOfChecks =
 
 export default class PageExperience {
   constructor() {
+    i18n.init();
+
     this.reports = document.getElementById('reports');
     this.reportViews = {};
 
@@ -50,23 +52,25 @@ export default class PageExperience {
 
     this.inputBar = new InputBar(document, this.onSubmitUrl.bind(this));
     this.recommendationsView = new RecommendationsView(document);
+
+    this.running = false;
   }
 
   async onSubmitUrl() {
+    if (this.running) {
+      return;
+    }
+
     this.statusIntroView = new StatusIntroView(document, totalNumberOfChecks);
     this.toggleLoading(true);
-
-    // Everything until here is statically translated by Grow. From now
-    // on Pixi might dynamically render translated strings, so wait
-    // for them to be ready
-    await i18n.init();
 
     const pageUrl = await this.inputBar.getPageUrl();
     if (!pageUrl) {
       this.toggleLoading(false);
-      this.inputBar.toggleError(true, i18n.getText('analyze.fieldError'));
       return;
     }
+
+    this.running = true;
 
     const linterPromise = this.runLintCheck(pageUrl);
     this.pageExperienceCheck.setLocale(i18n.getLanguage());
@@ -100,6 +104,8 @@ export default class PageExperience {
         this.reportViews.pageExperience.coreWebVitalViews
       );
     }
+
+    this.running = false;
   }
 
   async runStatusBannerResult(

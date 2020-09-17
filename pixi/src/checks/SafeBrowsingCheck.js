@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import checkCache from '../utils/checkCache.js';
+
 const API_ENDPOINT = API_ENDPOINT_SAFE_BROWSING;
 
 const API_URL = `${API_ENDPOINT}?key=${AMP_DEV_PIXI_APIS_KEY}`;
@@ -23,7 +25,13 @@ export default class SafeBrowsingCheck {
 
   async run(pageUrl) {
     try {
-      const apiResult = await this.fetchJson(pageUrl);
+      const cacheKey = `${API_ENDPOINT}${pageUrl}`;
+      let apiResult = checkCache.getItem(cacheKey);
+      if (!apiResult) {
+        apiResult = await this.fetchJson(pageUrl);
+        checkCache.setItem(cacheKey, apiResult);
+      }
+
       return this.createReportData(null, apiResult);
     } catch (e) {
       return this.createReportData(e);

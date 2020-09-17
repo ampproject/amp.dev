@@ -4,9 +4,8 @@
 .#{organism('pixi-basic-checks')} {
   display: flex;
   flex-direction: column;
-  border-radius: 4px;
-  box-shadow: 0 10px 25px 0 rgba(0,0,0,0.13);
-  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px 0 transparentize(safeColor('black'), 0.87);
 
   @media (min-width: 768px) {
     flex-direction: row;

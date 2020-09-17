@@ -15,7 +15,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     'title': node.title,
     'type': node.type,
     'hideShare': node.hide_share == true,
-    'body': node.body
+    'body': node.body|markdown
   } %}
   {% set x=status_banners.__setitem__(node.base, nodeDict) %}
 {% endfor %}
@@ -27,7 +27,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     'title': node.title,
     'order': node.order,
     'tags': node.tags if node.tags else [],
-    'body': node.body
+    'body': node.body|markdown
   } %}
   {% set x=recommendations.__setitem__(node.base, nodeDict) %}
 {% endfor %}
@@ -45,7 +45,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
 <main class="ap--main ap-t-pixi">
   <section class="ap-t-pixi-stage">
-    <h1>{{ doc.title }}</h1>
+    <h1>{{ pixi.title }}</h1>
     {% do doc.icons.useIcon('icons/page-experience.svg') %}
     <svg>
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#page-experience"></use>
@@ -106,7 +106,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
           "pageUrl": "[= query.url =]",
           "i18n": {
             "language": "{{ doc.locale }}",
-            "staticText": {{pixi.staticText|jsonify|safe}}
+            "scriptText": {{pixi.scriptText|jsonify|safe}}
           }
         }
       </script>
@@ -126,7 +126,16 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
       <div id="reports" class="pristine">
         <section class="ap-t-pixi-checks-reports">
-          <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+          <div class="ap-t-pixi-checks-reports-title">
+            <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+            {% with tooltip = {
+              'id': 'core-web-vitals',
+              'invert': false
+            } %}
+            {% include 'views/partials/pixi/tooltip.j2' %}
+            {% endwith %}
+          </div>
+
           {% include 'views/partials/pixi/primary-checks.j2' %}
 
           <h2>Additional checks</h2>

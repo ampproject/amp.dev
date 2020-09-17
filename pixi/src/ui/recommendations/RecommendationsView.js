@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import marked from 'marked';
 import i18n from '../I18n.js';
+import {cleanCodeForInnerHtml} from '../../utils/texts';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -53,7 +53,7 @@ export default class RecommendationsView {
     this.recommendationNodes = [];
     this.filterPills = [];
 
-    for (const value of recommendations) {
+    for (const [i, value] of recommendations.entries()) {
       const recommendation = this.recommendation.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
@@ -70,14 +70,23 @@ export default class RecommendationsView {
 
       recommendation.style = null;
       recommendation.id = `recommendation-${value.id}`;
+      header.id = `header-${value.id}`;
+      body.id = `body-${value.id}`;
 
-      header.setAttribute(
-        'on',
-        `tap:recommendation-${value.id}.toggleClass(class=expanded)`
-      );
+      if (i == 0) {
+        recommendation.classList.add('expanded');
+        header.setAttribute('aria-expanded', 'true');
+      }
 
-      title.innerHTML = marked(value.title);
-      body.innerHTML = marked(value.body);
+      header.addEventListener('click', () => {
+        const isExpanded = recommendation.classList.toggle('expanded');
+        header.setAttribute('aria-expanded', String(isExpanded));
+      });
+      header.setAttribute('aria-controls', body.id);
+      body.setAttribute('aria-labelledby', header.id);
+
+      title.innerHTML = value.title;
+      body.innerHTML = cleanCodeForInnerHtml(value.body);
 
       for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);
@@ -97,6 +106,7 @@ export default class RecommendationsView {
       pill.textContent = i18n.getText(`tags.${tagId}`);
       pill.id = `filter-pill-${tagId}`;
       pill.className = 'ap-a-pill';
+      pill.setAttribute('aria-pressed', 'false');
 
       pill.addEventListener('click', () => {
         this.toggleFilter(tagId);
@@ -121,10 +131,12 @@ export default class RecommendationsView {
 
   resetFilter() {
     this.pill.classList.add('filtered');
+    pill.setAttribute('aria-pressed', 'true');
     this.container.className = this.container.className.split(' ')[0];
 
     for (const pill of this.filterPills) {
       pill.classList.remove('filtered');
+      pill.setAttribute('aria-pressed', 'false');
       for (const recommendation of this.recommendationNodes) {
         recommendation.hidden = false;
       }
@@ -134,8 +146,10 @@ export default class RecommendationsView {
   toggleFilter(tagId) {
     this.container.classList.toggle(tagId);
     this.pill.classList.remove('filtered');
+    this.pill.setAttribute('aria-pressed', 'false');
     const pill = this.container.querySelector(`#filter-pill-${tagId}`);
-    pill.classList.toggle('filtered');
+    const isFiltered = pill.classList.toggle('filtered');
+    pill.setAttribute('aria-pressed', isFiltered);
 
     const activeFilter = this.container.className.split(' ');
     if (activeFilter.length == 1) {

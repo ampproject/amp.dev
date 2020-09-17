@@ -1,13 +1,38 @@
 ---
 $title: AMP Page Experience Guide
 staticText:
-  analyze:
+  inputBar:
     headline: Analyze your AMP page
-    fieldPlaceholder: Enter your URL
-    fieldError: Please enter a valid URL
+    fieldPlaceholder: Enter URL
     button: Analyze
+  infoDialog:
+    open: Learn about
+    close: Close
+  shareDialog:
+    headline: Copy & paste URL
+    close: Close navigation
+    copyToClipboard: Copy to clipboard
+    success: Success
+  statusIntro:
+    headline: Please wait a moment
+    headline2: We are currently analyzing your page
+    loadingCopy: ${finishedChecks} out of ${totalChecks} checks are completed
+    buttonFixIt: Fix it now
+    buttonShare: Share
   coreWebVitals:
     headline: Core Web Vitals
+    tabsAriaLabel: Field and lab data tabs
+    fieldData: Field data
+    labData: Lab data
+    loadingSpeed: Loading speed
+    interactivity: Interactivity
+    visualStability: Visual stability
+    pageLoads: Page loads
+    thresholdMarker: 75th percentile
+    resultLabels:
+      score: Your score
+      opportunity: Opportunity to improve
+      action: Take action
   additionalChecks:
     headline: Additional checks
     safeBrowsing: Safe Browsing
@@ -15,19 +40,32 @@ staticText:
     mobileFriendliness: Mobile Friendliness
     intrusiveInterstitials: Intrusive Interstitials
     checkManually: Check manually
+  recommendations:
+    headline: Take action. Improve your AMP site
+  tags:
+    all: All
+scriptText:
+  inputBar:
+    fieldError: Please enter a valid URL
   status:
     analyzing: Analyzing
     calculating: Calculating
+    error: Analysis failed
     failed: Failed
     passed: Passed
+    passedAddition: passed
     none: None
     nothingToDo: Nothing to do
     fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations
+  categories:
+    fast: Good
+    average: Needs Improvement
+    slow: Poor
   tags:
     lcp: LCP
-    fid: FID
+    fid: FID and TBT
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobile-friendliness
