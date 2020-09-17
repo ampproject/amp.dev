@@ -116,11 +116,11 @@
     }
 
     &[disabled] {
-      background: color('boulder');
+      background: safeColor('oslo-gray');
     }
 
     &.loading {
-      background: color('boulder');
+      background: safeColor('oslo-gray');
 
       #{$inputBar}-submit-title {
         font-size: 0;
