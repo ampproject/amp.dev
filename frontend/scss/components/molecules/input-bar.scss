@@ -115,10 +115,6 @@
       }
     }
 
-    &[disabled] {
-      background: color('silver');
-    }
-
     &.loading {
       pointer-events: none;
 
