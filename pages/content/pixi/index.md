@@ -7,6 +7,8 @@ staticText:
     button: Analyze
   shareDialog:
     headline: Copy & paste URL
+    close: Close navigation
+    copyToClipboard: Copy to clipboard
   statusIntro:
     headline: Please wait a moment
     headline2: We are currently analyzing your page

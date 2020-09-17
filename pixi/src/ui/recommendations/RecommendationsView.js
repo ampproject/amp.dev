@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import marked from 'marked';
 import i18n from '../I18n.js';
 
 export default class RecommendationsView {
@@ -71,7 +70,7 @@ export default class RecommendationsView {
         '.ap-m-pixi-recommendations-item-tags'
       );
 
-      title.innerHTML = marked(value.title);
+      title.innerHTML = value.title;
 
       // Remove body elements for recommendations that have no recommendation
       // text and force expand them
@@ -79,7 +78,7 @@ export default class RecommendationsView {
         recommendation.removeChild(body);
         header.removeChild(toggle);
       } else {
-        body.innerHTML = marked(value.body);
+        body.innerHTML = value.body;
       }
 
       recommendation.style = null;

@@ -15,7 +15,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     'title': node.title,
     'type': node.type,
     'hideShare': node.hide_share == true,
-    'body': node.body
+    'body': node.body|markdown
   } %}
   {% set x=status_banners.__setitem__(node.base, nodeDict) %}
 {% endfor %}
@@ -27,7 +27,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     'title': node.title,
     'order': node.order,
     'tags': node.tags if node.tags else [],
-    'body': node.body
+    'body': node.body|markdown
   } %}
   {% set x=recommendations.__setitem__(node.base, nodeDict) %}
 {% endfor %}
