@@ -117,7 +117,7 @@
     h2 {
       margin-bottom: 30px;
       padding-bottom: 30px;
-      border-bottom: 1px solid color('boulder');
+      border-bottom: 1px solid safeColor('oslo-gray');
 
       @media (min-width: 575px) {
         display: none;

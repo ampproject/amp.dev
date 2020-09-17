@@ -17,7 +17,7 @@
   }
 
   & + & {
-    border-top: solid 1px color('boulder');
+    border-top: solid 1px safeColor('oslo-gray');
   }
 
   &:nth-child(2) {
@@ -62,7 +62,7 @@
 
       &-status {
         display: block;
-        color: color('boulder');
+        color: safeColor('oslo-gray');
 
         .fast & {
           color: safeColor('apple');

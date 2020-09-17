@@ -7,7 +7,7 @@
   $root: &;
   margin-top: 30px;
   padding: 30px 18px;
-  border: solid 1px color('boulder');
+  border: solid 1px safeColor('oslo-gray');
   border-radius: 8px;
   transition: transform .25s ease-in, background .25s ease-in, box-shadow .3s ease-in, border-color .3s ease-in;
 
@@ -67,17 +67,17 @@
 
   &-tags {
     padding-top: 15px;
-    border-top: solid 1px color('boulder');
+    border-top: solid 1px safeColor('oslo-gray');
 
     span {
       height: 30px;
       margin: 15px 8px 15px 0;
       padding: 3px 10px;
-      border: 1px solid color('boulder');
+      border: 1px solid safeColor('oslo-gray');
       border-radius: 15px;
       font-size: 12px;
       font-weight: bold;
-      color: color('boulder');
+      color: safeColor('oslo-gray');
 
       &:first-child {
         display: none;
