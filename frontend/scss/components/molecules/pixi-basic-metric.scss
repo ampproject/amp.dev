@@ -40,13 +40,13 @@
 
   &.passed {
     label {
-      color: color('green-haze');
+      color: safeColor('apple');
     }
   }
 
   &.failed {
     label {
-      color: color('red');
+      color: safeColor('guardsman-red');
     }
   }
 }

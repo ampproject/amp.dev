@@ -30,7 +30,7 @@
     background-color: color('silver');
 
     &.weighted {
-      background-color: color('red');
+      background-color: safeColor('guardsman-red');
     }
 
     &-bar {
@@ -75,18 +75,18 @@
       }
 
       &[data-type='fast'] {
-        background: color('green-haze');
+        background: safeColor('apple');
 
         span {
-          border-color: color('green-haze');
+          border-color: safeColor('apple');
         }
       }
 
       &[data-type="average"] {
-        background: color('christine');
+        background: safeColor('clementine');
 
         span {
-          border-color: color('christine');
+          border-color: safeColor('clementine');
         }
       }
     }
@@ -125,7 +125,7 @@
       font-size: 14px;
       white-space: nowrap;
       font-weight: bold;
-      color: color('green-haze');
+      color: safeColor('apple');
       transform: translateX(7px);
 
       &:after {
@@ -139,11 +139,11 @@
       }
 
       &.average {
-        color: color('christine');
+        color: safeColor('clementine');
       }
 
       &.slow {
-        color: color('red');
+        color: safeColor('guardsman-red');
       }
 
       &.inversed {
@@ -161,7 +161,7 @@
         &:after {
           border: 7.5px solid transparent;
           border-right: 0;
-          border-left-color: color('red');
+          border-left-color: safeColor('guardsman-red');
         }
       }
     }

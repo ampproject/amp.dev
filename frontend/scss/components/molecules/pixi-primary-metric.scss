@@ -65,15 +65,15 @@
         color: color('boulder');
 
         .fast & {
-          color: color('green-haze');
+          color: safeColor('apple');
         }
 
         .average & {
-          color: color('christine');
+          color: safeColor('clementine');
         }
 
         .slow & {
-          color: color('red');
+          color: safeColor('guardsman-red');
         }
       }
     }
@@ -130,17 +130,17 @@
       #{$primary-metric}-score {
         .fast & {
           font-weight: bold;
-          color: color('green-haze');
+          color: safeColor('apple');
         }
 
         .average & {
           font-weight: bold;
-          color: color('christine');
+          color: safeColor('clementine');
         }
 
         .slow & {
           font-weight: bold;
-          color: color('red');
+          color: safeColor('guardsman-red');
         }
       }
     }

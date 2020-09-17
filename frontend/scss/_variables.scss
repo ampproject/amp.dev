@@ -67,7 +67,6 @@ $colors: (
   'robins-egg':      #00DCC0,
   'emerald':         #38CA71,
   'malachite':       #00CD3C,
-  'green-haze':      #00AD20,
   'forest-green':    #2DB932,
   'fruit-salad':     #4D9F66,
   'shamrock':        #2ECC71,
@@ -80,7 +79,6 @@ $colors: (
   'school-bus':      #FFDC00,
   'manz':            #F1F068,
   'pizazz':          #FF8F00,
-  'christine':       #E26E08,
   'zest':            #E67E22,
   'buttercup':       #F39C12,
   'carnation':       #F56C64,
@@ -98,6 +96,12 @@ $colors: (
   'ultramarine':     #180CA4,
   'pickled-bluewood':#2C3E50,
 
+);
+
+$safeColors: (
+  'apple': #4AA03F,
+  'clementine': #F06800,
+  'guardsman-red': #C30000,
 );
 
 $shadows: (
