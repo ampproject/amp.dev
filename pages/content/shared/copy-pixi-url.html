@@ -3,6 +3,7 @@ $sitemap:
   enabled: false
 ---
 <!doctype html>
+{% set pixi = g.doc('/content/pixi/index.md', locale=doc.locale) %}
 <html>
 <head>
   <meta charset="utf-8">
@@ -43,7 +44,7 @@ $sitemap:
   </style>
 </head>
 <body>
-  <button type="button" name="button">Copy to clipboard</button>
+  <button type="button" name="button">{{ pixi.staticText.shareDialog.copyToClipboard }}</button>
   <input id="script-tag">
   <script>
     const animationDuration = 1200;
@@ -58,9 +59,9 @@ $sitemap:
       scriptTag.setSelectionRange(0, 99999);
       document.execCommand('copy');
 
-      button.textContent = "Success";
+      button.textContent = "{{ pixi.staticText.shareDialog.buttonSuccess }}";
       setTimeout(function() {
-        button.textContent = "Copy to clipboard";
+        button.textContent = "{{ pixi.staticText.shareDialog.copyToClipboard }}";
       }, animationDuration);
     });
   </script>

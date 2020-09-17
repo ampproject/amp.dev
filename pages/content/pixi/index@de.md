@@ -6,7 +6,10 @@ staticText:
     fieldPlaceholder: URL eingeben
     button: Analysieren
   shareDialog:
-    headline: Copy & paste URL
+    headline: Kopiere und teile die URL
+    close: Dialog schließen
+    copyToClipboard: URL kopieren
+    success: Erfolgreich
   statusIntro:
     headline: Bitte warte einen Moment
     headline2: Wir analysieren grade deine Seite
@@ -58,9 +61,8 @@ scriptText:
     average: Verbesserungswürdig
     slow: Schlecht
   tags:
-    all: Alle
     lcp: LCP
-    fid: FID
+    fid: FID und TBT
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobile-friendliness
