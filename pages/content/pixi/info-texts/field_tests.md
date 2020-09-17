@@ -1,1 +1,0 @@
-Field testing highlights performance factors that lab tests may overlook. RUM is the only way to measure how your site performs for your users. [Learn more](https://web.dev/user-centric-performance-metrics/#in-the-field).
