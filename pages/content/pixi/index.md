@@ -9,6 +9,7 @@ staticText:
     headline: Copy & paste URL
     close: Close navigation
     copyToClipboard: Copy to clipboard
+    success: Success
   statusIntro:
     headline: Please wait a moment
     headline2: We are currently analyzing your page
