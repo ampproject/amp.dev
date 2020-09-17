@@ -9,7 +9,7 @@
   justify-content: space-between;
   padding: 15px 20px;
   font-size: 16px;
-  background: color('white');
+  background: safeColor('white');
   border-bottom: solid 1px safeColor('oslo-gray');
 
   &:last-child {

@@ -6,7 +6,7 @@
 .#{molecule('pixi-primary-metric')} {
   $primary-metric: &;
   padding: 15px 20px;
-  background-color: color('white');
+  background-color: safeColor('white');
 
   @media (min-width: 768px) {
     padding: 15px 15px 15px 25px;
