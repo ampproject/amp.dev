@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import marked from 'marked';
 import i18n from '../I18n.js';
+import {cleanCodeForInnerHtml} from '../../utils/texts';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -53,7 +53,7 @@ export default class RecommendationsView {
     this.recommendationNodes = [];
     this.filterPills = [];
 
-    for (const value of recommendations) {
+    for (const [i, value] of recommendations.entries()) {
       const recommendation = this.recommendation.cloneNode(true);
       const header = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-header'
@@ -73,6 +73,11 @@ export default class RecommendationsView {
       header.id = `header-${value.id}`;
       body.id = `body-${value.id}`;
 
+      if (i == 0) {
+        recommendation.classList.add('expanded');
+        header.setAttribute('aria-expanded', 'true');
+      }
+
       header.addEventListener('click', () => {
         const isExpanded = recommendation.classList.toggle('expanded');
         header.setAttribute('aria-expanded', String(isExpanded));
@@ -80,8 +85,8 @@ export default class RecommendationsView {
       header.setAttribute('aria-controls', body.id);
       body.setAttribute('aria-labelledby', header.id);
 
-      title.innerHTML = marked(value.title);
-      body.innerHTML = marked(value.body);
+      title.innerHTML = value.title;
+      body.innerHTML = cleanCodeForInnerHtml(value.body);
 
       for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);

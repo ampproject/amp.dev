@@ -79,13 +79,12 @@
     line-height: 1.57;
     background: color('white');
     pointer-events: none;
-    opacity: 0;
+    display: none;
     filter: drop-shadow(0 0 20px transparentize(color('black'), 0.8));
 
     @media (min-width: 575px) {
       position: absolute;
       top: 25px;
-      display: flex;
       flex-direction: row-reverse;
       width: 300px;
       height: auto;
@@ -129,7 +128,6 @@
     }
 
     .invert & {
-
       @media (min-width: 575px) {
         transform: translateX(70%);
       }
@@ -144,6 +142,7 @@
     #{$tooltip}-tip {
       opacity: 1;
       pointer-events: all;
+      display: flex;
     }
 
     & + #{$tooltip}-background {

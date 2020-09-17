@@ -50,7 +50,6 @@
     position: absolute;
     top: 0;
     left: 15px;
-    display: flex;
     width: calc(100% - 30px);
     min-height: 100%;
     padding: 30px 15px;
@@ -59,7 +58,7 @@
     background-position: 60px 50px;
     background-color: color('white');
     pointer-events: none;
-    opacity: 0;
+    display: none;
     transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
 
     @media (min-width: 768px) {
@@ -113,11 +112,11 @@
   &.pass {
     #{$status-intro} {
       &-text {
-        opacity: 0;
+        display: none;
       }
       &-banner {
         pointer-events: all;
-        opacity: 1;
+        display: flex;
         transform: translateY(-6px);
         box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.7);
       }

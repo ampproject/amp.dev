@@ -6,7 +6,7 @@
     <br>
     <label class="ap-m-pixi-basic-metric-status">
       {% if not basic_metric.status %}
-      {{ pixi.staticText.status.analyzing }}
+      {{ pixi.scriptText.status.analyzing }}
       {% include 'views/partials/pixi/analyzing-dots.j2' %}
       {% else %}
       {{ basic_metric.status }}

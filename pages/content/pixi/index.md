@@ -3,11 +3,16 @@ $title: AMP Page Experience Guide
 staticText:
   inputBar:
     headline: Analyze your AMP page
-    fieldPlaceholder: Enter valid URL
-    fieldError: Please enter a valid URL
+    fieldPlaceholder: Enter URL
     button: Analyze
+  infoDialog:
+    open: Learn about
+    close: Close
   shareDialog:
     headline: Copy & paste URL
+    close: Close navigation
+    copyToClipboard: Copy to clipboard
+    success: Success
   statusIntro:
     headline: Please wait a moment
     headline2: We are currently analyzing your page
@@ -36,22 +41,32 @@ staticText:
     mobileFriendliness: Mobile Friendliness
     intrusiveInterstitials: Intrusive Interstitials
     checkManually: Check manually
+  recommendations:
+    headline: Take action. Improve your AMP site
+  tags:
+    all: All
+scriptText:
+  inputBar:
+    fieldError: Please enter a valid URL
   status:
     analyzing: Analyzing
     calculating: Calculating
+    error: Analysis failed
     failed: Failed
     passed: Passed
+    passedAddition: passed
     none: None
     nothingToDo: Nothing to do
     fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations
-  recommendations:
-    headline: Take action. Improve your AMP site
+  categories:
+    fast: Good
+    average: Needs Improvement
+    slow: Poor
   tags:
-    all: All
     lcp: LCP
-    fid: FID
+    fid: FID and TBT
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobile-friendliness

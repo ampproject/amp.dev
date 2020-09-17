@@ -1,3 +1,19 @@
+// Copyright 2020 The AMPHTML Authors
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+import marked from 'marked';
+
 const DEFAULT_LANGUAGE = 'en';
 
 class I18n {
@@ -18,7 +34,7 @@ class I18n {
     ]);
     const i18nConfig = JSON.parse(pixiContent[0]);
     this.language = i18nConfig.language;
-    this.staticText = i18nConfig.staticText;
+    this.scriptText = i18nConfig.scriptText;
     this.statusBanners = JSON.parse(pixiContent[1]);
     this.recommendations = JSON.parse(pixiContent[2]);
     this.infoTexts = JSON.parse(pixiContent[3]);
@@ -28,7 +44,7 @@ class I18n {
     const keys = textKey.split('.');
     return keys.reduce(
       (node, key) => (node && node[key]) || '',
-      this.staticText
+      this.scriptText
     );
   }
 
@@ -45,7 +61,7 @@ class I18n {
         const {body, ...props} = recommendation;
         result.push({
           id,
-          body: body || item.description,
+          body: body || marked(item.description),
           ...props,
         });
       } else {
