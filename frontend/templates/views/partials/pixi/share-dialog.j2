@@ -1,5 +1,7 @@
 {% do doc.styles.addCssFile('css/components/molecules/pixi-share-dialog.css') %}
 
+{% set base_url = podspec.base_urls.platform + '/' + doc.locale.language if doc.locale.language != 'en' else podspec.base_urls.platform %}
+
 <amp-lightbox id="share-dialog" layout="nodisplay" on="lightboxClose:share-button.focus">
   <div class="ap-m-share-dialog"
       role="dialog" aria-labelledby="share-dialog-title" aria-describedby="share-dialog-title">
@@ -25,8 +27,8 @@
           height="75"
           layout="fixed"
           sandbox="allow-scripts"
-          src="{{ podspec.base_urls.platform }}/shared/copy-pixi-url/"
-          [src]="'{{ podspec.base_urls.platform }}/shared/copy-pixi-url/#' + pixi.shareUrl">
+          src="{{ base_url }}/shared/copy-pixi-url/"
+          [src]="'{{ base_url }}/shared/copy-pixi-url/#' + pixi.shareUrl">
         <div placeholder></div>
       </amp-iframe>
     </div>
