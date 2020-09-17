@@ -126,7 +126,16 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
       <div id="reports" class="pristine">
         <section class="ap-t-pixi-checks-reports">
-          <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+          <div class="ap-t-pixi-checks-reports-title">
+            <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+            {% with tooltip = {
+              'id': 'core-web-vitals',
+              'invert': false
+            } %}
+            {% include 'views/partials/pixi/tooltip.j2' %}
+            {% endwith %}
+          </div>
+
           {% include 'views/partials/pixi/primary-checks.j2' %}
 
           <h2>Additional checks</h2>

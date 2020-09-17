@@ -164,8 +164,13 @@
         padding: 60px 0 0 0;
       }
 
-      h2 {
+      &-title {
+        display: flex;
         margin: 30px 0 20px;
+
+        h2 {
+          margin: 0 20px 0 0;
+        }
       }
     }
   }
