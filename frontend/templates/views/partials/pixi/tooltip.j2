@@ -4,20 +4,30 @@
     class="ap-m-tooltip {% if tooltip.invert %}invert{% endif %}">
 
   <button class="ap-m-tooltip-toggle"
-      on="tap:tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}.toggleClass(class=active)">
+      id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-open"
+      on="tap:tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}.toggleClass(class=active),AMP.setState({tooltip: tooltip ? !tooltip : true}),tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-close.focus"
+      aria-label="{{ pixi.staticText.infoDialog.open }} {{ info_texts[tooltip.id].title }}">
     {% do doc.icons.useIcon('icons/questionmark-outline.svg') %}
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#questionmark-outline"></use></svg>
   </button>
 
-  <div class="ap-m-tooltip-tip">
-    <button class="ap-m-tooltip-close"
-        on="tap:tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}.toggleClass(class=active)">
+  <div class="ap-m-tooltip-tip" role="dialog" 
+    aria-labelledby="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-title"
+    aria-describedby="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-description">
+    <button class="ap-m-tooltip-close" 
+        aria-label="{{ pixi.staticText.infoDialog.close }}"
+        id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-close"
+        on="tap:tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}.toggleClass(class=active),tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-open.focus">
       {% do doc.icons.useIcon('/icons/close.svg') %}
       <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
     </button>
     <div>
-      <h2>{{ info_texts[tooltip.id].title|markdown|safe }}</h2>
-      {{ info_texts[tooltip.id].body|markdown|safe }}
+      <h2 id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-title">
+        {{ info_texts[tooltip.id].title|markdown|safe }}
+      </h2>
+      <div id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-description">
+        {{ info_texts[tooltip.id].body|markdown|safe }}
+      </div>
     </div>
   </div>
 </div>
