@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import i18n from '../I18n.js';
+import {cleanCodeForInnerHtml} from '../../utils/texts';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -85,7 +86,7 @@ export default class RecommendationsView {
       body.setAttribute('aria-labelledby', header.id);
 
       title.innerHTML = value.title;
-      body.innerHTML = value.body;
+      body.innerHTML = cleanCodeForInnerHtml(value.body);
 
       for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);

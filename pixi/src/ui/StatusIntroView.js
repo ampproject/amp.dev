@@ -14,6 +14,7 @@
 
 import i18n from './I18n';
 import {fixedRecommendations} from '../utils/checkAggregation/recommendations';
+import {cleanCodeForInnerHtml} from '../utils/texts';
 
 const classNameMapping = {
   error: 'fail',
@@ -76,7 +77,7 @@ export default class StatusIntroView {
     const bannerTitle = banner.querySelector('h3');
     const bannerText = banner.querySelector('p');
     bannerTitle.textContent = statusBanner.title;
-    bannerText.innerHTML = statusBanner.body;
+    bannerText.innerHTML = cleanCodeForInnerHtml(statusBanner.body);
 
     const shareButton = banner.querySelector('button');
     const anchor = banner.querySelector('a');
