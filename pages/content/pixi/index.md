@@ -5,6 +5,9 @@ staticText:
     headline: Analyze your AMP page
     fieldPlaceholder: Enter URL
     button: Analyze
+  infoDialog:
+    open: Learn about
+    close: Close
   shareDialog:
     headline: Copy & paste URL
     close: Close navigation
