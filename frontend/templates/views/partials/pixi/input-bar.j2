@@ -15,8 +15,7 @@
     <button id="input-submit"
         class="ap-m-input-bar-submit"
         on="tap:pixi-checks.scrollTo(duration=300)"
-        name="button"
-        [% if not query.url %]disabled[% endif %]>
+        name="button">
       {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
       <svg>
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>

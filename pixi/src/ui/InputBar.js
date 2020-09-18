@@ -24,16 +24,16 @@ export default class InputBar {
     this.submit = this.container.querySelector('#input-submit');
     this.label = this.container.querySelector('#input-label');
 
-    this.submit.addEventListener('click', callback);
-    this.field.addEventListener('input', this.validate.bind(this));
-    this.field.addEventListener('keyup', (e) => {
-      const valid = this.validate();
-      if (
-        valid &&
-        e.keyCode === 13 &&
-        !this.submit.classList.contains('loading')
-      ) {
+    this.submit.addEventListener('click', async () => {
+      if (await this.validate()) {
         callback();
+      }
+    });
+    this.field.addEventListener('keyup', async (e) => {
+      if (e.keyCode === 13) {
+        if (await this.validate()) {
+          callback();
+        }
       }
     });
   }
@@ -42,11 +42,10 @@ export default class InputBar {
     return pageUrl.match(URL_VALIDATION_REGEX) ? true : false;
   }
 
-  validate() {
-    const valid = this.isValidUrl(this.field.value);
-    this.submit.disabled = !valid;
+  async validate(silent) {
+    const valid = this.isValidUrl(await this.getPageUrl());
 
-    if (!valid) {
+    if (!valid && silent !== true) {
       this.toggleError(true, i18n.getText('inputBar.fieldError'));
     } else {
       this.toggleError(false, ' ');
@@ -73,10 +72,6 @@ export default class InputBar {
       value.startsWith('http://') || value.startsWith('https://')
         ? value
         : `http://${value}`;
-
-    if (!this.isValidUrl(pageUrl)) {
-      return;
-    }
 
     return pageUrl;
   }
