@@ -67,6 +67,12 @@ export default class RecommendationsView {
       const body = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-body'
       );
+      const bodyText = recommendation.querySelector(
+        '.ap-m-pixi-recommendations-item-body-text'
+      );
+      const nextButton = recommendation.querySelector(
+        '.ap-m-lnk'
+      );
       const tagsBar = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-tags'
       );
@@ -83,7 +89,7 @@ export default class RecommendationsView {
         bodyHtml = bodyHtml.replace(/\$\{URL\}/g, encodeURIComponent(pageURL));
         bodyHtml = addTargetBlankToLinks(bodyHtml);
 
-        body.innerHTML = bodyHtml;
+        bodyText.innerHTML = bodyHtml;
       }
 
       recommendation.style = null;

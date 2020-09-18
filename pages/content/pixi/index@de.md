@@ -39,6 +39,7 @@ staticText:
     checkManually: Bitte manuell prüfen
   recommendations:
     headline: Jetzt handeln. Verbessere deine AMP Seite
+    nextAdvice: Nächster Tipp
   tags:
     all: Alle
 scriptText:
