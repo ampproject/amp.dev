@@ -64,7 +64,7 @@
     "@ampproject/toolbox-cors": "2.6.0",
     "@ampproject/toolbox-linter": "2.7.0-alpha.3",
     "@ampproject/toolbox-optimizer": "2.6.0",
-    "@google-cloud/datastore": "6.1.0",
+    "@google-cloud/datastore": "6.1.1",
     "acorn": "8.0.1",
     "casual": "1.6.2",
     "cheerio": "1.0.0-rc.3",
@@ -168,7 +168,7 @@
     "url-loader": "4.1.0",
     "url-search-params": "1.1.0",
     "wade": "0.3.3",
-    "webpack": "4.44.1",
+    "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
     "webpack-dev-server": "3.11.0",
     "write": "2.0.0"

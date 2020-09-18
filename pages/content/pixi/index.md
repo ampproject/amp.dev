@@ -5,14 +5,21 @@ staticText:
     headline: Analyze your AMP page
     fieldPlaceholder: Enter URL
     button: Analyze
+  infoDialog:
+    open: Learn about
+    close: Close
   shareDialog:
     headline: Copy & paste URL
+    close: Close navigation
+    copyToClipboard: Copy to clipboard
+    success: Success
   statusIntro:
     headline: Please wait a moment
     headline2: We are currently analyzing your page
     loadingCopy: ${finishedChecks} out of ${totalChecks} checks are completed
     buttonFixIt: Fix it now
     buttonShare: Share
+    buttonInvestigate: Investigate
   coreWebVitals:
     headline: Core Web Vitals
     tabsAriaLabel: Field and lab data tabs
@@ -24,8 +31,10 @@ staticText:
     pageLoads: Page loads
     thresholdMarker: 75th percentile
     resultLabels:
-      score: Your score
+      scorePercentile: Score at 75th percentile
+      score: Score
       opportunity: Opportunity to improve
+      pagesPassing: Pages passing
       action: Take action
   additionalChecks:
     headline: Additional checks
@@ -59,7 +68,7 @@ scriptText:
     slow: Poor
   tags:
     lcp: LCP
-    fid: FID
+    fid: FID and TBT
     cls: CLS
     https: HTTPS
     mobileFriendliness: Mobile-friendliness

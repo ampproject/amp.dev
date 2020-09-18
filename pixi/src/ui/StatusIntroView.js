@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import marked from 'marked';
 import i18n from './I18n';
-import {fixedRecommendations} from '../checkAggregation/recommendations';
+import {fixedRecommendations} from '../utils/checkAggregation/recommendations';
+import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../utils/texts';
 
 const classNameMapping = {
   error: 'fail',
@@ -72,21 +72,29 @@ export default class StatusIntroView {
     this.container.classList.remove('loading');
     this.container.classList.add(classNameMapping[statusBanner.type]);
 
+    let bodyHtml = cleanCodeForInnerHtml(statusBanner.body);
+    bodyHtml = addTargetBlankToLinks(bodyHtml);
+
     const banner = this.bannerLoading.cloneNode(true);
     banner.id = 'status-intro-banner';
     const bannerTitle = banner.querySelector('h3');
     const bannerText = banner.querySelector('p');
     bannerTitle.textContent = statusBanner.title;
-    bannerText.innerHTML = marked(statusBanner.body);
+    bannerText.innerHTML = bodyHtml;
 
-    const buttons = banner.querySelectorAll('button');
+    const shareButton = banner.querySelector('button');
+    const anchors = banner.querySelectorAll('a');
+    if (statusBanner.investigate) {
+      anchors[0].setAttribute('href', statusBanner.investigate);
+      anchors[0].classList.remove('pristine');
+    }
     if (hideFixButton) {
-      buttons[0].classList.add('pristine');
+      anchor[1].classList.add('pristine');
       // make second button primary
-      buttons[1].classList.remove('ap-a-btn-light');
+      shareButton.classList.remove('ap-a-btn-light');
     }
     if (statusBanner.hideShare) {
-      buttons[1].classList.add('pristine');
+      shareButton.classList.add('pristine');
     }
 
     this.bannerLoading.classList.add('pristine');
@@ -97,7 +105,7 @@ export default class StatusIntroView {
     try {
       return await statusBannerIdPromise;
     } catch (err) {
-      return 'api-error';
+      return 'generic-error';
     }
   }
 

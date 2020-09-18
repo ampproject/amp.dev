@@ -28,8 +28,8 @@ import RecommendationsView from './recommendations/RecommendationsView.js';
 
 import InputBar from './InputBar.js';
 
-import getRecommendations from '../checkAggregation/recommendations.js';
-import getStatusId from '../checkAggregation/statusBanner';
+import getRecommendations from '../utils/checkAggregation/recommendations.js';
+import getStatusId from '../utils/checkAggregation/statusBanner';
 
 const totalNumberOfChecks =
   AmpLinterCheck.getCheckCount() +
@@ -64,12 +64,12 @@ export default class PageExperience {
     this.statusIntroView = new StatusIntroView(document, totalNumberOfChecks);
     this.toggleLoading(true);
 
-    const pageUrl = await this.inputBar.getPageUrl();
-    if (!pageUrl) {
+    if (!(await this.inputBar.validate())) {
       this.toggleLoading(false);
       return;
     }
 
+    const pageUrl = await this.inputBar.getPageUrl();
     this.running = true;
 
     const linterPromise = this.runLintCheck(pageUrl);
@@ -101,6 +101,7 @@ export default class PageExperience {
     if (recommendations.length > 0) {
       this.recommendationsView.render(
         recommendations,
+        pageUrl,
         this.reportViews.pageExperience.coreWebVitalViews
       );
     }
