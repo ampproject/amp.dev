@@ -47,3 +47,17 @@ export const cleanCodeForInnerHtml = (html) => {
   );
   return result.replace(/<span>\s*<\/span>/g, '');
 };
+
+/**
+ * Add target=_blank to all link tags that do not have a target attribute
+ * and do have a href attribute that is not empty and not an anchor
+ */
+export const addTargetBlankToLinks = (html) => {
+  if (!html) {
+    return html;
+  }
+  return html.replace(
+    /<a\s(?![^>]*\btarget\s*=)(?=[^>]*\bhref\s*=\s*['"][^#"'])/g,
+    '<a target="_blank" '
+  );
+};

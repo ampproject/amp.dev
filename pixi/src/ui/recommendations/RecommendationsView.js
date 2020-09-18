@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import i18n from '../I18n.js';
-import {cleanCodeForInnerHtml} from '../../utils/texts';
+import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -45,7 +45,7 @@ export default class RecommendationsView {
     }
   }
 
-  render(recommendationList, metricUis) {
+  render(recommendationList, pageURL, metricUis) {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationList);
     const tagIdCounts = {};
@@ -85,8 +85,12 @@ export default class RecommendationsView {
       header.setAttribute('aria-controls', body.id);
       body.setAttribute('aria-labelledby', header.id);
 
+      let bodyHtml = cleanCodeForInnerHtml(value.body);
+      bodyHtml = bodyHtml.replace(/\$\{URL\}/g, encodeURIComponent(pageURL));
+      bodyHtml = addTargetBlankToLinks(bodyHtml);
+
       title.innerHTML = value.title;
-      body.innerHTML = cleanCodeForInnerHtml(value.body);
+      body.innerHTML = bodyHtml;
 
       for (const tagId of value.tags) {
         const tag = this.tag.cloneNode(true);

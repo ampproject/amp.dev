@@ -35,7 +35,7 @@
     padding: 10px;
     border-radius: 6px;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
-    background: color('white');
+    background: safeColor('white');
 
     @media (min-width: 1024px) {
       height: 76px;
@@ -96,8 +96,8 @@
     font-family: Poppins, sans-serif;
     text-align: center;
     font-size: 0;
-    color: color('white');
-    background: color('blue-ribbon');
+    color: safeColor('white');
+    background: safeColor('blue-ribbon');
 
     @media (min-width: 600px) {
       min-width: 129px;
@@ -108,19 +108,15 @@
       transform: rotate(-90deg);
       height: 20px;
       width: 20px;
-      fill: color('white');
+      fill: safeColor('white');
 
       @media (min-width: 600px) {
         display: none;
       }
     }
 
-    &[disabled] {
-      background: color('boulder');
-    }
-
     &.loading {
-      background: color('boulder');
+      pointer-events: none;
 
       #{$inputBar}-submit-title {
         font-size: 0;

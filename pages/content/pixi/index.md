@@ -31,8 +31,10 @@ staticText:
     pageLoads: Page loads
     thresholdMarker: 75th percentile
     resultLabels:
-      score: Your score
+      scorePercentile: Score at 75th percentile
+      score: Score
       opportunity: Opportunity to improve
+      pagesPassing: Pages passing
       action: Take action
   additionalChecks:
     headline: Additional checks
