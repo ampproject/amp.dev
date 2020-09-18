@@ -106,8 +106,8 @@
         color: color('river-bed');
         transition: opacity 0.3s ease;
 
-        .fast &,
         .average &,
+        .fast &,
         .slow & {
           opacity: 1;
         }
@@ -122,10 +122,6 @@
         width: 11px;
         height: 11px;
         fill: currentcolor;
-
-        .has-status & {
-          display: inline;
-        }
       }
 
 

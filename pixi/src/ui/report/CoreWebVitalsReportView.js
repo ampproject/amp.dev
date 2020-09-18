@@ -152,7 +152,6 @@ class CoreWebVitalView {
   }
 
   setRecommendationStatus(count) {
-    this.container.classList.toggle('has-status', !!count);
     this.recommendations.parentNode.classList.remove('loading');
 
     if (!count) {
