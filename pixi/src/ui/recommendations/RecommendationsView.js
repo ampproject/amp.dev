@@ -71,7 +71,7 @@ export default class RecommendationsView {
         '.ap-m-pixi-recommendations-item-body-text'
       );
       const nextButton = recommendation.querySelector(
-        '.ap-m-lnk'
+        'a'
       );
       const tagsBar = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-tags'
@@ -90,6 +90,17 @@ export default class RecommendationsView {
         bodyHtml = addTargetBlankToLinks(bodyHtml);
 
         bodyText.innerHTML = bodyHtml;
+
+        // Set 'next advice' button
+        const nextRecommendation = recommendations[i + 1];
+        if (nextRecommendation) {
+          nextButton.href = `#recommendation-${nextRecommendation.id}`;
+          nextButton.addEventListener('click', () => {
+            this.onClickNext(recommendation);
+          });
+        } else {
+          nextButton.remove();
+        }
       }
 
       recommendation.style = null;
@@ -187,5 +198,10 @@ export default class RecommendationsView {
 
       recommendation.hidden = !commonValues.length;
     }
+  }
+
+  onClickNext(recommendation, nextRecommendationId) {
+    recommendation.classList.remove('expanded');
+    recommendation.nextSibling.classList.add('expanded');
   }
 }
