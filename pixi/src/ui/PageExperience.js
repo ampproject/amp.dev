@@ -101,6 +101,7 @@ export default class PageExperience {
     if (recommendations.length > 0) {
       this.recommendationsView.render(
         recommendations,
+        pageUrl,
         this.reportViews.pageExperience.coreWebVitalViews
       );
     }
