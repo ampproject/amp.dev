@@ -166,8 +166,10 @@ class Experiments extends FlyIn {
             id = id[0].substring(5, id.length - 1);
             let name = experiment.match(EXPERIMENTS_NAME_PATTERN);
             if (name) {
-              name = name[0].replace(/'\s\+\s+'/, '')
-              .trim().substring(1, name.length - 1);
+              name = name[0]
+                .replace(/'\s\+\s+'/, '')
+                .trim()
+                .substring(1, name.length - 1);
             } else {
               name = id;
             }
