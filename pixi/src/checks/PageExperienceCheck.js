@@ -77,7 +77,7 @@ export default class PageExperienceCheck {
 
     if (metricOrigin.numericValue <= METRICS_SCALES[id].fast) {
       data.category = Category.FAST;
-    } else if (metricOrigin.numericValue <= METRICS_SCALES[id].average) {
+    } else if (metricOrigin.numericValue < METRICS_SCALES[id].average) {
       data.category = Category.AVERAGE;
     } else {
       data.category = Category.SLOW;
