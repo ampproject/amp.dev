@@ -75,7 +75,7 @@ export default class PageExperienceCheck {
       proportion: METRICS_SCALES[id],
     };
 
-    if (metricOrigin.numericValue <= METRICS_SCALES[id].fast) {
+    if (metricOrigin.numericValue < METRICS_SCALES[id].fast) {
       data.category = Category.FAST;
     } else if (metricOrigin.numericValue < METRICS_SCALES[id].average) {
       data.category = Category.AVERAGE;
