@@ -124,8 +124,12 @@
         fill: currentcolor;
       }
 
+      a[href^="http"] {
+        font-weight: bold;
+        color: color('blue-ribbon');
+      }
 
-      a[href^="#"] {
+      a[href="#recommendations"] {
         font-weight: bold;
         color: color('blue-ribbon');
 
