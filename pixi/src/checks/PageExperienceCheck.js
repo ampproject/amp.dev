@@ -29,15 +29,15 @@ const METRICS_SCALES = {
     average: 4000,
     slow: 6000,
   },
-  cls: {
-    fast: 10,
-    average: 25,
-    slow: 40,
-  },
   tbt: {
     fast: 300,
     average: 600,
     slow: 900,
+  },
+  cls: {
+    fast: 0.1,
+    average: 0.25,
+    slow: 0.4,
   },
 };
 
