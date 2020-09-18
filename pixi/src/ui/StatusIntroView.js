@@ -83,9 +83,13 @@ export default class StatusIntroView {
     bannerText.innerHTML = bodyHtml;
 
     const shareButton = banner.querySelector('button');
-    const anchor = banner.querySelector('a');
+    const anchors = banner.querySelectorAll('a');
+    if (statusBanner.investigate) {
+      anchors[0].setAttribute('href', statusBanner.investigate);
+      anchors[0].classList.remove('pristine');
+    }
     if (hideFixButton) {
-      anchor.classList.add('pristine');
+      anchor[1].classList.add('pristine');
       // make second button primary
       shareButton.classList.remove('ap-a-btn-light');
     }
@@ -101,7 +105,7 @@ export default class StatusIntroView {
     try {
       return await statusBannerIdPromise;
     } catch (err) {
-      return 'api-error';
+      return 'generic-error';
     }
   }
 

@@ -15,7 +15,8 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
     'title': node.title,
     'type': node.type,
     'hideShare': node.hide_share == true,
-    'body': node.body|markdown
+    'body': node.body|markdown,
+    'investigate': node.investigate if node.investigate else false
   } %}
   {% set x=status_banners.__setitem__(node.base, nodeDict) %}
 {% endfor %}
@@ -127,7 +128,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       <div id="reports" class="pristine">
         <section class="ap-t-pixi-checks-reports">
           <div class="ap-t-pixi-checks-reports-title">
-            <h2>{{ pixi.staticText.coreWebVitals.headline }}</h2>
+            <h2 id="core-web-vitals-checks">{{ pixi.staticText.coreWebVitals.headline }}</h2>
             {% with tooltip = {
               'id': 'core-web-vitals',
               'invert': false
@@ -138,7 +139,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
           {% include 'views/partials/pixi/primary-checks.j2' %}
 
-          <h2>Additional checks</h2>
+          <h2 id="additional-checks">Additional checks</h2>
           {% include 'views/partials/pixi/basic-checks.j2' %}
         </section>
 

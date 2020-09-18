@@ -92,10 +92,13 @@
 
     &-ctas {
       display: none;
-      margin-top: 30px;
+      margin-top: 15px;
     }
 
     .#{atom('btn')} {
+      margin-top: 15px;
+      margin-right: 15px;
+
       &-light {
         margin-left: 15px;
         color: safeColor('blue-ribbon');
@@ -138,6 +141,9 @@
       &-banner {
         &-ctas {
           display: flex;
+          @media (max-width: 480px) {
+            flex-direction: column;
+          }
         }
       }
     }
