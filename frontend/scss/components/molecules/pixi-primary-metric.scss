@@ -103,13 +103,18 @@
       a,
       svg {
         white-space: nowrap;
+        color: color('river-bed');
         transition: opacity 0.3s ease;
 
-        .fast &,
         .average &,
+        .fast &,
         .slow & {
           opacity: 1;
         }
+      }
+
+      a {
+        font-weight: normal;
       }
 
       svg {
@@ -117,14 +122,21 @@
         width: 11px;
         height: 11px;
         fill: currentcolor;
-
-        .has-status & {
-          display: inline;
-        }
       }
 
-      [role="button"] {
-        cursor: pointer;
+      a[href^="http"] {
+        font-weight: bold;
+        color: color('blue-ribbon');
+      }
+
+      a[href="#recommendations"] {
+        font-weight: bold;
+        color: color('blue-ribbon');
+
+        & ~ svg {
+          display: inline;
+          fill: color('blue-ribbon');
+        }
       }
 
       #{$primary-metric}-score {

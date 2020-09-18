@@ -152,7 +152,8 @@ class CoreWebVitalView {
   }
 
   setRecommendationStatus(count) {
-    this.container.classList.toggle('has-status', !!count);
+    this.recommendations.parentNode.classList.remove('loading');
+
     if (!count) {
       if (this.performanceCategory === CATEGORIES.fast) {
         this.recommendations.textContent = i18n.getText('status.nothingToDo');
@@ -184,6 +185,7 @@ class CoreWebVitalView {
     this.recommendations.textContent = i18n.getText('status.analyzing');
     this.recommendations.removeAttribute('href');
     this.recommendations.removeAttribute('target');
+    this.recommendations.parentNode.classList.add('loading');
 
     this.toggleLoading(true);
   }
