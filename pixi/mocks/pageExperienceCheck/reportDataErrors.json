@@ -40,7 +40,7 @@
 			}
 		},
 		"labData": {
-			"isAllFast": false,
+			"isAllFast": true,
 			"lcp": {
 				"unit": {
 					"name": "s",
@@ -54,7 +54,7 @@
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "AVERAGE"
+					"category": "FAST"
 				}
 			},
 			"tbt": {
@@ -70,7 +70,7 @@
 						"average": 600,
 						"slow": 900
 					},
-					"category": "AVERAGE"
+					"category": "FAST"
 				}
 			},
 			"cls": {
@@ -82,9 +82,9 @@
 				"data": {
 					"numericValue": 0.000004316609753962,
 					"proportion": {
-						"fast": 10,
-						"average": 25,
-						"slow": 40
+						"fast": 0.1,
+						"average": 0.25,
+						"slow": 0.4
 					},
 					"category": "FAST"
 				}
