@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   border-radius: 14px;
-  box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
+  box-shadow: 0 10px 25px 0 transparentize(safeColor('black'), 0.87);
 
   @media (min-width: 768px) {
     flex-direction: row;

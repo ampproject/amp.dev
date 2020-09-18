@@ -19,6 +19,7 @@
         {{ pixi.staticText.statusIntro.loadingCopy|replace('${finishedChecks}', '<span id="finished-checks">0</span>')|replace('${totalChecks}','<span id="total-checks">0</span>')|safe }}
       </p>
       <div class="ap-m-pixi-status-intro-banner-ctas">
+        <a class="ap-a-btn pristine">{{ pixi.staticText.statusIntro.buttonInvestigate }}</a>
         <a href="#recommendations" class="ap-a-btn"
             type="button">
           {{ pixi.staticText.statusIntro.buttonFixIt }}

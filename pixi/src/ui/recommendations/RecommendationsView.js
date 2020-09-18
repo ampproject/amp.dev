@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import i18n from '../I18n.js';
-import {cleanCodeForInnerHtml} from '../../utils/texts';
+import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -45,7 +45,7 @@ export default class RecommendationsView {
     }
   }
 
-  render(recommendationList, metricUis) {
+  render(recommendationList, pageURL, metricUis) {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationList);
     const tagIdCounts = {};
@@ -79,8 +79,11 @@ export default class RecommendationsView {
         recommendation.removeChild(body);
         header.removeChild(toggle);
       } else {
-        body.innerHTML = cleanCodeForInnerHtml(value.body);
-        body.innerHTML = value.body;
+        let bodyHtml = cleanCodeForInnerHtml(value.body);
+        bodyHtml = bodyHtml.replace(/\$\{URL\}/g, encodeURIComponent(pageURL));
+        bodyHtml = addTargetBlankToLinks(bodyHtml);
+
+        body.innerHTML = bodyHtml;
       }
 
       recommendation.style = null;

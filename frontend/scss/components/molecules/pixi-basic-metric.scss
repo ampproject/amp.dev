@@ -9,8 +9,8 @@
   justify-content: space-between;
   padding: 15px 20px;
   font-size: 16px;
-  background: color('white');
-  border-bottom: solid 1px color('boulder');
+  background: safeColor('white');
+  border-bottom: solid 1px safeColor('oslo-gray');
 
   &:last-child {
     border-bottom: 0;
@@ -35,18 +35,18 @@
   }
 
   &-status {
-    color: color('boulder');
+    color: safeColor('oslo-gray');
   }
 
   &.passed {
     label {
-      color: color('green-haze');
+      color: safeColor('apple');
     }
   }
 
   &.failed {
     label {
-      color: color('red');
+      color: safeColor('guardsman-red');
     }
   }
 }

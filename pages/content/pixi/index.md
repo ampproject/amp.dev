@@ -19,6 +19,7 @@ staticText:
     loadingCopy: ${finishedChecks} out of ${totalChecks} checks are completed
     buttonFixIt: Fix it now
     buttonShare: Share
+    buttonInvestigate: Investigate
   coreWebVitals:
     headline: Core Web Vitals
     tabsAriaLabel: Field and lab data tabs
@@ -30,8 +31,10 @@ staticText:
     pageLoads: Page loads
     thresholdMarker: 75th percentile
     resultLabels:
-      score: Your score
+      scorePercentile: Score at 75th percentile
+      score: Score
       opportunity: Opportunity to improve
+      pagesPassing: Pages passing
       action: Take action
   additionalChecks:
     headline: Additional checks

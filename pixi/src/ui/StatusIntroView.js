@@ -14,7 +14,7 @@
 
 import i18n from './I18n';
 import {fixedRecommendations} from '../utils/checkAggregation/recommendations';
-import {cleanCodeForInnerHtml} from '../utils/texts';
+import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../utils/texts';
 
 const classNameMapping = {
   error: 'fail',
@@ -72,17 +72,24 @@ export default class StatusIntroView {
     this.container.classList.remove('loading');
     this.container.classList.add(classNameMapping[statusBanner.type]);
 
+    let bodyHtml = cleanCodeForInnerHtml(statusBanner.body);
+    bodyHtml = addTargetBlankToLinks(bodyHtml);
+
     const banner = this.bannerLoading.cloneNode(true);
     banner.id = 'status-intro-banner';
     const bannerTitle = banner.querySelector('h3');
     const bannerText = banner.querySelector('p');
     bannerTitle.textContent = statusBanner.title;
-    bannerText.innerHTML = cleanCodeForInnerHtml(statusBanner.body);
+    bannerText.innerHTML = bodyHtml;
 
     const shareButton = banner.querySelector('button');
-    const anchor = banner.querySelector('a');
+    const anchors = banner.querySelectorAll('a');
+    if (statusBanner.investigate) {
+      anchors[0].setAttribute('href', statusBanner.investigate);
+      anchors[0].classList.remove('pristine');
+    }
     if (hideFixButton) {
-      anchor.classList.add('pristine');
+      anchor[1].classList.add('pristine');
       // make second button primary
       shareButton.classList.remove('ap-a-btn-light');
     }
@@ -98,7 +105,7 @@ export default class StatusIntroView {
     try {
       return await statusBannerIdPromise;
     } catch (err) {
-      return 'api-error';
+      return 'generic-error';
     }
   }
 
