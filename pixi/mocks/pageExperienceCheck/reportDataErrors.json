@@ -40,7 +40,7 @@
 			}
 		},
 		"labData": {
-			"isAllFast": true,
+			"isAllFast": false,
 			"lcp": {
 				"unit": {
 					"name": "s",
@@ -48,13 +48,13 @@
 					"digits": 1
 				},
 				"data": {
-					"numericValue": 1710,
+					"numericValue": 5000,
 					"proportion": {
 						"fast": 2500,
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "FAST"
+					"category": "SLOW"
 				}
 			},
 			"tbt": {
