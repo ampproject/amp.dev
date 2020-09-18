@@ -83,10 +83,6 @@
     }
   }
 
-  &-body + &-tags {
-    border-top: solid 1px color('boulder');
-  }
-
   &.expanded {
     @media (min-width: 768px) {
       transform: translateY(-.125em);
