@@ -720,7 +720,7 @@
 				"score": 0.73,
 				"scoreDisplayMode": "numeric",
 				"displayValue": "1.7 s",
-				"numericValue": 1710
+				"numericValue": 5000
 			},
 			"cumulative-layout-shift": {
 				"id": "cumulative-layout-shift",
@@ -1485,7 +1485,7 @@
 							"observedNavigationStart": 0,
 							"observedLoad": 2297,
 							"firstMeaningfulPaint": 500,
-							"largestContentfulPaint": 1710,
+							"largestContentfulPaint": 5000,
 							"observedNavigationStartTs": 3959972440132,
 							"observedFirstMeaningfulPaint": 1081,
 							"observedFirstContentfulPaintTs": 3959973488267,
