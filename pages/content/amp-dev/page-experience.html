@@ -149,10 +149,8 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
     {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
     <a href="#pixi-checks" class="ap-a-scroll-to-top">
-      {% do doc.icons.useIcon('icons/arrow.svg') %}
-      <svg>
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow"></use>
-      </svg>
+      {% do doc.icons.useIcon('icons/internal.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
     </a>
 
     {% include 'views/partials/pixi/share-dialog.j2' %}

@@ -6,8 +6,24 @@
   position: fixed;
   right: 0;
   bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 62px;
   height: 62px;
   background: color('white');
   box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.93);
+  transition: transform .25s, box-shadow .25s;
+
+  &:hover {
+    box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.91);
+    transform: translateY(-2px);
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: color('charade');
+    transform: rotate(-90deg);
+  }
 }
