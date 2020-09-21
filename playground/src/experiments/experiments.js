@@ -158,14 +158,25 @@ class Experiments extends FlyIn {
         const experiments = body
           .match(EXPERIMENTS_ITEM_PATTERN)
           .map((experiment) => {
-            const id = experiment.match(EXPERIMENTS_ID_PATTERN)[0];
-            const name = experiment
-              .match(EXPERIMENTS_NAME_PATTERN)[0]
-              .replace(/'\s\+\s+'/, '')
-              .trim();
+            let id = experiment.match(EXPERIMENTS_ID_PATTERN);
+            if (!id) {
+              throw Error('Invalid experiment', experiment);
+            }
+
+            id = id[0].substring(5, id.length - 1);
+            let name = experiment.match(EXPERIMENTS_NAME_PATTERN);
+            if (name) {
+              name = name[0]
+                .replace(/'\s\+\s+'/, '')
+                .trim()
+                .substring(1, name.length - 1);
+            } else {
+              name = id;
+            }
+
             return {
-              id: id.substring(5, id.length - 1),
-              name: name.substring(1, name.length - 1),
+              id: id,
+              name: name,
             };
           });
         return experiments;
