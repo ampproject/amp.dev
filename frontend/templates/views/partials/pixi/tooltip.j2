@@ -3,7 +3,7 @@
 <div id="tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}"
     class="ap-m-tooltip {% if tooltip.invert %}invert{% endif %}">
 
-  <button class="ap-m-tooltip-toggle" role="button" tabindex="0" aria-expanded="false" [aria-expanded]="tooltipExpanded"
+  <button class="ap-m-tooltip-toggle" aria-expanded="false" [aria-expanded]="tooltipExpanded"
       id="tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-open"
       on="tap:tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}.toggleClass(class=active),AMP.setState({tooltipExpanded: tooltipExpanded ? !tooltipExpanded : true}),tooltip-{{ tooltip.id|replace(".", "-") + tooltip.type|default('') }}-close.focus"
       aria-label="{{ pixi.staticText.infoDialog.open }} {{ info_texts[tooltip.id].title }}">
