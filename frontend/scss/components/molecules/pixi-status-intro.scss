@@ -7,42 +7,23 @@
   $status-intro: &;
   position: relative;
   display: flex;
-  min-height: 260px;
-
-  @media (min-width: 768px) {
-    align-items: center;
-  }
-
-  @media (min-width: 1024px) {
-    min-height: 290px;
-  }
 
   &-text {
-    display: flex;
+    max-width: 720px;
     padding: 0 15px;
-    overflow-x: scroll;
+    color: safeColor('white');
+    line-height: 1.625;
 
     @media (min-width: 768px) {
       padding: 0;
     }
 
-    & p {
-      flex: 1;
-      min-width: 230px;
+    h3,
+    p,
+    a {
+      font-size: 16px;
+      line-height: 1.625;
       color: safeColor('white');
-
-      & + p {
-        margin-left: 20px;
-
-        @media (min-width: 1024px) {
-          margin-left: 30px;
-        }
-      }
-
-      h3,
-      a {
-        color: safeColor('white');
-      }
     }
   }
 

@@ -128,19 +128,11 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(
-          225deg,
+          233deg,
           color('robins-egg') 10%,
           color('blue-ribbon') 50%
         );
-        clip-path: polygon(0% 40%, 100% 35%, 100% 92%, 0% 100%);
 
-        @media (min-width: 768px) {
-          clip-path: polygon(0% 48%, 100% 40%, 100% 90%, 0% 100%);
-        }
-
-        @media (min-width: 1024px) {
-          clip-path: polygon(0% 50%, 100% 37%, 100% 83%, 0% 100%);
-        }
       }
 
       section {
