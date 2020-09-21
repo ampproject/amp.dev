@@ -122,12 +122,13 @@
 
       &-background {
         position: absolute;
-        top: 0;
+        top: 120px;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: calc(100% - 80px);
         background: linear-gradient(233deg, color('robins-egg') 10%, color('blue-ribbon') 50%);
-
+        clip-path: url(#pixi-stripes);
+        transform: skewY(-4.5deg);
       }
 
       section {
