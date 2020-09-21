@@ -54,7 +54,7 @@ Since `amp-script` cannot exhaustively support the DOM API, simply copying a lib
 
 ## Use cases
 
-`amp-script` was created to help you fill the gaps in your AMP webpage's functionality. Since it supports a subset of the DOM and Web APIs, and since its use [comes with restrictions](../../../documentation/components/amp-script/#restrictions), it is not an all-purpose JavaScript solution. Any substantial body of existing JavaScript is likely to need modification to work in the `amp-script` context.
+`amp-script` was created to help you fill the gaps in your AMP webpage's functionality. Since it supports a subset of the DOM and Web APIs, and since its use [comes with restrictions](https://amp.dev/documentation/components/amp-script/#restrictions), it is not an all-purpose JavaScript solution. Any substantial body of existing JavaScript is likely to need modification to work in the `amp-script` context.
 
 However, `amp-script` presents a fine way to take care of logic and interactions that existing AMP components don't provide. The following are a few excellent use cases.
 
@@ -82,7 +82,7 @@ AMP allows you to retrieve server data using `amp-list` and to format it using [
 
 You can use `amp-script` to leverage areas of the Web API and DOM API that aren't currently accessible to AMP components, or to use these APIs in ways that AMP components don't support. For example, `amp-script` supports `WebSockets` ([example](https://amp.dev/documentation/examples/components/amp-script/#using-a-websocket-for-live-updates)), `localStorage`, and `Canvas`. It supports a wide variety of browser events, so you can listen for events beyond [those that AMP passes to traditional components](https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events/). And since `amp-script` provides access to the `navigator` object, you can retrieve information about [the user's browser](https://amp.dev/documentation/examples/components/amp-script/#detecting-the-operating-system) or [preferred language](https://amp.dev/documentation/examples/components/amp-script/#personalization).
 
-## amp-script - or amp-bind and amp-list? <a name="amp-script---or-amp-bind-and-amp-list"></a>
+## amp-script - or amp-bind and amp-list?
 
 For a new AMP developer who's comfortable with JavaScript, it may seem easier to always use `amp-script` than to learn to use `amp-bind` and `amp-list`. But the complete AMP developer is likely to want to know and use all of these components.
 
