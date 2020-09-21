@@ -89,7 +89,7 @@ export default class StatusIntroView {
       anchors[0].classList.remove('pristine');
     }
     if (hideFixButton) {
-      anchor[1].classList.add('pristine');
+      anchors[1].classList.add('pristine');
       // make second button primary
       shareButton.classList.remove('ap-a-btn-light');
     }
