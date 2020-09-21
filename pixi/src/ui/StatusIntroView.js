@@ -86,8 +86,8 @@ export default class StatusIntroView {
     bannerTitle.textContent = statusBanner.title;
     bannerText.innerHTML = bodyHtml;
 
-    const shareButton = banner.querySelector('button');
-    const anchors = banner.querySelectorAll('a');
+    const shareButton = banner.querySelector('button[data-cta]');
+    const anchors = banner.querySelectorAll('a[data-cta]');
     if (statusBanner.investigate) {
       anchors[0].setAttribute('href', statusBanner.investigate);
       anchors[0].classList.remove('pristine');
