@@ -26,6 +26,7 @@ staticText:
     fieldData: Field data
     labData: Lab data
     fieldDataExplainer: This data updated daily for the trailing 28-day period.
+    labDataExplainer: Please note that lab tests aren't reliable as they may vary per run.
     loadingSpeed: Loading speed
     interactivity: Interactivity
     visualStability: Visual stability
