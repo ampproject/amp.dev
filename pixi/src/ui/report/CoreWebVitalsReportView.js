@@ -44,7 +44,7 @@ class WeightedScale {
     this.indicator.classList.add(data.category.toLowerCase());
     if (score < 40) {
       this.indicator.classList.add('inversed');
-    } else if (score > 100) {
+    } else if (score === 100) {
       this.indicator.classList.add('max');
     }
 
