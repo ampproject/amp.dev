@@ -41,6 +41,7 @@ class WeightedScale {
       data.numericValue / unit.conversion
     ).toFixed(unit.digits)} ${unit.name}`;
 
+    this.resetStyles();
     this.indicator.classList.add(data.category.toLowerCase());
     if (score < 40) {
       this.indicator.classList.add('inversed');
@@ -60,6 +61,12 @@ class WeightedScale {
         data.proportion[type] / unit.conversion.toFixed(unit.digits)
       } ${unit.name}`;
     }
+  }
+
+  resetStyles() {
+    this.indicator.classList.remove(...Object.keys(CATEGORIES));
+    this.indicator.classList.remove('inversed');
+    this.indicator.classList.remove('max');
   }
 }
 
