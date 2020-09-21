@@ -50,7 +50,9 @@
     <div class="ap-o-pixi-primary-checks-data-error-label">
       <label>{{ g.doc('/content/pixi/no-field-data.md', locale=doc.locale).html|render|safe }}</label>
     </div>
-
+    <div class="ap-o-pixi-primary-checks-data-note"> 
+      {{ pixi.staticText.coreWebVitals.fieldDataExplainer }} 
+    </div>
   </div>
 
   <div class="ap-o-pixi-primary-checks-data" tabindex="0"

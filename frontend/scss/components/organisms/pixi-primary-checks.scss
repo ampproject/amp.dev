@@ -78,10 +78,16 @@
       }
     }
 
+    &-note {
+      font-size: 14px;
+      font-weight: bold;
+      padding: 10px 35px;
+      border-top: solid 2px color('mercury');
+    }
+
     &.active {
       display: block;
     }
-
 
     &.error {
       position: relative;
