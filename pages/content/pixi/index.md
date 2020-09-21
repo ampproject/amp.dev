@@ -25,6 +25,7 @@ staticText:
     tabsAriaLabel: Field and lab data tabs
     fieldData: Field data
     labData: Lab data
+    fieldDataExplainer: This data updated daily for the trailing 28-day period.
     loadingSpeed: Loading speed
     interactivity: Interactivity
     visualStability: Visual stability
