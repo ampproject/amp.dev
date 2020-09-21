@@ -39,7 +39,8 @@
     background-position: 60px 50px;
     background-color: safeColor('white');
     pointer-events: none;
-    display: none;
+    display: flex;
+    visibility: hidden;
     transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
 
     @media (min-width: 768px) {
@@ -94,11 +95,11 @@
   &.pass {
     #{$status-intro} {
       &-text {
-        display: none;
+        visibility: hidden;
       }
       &-banner {
         pointer-events: all;
-        display: flex;
+        visibility: visible;
         transform: translateY(-6px);
         box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.7);
       }
