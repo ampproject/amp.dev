@@ -1,0 +1,13 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_variables.scss';
+
+.#{atom('scroll-to-top')} {
+  position: fixed;
+  right: 0;
+  bottom: 100px;
+  width: 62px;
+  height: 62px;
+  background: color('white');
+  box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.93);
+}
