@@ -233,14 +233,14 @@ Tabel berikut ini menjelaskan tentang parameter yang dapat diterima, kelas CSS, 
       <td><code>container</code></td>
       <td>Tidak</td>
       <td>Tidak</td>
-      <td>No</td>
+      <td>Tidak</td>
       <td><code>block</code></td>
     </tr>
     <tr>
       <td><code>fill</code></td>
       <td>Tidak</td>
       <td>Ya, ukuran induk.</td>
-      <td>No</td>
+      <td>Tidak</td>
       <td><code>block</code></td>
     </tr>
     <tr>
