@@ -137,7 +137,7 @@ Contoh: Menentukan beberapa berkas sumber
 
 [sourcecode:html] <amp-video id="video-page1" autoplay="" loop="" layout="fill" poster="https://example.com/media/poster.jpg"></amp-video>
 
-  <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode] </source></source>
+  <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode]</source></source>
 
 
 ####Ukuran & Durasi video Demi kinerja yang optimal, Anda perlu menargetkan untuk menyediakan video yang tidak lebih besar daripada 4 MB. Ukuran berkas yang lebih kecil memungkinkan pengunduhan yang lebih cepat, jadi pertahankan agar ukurannya sekecil mungkin.
