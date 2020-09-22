@@ -86,14 +86,15 @@ export default class StatusIntroView {
     bannerTitle.textContent = statusBanner.title;
     bannerText.innerHTML = bodyHtml;
 
-    const shareButton = banner.querySelector('button[data-cta]');
-    const anchors = banner.querySelectorAll('a[data-cta]');
+    const shareButton = banner.querySelector('#share-button');
     if (statusBanner.investigate) {
-      anchors[0].setAttribute('href', statusBanner.investigate);
-      anchors[0].classList.remove('pristine');
+      const investigateButton = banner.querySelector('#investigate-button');
+      investigateButton.setAttribute('href', statusBanner.investigate);
+      investigateButton.classList.remove('pristine');
     }
     if (hideFixButton) {
-      anchors[1].classList.add('pristine');
+      const fixItButton = banner.querySelector('#fix-it-button');
+      fixItButton.classList.add('pristine');
       // make second button primary
       shareButton.classList.remove('ap-a-btn-light');
     }
