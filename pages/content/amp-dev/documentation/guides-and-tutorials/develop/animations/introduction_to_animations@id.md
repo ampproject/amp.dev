@@ -157,7 +157,6 @@ Beberapa animasi dapat terhubung untuk membentuk urutan yang panjang. Anda dapat
     }
   </script>
 </amp-animation>
-
 ```
 
 Pengaturan ini memutar setiap animasi selama 3 detik dalam satu urutan.
