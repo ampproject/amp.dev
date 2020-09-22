@@ -16,7 +16,11 @@
     line-height: 1.625;
 
     @media (min-width: 768px) {
-      padding: 0;
+      padding: 0 0 0 25px;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 0 0 0 35px;
     }
 
     h3,
