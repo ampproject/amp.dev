@@ -120,6 +120,11 @@
         padding: 50px 0 30px 0;
       }
 
+      .#{atom('pixi-stripes')} {
+        top: 100px;
+        height: calc(100% - 80px);
+      }
+
       section {
         position: relative;
         z-index: 1;
