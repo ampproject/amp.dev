@@ -3,8 +3,8 @@
 standaloneSnippets: true
 preview: true
 author:
-  - sebastianbenz
   - morss
+  - sebastianbenz
 --->
 
 <!--
@@ -224,7 +224,7 @@ author:
       An `<amp-script>` function can serve as the data source for an `<amp-list>`.
         - Use `exportFunction()` to make the function visible to the `<amp-list>`.
         - Specify the script and the function in the `src` attribute of the `<amp-list>`. Use the form `src="amp-script:{scriptID}:functionName"`, where `{scriptID}` is the `id` of the `<amp-script>` and `{functionName}` is the name of the exported function.
-        - You can use the `nodom` attribute in the `<amp-script>` to indicate that the `<amp-script>` won't need a DOM. This improves performance.
+        - You can use the `nodom` attribute in the `<amp-script>` to indicate that the `<amp-script>` won't need a DOM. This improves performance, because `amp-script` doesn't need to load or execute its virtual DOM implementation.
     -->
     <div class="sample">  
       <amp-script id="dataFunctions" script="protocol-adapter-script" nodom></amp-script>
