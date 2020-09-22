@@ -16,7 +16,7 @@
   @include txt-2;
   @include txt-strong;
   @include filter-bubble-shadow-regular;
-  color: safeColor('oslo-gray');
+  color: safeColor('light-gray');
   font-family: 'Noto Sans', sans-serif;
   transition: background-color .2s ease-in, color .2s ease-in, box-shadow .25s ease-in;
   cursor: pointer;
@@ -33,12 +33,12 @@
 
   &:hover, &.filtered {
     @include filter-bubble-shadow-selected;
-    background: safeColor('blue-ribbon');
+    background: safeColor('blue');
     color: safeColor('white');
   }
 
   &-link {
-    color: safeColor('blue-ribbon');
+    color: safeColor('blue');
   }
 
   &-small {
