@@ -30,6 +30,6 @@
     </div>
   </div>
 </div>
-<div class="ap-m-tooltip-background"
+<div class="ap-m-tooltip-background" tabindex="-1" role="presentation"
     on="tap:tooltip-{{ tooltip.id|replace(".", "-")  + tooltip.type|default('') }}.toggleClass(class=active),AMP.setState({tooltipExpanded: 'false'})">
 </div>
