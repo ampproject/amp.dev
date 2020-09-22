@@ -27,10 +27,10 @@
     width: 100%;
     height: 5px;
     border-radius: 2px;
-    background: safeColor('oslo-gray');
+    background: safeColor('light-gray');
 
     &.weighted {
-      background: safeColor('guardsman-red');
+      background: safeColor('dark-red');
     }
 
     &-bar {
@@ -75,18 +75,18 @@
       }
 
       &[data-type='fast'] {
-        background: safeColor('apple');
+        background: safeColor('green');
 
         span {
-          border-color: safeColor('apple');
+          border-color: safeColor('green');
         }
       }
 
       &[data-type="average"] {
-        background: safeColor('clementine');
+        background: safeColor('orange');
 
         span {
-          border-color: safeColor('clementine');
+          border-color: safeColor('orange');
         }
       }
     }
@@ -125,7 +125,7 @@
       font-size: 14px;
       white-space: nowrap;
       font-weight: bold;
-      color: safeColor('apple');
+      color: safeColor('green');
       transform: translateX(7px);
 
       &:after {
@@ -139,11 +139,11 @@
       }
 
       &.average {
-        color: safeColor('clementine');
+        color: safeColor('orange');
       }
 
       &.slow {
-        color: safeColor('guardsman-red');
+        color: safeColor('dark-red');
       }
 
       &.inversed {
@@ -161,7 +161,7 @@
         &:after {
           border: 7.5px solid transparent;
           border-right: 0;
-          border-left-color: safeColor('guardsman-red');
+          border-left-color: safeColor('dark-red');
         }
       }
     }
@@ -169,7 +169,7 @@
 
   .loading &, .pristine & {
     &-chart {
-      background: safeColor('oslo-gray');
+      background: safeColor('light-gray');
     }
     &-chart-bar,
     &-chart-indicator {

@@ -98,7 +98,7 @@
     text-align: center;
     font-size: 0;
     color: safeColor('white');
-    background: safeColor('blue-ribbon');
+    background: safeColor('blue');
 
     @media (min-width: 600px) {
       min-width: 129px;
@@ -145,7 +145,7 @@
     border-bottom-right-radius: 6px;
     font-weight: bold;
     color: safeColor('white');
-    background: safeColor('guardsman-red');
+    background: safeColor('dark-red');
     opacity: 0;
     transform: translateY(-100%);
     transition: transform 0.3s ease, opacity 0.2s ease;

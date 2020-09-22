@@ -35,13 +35,13 @@
     svg {
       width: 100%;
       height: 100%;
-      fill: safeColor('oslo-gray');
+      fill: safeColor('light-gray');
     }
 
     #{$tooltip}.active &,
     &:hover {
       svg {
-        fill: safeColor('charade');
+        fill: safeColor('dark-gray');
       }
     }
   }
@@ -58,7 +58,7 @@
       cursor: pointer;
       max-width: 20px;
       max-height: 20px;
-      fill: safeColor('blue-ribbon');
+      fill: safeColor('blue');
     }
   }
 
@@ -115,7 +115,7 @@
     h3 {
       margin-bottom: 30px;
       padding-bottom: 30px;
-      border-bottom: 1px solid safeColor('oslo-gray');
+      border-bottom: 1px solid safeColor('light-gray');
       font-size: 26px;
 
       @media (min-width: 575px) {
