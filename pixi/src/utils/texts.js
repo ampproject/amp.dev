@@ -12,23 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-const htmlEntityMapping = {
-  // we will not use the html inside attributes
-  // so here we can use the normal characters...
-  '&quot;': '"',
-  '&#39;': "'",
-  // since the following caracters can not be used unescaped
-  // we use unicode replacements...
-  '&gt;': '\uFE65', // small greater than sign
-  '&lt;': '\uFE64', // small less than sign
-  '&amp;': '\uFF06', // fullwidth ampersand
-};
-
-const entitySearchPattern = new RegExp(
-  Object.keys(htmlEntityMapping).join('|'),
-  'g'
-);
-
 /**
  * This method is a workaround for this bug: https://github.com/ampproject/amphtml/issues/27153
  * and this bug: https://github.com/ampproject/amphtml/issues/30273
@@ -41,11 +24,7 @@ export const cleanCodeForInnerHtml = (html) => {
   if (!html) {
     return '';
   }
-  const result = html.replace(
-    entitySearchPattern,
-    (match) => htmlEntityMapping[match]
-  );
-  return result.replace(/<span>\s*<\/span>/g, '');
+  return html.replace(/<span>\s*<\/span>/g, '');
 };
 
 /**
