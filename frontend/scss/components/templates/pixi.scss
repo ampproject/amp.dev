@@ -23,8 +23,12 @@
   }
 
   &-stage {
-    padding: 120px 15px 0 15px;
+    padding: 180px 15px 0 15px;
     position: relative;
+
+    @media (min-width: 768px) {
+      padding: 120px 15px 0 15px;
+    }
 
     @media (min-width: 1024px) {
       margin: 0 auto;
@@ -45,22 +49,23 @@
 
     svg {
       position: absolute;
-      top: 20px;
-      right: 15px;
-      width: 120px;
+      top: -10px;
+      right: -10px;
+      width: 200px;
+      height: 200px;
 
       @media (min-width: 768px) {
-        top: -20px;
+        top: -70px;
         right: 25px;
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
       }
 
       @media (min-width: 1024px) {
-        top: 0;
+        top: -70px;
         right: -20px;
-        width: 250px;
-        height: 250px;
+        width: 360px;
+        height: 360px;
       }
     }
   }
