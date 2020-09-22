@@ -44,9 +44,9 @@
 				"data": {
 					"numericValue": 0,
 					"proportion": {
-						"fast": 10,
-						"average": 25,
-						"slow": 40
+						"fast": 0.1,
+						"average": 0.25,
+						"slow": 0.4
 					},
 					"category": "FAST"
 				}

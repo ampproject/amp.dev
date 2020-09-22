@@ -64,9 +64,13 @@ export default class StatusIntroView {
 
     const statusBannerId = await this.determineBannerId(statusBannerIdPromise);
     const statusBanner = i18n.getStatusBanner(statusBannerId);
-    const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
-    shareUrl.searchParams.set('url', pageUrl);
-    AMP.setState({pixi: {shareUrl: shareUrl.toString()}});
+    try {
+      const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
+      shareUrl.searchParams.set('url', pageUrl);
+      AMP.setState({pixi: {shareUrl: shareUrl.toString()}});
+    } catch (e) {
+      console.error('Failed to set share Url from StatusIntroView', e);
+    }
 
     this.finishedChecks = null;
     this.container.classList.remove('loading');
@@ -89,7 +93,7 @@ export default class StatusIntroView {
       anchors[0].classList.remove('pristine');
     }
     if (hideFixButton) {
-      anchor[1].classList.add('pristine');
+      anchors[1].classList.add('pristine');
       // make second button primary
       shareButton.classList.remove('ap-a-btn-light');
     }
