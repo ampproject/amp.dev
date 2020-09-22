@@ -125,10 +125,12 @@ class CoreWebVitalView {
 
     this.scale.render(data, unit);
 
-    const responseCategory = data.category.toLowerCase();
-    this.performanceCategory = i18n.getText(`categories.${responseCategory}`);
-    this.container.classList.add(responseCategory);
-    this.category.textContent = this.performanceCategory;
+    this.performanceCategory = data.category.toLowerCase();
+    const displayCategory = i18n.getText(
+      `categories.${this.performanceCategory}`
+    );
+    this.container.classList.add(this.performanceCategory);
+    this.category.textContent = displayCategory;
 
     const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;
