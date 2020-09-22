@@ -13,11 +13,9 @@
 // limitations under the License.
 
 /**
- * This method is a workaround for this bug: https://github.com/ampproject/amphtml/issues/27153
- * and this bug: https://github.com/ampproject/amphtml/issues/30273
+ * This method is a workaround for
+ * https://github.com/ampproject/amphtml/issues/30273
  *
- * It replaces the html entities that are required when escaping text for html
- * so that can the code can be used with amp-script as innerHtml but not as attributes.
  * Also all empty span tags (which are created by grow markdown.extensions.codehilite) are removed.
  */
 export const cleanCodeForInnerHtml = (html) => {
