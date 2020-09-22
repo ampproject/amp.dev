@@ -140,7 +140,7 @@
     display: block;
     position: absolute;
     width: calc(100% - 30px);
-    padding: 10px 15px 2px 15px;
+    padding: 10px 15px 2px 20px;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     font-weight: bold;
@@ -149,6 +149,10 @@
     opacity: 0;
     transform: translateY(-100%);
     transition: transform 0.3s ease, opacity 0.2s ease;
+
+    @media (min-width: 768px) {
+      padding: 10px 15px 2px 25px;
+    }
 
     @media (min-width: 1024px) {
       width: 100%;
