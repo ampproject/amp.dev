@@ -2,6 +2,7 @@
 @import '_variables.scss';
 
 .#{organism('pixi-basic-checks')} {
+  position: relative;
   display: flex;
   flex-direction: column;
   border-radius: 14px;
@@ -12,5 +13,9 @@
     justify-content: space-between;
     box-shadow: none;
     overflow: visible;
+  }
+
+  .#{atom('pixi-stripes')} {
+    height: 110px;
   }
 }

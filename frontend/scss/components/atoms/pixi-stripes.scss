@@ -5,7 +5,7 @@
   position: absolute;
   top: 120px;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: calc(100% - 80px);
   background: linear-gradient(233deg, color('robins-egg') 10%, color('blue-ribbon') 50%);
   clip-path: url(#pixi-stripes);
