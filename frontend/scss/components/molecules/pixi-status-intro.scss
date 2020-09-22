@@ -11,15 +11,18 @@
   &-text {
     max-width: 720px;
     min-height: 220px;
+    margin-top: 20px;
     padding: 0 15px;
     color: safeColor('white');
     line-height: 1.625;
 
     @media (min-width: 768px) {
+      margin-top: 50px;
       padding: 0 0 0 25px;
     }
 
     @media (min-width: 1024px) {
+      margin-top: 30px;
       padding: 0 0 0 35px;
     }
 
