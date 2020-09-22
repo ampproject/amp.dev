@@ -1,0 +1,13 @@
+@import '_functions.scss';
+@import '_variables.scss';
+
+.#{atom('pixi-stripes')} {
+  position: absolute;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 80px);
+  background: linear-gradient(233deg, color('robins-egg') 10%, color('blue-ribbon') 50%);
+  clip-path: url(#pixi-stripes);
+  transform: skewY(-4deg);
+}

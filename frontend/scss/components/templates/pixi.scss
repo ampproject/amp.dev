@@ -120,17 +120,6 @@
         padding: 50px 0 30px 0;
       }
 
-      &-background {
-        position: absolute;
-        top: 120px;
-        left: 0;
-        width: 100%;
-        height: calc(100% - 80px);
-        background: linear-gradient(233deg, color('robins-egg') 10%, color('blue-ribbon') 50%);
-        clip-path: url(#pixi-stripes);
-        transform: skewY(-4deg);
-      }
-
       section {
         position: relative;
         z-index: 1;

@@ -124,8 +124,9 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         {% include 'views/partials/pixi/input-bar.j2' %}
         {% include 'views/partials/pixi/status-intro.j2' %}
 
+        {% do doc.styles.addCssFile('css/components/atoms/pixi-stripes.css') %}
         {% do doc.icons.useIcon('icons/pixi-stripes.svg') %}
-        <aside class="ap-t-pixi-checks-input-background"></aside>
+        <aside class="ap-a-pixi-stripes"></aside>
       </div>
 
       <div id="reports" class="pristine">
