@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] Beberapa klien email hanya akan merender bagian MIME terakhir. Untuk memastikan bahwa sebuah email dirender, tempatkan bagian MIME `text/x-amp-html` _sebelum _bagian MIME `text/html` tersebut. [/tip]
