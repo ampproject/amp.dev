@@ -1,0 +1,31 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+@keyframes FADE {
+  to {
+    opacity: 0;
+  }
+}
+
+.#{atom('pixi-analyzing-dots')} {
+  display: none;
+  letter-spacing: -2px;
+
+  .loading & {
+    display: inline;
+
+    span {
+      animation: FADE 2s infinite both;
+
+      &:nth-child(2) {
+        animation-delay: 250ms;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 500ms;
+      }
+    }
+  }
+}

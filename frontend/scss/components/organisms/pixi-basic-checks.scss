@@ -1,0 +1,16 @@
+@import '_functions.scss';
+@import '_variables.scss';
+
+.#{organism('pixi-basic-checks')} {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px 0 transparentize(safeColor('black'), 0.87);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: none;
+    overflow: visible;
+  }
+}

@@ -94,7 +94,17 @@ $colors: (
   'electric-violet': #5500D7,
   'ultramarine':     #180CA4,
   'pickled-bluewood':#2C3E50,
+);
 
+$safeColors: (
+  'white':           #fff,
+  'black':           #000,
+  'dark-gray':       #20202A,
+  'light-gray':      #8C8F94,
+  'blue':            #005AF0,
+  'green':           #09A600,
+  'orange':          #EC6600,
+  'guardsman-red':   #C80000,
 );
 
 $shadows: (

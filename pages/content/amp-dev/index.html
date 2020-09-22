@@ -250,19 +250,18 @@ success_stories:
     {% do doc.styles.addCssFile('css/components/organisms/sampler.css') %}
     {% set playground_url = doc.pod.podspec.base_urls.playground %}
 
-    {# Can't use |tojson filter here since URLs need to be built #}
+    {% set sampler = [] %}
+    {% for sample in doc.sampler %}
+      {% do sampler.append({
+        'title': sample.title,
+        'url': sample.url,
+        'embedUrl': playground_url + '/embed?mode=responsive&url=' + (playground_url + sample.url)|urlencode + '&line=' + sample.line,
+        'standaloneUrl': playground_url + '/?url=' + (playground_url + sample.url)|urlencode + '&line=' + sample.line,
+      }) %}
+    {% endfor %}
     <amp-state id="sampler">
       <script type="application/json">
-      [{% for sample in doc.sampler %}
-        {% set embed_url = playground_url + '/embed?mode=responsive&line=' + sample.line + '&url=' + sample.url %}
-        {% set standalone_url = playground_url + '/?url=' + sample.url %}
-        {
-          "title": "{{ sample.title }}",
-          "url": "{{ sample.url|safe }}",
-          "embedUrl": "{{ embed_url|safe }}",
-          "standaloneUrl": "{{ standalone_url|safe }}"
-        }{{ "," if not loop.last }}
-      {% endfor %}]
+        {{ sampler|tojson }}
       </script>
     </amp-state>
     <amp-state id="activeSample">

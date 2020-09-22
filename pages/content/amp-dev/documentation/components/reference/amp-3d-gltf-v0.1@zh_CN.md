@@ -4,7 +4,7 @@ $category@: media
 formats:
 - websites
 teaser:
-  text: 显示 GL 传输格式 (gITF) 的 3D 模型。
+  text: 显示 GL 传输格式 (glTF) 的 3D 模型。
 ---
 
 <!--
@@ -25,7 +25,7 @@ limitations under the License.
 
 
 
-显示 GL 传输格式 (gITF) 的 3D 模型。
+显示 GL 传输格式 (glTF) 的 3D 模型。
 
 <table>
   <tr>
@@ -44,7 +44,7 @@ limitations under the License.
 
 ## 用法 <a name="usage"></a>
 
-`amp-3d-gltf` 组件可显示 gITF 格式的 3D 模型。
+`amp-3d-gltf` 组件可显示 glTF 格式的 3D 模型。
 
 **注意**：要显示这些模型，必须使用支持 WebGL 的浏览器。
 
