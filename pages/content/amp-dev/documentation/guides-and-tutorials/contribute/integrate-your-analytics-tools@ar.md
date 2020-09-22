@@ -16,7 +16,7 @@ If you have found a bug or an issue please
 have a look and request a pull request there.
 -->
 
-## نظرة عامة
+## نظرة عامة <a></a>
 
 إذا كنت تستخدم أداة توفير البرامج كخدمة للناشرين لفهم الزيارات فهمًا أفضل، فقد ترغب في دمج خدمتك في `amp-analytics`. إذ سيمكِّن هذا الدمج عملائك من عرض أنماط الزيارات لصفحات AMP HTML الخاصة بهم.
 
@@ -48,7 +48,7 @@ have a look and request a pull request there.
     3. مثال في المرجع [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
     4. اختبار في الملف [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
     5. أضف خدمة التحليلات إلى قائمة البائعين المدعومين في ملف[extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). وضمِّن النوع والوصف والرابط في وثائق الاستخدام الخاصة بك.
-3. إذا كان مطلوبًا مكونًا إضافيًا للدفعة الجديدة، فيرجى الرجوع إلى [إضافة مكون إضافي للدفعة](#add-batch-plugin) للحصول على إرشادات.
+3. إذا كان مطلوبًا مكونًا إضافيًا للدفعة الجديدة، فيرجى الرجوع إلى إضافة مكون إضافي للدفعة للحصول على إرشادات.
 4. اختبر المثال الجديد الذي أدخلته في [amples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) للتأكد من أن النتائج من المثال تسير على النحو المتوقع. على سبيل المثال، يتم جمع البيانات المطلوبة وعرضها في لوحة معلومات التحليلات الخاصة بك.
 5. أرسل طلب سحب مع هذا التصحيح، مع الإشارة إلى إصدار انتواء التنفيذ.
 6. حدِّث وثائق استخدام الخدمة الخاصة بك وأبلغ عملاءك.
