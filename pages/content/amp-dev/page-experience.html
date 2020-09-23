@@ -126,6 +126,9 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       </div>
 
       <div id="reports" class="pristine">
+        {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
+        <a href="#pixi-checks" class="ap-a-scroll-to-top"></a>
+
         <section class="ap-t-pixi-checks-reports">
           <div class="ap-t-pixi-checks-reports-title">
             <h2 id="core-web-vitals-checks">{{ pixi.staticText.coreWebVitals.headline }}</h2>
@@ -146,12 +149,6 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         {% include 'views/partials/pixi/recommendations.j2' %}
       </div>
     </amp-script>
-
-    {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
-    <a href="#pixi-checks" class="ap-a-scroll-to-top">
-      {% do doc.icons.useIcon('icons/internal.svg') %}
-      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
-    </a>
 
     {% include 'views/partials/pixi/share-dialog.j2' %}
 
