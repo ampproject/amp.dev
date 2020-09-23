@@ -111,5 +111,5 @@ selectedSeats: event.selectedOptions
 </amp-pan-zoom>
 </template>
 </amp-list>
-<div>{% endraw %} [/sourcecode] </div>
+<div>{% endraw %} [/sourcecode]</div>
 </div>
