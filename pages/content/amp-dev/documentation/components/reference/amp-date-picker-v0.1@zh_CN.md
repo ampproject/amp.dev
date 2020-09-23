@@ -226,7 +226,7 @@ limitations under the License.
 
 当 `amp-date-picker` 加载时，输入元素的值用于显示初始选择开始日期。
 
-通过[`src` attribute](#src-optional) 指定 `startDate` 属性来设置
+通过[`src` attribute](#src) 指定 `startDate` 属性来设置
 动态地初始结束日期。
 
 [sourcecode:html]
