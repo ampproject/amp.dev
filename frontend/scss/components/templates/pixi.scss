@@ -126,13 +126,16 @@
       }
 
       .#{atom('pixi-stripes')} {
-        top: 125px;
+        top: 85px;
         height: calc(100% - 80px);
+
+        @media (min-width: 768px) {
+          top: 125px;
+        }
       }
 
       section {
         position: relative;
-        z-index: 1;
       }
     }
 
