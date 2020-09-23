@@ -5,7 +5,7 @@ formats:
 - websites
 - stories
 teaser:
-  text: Información general
+  text: Overview
 toc: true
 ---
 
@@ -37,7 +37,7 @@ Antes de que agregue el servicio de análisis al tiempo de ejecución de AMP HTM
 
 ## Cómo agregar su configuración al tiempo de ejecución en AMP HTML <a name="adding-your-configuration-to-the-amp-html-runtime"></a>
 
-1. Cree un [problema del tipo "Intención de implementar"](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) donde indique que agregará la configuración para su servicio de análisis al tiempo de ejecución de AMP HTML. Asegúrese de enviar su solicitud con copia para **@ampproject/wg-analytics** en su descripción.
+1. Cree un [ problema del tipo "Intención de implementar"](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../CONTRIBUTING.md#contributing-features) donde indique que agregará la configuración para su servicio de análisis al tiempo de ejecución de AMP HTML. Asegúrese de enviar su solicitud con copia para **@ampproject/wg-analytics** en su descripción.
 2. Desarrolle un parche que implemente lo siguiente:
     1. Un nuevo archivo para la configuración de tipo json `${vendorName}.json` en la [carpeta](https://github.com/ampproject/amphtml/tree/master/extensions/amp-analytics/0.1/vendors) para los proveedores, que incluya todas las opciones anteriores y las predeterminadas, por ejemplo:
         1. `"vars": {}` para variables adicionales predeterminadas.
@@ -48,7 +48,7 @@ Antes de que agregue el servicio de análisis al tiempo de ejecución de AMP HTM
     3. Un ejemplo en la referencia [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html).
     4. Una prueba en el archivo [extensions/amp-analytics/0.1/test/vendor-requests.json ](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../extensions/amp-analytics/0.1/test/vendor-requests.json).
     5. Agregue su servicio de análisis a la lista de proveedores que son compatibles en el archivo [extensions/amp-analytics/0.1/analytics-vendors-list.md](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/./analytics-vendors-list.md). Incluya el tipo, la descripción, y un enlace hacia la documentación que utiliza.
-3. En caso de que sea necesario tener un nuevo complemento para el procesamiento por lotes, consulte el artículo [Cómo agregar un complemento para el procesamiento por lotes](#add-batch-plugin) si desea obtener más información.
+3. En caso de que sea necesario tener un nuevo complemento para el procesamiento por lotes, consulte el artículo Cómo agregar un complemento para el procesamiento por lotes si desea obtener más información.
 4. Pruebe el nuevo ejemplo que colocó en [examples/analytics-vendors.amp.html](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/../../examples/analytics-vendors.amp.html) para garantizar que los puntos importantes del ejemplo funcionen según lo esperado. En particular, que los datos necesarios se recopilen y visualicen en el panel de control de su servicio de análisis.
 5. Envíe una solicitud de tipo "Pull request" con este parche, y haga referencia al problema del tipo "Intención de implementar".
 6. Actualice la documentación que utiliza en su servicio e informe de la actualización a sus clientes.
