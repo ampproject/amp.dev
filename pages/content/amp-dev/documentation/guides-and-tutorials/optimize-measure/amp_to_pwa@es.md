@@ -58,7 +58,7 @@ Coloque la etiqueta del script que se necesita en el encabezado de `index.html` 
 
 <script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
-… ... <amp-install-serviceworker src="/sw.js" data-iframe-src="install-sw.html" layout="nodisplay"> </amp-install-serviceworker>
+… ... {amp-install-serviceworker0} {/amp-install-serviceworker0}
 
 
 
@@ -70,11 +70,7 @@ El componente `<amp-install-serviceworker>` instala el service worker mediante l
 
 <!doctype html>
 
-<title>installing service worker</title> <script type="text/javascript">
- if('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('./sw.js');
- };
-</script> [/sourcecode]
+<title>installing service worker</title> <script type="text/javascript"><br> if('serviceWorker' in navigator) {<br>   navigator.serviceWorker.register('./sw.js');<br> };<br></script> [/sourcecode]
 
 El iframe registra el archivo AMP Service Worker en el navegador.
 
