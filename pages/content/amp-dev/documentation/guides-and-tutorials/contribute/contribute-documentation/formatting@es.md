@@ -95,8 +95,7 @@ Para consultar una lista de códigos cortos y la manera de utilizarlos, vaya a [
 ¡amp.dev se desarrolló con AMP! Por lo tanto, nuestras imágenes deben coincidir con los criterios [`amp-img`](../../../../documentation/components/reference/amp-img.md). El proceso de desarrollo utiliza la siguiente sintaxis para convertir las imágenes al formato adecuado `amp-img`.
 
 <div class="ap-m-code-snippet">
-<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre>
+<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre>
 </div>
 
 ## Filtro de secciones
@@ -104,10 +103,7 @@ Para consultar una lista de códigos cortos y la manera de utilizarlos, vaya a [
 Algunos documentos pueden ser importantes para varios de los formatos de AMP, pero algunos formatos posiblemente requieran descripciones adicionales o información que no sea relevante para los demás. Puede filtrar estas secciones envolviéndolas con el siguiente código corto.
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;filter formats="websites"]
-This is only visible for [websites](?format=websites).
-&lsqb;/filter]
-</pre>
+<pre>&lsqb;filter formats="websites"]<br>This is only visible for [websites](?format=websites).<br>&lsqb;/filter]</pre>
 </div>
 
 [filter formats="websites"] Este solamente es visible para [sitios web](?format=websites). [/filter]
@@ -124,10 +120,7 @@ This is only visible for [websites](?format=websites).
 Puede agregar sugerencias y textos destacados envolviendo el texto con el siguiente código corto:
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]
-Default tip
-[/tip]
-</pre>
+<pre>&lsqb;tip type="default"]<br>Default tip<br>[/tip]</pre>
 </div>
 
 [tip type="important"] Importante [/tip]
@@ -144,10 +137,7 @@ Default tip
 Coloque los fragmentos de código dentro de los conjuntos con tres comillas simples, y especifique el idioma al final del primer conjunto de comillas simples.
 
 <div class="ap-m-code-snippet">
-<pre>```html
-  // code sample
-```
-</pre>
+<pre>```html<br>  // code sample<br>```</pre>
 </div>
 
 ```css
@@ -165,12 +155,7 @@ Coloque los fragmentos de código dentro de los conjuntos con tres comillas simp
 Si su código contiene llaves dobles, lo cual sucede con frecuencia si utiliza plantillas [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites), entonces debe envolver esa parte del código:
 
 <div class="ap-m-code-snippet">
-<pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre>
+<pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre>
 </div>
 
 ### Fragmentos de código en listas
@@ -178,15 +163,7 @@ Si su código contiene llaves dobles, lo cual sucede con frecuencia si utiliza p
 El Python-Markdown tiene algunas limitaciones. Cuando incluya fragmentos de código en las listas, utilice la siguiente sintaxis:
 
 <div class="ap-m-code-snippet">
-<pre>1. First:
-    &lsqb;sourcecode:html]
-      
-        <p>Indented content.</p>
-      
-    &lsqb;/sourcecode]
-  2. Second
-  3. Third
-</pre>
+<pre>1. First:<br>    &lsqb;sourcecode:html]<br>      <br>        <p>Indented content.</p><br>      <br>    &lsqb;/sourcecode]<br>  2. Second<br>  3. Third</pre>
 </div>
 
 ## Previsualización de los ejemplos del código
@@ -194,9 +171,7 @@ El Python-Markdown tiene algunas limitaciones. Cuando incluya fragmentos de cód
 Los ejemplos del código pueden tener una previsualización y/o enlace hacia una versión de [AMP Playground](https://playground.amp.dev/).
 
 <div class="ap-m-code-snippet">
-  <pre>  &lsqb;example preview="default: none|inline|top-frame"
-          playground="default: true|false"
-          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
+  <pre>  &lsqb;example preview="default: none|inline|top-frame"<br>          playground="default: true|false"<br>          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
 </div>
 
 Nota: ¡La previsualización se transformará automáticamente al formato seleccionado actualmente cuando se abra en el Playground 🤯!
@@ -220,12 +195,7 @@ Cuando el contenido de los correos electrónicos tenga enlaces hacia recursos ut
 Aquí puede observar un ejemplo de una inserción simple inline. Puede definir la hoja de estilos en cascada (CSS) mediante los estilos inline:
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="inline" playground="true"]
-    ```html
-    <div style="background: red; width: 200px; height: 200px;">Hello World</div>
-    ```
-  [/example]
-  [/example]</pre>
+<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br>  [/example]</pre>
 </div>
 
 El código se ve de la siguiente manera:
@@ -325,11 +295,7 @@ El código se ve de la siguiente manera:
 Observe cómo utilizamos <code>{{server_for_email}}</code> para crear un endpoint de la URL absoluta si está integrada dentro del correo electrónico de AMP.
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame" playground="true"]
-    ```html
-    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div>
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame" playground="true"]<br>    ```html<br>    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div><br>    ```<br>  [/example]</pre>
 </div>
 
 El código se ve de la siguiente manera:
@@ -353,14 +319,7 @@ El código se ve de la siguiente manera:
 Este es un ejemplo de `top-frame` donde se utiliza un endpoint con acceso remoto. Las plantillas Mustache deben escaparse en los ejemplos mediante los códigos <code>{% raw %}</code> y <code>{% endraw %}</code>:
 
 <div class="ap-m-code-snippet">
-  <pre>[example preview="top-frame"
-        playground="true"
-        imports="amp-list:0.1"
-        template="amp-mustache:0.2"]
-    ```html
-    <amp-list width="auto" height="100" layout="fixed-height" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/data/amp-list-urls.json">       <template type="amp-mustache">{% raw %}         <div class="url-entry">           <a href="%7B%7Burl%7D%7D">{{title}}</a>         </div>       {% endraw %}       </template>     </amp-list>
-    ```
-[/example]</pre>
+  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    <amp-list width="auto" height="100" layout="fixed-height" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/data/amp-list-urls.json">       <template type="amp-mustache">{% raw %}         <div class="url-entry">           <a href="%7B%7Burl%7D%7D">{{title}}</a>         </div>       {% endraw %}       </template>     </amp-list><br>    ```<br>[/example]</pre>
 </div>
 
 El código se ve de la siguiente manera:
