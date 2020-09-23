@@ -252,6 +252,10 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
       const params = {
         experimentEsm,
         preloadHeroImage,
+        rtv: true,
+        // TODO: Revert once this is the production release
+        // to be evergreen again
+        ampRuntimeVersion: '002009190410000',
       };
       renderedTemplate = await optimizer.transformHtml(
         renderedTemplate,
