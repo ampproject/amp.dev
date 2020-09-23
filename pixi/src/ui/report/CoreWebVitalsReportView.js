@@ -19,8 +19,6 @@ const CATEGORIES = {
   average: 'average',
   slow: 'slow',
 };
-const FILE_ISSUE_URL =
-  'https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&template=page-experience.md&title=Page+experience+issue';
 
 class WeightedScale {
   constructor(container) {
@@ -160,7 +158,7 @@ class CoreWebVitalView {
     this.container.parentNode.classList.add('error');
   }
 
-  setRecommendationStatus(count) {
+  setRecommendationStatus(count, url) {
     this.recommendations.parentNode.classList.remove('loading');
 
     if (!count) {
@@ -168,7 +166,7 @@ class CoreWebVitalView {
         this.recommendations.textContent = i18n.getText('status.nothingToDo');
         return;
       }
-      this.recommendations.setAttribute('href', FILE_ISSUE_URL);
+      this.recommendations.setAttribute('href', url);
       this.recommendations.setAttribute('target', '_blank');
       this.recommendations.textContent = i18n.getText('status.fileAnIssue');
       return;

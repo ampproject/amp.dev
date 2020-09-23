@@ -45,6 +45,10 @@ export default class RecommendationsView {
     }
   }
 
+  setIssueUrl(url) {
+    this.issueUrl = url;
+  }
+
   render(recommendationList, pageURL, metricUis) {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationList);
@@ -137,7 +141,7 @@ export default class RecommendationsView {
       const metricUi = metricUis[key];
       const metricToUse = metricUi.metric === 'tbt' ? 'fid' : metricUi.metric;
       const count = tagIdCounts[metricToUse];
-      metricUi.setRecommendationStatus(count);
+      metricUi.setRecommendationStatus(count, this.issueUrl);
     }
 
     this.pill.classList.add('filtered');
