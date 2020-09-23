@@ -74,7 +74,6 @@ Puede alternar una clase en el mismo elemento de su elección para que los usuar
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
-
 ```
 
 En la acción `toggleClass` además se pueden implementar otros elementos y alternar entre dos clases mediante la incorporación del atributo `force`.
