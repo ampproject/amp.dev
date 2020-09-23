@@ -70,9 +70,7 @@ export default class RecommendationsView {
       const bodyText = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-body-text'
       );
-      const nextButton = recommendation.querySelector(
-        'a'
-      );
+      const nextButton = recommendation.querySelector('a');
       const tagsBar = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-tags'
       );
@@ -200,7 +198,7 @@ export default class RecommendationsView {
     }
   }
 
-  onClickNext(recommendation, nextRecommendationId) {
+  onClickNext(recommendation) {
     recommendation.classList.remove('expanded');
     recommendation.nextSibling.classList.add('expanded');
   }
