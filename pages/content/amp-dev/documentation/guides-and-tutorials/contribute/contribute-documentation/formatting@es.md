@@ -22,7 +22,7 @@ El contenido de amp.dev se extrae de dos repositorios, [amp.dev](https://github.
 - [Ejemplos](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/examples)
 - [Guías y tutoriales](https://github.com/ampproject/amp.dev/tree/future/pages/content/amp-dev/documentation/guides-and-tutorials)
 
-Muchos otros documentos se importan hacia amp.dev desde AMPHTML. Estos se [registran en este archivo](https://github.com/ampproject/amp.dev/blob/future/platform/config/imports/spec.json). No actualice estos documentos en el repositorio de amp.dev, ¡sus cambios se sobrescribirán en las siguientes versiones!
+Hay otros documentos que se importan hacia amp.dev desde AMPHTML. Los cuales se [muestran en este archivo](https://github.com/ampproject/amp.dev/blob/future/platform/config/imports/spec.json). No actualice estos documentos en el repositorio de amp.dev, ¡sus cambios se sobrescribirán en las siguientes versiones!
 
 ## Texto preliminar
 
@@ -108,7 +108,7 @@ Algunos documentos pueden ser importantes para varios de los formatos de AMP, pe
 
 [filter formats="websites"] Este solamente es visible para [sitios web](?format=websites). [/filter]
 
-[filter formats="websites, email"] Este es visible para [sitios web](?format=websites) y [correos electrónicos](?format=email). [/filter]
+[filter formats="websites, email"] Este es visible para [sitios web](?format=websites) y [correos electrónicos](?format=email).[/filter]
 
 [filter formats="stories"] Este es visible para [historias](?format=stories). [/filter]
 
