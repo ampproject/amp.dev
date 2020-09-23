@@ -80,11 +80,7 @@ Los creativos de los anuncios AMPHTML requieren de un código reutilizable difer
 
 [sourcecode:html]
 
-<style amp4ads-boilerplate="">
-  body {
-    visibility: hidden;
-  }
-</style>
+<style amp4ads-boilerplate=""><br>  body {<br>    visibility: hidden;<br>  }<br></style>
 
 [/sourcecode]
 
