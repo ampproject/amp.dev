@@ -15,8 +15,7 @@
     <button id="input-submit"
         class="ap-m-input-bar-submit"
         on="tap:pixi-checks.scrollTo(duration=300)"
-        name="button"
-        [% if not query.url %]disabled[% endif %]>
+        name="button">
       {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
       <svg>
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use>
@@ -25,5 +24,5 @@
       {% include 'views/partials/pixi/analyzing-dots.j2' %}
     </button>
   </div>
-  <label id="input-label" class="ap-m-input-bar-label"></label>
+  <label id="input-label" class="ap-m-input-bar-label">&nbsp;</label>
 </section>

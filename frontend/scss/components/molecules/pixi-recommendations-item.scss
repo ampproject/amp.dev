@@ -71,16 +71,20 @@
       height: 30px;
       margin: 15px 8px 15px 0;
       padding: 5.5px 10px;
-      border: 1px solid safeColor('oslo-gray');
+      border: 1px solid safeColor('light-gray');
       border-radius: 15px;
       font-size: 12px;
       font-weight: bold;
-      color: safeColor('oslo-gray');
+      color: safeColor('light-gray');
 
       &:first-child {
         display: none;
       }
     }
+  }
+
+  &-body + &-tags {
+    border-top: solid 1px color('boulder');
   }
 
   &.expanded {

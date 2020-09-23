@@ -50,13 +50,13 @@ const getStatusId = async (
     if (!linter.isValid) {
       return 'invalid-amp';
     }
-
-    if (
-      linter.error ||
-      pageExperienceChecks.error ||
-      safeBrowsing.error ||
-      mobileFriendliness.error
-    ) {
+    if (linter.error) {
+      return 'generic-error';
+    }
+    if (pageExperienceChecks.error) {
+      return 'cwv-error';
+    }
+    if (safeBrowsing.error || mobileFriendliness.error) {
       return 'api-error';
     }
 
@@ -103,7 +103,7 @@ const getStatusId = async (
     }
     return 'all-passed';
   } catch (err) {
-    return 'api-error';
+    return 'generic-error';
   }
 };
 

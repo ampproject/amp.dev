@@ -14,7 +14,7 @@
 
 import i18n from './I18n';
 import {fixedRecommendations} from '../utils/checkAggregation/recommendations';
-import {cleanCodeForInnerHtml} from '../utils/texts';
+import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../utils/texts';
 
 const classNameMapping = {
   error: 'fail',
@@ -64,25 +64,37 @@ export default class StatusIntroView {
 
     const statusBannerId = await this.determineBannerId(statusBannerIdPromise);
     const statusBanner = i18n.getStatusBanner(statusBannerId);
-    const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
-    shareUrl.searchParams.set('url', pageUrl);
-    AMP.setState({pixi: {shareUrl: shareUrl.toString()}});
+    try {
+      const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
+      shareUrl.searchParams.set('url', pageUrl);
+      AMP.setState({pixi: {shareUrl: shareUrl.toString()}});
+    } catch (e) {
+      console.error('Failed to set share Url from StatusIntroView', e);
+    }
 
     this.finishedChecks = null;
     this.container.classList.remove('loading');
     this.container.classList.add(classNameMapping[statusBanner.type]);
+
+    let bodyHtml = cleanCodeForInnerHtml(statusBanner.body);
+    bodyHtml = addTargetBlankToLinks(bodyHtml);
 
     const banner = this.bannerLoading.cloneNode(true);
     banner.id = 'status-intro-banner';
     const bannerTitle = banner.querySelector('h3');
     const bannerText = banner.querySelector('p');
     bannerTitle.textContent = statusBanner.title;
-    bannerText.innerHTML = cleanCodeForInnerHtml(statusBanner.body);
+    bannerText.innerHTML = bodyHtml;
 
-    const shareButton = banner.querySelector('button');
-    const anchor = banner.querySelector('a');
+    const shareButton = banner.querySelector('#share-button');
+    if (statusBanner.investigate) {
+      const investigateButton = banner.querySelector('#investigate-button');
+      investigateButton.setAttribute('href', statusBanner.investigate);
+      investigateButton.classList.remove('pristine');
+    }
     if (hideFixButton) {
-      anchor.classList.add('pristine');
+      const fixItButton = banner.querySelector('#fix-it-button');
+      fixItButton.classList.add('pristine');
       // make second button primary
       shareButton.classList.remove('ap-a-btn-light');
     }
@@ -98,7 +110,7 @@ export default class StatusIntroView {
     try {
       return await statusBannerIdPromise;
     } catch (err) {
-      return 'api-error';
+      return 'generic-error';
     }
   }
 

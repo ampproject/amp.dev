@@ -48,13 +48,13 @@
 					"digits": 1
 				},
 				"data": {
-					"numericValue": 1710,
+					"numericValue": 5000,
 					"proportion": {
 						"fast": 2500,
 						"average": 4000,
 						"slow": 6000
 					},
-					"category": "AVERAGE"
+					"category": "SLOW"
 				}
 			},
 			"tbt": {
@@ -70,7 +70,7 @@
 						"average": 600,
 						"slow": 900
 					},
-					"category": "AVERAGE"
+					"category": "FAST"
 				}
 			},
 			"cls": {
@@ -82,9 +82,9 @@
 				"data": {
 					"numericValue": 0.000004316609753962,
 					"proportion": {
-						"fast": 10,
-						"average": 25,
-						"slow": 40
+						"fast": 0.1,
+						"average": 0.25,
+						"slow": 0.4
 					},
 					"category": "FAST"
 				}
