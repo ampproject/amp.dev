@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] Algunos clientes de correo electrónico solo renderizarán la última parte de MIME. Para garantizar que un correo electrónico se renderizó, coloque el segmento `text/x-amp-html` antes del segmento `text/html` de MIME. [/tip]
