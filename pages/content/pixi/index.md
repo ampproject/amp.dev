@@ -8,6 +8,7 @@ staticText:
   infoDialog:
     open: Learn about
     close: Close
+  scrollToTop: Scroll to top
   shareDialog:
     headline: Copy & paste URL
     close: Close navigation
