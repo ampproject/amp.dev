@@ -84,7 +84,7 @@
   }
 
   &-body + &-tags {
-    border-top: solid 1px color('boulder');
+    border-top: solid 1px safeColor('light-gray');
   }
 
   &.expanded {
