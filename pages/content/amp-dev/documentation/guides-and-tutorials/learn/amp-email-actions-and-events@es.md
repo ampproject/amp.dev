@@ -133,14 +133,12 @@ Por ejemplo, en AMP es posible hacer lo siguiente:
 </td>
     <td><code>input</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value
-event.valueAsNumber</pre>
+      <pre>event.min<br>event.max<br>event.value<br>event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
-    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code> </td>
+    <td> <code>input[type="radio"]</code>,<br><code>input[type="checkbox"]</code>
+</td>
     <td>
       <code>event.checked</code>
     </td>
@@ -148,9 +146,7 @@ event.valueAsNumber</pre>
   <tr>
     <td><code>select</code></td>
     <td>
-      <pre>event.min
-event.max
-event.value</pre>
+      <pre>event.min<br>event.max<br>event.value</pre>
     </td>
   </tr>
   <tr>
