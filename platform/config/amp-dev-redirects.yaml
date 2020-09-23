@@ -14,6 +14,7 @@
 # Add new entries in alphabetical order in the format /path/to/old/url: /path/to/new/url
 
 /ads: /about/ads/
+/amp-optimizer: /documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/
 /docs: /documentation/guides-and-tutorials/
 /email: /about/email/
 /learn: /documentation/courses/

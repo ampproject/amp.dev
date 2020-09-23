@@ -47,10 +47,10 @@
       width: 100%;
       margin: 10px 0 20px;
       padding: 10px 15px;
-      border: 1px solid safeColor('oslo-gray');
+      border: 1px solid safeColor('light-gray');
       border-radius: 4px;
       font-family: Noto Sans;
-      color: safeColor('oslo-gray');
+      color: safeColor('light-gray');
     }
 
     &-copy-button {
@@ -72,7 +72,7 @@
       }
 
       svg {
-        fill: safeColor('blue-ribbon');
+        fill: safeColor('blue');
         width: 100%;
         height: 100%;
       }

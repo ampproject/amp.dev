@@ -41,10 +41,11 @@ class WeightedScale {
       data.numericValue / unit.conversion
     ).toFixed(unit.digits)} ${unit.name}`;
 
+    this.resetStyles();
     this.indicator.classList.add(data.category.toLowerCase());
     if (score < 40) {
       this.indicator.classList.add('inversed');
-    } else if (score > 100) {
+    } else if (score === 100) {
       this.indicator.classList.add('max');
     }
 
@@ -60,6 +61,12 @@ class WeightedScale {
         data.proportion[type] / unit.conversion.toFixed(unit.digits)
       } ${unit.name}`;
     }
+  }
+
+  resetStyles() {
+    this.indicator.classList.remove(...Object.keys(CATEGORIES));
+    this.indicator.classList.remove('inversed');
+    this.indicator.classList.remove('max');
   }
 }
 
@@ -118,10 +125,12 @@ class CoreWebVitalView {
 
     this.scale.render(data, unit);
 
-    const responseCategory = data.category.toLowerCase();
-    this.performanceCategory = i18n.getText(`categories.${responseCategory}`);
-    this.container.classList.add(responseCategory);
-    this.category.textContent = this.performanceCategory;
+    this.performanceCategory = data.category.toLowerCase();
+    const displayCategory = i18n.getText(
+      `categories.${this.performanceCategory}`
+    );
+    this.container.classList.add(this.performanceCategory);
+    this.category.textContent = displayCategory;
 
     const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;

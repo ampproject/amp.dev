@@ -5,12 +5,13 @@
 
 .#{molecule('pixi-basic-metric')} {
   $basic-metric: &;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   padding: 15px 20px;
   font-size: 16px;
   background: safeColor('white');
-  border-bottom: solid 1px safeColor('oslo-gray');
+  border-bottom: solid 1px safeColor('light-gray');
 
   &:last-child {
     border-bottom: 0;
@@ -35,18 +36,18 @@
   }
 
   &-status {
-    color: safeColor('oslo-gray');
+    color: safeColor('light-gray');
   }
 
   &.passed {
     label {
-      color: safeColor('apple');
+      color: safeColor('green');
     }
   }
 
   &.failed {
     label {
-      color: safeColor('guardsman-red');
+      color: safeColor('dark-red');
     }
   }
 }
