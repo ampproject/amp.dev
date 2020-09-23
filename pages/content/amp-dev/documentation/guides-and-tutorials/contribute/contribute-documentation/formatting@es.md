@@ -319,7 +319,7 @@ El código se ve de la siguiente manera:
 Este es un ejemplo de `top-frame` donde se utiliza un endpoint con acceso remoto. Las plantillas Mustache deben escaparse en los ejemplos mediante los códigos <code>{% raw %}</code> y <code>{% endraw %}</code>:
 
 <div class="ap-m-code-snippet">
-  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    <amp-list width="auto" height="100" layout="fixed-height" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/data/amp-list-urls.json">       <template type="amp-mustache">{% raw %}         <div class="url-entry">           <a href="%7B%7Burl%7D%7D">{{title}}</a>         </div>       {% endraw %}       </template>     </amp-list><br>    ```<br>[/example]</pre>
+  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    {amp-list0}       <template type="amp-mustache">{% raw %}         <div class="url-entry">           <a href="%7B%7Burl%7D%7D">{{title}}</a>         </div>       {% endraw %}       </template>     {/amp-list0}<br>    ```<br>[/example]</pre>
 </div>
 
 El código se ve de la siguiente manera:
