@@ -140,6 +140,14 @@
         @media (min-width: 768px) {
           top: 125px;
         }
+
+        @media (min-width: 1024px) {
+          margin-left: -35px;
+        }
+
+        @media (min-width: 1280px) {
+          margin-left: 0;
+        }
       }
 
       section {
