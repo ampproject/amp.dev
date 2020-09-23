@@ -62,18 +62,18 @@
 
       &-status {
         display: block;
-        color: safeColor('oslo-gray');
+        color: safeColor('light-gray');
 
         .fast & {
-          color: safeColor('apple');
+          color: safeColor('green');
         }
 
         .average & {
-          color: safeColor('clementine');
+          color: safeColor('orange');
         }
 
         .slow & {
-          color: safeColor('guardsman-red');
+          color: safeColor('dark-red');
         }
       }
     }
@@ -142,17 +142,17 @@
       #{$primary-metric}-score {
         .fast & {
           font-weight: bold;
-          color: safeColor('apple');
+          color: safeColor('green');
         }
 
         .average & {
           font-weight: bold;
-          color: safeColor('clementine');
+          color: safeColor('orange');
         }
 
         .slow & {
           font-weight: bold;
-          color: safeColor('guardsman-red');
+          color: safeColor('dark-red');
         }
       }
     }
@@ -163,6 +163,7 @@
 
     & > div {
       opacity: 0;
+      visibility: hidden;
     }
   }
 }

@@ -5,6 +5,10 @@
 @import 'components/atoms/_icon.scss';
 @import 'components/atoms/anchor';
 
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
 :root {
   --header-height: 56px;
   --gradient-1: linear-gradient(225deg, rgba(41,50,60,1) 0%, rgba(72,85,99,1) 75%);
