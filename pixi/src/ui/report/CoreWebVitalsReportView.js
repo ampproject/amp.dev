@@ -41,10 +41,11 @@ class WeightedScale {
       data.numericValue / unit.conversion
     ).toFixed(unit.digits)} ${unit.name}`;
 
+    this.resetStyles();
     this.indicator.classList.add(data.category.toLowerCase());
     if (score < 40) {
       this.indicator.classList.add('inversed');
-    } else if (score > 100) {
+    } else if (score === 100) {
       this.indicator.classList.add('max');
     }
 
@@ -61,6 +62,12 @@ class WeightedScale {
       } ${unit.name}`;
     }
   }
+
+  resetStyles() {
+    this.indicator.classList.remove(...Object.keys(CATEGORIES));
+    this.indicator.classList.remove('inversed');
+    this.indicator.classList.remove('max');
+  }
 }
 
 class SimpleScale {
@@ -71,14 +78,15 @@ class SimpleScale {
   }
 
   render(data) {
-    const percentile = Math.round(data.proportion * 100);
-
-    this.bar.style.width = `${percentile}%`;
-    this.label.textContent = `${percentile}% ${i18n.getText(
+    this.percentile = Math.round(data.proportion * 100);
+    this.bar.style.width = `${this.percentile}%`;
+    this.label.textContent = `${this.percentile}% ${i18n.getText(
       'status.passedAddition'
     )}`;
-    if (percentile < 30) {
+    if (this.percentile < 30) {
       this.bar.classList.add('inversed');
+    } else if (this.percentile > 70) {
+      this.bar.classList.remove('inversed');
     }
   }
 }
@@ -102,8 +110,8 @@ class CoreWebVitalView {
     this.score = this.container.querySelector(
       '.ap-m-pixi-primary-metric-score'
     );
-    this.improvement = this.container.querySelector(
-      '.ap-m-pixi-primary-metric-improvement'
+    this.secondaryScore = this.container.querySelector(
+      '.ap-m-pixi-primary-metric-secondary-score'
     );
     this.recommendations = this.container.querySelector(
       '.ap-m-pixi-primary-metric-recommendations'
@@ -117,29 +125,33 @@ class CoreWebVitalView {
 
     this.scale.render(data, unit);
 
-    const responseCategory = data.category.toLowerCase();
-    this.performanceCategory = i18n.getText(`categories.${responseCategory}`);
-    this.container.classList.add(responseCategory);
-    this.category.textContent = this.performanceCategory;
+    this.performanceCategory = data.category.toLowerCase();
+    const displayCategory = i18n.getText(
+      `categories.${this.performanceCategory}`
+    );
+    this.container.classList.add(this.performanceCategory);
+    this.category.textContent = displayCategory;
 
     const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;
 
-    if (
+    if (this.scale.percentile !== undefined) {
+      this.secondaryScore.textContent = `${this.scale.percentile}%`;
+    } else if (
       !cacheMetric ||
       !cacheMetric.data ||
       cacheMetric.data.improvement == undefined
     ) {
-      this.improvement.textContent = '---';
+      this.secondaryScore.textContent = '---';
     } else if (cacheMetric.data.improvement === 0) {
-      this.improvement.textContent = i18n.getText('status.none');
+      this.secondaryScore.textContent = i18n.getText('status.none');
     } else if (!Number.isNaN(cacheMetric.data.improvement)) {
       const improvement = (
         cacheMetric.data.improvement / unit.conversion
       ).toFixed(unit.digits);
-      this.improvement.textContent = `${improvement} ${unit.name}`;
+      this.secondaryScore.textContent = `${improvement} ${unit.name}`;
     } else {
-      this.improvement.textContent = '---';
+      this.secondaryScore.textContent = '---';
     }
     this.toggleLoading(false);
   }
@@ -149,7 +161,8 @@ class CoreWebVitalView {
   }
 
   setRecommendationStatus(count) {
-    this.container.classList.toggle('has-status', !!count);
+    this.recommendations.parentNode.classList.remove('loading');
+
     if (!count) {
       if (this.performanceCategory === CATEGORIES.fast) {
         this.recommendations.textContent = i18n.getText('status.nothingToDo');
@@ -177,10 +190,11 @@ class CoreWebVitalView {
     this.container.classList.remove(...Object.keys(CATEGORIES));
     this.category.textContent = i18n.getText('status.analyzing');
     this.score.textContent = i18n.getText('status.analyzing');
-    this.improvement.textContent = i18n.getText('status.calculating');
+    this.secondaryScore.textContent = i18n.getText('status.calculating');
     this.recommendations.textContent = i18n.getText('status.analyzing');
     this.recommendations.removeAttribute('href');
     this.recommendations.removeAttribute('target');
+    this.recommendations.parentNode.classList.add('loading');
 
     this.toggleLoading(true);
   }

@@ -25,11 +25,10 @@ export default class MobileFriendlinessCheck {
 
   async run(pageUrl) {
     try {
-      const cacheKey = `${API_ENDPOINT}${pageUrl}`;
-      let apiResult = checkCache.getItem(cacheKey);
+      this.cacheKey = `${API_ENDPOINT}${pageUrl}`;
+      let apiResult = checkCache.getItem(this.cacheKey);
       if (!apiResult) {
         apiResult = await this.fetchJson(pageUrl);
-        checkCache.setItem(cacheKey, apiResult);
       }
 
       return this.createReportData(null, apiResult);
@@ -45,6 +44,8 @@ export default class MobileFriendlinessCheck {
         data: {},
       };
     }
+
+    checkCache.setItem(this.cacheKey, apiResult);
     return {
       error,
       data: {

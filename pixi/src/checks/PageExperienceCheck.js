@@ -29,15 +29,15 @@ const METRICS_SCALES = {
     average: 4000,
     slow: 6000,
   },
-  cls: {
-    fast: 10,
-    average: 25,
-    slow: 40,
-  },
   tbt: {
     fast: 300,
     average: 600,
     slow: 900,
+  },
+  cls: {
+    fast: 0.1,
+    average: 0.25,
+    slow: 0.4,
   },
 };
 
@@ -75,12 +75,12 @@ export default class PageExperienceCheck {
       proportion: METRICS_SCALES[id],
     };
 
-    if (metricOrigin.score < 0.5) {
-      data.category = Category.SLOW;
-    } else if (metricOrigin.score < 0.9) {
+    if (metricOrigin.numericValue < METRICS_SCALES[id].fast) {
+      data.category = Category.FAST;
+    } else if (metricOrigin.numericValue < METRICS_SCALES[id].average) {
       data.category = Category.AVERAGE;
     } else {
-      data.category = Category.FAST;
+      data.category = Category.SLOW;
     }
 
     return data;

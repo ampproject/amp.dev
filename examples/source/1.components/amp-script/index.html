@@ -3,8 +3,8 @@
 standaloneSnippets: true
 preview: true
 author:
-  - sebastianbenz
-  - morss
+- morss
+- sebastianbenz
 --->
 
 <!--
@@ -378,7 +378,12 @@ author:
         That state variable is bound to the `src` attribute of an `<amp-img>`.
      -->
     <div>
-      <amp-img layout="responsive" height="426" width="640" src="<% hosts.platform %>/static/samples/img/product1_640x426.jpg" [src]="imgSrc"></amp-img>
+      <amp-state id="imgSrc">
+        <script type="application/json">
+          "product1_640x426.jpg"
+        </script>
+      </amp-state>
+      <amp-img layout="responsive" height="426" width="640" src="<% hosts.platform %>/static/samples/img/product1_640x426.jpg" [src]="'<% hosts.platform %>/static/samples/img/' + imgSrc"></amp-img>
       <amp-script layout="container" script="state-script" class="sample">
         <button id="apple-button" class="fruit-button">Apple</button>
         <button id="orange-button" class="fruit-button">Orange</button>
@@ -387,16 +392,15 @@ author:
       <script id="state-script" type="text/plain" target="amp-script">
         const appleButton = document.getElementById('apple-button');
         const orangeButton = document.getElementById('orange-button');
-        const path = '<% hosts.platform %>/static/samples/img/';
 
         appleButton.addEventListener(
           'click',
-          () => AMP.setState({imgSrc: path + 'product1_640x426.jpg'})
+          () => AMP.setState({imgSrc: 'product1_640x426.jpg'})
         );
 
         orangeButton.addEventListener(
           'click',
-          () => AMP.setState({imgSrc: path + 'product2_640x426.jpg'})
+          () => AMP.setState({imgSrc: 'product2_640x426.jpg'})
         );
       </script>
     </div>
@@ -406,6 +410,7 @@ author:
         Bind an attribute in the component to an expression containing a state variable.
         When your script modifies that state variable, the change will propagate to the component.
         Similarly, if an AMP component changes the state variable's value, your script can get the new value.
+        This script powers a button that sends an image carousel in a random direction.
     -->
     <div id="carousel-sample">
       <amp-carousel
@@ -425,18 +430,20 @@ author:
       <p>Slide <span [text]="slideIndex + 1">1</span> of 3</p>
       
       <amp-script layout="container" script="carousel-script" class="sample">
-        <button id="carousel-button" class="fruit-button">Surprise me</button>
+        <button id="carousel-button" class="fruit-button">Random direction</button>
       </amp-script>
 
       <script id="carousel-script" type="text/plain" target="amp-script">
         const button = document.getElementById('carousel-button');
 
-        function gotoRandomSlide() {
-          const slide = Math.floor(Math.random() * 3);
-          AMP.setState({slideIndex: slide});
+        async function randomSlideDirection() {
+          let oldSlide = Number(await AMP.getState('slideIndex'));
+          let addend = Math.ceil(Math.random() * 2);
+          let newSlide = (oldSlide + addend) % 3;
+          AMP.setState({slideIndex: newSlide});
         }
 
-        button.addEventListener('click', gotoRandomSlide);
+        button.addEventListener('click', randomSlideDirection);
       </script>
     </div>  
   </body>

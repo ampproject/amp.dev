@@ -62,18 +62,18 @@
 
       &-status {
         display: block;
-        color: safeColor('oslo-gray');
+        color: safeColor('light-gray');
 
         .fast & {
-          color: safeColor('apple');
+          color: safeColor('green');
         }
 
         .average & {
-          color: safeColor('clementine');
+          color: safeColor('orange');
         }
 
         .slow & {
-          color: safeColor('guardsman-red');
+          color: safeColor('dark-red');
         }
       }
     }
@@ -103,13 +103,18 @@
       a,
       svg {
         white-space: nowrap;
+        color: color('river-bed');
         transition: opacity 0.3s ease;
 
-        .fast &,
         .average &,
+        .fast &,
         .slow & {
           opacity: 1;
         }
+      }
+
+      a {
+        font-weight: normal;
       }
 
       svg {
@@ -117,30 +122,37 @@
         width: 11px;
         height: 11px;
         fill: currentcolor;
-
-        .has-status & {
-          display: inline;
-        }
       }
 
-      [role="button"] {
-        cursor: pointer;
+      a[href^="http"] {
+        font-weight: bold;
+        color: color('blue-ribbon');
+      }
+
+      a[href="#recommendations"] {
+        font-weight: bold;
+        color: color('blue-ribbon');
+
+        & ~ svg {
+          display: inline;
+          fill: color('blue-ribbon');
+        }
       }
 
       #{$primary-metric}-score {
         .fast & {
           font-weight: bold;
-          color: safeColor('apple');
+          color: safeColor('green');
         }
 
         .average & {
           font-weight: bold;
-          color: safeColor('clementine');
+          color: safeColor('orange');
         }
 
         .slow & {
           font-weight: bold;
-          color: safeColor('guardsman-red');
+          color: safeColor('dark-red');
         }
       }
     }
@@ -151,6 +163,7 @@
 
     & > div {
       opacity: 0;
+      visibility: hidden;
     }
   }
 }

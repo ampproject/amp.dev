@@ -26,18 +26,18 @@
   <div class="ap-m-pixi-primary-metric-body">
     <div class="ap-m-pixi-primary-metric-body-result">
       <div>
-        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.score }}:</strong>
+        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.score if primary_metric.scale == 'weighted' else pixi.staticText.coreWebVitals.resultLabels.scorePercentile }}:</strong>
         <span class="ap-m-pixi-primary-metric-score">{{ pixi.scriptText.status.calculating }}</span>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </div>
 
       <div>
-        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.opportunity }}:</strong>
-        <span class="ap-m-pixi-primary-metric-improvement">{{ pixi.scriptText.status.calculating }}</span>
+        <strong>{{ pixi.staticText.coreWebVitals.resultLabels.opportunity if primary_metric.scale == 'weighted' else pixi.staticText.coreWebVitals.resultLabels.pagesPassing }}:</strong>
+        <span class="ap-m-pixi-primary-metric-secondary-score">{{ pixi.scriptText.status.calculating }}</span>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}
       </div>
 
-      <div>
+      <div class="loading">
         <strong>{{ pixi.staticText.coreWebVitals.resultLabels.action }}:</strong>
         <a href="#recommendations" class="ap-m-pixi-primary-metric-recommendations">{{ pixi.scriptText.status.analyzing }}</a>
         {% include 'views/partials/pixi/analyzing-dots.j2' %}

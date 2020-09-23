@@ -26,12 +26,18 @@ class I18n {
   }
 
   async init() {
-    const pixiContent = await Promise.all([
-      AMP.getState('pixi.i18n'),
-      AMP.getState('pixiStatusBanners'),
-      AMP.getState('pixiRecommendations'),
-      AMP.getState('pixiInfoTexts'),
-    ]);
+    let pixiContent = [];
+    try {
+      pixiContent = await Promise.all([
+        AMP.getState('pixi.i18n'),
+        AMP.getState('pixiStatusBanners'),
+        AMP.getState('pixiRecommendations'),
+        AMP.getState('pixiInfoTexts'),
+      ]);
+    } catch (e) {
+      console.error('Failed to initialize translations', e);
+    }
+
     const i18nConfig = JSON.parse(pixiContent[0]);
     this.language = i18nConfig.language;
     this.scriptText = i18nConfig.scriptText;
