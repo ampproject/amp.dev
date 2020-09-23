@@ -1,4 +1,5 @@
 @import 'components/atoms/_text.scss';
+@import '../loader/loading-indicator.scss';
 
 .fly-in {
   $headerHeight: 64px;
@@ -66,7 +67,7 @@
     overflow: scroll;
 
     &.loading {
-      @include loading-indicator;
+      @extend %loading-indicator;
     }
   }
 

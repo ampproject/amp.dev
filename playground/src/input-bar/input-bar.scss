@@ -1,6 +1,7 @@
 @import '_variables.scss';
 @import '_functions.scss';
 @import 'components/atoms/_text.scss';
+@import '../loader/loading-indicator.scss';
 
 .input {
   &-help-text {
