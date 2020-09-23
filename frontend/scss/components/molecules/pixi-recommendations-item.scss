@@ -20,8 +20,7 @@
   }
 
   &-header {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
     margin: -20px -20px 0 -20px;
     padding: 20px 20px 30px 20px;
     cursor: pointer;
@@ -38,6 +37,9 @@
     }
 
     &-toggle {
+      position: absolute;
+      right: 20px;
+      top: 20px;
       width: 17px;
       height: 17px;
       margin-top: 5px;

@@ -104,7 +104,7 @@ export default class RecommendationsView {
       }
 
       recommendation.style = null;
-      recommendation.id = `recommendation-${value.id}`;
+      title.id = `recommendation-${value.id}`;
       header.id = `header-${value.id}`;
       body.id = `body-${value.id}`;
 
