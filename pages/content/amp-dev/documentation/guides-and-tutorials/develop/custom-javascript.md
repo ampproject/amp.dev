@@ -20,11 +20,11 @@ This guide provides background on this component and best practices for its use.
 
 ## Web workers
 
-AMP's validation rules forbid developers from running JavaScript in a webpage via a `<script>` tag. Excessive JavaScript can make websites slow and unresponsive, and AMP wishes to guard against this.
+Excessive JavaScript can make websites slow and unresponsive. In order to control what JavaScript AMP pages load and when it executes, AMP's validation rules forbid developers from running JavaScript in a webpage via a `<script>` tag.
 
 [Web workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) present a way to run JavaScript more safely. Normally all JavaScript [runs in a single thread](https://www.youtube.com/watch?v=cCOL7MC4Pl0), but each worker runs in a thread of its own. This is possible because they lack access to the DOM or the `window` object, and each worker runs in its own global scope. Thus they can't interfere with each other's work or with mutations caused by code in the main thread. They can only communicate with the main thread and with one another via [messages containing objects](https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage). Workers offer a path to a multithreaded Web, a way to encapsulate JavaScript in a sandbox where it can't block the UI.
 
-Normally, workers don't have access to the DOM. To fill this gap, the AMP team created an open-source library called [WorkerDOM](https://github.com/ampproject/worker-dom/). WorkerDOM copies the DOM to a virtual DOM and makes the copy available to a worker. WorkerDOM also recreates a subset of the standard DOM API. When the worker makes changes to the virtual DOM, WorkerDOM recreates those changes in the real DOM. This lets the worker manipulate the DOM and make changes on the page using standard techniques. (Note that the DOM synchronization only goes in one direction. If the main thread modifies the DOM, the worker will not be informed.)
+Workers don't come with access to the DOM. To fill this gap, the AMP team created an open-source library called [WorkerDOM](https://github.com/ampproject/worker-dom/). WorkerDOM copies the DOM to a virtual DOM and makes the copy available to a worker. WorkerDOM also recreates a subset of the standard DOM API. When the worker makes changes to the virtual DOM, WorkerDOM recreates those changes in the real DOM. This lets the worker manipulate the DOM and make changes on the page using standard techniques. The DOM synchronization only goes in one direction. If the main thread modifies the DOM, nothing will let the worker know.
 
 `amp-script` is essentially a wrapper around WorkerDOM that makes WorkerDOM usable in AMP. WorkerDOM provides the core of `amp-script`'s functionality.
 
@@ -35,7 +35,7 @@ The JavaScript language is the same in a worker as it is elsewhere in the browse
 
 However, `amp-script` does not support the entire DOM API or Web API, as this would make its own JavaScript too large and cumbersome. See [the documentation](../../../documentation/components/reference/amp-script.md#supported-apis) for details, and refer to [these samples](https://amp.dev/documentation/examples/components/amp-script/) to see `amp-script` in use.
 
-A handful of synchronous DOM API methods are replaced with alternatives that return a Promise. For example,  `getBoundingClientRect()` is replaced by `getBoundingClientRectAsync()`.
+A handful of synchronous DOM API methods are replaced with alternatives that return a Promise. For example, `getBoundingClientRect()` is replaced by `getBoundingClientRectAsync()`.
 
 To maintain AMP's guarantees of performance and layout stability, `amp-script` comes with some restrictions. Your code is discouraged from making potentially distracting mutations that do not follow a user interaction. You can't add stylesheets or additional scripts to the DOM, and [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) is not supported. See [the documentation](../../../documentation/components/reference/amp-script.md#user-gestures) for details.
 
@@ -54,13 +54,13 @@ Since `amp-script` cannot exhaustively support the DOM API, simply copying a lib
 
 ## Use cases
 
-`amp-script` was created to help you fill the gaps in your AMP webpage's functionality. Since it supports a subset of the DOM and Web APIs, and since its use [comes with restrictions](https://amp.dev/documentation/components/amp-script/#restrictions), it is not an all-purpose JavaScript solution. Any substantial body of existing JavaScript is likely to need modification to work in the `amp-script` context.
+`amp-script` helps you fill the gaps in your AMP webpage's functionality. Since it supports a subset of the DOM and Web APIs, and since its use [comes with restrictions](https://amp.dev/documentation/components/amp-script/#restrictions), it is not an all-purpose JavaScript solution. Any substantial body of existing JavaScript is likely to need modification to work in the `amp-script` context.
 
 However, `amp-script` presents a fine way to take care of logic and interactions that existing AMP components don't provide. The following are a few excellent use cases.
 
 ### Create new interactions
 
-`amp-script` lets you create interactions that existing AMP components can't, opening up in AMP a door to the full creativity of the Web. That said, if an AMP component can already be leveraged to create a desired interaction, that will ultimately be simpler and more maintainable. If the AMP component simply requires some customization, you may be able to  [enhance it with `amp-script`](#enhance-amp-components). If the interaction you wish to create might be of interest to other developers, you are encouraged to [suggest and contribute](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) a new component.
+`amp-script` lets you create interactions that existing AMP components can't, opening up in AMP a door to the full creativity of the Web. That said, if an AMP component can already be leveraged to create a desired interaction, that will ultimately be simpler and more maintainable. If the AMP component simply requires some customization, you may be able to [enhance it with `amp-script`](#enhance-amp-components). If the interaction you wish to create might be of interest to other developers, you are encouraged to [suggest and contribute](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) a new component.
 
 ### Add advanced logic
 
@@ -107,9 +107,9 @@ Similarly, when using an API whose output you control, you may be able to implem
 </amp-selector>
 ```
 
-Traditional interactive AMP components may also be more suitable for interactions that span large sections of a webpage - as you may not wish to wrap so much of the DOM in an `<amp-script>`. Generally speaking, `amp-list` and `amp-bind` are tightly integrated with the rest of AMP, and it's straightforward to sprinkle these throughout a webpage.
+Traditional interactive AMP components may also be more suitable for interactions that span large sections of a webpage - as you may not wish to wrap so much of the DOM in an `<amp-script>`. `amp-list` and `amp-bind` are tightly integrated with the rest of AMP, making it convenient to use binding anywhere on a webpage.
 
-On the other hand, on pages that involve more complex state variables or multiple interactions, `amp-script` will likely be simpler and more maintainable. Take this example, from the [AMP Camp e-commerce demo site](https://camp.samples.amp.dev/product-details?categoryId=women-shirts&productId=79121):
+However, on pages that involve more complex state variables or multiple interactions, `amp-script` will likely be simpler and more maintainable. Take this example, from the [AMP Camp e-commerce demo site](https://camp.samples.amp.dev/product-details?categoryId=women-shirts&productId=79121):
 
 ```html
 <amp-selector
