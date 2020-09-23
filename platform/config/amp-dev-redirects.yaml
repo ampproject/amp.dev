@@ -22,7 +22,10 @@
 /pixi: /page-experience
 /samples: /documentation/examples/
 /stories: /about/stories/
+/vitals: /page-experience
+/web-vitals: /page-experience
 /websites: /about/websites/
+/webvitals: /page-experience
 
 ### Other redirects
 # Put here redirects for pages that have been moved, etc
