@@ -3,6 +3,7 @@
 @import '_variables.scss';
 
 .#{atom('scroll-to-top')} {
+  z-index: 10;
   position: sticky;
   display: block;
   margin-left: auto;
@@ -16,8 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 62px;
-    height: 62px;
+    width: 63px;
+    height: 63px;
     background: color('white');
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.93);
     transition: transform .25s, box-shadow .25s;
