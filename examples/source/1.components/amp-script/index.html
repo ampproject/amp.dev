@@ -226,8 +226,8 @@ author:
         - You can use the `nodom` attribute in the `<amp-script>` to indicate that the `<amp-script>` won't need a DOM. This improves performance, because `amp-script` doesn't need to load or execute its virtual DOM implementation.
     -->
     <div class="sample">  
-      <amp-script id="dataFunctions" script="protocol-adapter-script" nodom></amp-script>
-      <script id="protocol-adapter-script" type="text/plain" target="amp-script">
+      <amp-script id="dataFunctions" script="amp-list-source-script" nodom></amp-script>
+      <script id="amp-list-source-script" type="text/plain" target="amp-script">
         function fetchData() {
           return fetch('<% hosts.platform %>/static/samples/json/todo.json')
             .then(response => response.json())
