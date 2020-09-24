@@ -201,5 +201,6 @@ export default class RecommendationsView {
   onClickNext(recommendation) {
     recommendation.classList.remove('expanded');
     recommendation.nextSibling.classList.add('expanded');
+    recommendation.nextSibling.setAttribute('aria-expanded', 'true');
   }
 }
