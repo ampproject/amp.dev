@@ -67,6 +67,10 @@ export default class RecommendationsView {
       const body = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-body'
       );
+      const bodyText = recommendation.querySelector(
+        '.ap-m-pixi-recommendations-item-body-text'
+      );
+      const nextButton = recommendation.querySelector('a');
       const tagsBar = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-tags'
       );
@@ -83,7 +87,18 @@ export default class RecommendationsView {
         bodyHtml = bodyHtml.replace(/\$\{URL\}/g, encodeURIComponent(pageURL));
         bodyHtml = addTargetBlankToLinks(bodyHtml);
 
-        body.innerHTML = bodyHtml;
+        bodyText.innerHTML = bodyHtml;
+
+        // Set 'next advice' button
+        const nextRecommendation = recommendations[i + 1];
+        if (nextRecommendation) {
+          nextButton.href = `#recommendation-${nextRecommendation.id}`;
+          nextButton.addEventListener('click', () => {
+            this.onClickNext(recommendation);
+          });
+        } else {
+          nextButton.remove();
+        }
       }
 
       recommendation.style = null;
@@ -181,5 +196,11 @@ export default class RecommendationsView {
 
       recommendation.hidden = !commonValues.length;
     }
+  }
+
+  onClickNext(recommendation) {
+    recommendation.classList.remove('expanded');
+    recommendation.nextSibling.classList.add('expanded');
+    recommendation.nextSibling.setAttribute('aria-expanded', 'true');
   }
 }

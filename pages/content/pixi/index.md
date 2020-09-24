@@ -48,6 +48,7 @@ staticText:
     checkManually: Check manually
   recommendations:
     headline: Take action. Improve your AMP site
+    nextAdvice: "Next advice"
   tags:
     all: All
 scriptText:
