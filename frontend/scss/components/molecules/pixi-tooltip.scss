@@ -67,6 +67,9 @@
     position: fixed;
     top: 0;
     right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
     width: 90%;
     height: 100%;
     margin-top: 25px;
@@ -75,9 +78,6 @@
     line-height: 1.57;
     background: safeColor('white');
     pointer-events: none;
-    display: none;
-    flex-direction: column;
-    align-items: flex-end;
     filter: drop-shadow(0 0 20px transparentize(color('black'), 0.8));
 
     @media (min-width: 575px) {
@@ -98,10 +98,10 @@
     &:after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 0;
       bottom: 100%;
       right: calc(20% - 30px);
+      width: 0;
+      height: 0;
       border: 15px solid transparent;
       border-top: 0;
       border-bottom-color: color('white');
