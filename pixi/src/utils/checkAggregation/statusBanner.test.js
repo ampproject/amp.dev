@@ -21,39 +21,33 @@ const passedSafeBrowsingPromise = Promise.resolve({
 
 describe('getStatusId', () => {
   it('returns invalid-url', async () => {
-    const statusId = await getStatusId(
-      {
-        linter: Promise.resolve({
-          isLoaded: false,
-        }),
-      }
-    );
+    const statusId = await getStatusId({
+      linter: Promise.resolve({
+        isLoaded: false,
+      }),
+    });
     expect(statusId).toBe('invalid-url');
   });
 
   it('returns no-amp', async () => {
-    const statusId = await getStatusId(
-      {
-        linter: Promise.resolve({
-          isLoaded: true,
-          isAmp: false,
-          isOriginUrl: true,
-        }),
-      }
-    );
+    const statusId = await getStatusId({
+      linter: Promise.resolve({
+        isLoaded: true,
+        isAmp: false,
+        isOriginUrl: true,
+      }),
+    });
     expect(statusId).toBe('no-amp');
   });
 
   it('returns amp-cache-url', async () => {
-    const statusId = await getStatusId(
-      {
-        linter: Promise.resolve({
-          isLoaded: true,
-          isAmp: true,
-          isOriginUrl: false,
-        }),
-      }
-    );
+    const statusId = await getStatusId({
+      linter: Promise.resolve({
+        isLoaded: true,
+        isAmp: true,
+        isOriginUrl: false,
+      }),
+    });
     expect(statusId).toBe('amp-cache-url');
   });
 
@@ -367,7 +361,7 @@ describe('getStatusId', () => {
               isAllFast: true,
             },
             source: 'fieldData',
-          }
+          },
         }),
       },
       Promise.resolve(fixedRecommendations)
@@ -390,7 +384,7 @@ describe('getStatusId', () => {
               isAllFast: true,
             },
             source: 'fieldData',
-          }
+          },
         }),
       },
       Promise.resolve(fixedRecommendations)
