@@ -22,8 +22,6 @@
   &-chart {
     position: relative;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
     width: 100%;
     height: 5px;
     border-radius: 2px;
@@ -162,6 +160,33 @@
           border: 7.5px solid transparent;
           border-right: 0;
           border-left-color: safeColor('dark-red');
+        }
+      }
+    }
+  }
+
+  &.ltr {
+    #{$pixi-scale} {
+
+      &-chart {
+        flex-direction: row-reverse;
+
+        &-bar {
+          justify-content: flex-start;
+
+          span {
+            border-right: 0;
+            border-left: 2px dotted;
+            transform: translateX(calc(100% - 2px));
+          }
+
+          &.inversed {
+            span {
+              border-right: 2px dotted;
+              border-left: 0;
+              transform: none;
+            }
+          }
         }
       }
     }
