@@ -31,6 +31,10 @@
     }
 
     @media (min-width: 1024px) {
+      padding: 120px 35px 0 35px;
+    }
+
+    @media (min-width: 1280px) {
       margin: 0 auto;
       padding: 90px 0 0 0;
     }
@@ -122,17 +126,34 @@
       }
 
       @media (min-width: 1024px) {
+        padding: 50px 35px 30px 35px;
+      }
+
+      @media (min-width: 1280px) {
         padding: 50px 0 30px 0;
       }
 
       .#{atom('pixi-stripes')} {
-        top: 125px;
+        top: 85px;
         height: calc(100% - 80px);
+
+        @media (min-width: 768px) {
+          top: 90px;
+          margin-left: -15px;
+        }
+
+        @media (min-width: 1024px) {
+          top: 125px;
+          margin-left: -35px;
+        }
+
+        @media (min-width: 1280px) {
+          margin-left: 0;
+        }
       }
 
       section {
         position: relative;
-        z-index: 1;
       }
     }
 
@@ -146,6 +167,11 @@
       }
 
       @media (min-width: 1024px) {
+        margin: 57px 15px;
+        padding: 100px 35px 0 35px;
+      }
+
+      @media (min-width: 1280px) {
         margin: 57px 15px;
         padding: 100px 0 0 0;
       }
