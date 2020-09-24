@@ -61,6 +61,10 @@
       margin: 0;
       line-height: 1.63;
     }
+
+    code {
+      overflow-wrap: break-word;
+    }
   }
 
   &-tags {
