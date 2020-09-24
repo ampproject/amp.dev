@@ -77,8 +77,17 @@
       }
     }
 
-    h3 {
-      margin-top: 0;
+    &-content {
+      max-width: 720px;
+
+      h3 {
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.625;
+      }
     }
 
     &-ctas {
