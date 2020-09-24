@@ -9,7 +9,7 @@
   padding: 30px 18px;
   border: solid 2px color('mercury');
   border-radius: 8px;
-  transition: transform .25s ease-in, background .25s ease-in, box-shadow .3s ease-in, border-color .3s ease-in;
+  transition: transform 0.25s ease-in, background 0.25s ease-in, box-shadow 0.3s ease-in, border-color 0.3s ease-in;
 
   @media (min-width: 768px) {
     padding: 23px;
@@ -21,8 +21,8 @@
 
   &-header {
     position: relative;
-    margin: -20px -20px 0 -20px;
-    padding: 20px 20px 30px 20px;
+    margin: -20px -20px 0;
+    padding: 20px 20px 30px;
     cursor: pointer;
 
     &-title {
@@ -69,11 +69,10 @@
       max-width: 720px;
       margin: 0;
       line-height: 1.63;
-
     }
 
     .#{molecule('lnk-square')} {
-      padding: 20px 0 0 0;
+      padding: 20px 0 0;
       border-bottom: 0;
 
       div {
