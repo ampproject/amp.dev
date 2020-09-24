@@ -53,19 +53,47 @@ export default async function getIssueUrl(
   const hasFieldData =
     pageExperience !== undefined && pageExperience.source === 'fieldData';
   const issueData = {
-    lcp: hasFieldData ? parseScore(pageExperience.fieldData.lcp) : NO_DATA,
-    fid: hasFieldData ? parseScore(pageExperience.fieldData.fid) : NO_DATA,
-    cls: hasFieldData ? parseScore(pageExperience.fieldData.cls) : NO_DATA,
+    lcp: hasFieldData ? parseScore(pageExperience.fieldData.lcp) : Result.none,
+    fid: hasFieldData ? parseScore(pageExperience.fieldData.fid) : Result.none,
+    cls: hasFieldData ? parseScore(pageExperience.fieldData.cls) : Result.none,
     labLcp: parseScore(pageExperience.labData.lcp),
     tbt: parseScore(pageExperience.labData.tbt),
     labCls: parseScore(pageExperience.labData.cls),
     safeBrowsing: getTextFromBoolean(safeBrowsing.safeBrowsing),
     mobileFriendly: getTextFromBoolean(mobileFriendliness.mobileFriendly),
     url: pageUrl,
-    usedComponents: linter.components || NO_DATA,
+    usedComponents: linter.components || Result.none,
     usesHttps: getTextFromBoolean(linter.usesHttps),
   };
-  return encodeURIComponent(
-    `https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&title=Pixi:+Poor+page+experience&body=URL%0A---%0A${issueData.url}%0A%0ADetails%0A---%0A%0A%7C%20Metric%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7C%20Field%20data%20%7C%20Lab%20data%20%7C%0A%7C-----------------%7C------------%7C---------%7C%0A%7C%20LCP%20%7C%20${issueData.lcp}%20%7C%20${issueData.labLcp}%20%7C%0A%7C%20FID%20%20%7C%20${issueData.fid}%20%7C%20${issueData.tbt}%20%7C%0A%7C%20CLS%20%20%7C%20${issueData.cls}%20%7C%20${issueData.labCls}%20%7C%0A%7C%20HTTPS%20%20%7C%20${issueData.usesHttps}%20%7C%20---%20%7C%0A%7C%20Safe%20browsing%20%20%7C%20${issueData.safeBrowsing}%20%7C%20---%20%7C%0A%7C%20Mobile-friendliness%20%20%7C%20${issueData.mobileFriendly}%20%7C%20---%20%7C%0A%7C%20Intrusive%20Interstitials%20%7C%20%3Cpass%2Ffail%3E%20%7C%20---%20%7C%0A%0ANotes%0A---%0A%0AComponents%20in%20use%3A%20${issueData.usedComponents}%0A%0A%0A%3C%21--%0A%3CAdditional%20notes%3E%0A--%3E%0A%0A%2Fcc%20%40ampproject%2Fwg-performance%60`
+  const body = encodeURIComponent(
+    `URL
+---
+${issueData.url}
+
+Details
+---
+
+| Metric                 | Field data | Lab data |
+|-----------------|------------|---------|
+| LCP | ${issueData.lcp} | ${issueData.labLcp} |
+| FID  | ${issueData.fid} | ${issueData.tbt} |
+| CLS  | ${issueData.cls} | ${issueData.labCls} |
+| HTTPS  | ${issueData.usesHttps} | --- |
+| Safe browsing  | ${issueData.safeBrowsing} | --- |
+| Mobile-friendliness  | ${issueData.mobileFriendly} | --- |
+| Intrusive Interstitials | <pass/fail> | --- |
+
+Notes
+---
+
+Components in use: ${issueData.usedComponents}
+
+
+<!--
+<Additional notes>
+-->
+
+/cc @ampproject/wg-performance`
   );
+  return `https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&title=Pixi:+Poor+page+experience&body=${body}`;
 }
