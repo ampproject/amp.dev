@@ -1,5 +1,4 @@
 <!---
-
 standaloneSnippets: true
 preview: true
 author:
@@ -217,6 +216,45 @@ author:
     
         button.addEventListener('click', tripleFetch);
       </script>
+    </div>
+
+    <!--
+      ## Data source for `amp-list`
+      An `<amp-script>` function can serve as the data source for an `<amp-list>`.
+        - Use `exportFunction()` to make the function visible to the `<amp-list>`.
+        - Specify the script and the function in the `src` attribute of the `<amp-list>`. Use the form `src="amp-script:{scriptID}:functionName"`, where `{scriptID}` is the `id` of the `<amp-script>` and `{functionName}` is the name of the exported function.
+        - You can use the `nodom` attribute in the `<amp-script>` to indicate that the `<amp-script>` won't need a DOM. This improves performance, because `amp-script` doesn't need to load or execute its virtual DOM implementation.
+    -->
+    <div class="sample">  
+      <amp-script id="dataFunctions" script="amp-list-source-script" nodom></amp-script>
+      <script id="amp-list-source-script" type="text/plain" target="amp-script">
+        function fetchData() {
+          return fetch('<% hosts.platform %>/static/samples/json/todo.json')
+            .then(response => response.json())
+            .then(transformData);
+        }
+
+        function transformData(json) {
+          let newEntries = 
+            json.items.map(
+              entry => (entry.done ? 'Already done: ' : 'To do: ') + entry.title
+            );
+          return { items: newEntries };
+        }
+        
+        exportFunction('fetchData', fetchData);
+      </script>
+      
+      <amp-list
+        width="auto"
+        height="70"
+        layout="fixed-height"
+        src="amp-script:dataFunctions.fetchData"
+      >
+        <template type="amp-mustache">
+          <div>{{.}}</div>
+        </template>
+      </amp-list>
     </div>
 
     <!--

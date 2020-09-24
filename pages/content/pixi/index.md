@@ -8,6 +8,7 @@ staticText:
   infoDialog:
     open: Learn about
     close: Close
+  scrollToTop: Scroll to top
   shareDialog:
     headline: Copy & paste URL
     close: Close navigation
@@ -25,6 +26,8 @@ staticText:
     tabsAriaLabel: Field and lab data tabs
     fieldData: Field data
     labData: Lab data
+    fieldDataExplainer: This data updated daily for the rolling 28-day period.
+    labDataExplainer: This data comes from synthetic tests and does not impact page experience.
     loadingSpeed: Loading speed
     interactivity: Interactivity
     visualStability: Visual stability
@@ -45,6 +48,7 @@ staticText:
     checkManually: Check manually
   recommendations:
     headline: Take action. Improve your AMP site
+    nextAdvice: "Next advice"
   tags:
     all: All
 scriptText:

@@ -2,7 +2,6 @@
 @import '_functions.scss';
 @import '_mixins.scss';
 @import '_variables.scss';
-
 @import 'components/atoms/_button.scss';
 
 .#{molecule('share-dialog ')} {
@@ -38,7 +37,7 @@
       margin-top: 70px;
 
       @media (min-width: 768px) {
-        margin-top: 0px;
+        margin-top: 0;
       }
     }
 
@@ -62,8 +61,8 @@
       position: absolute;
       top: 130px;
       right: 20px;
-      height: 28px;
       width: 28px;
+      height: 28px;
       padding: 5px;
 
       @media (min-width: 768px) {
