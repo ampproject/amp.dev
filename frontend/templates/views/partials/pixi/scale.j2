@@ -1,5 +1,5 @@
 {% do doc.styles.addCssFile('css/components/atoms/pixi-scale.css') %}
-<div class="ap-a-pixi-scale ltr" aria-hidden="true">
+<div class="ap-a-pixi-scale {{ doc.locale.text_direction }}" aria-hidden="true">
 
     {% if scale != 'weighted' %}
     <label class="ap-a-pixi-scale-label">{{ pixi.staticText.coreWebVitals.pageLoads }}</label>
