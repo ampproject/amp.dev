@@ -4,9 +4,8 @@
 @import '_variables.scss';
 
 .#{atom('pixi-scale')} {
-  $pixi-scale: &;
   width: 100%;
-  margin: 30px 0 60px 0;
+  margin: 30px 0 60px;
 
   @media (min-width: 768px) {
     margin: 0;
@@ -14,7 +13,7 @@
 
   &-label {
     display: block;
-    margin: 3px 0 20px 0;
+    margin: 3px 0 20px;
     font-size: 14px;
     font-weight: bold;
   }
@@ -38,7 +37,7 @@
       display: flex;
       justify-content: flex-end;
       height: 100%;
-      width: 0%;
+      width: 0;
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
 
@@ -167,10 +166,12 @@
     }
   }
 
-  .loading &, .pristine & {
+  .loading &,
+  .pristine & {
     &-chart {
       background: safeColor('light-gray');
     }
+
     &-chart-bar,
     &-chart-indicator {
       opacity: 0;
