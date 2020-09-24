@@ -1,7 +1,7 @@
 ---
 $title: Membuat shell untuk iklan
 $order: 0
-description: Dengan menggunakan editor teks favorit Anda, buat berkas HTML berjudul my-amphtml-ad.html. Salin markah HTML berikut ini ke dalam berkas tersebut: ...
+description: "Dengan menggunakan editor teks favorit Anda, buat berkas HTML berjudul my-amphtml-ad.html. Salin markah HTML berikut ini ke dalam berkas tersebut: ..."
 ---
 
 [HTML yang diperlukan untuk sebuah iklan HTML AMP](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) adalah varian dari [HTML AMP yang diperlukan untuk halaman AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md). Mari lebih mendalami kode yang dibutuhkan dengan membuat shell iklan HTML AMP kita.
