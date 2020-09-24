@@ -1,7 +1,7 @@
 ---
 $title: Cómo crear la estructura para un anuncio
 $order: 0
-description: Con ayuda de su editor de texto favorito, genere un archivo HTML llamado my-amphtml-ad.html. Posteriormente, copie los siguientes marcadores HTML en ese archivo: ...
+description: "Con ayuda de su editor de texto favorito, genere un archivo HTML llamado my-amphtml-ad.html. Posteriormente, copie los siguientes marcadores HTML en ese archivo: ..."
 ---
 
 El [HTML que necesite para un anuncio](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) es una variante del [AMP HTML que necesita para crear una página de AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md). Debemos acostumbrarnos a utilizar el código que sea necesario para generar la estructura de nuestro anuncio AMP HTML.
