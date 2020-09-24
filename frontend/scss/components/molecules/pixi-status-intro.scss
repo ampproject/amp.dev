@@ -27,9 +27,9 @@
       padding: 0 0 0 35px;
     }
 
+    a,
     h3,
-    p,
-    a {
+    p {
       font-size: 16px;
       line-height: 1.625;
       color: safeColor('white');
@@ -40,6 +40,7 @@
     position: absolute;
     top: 0;
     left: 15px;
+    display: flex;
     width: calc(100% - 30px);
     min-height: 100%;
     padding: 30px 15px;
@@ -48,7 +49,6 @@
     background-position: 60px 50px;
     background-color: safeColor('white');
     pointer-events: none;
-    display: flex;
     visibility: hidden;
     transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
 
@@ -98,8 +98,8 @@
     }
   }
 
-  &.loading,
   &.fail,
+  &.loading,
   &.pass {
     #{$status-intro} {
       &-text {
@@ -128,6 +128,7 @@
     p {
       color: safeColor('black');
     }
+
     #{$status-intro} {
       &-banner {
         &-ctas {
