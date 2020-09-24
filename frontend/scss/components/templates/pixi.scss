@@ -138,10 +138,12 @@
         height: calc(100% - 80px);
 
         @media (min-width: 768px) {
-          top: 125px;
+          top: 90px;
+          margin-left: -15px;
         }
 
         @media (min-width: 1024px) {
+          top: 125px;
           margin-left: -35px;
         }
 
