@@ -293,37 +293,7 @@ export default class PageExperience {
           ? 'pass'
           : 'fail',
     };
-    return (
-      `https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&title=Pixi:+Poor+page+experience&body=URL%0A---%0A` +
-      issueData.url +
-      `%0A%0A` +
-      `Details%0A---%0A%0A%7C%20Metric%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7C%20` +
-      `Field%20data%20%7C%20Lab%20data%20%7C%0A%7C-----------------%7C------------%7C---------%7C` +
-      `%0A%7C%20LCP%20%7C%20` +
-      issueData.lcp +
-      `%20%7C%20` +
-      issueData.labLcp +
-      `%20%7C%0A%7C%20FID%20%20%7C%20` +
-      issueData.fid +
-      `%20%7C%20` +
-      issueData.tbt +
-      `%20%7C%0A%7C%20CLS%20%20%7C%20` +
-      issueData.cls +
-      `%20%7C%20` +
-      issueData.labCls +
-      `%20%7C%0A%7C%20HTTPS%20%20%7C%20` +
-      issueData.usesHttps +
-      `%20%7C%20---%20%7C%0A%7C%20Safe%20browsing%20%20%7C%20` +
-      issueData.safeBrowsing +
-      `%20%7C%20---%20%7C%0A%7C%20Mobile-friendliness%20%20%7C%20` +
-      issueData.mobileFriendly +
-      `%20%7C%20---%20%7C%0A%7C%20Intrusive%20Interstitials%20%7C%20` +
-      `%3Cpass%2Ffail%3E%20%7C%20---%20%7C%0A%0A` +
-      `Notes%0A---%0A%0AComponents%20in%20use%3A%20` +
-      issueData.usedComponents +
-      `%0A%0A%0A%3C%21--%0A%3C` +
-      `Additional%20notes%3E%0A--%3E%0A%0A%2Fcc%20%40ampproject%2Fwg-performance%60`
-    );
+    return `https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&title=Pixi:+Poor+page+experience&body=URL%0A---%0A${issueData.url}%0A%0ADetails%0A---%0A%0A%7C%20Metric%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7C%20Field%20data%20%7C%20Lab%20data%20%7C%0A%7C-----------------%7C------------%7C---------%7C%0A%7C%20LCP%20%7C%20${issueData.lcp}%20%7C%20${issueData.labLcp}%20%7C%0A%7C%20FID%20%20%7C%20${issueData.fid}%20%7C%20${issueData.tbt}%20%7C%0A%7C%20CLS%20%20%7C%20${issueData.cls}%20%7C%20${issueData.labCls}%20%7C%0A%7C%20HTTPS%20%20%7C%20${issueData.usesHttps}%20%7C%20---%20%7C%0A%7C%20Safe%20browsing%20%20%7C%20${issueData.safeBrowsing}%20%7C%20---%20%7C%0A%7C%20Mobile-friendliness%20%20%7C%20${issueData.mobileFriendly}%20%7C%20---%20%7C%0A%7C%20Intrusive%20Interstitials%20%7C%20%3Cpass%2Ffail%3E%20%7C%20---%20%7C%0A%0ANotes%0A---%0A%0AComponents%20in%20use%3A%20${issueData.usedComponents}%0A%0A%0A%3C%21--%0A%3CAdditional%20notes%3E%0A--%3E%0A%0A%2Fcc%20%40ampproject%2Fwg-performance%60`;
   }
 
   toggleLoading(force) {
