@@ -158,7 +158,7 @@ class CoreWebVitalView {
     this.container.parentNode.classList.add('error');
   }
 
-  setRecommendationStatus(count, url) {
+  setRecommendationStatus(count, issueUrl) {
     this.recommendations.parentNode.classList.remove('loading');
 
     if (!count) {
@@ -166,7 +166,7 @@ class CoreWebVitalView {
         this.recommendations.textContent = i18n.getText('status.nothingToDo');
         return;
       }
-      this.recommendations.setAttribute('href', url);
+      this.recommendations.setAttribute('href', issueUrl);
       this.recommendations.setAttribute('target', '_blank');
       this.recommendations.textContent = i18n.getText('status.fileAnIssue');
       return;
