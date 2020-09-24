@@ -63,9 +63,9 @@ See the table below for descriptions of each part of the syntax.
   <tr>
     <td><code>targetId</code></td>
     <td>yes</td>
-    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.<br>
-    <code>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
-&lt;button on="tap:photo-slides">Show Images&lt;/button></code>
+    <td>This is the DOM id for the element, or a predefined <a href="#special-targets">special target</a> you'd like to execute an action on  in response to the event. In the following example, the <code>targetId</code> is the DOM id of the <code>amp-lightbox</code> target, <code>photo-slides</code>.
+    <pre>&lt;amp-lightbox id="photo-slides">&lt;/amp-lightbox>
+&lt;button on="tap:photo-slides">Show Images&lt;/button></pre>
     </td>
   </tr>
   <tr>
@@ -154,10 +154,10 @@ For example, the following is possible in AMP:
     </td>
     <td><code>input</code></td>
     <td>
-      <code>event.min</code>
-      <code>event.max</code>
-      <code>event.value</code>
-      <code>event.valueAsNumber</code>
+      <pre>event.min
+event.max
+event.value
+event.valueAsNumber</pre>
     </td>
   </tr>
   <tr>
@@ -169,9 +169,9 @@ For example, the following is possible in AMP:
   <tr>
     <td><code>select</code></td>
     <td>
-      <code>event.min</code>
-      <code>event.max</code>
-      <code>event.value</code>
+      <pre>event.min
+event.max
+event.value</pre>
     </td>
   </tr>
   <!-- input-debounced -->
@@ -221,9 +221,8 @@ For example, the following is possible in AMP:
   <tr>
     <td><code>slideChange</code></td>
     <td>Fired when the carousel's current slide changes.</td>
-    <td>Slide number.<br>
-      <code>event.index</code>
-    </td>
+    <td><pre>// Slide number.
+event.index</pre></td>
   </tr>
 </table>
 
@@ -277,10 +276,11 @@ For example, the following is possible in AMP:
   <tr>
     <td><code>select</code></td>
     <td>Fired when an option is selected or deselected.</td>
-    <td>Target element's "option" attribute value.
-<code>event.targetOption</code><br>
-Array of "option" attribute values of all selected elements.
-<code>event.selectedOptions</code></td>
+    <td><pre>// Target element's "option" attribute value.
+event.targetOption
+
+// Array of "option" attribute values of all selected elements.
+event.selectedOptions</pre></td>
 
   </tr>
 </table>
@@ -356,16 +356,14 @@ Array of "option" attribute values of all selected elements.
   <tr>
     <td><code>submit-success</code></td>
     <td>Fired when the form submission response is success.</td>
-    <td>Response JSON.<br>
-        <code>event.response</code>
-    </td>
+    <td><pre>// Response JSON.
+event.response</pre></td>
   </tr>
   <tr>
     <td><code>submit-error</code></td>
     <td>Fired when the form submission response is an error.</td>
-    <td>Response JSON.<br>
-      <code>event.response</code>
-    </td>
+    <td><pre>// Response JSON.
+event.response</pre></td>
   </tr>
   <tr>
     <td><code>valid</code></td>
@@ -720,11 +718,17 @@ actions that apply to the whole document.
   </tr>
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
-    <td>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</td>
+    <td>
+      <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
+      <p><strong>Caveat:</strong> Using normal <code>&lt;a&gt;</code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
+    </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
-    <td>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</td>
+    <td>
+      <p>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</p>
+      <p><strong>Caveat:</strong> Using normal <code>&lt;a&gt;</code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
+    </td>
   </tr>
   <tr>
     <td><code>goBack</code></td>
