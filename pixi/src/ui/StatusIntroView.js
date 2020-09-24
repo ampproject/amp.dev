@@ -21,7 +21,7 @@ const UNFIXABLE_ERROR_IDS = [
   'invalid-url',
   'no-amp',
   'amp-cache-url',
-  'generic-error'
+  'generic-error',
 ];
 
 const CLASS_NAME_MAP = {

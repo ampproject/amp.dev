@@ -14,10 +14,7 @@
 
 import {fixedRecommendations} from './recommendations';
 
-async function getStatusId (
-  checkPromises,
-  recommendationsPromise
-) {
+async function getStatusId(checkPromises, recommendationsPromise) {
   try {
     const linter = await checkPromises.linter;
     if (!linter.isLoaded) {

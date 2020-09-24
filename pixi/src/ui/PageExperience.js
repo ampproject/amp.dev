@@ -78,10 +78,7 @@ export default class PageExperience {
     // checks superfluous
     const linter = await linterPromise;
     if (!linter.isLoaded || !linter.isAmp || !linter.isOriginUrl) {
-      this.runStatusBannerResult(
-        pageUrl,
-        {linter: linterPromise}
-      );
+      this.runStatusBannerResult(pageUrl, {linter: linterPromise});
 
       this.running = false;
       return;
@@ -125,24 +122,25 @@ export default class PageExperience {
     this.running = false;
   }
 
-  async runStatusBannerResult(
-    pageUrl,
-    checkPromises,
-    recommendationsPromise
-  ) {
-    checkPromises = Object.assign({}, {
-      pageExperience: Promise.resolve({}),
-      linter: Promise.resolve({}),
-      mobileFriendliness: Promise.resolve({}),
-      safeBrowsing: Promise.resolve({}),
-    }, checkPromises);
-    recommendationsPromise = recommendationsPromise || Promise.resolve({});
+  async runStatusBannerResult(pageUrl, checkPromises, recommendationsPromise) {
+    checkPromises = Object.assign(
+      {},
+      {
+        pageExperience: Promise.resolve({}),
+        linter: Promise.resolve({}),
+        mobileFriendliness: Promise.resolve({}),
+        safeBrowsing: Promise.resolve({}),
+      },
+      checkPromises
+    );
+    recommendationsPromise = recommendationsPromise || Promise.resolve({});
 
     try {
       // remember the current instance to ensure the promises will not modify a future instance
       const statusView = this.statusIntroView;
       const statusBannerIdPromise = getStatusId(
-        checkPromises, recommendationsPromise
+        checkPromises,
+        recommendationsPromise
       );
 
       checkPromises.linter.then(() => {
