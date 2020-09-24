@@ -43,7 +43,10 @@
       span {
         display: inline-flex;
         align-items: flex-end;
-        border-right: 2px dotted;
+        border-left: 2px;
+        border-right: 2px;
+        border-left-style: none;
+        border-right-style: dotted;
         height: 35px;
         padding: 0 5px;
         font-size: 14px;
@@ -175,9 +178,13 @@
           justify-content: flex-start;
 
           span {
-            border-right: 0;
-            border-left: 2px dotted;
-            transform: translateX(calc(100% - 2px));
+            border-left-style: dotted;
+            border-right-style: none;
+
+            &:after {
+              right: auto;
+              left: -2px;
+            }
           }
 
           &.inversed {
