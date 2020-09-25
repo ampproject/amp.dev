@@ -206,6 +206,7 @@ export default class PageExperience {
     this.reportViews.pageExperience.render(report, cacheReport);
     return {
       descriptions: report.descriptions,
+      details: report.details,
       pageExperienceCached: (cacheReport.data || {}).pageExperience,
       ...report.data,
     };
