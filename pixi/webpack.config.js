@@ -19,7 +19,8 @@ module.exports = (env, argv) => {
       publicPath: '/static/page-experience/',
     },
     optimization: {
-      minimizer: [new ClosurePlugin({mode: 'STANDARD'}, {})],
+      minimizer: [new ClosurePlugin({mode: 'AGGRESSIVE_BUNDLE'}, {})],
+      concatenateModules: false,
     },
     devtool: mode == 'development' ? 'cheap-module-source-map' : false,
     plugins: [
@@ -73,13 +74,6 @@ module.exports = (env, argv) => {
     ],
     module: {
       rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-          },
-        },
         {
           test: /\.hbs$/,
           loader: 'handlebars-loader',
