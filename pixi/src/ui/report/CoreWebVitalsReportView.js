@@ -24,7 +24,8 @@ const FILE_ISSUE_URL =
 
 class WeightedScale {
   constructor(container) {
-    this.container = container;
+    const scale = container.querySelector('.ap-a-pixi-scale');
+    this.direction = scale.classList.contains('ltr') ? 'left' : 'right';
     this.bars = container.querySelectorAll('.ap-a-pixi-scale-chart-bar');
     this.indicator = container.querySelector(
       '.ap-a-pixi-scale-chart-indicator'
@@ -36,7 +37,7 @@ class WeightedScale {
       100,
       (data.numericValue / data.proportion.slow) * 100
     );
-    this.indicator.style.left = `${Math.round(score)}%`;
+    this.indicator.style[this.direction] = `${Math.round(score)}%`;
     this.indicator.textContent = `${(
       data.numericValue / unit.conversion
     ).toFixed(unit.digits)} ${unit.name}`;
@@ -72,7 +73,6 @@ class WeightedScale {
 
 class SimpleScale {
   constructor(container) {
-    this.container = container;
     this.bar = container.querySelector('.ap-a-pixi-scale-chart-bar');
     this.label = this.bar.querySelector('span');
   }
