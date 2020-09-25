@@ -89,7 +89,12 @@ export default class PageExperienceCheck {
   addScoreCheck(result, resultName, audits, testName) {
     if (audits && audits[testName] && !Number.isNaN(audits[testName].score)) {
       result.data[resultName] = audits[testName].score === 1;
+
       result.descriptions[resultName] = audits[testName].description;
+      const details = audits[testName].details;
+      if (details) {
+        result.details[resultName] = details;
+      }
     }
   }
 
@@ -167,6 +172,7 @@ export default class PageExperienceCheck {
         },
       },
       descriptions: {},
+      details: {},
     };
 
     this.addScoreCheck(

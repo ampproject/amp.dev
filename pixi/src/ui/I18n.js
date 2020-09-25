@@ -65,11 +65,11 @@ class I18n {
       const recommendation = this.getRecommendation(id);
       if (recommendation) {
         const {body, ...props} = recommendation;
-        result.push({
-          id,
-          body: body || marked(item.description),
-          ...props,
-        });
+        result.push(
+          Object.assign({}, item, recommendation, {
+            body: recommendation.body || marked(item.description),
+          })
+        );
       } else {
         console.error('Unable to find recommendation text', id);
       }
