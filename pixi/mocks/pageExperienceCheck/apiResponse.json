@@ -7,17 +7,26 @@
 		"metrics": {
 			"CUMULATIVE_LAYOUT_SHIFT_SCORE": {
 				"percentile": 7,
-				"distributions": [
-					{"min": 0, "max": 10, "proportion": 0.816381257056831},
-					{"min": 10, "max": 25, "proportion": 0.15609710199473087},
-					{"min": 25, "proportion": 0.02752164094843808}
+				"distributions": [{
+						"min": 0,
+						"max": 10,
+						"proportion": 0.816381257056831
+					},
+					{
+						"min": 10,
+						"max": 25,
+						"proportion": 0.15609710199473087
+					},
+					{
+						"min": 25,
+						"proportion": 0.02752164094843808
+					}
 				],
 				"category": "FAST"
 			},
 			"FIRST_INPUT_DELAY_MS": {
 				"percentile": 2,
-				"distributions": [
-					{
+				"distributions": [{
 						"min": 0,
 						"max": 100,
 						"proportion": 0.99185423365487668
@@ -36,17 +45,26 @@
 			},
 			"FIRST_CONTENTFUL_PAINT_MS": {
 				"percentile": 3058,
-				"distributions": [
-					{"min": 0, "max": 1000, "proportion": 0.26047648136835677},
-					{"min": 1000, "max": 3000, "proportion": 0.4805131337813072},
-					{"min": 3000, "proportion": 0.259010384850336}
+				"distributions": [{
+						"min": 0,
+						"max": 1000,
+						"proportion": 0.26047648136835677
+					},
+					{
+						"min": 1000,
+						"max": 3000,
+						"proportion": 0.4805131337813072
+					},
+					{
+						"min": 3000,
+						"proportion": 0.259010384850336
+					}
 				],
 				"category": "SLOW"
 			},
 			"LARGEST_CONTENTFUL_PAINT_MS": {
 				"percentile": 2372,
-				"distributions": [
-					{
+				"distributions": [{
 						"min": 0,
 						"max": 2500,
 						"proportion": 0.77533248688648648
@@ -72,37 +90,77 @@
 		"metrics": {
 			"CUMULATIVE_LAYOUT_SHIFT_SCORE": {
 				"percentile": 6,
-				"distributions": [
-					{"min": 0, "max": 10, "proportion": 0.8428252416571671},
-					{"min": 10, "max": 25, "proportion": 0.1230538594874838},
-					{"min": 25, "proportion": 0.034120898855349246}
+				"distributions": [{
+						"min": 0,
+						"max": 10,
+						"proportion": 0.8428252416571671
+					},
+					{
+						"min": 10,
+						"max": 25,
+						"proportion": 0.1230538594874838
+					},
+					{
+						"min": 25,
+						"proportion": 0.034120898855349246
+					}
 				],
 				"category": "FAST"
 			},
 			"FIRST_INPUT_DELAY_MS": {
 				"percentile": 231,
-				"distributions": [
-					{"min": 0, "max": 100, "proportion": 0.5691631339299733},
-					{"min": 100, "max": 300, "proportion": 0.34683623802794783},
-					{"min": 300, "proportion": 0.08400062804207883}
+				"distributions": [{
+						"min": 0,
+						"max": 100,
+						"proportion": 0.5691631339299733
+					},
+					{
+						"min": 100,
+						"max": 300,
+						"proportion": 0.34683623802794783
+					},
+					{
+						"min": 300,
+						"proportion": 0.08400062804207883
+					}
 				],
 				"category": "AVERAGE"
 			},
 			"FIRST_CONTENTFUL_PAINT_MS": {
 				"percentile": 1958,
-				"distributions": [
-					{"min": 0, "max": 1000, "proportion": 0.5209752209824664},
-					{"min": 1000, "max": 3000, "proportion": 0.34879003043037243},
-					{"min": 3000, "proportion": 0.13023474858716125}
+				"distributions": [{
+						"min": 0,
+						"max": 1000,
+						"proportion": 0.5209752209824664
+					},
+					{
+						"min": 1000,
+						"max": 3000,
+						"proportion": 0.34879003043037243
+					},
+					{
+						"min": 3000,
+						"proportion": 0.13023474858716125
+					}
 				],
 				"category": "AVERAGE"
 			},
 			"LARGEST_CONTENTFUL_PAINT_MS": {
 				"percentile": 2096,
-				"distributions": [
-					{"min": 0, "max": 2500, "proportion": 0.8073655487391868},
-					{"min": 2500, "max": 4000, "proportion": 0.11574710196814585},
-					{"min": 4000, "proportion": 0.07688734929266734}
+				"distributions": [{
+						"min": 0,
+						"max": 2500,
+						"proportion": 0.8073655487391868
+					},
+					{
+						"min": 2500,
+						"max": 4000,
+						"proportion": 0.11574710196814585
+					},
+					{
+						"min": 4000,
+						"proportion": 0.07688734929266734
+					}
 				],
 				"category": "FAST"
 			}
@@ -207,34 +265,91 @@
 				"id": "uses-optimized-images",
 				"title": "Efficiently encode images",
 				"description": "Optimized images load faster and consume less cellular data. [Learn more](https://web.dev/uses-optimized-images/).",
-				"score": 1,
+				"score": 0.75,
 				"scoreDisplayMode": "numeric",
+				"displayValue": "Potential savings of 23 KiB",
 				"details": {
-					"headings": [],
-					"overallSavingsBytes": 0,
-					"overallSavingsMs": 0,
+					"items": [{
+						"url": "https://blog.amp.dev/wp-content/uploads/2020/09/kargo-banner-300x150.jpg",
+						"totalBytes": 35032,
+						"isCrossOrigin": true,
+						"fromProtocol": true,
+						"wastedBytes": 23204
+					}],
+					"headings": [{
+						"valueType": "thumbnail",
+						"key": "url"
+					}, {
+						"key": "url",
+						"label": "URL",
+						"valueType": "url"
+					}, {
+						"valueType": "bytes",
+						"label": "Resource Size",
+						"key": "totalBytes"
+					}, {
+						"valueType": "bytes",
+						"label": "Potential Savings",
+						"key": "wastedBytes"
+					}],
+					"overallSavingsMs": 300,
 					"type": "opportunity",
-					"items": []
+					"overallSavingsBytes": 23204
 				},
 				"warnings": [],
-				"numericValue": 0
+				"numericValue": 300
 			},
 			"uses-webp-images": {
 				"id": "uses-webp-images",
 				"title": "Serve images in next-gen formats",
 				"description": "Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. [Learn more](https://web.dev/uses-webp-images/).",
-				"score": 1,
+				"score": 0.75,
 				"scoreDisplayMode": "numeric",
-				"displayValue": "Potential savings of 55 KiB",
+				"displayValue": "Potential savings of 52 KiB",
 				"details": {
-					"items": [],
-					"overallSavingsMs": 0,
-					"overallSavingsBytes": 0,
-					"headings": [],
-					"type": "opportunity"
+					"headings": [{
+							"key": "url",
+							"valueType": "thumbnail"
+						},
+						{
+							"valueType": "url",
+							"label": "URL",
+							"key": "url"
+						},
+						{
+							"label": "Resource Size",
+							"key": "totalBytes",
+							"valueType": "bytes"
+						},
+						{
+							"label": "Potential Savings",
+							"key": "wastedBytes",
+							"valueType": "bytes"
+						}
+					],
+					"items": [{
+							"fromProtocol": true,
+							"isCrossOrigin": true,
+							"wastedBytes": 27412,
+							"url": "https://blog.amp.dev/wp-content/uploads/2020/09/kargo-banner-300x150.jpg",
+							"totalBytes": 35032
+						},
+						{
+							"isCrossOrigin": true,
+							"totalBytes": 32766,
+							"fromProtocol": true,
+							"wastedBytes": 25518,
+							"url": "https://blog.amp.dev/wp-content/uploads/2020/09/amp-fest-banner-updated-300x143.png"
+						}
+					],
+					"overallSavingsMs": 300,
+					"type": "opportunity",
+					"overallSavingsBytes": 52930
 				},
-				"warnings": [],
-				"numericValue": 450
+				"warnings": [
+
+				],
+				"numericValue": 300
 			},
 			"server-response-time": {
 				"id": "server-response-time",
@@ -255,17 +370,68 @@
 				"id": "uses-responsive-images",
 				"title": "Properly size images",
 				"description": "Serve images that are appropriately-sized to save cellular data and improve load time. [Learn more](https://web.dev/uses-responsive-images/).",
-				"score": 1,
+				"score": 0.67,
 				"scoreDisplayMode": "numeric",
+				"displayValue": "Potential savings of 78 KiB",
 				"details": {
-					"overallSavingsBytes": 0,
+					"headings": [{
+						"key": "url",
+						"valueType": "thumbnail"
+					}, {
+						"label": "URL",
+						"valueType": "url",
+						"key": "url"
+					}, {
+						"key": "totalBytes",
+						"valueType": "bytes",
+						"label": "Resource Size"
+					}, {
+						"label": "Potential Savings",
+						"valueType": "bytes",
+						"key": "wastedBytes"
+					}],
 					"type": "opportunity",
-					"items": [],
-					"overallSavingsMs": 0,
-					"headings": []
+					"overallSavingsBytes": 80065,
+					"items": [{
+						"wastedBytes": 27965,
+						"totalBytes": 59076,
+						"url": "https://amp.dev/static/img/component-visual-site.jpg?width=470&hash=0ae2ab2813772ebfd1e3b935dfe23c8037201db5",
+						"wastedPercent": 47.336488661814116
+					}, {
+						"wastedBytes": 21145,
+						"totalBytes": 46920,
+						"wastedPercent": 45.06574394463668,
+						"url": "https://amp.dev/static/img/amp-stories-monde.jpg?width=680&hash=016e3ef1b6015c36dbbf4d84861c5807fb29bab2"
+					}, {
+						"totalBytes": 22834,
+						"wastedPercent": 35.15189763231198,
+						"wastedBytes": 8027,
+						"url": "https://amp.dev/static/img/case-band-image-5.jpg?width=560&hash=3530d3ec7ab20242dc2eb32ac2603896fcf8d359"
+					}, {
+						"wastedBytes": 6981,
+						"totalBytes": 19748,
+						"wastedPercent": 35.35172554209508,
+						"url": "https://amp.dev/static/img/amp-ads-bottom.jpg?width=470&hash=a27af8ab46938ad00508cd8e8143cc28babeb108"
+					}, {
+						"wastedBytes": 6400,
+						"totalBytes": 14988,
+						"wastedPercent": 42.7015749769656,
+						"url": "https://amp.dev/static/img/case-band-image-2.jpg?width=330&hash=33e5e2d61e897ee4dc33b6f74f25fdb7207681f9"
+					}, {
+						"totalBytes": 14120,
+						"wastedBytes": 4976,
+						"wastedPercent": 35.23842725704428,
+						"url": "https://amp.dev/static/img/amp-email-base.jpg?width=470&hash=3f6ec6237880d3b02190238fcc457bb17f61e92b"
+					}, {
+						"url": "https://amp.dev/static/img/component-visual-nav.jpg?width=330&hash=a38aed562af191b3484a0644019da6360f3ce43e",
+						"totalBytes": 9334,
+						"wastedPercent": 48.969290007513145,
+						"wastedBytes": 4571
+					}],
+					"overallSavingsMs": 450
 				},
 				"warnings": [],
-				"numericValue": 0
+				"numericValue": 450
 			},
 			"long-tasks": {
 				"id": "long-tasks",
@@ -276,8 +442,11 @@
 				"displayValue": "10 long tasks found",
 				"details": {
 					"type": "table",
-					"headings": [
-						{"key": "url", "itemType": "url", "text": "URL"},
+					"headings": [{
+							"key": "url",
+							"itemType": "url",
+							"text": "URL"
+						},
 						{
 							"text": "Start Time",
 							"key": "startTime",
@@ -291,8 +460,7 @@
 							"itemType": "ms"
 						}
 					],
-					"items": [
-						{
+					"items": [{
 							"startTime": 4037.7604157524224,
 							"duration": 159.99999999999955,
 							"url": "https://cdn.ampproject.org/v0.js"
@@ -352,8 +520,7 @@
 				"score": null,
 				"scoreDisplayMode": "informative",
 				"details": {
-					"items": [
-						{
+					"items": [{
 							"url": "https://amp.dev/",
 							"resourceType": "Document",
 							"finished": true,
@@ -773,8 +940,11 @@
 						}
 					],
 					"type": "table",
-					"headings": [
-						{"key": "url", "itemType": "url", "text": "URL"},
+					"headings": [{
+							"key": "url",
+							"itemType": "url",
+							"text": "URL"
+						},
 						{
 							"text": "Start Time",
 							"key": "startTime",
@@ -801,9 +971,21 @@
 							"granularity": 1,
 							"text": "Resource Size"
 						},
-						{"text": "Status Code", "itemType": "text", "key": "statusCode"},
-						{"itemType": "text", "key": "mimeType", "text": "MIME Type"},
-						{"key": "resourceType", "itemType": "text", "text": "Resource Type"}
+						{
+							"text": "Status Code",
+							"itemType": "text",
+							"key": "statusCode"
+						},
+						{
+							"itemType": "text",
+							"key": "mimeType",
+							"text": "MIME Type"
+						},
+						{
+							"key": "resourceType",
+							"itemType": "text",
+							"text": "Resource Type"
+						}
 					]
 				}
 			},
@@ -831,7 +1013,9 @@
 				"displayValue": "0 resources found",
 				"details": {
 					"type": "table",
-					"summary": {"wastedBytes": 0},
+					"summary": {
+						"wastedBytes": 0
+					},
 					"headings": [],
 					"items": []
 				},
@@ -855,8 +1039,11 @@
 				"displayValue": "Third-party code blocked the main thread for 110 ms",
 				"details": {
 					"type": "table",
-					"headings": [
-						{"text": "Third-Party", "key": "entity", "itemType": "link"},
+					"headings": [{
+							"text": "Third-Party",
+							"key": "entity",
+							"itemType": "link"
+						},
 						{
 							"key": "transferSize",
 							"granularity": 1,
@@ -870,19 +1057,20 @@
 							"granularity": 1
 						}
 					],
-					"summary": {"wastedBytes": 282790, "wastedMs": 105.156},
-					"items": [
-						{
-							"blockingTime": 105.156,
-							"mainThreadTime": 1660.0160000000005,
-							"entity": {
-								"type": "link",
-								"url": "https://amp.dev/",
-								"text": "AMP"
-							},
-							"transferSize": 282790
-						}
-					]
+					"summary": {
+						"wastedBytes": 282790,
+						"wastedMs": 105.156
+					},
+					"items": [{
+						"blockingTime": 105.156,
+						"mainThreadTime": 1660.0160000000005,
+						"entity": {
+							"type": "link",
+							"url": "https://amp.dev/",
+							"text": "AMP"
+						},
+						"transferSize": 282790
+					}]
 				}
 			},
 			"screenshot-thumbnails": {
@@ -892,8 +1080,7 @@
 				"score": null,
 				"scoreDisplayMode": "informative",
 				"details": {
-					"items": [
-						{
+					"items": [{
 							"data": "data:image/jpeg;base64,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",
 							"timing": 300,
 							"timestamp": 121775991229
@@ -956,8 +1143,10 @@
 				"scoreDisplayMode": "numeric",
 				"displayValue": "Total size was 682 KiB",
 				"details": {
-					"items": [
-						{"totalBytes": 74497, "url": "https://cdn.ampproject.org/v0.js"},
+					"items": [{
+							"totalBytes": 74497,
+							"url": "https://cdn.ampproject.org/v0.js"
+						},
 						{
 							"totalBytes": 59573,
 							"url": "https://amp.dev/static/img/component-visual-site.jpg?width=470&hash=0ae2ab2813772ebfd1e3b935dfe23c8037201db5"
@@ -974,7 +1163,10 @@
 							"url": "https://amp.dev/static/img/case-band-image-4.jpg?width=330&hash=1130d8f01b674fb0f2a505cf422cd8d208623024",
 							"totalBytes": 36771
 						},
-						{"totalBytes": 34289, "url": "https://amp.dev/"},
+						{
+							"totalBytes": 34289,
+							"url": "https://amp.dev/"
+						},
 						{
 							"totalBytes": 34191,
 							"url": "https://blog.amp.dev/wp-content/uploads/2020/07/Asset-1-80-300x150.jpg"
@@ -992,9 +1184,16 @@
 							"totalBytes": 23329
 						}
 					],
-					"headings": [
-						{"itemType": "url", "text": "URL", "key": "url"},
-						{"key": "totalBytes", "itemType": "bytes", "text": "Transfer Size"}
+					"headings": [{
+							"itemType": "url",
+							"text": "URL",
+							"key": "url"
+						},
+						{
+							"key": "totalBytes",
+							"itemType": "bytes",
+							"text": "Transfer Size"
+						}
 					],
 					"type": "table"
 				},
@@ -1041,9 +1240,14 @@
 				"scoreDisplayMode": "numeric",
 				"displayValue": "1.2 s",
 				"details": {
-					"summary": {"wastedMs": 1209.2999999999959},
-					"headings": [
-						{"itemType": "url", "text": "URL", "key": "url"},
+					"summary": {
+						"wastedMs": 1209.2999999999959
+					},
+					"headings": [{
+							"itemType": "url",
+							"text": "URL",
+							"key": "url"
+						},
 						{
 							"text": "Total CPU Time",
 							"granularity": 1,
@@ -1064,8 +1268,7 @@
 						}
 					],
 					"type": "table",
-					"items": [
-						{
+					"items": [{
 							"url": "https://amp.dev/",
 							"total": 1647.9840000000268,
 							"scriptParseCompile": 3.656,
@@ -1093,7 +1296,11 @@
 				"description": "These DOM elements contribute most to the CLS of the page.",
 				"score": null,
 				"scoreDisplayMode": "notApplicable",
-				"details": {"type": "table", "headings": [], "items": []}
+				"details": {
+					"type": "table",
+					"headings": [],
+					"items": []
+				}
 			},
 			"uses-passive-event-listeners": {
 				"id": "uses-passive-event-listeners",
@@ -1101,7 +1308,11 @@
 				"description": "Consider marking your touch and wheel event listeners as `passive` to improve your page's scroll performance. [Learn more](https://web.dev/uses-passive-event-listeners/).",
 				"score": 1,
 				"scoreDisplayMode": "binary",
-				"details": {"type": "table", "headings": [], "items": []}
+				"details": {
+					"type": "table",
+					"headings": [],
+					"items": []
+				}
 			},
 			"estimated-input-latency": {
 				"id": "estimated-input-latency",
@@ -1121,8 +1332,7 @@
 				"displayValue": "3.6 s",
 				"details": {
 					"type": "table",
-					"items": [
-						{
+					"items": [{
 							"groupLabel": "Script Evaluation",
 							"duration": 1203.239999999995,
 							"group": "scriptEvaluation"
@@ -1158,8 +1368,11 @@
 							"duration": 4.064
 						}
 					],
-					"headings": [
-						{"text": "Category", "itemType": "text", "key": "groupLabel"},
+					"headings": [{
+							"text": "Category",
+							"itemType": "text",
+							"key": "groupLabel"
+						},
 						{
 							"key": "duration",
 							"text": "Time Spent",
@@ -1192,18 +1405,20 @@
 				"scoreDisplayMode": "informative",
 				"displayValue": "1 element found",
 				"details": {
-					"items": [
-						{
-							"node": {
-								"path": "1,HTML,1,BODY,8,MAIN,0,SECTION,0,DIV,0,DIV,0,DIV,0,H1",
-								"selector": "div.-ow > div.-ox > div.-ok > h1.-oj",
-								"snippet": "<h1 class=\"-oj\">",
-								"nodeLabel": "AMP is a web component framework to easily create user-first\n\nwebsites.\nstories…",
-								"type": "node"
-							}
+					"items": [{
+						"node": {
+							"path": "1,HTML,1,BODY,8,MAIN,0,SECTION,0,DIV,0,DIV,0,DIV,0,H1",
+							"selector": "div.-ow > div.-ox > div.-ok > h1.-oj",
+							"snippet": "<h1 class=\"-oj\">",
+							"nodeLabel": "AMP is a web component framework to easily create user-first\n\nwebsites.\nstories…",
+							"type": "node"
 						}
-					],
-					"headings": [{"key": "node", "itemType": "node", "text": "Element"}],
+					}],
+					"headings": [{
+						"key": "node",
+						"itemType": "node",
+						"text": "Element"
+					}],
 					"type": "table"
 				}
 			},
@@ -1225,8 +1440,11 @@
 				"displayValue": "0 ms",
 				"details": {
 					"type": "table",
-					"headings": [
-						{"itemType": "text", "text": "URL", "key": "origin"},
+					"headings": [{
+							"itemType": "text",
+							"text": "URL",
+							"key": "origin"
+						},
 						{
 							"itemType": "ms",
 							"text": "Time Spent",
@@ -1234,8 +1452,10 @@
 							"key": "rtt"
 						}
 					],
-					"items": [
-						{"origin": "https://amp.dev", "rtt": 0.0009538193895892538},
+					"items": [{
+							"origin": "https://amp.dev",
+							"rtt": 0.0009538193895892538
+						},
 						{
 							"origin": "https://cdn.ampproject.org",
 							"rtt": 0.00025128042244865374
@@ -1268,19 +1488,57 @@
 				"scoreDisplayMode": "informative",
 				"displayValue": "8 user timings",
 				"details": {
-					"items": [
-						{"name": "is", "timingType": "Mark", "startTime": 308.013},
-						{"startTime": 310.453, "timingType": "Mark", "name": "dr"},
-						{"timingType": "Mark", "startTime": 321.463, "name": "visible"},
-						{"timingType": "Mark", "startTime": 321.495, "name": "ofv"},
-						{"startTime": 343.506, "timingType": "Mark", "name": "ol"},
-						{"startTime": 410.374, "timingType": "Mark", "name": "mbv"},
-						{"startTime": 410.707, "name": "e_is", "timingType": "Mark"},
-						{"timingType": "Mark", "startTime": 549.78, "name": "pc"}
+					"items": [{
+							"name": "is",
+							"timingType": "Mark",
+							"startTime": 308.013
+						},
+						{
+							"startTime": 310.453,
+							"timingType": "Mark",
+							"name": "dr"
+						},
+						{
+							"timingType": "Mark",
+							"startTime": 321.463,
+							"name": "visible"
+						},
+						{
+							"timingType": "Mark",
+							"startTime": 321.495,
+							"name": "ofv"
+						},
+						{
+							"startTime": 343.506,
+							"timingType": "Mark",
+							"name": "ol"
+						},
+						{
+							"startTime": 410.374,
+							"timingType": "Mark",
+							"name": "mbv"
+						},
+						{
+							"startTime": 410.707,
+							"name": "e_is",
+							"timingType": "Mark"
+						},
+						{
+							"timingType": "Mark",
+							"startTime": 549.78,
+							"name": "pc"
+						}
 					],
-					"headings": [
-						{"itemType": "text", "key": "name", "text": "Name"},
-						{"key": "timingType", "text": "Type", "itemType": "text"},
+					"headings": [{
+							"itemType": "text",
+							"key": "name",
+							"text": "Name"
+						},
+						{
+							"key": "timingType",
+							"text": "Type",
+							"itemType": "text"
+						},
 						{
 							"granularity": 0.01,
 							"itemType": "ms",
@@ -1327,8 +1585,7 @@
 				"score": null,
 				"scoreDisplayMode": "informative",
 				"details": {
-					"headings": [
-						{
+					"headings": [{
 							"text": "Start Time",
 							"key": "startTime",
 							"itemType": "ms",
@@ -1342,39 +1599,134 @@
 						}
 					],
 					"type": "table",
-					"items": [
-						{"startTime": 117.341, "duration": 9.731},
-						{"startTime": 131.357, "duration": 5.31},
-						{"duration": 14.443, "startTime": 140.485},
-						{"duration": 24.086, "startTime": 154.94},
-						{"startTime": 199.146, "duration": 7.651},
-						{"duration": 22.158, "startTime": 206.814},
-						{"duration": 61.787, "startTime": 234.348},
-						{"startTime": 323.317, "duration": 46.442},
-						{"duration": 6.475, "startTime": 370.775},
-						{"duration": 8.373, "startTime": 379.928},
-						{"duration": 40.025, "startTime": 392.752},
-						{"duration": 8.576, "startTime": 433.199},
-						{"duration": 8.123, "startTime": 441.815},
-						{"duration": 14.956, "startTime": 452.345},
-						{"startTime": 467.415, "duration": 38.152},
-						{"startTime": 505.627, "duration": 7.161},
-						{"startTime": 520.766, "duration": 6.648},
-						{"startTime": 534.031, "duration": 7.751},
-						{"startTime": 542.472, "duration": 15.046},
-						{"startTime": 557.532, "duration": 8.29},
-						{"startTime": 575.797, "duration": 6.844},
-						{"duration": 12.627, "startTime": 587.931},
-						{"startTime": 604.238, "duration": 8.285},
-						{"duration": 7.16, "startTime": 617.228},
-						{"duration": 6.764, "startTime": 624.419},
-						{"startTime": 631.234, "duration": 34.29},
-						{"duration": 6.094, "startTime": 665.684},
-						{"startTime": 672.678, "duration": 7.175},
-						{"duration": 7.36, "startTime": 685.931},
-						{"startTime": 699.805, "duration": 29.7},
-						{"startTime": 736.582, "duration": 11.081},
-						{"duration": 5.148, "startTime": 1656.653}
+					"items": [{
+							"startTime": 117.341,
+							"duration": 9.731
+						},
+						{
+							"startTime": 131.357,
+							"duration": 5.31
+						},
+						{
+							"duration": 14.443,
+							"startTime": 140.485
+						},
+						{
+							"duration": 24.086,
+							"startTime": 154.94
+						},
+						{
+							"startTime": 199.146,
+							"duration": 7.651
+						},
+						{
+							"duration": 22.158,
+							"startTime": 206.814
+						},
+						{
+							"duration": 61.787,
+							"startTime": 234.348
+						},
+						{
+							"startTime": 323.317,
+							"duration": 46.442
+						},
+						{
+							"duration": 6.475,
+							"startTime": 370.775
+						},
+						{
+							"duration": 8.373,
+							"startTime": 379.928
+						},
+						{
+							"duration": 40.025,
+							"startTime": 392.752
+						},
+						{
+							"duration": 8.576,
+							"startTime": 433.199
+						},
+						{
+							"duration": 8.123,
+							"startTime": 441.815
+						},
+						{
+							"duration": 14.956,
+							"startTime": 452.345
+						},
+						{
+							"startTime": 467.415,
+							"duration": 38.152
+						},
+						{
+							"startTime": 505.627,
+							"duration": 7.161
+						},
+						{
+							"startTime": 520.766,
+							"duration": 6.648
+						},
+						{
+							"startTime": 534.031,
+							"duration": 7.751
+						},
+						{
+							"startTime": 542.472,
+							"duration": 15.046
+						},
+						{
+							"startTime": 557.532,
+							"duration": 8.29
+						},
+						{
+							"startTime": 575.797,
+							"duration": 6.844
+						},
+						{
+							"duration": 12.627,
+							"startTime": 587.931
+						},
+						{
+							"startTime": 604.238,
+							"duration": 8.285
+						},
+						{
+							"duration": 7.16,
+							"startTime": 617.228
+						},
+						{
+							"duration": 6.764,
+							"startTime": 624.419
+						},
+						{
+							"startTime": 631.234,
+							"duration": 34.29
+						},
+						{
+							"duration": 6.094,
+							"startTime": 665.684
+						},
+						{
+							"startTime": 672.678,
+							"duration": 7.175
+						},
+						{
+							"duration": 7.36,
+							"startTime": 685.931
+						},
+						{
+							"startTime": 699.805,
+							"duration": 29.7
+						},
+						{
+							"startTime": 736.582,
+							"duration": 11.081
+						},
+						{
+							"duration": 5.148,
+							"startTime": 1656.653
+						}
 					]
 				}
 			},
@@ -1409,7 +1761,9 @@
 				"scoreDisplayMode": "numeric",
 				"displayValue": "0",
 				"details": {
-					"items": [{"finalLayoutShiftTraceEventFound": true}],
+					"items": [{
+						"finalLayoutShiftTraceEventFound": true
+					}],
 					"type": "debugdata"
 				},
 				"numericValue": 0
@@ -1429,27 +1783,25 @@
 				"scoreDisplayMode": "informative",
 				"details": {
 					"type": "debugdata",
-					"items": [
-						{
-							"numTasksOver500ms": 0,
-							"numTasksOver10ms": 13,
-							"numFonts": 4,
-							"totalByteWeight": 698763,
-							"numRequests": 38,
-							"numStylesheets": 0,
-							"numTasks": 942,
-							"maxServerLatency": 7.577748719577552,
-							"numTasksOver100ms": 0,
-							"numTasksOver50ms": 1,
-							"totalTaskTime": 895.3349999999983,
-							"maxRtt": 0.0009538193895892538,
-							"throughput": 6507687845.736227,
-							"numTasksOver25ms": 6,
-							"numScripts": 15,
-							"mainDocumentTransferSize": 34289,
-							"rtt": 0.00021443058765867426
-						}
-					]
+					"items": [{
+						"numTasksOver500ms": 0,
+						"numTasksOver10ms": 13,
+						"numFonts": 4,
+						"totalByteWeight": 698763,
+						"numRequests": 38,
+						"numStylesheets": 0,
+						"numTasks": 942,
+						"maxServerLatency": 7.577748719577552,
+						"numTasksOver100ms": 0,
+						"numTasksOver50ms": 1,
+						"totalTaskTime": 895.3349999999983,
+						"maxRtt": 0.0009538193895892538,
+						"throughput": 6507687845.736227,
+						"numTasksOver25ms": 6,
+						"numScripts": 15,
+						"mainDocumentTransferSize": 34289,
+						"rtt": 0.00021443058765867426
+					}]
 				}
 			},
 			"network-server-latency": {
@@ -1460,8 +1812,7 @@
 				"scoreDisplayMode": "informative",
 				"displayValue": "10 ms",
 				"details": {
-					"items": [
-						{
+					"items": [{
 							"serverResponseTime": 7.577748719577552,
 							"origin": "https://cdn.ampproject.org"
 						},
@@ -1471,8 +1822,11 @@
 						}
 					],
 					"type": "table",
-					"headings": [
-						{"key": "origin", "text": "URL", "itemType": "text"},
+					"headings": [{
+							"key": "origin",
+							"text": "URL",
+							"itemType": "text"
+						},
 						{
 							"text": "Time Spent",
 							"itemType": "ms",
@@ -1500,17 +1854,23 @@
 				"scoreDisplayMode": "informative",
 				"displayValue": "37 requests • 682 KiB",
 				"details": {
-					"headings": [
-						{"itemType": "text", "text": "Resource Type", "key": "label"},
-						{"itemType": "numeric", "key": "requestCount", "text": "Requests"},
+					"headings": [{
+							"itemType": "text",
+							"text": "Resource Type",
+							"key": "label"
+						},
+						{
+							"itemType": "numeric",
+							"key": "requestCount",
+							"text": "Requests"
+						},
 						{
 							"key": "transferSize",
 							"itemType": "bytes",
 							"text": "Transfer Size"
 						}
 					],
-					"items": [
-						{
+					"items": [{
 							"label": "Total",
 							"resourceType": "total",
 							"transferSize": 698763,
@@ -1574,7 +1934,11 @@
 				"description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://web.dev/font-display/).",
 				"score": 1,
 				"scoreDisplayMode": "binary",
-				"details": {"type": "table", "headings": [], "items": []},
+				"details": {
+					"type": "table",
+					"headings": [],
+					"items": []
+				},
 				"warnings": []
 			},
 			"metrics": {
@@ -1584,8 +1948,7 @@
 				"score": null,
 				"scoreDisplayMode": "informative",
 				"details": {
-					"items": [
-						{
+					"items": [{
 							"firstCPUIdle": 4369,
 							"observedTraceEnd": 1725,
 							"observedLargestContentfulPaint": 158,
@@ -1620,7 +1983,9 @@
 							"observedFirstPaint": 158,
 							"observedFirstVisualChange": 154
 						},
-						{"lcpInvalidated": false}
+						{
+							"lcpInvalidated": false
+						}
 					],
 					"type": "debugdata"
 				},
@@ -1662,7 +2027,11 @@
 				"description": "For users on slow connections, external scripts dynamically injected via `document.write()` can delay page load by tens of seconds. [Learn more](https://web.dev/no-document-write/).",
 				"score": 1,
 				"scoreDisplayMode": "binary",
-				"details": {"items": [], "headings": [], "type": "table"}
+				"details": {
+					"items": [],
+					"headings": [],
+					"type": "table"
+				}
 			},
 			"max-potential-fid": {
 				"id": "max-potential-fid",
@@ -1690,13 +2059,26 @@
 				"scoreDisplayMode": "numeric",
 				"displayValue": "1,200 elements",
 				"details": {
-					"headings": [
-						{"itemType": "text", "key": "statistic", "text": "Statistic"},
-						{"key": "element", "itemType": "code", "text": "Element"},
-						{"itemType": "numeric", "key": "value", "text": "Value"}
+					"headings": [{
+							"itemType": "text",
+							"key": "statistic",
+							"text": "Statistic"
+						},
+						{
+							"key": "element",
+							"itemType": "code",
+							"text": "Element"
+						},
+						{
+							"itemType": "numeric",
+							"key": "value",
+							"text": "Value"
+						}
 					],
-					"items": [
-						{"value": "1,200", "statistic": "Total DOM Elements"},
+					"items": [{
+							"value": "1,200",
+							"statistic": "Total DOM Elements"
+						},
 						{
 							"statistic": "Maximum DOM Depth",
 							"value": "12",
@@ -1706,7 +2088,10 @@
 							}
 						},
 						{
-							"element": {"value": "<defs>", "type": "code"},
+							"element": {
+								"value": "<defs>",
+								"type": "code"
+							},
 							"value": "32",
 							"statistic": "Maximum Child Elements"
 						}
@@ -1723,13 +2108,11 @@
 				"scoreDisplayMode": "numeric",
 				"displayValue": "Potential savings of 82 KiB",
 				"details": {
-					"items": [
-						{
+					"items": [{
 							"wastedBytes": 34873,
 							"url": "https://cdn.ampproject.org/v0.js",
 							"subItems": {
-								"items": [
-									{
+								"items": [{
 										"source": "…src/service/url-replacements-impl.js",
 										"sourceWastedBytes": 2268,
 										"sourceBytes": 2688
@@ -1763,8 +2146,7 @@
 						{
 							"subItems": {
 								"type": "subitems",
-								"items": [
-									{
+								"items": [{
 										"sourceBytes": 3858,
 										"sourceWastedBytes": 3743,
 										"source": "…extensions/amp-analytics/0.1/events.js"
@@ -1800,8 +2182,7 @@
 							"wastedBytes": 23317,
 							"subItems": {
 								"type": "subitems",
-								"items": [
-									{
+								"items": [{
 										"source": "…node_modules/web-animations-js/web-animations.install.js",
 										"sourceBytes": 12121,
 										"sourceWastedBytes": 18231
@@ -1834,23 +2215,29 @@
 						}
 					],
 					"overallSavingsBytes": 84227,
-					"headings": [
-						{
+					"headings": [{
 							"valueType": "url",
-							"subItemsHeading": {"key": "source", "valueType": "code"},
+							"subItemsHeading": {
+								"key": "source",
+								"valueType": "code"
+							},
 							"key": "url",
 							"label": "URL"
 						},
 						{
 							"valueType": "bytes",
-							"subItemsHeading": {"key": "sourceBytes"},
+							"subItemsHeading": {
+								"key": "sourceBytes"
+							},
 							"label": "Transfer Size",
 							"key": "totalBytes"
 						},
 						{
 							"key": "wastedBytes",
 							"valueType": "bytes",
-							"subItemsHeading": {"key": "sourceWastedBytes"},
+							"subItemsHeading": {
+								"key": "sourceWastedBytes"
+							},
 							"label": "Potential Savings"
 						}
 					],
@@ -1872,17 +2259,52 @@
 				"id": "performance",
 				"title": "Performance",
 				"score": 0.86,
-				"auditRefs": [
-					{"id": "first-contentful-paint", "weight": 15, "group": "metrics"},
-					{"id": "speed-index", "weight": 15, "group": "metrics"},
-					{"id": "largest-contentful-paint", "weight": 25, "group": "metrics"},
-					{"id": "interactive", "weight": 15, "group": "metrics"},
-					{"id": "total-blocking-time", "weight": 25, "group": "metrics"},
-					{"id": "cumulative-layout-shift", "weight": 5, "group": "metrics"},
-					{"id": "first-cpu-idle", "weight": 0},
-					{"id": "max-potential-fid", "weight": 0},
-					{"id": "first-meaningful-paint", "weight": 0},
-					{"id": "estimated-input-latency", "weight": 0},
+				"auditRefs": [{
+						"id": "first-contentful-paint",
+						"weight": 15,
+						"group": "metrics"
+					},
+					{
+						"id": "speed-index",
+						"weight": 15,
+						"group": "metrics"
+					},
+					{
+						"id": "largest-contentful-paint",
+						"weight": 25,
+						"group": "metrics"
+					},
+					{
+						"id": "interactive",
+						"weight": 15,
+						"group": "metrics"
+					},
+					{
+						"id": "total-blocking-time",
+						"weight": 25,
+						"group": "metrics"
+					},
+					{
+						"id": "cumulative-layout-shift",
+						"weight": 5,
+						"group": "metrics"
+					},
+					{
+						"id": "first-cpu-idle",
+						"weight": 0
+					},
+					{
+						"id": "max-potential-fid",
+						"weight": 0
+					},
+					{
+						"id": "first-meaningful-paint",
+						"weight": 0
+					},
+					{
+						"id": "estimated-input-latency",
+						"weight": 0
+					},
 					{
 						"id": "render-blocking-resources",
 						"weight": 0,
@@ -1898,7 +2320,11 @@
 						"weight": 0,
 						"group": "load-opportunities"
 					},
-					{"id": "unminified-css", "weight": 0, "group": "load-opportunities"},
+					{
+						"id": "unminified-css",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
 					{
 						"id": "unminified-javascript",
 						"weight": 0,
@@ -1939,7 +2365,11 @@
 						"weight": 0,
 						"group": "load-opportunities"
 					},
-					{"id": "redirects", "weight": 0, "group": "load-opportunities"},
+					{
+						"id": "redirects",
+						"weight": 0,
+						"group": "load-opportunities"
+					},
 					{
 						"id": "uses-rel-preload",
 						"weight": 0,
@@ -1950,58 +2380,141 @@
 						"weight": 0,
 						"group": "load-opportunities"
 					},
-					{"id": "total-byte-weight", "weight": 0, "group": "diagnostics"},
-					{"id": "uses-long-cache-ttl", "weight": 0, "group": "diagnostics"},
-					{"id": "dom-size", "weight": 0, "group": "diagnostics"},
+					{
+						"id": "total-byte-weight",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "uses-long-cache-ttl",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "dom-size",
+						"weight": 0,
+						"group": "diagnostics"
+					},
 					{
 						"id": "critical-request-chains",
 						"weight": 0,
 						"group": "diagnostics"
 					},
-					{"id": "user-timings", "weight": 0, "group": "diagnostics"},
-					{"id": "bootup-time", "weight": 0, "group": "diagnostics"},
+					{
+						"id": "user-timings",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "bootup-time",
+						"weight": 0,
+						"group": "diagnostics"
+					},
 					{
 						"id": "mainthread-work-breakdown",
 						"weight": 0,
 						"group": "diagnostics"
 					},
-					{"id": "font-display", "weight": 0, "group": "diagnostics"},
-					{"id": "performance-budget", "weight": 0, "group": "budgets"},
-					{"id": "timing-budget", "weight": 0, "group": "budgets"},
-					{"id": "resource-summary", "weight": 0, "group": "diagnostics"},
-					{"id": "third-party-summary", "weight": 0, "group": "diagnostics"},
+					{
+						"id": "font-display",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "performance-budget",
+						"weight": 0,
+						"group": "budgets"
+					},
+					{
+						"id": "timing-budget",
+						"weight": 0,
+						"group": "budgets"
+					},
+					{
+						"id": "resource-summary",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "third-party-summary",
+						"weight": 0,
+						"group": "diagnostics"
+					},
 					{
 						"id": "largest-contentful-paint-element",
 						"weight": 0,
 						"group": "diagnostics"
 					},
-					{"id": "layout-shift-elements", "weight": 0, "group": "diagnostics"},
+					{
+						"id": "layout-shift-elements",
+						"weight": 0,
+						"group": "diagnostics"
+					},
 					{
 						"id": "uses-passive-event-listeners",
 						"weight": 0,
 						"group": "diagnostics"
 					},
-					{"id": "no-document-write", "weight": 0, "group": "diagnostics"},
-					{"id": "long-tasks", "weight": 0, "group": "diagnostics"},
-					{"id": "network-requests", "weight": 0},
-					{"id": "network-rtt", "weight": 0},
-					{"id": "network-server-latency", "weight": 0},
-					{"id": "main-thread-tasks", "weight": 0},
-					{"id": "diagnostics", "weight": 0},
-					{"id": "metrics", "weight": 0},
-					{"id": "screenshot-thumbnails", "weight": 0},
-					{"id": "final-screenshot", "weight": 0},
-					{"id": "first-contentful-paint-3g", "weight": 0}
+					{
+						"id": "no-document-write",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "long-tasks",
+						"weight": 0,
+						"group": "diagnostics"
+					},
+					{
+						"id": "network-requests",
+						"weight": 0
+					},
+					{
+						"id": "network-rtt",
+						"weight": 0
+					},
+					{
+						"id": "network-server-latency",
+						"weight": 0
+					},
+					{
+						"id": "main-thread-tasks",
+						"weight": 0
+					},
+					{
+						"id": "diagnostics",
+						"weight": 0
+					},
+					{
+						"id": "metrics",
+						"weight": 0
+					},
+					{
+						"id": "screenshot-thumbnails",
+						"weight": 0
+					},
+					{
+						"id": "final-screenshot",
+						"weight": 0
+					},
+					{
+						"id": "first-contentful-paint-3g",
+						"weight": 0
+					}
 				]
 			}
 		},
 		"categoryGroups": {
-			"pwa-installable": {"title": "Installable"},
+			"pwa-installable": {
+				"title": "Installable"
+			},
 			"a11y-language": {
 				"title": "Internationalization and localization",
 				"description": "These are opportunities to improve the interpretation of your content by users in different locales."
 			},
-			"best-practices-general": {"title": "General"},
+			"best-practices-general": {
+				"title": "General"
+			},
 			"seo-mobile": {
 				"title": "Mobile Friendly",
 				"description": "Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/)."
@@ -2010,8 +2523,12 @@
 				"title": "Opportunities",
 				"description": "These suggestions can help your page load faster. They don't [directly affect](https://web.dev/performance-scoring/) the Performance score."
 			},
-			"best-practices-trust-safety": {"title": "Trust and Safety"},
-			"pwa-fast-reliable": {"title": "Fast and reliable"},
+			"best-practices-trust-safety": {
+				"title": "Trust and Safety"
+			},
+			"pwa-fast-reliable": {
+				"title": "Fast and reliable"
+			},
 			"a11y-tables-lists": {
 				"title": "Tables and lists",
 				"description": "These are opportunities to to improve the experience of reading tabular or list data using assistive technology, like a screen reader."
@@ -2032,8 +2549,12 @@
 				"title": "Budgets",
 				"description": "Performance budgets set standards for the performance of your site."
 			},
-			"best-practices-ux": {"title": "User Experience"},
-			"best-practices-browser-compat": {"title": "Browser Compatibility"},
+			"best-practices-ux": {
+				"title": "User Experience"
+			},
+			"best-practices-browser-compat": {
+				"title": "Browser Compatibility"
+			},
 			"seo-crawl": {
 				"title": "Crawling and Indexing",
 				"description": "To appear in search results, crawlers need access to your app."
@@ -2042,7 +2563,9 @@
 				"title": "Contrast",
 				"description": "These are opportunities to improve the legibility of your content."
 			},
-			"pwa-optimized": {"title": "PWA Optimized"},
+			"pwa-optimized": {
+				"title": "PWA Optimized"
+			},
 			"diagnostics": {
 				"title": "Diagnostics",
 				"description": "More information about the performance of your application. These numbers don't [directly affect](https://web.dev/performance-scoring/) the Performance score."
@@ -2055,13 +2578,17 @@
 				"title": "Audio and video",
 				"description": "These are opportunities to provide alternative content for audio and video. This may improve the experience for users with hearing or vision impairments."
 			},
-			"metrics": {"title": "Metrics"},
+			"metrics": {
+				"title": "Metrics"
+			},
 			"a11y-navigation": {
 				"title": "Navigation",
 				"description": "These are opportunities to improve keyboard navigation in your application."
 			}
 		},
-		"timing": {"total": 7219.43},
+		"timing": {
+			"total": 7219.43
+		},
 		"i18n": {
 			"rendererFormattedStrings": {
 				"varianceDisclaimer": "Values are estimated and may vary. The [performance score is calculated](https://web.dev/performance-scoring/) directly from these metrics.",
@@ -2081,21 +2608,19 @@
 				"labDataTitle": "Lab Data"
 			}
 		},
-		"stackPacks": [
-			{
-				"id": "amp",
-				"title": "AMP",
-				"iconDataURL": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"%3E%3Cpath d=\"M171.887 116.28l-53.696 89.36h-9.728l9.617-58.227-30.2.047a4.852 4.852 0 01-4.855-4.855c0-1.152 1.07-3.102 1.07-3.102l53.52-89.254 9.9.043-9.86 58.317 30.413-.043a4.852 4.852 0 014.855 4.855c0 1.088-.427 2.044-1.033 2.854l.004.004zM128 0C57.306 0 0 57.3 0 128s57.306 128 128 128 128-57.306 128-128S198.7 0 128 0z\" fill=\"%230379c4\" fill-rule=\"evenodd\"/%3E%3C/svg%3E",
-				"descriptions": {
-					"uses-responsive-images": "The `amp-img` element supports the `srcset` attribute to specify which image assets to use based on the screen size.  [Learn more](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction/).",
-					"unminified-css": "Refer to the [AMP documentation](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages/) to ensure all your styles are supported.",
-					"uses-webp-images": "Consider displaying all your `amp-img` components in WebP formats while specifying an appropriate fallback for other browsers. [Learn more](https://amp.dev/documentation/components/amp-img/#example:-specifying-a-fallback-image).",
-					"offscreen-images": "Ensure that you are you using valid `amp-img` tags for your images which automatically lazy-load outside the first viewport. [Learn more](https://amp.dev/documentation/guides-and-tutorials/develop/media_iframes_3p/?format=websites#images).",
-					"efficient-animated-content": "For animated content, use [amp-anim](https://amp.dev/documentation/components/amp-anim/) to minimize CPU usage while the content remains offscreen.",
-					"render-blocking-resources": "Use tools such as [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) to [server-side render AMP layouts](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/)."
-				}
+		"stackPacks": [{
+			"id": "amp",
+			"title": "AMP",
+			"iconDataURL": "data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"%3E%3Cpath d=\"M171.887 116.28l-53.696 89.36h-9.728l9.617-58.227-30.2.047a4.852 4.852 0 01-4.855-4.855c0-1.152 1.07-3.102 1.07-3.102l53.52-89.254 9.9.043-9.86 58.317 30.413-.043a4.852 4.852 0 014.855 4.855c0 1.088-.427 2.044-1.033 2.854l.004.004zM128 0C57.306 0 0 57.3 0 128s57.306 128 128 128 128-57.306 128-128S198.7 0 128 0z\" fill=\"%230379c4\" fill-rule=\"evenodd\"/%3E%3C/svg%3E",
+			"descriptions": {
+				"uses-responsive-images": "The `amp-img` element supports the `srcset` attribute to specify which image assets to use based on the screen size.  [Learn more](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/art_direction/).",
+				"unminified-css": "Refer to the [AMP documentation](https://amp.dev/documentation/guides-and-tutorials/develop/style_and_layout/style_pages/) to ensure all your styles are supported.",
+				"uses-webp-images": "Consider displaying all your `amp-img` components in WebP formats while specifying an appropriate fallback for other browsers. [Learn more](https://amp.dev/documentation/components/amp-img/#example:-specifying-a-fallback-image).",
+				"offscreen-images": "Ensure that you are you using valid `amp-img` tags for your images which automatically lazy-load outside the first viewport. [Learn more](https://amp.dev/documentation/guides-and-tutorials/develop/media_iframes_3p/?format=websites#images).",
+				"efficient-animated-content": "For animated content, use [amp-anim](https://amp.dev/documentation/components/amp-anim/) to minimize CPU usage while the content remains offscreen.",
+				"render-blocking-resources": "Use tools such as [AMP Optimizer](https://github.com/ampproject/amp-toolbox/tree/master/packages/optimizer) to [server-side render AMP layouts](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/server-side-rendering/)."
 			}
-		]
+		}]
 	},
 	"analysisUTCTimestamp": "2020-08-13T12:42:23.398Z"
 }
