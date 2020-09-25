@@ -35,9 +35,10 @@ class WeightedScale {
       (data.numericValue / data.proportion.slow) * 100
     );
     this.indicator.style.left = `${Math.round(score)}%`;
-    this.indicator.textContent = `${(
-      data.numericValue / unit.conversion
-    ).toFixed(unit.digits)} ${unit.name}`;
+    const value = data.numericValue / unit.conversion;
+    this.indicator.textContent = `${
+      value === 0 ? value.toFixed(0) : value.toFixed(unit.digits)
+    } ${unit.name}`;
 
     this.resetStyles();
     this.indicator.classList.add(data.category.toLowerCase());
@@ -130,7 +131,8 @@ class CoreWebVitalView {
     this.container.classList.add(this.performanceCategory);
     this.category.textContent = displayCategory;
 
-    const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
+    const value = data.numericValue / unit.conversion;
+    const score = value === 0 ? value.toFixed(0) : value.toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;
 
     if (this.scale.percentile !== undefined) {
