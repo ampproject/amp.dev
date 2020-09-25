@@ -36,7 +36,7 @@
 
     @media (min-width: 1280px) {
       margin: 0 auto;
-      padding: 90px 0 0 0;
+      padding-top: 90px;
     }
 
     h1 {
@@ -89,10 +89,6 @@
 
     @media (min-width: 1024px) {
       margin: 30px auto;
-
-      &:first-child {
-        margin: 0 auto 30px auto;
-      }
     }
   }
 
