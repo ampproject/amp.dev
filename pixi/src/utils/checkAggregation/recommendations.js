@@ -86,17 +86,10 @@ export default async function getRecommendations(
   linterPromise,
   mobileFriendlinessPromise
 ) {
-  const [
-    pageExperience,
-    safeBrowsing,
-    linter,
-    mobileFriendliness,
-  ] = await Promise.all([
-    pageExperiencePromise,
-    safeBrowsingPromise,
-    linterPromise,
-    mobileFriendlinessPromise,
-  ]);
+  const pageExperience = await pageExperiencePromise;
+  const safeBrowsing = await safeBrowsingPromise;
+  const linter = await linterPromise;
+  const mobileFriendliness = await mobileFriendlinessPromise;
 
   const result = fixedRecommendations.map((id) => ({id}));
 

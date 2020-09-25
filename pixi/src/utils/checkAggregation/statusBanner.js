@@ -29,17 +29,10 @@ async function getStatusId(checkPromises, recommendationsPromise) {
 
     // We need to check all promises for general error
     // (promise can be rejected or error is set in result)
-    const [
-      recommendations,
-      pageExperienceChecks,
-      safeBrowsing,
-      mobileFriendliness,
-    ] = await Promise.all([
-      recommendationsPromise,
-      checkPromises.pageExperience,
-      checkPromises.safeBrowsing,
-      checkPromises.mobileFriendliness,
-    ]);
+    const recommendations = await recommendationsPromise;
+    const pageExperienceChecks = await checkPromises.pageExperience;
+    const safeBrowsing = await checkPromises.safeBrowsing;
+    const mobileFriendliness = await checkPromises.mobileFriendliness;
 
     if (!linter.isValid) {
       return 'invalid-amp';

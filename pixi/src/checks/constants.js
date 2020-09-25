@@ -17,7 +17,7 @@ const UNIT_DEC = {name: '', conversion: 100, digits: 2};
 const UNIT_SEC = {name: 's', conversion: 1000, digits: 1};
 const UNIT_MS = {name: 'ms', conversion: 1, digits: 0};
 
-module.exports = {
+export {
   UNIT_DEFAULT,
   UNIT_DEC,
   UNIT_SEC,
