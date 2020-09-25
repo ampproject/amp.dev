@@ -14,6 +14,7 @@
 
 import i18n from '../I18n.js';
 import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
+import marked from 'marked';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -86,6 +87,16 @@ export default class RecommendationsView {
         let bodyHtml = cleanCodeForInnerHtml(value.body);
         bodyHtml = bodyHtml.replace(/\$\{URL\}/g, encodeURIComponent(pageURL));
         bodyHtml = addTargetBlankToLinks(bodyHtml);
+
+        // Render details if there are any and add them to the body text
+        if (value.details) {
+          let details = '\n';
+          for (const detail of value.details.items) {
+            details += `- \`${detail.url}\`\n`;
+          }
+
+          bodyHtml += marked(details);
+        }
 
         bodyText.innerHTML = bodyHtml;
 
