@@ -76,13 +76,7 @@ export default class StatusIntroView {
     }
 
     const statusBanner = i18n.getStatusBanner(statusBannerId);
-    try {
-      const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
-      shareUrl.searchParams.set('url', pageUrl);
-      AMP.setState({pixi: {shareUrl: shareUrl.toString()}});
-    } catch (e) {
-      console.error('Failed to set share Url from StatusIntroView', e);
-    }
+    AMP.setState({pixi: {shareUrlQuery: encodeURIComponent(pageUrl)}});
 
     this.finishedChecks = null;
     this.container.classList.remove('loading');
