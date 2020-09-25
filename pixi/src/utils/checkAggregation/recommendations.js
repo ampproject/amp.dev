@@ -58,7 +58,7 @@ const addDirectRecommendations = (result, checks, mapping) => {
       }
 
       if (checks.details && checks.details[check]) {
-        recommendation.details =  checks.details[check];
+        recommendation.details = checks.details[check];
       }
 
       result.push(recommendation);

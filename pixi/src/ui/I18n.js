@@ -64,7 +64,6 @@ class I18n {
       const id = item.id;
       const recommendation = this.getRecommendation(id);
       if (recommendation) {
-        const {body, ...props} = recommendation;
         result.push(
           Object.assign({}, item, recommendation, {
             body: recommendation.body || marked(item.description),
