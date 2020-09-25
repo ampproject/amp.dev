@@ -25,9 +25,6 @@ const SCALE_DIRECTIONS = {
   right: 'right',
 };
 
-const FILE_ISSUE_URL =
-  'https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&template=page-experience.md&title=Page+experience+issue';
-
 class WeightedScale {
   constructor(container) {
     const scale = container.querySelector('.ap-a-pixi-scale');
