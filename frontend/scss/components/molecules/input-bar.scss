@@ -15,6 +15,7 @@
 .#{molecule('input-bar')} {
   $inputBar: &;
   z-index: 10;
+  margin-left: 0;
   padding: 0 15px 30px 15px;
 
   @media (min-width: 768px) {
@@ -25,8 +26,12 @@
     font-size: 24px;
 
     @media (min-width: 768px) {
-      padding: 0;
+      padding: 25px;
       font-size: 28px;
+    }
+
+    @media (min-width: 1024px) {
+      padding-left: 35px;
     }
   }
 
