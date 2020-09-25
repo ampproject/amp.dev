@@ -171,9 +171,8 @@
 
 {# Pixi #}
 {% if doc.pod_path == '/content/amp-dev/page-experience.html' %}
-{% do config['triggers'].update({
-  'analyzeButton': 
-    {
+{# Track when "Analyze" button is pressed #}
+{% do config['triggers'].update({'analyzeButton': {
     'selector': '.ap-m-input-bar-submit',
     'on': 'click',
     'vars': {
@@ -181,9 +180,10 @@
       'event_label': 'pixi-analyze-url',
       'event_category': 'pixi',
       'event_action': 'analyze'
-    },
-  'shareButton': 
-    {
+    }
+}}) %}
+{# Track when "Share" button is pressed #}
+{% do config['triggers'].update({'shareButton': {
     'selector': '#share-button',
     'on': 'click',
     'vars': {
@@ -191,8 +191,10 @@
       'event_label': 'pixi-share-url',
       'event_category': 'pixi',
       'event_action': 'share'
-    },
-  'viewRecommendations': 
+    }
+}}) %}
+{# Track when "# recommendations" link is clicked #}
+{% do config['triggers'].update({'viewRecommendations': 
     {
     'selector': 'a[href][target="_top"].ap-m-pixi-primary-metric-recommendations',
     'on': 'click',
@@ -201,8 +203,10 @@
       'event_label': 'pixi-view-recommendations',
       'event_category': 'pixi',
       'event_action': 'link'
-    },
-  'fileIssue': 
+    }
+}}) %}
+{# Track when "File a GitHub issue" link is opened #}
+{% do config['triggers'].update({'fileIssue': 
     {
     'selector': 'a[href][target="_blank"].ap-m-pixi-primary-metric-recommendations',
     'on': 'click',
@@ -211,8 +215,10 @@
       'event_label': 'pixi-file-issue',
       'event_category': 'pixi',
       'event_action': 'link'
-    },
-  'openTooltip': 
+    }
+}}) %}
+{# Track when tooltip is opened #}
+{% do config['triggers'].update({'openTooltip': 
     {
     'selector': '.ap-m-tooltip-toggle[aria-expanded="false"]',
     'on': 'click',
@@ -221,7 +227,7 @@
       'event_label': 'pixi-tooltip-open',
       'event_category': 'pixi',
       'event_action': 'tooltip'
-    },
+    }
 }}) %}
 {% endif %}
 
