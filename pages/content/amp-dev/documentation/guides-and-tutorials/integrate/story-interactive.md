@@ -1,7 +1,7 @@
 ---
 $title: Add Interactivity support to Web Story tools
 $order: 4
-description: 'The [amp-story-interactive](/documentation/components/amp-story-interactive/?format=stories) extension provides various imersive elements that can be integrated into tools. Given the wide variety of options available to customize the elements, we have detailed what tools can do to have a seamless integration into the story creation workflow'
+description: 'The [amp-story-interactive](https://amp.dev/documentation/components/amp-story-interactive/?format=stories) extension provides various imersive elements that can be integrated into tools. Given the wide variety of options available to customize the elements, we have detailed what tools can do to have a seamless integration into the story creation workflow'
 formats:
   - stories 
 ---
@@ -20,7 +20,7 @@ It's important when creating the documents to import the extension by adding the
 
 Understanding how the elements work is crucial to integrating them successfully, so we have created [a Codepen collection](https://codepen.io/collection/DEGRLE) to host demos of the components and some of their styling variants.
 
-Check out our guides on [how to integrate polls](/documentation/examples/components/amp-story-interactive-poll/?format=stories) or [how to integrate quizzes with analytics](/documentation/examples/components/amp-story-interactive-quiz/?format=stories) to Web Stories.
+Check out our guides on [how to integrate polls](https://amp.dev/documentation/examples/components/amp-story-interactive-poll/?format=stories) or [how to integrate quizzes with analytics](https://amp.dev/documentation/examples/components/amp-story-interactive-quiz/?format=stories) to Web Stories.
 
 ## Tips on integrating into tools
 
@@ -62,6 +62,6 @@ More templated tools can also create entire workflows to make stories with polls
 
 ### Backends
 
-Tools can support their own backends to aggregate the data, but it is recommended to use one of the already available endpoints in the [documentation](/documentation/components/amp-story-interactive?format=stories). Setting up a backend is a significant effort and might require forward support as more types of experiences are rolled out.
+Tools can support their own backends to aggregate the data, but it is recommended to use one of the already available endpoints in the [documentation](https://amp.dev/documentation/components/amp-story-interactive?format=stories). Setting up a backend is a significant effort and might require forward support as more types of experiences are rolled out.
 
 If using one of the provided backends, tools should be able to fetch the state of the interactive data directly through the same endpoint as provided in the backend. This information can be either gathered server side or on the frontend.
