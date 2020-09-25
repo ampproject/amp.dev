@@ -30,6 +30,7 @@ import InputBar from './InputBar.js';
 
 import getRecommendations from '../utils/checkAggregation/recommendations.js';
 import getStatusId from '../utils/checkAggregation/statusBanner';
+import getIssueUrl from '../utils/issueUrl';
 
 const totalNumberOfChecks =
   AmpLinterCheck.getCheckCount() +
@@ -112,6 +113,14 @@ export default class PageExperience {
 
     const recommendations = await recommendationsPromise;
     if (recommendations.length > 0) {
+      const issueUrl = await getIssueUrl(
+        pageUrl,
+        pageExperiencePromise,
+        linterPromise,
+        mobileFriendlinessPromise,
+        safeBrowsingPromise
+      );
+      this.recommendationsView.setIssueUrl(issueUrl);
       this.recommendationsView.render(
         recommendations,
         pageUrl,

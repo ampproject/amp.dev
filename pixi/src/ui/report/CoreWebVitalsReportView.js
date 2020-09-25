@@ -19,6 +19,7 @@ const CATEGORIES = {
   average: 'average',
   slow: 'slow',
 };
+
 const SCALE_DIRECTIONS = {
   left: 'left',
   right: 'right',
@@ -167,7 +168,7 @@ class CoreWebVitalView {
     this.container.parentNode.classList.add('error');
   }
 
-  setRecommendationStatus(count) {
+  setRecommendationStatus(count, issueUrl) {
     this.recommendations.parentNode.classList.remove('loading');
 
     if (!count) {
@@ -175,7 +176,7 @@ class CoreWebVitalView {
         this.recommendations.textContent = i18n.getText('status.nothingToDo');
         return;
       }
-      this.recommendations.setAttribute('href', FILE_ISSUE_URL);
+      this.recommendations.setAttribute('href', issueUrl);
       this.recommendations.setAttribute('target', '_blank');
       this.recommendations.textContent = i18n.getText('status.fileAnIssue');
       return;
