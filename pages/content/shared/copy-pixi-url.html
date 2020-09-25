@@ -59,7 +59,7 @@ $sitemap:
       scriptTag.setSelectionRange(0, 99999);
       document.execCommand('copy');
 
-      button.textContent = "{{ pixi.staticText.shareDialog.buttonSuccess }}";
+      button.textContent = "{{ pixi.staticText.shareDialog.success }}";
       setTimeout(function() {
         button.textContent = "{{ pixi.staticText.shareDialog.copyToClipboard }}";
       }, animationDuration);
