@@ -21,8 +21,8 @@ const CATEGORIES = {
 };
 const SCALE_DIRECTIONS = {
   left: 'left',
-  right: 'right'
-}
+  right: 'right',
+};
 
 const FILE_ISSUE_URL =
   'https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&template=page-experience.md&title=Page+experience+issue';
@@ -30,7 +30,9 @@ const FILE_ISSUE_URL =
 class WeightedScale {
   constructor(container) {
     const scale = container.querySelector('.ap-a-pixi-scale');
-    this.direction = scale.classList.contains('ltr') ? SCALE_DIRECTIONS.left : SCALE_DIRECTIONS.right;
+    this.direction = scale.classList.contains('ltr')
+      ? SCALE_DIRECTIONS.left
+      : SCALE_DIRECTIONS.right;
     this.bars = container.querySelectorAll('.ap-a-pixi-scale-chart-bar');
     this.indicator = container.querySelector(
       '.ap-a-pixi-scale-chart-indicator'
