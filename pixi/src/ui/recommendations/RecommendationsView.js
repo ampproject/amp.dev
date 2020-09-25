@@ -202,6 +202,8 @@ export default class RecommendationsView {
     recommendation.classList.remove('expanded');
     recommendation.setAttribute('aria-expanded', 'false');
     recommendation.nextSibling.classList.add('expanded');
-    recommendation.nextSibling.setAttribute('aria-expanded', 'true');
+    recommendation.nextSibling
+      .querySelector('header')
+      .setAttribute('aria-expanded', 'true');
   }
 }
