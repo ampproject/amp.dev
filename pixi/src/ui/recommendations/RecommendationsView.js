@@ -98,7 +98,7 @@ export default class RecommendationsView {
         if (nextRecommendation) {
           nextButton.href = `#recommendation-${nextRecommendation.id}`;
           nextButton.addEventListener('click', () => {
-            this.onClickNext(recommendation);
+            this.onClickNext(recommendation, header);
           });
         } else {
           nextButton.remove();
@@ -202,11 +202,10 @@ export default class RecommendationsView {
     }
   }
 
-  onClickNext(recommendation) {
+  onClickNext(recommendation, header) {
     recommendation.classList.remove('expanded');
-    recommendation
-      .querySelector('header')
-      .setAttribute('aria-expanded', 'false');
+    header.setAttribute('aria-expanded', 'false');
+
     recommendation.nextSibling.classList.add('expanded');
     recommendation.nextSibling
       .querySelector('header')
