@@ -169,6 +169,22 @@
 }}) %}
 {% endif %}
 
+{# Pixi #}
+{% if doc.pod_path == '/content/amp-dev/page-experience.html' %}
+{% do config['triggers'].update({
+  'analyzeButton': 
+    {
+    'selector': '.ap-m-input-bar-submit',
+    'on': 'click',
+    'vars': {
+      'event_name': 'analyze-pixi-button',
+      'event_label': 'analyze-pixi-button',
+      'event_category': category,
+      'event_action': 'analyze'
+    },
+}}) %}
+{% endif %}
+
 <amp-analytics type="gtag" data-credentials="include" data-block-on-consent>
   <script type="application/json">
     {{ config|tojson }}
