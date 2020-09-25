@@ -194,6 +194,26 @@
             }
           }
         }
+
+        &-indicator {
+          flex-direction: row-reverse;
+
+          &.inversed {
+            span {
+              border-right: 2px dotted;
+              border-left: 0;
+              transform: none;
+            }
+          }
+          &.max {
+            &:after {
+              margin: 0 6px 0 0;
+              border: 7.5px solid transparent;
+              border-left: 0;
+              border-right-color: safeColor('dark-red');
+            }
+          }
+        }
       }
     }
   }
