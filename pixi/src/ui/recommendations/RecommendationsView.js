@@ -204,7 +204,7 @@ export default class RecommendationsView {
 
   onClickNext(recommendation) {
     recommendation.classList.remove('expanded');
-    recommendation.setAttribute('aria-expanded', 'false');
+    recommendation.querySelector('header').setAttribute('aria-expanded', 'false');
     recommendation.nextSibling.classList.add('expanded');
     recommendation.nextSibling
       .querySelector('header')
