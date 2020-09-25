@@ -14,15 +14,9 @@
 
 import {fixedRecommendations} from './recommendations';
 
-const getStatusId = async (
-  recommendationsPromise,
-  pageExperiencePromise,
-  safeBrowsingPromise,
-  linterPromise,
-  mobileFriendlinessPromise
-) => {
+async function getStatusId(checkPromises, recommendationsPromise) {
   try {
-    const linter = await linterPromise;
+    const linter = await checkPromises.linter;
     if (!linter.isLoaded) {
       return 'invalid-url';
     }
@@ -42,9 +36,9 @@ const getStatusId = async (
       mobileFriendliness,
     ] = await Promise.all([
       recommendationsPromise,
-      pageExperiencePromise,
-      safeBrowsingPromise,
-      mobileFriendlinessPromise,
+      checkPromises.pageExperience,
+      checkPromises.safeBrowsing,
+      checkPromises.mobileFriendliness,
     ]);
 
     if (!linter.isValid) {
@@ -105,6 +99,6 @@ const getStatusId = async (
   } catch (err) {
     return 'generic-error';
   }
-};
+}
 
 export default getStatusId;

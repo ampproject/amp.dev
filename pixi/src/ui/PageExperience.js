@@ -73,6 +73,17 @@ export default class PageExperience {
     this.running = true;
 
     const linterPromise = this.runLintCheck(pageUrl);
+
+    // Early exit if the linter returned hard fails that make the other
+    // checks superfluous
+    const linter = await linterPromise;
+    if (!linter.isLoaded || !linter.isAmp || !linter.isOriginUrl) {
+      this.runStatusBannerResult(pageUrl, {linter: linterPromise});
+
+      this.running = false;
+      return;
+    }
+
     this.pageExperienceCheck.setLocale(i18n.getLanguage());
     const pageExperiencePromise = this.runPageExperienceCheck(
       pageUrl,
@@ -90,10 +101,12 @@ export default class PageExperience {
 
     this.runStatusBannerResult(
       pageUrl,
-      pageExperiencePromise,
-      linterPromise,
-      mobileFriendlinessPromise,
-      safeBrowsingPromise,
+      {
+        linter: linterPromise,
+        pageExperience: pageExperiencePromise,
+        safeBrowsing: safeBrowsingPromise,
+        mobileFriendliness: mobileFriendlinessPromise,
+      },
       recommendationsPromise
     );
 
@@ -109,47 +122,51 @@ export default class PageExperience {
     this.running = false;
   }
 
-  async runStatusBannerResult(
-    pageUrl,
-    pageExperiencePromise,
-    linterPromise,
-    mobileFriendlinessPromise,
-    safeBrowsingPromise,
-    recommendationsPromise
-  ) {
+  async runStatusBannerResult(pageUrl, checkPromises, recommendationsPromise) {
+    checkPromises = Object.assign(
+      {},
+      {
+        pageExperience: Promise.resolve({}),
+        linter: Promise.resolve({}),
+        mobileFriendliness: Promise.resolve({}),
+        safeBrowsing: Promise.resolve({}),
+      },
+      checkPromises
+    );
+    recommendationsPromise = recommendationsPromise || Promise.resolve({});
+
     try {
       // remember the current instance to ensure the promises will not modify a future instance
       const statusView = this.statusIntroView;
       const statusBannerIdPromise = getStatusId(
-        recommendationsPromise,
-        pageExperiencePromise,
-        safeBrowsingPromise,
-        linterPromise,
-        mobileFriendlinessPromise
+        checkPromises,
+        recommendationsPromise
       );
-      linterPromise.then(() => {
+
+      checkPromises.linter.then(() => {
         statusView.increaseFinishedChecks(AmpLinterCheck.getCheckCount());
       });
-      pageExperiencePromise.then(() => {
+      checkPromises.pageExperience.then(() => {
         statusView.increaseFinishedChecks(PageExperienceCheck.getCheckCount());
       });
-      mobileFriendlinessPromise.then(() => {
+      checkPromises.mobileFriendliness.then(() => {
         statusView.increaseFinishedChecks(
           MobileFriendlinessCheck.getCheckCount()
         );
       });
-      safeBrowsingPromise.then(() => {
+      checkPromises.safeBrowsing.then(() => {
         statusView.increaseFinishedChecks(SafeBrowsingCheck.getCheckCount());
       });
+
       statusView.render(statusBannerIdPromise, recommendationsPromise, pageUrl);
       await statusBannerIdPromise;
     } catch (error) {
-      console.error('unable to get page status', error);
+      console.error('Unable to get page status', error);
     }
     this.toggleLoading(false);
   }
 
-  async runPageExperienceCheck(pageUrl, linterDataPromise) {
+  async runPageExperienceCheck(pageUrl, linterPromise) {
     // Initialize views before running the check to be able
     // to toggle the loading state
     this.reportViews.pageExperience =
@@ -159,7 +176,7 @@ export default class PageExperience {
 
     const reportPromise = this.pageExperienceCheck.run(pageUrl);
 
-    const linter = await linterDataPromise;
+    const linter = await linterPromise;
     let cacheReport = null;
     if (!linter.isAmp || !linter.isValid || !linter.isOriginUrl) {
       cacheReport = Promise.resolve({data: {}});
