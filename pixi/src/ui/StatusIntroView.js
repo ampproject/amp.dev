@@ -104,7 +104,7 @@ export default class StatusIntroView {
       investigateButton.setAttribute('href', statusBanner.investigate);
       investigateButton.classList.remove('pristine');
     }
-    if (hideFixButton === true) {
+    if (hideFixButton) {
       const fixItButton = banner.querySelector('#fix-it-button');
       fixItButton.classList.add('pristine');
       // make second button primary
