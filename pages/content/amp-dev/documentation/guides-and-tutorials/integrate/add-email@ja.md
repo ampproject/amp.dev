@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] 一部のメールクライアントは最後の MIME パートのみをレンダリングします。メールを確実にレンダリングするには、`text/x-amp-html` MIME パートを `text/html` MIME パートの前に配置してください。[/tip]
