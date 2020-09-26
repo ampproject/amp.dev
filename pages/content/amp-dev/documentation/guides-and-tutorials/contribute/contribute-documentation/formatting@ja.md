@@ -95,8 +95,7 @@ description: For web experiences requiring a high amount of customization AMP ha
 amp.dev は AMP で作られています！そのため、画像は [`amp-img`](../../../../documentation/components/reference/amp-img.md) 基準に一致していなければなりません。ビルドプロセスでは、以下の構文により、画像を適切な `amp-img` 形式に変換しています。
 
 <div class="ap-m-code-snippet">
-<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre>
+<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre>
 </div>
 
 ## セクションのフィルタリング
@@ -104,10 +103,7 @@ amp.dev は AMP で作られています！そのため、画像は [`amp-img`](
 ドキュメントには、複数の AMP 形式に関連性のあるものもあれば、ほかの形式には関連性のない説明や情報がさらに必要なものもあります。こういったセクションについては、以下のショートコードで囲むことでフィルタリングすることができます。
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;filter formats="websites"]
-This is only visible for [websites](?format=websites).
-&lsqb;/filter]
-</pre>
+<pre>&lsqb;filter formats="websites"]<br>This is only visible for [websites](?format=websites).<br>&lsqb;/filter]</pre>
 </div>
 
 [filter formats="websites"] これは[ウェブサイト](?format=websites)にしか表示されません。[/filter]
@@ -124,10 +120,7 @@ This is only visible for [websites](?format=websites).
 以下のショートコードでテキストを囲むことで、ヒントとコールアウトを追加できます。
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]
-Default tip
-[/tip]
-</pre>
+<pre>&lsqb;tip type="default"]<br>Default tip<br>[/tip]</pre>
 </div>
 
 [tip type="important"] 重要 [/tip]
@@ -144,10 +137,7 @@ Default tip
 コードスニペットは、3 連バックティックの間に配置し、言語を最初の 3 連バックティックセットの最後に指定します。
 
 <div class="ap-m-code-snippet">
-<pre>```html
-  // code sample
-```
-</pre>
+<pre>```html<br>  // code sample<br>```</pre>
 </div>
 
 ```css
@@ -165,12 +155,7 @@ Default tip
 コードに二重波かっこが含まれる場合、コードの部分が囲まれている必要があります。二重波かっこは、[`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites) テンプレートを使用している場合に見られることがよくあります。
 
 <div class="ap-m-code-snippet">
-<pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre>
+<pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre>
 </div>
 
 ### リスト内のコードスニペット
@@ -178,15 +163,7 @@ Default tip
 Python-Markdown にはいくつかの制限があります。リストにコードスニペットを含める場合は、次の構文を使用してください。
 
 <div class="ap-m-code-snippet">
-<pre>1. First:
-    &lsqb;sourcecode:html]
-      
-        <p>Indented content.</p>
-      
-    &lsqb;/sourcecode]
-  2. Second
-  3. Third
-</pre>
+<pre>1. First:<br>    &lsqb;sourcecode:html]<br>      <br>        <p>Indented content.</p><br>      <br>    &lsqb;/sourcecode]<br>  2. Second<br>  3. Third</pre>
 </div>
 
 ## コードサンプルのプレビュー
@@ -194,9 +171,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 コードサンプルにはプレビューや [AMP Playground](https://playground.amp.dev/) バージョンへのリンクを使用できます。
 
 <div class="ap-m-code-snippet">
-  <pre>  &lsqb;example preview="default: none|inline|top-frame"
-          playground="default: true|false"
-          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
+  <pre>  &lsqb;example preview="default: none|inline|top-frame"<br>          playground="default: true|false"<br>          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
 </div>
 
 注意: プレビューは、Playground で開くと、現在選択されている形式に自動的に変換されます 🤯！
@@ -220,12 +195,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 以下は、単純な埋め込みのインラインサンプルです。インラインスタイルで CSS を定義できます。
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="inline" playground="true"]
-    ```html
-    <div style="background: red; width: 200px; height: 200px;">Hello World</div>
-    ```
-  [/example]
-  [/example]</pre>
+<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br>  [/example]</pre>
 </div>
 
 これは次のように表示されます。
@@ -362,11 +332,7 @@ AMP ストーリーのプレビューには、`preview="top-frame"` と `orienta
 AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、それをどのように使用してエンドポイント URL を絶対 URL にしているか、注意してください。
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame" playground="true"]
-    ```html
-    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div>
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame" playground="true"]<br>    ```html<br>    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div><br>    ```<br>  [/example]</pre>
 </div>
 
 これは次のように表示されます。
@@ -487,15 +453,15 @@ amp.dev の別のページにリンクする場合、参照はそのターゲッ
    </td>
   </tr>
   <tr>
-   <td>hello-world-tutorial.md    </td>
-   <td>hello_world_tutorial.md    </td>
+   <td>hello-world-tutorial.md</td>
+   <td>hello_world_tutorial.md</td>
   </tr>
   <tr>
-   <td>website-fundamentals.md    </td>
-   <td>websiteFundamentals.md    </td>
+   <td>website-fundamentals.md</td>
+   <td>websiteFundamentals.md</td>
   </tr>
   <tr>
-   <td>actions-and-events.md    </td>
-   <td>actionsandevents.md    </td>
+   <td>actions-and-events.md</td>
+   <td>actionsandevents.md</td>
   </tr>
 </table>
