@@ -171,9 +171,7 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 코드 샘플에 미리보기 또는 [AMP Playground](https://playground.amp.dev/) 버전 링크를 포함할 수 있습니다.
 
 <div class="ap-m-code-snippet">
-  <pre>  &lsqb;example preview="default: none|inline|top-frame"
-          playground="default: true|false"
-          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
+  <pre>  &lsqb;example preview="default: none|inline|top-frame"<br>          playground="default: true|false"<br>          imports="{custom-element-10},{custom-element-21},..."           template="{custom-template2}"]   ```html     // code sample   ```   &lsqb;/example]   {/custom-template2}{/custom-element-21}{/custom-element-10}</pre>
 </div>
 
 참고: 미리보기는 Playground에서 열었을 때 선택한 최근 형식으로 자동 변환됩니다🤯!
@@ -219,24 +217,7 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 중요: AMP 보일러플레이트 코드는 AMP 형식에 따라 자동으로 추가되므로 헤더에 추가하지 않습니다. 헤더에는 샘플로 필요한 요소만을 추가합니다!
 
 <div class="ap-m-code-snippet">
-<pre>
-  [example preview="top-frame"
-         playground="true"]
-    ```html
-    
-      <script async="" custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-      <style amp-custom="">
-        body {
-          background: red;
-        }
-      </style>
-    
-    
-      <h1>Hello AMP</h1>
-      <amp-youtube width="480" height="270" layout="responsive" data-videoid="lBTCB7yLs8Y">       </amp-youtube>
-    
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script><br>      <style amp-custom><br>        body {<br>          background: red;<br>        }<br>      </style><br>    </head><br>    <body><br>      <h1>Hello AMP</h1><br>      <amp-youtube width="480"<br>        height="270"<br>        layout="responsive"<br>        data-videoid="lBTCB7yLs8Y"><br>      </amp-youtube><br>    </body><br>    ```<br>  [/example]</pre>
 </div>
 
 다음과 같이 표시되어야 합니다:
@@ -269,27 +250,7 @@ Python 마크다운에는 일부 제한이 있습니다. 목록에 코드 조각
 AMP 스토리 미리보기 시 `preview="top-frame"`과 `orientation="portrait"`을 함께 사용합니다.
 
 <div class="ap-m-code-snippet">
-<pre>
-  [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
-    ```html
-    
-      <script async="" custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-      <style amp-custom="">
-        body {
-          font-family: 'Roboto', sans-serif;
-        }
-        amp-story-page {
-          background: white;
-        }
-      </style>
-    
-    
-      <amp-story standalone="">         <amp-story-page id="cover">           <amp-story-grid-layer template="vertical">             <h1>Hello World</h1>             <p>This is the cover page of this story.</p>           </amp-story-grid-layer>         </amp-story-page>         <amp-story-page id="page-1">           <amp-story-grid-layer template="vertical">             <h1>First Page</h1>             <p>This is the first page of this story.</p>           </amp-story-grid-layer>         </amp-story-page>       </amp-story>
-    
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame"<br>         orientation="portrait"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-story"<br>          src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script><br>      <style amp-custom><br>        body {<br>          font-family: 'Roboto', sans-serif;<br>        }<br>        amp-story-page {<br>          background: white;<br>        }<br>      </style><br>    </head><br>    <body><br>      <amp-story standalone><br>        <amp-story-page id="cover"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>Hello World</h1><br>            <p>This is the cover page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>        <amp-story-page id="page-1"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>First Page</h1><br>            <p>This is the first page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>      </amp-story><br>    </body><br>    ```<br>  [/example]</pre>
 </div>
 
 다음과 같이 표시되어야 합니다:
