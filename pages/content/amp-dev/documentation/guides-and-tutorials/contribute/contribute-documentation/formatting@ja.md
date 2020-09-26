@@ -217,24 +217,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 重要: ヘッダーに AMP ボイラープレートコードを追加しないでください。AMP ボイラープレートは AMP 形式に基づいて自動的に追加されます。サンプルで必要とされる要素のみをヘッダーに追加してください！
 
 <div class="ap-m-code-snippet">
-<pre>
-  [example preview="top-frame"
-         playground="true"]
-    ```html
-    
-      <script async="" custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-      <style amp-custom="">
-        body {
-          background: red;
-        }
-      </style>
-    
-    
-      <h1>Hello AMP</h1>
-      <amp-youtube width="480" height="270" layout="responsive" data-videoid="lBTCB7yLs8Y">       </amp-youtube>
-    
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script><br>      <style amp-custom><br>        body {<br>          background: red;<br>        }<br>      </style><br>    </head><br>    <body><br>      <h1>Hello AMP</h1><br>      <amp-youtube width="480"<br>        height="270"<br>        layout="responsive"<br>        data-videoid="lBTCB7yLs8Y"><br>      </amp-youtube><br>    </body><br>    ```<br>  [/example]</pre>
 </div>
 
 これは次のように表示されます。
@@ -267,27 +250,7 @@ Python-Markdown にはいくつかの制限があります。リストにコー�
 AMP ストーリーのプレビューには、`preview="top-frame"` と `orientation="portrait"` を合わせて使用します。
 
 <div class="ap-m-code-snippet">
-<pre>
-  [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
-    ```html
-    
-      <script async="" custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-      <style amp-custom="">
-        body {
-          font-family: 'Roboto', sans-serif;
-        }
-        amp-story-page {
-          background: white;
-        }
-      </style>
-    
-    
-      <amp-story standalone="">         <amp-story-page id="cover">           <amp-story-grid-layer template="vertical">             <h1>Hello World</h1>             <p>This is the cover page of this story.</p>           </amp-story-grid-layer>         </amp-story-page>         <amp-story-page id="page-1">           <amp-story-grid-layer template="vertical">             <h1>First Page</h1>             <p>This is the first page of this story.</p>           </amp-story-grid-layer>         </amp-story-page>       </amp-story>
-    
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame"<br>         orientation="portrait"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-story"<br>          src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script><br>      <style amp-custom><br>        body {<br>          font-family: 'Roboto', sans-serif;<br>        }<br>        amp-story-page {<br>          background: white;<br>        }<br>      </style><br>    </head><br>    <body><br>      <amp-story standalone><br>        <amp-story-page id="cover"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>Hello World</h1><br>            <p>This is the cover page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>        <amp-story-page id="page-1"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>First Page</h1><br>            <p>This is the first page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>      </amp-story><br>    </body><br>    ```<br>  [/example]</pre>
 </div>
 
 これは次のように表示されます。
@@ -356,14 +319,7 @@ AMP メールに <code>{{server_for_email}}</code> を埋め込む場合に、�
 以下は、リモートエンドポイントを使用した `top-frame` サンプルです。Mustache テンプレートは、<code>{% raw %}</code> と <code>{% endraw %}</code> を使用して、サンプルでエスケープ処理する必要があります。
 
 <div class="ap-m-code-snippet">
-  <pre>[example preview="top-frame"
-        playground="true"
-        imports="amp-list:0.1"
-        template="amp-mustache:0.2"]
-    ```html
-    <amp-list width="auto" height="100" layout="fixed-height" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/data/amp-list-urls.json">       <template type="amp-mustache">{% raw %}         <div class="url-entry">           <a href="%7B%7Burl%7D%7D">{{title}}</a>         </div>       {% endraw %}       </template>     </amp-list>
-    ```
-[/example]</pre>
+  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    <amp-list width="auto" height="100" layout="fixed-height"<br>      src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"><br>      <template type="amp-mustache">{% raw %}<br>        <div class="url-entry"><br>          <a href="{{url}}">{{title}}</a><br>        </div><br>      {% endraw %}<br>      </template><br>    </amp-list><br>    ```<br>[/example]</pre>
 </div>
 
 これは次のように表示されます。
