@@ -56,7 +56,7 @@ AMP 웹사이트는 [`<amp-install-serviceworker>`](../../../documentation/compo
 
 [sourcecode:html] …
 
-<script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
 … ... <amp-install-serviceworker src="/sw.js" data-iframe-src="install-sw.html" layout="nodisplay"> </amp-install-serviceworker>
 
@@ -70,11 +70,7 @@ AMP 웹사이트는 [`<amp-install-serviceworker>`](../../../documentation/compo
 
 <!doctype html>
 
-<title>installing service worker</title> <script type="text/javascript">
- if('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('./sw.js');
- };
-</script> [/sourcecode]
+<title>installing service worker</title> <script type='text/javascript'> if('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js'); }; </script> [/sourcecode]
 
 iframe이 브라우저에 AMP 서비스 워커 파일을 등록합니다.
 
