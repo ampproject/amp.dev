@@ -41,13 +41,7 @@ AMP 런타임은 광고를 최대한 빨리 호출하고 첫 두 페이지 이�
 
 ##구성. 웹 스토리는 페이지에서 바로 [`amp-ad`](../../../documentation/components/reference/amp-ad.md)를 지원하지 않습니다. 대신 [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) 확장자를 통해 모든 광고를 불러와 표시합니다. [`amp-story-auto-ads`](../../../documentation/components/reference/amp-story-auto-ads.md) 컴포넌트는 [`amp-story`](../../../documentation/components/reference/amp-story.md)의 직접 하위 요소로 배치되어야 합니다.
 
-[sourcecode:html] <amp-story> <amp-story-auto-ads> <script data-md-type="raw_html" type="application/json">
-{
-&quot;ad-attributes&quot;: {
-// ad server configuration
-}
-}
-</script> </amp-story-auto-ads> <amp-story-page> ... </amp-story-page></amp-story> [/sourcecode]
+[sourcecode:html] <script type="application/json"> { "ad-attributes": { // ad server configuration } } </script> ... [/sourcecode]
 
 일반적인 [`amp-ad`](../../../documentation/components/reference/amp-ad.md)와는 달리 AMP 스토리가 완전히 렌더링된 후에만 표시되므로 `<fallback>` 또는 `<placeholder>`가 필요하지 않습니다.
 
@@ -70,25 +64,10 @@ AMP 런타임은 광고를 최대한 빨리 호출하고 첫 두 페이지 이�
 - `"type"`은 `"doubleclick"`으로 지정되어야 합니다.
 - `"data-slot"`는 광고 유닛과 페어로 제공되어야 합니다.
 
-[sourcecode:html] <amp-story> <amp-story-auto-ads> <script data-md-type="raw_html" type="application/json">
-{
-&quot;ad-attributes&quot;: {
-&quot;type&quot;: &quot;doubleclick&quot;,
-&quot;data-slot&quot;: &quot;/30497360/a4a/amp_story_dfp_example&quot;
-}
-}
-</script> </amp-story-auto-ads> <amp-story-page> ... </amp-story-page></amp-story> [/sourcecode]
+[sourcecode:html] <script type="application/json"> { "ad-attributes": { "type": "doubleclick", "data-slot": "/30497360/a4a/amp_story_dfp_example" } } </script> ... [/sourcecode]
 
 키-값 페어는 스토리를 위해 생성된 [`amp-ad`](../../../documentation/components/reference/amp-ad.md) 요소에 복제됩니다. `targeting`과 같이 요소에 필요한 추가 정보는 `additional_data`에 추가될 수 있습니다.
 
-[sourcecode:html] <amp-story> <amp-story-auto-ads> <script data-md-type="raw_html" type="application/json">
-{
-&quot;ad-attributes&quot;: {
-&quot;type&quot;: &quot;doubleclick&quot;,
-&quot;data-slot&quot;: &quot;/30497360/a4a/amp_story_dfp_example&quot;,
-&quot;additional_data&quot;: &quot;additional_data_information&quot;
-}
-}
-</script> </amp-story-auto-ads> <amp-story-page> ... </amp-story-page></amp-story> [/sourcecode]
+[sourcecode:html] <script type="application/json"> { "ad-attributes": { "type": "doubleclick", "data-slot": "/30497360/a4a/amp_story_dfp_example", "additional_data": "additional_data_information" } } </script> ... [/sourcecode]
 
 [tip type="note"] Google Ad Manager 광고 업로드와 관련한 정보는 [AMP 스토리의 맞춤 광고 소재 트래피킹](https://support.google.com/admanager/answer/9038178)을 읽고 [AMP 스토리 광고 제작 모범 사례](story_ads_best_practices.md)도 확인해 보세요. [/tip]
