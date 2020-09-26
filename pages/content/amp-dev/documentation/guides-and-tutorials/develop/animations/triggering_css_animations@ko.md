@@ -74,7 +74,6 @@ elementName.toggleClass(class="className")
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
-
 ```
 
 `force` 속성을 추가하면 `toggleClass` 액션이 다른 요소에 적용되거나 두 클래스 간 전환이 가능합니다.
