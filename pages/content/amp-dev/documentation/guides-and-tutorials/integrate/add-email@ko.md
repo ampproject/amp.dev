@@ -44,7 +44,6 @@ Content-Type: text/html; charset="UTF-8"
 
 <span>Hello World in HTML!</span>
 --001a114634ac3555ae05525685ae
-
 ```
 
 [tip type="important"] 일부 이메일 클라이언트에서는 마지막 MIME 부분만이 렌더링됩니다. 이메일 렌더링을 위해 `text/x-amp-html` MIME 부분을 `text/html` MIME 부분 앞에 배치하세요. [/tip]
