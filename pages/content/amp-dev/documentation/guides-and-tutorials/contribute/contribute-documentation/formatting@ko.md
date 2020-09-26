@@ -3,10 +3,10 @@ $title: 서식 지정 가이드 & 튜토리얼
 $order: 3
 description: amp.dev 파일 서식 지정 요구 사항
 formats:
-- 웹사이트
-- 스토리
-- 광고
-- 이메일
+- websites
+- stories
+- ads
+- email
 author: CrystalOnScript
 ---
 
@@ -319,7 +319,7 @@ AMP 이메일에 엔드포인트 URL이 임베드 될 경우 <code>{{server_for_
 원격 엔드포인트를 사용한 `top-frame` 샘플입니다. <code>{% raw %}</code> 및<code>{% endraw %}</code>을 활용하여 Mustache 템플릿을 이스케이핑 처리해야 합니다.
 
 <div class="ap-m-code-snippet">
-  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    <amp-list width="auto" height="100" layout="fixed-height" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/data/amp-list-urls.json">       <template type="amp-mustache">{% raw %}         <div class="url-entry">           <a href="%7B%7Burl%7D%7D">{{title}}</a>         </div>       {% endraw %}       </template>     </amp-list><br>    ```<br>[/example]</pre>
+  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    <amp-list width="auto" height="100" layout="fixed-height"<br>      src="{{server_for_email}}/static/inline-examples/data/amp-list-urls.json"><br>      <template type="amp-mustache">{% raw %}<br>        <div class="url-entry"><br>          <a href="{{url}}">{{title}}</a><br>        </div><br>      {% endraw %}<br>      </template><br>    </amp-list><br>    ```<br>[/example]</pre>
 </div>
 
 다음과 같이 표시되어야 합니다:
