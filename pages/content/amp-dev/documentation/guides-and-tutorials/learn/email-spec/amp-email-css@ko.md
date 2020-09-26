@@ -56,7 +56,7 @@ limitations under the License.
 - [유형 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors) `elementname`
 - [클래스 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) `.classname`
 - [ID 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors) `<a></a><a>#idname</a>`
-- [전체 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `*`
+- [전체 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors) `<a>*</a>`
 - [속성 선택자](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) `[attr=value]`
 
 ### 결합자 <a name="combinators"></a>
