@@ -1,7 +1,7 @@
 ---
 $title: 광고 쉘 생성하기
 $order: 0
-description: 가장 좋아하는 텍스트 에디터를 사용하여 my-amphtml-ad.html라는 이름의 HTML 파일을 생성합니다. 다음 HTML 마크업을 해당 파일에 붙여넣기합니다:...
+description: "가장 좋아하는 텍스트 에디터를 사용하여 my-amphtml-ad.html라는 이름의 HTML 파일을 생성합니다. 다음 HTML 마크업을 해당 파일에 붙여넣기합니다:..."
 ---
 
 [AMPHTML 광고에 필요한 HTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md)은 [AMP 페이지에 필요한 AMPHTML](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)의 변형입니다. AMPHTML 광고 쉘을 생성하며 필수 코드를 익혀보겠습니다.
