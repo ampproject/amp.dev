@@ -56,9 +56,9 @@ AMP ウェブサイトは、[`<amp-install-serviceworker>`](../../../documentati
 
 [sourcecode:html] …
 
-<script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
-… ... <amp-install-serviceworker src="/sw.js" data-iframe-src="install-sw.html" layout="nodisplay"> </amp-install-serviceworker>
+… ...
 
 
 
@@ -70,11 +70,7 @@ AMP ウェブサイトは、[`<amp-install-serviceworker>`](../../../documentati
 
 <!doctype html>
 
-<title>installing service worker</title> <script type="text/javascript">
- if('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('./sw.js');
- };
-</script> [/sourcecode]
+<title>installing service worker</title> <script type='text/javascript'> if('serviceWorker' in navigator) { navigator.serviceWorker.register('./sw.js'); }; </script> [/sourcecode]
 
 iframe は、AMP サービスワーカーファイルをブラウザに登録します。
 
