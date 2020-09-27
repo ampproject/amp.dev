@@ -221,7 +221,7 @@ Tek bir nesne yerine bir dizi kullanan ve her giriş için bir `namespace` sağl
     "namespace": value
   },
   ...
-[
+]
 </script>
 ```
 

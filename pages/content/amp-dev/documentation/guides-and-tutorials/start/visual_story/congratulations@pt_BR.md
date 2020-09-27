@@ -18,11 +18,10 @@ Neste tutorial, você aprendeu a:
 Saiba mais sobre as histórias AMP com estes recursos:
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
-- [práticas recomendadas das histórias AMP](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
+- [práticas recomendadas das histórias AMP](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
 
 [tip type="note"]
 
 O componente [`amp-story`](../../../../documentation/components/reference/amp-story.md) é **experimental**. Se você quiser se inscrever no teste para publicar páginas com esse componente, acesse <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>.
 
 [/tip]
-

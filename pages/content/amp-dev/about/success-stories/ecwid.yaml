@@ -1,0 +1,60 @@
+$title: Ecwid
+$category: e-commerce
+$date: 2020-06-15
+description: Ecwid merchants boost sales by 82% by using AMP for email for abandoned shopping carts
+
+formats:
+  - email
+
+teaser:
+  image:
+    src: '/static/img/success-stories/ecwid/ecwid-teaser.jpg'
+    width: 750
+    height: 750
+    alt: Ecwid
+  logo:
+    src: '/static/img/success-stories/ecwid/ecwid-logo.png'
+    width: 500
+    height: 162
+    alt: Ecwid
+  text: Ecwid merchants boost sales using AMP for email for abandoned shopping carts
+
+stage:
+  headline: Ecwid merchants boost sales by 82% by using AMP for email for abandoned shopping carts
+  subline: MAY 18, 2020
+  layout: all
+  logo:
+    image_src: '/static/img/success-stories/ecwid/ecwid-logo.png'
+    width: 500
+    height: 162
+    alt: Ecwid
+  devices:
+    - poster_src: '/static/img/success-stories/ecwid/ecwid-video-1.jpg'
+      video_src: '/static/img/success-stories/ecwid/ecwid-video-1.mp4'
+      width: 900
+      height: 540
+      type: desktop
+      alt: Ecwid Order confirmation
+    - poster_src: '/static/img/success-stories/ecwid/ecwid-video-2.jpg'
+      video_src: '/static/img/success-stories/ecwid/ecwid-video-2.mp4'
+      width: 900
+      height: 540
+      type: tablet
+      alt: Complete Order Notice
+
+contents:
+  - layout: text
+    text: '<a href="http://www.ecwid.com/?utm_source=twitter&utm_medium=post&utm_campaign=amp_case_study" target="_blank" rel="noopener">Ecwid</a> is an e-commerce platform servicing more than 1 million small businesses in 175 countries. With headquarters in the US and Russia, Ecwid offers merchants tools to sell products through their desktop and mobile websites and social media channels.<br><br>Since the company’s founding in 2009, Ecwid has strived to help small businesses succeed in an increasingly competitive digital marketplace. Since then, a persistent challenge has been voiced by their customers: How to reduce the impact of abandoned shopping carts.<br><br>Research suggests an average of 69 percent of all online shopping carts are abandoned by customers before they complete their purchases, which translates to $260 billion in lost orders.*<br><br>Merchants are all too familiar with cart abandonment. The add to cart rate for most online stores is only 5%. That means that of all the people who have seen your product, only 5% will add it to their cart. The good news is that merchants can materially improve that percentage through e-engagement.” says Erik Suhonen, VP of Operations and Product Partnerships. “It can be easier and more cost efficient to convince someone who has already visited your store ...”<br><br>Ecwid turned to AMP for email to help merchants entice customers who’d abandoned their carts to complete their purchases.'
+  - layout: text
+    headline: Solution
+    text: 'Since March 2019, Ecwid has offered its merchants AMP-powered emails as a sales tool to use with their customers. Unlike static email, AMP for email engages customers with dynamic content and interactivity, letting them make purchases from inside the email. “Customers can click through a product carousel, zoom in on product images, and read full product descriptions before they buy,” Suhonen says. “AMP for Email also looks more compelling and provides a better shopping experience.”<br><br>In 2017, Ecwid began offering merchants ways to easily monitor abandoned cart activity and automatically or manually send abandoned cart emails to customers. The company’s AMP for email implementation offers a dynamic shopping experience showing customers the same items they left in their carts, and displaying a button for them to click to complete their purchase. Merchants can easily customize AMP for email notifications with logos, graphics, and messaging. They may also include discounts or other special incentives to make the purchase more attractive.<br><br>“AMP technology made it possible to make abandoned cart emails more dynamic and interactive,” Suhonen says. “Basically, we were able to put part of the checkout process right into the email, which in turn smooths the way to making a purchase.”'
+  - layout: quote
+    quote: "We believe AMP for email is going to be more widespread. As for e-commerce, buying directly from email will be the new normal"
+    image_src: '/static/img/success-stories/ecwid/ecwid-logo.png'
+    width: 500
+    height: 162
+    alt: Ecwid
+    author: Erik Suhonen, Vice President of Operations and Product Partnerships, Ecwid
+  - layout: text
+    headline: Results
+    text: 'Ecwid merchants welcomed this exciting new email marketing tool. Between July and November 2019, Ecwid analyzed about 171,000 merchant emails and tested how the AMP abandoned cart emails performed over traditional static emails. The results showed that Ecwid merchants on average increased sales from abandoned shopping carts by 82 percent with AMP for email. Some merchants saw even more dramatic results. “Our recovered sales have increased over 300 percent because of this automatic tool by Ecwid,” says Ian-John Parker, National Sales Manager of Salon Xtensions.<br><br>“We believe AMP for email is going to be more widespread,” Suhonen says. “As for e-commerce, buying directly from email will be the new normal. Shoppers want simplicity. Ecwid’s Email Ecommerce, powered by AMP for email technology, enables shoppers to buy without having to leave their email and opens up an entirely new sales channel for merchants.”'

@@ -5,7 +5,7 @@ leveled: true
 ---
 ## What is Glitch?
 
-To complete the code examples included in these courses, we will be using [Glitch](https://glitch.com/). Glitch is an online code editor that allows you to create and view web sites and server APIs without having to install anything on your computer.
+To complete the code examples included in these courses, we will be using <a href="https://glitch.com/" target="_blank">Glitch</a>. Glitch is an online code editor that allows you to create and view web sites and server APIs without having to install anything on your computer.
 
 The Glitch code editor environment looks like this:
 
@@ -15,11 +15,11 @@ The red box above is the online editor where you will be inputting HTML and CSS.
 
 Throughout these courses, you will need various images to complete the exercises. All of the images you need to complete these courses have already been added to the Glitch projects. To view the images in your project, click on the assets entry in the list of files on the left-hand side of the Glitch editor. To get the link to any single image, select the image from the list of assets on the right-hand side and click the “copy” button next to the URL in the pop-up that appears. You can use that link anywhere an image is needed.
 
-{{ image('/static/img/courses/intermediate/image10.png', 1686, 936, caption='The assets view in Glitch') }}
+{{ image('/static/img/courses/intermediate/image10.png', 843, 468, caption='The assets view in Glitch') }}
 
-{{ image('/static/img/courses/intermediate/image9.png', 1484, 1416, caption='The details pop-up -including URL- for an image in the assets collection') }}
+{{ image('/static/img/courses/intermediate/image9.png', 371, 354, caption='The details pop-up -including URL- for an image in the assets collection') }}
 
-Open [this](https://glitch.com/edit/#!/aquamarine-baritone) project. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
+Open <a href="https://glitch.com/edit/#!/aquamarine-baritone" target="_blank">this projec</a>. Click the “Remix This” button on the top right. This will create a new project that you can edit. You can continue to use this same editor for this and future trainings. Each future tutorial will give you the opportunity to start with a reference version of the solution up to that point.
 
 It’s not necessary to use Glitch to complete these trainings. However, some of the code required to complete the exercises is not discussed in these courses, but is contained in the Glitch samples. If you’d like to use another editor, you may still need to go into the Glitch samples to copy the CSS and server code into your local solution.
 

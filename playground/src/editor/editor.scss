@@ -1,9 +1,8 @@
 @import './monokai';
-@import 'base.scss';
 @import 'components/atoms/_text.scss';
 
-.CodeMirror-error-markers {
-  width: 8px;
+.CodeMirror {
+  @include scrollbar;
 }
 
 .CodeMirror-cursor {
@@ -12,6 +11,24 @@
   width: 3;
 }
 
+.CodeMirror-error-markers, .CodeMirror-linenumbers {
+  background: color('ebony-clay');
+}
+
+.CodeMirror-error-markers {
+  width: 8px;
+}
+
+.CodeMirror-linenumbers {
+  padding-right: 4px;
+}
+
+.CodeMirror-linenumber {
+  padding: 6px 6px 0 0;
+  @include txt-mono;
+  font-size: 9px;
+  line-height: 1em;
+}
 
 .cm-s-monokai.CodeMirror {
   font-size: 14px;

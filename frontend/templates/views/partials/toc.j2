@@ -1,6 +1,5 @@
 {% set empty_toc = doc.format.toc == '<div class="toc">\n<ul></ul>\n</div>\n' or not doc.format.toc %}
 {% set hide_toc = (doc.toc == False or doc.collection.toc == False) %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
 {% if not empty_toc and not hide_toc %}
 {% do doc.icons.useIcon('icons/contentmenu.svg') %}

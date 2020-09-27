@@ -39,7 +39,7 @@ describe('config', () => {
     expect(allLocales.includes('es')).toBe(true);
     expect(allLocales.includes('fr')).toBe(true);
 
-    expect(podSpec.deployments.default.filters.type).toBe('blacklist');
+    expect(podSpec.deployments.default.filters.type).toBe('denylist');
 
     const filteredlocales = podSpec.deployments.default.filters.locales;
     expect(filteredlocales.includes('en')).toBe(false);

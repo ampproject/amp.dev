@@ -402,7 +402,7 @@ Sebagian besar `@keyframes` CSS setara dengan penempatan definisi keyframe secar
 - Platform yang tidak mendukung `calc()` dan `var()` tidak akan dapat memanfaatkan polyfill `amp-animation` jika keyframe ditentukan dalam CSS. Oleh karena itu, direkomendasikan untuk selalu menyertakan nilai fallback dalam CSS.
 - Ekstensi CSS seperti [`width()`, `height()`, `num()`, `rand()`, `index()`, dan `length()`](#css-extensions) tidak dapat digunakan dalam CSS.
 
-#### Properti yang diizinkan untuk keyframe <a name="white-listed-properties-for-keyframes"></a>
+#### Properti yang diizinkan untuk keyframe <a name="allow-listed-properties-for-keyframes"></a>
 
 Tidak semua properti CSS dapat digunakan dalam keyframe. Hanya properti CSS yang dapat dioptimalkan dan dianimasikan dengan cepat oleh browser modern yang diizinkan. Daftar ini akan bertambah dengan semakin banyaknya properti yang dikonfirmasi untuk memberikan performa yang baik. Saat ini daftar ini berisi:
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
@@ -623,7 +623,7 @@ Sebagai contoh, ekspresi berikut menghitung penundaan dalam detik yang sebanding
 
 SVG sangat canggih dan kami sangat merekomendasikannya untuk animasi!
 
-Animasi SVG didukung melalui properti CSS yang sama seperti yang dijelaskan dalam [Properti yang diizinkan untuk keyframe](#white-listed-properties-for-keyframes) dengan beberapa variasi:
+Animasi SVG didukung melalui properti CSS yang sama seperti yang dijelaskan dalam [Properti yang diizinkan untuk keyframe](#allow-listed-properties-for-keyframes) dengan beberapa variasi:
 
 * Elemen IE/Edge SVG [tidak mendukung properti `transform` CSS](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). Animasi `transform` itu sendiri di-polyfill. Namun, status awal yang ditentukan dalam stylesheet tidak diterapkan. Jika status transformasi awal dibutuhkan di IE/Edge, sebaiknya duplikasikan melalui [atribut `transform` SVG](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).
 * Meskipun `transform` CSS di-polyfill untuk IE/Edge, sayangnya `transform-origin` tidak dapat di-polyfill. Jadi, jika kompatibilitas dengan IE/Edge menjadi pertimbangan penting, sebaiknya gunakan hanya `transform-origin` default.

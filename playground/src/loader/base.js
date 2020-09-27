@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -69,7 +69,7 @@ export class Loader {
    */
   hide() {
     this._findLoaders().forEach((l) => {
-      l.classList.add('loader-fadeout');
+      l.classList.add('fadeout');
       window.requestIdleCallback(() => l.remove(), {
         timeout: FADE_OUT_ANIMATION_LENGTH,
       });

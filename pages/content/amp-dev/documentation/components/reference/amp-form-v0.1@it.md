@@ -624,7 +624,7 @@ Una volta che l'utente tenta di inviare il modulo, AMP proverà a risolvere le v
 </form>
 ```
 
-Nota che `CANONICAL_HOSTNAME` non è stato sostituito perché non era incluso nella whitelist tramite l'attributo `data-amp-replace` nel primo campo.
+Nota che `CANONICAL_HOSTNAME` non è stato sostituito perché non era incluso nella allowlist tramite l'attributo `data-amp-replace` nel primo campo.
 
 Le sostituzioni avverranno a ogni invio successivo. Ulteriori informazioni sulle [sostituzioni di variabili in AMP](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md).
 

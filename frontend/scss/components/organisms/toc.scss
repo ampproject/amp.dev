@@ -1,9 +1,9 @@
-@import '../../extends';
-@import '../../functions';
-@import '../../mixins';
-@import '../../variables';
-@import '../atoms/_color.scss';
-@import '../atoms/_text.scss';
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+@import 'components/atoms/_color.scss';
+@import 'components/atoms/_text.scss';
 
 @import '../organisms/_sidebar.scss';
 
@@ -33,12 +33,10 @@
   padding: 15px;
   margin-bottom: 10px;
 
-  &::-webkit-scrollbar {
-    width: 2px;
-  }
+  @include scrollbar;
 
   &::-webkit-scrollbar-thumb {
-    background-color: rgba(color('black'), 0.10);
+    background-color: transparentize(color('black'), 0.9);
   }
 
   @media (min-width: 768px) {

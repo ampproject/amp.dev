@@ -18,11 +18,10 @@ $title: 축하합니다!
 다음 리소스에서 AMP 스토리에 관해 자세히 알아보세요.
 
 - [`amp-story`](../../../../documentation/components/reference/amp-story.md)
-- [AMP 스토리 권장사항](../../../../documentation/guides-and-tutorials/develop/amp_story_best_practices.md)
+- [AMP 스토리 권장사항](../../../../documentation/guides-and-tutorials/start/create_successful_stories.md)
 
 [tip type="note"]
 
 [`amp-story`](../../../../documentation/components/reference/amp-story.md) 구성요소는 아직 **실험 단계**에 있습니다. 이 구성요소를 사용하여 페이지를 게시하기 위한 Origin Trial에 가입하려면 <a href="http://bit.ly/amp-story-signup">bit.ly/amp-story-signup</a>을 방문하세요.
 
 [/tip]
-

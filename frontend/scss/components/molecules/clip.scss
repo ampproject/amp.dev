@@ -1,0 +1,49 @@
+/*
+
+#############################
+### MOLECULE: clip ###
+#############################
+
+*/
+
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+
+.#{molecule('clip')} {
+  $root: &;
+  position: relative;
+
+  &-expand {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 65px;
+    width: 100%;
+    border: none;
+    background: color('white');
+    background: linear-gradient(180deg, transparentize(color('white'), 1) 0%, color('white') 40%);
+    cursor: pointer;
+
+    &-icon {
+      max-height: 21px;
+      max-width: 21px;
+      margin-top: 35px;
+      fill: color('river-bed');
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+
+      #{$root}-expand-icon {
+        fill: color('blue-ribbon');
+        transform: translate3d(0, -2px, 0);
+      }
+    }
+  }
+}

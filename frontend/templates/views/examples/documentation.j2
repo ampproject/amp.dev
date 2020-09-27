@@ -10,44 +10,34 @@
 
 {# Always include amp-bind for the header and TOC if the sample doesn't include it #}
 {% if 'amp-bind' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 {% endif %}
 
 {# Include all components needed for sidebar #}
 {% if 'amp-sidebar' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
 {% endif %}
 {% if 'amp-animation' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-animation', '0.1') %}
 {% endif %}
 {% if 'amp-position-observer' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-position-observer', '0.1') %}
 {% endif %}
 
 {% if 'amp-consent' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-consent', '0.1') %}
 {% if 'amp-geo' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-geo', '0.1') %}
 {% endif %}
 {% endif %}
 {% if 'amp-analytics' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-analytics', '0.1') %}
 {% endif %}
 
 {# Include amp-install-serviceworker #}
 {% if 'amp-install-serviceworker' not in doc.used_components or not inline_preview %}
-{% do doc.amp_dependencies.add('amp-install-serviceworker', '0.1') %}
 {% endif %}
 
 {# Include amp-iframe for story previews #}
 {% if doc.example.document.isAmpStory %}
-{% do doc.amp_dependencies.add('amp-iframe', '0.1') %}
 {% endif %}
 
 {# Include other AMP dependencies if needed for preview #}
 {% if inline_preview %}
 {% for used_component in doc.used_components %}
-{% do doc.amp_dependencies.add(used_component, doc.used_components[used_component].version, doc.used_components[used_component].type) %}
 {% endfor %}
 {% endif %}
 {% endblock %}

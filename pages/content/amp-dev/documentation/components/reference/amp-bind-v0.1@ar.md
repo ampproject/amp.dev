@@ -219,7 +219,7 @@ limitations under the License.
 
 * قد تصل التعبيرات فقط إلى [حالة](#state) المستند الحاوية.
 * **ليست** للتعبيرات إمكانية الوصول إلى المتغيرات العمومية مثل `window` أو `document`.
-* لا يمكن استخدام سوى [الدالات المدرجة في القائمة البيضاء](#white-listed-functions) وعوامل التشغيل.
+* لا يمكن استخدام سوى [الدالات المدرجة في القائمة البيضاء](#allow-listed-functions) وعوامل التشغيل.
 * غير مسموح عمومًا بالدالات والفئات والحلقات المخصصة. يُسمح بالدالات السهمية كمعلَمات، مثل `Array.prototype.map`.
 * المتغيرات غير المحددة وarray-index-out-of-bound تعرض `null` بدلاً من `undefined` أو إظهار الأخطاء.
 * للتعبير الواحد حاليًا حد قيمته 50 معاملًا بغرض جودة الأداء. يرجى [الاتصال بنا](https://github.com/ampproject/amphtml/issues/new) إذا لم يكن هذا كافيًا لحالة الاستخدام لديك.
@@ -237,7 +237,7 @@ limitations under the License.
 null || 'default' // 'default'
 ```
 
-# الدالات المدرجة في القائمة البيضاء <a name="white-listed-functions"></a>
+# الدالات المدرجة في القائمة البيضاء <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -611,7 +611,7 @@ null || 'default' // 'default'
   <tr>
     <td>الدالات غير مدرجة في القائمة البيضاء</td>
     <td><em>alert is not a supported function.</em></td>
-    <td>استخدِم فقط <a href="#white-listed-functions">الدالات المدرجة في القائمة البيضاء</a>.</td>
+    <td>استخدِم فقط <a href="#allow-listed-functions">الدالات المدرجة في القائمة البيضاء</a>.</td>
   </tr>
   <tr>
     <td>نتيجة مصحَحة</td>

@@ -93,6 +93,26 @@ creation:
       height: 3
     formats:
       - stories
+  - name: Visual Stories
+    description: Multi-site, multi-author blogging tools and WYSIWYG editor to create Web Stories on your own domain.
+    url: https://visualstories.com
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/visualstories.png
+      width: 5
+      height: 3
+    formats:
+      - stories
+  - name: Tappable
+    description: The collaborative Web Stories builder. Design immersive Stories, publish on a blazing fast CDN and measure engagement with zero-config analytics.
+    url: https://tappable.co
+    type: WYSIWYG Editor
+    image:
+      src: /static/img/tools/tappable.svg
+      width: 5
+      height: 3
+    formats:
+      - stories
   - name: Unbounce
     description: Unbounce is a platform to create landing pages, website popups, and sticky bars.
     url: https://unbounce.com
@@ -113,8 +133,8 @@ platforms:
     url: https://amp-wp.org/
     image:
       src: /static/img/tools/amp_for_wordpress.jpg
-      width: 700
-      height: 499
+      width: 800
+      height: 400
     formats:
       - websites
       - stories
@@ -381,6 +401,18 @@ developer:
       height: 600
     formats:
       - email
+  - name: Ampify.io
+    url: https://www.ampify.io/
+    type: Development Platform
+    description: Fast and accurate conversion of dynamic websites to AMP. SaaS based for easy deployment. Supports all technologies.
+    image:
+      src: /static/img/tools/ampify.svg
+      width: 1500
+      height: 1000
+      fit: contain
+      bgcolor: "#55BFA7"
+    formats:
+      - websites
 providers:
   - name: WompMobile
     url: https://www.wompmobile.com/amp-experience-platform/

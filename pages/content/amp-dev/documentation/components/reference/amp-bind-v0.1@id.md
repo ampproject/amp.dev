@@ -217,7 +217,7 @@ Ekspresi mirip dengan JavaScript dengan beberapa perbedaan penting.
 
 * Ekspresi hanya dapat mengakses [status](#state) dokumen penampungnya.
 * Ekspresi **tidak** memiliki akses ke elemen global seperti `window` atau `document`.
-* Hanya operator dan [fungsi yang diizinkan](#white-listed-functions) yang dapat digunakan.
+* Hanya operator dan [fungsi yang diizinkan](#allow-listed-functions) yang dapat digunakan.
 * Fungsi, class, dan loop kustom secara umum tidak diizinkan. Fungsi panah diizinkan sebagai parameter, misalnya `Array.prototype.map`.
 * Indeks array melebihi batas dan variabel yang tidak ditentukan akan menampilkan `null`, bukan `undefined` atau memunculkan error.
 * Ekspresi tunggal saat ini dibatasi 50 operand untuk menjaga performa. Harap [hubungi kami](https://github.com/ampproject/amphtml/issues/new) jika alokasi ini tidak memadai untuk kasus penggunaan Anda.
@@ -235,7 +235,7 @@ Berikut adalah semua ekspresi yang valid:
 null || 'default' // 'default'
 ```
 
-# Fungsi yang diizinkan <a name="white-listed-functions"></a>
+# Fungsi yang diizinkan <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -609,7 +609,7 @@ Ada beberapa jenis error runtime yang mungkin ditemui ketika bekerja dengan `amp
   <tr>
     <td>Fungsi tidak diizinkan</td>
     <td><em>alert is not a supported function.</em></td>
-    <td>Gunakan hanya <a href="#white-listed-functions">fungsi yang diizinkan</a>.</td>
+    <td>Gunakan hanya <a href="#allow-listed-functions">fungsi yang diizinkan</a>.</td>
   </tr>
   <tr>
     <td>Hasil yang dibersihkan</td>

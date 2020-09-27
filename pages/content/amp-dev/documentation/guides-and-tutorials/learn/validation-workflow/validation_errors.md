@@ -128,7 +128,7 @@ copy its required script, and paste it into the AMP document `<head>`.
   </tr>
 </table>
 
-Tags are whitelisted, so there is no definitive list of all disallowed tags;
+Tags are allowlisted, so there is no definitive list of all disallowed tags;
 however, the [AMP specification](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md)
 broadly defines the set of disallowed tags.
 
@@ -145,20 +145,16 @@ broadly defines the set of disallowed tags.
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Fix</strong></td>
-  	<td>Remove the javascript tags.</td>
+  	<td>Remove the javascript tags or use amp-script.</td>
   </tr>
 </table>
 
-The AMP format does not allow custom JavaScript to be added to pages, except for JavaScript files
-provided by the AMP Project itself. Many common uses of JavaScript have AMP
+The AMP format does not allow custom JavaScript to be added to pages via the `<script>` element. Many common uses of JavaScript have AMP
 HTML library equivalent implementations. See [AMP
 components](../../../../documentation/components/index.html) for the set of components that can be
 used to enhance AMP HTML pages.
 
-If your use case is not covered, you may also consider contributing new
-components to the AMP Project. See the AMP Project's
-[contributing](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md)
-document for more information.
+If none of the available components cover your use case, [`amp-script`](../../../../documentation/components/reference/amp-script.md) can be used to run your custom JavaScript.
 
 ### Mandatory attribute missing
 
@@ -230,14 +226,14 @@ to see if the attribute requires HTTPS.
   </tr>
 </table>
 
-Attributes are whitelisted, so there is no definitive list of all disallowed attributes.
+Attributes are allowlisted, so there is no definitive list of all disallowed attributes.
 To check the supported attributes for each specific tag,
 search for HTML tag, and then `attrs`
 in the [AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii).
 
-In addition to a whitelist of specific attributes for each tag,
-all AMP tags can use any of the attributes white-listed under `$GLOBAL_ATTRS`;
-all attributes with a prefix of `"data-"` are also whitelisted.
+In addition to a allowlist of specific attributes for each tag,
+all AMP tags can use any of the attributes allow-listed under `$GLOBAL_ATTRS`;
+all attributes with a prefix of `"data-"` are also allowlisted.
 
 ### Mandatory text missing or incorrect
 
@@ -257,7 +253,7 @@ all attributes with a prefix of `"data-"` are also whitelisted.
 </table>
 
 CDATA is the content data between a start and end HTML tag
-and is currently evaluated with both whitelists and blacklists.
+and is currently evaluated with both allowlists and denylists.
 Tags with mandatory CDATA include:
 
 [sourcecode:html]
@@ -291,7 +287,7 @@ Detailed messages for this can be one of the following:
 <table>
    <tr>
   	<td class="col-thirty"><strong>Code</strong></td>
-  	<td>CDATA_VIOLATES_BLACKLIST</td>
+  	<td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Format</strong></td>
@@ -303,11 +299,11 @@ Detailed messages for this can be one of the following:
   </tr>
 </table>
 
-Specific CSS data has been blacklisted
+Specific CSS data has been denylisted
 to validate essential CSS AMP rules.
 
-The following is the list of blacklisted CSS data
-(see also [`blacklisted_cdata_regex` in the AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
+The following is the list of denylisted CSS data
+(see also [`disallowed_cdata_regex` in the AMP validator spec](https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii)):
 
 * `"\\.i?-amp-"` ("CSS -amp- class name prefix")
 * `"!important"`

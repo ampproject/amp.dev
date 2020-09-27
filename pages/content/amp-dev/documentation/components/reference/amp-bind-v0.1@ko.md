@@ -214,7 +214,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 
 * 식은 포함 문서의 [상태](#state)에만 액세스할 수 있습니다.
 * 식은 `window` 또는 `document`와 같은 전역에 액세스하지 **않습니다**.
-* [화이트리스트에 있는 함수](#white-listed-functions) 및 연산자만 사용할 수 있습니다.
+* [화이트리스트에 있는 함수](#allow-listed-functions) 및 연산자만 사용할 수 있습니다.
 * 맞춤형 함수, 클래스 및 루프는 일반적으로 허용되지 않습니다. 화살표 함수는 매개변수로서 허용됩니다(예: `Array.prototype.map`).
 * 정의되지 않은 변수 및 범위를 벗어난 배열-색인은 `undefined` 대신 `null`을 반환하거나 오류를 일으킵니다.
 * 성능을 위해 현재 단일 식의 피연산자는 50개로 제한됩니다. 이 개수가 사용 사례로 불충분한 경우 [Google에 문의](https://github.com/ampproject/amphtml/issues/new)하세요.
@@ -232,7 +232,7 @@ amp-bind는 AMP 페이지에서 속도, 보안 및 성능을 보장하기 위해
 null || 'default' // 'default'
 ```
 
-# 화이트리스트에 있는 함수 <a name="white-listed-functions"></a>
+# 화이트리스트에 있는 함수 <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -601,7 +601,7 @@ null || 'default' // 'default'
   <tr>
     <td>화이트리스트에 없는 기능</td>
     <td><em>경고는 지원되는 기능이 아닙니다.</em></td>
-    <td><a href="#white-listed-functions">화이트리스트에 있는 기능</a>만 사용합니다.</td>
+    <td><a href="#allow-listed-functions">화이트리스트에 있는 기능</a>만 사용합니다.</td>
   </tr>
   <tr>
     <td>검사를 거친 결과</td>

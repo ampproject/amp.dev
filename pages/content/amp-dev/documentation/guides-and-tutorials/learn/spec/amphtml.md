@@ -1,6 +1,6 @@
 ---
 $title: AMP HTML Specification
-order: 3
+order: 8
 formats:
   - websites
 teaser:
@@ -42,9 +42,7 @@ AMP HTML is a subset of HTML for authoring content pages such as news articles i
 Being a subset of HTML, it puts some restrictions on the full set of tags and functionality available through HTML but it does not require the development of new rendering engines: existing user agents can render AMP HTML just like all other HTML.
 
 [tip type="read-on"]
-
 If you're primarily interested in what's allowed in AMP and what isn't, watch our [primer video on AMP's limitations](https://www.youtube.com/watch?v=Gv8A4CktajQ).
-
 [/tip]
 
 Also, AMP HTML documents can be uploaded to a web server and served just like any other HTML document; no special configuration for the server is necessary. However, they are also designed to be optionally served through specialized AMP serving systems that proxy AMP documents. These documents serve them from their own origin and are allowed to apply transformations to the document that provide additional performance benefits. An incomplete list of optimizations such a serving system might do is:
@@ -380,8 +378,6 @@ In the following examples `<property>` needs to be in the white list above.
 - `transition <property>` (also -vendorPrefix-transition)
 - `@keyframes name { from: {<property>: value} to {<property: value>} }` (also `@-vendorPrefix-keyframes`)
 
-`overflow` (and `overflow-y`, `overflow-x`) may not be styled as “auto” or “scroll”. No user defined element in an AMP document may have a scrollbar.
-
 #### Maximum size <a name="maximum-size"></a>
 
 It is a validation error if the author stylesheet or inline styles together are larger than 75,000 bytes.
@@ -428,7 +424,7 @@ Font providers can be white listed if they support CSS-only integrations and ser
 
 - Fonts.com: `https://fast.fonts.net`
 - Google Fonts: `https://fonts.googleapis.com`
-- Font Awesome: `https://maxcdn.bootstrapcdn.com`
+- Font Awesome: `https://maxcdn.bootstrapcdn.com, https://use.fontawesome.com`
 - [Typekit](https://helpx.adobe.com/typekit/using/google-amp.html): `https://use.typekit.net/kitId.css` (replace `kitId` accordingly)
 
 IMPLEMENTERS NOTE: Adding to this list requires a change to the AMP Cache CSP rule.

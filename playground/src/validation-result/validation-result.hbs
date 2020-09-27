@@ -1,0 +1,24 @@
+{{#unless active}}
+<p>Tip: The AMP Validator can be accessed directly from your browser's toolbar using the <a href="https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc" target="_blank" rel="noopener">chrome extension</a>. As you browse, it will automatically validate each AMP page visited and give a visual indication of your page's validity.</p>
+{{/unless}}
+
+{{#if active}}
+{{#if passed}}
+<div class="validation-result-card">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs/><path fill="#00CD3C" fill-rule="evenodd" d="M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0zm8.019 13.437c-.753-.601-1.883-.601-2.51.12l-8.407 9.39-3.011-3.37c-.627-.723-1.757-.843-2.51-.121-.752.602-.752 1.805-.125 2.527l4.266 4.815c.251.361.753.602 1.255.602l.167-.009c.445-.046.878-.272 1.213-.593l9.787-10.833c.627-.722.627-1.805-.125-2.528z"/></svg>
+  <div>
+    <h2>Well done. Your page is AMP valid.<br>Validation Status: <strong class="valid">PASS</strong>.</h2>
+    <p>Review our <a href="https://go.amp.dev/publishing-checklist" target="_blank" rel="noopener">publishing checklist</a> to ensure successful AMP document distribution.</p>
+  </div>
+</div>
+{{/if}}
+{{#unless passed}}
+<div class="validation-result-card invalid">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs/><path fill="#EF0000" fill-rule="evenodd" d="M5.858 5.858c7.81-7.81 20.474-7.81 28.284 0 7.81 7.81 7.81 20.474 0 28.284-7.81 7.81-20.474 7.81-28.284 0-7.81-7.81-7.81-20.474 0-28.284zm21.213 4.42l-7.07 7.07-7.072-7.07-2.652 2.65L17.347 20l-7.07 7.072 2.652 2.652 7.07-7.072 7.072 7.072 2.652-2.652L22.652 20l7.07-7.071-2.65-2.652z"/></svg>
+  <div>
+    <h2>Sorry, your page is not AMP valid.<br>Validation Status: <strong class="invalid">FAIL</strong>.</h2>
+    <p>To better understand the complete list of potential errors, learn more about the errors in the <a href="https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors/" target="_blank" rel="noopener">AMP validation errors guide</a>.</p>
+  </div>
+</div>
+{{/unless}}
+{{/if}}

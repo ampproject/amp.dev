@@ -79,8 +79,8 @@ Displaying an AMP story in a non-AMP page requires the use of the [`amp-story-pl
 Include the two required scripts in the head of your document:
 
 ```html
-<script async src="https://cdn.ampproject.org/amp-story-player-v0.js">
-<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel='stylesheet' type='text/css'>
+<script async src="https://cdn.ampproject.org/amp-story-player-v0.js"></script>
+<link href="https://cdn.ampproject.org/amp-story-player-v0.css" rel="stylesheet" type="text/css">
 ```
 
 The first script imports the logic for the player and the second one sets the default styling.  

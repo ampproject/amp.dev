@@ -7,16 +7,53 @@
   <ul class="ap-o-mini-card-list">
     <li class="ap-o-mini-card-list-item">
       <div class="ap-m-mini-card">
-        <amp-img
-          alt="Author avatar"
-          src="https://github.com/{{ doc.author }}.png?size=38"
-          width="38"
-          height="38"
-          class="large"
-          style="max-width: 38px"
-          layout="responsive">
-        </amp-img>
-        <span><strong>Written by <a href="https://github.com/{{ doc.author }}" rel="nofollow" target="_blank">@{{ doc.author }}</a></strong>{% if doc.contributors %}<br><small>with contributions from {% for contributor in doc.contributors %}{% if loop.last and not loop.first %}and {% endif %}<strong><a href="https://github.com/{{ contributor }}" rel="nofollow" target="_blank">{{ contributor }}</a></strong>{% if loop.last %}.{% else %}, {% endif %}{% endfor %}</small>{% endif %}</span>
+        {% set authors = doc.author if doc.author is iterable and doc.author is not string else [doc.author] %}
+        {% for author in authors %}
+          <amp-img
+            alt="Author avatar"
+            src="https://github.com/{{ author }}.png?size=38"
+            width="38"
+            height="38"
+            class="large"
+            style="max-width: 38px"
+            layout="responsive">
+          </amp-img>
+        {% endfor %}
+
+        <span>
+          <strong>Written by 
+          {% for author in authors %}
+            <a href="https://github.com/{{ author }}" rel="nofollow" target="_blank">
+              @{{ author }}
+            </a>
+          {% if doc.author|length == 2 and loop.first %}
+           and 
+          {% elif doc.author|length != 2 and not loop.last %}
+          , 
+          {% endif %}
+          {% endfor %}
+          </strong>
+
+          {% if doc.contributors %}
+          <br>
+          <small>
+            with contributions from 
+            {% for contributor in doc.contributors %}
+            <strong>
+              <a href="https://github.com/{{ contributor }}" rel="nofollow" target="_blank">
+                @{{ contributor }}
+              </a>
+            </strong>
+            {% if doc.contributors|length == 2 and loop.first%}
+             and 
+            {% elif doc.contributors|length != 2 and not loop.last %}
+            , 
+            {% endif %}
+            {% endfor %}
+          </small>
+        {% endif %}
+        </span>
+
       </a>
     </li>
     {% if doc.translator %}

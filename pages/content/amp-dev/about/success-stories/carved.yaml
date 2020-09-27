@@ -8,8 +8,8 @@ formats:
 teaser:
   image:
     src: '/static/img/success-stories/carved/teaser_carved.jpg'
-    width: 1
-    height: 1
+    width: 230
+    height: 230
     alt: Carved
   logo:
     src: '/static/img/success-stories/carved/carved_logo.png'
@@ -24,8 +24,8 @@ stage:
   layout: mobile
   devices:
     - image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
-      width: 3
-      height: 5
+      width: 120
+      height: 200
       type: mobile
       alt: Carved
 
@@ -47,8 +47,8 @@ contents:
 
   - layout: text-media
     image_src: '/static/img/success-stories/carved/amp_carved_1.jpg'
-    width: 3
-    height: 5
+    width: 120
+    height: 200
     type: mobile
     alt: Carved
     headline: Solution
@@ -57,8 +57,8 @@ contents:
 
   - layout: text-button
     image_src: '/static/img/success-stories/carved/amp_carved_2.jpg'
-    width: 3
-    height: 5
+    width: 120
+    height: 200
     type: mobile
     alt: Carved
     background: gradient

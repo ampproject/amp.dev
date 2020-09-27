@@ -6,7 +6,7 @@ description: Whenever you create an AMP page, you should always validate that yo
 author: bpaduch
 ---
 
-Whenever you create an AMP page, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate your AMP pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md).  In this tutorial, we'll enable the AMP Validator by turning on the developer mode.  To turn on the developer mode, add the following fragment identifier to your URL and reload the page:
+Because Web Stories are built with AMP, you should always validate that your AMP HTML is correct. There are [several methods that you can use to validate AMP pages](../../../../documentation/guides-and-tutorials/learn/validation-workflow/validate_amp.md). In this tutorial, we'll enable the AMP Validator by turning on the developer mode.  To turn on the developer mode, add the following fragment identifier to your URL and reload the page:
 
 ```text
 #development=1

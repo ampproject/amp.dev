@@ -24,6 +24,7 @@ const config = require('./config.js');
 const {pagePath} = require('@lib/utils/project');
 const log = require('@lib/utils/log')('Platform');
 const subdomain = require('./middleware/subdomain.js');
+const webSocketServer = require('@examples/socket-server/socket-server');
 
 const routers = {
   boilerplate: require('../../boilerplate/backend/'),
@@ -44,9 +45,11 @@ const routers = {
   notFound: require('@lib/routers/notFound.js'),
   packager: require('@lib/routers/packager.js'),
   playground: require('../../playground/backend/'),
+  pixi: require('../../pixi/backend/'),
   search: require('@lib/routers/search.js'),
   static: require('@lib/routers/static.js'),
   templates: require('@lib/routers/templates.js'),
+  thumbor: require('@lib/routers/thumbor.js'),
   whoAmI: require('@lib/routers/whoAmI.js'),
 };
 
@@ -63,6 +66,9 @@ class Platform {
           log.success(`server listening on ${PORT}!`);
           resolve();
         });
+
+        webSocketServer.start(this.httpServer);
+
         // Increase keep alive timeout
         // see https://cloud.google.com/load-balancing/docs/https/#timeouts_and_retries
         this.httpServer.keepAliveTimeout = 700 * 1000;
@@ -160,9 +166,11 @@ class Platform {
 
   _configureRouters() {
     this.server.use(routers.packager);
+    this.server.use(routers.thumbor);
     this.server.use(routers.whoAmI);
     this.server.use(routers.healthCheck);
     this.server.use(routers.example.api);
+    this.server.use(routers.pixi);
     this.server.use(routers.search);
     this.server.use(routers.boilerplate);
     this.server.use(routers.static);

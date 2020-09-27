@@ -261,7 +261,7 @@ author: sebastianbenz
 
     With [`amp-bind`](https://github.com/ampproject/amphtml/blob/master/extensions/amp-bind/amp-bind.md) it's possible to link carousel state across multiple `amp-carousels`. Whenever the carousel slide changes, it updates `selectedSlide`. This causes the `text` attribute in the `<p>` tag above the carousel to update as well.
 
-    Only [whitelisted functions](/documentation/components/amp-bind#white-listed-functions) are allowed when using `amp-bind`. We use the unary plus operator before `selectedSlide` to cast it into an integer.
+    Only [allowlisted functions](/documentation/components/amp-bind#allow-listed-functions) are allowed when using `amp-bind`. We use the unary plus operator before `selectedSlide` to cast it into an integer.
   -->
   <div>
     <p>Selected slide: <span [text]="+selectedSlide + 1">1</span>/3</p>

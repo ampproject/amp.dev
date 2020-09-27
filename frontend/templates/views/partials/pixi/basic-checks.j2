@@ -1,0 +1,39 @@
+{% do doc.styles.addCssFile('css/components/organisms/pixi-basic-checks.css') %}
+
+<div>
+  <aside class="ap-a-pixi-stripes"></aside>
+  <div class="ap-o-pixi-basic-checks">
+      {% with basic_metric = {
+        'id': 'safe-browsing',
+        'title': pixi.staticText.additionalChecks.safeBrowsing,
+        'invert_tooltip': true
+      }%}
+      {% include 'views/partials/pixi/basic-metric.j2' %}
+      {% endwith %}
+
+      {% with basic_metric = {
+        'id': 'https',
+        'title': pixi.staticText.additionalChecks.https,
+        'invert_tooltip': true
+      }%}
+      {% include 'views/partials/pixi/basic-metric.j2' %}
+      {% endwith %}
+
+      {% with basic_metric = {
+        'id': 'mobile-friendliness',
+        'title': pixi.staticText.additionalChecks.mobileFriendliness,
+        'invert_tooltip': false
+      }%}
+      {% include 'views/partials/pixi/basic-metric.j2' %}
+      {% endwith %}
+
+      {% with basic_metric = {
+        'id': 'intrusive-interstitials',
+        'title': pixi.staticText.additionalChecks.intrusiveInterstitials,
+        'status': pixi.staticText.additionalChecks.checkManually,
+        'invert_tooltip': false
+      }%}
+      {% include 'views/partials/pixi/basic-metric.j2' %}
+      {% endwith %}
+  </div>
+</div>

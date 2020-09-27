@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
+import json
 import os
 import re
-import json
-from grow.pods.pods import Pod
+
 from grow.documents.document import Document
+from grow.pods.pods import Pod
 
 FIRST_SENTENCE_PATTERN = re.compile(
     # We also match markup [tag]...[/tag] blocks to skip them
@@ -55,6 +56,10 @@ class PageInfoCollector(object):
       page_infos = []
       for page_link in category_map.get(category):
         doc = self.pod.get_doc(page_link, locale.alias)
+
+        if not doc.exists:
+          raise Exception('Highlight "{}" defined in file {} does not exist. Maybe needs to be imported?'.format(page_link, self.input_file))
+
         description = PageInfoCollector.get_page_description(doc)
         title = doc.title
 

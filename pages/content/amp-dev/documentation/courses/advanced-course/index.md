@@ -33,7 +33,7 @@ In the final course in this series, we’re going to learn how to change the app
 
 * Dynamically change the content on screen (i.e., filtering and sorting data).
 
-{{ image('/static/img/courses/advanced/image2.png', 744, 1328, align='center third', caption='Our Chico’s Cheese Bikes Site So Far') }}
+{{ image('/static/img/courses/advanced/image2.png', 225, 402, align='center third', caption='Our Chico’s Cheese Bikes Site So Far') }}
 
 {{ image('/static/img/courses/advanced/image10.png', 738, 1324, align='center third', caption='Site With Menu Opened') }}
 
@@ -71,7 +71,7 @@ If any of these topics are unfamiliar, we suggest reviewing the material from th
 
 ## Getting Set Up
 
-In this course, we will continue using [Glitch](https://glitch.com/) to complete our programming exercises. If you completed the beginner and/or intermediate courses, you can continue to use the same Glitch repository to complete the advanced tutorial. If you did not complete the beginner training or if you’d like to start from a new Glitch repository, you can remix [this](https://glitch.com/~enshrined-eyebrow) one, which has all of the code from the intermediate training already implemented. If you would like to learn more about Glitch, you can read about it in the [appendix](appendix.md).
+In this course, we will continue using <a href="https://glitch.com/" target="_blank">Glitch</a> to complete our programming exercises. If you completed the beginner and/or intermediate courses, you can continue to use the same Glitch repository to complete the advanced tutorial. If you did not complete the beginner training or if you’d like to start from a new Glitch repository, you can remix <a href="https://glitch.com/~enshrined-eyebrow" target="_blank">this one</a>, which has all of the code from the intermediate training already implemented. If you would like to learn more about Glitch, you can read about it in the [appendix](appendix.md).
 
 This course will also require the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. Writing valid AMP pages is an important part of getting AMP’s full performance benefits. The validator is primarily accessed via a Chrome extension. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 
@@ -128,7 +128,7 @@ If any of these topics are unfamiliar, we suggest reviewing the material from th
 
 ## Getting Set Up
 
-In this course, we will continue using [Glitch](https://glitch.com/) to complete our programming exercises. If you completed the beginner and/or intermediate courses, you can continue to use the same Glitch repository to complete the advanced tutorial. If you did not complete the beginner training or if you'd like to start from a new Glitch repository, you can remix [this](https://glitch.com/~enshrined-eyebrow) one, which has all of the code from the intermediate training already implemented. If you would like to learn more about Glitch, you can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/advanced-course/appendix.md', locale=doc.locale).url.path}}).
+In this course, we will continue using <a href="https://glitch.com/" target="_blank">Glitch</a> to complete our programming exercises. If you completed the beginner and/or intermediate courses, you can continue to use the same Glitch repository to complete the advanced tutorial. If you did not complete the beginner training or if you'd like to start from a new Glitch repository, you can remix <a href="https://glitch.com/~enshrined-eyebrow" target="_blank">this one</a>, which has all of the code from the intermediate training already implemented. If you would like to learn more about Glitch, you can read about it in the [appendix]({{g.doc('/content/amp-dev/documentation/courses/advanced-course/appendix.md', locale=doc.locale).url.path}}).
 
 This course will also require the AMP Validator. The AMP Validator is a tool for detecting errors in our AMP pages. Writing valid AMP pages is an important part of getting AMP's full performance benefits. The validator is primarily accessed via a Chrome extension. To install the Chrome extension, visit this link [here](https://chrome.google.com/webstore/detail/amp-validator/nmoffdblmcmgeicmolmhobpoocbbmknc/related?hl=en).
 

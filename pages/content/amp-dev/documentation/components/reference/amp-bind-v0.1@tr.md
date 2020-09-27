@@ -217,7 +217,7 @@ Belirli etkinlikler tarafından tetiklendiğinde, `AMP.setState()`, `event` öze
 
 * İfadeler yalnızca ifadeleri içeren dokümanın [durumuna](#state) erişebilir.
 * İfadeler, `window` veya `document` gibi genel öğelere **erişmez**.
-* Yalnızca [beyaz listedeki işlevler](#white-listed-functions) ve operatörler kullanılabilir.
+* Yalnızca [beyaz listedeki işlevler](#allow-listed-functions) ve operatörler kullanılabilir.
 * Özel işlevlere, sınıflara ve döngülere genellikle izin verilmez. Ok işlevlerine parametre olarak izin verilir; ör. `Array.prototype.map`.
 * Tanımlanmamış değişkenler ve sınırların dışındaki dizi dizini `undefined` değeri döndürmek veya hata bildirmek yerine `null` değerini döndürür.
 * Performans açısından şu anda tek bir ifade 50 öğe ile sınırlanmıştır. Sizin kullanım alanınız için bu sayı yeterli değilse lütfen [bize ulaşın](https://github.com/ampproject/amphtml/issues/new).
@@ -235,7 +235,7 @@ Aşağıdaki ifadelerin tümü geçerlidir:
 null || 'default' // 'default'
 ```
 
-# Beyaz listedeki işlevler <a name="white-listed-functions"></a>
+# Beyaz listedeki işlevler <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -609,7 +609,7 @@ Geliştirme modunda, `amp-bind`, tanımlanmamış değişkenleri veya özellikle
   <tr>
     <td>Beyaz listede yer almayan işlevler</td>
     <td><em>uyarı desteklenen bir işlev değildir.</em></td>
-    <td>Yalnızca <a href="#white-listed-functions">beyaz listedeki işlevleri</a> kullanın.</td>
+    <td>Yalnızca <a href="#allow-listed-functions">beyaz listedeki işlevleri</a> kullanın.</td>
   </tr>
   <tr>
     <td>Temizlenmiş sonuç</td>

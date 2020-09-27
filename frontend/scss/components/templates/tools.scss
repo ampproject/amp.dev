@@ -101,7 +101,7 @@ section.#{utility('tools')} {
     }
   }
 
-  .#{molecule('filter-bubble')} {
+  .#{atom('pill')} {
     position: relative;
     display: inline-block;
     padding: 5px 20px;
@@ -156,7 +156,7 @@ section.#{utility('tools')} {
       vertical-align: middle;
     }
 
-    &-link {
+    &-text {
       margin-right: 8px;
     }
 

@@ -7,7 +7,7 @@ formats:
   - stories
   - ads
 teaser:
-  text: '## Overview'
+  text: ' Overview'
 ---
 
 <!--
@@ -179,6 +179,26 @@ In the following example, if the viewport is wider than `320px`, the image will 
 </amp-img>
 [/sourcecode]
 
+### `disable-inline-width` <a name="disable-inline-width"></a>
+
+The `sizes` attribute on its own will set an inline `width` style on the element. When pairing `disable-inline-width` with `sizes`, the AMP element will propagate the value of `sizes` to the element's underlying tag, as with the `img` nested inside an `amp-img`, **without** setting the inline `width` as `sizes` typically does on its own in AMP.
+
+**Example**: Using the `disable-inline-width` attribute
+
+In the following example, the width of the `<amp-img>` element is unaffected, and `sizes` is only used to select one of the sources from the `srcset`.
+
+[sourcecode:html]
+<amp-img
+  src="https://acme.org/image1.png"
+  width="400"
+  height="300"
+  layout="responsive"
+  sizes="(min-width: 320px) 320px, 100vw"
+  disable-inline-width
+>
+</amp-img>
+[/sourcecode]
+
 ### `heights` <a name="heights"></a>
 
 All AMP elements that support the `responsive` layout, also support the `heights` attribute.
@@ -251,7 +271,7 @@ The `fallback` attribute can be set on any HTML element, not just AMP elements. 
 
 ### `noloading` <a name="noloading"></a>
 
-The `noloading` attribute indicates whether the "loading indicator" should be turned off for this element. Many AMP elements are white-listed to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. The elements can opt out of this behavior by adding
+The `noloading` attribute indicates whether the "loading indicator" should be turned off for this element. Many AMP elements are allow-listed to show a "loading indicator", which is a basic animation that shows that the element has not yet fully loaded. The elements can opt out of this behavior by adding
 this attribute.
 
 ## (tl;dr) Summary of Layout Requirements & Behaviors <a name="tldr-summary-of-layout-requirements--behaviors"></a>

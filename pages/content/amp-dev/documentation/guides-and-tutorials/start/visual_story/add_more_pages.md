@@ -1,11 +1,11 @@
 ---
 $title: Adding more pages
 $order: 5
-description: 'Now that you are familiar with adding a page to an AMP story, adding the next pages in our "The Joy of Pets" story is very similar.'
+description: 'Now that you are familiar with adding a page to a Web Story, adding the next pages in our "The Joy of Pets" story is very similar.'
 author: bpaduch
 ---
 
-Now that you are familiar with adding a page to an AMP story, adding the next pages in our "The Joy of Pets" story is very similar. Based on the information provided below, **go ahead and create the remaining pages** by using what you've learned so far.  If you get stuck, look at the completed (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) code.
+Now that you are familiar with adding a page to a Web Story, adding the next pages in our "The Joy of Pets" story is very similar. Based on the information provided below, **go ahead and create the remaining pages** by using what you've learned so far.  If you get stuck, look at the completed (<a href="https://github.com/ampproject/docs/blob/master/tutorial_source/amp-pets-story/pets-completed.html">pets-completed.html</a>) code.
 
 [tip type="tip"]
 **TIP –** Remember that each page needs a unique "id" attribute (e.g., `id="page1"`).

@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,11 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import {Base64} from 'js-base64';
 import * as PlaygroundDocument from './document.js';
 import * as Button from '../button/button.js';
 
 import navigationWarning from '../navigation-warning/navigation-warning.js';
-import embedMode from '../embed-mode/';
+import modes from '../modes/';
 import params from '../params/base.js';
 import events from '../events/events.js';
 import snackbar from '../snackbar/base.js';
@@ -63,11 +64,15 @@ export default class DocumentController {
   _setupDocument(runtime) {
     this.docUrl = params.get('url');
     this.docId = this._getDocumentId();
+    const docHash = params.getHash('share');
     let promise;
     if (this.docUrl) {
       promise = this.srcDoc.fetchUrl(this.docUrl);
     } else if (this.docId) {
       promise = this.srcDoc.fetchDocument(this.docId);
+    } else if (docHash) {
+      promise = Promise.resolve(Base64.decode(docHash));
+      this.win.location.hash = '';
     } else {
       promise = Promise.resolve(runtime.template);
     }
@@ -175,14 +180,14 @@ export default class DocumentController {
   }
 
   _stateDirty() {
-    if (!embedMode.isActive) {
+    if (!modes.IS_EMBED) {
       navigationWarning.enable();
     }
     this.saveButton.show().setHtml('Save').enable();
   }
 
   _stateReadOnly() {
-    if (!embedMode.isActive) {
+    if (!modes.IS_EMBED) {
       navigationWarning.enable();
     }
     this.saveButton.hide().disable();

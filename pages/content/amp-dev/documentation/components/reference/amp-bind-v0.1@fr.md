@@ -217,7 +217,7 @@ Les expressions sont semblables à JavaScript, avec toutefois quelques différen
 
 * Les expressions peuvent uniquement accéder à l'[état](#state) du document conteneur.
 * Les expressions n'ont **pas** accès à des données globales telles que `window` ou `document`.
-* Seuls les opérateurs et les [fonctions sur liste blanche](#white-listed-functions) peuvent être utilisés.
+* Seuls les opérateurs et les [fonctions sur liste blanche](#allow-listed-functions) peuvent être utilisés.
 * En règle générale, les fonctions, classes et boucles personnalisées ne sont pas autorisées. Les fonctions fléchées sont autorisées en tant que paramètres ; `Array.prototype.map`, par exemple.
 * Les variables non définies et les exceptions array-index-out-of-bounds renvoient la valeur `null` au lieu de renvoyer `undefined` ou de générer des erreurs.
 * Une expression unique est actuellement limitée à 50 opérandes afin d'optimiser les performances. N'hésitez pas à [nous contacter](https://github.com/ampproject/amphtml/issues/new) si cela s'avère insuffisant dans votre cas.
@@ -235,7 +235,7 @@ Toutes les expressions suivantes sont valides :
 null || 'default' // 'default'
 ```
 
-# Fonctions sur liste blanche <a name="white-listed-functions"></a>
+# Fonctions sur liste blanche <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -611,7 +611,7 @@ Plusieurs types d'erreurs d'exécution peuvent se produire lors de l'utilisation
   <tr>
     <td>Fonctions ne figurant pas sur liste blanche</td>
     <td><em>alert is not a supported function.</em></td>
-    <td>Utilisez uniquement des <a href="#white-listed-functions">fonctions sur liste blanche</a>.</td>
+    <td>Utilisez uniquement des <a href="#allow-listed-functions">fonctions sur liste blanche</a>.</td>
   </tr>
   <tr>
     <td>Résultat expurgé</td>

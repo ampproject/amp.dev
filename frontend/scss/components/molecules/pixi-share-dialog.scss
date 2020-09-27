@@ -1,0 +1,80 @@
+@import '_extends.scss';
+@import '_functions.scss';
+@import '_mixins.scss';
+@import '_variables.scss';
+@import 'components/atoms/_button.scss';
+
+.#{molecule('share-dialog ')} {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  background: transparentize(safeColor('black'), 0.2);
+
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
+  &-container {
+    position: relative;
+    height: 100%;
+    width: 90%;
+    max-width: 810px;
+    padding: 120px 20px;
+    border-radius: 4px;
+    background: safeColor('white');
+
+    @media (min-width: 768px) {
+      height: auto;
+      padding: 34px 60px;
+    }
+
+    h2 {
+      margin-top: 70px;
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
+    }
+
+    &-textarea {
+      resize: none;
+      width: 100%;
+      margin: 10px 0 20px;
+      padding: 10px 15px;
+      border: 1px solid safeColor('light-gray');
+      border-radius: 4px;
+      font-family: Noto Sans;
+      color: safeColor('light-gray');
+    }
+
+    &-copy-button {
+      margin-left: -7px;
+    }
+
+    &-close {
+      @include unset-button;
+      position: absolute;
+      top: 130px;
+      right: 20px;
+      width: 28px;
+      height: 28px;
+      padding: 5px;
+
+      @media (min-width: 768px) {
+        top: 36px;
+        right: 25px;
+      }
+
+      svg {
+        fill: safeColor('blue');
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

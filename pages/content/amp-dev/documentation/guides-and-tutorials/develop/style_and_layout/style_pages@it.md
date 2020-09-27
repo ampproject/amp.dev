@@ -100,7 +100,7 @@ Gli stili che seguono non sono consentiti nelle pagine AMP:
 AMP consente soltanto le proprietà di transizioni e animazioni che è possibile sottoporre ad accelerazione GPU nei browser più comuni.
 Il progetto AMP autorizza attualmente le proprietà `opacity`, `transform` e `-vendorPrefix-transform`.
 
-Negli esempi seguenti, `<property>` deve essere nella whitelist:
+Negli esempi seguenti, `<property>` deve essere nella allowlist:
 
 * `transition <property> (Also -vendorPrefix-transition)`
 * @ `@keyframes name { from: {<property>: value} to {<property: value>} } (also @-vendorPrefix-keyframes)`

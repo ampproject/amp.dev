@@ -234,7 +234,7 @@ limitations under the License.
 <table>
    <tr>
   	<td class="col-thirty"><strong>الشفرة</strong></td>
-  	<td>CDATA_VIOLATES_BLACKLIST</td>
+  	<td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>التنسيق</strong></td>
@@ -250,7 +250,7 @@ limitations under the License.
 للتحقق من صحة قواعد CSS AMP الأساسية.
 
 في ما يلي قائمة بيانات CSS المدرجة بالقائمة السوداء
-(راجع أيضًا <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`blacklisted_cdata_regex` في مواصفات أداة التحقق من صحة صفحات AMP</a>):
+(راجع أيضًا <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` في مواصفات أداة التحقق من صحة صفحات AMP</a>):
 
 * ‎`"\\.i?-amp-"` ("CSS -amp- class name prefix"‎)‎
 * `"!important"`

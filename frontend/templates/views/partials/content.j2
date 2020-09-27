@@ -15,12 +15,13 @@
   {% do doc.styles.addCssFile('css/components/molecules/tip.css') %}
   [% set availableFormats = {{ doc.formats|tojson }} %]
   [% if not availableFormats.includes(format) %]
-  <div class="ap-m-tip ap-m-tip-important">
+  <div class="ap-m-tip">
+    <div class="ap-a-ico ap-m-tip-icon">
+      {% do doc.icons.useIcon('icons/warning-sign.svg') %}
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning-sign"></use></svg>
+    </div>
+
     <div class="ap-m-tip-content">
-      {% do doc.icons.useIcon('icons/warning.svg') %}
-      <div class="ap-a-ico ap-m-tip-icon">
-        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#warning"></use></svg>
-      </div>
       <p>{{ _('Important: this documentation is not applicable to your currently selected format') }} <b>[= format =]</b>!</p>
     </div>
   </div>
@@ -28,9 +29,8 @@
   {% endif %}
 
   {% if doc.title and doc.view in ['/views/detail/component-detail.j2'] %}
-  {% include '/views/partials/version-toggle.j2' %}
+  {% include '/views/partials/component-headline.j2' %}
 
-  {% do doc.styles.addCssFile('css/components/organisms/component-intro.css') %}
   {% include '/views/partials/component-intro.j2' %}
   {% endif %}
 

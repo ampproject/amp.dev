@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -148,14 +148,17 @@ class TemplateDialog {
 
   selectTemplatesForRuntime(sitemap) {
     let templates = null;
-    if (this.runtime.id === 'amphtml') {
-      templates = sitemap['websites'];
-    } else if (this.runtime.id === 'amp4ads') {
-      templates = sitemap['ads'];
-    } else if (this.runtime.id === 'amp4stories') {
-      templates = sitemap['stories'];
-    } else if (this.runtime.id === 'amp4email') {
-      templates = sitemap['email'];
+
+    if (sitemap) {
+      if (this.runtime.id === 'amphtml') {
+        templates = sitemap['websites'];
+      } else if (this.runtime.id === 'amp4ads') {
+        templates = sitemap['ads'];
+      } else if (this.runtime.id === 'amp4stories') {
+        templates = sitemap['stories'];
+      } else if (this.runtime.id === 'amp4email') {
+        templates = sitemap['email'];
+      }
     }
 
     if (templates && templates.categories && templates.categories.length) {

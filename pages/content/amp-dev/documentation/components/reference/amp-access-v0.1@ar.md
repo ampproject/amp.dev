@@ -222,7 +222,7 @@ limitations under the License.
     "namespace": value
   },
   ...
-[
+]
 </script>
 
 ```

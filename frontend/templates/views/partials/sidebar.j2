@@ -3,7 +3,45 @@
 {% else %}
 {% do doc.styles.addCssFile('css/components/organisms/sidebar-default.css') %}
 {% endif %}
-{% do doc.amp_dependencies.add('amp-sidebar', '0.1') %}
+
+{% macro components_sidebar() %}
+{% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
+{% set scope = namespace(initial=components[0].title[4]) %}
+<ul class="nav-list level-1">
+  <li class="nav-item level-1">
+    <ul class="nav-list level-2">
+      <li class="nav-link">{{ scope.initial|upper }}</li>
+      {% for component in components if component.is_current %}
+
+      {% set initial = component.title[4] %}
+      {% if scope.initial != initial %}
+      {% set scope.initial = initial %}
+    </ul>
+  </li>
+  <li class="nav-item level-1">
+    <ul class="nav-list level-2">
+      <li class="nav-link">{{ scope.initial|upper }}</li>
+      {% endif %}
+      [% set active = requestPath == '{{ component.url.path }}' %]
+      {# The latest document might not support a format, hence we have to check if any version supports a format #}
+      {% set formats = [component.formats] %}
+      {% if component.versions|count > 1 %}
+      {% for version in component.versions %}
+      {% set versionDoc = g.doc('/content/amp-dev/documentation/components/reference/' + component.title + '-v' + version + '.md') %}
+      {% do formats.append(versionDoc.formats) %}
+      {% endfor %}
+      {% endif %}
+
+      [% if format in {{ formats|sum(start=[])|unique|list|tojson }} %]
+      <li class="nav-item level-2 [% if active %]active[% endif %]" [% if active %]autoscroll[% endif %]>
+        <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
+      </li>
+      [% endif %]
+      {% endfor %}
+    </ul>
+  </li>
+</ul>
+{% endmacro %}
 
 <amp-sidebar id="sidebar-left"
   class="ap--ampsidebar"
@@ -55,43 +93,13 @@
 
           {# Custom content for component-sidebar #}
           {% elif type == 'component' %}
-            {% set components = g.collection('/content/amp-dev/documentation/components/reference').list_docs(locale=doc.locale) %}
-            {% set scope = namespace(initial=components[0].title[4]) %}
-            <ul class="nav-list level-1">
-              <li class="nav-item level-1">
-                <ul class="nav-list level-2">
-                  <li class="nav-link">{{ scope.initial|upper }}</li>
-                  {% for component in components if component.is_current %}
-
-                  {% set initial = component.title[4] %}
-                  {% if scope.initial != initial %}
-                  {% set scope.initial = initial %}
-                </ul>
-              </li>
-              <li class="nav-item level-1">
-                <ul class="nav-list level-2">
-                  <li class="nav-link">{{ scope.initial|upper }}</li>
-                  {% endif %}
-                  {% set activeDocument = true if component.url == doc.url %}
-                  {# The latest document might not support a format, hence we have to check if any version supports a format #}
-                  {% set formats = [component.formats] %}
-                  {% if component.versions|count > 1 %}
-                  {% for version in component.versions %}
-                  {% set versionDoc = g.doc('/content/amp-dev/documentation/components/reference/' + component.title + '-v' + version + '.md') %}
-                  {% do formats.append(versionDoc.formats) %}
-                  {% endfor %}
-                  {% endif %}
-
-                  [% if format in {{ formats|sum(start=[])|unique|list|tojson }} %]
-                  <li class="nav-item{{ ' active' if activeDocument }} level-2"{{ ' autoscroll' if activeDocument }}>
-                    <a class="nav-link" href="{{ component.url.path }}">{{ component.title }}</a>
-                  </li>
-                  [% endif %]
-                  {% endfor %}
-                </ul>
-              </li>
-            </ul>
-
+          {% set sidebar_cache_key = 'components_sidebar' + doc.locale.get_language_name() %}
+          {% if not doc.pod.amp_dev.template_cache.get(sidebar_cache_key) %}
+          {% do doc.pod.amp_dev.template_cache.add(sidebar_cache_key, components_sidebar()) %}
+          {{ components_sidebar() }}
+          {% else %}
+          {{ doc.pod.amp_dev.template_cache.get(sidebar_cache_key)|safe }}
+          {% endif %}
           {# Content for default sidebar #}
           {% else %}
 

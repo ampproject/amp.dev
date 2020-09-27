@@ -217,7 +217,7 @@ Las expresiones son similares a JavaScript, con algunas diferencias importantes.
 
 * Las expresiones solo pueden acceder al [estado](#state) del documento al que pertenecen.
 * Las expresiones ****no tienen acceso a variables globales como `window` o `document`.
-* Solo se pueden utilizar [los operadores y las funciones incluidos en la lista blanca](#white-listed-functions).
+* Solo se pueden utilizar [los operadores y las funciones incluidos en la lista blanca](#allow-listed-functions).
 * Por lo general, no se admiten las funciones, las clases ni los bucles personalizados. Se admiten las funciones de flecha como parámetros; por ejemplo, `Array.prototype.map`.
 * Las variables no definidas y los índices de matriz fuera de límites devuelven `null` en lugar de `undefined` o de generar errores.
 * Actualmente, una expresión puede tener un máximo de 50 operandos por cuestiones de rendimiento. [Ponte en contacto con nosotros](https://github.com/ampproject/amphtml/issues/new) si esta cantidad no te resulta suficiente.
@@ -235,7 +235,7 @@ Las expresiones que aparecen a continuación son válidas:
 null || 'default' // 'default'
 ```
 
-# Funciones incluidas en la lista blanca <a name="white-listed-functions"></a>
+# Funciones incluidas en la lista blanca <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -607,7 +607,7 @@ Hay varios tipos de errores de tiempo de ejecución que se pueden encontrar al t
   <tr>
     <td>Funciones no incluidas en la lista blanca</td>
     <td><em>La función alert no es compatible.</em></td>
-    <td>Utiliza solo <a href="#white-listed-functions">funciones incluidas en la lista blanca</a>.</td>
+    <td>Utiliza solo <a href="#allow-listed-functions">funciones incluidas en la lista blanca</a>.</td>
   </tr>
   <tr>
     <td>Resultado depurado</td>

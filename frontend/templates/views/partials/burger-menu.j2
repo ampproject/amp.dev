@@ -1,11 +1,51 @@
 {% do doc.styles.addCssFile('/css/components/organisms/burger-menu.css') %}
-{% do doc.amp_dependencies.add('amp-bind', '0.1') %}
 
-{% macro active_class(search_path) -%}
-{% if doc.pod_path.startswith(search_path) %}ap-m-nav-link-active{% endif %}
-{%- endmacro %}
+{% macro burger() -%}
+{# Sections #}
+{# Top level sections, defined by their top collection and landing page #}
+{% set sections = [
+  (g.collection('/content/amp-dev/about/'), None),
+  (g.collection('/content/amp-dev/documentation/'), None),
+  (g.collection('/content/amp-dev/community/'), None),
+  (g.collection('/content/amp-dev/events/'), None),
+  ('external', (_('Blog'), 'https://blog.amp.dev')),
+  (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
+] %}
 
-<label class="ap-o-burger-menu-label" on="tap:AMP.setState({mainmenuopen: !mainmenuopen, noScrollState: !noScrollState})" [class]="mainmenuopen ? 'ap-o-burger-menu-label mainmenuopen' : 'ap-o-burger-menu-label'" for="burger-menu" tabindex="0" role="button" aria-label="{{ _('Burger Menu') }}">
+{% for section, homepage in sections %}
+<li class="ap-o-burger-menu-item">
+  {% if section == 'external' %}
+  <a class="ap-o-burger-menu-link ap-m-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
+  {% elif not section and homepage %}
+  <a class="ap-o-burger-menu-link ap-m-nav-link [% if requestPath == '{{ homepage.url.path }}' %]active[% endif %]" href="{{ homepage.url.path}}">
+    {{_(homepage.titles('navigation'))}}
+  </a>
+  {% else %}
+  <label class="ap-o-burger-menu-link ap-m-nav-link [% if requestPath.startsWith('{{ section.pod_path.replace('/content/amp-dev/', '/') }}') %]active[% endif %]">
+    {{_(section.title)}}
+  </label>
+  <input class="ap-o-burger-menu-item-trigger" type="checkbox" aria-label="{{ section.title }}" [% if requestPath.startsWith('{{ section.pod_path.replace('/content/amp-dev/', '/') }}') %]checked[% endif %]/>
+  {# The icons direction depends on the inputs checked state #}
+  <span class="nav-icon">
+    <svg class="ap-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
+  </span>
+
+  <ul class="ap-o-burger-menu-items">
+    {% for path in section.flyout %}
+    <li class="ap-o-burger-menu-item">
+      {% set second_level_doc = g.doc(path, locale=doc.locale) %}
+      <a class="ap-o-burger-menu-link ap-m-nav-link-2" href="{{ second_level_doc.url.path }}">
+        {{_(second_level_doc.titles('navigation'))}}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</li>
+{% endfor %}
+{% endmacro %}
+
+<label class="ap-o-burger-menu-label" on="tap:AMP.setState({mainmenuopen: !mainmenuopen, noScrollState: !noScrollState})" [class]="'ap-o-burger-menu-label ' + (mainmenuopen ? 'mainmenuopen ' : '')" for="burger-menu" tabindex="0" role="button" aria-label="{{ _('Burger Menu') }}">
   <div class="ap-a-ico ap-o-burger-menu-icon">
     {% do doc.icons.useIcon('/icons/menu.svg') %}
     <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu"></use></svg>
@@ -14,48 +54,15 @@
 
 <nav class="ap-o-burger-menu" [class]="mainmenuopen ? 'ap-o-burger-menu mainmenuopen' : 'ap-o-burger-menu'">
   <ul class="ap-o-burger-menu-items">
-    {# Sections #}
-    {# Top level sections, defined by their top collection and landing page #}
-    {% set sections = [
-      (g.collection('/content/amp-dev/about/'), None),
-      (g.collection('/content/amp-dev/documentation/'), None),
-      (g.collection('/content/amp-dev/community/'), None),
-      (g.collection('/content/amp-dev/events/'), None),
-      ('external', (_('Blog'), 'https://blog.amp.dev')),
-      (None, g.doc('/content/amp-dev/support/index.md', locale=doc.locale))
-    ] %}
+    {# Resources need to be added outside the cached partial #}
+    {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
 
-    {% for section, homepage in sections %}
-    <li class="ap-o-burger-menu-item">
-      {% if section == 'external' %}
-      <a class="ap-o-burger-menu-link ap-m-nav-link" href="{{ homepage[1] }}">{{ homepage[0] }}</a>
-      {% elif not section and homepage %}
-      <a class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(homepage.pod_path) }}" href="{{ homepage.url.path}}">
-        {{_(homepage.titles('navigation'))}}
-      </a>
-      {% else %}
-      <label class="ap-o-burger-menu-link ap-m-nav-link {{ active_class(section.pod_path) }}">
-        {{_(section.title)}}
-      </label>
-      <input class="ap-o-burger-menu-item-trigger" type="checkbox" aria-label="{{ section.title }}"/>
-      {# The icons direction depends on the inputs checked state #}
-      <span class="nav-icon">
-        {% do doc.icons.useIcon('icons/angle-down-solid.svg') %}
-        <svg class="ap-a-ico"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#angle-down-solid"></use></svg>
-      </span>
-
-      <ul class="ap-o-burger-menu-items">
-        {% for path in section.flyout %}
-        <li class="ap-o-burger-menu-item">
-          {% set second_level_doc = g.doc(path, locale=doc.locale) %}
-          <a class="ap-o-burger-menu-link ap-m-nav-link-2 {{ active_class(second_level_doc.pod_path) }}" href="{{ second_level_doc.url.path }}">
-            {{_(second_level_doc.titles('navigation'))}}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </li>
-    {% endfor %}
+    {% set burger_cache_key = 'burger' + doc.locale.get_language_name() %}
+    {% if not doc.pod.amp_dev.template_cache.get(burger_cache_key) %}
+    {% do doc.pod.amp_dev.template_cache.add(burger_cache_key, burger()) %}
+    {{ burger() }}
+    {% else %}
+    {{ doc.pod.amp_dev.template_cache.get(burger_cache_key)|safe }}
+    {% endif %}
   </ul>
 </nav>

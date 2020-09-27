@@ -24,6 +24,7 @@ const {Templates, createRequestContext} = require('@lib/templates/index.js');
 const AmpOptimizer = require('@ampproject/toolbox-optimizer');
 const CssTransformer = require('@lib/utils/cssTransformer');
 const pageCache = require('@lib/utils/pageCache');
+const imageOptimizer = require('@lib/utils/imageOptimizer');
 const HeadDedupTransformer = require('@lib/utils/HeadDedupTransformer');
 const signale = require('signale');
 const {promisify} = require('util');
@@ -176,6 +177,7 @@ function rewriteLinks(canonical, html, format, level) {
 const growPages = express.Router();
 
 const optimizer = AmpOptimizer.create({
+  imageOptimizer,
   transformations: [
     HeadDedupTransformer,
     ...AmpOptimizer.TRANSFORMATIONS_AMP_FIRST,
@@ -242,7 +244,20 @@ growPages.get(/^(.*\/)?([^\/\.]+|.+\.html|.*\/|$)$/, async (req, res, next) => {
 
   // Pipe the rendered template through the AMP optimizer
   try {
-    renderedTemplate = await optimizer.transformHtml(renderedTemplate);
+    const optimize = req.query.optimize !== 'false';
+    if (optimize) {
+      const experimentEsm = !!req.query.esm || false;
+      const preloadHeroImage =
+        req.query.hero === undefined ? true : !!req.query.hero;
+      const params = {
+        experimentEsm,
+        preloadHeroImage,
+      };
+      renderedTemplate = await optimizer.transformHtml(
+        renderedTemplate,
+        params
+      );
+    }
   } catch (e) {
     signale.error('[OPTIMIZER]', e);
   }

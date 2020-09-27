@@ -3,7 +3,7 @@ $order: 1
 $path: /documentation/guides-and-tutorials/start/visual_story/{base}.html
 $localization:
   path: /{locale}/documentation/guides-and-tutorials/start/visual_story/{base}.html
-$title@: Create your first AMP Story
+$title@: Create your first Web Story
 $title@es: Crear una historia AMP visual
 $title@id: Membuat artikel AMP visual
 $title@ja: ビジュアルに訴える AMP ストーリーを作成する

@@ -9,13 +9,13 @@ formats:
 teaser:
   image:
     src: '/static/img/success-stories/washington_post/teaser_washington_post.jpg'
-    width: 1
-    height: 1
+    width: 240 
+    height: 240
     alt: Washington Post
   logo:
     src: '/static/img/success-stories/washington_post/washington_post_logo.png'
-    width: 1280
-    height: 197
+    width: 100
+    height: 30
     alt: Washington Post
   text: AMP helps the Washington Post increase returning users from mobile search by 23%
 
@@ -26,8 +26,8 @@ stage:
   subline: OCTOBER 7, 2016
   devices:
     - image_src: '/static/img/success-stories/washington_post/amp_thewashingtonpost.jpg'
-      width: 3
-      height: 5
+      width: 120
+      height: 200
       type: mobile
       alt: Washington Post
 
@@ -45,8 +45,8 @@ contents:
 
   - layout: text-media
     image_src: '/static/img/success-stories/washington_post/amp_thewashingtonpost.jpg'
-    width: 3
-    height: 5
+    width: 120
+    height: 200
     type: mobile
     alt: Washington Post
     text: With nearly 55% of their traffic coming from mobile devices, The Washington Post knows that providing a great reading experience on mobile devices is critical to their long-term success.<br><br>In particular, The Post is focused on making their mobile content load as quickly as possible, because data shows that people abandon websites after just three seconds if the content doesn’t load quickly.<br><br>In June 2015, The Washington Post joined a group of publishers and technology companies to create the AMP Project, a new open standard for publishing content which loads instantly, anywhere across the mobile web.
@@ -68,8 +68,8 @@ contents:
   - layout: quote
     quote: Getting started with AMP was easy because it is built on existing web technologies. And since AMP is not a template based system, we were able to host our content, style it as we see fit, and easily integrate our existing advertising, analytics and other business tools
     image_src: '/static/img/success-stories/washington_post/washington_post_logo.png'
-    width: 1280
-    height: 197
+    width: 100
+    height: 30
     alt: The Washington Post
     author: David Merrell, Senior Product Manager at The Washington Post.
     story_url: https://google.com

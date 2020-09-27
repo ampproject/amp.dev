@@ -1,4 +1,4 @@
-// Copyright 2018 The AMPHTML Authors
+// Copyright 2020 The AMPHTML Authors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -54,6 +54,8 @@ const HINTS_URL = 'amphtml-hint.json';
 
 export const EVENT_INPUT_CHANGE = 'editor-input-change';
 export const EVENT_INPUT_NEW = 'editor-input-new';
+export const EVENT_UPDATE_EDITOR_CONTENT = 'event-update-editor-content';
+export const EVENT_UPDATE_CURSOR_FOCUS = 'event-focus-line';
 
 export function createEditor(container) {
   return new Editor(container, window);
@@ -68,6 +70,12 @@ class Editor {
     this.errorMarkers = [];
     this.loader = new Loader(this.container, 'light');
     this.amphtmlHints = this.fetchHintsData();
+
+    events.subscribe(EVENT_UPDATE_EDITOR_CONTENT, this.setSource.bind(this));
+    events.subscribe(
+      EVENT_UPDATE_CURSOR_FOCUS,
+      this.setCursorAndFocus.bind(this)
+    );
   }
 
   createCodeMirror() {
@@ -77,7 +85,7 @@ class Editor {
       mode: 'text/html',
       selectionPointer: true,
       styleActiveLine: true,
-      lineNumbers: false,
+      lineNumbers: true,
       showCursorWhenSelecting: true,
       cursorBlinkRate: 300,
       autoCloseBrackets: true,

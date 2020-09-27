@@ -401,7 +401,7 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 - CSS 内でキーフレームを指定した場合、`calc()` や `var()` をサポートしていないプラットフォームでは、`amp-animation` ポリフィルを使用できません。そのため、常に CSS 内にフォールバック値を含めることをおすすめします。
 - [`width()` や、`height()`、`num()`、`rand()`、`index()`、`length()`](#css-extensions) などの CSS 拡張機能を CSS 内で使用することはできません。
 
-#### キーフレーム向けホワイトリストに登録されたプロパティ <a name="white-listed-properties-for-keyframes"></a>
+#### キーフレーム向けホワイトリストに登録されたプロパティ <a name="allow-listed-properties-for-keyframes"></a>
 
 必ずしもすべての CSS プロパティをキーフレームで使用できるわけではありません。最新のブラウザですぐに最適化とアニメーション化を行うことができる CSS プロパティだけが、ホワイトリストに登録されています。優れたパフォーマンスを発揮することが確認されたプロパティが増えると、このリストも拡張されます。現在リストに登録されているプロパティは以下のとおりです。
 - [`opacity`](https://developer.mozilla.org/ja/docs/Web/CSS/opacity)
@@ -622,7 +622,7 @@ CSS `@keyframes` は、[Web Animations 仕様](https://www.w3.org/TR/web-animati
 
 アニメーションには SVG を使用することをおすすめします。
 
-SVG アニメーションは、[キーフレーム向けホワイトリストに登録されているプロパティ](#white-listed-properties-for-keyframes)とほぼ同じ CSS プロパティを通じてサポートされています。以下の点が異なります。
+SVG アニメーションは、[キーフレーム向けホワイトリストに登録されているプロパティ](#allow-listed-properties-for-keyframes)とほぼ同じ CSS プロパティを通じてサポートされています。以下の点が異なります。
 
 * IE / Edge SVG 要素は、[CSS `transform` プロパティをサポートしていません](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/)。`transform` アニメーション自体はポリフィルされます。ただし、スタイルシート内で定義されている初期状態は適用されません。初期変換状態が IE / Edge で重要な場合は、[SVG `transform` 属性](https://developer.mozilla.org/ja/docs/Web/SVG/Attribute/transform)を使用して複製することをおすすめします。
 * `transform` CSS は IE / Edge 向けにポリフィルされますが、`transform-origin` をポリフィルすることはできません。そのため、IE / Edge との互換性が必要な場合は、デフォルトの `transform-origin` だけを使用することをおすすめします。

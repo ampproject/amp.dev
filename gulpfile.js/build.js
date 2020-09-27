@@ -40,6 +40,7 @@ const gulpSass = require('gulp-sass');
 const lint = require('./lint.js');
 const importRoadmap = require('./import/importRoadmap.js');
 const importWorkingGroups = require('./import/importWorkingGroups.js');
+const {thumborImageIndex} = require('./thumbor.js');
 const CleanCSS = require('clean-css');
 const validatorRules = require('@ampproject/toolbox-validator-rules');
 
@@ -154,6 +155,15 @@ async function buildPlayground() {
 }
 
 /**
+ * Builds Pixi
+ * @return {Promise}
+ */
+async function buildPixi() {
+  await sh('mkdir -p pixi/dist');
+  return sh('npm run build:pixi');
+}
+
+/**
  * Generate component versions
  * @return {Promise}
  */
@@ -261,6 +271,7 @@ function buildPrepare(done) {
       buildComponentVersions,
       buildPlayground,
       buildBoilerplate,
+      buildPixi,
       buildSamples,
       importAll,
       zipTemplates
@@ -285,6 +296,7 @@ function buildPrepare(done) {
         './dist/',
         './boilerplate/dist/',
         './playground/dist/',
+        './frontend/templates/views/partials/pixi/webpack.j2',
         './.cache/',
         './examples/static/samples/samples.json',
       ];
@@ -534,6 +546,7 @@ exports.templates = templates;
 exports.importAll = importAll;
 exports.importComponents = importComponents;
 exports.buildPlayground = buildPlayground;
+exports.buildPixi = buildPixi;
 exports.buildBoilerplate = buildBoilerplate;
 exports.buildFrontend = buildFrontend;
 exports.buildSamples = buildSamples;
@@ -546,7 +559,8 @@ exports.fetchArtifacts = fetchArtifacts;
 exports.collectStatics = collectStatics;
 exports.buildFinalize = gulp.series(
   fetchArtifacts,
-  gulp.parallel(collectStatics, persistBuildInfo)
+  gulp.parallel(collectStatics, persistBuildInfo),
+  thumborImageIndex
 );
 
 exports.build = gulp.series(

@@ -1,0 +1,111 @@
+.embed {
+  header {
+    display: none;
+  }
+  main {
+    top: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    &.elevation-2dp {
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+  .panel .panel-header {
+    display: none;
+  }
+  #drag {
+    display: none;
+  }
+  #previewIframe {
+    border: none;
+    height: 0;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    width: 0;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  #preview .panel-header {
+    display: none;
+  }
+  #preview {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 70%;
+    right: 3rem;
+    margin: auto;
+    width: initial;
+    height: initial;
+
+    .preview-sizer {
+      padding-top: 177.78%;
+    }
+  }
+  #source {
+    margin-left: 0;
+    margin-left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  .panel {
+    width: calc(50% - 4px);
+    box-shadow: none !important;
+  }
+  .cm-s-monokai.CodeMirror {
+    line-height: 1.25em;
+    font-size: 1em;
+    pre {
+      line-height: 1.25em;
+      font-size: 1em;
+    }
+  }
+  .fab {
+    bottom: 16px;
+    right: 16px;
+  }
+  @media (min-width: 768px) {
+    #preview-container {
+      width: auto;
+      height: auto;
+    }
+  }
+  @media (max-width: 767px) {
+    .panel {
+      width: 100vw;
+    }
+    #preview-container {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      max-height: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      min-width: 100%;
+    }
+    #preview {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    #preview .preview-sizer {
+      display: none;
+    }
+  }
+}

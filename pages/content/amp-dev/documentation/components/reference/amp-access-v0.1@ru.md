@@ -219,7 +219,7 @@ Google AMP Cache возвращает читателю документ, в ко
     "namespace": value
   },
   ...
-[
+]
 </script>
 ```
 

@@ -28,6 +28,7 @@ const MESSAGES = {
   ERROR_2: 'Found an error',
   ERROR_3: 'Error: ',
   WARNING: 'Warning:',
+  COMPONENT_VERSIONS: 'component-versions.json',
 };
 
 /**
@@ -52,6 +53,13 @@ function handler(data, resolve, reject) {
   if (message.includes(MESSAGES.WARNING)) {
     log.warn(message);
     return message;
+  }
+
+  if (message.includes(MESSAGES.COMPONENT_VERSIONS)) {
+    log.warn(
+      'The component-versions.json seems to be missing.',
+      'Run `gulp buildComponentVersions` and try again.'
+    );
   }
 
   if (

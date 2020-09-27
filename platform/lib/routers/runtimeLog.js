@@ -46,6 +46,7 @@ runtimeLog.get('/', async (request, response) => {
       messageTemplate.render({
         title: 'Log',
         text: html,
+        requestPath: request.path,
       })
     );
   } catch (error) {

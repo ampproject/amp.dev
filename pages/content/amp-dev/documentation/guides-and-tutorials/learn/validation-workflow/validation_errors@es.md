@@ -194,7 +194,7 @@ Este caso se describe con uno de los siguientes mensajes detallados:
 <table>
    <tr>
   	<td class="col-thirty"><strong>Código</strong></td>
-  	<td>CDATA_VIOLATES_BLACKLIST</td>
+  	<td>CDATA_VIOLATES_DENYLIST</td>
   </tr>
    <tr>
   	<td class="col-thirty"><strong>Formato</strong></td>
@@ -208,7 +208,7 @@ Este caso se describe con uno de los siguientes mensajes detallados:
 
 Los datos de CSS específicos se han incluido en la lista negra para validar reglas fundamentales de AMP para CSS.
 
-A continuación puedes consultar la lista de datos CSS incluidos en la lista negra (consulta también <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`blacklisted_cdata_regex` en la especificación del validador de AMP</a>):
+A continuación puedes consultar la lista de datos CSS incluidos en la lista negra (consulta también <a href="https://github.com/ampproject/amphtml/blob/master/validator/validator-main.protoascii">`disallowed_cdata_regex` en la especificación del validador de AMP</a>):
 
 * `"\\.i?-amp-"` ("prefijo de nombre de clase -amp- CSS")
 * `"!important"`

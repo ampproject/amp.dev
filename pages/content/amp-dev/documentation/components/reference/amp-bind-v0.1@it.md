@@ -221,7 +221,7 @@ Le espressioni sono simili a JavaScript, con alcune differenze importanti.
 
 * Le espressioni possono accedere solo allo [stato](#state) del documento che le contiene.
 * Le espressioni **non** hanno accesso a elementi globali come `window` o `document`.
-* Puoi utilizzare solo gli operatori e le [funzioni consentiti](#white-listed-functions).
+* Puoi utilizzare solo gli operatori e le [funzioni consentiti](#allow-listed-functions).
 * I loop, le classi e le funzioni personalizzate in genere non sono consentiti. Le funzioni a freccia sono consentite come parametri, ad esempio, `Array.prototype.map`.
 * Le variabili non definite e l'indice della matrice fuori intervallo restituiscono `null` anziché `undefined` o degli errori.
 * Per garantire buone prestazioni, in una singola espressione possono attualmente essere presenti un massimo di 50 operandi. Nel caso in cui siano insufficienti per il tuo caso d'uso, [non esitare a contattarci](https://github.com/ampproject/amphtml/issues/new).
@@ -239,7 +239,7 @@ Di seguito sono riportate tutte le espressioni valide:
 null || 'default' // 'default'
 ```
 
-# Funzioni consentite <a name="white-listed-functions"></a>
+# Funzioni consentite <a name="allow-listed-functions"></a>
 
 <table>
   <tr>
@@ -614,7 +614,7 @@ Esistono diversi tipi di errori di runtime che possono verificarsi quando si uti
   <tr>
     <td>Funzioni non consentite</td>
     <td><em>alert non è una funzione supportata.</em></td>
-    <td>Utilizza solo le <a href="#white-listed-functions">funzioni consentite</a>.</td>
+    <td>Utilizza solo le <a href="#allow-listed-functions">funzioni consentite</a>.</td>
   </tr>
   <tr>
     <td>Risultato bonificato</td>

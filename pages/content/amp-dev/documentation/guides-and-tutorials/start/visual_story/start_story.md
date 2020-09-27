@@ -1,11 +1,11 @@
 ---
 $title: Starting our story
 $order: 3
-description: An entire story is represented by the amp-story component, which serves as a container for all the pages in a story. The amp-story component is also responsible for ...
+description: An entire Web Story is represented by the amp-story component, which serves as a container for all the pages in a story. The amp-story component is also responsible for ...
 author: bpaduch
 ---
 
-An entire story is represented by the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component, which serves as a container for all the pages in a story.  The [`amp-story`](../../../../documentation/components/reference/amp-story.md) component is also responsible for creating the UI shell, including handling gestures and navigation.
+An entire Web Story is represented by the [`amp-story`](../../../../documentation/components/reference/amp-story.md) component, which serves as a container for all the pages in a story.  The [`amp-story`](../../../../documentation/components/reference/amp-story.md) component is also responsible for creating the UI shell, including handling gestures and navigation.
 
 The [`amp-story`](../../../../documentation/components/reference/amp-story.md) component is a custom AMP component, and like all custom components, you must add the associated script for the component to the AMP document.
 
@@ -31,7 +31,7 @@ It's important to note that to have a valid AMP story, the `<body>` element must
 
 ## Providing meta information
 
-For stories to be discovered in the AMP stories ecosystem, certain metadata is required to provide mini details of the story, like:
+For stories to be discovered on the web, certain metadata is required to provide mini details of the story, like:
 
 * The title of the story, represented by the `title` attribute (e.g., "Joy of Pets").
 * The name of the publisher, represented by the `publisher` attribute (e.g., "AMP tutorials").
@@ -51,7 +51,7 @@ Let's add these attributes to our [`amp-story`](../../../../documentation/compon
 In addition to these required attributes, there are other attributes you can apply. To learn more, see the [attributes](../../../../documentation/components/reference/amp-story.md#attributes) section of the [`amp-story`](../../../../documentation/components/reference/amp-story.md) reference documentation.
 
 [tip type="note"]
-**NOTE –**  These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your AMP pages are discovered across all platforms, you should add [Structured Data](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories.
+**NOTE –**  These metadata attributes supplement and do not replace any Structured Data (e.g. JSON-LD) on the page. To ensure your Web Stories are discovered across all platforms, you should add [Structured Data](../../../../documentation/guides-and-tutorials/optimize-measure/discovery.md#integrate-with-third-party-platforms-through-additional-metadata) to all your AMP pages, including AMP stories.
 [/tip]
 
 At this point, we have a shell of a story without any content. Let's create that page.

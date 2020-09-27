@@ -401,7 +401,7 @@ CSS `@keyframes`는 [웹 애니메이션 사양](https://www.w3.org/TR/web-anima
 - CSS에 키프레임이 지정되어 있는 경우 `calc()` 및 `var()`을 지원하지 않는 플랫폼은 `amp-animation` 폴리필을 활용하지 못할 수 있습니다. 따라서 CSS에 항상 대체 값을 포함하는 것이 좋습니다.
 - [`width()`, `height()`, `num()`, `rand()`, `index()`, `length()`](#css-extensions) 등의 CSS 확장은 CSS에서 사용할 수 없습니다.
 
-#### 키프레임에 대한 화이트리스트 속성 <a name="white-listed-properties-for-keyframes"></a>
+#### 키프레임에 대한 화이트리스트 속성 <a name="allow-listed-properties-for-keyframes"></a>
 
 모든 CSS 속성을 키프레임에 사용할 수 있는 것은 아닙니다. 최신 브라우저가 신속하게 최적화 및 애니메이션할 수 있는 CSS 속성만 화이트리스트에 포함됩니다. 더 많은 속성이 우수한 성능을 제공하는 것으로 확인되면 이 목록도 커지게 될 것입니다. 현재 목록에 포함된 항목은 다음과 같습니다.
 - [`opacity`](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
@@ -622,7 +622,7 @@ CSS `@keyframes`는 [웹 애니메이션 사양](https://www.w3.org/TR/web-anima
 
 SVG는 매우 멋진 형식이므로 애니메이션에 사용할 것을 권장합니다.
 
-SVG 애니메이션은 [키프레임에 대한 화이트리스트 속성](#white-listed-properties-for-keyframes)에서 설명한 것과 동일한 CSS 속성을 통해 지원되며, 다음과 같은 몇 가지 작은 차이가 있습니다.
+SVG 애니메이션은 [키프레임에 대한 화이트리스트 속성](#allow-listed-properties-for-keyframes)에서 설명한 것과 동일한 CSS 속성을 통해 지원되며, 다음과 같은 몇 가지 작은 차이가 있습니다.
 
 * IE/Edge SVG 요소는 [CSS `transform` 속성을 지원하지 않습니다](https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/1173754/). `transform` 애니메이션 자체는 폴리필됩니다. 그러나 스타일시트에 정의된 초기 상태는 적용되지 않습니다. 초기의 변환된 상태가 IE/Edge에 중요한 경우 [SVG `transform` 속성](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform)을 통해 복제하는 것이 좋습니다.
 * `transform` CSS는 IE/Edge에 대해 폴리필되지만, 아쉽게도 `transform-origin`은 폴리필할 수 없습니다. 따라서 IE/Edge와의 호환성이 필요한 경우 기본 `transform-origin`만 사용하는 것이 좋습니다.

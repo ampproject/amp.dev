@@ -113,6 +113,6 @@ For AMP components that rely on dynamic content (e.g., [`amp-twitter`](../../../
 
 ## Hiding loading indicators
 
-Many AMP elements are whitelisted to show a "loading indicator",
+Many AMP elements are allowlisted to show a "loading indicator",
 which is a basic animation that shows that the element has not yet fully loaded.
 Elements can opt out of this behavior by adding the `noloading` attribute.

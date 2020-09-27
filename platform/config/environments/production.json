@@ -16,6 +16,11 @@
 			"host": "amp.dev",
 			"port": ""
     },
+		"websocket": {
+			"scheme": "wss",
+			"host": "amp.dev",
+			"port": ""
+    },
     "playground": {
       "scheme": "https",
       "subdomain": "playground",
@@ -42,7 +47,12 @@
     },
     "packager": {
       "scheme": "http",
-      "host": "ig-amp-dev-packager-bj8n.c.amp-dev-230314.internal",
+      "host": "ig-amp-dev-packager-960w.c.amp-dev-230314.internal",
+      "port": "8080"
+    },
+    "thumbor": {
+      "scheme": "http",
+      "host": "ig-amp-dev-thumbor-8gnv.c.amp-dev-230314.internal",
       "port": "8080"
     }
 	},

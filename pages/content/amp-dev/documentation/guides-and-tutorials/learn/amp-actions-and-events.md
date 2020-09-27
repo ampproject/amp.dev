@@ -1,15 +1,12 @@
 ---
 $title: Actions and events
-order: 7
+order: 0
 formats:
   - websites
-  - email
   - stories
   - ads
 teaser:
-  text: >-
-    The on attribute is used to install event handlers on elements. The events
-    that are supported depend on the element.
+  text: '[tip type="note"]'
 ---
 
 <!--
@@ -39,13 +36,16 @@ limitations under the License.
 
 
 
+[tip type="note"]
+This documentation covers actions and events for AMP websites, stories and ads. Read [Actions and events in AMP email](https://github.com/ampproject/amphtml/blob/master/spec/amp-email-actions-and-events.md) for the AMP email format.
+[/tip]
+
 The `on` attribute is used to install event handlers on elements. The events that are supported depend on the element.
 
 The value for the syntax is a simple domain-specific language of the form:
 
 [sourcecode:javascript]
-eventName:targetId[.methodName[(arg1=value, arg2=value)]]
-[/sourcecode]
+eventName:targetId[.methodName[(arg1=value, arg2=value)]][/sourcecode]
 
 See the table below for descriptions of each part of the syntax.
 
@@ -113,11 +113,11 @@ An element can only be shown if it was previously hidden by a `hide` or `toggleV
 For example, the following is possible in AMP:
 
 [sourcecode:html]
+
 <div id="warning-message">Warning...</div>
 
 <button on="tap:warning-message.hide">Cool, thanks!</button>
 [/sourcecode]
-
 
 [/tip]
 
@@ -190,6 +190,26 @@ event.value</pre>
   </tr>
 </table>
 
+### amp-accordion > section <a name="amp-accordion"></a>
+
+<table>
+  <tr>
+    <th width="25%">Event</th>
+    <th width="35%">Description</th>
+    <th width="40%">Data</th>
+  </tr>
+  <tr>
+    <td><code>expand</code></td>
+    <td>Fired when an accordion section expands.</td>
+    <td>None.</td>
+  </tr>
+  <tr>
+    <td><code>collapse</code></td>
+    <td>Fired when an accordion section collapses.</td>
+    <td>None.</td>
+  </tr>
+</table>
+
 ### amp-carousel[type="slides"] <a name="amp-carouseltypeslides"></a>
 
 <table>
@@ -233,6 +253,10 @@ event.index</pre></td>
     <th width="25%">Event</th>
     <th width="35%">Description</th>
     <th width="40%">Data</th>
+  </tr>
+  <tr>
+    <td><code>changeToLayoutContainer</code></td>
+    <td>Update's <code>amp-list</code>'s layout to <code>layout="CONTAINTER"</code> to allow <a href="https://github.com/ampproject/amphtml/blob/master/spec/../extensions/amp-list/amp-list.md#dynamic-resizing">dynamic resizing</a>.</td>
   </tr>
   <tr>
     <td><code>fetch-error</code>(low-trust)</td>
@@ -447,6 +471,27 @@ event.response</pre></td>
   </tr>
 </table>
 
+### amp-accordion <a name="amp-accordion-1"></a>
+
+<table>
+  <tr>
+    <th>Action</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>toggle(section=STRING)</code></td>
+    <td>Toggles the <code>expanded</code> and <code>collapsed</code> states of <code>amp-accordion</code> sections. When called with no arguments, it toggles all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.toggle(section='section-id')"</code>.
+  </tr>
+  <tr>
+    <td><code>expand(section=STRING)</code></td>
+    <td>Expands the sections of the accordion. If a section is already expanded, it stays expanded. When called with no arguments, it expands all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.expand(section='section-id')"</code>.</td>
+  </tr>
+  <tr>
+    <td><code>collapse(section=STRING)</code></td>
+    <td>Collapses the sections of the accordion. If a section is already collapsed, it stays collapsed. When called with no arguments, it collapses all sections of the accordion. Trigger on a specific section by providing the section id: <code>on="tap:myAccordion.collapse(section='section-id')"</code>.</td>
+  </tr>
+</table>
+
 ### amp-carousel[type="slides"] <a name="amp-carouseltypeslides-1"></a>
 
 <table>
@@ -541,16 +586,24 @@ event.response</pre></td>
     <th>Description</th>
   </tr>
   <tr>
+    <td><code>clear</code></td>
+    <td>Clears all selections from a defined <code>amp-selector</code>.</td>
+  </tr>
+  <tr>
     <td><code>selectUp(delta=INTEGER)</code></td>
-    <td>Moves the selection up by the value of `delta`. The default `delta` is set to 1.</td>
+    <td>Moves the selection up by the value of `delta`. The default `delta` is set to -1. If no options are selected, the selected state will become the value of the last option.</td>
   </tr>
   <tr>
     <td><code>selectDown(delta=INTEGER)</code></td>
-    <td>Moves the selection down by the value of `delta`. The default `delta` is set to -1.</td>
+    <td>Moves the selection down by the value of `delta`. The default `delta` is set to 1. If no options are selected, the selected state will become the value of the first option.</td>
   </tr>
   <tr>
     <td><code>toggle(index=INTEGER, value=BOOLEAN)</code></td>
-    <td>Sets the selected element's `selected` attribute if value is 'true', otherwise removes the attribute</td>
+    <td>Toggles the application of the `selected`. If the select attribute is absent, this action adds it. If the select attribute is present, this action removes it.
+
+    You may force and keep an add or remove by including a boolean value in the `value` argument. A value of `true` will force add the `selected` attribute and not remove it if already present. A value of  `false` will remove the attribute, but not add it if absent.
+
+  </td>
   </tr>
 </table>
 
@@ -627,7 +680,7 @@ The actions below are supported in the following AMP video elements: `amp-video`
     <td>Unmutes the video.</td>
   </tr>
   <tr>
-    <td><code>fullscreen</code></td>
+    <td><code>fullscreencenter</code></td>
     <td>Takes the video to fullscreen.</td>
   </tr>
 </table>
@@ -665,11 +718,17 @@ actions that apply to the whole document.
   </tr>
   <tr>
     <td><code>navigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
-    <td>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener<code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</td>
+    <td>
+      <p>Navigates current window to given URL, to the optional specified target if given (currenly only supporting <code>_top</code> and <code>_blank </code>). The optional <code>opener</code> parameter can be specified when using a target of <code>_blank</code> to allow the newly opened page to access <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/opener"><code>window.opener</code></a>. Supports <a href="https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md">standard URL substitutions</a>.</p>
+      <p><strong>Caveat:</strong> Using normal <code>&lt;a&gt;</code> links is recommended wherever possible since <code>AMP.navigateTo</code> is not recognized by web crawlers.</p>
+    </td>
   </tr>
   <tr>
     <td><code>closeOrNavigateTo(url=STRING, target=STRING, opener=BOOLEAN)</code></td>
-    <td>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</td>
+    <td>
+      <p>Tries to close the window if allowed, otherwise it navigates similar to <code>navigateTo</code> Action. Useful for use-cases where a "Back" button may need to close the window if it were opened in a new window from previous page or navigate if it wasn't opened.</p>
+      <p><strong>Caveat:</strong> Using normal <code>&lt;a&gt;</code> links is recommended wherever possible since <code>AMP.closeOrNavigateTo</code> is not recognized by web crawlers.</p>
+    </td>
   </tr>
   <tr>
     <td><code>goBack</code></td>

@@ -9,7 +9,6 @@ $view: /views/overview/custom-content.j2
 
 {% do doc.styles.addCssFile('/css/components/molecules/biggy.css') %}
 {% do doc.styles.addCssFile('css/components/organisms/teaser-grid.css') %}
-{% do doc.amp_dependencies.add('amp-youtube', '0.1') %}
 
 <section class="ap--container mission">
 
@@ -134,7 +133,7 @@ $view: /views/overview/custom-content.j2
             <svg class="ap-m-benefit-icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#list"></use></svg>
           </div>
           <div class="ap-m-benefit-text">
-            <span class="ap-m-benefit-text-headline">{{ _('No whitelists.') }}</span>
+            <span class="ap-m-benefit-text-headline">{{ _('No allowlists.') }}</span>
             <span class="ap-m-benefit-text-copy">{{ _('We won’t give any special treatment to specific sites, domains or origins except where needed for security or performance reasons.') }}</span>
           </div>
         </div>
