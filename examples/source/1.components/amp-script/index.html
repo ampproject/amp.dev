@@ -484,5 +484,37 @@ author:
         button.addEventListener('click', randomSlideDirection);
       </script>
     </div>  
+    <!--
+        ## Local storage
+        Your script has access to the Web Storage API. This lets you persist user information between browser sessions.
+        Here, we use `localStorage` to track a username.
+        If you set the username, then reload this page, the username will remain set.
+    -->
+    <div>
+      <amp-script layout="fixed-height" script="local-storage-script" height="110" class="sample">
+        <div id="username-display"></div>
+        <div>
+          <label>Enter new username here:</label>
+          <input id="username-input" type="text">
+        </div>
+        <button id="username-submit">Submit</button>
+      </amp-script>
+      <script id="local-storage-script" type="text/plan" target="amp-script">
+        const submit = document.getElementById('username-submit');
+        const input = document.getElementById('username-input');
+        const display = document.getElementById('username-display');
+
+        const oldUsername = localStorage.getItem('username');
+        display.innerHTML = oldUsername ? `Your username is <b>${oldUsername}</b>.` : 'Username is not set';
+
+        function setUsername() {
+          const newUsername = input.value;
+          localStorage.setItem('username', newUsername);
+          display.innerHTML = `Username changed to <b>${newUsername}</b>.`;
+        }
+
+        submit.addEventListener('click', setUsername);
+      </script>
+    </div>
   </body>
 </html>
