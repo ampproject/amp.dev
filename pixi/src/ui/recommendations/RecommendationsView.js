@@ -82,6 +82,13 @@ export default class RecommendationsView {
 
       title.innerHTML = value.title;
 
+      // Trigger expand/collapse on press enter
+      header.addEventListener('keyup', (e) => {
+        if (e.keyCode == 13) {
+          recommendation.classList.toggle('expanded');
+        }
+      });
+
       // Remove body elements for recommendations that have no recommendation
       // text and force expand them
       if (!value.body) {
