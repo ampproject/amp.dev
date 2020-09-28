@@ -29,7 +29,7 @@ Workers don't come with access to the DOM. To fill this gap, the AMP team create
 `amp-script` is essentially a wrapper around WorkerDOM that makes WorkerDOM usable in AMP. WorkerDOM provides the core of `amp-script`'s functionality.
 
 
-## Capabilities
+## What `amp-script` can do
 
 The JavaScript language is the same in a worker as it is elsewhere in the browser. Thus, in `amp-script`, you can use JavaScript in the way that you're used to. WorkerDOM also recreates many commonly used DOM APIs and makes them available for your use. It supports common Web APIs like `Fetch` and `Canvas`, and it gives you to selected global objects like `navigator` and `localStorage`. You can assign handlers for browser events in the usual way.
 
@@ -48,23 +48,27 @@ Since the DOM API is not fully supported, how is it best to approach manipulatin
 
 **2) Use Preact.** Not only is [React](https://reactjs.org/) a popular way to build websites, but it mutates the DOM using a subset of the DOM API. `amp-script` can includes full support for this portion of the API, and thus full support for React. That said, React bundles often exceed `amp-script`'s [150K limit](../../../documentation/components/reference/amp-script.md#size-of-javascript-code). So it's recommended that you use [Preact](https://preactjs.com/), a lightweight alternative to React. Preact is designed for straightforward migration from React. With Preact, you should be able to build elaborate interactions with much less worry about what's supported. 
 
-`amp-script` has also been tested with frameworks like [Vue](https://vuejs.org/), [Angular](https://angularjs.org/), [Aurelia](https://aurelia.io/), and [lit-html](https://lit-html.polymer-project.org/), but less extensively. If you find a gap, please [file an issue](https://github.com/ampproject/worker-dom/issues) - or, better still, [submit a pull request](https://github.com/ampproject/worker-dom/pulls).
+The team has tested `amp-script` with frameworks like [Vue](https://vuejs.org/), [Angular](https://angularjs.org/), [Aurelia](https://aurelia.io/), and [lit-html](https://lit-html.polymer-project.org/), but less extensively. If you find a gap, please [file an issue](https://github.com/ampproject/worker-dom/issues) - or, better still, [submit a pull request](https://github.com/ampproject/worker-dom/pulls).
 
 Since `amp-script` cannot exhaustively support the DOM API, simply copying a library like [jQuery](https://jquery.com/) into an `<amp-script>` component will not work.
 
 ## Use cases
 
-`amp-script` helps you fill the gaps in your AMP webpage's functionality. Since it supports a subset of the DOM and Web APIs, and since its use [comes with restrictions](https://amp.dev/documentation/components/amp-script/#restrictions), it is not an all-purpose JavaScript solution. Any substantial body of existing JavaScript is likely to need modification to work in the `amp-script` context.
+`amp-script` expands the range of your AMP webpage's functionality. Since it supports a subset of the DOM and Web APIs, and since its use [comes with restrictions](https://amp.dev/documentation/components/amp-script/#restrictions), it is not an all-purpose JavaScript solution. Any substantial body of existing JavaScript will likely need modification to work in the `amp-script` context.
 
 However, `amp-script` presents a fine way to take care of logic and interactions that existing AMP components don't provide. The following are a few excellent use cases.
 
 ### Create new interactions
 
-`amp-script` lets you create interactions that existing AMP components can't, opening up in AMP a door to the full creativity of the Web. That said, if an AMP component can already be leveraged to create a desired interaction, that will ultimately be simpler and more maintainable. If the AMP component simply requires some customization, you may be able to [enhance it with `amp-script`](#enhance-amp-components). If the interaction you wish to create might be of interest to other developers, you are encouraged to [suggest and contribute](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) a new component.
+`amp-script` gives you the power of JavaScript and the DOM API. It lets you create interactions that other AMP components can't, opening up a door to the full creativity of the Web.
+
+That said, before turning to `amp-script` to create a new interaction, check to see if an AMP component or a combination of components can do the same thing. Leveraging existing AMP components will ultimately make your code smaller and more maintainable. If a component can achieve an effect that's similar to what you want, you may be able to [customize its behavior with `amp-script`](#enhance-amp-components).
+
+If you use `amp-script` to create an interaction that might be of interest to other developers, please consider [suggesting or contributing](https://github.com/ampproject/amphtml/blob/master/CONTRIBUTING.md) a new component.
 
 ### Add advanced logic
 
-`amp-script` is most convenient for any logic that doesn't fit neatly into a compact expression. `amp-bind` allows you to introduce logic into user interactions, but your JavaScript needs to fit into a single expression. Because the code is encapsulated in an HTML attribute, it won't get the benefit of syntax highlighting in your IDE, you can't set breakpoints, and it may be hard to debug. 
+`amp-script` is most convenient for any logic that doesn't fit neatly into a compact expression. `amp-bind` allows you to introduce logic into user interactions, but your JavaScript needs to fit into a single expression. Because the code is encapsulated in an HTML attribute, it won't get the benefit of syntax highlighting in your IDE, you can't set breakpoints, and it may be hard to debug. In such cases, `amp-script` allows you to follow best programming practices.
 
 ### Enhance AMP components
 
