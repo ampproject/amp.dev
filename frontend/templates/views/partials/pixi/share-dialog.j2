@@ -18,8 +18,8 @@
       <h2 id="share-dialog-title">{{ pixi.staticText.shareDialog.headline }}</h2>
       <input class="ap-m-share-dialog-container-textarea"
           type="text"
-          value=""
-          [value]="pixi.shareUrl"
+          value="{{ doc.url }}"
+          [value]="'{{ doc.url }}?url=' + pixi.shareUrlQuery"
           readonly>
       <amp-iframe class="ap-m-share-dialog-container-copy-button"
           title="{{ pixi.staticText.shareDialog.copyToClipboard }}"
@@ -28,7 +28,7 @@
           layout="fixed"
           sandbox="allow-scripts"
           src="{{ base_url }}/shared/copy-pixi-url/"
-          [src]="'{{ base_url }}/shared/copy-pixi-url/#' + pixi.shareUrl">
+          [src]="'{{ base_url }}/shared/copy-pixi-url/#' + pixi.shareUrlQuery">
         <div placeholder></div>
       </amp-iframe>
     </div>

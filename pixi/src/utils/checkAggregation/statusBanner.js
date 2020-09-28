@@ -14,15 +14,9 @@
 
 import {fixedRecommendations} from './recommendations';
 
-const getStatusId = async (
-  recommendationsPromise,
-  pageExperiencePromise,
-  safeBrowsingPromise,
-  linterPromise,
-  mobileFriendlinessPromise
-) => {
+async function getStatusId(checkPromises, recommendationsPromise) {
   try {
-    const linter = await linterPromise;
+    const linter = await checkPromises.linter;
     if (!linter.isLoaded) {
       return 'invalid-url';
     }
@@ -35,17 +29,10 @@ const getStatusId = async (
 
     // We need to check all promises for general error
     // (promise can be rejected or error is set in result)
-    const [
-      recommendations,
-      pageExperienceChecks,
-      safeBrowsing,
-      mobileFriendliness,
-    ] = await Promise.all([
-      recommendationsPromise,
-      pageExperiencePromise,
-      safeBrowsingPromise,
-      mobileFriendlinessPromise,
-    ]);
+    const recommendations = await recommendationsPromise;
+    const pageExperienceChecks = await checkPromises.pageExperience;
+    const safeBrowsing = await checkPromises.safeBrowsing;
+    const mobileFriendliness = await checkPromises.mobileFriendliness;
 
     if (!linter.isValid) {
       return 'invalid-amp';
@@ -105,6 +92,6 @@ const getStatusId = async (
   } catch (err) {
     return 'generic-error';
   }
-};
+}
 
 export default getStatusId;

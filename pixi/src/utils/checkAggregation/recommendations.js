@@ -56,6 +56,11 @@ const addDirectRecommendations = (result, checks, mapping) => {
       if (checks.descriptions && checks.descriptions[check]) {
         recommendation.description = checks.descriptions[check];
       }
+
+      if (checks.details && checks.details[check]) {
+        recommendation.details = checks.details[check];
+      }
+
       result.push(recommendation);
     }
   }
@@ -86,17 +91,10 @@ export default async function getRecommendations(
   linterPromise,
   mobileFriendlinessPromise
 ) {
-  const [
-    pageExperience,
-    safeBrowsing,
-    linter,
-    mobileFriendliness,
-  ] = await Promise.all([
-    pageExperiencePromise,
-    safeBrowsingPromise,
-    linterPromise,
-    mobileFriendlinessPromise,
-  ]);
+  const pageExperience = await pageExperiencePromise;
+  const safeBrowsing = await safeBrowsingPromise;
+  const linter = await linterPromise;
+  const mobileFriendliness = await mobileFriendlinessPromise;
 
   const result = fixedRecommendations.map((id) => ({id}));
 

@@ -14,6 +14,7 @@
 
 import i18n from '../I18n.js';
 import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
+import marked from 'marked';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -45,6 +46,10 @@ export default class RecommendationsView {
     }
   }
 
+  setIssueUrl(url) {
+    this.issueUrl = url;
+  }
+
   render(recommendationList, pageURL, metricUis) {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationList);
@@ -67,6 +72,10 @@ export default class RecommendationsView {
       const body = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-body'
       );
+      const bodyText = recommendation.querySelector(
+        '.ap-m-pixi-recommendations-item-body-text'
+      );
+      const nextButton = recommendation.querySelector('a');
       const tagsBar = recommendation.querySelector(
         '.ap-m-pixi-recommendations-item-tags'
       );
@@ -83,7 +92,28 @@ export default class RecommendationsView {
         bodyHtml = bodyHtml.replace(/\$\{URL\}/g, encodeURIComponent(pageURL));
         bodyHtml = addTargetBlankToLinks(bodyHtml);
 
-        body.innerHTML = bodyHtml;
+        // Render details if there are any and add them to the body text
+        if (value.details) {
+          let details = '\n';
+          for (const detail of value.details.items) {
+            details += `- \`${detail.url}\`\n`;
+          }
+
+          bodyHtml += marked(details);
+        }
+
+        bodyText.innerHTML = bodyHtml;
+
+        // Set 'next advice' button
+        const nextRecommendation = recommendations[i + 1];
+        if (nextRecommendation) {
+          nextButton.href = `#recommendation-${nextRecommendation.id}`;
+          nextButton.addEventListener('click', () => {
+            this.onClickNext(recommendation, header);
+          });
+        } else {
+          nextButton.remove();
+        }
       }
 
       recommendation.style = null;
@@ -137,7 +167,7 @@ export default class RecommendationsView {
       const metricUi = metricUis[key];
       const metricToUse = metricUi.metric === 'tbt' ? 'fid' : metricUi.metric;
       const count = tagIdCounts[metricToUse];
-      metricUi.setRecommendationStatus(count);
+      metricUi.setRecommendationStatus(count, this.issueUrl);
     }
 
     this.pill.classList.add('filtered');
@@ -181,5 +211,15 @@ export default class RecommendationsView {
 
       recommendation.hidden = !commonValues.length;
     }
+  }
+
+  onClickNext(recommendation, header) {
+    recommendation.classList.remove('expanded');
+    header.setAttribute('aria-expanded', 'false');
+
+    recommendation.nextSibling.classList.add('expanded');
+    recommendation.nextSibling
+      .querySelector('header')
+      .setAttribute('aria-expanded', 'true');
   }
 }

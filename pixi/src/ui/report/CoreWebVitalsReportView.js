@@ -19,8 +19,6 @@ const CATEGORIES = {
   average: 'average',
   slow: 'slow',
 };
-const FILE_ISSUE_URL =
-  'https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&template=page-experience.md&title=Page+experience+issue';
 
 class WeightedScale {
   constructor(container) {
@@ -37,9 +35,10 @@ class WeightedScale {
       (data.numericValue / data.proportion.slow) * 100
     );
     this.indicator.style.left = `${Math.round(score)}%`;
-    this.indicator.textContent = `${(
-      data.numericValue / unit.conversion
-    ).toFixed(unit.digits)} ${unit.name}`;
+    const value = data.numericValue / unit.conversion;
+    this.indicator.textContent = `${
+      value === 0 ? value.toFixed(0) : value.toFixed(unit.digits)
+    } ${unit.name}`;
 
     this.resetStyles();
     this.indicator.classList.add(data.category.toLowerCase());
@@ -125,12 +124,15 @@ class CoreWebVitalView {
 
     this.scale.render(data, unit);
 
-    const responseCategory = data.category.toLowerCase();
-    this.performanceCategory = i18n.getText(`categories.${responseCategory}`);
-    this.container.classList.add(responseCategory);
-    this.category.textContent = this.performanceCategory;
+    this.performanceCategory = data.category.toLowerCase();
+    const displayCategory = i18n.getText(
+      `categories.${this.performanceCategory}`
+    );
+    this.container.classList.add(this.performanceCategory);
+    this.category.textContent = displayCategory;
 
-    const score = (data.numericValue / unit.conversion).toFixed(unit.digits);
+    const value = data.numericValue / unit.conversion;
+    const score = value === 0 ? value.toFixed(0) : value.toFixed(unit.digits);
     this.score.textContent = `${score} ${unit.name}`;
 
     if (this.scale.percentile !== undefined) {
@@ -158,7 +160,7 @@ class CoreWebVitalView {
     this.container.parentNode.classList.add('error');
   }
 
-  setRecommendationStatus(count) {
+  setRecommendationStatus(count, issueUrl) {
     this.recommendations.parentNode.classList.remove('loading');
 
     if (!count) {
@@ -166,7 +168,7 @@ class CoreWebVitalView {
         this.recommendations.textContent = i18n.getText('status.nothingToDo');
         return;
       }
-      this.recommendations.setAttribute('href', FILE_ISSUE_URL);
+      this.recommendations.setAttribute('href', issueUrl);
       this.recommendations.setAttribute('target', '_blank');
       this.recommendations.textContent = i18n.getText('status.fileAnIssue');
       return;

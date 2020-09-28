@@ -94,9 +94,9 @@
 	},
 	"textCompression": true,
 	"fastServerResponse": true,
-	"usesAppropriatelySizedImages": true,
-	"usesOptimizedImages": true,
-	"usesWebpImages": true,
+	"usesAppropriatelySizedImages": false,
+	"usesOptimizedImages": false,
+	"usesWebpImages": false,
 	"fastFontDisplay": true,
 	"minifiedCss": true
 }

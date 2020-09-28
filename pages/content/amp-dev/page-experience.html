@@ -123,9 +123,16 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       <div class="ap-t-pixi-checks-input">
         {% include 'views/partials/pixi/input-bar.j2' %}
         {% include 'views/partials/pixi/status-intro.j2' %}
+
+        {% do doc.styles.addCssFile('css/components/atoms/pixi-stripes.css') %}
+        {% do doc.icons.useIcon('icons/pixi-stripes.svg') %}
+        <aside class="ap-a-pixi-stripes"></aside>
       </div>
 
       <div id="reports" class="pristine">
+        {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
+        <a href="#pixi-checks" class="ap-a-scroll-to-top" aria-label="{{ pixi.staticText.scrollToTop }}"></a>
+
         <section class="ap-t-pixi-checks-reports">
           <div class="ap-t-pixi-checks-reports-title">
             <h2 id="core-web-vitals-checks">{{ pixi.staticText.coreWebVitals.headline }}</h2>
@@ -139,7 +146,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
           {% include 'views/partials/pixi/primary-checks.j2' %}
 
-          <h2 id="additional-checks">Additional checks</h2>
+          <h2 id="additional-checks">{{ pixi.staticText.additionalChecks.headline }}</h2>
           {% include 'views/partials/pixi/basic-checks.j2' %}
         </section>
 

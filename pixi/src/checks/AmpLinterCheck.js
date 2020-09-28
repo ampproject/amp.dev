@@ -91,6 +91,7 @@ export default class AmpLinterCheck {
         isOriginUrl: !apiResult.isCacheUrl,
         usesHttps:
           apiResult.url != undefined && apiResult.url.startsWith('https:'),
+        components: Object.keys(components).join(', '),
         noRenderBlockingExtension: !(
           components['amp-experiment'] || components['amp-dynamic-css-classes']
         ),
