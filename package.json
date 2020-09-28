@@ -120,7 +120,7 @@
     "codemirror": "5.58.1",
     "copy-webpack-plugin": "6.1.1",
     "css-loader": "4.3.0",
-    "del": "5.1.0",
+    "del": "6.0.0",
     "eslint": "7.10.0",
     "eslint-config-google": "0.14.0",
     "eslint-config-prettier": "6.11.0",
