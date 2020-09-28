@@ -27,16 +27,16 @@
     position: relative;
 
     @media (min-width: 768px) {
-      padding: 120px 15px 0 15px;
+      padding: 120px 15px 0 35px;
     }
 
     @media (min-width: 1024px) {
-      padding: 120px 35px 0 35px;
+      padding: 120px 35px 0 65px;
     }
 
     @media (min-width: 1280px) {
       margin: 0 auto;
-      padding: 90px 0 0 0;
+      padding-top: 90px;
     }
 
     h1 {
@@ -89,10 +89,6 @@
 
     @media (min-width: 1024px) {
       margin: 30px auto;
-
-      &:first-child {
-        margin: 0 auto 30px auto;
-      }
     }
   }
 
