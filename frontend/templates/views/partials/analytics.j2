@@ -313,6 +313,66 @@
       'event_action': 'engagement'
     }
 }}) %}
+{# API failure: PSI field data (includes no field data returned) #}
+{% do config['triggers'].update({'fieldDataError': 
+    {
+    'selector': '#primary-checks-field-data.error',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-psi-error-field',
+      'event_label': 'pixi-psi-error-field',
+      'event_category': 'pixi',
+      'event_action': 'api-failure'
+    }
+}}) %}
+{# API failure: PSI lab data #}
+{% do config['triggers'].update({'labDataError': 
+    {
+    'selector': '#primary-checks-lab-data.error',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-psi-error-lab',
+      'event_label': 'pixi-psi-error-lab',
+      'event_category': 'pixi',
+      'event_action': 'api-failure'
+    }
+}}) %}
+{# API failure: Safe Browsing #}
+{% do config['triggers'].update({'safeBrowsingError': 
+    {
+    'selector': '#safe-browsing.error',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-safe-browsing-error',
+      'event_label': 'pixi-safe-browsing-error',
+      'event_category': 'pixi',
+      'event_action': 'api-failure'
+    }
+}}) %}
+{# API failure: HTTPS #}
+{% do config['triggers'].update({'httpsError': 
+    {
+    'selector': '#https.error',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-https-error',
+      'event_label': 'pixi-https-error',
+      'event_category': 'pixi',
+      'event_action': 'api-failure'
+    }
+}}) %}
+{# API failure: Mobile Friendliness #}
+{% do config['triggers'].update({'mobileFriendlinessError': 
+    {
+    'selector': '#mobile-friendliness.error',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-mobile-friendliness-error',
+      'event_label': 'pixi-mobile-friendliness-error',
+      'event_category': 'pixi',
+      'event_action': 'api-failure'
+    }
+}}) %}
 {% endif %}
 
 <amp-analytics type="gtag" data-credentials="include" data-block-on-consent>
