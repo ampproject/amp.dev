@@ -76,7 +76,7 @@ When your logic doesn't fit neatly into a compact expression, `amp-script` is th
 
 ### Replace amp-bind and amp-list
 
-If you're new to AMP and you're comfortable with JavaScript, it may tempting to use `amp-script` for every browser interaction. However, for simpler interactions, you will likely want to learn to use `amp-bind` and AMP's [actions and events](../learn/amp-actions-and-events.md) system. For more elaborate interactions, or for cases that require more logic and complex state variable manipulation, `amp-script` will [likely be easier](#amp-script---or-amp-bind-and-amp-list).
+If you're new to AMP and you're comfortable with JavaScript, it may tempting to use `amp-script` for every browser interaction. However, for simpler interactions, you will likely want to learn to use `amp-bind` and AMP's [actions and events](../learn/amp-actions-and-events.md) system. For more elaborate interactions, or for cases that require more logic and complex state variable manipulation, `amp-script` will [likely be easier](#when-to-replace-amp-bind-and-amp-list).
 
 ### Handle server data
 
