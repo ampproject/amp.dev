@@ -194,13 +194,13 @@
     }
 }}) %}
 {# Track when "# recommendations" link is clicked #}
-{% do config['triggers'].update({'viewSpecificRecommendations': 
+{% do config['triggers'].update({'recommendationsCta': 
     {
     'selector': 'a[href][target="_top"].ap-m-pixi-primary-metric-recommendations',
     'on': 'click',
     'vars': {
-      'event_name': 'pixi-view-recommendations',
-      'event_label': 'pixi-view-recommendations',
+      'event_name': 'pixi-recommendations-cta',
+      'event_label': 'pixi-recommendations-cta',
       'event_category': 'pixi',
       'event_action': 'link'
     }
@@ -302,7 +302,7 @@
     }
 }}) %}
 {# Visibility for recommendations #}
-{% do config['triggers'].update({'viewAllRecommendations': 
+{% do config['triggers'].update({'viewRecommendations': 
     {
     'selector': '#recommendations:not(.pristine)',
     'on': 'visible',
