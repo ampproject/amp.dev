@@ -35,9 +35,9 @@ The JavaScript language is the same in a worker as it is elsewhere in the browse
 
 However, `amp-script` does not support the entire DOM API or Web API, as this would make its own JavaScript too large and cumbersome. See [the documentation](../../../documentation/components/reference/amp-script.md#supported-apis) for details, and refer to [these samples](https://amp.dev/documentation/examples/components/amp-script/) to see `amp-script` in use.
 
-A handful of synchronous DOM API methods are replaced with alternatives that return a Promise. For example, `getBoundingClientRect()` is replaced by `getBoundingClientRectAsync()`.
+`amp-script` replaces a handful of synchronous DOM API methods with alternatives that return a Promise.   For example, instead of `getBoundingClientRect()`, you use `getBoundingClientRectAsync()`. Sometimes this is necessary for DOM APIs that provide synchronous access to computed layout, and sometimes so that `amp-script` can call the native browser method and await a response.
 
-To maintain AMP's guarantees of performance and layout stability, `amp-script` comes with some restrictions. Your code is discouraged from making potentially distracting mutations that do not follow a user interaction. You can't add stylesheets or additional scripts to the DOM, and [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) is not supported. See [the documentation](../../../documentation/components/reference/amp-script.md#user-gestures) for details.
+To maintain AMP's guarantees of performance and layout stability, `amp-script` comes with some restrictions. If the size of the `amp-script` container is not fixed, your code can only make a mutation if triggered by a user interaction. You can't add stylesheets or additional scripts to the DOM, and [`importScripts()`](https://developer.mozilla.org/en-US/docs/Web/API/WorkerGlobalScope/importScripts) is not supported. See [the documentation](../../../documentation/components/reference/amp-script.md#user-gestures) for details.
 
 
 ## Using JavaScript frameworks
@@ -68,7 +68,7 @@ If you use `amp-script` to create an interaction that might be of interest to ot
 
 ### Add advanced logic
 
-`amp-script` is most convenient for any logic that doesn't fit neatly into a compact expression. `amp-bind` allows you to introduce logic into user interactions, but your JavaScript needs to fit into a single expression. Because the code is encapsulated in an HTML attribute, it won't get the benefit of syntax highlighting in your IDE, you can't set breakpoints, and it may be hard to debug. In such cases, `amp-script` allows you to follow best programming practices.
+When your logic doesn't fit neatly into a compact expression, `amp-script` is the best choice. `amp-bind` allows you to introduce logic into user interactions, but your JavaScript needs to fit into a single expression. Because the code is encapsulated in an HTML attribute, it won't get the benefit of syntax highlighting in your IDE, you can't set breakpoints, and debugging may be a challenge. In such cases, `amp-script` allows you to follow best programming practices.
 
 ### Enhance AMP components
 
@@ -86,9 +86,9 @@ AMP allows you to retrieve server data using `amp-list` and to format it using [
 
 You can use `amp-script` to leverage areas of the Web API and DOM API that aren't currently accessible to AMP components, or to use these APIs in ways that AMP components don't support. For example, `amp-script` supports `WebSockets` ([example](https://amp.dev/documentation/examples/components/amp-script/#using-a-websocket-for-live-updates)), `localStorage`, and `Canvas`. It supports a wide variety of browser events, so you can listen for events beyond [those that AMP passes to traditional components](https://amp.dev/documentation/guides-and-tutorials/learn/amp-actions-and-events/). And since `amp-script` provides access to the `navigator` object, you can retrieve information about [the user's browser](https://amp.dev/documentation/examples/components/amp-script/#detecting-the-operating-system) or [preferred language](https://amp.dev/documentation/examples/components/amp-script/#personalization).
 
-## amp-script - or amp-bind and amp-list?
+## When to replace amp-bind and amp-list
 
-For a new AMP developer who's comfortable with JavaScript, it may seem easier to always use `amp-script` than to learn to use `amp-bind` and `amp-list`. But the complete AMP developer is likely to want to know and use all of these components.
+For a new AMP developer who's comfortable with JavaScript, it may seem easier to always use `amp-script` than to learn `amp-bind` and `amp-list`. However, in some cases, `amp-bind` and `amp-list` are a better fit.
 
 `amp-bind` is generally more straightforward for basic interactions, where its tight integration into HTML tags is compelling. In this example, pressing a button changes a text fragment. AMP's data binding makes this straightforward and easy to read:
 
@@ -97,7 +97,7 @@ For a new AMP developer who's comfortable with JavaScript, it may seem easier to
 <button on="tap:AMP.setState({name: 'Priya'})">I am Priya</button>
 ```
 
-Similarly, when using an API whose output you control, you may be able to implement business logic on the server, and you may be able to format the data it outputs so that it fits smoothly into an `amp-mustache` template. `amp-list` is a good fit in such cases.
+Similarly, when using an API whose output you control, you may be able to implement business logic on the server. You may be able to format the data the API outputs so that it fits smoothly into an `amp-mustache` template. `amp-list` is a good fit in such cases.
 
 `amp-bind` also provides a straightforward mechanism to communicate between AMP components. In this example, tapping on an image in an `<amp-selector>` sets the state variable `selectedSlide` to `0`, which in turn makes an `<amp-carousel>` move to its first slide.
 
@@ -113,7 +113,7 @@ Similarly, when using an API whose output you control, you may be able to implem
 
 Traditional interactive AMP components may also be more suitable for interactions that span large sections of a webpage - as you may not wish to wrap so much of the DOM in an `<amp-script>`. `amp-list` and `amp-bind` are tightly integrated with the rest of AMP, making it convenient to use binding anywhere on a webpage.
 
-However, on pages that involve more complex state variables or multiple interactions, `amp-script` will likely be simpler and more maintainable. Take this example, from the [AMP Camp e-commerce demo site](https://camp.samples.amp.dev/product-details?categoryId=women-shirts&productId=79121):
+However, on pages that involve more complex state variables or multiple interactions, using `amp-script` will result in simpler and more maintainable code. Take this example, from the [AMP Camp e-commerce demo site](https://camp.samples.amp.dev/product-details?categoryId=women-shirts&productId=79121):
 
 ```html
 <amp-selector
@@ -134,14 +134,13 @@ However, on pages that involve more complex state variables or multiple interact
 ></amp-selector>
 ```
 
-This site was created before `amp-script` was released. But this sort of logic might easily be easier to write and debug in JavaScript. In general, for pages with more business logic, `amp-script` may well be less confusing and will allow you to follow better programming practices.
+This site was created before `amp-script` was released. But this sort of logic would be easier to write and debug in JavaScript. For pages with more business logic, using `amp-script` will allow you to avoid confusion and to follow better programming practices.
 
-`amp-script` is designed to control just the portion of a page it encloses. Still, [as noted above](#enhance-amp-components), it can also affect the rest of the page by mutating state variables, just like `amp-bind`. 
-It's quite useful to use `amp-script` and `amp-bind` on the same page, using `amp-bind` for simpler interactions and `amp-script` for complex ones.
+In many cases, you'll want to use both `amp-script` and `amp-bind` on the same page. Deploy `amp-bind` for simpler interactions, turning to `amp-script` when you need more logic or structure. Furthermore, although `amp-script` can only make mutations to its DOM chilrden, [as noted above](#enhance-amp-components), it can affect the rest of the page by mutating state variables. `amp-bind` does the rest, as in [this example](https://amp.dev/documentation/examples/components/amp-script/#interacting-with-%3Camp-state%3E).
 
-Remember, though, that although WorkerDOM will change the real DOM when your code changes the virtual DOM to which it has access, no mechanism exists to synchronize in the reverse direction. Thus it's not advisable to use `amp-bind` or other means to modify the children of your `<amp-script>`. That area should be reserved for your code.
+Although WorkerDOM will change the real DOM when your code changes the virtual DOM to which it has access, no mechanism exists to synchronize in the reverse direction. Thus it's not advisable to use `amp-bind` or other means to modify the children of your `<amp-script>`. Reserve that area of the page for your `amp-script` JavaScript.
 
 
 ## Contribute to `amp-script`
 
-`amp-script` is always evolving, just as AMP is. Thus developers are encouraged to get involved. Think of new features that other developers might also need, [submit issues](https://github.com/ampproject/amphtml/issues), and of course [suggest and contribute new features](https://github.com/ampproject/amphtml/pulls)!
+`amp-script` is always evolving, just as AMP is. You can help improve it by getting involved. Think of new features that other developers might also need, [submit issues](https://github.com/ampproject/amphtml/issues), and of course [suggest and contribute new features](https://github.com/ampproject/amphtml/pulls)!
