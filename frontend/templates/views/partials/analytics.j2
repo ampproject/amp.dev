@@ -169,6 +169,68 @@
 }}) %}
 {% endif %}
 
+{# Pixi #}
+{% if doc.pod_path == '/content/amp-dev/page-experience.html' %}
+{# Track when "Analyze" button is pressed #}
+{% do config['triggers'].update({'analyzeButton': {
+    'selector': '.ap-m-input-bar-submit',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-analyze-url',
+      'event_label': 'pixi-analyze-url',
+      'event_category': 'pixi',
+      'event_action': 'analyze'
+    }
+}}) %}
+{# Track when "Share" button is pressed #}
+{% do config['triggers'].update({'shareButton': {
+    'selector': '#share-button',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-share-url',
+      'event_label': 'pixi-share-url',
+      'event_category': 'pixi',
+      'event_action': 'share'
+    }
+}}) %}
+{# Track when "# recommendations" link is clicked #}
+{% do config['triggers'].update({'viewRecommendations': 
+    {
+    'selector': 'a[href][target="_top"].ap-m-pixi-primary-metric-recommendations',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-view-recommendations',
+      'event_label': 'pixi-view-recommendations',
+      'event_category': 'pixi',
+      'event_action': 'link'
+    }
+}}) %}
+{# Track when "File a GitHub issue" link is opened #}
+{% do config['triggers'].update({'fileIssue': 
+    {
+    'selector': 'a[href][target="_blank"].ap-m-pixi-primary-metric-recommendations',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-file-issue',
+      'event_label': 'pixi-file-issue',
+      'event_category': 'pixi',
+      'event_action': 'link'
+    }
+}}) %}
+{# Track when tooltip is opened #}
+{% do config['triggers'].update({'openTooltip': 
+    {
+    'selector': '.ap-m-tooltip-toggle[aria-expanded="false"]',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-tooltip-open',
+      'event_label': 'pixi-tooltip-open',
+      'event_category': 'pixi',
+      'event_action': 'tooltip'
+    }
+}}) %}
+{% endif %}
+
 <amp-analytics type="gtag" data-credentials="include" data-block-on-consent>
   <script type="application/json">
     {{ config|tojson }}
