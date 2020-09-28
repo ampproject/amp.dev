@@ -229,6 +229,78 @@
       'event_action': 'tooltip'
     }
 }}) %}
+{# Visibility for LCP - field data #}
+{% do config['triggers'].update({'viewFieldLcp': 
+    {
+    'selector': '#fieldData.lcp:not(.loading)',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-field-data-lcp',
+      'event_label': 'pixi-field-data-lcp',
+      'event_category': 'pixi',
+      'event_action': 'engagement'
+    }
+}}) %}
+{# Visibility for FID - field data #}
+{% do config['triggers'].update({'viewFieldFid': 
+    {
+    'selector': '#fieldData.fid:not(.loading)',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-field-data-fid',
+      'event_label': 'pixi-field-data-fid',
+      'event_category': 'pixi',
+      'event_action': 'engagement'
+    }
+}}) %}
+{# Visibility for CLS - field data #}
+{% do config['triggers'].update({'viewFieldCls': 
+    {
+    'selector': '#fieldData.cls:not(.loading)',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-field-data-cls',
+      'event_label': 'pixi-field-data-cls',
+      'event_category': 'pixi',
+      'event_action': 'engagement'
+    }
+}}) %}
+{# Visibility for LCP - lab data #}
+{% do config['triggers'].update({'viewLabLcp': 
+    {
+    'selector': '#labData.lcp:not(.loading)',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-lab-data-lcp',
+      'event_label': 'pixi-lab-data-lcp',
+      'event_category': 'pixi',
+      'event_action': 'engagement'
+    }
+}}) %}
+{# Visibility for TBT - lab data #}
+{% do config['triggers'].update({'viewLabTbt': 
+    {
+    'selector': '#labData.tbt:not(.loading)',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-lab-data-tbt',
+      'event_label': 'pixi-lab-data-tbt',
+      'event_category': 'pixi',
+      'event_action': 'engagement'
+    }
+}}) %}
+{# Visibility for CLS - lab data #}
+{% do config['triggers'].update({'viewLabCls': 
+    {
+    'selector': '#labData.cls:not(.loading)',
+    'on': 'visible',
+    'vars': {
+      'event_name': 'pixi-lab-data-cls',
+      'event_label': 'pixi-lab-data-cls',
+      'event_category': 'pixi',
+      'event_action': 'engagement'
+    }
+}}) %}
 {% endif %}
 
 <amp-analytics type="gtag" data-credentials="include" data-block-on-consent>
