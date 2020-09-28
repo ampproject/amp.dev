@@ -219,7 +219,7 @@ export default class RecommendationsView {
 
     recommendation.nextSibling.classList.add('expanded');
     recommendation.nextSibling
-      .querySelector('header')
+      .querySelector('button')
       .setAttribute('aria-expanded', 'true');
   }
 }
