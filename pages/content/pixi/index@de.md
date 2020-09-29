@@ -57,6 +57,9 @@ scriptText:
     fileAnIssue: Melde ein Problem bei AMP
     recommendation: Empfehlung
     recommendations: Empfehlungen
+  detailsHeadlineImages: In Frage kommende Bilder
+  detailsHeadlineOther: Betroffene Ressourcen
+  thumbnail: Thumbnail
   categories:
     fast: Schnell
     average: Verbesserungswürdig
@@ -74,9 +77,9 @@ scriptText:
 Der AMP Page Experience Guide ist ein Werkzeug das Entwicklern zeigt
 wie ihre Seite beim Google Page Experience Ranking abschneidet und
 was sie tun können um das Ergebnis zu verbessern.
- 
+
 Falls es uns nicht möglich ist verwertbare Erkenntnisse zu liefern,
-nutze bitte die Möglichkeit 
+nutze bitte die Möglichkeit
 [ein Ticket auf Github anzulegen](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue),
 damit unser Team dir helfen kann, zu verstehen, wie deine AMP Seiten
 verbessert werden können.
