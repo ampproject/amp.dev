@@ -22,12 +22,14 @@ export default class RecommendationsView {
     this.filter = this.container.querySelector(
       '.ap-o-pixi-recommendations-filter'
     );
-    this.pill = this.filter.querySelector('.ap-a-pill');
+    this.filterPillAll = this.filter.querySelector('.ap-a-pill');
 
     this.recommendation = this.container.querySelector(
       '.ap-m-pixi-recommendations-item'
     );
     this.tag = this.recommendation.querySelector('span');
+
+    this.activeFilters = {};
   }
 
   resetView() {
@@ -85,7 +87,7 @@ export default class RecommendationsView {
     }
 
     for (const tagId of Object.keys(tagIdCounts)) {
-      const pill = this.pill.cloneNode(true);
+      const pill = this.filterPillAll.cloneNode(true);
       pill.textContent = i18n.getText(`tags.${tagId}`);
       pill.id = `filter-pill-${tagId}`;
       pill.className = 'ap-a-pill';
@@ -106,46 +108,50 @@ export default class RecommendationsView {
       metricUi.setRecommendationStatus(count, this.issueUrl);
     }
 
-    this.pill.classList.add('filtered');
-    this.pill.addEventListener('click', () => {
+    this.filterPillAll.classList.add('filtered');
+    this.filterPillAll.addEventListener('click', () => {
       this.resetFilter();
     });
   }
 
   resetFilter() {
-    this.pill.classList.add('filtered');
-    pill.setAttribute('aria-pressed', 'true');
-    this.container.className = this.container.className.split(' ')[0];
-
-    for (const pill of this.filterPills) {
-      pill.classList.remove('filtered');
-      pill.setAttribute('aria-pressed', 'false');
-      for (const recommendation of this.recommendationItems) {
-        recommendation.hidden = false;
-      }
+    this.activeFilters = {};
+    for (const filterPill of this.filter.children) {
+      filterPill.classList.remove('filtered');
     }
+    this.toggleFilter();
   }
 
   toggleFilter(tagId) {
-    this.container.classList.toggle(tagId);
-    this.pill.classList.remove('filtered');
-    this.pill.setAttribute('aria-pressed', 'false');
-    const pill = this.container.querySelector(`#filter-pill-${tagId}`);
-    const isFiltered = pill.classList.toggle('filtered');
-    pill.setAttribute('aria-pressed', isFiltered);
-
-    const activeFilter = this.container.className.split(' ');
-    if (activeFilter.length == 1) {
-      this.resetFilter();
-      return;
+    if (this.activeFilters[tagId]) {
+      delete this.activeFilters[tagId];
+    } else if (tagId) {
+      this.activeFilters[tagId] = true;
     }
 
-    for (const recommendation of this.recommendationItems) {
-      const matchingTags = activeFilter.filter((value) => {
-        return recommendation.classList.contains(value);
-      });
+    const filterPill = this.container.querySelector(`#filter-pill-${tagId}`);
+    // filterPill might be undefined, if filters are reset by clicking "All"
+    if (filterPill) {
+      filterPill.classList.toggle('filtered', !!this.activeFilters[tagId]);
+      filterPill.setAttribute('aria-pressed', !!this.activeFilters[tagId]);
+    }
 
-      recommendation.hidden = !matchingTags.length;
+    // If there is no filter left, then "All" should be enabled again,
+    // otherwise it is disabled
+    const activeFilterIds = Object.keys(this.activeFilters);
+    this.filterPillAll.classList.toggle('filtered', !activeFilterIds.length);
+    this.filterPillAll.setAttribute('aria-pressed', !activeFilterIds.length);
+
+    for (const recommendation of this.recommendationItems) {
+      if (activeFilterIds.length) {
+        const matchingTags = activeFilterIds.filter((id) => {
+          return recommendation.content.tags.includes(id);
+        });
+        recommendation.hidden = !matchingTags.length;
+      } else {
+        // Unhide all recommendations if there are no filters enabled
+        recommendation.hidden = false;
+      }
     }
   }
 }
