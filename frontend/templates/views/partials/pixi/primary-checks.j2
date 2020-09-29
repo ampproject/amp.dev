@@ -50,6 +50,9 @@
     <div class="ap-o-pixi-primary-checks-data-error-label">
       <label>{{ g.doc('/content/pixi/no-field-data.md', locale=doc.locale).html|render|safe }}</label>
     </div>
+    <div class="ap-o-pixi-primary-checks-data-api-error-label">
+      <h3>{{ pixi.scriptText.status.error }}</h3>
+    </div>
     <div class="ap-o-pixi-primary-checks-data-note"> 
       {{ pixi.staticText.coreWebVitals.fieldDataExplainer }} 
     </div>
@@ -93,6 +96,9 @@
     {% include 'views/partials/pixi/primary-metric.j2' %}
     {% endwith %}
 
+    <div class="ap-o-pixi-primary-checks-data-api-error-label">
+      <h3>{{ pixi.scriptText.status.error }}</h3>
+    </div>
     <div class="ap-o-pixi-primary-checks-data-note"> 
       {{ pixi.staticText.coreWebVitals.labDataExplainer }} 
     </div>
