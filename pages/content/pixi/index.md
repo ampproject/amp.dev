@@ -18,7 +18,7 @@ staticText:
     headline: Please wait a moment
     headline2: We are currently analyzing your page
     loadingCopy: ${finishedChecks} out of ${totalChecks} checks are completed
-    buttonFixIt: Fix it now
+    buttonFixIt: Make improvements
     buttonShare: Share
     buttonInvestigate: Investigate
   coreWebVitals:
