@@ -268,6 +268,8 @@ export default class PageExperience {
 
   toggleLoading(force) {
     this.inputBar.toggleLoading(force);
+    this.reports.classList.toggle('analysis-complete', !force);
+
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
     }

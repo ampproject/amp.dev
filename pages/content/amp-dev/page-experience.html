@@ -44,6 +44,48 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   {% set x=info_texts.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
+{% set analyticsConfig = {
+  'vars': {
+    'gtag_id': podspec.gaTrackingId,
+    'config': {
+      podspec.gaTrackingId: {
+        'groups': 'default'
+      }
+    }
+  },
+  'triggers': {
+    'viewFieldData': {
+      'selector': '#primary-checks-field-data',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-field-data',
+        'event_label': 'pixi-field-data',
+        'event_category': 'pixi',
+        'event_action': 'engagement'
+      }
+    },
+    'viewLabData': {
+      'selector': '#primary-checks-lab-data',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-lab-data',
+        'event_label': 'pixi-lab-data',
+        'event_category': 'pixi',
+        'event_action': 'engagement'
+      }
+    },
+    'viewRecommendations': {
+      'selector': '#recommendations',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-recommendations',
+        'event_label': 'pixi-recommendations',
+        'event_category': 'pixi',
+        'event_action': 'engagement'
+      }
+    }
+  }
+} %}
 
 <main class="ap--main ap-t-pixi">
   <section class="ap-t-pixi-stage">
@@ -134,6 +176,12 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
         <a href="#pixi-checks" class="ap-a-scroll-to-top" aria-label="{{ pixi.staticText.scrollToTop }}"></a>
 
+        <amp-analytics id="pixi-visibility-analytics" type="gtag" data-credentials="include" data-block-on-consent>
+          <script type="application/json">
+            {{ analyticsConfig|tojson }}
+          </script>
+        </amp-analytics>
+        
         <section class="ap-t-pixi-checks-reports">
           <div class="ap-t-pixi-checks-reports-title">
             <h2 id="core-web-vitals-checks">{{ pixi.staticText.coreWebVitals.headline }}</h2>
