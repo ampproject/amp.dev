@@ -106,6 +106,8 @@ export default class RecommendationsView {
 
         bodyText.innerHTML = bodyHtml;
 
+        recommendation.classList.toggle('highlight', value.highlight);
+
         // Set 'next advice' button
         const nextRecommendation = recommendations[i + 1];
         if (nextRecommendation) {
