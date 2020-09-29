@@ -55,11 +55,11 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   },
   'triggers': {
     'viewFieldData': {
-      'selector': '#primary-checks-field-data:not(.loading):not(.error)',
+      'selector': '#primary-checks-field-data',
       'on': 'visible',
       'vars': {
         'event_name': 'pixi-field-data',
-        'event_label': 'pixi-field-data',
+        'event_label': 'pixi-field-data-QUERY_PARAM(loading)-QUERY_PARAM(error)',
         'event_category': 'pixi',
         'event_action': 'view'
       },
@@ -69,7 +69,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       }
     },
     'viewLabData': {
-      'selector': '#primary-checks-lab-data:not(.loading):not(.error)',
+      'selector': '#primary-checks-lab-data',
       'on': 'visible',
     'vars': {
         'event_name': 'pixi-lab-data',
