@@ -66,6 +66,8 @@ scriptText:
     fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations
+  detailsHeadlineImages: "Images to consider"
+  detailsHeadlineOther: "Affected resources"
   categories:
     fast: Good
     average: Needs Improvement
