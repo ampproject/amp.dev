@@ -13,8 +13,7 @@
 // limitations under the License.
 
 import i18n from '../I18n.js';
-import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
-import marked from 'marked';
+import RecommendationItem from './RecommendationItem.js';
 
 export default class RecommendationsView {
   constructor(doc) {
@@ -50,102 +49,35 @@ export default class RecommendationsView {
     this.issueUrl = url;
   }
 
-  render(recommendationList, pageURL, metricUis) {
+  render(recommendationList, pageUrl, metricUis) {
     this.container.classList.remove('pristine');
     const recommendations = i18n.getSortedRecommendations(recommendationList);
     const tagIdCounts = {};
 
-    this.recommendationNodes = [];
+    this.recommendationItems = [];
     this.filterPills = [];
 
-    for (const [i, value] of recommendations.entries()) {
-      const recommendation = this.recommendation.cloneNode(true);
-      const header = recommendation.querySelector(
-        '.ap-m-pixi-recommendations-item-header'
-      );
-      const title = recommendation.querySelector(
-        '.ap-m-pixi-recommendations-item-header-title'
-      );
-      const toggle = recommendation.querySelector(
-        '.ap-m-pixi-recommendations-item-header-toggle'
-      );
-      const body = recommendation.querySelector(
-        '.ap-m-pixi-recommendations-item-body'
-      );
-      const bodyText = recommendation.querySelector(
-        '.ap-m-pixi-recommendations-item-body-text'
-      );
-      const nextButton = recommendation.querySelector('a');
-      const tagsBar = recommendation.querySelector(
-        '.ap-m-pixi-recommendations-item-tags'
-      );
+    for (const [i, content] of recommendations.entries()) {
+      const recommendationItem = new RecommendationItem(content, pageUrl, this.recommendation.cloneNode(true));
 
-      title.innerHTML = value.title;
-
-      // Remove body elements for recommendations that have no recommendation
-      // text and force expand them
-      if (!value.body) {
-        recommendation.removeChild(body);
-        header.removeChild(toggle);
-      } else {
-        let bodyHtml = cleanCodeForInnerHtml(value.body);
-        bodyHtml = bodyHtml.replace(/\$\{URL\}/g, encodeURIComponent(pageURL));
-        bodyHtml = addTargetBlankToLinks(bodyHtml);
-
-        // Render details if there are any and add them to the body text
-        if (value.details) {
-          let details = '\n';
-          for (const detail of value.details.items) {
-            details += `- \`${detail.url}\`\n`;
-          }
-
-          bodyHtml += marked(details);
-        }
-
-        bodyText.innerHTML = bodyHtml;
-
-        // Set 'next advice' button
-        const nextRecommendation = recommendations[i + 1];
-        if (nextRecommendation) {
-          nextButton.href = `#recommendation-${nextRecommendation.id}`;
-          nextButton.addEventListener('click', () => {
-            this.onClickNext(recommendation, header);
-          });
-        } else {
-          nextButton.remove();
-        }
+      const previousRecommendation = this.recommendationItems[i - 1];
+      if (previousRecommendation) {
+        previousRecommendation.next = recommendationItem;
       }
 
-      recommendation.style = null;
-      recommendation.id = `recommendation-${value.id}`;
-      header.id = `header-${value.id}`;
-      body.id = `body-${value.id}`;
-
-      if (i == 0 || !value.body) {
-        recommendation.classList.add('expanded');
-        header.setAttribute('aria-expanded', 'true');
+      if (i == 0 || !content.body) {
+        recommendationItem.expanded = true;
       }
 
-      if (value.body) {
-        header.addEventListener('click', () => {
-          const isExpanded = recommendation.classList.toggle('expanded');
-          header.setAttribute('aria-expanded', String(isExpanded));
-        });
-        header.setAttribute('aria-controls', body.id);
-        body.setAttribute('aria-labelledby', header.id);
-      }
-
-      for (const tagId of value.tags) {
-        const tag = this.tag.cloneNode(true);
-        recommendation.classList.add(tagId);
-        tag.textContent = i18n.getText(`tags.${tagId}`);
-        tagsBar.appendChild(tag);
+      // Keep track of the counts for each tag to be able to show recommendation
+      // count per CWV
+      for (const tagId of content.tags) {
         const count = tagIdCounts[tagId] || 0;
         tagIdCounts[tagId] = count + 1;
       }
 
-      this.recommendationNodes.push(recommendation);
-      this.container.appendChild(recommendation);
+      this.recommendationItems.push(recommendationItem);
+      this.container.appendChild(recommendationItem.element);
     }
 
     for (const tagId of Object.keys(tagIdCounts)) {
@@ -184,7 +116,7 @@ export default class RecommendationsView {
     for (const pill of this.filterPills) {
       pill.classList.remove('filtered');
       pill.setAttribute('aria-pressed', 'false');
-      for (const recommendation of this.recommendationNodes) {
+      for (const recommendation of this.recommendationItems) {
         recommendation.hidden = false;
       }
     }
@@ -204,22 +136,12 @@ export default class RecommendationsView {
       return;
     }
 
-    for (const recommendation of this.recommendationNodes) {
-      const commonValues = activeFilter.filter((value) => {
+    for (const recommendation of this.recommendationItems) {
+      const matchingTags = activeFilter.filter((value) => {
         return recommendation.classList.contains(value);
       });
 
-      recommendation.hidden = !commonValues.length;
+      recommendation.hidden = !matchingTags.length;
     }
-  }
-
-  onClickNext(recommendation, header) {
-    recommendation.classList.remove('expanded');
-    header.setAttribute('aria-expanded', 'false');
-
-    recommendation.nextSibling.classList.add('expanded');
-    recommendation.nextSibling
-      .querySelector('button')
-      .setAttribute('aria-expanded', 'true');
   }
 }
