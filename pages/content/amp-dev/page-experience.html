@@ -186,11 +186,6 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
             {% endwith %}
           </div>
 
-          <amp-analytics id="pixi-visibility-analytics" hidden type="gtag" data-credentials="include" data-block-on-consent>
-            <script type="application/json">
-              {{ config|tojson }}
-            </script>
-          </amp-analytics>
           {% include 'views/partials/pixi/primary-checks.j2' %}
 
           <h2 id="additional-checks">{{ pixi.staticText.additionalChecks.headline }}</h2>
