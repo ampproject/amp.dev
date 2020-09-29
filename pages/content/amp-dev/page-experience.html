@@ -43,7 +43,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   {% set x=info_texts.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
-{% set config = {
+{% set analyticsConfig = {
   'vars': {
     'gtag_id': podspec.gaTrackingId,
     'config': {
@@ -177,7 +177,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
 
         <amp-analytics id="pixi-visibility-analytics" type="gtag" data-credentials="include" data-block-on-consent>
           <script type="application/json">
-            {{ config|tojson }}
+            {{ analyticsConfig|tojson }}
           </script>
         </amp-analytics>
         
