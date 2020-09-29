@@ -57,8 +57,9 @@ scriptText:
     fileAnIssue: Melde ein Problem bei AMP
     recommendation: Empfehlung
     recommendations: Empfehlungen
-  detailsHeadlineImages: "In Frage kommende Bilder"
-  detailsHeadlineOther: "Betroffene Ressourcen"
+  detailsHeadlineImages: In Frage kommende Bilder
+  detailsHeadlineOther: Betroffene Ressourcen
+  thumbnail: Thumbnail
   categories:
     fast: Schnell
     average: Verbesserungswürdig

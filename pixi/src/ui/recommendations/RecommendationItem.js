@@ -125,7 +125,7 @@ export default class RecommendationItem {
       for (const column of columns) {
         let value = null;
         if (column.type == VALUE_TYPE_THUMBNAIL) {
-          value = `<amp-img src="${item[column.key]}" layout="fill"></amp-img>`;
+          value = `<amp-img alt="${i18n.getText('thumbnail')}" src="${item[column.key]}" layout="fill"></amp-img>`;
         } else if (column.type == VALUE_TYPE_BYTES) {
           value = `${(item[column.key] / 1000).toFixed(2)}KB`;
         } else if (column.type == VALUE_TYPE_MS) {
