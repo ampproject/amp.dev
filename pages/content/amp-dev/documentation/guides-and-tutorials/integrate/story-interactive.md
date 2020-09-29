@@ -1,7 +1,7 @@
 ---
 $title: Add Interactivity support to Web Story tools
 $order: 4
-description: 'The [amp-story-interactive](https://amp.dev/documentation/components/amp-story-interactive/?format=stories) extension provides various imersive elements that can be integrated into tools. Given the wide variety of options available to customize the elements, we have detailed what tools can do to have a seamless integration into the story creation workflow'
+description: 'The [amp-story-interactive](https://amp.dev/documentation/components/amp-story-interactive/?format=stories) component provides various imersive elements that can be integrated into tools. Given the wide variety of options available to customize the elements, we have detailed what tools can do to have a seamless integration into the story creation workflow'
 formats:
   - stories 
 ---
@@ -10,13 +10,13 @@ Interactive experiences provide a first-class support for user interactivity in 
 
 ## Import scripts
 
-It's important when creating the documents to import the extension by adding the following line:
+It's important when creating the stories to import the script by adding the following line:
 
 ```html
 <script async custom-element="amp-story-interactive" src="https://cdn.ampproject.org/v0/amp-story-interactive-0.1.js"></script>
 ```
 
-## Understanding the extension
+## Understanding the elements
 
 Understanding how the elements work is crucial to integrating them successfully, so we have created [a Codepen collection](https://codepen.io/collection/DEGRLE) to host demos of the components and some of their styling variants.
 
