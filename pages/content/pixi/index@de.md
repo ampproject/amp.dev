@@ -14,7 +14,7 @@ staticText:
     headline: Bitte warte einen Moment
     headline2: Wir analysieren grade deine Seite
     loadingCopy: ${finishedChecks} von ${totalChecks} Checks sind fertig
-    buttonFixIt: Jetzt beheben
+    buttonFixIt: Jetzt verbessern
     buttonShare: Teilen
   coreWebVitals:
     headline: Core Web Vitals
