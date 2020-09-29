@@ -10,7 +10,7 @@ Interactive experiences provide a first-class support for user interactivity in 
 
 ## Import scripts
 
-It's important when creating the stories to import the script by adding the following line:
+Start by importing the script in the head of your document:
 
 ```html
 <script async custom-element="amp-story-interactive" src="https://cdn.ampproject.org/v0/amp-story-interactive-0.1.js"></script>
@@ -38,9 +38,13 @@ Elements that require image URLs such as amp-story-interactive-results can use a
 
 Multi-state elements such as amp-story-interactive-results should allow users to change the values on each state independently either inline or on a side panel, but it's a good idea for users to preview each state as they are working on them, so having a preview selector could be a good idea.
 
-Some content values are not easily visualized by previews such as confetti effects, but tools can get a preview of the animation working on the editor and show the animation as users change the values of confetti. Remember that some elements allow all options to have a confetti emoji, while others limit the confetti to certain options. Adding animations to the previews can also allow `animate-in` effects in the interactive elements, which are a great way to customize the experience further.
+Previews cannot always visualize all the fields (such as confetti effects), but tools can show a preview of the animation only played when users change the values associated with it. Remember that some elements allow all options to have a confetti emoji, while others limit the confetti to certain options. 
 
-Some components receive specific fields for some options, which will require custom code in the UI to input (eg: what option is correct in a quiz), but most elements share to some extent all the content attributes, so reusing the code and UI is a good idea.
+[tip type="note"]
+Adding animations to the previews can also allow `animate-in` effects in the interactive elements, which are a great way to customize the experience further.
+[/tip]
+
+Some elements have additional configuration for their options, which will require custom code in the UI to input (eg: what option is correct in a quiz), but most elements share to some extent all the content attributes, so reusing the code and UI is a good idea.
 
 ### Style management
 
@@ -48,7 +52,7 @@ Most elements support the same set of styling options, either through CSS variab
 
 In terms of actual implementations, it's a good idea to give users control over the theme and chip-style of the elements, and ideally also allow them to control the accent color and prompt alignment. Variables such as prompt text and prompt background are interesting for users since they allow prompt backgrounds to be gradients, and they allow prompt text to be colored to match better the story design cues and improve contrast.
 
-Tools can go above and beyond to give extra customization options for creators since the styling variants are so diverse. Many interesting designs can be implemented with the `chip-style="transparent"` attribute. For inspiration check out the [amp-story-interactive-results Codepen](https://codepen.io/mszylkowski/pen/abNWzdb) which contains creative designs for transparent styles. Those require extra CSS rules to be modified for the elements, such as the actual element's background, border (and border-radius), box-shadow, backdrop-filter, etc. When enabling extra options, keep in mind use-cases for them, as many CSS rules will not work on the elements (eg: font-family).
+Tools can go above and beyond to give extra customization options for creators. Many interesting designs can be implemented with the `chip-style="transparent"` attribute. For inspiration check out the [amp-story-interactive-results Codepen](https://codepen.io/mszylkowski/pen/abNWzdb) which contains creative designs for transparent styles. Those require extra CSS rules to be modified for the elements, such as the actual element's background, border (and border-radius), box-shadow, backdrop-filter, etc. When enabling extra options, keep in mind use-cases for them, as many CSS rules will not work on the elements (eg: font-family).
 
 ### Integrating amp-story-interactive-results
 
