@@ -182,6 +182,30 @@
       'event_action': 'analyze'
     }
 }}) %}
+{# Track when "Investigate" button is clicked #}
+{% do config['triggers'].update({'fixItButton': 
+    {
+    'selector': '#investigate-button',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-investigate',
+      'event_label': 'pixi-investigate',
+      'event_category': 'pixi',
+      'event_action': 'api-failure'
+    }
+}}) %}
+{# Track when "Fix it now" button is clicked #}
+{% do config['triggers'].update({'fixItButton': 
+    {
+    'selector': '#fix-it-button',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-fix-it',
+      'event_label': 'pixi-fix-it',
+      'event_category': 'pixi',
+      'event_action': 'fix-it'
+    }
+}}) %}
 {# Track when "Share" button is pressed #}
 {% do config['triggers'].update({'shareButton': {
     'selector': '#share-button',
