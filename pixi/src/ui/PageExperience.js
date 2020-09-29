@@ -128,6 +128,28 @@ export default class PageExperience {
       );
     }
 
+    console.log('Creating runtime analytics ...');
+    // Add analytics for elements rendered at runtime
+    const ampAnalytics = document.createElement('amp-analytics');
+    ampAnalytics.innerHTML = `
+      <script type="application/json">
+        {
+          "triggers": {
+            "viewRecommendations": {
+              "selector": "#recommendations:not(.pristine)",
+              "on": "visible",
+              "vars": {
+                "event_name": "pixi-recommendations",
+                "event_label": "pixi-recommendations",
+                "event_category": "pixi",
+                "event_action": "engagement"
+              }
+            }
+          }
+        }
+      </script>`;
+    document.appendChild(ampAnalytics);
+
     this.running = false;
   }
 
