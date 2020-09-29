@@ -14,7 +14,6 @@
 
 import i18n from '../I18n.js';
 import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
-import marked from 'marked';
 
 const VALUE_TYPE_BYTES = 'bytes';
 const VALUE_TYPE_MS = 'ms';
@@ -62,8 +61,12 @@ export default class RecommendationItem {
     this.body.id = `body-${content.id}`;
     this.renderBody();
 
-    this.details = this.body.querySelector('.ap-m-pixi-recommendations-item-details');
-    this.detailsTitle = this.details.querySelector('.ap-m-pixi-recommendations-item-details-title');
+    this.details = this.body.querySelector(
+      '.ap-m-pixi-recommendations-item-details'
+    );
+    this.detailsTitle = this.details.querySelector(
+      '.ap-m-pixi-recommendations-item-details-title'
+    );
     this.detailsTable = this.details.querySelector('table');
     this.renderDetails();
 
@@ -74,7 +77,7 @@ export default class RecommendationItem {
 
     // Recommendations with a body text can be expanded to show more
     // information
-    if (this.content.body || this.content.details) {
+    if (this.content.body || this.content.details) {
       this.header.setAttribute('aria-controls', this.body.id);
       this.body.setAttribute('aria-labelledby', this.header.id);
 
@@ -112,7 +115,9 @@ export default class RecommendationItem {
     let details = '<thead>';
     const columns = [];
     for (const heading of this.content.details.headings) {
-      details += `<th class="${heading.key}">${heading.label || heading.text || ''}</th>`;
+      details += `<th class="${heading.key}">${
+        heading.label || heading.text || ''
+      }</th>`;
       columns.push({
         key: heading.key,
         type: heading.valueType || heading.itemType,
@@ -125,13 +130,17 @@ export default class RecommendationItem {
       for (const column of columns) {
         let value = null;
         if (column.type == VALUE_TYPE_THUMBNAIL) {
-          value = `<amp-img alt="${i18n.getText('thumbnail')}" src="${item[column.key]}" layout="fill"></amp-img>`;
+          value = `<amp-img alt="${i18n.getText('thumbnail')}" src="${
+            item[column.key]
+          }" layout="fill"></amp-img>`;
         } else if (column.type == VALUE_TYPE_BYTES) {
           value = `${(item[column.key] / 1000).toFixed(2)}KB`;
         } else if (column.type == VALUE_TYPE_MS) {
-          value = `${(item[column.key]).toFixed(2)}ms`;
+          value = `${item[column.key].toFixed(2)}ms`;
         } else if (column.type == VALUE_TYPE_URL) {
-          value = `<a href="${item[column.key]}" target="_blank" rel="noopener">${item[column.key]}</a>`;
+          value = `<a href="${
+            item[column.key]
+          }" target="_blank" rel="noopener">${item[column.key]}</a>`;
         } else {
           value = item[column.key];
         }
