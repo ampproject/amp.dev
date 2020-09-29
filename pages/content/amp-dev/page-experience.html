@@ -68,7 +68,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
       'on': 'visible',
       'vars': {
         'event_name': 'pixi-lab-data',
-        'event_label': 'pixi-field-data',
+        'event_label': 'pixi-lab-data',
         'event_category': 'pixi',
         'event_action': 'engagement'
       }
@@ -175,6 +175,12 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         {% do doc.styles.addCssFile('css/components/atoms/scroll-to-top.css') %}
         <a href="#pixi-checks" class="ap-a-scroll-to-top" aria-label="{{ pixi.staticText.scrollToTop }}"></a>
 
+        <amp-analytics id="pixi-visibility-analytics" type="gtag" data-credentials="include" data-block-on-consent>
+          <script type="application/json">
+            {{ config|tojson }}
+          </script>
+        </amp-analytics>
+        
         <section class="ap-t-pixi-checks-reports">
           <div class="ap-t-pixi-checks-reports-title">
             <h2 id="core-web-vitals-checks">{{ pixi.staticText.coreWebVitals.headline }}</h2>
