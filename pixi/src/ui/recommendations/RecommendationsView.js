@@ -58,7 +58,11 @@ export default class RecommendationsView {
     this.filterPills = [];
 
     for (const [i, content] of recommendations.entries()) {
-      const recommendationItem = new RecommendationItem(content, pageUrl, this.recommendation.cloneNode(true));
+      const recommendationItem = new RecommendationItem(
+        content,
+        pageUrl,
+        this.recommendation.cloneNode(true)
+      );
 
       const previousRecommendation = this.recommendationItems[i - 1];
       if (previousRecommendation) {

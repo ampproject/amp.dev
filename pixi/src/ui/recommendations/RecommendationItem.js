@@ -37,9 +37,7 @@ export default class RecommendationsItem {
       '.ap-m-pixi-recommendations-item-header-toggle'
     );
 
-    this.body = element.querySelector(
-      '.ap-m-pixi-recommendations-item-body'
-    );
+    this.body = element.querySelector('.ap-m-pixi-recommendations-item-body');
     this.body.id = `body-${content.id}`;
 
     this.bodyText = element.querySelector(
