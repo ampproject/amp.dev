@@ -50,15 +50,22 @@ export default async function getIssueUrl(
     mobileFriendlinessPromise,
     safeBrowsingPromise,
   ]);
+  const hasPageExperience = pageExperience !== undefined;
   const hasFieldData =
-    pageExperience !== undefined && pageExperience.source === 'fieldData';
+    hasPageExperience && pageExperience.source === 'fieldData';
   const issueData = {
     lcp: hasFieldData ? parseScore(pageExperience.fieldData.lcp) : Result.none,
     fid: hasFieldData ? parseScore(pageExperience.fieldData.fid) : Result.none,
     cls: hasFieldData ? parseScore(pageExperience.fieldData.cls) : Result.none,
-    labLcp: parseScore(pageExperience.labData.lcp),
-    tbt: parseScore(pageExperience.labData.tbt),
-    labCls: parseScore(pageExperience.labData.cls),
+    labLcp: hasPageExperience
+      ? parseScore(pageExperience.labData.lcp)
+      : Result.none,
+    tbt: hasPageExperience
+      ? parseScore(pageExperience.labData.tbt)
+      : Result.none,
+    labCls: hasPageExperience
+      ? parseScore(pageExperience.labData.cls)
+      : Result.none,
     safeBrowsing: getTextFromBoolean(safeBrowsing.safeBrowsing),
     mobileFriendly: getTextFromBoolean(mobileFriendliness.mobileFriendly),
     url: pageUrl,
