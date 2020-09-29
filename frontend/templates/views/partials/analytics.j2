@@ -253,6 +253,30 @@
       'event_action': 'tooltip'
     }
 }}) %}
+{# Track when field data tab is opened #}
+{% do config['triggers'].update({'openFieldData': 
+    {
+    'selector': '#field-data-tab',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-field-data-open',
+      'event_label': 'pixi-field-data-open',
+      'event_category': 'pixi',
+      'event_action': 'view-field-data'
+    }
+}}) %}
+{# Track when lab data tab is opened #}
+{% do config['triggers'].update({'openLabData': 
+    {
+    'selector': '#lab-data-tab',
+    'on': 'click',
+    'vars': {
+      'event_name': 'pixi-lab-data-open',
+      'event_label': 'pixi-lab-data-open',
+      'event_category': 'pixi',
+      'event_action': 'view-lab-data'
+    }
+}}) %}
 {% endif %}
 
 <amp-analytics type="gtag" data-credentials="include" data-block-on-consent>
