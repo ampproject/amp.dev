@@ -182,4 +182,12 @@
       }
     }
   }
+
+  #pixi-visibility-analytics {
+    display: none;
+  }
+
+  .analysis-complete #pixi-visibility-analytics {
+    display: block;
+  }
 }

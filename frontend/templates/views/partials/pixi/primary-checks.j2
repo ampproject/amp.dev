@@ -1,5 +1,11 @@
 {% do doc.styles.addCssFile('css/components/organisms/pixi-primary-checks.css') %}
 
+<amp-analytics id="pixi-visibility-analytics" type="gtag" data-credentials="include" data-block-on-consent>
+  <script type="application/json">
+    {{ config|tojson }}
+  </script>
+</amp-analytics>
+
 <div class="ap-o-pixi-primary-checks" id="core-web-vitals">
   <div class="ap-o-pixi-primary-checks-tabs" aria-label="{{ pixi.staticText.coreWebVitals.tabsAriaLabel }}">
     <button role="tab" aria-selected="true" aria-controls="primary-checks-field-data"

@@ -43,6 +43,48 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   {% set x=info_texts.__setitem__(node.base, nodeDict) %}
 {% endfor %}
 
+{% set config = {
+  'vars': {
+    'gtag_id': podspec.gaTrackingId,
+    'config': {
+      podspec.gaTrackingId: {
+        'groups': 'default'
+      }
+    }
+  },
+  'triggers': {
+    'viewFieldData': {
+      'selector': '#primary-checks-field-data',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-field-data',
+        'event_label': 'pixi-field-data',
+        'event_category': 'pixi',
+        'event_action': 'engagement'
+      }
+    },
+    'viewLabData': {
+      'selector': '#primary-checks-lab-data',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-lab-data',
+        'event_label': 'pixi-field-data',
+        'event_category': 'pixi',
+        'event_action': 'engagement'
+      }
+    },
+    'viewRecommendations': {
+      'selector': '#recommendations',
+      'on': 'visible',
+      'vars': {
+        'event_name': 'pixi-recommendations',
+        'event_label': 'pixi-recommendations',
+        'event_category': 'pixi',
+        'event_action': 'engagement'
+      }
+    }
+  }
+} %}
 
 <main class="ap--main ap-t-pixi">
   <section class="ap-t-pixi-stage">
@@ -144,6 +186,11 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
             {% endwith %}
           </div>
 
+          <amp-analytics id="pixi-visibility-analytics" hidden type="gtag" data-credentials="include" data-block-on-consent>
+            <script type="application/json">
+              {{ config|tojson }}
+            </script>
+          </amp-analytics>
           {% include 'views/partials/pixi/primary-checks.j2' %}
 
           <h2 id="additional-checks">{{ pixi.staticText.additionalChecks.headline }}</h2>
