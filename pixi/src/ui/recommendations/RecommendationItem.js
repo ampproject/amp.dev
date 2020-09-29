@@ -16,7 +16,7 @@ import i18n from '../I18n.js';
 import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../../utils/texts';
 import marked from 'marked';
 
-export default class RecommendationsItem {
+export default class RecommendationItem {
   constructor(content, pageUrl, element) {
     this.content = content;
     this.pageUrl = pageUrl;
