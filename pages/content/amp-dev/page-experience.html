@@ -55,23 +55,31 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   },
   'triggers': {
     'viewFieldData': {
-      'selector': '#primary-checks-field-data',
+      'selector': '#primary-checks-field-data:not(.loading):not(.error)',
       'on': 'visible',
       'vars': {
         'event_name': 'pixi-field-data',
         'event_label': 'pixi-field-data',
         'event_category': 'pixi',
-        'event_action': 'engagement'
+        'event_action': 'view'
+      },
+      'visibilitySpec': {
+        'visiblePercentageMin': 30,
+        'repeat': true
       }
     },
     'viewLabData': {
-      'selector': '#primary-checks-lab-data',
+      'selector': '#primary-checks-lab-data:not(.loading):not(.error)',
       'on': 'visible',
-      'vars': {
+    'vars': {
         'event_name': 'pixi-lab-data',
         'event_label': 'pixi-lab-data',
         'event_category': 'pixi',
-        'event_action': 'engagement'
+        'event_action': 'view'
+      },
+      'visibilitySpec': {
+        'visiblePercentageMin': 30,
+        'repeat': true
       }
     },
     'viewRecommendations': {
@@ -81,7 +89,11 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         'event_name': 'pixi-recommendations',
         'event_label': 'pixi-recommendations',
         'event_category': 'pixi',
-        'event_action': 'engagement'
+        'event_action': 'view'
+      },
+      'visibilitySpec': {
+        'visiblePercentageMin': 0,
+        'repeat': true
       }
     }
   }

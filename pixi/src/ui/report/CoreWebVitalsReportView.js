@@ -291,6 +291,7 @@ export default class CoreWebVitalsReportView {
   }
 
   toggleLoading(force) {
+    this.container.classList.toggle('loading', force);
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
       coreWebVitalView.toggleLoading(force);
     }
