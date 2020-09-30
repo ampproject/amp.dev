@@ -41,8 +41,7 @@
 
     h1 {
       max-width: 600px;
-      margin: 0;
-      margin-bottom: -40px;
+      margin: 0 360px -40px 0;
       font-size: 42px;
       line-height: 1.14;
 
@@ -136,15 +135,18 @@
         @media (min-width: 768px) {
           top: 90px;
           margin-left: -15px;
+          margin-right: -15px;
         }
 
         @media (min-width: 1024px) {
           top: 125px;
           margin-left: -35px;
+          margin-right: -35px;
         }
 
         @media (min-width: 1280px) {
           margin-left: 0;
+          margin-right: 0;
         }
       }
 
@@ -178,6 +180,10 @@
 
         h2 {
           margin: 0 20px 0 0;
+
+          &[dir='rtl'] {
+            margin: 0 0 0 20px;
+          }
         }
       }
     }
