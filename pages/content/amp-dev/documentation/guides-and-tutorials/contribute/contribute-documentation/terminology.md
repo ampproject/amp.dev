@@ -73,7 +73,7 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>Web story / Web stories 
+   <td>Web Story / Web Stories 
    </td>
    <td>A story web experience built with AMP. 
    </td>
@@ -119,4 +119,3 @@ author: CrystalOnScript
    </td>
   </tr>
 </table>
-
