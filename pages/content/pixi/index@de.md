@@ -14,7 +14,6 @@ staticText:
     headline: Bitte warte einen Moment
     headline2: Wir analysieren grade deine Seite
     loadingCopy: ${finishedChecks} von ${totalChecks} Checks sind fertig
-    buttonFixIt: Jetzt verbessern
     buttonShare: Teilen
   coreWebVitals:
     headline: Core Web Vitals
@@ -57,6 +56,8 @@ scriptText:
     fileAnIssue: Melde ein Problem bei AMP
     recommendation: Empfehlung
     recommendations: Empfehlungen
+  buttonFixIt: Jetzt verbessern
+  buttonMakeImprovements: Jetzt verbessern
   categories:
     fast: Schnell
     average: Verbesserungswürdig
