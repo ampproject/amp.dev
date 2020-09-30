@@ -181,6 +181,11 @@
 
       &-body {
         display: flex;
+
+        &-text pre {
+          white-space: pre-wrap;
+          line-height: 1.5em
+        }
       }
     }
   }
