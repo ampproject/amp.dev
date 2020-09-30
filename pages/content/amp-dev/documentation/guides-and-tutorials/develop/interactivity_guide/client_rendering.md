@@ -226,7 +226,7 @@ You may change an amp-list component’s JSON endpoint or amp-state variable aft
 ```
 [/example]
 
-Changing the content displayed within an amp-list component may require a change in size. Using the [`[is-layout-container]` bindable attribute](../../../components/reference/amp-list.md#[is-layout-container]-(optional)) changes the layout to [`container`](../../learn/amp-html-layout.md), allowing amp-list’s children to define its size.
+Changing the content displayed within an amp-list component may require a change in size. Using the [`[is-layout-container]` bindable attribute](../../../components/reference/amp-list.md#[is-layout-container]-(optional)) changes the layout to `container`, allowing amp-list’s children to define its size.
 
 # Updating live content without user interaction
 
