@@ -1929,18 +1929,74 @@
 				}
 			},
 			"font-display": {
-				"id": "font-display",
-				"title": "All text remains visible during webfont loads",
-				"description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://web.dev/font-display/).",
-				"score": 1,
-				"scoreDisplayMode": "binary",
-				"details": {
-					"type": "table",
-					"headings": [],
-					"items": []
-				},
-				"warnings": []
-			},
+        "id": "font-display",
+        "title": "Ensure text remains visible during webfont load",
+        "description": "Leverage the font-display CSS feature to ensure text is user-visible while webfonts are loading. [Learn more](https://web.dev/font-display/).",
+        "score": 0,
+        "scoreDisplayMode": "binary",
+        "details": {
+          "type": "table",
+          "headings": [
+            {
+              "key": "url",
+              "itemType": "url",
+              "text": "URL"
+            },
+            {
+              "text": "Potential Savings",
+              "itemType": "ms",
+              "key": "wastedMs"
+            }
+          ],
+          "items": [
+            {
+              "url": "https://static.axios.com/fonts/axios-site/nb_international_pro_regular.woff2",
+              "wastedMs": 72.645000000193249
+            },
+            {
+              "url": "https://static.axios.com/fonts/axios-site/nb_international_pro_book.woff2",
+              "wastedMs": 32.226000000264321
+            },
+            {
+              "url": "https://static.axios.com/fonts/axios-site/nb_international_pro_light.woff2",
+              "wastedMs": 51.775000000816362
+            },
+            {
+              "url": "https://static.axios.com/fonts/axios-site/atiza/atizatext-bold-webfont.woff2",
+              "wastedMs": 53.299000000151864
+            },
+            {
+              "wastedMs": 61.170999999376363,
+              "url": "https://static.axios.com/fonts/axios-site/atiza/atizatext-regular-webfont.woff2"
+            },
+            {
+              "url": "https://static.axios.com/fonts/axios-site/atiza/atizatext-regularitalic-webfont.woff2",
+              "wastedMs": 65.57500000053551
+            },
+            {
+              "wastedMs": 47.747999999955937,
+              "url": "https://static.axios.com/fonts/axios-site/nb_international_pro_regular.woff2"
+            },
+            {
+              "url": "https://static.axios.com/fonts/axios-site/atiza/atizatext-regular-webfont.woff2",
+              "wastedMs": 74.190000000271539
+            },
+            {
+              "url": "https://static.axios.com/fonts/axios-site/atiza/atizatext-bold-webfont.woff2",
+              "wastedMs": 70.4939999995986
+            },
+            {
+              "url": "https://static.axios.com/fonts/axios-site/nb_international_pro_regular.woff2",
+              "wastedMs": 80.617999999958556
+            },
+            {
+              "url": "https://static.axios.com/fonts/axios-site/nb_international_pro_book.woff2",
+              "wastedMs": 68.3179999996355
+            }
+          ]
+        },
+        "warnings": []
+      },
 			"metrics": {
 				"id": "metrics",
 				"title": "Metrics",

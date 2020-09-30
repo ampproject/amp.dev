@@ -197,13 +197,13 @@ export default class PageExperience {
     }
 
     const report = await reportPromise;
+    this.reportViews.pageExperience.render(report, cacheReport);
 
     if (report.error) {
       console.error('Could not perform page experience check', report.error);
       return {error: report.error};
     }
 
-    this.reportViews.pageExperience.render(report, cacheReport);
     return {
       descriptions: report.descriptions,
       details: report.details,
@@ -268,6 +268,8 @@ export default class PageExperience {
 
   toggleLoading(force) {
     this.inputBar.toggleLoading(force);
+    this.reports.classList.toggle('analysis-complete', !force);
+
     for (const report of Object.keys(this.reportViews)) {
       this.reportViews[report].toggleLoading(force);
     }

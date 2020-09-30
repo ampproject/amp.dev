@@ -63,7 +63,8 @@
     display: none;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
 
-    &-error-label {
+    &-error-label,
+    &-api-error-label {
       position: absolute;
       left: 0;
       top: 230px;
@@ -100,8 +101,13 @@
     &.error {
       position: relative;
 
-      #{$primary-checks}-data-error-label {
+      &.missing-field-data #{$primary-checks}-data-error-label,
+      &.api-error #{$primary-checks}-data-api-error-label {
         display: flex;
+
+        & > h3 {
+          color: safeColor('light-gray');
+        }
       }
     }
   }

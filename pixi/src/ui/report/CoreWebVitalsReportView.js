@@ -156,8 +156,9 @@ class CoreWebVitalView {
     this.toggleLoading(false);
   }
 
-  renderError() {
+  renderError(errorClass) {
     this.container.parentNode.classList.add('error');
+    this.container.parentNode.classList.add(errorClass);
   }
 
   setRecommendationStatus(count, issueUrl) {
@@ -247,8 +248,13 @@ export default class CoreWebVitalsReportView {
 
     for (const coreWebVitalView of Object.values(this.coreWebVitalViews)) {
       const metric = this.getMetric(results, coreWebVitalView);
+      if (report.error) {
+        coreWebVitalView.renderError('api-error');
+        continue;
+      }
+
       if (!metric) {
-        coreWebVitalView.renderError();
+        coreWebVitalView.renderError('missing-field-data');
         continue;
       }
 

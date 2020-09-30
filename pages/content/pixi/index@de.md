@@ -58,6 +58,9 @@ scriptText:
     recommendations: Empfehlungen
   buttonFixIt: Jetzt verbessern
   buttonMakeImprovements: Jetzt verbessern
+  detailsHeadlineImages: In Frage kommende Bilder
+  detailsHeadlineOther: Betroffene Ressourcen
+  thumbnail: Thumbnail
   categories:
     fast: Schnell
     average: Verbesserungswürdig

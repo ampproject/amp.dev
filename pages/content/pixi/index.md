@@ -67,6 +67,9 @@ scriptText:
     recommendations: recommendations
   buttonFixIt: Fix it now
   buttonMakeImprovements: Make improvements
+  detailsHeadlineImages: Images to consider
+  detailsHeadlineOther: Affected resources
+  thumbnail: Thumbnail
   categories:
     fast: Good
     average: Needs Improvement
