@@ -232,74 +232,14 @@ Changing the content displayed within an amp-list component may require a change
 
 The [`amp-live-list`](../../../components/reference/amp-live-list.md) component provides a wrapper and minimal UI to update content live. Some cases of rendering live content may require more customization than amp-live-list provides. In these cases, `amp-script` allows complex logic and can use additional UI libraries, such a [Preact](https://preactjs.com/) or [Vue.js](https://vuejs.org/) and use of the [WebSocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
 
-```
-Example: show something that updates continuously 
-```
-
-However, rendering live content with amp-script comes with a few restrictions. This approach allows the creation of any non-AMP elements, but _only_ the [`amp-img`](../../../components/reference/amp-img.md) and [`amp-layout`](../../../components/reference/amp-layout.md) components. You may work around this by writing updates to amp-state and rendering via amp-list. 
-
-_Example live updating content with amp-script_
-_NEEDS TO BE FIXED_
-
-[example preview="top-frame" playground="true" imports="amp-script"]
-```html
-<script id="stock-price" type="text/plain" target="amp-script">
-  const span = document.getElementById('price');
-  const apiURL = 'pathto/api';
-
-  function updatePrice() {
-    fetch(apiURL)
-    .then(async (response) => {
-      let price = await response.text();
-      span.innerHTML = Number(price).toFixed(2);
-    });
-  }
-
-  setInterval(updatePrice, 5000);
-</script>
-<h1>Stock ticker</h1>
-<amp-script layout="fixed" script="stock-price" height="200" width="300">
-  Current price: <span id="price">62.00</span>
-</amp-script>
-```
-[/example]
+However, rendering live content with amp-script comes with a few restrictions. This approach allows the creation of any non-AMP elements, but _only_ the [`amp-img`](../../../components/reference/amp-img.md) and [`amp-layout`](../../../components/reference/amp-layout.md) components. You may work around this by writing updates to amp-state and rendering via amp-list.
 
 # Personalization with amp-access
 
 The [`amp-access`](../../../components/reference/amp-access.md) component allows personalization of page content. This data is provided via a JSON endpoint, which uses amp-mustache to update page content.
 
-_NEEDS TO BE FIXED_
-
-[example preview="top-frame" playground="true" imports="amp-access" template="amp-mustache"]
-```html
-<head>
-<script id="amp-access" type="application/json">
-    {
-      "authorization": "/documentation/examples/api/time",
-      "pingback": "/documentation/examples/api/echo"
-    }
-  </script>
-</head>
-<body>
-  <section amp-access="true">
-    {% raw %}
-    <template amp-access-template type="amp-mustache">
-      The time is: {{time}}
-    </template>
-    {% endraw %}
-  </section>
-</body>
-```
-[/example]
-
 The biggest advantage of `amp-access` is the lack of layout restrictions. This gives a lot of flexibility, but you must ensure it doesn’t lead to content jump. This could hurt your Web Vital score.
-
-EXAMPLE :D
 
 # Rendering form responses
 
-The amp-form component allows a client-rendering JSON response. Used with amp-mustache, forms are able to communicate submit success and failure.
-
-```
-Example: render search results
-```
+The [`amp-form`](../../../components/reference/amp-form.md) component allows a client-rendering JSON response. Used with [`amp-mustache`](../../../components/reference/amp-mustache.md), forms are able to communicate submit success and failure.

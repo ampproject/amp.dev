@@ -9,7 +9,7 @@ contributors:
   - sbenz
 ---
 
-This guide outlines interactivity foundations in AMP. Some primitives will look familiar to other frameworks, like hiding and showing elements, but AMP also exposes specific actions and events. Read-on to learn how to install listeners, respond to user interaction, and bring the basics of interactivity into your pages.
+This guide outlines interactivity foundations in AMP. Some primitives will look familiar to other frameworks, like hiding and showing elements, but AMP also exposes specific actions and events. Read on to learn how to install listeners, respond to user interaction, and bring the basics of interactivity into your pages.
 
 # Event listeners and event handling
 

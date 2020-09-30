@@ -129,16 +129,16 @@ Check out the actions and events overview page to learn more about the different
 
 ### Define reusable actions
 
-If you are chaining multiple actions, you can define them together as a single and reusable action. Use the [amp-action-macro](https://amp.dev/documentation/components/amp-action-macro/?format=websites) component to create AMP action macros. Each action macro needs an id and an action to execute. Call the action macro by it’s id and pass the arguments that alter its behavior.
+If you are chaining multiple actions, you can define them together as a single and reusable action. Use the [amp-action-macro](../../../components/reference/amp-action-macro.md) component to create AMP action macros. Each action macro needs an id and an action to execute. Call the action macro by it’s id and pass the arguments that alter its behavior.
 
 [example preview="top-frame" playground="true" imports="amp-action-macro"]
 ```html
 <amp-action-macro
   id="navigate-action"
-  execute="AMP.navigateTo('https://amp.dev/')"
+  execute="AMP.navigateTo(url='https://amp.dev/')"
 ></amp-action-macro>
 
-<button on="tap:navigate-action">amp.dev</button>
+<button on="tap:navigate-action.execute()">amp.dev</button>
 ```
 [/example]
 
