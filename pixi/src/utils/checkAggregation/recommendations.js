@@ -119,6 +119,7 @@ export default async function getRecommendations(
     if (linter.updateOptimizerForBoilerplateRemoval) {
       result.push({id: 'upgrade-amp-optimizer'});
     } else if (
+      pageExperience.pageExperience !== undefined &&
       getFieldOrLabDataCategory(pageExperience, 'lcp') !== Category.FAST
     ) {
       result.push({id: 'amp-boilerplate-removal'});
@@ -127,6 +128,7 @@ export default async function getRecommendations(
 
   if (
     linter.noDynamicLayoutExtensions === false &&
+    pageExperience.pageExperience !== undefined &&
     getFieldOrLabDataCategory(pageExperience, 'cls') !== Category.FAST
   ) {
     result.push({id: 'dynamic-layout-extensions'});
