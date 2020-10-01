@@ -20,7 +20,7 @@ We welcome contributions to amp.dev.
 
 ### Requirements
 
-**Note:** For those intending to conduct development on this repository beyond fixing typos, Linux and macOS are the only currently supported operating systems. Windows is not supported at this time.
+**Note:** For those intending to conduct development on this repository beyond fixing typos, Linux based operating system(e.g. UBUNTU) and macOS are the only currently supported operating systems. Windows is not supported at this time.
 
 1. Install the LTS version of [Node.js](https://nodejs.org). An easy way to do so is by using [nvm](https://github.com/nvm-sh/nvm).
 
