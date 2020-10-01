@@ -62,10 +62,13 @@ scriptText:
     passed: Passed
     passedAddition: passed
     none: None
-    nothingToDo: Nothing to do
+    nothingToDo: No action needed!
     fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations
+  detailsHeadlineImages: Images to consider
+  detailsHeadlineOther: Affected resources
+  thumbnail: Thumbnail
   categories:
     fast: Good
     average: Needs Improvement
