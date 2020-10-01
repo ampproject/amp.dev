@@ -98,12 +98,20 @@ export default class StatusIntroView {
       investigateButton.setAttribute('href', statusBanner.investigate);
       investigateButton.classList.remove('pristine');
     }
+
+    const fixItButton = banner.querySelector('#fix-it-button');
     if (hideFixButton) {
-      const fixItButton = banner.querySelector('#fix-it-button');
       fixItButton.classList.add('pristine');
-      // make second button primary
+      // Make second button primary
       shareButton.classList.remove('ap-a-btn-light');
     }
+
+    if (statusBannerId == 'passed-with-info') {
+      fixItButton.textContent = i18n.getText('buttonMakeImprovements');
+    } else {
+      fixItButton.textContent = i18n.getText('buttonFixIt');
+    }
+
     if (statusBanner.hideShare) {
       shareButton.classList.add('pristine');
     }
