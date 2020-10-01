@@ -102,5 +102,5 @@ Components in use: ${issueData.usedComponents}
 
 /cc @ampproject/wg-performance`
   );
-  return `https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type%3A+Page+experience&title=Pixi:+Poor+page+experience&body=${body}`;
+  return `https://github.com/ampproject/wg-performance/issues/new?assignees=&labels=Type%3A+Page+experience&title=Pixi:+Poor+page+experience&body=${body}`;
 }
