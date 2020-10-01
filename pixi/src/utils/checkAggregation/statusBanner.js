@@ -17,6 +17,9 @@ import {fixedRecommendations} from './recommendations';
 async function getStatusId(checkPromises, recommendationsPromise) {
   try {
     const linter = await checkPromises.linter;
+    if (linter.error) {
+      return 'generic-error';
+    }
     if (!linter.isLoaded) {
       return 'invalid-url';
     }
@@ -36,9 +39,6 @@ async function getStatusId(checkPromises, recommendationsPromise) {
 
     if (!linter.isValid) {
       return 'invalid-amp';
-    }
-    if (linter.error) {
-      return 'generic-error';
     }
     if (pageExperienceChecks.error) {
       return 'cwv-error';
