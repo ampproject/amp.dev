@@ -14,3 +14,5 @@ web experience.
 **Lab tests** allow you to test new features before they're released
 to best ensure no performance regressions.
 [Learn more](https://web.dev/user-centric-performance-metrics/#in-the-lab).
+<br><br>
+**Opportunity to improve** is the difference in scores for the page provided on origin and its AMP cached counterpart. A status of "None" is reported if the origin page is already performing comparably than its cached counterpart, whereas a status of "---" is reported if there is not any data available about the cached page.
