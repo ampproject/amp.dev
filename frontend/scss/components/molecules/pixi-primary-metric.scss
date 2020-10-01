@@ -42,7 +42,6 @@
       line-height: 1.4;
 
       @media (min-width: 768px) {
-        width: 40%;
         font-size: 28px;
       }
 
@@ -65,7 +64,7 @@
       }
 
       &-status {
-        display: block;
+        display: inline-block;
         color: safeColor('light-gray');
 
         .fast & {
