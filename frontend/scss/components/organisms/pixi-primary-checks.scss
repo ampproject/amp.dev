@@ -19,6 +19,10 @@
 
     @media (min-width: 768px) {
       width: 66.6%;
+
+      &[dir='rtl'] {
+        margin-left: 33.4%;
+      }
     }
 
     &-tab {
@@ -27,7 +31,6 @@
       padding: 14px 20px;
       @include txt-font-accent;
       font-size: 18px;
-      text-align: left;
       background-color: color('alto');
       transition: color 0.2s ease, background-color 0.2s ease;
       cursor: pointer;
@@ -40,11 +43,17 @@
         padding: 16px 35px;
       }
 
-      &:first-child {
+      [dir='rtl'] > & {
+        text-align: right;
+      }
+
+      &:first-child,
+      [dir='rtl'] > &:last-child {
         border-top-left-radius: 4px;
       }
 
-      &:last-child {
+      &:last-child,
+      [dir='rtl'] > &:first-child {
         border-top-right-radius: 4px;
       }
 
@@ -63,7 +72,8 @@
     display: none;
     box-shadow: 0 10px 25px 0 transparentize(color('black'), 0.87);
 
-    &-error-label {
+    &-error-label,
+    &-api-error-label {
       position: absolute;
       left: 0;
       top: 230px;
@@ -100,8 +110,13 @@
     &.error {
       position: relative;
 
-      #{$primary-checks}-data-error-label {
+      &.missing-field-data #{$primary-checks}-data-error-label,
+      &.api-error #{$primary-checks}-data-api-error-label {
         display: flex;
+
+        & > h3 {
+          color: safeColor('light-gray');
+        }
       }
     }
   }

@@ -5,8 +5,8 @@
    {{ pixi.html|render|safe }}
   </div>
   <div id="status-intro-banner-loading" class="ap-m-pixi-status-intro-banner">
-    <div class="ap-m-pixi-status-intro-banner-icon"></div>
-    <div>
+    <div class="ap-m-pixi-status-intro-banner-icon" dir="{{ doc.locale.text_direction }}"></div>
+    <div class="ap-m-pixi-status-intro-banner-content">
       <h3>
         {{ pixi.staticText.statusIntro.headline }}
         {% if pixi.staticText.statusIntro.headline2 %}

@@ -1,13 +1,13 @@
 {% do doc.styles.addCssFile('css/components/molecules/pixi-primary-metric.css') %}
 
-<div id="{{ primary_metric.id }}" class="ap-m-pixi-primary-metric">
+<div id="{{ primary_metric.id }}" class="ap-m-pixi-primary-metric {{ doc.locale.text_direction }}">
   <div class="ap-m-pixi-primary-metric-header">
     <h3 class="ap-m-pixi-primary-metric-header-title">
       <div class="ap-m-pixi-primary-metric-header-title-full">
         {{ primary_metric.title.full }}
       </div>
       <div class="ap-m-pixi-primary-metric-header-title-id">
-        {{ primary_metric.title.id }}
+        {{ primary_metric.title.id }}:
       </div>
       <label class="ap-m-pixi-primary-metric-header-title-status">
         <span class="ap-m-pixi-primary-metric-category">{{ pixi.scriptText.status.analyzing }}</span>

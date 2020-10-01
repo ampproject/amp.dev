@@ -21,458 +21,480 @@ const passedSafeBrowsingPromise = Promise.resolve({
 
 describe('getStatusId', () => {
   it('returns invalid-url', async () => {
-    const statusId = await getStatusId(
-      pendingPromise,
-      pendingPromise,
-      pendingPromise,
-      Promise.resolve({
+    const statusId = await getStatusId({
+      linter: Promise.resolve({
         isLoaded: false,
       }),
-      pendingPromise
-    );
+    });
     expect(statusId).toBe('invalid-url');
   });
 
   it('returns no-amp', async () => {
-    const statusId = await getStatusId(
-      pendingPromise,
-      pendingPromise,
-      pendingPromise,
-      Promise.resolve({
+    const statusId = await getStatusId({
+      linter: Promise.resolve({
         isLoaded: true,
         isAmp: false,
         isOriginUrl: true,
       }),
-      pendingPromise
-    );
+    });
     expect(statusId).toBe('no-amp');
   });
 
   it('returns amp-cache-url', async () => {
-    const statusId = await getStatusId(
-      pendingPromise,
-      pendingPromise,
-      pendingPromise,
-      Promise.resolve({
+    const statusId = await getStatusId({
+      linter: Promise.resolve({
         isLoaded: true,
         isAmp: true,
         isOriginUrl: false,
       }),
-      pendingPromise
-    );
+    });
     expect(statusId).toBe('amp-cache-url');
   });
 
   it('returns invalid-amp', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: true,
+      {
+        linter: Promise.resolve({
+          isLoaded: true,
+          isAmp: true,
+          isOriginUrl: true,
+          isValid: false,
+        }),
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      Promise.resolve({
-        isLoaded: true,
-        isAmp: true,
-        isOriginUrl: true,
-        isValid: false,
-      }),
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('invalid-amp');
   });
 
   it('returns cache-failed-no-info based on field data', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: true,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
+          pageExperienceCached: {
+            fieldData: {
+              isAllFast: false,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          source: 'fieldData',
-        },
-        pageExperienceCached: {
-          fieldData: {
-            isAllFast: false,
-          },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('cache-failed-no-info');
   });
 
   it('returns cache-failed-no-info based on lab data', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          labData: {
-            isAllFast: true,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            labData: {
+              isAllFast: true,
+            },
+            source: 'labData',
           },
-          source: 'labData',
-        },
-        pageExperienceCached: {
-          fieldData: {
-            isAllFast: true,
+          pageExperienceCached: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: false,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: false,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('cache-failed-no-info');
   });
 
   it('returns cache-failed-with-info based on field data', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(['one-more', ...fixedRecommendations]),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: true,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
+          pageExperienceCached: {
+            fieldData: {
+              isAllFast: false,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          source: 'fieldData',
-        },
-        pageExperienceCached: {
-          fieldData: {
-            isAllFast: false,
-          },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(['one-more', ...fixedRecommendations])
     );
     expect(statusId).toBe('cache-failed-with-info');
   });
 
   it('returns cache-failed-with-info based on lab data', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(['one-more', ...fixedRecommendations]),
-      Promise.resolve({
-        pageExperience: {
-          labData: {
-            isAllFast: true,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            labData: {
+              isAllFast: true,
+            },
+            source: 'labData',
           },
-          source: 'labData',
-        },
-        pageExperienceCached: {
-          fieldData: {
-            isAllFast: true,
+          pageExperienceCached: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: false,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: false,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(['one-more', ...fixedRecommendations])
     );
     expect(statusId).toBe('cache-failed-with-info');
   });
 
   it('returns origin-failed-no-info for field data', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: false,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: false,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
+          pageExperienceCached: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: false,
+            },
+            source: 'fieldData',
           },
-          source: 'fieldData',
-        },
-        pageExperienceCached: {
-          fieldData: {
-            isAllFast: true,
-          },
-          labData: {
-            isAllFast: false,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('origin-failed-no-info');
   });
 
   it('returns origin-failed-no-info for lab data', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          labData: {
-            isAllFast: false,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            labData: {
+              isAllFast: false,
+            },
+            source: 'labData',
           },
-          source: 'labData',
-        },
-        pageExperienceCached: {
-          fieldData: {
-            isAllFast: false,
+          pageExperienceCached: {
+            fieldData: {
+              isAllFast: false,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('origin-failed-no-info');
   });
 
   it('returns origin-failed-with-info for field data', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(['one-more', ...fixedRecommendations]),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: false,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: false,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
+          pageExperienceCached: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: false,
+            },
+            source: 'fieldData',
           },
-          source: 'fieldData',
-        },
-        pageExperienceCached: {
-          fieldData: {
-            isAllFast: true,
-          },
-          labData: {
-            isAllFast: false,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(['one-more', ...fixedRecommendations])
     );
     expect(statusId).toBe('origin-failed-with-info');
   });
 
   it('returns origin-failed-with-info for lab data', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(['one-more', ...fixedRecommendations]),
-      Promise.resolve({
-        pageExperience: {
-          labData: {
-            isAllFast: false,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            labData: {
+              isAllFast: false,
+            },
+            source: 'labData',
           },
-          source: 'labData',
-        },
-        pageExperienceCached: {
-          fieldData: {
-            isAllFast: false,
+          pageExperienceCached: {
+            fieldData: {
+              isAllFast: false,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(['one-more', ...fixedRecommendations])
     );
     expect(statusId).toBe('origin-failed-with-info');
   });
 
   it('returns failed-no-info due to CWV', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: false,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: false,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('failed-no-info');
   });
 
   it('returns failed-no-info due to safe browsing', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: true,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: Promise.resolve({}),
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      Promise.resolve({}),
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('failed-no-info');
   });
 
   it('returns failed-no-info due to mobile friendly', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: true,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: Promise.resolve({}),
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      Promise.resolve({})
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('failed-no-info');
   });
 
   it('returns failed-no-info due to linter', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          labData: {
-            isAllFast: true,
+      {
+        linter: Promise.resolve({
+          isLoaded: true,
+          isAmp: true,
+          isOriginUrl: true,
+          isValid: true,
+          usesHttps: false,
+        }),
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            labData: {
+              isAllFast: true,
+            },
+            source: 'labData',
           },
-          source: 'labData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      Promise.resolve({
-        isLoaded: true,
-        isAmp: true,
-        isOriginUrl: true,
-        isValid: true,
-        usesHttps: false,
-      }),
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('failed-no-info');
   });
 
   it('returns failed-with-info', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(['one-more', ...fixedRecommendations]),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: false,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: false,
+            },
+            labData: {
+              isAllFast: true,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: true,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(['one-more', ...fixedRecommendations])
     );
     expect(statusId).toBe('failed-with-info');
   });
 
   it('returns all-passed', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: true,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: false,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: false,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('all-passed');
   });
 
   it('returns passed-with-info', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(['one-more', ...fixedRecommendations]),
-      Promise.resolve({
-        pageExperience: {
-          fieldData: {
-            isAllFast: true,
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {
+            fieldData: {
+              isAllFast: true,
+            },
+            labData: {
+              isAllFast: false,
+            },
+            source: 'fieldData',
           },
-          labData: {
-            isAllFast: false,
-          },
-          source: 'fieldData',
-        },
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+        }),
+      },
+      Promise.resolve(['one-more', ...fixedRecommendations])
     );
     expect(statusId).toBe('passed-with-info');
   });
 
   it('returns generic-error for linter error', async () => {
     const statusId = await getStatusId(
-      pendingPromise,
-      pendingPromise,
-      pendingPromise,
-      Promise.reject(new Error('error')),
+      {
+        linter: Promise.reject(new Error('error')),
+        mobileFriendliness: pendingPromise,
+        safeBrowsing: pendingPromise,
+        pageExperience: pendingPromise,
+      },
       pendingPromise
     );
     expect(statusId).toBe('generic-error');
@@ -480,37 +502,43 @@ describe('getStatusId', () => {
 
   it('returns cwv-error for page experience error', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({error: new Error('error')}),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({error: new Error('error')}),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('cwv-error');
   });
 
   it('returns api-error for safe browsing error', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {},
-      }),
-      Promise.resolve({error: new Error('error')}),
-      passedLinterPromise,
-      passedMobileFriendlinessPromise
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: passedMobileFriendlinessPromise,
+        safeBrowsing: Promise.resolve({error: new Error('error')}),
+        pageExperience: Promise.resolve({
+          pageExperience: {},
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('api-error');
   });
 
   it('returns api-error for mobile friendliness error', async () => {
     const statusId = await getStatusId(
-      Promise.resolve(fixedRecommendations),
-      Promise.resolve({
-        pageExperience: {},
-      }),
-      passedSafeBrowsingPromise,
-      passedLinterPromise,
-      Promise.resolve({error: new Error('error')})
+      {
+        linter: passedLinterPromise,
+        mobileFriendliness: Promise.resolve({error: new Error('error')}),
+        safeBrowsing: passedSafeBrowsingPromise,
+        pageExperience: Promise.resolve({
+          pageExperience: {},
+        }),
+      },
+      Promise.resolve(fixedRecommendations)
     );
     expect(statusId).toBe('api-error');
   });

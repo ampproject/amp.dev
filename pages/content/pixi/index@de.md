@@ -14,7 +14,6 @@ staticText:
     headline: Bitte warte einen Moment
     headline2: Wir analysieren grade deine Seite
     loadingCopy: ${finishedChecks} von ${totalChecks} Checks sind fertig
-    buttonFixIt: Jetzt beheben
     buttonShare: Teilen
   coreWebVitals:
     headline: Core Web Vitals
@@ -39,6 +38,7 @@ staticText:
     checkManually: Bitte manuell prüfen
   recommendations:
     headline: Jetzt handeln. Verbessere deine AMP Seite
+    nextAdvice: Nächster Tipp
   tags:
     all: Alle
 scriptText:
@@ -56,6 +56,11 @@ scriptText:
     fileAnIssue: Melde ein Problem bei AMP
     recommendation: Empfehlung
     recommendations: Empfehlungen
+  buttonFixIt: Jetzt verbessern
+  buttonMakeImprovements: Jetzt verbessern
+  detailsHeadlineImages: In Frage kommende Bilder
+  detailsHeadlineOther: Betroffene Ressourcen
+  thumbnail: Thumbnail
   categories:
     fast: Schnell
     average: Verbesserungswürdig
@@ -73,12 +78,12 @@ scriptText:
 Der AMP Page Experience Guide ist ein Werkzeug das Entwicklern zeigt
 wie ihre Seite beim Google Page Experience Ranking abschneidet und
 was sie tun können um das Ergebnis zu verbessern.
- 
+
 Falls es uns nicht möglich ist verwertbare Erkenntnisse zu liefern,
-nutze bitte die Möglichkeit 
-[ein Ticket auf Github anzulegen](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue),
-damit unser Team dir helfen kann, zu verstehen, wie deine AMP Seiten
-verbessert werden können.
+öffne bitte
+[ein Ticket auf GitHub](https://github.com/ampproject/amphtml/issues/new?assignees=&labels=Type:+Page+experience&template=page-experience.md&title=Page+experience+issue),
+damit unser Team dir helfen kann, deine AMP Seiten
+zu verbessern.
 
 Wir nutzen öffentlich verfügbare APIs wie
 [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),

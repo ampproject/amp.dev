@@ -16,7 +16,15 @@ import i18n from './I18n';
 import {fixedRecommendations} from '../utils/checkAggregation/recommendations';
 import {addTargetBlankToLinks, cleanCodeForInnerHtml} from '../utils/texts';
 
-const classNameMapping = {
+/* Status IDs for which it doesn't make sense to show the Fix now button */
+const UNFIXABLE_ERROR_IDS = [
+  'invalid-url',
+  'no-amp',
+  'amp-cache-url',
+  'generic-error',
+];
+
+const CLASS_NAME_MAP = {
   error: 'fail',
   success: 'pass',
 };
@@ -36,8 +44,8 @@ export default class StatusIntroView {
 
   resetView() {
     this.container.classList.remove('loading');
-    this.container.classList.remove(classNameMapping.error);
-    this.container.classList.remove(classNameMapping.success);
+    this.container.classList.remove(CLASS_NAME_MAP.error);
+    this.container.classList.remove(CLASS_NAME_MAP.success);
     this.bannerLoading.classList.remove('pristine');
     const banner = this.container.querySelector('#status-intro-banner');
     if (banner) {
@@ -57,24 +65,22 @@ export default class StatusIntroView {
   async render(statusBannerIdPromise, recommendationsPromise, pageUrl) {
     this.resetView();
     this.container.classList.add('loading');
-    let hideFixButton = true;
+    let hideFixButton = null;
     recommendationsPromise.then((ids) => {
       hideFixButton = ids.length <= fixedRecommendations;
     });
 
     const statusBannerId = await this.determineBannerId(statusBannerIdPromise);
-    const statusBanner = i18n.getStatusBanner(statusBannerId);
-    try {
-      const shareUrl = new URL(await AMP.getState('pixi.baseUrl'));
-      shareUrl.searchParams.set('url', pageUrl);
-      AMP.setState({pixi: {shareUrl: shareUrl.toString()}});
-    } catch (e) {
-      console.error('Failed to set share Url from StatusIntroView', e);
+    if (!hideFixButton && UNFIXABLE_ERROR_IDS.includes(statusBannerId)) {
+      hideFixButton = true;
     }
+
+    const statusBanner = i18n.getStatusBanner(statusBannerId);
+    AMP.setState({pixi: {shareUrlQuery: encodeURIComponent(pageUrl)}});
 
     this.finishedChecks = null;
     this.container.classList.remove('loading');
-    this.container.classList.add(classNameMapping[statusBanner.type]);
+    this.container.classList.add(CLASS_NAME_MAP[statusBanner.type]);
 
     let bodyHtml = cleanCodeForInnerHtml(statusBanner.body);
     bodyHtml = addTargetBlankToLinks(bodyHtml);
@@ -92,12 +98,20 @@ export default class StatusIntroView {
       investigateButton.setAttribute('href', statusBanner.investigate);
       investigateButton.classList.remove('pristine');
     }
+
+    const fixItButton = banner.querySelector('#fix-it-button');
     if (hideFixButton) {
-      const fixItButton = banner.querySelector('#fix-it-button');
       fixItButton.classList.add('pristine');
-      // make second button primary
+      // Make second button primary
       shareButton.classList.remove('ap-a-btn-light');
     }
+
+    if (statusBannerId == 'passed-with-info') {
+      fixItButton.textContent = i18n.getText('buttonMakeImprovements');
+    } else {
+      fixItButton.textContent = i18n.getText('buttonFixIt');
+    }
+
     if (statusBanner.hideShare) {
       shareButton.classList.add('pristine');
     }

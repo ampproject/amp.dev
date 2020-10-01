@@ -50,7 +50,7 @@ You must follow each client's privacy policy.
 
 [Microsoft Privacy Statement](https://privacy.microsoft.com/en-us/privacystatement)
 
-**Yahoo! Mail - Verizon Media**
+**Verizon Media (Yahoo Mail)**
 
 *   [Verizon Media Privacy Policy - US](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/index.html)
 *   For other countries please visit [here](https://www.verizonmedia.com/policies/).
