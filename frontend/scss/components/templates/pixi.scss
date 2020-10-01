@@ -31,12 +31,12 @@
     }
 
     @media (min-width: 1024px) {
-      padding: 120px 35px 0 65px;
+      padding: 120px 15px 0 35px;
     }
 
     @media (min-width: 1280px) {
       margin: 0 auto;
-      padding-top: 90px;
+      padding: 90px 0 0 35px;
     }
 
     h1 {
@@ -48,6 +48,7 @@
 
       @media (min-width: 768px) {
         font-size: 64px;
+        margin-right: 360px;
       }
     }
 
@@ -136,15 +137,18 @@
         @media (min-width: 768px) {
           top: 90px;
           margin-left: -15px;
+          margin-right: -15px;
         }
 
         @media (min-width: 1024px) {
           top: 125px;
           margin-left: -35px;
+          margin-right: -35px;
         }
 
         @media (min-width: 1280px) {
           margin-left: 0;
+          margin-right: 0;
         }
       }
 
@@ -178,6 +182,10 @@
 
         h2 {
           margin: 0 20px 0 0;
+
+          &[dir='rtl'] {
+            margin: 0 0 0 20px;
+          }
         }
       }
     }

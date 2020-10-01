@@ -18,7 +18,6 @@ staticText:
     headline: Please wait a moment
     headline2: We are currently analyzing your page
     loadingCopy: ${finishedChecks} out of ${totalChecks} checks are completed
-    buttonFixIt: Fix it now
     buttonShare: Share
     buttonInvestigate: Investigate
   coreWebVitals:
@@ -66,6 +65,8 @@ scriptText:
     fileAnIssue: File an issue with AMP
     recommendation: recommendation
     recommendations: recommendations
+  buttonFixIt: Fix it now
+  buttonMakeImprovements: Make improvements
   detailsHeadlineImages: Images to consider
   detailsHeadlineOther: Affected resources
   thumbnail: Thumbnail

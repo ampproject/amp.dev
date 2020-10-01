@@ -91,7 +91,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
   }
 } %}
 
-<main class="ap--main ap-t-pixi">
+<main class="ap--main ap-t-pixi" dir="{{ doc.locale.text_direction }}">
   <section class="ap-t-pixi-stage">
     <h1>{{ pixi.title }}</h1>
     {% do doc.icons.useIcon('icons/page-experience.svg') %}
@@ -188,7 +188,7 @@ description: Coming soon - analyze and learn how to optimize your AMP pages for 
         
         <section class="ap-t-pixi-checks-reports">
           <div class="ap-t-pixi-checks-reports-title">
-            <h2 id="core-web-vitals-checks">{{ pixi.staticText.coreWebVitals.headline }}</h2>
+            <h2 id="core-web-vitals-checks" dir="{{ doc.locale.text_direction }}">{{ pixi.staticText.coreWebVitals.headline }}</h2>
             {% with tooltip = {
               'id': 'core-web-vitals',
               'invert': false
