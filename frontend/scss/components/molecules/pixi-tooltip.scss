@@ -127,7 +127,10 @@
       margin: 0;
     }
 
+    .rtl &,
     .invert & {
+      direction: ltr;
+
       @media (min-width: 575px) {
         transform: translateX(70%);
       }

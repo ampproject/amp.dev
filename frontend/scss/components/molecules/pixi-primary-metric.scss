@@ -16,6 +16,10 @@
     padding: 35px 25px 35px 35px;
   }
 
+  &.rtl {
+    direction: rtl;
+  }
+
   & + & {
     border-top: solid 2px color('mercury');
   }
@@ -98,6 +102,22 @@
       @media (min-width: 768px) {
         width: 40%;
         margin-right: 20px;
+
+        .rtl & {
+          margin: 0 0 0 20px;
+
+          div {
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: right;
+
+            strong {
+              margin-left: 3px;
+            }
+          }
+        }
       }
 
       a,
