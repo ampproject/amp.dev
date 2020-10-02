@@ -50,7 +50,7 @@ $sitemap:
     const animationDuration = 1200;
     const button = document.querySelector('button');
     const scriptTag = document.getElementById('script-tag');
-    const stringToCopy = window.location.hash.substr(1);
+    const stringToCopy = decodeURIComponent(window.location.hash.substr(1));
 
     scriptTag.value = stringToCopy;
 
