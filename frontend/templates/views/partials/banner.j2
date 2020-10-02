@@ -1,7 +1,23 @@
 {% do doc.styles.addCssFile('/css/components/molecules/banner.css') %}
-
+<!--
 <a id="blm-banner"
    target="_blank"
    href="https://blacklivesmatter.com">
   #BlackLivesMatter
 </a>
+-->
+<div class="ap-m-banner">
+  <a id="top-banner"
+     class="ap-m-banner-link"
+     target="_blank"
+     href="https://amp.dev/events/amp-fest-2020/">
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#internal"></use></svg>
+    {{ _('Join us for AMP Fest on October 13!') }}
+  </a>
+{% if banner_closeable %}
+  <button class="ap-m-banner-dismiss" on="tap:{{ banner_notification_id }}.dismiss">
+    {% do doc.icons.useIcon('/icons/close.svg') %}
+    <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use></svg>
+  </button>
+{% endif %}
+</div>
