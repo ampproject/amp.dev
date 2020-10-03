@@ -116,7 +116,7 @@ Przycisk CTA znajduje się 32 px od dołu i jest wyśrodkowany w poziomie. Ma wy
 
 ##Obrazy i filmy Obrazy i filmy zawarte w reklamie fabularnej AMP powinny być w standardzie pełnoekranowym 4:3. Reklamy zawierające filmy powinny mieć [plakat](https://gitlocalize.com/repo/4863/pl/pages/content/amp-dev/documentation/components/reference/amp-video.md#poster). Zalecane wymiary obrazu plakatu to 720p (720 szer. x 1280 wys.) .
 
-[sourcecode:html] <amp-video controls="" width="720" height="1280" layout="responsive" poster="images/kitten-playing.png"></amp-video>
+[sourcecode:html] {amp-video0}{/amp-video0}
 
   <source src="videos/kitten-playing.webm" type="video/webm">   <source src="videos/kitten-playing.mp4" type="video/mp4">   <div fallback="">     <p>Ta przeglądarka nie obsługuje elementu wideo.</p>   </div>  [/sourcecode]</source></source>
 
@@ -145,9 +145,9 @@ Przycisk CTA znajduje się 32 px od dołu i jest wyśrodkowany w poziomie. Ma wy
 
 Przykład: określanie wielu plików źródłowych
 
-[sourcecode:html] <amp-video id="video-page1" autoplay="" loop="" layout="fill" poster="https://example.com/media/poster.jpg"></amp-video>
+[sourcecode:html] {amp-video0}{/amp-video0}
 
-  <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode] </source></source>
+  <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode]</source></source>
 
 
 ####Rozmiar i długość filmu W celu zapewnienia optymalnej wydajności należy dążyć do stosowania filmów o rozmiarze nie większym niż 4 MB. Mniejsze rozmiary plików pozwalają na szybsze pobieranie, więc należy stosować jak najmniejsze rozmiary.
