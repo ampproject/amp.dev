@@ -1,7 +1,7 @@
 ---
 $title: Creazione del nucleo per gli annunci
 $order: 0
-description: Using your favorite text editor, create an HTML file named my-amphtml-ad.html. Copy the following HTML markup into that file: ...
+description: "Utilizzando l''editor di testo preferito, creiamo un file HTML denominato my-amphtml-ad.html. Copiare il seguente codice di markup HTML in quel file: ..."
 ---
 
 Il formato [HTML richiesto per gli annunci AMPHTML](../../../../documentation/guides-and-tutorials/learn/a4a_spec.md) è una variante [del formato AMPHTML richiesto per le pagine AMP](../../../../documentation/guides-and-tutorials/learn/spec/amphtml.md). Acquisiamo familiarità con il codice richiesto, creando il nucleo del nostro annuncio AMPHTML.
