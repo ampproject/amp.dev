@@ -32,15 +32,7 @@ Zdefiniuj CSS w znaczniku `<style amp-custom>` w sekcji head dokumentu. W każde
 
 [sourcecode:html] <!doctype html>
 
-       ...     <style amp-custom="">
-      /* any custom styles go here. */
-      body {
-        background-color: white;
-      }
-      amp-img {
-        border: 5px solid black;
-      }
-</style>
+       ...     <style amp-custom=""><br>      /* any custom styles go here. */<br>      body {<br>        background-color: white;<br>      }<br>      amp-img {<br>        border: 5px solid black;<br>      }<br></style>
 
 ```
   amp-img.grey-placeholder {
