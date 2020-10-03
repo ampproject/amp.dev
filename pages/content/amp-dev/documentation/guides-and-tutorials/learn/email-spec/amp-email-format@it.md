@@ -44,11 +44,7 @@ Il codice seguente rappresenta la quantità minima di markup richiesti da un mes
 
 
 
-        <meta charset="utf-8">     <style amp4email-boilerplate="">
-      body {
-        visibility: hidden;
-      }
-    </style>     <script async="" src="https://cdn.ampproject.org/v0.js"></script>           Hello, world.     [/sourcecode]
+<meta charset="utf-8"> <style amp4email-boilerplate=""> body { visibility: hidden; } </style> <script async="" src="https://cdn.ampproject.org/v0.js"></script> Hello, world. [/sourcecode]
 
 Un messaggio e-mail AMP DEVE
 
@@ -59,7 +55,7 @@ Un messaggio e-mail AMP DEVE
 - <a name="scrpt"></a>Contenere un tag `<script async src="https://cdn.ampproject.org/v0.js"></script>` all'interno del proprio tag di intestazione. [🔗](#scrpt)
 - <a name="boilerplate"></a>contenere il boilerplate amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) all'interno del proprio tag di intestazione per nascondere inizialmente il contenuto fino al caricamento di AMP JS. [🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+L'intero markup AMPHTML non deve superare i 200.000 byte.
 
 ## Struttura e rendering <a name="structure-and-rendering"></a>
 
@@ -87,18 +83,7 @@ Tutti gli elementi CSS presenti in ogni documento AMP devono essere inclusi in u
 
 [sourcecode:html] ...
 
-<style amp-custom="">
-  /* any custom styles go here. */
-  body {
-    background-color: white;
-  }
-  amp-img {
-    border: 5px solid black;
-  }
-  amp-img.grey-placeholder {
-    background-color: grey;
-  }
-</style>
+<style amp-custom=""> /* any custom styles go here. */ body { background-color: white; } amp-img { border: 5px solid black; } amp-img.grey-placeholder { background-color: grey; } </style><br>[/sourcecode]
 
 ...
 
