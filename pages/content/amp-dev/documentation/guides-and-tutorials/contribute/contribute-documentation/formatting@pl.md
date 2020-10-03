@@ -217,24 +217,7 @@ Używaj podglądu górnej ramki zawsze wtedy, gdy musisz określić elementy nag
 Ważne: nie dodawaj żadnego standardowego kodu AMP do nagłówka, ponieważ zostanie on dodany automatycznie na podstawie formatu AMP. Do nagłówka dodawaj tylko te elementy, które są wymagane w próbce!
 
 <div class="ap-m-code-snippet">
-<pre>
-  [example preview="top-frame"
-         playground="true"]
-    ```html
-    
-      <script async="" custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-      <style amp-custom="">
-        body {
-          background: red;
-        }
-      </style>
-    
-    
-      <h1>Hello AMP</h1>
-      <amp-youtube width="480" height="270" layout="responsive" data-videoid="lBTCB7yLs8Y">       </amp-youtube>
-    
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script><br>      <style amp-custom><br>        body {<br>          background: red;<br>        }<br>      </style><br>    </head><br>    <body><br>      <h1>Hello AMP</h1><br>      <amp-youtube width="480"<br>        height="270"<br>        layout="responsive"<br>        data-videoid="lBTCB7yLs8Y"><br>      </amp-youtube><br>    </body><br>    ```<br>  [/example]</pre>
 </div>
 
 Wygląda to tak:
@@ -267,27 +250,7 @@ Wygląda to tak:
 W celu generowania podglądu relacji AMP stosuj atrybut `preview="top-frame"` z właściwością `orientation="portrait"`.
 
 <div class="ap-m-code-snippet">
-<pre>
-  [example preview="top-frame"
-         orientation="portrait"
-         playground="true"]
-    ```html
-    
-      <script async="" custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-      <style amp-custom="">
-        body {
-          font-family: 'Roboto', sans-serif;
-        }
-        amp-story-page {
-          background: white;
-        }
-      </style>
-    
-    
-      <amp-story standalone="">         <amp-story-page id="cover">           <amp-story-grid-layer template="vertical">             <h1>Hello World</h1>             <p>This is the cover page of this story.</p>           </amp-story-grid-layer>         </amp-story-page>         <amp-story-page id="page-1">           <amp-story-grid-layer template="vertical">             <h1>First Page</h1>             <p>This is the first page of this story.</p>           </amp-story-grid-layer>         </amp-story-page>       </amp-story>
-    
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame"<br>         orientation="portrait"<br>         playground="true"]<br>    ```html<br>    <head><br>      <script async custom-element="amp-story"<br>          src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script><br>      <style amp-custom><br>        body {<br>          font-family: 'Roboto', sans-serif;<br>        }<br>        amp-story-page {<br>          background: white;<br>        }<br>      </style><br>    </head><br>    <body><br>      <amp-story standalone><br>        <amp-story-page id="cover"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>Hello World</h1><br>            <p>This is the cover page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>        <amp-story-page id="page-1"><br>          <amp-story-grid-layer template="vertical"><br>            <h1>First Page</h1><br>            <p>This is the first page of this story.</p><br>          </amp-story-grid-layer><br>        </amp-story-page><br>      </amp-story><br>    </body><br>    ```<br>  [/example]</pre>
 </div>
 
 Wygląda to tak:
