@@ -343,8 +343,8 @@ Utworzone mapowanie wygląda tak:
     <th><strong>Identyfikator użytkownika na stronie AMP, która NIE znajduje się w źródle wydawcy („alias”)</strong></th>
   </tr>
   <tr>
-    <td> <code>$prospective_identifier</code>(generated just-in-time when analytics ping is received)</td>
-    <td> <code>$amp_client_id</code> (came from analytics ping)</td>
+    <td> <code>$prospective_identifier</code>(generowany po otrzymaniu analitycznych pakietów ping)</td>
+    <td> <code>$amp_client_id</code> (z analitycznego pakietu ping)</td>
   </tr>
 </table>
 
@@ -465,9 +465,7 @@ Zalecamy sprawdzanie autentyczności wartości parametrów zapytania za pomocą 
   <li>Może uzyskać dostęp do miejsca, w którym zapisał dane kod, który odczytał i usunął parametry</li>
 </ul>
 <p>Aby zrobić to na stronie bez AMP, dołącz następujący kod JavaScript, który usunie wszystkie parametry zapytania z adresu URL:</p>
-<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');
-history.replaceState(null, null, href);
-</pre>
+<pre>var href = location.href.replace(/\?[^{{'[% raw %]'}}#]{{'{% endraw %}'}}+/, '');<br>history.replaceState(null, null, href);</pre>
 <p>Dostosuj go w razie potrzeby, aby usuwać mniej parametrów zapytania.</p>
 </blockquote>
 
