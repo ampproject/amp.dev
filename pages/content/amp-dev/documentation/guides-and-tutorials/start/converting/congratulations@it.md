@@ -1,7 +1,7 @@
 ---
 $title: Congratulazioni!
 $order: 4
-description: You’ve finished the tutorial and successfully converted an HTML document to an AMP document. In this tutorial, you learned to: - Recognize the differences between AMP and ...
+description: "Hai terminato l''esercitazione che ti ha permesso di convertire correttamente un documento HTML in un documento AMP. In questa esercitazione, hai imparato a: Riconoscere le differenze tra AMP e ..."
 ---
 
 Hai terminato l'esercitazione che ti ha permesso di convertire correttamente un documento HTML in un documento AMP.
