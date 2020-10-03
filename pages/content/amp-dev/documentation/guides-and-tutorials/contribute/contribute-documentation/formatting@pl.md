@@ -95,8 +95,7 @@ Listę szortkodów i ich zastosowań znajdziesz w pliku [documentation.md na Git
 Witryna amp.dev jest utworzona z użyciem technologii AMP! Dlatego też nasze obrazy muszą spełniać kryteria [`amp-img`](../../../../documentation/components/reference/amp-img.md) . W procesie kompilacji do konwersji obrazów na prawidłowy format `amp-img` stosowana jest następująca składnia.
 
 <div class="ap-m-code-snippet">
-<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}
-</pre>
+<pre>{{ image('/static/img/docs/tutorials/custom-javascript-tutorial/image1.jpg', 500, 369, layout='intrinsic', alt='Image of basic amp script tutorial starter app') }}</pre>
 </div>
 
 ## Sekcje filtrujące
@@ -104,10 +103,7 @@ Witryna amp.dev jest utworzona z użyciem technologii AMP! Dlatego też nasze ob
 Niektóre dokumenty mogą dotyczyć wielu formatów AMP, natomiast niektóre formaty mogą wymagać dalszych wyjaśnień lub informacji, które nie dotyczą innych. Możesz filtrować te sekcje, opakowując je w poniższy szortkod.
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;filter formats="websites"]
-This is only visible for [websites](?format=websites).
-&lsqb;/filter]
-</pre>
+<pre>&lsqb;filter formats="websites"]<br>This is only visible for [websites](?format=websites).<br>&lsqb;/filter]</pre>
 </div>
 
 [filter formats="websites"] Widoczna tylko w przypadku [witryn internetowych](?format=websites). [/filter]
@@ -124,10 +120,7 @@ This is only visible for [websites](?format=websites).
 Możesz dodawać porady i objaśnienia, opakowując tekst w następujący szortkod:
 
 <div class="ap-m-code-snippet">
-<pre>&lsqb;tip type="default"]
-Default tip
-[/tip]
-</pre>
+<pre>&lsqb;tip type="default"]<br>Default tip<br>[/tip]</pre>
 </div>
 
 [tip type="important"] Ważne [/tip]
@@ -144,10 +137,7 @@ Default tip
 Umieść fragmenty kodu wewnątrz zestawów złożonych z trzech odwróconych apostrofów, określ język na końcu pierwszego zestawu odwróconych apostrofów.
 
 <div class="ap-m-code-snippet">
-<pre>```html
-  // code sample
-```
-</pre>
+<pre>```html<br>  // code sample<br>```</pre>
 </div>
 
 ```css
@@ -165,12 +155,7 @@ Umieść fragmenty kodu wewnątrz zestawów złożonych z trzech odwróconych ap
 Jeśli Twój kod zawiera podwójne nawiasy klamrowe, co jest częste, gdy używasz szablonów [`amp-mustache`](../../../../documentation/components/reference/amp-mustache.md?format=websites), musisz opakować część z kodem:
 
 <div class="ap-m-code-snippet">
-<pre>```html
-{% raw	%}
-  // code with double curly braces
-{% endraw	%}
-```
-</pre>
+<pre>```html<br>{% raw	%}<br>  // code with double curly braces<br>{% endraw	%}<br>```</pre>
 </div>
 
 ### Fragmenty kodu na listach
@@ -178,15 +163,7 @@ Jeśli Twój kod zawiera podwójne nawiasy klamrowe, co jest częste, gdy używa
 Język Python-Markdown ma pewne ograniczenia. Dodając fragmenty kodu na listach, używaj następującej składni:
 
 <div class="ap-m-code-snippet">
-<pre>1. First:
-    &lsqb;sourcecode:html]
-      
-        <p>Indented content.</p>
-      
-    &lsqb;/sourcecode]
-  2. Second
-  3. Third
-</pre>
+<pre>1. First:<br>    &lsqb;sourcecode:html]<br>      <br>        <p>Indented content.</p><br>      <br>    &lsqb;/sourcecode]<br>  2. Second<br>  3. Third</pre>
 </div>
 
 ## Podgląd próbek kodu
@@ -220,12 +197,7 @@ W przypadku treści wiadomości e-mail z linkami do zasobów, użyj w źródle s
 Oto prosta próbka osadzenia kodu inline. Możesz definiować CSS za pomocą stylów inline:
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="inline" playground="true"]
-    ```html
-    <div style="background: red; width: 200px; height: 200px;">Hello World</div>
-    ```
-  [/example]
-  [/example]</pre>
+<pre>  [example preview="inline" playground="true"]<br>    ```html<br>    <div style="background: red; width: 200px; height: 200px;">Hello World</div><br>    ```<br>  [/example]<br>  [/example]</pre>
 </div>
 
 Wygląda to tak:
@@ -362,11 +334,7 @@ Wygląda to tak:
 Zwróć uwagę, jak używamy <code>{{server_for_email}}</code> do utworzenia bezwzględnego adresu URL punktu końcowego, jeśli jest on wbudowany w wiadomość e-mail AMP.
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame" playground="true"]
-    ```html
-    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div>
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame" playground="true"]<br>    ```html<br>    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div><br>    ```<br>  [/example]</pre>
 </div>
 
 Wygląda to tak:
@@ -487,15 +455,15 @@ Dokumentom należy nadawać nazwy w konwencji z kreskami.
    </td>
   </tr>
   <tr>
-   <td>hello-world-tutorial.md    </td>
-   <td>hello_world_tutorial.md    </td>
+   <td>hello-world-tutorial.md</td>
+   <td>hello_world_tutorial.md</td>
   </tr>
   <tr>
-   <td>website-fundamentals.md    </td>
-   <td>websiteFundamentals.md    </td>
+   <td>website-fundamentals.md</td>
+   <td>websiteFundamentals.md</td>
   </tr>
   <tr>
-   <td>actions-and-events.md    </td>
-   <td>actionsandevents.md    </td>
+   <td>actions-and-events.md</td>
+   <td>actionsandevents.md</td>
   </tr>
 </table>
