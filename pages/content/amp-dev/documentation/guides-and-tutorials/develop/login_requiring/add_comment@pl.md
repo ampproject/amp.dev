@@ -23,7 +23,7 @@ Składnik formularza po prostu wyświetli te wartości wewnątrz strony za pomoc
 [sourcecode:html]
 
 
-<div submit-success="">   <template type="amp-mustache">     <div class="comment-user">       <amp-img width="44" class="user-avatar" height="44" alt="user" src="%7B%7BUserImg%7D%7D"></amp-img>       <div class="card comment">         <p><span class="user">{% raw %}{{User}}{% endraw %}</span><span class="date">{% raw %}{{Datetime}}{% endraw %}</span></p>         <p>{% raw %}{{Text}}{% endraw %}</p>       </div>     </div>   </template> </div> [/sourcecode]
+<div submit-success="">   <template type="amp-mustache">     <div class="comment-user">       {amp-img3}{/amp-img3}       <div class="card comment">         <p><span class="user">{% raw %}{{User}}{% endraw %}</span><span class="date">{% raw %}{{Datetime}}{% endraw %}</span></p>         <p>{% raw %}{{Text}}{% endraw %}</p>       </div>     </div>   </template> </div> [/sourcecode]
 
 W tym przykładzie sprawdzamy tylko, czy wartość komentarza nie jest pusta; jeśli wartość jest pusta, zwracamy błąd, który powoduje wykonanie następującego kodu
 
