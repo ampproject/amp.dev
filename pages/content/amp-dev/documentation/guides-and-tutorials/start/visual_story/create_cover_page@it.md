@@ -1,7 +1,7 @@
 ---
 $title: Creazione della copertina
 $order: 4
-description: To create a page, add the <amp-story-page> element as a child of amp-story. Assign a unique id to the page. For our first page, which is the cover page, let''s assign a unique id of cover: ...
+description: "Per creare una pagina, aggiungere l''elemento <amp-story-page> come figlio di amp-story. Assegnare un ID univoco alla pagina. Per la nostra prima pagina, cioè la copertina, assegniamo un ID univoco di copertina: ..."
 author: bpaduch
 ---
 
