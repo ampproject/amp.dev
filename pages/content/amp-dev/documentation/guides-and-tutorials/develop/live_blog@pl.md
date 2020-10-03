@@ -86,10 +86,10 @@ Gdy publikujesz wpis na blogu, ważne jest, aby mieć możliwość głębokiego 
 
 AMP By Example używa pliku cookie do generowania nowej treści w [przykładowym blogu na żywo](live_blog.md), więc jeśli lądujesz na stronie po raz pierwszy, wpis z id „post3” może być niedostępny, w takim przypadku następuje przekierowanie do pierwszego wpisu.
 
-## Resources
+## Zasoby <a></a>
 
-Learn more from these resources:
+Możesz dowiedzieć się więcej z tych materiałów:
 
-- [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md) reference documentation
+- Dokumentacja referencyjna [amp-live-list](../../../documentation/components/reference/amp-live-list.md)
 - [`amp-live-list`](../../../documentation/components/reference/amp-live-list.md)
 - [AMP BY Example's Live blog sample](live_blog.md)
