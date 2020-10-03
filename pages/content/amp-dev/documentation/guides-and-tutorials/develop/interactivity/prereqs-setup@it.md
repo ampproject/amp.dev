@@ -1,7 +1,7 @@
 ---
 $title: Configurazione
 $order: 0
-description: Before starting this tutorial, you''ll need the following: - A basic knowledge of HTML, CSS, and JavaScript - A browser of your choice - A text editor of ...
+description: "Prima di iniziare questa esercitazione, hai bisogno di quanto segue: una conoscenza di base di HTML, CSS e JavaScript, un browser a tua scelta, un editor di testo ..."
 $parent: /content/docs/interaction_dynamic/interactivity.md
 ---
 
