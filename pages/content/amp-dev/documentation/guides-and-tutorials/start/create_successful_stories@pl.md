@@ -99,7 +99,7 @@ Upewnij się, że treść jest dostępna. Zmień rozmiar filmów tak, aby na dol
 
 <table>
   <tr>
-    <th>DO</th>
+    <th>DOBRZE</th>
     <th>ŹLE</th>
   </tr>
   <tr>
