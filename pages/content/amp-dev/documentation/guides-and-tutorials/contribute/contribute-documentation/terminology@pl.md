@@ -23,7 +23,7 @@ author: CrystalOnScript
    </td>
   </tr>
   <tr>
-   <td>AMP    </td>
+   <td>AMP</td>
    <td>Oficjalna nazwa platformy składników internetowych open-source. AMP to rozwinięcie technologii Accelerated Mobile Pages. Przestarzały termin jest zbyt wąski w stosunku do definicji AMP: AMP nie służy już tylko do tworzenia stron — teraz można za pomocą tej technologii tworzyć reklamy, e-maile i relacje.</td>
    <td>
 <ul>
