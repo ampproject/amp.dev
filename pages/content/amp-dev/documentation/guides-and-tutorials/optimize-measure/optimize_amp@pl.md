@@ -67,11 +67,11 @@ Omówmy to krok po kroku:
 
 [sourcecode:html]
 
-   <link rel="preload" href="/images/elephants.png" as="image">     ...   <amp-img width="404" height="720" layout="responsive" src="/images/elephants.png" alt="...">   </amp-img>  [/sourcecode]
+   <link rel="preload" href="/images/elephants.png" as="image">     ...   {amp-img1}   {/amp-img1}  [/sourcecode]
 
 Co jednak zrobić, jeśli dany układ responsywny wymaga różnych obrazów hero image w zależności od szerokości ekranu? Na przykład szeroki obrazek dla komputera i wąski obrazek dla telefonu komórkowego, jak tutaj:
 
-[sourcecode:html] <amp-img width="404" height="720" alt="..." layout="responsive" src="/images/elephants_narrow.png" media="(max-width: 415px)"> </amp-img> <amp-img height="720" alt="..." layout="fixed-height" src="/images/elephants_wide.jpg" media="(min-width: 416px)"> </amp-img> [/sourcecode]
+[sourcecode:html] {amp-img0} {/amp-img0} {amp-img1} {/amp-img1} [/sourcecode]
 
 Dobrze, że instrukcja `link rel=preload` obsługuje również zapytania o media. Możemy dzięki temu użyć tych samych zapytań o media w naszych instrukcjach wstępnego ładowania, jak tutaj:
 
@@ -85,7 +85,7 @@ Przy okazji, to samo podejście działa w przypadku obrazów plakatów składnik
 [sourcecode:html]
 
 
-<link rel="preload" href="/images/poster.jpg" as="image"> ...  <amp-video width="480" height="270" src="elephant.mp4" poster="/images/poster.jpg" layout="responsive">      ... </amp-video> [/sourcecode]
+<link rel="preload" href="/images/poster.jpg" as="image"> ...  {amp-video1}      ... {/amp-video1} [/sourcecode]
 
 Upewnij się tylko, że instrukcje preload są umieszczone *za* deklaracją okienka na ekranie, ponieważ przeglądarka wymaga wymiarów okienka na ekranie do określenia szerokości ekranu:
 
