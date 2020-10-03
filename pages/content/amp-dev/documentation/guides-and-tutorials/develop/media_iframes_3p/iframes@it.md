@@ -33,7 +33,7 @@ Per includere un elemento [`amp-iframe`](../../../../documentation/components/re
 
 [sourcecode:html]
 
-<script async="" custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+<script async custom-element="amp-iframe"<br>  src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 
 [/sourcecode]
 
