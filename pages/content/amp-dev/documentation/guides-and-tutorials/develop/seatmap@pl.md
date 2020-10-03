@@ -105,7 +105,7 @@ Oto ostateczny poglądowy kod HTML mapy miejsc:
 selectedSeats: event.selectedOptions
 })" layout="fill">
 <div class="svg-container">
-<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}"> {{#seats}} <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/seats}} </svg>
+<svg preserveaspectratio="xMidYMin slice" viewbox="0 0 {{width}} {{height}}">{{#siedzenia}} <rect option="{{id}}" role="button" tabindex="0" class="seat {{unavailable}}" x="{{x}}" y="{{y}}" width="{{width}}" height="{{height}}" rx="{{rx}}" ry="{{ry}}"></rect> {{/siedzenia}}</svg>
 </div>
 </amp-selector>
 </amp-pan-zoom>
