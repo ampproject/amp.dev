@@ -128,7 +128,7 @@ AMPHTML consente il controllo delle interazioni e-mail con tecniche di tracciame
 
 Le seguenti tecniche di analisi specifiche di AMP non sono supportate:
 
-- [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
+- [AMP `CLIENT_ID</a>`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
 - [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics)
 - [`amp-pixel`](https://amp.dev/documentation/components/amp-pixel)
 - [Sostituzione di variabili AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
