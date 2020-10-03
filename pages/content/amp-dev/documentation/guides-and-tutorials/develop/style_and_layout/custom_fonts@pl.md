@@ -37,16 +37,7 @@ Można również użyć reguły [`@font-face`](https://developer.mozilla.org/en-
 
 [sourcecode:html]
 
-<style amp-custom="">
-  @font-face {
-    font-family: "Bitstream Vera Serif Bold";
-    src: url("https://somedomain.org/VeraSeBd.ttf");
-  }
-
-  body {
-    font-family: "Bitstream Vera Serif Bold", serif;
-  }
-</style>
+<style amp-custom=""><br>  @font-face {<br>    font-family: "Bitstream Vera Serif Bold";<br>    src: url("https://somedomain.org/VeraSeBd.ttf");<br>  }<br><br>  body {<br>    font-family: "Bitstream Vera Serif Bold", serif;<br>  }<br></style>
 
 [/sourcecode]
 
