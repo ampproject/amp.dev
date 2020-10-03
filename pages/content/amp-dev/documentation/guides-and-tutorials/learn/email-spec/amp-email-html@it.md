@@ -4,7 +4,7 @@ order: 4
 formats:
 - e-mail
 teaser:
-  text: Note: This list is non-normative and is for reference purposes only. The AMP Validator rules are authoritative
+  text: "Nota: questo elenco non è dettato da norme ed è riportato a solo scopo informativo. Le regole dello strumento di convalida AMP sono autorevoli"
 toc: true
 ---
 
