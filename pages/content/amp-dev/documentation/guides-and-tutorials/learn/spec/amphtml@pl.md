@@ -77,7 +77,7 @@ Przewidywalna wydajność jest kluczowym celem projektowania AMP HTML. Dążymy 
         "image": ["thumbnail1.jpg"],
         "datePublished": "2015-02-05T08:00:00+08:00"
       }
-    </script>     <script async="" custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>     <script async="" custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>     <style amp-boilerplate="">
+    </script>               <style amp-boilerplate="">
       body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
         -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -131,7 +131,7 @@ Przewidywalna wydajność jest kluczowym celem projektowania AMP HTML. Dążymy 
           -ms-animation: none;
           animation: none;
         }
-      </style></noscript>     <script async="" src="https://cdn.ampproject.org/v0.js"></script>           <h1>Sample document</h1>     <p>       Some text       <amp-img src="sample.jpg" width="300" height="300"></amp-img>     </p>     <amp-ad width="300" height="250" type="a9" data-aax_size="300x250" data-aax_pubname="test123" data-aax_src="302">     </amp-ad>     [/sourcecode]
+      </style></noscript>                <h>Sample document</h>     <p>       Some text       {amp-img14}{/amp-img14}     </p>     {amp-ad15}     {/amp-ad15}     [/sourcecode]
 
 ### Wymagane znaczniki <a name="required-markup"></a>
 
