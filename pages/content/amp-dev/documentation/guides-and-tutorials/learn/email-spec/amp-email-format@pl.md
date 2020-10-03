@@ -44,11 +44,7 @@ Poniższy kod zawiera minimalną ilość znaczników, niezbędnych w prawidłowe
 
 
 
-        <meta charset="utf-8">     <style amp4email-boilerplate="">
-      body {
-        visibility: hidden;
-      }
-    </style>     <script async="" src="https://cdn.ampproject.org/v0.js"></script>           Hello, world.     [/sourcecode]
+        <meta charset="utf-8">     <style amp4email-boilerplate=""><br>      body {<br>        visibility: hidden;<br>      }<br>    </style>     <script async="" src="https://cdn.ampproject.org/v0.js"></script>           Hello, world.     [/sourcecode]
 
 Wiadomość e-mail AMP musi
 
@@ -59,7 +55,7 @@ Wiadomość e-mail AMP musi
 - <a name="scrpt"></a>Zawierać znacznik `<script async src="https://cdn.ampproject.org/v0.js"></script>` w sekcji head. [🔗](#scrpt)
 - <a name="boilerplate"></a>Zawierać kod standardowy amp4email (`<style amp4email-boilerplate>body{visibility:hidden}</style>`) w sekcji head, początkowo ukrywający zawartość do chwili załadowania JS AMP. [🔗](#boilerplate)
 
-The entire AMPHTML markup must not exceed 200,000 bytes.
+Rozmiar wszystkich znaczników AMPHTML nie może przekraczać 200 000 bajtów.
 
 ## Struktura i renderowanie <a name="structure-and-rendering"></a>
 
@@ -87,18 +83,7 @@ Cały kod CSS w dowolnym dokumencie AMP musi być zawarty w znaczniku `<style am
 
 [sourcecode:html] ...
 
-<style amp-custom="">
-  /* any custom styles go here. */
-  body {
-    background-color: white;
-  }
-  amp-img {
-    border: 5px solid black;
-  }
-  amp-img.grey-placeholder {
-    background-color: grey;
-  }
-</style>
+<style amp-custom=""><br>  /* any custom styles go here. */<br>  body {<br>    background-color: white;<br>  }<br>  amp-img {<br>    border: 5px solid black;<br>  }<br>  amp-img.grey-placeholder {<br>    background-color: grey;<br>  }<br></style>
 
 ...
 
@@ -128,7 +113,7 @@ AMPHTML pozwala śledzić otwarcia wiadomości e-mail za pomocą technik śledze
 
 Nie są obsługiwane następujące techniki analityczne specyficzne dla AMP:
 
-- [AMP `CLIENT_ID`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
+- [AMP `CLIENT_ID</a>`](https://amp.dev/documentation/guides-and-tutorials/optimize-measure/configure-analytics/analytics_basics#user-identification)
 - [`amp-analytics`](https://amp.dev/documentation/components/amp-analytics)
 - [`amp-pixel`](https://amp.dev/documentation/components/amp-pixel)
 - [Podstawianie zmiennych AMP](https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/configure-analytics/analytics_basics/#variable-substitution)
