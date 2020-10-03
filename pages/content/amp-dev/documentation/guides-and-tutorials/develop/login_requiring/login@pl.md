@@ -20,10 +20,10 @@ Sposób działania atrybutów związanych ze składnikiem [`amp-access`](../../.
 
 <script id="amp-access" type="application/json">
   {
-    "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
+    "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&amp;url=CANONICAL_URL&amp;ref=DOCUMENT_REFERRER&amp;_=RANDOM",
     "noPingback": "true",
     "login": {
-      "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
+      "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&amp;url=CANONICAL_URL",
       "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
     },
     "authorizationFallbackResponse": {
