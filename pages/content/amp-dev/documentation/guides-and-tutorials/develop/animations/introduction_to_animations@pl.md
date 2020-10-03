@@ -157,7 +157,6 @@ Wiele animacji można połączyć, aby utworzyć dużą sekwencję. Można tworz
     }
   </script>
 </amp-animation>
-
 ```
 
 Ta konfiguracja powoduje odtwarzanie każdej animacji w sekwencji przez 3 sekundy.
