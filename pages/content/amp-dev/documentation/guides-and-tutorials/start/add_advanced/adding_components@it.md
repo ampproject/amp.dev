@@ -1,7 +1,7 @@
 ---
 $title: Aggiunta di componenti AMP estesi
 $order: 2
-description: AMP’s component system allows you to quickly build efficient and responsive features into your articles with minimal effort. The AMP HTML library has three classifications for AMP components: ...
+description: "Il sistema dei componenti AMP consente di creare rapidamente e con il minimo sforzo funzionalità efficienti e reattive per i propri articoli. La libreria AMP HTML ha tre classificazioni per i componenti AMP: ..."
 ---
 
 Il sistema dei componenti AMP consente di creare rapidamente e con il minimo sforzo funzionalità efficienti e reattive per i propri articoli. La libreria AMP HTML ha tre classificazioni per i componenti AMP:
