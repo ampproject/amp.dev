@@ -74,7 +74,6 @@ Puoi attivare o disattivare una classe sullo stesso elemento con cui desideri ch
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
-
 ```
 
 L'azione `toggleClass` può essere applicata anche ad altri elementi e permette di passare da una classe all'altra aggiungendo l'attributo `force`.
