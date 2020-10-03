@@ -1,7 +1,7 @@
 ---
 $title: Gratulacje!
 $order: 4
-description: You''ve successfully created an AMPHTML ad that can be served on AMP and non-AMP pages! In this tutorial, you learned to: Create a valid AMPHTML ad according to ...
+description: "Utworzona przez Ciebie reklama AMPHTML może być serwowana na stronach AMP i bez AMP! Dzięki temu samouczkowi wiesz już jak: Utworzyć prawidłową reklamę AMPHTML zgodnie z ..."
 ---
 
 Utworzona przez Ciebie reklama AMPHTML może być serwowana na stronach AMP i bez AMP!
