@@ -171,9 +171,7 @@ Język Python-Markdown ma pewne ograniczenia. Dodając fragmenty kodu na listach
 Próbki kodu mogą mieć podgląd i/lub link do wersji [placu zabaw AMP](https://playground.amp.dev/).
 
 <div class="ap-m-code-snippet">
-  <pre>  &lsqb;example preview="default: none|inline|top-frame"
-          playground="default: true|false"
-          imports="<custom-element-1>,<custom-element-2>,..."           template="<custom-template>"]   ```html     // code sample   ```   &lsqb;/example]   </custom-template></custom-element-2></custom-element-1></pre>
+  <pre>  &lsqb;example preview="default: none|inline|top-frame"<br>          playground="default: true|false"<br>          imports="{custom-element-10},{custom-element-21},..."           template="{custom-template2}"]   ```html     // code sample   ```   &lsqb;/example]   {/custom-template2}{/custom-element-21}{/custom-element-10}</pre>
 </div>
 
 Uwaga: podgląd zostanie automatycznie przekształcony na aktualnie wybrany format po otwarciu go w placu zabaw 🤯!
@@ -358,14 +356,7 @@ Wygląda to tak:
 Oto przykład `top-frame` wykorzystujący zdalny punkt końcowy. Szablony mustache muszą być oddzielone w próbkach przy użyciu znaczników <code>{% raw %}</code> i <code>{% endraw %}</code>:
 
 <div class="ap-m-code-snippet">
-  <pre>[example preview="top-frame"
-        playground="true"
-        imports="amp-list:0.1"
-        template="amp-mustache:0.2"]
-    ```html
-    <amp-list width="auto" height="100" layout="fixed-height" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/data/amp-list-urls.json">       <template type="amp-mustache">{% raw %}         <div class="url-entry">           <a href="%7B%7Burl%7D%7D">{{title}}</a>         </div>       {% endraw %}       </template>     </amp-list>
-    ```
-[/example]</pre>
+  <pre>&#91;example preview=&quot;top-frame&quot;<br>        playground=&quot;true&quot;<br>        imports=&quot;amp-list:0.1&quot;<br>        template=&quot;amp-mustache:0.2&quot;]<br>    ```html<br>    &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;<br>      src=&quot;&#123;&#123;server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;<br>      &lt;template type=&quot;amp-mustache&quot;&gt;&#123;% raw %}<br>        &lt;div class=&quot;url-entry&quot;&gt;<br>          &lt;a href=&quot;&#123;&#123;url}}&quot;&gt;&#123;&#123;title}}&lt;/a&gt;<br>        &lt;/div&gt;<br>      &#123;% endraw %}<br>      &lt;/template&gt;<br>    &lt;/amp-list&gt;<br>    ```<br>[/example]</pre>
 </div>
 
 Wygląda to tak:
