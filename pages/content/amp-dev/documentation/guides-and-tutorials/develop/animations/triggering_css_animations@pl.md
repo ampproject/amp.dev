@@ -74,7 +74,6 @@ Możesz przełączyć klasę w tym samym elemencie, z którym użytkownicy mają
 
 ```html
  <div id="hamburger" tabindex=1 role=button on="tap:hamburger.toggleClass(class='close')">
-
 ```
 
 Działanie `toggleClass` można stosować również do innych elementów, a dzięki dodaniu atrybutu `force` można przełączać się między dwiema klasami.
