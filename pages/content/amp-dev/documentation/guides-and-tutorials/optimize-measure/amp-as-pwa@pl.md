@@ -31,7 +31,7 @@ W tym celu najpierw dodaj składnik [`amp-install-serviceworker`](../../../docum
 
 Następnie dodaj następujące elementy gdzieś w sekcji `<body>` (zmień tak, aby wskazywały na rzeczywisty skrypt Service Worker):
 
-[sourcecode:html] <amp-install-serviceworker src="https://www.your-domain.com/serviceworker.js" layout="nodisplay"> </amp-install-serviceworker> [/sourcecode]
+[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
 
 Gdy użytkownik przejdzie do stron AMP w źródle (w przeciwieństwie do pierwszego kliknięcia, które zwykle jest serwowane z serwera buforującego AMP), Service Worker przejmuje kontrolę i może zrobić [mnóstwo fajnych rzeczy](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
