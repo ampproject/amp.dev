@@ -125,17 +125,7 @@ Przycisk CTA znajduje się 32 px od dołu i jest wyśrodkowany w poziomie. Ma wy
 
 [sourcecode:html]
 
-<style amp-custom="">
-    amp-img, amp-video {
-        height: 100vh;
-    }
-    amp-video video {
-        object-fit: cover;
-    }
-    amp-img img{
-        object-fit: cover;
-    }
-</style>
+<style amp-custom=""> amp-img, amp-video { height: 100vh; } amp-video video { object-fit: cover; } amp-img img{ object-fit: cover; } </style>
 
 [/sourcecode]
 
