@@ -60,11 +60,11 @@ Esaminiamo tale ordine un elemento alla volta:
 
 [sourcecode:html]
 
-   <link rel="preload" href="/images/elephants.png" as="image">     ...   <amp-img width="404" height="720" layout="responsive" src="/images/elephants.png" alt="...">   </amp-img>  [/sourcecode]
+   <link rel="preload" href="/images/elephants.png" as="image">     ...   {amp-img1}   {/amp-img1}  [/sourcecode]
 
 Ma cosa succede se il layout reattivo richiede immagini hero diverse a seconda della larghezza dello schermo? Ad esempio, un'immagine ampia per desktop e un'immagine più stretta per dispositivi mobili come in questo caso:
 
-[sourcecode:html] <amp-img width="404" height="720" alt="..." layout="responsive" src="/images/elephants_narrow.png" media="(max-width: 415px)"> </amp-img> <amp-img height="720" alt="..." layout="fixed-height" src="/images/elephants_wide.jpg" media="(min-width: 416px)"> </amp-img> [/sourcecode]
+[sourcecode:html] {amp-img0} {/amp-img0} {amp-img1} {/amp-img1} [/sourcecode]
 
 La cosa buona è che `link rel=preload` supporta anche le media query. Quindi possiamo usare le stesse media query nelle nostre istruzioni di precaricamento, in questo modo:
 
@@ -78,7 +78,7 @@ Lo stesso approccio funziona anche per le immagini dei poster in [`amp-video`](.
 [sourcecode:html]
 
 
-<link rel="preload" href="/images/poster.jpg" as="image"> ...  <amp-video width="480" height="270" src="elephant.mp4" poster="/images/poster.jpg" layout="responsive">      ... </amp-video> [/sourcecode]
+<link rel="preload" href="/images/poster.jpg" as="image"> ...  {amp-video1}      ... {/amp-video1} [/sourcecode]
 
 Occorre essere sicuri di inserire le istruzioni di precaricamento *dopo* la dichiarazione della finestra di visualizzazione perché il browser necessita delle dimensioni della finestra per determinare la larghezza dello schermo:
 
