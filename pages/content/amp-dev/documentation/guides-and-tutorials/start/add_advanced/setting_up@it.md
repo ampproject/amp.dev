@@ -1,7 +1,7 @@
 ---
 $title: Configurazione
 $order: 0
-description: Before starting this tutorial, you''ll need the following: - A basic knowledge of HTML, CSS, and JavaScript - A basic understanding of AMP’s core concepts see ...
+description: "Prima di iniziare questa esercitazione, hai bisogno di quanto segue: una conoscenza di base di HTML, CSS e JavaScript, una comprensione di base dei principali concetti AMP ..."
 $parent: /content/docs/fundamentals/add_advanced.md
 ---
 
