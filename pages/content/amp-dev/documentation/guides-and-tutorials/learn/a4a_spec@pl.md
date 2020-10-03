@@ -80,11 +80,7 @@ Kreacje reklamowe AMPHTML wymagają innej i znacznie prostszej linii stylu boile
 
 [sourcecode:html]
 
-<style amp4ads-boilerplate="">
-  body {
-    visibility: hidden;
-  }
-</style>
+<style amp4ads-boilerplate=""><br>  body {<br>    visibility: hidden;<br>  }<br></style>
 
 [/sourcecode]
 
