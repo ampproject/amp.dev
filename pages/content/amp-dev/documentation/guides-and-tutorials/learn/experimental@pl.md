@@ -16,8 +16,7 @@ Programiści i użytkownicy mogą zdecydować się na korzystanie z tych funkcji
 
 {% set experimental_components = g.docs('/content/amp-dev/documentation/components/reference')|selectattr('experimental')|list %} {% if experimental_components|length %} Jest to lista składników, które mają obecnie status eksperymentalny i są gotowe do testowania przez programistów w celu uzyskania pierwszych informacji zwrotnych od użytkowników:
 
-
-<ul> {% for component in experimental_components %}   <li><a href="%7B%7B%20component.url.path%20%7D%7D">{{ component.title }}</a></li> {% endfor %} </ul> {% endif %}
+<ul><br>{% for component in experimental_components %}<br>  <li><a href="{{ component.url.path }}">{{ component.title }}</a></li><br>{% endfor %}<br></ul><br>{% endif %}
 
 ## Wybierz kanał AMP Dev
 
