@@ -1,7 +1,7 @@
 ---
 $title: Risoluzione degli errori di convalida
 $order: 2
-description: In this section, we'll go through and resolve the AMP validation errors from our AMP page. Note that the errors may appear in a different order in your console.
+description: "In questa sezione esamineremo e risolveremo gli errori di convalida della nostra pagina AMP. Nota: gli errori potrebbero essere visualizzati in un ordine diverso a seconda della console."
 ---
 
 In questa sezione esamineremo e risolveremo gli errori di convalida della nostra pagina AMP. Nota: gli errori potrebbero essere visualizzati in un ordine diverso a seconda della console.
