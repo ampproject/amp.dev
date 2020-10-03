@@ -319,7 +319,7 @@ Questo è il suo aspetto:
 Ecco un esempio di codice `top-frame` che fa uso di un endpoint remoto. I modelli Mustache possono essere saltati nel codice usando le opzioni <code>{% raw %}</code> e <code>{% endraw %}</code>:
 
 <div class="ap-m-code-snippet">
-  <pre>[example preview="top-frame"<br>        playground="true"<br>        imports="amp-list:0.1"<br>        template="amp-mustache:0.2"]<br>    ```html<br>    <amp-list width="auto" height="100" layout="fixed-height" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/data/amp-list-urls.json">       <template type="amp-mustache">{% raw %}         <div class="url-entry">           <a href="%7B%7Burl%7D%7D">{{title}}</a>         </div>       {% endraw %}       </template>     </amp-list><br>    ```{br10}[/example]</pre>
+  <pre>&#91;example preview=&quot;top-frame&quot;<br>        playground=&quot;true&quot;<br>        imports=&quot;amp-list:0.1&quot;<br>        template=&quot;amp-mustache:0.2&quot;]<br>    ```html<br>    &lt;amp-list width=&quot;auto&quot; height=&quot;100&quot; layout=&quot;fixed-height&quot;<br>      src=&quot;&#123;&#123;server_for_email}}/static/inline-examples/data/amp-list-urls.json&quot;&gt;<br>      &lt;template type=&quot;amp-mustache&quot;&gt;&#123;% raw %}<br>        &lt;div class=&quot;url-entry&quot;&gt;<br>          &lt;a href=&quot;&#123;&#123;url}}&quot;&gt;&#123;&#123;title}}&lt;/a&gt;<br>        &lt;/div&gt;<br>      &#123;% endraw %}<br>      &lt;/template&gt;<br>    &lt;/amp-list&gt;<br>    ```<br>[/example]</pre>
 </div>
 
 Questo è il suo aspetto:
