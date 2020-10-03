@@ -43,7 +43,7 @@ Najpierw zainstaluj Service Worker na wszystkich stronach AMP, używając skład
 
 Następnie dodaj następujące elementy gdzieś w sekcji `<body>` (zmień tak, aby wskazywały na rzeczywisty skrypt Service Worker):
 
-[sourcecode:html] <amp-install-serviceworker src="https://www.your-domain.com/serviceworker.js" layout="nodisplay"> </amp-install-serviceworker> [/sourcecode]
+[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
 
 Ostatecznie, na etapie instalacji skryptu Service Worker, należy zadbać o zbuforowanie wszystkich zasobów, których będzie wymagać PWA:
 
@@ -81,7 +81,7 @@ Co jest szczególnie interesujące w tej technice, to fakt, że obecnie używasz
 
 AMP rozwiązuje to za pomocą czegoś, co nazywa się [przepisywaniem adresów URL powłoki](../../../documentation/components/reference/amp-install-serviceworker.md#shell-url-rewrite). Dodając do znacznika [`amp-install-serviceworker`](../../../documentation/components/reference/amp-install-serviceworker.md) wzorzec rezerwowego adresu URL, instruujesz AMP, że ma przepisać wszystkie pasujące linki na danej stronie, aby zamiast tego przejść do innego starszego adresu URL powłoki, jeśli nie wykryto obsługi mechanizmu Service Worker:
 
-[sourcecode:html] <amp-install-serviceworker src="https://www.your-domain.com/serviceworker.js" layout="nodisplay" data-no-service-worker-fallback-url-match=".*" data-no-service-worker-fallback-shell-url="https://www.your-domain.com/pwa"> </amp-install-serviceworker> [/sourcecode]
+[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
 
 Po wprowadzeniu tych atrybutów wszystkie następne kliknięcia w AMP trafią do PWA, bez względu na obsługę mechanizmu Service Worker.
 
