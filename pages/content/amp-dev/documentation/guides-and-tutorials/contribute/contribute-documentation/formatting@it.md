@@ -332,11 +332,7 @@ Questo è il suo aspetto:
 Notare l'utilizzo di <code>{{server_for_email}}</code> per rendere assoluto l'URL dell'endpoint incorporato all'interno di un'e-mail AMP.
 
 <div class="ap-m-code-snippet">
-<pre>  [example preview="top-frame" playground="true"]
-    ```html
-    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div>
-    ```
-  [/example]</pre>
+<pre>  [example preview="top-frame" playground="true"]<br>    ```html<br>    <div class="resp-img">       <amp-img alt="flowers" src="%7B%7Bserver_for_email%7D%7D/static/inline-examples/images/flowers.jpg" layout="responsive" width="640" height="427"></amp-img>     </div><br>    ```<br>  [/example]</pre>
 </div>
 
 Questo è il suo aspetto:
