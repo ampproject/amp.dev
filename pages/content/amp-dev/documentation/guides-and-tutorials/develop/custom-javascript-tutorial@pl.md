@@ -76,7 +76,6 @@ Aby użyć składnika `<amp-script>`, musimy zaimportować jego własny kod Java
   <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
   ...
 </head>
-
 ```
 
 Składnik `<amp-script>` pozwala nam napisać własny JavaScript inline lub w pliku zewnętrznym. W tym ćwiczeniu napiszemy wystarczająco dużo kodu, aby zasłużył on na osobny plik. Utwórz nowy katalog o nazwie `js`, i dodaj do niego nowy plik o nazwie `validate.js`.
