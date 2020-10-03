@@ -80,11 +80,7 @@ Gli elementi creativi di annunci AMPHTML richiedono una linea di stile boilerpla
 
 [sourcecode:html]
 
-<style amp4ads-boilerplate="">
-  body {
-    visibility: hidden;
-  }
-</style>
+<style amp4ads-boilerplate=""><br>  body {<br>    visibility: hidden;<br>  }<br></style>
 
 [/sourcecode]
 
