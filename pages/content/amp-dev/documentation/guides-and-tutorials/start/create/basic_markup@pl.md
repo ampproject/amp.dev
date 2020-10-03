@@ -11,17 +11,7 @@ Poniższy kod ze znacznikami to przyzwoity punkt startowy lub kod standardowy. S
 
 [sourcecode:html] <!doctype html>
 
-        <meta charset="utf-8">     <script async="" src="https://cdn.ampproject.org/v0.js"></script>     <title>Hello, AMPs</title>     <link rel="canonical" href="%7B%7Bdoc.url%7D%7D">     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">     <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Open-source framework for publishing content",
-        "datePublished": "2015-10-07T12:02:41Z",
-        "image": [
-          "logo.jpg"
-        ]
-      }
-    </script>     <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>           <h1>Welcome to the mobile web</h1>     [/sourcecode]
+<meta charset="utf-8"> <script async="" src="https://cdn.ampproject.org/v0.js"></script> <title>Hello, AMPs</title> <link rel="canonical" href="%7B%7Bdoc.url%7D%7D"> <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> <script type="application/ld+json"> { "@context": "http://schema.org", "@type": "NewsArticle", "headline": "Open-source framework for publishing content", "datePublished": "2015-10-07T12:02:41Z", "image": [ "logo.jpg" ] } </script> <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript> <h1>Welcome to the mobile web</h1> [/sourcecode]
 
 Zawartość w sekcji body jak na razie jest dość prosta. W sekcji head strony znajduje się jednak sporo dodatkowego kodu, który może nie być od razu oczywisty. Zdekonstruujmy wymagane znaczniki.
 
