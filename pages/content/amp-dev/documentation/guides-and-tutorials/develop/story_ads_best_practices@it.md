@@ -137,7 +137,7 @@ Esempio: indicazione di più file di origine
 
 [sourcecode:html] <amp-video id="video-page1" autoplay="" loop="" layout="fill" poster="https://example.com/media/poster.jpg"></amp-video>
 
-  <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode] </source></source>
+  <source src="https://amp-example.com/media/movie.m3u8" type="application/vnd.apple.mpegurl">   <source src="https://amp-example.com/media/movie.mp4" type="video/mp4">  [/sourcecode]</source></source>
 
 
 ####Dimensioni e lunghezza dei video: per prestazioni ottimali, occorre fornire video di dimensioni non superiori a 4 MB. File di dimensioni inferiori consentono un download più veloce, quindi è conveniente adottare oggetti dalle minime dimensioni possibili.
