@@ -157,7 +157,6 @@ Si possono collegare numerose animazioni per formare una sequenza più grande. I
     }
   </script>
 </amp-animation>
-
 ```
 
 Questa configurazione riproduce ogni animazione per 3 secondi in sequenza.
