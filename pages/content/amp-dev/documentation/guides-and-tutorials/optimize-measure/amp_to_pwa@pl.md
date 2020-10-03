@@ -58,7 +58,7 @@ Umieść wymagany znacznik skryptu w sekcji head pliku `index.html` oraz element
 
 <script async="" custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
 
-… ... <amp-install-serviceworker src="/sw.js" data-iframe-src="install-sw.html" layout="nodisplay"> </amp-install-serviceworker>
+… ... {amp-install-serviceworker0} {/amp-install-serviceworker0}
 
 
 
