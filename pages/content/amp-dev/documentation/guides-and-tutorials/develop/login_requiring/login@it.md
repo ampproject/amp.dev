@@ -18,20 +18,7 @@ Il comportamento degli attributi relativi ad [`amp-access`](../../../../document
 
 [sourcecode:html]
 
-<script id="amp-access" type="application/json">
-  {
-    "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",
-    "noPingback": "true",
-    "login": {
-      "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",
-      "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"
-    },
-    "authorizationFallbackResponse": {
-      "error": true,
-      "loggedIn": false
-    }
-  }
-</script>
+<script id="amp-access" type="application/json"><br>  {<br>    "authorization": "https://ampbyexample.com/samples_templates/comment_section/authorization?rid=READER_ID&url=CANONICAL_URL&ref=DOCUMENT_REFERRER&_=RANDOM",<br>    "noPingback": "true",<br>    "login": {<br>      "sign-in": "https://ampbyexample.com/samples_templates/comment_section/login?rid=READER_ID&url=CANONICAL_URL",<br>      "sign-out": "https://ampbyexample.com/samples_templates/comment_section/logout"<br>    },<br>    "authorizationFallbackResponse": {<br>      "error": true,<br>      "loggedIn": false<br>    }<br>  }<br></script>
 
 [/sourcecode]
 
