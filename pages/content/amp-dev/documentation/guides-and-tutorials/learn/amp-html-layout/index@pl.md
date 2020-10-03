@@ -199,13 +199,13 @@ W poniższym przykładzie mamy 2 obrazy z wzajemnie wykluczającymi się zapytan
 
 Atrybut `placeholder` można ustawić w dowolnym elemencie HTML, nie tylko elementach AMP. Atrybut `placeholder` wskazuje, że element oznaczony tym atrybutem działa jako element zastępczy nadrzędnego elementu AMP. Atrybut ten można umieścić w dowolnym elemencie HTML, który jest bezpośrednim elementem podrzędnym elementu AMP. Domyślnie elementy zastępcze elementu AMP są wyświetlane natychmiast, nawet jeśli zasoby elementu AMP nie zostały pobrane lub zainicjowane. Gdy element AMP jest już gotowy, zazwyczaj ukrywa elementy zastępcze i pokazuje swoją zawartość. Dokładny sposób działania elementu zastępczego zależy od implementacji elementu. AMP
 
-[sourcecode:html] <amp-anim src="animated.gif" width="466" height="355" layout="responsive"> <amp-img placeholder="" src="preview.png" layout="fill"></amp-img> </amp-anim> [/sourcecode]
+[sourcecode:html] {amp-anim0} {amp-img1}{/amp-img1} {/amp-anim0} [/sourcecode]
 
 ### `fallback` <a name="fallback"></a>
 
 Atrybut `fallback` można ustawić w dowolnym elemencie HTML, nie tylko elementach AMP. Fallback jest konwencją, która pozwala na poinformowanie czytelnika, że dany element nie jest obsługiwany przez przeglądarkę. Jeśli jest określony, element fallback musi być bezpośrednim elementem podrzędnym elementu AMP. Dokładny sposób działania elementu fallback zależy od implementacji elementu AMP.
 
-[sourcecode:html] <amp-anim src="animated.gif" width="466" height="355" layout="responsive"></amp-anim>
+[sourcecode:html] {amp-anim0}{/amp-anim0}
 
   <div fallback="">Nie można odtwarzać animowanych obrazów na tym urządzeniu.</div>  [/sourcecode]
 
