@@ -52,61 +52,61 @@ I soli tipi di logica specifica di terze parti verificati nell'archivio AMP sono
 
 ### Aspettative sui contributi di terzi
 
-- Maintain and serve vendor’s custom JavaScript independently.
-- Provide tests for their configuration and respond to issues.
-- Provide a troubleshooting channel for developers.
-- Respond to any and all bug filings related to their service.
+- Manutenzione e gestione di contenuti JavaScript personalizzati del fornitore in modo indipendente.
+- Fornitura dei test di configurazione e risposta alle segnalazioni di problemi.
+- Creazione di un canale per la risoluzione dei problemi per gli sviluppatori.
+- Gestione e risposta a tutte le seganalzioni di bug relative ai loro servizi.
 
-### Level 1 example
+### Esempio di livello 1
 
 [**amp-ad**](../../../components/reference/amp-ad.md)
 
-Ad providers should read the [development overview](https://github.com/ampproject/amphtml/tree/master/ads#overview) and the [developer instructions](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) for adding your support to [`amp-ad`](../../../components/reference/amp-ad.md). Depending on the ad technology your company provides, you might find [these integration instructions ](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads)useful.
+I fornitori di annunci devono leggere la [panoramica del processo di sviluppo](https://github.com/ampproject/amphtml/tree/master/ads#overview) e le [istruzioni per gli sviluppatori](https://github.com/ampproject/amphtml/tree/master/ads#developer-guidelines-for-a-pull-request) per l'aggiunta del supporto del componente [`amp-ad`](../../../components/reference/amp-ad.md). In base alla tecnologia fornita dalla tua azienda, potrai trovare utili [queste istruzioni di integrazione](/content/amp-dev/documentation/guides-and-tutorials/contribute/vendor-contributions/ad-integration-guide.md?format=ads).
 
-There are many ad providers who have added support for advertising related features like amp-ad. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/2299) from the ad network [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
+Ci sono molti fornitori di annunci che hanno aggiunto il supporto di funzionalità per gli annunci come amp-ad. Ecco una [richiesta pull di esempio](https://github.com/ampproject/amphtml/pull/2299) dalla rete di annunci [Criteo](https://github.com/ampproject/amphtml/blob/master/ads/criteo.md).
 
-## Level 2 contribution
+## Contributi di livello 2
 
-Level 2 contributions leverage the feature logic of existing components. All logic is checked into the AMP repository, and no custom Javascript can be loaded into an iframe. For example, analytics providers add their configurations to the [`amp-analytics`](../../../components/reference/amp-analytics.md) component but including the endpoint to track data, such as user clicks.
+I contributi di livello 2 sfruttano la logica funzionale di componenti già esistenti. Tutta la logica viene controllata nell'archivio AMP e nessun codice Javascript personalizzato può essere caricato negli iframe. Ad esempio, i fornitori di strumenti di analisi aggiungono le loro configurazioni al componente [`amp-analytics`](../../../components/reference/amp-analytics.md), ma includono l'endpoint per tracciare i dati, quali i clic degli utenti.
 
-Third parties add configurations or features, such as new APIs, to existing components to implement their functionalities. If such a component does not exist they may propose a new one.
+Per implementare le loro funzionalità, i terzi aggiungono configurazioni o funzionalità, quali nuove API, ai componenti già esistenti. Se tale componente non esiste, possono proporne uno nuovo.
 
-All business logic is checked into AMP repository, but the only third party specific logic checked in is a third party configuration. If the component works with a third party provided config file, no design review is needed. If the third party configuration implements a new feature or new component it will need to pass AMP’s design review.
+Tutta la logica aziendale viene controllata nell'archivio AMP, ma i soli elementi della logica specifica di terzi controllati sono le configurazioni di terze parti. Se il componente funziona con un file di configurazione fornito da terzi, non è necessaria alcuna revisione del progetto. Se la configurazione definita da terzi implementa una nuova funzionalità o un nuovo componente, dovrà essere sottoposta alla revisione di design AMP.
 
-### Expectations of third parties
+### Aspettative sui contributi di terzi
 
-- Adding new third party service to an existing level 2 contribution typically does not need a design review. The third party can follow the documentation of that component.
-- Proposing a new component for level 2 contribution will need to have feature logic that is shareable by other third party services.
+- L'aggiunta di un nuovo servizio di terzi a contributi di livello 2 già esistente, in genere non richiede una revisione del progetto. Il terzo che fornisce il contributo può seguire la documentazione di quel componente.
+- La proposta di un nuovo componente per i contributi di livello 2 dovrà avere una logica funzionale condivisibile con altri servizi di terzi.
 
-### Level 2 examples
+### Esempi di livello 2
 
 [**amp-analytics**](../../../components/reference/amp-analytics.md)
 
-AMP analytics allows you to send events back to your server based on triggers configured by you. We have written an [analytics integration guide ](../../optimize-measure/configure-analytics/index.md)to get you started.
+Gli strumenti di analisi AMP consentono di inviare eventi al tuo server in base a condizioni da te configurate. Per introdurti all'argomento, abbiamo scritto una [guida all'integrazione degli strumenti di analisi](../../optimize-measure/configure-analytics/index.md).
 
-If you only need to add a tracking pixel with dynamic parameters to your tracking URL, check out [`amp-pixel`](../../../components/reference/amp-pixel.md). Be sure to document usage on your support pages for developers that may want to use your technology with AMP.
+Se devi solo aggiungere un pixel di tracciamento con parametri dinamici all'URL di tracciamento, prendi in considerazione il componente [`amp-pixel`](../../../components/reference/amp-pixel.md). Assicurati di documentare l'utilizzo nelle tue pagine di supporto per gli sviluppatori che potrebbero essere interessati all'utilizzo della tua tecnologia con AMP.
 
-There are analytics providers who have added support to amp-analytics. Here is a [sample pull request](https://github.com/ampproject/amphtml/pull/1595) from the analytics provider [Parse.ly](https://www.parsely.com/help/integration/google-amp/).
+Ci sono fornitori di strumenti di analisi che supportano l'attributo amp-analytics. Ecco una [richiesta pull di esempio](https://github.com/ampproject/amphtml/pull/1595) effettuata dal fornitore di strumenti di analisi [Parse.ly](https://www.parsely.com/help/integration/google-amp/) .
 
 [**amp-call-tracking**](../../../components/reference/amp-call-tracking.md)
 
-If you provide call tracking measurement services, your use case may be supported with [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md). This component dynamically replaces a phone number in a hyperlink to enable call tracking, by executing a CORS request to substitute the number.
+Se fornisci servizi di misurazione per il tracciamento di chiamate, il tuo caso di utilizzo potrebbe essere migliorato dall'utilizzo di [`amp-call-tracking`](../../../components/reference/amp-call-tracking.md). Questo componente sostituisce in modo dinamico un numero di telefono in un collegamento ipertestuale per abilitare il tracciamento delle chiamate, eseguendo una richiesta CORS per sostituire il numero.
 
-To learn more about how this component might work for you, please see the [reference documentation](../../../components/reference/amp-call-tracking.md).
+Per ulteriori informazioni sul funzionamento di questo componente, consultare la relativa [documentazione di riferimento](../../../components/reference/amp-call-tracking.md).
 
-## Level 3 contribution
+## Contributi di livello 3
 
-A level 3 contribution introduces a new third party-specific component. This is only applicable if third parties are unable to:
+Un contributo di livello 3 introduce un nuovo componente specifico di terze parti. Ciò è ammissibile solo se il soggetto terzo in questione non è in grado di:
 
-- Find a component that exists for their use case.
-- Request feature improvements to meet their use case.
-- Propose a component that applies to other third party services.
+- Trovare un componente già esistente per il proprio caso di utilizzo.
+- Richiedere miglioramenti delle funzionalità in grado di soddisfare il proprio caso di utilizzo.
+- Proponi un componente applicabile ad altri servizi di terzi.
 
-### Expectations of third parties
+### Aspettative sui contributi di terzi
 
-- Write and propose a design review.
-- Tests must be able to catch breakage.
-- Fix, or request help, if the component breaks.
-- Provide through documentation with code samples.
-- Maintain and update documentation.
-- Provide a troubleshooting channel for AMP developers to request assistance.
+- Scrivere e proporre una revisione del progetto.
+- Proporre test in grado di verificare i malfunzionamenti.
+- Risolvere i malfunzionamenti del componente o richiedere aiuto allo scopo.
+- Fornire documentazione accurata con esempi di codice.
+- Preparare e aggiornare la documentazione.
+- Fornire un canale per la risoluzione dei problemi per gli sviluppatori AMP che richiedono assistenza.
