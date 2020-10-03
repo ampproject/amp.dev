@@ -139,12 +139,12 @@ Koduj wideo, aby dostosować jakość do następujących zalecanych optymalizacj
 
 <table>
   <tr>
-   <td>MP4    </td>
-   <td>-crf 23    </td>
+   <td>MP4</td>
+   <td>-crf 23</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>-b:v 1M    </td>
+   <td>WEBM</td>
+   <td>-b:v 1M</td>
   </tr>
 </table>
 
@@ -159,11 +159,11 @@ Jeśli możesz zapewniać tylko jeden format wideo, użyj MP4. Jeśli to możliw
 <table>
   <tr>
    <td>MP4, HLS i DASH</td>
-   <td>H.264    </td>
+   <td>H.264</td>
   </tr>
   <tr>
-   <td>WEBM    </td>
-   <td>VP9    </td>
+   <td>WEBM</td>
+   <td>VP9</td>
   </tr>
 </table>
 
