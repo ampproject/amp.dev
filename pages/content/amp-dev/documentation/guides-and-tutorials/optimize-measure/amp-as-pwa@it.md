@@ -31,7 +31,7 @@ A questo scopo, occorre prima includere il componente [`amp-install-serviceworke
 
 Quindi aggiungere quanto segue in un punto all'interno della sezione `<body>` (modificare il codice per farlo puntare all'effettivo processo di lavoro dei servizi):
 
-[sourcecode:html] <amp-install-serviceworker src="https://www.your-domain.com/serviceworker.js" layout="nodisplay"> </amp-install-serviceworker> [/sourcecode]
+[sourcecode:html] {amp-install-serviceworker0} {/amp-install-serviceworker0} [/sourcecode]
 
 In caso gli utenti raggiungono le tue pagine AMP sulla tua origine (diversamente da quanto avviene con il primo clic, che di solito è fornito da una cache AMP), il processo di lavoro dei servizi entrerà in azione e permetterà di fare [moltissime cose interessanti](https://developers.google.com/web/fundamentals/instant-and-offline/offline-ux).
 
